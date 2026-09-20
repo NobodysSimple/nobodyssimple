@@ -1,10 +1,10 @@
-const CACHE = "nobodyssimple-v5";
+const CACHE = "nobodyssimple-v6";
 const SHELL = [
   "./",
   "index.html",
   "nd-play.html",
   "nd-play.css",
-  "nd-play.mjs",
+  "nd-play-v3.mjs",
   "styles.css",
   "site.mjs",
   "features.mjs",
