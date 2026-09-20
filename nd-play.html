@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f6f0e4" />
+    <meta name="description" content="A playful digital sensory space with visual, auditory and repetitive minigames." />
+    <title>ND Play — Nobody’s Simple</title>
+    <link rel="icon" href="logo.png" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="nd-play.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="header">
+      <a class="brand" href="index.html#home"><img src="logo.png" alt="" /><span>Nobody’s Simple<small>PSYCHOLOGY FOR REAL LIFE</small></span></a>
+      <nav aria-label="Main">
+        <a href="index.html#help">What would help?</a>
+        <a href="index.html#tools">Tools</a>
+        <a href="nd-play.html" aria-current="page">ND play</a>
+        <a href="index.html#library">Learn</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#community">Community</a>
+      </nav>
+      <a class="button small header-install" href="index.html#install">↓ Save as app</a>
+    </header>
+    <main id="main" class="ndp-page" tabindex="-1">
+      <div class="ndp-shell">
+        <div class="ndp-heading">
+          <div>
+            <p class="eyebrow">A digital sensory playground</p>
+            <h1 id="page-title">Stim Yard</h1>
+            <p class="lead">Move, repeat, sort, fold, tap. No scores, goals, or exercises—just things to play with.</p>
+          </div>
+          <div class="ndp-spark" aria-hidden="true"><span>∿</span><span>◌</span><span>↻</span></div>
+        </div>
+
+        <div class="ndp-workspace">
+          <div class="ndp-tabs" role="tablist" aria-label="ND play spaces">
+            <button id="tab-yard" class="ndp-tab active" type="button" role="tab" aria-selected="true" aria-controls="yard-panel">Stim Yard</button>
+            <button id="tab-mixer" class="ndp-tab" type="button" role="tab" aria-selected="false" aria-controls="mixer-panel" tabindex="-1">Sensory Mixer</button>
+          </div>
+
+          <section id="yard-panel" class="ndp-panel" role="tabpanel" aria-labelledby="tab-yard">
+            <div class="ndp-game-picker" role="toolbar" aria-label="Choose a stim">
+              <button class="ndp-game-choice" type="button" data-game="stones" aria-pressed="false"><span aria-hidden="true">◍</span><b>Sort stones</b></button>
+              <button class="ndp-game-choice" type="button" data-game="folds" aria-pressed="false"><span aria-hidden="true">▱</span><b>Paper folds</b></button>
+              <button class="ndp-game-choice active" type="button" data-game="liquid" aria-pressed="true"><span aria-hidden="true">∿</span><b>Liquid motion</b></button>
+              <button class="ndp-game-choice" type="button" data-game="particles" aria-pressed="false"><span aria-hidden="true">✣</span><b>Bouncing particles</b></button>
+              <button class="ndp-game-choice" type="button" data-game="tapping" aria-pressed="false"><span aria-hidden="true">▦</span><b>Pattern taps</b></button>
+              <button class="ndp-game-choice" type="button" data-game="mechanism" aria-pressed="false"><span aria-hidden="true">↻</span><b>Little mechanism</b></button>
+            </div>
+
+            <div id="game-stage" class="ndp-stage-wrap" aria-live="polite"></div>
+            <div class="ndp-footnote">
+              <span>Everything is optional. Pause, switch, or leave whenever you like.</span>
+              <button type="button" class="ndp-text-button" data-open-mixer>Adjust the sensory mix ↗</button>
+            </div>
+          </section>
+
+          <section id="mixer-panel" class="ndp-panel" role="tabpanel" aria-labelledby="tab-mixer" hidden>
+            <div class="ndp-mixer-layout">
+              <div class="ndp-mixer-controls">
+                <p class="eyebrow">Tune the play space</p>
+                <h2>Sensory Mixer</h2>
+                <p class="ndp-mixer-intro">There is no one right sensory setting. Change the mix until it feels like yours.</p>
+
+                <label class="ndp-range" for="mix-motion"><span><b>Visual motion</b><output id="motion-value" for="mix-motion">40</output></span><small>Still and slow ↔ flowing and lively</small><input id="mix-motion" type="range" min="0" max="100" value="40"></label>
+                <label class="ndp-range" for="mix-sound"><span><b>Sound density</b><output id="sound-value" for="mix-sound">15</output></span><small>Silent ↔ fuller tones when you turn sound on</small><input id="mix-sound" type="range" min="0" max="100" value="15"></label>
+                <label class="ndp-range" for="mix-repeat"><span><b>Repetition</b><output id="repeat-value" for="mix-repeat">55</output></span><small>More variation ↔ more repeated patterns</small><input id="mix-repeat" type="range" min="0" max="100" value="55"></label>
+                <label class="ndp-range" for="mix-unpredictability"><span><b>Unpredictability</b><output id="unpredictability-value" for="mix-unpredictability">25</output></span><small>Steady ↔ more drifting and surprise</small><input id="mix-unpredictability" type="range" min="0" max="100" value="25"></label>
+                <label class="ndp-range" for="mix-brightness"><span><b>Brightness</b><output id="brightness-value" for="mix-brightness">75</output></span><small>Dimmer ↔ brighter</small><input id="mix-brightness" type="range" min="0" max="100" value="75"></label>
+                <label class="ndp-range" for="mix-input"><span><b>Input intensity</b><output id="input-value" for="mix-input">45</output></span><small>Gentle response ↔ stronger response to your touch</small><input id="mix-input" type="range" min="0" max="100" value="45"></label>
+                <p id="motion-note" class="ndp-small-note" hidden>Your device prefers reduced motion, so the motion starts low. You can still change it here.</p>
+              </div>
+
+              <aside class="ndp-recipe-side">
+                <div class="ndp-mixer-preview">
+                  <div class="ndp-preview-label"><span>Live preview</span><span id="preview-caption">A quiet drift</span></div>
+                  <canvas id="mixer-canvas" aria-hidden="true"></canvas>
+                  <button id="mixer-nudge" class="ndp-nudge" type="button">Give it a nudge</button>
+                </div>
+                <div class="ndp-save-card">
+                  <p class="eyebrow">Keep a mix for later</p>
+                  <label class="ndp-recipe-name">Recipe name<input id="recipe-name" type="text" maxlength="40" placeholder="e.g. soft shimmer"></label>
+                  <button id="save-recipe" class="button" type="button">Save this recipe</button>
+                  <p id="recipe-status" class="ndp-recipe-status" role="status" aria-live="polite">Recipes stay in this browser on this device.</p>
+                  <div id="saved-recipes" class="ndp-saved-recipes"></div>
+                </div>
+                <p class="ndp-small-note">Sound is always off until you switch it on inside Pattern Taps. Your recipes and play choices stay in this browser; nothing is uploaded.</p>
+              </aside>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <a class="brand" href="index.html#home">Nobody’s Simple</a>
+      <p>Psychology for choosing what to do next.</p>
+      <div>
+        <a href="index.html#library">Learn</a>
+        <a href="https://www.youtube.com/@nobodyssimple" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+        <a href="index.html#community">Feedback</a>
+        <a href="index.html#install">Install the app</a>
+        <a href="index.html#home">Main website</a>
+      </div>
+      <small>Play for the pleasure of it. These activities are not therapy or assessment.</small>
+    </footer>
+    <noscript>This page needs JavaScript for the interactive play areas.</noscript>
+    <script type="module" src="nd-play.mjs"></script>
+  </body>
+</html>
