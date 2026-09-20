@@ -32,6 +32,39 @@ function saveMap(entry) {
   });
   localStorage.setItem(mapKey, JSON.stringify(maps.slice(0, 250)));
 }
+export function moodRatingMarkup({
+  id,
+  outputId,
+  buttonId,
+  heading = "How are you feeling right now?",
+  intro = "Slide to mark your overall mood, as you define it.",
+  buttonText = "Continue",
+} = {}) {
+  return `<section class="mood-checkin-card"><p class="eyebrow">A quick check-in</p><h3>${esc(heading)}</h3><p>${esc(intro)}</p><label class="mood-slider-label" for="${esc(id)}"><span>Overall mood</span><output id="${esc(outputId)}" for="${esc(id)}">5 / 10</output></label><input id="${esc(id)}" class="mood-slider" type="range" min="0" max="10" step="1" value="5" aria-label="Overall mood, from very low or unpleasant to very good or pleasant"><div class="mood-scale"><span>Very low / unpleasant</span><span>Very good / pleasant</span></div><p class="mood-instruction">Move the slider to choose a rating.</p><button class="button" id="${esc(buttonId)}" type="button" disabled>${esc(buttonText)}</button></section>`;
+}
+export function bindMoodRating(root, { id, outputId, buttonId, onSubmit }) {
+  const slider = root.querySelector(`#${id}`),
+    output = root.querySelector(`#${outputId}`),
+    button = root.querySelector(`#${buttonId}`);
+  const update = () => {
+    output.value = `${slider.value} / 10`;
+    button.disabled = false;
+  };
+  slider.oninput = update;
+  slider.onpointerdown = () => (button.disabled = false);
+  slider.onkeydown = (event) => {
+    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Home", "End", "PageUp", "PageDown"].includes(event.key)) update();
+  };
+  slider.onclick = () => (button.disabled = false);
+  button.onclick = () => onSubmit(+slider.value);
+}
+export function moodComparisonMarkup(before, after) {
+  const first = Math.max(0, Math.min(10, Math.round(Number(before) || 0))),
+    last = Math.max(0, Math.min(10, Math.round(Number(after) || 0))),
+    change = last - first,
+    summary = change > 0 ? `Up ${change} ${change === 1 ? "point" : "points"}` : change < 0 ? `Down ${Math.abs(change)} ${change === -1 ? "point" : "points"}` : "No change";
+  return `<section class="mood-comparison" aria-label="Mood check-in comparison"><p class="eyebrow">Your mood check-in</p><div class="mood-score-row"><span>Before</span><div class="mood-track" role="meter" aria-label="Mood rating before" aria-valuemin="0" aria-valuemax="10" aria-valuenow="${first}"><span style="width:${first * 10}%"></span></div><b>${first} / 10</b></div><div class="mood-score-row"><span>After</span><div class="mood-track" role="meter" aria-label="Mood rating after" aria-valuemin="0" aria-valuemax="10" aria-valuenow="${last}"><span style="width:${last * 10}%"></span></div><b>${last} / 10</b></div><p class="mood-change">${summary}</p><p class="fine">This compares your two ratings; it cannot tell you what caused a change.</p></section>`;
+}
 export function renderHome(root, posts) {
   const latest = (posts || []).filter((p) => p.type === "blog").slice(0, 3);
   root.innerHTML = `<div class="home-wrap"><section class="cover-hero"><img class="cover-image" src="banner.png" alt="Nobody’s Simple — Psychology for choosing what to do next"><div class="cover-cta"><p class="eyebrow">A practical psychology project</p><p>Start with the moment you’re in. Find one thing that might help.</p><a class="button bright" href="#help">Help me figure out what I need <span aria-hidden="true">↗</span></a></div></section><div class="quick-actions"><a href="#help"><span>01</span><b>Help me figure out what I need</b><small>Three tailored starting points</small></a><a href="#compass"><span>02</span><b>Name the feeling or state</b><small>Emotions, energy and body cues</small></a><a href="#library"><span>03</span><b>Follow a learning thread</b><small>52 weeks · four quarters</small></a><a href="#maps"><span>04</span><b>My Maps</b><small>Return to notes saved on this device</small></a></div>
@@ -226,156 +259,194 @@ export function renderTool(root, id) {
     renderMaps(root);
     return;
   }
-  root.innerHTML = `<div class="wrap tool-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")} / ${esc(tool.kind === "pattern" ? "Creative pause" : tool.kind === "sound" ? "Sound & sensation" : "Interactive prompt")}</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your writing stays in this browser tab unless you choose “Save to My Maps”. It is not sent to Nobody’s Simple.</p></section>${tool.kind === "pattern" ? patternControls() : tool.kind === "sound" ? soundControls() : ""}<form id="feature-form" class="tool-form">${tool.fields.map(fieldHtml).join("")}${tool.fields.length ? `<div class="row"><button class="button" type="submit">Build my reflection ↗</button><button class="button secondary" type="reset">Clear this form</button></div>` : ""}</form>${tool.kind === "pattern" ? `<div id="pattern-preview" class="pattern-preview" aria-label="Decorative animated pattern"></div>` : ""}${tool.kind === "sound" ? `<div class="row"><button type="button" class="button" id="sound-play">Play mix</button><button type="button" class="button secondary" id="sound-stop">Stop sound</button><p class="fine" id="sound-status" role="status">Silent until you press Play. No audio is recorded or transmitted.</p></div>` : ""}<section id="tool-result" class="tool-result" hidden aria-live="polite"></section><div class="tool-next row"><a class="chip" href="#tool/state-check">Check my body/state</a><a class="chip" href="#questions">Work through a difficult question</a><a class="chip" href="#maps">My Maps</a></div></div>`;
-  const form = root.querySelector("#feature-form");
-  form.querySelectorAll("input[type=range]").forEach(
-    (range) =>
-      (range.oninput = () => {
-        range.parentElement.querySelector(".range-value").value =
-          `${range.value} / ${range.max}`;
-        updateCreative();
-      }),
-  );
-  form.onsubmit = (e) => {
-    e.preventDefault();
-    const results = {};
-    tool.fields.forEach((f) => {
-      const node = form.elements.namedItem(f.id);
-      results[f.id] = readField(f, node);
-    });
-    let extra = tool.id === "brain-dump" ? renderBrainMap(results) : "";
-    root.querySelector("#tool-result").hidden = false;
-    root.querySelector("#tool-result").innerHTML =
-      `<div class="result-topline"><p class="eyebrow">Your working notes</p><button id="save-map" type="button" class="button">Save to My Maps</button></div><h2>${esc(tool.title)}</h2><p class="fine">These are your notes, not an interpretation produced by the site.</p><div class="result-summary">${
+  root.innerHTML = `<div class="wrap tool-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")} / ${esc(tool.kind === "pattern" ? "Creative pause" : tool.kind === "sound" ? "Sound & sensation" : "Interactive prompt")}</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your writing stays in this browser tab unless you choose “Save to My Maps”. It is not sent to Nobody’s Simple.</p></section><section id="tool-mood-gate">${moodRatingMarkup({ id: "tool-mood-before", outputId: "tool-mood-before-value", buttonId: "tool-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you use the tool.", buttonText: "Open this tool →" })}</section><div id="tool-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Check my body/state</a><a class="chip" href="#questions">Work through a difficult question</a><a class="chip" href="#maps">My Maps</a></div></div>`;
+  bindMoodRating(root, {
+    id: "tool-mood-before",
+    outputId: "tool-mood-before-value",
+    buttonId: "tool-mood-start",
+    onSubmit: (moodBefore) => {
+      root.querySelector("#tool-mood-gate").hidden = true;
+      const content = root.querySelector("#tool-content");
+      content.hidden = false;
+      mountTool(content, moodBefore);
+    },
+  });
+
+  function mountTool(content, moodBefore) {
+    content.innerHTML = `${tool.kind === "pattern" ? patternControls() : ""}<form id="feature-form" class="tool-form">${tool.fields.map(fieldHtml).join("")}${tool.fields.length ? `<div class="row"><button class="button" type="submit">Build my reflection ↗</button><button class="button secondary" type="reset">Clear this form</button></div>` : `<p class="fine">Use the interactive controls above, then build a reflection to compare your mood.</p><div class="row"><button class="button" type="submit">Build my reflection ↗</button></div>`}</form>${tool.kind === "pattern" ? `<div id="pattern-preview" class="pattern-preview" aria-label="Decorative animated pattern"></div>` : ""}${tool.kind === "sound" ? `<div class="row"><button type="button" class="button" id="sound-play">Play mix</button><button type="button" class="button secondary" id="sound-stop">Stop sound</button><p class="fine" id="sound-status" role="status">Silent until you press Play. No audio is recorded or transmitted.</p></div>` : ""}<section id="tool-result" class="tool-result" hidden aria-live="polite"></section>`;
+    const form = content.querySelector("#feature-form");
+    form.querySelectorAll("input[type=range]").forEach(
+      (range) =>
+        (range.oninput = () => {
+          range.parentElement.querySelector(".range-value").value =
+            `${range.value} / ${range.max}`;
+          updateCreative();
+        }),
+    );
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      const results = {};
+      tool.fields.forEach((f) => {
+        const node = form.elements.namedItem(f.id);
+        results[f.id] = readField(f, node);
+      });
+      let extra = tool.id === "brain-dump" ? renderBrainMap(results) : "";
+      const result = content.querySelector("#tool-result");
+      result.hidden = false;
+      result.innerHTML =
+        `<div class="result-topline"><p class="eyebrow">Your working notes</p></div><h2>${esc(tool.title)}</h2><p class="fine">These are your notes, not an interpretation produced by the site.</p><div class="result-summary">${
+          tool.fields
+            .map((f) => {
+              const v = results[f.id];
+              const val = Array.isArray(v) ? v.join(" · ") : v;
+              return val
+                ? `<section><b>${esc(f.label)}</b><p>${esc(val)}</p></section>`
+                : "";
+            })
+            .join("") ||
+          "<p>No notes added yet. Save nothing or return to the questions whenever you like.</p>"
+        }</div>${extra}${moodRatingMarkup({ id: "tool-mood-after", outputId: "tool-mood-after-value", buttonId: "tool-mood-compare", heading: "How are you feeling now?", intro: "After trying the activity, slide to mark your overall mood again.", buttonText: "Show my mood change →" })}<div id="mood-comparison" hidden></div><div class="row mood-result-actions" id="result-actions" hidden><button id="save-map" type="button" class="button">Save to My Maps</button><button id="download-map" class="button secondary" type="button">Download these notes</button><button id="copy-map" class="button secondary" type="button">Copy text</button></div><p id="result-status" class="fine" role="status"></p>`;
+      const entry = {
+        title: tool.title,
+        tool: tool.id,
+        answers: results,
+        moodCheck: null,
+      };
+      const text = () =>
+        `${tool.title}\n\n` +
         tool.fields
           .map((f) => {
-            const v = results[f.id];
-            const val = Array.isArray(v) ? v.join(" · ") : v;
-            return val
-              ? `<section><b>${esc(f.label)}</b><p>${esc(val)}</p></section>`
-              : "";
+            let v = results[f.id];
+            return `${f.label}: ${Array.isArray(v) ? v.join(", ") : v || "—"}`;
           })
-          .join("") ||
-        "<p>No notes added yet. Save nothing or return to the questions whenever you like.</p>"
-      }</div>${extra}<div class="row"><button id="download-map" class="button secondary" type="button">Download these notes</button><button id="copy-map" class="button secondary" type="button">Copy text</button></div><p id="result-status" class="fine" role="status"></p>`;
-    const entry = { title: tool.title, tool: tool.id, answers: results };
-    root.querySelector("#save-map").onclick = () => {
-      try {
-        saveMap(entry);
-        root.querySelector("#result-status").textContent =
-          "Saved on this device. Other people who use this browser profile may be able to see it.";
-      } catch {
-        root.querySelector("#result-status").textContent =
-          "This browser could not save the note. Try Download instead.";
-      }
-    };
-    const text = () =>
-      `${tool.title}\n\n` +
-      tool.fields
-        .map((f) => {
-          let v = results[f.id];
-          return `${f.label}: ${Array.isArray(v) ? v.join(", ") : v || "—"}`;
-        })
-        .join("\n\n");
-    root.querySelector("#download-map").onclick = () =>
-      downloadText(`${tool.id}.txt`, text());
-    root.querySelector("#copy-map").onclick = async () => {
-      try {
-        await navigator.clipboard.writeText(text());
-        root.querySelector("#result-status").textContent = "Copied.";
-      } catch {
-        root.querySelector("#result-status").textContent =
-          "Copy was blocked by this browser. Use Download instead.";
-      }
-    };
-    root.querySelector("#tool-result").scrollIntoView({ behavior: "smooth" });
-  };
-  form.onreset = () => {
-    setTimeout(() => {
-      root.querySelector("#tool-result").hidden = true;
-      updateCreative();
-    }, 0);
-  };
-  if (tool.kind === "pattern") {
-    root
-      .querySelectorAll("input,select")
-      .forEach((el) => el.addEventListener("input", updateCreative));
-    root
-      .querySelectorAll("select")
-      .forEach((el) => el.addEventListener("change", updateCreative));
-    updateCreative();
-  }
-  if (tool.kind === "sound") {
-    let context = null,
-      nodes = [];
-    const stop = () => {
-      for (const n of nodes)
+          .join("\n\n") +
+        `\n\nMood before activity: ${entry.moodCheck?.before ?? moodBefore} / 10` +
+        (entry.moodCheck
+          ? `\nMood after activity: ${entry.moodCheck.after} / 10\nMood rating change: ${entry.moodCheck.after - entry.moodCheck.before} points`
+          : "");
+      bindMoodRating(content, {
+        id: "tool-mood-after",
+        outputId: "tool-mood-after-value",
+        buttonId: "tool-mood-compare",
+        onSubmit: (moodAfter) => {
+          entry.moodCheck = { before: moodBefore, after: moodAfter };
+          const comparison = content.querySelector("#mood-comparison");
+          comparison.innerHTML = moodComparisonMarkup(moodBefore, moodAfter);
+          comparison.hidden = false;
+          content.querySelector("#result-actions").hidden = false;
+          comparison.scrollIntoView({ behavior: "smooth", block: "center" });
+        },
+      });
+      content.querySelector("#save-map").onclick = () => {
         try {
-          n.stop?.();
-          n.disconnect?.();
-        } catch {}
-      nodes = [];
-      root.querySelector("#sound-status").textContent = "Sound stopped.";
-    };
-    root.querySelector("#sound-stop").onclick = stop;
-    root.querySelector("#sound-play").onclick = async () => {
-      stop();
-      try {
-        const C = window.AudioContext || window.webkitAudioContext;
-        if (!C) throw Error();
-        context = context || new C();
-        await context.resume();
-        const form = root.querySelector("#feature-form"),
-          master = context.createGain();
-        master.gain.value = 0.11;
-        master.connect(context.destination);
-        const noise = context.createBufferSource();
-        const buffer = context.createBuffer(
-            1,
-            context.sampleRate * 2,
-            context.sampleRate,
-          ),
-          samples = buffer.getChannelData(0);
-        for (let i = 0; i < samples.length; i++)
-          samples[i] = (Math.random() * 2 - 1) * 0.22;
-        noise.buffer = buffer;
-        noise.loop = true;
-        const filter = context.createBiquadFilter();
-        filter.type = "lowpass";
-        filter.frequency.value = 600;
-        const gain = context.createGain();
-        gain.gain.value = +form.elements.rain.value / 10;
-        noise.connect(filter).connect(gain).connect(master);
-        noise.start();
-        nodes.push(noise, filter, gain, master);
-        for (const [id, freq] of [
-          ["tone", 110],
-          ["pulse", 55],
-        ]) {
-          const amount = +form.elements[id].value;
-          if (amount > 0) {
-            const oscillator = context.createOscillator(),
-              g = context.createGain();
-            oscillator.type = "sine";
-            oscillator.frequency.value = freq;
-            g.gain.value = amount / 2200;
-            oscillator.connect(g).connect(master);
-            oscillator.start();
-            nodes.push(oscillator, g);
-          }
+          saveMap(entry);
+          content.querySelector("#result-status").textContent =
+            "Saved on this device. Other people who use this browser profile may be able to see it.";
+        } catch {
+          content.querySelector("#result-status").textContent =
+            "This browser could not save the note. Try Download instead.";
         }
-        root.querySelector("#sound-status").textContent =
-          "A quiet, computer-generated mix is playing. Lower the sliders or stop whenever you like.";
-      } catch {
-        root.querySelector("#sound-status").textContent =
-          "Audio is not available in this browser.";
-      }
+      };
+      content.querySelector("#download-map").onclick = () =>
+        downloadText(`${tool.id}.txt`, text());
+      content.querySelector("#copy-map").onclick = async () => {
+        try {
+          await navigator.clipboard.writeText(text());
+          content.querySelector("#result-status").textContent = "Copied.";
+        } catch {
+          content.querySelector("#result-status").textContent =
+            "Copy was blocked by this browser. Use Download instead.";
+        }
+      };
+      result.scrollIntoView({ behavior: "smooth" });
     };
-    form.addEventListener("input", () => {
-      if (nodes.length)
-        root.querySelector("#sound-status").textContent =
-          "Changes take effect next time you press Play.";
-    });
+    form.onreset = () => {
+      setTimeout(() => {
+        content.querySelector("#tool-result").hidden = true;
+        updateCreative();
+      }, 0);
+    };
+    if (tool.kind === "pattern") {
+      content
+        .querySelectorAll("input,select")
+        .forEach((el) => el.addEventListener("input", updateCreative));
+      content
+        .querySelectorAll("select")
+        .forEach((el) => el.addEventListener("change", updateCreative));
+      updateCreative();
+    }
+    if (tool.kind === "sound") {
+      let context = null,
+        nodes = [];
+      const stop = () => {
+        for (const n of nodes)
+          try {
+            n.stop?.();
+            n.disconnect?.();
+          } catch {}
+        nodes = [];
+        content.querySelector("#sound-status").textContent = "Sound stopped.";
+      };
+      content.querySelector("#sound-stop").onclick = stop;
+      content.querySelector("#sound-play").onclick = async () => {
+        stop();
+        try {
+          const C = window.AudioContext || window.webkitAudioContext;
+          if (!C) throw Error();
+          context = context || new C();
+          await context.resume();
+          const form = content.querySelector("#feature-form"),
+            master = context.createGain();
+          master.gain.value = 0.11;
+          master.connect(context.destination);
+          const noise = context.createBufferSource();
+          const buffer = context.createBuffer(
+              1,
+              context.sampleRate * 2,
+              context.sampleRate,
+            ),
+            samples = buffer.getChannelData(0);
+          for (let i = 0; i < samples.length; i++)
+            samples[i] = (Math.random() * 2 - 1) * 0.22;
+          noise.buffer = buffer;
+          noise.loop = true;
+          const filter = context.createBiquadFilter();
+          filter.type = "lowpass";
+          filter.frequency.value = 600;
+          const gain = context.createGain();
+          gain.gain.value = +form.elements.rain.value / 10;
+          noise.connect(filter).connect(gain).connect(master);
+          noise.start();
+          nodes.push(noise, filter, gain, master);
+          for (const [id, freq] of [
+            ["tone", 110],
+            ["pulse", 55],
+          ]) {
+            const amount = +form.elements[id].value;
+            if (amount > 0) {
+              const oscillator = context.createOscillator(),
+                g = context.createGain();
+              oscillator.type = "sine";
+              oscillator.frequency.value = freq;
+              g.gain.value = amount / 2200;
+              oscillator.connect(g).connect(master);
+              oscillator.start();
+              nodes.push(oscillator, g);
+            }
+          }
+          content.querySelector("#sound-status").textContent =
+            "A quiet, computer-generated mix is playing. Lower the sliders or stop whenever you like.";
+        } catch {
+          content.querySelector("#sound-status").textContent =
+            "Audio is not available in this browser.";
+        }
+      };
+      form.addEventListener("input", () => {
+        if (nodes.length)
+          content.querySelector("#sound-status").textContent =
+            "Changes take effect next time you press Play.";
+      });
+    }
   }
 }
 function patternControls() {
@@ -417,7 +488,7 @@ function renderMaps(root) {
             )
             .join(
               "",
-            )}</div><label class="field">Update the status<select data-status="${esc(m.id)}">${["New observation", "Possible pattern", "Seems reliable", "Testing this", "No longer fits"].map((x) => `<option ${m.status === x ? "selected" : ""}>${x}</option>`).join("")}</select></label></article>`,
+            )}</div>${m.moodCheck ? moodComparisonMarkup(m.moodCheck.before, m.moodCheck.after) : ""}<label class="field">Update the status<select data-status="${esc(m.id)}">${["New observation", "Possible pattern", "Seems reliable", "Testing this", "No longer fits"].map((x) => `<option ${m.status === x ? "selected" : ""}>${x}</option>`).join("")}</select></label></article>`,
       )
       .join("") ||
     '<div class="empty">Nothing saved yet. In a tool, choose “Save to My Maps” when a note is useful to keep.</div>'
@@ -469,6 +540,17 @@ function downloadText(name, text, type = "text/plain") {
 }
 
 export function renderCompass(root, emotions, onChoose) {
+  root.innerHTML = `<div class="wrap emotion-page">${area("Feel & notice", "A feeling has more than one dimension.", "Start broadly. Pleasantness and energy are separate sliders; they don’t decide which word is right. Choose any level of detail—or none.")}${moodRatingMarkup({ id: "compass-mood-before", outputId: "compass-mood-before-value", buttonId: "compass-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you explore the compass.", buttonText: "Open the emotion compass →" })}</div>`;
+  bindMoodRating(root, {
+    id: "compass-mood-before",
+    outputId: "compass-mood-before-value",
+    buttonId: "compass-mood-start",
+    onSubmit: (moodBefore) =>
+      renderCompassContent(root, emotions, onChoose, moodBefore),
+  });
+}
+
+function renderCompassContent(root, emotions, onChoose, moodBefore) {
   let x = 0,
     y = 0,
     current = null,
@@ -622,30 +704,35 @@ export function renderCompass(root, emotions, onChoose) {
   function renderCheckIn(chosen = "") {
     const box = root.querySelector("#emotion-checkin");
     box.hidden = false;
+    renderCheckInForm(chosen, moodBefore);
+    box.scrollIntoView({ behavior: "smooth" });
+  }
+  function renderCheckInForm(chosen, moodBefore) {
+    const box = root.querySelector("#emotion-checkin");
     box.innerHTML = `<p class="eyebrow">A separate feelings check-in</p><h2>Stay curious about this feeling.</h2><p>This is not the eight-question emotion-to-action reflection. It is an optional, short check-in attached to the compass.</p><form id="feelings-form">${[
-      ["word", "What word or words fit right now?"],
-      [
-        "where",
-        "Where were you, and what happened just before the feeling changed?",
-      ],
-      [
-        "body",
-        "What, if anything, do you notice in your body, energy or surroundings?",
-      ],
-      ["urge", "What are you drawn to do, if anything?"],
-      ["need", "What might matter or need attention?"],
-      [
-        "help",
-        "Would support, rest, information, movement, company, a boundary, or “nothing yet” be useful?",
-      ],
-    ]
-      .map(
-        ([id, label]) =>
-          `<label class="field">${label}<textarea name="${id}" ${id === "word" ? `placeholder="${esc(chosen)}"` : ""}></textarea></label>`,
-      )
-      .join(
-        "",
-      )}<div class="row"><button class="button">Finish check-in</button><button class="button secondary" id="close-checkin" type="button">Close without saving</button></div></form><div id="feelings-summary" class="notice" hidden></div><p class="fine">Nothing is sent to the site. Use Save on this device only if you want this check-in in My Maps.</p>`;
+        ["word", "What word or words fit right now?"],
+        [
+          "where",
+          "Where were you, and what happened just before the feeling changed?",
+        ],
+        [
+          "body",
+          "What, if anything, do you notice in your body, energy or surroundings?",
+        ],
+        ["urge", "What are you drawn to do, if anything?"],
+        ["need", "What might matter or need attention?"],
+        [
+          "help",
+          "Would support, rest, information, movement, company, a boundary, or “nothing yet” be useful?",
+        ],
+      ]
+        .map(
+          ([id, label]) =>
+            `<label class="field">${label}<textarea name="${id}" ${id === "word" ? `placeholder="${esc(chosen)}"` : ""}></textarea></label>`,
+        )
+        .join(
+          "",
+        )}<div class="row"><button class="button">Finish check-in</button><button class="button secondary" id="close-checkin" type="button">Close without saving</button></div></form><div id="feelings-summary" class="notice" hidden></div><p class="fine">Nothing is sent to the site. Save this check-in to My Maps only if you choose to.</p>`;
     box.querySelector("#close-checkin").onclick = () => (box.hidden = true);
     box.querySelector("form").onsubmit = (e) => {
       e.preventDefault();
@@ -657,25 +744,48 @@ export function renderCompass(root, emotions, onChoose) {
       summary.innerHTML = `<h3>Your check-in</h3>${Object.entries(d)
         .filter(([, v]) => v)
         .map(([k, v]) => `<p><b>${esc(k)}</b><br>${esc(v)}</p>`)
-        .join(
-          "",
-        )}<button class="button" id="save-feelings" type="button">Save to My Maps</button><p class="fine" id="save-feelings-status" role="status"></p>`;
-      summary.querySelector("#save-feelings").onclick = () => {
-        try {
-          saveMap({
-            title: "Feelings check-in",
-            tool: "emotion-check-in",
-            answers: d,
-          });
-          summary.querySelector("#save-feelings-status").textContent =
-            "Saved on this device.";
-        } catch {
-          summary.querySelector("#save-feelings-status").textContent =
-            "Could not save here. You can keep these notes in this tab or copy them.";
-        }
-      };
+        .join("")}${moodRatingMarkup({
+          id: "compass-checkin-after",
+          outputId: "compass-checkin-after-value",
+          buttonId: "compass-checkin-compare",
+          heading: "How are you feeling now?",
+          intro: "After the check-in, slide to mark your overall mood again.",
+          buttonText: "Show my mood change →",
+        })}<div id="compass-mood-comparison" hidden></div><button class="button" id="save-feelings" type="button" hidden>Save to My Maps</button><p class="fine" id="save-feelings-status" role="status"></p>`;
+      bindMoodRating(box, {
+        id: "compass-checkin-after",
+        outputId: "compass-checkin-after-value",
+        buttonId: "compass-checkin-compare",
+        onSubmit: (moodAfter) => {
+          const comparison = box.querySelector(
+            "#compass-mood-comparison",
+          );
+          comparison.innerHTML = moodComparisonMarkup(
+            moodBefore,
+            moodAfter,
+          );
+            comparison.hidden = false;
+            comparison.scrollIntoView({ behavior: "smooth", block: "center" });
+            const saveButton = box.querySelector("#save-feelings");
+          saveButton.hidden = false;
+          saveButton.onclick = () => {
+            try {
+              saveMap({
+                title: "Feelings check-in",
+                tool: "emotion-check-in",
+                answers: d,
+                moodCheck: { before: moodBefore, after: moodAfter },
+              });
+              box.querySelector("#save-feelings-status").textContent =
+                "Saved on this device.";
+            } catch {
+              box.querySelector("#save-feelings-status").textContent =
+                "Could not save here. You can keep these notes in this tab.";
+            }
+          };
+        },
+      });
     };
-    box.scrollIntoView({ behavior: "smooth" });
   }
   root.querySelector("#checkin-link").onclick = () =>
     renderCheckIn(current?.label || "");

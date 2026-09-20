@@ -15,13 +15,18 @@ import {
   renderRoutes,
   renderCommunity,
   renderInstall,
+  moodRatingMarkup,
+  bindMoodRating,
+  moodComparisonMarkup,
 } from "./features.mjs";
 const main = document.querySelector("main");
 let posts = [],
   loadError = "",
   selectedEmotion = null,
   answers = Array(8).fill(""),
-  questionStep = 0;
+  questionStep = 0,
+  questionMoodBefore = null,
+  questionMoodAfter = null;
 let libraryState = {
   view: "curriculum",
   query: "",
@@ -358,11 +363,41 @@ const prompts = [
   "For example: uncertainty, a practical obstacle, a relationship conflict, a value trade-off, a structural constraint, or something else.",
 ];
 function questioning() {
+  if (questionMoodBefore === null) {
+    main.innerHTML = `<div class="wrap question-layout"><a href="#tools">← All tools</a><p class="eyebrow" style="margin-top:30px">02 / From emotion to action</p>${moodRatingMarkup({ id: "question-mood-before", outputId: "question-mood-before-value", buttonId: "question-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you work through the questions.", buttonText: "Begin reflection →" })}</div>`;
+    bindMoodRating(main, {
+      id: "question-mood-before",
+      outputId: "question-mood-before-value",
+      buttonId: "question-mood-start",
+      onSubmit: (value) => {
+        questionMoodBefore = value;
+        questioning();
+      },
+    });
+    return;
+  }
   const complete = questionStep === 8;
-  main.innerHTML = `<div class="wrap question-layout"><a href="#tools">← All tools</a><p class="eyebrow" style="margin-top:30px">02 / From emotion to action</p>${selectedEmotion ? `<p class="badge">Starting with ${esc(selectedEmotion.label)}</p>` : ""}<div class="progress" aria-label="Reflection steps">${questions.map((q, i) => `<button data-step="${i}" class="${i <= questionStep ? "active" : ""}" aria-label="Question ${i + 1}: ${esc(q)}" ${i === questionStep ? 'aria-current="step"' : ""}></button>`).join("")}</div>${complete ? `<div class="question-panel"><h2>Your reflection.</h2><p>You can return to any question and change your answer.</p><div class="review">${questions.map((q, i) => `<section><h3>${i + 1}. ${esc(q)}</h3><p>${esc(answers[i] || "Not answered")}</p></section>`).join("")}</div><div class="row"><button class="button" id="export-reflection">Download reflection</button><button class="button secondary" id="restart">Start again</button></div></div>` : `<div class="question-panel"><p class="eyebrow">Question ${questionStep + 1} of 8</p><h2 id="question-title">${esc(questions[questionStep])}</h2><p>${esc(prompts[questionStep])}</p><textarea id="answer" aria-labelledby="question-title" placeholder="Write what comes to mind…">${esc(answers[questionStep])}</textarea><div class="question-nav"><button class="button secondary" id="previous" ${questionStep === 0 ? "disabled" : ""}>← Previous</button><button class="button" id="next">${questionStep === 7 ? "Review reflection" : "Next question"} →</button></div></div>`}<div class="notice"><p>Your answers stay in this tab unless you choose to save a draft on this device. They are never sent to the website owner.</p><div class="row"><button class="chip" id="save-reflection">Save on this device</button><button class="chip" id="load-reflection">Load saved draft</button><button class="chip" id="clear-reflection">Clear saved draft</button></div><p id="reflection-status" role="status" class="fine"></p></div></div>`;
+  main.innerHTML = `<div class="wrap question-layout"><a href="#tools">← All tools</a><p class="eyebrow" style="margin-top:30px">02 / From emotion to action</p>${selectedEmotion ? `<p class="badge">Starting with ${esc(selectedEmotion.label)}</p>` : ""}<div class="progress" aria-label="Reflection steps">${questions.map((q, i) => `<button data-step="${i}" class="${i <= questionStep ? "active" : ""}" aria-label="Question ${i + 1}: ${esc(q)}" ${i === questionStep ? 'aria-current="step"' : ""}></button>`).join("")}</div>${complete ? `<div class="question-panel"><h2>Your reflection.</h2><p>You can return to any question and change your answer.</p><div class="review">${questions.map((q, i) => `<section><h3>${i + 1}. ${esc(q)}</h3><p>${esc(answers[i] || "Not answered")}</p></section>`).join("")}</div>${questionMoodAfter === null ? moodRatingMarkup({ id: "question-mood-after", outputId: "question-mood-after-value", buttonId: "question-mood-compare", heading: "How are you feeling now?", intro: "After completing your reflection, slide to mark your overall mood again.", buttonText: "Show my mood change →" }) : `${moodComparisonMarkup(questionMoodBefore, questionMoodAfter)}<div class="row"><button class="button" id="export-reflection">Download reflection</button><button class="button secondary" id="restart">Start again</button></div>`}</div>` : `<div class="question-panel"><p class="eyebrow">Question ${questionStep + 1} of 8</p><h2 id="question-title">${esc(questions[questionStep])}</h2><p>${esc(prompts[questionStep])}</p><textarea id="answer" aria-labelledby="question-title" placeholder="Write what comes to mind…">${esc(answers[questionStep])}</textarea><div class="question-nav"><button class="button secondary" id="previous" ${questionStep === 0 ? "disabled" : ""}>← Previous</button><button class="button" id="next">${questionStep === 7 ? "Review reflection" : "Next question"} →</button></div></div>`}<div class="notice"><p>Your answers stay in this tab unless you choose to save a draft on this device. They are never sent to the website owner.</p><div class="row"><button class="chip" id="save-reflection">Save on this device</button><button class="chip" id="load-reflection">Load saved draft</button><button class="chip" id="clear-reflection">Clear saved draft</button></div><p id="reflection-status" role="status" class="fine"></p></div></div>`;
+  if (complete && questionMoodAfter === null) {
+    bindMoodRating(main, {
+      id: "question-mood-after",
+      outputId: "question-mood-after-value",
+      buttonId: "question-mood-compare",
+      onSubmit: (value) => {
+        questionMoodAfter = value;
+        questioning();
+        main
+          .querySelector(".mood-comparison")
+          ?.scrollIntoView({ behavior: "smooth", block: "center" });
+      },
+    });
+  }
   const storeAnswer = () => {
     const input = document.getElementById("answer");
-    if (input) answers[questionStep] = input.value;
+    if (input) {
+      if (answers[questionStep] !== input.value) questionMoodAfter = null;
+      answers[questionStep] = input.value;
+    }
   };
   main.querySelectorAll("[data-step]").forEach(
     (b) =>
@@ -386,17 +421,21 @@ function questioning() {
       questioning();
     };
   } else {
-    document.getElementById("export-reflection").onclick = () =>
-      download(
-        "my-reflection.txt",
-        questions
-          .map((q, i) => `${i + 1}. ${q}\n${answers[i] || "Not answered"}`)
-          .join("\n\n"),
-      );
-    document.getElementById("restart").onclick = () => {
+    if (questionMoodAfter !== null)
+      document.getElementById("export-reflection").onclick = () =>
+        download(
+          "my-reflection.txt",
+          `${questions
+            .map((q, i) => `${i + 1}. ${q}\n${answers[i] || "Not answered"}`)
+            .join("\n\n")}\n\nMood before reflection: ${questionMoodBefore} / 10\nMood after reflection: ${questionMoodAfter} / 10\nMood rating change: ${questionMoodAfter - questionMoodBefore} points`,
+        );
+    const restart = document.getElementById("restart");
+    if (restart) restart.onclick = () => {
       if (confirm("Clear the answers in this tab and begin again?")) {
         answers = Array(8).fill("");
         questionStep = 0;
+        questionMoodBefore = null;
+        questionMoodAfter = null;
         questioning();
       }
     };
@@ -407,7 +446,12 @@ function questioning() {
     try {
       localStorage.setItem(
         "ns-reflection",
-        JSON.stringify({ answers, step: questionStep }),
+        JSON.stringify({
+          answers,
+          step: questionStep,
+          moodBefore: questionMoodBefore,
+          moodAfter: questionMoodAfter,
+        }),
       );
       status(
         "Saved on this device. Anyone using this browser profile could load it.",
@@ -428,6 +472,12 @@ function questioning() {
         return;
       answers = d.answers.map(String);
       questionStep = Math.max(0, Math.min(8, +d.step || 0));
+      questionMoodBefore = Number.isInteger(d.moodBefore)
+        ? Math.max(0, Math.min(10, d.moodBefore))
+        : null;
+      questionMoodAfter = Number.isInteger(d.moodAfter)
+        ? Math.max(0, Math.min(10, d.moodAfter))
+        : null;
       questioning();
     } catch {
       status("The saved draft could not be read.");
@@ -452,7 +502,8 @@ function download(name, text) {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 function navigatorPage() {
-  main.innerHTML = `<div class="wrap question-layout">${heading("03 / Make a little room", "One small next step.", "Choose the closest fit. You can change your answer.")}<div class="tabs"><button data-path="overwhelmed" class="active">Too much at once</button><button data-path="stuck">Stuck between options</button><button data-path="disconnected">Disconnected or far away</button></div><div class="card" id="path"></div></div>`;
+  main.innerHTML = `<div class="wrap question-layout">${heading("03 / Make a little room", "One small next step.", "Choose the closest fit. You can change your answer.")}<div id="navigator-mood-gate">${moodRatingMarkup({ id: "navigator-mood-before", outputId: "navigator-mood-before-value", buttonId: "navigator-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you try a small step.", buttonText: "Choose a path →" })}</div><section id="navigator-content" hidden><div class="tabs"><button data-path="overwhelmed" class="active">Too much at once</button><button data-path="stuck">Stuck between options</button><button data-path="disconnected">Disconnected or far away</button></div><div class="card" id="path"></div></section></div>`;
+  let moodBefore = 5;
   const paths = {
     overwhelmed: [
       "Make the moment smaller",
@@ -482,15 +533,36 @@ function navigatorPage() {
   const show = (key) => {
     const [title, steps] = paths[key];
     document.getElementById("path").innerHTML =
-      `<h2>${title}</h2>${steps.map((s) => `<label class="path-step" style="display:block"><input type="checkbox">${s}</label>`).join("")}<a class="button" href="#questions">Explore the situation further →</a>`;
+      `<h2>${title}</h2>${steps.map((s) => `<label class="path-step" style="display:block"><input type="checkbox">${s}</label>`).join("")}<a class="button" href="#questions">Explore the situation further →</a><div class="navigator-mood-finish">${moodRatingMarkup({ id: "navigator-mood-after", outputId: "navigator-mood-after-value", buttonId: "navigator-mood-compare", heading: "How are you feeling now?", intro: "After trying a step, slide to mark your overall mood again.", buttonText: "Show my mood change →" })}<div id="navigator-mood-comparison" hidden></div></div>`;
+    bindMoodRating(main, {
+      id: "navigator-mood-after",
+      outputId: "navigator-mood-after-value",
+      buttonId: "navigator-mood-compare",
+      onSubmit: (moodAfter) => {
+        const comparison = main.querySelector("#navigator-mood-comparison");
+        comparison.innerHTML = moodComparisonMarkup(moodBefore, moodAfter);
+        comparison.hidden = false;
+        comparison.scrollIntoView({ behavior: "smooth", block: "center" });
+      },
+    });
     main
       .querySelectorAll("[data-path]")
       .forEach((b) => b.classList.toggle("active", b.dataset.path === key));
   };
-  main
-    .querySelectorAll("[data-path]")
-    .forEach((b) => (b.onclick = () => show(b.dataset.path)));
-  show("overwhelmed");
+  bindMoodRating(main, {
+    id: "navigator-mood-before",
+    outputId: "navigator-mood-before-value",
+    buttonId: "navigator-mood-start",
+    onSubmit: (value) => {
+      moodBefore = value;
+      main.querySelector("#navigator-mood-gate").hidden = true;
+      main.querySelector("#navigator-content").hidden = false;
+      main
+        .querySelectorAll("[data-path]")
+        .forEach((b) => (b.onclick = () => show(b.dataset.path)));
+      show("overwhelmed");
+    },
+  });
 }
 function about() {
   main.innerHTML = `<div class="wrap about-copy">${heading("About Nobody’s Simple", "Nobody is a type.<br>Or a single story.", "Psychological ideas should help us see our situations more clearly.")}<p>Nobody’s Simple brings together original writing, a structured learning curriculum, videos and practical reflection tools.</p><p>The curriculum moves through four questions: What am I seeing? What keeps this pattern going? What outside forces shape my choices? What should guide the next step?</p><div class="row"><a class="button" href="#library">Explore the curriculum</a><a href="https://www.youtube.com/@nobodyssimple" target="_blank" rel="noopener noreferrer">Visit the YouTube channel ↗</a></div><img class="banner-strip" src="banner.png" alt="Nobody’s Simple — Psychology for choosing what to do next"></div>`;
