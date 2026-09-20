@@ -1,100 +1,85 @@
 const $ = (selector, root = document) => root.querySelector(selector);
 const stage = $("#game-stage");
-const root = $(".ndp-page");
+const page = $(".ndp-page");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const settingInputs = {
+const input = {
   motion: $("#mix-motion"),
   sound: $("#mix-sound"),
   repeat: $("#mix-repeat"),
   unpredictable: $("#mix-unpredictability"),
   brightness: $("#mix-brightness"),
-  input: $("#mix-input"),
+  intensity: $("#mix-input")
 };
-const settingOutputs = {
+const output = {
   motion: $("#motion-value"),
   sound: $("#sound-value"),
   repeat: $("#repeat-value"),
   unpredictable: $("#unpredictability-value"),
   brightness: $("#brightness-value"),
-  input: $("#input-value"),
+  intensity: $("#input-value")
 };
-const settingOutputIds = {
-  motion: "motion-value",
-  sound: "sound-value",
-  repeat: "repeat-value",
-  unpredictable: "unpredictability-value",
-  brightness: "brightness-value",
-  input: "input-value",
-};
-const baseSettings = {
+const defaults = {
   motion: reducedMotion ? 18 : 40,
   sound: 15,
   repeat: 55,
   unpredictable: 25,
   brightness: 75,
-  input: 45,
+  intensity: 45
 };
-const settings = { ...baseSettings };
+const settings = { ...defaults };
 const recipeKey = "nobodys-simple-sensory-recipes-v1";
-const colourSet = [154, 38, 224, 353, 184, 278, 22, 157];
-const stones = [
-  ["river", "#698f8c"], ["amber", "#c68e51"], ["moss", "#78926f"],
-  ["cloud", "#aaa8a0"], ["berry", "#a45f70"], ["tide", "#587b9c"],
-  ["lichen", "#a3a566"], ["plum", "#827397"], ["sand", "#b9a077"],
-  ["rain", "#6889a7"], ["fern", "#6e936f"], ["clay", "#b8755b"],
-  ["dusk", "#6f718f"], ["reed", "#b4a34b"], ["sea glass", "#5fa59b"]
+const bubbleColours = [
+  { rgb: [113, 214, 221], hue: 185 },
+  { rgb: [242, 164, 173], hue: 350 },
+  { rgb: [243, 204, 123], hue: 42 },
+  { rgb: [168, 154, 230], hue: 251 },
+  { rgb: [130, 218, 178], hue: 151 },
+  { rgb: [239, 174, 112], hue: 26 }
 ];
-let activeGame = "liquid";
-let selectedStone = null;
-let sortedStones = Array(stones.length).fill(null);
-let foldCount = 0;
-let pattern = Array(16).fill(false);
-let soundEnabled = false;
-let paused = false;
-let spinning = false;
-let audioContext = null;
-let surfaces = [];
+const noteFrequencies = [261.63, 293.66, 329.63, 392, 440, 523.25, 587.33, 659.25];
+const noteNames = ["C", "D", "E", "G", "A", "C", "D", "E"];
+const followNotes = [0, 2, 4, 6, 7, 5, 3, 1];
+let activeGame = "bubbles";
+let activeSurface = null;
 let mixerSurface = null;
-let frameTime = 0;
-let motionTime = 0;
-let statusText = "";
+let paused = false;
+let soundEnabled = false;
+let toneStyle = "bell";
+let bubblePace = 0.62;
+let gardenPhase = "day";
+let audioContext = null;
+let followMode = false;
+let followClock = 0;
+let followIndex = 0;
+let simClock = 0;
+let lastFrame = 0;
 
-function clamp(value, min, max) {
-  return Math.min(max, Math.max(min, value));
+function clamp(value, low, high) {
+  return Math.min(high, Math.max(low, value));
 }
 function escapeHTML(value) {
   return String(value).replace(/[&<>"']/g, (ch) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
   })[ch]);
 }
-function readSettings() {
-  Object.keys(settingInputs).forEach((key) => {
-    settings[key] = Number(settingInputs[key].value);
-  });
+function motionRate() {
+  return 0.12 + settings.motion / 100 * 1.38;
 }
-function describeMotion(value) {
-  if (value < 15) return "Almost still";
-  if (value < 38) return "A quiet drift";
-  if (value < 68) return "A steady flow";
-  return "A lively swirl";
-}
-function syncSettings() {
-  readSettings();
-  Object.keys(settings).forEach((key) => {
-    settingOutputs[key].value = String(settings[key]);
-    settingOutputs[key].textContent = String(settings[key]);
+function syncMixer() {
+  Object.keys(input).forEach((key) => {
+    settings[key] = Number(input[key].value);
+    output[key].value = String(settings[key]);
+    output[key].textContent = String(settings[key]);
   });
-  root.style.setProperty("--nd-brightness", String(0.55 + settings.brightness * 0.006));
-  $("#preview-caption").textContent = describeMotion(settings.motion);
+  page.style.setProperty("--nd-brightness", String(0.48 + settings.brightness * 0.0065));
+  $("#preview-caption").textContent = settings.motion < 15 ? "Almost still" : settings.motion < 38 ? "A quiet drift" : settings.motion < 68 ? "A steady flow" : "A lively swirl";
 }
 if (reducedMotion) {
-  settingInputs.motion.value = String(baseSettings.motion);
+  input.motion.value = String(defaults.motion);
   $("#motion-note").hidden = false;
 }
-Object.values(settingInputs).forEach((input) => {
-  input.addEventListener("input", syncSettings);
-});
-syncSettings();
+Object.values(input).forEach((slider) => slider.addEventListener("input", syncMixer));
+syncMixer();
 
 function setTab(name) {
   const yard = name === "yard";
@@ -116,130 +101,149 @@ $(".ndp-tabs").addEventListener("keydown", (event) => {
   setTab(next);
   (next === "yard" ? $("#tab-yard") : $("#tab-mixer")).focus();
 });
-document.querySelectorAll("[data-open-mixer]").forEach((button) => {
-  button.addEventListener("click", () => {
-    setTab("mixer");
-    $("#tab-mixer").focus();
-  });
+$("[data-open-mixer]").addEventListener("click", () => {
+  setTab("mixer");
+  $("#tab-mixer").focus();
 });
 
-function stageMarkup(title, description, controls, content, status) {
+function stageFrame(title, description, controls, content, status) {
   stage.innerHTML =
-    '<section class="ndp-stage' + (paused ? " ndp-paused" : "") + '">' +
+    '<section class="ndp-stage">' +
       '<div class="ndp-stage-head"><div><h2>' + title + '</h2><p>' + description + '</p></div>' +
       '<div class="ndp-stage-tools">' + controls + '</div></div>' +
       '<div class="ndp-stage-content">' + content + '</div>' +
       '<p class="ndp-stage-status" id="game-status" role="status" aria-live="polite">' + status + '</p>' +
     '</section>';
 }
-function standardControls(extra) {
-  const pauseLabel = paused ? "Resume movement" : "Pause movement";
+function soundControl() {
+  return '<button type="button" class="ndp-control secondary" data-action="sound" aria-pressed="' + soundEnabled + '">' + (soundEnabled ? "Sound on" : "Sound off") + '</button>';
+}
+function movementControls(extra) {
   return (extra || "") +
-    '<button type="button" class="ndp-control secondary" data-action="toggle-pause" aria-pressed="' + paused + '">' + pauseLabel + '</button>' +
+    '<button type="button" class="ndp-control secondary" data-action="pause" aria-pressed="' + paused + '">' + (paused ? "Resume" : "Pause") + '</button>' +
     '<button type="button" class="ndp-control secondary" data-action="reset">Reset</button>';
 }
-function canvasMarkup(label) {
-  return '<canvas id="stim-canvas" class="ndp-canvas" aria-hidden="true" title="' + escapeHTML(label) + '"></canvas>';
+function makeCanvas(label, id) {
+  return '<canvas class="ndp-canvas" id="' + id + '" aria-hidden="true" title="' + escapeHTML(label) + '"></canvas>';
 }
-function stoneMarkup(index) {
-  const stone = stones[index];
-  const selected = selectedStone === index;
-  return '<button type="button" class="ndp-stone" data-stone="' + index + '" style="--stone-color:' + stone[1] + '" aria-label="' +
-    escapeHTML(stone[0]) + ' stone" aria-pressed="' + selected + '">' + escapeHTML(stone[0]) + '</button>';
+function makeBubble() {
+  const colour = bubbleColours[Math.floor(Math.random() * bubbleColours.length)];
+  const depth = 0.32 + Math.random() * 0.68;
+  const minSide = Math.min(activeSurface.width || 500, activeSurface.height || 350);
+  return {
+    x: Math.random() * (activeSurface.width || 500),
+    y: Math.random() * (activeSurface.height || 350),
+    depth,
+    radius: (12 + Math.random() * 25) * (0.55 + depth * 0.65),
+    rise: (0.08 + depth * 0.08) * bubblePace,
+    drift: (Math.random() - 0.5) * 0.045,
+    wobble: Math.random() * Math.PI * 2,
+    colour,
+    angle: Math.random() * Math.PI * 2,
+    widthRatio: 0.78 + Math.random() * 0.3,
+    scale: minSide / 360
+  };
 }
-function renderStoneTokens() {
-  const bed = $("#stone-bed", stage);
-  if (!bed) return;
-  bed.innerHTML = stones.map((stone, index) => sortedStones[index] === null ? stoneMarkup(index) : "").join("");
-  ["a", "b", "c"].forEach((bowl) => {
-    const target = $("#bowl-" + bowl + "-items", stage);
-    target.innerHTML = sortedStones.map((group, index) =>
-      group === bowl ? '<span class="ndp-stone-chip" style="--stone-color:' + stones[index][1] + '" title="' + escapeHTML(stones[index][0]) + ' stone"></span>' : ""
-    ).join("");
-    const amount = sortedStones.filter((group) => group === bowl).length;
-    $("#bowl-" + bowl, stage).setAttribute("aria-label", "Move selected stone to bowl " + bowl.toUpperCase() + ". " + amount + " stones.");
-  });
+function seedBubbles(surface) {
+  surface.bubbles = [];
+  const amount = 10 + Math.round(settings.repeat * 0.14);
+  for (let i = 0; i < amount; i += 1) {
+    const bubble = makeBubble();
+    bubble.y = Math.random() * (surface.height || 350);
+    surface.bubbles.push(bubble);
+  }
 }
-function setGame(game) {
+function canvasMarkupForBubble() {
+  return '<div class="ndp-pace" role="group" aria-label="Bubble speed"><span class="ndp-pace-label">Float pace</span>' +
+    '<button type="button" class="ndp-option" data-pace="0.38" aria-pressed="false">Slow</button>' +
+    '<button type="button" class="ndp-option" data-pace="0.62" aria-pressed="true">Steady</button>' +
+    '<button type="button" class="ndp-option" data-pace="0.94" aria-pressed="false">Quick</button></div>' +
+    '<div class="ndp-bubble-area">' + makeCanvas("Colourful glass bubbles drift up; touch one to pop it.", "game-canvas") + '</div>';
+}
+function musicKeys() {
+  return noteNames.map((name, index) =>
+    '<button type="button" class="ndp-music-key" data-note="' + index + '" style="--key-hue:' + (index * 41 + 28) % 360 + '" aria-label="Play ' + name + ', bar ' + (index + 1) + '">' +
+      '<span class="ndp-key-label">' + name + '</span><span class="ndp-key-note">' + (index + 1) + '</span></button>'
+  ).join("");
+}
+function renderGame(game) {
+  if (activeSurface && activeSurface.resizeObserver) activeSurface.resizeObserver.disconnect();
   activeGame = game;
-  selectedStone = null;
-  pattern = Array(16).fill(false);
-  soundEnabled = false;
-  spinning = false;
-  surfaces = [];
+  activeSurface = null;
+  followMode = false;
+  followClock = 0;
+  followIndex = 0;
   document.querySelectorAll(".ndp-game-choice").forEach((button) => {
     const selected = button.dataset.game === game;
     button.classList.toggle("active", selected);
     button.setAttribute("aria-pressed", String(selected));
   });
-
-  if (game === "stones") {
-    stageMarkup(
-      "Sort stones",
-      "Move smooth little tokens into any groups you like. There is no right sorting rule.",
-      standardControls(),
-      '<div class="ndp-stones-layout"><div><p class="ndp-game-hint">Choose a stone, then choose a bowl. You can sort by colour, texture, or whatever catches your eye.</p><div class="ndp-stone-bed" id="stone-bed" aria-label="Unsorted stones"></div></div><div class="ndp-bowls" aria-label="Your groups">' +
-        ["a", "b", "c"].map((key) => '<button type="button" class="ndp-bowl" id="bowl-' + key + '" data-bowl="' + key + '"><span>Bowl ' + key.toUpperCase() + '</span><span class="ndp-bowl-items" id="bowl-' + key + '-items"></span></button>').join("") +
-      '</div></div>',
-      "Select one stone, then place it in a bowl. Reset to start again."
+  if (game === "bubbles") {
+    stageFrame(
+      "Bubble Pop",
+      "Touch a bubble and watch it burst into a little spray of light. Misses do not count.",
+      movementControls(soundControl()),
+      canvasMarkupForBubble(),
+      "No score and nothing to lose. Pop as many or as few as you like."
     );
-    renderStoneTokens();
-  } else if (game === "folds") {
-    stageMarkup(
-      "Endless paper folds",
-      "Make a fold, unfold it, and watch a new little pattern appear.",
-      standardControls(),
-      canvasMarkup("Animated paper folds") +
-        '<div class="ndp-paper-controls"><button type="button" class="ndp-control" data-action="fold">Fold once</button><span class="ndp-paper-count" id="fold-count" aria-live="polite">No folds yet</span><button type="button" class="ndp-control secondary" data-action="unfold">Unfold once</button></div>',
-      "Use the buttons to fold and unfold the paper. There is no end state."
-    );
-    const surface = createSurface($("#stim-canvas", stage), "folds");
-    surface.foldCount = foldCount;
-    surfaces.push(surface);
-  } else if (game === "liquid") {
-    stageMarkup(
-      "Liquid motion",
-      "Move a finger or pointer through the colour. Pause it, or give it a nudge.",
-      standardControls('<button type="button" class="ndp-control" data-action="nudge">Give it a nudge</button>'),
-      canvasMarkup("Slow moving pools of colour"),
-      "Move over the colour field to change its flow. You can also use the nudge button."
-    );
-    surfaces.push(createSurface($("#stim-canvas", stage), "liquid"));
-  } else if (game === "particles") {
-    stageMarkup(
-      "Bouncing particles",
-      "A soft field of moving lights. Your pointer can send a little ripple through it.",
-      standardControls('<button type="button" class="ndp-control" data-action="nudge">Add a ripple</button>'),
-      canvasMarkup("Bouncing particles"),
-      "Move over the field or use Add a ripple. Adjust the mix to change motion and pattern."
-    );
-    surfaces.push(createSurface($("#stim-canvas", stage), "particles"));
-  } else if (game === "tapping") {
-    const cells = Array.from({ length: 16 }, (_, index) =>
-      '<button type="button" class="ndp-pattern-cell" data-tile="' + index + '" style="--tile-hue:' + colourSet[index % colourSet.length] + '" aria-label="Pattern tile ' + (index + 1) + '" aria-pressed="false"></button>'
-    ).join("");
-    stageMarkup(
-      "Pattern taps",
-      "Tap out any shape or rhythm that feels satisfying. No beat to learn, no pattern to solve.",
-      standardControls('<button type="button" class="ndp-control" data-action="sound-toggle" aria-pressed="false">Turn sound on</button>'),
-      '<div class="ndp-pattern-grid" aria-label="A grid of sixteen repeatable pattern tiles">' + cells + '</div>',
-      "Sound is off. Turn it on if you want soft tones when you tap."
+    activeSurface = makeSurface($("#game-canvas"), "bubbles");
+    seedBubbles(activeSurface);
+    updatePaceButtons();
+  } else if (game === "music") {
+    const controls = soundControl() + movementControls();
+    stageFrame(
+      "Big Music Board",
+      "Tap the bars to play a note. Try your own tune, or follow the moving glow.",
+      controls,
+      '<div class="ndp-music-wrap"><p class="ndp-music-note">Eight big, touch-friendly notes · sound begins only when you turn it on</p>' +
+        '<div class="ndp-music-board" role="group" aria-label="Eight note xylophone">' + musicKeys() + '</div>' +
+        '<div class="ndp-tone-options" role="group" aria-label="Choose an instrument sound">' +
+          '<button type="button" class="ndp-option active" data-tone="bell" aria-pressed="true">Soft bell</button>' +
+          '<button type="button" class="ndp-option" data-tone="wood" aria-pressed="false">Wood bar</button>' +
+          '<button type="button" class="ndp-option" data-tone="warm" aria-pressed="false">Warm tone</button>' +
+        '</div>' +
+        '<div class="ndp-followline"><button type="button" class="ndp-option" data-action="follow" aria-pressed="false">Start follow-the-glow</button><span class="ndp-small-note">It loops gently. There is no score or wrong note.</span></div></div>',
+      soundEnabled ? "Sound is on. Tap any bar to hear a note." : "The bars light up silently until you switch sound on."
     );
   } else {
-    stageMarkup(
-      "Little mechanism",
-      "A looping arrangement of gears. Watch it turn, or set its pace yourself.",
-      standardControls('<button type="button" class="ndp-control" data-action="spin-toggle" aria-pressed="false">Start turning</button><button type="button" class="ndp-control secondary" data-action="spin-step">Turn once</button>'),
-      canvasMarkup("A set of interlocking gears"),
-      "Start the loop or turn it one step at a time."
+    stageFrame(
+      "Touch Garden",
+      "Touch the ground to grow flowers; touch the sky to release butterflies.",
+      movementControls(soundControl()),
+      '<div class="ndp-phase" role="group" aria-label="Choose a time of day">' +
+        '<span class="ndp-pace-label">Time of day</span>' +
+        '<button type="button" class="ndp-option" data-phase="dawn" aria-pressed="false">Dawn</button>' +
+        '<button type="button" class="ndp-option" data-phase="day" aria-pressed="true">Day</button>' +
+        '<button type="button" class="ndp-option" data-phase="dusk" aria-pressed="false">Dusk</button>' +
+      '</div><div class="ndp-garden-area">' + makeCanvas("Tap the ground to grow a flower or tap the sky to release butterflies.", "game-canvas") + '</div>',
+      "Each touch makes something happen. Sound is optional."
     );
-    const surface = createSurface($("#stim-canvas", stage), "mechanism");
-    surface.spinning = false;
-    surface.manualAngle = 0;
-    surfaces.push(surface);
+    activeSurface = makeSurface($("#game-canvas"), "garden");
+    activeSurface.flowers = [];
+    activeSurface.butterflies = [];
+    activeSurface.phase = gardenPhase;
+    activeSurface.particles = [];
+    updatePhaseButtons();
   }
+  updateSoundButtons();
 }
-function createSurface(canvas, type) {
+function updateSoundButtons() {
+  document.querySelectorAll('[data-action="sound"]').forEach((button) => {
+    button.textContent = soundEnabled ? "Sound on" : "Sound off";
+    button.setAttribute("aria-pressed", String(soundEnabled));
+  });
+}
+function updatePaceButtons() {
+  document.querySelectorAll("[data-pace]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(Number(button.dataset.pace) === bubblePace));
+  });
+}
+function updatePhaseButtons() {
+  document.querySelectorAll("[data-phase]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.phase === gardenPhase));
+  });
+}
+function makeSurface(canvas, type) {
   const surface = {
     canvas,
     ctx: canvas.getContext("2d"),
@@ -248,20 +252,97 @@ function createSurface(canvas, type) {
     height: 0,
     time: 0,
     pointer: { x: 0.5, y: 0.5, until: 0 },
+    bubbles: [],
+    bursts: [],
+    flowers: [],
+    butterflies: [],
     particles: [],
-    foldCount,
-    spinning: false,
-    manualAngle: 0
+    phase: "day"
   };
+  const resize = () => resizeSurface(surface);
+  if (window.ResizeObserver) {
+    surface.resizeObserver = new ResizeObserver(resize);
+    surface.resizeObserver.observe(canvas);
+  }
   canvas.addEventListener("pointermove", (event) => {
     const rect = canvas.getBoundingClientRect();
-    surface.pointer.x = clamp((event.clientX - rect.left) / Math.max(rect.width, 1), 0, 1);
-    surface.pointer.y = clamp((event.clientY - rect.top) / Math.max(rect.height, 1), 0, 1);
-    surface.pointer.until = performance.now() + 850;
+    surface.pointer.x = clamp(event.clientX - rect.left, 0, rect.width);
+    surface.pointer.y = clamp(event.clientY - rect.top, 0, rect.height);
+    surface.pointer.until = performance.now() + 500;
   });
-  canvas.addEventListener("pointerleave", () => {
-    surface.pointer.until = 0;
-  });
+  if (type === "bubbles") {
+    canvas.addEventListener("pointerdown", (event) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left, y = event.clientY - rect.top;
+      let hit = -1;
+      for (let i = surface.bubbles.length - 1; i >= 0; i -= 1) {
+        const bubble = surface.bubbles[i];
+        const dx = x - bubble.x, dy = y - bubble.y;
+        const radius = bubble.radius * bubble.scale * (1.12 + settings.intensity / 650);
+        const hit = (dx / (radius * bubble.widthRatio)) ** 2 + (dy / radius) ** 2;
+        if (hit <= 1) {
+          hit = i;
+          break;
+        }
+      }
+      if (hit < 0) {
+        surface.bursts.push({ x, y, age: 0, life: 0.45, radius: 18, colour: bubbleColours[Math.floor(Math.random() * bubbleColours.length)] });
+        updateStatus("A ripple. Tap a bubble to pop it.");
+        return;
+      }
+      const bubble = surface.bubbles.splice(hit, 1)[0];
+      surface.bursts.push({ x: bubble.x, y: bubble.y, age: 0, life: 0.75, radius: bubble.radius, colour: bubble.colour });
+      const bits = 9 + Math.round(settings.intensity * 0.13);
+      for (let i = 0; i < bits; i += 1) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 24 + Math.random() * (54 + settings.intensity);
+        surface.particles.push({ x: bubble.x, y: bubble.y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, age: 0, life: 0.55 + Math.random() * 0.5, size: 2 + Math.random() * 3, colour: bubble.colour });
+      }
+      if (soundEnabled) playNote(Math.floor(Math.random() * noteFrequencies.length), "pop");
+      updateStatus("Pop. The next bubble is on its way.");
+    });
+  }
+  if (type === "garden") {
+    canvas.addEventListener("pointerdown", (event) => {
+      const rect = canvas.getBoundingClientRect();
+      const x = event.clientX - rect.left, y = event.clientY - rect.top;
+      const ground = surface.height * 0.72;
+      if (y >= ground) {
+        const bloomSize = 0.74 + settings.intensity / 100 * 0.8;
+        const flower = {
+          x,
+          y: clamp(y - 18, surface.height * 0.48, ground - 10),
+          birth: simClock,
+          size: (15 + Math.random() * 9) * bloomSize,
+          hue: Math.floor(Math.random() * 360),
+          petals: 5 + Math.round(settings.repeat / 15),
+          sway: Math.random() * Math.PI * 2
+        };
+        surface.flowers.push(flower);
+        if (surface.flowers.length > 90) surface.flowers.shift();
+        surface.bursts.push({ x, y: ground - 4, age: 0, life: 0.8, radius: 10, colour: { rgb: [255, 231, 158], hue: 43 } });
+        if (soundEnabled) playNote(Math.floor(Math.random() * 5), "chime");
+        updateStatus("A new flower has grown.");
+      } else {
+        const amount = 1 + Math.round(settings.intensity / 42);
+        for (let i = 0; i < amount; i += 1) {
+          surface.butterflies.push({
+            x: clamp(x + (Math.random() - 0.5) * 45, 10, surface.width - 10),
+            y: clamp(y + (Math.random() - 0.5) * 35, 10, ground - 30),
+            vx: (Math.random() - 0.5) * (20 + settings.unpredictable * 0.5),
+            vy: -(12 + Math.random() * 18),
+            size: 9 + Math.random() * 8,
+            hue: Math.floor(Math.random() * 360),
+            wing: Math.random() * Math.PI * 2,
+            life: 9 + Math.random() * 8
+          });
+        }
+        surface.bursts.push({ x, y, age: 0, life: 0.65, radius: 8, colour: { rgb: [239, 237, 255], hue: 260 } });
+        if (soundEnabled) playNote(Math.floor(Math.random() * 8), "chime");
+        updateStatus(amount === 1 ? "A butterfly is fluttering through the garden." : "Butterflies are fluttering through the garden.");
+      }
+    });
+  }
   resizeSurface(surface);
   return surface;
 }
@@ -271,411 +352,559 @@ function resizeSurface(surface) {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
   const width = Math.round(rect.width * dpr);
   const height = Math.round(rect.height * dpr);
-  if (surface.canvas.width !== width || surface.canvas.height !== height) {
-    surface.canvas.width = width;
-    surface.canvas.height = height;
+  const changed = surface.canvas.width !== width || surface.canvas.height !== height;
+  if (surface.canvas.width !== width) surface.canvas.width = width;
+  if (surface.canvas.height !== height) surface.canvas.height = height;
+  if (changed) {
     surface.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    surface.width = rect.width;
-    surface.height = rect.height;
   }
+  surface.width = rect.width;
+  surface.height = rect.height;
   return true;
 }
-function fillBackground(ctx, width, height, colour) {
-  ctx.globalCompositeOperation = "source-over";
-  ctx.fillStyle = colour;
+function updateStatus(text) {
+  const status = $("#game-status");
+  if (status) status.textContent = text;
+}
+function rgba(rgb, alpha) {
+  return "rgba(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + "," + alpha + ")";
+}
+function drawBackground(ctx, width, height, top, middle, bottom) {
+  const gradient = ctx.createLinearGradient(0, 0, 0, height);
+  gradient.addColorStop(0, top);
+  gradient.addColorStop(0.58, middle);
+  gradient.addColorStop(1, bottom);
+  ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, width, height);
 }
-function drawLiquid(surface, now, compact) {
-  const ctx = surface.ctx, w = surface.width, h = surface.height;
-  fillBackground(ctx, w, h, "#15383d");
-  ctx.globalCompositeOperation = "screen";
-  const motion = settings.motion / 100;
-  const surprise = settings.unpredictable / 100;
-  const colors = ["#67cead", "#e6a95d", "#899ce0", "#e27684", "#57b9bf", "#be82bc"];
-  const count = compact ? 4 : 6;
-  for (let i = 0; i < count; i += 1) {
-    const phase = surface.time * (0.16 + i * 0.025) + i * 2.18;
-    const sway = Math.sin(surface.time * 0.17 + i * 1.31) * surprise * 0.07;
-    let cx = w * (0.5 + Math.cos(phase) * (compact ? 0.24 : 0.25) + sway);
-    let cy = h * (0.5 + Math.sin(phase * 0.83) * (compact ? 0.21 : 0.24) - sway);
-    if (now < surface.pointer.until) {
-      const pull = settings.input / 100 * 0.24;
-      cx += (surface.pointer.x * w - cx) * pull;
-      cy += (surface.pointer.y * h - cy) * pull;
-    }
-    const radius = Math.min(w, h) * (0.22 + (Math.sin(phase * 0.47) + 1) * 0.055);
-    const gradient = ctx.createRadialGradient(cx, cy, 0, cx, cy, radius);
-    gradient.addColorStop(0, colors[i] + "e8");
-    gradient.addColorStop(0.44, colors[i] + "9a");
-    gradient.addColorStop(1, colors[i] + "00");
-    ctx.fillStyle = gradient;
-    ctx.beginPath();
-    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-    ctx.fill();
-  }
-  ctx.globalCompositeOperation = "source-over";
-  ctx.strokeStyle = "rgb(229 241 217 / 0.22)";
-  ctx.lineWidth = 1;
-  for (let i = 0; i < 4; i += 1) {
-    const r = Math.min(w, h) * (0.12 + i * 0.045 + Math.sin(surface.time * 0.25 + i) * 0.012 * motion);
-    ctx.beginPath();
-    ctx.ellipse(w * 0.5, h * 0.5, r * 1.5, r * 0.72, Math.sin(surface.time * 0.08) * 0.24, 0, Math.PI * 2);
-    ctx.stroke();
-  }
-}
-function makeParticle() {
-  return {
-    x: Math.random(),
-    y: Math.random(),
-    vx: (Math.random() - 0.5) * 0.18,
-    vy: (Math.random() - 0.5) * 0.18,
-    size: 1.5 + Math.random() * 4,
-    hue: Math.floor(145 + Math.random() * 170)
-  };
-}
-function drawParticles(surface, now, dt) {
-  const ctx = surface.ctx, w = surface.width, h = surface.height;
-  fillBackground(ctx, w, h, "#142f35");
-  const desired = 22 + Math.round(settings.repeat * 0.55);
-  while (surface.particles.length < desired) surface.particles.push(makeParticle());
-  if (surface.particles.length > desired) surface.particles.length = desired;
-  const move = settings.motion / 100;
-  const jitter = settings.unpredictable / 100;
-  const input = settings.input / 100;
-  const seconds = Math.min(dt, 70) / 1000;
-  surface.particles.forEach((p, i) => {
-    if (move > 0) {
-      p.vx += (Math.random() - 0.5) * jitter * seconds * 0.55;
-      p.vy += (Math.random() - 0.5) * jitter * seconds * 0.55;
-      p.x += p.vx * seconds * (0.25 + move * 1.9);
-      p.y += p.vy * seconds * (0.25 + move * 1.9);
-      if (p.x < 0.025 || p.x > 0.975) p.vx *= -1;
-      if (p.y < 0.04 || p.y > 0.96) p.vy *= -1;
-      p.x = clamp(p.x, 0.025, 0.975);
-      p.y = clamp(p.y, 0.04, 0.96);
-    }
-    if (now < surface.pointer.until) {
-      const dx = p.x - surface.pointer.x, dy = p.y - surface.pointer.y;
-      const distance = Math.sqrt(dx * dx + dy * dy) || 0.001;
-      if (distance < 0.32) {
-        const force = (0.32 - distance) * input * seconds * 0.55;
-        p.x += dx / distance * force;
-        p.y += dy / distance * force;
-      }
-    }
-    const x = p.x * w, y = p.y * h;
-    ctx.beginPath();
-    ctx.fillStyle = "hsla(" + p.hue + ", 69%, 76%, .84)";
-    ctx.shadowColor = "hsla(" + p.hue + ", 75%, 65%, .42)";
-    ctx.shadowBlur = 8;
-    ctx.arc(x, y, p.size, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.shadowBlur = 0;
-    if (settings.repeat > 52 && i % 3 === 0) {
-      ctx.beginPath();
-      ctx.strokeStyle = "hsla(" + p.hue + ", 58%, 74%, .21)";
-      ctx.moveTo(x, y);
-      ctx.lineTo(x + p.vx * 38, y + p.vy * 38);
-      ctx.stroke();
-    }
-  });
-}
-function drawGear(ctx, x, y, radius, teeth, angle, colour) {
+function drawBubble(surface, bubble) {
+  const ctx = surface.ctx, r = bubble.radius * bubble.scale;
+  const x = bubble.x, y = bubble.y;
   ctx.save();
   ctx.translate(x, y);
-  ctx.rotate(angle);
+  ctx.rotate(bubble.angle);
+  ctx.scale(bubble.widthRatio, 1);
+  ctx.shadowColor = rgba(bubble.colour.rgb, 0.46 * bubble.depth);
+  ctx.shadowBlur = r * 0.72;
+  const sphere = ctx.createRadialGradient(-r * 0.34, -r * 0.4, r * 0.025, r * 0.17, r * 0.1, r * 1.13);
+  sphere.addColorStop(0, "rgba(255,255,255,.87)");
+  sphere.addColorStop(0.12, rgba(bubble.colour.rgb, 0.79));
+  sphere.addColorStop(0.52, rgba(bubble.colour.rgb, 0.48));
+  sphere.addColorStop(0.84, rgba(bubble.colour.rgb, 0.18));
+  sphere.addColorStop(1, "rgba(230,246,255,.42)");
   ctx.beginPath();
-  for (let i = 0; i < teeth * 4; i += 1) {
-    const a = i / (teeth * 4) * Math.PI * 2;
-    const r = radius * ([1, 1, 0.82, 0.82][i % 4]);
-    const px = Math.cos(a) * r, py = Math.sin(a) * r;
-    if (i === 0) ctx.moveTo(px, py); else ctx.lineTo(px, py);
-  }
-  ctx.closePath();
-  ctx.fillStyle = colour;
+  ctx.arc(0, 0, r, 0, Math.PI * 2);
+  ctx.fillStyle = sphere;
   ctx.fill();
-  ctx.strokeStyle = "rgb(255 246 223 / .5)";
-  ctx.lineWidth = 2;
+  ctx.shadowBlur = 0;
+  ctx.strokeStyle = "rgba(241,252,255,.53)";
+  ctx.lineWidth = Math.max(0.8, r * 0.025);
   ctx.stroke();
   ctx.beginPath();
-  ctx.arc(0, 0, radius * 0.57, 0, Math.PI * 2);
-  ctx.fillStyle = "#183a3e";
+  ctx.ellipse(-r * 0.34, -r * 0.45, r * 0.22, r * 0.1, -0.42, 0, Math.PI * 2);
+  const glint = ctx.createRadialGradient(-r * 0.34, -r * 0.45, 0, -r * 0.34, -r * 0.45, r * 0.24);
+  glint.addColorStop(0, "rgba(255,255,255,.98)");
+  glint.addColorStop(1, "rgba(255,255,255,0)");
+  ctx.fillStyle = glint;
   ctx.fill();
-  ctx.stroke();
-  for (let i = 0; i < 6; i += 1) {
-    const a = i / 6 * Math.PI * 2;
-    ctx.beginPath();
-    ctx.moveTo(Math.cos(a) * radius * 0.2, Math.sin(a) * radius * 0.2);
-    ctx.lineTo(Math.cos(a) * radius * 0.48, Math.sin(a) * radius * 0.48);
-    ctx.stroke();
-  }
   ctx.beginPath();
-  ctx.arc(0, 0, radius * 0.12, 0, Math.PI * 2);
-  ctx.fillStyle = "#f4ca75";
+  ctx.ellipse(r * 0.37, r * 0.37, r * 0.09, r * 0.04, 0.6, 0, Math.PI * 2);
+  ctx.fillStyle = "rgba(255,255,255,.64)";
   ctx.fill();
   ctx.restore();
 }
-function drawMechanism(surface) {
+function drawBubbles(surface, now, dt) {
   const ctx = surface.ctx, w = surface.width, h = surface.height;
-  fillBackground(ctx, w, h, "#18383d");
-  const cx = w / 2, cy = h / 2 + 10;
-  const baseAngle = surface.manualAngle + (surface.spinning ? surface.time * (0.18 + settings.motion * 0.008) : 0);
-  const r = Math.min(w * 0.12, h * 0.22, 70);
-  drawGear(ctx, cx - r * 0.95, cy, r, 12, baseAngle, "#d48f4e");
-  drawGear(ctx, cx + r * 0.95, cy, r, 12, -baseAngle, "#72aaa0");
-  drawGear(ctx, cx, cy - r * 1.08, r * 0.72, 10, -baseAngle * 1.2, "#9c8fc5");
-  drawGear(ctx, cx, cy + r * 1.08, r * 0.72, 10, baseAngle * 1.2, "#dbb560");
-  ctx.beginPath();
-  ctx.strokeStyle = "rgb(235 229 205 / 0.17)";
-  ctx.setLineDash([3, 8]);
-  ctx.arc(cx, cy, r * 3, 0, Math.PI * 2);
-  ctx.stroke();
-  ctx.setLineDash([]);
+  drawBackground(ctx, w, h, "#122e43", "#224f64", "#28636a");
+  const horizon = ctx.createLinearGradient(0, h * 0.25, w, h);
+  horizon.addColorStop(0, "rgba(123,193,204,.05)");
+  horizon.addColorStop(0.5, "rgba(190,222,208,.16)");
+  horizon.addColorStop(1, "rgba(118,179,197,.02)");
+  ctx.fillStyle = horizon;
+  ctx.fillRect(0, h * 0.22, w, h * 0.78);
+  const rate = motionRate();
+  const seconds = Math.min(dt, 50) / 1000;
+  const target = 10 + Math.round(settings.repeat * 0.14);
+  while (surface.bubbles.length < target) {
+    const bubble = makeBubble();
+    bubble.x = Math.random() * w;
+    bubble.y = h + bubble.radius + Math.random() * h * 0.45;
+    surface.bubbles.push(bubble);
+  }
+  if (surface.bubbles.length > target + 4) surface.bubbles.length = target + 4;
+  surface.bubbles.sort((a, b) => a.depth - b.depth);
+  surface.bubbles.forEach((bubble) => {
+    const driftAmount = 0.018 + settings.unpredictable / 100 * 0.075;
+    bubble.wobble += seconds * rate * (0.45 + settings.unpredictable / 100);
+    bubble.y -= (bubble.rise + bubble.depth * 0.025) * rate * seconds * 60;
+    bubble.x += (bubble.drift + Math.sin(bubble.wobble) * driftAmount * 0.12) * rate * seconds * 42;
+    bubble.angle += Math.sin(bubble.wobble * 0.4) * seconds * rate * 0.04;
+    if (bubble.x < -bubble.radius) bubble.x = w + bubble.radius;
+    if (bubble.x > w + bubble.radius) bubble.x = -bubble.radius;
+    if (bubble.y < -bubble.radius * 2) {
+      bubble.x = Math.random() * w;
+      bubble.y = h + bubble.radius + Math.random() * 80;
+    }
+    drawBubble(surface, bubble);
+  });
+  surface.bursts = surface.bursts.filter((burst) => burst.age < burst.life);
+  surface.bursts.forEach((burst) => {
+    burst.age += seconds * rate;
+    const progress = clamp(burst.age / burst.life, 0, 1);
+    const alpha = 1 - progress;
+    ctx.beginPath();
+    ctx.arc(burst.x, burst.y, burst.radius * (0.6 + progress * 1.9), 0, Math.PI * 2);
+    ctx.strokeStyle = rgba(burst.colour.rgb, alpha * 0.72);
+    ctx.lineWidth = 1.5 + (1 - progress) * 2.2;
+    ctx.stroke();
+  });
+  surface.particles = surface.particles.filter((particle) => particle.age < particle.life);
+  surface.particles.forEach((particle) => {
+    particle.age += seconds * rate;
+    particle.x += particle.vx * seconds * rate;
+    particle.y += particle.vy * seconds * rate;
+    particle.vy += 24 * seconds * rate;
+    const alpha = 1 - particle.age / particle.life;
+    ctx.beginPath();
+    ctx.fillStyle = rgba(particle.colour.rgb, alpha);
+    ctx.shadowColor = rgba(particle.colour.rgb, alpha * 0.75);
+    ctx.shadowBlur = 7;
+    ctx.arc(particle.x, particle.y, particle.size * alpha, 0, Math.PI * 2);
+    ctx.fill();
+  });
+  ctx.shadowBlur = 0;
+  const light = ctx.createRadialGradient(w * 0.76, h * 0.12, 0, w * 0.76, h * 0.12, h * 0.9);
+  light.addColorStop(0, "rgba(198,238,229,.13)");
+  light.addColorStop(1, "rgba(198,238,229,0)");
+  ctx.fillStyle = light;
+  ctx.fillRect(0, 0, w, h);
+  const shimmer = 0.1 + Math.sin(surface.time * 1.2) * 0.035;
+  ctx.fillStyle = "rgba(207,244,235," + shimmer + ")";
+  for (let i = 0; i < 5; i += 1) {
+    const x = w * (i + 0.5) / 5 + Math.sin(surface.time * 0.24 + i) * w * 0.04;
+    ctx.fillRect(x, 0, 1, h);
+  }
 }
-function drawFolds(surface) {
-  const ctx = surface.ctx, w = surface.width, h = surface.height;
-  fillBackground(ctx, w, h, "#18373c");
-  const cx = w / 2, cy = h / 2 + 4;
-  const count = clamp(3 + Math.floor(settings.repeat / 18), 3, 8);
-  const fold = surface.foldCount || 0;
-  const width = Math.min(w * 0.69, 600);
-  const height = Math.min(h * 0.54, 190);
-  const phase = paused ? 0 : Math.sin(surface.time * 0.35) * settings.motion / 100 * 0.035;
+const gardenPalettes = {
+  dawn: ["#ffbe93", "#cf8b9a", "#526c8a", "#607e63", "#1f443c"],
+  day: ["#73c7e2", "#a5d7d0", "#f1d98d", "#88b96f", "#315842"],
+  dusk: ["#473e7b", "#a36a93", "#e5a06d", "#5e6377", "#263747"]
+};
+function drawHill(ctx, width, height, baseline, color, amp, phase, shift) {
+  ctx.beginPath();
+  ctx.moveTo(0, height);
+  ctx.lineTo(0, baseline);
+  for (let step = 0; step <= 12; step += 1) {
+    const x = step / 12 * width;
+    const wave = Math.sin(step * 0.58 + phase + shift) * amp + Math.sin(step * 0.21 + shift * 2) * amp * 0.5;
+    const y = baseline + wave;
+    if (step === 0) ctx.lineTo(x, y);
+    else {
+      const px = (step - 0.5) / 12 * width;
+      const py = baseline + Math.sin((step - 0.5) * 0.58 + phase + shift) * amp * 1.1;
+      ctx.quadraticCurveTo(px, py, x, y);
+    }
+  }
+  ctx.lineTo(width, height);
+  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+function drawCloud(ctx, x, y, scale, alpha) {
   ctx.save();
-  ctx.translate(cx, cy);
-  for (let i = count - 1; i >= 0; i -= 1) {
-    const spread = (i - (count - 1) / 2) * (4 + fold * 0.8);
-    const rotation = phase * (i % 2 ? 1 : -1) + ((fold + i) % 2 ? -0.025 : 0.025);
+  ctx.globalAlpha = alpha;
+  ctx.fillStyle = "rgba(255,248,230,.62)";
+  ctx.shadowColor = "rgba(255,248,232,.28)";
+  ctx.shadowBlur = 15 * scale;
+  ctx.beginPath();
+  ctx.ellipse(x, y, 48 * scale, 14 * scale, 0, 0, Math.PI * 2);
+  ctx.ellipse(x - 23 * scale, y - 8 * scale, 23 * scale, 19 * scale, -0.2, 0, Math.PI * 2);
+  ctx.ellipse(x + 7 * scale, y - 14 * scale, 28 * scale, 25 * scale, 0.1, 0, Math.PI * 2);
+  ctx.ellipse(x + 31 * scale, y - 4 * scale, 22 * scale, 17 * scale, 0.2, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+function drawGardenBackground(surface) {
+  const ctx = surface.ctx, w = surface.width, h = surface.height;
+  const colors = gardenPalettes[gardenPhase];
+  drawBackground(ctx, w, h, colors[0], colors[1], colors[2]);
+  const sunX = w * (gardenPhase === "dawn" ? 0.19 : gardenPhase === "dusk" ? 0.8 : 0.72);
+  const sunY = h * (gardenPhase === "dawn" || gardenPhase === "dusk" ? 0.46 : 0.24);
+  const sunR = Math.min(w, h) * (gardenPhase === "day" ? 0.095 : 0.07);
+  const aura = ctx.createRadialGradient(sunX, sunY, sunR * 0.25, sunX, sunY, sunR * 3.4);
+  aura.addColorStop(0, gardenPhase === "dusk" ? "rgba(250,164,123,.46)" : "rgba(255,235,177,.47)");
+  aura.addColorStop(1, "rgba(255,226,175,0)");
+  ctx.fillStyle = aura;
+  ctx.fillRect(sunX - sunR * 3.5, sunY - sunR * 3.5, sunR * 7, sunR * 7);
+  const orb = ctx.createRadialGradient(sunX - sunR * 0.28, sunY - sunR * 0.3, sunR * 0.04, sunX, sunY, sunR);
+  orb.addColorStop(0, "#fff8dc");
+  orb.addColorStop(0.58, gardenPhase === "dusk" ? "#ffbd83" : "#f8dfa0");
+  orb.addColorStop(1, gardenPhase === "dusk" ? "#ec8f81" : "#f0b56b");
+  ctx.beginPath();
+  ctx.arc(sunX, sunY, sunR, 0, Math.PI * 2);
+  ctx.fillStyle = orb;
+  ctx.shadowColor = "rgba(255,222,162,.6)";
+  ctx.shadowBlur = sunR * 0.5;
+  ctx.fill();
+  ctx.shadowBlur = 0;
+  if (gardenPhase !== "day") {
+    for (let i = 0; i < 42; i += 1) {
+      const x = (i * 97 + 23) % Math.max(w, 1);
+      const y = (i * 53 + 17) % Math.floor(h * 0.48);
+      const blink = 0.23 + (Math.sin(surface.time * 0.5 + i * 4) + 1) * 0.22;
+      ctx.beginPath();
+      ctx.fillStyle = "rgba(255,244,212," + blink + ")";
+      ctx.arc(x, y, (i % 3) * 0.38 + 0.65, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+  const cloudOffset = surface.time * (gardenPhase === "day" ? 3.1 : 1.5) * motionRate();
+  drawCloud(ctx, (w * 0.36 + cloudOffset) % (w + 180) - 75, h * 0.26, 0.82, 0.24);
+  drawCloud(ctx, (w * 0.76 - cloudOffset * 0.47 + w) % (w + 150) - 58, h * 0.39, 0.56, 0.19);
+  drawHill(ctx, w, h, h * 0.61, colors[3], h * 0.04, surface.time * 0.08, 0.3);
+  drawHill(ctx, w, h, h * 0.69, colors[4], h * 0.035, surface.time * 0.1, 2.4);
+  const foreground = ctx.createLinearGradient(0, h * 0.72, 0, h);
+  foreground.addColorStop(0, colors[4]);
+  foreground.addColorStop(1, "#172f32");
+  ctx.fillStyle = foreground;
+  ctx.fillRect(0, h * 0.72, w, h * 0.28);
+  const glow = ctx.createLinearGradient(0, h * 0.72, 0, h * 0.93);
+  glow.addColorStop(0, "rgba(255,226,156,.21)");
+  glow.addColorStop(1, "rgba(255,226,156,0)");
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, h * 0.72, w, h * 0.21);
+}
+function drawFlower(ctx, flower, h, now) {
+  const grow = clamp((simClock - flower.birth) / 0.9, 0, 1);
+  const sway = Math.sin(simClock * 0.8 + flower.sway) * 0.035 * settings.motion / 100;
+  const stemBottom = Math.min(h * 0.88, flower.y + h * 0.18);
+  const stemHeight = (stemBottom - flower.y) * grow;
+  ctx.save();
+  ctx.translate(flower.x, stemBottom);
+  ctx.rotate(sway);
+  const stemGradient = ctx.createLinearGradient(-3, 0, 4, 0);
+  stemGradient.addColorStop(0, "#22553e");
+  stemGradient.addColorStop(0.52, "#94bd72");
+  stemGradient.addColorStop(1, "#3e7750");
+  ctx.strokeStyle = stemGradient;
+  ctx.lineWidth = Math.max(2, flower.size * 0.16);
+  ctx.lineCap = "round";
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.quadraticCurveTo(-flower.size * 0.18, -stemHeight * 0.45, 0, -stemHeight);
+  ctx.stroke();
+  ctx.fillStyle = "#83b96e";
+  for (let side = -1; side <= 1; side += 2) {
     ctx.save();
-    ctx.translate(spread, spread * 0.35);
-    ctx.rotate(rotation);
-    const shade = 88 - i * 5 + (fold % 3) * 3;
-    ctx.fillStyle = "hsl(" + (40 + i * 8 + fold * 3) + " 57% " + shade + "%)";
-    ctx.strokeStyle = "rgb(40 58 52 / .34)";
-    ctx.lineWidth = 1.3;
+    ctx.translate(side * 1.5, -stemHeight * (side === -1 ? 0.45 : 0.64));
+    ctx.rotate(side * 0.45);
     ctx.beginPath();
-    ctx.moveTo(-width / 2, -height / 2);
-    ctx.lineTo(width * 0.38, -height / 2);
-    ctx.lineTo(width / 2, -height / 2 + height * 0.2);
-    ctx.lineTo(width / 2, height / 2);
-    ctx.lineTo(-width / 2, height / 2);
-    ctx.closePath();
+    ctx.ellipse(side * flower.size * 0.42, 0, flower.size * 0.42, flower.size * 0.14, side * 0.2, 0, Math.PI * 2);
     ctx.fill();
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(width * 0.38, -height / 2);
-    ctx.lineTo(width * 0.38, -height / 2 + height * 0.22);
-    ctx.lineTo(width / 2, -height / 2 + height * 0.2);
-    ctx.fillStyle = "rgb(255 255 255 / .32)";
-    ctx.fill();
-    ctx.stroke();
     ctx.restore();
   }
   ctx.restore();
-}
-function drawSurface(surface, now, dt) {
-  if (!resizeSurface(surface)) return;
-  surface.time += Math.min(dt, 70) / 1000 * (settings.motion / 100) * 1.3;
-  if (surface.type === "liquid" || surface.type === "preview") drawLiquid(surface, now, surface.type === "preview");
-  if (surface.type === "particles") drawParticles(surface, now, dt);
-  if (surface.type === "mechanism") drawMechanism(surface);
-  if (surface.type === "folds") drawFolds(surface);
-}
-function animate(now) {
-  const dt = frameTime ? now - frameTime : 16;
-  frameTime = now;
-  if (!paused) {
-    motionTime += Math.min(dt, 70) / 1000 * (settings.motion / 100) * 1.3;
-    surfaces.forEach((surface) => drawSurface(surface, now, dt));
-    if (mixerSurface) drawSurface(mixerSurface, now, dt);
+  if (grow < 1) return;
+  const bloomAge = simClock - flower.birth - 0.9;
+  const bloomScale = 0.72 + Math.min(0.28, bloomAge * 0.6);
+  ctx.save();
+  ctx.translate(flower.x, flower.y);
+  ctx.rotate(sway * 1.8);
+  ctx.scale(bloomScale, bloomScale);
+  const petals = flower.petals;
+  const petalGradient = ctx.createRadialGradient(-flower.size * 0.14, -flower.size * 0.22, 1, 0, 0, flower.size * 0.85);
+  petalGradient.addColorStop(0, "hsla(" + flower.hue + ", 98%, 91%, .98)");
+  petalGradient.addColorStop(0.48, "hsla(" + (flower.hue + 13) + ", 86%, 72%, .94)");
+  petalGradient.addColorStop(1, "hsla(" + (flower.hue - 11) + ", 76%, 55%, .94)");
+  ctx.shadowColor = "hsla(" + flower.hue + ", 95%, 73%, .44)";
+  ctx.shadowBlur = flower.size * 0.52;
+  for (let i = 0; i < petals; i += 1) {
+    const angle = i / petals * Math.PI * 2 + bloomAge * 0.014;
+    ctx.save();
+    ctx.rotate(angle);
+    ctx.beginPath();
+    ctx.ellipse(0, -flower.size * 0.5, flower.size * 0.27, flower.size * 0.55, 0, 0, Math.PI * 2);
+    ctx.fillStyle = petalGradient;
+    ctx.fill();
+    ctx.strokeStyle = "rgba(255,247,220,.48)";
+    ctx.lineWidth = 0.8;
+    ctx.stroke();
+    ctx.restore();
   }
-  requestAnimationFrame(animate);
+  ctx.shadowBlur = 0;
+  const center = ctx.createRadialGradient(-flower.size * 0.1, -flower.size * 0.1, 1, 0, 0, flower.size * 0.25);
+  center.addColorStop(0, "#fff2b4");
+  center.addColorStop(0.62, "#e3ad56");
+  center.addColorStop(1, "#aa6949");
+  ctx.beginPath();
+  ctx.arc(0, 0, flower.size * 0.24, 0, Math.PI * 2);
+  ctx.fillStyle = center;
+  ctx.fill();
+  ctx.restore();
 }
-
-function setStatus(text) {
-  const el = $("#game-status", stage);
-  if (el) el.textContent = text;
+function drawButterfly(ctx, butterfly, dt, surface) {
+  const speed = motionRate();
+  const seconds = Math.min(dt, 50) / 1000;
+  butterfly.life -= seconds * speed * 0.24;
+  butterfly.wing += seconds * (6 + settings.motion / 12);
+  butterfly.x += (butterfly.vx + Math.sin(surface.time * 0.7 + butterfly.wing) * settings.unpredictable * 0.16) * seconds * speed;
+  butterfly.y += butterfly.vy * seconds * speed;
+  const flap = Math.max(0.08, Math.abs(Math.sin(butterfly.wing)));
+  const hue = butterfly.hue;
+  ctx.save();
+  ctx.translate(butterfly.x, butterfly.y);
+  ctx.rotate(Math.sin(butterfly.wing * 0.5) * 0.13);
+  ctx.globalAlpha = clamp(butterfly.life / 0.7, 0, 1);
+  ctx.shadowColor = "hsla(" + hue + ", 90%, 80%, .68)";
+  ctx.shadowBlur = butterfly.size * 0.7;
+  for (let side = -1; side <= 1; side += 2) {
+    ctx.save();
+    ctx.scale(side * flap, 1);
+    const wing = ctx.createRadialGradient(0, -butterfly.size * 0.2, 1, 0, 0, butterfly.size * 1.2);
+    wing.addColorStop(0, "hsla(" + hue + ", 100%, 91%, .96)");
+    wing.addColorStop(0.5, "hsla(" + (hue + 26) + ", 86%, 70%, .9)");
+    wing.addColorStop(1, "hsla(" + (hue + 54) + ", 78%, 56%, .78)");
+    ctx.beginPath();
+    ctx.ellipse(side * butterfly.size * 0.57, -butterfly.size * 0.23, butterfly.size * 0.66, butterfly.size * 0.43, side * 0.43, 0, Math.PI * 2);
+    ctx.fillStyle = wing;
+    ctx.fill();
+    ctx.beginPath();
+    ctx.ellipse(side * butterfly.size * 0.47, butterfly.size * 0.23, butterfly.size * 0.42, butterfly.size * 0.3, side * -0.44, 0, Math.PI * 2);
+    ctx.fillStyle = "hsla(" + (hue + 64) + ", 82%, 77%, .78)";
+    ctx.fill();
+    ctx.restore();
+  }
+  ctx.shadowBlur = 0;
+  ctx.beginPath();
+  ctx.ellipse(0, 0, butterfly.size * 0.08, butterfly.size * 0.68, 0, 0, Math.PI * 2);
+  ctx.fillStyle = "#293c43";
+  ctx.fill();
+  ctx.strokeStyle = "rgba(255,249,218,.8)";
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(0, -butterfly.size * 0.5);
+  ctx.quadraticCurveTo(-butterfly.size * 0.3, -butterfly.size * 0.96, -butterfly.size * 0.54, -butterfly.size * 0.76);
+  ctx.moveTo(0, -butterfly.size * 0.5);
+  ctx.quadraticCurveTo(butterfly.size * 0.3, -butterfly.size * 0.96, butterfly.size * 0.54, -butterfly.size * 0.76);
+  ctx.stroke();
+  ctx.restore();
 }
-function updateFoldCount() {
-  const target = $("#fold-count", stage);
-  if (target) target.textContent = foldCount ? foldCount + (foldCount === 1 ? " fold" : " folds") : "No folds yet";
-  const surface = surfaces.find((item) => item.type === "folds");
-  if (surface) surface.foldCount = foldCount;
+function drawGarden(surface, now, dt) {
+  const ctx = surface.ctx, w = surface.width, h = surface.height;
+  drawGardenBackground(surface);
+  const ground = h * 0.72;
+  surface.flowers.forEach((flower) => drawFlower(ctx, flower, h, now));
+  surface.butterflies = surface.butterflies.filter((butterfly) => butterfly.life > 0 && butterfly.y > -25 && butterfly.x > -40 && butterfly.x < w + 40);
+  surface.butterflies.forEach((butterfly) => drawButterfly(ctx, butterfly, dt, surface));
+  surface.bursts = surface.bursts.filter((burst) => burst.age < burst.life);
+  surface.bursts.forEach((burst) => {
+    burst.age += Math.min(dt, 50) / 1000 * motionRate();
+    const p = clamp(burst.age / burst.life, 0, 1);
+    ctx.beginPath();
+    ctx.arc(burst.x, burst.y, burst.radius + p * 22, 0, Math.PI * 2);
+    ctx.strokeStyle = rgba(burst.colour.rgb, (1 - p) * 0.76);
+    ctx.lineWidth = (1 - p) * 3 + 0.4;
+    ctx.stroke();
+  });
+  for (let i = 0; i < 50; i += 1) {
+    const x = (i * 83 + simClock * (i % 2 ? 2 : -1)) % w;
+    const y = ground + (i * 29) % Math.max(1, h - ground);
+    ctx.beginPath();
+    ctx.fillStyle = "rgba(239,231,170," + (0.08 + (i % 4) * 0.035) + ")";
+    ctx.ellipse((x + w) % w, y, 1.2 + i % 3 * 0.45, 2.8 + i % 3, Math.sin(simClock + i) * 0.5, 0, Math.PI * 2);
+    ctx.fill();
+  }
 }
-function refreshStoneStatus() {
-  const left = sortedStones.filter((item) => item === null).length;
-  setStatus(left ? left + " stones remain on the table. Put them in any bowl, or leave them where they are." : "All stones are in bowls. Reset to play again, or leave them just as they are.");
-}
-function playTone(index) {
-  if (!soundEnabled || settings.sound === 0) return;
-  try {
-    const Audio = window.AudioContext || window.webkitAudioContext;
-    if (!Audio) {
-      setStatus("This browser does not support the optional tones.");
-      return;
+function drawLiquidPreview(surface, now, dt) {
+  const ctx = surface.ctx, w = surface.width, h = surface.height;
+  drawBackground(ctx, w, h, "#183943", "#335e64", "#172e39");
+  const colours = [[93, 206, 193], [215, 154, 107], [148, 146, 219], [224, 113, 145]];
+  const rate = motionRate();
+  const t = surface.time;
+  ctx.globalCompositeOperation = "screen";
+  colours.forEach((colour, index) => {
+    const phase = t * (0.24 + index * 0.11) + index * 1.8;
+    let x = w * (0.5 + Math.cos(phase) * 0.24);
+    let y = h * (0.52 + Math.sin(phase * 0.73) * 0.27);
+    if (now < surface.pointer.until) {
+      const pull = settings.intensity / 100 * 0.35;
+      x += (surface.pointer.x * w - x) * pull;
+      y += (surface.pointer.y * h - y) * pull;
     }
-    if (!audioContext) audioContext = new Audio();
+    const radius = Math.min(w, h) * (0.35 + Math.sin(phase * 0.47) * 0.06);
+    const g = ctx.createRadialGradient(x, y, 0, x, y, radius);
+    g.addColorStop(0, rgba(colour, 0.8));
+    g.addColorStop(0.5, rgba(colour, 0.42));
+    g.addColorStop(1, rgba(colour, 0));
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2);
+    ctx.fill();
+  });
+  ctx.globalCompositeOperation = "source-over";
+  ctx.lineWidth = 1;
+  for (let i = 0; i < 4; i += 1) {
+    ctx.beginPath();
+    ctx.strokeStyle = "rgba(237,242,223,.28)";
+    ctx.ellipse(w / 2, h / 2, w * (0.1 + i * 0.09), h * (0.14 + i * 0.13), Math.sin(t * 0.1) * 0.25, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+}
+function ensureAudio() {
+  if (audioContext) {
     if (audioContext.state === "suspended") audioContext.resume();
-    const oscillator = audioContext.createOscillator();
-    const gain = audioContext.createGain();
-    const row = Math.floor(index / 4), col = index % 4;
-    oscillator.type = "sine";
-    oscillator.frequency.value = 195 + col * 48 + row * 33;
-    const volume = 0.012 + settings.sound / 100 * 0.055;
-    const duration = 0.06 + settings.sound / 100 * 0.23;
-    gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
-    gain.gain.exponentialRampToValueAtTime(volume, audioContext.currentTime + 0.012);
-    gain.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + duration);
-    oscillator.connect(gain);
-    gain.connect(audioContext.destination);
-    oscillator.start();
-    oscillator.stop(audioContext.currentTime + duration + 0.015);
+    return audioContext;
+  }
+  const Audio = window.AudioContext || window.webkitAudioContext;
+  if (!Audio) return null;
+  try {
+    audioContext = new Audio();
+    return audioContext;
   } catch {
-    setStatus("Could not start the optional tones. The visual pattern still works.");
+    return null;
   }
 }
-function resetCurrentGame() {
-  if (activeGame === "stones") {
-    sortedStones = Array(stones.length).fill(null);
-    selectedStone = null;
-    renderStoneTokens();
-    setStatus("The stones are ready for another sort. Choose any grouping you like.");
-  } else if (activeGame === "folds") {
-    foldCount = 0;
-    updateFoldCount();
-    setStatus("The paper is unfolded. Fold it again whenever you like.");
-  } else if (activeGame === "liquid" || activeGame === "particles") {
-    const surface = surfaces[0];
-    if (surface) {
-      surface.time = 0;
-      surface.pointer.until = 0;
-      surface.particles = [];
-    }
-    setStatus("The field has settled back to its starting point.");
-  } else if (activeGame === "tapping") {
-    pattern = Array(16).fill(false);
-    document.querySelectorAll("[data-tile]").forEach((tile) => tile.setAttribute("aria-pressed", "false"));
-    soundEnabled = false;
-    const soundButton = $('[data-action="sound-toggle"]', stage);
-    soundButton.textContent = "Turn sound on";
-    soundButton.setAttribute("aria-pressed", "false");
-    setStatus("The pattern is clear. Sound is off.");
-  } else {
-    spinning = false;
-    const surface = surfaces.find((item) => item.type === "mechanism");
-    if (surface) {
-      surface.spinning = false;
-      surface.manualAngle = 0;
-    }
-    const spinButton = $('[data-action="spin-toggle"]', stage);
-    spinButton.textContent = "Start turning";
-    spinButton.setAttribute("aria-pressed", "false");
-    setStatus("The mechanism is still. Start it or turn once.");
+function playNote(index, kind) {
+  const audio = ensureAudio();
+  if (!audio || !soundEnabled || settings.sound === 0) return;
+  const oscillator = audio.createOscillator();
+  const gain = audio.createGain();
+  const frequency = noteFrequencies[clamp(index, 0, noteFrequencies.length - 1)];
+  oscillator.type = toneStyle === "wood" ? "triangle" : toneStyle === "warm" ? "sine" : "sine";
+  oscillator.frequency.setValueAtTime(kind === "pop" ? frequency * 1.25 : frequency, audio.currentTime);
+  if (kind === "pop") oscillator.frequency.exponentialRampToValueAtTime(Math.max(150, frequency * 0.7), audio.currentTime + 0.12);
+  const density = settings.sound / 100;
+  const peak = 0.012 + density * 0.055;
+  const length = kind === "chime" ? 0.3 + settings.repeat / 100 * 0.28 : kind === "pop" ? 0.1 : 0.22 + settings.repeat / 100 * 0.26;
+  gain.gain.setValueAtTime(0.0001, audio.currentTime);
+  gain.gain.exponentialRampToValueAtTime(peak, audio.currentTime + 0.018);
+  gain.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + length);
+  oscillator.connect(gain);
+  gain.connect(audio.destination);
+  oscillator.start();
+  oscillator.stop(audio.currentTime + length + 0.04);
+  if (toneStyle === "bell" && kind !== "pop") {
+    const overtone = audio.createOscillator();
+    const overtoneGain = audio.createGain();
+    overtone.type = "sine";
+    overtone.frequency.value = frequency * 2.01;
+    overtoneGain.gain.setValueAtTime(0.0001, audio.currentTime);
+    overtoneGain.gain.exponentialRampToValueAtTime(peak * 0.22, audio.currentTime + 0.015);
+    overtoneGain.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + length * 0.72);
+    overtone.connect(overtoneGain);
+    overtoneGain.connect(audio.destination);
+    overtone.start();
+    overtone.stop(audio.currentTime + length * 0.8);
   }
 }
-stage.addEventListener("click", (event) => {
-  const tile = event.target.closest("[data-tile]");
-  if (tile && activeGame === "tapping") {
-    const index = Number(tile.dataset.tile);
-    pattern[index] = !pattern[index];
-    tile.setAttribute("aria-pressed", String(pattern[index]));
-    playTone(index);
-    const count = pattern.filter(Boolean).length;
-    setStatus(count ? count + (count === 1 ? " tile lit. Keep making your own pattern." : " tiles lit. Keep making your own pattern.") : "The pattern is clear. Tap any tile to start one.");
-    return;
-  }
-  const stone = event.target.closest("[data-stone]");
-  if (stone && activeGame === "stones") {
-    const index = Number(stone.dataset.stone);
-    selectedStone = selectedStone === index ? null : index;
-    document.querySelectorAll("[data-stone]").forEach((item) => item.setAttribute("aria-pressed", String(Number(item.dataset.stone) === selectedStone)));
-    setStatus(selectedStone === null ? "Stone unselected. Choose any stone to continue." : stones[index][0] + " stone selected. Choose a bowl, or choose another stone.");
-    return;
-  }
-  const bowl = event.target.closest("[data-bowl]");
-  if (bowl && activeGame === "stones") {
-    if (selectedStone === null) {
-      setStatus("Choose a stone first, then choose a bowl.");
-      return;
+function toggleSound() {
+  soundEnabled = !soundEnabled;
+  if (soundEnabled) ensureAudio();
+  updateSoundButtons();
+  updateStatus(soundEnabled ? "Sound is on. Tap any part of the game to hear a soft tone." : "Sound is off. Visual play still works.");
+}
+function lightKey(index) {
+  const key = $('[data-note="' + index + '"]');
+  if (!key) return;
+  key.classList.add("is-lit");
+  window.setTimeout(() => key.classList.remove("is-lit"), 520);
+  if (soundEnabled) playNote(index, "note");
+}
+function resetGame() {
+  if (!activeSurface) {
+    followMode = false;
+    const follow = $('[data-action="follow"]');
+    if (follow) {
+      follow.setAttribute("aria-pressed", "false");
+      follow.textContent = "Start follow-the-glow";
     }
-    sortedStones[selectedStone] = bowl.dataset.bowl;
-    selectedStone = null;
-    renderStoneTokens();
-    refreshStoneStatus();
+    document.querySelectorAll(".ndp-music-key").forEach((key) => key.classList.remove("is-lit"));
+    updateStatus("The board is clear. Play any note, or start the glow loop.");
     return;
   }
-  const button = event.target.closest("[data-action]");
+  if (activeGame === "bubbles") {
+    seedBubbles(activeSurface);
+    activeSurface.bursts = [];
+    activeSurface.particles = [];
+    updateStatus("Fresh bubbles, rising again.");
+  } else if (activeGame === "garden") {
+    activeSurface.flowers = [];
+    activeSurface.butterflies = [];
+    activeSurface.bursts = [];
+    updateStatus("A fresh patch of garden. Touch the ground or sky.");
+  }
+}
+function onStageClick(event) {
+  const button = event.target.closest("button");
   if (!button) return;
-  const action = button.dataset.action;
-  if (action === "toggle-pause") {
-    paused = !paused;
-    const pausedNow = paused;
-    document.querySelectorAll('[data-action="toggle-pause"]').forEach((item) => {
-      item.textContent = pausedNow ? "Resume movement" : "Pause movement";
-      item.setAttribute("aria-pressed", String(pausedNow));
-    });
-    document.querySelectorAll(".ndp-stage").forEach((item) => item.classList.toggle("ndp-paused", pausedNow));
-    setStatus(pausedNow ? "Movement paused. Your controls still work." : "Movement is running again.");
-  } else if (action === "reset") {
-    resetCurrentGame();
-  } else if (action === "fold") {
-    foldCount = Math.min(foldCount + 1, 12);
-    updateFoldCount();
-    setStatus("Fold " + foldCount + ". Fold again or unfold one layer.");
-  } else if (action === "unfold") {
-    foldCount = Math.max(foldCount - 1, 0);
-    updateFoldCount();
-    setStatus(foldCount ? "Unfolded one layer. " + foldCount + (foldCount === 1 ? " fold remains." : " folds remain.") : "Fully unfolded.");
-  } else if (action === "nudge") {
-    const surface = surfaces[0];
-    if (surface) {
-      surface.pointer.x = 0.67;
-      surface.pointer.y = 0.43;
-      surface.pointer.until = performance.now() + 1100 + settings.input * 5;
+  if (button.hasAttribute("data-note") && activeGame === "music") {
+    const index = Number(button.dataset.note);
+    button.classList.add("is-lit");
+    window.setTimeout(() => button.classList.remove("is-lit"), 420);
+    if (soundEnabled) {
+      playNote(index, "note");
+      updateStatus("Note " + noteNames[index] + ". Play another, or start the glow loop.");
+    } else {
+      updateStatus("The bar lit up. Turn sound on if you want to hear its note.");
     }
-    setStatus(activeGame === "liquid" ? "A little current moves through the colour." : "A ripple travels through the particles.");
-  } else if (action === "sound-toggle") {
-    soundEnabled = !soundEnabled;
-    button.setAttribute("aria-pressed", String(soundEnabled));
-    button.textContent = soundEnabled ? "Turn sound off" : "Turn sound on";
-    if (soundEnabled && settings.sound === 0) setStatus("Sound is on, but its density is set to zero. Raise Sound Density in the mixer to hear tones.");
-    else setStatus(soundEnabled ? "Soft tones will play only when you tap a tile." : "Sound is off.");
-  } else if (action === "spin-toggle") {
-    spinning = !spinning;
-    const surface = surfaces.find((item) => item.type === "mechanism");
-    if (surface) surface.spinning = spinning;
-    button.textContent = spinning ? "Stop turning" : "Start turning";
-    button.setAttribute("aria-pressed", String(spinning));
-    setStatus(spinning ? "The gears are turning. Stop them whenever you like." : "The mechanism is still.");
-  } else if (action === "spin-step") {
-    const surface = surfaces.find((item) => item.type === "mechanism");
-    if (surface) surface.manualAngle += 0.35 + settings.input / 100 * 0.9;
-    setStatus("One small turn.");
-  } else if (action === "clear-pattern") {
-    pattern = Array(16).fill(false);
-    document.querySelectorAll("[data-tile]").forEach((item) => item.setAttribute("aria-pressed", "false"));
-    setStatus("The pattern is clear.");
+    return;
   }
-});
-
+  if (button.hasAttribute("data-pace")) {
+    bubblePace = Number(button.dataset.pace);
+    updatePaceButtons();
+    updateStatus("Bubble pace: " + button.textContent + ". Change it whenever you like.");
+    return;
+  }
+  if (button.hasAttribute("data-phase")) {
+    gardenPhase = button.dataset.phase;
+    if (activeSurface) activeSurface.phase = gardenPhase;
+    updatePhaseButtons();
+    updateStatus("The garden light changed to " + button.textContent.toLowerCase() + ".");
+    return;
+  }
+  if (button.hasAttribute("data-tone")) {
+    toneStyle = button.dataset.tone;
+    document.querySelectorAll("[data-tone]").forEach((item) => {
+      const selected = item === button;
+      item.classList.toggle("active", selected);
+      item.setAttribute("aria-pressed", String(selected));
+    });
+    updateStatus(button.textContent + " selected.");
+    return;
+  }
+  const action = button.dataset.action;
+  if (action === "sound") {
+    toggleSound();
+  } else if (action === "pause") {
+    paused = !paused;
+    document.querySelectorAll('[data-action="pause"]').forEach((item) => {
+      item.textContent = paused ? "Resume" : "Pause";
+      item.setAttribute("aria-pressed", String(paused));
+    });
+    updateStatus(paused ? "Movement paused. Your buttons still work." : "Movement resumed.");
+  } else if (action === "reset") {
+    resetGame();
+  } else if (action === "follow") {
+    followMode = !followMode;
+    followClock = 0;
+    followIndex = 0;
+    button.setAttribute("aria-pressed", String(followMode));
+    button.textContent = followMode ? "Stop follow-the-glow" : "Start follow-the-glow";
+    updateStatus(followMode ? "Follow the glow is on. Tap along if you like; there is no score." : "Glow loop stopped. Play any notes you like.");
+  }
+}
+stage.addEventListener("click", onStageClick);
 document.querySelectorAll(".ndp-game-choice").forEach((button) => {
-  button.addEventListener("click", () => setGame(button.dataset.game));
+  button.addEventListener("click", () => renderGame(button.dataset.game));
 });
 
 function getRecipes() {
   try {
-    const saved = JSON.parse(localStorage.getItem(recipeKey) || "[]");
-    return Array.isArray(saved) ? saved.filter((item) => item && typeof item.name === "string" && item.values) : [];
+    const recipes = JSON.parse(localStorage.getItem(recipeKey) || "[]");
+    return Array.isArray(recipes) ? recipes.filter((item) => item && typeof item.name === "string" && item.values) : [];
   } catch {
     return [];
   }
-}
-function renderRecipes() {
-  const container = $("#saved-recipes");
-  const recipes = getRecipes();
-  container.innerHTML = recipes.length ? recipes.map((recipe, index) =>
-    '<div class="ndp-recipe-row"><button type="button" class="ndp-recipe-load" data-load-recipe="' + index + '">' + escapeHTML(recipe.name) + '</button><button type="button" class="ndp-recipe-delete" data-delete-recipe="' + index + '" aria-label="Delete ' + escapeHTML(recipe.name) + '">×</button></div>'
-  ).join("") : '<p class="ndp-small-note">Your saved recipes will appear here.</p>';
 }
 function writeRecipes(recipes) {
   try {
@@ -686,13 +915,20 @@ function writeRecipes(recipes) {
   }
 }
 function captureSettings() {
-  return Object.fromEntries(Object.keys(settingInputs).map((key) => [key, Number(settingInputs[key].value)]));
+  return Object.fromEntries(Object.keys(input).map((key) => [key, Number(input[key].value)]));
 }
-function applyRecipe(values) {
-  Object.keys(settingInputs).forEach((key) => {
-    if (Number.isFinite(Number(values[key]))) settingInputs[key].value = String(clamp(Number(values[key]), 0, 100));
+function applySettings(values) {
+  Object.keys(input).forEach((key) => {
+    if (Number.isFinite(Number(values[key]))) input[key].value = String(clamp(Number(values[key]), 0, 100));
   });
-  syncSettings();
+  syncMixer();
+}
+function renderRecipes() {
+  const container = $("#saved-recipes");
+  const recipes = getRecipes();
+  container.innerHTML = recipes.length ? recipes.map((recipe, index) =>
+    '<div class="ndp-recipe-row"><button type="button" class="ndp-recipe-load" data-load-recipe="' + index + '">' + escapeHTML(recipe.name) + '</button><button type="button" class="ndp-recipe-delete" data-delete-recipe="' + index + '" aria-label="Delete ' + escapeHTML(recipe.name) + '">×</button></div>'
+  ).join("") : '<p class="ndp-small-note">Your saved recipes will appear here.</p>';
 }
 $("#save-recipe").addEventListener("click", () => {
   const name = $("#recipe-name").value.trim();
@@ -703,16 +939,12 @@ $("#save-recipe").addEventListener("click", () => {
     return;
   }
   const recipes = getRecipes();
-  const existing = recipes.findIndex((recipe) => recipe.name.toLowerCase() === name.toLowerCase());
-  const recipe = { name, values: captureSettings() };
-  if (existing >= 0) recipes.splice(existing, 1, recipe);
-  else recipes.unshift(recipe);
+  const duplicate = recipes.findIndex((recipe) => recipe.name.toLowerCase() === name.toLowerCase());
+  const item = { name, values: captureSettings() };
+  if (duplicate >= 0) recipes.splice(duplicate, 1, item);
+  else recipes.unshift(item);
   if (recipes.length > 12) recipes.length = 12;
-  if (!writeRecipes(recipes)) {
-    status.textContent = "This browser could not save the recipe. Check its local storage settings.";
-    return;
-  }
-  status.textContent = "“" + name + "” saved on this device.";
+  status.textContent = writeRecipes(recipes) ? "“" + name + "” saved on this device." : "This browser could not save the recipe.";
   renderRecipes();
 });
 $("#saved-recipes").addEventListener("click", (event) => {
@@ -720,36 +952,61 @@ $("#saved-recipes").addEventListener("click", (event) => {
   const remove = event.target.closest("[data-delete-recipe]");
   const recipes = getRecipes();
   if (load) {
-    const recipe = recipes[Number(load.dataset.loadRecipe)];
-    if (recipe) {
-      applyRecipe(recipe.values);
-      $("#recipe-status").textContent = "Loaded “" + recipe.name + "”.";
+    const item = recipes[Number(load.dataset.loadRecipe)];
+    if (item) {
+      applySettings(item.values);
+      $("#recipe-status").textContent = "Loaded “" + item.name + "”.";
     }
   }
   if (remove) {
     const index = Number(remove.dataset.deleteRecipe);
-    const recipe = recipes[index];
+    const name = recipes[index] && recipes[index].name;
     recipes.splice(index, 1);
     if (writeRecipes(recipes)) {
-      $("#recipe-status").textContent = recipe ? "Deleted “" + recipe.name + "”." : "Recipe deleted.";
       renderRecipes();
-    } else {
-      $("#recipe-status").textContent = "This browser could not delete that recipe.";
+      $("#recipe-status").textContent = name ? "Deleted “" + name + "”." : "Recipe deleted.";
     }
   }
 });
-function createMixerPreview() {
+function createMixer() {
   const canvas = $("#mixer-canvas");
-  mixerSurface = createSurface(canvas, "preview");
-  mixerSurface.pointer.until = 0;
+  mixerSurface = makeSurface(canvas, "preview");
   $("#mixer-nudge").addEventListener("click", () => {
-    mixerSurface.pointer.x = Math.random() * 0.6 + 0.2;
-    mixerSurface.pointer.y = Math.random() * 0.6 + 0.2;
-    mixerSurface.pointer.until = performance.now() + 1300 + settings.input * 8;
+    mixerSurface.pointer.x = mixerSurface.width * (0.24 + Math.random() * 0.55);
+    mixerSurface.pointer.y = mixerSurface.height * (0.24 + Math.random() * 0.55);
+    mixerSurface.pointer.until = performance.now() + 1200 + settings.intensity * 7;
     $("#preview-caption").textContent = "A nudge through the mix";
   });
 }
+function frame(now) {
+  const dt = lastFrame ? Math.min(now - lastFrame, 50) : 16;
+  lastFrame = now;
+  if (!paused) {
+    const seconds = dt / 1000 * motionRate();
+    simClock += seconds;
+    if (activeSurface && resizeSurface(activeSurface)) {
+      activeSurface.time += seconds;
+      if (activeGame === "bubbles") drawBubbles(activeSurface, now, dt);
+      if (activeGame === "garden") drawGarden(activeSurface, now, dt);
+    }
+    if (activeGame === "music" && followMode) {
+      followClock += dt / 1000;
+      const interval = 1.45 - settings.motion / 100 * 0.82;
+      if (followClock >= interval) {
+        followClock = 0;
+        const index = followNotes[followIndex % followNotes.length];
+        followIndex += 1;
+        lightKey(index);
+      }
+    }
+    if (mixerSurface && resizeSurface(mixerSurface)) {
+      mixerSurface.time += seconds * 0.74;
+      drawLiquidPreview(mixerSurface, now, dt);
+    }
+  }
+  requestAnimationFrame(frame);
+}
 renderRecipes();
-createMixerPreview();
-setGame("liquid");
-requestAnimationFrame(animate);
+createMixer();
+renderGame("bubbles");
+requestAnimationFrame(frame);
