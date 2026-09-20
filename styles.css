@@ -297,7 +297,7 @@ label.field {
   font-size: 12px;
   font-weight: 600;
 }
-input:not([type="checkbox"]):not([type="range"]),
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
 select,
 textarea {
   width: 100%;
