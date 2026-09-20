@@ -46,17 +46,77 @@ export function bindMoodRating(root, { id, outputId, buttonId, onSubmit }) {
   const slider = root.querySelector(`#${id}`),
     output = root.querySelector(`#${outputId}`),
     button = root.querySelector(`#${buttonId}`);
+  if (!slider || !output || !button) return;
   const update = () => {
-    output.value = `${slider.value} / 10`;
+    const value = `${slider.value} / 10`;
+    output.value = value;
+    output.textContent = value;
     button.disabled = false;
   };
-  slider.oninput = update;
-  slider.onpointerdown = () => (button.disabled = false);
-  slider.onkeydown = (event) => {
-    if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Home", "End", "PageUp", "PageDown"].includes(event.key)) update();
+  let activePointerId = null;
+  const setValueFromPointer = (event) => {
+    const bounds = slider.getBoundingClientRect();
+    const inset = Math.min(12, bounds.width / 2);
+    const travel = Math.max(1, bounds.width - inset * 2);
+    const ratio = Math.max(
+      0,
+      Math.min(1, (event.clientX - bounds.left - inset) / travel),
+    );
+    const minimum = Number(slider.min) || 0;
+    const maximum = Number(slider.max) || 10;
+    const stepValue = Number(slider.step);
+    const step = Number.isFinite(stepValue) && stepValue > 0 ? stepValue : 1;
+    const value = minimum + Math.round((ratio * (maximum - minimum)) / step) * step;
+    slider.value = String(Math.max(minimum, Math.min(maximum, value)));
+    update();
   };
-  slider.onclick = () => (button.disabled = false);
-  button.onclick = () => onSubmit(+slider.value);
+  slider.addEventListener("input", update);
+  slider.addEventListener("change", update);
+  slider.addEventListener("pointerdown", (event) => {
+    if (event.button !== undefined && event.button !== 0) return;
+    activePointerId = event.pointerId;
+    try {
+      slider.focus({ preventScroll: true });
+    } catch {
+      slider.focus();
+    }
+    if (typeof slider.setPointerCapture === "function") {
+      try {
+        slider.setPointerCapture(event.pointerId);
+      } catch {
+        // Keep coordinate-based dragging available if capture is unsupported.
+      }
+    }
+    event.preventDefault();
+    setValueFromPointer(event);
+  });
+  slider.addEventListener("pointermove", (event) => {
+    if (event.pointerId === activePointerId) setValueFromPointer(event);
+  });
+  slider.addEventListener("pointerup", (event) => {
+    if (event.pointerId !== activePointerId) return;
+    setValueFromPointer(event);
+    activePointerId = null;
+    slider.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+  slider.addEventListener("pointercancel", () => (activePointerId = null));
+  slider.addEventListener("keydown", (event) => {
+    if (
+      [
+        "ArrowUp",
+        "ArrowDown",
+        "ArrowLeft",
+        "ArrowRight",
+        "Home",
+        "End",
+        "PageUp",
+        "PageDown",
+      ].includes(event.key)
+    )
+      update();
+  });
+  slider.addEventListener("click", () => (button.disabled = false));
+  button.addEventListener("click", () => onSubmit(Number(slider.value)));
 }
 export function moodComparisonMarkup(before, after) {
   const first = Math.max(0, Math.min(10, Math.round(Number(before) || 0))),
@@ -969,3 +1029,4 @@ export function renderInstall(root) {
 }
 
 export const formLinks = forms;
+
