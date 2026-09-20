@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v9";
+const CACHE = "nobodyssimple-v10";
 const SHELL = [
   "./",
   "index.html",
@@ -75,4 +75,5 @@ self.addEventListener("fetch", (event) => {
       ),
   );
 });
+
 

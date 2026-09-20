@@ -256,10 +256,13 @@ export function renderToolbox(root, filter = "") {
   );
 }
 
-const readField = (field, node) =>
-  field.type === "checks"
-    ? [...node.querySelectorAll("input:checked")].map((x) => x.value)
-    : node.value;
+const readField = (field, form) => {
+  if (field.type === "checks")
+    return [...form.querySelectorAll('input[type="checkbox"]:checked')]
+      .filter((input) => input.name === field.id)
+      .map((input) => input.value);
+  return form.elements.namedItem(field.id)?.value ?? "";
+};
 function fieldHtml(f) {
   if (f.type === "checks")
     return `<fieldset class="tool-field"><legend>${esc(f.label)}</legend><div class="choice-grid">${f.options.map((o) => `<label class="choice-pill"><input type="checkbox" name="${esc(f.id)}" value="${esc(o)}"><span>${esc(o)}</span></label>`).join("")}</div></fieldset>`;
@@ -345,10 +348,10 @@ export function renderTool(root, id) {
     );
     form.onsubmit = (e) => {
       e.preventDefault();
+      try {
       const results = {};
       tool.fields.forEach((f) => {
-        const node = form.elements.namedItem(f.id);
-        results[f.id] = readField(f, node);
+        results[f.id] = readField(f, form);
       });
       let extra = tool.id === "brain-dump" ? renderBrainMap(results) : "";
       const result = content.querySelector("#tool-result");
@@ -419,6 +422,15 @@ export function renderTool(root, id) {
         }
       };
       result.scrollIntoView({ behavior: "smooth" });
+      } catch (error) {
+        const result = content.querySelector("#tool-result");
+        if (result) {
+          result.hidden = false;
+          result.innerHTML = `<p class="notice" role="alert">The reflection could not be built. Your answers are still here—please try again.</p>`;
+          result.scrollIntoView({ behavior: "smooth" });
+        }
+        console.error("Could not build reflection:", error);
+      }
     };
     form.onreset = () => {
       setTimeout(() => {
@@ -1029,4 +1041,5 @@ export function renderInstall(root) {
 }
 
 export const formLinks = forms;
+
 
