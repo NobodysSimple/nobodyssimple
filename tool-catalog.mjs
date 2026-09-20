@@ -1,0 +1,1672 @@
+const field = (id, label, placeholder = "") => ({
+  id,
+  label,
+  placeholder,
+  type: "textarea",
+});
+const check = (id, label, options) => ({ id, label, type: "checks", options });
+const select = (id, label, options) => ({ id, label, type: "select", options });
+const range = (id, label, min = 0, max = 10) => ({
+  id,
+  label,
+  type: "range",
+  min,
+  max,
+});
+export const toolGroups = [
+  ["feel", "Feel & notice", "tangerine"],
+  ["calm", "Calm & sensory", "violet"],
+  ["think", "Think & organise", "blue"],
+  ["decide", "Choose & act", "gold"],
+  ["patterns", "Notice patterns", "mint"],
+  ["relate", "Relate & repair", "rose"],
+  ["identity", "Values & identity", "cobalt"],
+  ["journal", "Journal & reflect", "plum"],
+  ["learn", "Learn to think", "lime"],
+  ["maps", "My Maps", "slate"],
+];
+export const tools = [
+  {
+    id: "state-check",
+    title: "Body & state check",
+    group: "feel",
+    short:
+      "Check the body, needs and surroundings before deciding what a feeling means.",
+    fields: [
+      check("signals", "Anything worth checking right now?", [
+        "Tired",
+        "Sleepy",
+        "Exhausted",
+        "Wired",
+        "Restless",
+        "Hungry",
+        "Thirsty",
+        "Ill or in pain",
+        "Overstimulated",
+        "Understimulated",
+        "Lonely",
+        "Caffeine-heavy",
+        "Foggy",
+        "Numb",
+        "Frazzled",
+      ]),
+      field("other", "Something else", "No wrong answer"),
+    ],
+    prompts: [
+      "What feels different in your body or energy?",
+      "What do you know about sleep, food, water, movement, pain, medication, caffeine, or recent sensory load?",
+      "What could you gently check or change before drawing a conclusion?",
+    ],
+    tags: ["tired", "overwhelmed", "unsure", "physical", "sensory"],
+  },
+  {
+    id: "body-check",
+    title: "Body check",
+    group: "feel",
+    short:
+      "Mark sensations as observations; no body area has one fixed emotional meaning.",
+    fields: [
+      check("areas", "Where do you notice something?", [
+        "Head",
+        "Jaw",
+        "Throat",
+        "Chest",
+        "Stomach",
+        "Hands",
+        "Legs",
+        "Skin",
+        "Back",
+        "Everywhere",
+        "Not sure",
+      ]),
+      check("sensations", "What kind of sensation?", [
+        "Tight",
+        "Heavy",
+        "Fluttering",
+        "Hot",
+        "Cold",
+        "Tingling",
+        "Empty",
+        "Tense",
+        "Numb",
+        "Painful",
+        "Restless",
+        "Other",
+      ]),
+    ],
+    prompts: [
+      "What do you notice, in plain sensory words?",
+      "When did it begin, and what else was happening?",
+      "Would comfort, movement, rest, food, water, temperature change, or medical advice be useful?",
+    ],
+    tags: ["feel", "body", "unsure"],
+  },
+  {
+    id: "mixed-feelings",
+    title: "Mixed feelings",
+    group: "feel",
+    short: "Name more than one feeling without forcing them into agreement.",
+    fields: [
+      field(
+        "feelings",
+        "Which feelings can coexist?",
+        "e.g. happy, guilty, afraid, relieved",
+      ),
+      field("coexist", "What does each feeling seem connected to?"),
+      field("room", "What could make room for all of them?"),
+    ],
+    tags: ["feel", "emotion", "relationships"],
+  },
+  {
+    id: "emotion-timeline",
+    title: "Emotion timeline",
+    group: "feel",
+    short:
+      "Trace how feelings changed over an event, without assuming one is the “real” one.",
+    fields: [
+      field("before", "What was present first?"),
+      field("then", "What changed next?"),
+      field("later", "What came after that?"),
+      field("context", "What happened between each shift?"),
+    ],
+    tags: ["feel", "timeline", "pattern"],
+  },
+  {
+    id: "emotion-check-in",
+    title: "A closer feelings check-in",
+    group: "feel",
+    short:
+      "Stay with the feeling you chose, notice its context and decide what—if anything—would help.",
+    fields: [
+      field("feeling", "What word or words fit best?"),
+      field(
+        "context",
+        "Where were you, and what was happening just before it?",
+      ),
+      field("body", "What do you notice in your body or energy?"),
+      field("urge", "What are you drawn to do, if anything?"),
+      field("meaning", "What might matter or need attention here?"),
+      field(
+        "next",
+        "Would you prefer comfort, information, company, a boundary, action, or simply to leave this unanswered?",
+      ),
+    ],
+    tags: ["feel", "emotion", "gentle"],
+  },
+  {
+    id: "brain-dump",
+    title: "Brain dump",
+    group: "think",
+    short:
+      "Get the thoughts out first. Then sort them yourself into things, questions and next steps.",
+    fields: [
+      field(
+        "dump",
+        "Put it all here. No order needed.",
+        "One thought per line works well.",
+      ),
+      select("sort", "What would be helpful to see first?", [
+        "Questions to answer",
+        "Actions I can take",
+        "Things outside my control",
+        "People or conversations",
+        "I want to sort this myself",
+      ]),
+    ],
+    tags: ["overwhelmed", "thinking", "organise", "low-energy"],
+  },
+  {
+    id: "thought-map",
+    title: "Thought map",
+    group: "think",
+    short:
+      "Connect people, situations, worries and choices in a revisable little map.",
+    fields: [
+      field("topic", "What is the main situation?"),
+      field("people", "Who or what is connected?"),
+      field("questions", "What questions keep showing up?"),
+      field("links", "What seems connected, and what might be separate?"),
+    ],
+    tags: ["thinking", "organise", "relationships"],
+  },
+  {
+    id: "reality-map",
+    title: "What happened / what I think happened",
+    group: "think",
+    short:
+      "Separate what you observed from the story and the parts still unknown.",
+    fields: [
+      field("observed", "Observed: what could a camera or transcript capture?"),
+      field("interpreted", "Interpreted: what are you making it mean?"),
+      field("unknown", "Unknown: what information is missing?"),
+    ],
+    tags: ["spiralling", "thinking", "relationship", "uncertain"],
+  },
+  {
+    id: "alternative-models",
+    title: "Alternative explanations",
+    group: "think",
+    short:
+      "Compare possible explanations. None gets treated as fact without evidence.",
+    fields: [
+      field("event", "What are you trying to explain?"),
+      field("models", "What are two or three different explanations?"),
+      field(
+        "fits",
+        "For each: fits / possible / does not fit / need more information.",
+      ),
+      field("next", "What observation would help distinguish them?"),
+    ],
+    tags: ["spiralling", "thinking", "uncertain"],
+  },
+  {
+    id: "certainty",
+    title: "Certainty slider",
+    group: "think",
+    short: "Mark confidence, then make explicit what could move it.",
+    fields: [
+      range("confidence", "How certain does this feel?"),
+      field("evidence", "What evidence is this feeling based on?"),
+      field("update", "What evidence would move your estimate up or down?"),
+    ],
+    tags: ["spiralling", "thinking", "uncertain"],
+  },
+  {
+    id: "assumption-finder",
+    title: "Assumption finder",
+    group: "think",
+    short:
+      "Find the hidden “must”, “always”, or “this means” inside a thought.",
+    fields: [
+      field("thought", "Write the thought you want to inspect."),
+      field(
+        "assumptions",
+        "What needs to be true for this thought to be completely right?",
+      ),
+      field(
+        "test",
+        "Which assumptions are observations, and which could be checked?",
+      ),
+    ],
+    tags: ["spiralling", "thinking", "self"],
+  },
+  {
+    id: "internal-rules",
+    title: "Internal rules",
+    group: "think",
+    short:
+      "Notice repeated rules without treating them as the truth about you.",
+    fields: [
+      check("stems", "Which sentence starts sound familiar?", [
+        "I must…",
+        "I should…",
+        "People should…",
+        "I can’t…",
+        "If X happens, it means…",
+      ]),
+      field("rule", "Write one rule you notice."),
+      field(
+        "origin",
+        "Where might you have learnt it? You can leave this unknown.",
+      ),
+      field("alternative", "Does this rule still serve you everywhere?"),
+    ],
+    tags: ["thinking", "identity", "self"],
+  },
+  {
+    id: "rumination",
+    title: "Thinking-loop check",
+    group: "think",
+    short:
+      "Notice when another round of thinking is helping, or when a different move may help more.",
+    fields: [
+      field("returning", "What question or uncertainty keeps returning?"),
+      select("next", "What would help now?", [
+        "Keep thinking with a specific question",
+        "Gather information",
+        "Make a decision",
+        "Accept that some uncertainty remains",
+        "Do something else for now",
+      ]),
+      field("step", "What is the smallest next move?"),
+    ],
+    tags: ["spiralling", "thinking", "overwhelmed"],
+  },
+  {
+    id: "control-map",
+    title: "Control / influence / outside my control",
+    group: "decide",
+    short: "Separate what matters from what you can control today.",
+    fields: [
+      field("concerns", "List the worries or concerns, one per line."),
+      field("direct", "Directly control: what action is yours?"),
+      field(
+        "influence",
+        "Can influence: what attempt or conversation is possible?",
+      ),
+      field(
+        "outside",
+        "Cannot presently control: what still matters even if you cannot change it today?",
+      ),
+    ],
+    tags: ["worry", "decision", "overwhelmed"],
+  },
+  {
+    id: "worry-parking",
+    title: "Worry parking",
+    group: "decide",
+    short:
+      "Set a time to revisit a worry instead of requiring an answer this minute.",
+    fields: [
+      field("worry", "What would you like to park for now?"),
+      {
+        id: "when",
+        label: "When will you revisit it?",
+        type: "datetime-local",
+      },
+      select("route", "Is there something actionable right now?", [
+        "Yes, a small step is available",
+        "Not right now; this is a possible future",
+        "Not sure",
+      ]),
+    ],
+    tags: ["worry", "spiralling", "overwhelmed"],
+  },
+  {
+    id: "quick-reset",
+    title: "Quick sensory reset",
+    group: "calm",
+    short:
+      "Choose less input, more input, or a neutral pause. Breathing exercises are optional.",
+    fields: [
+      select("input", "What fits the moment?", [
+        "Too much input",
+        "Not enough input",
+        "I don’t know yet",
+      ]),
+      check("preferences", "What usually feels okay for you?", [
+        "Quieter",
+        "Dimmer",
+        "Fresh air",
+        "Movement",
+        "Stillness",
+        "A familiar sound",
+        "Headphones",
+        "A familiar object",
+        "Company",
+        "Space",
+        "Water or snack",
+        "I’m not sure",
+      ]),
+    ],
+    tags: ["calm", "panic", "sensory", "overwhelmed"],
+  },
+  {
+    id: "grounding",
+    title: "Orient to the present",
+    group: "calm",
+    short:
+      "Use sensory detail to notice where you are. Stop or change any prompt that feels unhelpful.",
+    fields: [
+      field("see", "One thing you can see, if you want."),
+      field("hear", "One sound or silence you notice."),
+      field("contact", "A point of contact, temperature, texture or movement."),
+      field("orientation", "What helps you know where and when you are?"),
+      select(
+        "optional",
+        "Would you like an optional slow breath or movement?",
+        [
+          "No, thanks",
+          "A breath, only if comfortable",
+          "A small movement",
+          "Another way to orient",
+        ],
+      ),
+    ],
+    tags: ["calm", "panic", "overwhelmed"],
+  },
+  {
+    id: "sensory-profile",
+    title: "Sensory profile",
+    group: "calm",
+    short:
+      "Notice preferences across settings; seeking, avoiding and “depends” can all be true.",
+    fields: [
+      check("sensory", "Choose an area to explore.", [
+        "Sound",
+        "Light",
+        "Touch",
+        "Smell",
+        "Temperature",
+        "Movement",
+        "Crowding",
+        "Interoception",
+        "Predictability",
+      ]),
+      select("response", "How does it usually feel?", [
+        "I seek it",
+        "Neutral",
+        "I avoid it",
+        "It depends",
+      ]),
+      field("conditions", "What setting or context changes the answer?"),
+      field("recipe", "What small adjustment might support you?"),
+    ],
+    tags: ["sensory", "neurodivergence", "overwhelmed"],
+  },
+  {
+    id: "sensory-recipe",
+    title: "My sensory recipe",
+    group: "calm",
+    short:
+      "Record what has helped you personally; it is not a prescription for anyone else.",
+    fields: [
+      select("state", "In which kind of moment?", [
+        "Too much input",
+        "Low energy",
+        "Transition",
+        "Social demand",
+        "Focus",
+        "Other",
+      ]),
+      field("helps", "What has helped before?"),
+      field("not", "What tends not to help or is not available?"),
+      field("experiment", "What small thing could you try next time?"),
+    ],
+    tags: ["sensory", "neurodivergence"],
+  },
+  {
+    id: "social-battery",
+    title: "Social battery",
+    group: "calm",
+    short:
+      "Compare energy, interest, safety and sensory demand before and after an interaction.",
+    fields: [
+      range("before", "Energy before"),
+      range("after", "Energy after"),
+      field("masking", "How much effort went into adapting or masking?"),
+      field("safety", "What affected your sense of safety or ease?"),
+      field("recovery", "What recovery or connection would suit you now?"),
+    ],
+    tags: ["sensory", "social", "relationships"],
+  },
+  {
+    id: "load-balancer",
+    title: "Overload load-balancer",
+    group: "calm",
+    short:
+      "See the stack of demands without judging yourself for reaching a limit.",
+    fields: [
+      check("demands", "What is adding load?", [
+        "Poor sleep",
+        "Noise",
+        "Social interaction",
+        "Travel",
+        "Deadlines",
+        "Uncertainty",
+        "Conflict",
+        "Hunger",
+        "Change in routine",
+        "Pain or illness",
+        "Caring responsibilities",
+        "Money worries",
+      ]),
+      field("largest", "Which one feels heaviest right now?"),
+      field(
+        "reduce",
+        "Which small demand could be delayed, simplified or shared?",
+      ),
+    ],
+    tags: ["overwhelmed", "low-energy", "sensory"],
+  },
+  {
+    id: "transition",
+    title: "Transition planner",
+    group: "decide",
+    short: "Make switching activities more visible and less abrupt.",
+    fields: [
+      field("leaving", "What are you leaving?"),
+      field("towards", "What are you moving toward?"),
+      field("unfinished", "What unfinished thing keeps your attention behind?"),
+      field("easier", "What could make the transition easier?"),
+    ],
+    tags: ["low-energy", "executive-function", "overwhelmed"],
+  },
+  {
+    id: "start-starter",
+    title: "Why can’t I start?",
+    group: "decide",
+    short: "Find the barrier before demanding more willpower.",
+    fields: [
+      check("barrier", "What might be getting in the way?", [
+        "The first step is unclear",
+        "The task feels too big",
+        "It is boring",
+        "I’m worried about doing it badly",
+        "My energy is low",
+        "The environment adds friction",
+        "My attention is captured",
+        "I can’t see a reward",
+        "Access, money or skills are a barrier",
+      ]),
+      field("adjust", "What could reduce this barrier a little?"),
+      field("first", "What is a meaningful first step, not just a token step?"),
+    ],
+    tags: ["start", "executive-function", "low-energy", "procrastination"],
+  },
+  {
+    id: "why-ladder",
+    title: "Why ladder",
+    group: "identity",
+    short: "Move from a goal toward the reasons that make it matter to you.",
+    fields: [
+      field("goal", "What goal or choice are you considering?"),
+      field("why1", "Why does that matter?"),
+      field("why2", "And why does that matter?"),
+      field("why3", "What deeper value or need might be underneath?"),
+    ],
+    tags: ["motivation", "goals", "values"],
+  },
+  {
+    id: "motivation-map",
+    title: "Motivation map",
+    group: "identity",
+    short:
+      "Several motives can coexist—including wanting something and fearing it.",
+    fields: [
+      check("motives", "What seems to be pulling you?", [
+        "I want it",
+        "I value it",
+        "I enjoy it",
+        "I need it",
+        "I’m afraid not to",
+        "Someone expects it",
+        "It fits my identity",
+        "It gives reward or status",
+        "It prevents something unpleasant",
+      ]),
+      field("conflict", "Where do the motives agree or conflict?"),
+      field(
+        "next",
+        "What kind of next step respects the strongest reasons and the constraints?",
+      ),
+    ],
+    tags: ["motivation", "goals", "start"],
+  },
+  {
+    id: "friction",
+    title: "Friction finder",
+    group: "decide",
+    short: "Look for what makes a wanted action harder than it needs to be.",
+    fields: [
+      check("friction", "Which barriers are present?", [
+        "Physical",
+        "Cognitive",
+        "Emotional",
+        "Financial",
+        "Social",
+        "Environmental",
+        "Uncertainty",
+        "Skill or access",
+        "Time or care demands",
+      ]),
+      field("barrier", "Which barrier matters most?"),
+      field(
+        "reduce",
+        "What is one adjustment that could make the action easier?",
+      ),
+    ],
+    tags: ["start", "goals", "executive-function"],
+  },
+  {
+    id: "goal-builder",
+    title: "Goal builder",
+    group: "decide",
+    short: "Turn a meaningful intention into a flexible, specific plan.",
+    fields: [
+      field("outcome", "What outcome matters to you?"),
+      field("action", "What behaviour would move it forward?"),
+      field("when", "When and where might you try it?"),
+      field(
+        "evidence",
+        "How will you notice that you tried, without grading your worth?",
+      ),
+      field("deadline", "Is a deadline genuinely useful here?"),
+    ],
+    tags: ["goals", "motivation"],
+  },
+  {
+    id: "small-step",
+    title: "Smallest useful step",
+    group: "decide",
+    short: "Find the smallest action that meaningfully changes your position.",
+    fields: [
+      field("aim", "What are you trying to move toward?"),
+      field("step", "What is one small step that genuinely advances it?"),
+      field("when", "When or where could it happen?"),
+      field("support", "What might make it more possible?"),
+    ],
+    tags: ["start", "goals", "low-energy"],
+  },
+  {
+    id: "if-then",
+    title: "If–then plan",
+    group: "decide",
+    short: "Pair a likely cue with a response you choose in advance.",
+    fields: [
+      field("cue", "If this situation or cue happens…"),
+      field("action", "…then I will try this action."),
+      field("backup", "If that plan is not possible, what is a kind backup?"),
+    ],
+    tags: ["goals", "start"],
+  },
+  {
+    id: "decision-map",
+    title: "Decision map",
+    group: "decide",
+    short:
+      "Compare options across values, costs, uncertainty and effects on others.",
+    fields: [
+      field("decision", "What are you deciding?"),
+      field(
+        "options",
+        "List the options, including waiting or getting more information.",
+      ),
+      field("benefits", "What matters about each option?"),
+      field("costs", "What does each ask of you or someone else?"),
+      field("uncertainty", "What is not yet known?"),
+      field("values", "Which values are in tension?"),
+      select("reversibility", "How reversible is this choice?", [
+        "Easy to test or reverse",
+        "Reversible with a cost",
+        "Hard or impossible to reverse",
+      ]),
+      field("next", "What small step could make the decision clearer?"),
+    ],
+    tags: ["decision", "values", "relationship"],
+  },
+  {
+    id: "future-perspectives",
+    title: "Future perspectives",
+    group: "decide",
+    short:
+      "Consider several time horizons without assuming future-you knows best.",
+    fields: [
+      field("tomorrow", "What might tomorrow-you appreciate?"),
+      field("months", "What might six-month-you care about?"),
+      field("years", "What might five-year-you wish you had protected?"),
+      field("now", "What matters to you now, too?"),
+    ],
+    tags: ["decision", "values"],
+  },
+  {
+    id: "premortem",
+    title: "Decision pre-mortem",
+    group: "decide",
+    short:
+      "Imagine an option went badly and ask what conditions may have contributed.",
+    fields: [
+      field("option", "Which option are you exploring?"),
+      field(
+        "went-wrong",
+        "Imagine it went badly. What could plausibly have happened?",
+      ),
+      field("warning", "What early signs could you monitor?"),
+      field(
+        "protect",
+        "What safeguard or support could reduce avoidable risk?",
+      ),
+    ],
+    tags: ["decision", "planning"],
+  },
+  {
+    id: "commitment",
+    title: "Reopening a decision",
+    group: "decide",
+    short:
+      "Choose what new information would genuinely justify revisiting a choice.",
+    fields: [
+      field("choice", "What choice have you made for now?"),
+      field(
+        "evidence",
+        "What information would genuinely justify reopening it?",
+      ),
+      field("review", "When would you review it, if useful?"),
+      field(
+        "permission",
+        "What uncertainty can you allow to remain meanwhile?",
+      ),
+    ],
+    tags: ["decision", "rumination"],
+  },
+  {
+    id: "pattern-map",
+    title: "Pattern mapper",
+    group: "patterns",
+    short:
+      "Map context, state, interpretation, urge and consequence without assigning a diagnosis.",
+    fields: [
+      field("trigger", "Trigger or context"),
+      field("state", "Body or state"),
+      field("meaning", "Interpretation"),
+      field("emotion", "Feeling or feelings"),
+      field("urge", "Urge"),
+      field("action", "What you did"),
+      field("payoff", "Immediate payoff or protection"),
+      field("cost", "Later cost or benefit"),
+      field("loop", "What happened next?"),
+    ],
+    tags: ["pattern", "self", "relationship"],
+  },
+  {
+    id: "function-finder",
+    title: "Function finder",
+    group: "patterns",
+    short: "Ask what a response may accomplish before trying to change it.",
+    fields: [
+      check("functions", "Possible functions—not labels", [
+        "Relief",
+        "Safety",
+        "Closeness",
+        "Distance",
+        "Stimulation",
+        "Control",
+        "Status",
+        "Avoidance",
+        "Revenge",
+        "Identity",
+        "Belonging",
+        "Certainty",
+        "Numbing",
+        "Self-protection",
+      ]),
+      field("works", "What does the behaviour help with immediately?"),
+      field("cost", "What does it cost later, if anything?"),
+      field("alternative", "What could meet the same need with fewer costs?"),
+    ],
+    tags: ["pattern", "self", "relationship"],
+  },
+  {
+    id: "pattern-experiment",
+    title: "Pattern experiment",
+    group: "patterns",
+    short:
+      "Change one manageable variable, observe what happens, and update the explanation.",
+    fields: [
+      field("pattern", "What recurring pattern do you want to understand?"),
+      field("hypothesis", "What do you think helps generate or maintain it?"),
+      field("variable", "What one safe, reversible variable could you change?"),
+      field("observe", "What will you observe without forcing an outcome?"),
+      field("update", "What could you learn either way?"),
+    ],
+    tags: ["pattern", "experiment"],
+  },
+  {
+    id: "experiment-builder",
+    title: "Behavioural experiment",
+    group: "learn",
+    short:
+      "Turn a prediction into a small, ethical test—not a challenge to ignore safety.",
+    fields: [
+      field("belief", "What belief or prediction are you exploring?"),
+      field("prediction", "What do you expect to happen?"),
+      field("test", "What small, safe action could provide information?"),
+      field("outcome", "What would count as an observation?"),
+      field("learning", "How might the result change or not change your view?"),
+    ],
+    tags: ["experiment", "thinking", "decision"],
+  },
+  {
+    id: "conversation-map",
+    title: "Conversation mapper",
+    group: "relate",
+    short: "Separate what was said, intended and heard in a misunderstanding.",
+    fields: [
+      field("happened", "What happened, as specifically as you can?"),
+      field("said", "What did you say?"),
+      field("meant", "What did you mean?"),
+      field("heard", "What did they seem to hear?"),
+      field("interpreted", "What did you hear them mean?"),
+      field("check", "What could you ask to check rather than assume?"),
+    ],
+    tags: ["relationship", "argument", "communication"],
+  },
+  {
+    id: "needs-clarifier",
+    title: "Needs clarifier",
+    group: "relate",
+    short: "Name the request underneath a difficult interaction.",
+    fields: [
+      check("need", "What might you be asking for?", [
+        "Reassurance",
+        "Information",
+        "Affection",
+        "Space",
+        "Acknowledgement",
+        "Repair",
+        "Change",
+        "Commitment",
+        "Permission",
+        "Understanding",
+      ]),
+      field("request", "What specific request could you make?"),
+      field("choice", "What part remains theirs to choose?"),
+    ],
+    tags: ["relationship", "argument"],
+  },
+  {
+    id: "boundary-builder",
+    title: "Boundary builder",
+    group: "relate",
+    short:
+      "Distinguish a preference, request, boundary and attempt to control another person.",
+    fields: [
+      field("situation", "What situation are you responding to?"),
+      field("preference", "Preference: what would you like?"),
+      field("request", "Request: what are you asking the other person to do?"),
+      field(
+        "boundary",
+        "Boundary: what action will you take to care for your own limits?",
+      ),
+      field("self-rule", "Rule for myself: what principle do you choose?"),
+      field(
+        "control",
+        "Is any part asking to control another person’s choice?",
+      ),
+    ],
+    tags: ["relationship", "boundary", "argument"],
+  },
+  {
+    id: "conflict-map",
+    title: "Conflict map",
+    group: "relate",
+    short:
+      "Separate facts, interpretations, interests, needs, values, power and possible options.",
+    fields: [
+      field("facts", "Facts"),
+      field("stories", "Interpretations"),
+      field("interests", "Interests or goals"),
+      field("needs", "Needs"),
+      field("values", "Values"),
+      field("power", "Power or constraints that matter"),
+      field("harm", "Any harm or safety concern that needs attention?"),
+      field("options", "Possible agreements, limits or next steps"),
+    ],
+    tags: ["relationship", "argument"],
+  },
+  {
+    id: "repair",
+    title: "Repair after conflict",
+    group: "relate",
+    short:
+      "Consider impact, responsibility and change without forcing reconciliation.",
+    fields: [
+      field("happened", "What happened?"),
+      field("impact", "What impact did it have?"),
+      field("mine", "What part is yours to own?"),
+      field("context", "What context matters without erasing impact?"),
+      field("acknowledge", "What needs acknowledgement?"),
+      field("repair", "What can be repaired, and what needs to change?"),
+    ],
+    tags: ["relationship", "argument", "repair"],
+  },
+  {
+    id: "apology",
+    title: "Apology builder",
+    group: "relate",
+    short:
+      "Build a specific apology around responsibility, impact, repair and changed behaviour.",
+    fields: [
+      field("recognise", "What did you do, specifically?"),
+      field("impact", "What was the effect on them?"),
+      field("responsibility", "What part is yours without excuses?"),
+      field("repair", "What repair is possible?"),
+      field("change", "What will you do differently?"),
+      field(
+        "choice",
+        "How can you leave them room to respond in their own time?",
+      ),
+    ],
+    tags: ["relationship", "repair"],
+  },
+  {
+    id: "perspective-switch",
+    title: "Perspective switch",
+    group: "relate",
+    short:
+      "Explore your view, another plausible view and the relationship as a system.",
+    fields: [
+      field("mine", "My perspective: what matters from where I stand?"),
+      field(
+        "other",
+        "Their plausible perspective—clearly marked as a hypothesis.",
+      ),
+      field("observer", "What might a neutral observer notice?"),
+      field("system", "What loop or context could affect both of you?"),
+      field("unknown", "What do I not know about their experience?"),
+    ],
+    tags: ["relationship", "argument"],
+  },
+  {
+    id: "values-discovery",
+    title: "Values discovery",
+    group: "identity",
+    short:
+      "Notice values in admiration, envy, anger, grief, pride, sacrifice, regret or joy.",
+    fields: [
+      select("signal", "Choose a starting point", [
+        "Admiration",
+        "Envy",
+        "Anger",
+        "Grief",
+        "Pride",
+        "Sacrifice",
+        "Regret",
+        "Joy",
+      ]),
+      field("moment", "What specific moment are you thinking about?"),
+      field("value", "What mattered or felt protected there?"),
+      field("tension", "What other value may be in tension?"),
+    ],
+    tags: ["values", "identity", "decision"],
+  },
+  {
+    id: "identity-map",
+    title: "Identity map",
+    group: "identity",
+    short:
+      "Explore identities and roles as central, chosen, inherited, performed or changing.",
+    fields: [
+      field("roles", "What roles or identities feel present?"),
+      check("qualities", "Which descriptions fit some of them?", [
+        "Central",
+        "Chosen",
+        "Inherited",
+        "Performed",
+        "Conflicted",
+        "Changing",
+      ]),
+      field("tension", "What overlaps or contradictions do you notice?"),
+      field("room", "What part of you needs more room?"),
+    ],
+    tags: ["identity", "self"],
+  },
+  {
+    id: "possible-selves",
+    title: "Possible selves",
+    group: "identity",
+    short:
+      "Imagine who you could become without needing to discover one fixed “true self.”",
+    fields: [
+      field(
+        "toward",
+        "What kind of person could you become if you had room to grow?",
+      ),
+      field("away", "What version of yourself are you afraid of becoming?"),
+      field("small", "What small action points toward a version you choose?"),
+      field("inherited", "Which expectations may not be yours?"),
+    ],
+    tags: ["identity", "values"],
+  },
+  {
+    id: "personal-rules",
+    title: "Personal rules & origins",
+    group: "identity",
+    short: "Collect rules you have learnt and decide whether they still fit.",
+    fields: [
+      field("rule", "A rule or belief you notice (e.g. “rest is lazy”)."),
+      check("sources", "Where might you have learnt it?", [
+        "Family",
+        "School",
+        "Work",
+        "Religion",
+        "Peers",
+        "Media",
+        "Personal experience",
+        "I don’t know",
+      ]),
+      field(
+        "still",
+        "Where does the rule help, and where does it constrain you?",
+      ),
+      field("update", "What more flexible rule might fit now?"),
+    ],
+    tags: ["identity", "self", "thinking"],
+  },
+  {
+    id: "contradictions",
+    title: "Both can be true",
+    group: "identity",
+    short:
+      "Hold apparently conflicting wants without demanding that one disappear.",
+    fields: [
+      field("part-a", "One part of me wants…"),
+      field("part-b", "Another part of me wants…"),
+      field("need-a", "What matters to the first part?"),
+      field("need-b", "What matters to the second part?"),
+      field("next", "What would respect both, even partly?"),
+    ],
+    tags: ["identity", "values", "decision"],
+  },
+  {
+    id: "life-areas",
+    title: "Life areas map",
+    group: "identity",
+    short:
+      "Notice where life feels tended, neglected or overloaded—without producing a score.",
+    fields: [
+      check("areas", "Choose areas you want to consider", [
+        "Relationships",
+        "Work",
+        "Learning",
+        "Body",
+        "Money",
+        "Play",
+        "Creativity",
+        "Community",
+        "Meaning",
+      ]),
+      field("nourished", "Which area feels cared for at present?"),
+      field("neglected", "Which area wants attention?"),
+      field(
+        "small",
+        "What would a small, realistic act of attention look like?",
+      ),
+    ],
+    tags: ["identity", "values"],
+  },
+  {
+    id: "gratitude",
+    title: "Specific appreciation",
+    group: "journal",
+    short: "Slow down around one good detail rather than forcing a list.",
+    fields: [
+      field("event", "What happened?"),
+      field("good", "What exactly made it good or meaningful?"),
+      field("made", "Who or what made it possible?"),
+      field("missing", "What would have been missing without it?"),
+      field("detail", "What detail might you normally overlook?"),
+    ],
+    tags: ["journal", "attention"],
+  },
+  {
+    id: "difficult-day",
+    title: "Difficult day review",
+    group: "journal",
+    short:
+      "Review demands, supports and learning without asking what is wrong with you.",
+    fields: [
+      field("demands", "What demanded energy today?"),
+      field("helped", "What helped?"),
+      field("worse", "What made things harder?"),
+      field("learned", "What did you learn?"),
+      field("tomorrow", "What can tomorrow inherit from today?"),
+    ],
+    tags: ["journal", "low-energy", "overwhelmed"],
+  },
+  {
+    id: "weekly-review",
+    title: "Weekly review",
+    group: "journal",
+    short:
+      "Gather patterns, experiments, questions and changes you noticed this week.",
+    fields: [
+      field("patterns", "Patterns noticed"),
+      field("experiments", "Experiments or attempts"),
+      field("worked", "What worked or changed?"),
+      field("questions", "Questions still open"),
+      field(
+        "avoided",
+        "Anything repeatedly avoided—and what might it be protecting?",
+      ),
+    ],
+    tags: ["journal", "pattern"],
+  },
+  {
+    id: "attention-mission",
+    title: "Attention mission",
+    group: "journal",
+    short:
+      "Try a tiny optional prompt that helps you notice an ordinary designed or shared detail.",
+    fields: [
+      select("mission", "Choose a prompt", [
+        "Notice something someone designed well today.",
+        "Find an ordinary object that saves effort.",
+        "Notice one thing your body did automatically.",
+        "Find something that exists because someone made it.",
+        "Choose your own mission.",
+      ]),
+      field("noticed", "What did you notice, if anything?"),
+      field("meaning", "What detail changed when you paid attention?"),
+    ],
+    tags: ["journal", "attention"],
+  },
+  {
+    id: "claim-checker",
+    title: "Claim checker",
+    group: "learn",
+    short:
+      "Break a claim into what it says, what evidence it needs and what remains unknown.",
+    fields: [
+      field("claim", "What claim are you checking?"),
+      field("exact", "What exactly is being claimed—and about whom or what?"),
+      field("evidence", "What evidence would be needed to support it?"),
+      field("known", "What do you know, and what is not established?"),
+      field("alternatives", "What competing explanation should be considered?"),
+    ],
+    tags: ["learning", "thinking", "evidence"],
+  },
+  {
+    id: "evidence-strength",
+    title: "Evidence guide",
+    group: "learn",
+    short: "Compare what different study designs can and cannot tell you.",
+    fields: [
+      select("design", "Choose a type of evidence", [
+        "Personal anecdote",
+        "Cross-sectional association",
+        "Longitudinal observation",
+        "Controlled experiment",
+        "Systematic review",
+        "Mechanistic study",
+      ]),
+      field("question", "What question does this evidence answer?"),
+      field("limits", "What can it not establish by itself?"),
+      field(
+        "next",
+        "What additional evidence would strengthen the conclusion?",
+      ),
+    ],
+    tags: ["learning", "evidence"],
+  },
+  {
+    id: "correlation-game",
+    title: "Correlation or cause?",
+    group: "learn",
+    short:
+      "Test a claim about two things moving together against other explanations.",
+    fields: [
+      select("example", "What do you observe?", [
+        "Ice-cream sales and sunburn both rise in summer.",
+        "People with umbrellas are seen in rainy weather.",
+        "People who sleep more report better concentration.",
+      ]),
+      field("together", "Which variables are associated?"),
+      field("third", "Could a third factor influence both?"),
+      field("test", "What design or information could test causation?"),
+    ],
+    tags: ["learning", "thinking", "evidence"],
+  },
+  {
+    id: "base-rate",
+    title: "Base-rate game",
+    group: "learn",
+    short:
+      "Ask how a dramatic example changes a belief when we know how common something is.",
+    fields: [
+      field("case", "What vivid example or claim are you considering?"),
+      field("common", "How common is the outcome overall, if known?"),
+      field("specific", "How diagnostic is the example of this explanation?"),
+      field("update", "What would change your estimate?"),
+    ],
+    tags: ["learning", "thinking", "evidence"],
+  },
+  {
+    id: "counterexample",
+    title: "Find a counterexample",
+    group: "learn",
+    short:
+      "Look for observations that might challenge your current explanation.",
+    fields: [
+      field("model", "What is your current explanation?"),
+      field("support", "What supports it?"),
+      field("against", "What would count as evidence against it?"),
+      field("other", "What alternative model explains the same observations?"),
+    ],
+    tags: ["learning", "thinking", "evidence"],
+  },
+  {
+    id: "argument-map",
+    title: "Argument map",
+    group: "learn",
+    short:
+      "Lay out premises, evidence, inference, conclusion and counterargument.",
+    fields: [
+      field("claim", "Conclusion or claim"),
+      field("premises", "Premises"),
+      field("evidence", "Evidence for the premises"),
+      field("inference", "How does the evidence support the conclusion?"),
+      field("counter", "Strongest counterargument"),
+      field("unknown", "What remains uncertain?"),
+    ],
+    tags: ["learning", "thinking", "evidence"],
+  },
+  {
+    id: "pattern-stims",
+    title: "Pattern garden",
+    group: "calm",
+    short:
+      "Make a quiet, changeable geometric pattern. No score, timer, or objective.",
+    fields: [
+      select("shape", "Choose a shape", [
+        "Circle",
+        "Square",
+        "Triangle",
+        "Leaf",
+      ]),
+      range("density", "Pattern density", 2, 16),
+      select("colour", "Choose a palette", [
+        "Forest & amber",
+        "Berry & lilac",
+        "Ocean & sky",
+        "Soft greens",
+      ]),
+      select("motion", "Motion", ["Still", "Slow drift", "Gentle pulse"]),
+    ],
+    tags: ["calm", "sensory", "stimulation"],
+    kind: "pattern",
+  },
+  {
+    id: "sound-garden",
+    title: "Ambient sound garden",
+    group: "calm",
+    short:
+      "Mix optional generated tones/noise locally. No recordings, autoplay or external audio.",
+    fields: [
+      range("rain", "Soft noise / rain-like texture", 0, 10),
+      range("tone", "Low ambient tone", 0, 10),
+      range("pulse", "Slow gentle pulse", 0, 10),
+      select("mode", "Sound mode", [
+        "Off",
+        "Play a mix (only when you press play)",
+      ]),
+    ],
+    tags: ["calm", "sensory", "stimulation"],
+    kind: "sound",
+  },
+  {
+    id: "worry-sort",
+    title: "Solvable or hypothetical worry?",
+    group: "think",
+    short:
+      "Separate a practical problem you can act on from a possibility that may need uncertainty-tolerance or support.",
+    fields: [
+      field("worry", "What is the worry, in one sentence?"),
+      select("kind", "Which fits best right now?", [
+        "There is a concrete step I can take",
+        "I need information before I can tell",
+        "It is a possible future I cannot resolve now",
+        "A mix, or I am not sure",
+      ]),
+      field(
+        "next",
+        "If actionable: what is the smallest safe next step? If not: what helps me leave it unanswered for now?",
+      ),
+    ],
+    tags: ["worry", "thinking", "decision"],
+  },
+  {
+    id: "masking-map",
+    title: "Masking & adaptation map",
+    group: "calm",
+    short:
+      "Notice the effort of adapting in different contexts without judging the strategy or assuming a diagnosis.",
+    fields: [
+      field("context", "Where or with whom do you notice yourself adapting?"),
+      field("changes", "What do you change, hide, rehearse, or monitor?"),
+      field(
+        "purpose",
+        "What does this adaptation help protect or make possible?",
+      ),
+      field("cost", "What does it cost in energy, comfort, or connection?"),
+      field(
+        "choice",
+        "Is there one safer context where you could choose less effort?",
+      ),
+    ],
+    tags: ["sensory", "identity", "social", "energy"],
+  },
+  {
+    id: "environment-design",
+    title: "Design the environment",
+    group: "decide",
+    short:
+      "Change cues, access and friction around an action instead of relying only on willpower.",
+    fields: [
+      field("action", "What do you want to make easier?"),
+      field("block", "What in the environment currently gets in the way?"),
+      field("cue", "What visible cue or prepared item could help?"),
+      field(
+        "barrier",
+        "What barrier can you remove, reduce, or ask someone to help with?",
+      ),
+    ],
+    tags: ["action", "habits", "executive-function"],
+  },
+  {
+    id: "reward-design",
+    title: "Make effort rewarding",
+    group: "decide",
+    short:
+      "Pair a demanding action with a kind, realistic source of interest, comfort or celebration.",
+    fields: [
+      field("task", "What effort are you trying to support?"),
+      field(
+        "reward",
+        "What enjoyable or comforting thing could accompany or follow it?",
+      ),
+      field(
+        "size",
+        "How can you keep the effort and reward small and available?",
+      ),
+      field(
+        "care",
+        "Does this reward feel kind rather than like a test you must pass?",
+      ),
+    ],
+    tags: ["motivation", "action", "energy"],
+  },
+  {
+    id: "progress-evidence",
+    title: "Collect evidence of progress",
+    group: "decide",
+    short: "Track attempts, learning and recovery—not just finished outcomes.",
+    fields: [
+      field("direction", "What direction or skill are you practising?"),
+      field("attempt", "What did you try, even partially?"),
+      field("evidence", "What changed, got easier, or taught you something?"),
+      field("next", "What would count as a useful next experiment?"),
+    ],
+    tags: ["goals", "motivation", "journal"],
+  },
+  {
+    id: "cost-map",
+    title: "Cost & benefit map",
+    group: "patterns",
+    short:
+      "Look at short- and long-term costs and benefits of a repeated response without calling it good or bad.",
+    fields: [
+      field("response", "What response or pattern are you looking at?"),
+      field("benefit", "What does it help with in the short term?"),
+      field("cost", "What does it cost now or later?"),
+      field("alternative", "What might preserve the benefit with less cost?"),
+    ],
+    tags: ["patterns", "habits", "change"],
+  },
+  {
+    id: "context-map",
+    title: "Context map",
+    group: "patterns",
+    short:
+      "Compare when a pattern appears, changes or does not appear; context can matter more than a trait label.",
+    fields: [
+      field("pattern", "What response are you curious about?"),
+      field("when", "When, where, with whom, or after what does it show up?"),
+      field("not-when", "When does it not happen, or happen less?"),
+      field("conditions", "What differs between those settings?"),
+    ],
+    tags: ["patterns", "context", "learning"],
+  },
+  {
+    id: "origin-map",
+    title: "Where did this rule come from?",
+    group: "identity",
+    short:
+      "Explore the history of an expectation gently; you do not need to find a single origin or revisit painful memories.",
+    fields: [
+      field("rule", "What expectation or rule are you carrying?"),
+      field(
+        "learned",
+        "Where might you have learned or needed it? It is okay not to know.",
+      ),
+      field("helped", "How might it have helped then?"),
+      field(
+        "now",
+        "Does it fit your current life, and what softer version might?",
+      ),
+    ],
+    tags: ["identity", "personal-rules", "reflection"],
+  },
+  {
+    id: "maintenance-loop",
+    title: "What keeps the loop going?",
+    group: "patterns",
+    short:
+      "Map triggers, responses and short-term relief to find one compassionate place to experiment.",
+    fields: [
+      field("trigger", "What often happens just before the pattern?"),
+      field("response", "What do you do, think, avoid or seek?"),
+      field("relief", "What does this change immediately?"),
+      field("later", "What happens later that may restart the loop?"),
+      field(
+        "choice",
+        "Where is the smallest, safest point to try something different?",
+      ),
+    ],
+    tags: ["patterns", "experiments", "habits"],
+  },
+  {
+    id: "conflict-pattern",
+    title: "Repeated conflict detector",
+    group: "relate",
+    short:
+      "Look for a recurring sequence between people without deciding that one person is the whole problem.",
+    fields: [
+      field("start", "What tends to start the sequence?"),
+      field("a", "What does one person do next?"),
+      field("b", "How does the other person respond?"),
+      field(
+        "loop",
+        "How might each response make sense from that person’s point of view?",
+      ),
+      field(
+        "interrupt",
+        "What small interruption or clearer request could be worth trying?",
+      ),
+    ],
+    tags: ["relationship", "conflict", "communication"],
+  },
+  {
+    id: "free-journal",
+    title: "Free journal",
+    group: "journal",
+    short:
+      "Write without a prompt, score or need to make it coherent. Keep it here or save it yourself.",
+    fields: [field("entry", "Whatever you want to write", "Start anywhere…")],
+    tags: ["journal", "open-ended"],
+  },
+  {
+    id: "thought-journal",
+    title: "Thought & feeling journal",
+    group: "journal",
+    short:
+      "Separate a situation, an interpretation, a feeling and a possible next response without disputing yourself automatically.",
+    fields: [
+      field(
+        "situation",
+        "What happened that an outside observer might notice?",
+      ),
+      field("thought", "What meaning or story did your mind add?"),
+      field("feeling", "What feelings or body states showed up?"),
+      field("need", "What matters or needs attention?"),
+      field("response", "What response fits your values and capacity today?"),
+    ],
+    tags: ["journal", "thoughts", "feelings"],
+  },
+  {
+    id: "positive-memory",
+    title: "Savour a positive memory",
+    group: "journal",
+    short:
+      "Spend a moment with a specific memory if that feels welcome; you do not need to feel positive.",
+    fields: [
+      field("memory", "A small moment I would like to remember…"),
+      field("detail", "What could I see, hear or notice in it?"),
+      field("meaning", "What mattered to me about that moment?"),
+      field(
+        "keep",
+        "Is there a detail, photo or note I want to keep elsewhere?",
+      ),
+    ],
+    tags: ["journal", "attention", "memory"],
+  },
+  {
+    id: "gratitude-course",
+    title: "Gratitude & attention practice",
+    group: "journal",
+    short:
+      "A flexible set of small noticing prompts; skip anything that feels forced or mismatched.",
+    fields: [
+      select("practice", "Choose a short practice", [
+        "Notice one specific thing that helped today",
+        "Thank someone privately or directly, if welcome",
+        "Recall a useful object or design detail",
+        "Notice a person who made something possible",
+        "Choose not to do a gratitude exercise today",
+      ]),
+      field("noticed", "What did you notice, if anything?"),
+      field(
+        "limits",
+        "What is hard, complicated or not helped by this practice?",
+      ),
+    ],
+    tags: ["journal", "gratitude", "attention"],
+  },
+  {
+    id: "competing-models",
+    title: "Compare explanations",
+    group: "learn",
+    short:
+      "Hold two or more explanations side by side and ask what each would predict.",
+    fields: [
+      field("observation", "What observation are you trying to explain?"),
+      field("model-a", "Explanation A"),
+      field("model-b", "Explanation B"),
+      field(
+        "predictions",
+        "What would each explanation predict that you could observe?",
+      ),
+      field(
+        "test",
+        "What evidence could distinguish them—and what might remain unknowable?",
+      ),
+    ],
+    tags: ["learning", "critical-thinking", "uncertainty"],
+  },
+  {
+    id: "mechanism-builder",
+    title: "Build a mechanism",
+    group: "learn",
+    short:
+      "Turn a broad claim into a possible chain of steps, then find where evidence is missing.",
+    fields: [
+      field("claim", "What outcome or claim do you want to explain?"),
+      field("steps", "What steps might connect the cause to the outcome?"),
+      field("evidence", "Which links have evidence, and which are guesses?"),
+      field("test", "What observation would challenge this mechanism?"),
+    ],
+    tags: ["learning", "critical-thinking", "evidence"],
+  },
+  {
+    id: "uncertainty-calibration",
+    title: "Calibrate uncertainty",
+    group: "learn",
+    short:
+      "Record how sure you feel, what would change your mind, and revisit later without needing perfect certainty.",
+    fields: [
+      field("claim", "What are you making a prediction or judgement about?"),
+      range("confidence", "How confident are you right now?", 0, 100),
+      field("basis", "What is your confidence based on?"),
+      field("change", "What new information could change your view?"),
+      field("review", "When or how might you revisit this?"),
+    ],
+    tags: ["learning", "uncertainty", "decision"],
+  },
+  {
+    id: "maps",
+    title: "My Maps",
+    group: "maps",
+    short: "Revisit only the notes you chose to save on this device.",
+    fields: [],
+    tags: ["maps"],
+  },
+];
+
+export const situations = [
+  {
+    id: "feel",
+    label: "Feeling something",
+    examples: "upset, numb, anxious, angry, strange, overwhelmed",
+    tools: ["state-check", "emotion-check-in", "mixed-feelings"],
+  },
+  {
+    id: "think",
+    label: "Thinking too much",
+    examples: "spiralling, worrying, confused, tangled thoughts",
+    tools: [
+      "state-check",
+      "brain-dump",
+      "reality-map",
+      "worry-sort",
+      "certainty",
+    ],
+  },
+  {
+    id: "body",
+    label: "Physically dysregulated",
+    examples: "exhausted, wired, hungry, overstimulated, restless",
+    tools: ["state-check", "load-balancer", "quick-reset"],
+  },
+  {
+    id: "decision",
+    label: "Stuck on a decision",
+    examples: "don’t know what I want or what to do",
+    tools: [
+      "brain-dump",
+      "values-discovery",
+      "decision-map",
+      "future-perspectives",
+    ],
+  },
+  {
+    id: "start",
+    label: "Struggling to start",
+    examples: "procrastinating, unmotivated, avoiding",
+    tools: [
+      "state-check",
+      "friction",
+      "small-step",
+      "environment-design",
+      "reward-design",
+    ],
+  },
+  {
+    id: "relate",
+    label: "Dealing with someone",
+    examples: "argument, boundary, misunderstanding, relationship",
+    tools: [
+      "quick-reset",
+      "conversation-map",
+      "boundary-builder",
+      "conflict-pattern",
+    ],
+  },
+  {
+    id: "self",
+    label: "Trying to understand myself",
+    examples: "patterns, identity, reactions, repeated behaviour",
+    tools: [
+      "state-check",
+      "pattern-map",
+      "function-finder",
+      "context-map",
+      "cost-map",
+      "maintenance-loop",
+    ],
+  },
+  {
+    id: "calm",
+    label: "Needing to settle or orient",
+    examples: "panic, sensory overload, agitation",
+    tools: ["quick-reset", "grounding", "load-balancer"],
+  },
+  {
+    id: "reflect",
+    label: "Wanting to reflect",
+    examples: "journal, appreciation, values, life direction",
+    tools: [
+      "free-journal",
+      "thought-journal",
+      "gratitude",
+      "gratitude-course",
+      "positive-memory",
+      "values-discovery",
+      "weekly-review",
+    ],
+  },
+  {
+    id: "stim",
+    label: "Wanting stimulation",
+    examples: "bored, understimulated, want to stim",
+    tools: ["state-check", "sensory-profile", "masking-map", "pattern-stims"],
+  },
+  {
+    id: "learn",
+    label: "Wanting to learn",
+    examples: "psychology, reasoning, emotions",
+    tools: [
+      "emotion-check-in",
+      "claim-checker",
+      "evidence-strength",
+      "competing-models",
+      "mechanism-builder",
+      "uncertainty-calibration",
+    ],
+  },
+  {
+    id: "unsure",
+    label: "Not sure",
+    examples: "guide me",
+    tools: ["state-check", "brain-dump", "quick-reset"],
+  },
+];
