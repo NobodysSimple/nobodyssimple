@@ -19,6 +19,12 @@ import {
   bindMoodRating,
   moodComparisonMarkup,
 } from "./features.mjs";
+import {
+  appendInteractiveToolbox,
+  renderInteractiveTool,
+  renderTeam,
+} from "./interactive-tools.mjs";
+import { renderSimplyFocus } from "./simplyfocus.mjs";
 const main = document.querySelector("main");
 let posts = [],
   loadError = "",
@@ -584,8 +590,14 @@ function route() {
       learn: library,
       blog,
       writing: blog,
-      tools: () => renderToolbox(main),
+      tools: () => {
+        renderToolbox(main);
+        appendInteractiveToolbox(main);
+      },
       tool: () => renderTool(main, decodeURIComponent(id || "")),
+      play: () => renderInteractiveTool(main, decodeURIComponent(id || "")),
+      team: () => renderTeam(main),
+      simplyfocus: () => renderSimplyFocus(main),
       compass: () =>
         renderCompass(main, emotions, (e) => (selectedEmotion = e)),
       questions: questioning,
@@ -605,7 +617,17 @@ function route() {
     })[name] || (() => renderHome(main, posts))
   )();
   window.scrollTo(0, 0);
-  document.title = `${name && name !== "home" ? name.charAt(0).toUpperCase() + name.slice(1) + " · " : ""}Nobody’s Simple`;
+  const title =
+    name === "simplyfocus"
+      ? "SimplyFocus"
+      : name === "team"
+        ? "Meet the team"
+        : name === "play"
+          ? main.querySelector("#interactive-title")?.textContent || "Interactive tool"
+          : name && name !== "home"
+            ? name.charAt(0).toUpperCase() + name.slice(1)
+            : "";
+  document.title = `${title ? title + " · " : ""}Nobody’s Simple`;
 }
 try {
   const r = await fetch("content.json", { cache: "no-store" });

@@ -1,6 +1,7 @@
 import { escapeHTML as esc, nearestEmotions } from "./core.mjs";
 import { profileFor, stateItems } from "./emotion-profiles.mjs";
 import { tools, toolGroups, situations } from "./tool-catalog.mjs";
+import { interactiveCardMarkup, recommendInteractiveTools } from "./interactive-tools.mjs";
 
 const yt = "https://www.youtube.com/@nobodyssimple";
 const forms = {
@@ -130,7 +131,7 @@ export function renderHome(root, posts) {
   root.innerHTML = `<div class="home-wrap"><section class="cover-hero"><img class="cover-image" src="banner.png" alt="Nobody’s Simple — Psychology for choosing what to do next"><div class="cover-cta"><p class="eyebrow">A practical psychology project</p><p>Start with the moment you’re in. Find one thing that might help.</p><a class="button bright" href="#help">Help me figure out what I need <span aria-hidden="true">↗</span></a></div></section><div class="quick-actions"><a href="#help"><span>01</span><b>Help me figure out what I need</b><small>Three tailored starting points</small></a><a href="#compass"><span>02</span><b>Name the feeling or state</b><small>Emotions, energy and body cues</small></a><a href="#library"><span>03</span><b>Follow a learning thread</b><small>52 weeks · four quarters</small></a><a href="#maps"><span>04</span><b>My Maps</b><small>Return to notes saved on this device</small></a></div>
  <section class="install-ribbon"><div class="round-icon">↗</div><div><p class="eyebrow">Keep it close</p><h2>Add Nobody’s Simple to your home screen</h2><p>Your web app—one tap away, no app store required.</p></div><a href="#install" class="button">Install the app <span aria-hidden="true">→</span></a><button type="button" class="icon-button" data-install-prompt aria-label="Install Nobody’s Simple">↓</button></section>
  <section class="channel-hero"><div><p class="eyebrow">The Nobody’s Simple channel</p><h2>Watch the ideas take shape.</h2><p>Animated psychology, complicated questions and useful ways to choose what to do next.</p></div><a class="channel-cta" href="${yt}" target="_blank" rel="noopener noreferrer"><span class="play-button">▶</span><span><small>VISIT THE CHANNEL</small><strong>Watch on YouTube</strong></span><span aria-hidden="true">↗</span></a></section>
- <section class="editorial-section"><div class="section-head"><div><p class="eyebrow">A living field guide</p><h2>More than one way into a moment.</h2></div><a class="text-link" href="#tools">Explore the toolbox ↗</a></div><div class="grid feature-grid">${["emotion-check-in", "state-check", "reality-map", "small-step"].map((id) => card(tools.find((t) => t.id === id))).join("")}</div></section>
+ <section class="editorial-section new-offerings"><div class="section-head"><div><p class="eyebrow">New ways into the project</p><h2>Focus, play or meet the person behind it.</h2></div></div><div class="grid"><a class="card new-offering focus-offering" href="#simplyfocus"><span class="index">SIMPLYFOCUS / 01</span><h3>Build a soundscape for this moment.</h3><p>Layer rain, fire, wind, waves, white noise, a singing bowl or our original generated lo-fi.</p><span class="arrow">Make your mix ↗</span></a><a class="card new-offering play-offering" href="#tools"><span class="index">NO WRITING / 02</span><h3>Try something interactive.</h3><p>Tap, move, sort, listen or explore a visual activity in your own way.</p><span class="arrow">Browse interactive tools ↗</span></a><a class="card new-offering team-offering" href="#team"><span class="index">MEET THE TEAM / 03</span><h3>One person, many threads.</h3><p>Meet Drew and the research, support work and promises behind Nobody’s Simple.</p><span class="arrow">Read our story ↗</span></a></div></section>\n <section class="editorial-section"><div class="section-head"><div><p class="eyebrow">A living field guide</p><h2>More than one way into a moment.</h2></div><a class="text-link" href="#tools">Explore the toolbox ↗</a></div><div class="grid feature-grid">${["emotion-check-in", "state-check", "reality-map", "small-step"].map((id) => card(tools.find((t) => t.id === id))).join("")}</div></section>
  <section class="journey-banner"><div><p class="eyebrow">Recursive autonomy · 2026–27</p><h2>Notice the pattern.<br>Decide what should guide you.</h2><p>Four quarters. Twelve modules. Fifty-two questions to explore.</p><a class="button light-button" href="#library">Explore the curriculum →</a></div><div class="journey-stamp">SEE <span>✳</span> TRACE <span>✳</span><br>RESIST <span>✳</span> GOVERN</div></section>
  <section class="editorial-section blog-preview"><div class="section-head"><div><p class="eyebrow">Separate from the curriculum</p><h2>Notes from Nobody’s Simple.</h2></div><a class="text-link" href="#blog">All blog posts ↗</a></div><div class="grid">${latest.length ? latest.map((p) => `<a class="card post-card" href="#post/${encodeURIComponent(p.id)}">${p.thumbnail ? `<img src="${esc(p.thumbnail)}" alt="${esc(p.thumbnailAlt || "")}" loading="lazy">` : `<div class="post-placeholder" aria-hidden="true">Aa</div>`}<div class="copy"><span class="badge">${esc((p.topics || []).join(" · ") || "A note")}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt || "")}</p><span class="arrow">Read the piece →</span></div></a>`).join("") : `<div class="empty">The blog is ready for your first post in Staff login.</div>`}</div></section>
  <section class="community-ribbon"><div><p class="eyebrow">Built with people, not just for people</p><h2>Shape what we make next.</h2><p>Suggest a topic, challenge an idea or help make the project more useful.</p></div><div class="row"><a class="button bright" href="#community">Share feedback</a><a class="button outline-light" href="#volunteer">Volunteer with us</a></div></section><section class="home-app-banner"><div><span class="eyebrow">A web app, on your phone</span><h2>Carry a calmer next step.</h2><p>Add it to your home screen. No app-store account or download fee.</p></div><a href="#install" class="button bright">How to add the app ↗</a></section></div>`;
@@ -154,7 +155,7 @@ export function renderHelp(root) {
     )
     .join(
       "",
-    )}</div></fieldset></section><aside class="navigator-side"><label class="field">How much energy is available right now?<input type="range" name="energy" min="0" max="2" value="1"><span class="range-ends"><span>Very little</span><output id="energy-label">Some</output><span>Plenty</span></span></label><label class="field">How intense does it feel?<input type="range" name="intensity" min="0" max="10" value="5"><span class="range-ends"><span>Gentle</span><output id="intensity-label">5 / 10</output><span>Very intense</span></span></label><button class="button full" type="submit">Find my starting points ↗</button><p class="fine">Nothing is saved unless you choose to save an individual reflection.</p></aside></form><section id="recommendations" class="recommendations" aria-live="polite"></section></div>`;
+    )}</div></fieldset></section><aside class="navigator-side"><label class="field">How much energy is available right now?<input type="range" name="energy" min="0" max="2" value="1"><span class="range-ends"><span>Very little</span><output id="energy-label">Some</output><span>Plenty</span></span></label><label class="field">How intense does it feel?<input type="range" name="intensity" min="0" max="10" value="5"><span class="range-ends"><span>Gentle</span><output id="intensity-label">5 / 10</output><span>Very intense</span></span></label><label class="interactive-opt-in"><input type="checkbox" name="includeInteractive" checked><span><b>Also show interactive tools</b><small>Three options you can use without writing.</small></span></label><button class="button full" type="submit">Find my starting points ↗</button><p class="fine">Nothing is saved unless you choose to save an individual reflection.</p></aside></form><section id="recommendations" class="recommendations" aria-live="polite"></section></div>`;
   const form = root.querySelector("#navigator-form");
   form.elements.energy.oninput = (e) =>
     (root.querySelector("#energy-label").value = [
@@ -171,6 +172,8 @@ export function renderHelp(root) {
     );
     const goal = form.elements.goal.value;
     const energy = +form.elements.energy.value;
+    const showInteractive = form.elements.includeInteractive.checked;
+    const interactivePicks = recommendInteractiveTools(goal, chosen.map((item) => item.id), energy);
     const pool = [];
     for (const s of chosen)
       for (const id of s.tools) {
@@ -213,6 +216,20 @@ export function renderHelp(root) {
       .slice(0, 3);
     root.querySelector("#recommendations").innerHTML =
       `<p class="eyebrow">Three gentle starting points</p><h2>Take what fits. Leave the rest.</h2><p class="fine">Picked from your choices: ${chosen.length ? chosen.map((x) => esc(x.label)).join(" · ") : "not sure yet"}. The suggestions are a simple match to the tools—not an assessment.</p><div class="grid">${picks.map((t, i) => `<a class="card recommendation-card" href="#tool/${t.id}"><span class="number">0${i + 1}</span><h3>${esc(t.title)}</h3><p>${esc(t.short)}</p><small>Why this might fit: ${esc(t.tags.some((tag) => chosen.some((s) => s.tools.includes(t.id))) ? "You selected a situation this tool can help you explore." : goal === "calmer" ? "You asked for a calmer, lower-pressure starting point." : "It gives a concrete place to start without needing the “right” answer.")}</small><span class="arrow">Try this tool →</span></a>`).join("")}</div><p class="fine">You can also <a href="#tools">browse the full toolbox</a> or <a href="#routes">follow a guided route</a>.</p>`;
+    if (showInteractive) {
+      const section = document.createElement("section");
+      section.className = "interactive-recommendations";
+      section.innerHTML = '<p class="eyebrow">Interactive · no writing</p><h2>Want something more interactive? Try these.</h2><p class="fine">A second set of options, matched to the situations and kind of help you selected. The usual three suggestions above are unchanged.</p>';
+      const grid = document.createElement("div");
+      grid.className = "grid interactive-recommendation-grid";
+      interactivePicks.forEach((tool, index) => {
+        const holder = document.createElement("div");
+        holder.innerHTML = interactiveCardMarkup(tool, index);
+        if (holder.firstElementChild) grid.append(holder.firstElementChild);
+      });
+      section.append(grid);
+      root.querySelector("#recommendations").append(section);
+    }
     root
       .querySelector("#recommendations")
       .scrollIntoView({ behavior: "smooth" });

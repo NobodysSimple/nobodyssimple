@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v10";
+const CACHE = "nobodyssimple-v11";
 const SHELL = [
   "./",
   "index.html",
@@ -8,6 +8,8 @@ const SHELL = [
   "styles.css",
   "site.mjs",
   "features.mjs",
+  "interactive-tools.mjs",
+  "simplyfocus.mjs",
   "tool-catalog.mjs",
   "emotion-profiles.mjs",
   "core.mjs",
@@ -16,6 +18,7 @@ const SHELL = [
   "manifest.webmanifest",
   "icon-192.png",
   "icon-512.png",
+  "drew-profile.png",
 ];
 const SAFE = new Set(
   SHELL.map((path) => new URL(path, self.registration.scope).pathname).concat(
@@ -75,5 +78,4 @@ self.addEventListener("fetch", (event) => {
       ),
   );
 });
-
 
