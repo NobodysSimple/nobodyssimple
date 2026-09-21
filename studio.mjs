@@ -65,10 +65,17 @@ $("login-form").onsubmit = async (event) => {
     $("studio").hidden = false;
     listPosts();
     openEditor();
-  } catch {
+  } catch (error) {
     candidate.disconnect();
     $("token").value = "";
-    $("login-status").textContent = "Sign-in failed.";
+    const message =
+      error instanceof Error && error.message
+        ? error.message
+        : "GitHub returned an unexpected sign-in error.";
+    $("login-status").textContent =
+      message === "Failed to fetch"
+        ? "Could not reach GitHub. Check your connection and try again."
+        : `Sign-in failed: ${message}`;
   } finally {
     $("connect").disabled = false;
   }
