@@ -14,6 +14,9 @@ const element = (tag, className = "", text = "") => {
   if (text) node.textContent = text;
   return node;
 };
+// This module is separate from features.mjs, so give its toolbox renderer its
+// own query helper instead of relying on another module's private `$` binding.
+const $ = (selector, root = document) => root.querySelector(selector);
 
 const rows = [
   ["emotion-compass", "Emotion Compass", "feel", "link", "feel,body,calm", "understand,calmer", "Move from energy and pleasantness toward a feeling word that fits."],
