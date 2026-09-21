@@ -26,6 +26,7 @@ import {
   renderTeam,
 } from "./interactive-tools.mjs";
 import { renderSimplyFocus } from "./simplyfocus.mjs";
+import { renderPersonalityTest } from "./personality-test.mjs";
 const main = document.querySelector("main");
 const imageLightbox = document.createElement("dialog");
 imageLightbox.className = "site-image-lightbox";
@@ -644,6 +645,7 @@ function route() {
       play: () => renderInteractiveTool(main, decodeURIComponent(id || "")),
       team: () => renderTeam(main),
       simplyfocus: () => renderSimplyFocus(main),
+      personality: () => renderPersonalityTest(main),
       compass: () =>
         renderCompass(main, emotions, (e) => (selectedEmotion = e)),
       questions: questioning,
@@ -664,7 +666,9 @@ function route() {
   )();
   window.scrollTo(0, 0);
   const title =
-    name === "simplyfocus"
+    name === "personality"
+      ? "Personality Quick Map (Beta)"
+      : name === "simplyfocus"
       ? "SimplyFocus"
       : name === "team"
         ? "Meet the team"
