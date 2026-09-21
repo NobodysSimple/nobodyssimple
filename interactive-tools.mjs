@@ -111,7 +111,7 @@ const hrefFor = (tool) => {
 export const interactiveCardMarkup = (tool, index = 0) =>
   '<a class="interactive-tool-card" href="' +
   escape(hrefFor(tool)) +
-  '"><span class="interactive-tool-kind">Interactive · no writing</span><span class="interactive-tool-number">' +
+  '"><span class="interactive-tool-kind">Interactive · choose your way</span><span class="interactive-tool-number">' +
   String(index + 1).padStart(2, "0") +
   '</span><h3>' +
   escape(tool.title) +
@@ -144,18 +144,11 @@ export function recommendInteractiveTools(goal, selectedSituations, energy) {
 }
 
 export function appendInteractiveToolbox(root) {
-  const host = root.querySelector(".wrap") || root;
+  const host = root.querySelector("#interactive-tools-slot") || root.querySelector(".wrap") || root;
   const section = element("section", "interactive-toolbox section");
   section.innerHTML =
-    '<div class="section-head"><div><p class="eyebrow">A separate way to explore</p><h2>Interactive tools · no writing</h2><p>Tap, move, sort or listen. Your selections stay in this page unless you choose to save a personal recipe.</p></div><span class="interactive-count">56 activities</span></div><div class="interactive-featured" id="interactive-featured"></div><details class="interactive-catalog"><summary>Browse all 56 interactive tools</summary><div class="interactive-catalog-controls"><label class="field">Find an activity<input id="interactive-search" type="search" placeholder="Try feelings, focus, decisions…"></label><div class="tabs interactive-categories" id="interactive-categories"></div></div><div id="interactive-catalog-groups"></div></details>';
-  host.append(section);
-  const featured = ["emotion-compass", "breathing-pacer", "sensory-playground", "five-senses-grounding", "body-sensation-map", "nobody-radio"];
-  $("#interactive-featured", section).innerHTML = featured
-    .map((id, index) => {
-      const tool = interactiveTools.find((item) => item.id === id);
-      return tool ? interactiveCardMarkup(tool, index) : "";
-    })
-    .join("");
+    '<div class="section-head"><div><p class="eyebrow">A separate way to explore</p><h2>Interactive tools</h2><p>Tap, move, sort, listen or add your own words. The written tools above stay separate.</p></div><span class="interactive-count">' + interactiveTools.length + ' activities</span></div><div class="interactive-catalog-controls"><label class="field">Find an activity<input id="interactive-search" type="search" placeholder="Try feelings, focus, decisions…"></label><div class="tabs interactive-categories" id="interactive-categories"></div></div><div id="interactive-catalog-groups"></div>';
+  host.replaceChildren(section);
   const categories = $("#interactive-categories", section);
   const catalog = $("#interactive-catalog-groups", section);
   const search = $("#interactive-search", section);
@@ -164,30 +157,28 @@ export function appendInteractiveToolbox(root) {
     const query = search.value.trim().toLowerCase();
     let visible = 0;
     catalog.querySelectorAll(".interactive-catalog-group").forEach((block) => {
-      let visibleInGroup = 0;
+      let inGroup = 0;
       block.querySelectorAll(".interactive-tool-card").forEach((card) => {
-        const show =
-          (activeGroup === "all" || block.dataset.group === activeGroup) &&
-          card.textContent.toLowerCase().includes(query);
+        const show = (activeGroup === "all" || block.dataset.group === activeGroup) && card.textContent.toLowerCase().includes(query);
         card.hidden = !show;
-        if (show) visibleInGroup += 1;
+        if (show) inGroup += 1;
       });
-      block.hidden = visibleInGroup === 0;
-      visible += visibleInGroup;
+      block.hidden = inGroup === 0;
+      visible += inGroup;
     });
     const empty = $("#interactive-empty", section);
     if (empty) empty.hidden = visible !== 0;
   };
   [["all", "All"], ...groupNames].forEach(([id, label]) => {
-    const button = element("button", "chip" + (id === "all" ? " active" : ""), label);
-    button.type = "button";
-    button.dataset.category = id;
-    button.addEventListener("click", () => {
+    const tab = element("button", "chip" + (id === "all" ? " active" : ""), label);
+    tab.type = "button";
+    tab.dataset.category = id;
+    tab.addEventListener("click", () => {
       activeGroup = id;
-      categories.querySelectorAll("button").forEach((item) => item.classList.toggle("active", item === button));
+      categories.querySelectorAll("button").forEach((other) => other.classList.toggle("active", other === tab));
       filter();
     });
-    categories.append(button);
+    categories.append(tab);
   });
   groupNames.forEach(([id, label]) => {
     const list = interactiveTools.filter((tool) => tool.group === id);
@@ -195,15 +186,13 @@ export function appendInteractiveToolbox(root) {
     block.dataset.group = id;
     const header = element("div", "section-head");
     const title = element("div");
-    title.append(element("p", "eyebrow", "No-writing activities"));
-    title.append(element("h3", "", label));
+    title.append(element("p", "eyebrow", "Hands-on activities"), element("h3", "", label));
     header.append(title, element("span", "fine", list.length + " tools"));
     const grid = element("div", "grid interactive-grid");
     list.forEach((tool, index) => {
-      const wrapper = element("div");
-      wrapper.innerHTML = interactiveCardMarkup(tool, index);
-      const card = wrapper.firstElementChild;
-      card.dataset.search = (tool.title + " " + tool.short + " " + label).toLowerCase();
+      const holder = element("div");
+      holder.innerHTML = interactiveCardMarkup(tool, index);
+      const card = holder.firstElementChild;
       grid.append(card);
     });
     block.append(header, grid);
@@ -352,57 +341,112 @@ const addChipChoices = (root, host, list, { multiple = false, onChoose } = {}) =
 
 function renderSort(root, tool) {
   const host = root.querySelector("#interactive-activity");
-  const config = sortConfig[tool.id] || { bins: ["Less effort", "Some effort", "A lot of effort"] };
-  const items = prompts[tool.id] || ["A situation I can act on", "A thought I am adding", "A need I have", "Something outside my control", "A small next step"];
+  const config = sortConfig[tool.id] || { bins: ["Option A", "Option B", "Not sure yet"] };
+  const seeded = prompts[tool.id] || ["A situation I can act on", "A thought I am adding", "A need I have", "Something outside my control", "A small next step"];
   const picked = element("div", "sort-cards");
   const bins = element("div", "sort-bins");
+  const records = seeded.map((label, index) => ({ id: "sample-" + index, label }));
   const assigned = new Map();
-  let active = "";
-  items.forEach((label, index) => {
-    const card = button(label, "sort-card");
+  let activeId = "";
+  const findCard = (id) => [...picked.querySelectorAll(".sort-card")].find((card) => card.dataset.cardId === id);
+  const removePlacement = (id) => {
+    bins.querySelectorAll(".sorted-chip").forEach((chip) => { if (chip.dataset.cardId === id) chip.remove(); });
+    assigned.delete(id);
+    findCard(id)?.classList.remove("sorted");
+  };
+  const place = (id, zone) => {
+    const record = records.find((item) => item.id === id);
+    if (!record || !zone) return;
+    removePlacement(id);
+    assigned.set(id, zone.dataset.zone);
+    const chip = button(record.label + " ×", "sorted-chip");
+    chip.dataset.cardId = id;
+    chip.setAttribute("aria-label", "Remove " + record.label + " from " + zone.dataset.zone);
+    chip.addEventListener("click", () => removePlacement(id));
+    zone.querySelector(".sort-placed").append(chip);
+    findCard(id)?.classList.add("sorted");
+    showStatus(root, record.label + " placed in " + zone.dataset.zone + ". Move it again or remove it.");
+  };
+  const buildCard = (record) => {
+    const card = button(record.label, "sort-card");
+    card.dataset.cardId = record.id;
+    card.setAttribute("aria-label", "Move card: " + record.label);
     card.addEventListener("click", () => {
-      active = label;
-      picked.querySelectorAll(".sort-card").forEach((node) => node.classList.toggle("selected", node.dataset.label === label));
-      showStatus(root, "Selected: " + label + ". Choose a category below.");
+      activeId = record.id;
+      picked.querySelectorAll(".sort-card").forEach((other) => other.classList.toggle("selected", other === card));
+      showStatus(root, "Selected: " + record.label + ". Tap a category or drag the card into it.");
     });
-    card.dataset.label = label;
-    picked.append(card);
-  });
+    let pointerId = null;
+    let ghost = null;
+    card.addEventListener("pointerdown", (event) => {
+      if (event.button !== undefined && event.button !== 0) return;
+      pointerId = event.pointerId;
+      activeId = record.id;
+      card.classList.add("dragging");
+      ghost = element("div", "sort-drag-ghost", record.label);
+      ghost.style.left = event.clientX + "px";
+      ghost.style.top = event.clientY + "px";
+      document.body.append(ghost);
+      try { card.setPointerCapture(event.pointerId); } catch {}
+    });
+    card.addEventListener("pointermove", (event) => {
+      if (event.pointerId !== pointerId || !ghost) return;
+      ghost.style.left = event.clientX + "px";
+      ghost.style.top = event.clientY + "px";
+      const target = document.elementFromPoint(event.clientX, event.clientY)?.closest(".sort-zone");
+      bins.querySelectorAll(".sort-zone").forEach((zone) => zone.classList.toggle("drag-over", zone === target));
+    });
+    const finish = (event) => {
+      if (event.pointerId !== pointerId) return;
+      const target = document.elementFromPoint(event.clientX, event.clientY)?.closest(".sort-zone");
+      if (target) place(record.id, target);
+      card.classList.remove("dragging");
+      bins.querySelectorAll(".sort-zone").forEach((zone) => zone.classList.remove("drag-over"));
+      ghost?.remove();
+      ghost = null;
+      pointerId = null;
+    };
+    card.addEventListener("pointerup", finish);
+    card.addEventListener("pointercancel", finish);
+    return card;
+  };
   config.bins.forEach((label) => {
-    const zone = element("div", "sort-zone");
+    const zone = element("section", "sort-zone");
+    zone.dataset.zone = label;
     const heading = element("h3", "", label);
-    const drop = button("Place selected card here", "sort-drop");
     const placed = element("div", "sort-placed");
+    const drop = button("Place selected card here", "sort-drop");
     drop.addEventListener("click", () => {
-      if (!active) {
-        showStatus(root, "Choose an example card first.");
-        return;
-      }
-      assigned.set(active, label);
-      const card = [...picked.children].find((node) => node.dataset.label === active);
-      if (card) {
-        card.classList.add("sorted");
-        card.disabled = true;
-      }
-      placed.append(element("span", "sorted-chip", active));
-      active = "";
-      showStatus(root, assigned.size + " of " + items.length + " examples placed. There is no score.");
+      if (!activeId) { showStatus(root, "Choose a card first, then choose a category."); return; }
+      place(activeId, zone);
     });
     zone.append(heading, placed, drop);
     bins.append(zone);
   });
-  const reset = button("Start again", "button subtle-button");
-  reset.addEventListener("click", () => {
-    assigned.clear();
-    active = "";
-    picked.querySelectorAll(".sort-card").forEach((card) => {
-      card.disabled = false;
-      card.classList.remove("selected", "sorted");
-    });
-    bins.querySelectorAll(".sort-placed").forEach((node) => node.replaceChildren());
-    showStatus(root, "Choose an example, then choose a category that feels closest.");
+  records.forEach((record) => picked.append(buildCard(record)));
+  const customLabel = element("label", "field", "Add your own card (optional; add as many as you need)");
+  const customInput = document.createElement("textarea");
+  customInput.rows = 2;
+  customInput.placeholder = "Type a worry, task, fact, or example";
+  const add = button("Add card", "button");
+  add.addEventListener("click", () => {
+    const label = customInput.value.trim();
+    if (!label) return;
+    const record = { id: "custom-" + Math.random().toString(36).slice(2), label };
+    records.push(record);
+    picked.append(buildCard(record));
+    customInput.value = "";
+    showStatus(root, "Your card is ready to place.");
   });
-  host.append(element("p", "interactive-instruction", "Choose a sample card, then place it in a category. These are examples to explore, not a test."), picked, bins, reset);
+  customLabel.append(customInput);
+  const reset = button("Clear placed cards", "button subtle-button");
+  reset.addEventListener("click", () => {
+    assigned.clear(); activeId = "";
+    picked.querySelectorAll(".sort-card").forEach((card) => card.classList.remove("selected", "sorted", "dragging"));
+    bins.querySelectorAll(".sort-placed").forEach((node) => node.replaceChildren());
+    showStatus(root, "Placed cards cleared. Your own cards remain until you leave.");
+  });
+  host.append(element("p", "interactive-instruction", "Drag a card into a category, or tap a card and then tap its destination. Add your own cards whenever you need."), picked, customLabel, add, bins, reset);
 }
 
 function renderSliders(root, tool) {
@@ -464,28 +508,47 @@ function renderSliders(root, tool) {
 
 function renderBodyMap(root) {
   const host = root.querySelector("#interactive-activity");
-  host.append(element("p", "interactive-instruction", "Tap any body area, then choose a sensory word. A sensation does not have one fixed emotional meaning."));
-  const map = element("div", "body-map");
-  const silhouette = element("div", "body-silhouette", "◯");
-  silhouette.setAttribute("aria-hidden", "true");
-  map.append(silhouette);
-  const regions = element("div", "body-regions");
-  const chosen = new Set();
-  bodyZones.forEach((zone) => {
-    const item = button(zone, "body-region");
-    item.addEventListener("click", () => {
-      if (chosen.has(zone)) chosen.delete(zone);
-      else chosen.add(zone);
-      item.classList.toggle("selected", chosen.has(zone));
-      item.setAttribute("aria-pressed", String(chosen.has(zone)));
-      showStatus(root, chosen.size ? "Areas noticed: " + [...chosen].join(", ") : "No body areas selected.");
-    });
-    regions.append(item);
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("viewBox", "0 0 240 520");
+  svg.setAttribute("class", "body-map-svg");
+  svg.setAttribute("role", "group");
+  svg.setAttribute("aria-label", "Tap one or more regions on the body figure.");
+  const zones = [
+    ["Head", "circle", { cx: 120, cy: 43, r: 28 }], ["Neck", "rect", { x: 106, y: 70, width: 28, height: 25, rx: 9 }],
+    ["Chest", "path", { d: "M78 94 Q120 76 162 94 L156 172 Q120 184 84 172 Z" }], ["Stomach", "path", { d: "M84 175 Q120 184 156 175 L151 252 Q120 263 89 252 Z" }],
+    ["Pelvis", "path", { d: "M89 255 Q120 265 151 255 L159 295 Q120 315 81 295 Z" }],
+    ["Left shoulder", "path", { d: "M80 95 Q56 98 48 120 L67 137 Q79 127 88 116 Z" }], ["Right shoulder", "path", { d: "M160 95 Q184 98 192 120 L173 137 Q161 127 152 116 Z" }],
+    ["Left upper arm", "path", { d: "M52 126 Q40 134 35 163 L22 221 Q21 235 34 239 L49 232 L67 150 Z" }], ["Right upper arm", "path", { d: "M188 126 Q200 134 205 163 L218 221 Q219 235 206 239 L191 232 L173 150 Z" }],
+    ["Left hand", "path", { d: "M23 238 Q10 245 13 267 Q18 280 31 272 L43 245 Z" }], ["Right hand", "path", { d: "M217 238 Q230 245 227 267 Q222 280 209 272 L197 245 Z" }],
+    ["Left thigh", "path", { d: "M83 300 Q101 306 116 303 L112 389 L83 390 Q77 350 83 300 Z" }], ["Right thigh", "path", { d: "M124 303 Q140 306 157 300 Q163 350 157 390 L128 389 Z" }],
+    ["Left lower leg", "path", { d: "M84 394 L111 394 L107 476 L83 476 Z" }], ["Right lower leg", "path", { d: "M129 394 L156 394 L157 476 L133 476 Z" }],
+    ["Left foot", "path", { d: "M83 478 L107 478 L110 492 Q106 502 78 499 L72 493 Z" }], ["Right foot", "path", { d: "M133 478 L157 478 L168 493 L162 499 Q134 502 130 492 Z" }],
+  ];
+  const picked = new Set();
+  const summary = element("p", "body-map-selected", "No regions selected yet. Tap the figure wherever you notice something.");
+  zones.forEach(([label, shape, attrs]) => {
+    const group = document.createElementNS(ns, "g");
+    group.setAttribute("class", "body-map-zone"); group.setAttribute("tabindex", "0"); group.setAttribute("role", "button");
+    group.setAttribute("aria-label", label); group.setAttribute("aria-pressed", "false"); group.dataset.zone = label;
+    const geometry = document.createElementNS(ns, shape);
+    Object.entries(attrs).forEach(([key, value]) => geometry.setAttribute(key, String(value)));
+    geometry.setAttribute("class", "body-map-shape");
+    const title = document.createElementNS(ns, "title"); title.textContent = label;
+    group.append(geometry, title);
+    const toggle = () => {
+      if (picked.has(label)) picked.delete(label); else picked.add(label);
+      group.classList.toggle("selected", picked.has(label)); group.setAttribute("aria-pressed", String(picked.has(label)));
+      summary.textContent = picked.size ? "Areas noticed: " + [...picked].join(" · ") : "No regions selected. Tap the figure wherever you notice something.";
+      showStatus(root, summary.textContent);
+    };
+    group.addEventListener("click", toggle);
+    group.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); toggle(); } });
+    svg.append(group);
   });
-  map.append(regions);
   const senseHost = element("div", "choice-cloud");
-  addChipChoices(root, senseHost, sensations, { multiple: true, onChoose: (list) => showStatus(root, (chosen.size ? [...chosen].join(", ") : "No area selected") + " · sensations: " + (list.join(", ") || "none selected")) });
-  host.append(map, element("h3", "", "Choose sensation words"), senseHost);
+  addChipChoices(root, senseHost, sensations, { multiple: true, onChoose: (list) => showStatus(root, (picked.size ? [...picked].join(" · ") : "No body region selected") + " · sensations: " + (list.join(", ") || "none selected")) });
+  host.append(element("p", "interactive-instruction", "Tap one or more places on the figure itself, then choose any sensation words that fit."), svg, summary, element("h3", "", "Sensation words"), senseHost, element("p", "fine", "A neutral front-view figure; sensations do not have one fixed emotional meaning."));
 }
 
 function renderSenses(root) {
@@ -520,25 +583,40 @@ function renderSenses(root) {
 
 function renderBreath(root) {
   const host = root.querySelector("#interactive-activity");
-  const orb = element("div", "breath-orb", "Breathe at your own pace");
+  const stage = element("div", "breath-stage");
+  const orb = element("div", "breath-orb", "Ready when you are");
+  orb.setAttribute("aria-live", "polite");
+  const phase = element("p", "breath-phase", "The shape is still. Choose a comfortable pace, then begin.");
+  const label = element("label", "interactive-control");
+  label.append(element("span", "control-label", "Choose a comfortable pace"));
   const speed = document.createElement("input");
-  speed.type = "range";
-  speed.min = "4";
-  speed.max = "12";
-  speed.value = "7";
-  speed.setAttribute("aria-label", "Breathing animation pace");
-  const output = element("output", "", "7 seconds per cycle");
-  speed.addEventListener("input", () => {
-    output.textContent = speed.value + " seconds per cycle";
+  speed.type = "range"; speed.min = "4"; speed.max = "12"; speed.value = "7";
+  speed.setAttribute("aria-label", "Full visual cycle length in seconds");
+  const output = element("output", "", "7 seconds per full cycle");
+  let startedAt = 0, interval = null, running = false;
+  const setDuration = () => {
     orb.style.setProperty("--breath-duration", speed.value + "s");
+    orb.style.setProperty("--breath-half-duration", (Number(speed.value) / 2) + "s");
+    output.textContent = speed.value + " seconds per full cycle";
+  };
+  const tick = () => {
+    const half = Number(speed.value) * 500;
+    const inhale = (Date.now() - startedAt) % (half * 2) < half;
+    orb.textContent = inhale ? "Inhale if comfortable" : "Exhale if comfortable";
+    phase.textContent = inhale ? "Shape growing · breathe naturally if comfortable" : "Shape easing back · no breath hold";
+  };
+  const start = button("Start visual pacing", "button");
+  speed.addEventListener("input", () => { setDuration(); if (running) { startedAt = Date.now(); tick(); } });
+  start.addEventListener("click", () => {
+    running = !running;
+    window.clearInterval(interval);
+    orb.classList.toggle("breathing", running);
+    if (running) { startedAt = Date.now(); interval = window.setInterval(tick, 200); tick(); start.textContent = "Pause visual pacing"; showStatus(root, "The visual pacer is moving. Breathe naturally; pause whenever you want."); }
+    else { orb.textContent = "Paused"; phase.textContent = "Paused. Your breathing can stay as it is."; start.textContent = "Resume visual pacing"; showStatus(root, "Pacer paused."); }
   });
-  const toggle = button("Start the visual pacer", "button");
-  toggle.addEventListener("click", () => {
-    const running = orb.classList.toggle("breathing");
-    toggle.textContent = running ? "Pause the visual pacer" : "Start the visual pacer";
-    showStatus(root, running ? "Follow the shape only if this pace feels comfortable. You can stop whenever you like." : "Pacer paused.");
-  });
-  host.append(orb, element("label", "interactive-control", "Choose a comfortable pace"), speed, output, toggle, element("p", "fine", "No breath holds. Let breathing stay natural; stop if focusing on breath feels uncomfortable."));
+  const cleanup = window.setInterval(() => { if (!host.contains(orb)) { window.clearInterval(interval); window.clearInterval(cleanup); } }, 1000);
+  setDuration(); label.append(speed, output); stage.append(orb, phase);
+  host.append(element("p", "interactive-instruction", "The shape expands and settles in a repeating visual cycle. There are no holds or required breathing pattern."), stage, label, start, element("p", "fine", "This is an optional visual cue, not a breathing instruction. Stop if focusing on breath feels uncomfortable."));
 }
 
 function renderZones(root, tool) {
@@ -614,33 +692,35 @@ function renderSortTool(root, tool) {
 
 function renderSequence(root, tool) {
   const host = root.querySelector("#interactive-activity");
-  const list = (sequenceParts[tool.id] || ["Notice", "Pause", "Choose", "Continue"]).slice();
+  const list = (sequenceParts[tool.id] || ["Notice where you are", "Choose one small adjustment", "Try it briefly", "Check what happens"]).slice();
   const ordered = element("ol", "sequence-list");
   const redraw = () => {
     ordered.replaceChildren();
     list.forEach((step, index) => {
-      const row = element("li", "sequence-step");
+      const row = element("li", "sequence-step"); row.draggable = true; row.dataset.index = String(index);
       row.append(element("span", "sequence-number", String(index + 1).padStart(2, "0")), element("span", "sequence-text", step));
-      const move = element("div", "sequence-actions");
-      const up = button("Move up", "icon-button");
-      const down = button("Move down", "icon-button");
-      up.disabled = index === 0;
-      down.disabled = index === list.length - 1;
-      up.addEventListener("click", () => {
-        [list[index - 1], list[index]] = [list[index], list[index - 1]];
-        redraw();
+      row.addEventListener("dragstart", (event) => { event.dataTransfer.setData("text/plain", String(index)); event.dataTransfer.effectAllowed = "move"; });
+      row.addEventListener("dragover", (event) => { event.preventDefault(); row.classList.add("sequence-over"); });
+      row.addEventListener("dragleave", () => row.classList.remove("sequence-over"));
+      row.addEventListener("drop", (event) => {
+        event.preventDefault(); row.classList.remove("sequence-over");
+        const from = Number(event.dataTransfer.getData("text/plain"));
+        if (!Number.isInteger(from) || from < 0 || from >= list.length || from === index) return;
+        const [moved] = list.splice(from, 1); list.splice(index, 0, moved); redraw();
       });
-      down.addEventListener("click", () => {
-        [list[index + 1], list[index]] = [list[index], list[index + 1]];
-        redraw();
-      });
-      move.append(up, down);
-      row.append(move);
-      ordered.append(row);
+      const actions = element("div", "sequence-actions");
+      const move = (delta) => { const next = index + delta; if (next < 0 || next >= list.length) return; [list[index], list[next]] = [list[next], list[index]]; redraw(); };
+      const up = button("↑", "icon-button"); up.setAttribute("aria-label", "Move step up"); up.disabled = index === 0; up.addEventListener("click", () => move(-1));
+      const down = button("↓", "icon-button"); down.setAttribute("aria-label", "Move step down"); down.disabled = index === list.length - 1; down.addEventListener("click", () => move(1));
+      actions.append(up, down); row.append(actions); ordered.append(row);
     });
   };
-  redraw();
-  host.append(element("p", "interactive-instruction", "Move steps up or down to explore the order. The sequence is only an example; your experience may differ."), ordered);
+  const addLabel = element("label", "field", "Add your own step (optional)");
+  const input = document.createElement("input"); input.type = "text"; input.placeholder = "A step that fits your situation";
+  const add = button("Add step", "button");
+  add.addEventListener("click", () => { const value = input.value.trim(); if (!value) return; list.push(value); input.value = ""; redraw(); });
+  addLabel.append(input); redraw();
+  host.append(element("p", "interactive-instruction", "Drag steps to reorder, use the arrow buttons on touch screens, or add your own."), ordered, addLabel, add);
 }
 
 function renderRadar(root) {
@@ -794,25 +874,58 @@ function renderTimer(root, tool) {
 
 function renderWave(root) {
   const host = root.querySelector("#interactive-activity");
+  const stage = element("div", "urge-surf-stage");
   const wave = element("div", "urge-wave");
-  const slider = document.createElement("input"); slider.type = "range"; slider.min = "0"; slider.max = "100"; slider.value = "50"; slider.setAttribute("aria-label", "Current urge intensity");
-  const output = element("output", "", "50 / 100");
-  slider.addEventListener("input", () => {
-    wave.style.setProperty("--wave-height", (15 + Number(slider.value) * 0.55) + "%");
-    output.textContent = slider.value + " / 100";
+  const surfer = element("span", "urge-surfer", "🏄"); surfer.setAttribute("aria-hidden", "true"); wave.append(surfer);
+  const duration = document.createElement("select"); duration.setAttribute("aria-label", "Choose how long to watch the wave");
+  [[30, "30 seconds"], [60, "1 minute"], [90, "90 seconds"], [120, "2 minutes"], [180, "3 minutes"], [300, "5 minutes"]].forEach(([value, label]) => { const option = document.createElement("option"); option.value = String(value); option.textContent = label; duration.append(option); });
+  const time = element("output", "urge-time-left", "Ready");
+  const progress = document.createElement("progress"); progress.max = 100; progress.value = 0; progress.setAttribute("aria-label", "Time through this optional wave");
+  const start = button("Start this wave", "button"); const reset = button("Reset", "button subtle-button");
+  const guide = element("p", "interactive-result", "An urge can rise, fall, or change unexpectedly. The animation is a metaphor, not a prediction.");
+  let remaining = Number(duration.value), timer = null;
+  const paint = () => {
+    const total = Number(duration.value), pct = total ? ((total - remaining) / total) * 100 : 0;
+    progress.value = pct; time.textContent = remaining ? Math.floor(remaining / 60) + ":" + String(remaining % 60).padStart(2, "0") + " remaining" : "Wave complete";
+    wave.style.setProperty("--wave-height", (18 + (1 - pct / 100) * 72) + "%"); wave.style.setProperty("--surfer-progress", pct + "%");
+  };
+  const stop = () => { window.clearInterval(timer); timer = null; wave.classList.remove("wave-active"); };
+  start.addEventListener("click", () => {
+    if (timer) { stop(); start.textContent = "Resume this wave"; guide.textContent = "Paused. Resume, reset, or leave whenever you like."; return; }
+    if (remaining <= 0) remaining = Number(duration.value);
+    start.textContent = "Pause"; guide.textContent = "Watch only if you want to. There is no need to change the urge.";
+    wave.classList.add("wave-active");
+    timer = window.setInterval(() => {
+      if (!host.contains(wave)) { stop(); return; }
+      remaining = Math.max(0, remaining - 1); paint();
+      if (!remaining) { stop(); start.textContent = "Surf another wave"; guide.textContent = "The chosen time is complete. Notice what is true now—or simply leave."; }
+    }, 1000);
+    paint();
   });
-  const status = element("p", "fine", "An urge can rise and fall. This visual does not predict how long yours will last.");
-  host.append(wave, slider, output, status);
+  duration.addEventListener("change", () => { stop(); remaining = Number(duration.value); start.textContent = "Start this wave"; paint(); });
+  reset.addEventListener("click", () => { stop(); remaining = Number(duration.value); start.textContent = "Start this wave"; guide.textContent = "Reset whenever you want; no result is kept."; paint(); });
+  const actions = element("div", "row"); actions.append(start, reset);
+  const controls = element("div", "urge-surf-controls"); const label = element("label", "field", "Choose a surf time"); label.append(duration); controls.append(label, time, progress, actions);
+  stage.append(wave);
+  host.append(element("p", "interactive-instruction", "Choose a time, then watch a surfer ride an illustrative wave that gradually settles. Pause or leave at any point."), stage, controls, guide, element("p", "fine", "Urges do not follow a reliable timer. The wave does not predict when yours will change."));
+  paint();
 }
 
 function renderPerspective(root, tool) {
   const host = root.querySelector("#interactive-activity");
-  const list = options[tool.id] || ["My view", "Another view", "A wider view"];
-  const display = element("div", "perspective-display", list[0]);
-  const note = element("p", "interactive-result", "Turn the wheel to look from another position. You do not have to agree with every view.");
-  const cloud = element("div", "choice-cloud");
-  addChipChoices(root, cloud, list, { onChoose: (value) => { display.textContent = value; note.textContent = "You are looking from: " + value + ". This is one possible perspective, not a verdict."; } });
-  host.append(display, cloud, note);
+  const views = (options[tool.id] || ["My view", "Another view", "A wider view"]).slice();
+  const notes = new Map(views.map((view) => [view, ""]));
+  const wheel = element("div", "perspective-wheel"); const display = element("div", "perspective-display", views[0]);
+  const noteLabel = element("label", "field", "Write or sketch a few words for this viewpoint (optional)");
+  const note = document.createElement("textarea"); note.rows = 3; note.placeholder = "Your words stay in this page and are not saved."; noteLabel.append(note);
+  let current = views[0];
+  const select = (view) => { if (current) notes.set(current, note.value); current = view; display.textContent = view; note.value = notes.get(view) || ""; wheel.querySelectorAll("button").forEach((item) => item.classList.toggle("selected", item.textContent === view)); showStatus(root, "Viewing: " + view + ". Your notes remain on this page until you leave."); };
+  const renderButton = (view) => { const item = button(view, "interactive-choice"); item.addEventListener("click", () => select(view)); wheel.append(item); };
+  views.forEach(renderButton);
+  const addLabel = element("label", "field", "Add another viewpoint (optional)"); const addInput = document.createElement("input"); addInput.placeholder = "e.g. what I know now, a trusted friend's view";
+  const add = button("Add viewpoint", "button subtle-button"); add.addEventListener("click", () => { const view = addInput.value.trim(); if (!view || views.includes(view)) return; views.push(view); notes.set(view, ""); addInput.value = ""; renderButton(view); select(view); }); addLabel.append(addInput);
+  note.addEventListener("input", () => notes.set(current, note.value));
+  host.append(element("p", "interactive-instruction", "Turn among viewpoints; use the optional text boxes to make the exercise about your situation."), wheel, display, noteLabel, addLabel, add);
 }
 
 function renderProbability(root) {
@@ -1024,7 +1137,7 @@ function renderMixer(root, tool) {
 export function renderInteractiveTool(root, id) {
   const tool = interactiveTools.find((item) => item.id === id);
   if (!tool) {
-    root.innerHTML = '<div class="wrap"><section class="page-intro"><p class="eyebrow">Interactive toolbox</p><h1>That activity could not be found.</h1><p class="lead">Choose another activity from the no-writing collection.</p></section><a class="button" href="#tools">Back to tools</a></div>';
+    root.innerHTML = '<div class="wrap"><section class="page-intro"><p class="eyebrow">Interactive toolbox</p><h1>That activity could not be found.</h1><p class="lead">Choose another activity from the interactive collection.</p></section><a class="button" href="#tools">Back to tools</a></div>';
     return;
   }
   const link = hrefFor(tool);
@@ -1037,7 +1150,7 @@ export function renderInteractiveTool(root, id) {
     return;
   }
   root.innerHTML =
-    '<div class="wrap interactive-page"><a class="back-link" href="#tools">← Back to the toolbox</a><section class="page-intro"><p class="eyebrow">Interactive · no writing · ' +
+    '<div class="wrap interactive-page"><a class="back-link" href="#tools">← Back to the toolbox</a><section class="page-intro"><p class="eyebrow">Interactive · choose your way · ' +
     escape(groupFor(tool.group)) +
     '</p><h1 id="interactive-title"></h1><p class="lead" id="interactive-description"></p></section><section class="interactive-stage"><div class="interactive-stage-head"><span class="interactive-stage-icon" aria-hidden="true">✳</span><div><p class="eyebrow">Try an activity</p><h2 id="interactive-prompt"></h2></div></div><div id="interactive-activity"></div><p id="interactive-status" class="interactive-status" aria-live="polite">Nothing is scored. Stop whenever you like.</p></section><p class="fine">This is an educational reflection activity, not a diagnosis or treatment. Nothing is saved unless a tool explicitly offers a save option.</p><a class="button" href="#tools">Choose another activity</a></div>';
   root.querySelector("#interactive-title").textContent = tool.title;
@@ -1108,46 +1221,124 @@ function renderChoice(root, tool, multiple) {
 }
 function renderNeeds(root) {
   const host = root.querySelector("#interactive-activity");
-  const groups = [
-    ["Body", ["Rest", "Food or water", "Less input", "Movement"]],
-    ["Connection", ["Company", "Reassurance", "Space", "Repair"]],
-    ["Direction", ["Clarity", "Choice", "Purpose", "Fairness"]],
+  const tree = [
+    { label: "Body & energy", icon: "◌", branches: [
+      { label: "Rest", details: ["Sleep pressure", "A short pause", "Recovery after a long demand", "A gentler pace"], actions: ["Reduce one demand", "Choose a rest window", "Prepare for sleep", "Ask for practical cover"] },
+      { label: "Food & fluids", details: ["Food soon", "Water or another drink", "A steadier meal", "An accessible snack"], actions: ["Get a drink", "Choose something easy to eat", "Set a reminder", "Ask someone to bring food"] },
+      { label: "Comfort & health", details: ["Pain or illness needs attention", "Warmth or cooling", "Medication or health routine", "A more comfortable position"], actions: ["Change position", "Adjust temperature", "Follow a health plan", "Contact someone who can help"] },
+      { label: "Movement", details: ["Stretch or change posture", "Walk or pace", "Pressure or grounding", "A small hand movement"], actions: ["Move for a minute", "Change chair or room", "Use a comfortable object", "Stop if movement hurts"] },
+      { label: "Energy rhythm", details: ["A transition between tasks", "Less caffeine or stimulation", "A wake-up cue", "An easier next hour"], actions: ["Take one transition step", "Get light or air if welcome", "Choose one priority", "Leave a task for later"] },
+    ]},
+    { label: "Sensory fit", icon: "✳", branches: [
+      { label: "Reduce intensity", details: ["Less sound", "Softer light", "Fewer people or movements", "Less touch or smell"], actions: ["Move somewhere quieter", "Use ear protection if helpful", "Dim a screen", "Step out briefly"] },
+      { label: "Add useful input", details: ["More movement", "A familiar sound", "Something to hold", "A predictable visual"], actions: ["Try a repeated hand movement", "Choose a familiar track", "Adjust one room feature", "Use the sensory playground"] },
+      { label: "Predictability", details: ["Know what happens next", "Warning before a change", "Fewer simultaneous inputs", "A clear stop point"], actions: ["Ask for the next step", "Set a short timer", "Close one open task", "Draw a quick sequence"] },
+      { label: "Sensory recovery", details: ["Time without demands", "A familiar environment", "A protected transition", "Choice over input"], actions: ["Take a low-input pause", "Return to a familiar place", "Change one sensory feature", "Choose when to rejoin"] },
+    ]},
+    { label: "Safety & steadiness", icon: "⌂", branches: [
+      { label: "Immediate safety", details: ["Distance from a risk", "A trusted person nearby", "A safer place", "A clear exit"], actions: ["Move toward safety", "Contact someone trusted", "Pause a conversation", "Use emergency support if needed"] },
+      { label: "Reassurance & information", details: ["Know what is known", "Ask one direct question", "Check a practical fact", "Wait for more information"], actions: ["Separate fact from guess", "Ask for clarity", "Write one question", "Choose when to check again"] },
+      { label: "Agency", details: ["A real choice", "More time", "Permission to pause", "A say in how this happens"], actions: ["Name two options", "Ask to slow down", "Set a boundary", "Choose one reversible step"] },
+    ]},
+    { label: "Connection & belonging", icon: "⌁", branches: [
+      { label: "Company", details: ["Someone present", "A check-in message", "Shared activity", "Not being alone with it"], actions: ["Send a low-pressure text", "Ask for company", "Join a familiar space", "Name what kind of support helps"] },
+      { label: "Understanding", details: ["Be heard before advice", "A clearer explanation", "Shared language", "Repair after a rupture"], actions: ["Ask someone to listen", "Describe one specific need", "Check what each person meant", "Choose a time to reconnect"] },
+      { label: "Belonging", details: ["Acceptance without masking", "Shared interests", "Cultural understanding", "A group that feels safe enough"], actions: ["Reach one trusted person", "Find a familiar community", "Reduce pressure to perform", "Take connection at your pace"] },
+    ]},
+    { label: "Clarity & understanding", icon: "⌕", branches: [
+      { label: "Make sense of it", details: ["What happened", "What is still unknown", "What changed", "Why it matters to me"], actions: ["Write the observable facts", "Ask one question", "Check another explanation", "Pause the interpretation"] },
+      { label: "Structure", details: ["One next step", "A sequence", "A time boundary", "Fewer choices"], actions: ["Break it into one action", "Set a gentle reminder", "Use a checklist", "Ask for instructions in writing"] },
+      { label: "Time to process", details: ["More time to answer", "A pause before deciding", "Space after conversation", "Information in another format"], actions: ["Request thinking time", "Take notes", "Return later", "Choose a format that works"] },
+    ]},
+    { label: "Autonomy & boundaries", icon: "↔", branches: [
+      { label: "Personal space", details: ["Physical space", "A quieter interaction", "Time alone", "Control over touch"], actions: ["Move to a chosen spot", "State a preference", "Ask before contact", "Set a return time"] },
+      { label: "Say no or not yet", details: ["A limit", "A slower pace", "A smaller commitment", "A chance to change my mind"], actions: ["Use a short no", "Ask for time", "Offer an alternative", "Review what is actually required"] },
+      { label: "Choice in support", details: ["Choose who helps", "Choose how they help", "Do it myself with backup", "Decline help for now"], actions: ["Name one useful support", "Ask before advice", "Choose a check-in", "Keep the option open"] },
+    ]},
+    { label: "Meaning, fairness & values", icon: "◇", branches: [
+      { label: "Fairness", details: ["A fair process", "Shared responsibility", "A boundary respected", "Repair after harm"], actions: ["Name the impact", "Ask for a fair next step", "Separate repair from blame", "Seek a neutral perspective"] },
+      { label: "Meaning", details: ["A reason this matters", "A contribution", "Learning or growth", "Creative expression"], actions: ["Name a value", "Make one small contribution", "Create something", "Choose a next step that reflects it"] },
+      { label: "Recognition", details: ["Effort seen", "A clear thank-you", "Credit for my part", "An apology or acknowledgement"], actions: ["Name what went unseen", "Ask for acknowledgement", "Mark your own effort", "Decide what repair would mean"] },
+    ]},
+    { label: "Play, interest & exploration", icon: "✺", branches: [
+      { label: "Enjoyment", details: ["Pleasure without a goal", "Humour", "A familiar interest", "Sensory play"], actions: ["Do a favourite small thing", "Visit the stim yard", "Play with sound or pattern", "Choose an enjoyable pause"] },
+      { label: "Curiosity", details: ["Novelty", "A puzzle", "Learning something", "Trying without pressure"], actions: ["Follow one question", "Explore a new angle", "Try a tiny experiment", "Stop when interest fades"] },
+      { label: "Creativity", details: ["Make something", "Change a routine", "Express a feeling", "Improvise"], actions: ["Sketch a rough idea", "Build a small pattern", "Use an unusual route", "Make an imperfect first version"] },
+    ]},
   ];
-  const box = element("div", "needs-steps");
-  const result = element("p", "interactive-result", "Pick one broad area to see a few more specific possibilities.");
-  groups.forEach(([label, children]) => {
-    const group = element("section", "needs-group");
-    const heading = button(label, "needs-heading");
-    const optionsBox = element("div", "choice-cloud");
-    optionsBox.hidden = true;
-    heading.addEventListener("click", () => {
-      box.querySelectorAll(".choice-cloud").forEach((node) => { if (node !== optionsBox) node.hidden = true; });
-      optionsBox.hidden = !optionsBox.hidden;
-    });
-    addChipChoices(root, optionsBox, children, { onChoose: (value) => { result.textContent = "One possible need to explore: " + value + ". You can select another or stop here."; } });
-    group.append(heading, optionsBox);
-    box.append(group);
-  });
-  host.append(box, result);
+  const chosen = []; const path = [];
+  const explorer = element("div", "needs-explorer");
+  const trail = element("nav", "needs-breadcrumbs"); trail.setAttribute("aria-label", "Needs compass path");
+  const title = element("h3", "needs-current"); const intro = element("p", "interactive-result needs-intro");
+  const optionsPanel = element("div", "needs-choice-board"); const result = element("section", "needs-result-panel");
+  const render = () => {
+    const current = path.length ? path[path.length - 1].node : null;
+    trail.replaceChildren();
+    const home = button("All need families", "needs-crumb"); home.addEventListener("click", () => { path.length = 0; render(); }); trail.append(home);
+    path.forEach((step, index) => { trail.append(element("span", "needs-crumb-separator", "›")); const crumb = button(step.node.label, "needs-crumb"); crumb.addEventListener("click", () => { path.length = index + 1; render(); }); trail.append(crumb); });
+    title.textContent = current ? current.label : "What feels missing or needed?";
+    intro.textContent = current ? current.details ? "Choose any detail that feels close, then browse small supports. More than one can fit." : "Choose a narrower branch, or return to a previous level whenever you like." : "Start broad, follow one path, then narrow to a specific need. You can explore several paths or stop at any point.";
+    optionsPanel.replaceChildren(); result.replaceChildren();
+    if (!current) {
+      tree.forEach((branch) => { const tile = button(branch.icon + "  " + branch.label, "needs-option"); tile.addEventListener("click", () => { path.push({ node: branch }); render(); }); optionsPanel.append(tile); });
+    } else if (current.details) {
+      current.details.forEach((detail) => { const tile = button(detail, "needs-option needs-leaf"); tile.setAttribute("aria-pressed", "false"); tile.addEventListener("click", () => { tile.classList.toggle("selected"); tile.setAttribute("aria-pressed", String(tile.classList.contains("selected"))); }); optionsPanel.append(tile); });
+      const actions = element("div", "needs-actions"); current.actions.forEach((action) => { const tile = button(action, "needs-action"); tile.setAttribute("aria-pressed", "false"); tile.addEventListener("click", () => { tile.classList.toggle("selected"); tile.setAttribute("aria-pressed", String(tile.classList.contains("selected"))); }); actions.append(tile); });
+      const addLabel = element("label", "field", "Add your own need or support"); const own = document.createElement("input"); own.placeholder = "Anything else that would help?"; addLabel.append(own);
+      const save = button("Add selected details to my map", "button");
+      save.addEventListener("click", () => {
+        const details = [...optionsPanel.querySelectorAll(".needs-leaf.selected")].map((node) => node.textContent);
+        const supports = [...actions.querySelectorAll(".needs-action.selected")].map((node) => node.textContent);
+        if (own.value.trim()) supports.push(own.value.trim());
+        if (!details.length && !supports.length) { showStatus(root, "Choose a detail or support first."); return; }
+        chosen.push({ path: path.map((step) => step.node.label), details, actions: supports }); render(); showStatus(root, "Added to your map. You can follow another branch or stop here.");
+      });
+      result.append(element("h3", "", "Possible supports"), actions, addLabel, save);
+    } else {
+      (current.branches || []).forEach((branch) => { const tile = button(branch.label, "needs-option"); tile.addEventListener("click", () => { path.push({ node: branch }); render(); }); optionsPanel.append(tile); });
+    }
+    result.prepend(element("h3", "", chosen.length ? "Your needs map so far" : "Nothing is saved yet"));
+    if (chosen.length) {
+      const map = element("div", "needs-map");
+      chosen.forEach((entry) => { const card = element("article", "needs-map-card"); card.append(element("p", "eyebrow", entry.path.join("  ›  ")), element("p", "", entry.details.concat(entry.actions).join(" · "))); const remove = button("Remove", "icon-button"); remove.addEventListener("click", () => { const index = chosen.indexOf(entry); if (index >= 0) chosen.splice(index, 1); render(); }); card.append(remove); map.append(card); });
+      result.append(map);
+    } else result.append(element("p", "fine", "Choose a branch to see more specific needs and possible next steps."));
+  };
+  explorer.append(trail, title, intro, optionsPanel, result);
+  host.append(element("p", "interactive-instruction", "Explore broad needs, narrower branches, specific signals and optional supports. Your map stays in this page until you leave."), explorer);
+  render();
 }
+
 function renderValues(root) {
   const host = root.querySelector("#interactive-activity");
-  const list = options["values-compass"];
-  const first = element("div", "choice-cloud");
-  const second = element("div", "choice-cloud");
+  const choices = [...options["values-compass"]];
+  const first = element("div", "choice-cloud"); const second = element("div", "choice-cloud");
   const range = document.createElement("input"); range.type = "range"; range.min = "0"; range.max = "100"; range.value = "50"; range.setAttribute("aria-label", "Balance between two values");
-  const output = element("output", "", "Balanced for now");
-  let a = "";
-  let b = "";
-  addChipChoices(root, first, list, { onChoose: (value) => { a = value; update(); } });
-  addChipChoices(root, second, list, { onChoose: (value) => { b = value; update(); } });
+  const output = element("output", "", "Choose two values to compare.");
+  const visual = element("div", "values-balance-visual"); const beam = element("div", "values-balance-beam");
+  const panA = element("span", "values-pan values-pan-left", "Value A"); const panB = element("span", "values-pan values-pan-right", "Value B"); visual.append(beam, panA, panB);
+  let a = "", b = "";
   const update = () => {
-    if (!a || !b) return;
-    output.textContent = Number(range.value) < 40 ? "More weight toward " + a : Number(range.value) > 60 ? "More weight toward " + b : "Balanced between " + a + " and " + b;
+    if (!a || !b) { output.textContent = "Choose two values to compare."; return; }
+    const amount = Number(range.value);
+    output.textContent = amount < 40 ? "More weight toward " + a : amount > 60 ? "More weight toward " + b : "Balanced between " + a + " and " + b;
+    beam.style.transform = "rotate(" + ((amount - 50) * 0.34) + "deg)";
+    panA.style.transform = "translateY(" + ((50 - amount) * 0.45) + "px)";
+    panB.style.transform = "translateY(" + ((amount - 50) * 0.45) + "px)";
+    panA.textContent = a; panB.textContent = b;
   };
+  const fill = (container, active, set) => {
+    container.replaceChildren();
+    choices.forEach((value) => { const chip = button(value, "interactive-choice"); chip.classList.toggle("selected", active() === value); chip.addEventListener("click", () => { set(value); container.querySelectorAll("button").forEach((item) => item.classList.toggle("selected", item === chip)); update(); }); container.append(chip); });
+  };
+  fill(first, () => a, (value) => { a = value; }); fill(second, () => b, (value) => { b = value; });
+  const customLabel = element("label", "field", "Add a value in your own words"); const custom = document.createElement("input"); custom.placeholder = "Anything that matters to you"; customLabel.append(custom);
+  const add = button("Add it to both lists", "button subtle-button");
+  add.addEventListener("click", () => { const value = custom.value.trim(); if (!value || choices.includes(value)) return; choices.push(value); custom.value = ""; fill(first, () => a, (next) => { a = next; }); fill(second, () => b, (next) => { b = next; }); });
   range.addEventListener("input", update);
-  host.append(element("h3", "", "Choose one value"), first, element("h3", "", "Choose another"), second, range, output, element("p", "fine", "The slider shows today's weighting, not which value is objectively correct."));
+  host.append(element("p", "interactive-instruction", "Choose two values and tilt the visual balance. Add any value missing from the examples."), element("h3", "", "Choose value A"), first, element("h3", "", "Choose value B"), second, customLabel, add, visual, range, output, element("p", "fine", "The balance reflects your view in this moment; it does not decide which value is objectively correct."));
 }
+
 function renderRegulation(root) {
   const host = root.querySelector("#interactive-activity");
   const states = options["regulation-picker"];
@@ -1297,35 +1488,19 @@ function renderMeter(root) {
 function renderDefusion(root) {
   const host = root.querySelector("#interactive-activity");
   const samples = ["I have to get this perfect", "They must be angry with me", "I cannot handle this", "I should already know"];
-  const cloud = element("div", "choice-cloud");
-  const thought = element("div", "defusion-thought", samples[0]);
-  const controls = [["Distance", "Close", "Far"], ["Size", "Small", "Large"], ["Volume", "Quiet", "Loud"]];
-  const adjust = element("div", "interactive-sliders");
-  const ranges = [];
+  const cloud = element("div", "choice-cloud"); const thought = element("div", "defusion-thought", samples[0]);
+  const ownLabel = element("label", "field", "Or type your own thought (optional)"); const own = document.createElement("textarea"); own.rows = 2; own.placeholder = "A thought to look at from a little distance"; ownLabel.append(own);
+  const controls = [["Distance", "Close", "Far"], ["Size", "Small", "Large"], ["Volume", "Quiet", "Loud"]]; const adjust = element("div", "interactive-sliders"); const ranges = [];
   const update = () => {
-    thought.style.setProperty("--thought-scale", String(0.8 + Number(ranges[1]?.value || 50) / 160));
-    thought.style.setProperty("--thought-opacity", String(0.35 + Number(ranges[2]?.value || 50) / 150));
-    thought.style.setProperty("--thought-distance", String(Number(ranges[0]?.value || 50)) + "%");
+    const distance = Number(ranges[0]?.value ?? 50); const size = Number(ranges[1]?.value ?? 50); const volume = Number(ranges[2]?.value ?? 50);
+    thought.style.setProperty("--thought-scale", String(0.72 + size / 150)); thought.style.setProperty("--thought-opacity", String(0.45 + volume / 200));
+    thought.style.setProperty("--thought-offset", ((distance - 50) * 1.2) + "px"); thought.style.setProperty("--thought-blur", (Math.abs(distance - 50) / 30) + "px");
   };
-  samples.forEach((sample) => {
-    const item = button(sample, "interactive-choice");
-    item.addEventListener("click", () => {
-      cloud.querySelectorAll("button").forEach((node) => node.classList.toggle("selected", node === item));
-      thought.textContent = sample;
-      showStatus(root, "This is a sample thought. Try changing how it appears, not whether it is true.");
-    });
-    cloud.append(item);
-  });
-  controls.forEach(([label, low, high], index) => {
-    const row = element("label", "interactive-control");
-    const input = document.createElement("input");
-    input.type = "range"; input.min = "0"; input.max = "100"; input.value = "50";
-    input.setAttribute("aria-label", label); ranges[index] = input;
-    input.addEventListener("input", update);
-    row.append(element("span", "control-label", label), input, element("span", "range-ends", low + " · " + high));
-    adjust.append(row);
-  });
-  host.append(element("p", "interactive-instruction", "Choose a sample thought, then change how close, large or loud it feels in your mind."), cloud, thought, adjust);
+  samples.forEach((sample) => { const item = button(sample, "interactive-choice"); item.addEventListener("click", () => { cloud.querySelectorAll("button").forEach((node) => node.classList.toggle("selected", node === item)); thought.textContent = sample; own.value = ""; }); cloud.append(item); });
+  own.addEventListener("input", () => { if (own.value.trim()) thought.textContent = own.value.trim(); });
+  controls.forEach(([name, low, high], index) => { const row = element("label", "interactive-control"); const input = document.createElement("input"); input.type = "range"; input.min = "0"; input.max = "100"; input.value = "50"; input.setAttribute("aria-label", name); ranges[index] = input; input.addEventListener("input", update); row.append(element("span", "control-label", name), input, element("span", "range-ends", low + " · " + high)); adjust.append(row); });
+  const drift = button("Let the thought drift", "button subtle-button"); drift.addEventListener("click", () => { const active = thought.classList.toggle("thought-moving"); drift.textContent = active ? "Pause the drift" : "Let the thought drift"; });
+  host.append(element("p", "interactive-instruction", "Use a sample or your own words. Adjust the visual distance, size and volume, then optionally watch the thought drift."), cloud, ownLabel, thought, adjust, drift);
   update();
 }
 

@@ -219,7 +219,7 @@ export function renderHelp(root) {
     if (showInteractive) {
       const section = document.createElement("section");
       section.className = "interactive-recommendations";
-      section.innerHTML = '<p class="eyebrow">Interactive · no writing</p><h2>Want something more interactive? Try these.</h2><p class="fine">A second set of options, matched to the situations and kind of help you selected. The usual three suggestions above are unchanged.</p>';
+      section.innerHTML = '<p class="eyebrow">Interactive tools · move, explore, choose</p><h2>Want something more interactive? Try these.</h2><p class="fine">A second set of options, matched to the situations and kind of help you selected. The usual three suggestions above are unchanged.</p>';
       const grid = document.createElement("div");
       grid.className = "grid interactive-recommendation-grid";
       interactivePicks.forEach((tool, index) => {
@@ -245,7 +245,7 @@ export function renderToolbox(root, filter = "") {
     })
     .join(
       "",
-    )}</div><section class="section"><div class="card tone-slate"><p class="eyebrow">Saved only on this device</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Your notes are not uploaded or synced.</p><a class="button" href="#maps">Open My Maps →</a></div></section><section class="section routes-callout"><p class="eyebrow">Rather not choose?</p><h2>Use a short guided route.</h2><p>Try a small sequence for an argument, a stuck decision, an overload or a thought spiral.</p><a class="button" href="#routes">See guided routes ↗</a></section></div>`;
+    )}</div><div id="interactive-tools-slot"></div><section class="section"><div class="card tone-slate"><p class="eyebrow">Saved only on this device</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Your notes are not uploaded or synced.</p><a class="button" href="#maps">Open My Maps →</a></div></section><section class="section routes-callout"><p class="eyebrow">Rather not choose?</p><h2>Use a short guided route.</h2><p>Try a small sequence for an argument, a stuck decision, an overload or a thought spiral.</p><a class="button" href="#routes">See guided routes ↗</a></section></div>`;
   let active = "all";
   const update = () => {
     const q = root.querySelector("#tool-search").value.toLowerCase();
@@ -652,53 +652,92 @@ function renderCompassContent(root, emotions, onChoose, moodBefore) {
     Joy: "#84a937",
     Love: "#d28a3e",
   };
-  root.innerHTML = `<div class="wrap emotion-page">${area("Feel & notice", "A feeling has more than one dimension.", "Start broadly. Pleasantness and energy are separate sliders; they don’t decide which word is right. Choose any level of detail—or none.")}<section class="emotion-intro-note"><p><b>First, check your state.</b> Sleep, hunger, illness, pain, stimulants and sensory load can colour a moment. They deserve their own check, not an emotional label.</p><a class="button" href="#tool/state-check">Open the body & state check →</a></section><div class="tabs emotion-level-tabs"><button class="active" data-level="compass">Compass</button><button data-level="families">Browse feeling families</button><button data-level="state">Body & state cues</button></div><section id="emotion-compass-panel" class="compass-redesign"><div class="compass-card"><div class="compass-controls" aria-label="Describe your felt experience"><label class="field">Pleasantness <output id="pleasantness-value">Neutral</output><input id="pleasantness" type="range" min="-100" max="100" value="0" aria-label="Pleasantness: unpleasant to pleasant"></label><label class="field">Energy / activation <output id="energy-value">Moderate</output><input id="energy" type="range" min="-100" max="100" value="0" aria-label="Energy: low to high"></label><div class="range-ends"><span>Unpleasant</span><span>Mixed or neither</span><span>Pleasant</span></div><div class="range-ends"><span>Low</span><span>Moderate</span><span>High</span></div></div><div class="compass-plot" id="compass-plot" role="img" aria-label="An uncluttered compass. Move the crosshair or adjust the sliders to describe your own experience."><div class="plot-vlabel">HIGHER ENERGY</div><div class="plot-horizontal" aria-hidden="true"></div><div class="plot-vertical" aria-hidden="true"></div><div class="quadrant q1"><span>Unpleasant<br>+ more energy</span><small>tense · activated</small></div><div class="quadrant q2"><span>Pleasant<br>+ more energy</span><small>upbeat · energized</small></div><div class="quadrant q3"><span>Unpleasant<br>+ less energy</span><small>low · depleted</small></div><div class="quadrant q4"><span>Pleasant<br>+ less energy</span><small>settled · calm</small></div><button type="button" class="feeling-marker" id="marker" aria-label="Your chosen place on the compass; use the sliders for precise control">✦</button><div class="plot-bottom">LOWER ENERGY</div><div class="plot-left">UNPLEASANT</div><div class="plot-right">PLEASANT</div></div><div class="felt-position" aria-live="polite" id="compass-feedback"></div></div><aside class="emotion-side"><p class="eyebrow">Where you placed yourself</p><h2 id="quadrant-title">Middle ground</h2><p id="quadrant-copy">Start wherever you are. A mixed or unclear experience is a valid answer.</p><p class="fine">The compass has no plotted emotion dots and does not auto-assign a label. The feeling words below are yours to explore, not scores tied to a coordinate.</p><button class="button" type="button" id="checkin-link">Reflect on this feeling ↗</button><p class="fine">This opens a separate, gentle feelings check-in—not the eight-question emotion-to-action tool.</p></aside></section><section class="emotion-word-browser"><div class="section-head"><div><p class="eyebrow">The full word wheel</p><h2>Or find a word that feels close.</h2></div><p class="fine">107 distinct emotion labels, with both “Dismayed” wheel contexts preserved. Select as many feelings as fit, or none.</p></div><label class="field">Search all emotion words<input id="emotion-search" type="search" placeholder="Try tender, exhausted, frustrated…"></label><div class="family-filters" id="family-filters">${["All", "Fear", "Anger", "Sadness", "Surprise", "Joy", "Love"].map((f) => `<button class="chip ${f === "All" ? "active" : ""}" data-family="${f}">${f === "All" ? "All feeling words" : f}</button>`).join("")}</div><div id="emotion-word-results" class="emotion-word-results"></div><div class="mixed-result" id="selected-feelings"></div></section><section id="emotion-profile" class="profile-card" hidden></section><section id="emotion-checkin" class="emotion-checkin" hidden></section><section class="state-compass" id="state-panel" hidden><div class="section-head"><div><p class="eyebrow">State compass · separate from emotion words</p><h2>What else is in the mix?</h2></div><p class="fine">Energy-related, physical, social and sensory states can exist alongside emotions. These are cues to consider, not labels that explain everything.</p></div><div class="state-tags">${stateItems.map(([label, desc]) => `<label class="state-tag"><input type="checkbox" value="${esc(label)}"><span><b>${esc(label)}</b><small>${esc(desc)}</small></span></label>`).join("")}</div><label class="field">Something missing? Add your own state<input id="custom-state" placeholder="e.g. jet-lagged, restless, low blood sugar"></label><p id="state-summary" class="fine" aria-live="polite"></p><a class="button" href="#tool/state-check">Use the fuller state check →</a></section><section class="body-sensations"><p class="eyebrow">From noticing to next steps</p><h2>No single feeling has to decide what happens next.</h2><p>Choose an optional next route. Or stop here.</p><div class="row"><a class="button secondary" href="#tool/body-check">Notice body sensations</a><a class="button secondary" href="#tool/emotion-timeline">Explore a feeling timeline</a><a class="button secondary" href="#tool/mixed-feelings">Make room for mixed feelings</a><a class="button secondary" href="#questions">Explore a decision or challenge</a></div></section></div>`;
+  root.innerHTML = `<div class="wrap emotion-page">${area("Feel & notice", "A feeling has more than one dimension.", "Start broadly. Pleasantness and energy are separate sliders; they don’t decide which word is right. Choose any level of detail—or none.")}<section class="emotion-intro-note"><p><b>First, check your state.</b> Sleep, hunger, illness, pain, stimulants and sensory load can colour a moment. They deserve their own check, not an emotional label.</p><a class="button" href="#tool/state-check">Open the body & state check →</a></section><div class="tabs emotion-level-tabs"><button class="active" data-level="compass">Compass</button><button data-level="families">Browse feeling families</button><button data-level="state">Body & state cues</button></div><section id="emotion-compass-panel" class="compass-redesign"><div class="compass-card"><div class="compass-controls" aria-label="Describe your felt experience"><label class="field">Pleasantness <output id="pleasantness-value">Neutral</output><input id="pleasantness" type="range" min="-100" max="100" value="0" aria-label="Pleasantness: unpleasant to pleasant"></label><label class="field">Energy / activation <output id="energy-value">Moderate</output><input id="energy" type="range" min="-100" max="100" value="0" aria-label="Energy: low to high"></label><div class="range-ends"><span>Unpleasant</span><span>Mixed or neither</span><span>Pleasant</span></div><div class="range-ends"><span>Low</span><span>Moderate</span><span>High</span></div></div><div class="compass-plot" id="compass-plot" role="application" aria-label="Explore nearby feeling words by moving your position on the pleasantness and energy axes"><div class="plot-vlabel">HIGH ENERGY</div><div class="plot-horizontal" aria-hidden="true"></div><div class="plot-vertical" aria-hidden="true"></div><button type="button" class="feeling-marker" id="marker" aria-label="Your current position on the compass">+</button><div class="plot-bottom">LOW ENERGY</div><div class="plot-left">UNPLEASANT</div><div class="plot-right">PLEASANT</div></div><div class="felt-position" aria-live="polite" id="compass-feedback"></div></div><aside class="emotion-side"><p class="eyebrow">Possible fits near this position</p><p id="quadrant-copy">These are suggestions to explore, not labels assigned to you.</p><div id="compass-suggestions" class="compass-suggestions"></div><section id="compass-emotion-detail" class="compass-emotion-detail" aria-live="polite"></section><button class="button" type="button" id="checkin-link">Reflect on this feeling ↗</button><p class="fine">This opens a separate, gentle feelings check-in—not the eight-question emotion-to-action tool.</p></aside></section><section class="emotion-word-browser"><div class="section-head"><div><p class="eyebrow">The full word wheel</p><h2>Or find a word that feels close.</h2></div><p class="fine">107 distinct emotion labels, with both “Dismayed” wheel contexts preserved. Select as many feelings as fit, or none.</p></div><label class="field">Search all emotion words<input id="emotion-search" type="search" placeholder="Try tender, exhausted, frustrated…"></label><div class="family-filters" id="family-filters">${["All", "Fear", "Anger", "Sadness", "Surprise", "Joy", "Love"].map((f) => `<button class="chip ${f === "All" ? "active" : ""}" data-family="${f}">${f === "All" ? "All feeling words" : f}</button>`).join("")}</div><div id="emotion-word-results" class="emotion-word-results"></div><div class="mixed-result" id="selected-feelings"></div></section><section id="emotion-profile" class="profile-card" hidden></section><section id="emotion-checkin" class="emotion-checkin" hidden></section><section class="state-compass" id="state-panel" hidden><div class="section-head"><div><p class="eyebrow">State compass · separate from emotion words</p><h2>What else is in the mix?</h2></div><p class="fine">Energy-related, physical, social and sensory states can exist alongside emotions. These are cues to consider, not labels that explain everything.</p></div><div class="state-tags">${stateItems.map(([label, desc]) => `<label class="state-tag"><input type="checkbox" value="${esc(label)}"><span><b>${esc(label)}</b><small>${esc(desc)}</small></span></label>`).join("")}</div><label class="field">Something missing? Add your own state<input id="custom-state" placeholder="e.g. jet-lagged, restless, low blood sugar"></label><p id="state-summary" class="fine" aria-live="polite"></p><a class="button" href="#tool/state-check">Use the fuller state check →</a></section><section class="body-sensations"><p class="eyebrow">From noticing to next steps</p><h2>No single feeling has to decide what happens next.</h2><p>Choose an optional next route. Or stop here.</p><div class="row"><a class="button secondary" href="#tool/body-check">Notice body sensations</a><a class="button secondary" href="#tool/emotion-timeline">Explore a feeling timeline</a><a class="button secondary" href="#tool/mixed-feelings">Make room for mixed feelings</a><a class="button secondary" href="#questions">Explore a decision or challenge</a></div></section></div>`;
+  const stateCoordinates = {
+    "Tired": [-8, -62], "Sleepy": [-4, -82], "Exhausted": [-30, -92],
+    "Wired": [-18, 69], "Restless": [-33, 48], "Hungry": [-22, -24],
+    "Hangry": [-62, 28], "Thirsty": [-22, -42], "Ill or in pain": [-70, -54],
+    "Overstimulated": [-68, 55], "Understimulated": [-28, -5], "Caffeine-heavy": [-8, 57],
+    "Foggy": [-33, -49], "Numb": [-28, -32], "Frazzled": [-57, 33],
+    "Overloaded": [-66, 12], "Sexually aroused": [18, 62], "Lonely": [-58, -28],
+  };
+  const existingLabels = new Set(emotions.map((emotion) => emotion.label.toLowerCase()));
+  const stateCandidates = stateItems
+    .filter(([label]) => !existingLabels.has(label.toLowerCase()))
+    .map(([label, description]) => {
+      const [sx, sy] = stateCoordinates[label] || [0, 0];
+      return {
+        id: "state-" + label.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+        label, family: "Body / state", parent: null, x: sx, y: sy,
+        profile: {
+          definition: description,
+          function: "This body or context cue may help explain a change in energy, attention, or emotion. It is information to check, not a complete explanation.",
+          analogy: "Like a dashboard light: useful to notice, but it does not tell the whole story by itself.",
+          situations: "It may appear alongside changes in sleep, food, fluids, health, sensory input, caffeine, social contact, or demands.",
+          body: "Notice what is actually present for you; there is no single required body response.",
+          thought: "You might notice a pull to rest, eat, drink, move, reduce input, seek company, or pause before interpreting the feeling.",
+          need: "A practical body check, choice, comfort, recovery, reduced input, or support may be relevant.",
+          confused: "A state can overlap with emotion and influence its intensity without making the emotion unreal.",
+          support: "Check basic conditions gently, then see whether the emotional meaning changes. A body state and an emotion can coexist.",
+        },
+      };
+    });
+  stateCandidates.push(
+    { id: "state-hyper", label: "Hyper / highly activated", family: "Body / state", x: 12, y: 84, profile: { definition: "A plain-language description of unusually high energy, movement, speed, or activation; it is not a diagnosis.", function: "It can describe energy, stimulation, excitement, stress, or several of these together.", analogy: "An engine revving high; the reason for the revs still needs context.", situations: "It may appear with excitement, novelty, urgency, stress, sleep changes, stimulants, or sensory seeking.", body: "Some people notice faster movement, speech, heartbeat, or difficulty settling; others do not.", thought: "Thoughts may feel quick, jump between ideas, or focus strongly on what feels interesting or urgent.", need: "Movement, lower input, rest, or a clear next step may help depending on context.", confused: "High activation can feel pleasant, unpleasant, or mixed; the energy axis cannot determine its cause.", support: "Check what changed in sleep, stimulation, caffeine, stress, and surroundings." } },
+    { id: "state-wired-tired", label: "Wired and tired", family: "Body / state", x: -24, y: 24, profile: { definition: "Tiredness and high activation appearing together.", function: "It can flag that energy and alertness are not moving in the same direction.", analogy: "A low battery with too many tabs still open.", situations: "It may appear after long demands, disrupted sleep, stress, illness, or late stimulation.", body: "You may feel depleted but restless, tense, or unable to settle; this varies.", thought: "You might want to stop and also feel unable to switch off.", need: "A gentle transition, lower stimulation, food or drink if needed, rest, or support.", confused: "It can resemble anxiety or agitation, but those words do not identify the cause.", support: "Reduce demands where possible and check practical body-state factors; no breathing pattern is required." } }
+  );
+  const candidates = [...emotions, ...stateCandidates];
+  const familyActions = {
+    Fear: "check, pause, seek safety or support", Anger: "protect a boundary or address a blockage",
+    Sadness: "seek comfort, connection, rest or time", Surprise: "pause, gather information and update your view",
+    Joy: "stay with or share something rewarding", Love: "care for a valued bond while respecting choice",
+  };
+  const showCompassDetail = (candidate) => {
+    if (!candidate) return;
+    current = candidate;
+    const profile = candidate.profile || profileFor(candidate);
+    const actions = familyActions[candidate.family] || "pause, check what matters, and choose what feels workable";
+    const cards = [
+      ["Definition", profile.definition], ["Possible function", profile.function],
+      ["Analogy", profile.analogy], ["Situations it may appear in", profile.situations],
+      ["Body sensations / symptoms", profile.body],
+      ["Thoughts or action urges", profile.thought + " Possible action pull: " + actions + "."],
+      ["Possible needs", profile.need], ["Easy to confuse with", profile.confused],
+      ["What might help", profile.support],
+    ];
+    root.querySelector("#compass-emotion-detail").innerHTML =
+      '<div class="compass-profile-heading"><span class="family-orb" style="--emotion-color:' + (familyColors[candidate.family] || "#647f70") + '">' + esc(candidate.family.slice(0, 1)) + '</span><div><p class="eyebrow">' + esc(candidate.family) + (candidate.parent ? " / " + esc(candidate.parent) : "") + '</p><h2>' + esc(candidate.label) + '</h2></div></div><p class="profile-caution">A nearby possibility, not a label assigned by the graph. Keep it, change it, or leave it.</p><div class="compass-profile-grid">' + cards.map(([heading, text]) => '<article><h3>' + esc(heading) + '</h3><p>' + esc(text || "No description has been added yet.") + '</p></article>').join("") + '</div>';
+  };
   const renderPosition = () => {
-    const plot = root.querySelector("#compass-plot"),
-      marker = root.querySelector("#marker"),
-      px = 8 + (x + 100) * 0.42,
-      py = 8 + (100 - y) * 0.42;
-    marker.style.left = `${px}%`;
-    marker.style.top = `${py}%`;
-    const pleasant =
-        x > 24 ? "pleasant" : x < -24 ? "unpleasant" : "mixed or neither",
-      energy =
-        y > 33 ? "more energy" : y < -33 ? "less energy" : "moderate energy";
-    root.querySelector("#pleasantness-value").value =
-      pleasant === "mixed or neither"
-        ? "Mixed / neither"
-        : pleasant[0].toUpperCase() + pleasant.slice(1);
-    root.querySelector("#energy-value").value =
-      energy[0].toUpperCase() + energy.slice(1);
-    root.querySelector("#compass-feedback").textContent =
-      `Your description: ${pleasant}; ${energy}. No emotion has been assigned to this position.`;
-    const names = {
-      "pleasant-more energy": [
-        "Pleasant · more energy",
-        "You describe this moment as both more pleasant and more activated. This could feel like many different things, or like no emotion word at all.",
-      ],
-      "unpleasant-more energy": [
-        "Unpleasant · more energy",
-        "You describe this moment as both more unpleasant and more activated. Several emotions and body states can overlap here.",
-      ],
-      "pleasant-less energy": [
-        "Pleasant · less energy",
-        "You describe this moment as more pleasant and less activated. Quietness can be welcome, neutral, or something else.",
-      ],
-      "unpleasant-less energy": [
-        "Unpleasant · less energy",
-        "You describe this moment as more unpleasant and less activated. Fatigue, low mood, illness, and context can all matter.",
-      ],
-      middle: [
-        "Middle ground",
-        "Start wherever you are. A mixed or unclear experience is a valid answer.",
-      ],
-    };
-    let key = "middle";
-    if (Math.abs(x) > 24 && Math.abs(y) > 33)
-      key = `${x > 0 ? "pleasant" : "unpleasant"}-${y > 0 ? "more energy" : "less energy"}`;
-    root.querySelector("#quadrant-title").textContent = names[key][0];
-    root.querySelector("#quadrant-copy").textContent = names[key][1];
+    const marker = root.querySelector("#marker");
+    marker.style.left = (8 + (x + 100) * 0.42) + "%";
+    marker.style.top = (8 + (100 - y) * 0.42) + "%";
+    const pleasant = x > 24 ? "pleasant" : x < -24 ? "unpleasant" : "mixed or neither";
+    const energy = y > 33 ? "higher energy" : y < -33 ? "lower energy" : "middle energy";
+    root.querySelector("#pleasantness-value").value = pleasant === "mixed or neither" ? "Mixed / neither" : pleasant[0].toUpperCase() + pleasant.slice(1);
+    root.querySelector("#energy-value").value = energy[0].toUpperCase() + energy.slice(1);
+    root.querySelector("#compass-feedback").textContent = "Your position: " + pleasant + " · " + energy + ". Nearby words change as you move.";
+    root.querySelector("#quadrant-copy").textContent = "Three words are closest to this position. Any of them may fit, or none may.";
+    const holder = root.querySelector("#compass-suggestions");
+    const matches = nearestEmotions(candidates, x, y, 3);
+    holder.replaceChildren();
+    matches.forEach((candidate, index) => {
+      const suggestion = document.createElement("button");
+      suggestion.type = "button";
+      suggestion.className = "compass-suggestion" + (index === 0 ? " selected" : "");
+      suggestion.setAttribute("aria-pressed", String(index === 0));
+      suggestion.innerHTML = '<b>' + esc(candidate.label) + '</b><small>' + esc(candidate.family) + (candidate.parent ? " · " + esc(candidate.parent) : "") + '</small>';
+      suggestion.addEventListener("click", () => {
+        holder.querySelectorAll(".compass-suggestion").forEach((other) => {
+          const selected = other === suggestion;
+          other.classList.toggle("selected", selected);
+          other.setAttribute("aria-pressed", String(selected));
+        });
+        showCompassDetail(candidate);
+      });
+      holder.append(suggestion);
+    });
+    if (matches.length) showCompassDetail(matches[0]);
   };
   const updateResults = () => {
     const q = root.querySelector("#emotion-search").value.trim().toLowerCase();
