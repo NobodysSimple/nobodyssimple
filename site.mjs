@@ -667,7 +667,7 @@ function route() {
   window.scrollTo(0, 0);
   const title =
     name === "personality"
-      ? "Personality Quick Map (Beta)"
+      ? "Full Personality Profile"
       : name === "simplyfocus"
       ? "SimplyFocus"
       : name === "team"
