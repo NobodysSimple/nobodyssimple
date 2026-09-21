@@ -3,6 +3,7 @@ import {
   escapeHTML as esc,
   safeImage,
   renderBody,
+  renderPostBody,
   youtubeID,
   nearestEmotions,
 } from "./core.mjs";
@@ -26,6 +27,32 @@ import {
 } from "./interactive-tools.mjs";
 import { renderSimplyFocus } from "./simplyfocus.mjs";
 const main = document.querySelector("main");
+const imageLightbox = document.createElement("dialog");
+imageLightbox.className = "site-image-lightbox";
+imageLightbox.setAttribute("aria-label", "Full-size image");
+imageLightbox.innerHTML = '<button type="button" class="lightbox-close" aria-label="Close full-size image">×</button><img alt="">';
+document.body.append(imageLightbox);
+imageLightbox.addEventListener("click", (event) => {
+  if (event.target === imageLightbox || event.target.closest(".lightbox-close")) imageLightbox.close();
+});
+main.addEventListener("click", (event) => {
+  const link = event.target.closest("[data-image-lightbox]");
+  if (!link) return;
+  event.preventDefault();
+  const image = imageLightbox.querySelector("img");
+  image.src = link.href;
+  image.alt = link.querySelector("img")?.alt || "";
+  imageLightbox.showModal();
+});
+main.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-toc-index]");
+  if (!button) return;
+  const target = document.getElementById(`ns-heading-${button.dataset.tocIndex}`);
+  if (target) {
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
 let posts = [],
   loadError = "",
   selectedEmotion = null,
@@ -52,9 +79,20 @@ const typeLabel = {
   blog: "Blog post",
   education: "Educational writing",
   video: "Video",
+  resource: "Resource",
+  lesson: "Lesson",
+  announcement: "Announcement",
+  download: "Download",
 };
+function thumbnailDisplay(p) {
+  const ratio = { "16:9": "16 / 9", "4:3": "4 / 3", "1:1": "1 / 1" }[p.thumbnailRatio] || "auto";
+  const x = Math.max(0, Math.min(100, Number(p.thumbnailFocalX ?? 50)));
+  const y = Math.max(0, Math.min(100, Number(p.thumbnailFocalY ?? 50)));
+  const rotate = [0, 90, 180, 270].includes(Number(p.thumbnailRotate)) ? Number(p.thumbnailRotate) : 0;
+  return `style="object-fit:cover;aspect-ratio:${ratio};object-position:${x}% ${y}%;transform:rotate(${rotate}deg)"`;
+}
 const card = (p) =>
-  `<article class="card post-card"><a href="#post/${encodeURIComponent(p.id)}">${safeImage(p.thumbnail) ? `<img src="${esc(p.thumbnail)}" alt="${esc(p.thumbnailAlt || "")}" loading="lazy">` : `<div class="post-placeholder" aria-hidden="true">${p.type === "video" ? "▷" : "Aa"}</div>`}<div class="copy"><span class="badge">${typeLabel[p.type] || "Writing"}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt || "")}</p><small>${esc((p.topics || []).join(" · "))}</small><span class="arrow">${p.type === "video" ? "Watch here" : "Read the piece"} →</span></div></a></article>`;
+  `<article class="card post-card"><a href="#post/${encodeURIComponent(p.id)}">${safeImage(p.thumbnail) ? `<img src="${esc(p.thumbnail)}" alt="${esc(p.thumbnailAlt || "")}" loading="lazy" ${thumbnailDisplay(p)}>` : `<div class="post-placeholder" aria-hidden="true">${p.type === "video" ? "▷" : "Aa"}</div>`}<div class="copy"><span class="badge">${typeLabel[p.type] || "Writing"}</span><h3>${esc(p.title)}</h3><p>${esc(p.excerpt || "")}</p><small>${esc((p.topics || []).join(" · "))}</small><span class="arrow">${p.type === "video" ? "Watch here" : "Read the piece"} →</span></div></a></article>`;
 const empty = (text) => `<div class="empty">${esc(text)}</div>`;
 function heading(eyebrow, title, lead) {
   return `<div class="section-title"><p class="eyebrow">${eyebrow}</p><h1>${title}</h1><p class="lead">${lead}</p></div>`;
@@ -71,7 +109,9 @@ function home() {
 }
 function library() {
   const s = libraryState;
-  main.innerHTML = `<div class="wrap">${heading("The learning library", "Follow a thread.<br>Build a bigger picture.", "Explore the full curriculum, or find a video or educational piece by topic.")}<div class="tabs" role="group" aria-label="Library view"><button data-view="curriculum" class="${s.view === "curriculum" ? "active" : ""}">Curriculum map</button><button data-view="resources" class="${s.view === "resources" ? "active" : ""}">Videos & writing</button></div><div class="filters"><label>Search lessons and resources<input id="search" type="search" placeholder="Attention, values, belonging…" value="${esc(s.query)}"></label><label>Format<select id="format"><option value="">All formats</option><option value="video" ${s.type === "video" ? "selected" : ""}>Videos</option><option value="education" ${s.type === "education" ? "selected" : ""}>Educational writing</option></select></label><label>Topic<select id="topic"><option value="">All topics</option>${[
+  const formats = [...new Set(["video", "education", ...posts.filter((p) => p.destinations?.includes("library")).map((p) => p.type)])];
+  const formatOptions = formats.map((type) => `<option value="${esc(type)}" ${s.type === type ? "selected" : ""}>${esc(typeLabel[type] || "Resource")}</option>`).join("");
+  main.innerHTML = `<div class="wrap">${heading("The learning library", "Follow a thread.<br>Build a bigger picture.", "Explore the full curriculum, or find a video or educational piece by topic.")}<div class="tabs" role="group" aria-label="Library view"><button data-view="curriculum" class="${s.view === "curriculum" ? "active" : ""}">Curriculum map</button><button data-view="resources" class="${s.view === "resources" ? "active" : ""}">Videos & writing</button></div><div class="filters"><label>Search lessons and resources<input id="search" type="search" placeholder="Attention, values, belonging…" value="${esc(s.query)}"></label><label>Format<select id="format"><option value="">All formats</option>${formatOptions}</select></label><label>Topic<select id="topic"><option value="">All topics</option>${[
     ...new Set(
       posts
         .filter((p) => p.destinations?.includes("library"))
@@ -225,7 +265,13 @@ function post(id) {
     main.innerHTML = `<div class="wrap">${heading("Not found", "This piece isn’t here.", "It may have been unpublished, or the address may be incomplete.")}<a href="#library">Back to the library →</a></div>`;
     return;
   }
-  main.innerHTML = `<div class="wrap"><a href="#${p.type === "blog" ? "blog" : "library"}">← Back to ${p.type === "blog" ? "the blog" : "the library"}</a><article class="article"><p class="eyebrow">${typeLabel[p.type]} · ${esc((p.topics || []).join(" · "))}</p><h1>${esc(p.title)}</h1><p class="lead">${esc(p.excerpt || "")}</p>${p.type === "video" ? `<div class="video-gate"><h3>Watch right here.</h3><p>Playing this video connects to YouTube.</p><button class="button secondary" id="play-video">▶ Play video</button></div>` : safeImage(p.thumbnail) ? `<img class="full" src="${esc(p.thumbnail)}" alt="${esc(p.thumbnailAlt || "")}">` : ""}<div class="article-body">${renderBody(p.body)}</div>${p.modules?.length ? `<p class="fine">In ${p.modules.map((id) => esc(curriculum.modules.find((m) => m.id === id)?.title || "")).join(" · ")}</p>` : ""}</article></div>`;
+  const hasVideoBlock = p.blocks?.some((block) => block.type === "youtube");
+  const theme = ["cream", "sage", "dark"].includes(p.theme) ? p.theme : "cream";
+  const hero = ["standard", "minimal", "image", "video"].includes(p.hero) ? p.hero : "standard";
+  main.innerHTML = `<div class="wrap"><a href="#${p.type === "blog" ? "blog" : "library"}">← Back to ${p.type === "blog" ? "the blog" : "the library"}</a><article class="article theme-${theme} hero-${hero}"><p class="eyebrow">${typeLabel[p.type] || "Writing"} · ${esc((p.topics || []).join(" · "))}</p><h1>${esc(p.title)}</h1><p class="lead">${esc(p.intro || p.excerpt || "")}</p>${p.type === "video" && !hasVideoBlock ? `<div class="video-gate"><h3>Watch right here.</h3><p>Playing this video connects to YouTube.</p><button class="button secondary" id="play-video">▶ Play video</button></div>` : safeImage(p.thumbnail) ? `<img class="full" src="${esc(p.thumbnail)}" alt="${esc(p.thumbnailAlt || "")}" ${thumbnailDisplay(p)}>` : ""}<div class="article-body">${renderPostBody(p, posts)}</div>${p.modules?.length ? `<p class="fine">In ${p.modules.map((id) => esc(curriculum.modules.find((m) => m.id === id)?.title || "")).join(" · ")}</p>` : ""}</article></div>`;
+  document.title = `${p.seoTitle || p.title} · Nobody’s Simple`;
+  const description = document.querySelector('meta[name="description"]');
+  if (description) description.content = p.seoDescription || p.excerpt || "Psychology for choosing what to do next.";
   const play = document.getElementById("play-video");
   if (play)
     play.onclick = () => {
