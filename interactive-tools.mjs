@@ -50,6 +50,7 @@ const rows = [
   ["friction-finder", "Friction Finder", "action", "sort", "start,body,think", "organise,action", "Select and size barriers so a stuck task becomes easier to understand."],
   ["task-shrinker", "Task Shrinker", "action", "steps", "start,body", "action,organise", "Step down from a large task toward one small, visible action."],
   ["priority-sorter", "Priority Sorter", "action", "sort", "start,think,body", "organise,action", "Place sample tasks by urgency, importance, ease and energy demand."],
+  ["urgent-important-matrix", "Urgent / Important Matrix", "action", "quadrant", "start,think,decision,body", "organise,action,decide", "Write your own tasks, then drag them between Do, Plan, Delegate and Delete."],
   ["energy-budget", "Energy Budget", "energy", "budget", "body,start,reflect", "organise,action", "Allocate a limited number of energy tokens across the day."],
   ["recovery-menu", "Recovery Menu Builder", "energy", "sort", "body,calm,reflect", "understand,calmer", "Sort possible breaks by how they tend to feel for you: restorative, neutral or draining."],
   ["boundary-sorter", "Boundary Sorter", "relate", "sort", "relate,self", "understand,communicate", "Sort examples into a preference, request, boundary or attempt to control."],
@@ -126,10 +127,11 @@ export function recommendInteractiveTools(goal, selectedSituations, energy) {
     tool.situations.filter((tag) => chosen.includes(tag)).length * 4 +
     (tool.goals.includes(goal) ? 3 : 0) +
     (tool.id === "social-script-builder" && (goal === "communicate" || chosen.includes("relate")) ? 6 : 0) +
+    (tool.id === "urgent-important-matrix" && (goal === "organise" || goal === "action" || chosen.some((tag) => ["start", "decision", "think"].includes(tag))) ? 6 : 0) +
     (Number(energy) === 0 && ["body", "calm", "feel", "sensory"].some((tag) => tool.situations.includes(tag)) ? 1 : 0);
   const defaults = {
     calmer: ["breathing-pacer", "five-senses-grounding", "urge-surfing"],
-    organise: ["overload-meter", "priority-sorter", "energy-budget"],
+    organise: ["urgent-important-matrix", "overload-meter", "priority-sorter"],
     decide: ["decision-balance", "values-compass", "reversibility-gauge"],
     communicate: ["social-script-builder", "boundary-sorter", "perspective-wheel"],
     action: ["task-shrinker", "friction-finder", "transition-bridge"],
@@ -1345,6 +1347,7 @@ export function renderInteractiveTool(root, id) {
   else if (tool.mode === "balance") renderBalance(root, tool);
   else if (tool.mode === "alternatives") renderPerspective(root, tool);
   else if (tool.mode === "scripts") renderSocialScriptBuilder(root);
+  else if (tool.mode === "quadrant") renderUrgentImportantMatrix(root);
   else if (tool.mode === "regulation") renderRegulation(root);
   else if (tool.mode === "match") renderChoice(root, tool, true);
   else renderChoice(root, tool, false);
@@ -1681,6 +1684,122 @@ function renderSpotlight(root) {
     showStatus(root, "The whole scene is in view again.");
   });
   host.append(element("p", "interactive-instruction", "Choose a detail to bring into focus, then widen back to the whole scene."), scene, widen);
+}
+
+function renderUrgentImportantMatrix(root) {
+  const host = root.querySelector("#interactive-activity");
+  const quadrants = [
+    ["do", "DO", "Urgent and important", "Act on this first.", "#b8f14b"],
+    ["plan", "PLAN", "Not urgent but important", "Choose a time and protect it.", "#63c8eb"],
+    ["delegate", "DELEGATE", "Urgent but not important", "Ask whether someone else can carry it.", "#ff9b59"],
+    ["delete", "DELETE", "Not urgent and not important", "Release, reduce or consciously leave it.", "#f52f61"],
+  ];
+  const taskInput = document.createElement("input");
+  taskInput.type = "text";
+  taskInput.placeholder = "Add a task, worry or open loop…";
+  taskInput.setAttribute("aria-label", "New task for the urgent important matrix");
+  const add = button("Add task", "button");
+  const addRow = element("div", "matrix-add-row");
+  addRow.append(taskInput, add);
+  const status = element("p", "interactive-result matrix-status", "Add a task, then drag it to the quadrant that fits. You can move it again whenever the context changes.");
+  const board = element("div", "urgent-important-board");
+  const zones = new Map();
+
+  const makeTask = (text, zoneId = "plan") => {
+    const card = element("article", "matrix-task");
+    card.draggable = true;
+    card.dataset.matrixTask = "true";
+    const words = element("span", "matrix-task-text", text);
+    words.contentEditable = "true";
+    words.setAttribute("role", "textbox");
+    words.setAttribute("aria-label", "Editable task");
+    const move = document.createElement("select");
+    move.className = "matrix-task-move";
+    move.setAttribute("aria-label", "Move task to another quadrant");
+    quadrants.forEach(([id, title]) => {
+      const option = document.createElement("option");
+      option.value = id;
+      option.textContent = "Move to " + title;
+      move.append(option);
+    });
+    move.value = zoneId;
+    const remove = button("Remove", "matrix-task-remove");
+    const actions = element("div", "matrix-task-actions");
+    actions.append(move, remove);
+    card.append(words, actions);
+    const place = (id) => {
+      const target = zones.get(id) || zones.get("plan");
+      target.querySelector(".matrix-task-list").append(card);
+      move.value = target.dataset.matrixZone;
+      status.textContent = "Moved to " + target.dataset.matrixTitle + ". You can revise the task or move it again.";
+    };
+    move.addEventListener("change", () => place(move.value));
+    remove.addEventListener("click", () => {
+      card.remove();
+      status.textContent = "Task removed from the matrix.";
+    });
+    card.addEventListener("dragstart", (event) => {
+      card.classList.add("is-dragging");
+      event.dataTransfer?.setData("text/plain", text);
+      if (event.dataTransfer) event.dataTransfer.effectAllowed = "move";
+    });
+    card.addEventListener("dragend", () => card.classList.remove("is-dragging"));
+    place(zoneId);
+  };
+
+  quadrants.forEach(([id, title, subtitle, hint, colour]) => {
+    const zone = element("section", "matrix-quadrant matrix-quadrant-" + id);
+    zone.dataset.matrixZone = id;
+    zone.dataset.matrixTitle = title;
+    zone.style.setProperty("--matrix-colour", colour);
+    const heading = element("div", "matrix-quadrant-heading");
+    heading.append(element("h3", "", title), element("p", "", subtitle));
+    const hintNode = element("p", "matrix-quadrant-hint", hint);
+    const list = element("div", "matrix-task-list");
+    list.setAttribute("aria-label", title + " tasks");
+    zone.append(heading, hintNode, list);
+    ["dragover", "dragenter"].forEach((eventName) => zone.addEventListener(eventName, (event) => {
+      event.preventDefault();
+      zone.classList.add("is-over");
+      if (event.dataTransfer) event.dataTransfer.dropEffect = "move";
+    }));
+    ["dragleave", "drop"].forEach((eventName) => zone.addEventListener(eventName, (event) => {
+      if (eventName === "drop") {
+        event.preventDefault();
+        const moving = board.querySelector(".matrix-task.is-dragging");
+        if (moving) {
+          list.append(moving);
+          moving.querySelector(".matrix-task-move").value = id;
+          status.textContent = "Moved to " + title + ". You can keep refining the list.";
+        }
+      }
+      zone.classList.remove("is-over");
+    }));
+    zones.set(id, zone);
+    board.append(zone);
+  });
+  const addTask = () => {
+    const text = taskInput.value.trim();
+    if (!text) {
+      status.textContent = "Write a task first, then add it to the matrix.";
+      taskInput.focus();
+      return;
+    }
+    makeTask(text, "plan");
+    taskInput.value = "";
+    taskInput.focus();
+    status.textContent = "Added to Plan. Drag it to another quadrant or use its move menu.";
+  };
+  add.addEventListener("click", addTask);
+  taskInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      addTask();
+    }
+  });
+  makeTask("One task I need to act on soon", "do");
+  makeTask("A meaningful task I can schedule", "plan");
+  host.append(element("p", "interactive-instruction", "This is a flexible prioritising aid, not a judgement about the worth of a task. Add your own words, edit them in place, and use the move menu if dragging is not comfortable."), addRow, status, board);
 }
 
 function renderSocialScriptBuilder(root) {
