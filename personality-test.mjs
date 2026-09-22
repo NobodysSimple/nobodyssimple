@@ -1,4 +1,4 @@
-const VERSION = "NS Full Personality Profile 1.2 · Compact adaptive edition";
+const VERSION = "NS Psychological Profile Lab 1.3 · Evidence-gated adaptive edition";
 const DRAFT_KEY = "nobodys-simple-full-profile-draft-v3";
 const STATE_KEY = "nobodys-simple-profile-state-checkins-v1";
 
@@ -11,7 +11,7 @@ const COMPACT_PAIR_IDS = new Set([
   "stimulation","intellectual-curiosity","uncertainty-intolerance",
   "adaptability","persistence","effortful-control",
   "sensory-orienting","sensory-overload","sociability","social-boldness",
-  "rel-intimacy","rel-autonomy","compassion","decision-deliberation"
+  "rel-intimacy","rel-autonomy","orderliness","decision-deliberation"
 ]);
 const COMPACT_VALUE_ROUNDS = 10;
 const FOLLOWUP_BUDGET = 3;
@@ -35,9 +35,10 @@ const S5 = [["0","Not at all"],["1","A little"],["2","Moderately"],["3","Strongl
  * scenario and what describes only the current moment.
  */
 const EVIDENCE_META = {
-  measured: {label:"Measured · candidate items",symbol:"●",tip:"A within-person response pattern from repeated candidate items; it is not normed."},
-  direct: {label:"Direct preference",symbol:"○",tip:"An explicit choice or rating. It describes a preference, not an ability or outcome."},
-  scenario: {label:"Scenario response",symbol:"◆",tip:"A response to a hypothetical situation; it is not evidence of what happened in real life."},
+  measured: {label:"Supported within-assessment pattern",symbol:"●●",tip:"Two or more candidate items converge within this session. It is not normed or population-validated."},
+  preliminary: {label:"Preliminary scale signal",symbol:"●",tip:"Candidate items lean in one direction but need more evidence or lived observation."},
+  direct: {label:"Direct answer",symbol:"○",tip:"An explicit choice or rating. It describes a preference, not an ability or outcome."},
+  scenario: {label:"Scenario evidence",symbol:"◆",tip:"A response to a hypothetical situation; it is not evidence of what happened in real life."},
   state: {label:"Current state",symbol:"◇",tip:"A right-now snapshot; it is not a stable personality estimate."},
   derived: {label:"Derived synthesis",symbol:"▲",tip:"A transparent combination of answers. It is an interpretation, not a validated interaction."},
   hypothesis: {label:"Hypothesis to test",symbol:"△",tip:"A provisional idea to confirm, refine or reject with lived experience."},
@@ -619,16 +620,16 @@ function renderIntro(root) {
     : "";
   root.innerHTML=[
     "<div class='wrap pf-wrap'><section class='pf-intro'>",
-    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple · Compact adaptive edition 1.2</p>",
+    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple · Psychological Profile Lab 1.3</p>",
     "<h1>The personality map<br><em>with room for contradiction.</em></h1>",
     "<p class='lead'>A compact adaptive self-reflection assessment about the patterns that organise how you respond, relate, learn, choose and change across different parts of life.</p>",
-    "<div class='pf-facts'><span>About 45–70 minutes</span><span>Up to 200 adaptive steps</span><span>10 balanced values rounds</span><span>Pause and return if you save locally</span></div>",
-    "<button class='button' id='pf-start' type='button'>Begin the compact profile <span aria-hidden='true'>↗</span></button>",
+    "<div class='pf-facts'><span>About 45–70 minutes</span><span>Up to 200 adaptive steps</span><span>Evidence-gated profile patterns</span><span>Pause and return if you save locally</span></div>",
+    "<button class='button' id='pf-start' type='button'>Begin the psychological profile <span aria-hidden='true'>↗</span></button>",
     "<p class='pf-privacy'>Your answers stay in this tab unless you explicitly choose to save a draft or state check-in on this device. Nothing is sent to Nobody’s Simple.</p></div>",
     "<div class='pf-intro-art'><img src='personality-map.png' alt='A friendly map character following a dotted path'><p>More than one pattern can be true at once.</p></div></section>",
     "<section class='pf-principles'><article><span>01</span><h2>Dimensions before types</h2><p>Your separate response patterns are the result. The story title is a playful shorthand, not a psychological category.</p></article><article><span>02</span><h2>Describe before explaining</h2><p>We distinguish what you reported from what might be worth testing. The assessment cannot tell you why a pattern developed.</p></article><article><span>03</span><h2>State is not trait</h2><p>The final check-in describes right now. It is shown apart from your longer-term responses.</p></article></section>",
     "<section class='pf-scope'><div><p class='eyebrow'>A fuller map</p><h2>All parts of the profile</h2><p>Each module can be skipped item by item. Responses use different formats for tendencies, motives, needs, preferences, values and current states; those formats are not combined into one total score.</p></div><ul class='pf-module-list'>"+modules+"</ul></section>",
-    "<aside class='pf-validity'><b>Public edition 1.2 · compact, exploratory, not validated</b><p>This shorter adaptive questionnaire keeps every construct represented, uses paired items only where they add the most information, and may ask a small number of clarifiers when answers are mixed. Its candidate items, provisional scoring rules, archetype titles and profile interpretations have not been psychometrically validated or normed. It does not diagnose, rank or compare you with a population. A working website is not evidence of measurement validity.</p></aside>",
+    "<aside class='pf-validity'><b>Public edition 1.3 · compact, evidence-gated, exploratory</b><p>This adaptive questionnaire keeps every construct represented, uses paired items where they add the most information, and may ask a small capped number of clarifiers when answers are mixed. Its candidate items, scoring rules and profile interpretations have not been psychometrically validated or normed. It can leave the profile open when evidence does not converge. It does not diagnose, rank or compare you with a population.</p></aside>",
     resume,
     "<p class='pf-back'><a href='#home'>← Back to the main website</a></p></div>"
   ].join("");
@@ -847,6 +848,18 @@ function spread(values) {
   const m=mean(values);
   return Math.sqrt(values.reduce((sum,v)=>sum+Math.pow(v-m,2),0)/values.length);
 }
+/* A directional average is not automatically good evidence. The narrative
+ * gate requires both distance from the midpoint and agreement between the
+ * repeated items; the appendix still shows every answer. */
+function evidenceClassFor(values,pattern,distance,consistency) {
+  if(!values.length)return "insufficient";
+  if(values.length===1)return "direct";
+  if(!["more","less","lean-more","lean-less"].includes(pattern))return "mixed";
+  const extremePair=values.length===2&&((values.every(v=>v>=5))||(values.every(v=>v<=1)));
+  if(distance>=.5&&consistency>=.78&&(values.length>=3||extremePair))return "supported";
+  if(distance>=.25&&consistency>=.5)return "preliminary";
+  return "mixed";
+}
 function signalFor(d) {
   const values=responseValues(d);
   let pattern="unknown";
@@ -861,9 +874,10 @@ function signalFor(d) {
   } else if(values.length===1) pattern="single";
   const distance=avg==null?0:Math.abs(avg-3)/3;
   const consistency=values.length<2?0:Math.max(0,1-(sd/2.4));
-  const confidence=values.length<2?"insufficient":values.length>=4&&consistency>=.65?"stronger within-person consistency":values.length>=2?"preliminary within-person estimate":"insufficient";
+  const evidenceClass=evidenceClassFor(values,pattern,distance,consistency);
+  const confidence=values.length<2?"insufficient":evidenceClass==="supported"?"supported within-assessment pattern":evidenceClass==="preliminary"?"preliminary scale signal":"mixed or context-dependent";
   const direction=pattern==="more"||pattern==="lean-more"?"more":pattern==="less"||pattern==="lean-less"?"less":null;
-  return {dimension:d,values,count:values.length,total:d.items.length,pattern,mean:avg,sd,spread:sd,distance,consistency,confidence,direction};
+  return {dimension:d,values,count:values.length,total:d.items.length,pattern,mean:avg,sd,spread:sd,distance,consistency,confidence,evidenceClass,direction};
 }
 function allSignals() { return ALL_DIMENSIONS.map(signalFor); }
 function signalMap(signals) { return Object.fromEntries(signals.map(s=>[s.dimension.id,s])); }
@@ -873,6 +887,45 @@ function hasPattern(signals,id,pattern) {
   if(pattern==="more")return s.pattern==="more"||s.pattern==="lean-more";
   if(pattern==="less")return s.pattern==="less"||s.pattern==="lean-less";
   return s.pattern===pattern;
+}
+function hasSupportedPattern(signals,id,pattern) {
+  const s=signalMap(signals)[id];
+  if(!s||s.evidenceClass!=="supported")return false;
+  return pattern==="more"?s.direction==="more":pattern==="less"?s.direction==="less":s.pattern===pattern;
+}
+function profileConfidenceFor(signals) {
+  const answered=signals.filter(s=>s.count>0).length;
+  const paired=signals.filter(s=>s.count>=2);
+  const supported=paired.filter(s=>s.evidenceClass==="supported").length;
+  const preliminary=paired.filter(s=>s.evidenceClass==="preliminary").length;
+  const mixed=paired.filter(s=>s.evidenceClass==="mixed").length;
+  const directional=paired.filter(s=>s.direction&&s.evidenceClass!=="mixed").length;
+  let level="too-uncertain",label="Too uncertain",note="There is not enough coherent, converging evidence to assign a story-title or a dominant profile.";
+  if(supported>=6&&directional>=8){level="strong";label="Clear pattern";note="Several independent paired signals converge on the same broad configuration.";}
+  else if(supported>=3&&directional>=3){level="moderate";label="Moderate pattern";note="Several paired signals support a useful configuration, while some contextual detail remains open.";}
+  else if(supported>=2||preliminary>=5||directional>=3){level="limited";label="Limited pattern";note="Some signals are usable, but the profile should be read as a working hypothesis rather than a settled type.";}
+  return {level,label,note,answered,paired:paired.length,supported,preliminary,mixed,directional};
+}
+function evidenceWeight(signal) {
+  if(!signal)return 0;
+  if(signal.evidenceClass==="supported")return 1;
+  if(signal.evidenceClass==="preliminary")return .62;
+  if(signal.evidenceClass==="direct")return .2;
+  return 0;
+}
+function signedSignalValue(signal) {
+  if(!signal||signal.mean==null)return 0;
+  if(signal.direction) return (signal.direction==="more"?1:-1)*Math.max(.18,signal.distance||0);
+  if(signal.evidenceClass==="direct") return Math.max(-1,Math.min(1,(signal.mean-3)/3));
+  return 0;
+}
+function stateBand(signal) {
+  if(!signal||signal.mean==null)return "unknown";
+  if(signal.direction==="more"&&(signal.evidenceClass==="supported"||signal.evidenceClass==="preliminary"))return "higher";
+  if(signal.direction==="less"&&(signal.evidenceClass==="supported"||signal.evidenceClass==="preliminary"))return "lower";
+  if(signal.mean>=4)return "higher";
+  if(signal.mean<=2)return "lower";
+  return "middle";
 }
 function nLabel(v,scale) { const hit=scale.find(x=>Number(x[0])===Number(v)); return hit?hit[1]:"Not answered"; }
 function I5label(v) { return nLabel(v,I5); }
@@ -897,10 +950,100 @@ function motifValues() {
   return MOTIVE_DATA.map(m=>({id:m[0],title:m[1],description:m[2],strength:answers["motive-"+m[0]+"-strength"],frequency:answers["motive-"+m[0]+"-behavior"]}));
 }
 function usefulDirections(signals) {
-  return signals.filter(s=>s.direction==="more"||s.direction==="less").sort((a,b)=>(b.distance||0)-(a.distance||0));
+  return signals.filter(s=>(s.direction==="more"||s.direction==="less")&&["supported","preliminary"].includes(s.evidenceClass)).sort((a,b)=>(b.distance||0)-(a.distance||0));
 }
 function strongestDirections(signals,limit) {
   return usefulDirections(signals).slice(0,limit);
+}
+/* Psychological profile patterns are generated from interacting dimensions,
+ * not selected by first-match mythology rules. A pattern needs converging
+ * core evidence; supporting dimensions change its expression but cannot by
+ * themselves manufacture a confident type. */
+const PROFILE_PATTERNS = [
+  {id:"deliberative-explorer",name:"The Deliberative Explorer",tag:"Exploration draws you toward complexity; deliberation helps you decide when it is navigable enough to act.",technical:"Exploration × uncertainty sensitivity × deliberation",core:[["intellectual-curiosity",1],["uncertainty-intolerance",1],["decision-deliberation",1]],support:[["stimulation",1],["decision-reopening",1],["learning-confusion",1]],mode:"Analyst / Explorer",story:"Ariadne’s thread with an Athena influence"},
+  {id:"socially-cautious-connector",name:"The Socially Cautious Connector",tag:"Connection matters, while the conditions for entering a social space matter too.",technical:"Social interest × entry confidence × relational investment",core:[["sociability",1],["social-boldness",-1],["rel-intimacy",1]],support:[["support-seeking",1],["emotional-disclosure",1],["sensory-overload",-1]],mode:"Relational / Threshold",story:"Hermes at the threshold"},
+  {id:"autonomous-stabiliser",name:"The Autonomous Stabiliser",tag:"You seem to want self-direction that rests on conditions reliable enough to support it.",technical:"Autonomy × security × structured action",core:[["rel-autonomy",1],["money-security",1],["planning-dependence",1]],support:[["orderliness",1],["money-scarcity",1],["work-predictability",1]],mode:"Boundary / Stabilising",story:"Artemis with a Hestia hearth"},
+  {id:"adaptive-initiator",name:"The Adaptive Initiator",tag:"You are pulled toward movement and can revise the route once action gives you information.",technical:"Initiation × adaptability × stimulation",core:[["initiation",1],["adaptability",1],["stimulation",1]],support:[["goal-drive",1],["persistence",-1],["decision-reopening",1]],mode:"Explorer / Route-changing",story:"Odysseus, the route-changer"},
+  {id:"relationally-vigilant-connector",name:"The Relationally Vigilant Connector",tag:"Closeness carries real meaning, and ambiguity can make the relationship system work harder.",technical:"Intimacy × relational vigilance × reassurance / repair",core:[["rel-intimacy",1],["attachment-anxiety",1],["rel-reassurance",1]],support:[["rel-repair",1],["rel-autonomy",-1],["rumination",1]],mode:"Relational / Repair-led",story:"Psyche’s deep listener"},
+  {id:"structured-creator",name:"The Structured Creator",tag:"Ideas become more usable when freedom is paired with form, standards and a route to refinement.",technical:"Imagination × orderliness × standards",core:[["imagination",1],["orderliness",1],["personal-standards",1]],support:[["aesthetic-sensitivity",1],["thoroughness",1],["evaluative-perfectionism",-1]],mode:"Maker / Craft-led",story:"Hephaestus, the patient maker"},
+  {id:"independent-collaborator",name:"The Independent Collaborator",tag:"You may want meaningful connection without giving up control over your own contribution.",technical:"Autonomy × social interest × agency",core:[["rel-autonomy",1],["sociability",1],["agency",1]],support:[["work-collaboration",1],["work-independent",1],["assertiveness",1]],mode:"Collaborator / Self-directed",story:"Artemis with a Hermes bridge"},
+  {id:"persistent-mastery-seeker",name:"The Persistent Mastery-Seeker",tag:"The satisfaction of getting better can keep effort alive after the first spark has gone.",technical:"Mastery × persistence × deliberate effort",core:[["persistence",1],["thoroughness",1],["learning-persistence",1]],support:[["effortful-control",1],["personal-standards",1],["stimulation",-1]],mode:"Maker / Mastery-led",story:"Hephaestus at the long bench"},
+  {id:"signal-sensitive-regulator",name:"The Signal-Sensitive Regulator",tag:"You may notice fine-grained input while also needing to manage how much reaches your system at once.",technical:"Sensory orienting × sensory load × body awareness",core:[["sensory-orienting",1],["sensory-overload",1],["interoception",1]],support:[["stress-vulnerability",1],["baseline-activation",1],["self-soothing",1]],mode:"Signal-reader / Regulation",story:"Iris, the signal-reader"}
+];
+function storyLensFor(pattern) {
+  if(!pattern)return null;
+  const descriptions={
+    "deliberative-explorer":"Ariadne’s thread with an Athena influence",
+    "socially-cautious-connector":"Hermes at the threshold",
+    "autonomous-stabiliser":"Artemis with a Hestia hearth",
+    "adaptive-initiator":"Odysseus, the route-changer",
+    "relationally-vigilant-connector":"Psyche’s deep listener",
+    "structured-creator":"Hephaestus, the patient maker",
+    "independent-collaborator":"Artemis with a Hermes bridge",
+    "persistent-mastery-seeker":"Hephaestus at the long bench",
+    "signal-sensitive-regulator":"Iris, the signal-reader"
+  };
+  const name=descriptions[pattern.id];
+  return name?{name,tag:"A metaphorical memory hook for the psychological configuration above.",lore:"This story lens is optional and non-diagnostic. The evidence is in the interaction of the measured dimensions, not in the mythic reference.",basis:"Generated from the selected psychological pattern rather than an arbitrary first-match rule."}:null;
+}
+function profilePatternScore(pattern,signals) {
+  const map=signalMap(signals);
+  const fit=(entry)=>{
+    const s=map[entry[0]];
+    if(!s)return {value:0,weight:0,signal:null,positive:false};
+    const weight=evidenceWeight(s),value=signedSignalValue(s)*entry[1];
+    return {value:Math.max(-1,Math.min(1,value)),weight,signal:s,positive:value>0};
+  };
+  const core=pattern.core.map(fit),support=pattern.support.map(fit);
+  const coreDen=core.reduce((n,x)=>n+(x.weight||0),0)||1;
+  const supportDen=support.reduce((n,x)=>n+(x.weight||0),0)||1;
+  const coreFit=core.reduce((n,x)=>n+x.value*(x.weight||0),0)/coreDen;
+  const supportFit=support.reduce((n,x)=>n+x.value*(x.weight||0),0)/supportDen;
+  const coreSupported=core.filter(x=>x.signal?.evidenceClass==="supported"&&x.positive).length;
+  const contradictions=core.filter(x=>x.signal?.evidenceClass!=="insufficient"&&!x.positive).length;
+  return {pattern,score:coreFit*.72+supportFit*.28-contradictions*.18,coreFit,supportFit,coreSupported,contradictions,core,support};
+}
+function profileSelectionFor(signals) {
+  const evidenceConfidence=profileConfidenceFor(signals);
+  const ranked=PROFILE_PATTERNS.map(p=>profilePatternScore(p,signals)).sort((a,b)=>b.score-a.score);
+  const winner=ranked[0],runner=ranked[1];
+  const margin=winner&&runner?winner.score-runner.score:0;
+  const dominant=evidenceConfidence.level==="strong"?!!winner&&winner.score>=.3&&margin>=.18:evidenceConfidence.level==="moderate"?!!winner&&winner.score>=.4&&margin>=.2:false;
+  const assignable=dominant&&winner&&winner.coreSupported>=2&&winner.contradictions<2;
+  const primary=assignable?winner.pattern:null;
+  const secondary=assignable&&runner&&runner.coreSupported>=1&&runner.score>=.16&&(winner.score-runner.score)<=.2&&runner.pattern.id!==winner.pattern.id?runner.pattern:null;
+  const confidence=assignable?evidenceConfidence:(evidenceConfidence.level==="strong"||evidenceConfidence.level==="moderate"?Object.assign({},evidenceConfidence,{level:"limited",label:"Several patterns fit",note:"Multiple signals are present, but no single configuration clears the dominance margin. The report keeps the map open instead of forcing a type."}):evidenceConfidence);
+  const map=signalMap(signals);
+  const signature=(ids,label)=>{
+    const vals=ids.map(id=>({id,s:map[id]})).filter(x=>x.s&&x.s.mean!=null);
+    if(vals.length<2)return null;
+    return {label,text:vals.map(x=>x.s.dimension.title+" · "+patternLabel(x.s).replace("Items leaned ","")).join(" · ")};
+  };
+  const signatures=[];
+  const social=[stateBand(map.sociability),stateBand(map["social-boldness"])];
+  if(social.every(x=>x!=="unknown")){
+    const text=social[0]==="higher"&&social[1]==="higher"?"Socially interested and relatively easy to enter":social[0]==="higher"&&social[1]==="lower"?"Wants connection; benefits from a clearer opening":social[0]==="lower"&&social[1]==="higher"?"Socially capable without needing constant contact":"Lower social appetite and lower approach pull";
+    signatures.push({label:"Social entry",text});
+  }
+  const sensory=[stateBand(map["sensory-orienting"]),stateBand(map["sensory-overload"])];
+  if(sensory.every(x=>x!=="unknown")){
+    const text=sensory[0]==="higher"&&sensory[1]==="higher"?"Notices a lot; dense input can drain":sensory[0]==="higher"&&sensory[1]==="lower"?"Notices subtle input without as much reported load":sensory[0]==="lower"&&sensory[1]==="higher"?"May miss fine detail while density still taxes the system":"Lower salience and lower reported load";
+    signatures.push({label:"Sensory pattern",text});
+  }
+  const closeness=[stateBand(map["rel-intimacy"]),stateBand(map["rel-autonomy"])];
+  if(closeness.every(x=>x!=="unknown")){
+    const text=closeness[0]==="higher"&&closeness[1]==="higher"?"Deep connection with protected independent space":closeness[0]==="higher"?"Togetherness-forward relationship preference":closeness[1]==="higher"?"Independence-forward relationship preference":"Neither closeness nor autonomy dominates the current map";
+    signatures.push({label:"Closeness × autonomy",text});
+  }
+  const action=[stateBand(map.initiation),stateBand(map.sustainment),stateBand(map.adaptability)];
+  if(action.every(x=>x!=="unknown")){
+    const text=action[0]==="higher"&&action[1]==="higher"&&action[2]==="higher"?"Starts, sustains and revises with relative continuity":action[0]==="higher"&&action[1]==="lower"?"Fast starts; the middle needs visible support":action[0]==="lower"&&action[1]==="higher"?"Slow starts can become durable once underway":"Action changes by task, energy or context";
+    signatures.push({label:"Action pattern",text});
+  }
+  const motive=motifValues().filter(x=>typeof x.strength==="number").sort((a,b)=>b.strength-a.strength)[0];
+  if(motive) signatures.push({label:"Current motive",text:motive.title+" is a strong reported pull; its actual expression depends on opportunity and resources."});
+  const mode=primary?.mode||"Open / context-dependent";
+  return {confidence,ranked,primary,secondary,margin,signatures:signatures.slice(0,5),mode,storyTitle:primary?storyLensFor(primary):null};
 }
 function titleFor(signals) {
   const checks=[
@@ -940,9 +1083,152 @@ function archetypeProfile(title,signals) {
   return {story,variant,why:"This title is a compression of several visible answers—not a category. The most relevant threads in your map include "+(names.join(", ")||"the routes you answered directly")+".",gift,labyrinth,journey,thread};
 }
 
-function renderArchetypeChapter(title,signals) {
-  const a=archetypeProfile(title,signals);
-  return "<section class='pf-archetype-chapter' id='pf-archetype'><div class='pf-archetype-variant'>"+esc(a.variant)+"</div><div class='pf-archetype-grid'><article><span class='pf-label'>The story</span><p>"+esc(a.story)+"</p></article><article><span class='pf-label'>Why this title fits your data</span><p>"+esc(a.why)+"</p></article><article><span class='pf-label'>The gift</span><p>"+esc(a.gift)+"</p></article><article><span class='pf-label'>The labyrinth</span><p>"+esc(a.labyrinth)+"</p></article><article><span class='pf-label'>The journey</span><p>"+esc(a.journey)+"</p></article><article class='pf-thread-card'><span class='pf-label'>The thread</span><p>“"+esc(a.thread)+"”</p></article></div><p class='pf-small-note'>Myth is used here as a human-readable metaphor. It is not evidence that a story determines your personality.</p></section>";
+function renderArchetypeChapter(profile,signals) {
+  const p=profile.primary;
+  const c=profile.confidence;
+  const headline=p?p.name:"Open Map — evidence still forming";
+  const tag=p?p.tag:"Your answers contain useful routes, but they do not converge enough for one dominant psychological profile. The detailed map stays open rather than inventing certainty.";
+  const technical=p?p.technical:"No primary configuration assigned";
+  const secondary=profile.secondary?"<article class='pf-profile-secondary'><span class='pf-label'>Close second</span><h3>"+esc(profile.secondary.name)+"</h3><p>"+esc(profile.secondary.tag)+"</p><small>It is close enough to keep in view, not strong enough to merge into a blended type.</small></article>":"";
+  const signature=profile.signatures.length?"<div class='pf-signature-chips'>"+profile.signatures.map(s=>"<span><b>"+esc(s.label)+"</b> "+esc(s.text)+"</span>").join("")+"</div>":"<p class='pf-small-note'>No multi-variable signature has enough answered evidence to headline yet.</p>";
+  const story=profile.storyTitle?"<article class='pf-story-lens'><span class='pf-label'>Optional story lens</span><h3>"+esc(profile.storyTitle.name)+"</h3><p>"+esc(profile.storyTitle.tag)+"</p><small>Myth is a memory aid only. The psychological pattern above is the evidence-based layer.</small></article>":"";
+  return "<section class='pf-archetype-chapter' id='pf-archetype'><div class='pf-profile-kicker'>Nobody’s Simple Psychological Profile</div><div class='pf-profile-head'><div><p class='pf-title-label'>Primary configuration</p><h1>"+esc(headline)+"</h1><p class='pf-archetype-tagline'>"+esc(tag)+"</p><p class='pf-tech-profile'><b>Technical pattern:</b> "+esc(technical)+"</p></div><div class='pf-profile-confidence pf-confidence-"+esc(c.level)+"'><span>Profile evidence</span><strong>"+esc(c.label)+"</strong><small>"+esc(c.note)+"</small></div></div>"+signature+"<div class='pf-archetype-grid'>"+secondary+story+"<article><span class='pf-label'>How to read this</span><p>The title is a compact name for an interaction among your answers, not a category, diagnosis, ability claim or permanent identity. The Full Read explains what may activate the pattern, what it can do, where it can become costly and what changes it.</p></article></div></section>";
+}
+
+function usableSignal(signal) { return !!signal&&["supported","preliminary","direct"].includes(signal.evidenceClass); }
+function signalDirectionText(signal) {
+  if(!signal||!usableSignal(signal))return "not enough evidence to describe this direction";
+  if(signal.direction==="more")return signal.dimension.more;
+  if(signal.direction==="less")return signal.dimension.less;
+  return "the answer changes by context rather than settling into one direction";
+}
+function selectedWorkTitles() { return selectedWork().filter(w=>w.value>=3).slice(0,6).map(w=>w.title.toLowerCase()); }
+function regulationPatternText() {
+  const choices=REGULATION_SCENARIOS.map(s=>({s,v:answers[s.id]})).filter(x=>typeof x.v==="string").map(x=>({choice:x.s.options[Number(x.v)]||"",v:Number(x.v)}));
+  if(!choices.length)return "The regulation matrix is still open; no condition-specific strategy pattern can be summarised yet.";
+  const settle=choices.filter(x=>/settle|ground|accept|permission|allow|break|distract/i.test(x.choice)).length;
+  const act=choices.filter(x=>/step|action|plan|boundary|control|separate|explain|meaning/i.test(x.choice)).length;
+  const support=choices.filter(x=>/ask|contact|support|connection|comfort|help/i.test(x.choice)).length;
+  const switched=new Set(choices.map(x=>x.v)).size;
+  const lead=settle>=act&&settle>=support?"settling or allowing the wave to pass":act>=support?"practical action or understanding":"support and connection";
+  return "Across the controllability and intensity changes, your first choices most often point toward "+lead+". You changed strategy in "+switched+" of six option positions, so regulation is better described as condition-matched than as one fixed coping style.";
+}
+function conflictPatternText() {
+  const rows=SCENARIOS.map(s=>({a:answers[s.id]})).filter(x=>x.a&&x.a.first!==undefined&&x.a.first!=="");
+  if(!rows.length)return "No conflict scenarios were completed, so the report will not infer a conflict style.";
+  const direct=rows.filter(x=>[0,1,4].includes(Number(x.a.first))).length;
+  const pause=rows.filter(x=>[2,3,5].includes(Number(x.a.first))).length;
+  const repair=rows.filter(x=>Number(x.a.first)===3||Number(x.a.second)===3).length;
+  return "In hypothetical conflict, you selected a direct or boundary-setting first move in "+direct+" of "+rows.length+" scenarios and a pause, analysis or delay in "+pause+". Repair appeared in "+repair+" scenario path"+(repair===1?"":"s")+". This suggests a response sequence that may change with power, trust and perceived fairness rather than a single conflict type.";
+}
+function motiveEnactmentText() {
+  const rows=motifValues().filter(m=>typeof m.strength==="number");
+  if(!rows.length)return "Motive strength and enactment are not available yet.";
+  const active=rows.filter(m=>m.strength>=3&&typeof m.frequency==="number"&&m.frequency>=3).slice(0,3);
+  const desired=rows.filter(m=>m.strength>=3&&(!Number.isFinite(m.frequency)||m.frequency<3)).slice(0,3);
+  const environment=rows.filter(m=>m.strength<3&&typeof m.frequency==="number"&&m.frequency>=3).slice(0,2);
+  const bits=[];
+  if(active.length)bits.push("strong and frequently enacted: "+active.map(m=>m.title.toLowerCase()).join(", "));
+  if(desired.length)bits.push("strong but less often enacted: "+desired.map(m=>m.title.toLowerCase()).join(", "));
+  if(environment.length)bits.push("present in choices despite a more moderate pull: "+environment.map(m=>m.title.toLowerCase()).join(", "));
+  return bits.length?"Your motive answers separate what matters from what is currently enacted. They show "+bits.join("; ")+". A gap can reflect time, opportunity, resources or competing priorities rather than a lack of sincerity.":"Your motive ratings do not yet show a stable strength–enactment pattern.";
+}
+function needsParadoxText() {
+  const rows=NEEDS.map(n=>({name:n[1],sat:answers["need-"+n[0]+"-satisfaction"],fru:answers["need-"+n[0]+"-frustration"]})).filter(x=>typeof x.sat==="number"||typeof x.fru==="number");
+  if(!rows.length)return "Current need conditions were not completed.";
+  const both=rows.filter(x=>x.sat>=3&&x.fru>=3).map(x=>x.name.toLowerCase());
+  return both.length?"You reported both meaningful support and meaningful frustration around "+both.join(", ")+". That is not a scoring error: it may mean different relationships or moments provide and block the same need, or that support is real but insufficient. The current test cannot decide which explanation is true, so treat the contrast as a question to observe.":"Your satisfaction and frustration answers do not currently show a strong same-need paradox; they still describe this period rather than a fixed trait.";
+}
+function selfWorthContingencyText() {
+  const a=answers["self-worth-contingencies"]||{};
+  const rows=SELF_WORTH_AREAS.map((name,i)=>({name,value:a["worth-"+i]})).filter(x=>typeof x.value==="number").sort((x,y)=>y.value-x.value);
+  if(!rows.length)return "The self-worth contingency matrix was not completed.";
+  const top=rows.filter(x=>x.value>=3).slice(0,4).map(x=>x.name.toLowerCase());
+  return top.length?"Your self-evaluation appears most sensitive, in this session, to "+top.join(", ")+". If one of those areas also carries a strong motive or identity commitment, failure there may feel more identity-loaded than the event alone would predict. That is a hypothesis about weighting, not a verdict about your worth.":"No self-worth area reached the upper response range, so the matrix does not identify a dominant contingency from this session.";
+}
+function adaptationCostText(signals) {
+  const map=signalMap(signals),bits=[];
+  const add=(ids,name,effect,cost)=>{const present=ids.map(id=>map[id]).filter(s=>s&&s.evidenceClass!=="insufficient");if(present.length>=2&&present.some(s=>s.direction==="more"))bits.push(name+" may be effective for "+effect+", but could cost "+cost+" when it becomes the default response.");};
+  add(["self-monitoring","masking","contextual-consistency"],"Presentation management","keeping social situations workable","energy, spontaneity or recovery time");
+  add(["personal-standards","thoroughness","evaluative-perfectionism"],"Perfectionistic checking","protecting quality or avoiding preventable error","time and a moving finish line");
+  add(["rel-reassurance","attachment-anxiety","rumination"],"Reassurance and checking","reducing relational ambiguity","temporary relief followed by renewed monitoring");
+  add(["planning-dependence","orderliness","uncertainty-intolerance"],"Hyper-planning","creating orientation before action","flexibility and time after the plan is already sufficient");
+  return bits.length?bits.join(" "):"The current evidence does not support a specific costly-adaptation pattern. Notice which strategies work well but leave a disproportionate recovery bill.";
+}
+function profileOneSentence(profile,signals) {
+  const p=profile.primary;
+  if(!p)return "Your answers contain several useful routes, but they do not yet converge enough to support one dominant psychological configuration. The most honest result is an open map that can become clearer with more lived observations.";
+  if(p.id==="deliberative-explorer")return "You seem strongly pulled toward understanding and exploration, while unresolved outcomes keep asking for structure; that can make complexity engaging and leaving uncertainty alone unusually difficult.";
+  if(p.id==="socially-cautious-connector")return "Connection appears meaningful, but social entry depends on the opening conditions; you may become more available once familiarity, purpose or safety reduces the first barrier.";
+  if(p.id==="autonomous-stabiliser")return "You seem to want self-direction that rests on reliable conditions, so freedom may work best when the destination, resources or boundaries are steady enough to support it.";
+  if(p.id==="adaptive-initiator")return "Movement and new information may help you begin, while changing course can be easier than sustaining a route after novelty fades; your useful challenge may be designing a middle that remains alive.";
+  if(p.id==="relationally-vigilant-connector")return "Closeness appears important and ambiguous connection may receive extra attention, so repair and direct reassurance may be both a resource and a place where the system can work hard.";
+  if(p.id==="structured-creator")return "Ideas seem most usable when they have form: imagination pulls possibilities forward while standards and order help turn them into something finished enough to share.";
+  if(p.id==="independent-collaborator")return "You may want meaningful contact without surrendering control of your contribution, making shared work most workable when responsibility and room to act are both explicit.";
+  if(p.id==="persistent-mastery-seeker")return "Improvement and craft can keep effort alive after the first spark, especially when progress is visible; repetition becomes easier to sustain when it still serves a meaningful standard.";
+  if(p.id==="signal-sensitive-regulator")return "Your system may notice fine-grained input while also needing to manage density and body load, so regulation is likely to depend on what reaches you as much as on what you think about it.";
+  return "Your current profile is organised by the interaction of several tendencies; the useful question is which conditions let that configuration help rather than asking it to solve every situation in the same way.";
+}
+function profileReadFor(profile,signals) {
+  const map=signalMap(signals),p=profile.primary,one=profileOneSentence(profile,signals),mechanisms=[];
+  if(p){
+    const core=p.core.map(x=>map[x[0]]).filter(usableSignal).slice(0,3);
+    if(core.length>=2){
+      mechanisms.push({title:"What activates the system",text:"Because "+core[0].dimension.title.toLowerCase()+" and "+core[1].dimension.title.toLowerCase()+" both appear in the supported part of your map, situations involving "+core[0].dimension.contexts.toLowerCase()+" may draw attention toward "+core[0].dimension.fn.toLowerCase()+". The second process changes what happens next: it can turn a simple preference into a route, a check, a boundary or a need for more orientation."});
+      mechanisms.push({title:"What the response is doing",text:"One way these answers fit together is that the response is functional before it is problematic. "+signalDirectionText(core[0])+" may help you notice what matters, while "+signalDirectionText(core[1])+" may help you protect against an outcome that feels too open, costly or hard to reverse. The same response can support judgement in one condition and keep the system active after the useful information is already available in another."});
+      mechanisms.push({title:"Where the job changes",text:"The key distinction is whether the next thought or action changes the situation. If it produces new evidence, a clearer boundary, a smaller step or a better repair, it is still doing useful work. If it only tries to remove the last feeling of uncertainty without changing the options, the same mechanism may have become an expensive loop."});
+    }
+  }
+  mechanisms.push({title:"Motives and current conditions",text:motiveEnactmentText()+" "+needsParadoxText()});
+  mechanisms.push({title:"Self-evaluation and adaptations",text:selfWorthContingencyText()+" "+adaptationCostText(signals)});
+  const advantages=[],frictions=[];
+  const coreSignals=p?p.core.map(x=>map[x[0]]).filter(usableSignal):strongestDirections(signals,3);
+  coreSignals.slice(0,3).forEach(s=>{advantages.push(s.dimension.title+": "+s.dimension.fn);frictions.push(s.dimension.title+": "+s.dimension.friction);});
+  if(!advantages.length)advantages.push("Several direct preferences and scenario choices remain useful, but no multi-variable advantage is strong enough to headline yet.");
+  if(!frictions.length)frictions.push("No single friction pattern is supported strongly enough to turn into a claim; the detailed cards keep the possibilities open.");
+  const contradictions=[];
+  const social=map.sociability,bold=map["social-boldness"],intimacy=map["rel-intimacy"],autonomy=map["rel-autonomy"],stimulation=map.stimulation,persistence=map.persistence,standards=map["personal-standards"],evalp=map["evaluative-perfectionism"];
+  if(usableSignal(social)&&usableSignal(bold)&&social.direction!==bold.direction)contradictions.push("Social desire and social entry are different systems here: wanting contact does not establish that approaching an unfamiliar group will feel easy.");
+  if(usableSignal(intimacy)&&usableSignal(autonomy)&&intimacy.direction==="more"&&autonomy.direction==="more")contradictions.push("Deep connection and protected independent space can both be genuine needs; the tension is an interaction design problem, not evidence that one answer is false.");
+  if(usableSignal(stimulation)&&usableSignal(persistence)&&stimulation.direction!==persistence.direction)contradictions.push("Novelty can make a beginning attractive while repetition still requires a different support; interest and sustainment are separate demands.");
+  if(usableSignal(standards)&&usableSignal(evalp)&&standards.direction==="more"&&evalp.direction==="less")contradictions.push("High standards may be about the work itself rather than fear of judgement; quality pressure and evaluation pressure are not the same mechanism.");
+  if(!contradictions.length)contradictions.push("No constructive tension cleared the evidence gate. Mixed answers may reflect context or measurement uncertainty rather than a hidden contradiction.");
+  const changes=[regulationPatternText(),conflictPatternText()];
+  const work=selectedWorkTitles();
+  const intimacyBand=stateBand(intimacy),autonomyBand=stateBand(autonomy);
+  const relationship=intimacyBand==="unknown"&&autonomyBand==="unknown"?"Relationship preferences remain open; use the separate closeness, space, communication and repair cards rather than an ideal-partner label.":"Your relationship architecture currently points toward "+(intimacyBand==="higher"&&autonomyBand==="higher"?"meaningful closeness with protected space":intimacyBand==="higher"?"connection-forward coordination":autonomyBand==="higher"?"independence-forward coordination":"a context-dependent balance")+". Direct communication about timing, boundaries and repair is more useful than inferring compatibility from a type.";
+  const realLife=[
+    {title:"Work",text:work.length?"A workday worth testing may include "+work.join(", ")+". The strongest combination is not an occupation prediction; it is a condition set to try in a low-cost project.":"The work section does not yet support a specific architecture, so investigate conditions rather than career names."},
+    {title:"Relationships",text:relationship},
+    {title:"Learning and decisions",text:"Your learning, decision and change answers are best used to match support to the bottleneck: define the target, choose the first step, then distinguish returning after interruption from continuing through repetition."},
+    {title:"Under pressure",text:"When demand, ambiguity, sensory load or fatigue rises, check the body and environment before treating the first interpretation as the whole explanation. Context can change the apparent trait."}
+  ];
+  const rules=[];
+  if(hasPattern(signals,"uncertainty-intolerance","more")&&(hasPattern(signals,"decision-deliberation","more")||hasPattern(signals,"decision-reopening","more")))rules.push("Before researching further, write down what new information would actually change the choice.");
+  if(selectedWork().some(w=>w.id==="work-autonomy"&&w.value>=3)&&selectedWork().some(w=>w.id==="work-predictability"&&w.value>=3))rules.push("Create freedom inside structure: agree the outcome and review point, then choose your own route.");
+  if(hasPattern(signals,"sensory-overload","more")||hasPattern(signals,"interoception","more"))rules.push("Check sound, light, hunger, fatigue and pain before turning irritation into a story about the entire problem.");
+  if(hasPattern(signals,"personal-standards","more")||hasPattern(signals,"thoroughness","more"))rules.push("Define ‘finished enough’ before starting so care improves the work rather than moving the finish line.");
+  if(hasPattern(signals,"rel-intimacy","more")&&hasPattern(signals,"rel-reassurance","more"))rules.push("Ask once for the specific clarity you need, then agree what repair or follow-through would look like.");
+  if(!rules.length)rules.push("Track one repeated situation across two contexts before deciding what the pattern means.","Separate what the feeling is asking you to notice from what it is asking you to do.","Use the smallest next experiment that could update the map.");
+  const unknowns=[];
+  if(profile.confidence.level!=="strong")unknowns.push("The broad configuration is useful but not settled; additional lived examples may change the title.");
+  if(!usableSignal(map["attachment-anxiety"])||!usableSignal(map["attachment-avoidance"]))unknowns.push("We have stronger evidence about relationship preferences than about what happens when closeness feels threatened.");
+  if(!answers["state-context"])unknowns.push("The test has no current state context to show how energy, fatigue or sensory load may be changing the response today.");
+  unknowns.push("The present questionnaire cannot tell whether a pattern is caused by history, health, culture, access or material conditions.");
+  const prediction=["Some opportunities may feel more uncomfortable before you begin than once you have enough orientation to enter them.","A clear stopping criterion may improve decisions more than another round of information gathering.","The same preference may look different when energy, sensory density, safety or relationship ambiguity changes."];
+  const quick=[
+    {label:"What pulls you",text:p?p.tag:"Your map stays open while separate motives, preferences and scenarios remain useful."},
+    {label:"What protects you",text:coreSignals[1]?signalDirectionText(coreSignals[1]):"Structure, support and context are still being clarified."},
+    {label:"What changes you",text:changes[0]},
+    {label:"How you connect",text:relationship},
+    {label:"Where to begin",text:rules[0]}
+  ];
+  return {one,quick,mechanisms,advantages,frictions,contradictions,changes,realLife,rules,prediction,unknowns};
+}
+function renderProfileRead(profile,signals) {
+  const r=profileReadFor(profile,signals);
+  const cards=(items,kind)=>items.map((x,i)=>{const item=typeof x==="string"?{title:kind+" "+(i+1),text:x}:x;return "<article class='pf-mechanism-card'><span class='pf-label'>"+esc(item.title)+"</span><p>"+esc(item.text)+"</p></article>";}).join("");
+  return "<section class='pf-report-section pf-full-read' id='pf-full-read'><p class='eyebrow'>The full read · evidence-gated formulation</p><h2>How your psychological system may work</h2><div class='pf-profile-one-line'><span class='pf-label'>Your profile in one sentence</span><p>"+esc(r.one)+"</p></div><h3 class='pf-subhead'>How your system seems to work</h3><div class='pf-mechanism-stack'>"+cards(r.mechanisms,"Mechanism")+"</div><h3 class='pf-subhead'>Where this configuration can work in your favour</h3><div class='pf-mechanism-grid'>"+cards(r.advantages,"Functional advantage")+"</div><h3 class='pf-subhead'>Where the same system can create friction</h3><div class='pf-mechanism-grid'>"+cards(r.frictions,"Possible friction")+"</div><h3 class='pf-subhead'>Contradictions that make sense once separated</h3><div class='pf-mechanism-grid'>"+cards(r.contradictions,"Constructive tension")+"</div><h3 class='pf-subhead'>What changes the pattern</h3><div class='pf-mechanism-grid'>"+cards(r.changes,"Context modifier")+"</div><h3 class='pf-subhead'>What this means in real life</h3><div class='pf-mechanism-grid'>"+cards(r.realLife,"Domain")+"</div><h3 class='pf-subhead'>What to actually do</h3><ol class='pf-profile-rules'>"+r.rules.slice(0,5).map(x=>"<li>"+esc(x)+"</li>").join("")+"</ol><h3 class='pf-subhead'>Three predictions to test</h3><div class='pf-mechanism-grid'>"+cards(r.prediction,"Prediction")+"</div><h3 class='pf-subhead'>What we are still unsure about</h3><div class='pf-unknown-list'>"+r.unknowns.map(x=>"<p>"+esc(x)+"</p>").join("")+"</div><div class='pf-story-cautions'><b>Evidence key:</b> "+badge("measured",true)+" "+badge("direct",true)+" "+badge("scenario",true)+" "+badge("derived",true)+" "+badge("hypothesis",true)+" "+badge("insufficient",true)+"</div></section>";
 }
 
 function oneMinuteSynthesis(signals) {
@@ -1064,10 +1350,10 @@ function hypothesisList(signals) {
 function signalDescription(signal) {
   if(!signal||signal.pattern==="unknown") return "Not enough answers were given to describe this pattern.";
   if(signal.pattern==="single") return "One response was recorded. It is shown as a direct answer, not a scale estimate.";
-  if(signal.pattern==="more") return "All answered candidate items leaned toward the higher end. "+signal.dimension.more;
-  if(signal.pattern==="less") return "All answered candidate items leaned toward the lower end. "+signal.dimension.less;
-  if(signal.pattern==="lean-more") return "Your average response leaned higher without being unanimous. "+signal.dimension.more+" The disagreement is useful context rather than noise.";
-  if(signal.pattern==="lean-less") return "Your average response leaned lower without being unanimous. "+signal.dimension.less+" The disagreement is useful context rather than noise.";
+  if(signal.pattern==="more") return "Your answered candidate items point toward the higher end. "+signal.dimension.more;
+  if(signal.pattern==="less") return "Your answered candidate items point toward the lower end. "+signal.dimension.less;
+  if(signal.pattern==="lean-more") return "Your average response leans higher without being unanimous. "+signal.dimension.more+" The disagreement is useful context rather than noise.";
+  if(signal.pattern==="lean-less") return "Your average response leans lower without being unanimous. "+signal.dimension.less+" The disagreement is useful context rather than noise.";
   return "Your answers were mixed, included the “mixed / depends” option, or did not point consistently in one direction. Context may matter, or these candidate items may need refinement.";
 }
 function patternLabel(signal) {
@@ -1083,7 +1369,8 @@ function evidenceForSignal(signal) {
   if(!signal||signal.pattern==="unknown")return "insufficient";
   if(signal.dimension.group==="snapshot")return "state";
   if(signal.dimension.kind==="Preference"||signal.dimension.kind==="Direct preference")return "direct";
-  return "measured";
+  if(signal.evidenceClass==="direct")return "direct";
+  return signal.evidenceClass==="supported"?"measured":signal.evidenceClass==="preliminary"?"preliminary":"insufficient";
 }
 function badge(kind,compact=false) {
   const meta=EVIDENCE_META[kind]||EVIDENCE_META.measured;
@@ -1108,8 +1395,9 @@ function traitCard(signal) {
     "<p><b>Where it may show up</b>"+esc(d.contexts)+"</p>"+
     "<p><b>Everyday cues to notice</b>"+esc(d.cues)+"</p>"+
     "<p><b>Your response pattern</b>"+esc(mapText)+(guide&&signal.direction?" <span class='pf-direction-note'>Higher here means "+esc(signal.direction==="more"?guide.high:guide.low)+".</span>":"")+"</p>"+
+    "<p><b>What it does not establish</b>It does not establish a diagnosis, cause, ability, intention or a pattern outside the situations you answered.</p>"+
     "<p><b>When it may help</b>"+esc(d.more)+"</p>"+
-    "<p><b>When it may create friction</b>"+esc(d.friction)+"</p>"+
+    "<p><b>Possible friction</b>"+esc(d.friction)+"</p>"+
     "<p><b>A need to consider</b>"+esc(d.needs)+"</p>"+
     (related.length?"<p><b>Connected constructs</b>"+esc(related.join(", "))+". These labels are kept separate for exploration; they may overlap and should not be treated as independent diagnoses.</p>":"")+ 
     "<p class='pf-provenance'><b>Evidence:</b> "+signal.count+" of "+signal.total+" candidate items answered"+meanText+" · "+esc(signal.confidence)+" · descriptive self-report only.</p></div></details>";
@@ -1494,24 +1782,24 @@ function renderBestUse(signals) {
 function renderValidity(signals) {
   const answered=signals.filter(s=>s.count>0).length;
   const required=signals.length;
-  return "<section class='pf-limit-panel' id='pf-limits'><p class='eyebrow'>Read carefully · limits of this map</p><h2>This is an exploratory self-reflection profile, not a validated test.</h2><p>The public edition is fully built as a compact adaptive questionnaire and report, but the candidate items, response rules, archetype title rules and generated interpretations have not been psychometrically validated, normed or independently calibrated. The design documents explicitly treat the scales as candidates. A functioning assessment is not evidence that its measurements are reliable or valid.</p><p>This report uses "+answered+" of "+required+" candidate-item dimensions with at least one answer. Every construct has an anchor item; selected high-yield constructs receive a second item, and a small capped set of clarifiers can appear when answers are mixed. It reports a mean, spread, directional lean and an evidence note instead of requiring unanimity; that is a provisional within-person summary, not a population score. Direct single answers, best/worst value choices, repeated money trade-offs, scenarios and the right-now snapshot are kept separate. No overall personality score, percentile, clinical confidence interval or population comparison is produced.</p>"+reportUnknowns()+"<p class='pf-limit-ending'>The archetype is a playful story-title—not a diagnosis, category, or permanent identity. You can disagree with any interpretation, and the report keeps a private confirmation/rejection layer so your lived context can refine the hypotheses without rewriting the raw answers.</p></section>";
+  return "<section class='pf-limit-panel' id='pf-limits'><p class='eyebrow'>Read carefully · limits of this map</p><h2>This is an exploratory self-reflection profile, not a validated test.</h2><p>The public edition is fully built as a compact adaptive questionnaire and report, but the candidate items, response rules, profile-pattern rules and generated interpretations have not been psychometrically validated, normed or independently calibrated. A functioning assessment is not evidence that its measurements are reliable or valid.</p><p>This report uses "+answered+" of "+required+" candidate-item dimensions with at least one answer. Every construct has an anchor item; selected high-yield constructs receive a second item, and a small capped set of clarifiers can appear when answers are mixed. It reports a mean, spread, directional lean and an evidence class instead of requiring unanimity; that is a provisional within-person summary, not a population score. Direct single answers, best/worst value choices, repeated money trade-offs, scenarios and the right-now snapshot are kept separate. No overall personality score, percentile, clinical confidence interval or population comparison is produced.</p>"+reportUnknowns()+"<p class='pf-limit-ending'>A psychological profile pattern is a working formulation—not a diagnosis, category, ability claim or permanent identity. If the evidence gate says “too uncertain”, the test intentionally leaves the map open rather than guessing. You can disagree with any interpretation, and the private confirmation/rejection layer lets lived context refine the hypotheses without rewriting raw answers.</p></section>";
 }
 function renderReportNavigation() {
-  const links=[["pf-archetype","Archetype"],["pf-overview","90 seconds"],["pf-full-read","Full read"],["pf-combinations","Distinctive patterns"],["pf-map","Evidence map"],["pf-values","Values"],["pf-relationships","Relationships"],["pf-work","Work & hobbies"],["pf-regulation","Emotion"],["pf-identity","Identity"],["pf-context","Context"],["pf-use","Operating manual"],["pf-evidence","Evidence explorer"],["pf-limits","Limits"]];
+  const links=[["pf-archetype","Profile"],["pf-overview","90 seconds"],["pf-full-read","Full read"],["pf-combinations","Distinctive patterns"],["pf-map","Evidence map"],["pf-values","Values"],["pf-relationships","Relationships"],["pf-work","Work & hobbies"],["pf-regulation","Emotion"],["pf-identity","Identity"],["pf-context","Context"],["pf-use","Operating manual"],["pf-evidence","Evidence explorer"],["pf-limits","Limits"]];
   return "<nav class='pf-report-nav' aria-label='Profile sections'>"+links.map(x=>"<a href='#"+esc(x[0])+"'>"+esc(x[1])+"</a>").join("")+"</nav>";
 }
 
 function renderEvidenceExplorer(signals) {
-  const groups=["All","temperament","dispositions","relationships","regulation","motives","identity","domains","decisions","snapshot","measured","direct","scenario","state","insufficient"];
+  const groups=["All","temperament","dispositions","relationships","regulation","motives","identity","domains","decisions","snapshot","measured","preliminary","direct","scenario","state","insufficient"];
   const cards=signals.map((s,i)=>{
     const kind=evidenceForSignal(s),d=s.dimension;
-    return "<article class='pf-evidence-card' data-evidence-group='"+esc(d.group)+"' data-evidence-kind='"+esc(kind)+"'><div class='pf-evidence-card-top'>"+badge(kind,true)+"<span>"+esc(patternLabel(s))+"</span></div><h3>"+esc(d.title)+"</h3><p>"+esc(d.definition)+"</p><p><b>Your estimate:</b> "+esc(signalDescription(s))+"</p><p><b>What it does not mean:</b> "+esc(d.friction||"It does not explain a cause, diagnose a condition or predict every situation.")+"</p><small>"+s.count+" of "+s.total+" candidate items answered"+(typeof s.mean==="number"?" · mean "+s.mean.toFixed(2)+"/6":"")+" · "+esc(s.confidence)+"</small></article>";
+    return "<article class='pf-evidence-card' data-evidence-group='"+esc(d.group)+"' data-evidence-kind='"+esc(kind)+"'><div class='pf-evidence-card-top'>"+badge(kind,true)+"<span>"+esc(patternLabel(s))+"</span></div><h3>"+esc(d.title)+"</h3><p>"+esc(d.definition)+"</p><p><b>Your estimate:</b> "+esc(signalDescription(s))+"</p><p><b>What it does not establish:</b> This does not establish a cause, diagnosis, ability, intention or pattern outside the situations you answered.</p><p><b>Possible friction:</b> "+esc(d.friction||"No specific friction description is available.")+"</p><small>"+s.count+" of "+s.total+" candidate items answered"+(typeof s.mean==="number"?" · mean "+s.mean.toFixed(2)+"/6":"")+" · "+esc(s.confidence)+"</small></article>";
   }).join("");
   const directSteps=[...RELATIONSHIP_PREFERENCES,...COMMUNICATION_PREFERENCES,...LEARNING_PREFERENCES,...WORK_PREFERENCES,...MONEY_RISK_SCENARIOS,...MONEY_DELAY_SCENARIOS];
   const direct=directSteps.map(s=>{const v=answers[s.id];if(v===undefined||v===null)return "";let choice=typeof v==="number"?(s.type==="B7"?(v<0?s.left:v>0?s.right:"Depends"):nLabel(v,I5)):s.options?.[Number(v)]||String(v);return "<article class='pf-evidence-card' data-evidence-group='direct' data-evidence-kind='direct'><div class='pf-evidence-card-top'>"+badge("direct",true)+"</div><h3>"+esc(s.title)+"</h3><p>"+esc(choice)+"</p><small>Explicit preference or trade-off response · not an ability or outcome.</small></article>";}).filter(Boolean).join("");
   const scenarioSteps=[...SCENARIOS,...REGULATION_SCENARIOS];
   const scenarios=scenarioSteps.map(s=>{const v=answers[s.id];if(v===undefined||v===null)return "";let choice=v&&v.first!==undefined?s.choices?.[Number(v.first)]:s.options?.[Number(v)];return "<article class='pf-evidence-card' data-evidence-group='scenario' data-evidence-kind='scenario'><div class='pf-evidence-card-top'>"+badge("scenario",true)+"</div><h3>"+esc(s.title)+"</h3><p>"+esc(choice||"Not answered")+"</p><small>Hypothetical scenario response · not evidence of what happened in real life.</small></article>";}).filter(Boolean).join("");
-  return "<section class='pf-report-section pf-evidence-explorer' id='pf-evidence'><p class='eyebrow'>Appendix · evidence explorer</p><h2>Every measured route, with its limits</h2><p class='pf-section-lead'>The detailed scale database is kept as an appendix rather than the main story. Filter by life area or evidence class; connected constructs may overlap and require future validation before they are treated as separate latent dimensions.</p><div class='pf-evidence-filters'>"+groups.map((g,i)=>"<button type='button' class='button secondary pf-evidence-filter"+(i===0?" is-active":"")+"' data-evidence-filter='"+esc(g)+"'>"+esc(g==="All"?g:g[0].toUpperCase()+g.slice(1))+"</button>").join("")+"</div><div class='pf-evidence-grid'>"+cards+direct+scenarios+"</div><p class='pf-small-note'>● repeated candidate items · ○ direct preference · ◆ scenario · ◇ current state · ▲ derived synthesis · △ hypothesis · ? insufficient evidence.</p></section>";
+  return "<section class='pf-report-section pf-evidence-explorer' id='pf-evidence'><p class='eyebrow'>Appendix · evidence explorer</p><h2>Every route, with its limits</h2><p class='pf-section-lead'>The detailed scale database is kept as an appendix rather than the main story. Filter by life area or evidence class; connected constructs may overlap and require future validation before they are treated as separate latent dimensions.</p><div class='pf-evidence-filters'>"+groups.map((g,i)=>"<button type='button' class='button secondary pf-evidence-filter"+(i===0?" is-active":"")+"' data-evidence-filter='"+esc(g)+"'>"+esc(g==="All"?g:g[0].toUpperCase()+g.slice(1))+"</button>").join("")+"</div><div class='pf-evidence-grid'>"+cards+direct+scenarios+"</div><p class='pf-small-note'>●● supported pattern · ● preliminary signal · ○ direct answer · ◆ scenario evidence · ◇ current state · ▲ derived interpretation · △ hypothesis · ? insufficient evidence.</p></section>";
 }
 function feedbackBlock(id,label) {
   return "<div class='pf-collab-feedback' data-feedback-id='"+esc(id)+"'><b>Does this fit your experience?</b><div class='pf-feedback-options'>"+["Very strongly","Mostly","Partly","Not really","The opposite is closer","Not enough experience"].map(v=>"<button type='button' class='pf-feedback-button' data-pf-feedback='"+esc(v)+"'>"+esc(v)+"</button>").join("")+"</div><label>What would you refine? <textarea data-pf-feedback-note placeholder='Optional: context, exception or correction'></textarea></label><small aria-live='polite'></small></div>";
@@ -1539,24 +1827,22 @@ function attachEvidenceFilters(root) {
 }
 
 function renderResult(root) {
-  const signals=allSignals(),title=titleFor(signals),paragraphs=narrative(signals),minute=oneMinuteSynthesis(signals);
+  const signals=allSignals(),profile=profileSelectionFor(signals),read=profileReadFor(profile,signals);
   const filtered=signals.filter(s=>s.dimension.group==="temperament"||s.dimension.group==="dispositions");
-  const headline=title.name;
+  const headline=profile.primary?.name||"Open Map — evidence still forming";
   root.innerHTML=[
     "<div class='wrap pf-result-wrap'><header class='pf-result-hero'>",
     "<img class='pf-result-character' src='personality-map.png' alt='The Nobody’s Simple map character'>",
-    "<p class='eyebrow'>Nobody’s Simple · Compact personality profile · Public edition 1.2</p>",
-    "<p class='pf-title-label'>Your story-title</p><h1>"+esc(headline)+"</h1>",
-    "<p class='pf-archetype-tagline'>"+esc(title.tag)+"</p>",
-    "<p class='pf-lore'>"+esc(title.lore)+"</p>",
-    "<p class='pf-archetype-note'>"+esc(title.basis)+"</p>",
-    "<p class='pf-tech-profile'>Your profile is made from separate response patterns across temperament, personality, attachment, regulation, motives, needs, values, identity and life domains. The title is not the measurement.</p>",
+    "<p class='eyebrow'>Nobody’s Simple · Psychological Profile Lab · Public edition 1.3</p>",
+    "<p class='pf-title-label'>Your primary psychological configuration</p><h1>"+esc(headline)+"</h1>",
+    "<p class='pf-archetype-tagline'>"+esc(profile.primary?.tag||"Your detailed map stays open rather than turning uncertainty into a confident type.")+"</p>",
+    "<p class='pf-tech-profile'><b>Profile evidence:</b> "+esc(profile.confidence.label)+" · "+esc(profile.confidence.note)+"</p>",
     "<div class='pf-version'><span>"+esc(VERSION)+"</span><span>No total score</span><span>Nothing sent to the site</span></div>",
     renderReportNavigation(),
     "</header><div id='pf-report-content'>",
-    renderArchetypeChapter(title,signals),
-    "<section class='pf-report-section pf-story-section' id='pf-overview'><p class='eyebrow'>Level 1 · Know me · derived synthesis</p><h2>Your profile in 90 seconds</h2><p class='pf-section-lead'>Five integrated answers first. The long-form interpretation follows underneath so you can choose how deep to go.</p><div class='pf-one-minute-grid'>"+minute.cards.join("")+"</div><p class='pf-growth-question'><b>Carry this question:</b> "+esc(minute.question)+"</p>"+feedbackBlock("overview","overview")+"</section>",
-    "<section class='pf-report-section pf-full-read' id='pf-full-read'><p class='eyebrow'>The fuller read · derived synthesis and hypotheses</p><h2>How the routes may work together</h2><p class='pf-section-lead'>This is a longer narrative interpretation. It integrates the highest-value patterns without treating any one scale as your identity.</p><div class='pf-narrative'>"+paragraphs.map(p=>"<p>"+esc(p)+"</p>").join("")+"</div><div class='pf-story-cautions'><b>Evidence key:</b> "+badge("measured",true)+" "+badge("direct",true)+" "+badge("scenario",true)+" "+badge("derived",true)+" "+badge("hypothesis",true)+" "+badge("insufficient",true)+"</div></section>",
+    renderArchetypeChapter(profile,signals),
+    "<section class='pf-report-section pf-story-section' id='pf-overview'><p class='eyebrow'>Level 1 · Know me · derived synthesis</p><h2>Your profile in 90 seconds</h2><p class='pf-section-lead'>Five integrated answers first. The full formulation follows underneath so you can choose how deep to go.</p><div class='pf-one-minute-grid'>"+read.quick.map(x=>"<article><span class='pf-label'>"+esc(x.label)+"</span><p>"+esc(x.text)+"</p></article>").join("")+"</div><p class='pf-growth-question'><b>Carry this question:</b> "+esc(read.rules[0])+"</p>"+feedbackBlock("overview","overview")+"</section>",
+    renderProfileRead(profile,signals),
     renderMisunderstandingSection(signals),
     "<section class='pf-report-section' id='pf-map'><p class='eyebrow'>Level 2 · Understand me</p><h2>Your characteristics & mechanisms</h2><p class='pf-section-lead'>Each scale card includes a definition, function, analogy, everyday cues, situations, possible needs and possible friction. Open the cards that matter to you; mixed and leaning answers are shown honestly.</p><div class='pf-search'><label for='pf-search'>Find a pattern</label><input id='pf-search' type='search' placeholder='Try attachment, fatigue, curiosity…'><span id='pf-search-count' aria-live='polite'>"+filtered.length+" core cards shown</span></div><h3 class='pf-subhead'>Repeated-item patterns to start with</h3>"+renderStandouts(signals)+"<div class='pf-trait-list pf-core-traits'>"+filtered.map(traitCard).join("")+"</div><p class='pf-small-note'>Attachment, regulation, identity, work, money, learning and decision patterns are unpacked in their own sections below.</p></section>",
     renderMotivesSection(),
@@ -1603,11 +1889,12 @@ function downloadFullReport(root) {
   clone.querySelectorAll("button,input,select,textarea,nav").forEach(x=>x.remove());
   clone.querySelectorAll("details").forEach(x=>x.open=true);
   const exportCss="body{margin:0;background:#f6f0e4;color:#263e34;font-family:Arial,sans-serif}main{max-width:980px;margin:0 auto;padding:28px 5vw 60px}h1,h2,h3,h4{font-family:Georgia,serif;color:#234b3b}p,li{line-height:1.65;color:#56695b}.pf-report-section,.pf-archetype-chapter{margin:24px 0;padding:26px;border:1px solid #ddd8ca;border-radius:14px;background:#fffdf8}.pf-trait-card{margin:8px 0;padding:12px;border:1px solid #ddd8ca;border-radius:9px;background:#fffdf8}.pf-trait-card>summary{font-weight:700;cursor:pointer}.pf-trait-body{padding:10px}.pf-evidence-grid,.pf-archetype-grid,.pf-one-minute-grid,.pf-environment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pf-evidence-card,.pf-archetype-grid article,.pf-one-minute-grid article,.pf-environment-card{padding:15px;border:1px solid #ddd8ca;border-radius:9px}.pf-collab-feedback,.pf-report-nav,.pf-end-actions,.pf-search,.pf-evidence-filters{display:none}@media(max-width:650px){.pf-evidence-grid,.pf-archetype-grid,.pf-one-minute-grid,.pf-environment-grid{grid-template-columns:1fr}}";
-  const html="<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Nobody’s Simple · Compact Personality Profile 1.2</title><style>"+exportCss+"</style></head><body><main><h1>Nobody’s Simple · Compact Personality Profile 1.2</h1>"+clone.outerHTML+"</main></body></html>";
+  const exportEnhancements=".pf-profile-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.38fr);gap:18px}.pf-profile-head h1{font:48px/1.05 Georgia,serif}.pf-profile-confidence{padding:14px;border:1px solid #d7dacc;border-radius:10px;background:#f4f6ef}.pf-profile-confidence span,.pf-profile-confidence strong,.pf-profile-confidence small{display:block}.pf-profile-confidence strong{margin:6px 0;font:21px Georgia,serif;color:#315746}.pf-profile-confidence small{font-size:11px;line-height:1.5}.pf-signature-chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.pf-signature-chips span{padding:7px 10px;border:1px solid #d8dfd2;border-radius:999px;background:#f1f5ed;font-size:10px}.pf-profile-one-line{margin:14px 0;padding:16px;border-left:4px solid #315746;background:#edf4e9}.pf-profile-one-line p{font:19px/1.6 Georgia,serif;color:#315746}.pf-mechanism-stack,.pf-mechanism-grid{display:grid;gap:9px}.pf-mechanism-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pf-mechanism-card{padding:14px;border:1px solid #dddace;border-radius:9px;background:#fffdf8}.pf-mechanism-card p{font-size:11px;line-height:1.6}.pf-profile-rules{line-height:1.65}.pf-unknown-list p{padding:9px;border:1px dashed #d1d6ca;font-size:11px}@media(max-width:650px){.pf-profile-head,.pf-mechanism-grid{grid-template-columns:1fr}}";
+  const html="<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Nobody’s Simple · Psychological Profile Lab 1.3</title><style>"+exportCss+exportEnhancements+"</style></head><body><main><h1>Nobody’s Simple · Psychological Profile Lab 1.3</h1>"+clone.outerHTML+"</main></body></html>";
   try {
     const blob=new Blob([html],{type:"text/html;charset=utf-8"});
     const url=URL.createObjectURL(blob),a=document.createElement("a");
-    a.href=url;a.download="nobodys-simple-compact-personality-profile-1.2.html";
+    a.href=url;a.download="nobodys-simple-psychological-profile-lab-1.3.html";
     document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
     const status=root.querySelector("#pf-download-status");
     if(status)status.textContent="Your profile file was created in your browser.";

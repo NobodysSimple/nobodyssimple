@@ -4449,6 +4449,7 @@ footer {
 /* Full-profile 1.1 synthesis, evidence and collaboration surfaces */
 .pf-evidence-badge { display: inline-flex; align-items: center; gap: 4px; width: fit-content; padding: 4px 8px; border-radius: 999px; background: #edf1e9; color: #3b634d; font-size: 9px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .pf-evidence-badge span { font-size: 12px; line-height: 1; }
+.pf-evidence-preliminary { background: #f1f0df; color: #7b713b; }
 .pf-evidence-derived, .pf-evidence-hypothesis { background: #f5ead8; color: #9a632d; }
 .pf-evidence-insufficient { background: #f1eee7; color: #767d74; }
 .pf-evidence-state { background: #e6eff0; color: #416b70; }
@@ -4505,13 +4506,43 @@ footer {
 .pf-evidence-card p { margin: 6px 0; color: #66756a; font-size: 10px; line-height: 1.58; }
 .pf-evidence-card small { display: block; margin-top: 9px; color: #91978d; font-size: 9px; }
 .pf-full-read { background: #fbfaf3; }
+.pf-profile-kicker { display: inline-block; margin-bottom: 16px; color: #8a633f; font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.pf-profile-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, .38fr); gap: 20px; align-items: start; }
+.pf-profile-head h1 { margin: 0 0 8px; color: #234b3b; font: clamp(34px, 6vw, 64px)/1.03 Georgia, serif; }
+.pf-profile-confidence { padding: 16px; border: 1px solid #d7dacc; border-radius: 12px; background: rgba(255,253,248,.85); }
+.pf-profile-confidence span, .pf-profile-confidence strong, .pf-profile-confidence small { display: block; }
+.pf-profile-confidence span { color: #7c776c; font-size: 9px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.pf-profile-confidence strong { margin: 7px 0; color: #315746; font: 22px Georgia, serif; }
+.pf-profile-confidence small { color: #68766b; font-size: 11px; line-height: 1.5; }
+.pf-confidence-strong { border-color: #9ab59c; background: #eff6ec; }
+.pf-confidence-moderate { border-color: #d5b878; background: #fff7e5; }
+.pf-confidence-limited { border-color: #d8c9a9; background: #f7f1e4; }
+.pf-confidence-too-uncertain { border-color: #d4d6d0; background: #f3f3ed; }
+.pf-signature-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
+.pf-signature-chips span { max-width: 360px; padding: 8px 11px; border: 1px solid #d8dfd2; border-radius: 999px; background: #f1f5ed; color: #52665a; font-size: 10px; line-height: 1.45; }
+.pf-signature-chips b { color: #315746; }
+.pf-profile-secondary { border-color: #c9d8dc!important; background: #f1f7f7!important; }
+.pf-profile-secondary h3, .pf-story-lens h3 { margin: 8px 0 0; color: #315746; font: 22px Georgia, serif; }
+.pf-profile-secondary small, .pf-story-lens small { display: block; margin-top: 10px; color: #77847a; font-size: 10px; line-height: 1.5; }
+.pf-story-lens { border-color: #d9c9aa!important; background: #fff7e7!important; }
+.pf-profile-one-line { margin: 16px 0 22px; padding: 20px 22px; border-left: 5px solid #315746; border-radius: 10px; background: #edf4e9; }
+.pf-profile-one-line p { margin: 9px 0 0; color: #315746; font: 20px/1.65 Georgia, serif; }
+.pf-mechanism-stack { display: grid; gap: 10px; }
+.pf-mechanism-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 18px; }
+.pf-mechanism-card { padding: 18px; border: 1px solid #dddace; border-radius: 11px; background: #fffdf8; }
+.pf-mechanism-card p { margin: 9px 0 0; color: #5d6e63; font-size: 12px; line-height: 1.68; }
+.pf-profile-rules { display: grid; gap: 10px; margin: 0 0 20px; padding-left: 24px; color: #466052; }
+.pf-profile-rules li { padding: 11px 14px; border-radius: 8px; background: #f8f0df; color: #59695c; font-size: 12px; line-height: 1.6; }
+.pf-unknown-list { display: grid; gap: 8px; }
+.pf-unknown-list p { margin: 0; padding: 11px 14px; border: 1px dashed #d1d6ca; border-radius: 8px; background: #fafbf6; color: #68766b; font-size: 11px; line-height: 1.6; }
 @media (max-width: 900px) {
   .pf-one-minute-grid, .pf-environment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pf-archetype-grid, .pf-evidence-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pf-scenario-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pf-profile-head { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {
-  .pf-one-minute-grid, .pf-archetype-grid, .pf-environment-grid, .pf-evidence-grid, .pf-cycle-grid, .pf-scenario-grid, .pf-money-scenarios { grid-template-columns: 1fr; }
+  .pf-one-minute-grid, .pf-archetype-grid, .pf-environment-grid, .pf-evidence-grid, .pf-cycle-grid, .pf-scenario-grid, .pf-money-scenarios, .pf-mechanism-grid { grid-template-columns: 1fr; }
   .pf-value-hierarchy li { grid-template-columns: 22px 1fr auto; }
   .pf-value-hierarchy li > i { grid-column: 2 / -1; }
   .pf-value-hierarchy li > small { grid-column: 2 / -1; }
