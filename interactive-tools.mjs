@@ -75,6 +75,7 @@ const rows = [
   ["personal-weather", "Personal Weather", "feel", "weather", "feel,body,self", "understand,calmer", "Build a low-language picture of your inner weather from sky, wind and warmth."],
   ["intensity-thermometer", "Intensity Thermometer", "calm", "intensity", "feel,calm,body", "calmer,minutes", "Slide the current intensity and see lower-demand suggestions change with it."],
   ["choice-pause", "Choice Pause", "action", "steps", "decision,calm,start", "decide,action,minutes", "Take a brief stop–body–urge–consequence–choose sequence before acting."],
+  ["social-script-builder", "Social Script Builder", "relate", "scripts", "relate,think,decision,self", "communicate,understand,decide", "Build a message for an ambiguous social moment, then edit or copy it in your own voice."],
 ];
 
 export const interactiveTools = rows.map(
@@ -124,12 +125,13 @@ export function recommendInteractiveTools(goal, selectedSituations, energy) {
   const score = (tool) =>
     tool.situations.filter((tag) => chosen.includes(tag)).length * 4 +
     (tool.goals.includes(goal) ? 3 : 0) +
+    (tool.id === "social-script-builder" && (goal === "communicate" || chosen.includes("relate")) ? 6 : 0) +
     (Number(energy) === 0 && ["body", "calm", "feel", "sensory"].some((tag) => tool.situations.includes(tag)) ? 1 : 0);
   const defaults = {
     calmer: ["breathing-pacer", "five-senses-grounding", "urge-surfing"],
     organise: ["overload-meter", "priority-sorter", "energy-budget"],
     decide: ["decision-balance", "values-compass", "reversibility-gauge"],
-    communicate: ["boundary-sorter", "perspective-wheel", "conflict-decoder"],
+    communicate: ["social-script-builder", "boundary-sorter", "perspective-wheel"],
     action: ["task-shrinker", "friction-finder", "transition-bridge"],
     minutes: ["breathing-pacer", "choice-pause", "attention-spotlight"],
     understand: ["body-sensation-map", "facts-interpretation-unknown", "needs-compass"],
@@ -142,6 +144,161 @@ export function recommendInteractiveTools(goal, selectedSituations, energy) {
     .filter((tool, index, all) => all.findIndex((item) => item.id === tool.id) === index)
     .slice(0, 3);
 }
+
+const socialScriptScenarios = [
+  { id: "join-group", label: "Join a group or conversation", scripts: [
+    ["Clear", "Hi, is it okay if I join you? I’m interested in what you’re talking about."],
+    ["Warm", "Hey, I know you’re already chatting, but I’d love to join in if there’s room."],
+    ["Low-pressure", "Would it be alright if I sat with you for a bit? No pressure to pause your conversation."],
+    ["Specific", "I heard you mention [topic]. I know a little about that too—can I ask what you think?"],
+    ["Exit included", "I’m going to say hello and join for a few minutes, then I may head off again."],
+    ["Text first", "I’m nearby and would like to join you. Is now a good time, or would another time work better?"]
+  ]},
+  { id: "introduce", label: "Introduce yourself in a new setting", scripts: [
+    ["Simple", "Hi, I’m [name]. I’m here for [reason]. How do you know everyone?"],
+    ["Friendly", "Hello, I’m [name]—nice to meet you. I’m still finding my bearings, so I may ask a few questions."],
+    ["Direct", "I don’t know many people here yet. Would you mind telling me a little about how this works?"],
+    ["Interest-led", "I’m [name], and I’m interested in [interest]. What brought you here?"],
+    ["Low-energy", "Hi, I’m [name]. I may be quiet at first, but I’m glad to be here."],
+    ["Written", "Hi everyone, I’m [name]. I’m looking forward to learning about [topic] and meeting people at my own pace."]
+  ]},
+  { id: "ask-out", label: "Ask someone out or ask to spend time together", scripts: [
+    ["Clear", "I’ve enjoyed talking with you. Would you like to get coffee with me sometime?"],
+    ["Low-pressure", "I like spending time with you. Would you be open to meeting one-to-one? It’s completely okay if not."],
+    ["Specific", "Would you like to go to [place] on [day] at [time]? We could keep it to about [length]."],
+    ["Text", "I’ve been meaning to ask: would you like to hang out sometime? No worries if your answer is no."],
+    ["Clarifying", "I’m interested in getting to know you better. Would that be welcome, or would you prefer to keep things as friends?"],
+    ["After a no", "Thanks for being clear. I appreciate it, and I’ll respect that."]
+  ]},
+  { id: "follow-up", label: "Follow up after meeting someone", scripts: [
+    ["Warm", "It was good to meet you today. I enjoyed our conversation about [topic]."],
+    ["Invite", "I liked talking with you. Would you like to continue the conversation another time?"],
+    ["Specific", "Thanks for chatting at [place]. You mentioned [topic]—I found [link/detail] and thought of you."],
+    ["Low-pressure", "Just saying hello after today. No need to reply quickly; I hope your evening goes well."],
+    ["Reconnect", "I enjoyed meeting you and would be glad to stay in touch if that feels good for you."],
+    ["Professional", "It was a pleasure speaking with you. I’d value staying connected and learning more about your work."]
+  ]},
+  { id: "decline", label: "Decline an invitation kindly", scripts: [
+    ["Short", "Thank you for inviting me. I’m going to decline this time, but I appreciate you thinking of me."],
+    ["Warm", "That sounds lovely, but I don’t have the capacity for it right now. I hope you have a good time."],
+    ["Alternative", "I can’t make that, but I could do [alternative] if you’d like."],
+    ["No explanation", "Thanks for asking. I’m not available, and I don’t need to explain further, but I wanted to let you know."],
+    ["Sensory-aware", "I’d like to see you, but that setting is likely to be too much for me. Could we choose somewhere quieter?"],
+    ["Delayed reply", "Sorry for the slow reply. I’ve thought about it and I’m going to pass this time. Thank you for understanding."]
+  ]},
+  { id: "say-yes", label: "Say yes while asking for details or conditions", scripts: [
+    ["Details", "Yes, I’d like to. Could you tell me the time, place, people who’ll be there and what to expect?"],
+    ["Boundaried yes", "I can come for about an hour, then I’ll need to leave. Would that work?"],
+    ["Sensory fit", "I’m interested. Is there a quieter space or a way to take breaks if I need one?"],
+    ["Predictability", "I’d like to join. A quick outline of the plan would help me prepare."],
+    ["Conditional", "I can say yes if [condition]. If that changes, I may need to reconsider."],
+    ["Check-in", "I’m leaning yes. Can I confirm after I check my energy and schedule?"]
+  ]},
+  { id: "space", label: "Tell someone you need space", scripts: [
+    ["Direct", "I need some space to process. I’m not ending the relationship; I’ll come back to this by [time]."],
+    ["Gentle", "I care about this conversation, and I’m too activated to do it well right now. Can we pause?"],
+    ["Practical", "I need quiet for the next hour. Please don’t message unless it’s urgent; I’ll contact you at [time]."],
+    ["Text", "I’m overloaded and need a lower-input evening. I’m safe, I just need time before I reply."],
+    ["Boundary", "I’m going to step away now. I’m willing to continue when we can speak without shouting."],
+    ["Reassurance", "Needing space is about my capacity today, not a judgement of you. I’ll update you when I can."]
+  ]},
+  { id: "clarify", label: "Ask what an ambiguous message means", scripts: [
+    ["Plain", "I’m not sure how to read that message. What did you mean?"],
+    ["Non-accusing", "I may be missing context—could you clarify what you’re asking from me?"],
+    ["Tone check", "I can’t tell whether that was serious or joking. Could you tell me how you meant it?"],
+    ["Specific", "When you said [phrase], did you mean [option A] or [option B]?"],
+    ["Written", "I process written messages quite literally sometimes, so a little more detail would help me respond accurately."],
+    ["Time", "I want to answer properly. Can I check what you meant before I respond?"]
+  ]},
+  { id: "overwhelmed", label: "Say you are overwhelmed or low on capacity", scripts: [
+    ["Short", "I’m at capacity right now and can’t take this on today."],
+    ["Specific", "I can listen for ten minutes, but I don’t have capacity to problem-solve."],
+    ["Delay", "I want to respond thoughtfully. I need until [time/day] before I can give this my attention."],
+    ["Reduce input", "Could we use one question at a time and keep the message short? I’m overloaded."],
+    ["Work", "I can complete [task] today, but [task] will need to move to [date]. Which is the priority?"],
+    ["Reassure", "I’m not ignoring you. My capacity is low, so I’m taking a deliberate pause before replying."]
+  ]},
+  { id: "adjustment", label: "Ask for an adjustment or access need", scripts: [
+    ["Clear", "Could we make one adjustment so I can take part: [specific request]?"],
+    ["Sensory", "The noise/light is making it hard for me to focus. Could we lower it or use a quieter space?"],
+    ["Instructions", "Could you send the steps in writing as well? That helps me work accurately."],
+    ["Meeting", "Could we share an agenda and flag changes before the meeting where possible?"],
+    ["Break", "I may need a short break. I’ll step out and return by [time] unless I tell you otherwise."],
+    ["Collaborative", "I’m asking for an adjustment, not a lower standard. What option would work for both of us?"]
+  ]},
+  { id: "networking", label: "Network or message someone professionally", scripts: [
+    ["Intro", "Hello [name], I’m [name]. I’m interested in [area] and appreciated your work on [specific thing]."],
+    ["Question", "Would you be willing to answer one short question about how you got started in [field]?"],
+    ["Informational chat", "If you have capacity, I’d value a 20-minute conversation about your experience in [area]."],
+    ["No pressure", "No pressure to respond—your work has been useful to me, and I wanted to say thank you."],
+    ["Follow-up", "Thank you for your advice. I tried [action], and [brief result]. I appreciate the direction."],
+    ["Opportunity", "I’m interested in [opportunity]. Could you tell me what a strong next step would be?"]
+  ]},
+  { id: "community", label: "Join a club, class or community", scripts: [
+    ["Ask", "Hi, I’m interested in joining. What should a new person know before attending?"],
+    ["Access", "Could you tell me about the group size, noise level, breaks and typical structure?"],
+    ["First visit", "I’d like to try one session before committing. Is that possible?"],
+    ["Quiet entry", "I may listen more than I speak at first. Is that okay in this group?"],
+    ["Online", "Hello, I’m new here. I’m interested in [topic] and may take a little time to join the conversation."],
+    ["Leave", "Thank you for welcoming me. I’m going to head off now and may come back another time."]
+  ]},
+  { id: "repair", label: "Repair after a misunderstanding", scripts: [
+    ["Own impact", "I can see that what I said landed badly. I’m sorry for the impact, and I’d like to understand."],
+    ["Clarify intent", "My intention was [intent], but I understand that doesn’t erase the effect."],
+    ["Ask", "Could you tell me which part felt hurtful so I can respond to the actual issue?"],
+    ["Pause", "I want to repair this, but I need a little time to process before we continue."],
+    ["Change", "Next time I’ll [specific change]. If I miss it, please tell me directly if you have capacity."],
+    ["Boundary", "I’m willing to repair the misunderstanding. I’m not willing to continue while we insult each other."]
+  ]},
+  { id: "disagree", label: "Disagree without escalating", scripts: [
+    ["Respectful", "I see it differently. The part I’m working from is [fact/experience]."],
+    ["Curious", "Can we compare what each of us is assuming before we decide who is right?"],
+    ["Specific", "I agree with [part], but not [part]. My concern is [reason]."],
+    ["Pause", "I want to keep this constructive. Can we take ten minutes and return to it?"],
+    ["Boundary", "I’m happy to discuss the issue, but not if the conversation becomes personal."],
+    ["Not sure", "I don’t know enough yet to take a firm position. I’d like time to check the information."]
+  ]},
+  { id: "end-chat", label: "End a conversation or leave a group", scripts: [
+    ["Simple", "I’m going to head off now. It was good to talk with you."],
+    ["Time-bound", "I have about five minutes left, then I need to leave."],
+    ["Energy", "My social energy is running low, so I’m going to take a quiet break."],
+    ["Warm", "I’ve enjoyed this. I’m going to stop while I still have energy, and I hope we can continue another time."],
+    ["Online", "I’m signing off for now. I may reply tomorrow when I have more capacity."],
+    ["Firm", "I’m ending this conversation now. We can revisit it when I choose to."]
+  ]},
+  { id: "follow-request", label: "Request a response or follow-up", scripts: [
+    ["Gentle", "When you have a moment, could you let me know what you’ve decided?"],
+    ["Deadline", "Could you reply by [date/time] so I can plan the next step?"],
+    ["Choice", "A quick yes/no is enough for now. If you’re unsure, ‘not yet’ is also useful."],
+    ["Work", "I’m following up on [item]. Is it still on your list, or should we reset the plan?"],
+    ["Low-pressure", "No rush if this is not a good time. I’m checking so I know whether to wait or make another plan."],
+    ["Boundary", "If I don’t hear back by [time], I’ll assume it isn’t possible and will make another arrangement."]
+  ]},
+  { id: "change", label: "Respond when plans change or are cancelled", scripts: [
+    ["Neutral", "Thanks for letting me know. I’m disappointed, but I understand plans can change."],
+    ["Reschedule", "Would you like to choose another day now, or should we leave it open?"],
+    ["Need clarity", "Could you tell me whether this is a cancellation or a postponement?"],
+    ["Capacity", "The change is difficult for me to absorb. I need a little time before deciding on a new plan."],
+    ["Alternative", "I can’t do the new time, but I could do [option]."],
+    ["No rebook", "Thanks for telling me. I’m not ready to reschedule, but I’ll contact you if that changes."]
+  ]},
+  { id: "no-reply", label: "Follow up after no reply", scripts: [
+    ["Light", "Just checking this reached you. No pressure if you need time."],
+    ["Specific", "I’m following up about [topic]. Could you let me know by [date] if possible?"],
+    ["Assume less", "I’m not sure whether you’re busy, missed the message or need something different from me."],
+    ["Choice", "Would you prefer to reply here, talk briefly, or leave this for now?"],
+    ["Close loop", "I haven’t heard back, so I’m going to close this for now. You can reopen it if useful."],
+    ["Work", "I’ll proceed with [plan] unless I hear from you by [time]. Please tell me if that creates a problem."]
+  ]},
+  { id: "custom", label: "Something else / make your own", scripts: [
+    ["Starter", "I want to say what I mean clearly. The situation is [brief context], and what I’m asking for is [request]."],
+    ["Boundary starter", "I’m comfortable with [what works]. I’m not comfortable with [limit]. Could we [alternative]?"],
+    ["Clarity starter", "I may be interpreting this incorrectly. Could you clarify [specific point]?"],
+    ["Capacity starter", "I want to engage, but I have limited capacity for [thing]. I can offer [what is possible]."],
+    ["Repair starter", "I want to acknowledge [impact] and work out a better next step."],
+    ["Pause starter", "I’m going to pause before replying so I can answer deliberately rather than reactively."]
+  ]}
+];
 
 export function appendInteractiveToolbox(root) {
   const host = root.querySelector("#interactive-tools-slot") || root.querySelector(".wrap") || root;
@@ -1187,6 +1344,7 @@ export function renderInteractiveTool(root, id) {
   else if (tool.mode === "budget") renderBudget(root);
   else if (tool.mode === "balance") renderBalance(root, tool);
   else if (tool.mode === "alternatives") renderPerspective(root, tool);
+  else if (tool.mode === "scripts") renderSocialScriptBuilder(root);
   else if (tool.mode === "regulation") renderRegulation(root);
   else if (tool.mode === "match") renderChoice(root, tool, true);
   else renderChoice(root, tool, false);
@@ -1523,6 +1681,104 @@ function renderSpotlight(root) {
     showStatus(root, "The whole scene is in view again.");
   });
   host.append(element("p", "interactive-instruction", "Choose a detail to bring into focus, then widen back to the whole scene."), scene, widen);
+}
+
+function renderSocialScriptBuilder(root) {
+  const host = root.querySelector("#interactive-activity");
+  const scenarioSelect = document.createElement("select");
+  scenarioSelect.className = "social-script-scenario-select";
+  scenarioSelect.setAttribute("aria-label", "Choose a social situation");
+  socialScriptScenarios.forEach((scenario) => {
+    const option = document.createElement("option");
+    option.value = scenario.id;
+    option.textContent = scenario.label;
+    scenarioSelect.append(option);
+  });
+
+  const contextLabel = element("label", "field", "What is happening, and what would you like to say? (optional)");
+  const context = document.createElement("textarea");
+  context.rows = 4;
+  context.placeholder = "Add the details you want the script to fit: who it is for, what happened, what you need, or words you want to avoid…";
+  contextLabel.append(context);
+  const useContext = button("Start draft from my context", "button subtle-button");
+
+  const composerLabel = element("label", "field social-script-composer-label", "Your editable draft");
+  const composer = document.createElement("textarea");
+  composer.className = "social-script-composer";
+  composer.rows = 7;
+  composer.placeholder = "Choose a script below, then edit it until it sounds like you…";
+  composer.setAttribute("aria-label", "Editable social script draft");
+  composerLabel.append(composer);
+
+  const scripts = element("div", "social-script-list");
+  const status = element("p", "interactive-result social-script-status", "Choose a situation, then select any wording that feels useful. You stay in control of the final message.");
+  const copy = button("Copy draft", "button");
+  const clear = button("Clear draft", "button subtle-button");
+  const actions = element("div", "row social-script-actions");
+  actions.append(copy, clear);
+
+  const renderScripts = () => {
+    const scenario = socialScriptScenarios.find((item) => item.id === scenarioSelect.value) || socialScriptScenarios[0];
+    scripts.replaceChildren();
+    const heading = element("h3", "", "Ways you could phrase it");
+    const intro = element("p", "fine", "These are starting points, not rules. Edit any wording, combine parts, or write your own.");
+    scripts.append(heading, intro);
+    scenario.scripts.forEach(([tone, text]) => {
+      const card = element("article", "social-script-card");
+      const top = element("div", "social-script-card-top");
+      top.append(element("span", "social-script-tone", tone));
+      const use = button("Use this", "button subtle-button");
+      use.addEventListener("click", () => {
+        composer.value = composer.value.trim() ? composer.value.trimEnd() + "\n\n" + text : text;
+        composer.focus();
+        status.textContent = "Added to your draft. Edit the words, placeholders and tone so they fit you.";
+        composer.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+      top.append(use);
+      card.append(top, element("p", "social-script-text", text));
+      scripts.append(card);
+    });
+  };
+
+  scenarioSelect.addEventListener("change", renderScripts);
+  clear.addEventListener("click", () => {
+    composer.value = "";
+    composer.focus();
+    status.textContent = "Draft cleared. Choose a script or write in your own words.";
+  });
+  useContext.addEventListener("click", () => {
+    const text = context.value.trim();
+    if (!text) {
+      status.textContent = "Add a little context first, or choose one of the ready-made scripts.";
+      context.focus();
+      return;
+    }
+    composer.value = text;
+    composer.focus();
+    status.textContent = "Your context is now an editable draft. Add, remove or reshape any words you want.";
+  });
+  copy.addEventListener("click", async () => {
+    const text = composer.value.trim();
+    if (!text) {
+      status.textContent = "Add or write a draft first.";
+      composer.focus();
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(text);
+      status.textContent = "Copied to your clipboard. You can paste it wherever you need it.";
+    } catch {
+      composer.focus();
+      composer.select();
+      try { document.execCommand("copy"); } catch { /* Clipboard access may be unavailable. */ }
+      status.textContent = "Your draft is selected so you can copy it with Ctrl/Cmd+C.";
+    }
+  });
+  const intro = element("p", "interactive-instruction", "This builder is for adults and young people who want clearer choices in social situations. It does not assume a diagnosis, a personality type or one correct way to communicate.");
+  const scenarioWrap = element("label", "field", "Situation");
+  scenarioWrap.append(scenarioSelect);
+  host.append(intro, scenarioWrap, contextLabel, useContext, composerLabel, actions, status, scripts);
+  renderScripts();
 }
 
 export function renderTeam(root) {
