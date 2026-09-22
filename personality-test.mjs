@@ -1,6 +1,22 @@
-const VERSION = "NS Full Personality Profile 1.1 · Issue-resolution edition";
-const DRAFT_KEY = "nobodys-simple-full-profile-draft-v2";
+const VERSION = "NS Full Personality Profile 1.2 · Compact adaptive edition";
+const DRAFT_KEY = "nobodys-simple-full-profile-draft-v3";
 const STATE_KEY = "nobodys-simple-profile-state-checkins-v1";
+
+/* The compact route keeps one anchor item for every construct, then spends
+ * its limited repeat-item budget on the constructs that most often combine
+ * into the profile story. This is a deliberate short-form design choice:
+ * the full description cards remain available, while fewer clicks are
+ * required for a first-pass map. */
+const COMPACT_PAIR_IDS = new Set([
+  "stimulation","intellectual-curiosity","uncertainty-intolerance",
+  "adaptability","persistence","effortful-control",
+  "sensory-orienting","sensory-overload","sociability","social-boldness",
+  "rel-intimacy","rel-autonomy","compassion","decision-deliberation"
+]);
+const COMPACT_VALUE_ROUNDS = 10;
+const FOLLOWUP_BUDGET = 3;
+let followupCount = 0;
+let motiveFollowupsQueued = false;
 
 const T7 = [
   ["0","Not at all like me"],["1","Very unlike me"],["2","Somewhat unlike me"],
@@ -97,14 +113,14 @@ const REGULATION_SCENARIOS = [
 ];
 
 const MODULES = [
-  {id:"temperament",title:"Temperament & attention",time:"8–10 min",intro:"How reward, uncertainty, energy, attention and sensory input tend to move through your day."},
-  {id:"dispositions",title:"Personality facets",time:"10–12 min",intro:"A broad set of separate tendencies. Different facets can point in different directions."},
-  {id:"relationships",title:"Relationships & communication",time:"8–10 min",intro:"Closeness, space, attachment, communication preferences and first responses to conflict."},
-  {id:"regulation",title:"Emotion regulation & adaptation",time:"8–10 min",intro:"What you tend to do with emotion, pressure, ambiguity and self-presentation."},
-  {id:"motives",title:"Motives, needs & values",time:"8–10 min",intro:"What pulls action, what feels supported or frustrated right now, and which values you choose when they compete."},
-  {id:"identity",title:"Identity & self-understanding",time:"6–8 min",intro:"How you experience continuity, clarity, agency, authenticity and your life story."},
-  {id:"domains",title:"Work, money & learning",time:"8–10 min",intro:"Desired environments, financial habits and the ways you prefer to learn. These are exploratory preferences."},
-  {id:"decisions",title:"Decisions, conflict & change",time:"5–7 min",intro:"How you gather information, begin, continue and revise a course of action."},
+  {id:"temperament",title:"Temperament & attention",time:"5–7 min",intro:"How reward, uncertainty, energy, attention and sensory input tend to move through your day."},
+  {id:"dispositions",title:"Personality facets",time:"7–9 min",intro:"A broad set of separate tendencies. Different facets can point in different directions."},
+  {id:"relationships",title:"Relationships & communication",time:"6–8 min",intro:"Closeness, space, attachment, communication preferences and first responses to conflict."},
+  {id:"regulation",title:"Emotion regulation & adaptation",time:"6–8 min",intro:"What you tend to do with emotion, pressure, ambiguity and self-presentation."},
+  {id:"motives",title:"Motives, needs & values",time:"7–9 min",intro:"What pulls action, what feels supported or frustrated right now, and which values you choose when they compete."},
+  {id:"identity",title:"Identity & self-understanding",time:"5–6 min",intro:"How you experience continuity, clarity, agency, authenticity and your life story."},
+  {id:"domains",title:"Work, money & learning",time:"7–9 min",intro:"Desired environments, financial habits and the ways you prefer to learn. These are exploratory preferences."},
+  {id:"decisions",title:"Decisions, conflict & change",time:"4–6 min",intro:"How you gather information, begin, continue and revise a course of action."},
   {id:"snapshot",title:"Your current context",time:"2–3 min",intro:"A separate snapshot of your present state and surroundings. It is not a personality trait."}
 ];
 
@@ -325,21 +341,21 @@ const LEARNING_PREFERENCES = [
   preference("learn-range","Learning breadth","domains","Master one topic deeply","Sample many topics","Which learning rhythm do you usually prefer?")
 ];
 
-const MOTIVE_STEPS = MOTIVE_DATA.flatMap((m)=>{
+const MOTIVE_STEPS = MOTIVE_DATA.map((m)=>{
   const id=m[0],name=m[1],description=m[2];
-  return [
-    {id:"motive-"+id+"-strength",group:"motives",type:"I5",title:name,prompt:"How strongly does this outcome tend to motivate you?",text:description},
-    {id:"motive-"+id+"-behavior",group:"motives",type:"F5",title:name,prompt:"How often does this motive actually influence your choices?",text:"I choose or spend effort on options that support: "+description.toLowerCase()}
-  ];
+  return {id:"motive-"+id+"-strength",group:"motives",type:"I5",title:name,prompt:"How strongly does this outcome tend to motivate you?",text:description};
+});
+
+const MOTIVE_BEHAVIOR_STEPS = MOTIVE_DATA.map((m)=>{
+  const id=m[0],name=m[1],description=m[2];
+  return {id:"motive-"+id+"-behavior",group:"motives",type:"F5",meta:"adaptive-motive",title:name,prompt:"How often does this motive actually influence your choices?",text:"I choose or spend effort on options that support: "+description.toLowerCase()};
 });
 
 const NEED_STEPS = NEEDS.flatMap((n)=>{
   const id=n[0],name=n[1],definition=n[2];
   return [
     {id:"need-"+id+"-satisfaction",group:"motives",type:"N5",title:name+" · satisfaction",prompt:"In this area of your life right now…",text:"I experience "+definition.toLowerCase()},
-    {id:"need-"+id+"-satisfaction2",group:"motives",type:"N5",title:name+" · satisfaction",prompt:"In this area of your life right now…",text:"My current situation gives me room to experience "+definition.toLowerCase()},
-    {id:"need-"+id+"-frustration",group:"motives",type:"N5",title:name+" · frustration",prompt:"In this area of your life right now…",text:"I often feel that this need is actively blocked or frustrated."},
-    {id:"need-"+id+"-frustration2",group:"motives",type:"N5",title:name+" · frustration",prompt:"In this area of your life right now…",text:"Pressures in my life make this need harder to meet."}
+    {id:"need-"+id+"-frustration",group:"motives",type:"N5",title:name+" · frustration",prompt:"In this area of your life right now…",text:"I often feel that this need is actively blocked or frustrated."}
   ];
 });
 
@@ -402,8 +418,6 @@ const SPECIAL_STEPS = [
   ...COMMUNICATION_PREFERENCES,
   ...SCENARIOS,
   ...REGULATION_SCENARIOS,
-  {id:"financial-risk","group":"domains","type":"B7","title":"Financial risk preference","prompt":"If both were equally practical and the downside were manageable, which would you normally prefer?","left":"A smaller predictable return","right":"A larger uncertain return"},
-  {id:"financial-time","group":"domains","type":"singleChoice","title":"Money · time horizon","prompt":"If both outcomes were guaranteed and your needs were covered, which would you prefer?",options:["£100 today","£110 in one month","£125 in three months","£150 in one year","It depends on what I need the money for"]},
   ...MONEY_RISK_SCENARIOS,
   ...MONEY_DELAY_SCENARIOS,
   ...LEARNING_PREFERENCES,
@@ -449,15 +463,20 @@ function shuffle(list) {
 function makeValueRounds() {
   const deck=shuffle(VALUE_CARDS);
   const rounds=[];
-  /* Sixteen balanced mini-rounds give every value repeated opportunities to
-   * compete with different neighbours without pretending the result is a
-   * population-level value hierarchy. */
-  for(let r=0;r<16;r++) {
+  /* Ten balanced mini-rounds keep the best-worst comparison visible without
+   * making the values section carry the full burden of the questionnaire. */
+  for(let r=0;r<COMPACT_VALUE_ROUNDS;r++) {
     const cards=[];
     for(let j=0;j<4;j++) cards.push(deck[(r*4+j)%deck.length]);
     rounds.push(cards);
   }
   return rounds;
+}
+
+function compactItemsFor(d) {
+  if(!d||!Array.isArray(d.items)) return [];
+  const limit=COMPACT_PAIR_IDS.has(d.id)?2:1;
+  return d.items.slice(0,limit);
 }
 
 function compileFlow(valueRounds) {
@@ -473,7 +492,7 @@ function compileFlow(valueRounds) {
       steps.push(...SPECIAL_STEPS.filter(s=>s.group===mod.id && s.type!=="ratingMatrix" && s.id!=="identity-story" && s.id!=="identity-setback"));
     }
     const dims=ALL_DIMENSIONS.filter(d=>d.group===mod.id);
-    const dimSteps=dims.flatMap(d=>d.items.map(item=>({
+    const dimSteps=dims.flatMap(d=>compactItemsFor(d).map(item=>({
       id:item.id,group:mod.id,type:item.type||"T7",dimension:d.id,title:d.title,prompt:"Across most situations over roughly the past year, how much is this like you?",text:item.text,reverse:item.reverse
     })));
     if(mod.id==="temperament") steps=[...dimSteps];
@@ -505,7 +524,7 @@ function savedDraft() {
 }
 function saveDraft(root) {
   try {
-    localStorage.setItem(DRAFT_KEY,JSON.stringify({version:VERSION,valueRounds,answers:Object.entries(answers),stepIndex}));
+    localStorage.setItem(DRAFT_KEY,JSON.stringify({version:VERSION,valueRounds,answers:Object.entries(answers),stepIndex,flow,followupCount,motiveFollowupsQueued}));
     const status=root.querySelector("#pf-save-status");
     if(status) status.textContent="Saved on this device. Anyone using this browser profile could reopen the draft.";
   } catch {
@@ -514,7 +533,7 @@ function saveDraft(root) {
   }
 }
 function startFresh(root) {
-  clearDraft();answers=Object.create(null);valueRounds=makeValueRounds();flow=compileFlow(valueRounds);stepIndex=0;phase="questions";render(root);
+  clearDraft();answers=Object.create(null);valueRounds=makeValueRounds();flow=compileFlow(valueRounds);stepIndex=0;followupCount=0;motiveFollowupsQueued=false;phase="questions";render(root);
 }
 
 
@@ -549,6 +568,23 @@ function discriminatorStepFor(d) {
   const options=DISCRIMINATOR_BANK[d.id]||GENERIC_DISCRIMINATORS;
   return {id:"discriminator-"+d.id,group:d.group,type:"singleChoice",meta:"discriminator",dimension:d.id,title:"What changes this pattern?",prompt:"Your answers to "+d.title.toLowerCase()+" were not identical. Which factor changes it most?",options};
 }
+function queueMotiveFollowups(step) {
+  if(motiveFollowupsQueued||step?.group!=="motives"||!step.id.endsWith("-strength")) return;
+  if(!MOTIVE_STEPS.every(s=>Object.prototype.hasOwnProperty.call(answers,s.id))) return;
+  const ranked=MOTIVE_STEPS
+    .map(s=>({step:MOTIVE_BEHAVIOR_STEPS.find(x=>x.id===s.id.replace("-strength","-behavior")),value:answers[s.id]}))
+    .filter(x=>x.step&&typeof x.value==="number")
+    .sort((a,b)=>b.value-a.value);
+  const chosen=ranked.filter(x=>x.value>=3).slice(0,3);
+  for(const candidate of ranked) {
+    if(chosen.length>=3)break;
+    if(!chosen.includes(candidate))chosen.push(candidate);
+  }
+  const pos=moduleIndexFor(stepIndex);
+  const inserts=chosen.map(x=>x.step).filter(Boolean);
+  if(inserts.length)pos.module.steps.splice(pos.local+1,0,...inserts);
+  motiveFollowupsQueued=true;
+}
 function queueFollowups(step) {
   if(!step||!step.dimension||step.meta)return;
   const pos=moduleIndexFor(stepIndex),mod=pos.module,next=mod.steps[pos.local+1];
@@ -558,14 +594,20 @@ function queueFollowups(step) {
   const sig=signalFor(d);
   if(["mixed","lean-more","lean-less"].includes(sig.pattern)) {
     const discId="discriminator-"+d.id;
-    if(!mod.steps.some(s=>s.id===discId)&&answers[discId]===undefined)mod.steps.splice(pos.local+1,0,discriminatorStepFor(d));
+    if(followupCount<FOLLOWUP_BUDGET&&!mod.steps.some(s=>s.id===discId)&&answers[discId]===undefined) {
+      mod.steps.splice(pos.local+1,0,discriminatorStepFor(d));
+      followupCount++;
+    }
   }
   CONTRADICTION_RULES.forEach(rule=>{
     if(!rule.ids.includes(d.id))return;
     const map=signalMap(allSignals());
     if(!rule.ids.every(id=>map[id]&&map[id].direction))return;
     const id="clarify-"+rule.id;
-    if(!mod.steps.some(s=>s.id===id)&&answers[id]===undefined)mod.steps.splice(pos.local+1,0,{id,group:d.group,type:"singleChoice",meta:"contradiction",title:rule.title,prompt:rule.prompt,options:rule.options,dimension:d.id});
+    if(followupCount<FOLLOWUP_BUDGET&&!mod.steps.some(s=>s.id===id)&&answers[id]===undefined) {
+      mod.steps.splice(pos.local+1,0,{id,group:d.group,type:"singleChoice",meta:"contradiction",title:rule.title,prompt:rule.prompt,options:rule.options,dimension:d.id});
+      followupCount++;
+    }
   });
 }
 
@@ -577,16 +619,16 @@ function renderIntro(root) {
     : "";
   root.innerHTML=[
     "<div class='wrap pf-wrap'><section class='pf-intro'>",
-    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple · Full edition 1.1</p>",
+    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple · Compact adaptive edition 1.2</p>",
     "<h1>The personality map<br><em>with room for contradiction.</em></h1>",
-    "<p class='lead'>A long-form self-reflection assessment about the patterns that organise how you respond, relate, learn, choose and change across different parts of life.</p>",
-    "<div class='pf-facts'><span>About 80–100 minutes</span><span>16 balanced values rounds</span><span>No timer</span><span>Pause and return if you save locally</span></div>",
-    "<button class='button' id='pf-start' type='button'>Begin the full profile <span aria-hidden='true'>↗</span></button>",
+    "<p class='lead'>A compact adaptive self-reflection assessment about the patterns that organise how you respond, relate, learn, choose and change across different parts of life.</p>",
+    "<div class='pf-facts'><span>About 45–70 minutes</span><span>Up to 200 adaptive steps</span><span>10 balanced values rounds</span><span>Pause and return if you save locally</span></div>",
+    "<button class='button' id='pf-start' type='button'>Begin the compact profile <span aria-hidden='true'>↗</span></button>",
     "<p class='pf-privacy'>Your answers stay in this tab unless you explicitly choose to save a draft or state check-in on this device. Nothing is sent to Nobody’s Simple.</p></div>",
     "<div class='pf-intro-art'><img src='personality-map.png' alt='A friendly map character following a dotted path'><p>More than one pattern can be true at once.</p></div></section>",
     "<section class='pf-principles'><article><span>01</span><h2>Dimensions before types</h2><p>Your separate response patterns are the result. The story title is a playful shorthand, not a psychological category.</p></article><article><span>02</span><h2>Describe before explaining</h2><p>We distinguish what you reported from what might be worth testing. The assessment cannot tell you why a pattern developed.</p></article><article><span>03</span><h2>State is not trait</h2><p>The final check-in describes right now. It is shown apart from your longer-term responses.</p></article></section>",
     "<section class='pf-scope'><div><p class='eyebrow'>A fuller map</p><h2>All parts of the profile</h2><p>Each module can be skipped item by item. Responses use different formats for tendencies, motives, needs, preferences, values and current states; those formats are not combined into one total score.</p></div><ul class='pf-module-list'>"+modules+"</ul></section>",
-    "<aside class='pf-validity'><b>Public edition 1.1 · exploratory, not validated</b><p>This full questionnaire is a structured self-reflection tool. Its candidate items, provisional scoring rules, archetype titles and profile interpretations have not been psychometrically validated or normed. It does not diagnose, rank or compare you with a population. A working website is not evidence of measurement validity.</p></aside>",
+    "<aside class='pf-validity'><b>Public edition 1.2 · compact, exploratory, not validated</b><p>This shorter adaptive questionnaire keeps every construct represented, uses paired items only where they add the most information, and may ask a small number of clarifiers when answers are mixed. Its candidate items, provisional scoring rules, archetype titles and profile interpretations have not been psychometrically validated or normed. It does not diagnose, rank or compare you with a population. A working website is not evidence of measurement validity.</p></aside>",
     resume,
     "<p class='pf-back'><a href='#home'>← Back to the main website</a></p></div>"
   ].join("");
@@ -595,7 +637,9 @@ function renderIntro(root) {
     root.querySelector("#pf-resume").addEventListener("click",()=>{
       answers=Object.fromEntries(saved.answers);
       valueRounds=saved.valueRounds;
-      flow=compileFlow(valueRounds);
+      flow=Array.isArray(saved.flow)&&saved.flow.every(m=>m&&Array.isArray(m.steps))?saved.flow:compileFlow(valueRounds);
+      followupCount=Number.isInteger(saved.followupCount)?saved.followupCount:0;
+      motiveFollowupsQueued=Boolean(saved.motiveFollowupsQueued)||Object.keys(answers).some(id=>id.endsWith("-behavior"));
       stepIndex=Math.max(0,Math.min(saved.stepIndex,totalSteps()-1));
       phase="questions";
       render(root);
@@ -783,6 +827,7 @@ function renderStep(root) {
 }
 function goNext(root) {
   const pos=moduleIndexFor(stepIndex),step=pos.module?.steps[pos.local];
+  queueMotiveFollowups(step);
   queueFollowups(step);
   if(stepIndex<totalSteps()-1){stepIndex++;render(root);}
   else {clearDraft();phase="result";render(root);}
@@ -834,7 +879,7 @@ function I5label(v) { return nLabel(v,I5); }
 function F5label(v) { return nLabel(v,F5); }
 function getValueCounts() {
   const counts=Object.fromEntries(VALUE_CARDS.map(v=>[v[0],{most:0,least:0}]));
-  const rounds=valueRounds.length||16;
+  const rounds=valueRounds.length||COMPACT_VALUE_ROUNDS;
   for(let i=0;i<rounds;i++) {
     const a=answers["values-"+i];
     if(!a) continue;
@@ -943,11 +988,11 @@ function narrative(signals) {
 
   const motiveRatings=motifValues().filter(m=>typeof m.strength==="number").sort((a,b)=>b.strength-a.strength).slice(0,3);
   const motiveFrequencies=motifValues().filter(m=>typeof m.frequency==="number").sort((a,b)=>b.frequency-a.frequency).slice(0,3);
-  if(motiveRatings.length) paragraphs.push("Motives describe what can pull you toward effort. The strongest ratings you gave in this session were for "+motiveRatings.map(m=>m.title.toLowerCase()+" ("+I5label(m.strength).toLowerCase()+")").join(", ")+". You also rated how often each motive actually influences a choice; the most frequent reports were "+(motiveFrequencies.length?motiveFrequencies.map(m=>m.title.toLowerCase()+" ("+F5label(m.frequency).toLowerCase()+")").join(", "):"not enough frequency items to summarise")+". A motive can be strong while opportunity, support, time or material resources remain limited.");
+  if(motiveRatings.length) paragraphs.push("Motives describe what can pull you toward effort. The strongest ratings you gave in this session were for "+motiveRatings.map(m=>m.title.toLowerCase()+" ("+I5label(m.strength).toLowerCase()+")").join(", ")+". The compact route then sampled how often the strongest few motives actually influence a choice; those follow-ups were "+(motiveFrequencies.length?motiveFrequencies.map(m=>m.title.toLowerCase()+" ("+F5label(m.frequency).toLowerCase()+")").join(", "):"not answered")+". A motive can be strong while opportunity, support, time or material resources remain limited.");
   const needSummary=NEEDS.map(n=>{
     const id=n[0];
-    const satisfaction=[answers["need-"+id+"-satisfaction"],answers["need-"+id+"-satisfaction2"]].filter(v=>typeof v==="number");
-    const frustration=[answers["need-"+id+"-frustration"],answers["need-"+id+"-frustration2"]].filter(v=>typeof v==="number");
+    const satisfaction=[answers["need-"+id+"-satisfaction"]].filter(v=>typeof v==="number");
+    const frustration=[answers["need-"+id+"-frustration"]].filter(v=>typeof v==="number");
     return {name:n[1],satisfaction,frustration};
   });
   const satNeeds=needSummary.filter(n=>n.satisfaction.some(v=>v>=3)).map(n=>n.name.toLowerCase());
@@ -961,12 +1006,13 @@ function narrative(signals) {
   const work=selectedWork().filter(w=>w.value>=3).slice(0,4);
   const workTop=Array.isArray(answers["work-top-five"])?answers["work-top-five"].map(i=>WORK_PREFERENCES[Number(i)]).filter(Boolean):[];
   if(work.length||workTop.length) paragraphs.push("For work and hobbies, your direct preferences point toward trying environments with "+[...new Set([...work.map(w=>w.title.toLowerCase()),...workTop.map(w=>w.title.toLowerCase())])].slice(0,7).join(", ")+". The career and activity list below uses these preferences as a starting filter, then offers specific low-commitment directions to investigate. It does not test ability, qualifications, job access, vocational interest, likely earnings or whether a career will suit you. Treat each suggestion as a sample to try, not a destiny.");
-  const financialRisk=answers["financial-risk"],financialTime=answers["financial-time"];
   const learning=LEARNING_PREFERENCES.map(p=>({step:p,value:answers[p.id]})).filter(x=>typeof x.value==="number");
-  if(typeof financialRisk==="number"||typeof financialTime==="string"||learning.length) {
-    const money=[];
-    if(typeof financialRisk==="number") { const item=SPECIAL_STEPS.find(s=>s.id==="financial-risk"); money.push(financialRisk<0?item.left:financialRisk>0?item.right:"a context-dependent balance"); }
-    if(typeof financialTime==="string") { const item=SPECIAL_STEPS.find(s=>s.id==="financial-time"); money.push("the time-horizon option “"+(item.options[Number(financialTime)]||"a context-dependent choice")+"”"); }
+  const moneyAnswers=[...MONEY_RISK_SCENARIOS,...MONEY_DELAY_SCENARIOS].filter(s=>answers[s.id]!==undefined&&answers[s.id]!==null);
+  if(moneyAnswers.length||learning.length) {
+    const money=moneyAnswers.slice(0,4).map(s=>{
+      const v=answers[s.id];
+      return s.type==="B7"?(typeof v==="number"?(v<0?s.left:v>0?s.right:"a context-dependent balance"):"a repeated money choice"):(s.options?.[Number(v)]||"a context-dependent choice");
+    });
     const learn=learning.slice(0,3).map(x=>x.step.title.toLowerCase()+": "+(x.value<0?x.step.left:x.value>0?x.step.right:"a context-dependent balance"));
     paragraphs.push("Money and learning are treated as everyday preferences, not as ability or financial advice."+(money.length?" In the money scenarios you leaned toward "+money.join(" and ")+"; actual need and resources can change what makes sense.":"")+(learn.length?" Your learning choices included "+learn.join("; ")+". These are methods to experiment with, not fixed learning styles or proof that a method works best for you.":""));
   }
@@ -1095,7 +1141,7 @@ function renderValueGraph() {
   }).join("");
   const strongest=VALUE_CARDS.map(v=>({card:v,count:counts[v[0]].most,least:counts[v[0]].least})).filter(x=>x.count>0).sort((a,b)=>b.count-a.count||a.least-b.least);
   const hierarchy=strongest.slice(0,7).map((x,i)=>"<li><span>"+(i+1)+"</span><b>"+esc(x.card[1])+"</b><i style='width:"+(100*x.count/max)+"%'></i><small>Most "+x.count+" · Least "+x.least+"</small></li>").join("");
-  return "<div class='pf-values-explainer'><p>Each of the sixteen rounds asked you to choose one value as most important and one as least central within a small set. The graph shows repeated raw choices. The provisional hierarchy below is a within-session picture, not a latent score, population rank or claim about your moral worth.</p><div class='pf-value-legend'><span><i class='most'></i> Chosen most</span><span><i class='least'></i> Chosen least</span></div></div><div class='pf-value-hierarchy'><h3>Provisional value hierarchy</h3>"+(hierarchy?"<ol>"+hierarchy+"</ol>":"<p>No value rounds were completed.</p>")+"</div><div class='pf-value-results'>"+rows+"</div><p class='pf-small-note'>A value selected less often is not unimportant; a different competitor, context or real-life constraint can change the choice. A balanced best–worst design gives each value repeated comparisons, but formal Bradley–Terry/Thurstonian calibration still requires validation data.</p>";
+  return "<div class='pf-values-explainer'><p>Each of the "+(valueRounds.length||COMPACT_VALUE_ROUNDS)+" rounds asked you to choose one value as most important and one as least central within a small set. The graph shows repeated raw choices. The provisional hierarchy below is a within-session picture, not a latent score, population rank or claim about your moral worth.</p><div class='pf-value-legend'><span><i class='most'></i> Chosen most</span><span><i class='least'></i> Chosen least</span></div></div><div class='pf-value-hierarchy'><h3>Provisional value hierarchy</h3>"+(hierarchy?"<ol>"+hierarchy+"</ol>":"<p>No value rounds were completed.</p>")+"</div><div class='pf-value-results'>"+rows+"</div><p class='pf-small-note'>A value selected less often is not unimportant; a different competitor, context or real-life constraint can change the choice. A balanced best–worst design gives each value repeated comparisons, but formal Bradley–Terry/Thurstonian calibration still requires validation data.</p>";
 }
 function renderMotives() {
   const values=motifValues();
@@ -1103,15 +1149,13 @@ function renderMotives() {
     const freq=typeof m.frequency==="number"?F5label(m.frequency):"Not answered";
     const strength=typeof m.strength==="number"?I5label(m.strength):"Not answered";
     return "<article><h3>"+esc(m.title)+"</h3><p>"+esc(m.description)+"</p><div><span>Motivating: <b>"+esc(strength)+"</b></span><span>Influences choices: <b>"+esc(freq)+"</b></span></div></article>";
-  }).join("")+"</div><p class='pf-small-note'>Motives, self-reported behaviour and available opportunities are different things. These ratings are not combined into a motivation score.</p>";
+  }).join("")+"</div><p class='pf-small-note'>The compact route rates every motive for strength, then asks about behaviour for up to three strongest motives. Motives, self-reported behaviour and available opportunities are different things; these ratings are not combined into a motivation score.</p>";
 }
 function renderNeeds() {
   return "<div class='pf-needs-grid'>"+NEEDS.map(n=>{
     const id=n[0],name=n[1];
-    const keys=["need-"+id+"-satisfaction","need-"+id+"-satisfaction2","need-"+id+"-frustration","need-"+id+"-frustration2"];
-    const vals=keys.map(k=>answers[k]);
-    const sat=vals.slice(0,2).filter(v=>typeof v==="number").map(v=>nLabel(v,N5));
-    const fru=vals.slice(2).filter(v=>typeof v==="number").map(v=>nLabel(v,N5));
+    const sat=[answers["need-"+id+"-satisfaction"]].filter(v=>typeof v==="number").map(v=>nLabel(v,N5));
+    const fru=[answers["need-"+id+"-frustration"]].filter(v=>typeof v==="number").map(v=>nLabel(v,N5));
     return "<article><h3>"+esc(name)+"</h3><p>"+esc(n[2])+"</p><div class='pf-need-pair'><div><b>Satisfaction · right now</b><span>"+esc(sat.join(" / ")||"Not answered")+"</span></div><div><b>Frustration · right now</b><span>"+esc(fru.join(" / ")||"Not answered")+"</span></div></div></article>";
   }).join("")+"</div><p class='pf-small-note'>Need satisfaction and active frustration are shown separately. A low satisfaction response is not automatically evidence of active frustration.</p>";
 }
@@ -1285,12 +1329,9 @@ function renderBestConditions() {
 function renderMoney(signals) {
   const list=signals.filter(s=>s.dimension.id.startsWith("money-"));
   const cards=list.map(traitCard).join("");
-  const risk=answers["financial-risk"],time=answers["financial-time"];
-  const riskHtml=typeof risk==="number"?"<p><b>Risk preference:</b> your answer leaned toward "+esc(risk<0?"a smaller predictable return":risk>0?"a larger uncertain return":"a context-dependent choice")+".</p>":"";
-  const timeHtml=typeof time==="string"?"<p><b>Time horizon scenario:</b> you chose "+esc(SPECIAL_STEPS.find(s=>s.id==="financial-time").options[Number(time)]||time)+". This one choice can reflect immediate need as well as preference.</p>":"";
   const riskRows=MONEY_RISK_SCENARIOS.map(s=>{const v=answers[s.id];return "<li>"+esc(s.title)+": "+esc(typeof v==="number"?(v<0?s.left:v>0?s.right:"depends"):"Not answered")+"</li>";}).join("");
   const delayRows=MONEY_DELAY_SCENARIOS.map(s=>{const v=answers[s.id];return "<li>"+esc(s.title)+": "+esc(typeof v==="string"?(s.options[Number(v)]||v):"Not answered")+"</li>";}).join("");
-  return "<div class='pf-money-direct'>"+riskHtml+timeHtml+"<div class='pf-money-scenarios'><article><h3>Repeated risk choices</h3><ul>"+riskRows+"</ul></article><article><h3>Repeated delay and scarcity choices</h3><ul>"+delayRows+"</ul></article></div></div><div class='pf-trait-list'>"+cards+"</div><p class='pf-small-note'>Repeated scenarios let the report notice consistency without pretending to estimate a financial trait. Actual income, debt, resources, financial literacy, safety and constraints remain unknown. This is not financial advice.</p>";
+  return "<div class='pf-money-direct'><div class='pf-money-scenarios'><article><h3>Repeated risk choices</h3><ul>"+riskRows+"</ul></article><article><h3>Repeated delay and scarcity choices</h3><ul>"+delayRows+"</ul></article></div></div><div class='pf-trait-list'>"+cards+"</div><p class='pf-small-note'>Repeated scenarios let the report notice consistency without pretending to estimate a financial trait. Actual income, debt, resources, financial literacy, safety and constraints remain unknown. This is not financial advice.</p>";
 }
 function renderLearning() {
   const prefs=LEARNING_PREFERENCES;
@@ -1453,7 +1494,7 @@ function renderBestUse(signals) {
 function renderValidity(signals) {
   const answered=signals.filter(s=>s.count>0).length;
   const required=signals.length;
-  return "<section class='pf-limit-panel' id='pf-limits'><p class='eyebrow'>Read carefully · limits of this map</p><h2>This is an exploratory self-reflection profile, not a validated test.</h2><p>The public edition is fully built as a questionnaire and report, but the candidate items, response rules, archetype title rules and generated interpretations have not been psychometrically validated, normed or independently calibrated. The design documents explicitly treat the scales as candidates. A functioning assessment is not evidence that its measurements are reliable or valid.</p><p>This report uses "+answered+" of "+required+" repeated-item dimensions with at least one answer. It reports a mean, spread, directional lean and an evidence note instead of requiring unanimity; that is a provisional within-person summary, not a population score. Direct single answers, best/worst value choices, repeated money trade-offs, scenarios and the right-now snapshot are kept separate. No overall personality score, percentile, clinical confidence interval or population comparison is produced.</p>"+reportUnknowns()+"<p class='pf-limit-ending'>The archetype is a playful story-title—not a diagnosis, category, or permanent identity. You can disagree with any interpretation, and the report keeps a private confirmation/rejection layer so your lived context can refine the hypotheses without rewriting the raw answers.</p></section>";
+  return "<section class='pf-limit-panel' id='pf-limits'><p class='eyebrow'>Read carefully · limits of this map</p><h2>This is an exploratory self-reflection profile, not a validated test.</h2><p>The public edition is fully built as a compact adaptive questionnaire and report, but the candidate items, response rules, archetype title rules and generated interpretations have not been psychometrically validated, normed or independently calibrated. The design documents explicitly treat the scales as candidates. A functioning assessment is not evidence that its measurements are reliable or valid.</p><p>This report uses "+answered+" of "+required+" candidate-item dimensions with at least one answer. Every construct has an anchor item; selected high-yield constructs receive a second item, and a small capped set of clarifiers can appear when answers are mixed. It reports a mean, spread, directional lean and an evidence note instead of requiring unanimity; that is a provisional within-person summary, not a population score. Direct single answers, best/worst value choices, repeated money trade-offs, scenarios and the right-now snapshot are kept separate. No overall personality score, percentile, clinical confidence interval or population comparison is produced.</p>"+reportUnknowns()+"<p class='pf-limit-ending'>The archetype is a playful story-title—not a diagnosis, category, or permanent identity. You can disagree with any interpretation, and the report keeps a private confirmation/rejection layer so your lived context can refine the hypotheses without rewriting the raw answers.</p></section>";
 }
 function renderReportNavigation() {
   const links=[["pf-archetype","Archetype"],["pf-overview","90 seconds"],["pf-full-read","Full read"],["pf-combinations","Distinctive patterns"],["pf-map","Evidence map"],["pf-values","Values"],["pf-relationships","Relationships"],["pf-work","Work & hobbies"],["pf-regulation","Emotion"],["pf-identity","Identity"],["pf-context","Context"],["pf-use","Operating manual"],["pf-evidence","Evidence explorer"],["pf-limits","Limits"]];
@@ -1466,7 +1507,7 @@ function renderEvidenceExplorer(signals) {
     const kind=evidenceForSignal(s),d=s.dimension;
     return "<article class='pf-evidence-card' data-evidence-group='"+esc(d.group)+"' data-evidence-kind='"+esc(kind)+"'><div class='pf-evidence-card-top'>"+badge(kind,true)+"<span>"+esc(patternLabel(s))+"</span></div><h3>"+esc(d.title)+"</h3><p>"+esc(d.definition)+"</p><p><b>Your estimate:</b> "+esc(signalDescription(s))+"</p><p><b>What it does not mean:</b> "+esc(d.friction||"It does not explain a cause, diagnose a condition or predict every situation.")+"</p><small>"+s.count+" of "+s.total+" candidate items answered"+(typeof s.mean==="number"?" · mean "+s.mean.toFixed(2)+"/6":"")+" · "+esc(s.confidence)+"</small></article>";
   }).join("");
-  const directSteps=[...RELATIONSHIP_PREFERENCES,...COMMUNICATION_PREFERENCES,...LEARNING_PREFERENCES,...WORK_PREFERENCES,...MONEY_RISK_SCENARIOS,...MONEY_DELAY_SCENARIOS,{id:"financial-risk",title:"Financial risk preference",left:"A smaller predictable return",right:"A larger uncertain return",type:"B7"},{id:"financial-time",title:"Financial time horizon",options:["£100 today","£110 in one month","£125 in three months","£150 in one year","It depends on what I need the money for"],type:"singleChoice"}];
+  const directSteps=[...RELATIONSHIP_PREFERENCES,...COMMUNICATION_PREFERENCES,...LEARNING_PREFERENCES,...WORK_PREFERENCES,...MONEY_RISK_SCENARIOS,...MONEY_DELAY_SCENARIOS];
   const direct=directSteps.map(s=>{const v=answers[s.id];if(v===undefined||v===null)return "";let choice=typeof v==="number"?(s.type==="B7"?(v<0?s.left:v>0?s.right:"Depends"):nLabel(v,I5)):s.options?.[Number(v)]||String(v);return "<article class='pf-evidence-card' data-evidence-group='direct' data-evidence-kind='direct'><div class='pf-evidence-card-top'>"+badge("direct",true)+"</div><h3>"+esc(s.title)+"</h3><p>"+esc(choice)+"</p><small>Explicit preference or trade-off response · not an ability or outcome.</small></article>";}).filter(Boolean).join("");
   const scenarioSteps=[...SCENARIOS,...REGULATION_SCENARIOS];
   const scenarios=scenarioSteps.map(s=>{const v=answers[s.id];if(v===undefined||v===null)return "";let choice=v&&v.first!==undefined?s.choices?.[Number(v.first)]:s.options?.[Number(v)];return "<article class='pf-evidence-card' data-evidence-group='scenario' data-evidence-kind='scenario'><div class='pf-evidence-card-top'>"+badge("scenario",true)+"</div><h3>"+esc(s.title)+"</h3><p>"+esc(choice||"Not answered")+"</p><small>Hypothetical scenario response · not evidence of what happened in real life.</small></article>";}).filter(Boolean).join("");
@@ -1504,7 +1545,7 @@ function renderResult(root) {
   root.innerHTML=[
     "<div class='wrap pf-result-wrap'><header class='pf-result-hero'>",
     "<img class='pf-result-character' src='personality-map.png' alt='The Nobody’s Simple map character'>",
-    "<p class='eyebrow'>Nobody’s Simple · Full personality profile · Public edition 1.1</p>",
+    "<p class='eyebrow'>Nobody’s Simple · Compact personality profile · Public edition 1.2</p>",
     "<p class='pf-title-label'>Your story-title</p><h1>"+esc(headline)+"</h1>",
     "<p class='pf-archetype-tagline'>"+esc(title.tag)+"</p>",
     "<p class='pf-lore'>"+esc(title.lore)+"</p>",
@@ -1539,7 +1580,7 @@ function renderResult(root) {
 
   root.querySelector("#pf-download").addEventListener("click",()=>downloadFullReport(root));
   root.querySelector("#pf-print").addEventListener("click",()=>window.print());
-  root.querySelector("#pf-restart").addEventListener("click",()=>{answers=Object.create(null);valueRounds=[];flow=[];stepIndex=0;phase="intro";render(root);});
+  root.querySelector("#pf-restart").addEventListener("click",()=>{answers=Object.create(null);valueRounds=[];flow=[];stepIndex=0;followupCount=0;motiveFollowupsQueued=false;phase="intro";render(root);});
   const search=root.querySelector("#pf-search");
   if(search)search.addEventListener("input",()=>{
     const term=search.value.trim().toLowerCase();
@@ -1562,11 +1603,11 @@ function downloadFullReport(root) {
   clone.querySelectorAll("button,input,select,textarea,nav").forEach(x=>x.remove());
   clone.querySelectorAll("details").forEach(x=>x.open=true);
   const exportCss="body{margin:0;background:#f6f0e4;color:#263e34;font-family:Arial,sans-serif}main{max-width:980px;margin:0 auto;padding:28px 5vw 60px}h1,h2,h3,h4{font-family:Georgia,serif;color:#234b3b}p,li{line-height:1.65;color:#56695b}.pf-report-section,.pf-archetype-chapter{margin:24px 0;padding:26px;border:1px solid #ddd8ca;border-radius:14px;background:#fffdf8}.pf-trait-card{margin:8px 0;padding:12px;border:1px solid #ddd8ca;border-radius:9px;background:#fffdf8}.pf-trait-card>summary{font-weight:700;cursor:pointer}.pf-trait-body{padding:10px}.pf-evidence-grid,.pf-archetype-grid,.pf-one-minute-grid,.pf-environment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pf-evidence-card,.pf-archetype-grid article,.pf-one-minute-grid article,.pf-environment-card{padding:15px;border:1px solid #ddd8ca;border-radius:9px}.pf-collab-feedback,.pf-report-nav,.pf-end-actions,.pf-search,.pf-evidence-filters{display:none}@media(max-width:650px){.pf-evidence-grid,.pf-archetype-grid,.pf-one-minute-grid,.pf-environment-grid{grid-template-columns:1fr}}";
-  const html="<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Nobody’s Simple · Full Personality Profile 1.1</title><style>"+exportCss+"</style></head><body><main><h1>Nobody’s Simple · Full Personality Profile 1.1</h1>"+clone.outerHTML+"</main></body></html>";
+  const html="<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Nobody’s Simple · Compact Personality Profile 1.2</title><style>"+exportCss+"</style></head><body><main><h1>Nobody’s Simple · Compact Personality Profile 1.2</h1>"+clone.outerHTML+"</main></body></html>";
   try {
     const blob=new Blob([html],{type:"text/html;charset=utf-8"});
     const url=URL.createObjectURL(blob),a=document.createElement("a");
-    a.href=url;a.download="nobodys-simple-full-personality-profile-1.1.html";
+    a.href=url;a.download="nobodys-simple-compact-personality-profile-1.2.html";
     document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
     const status=root.querySelector("#pf-download-status");
     if(status)status.textContent="Your profile file was created in your browser.";
@@ -1586,6 +1627,8 @@ export function renderPersonalityTest(root) {
   valueRounds=[];
   flow=[];
   stepIndex=0;
+  followupCount=0;
+  motiveFollowupsQueued=false;
   phase="intro";
   render(root);
 }
