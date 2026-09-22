@@ -1,5 +1,5 @@
-const VERSION = "NS Full Personality Profile 1.0";
-const DRAFT_KEY = "nobodys-simple-full-profile-draft-v1";
+const VERSION = "NS Full Personality Profile 1.1 · Issue-resolution edition";
+const DRAFT_KEY = "nobodys-simple-full-profile-draft-v2";
 const STATE_KEY = "nobodys-simple-profile-state-checkins-v1";
 
 const T7 = [
@@ -11,6 +11,90 @@ const I5 = [["0","Not at all"],["1","Slightly"],["2","Moderately"],["3","Strongl
 const F5 = [["0","Never or almost never"],["1","Rarely"],["2","Sometimes"],["3","Often"],["4","Almost always"]];
 const N5 = [["0","Not true at all"],["1","Slightly true"],["2","Moderately true"],["3","Very true"],["4","Completely true"]];
 const S5 = [["0","Not at all"],["1","A little"],["2","Moderately"],["3","Strongly"],["4","Extremely"]];
+
+/*
+ * The report deliberately keeps four kinds of evidence separate.  These
+ * labels are also used by the evidence explorer so a reader can see what is
+ * an item-based estimate, what was a direct preference, what came from a
+ * scenario and what describes only the current moment.
+ */
+const EVIDENCE_META = {
+  measured: {label:"Measured · candidate items",symbol:"●",tip:"A within-person response pattern from repeated candidate items; it is not normed."},
+  direct: {label:"Direct preference",symbol:"○",tip:"An explicit choice or rating. It describes a preference, not an ability or outcome."},
+  scenario: {label:"Scenario response",symbol:"◆",tip:"A response to a hypothetical situation; it is not evidence of what happened in real life."},
+  state: {label:"Current state",symbol:"◇",tip:"A right-now snapshot; it is not a stable personality estimate."},
+  derived: {label:"Derived synthesis",symbol:"▲",tip:"A transparent combination of answers. It is an interpretation, not a validated interaction."},
+  hypothesis: {label:"Hypothesis to test",symbol:"△",tip:"A provisional idea to confirm, refine or reject with lived experience."},
+  insufficient: {label:"Insufficient evidence",symbol:"?",tip:"There were not enough answers for a directional description."}
+};
+/* Central semantic guardrails for constructs whose high/low wording is easy
+ * to invert in a generated report.  Item keys are still the scoring source;
+ * these notes make the intended interpretation explicit in one place. */
+const DIRECTION_GUIDE = {
+  "effortful-control": {high:"more deliberate steering capacity",low:"more effort needed to redirect or begin"},
+  "negative-urgency": {high:"more action-speed under unpleasant emotion",low:"more room to pause under unpleasant emotion"},
+  "positive-urgency": {high:"more action-speed under excitement",low:"more stable decision pace under excitement"},
+  "self-worth-stability": {high:"more stable self-worth across feedback",low:"more outcome-sensitive self-worth"},
+  "uncertainty-intolerance": {high:"more attention captured by unresolved uncertainty",low:"more room to continue while outcomes stay open"},
+  "regulation-flexibility": {high:"more context-matched strategy switching",low:"more reliance on one strategy across contexts"}
+};
+
+/* These families keep related constructs visible without pretending that
+ * adjacent labels are independent psychological species. */
+const CONSTRUCT_FAMILIES = {
+  "uncertainty-intolerance":["conflict-anxiety","anxiousness","need-for-closure","ambiguity-tolerance","planning-dependence"],
+  "effortful-control":["initiation","sustainment","persistence","diligence","thoroughness"],
+  "reward":["reward-response","goal-drive","stimulation","exploration"],
+  "agency":["assertiveness","personal-agency","autonomy in closeness"],
+  "rel-reassurance":["attachment-anxiety","reassurance-seeking","rel-repair"],
+  "status-orientation":["status","money-status","achievement","money-security"],
+  "masking":["self-monitoring","impression-management","contextual-consistency"],
+  "persistence":["sustainment","diligence","learning-persistence"]
+};
+
+/* A mixed scale is not thrown away.  It opens a short “what changes this?”
+ * discriminator so the answer can become conditional information. */
+const DISCRIMINATOR_BANK = {
+  sociability:["How well I know the people","How much energy I have","How noisy or busy the setting is","Whether I have a role or purpose there","How safe or judged I feel","How interested I am in the people","Group size","It genuinely varies without a clear pattern"],
+  "social-boldness":["Authority or status in the room","How much I know about the topic","Relationship closeness","Fear of being judged","The size of the group","Whether I have a clear reason to speak","My energy that day","It genuinely varies without a clear pattern"],
+  assertiveness:["How close I am to the people involved","Whether I know I am right or informed","Authority or power differences","The moral stakes","Group size","How safe disagreement feels","My current energy","It genuinely varies without a clear pattern"],
+  persistence:["Interest in the task","A visible reward or milestone","An external deadline","Fatigue or body state","How clear the next step is","Whether another person is relying on me","Whether the task feels meaningful","It genuinely varies without a clear pattern"],
+  "rel-intimacy":["How safe the relationship feels","How long we have known each other","Whether there is unresolved conflict","Whether I control the timing","How much space I currently need","Whether the other person is responsive","It genuinely varies without a clear pattern"],
+  "uncertainty-intolerance":["How personally important the outcome is","Whether I can take a useful next step","How much evidence is available","Fatigue or overload","Whether another person is involved","Whether the decision can be reversed","It genuinely varies without a clear pattern"],
+  "sensory-overload":["Sound density","Visual clutter or brightness","Crowding and personal space","How long I have been exposed","Fatigue, hunger or pain","Whether I can leave or change the setting","It genuinely varies without a clear pattern"],
+  "self-worth-stability":["Criticism from someone important","Public evaluation","A private mistake","Relationship rejection","Physical exhaustion or illness","Whether I can repair the situation","It genuinely varies without a clear pattern"]
+};
+const GENERIC_DISCRIMINATORS = ["The people or relationship involved","The stakes and possible consequences","How much energy or physical capacity I have","How safe, judged or supported I feel","The amount of structure or clarity available","The sensory environment","It genuinely varies without a clear pattern"];
+
+const CONTRADICTION_RULES = [
+  {id:"closeness-space",ids:["rel-intimacy","rel-autonomy"],title:"Closeness and freedom can both be real",prompt:"When closeness and independence pull at the same time, which description is closest?",options:["I want closeness with predictable protected space.","I prefer closeness when I can control the timing.","I alternate between wanting contact and needing distance.","The balance changes mainly with trust and conflict.","I have not noticed a reliable pattern yet."]},
+  {id:"intimacy-avoidance",ids:["rel-intimacy","attachment-avoidance"],title:"What makes closeness feel workable?",prompt:"If you want emotional closeness but also feel a pull away from dependence, what usually explains the tension?",options:["Closeness feels good until I fear losing freedom.","I want closeness but need time to process privately.","I am more comfortable when I can set the pace.","The tension appears mainly after conflict or disappointment.","I do not recognise this combination in my life."]},
+  {id:"security-novelty",ids:["money-security","stimulation"],title:"Security and novelty",prompt:"Which sentence best describes how security and change relate for you?",options:["I enjoy novelty once I know there is a safe way back.","I tolerate substantial uncertainty because novelty is worth it.","I alternate between craving change and regretting instability.","It depends strongly on the life domain.","Neither description feels particularly familiar."]},
+  {id:"identity-exploration-commitment",ids:["identity-exploration","identity-commitment"],title:"Exploration with commitment",prompt:"If you are both exploring and committed, what does that mean for you?",options:["I am committed to values while revising the route.","I explore options until one direction feels earned.","I keep a settled identity in one domain and experiment in another.","Exploration and commitment compete for attention.","I do not experience both strongly at once."]},
+  {id:"security-spending",ids:["money-security","money-impulsivity"],title:"Long-term security and short-term wants",prompt:"When security matters but an immediate want is strong, what usually happens?",options:["I pause and compare the purchase with a longer plan.","I make the purchase, then adjust the plan afterwards.","I separate small treats from genuinely consequential spending.","The answer changes with scarcity, stress or the people involved.","I have not noticed a consistent pattern."]}
+];
+
+const MONEY_RISK_SCENARIOS = [
+  {id:"money-risk-1",group:"domains",type:"B7",title:"Money · risk and certainty",prompt:"If the amounts were realistic for you, which would you usually prefer?","left":"A guaranteed £40","right":"A 50% chance of £100"},
+  {id:"money-risk-2",group:"domains",type:"B7",title:"Money · risk and time",prompt:"Which would you usually prefer when you can comfortably wait?","left":"£60 guaranteed in one month","right":"A 50% chance of £150 in one month"},
+  {id:"money-risk-3",group:"domains",type:"B7",title:"Money · career uncertainty",prompt:"Which work trade-off sounds more tolerable?","left":"A predictable role with slower progression","right":"An uncertain role with a chance of much faster progression"},
+  {id:"money-risk-4",group:"domains",type:"B7",title:"Money · loss protection",prompt:"Which would you usually choose when both options are affordable?","left":"A smaller gain with no chance of loss","right":"A larger possible gain with a manageable chance of loss"}
+];
+const MONEY_DELAY_SCENARIOS = [
+  {id:"money-time-1",group:"domains",type:"singleChoice",title:"Money · waiting choice",prompt:"If your essential needs were covered, which guaranteed option would you choose?",options:["£80 today","£95 in one month","£115 in six months","£150 in one year","It depends on the context"]},
+  {id:"money-time-2",group:"domains",type:"singleChoice",title:"Money · delayed reward",prompt:"Which guaranteed option feels most attractive?",options:["£30 today","£45 in three months","£70 in one year","I would rather keep the choice open","It depends on what I need the money for"]},
+  {id:"money-time-3",group:"domains",type:"singleChoice",title:"Money · future planning",prompt:"A future expense is likely but not certain. What would you usually do first?",options:["Set aside money now","Estimate the cost and set a review date","Wait until the expense is definite","Ask someone for a second opinion","It depends on current resources"]},
+  {id:"money-time-4",group:"domains",type:"singleChoice",title:"Money · scarcity context",prompt:"When money feels tight, what is most likely to happen first?",options:["I review the numbers directly","I reduce optional spending","I avoid looking for a while","I seek practical advice or support","It depends on safety and urgency"]}
+];
+
+const REGULATION_SCENARIOS = [
+  {id:"reg-flex-controllable-low",group:"regulation",type:"singleChoice",title:"Regulation · controllable / lower intensity",prompt:"A manageable practical problem is irritating but your body is fairly settled. What would you be most likely to do first?",options:["Take a practical next step","Ask for information or help","Pause and accept the irritation while I choose","Distract myself briefly then return","Keep analysing why it happened","Wait and see whether it resolves"]},
+  {id:"reg-flex-controllable-high",group:"regulation",type:"singleChoice",title:"Regulation · controllable / high intensity",prompt:"A practical problem can be changed, but you feel highly activated. What would you be most likely to do first?",options:["Settle my body before acting","Take one very small practical step","Ask a trusted person to help me choose","Distract myself until the intensity drops","Keep thinking until I understand the cause","Act immediately to regain control"]},
+  {id:"reg-flex-partly-low",group:"regulation",type:"singleChoice",title:"Regulation · partly controllable / lower intensity",prompt:"A situation is only partly within your influence and feels difficult but manageable. What would you be most likely to do first?",options:["Separate what I can and cannot influence","Ask someone involved for context","Accept the part I cannot change","Make a plan for the part I can change","Take a short break and revisit it","Wait for more information"]},
+  {id:"reg-flex-partly-high",group:"regulation",type:"singleChoice",title:"Regulation · partly controllable / high intensity",prompt:"A partly controllable situation feels urgent and emotionally intense. What would you be most likely to do first?",options:["Reduce immediate intensity and delay a major response","Contact someone safe for support","Name one influenceable action","Set a boundary or protect space","Distract myself until I can think","Keep replaying the situation to find certainty"]},
+  {id:"reg-flex-uncontrollable-low",group:"regulation",type:"singleChoice",title:"Regulation · uncontrollable / lower intensity",prompt:"A painful situation cannot currently be changed and you feel relatively steady. What would you be most likely to do first?",options:["Allow the feeling and continue with a valued activity","Make meaning of what happened","Seek connection or comfort","Distract myself for a defined time","Plan what I will do if circumstances change","Leave it open without trying to solve it"]},
+  {id:"reg-flex-uncontrollable-high",group:"regulation",type:"singleChoice",title:"Regulation · uncontrollable / high intensity",prompt:"A painful situation cannot currently be changed and you feel highly activated. What would you be most likely to do first?",options:["Use a grounding or settling action","Reach for someone I trust","Give myself permission not to solve it today","Use distraction until the wave passes","Keep thinking about why it happened","Express what I feel even if no action is possible"]}
+];
 
 const MODULES = [
   {id:"temperament",title:"Temperament & attention",time:"8–10 min",intro:"How reward, uncertainty, energy, attention and sensory input tend to move through your day."},
@@ -156,7 +240,7 @@ const SELF_WORTH_AREAS = ["achievement","other people’s approval","physical at
 
 const IDENTITY_DIMENSIONS = [
   dimension("self-worth","Global self-evaluation","identity","Self-understanding","Your broad sense of personal worth.","A stable sense of worth can give room to learn from success and failure.","A foundation beneath changing weather.","Success, criticism, mistakes and comparison.","Whether a setback feels like feedback or a verdict about the whole self.","Your answers suggest a more secure sense of personal worth.","Your answers suggest self-evaluation may be more vulnerable or unsettled.","Specific, humane feedback and relationships that separate behaviour from worth.","These candidate items cannot assess clinical self-esteem or explain its source.","Overall, I see myself as a person of worth.","I generally feel that I have qualities I respect in myself."),
-  dimension("self-worth-stability","Self-worth stability","identity","Self-understanding","How much your sense of worth shifts after outcomes or other people’s reactions.","Noticing what affects self-worth can help separate an event from identity.","A buoy that rises with waves versus one anchored more deeply.","Success, criticism, rejection or praise.","A strong mood shift about yourself after external feedback.","Your sense of worth more often shifts with recent outcomes or reactions.","Your basic self-view appears less tied to each recent outcome.","A pause between feedback and the story you draw about yourself.","Stable and unstable self-worth are not a moral ranking.","Other people’s reactions can noticeably alter how I feel about myself.","My sense of worth changes substantially after success or failure."),
+  dimension("self-worth-stability","Self-worth stability","identity","Self-understanding","How much your sense of worth remains steady rather than shifting after outcomes or other people’s reactions.","A steadier sense of worth can make feedback easier to use without turning it into a verdict.","A buoy anchored below the waves rather than one moved by every swell.","Success, criticism, rejection or praise.","Noticing feedback while keeping a distinction between an event and your whole self.","Your sense of worth appears more able to remain steady across recent outcomes or reactions.","Your self-evaluation may shift more noticeably with recent outcomes or reactions.","A pause between feedback and the story you draw about yourself.","Stable and unstable self-worth are not a moral ranking.","~Other people’s reactions can noticeably alter how I feel about myself.","~My sense of worth changes substantially after success or failure."),
   dimension("self-concept-clarity","Self-concept clarity","identity","Self-understanding","How clearly you can describe the characteristics and commitments that define you.","Clarity can support choices and make change easier to recognise.","A map legend that helps you understand your own symbols.","Transitions, conflicting roles and major decisions.","Being able to name what matters and what feels unsettled.","You more often report a clear description of important parts of yourself.","Your self-description may still be changing or difficult to pin down.","Time to explore without pressure to produce a permanent label.","Changing or uncertain identity is not a defect, especially during transition.","I can describe the most important parts of who I am fairly clearly.","I have a coherent sense of the characteristics that define me."),
   dimension("self-concept-confidence","Confidence in self-understanding","identity","Self-understanding","How confident you feel that your current self-description is accurate.","Confidence can help someone act while remaining open to revision.","A map with a visible 'draft' label.","When choosing a direction or receiving new information about yourself.","Feeling you know yourself while still allowing updates.","You more often trust your current understanding of yourself.","You may doubt a self-description even when you can state one.","Small real-world experiments that let you test a self-belief.","Confidence in self-understanding is not the same as certainty or accuracy.","I feel confident that my current understanding of myself is reasonably accurate.","Even when I can describe myself, I often doubt whether that description is true."),
   dimension("self-consistency","Self-consistency","identity","Self-understanding","Whether different parts of your self-description feel coherent or in conflict.","A coherent map can reduce confusion, while contradictions may show competing needs.","Several routes sharing one landscape, even if they do not merge.","A choice between independence and connection, rest and ambition, or two important roles.","Noticing that more than one genuine priority is active.","Your self-description more often feels internally consistent.","Different important parts of you may feel in tension.","Naming both needs before deciding which leads in this situation.","Contradiction is not automatically error or pathology.","The different parts of how I understand myself generally fit together.","Important beliefs I hold about myself often feel mutually contradictory."),
@@ -317,14 +401,11 @@ const SPECIAL_STEPS = [
   {id:"rel-novelty","group":"relationships","type":"B7","title":"Relationship routine preference","prompt":"In a close relationship, which rhythm would you usually prefer?","left":"Familiar relational routines","right":"Regular novelty and change"},
   ...COMMUNICATION_PREFERENCES,
   ...SCENARIOS,
-  {id:"reg-flex-changeable",group:"regulation",type:"singleChoice",title:"Emotion regulation · changeable situation",prompt:"You are upset about a problem you can realistically change. What would you be most likely to do first?",options:[
-    "Try to accept the situation without acting.","Distract myself until the emotion passes.","Identify what action could change the problem.","Seek reassurance that everything will be fine.","Continue thinking about why it happened.","Ask someone I trust to help me decide."
-  ]},
-  {id:"reg-flex-unchangeable",group:"regulation",type:"singleChoice",title:"Emotion regulation · not changeable right now",prompt:"The situation is painful but cannot currently be changed. What would you be most likely to do first?",options:[
-    "Try to accept what cannot change right now.","Distract myself until the emotion passes.","Identify a small part I can influence later.","Seek support from someone I trust.","Continue thinking about why it happened.","Give myself time and return to it later."
-  ]},
+  ...REGULATION_SCENARIOS,
   {id:"financial-risk","group":"domains","type":"B7","title":"Financial risk preference","prompt":"If both were equally practical and the downside were manageable, which would you normally prefer?","left":"A smaller predictable return","right":"A larger uncertain return"},
   {id:"financial-time","group":"domains","type":"singleChoice","title":"Money · time horizon","prompt":"If both outcomes were guaranteed and your needs were covered, which would you prefer?",options:["£100 today","£110 in one month","£125 in three months","£150 in one year","It depends on what I need the money for"]},
+  ...MONEY_RISK_SCENARIOS,
+  ...MONEY_DELAY_SCENARIOS,
   ...LEARNING_PREFERENCES,
   ...WORK_PREFERENCES,
   {id:"work-top-five",group:"domains",type:"topFive",title:"Your work non-negotiables","prompt":"Which five work conditions would be hardest for you to sacrifice? Choose up to five.",limit:5,options:WORK_PREFERENCES.map(x=>x.title)},
@@ -356,7 +437,8 @@ const SPECIAL_STEPS = [
 const ALL_DIMENSIONS = DIMENSIONS
   .concat(DISPOSITION_DATA)
   .concat(MORE_DIMENSIONS.filter(d=>!["regulation-flexibility","initiation","sustainment","adaptability"].includes(d.id)))
-  .concat(IDENTITY_DIMENSIONS,IDENTITY_EXTRA,RELATIONSHIP_DIMENSIONS,DOMAIN_DIMENSIONS.filter(d=>d.id!=="money-risk"&&d.id!=="money-time"),LEARNING_DIMENSIONS,CHANGE_DIMENSIONS);
+  .concat(IDENTITY_DIMENSIONS,IDENTITY_EXTRA,RELATIONSHIP_DIMENSIONS.filter(d=>!["initiation","sustainment","adaptability"].includes(d.id)),DOMAIN_DIMENSIONS.filter(d=>d.id!=="money-risk"&&d.id!=="money-time"),LEARNING_DIMENSIONS,CHANGE_DIMENSIONS)
+  .filter((d,i,all)=>all.findIndex(x=>x.id===d.id)===i);
 
 function shuffle(list) {
   const out=list.slice();
@@ -367,7 +449,10 @@ function shuffle(list) {
 function makeValueRounds() {
   const deck=shuffle(VALUE_CARDS);
   const rounds=[];
-  for(let r=0;r<10;r++) {
+  /* Sixteen balanced mini-rounds give every value repeated opportunities to
+   * compete with different neighbours without pretending the result is a
+   * population-level value hierarchy. */
+  for(let r=0;r<16;r++) {
     const cards=[];
     for(let j=0;j<4;j++) cards.push(deck[(r*4+j)%deck.length]);
     rounds.push(cards);
@@ -460,6 +545,30 @@ function stepValid(step) {
 }
 function saveStatus(root,text) { const el=root.querySelector("#pf-save-status"); if(el) el.textContent=text; }
 
+function discriminatorStepFor(d) {
+  const options=DISCRIMINATOR_BANK[d.id]||GENERIC_DISCRIMINATORS;
+  return {id:"discriminator-"+d.id,group:d.group,type:"singleChoice",meta:"discriminator",dimension:d.id,title:"What changes this pattern?",prompt:"Your answers to "+d.title.toLowerCase()+" were not identical. Which factor changes it most?",options};
+}
+function queueFollowups(step) {
+  if(!step||!step.dimension||step.meta)return;
+  const pos=moduleIndexFor(stepIndex),mod=pos.module,next=mod.steps[pos.local+1];
+  if(next&&next.dimension===step.dimension)return;
+  const d=ALL_DIMENSIONS.find(x=>x.id===step.dimension);
+  if(!d)return;
+  const sig=signalFor(d);
+  if(["mixed","lean-more","lean-less"].includes(sig.pattern)) {
+    const discId="discriminator-"+d.id;
+    if(!mod.steps.some(s=>s.id===discId)&&answers[discId]===undefined)mod.steps.splice(pos.local+1,0,discriminatorStepFor(d));
+  }
+  CONTRADICTION_RULES.forEach(rule=>{
+    if(!rule.ids.includes(d.id))return;
+    const map=signalMap(allSignals());
+    if(!rule.ids.every(id=>map[id]&&map[id].direction))return;
+    const id="clarify-"+rule.id;
+    if(!mod.steps.some(s=>s.id===id)&&answers[id]===undefined)mod.steps.splice(pos.local+1,0,{id,group:d.group,type:"singleChoice",meta:"contradiction",title:rule.title,prompt:rule.prompt,options:rule.options,dimension:d.id});
+  });
+}
+
 function renderIntro(root) {
   const saved=savedDraft();
   const modules=MODULES.map(m=>"<li><span><b>"+esc(m.title)+"</b><small>"+esc(m.intro)+"</small></span><em>"+esc(m.time)+"</em></li>").join("");
@@ -468,16 +577,16 @@ function renderIntro(root) {
     : "";
   root.innerHTML=[
     "<div class='wrap pf-wrap'><section class='pf-intro'>",
-    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple · Full edition 1.0</p>",
+    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple · Full edition 1.1</p>",
     "<h1>The personality map<br><em>with room for contradiction.</em></h1>",
     "<p class='lead'>A long-form self-reflection assessment about the patterns that organise how you respond, relate, learn, choose and change across different parts of life.</p>",
-    "<div class='pf-facts'><span>About 60–80 minutes</span><span>No timer</span><span>Pause and return if you save locally</span></div>",
+    "<div class='pf-facts'><span>About 80–100 minutes</span><span>16 balanced values rounds</span><span>No timer</span><span>Pause and return if you save locally</span></div>",
     "<button class='button' id='pf-start' type='button'>Begin the full profile <span aria-hidden='true'>↗</span></button>",
     "<p class='pf-privacy'>Your answers stay in this tab unless you explicitly choose to save a draft or state check-in on this device. Nothing is sent to Nobody’s Simple.</p></div>",
     "<div class='pf-intro-art'><img src='personality-map.png' alt='A friendly map character following a dotted path'><p>More than one pattern can be true at once.</p></div></section>",
     "<section class='pf-principles'><article><span>01</span><h2>Dimensions before types</h2><p>Your separate response patterns are the result. The story title is a playful shorthand, not a psychological category.</p></article><article><span>02</span><h2>Describe before explaining</h2><p>We distinguish what you reported from what might be worth testing. The assessment cannot tell you why a pattern developed.</p></article><article><span>03</span><h2>State is not trait</h2><p>The final check-in describes right now. It is shown apart from your longer-term responses.</p></article></section>",
     "<section class='pf-scope'><div><p class='eyebrow'>A fuller map</p><h2>All parts of the profile</h2><p>Each module can be skipped item by item. Responses use different formats for tendencies, motives, needs, preferences, values and current states; those formats are not combined into one total score.</p></div><ul class='pf-module-list'>"+modules+"</ul></section>",
-    "<aside class='pf-validity'><b>Public edition 1.0 · exploratory, not validated</b><p>This full questionnaire is a structured self-reflection tool. Its candidate items, scoring rules and profile interpretations have not been psychometrically validated or normed. It does not diagnose, rank or compare you with a population. A working website is not evidence of measurement validity.</p></aside>",
+    "<aside class='pf-validity'><b>Public edition 1.1 · exploratory, not validated</b><p>This full questionnaire is a structured self-reflection tool. Its candidate items, provisional scoring rules, archetype titles and profile interpretations have not been psychometrically validated or normed. It does not diagnose, rank or compare you with a population. A working website is not evidence of measurement validity.</p></aside>",
     resume,
     "<p class='pf-back'><a href='#home'>← Back to the main website</a></p></div>"
   ].join("");
@@ -673,6 +782,8 @@ function renderStep(root) {
   root.querySelector("#pf-save").addEventListener("click",()=>saveDraft(root));
 }
 function goNext(root) {
+  const pos=moduleIndexFor(stepIndex),step=pos.module?.steps[pos.local];
+  queueFollowups(step);
   if(stepIndex<totalSteps()-1){stepIndex++;render(root);}
   else {clearDraft();phase="result";render(root);}
 }
@@ -685,27 +796,46 @@ function responseValues(d) {
     return item.reverse ? 6-raw : raw;
   }).filter(v=>v!==null);
 }
+function mean(values) { return values.length?values.reduce((a,b)=>a+b,0)/values.length:null; }
+function spread(values) {
+  if(values.length<2)return 0;
+  const m=mean(values);
+  return Math.sqrt(values.reduce((sum,v)=>sum+Math.pow(v-m,2),0)/values.length);
+}
 function signalFor(d) {
   const values=responseValues(d);
   let pattern="unknown";
+  const avg=mean(values),sd=spread(values);
   if(values.length>=2) {
-    if(values.every(v=>v>=4)) pattern="more";
-    else if(values.every(v=>v<=2)) pattern="less";
+    /* Preserve a directional lean when the item set is not unanimous. */
+    if(avg>=4.25) pattern="more";
+    else if(avg<=1.75) pattern="less";
+    else if(avg>=3.5) pattern="lean-more";
+    else if(avg<=2.5) pattern="lean-less";
     else pattern="mixed";
-  } else if(values.length===1) {
-    pattern="single";
-  }
-  return {dimension:d,values,count:values.length,total:d.items.length,pattern};
+  } else if(values.length===1) pattern="single";
+  const distance=avg==null?0:Math.abs(avg-3)/3;
+  const consistency=values.length<2?0:Math.max(0,1-(sd/2.4));
+  const confidence=values.length<2?"insufficient":values.length>=4&&consistency>=.65?"stronger within-person consistency":values.length>=2?"preliminary within-person estimate":"insufficient";
+  const direction=pattern==="more"||pattern==="lean-more"?"more":pattern==="less"||pattern==="lean-less"?"less":null;
+  return {dimension:d,values,count:values.length,total:d.items.length,pattern,mean:avg,sd,spread:sd,distance,consistency,confidence,direction};
 }
 function allSignals() { return ALL_DIMENSIONS.map(signalFor); }
 function signalMap(signals) { return Object.fromEntries(signals.map(s=>[s.dimension.id,s])); }
-function hasPattern(signals,id,pattern) { return signalMap(signals)[id]?.pattern===pattern; }
+function hasPattern(signals,id,pattern) {
+  const s=signalMap(signals)[id];
+  if(!s)return false;
+  if(pattern==="more")return s.pattern==="more"||s.pattern==="lean-more";
+  if(pattern==="less")return s.pattern==="less"||s.pattern==="lean-less";
+  return s.pattern===pattern;
+}
 function nLabel(v,scale) { const hit=scale.find(x=>Number(x[0])===Number(v)); return hit?hit[1]:"Not answered"; }
 function I5label(v) { return nLabel(v,I5); }
 function F5label(v) { return nLabel(v,F5); }
 function getValueCounts() {
   const counts=Object.fromEntries(VALUE_CARDS.map(v=>[v[0],{most:0,least:0}]));
-  for(let i=0;i<10;i++) {
+  const rounds=valueRounds.length||16;
+  for(let i=0;i<rounds;i++) {
     const a=answers["values-"+i];
     if(!a) continue;
     if(a.most&&counts[a.most]) counts[a.most].most++;
@@ -722,7 +852,7 @@ function motifValues() {
   return MOTIVE_DATA.map(m=>({id:m[0],title:m[1],description:m[2],strength:answers["motive-"+m[0]+"-strength"],frequency:answers["motive-"+m[0]+"-behavior"]}));
 }
 function usefulDirections(signals) {
-  return signals.filter(s=>s.pattern==="more"||s.pattern==="less");
+  return signals.filter(s=>s.direction==="more"||s.direction==="less").sort((a,b)=>(b.distance||0)-(a.distance||0));
 }
 function strongestDirections(signals,limit) {
   return usefulDirections(signals).slice(0,limit);
@@ -746,6 +876,43 @@ function titleFor(signals) {
   return {name:"The Many-Threaded Cartographer",tag:"A profile made of connected routes, not one single road.",lore:"The cartographer is the site’s story-image for mapping more than one real pattern at a time.",basis:"No specific mythic combination was clearly supported by the candidate items, so the title stays broad rather than forcing a type."};
 }
 
+function archetypeProfile(title,signals) {
+  const m=signalMap(signals),directions=strongestDirections(signals,5);
+  const names=directions.slice(0,3).map(s=>s.dimension.title.toLowerCase());
+  let story=title.lore,gift="Turning several kinds of information into a route you can actually use.",labyrinth="A useful strength can become a loop when it is asked to solve every context in the same way.",journey="Notice which conditions let this pattern help, and which conditions ask for a different tool.",thread="Keep the map detailed enough to guide you, but light enough to keep moving.",variant="Contextual / many-threaded variant";
+  if(title.name.includes("Ariadne")) { story="Ariadne’s myth is remembered through the thread that helps a traveller navigate a labyrinth; later parts of the story include rupture, abandonment and a changed direction. Nobody’s Simple uses the thread as a metaphor for orientation inside complexity, not as a prediction."; gift="Mapping complexity: curiosity can enter difficult questions while structure turns them into something navigable."; labyrinth="The thread can become a checking loop when uncertainty remains active after further information stops changing the choice."; journey="Learn to distinguish a useful thread from an endless thread: when is the map improving, and when is it only postponing movement?"; thread="Use structure to navigate uncertainty, not to abolish it."; }
+  else if(title.name.includes("Hermes")) { story="Hermes is a mythic messenger and traveller, often pictured at crossings and thresholds. Here the threshold marks the difference between wanting connection and finding the first approach easy."; gift="Carrying messages between people, ideas and settings while noticing when an entry point needs to feel safe."; labyrinth="Waiting for a perfect opening can hide genuine social interest or leave your message unsent."; journey="Design smaller, clearer thresholds rather than treating hesitation as a final answer about belonging."; thread="A low-pressure opening is still an opening."; }
+  else if(title.name.includes("Odysseus")) { story="Odysseus is the traveller of a long, changing return journey. The title is used for exploration plus willingness to revise a route when the evidence changes."; gift="Finding a workable route through novelty, feedback and changing conditions."; labyrinth="Constant route changes can become another form of avoiding commitment or recovery."; journey="Pair adaptability with a clear enough destination and a deliberate stopping point."; thread="Change the route when the evidence changes, not merely because the road feels unfamiliar."; }
+  else if(title.name.includes("Hephaestus")) { story="Hephaestus is a Greek mythic craftsperson associated with making, repair and skilled work. The image is about patient construction, not a role you must perform."; gift="Making difficult things more reliable through practice, detail and visible progress."; labyrinth="Craft standards can keep moving the finish line after the work is already useful."; journey="Define what finished means before the next refinement begins."; thread="Let quality serve the purpose, not replace it."; }
+  else if(title.name.includes("Hestia")) { story="Hestia is associated with the hearth: a dependable centre that makes shared life possible. Here it represents security and steadiness without prescribing a domestic identity."; gift="Creating conditions in which people, work and recovery can become sustainable."; labyrinth="Protection can become over-control when every variable must be settled before living begins."; journey="Build a base that supports exploration rather than becoming a reason to avoid it."; thread="A safe harbour is for returning from journeys, not for cancelling them."; }
+  else if(title.name.includes("Athena")) { story="Athena is associated with wisdom and strategy in Greek myth. The title is a story-image for curiosity paired with careful information gathering."; gift="Turning questions into decisions with proportionate evidence."; labyrinth="More analysis can look like responsibility even when it is no longer changing the choice."; journey="Set an information threshold and let intuition, values and action have a turn too."; thread="Ask what new information would actually change your mind."; }
+  else if(title.name.includes("Psyche")) { story="Psyche’s myth follows a difficult journey through trust, uncertainty and relationship. The title is used for attentive care and a wish to be deeply known, not a relationship forecast."; gift="Taking another person’s experience seriously while making room for repair and mutuality."; labyrinth="Care can become over-responsibility or reassurance loops when another person’s state feels like your task to manage."; journey="Practise closeness with boundaries: care, clarity and agency can coexist."; thread="Ask what support is wanted before trying to carry the whole story."; }
+  else if(title.name.includes("Iris")) { story="Iris is a mythic messenger associated with the rainbow. Here the image is about noticing signals and translating between kinds of information, not a diagnosis or special ability."; gift="Detecting subtle changes and translating them into useful environmental or relational adjustments."; labyrinth="When every signal matters equally, attention and energy can become saturated."; journey="Learn which signals deserve action, which deserve a note and which can pass by."; thread="Noticing is information; it is not an instruction to respond to everything."; }
+  else if(title.name.includes("Artemis")) { story="Artemis is associated with the wild and an open trail. The title is a metaphor for autonomy and exploration, not a fixed identity or prescribed role."; gift="Choosing a direction with enough independence to follow curiosity and meaning."; labyrinth="Freedom without a chosen boundary can become fragmentation or difficulty accepting help."; journey="Protect autonomy while building reciprocal supports that make the trail sustainable."; thread="Choose the route, then let useful company join you."; }
+  if(names.some(n=>/relationship|intimacy|attachment|commun|trust|care/i.test(n)))variant="Relational / connection-led variant";
+  else if(names.some(n=>/curios|imagin|aesthetic|creative|learning|intellect/i.test(n)))variant="Creative / investigative variant";
+  else if(names.some(n=>/order|dilig|thorough|planning|security|prudence/i.test(n)))variant="Structured / craft-led variant";
+  return {story,variant,why:"This title is a compression of several visible answers—not a category. The most relevant threads in your map include "+(names.join(", ")||"the routes you answered directly")+".",gift,labyrinth,journey,thread};
+}
+
+function renderArchetypeChapter(title,signals) {
+  const a=archetypeProfile(title,signals);
+  return "<section class='pf-archetype-chapter' id='pf-archetype'><div class='pf-archetype-variant'>"+esc(a.variant)+"</div><div class='pf-archetype-grid'><article><span class='pf-label'>The story</span><p>"+esc(a.story)+"</p></article><article><span class='pf-label'>Why this title fits your data</span><p>"+esc(a.why)+"</p></article><article><span class='pf-label'>The gift</span><p>"+esc(a.gift)+"</p></article><article><span class='pf-label'>The labyrinth</span><p>"+esc(a.labyrinth)+"</p></article><article><span class='pf-label'>The journey</span><p>"+esc(a.journey)+"</p></article><article class='pf-thread-card'><span class='pf-label'>The thread</span><p>“"+esc(a.thread)+"”</p></article></div><p class='pf-small-note'>Myth is used here as a human-readable metaphor. It is not evidence that a story determines your personality.</p></section>";
+}
+
+function oneMinuteSynthesis(signals) {
+  const m=signalMap(signals),dirs=strongestDirections(signals,8);
+  const driver=motifValues().filter(x=>typeof x.strength==="number").sort((a,b)=>b.strength-a.strength)[0];
+  const curiosity=m["intellectual-curiosity"],uncertainty=m["uncertainty-intolerance"]||m["conflict-anxiety"],steer=m["effortful-control"]||m["decision-deliberation"],social=m.sociability||m["rel-intimacy"],tension=hypothesisList(signals)[0];
+  const line=(label,text)=>"<article><span class='pf-label'>"+esc(label)+"</span><p>"+esc(text)+"</p></article>";
+  const pull=driver?"Your strongest explicit pull in this session was "+driver.title.toLowerCase()+" ("+I5label(driver.strength).toLowerCase()+").":curiosity&&curiosity.direction==="more"?"Questions and understanding appear to pull your attention forward.":"Your forward pull is distributed across several motives and preferences rather than one clear driver.";
+  const guard=uncertainty&&uncertainty.direction?"Uncertainty and unresolved outcomes appear to be a meaningful guardrail: "+(uncertainty.direction==="more"?uncertainty.dimension.more:uncertainty.dimension.less):"No single caution signal was strong enough to headline; context may matter more than a stable guard.";
+  const steerText=steer&&steer.direction?"You tend to steer through "+(steer.direction==="more"?steer.dimension.more.toLowerCase():steer.dimension.less.toLowerCase()):"Your steering style is still open; direct choices and scenario responses add useful detail.";
+  const connect=social&&social.direction?"Connection is best understood separately from ease: "+social.dimension.title.toLowerCase()+" "+patternLabel(social).toLowerCase()+".":"Your relationship map is best read through the separate closeness, space, reassurance and repair answers.";
+  const friction=tension?"A likely tension to test is "+tension.title.toLowerCase()+".":dirs.length?"Your main friction may appear when "+dirs[0].dimension.friction.toLowerCase():"No single friction pattern is sufficiently supported yet.";
+  return {cards:[line("What pulls you forward?",pull),line("What makes you cautious?",guard),line("How do you steer yourself?",steerText),line("How do you connect?",connect),line("Where does tension arise?",friction)],question:tension?"Your growth question: "+tension.experiment.split(";")[0]+".":"Your growth question: which conditions help your strongest patterns stay useful?"};
+}
+
 function narrative(signals) {
   const map=signalMap(signals);
   const directional=usefulDirections(signals);
@@ -754,18 +921,13 @@ function narrative(signals) {
   paragraphs.push("This profile is a set of separate routes through your answers, rather than one score that explains everything. A tendency, a relationship preference, a motive, a need, a work condition and a feeling today answer different questions. The story-title above is only a memory hook; the more useful portrait is the pattern of evidence and the places where it changes.");
   if(directional.length) {
     paragraphs.push("Across the repeated-item candidate scales, "+directional.length+" had at least two answered items that leaned consistently toward one side. That means the responses agreed with one another within each small scale; it does not mean the pattern is unusually strong compared with other people. The report presents the patterns in their separate sections and does not sort them into a single rank.");
-    directional.slice(0,4).forEach((s,i)=>{
-      const reading=s.pattern==="more"?s.dimension.more:s.dimension.less;
-      const complementary=s.pattern==="more"?s.dimension.less:s.dimension.more;
-      const lead=i===0?"A useful place to begin is ":"Another distinct thread is ";
-      paragraphs.push(lead+s.dimension.title.toLowerCase()+". Your answered items leaned in a direction consistent with this description: "+reading+" The pattern concerns "+s.dimension.definition.toLowerCase()+" Its possible function is described as "+s.dimension.fn+" It may become visible around "+s.dimension.contexts.toLowerCase()+"; early cues worth noticing include "+s.dimension.cues.toLowerCase()+" In a supportive setting, the same tendency may help by "+s.dimension.more.toLowerCase()+" Friction may appear when "+s.dimension.friction.toLowerCase()+" A need or support to experiment with is "+s.dimension.needs.toLowerCase()+" The other pole remains possible in situations where the pattern shifts: "+complementary+" These are possible interpretations of candidate items, not a rule about what you always do.");
-    });
-    if(directional.length>4) paragraphs.push("Other repeated-item directions in your map include "+directional.slice(4,9).map(s=>s.dimension.title.toLowerCase()+" ("+patternLabel(s).toLowerCase()+")").join(", ")+". They are shown individually below so they are not collapsed into the headline. Open a card to read its definition, purpose, analogy, likely situations, cues, possible strengths, friction and needs.");
+    const leadThreads=directional.slice(0,6).map(s=>s.dimension.title.toLowerCase()+" "+(s.direction==="more"?"leaning higher":"leaning lower")+" ("+patternLabel(s).toLowerCase()+")");
+    paragraphs.push("The clearest directional threads in this session are "+leadThreads.join(", ")+". They are clues about how you answered these items, not a ranking against other people. The detailed map below gives each one its definition, possible function, analogy, context cues, needs and friction once—so the narrative can focus on how routes combine rather than repeating every scale card.");
   } else {
     paragraphs.push("There are not enough repeated-item scales with consistent answers to describe directional tendencies. That is a valid result, not a failed one. You can still read the preferences, scenario choices, motives, needs, values and identity themes you selected directly; skipped or mixed answers are not filled in with guesses.");
   }
   if(mixed.length) paragraphs.push("Some candidate scales were mixed or context-dependent, including "+mixed.slice(0,6).map(s=>s.dimension.title.toLowerCase()).join(", ")+". A mixed result may mean your response changes by situation, that two items landed differently, or that the questions need revision. It should not be translated into a hidden trait or treated as inconsistency you need to explain away.");
-  const watch=directional.filter(s=>s.pattern==="more"&&/sensitiv|overload|stress|anxious|urgency|interocept|rejection|evaluation|threat|fatigue/i.test(s.dimension.id+" "+s.dimension.kind)).slice(0,4);
+  const watch=directional.filter(s=>s.direction==="more"&&/sensitiv|overload|stress|anxious|urgency|interocept|rejection|evaluation|threat|fatigue/i.test(s.dimension.id+" "+s.dimension.kind)).slice(0,4);
   if(watch.length) {
     const watchContexts=watch.map(s=>s.dimension.title.toLowerCase()+" around "+s.dimension.contexts.toLowerCase()).join("; ");
     const watchCues=watch.map(s=>s.dimension.cues.toLowerCase()).join("; ");
@@ -843,6 +1005,13 @@ function hypothesisList(signals) {
   add(["sensory-orienting","sensory-overload"],"Noticing more signals can coexist with sensory load","The questions separate noticing sensory detail from feeling drained by competing input.","You may be alert to small changes and still prefer control over volume or density.","Compare sound, light, motion and fatigue separately instead of treating all stimulation as one thing.","Change one environmental feature at a time and note which actually changes comfort or focus.");
   add(["decision-deliberation","decision-reopening"],"Careful thought may continue after the decision","These responses separately ask how much information you gather and whether you revisit a choice afterwards.","Research can help before a choice; replaying it afterwards may or may not add useful information.","Notice whether revisiting produces new evidence or only repeats the same alternatives.","Set an information threshold and a planned review point for a reversible decision.");
   add(["effortful-control","sustainment"],"Starting, steering and continuing are different demands","The profile keeps redirecting attention, beginning and sustaining separate.","A person may manage one of these more readily than the others, especially when interest or fatigue changes.","Compare task initiation, returning after interruption and continuing through repetition.","Add a cue to the specific step that costs most rather than applying one willpower rule to all three.");
+  add(["compassion","communion","tact"],"Care and directness can coexist","Compassion, communion and tact ask about concern for people, closeness and the cushioning of delivery separately.","You may care deeply while still preferring a clear message; other people could misread delivery as motive.","Ask a trusted person whether your intention and impact usually match in difficult conversations.","Before a direct message, name the care or respect underneath it and ask whether the other person wants context or a short request.");
+  add(["rel-intimacy","rel-reassurance","rel-repair"],"Relationship investment may form a repair loop","Closeness, reassurance and repair responses can point toward strong investment in keeping important bonds workable.","Ambiguity may pull attention toward confirmation, while repair orientation may bring you back to the relationship after a pause.","Notice whether direct reassurance settles the concern or only briefly lowers it before the same question returns.","Ask once for the specific information you need, then agree on a repair or check-in plan instead of repeating the same question.");
+  add(["support-seeking","emotional-disclosure","rel-reassurance"],"General help-seeking and relationship reassurance may differ","The profile separates broad support seeking, vulnerable disclosure and relationship-specific reassurance.","You may process difficulty privately in general but become much more willing to disclose and ask for confirmation when a close bond feels uncertain.","Compare a practical problem with an ambiguous message from someone important.","Name the kind of support you want—listening, practical help or direct reassurance—before asking for it.");
+  add(["intellectual-curiosity","imagination","aesthetic-sensitivity","orderliness","thoroughness"],"Structured imagination","Questions, possibilities, form and detail can converge into creative work that wants both freedom and refinement.","You may prefer creative problems with a solvable structure rather than unlimited idea generation alone.","Notice whether a clear brief helps your creativity rather than constraining it.","Choose one creative project with an open idea phase and a defined refinement checklist.");
+  add(["identity-exploration","identity-commitment"],"Commitment can include revision","Exploration and commitment are measured as different identity processes.","You may commit to values or relationships while remaining willing to update the route or the language you use for yourself.","Look for one domain where you feel settled and another where you are experimenting.","Write a provisional commitment with a review date rather than demanding a permanent identity statement.");
+  add(["money-security","money-scarcity","money-impulsivity"],"Security motives and short-term wants may pull in different directions","Long-term security, scarcity vigilance and immediate spending are separate responses.","Financial security can matter deeply while a strong want sometimes moves faster than the longer-term plan.","Notice whether impulsive spending rises with fatigue, scarcity fear, celebration or emotional relief.","Create a small guilt-free spending boundary and a separate review for purchases that affect future security.");
+  add(["decision-deliberation","decision-intuition","decision-regret","decision-reopening"],"You may use both analysis and intuition","The decision scales separate information gathering, first impressions, anticipated regret and post-decision review.","The distinctive feature may not be analytical versus intuitive; it may be how long evaluation continues after commitment.","Compare what happens before a decision with what happens after it is made.","Record the information threshold before choosing and a single planned review point afterwards.");
   return hypotheses;
 }
 
@@ -851,29 +1020,53 @@ function signalDescription(signal) {
   if(signal.pattern==="single") return "One response was recorded. It is shown as a direct answer, not a scale estimate.";
   if(signal.pattern==="more") return "All answered candidate items leaned toward the higher end. "+signal.dimension.more;
   if(signal.pattern==="less") return "All answered candidate items leaned toward the lower end. "+signal.dimension.less;
+  if(signal.pattern==="lean-more") return "Your average response leaned higher without being unanimous. "+signal.dimension.more+" The disagreement is useful context rather than noise.";
+  if(signal.pattern==="lean-less") return "Your average response leaned lower without being unanimous. "+signal.dimension.less+" The disagreement is useful context rather than noise.";
   return "Your answers were mixed, included the “mixed / depends” option, or did not point consistently in one direction. Context may matter, or these candidate items may need refinement.";
 }
 function patternLabel(signal) {
   if(!signal||signal.pattern==="unknown") return "Not enough responses";
   if(signal.pattern==="single") return "One response · descriptive only";
-  if(signal.pattern==="more") return "Items leaned higher";
-  if(signal.pattern==="less") return "Items leaned lower";
+  if(signal.pattern==="more") return "Items leaned higher · consistent";
+  if(signal.pattern==="less") return "Items leaned lower · consistent";
+  if(signal.pattern==="lean-more") return "Leaning higher · some variation";
+  if(signal.pattern==="lean-less") return "Leaning lower · some variation";
   return "Mixed / context-dependent";
+}
+function evidenceForSignal(signal) {
+  if(!signal||signal.pattern==="unknown")return "insufficient";
+  if(signal.dimension.group==="snapshot")return "state";
+  if(signal.dimension.kind==="Preference"||signal.dimension.kind==="Direct preference")return "direct";
+  return "measured";
+}
+function badge(kind,compact=false) {
+  const meta=EVIDENCE_META[kind]||EVIDENCE_META.measured;
+  return "<span class='pf-evidence-badge pf-evidence-"+esc(kind)+"' title='"+esc(meta.tip)+"'><span aria-hidden='true'>"+meta.symbol+"</span> "+esc(compact?meta.label.split(" · ")[0]:meta.label)+"</span>";
+}
+function relatedTitles(id) {
+  const ids=CONSTRUCT_FAMILIES[id]||[];
+  return ids.filter(x=>x!==id).slice(0,4).map(x=>ALL_DIMENSIONS.find(d=>d.id===x)?.title||x).filter(Boolean);
 }
 function traitCard(signal) {
   const d=signal.dimension;
   const mapText=signalDescription(signal);
+  const kind=evidenceForSignal(signal);
+  const meanText=typeof signal.mean==="number"?" · mean "+signal.mean.toFixed(2)+"/6":"";
+  const related=relatedTitles(d.id);
+  const guide=DIRECTION_GUIDE[d.id];
   return "<details class='pf-trait-card'><summary><span><b>"+esc(d.title)+"</b><small>"+esc(d.kind)+" · "+esc(patternLabel(signal))+"</small></span><span class='pf-chevron' aria-hidden='true'>＋</span></summary><div class='pf-trait-body'>"+
+    badge(kind)+
     "<p><b>What it covers</b>"+esc(d.definition)+"</p>"+
     "<p><b>What it can do</b>"+esc(d.fn)+"</p>"+
     "<p><b>Picture it</b>"+esc(d.analogy)+"</p>"+
     "<p><b>Where it may show up</b>"+esc(d.contexts)+"</p>"+
     "<p><b>Everyday cues to notice</b>"+esc(d.cues)+"</p>"+
-    "<p><b>Your response pattern</b>"+esc(mapText)+"</p>"+
+    "<p><b>Your response pattern</b>"+esc(mapText)+(guide&&signal.direction?" <span class='pf-direction-note'>Higher here means "+esc(signal.direction==="more"?guide.high:guide.low)+".</span>":"")+"</p>"+
     "<p><b>When it may help</b>"+esc(d.more)+"</p>"+
     "<p><b>When it may create friction</b>"+esc(d.friction)+"</p>"+
     "<p><b>A need to consider</b>"+esc(d.needs)+"</p>"+
-    "<p class='pf-provenance'><b>Evidence:</b> "+signal.count+" of "+signal.total+" candidate items answered · descriptive self-report only.</p></div></details>";
+    (related.length?"<p><b>Connected constructs</b>"+esc(related.join(", "))+". These labels are kept separate for exploration; they may overlap and should not be treated as independent diagnoses.</p>":"")+ 
+    "<p class='pf-provenance'><b>Evidence:</b> "+signal.count+" of "+signal.total+" candidate items answered"+meanText+" · "+esc(signal.confidence)+" · descriptive self-report only.</p></div></details>";
 }
 
 function renderTraitGroups(signals) {
@@ -900,8 +1093,9 @@ function renderValueGraph() {
     const c=counts[card[0]];
     return "<div class='pf-value-result'><div><b>"+esc(card[1])+"</b><span>Most "+c.most+" · Least "+c.least+"</span></div><div class='pf-value-bars' aria-label='Selected most important "+c.most+" times, least central "+c.least+" times'><span class='most' style='width:"+(100*c.most/max)+"%'></span><span class='least' style='width:"+(100*c.least/max)+"%'></span></div></div>";
   }).join("");
-  const strongest=VALUE_CARDS.map(v=>({card:v,count:counts[v[0]].most})).filter(x=>x.count>0).sort((a,b)=>b.count-a.count);
-  return "<div class='pf-values-explainer'><p>Each round asked you to choose one value as most important and one as least central within a small set. This graph shows the number of times you made each choice. The choices are not converted into a latent value score, population rank or hierarchy outside these rounds.</p><div class='pf-value-legend'><span><i class='most'></i> Chosen most</span><span><i class='least'></i> Chosen least</span></div></div><div class='pf-value-results'>"+rows+"</div><p class='pf-small-note'>A value selected less often is not unimportant; a different competitor or real-life constraint can change the choice.</p>";
+  const strongest=VALUE_CARDS.map(v=>({card:v,count:counts[v[0]].most,least:counts[v[0]].least})).filter(x=>x.count>0).sort((a,b)=>b.count-a.count||a.least-b.least);
+  const hierarchy=strongest.slice(0,7).map((x,i)=>"<li><span>"+(i+1)+"</span><b>"+esc(x.card[1])+"</b><i style='width:"+(100*x.count/max)+"%'></i><small>Most "+x.count+" · Least "+x.least+"</small></li>").join("");
+  return "<div class='pf-values-explainer'><p>Each of the sixteen rounds asked you to choose one value as most important and one as least central within a small set. The graph shows repeated raw choices. The provisional hierarchy below is a within-session picture, not a latent score, population rank or claim about your moral worth.</p><div class='pf-value-legend'><span><i class='most'></i> Chosen most</span><span><i class='least'></i> Chosen least</span></div></div><div class='pf-value-hierarchy'><h3>Provisional value hierarchy</h3>"+(hierarchy?"<ol>"+hierarchy+"</ol>":"<p>No value rounds were completed.</p>")+"</div><div class='pf-value-results'>"+rows+"</div><p class='pf-small-note'>A value selected less often is not unimportant; a different competitor, context or real-life constraint can change the choice. A balanced best–worst design gives each value repeated comparisons, but formal Bradley–Terry/Thurstonian calibration still requires validation data.</p>";
 }
 function renderMotives() {
   const values=motifValues();
@@ -922,46 +1116,38 @@ function renderNeeds() {
   }).join("")+"</div><p class='pf-small-note'>Need satisfaction and active frustration are shown separately. A low satisfaction response is not automatically evidence of active frustration.</p>";
 }
 function renderCareerIdeas() {
-  const map={
-    "work-autonomy":["Independent research or project work","Freelance creative practice","Small-team product or service design","Personal creative projects","Self-directed making or study"],
-    "work-predictability":["Operations and coordination","Quality or process support","Records and information work","Gardening or craft routines","A regular club or structured practice"],
-    "work-variety":["Field research or reporting","Events and community projects","Project-based media work","Travel and place-based hobbies","Rotating workshops or classes"],
-    "work-challenge":["Research and analysis","Data, policy or technical problem-solving","Investigative writing","Strategy games or puzzle groups","Learning a demanding new subject"],
-    "work-social":["Teaching or facilitation","Community support roles","People-focused service","Choirs, clubs or group classes","Hosting or collaborative hobbies"],
-    "work-independent":["Editing, translation or focused analysis","Programming or technical production","Archival and research work","Reading, drawing or solo making","Long-form personal projects"],
-    "work-competition":["Sales or target-based roles","Sport or performance settings","Negotiation-focused work","Competitive games or leagues","Skill challenges with personal records"],
-    "work-collaboration":["Project teams","Community organising","Health, education or production teams","Ensemble arts","Cooperative games or shared making"],
-    "work-leadership":["Project coordination","Team leadership","Campaign or community organising","Running a club or event","Organising a collaborative project"],
-    "work-recognition":["Public communication or performance","Publishing, presentation or portfolio-based work","Client-facing achievement roles","Open mic, exhibition or showcase projects","Sharing finished work with a community"],
-    "work-hands":["Laboratory or field technician work","Repair, fabrication or skilled trades","Horticulture or animal care","Woodwork, cooking or model making","Hands-on restoration"],
-    "work-creative":["Writing, illustration or design","Video, music or creative production","Brand or experience design","Photography, crafts or performance","A personal art or media project"],
-    "work-helping":["Teaching, mentoring or support work","Care, advocacy or community services","Coaching or guidance roles","Volunteering with clear boundaries","Peer-led support or mutual aid"],
-    "work-reward":["Commercial, product or client work","Business operations or entrepreneurship","Commission or outcome-linked roles","A practical skill with a visible result","A hobby with a clear project milestone"],
-    "work-stability":["Public service or established organisations","Operations and administration","Education or long-term support settings","A regular hobby group","Steady skill practice with predictable sessions"],
-    "work-impact":["Community, environmental or policy work","Nonprofit or public-interest projects","Education and civic communication","Local campaigning or conservation","A cause-based club or volunteer project"]
-  };
-  const picks=selectedWork().filter(w=>w.value>=3).slice(0,6);
-  if(!picks.length) return "<div class='pf-empty'><b>No work preferences selected strongly enough to build this list.</b><p>That is not a problem. You can still review your direct ratings below.</p></div>";
-  const career=picks.flatMap(p=>(map[p.id]||[]).slice(0,3).map(label=>({label,basis:p.title,kind:"career"})));
-  const hobbies=picks.flatMap(p=>(map[p.id]||[]).slice(3).map(label=>({label,basis:p.title,kind:"hobby"})));
-  return "<div class='pf-idea-columns'><article><h3>Career directions to investigate</h3><ul>"+career.slice(0,10).map(x=>"<li><b>"+esc(x.label)+"</b><small>Included because you rated "+esc(x.basis.toLowerCase())+" highly in a work setting.</small></li>").join("")+"</ul></article><article><h3>Hobbies and activities to try</h3><ul>"+hobbies.slice(0,10).map(x=>"<li><b>"+esc(x.label)+"</b><small>Included because you rated "+esc(x.basis.toLowerCase())+" highly in a work setting.</small></li>").join("")+"</ul></article></div><p class='pf-small-note'>These are prompts for exploration, not evidence that you will enjoy or succeed at a role. This assessment does not measure vocational interests, ability, qualifications, pay, job access or financial need. Try a low-cost sample before making a major commitment.</p>";
+  const picked=selectedWork().filter(w=>w.value>=3);
+  const top=new Set(picked.slice(0,8).map(w=>w.id));
+  const m=signalMap(allSignals());
+  const high=(id)=>top.has(id);
+  const leaning=(id,dir="more")=>m[id]&&m[id].direction===dir;
+  const environments=[
+    {title:"Independent complexity inside a clear enough structure",conditions:["Autonomy","Intellectual challenge","Independent work","Predictability"],support:[high("work-autonomy"),high("work-challenge"),high("work-independent"),high("work-predictability"),leaning("intellectual-curiosity"),leaning("decision-deliberation")],examples:["Research or policy analysis","UX or product research","Investigative writing","Technical or archival work"],hobbies:["A self-directed study project","Puzzle or strategy groups","Long-form making with a defined brief"],friction:"Open-ended work can become expensive when no stopping point or feedback exists."},
+    {title:"Creative craft with room to refine",conditions:["Creative latitude","Visible progress","A meaningful brief","Selective collaboration"],support:[high("work-creative"),leaning("imagination"),leaning("aesthetic-sensitivity"),leaning("thoroughness"),leaning("personal-standards")],examples:["Content or experience design","Writing, illustration or music production","Brand, service or exhibition design"],hobbies:["Photography or visual journalling","Music, craft or animation","A themed personal portfolio"],friction:"High standards can keep moving the finish line unless ‘finished enough’ is defined first."},
+    {title:"People-centred work with repair and purpose",conditions:["Meaningful contact","Reciprocity","Visible contribution","Boundaries around recovery"],support:[high("work-social"),high("work-helping"),high("work-impact"),leaning("compassion"),leaning("communion"),leaning("rel-repair")],examples:["Teaching or facilitation","Community support or advocacy","Behavioural or wellbeing education","Coordinating a mission-led project"],hobbies:["Peer-led groups","Volunteering with clear scope","Choirs, clubs or cooperative making"],friction:"Care for others can become over-responsibility when the limits of the role are unclear."},
+    {title:"Varied practical problem-solving",conditions:["Changing problems","Hands-on feedback","Some autonomy","A visible result"],support:[high("work-variety"),high("work-hands"),high("work-autonomy"),leaning("adaptability"),leaning("persistence")],examples:["Field or laboratory technician work","Repair, fabrication or horticulture","Events, production or operations problem-solving"],hobbies:["Gardening or restoration","Model-building or cooking projects","Rotating workshops"],friction:"Novelty can be energising until fatigue or unclear priorities make recovery difficult."}
+  ];
+  const scored=environments.map(e=>Object.assign({},e,{score:e.support.filter(Boolean).length})).sort((a,b)=>b.score-a.score).filter(e=>e.score>=3);
+  if(!scored.length)return "<div class='pf-empty'><b>No multi-variable work architecture reached the threshold yet.</b><p>Review the direct conditions below; the test will not invent an occupation from one answer.</p></div>";
+  const cards=scored.slice(0,3).map((e,i)=>"<article class='pf-environment-card'><span class='pf-label'>WORK ARCHITECTURE 0"+(i+1)+" · "+e.score+" supporting signals</span><h3>"+esc(e.title)+"</h3><p><b>Conditions:</b> "+esc(e.conditions.join(" · "))+"</p><p><b>Occupational families to investigate:</b> "+esc(e.examples.join(" · "))+"</p><p><b>Hobbies or low-commitment experiments:</b> "+esc(e.hobbies.join(" · "))+"</p><p><b>Possible friction:</b> "+esc(e.friction)+"</p><small>These are examples of environments, not a career prediction. Test one condition at low cost before making a major decision.</small></article>").join("");
+  return "<div class='pf-environment-grid'>"+cards+"</div><p class='pf-small-note'>Recommendations are environment-first. Occupation names are examples that can contain the conditions above; ability, qualifications, pay, access and material constraints were not measured.</p>";
 }
 
 function renderRelationshipSuggestions(signals) {
   const map=signalMap(signals);
-  const statements=[];
-  const intimacy=map["rel-intimacy"],space=map["rel-autonomy"],anxiety=map["attachment-anxiety"],avoid=map["attachment-avoidance"],repair=map["rel-repair"];
+  const cycles=[];
+  const intimacy=map["rel-intimacy"],space=map["rel-autonomy"],anxiety=map["attachment-anxiety"],avoid=map["attachment-avoidance"],repair=map["rel-repair"],reassurance=map["rel-reassurance"];
   const comm=answers["comm-direct"];
   const process=answers["comm-process"];
-  const reassurance=map["rel-reassurance"];
-  if(intimacy&&intimacy.pattern==="more") statements.push("You more often endorse wanting emotional closeness. A partner who is willing to talk about important feelings may be worth exploring.");
-  if(space&&space.pattern==="more") statements.push("You more often endorse needing independent space. A partner who respects separate time and choices may make closeness feel more workable.");
-  if(anxiety&&anxiety.pattern==="more") statements.push("Ambiguous relationship signals may hold attention more strongly. Clear follow-through and direct reassurance may be useful to discuss.");
-  if(avoid&&avoid.pattern==="more") statements.push("You more often endorse keeping emotional distance or processing privately. A partner who respects pace and privacy may matter.");
-  if(reassurance&&reassurance.pattern==="more") statements.push("Reassurance may help when signals are unclear; it may be useful to talk about what kind of reassurance actually settles the question.");
-  if(repair&&repair.pattern==="more") statements.push("You more often report wanting to repair connection after conflict. Someone willing to return to a difficult conversation after a pause may fit that preference.");
-  if(typeof comm==="number") statements.push("You selected a communication preference leaning toward "+(comm<0?"a softer or less direct style":comm>0?"a more direct style":"no consistent pole")+" for important topics.");
-  if(typeof process==="number") statements.push("You selected a preference leaning toward "+(process<0?"private thinking before discussion":process>0?"thinking through conversation":"no consistent pole")+" when working through a complex issue.");
+  if(hasPattern(signals,"attachment-anxiety","more")&&hasPattern(signals,"rel-reassurance","more"))cycles.push({title:"Ambiguity → monitoring → reassurance → temporary settling",body:"Unclear signals may pull attention toward checking or asking for confirmation. The useful question is whether direct reassurance resolves the concern or only lowers it until the same uncertainty returns."});
+  if(hasPattern(signals,"attachment-avoidance","more")||hasPattern(signals,"rel-autonomy","more"))cycles.push({title:"Activation → take space → analyse → return or postpone",body:"Your conflict sequence may be more pause–understand–return than simply avoidant or confrontational. Space can protect the conversation when it has a clear return point; without one it can become distance."});
+  if(hasPattern(signals,"rel-intimacy","more")&&hasPattern(signals,"rel-autonomy","more"))cycles.push({title:"Closeness ↔ autonomy",body:"Wanting to be deeply known and wanting protected independent space are not opposites. A workable relationship may need both a predictable togetherness rhythm and explicit room apart."});
+  if(hasPattern(signals,"rel-repair","more"))cycles.push({title:"Rupture → clarification → repair",body:"A strong repair orientation can be a shared resource. Notice whether repair includes accountability, changed behaviour and a return to safety—not only a conversation that ends the immediate tension."});
+  const preferenceLines=[];
+  if(intimacy&&intimacy.direction)preferenceLines.push(intimacy.direction==="more"?"deep emotional closeness":"a less emotionally intensive pace");
+  if(space&&space.direction)preferenceLines.push(space.direction==="more"?"protected independent space":"more shared time");
+  if(typeof comm==="number") preferenceLines.push(comm<0?"a softer or less direct communication style":comm>0?"direct communication":"a context-dependent communication style");
+  if(typeof process==="number") preferenceLines.push(process<0?"private processing before discussion":process>0?"thinking through conversation":"a context-dependent processing rhythm");
   const relationshipAnswers=["rel-commitment","rel-novelty"].filter(k=>typeof answers[k]==="number");
   const b7=relationshipAnswers.map(k=>{
     const step=SPECIAL_STEPS.find(s=>s.id===k);
@@ -969,7 +1155,7 @@ function renderRelationshipSuggestions(signals) {
     const choice=v<0?step.left:v>0?step.right:"a context-dependent balance";
     return "<p><b>"+esc(step.title)+":</b> your selected preference leaned toward "+esc(choice.toLowerCase())+".</p>";
   }).join("");
-  return "<div class='pf-partner-note'><p class='pf-label'>Your ideal-partner picture · preferences to discuss, not a match score</p><h3>Qualities you may appreciate in a partner</h3>"+(statements.length?"<ul>"+statements.map(s=>"<li>"+esc(s)+"</li>").join("")+"</ul>":"<p>There are not enough relationship answers to generate a personal set of suggestions. You can still use the questions as conversation prompts.</p>")+b7+"<p class='pf-small-note'>No questionnaire of one person can identify an ideal partner or predict compatibility. Real compatibility depends on two people, consent, safety, circumstances, behaviour and repair over time.</p></div>";
+  return "<div class='pf-partner-note'><p class='pf-label'>Relationship cycles · preferences to discuss, not an ideal-partner verdict</p><h3>Possible sequences worth noticing</h3>"+(cycles.length?"<div class='pf-cycle-grid'>"+cycles.map(c=>"<article><h4>"+esc(c.title)+"</h4><p>"+esc(c.body)+"</p></article>").join("")+"</div>":"<p>There are not enough relationship answers to generate a personal cycle. The detailed cards remain available as conversation prompts.</p>")+"<h3>Compatibility prompts</h3><p>Based on your direct answers, you may want to discuss "+esc(preferenceLines.join(", ")||"closeness, space, communication timing and repair")+" with a partner or trusted person. This does not identify an ideal partner.</p>"+b7+"<p class='pf-small-note'>A one-person questionnaire cannot calculate compatibility. A future dyadic comparison would need both people’s consent and would compare interaction-relevant dimensions—closeness, reassurance, processing, repair, novelty and money—rather than produce a percentage.</p></div>";
 }
 
 
@@ -1083,12 +1269,12 @@ function attachStateEvents(root) {
 function renderHypotheses(signals) {
   const list=hypothesisList(signals);
   if(!list.length)return "<div class='pf-empty'><p>No combination rules were supported by enough repeated-item responses. That is more honest than inventing one.</p></div>";
-  return "<div class='pf-hypothesis-grid'>"+list.map((h,i)=>"<article class='pf-hypothesis'><span>HYPOTHESIS "+String(i+1).padStart(2,"0")+"</span><h3>"+esc(h.title)+"</h3><p><b>What answers produced this:</b> "+esc(h.evidence)+"</p><p><b>One possible reading:</b> "+esc(h.interpretation)+"</p><p><b>Where to check:</b> "+esc(h.setting)+"</p><div><b>Small experiment:</b> "+esc(h.experiment)+"</div><p class='pf-small-note'>You can accept, revise or reject this. It is not a validated interaction rule.</p></article>").join("")+"</div>";
+  return "<div class='pf-hypothesis-grid'>"+list.map((h,i)=>"<article class='pf-hypothesis'>"+badge("hypothesis",true)+"<span>HYPOTHESIS "+String(i+1).padStart(2,"0")+"</span><h3>"+esc(h.title)+"</h3><p><b>What answers produced this:</b> "+esc(h.evidence)+"</p><p><b>One possible reading:</b> "+esc(h.interpretation)+"</p><p><b>Where to check:</b> "+esc(h.setting)+"</p><div><b>Small experiment:</b> "+esc(h.experiment)+"</div><p class='pf-small-note'>You can accept, revise or reject this. It is not a validated interaction rule.</p></article>").join("")+"</div>";
 }
 function renderStandouts(signals) {
-  const list=signals.filter(s=>s.pattern==="more"||s.pattern==="less");
+  const list=usefulDirections(signals);
   if(!list.length)return "<div class='pf-empty'><p>No repeated-item scale has enough answers leaning consistently in one direction. Mixed answers are not a flaw.</p></div>";
-  return "<ul class='pf-standout-list'>"+list.map(s=>"<li><b>"+esc(s.dimension.title)+"</b><span>"+esc(patternLabel(s))+"</span><p>"+esc(s.pattern==="more"?s.dimension.more:s.dimension.less)+"</p></li>").join("")+"</ul><p class='pf-small-note'>These are patterns within your own answers, not unusually high or low compared with other people.</p>";
+  return "<ul class='pf-standout-list'>"+list.map(s=>"<li><b>"+esc(s.dimension.title)+"</b><span>"+esc(patternLabel(s))+"</span><p>"+esc(s.direction==="more"?s.dimension.more:s.dimension.less)+"</p><small>Mean "+s.mean.toFixed(2)+"/6 · "+esc(s.confidence)+"</small></li>").join("")+"</ul><p class='pf-small-note'>These are patterns within your own answers, not unusually high or low compared with other people.</p>";
 }
 function renderBestConditions() {
   const picks=selectedWork();
@@ -1102,7 +1288,9 @@ function renderMoney(signals) {
   const risk=answers["financial-risk"],time=answers["financial-time"];
   const riskHtml=typeof risk==="number"?"<p><b>Risk preference:</b> your answer leaned toward "+esc(risk<0?"a smaller predictable return":risk>0?"a larger uncertain return":"a context-dependent choice")+".</p>":"";
   const timeHtml=typeof time==="string"?"<p><b>Time horizon scenario:</b> you chose "+esc(SPECIAL_STEPS.find(s=>s.id==="financial-time").options[Number(time)]||time)+". This one choice can reflect immediate need as well as preference.</p>":"";
-  return "<div class='pf-money-direct'>"+riskHtml+timeHtml+"</div><div class='pf-trait-list'>"+cards+"</div><p class='pf-small-note'>This assessment does not measure actual income, debt, financial literacy, material security or the constraints shaping your choices. It is not financial advice.</p>";
+  const riskRows=MONEY_RISK_SCENARIOS.map(s=>{const v=answers[s.id];return "<li>"+esc(s.title)+": "+esc(typeof v==="number"?(v<0?s.left:v>0?s.right:"depends"):"Not answered")+"</li>";}).join("");
+  const delayRows=MONEY_DELAY_SCENARIOS.map(s=>{const v=answers[s.id];return "<li>"+esc(s.title)+": "+esc(typeof v==="string"?(s.options[Number(v)]||v):"Not answered")+"</li>";}).join("");
+  return "<div class='pf-money-direct'>"+riskHtml+timeHtml+"<div class='pf-money-scenarios'><article><h3>Repeated risk choices</h3><ul>"+riskRows+"</ul></article><article><h3>Repeated delay and scarcity choices</h3><ul>"+delayRows+"</ul></article></div></div><div class='pf-trait-list'>"+cards+"</div><p class='pf-small-note'>Repeated scenarios let the report notice consistency without pretending to estimate a financial trait. Actual income, debt, resources, financial literacy, safety and constraints remain unknown. This is not financial advice.</p>";
 }
 function renderLearning() {
   const prefs=LEARNING_PREFERENCES;
@@ -1156,12 +1344,14 @@ function reportUnknowns() {
 function renderMisreads(signals) {
   const m=signalMap(signals),cards=[];
   const add=(title,text,basis)=>cards.push("<article><h3>"+esc(title)+"</h3><p>"+esc(text)+"</p><small>Why this appears: "+esc(basis)+"</small></article>");
-  if(m.sociability?.pattern==="more"&&m["social-boldness"]?.pattern==="less")add("Wanting contact may look like hesitation","Social interest and comfort initiating are separate. You may want connection while preferring a familiar opening or lower-pressure setting.","Your social-interest items leaned higher and social-boldness items lower.");
-  if(m["social-boldness"]?.pattern==="more"&&m.sociability?.pattern==="less")add("Social ease may look like social appetite","You may be able to enter a group comfortably without wanting frequent or extended contact.","Your social-boldness items leaned higher while social-interest items leaned lower.");
-  if(m.stimulation?.pattern==="more"&&m["uncertainty-intolerance"]?.pattern==="more")add("Caution may not mean lack of interest","A possibility can be attractive while the unknown parts still occupy attention.","Your stimulation and uncertainty items both leaned higher.");
-  if(m.persistence?.pattern==="less"&&motifValues().some(x=>x.id==="achievement"&&x.strength>=3))add("A hard start or fading momentum may not mean you do not care","Achievement can matter while repetition or initiation still asks for more support.","Achievement was rated strongly motivating; persistence items leaned lower.");
-  if(m["rel-intimacy"]?.pattern==="more"&&m["rel-autonomy"]?.pattern==="more")add("Wanting closeness does not cancel wanting space","Both intimacy and independent room can be genuine needs.","Both relationship preference scales leaned toward more.");
-  if(m["personal-standards"]?.pattern==="more"&&m["evaluative-perfectionism"]?.pattern==="less")add("High standards may come from the work itself","Caring about quality does not necessarily mean fearing other people’s judgement.","Standards leaned higher while evaluative concern leaned lower.");
+  if(hasPattern(signals,"sociability","more")&&hasPattern(signals,"social-boldness","less"))add("Wanting contact may look like hesitation","Social interest and comfort initiating are separate. You may want connection while preferring a familiar opening or lower-pressure setting.","Your social-interest items leaned higher and social-boldness items lower.");
+  if(hasPattern(signals,"social-boldness","more")&&hasPattern(signals,"sociability","less"))add("Social ease may look like social appetite","You may be able to enter a group comfortably without wanting frequent or extended contact.","Your social-boldness items leaned higher while social-interest items leaned lower.");
+  if(hasPattern(signals,"stimulation","more")&&hasPattern(signals,"uncertainty-intolerance","more"))add("Caution may not mean lack of interest","A possibility can be attractive while the unknown parts still occupy attention.","Your stimulation and uncertainty items both leaned higher.");
+  if(hasPattern(signals,"persistence","less")&&motifValues().some(x=>x.id==="achievement"&&x.strength>=3))add("A hard start or fading momentum may not mean you do not care","Achievement can matter while repetition or initiation still asks for more support.","Achievement was rated strongly motivating; persistence items leaned lower.");
+  if(hasPattern(signals,"rel-intimacy","more")&&hasPattern(signals,"rel-autonomy","more"))add("Wanting closeness does not cancel wanting space","Both intimacy and independent room can be genuine needs.","Both relationship preference scales leaned toward more.");
+  if(hasPattern(signals,"personal-standards","more")&&hasPattern(signals,"evaluative-perfectionism","less"))add("High standards may come from the work itself","Caring about quality does not necessarily mean fearing other people’s judgement.","Standards leaned higher while evaluative concern leaned lower.");
+  if(hasPattern(signals,"compassion","more")&&hasPattern(signals,"communion","more")&&hasPattern(signals,"tact","less"))add("Directness is not necessarily low compassion","Your answers can hold care for other people alongside a preference for clarity over cushioning. Motive and delivery may be different.","Compassion and communion leaned higher while tact leaned lower.");
+  if(hasPattern(signals,"identity-exploration","more")&&hasPattern(signals,"identity-commitment","more"))add("Exploration is not the same as lack of commitment","You may be committed to important values while remaining willing to revise the route.","Identity exploration and identity commitment both leaned higher.");
   if(!cards.length)return "<div class='pf-empty'><p>No specific misunderstanding pattern was supported by the repeated-item combinations. The wider profile still shows separate facets so readers do not collapse them into one label.</p></div>";
   return "<div class='pf-misread-grid'>"+cards.join("")+"</div><p class='pf-small-note'>These are hypotheses to check against real interactions. The assessment does not know what other people actually think.</p>";
 }
@@ -1170,14 +1360,14 @@ function renderEnvironment(signals) {
   const patterns=strongestDirections(signals,6);
   const list=[];
   work.forEach(w=>list.push("<li><b>"+esc(w.title)+":</b> "+esc(w.text)+"</li>"));
-  patterns.forEach(s=>list.push("<li><b>"+esc(s.dimension.title)+":</b> "+esc(s.pattern==="more"?s.dimension.needs:s.dimension.more)+"</li>"));
+  patterns.forEach(s=>list.push("<li><b>"+esc(s.dimension.title)+":</b> "+esc(s.direction==="more"?s.dimension.needs:s.dimension.more)+"</li>"));
   return "<div class='pf-condition-columns'><article><h3>Conditions worth trying</h3>"+(list.length?"<ul>"+list.join("")+"</ul>":"<p>There are not enough directional patterns to offer personalised environment suggestions. Use the direct preferences below.</p>")+"</article><article><h3>Conditions that may ask more effort</h3>"+(patterns.length?"<ul>"+patterns.slice(0,5).map(s=>"<li><b>"+esc(s.dimension.title)+":</b> "+esc(s.dimension.friction)+"</li>").join("")+"</ul>":"<p>No specific friction hypotheses were generated from the current answers.</p>")+"</article></div><p class='pf-small-note'>These are possible conditions to test, not restrictions or instructions. You can be effective in environments that are not your preferred ones.</p>";
 }
 function renderStressManual(signals) {
   const m=signalMap(signals);
   const selected=["stress-vulnerability","emotional-volatility","sensory-overload","anxiousness","negative-urgency","self-soothing","distress-tolerance"].map(id=>m[id]).filter(Boolean);
   const cards=selected.map(s=>{
-    const read=s.pattern==="more"?s.dimension.more:s.pattern==="less"?s.dimension.less:"Answers here were mixed or did not support a consistent directional reading.";
+    const read=s.direction==="more"?s.dimension.more:s.direction==="less"?s.dimension.less:"Answers here were mixed or did not support a consistent directional reading.";
     return "<article><b>"+esc(s.dimension.title)+"</b><p>"+esc(read)+"</p><small>Possible sign: "+esc(s.dimension.cues)+"</small><small>Try checking: "+esc(s.dimension.needs)+"</small></article>";
   }).join("");
   return "<div class='pf-stress-grid'>"+cards+"</div><p class='pf-small-note'>A trigger is not inferred from this questionnaire. The situations listed in each scale are prompts for observation; a repeated log is needed to see whether an actual pattern holds for you.</p>";
@@ -1198,7 +1388,7 @@ function renderCareerSection() {
   const topFiveMarkup=topFive.length?"<div class='pf-priority-strip'><h3>Your five hardest conditions to sacrifice</h3><ul>"+topFive.map(x=>"<li>"+esc(x.title)+"</li>").join("")+"</ul></div>":"<p class='pf-small-note'>You did not select work conditions that are hardest to sacrifice.</p>";
   const ideal=answered.filter(w=>w.value>=3).slice(0,4).map(w=>w.title.toLowerCase());
   const idealText=ideal.length?"A workday worth testing may include "+ideal.join(", ")+", with enough flexibility to adapt the mix to the actual role.":"Your direct work-environment ratings do not yet point to a clear set of preferred conditions.";
-  return "<section class='pf-report-section' id='pf-work'><p class='eyebrow'>Work, direction & interests</p><h2>Career and hobby ideas to explore</h2><p class='pf-section-lead'>"+esc(idealText)+" These are invitations to try, not conclusions about what you are suited to.</p>"+renderBestConditions()+topFiveMarkup+idea+"<details class='pf-detail'><summary>Your work-environment responses</summary><div class='pf-work-ratings'>"+answered.map(w=>"<div><b>"+esc(w.title)+"</b><span>"+esc(I5label(w.value))+"</span></div>").join("")+"</div></details></section>";
+  return "<section class='pf-report-section' id='pf-work'><p class='eyebrow'>Work, direction & interests</p><h2>Career and hobby ideas to explore</h2><p class='pf-section-lead'>"+esc(idealText)+" These are invitations to try, not conclusions about what you are suited to.</p>"+renderBestConditions()+topFiveMarkup+idea+"<details class='pf-detail'><summary>Your work-environment responses</summary><div class='pf-work-ratings'>"+answered.map(w=>"<div><b>"+esc(w.title)+"</b><span>"+esc(I5label(w.value))+"</span></div>").join("")+"</div></details>"+feedbackBlock("work","work")+"</section>";
 }
 function renderMoneySection(signals) {
   return "<section class='pf-report-section' id='pf-money'><p class='eyebrow'>Resources & trade-offs</p><h2>Money patterns</h2><p class='pf-section-lead'>This section describes self-reported preferences and habits. It cannot tell whether your choices are voluntary or shaped by your actual resources.</p>"+renderMoney(signals)+"</section>";
@@ -1221,21 +1411,19 @@ function renderRelationshipSection(signals) {
     if(sensory&&sensory.pattern==="more")lines.push("Busy input may also use energy, regardless of how much you enjoy people.");
     return lines.join(" ");
   })();
-  return "<section class='pf-report-section' id='pf-relationships'><p class='eyebrow'>Closeness, space & repair</p><h2>Your relationship profile</h2><p class='pf-section-lead'>The relationship module focuses on your reported preferences and possible responses. It cannot describe a specific partner or relationship from your answers alone.</p><div class='pf-trait-list'>"+r.map(traitCard).join("")+"</div>"+renderRelationshipSuggestions(signals)+"<div class='pf-social-battery'><h3>Friendship & social battery</h3><p>"+esc(socialRead||"There are not enough social answers for a personal description.")+"</p><p>There is no separate measure of friendship quality, family relationships or social battery here. The answers above are clues to discuss, not a verdict about how much connection you should want.</p></div></section>";
+  return "<section class='pf-report-section' id='pf-relationships'><p class='eyebrow'>Closeness, space & repair</p><h2>Your relationship profile</h2><p class='pf-section-lead'>The relationship module focuses on your reported preferences and possible responses. It cannot describe a specific partner or relationship from your answers alone.</p><div class='pf-trait-list'>"+r.map(traitCard).join("")+"</div>"+renderRelationshipSuggestions(signals)+"<div class='pf-social-battery'><h3>Friendship & social battery</h3><p>"+esc(socialRead||"There are not enough social answers for a personal description.")+"</p><p>There is no separate measure of friendship quality, family relationships or social battery here. The answers above are clues to discuss, not a verdict about how much connection you should want.</p></div>"+feedbackBlock("relationships","relationships")+"</section>";
 }
 function renderRegulationSection(signals) {
   const items=signals.filter(s=>s.dimension.group==="regulation");
-  const flexA=answers["reg-flex-changeable"],flexB=answers["reg-flex-unchangeable"];
-  const flexAOptions=SPECIAL_STEPS.find(s=>s.id==="reg-flex-changeable").options,flexBOptions=SPECIAL_STEPS.find(s=>s.id==="reg-flex-unchangeable").options;
-  const flex="<div class='pf-direct-card'><b>Strategy choices for situations with different controllability</b><p><b>Changeable problem:</b> "+esc(typeof flexA==="string"?flexAOptions[Number(flexA)]:"Not answered")+"</p><p><b>Not changeable right now:</b> "+esc(typeof flexB==="string"?flexBOptions[Number(flexB)]:"Not answered")+"</p><small>Different choices may make sense when the facts differ. These are scenario responses, not validated skill scores.</small></div>";
-  return "<section class='pf-report-section' id='pf-regulation'><p class='eyebrow'>Emotion, pressure & recovery</p><h2>Your regulation manual</h2><p class='pf-section-lead'>Strategies are not character flaws. The same strategy may help in one context and create friction in another; the question is whether it fits the situation and what matters to you.</p>"+flex+"<div class='pf-trait-list'>"+items.map(traitCard).join("")+"</div><h3 class='pf-subhead'>Stress, overload & recovery signals</h3>"+renderStressManual(signals)+"<div class='pf-next-steps'><h3>Recovery questions</h3><ul><li>What changes after food, sleep, water, movement or a lower-input space?</li><li>Which difficult situation can you change, and which one first needs care or support?</li><li>What helps you return to a valued activity without demanding that the feeling disappear?</li></ul></div></section>";
+  const flex="<div class='pf-direct-card'><b>Regulation flexibility matrix</b><p>Six scenarios vary controllability and intensity so one strategy is not treated as your whole regulation style.</p><div class='pf-scenario-grid'>"+REGULATION_SCENARIOS.map(s=>{const v=answers[s.id];const choice=typeof v==="string"?s.options[Number(v)]||v:"Not answered";return "<article><span class='pf-label'>"+esc(s.title.replace("Regulation · ",""))+"</span><p>"+esc(choice)+"</p></article>";}).join("")+"</div><small>Different choices may make sense when the facts differ. These are scenario responses, not validated skill scores.</small></div>";
+  return "<section class='pf-report-section' id='pf-regulation'><p class='eyebrow'>Emotion, pressure & recovery</p><h2>Your regulation manual</h2><p class='pf-section-lead'>Strategies are not character flaws. The same strategy may help in one context and create friction in another; the question is whether it fits the situation and what matters to you.</p>"+flex+"<div class='pf-trait-list'>"+items.map(traitCard).join("")+"</div><h3 class='pf-subhead'>Stress, overload & recovery signals</h3>"+renderStressManual(signals)+"<div class='pf-next-steps'><h3>Recovery questions</h3><ul><li>What changes after food, sleep, water, movement or a lower-input space?</li><li>Which difficult situation can you change, and which one first needs care or support?</li><li>What helps you return to a valued activity without demanding that the feeling disappear?</li></ul></div>"+feedbackBlock("regulation","regulation")+"</section>";
 }
 function renderIdentitySection() {
   const ids=allSignals().filter(s=>s.dimension.group==="identity");
   return "<section class='pf-report-section' id='pf-identity'><p class='eyebrow'>Self-understanding & narrative</p><h2>Identity, worth and continuity</h2><p class='pf-section-lead'>Identity can be clear in some areas and in motion in others. Multiple versions of you can be real without one being the “true” one.</p><div class='pf-trait-list'>"+ids.map(traitCard).join("")+"</div><h3 class='pf-subhead'>What can affect your sense of worth</h3>"+renderSelfWorth()+renderNarrativeThemes()+"<p class='pf-small-note'>Self-worth sensitivities and chosen life-story themes are direct answers, not a diagnosis, cause or prediction.</p></section>";
 }
 function renderMisunderstandingSection(signals) {
-  return "<section class='pf-report-section' id='pf-combinations'><p class='eyebrow'>More than one thing can be true</p><h2>Combinations, tensions & possible misreads</h2><p class='pf-section-lead'>These combinations are generated only when the relevant answers exist. Each card shows what data prompted it and a low-risk way to test whether it fits your life.</p>"+renderHypotheses(signals)+"<h3 class='pf-subhead'>What someone might misunderstand</h3>"+renderMisreads(signals)+"<p class='pf-small-note'>No combination here is a validated interaction. A conflict between two needs is not evidence that one is fake.</p></section>";
+  return "<section class='pf-report-section' id='pf-combinations'><p class='eyebrow'>More than one thing can be true · derived + hypothesis</p><h2>What makes you distinctive</h2><p class='pf-section-lead'>These combinations are generated only when the relevant answers exist. Each card shows what data prompted it and a low-risk way to test whether it fits your life.</p>"+renderHypotheses(signals)+"<h3 class='pf-subhead'>What someone might misunderstand about you</h3>"+renderMisreads(signals)+"<h3 class='pf-subhead'>What you might misunderstand about yourself</h3><div class='pf-misread-grid'><article><h3>Wanting certainty is not the same as being unadventurous</h3><p>Curiosity and caution can coexist. A need for a clearer route does not erase the wish to explore.</p></article><article><h3>Deliberating does not mean you ignore intuition</h3><p>Different decision channels can both be useful; the key question is whether post-decision review adds evidence or only repeats regret.</p></article><article><h3>Seeking reassurance is not the same as generally seeking support</h3><p>Broad help-seeking, vulnerable disclosure and relationship-specific confirmation are separate paths in the map.</p></article></div>"+feedbackBlock("combinations","combinations")+"<p class='pf-small-note'>No combination here is a validated interaction. A conflict between two needs is not evidence that one is fake.</p></section>";
 }
 function renderValuesSection() {
   return "<section class='pf-report-section' id='pf-values'><p class='eyebrow'>What matters when priorities compete</p><h2>Your values map</h2><p class='pf-section-lead'>Each choice compared a few values in one round. The full list appears below so you can see both what you selected most often and what you were more willing to set aside in those particular sets.</p>"+renderValueGraph()+"</section>";
@@ -1246,32 +1434,77 @@ function renderMotivesSection() {
   return "<section class='pf-report-section' id='pf-motives'><p class='eyebrow'>What draws effort & what is supported now</p><h2>Motives, needs & motivation quality</h2><p class='pf-section-lead'>A motive concerns what pulls you; a need concerns how your current conditions feel. They are reported separately.</p><h3 class='pf-subhead'>Motives and their current influence</h3>"+renderMotives()+"<h3 class='pf-subhead'>Need satisfaction and frustration</h3>"+renderNeeds()+motivation+"</section>";
 }
 function renderBestUse(signals) {
-  const clear=strongestDirections(signals,3);
-  const hypotheses=hypothesisList(signals);
+  const m=signalMap(signals),clear=strongestDirections(signals,5),hypotheses=hypothesisList(signals),rules=[];
+  const addRule=(when,text)=>rules.push("<li><b>"+esc(when)+":</b> "+esc(text)+"</li>");
+  if(hasPattern(signals,"uncertainty-intolerance","more")&&(hasPattern(signals,"decision-deliberation","more")||hasPattern(signals,"decision-reopening","more")))addRule("When deciding","Write down the specific information that would actually change the choice. If you cannot name it, further research may be serving uncertainty rather than the decision.");
+  if(selectedWork().some(w=>w.id==="work-autonomy"&&w.value>=3)&&selectedWork().some(w=>w.id==="work-predictability"&&w.value>=3))addRule("When working","Build freedom inside structure: agree the objective and stopping point, then choose your own route.");
+  if(hasPattern(signals,"sociability","more")&&hasPattern(signals,"social-boldness","less"))addRule("When relating","Separate social desire from approach difficulty. Design a smaller opening instead of treating hesitation as lack of interest.");
+  if(hasPattern(signals,"sensory-overload","more")||hasPattern(signals,"interoception","more"))addRule("When stressed","Check sound, light, hunger, fatigue and body load before turning irritation into a story about the whole problem.");
+  if(hasPattern(signals,"personal-standards","more")||hasPattern(signals,"thoroughness","more"))addRule("When creating","Define ‘finished enough’ before starting so care improves the work rather than moving the finish line indefinitely.");
+  if(hasPattern(signals,"rel-intimacy","more")&&hasPattern(signals,"rel-reassurance","more"))addRule("In important relationships","Ask once for the specific clarity you need, then agree what repair or follow-through would look like instead of repeating the same question.");
+  if(hasPattern(signals,"decision-intuition","more")&&hasPattern(signals,"decision-deliberation","more"))addRule("For complex choices","Use a two-pass process: gather evidence, record your first felt direction, then compare without pretending one channel must win.");
+  if(!rules.length)clear.slice(0,3).forEach(s=>addRule("For "+s.dimension.title.toLowerCase(),"Notice one situation where this pattern helps and one where it creates friction; record the context before explaining the cause."));
   const experiments=[];
-  if(clear[0]) experiments.push("For "+clear[0].dimension.title.toLowerCase()+", note one situation where this response pattern helps and one where it makes the task harder. Record the actual setting, not only your interpretation.");
-  if(hypotheses[0]) experiments.push(hypotheses[0].experiment);
-  experiments.push("For a week, write down one context cue before explaining a strong reaction: who was present, what was demanded, what your body needed and what choice was available.");
-  return "<section class='pf-report-section' id='pf-use'><p class='eyebrow'>Level 3 · Use this</p><h2>Experiments, support & next steps</h2><p class='pf-section-lead'>Treat the map as a set of predictions to test in real settings. Keep what helps; revise what does not.</p>"+renderEnvironment(signals)+"<div class='pf-experiment-grid'>"+experiments.slice(0,3).map((x,i)=>"<article><span>EXPERIMENT 0"+(i+1)+"</span><p>"+esc(x)+"</p></article>").join("")+"</div><div class='pf-practical'><h3>A small operating manual</h3><ul><li><b>When planning:</b> decide which conditions are essential and which are preferences.</li><li><b>When working:</b> make the next action visible and match structure to the task.</li><li><b>When learning:</b> try the method you selected, then judge by what you can do afterward.</li><li><b>When relating:</b> say what closeness, space, repair and directness look like in observable behaviour.</li><li><b>When stressed:</b> check controllability, sensory load, body cues and available support before choosing a strategy.</li><li><b>When recovering:</b> protect time to settle; you do not have to earn rest by finishing everything.</li></ul></div></section>";
+  if(clear[0])experiments.push("For "+clear[0].dimension.title.toLowerCase()+", track the same situation in two contexts and note what changes the response.");
+  if(hypotheses[0])experiments.push(hypotheses[0].experiment);
+  experiments.push("For one week, write down one cue before explaining a strong reaction: who was present, what was demanded, what your body needed and what choice was available.");
+  return "<section class='pf-report-section' id='pf-use'><p class='eyebrow'>Level 3 · Use this · derived from your configuration</p><h2>Your operating manual</h2><p class='pf-section-lead'>These are the five-to-seven rules with the strongest multi-variable support in this session. Treat them as experiments, not instructions.</p>"+renderEnvironment(signals)+"<div class='pf-experiment-grid'>"+experiments.slice(0,3).map((x,i)=>"<article><span>EXPERIMENT 0"+(i+1)+"</span><p>"+esc(x)+"</p></article>").join("")+"</div><div class='pf-practical'><h3>Your high-value rules</h3><ol>"+rules.slice(0,7).join("")+"</ol></div>"+feedbackBlock("use","use")+"</section>";
 }
 function renderValidity(signals) {
   const answered=signals.filter(s=>s.count>0).length;
   const required=signals.length;
-  return "<section class='pf-limit-panel' id='pf-limits'><p class='eyebrow'>Read carefully · limits of this map</p><h2>This is an exploratory self-reflection profile, not a validated test.</h2><p>The public edition is fully built as a questionnaire and report, but the candidate items, response rules, archetype title rules and generated interpretations have not been psychometrically validated, normed or independently calibrated. The design documents explicitly treat the scales as candidates. A functioning assessment is not evidence that its measurements are reliable or valid.</p><p>This report uses "+answered+" of "+required+" repeated-item dimensions with at least one answer; a directional description requires every answered item in that scale to lean the same way. Direct single answers, best/worst value choices, scenarios and the right-now snapshot are kept separate. No overall personality score, percentile, clinical confidence interval or population comparison is produced.</p>"+reportUnknowns()+"<p class='pf-limit-ending'>The archetype is a playful story-title—not a diagnosis, category, or permanent identity. You can disagree with any interpretation.</p></section>";
+  return "<section class='pf-limit-panel' id='pf-limits'><p class='eyebrow'>Read carefully · limits of this map</p><h2>This is an exploratory self-reflection profile, not a validated test.</h2><p>The public edition is fully built as a questionnaire and report, but the candidate items, response rules, archetype title rules and generated interpretations have not been psychometrically validated, normed or independently calibrated. The design documents explicitly treat the scales as candidates. A functioning assessment is not evidence that its measurements are reliable or valid.</p><p>This report uses "+answered+" of "+required+" repeated-item dimensions with at least one answer. It reports a mean, spread, directional lean and an evidence note instead of requiring unanimity; that is a provisional within-person summary, not a population score. Direct single answers, best/worst value choices, repeated money trade-offs, scenarios and the right-now snapshot are kept separate. No overall personality score, percentile, clinical confidence interval or population comparison is produced.</p>"+reportUnknowns()+"<p class='pf-limit-ending'>The archetype is a playful story-title—not a diagnosis, category, or permanent identity. You can disagree with any interpretation, and the report keeps a private confirmation/rejection layer so your lived context can refine the hypotheses without rewriting the raw answers.</p></section>";
 }
 function renderReportNavigation() {
-  const links=[["pf-overview","Your story"],["pf-map","Your map"],["pf-combinations","Patterns"],["pf-values","Values"],["pf-relationships","Relationships"],["pf-work","Work & hobbies"],["pf-regulation","Emotion"],["pf-identity","Identity"],["pf-context","Context"],["pf-use","Next steps"],["pf-limits","Limits"]];
+  const links=[["pf-archetype","Archetype"],["pf-overview","90 seconds"],["pf-full-read","Full read"],["pf-combinations","Distinctive patterns"],["pf-map","Evidence map"],["pf-values","Values"],["pf-relationships","Relationships"],["pf-work","Work & hobbies"],["pf-regulation","Emotion"],["pf-identity","Identity"],["pf-context","Context"],["pf-use","Operating manual"],["pf-evidence","Evidence explorer"],["pf-limits","Limits"]];
   return "<nav class='pf-report-nav' aria-label='Profile sections'>"+links.map(x=>"<a href='#"+esc(x[0])+"'>"+esc(x[1])+"</a>").join("")+"</nav>";
 }
 
+function renderEvidenceExplorer(signals) {
+  const groups=["All","temperament","dispositions","relationships","regulation","motives","identity","domains","decisions","snapshot","measured","direct","scenario","state","insufficient"];
+  const cards=signals.map((s,i)=>{
+    const kind=evidenceForSignal(s),d=s.dimension;
+    return "<article class='pf-evidence-card' data-evidence-group='"+esc(d.group)+"' data-evidence-kind='"+esc(kind)+"'><div class='pf-evidence-card-top'>"+badge(kind,true)+"<span>"+esc(patternLabel(s))+"</span></div><h3>"+esc(d.title)+"</h3><p>"+esc(d.definition)+"</p><p><b>Your estimate:</b> "+esc(signalDescription(s))+"</p><p><b>What it does not mean:</b> "+esc(d.friction||"It does not explain a cause, diagnose a condition or predict every situation.")+"</p><small>"+s.count+" of "+s.total+" candidate items answered"+(typeof s.mean==="number"?" · mean "+s.mean.toFixed(2)+"/6":"")+" · "+esc(s.confidence)+"</small></article>";
+  }).join("");
+  const directSteps=[...RELATIONSHIP_PREFERENCES,...COMMUNICATION_PREFERENCES,...LEARNING_PREFERENCES,...WORK_PREFERENCES,...MONEY_RISK_SCENARIOS,...MONEY_DELAY_SCENARIOS,{id:"financial-risk",title:"Financial risk preference",left:"A smaller predictable return",right:"A larger uncertain return",type:"B7"},{id:"financial-time",title:"Financial time horizon",options:["£100 today","£110 in one month","£125 in three months","£150 in one year","It depends on what I need the money for"],type:"singleChoice"}];
+  const direct=directSteps.map(s=>{const v=answers[s.id];if(v===undefined||v===null)return "";let choice=typeof v==="number"?(s.type==="B7"?(v<0?s.left:v>0?s.right:"Depends"):nLabel(v,I5)):s.options?.[Number(v)]||String(v);return "<article class='pf-evidence-card' data-evidence-group='direct' data-evidence-kind='direct'><div class='pf-evidence-card-top'>"+badge("direct",true)+"</div><h3>"+esc(s.title)+"</h3><p>"+esc(choice)+"</p><small>Explicit preference or trade-off response · not an ability or outcome.</small></article>";}).filter(Boolean).join("");
+  const scenarioSteps=[...SCENARIOS,...REGULATION_SCENARIOS];
+  const scenarios=scenarioSteps.map(s=>{const v=answers[s.id];if(v===undefined||v===null)return "";let choice=v&&v.first!==undefined?s.choices?.[Number(v.first)]:s.options?.[Number(v)];return "<article class='pf-evidence-card' data-evidence-group='scenario' data-evidence-kind='scenario'><div class='pf-evidence-card-top'>"+badge("scenario",true)+"</div><h3>"+esc(s.title)+"</h3><p>"+esc(choice||"Not answered")+"</p><small>Hypothetical scenario response · not evidence of what happened in real life.</small></article>";}).filter(Boolean).join("");
+  return "<section class='pf-report-section pf-evidence-explorer' id='pf-evidence'><p class='eyebrow'>Appendix · evidence explorer</p><h2>Every measured route, with its limits</h2><p class='pf-section-lead'>The detailed scale database is kept as an appendix rather than the main story. Filter by life area or evidence class; connected constructs may overlap and require future validation before they are treated as separate latent dimensions.</p><div class='pf-evidence-filters'>"+groups.map((g,i)=>"<button type='button' class='button secondary pf-evidence-filter"+(i===0?" is-active":"")+"' data-evidence-filter='"+esc(g)+"'>"+esc(g==="All"?g:g[0].toUpperCase()+g.slice(1))+"</button>").join("")+"</div><div class='pf-evidence-grid'>"+cards+direct+scenarios+"</div><p class='pf-small-note'>● repeated candidate items · ○ direct preference · ◆ scenario · ◇ current state · ▲ derived synthesis · △ hypothesis · ? insufficient evidence.</p></section>";
+}
+function feedbackBlock(id,label) {
+  return "<div class='pf-collab-feedback' data-feedback-id='"+esc(id)+"'><b>Does this fit your experience?</b><div class='pf-feedback-options'>"+["Very strongly","Mostly","Partly","Not really","The opposite is closer","Not enough experience"].map(v=>"<button type='button' class='pf-feedback-button' data-pf-feedback='"+esc(v)+"'>"+esc(v)+"</button>").join("")+"</div><label>What would you refine? <textarea data-pf-feedback-note placeholder='Optional: context, exception or correction'></textarea></label><small aria-live='polite'></small></div>";
+}
+function attachCollaborativeFeedback(root) {
+  root.querySelectorAll("[data-feedback-id]").forEach(box=>{
+    const id=box.dataset.feedbackId;
+    box.querySelectorAll("[data-pf-feedback]").forEach(btn=>btn.addEventListener("click",()=>{
+      box.querySelectorAll("[data-pf-feedback]").forEach(x=>x.classList.toggle("is-selected",x===btn));
+      const note=box.querySelector("[data-pf-feedback-note]")?.value||"";
+      try { const all=JSON.parse(localStorage.getItem("nobodys-simple-profile-feedback-v1")||"{}"); all[id]={choice:btn.dataset.pfFeedback,note,date:new Date().toISOString()}; localStorage.setItem("nobodys-simple-profile-feedback-v1",JSON.stringify(all)); } catch {}
+      const status=box.querySelector("small"); if(status)status.textContent="Saved privately on this device. It does not change your answers.";
+    }));
+    const note=box.querySelector("[data-pf-feedback-note]");
+    if(note)note.addEventListener("change",()=>{try{const all=JSON.parse(localStorage.getItem("nobodys-simple-profile-feedback-v1")||"{}");all[id]=Object.assign({},all[id],{note:note.value,date:new Date().toISOString()});localStorage.setItem("nobodys-simple-profile-feedback-v1",JSON.stringify(all));}catch{}});
+  });
+}
+function attachEvidenceFilters(root) {
+  const cards=[...root.querySelectorAll(".pf-evidence-card")];
+  root.querySelectorAll("[data-evidence-filter]").forEach(button=>button.addEventListener("click",()=>{
+    const filter=button.dataset.evidenceFilter.toLowerCase();
+    root.querySelectorAll("[data-evidence-filter]").forEach(x=>x.classList.toggle("is-active",x===button));
+    cards.forEach(card=>{const show=filter==="all"||card.dataset.evidenceGroup===filter||card.dataset.evidenceKind===filter;card.hidden=!show;});
+  }));
+}
+
 function renderResult(root) {
-  const signals=allSignals(),title=titleFor(signals),paragraphs=narrative(signals);
+  const signals=allSignals(),title=titleFor(signals),paragraphs=narrative(signals),minute=oneMinuteSynthesis(signals);
   const filtered=signals.filter(s=>s.dimension.group==="temperament"||s.dimension.group==="dispositions");
   const headline=title.name;
   root.innerHTML=[
     "<div class='wrap pf-result-wrap'><header class='pf-result-hero'>",
     "<img class='pf-result-character' src='personality-map.png' alt='The Nobody’s Simple map character'>",
-    "<p class='eyebrow'>Nobody’s Simple · Full personality profile · Public edition 1.0</p>",
+    "<p class='eyebrow'>Nobody’s Simple · Full personality profile · Public edition 1.1</p>",
     "<p class='pf-title-label'>Your story-title</p><h1>"+esc(headline)+"</h1>",
     "<p class='pf-archetype-tagline'>"+esc(title.tag)+"</p>",
     "<p class='pf-lore'>"+esc(title.lore)+"</p>",
@@ -1280,9 +1513,11 @@ function renderResult(root) {
     "<div class='pf-version'><span>"+esc(VERSION)+"</span><span>No total score</span><span>Nothing sent to the site</span></div>",
     renderReportNavigation(),
     "</header><div id='pf-report-content'>",
-    "<section class='pf-report-section pf-story-section' id='pf-overview'><p class='eyebrow'>Level 1 · Know me</p><h2>You in one minute · the fuller read</h2><p class='pf-section-lead'>A fuller interpretation of what your answers say—and what they cannot say—about how different systems may work together.</p><div class='pf-narrative'>"+paragraphs.map(p=>"<p>"+esc(p)+"</p>").join("")+"</div><div class='pf-story-cautions'><b>How to read this:</b> <span>Measured = answer pattern</span><span>Derived = transparent combination</span><span>Hypothesis = something to test</span><span>Not assessed = no claim</span></div></section>",
-    "<section class='pf-report-section' id='pf-map'><p class='eyebrow'>Level 2 · Understand me</p><h2>Your characteristics & mechanisms</h2><p class='pf-section-lead'>Each scale card includes a definition, function, analogy, everyday cues, situations, possible needs and possible friction. Open the cards that matter to you; mixed answers are shown as mixed.</p><div class='pf-search'><label for='pf-search'>Find a pattern</label><input id='pf-search' type='search' placeholder='Try attachment, fatigue, curiosity…'><span id='pf-search-count' aria-live='polite'>"+filtered.length+" core cards shown</span></div><h3 class='pf-subhead'>Repeated-item patterns to start with</h3>"+renderStandouts(signals)+"<div class='pf-trait-list pf-core-traits'>"+filtered.map(traitCard).join("")+"</div><p class='pf-small-note'>Attachment, regulation, identity, work, money, learning and decision patterns are unpacked in their own sections below.</p></section>",
+    renderArchetypeChapter(title,signals),
+    "<section class='pf-report-section pf-story-section' id='pf-overview'><p class='eyebrow'>Level 1 · Know me · derived synthesis</p><h2>Your profile in 90 seconds</h2><p class='pf-section-lead'>Five integrated answers first. The long-form interpretation follows underneath so you can choose how deep to go.</p><div class='pf-one-minute-grid'>"+minute.cards.join("")+"</div><p class='pf-growth-question'><b>Carry this question:</b> "+esc(minute.question)+"</p>"+feedbackBlock("overview","overview")+"</section>",
+    "<section class='pf-report-section pf-full-read' id='pf-full-read'><p class='eyebrow'>The fuller read · derived synthesis and hypotheses</p><h2>How the routes may work together</h2><p class='pf-section-lead'>This is a longer narrative interpretation. It integrates the highest-value patterns without treating any one scale as your identity.</p><div class='pf-narrative'>"+paragraphs.map(p=>"<p>"+esc(p)+"</p>").join("")+"</div><div class='pf-story-cautions'><b>Evidence key:</b> "+badge("measured",true)+" "+badge("direct",true)+" "+badge("scenario",true)+" "+badge("derived",true)+" "+badge("hypothesis",true)+" "+badge("insufficient",true)+"</div></section>",
     renderMisunderstandingSection(signals),
+    "<section class='pf-report-section' id='pf-map'><p class='eyebrow'>Level 2 · Understand me</p><h2>Your characteristics & mechanisms</h2><p class='pf-section-lead'>Each scale card includes a definition, function, analogy, everyday cues, situations, possible needs and possible friction. Open the cards that matter to you; mixed and leaning answers are shown honestly.</p><div class='pf-search'><label for='pf-search'>Find a pattern</label><input id='pf-search' type='search' placeholder='Try attachment, fatigue, curiosity…'><span id='pf-search-count' aria-live='polite'>"+filtered.length+" core cards shown</span></div><h3 class='pf-subhead'>Repeated-item patterns to start with</h3>"+renderStandouts(signals)+"<div class='pf-trait-list pf-core-traits'>"+filtered.map(traitCard).join("")+"</div><p class='pf-small-note'>Attachment, regulation, identity, work, money, learning and decision patterns are unpacked in their own sections below.</p></section>",
     renderMotivesSection(),
     renderValuesSection(),
     renderRelationshipSection(signals),
@@ -1295,7 +1530,8 @@ function renderResult(root) {
     renderIdentitySection(),
     renderStateSection(),
     renderBestUse(signals),
-    "<section class='pf-report-section' id='pf-confidence'><p class='eyebrow'>Evidence & uncertainty</p><h2>What has more support—and what remains open</h2><div class='pf-confidence-grid'><article><h3>Directly described</h3><p>Answers where multiple candidate items leaned consistently, your explicit work preferences, your selected values in the rounds shown, your scenario choices and your own story themes.</p></article><article><h3>Preliminary</h3><p>Any response pattern built from only a few candidate items and every combination hypothesis. These have no calibrated reliability or confidence interval.</p></article><article><h3>Still unknown</h3><p>Why these patterns developed, how much they change by context, what someone else observes and whether they predict outcomes in your life.</p></article></div><p class='pf-small-note'>The report does not call a person dishonest or internally inconsistent. Variation may reflect context, item wording or real complexity.</p></section>",
+    renderEvidenceExplorer(signals),
+    "<section class='pf-report-section' id='pf-confidence'><p class='eyebrow'>Evidence & uncertainty · measured / derived / hypothesis</p><h2>What has more support—and what remains open</h2><div class='pf-confidence-grid'><article>"+badge("measured",true)+"<h3>Candidate-item estimates</h3><p>Repeated answers are summarised with a mean, within-person spread and a consistency note. They are not normed or calibrated against a population.</p></article><article>"+badge("direct",true)+"<h3>Direct preferences and trade-offs</h3><p>Work conditions, learning, money and values are reported as choices. A preference is not an ability, motive, opportunity or outcome.</p></article><article>"+badge("scenario",true)+"<h3>Conditional behaviour</h3><p>Relationship, conflict and regulation choices are hypothetical scenarios. Repeated varied contexts are stronger than one answer, but still do not prove a real-world pattern.</p></article><article>"+badge("hypothesis",true)+"<h3>Still open</h3><p>Why patterns developed, how much they change by context, what another person observes and whether they predict outcomes remain open questions for lived experiments and future validation.</p></article></div><p class='pf-small-note'>The report does not call a person dishonest or internally inconsistent. Variation may reflect context, item wording or real complexity.</p></section>",
     renderValidity(signals),
     "<section class='pf-end-actions'><div><p class='eyebrow'>Level 3 · Use this</p><h2>The map is allowed to change.</h2><p>Keep a private copy if you want it. This report is not saved automatically or sent to the website.</p></div><div class='pf-action-buttons'><button type='button' class='button' id='pf-download'>Download my full profile</button><button type='button' class='button secondary' id='pf-print'>Print / save as PDF</button><button type='button' class='button secondary' id='pf-restart'>Start a new profile</button><a class='button secondary' href='#community'>Share general feedback</a><a href='#home'>← Back to the main website</a></div></section>",
     "</div></div>"
@@ -1314,6 +1550,8 @@ function renderResult(root) {
     root.querySelector("#pf-search-count").textContent=count+" matching cards";
   });
   attachStateEvents(root);
+  attachCollaborativeFeedback(root);
+  attachEvidenceFilters(root);
   root.querySelectorAll(".pf-report-nav a").forEach(link=>link.addEventListener("click",()=>{}));
 }
 
@@ -1321,13 +1559,14 @@ function downloadFullReport(root) {
   const content=root.querySelector("#pf-report-content");
   if(!content)return;
   const clone=content.cloneNode(true);
-  clone.querySelectorAll("button,input,select,nav").forEach(x=>x.remove());
+  clone.querySelectorAll("button,input,select,textarea,nav").forEach(x=>x.remove());
   clone.querySelectorAll("details").forEach(x=>x.open=true);
-  const text="NOBODY’S SIMPLE · FULL PERSONALITY PROFILE 1.0\n\n"+clone.innerText.replace(/\n{3,}/g,"\n\n");
+  const exportCss="body{margin:0;background:#f6f0e4;color:#263e34;font-family:Arial,sans-serif}main{max-width:980px;margin:0 auto;padding:28px 5vw 60px}h1,h2,h3,h4{font-family:Georgia,serif;color:#234b3b}p,li{line-height:1.65;color:#56695b}.pf-report-section,.pf-archetype-chapter{margin:24px 0;padding:26px;border:1px solid #ddd8ca;border-radius:14px;background:#fffdf8}.pf-trait-card{margin:8px 0;padding:12px;border:1px solid #ddd8ca;border-radius:9px;background:#fffdf8}.pf-trait-card>summary{font-weight:700;cursor:pointer}.pf-trait-body{padding:10px}.pf-evidence-grid,.pf-archetype-grid,.pf-one-minute-grid,.pf-environment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pf-evidence-card,.pf-archetype-grid article,.pf-one-minute-grid article,.pf-environment-card{padding:15px;border:1px solid #ddd8ca;border-radius:9px}.pf-collab-feedback,.pf-report-nav,.pf-end-actions,.pf-search,.pf-evidence-filters{display:none}@media(max-width:650px){.pf-evidence-grid,.pf-archetype-grid,.pf-one-minute-grid,.pf-environment-grid{grid-template-columns:1fr}}";
+  const html="<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Nobody’s Simple · Full Personality Profile 1.1</title><style>"+exportCss+"</style></head><body><main><h1>Nobody’s Simple · Full Personality Profile 1.1</h1>"+clone.outerHTML+"</main></body></html>";
   try {
-    const blob=new Blob([text],{type:"text/plain;charset=utf-8"});
+    const blob=new Blob([html],{type:"text/html;charset=utf-8"});
     const url=URL.createObjectURL(blob),a=document.createElement("a");
-    a.href=url;a.download="nobodys-simple-full-personality-profile.txt";
+    a.href=url;a.download="nobodys-simple-full-personality-profile-1.1.html";
     document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
     const status=root.querySelector("#pf-download-status");
     if(status)status.textContent="Your profile file was created in your browser.";
