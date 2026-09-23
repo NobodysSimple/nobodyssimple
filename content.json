@@ -1,1 +1,171 @@
-{"version":1,"posts":[]}
+{
+  "version": 1,
+  "posts": [
+    {
+      "id": "c045368d-ce46-416f-8ce7-5245e0e30199",
+      "type": "blog",
+      "title": "Hello!",
+      "excerpt": "Why I made this platform",
+      "intro": "Hello! I’m Drew, the founder of Nobody’s Simple. This first blog is really just an attempt to explain why I made it, what problem I think it is trying to solve, and where I want it to go.",
+      "body": "There seems to be more psychology content available than ever. You can Google almost anything, ask AI, watch videos, read threads, or find an influencer explaining some part of human behaviour. That does not mean the information is always good of course, self-help is rife a lot of overclaiming and misinformation, but I do not think lack of information is the main problem. For me the bigger problem is that a lot of advice is not very transferable. A list of ten habits for happiness might work brilliantly for one person and do almost nothing for another. Advice that helps you at one point in your life may stop working when your environment, relationships, goals, finances, health, or responsibilities change. So instead of constantly telling people where to go, I became more interested in helping people become better &quot;drivers&quot; of themselves. That means becoming better at helping people working out what matters in a situation for them, which explanations actually fit, what options are realistically available, what the trade-offs are, and what to try next. This is essentially the basic idea behind Nobody’s Simple: Understanding should help you navigate.\n\nProblems I see in modern psychology content\n\nWe want to map the systems producing a problem, compare realistic routes, test those routes against evidence and experience, and update when reality disagrees with us. There are a couple problems I see in psychology content. One problem I see in psychology content is reduction, eg s omeone cannot focus, so the explanation is dopamine, s omeone behaves badly, so they are labelled narcissistic, s omeone avoids something, so they are lazy, traumatised, anxious, avoidant, or undisciplined etc etc. Sometimes a label is useful, it can identify something genuinely important. But a label can describe a pattern without explaining what is producing it, for example t wo people might both avoid work for completely different reasons, one might just be exhausted, the other may be afraid of failing, or have learned that avoidance temporarily reduces anxiety, or even simply be in an environment that does not suit them. If the causes are different, the useful response may be different too. So one of the central ideas behind Nobody’s Simple is that one true thing should not automatically become the whole explanation. At the same time, I do not want to fall into the opposite trap either. Psychology can sometimes make it seem as though there is a named effect, rule, bias, paradox, or theory for absolutely everything. It is easy to keep adding explanations forever. Eventually though, we still have to ask which explanation matters most here, and what does it change. People are complicated, but that does not mean every explanation is equally good. Understanding more should make judgement more accurate, not impossible and explanation should eventually lead somewhere. Another thing I want Nobody’s Simple to address is the gap between understanding something and knowing what to do about it. Psychology is very good at explanation, but y ou can understand why you avoid something and still keep avoiding it. So I do not want the project to stop at interesting explanations, a t some point, we need to move into strategy. What is actually producing the problem? What can realistically be changed? What different routes are available? What would each route cost What evidence supports it? How would we know if it was helping? And what would make us change our minds? Otherwise, we are just collecting interesting ideas.\n\nWhy this matters in the age of AI\n\nThis matters even more to me now because information is becoming incredibly cheap. AI can summarise research, explain theories, generate possible causes, compare ideas, and produce advice very quickly. That makes simply having access to information less distinctive, w hat remains difficult is judgement. What questions actually matter or what explanations are most useful or when should we stop. That is where I think human research and education remain increasingly valuable. I want it to help people orient themselves inside information. Eventually however, I want to leave the desk. I also do not like the idea of every conclusion coming from reading papers online and then talking into a microphone. Research will always be a major part of the project but over time, and as time, money, and access allow, I want Nobody’s Simple to include more interviews, observations, experiments, fieldwork, or direct contact with the systems we are talking about. If we make a claim about how people experience something, I want to talk to people experiencing it. If we think an environment is producing a problem, I want to look at the environment. If we think a strategy should work, I want to see what happens when it meets reality, one of the best things research can help to do is embarrass theory with reality.\n\nWhere I want this to go\n\nSo, the longer-term idea behind Nobody’s Simple is something I have been calling &quot;recursive autonomy&quot; for lack of a better word. What I mean by this is building a database with the direction of becoming increasingly capable of noticing what is shaping you, deciding which influences deserve authority, changing what you realistically can, watching what happens, and revising your approach when it stops working. B ecoming better at examining the systems influencing your choices and becoming more deliberate about which ones you continue to live by. So the aim of Nobody’s Simple is to help people become better at updating their own reality, thats really the philosophy underneath the whole project: People are complicated. But complexity should eventually help us see more clearly with clarity and choose more carefully, and act more intelligently. Thankyou for reading! (and I hope this reads ok, I&#39;ve had to code everything on this website from scratch as my first time ever coding!)",
+      "blocks": [
+        {
+          "id": "5bc88b21-f1b8-4584-81cd-0fcc3c40c38c",
+          "type": "image",
+          "src": "media/waving-b9f5207a-b72a-4b05-84ac-73d0733fa080.png",
+          "alt": "waving",
+          "caption": "",
+          "credit": "",
+          "href": "",
+          "radius": "soft",
+          "ratio": "auto",
+          "focalX": 50,
+          "focalY": 50,
+          "rotate": 0
+        },
+        {
+          "id": "53c1ca5e-c1ea-4e46-8785-b04e90f0e92a",
+          "type": "paragraph",
+          "html": "<p><span style=\"font-size:1.08rem\">There seems to be more psychology content available than </span><span style=\"font-size:1.08rem\">ever. You can Google almost anything, ask AI, watch videos, read threads, or </span><span style=\"font-size:1.08rem\">find an influencer explaining some part of human behaviour. That does not mean </span><span style=\"font-size:1.08rem\">the information is always good of course, self-help is rife a lot of overclaiming and misinformation, but I do not think lack of information is the main problem.</span></p><p><span style=\"font-size:1.08rem\">For me the bigger problem is that a lot of advice is not </span><span style=\"font-size:1.08rem\">very transferable. </span><span style=\"font-size:1.08rem\">A list of ten habits for happiness might work brilliantly </span><span style=\"font-size:1.08rem\">for one person and do almost nothing for another. Advice that helps you at one </span><span style=\"font-size:1.08rem\">point in your life may stop working when your environment, relationships, </span><span style=\"font-size:1.08rem\">goals, finances, health, or responsibilities change.</span></p><p><span style=\"font-size:1.08rem\">So instead of constantly telling people where to go, I </span><span style=\"font-size:1.08rem\">became more interested in helping people become better &quot;drivers&quot; of themselves. </span><span style=\"font-size:1.08rem\">That means becoming better at helping people working out what matters in a </span><span style=\"font-size:1.08rem\">situation for them, which explanations actually fit, what options are realistically </span><span style=\"font-size:1.08rem\">available, what the trade-offs are, and what to try next.</span></p><p><span style=\"font-size:1.08rem\">This is essentially the basic idea behind Nobody’s Simple: </span><span style=\"font-size:1.08rem\">Understanding should help you navigate.<br></span></p>"
+        },
+        {
+          "id": "04913d82-238d-4e9a-8e89-c8d5ab5f8e4b",
+          "type": "heading",
+          "level": 2,
+          "text": "Problems I see in modern psychology content"
+        },
+        {
+          "id": "63551559-575b-43fc-9b9f-63bdce362ab2",
+          "type": "paragraph",
+          "html": "<p><span style=\"font-size:1.08rem\">We want to map the systems producing a problem, compare </span><span style=\"font-size:1.08rem\">realistic routes, test those routes against evidence and experience, and update </span><span style=\"font-size:1.08rem\">when reality disagrees with us.</span></p><p><span style=\"font-size:1.08rem\">There are a couple problems I see in psychology content. One problem I see in psychology content is reduction, eg s</span><span style=\"font-size:1.08rem\">omeone cannot focus, so the explanation is dopamine, s</span><span style=\"font-size:1.08rem\">omeone behaves badly, so they are labelled narcissistic, s</span><span style=\"font-size:1.08rem\">omeone avoids something, so they are lazy, traumatised, </span><span style=\"font-size:1.08rem\">anxious, avoidant, or undisciplined etc etc.</span></p><p><span style=\"font-size:1.08rem\">Sometimes a label is useful, it can identify </span><span style=\"font-size:1.08rem\">something genuinely important.</span></p><p><span style=\"font-size:1.08rem\">But a label can describe a pattern without explaining what </span><span style=\"font-size:1.08rem\">is producing it, for example t</span><span style=\"font-size:1.08rem\">wo people might both avoid work for completely different </span><span style=\"font-size:1.08rem\">reasons, one might just be exhausted, the other may be afraid of failing, or </span><span style=\"font-size:1.08rem\">have learned that avoidance temporarily reduces anxiety, or even simply be </span><span style=\"font-size:1.08rem\">in an environment that does not suit them.</span></p><p><span style=\"font-size:1.08rem\">If the causes are different, the useful response may be </span><span style=\"font-size:1.08rem\">different too.</span></p><p><span style=\"font-size:1.08rem\">So one of the central ideas behind Nobody’s Simple is that </span><span style=\"font-size:1.08rem\">one true thing should not automatically become the whole explanation.</span></p><p><span style=\"font-size:1.08rem\"><br></span></p><p><span style=\"font-size:1.08rem\">At the same time, I do not want to fall into the opposite </span><span style=\"font-size:1.08rem\">trap either. </span><span style=\"font-size:1.08rem\">Psychology can sometimes make it seem as though there is a </span><span style=\"font-size:1.08rem\">named effect, rule, bias, paradox, or theory for absolutely everything. It is </span><span style=\"font-size:1.08rem\">easy to keep adding explanations forever. </span><span style=\"font-size:1.08rem\">Eventually though, we still have to ask which explanation </span><span style=\"font-size:1.08rem\">matters most here, and what does it change. </span><span style=\"font-size:1.08rem\">People are complicated, but that does not mean every </span><span style=\"font-size:1.08rem\">explanation is equally good.</span><span style=\"font-size:1.08rem\"> Understanding more should make judgement more accurate, not </span><span style=\"font-size:1.08rem\">impossible and explanation should eventually lead somewhere.</span></p><p><br></p><p><span style=\"font-size:1.08rem\">Another thing I want Nobody’s Simple to address is the gap </span><span style=\"font-size:1.08rem\">between understanding something and knowing what to do about it.</span></p><p><span style=\"font-size:1.08rem\">Psychology is very good at explanation, but y</span><span style=\"font-size:1.08rem\">ou can understand why you avoid something and still keep </span><span style=\"font-size:1.08rem\">avoiding it. </span><span style=\"font-size:1.08rem\">So I do not want the project to stop at </span><span style=\"font-size:1.08rem\">interesting explanations, a</span><span style=\"font-size:1.08rem\">t some point, we need to move into strategy. </span><span style=\"font-size:1.08rem\">What is actually producing the problem? </span><span style=\"font-size:1.08rem\">What can realistically be changed? </span><span style=\"font-size:1.08rem\">What different routes are available? </span><span style=\"font-size:1.08rem\">What would each route cost </span><span style=\"font-size:1.08rem\">What evidence supports it? </span><span style=\"font-size:1.08rem\">How would we know if it was helping? </span><span style=\"font-size:1.08rem\">And what would make us change our minds?</span></p><p><span style=\"font-size:1.08rem\">Otherwise, we are just collecting interesting ideas.<br></span></p>"
+        },
+        {
+          "id": "fec6a684-192b-4c6a-b1b4-ac31c293f501",
+          "type": "image",
+          "src": "media/mapping-267540df-c53f-4a04-869e-cead737b7aff.png",
+          "alt": "mapping",
+          "caption": "",
+          "credit": "",
+          "href": "",
+          "radius": "soft",
+          "ratio": "auto",
+          "focalX": 50,
+          "focalY": 50,
+          "rotate": 0
+        },
+        {
+          "id": "33129c2b-92b1-4950-95f0-d4e245f309de",
+          "type": "heading",
+          "level": 3,
+          "text": "Why this matters in the age of AI"
+        },
+        {
+          "id": "dd66df42-bfe4-4c3b-89ee-1fe6cb3da5f1",
+          "type": "paragraph",
+          "html": "<p><span style=\"font-size:1.08rem\">This matters even more to me now because information is </span><span style=\"font-size:1.08rem\">becoming incredibly cheap.</span><span style=\"font-size:1.08rem\">AI can summarise research, explain theories, generate </span><span style=\"font-size:1.08rem\">possible causes, compare ideas, and produce advice very quickly.</span></p><p>That makes simply having access to information less\ndistinctive, w<span style=\"font-size:1.08rem\">hat remains difficult is judgement. </span><span style=\"font-size:1.08rem\">What questions actually matter or what explanations are most useful or when should we stop.</span></p><p>That is where I think human research and education remain increasingly valuable.<span style=\"font-size:1.08rem\"> I want it to help people orient themselves </span><span style=\"font-size:1.08rem\">inside information.</span></p><p><span style=\"font-size:1.08rem\"><br></span></p><p>Eventually however, I want to leave the desk. <span style=\"font-size:1.08rem\">I also do not like the idea of every conclusion coming from </span><span style=\"font-size:1.08rem\">reading papers online and then talking into a microphone. </span><span style=\"font-size:1.08rem\">Research will always be a major part of the project but </span><span style=\"font-size:1.08rem\">over time, and as time, money, and access allow, I want Nobody’s Simple to </span><span style=\"font-size:1.08rem\">include more interviews, observations, experiments, fieldwork, or direct</span></p><p>contact with the systems we are talking about.</p><p>If we make a claim about how people experience something, I want to talk to people experiencing it. <span style=\"font-size:1.08rem\">If we think an environment is producing a problem, I want to </span><span style=\"font-size:1.08rem\">look at the environment. </span><span style=\"font-size:1.08rem\">If we think a strategy should work, I want to see what </span><span style=\"font-size:1.08rem\">happens when it meets reality, one of the best things research can help to do is embarrass theory with reality. </span></p>"
+        },
+        {
+          "id": "f30c19ae-1a25-44bd-9ce6-7b6f4ff839a7",
+          "type": "heading",
+          "level": 4,
+          "text": "Where I want this to go"
+        },
+        {
+          "id": "72d03282-c73f-48be-a8c8-ff2161f22e58",
+          "type": "image",
+          "src": "media/checklist---Copy-ea44ab52-7299-42db-bf80-9c325f71f396.png",
+          "alt": "checklist - Copy",
+          "caption": "",
+          "credit": "",
+          "href": "",
+          "radius": "soft",
+          "ratio": "auto",
+          "focalX": 50,
+          "focalY": 50,
+          "rotate": 0
+        },
+        {
+          "id": "73c371df-f9e6-4aa5-813a-bc98f8df97fb",
+          "type": "paragraph",
+          "html": "<p><span style=\"font-size:1.08rem\">So, the longer-term idea behind Nobody’s Simple is something I </span><span style=\"font-size:1.08rem\">have been calling &quot;recursive autonomy&quot; for lack of a better word. What </span><span style=\"font-size:1.08rem\">I mean by this is building a database with the direction of becoming increasingly capable of noticing what is </span><span style=\"font-size:1.08rem\">shaping you, deciding which influences deserve authority, changing what you </span><span style=\"font-size:1.08rem\">realistically can, watching what happens, and revising your approach when it </span><span style=\"font-size:1.08rem\">stops working. B</span><span style=\"font-size:1.08rem\">ecoming better at examining the systems influencing </span><span style=\"font-size:1.08rem\">your choices and becoming more deliberate about which ones you continue to live </span><span style=\"font-size:1.08rem\">by.</span></p><p>So the aim of Nobody’s Simple is <span style=\"font-size:1.08rem\">to help people become better at updating their own reality, thats</span><span style=\"font-size:1.08rem\"> really the philosophy underneath the whole project:</span></p><p>People are complicated. But complexity should eventually\nhelp us see more clearly with clarity and choose more carefully, and act more intelligently.</p><p>Thankyou for reading!</p><p>(and I hope this reads ok, I&#39;ve had to code everything on this website from scratch as my first time ever coding!)</p><p><br></p>"
+        }
+      ],
+      "youtube": "",
+      "topics": [],
+      "category": "",
+      "modules": [],
+      "weeks": [],
+      "thumbnail": "banner.png",
+      "thumbnailAlt": "banner.png",
+      "destinations": [
+        "blog"
+      ],
+      "status": "published",
+      "author": "Drew Horrobin",
+      "createdAt": "2026-09-22T23:52:36.781Z",
+      "updatedAt": "2026-09-23T00:29:50.461Z",
+      "publishedAt": "2026-09-23T00:29:50.461Z",
+      "slug": "hello",
+      "seoTitle": "",
+      "seoDescription": "",
+      "socialImage": "",
+      "theme": "cream",
+      "hero": "standard",
+      "layout": "standard",
+      "thumbnailRatio": "16:9",
+      "thumbnailFocalX": 50,
+      "thumbnailFocalY": 50,
+      "thumbnailRotate": 0
+    }
+  ],
+  "mediaAssets": [
+    {
+      "path": "media/mapping-267540df-c53f-4a04-869e-cead737b7aff.png",
+      "name": "mapping-267540df-c53f-4a04-869e-cead737b7aff.png",
+      "kind": "image",
+      "createdAt": "2026-09-23T00:22:36.276Z",
+      "title": "Hello!",
+      "contentType": "blog",
+      "tags": [],
+      "updatedAt": "2026-09-23T00:29:50.461Z",
+      "alt": "mapping",
+      "caption": ""
+    },
+    {
+      "path": "media/waving-b9f5207a-b72a-4b05-84ac-73d0733fa080.png",
+      "name": "waving-b9f5207a-b72a-4b05-84ac-73d0733fa080.png",
+      "kind": "image",
+      "createdAt": "2026-09-23T00:27:23.132Z",
+      "title": "Hello!",
+      "contentType": "blog",
+      "tags": [],
+      "updatedAt": "2026-09-23T00:29:50.461Z",
+      "alt": "waving",
+      "caption": ""
+    },
+    {
+      "path": "media/checklist---Copy-ea44ab52-7299-42db-bf80-9c325f71f396.png",
+      "name": "checklist---Copy-ea44ab52-7299-42db-bf80-9c325f71f396.png",
+      "kind": "image",
+      "createdAt": "2026-09-23T00:28:14.914Z",
+      "title": "Hello!",
+      "contentType": "blog",
+      "tags": [],
+      "updatedAt": "2026-09-23T00:29:50.461Z",
+      "alt": "checklist - Copy",
+      "caption": ""
+    },
+    {
+      "path": "banner.png",
+      "name": "banner.png",
+      "kind": "image",
+      "createdAt": "2026-09-23T00:29:53.700Z",
+      "title": "Hello!",
+      "contentType": "blog",
+      "tags": [],
+      "updatedAt": "2026-09-23T00:29:50.461Z",
+      "alt": "banner.png",
+      "caption": ""
+    }
+  ]
+}
