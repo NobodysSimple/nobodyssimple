@@ -27,6 +27,7 @@ import {
 } from "./interactive-tools.mjs";
 import { renderSimplyFocus } from "./simplyfocus.mjs";
 import { renderPersonalityTest } from "./personality-test.mjs";
+import { renderLifeNavigation } from "./life-navigation.mjs";
 const main = document.querySelector("main");
 const imageLightbox = document.createElement("dialog");
 imageLightbox.className = "site-image-lightbox";
@@ -633,6 +634,7 @@ function route() {
     ({
       home: () => renderHome(main, posts),
       help: () => renderHelp(main),
+      navigate: () => renderLifeNavigation(main),
       library,
       learn: library,
       blog,
@@ -666,7 +668,9 @@ function route() {
   )();
   window.scrollTo(0, 0);
   const title =
-    name === "personality"
+    name === "navigate"
+      ? "Navigate My Life"
+      : name === "personality"
       ? "Full Personality Profile"
       : name === "simplyfocus"
       ? "SimplyFocus"

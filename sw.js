@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v26";
+const CACHE = "nobodyssimple-v27";
 const SHELL = [
   "./",
   "index.html",
@@ -11,6 +11,7 @@ const SHELL = [
   "interactive-tools.mjs",
   "simplyfocus.mjs",
   "personality-test.mjs",
+  "life-navigation.mjs",
   "personality-map.png",
   "tool-catalog.mjs",
   "emotion-profiles.mjs",
