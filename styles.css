@@ -4173,6 +4173,7 @@ footer {
 @media (max-width: 650px) {
   .home-app { padding: 10px 20px 45px; }.announcement-rail, .announcement-empty { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; }.announcement-rail-head { grid-column: 1 / -1; }.announcement-slide { grid-template-columns: 1fr auto; }.announcement-kind { grid-column: 1 / -1; }.announcement-copy { display: block; }.announcement-copy p { margin-top: 3px; white-space: normal; }.announcement-controls { grid-column: 1 / -1; justify-content: flex-end; }
   .header-more-menu { position: fixed; top: 102px; right: 20px; }.home-door-grid, .home-system-grid, .continue-grid, .latest-grid { grid-template-columns: 1fr; }.home-quick-grid, .understand-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }.home-masthead h1 { font-size: 3rem; }.home-masthead img { height: 150px; }.home-section { padding: 31px 0; }.home-section-head { align-items: flex-start; flex-direction: column; }.home-first-visit .button { margin-left: 0; }.latest-card { grid-template-columns: 92px minmax(0,1fr); }.latest-card img, .latest-placeholder { width: 92px; height: 100px; }
+  .pf-guidance-grid { grid-template-columns: 1fr; }.pf-situation-card { padding: 21px 17px; }.pf-situation-prompt { font-size: 2rem; }
 }
 
 /* Navigate My Life: shared investigation layer */
@@ -4183,6 +4184,22 @@ footer {
 .pf-scenario-context { margin: 16px 0 18px; padding: 13px 15px; border-left: 3px solid #b9844d; border-radius: 8px; background: #f7efe1; color: #52645a; }
 .pf-scenario-context span { display: block; margin-bottom: 5px; color: #8d5f36; font-size: .7rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
 .pf-scenario-context p { margin: 0; font-size: .9rem; line-height: 1.55; }
+.pf-situation-card { max-width: 760px; margin: 12px 0 4px; padding: clamp(22px, 4vw, 34px); border: 1px solid #e1d4bc; border-radius: 16px; background: linear-gradient(145deg, #fffaf0, #f8f1e5); }
+.pf-situation-label { display: block; margin-bottom: 11px; color: #9a6334; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.pf-situation-prompt { max-width: 690px; margin: 0 0 22px; color: #1d4035; font: 400 clamp(1.8rem, 4.6vw, 3.1rem)/1.08 Georgia, serif; letter-spacing: -.025em; }
+.pf-reaction-select { margin: 0; font-size: 13px; }
+.pf-reaction-select select { min-height: 52px; margin-top: 8px; padding: 13px 15px; border-color: #c9b992; border-radius: 10px; background: #fffdf8; color: #294b3e; font-size: 14px; }
+.pf-reaction-select select:focus { outline: 3px solid #d8a66c; outline-offset: 2px; }
+.pf-situation-card .pf-small-note { margin-top: 14px; }
+.pf-guidance-intro { position: relative; z-index: 1; max-width: 820px; margin-bottom: 22px; padding: 18px 20px; border-left: 4px solid #b77739; border-radius: 0 12px 12px 0; background: rgba(255,255,255,.55); color: #5f6d62; font-size: 13px; line-height: 1.68; }
+.pf-guidance-intro p { margin: 0; }.pf-guidance-intro p + p { margin-top: 8px; }
+.pf-guidance-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 13px; }
+.pf-guidance-card { padding: 19px; border: 1px solid #d5dfd0; border-radius: 15px; background: rgba(255,253,248,.82); }
+.pf-guidance-card-head { display: flex; align-items: flex-start; gap: 13px; margin-bottom: 13px; }
+.pf-guidance-card-head > span { color: #b77739; font: 700 22px Georgia,serif; }.pf-guidance-card-head h3 { margin: 5px 0 0; color: #315746; font: 22px/1.1 Georgia,serif; }
+.pf-guidance-card ol, .pf-guidance-detail ol { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.pf-guidance-card li, .pf-guidance-detail li { display: grid; grid-template-columns: 25px 1fr; gap: 8px; color: #5e6f63; font-size: 11px; line-height: 1.62; }
+.pf-guidance-card li b, .pf-guidance-detail li b { color: #ad7136; font-size: 10px; }.pf-guidance-more { position: relative; z-index: 1; margin-top: 16px; border: 1px solid #d5dfd0; border-radius: 12px; background: rgba(255,253,248,.55); }.pf-guidance-more > summary { padding: 14px 16px; cursor: pointer; color: #315746; font-size: 12px; font-weight: 800; }.pf-guidance-more-list { display: grid; gap: 8px; padding: 0 12px 12px; }.pf-guidance-detail { border-top: 1px solid #e1e7dd; }.pf-guidance-detail:first-child { border-top: 0; }.pf-guidance-detail > summary { padding: 11px 6px; cursor: pointer; color: #496b57; font-size: 11px; font-weight: 750; }
 .navigation-systems-home .section-head > div { max-width: 720px; }
 .navigation-systems-home .section-head p:not(.eyebrow) { max-width: 690px; color: var(--muted); }
 .navigation-door-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
