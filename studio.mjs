@@ -181,6 +181,7 @@ function createPost(type = "blog", existing = null) {
     topics: [], category: "", modules: [], weeks: [], thumbnail: "", thumbnailAlt: "",
     destinations: [type === "blog" ? "blog" : "library"], status: "draft", author: "Drew Horrobin",
     createdAt: now(), updatedAt: now(), publishedAt: "", slug: "", seoTitle: "", seoDescription: "", socialImage: "", theme: "cream", hero: "standard",
+    announcementLabel: type === "announcement" ? "Update" : "", announcementPinned: type === "announcement", announcementPriority: 0, announcementStart: type === "announcement" ? now() : "", announcementEnd: "", announcementLink: "#blog", announcementLinkText: "Open update",
   };
   if (!Array.isArray(p.blocks) || !p.blocks.length) {
     p.blocks = legacyBodyToBlocks(p.body || "");
@@ -198,6 +199,13 @@ function createPost(type = "blog", existing = null) {
   p.youtube ||= "";
   p.destinations ||= [p.type === "blog" ? "blog" : "library"];
   p.layout ||= "standard";
+  p.announcementLabel ||= p.category || "Update";
+  p.announcementPinned = Boolean(p.announcementPinned);
+  p.announcementPriority = Number(p.announcementPriority || 0);
+  p.announcementStart ||= "";
+  p.announcementEnd ||= "";
+  p.announcementLink ||= "#blog";
+  p.announcementLinkText ||= "Open update";
   return p;
 }
 function legacyBodyToBlocks(body) {
@@ -245,6 +253,13 @@ function formatDate(value) {
   const date = new Date(value);
   return Number.isNaN(date.valueOf()) ? "—" : date.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 }
+function datetimeInputValue(value) {
+  if (!value) return "";
+  const date = new Date(value);
+  if (Number.isNaN(date.valueOf())) return "";
+  const pad = (number) => String(number).padStart(2, "0");
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+}
 function allTopicValues() { return [...new Set(posts.flatMap((post) => post.topics || []))].sort((a, b) => a.localeCompare(b)); }
 function renderDashboard() {
   const query = $("dash-search").value.trim().toLowerCase();
@@ -263,7 +278,7 @@ function renderDashboard() {
       : post._kind === "archived" && post._draft
         ? `<button class="chip" data-action="resume-archived" data-id="${esc(post.id)}">Edit</button><button class="chip" data-action="restore-local" data-id="${esc(post.id)}">Restore</button><button class="chip danger-chip" data-action="discard" data-id="${esc(post.id)}">Delete draft</button>`
       : post._kind === "published"
-        ? `<button class="chip" data-action="edit" data-id="${esc(post.id)}">Edit</button><button class="chip" data-action="duplicate-remote" data-id="${esc(post.id)}">Duplicate</button><button class="chip" data-action="archive" data-id="${esc(post.id)}">Archive</button>`
+        ? `<button class="chip" data-action="edit" data-id="${esc(post.id)}">Edit live</button><button class="chip" data-action="duplicate-remote" data-id="${esc(post.id)}">Duplicate</button><button class="chip" data-action="archive" data-id="${esc(post.id)}">Archive</button>`
         : `<button class="chip" data-action="edit" data-id="${esc(post.id)}">Edit</button><button class="chip" data-action="publish-archived" data-id="${esc(post.id)}">Restore</button><button class="chip danger-chip" data-action="delete" data-id="${esc(post.id)}">Delete</button>`;
     return `<tr><td><input type="checkbox" data-select-id="${esc(post.id)}" data-select-kind="${post._kind}" aria-label="Select ${esc(post.title || "untitled")}"></td><td><strong>${esc(post.title || "Untitled")}</strong><div class="table-subline">${esc((post.topics || []).slice(0, 3).join(" · "))}</div></td><td>${esc(topicName(post.type))}</td><td><span class="status-pill ${post._kind === "draft" ? "local" : post._kind}">${stateText}</span></td><td>${formatDate(post.updatedAt || post.savedAt)}</td><td><div class="row-actions">${actions}</div></td></tr>`;
   }).join("");
@@ -292,10 +307,17 @@ function syncModelFromFields() {
   current.youtube = $("youtube-url").value.trim();
   current.theme = $("page-theme").value;
   current.hero = $("hero-style").value;
+  current.announcementLabel = $("announcement-label")?.value || current.announcementLabel || "Update";
+  current.announcementPinned = Boolean($("announcement-pinned")?.checked);
+  current.announcementPriority = Number($("announcement-priority")?.value || 0);
+  current.announcementStart = $("announcement-start")?.value || "";
+  current.announcementEnd = $("announcement-end")?.value || "";
+  current.announcementLink = $("announcement-link")?.value.trim() || "#blog";
+  current.announcementLinkText = $("announcement-link-text")?.value.trim() || "Open update";
   current.modules = [...document.querySelectorAll("[name=module-check]:checked")].map((input) => +input.value);
   current.weeks = [...document.querySelectorAll("[name=week-check]:checked")].map((input) => +input.value);
   if (current.type === "blog") { current.modules = []; current.weeks = []; }
-  current.destinations = [current.type === "blog" ? "blog" : "library"];
+  current.destinations = [current.type === "blog" ? "blog" : current.type === "announcement" ? "home" : "library"];
   current.blocks ||= [];
   const embeddedVideo = current.blocks.find((block) => block.type === "youtube");
   if (current.type === "video") {
@@ -336,6 +358,14 @@ function fillInspector() {
   $("editor-grid").classList.add(`page-${layout}`);
   document.querySelectorAll("[data-page-width]").forEach((button) => button.classList.toggle("selected", button.dataset.pageWidth === layout));
   $("video-settings").hidden = current.type !== "video";
+  $("announcement-settings").hidden = current.type !== "announcement";
+  $("announcement-label").value = current.announcementLabel || "Update";
+  $("announcement-pinned").checked = Boolean(current.announcementPinned);
+  $("announcement-priority").value = String(current.announcementPriority || 0);
+  $("announcement-start").value = datetimeInputValue(current.announcementStart);
+  $("announcement-end").value = datetimeInputValue(current.announcementEnd);
+  $("announcement-link").value = current.announcementLink || "#blog";
+  $("announcement-link-text").value = current.announcementLinkText || "Open update";
   $("type-pill").textContent = topicName(current.type);
   $("document-slug-display").textContent = current.slug ? `Label · ${current.slug}` : "";
   $("thumb-preview").hidden = !current.thumbnail;
@@ -408,6 +438,7 @@ function openEditor(post = null, type = "blog", opts = {}) {
   currentUndoIndex = 0;
   dirty = !!opts.fromDraft;
   $("publish").hidden = false;
+  $("publish").textContent = previous?.status === "published" ? "Update live post" : "Publish to website";
   $("unpublish").hidden = !(previous && previous.status === "published");
   $("delete-content").hidden = !previous;
   $("dashboard-view").hidden = true;
@@ -416,7 +447,7 @@ function openEditor(post = null, type = "blog", opts = {}) {
   $("editor-view").hidden = false;
   document.querySelectorAll(".rail-button[data-view]").forEach((button) => button.classList.remove("active"));
   setSaveState(opts.fromDraft ? "Recovered local draft" : "Ready to edit");
-  setDeploy(previous?.status === "published" ? "Editing a published piece. Your changes stay on this device until you publish." : "Unpublished changes stay local until you publish.");
+  setDeploy(previous?.status === "published" ? "Editing a live post. Click Update live post when ready." : "Changes stay on this device until you publish.");
 }
 
 function markDirty({ render = false, checkpoint = false } = {}) {
@@ -738,6 +769,7 @@ function runQuality(showToast = false) {
   const add = (level, text) => issues.push({ level, text });
   if (!current.title.trim()) add("error", "Add a title before publishing.");
   if (!current.excerpt.trim()) add("warning", "Add a short card excerpt for the blog or library.");
+  if (current.type === "announcement" && current.excerpt.trim().length > 180) add("warning", "Keep the announcement short: 180 characters or fewer works best at the top of the site.");
   if (current.type === "video" && !youtubeID(current.youtube) && !current.blocks.some((block) => block.type === "youtube" && youtubeID(block.url))) add("error", "Add a valid YouTube URL.");
   for (const [index, block] of current.blocks.entries()) {
     if (block.type === "image" && block.src && !block.decorative && !block.alt?.trim()) add("warning", `Image block ${index + 1} needs alt text, or mark it decorative.`);
@@ -767,6 +799,7 @@ function dashboardSelection() { return [...document.querySelectorAll("[data-sele
 
 async function commitPost(state) {
   if (busy || !publisher) return;
+  const isLiveUpdate = previous?.status === "published";
   syncModelFromFields();
   current.status = state;
   current.updatedAt = now();
@@ -778,7 +811,7 @@ async function commitPost(state) {
   if (state !== "published" && !confirm("Unpublish this content? It will disappear from the live website, but remain in GitHub history.")) return;
   busy = true;
   document.querySelectorAll(".editor-view input,.editor-view textarea,.editor-view select,.editor-view button").forEach((input) => { input.disabled = true; });
-  setSaveState(state === "published" ? "Publishing…" : "Unpublishing…", "saving");
+  setSaveState(state === "published" ? (isLiveUpdate ? "Updating live post…" : "Publishing…") : "Unpublishing…", "saving");
   try {
     const referenced = new Set([current.thumbnail, current.socialImage, ...(current.blocks || []).flatMap((block) => [block.src, ...(block.items || []).map((item) => item.src), ...(block.columns || []).flatMap((col) => col.map((item) => item.src))])].filter(Boolean));
     const included = uploads.filter((asset) => referenced.has(asset.path));
@@ -795,7 +828,7 @@ async function commitPost(state) {
     $("unpublish").hidden = state !== "published";
     $("delete-content").hidden = false;
     await loadVersions();
-    toast(state === "published" ? "Published to GitHub. The public site is updating." : "Unpublished from the live site.");
+    toast(state === "published" ? (isLiveUpdate ? "Live post updated. The public site is updating." : "Published to GitHub. The public site is updating.") : "Unpublished from the live site.");
   } catch (error) { setSaveState("Not published · your draft is saved", "error"); toast(error.message || "Publishing failed. Your local draft remains saved.", true); }
   finally { busy = false; document.querySelectorAll(".editor-view input,.editor-view textarea,.editor-view select,.editor-view button").forEach((input) => { input.disabled = false; }); $("doc-title").disabled = false; $("doc-excerpt").disabled = false; $("doc-intro").disabled = false; }
 }
@@ -997,9 +1030,9 @@ $("back-dashboard").onclick = async () => { if (dirty) await persistDraft(); set
 $("doc-title").addEventListener("input", () => { if (!$("meta-slug").dataset.edited) $("meta-slug").value = slugify($("doc-title").value); markDirty(); $("document-slug-display").textContent = `Label · ${slugify($("meta-slug").value || $("doc-title").value)}`; });
 $("doc-excerpt").addEventListener("input", () => markDirty());
 $("doc-intro").addEventListener("input", () => markDirty());
-for (const id of ["meta-type", "meta-category", "meta-author", "meta-slug", "seo-title", "seo-description", "social-image", "thumb-alt", "thumb-ratio", "thumb-focus-x", "thumb-focus-y", "thumb-rotate", "youtube-url", "page-theme", "hero-style"]) {
+for (const id of ["meta-type", "meta-category", "meta-author", "meta-slug", "seo-title", "seo-description", "social-image", "thumb-alt", "thumb-ratio", "thumb-focus-x", "thumb-focus-y", "thumb-rotate", "youtube-url", "page-theme", "hero-style", "announcement-label", "announcement-pinned", "announcement-priority", "announcement-start", "announcement-end", "announcement-link", "announcement-link-text"]) {
   $(id).addEventListener("input", () => { if (id === "meta-slug") $(id).dataset.edited = "1"; syncModelFromFields(); updateSearchPreview(); updateThumbPreview(); updateLivePreview(); runQuality(false); markDirty(); });
-  $(id).addEventListener("change", () => { syncModelFromFields(); if (id === "meta-type") { current.destinations = [current.type === "blog" ? "blog" : "library"]; $("video-settings").hidden = current.type !== "video"; $("type-pill").textContent = topicName(current.type); } markDirty({ checkpoint: true }); });
+  $(id).addEventListener("change", () => { syncModelFromFields(); if (id === "meta-type") { current.destinations = [current.type === "blog" ? "blog" : current.type === "announcement" ? "home" : "library"]; $("video-settings").hidden = current.type !== "video"; $("announcement-settings").hidden = current.type !== "announcement"; $("type-pill").textContent = topicName(current.type); $("publish").textContent = previous?.status === "published" ? "Update live post" : "Publish to website"; } markDirty({ checkpoint: true }); });
 }
 $("meta-topics").addEventListener("input", renderTopicChips);
 $("meta-topics").addEventListener("keydown", (event) => { if (["Enter", ","].includes(event.key)) { event.preventDefault(); const topic = $("meta-topics").value.trim().replace(/,$/, ""); if (topic && !current.topics.includes(topic)) current.topics.push(topic); $("meta-topics").value = ""; renderTopicChips(); markDirty(); } });

@@ -634,7 +634,7 @@ function route() {
     ({
       home: () => renderHome(main, posts),
       help: () => renderHelp(main),
-      navigate: () => renderLifeNavigation(main),
+      navigate: () => renderHelp(main),
       library,
       learn: library,
       blog,
@@ -645,6 +645,7 @@ function route() {
       },
       tool: () => renderTool(main, decodeURIComponent(id || "")),
       play: () => renderInteractiveTool(main, decodeURIComponent(id || "")),
+      guided: () => renderLifeNavigation(main, decodeURIComponent(id || "")),
       team: () => renderTeam(main),
       simplyfocus: () => renderSimplyFocus(main),
       personality: () => renderPersonalityTest(main),
@@ -669,7 +670,7 @@ function route() {
   window.scrollTo(0, 0);
   const title =
     name === "navigate"
-      ? "Navigate My Life"
+      ? "Find what I need"
       : name === "personality"
       ? "Full Personality Profile"
       : name === "simplyfocus"

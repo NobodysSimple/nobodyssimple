@@ -77,6 +77,20 @@ const rows = [
   ["intensity-thermometer", "Intensity Thermometer", "calm", "intensity", "feel,calm,body", "calmer,minutes", "Slide the current intensity and see lower-demand suggestions change with it."],
   ["choice-pause", "Choice Pause", "action", "steps", "decision,calm,start", "decide,action,minutes", "Take a brief stop–body–urge–consequence–choose sequence before acting."],
   ["social-script-builder", "Social Script Builder", "relate", "scripts", "relate,think,decision,self", "communicate,understand,decide", "Build a message for an ambiguous social moment, then edit or copy it in your own voice."],
+  ["guided-triage", "Life Triage · guided map", "navigate", "guided", "many-things,overload,stuck,feel,body", "understand,organise,action", "Sort several pressures and choose a sensible first step."],
+  ["guided-bottleneck", "Life Bottleneck Finder · guided map", "navigate", "guided", "stuck,many-things,decision,start", "understand,organise,decide", "Compare connected problems and test what may unlock the next step."],
+  ["guided-crossroads", "Crossroads · guided map", "navigate", "guided", "decision,choose,think", "decide,compare,understand", "Compare options, unknowns and small tests before you commit."],
+  ["guided-direction", "Direction Finder · guided map", "navigate", "guided", "direction,identity,choose", "understand,decide,action", "Build a few possible life directions and choose what to test."],
+  ["guided-career", "Career Strategy · guided map", "navigate", "guided", "career,work,learn,decision", "decide,understand,action", "Compare work conditions, routes and evidence to gather next."],
+  ["guided-relationship-crossroads", "Relationship Crossroads · guided map", "navigate", "guided", "relationship,relate,decision", "understand,decide,communicate", "Think through stay, repair, leave or prepare for a conversation."],
+  ["guided-relationship-pattern", "Relationship Pattern Lab · guided map", "navigate", "guided", "relationship,relate,think", "understand,communicate,action", "Map a repeating interaction and find places to interrupt it."],
+  ["guided-burnout", "Burnout & Overload · guided map", "navigate", "guided", "overload,body,work,feel", "understand,organise,calmer", "Separate capacity, recovery, mismatch and outside pressure."],
+  ["guided-motivation", "Motivation Diagnostic · guided map", "navigate", "guided", "motivation,start,stuck,decision", "understand,action,organise", "Work out whether the barrier is clarity, capacity, fear, reward or fit."],
+  ["guided-mental-load", "Mental Load Audit · guided map", "navigate", "guided", "mental-load,overload,start,think", "organise,understand,action", "Empty the open loops and sort what needs action, information or release."],
+  ["guided-identity", "Identity Transition · guided map", "navigate", "guided", "identity,change,feel,relationship", "understand,action,calmer", "Name what ended, what remains and what you could try next."],
+  ["guided-environment", "Environment Fit · guided map", "navigate", "guided", "environment,work,sensory,body", "understand,organise,decide", "Compare your needs with the demands of a place or role."],
+  ["guided-money", "Money & Independence · guided map", "navigate", "guided", "money,decision,start,overload", "understand,organise,decide", "Map a money goal, constraints and the next safe action."],
+  ["guided-rebuild", "Life Rebuild · guided map", "navigate", "guided", "rebuild,many-things,overload,foundation", "organise,action,understand", "Put safety, stability, connection and direction in a workable order."],
 ];
 
 export const interactiveTools = rows.map(
@@ -102,18 +116,20 @@ const groupNames = [
   ["relate", "Relationships"],
   ["identity", "Self-understanding"],
   ["reflect", "Positive attention"],
+  ["navigate", "Guided maps"],
 ];
 const groupFor = (key) => groupNames.find((group) => group[0] === key)?.[1] || "Interactive";
 const hrefFor = (tool) => {
   if (tool.id === "emotion-compass") return "#compass";
   if (tool.id === "sensory-playground") return "nd-play.html";
   if (tool.id === "nobody-radio") return "#simplyfocus";
+  if (tool.id.startsWith("guided-")) return "#guided/" + encodeURIComponent(tool.id.slice(7));
   return "#play/" + encodeURIComponent(tool.id);
 };
 export const interactiveCardMarkup = (tool, index = 0) =>
   '<a class="interactive-tool-card" href="' +
   escape(hrefFor(tool)) +
-  '"><span class="interactive-tool-kind">Interactive · choose your way</span><span class="interactive-tool-number">' +
+  '"><span class="interactive-tool-kind">' + (tool.group === "navigate" ? "Guided tool · choose a route" : "Interactive · choose your way") + '</span><span class="interactive-tool-number">' +
   String(index + 1).padStart(2, "0") +
   '</span><h3>' +
   escape(tool.title) +
@@ -128,6 +144,7 @@ export function recommendInteractiveTools(goal, selectedSituations, energy) {
     (tool.goals.includes(goal) ? 3 : 0) +
     (tool.id === "social-script-builder" && (goal === "communicate" || chosen.includes("relate")) ? 6 : 0) +
     (tool.id === "urgent-important-matrix" && (goal === "organise" || goal === "action" || chosen.some((tag) => ["start", "decision", "think"].includes(tag))) ? 6 : 0) +
+    (tool.group === "navigate" && (goal === "understand" || goal === "decide" || goal === "organise" || chosen.some((tag) => ["many-things", "stuck", "decision", "career", "relationship", "overload"].includes(tag))) ? 4 : 0) +
     (Number(energy) === 0 && ["body", "calm", "feel", "sensory"].some((tag) => tool.situations.includes(tag)) ? 1 : 0);
   const defaults = {
     calmer: ["breathing-pacer", "five-senses-grounding", "urge-surfing"],
@@ -136,7 +153,7 @@ export function recommendInteractiveTools(goal, selectedSituations, energy) {
     communicate: ["social-script-builder", "boundary-sorter", "perspective-wheel"],
     action: ["task-shrinker", "friction-finder", "transition-bridge"],
     minutes: ["breathing-pacer", "choice-pause", "attention-spotlight"],
-    understand: ["body-sensation-map", "facts-interpretation-unknown", "needs-compass"],
+    understand: ["guided-triage", "body-sensation-map", "facts-interpretation-unknown"],
   };
   const ranked = [...interactiveTools].sort((a, b) => score(b) - score(a));
   const extra = (defaults[goal] || defaults.understand)

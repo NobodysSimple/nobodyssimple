@@ -1,4 +1,4 @@
-const VERSION = "NS Personal Psychological Guide 1.4 · Evidence-gated adaptive edition";
+const VERSION = "NS Personal Psychological Guide 1.5 · 100-situation edition";
 const DRAFT_KEY = "nobodys-simple-full-profile-draft-v3";
 const STATE_KEY = "nobodys-simple-profile-state-checkins-v1";
 
@@ -14,7 +14,7 @@ const COMPACT_PAIR_IDS = new Set([
   "rel-intimacy","rel-autonomy","orderliness","decision-deliberation"
 ]);
 const COMPACT_VALUE_ROUNDS = 10;
-const FOLLOWUP_BUDGET = 3;
+const FOLLOWUP_BUDGET = 0;
 let followupCount = 0;
 let motiveFollowupsQueued = false;
 
@@ -114,15 +114,15 @@ const REGULATION_SCENARIOS = [
 ];
 
 const MODULES = [
-  {id:"temperament",title:"Temperament & attention",time:"5–7 min",intro:"How reward, uncertainty, energy, attention and sensory input tend to move through your day."},
-  {id:"dispositions",title:"Personality facets",time:"7–9 min",intro:"A broad set of separate tendencies. Different facets can point in different directions."},
-  {id:"relationships",title:"Relationships & communication",time:"6–8 min",intro:"Closeness, space, attachment, communication preferences and first responses to conflict."},
-  {id:"regulation",title:"Emotion regulation & adaptation",time:"6–8 min",intro:"What you tend to do with emotion, pressure, ambiguity and self-presentation."},
-  {id:"motives",title:"Motives, needs & values",time:"7–9 min",intro:"What pulls action, what feels supported or frustrated right now, and which values you choose when they compete."},
-  {id:"identity",title:"Identity & self-understanding",time:"5–6 min",intro:"How you experience continuity, clarity, agency, authenticity and your life story."},
-  {id:"domains",title:"Work, money & learning",time:"7–9 min",intro:"Desired environments, financial habits and the ways you prefer to learn. These are exploratory preferences."},
-  {id:"decisions",title:"Decisions, conflict & change",time:"4–6 min",intro:"How you gather information, begin, continue and revise a course of action."},
-  {id:"snapshot",title:"Your current context",time:"2–3 min",intro:"A separate snapshot of your present state and surroundings. It is not a personality trait."}
+  {id:"temperament",title:"Temperament & attention",time:"2–3 min",intro:"How reward, uncertainty, energy, attention and sensory input tend to move through your day."},
+  {id:"dispositions",title:"Personality facets",time:"3–4 min",intro:"A broad set of separate tendencies. Different facets can point in different directions."},
+  {id:"relationships",title:"Relationships & communication",time:"2–3 min",intro:"Closeness, space, attachment, communication preferences and first responses to conflict."},
+  {id:"regulation",title:"Emotion regulation & adaptation",time:"2–3 min",intro:"What you tend to do with emotion, pressure, ambiguity and self-presentation."},
+  {id:"motives",title:"Motives, needs & values",time:"1–2 min",intro:"What pulls action, what feels supported or frustrated right now, and which values you choose when they compete."},
+  {id:"identity",title:"Identity & self-understanding",time:"2–3 min",intro:"How you experience continuity, clarity, agency, authenticity and your life story."},
+  {id:"domains",title:"Work, money & learning",time:"2–3 min",intro:"Desired environments, financial habits and the ways you prefer to learn. These are exploratory preferences."},
+  {id:"decisions",title:"Decisions, conflict & change",time:"2–3 min",intro:"How you gather information, begin, continue and revise a course of action."},
+  {id:"snapshot",title:"Your current context",time:"1–2 min",intro:"A separate snapshot of your present state and surroundings. It is not a personality trait."}
 ];
 
 function dimension(id,title,group,kind,definition,fn,analogy,contexts,cues,more,less,needs,friction,...statementParts) {
@@ -379,6 +379,17 @@ const WORK_PREFERENCES = [
   ["work-impact","Social impact","Contributing to a community or cause I care about."]
 ].map(x=>({id:x[0],group:"domains",type:"I5",title:x[1],prompt:"How desirable is this feature in your work?",text:x[2]}));
 
+const WORK_DIMENSIONS = WORK_PREFERENCES.map((item) => simpleDimension(
+  item.id,
+  item.title,
+  "domains",
+  item.text,
+  "This work condition may support your attention, motivation or recovery.",
+  "This condition may be less important, or may need a different balance, depending on the role.",
+  `When a work or study setting offers ${item.text.toLowerCase()}, I tend to notice the difference.`,
+  `I can usually tell whether ${item.title.toLowerCase()} is helping or draining me.`
+));
+
 const SCENARIOS = [
   {id:"conflict-criticism",group:"relationships",type:"rankChoice",title:"Conflict · criticism",prompt:"Someone important criticises you in a way that feels unfair. What would you be most likely to do first, and what might you do next?",choices:["Address the issue immediately and directly.","Step away until I understand what I think and feel.","Try to reduce tension, even if I leave my concern unstated for now.","Analyse exactly what happened before deciding whether to respond.","Respond strongly so the other person understands the impact.","Wait to see whether the issue resolves on its own."]},
   {id:"conflict-boundary",group:"relationships",type:"rankChoice",title:"Conflict · boundary",prompt:"Someone ignores a boundary you have already stated. What would you be most likely to do first, and what might you do next?",choices:["Restate the boundary clearly and directly.","Take space and decide what limit I need next.","Ask what happened before deciding how to respond.","Try to preserve the relationship and raise it later.","Show how angry or hurt I feel so the impact is clear.","Wait to see whether they notice or change on their own."]},
@@ -451,8 +462,8 @@ const SPECIAL_STEPS = [
 
 const ALL_DIMENSIONS = DIMENSIONS
   .concat(DISPOSITION_DATA)
-  .concat(MORE_DIMENSIONS.filter(d=>!["regulation-flexibility","initiation","sustainment","adaptability"].includes(d.id)))
-  .concat(IDENTITY_DIMENSIONS,IDENTITY_EXTRA,RELATIONSHIP_DIMENSIONS.filter(d=>!["initiation","sustainment","adaptability"].includes(d.id)),DOMAIN_DIMENSIONS.filter(d=>d.id!=="money-risk"&&d.id!=="money-time"),LEARNING_DIMENSIONS,CHANGE_DIMENSIONS)
+  .concat(MORE_DIMENSIONS.filter(d=>!["initiation","sustainment","adaptability"].includes(d.id)))
+  .concat(IDENTITY_DIMENSIONS,IDENTITY_EXTRA,RELATIONSHIP_DIMENSIONS.filter(d=>!["initiation","sustainment","adaptability"].includes(d.id)),DOMAIN_DIMENSIONS.filter(d=>d.id!=="money-risk"&&d.id!=="money-time"),LEARNING_DIMENSIONS,CHANGE_DIMENSIONS,WORK_DIMENSIONS)
   .filter((d,i,all)=>all.findIndex(x=>x.id===d.id)===i);
 
 function shuffle(list) {
@@ -480,33 +491,50 @@ function compactItemsFor(d) {
   return d.items.slice(0,limit);
 }
 
-function compileFlow(valueRounds) {
-    const modules=MODULES.map(mod=>{
-    let steps=[];
-    if(mod.id==="motives") {
-      steps.push(...MOTIVE_STEPS,...NEED_STEPS);
-      for(let i=0;i<valueRounds.length;i++) steps.push({id:"values-"+i,group:"motives",type:"values",title:"Values · choice "+(i+1)+" of "+valueRounds.length,prompt:"Choose the value most important to how you want to live, then the one least central in this set.",cards:valueRounds[i]});
-      steps.push(SPECIAL_STEPS.find(s=>s.id==="motivation-quality"));
-    } else if(mod.id==="identity") {
-      steps.push(SPECIAL_STEPS.find(s=>s.id==="self-worth-contingencies"),SPECIAL_STEPS.find(s=>s.id==="identity-story"),SPECIAL_STEPS.find(s=>s.id==="identity-setback"));
-    } else {
-      steps.push(...SPECIAL_STEPS.filter(s=>s.group===mod.id && s.type!=="ratingMatrix" && s.id!=="identity-story" && s.id!=="identity-setback"));
-    }
-    const dims=ALL_DIMENSIONS.filter(d=>d.group===mod.id);
-    const dimSteps=dims.flatMap(d=>compactItemsFor(d).map(item=>({
-      id:item.id,group:mod.id,type:item.type||"T7",dimension:d.id,title:d.title,prompt:"Across most situations over roughly the past year, how much is this like you?",text:item.text,reverse:item.reverse
-    })));
-    if(mod.id==="temperament") steps=[...dimSteps];
-    else if(mod.id==="dispositions") steps=[...dimSteps];
-    else if(mod.id==="relationships") steps=[...dimSteps,...steps];
-    else if(mod.id==="regulation") steps=[...dimSteps,...steps];
-    else if(mod.id==="identity") steps=[...dimSteps,...steps];
-    else if(mod.id==="domains") steps=[...dimSteps,...steps];
-    else if(mod.id==="decisions") steps=[...dimSteps];
-    else if(mod.id==="snapshot") steps=[...steps];
-    return Object.assign({},mod,{steps});
+/* The public route is now a fixed 100-item situation map.  It keeps two
+ * observations for fifty high-value dimensions, but asks about a concrete
+ * context instead of asking people to rate an abstract identity.  The same
+ * scoring and report engine still receives the underlying item values, so
+ * titles and guidance continue to change with the response pattern. */
+const SHORT_DIMENSION_IDS = [
+  "reward","stimulation","intellectual-curiosity","uncertainty-intolerance","conflict-anxiety",
+  "effortful-control","negative-urgency","positive-urgency","persistence","sensory-orienting",
+  "sensory-overload","interoception","sociability","social-boldness","assertiveness",
+  "anxiousness","emotional-volatility","stress-vulnerability","irritability","compassion",
+  "tact","orderliness","imagination","thoroughness","personal-standards","rel-intimacy",
+  "rel-autonomy","rel-reassurance","attachment-anxiety","attachment-avoidance","rel-repair",
+  "agency","regulation-flexibility","rumination","self-soothing","personal-agency","authenticity",
+  "identity-exploration","identity-commitment","money-security","planning-dependence","work-autonomy",
+  "work-social","work-creative","learning-persistence","decision-deliberation","decision-intuition",
+  "decision-reopening","initiation","adaptability"
+];
+function shortScenarioSteps() {
+  const dimensions=Object.fromEntries(ALL_DIMENSIONS.map(d=>[d.id,d]));
+  const values=[
+    "I would rarely respond this way; a different response would be more likely.",
+    "I might respond this way in a particular setting, but it would not be my usual response.",
+    "It would depend strongly on the people, stakes, energy or sensory conditions.",
+    "I would often respond this way when the situation fits.",
+    "This is one of my clearest and most familiar responses."
+  ];
+  return SHORT_DIMENSION_IDS.flatMap((id)=>{
+    const d=dimensions[id];
+    if(!d||!Array.isArray(d.items)) return [];
+    return d.items.slice(0,2).map((item,index)=>{
+      const context=String(d.contexts||"a situation covered by this pattern").split(",").map(x=>x.trim()).filter(Boolean)[index] || String(d.contexts||"a situation covered by this pattern");
+      const pressure=index===1?" The same kind of situation happens again when you are tired, rushed or under pressure.":"";
+      return {
+        id:item.id,group:d.group,type:"scenario",dimension:d.id,title:d.title,text:item.text,reverse:item.reverse,
+        prompt:`Imagine ${context.charAt(0).toLowerCase()+context.slice(1)}.${pressure} Which response is closest to what you would usually do?`,
+        options:values
+      };
+    });
   });
-  return modules;
+}
+
+function compileFlow(valueRounds) {
+  const shortSteps=shortScenarioSteps();
+  return MODULES.map(mod=>Object.assign({},mod,{steps:shortSteps.filter(step=>step.group===mod.id)})).filter(mod=>mod.steps.length);
 }
 
 let phase="intro";
@@ -614,22 +642,22 @@ function queueFollowups(step) {
 
 function renderIntro(root) {
   const saved=savedDraft();
-  const modules=MODULES.map(m=>"<li><span><b>"+esc(m.title)+"</b><small>"+esc(m.intro)+"</small></span><em>"+esc(m.time)+"</em></li>").join("");
+  const modules=MODULES.map(m=>"<li><span><b>"+esc(m.title)+"</b><small>"+esc(m.intro)+"</small></span><em>"+esc(m.steps?.length?Math.max(1,Math.round(m.steps.length/6))+" min":m.time)+"</em></li>").join("");
   const resume=saved
     ? "<aside class='pf-resume'><b>A saved profile draft is on this device.</b><p>It is stored only in this browser. Anyone using this browser profile could reopen it.</p><div class='pf-button-row'><button type='button' class='button' id='pf-resume'>Resume draft</button><button type='button' class='button secondary' id='pf-clear-draft'>Clear draft</button></div></aside>"
     : "";
   root.innerHTML=[
     "<div class='wrap pf-wrap'><section class='pf-intro'>",
-    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple · Personal Psychological Guide 1.4</p>",
+    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple · Personal Psychological Guide 1.5</p>",
     "<h1>A map of how you work<br><em>with room for change.</em></h1>",
     "<p class='lead'>A compact adaptive self-reflection assessment that turns your answers into a readable guide to patterns, relationships, work, money, decisions, regulation and growth—not a fixed type.</p>",
-    "<div class='pf-facts'><span>About 45–70 minutes</span><span>Up to 200 adaptive steps</span><span>16 interpretive chapters</span><span>Pause and return if you save locally</span></div>",
+    "<div class='pf-facts'><span>About 15–20 minutes</span><span>100 situation choices</span><span>16 interpretive chapters</span><span>Pause and return if you save locally</span></div>",
     "<button class='button' id='pf-start' type='button'>Build my personal guide <span aria-hidden='true'>↗</span></button>",
     "<p class='pf-privacy'>Your answers stay in this tab unless you explicitly choose to save a draft or state check-in on this device. Nothing is sent to Nobody’s Simple.</p></div>",
     "<div class='pf-intro-art'><img src='personality-map.png' alt='A friendly map character following a dotted path'><p>More than one pattern can be true at once.</p></div></section>",
     "<section class='pf-principles'><article><span>01</span><h2>Dimensions before types</h2><p>Your separate response patterns are the result. The story title is a playful shorthand, not a psychological category.</p></article><article><span>02</span><h2>Describe before explaining</h2><p>We distinguish what you reported from what might be worth testing. The assessment cannot tell you why a pattern developed.</p></article><article><span>03</span><h2>State is not trait</h2><p>The final check-in describes right now. It is shown apart from your longer-term responses.</p></article></section>",
     "<section class='pf-scope'><div><p class='eyebrow'>A fuller map</p><h2>All parts of the profile</h2><p>Each module can be skipped item by item. Responses use different formats for tendencies, motives, needs, preferences, values and current states; those formats are not combined into one total score.</p></div><ul class='pf-module-list'>"+modules+"</ul></section>",
-    "<aside class='pf-validity'><b>Public edition 1.4 · compact, evidence-gated, exploratory</b><p>This adaptive questionnaire keeps every construct represented, uses paired items where they add the most information, and may ask a small capped number of clarifiers when answers are mixed. Its candidate items, scoring rules and profile interpretations have not been psychometrically validated or normed. It can leave the profile open when evidence does not converge. It does not diagnose, rank or compare you with a population.</p></aside>",
+    "<aside class='pf-validity'><b>Public edition 1.5 · situation-first, evidence-gated, exploratory</b><p>This shorter route asks two concrete situations for fifty useful dimensions. Your responses are compared as a pattern; they are not a diagnosis, rank or population score. The title and guidance can change completely when your reactions change. The scoring rules and profile interpretations have not been psychometrically validated or normed, so the guide can leave the map open when evidence does not converge.</p></aside>",
     resume,
     "<p class='pf-back'><a href='#home'>← Back to the main website</a></p></div>"
   ].join("");
@@ -664,6 +692,7 @@ function b7Options(step,selected) {
 }
 function renderSingleStep(step) {
   const current=answers[step.id];
+  if(step.type==="scenario") return "<p class='pf-prompt'>"+esc(step.prompt)+"</p><div class='pf-scenario-context'><span>Situation response</span><p>Choose the response that sounds most like you in this situation. You can choose the middle option when the answer changes by context.</p></div><h2 class='pf-item'>"+esc(step.text||step.title)+"</h2>"+optionList(step.options.map((label,i)=>[String(i),label]),"pf-answer-"+step.id,current,"numeric");
   if(step.type==="T7") return "<p class='pf-prompt'>"+esc(step.prompt||"Across most situations over roughly the past year, how much is this like you?")+"</p><h2 class='pf-item'>"+esc(step.text||step.title)+"</h2>"+optionList(T7,"pf-answer-"+step.id,current,"numeric");
   if(step.type==="I5"||step.type==="F5"||step.type==="N5"||step.type==="S5") {
     const scale=step.type==="I5"?I5:step.type==="F5"?F5:step.type==="N5"?N5:S5;
@@ -2154,7 +2183,7 @@ function renderResult(root) {
   const portraitCards=read.mechanisms.map(x=>"<article class='pf-portrait-card'><span class='pf-label'>"+esc(x.title)+"</span><p>"+esc(x.text)+"</p></article>").join("");
   const axis=guideAxis(signals,"sociability","Social energy","selective / private","contact-seeking")+guideAxis(signals,"stimulation","Novelty appetite","familiar / steady","exploratory / changing")+guideAxis(signals,"rel-intimacy","Closeness","protected / light","deep / mutual")+guideAxis(signals,"sensory-overload","Input load","lower density","higher density");
   root.innerHTML=[
-    "<div class='wrap pf-result-wrap pf-guide-wrap'><header class='pf-guide-hero'><div class='pf-guide-hero-art'><div class='pf-orbit pf-orbit-one'></div><div class='pf-orbit pf-orbit-two'></div><img class='pf-result-character' src='personality-map.png' alt='The Nobody’s Simple map character'></div><div class='pf-guide-hero-copy'><p class='eyebrow'>Nobody’s Simple · Personal Psychological Guide · Public edition 1.4</p><p class='pf-title-label'>Your answer-linked working profile</p><h1>"+esc(headline)+"</h1><p class='pf-archetype-tagline'>"+esc(primary?(profile.variant?profile.variant.function+" "+primary.tag:primary.tag):"The map is deliberately open: several explanations remain more honest than one confident type.")+"</p><div class='pf-guide-status'><span class='pf-profile-confidence pf-confidence-"+esc(profile.confidence.level)+"'><b>"+esc(profile.confidence.label)+"</b><small>"+esc(profile.confidence.note)+"</small></span><span class='pf-guide-mode'>"+esc(profile.mode)+"</span>"+(profile.variant?"<span class='pf-guide-mode'>Variant · "+esc(profile.variant.name)+"</span>":"")+""+(profile.secondary?"<span class='pf-guide-mode'>Close second · "+esc(profile.secondary.name)+"</span>":"")+"</div></div><div class='pf-guide-hero-story'><span class='pf-label'>A memory hook, not a diagnosis</span><h3>"+esc(story.heading)+"</h3><p>"+esc(story.analogy)+"</p><p><b>Central lesson:</b> "+esc(story.lesson)+"</p></div><div class='pf-guide-hero-known'><span class='pf-label'>What this answer-linked configuration may be known for</span><p>"+esc(story.knownFor)+"</p></div></header>",
+    "<div class='wrap pf-result-wrap pf-guide-wrap'><header class='pf-guide-hero'><div class='pf-guide-hero-art'><div class='pf-orbit pf-orbit-one'></div><div class='pf-orbit pf-orbit-two'></div><img class='pf-result-character' src='personality-map.png' alt='The Nobody’s Simple map character'></div><div class='pf-guide-hero-copy'><p class='eyebrow'>Nobody’s Simple · Personal Psychological Guide · Public edition 1.5</p><p class='pf-title-label'>Your answer-linked working profile</p><h1>"+esc(headline)+"</h1><p class='pf-archetype-tagline'>"+esc(primary?(profile.variant?profile.variant.function+" "+primary.tag:primary.tag):"The map is deliberately open: several explanations remain more honest than one confident type.")+"</p><div class='pf-guide-status'><span class='pf-profile-confidence pf-confidence-"+esc(profile.confidence.level)+"'><b>"+esc(profile.confidence.label)+"</b><small>"+esc(profile.confidence.note)+"</small></span><span class='pf-guide-mode'>"+esc(profile.mode)+"</span>"+(profile.variant?"<span class='pf-guide-mode'>Variant · "+esc(profile.variant.name)+"</span>":"")+""+(profile.secondary?"<span class='pf-guide-mode'>Close second · "+esc(profile.secondary.name)+"</span>":"")+"</div></div><div class='pf-guide-hero-story'><span class='pf-label'>A memory hook, not a diagnosis</span><h3>"+esc(story.heading)+"</h3><p>"+esc(story.analogy)+"</p><p><b>Central lesson:</b> "+esc(story.lesson)+"</p></div><div class='pf-guide-hero-known'><span class='pf-label'>What this answer-linked configuration may be known for</span><p>"+esc(story.knownFor)+"</p></div></header>",
     renderReportNavigation(),
     "<main id='pf-report-content'>",
     guideChapter("pf-variant","00","Your distinct configuration","Why this result is yours","The title is only the doorway. The useful part is the answer-linked activation pattern, function, cost, leverage and experiments below.",renderVariantGuidance(profile,signals),"sunrise"),
@@ -2197,11 +2226,11 @@ function downloadFullReport(root) {
   const exportCss="body{margin:0;background:#f6f0e4;color:#263e34;font-family:Arial,sans-serif}main{max-width:980px;margin:0 auto;padding:28px 5vw 60px}h1,h2,h3,h4{font-family:Georgia,serif;color:#234b3b}p,li{line-height:1.65;color:#56695b}.pf-report-section,.pf-archetype-chapter{margin:24px 0;padding:26px;border:1px solid #ddd8ca;border-radius:14px;background:#fffdf8}.pf-trait-card{margin:8px 0;padding:12px;border:1px solid #ddd8ca;border-radius:9px;background:#fffdf8}.pf-trait-card>summary{font-weight:700;cursor:pointer}.pf-trait-body{padding:10px}.pf-evidence-grid,.pf-archetype-grid,.pf-one-minute-grid,.pf-environment-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pf-evidence-card,.pf-archetype-grid article,.pf-one-minute-grid article,.pf-environment-card{padding:15px;border:1px solid #ddd8ca;border-radius:9px}.pf-collab-feedback,.pf-report-nav,.pf-end-actions,.pf-search,.pf-evidence-filters{display:none}@media(max-width:650px){.pf-evidence-grid,.pf-archetype-grid,.pf-one-minute-grid,.pf-environment-grid{grid-template-columns:1fr}}";
   const exportEnhancements=".pf-profile-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.38fr);gap:18px}.pf-profile-head h1{font:48px/1.05 Georgia,serif}.pf-profile-confidence{padding:14px;border:1px solid #d7dacc;border-radius:10px;background:#f4f6ef}.pf-profile-confidence span,.pf-profile-confidence strong,.pf-profile-confidence small{display:block}.pf-profile-confidence strong{margin:6px 0;font:21px Georgia,serif;color:#315746}.pf-profile-confidence small{font-size:11px;line-height:1.5}.pf-signature-chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.pf-signature-chips span{padding:7px 10px;border:1px solid #d8dfd2;border-radius:999px;background:#f1f5ed;font-size:10px}.pf-profile-one-line{margin:14px 0;padding:16px;border-left:4px solid #315746;background:#edf4e9}.pf-profile-one-line p{font:19px/1.6 Georgia,serif;color:#315746}.pf-mechanism-stack,.pf-mechanism-grid{display:grid;gap:9px}.pf-mechanism-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pf-mechanism-card{padding:14px;border:1px solid #dddace;border-radius:9px;background:#fffdf8}.pf-mechanism-card p{font-size:11px;line-height:1.6}.pf-profile-rules{line-height:1.65}.pf-unknown-list p{padding:9px;border:1px dashed #d1d6ca;font-size:11px}@media(max-width:650px){.pf-profile-head,.pf-mechanism-grid{grid-template-columns:1fr}}";
   const exportGuideCss=".pf-guide-chapter{margin:24px 0;padding:30px;border:1px solid #d9d8ca;border-radius:18px;background:#fffdf8;break-inside:avoid}.pf-guide-hero{display:grid;grid-template-columns:180px 1fr;gap:18px;padding:28px;border:1px solid #d8c8a7;border-radius:18px;background:#f5eddd}.pf-guide-hero-art img{display:block;width:155px;height:145px;object-fit:contain}.pf-guide-hero h1{font:44px/1.03 Georgia,serif}.pf-90-grid,.pf-portrait-grid,.pf-reading-grid,.pf-work-world-grid,.pf-interest-grid,.pf-regulation-state-grid,.pf-decision-flow,.pf-place-grid,.pf-place-cards,.pf-user-manual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pf-90-grid article,.pf-portrait-card,.pf-reading-card,.pf-work-world,.pf-interest-grid article,.pf-regulation-state-grid article,.pf-decision-flow article,.pf-place-cards article,.pf-user-manual-grid article{padding:15px;border:1px solid #ddd8ca;border-radius:10px;background:#fffdf8}.pf-reading-card h3,.pf-work-world h3,.pf-interest-grid h3{font:22px Georgia,serif;color:#315746}.pf-reading-card p,.pf-work-world p,.pf-interest-grid p,.pf-regulation-state-grid p,.pf-decision-flow p{font-size:11px;line-height:1.6}.pf-guide-axis,.pf-place-axis,.pf-guide-meter{padding:10px;border:1px solid #ddd8ca;border-radius:9px}.pf-axis-line,.pf-meter-track{height:7px;margin:8px 0;background:#dfe8d9;border-radius:9px}.pf-axis-line i,.pf-meter-track i{display:block;height:100%;border-radius:9px;background:#679477}.pf-technical-fold,.pf-method-drawer{margin-top:15px;border:1px solid #ddd8ca;border-radius:9px}.pf-technical-fold>summary,.pf-method-drawer>summary{padding:10px;font-weight:700}.pf-limit-fold{margin-top:15px;border:1px solid #ddd8ca;border-radius:9px}.pf-limit-fold>summary{padding:10px;font-weight:700}.pf-limit-fold-body{padding:0 12px 12px}@media(max-width:650px){.pf-guide-hero,.pf-90-grid,.pf-portrait-grid,.pf-reading-grid,.pf-work-world-grid,.pf-interest-grid,.pf-regulation-state-grid,.pf-decision-flow,.pf-place-grid,.pf-place-cards,.pf-user-manual-grid{grid-template-columns:1fr}}";
-  const html="<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Nobody’s Simple · Personal Psychological Guide 1.4</title><style>"+exportCss+exportEnhancements+exportGuideCss+"</style></head><body><main><h1>Nobody’s Simple · Personal Psychological Guide 1.4</h1>"+clone.outerHTML+"</main></body></html>";
+  const html="<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Nobody’s Simple · Personal Psychological Guide 1.5</title><style>"+exportCss+exportEnhancements+exportGuideCss+"</style></head><body><main><h1>Nobody’s Simple · Personal Psychological Guide 1.5</h1>"+clone.outerHTML+"</main></body></html>";
   try {
     const blob=new Blob([html],{type:"text/html;charset=utf-8"});
     const url=URL.createObjectURL(blob),a=document.createElement("a");
-    a.href=url;a.download="nobodys-simple-personal-psychological-guide-1.4.html";
+    a.href=url;a.download="nobodys-simple-personal-psychological-guide-1.5.html";
     document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);
     const status=root.querySelector("#pf-download-status");
     if(status)status.textContent="Your profile file was created in your browser.";

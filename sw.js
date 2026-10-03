@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v27";
+const CACHE = "nobodyssimple-v29";
 const SHELL = [
   "./",
   "index.html",

@@ -149,7 +149,8 @@ export class Publisher {
     };
     uploads.push({ path: "content.json", mode: "100644", type: "blob", content: `${JSON.stringify(next, null, 2)}\n` });
     const newTree = await this.api(`${this.base}/git/trees`, "POST", { base_tree: snapshot.tree, tree: uploads });
-    const commit = await this.api(`${this.base}/git/commits`, "POST", { message: `${post.status === "published" ? "Publish" : "Unpublish"}: ${post.title}`, tree: newTree.sha, parents: [snapshot.head] });
+    const operation = previous && existing ? "Update" : post.status === "published" ? "Publish" : "Unpublish";
+    const commit = await this.api(`${this.base}/git/commits`, "POST", { message: `${operation}: ${post.title}`, tree: newTree.sha, parents: [snapshot.head] });
     await this.api(`${this.base}/git/refs/heads/${this.branch}`, "PATCH", { sha: commit.sha, force: false });
     return { sha: commit.sha, data: next };
   }
