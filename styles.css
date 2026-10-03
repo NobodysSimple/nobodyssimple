@@ -4082,6 +4082,55 @@ footer {
   .pm-dimension-card, .pm-hypothesis { break-inside: avoid; box-shadow: none; }
 }
 
+/* Interpretation update · 1.7 */
+.pf-guidance-intro { border-left-color: #7a5d80; background: rgba(250,247,252,.8); }
+.pf-guidance-card { border-color: #d9cfe0; background: rgba(255,253,249,.92); }
+.pf-guidance-card-head > span { color: #7a5d80; }
+.pf-guidance-card-head h3 { color: #4e3c58; }
+.pf-guidance-card li, .pf-guidance-detail li { grid-template-columns: 28px 1fr; color: #536359; font-size: 12px; line-height: 1.7; }
+.pf-guidance-card li b, .pf-guidance-detail li b { color: #7a5d80; font-size: 10px; }
+.pf-guidance-card li span::first-letter { color: #3b5947; }
+.pf-value-pyramid-wrap { margin: 15px 0 18px; padding: 20px 16px 17px; border: 1px solid #d8dfd2; border-radius: 13px; background: linear-gradient(180deg,#f4f8f0,#edf3e9); }
+.pf-value-pyramid-wrap h3 { margin: 0 0 15px; color: #315746; font: 23px Georgia,serif; }
+.pf-value-pyramid { display: grid; gap: 7px; justify-items: center; }
+.pf-value-pyramid-tier { display: flex; justify-content: center; gap: 7px; width: min(100%, 650px); }
+.pf-value-pyramid-tier span { display: grid; min-width: 104px; min-height: 36px; place-items: center; padding: 7px 11px; border: 1px solid #c8d8c6; border-radius: 8px; background: #fffdf8; color: #315746; font-size: 12px; font-weight: 800; text-align: center; }
+.pf-value-pyramid-tier.tier-1 span { min-width: 170px; border-color: #b87736; background: #fff2d9; color: #734a28; font-size: 15px; }
+.pf-value-pyramid-tier.tier-2 span { background: #f4f0e5; }
+.pf-value-pyramid-tier.tier-3 span { background: #eef5ef; }
+.pf-value-pyramid-tier.tier-4 span { background: #e7f0e8; }
+.pf-value-pyramid-key { display: flex; justify-content: center; flex-wrap: wrap; gap: 7px 18px; margin-top: 13px; color: #708075; font-size: 10px; text-align: center; }
+.pf-value-detail { margin-top: 12px; border: 1px solid #dfe5db; border-radius: 10px; background: rgba(255,253,248,.75); }
+.pf-value-detail > summary { padding: 11px 13px; cursor: pointer; color: #496552; font-size: 11px; font-weight: 800; }
+.pf-value-detail .pf-value-results { padding: 0 12px 12px; }
+.pf-value-empty { margin: 3px 0; color: #68786c; font-size: 12px; }
+.pf-emotion-compass-intro { max-width: 850px; padding: 17px 19px; border-left: 4px solid #c16b59; border-radius: 0 12px 12px 0; background: rgba(255,248,242,.76); color: #5d6d63; font-size: 13px; line-height: 1.7; }
+.pf-emotion-compass-intro p { margin: 0; }
+.pf-emotion-compass-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 17px; }
+.pf-emotion-compass-card { padding: 17px; border: 1px solid #e2cfc4; border-radius: 15px; background: rgba(255,253,249,.86); }
+.pf-emotion-compass-card:nth-child(4n+1) { border-top: 4px solid #b9773b; }
+.pf-emotion-compass-card:nth-child(4n+2) { border-top: 4px solid #6e8c72; }
+.pf-emotion-compass-card:nth-child(4n+3) { border-top: 4px solid #6b819d; }
+.pf-emotion-compass-card:nth-child(4n+4) { border-top: 4px solid #9a6d9b; }
+.pf-compass-direction { display: inline-block; color: #9d623d; font-size: 10px; font-weight: 900; letter-spacing: .12em; }
+.pf-emotion-compass-card h3 { margin: 7px 0 12px; color: #3f594a; font: 22px/1.1 Georgia,serif; }
+.pf-emotion-compass-card p { margin: 9px 0 0; color: #596a5f; font-size: 12px; line-height: 1.65; }
+.pf-emotion-compass-card p b { color: #3e604c; font-size: 11px; }
+.pf-emotion-compass-card .pf-compass-translation { margin-top: 14px; padding-top: 12px; border-top: 1px solid #e9ded7; color: #665a50; }
+.pf-place-examples { color: #376c72!important; font-weight: 800; }
+.pf-place-cards small { display: block; margin-top: 11px; color: #74827e; font-size: 10px; line-height: 1.55; }
+.pf-profile-confidence.pf-confidence-working strong { color: #7a5d80; }
+@media (max-width: 760px) {
+  .pf-emotion-compass-grid { grid-template-columns: 1fr; }
+  .pf-value-pyramid-tier span { min-width: 78px; }
+  .pf-value-pyramid-tier.tier-1 span { min-width: 130px; }
+}
+@media (max-width: 520px) {
+  .pf-value-pyramid-tier { gap: 4px; }
+  .pf-value-pyramid-tier span { min-width: 0; flex: 1; padding: 7px 4px; font-size: 10px; }
+  .pf-value-pyramid-tier.tier-1 span { min-width: 120px; flex: 0 0 120px; font-size: 13px; }
+}
+
 /* Plain, app-like home page and announcement rail */
 .header nav { align-items: center; }
 .header-more { position: relative; }
