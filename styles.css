@@ -1345,6 +1345,68 @@ html {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 9px;
 }
+.situation-option {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+.situation-subparts {
+  margin: 0 4px 5px 27px;
+  padding: 9px 10px 10px;
+  border: 1px solid #d8dfd3;
+  border-radius: 8px;
+  background: #f2f5ed;
+}
+.situation-subparts summary {
+  color: #315944;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  list-style-position: inside;
+}
+.situation-subparts[hidden] {
+  display: none;
+}
+.subpart-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 8px;
+}
+.subpart-pill {
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid #d2dacd;
+  border-radius: 7px;
+  background: #fffdf7;
+  cursor: pointer;
+}
+.subpart-pill:has(input:checked) {
+  border-color: #456b54;
+  background: #e9efe4;
+  box-shadow: inset 0 0 0 1px #456b54;
+}
+.subpart-pill input {
+  flex: 0 0 auto;
+  margin-top: 3px;
+  accent-color: #315944;
+}
+.subpart-pill b,
+.subpart-pill small {
+  display: block;
+}
+.subpart-pill b {
+  font-size: 12px;
+}
+.subpart-pill small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.3;
+}
 .choice-tile {
   display: flex;
   gap: 10px;
@@ -1432,6 +1494,25 @@ html {
 }
 .recommendations {
   padding: 48px 0;
+}
+.not-sure-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 25px;
+  margin-top: 5px;
+  padding: 28px 30px;
+  border: 1px solid #b9cdbd;
+  border-radius: 12px;
+  background: #e9efe4;
+}
+.not-sure-panel h2 {
+  margin: 0 0 6px;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+}
+.not-sure-panel p:not(.eyebrow) {
+  margin: 0;
+  max-width: 560px;
 }
 .recommendation-card .number {
   color: #bb7736;
@@ -2236,6 +2317,13 @@ footer {
   .choice-grid,
   .compact-choices {
     grid-template-columns: 1fr;
+  }
+  .subpart-grid {
+    grid-template-columns: 1fr;
+  }
+  .not-sure-panel {
+    grid-template-columns: 1fr;
+    padding: 23px;
   }
   .emotion-intro-note {
     align-items: start;

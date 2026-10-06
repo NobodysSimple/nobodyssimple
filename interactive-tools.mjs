@@ -93,7 +93,7 @@ const rows = [
   ["guided-rebuild", "Life Rebuild · guided map", "navigate", "guided", "rebuild,many-things,overload,foundation", "organise,action,understand", "Put safety, stability, connection and direction in a workable order."],
 ];
 
-export const interactiveTools = rows.map(
+export const interactiveTools = rows.filter((row) => row[2] !== "navigate").map(
   ([id, title, group, mode, situations, goals, short]) => ({
     id,
     title,
@@ -116,7 +116,6 @@ const groupNames = [
   ["relate", "Relationships"],
   ["identity", "Self-understanding"],
   ["reflect", "Positive attention"],
-  ["navigate", "Guided maps"],
 ];
 const groupFor = (key) => groupNames.find((group) => group[0] === key)?.[1] || "Interactive";
 const hrefFor = (tool) => {
@@ -144,7 +143,6 @@ export function recommendInteractiveTools(goal, selectedSituations, energy) {
     (tool.goals.includes(goal) ? 3 : 0) +
     (tool.id === "social-script-builder" && (goal === "communicate" || chosen.includes("relate")) ? 6 : 0) +
     (tool.id === "urgent-important-matrix" && (goal === "organise" || goal === "action" || chosen.some((tag) => ["start", "decision", "think"].includes(tag))) ? 6 : 0) +
-    (tool.group === "navigate" && (goal === "understand" || goal === "decide" || goal === "organise" || chosen.some((tag) => ["many-things", "stuck", "decision", "career", "relationship", "overload"].includes(tag))) ? 4 : 0) +
     (Number(energy) === 0 && ["body", "calm", "feel", "sensory"].some((tag) => tool.situations.includes(tag)) ? 1 : 0);
   const defaults = {
     calmer: ["breathing-pacer", "five-senses-grounding", "urge-surfing"],
@@ -153,7 +151,7 @@ export function recommendInteractiveTools(goal, selectedSituations, energy) {
     communicate: ["social-script-builder", "boundary-sorter", "perspective-wheel"],
     action: ["task-shrinker", "friction-finder", "transition-bridge"],
     minutes: ["breathing-pacer", "choice-pause", "attention-spotlight"],
-    understand: ["guided-triage", "body-sensation-map", "facts-interpretation-unknown"],
+    understand: ["body-sensation-map", "facts-interpretation-unknown", "emotion-compass"],
   };
   const ranked = [...interactiveTools].sort((a, b) => score(b) - score(a));
   const extra = (defaults[goal] || defaults.understand)

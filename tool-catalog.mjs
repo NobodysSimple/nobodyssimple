@@ -1670,3 +1670,77 @@ export const situations = [
     tools: ["state-check", "brain-dump", "quick-reset"],
   },
 ];
+
+// Optional second-level choices for the quick-help navigator.  These are
+// deliberately short: they narrow the route without turning the front door
+// into another long questionnaire.
+export const situationSubparts = {
+  feel: [
+    { id: "anxious", label: "Anxious or on edge", examples: "fear, dread or waiting", tools: ["state-check", "emotion-check-in", "certainty"], tags: ["feel", "anxious"] },
+    { id: "low", label: "Low, numb or flat", examples: "little energy or feeling", tools: ["state-check", "mixed-feelings", "small-step"], tags: ["feel", "body"] },
+    { id: "angry", label: "Angry or activated", examples: "irritated, hot or ready to react", tools: ["quick-reset", "emotion-check-in", "conflict-pattern"], tags: ["feel", "relate"] },
+    { id: "overwhelmed", label: "Overwhelmed", examples: "too much at once", tools: ["load-balancer", "brain-dump", "quick-reset"], tags: ["feel", "body", "calm"] },
+  ],
+  think: [
+    { id: "worry", label: "Worrying about what might happen", examples: "future-focused thoughts", tools: ["worry-sort", "certainty", "reality-map"], tags: ["think", "decision"] },
+    { id: "rumination", label: "Replaying what already happened", examples: "stuck on the past", tools: ["brain-dump", "thought-map", "pattern-map"], tags: ["think", "self"] },
+    { id: "confused", label: "Confused or unable to sort it", examples: "too many threads", tools: ["brain-dump", "reality-map", "certainty"], tags: ["think", "unsure"] },
+    { id: "intrusive", label: "A thought keeps intruding", examples: "hard to put down", tools: ["worry-sort", "reality-map", "quick-reset"], tags: ["think", "calm"] },
+  ],
+  body: [
+    { id: "tired", label: "Tired or depleted", examples: "sleepy, exhausted or heavy", tools: ["state-check", "load-balancer", "quick-reset"], tags: ["body", "calm"] },
+    { id: "wired", label: "Wired or restless", examples: "alert but unable to settle", tools: ["quick-reset", "grounding", "state-check"], tags: ["body", "calm"] },
+    { id: "hungry", label: "Hungry, thirsty or physically off", examples: "basic needs may be affecting this", tools: ["state-check", "load-balancer"], tags: ["body", "feel"] },
+    { id: "sensory", label: "Overstimulated", examples: "sound, light, touch or people feel too much", tools: ["state-check", "sensory-profile", "quick-reset"], tags: ["body", "stim", "calm"] },
+  ],
+  decision: [
+    { id: "career", label: "Career, study or work", examples: "roles, courses or next direction", tools: ["decision-map", "values-discovery", "future-perspectives"], tags: ["decision", "career", "work"] },
+    { id: "relationship", label: "Relationship or social choice", examples: "stay, speak, ask or step back", tools: ["conversation-map", "boundary-builder", "decision-map"], tags: ["decision", "relationship", "relate"] },
+    { id: "money", label: "Money or practical life", examples: "spending, moving or commitments", tools: ["decision-map", "certainty", "brain-dump"], tags: ["decision", "money"] },
+    { id: "identity", label: "What fits me", examples: "values, identity or the life you want", tools: ["values-discovery", "future-perspectives", "pattern-map"], tags: ["decision", "identity"] },
+    { id: "everyday", label: "A smaller decision today", examples: "the next step is unclear", tools: ["decision-map", "small-step", "friction"], tags: ["decision", "start"] },
+  ],
+  start: [
+    { id: "unclear", label: "I do not know the first step", examples: "the task is vague", tools: ["small-step", "brain-dump", "friction"], tags: ["start", "think"] },
+    { id: "too-big", label: "It feels too big", examples: "the task has too many parts", tools: ["small-step", "brain-dump", "friction"], tags: ["start", "body"] },
+    { id: "avoid", label: "I am avoiding it", examples: "fear, discomfort or dread", tools: ["friction", "reality-map", "state-check"], tags: ["start", "feel"] },
+    { id: "no-energy", label: "I want to, but have no capacity", examples: "energy is the barrier", tools: ["state-check", "load-balancer", "quick-reset"], tags: ["start", "body"] },
+  ],
+  relate: [
+    { id: "boundary", label: "I need a boundary or more space", examples: "say no, pause or ask for room", tools: ["boundary-builder", "conversation-map", "needs-clarifier"], tags: ["relate", "boundary"] },
+    { id: "conflict", label: "We keep having the same conflict", examples: "a repeating loop", tools: ["conflict-pattern", "conversation-map", "pattern-map"], tags: ["relate", "think"] },
+    { id: "ask", label: "I need to ask for something", examples: "support, clarity or a change", tools: ["needs-clarifier", "conversation-map", "boundary-builder"], tags: ["relate", "communicate"] },
+    { id: "unclear", label: "I do not know what they meant", examples: "mixed signals or misunderstanding", tools: ["conversation-map", "reality-map", "perspective-switch"], tags: ["relate", "think"] },
+  ],
+  self: [
+    { id: "pattern", label: "A pattern keeps repeating", examples: "the same response or outcome", tools: ["pattern-map", "maintenance-loop", "function-finder"], tags: ["self", "think"] },
+    { id: "identity", label: "I am unsure who I am", examples: "roles, values or identity feel unclear", tools: ["context-map", "values-discovery", "pattern-map"], tags: ["self", "identity"] },
+    { id: "reaction", label: "My reaction surprised me", examples: "stronger or different than expected", tools: ["state-check", "function-finder", "emotion-check-in"], tags: ["self", "feel"] },
+    { id: "change", label: "I want to change a habit or response", examples: "understand the loop first", tools: ["maintenance-loop", "small-step", "friction"], tags: ["self", "start"] },
+  ],
+  calm: [
+    { id: "panic", label: "Panic or a spike", examples: "very intense right now", tools: ["quick-reset", "grounding", "state-check"], tags: ["calm", "feel"] },
+    { id: "sensory", label: "Sensory overload", examples: "too much sound, light or input", tools: ["grounding", "sensory-profile", "quick-reset"], tags: ["calm", "stim", "body"] },
+    { id: "orient", label: "I need to orient myself", examples: "notice what is happening first", tools: ["state-check", "emotion-check-in", "mixed-feelings"], tags: ["calm", "feel"] },
+  ],
+  reflect: [
+    { id: "values", label: "Clarify what matters", examples: "values, priorities or direction", tools: ["values-discovery", "weekly-review", "future-perspectives"], tags: ["reflect", "decision"] },
+    { id: "memory", label: "Hold onto something good", examples: "notice, savour or remember", tools: ["gratitude", "positive-memory", "gratitude-course"], tags: ["reflect", "feel"] },
+    { id: "journal", label: "Make sense of an experience", examples: "reflect without needing an answer", tools: ["free-journal", "thought-journal", "pattern-map"], tags: ["reflect", "self"] },
+  ],
+  stim: [
+    { id: "bored", label: "Understimulated", examples: "bored, flat or seeking input", tools: ["sensory-profile", "pattern-stims", "state-check"], tags: ["stim", "body"] },
+    { id: "seek", label: "I want a satisfying sensory input", examples: "movement, repetition or texture", tools: ["sensory-profile", "pattern-stims", "state-check"], tags: ["stim", "calm"] },
+    { id: "avoid", label: "Input feels too much", examples: "reduce or change the environment", tools: ["sensory-profile", "masking-map", "quick-reset"], tags: ["stim", "body", "calm"] },
+  ],
+  learn: [
+    { id: "emotions", label: "Emotions and regulation", examples: "how feelings and body cues work", tools: ["emotion-check-in", "mechanism-builder", "competing-models"], tags: ["learn", "feel"] },
+    { id: "reasoning", label: "Thinking and decisions", examples: "bias, evidence or uncertainty", tools: ["claim-checker", "evidence-strength", "uncertainty-calibration"], tags: ["learn", "think", "decision"] },
+    { id: "relationships", label: "People and patterns", examples: "interaction, needs or conflict", tools: ["conversation-map", "conflict-pattern", "function-finder"], tags: ["learn", "relate"] },
+  ],
+  unsure: [
+    { id: "feeling", label: "Start with how I feel", examples: "name the state before choosing a tool", tools: ["state-check", "emotion-check-in"], tags: ["unsure", "feel"] },
+    { id: "need", label: "Start with what I need", examples: "clarify support, rest or action", tools: ["needs-clarifier", "brain-dump"], tags: ["unsure", "self"] },
+    { id: "next", label: "Just give me one next step", examples: "keep it small and practical", tools: ["quick-reset", "small-step", "state-check"], tags: ["unsure", "start"] },
+  ],
+};

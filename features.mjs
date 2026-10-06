@@ -1,6 +1,6 @@
 import { escapeHTML as esc, nearestEmotions, safeHref, safeImage } from "./core.mjs";
 import { profileFor, stateItems } from "./emotion-profiles.mjs";
-import { tools, toolGroups, situations } from "./tool-catalog.mjs";
+import { tools, toolGroups, situations, situationSubparts } from "./tool-catalog.mjs";
 import { interactiveCardMarkup, recommendInteractiveTools } from "./interactive-tools.mjs";
 
 const yt = "https://www.youtube.com/@nobodyssimple";
@@ -129,7 +129,6 @@ export function moodComparisonMarkup(before, after) {
 function renderHomeLegacy(root, posts) {
   const latest = (posts || []).filter((p) => p.type === "blog").slice(0, 3);
   root.innerHTML = `<div class="home-wrap"><section class="cover-hero"><img class="cover-image" src="banner.png" alt="Nobody’s Simple — Psychology for choosing what to do next"><div class="cover-cta"><p class="eyebrow">A practical psychology project</p><p>Start with the moment you’re in. Find one thing that might help.</p><a class="button bright" href="#help">Help me figure out what I need <span aria-hidden="true">↗</span></a></div></section><div class="quick-actions"><a href="#help"><span>01</span><b>Help me figure out what I need</b><small>Three tailored starting points</small></a><a href="#compass"><span>02</span><b>Name the feeling or state</b><small>Emotions, energy and body cues</small></a><a href="#library"><span>03</span><b>Follow a learning thread</b><small>52 weeks · four quarters</small></a><a href="#maps"><span>04</span><b>My Maps</b><small>Return to notes saved on this device</small></a></div>
- <section class="navigation-systems-home" aria-labelledby="navigate-home-title"><div class="section-head"><div><p class="eyebrow">Guided tools</p><h2 id="navigate-home-title">Find a useful next step.</h2><p>Short guided maps for decisions, overload, direction, relationships, work, money and rebuilding. Browse them with the other tools.</p></div><a class="text-link" href="#tools">Open the tools ↗</a></div><div class="navigation-door-grid"><a class="navigation-door door-sunrise" href="#tools"><span>START HERE</span><h3>Life Triage</h3><p>Several things feel wrong. Work out what deserves attention first.</p></a><a class="navigation-door door-blue" href="#tools"><span>MAJOR DECISION</span><h3>Crossroads</h3><p>Compare options, unknowns, reversibility and what you can test.</p></a><a class="navigation-door door-teal" href="#tools"><span>WORK / STUDY</span><h3>Career Strategy</h3><p>Turn uncertainty into realistic routes and evidence-gathering experiments.</p></a><a class="navigation-door door-copper" href="#tools"><span>CAPACITY</span><h3>Burnout &amp; Overload</h3><p>Separate recovery deficit, mismatch, emotional load and structural pressure.</p></a><a class="navigation-door door-lilac" href="#tools"><span>RELATIONSHIPS</span><h3>Pattern Lab</h3><p>Map the loop that keeps repeating and find interruption points.</p></a><a class="navigation-door door-night" href="#tools"><span>FOUNDATIONS</span><h3>Life Rebuild</h3><p>Sequence foundation, stability, connection, direction and expansion.</p></a></div></section>
  <section class="personality-promo" aria-labelledby="personality-promo-title"><span class="personality-promo-icon" aria-hidden="true">✳</span><div><p class="eyebrow">Personal Psychological Guide · evidence-gated</p><h2 id="personality-promo-title">A useful guide, not a fixed type.</h2><p>Explore patterns, relationships, work, money, decisions, regulation and growth, then receive a visual interpretation that teaches you what may change the pattern and what to try next.</p></div><div class="personality-promo-action"><span>ABOUT 45–70 MIN · 16 CHAPTERS · SAVE LOCALLY</span><a class="button" href="#personality">Build my guide ↗</a></div></section>
  <section class="install-ribbon"><div class="round-icon">↗</div><div><p class="eyebrow">Keep it close</p><h2>Add Nobody’s Simple to your home screen</h2><p>Your web app—one tap away, no app store required.</p></div><a href="#install" class="button">Install the app <span aria-hidden="true">→</span></a><button type="button" class="icon-button" data-install-prompt aria-label="Install Nobody’s Simple">↓</button></section>
  <section class="channel-hero"><div><p class="eyebrow">The Nobody’s Simple channel</p><h2>Watch the ideas take shape.</h2><p>Animated psychology, complicated questions and useful ways to choose what to do next.</p></div><a class="channel-cta" href="${yt}" target="_blank" rel="noopener noreferrer"><span class="play-button">▶</span><span><small>VISIT THE CHANNEL</small><strong>Watch on YouTube</strong></span><span aria-hidden="true">↗</span></a></section>
@@ -163,17 +162,9 @@ export function renderHome(root, posts) {
   const latestBlog = allPosts.find((post) => post.type === "blog");
   const latestVideo = allPosts.find((post) => post.type === "video");
   const maps = loadMaps();
-  const systems = [
-    ["Life Triage", "Several things feel wrong. Find the first step.", "#tools", "START HERE", "system-sunrise"],
-    ["Crossroads", "Compare a major choice before you commit.", "#tools", "DECISIONS", "system-violet"],
-    ["Career Strategy", "Explore work routes that fit your life.", "#tools", "WORK / STUDY", "system-teal"],
-    ["Relationship Lab", "Understand a repeating relationship pattern.", "#tools", "RELATIONSHIPS", "system-rose"],
-    ["Burnout & Overload", "Separate low capacity from a bad fit.", "#tools", "CAPACITY", "system-copper"],
-    ["Life Rebuild", "Put foundations before bigger goals.", "#tools", "FOUNDATIONS", "system-night"],
-  ];
   const continueSection = maps.length ? `<section class="home-section home-continue"><div class="home-section-head"><div><p class="eyebrow">Continue</p><h2>Pick up where you stopped.</h2></div><a href="#maps">Open My Maps</a></div><div class="continue-grid"><a class="continue-card" href="#maps"><span class="continue-icon">↗</span><div><b>${esc(maps[0].title || "Saved map")}</b><p>${esc(maps[0].status || "Saved note")} · ${new Date(maps[0].savedAt).toLocaleDateString()}</p></div><strong>Open</strong></a><a class="continue-card" href="#help"><span class="continue-icon">✳</span><div><b>Find another starting point</b><p>Tell us what is happening and what would help.</p></div><strong>Start</strong></a></div></section>` : `<section class="home-section home-first-visit"><p class="eyebrow">New here?</p><h2>Start with one clear question.</h2><p>Use quick help, a tool or the learning library. You do not need to know the right label first.</p><a class="button" href="#help">Find my starting point</a></section>`;
   const contentCard = (post, verb) => post ? `<a class="latest-card" href="#post/${encodeURIComponent(post.id)}">${post.thumbnail && safeImage(post.thumbnail) ? `<img src="${esc(post.thumbnail)}" alt="${esc(post.thumbnailAlt || "")}" loading="lazy">` : `<span class="latest-placeholder" aria-hidden="true">${post.type === "video" ? "▶" : "Aa"}</span>`}<div><span class="eyebrow">${post.type === "video" ? "Latest video" : "Latest note"}</span><h3>${esc(post.title)}</h3><p>${esc(post.excerpt || post.intro || "")}</p><strong>${verb}</strong></div></a>` : `<div class="latest-card latest-empty"><span class="eyebrow">${verb === "Watch" ? "Videos" : "Notes"}</span><h3>New content will appear here.</h3><p>Check back when the next update is published.</p></div>`;
-  root.innerHTML = `<div class="home-wrap home-app">${announcementRail(allPosts)}<section class="home-masthead"><img src="banner.png" alt="Nobody’s Simple illustrated landscape"><div><p class="eyebrow">Psychology for real life</p><h1>What would help today?</h1><p>Understand what is happening. Find a useful next step.</p></div></section><section class="home-section home-doors" aria-labelledby="home-doors-title"><div class="home-section-head"><div><p class="eyebrow">Start here</p><h2 id="home-doors-title">Choose what you need.</h2></div><a href="#help">Quick help</a></div><div class="home-door-grid"><a class="home-door door-now" href="#help"><span>RIGHT NOW</span><h3>Help me right now</h3><p>I feel stressed, stuck, overwhelmed or confused.</p><strong>Find a tool</strong></a><a class="home-door door-map" href="#help"><span>BIGGER QUESTION</span><h3>Help me work something out</h3><p>I need help with a decision, relationship, career or life problem.</p><strong>Find my route</strong></a><a class="home-door door-explore" href="#tools"><span>LOOK AROUND</span><h3>I want to explore</h3><p>Read, watch, learn, play or try a reflection.</p><strong>Explore</strong></a></div><p class="home-shortcut">Not sure? <a href="#help">Tell me what is going on</a> · 2 minutes to start</p></section>${continueSection}<section class="home-section home-systems" aria-labelledby="home-systems-title"><div class="home-section-head"><div><p class="eyebrow">Guided tools</p><h2 id="home-systems-title">Tools for bigger questions.</h2><p>Open the Tools page to browse short guided maps alongside the interactive activities.</p></div><a href="#tools">See guided tools</a></div><div class="home-system-grid">${systems.map(([title, text, href, label, tone]) => `<a class="home-system-card ${tone}" href="#tools"><span>${label}</span><h3>${title}</h3><p>${text}</p><strong>Browse tools</strong></a>`).join("")}</div></section><section class="home-section home-quick"><div class="home-section-head"><div><p class="eyebrow">Quick help</p><h2>Small tools for this moment.</h2><p>Short activities with clear instructions.</p></div><a href="#tools">Browse all tools</a></div><div class="home-quick-grid"><a href="#compass"><b>Understand a feeling</b><span>Emotion Compass</span></a><a href="#tool/brain-dump"><b>Clear my head</b><span>Mental Load tools</span></a><a href="#tool/quick-reset"><b>Calm my body</b><span>Quick Reset</span></a><a href="#questions"><b>Choose a next step</b><span>Emotion to Action</span></a></div></section><section class="home-section home-understand"><div class="home-section-head"><div><p class="eyebrow">Understand yourself</p><h2>A guide, not a label.</h2><p>Explore your patterns, then decide what you want to do with them.</p></div></div><div class="understand-grid"><a href="#personality"><b>Psychological Profile</b><span>Build a detailed personal guide.</span><strong>Start</strong></a><a href="#compass"><b>My Patterns</b><span>Notice feelings, body states and repeated loops.</span><strong>Explore</strong></a><a href="#maps"><b>My Maps</b><span>Keep notes and experiments on this device.</span><strong>Open</strong></a></div></section><section class="home-section home-latest"><div class="home-section-head"><div><p class="eyebrow">Latest</p><h2>New from Nobody’s Simple.</h2></div><a href="#blog">All notes</a></div><div class="latest-grid">${contentCard(latestBlog, "Read")} ${contentCard(latestVideo, "Watch")}</div></section><section class="home-section home-learn"><div><p class="eyebrow">Learn and explore</p><h2>Understand psychology well enough to think for yourself.</h2><p>Follow the curriculum, use the interactive playground, or make a soundscape.</p><div class="home-link-row"><a class="button" href="#library">Open Learn</a><a class="button secondary" href="#simplyfocus">Open SimplyFocus</a><a class="button secondary" href="#tools">Play and explore</a></div></div></section><section class="home-section home-why"><div><p class="eyebrow">Why this exists</p><h2>People are complicated. Advice should not flatten them.</h2><p>Nobody’s Simple helps you understand what is happening, find the right kind of help and choose what to do next.</p><a href="#blog">Read the story</a></div></section><section class="home-section home-community"><div><p class="eyebrow">Help shape the project</p><h2>Share feedback or get involved.</h2><p>Tell us what works, what does not and what would help next.</p></div><div class="home-link-row"><a class="button" href="#community">Send feedback</a><a class="button secondary" href="#volunteer">Volunteer</a><a class="button secondary" href="#install">Install the app</a></div></section></div>`;
+  root.innerHTML = `<div class="home-wrap home-app">${announcementRail(allPosts)}<section class="home-masthead"><img src="banner.png" alt="Nobody’s Simple illustrated landscape"><div><p class="eyebrow">Psychology for real life</p><h1>What would help today?</h1><p>Understand what is happening. Find a useful next step.</p></div></section><section class="home-section home-doors" aria-labelledby="home-doors-title"><div class="home-section-head"><div><p class="eyebrow">Start here</p><h2 id="home-doors-title">Choose what you need.</h2></div><a href="#help">Quick help</a></div><div class="home-door-grid"><a class="home-door door-now" href="#help"><span>RIGHT NOW</span><h3>Help me right now</h3><p>I feel stressed, stuck, overwhelmed or confused.</p><strong>Find a tool</strong></a><a class="home-door door-map" href="#help"><span>WORK SOMETHING OUT</span><h3>Help me work something out</h3><p>I need help with a decision, relationship, career or life problem.</p><strong>Find my starting point</strong></a><a class="home-door door-explore" href="#tools"><span>LOOK AROUND</span><h3>I want to explore</h3><p>Read, watch, learn, play or try a reflection.</p><strong>Explore</strong></a></div><p class="home-shortcut">Not sure? <a href="#help">Tell me what is going on</a> · 2 minutes to start</p></section>${continueSection}<section class="home-section home-quick"><div class="home-section-head"><div><p class="eyebrow">Quick help</p><h2>Small tools for this moment.</h2><p>Short activities with clear instructions.</p></div><a href="#tools">Browse all tools</a></div><div class="home-quick-grid"><a href="#compass"><b>Understand a feeling</b><span>Emotion Compass</span></a><a href="#tool/brain-dump"><b>Clear my head</b><span>Mental Load tools</span></a><a href="#tool/quick-reset"><b>Calm my body</b><span>Quick Reset</span></a><a href="#questions"><b>Choose a next step</b><span>Emotion to Action</span></a></div></section><section class="home-section home-understand"><div class="home-section-head"><div><p class="eyebrow">Understand yourself</p><h2>A guide, not a label.</h2><p>Explore your patterns, then decide what you want to do with them.</p></div></div><div class="understand-grid"><a href="#personality"><b>Psychological Profile</b><span>Build a detailed personal guide.</span><strong>Start</strong></a><a href="#compass"><b>My Patterns</b><span>Notice feelings, body states and repeated loops.</span><strong>Explore</strong></a><a href="#maps"><b>My Maps</b><span>Keep notes and experiments on this device.</span><strong>Open</strong></a></div></section><section class="home-section home-latest"><div class="home-section-head"><div><p class="eyebrow">Latest</p><h2>New from Nobody’s Simple.</h2></div><a href="#blog">All notes</a></div><div class="latest-grid">${contentCard(latestBlog, "Read")} ${contentCard(latestVideo, "Watch")}</div></section><section class="home-section home-learn"><div><p class="eyebrow">Learn and explore</p><h2>Understand psychology well enough to think for yourself.</h2><p>Follow the curriculum, use the interactive playground, or make a soundscape.</p><div class="home-link-row"><a class="button" href="#library">Open Learn</a><a class="button secondary" href="#simplyfocus">Open SimplyFocus</a><a class="button secondary" href="#tools">Play and explore</a></div></div></section><section class="home-section home-why"><div><p class="eyebrow">Why this exists</p><h2>People are complicated. Advice should not flatten them.</h2><p>Nobody’s Simple helps you understand what is happening, find the right kind of help and choose what to do next.</p><a href="#blog">Read the story</a></div></section><section class="home-section home-community"><div><p class="eyebrow">Help shape the project</p><h2>Share feedback or get involved.</h2><p>Tell us what works, what does not and what would help next.</p></div><div class="home-link-row"><a class="button" href="#community">Send feedback</a><a class="button secondary" href="#volunteer">Volunteer</a><a class="button secondary" href="#install">Install the app</a></div></section></div>`;
   const rail = root.querySelector("[data-announcement-rail]");
   if (rail) {
     const slides = [...rail.querySelectorAll("[data-announcement-slide]")];
@@ -185,7 +176,11 @@ export function renderHome(root, posts) {
 }
 
 export function renderHelp(root) {
-  root.innerHTML = `<div class="wrap">${area("Quick help", "What do you need?", "Pick what fits. You will get three starting points. Nothing here diagnoses you.")}<form id="navigator-form" class="navigator-layout"><section class="navigator-left"><fieldset><legend>What is happening?</legend><div class="choice-grid">${situations.map((s) => `<label class="choice-tile"><input type="checkbox" name="situation" value="${s.id}"><span><b>${esc(s.label)}</b><small>${esc(s.examples)}</small></span></label>`).join("")}</div></fieldset><fieldset><legend>What would help?</legend><div class="choice-grid compact-choices">${[
+  const situationMarkup = situations.map((s) => {
+    const subparts = situationSubparts[s.id] || [];
+    return `<div class="situation-option"><label class="choice-tile"><input type="checkbox" name="situation" value="${esc(s.id)}"><span><b>${esc(s.label)}</b><small>${esc(s.examples)}</small></span></label>${subparts.length ? `<details class="situation-subparts" data-subparts-for="${esc(s.id)}" hidden><summary>Narrow this down (optional)</summary><div class="subpart-grid">${subparts.map((part) => `<label class="subpart-pill"><input type="checkbox" name="subpart" value="${esc(s.id)}:${esc(part.id)}"><span><b>${esc(part.label)}</b><small>${esc(part.examples)}</small></span></label>`).join("")}</div></details>` : ""}</div>`;
+  }).join("");
+  root.innerHTML = `<div class="wrap">${area("Quick help", "What do you need?", "Choose what fits. Then narrow it down if you want.")}<form id="navigator-form" class="navigator-layout"><section class="navigator-left"><fieldset><legend>What is happening?</legend><div class="choice-grid">${situationMarkup}</div></fieldset><fieldset><legend>What would help?</legend><div class="choice-grid compact-choices">${[
     ["understand", "Understand it"],
     ["calmer", "Feel calmer"],
     ["organise", "Organise it"],
@@ -193,91 +188,56 @@ export function renderHelp(root) {
     ["action", "Do something"],
     ["communicate", "Communicate"],
     ["minutes", "Get through the next few minutes"],
-  ]
-    .map(
-      ([v, l]) =>
-        `<label class="choice-pill"><input type="radio" name="goal" value="${v}"><span>${l}</span></label>`,
-    )
-    .join(
-      "",
-    )}</div></fieldset></section><aside class="navigator-side"><label class="field">How much energy is available right now?<input type="range" name="energy" min="0" max="2" value="1"><span class="range-ends"><span>Very little</span><output id="energy-label">Some</output><span>Plenty</span></span></label><label class="field">How intense does it feel?<input type="range" name="intensity" min="0" max="10" value="5"><span class="range-ends"><span>Gentle</span><output id="intensity-label">5 / 10</output><span>Very intense</span></span></label><label class="interactive-opt-in"><input type="checkbox" name="includeInteractive" checked><span><b>Also show interactive tools</b><small>Three options you can use without writing.</small></span></label><button class="button full" type="submit">Find my starting points ↗</button><p class="fine">Nothing is saved unless you choose to save an individual reflection.</p></aside></form><section id="recommendations" class="recommendations" aria-live="polite"></section></div>`;
+  ].map(([v, l]) => `<label class="choice-pill"><input type="radio" name="goal" value="${v}"><span>${l}</span></label>`).join("")}</div></fieldset></section><aside class="navigator-side"><label class="field">How much energy is available right now?<input type="range" name="energy" min="0" max="2" value="1"><span class="range-ends"><span>Very little</span><output id="energy-label">Some</output><span>Plenty</span></span></label><label class="field">How intense does it feel?<input type="range" name="intensity" min="0" max="10" value="5"><span class="range-ends"><span>Gentle</span><output id="intensity-label">5 / 10</output><span>Very intense</span></span></label><label class="interactive-opt-in"><input type="checkbox" name="includeInteractive" checked><span><b>Show interactive tools too</b><small>Move, tap or sort instead of writing.</small></span></label><button class="button full" type="submit">Find my starting points ↗</button><p class="fine">Nothing is saved unless you choose to save an individual reflection.</p></aside></form><section class="not-sure-panel" aria-labelledby="not-sure-title"><div><p class="eyebrow">Not sure yet?</p><h2 id="not-sure-title">Work out how you feel and what you need first.</h2><p>Use a short guided check-in before choosing a tool.</p></div><a class="button bright" href="#questions">Help me work that out ↗</a></section><section id="recommendations" class="recommendations" aria-live="polite"></section></div>`;
   const form = root.querySelector("#navigator-form");
-  form.elements.energy.oninput = (e) =>
-    (root.querySelector("#energy-label").value = [
-      "Very little",
-      "Some",
-      "Plenty",
-    ][+e.target.value]);
-  form.elements.intensity.oninput = (e) =>
-    (root.querySelector("#intensity-label").value = `${e.target.value} / 10`);
+  form.querySelectorAll("[name=situation]").forEach((input) => {
+    const panel = form.querySelector(`[data-subparts-for="${input.value}"]`);
+    if (!panel) return;
+    const sync = () => {
+      panel.hidden = !input.checked;
+      if (!input.checked) panel.querySelectorAll("input").forEach((part) => (part.checked = false));
+    };
+    input.addEventListener("change", sync);
+    sync();
+  });
+  form.elements.energy.oninput = (e) => (root.querySelector("#energy-label").value = ["Very little", "Some", "Plenty"][+e.target.value]);
+  form.elements.intensity.oninput = (e) => (root.querySelector("#intensity-label").value = `${e.target.value} / 10`);
   form.onsubmit = (e) => {
     e.preventDefault();
-    const chosen = [...form.querySelectorAll("[name=situation]:checked")].map(
-      (x) => situations.find((s) => s.id === x.value),
-    );
-    const goal = form.elements.goal.value;
+    const chosen = [...form.querySelectorAll("[name=situation]:checked")].map((x) => situations.find((s) => s.id === x.value)).filter(Boolean);
+    const chosenSubparts = [...form.querySelectorAll("[name=subpart]:checked")].map((x) => {
+      const [parent, id] = x.value.split(":");
+      const part = (situationSubparts[parent] || []).find((item) => item.id === id);
+      return part ? { ...part, parent } : null;
+    }).filter(Boolean);
+    const goal = form.elements.goal?.value || "understand";
     const energy = +form.elements.energy.value;
     const showInteractive = form.elements.includeInteractive.checked;
-    const interactivePicks = recommendInteractiveTools(goal, chosen.map((item) => item.id), energy);
+    const selectedTags = [...new Set([...chosen.map((item) => item.id), ...chosenSubparts.flatMap((item) => item.tags || [])])];
+    const interactivePicks = recommendInteractiveTools(goal, selectedTags, energy);
     const pool = [];
-    for (const s of chosen)
-      for (const id of s.tools) {
-        const tool = tools.find((t) => t.id === id);
-        if (tool && !pool.includes(tool)) pool.push(tool);
-      }
-    if (!chosen.length) {
-      for (const id of ["state-check", "brain-dump", "quick-reset"])
-        pool.push(tools.find((t) => t.id === id));
-    }
-    const boost =
-      goal === "calmer"
-        ? ["quick-reset", "grounding", "load-balancer"]
-        : goal === "organise"
-          ? ["brain-dump", "thought-map", "reality-map"]
-          : goal === "decide"
-            ? ["decision-map", "values-discovery", "certainty"]
-            : goal === "communicate"
-              ? ["conversation-map", "needs-clarifier", "boundary-builder"]
-              : goal === "action"
-                ? ["small-step", "friction", "goal-builder"]
-                : goal === "minutes"
-                  ? ["quick-reset", "grounding", "pattern-stims"]
-                  : goal === "understand"
-                    ? ["state-check", "emotion-check-in", "pattern-map"]
-                    : [];
-    const rank = (t) =>
-      (boost.includes(t.id) ? 4 : 0) +
-      (energy === 0 &&
-      ["grounding", "quick-reset", "state-check", "small-step"].includes(t.id)
-        ? 3
-        : 0) +
-      (chosen.some((s) => s.tools.includes(t.id)) ? 3 : 0);
+    const addTool = (id) => { const tool = tools.find((item) => item.id === id); if (tool && !pool.some((item) => item.id === tool.id)) pool.push(tool); };
+    chosen.forEach((situation) => situation.tools.forEach(addTool));
+    chosenSubparts.forEach((part) => (part.tools || []).forEach(addTool));
+    if (!chosen.length) ["state-check", "brain-dump", "quick-reset"].forEach(addTool);
+    const boost = goal === "calmer" ? ["quick-reset", "grounding", "load-balancer"] : goal === "organise" ? ["brain-dump", "thought-map", "reality-map"] : goal === "decide" ? ["decision-map", "values-discovery", "certainty"] : goal === "communicate" ? ["conversation-map", "needs-clarifier", "boundary-builder"] : goal === "action" ? ["small-step", "friction", "decision-map"] : goal === "minutes" ? ["quick-reset", "grounding", "state-check"] : ["state-check", "emotion-check-in", "pattern-map"];
+    const rank = (tool) => (chosenSubparts.some((part) => part.tools.includes(tool.id)) ? 8 : 0) + (boost.includes(tool.id) ? 4 : 0) + (energy === 0 && ["grounding", "quick-reset", "state-check", "small-step"].includes(tool.id) ? 3 : 0) + (chosen.some((situation) => situation.tools.includes(tool.id)) ? 3 : 0);
     pool.sort((a, b) => rank(b) - rank(a));
-    const picks = [
-      ...pool,
-      ...boost.map((id) => tools.find((t) => t.id === id)).filter(Boolean),
-    ]
-      .filter((t, i, a) => a.findIndex((x) => x.id === t.id) === i)
-      .slice(0, 3);
-    root.querySelector("#recommendations").innerHTML =
-      `<p class="eyebrow">Three gentle starting points</p><h2>Take what fits. Leave the rest.</h2><p class="fine">Picked from your choices: ${chosen.length ? chosen.map((x) => esc(x.label)).join(" · ") : "not sure yet"}. The suggestions are a simple match to the tools—not an assessment.</p><div class="grid">${picks.map((t, i) => `<a class="card recommendation-card" href="#tool/${t.id}"><span class="number">0${i + 1}</span><h3>${esc(t.title)}</h3><p>${esc(t.short)}</p><small>Why this might fit: ${esc(t.tags.some((tag) => chosen.some((s) => s.tools.includes(t.id))) ? "You selected a situation this tool can help you explore." : goal === "calmer" ? "You asked for a calmer, lower-pressure starting point." : "It gives a concrete place to start without needing the “right” answer.")}</small><span class="arrow">Try this tool →</span></a>`).join("")}</div><p class="fine">You can also <a href="#tools">browse the full toolbox</a> or <a href="#routes">follow a guided route</a>.</p>`;
+    const picks = [...pool, ...boost.map((id) => tools.find((tool) => tool.id === id)).filter(Boolean)].filter((tool, i, all) => all.findIndex((item) => item.id === tool.id) === i).slice(0, 3);
+    const selectedText = [...chosen.map((item) => item.label), ...chosenSubparts.map((item) => item.label)];
+    const recommendations = root.querySelector("#recommendations");
+    recommendations.innerHTML = `<p class="eyebrow">Three starting points</p><h2>Take what fits.</h2><p class="fine">Matched to: ${selectedText.length ? selectedText.map((text) => esc(text)).join(" · ") : "not sure yet"}. This is a simple route, not an assessment.</p><div class="grid">${picks.map((tool, i) => { const matchedPart = chosenSubparts.find((part) => part.tools.includes(tool.id)); const reason = matchedPart ? `You narrowed this to “${matchedPart.label}”.` : chosen.some((situation) => situation.tools.includes(tool.id)) ? "It matches something you selected." : goal === "calmer" ? "You asked for a lower-pressure starting point." : "It gives you one clear place to begin."; return `<a class="card recommendation-card" href="#tool/${encodeURIComponent(tool.id)}"><span class="number">0${i + 1}</span><h3>${esc(tool.title)}</h3><p>${esc(tool.short)}</p><small>Why this might fit: ${esc(reason)}</small><span class="arrow">Try this tool →</span></a>`; }).join("")}</div><p class="fine">You can also <a href="#tools">browse the full toolbox</a>.</p>`;
     if (showInteractive) {
       const section = document.createElement("section");
       section.className = "interactive-recommendations";
-      section.innerHTML = '<p class="eyebrow">Interactive tools · move, explore, choose</p><h2>Want something more interactive? Try these.</h2><p class="fine">A second set of options, matched to the situations and kind of help you selected. The usual three suggestions above are unchanged.</p>';
+      section.innerHTML = '<p class="eyebrow">Interactive tools · move, explore, choose</p><h2>Try something hands-on.</h2><p class="fine">These are matched to the same choices. Nothing above has been replaced.</p>';
       const grid = document.createElement("div");
       grid.className = "grid interactive-recommendation-grid";
-      interactivePicks.forEach((tool, index) => {
-        const holder = document.createElement("div");
-        holder.innerHTML = interactiveCardMarkup(tool, index);
-        if (holder.firstElementChild) grid.append(holder.firstElementChild);
-      });
+      interactivePicks.forEach((tool, index) => { const holder = document.createElement("div"); holder.innerHTML = interactiveCardMarkup(tool, index); if (holder.firstElementChild) grid.append(holder.firstElementChild); });
       section.append(grid);
-      root.querySelector("#recommendations").append(section);
+      recommendations.append(section);
     }
-    root
-      .querySelector("#recommendations")
-      .scrollIntoView({ behavior: "smooth" });
+    recommendations.scrollIntoView({ behavior: "smooth" });
   };
 }
 
@@ -290,7 +250,7 @@ function renderToolboxLegacy(root, filter = "") {
     })
     .join(
       "",
-    )}</div><div id="interactive-tools-slot"></div><section class="section"><div class="card tone-slate"><p class="eyebrow">Saved only on this device</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Your notes are not uploaded or synced.</p><a class="button" href="#maps">Open My Maps →</a></div></section><section class="section routes-callout"><p class="eyebrow">Rather not choose?</p><h2>Use a short guided route.</h2><p>Try a small sequence for an argument, a stuck decision, an overload or a thought spiral.</p><a class="button" href="#routes">See guided routes ↗</a></section></div>`;
+    )}</div><div id="interactive-tools-slot"></div><section class="section"><div class="card tone-slate"><p class="eyebrow">Saved only on this device</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Your notes are not uploaded or synced.</p><a class="button" href="#maps">Open My Maps →</a></div></section></div>`;
   let active = "all";
   const update = () => {
     const q = root.querySelector("#tool-search").value.toLowerCase();
