@@ -181,7 +181,7 @@ function createPost(type = "blog", existing = null) {
     topics: [], category: "", modules: [], weeks: [], thumbnail: "", thumbnailAlt: "",
     destinations: [type === "blog" ? "blog" : type === "announcement" ? "home" : "library"], status: "draft", author: "Drew Horrobin",
     createdAt: now(), updatedAt: now(), publishedAt: "", slug: "", seoTitle: "", seoDescription: "", socialImage: "", theme: "cream", hero: "standard",
-    announcementLabel: type === "announcement" ? "Update" : "", announcementPinned: type === "announcement", announcementPriority: 0, announcementStart: type === "announcement" ? now() : "", announcementEnd: "", announcementLink: "#blog", announcementLinkText: "Open update",
+    announcementLabel: type === "announcement" ? "Update" : "", announcementPinned: type === "announcement", announcementPriority: 0, announcementStart: type === "announcement" ? now() : "", announcementEnd: "", announcementLink: "", announcementLinkText: "Open update",
   };
   if (!Array.isArray(p.blocks) || !p.blocks.length) {
     p.blocks = legacyBodyToBlocks(p.body || "");
@@ -204,7 +204,7 @@ function createPost(type = "blog", existing = null) {
   p.announcementPriority = Number(p.announcementPriority || 0);
   p.announcementStart ||= "";
   p.announcementEnd ||= "";
-  p.announcementLink ||= "#blog";
+  p.announcementLink ||= `#post/${encodeURIComponent(p.id)}`;
   p.announcementLinkText ||= "Open update";
   return p;
 }
@@ -312,7 +312,7 @@ function syncModelFromFields() {
   current.announcementPriority = Number($("announcement-priority")?.value || 0);
   current.announcementStart = $("announcement-start")?.value || "";
   current.announcementEnd = $("announcement-end")?.value || "";
-  current.announcementLink = $("announcement-link")?.value.trim() || "#blog";
+  current.announcementLink = $("announcement-link")?.value.trim() || `#post/${encodeURIComponent(current.id)}`;
   current.announcementLinkText = $("announcement-link-text")?.value.trim() || "Open update";
   current.modules = [...document.querySelectorAll("[name=module-check]:checked")].map((input) => +input.value);
   current.weeks = [...document.querySelectorAll("[name=week-check]:checked")].map((input) => +input.value);
@@ -364,7 +364,7 @@ function fillInspector() {
   $("announcement-priority").value = String(current.announcementPriority || 0);
   $("announcement-start").value = datetimeInputValue(current.announcementStart);
   $("announcement-end").value = datetimeInputValue(current.announcementEnd);
-  $("announcement-link").value = current.announcementLink || "#blog";
+  $("announcement-link").value = current.announcementLink || `#post/${encodeURIComponent(current.id)}`;
   $("announcement-link-text").value = current.announcementLinkText || "Open update";
   $("type-pill").textContent = topicName(current.type);
   $("document-slug-display").textContent = current.slug ? `Label · ${current.slug}` : "";

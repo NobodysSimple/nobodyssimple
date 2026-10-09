@@ -4440,13 +4440,14 @@ footer {
 .support-emergency .button { flex: 0 0 auto; }
 .support-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-bottom: 30px; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--white); }
 .support-controls label { display: grid; gap: 8px; color: var(--muted); font-size: 12px; letter-spacing: .02em; }
-.support-controls select { width: 100%; min-height: 45px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--cream); color: var(--ink); font: inherit; }
-.support-primary { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px; align-items: stretch; margin-bottom: 54px; padding: 26px; border-radius: 14px; background: var(--forest); color: #fffdf8; }
+.support-controls select { width: 100%; min-height: 45px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 7px; background: var(--white); color: var(--ink); font: inherit; }
+.support-primary { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px; align-items: stretch; margin-bottom: 54px; padding: 26px; border-radius: 14px; background: #294b3d; color: #fffdf8; }
 .support-primary h2 { margin: 0 0 10px; color: #fffdf8; }
 .support-primary p { color: rgba(255,253,248,.78); }
 .support-primary .eyebrow { color: #f0c56d; }
 .support-primary .referral-card { margin: 0; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.16); }
 .support-primary .referral-card h3, .support-primary .referral-card p, .support-primary .referral-card .referral-meta { color: #fffdf8; }
+.support-primary .referral-card > p:not(.eyebrow), .support-primary .referral-card .referral-meta, .support-primary .referral-card .referral-meta strong { color: rgba(255,253,248,.82) !important; }
 .support-primary .referral-card .eyebrow { color: #f0c56d; }
 .support-primary .referral-official { color: #fffdf8; }
 .support-primary .button.secondary { border-color: rgba(255,255,255,.45); color: #fffdf8; background: transparent; }
@@ -4463,10 +4464,16 @@ footer {
 .referral-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 18px; }
 .referral-actions .button { text-decoration: none; }
 .referral-actions .button.small { padding: 8px 11px; font-size: .76rem; }
-.referral-official { margin-left: auto; color: var(--forest); font-size: .78rem; }
+.referral-official { margin-left: auto; color: #315746; font-size: .78rem; }
 .support-note { max-width: 850px; margin-top: 54px; padding-top: 24px; border-top: 1px solid var(--line); }
 .support-note h3 { margin-bottom: 8px; }
 .support-note p { margin: 0 0 10px; }
+.kofi-support { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 24px 26px; border: 1px solid #d8d7c8; border-radius: 14px; background: linear-gradient(135deg, #f5ead8, #edf3e9); }
+.kofi-profile { display: flex; align-items: center; gap: 16px; }
+.kofi-profile img { width: 72px; height: 72px; flex: 0 0 72px; border: 3px solid #fffdf8; border-radius: 50%; object-fit: cover; object-position: center 28%; box-shadow: 0 5px 15px rgba(41,75,61,.14); }
+.kofi-support h2 { margin: 5px 0 7px; color: #274d3f; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+.kofi-support p:not(.eyebrow) { max-width: 650px; margin: 0; color: #68786d; }
+.kofi-support .button { flex: 0 0 auto; }
 @media (max-width: 760px) {
   .support-emergency, .support-primary, .section-head { display: block; }
   .support-emergency .button { display: inline-flex; margin-top: 18px; }
@@ -4474,6 +4481,8 @@ footer {
   .support-controls, .referral-grid { grid-template-columns: 1fr; }
   .section-head .fine { margin-top: 8px; }
   .referral-official { margin-left: 0; width: 100%; }
+  .kofi-support { display: block; }
+  .kofi-support .button { margin-top: 18px; }
 }
 .home-app { max-width: 1240px; margin: 0 auto; padding: 16px 32px 70px; }
 .announcement-rail { display: grid; grid-template-columns: auto minmax(0,1fr) auto; gap: 17px; align-items: center; min-height: 46px; padding: 8px 14px; border: 1px solid #c7d6c5; border-radius: 9px; background: #eaf1e5; color: #294c3d; }
