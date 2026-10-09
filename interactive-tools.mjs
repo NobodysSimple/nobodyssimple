@@ -1314,6 +1314,10 @@ export function renderInteractiveTool(root, id) {
     root.innerHTML = '<div class="wrap"><section class="page-intro"><p class="eyebrow">Interactive toolbox</p><h1>That activity could not be found.</h1><p class="lead">Choose another activity from the interactive collection.</p></section><a class="button" href="#tools">Back to tools</a></div>';
     return;
   }
+  if (tool.id === "emotion-timeline") {
+    location.hash = "#tool/emotion-timeline";
+    return;
+  }
   const link = hrefFor(tool);
   if (tool.mode === "link") {
     location.hash = link.slice(1);
