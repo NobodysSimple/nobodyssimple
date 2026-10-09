@@ -348,7 +348,7 @@ function renderBrainMap(results) {
   return `<div class="brain-map"><p class="notice">A rough first sort based on the words in your notes. It can be wrong; every card below is editable and movable.</p>${brainBuckets.map((k) => `<label class="field"><b>${k}</b><textarea data-bucket="${esc(k)}">${esc(buckets[k].join("\n"))}</textarea></label>`).join("")}</div>`;
 }
 
-function renderBodyCheck(root, tool) {
+function renderBodyCheckLegacy(root, tool) {
   root.innerHTML = `<div class="wrap tool-page body-check-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Feel & notice / Body Map</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your answers stay in this browser unless you choose to save the map.</p></section><section id="body-mood-gate">${moodRatingMarkup({ id: "body-mood-before", outputId: "body-mood-before-value", buttonId: "body-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This is the existing starting check for the tool.", buttonText: "Open the Body Map" })}</section><div id="body-check-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Body & State Check</a><a class="chip" href="#compass">Emotion Compass</a><a class="chip" href="#maps">My Maps</a></div></div>`;
   bindMoodRating(root, {
     id: "body-mood-before",
@@ -505,6 +505,286 @@ function renderBodyCheck(root, tool) {
       content.querySelector("#body-copy-map").addEventListener("click", async () => { try { await navigator.clipboard.writeText(text()); content.querySelector("#body-result-status").textContent = "Copied."; } catch { content.querySelector("#body-result-status").textContent = "Copy was blocked by this browser. Use Download instead."; } });
     }
 
+    renderMode();
+  }
+}
+
+function renderBodyCheck(root, tool) {
+  root.innerHTML = `<div class="wrap tool-page body-check-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Feel & notice / Body Map</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your answers stay in this browser unless you choose to save the map.</p></section><section id="body-mood-gate">${moodRatingMarkup({ id: "body-mood-before", outputId: "body-mood-before-value", buttonId: "body-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This is the existing starting check for the tool.", buttonText: "Open the Body Map" })}</section><div id="body-check-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Body & State Check</a><a class="chip" href="#compass">Emotion Compass</a><a class="chip" href="#maps">My Maps</a></div></div>`;
+  bindMoodRating(root, {
+    id: "body-mood-before",
+    outputId: "body-mood-before-value",
+    buttonId: "body-mood-start",
+    onSubmit: (moodBefore) => {
+      root.querySelector("#body-mood-gate").hidden = true;
+      const content = root.querySelector("#body-check-content");
+      content.hidden = false;
+      mountBodyCheck(content, moodBefore);
+    },
+  });
+
+  function mountBodyCheck(content, moodBefore) {
+    const newMarker = (area) => ({
+      area,
+      sensations: [],
+      otherSensation: "",
+      intensity: 2,
+      afterIntensity: 2,
+      movement: "",
+      layer: "",
+      side: "",
+      onset: "",
+      onsetContext: [],
+      movementChange: "",
+      postureChange: "",
+      urges: [],
+      possibilities: [],
+      sensationConfidence: 60,
+      causeConfidence: 20,
+      familiarity: "",
+      baselineDifference: "",
+      experiment: "",
+      experimentOutcome: "",
+      experimentNote: "",
+    });
+    const state = {
+      mode: null,
+      view: "front",
+      markers: [],
+      activeArea: "",
+      unclearLocation: false,
+    };
+    const locationAreas = {
+      front: ["Head / face", "Jaw", "Throat", "Chest", "Stomach / abdomen", "Arms / hands", "Pelvis", "Legs / feet"],
+      back: ["Back of head", "Neck", "Shoulders", "Upper back", "Lower back", "Arms / hands", "Pelvis", "Legs / feet"],
+    };
+    const sensationFamilies = {
+      "Pressure / tension": ["Tight", "Tense", "Clenched", "Compressed", "Heavy", "Pressure"],
+      Movement: ["Fluttering", "Shaking", "Trembling", "Pulsing", "Twitching", "Restless"],
+      Temperature: ["Hot", "Warm", "Cold", "Chills", "Burning"],
+      "Sensation change": ["Numb", "Tingling", "Pins and needles", "Buzzing", "Hypersensitive"],
+      "Internal feeling": ["Empty", "Hollow", "Sinking", "Knotted", "Full", "Nauseous"],
+      "Pain / discomfort": ["Aching", "Sharp", "Throbbing", "Sore", "Cramping", "Painful"],
+    };
+    const onsetOptions = ["Just now", "Minutes ago", "Earlier today", "Since waking", "A few days", "Longer", "Comes and goes", "Not sure"];
+    const onsetContextOptions = ["Woke up", "Ate", "Caffeine", "Exercise", "Argument", "Stressful thought", "Social situation", "Work / study", "Screen time", "Changed position", "Illness", "Nothing obvious"];
+    const possibilityOptions = ["Stress", "Exertion", "Caffeine", "Posture", "Illness", "Hunger", "Sensory load", "Anxiety", "Medication", "Something else", "No idea"];
+    const movementOptions = ["Staying still", "Spreading", "Moving around", "Coming in waves", "Pulsing", "Getting stronger", "Fading", "Coming and going"];
+    const bodyUrges = ["Tense", "Shrink", "Freeze", "Move", "Run", "Stretch", "Hide", "Curl up", "Reach out", "Push away", "Shake", "Cry", "Sleep", "Eat", "Be still", "No urge"];
+    const intensityLabels = ["Barely there", "Noticeable", "Distracting", "Strong", "Overwhelming"];
+    const stageNames = { locate: "Find it", describe: "Show what you notice", characterise: "Stay with it", details: "See what changes it", result: "Your body map", experiment: "Try one gentle change", compare: "Notice what shifted", final: "What we learned" };
+    const stageList = () => state.mode === "quick" ? ["locate", "describe", "characterise", "result", "experiment", "compare", "final"] : ["locate", "describe", "characterise", "details", "result", "experiment", "compare", "final"];
+    const activeMarker = () => state.markers.find((marker) => marker.area === state.activeArea) || state.markers[0] || null;
+    const ensureMarker = (area) => {
+      let marker = state.markers.find((item) => item.area === area);
+      if (!marker) {
+        marker = newMarker(area);
+        state.markers.push(marker);
+      }
+      state.activeArea = area;
+      return marker;
+    };
+    const markerLabel = (marker) => [...marker.sensations, marker.otherSensation].filter(Boolean).join(" · ") || "Not described yet";
+    const escList = (list) => list.map((item) => `<span class="body-map-tag">${esc(item)}</span>`).join("");
+    const choiceButtons = (items, group, selected) => items.map((item) => `<button type="button" class="body-choice ${selected === item ? "selected" : ""}" data-body-choice-group="${esc(group)}" data-body-choice="${esc(item)}"><span>${esc(item)}</span></button>`).join("");
+    const multiButtons = (items, group, selected) => items.map((item) => `<button type="button" class="body-choice ${selected.includes(item) ? "selected" : ""}" data-body-multi-group="${esc(group)}" data-body-multi="${esc(item)}">${esc(item)}</button>`).join("");
+    const progress = (key) => {
+      const actFor = { locate: "find", describe: "show", characterise: "show", details: "watch", result: "map", experiment: "watch", compare: "watch", final: "map" };
+      const acts = [{ id: "find", label: "Find it" }, { id: "show", label: "Show it" }, { id: "watch", label: "Watch it" }, { id: "map", label: "Map it" }];
+      const current = actFor[key];
+      const currentIndex = acts.findIndex((act) => act.id === current);
+      return `<div class="body-progress-acts" aria-label="Body Map stages">${acts.map((act, index) => `<span class="${index <= currentIndex ? "done" : ""} ${act.id === current ? "current" : ""}" title="${esc(act.label)}"><i></i>${esc(act.label)}</span>`).join("")}</div>`;
+    };
+    const nav = (key, back = true) => {
+      const list = stageList();
+      const index = list.indexOf(key);
+      return `<div class="body-scan-nav">${back && index > 0 ? `<button type="button" class="button secondary" data-body-back="${esc(list[index - 1])}">Back</button>` : ""}${index < list.length - 1 ? `<button type="button" class="button" data-body-next="${esc(list[index + 1])}">Continue</button>` : ""}</div>`;
+    };
+    const renderShell = (key, inner) => {
+      content.innerHTML = `<div class="state-scan-shell body-map-shell"><div class="state-scan-topline"><div><p class="eyebrow">Body Map</p><h2>${esc(stageNames[key])}</h2></div><span class="state-scan-time">${state.mode === "quick" ? "Quick map" : "Detailed map"}</span></div>${progress(key)}<section class="state-scan-card body-scan-card" data-body-stage="${esc(key)}">${inner}</section><p id="body-scan-status" class="interactive-status" aria-live="polite">Nothing is scored. Skip anything that does not fit.</p></div>`;
+      content.querySelectorAll("[data-body-next], [data-body-back]").forEach((button) => button.addEventListener("click", () => renderStage(button.dataset.bodyNext || button.dataset.bodyBack)));
+    };
+    const renderStage = (key) => ({ locate: renderLocate, describe: renderDescribe, characterise: renderCharacterise, details: renderDetails, result: renderResult, experiment: renderExperiment, compare: renderCompare, final: renderFinal }[key]());
+
+    const markerTone = (marker) => {
+      const values = marker.sensations.join(" ").toLowerCase();
+      if (/hot|warm|cold|chill|burn/.test(values)) return "tone-temperature";
+      if (/flutter|shak|trembl|puls|twitch|restless/.test(values)) return "tone-motion";
+      if (/numb|tingl|pins|buzz|hypersens/.test(values)) return "tone-change";
+      return "tone-pressure";
+    };
+    const markerMotion = (marker) => {
+      const value = marker.movement || "";
+      if (value === "Spreading") return "movement-spreading";
+      if (/waves|Pulsing/.test(value)) return "movement-waves";
+      if (/Fading|Coming and going/.test(value)) return "movement-fading";
+      if (value === "Getting stronger") return "movement-growing";
+      return "";
+    };
+    const figureShapes = {
+      base: `<circle cx="120" cy="34" r="22"></circle><rect x="108" y="52" width="24" height="23" rx="10"></rect><path d="M91 73 Q120 64 149 73 L158 177 Q150 196 120 199 Q90 196 82 177 Z"></path><path d="M86 174 Q120 190 154 174 L149 218 Q120 232 91 218 Z"></path><path d="M87 78 Q77 79 67 93 L51 170 Q48 181 57 184 Q65 186 69 177 L91 111 Z"></path><path d="M153 78 Q163 79 173 93 L189 170 Q192 181 183 184 Q175 186 171 177 L149 111 Z"></path><path d="M51 171 Q45 181 51 190 Q58 194 65 184 L69 176 Z"></path><path d="M189 171 Q195 181 189 190 Q182 194 175 184 L171 176 Z"></path><path d="M91 216 Q104 224 118 223 L113 362 Q106 373 91 364 L82 231 Z"></path><path d="M149 216 Q136 224 122 223 L127 362 Q134 373 149 364 L158 231 Z"></path><path d="M92 360 Q105 369 114 364 L110 468 Q103 477 91 470 L82 380 Z"></path><path d="M148 360 Q135 369 126 364 L130 468 Q137 477 149 470 L158 380 Z"></path><path d="M91 466 Q103 474 111 468 L108 486 Q89 493 72 485 Q71 476 91 466 Z"></path><path d="M149 466 Q137 474 129 468 L132 486 Q151 493 168 485 Q169 476 149 466 Z"></path>`,
+      front: {
+        "Head / face": `<circle cx="120" cy="34" r="22"></circle>`,
+        Jaw: `<path d="M101 39 Q120 59 139 39 Q136 57 120 60 Q104 57 101 39 Z"></path>`,
+        Throat: `<rect x="108" y="52" width="24" height="23" rx="10"></rect>`,
+        Chest: `<path d="M91 73 Q120 64 149 73 L153 125 Q120 137 87 125 Z"></path>`,
+        "Stomach / abdomen": `<path d="M87 124 Q120 137 153 124 L158 177 Q150 196 120 199 Q90 196 82 177 Z"></path>`,
+        "Arms / hands": `<path d="M86 78 Q77 79 67 93 L51 170 Q48 181 57 184 Q65 186 69 177 L91 111 Z M153 78 Q163 79 173 93 L189 170 Q192 181 183 184 Q175 186 171 177 L149 111 Z M51 171 Q45 181 51 190 Q58 194 65 184 L69 176 Z M189 171 Q195 181 189 190 Q182 194 175 184 L171 176 Z"></path>`,
+        Pelvis: `<path d="M86 174 Q120 190 154 174 L149 218 Q120 232 91 218 Z"></path>`,
+        "Legs / feet": `<path d="M91 216 Q104 224 118 223 L113 362 Q106 373 91 364 L82 231 Z M149 216 Q136 224 122 223 L127 362 Q134 373 149 364 L158 231 Z M92 360 Q105 369 114 364 L110 468 Q103 477 91 470 L82 380 Z M148 360 Q135 369 126 364 L130 468 Q137 477 149 470 L158 380 Z M91 466 Q103 474 111 468 L108 486 Q89 493 72 485 Q71 476 91 466 Z M149 466 Q137 474 129 468 L132 486 Q151 493 168 485 Q169 476 149 466 Z"></path>`,
+      },
+      back: {
+        "Back of head": `<circle cx="120" cy="34" r="22"></circle>`,
+        Neck: `<rect x="108" y="52" width="24" height="23" rx="10"></rect>`,
+        Shoulders: `<path d="M91 73 Q120 64 149 73 L158 104 Q120 119 82 104 Z"></path>`,
+        "Upper back": `<path d="M87 103 Q120 118 153 103 L154 145 Q120 157 86 145 Z"></path>`,
+        "Lower back": `<path d="M86 144 Q120 157 154 144 L158 177 Q150 196 120 199 Q90 196 82 177 Z"></path>`,
+        "Arms / hands": `<path d="M86 78 Q77 79 67 93 L51 170 Q48 181 57 184 Q65 186 69 177 L91 111 Z M153 78 Q163 79 173 93 L189 170 Q192 181 183 184 Q175 186 171 177 L149 111 Z M51 171 Q45 181 51 190 Q58 194 65 184 L69 176 Z M189 171 Q195 181 189 190 Q182 194 175 184 L171 176 Z"></path>`,
+        Pelvis: `<path d="M86 174 Q120 190 154 174 L149 218 Q120 232 91 218 Z"></path>`,
+        "Legs / feet": `<path d="M91 216 Q104 224 118 223 L113 362 Q106 373 91 364 L82 231 Z M149 216 Q136 224 122 223 L127 362 Q134 373 149 364 L158 231 Z M92 360 Q105 369 114 364 L110 468 Q103 477 91 470 L82 380 Z M148 360 Q135 369 126 364 L130 468 Q137 477 149 470 L158 380 Z M91 466 Q103 474 111 468 L108 486 Q89 493 72 485 Q71 476 91 466 Z M149 466 Q137 474 129 468 L132 486 Q151 493 168 485 Q169 476 149 466 Z"></path>`,
+      },
+    };
+    const renderBodyFigure = (view = state.view, interactive = false) => {
+      const zones = locationAreas[view].map((area) => {
+        const marker = state.markers.find((item) => item.area === area);
+        const classes = ["body-svg-zone", marker ? "selected" : "", marker && marker.area === state.activeArea ? "active" : "", marker ? markerTone(marker) : "", marker ? `intensity-${marker.intensity}` : "", marker ? markerMotion(marker) : ""].filter(Boolean).join(" ");
+        const attrs = interactive ? `data-body-region="${esc(area)}" tabindex="0" role="button" aria-label="${esc(area)}${marker ? ", selected" : ""}"` : "";
+        return `<g class="${classes}" ${attrs}>${figureShapes[view][area]}</g>`;
+      }).join("");
+      return `<div class="body-figure-canvas ${interactive ? "interactive" : ""}"><svg class="body-silhouette" viewBox="0 0 240 520" role="img" aria-label="${esc(view === "front" ? "Front body silhouette" : "Back body silhouette")}"><g class="body-svg-base">${figureShapes.base}</g>${zones}<text class="body-figure-view-label" x="120" y="515" text-anchor="middle">${esc(view === "front" ? "FRONT" : "BACK")}</text></svg></div>`;
+    };
+    const renderMode = () => {
+      content.innerHTML = `<div class="state-scan-shell body-map-shell"><div class="state-scan-topline"><div><p class="eyebrow">Body Map</p><h2>What is your body doing?</h2><p class="state-scan-lead">Build a picture from direct sensations and locations. You do not need medical or psychological words.</p></div></div><div class="state-mode-grid"><button type="button" class="state-mode-card" data-body-mode="quick"><span>1–2 minutes</span><strong>Quick Map</strong><p>Locate it, describe it, and see a careful summary.</p></button><button type="button" class="state-mode-card" data-body-mode="deep"><span>3–5 minutes</span><strong>Detailed Map</strong><p>Add timing, movement, context, urges and possible contributors.</p></button></div><details class="state-why"><summary>What this tool is for</summary><p>It helps you notice the body before explaining it. A sensation can have physical, emotional, sensory, environmental or unknown contributors.</p></details><p class="interactive-status">Choose how much detail you want.</p></div>`;
+      content.querySelectorAll("[data-body-mode]").forEach((button) => button.addEventListener("click", () => { state.mode = button.dataset.bodyMode; renderStage("locate"); }));
+    };
+    const selectArea = (area) => { ensureMarker(area); state.unclearLocation = false; renderLocate(); };
+    const selectSpecial = (value) => {
+      if (value === "Whole body") {
+        if (state.markers.some((marker) => marker.area === value)) state.markers = state.markers.filter((marker) => marker.area !== value);
+        else { state.markers = [newMarker(value)]; state.activeArea = value; }
+        state.unclearLocation = false;
+      } else {
+        state.unclearLocation = !state.unclearLocation;
+        state.markers = state.unclearLocation ? [newMarker(value)] : state.markers.filter((marker) => marker.area !== value);
+        state.activeArea = value;
+      }
+      renderLocate();
+    };
+    function renderLocate() {
+      const areas = locationAreas[state.view];
+      const areaButtons = areas.map((area) => `<button type="button" class="body-area-button ${state.markers.some((marker) => marker.area === area) ? "selected" : ""} ${state.activeArea === area ? "active" : ""}" data-body-area="${esc(area)}"><span>${esc(area)}</span>${state.markers.some((marker) => marker.area === area) ? `<i aria-hidden="true">●</i>` : ""}</button>`).join("");
+      const selected = state.markers.map((marker) => `<span class="body-map-tag ${marker.area === state.activeArea ? "active" : ""}">${esc(marker.area)}${marker.area !== "Whole body" && marker.area !== "Not sure where" ? ` <button type="button" data-body-remove-area="${esc(marker.area)}" aria-label="Remove ${esc(marker.area)}">×</button>` : ""}</span>`).join("");
+      renderShell("locate", `<p class="state-scan-question">Where do you notice something?</p><p class="state-scan-help">Tap the body itself, or use the labelled list below. You can map more than one place; each place keeps its own sensations.</p><div class="body-view-tabs"><button type="button" class="chip ${state.view === "front" ? "active" : ""}" data-body-view="front">Front</button><button type="button" class="chip ${state.view === "back" ? "active" : ""}" data-body-view="back">Back</button></div><div class="body-map-layout"><div class="body-map-figure-wrap"><div class="body-figure-instruction">Tap a body area to mark it</div>${renderBodyFigure(state.view, true)}</div><div class="body-area-fallback"><p class="body-fallback-label">Accessible area list</p><div class="body-area-list">${areaButtons}</div></div></div><div class="body-special-choices"><button type="button" class="body-special ${state.markers.some((marker) => marker.area === "Whole body") ? "selected" : ""}" data-body-special="Whole body">Everywhere</button><button type="button" class="body-special ${state.unclearLocation ? "selected" : ""}" data-body-special="Not sure where">Not sure where</button></div><p class="body-selected-summary">${selected || "Nothing selected yet"}</p>${nav("locate", false)}`);
+      content.querySelectorAll("[data-body-view]").forEach((button) => button.addEventListener("click", () => { state.view = button.dataset.bodyView; renderLocate(); }));
+      content.querySelectorAll("[data-body-region], [data-body-area]").forEach((button) => {
+        const choose = () => selectArea(button.dataset.bodyRegion || button.dataset.bodyArea);
+        button.addEventListener("click", choose);
+        button.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); choose(); } });
+      });
+      content.querySelectorAll("[data-body-special]").forEach((button) => button.addEventListener("click", () => selectSpecial(button.dataset.bodySpecial)));
+      content.querySelectorAll("[data-body-remove-area]").forEach((button) => button.addEventListener("click", (event) => { event.stopPropagation(); state.markers = state.markers.filter((marker) => marker.area !== button.dataset.bodyRemoveArea); state.activeArea = state.markers[0]?.area || ""; state.unclearLocation = false; renderLocate(); }));
+      const next = content.querySelector("[data-body-next]");
+      next.disabled = !state.markers.length;
+      next.title = next.disabled ? "Choose an area or Not sure where" : "Continue";
+      next.addEventListener("click", () => { if (!state.activeArea && state.markers[0]) state.activeArea = state.markers[0].area; });
+    }
+    function renderDescribe() {
+      const marker = activeMarker();
+      if (!marker) return renderLocate();
+      const families = Object.entries(sensationFamilies).map(([family, items]) => `<details class="body-sensation-family"><summary>${esc(family)}<span>Tap to choose words</span></summary><div class="body-choice-grid">${multiButtons(items, "sensation", marker.sensations)}</div></details>`).join("");
+      renderShell("describe", `<p class="state-scan-question">What does ${esc(marker.area.toLowerCase())} feel like?</p><p class="state-scan-help">Start with the family that fits. The specific words stay tucked away until you ask for them.</p><div class="body-active-location"><span>Mapping</span><strong>${esc(marker.area)}</strong><button type="button" class="chip" data-body-return-locate>Change area</button></div>${families}<div class="body-choice-grid body-other-choices">${multiButtons(["Hard to describe"], "sensation", marker.sensations)}</div><label class="state-text-label">Something else?<input id="body-other-sensation" value="${esc(marker.otherSensation)}" placeholder="Use your own words"></label>${nav("describe")}`);
+      content.querySelectorAll("[data-body-multi-group='sensation']").forEach((button) => button.addEventListener("click", () => { const item = button.dataset.bodyMulti; marker.sensations = marker.sensations.includes(item) ? marker.sensations.filter((value) => value !== item) : [...marker.sensations, item]; renderDescribe(); }));
+      content.querySelector("#body-other-sensation").addEventListener("input", (event) => { marker.otherSensation = event.target.value; });
+      content.querySelector("[data-body-return-locate]").addEventListener("click", () => renderStage("locate"));
+    }
+    function renderCharacterise() {
+      const marker = activeMarker();
+      if (!marker) return renderLocate();
+      const sideAreas = /Arm|hand|Leg|foot|Shoulder|Jaw|Pelvis|back|Neck/i.test(marker.area);
+      renderShell("characterise", `<p class="state-scan-question">Stay with what you can notice.</p><p class="state-scan-help">Intensity belongs to this mapped area, so the visual strengthens as you move the slider.</p><div class="body-inline-map" data-body-preview>${renderBodyFigure(state.view, false)}</div><label class="body-range-label">How strong is it here?<output id="body-intensity-value">${intensityLabels[marker.intensity]}</output><input id="body-intensity" type="range" min="0" max="4" value="${marker.intensity}"><span><i>Barely there</i><i>Overwhelming</i></span></label><div class="body-detail-block"><h3>What is it doing?</h3><div class="body-choice-grid">${choiceButtons(movementOptions, "movement", marker.movement)}</div></div><div class="body-detail-block"><h3>Where does it seem to sit?</h3><div class="body-choice-grid">${choiceButtons(["On the surface", "Just underneath", "Deep inside", "Around muscles / movement", "Around a joint", "Hard to place"], "layer", marker.layer)}</div></div>${sideAreas ? `<div class="body-detail-block"><h3>Which side, if any?</h3><div class="body-choice-grid">${choiceButtons(["Left", "Right", "Both sides", "Not sure"], "side", marker.side)}</div></div>` : ""}${nav("characterise")}`);
+      content.querySelector("#body-intensity").addEventListener("input", (event) => { marker.intensity = Number(event.target.value); content.querySelector("#body-intensity-value").textContent = intensityLabels[marker.intensity]; content.querySelector("[data-body-preview]").innerHTML = renderBodyFigure(state.view, false); });
+      content.querySelectorAll("[data-body-choice-group]").forEach((button) => button.addEventListener("click", () => { marker[button.dataset.bodyChoiceGroup] = button.dataset.bodyChoice; renderCharacterise(); }));
+    }
+    function renderDetails() {
+      const marker = activeMarker();
+      if (!marker) return renderLocate();
+      renderShell("details", `<p class="state-scan-question">Let’s see what changes it.</p><p class="state-scan-help">This is optional context, not a medical intake. You can leave anything blank.</p><div class="body-detail-block"><h3>When did you first notice it?</h3><div class="body-choice-grid">${choiceButtons(onsetOptions, "onset", marker.onset)}</div></div><div class="body-detail-block"><h3>What else was happening around same time?</h3><p class="body-small-note">These may or may not be related.</p><div class="body-choice-grid">${multiButtons(onsetContextOptions, "onsetContext", marker.onsetContext)}</div></div><div class="body-detail-block"><h3>What changes it when you move?</h3><div class="body-choice-grid">${choiceButtons(["Gets better", "Gets worse", "No change", "Unsure"], "movementChange", marker.movementChange)}</div></div><div class="body-detail-block"><h3>Does changing posture affect it?</h3><div class="body-choice-grid">${choiceButtons(["Gets better", "Gets worse", "No change", "Unsure"], "postureChange", marker.postureChange)}</div></div><div class="body-detail-block"><h3>What does your body want to do?</h3><div class="body-choice-grid">${multiButtons(bodyUrges, "urges", marker.urges)}</div></div><div class="body-detail-block"><h3>Has this happened before?</h3><div class="body-choice-grid">${choiceButtons(["Yes, often", "A few times", "No / unusual", "Not sure"], "familiarity", marker.familiarity)}</div></div><div class="body-detail-block"><h3>Compared with your usual baseline?</h3><div class="body-choice-grid">${choiceButtons(["Pretty normal", "A little different", "Quite different", "Very unusual"], "baselineDifference", marker.baselineDifference)}</div></div><div class="body-confidence-grid"><label class="body-range-label">How sure are you about the sensation?<output id="body-sensation-confidence-value">${marker.sensationConfidence}%</output><input id="body-sensation-confidence" type="range" min="0" max="100" step="10" value="${marker.sensationConfidence}"></label><label class="body-range-label">How sure are you about what it means?<output id="body-cause-confidence-value">${marker.causeConfidence}%</output><input id="body-cause-confidence" type="range" min="0" max="100" step="10" value="${marker.causeConfidence}"></label></div><div class="body-detail-block"><h3>Possibilities to keep in view</h3><p class="body-small-note">These are possibilities, not explanations. You can skip this.</p><div class="body-choice-grid">${multiButtons(possibilityOptions, "possibilities", marker.possibilities)}</div></div>${nav("details")}`);
+      content.querySelectorAll("[data-body-choice-group]").forEach((button) => button.addEventListener("click", () => { marker[button.dataset.bodyChoiceGroup] = button.dataset.bodyChoice; renderDetails(); }));
+      content.querySelectorAll("[data-body-multi-group]").forEach((button) => button.addEventListener("click", () => { const key = button.dataset.bodyMultiGroup; const item = button.dataset.bodyMulti; marker[key] = marker[key].includes(item) ? marker[key].filter((value) => value !== item) : [...marker[key], item]; renderDetails(); }));
+      content.querySelector("#body-sensation-confidence").addEventListener("input", (event) => { marker.sensationConfidence = Number(event.target.value); content.querySelector("#body-sensation-confidence-value").textContent = `${marker.sensationConfidence}%`; });
+      content.querySelector("#body-cause-confidence").addEventListener("input", (event) => { marker.causeConfidence = Number(event.target.value); content.querySelector("#body-cause-confidence-value").textContent = `${marker.causeConfidence}%`; });
+    }
+    const allMarkers = () => state.markers.filter((marker) => marker.area !== "Not sure where");
+    const patternText = () => {
+      const markers = allMarkers();
+      if (state.unclearLocation || !markers.length) return "The signal is hard to place right now. That is useful information too; you do not need to force a precise label.";
+      const locations = markers.map((marker) => marker.area.toLowerCase()).join(", ");
+      const sensations = [...new Set(markers.flatMap((marker) => marker.sensations))].slice(0, 4).join(", ");
+      const changes = [...new Set(markers.map((marker) => marker.movementChange).filter(Boolean))].join(" / ");
+      return `You mapped ${locations}${sensations ? ` with ${sensations.toLowerCase()}` : ""}${changes ? `; movement ${changes.toLowerCase()}` : ""}. This is a description of the pattern, not an explanation of its cause.`;
+    };
+    const safetyFlags = () => {
+      const flags = [];
+      state.markers.forEach((marker) => {
+        const words = marker.sensations.join(" ").toLowerCase();
+        const pain = /pain|aching|sharp|throbb|cramp|pressure|tight/.test(words);
+        const altered = /burn|numb|tingl|pins|weak/.test(words);
+        const chest = /chest|jaw|throat|upper back/.test(marker.area.toLowerCase());
+        const exertion = marker.onsetContext.includes("Exercise") || marker.possibilities.includes("Exertion");
+        const spreading = marker.movement === "Spreading";
+        if ((chest && (pain || altered)) || (pain && exertion) || (altered && spreading)) flags.push(marker);
+      });
+      return flags;
+    };
+    const contextLines = (marker) => [marker.onset && `First noticed ${marker.onset.toLowerCase()}`, marker.onsetContext.length && `around ${marker.onsetContext.join(", ").toLowerCase()}`, marker.movement && `it is ${marker.movement.toLowerCase()}`, marker.movementChange && `movement: ${marker.movementChange.toLowerCase()}`, marker.postureChange && `posture: ${marker.postureChange.toLowerCase()}`, marker.urges.length && `urge to ${marker.urges.join(", ").toLowerCase()}`].filter(Boolean).join(" · ");
+    const markerCard = (marker) => `<article class="body-marker-card"><div><span class="state-map-label">${esc(marker.area)}</span><strong>${esc(markerLabel(marker))}</strong><p>${esc(intensityLabels[marker.intensity])}${marker.movement ? ` · ${esc(marker.movement)}` : ""}${marker.layer ? ` · ${esc(marker.layer.toLowerCase())}` : ""}</p></div><button type="button" class="chip" data-body-edit-area="${esc(marker.area)}">Edit</button></article>`;
+    function renderResult() {
+      const markers = state.markers.length ? state.markers : [newMarker("Not sure where")];
+      const flags = safetyFlags();
+      const possibilityMarkers = markers.filter((marker) => marker.possibilities.length);
+      renderShell("result", `<p class="state-scan-question">Here is the map you built.</p><div class="body-map-result"><div class="body-map-result-visual"><div class="body-result-view-tabs"><button type="button" class="chip ${state.view === "front" ? "active" : ""}" data-body-view="front">Front</button><button type="button" class="chip ${state.view === "back" ? "active" : ""}" data-body-view="back">Back</button></div>${renderBodyFigure(state.view, false)}<p class="body-figure-key">Marked areas glow with their own intensity and texture.</p></div><div class="body-map-result-details"><section><span class="state-map-label">Observation</span><strong>${esc(patternText())}</strong><p>Each location below keeps its own record, so different parts of the body can feel different at the same time.</p></section>${markers.map(markerCard).join("")}</div></div>${flags.length ? `<aside class="body-safety-notice"><strong>This isn’t something this body-mapping tool should try to interpret.</strong><p>Because you marked ${esc(flags.map((marker) => marker.area).join(" and "))} with a combination that can need medical attention, pause here. If it is sudden, severe, worsening, or comes with trouble breathing, fainting, new weakness, or confusion, contact local emergency services now. Otherwise, consider prompt medical or urgent-care advice.</p></aside>` : ""}<div class="body-map-sections"><section class="body-map-section observation"><h3>Observation</h3><p>${esc(patternText())}</p></section><section class="body-map-section context"><h3>Context</h3>${markers.map((marker) => `<p><b>${esc(marker.area)}:</b> ${esc(contextLines(marker) || "No extra context added yet.")}</p>`).join("")}</section>${possibilityMarkers.length ? `<section class="body-map-section possibilities"><h3>Possibilities to keep in view</h3>${possibilityMarkers.map((marker) => `<p><b>${esc(marker.area)}:</b> ${esc(marker.possibilities.join(", "))}</p>`).join("")}<small>These are prompts for noticing, not explanations or diagnoses.</small></section>` : ""}<section class="body-map-section unknown"><h3>Unknown</h3><p>What is causing a sensation cannot be decided by this map. You can know where and how something feels while keeping the cause open.</p></section></div><div class="body-result-actions"><button type="button" class="button secondary" data-body-return-locate>Map another area</button></div>${nav("result")}`);
+      content.querySelectorAll("[data-body-view]").forEach((button) => button.addEventListener("click", () => { state.view = button.dataset.bodyView; renderResult(); }));
+      content.querySelectorAll("[data-body-edit-area]").forEach((button) => button.addEventListener("click", () => { state.activeArea = button.dataset.bodyEditArea; renderStage("describe"); }));
+      content.querySelector("[data-body-return-locate]").addEventListener("click", () => renderStage("locate"));
+    }
+    const experimentOptions = () => {
+      const marker = activeMarker();
+      if (!marker) return [];
+      const options = [];
+      if (marker.sensations.some((item) => /Tight|Tense|Clenched|Compressed/.test(item)) || /Jaw|Shoulder|Neck/.test(marker.area)) options.push("Unclench gently and drop your shoulders");
+      if (marker.movementChange || marker.postureChange || /Muscles|joint/i.test(marker.layer)) options.push("Change position or move gently");
+      if (marker.sensations.some((item) => /Fluttering|Pulsing|Shaking|Trembling/.test(item))) options.push("Breathe normally and notice whether the wave changes");
+      options.push("Rest the area or lower one source of sensory demand", "Drink water or eat something ordinary if that fits", "Do nothing yet; observe it for a few minutes");
+      return [...new Set(options)].slice(0, 5);
+    };
+    function renderExperiment() {
+      const marker = activeMarker();
+      if (!marker) return renderResult();
+      const options = experimentOptions();
+      renderShell("experiment", `<p class="state-scan-question">What could you test gently?</p><p class="state-scan-help">Choose one low-cost change. This is an observation, not a medical test.</p><div class="body-active-location"><span>Testing</span><strong>${esc(marker.area)}</strong></div><div class="body-experiment-grid">${options.map((item) => `<button type="button" class="body-experiment-card ${marker.experiment === item ? "selected" : ""}" data-body-experiment="${esc(item)}"><strong>${esc(item)}</strong><span>${marker.experiment === item ? "Selected" : "Try this"}</span></button>`).join("")}</div>${marker.experiment ? `<div class="body-experiment-callout"><p>Try it for a short while, if comfortable, then record what changed.</p><button type="button" class="button" data-body-start-experiment>I tried it — compare</button></div>` : ""}${nav("experiment")}`);
+      content.querySelectorAll("[data-body-experiment]").forEach((button) => button.addEventListener("click", () => { marker.experiment = button.dataset.bodyExperiment; renderExperiment(); }));
+      content.querySelector("[data-body-start-experiment]")?.addEventListener("click", () => renderStage("compare"));
+    }
+    function renderCompare() {
+      const marker = activeMarker();
+      if (!marker) return renderResult();
+      renderShell("compare", `<p class="state-scan-question">Did anything change?</p><p class="state-scan-help">A change does not prove a cause. No change is useful information too.</p><label class="body-range-label">How strong is ${esc(marker.area.toLowerCase())} now?<output id="body-after-intensity-value">${intensityLabels[marker.afterIntensity]}</output><input id="body-after-intensity" type="range" min="0" max="4" value="${marker.afterIntensity}"><span><i>Barely there</i><i>Overwhelming</i></span></label><div class="body-choice-grid body-change-options">${choiceButtons(["Better", "Worse", "Unchanged", "Unsure"], "experimentOutcome", marker.experimentOutcome)}</div><label class="state-text-label">What did you notice?<textarea id="body-experiment-note" rows="3" placeholder="For example: moving changed it, but the tightness remained.">${esc(marker.experimentNote)}</textarea>${nav("compare")}`);
+      content.querySelector("#body-after-intensity").addEventListener("input", (event) => { marker.afterIntensity = Number(event.target.value); content.querySelector("#body-after-intensity-value").textContent = intensityLabels[marker.afterIntensity]; });
+      content.querySelectorAll("[data-body-choice-group='experimentOutcome']").forEach((button) => button.addEventListener("click", () => { marker.experimentOutcome = button.dataset.bodyChoice; renderCompare(); }));
+      content.querySelector("#body-experiment-note").addEventListener("input", (event) => { marker.experimentNote = event.target.value; });
+    }
+    function renderFinal() {
+      const marker = activeMarker() || newMarker("Not sure where");
+      const delta = marker.afterIntensity - marker.intensity;
+      const conclusion = delta < 0 ? "The mapped area became less intense after the change. That suggests the tested condition may have been affecting it, but it does not prove a single cause." : delta > 0 ? "The mapped area became stronger after the change. The test may not have suited this moment, or another factor may be changing at the same time." : "The mapped area stayed about the same. That is useful information, not a failed result.";
+      const entry = { title: "Body Check", tool: "body-check", answers: { ...state, moodBefore }, moodCheck: null };
+      const text = () => `Body Check\n\n${state.markers.map((item) => `${item.area}: ${markerLabel(item)}\nIntensity: ${intensityLabels[item.intensity]}\nWhat it is doing: ${item.movement || "—"}\nWhere it sits: ${item.layer || "—"}\nContext: ${contextLines(item) || "—"}\nPossibilities: ${item.possibilities.join(", ") || "—"}`).join("\n\n")}\n\nTested: ${marker.experiment || "—"}\nOutcome: ${marker.experimentOutcome || "—"}\nIntensity after: ${intensityLabels[marker.afterIntensity]}`;
+      renderShell("final", `<p class="state-scan-question">What did the body map teach you?</p><div class="body-final-map">${renderBodyFigure(state.view, false)}</div><div class="body-before-after"><article><span>Before · ${esc(marker.area)}</span><strong>${esc(intensityLabels[marker.intensity])}</strong><small>${esc(markerLabel(marker))}</small></article><div class="state-before-after-line" aria-hidden="true"></div><article><span>After</span><strong>${esc(intensityLabels[marker.afterIntensity])}</strong><small>${esc(marker.experimentOutcome || "Not rated")}</small></article></div><div class="body-map-insight"><h3>One careful conclusion</h3><p>${esc(conclusion)}</p><p>Notice the sensation before attaching an emotion or explanation to it. Clear sensation and uncertain cause can exist together.</p></div><div class="body-marker-summary"><h3>Mapped areas</h3>${state.markers.map(markerCard).join("")}</div><div class="body-confidence-grid"><section><span class="state-map-label">Confidence in the sensation</span><strong>${state.markers.length ? Math.round(state.markers.reduce((sum, item) => sum + item.sensationConfidence, 0) / state.markers.length) : 0}%</strong><p>You may know exactly what you feel without knowing why.</p></section><section><span class="state-map-label">Confidence in what it means</span><strong>${state.markers.length ? Math.round(state.markers.reduce((sum, item) => sum + item.causeConfidence, 0) / state.markers.length) : 0}%</strong><p>Keeping the cause open is an honest result.</p></section></div><div class="row body-result-actions"><button type="button" class="button" id="body-save-map">Save to My Maps</button><button type="button" class="button secondary" id="body-download-map">Download map</button><button type="button" class="button secondary" id="body-copy-map">Copy text</button></div><p id="body-result-status" class="fine" role="status"></p><a class="button secondary" href="#compass">Explore the Emotion Compass</a>`);
+      content.querySelector("#body-save-map").addEventListener("click", () => { try { saveMap(entry); content.querySelector("#body-result-status").textContent = "Saved on this device."; } catch { content.querySelector("#body-result-status").textContent = "This browser could not save the map."; } });
+      content.querySelector("#body-download-map").addEventListener("click", () => downloadText("body-map.txt", text()));
+      content.querySelector("#body-copy-map").addEventListener("click", async () => { try { await navigator.clipboard.writeText(text()); content.querySelector("#body-result-status").textContent = "Copied."; } catch { content.querySelector("#body-result-status").textContent = "Copy was blocked by this browser. Use Download instead."; } });
+      content.querySelectorAll("[data-body-edit-area]").forEach((button) => button.addEventListener("click", () => { state.activeArea = button.dataset.bodyEditArea; renderStage("describe"); }));
+    }
     renderMode();
   }
 }
