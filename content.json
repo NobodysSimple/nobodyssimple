@@ -2,6 +2,54 @@
   "version": 1,
   "posts": [
     {
+      "id": "9fef1fcf-a3b9-4553-bffb-6f3658b35d11",
+      "type": "announcement",
+      "title": "9/10/2026 updates",
+      "excerpt": "",
+      "intro": "",
+      "body": "Hello everyone, I hope your having a good or better day today. I will be working on updating the tools throughout the week so they are more interactive, more accurate, effective, and enjoyable to use. This update will come with the main &quot;what do you need&quot; recommender tool also being updated to be more accurate. If you have any recommendations on how the tools should be changed, feel free to reach out in our feedback button at the bottom of this page, or the feedback section in &quot;more&quot;. Have a wonderful day :)",
+      "blocks": [
+        {
+          "id": "0c3e4a67-838b-4df1-8e27-7427fc1f1107",
+          "type": "paragraph",
+          "html": "<p>Hello everyone, I hope your having a good or better day today. I will be working on updating the tools throughout the week so they are more interactive, more accurate, effective, and enjoyable to use. This update will come with the main &quot;what do you need&quot; recommender tool also being updated to be more accurate. If you have any recommendations on how the tools should be changed, feel free to reach out in our feedback button at the bottom of this page, or the feedback section in &quot;more&quot;. Have a wonderful day :)</p>"
+        }
+      ],
+      "youtube": "",
+      "topics": [],
+      "category": "",
+      "modules": [],
+      "weeks": [],
+      "thumbnail": "",
+      "thumbnailAlt": "",
+      "destinations": [
+        "home"
+      ],
+      "status": "published",
+      "author": "Drew Horrobin",
+      "createdAt": "2026-10-09T10:53:39.590Z",
+      "updatedAt": "2026-10-09T11:33:32.612Z",
+      "publishedAt": "2026-10-09T10:56:23.629Z",
+      "slug": "9-10-2026-updates",
+      "seoTitle": "",
+      "seoDescription": "",
+      "socialImage": "",
+      "theme": "cream",
+      "hero": "standard",
+      "announcementLabel": "Update",
+      "announcementPinned": true,
+      "announcementPriority": 0,
+      "announcementStart": "2026-10-09T11:53",
+      "announcementEnd": "",
+      "announcementLink": "#blog",
+      "announcementLinkText": "Open update",
+      "layout": "standard",
+      "thumbnailRatio": "auto",
+      "thumbnailFocalX": 50,
+      "thumbnailFocalY": 50,
+      "thumbnailRotate": 0
+    },
+    {
       "id": "c045368d-ce46-416f-8ce7-5245e0e30199",
       "type": "blog",
       "title": "Hello!",
