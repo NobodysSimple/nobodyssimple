@@ -136,7 +136,7 @@ export const tools = [
     title: "A closer feelings check-in",
     group: "feel",
     short:
-      "Stay with the feeling you chose, notice its context and decide what—if anything—would help.",
+      "Build a clearer map of one feeling, its urge, what matters and what—if anything—you want to do.",
     fields: [
       field("feeling", "What word or words fit best?"),
       field(
