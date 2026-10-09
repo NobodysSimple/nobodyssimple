@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v38";
+const CACHE = "nobodyssimple-v39";
 const SHELL = [
   "./",
   "index.html",
@@ -23,6 +23,7 @@ const SHELL = [
   "icon-192.png",
   "icon-512.png",
   "drew-profile.png",
+  "kofi-profile.png",
 ];
 const SAFE = new Set(
   SHELL.map((path) => new URL(path, self.registration.scope).pathname).concat(

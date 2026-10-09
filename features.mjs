@@ -178,7 +178,7 @@ export function renderHome(root, posts) {
   const kofiSection = document.createElement("section");
   kofiSection.className = "home-section kofi-support";
   kofiSection.setAttribute("aria-labelledby", "kofi-support-title");
-  kofiSection.innerHTML = `<div class="kofi-profile"><img src="drew-profile.png" alt="Drew Horrobin"><div><p class="eyebrow">Support the project</p><h2 id="kofi-support-title">Help keep Nobody’s Simple growing.</h2><p>If this platform has helped you, you can tip to support the time, tools and hosting behind it.</p></div></div><a class="button" href="https://ko-fi.com/nobodyssimple" target="_blank" rel="noopener noreferrer">Tip on Ko-fi ↗</a>`;
+  kofiSection.innerHTML = `<div class="kofi-spark kofi-spark-one" aria-hidden="true"></div><div class="kofi-spark kofi-spark-two" aria-hidden="true"></div><div class="kofi-profile"><div class="kofi-profile-art"><img src="kofi-profile.png" alt="A small character bowing with gratitude"></div><div class="kofi-copy"><p class="eyebrow">Support the project</p><h2 id="kofi-support-title">Help keep Nobody’s Simple growing.</h2><p>If this platform has helped you, you can tip to support the time, tools and hosting behind it.</p></div></div><a class="button kofi-button" href="https://ko-fi.com/nobodyssimple" target="_blank" rel="noopener noreferrer">Tip on Ko-fi <span aria-hidden="true">↗</span></a>`;
   root.querySelector(".home-app")?.append(kofiSection);
   const rail = root.querySelector("[data-announcement-rail]");
   if (rail) {
