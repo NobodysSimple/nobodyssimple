@@ -337,7 +337,7 @@ export const tools = [
     title: "Quick sensory reset",
     group: "calm",
     short:
-      "Choose less input, more input, or a neutral pause. Breathing exercises are optional.",
+      "Notice the sensory mismatch, change one variable, and learn what helps your system right now.",
     fields: [
       select("input", "What fits the moment?", [
         "Too much input",
