@@ -1,6 +1,7 @@
 import { curriculum, emotions, questions } from "./data.mjs";
 import {
   escapeHTML as esc,
+  safeHref,
   safeImage,
   renderBody,
   renderPostBody,
@@ -99,8 +100,28 @@ const empty = (text) => `<div class="empty">${esc(text)}</div>`;
 function heading(eyebrow, title, lead) {
   return `<div class="section-title"><p class="eyebrow">${eyebrow}</p><h1>${title}</h1><p class="lead">${lead}</p></div>`;
 }
+function announcementItems() {
+  const now = Date.now();
+  return posts
+    .filter((post) => {
+      if (post.type !== "announcement" || post.status !== "published" || !post.destinations?.includes("home")) return false;
+      const start = post.announcementStart ? Date.parse(post.announcementStart) : NaN;
+      const end = post.announcementEnd ? Date.parse(post.announcementEnd) : NaN;
+      return (!Number.isFinite(start) || start <= now) && (!Number.isFinite(end) || end >= now);
+    })
+    .sort((a, b) => Number(Boolean(b.announcementPinned)) - Number(Boolean(a.announcementPinned)) || Number(b.announcementPriority || 0) - Number(a.announcementPriority || 0) || String(b.publishedAt || b.updatedAt || "").localeCompare(String(a.publishedAt || a.updatedAt || "")));
+}
+function announcementRail() {
+  const items = announcementItems();
+  if (!items.length) return "";
+  const slides = items.map((post, index) => {
+    const href = safeHref(post.announcementLink || "#blog") || "#blog";
+    return `<article class="announcement-slide" data-announcement-index="${index}" ${index ? "hidden" : ""}><span class="announcement-kind">${esc(post.announcementLabel || "Update")}</span><div class="announcement-copy"><b>${esc(post.title)}</b><p>${esc(post.excerpt || "")}</p></div><a href="${esc(href)}">${esc(post.announcementLinkText || "Open update")} ↗</a></article>`;
+  }).join("");
+  return `<section class="announcement-rail" aria-label="Site announcements"><div class="announcement-rail-head"><span class="announcement-label">Updates</span><span class="announcement-count">${items.length} active</span></div><div class="announcement-slides">${slides}</div>${items.length > 1 ? `<div class="announcement-controls"><button type="button" data-announcement-prev aria-label="Previous announcement">←</button><span data-announcement-position>1 / ${items.length}</span><button type="button" data-announcement-next aria-label="Next announcement">→</button></div>` : ""}</section>`;
+}
 function home() {
-  main.innerHTML = `<div class="wrap"><section class="hero"><div><p class="eyebrow">A practical psychology project</p><h1>Life is complicated.<br><em>People are, too.</em></h1><p class="lead">A place to understand your patterns, explore what matters, and choose what to do next.</p><div class="row"><a class="button" href="#tools">Find a starting point ↗</a><a href="#library">Explore the curriculum →</a></div></div><div class="hero-art"><img src="characters.png" alt="Nobody’s Simple illustrated characters"><small>MORE THAN A LABEL. MORE THAN ONE STORY.</small></div></section><section class="section"><div class="row spaced"><div><p class="eyebrow">A little clarity, right here</p><h2>Meet the moment you’re in.</h2></div><a href="#tools">All interactive tools →</a></div><div class="grid"><a class="card" href="#compass"><span class="index">01 /</span><h3>The emotion compass</h3><p>Move through energy and pleasantness. Find words for the feeling, without forcing a label.</p><span class="arrow">Explore how you feel ↗</span></a><a class="card" href="#questions"><span class="index">02 /</span><h3>From emotion to action</h3><p>Eight questions to separate what happened, what matters, and what you might do next.</p><span class="arrow">Work through a moment ↗</span></a><a class="card" href="#navigator"><span class="index">03 /</span><h3>Make a little room</h3><p>A small starting point when you feel overwhelmed, stuck or disconnected.</p><span class="arrow">Take one small step ↗</span></a></div></section><section class="section"><div class="dark"><p class="eyebrow">Recursive autonomy · 2026–27</p><h2>Learn to see the pattern.<br>Then choose how to respond.</h2><p>One curriculum. Four quarters. Twelve modules. Videos and educational writing, connected in one place.</p><div class="row"><a class="button secondary" href="#library">Open the learning library →</a><span>SEE → TRACE → RESIST → GOVERN</span></div></div></section><section class="section"><div class="row spaced"><div><p class="eyebrow">The blog</p><h2>Ideas to carry with you.</h2></div><a href="#blog">All blog posts →</a></div><div class="grid">${
+  main.innerHTML = `<div class="wrap">${announcementRail()}<section class="hero"><div><p class="eyebrow">A practical psychology project</p><h1>Life is complicated.<br><em>People are, too.</em></h1><p class="lead">A place to understand your patterns, explore what matters, and choose what to do next.</p><div class="row"><a class="button" href="#tools">Find a starting point ↗</a><a href="#library">Explore the curriculum →</a></div></div><div class="hero-art"><img src="characters.png" alt="Nobody’s Simple illustrated characters"><small>MORE THAN A LABEL. MORE THAN ONE STORY.</small></div></section><section class="section"><div class="row spaced"><div><p class="eyebrow">A little clarity, right here</p><h2>Meet the moment you’re in.</h2></div><a href="#tools">All interactive tools →</a></div><div class="grid"><a class="card" href="#compass"><span class="index">01 /</span><h3>The emotion compass</h3><p>Move through energy and pleasantness. Find words for the feeling, without forcing a label.</p><span class="arrow">Explore how you feel ↗</span></a><a class="card" href="#questions"><span class="index">02 /</span><h3>From emotion to action</h3><p>Eight questions to separate what happened, what matters, and what you might do next.</p><span class="arrow">Work through a moment ↗</span></a><a class="card" href="#navigator"><span class="index">03 /</span><h3>Make a little room</h3><p>A small starting point when you feel overwhelmed, stuck or disconnected.</p><span class="arrow">Take one small step ↗</span></a></div></section><section class="section"><div class="dark"><p class="eyebrow">Recursive autonomy · 2026–27</p><h2>Learn to see the pattern.<br>Then choose how to respond.</h2><p>One curriculum. Four quarters. Twelve modules. Videos and educational writing, connected in one place.</p><div class="row"><a class="button secondary" href="#library">Open the learning library →</a><span>SEE → TRACE → RESIST → GOVERN</span></div></div></section><section class="section"><div class="row spaced"><div><p class="eyebrow">The blog</p><h2>Ideas to carry with you.</h2></div><a href="#blog">All blog posts →</a></div><div class="grid">${
     posts
       .filter((p) => p.type === "blog")
       .slice(0, 3)
@@ -108,6 +129,18 @@ function home() {
       .join("") ||
     empty("Original blog posts will appear here as they are published.")
   }</div></section></div>`;
+  const rail = main.querySelector(".announcement-rail");
+  if (!rail || announcementItems().length < 2) return;
+  const slides = [...rail.querySelectorAll("[data-announcement-index]")];
+  const position = rail.querySelector("[data-announcement-position]");
+  let index = 0;
+  const show = (next) => {
+    index = (next + slides.length) % slides.length;
+    slides.forEach((slide, i) => { slide.hidden = i !== index; });
+    if (position) position.textContent = `${index + 1} / ${slides.length}`;
+  };
+  rail.querySelector("[data-announcement-prev]")?.addEventListener("click", () => show(index - 1));
+  rail.querySelector("[data-announcement-next]")?.addEventListener("click", () => show(index + 1));
 }
 function library() {
   const s = libraryState;

@@ -179,7 +179,7 @@ function createPost(type = "blog", existing = null) {
     id: makeId(), type, title: "", excerpt: template.excerpt, intro: template.intro,
     body: "", blocks: template.blocks.map((block) => ({ id: makeId(), ...block })), youtube: "",
     topics: [], category: "", modules: [], weeks: [], thumbnail: "", thumbnailAlt: "",
-    destinations: [type === "blog" ? "blog" : "library"], status: "draft", author: "Drew Horrobin",
+    destinations: [type === "blog" ? "blog" : type === "announcement" ? "home" : "library"], status: "draft", author: "Drew Horrobin",
     createdAt: now(), updatedAt: now(), publishedAt: "", slug: "", seoTitle: "", seoDescription: "", socialImage: "", theme: "cream", hero: "standard",
     announcementLabel: type === "announcement" ? "Update" : "", announcementPinned: type === "announcement", announcementPriority: 0, announcementStart: type === "announcement" ? now() : "", announcementEnd: "", announcementLink: "#blog", announcementLinkText: "Open update",
   };
@@ -197,7 +197,7 @@ function createPost(type = "blog", existing = null) {
   p.thumbnail ||= "";
   p.thumbnailAlt ||= "";
   p.youtube ||= "";
-  p.destinations ||= [p.type === "blog" ? "blog" : "library"];
+  p.destinations ||= [p.type === "blog" ? "blog" : p.type === "announcement" ? "home" : "library"];
   p.layout ||= "standard";
   p.announcementLabel ||= p.category || "Update";
   p.announcementPinned = Boolean(p.announcementPinned);

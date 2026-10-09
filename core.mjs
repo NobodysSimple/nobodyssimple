@@ -250,7 +250,8 @@ export function validatePost(post) {
   if (post.type !== "video" && !post.body?.trim() && !post.blocks?.length) throw Error("Add content to this piece.");
   if (!post.destinations?.length) throw Error("Choose where this piece should appear.");
   if (post.type === "blog" && (post.destinations.length !== 1 || post.destinations[0] !== "blog")) throw Error("Blog posts belong in the blog. Use an education template for curriculum writing.");
-  if (post.type !== "blog" && post.destinations.some((d) => d !== "library")) throw Error("Non-blog content belongs in the learning library.");
+  if (post.type === "announcement" && (post.destinations.length !== 1 || post.destinations[0] !== "home")) throw Error("Announcements belong on the homepage.");
+  if (post.type !== "blog" && post.type !== "announcement" && post.destinations.some((d) => d !== "library")) throw Error("Non-blog content belongs in the learning library.");
   if (post.thumbnail && !safeImage(post.thumbnail)) throw Error("Choose a supported thumbnail image.");
   for (const block of post.blocks || []) {
     if (!BLOCK_TYPES.has(block?.type)) throw Error("One of the content blocks is not supported.");
