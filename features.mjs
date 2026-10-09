@@ -347,6 +347,224 @@ function renderBrainMap(results) {
   }
   return `<div class="brain-map"><p class="notice">A rough first sort based on the words in your notes. It can be wrong; every card below is editable and movable.</p>${brainBuckets.map((k) => `<label class="field"><b>${k}</b><textarea data-bucket="${esc(k)}">${esc(buckets[k].join("\n"))}</textarea></label>`).join("")}</div>`;
 }
+
+function renderStateCheck(root, tool) {
+  root.innerHTML = `<div class="wrap tool-page state-check-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Feel & notice / State Scan</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your answers stay in this browser unless you choose to save the map.</p></section><section id="state-mood-gate">${moodRatingMarkup({ id: "state-mood-before", outputId: "state-mood-before-value", buttonId: "state-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This is the existing starting check for the tool.", buttonText: "Open the State Scan" })}</section><div id="state-scan-content" hidden></div><div class="tool-next row"><a class="chip" href="#compass">Emotion Compass</a><a class="chip" href="#tools">Choose another tool</a><a class="chip" href="#maps">My Maps</a></div></div>`;
+  bindMoodRating(root, {
+    id: "state-mood-before",
+    outputId: "state-mood-before-value",
+    buttonId: "state-mood-start",
+    onSubmit: (moodBefore) => {
+      root.querySelector("#state-mood-gate").hidden = true;
+      const content = root.querySelector("#state-scan-content");
+      content.hidden = false;
+      mountStateScan(content, moodBefore);
+    },
+  });
+
+  function mountStateScan(content, moodBefore) {
+    const state = {
+      mode: null,
+      energy: null,
+      activation: null,
+      intensity: 5,
+      body: {},
+      senses: { Sound: 0, Light: 0, People: 0, Activity: 0, Temperature: 0, "Touch / clothing": 0, Space: 0 },
+      contexts: [],
+      contextOther: "",
+      needs: [],
+      interpretation: "",
+      confidence: 60,
+      direction: "",
+      experiment: "",
+      afterIntensity: 5,
+      afterConfidence: 60,
+      changed: "",
+    };
+    const bodyOptions = ["Food", "Water", "Sleep", "Bathroom", "Temperature", "Pain / illness", "Movement", "Rest", "Medication / health routine"];
+    const contextOptions = ["Poor sleep", "Caffeine / stimulants", "Alcohol / substances", "Medication change", "Haven’t eaten normally", "Illness", "Hormonal / menstrual changes", "Long day", "Lots of social contact", "Too little social contact", "Argument / conflict", "Travel / unfamiliar place", "Deadline / pressure", "Long screen time", "Something happened earlier", "Can’t identify anything"];
+    const needGroups = {
+      "Body": ["Food", "Water", "Rest", "Movement", "Warmth / cooling", "Pain support"],
+      "Nervous system": ["Quiet", "Stimulation", "Predictability", "Slowing down", "Release"],
+      "Connection": ["Company", "Reassurance", "Affection", "Being heard", "Space from people"],
+      "Mind": ["Clarity", "Fewer decisions", "Information", "Structure", "Completion"],
+      "Environment": ["Privacy", "Fresh air", "Different lighting", "Less noise", "Different location"],
+      "Agency": ["Choice", "Control", "Permission to stop", "A boundary", "A clear next step"],
+    };
+    const stageNames = {
+      energy: "System",
+      body: "Body",
+      senses: "Surroundings",
+      context: "Context",
+      needs: "Possible needs",
+      interpretation: "Meaning",
+      map: "Your map",
+      experiment: "Test one thing",
+      rerate: "Check again",
+      final: "What changed",
+    };
+    const stageList = () => state.mode === "quick" ? ["energy", "body", "senses", "needs", "map", "experiment", "rerate", "final"] : ["energy", "body", "senses", "context", "needs", "interpretation", "map", "experiment", "rerate", "final"];
+    const shell = () => content.querySelector(".state-scan-shell");
+    const scanStatus = (message) => { const el = content.querySelector("#state-scan-status"); if (el) el.textContent = message; };
+    const selectedLabel = (value) => value === "yes" ? "Yes" : value === "maybe" ? "Maybe" : "Not selected";
+    const levelLabel = (value) => ["Much less", "Less", "About right", "More", "Much more"][Number(value) + 2];
+    const titleFor = (key) => stageNames[key] || key;
+    const choiceButtons = (items, group, selected, labels = items) => items.map((item, index) => `<button type="button" class="state-choice ${selected === item ? "selected" : ""}" data-choice-group="${esc(group)}" data-choice="${esc(item)}"><span>${esc(labels[index] || item)}</span></button>`).join("");
+    const progress = (currentKey) => { const list = stageList(); const index = list.indexOf(currentKey); return `<div class="state-scan-progress" aria-label="State Scan progress">${list.map((key, i) => `<span class="${i <= index ? "done" : ""} ${key === currentKey ? "current" : ""}" title="${esc(titleFor(key))}"></span>`).join("")}<b>${index + 1} / ${list.length}</b></div>`; };
+    const nav = (key, allowBack = true) => { const list = stageList(); const index = list.indexOf(key); return `<div class="state-scan-nav">${allowBack && index > 0 ? `<button type="button" class="button secondary" data-state-back="${esc(list[index - 1])}">Back</button>` : ""}${index < list.length - 1 ? `<button type="button" class="button" data-state-next="${esc(list[index + 1])}">Continue</button>` : ""}</div>`; };
+
+    const renderShell = (key, inner) => {
+      content.innerHTML = `<div class="state-scan-shell"><div class="state-scan-topline"><div><p class="eyebrow">State Scan</p><h2>${esc(titleFor(key))}</h2></div><span class="state-scan-time">${state.mode === "quick" ? "Quick scan" : "Deeper scan"}</span></div>${progress(key)}<section class="state-scan-card" data-state-stage="${esc(key)}">${inner}</section><p id="state-scan-status" class="interactive-status" aria-live="polite">Nothing is scored. You can skip anything that does not fit.</p></div>`;
+      content.querySelectorAll("[data-state-next], [data-state-back]").forEach((button) => button.addEventListener("click", () => renderStage(button.dataset.stateNext || button.dataset.stateBack)));
+    };
+
+    const renderStage = (key) => {
+      if (key === "energy") return renderEnergy();
+      if (key === "body") return renderBody();
+      if (key === "senses") return renderSenses();
+      if (key === "context") return renderContext();
+      if (key === "needs") return renderNeeds();
+      if (key === "interpretation") return renderInterpretation();
+      if (key === "map") return renderMap();
+      if (key === "experiment") return renderExperiment();
+      if (key === "rerate") return renderRerate();
+      return renderFinal();
+    };
+
+    function renderMode() {
+      content.innerHTML = `<div class="state-scan-shell"><div class="state-scan-topline"><div><p class="eyebrow">State Scan</p><h2>Look at the conditions first.</h2><p class="state-scan-lead">A feeling can be real while its intensity is changed by sleep, food, sensory load, connection or pressure.</p></div></div><div class="state-mode-grid"><button type="button" class="state-mode-card" data-state-mode="quick"><span>30–60 seconds</span><strong>Quick Scan</strong><p>Energy, body, surroundings and one useful test.</p></button><button type="button" class="state-mode-card" data-state-mode="deep"><span>3–5 minutes</span><strong>Deeper Scan</strong><p>Add context, interpretation and confidence.</p></button></div><details class="state-why"><summary>Why start here?</summary><p>State affects the signal. This tool does not decide whether a feeling is true or false; it helps you test what may be amplifying it.</p></details><p id="state-scan-status" class="interactive-status" aria-live="polite">Choose a scan length.</p></div>`;
+      content.querySelectorAll("[data-state-mode]").forEach((button) => button.addEventListener("click", () => { state.mode = button.dataset.stateMode; renderStage("energy"); }));
+    }
+
+    function renderEnergy() {
+      const energyItems = ["Running on empty", "Low", "Steady", "Energised", "Overcharged"];
+      const activationItems = ["Shut down", "Heavy", "Settled", "Restless", "On edge"];
+      renderShell("energy", `<p class="state-scan-question">How is your system running?</p><p class="state-scan-help">Choose the closest fit. You do not need an exact answer.</p><div class="state-axis-block"><h3>Energy</h3><div class="state-choice-row">${choiceButtons(energyItems, "energy", state.energy === null ? "" : energyItems[state.energy])}</div></div><div class="state-axis-block"><h3>How settled does your body feel?</h3><div class="state-choice-row">${choiceButtons(activationItems, "activation", state.activation === null ? "" : activationItems[state.activation])}</div></div><label class="state-range-label">How intense does everything feel right now?<output id="state-intensity-value">${state.intensity} / 10</output><input id="state-intensity" type="range" min="0" max="10" value="${state.intensity}"></label><details class="state-why"><summary>Why this matters</summary><p>Low energy and high activation can happen together. That can feel like being exhausted but unable to settle.</p></details>${nav("energy", false)}`);
+      content.querySelectorAll("[data-choice-group]").forEach((button) => button.addEventListener("click", () => { const group = button.dataset.choiceGroup; const list = group === "energy" ? energyItems : activationItems; const value = list.indexOf(button.dataset.choice); state[group] = value; renderEnergy(); }));
+      content.querySelector("#state-intensity").addEventListener("input", (event) => { state.intensity = Number(event.target.value); content.querySelector("#state-intensity-value").textContent = `${state.intensity} / 10`; });
+      const next = content.querySelector("[data-state-next]"); next.disabled = state.energy === null || state.activation === null; next.title = next.disabled ? "Choose both system settings first" : "Continue";
+    }
+
+    function renderBody() {
+      const cards = bodyOptions.map((item) => `<button type="button" class="state-body-card status-${state.body[item] || "none"}" data-body-item="${esc(item)}"><strong>${esc(item)}</strong><span>${selectedLabel(state.body[item])}</span></button>`).join("");
+      renderShell("body", `<p class="state-scan-question">Is your body asking for something?</p><p class="state-scan-help">Tap a card to cycle through <b>Maybe</b>, <b>Yes</b> and clear it. Severe or worrying symptoms need real-world support, not more app analysis.</p><div class="state-body-grid">${cards}</div><p class="state-scan-note">Not noticing anything is useful information too.</p>${nav("body")}`);
+      content.querySelectorAll("[data-body-item]").forEach((button) => button.addEventListener("click", () => { const item = button.dataset.bodyItem; state.body[item] = !state.body[item] ? "maybe" : state.body[item] === "maybe" ? "yes" : ""; renderBody(); }));
+    }
+
+    function renderSenses() {
+      const labels = ["Much less", "Less", "About right", "More", "Much more"];
+      const rows = Object.entries(state.senses).map(([label, value]) => `<label class="state-sense-row"><span><b>${esc(label)}</b><small>${esc(labels[Number(value) + 2])}</small></span><input type="range" min="-2" max="2" step="1" value="${value}" data-sense="${esc(label)}" aria-label="${esc(label)}: less or more than comfortable"><span class="state-range-ends"><i>Less</i><i>About right</i><i>More</i></span></label>`).join("");
+      renderShell("senses", `<p class="state-scan-question">What is the world around you doing to your system?</p><p class="state-scan-help">Less input is not always better. You might need quiet, or you might need more stimulation.</p><div class="state-sense-list">${rows}</div><details class="state-why"><summary>Why this matters</summary><p>A room can make a feeling louder or quieter. Sound, light, people and activity can affect capacity without being the whole explanation.</p></details>${nav("senses")}`);
+      content.querySelectorAll("[data-sense]").forEach((input) => input.addEventListener("input", () => { state.senses[input.dataset.sense] = Number(input.value); input.parentElement.querySelector("small").textContent = labels[Number(input.value) + 2]; }));
+    }
+
+    function renderContext() {
+      const cards = contextOptions.map((item) => `<button type="button" class="state-context-card ${state.contexts.includes(item) ? "selected" : ""}" data-context="${esc(item)}">${esc(item)}</button>`).join("");
+      renderShell("context", `<p class="state-scan-question">Anything affecting your system today?</p><p class="state-scan-help">These are possible contributors, not conclusions. Choose any that may matter.</p><div class="state-context-grid">${cards}</div><label class="state-text-label">Something else?<input id="state-context-other" value="${esc(state.contextOther)}" placeholder="A change, event or condition"></label>${nav("context")}`);
+      content.querySelectorAll("[data-context]").forEach((button) => button.addEventListener("click", () => { const item = button.dataset.context; state.contexts = state.contexts.includes(item) ? state.contexts.filter((x) => x !== item) : [...state.contexts, item]; renderContext(); }));
+      content.querySelector("#state-context-other").addEventListener("input", (event) => { state.contextOther = event.target.value; });
+    }
+
+    function renderNeeds() {
+      const groups = Object.entries(needGroups).map(([group, items]) => `<section class="state-need-group"><h3>${esc(group)}</h3><div class="state-need-grid">${items.map((item) => `<button type="button" class="state-need-chip ${state.needs.includes(item) ? "selected" : ""}" data-need="${esc(item)}">${esc(item)}</button>`).join("")}</div></section>`).join("");
+      renderShell("needs", `<p class="state-scan-question">If your system could ask for something, what might it ask for?</p><p class="state-scan-help">Choose possibilities. <b>Not sure yet</b> is a valid answer.</p>${groups}<button type="button" class="state-need-chip ${state.needs.includes("Not sure yet") ? "selected" : ""}" data-need="Not sure yet">Not sure yet</button>${nav("needs")}`);
+      content.querySelectorAll("[data-need]").forEach((button) => button.addEventListener("click", () => { const item = button.dataset.need; if (item === "Not sure yet") state.needs = ["Not sure yet"]; else if (state.needs.includes(item)) state.needs = state.needs.filter((x) => x !== item); else state.needs = [...state.needs.filter((x) => x !== "Not sure yet"), item]; renderNeeds(); }));
+    }
+
+    function renderInterpretation() {
+      renderShell("interpretation", `<p class="state-scan-question">What does everything feel like it means?</p><p class="state-scan-help">This is optional. The aim is to separate the feeling from the story your mind is building around it.</p><label class="state-text-label">Your current interpretation<textarea id="state-interpretation" rows="3" placeholder="For example: “They do not care about me” or “I cannot cope with this.”">${esc(state.interpretation)}</textarea></label><label class="state-range-label">How certain does that interpretation feel?<output id="state-confidence-value">${state.confidence}%</output><input id="state-confidence" type="range" min="0" max="100" step="10" value="${state.confidence}"></label><button type="button" class="state-uncertainty-button" data-uncertain="true">I do not know what I am feeling yet</button><details class="state-why"><summary>Why this matters</summary><p>Feelings are real. Interpretations can still be held with more or less confidence, especially when your body or surroundings are under strain.</p></details>${nav("interpretation")}`);
+      content.querySelector("#state-interpretation").addEventListener("input", (event) => { state.interpretation = event.target.value; });
+      content.querySelector("#state-confidence").addEventListener("input", (event) => { state.confidence = Number(event.target.value); content.querySelector("#state-confidence-value").textContent = `${state.confidence}%`; });
+      content.querySelector("[data-uncertain]").addEventListener("click", () => { state.interpretation = "I do not know what this means yet."; state.confidence = 20; renderInterpretation(); });
+    }
+
+    function systemPattern() {
+      if (state.energy === 0 && state.activation >= 3) return "tired-but-wired";
+      if (state.energy <= 1 && state.activation <= 1) return "depleted";
+      if (state.energy >= 3 && state.activation >= 3) return "revved";
+      if (state.activation === 0) return "shut-down";
+      return "steady";
+    }
+    function sensoryPattern() {
+      const values = Object.values(state.senses);
+      const high = values.filter((x) => x >= 1).length;
+      const low = values.filter((x) => x <= -1).length;
+      if (high >= 3) return "high sensory demand";
+      if (low >= 3) return "low sensory input";
+      return "mixed or manageable sensory input";
+    }
+    function bodySelected() { return Object.entries(state.body).filter(([, value]) => value).map(([key, value]) => `${key}${value === "maybe" ? " (maybe)" : ""}`); }
+    function contributors() {
+      const list = [];
+      if (state.energy <= 1) list.push("low energy");
+      if (state.activation >= 3) list.push("high activation");
+      if (sensoryPattern() === "high sensory demand") list.push("sensory demand");
+      bodySelected().slice(0, 3).forEach((item) => list.push(item.toLowerCase()));
+      state.contexts.slice(0, 4).forEach((item) => list.push(item.toLowerCase()));
+      return [...new Set(list)];
+    }
+    function mapCopy() {
+      const pattern = systemPattern();
+      if (pattern === "tired-but-wired") return "Your energy looks low while your activation is high. That combination can feel like anxiety, irritability, urgency or mental chaos: your system may want rest while still acting as if it needs to stay alert.";
+      if (pattern === "depleted") return "Your energy and activation both look low. Ordinary tasks may feel heavier because there is less fuel available for starting, deciding or responding.";
+      if (pattern === "revved") return "Your energy and activation both look high. You may have useful drive available, but speed can make it harder to notice limits or choose deliberately.";
+      if (pattern === "shut-down") return "Your body may be conserving effort. Numbness, heaviness or difficulty starting can be a state response rather than a complete account of what you care about.";
+      return "Your system looks relatively mixed or steady. The important clue may sit in the body, surroundings, context or interpretation rather than in one global state label.";
+    }
+    function renderMap() {
+      const body = bodySelected();
+      const contributorsList = contributors();
+      const bodyText = body.length ? body.map((item) => `<span class="state-tag">${esc(item)}</span>`).join("") : `<span class="state-tag muted">Nothing strongly selected</span>`;
+      const contextText = state.contexts.length || state.contextOther ? [...state.contexts, state.contextOther].filter(Boolean).map((item) => `<span class="state-tag">${esc(item)}</span>`).join("") : `<span class="state-tag muted">No clear context selected</span>`;
+      const needsText = state.needs.length ? state.needs.map((item) => `<span class="state-tag">${esc(item)}</span>`).join("") : `<span class="state-tag muted">Not sure yet</span>`;
+      renderShell("map", `<p class="state-scan-question">Here is the map we found.</p><div class="state-map-grid"><article><span class="state-map-label">System</span><strong>${esc(systemPattern().replaceAll("-", " "))}</strong><p>Energy ${state.energy + 1} / 5 · activation ${state.activation + 1} / 5</p></article><article><span class="state-map-label">Surroundings</span><strong>${esc(sensoryPattern())}</strong><p>Your answers describe the environment, not a diagnosis.</p></article><article><span class="state-map-label">Body</span><div class="state-tag-list">${bodyText}</div></article><article><span class="state-map-label">Context</span><div class="state-tag-list">${contextText}</div></article><article><span class="state-map-label">Possible needs</span><div class="state-tag-list">${needsText}</div></article></div><div class="state-map-interpretation"><h3>What this combination can do</h3><p>${mapCopy()}</p></div>${contributorsList.length ? `<div class="state-contributors"><h3>Worth checking</h3><p>${contributorsList.map((item) => `<span>${esc(item)}</span>`).join("")}</p><small>These are candidate contributors, not fake percentages or fixed causes.</small></div>` : ""}<details class="state-why"><summary>What should I trust right now?</summary><p>${state.intensity >= 8 || state.energy <= 1 || state.activation >= 4 ? "Your experience may be important, but this may not be the clearest moment for permanent judgements about yourself, a relationship or your future. Let the concern matter while holding the interpretation lightly." : "Your state does not obviously make the interpretation unreliable. It may still help to separate what happened, what you inferred and what you need."}</p></details>${nav("map")}`);
+    }
+
+    const directionOptions = ["Settle me", "Wake me up", "Give me stimulation", "Reduce stimulation", "Help me connect", "Give me space", "Help me think clearly", "Meet a physical need"];
+    const experimentFor = {
+      "Settle me": ["Lower one sound or light source", "Put both feet on the floor and lengthen the exhale if comfortable", "Move to a familiar, lower-demand place"],
+      "Wake me up": ["Stand, stretch or take a short walk", "Open a window or change rooms", "Use a clear song, light or brief task to create momentum"],
+      "Give me stimulation": ["Use a repetitive movement or tactile object", "Choose a familiar, engaging task for ten minutes", "Add one safe source of sound, movement or visual interest"],
+      "Reduce stimulation": ["Lower screen brightness or sound", "Move away from one busy input", "Use headphones, a quieter room or a short pause"],
+      "Help me connect": ["Send one honest message to a safe person", "Ask directly for listening, reassurance or practical help", "Choose company with a clear ending rather than an open social demand"],
+      "Give me space": ["Name a short pause and when you will return", "Move somewhere private or less socially demanding", "Put one conversation on hold without deciding its final meaning"],
+      "Help me think clearly": ["Write the facts and the interpretation in separate lines", "Reduce the decision to one next question", "Delay an irreversible action until the body is less activated"],
+      "Meet a physical need": ["Drink water", "Eat something small and ordinary", "Rest, cool down, warm up or follow your usual health routine"],
+    };
+    function renderExperiment() {
+      const choices = directionOptions.map((item) => `<button type="button" class="state-direction-card ${state.direction === item ? "selected" : ""}" data-direction="${esc(item)}"><strong>${esc(item)}</strong><span>${state.direction === item ? "Selected" : "Choose a direction"}</span></button>`).join("");
+      const suggestions = state.direction ? `<div class="state-experiment-box"><h3>One thing worth testing first</h3><p>Try one small change for about ten minutes, or until you notice a shift.</p><ol>${experimentFor[state.direction].map((item) => `<li>${esc(item)}</li>`).join("")}</ol><button type="button" class="button" data-start-experiment>Mark this as tried and check again</button></div>` : `<p class="state-scan-note">There is no single correct direction. Sometimes the useful move is more stimulation, not more calming.</p>`;
+      renderShell("experiment", `<p class="state-scan-question">What direction might help your system?</p><p class="state-scan-help">Do not automatically assume that calming down is the goal.</p><div class="state-direction-grid">${choices}</div>${suggestions}${nav("experiment")}`);
+      content.querySelectorAll("[data-direction]").forEach((button) => button.addEventListener("click", () => { state.direction = button.dataset.direction; renderExperiment(); }));
+      content.querySelector("[data-start-experiment]")?.addEventListener("click", () => { state.experiment = experimentFor[state.direction].join(" "); renderStage("rerate"); });
+    }
+
+    function renderRerate() {
+      renderShell("rerate", `<p class="state-scan-question">What changed after the test?</p><p class="state-scan-help">The original problem may still matter. We are checking whether your state was amplifying it.</p><label class="state-range-label">How intense does everything feel now?<output id="state-after-intensity-value">${state.afterIntensity} / 10</output><input id="state-after-intensity" type="range" min="0" max="10" value="${state.afterIntensity}"></label>${state.interpretation ? `<label class="state-range-label">How certain does your interpretation feel now?<output id="state-after-confidence-value">${state.afterConfidence}%</output><input id="state-after-confidence" type="range" min="0" max="100" step="10" value="${state.afterConfidence}"></label>` : ""}<div class="state-choice-row state-change-choices">${choiceButtons(["Much worse", "Slightly worse", "No change", "Slightly better", "Much better"], "changed", state.changed)}</div><label class="state-text-label">Anything you noticed?<textarea id="state-after-note" rows="3" placeholder="For example: the noise mattered more than I expected.">${esc(state.changedNote || "")}</textarea></label>${nav("rerate")}`);
+      content.querySelector("#state-after-intensity").addEventListener("input", (event) => { state.afterIntensity = Number(event.target.value); content.querySelector("#state-after-intensity-value").textContent = `${state.afterIntensity} / 10`; });
+      content.querySelector("#state-after-confidence")?.addEventListener("input", (event) => { state.afterConfidence = Number(event.target.value); content.querySelector("#state-after-confidence-value").textContent = `${state.afterConfidence}%`; });
+      content.querySelectorAll("[data-choice-group='changed']").forEach((button) => button.addEventListener("click", () => { state.changed = button.dataset.choice; renderRerate(); }));
+      content.querySelector("#state-after-note").addEventListener("input", (event) => { state.changedNote = event.target.value; });
+    }
+
+    function renderFinal() {
+      const intensityChange = state.afterIntensity - state.intensity;
+      const confidenceChange = state.afterConfidence - state.confidence;
+      const intensityText = intensityChange < 0 ? `Intensity fell by ${Math.abs(intensityChange)} point${Math.abs(intensityChange) === 1 ? "" : "s"}.` : intensityChange > 0 ? `Intensity rose by ${intensityChange} point${intensityChange === 1 ? "" : "s"}.` : "Intensity did not change on this rating.";
+      const conclusion = intensityChange <= -2 ? "Your physical or environmental state may have been amplifying the problem. That does not make the concern imaginary; it tells you one part of the system is changeable." : intensityChange >= 2 ? "The first test did not lower intensity. The concern may need a different kind of response, or the chosen change may not have fit this moment." : "The concern did not clearly shift with this test. It may deserve closer attention rather than being explained away as a body state.";
+      const confidenceText = state.interpretation ? confidenceChange < 0 ? `Interpretation confidence also fell by ${Math.abs(confidenceChange)} points.` : confidenceChange > 0 ? `Interpretation confidence rose by ${confidenceChange} points.` : "Interpretation confidence stayed similar." : "You left the interpretation open, which is useful information in itself.";
+      const entry = { title: "Body & State Check", tool: "state-check", answers: { ...state, moodBefore }, moodCheck: null };
+      const text = () => `Body & State Check\n\nSystem: ${systemPattern()}\nSurroundings: ${sensoryPattern()}\nBody: ${bodySelected().join(", ") || "Nothing strongly selected"}\nContext: ${[...state.contexts, state.contextOther].filter(Boolean).join(", ") || "None selected"}\nPossible needs: ${state.needs.join(", ") || "Not sure yet"}\nDirection tested: ${state.direction || "None"}\nIntensity before: ${state.intensity}/10\nIntensity after: ${state.afterIntensity}/10\nWhat changed: ${state.changed || "Not selected"}`;
+      renderShell("final", `<p class="state-scan-question">What did the experiment teach you?</p><div class="state-before-after"><article><span>Before</span><strong>${state.intensity} / 10</strong><small>${esc(systemPattern().replaceAll("-", " "))}</small></article><div class="state-before-after-line" aria-hidden="true"></div><article><span>After</span><strong>${state.afterIntensity} / 10</strong><small>${esc(state.changed || "Not rated")}</small></article></div><div class="state-result-callout"><h3>${esc(intensityText)}</h3><p>${esc(conclusion)}</p><p>${esc(confidenceText)}</p></div><div class="state-result-grid"><section><span class="state-map-label">What you tested</span><strong>${esc(state.direction || "No direction selected")}</strong><p>${state.experiment ? esc(state.experiment) : "A short state experiment"}</p></section><section><span class="state-map-label">What to carry forward</span><strong>${esc(state.changed || "Keep observing")}</strong><p>${state.changedNote ? esc(state.changedNote) : "Notice whether this pattern returns in a similar context."}</p></section></div><div class="row state-result-actions"><button type="button" class="button" id="state-save-map">Save to My Maps</button><button type="button" class="button secondary" id="state-download-map">Download map</button><button type="button" class="button secondary" id="state-copy-map">Copy text</button></div><p id="state-result-status" class="fine" role="status"></p><a class="button secondary" href="#compass">Continue to the Emotion Compass</a>`);
+      content.querySelector("#state-save-map").addEventListener("click", () => { try { saveMap(entry); content.querySelector("#state-result-status").textContent = "Saved on this device."; } catch { content.querySelector("#state-result-status").textContent = "This browser could not save the map."; } });
+      content.querySelector("#state-download-map").addEventListener("click", () => downloadText("body-state-check.txt", text()));
+      content.querySelector("#state-copy-map").addEventListener("click", async () => { try { await navigator.clipboard.writeText(text()); content.querySelector("#state-result-status").textContent = "Copied."; } catch { content.querySelector("#state-result-status").textContent = "Copy was blocked by this browser. Use Download instead."; } });
+    }
+
+    renderMode();
+  }
+}
+
 export function renderTool(root, id) {
   const tool = tools.find((t) => t.id === id);
   if (!tool) {
@@ -355,6 +573,10 @@ export function renderTool(root, id) {
   }
   if (tool.id === "maps") {
     renderMaps(root);
+    return;
+  }
+  if (tool.id === "state-check") {
+    renderStateCheck(root, tool);
     return;
   }
   root.innerHTML = `<div class="wrap tool-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")} / ${esc(tool.kind === "pattern" ? "Creative pause" : tool.kind === "sound" ? "Sound & sensation" : "Interactive prompt")}</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your writing stays in this browser tab unless you choose “Save to My Maps”. It is not sent to Nobody’s Simple.</p></section><section id="tool-mood-gate">${moodRatingMarkup({ id: "tool-mood-before", outputId: "tool-mood-before-value", buttonId: "tool-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you use the tool.", buttonText: "Open this tool →" })}</section><div id="tool-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Check my body/state</a><a class="chip" href="#questions">Work through a difficult question</a><a class="chip" href="#maps">My Maps</a></div></div>`;

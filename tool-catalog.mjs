@@ -28,10 +28,10 @@ export const toolGroups = [
 export const tools = [
   {
     id: "state-check",
-    title: "Body & state check",
+    title: "Body & State Check",
     group: "feel",
     short:
-      "Check the body, needs and surroundings before deciding what a feeling means.",
+      "Map what your body and surroundings are dealing with before deciding what a feeling means.",
     fields: [
       check("signals", "Anything worth checking right now?", [
         "Tired",
