@@ -348,6 +348,167 @@ function renderBrainMap(results) {
   return `<div class="brain-map"><p class="notice">A rough first sort based on the words in your notes. It can be wrong; every card below is editable and movable.</p>${brainBuckets.map((k) => `<label class="field"><b>${k}</b><textarea data-bucket="${esc(k)}">${esc(buckets[k].join("\n"))}</textarea></label>`).join("")}</div>`;
 }
 
+function renderBodyCheck(root, tool) {
+  root.innerHTML = `<div class="wrap tool-page body-check-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Feel & notice / Body Map</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your answers stay in this browser unless you choose to save the map.</p></section><section id="body-mood-gate">${moodRatingMarkup({ id: "body-mood-before", outputId: "body-mood-before-value", buttonId: "body-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This is the existing starting check for the tool.", buttonText: "Open the Body Map" })}</section><div id="body-check-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Body & State Check</a><a class="chip" href="#compass">Emotion Compass</a><a class="chip" href="#maps">My Maps</a></div></div>`;
+  bindMoodRating(root, {
+    id: "body-mood-before",
+    outputId: "body-mood-before-value",
+    buttonId: "body-mood-start",
+    onSubmit: (moodBefore) => {
+      root.querySelector("#body-mood-gate").hidden = true;
+      const content = root.querySelector("#body-check-content");
+      content.hidden = false;
+      mountBodyCheck(content, moodBefore);
+    },
+  });
+
+  function mountBodyCheck(content, moodBefore) {
+    const state = {
+      mode: null,
+      view: "front",
+      areas: [],
+      activeArea: "",
+      unclearLocation: false,
+      sensations: [],
+      sensationFamily: "",
+      otherSensation: "",
+      intensity: 2,
+      afterIntensity: 2,
+      movement: "",
+      layer: "",
+      side: "",
+      onset: "",
+      onsetContext: [],
+      movementChange: "",
+      postureChange: "",
+      urges: [],
+      possibilities: [],
+      sensationConfidence: 60,
+      causeConfidence: 20,
+      experiment: "",
+      experimentOutcome: "",
+      experimentNote: "",
+    };
+    const locationAreas = {
+      front: ["Head / face", "Jaw", "Throat", "Chest", "Stomach / abdomen", "Arms / hands", "Pelvis", "Legs / feet"],
+      back: ["Back of head", "Neck", "Shoulders", "Upper back", "Lower back", "Arms / hands", "Pelvis", "Legs / feet"],
+    };
+    const sensationFamilies = {
+      "Pressure / tension": ["Tight", "Tense", "Clenched", "Compressed", "Heavy", "Pressure"],
+      Movement: ["Fluttering", "Shaking", "Trembling", "Pulsing", "Twitching", "Restless"],
+      Temperature: ["Hot", "Warm", "Cold", "Chills", "Burning"],
+      "Sensation change": ["Numb", "Tingling", "Pins and needles", "Buzzing", "Hypersensitive"],
+      "Internal feeling": ["Empty", "Hollow", "Sinking", "Knotted", "Full", "Nauseous"],
+      "Pain / discomfort": ["Aching", "Sharp", "Throbbing", "Sore", "Cramping", "Painful"],
+    };
+    const onsetOptions = ["Just now", "Minutes ago", "Earlier today", "Since waking", "A few days", "Longer", "Comes and goes", "Not sure"];
+    const onsetContextOptions = ["Woke up", "Ate", "Caffeine", "Exercise", "Argument", "Stressful thought", "Social situation", "Work / study", "Screen time", "Changed position", "Illness", "Nothing obvious"];
+    const possibilityOptions = ["Stress", "Exertion", "Caffeine", "Posture", "Illness", "Hunger", "Sensory load", "Anxiety", "Medication", "Something else", "No idea"];
+    const movementOptions = ["Staying still", "Spreading", "Moving around", "Coming in waves", "Pulsing", "Getting stronger", "Fading", "Coming and going"];
+    const bodyUrges = ["Tense", "Shrink", "Freeze", "Move", "Run", "Stretch", "Hide", "Curl up", "Reach out", "Push away", "Shake", "Cry", "Sleep", "Eat", "Be still", "No urge"];
+    const intensityLabels = ["Barely there", "Noticeable", "Distracting", "Strong", "Overwhelming"];
+    const stageNames = { locate: "Locate", describe: "Describe", characterise: "Characterise", details: "Tell me more", result: "Your body map", experiment: "Test one change", compare: "Compare", final: "What we learned" };
+    const stageList = () => state.mode === "quick" ? ["locate", "describe", "characterise", "result", "experiment", "compare", "final"] : ["locate", "describe", "characterise", "details", "result", "experiment", "compare", "final"];
+    const selectedLabel = (item, list) => list.includes(item) ? "selected" : "";
+    const escList = (list) => list.map((item) => `<span class="body-map-tag">${esc(item)}</span>`).join("");
+    const choiceButtons = (items, group, selected, labels = items) => items.map((item, index) => `<button type="button" class="body-choice ${selected === item ? "selected" : ""}" data-body-choice-group="${esc(group)}" data-body-choice="${esc(item)}"><span>${esc(labels[index] || item)}</span></button>`).join("");
+    const multiButtons = (items, group, selected) => items.map((item) => `<button type="button" class="body-choice ${selected.includes(item) ? "selected" : ""}" data-body-multi-group="${esc(group)}" data-body-multi="${esc(item)}">${esc(item)}</button>`).join("");
+    const progress = (key) => { const list = stageList(); const index = list.indexOf(key); return `<div class="state-scan-progress body-progress" aria-label="Body Map progress">${list.map((item, i) => `<span class="${i <= index ? "done" : ""} ${item === key ? "current" : ""}" title="${esc(stageNames[item])}"></span>`).join("")}<b>${index + 1} / ${list.length}</b></div>`; };
+    const nav = (key, back = true) => { const list = stageList(); const index = list.indexOf(key); return `<div class="body-scan-nav">${back && index > 0 ? `<button type="button" class="button secondary" data-body-back="${esc(list[index - 1])}">Back</button>` : ""}${index < list.length - 1 ? `<button type="button" class="button" data-body-next="${esc(list[index + 1])}">Continue</button>` : ""}</div>`; };
+    const renderShell = (key, inner) => {
+      content.innerHTML = `<div class="state-scan-shell body-map-shell"><div class="state-scan-topline"><div><p class="eyebrow">Body Map</p><h2>${esc(stageNames[key])}</h2></div><span class="state-scan-time">${state.mode === "quick" ? "Quick map" : "Detailed map"}</span></div>${progress(key)}<section class="state-scan-card body-scan-card" data-body-stage="${esc(key)}">${inner}</section><p id="body-scan-status" class="interactive-status" aria-live="polite">Nothing is scored. Skip anything that does not fit.</p></div>`;
+      content.querySelectorAll("[data-body-next], [data-body-back]").forEach((button) => button.addEventListener("click", () => renderStage(button.dataset.bodyNext || button.dataset.bodyBack)));
+    };
+    const renderStage = (key) => ({ locate: renderLocate, describe: renderDescribe, characterise: renderCharacterise, details: renderDetails, result: renderResult, experiment: renderExperiment, compare: renderCompare, final: renderFinal }[key]());
+
+    function renderMode() {
+      content.innerHTML = `<div class="state-scan-shell body-map-shell"><div class="state-scan-topline"><div><p class="eyebrow">Body Map</p><h2>What is your body doing?</h2><p class="state-scan-lead">Build a picture from simple observations. You do not need medical or psychological words.</p></div></div><div class="state-mode-grid"><button type="button" class="state-mode-card" data-body-mode="quick"><span>1–2 minutes</span><strong>Quick Map</strong><p>Locate it, describe it, and see a careful summary.</p></button><button type="button" class="state-mode-card" data-body-mode="deep"><span>3–5 minutes</span><strong>Detailed Map</strong><p>Add timing, movement, context, urges and possible contributors.</p></button></div><details class="state-why"><summary>What this tool is for</summary><p>It helps you notice the body before explaining it. A sensation can have physical, emotional, sensory, environmental or unknown contributors.</p></details><p class="interactive-status">Choose how much detail you want.</p></div>`;
+      content.querySelectorAll("[data-body-mode]").forEach((button) => button.addEventListener("click", () => { state.mode = button.dataset.bodyMode; renderStage("locate"); }));
+    }
+
+    function renderLocate() {
+      const areas = locationAreas[state.view];
+      const areaButtons = areas.map((area) => `<button type="button" class="body-area-button ${selectedLabel(area, state.areas)} ${state.activeArea === area ? "active" : ""}" data-body-area="${esc(area)}"><span>${esc(area)}</span>${state.areas.includes(area) ? `<i aria-hidden="true">●</i>` : ""}</button>`).join("");
+      renderShell("locate", `<p class="state-scan-question">Where do you notice something?</p><p class="state-scan-help">Tap one area or several. Select <b>Not sure where</b> if the signal is difficult to place.</p><div class="body-view-tabs"><button type="button" class="chip ${state.view === "front" ? "active" : ""}" data-body-view="front">Front</button><button type="button" class="chip ${state.view === "back" ? "active" : ""}" data-body-view="back">Back</button></div><div class="body-map-figure" role="group" aria-label="Choose body areas">${areaButtons}</div><div class="body-special-choices"><button type="button" class="body-special ${state.areas.includes("Whole body") ? "selected" : ""}" data-body-special="Whole body">Everywhere</button><button type="button" class="body-special ${state.unclearLocation ? "selected" : ""}" data-body-special="Not sure where">Not sure where</button></div><p class="body-selected-summary">${state.areas.length ? `Selected: ${escList(state.areas)}` : "Nothing selected yet"}</p>${nav("locate", false)}`);
+      content.querySelectorAll("[data-body-view]").forEach((button) => button.addEventListener("click", () => { state.view = button.dataset.bodyView; renderLocate(); }));
+      content.querySelectorAll("[data-body-area]").forEach((button) => button.addEventListener("click", () => { const area = button.dataset.bodyArea; state.areas = state.areas.includes(area) ? state.areas.filter((x) => x !== area) : [...state.areas.filter((x) => x !== "Whole body" && x !== "Not sure where"), area]; state.activeArea = area; state.unclearLocation = false; renderLocate(); }));
+      content.querySelectorAll("[data-body-special]").forEach((button) => button.addEventListener("click", () => { const value = button.dataset.bodySpecial; if (value === "Whole body") { state.areas = state.areas.includes(value) ? [] : [value]; state.unclearLocation = false; } else { state.unclearLocation = !state.unclearLocation; state.areas = state.unclearLocation ? [value] : []; } state.activeArea = value; renderLocate(); }));
+      const next = content.querySelector("[data-body-next]"); next.disabled = !state.areas.length; next.title = next.disabled ? "Choose an area or Not sure where" : "Continue";
+    }
+
+    function renderDescribe() {
+      const families = Object.entries(sensationFamilies).map(([family, items]) => `<section class="body-sensation-family"><h3>${esc(family)}</h3><div class="body-choice-grid">${multiButtons(items, "sensation", state.sensations)}</div></section>`).join("");
+      renderShell("describe", `<p class="state-scan-question">What does it feel like?</p><p class="state-scan-help">Choose ordinary sensory words. More than one can fit.</p>${families}<div class="body-choice-grid body-other-choices">${multiButtons(["Hard to describe"], "sensation", state.sensations)}</div><label class="state-text-label">Something else?<input id="body-other-sensation" value="${esc(state.otherSensation)}" placeholder="Use your own words"></label>${nav("describe")}`);
+      content.querySelectorAll("[data-body-multi-group='sensation']").forEach((button) => button.addEventListener("click", () => { const item = button.dataset.bodyMulti; state.sensations = state.sensations.includes(item) ? state.sensations.filter((x) => x !== item) : [...state.sensations, item]; renderDescribe(); }));
+      content.querySelector("#body-other-sensation").addEventListener("input", (event) => { state.otherSensation = event.target.value; });
+    }
+
+    function renderCharacterise() {
+      renderShell("characterise", `<p class="state-scan-question">What else can you tell me?</p><p class="state-scan-help">Use the simple descriptions that fit. You can leave any part blank.</p><label class="body-range-label">How strong is it?<output id="body-intensity-value">${intensityLabels[state.intensity]}</output><input id="body-intensity" type="range" min="0" max="4" value="${state.intensity}"><span><i>Barely there</i><i>Overwhelming</i></span></label><div class="body-detail-block"><h3>What is it doing?</h3><div class="body-choice-grid">${choiceButtons(movementOptions, "movement", state.movement)}</div></div><div class="body-detail-block"><h3>Does it feel mostly…</h3><div class="body-choice-grid">${choiceButtons(["On the surface", "Inside", "Muscular", "In the joints", "Hard to place"], "layer", state.layer)}</div></div><div class="body-detail-block"><h3>Which side?</h3><div class="body-choice-grid">${choiceButtons(["Left", "Right", "Both sides", "Not applicable / not sure"], "side", state.side)}</div></div>${nav("characterise")}`);
+      content.querySelector("#body-intensity").addEventListener("input", (event) => { state.intensity = Number(event.target.value); content.querySelector("#body-intensity-value").textContent = intensityLabels[state.intensity]; });
+      content.querySelectorAll("[data-body-choice-group]").forEach((button) => button.addEventListener("click", () => { state[button.dataset.bodyChoiceGroup] = button.dataset.bodyChoice; renderCharacterise(); }));
+    }
+
+    function renderDetails() {
+      renderShell("details", `<p class="state-scan-question">Tell me a little more</p><p class="state-scan-help">This part is optional detail, not a diagnosis.</p><div class="body-detail-block"><h3>When did you first notice it?</h3><div class="body-choice-grid">${choiceButtons(onsetOptions, "onset", state.onset)}</div></div><div class="body-detail-block"><h3>Did anything happen around then?</h3><div class="body-choice-grid">${multiButtons(onsetContextOptions, "onsetContext", state.onsetContext)}</div></div><div class="body-detail-block"><h3>What happens when you move?</h3><div class="body-choice-grid">${choiceButtons(["Gets better", "Gets worse", "No change", "Unsure"], "movementChange", state.movementChange)}</div></div><div class="body-detail-block"><h3>Does changing posture affect it?</h3><div class="body-choice-grid">${choiceButtons(["Gets better", "Gets worse", "No change", "Unsure"], "postureChange", state.postureChange)}</div></div><div class="body-detail-block"><h3>What does your body want to do?</h3><div class="body-choice-grid">${multiButtons(bodyUrges, "urges", state.urges)}</div></div><div class="body-detail-block"><h3>What could be contributing?</h3><p class="body-small-note">These are possibilities, not explanations.</p><div class="body-choice-grid">${multiButtons(possibilityOptions, "possibilities", state.possibilities)}</div></div><div class="body-confidence-grid"><label class="body-range-label">How sure are you about the sensation?<output id="body-sensation-confidence-value">${state.sensationConfidence}%</output><input id="body-sensation-confidence" type="range" min="0" max="100" step="10" value="${state.sensationConfidence}"></label><label class="body-range-label">How sure are you about the cause?<output id="body-cause-confidence-value">${state.causeConfidence}%</output><input id="body-cause-confidence" type="range" min="0" max="100" step="10" value="${state.causeConfidence}"></label></div>${nav("details")}`);
+      content.querySelectorAll("[data-body-choice-group]").forEach((button) => button.addEventListener("click", () => { state[button.dataset.bodyChoiceGroup] = button.dataset.bodyChoice; renderDetails(); }));
+      content.querySelectorAll("[data-body-multi-group]").forEach((button) => button.addEventListener("click", () => { const key = button.dataset.bodyMultiGroup; const item = button.dataset.bodyMulti; state[key] = state[key].includes(item) ? state[key].filter((x) => x !== item) : [...state[key], item]; renderDetails(); }));
+      content.querySelector("#body-sensation-confidence").addEventListener("input", (event) => { state.sensationConfidence = Number(event.target.value); content.querySelector("#body-sensation-confidence-value").textContent = `${state.sensationConfidence}%`; });
+      content.querySelector("#body-cause-confidence").addEventListener("input", (event) => { state.causeConfidence = Number(event.target.value); content.querySelector("#body-cause-confidence-value").textContent = `${state.causeConfidence}%`; });
+    }
+
+    function patternText() {
+      const upper = state.areas.some((area) => /Head|Jaw|Throat|Chest|Shoulder|Neck|Back/.test(area));
+      const spread = state.areas.length >= 3 || state.areas.includes("Whole body");
+      if (state.unclearLocation) return "Your body signal is currently hard to localise. That is useful information too; you do not need to force a precise label.";
+      if (spread) return "The sensations are spread across several areas rather than concentrated in one place. The map can show a pattern without explaining its cause.";
+      if (upper) return "The sensations appear more concentrated in the upper body. That can accompany many different physical, emotional, sensory or situational states.";
+      return "The sensations appear more localised. Location can help you describe the experience, but it does not identify what caused it.";
+    }
+    function sensationText() { return [...state.sensations, state.otherSensation].filter(Boolean).join(" · ") || "Not described yet"; }
+    function renderResult() {
+      const areas = state.areas.length ? state.areas : ["Not sure where"];
+      const hypothesis = state.possibilities.length ? escList(state.possibilities) : `<span class="body-map-tag muted">No possibilities selected</span>`;
+      renderShell("result", `<p class="state-scan-question">Here is the map you built.</p><div class="body-map-result"><div class="body-map-result-visual" aria-label="Selected body areas"><div class="body-map-result-core"><span>BODY</span><strong>${state.unclearLocation ? "?" : "●"}</strong></div>${areas.map((area) => `<span class="body-result-area">${esc(area)}</span>`).join("")}</div><div class="body-map-result-details"><section><span class="state-map-label">What you noticed</span><strong>${esc(sensationText())}</strong><p>${esc(areas.join(" · "))} · ${esc(intensityLabels[state.intensity])}${state.movement ? ` · ${esc(state.movement)}` : ""}</p></section><section><span class="state-map-label">What we know</span><p>${state.onset ? `First noticed: ${esc(state.onset)}. ` : ""}${state.layer ? `It feels ${esc(state.layer.toLowerCase())}. ` : ""}${state.movementChange ? `Movement: ${esc(state.movementChange.toLowerCase())}.` : ""}</p></section><section><span class="state-map-label">What we do not know yet</span><p>What is causing the sensation. These selected possibilities are not explanations.</p></section></div></div><div class="body-map-insight"><h3>One careful observation</h3><p>${esc(patternText())}</p></div><div class="body-possibility-panel"><h3>Possible contributors</h3><p>${hypothesis}</p><small>Body sensations can accompany physical states, emotions, environments, illness, fatigue, exertion and many other things.</small></div><div class="body-legend"><span><i class="legend-mark tension"></i>Tension / pressure</span><span><i class="legend-mark movement"></i>Movement / waves</span><span><i class="legend-mark temperature"></i>Temperature</span><span><i class="legend-mark change"></i>Numbness / tingling</span></div>${nav("result")}`);
+    }
+
+    function experimentOptions() {
+      const options = [];
+      if (state.sensations.some((item) => /Tight|Tense|Clenched|Compressed/.test(item)) || state.areas.some((item) => /Jaw|Shoulder|Neck/.test(item))) options.push("Unclench gently and drop your shoulders");
+      if (state.movementChange || state.postureChange || state.layer === "Muscular") options.push("Change position or move gently");
+      if (state.sensations.some((item) => /Fluttering|Pulsing|Shaking|Trembling/.test(item))) options.push("Breathe normally and notice whether the wave changes");
+      options.push("Rest the area or lower one source of sensory demand", "Drink water or eat something ordinary if that fits", "Do nothing yet; observe it for a few minutes");
+      return [...new Set(options)].slice(0, 5);
+    }
+    function renderExperiment() {
+      const options = experimentOptions();
+      renderShell("experiment", `<p class="state-scan-question">What could you test gently?</p><p class="state-scan-help">Choose one low-cost change. This is an observation, not a medical test.</p><div class="body-experiment-grid">${options.map((item) => `<button type="button" class="body-experiment-card ${state.experiment === item ? "selected" : ""}" data-body-experiment="${esc(item)}"><strong>${esc(item)}</strong><span>${state.experiment === item ? "Selected" : "Try this"}</span></button>`).join("")}</div>${state.experiment ? `<div class="body-experiment-callout"><p>Try it for a short while, if comfortable, then record what changed.</p><button type="button" class="button" data-body-start-experiment>I tried it — compare</button></div>` : ""}${nav("experiment")}`);
+      content.querySelectorAll("[data-body-experiment]").forEach((button) => button.addEventListener("click", () => { state.experiment = button.dataset.bodyExperiment; renderExperiment(); }));
+      content.querySelector("[data-body-start-experiment]")?.addEventListener("click", () => renderStage("compare"));
+    }
+
+    function renderCompare() {
+      renderShell("compare", `<p class="state-scan-question">Did anything change?</p><p class="state-scan-help">A change does not prove a cause. No change is useful information too.</p><label class="body-range-label">How strong is it now?<output id="body-after-intensity-value">${intensityLabels[state.afterIntensity]}</output><input id="body-after-intensity" type="range" min="0" max="4" value="${state.afterIntensity}"><span><i>Barely there</i><i>Overwhelming</i></span></label><div class="body-choice-grid body-change-options">${choiceButtons(["Better", "Worse", "Unchanged", "Unsure"], "experimentOutcome", state.experimentOutcome)}</div><label class="state-text-label">What did you notice?<textarea id="body-experiment-note" rows="3" placeholder="For example: moving changed it, but the tightness remained.">${esc(state.experimentNote)}</textarea>${nav("compare")}`);
+      content.querySelector("#body-after-intensity").addEventListener("input", (event) => { state.afterIntensity = Number(event.target.value); content.querySelector("#body-after-intensity-value").textContent = intensityLabels[state.afterIntensity]; });
+      content.querySelectorAll("[data-body-choice-group='experimentOutcome']").forEach((button) => button.addEventListener("click", () => { state.experimentOutcome = button.dataset.bodyChoice; renderCompare(); }));
+      content.querySelector("#body-experiment-note").addEventListener("input", (event) => { state.experimentNote = event.target.value; });
+    }
+
+    function renderFinal() {
+      const delta = state.afterIntensity - state.intensity;
+      const conclusion = delta < 0 ? "The sensation became less intense after the change. That suggests the tested condition may have been affecting it, but it does not prove a single cause." : delta > 0 ? "The sensation became stronger after the change. The test may not have suited this moment, or another factor may be changing at the same time." : "The sensation stayed about the same. It may need a different kind of attention, or more observation in context.";
+      const entry = { title: "Body Check", tool: "body-check", answers: { ...state, moodBefore }, moodCheck: null };
+      const text = () => `Body Check\n\nAreas: ${state.areas.join(", ") || "Not sure where"}\nSensation: ${sensationText()}\nIntensity before: ${intensityLabels[state.intensity]}\nWhat it is doing: ${state.movement || "—"}\nLayer: ${state.layer || "—"}\nWhen it started: ${state.onset || "—"}\nPossible contributors: ${state.possibilities.join(", ") || "—"}\nTested: ${state.experiment || "—"}\nOutcome: ${state.experimentOutcome || "—"}\nIntensity after: ${intensityLabels[state.afterIntensity]}`;
+      renderShell("final", `<p class="state-scan-question">What did the body map teach you?</p><div class="body-before-after"><article><span>Before</span><strong>${esc(intensityLabels[state.intensity])}</strong><small>${esc(sensationText())}</small></article><div class="state-before-after-line" aria-hidden="true"></div><article><span>After</span><strong>${esc(intensityLabels[state.afterIntensity])}</strong><small>${esc(state.experimentOutcome || "Not rated")}</small></article></div><div class="body-map-insight"><h3>One careful conclusion</h3><p>${esc(conclusion)}</p><p>Notice the sensation before attaching an emotion or explanation to it. Clear sensation and uncertain cause can exist together.</p></div><div class="body-confidence-grid"><section><span class="state-map-label">Confidence in the sensation</span><strong>${state.sensationConfidence}%</strong><p>You may know exactly what you feel without knowing why.</p></section><section><span class="state-map-label">Confidence in the cause</span><strong>${state.causeConfidence}%</strong><p>Low cause confidence is not a failure; it is an honest result.</p></section></div><div class="row body-result-actions"><button type="button" class="button" id="body-save-map">Save to My Maps</button><button type="button" class="button secondary" id="body-download-map">Download map</button><button type="button" class="button secondary" id="body-copy-map">Copy text</button></div><p id="body-result-status" class="fine" role="status"></p><a class="button secondary" href="#compass">Explore the Emotion Compass</a>`);
+      content.querySelector("#body-save-map").addEventListener("click", () => { try { saveMap(entry); content.querySelector("#body-result-status").textContent = "Saved on this device."; } catch { content.querySelector("#body-result-status").textContent = "This browser could not save the map."; } });
+      content.querySelector("#body-download-map").addEventListener("click", () => downloadText("body-map.txt", text()));
+      content.querySelector("#body-copy-map").addEventListener("click", async () => { try { await navigator.clipboard.writeText(text()); content.querySelector("#body-result-status").textContent = "Copied."; } catch { content.querySelector("#body-result-status").textContent = "Copy was blocked by this browser. Use Download instead."; } });
+    }
+
+    renderMode();
+  }
+}
+
 function renderStateCheck(root, tool) {
   root.innerHTML = `<div class="wrap tool-page state-check-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Feel & notice / State Scan</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your answers stay in this browser unless you choose to save the map.</p></section><section id="state-mood-gate">${moodRatingMarkup({ id: "state-mood-before", outputId: "state-mood-before-value", buttonId: "state-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This is the existing starting check for the tool.", buttonText: "Open the State Scan" })}</section><div id="state-scan-content" hidden></div><div class="tool-next row"><a class="chip" href="#compass">Emotion Compass</a><a class="chip" href="#tools">Choose another tool</a><a class="chip" href="#maps">My Maps</a></div></div>`;
   bindMoodRating(root, {
@@ -573,6 +734,10 @@ export function renderTool(root, id) {
   }
   if (tool.id === "maps") {
     renderMaps(root);
+    return;
+  }
+  if (tool.id === "body-check") {
+    renderBodyCheck(root, tool);
     return;
   }
   if (tool.id === "state-check") {

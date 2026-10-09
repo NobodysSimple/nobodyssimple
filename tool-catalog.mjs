@@ -61,10 +61,10 @@ export const tools = [
   },
   {
     id: "body-check",
-    title: "Body check",
+    title: "Body Check",
     group: "feel",
     short:
-      "Mark sensations as observations; no body area has one fixed emotional meaning.",
+      "Map what your body is doing before deciding what it means.",
     fields: [
       check("areas", "Where do you notice something?", [
         "Head",
