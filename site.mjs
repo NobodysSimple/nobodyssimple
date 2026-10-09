@@ -29,6 +29,7 @@ import {
 import { renderSimplyFocus } from "./simplyfocus.mjs";
 import { renderPersonalityTest } from "./personality-test.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
+import { renderSupport } from "./referrals.mjs";
 const main = document.querySelector("main");
 const imageLightbox = document.createElement("dialog");
 imageLightbox.className = "site-image-lightbox";
@@ -692,6 +693,7 @@ function route() {
       volunteer: () => renderCommunity(main, "volunteer"),
       routes: () => renderRoutes(main),
       maps: () => renderTool(main, "maps"),
+      support: () => renderSupport(main),
       watch: () => {
         libraryState.view = "resources";
         libraryState.type = "video";
@@ -704,6 +706,8 @@ function route() {
   const title =
     name === "navigate"
       ? "Find what I need"
+      : name === "support"
+      ? "Get help"
       : name === "personality"
       ? "Full Personality Profile"
       : name === "simplyfocus"

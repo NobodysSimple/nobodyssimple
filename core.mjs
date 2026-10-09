@@ -21,7 +21,7 @@ export const safeImage = (value) =>
 export function safeHref(value) {
   const link = String(value || "").trim();
   if (!link) return "";
-  if (/^(?:https?:|mailto:|tel:)/i.test(link)) return link;
+  if (/^(?:https?:|mailto:|tel:|sms:)/i.test(link)) return link;
   if (/^(?:\/|#|\.\/)/.test(link) && !/^\/\//.test(link)) return link;
   return "";
 }
