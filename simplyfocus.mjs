@@ -27,6 +27,32 @@ const el = (tag, className = "", text = "") => {
 export function renderSimplyFocus(root) {
   root.innerHTML =
     '<div class="wrap simplyfocus-page"><section class="page-intro focus-intro"><p class="eyebrow">A sound space · SimplyFocus</p><h1>Make a little room for focus.</h1><p class="lead">Blend soft ambient sounds to suit this moment. Start with one layer, add another if you like, and stop whenever you want.</p></section><section class="focus-mixer"><div class="focus-mixer-head"><div><p class="eyebrow">Your soundscape</p><h2>Turn each sound up or down.</h2></div><label class="focus-master">Master volume <output id="focus-master-output">35%</output><input id="focus-master" type="range" min="0" max="100" value="35" aria-label="Master volume"></label></div><div id="focus-tracks" class="focus-tracks"></div><div class="focus-presets"><span class="eyebrow">Start with a mix</span><div id="focus-preset-buttons" class="choice-cloud"></div></div><div class="focus-actions"><button class="button" id="focus-play" type="button">Start soundscape</button><button class="button subtle-button" id="focus-stop" type="button">Stop all</button><button class="button subtle-button" id="focus-save" type="button">Save my mix on this device</button><button class="button subtle-button" id="focus-load" type="button" hidden>Load saved mix</button></div><p id="focus-status" class="interactive-status" aria-live="polite">Nothing plays until you press Start. Audio is generated in your browser and is not uploaded.</p></section><section class="focus-note"><h2>A quiet note on sound</h2><p>There is no ideal focus mix. Some days call for silence; some days call for a little movement or repetition. Keep the volume comfortable, and leave out any sound that feels like too much.</p><a href="#tools">Explore other interactive activities →</a></section></div>';
+  const pomodoro = document.createElement("section");
+  pomodoro.className = "pomodoro-card";
+  pomodoro.setAttribute("aria-labelledby", "pomodoro-title");
+  pomodoro.innerHTML = '<div><p class="eyebrow">Focus gently</p><h2 id="pomodoro-title">25-minute Pomodoro</h2><p>Use the soundscape as a steady background while you work. Pause or reset whenever you need to.</p></div><div class="pomodoro-timer" aria-live="off"><span id="pomodoro-display">25:00</span><span id="pomodoro-status" role="status">Ready when you are.</span></div><div class="pomodoro-actions"><button class="button" id="pomodoro-start" type="button">Start timer</button><button class="button subtle-button" id="pomodoro-reset" type="button">Reset</button></div>';
+  const mixer = root.querySelector(".focus-mixer");
+  if (mixer) mixer.after(pomodoro);
+  let pomodoroSeconds = 25 * 60;
+  let pomodoroTimer = null;
+  const pomodoroDisplay = $("#pomodoro-display", pomodoro);
+  const pomodoroStatus = $("#pomodoro-status", pomodoro);
+  const pomodoroStart = $("#pomodoro-start", pomodoro);
+  const formatPomodoro = () => `${String(Math.floor(pomodoroSeconds / 60)).padStart(2, "0")}:${String(pomodoroSeconds % 60).padStart(2, "0")}`;
+  const renderPomodoro = () => { pomodoroDisplay.textContent = formatPomodoro(); };
+  const stopPomodoro = () => { clearInterval(pomodoroTimer); pomodoroTimer = null; };
+  pomodoroStart.addEventListener("click", () => {
+    if (pomodoroTimer) { stopPomodoro(); pomodoroStart.textContent = "Resume timer"; pomodoroStatus.textContent = "Paused. Resume whenever you are ready."; return; }
+    if (!pomodoroSeconds) pomodoroSeconds = 25 * 60;
+    pomodoroTimer = setInterval(() => {
+      pomodoroSeconds -= 1;
+      renderPomodoro();
+      if (pomodoroSeconds <= 0) { stopPomodoro(); pomodoroSeconds = 0; renderPomodoro(); pomodoroStart.textContent = "Start again"; pomodoroStatus.textContent = "Session complete. Take a short break."; }
+    }, 1000);
+    pomodoroStart.textContent = "Pause timer";
+    pomodoroStatus.textContent = "Timer running. Keep the next 25 minutes small and manageable.";
+  });
+  $("#pomodoro-reset", pomodoro).addEventListener("click", () => { stopPomodoro(); pomodoroSeconds = 25 * 60; renderPomodoro(); pomodoroStart.textContent = "Start timer"; pomodoroStatus.textContent = "Ready when you are."; });
   const values = {};
   const outputs = {};
   const trackHost = $("#focus-tracks", root);
