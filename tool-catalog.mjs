@@ -419,7 +419,7 @@ export const tools = [
     title: "My sensory recipe",
     group: "calm",
     short:
-      "Record what has helped you personally; it is not a prescription for anyone else.",
+      "Make a small, situation-specific sensory plan: what to try first, what to use if that is unavailable, and what to notice next.",
     fields: [
       select("state", "In which kind of moment?", [
         "Too much input",
