@@ -28,31 +28,92 @@ export function renderSimplyFocus(root) {
   root.innerHTML =
     '<div class="wrap simplyfocus-page"><section class="page-intro focus-intro"><p class="eyebrow">A sound space · SimplyFocus</p><h1>Make a little room for focus.</h1><p class="lead">Blend soft ambient sounds to suit this moment. Start with one layer, add another if you like, and stop whenever you want.</p></section><section class="focus-mixer"><div class="focus-mixer-head"><div><p class="eyebrow">Your soundscape</p><h2>Turn each sound up or down.</h2></div><label class="focus-master">Master volume <output id="focus-master-output">35%</output><input id="focus-master" type="range" min="0" max="100" value="35" aria-label="Master volume"></label></div><div id="focus-tracks" class="focus-tracks"></div><div class="focus-presets"><span class="eyebrow">Start with a mix</span><div id="focus-preset-buttons" class="choice-cloud"></div></div><div class="focus-actions"><button class="button" id="focus-play" type="button">Start soundscape</button><button class="button subtle-button" id="focus-stop" type="button">Stop all</button><button class="button subtle-button" id="focus-save" type="button">Save my mix on this device</button><button class="button subtle-button" id="focus-load" type="button" hidden>Load saved mix</button></div><p id="focus-status" class="interactive-status" aria-live="polite">Nothing plays until you press Start. Audio is generated in your browser and is not uploaded.</p></section><section class="focus-note"><h2>A quiet note on sound</h2><p>There is no ideal focus mix. Some days call for silence; some days call for a little movement or repetition. Keep the volume comfortable, and leave out any sound that feels like too much.</p><a href="#tools">Explore other interactive activities →</a></section></div>';
   const pomodoro = document.createElement("section");
-  pomodoro.className = "pomodoro-card";
+  pomodoro.className = "pomodoro-card phase-work";
   pomodoro.setAttribute("aria-labelledby", "pomodoro-title");
-  pomodoro.innerHTML = '<div><p class="eyebrow">Focus gently</p><h2 id="pomodoro-title">25-minute Pomodoro</h2><p>Use the soundscape as a steady background while you work. Pause or reset whenever you need to.</p></div><div class="pomodoro-timer" aria-live="off"><span id="pomodoro-display">25:00</span><span id="pomodoro-status" role="status">Ready when you are.</span></div><div class="pomodoro-actions"><button class="button" id="pomodoro-start" type="button">Start timer</button><button class="button subtle-button" id="pomodoro-reset" type="button">Reset</button></div>';
+  pomodoro.innerHTML = '<div class="pomodoro-head"><div><p class="eyebrow">Focus gently</p><h2 id="pomodoro-title">Pomodoro focus board</h2><p>Choose a focus period, then keep the work in small, visible pieces.</p></div><div class="pomodoro-modes" role="group" aria-label="Timer mode"><button type="button" data-pomodoro-mode="work" aria-pressed="true">Work <span>25 min</span></button><button type="button" data-pomodoro-mode="short" aria-pressed="false">Short break <span>5 min</span></button><button type="button" data-pomodoro-mode="long" aria-pressed="false">Long break <span>15 min</span></button></div></div><div class="pomodoro-main"><div class="pomodoro-clock" aria-live="off"><span id="pomodoro-mode-label">FOCUS</span><strong id="pomodoro-display">25:00</strong><span id="pomodoro-status" role="status">Ready when you are.</span></div><div class="pomodoro-actions"><button class="button" id="pomodoro-start" type="button">Start timer</button><button class="button subtle-button" id="pomodoro-reset" type="button">Reset</button></div></div><div class="pomodoro-tasks"><div class="pomodoro-task-head"><div><p class="eyebrow">Your tasks</p><h3>What are you working on?</h3></div><button class="chip" id="pomodoro-clear-tasks" type="button">Clear all tasks</button></div><form id="pomodoro-task-form" class="pomodoro-task-form"><label class="field">Task<input id="pomodoro-task-title" required maxlength="120" placeholder="e.g. Draft the introduction"></label><label class="field">Notes <span class="fine">optional</span><textarea id="pomodoro-task-notes" rows="2" maxlength="500" placeholder="A useful detail or first step"></textarea></label><div class="pomodoro-task-options"><label class="field">Project<select id="pomodoro-task-project"></select></label><label class="field">Estimated Pomodoros<select id="pomodoro-task-estimate">${Array.from({ length: 8 }, (_, i) => `<option value="${i + 1}">${i + 1} Pomodoro${i ? "s" : ""}</option>`).join("")}</select></label><button class="button" type="submit">Add task</button></div></form><form id="pomodoro-project-form" class="pomodoro-project-form"><label class="field">New project<input id="pomodoro-project-name" maxlength="60" placeholder="e.g. Dissertation"></label><button class="button secondary" type="submit">Add project</button></form><div id="pomodoro-task-list" class="pomodoro-task-list" aria-live="polite"></div></div>';
   const mixer = root.querySelector(".focus-mixer");
   if (mixer) mixer.after(pomodoro);
-  let pomodoroSeconds = 25 * 60;
+  const pomodoroModes = { work: { label: "FOCUS", seconds: 25 * 60 }, short: { label: "SHORT BREAK", seconds: 5 * 60 }, long: { label: "LONG BREAK", seconds: 15 * 60 } };
+  const taskStorageKey = "ns-simplyfocus-tasks-v1";
+  let pomodoroMode = "work";
+  let pomodoroSeconds = pomodoroModes[pomodoroMode].seconds;
   let pomodoroTimer = null;
+  let tasks = [];
+  let projects = ["Personal"];
   const pomodoroDisplay = $("#pomodoro-display", pomodoro);
   const pomodoroStatus = $("#pomodoro-status", pomodoro);
   const pomodoroStart = $("#pomodoro-start", pomodoro);
+  const pomodoroModeLabel = $("#pomodoro-mode-label", pomodoro);
+  const taskList = $("#pomodoro-task-list", pomodoro);
+  const projectSelect = $("#pomodoro-task-project", pomodoro);
   const formatPomodoro = () => `${String(Math.floor(pomodoroSeconds / 60)).padStart(2, "0")}:${String(pomodoroSeconds % 60).padStart(2, "0")}`;
   const renderPomodoro = () => { pomodoroDisplay.textContent = formatPomodoro(); };
+  const saveTasks = () => localStorage.setItem(taskStorageKey, JSON.stringify({ tasks, projects }));
+  const loadTasks = () => {
+    try {
+      const saved = JSON.parse(localStorage.getItem(taskStorageKey) || "null");
+      tasks = Array.isArray(saved?.tasks) ? saved.tasks : [];
+      projects = Array.isArray(saved?.projects) && saved.projects.length ? saved.projects : ["Personal"];
+    } catch { tasks = []; projects = ["Personal"]; }
+  };
   const stopPomodoro = () => { clearInterval(pomodoroTimer); pomodoroTimer = null; };
+  const updateMode = (mode, reset = true) => {
+    stopPomodoro();
+    pomodoroMode = mode;
+    if (reset) pomodoroSeconds = pomodoroModes[mode].seconds;
+    pomodoro.className = `pomodoro-card phase-${mode}`;
+    pomodoroModeLabel.textContent = pomodoroModes[mode].label;
+    pomodoro.querySelectorAll("[data-pomodoro-mode]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.pomodoroMode === mode)));
+    renderPomodoro();
+    pomodoroStart.textContent = "Start timer";
+    pomodoroStatus.textContent = mode === "work" ? "Ready when you are." : "A small pause is still part of the work.";
+  };
+  pomodoro.querySelectorAll("[data-pomodoro-mode]").forEach((button) => button.addEventListener("click", () => updateMode(button.dataset.pomodoroMode)));
   pomodoroStart.addEventListener("click", () => {
     if (pomodoroTimer) { stopPomodoro(); pomodoroStart.textContent = "Resume timer"; pomodoroStatus.textContent = "Paused. Resume whenever you are ready."; return; }
     if (!pomodoroSeconds) pomodoroSeconds = 25 * 60;
     pomodoroTimer = setInterval(() => {
       pomodoroSeconds -= 1;
       renderPomodoro();
-      if (pomodoroSeconds <= 0) { stopPomodoro(); pomodoroSeconds = 0; renderPomodoro(); pomodoroStart.textContent = "Start again"; pomodoroStatus.textContent = "Session complete. Take a short break."; }
+      if (pomodoroSeconds <= 0) { stopPomodoro(); pomodoroSeconds = 0; renderPomodoro(); pomodoroStart.textContent = "Start again"; pomodoroStatus.textContent = pomodoroMode === "work" ? "Focus period complete. Choose a short or long break." : "Break complete. Choose Work when you are ready."; }
     }, 1000);
     pomodoroStart.textContent = "Pause timer";
     pomodoroStatus.textContent = "Timer running. Keep the next 25 minutes small and manageable.";
   });
-  $("#pomodoro-reset", pomodoro).addEventListener("click", () => { stopPomodoro(); pomodoroSeconds = 25 * 60; renderPomodoro(); pomodoroStart.textContent = "Start timer"; pomodoroStatus.textContent = "Ready when you are."; });
+  $("#pomodoro-reset", pomodoro).addEventListener("click", () => updateMode(pomodoroMode));
+  const renderProjects = () => {
+    projectSelect.replaceChildren();
+    projects.forEach((project) => { const option = document.createElement("option"); option.value = project; option.textContent = project; projectSelect.append(option); });
+  };
+  const renderTasks = () => {
+    taskList.replaceChildren();
+    if (!tasks.length) { const empty = el("p", "pomodoro-empty", "No tasks yet. Add one small, visible next step above."); taskList.append(empty); return; }
+    projects.forEach((project) => {
+      const projectTasks = tasks.filter((task) => task.project === project);
+      if (!projectTasks.length) return;
+      const group = el("section", "pomodoro-project");
+      const heading = el("h4", "", project); group.append(heading);
+      projectTasks.forEach((task) => {
+        const card = el("article", `pomodoro-task${task.done ? " is-done" : ""}`);
+        const check = document.createElement("input"); check.type = "checkbox"; check.checked = Boolean(task.done); check.setAttribute("aria-label", `Finish ${task.title}`);
+        check.addEventListener("change", () => { task.done = check.checked; saveTasks(); renderTasks(); });
+        const copy = el("div", "pomodoro-task-copy");
+        const title = el("strong", "", task.title); copy.append(title);
+        if (task.notes) copy.append(el("p", "", task.notes));
+        copy.append(el("small", "", `${task.estimate} Pomodoro${task.estimate === 1 ? "" : "s"}`));
+        const controls = el("div", "pomodoro-task-controls");
+        const up = el("button", "chip", "↑"); up.type = "button"; up.title = "Move task up"; up.disabled = tasks.indexOf(task) === tasks.findIndex((item) => item.project === task.project); up.addEventListener("click", () => moveTask(task, -1));
+        const down = el("button", "chip", "↓"); down.type = "button"; down.title = "Move task down"; const sameProject = tasks.filter((item) => item.project === task.project); down.disabled = sameProject[sameProject.length - 1] === task; down.addEventListener("click", () => moveTask(task, 1));
+        controls.append(up, down); card.append(check, copy, controls); group.append(card);
+      });
+      taskList.append(group);
+    });
+  };
+  const moveTask = (task, direction) => { const indexes = tasks.map((item, index) => item.project === task.project ? index : -1).filter((index) => index >= 0); const position = indexes.indexOf(tasks.indexOf(task)); const target = indexes[position + direction]; if (target === undefined) return; [tasks[tasks.indexOf(task)], tasks[target]] = [tasks[target], tasks[tasks.indexOf(task)]]; saveTasks(); renderTasks(); };
+  $("#pomodoro-task-form", pomodoro).addEventListener("submit", (event) => { event.preventDefault(); const title = $("#pomodoro-task-title", pomodoro).value.trim(); if (!title) return; tasks.push({ id: `${Date.now()}-${Math.random().toString(36).slice(2)}`, title, notes: $("#pomodoro-task-notes", pomodoro).value.trim(), estimate: Number($("#pomodoro-task-estimate", pomodoro).value), project: projectSelect.value || projects[0], done: false }); saveTasks(); event.target.reset(); renderTasks(); });
+  $("#pomodoro-project-form", pomodoro).addEventListener("submit", (event) => { event.preventDefault(); const input = $("#pomodoro-project-name", pomodoro); const name = input.value.trim(); if (!name || projects.includes(name)) return; projects.push(name); saveTasks(); renderProjects(); projectSelect.value = name; input.value = ""; renderTasks(); });
+  $("#pomodoro-clear-tasks", pomodoro).addEventListener("click", () => { if (!tasks.length || !window.confirm("Clear all Pomodoro tasks?")) return; tasks = []; saveTasks(); renderTasks(); });
+  loadTasks(); renderProjects(); renderTasks();
   const values = {};
   const outputs = {};
   const trackHost = $("#focus-tracks", root);
