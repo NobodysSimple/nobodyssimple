@@ -366,7 +366,7 @@ export const tools = [
     title: "Orient to the present",
     group: "calm",
     short:
-      "Use sensory detail to notice where you are. Stop or change any prompt that feels unhelpful.",
+      "Re-establish where you are, what is happening now, and what your senses can confirm.",
     fields: [
       field("see", "One thing you can see, if you want."),
       field("hear", "One sound or silence you notice."),
