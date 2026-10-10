@@ -106,7 +106,8 @@ export function renderSimplyFocus(root) {
         const controls = el("div", "pomodoro-task-controls");
         const up = el("button", "chip", "↑"); up.type = "button"; up.title = "Move task up"; up.disabled = tasks.indexOf(task) === tasks.findIndex((item) => item.project === task.project); up.addEventListener("click", () => moveTask(task, -1));
         const down = el("button", "chip", "↓"); down.type = "button"; down.title = "Move task down"; const sameProject = tasks.filter((item) => item.project === task.project); down.disabled = sameProject[sameProject.length - 1] === task; down.addEventListener("click", () => moveTask(task, 1));
-        controls.append(up, down); card.append(check, copy, controls); group.append(card);
+        const remove = el("button", "chip pomodoro-task-delete", "Delete"); remove.type = "button"; remove.title = `Delete ${task.title}`; remove.addEventListener("click", () => { tasks = tasks.filter((item) => item !== task); saveTasks(); renderTasks(); });
+        controls.append(up, down, remove); card.append(check, copy, controls); group.append(card);
       });
       taskList.append(group);
     });

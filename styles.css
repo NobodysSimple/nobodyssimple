@@ -3698,6 +3698,7 @@ footer {
 .pomodoro-task-copy small { color:#8a806c; font-size:.73rem; }
 .pomodoro-task-controls { display:flex; gap:5px; }
 .pomodoro-task-controls button { min-width:32px; padding:6px 8px; }
+.pomodoro-task-controls .pomodoro-task-delete { color:#9b4d45; }
 .pomodoro-task-controls button:disabled { cursor:not-allowed; opacity:.35; }
 .pomodoro-task.is-done .pomodoro-task-copy { opacity:.52; text-decoration:line-through; }
 .pomodoro-empty { margin:0; padding:20px; border:1px dashed #cfc8b8; border-radius:10px; color:#667069; text-align:center; }
