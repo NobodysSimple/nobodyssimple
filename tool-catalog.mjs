@@ -440,7 +440,7 @@ export const tools = [
     title: "Social battery",
     group: "calm",
     short:
-      "Compare energy, interest, safety and sensory demand before and after an interaction.",
+      "See what a social interaction gave you, cost you, and what conditions would make it easier next time.",
     fields: [
       range("before", "Energy before"),
       range("after", "Energy after"),

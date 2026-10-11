@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v52";
+const CACHE = "nobodyssimple-v53";
 const SHELL = [
   "./",
   "index.html",
@@ -9,6 +9,7 @@ const SHELL = [
   "site.mjs",
   "features.mjs",
   "sensory-recipe.mjs",
+  "social-battery.mjs",
   "interactive-tools.mjs",
   "simplyfocus.mjs",
   "personality-test.mjs",
