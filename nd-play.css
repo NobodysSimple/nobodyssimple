@@ -5,6 +5,25 @@
   --nd-brightness: 1;
   color: var(--ink);
 }
+body.ndp-embedded {
+  background: #edf1e9;
+}
+body.ndp-embedded .header,
+body.ndp-embedded footer,
+body.ndp-embedded .skip {
+  display: none;
+}
+body.ndp-embedded .ndp-shell {
+  width: 100%;
+  padding: 0 0 18px;
+}
+body.ndp-embedded .ndp-heading {
+  display: none;
+}
+body.ndp-embedded .ndp-workspace {
+  border-radius: 20px;
+  box-shadow: none;
+}
 .ndp-shell {
   width: min(1440px, 100%);
   margin: 0 auto;

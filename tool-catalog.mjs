@@ -1207,7 +1207,7 @@ export const tools = [
     group: "calm",
     short:
       "Explore movement, touch, sound and visual stimulation in the ND play space.",
-    href: "nd-play.html",
+    href: "#stim-space",
     fields: [],
     tags: ["calm", "sensory", "stimulation", "play"],
     kind: "external",

@@ -658,15 +658,19 @@ function about() {
 function install() {
   main.innerHTML = `<div class="wrap about-copy">${heading("Keep it close", "Use it like an app.", "Add Nobody’s Simple to your home screen for quick access.")}<div class="card"><h3>On iPhone or iPad</h3><p>Open this website in Safari. Tap Share, then Add to Home Screen.</p><h3>On Android</h3><p>Open this website in Chrome. Open the browser menu, then choose Install app or Add to Home screen.</p><h3>On desktop</h3><p>Use your browser’s install icon if it offers one.</p><p class="fine">Previously visited pages and tools can work offline. Videos and publishing need an internet connection. New writing appears when you reconnect and refresh.</p></div></div>`;
 }
+function renderStimSpace() {
+  main.innerHTML = `<div class="wrap stim-space-page"><a class="back-link" href="#tools">← Back to the toolbox</a><section class="page-intro"><p class="eyebrow">Sensory & focus</p><h1>Stim Space</h1><p class="lead">A playful digital space for movement, touch, sound and visual stimulation. Pause, switch or leave whenever you like.</p></section><iframe class="stim-space-frame" title="Stim Space sensory playground" src="nd-play.html?embedded=1" loading="eager"></iframe><p class="fine stim-space-note">Stim Space is part of Nobody’s Simple. Your saved sensory recipes stay in this browser.</p></div>`;
+}
 function route() {
   const [name, id] = location.hash.slice(1).split("/");
   const currentName = name || "home";
   const startRoutes = new Set(["help", "navigate", "questions", "navigator", "compass"]);
+  document.querySelector("[data-more-menu]")?.removeAttribute("open");
   document.querySelectorAll("[data-route-link]").forEach((a) => {
     const linkName = (a.hash || "").slice(1).split("/")[0];
     const active =
       currentName === linkName ||
-      (startRoutes.has(currentName) && linkName === "help") ||
+      (startRoutes.has(currentName) && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
       (["tool", "play", "guided"].includes(currentName) && linkName === "tools") ||
       (currentName === "post" && linkName === "blog");
@@ -676,8 +680,8 @@ function route() {
   (
     ({
       home: () => renderHome(main, posts),
-      help: () => renderHelp(main),
-      navigate: () => renderHelp(main),
+      help: () => renderHome(main),
+      navigate: () => renderHome(main),
       library,
       learn: library,
       blog,
@@ -691,6 +695,7 @@ function route() {
       guided: () => renderLifeNavigation(main, decodeURIComponent(id || "")),
       team: () => renderTeam(main),
       simplyfocus: () => renderSimplyFocus(main),
+      "stim-space": renderStimSpace,
       personality: () => renderPersonalityTest(main),
       compass: () =>
         renderCompass(main, emotions, (e) => (selectedEmotion = e)),
@@ -714,13 +719,17 @@ function route() {
   window.scrollTo(0, 0);
   const title =
     name === "navigate"
-      ? "Find what I need"
+      ? "Home"
+      : name === "help"
+      ? "Home"
       : name === "support"
       ? "Get help"
       : name === "personality"
       ? "Full Personality Profile"
       : name === "simplyfocus"
       ? "SimplyFocus"
+      : name === "stim-space"
+      ? "Stim Space"
       : name === "team"
         ? "Meet the team"
         : name === "play"
@@ -731,8 +740,8 @@ function route() {
   document.title = `${title ? title + " · " : ""}Nobody’s Simple`;
   const appLabels = {
     home: "Home",
-    help: "Navigate",
-    navigate: "Navigate",
+    help: "Home",
+    navigate: "Home",
     tools: "Tools",
     library: "Learn",
     learn: "Learn",
@@ -741,6 +750,7 @@ function route() {
     maps: "My Maps",
     support: "Get help",
     simplyfocus: "SimplyFocus",
+    "stim-space": "Stim Space",
     personality: "My profile",
     community: "Feedback",
     volunteer: "Get involved",
@@ -755,7 +765,7 @@ function route() {
     : name === "play"
       ? main.querySelector("#interactive-title")?.textContent?.trim() || "Interactive tool"
       : appLabels[currentName] || (title || "Nobody’s Simple");
-  const pageKicker = currentName === "home"
+  const pageKicker = (currentName === "home" || startRoutes.has(currentName))
     ? "Today"
     : ["help", "navigate", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"

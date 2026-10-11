@@ -120,7 +120,7 @@ const groupNames = [
 const groupFor = (key) => groupNames.find((group) => group[0] === key)?.[1] || "Interactive";
 const hrefFor = (tool) => {
   if (tool.id === "emotion-compass") return "#compass";
-  if (tool.id === "sensory-playground") return "nd-play.html";
+  if (tool.id === "sensory-playground") return "#stim-space";
   if (tool.id === "nobody-radio") return "#simplyfocus";
   if (tool.id.startsWith("guided-")) return "#guided/" + encodeURIComponent(tool.id.slice(7));
   return "#play/" + encodeURIComponent(tool.id);

@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v58-app-shell";
+const CACHE = "nobodyssimple-v59-console-stim-space";
 const SHELL = [
   "./",
   "index.html",

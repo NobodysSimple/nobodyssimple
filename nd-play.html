@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="nd-play.css" />
   </head>
   <body>
+    <script>
+      if (new URLSearchParams(location.search).get("embedded") === "1") document.body.classList.add("ndp-embedded");
+    </script>
     <a class="skip" href="#main">Skip to content</a>
     <header class="header">
       <a class="brand" href="index.html#home"><img src="logo.png" alt="" /><span>Nobody’s Simple<small>PSYCHOLOGY FOR REAL LIFE</small></span></a>
