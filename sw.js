@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v61-console-youtube";
+const CACHE = "nobodyssimple-v62-questionnaires";
 const SHELL = [
   "./",
   "index.html",
@@ -15,6 +15,7 @@ const SHELL = [
   "interactive-tools.mjs",
   "simplyfocus.mjs",
   "personality-test.mjs",
+  "questionnaires.mjs",
   "life-navigation.mjs",
   "referrals.mjs",
   "personality-map.png",

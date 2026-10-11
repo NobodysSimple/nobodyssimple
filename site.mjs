@@ -28,6 +28,7 @@ import {
 } from "./interactive-tools.mjs";
 import { renderSimplyFocus } from "./simplyfocus.mjs";
 import { renderPersonalityTest } from "./personality-test.mjs";
+import { renderBigFive, renderQuestionnaires } from "./questionnaires.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderSupport } from "./referrals.mjs";
 const main = document.querySelector("main");
@@ -670,6 +671,7 @@ function route() {
     const linkName = (a.hash || "").slice(1).split("/")[0];
     const active =
       currentName === linkName ||
+      (["personality", "big-five"].includes(currentName) && linkName === "questionnaires") ||
       (startRoutes.has(currentName) && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
       (["tool", "play", "guided"].includes(currentName) && linkName === "tools") ||
@@ -696,6 +698,8 @@ function route() {
       team: () => renderTeam(main),
       simplyfocus: () => renderSimplyFocus(main),
       "stim-space": renderStimSpace,
+      questionnaires: () => renderQuestionnaires(main),
+      "big-five": () => renderBigFive(main),
       personality: () => renderPersonalityTest(main),
       compass: () =>
         renderCompass(main, emotions, (e) => (selectedEmotion = e)),
@@ -724,8 +728,12 @@ function route() {
       ? "Home"
       : name === "support"
       ? "Get help"
+      : name === "questionnaires"
+      ? "Questionnaires"
+      : name === "big-five"
+      ? "Big Five questionnaire"
       : name === "personality"
-      ? "Full Personality Profile"
+      ? "Nobody’s Simple Personality Test"
       : name === "simplyfocus"
       ? "SimplyFocus"
       : name === "stim-space"
@@ -751,7 +759,9 @@ function route() {
     support: "Get help",
     simplyfocus: "SimplyFocus",
     "stim-space": "Stim Space",
-    personality: "My profile",
+    questionnaires: "Questionnaires",
+    "big-five": "Questionnaires",
+    personality: "Questionnaires",
     community: "Feedback",
     volunteer: "Get involved",
     team: "Meet the team",
@@ -769,7 +779,7 @@ function route() {
     ? "Today"
     : ["help", "navigate", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
-      : ["tools", "tool", "play", "guided", "simplyfocus"].includes(currentName)
+    : ["tools", "tool", "play", "guided", "simplyfocus", "questionnaires", "big-five", "personality"].includes(currentName)
         ? "Explore"
         : currentName === "support"
           ? "Real-world support"

@@ -1,4 +1,4 @@
-const VERSION = "NS Personal Psychological Guide 1.7 · 100-situation edition";
+const VERSION = "Nobody’s Simple Personality Test 1.7 · 100-situation edition";
 const DRAFT_KEY = "nobodys-simple-full-profile-draft-v3";
 const STATE_KEY = "nobodys-simple-profile-state-checkins-v1";
 
@@ -724,7 +724,7 @@ function renderIntro(root) {
     : "";
   root.innerHTML=[
     "<div class='wrap pf-wrap'><section class='pf-intro'>",
-    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple · Personal Psychological Guide 1.6</p>",
+    "<div class='pf-intro-copy'><p class='eyebrow'>Nobody’s Simple Personality Test · situation-based guide</p>",
     "<h1>A map of how you work<br><em>with room for change.</em></h1>",
     "<p class='lead'>100 short situations. Choose what you would usually do. Your response pattern becomes a practical guide to relationships, work, decisions, regulation and growth.</p>",
     "<div class='pf-facts'><span>About 15–20 minutes</span><span>100 situation choices</span><span>16 interpretive chapters</span><span>Pause and return if you save locally</span></div>",
@@ -733,7 +733,7 @@ function renderIntro(root) {
     "<div class='pf-intro-art'><img src='personality-map.png' alt='A friendly map character following a dotted path'><p>More than one pattern can be true at once.</p></div></section>",
     "<section class='pf-principles'><article><span>01</span><h2>Dimensions before types</h2><p>Your separate response patterns are the result. The story title is a playful shorthand, not a psychological category.</p></article><article><span>02</span><h2>Describe before explaining</h2><p>We distinguish what you reported from what might be worth testing. The assessment cannot tell you why a pattern developed.</p></article><article><span>03</span><h2>State is not trait</h2><p>The final check-in describes right now. It is shown apart from your longer-term responses.</p></article></section>",
     "<section class='pf-scope'><div><p class='eyebrow'>A fuller map</p><h2>All parts of the profile</h2><p>Each module adds a different part of the map. You can skip any situation. The report keeps patterns, preferences, values and current state separate.</p></div><ul class='pf-module-list'>"+modules+"</ul></section>",
-    "<aside class='pf-validity'><b>Public edition 1.7 · short situation choices, answer-linked profiles</b><p>This route asks two concrete situations for fifty useful dimensions. Your responses are combined into a changing psychological configuration, with the title, guidance and examples following the pattern you create.</p></aside>",
+    "<aside class='pf-validity'><b>Important: an experimental reflective tool, not a clinical or proven psychometric test.</b><p>This route asks two concrete situations for fifty useful dimensions. Your responses are combined into a changing psychological configuration, with the title, guidance and examples following the pattern you create. It does not diagnose anything, measure your worth or produce a validated psychological profile.</p></aside>",
     resume,
     "<p class='pf-back'><a href='#home'>← Back to the main website</a></p></div>"
   ].join("");
@@ -2472,6 +2472,8 @@ function renderResult(root) {
     "</main></div>"
   ].join("");
 
+  const resultLabel = root.querySelector(".pf-guide-hero-copy .eyebrow");
+  if (resultLabel) resultLabel.textContent = "Nobody’s Simple Personality Test · public edition";
   root.querySelector("#pf-download").addEventListener("click",()=>downloadFullReport(root));
   root.querySelector("#pf-print").addEventListener("click",()=>window.print());
   root.querySelector("#pf-restart").addEventListener("click",()=>{answers=Object.create(null);valueRounds=[];flow=[];stepIndex=0;followupCount=0;motiveFollowupsQueued=false;phase="intro";render(root);});
