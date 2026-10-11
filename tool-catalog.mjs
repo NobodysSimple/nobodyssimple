@@ -455,7 +455,7 @@ export const tools = [
     title: "Overload load-balancer",
     group: "calm",
     short:
-      "See the stack of demands without judging yourself for reaching a limit.",
+      "See demands as a stack, find what can move, and reduce pressure through one realistic leverage point.",
     fields: [
       check("demands", "What is adding load?", [
         "Poor sleep",
