@@ -7139,6 +7139,57 @@ body.app-body .home-console-wrap > .page-intro {
   text-align: center;
 }
 
+body.app-body .home-console-branding {
+  display: grid;
+  grid-template-columns: minmax(0, .72fr) minmax(250px, 1.28fr);
+  align-items: center;
+  gap: 24px;
+  max-width: 1120px;
+  margin: 0 auto 22px;
+  padding: 18px;
+  border: 1px solid #d2ded0;
+  border-radius: 23px;
+  background: linear-gradient(135deg, #fffdf7, #f0f3ea);
+  box-shadow: var(--app-shadow);
+}
+
+body.app-body .home-console-branding-copy {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-left: 8px;
+}
+
+body.app-body .home-console-branding-copy img {
+  width: 72px;
+  height: 72px;
+  border: 1px solid rgba(49, 87, 70, .14);
+  border-radius: 22px;
+  box-shadow: 0 7px 16px rgba(35, 72, 58, .1);
+}
+
+body.app-body .home-console-branding-copy .eyebrow {
+  margin-bottom: 5px;
+  color: #315746;
+  font-size: 11px;
+}
+
+body.app-body .home-console-branding-copy p:last-child {
+  margin: 0;
+  color: #718078;
+  font-size: 14px;
+}
+
+body.app-body .home-console-banner {
+  display: block;
+  width: 100%;
+  height: 132px;
+  border: 1px solid rgba(49, 87, 70, .12);
+  border-radius: 17px;
+  object-fit: cover;
+  object-position: center;
+}
+
 body.app-body .home-console-wrap > .page-intro .lead {
   max-width: 620px;
   margin-right: auto;
@@ -7356,6 +7407,26 @@ body.app-body .stim-space-note {
 }
 
 @media (max-width: 760px) {
+  body.app-body .home-console-branding {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  body.app-body .home-console-branding-copy {
+    padding-left: 2px;
+  }
+
+  body.app-body .home-console-branding-copy img {
+    width: 58px;
+    height: 58px;
+    border-radius: 17px;
+  }
+
+  body.app-body .home-console-banner {
+    height: 118px;
+  }
+
   body.app-body .home-console-wrap .navigator-layout {
     padding: 18px;
   }

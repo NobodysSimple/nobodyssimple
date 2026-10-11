@@ -206,6 +206,11 @@ export function renderHome(root) {
   renderHelp(root, { home: true });
   const wrap = root.querySelector(".home-console-wrap");
   if (!wrap) return;
+  const branding = document.createElement("section");
+  branding.className = "home-console-branding";
+  branding.setAttribute("aria-label", "Nobody’s Simple");
+  branding.innerHTML = `<div class="home-console-branding-copy"><img src="logo.png" alt="Nobody’s Simple logo"><div><p class="eyebrow">Nobody’s Simple</p><p>Psychology for real life.</p></div></div><img class="home-console-banner" src="banner.png" alt="Illustrated Nobody’s Simple landscape">`;
+  wrap.insertBefore(branding, wrap.firstElementChild);
   const support = document.createElement("section");
   support.className = "home-support-strip";
   support.innerHTML = `<div class="home-support-grid"><section class="home-feedback-card" aria-labelledby="home-feedback-title"><p class="eyebrow">Help shape the project</p><h2 id="home-feedback-title">Tell me what would make this more useful.</h2><p>Share feedback about the tools, writing or anything that would make Nobody’s Simple easier to use.</p><a class="button" href="${forms.feedback}" target="_blank" rel="noopener noreferrer">Open the feedback form ↗</a></section><section class="kofi-support" aria-labelledby="kofi-support-title"><div class="kofi-spark kofi-spark-one" aria-hidden="true"></div><div class="kofi-spark kofi-spark-two" aria-hidden="true"></div><div class="kofi-profile"><div class="kofi-profile-art"><img src="kofi-profile.png" alt="A small character bowing with gratitude"></div><div class="kofi-copy"><p class="eyebrow">Support the project</p><h2 id="kofi-support-title">Help keep Nobody’s Simple growing.</h2><p>If this platform has helped you, you can tip to support the time, tools and hosting behind it.</p></div></div><a class="button kofi-button" href="https://ko-fi.com/nobodyssimple" target="_blank" rel="noopener noreferrer">Tip on Ko-fi <span aria-hidden="true">↗</span></a></section></div>`;
