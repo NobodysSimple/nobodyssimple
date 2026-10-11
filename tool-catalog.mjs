@@ -1238,7 +1238,7 @@ export const tools = [
     title: "Masking & adaptation map",
     group: "calm",
     short:
-      "Notice the effort of adapting in different contexts without judging the strategy or assuming a diagnosis.",
+      "Map what you adapt, what it protects, what it costs, and where a safer 10% reduction might be possible.",
     fields: [
       field("context", "Where or with whom do you notice yourself adapting?"),
       field("changes", "What do you change, hide, rehearse, or monitor?"),

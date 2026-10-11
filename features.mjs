@@ -5,6 +5,7 @@ import { interactiveCardMarkup, recommendInteractiveTools } from "./interactive-
 import { renderSensoryRecipe } from "./sensory-recipe.mjs";
 import { renderSocialBattery } from "./social-battery.mjs";
 import { renderLoadBalancer } from "./load-balancer.mjs";
+import { renderMaskingMap } from "./masking-map.mjs";
 
 const yt = "https://www.youtube.com/@nobodyssimple";
 const forms = {
@@ -1654,6 +1655,10 @@ export function renderTool(root, id) {
   }
   if (tool.id === "load-balancer") {
     renderLoadBalancer(root, tool);
+    return;
+  }
+  if (tool.id === "masking-map") {
+    renderMaskingMap(root, tool);
     return;
   }
   root.innerHTML = `<div class="wrap tool-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")} / ${esc(tool.kind === "pattern" ? "Creative pause" : tool.kind === "sound" ? "Sound & sensation" : "Interactive prompt")}</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your writing stays in this browser tab unless you choose “Save to My Maps”. It is not sent to Nobody’s Simple.</p></section><section id="tool-mood-gate">${moodRatingMarkup({ id: "tool-mood-before", outputId: "tool-mood-before-value", buttonId: "tool-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you use the tool.", buttonText: "Open this tool →" })}</section><div id="tool-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Check my body/state</a><a class="chip" href="#questions">Work through a difficult question</a><a class="chip" href="#maps">My Maps</a></div></div>`;
