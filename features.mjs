@@ -153,13 +153,15 @@ function activeAnnouncements(posts) {
     .slice(0, 6);
 }
 function announcementSummary(post) {
-  const blockText = (block) => {
-    if (!block || !["paragraph", "quote", "callout", "takeaway", "evidence", "reflection", "warning", "heading", "code", "list", "checklist"].includes(block.type)) return "";
-    const value = block.html || block.text || (block.items || []).map((item) => item?.text || item).join(" ") || "";
-    return String(value).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-  };
-  const values = [post.excerpt, post.intro, ...(post.blocks || []).map(blockText), post.body];
-  return values.map((value) => String(value || "").replace(/\s+/g, " ").trim()).find(Boolean) || "";
+  // The rail is intentionally a teaser. The complete announcement stays on
+  // the published post route, so a long block or body must never spill onto
+  // the home screen.
+  const raw = String(post.excerpt || post.intro || "")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (!raw) return "A new site update is available.";
+  return raw.length > 180 ? `${raw.slice(0, 177).trimEnd()}…` : raw;
 }
 function announcementHref(post) {
   const value = String(post.announcementLink || "#blog").trim();
@@ -169,7 +171,7 @@ function announcementHref(post) {
 function announcementRail(posts) {
   const items = activeAnnouncements(posts);
   if (!items.length) return `<section class="announcement-rail announcement-empty" aria-label="Updates"><span class="announcement-label">UPDATES</span><p>New notes and site changes will appear here.</p><a href="#blog">Read the latest notes</a></section>`;
-  return `<section class="announcement-rail" data-announcement-rail aria-label="Updates"><div class="announcement-rail-head"><span class="announcement-label">UPDATES</span><span class="announcement-count">${items.length} update${items.length === 1 ? "" : "s"}</span></div><div class="announcement-slides">${items.map((post, index) => { const href = announcementHref(post); const external = /^https?:/i.test(href); return `<article class="announcement-slide" data-announcement-slide ${index ? "hidden" : ""}><span class="announcement-kind">${esc(post.announcementLabel || post.category || "Update")}</span><div class="announcement-copy"><b>${esc(post.title || "Site update")}</b><p>${esc(announcementSummary(post))}</p></div><a href="${esc(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ""}>${esc(post.announcementLinkText || "Open update")}</a></article>`; }).join("")}</div>${items.length > 1 ? `<div class="announcement-controls"><button type="button" data-announcement-prev aria-label="Previous update">Previous</button><span data-announcement-position>1 / ${items.length}</span><button type="button" data-announcement-next aria-label="Next update">Next</button></div>` : ""}</section>`;
+  return `<section class="announcement-rail" data-announcement-rail aria-label="Updates"><div class="announcement-rail-head"><span class="announcement-label">UPDATES</span><span class="announcement-count">${items.length} update${items.length === 1 ? "" : "s"}</span></div><div class="announcement-slides">${items.map((post, index) => { const href = announcementHref(post); const external = /^https?:/i.test(href); return `<article class="announcement-slide" data-announcement-slide ${index ? "hidden" : ""}><span class="announcement-kind">${esc(post.announcementLabel || post.category || "Update")}</span><div class="announcement-copy"><b>${esc(post.title || "Site update")}</b><p>${esc(announcementSummary(post))}</p></div><a href="${esc(href)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ""}>Read the update ↗</a></article>`; }).join("")}</div>${items.length > 1 ? `<div class="announcement-controls"><button type="button" data-announcement-prev aria-label="Previous update">Previous</button><span data-announcement-position>1 / ${items.length}</span><button type="button" data-announcement-next aria-label="Next update">Next</button></div>` : ""}</section>`;
 }
 function renderHomeLegacy(root, posts) {
   const allPosts = posts || [];
@@ -202,10 +204,27 @@ function renderHomeLegacy(root, posts) {
   }
 }
 
-export function renderHome(root) {
+export function renderHome(root, posts = []) {
   renderHelp(root, { home: true });
   const wrap = root.querySelector(".home-console-wrap");
   if (!wrap) return;
+  const railHolder = document.createElement("div");
+  railHolder.innerHTML = announcementRail(posts).trim();
+  const rail = railHolder.firstElementChild;
+  if (rail) {
+    // Keep the announcement at the top of the console, before the form.
+    wrap.insertBefore(rail, wrap.firstElementChild);
+    const slides = [...rail.querySelectorAll("[data-announcement-slide]")];
+    let index = 0;
+    const show = (next) => {
+      index = (next + slides.length) % slides.length;
+      slides.forEach((slide, i) => { slide.hidden = i !== index; });
+      const position = rail.querySelector("[data-announcement-position]");
+      if (position) position.textContent = `${index + 1} / ${slides.length}`;
+    };
+    rail.querySelector("[data-announcement-prev]")?.addEventListener("click", () => show(index - 1));
+    rail.querySelector("[data-announcement-next]")?.addEventListener("click", () => show(index + 1));
+  }
   const branding = document.createElement("section");
   branding.className = "home-console-branding";
   branding.setAttribute("aria-label", "Nobody’s Simple");
@@ -1623,6 +1642,124 @@ function renderSensoryProfile(root, tool) {
   render();
 }
 
+function renderCbtJournal(root, tool) {
+  const state = {
+    screen: "start",
+    mode: "quick",
+    stageIndex: 0,
+    facts: "",
+    narrator: "",
+    confidenceBefore: 70,
+    feelings: [],
+    body: [],
+    urges: [],
+    behaviour: [],
+    context: [],
+    immediate: "",
+    later: "",
+    believable: "",
+    uncertain: "",
+    lens: "Evidence",
+    alternative: "",
+    branch: "Test the interpretation",
+    values: "",
+    experiment: "",
+    prediction: "",
+    outcome: "",
+    confidenceAfter: 55,
+    shiftedBy: "",
+  };
+  const emotionOptions = ["Anxious", "Hurt", "Angry", "Sad", "Ashamed", "Confused", "Relieved", "Numb", "Other"];
+  const bodyOptions = ["Tight", "Heavy", "Hot", "Shaky", "Restless", "Numb", "Tired", "Hard to notice"];
+  const urgeOptions = ["Withdraw", "Check or seek reassurance", "Explain myself", "Fix it now", "Argue", "Freeze", "Avoid", "Rest"];
+  const behaviourOptions = ["Checked", "Asked for reassurance", "Withdrew", "Avoided", "Explained", "Argued", "Apologised", "Distracted myself", "Froze", "Took action"];
+  const contextOptions = ["Tired", "Hungry", "Overstimulated", "Conflict", "Pain or illness", "Low mood", "Stressed", "Not sure"];
+  const lensOptions = ["Evidence", "A friend", "Future-self", "Probability", "Cost", "Values", "Behavioural test"];
+  const branchOptions = ["Test the interpretation", "Gather information", "Solve a practical problem", "Set a boundary", "Recover first", "Tolerate uncertainty", "Leave it unresolved"];
+  const stages = () => state.mode === "deep" ? ["camera", "narrator", "feeling", "loop", "editor", "next", "experiment"] : ["camera", "narrator", "feeling", "editor", "next", "experiment"];
+  const stageLabels = { camera: "Camera", narrator: "Narrator", feeling: "Feeling", loop: "Pattern", editor: "Editor", next: "Next move", experiment: "Test" };
+  const toggle = (key, value) => {
+    state[key] = state[key].includes(value) ? state[key].filter((item) => item !== value) : [...state[key], value];
+  };
+  const chips = (key, values) => values.map((value) => `<button type="button" class="chip ${state[key].includes(value) ? "active" : ""}" data-cbt-toggle="${esc(key)}" data-cbt-value="${esc(value)}" aria-pressed="${state[key].includes(value)}">${esc(value)}</button>`).join("");
+  const field = (key, label, placeholder, rows = 3) => `<label class="field cbt-field"><span>${esc(label)}</span><textarea data-cbt-field="${esc(key)}" rows="${rows}" placeholder="${esc(placeholder)}">${esc(state[key])}</textarea></label>`;
+  const range = (key, label) => `<label class="field cbt-confidence"><span><b>${esc(label)}</b><output id="cbt-${esc(key)}-value">${state[key]}%</output></span><input type="range" min="0" max="100" step="5" value="${state[key]}" data-cbt-range="${esc(key)}"><small>0% = a possibility only · 100% = feels certain</small></label>`;
+  const pageFrame = (eyebrow, title, intro, body, actions = "") => `<div class="wrap tool-page cbt-journal-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Think & organise / ${esc(eyebrow)}</p><h1>${esc(title)}</h1><p class="lead">${esc(intro)}</p></section>${body}${actions ? `<div class="cbt-actions row">${actions}</div>` : ""}</div>`;
+  const start = () => pageFrame("A thought investigator", tool.title, "A short, non-diagnostic way to separate what happened from the story your mind added, then choose a fair next move.", `<section class="cbt-intro-card"><div class="cbt-intro-mark" aria-hidden="true">C → N → E</div><div><p class="eyebrow">Thoughts are hypotheses, not verdicts.</p><h2>Investigate the moment without forcing a positive answer.</h2><p>Use the camera, narrator and editor to notice facts, interpretation and alternatives. You can stop with a clearer map; nothing has to be disproved.</p></div></section><div class="cbt-mode-grid"><button type="button" class="cbt-mode-card" data-cbt-mode="quick"><span class="eyebrow">1–2 minutes</span><h3>Quick check</h3><p>Facts → story → feeling → one useful next move.</p><strong>Start quick check →</strong></button><button type="button" class="cbt-mode-card" data-cbt-mode="deep"><span class="eyebrow">5–10 minutes</span><h3>Deep thought record</h3><p>Add the loop, context, evidence and a small behavioural test.</p><strong>Open deep record →</strong></button></div><section class="cbt-overwhelm-card"><div><p class="eyebrow">Too overwhelmed to think?</p><h3>Start with your body or surroundings first.</h3><p>You can come back to the thought later. Choose a lower-demand route.</p></div><button type="button" class="button secondary" data-cbt-action="overwhelmed">Show lower-demand routes</button></section><p class="privacy-note">Your notes stay in this browser unless you choose to save or download them. This is a reflective tool, not a clinical assessment.</p>`);
+  const overwhelmed = () => pageFrame("Lower-demand route", "You do not have to solve the thought first.", "A clearer body or environment can make thinking more available later.", `<section class="cbt-route-grid"><a class="cbt-route-card" href="#tool/state-check"><span>01</span><h3>Body & State Check</h3><p>Notice sleep, food, pain, energy and sensory load.</p></a><a class="cbt-route-card" href="#tool/grounding"><span>02</span><h3>Orient the present</h3><p>Find a few verifiable facts about where you are now.</p></a><a class="cbt-route-card" href="#tool/quick-reset"><span>03</span><h3>Quick Sensory Reset</h3><p>Test one small change in the input around you.</p></a><a class="cbt-route-card" href="#tool/load-balancer"><span>04</span><h3>Overload load-balancer</h3><p>See what can be reduced, moved or paused.</p></a></section>`, `<button type="button" class="button secondary" data-cbt-action="back-start">Back to the journal</button>`);
+  const stageBody = (stage) => {
+    if (stage === "camera") return `<section class="cbt-stage-card cbt-camera-stage"><div class="cbt-stage-glyph" aria-hidden="true">◉</div><p class="eyebrow">CAMERA · observable facts</p><h2>What could a camera record?</h2><p>Leave out the explanation for a moment. Include words, actions, timing and anything you directly noticed.</p>${field("facts", "What happened?", "For example: They replied two days later with one sentence.", 4)}<p class="cbt-helper">If you are unsure, write one sentence that another person could verify.</p></section>`;
+    if (stage === "narrator") return `<section class="cbt-stage-card cbt-narrator-stage"><div class="cbt-stage-glyph" aria-hidden="true">✎</div><p class="eyebrow">NARRATOR · interpretation</p><h2>What did your mind say it meant?</h2><p>This is the story or prediction—not a fact, and not something you have to argue away.</p>${field("narrator", "The interpretation", "My mind said this meant…", 4)}${range("confidenceBefore", "How strong does that interpretation feel right now?")}</section>`;
+    if (stage === "feeling") return `<section class="cbt-stage-card"><p class="eyebrow">FEELING · separate the layers</p><h2>What showed up after the story?</h2><p>Choose only what is useful. The feeling, body and urge do not prove the interpretation true.</p><div class="cbt-choice-section"><h3>Feeling</h3><div class="cbt-chip-grid">${chips("feelings", emotionOptions)}</div></div><div class="cbt-choice-section"><h3>Body or energy</h3><div class="cbt-chip-grid">${chips("body", bodyOptions)}</div></div><div class="cbt-choice-section"><h3>Urge</h3><div class="cbt-chip-grid">${chips("urges", urgeOptions)}</div></div></section>`;
+    if (stage === "loop") return `<section class="cbt-stage-card"><p class="eyebrow">PATTERN · what kept it going?</p><h2>What did you do next—and what did it change?</h2><p>Short-term relief can be real and still have a later cost. This is description, not blame.</p><div class="cbt-choice-section"><h3>Behaviour or safety move</h3><div class="cbt-chip-grid">${chips("behaviour", behaviourOptions)}</div></div><div class="cbt-choice-section"><h3>What else may have shaped the moment?</h3><div class="cbt-chip-grid">${chips("context", contextOptions)}</div></div>${field("immediate", "Immediate result", "What changed in the next few minutes?", 2)}${field("later", "Later effect", "What happened later, or what might this keep going?", 2)}</section>`;
+    if (stage === "editor") return `<section class="cbt-stage-card cbt-editor-stage"><div class="cbt-stage-glyph" aria-hidden="true">↺</div><p class="eyebrow">EDITOR · widen the map</p><h2>What makes the story believable—and less certain?</h2><p>Look for evidence without cross-examining yourself. Missing information and exceptions count too.</p>${field("believable", "What makes this interpretation believable?", "Direct observations, past patterns or details that support it…", 3)}${field("uncertain", "What makes it less certain?", "Another explanation, missing information or an exception…", 3)}<div class="cbt-choice-section"><h3>Choose a lens</h3><div class="cbt-chip-grid">${lensOptions.map((value) => `<button type="button" class="chip ${state.lens === value ? "active" : ""}" data-cbt-lens="${esc(value)}" aria-pressed="${state.lens === value}">${esc(value)}</button>`).join("")}</div><p class="cbt-helper" id="cbt-lens-prompt">${esc({ Evidence: "What can you point to directly?", "A friend": "What would you say to a friend with the same facts?", "Future-self": "What might be clearer with a little distance?", Probability: "What other outcomes are possible, and how likely do they seem?", Cost: "What does holding this story lead you to do?", Values: "What response fits what matters to you?", "Behavioural test": "What could you try that would give you better information?" }[state.lens])}</p></div></section>`;
+    if (stage === "next") return `<section class="cbt-stage-card"><p class="eyebrow">CHOOSE · not every thought needs disputing</p><h2>What would be most useful now?</h2><p>Sometimes the best response is to rethink. Sometimes it is to gather information, solve, set a boundary, recover or leave it unresolved.</p><div class="cbt-branch-grid">${branchOptions.map((value) => `<button type="button" class="cbt-branch ${state.branch === value ? "active" : ""}" data-cbt-branch="${esc(value)}" aria-pressed="${state.branch === value}"><b>${esc(value)}</b><span>${esc({ "Test the interpretation": "Try a small, fair check.", "Gather information": "Find out what is still missing.", "Solve a practical problem": "Move one concrete part.", "Set a boundary": "Protect something important.", "Recover first": "Change your state before deciding.", "Tolerate uncertainty": "Stop feeding the loop for now.", "Leave it unresolved": "You do not need closure today." }[value])}</span></button>`).join("")}</div>${field("alternative", "What else could be true?", "A balanced position can still include a real problem or risk.", 3)}${field("values", "What matters in how you respond?", "For example: honesty, care, dignity, rest, fairness or clarity…", 2)}</section>`;
+    return `<section class="cbt-stage-card cbt-experiment-stage"><p class="eyebrow">TEST · learn from what happens</p><h2>Would a small experiment help?</h2><p>Choose something that gathers information or changes one part of the loop. You can skip this and finish the map.</p>${field("experiment", "The smallest fair test or next action", "For example: wait before checking, ask one clear question, or take ten minutes away from the noise…", 3)}${field("prediction", "What do you predict will happen?", "Use ordinary language, not fake precision.", 2)}<label class="field"><span>What happened when you tested it?</span><select data-cbt-field="outcome"><option value="" ${!state.outcome ? "selected" : ""}>Not tested yet</option><option ${state.outcome === "supported" ? "selected" : ""} value="supported">It supported the interpretation</option><option ${state.outcome === "complicated" ? "selected" : ""} value="complicated">It complicated the interpretation</option><option ${state.outcome === "not-supported" ? "selected" : ""} value="not-supported">It did not support the interpretation</option><option ${state.outcome === "changed" ? "selected" : ""} value="changed">The situation changed before I could tell</option></select></label>${range("confidenceAfter", "How strong does the interpretation feel now?")}${field("shiftedBy", "What shifted your certainty most?", "New information, body state, distance, another person, the test—or nothing yet…", 2)}</section>`;
+  };
+  const stageScreen = () => {
+    const list = stages();
+    const stage = list[state.stageIndex] || list[0];
+    const progress = Math.round(((state.stageIndex + 1) / list.length) * 100);
+    const back = state.stageIndex ? `<button type="button" class="button secondary" data-cbt-action="back-stage">← Back</button>` : `<button type="button" class="button secondary" data-cbt-action="back-start">← Start</button>`;
+    const next = state.stageIndex === list.length - 1 ? `<button type="button" class="button" data-cbt-action="finish">Finish the map →</button>` : `<button type="button" class="button" data-cbt-action="next-stage">Continue to ${esc(stageLabels[list[state.stageIndex + 1]])} →</button>`;
+    return pageFrame(`${state.mode === "deep" ? "Deep thought record" : "Quick check"} · ${state.stageIndex + 1}/${list.length}`, stageLabels[stage], "One layer at a time. Skip anything that does not fit.", `<div class="cbt-progress" aria-label="Journal progress"><div class="cbt-progress-track"><span style="width:${progress}%"></span></div><div class="cbt-progress-labels">${list.map((item, index) => `<span class="${index <= state.stageIndex ? "is-done" : ""}">${esc(stageLabels[item])}</span>`).join("")}</div></div>${stageBody(stage)}`, `${back}${next}`);
+  };
+  const result = () => {
+    const feeling = state.feelings.join(" · ") || "Not named";
+    const confidenceChanged = state.confidenceAfter - state.confidenceBefore;
+    const changeText = confidenceChanged === 0 ? "unchanged" : confidenceChanged > 0 ? `up ${confidenceChanged} points` : `down ${Math.abs(confidenceChanged)} points`;
+    const alternative = state.alternative.trim() || "I can hold this as a possibility while I gather information or choose a response that fits my values.";
+    const cards = [
+      ["What happened", state.facts || "Not recorded"],
+      ["First interpretation", state.narrator || "Not recorded"],
+      ["Feeling / body / urge", `${feeling} · ${state.body.join(" · ") || "body not named"} · ${state.urges.join(" · ") || "urge not named"}`],
+      ["What made it believable", state.believable || "Not recorded"],
+      ["What made it less certain", state.uncertain || "Not recorded"],
+      ["What you did", state.behaviour.join(" · ") || "Not recorded"],
+      ["Short-term result", state.immediate || "Not recorded"],
+      ["Longer-term effect", state.later || "Not recorded"],
+    ];
+    const loop = [
+      ["Trigger", state.facts || "The situation"],
+      ["Thought", state.narrator || "The interpretation"],
+      ["Feeling", feeling],
+      ["Urge", state.urges.join(" · ") || "Not named"],
+      ["Behaviour", state.behaviour.join(" · ") || "Not recorded"],
+      ["Short-term", state.immediate || "Not recorded"],
+      ["Longer-term", state.later || "Not recorded"],
+    ];
+    return pageFrame("Your working map", "A thought is now a map, not a verdict.", "You have separated the event, interpretation, response and next experiment. Keep the parts that help; leave the rest.", `<section class="cbt-result-hero"><div><p class="eyebrow">${esc(state.branch)}</p><h2>${esc(alternative)}</h2><p>Your interpretation feels ${state.confidenceBefore}% believable at first and ${state.confidenceAfter}% now (${changeText}). That is information, not a pass or fail.</p></div><div class="cbt-confidence-visual"><span>Belief</span><strong>${state.confidenceBefore}% → ${state.confidenceAfter}%</strong><div class="cbt-confidence-bars"><i style="height:${Math.max(8, state.confidenceBefore)}%"></i><i style="height:${Math.max(8, state.confidenceAfter)}%"></i></div></div></section><section class="cbt-map-section"><p class="eyebrow">The loop you noticed</p><div class="cbt-loop-map">${loop.map(([label, value], index) => `<article><span>${index + 1}</span><b>${esc(label)}</b><p>${esc(value)}</p></article>`).join("")}</div></section><section class="cbt-summary-grid">${cards.map(([label, value]) => `<article><span class="eyebrow">${esc(label)}</span><p>${esc(value)}</p></article>`).join("")}</section><section class="cbt-next-panel"><p class="eyebrow">Useful next move</p><h3>${esc(state.branch)}</h3><p>${esc(state.experiment || state.values || "Nothing has to be resolved right now. You can leave the map here and return with more information.")}</p>${state.prediction ? `<p><b>Prediction:</b> ${esc(state.prediction)}</p>` : ""}${state.outcome ? `<p><b>What happened:</b> ${esc({ supported: "The test supported the interpretation.", complicated: "The test complicated the interpretation.", "not-supported": "The test did not support the interpretation.", changed: "The situation changed before you could tell." }[state.outcome] || state.outcome)}</p>` : ""}</section><p class="cbt-disclaimer">This is a descriptive reflection, not a diagnosis or proof that a thought is inaccurate. If the situation may be unsafe or genuinely harmful, information, support, a boundary or leaving may be more useful than challenging yourself.</p><div class="row cbt-result-actions"><button type="button" class="button" data-cbt-action="save">Save to My Maps</button><button type="button" class="button secondary" data-cbt-action="download">Download map</button><button type="button" class="button secondary" data-cbt-action="copy">Copy text</button><button type="button" class="button secondary" data-cbt-action="restart">Start another</button></div><p id="cbt-result-status" class="fine" role="status"></p>`);
+  };
+  const mapText = () => `CBT journal\n\nWhat happened: ${state.facts || "—"}\nFirst interpretation: ${state.narrator || "—"}\nBelief: ${state.confidenceBefore}% → ${state.confidenceAfter}%\nFeeling: ${state.feelings.join(", ") || "—"}\nBody: ${state.body.join(", ") || "—"}\nUrge: ${state.urges.join(", ") || "—"}\nBehaviour: ${state.behaviour.join(", ") || "—"}\nContext: ${state.context.join(", ") || "—"}\nWhat made it believable: ${state.believable || "—"}\nWhat made it less certain: ${state.uncertain || "—"}\nMore balanced position: ${state.alternative || "—"}\nBranch: ${state.branch}\nExperiment / next move: ${state.experiment || "—"}\nPrediction: ${state.prediction || "—"}\nOutcome: ${state.outcome || "—"}\nWhat shifted certainty most: ${state.shiftedBy || "—"}`;
+  const render = () => {
+    root.innerHTML = state.screen === "start" ? start() : state.screen === "overwhelmed" ? overwhelmed() : state.screen === "result" ? result() : stageScreen();
+    bind();
+  };
+  const bind = () => {
+    root.querySelectorAll("[data-cbt-mode]").forEach((button) => button.addEventListener("click", () => { state.mode = button.dataset.cbtMode; state.screen = "stage"; state.stageIndex = 0; render(); }));
+    root.querySelectorAll("[data-cbt-toggle]").forEach((button) => button.addEventListener("click", () => { toggle(button.dataset.cbtToggle, button.dataset.cbtValue); render(); }));
+    root.querySelectorAll("[data-cbt-lens]").forEach((button) => button.addEventListener("click", () => { state.lens = button.dataset.cbtLens; render(); }));
+    root.querySelectorAll("[data-cbt-branch]").forEach((button) => button.addEventListener("click", () => { state.branch = button.dataset.cbtBranch; render(); }));
+    root.querySelectorAll("[data-cbt-field]").forEach((element) => element.addEventListener("input", () => { state[element.dataset.cbtField] = element.value; }));
+    root.querySelectorAll("[data-cbt-field]").forEach((element) => element.addEventListener("change", () => { state[element.dataset.cbtField] = element.value; }));
+    root.querySelectorAll("[data-cbt-range]").forEach((element) => element.addEventListener("input", () => { state[element.dataset.cbtRange] = Number(element.value); const output = root.querySelector(`#cbt-${element.dataset.cbtRange}-value`); if (output) output.textContent = `${element.value}%`; }));
+    root.querySelectorAll("[data-cbt-action]").forEach((button) => button.addEventListener("click", async () => {
+      const action = button.dataset.cbtAction;
+      if (action === "overwhelmed") { state.screen = "overwhelmed"; render(); return; }
+      if (action === "back-start") { state.screen = "start"; render(); return; }
+      if (action === "back-stage") { state.stageIndex = Math.max(0, state.stageIndex - 1); render(); return; }
+      if (action === "next-stage") { state.stageIndex = Math.min(stages().length - 1, state.stageIndex + 1); render(); return; }
+      if (action === "finish") { state.screen = "result"; render(); return; }
+      if (action === "restart") { Object.assign(state, { screen: "start", stageIndex: 0, facts: "", narrator: "", feelings: [], body: [], urges: [], behaviour: [], context: [], immediate: "", later: "", believable: "", uncertain: "", alternative: "", experiment: "", prediction: "", outcome: "", shiftedBy: "", confidenceBefore: 70, confidenceAfter: 55 }); render(); return; }
+      const status = root.querySelector("#cbt-result-status");
+      if (action === "save") { try { saveMap({ title: `CBT journal · ${state.narrator || "working map"}`, tool: "cbt-journal", answers: JSON.parse(JSON.stringify(state)) }); if (status) status.textContent = "Saved on this device."; } catch { if (status) status.textContent = "This browser could not save the map. Use Download instead."; } return; }
+      if (action === "download") { downloadText("cbt-journal.txt", mapText()); if (status) status.textContent = "Downloaded."; return; }
+      if (action === "copy") { try { await navigator.clipboard.writeText(mapText()); if (status) status.textContent = "Copied."; } catch { if (status) status.textContent = "Copy was blocked by this browser. Use Download instead."; } }
+    }));
+  };
+  render();
+}
+
 export function renderTool(root, id) {
   const tool = tools.find((t) => t.id === id);
   if (!tool) {
@@ -1679,6 +1816,10 @@ export function renderTool(root, id) {
   }
   if (tool.id === "masking-map") {
     renderMaskingMap(root, tool);
+    return;
+  }
+  if (tool.id === "cbt-journal") {
+    renderCbtJournal(root, tool);
     return;
   }
   root.innerHTML = `<div class="wrap tool-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")} / ${esc(tool.kind === "pattern" ? "Creative pause" : tool.kind === "sound" ? "Sound & sensation" : "Interactive prompt")}</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your writing stays in this browser tab unless you choose “Save to My Maps”. It is not sent to Nobody’s Simple.</p></section><section id="tool-mood-gate">${moodRatingMarkup({ id: "tool-mood-before", outputId: "tool-mood-before-value", buttonId: "tool-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you use the tool.", buttonText: "Open this tool →" })}</section><div id="tool-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Check my body/state</a><a class="chip" href="#questions">Work through a difficult question</a><a class="chip" href="#maps">My Maps</a></div></div>`;

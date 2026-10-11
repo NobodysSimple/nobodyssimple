@@ -203,6 +203,15 @@ export const tools = [
     tags: ["spiralling", "thinking", "relationship", "uncertain"],
   },
   {
+    id: "cbt-journal",
+    title: "CBT journal",
+    group: "think",
+    short:
+      "Investigate a difficult thought as a hypothesis: separate facts, story, feeling, action and one fair next test.",
+    fields: [],
+    tags: ["thinking", "spiralling", "uncertain", "patterns", "journal", "experiments"],
+  },
+  {
     id: "alternative-models",
     title: "Alternative explanations",
     group: "think",

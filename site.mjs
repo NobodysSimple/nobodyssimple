@@ -117,8 +117,11 @@ function announcementRail() {
   const items = announcementItems();
   if (!items.length) return "";
   const slides = items.map((post, index) => {
-    const href = safeHref(post.announcementLink || "#blog") || "#blog";
-    return `<article class="announcement-slide" data-announcement-index="${index}" ${index ? "hidden" : ""}><span class="announcement-kind">${esc(post.announcementLabel || "Update")}</span><div class="announcement-copy"><b>${esc(post.title)}</b><p>${esc(post.excerpt || "")}</p></div><a href="${esc(href)}">${esc(post.announcementLinkText || "Open update")} ↗</a></article>`;
+    const raw = String(post.excerpt || post.intro || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    const summary = raw ? (raw.length > 180 ? `${raw.slice(0, 177).trimEnd()}…` : raw) : "A new site update is available.";
+    const requestedHref = String(post.announcementLink || "#blog").trim();
+    const href = !requestedHref || requestedHref === "#blog" ? `#post/${encodeURIComponent(post.id)}` : safeHref(requestedHref) || "#blog";
+    return `<article class="announcement-slide" data-announcement-index="${index}" ${index ? "hidden" : ""}><span class="announcement-kind">${esc(post.announcementLabel || "Update")}</span><div class="announcement-copy"><b>${esc(post.title)}</b><p>${esc(summary)}</p></div><a href="${esc(href)}">Read the update ↗</a></article>`;
   }).join("");
   return `<section class="announcement-rail" aria-label="Site announcements"><div class="announcement-rail-head"><span class="announcement-label">Updates</span><span class="announcement-count">${items.length} active</span></div><div class="announcement-slides">${slides}</div>${items.length > 1 ? `<div class="announcement-controls"><button type="button" data-announcement-prev aria-label="Previous announcement">←</button><span data-announcement-position>1 / ${items.length}</span><button type="button" data-announcement-next aria-label="Next announcement">→</button></div>` : ""}</section>`;
 }
@@ -682,8 +685,8 @@ function route() {
   (
     ({
       home: () => renderHome(main, posts),
-      help: () => renderHome(main),
-      navigate: () => renderHome(main),
+      help: () => renderHome(main, posts),
+      navigate: () => renderHome(main, posts),
       library,
       learn: library,
       blog,
