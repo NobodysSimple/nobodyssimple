@@ -660,8 +660,17 @@ function install() {
 }
 function route() {
   const [name, id] = location.hash.slice(1).split("/");
-  document.querySelectorAll(".header nav a").forEach((a) => {
-    if (a.hash === `#${name}`) a.setAttribute("aria-current", "page");
+  const currentName = name || "home";
+  const startRoutes = new Set(["help", "navigate", "questions", "navigator", "compass"]);
+  document.querySelectorAll("[data-route-link]").forEach((a) => {
+    const linkName = (a.hash || "").slice(1).split("/")[0];
+    const active =
+      currentName === linkName ||
+      (startRoutes.has(currentName) && linkName === "help") ||
+      (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
+      (["tool", "play", "guided"].includes(currentName) && linkName === "tools") ||
+      (currentName === "post" && linkName === "blog");
+    if (active) a.setAttribute("aria-current", "page");
     else a.removeAttribute("aria-current");
   });
   (
@@ -720,6 +729,45 @@ function route() {
             ? name.charAt(0).toUpperCase() + name.slice(1)
             : "";
   document.title = `${title ? title + " · " : ""}Nobody’s Simple`;
+  const appLabels = {
+    home: "Home",
+    help: "Navigate",
+    navigate: "Navigate",
+    tools: "Tools",
+    library: "Learn",
+    learn: "Learn",
+    blog: "Blog",
+    writing: "Blog",
+    maps: "My Maps",
+    support: "Get help",
+    simplyfocus: "SimplyFocus",
+    personality: "My profile",
+    community: "Feedback",
+    volunteer: "Get involved",
+    team: "Meet the team",
+    install: "Save as an app",
+    compass: "Emotion Compass",
+    questions: "Work something out",
+    navigator: "Navigate my life",
+  };
+  const pageLabel = name === "tool"
+    ? main.querySelector(".tool-heading h1, .tool-page h1")?.textContent?.trim() || "Tool"
+    : name === "play"
+      ? main.querySelector("#interactive-title")?.textContent?.trim() || "Interactive tool"
+      : appLabels[currentName] || (title || "Nobody’s Simple");
+  const pageKicker = currentName === "home"
+    ? "Today"
+    : ["help", "navigate", "questions", "navigator", "compass"].includes(currentName)
+      ? "Start here"
+      : ["tools", "tool", "play", "guided", "simplyfocus"].includes(currentName)
+        ? "Explore"
+        : currentName === "support"
+          ? "Real-world support"
+          : "Nobody’s Simple";
+  const pageLabelNode = document.querySelector("[data-app-page-label]");
+  const pageKickerNode = document.querySelector("[data-app-page-kicker]");
+  if (pageLabelNode) pageLabelNode.textContent = pageLabel;
+  if (pageKickerNode) pageKickerNode.textContent = pageKicker;
 }
 try {
   const r = await fetch("content.json", { cache: "no-store" });

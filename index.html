@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="theme-color" content="#f6f0e4" />
+    <meta name="theme-color" content="#315746" />
     <meta
       name="description"
       content="Psychology for choosing what to do next. Find a tool, explore the curriculum, and connect with Nobody’s Simple."
@@ -14,59 +14,94 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="app-body">
     <a class="skip" href="#main">Skip to content</a>
-    <header class="header">
-      <a class="brand" href="#home"
-        ><img src="logo.png" alt="" /><span
-          >Nobody’s Simple<small>PSYCHOLOGY FOR REAL LIFE</small></span
-        ></a
-      >
-      <nav aria-label="Main">
-        <a href="#home">Home</a><a href="#help">Navigate</a
-        ><a href="#tools">Tools</a><a href="#library">Learn</a
-        ><a href="#maps">My Maps</a><a href="#support">Get help</a><a href="#blog">Blog</a>
-        <details class="header-more">
-          <summary>More</summary>
-          <div class="header-more-menu">
-            <a href="#help">Quick help</a><a href="#personality">Profile</a
-            ><a href="#simplyfocus">SimplyFocus</a
-            ><a href="nd-play.html">Playground</a><a href="#community">Feedback</a
-            ><a href="#team">Team</a>
+    <div class="app-shell">
+      <aside class="app-sidebar" aria-label="App navigation">
+        <div class="app-sidebar-top">
+          <a class="brand app-brand" href="#home" data-route-link>
+            <img src="logo.png" alt="" />
+            <span>Nobody’s Simple<small>PSYCHOLOGY FOR REAL LIFE</small></span>
+          </a>
+          <p class="app-sidebar-note">A practical space for noticing what is happening and choosing a next step.</p>
+        </div>
+
+        <div class="app-sidebar-scroll">
+          <p class="app-nav-label">Start here</p>
+          <nav class="app-nav" aria-label="Primary">
+            <a href="#home" data-route-link><span class="app-nav-icon" aria-hidden="true">⌂</span><span>Home</span><small>Today</small></a>
+            <a href="#help" data-route-link><span class="app-nav-icon" aria-hidden="true">✦</span><span>Navigate</span><small>Find a route</small></a>
+            <a href="#tools" data-route-link><span class="app-nav-icon" aria-hidden="true">✳</span><span>Tools</span><small>Try something</small></a>
+            <a href="#library" data-route-link><span class="app-nav-icon" aria-hidden="true">▤</span><span>Learn</span><small>Build context</small></a>
+            <a href="#maps" data-route-link><span class="app-nav-icon" aria-hidden="true">⌁</span><span>My Maps</span><small>Saved locally</small></a>
+            <a href="#support" data-route-link><span class="app-nav-icon" aria-hidden="true">♡</span><span>Get help</span><small>Real-world support</small></a>
+            <a href="#blog" data-route-link><span class="app-nav-icon" aria-hidden="true">Aa</span><span>Blog</span><small>Notes & updates</small></a>
+          </nav>
+
+          <p class="app-nav-label app-nav-label-secondary">Your space</p>
+          <nav class="app-nav app-nav-secondary" aria-label="Your space">
+            <a href="#simplyfocus" data-route-link><span class="app-nav-icon" aria-hidden="true">◌</span><span>SimplyFocus</span></a>
+            <a href="nd-play.html"><span class="app-nav-icon" aria-hidden="true">▶</span><span>Stim Space</span></a>
+            <a href="#personality" data-route-link><span class="app-nav-icon" aria-hidden="true">◎</span><span>My profile</span></a>
+            <a href="#community" data-route-link><span class="app-nav-icon" aria-hidden="true">↗</span><span>Feedback</span></a>
+          </nav>
+        </div>
+
+        <div class="app-sidebar-bottom">
+          <a class="app-install-link" href="#install" data-route-link><span aria-hidden="true">↓</span><span><b>Save as an app</b><small>Keep it close on your device</small></span></a>
+          <small class="app-sidebar-privacy">Your reflections stay on this device unless you choose to share them.</small>
+        </div>
+      </aside>
+
+      <div class="app-main-column">
+        <header class="app-topbar">
+          <a class="brand app-mobile-brand" href="#home" data-route-link>
+            <img src="logo.png" alt="" />
+            <span>Nobody’s Simple<small>PSYCHOLOGY FOR REAL LIFE</small></span>
+          </a>
+          <div class="app-page-context" aria-live="polite">
+            <span class="app-page-kicker" data-app-page-kicker>Today</span>
+            <strong data-app-page-label>Home</strong>
           </div>
-        </details>
-      </nav>
-      <a class="button small header-install" href="#install">↓ Save as app</a>
-    </header>
-    <main id="main" tabindex="-1">
-      <p class="loading">Opening Nobody’s Simple…</p>
-    </main>
-    <footer>
-      <a class="brand" href="#home">Nobody’s Simple</a>
-      <p>Psychology for choosing what to do next.</p>
-      <div>
-        <a href="#library">Learn</a
-        ><a
-          href="https://www.youtube.com/@nobodyssimple"
-          target="_blank"
-          rel="noopener noreferrer"
-          >YouTube ↗</a
-        ><a href="#community">Feedback</a><a href="#volunteer">Volunteer</a
-          ><a href="#help">Find what I need</a
-          ><a href="#support">Get help now</a
-        ><a href="#simplyfocus">SimplyFocus</a><a href="#team">Meet the team</a
-        ><a href="#install">Install the app</a
-        ><a href="staff.html">Staff login</a>
+          <div class="app-top-actions">
+            <a class="app-help-pill" href="#support" data-route-link><span aria-hidden="true">♡</span><span>Get help</span></a>
+            <a class="button small app-top-install" href="#install" data-route-link>Save as app</a>
+          </div>
+        </header>
+
+        <main id="main" tabindex="-1">
+          <p class="loading">Opening Nobody’s Simple…</p>
+        </main>
+
+        <footer class="app-footer">
+          <div class="app-footer-brand">
+            <a class="brand" href="#home" data-route-link><img src="logo.png" alt="" /><span>Nobody’s Simple<small>Psychology for choosing what to do next</small></span></a>
+            <p>Reflection and education. These tools do not diagnose or provide treatment.</p>
+          </div>
+          <nav aria-label="Footer">
+            <a href="#library" data-route-link>Learn</a>
+            <a href="#blog" data-route-link>Blog</a>
+            <a href="#support" data-route-link>Get help now</a>
+            <a href="#community" data-route-link>Feedback</a>
+            <a href="#volunteer" data-route-link>Volunteer</a>
+            <a href="#simplyfocus" data-route-link>SimplyFocus</a>
+            <a href="#team" data-route-link>Meet the team</a>
+            <a href="https://www.youtube.com/@nobodyssimple" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+            <a href="staff.html">Staff login</a>
+          </nav>
+        </footer>
       </div>
-      <small
-        >Reflection and education. These tools do not diagnose or provide
-        treatment.</small
-      >
-    </footer>
-    <noscript
-      >Please enable JavaScript to use the library and interactive
-      tools.</noscript
-    >
+    </div>
+
+    <nav class="app-bottom-nav" aria-label="Quick navigation">
+      <a href="#home" data-route-link><span aria-hidden="true">⌂</span><small>Home</small></a>
+      <a href="#help" data-route-link><span aria-hidden="true">✦</span><small>Start</small></a>
+      <a href="#tools" data-route-link><span aria-hidden="true">✳</span><small>Tools</small></a>
+      <a href="#maps" data-route-link><span aria-hidden="true">⌁</span><small>Maps</small></a>
+      <a href="#support" data-route-link><span aria-hidden="true">♡</span><small>Help</small></a>
+    </nav>
+
+    <noscript>Please enable JavaScript to use the library and interactive tools.</noscript>
     <script type="module" src="site.mjs"></script>
   </body>
 </html>
