@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v60-console-branding";
+const CACHE = "nobodyssimple-v61-console-youtube";
 const SHELL = [
   "./",
   "index.html",
