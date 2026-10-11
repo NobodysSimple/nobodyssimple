@@ -15,7 +15,7 @@ const forms = {
 };
 const mapKey = "ns-personal-maps-v1";
 const card = (tool) =>
-  `<a class="card feature-card tone-${esc(toolGroups.find((g) => g[0] === tool.group)?.[2] || "mint")}" href="#tool/${encodeURIComponent(tool.id)}"><span class="feature-mark" aria-hidden="true">✳</span><span class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")}</span><h3>${esc(tool.title)}</h3><p>${esc(tool.short)}</p><span class="arrow">Open tool <span aria-hidden="true">↗</span></span></a>`;
+  `<a class="card feature-card tone-${esc(toolGroups.find((g) => g[0] === tool.group)?.[2] || "mint")}" href="${esc(tool.href || `#tool/${encodeURIComponent(tool.id)}`)}"><span class="feature-mark" aria-hidden="true">✳</span><span class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")}</span><h3>${esc(tool.title)}</h3><p>${esc(tool.short)}</p><span class="arrow">Open tool <span aria-hidden="true">↗</span></span></a>`;
 const area = (eyebrow, title, intro) =>
   `<section class="page-intro"><p class="eyebrow">${esc(eyebrow)}</p><h1>${title}</h1><p class="lead">${intro}</p></section>`;
 const loadMaps = () => {

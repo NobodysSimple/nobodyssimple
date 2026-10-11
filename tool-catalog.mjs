@@ -1202,47 +1202,15 @@ export const tools = [
     tags: ["learning", "thinking", "evidence"],
   },
   {
-    id: "pattern-stims",
-    title: "Pattern garden",
+    id: "stim-space",
+    title: "Stim Space",
     group: "calm",
     short:
-      "Make a quiet, changeable geometric pattern. No score, timer, or objective.",
-    fields: [
-      select("shape", "Choose a shape", [
-        "Circle",
-        "Square",
-        "Triangle",
-        "Leaf",
-      ]),
-      range("density", "Pattern density", 2, 16),
-      select("colour", "Choose a palette", [
-        "Forest & amber",
-        "Berry & lilac",
-        "Ocean & sky",
-        "Soft greens",
-      ]),
-      select("motion", "Motion", ["Still", "Slow drift", "Gentle pulse"]),
-    ],
-    tags: ["calm", "sensory", "stimulation"],
-    kind: "pattern",
-  },
-  {
-    id: "sound-garden",
-    title: "Ambient sound garden",
-    group: "calm",
-    short:
-      "Mix optional generated tones/noise locally. No recordings, autoplay or external audio.",
-    fields: [
-      range("rain", "Soft noise / rain-like texture", 0, 10),
-      range("tone", "Low ambient tone", 0, 10),
-      range("pulse", "Slow gentle pulse", 0, 10),
-      select("mode", "Sound mode", [
-        "Off",
-        "Play a mix (only when you press play)",
-      ]),
-    ],
-    tags: ["calm", "sensory", "stimulation"],
-    kind: "sound",
+      "Explore movement, touch, sound and visual stimulation in the ND play space.",
+    href: "nd-play.html",
+    fields: [],
+    tags: ["calm", "sensory", "stimulation", "play"],
+    kind: "external",
   },
   {
     id: "worry-sort",
@@ -1648,7 +1616,7 @@ export const situations = [
     id: "stim",
     label: "Wanting stimulation",
     examples: "bored, understimulated, want to stim",
-    tools: ["state-check", "sensory-profile", "masking-map", "pattern-stims"],
+    tools: ["state-check", "sensory-profile", "masking-map", "stim-space"],
   },
   {
     id: "learn",
@@ -1729,8 +1697,8 @@ export const situationSubparts = {
     { id: "journal", label: "Make sense of an experience", examples: "reflect without needing an answer", tools: ["free-journal", "thought-journal", "pattern-map"], tags: ["reflect", "self"] },
   ],
   stim: [
-    { id: "bored", label: "Understimulated", examples: "bored, flat or seeking input", tools: ["sensory-profile", "pattern-stims", "state-check"], tags: ["stim", "body"] },
-    { id: "seek", label: "I want a satisfying sensory input", examples: "movement, repetition or texture", tools: ["sensory-profile", "pattern-stims", "state-check"], tags: ["stim", "calm"] },
+    { id: "bored", label: "Understimulated", examples: "bored, flat or seeking input", tools: ["sensory-profile", "stim-space", "state-check"], tags: ["stim", "body"] },
+    { id: "seek", label: "I want a satisfying sensory input", examples: "movement, repetition or texture", tools: ["sensory-profile", "stim-space", "state-check"], tags: ["stim", "calm"] },
     { id: "avoid", label: "Input feels too much", examples: "reduce or change the environment", tools: ["sensory-profile", "masking-map", "quick-reset"], tags: ["stim", "body", "calm"] },
   ],
   learn: [
