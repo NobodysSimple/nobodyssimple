@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v70-reality-map-editor";
+const CACHE = "nobodyssimple-v71-alternative-explanations-lab";
 const SHELL = [
   "./",
   "index.html",
