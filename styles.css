@@ -6972,6 +6972,408 @@ body.app-body .library-footer-card p:not(.eyebrow) {
   font-size: 12px;
 }
 
+/* Learn: a small set of distinct shelves instead of one dense library. */
+body.app-body .learn-page {
+  max-width: 1180px;
+}
+
+body.app-body .learn-page-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 25px;
+  padding: clamp(25px, 5vw, 48px);
+  border: 1px solid #d8e0d5;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #f7f3e9 0%, #fffdf8 58%, #e7f0e5 100%);
+  box-shadow: 0 10px 28px rgba(47, 69, 55, .05);
+}
+
+body.app-body .learn-page-hero h1 {
+  max-width: 760px;
+  margin: 6px 0 12px;
+  color: #315746;
+  font: 400 clamp(2.7rem, 7vw, 5.2rem)/.98 Georgia, serif;
+}
+
+body.app-body .learn-page-hero .lead {
+  max-width: 710px;
+  margin: 0;
+}
+
+body.app-body .learn-page-mark {
+  display: grid;
+  width: 94px;
+  height: 94px;
+  flex: 0 0 94px;
+  place-items: center;
+  border: 1px solid #a9c3ad;
+  border-radius: 30px;
+  background: #e4efe3;
+  color: #557b60;
+  font: 400 44px Georgia, serif;
+  transform: rotate(7deg);
+}
+
+body.app-body .learn-door-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 13px;
+}
+
+body.app-body .learn-door-card {
+  display: flex;
+  min-height: 250px;
+  grid-column: span 2;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 22px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: #315746;
+  cursor: pointer;
+  text-align: left;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+body.app-body .learn-door-card:nth-child(n + 4) {
+  grid-column: span 3;
+  min-height: 220px;
+}
+
+body.app-body .learn-door-card:hover,
+body.app-body .learn-door-card:focus-visible {
+  border-color: currentColor;
+  box-shadow: 0 12px 24px rgba(47, 69, 55, .12);
+  transform: translateY(-3px);
+}
+
+body.app-body .learn-door-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  margin-bottom: 20px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 14px;
+  font: 400 25px Georgia, serif;
+}
+
+body.app-body .learn-door-card h2 {
+  margin: 5px 0 9px;
+  color: inherit;
+  font: 400 clamp(1.55rem, 2.8vw, 2.2rem)/1.05 Georgia, serif;
+}
+
+body.app-body .learn-door-card p {
+  margin: 0 0 18px;
+  color: inherit;
+  font-size: 12px;
+  line-height: 1.55;
+  opacity: .84;
+}
+
+body.app-body .learn-door-card strong {
+  margin-top: auto;
+  font-size: 12px;
+}
+
+body.app-body .learn-door-crash,
+body.app-body .learn-section-heading.learn-door-crash { background: #f7e9e2; color: #8d5548; }
+body.app-body .learn-door-courses,
+body.app-body .learn-section-heading.learn-door-courses { background: #e7eee0; color: #56704f; }
+body.app-body .learn-door-quotes,
+body.app-body .learn-section-heading.learn-door-quotes { background: #f1e4ef; color: #805d79; }
+body.app-body .learn-door-videos,
+body.app-body .learn-section-heading.learn-door-videos { background: #e8eef4; color: #536e87; }
+body.app-body .learn-door-blog,
+body.app-body .learn-section-heading.learn-door-blog { background: #f7efd8; color: #896f35; }
+
+body.app-body .learn-empty-note {
+  margin-top: 17px;
+  padding: 24px;
+  border: 1px dashed #bacbbb;
+  border-radius: 18px;
+  background: #fbfcf8;
+}
+
+body.app-body .learn-empty-note h2 {
+  margin: 4px 0 7px;
+  color: #315746;
+  font: 400 1.75rem/1.1 Georgia, serif;
+}
+
+body.app-body .learn-empty-note p:not(.eyebrow) {
+  max-width: 700px;
+  margin: 0;
+  color: #69776d;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+body.app-body .learn-back {
+  margin: 0 0 14px;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: #55715e;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.app-body .learn-section-panel {
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid #d9e1d5;
+  border-radius: 20px;
+  background: #fffdf8;
+}
+
+body.app-body .learn-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 22px;
+  margin: -28px -28px 22px;
+  padding: 24px 28px;
+  border-radius: 20px 20px 0 0;
+}
+
+body.app-body .learn-section-heading h2 {
+  margin: 5px 0 8px;
+  color: inherit;
+  font: 400 clamp(1.9rem, 4vw, 3rem)/1.05 Georgia, serif;
+}
+
+body.app-body .learn-section-heading p:not(.eyebrow) {
+  max-width: 700px;
+  margin: 0;
+  color: inherit;
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: .83;
+}
+
+body.app-body .learn-section-icon {
+  display: grid;
+  width: 57px;
+  height: 57px;
+  flex: 0 0 57px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 18px;
+  font: 400 29px Georgia, serif;
+}
+
+body.app-body .learn-search {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 19px;
+  color: #657468;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+body.app-body .learn-search input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd7ca;
+  border-radius: 11px;
+  background: #fffefa;
+  color: #315746;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  outline: 0;
+  text-transform: none;
+}
+
+body.app-body .learn-result-count {
+  margin: 0 0 12px;
+  color: #809083;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+body.app-body .learn-content-grid {
+  gap: 15px;
+}
+
+body.app-body .learn-content-grid .card {
+  min-height: 250px;
+}
+
+body.app-body .learn-quarter-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 21px;
+}
+
+body.app-body .learn-quarter-strip > div {
+  display: grid;
+  gap: 3px;
+  padding: 13px;
+  border-radius: 12px;
+  background: #f0f4ec;
+}
+
+body.app-body .learn-quarter-strip span {
+  color: #bd7950;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+body.app-body .learn-quarter-strip strong {
+  color: #315746;
+  font: 400 19px Georgia, serif;
+}
+
+body.app-body .learn-quarter-strip small {
+  color: #758278;
+  font-size: 10px;
+}
+
+body.app-body .learn-module-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+body.app-body .learn-module-card {
+  min-height: 210px;
+  padding: 17px;
+  border: 1px solid #d9e1d5;
+  border-radius: 15px;
+  background: #fbfcf8;
+}
+
+body.app-body .learn-module-card h3 {
+  margin: 6px 0 8px;
+  color: #315746;
+  font: 400 1.3rem/1.1 Georgia, serif;
+}
+
+body.app-body .learn-module-card > p:not(.eyebrow) {
+  margin: 0 0 16px;
+  color: #69776d;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+body.app-body .learn-quotes-panel {
+  background: #fffafc;
+}
+
+body.app-body .learn-quote-stage {
+  max-width: 760px;
+  margin: 0 auto;
+  touch-action: pan-y;
+}
+
+body.app-body .learn-quote-card {
+  min-height: 275px;
+  padding: clamp(25px, 5vw, 52px);
+  border: 1px solid #decbdc;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #fcf1f8, #f4e7f0);
+  text-align: center;
+}
+
+body.app-body .learn-quote-card > .badge {
+  background: #fff9fe;
+  color: #805d79;
+}
+
+body.app-body .learn-quote-card > p:first-of-type {
+  margin: 26px auto 18px;
+  color: #563f53;
+  font: 400 clamp(1.55rem, 4vw, 2.45rem)/1.18 Georgia, serif;
+}
+
+body.app-body .learn-quote-prompt {
+  max-width: 570px;
+  margin: 0 auto;
+  color: #805d79;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+body.app-body .learn-quote-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 16px 0 22px;
+}
+
+body.app-body .learn-quote-controls span {
+  min-width: 52px;
+  color: #805d79;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+body.app-body .learn-quote-journal {
+  padding-top: 18px;
+  border-top: 1px solid #eadbe5;
+  text-align: center;
+}
+
+body.app-body .learn-quote-journal-wrap {
+  margin-top: 14px;
+  text-align: left;
+}
+
+body.app-body .learn-quote-status {
+  margin-left: 8px;
+}
+
+@media (max-width: 820px) {
+  body.app-body .learn-door-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body.app-body .learn-door-card,
+  body.app-body .learn-door-card:nth-child(n + 4) {
+    grid-column: span 1;
+  }
+  body.app-body .learn-module-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  body.app-body .learn-page-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body.app-body .learn-page-mark {
+    width: 62px;
+    height: 62px;
+    flex-basis: 62px;
+    font-size: 31px;
+  }
+  body.app-body .learn-door-grid,
+  body.app-body .learn-module-grid,
+  body.app-body .learn-quarter-strip {
+    grid-template-columns: 1fr;
+  }
+  body.app-body .learn-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin: -18px -18px 20px;
+    padding: 18px;
+  }
+  body.app-body .learn-section-panel {
+    padding: 18px;
+  }
+}
+
 /* Alternative Explanation Lab: one clear task per screen. */
 body.app-body .alternative-simple-stage {
   max-width: 880px;

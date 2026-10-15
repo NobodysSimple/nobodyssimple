@@ -65,12 +65,27 @@ let posts = [],
   questionMoodBefore = null,
   questionMoodAfter = null;
 let libraryState = {
-  view: "curriculum",
+  view: "home",
   query: "",
   type: "",
   topic: "",
   quarter: "",
 };
+const visibleCurriculum = { ...curriculum, weeks: [] };
+const quoteDeck = [
+  { type: "fact", label: "A fact to carry", text: "A feeling can be useful information without being a complete explanation of what is happening.", prompt: "What might this feeling be telling you to notice—not what is it ordering you to conclude?" },
+  { type: "reassurance", label: "Reassurance", text: "You can take your experience seriously without treating your first interpretation as final.", prompt: "What would it look like to take yourself seriously and stay open at the same time?" },
+  { type: "affirmation", label: "An affirmation", text: "You are allowed to need conditions that make participation possible. Access is not a character flaw.", prompt: "Which condition would make one part of today more workable?" },
+  { type: "fact", label: "A fact to carry", text: "A pattern can be real without being a fixed identity. Context can change what a person can do.", prompt: "Where does this pattern change, even slightly?" },
+  { type: "reassurance", label: "Reassurance", text: "Not knowing yet is a position you can occupy honestly. It does not require panic, performance or a forced answer.", prompt: "What can remain unknown for now while you choose one sensible next step?" },
+  { type: "affirmation", label: "An affirmation", text: "Your limits are information about the conditions of the task—not proof that you are incapable of the task.", prompt: "What could you change about the conditions before judging yourself?" },
+  { type: "invitation", label: "An invitation", text: "Look for the smallest variable that changes the whole situation. Bigger effort is not always the better intervention.", prompt: "What is one variable you could alter today?" },
+  { type: "reassurance", label: "Reassurance", text: "You do not have to resolve an entire life to make one decision that is kinder to your future self.", prompt: "What decision is small enough to make without solving everything?" },
+  { type: "fact", label: "A fact to carry", text: "The same behaviour can serve different functions in different contexts. Ask what it is doing before deciding what it means.", prompt: "What might this response be helping you obtain, avoid or protect?" },
+  { type: "affirmation", label: "An affirmation", text: "You can build a life around what helps you function, not only around what looks effortless from the outside.", prompt: "Which helpful condition deserves to become part of the design?" },
+  { type: "invitation", label: "An invitation", text: "Understanding is not surrender. Seeing the forces shaping you can create more choices about how to respond.", prompt: "What influence can you name without giving it total control?" },
+  { type: "reassurance", label: "Reassurance", text: "A pause is not the same as avoidance. Sometimes a pause is how you return with more choice.", prompt: "What would make a pause restorative rather than indefinite?" },
+];
 const colours = {
   Fear: "#b77553",
   Anger: "#ba5f63",
@@ -146,7 +161,7 @@ function home() {
   rail.querySelector("[data-announcement-prev]")?.addEventListener("click", () => show(index - 1));
   rail.querySelector("[data-announcement-next]")?.addEventListener("click", () => show(index + 1));
 }
-function library() {
+function legacyLibrary() {
   const s = libraryState;
   const formats = [...new Set(["video", "education", ...posts.filter((p) => p.destinations?.includes("library")).map((p) => p.type)])];
   const formatOptions = formats.map((type) => `<option value="${esc(type)}" ${s.type === type ? "selected" : ""}>${esc(typeLabel[type] || "Resource")}</option>`).join("");
@@ -185,6 +200,77 @@ function library() {
       }),
   );
   libraryResults();
+}
+function library() {
+  const s = libraryState;
+  const view = ["crash", "courses", "quotes", "videos", "blog"].includes(s.view) ? s.view : "home";
+  const crashCourses = posts.filter((post) => post.type === "education");
+  const videos = posts.filter((post) => post.type === "video");
+  const blogs = posts.filter((post) => post.type === "blog");
+  const searchItems = (items) => {
+    const query = String(s.query || "").trim().toLowerCase();
+    if (!query) return items;
+    return items.filter((post) => [post.title, post.excerpt, post.intro, ...(post.topics || [])].join(" ").toLowerCase().includes(query));
+  };
+  const resourceGrid = (items, emptyText) => `<p class="learn-result-count" role="status">${items.length} published piece${items.length === 1 ? "" : "s"}</p><div class="grid learn-content-grid">${items.map(card).join("") || empty(emptyText)}</div>`;
+  const lessonTime = (post) => {
+    const minutes = Number(post.readingMinutes || post.readingTime || 5);
+    return `${Math.min(5, Math.max(1, Number.isFinite(minutes) ? minutes : 5))} min max`;
+  };
+  const moduleCards = visibleCurriculum.modules.map((module) => {
+    const quarter = visibleCurriculum.quarters.find((item) => item.id === module.quarter);
+    return `<article class="learn-module-card"><p class="eyebrow">Module ${String(module.id).padStart(2, "0")} · ${esc(quarter?.name || "Course")}</p><h3>${esc(module.title)}</h3><p>${esc(module.question)}</p><span class="badge">Ready for new lessons</span></article>`;
+  }).join("");
+  const doors = [
+    ["crash", "Crash Courses", "Mini courses", "Short, focused lessons across the kinds of problems people face in real life. Each piece is designed to take five minutes or less.", "↯", "learn-door-crash"],
+    ["courses", "Nobody’s Simple Courses", "The full curriculum", "The course architecture stays: four quarters, twelve modules and a place for the new lessons you will add from scratch.", "▤", "learn-door-courses"],
+    ["quotes", "Quotes", "Words to carry", "Swipe through facts, affirmations, invitations and reassurances that fit the project’s way of seeing people.", "❝", "learn-door-quotes"],
+    ["videos", "Videos", "Watch and think", "YouTube videos brought into the same learning space as the writing and courses.", "▷", "learn-door-videos"],
+    ["blog", "Blog", "Longer notes", "Read the essays, arguments and reflections from Nobody’s Simple without leaving Learn.", "Aa", "learn-door-blog"],
+  ];
+  const doorMarkup = doors.map(([id, title, kicker, description, icon, className]) => `<button type="button" class="learn-door-card ${className}" data-learn-view="${id}"><span class="learn-door-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${kicker}</span><h2>${title}</h2><p>${description}</p><strong>Open ${title} →</strong></button>`).join("");
+  let content = "";
+  if (view === "home") {
+    content = `<section class="learn-door-grid" aria-label="Learn sections">${doorMarkup}</section><section class="learn-empty-note"><p class="eyebrow">A new starting point</p><h2>The shelves are being rebuilt with intention.</h2><p>The module structure remains, but the old planned lesson list has been cleared so new courses can be added from scratch.</p></section>`;
+  } else if (view === "crash") {
+    const items = searchItems(crashCourses);
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-crash"><div><p class="eyebrow">Mini courses · five minutes max</p><h2>Crash Courses</h2><p>One compact idea at a time. Choose a topic, read the short piece and stop with one thing you can carry forward.</p></div><span class="learn-section-icon">↯</span></div><label class="learn-search">Search crash courses<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Try anxiety, boundaries, attention…"></label>${resourceGrid(items, "No crash courses have been published yet. Add them from Staff login as educational writing.")}</section>`;
+  } else if (view === "courses") {
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-courses"><div><p class="eyebrow">Four quarters · twelve modules</p><h2>Nobody’s Simple Courses</h2><p>The course framework is ready for a new curriculum. The previous planned lessons have been removed; each module is now an open place for lessons you choose to build.</p></div><span class="learn-section-icon">▤</span></div><div class="learn-quarter-strip">${visibleCurriculum.quarters.map((quarter) => `<div><span>${quarter.id}</span><strong>${esc(quarter.name)}</strong><small>${esc(quarter.subtitle)}</small></div>`).join("")}</div><div class="learn-module-grid">${moduleCards}</div></section>`;
+  } else if (view === "quotes") {
+    content = `<section class="learn-section-panel learn-quotes-panel"><div class="learn-section-heading learn-door-quotes"><div><p class="eyebrow">Swipe, save, reflect</p><h2>Quotes</h2><p>Short pieces of language for when you want a fact, a little reassurance or a more useful question.</p></div><span class="learn-section-icon">❝</span></div><div class="learn-quote-stage" id="learn-quote-stage"><div class="learn-quote-card"><span class="badge" id="learn-quote-label"></span><p id="learn-quote-text"></p><p class="learn-quote-prompt" id="learn-quote-prompt"></p></div><div class="learn-quote-controls"><button type="button" class="button secondary" id="learn-quote-prev" aria-label="Previous quote">←</button><span id="learn-quote-position"></span><button type="button" class="button secondary" id="learn-quote-next" aria-label="Next quote">→</button></div><section class="learn-quote-journal"><button type="button" class="chip" id="learn-quote-journal-toggle">Journal on this</button><div id="learn-quote-journal-wrap" hidden><label class="field">What does this bring up for you?<textarea id="learn-quote-note" rows="4" placeholder="A few words is enough…"></textarea></label><button type="button" class="button secondary" id="learn-quote-save">Save note on this device</button><span class="fine" id="learn-quote-status" role="status"></span></div></section></div></section>`;
+  } else if (view === "videos") {
+    const items = searchItems(videos);
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-videos"><div><p class="eyebrow">YouTube · watch and think</p><h2>Videos</h2><p>Follow the channel’s conversations and ideas from inside the same learning space.</p></div><span class="learn-section-icon">▷</span></div><label class="learn-search">Search videos<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a video…"></label>${resourceGrid(items, "No videos have been published here yet. New YouTube posts will appear automatically.")}</section>`;
+  } else {
+    const items = searchItems(blogs);
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-blog"><div><p class="eyebrow">Longer notes · arguments · reflections</p><h2>Blog</h2><p>The blog now lives inside Learn, alongside the courses, quotes and videos.</p></div><span class="learn-section-icon">Aa</span></div><label class="learn-search">Search the blog<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a thought…"></label>${resourceGrid(items, "No blog posts have been published yet. New writing will appear here automatically.")}</section>`;
+  }
+  main.innerHTML = `<div class="wrap learn-page"><section class="learn-page-hero"><div><p class="eyebrow">Learn · context without flattening</p><h1>Make a bigger picture.</h1><p class="lead">Read, watch, reflect and build understanding at the pace that fits. Choose one shelf; you do not need to commit to the whole library.</p></div><div class="learn-page-mark" aria-hidden="true">✳</div></section>${view !== "home" ? `<button type="button" class="learn-back" data-learn-view="home">← All Learn sections</button>` : ""}${loadError ? `<p class="notice error">${esc(loadError)}</p>` : ""}<div id="learn-content">${content}</div></div>`;
+  main.querySelectorAll("[data-learn-view]").forEach((button) => button.addEventListener("click", () => { s.view = button.dataset.learnView; s.query = ""; library(); }));
+  const search = main.querySelector("#learn-search");
+  if (search) search.addEventListener("input", (event) => { s.query = event.target.value; library(); requestAnimationFrame(() => { const input = main.querySelector("#learn-search"); input?.focus(); input?.setSelectionRange(input.value.length, input.value.length); }); });
+  if (view === "quotes") {
+    let quoteIndex = 0;
+    let quoteNotes = {};
+    try { quoteNotes = JSON.parse(localStorage.getItem("ns-learn-quote-notes-v1") || "{}"); } catch { quoteNotes = {}; }
+    const label = main.querySelector("#learn-quote-label");
+    const text = main.querySelector("#learn-quote-text");
+    const prompt = main.querySelector("#learn-quote-prompt");
+    const position = main.querySelector("#learn-quote-position");
+    const note = main.querySelector("#learn-quote-note");
+    const renderQuote = () => { const quote = quoteDeck[quoteIndex]; label.textContent = quote.label; text.textContent = `“${quote.text}”`; prompt.textContent = quote.prompt; position.textContent = `${quoteIndex + 1} / ${quoteDeck.length}`; note.value = quoteNotes[quoteIndex] || ""; };
+    const moveQuote = (amount) => { quoteNotes[quoteIndex] = note.value; quoteIndex = (quoteIndex + amount + quoteDeck.length) % quoteDeck.length; renderQuote(); };
+    main.querySelector("#learn-quote-prev").addEventListener("click", () => moveQuote(-1));
+    main.querySelector("#learn-quote-next").addEventListener("click", () => moveQuote(1));
+    main.querySelector("#learn-quote-journal-toggle").addEventListener("click", () => { const wrap = main.querySelector("#learn-quote-journal-wrap"); wrap.hidden = !wrap.hidden; if (!wrap.hidden) note.focus(); });
+    main.querySelector("#learn-quote-save").addEventListener("click", () => { quoteNotes[quoteIndex] = note.value; localStorage.setItem("ns-learn-quote-notes-v1", JSON.stringify(quoteNotes)); main.querySelector("#learn-quote-status").textContent = "Saved on this device."; });
+    let startX = null;
+    const stage = main.querySelector("#learn-quote-stage");
+    stage.addEventListener("touchstart", (event) => { startX = event.changedTouches[0].clientX; }, { passive: true });
+    stage.addEventListener("touchend", (event) => { if (startX === null) return; const delta = event.changedTouches[0].clientX - startX; startX = null; if (Math.abs(delta) > 45) moveQuote(delta < 0 ? 1 : -1); }, { passive: true });
+    renderQuote();
+  }
 }
 function libraryResults() {
   const s = libraryState;
@@ -263,7 +349,7 @@ function libraryResults() {
     .join("");
   target.innerHTML = `<p class="fine">2026–27 · 4 quarters · 12 modules · 48 lessons + 4 synthesis checkpoints.<br>“Planned” means no resource has been published for that lesson yet.</p>${quarterHTML || empty("No lessons match these filters. Try another search or switch to Videos & writing.")}<p class="fine">The curriculum is a learning sequence; lesson titles are questions to investigate.</p>`;
 }
-function blog() {
+function legacyBlog() {
   main.innerHTML = `<div class="wrap">${heading("The blog", "Space for a longer thought.", "Original posts, reflections and ideas. Separate from the curriculum, organized by theme.")}<div class="filters"><label>Search posts<input id="blog-search" type="search" placeholder="Find a thought…"></label><label>Theme<select id="blog-topic"><option value="">All themes</option>${[
     ...new Set(
       posts.filter((p) => p.type === "blog").flatMap((p) => p.topics || []),
@@ -298,6 +384,11 @@ function blog() {
   document.getElementById("blog-topic").onchange = update;
   update();
 }
+function blog() {
+  libraryState.view = "blog";
+  libraryState.query = "";
+  library();
+}
 function post(id) {
   const p = posts.find((p) => p.id === id);
   if (!p) {
@@ -307,7 +398,7 @@ function post(id) {
   const hasVideoBlock = p.blocks?.some((block) => block.type === "youtube");
   const theme = ["cream", "sage", "dark"].includes(p.theme) ? p.theme : "cream";
   const hero = ["standard", "minimal", "image", "video"].includes(p.hero) ? p.hero : "standard";
-  main.innerHTML = `<div class="wrap"><a href="#${p.type === "blog" ? "blog" : "library"}">← Back to ${p.type === "blog" ? "the blog" : "the library"}</a><article class="article theme-${theme} hero-${hero}"><p class="eyebrow">${typeLabel[p.type] || "Writing"} · ${esc((p.topics || []).join(" · "))}</p><h1>${esc(p.title)}</h1><p class="lead">${esc(p.intro || p.excerpt || "")}</p>${p.type === "video" && !hasVideoBlock ? `<div class="video-gate"><h3>Watch right here.</h3><p>Playing this video connects to YouTube.</p><button class="button secondary" id="play-video">▶ Play video</button></div>` : safeImage(p.thumbnail) ? `<img class="full" src="${esc(p.thumbnail)}" alt="${esc(p.thumbnailAlt || "")}" ${thumbnailDisplay(p)}>` : ""}<div class="article-body">${renderPostBody(p, posts)}</div>${p.modules?.length ? `<p class="fine">In ${p.modules.map((id) => esc(curriculum.modules.find((m) => m.id === id)?.title || "")).join(" · ")}</p>` : ""}</article></div>`;
+  main.innerHTML = `<div class="wrap"><a href="#library">← Back to Learn</a><article class="article theme-${theme} hero-${hero}"><p class="eyebrow">${typeLabel[p.type] || "Writing"} · ${esc((p.topics || []).join(" · "))}</p><h1>${esc(p.title)}</h1><p class="lead">${esc(p.intro || p.excerpt || "")}</p>${p.type === "video" && !hasVideoBlock ? `<div class="video-gate"><h3>Watch right here.</h3><p>Playing this video connects to YouTube.</p><button class="button secondary" id="play-video">▶ Play video</button></div>` : safeImage(p.thumbnail) ? `<img class="full" src="${esc(p.thumbnail)}" alt="${esc(p.thumbnailAlt || "")}" ${thumbnailDisplay(p)}>` : ""}<div class="article-body">${renderPostBody(p, posts)}</div>${p.modules?.length ? `<p class="fine">In ${p.modules.map((id) => esc(curriculum.modules.find((m) => m.id === id)?.title || "")).join(" · ")}</p>` : ""}</article></div>`;
   document.title = `${p.seoTitle || p.title} · Nobody’s Simple`;
   const description = document.querySelector('meta[name="description"]');
   if (description) description.content = p.seoDescription || p.excerpt || "Psychology for choosing what to do next.";
@@ -726,8 +817,8 @@ function route() {
       maps: () => renderTool(main, "maps"),
       support: () => renderSupport(main),
       watch: () => {
-        libraryState.view = "resources";
-        libraryState.type = "video";
+        libraryState.view = "videos";
+        libraryState.query = "";
         library();
       },
       post: () => post(decodeURIComponent(id || "")),
@@ -768,8 +859,8 @@ function route() {
     tools: "Tools",
     library: "Learn",
     learn: "Learn",
-    blog: "Blog",
-    writing: "Blog",
+    blog: "Learn",
+    writing: "Learn",
     maps: "My Maps",
     support: "Get help",
     simplyfocus: "SimplyFocus",
