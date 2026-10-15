@@ -513,6 +513,130 @@ function renderBrainDump(root, tool) {
   renderCapture();
 }
 
+function renderThoughtMap(root, tool) {
+  root.innerHTML = `<div class="wrap tool-page thought-map-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Think & organise / Make the structure visible</p><h1>${esc(tool.title)}</h1><p class="lead">Separate what happened, what you think it means, what you do not know, and what you can do next.</p><p class="privacy-note">This is a working map, not a diagnosis or a final explanation. Your map stays on this device unless you choose to save it.</p></section><div id="thought-map-content"></div><div class="tool-next row"><a class="chip" href="#tool/brain-dump">Brain dump</a><a class="chip" href="#tool/reality-map">Facts and interpretations</a><a class="chip" href="#maps">My Maps</a></div></div>`;
+  const content = root.querySelector("#thought-map-content");
+  const nodeTypes = ["Fact", "Event", "Thought", "Assumption", "Question", "Unknown", "Feeling", "Person", "Possible cause", "Need", "Action", "Memory", "Option"];
+  const relations = ["connected to", "happened before", "happened after", "might contribute to", "reminds me of", "depends on", "contradicts", "I am assuming these are connected", "probably separate"];
+  const certainties = ["known", "likely", "possible", "guess"];
+  const times = ["Past", "Now", "Future", "Not sure"];
+  const control = ["Mine", "Shared", "Theirs", "Outside my control", "Not sure"];
+  const state = { stage: "start", situation: "", mode: "free", nodes: [], connections: [], selected: [], filter: "all" };
+  const newId = () => `n${Date.now()}${Math.random().toString(36).slice(2, 7)}`;
+  const nodeLabel = (node) => node.type === "Thought" ? "Interpretation" : node.type;
+  const modeTypes = () => [...new Set(state.mode === "worry" ? ["Fact", "Thought", "Assumption", "Unknown", "Question", "Feeling", "Action", ...nodeTypes] : state.mode === "relationship" ? ["Person", "Event", "Feeling", "Need", "Thought", "Question", "Action", ...nodeTypes] : state.mode === "decision" ? ["Option", "Fact", "Possible cause", "Question", "Unknown", "Need", "Action", ...nodeTypes] : nodeTypes)];
+  const modeGuidance = () => state.mode === "worry" ? "Start with facts, then add predictions and missing information." : state.mode === "relationship" ? "Start with people, what happened, what you feel and what you need." : state.mode === "decision" ? "Start with options, what matters, consequences and unknowns." : "Add whatever belongs. Facts and interpretations can sit beside feelings and actions.";
+  const visibleNodes = () => state.nodes.filter((node) => state.filter === "all" || (state.filter === "action" ? ["Action", "Need"].includes(node.type) : state.filter === "interpretation" ? ["Thought", "Assumption", "Possible cause"].includes(node.type) : node.type === state.filter));
+  const progress = (stage) => `<div class="thought-map-progress" aria-label="Thought Map progress"><span class="${stage === "start" ? "active" : ""}">01 <b>Name it</b></span><i aria-hidden="true">→</i><span class="${stage === "map" ? "active" : ""}">02 <b>Map it</b></span><i aria-hidden="true">→</i><span class="${stage === "result" ? "active" : ""}">03 <b>Read it</b></span></div>`;
+  const escAttr = (value) => esc(String(value || ""));
+
+  function renderStart() {
+    state.stage = "start";
+    content.innerHTML = `${progress("start")}<section class="thought-map-stage thought-map-start"><p class="eyebrow">Start with the centre</p><h2>What is the thing taking up your mind?</h2><p class="thought-map-lead">Use one sentence. You can add the people, facts, fears and questions around it next.</p><label class="thought-map-main-label" for="thought-map-situation">Main situation</label><textarea id="thought-map-situation" rows="4" placeholder="For example: My supervisor has not replied and I am worried I have done something wrong.">${esc(state.situation)}</textarea><div class="thought-map-mode"><p class="thought-map-label">Optional: choose a route</p><div class="thought-map-mode-grid">${[["free", "Free map", "Add whatever belongs."], ["worry", "Worry map", "Facts, predictions and unknowns."], ["relationship", "Relationship map", "People, expectations and needs."], ["decision", "Decision map", "Options, consequences and uncertainty."]].map(([value, title, text]) => `<button type="button" class="thought-map-mode-card ${state.mode === value ? "selected" : ""}" data-tm-mode="${value}"><strong>${title}</strong><span>${text}</span></button>`).join("")}</div></div><div class="thought-map-start-actions"><button type="button" class="button" data-tm-action="build">Build the map →</button><a class="button secondary" href="#tool/brain-dump">I need to empty my head first</a></div><p class="fine" id="thought-map-status" role="status"></p></section>`;
+    content.querySelector("#thought-map-situation").focus();
+  }
+
+  const nodeCard = (node) => `<article class="thought-map-node ${state.selected.includes(node.id) ? "selected" : ""}" data-node-card="${escAttr(node.id)}"><div class="thought-map-node-top"><span class="thought-map-node-type">${esc(nodeLabel(node))}</span><button type="button" class="chip" data-tm-select="${escAttr(node.id)}">${state.selected.includes(node.id) ? "Selected" : "Select to connect"}</button></div><textarea rows="3" data-tm-node-text="${escAttr(node.id)}" aria-label="${escAttr(nodeLabel(node))}">${esc(node.text)}</textarea><details class="thought-map-node-details"><summary>Optional details</summary><div class="thought-map-detail-grid"><label>When<select data-tm-node-time="${escAttr(node.id)}">${times.map((value) => `<option ${node.time === value ? "selected" : ""}>${value}</option>`).join("")}</select></label><label>Control<select data-tm-node-control="${escAttr(node.id)}"><option value="">Not marked</option>${control.map((value) => `<option ${node.control === value ? "selected" : ""}>${value}</option>`).join("")}</select></label><label>Loudness<select data-tm-node-loud="${escAttr(node.id)}">${["Quiet", "Present", "Loud", "Very loud"].map((value) => `<option ${node.loud === value ? "selected" : ""}>${value}</option>`).join("")}</select></label></div></details><button type="button" class="thought-map-remove" data-tm-delete="${escAttr(node.id)}">Remove this piece</button></article>`;
+
+  function connectionPanel() {
+    if (state.selected.length < 2) return `<p class="thought-map-connect-hint">Select two pieces to describe how they relate. This does not automatically mean one caused the other.</p>`;
+    const [first, second] = state.selected.map((id) => state.nodes.find((node) => node.id === id)).filter(Boolean);
+    return `<div class="thought-map-connection-editor"><p><b>${esc(first.text || nodeLabel(first))}</b> <span>↔</span> <b>${esc(second.text || nodeLabel(second))}</b></p><div class="thought-map-connection-fields"><label>Relationship<select id="thought-map-relation">${relations.map((value) => `<option>${value}</option>`).join("")}</select></label><label>How certain is that?<select id="thought-map-certainty">${certainties.map((value) => `<option>${value}</option>`).join("")}</select></label><button type="button" class="button" data-tm-action="connect">Add connection</button></div></div>`;
+  }
+
+  function renderMap() {
+    state.stage = "map";
+    const nodes = visibleNodes();
+    const filters = [["all", "Full map"], ["Fact", "Facts"], ["interpretation", "Interpretations"], ["Unknown", "Unknowns"], ["action", "Actionable"]];
+    const connectionList = state.connections.length ? `<ul class="thought-map-connection-list">${state.connections.map((link, index) => { const a = state.nodes.find((node) => node.id === link.from); const b = state.nodes.find((node) => node.id === link.to); return a && b ? `<li><span>${esc(a.text || nodeLabel(a))}</span><b>${esc(link.relation)}</b><span>${esc(b.text || nodeLabel(b))}</span><small>${esc(link.certainty)}</small><button type="button" class="chip" data-tm-delete-connection="${index}">Remove</button></li>` : ""; }).join("")}</ul>` : `<p class="fine">No connections yet. A map can still be useful without arrows.</p>`;
+    content.innerHTML = `${progress("map")}<section class="thought-map-stage thought-map-builder"><div class="thought-map-builder-head"><div><p class="eyebrow">Phase 2 / Map it</p><h2>Build around the situation.</h2><p class="thought-map-lead">${esc(modeGuidance())}</p></div><button type="button" class="button secondary" data-tm-action="finish">Read the map →</button></div><div class="thought-map-board"><article class="thought-map-centre"><span class="thought-map-node-type">MAIN SITUATION</span><textarea rows="3" data-tm-situation>${esc(state.situation)}</textarea><small>One working picture, not the whole situation.</small></article><div class="thought-map-orbit">${nodes.length ? nodes.map(nodeCard).join("") : `<div class="thought-map-empty">Your added pieces will appear here.</div>`}</div></div><section class="thought-map-add"><p class="thought-map-label">Add a piece</p><div class="thought-map-add-row"><select id="thought-map-new-type" aria-label="New map piece type">${modeTypes().map((value) => `<option>${value}</option>`).join("")}</select><input id="thought-map-new-text" placeholder="Write one short piece…" aria-label="New map piece"><button type="button" class="button" data-tm-action="add-node">Add</button></div><p class="fine">Start with one short piece. Details can wait.</p></section><section class="thought-map-connect"><p class="thought-map-label">Connect pieces</p>${connectionPanel()}${connectionList}</section><div class="thought-map-filters"><p class="thought-map-label">Change the view</p><div class="thought-map-filter-row">${filters.map(([value, label]) => `<button type="button" class="chip ${state.filter === value ? "active" : ""}" data-tm-filter="${value}">${label}</button>`).join("")}</div></div><p class="fine" id="thought-map-status" role="status">${state.nodes.length} piece${state.nodes.length === 1 ? "" : "s"} on the map.</p></section>`;
+  }
+
+  function renderResult() {
+    state.stage = "result";
+    const groups = [["Facts", ["Fact", "Event"]], ["What I may be adding", ["Thought", "Assumption", "Possible cause"]], ["What I do not know", ["Question", "Unknown"]], ["Feelings and needs", ["Feeling", "Need"]], ["People and memories", ["Person", "Memory"]], ["Possible choices", ["Option"]], ["Possible action", ["Action"]]];
+    const groupMarkup = groups.map(([title, types]) => { const items = state.nodes.filter((node) => types.includes(node.type)); return `<article class="thought-map-result-group"><span class="thought-map-node-type">${title}</span>${items.length ? `<ul>${items.map((node) => `<li><b>${esc(node.text)}</b><small>${esc(node.time)}${node.control ? ` · ${esc(node.control)}` : ""}</small></li>`).join("")}</ul>` : `<p class="fine">Nothing added.</p>`}</article>`; }).join("");
+    const tensions = state.connections.filter((link) => link.relation === "contradicts");
+    const actions = state.nodes.filter((node) => node.type === "Action");
+    content.innerHTML = `${progress("result")}<section class="thought-map-stage thought-map-result"><div class="thought-map-builder-head"><div><p class="eyebrow">Phase 3 / Read it</p><h2>Here is the structure you built.</h2><p class="thought-map-lead">The map does not decide what is true. It separates observations, interpretations, unknowns and options so you can inspect them.</p></div><button type="button" class="button secondary" data-tm-action="back-map">← Edit map</button></div><article class="thought-map-result-centre"><span class="thought-map-node-type">MAIN SITUATION</span><p>${esc(state.situation)}</p></article><div class="thought-map-result-grid">${groupMarkup}</div><section class="thought-map-result-section"><h3>Connections</h3>${state.connections.length ? `<ul class="thought-map-result-links">${state.connections.map((link) => { const a = state.nodes.find((node) => node.id === link.from); const b = state.nodes.find((node) => node.id === link.to); return a && b ? `<li>${esc(a.text)} <b>${esc(link.relation)}</b> ${esc(b.text)} <small>${esc(link.certainty)}</small></li>` : ""; }).join("")}</ul>` : `<p class="fine">No connections recorded yet.</p>`}</section>${tensions.length ? `<div class="thought-map-tension"><b>These pieces may pull in different directions.</b><p>${tensions.length} contradiction${tensions.length === 1 ? "" : "s"} marked. That is a tension to examine, not proof that one side is wrong.</p></div>` : ""}<section class="thought-map-result-section"><h3>What is actionable?</h3>${actions.length ? `<ul class="thought-map-result-links">${actions.map((node) => `<li>${esc(node.text)}${node.control ? ` <small>${esc(node.control)}</small>` : ""}</li>`).join("")}</ul>` : `<p class="fine">No action added. Not every map needs to end in a task.</p>`}</section><p class="thought-map-reality-note"><b>Map versus reality:</b> this is one working picture. Change it when new information arrives.</p><div class="row"><button type="button" class="button" data-tm-action="save">Save to My Maps</button><button type="button" class="button secondary" data-tm-action="download">Download</button><button type="button" class="button secondary" data-tm-action="copy">Copy</button><button type="button" class="button secondary" data-tm-action="new">Start again</button></div><p class="fine" id="thought-map-status" role="status"></p></section>`;
+  }
+
+  const mapText = () => `Thought Map\n\nMain situation\n${state.situation}\n\n${state.nodes.map((node) => `${nodeLabel(node)}: ${node.text}${node.time ? ` [${node.time}]` : ""}${node.control ? ` [${node.control}]` : ""}`).join("\n")}\n\nConnections\n${state.connections.map((link) => { const a = state.nodes.find((node) => node.id === link.from); const b = state.nodes.find((node) => node.id === link.to); return a && b ? `- ${a.text} — ${link.relation} — ${b.text} (${link.certainty})` : ""; }).filter(Boolean).join("\n") || "None"}`;
+  const setStatus = (message) => { const status = content.querySelector("#thought-map-status"); if (status) status.textContent = message; };
+
+  content.addEventListener("input", (event) => {
+    if (event.target.id === "thought-map-situation" || event.target.dataset.tmSituation !== undefined) state.situation = event.target.value;
+    if (event.target.dataset.tmNodeText !== undefined) { const node = state.nodes.find((item) => item.id === event.target.dataset.tmNodeText); if (node) node.text = event.target.value; }
+  });
+  content.addEventListener("change", (event) => {
+    const id = event.target.dataset.tmNodeTime || event.target.dataset.tmNodeControl || event.target.dataset.tmNodeLoud;
+    if (!id) return;
+    const node = state.nodes.find((item) => item.id === id);
+    if (!node) return;
+    if (event.target.dataset.tmNodeTime) node.time = event.target.value;
+    if (event.target.dataset.tmNodeControl) node.control = event.target.value;
+    if (event.target.dataset.tmNodeLoud) node.loud = event.target.value;
+  });
+  content.addEventListener("click", (event) => {
+    const mode = event.target.closest("[data-tm-mode]");
+    if (mode) { state.mode = mode.dataset.tmMode; renderStart(); return; }
+    const filter = event.target.closest("[data-tm-filter]");
+    if (filter) { state.filter = filter.dataset.tmFilter; renderMap(); return; }
+    const select = event.target.closest("[data-tm-select]");
+    if (select) { const id = select.dataset.tmSelect; state.selected = state.selected.includes(id) ? state.selected.filter((item) => item !== id) : state.selected.length >= 2 ? [state.selected[1], id] : [...state.selected, id]; renderMap(); return; }
+    const deleteButton = event.target.closest("[data-tm-delete]");
+    if (deleteButton) { state.nodes = state.nodes.filter((node) => node.id !== deleteButton.dataset.tmDelete); state.connections = state.connections.filter((link) => link.from !== deleteButton.dataset.tmDelete && link.to !== deleteButton.dataset.tmDelete); state.selected = state.selected.filter((id) => id !== deleteButton.dataset.tmDelete); renderMap(); return; }
+    const deleteLink = event.target.closest("[data-tm-delete-connection]");
+    if (deleteLink) { state.connections.splice(Number(deleteLink.dataset.tmDeleteConnection), 1); renderMap(); return; }
+    const button = event.target.closest("[data-tm-action]");
+    if (!button) return;
+    const action = button.dataset.tmAction;
+    if (action === "build") {
+      state.situation = content.querySelector("#thought-map-situation")?.value.trim() || "";
+      if (!state.situation) { setStatus("Write one sentence first."); return; }
+      state.nodes = [];
+      state.connections = [];
+      state.selected = [];
+      renderMap();
+    } else if (action === "add-node") {
+      const text = content.querySelector("#thought-map-new-text")?.value.trim() || "";
+      if (!text) { setStatus("Write a short piece first."); return; }
+      const type = content.querySelector("#thought-map-new-type")?.value || "Thought";
+      state.nodes.push({ id: newId(), type, text, time: "Not sure", control: "", loud: "Present" });
+      renderMap();
+    } else if (action === "connect") {
+      if (state.selected.length < 2) return;
+      const relation = content.querySelector("#thought-map-relation")?.value || "connected to";
+      const certainty = content.querySelector("#thought-map-certainty")?.value || "possible";
+      const [from, to] = state.selected;
+      if (!state.connections.some((link) => link.from === from && link.to === to && link.relation === relation)) state.connections.push({ from, to, relation, certainty });
+      state.selected = [];
+      renderMap();
+    } else if (action === "finish") {
+      renderResult();
+    } else if (action === "back-map") {
+      renderMap();
+    } else if (action === "save") {
+      try { saveMap({ title: `Thought map · ${state.situation.slice(0, 48)}`, tool: "thought-map", answers: JSON.parse(JSON.stringify(state)) }); setStatus("Saved on this device."); } catch { setStatus("This browser could not save it. Use Download instead."); }
+    } else if (action === "download") {
+      downloadText("thought-map.txt", mapText());
+      setStatus("Downloaded.");
+    } else if (action === "copy") {
+      navigator.clipboard?.writeText(mapText()).then(() => setStatus("Copied.")).catch(() => setStatus("Copy was blocked by this browser. Use Download instead."));
+    } else if (action === "new") {
+      state.stage = "start";
+      state.situation = "";
+      state.nodes = [];
+      state.connections = [];
+      state.selected = [];
+      state.filter = "all";
+      renderStart();
+    }
+  });
+
+  renderStart();
+}
+
 function renderBodyCheckLegacy(root, tool) {
   root.innerHTML = `<div class="wrap tool-page body-check-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Feel & notice / Body Map</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your answers stay in this browser unless you choose to save the map.</p></section><section id="body-mood-gate">${moodRatingMarkup({ id: "body-mood-before", outputId: "body-mood-before-value", buttonId: "body-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This is the existing starting check for the tool.", buttonText: "Open the Body Map" })}</section><div id="body-check-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Body & State Check</a><a class="chip" href="#compass">Emotion Compass</a><a class="chip" href="#maps">My Maps</a></div></div>`;
   bindMoodRating(root, {
@@ -1923,6 +2047,10 @@ export function renderTool(root, id) {
   }
   if (tool.id === "brain-dump") {
     renderBrainDump(root, tool);
+    return;
+  }
+  if (tool.id === "thought-map") {
+    renderThoughtMap(root, tool);
     return;
   }
   root.innerHTML = `<div class="wrap tool-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")} / ${esc(tool.kind === "pattern" ? "Creative pause" : tool.kind === "sound" ? "Sound & sensation" : "Interactive prompt")}</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your writing stays in this browser tab unless you choose “Save to My Maps”. It is not sent to Nobody’s Simple.</p></section><section id="tool-mood-gate">${moodRatingMarkup({ id: "tool-mood-before", outputId: "tool-mood-before-value", buttonId: "tool-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you use the tool.", buttonText: "Open this tool →" })}</section><div id="tool-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Check my body/state</a><a class="chip" href="#questions">Work through a difficult question</a><a class="chip" href="#maps">My Maps</a></div></div>`;

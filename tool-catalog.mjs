@@ -180,7 +180,7 @@ export const tools = [
     title: "Thought map",
     group: "think",
     short:
-      "Connect people, situations, worries and choices in a revisable little map.",
+      "Build a working map of facts, interpretations, unknowns, relationships and possible actions.",
     fields: [
       field("topic", "What is the main situation?"),
       field("people", "Who or what is connected?"),
