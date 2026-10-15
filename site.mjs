@@ -703,7 +703,14 @@ function route() {
         renderToolbox(main);
         appendInteractiveToolbox(main);
       },
-      tool: () => renderTool(main, decodeURIComponent(id || "")),
+      tool: () => {
+        const toolId = decodeURIComponent(id || "");
+        if (toolId === "alternative-explanations") {
+          renderInteractiveTool(main, toolId);
+          return;
+        }
+        renderTool(main, toolId);
+      },
       play: () => renderInteractiveTool(main, decodeURIComponent(id || "")),
       guided: () => renderLifeNavigation(main, decodeURIComponent(id || "")),
       team: () => renderTeam(main),
