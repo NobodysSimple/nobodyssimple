@@ -2,6 +2,54 @@
   "version": 1,
   "posts": [
     {
+      "id": "5fec6e2b-bbab-4a11-b0ec-f9de1a12b5b4",
+      "type": "announcement",
+      "title": "15/10/2026: Learn update",
+      "excerpt": "",
+      "intro": "",
+      "body": "Hi all! I&#39;m currently updating the &quot;learn&quot; page so that there is more of a diverse range of things to learn from. Expect content here soon! Eventually I am planning to have a team of volunteers add content to this so its fuller and there are constant lessons going here. For now, I am still for the next weeks changing the skeleton of the app before we add anything immediately. Thankyou for your patience!",
+      "blocks": [
+        {
+          "id": "ac2703ac-6a22-4fec-8039-69951617c0aa",
+          "type": "paragraph",
+          "html": "<p>Hi all! I&#39;m currently updating the &quot;learn&quot; page so that there is more of a diverse range of things to learn from. Expect content here soon! Eventually I am planning to have a team of volunteers add content to this so its fuller and there are constant lessons going here. For now, I am still for the next weeks changing the skeleton of the app before we add anything immediately. Thankyou for your patience!</p>"
+        }
+      ],
+      "youtube": "",
+      "topics": [],
+      "category": "",
+      "modules": [],
+      "weeks": [],
+      "thumbnail": "",
+      "thumbnailAlt": "",
+      "destinations": [
+        "home"
+      ],
+      "status": "published",
+      "author": "Drew Horrobin",
+      "createdAt": "2026-10-15T21:23:14.633Z",
+      "updatedAt": "2026-10-15T21:25:14.208Z",
+      "publishedAt": "2026-10-15T21:25:14.208Z",
+      "slug": "15-10-2026-learn-update",
+      "seoTitle": "",
+      "seoDescription": "",
+      "socialImage": "",
+      "theme": "cream",
+      "hero": "standard",
+      "announcementLabel": "Update",
+      "announcementPinned": true,
+      "announcementPriority": 0,
+      "announcementStart": "2026-10-15T22:23",
+      "announcementEnd": "",
+      "announcementLink": "#post/5fec6e2b-bbab-4a11-b0ec-f9de1a12b5b4",
+      "announcementLinkText": "Open update",
+      "layout": "standard",
+      "thumbnailRatio": "auto",
+      "thumbnailFocalX": 50,
+      "thumbnailFocalY": 50,
+      "thumbnailRotate": 0
+    },
+    {
       "id": "9fef1fcf-a3b9-4553-bffb-6f3658b35d11",
       "type": "announcement",
       "title": "9/10/2026 update:",
