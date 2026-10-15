@@ -6972,6 +6972,264 @@ body.app-body .library-footer-card p:not(.eyebrow) {
   font-size: 12px;
 }
 
+/* Alternative Explanation Lab: one clear task per screen. */
+body.app-body .alternative-simple-stage {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid #d8e0d5;
+  border-radius: 22px;
+  background: linear-gradient(145deg, #fffdf8 0%, #f1f5ed 100%);
+  box-shadow: 0 14px 34px rgba(47, 69, 55, .07);
+}
+
+body.app-body .alternative-simple-intro,
+body.app-body .alternative-simple-stage-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+body.app-body .alternative-simple-intro {
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+}
+
+body.app-body .alternative-simple-mark {
+  display: grid;
+  width: 55px;
+  height: 55px;
+  flex: 0 0 55px;
+  place-items: center;
+  border: 1px solid #b8cdbb;
+  border-radius: 17px;
+  background: #e3eee1;
+  color: #39634b;
+  font: 400 31px Georgia, serif;
+}
+
+body.app-body .alternative-simple-stage h2 {
+  margin: 4px 0 8px;
+  color: #315746;
+  font: 400 clamp(1.85rem, 4vw, 3rem)/1.08 Georgia, serif;
+}
+
+body.app-body .alternative-simple-stage h3 {
+  color: #315746;
+  font: 700 1.2rem/1.25 Georgia, serif;
+}
+
+body.app-body .alternative-simple-stage-head > div {
+  min-width: 0;
+}
+
+body.app-body .alternative-simple-stage-head .button {
+  flex: 0 0 auto;
+}
+
+body.app-body .alternative-simple-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 27px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #edf3e9;
+  color: #8a988b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+body.app-body .alternative-simple-progress span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+body.app-body .alternative-simple-progress span.active {
+  color: #39634b;
+}
+
+body.app-body .alternative-simple-progress span.active::first-letter {
+  color: #ba7c4f;
+}
+
+body.app-body .alternative-simple-progress i {
+  color: #b5c1b4;
+  font-style: normal;
+}
+
+body.app-body .alternative-simple-stage > .field {
+  margin: 0 0 16px;
+}
+
+body.app-body .alternative-simple-stage > .button {
+  margin-top: 7px;
+}
+
+body.app-body .alternative-simple-hint {
+  max-width: 680px;
+  margin: 18px 0 0;
+  color: #738075;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+body.app-body .alternative-simple-cards {
+  display: grid;
+  gap: 13px;
+  margin: 23px 0 27px;
+}
+
+body.app-body .alternative-simple-card,
+body.app-body .alternative-simple-result-card {
+  padding: 19px;
+  border: 1px solid #d9e1d5;
+  border-radius: 15px;
+  background: #fffefa;
+}
+
+body.app-body .alternative-simple-card.first {
+  border-color: #c8b994;
+  background: #faf3e4;
+}
+
+body.app-body .alternative-simple-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+body.app-body .alternative-simple-card h3,
+body.app-body .alternative-simple-result-card h3 {
+  margin: 7px 0 15px;
+  color: #315746;
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+  line-height: 1.3;
+}
+
+body.app-body .alternative-fit-choices,
+body.app-body .alternative-next-choices,
+body.app-body .alternative-suggestion-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+body.app-body .alternative-fit-choice,
+body.app-body .alternative-next-choice,
+body.app-body .alternative-suggestion {
+  min-height: 44px;
+  padding: 9px 11px;
+  border: 1px solid #cbd8ca;
+  border-radius: 10px;
+  background: #f8faf5;
+  color: #496b57;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.25;
+  text-align: left;
+}
+
+body.app-body .alternative-fit-choice:hover,
+body.app-body .alternative-fit-choice.selected,
+body.app-body .alternative-next-choice:hover,
+body.app-body .alternative-next-choice.selected,
+body.app-body .alternative-suggestion:hover {
+  border-color: #6d9877;
+  background: #e3eee1;
+  color: #315746;
+}
+
+body.app-body .alternative-add-section,
+body.app-body .alternative-next-section,
+body.app-body .alternative-result-observation,
+body.app-body .alternative-result-next {
+  margin-top: 20px;
+  padding: 18px;
+  border: 1px solid #d9e1d5;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, .55);
+}
+
+body.app-body .alternative-add-section .field {
+  margin: 15px 0 10px;
+}
+
+body.app-body .alternative-add-section .button {
+  margin-top: 0;
+}
+
+body.app-body .alternative-remove {
+  padding: 3px 0;
+  border: 0;
+  background: transparent;
+  color: #9a6f61;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+body.app-body .alternative-next-section h3 {
+  margin: 5px 0 13px;
+}
+
+body.app-body .alternative-next-section + .alternative-next-section {
+  margin-top: 13px;
+}
+
+body.app-body .alternative-simple-result .alternative-simple-intro {
+  margin-bottom: 20px;
+}
+
+body.app-body .alternative-result-observation p,
+body.app-body .alternative-result-next p {
+  margin: 9px 0 0;
+  color: #53655a;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+body.app-body .alternative-simple-result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 13px;
+}
+
+body.app-body .alternative-simple-result-card strong {
+  color: #55715e;
+  font-size: 11px;
+}
+
+body.app-body .alternative-simple-result-card h3 {
+  margin-bottom: 9px;
+}
+
+@media (max-width: 640px) {
+  body.app-body .alternative-simple-stage-head {
+    flex-direction: column;
+  }
+  body.app-body .alternative-simple-progress {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  body.app-body .alternative-simple-progress i {
+    display: none;
+  }
+  body.app-body .alternative-fit-choices,
+  body.app-body .alternative-next-choices,
+  body.app-body .alternative-suggestion-row,
+  body.app-body .alternative-simple-result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 820px) {
   body.app-body .library-filter-row {
     grid-template-columns: 1fr;
