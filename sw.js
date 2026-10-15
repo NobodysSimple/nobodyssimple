@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v69-thought-map-route-workbench";
+const CACHE = "nobodyssimple-v70-reality-map-editor";
 const SHELL = [
   "./",
   "index.html",

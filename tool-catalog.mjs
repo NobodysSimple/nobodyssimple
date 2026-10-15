@@ -194,7 +194,7 @@ export const tools = [
     title: "What happened / what I think happened",
     group: "think",
     short:
-      "Separate what you observed from the story and the parts still unknown.",
+      "Sort the moment into camera, narrator, feeling and missing footage, then test the story and choose a response without perfect certainty.",
     fields: [
       field("observed", "Observed: what could a camera or transcript capture?"),
       field("interpreted", "Interpreted: what are you making it mean?"),
