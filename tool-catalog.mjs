@@ -180,7 +180,7 @@ export const tools = [
     title: "Thought map",
     group: "think",
     short:
-      "Build a working map of facts, interpretations, unknowns, relationships and possible actions.",
+      "Map the tangle, then reality-check it, prepare a conversation, compare options, or build a clear next thread.",
     fields: [
       field("topic", "What is the main situation?"),
       field("people", "Who or what is connected?"),

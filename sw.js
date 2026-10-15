@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v68-thought-map-network";
+const CACHE = "nobodyssimple-v69-thought-map-route-workbench";
 const SHELL = [
   "./",
   "index.html",

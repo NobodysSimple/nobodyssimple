@@ -2364,6 +2364,112 @@ html {
 .thought-map-add-row .button {
   flex: 0 0 auto;
 }
+.thought-map-preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+.thought-map-preset-row .chip {
+  background: #f5f8ef;
+  border-color: #cbd8c5;
+  color: #536b57;
+  text-align: left;
+}
+.thought-route-workbench {
+  background: linear-gradient(145deg, #fffdf7 0%, #fbf8ed 100%);
+}
+.thought-route-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+.thought-route-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+.thought-route-card,
+.thought-route-form,
+.thought-route-option-table,
+.thought-route-output {
+  padding: 17px;
+  border: 1px solid #d9e1d4;
+  border-radius: 12px;
+  background: #fffefa;
+}
+.thought-route-card {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+.thought-route-card label,
+.thought-route-form label,
+.thought-route-option label {
+  display: grid;
+  gap: 6px;
+  color: #647365;
+  font-size: 12px;
+  font-weight: 650;
+}
+.thought-route-card select,
+.thought-route-card textarea,
+.thought-route-form select,
+.thought-route-form input,
+.thought-route-form textarea,
+.thought-route-option select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d2ddd0;
+  border-radius: 8px;
+  background: #fffefa;
+  color: var(--map-ink);
+  font: inherit;
+  font-size: 13px;
+}
+.thought-route-form {
+  display: grid;
+  gap: 14px;
+  max-width: 760px;
+  margin-top: 20px;
+}
+.thought-route-option-table {
+  display: grid;
+  gap: 9px;
+  margin: 18px 0;
+}
+.thought-route-option {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 110px 110px;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #e6ebe2;
+  color: #405248;
+  font-size: 13px;
+}
+.thought-route-option:last-child {
+  border-bottom: 0;
+}
+.thought-route-output {
+  margin: 18px 0;
+  border-color: #d5bf96;
+  background: #fbf5e9;
+  color: #5e513c;
+}
+.thought-route-output p {
+  margin: 8px 0 0;
+  line-height: 1.6;
+}
+.thought-route-workbench .thought-map-builder-head {
+  margin-bottom: 4px;
+}
+.thought-route-workbench .thought-map-builder-head > div {
+  flex: 1 1 480px;
+}
+.thought-route-workbench .thought-map-builder-head .thought-map-lead {
+  margin-bottom: 0;
+}
 .thought-map-connect-hint {
   margin: 0;
   color: #758176;
@@ -3245,6 +3351,15 @@ footer {
   .thought-map-orbit,
   .thought-map-result-grid {
     grid-template-columns: 1fr;
+  }
+  .thought-route-grid {
+    grid-template-columns: 1fr;
+  }
+  .thought-route-option {
+    grid-template-columns: 1fr 1fr;
+  }
+  .thought-route-option b {
+    grid-column: 1 / -1;
   }
   .thought-map-builder-head {
     flex-direction: column;
