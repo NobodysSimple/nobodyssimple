@@ -703,10 +703,6 @@ function route() {
       },
       tool: () => {
         const toolId = decodeURIComponent(id || "");
-        if (toolId === "alternative-explanations") {
-          renderInteractiveTool(main, toolId);
-          return;
-        }
         renderTool(main, toolId);
       },
       play: () => renderInteractiveTool(main, decodeURIComponent(id || "")),

@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v76-simplified-alternative-lab";
+const CACHE = "nobodyssimple-v77-remove-alternative-lab";
 const SHELL = [
   "./",
   "index.html",

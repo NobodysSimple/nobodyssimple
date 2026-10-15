@@ -71,7 +71,6 @@ const rows = [
   ["emotion-matching", "Emotion Matching Game", "feel", "match", "feel,learn,relate", "understand,learn", "Match body, context and expression cues with several possible feelings."],
   ["cognitive-bias-games", "Cognitive Bias Mini-Games", "think", "bias", "learn,think,decision", "understand,learn", "Try short examples of anchoring, sunk cost and confirmation bias."],
   ["uncertainty-game", "Uncertainty Game", "think", "probability", "learn,think,decision", "understand,learn", "Make a probability estimate, reveal a simple random outcome and compare."],
-  ["alternative-explanations", "Alternative Explanation Lab", "think", "alternatives", "think,self,relate", "understand,decide", "Compare competing explanations against the same evidence, then choose what would actually distinguish them."],
   ["life-balance-radar", "Life Balance Radar", "reflect", "radar", "reflect,self,start", "understand,organise", "Move points for rest, relationships, work, play, body and creativity; no life score."],
   ["personal-weather", "Personal Weather", "feel", "weather", "feel,body,self", "understand,calmer", "Build a low-language picture of your inner weather from sky, wind and warmth."],
   ["intensity-thermometer", "Intensity Thermometer", "calm", "intensity", "feel,calm,body", "calmer,minutes", "Slide the current intensity and see lower-demand suggestions change with it."],
@@ -416,7 +415,6 @@ const options = {
   "emotion-matching": ["Disappointed", "Worried", "Relieved", "Hurt", "Tired", "Curious", "More than one", "Not sure"],
   "emotion-matching": ["Disappointed", "Worried", "Relieved", "Hurt", "Tired", "Could be more than one"],
   "cognitive-bias-games": ["First number sticks", "I notice evidence that agrees", "I keep going because I already invested", "I need more information"],
-  "alternative-explanations": ["They may be busy", "The message may have been missed", "They may need time", "There may be another context", "I do not know yet"],
   "personal-weather": ["☀️ Clear", "🌤️ Mixed", "🌧️ Rain", "🌫️ Fog", "🌬️ Wind", "⛈️ Storm"],
   "gratitude-lens": ["Someone made an effort", "A small comfort", "A skill I used", "A bit of beauty", "Help I received", "Something I protected"],
   "masking-map": ["At work or school", "With friends", "With family", "In public", "Online", "When I feel safe"],
@@ -1453,7 +1451,6 @@ export function renderInteractiveTool(root, id) {
   else if (tool.mode === "values") renderValues(root);
   else if (tool.mode === "budget") renderBudget(root);
   else if (tool.mode === "balance") renderBalance(root, tool);
-  else if (tool.mode === "alternatives") renderAlternativeLab(root, tool);
   else if (tool.mode === "scripts") renderSocialScriptBuilder(root);
   else if (tool.mode === "quadrant") renderUrgentImportantMatrix(root);
   else if (tool.mode === "regulation") renderRegulation(root);
