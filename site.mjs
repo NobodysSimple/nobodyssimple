@@ -231,7 +231,7 @@ function library() {
   const doorMarkup = doors.map(([id, title, kicker, description, icon, className]) => `<button type="button" class="learn-door-card ${className}" data-learn-view="${id}"><span class="learn-door-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${kicker}</span><h2>${title}</h2><p>${description}</p><strong>Open ${title} →</strong></button>`).join("");
   let content = "";
   if (view === "home") {
-    content = `<section class="learn-door-grid" aria-label="Learn sections">${doorMarkup}</section><section class="learn-empty-note"><p class="eyebrow">A new starting point</p><h2>The shelves are being rebuilt with intention.</h2><p>The module structure remains, but the old planned lesson list has been cleared so new courses can be added from scratch.</p></section>`;
+    content = `<section class="learn-door-grid" aria-label="Learn sections">${doorMarkup}</section>`;
   } else if (view === "crash") {
     const items = searchItems(crashCourses);
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-crash"><div><p class="eyebrow">Mini courses · five minutes max</p><h2>Crash Courses</h2><p>One compact idea at a time. Choose a topic, read the short piece and stop with one thing you can carry forward.</p></div><span class="learn-section-icon">↯</span></div><label class="learn-search">Search crash courses<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Try anxiety, boundaries, attention…"></label>${resourceGrid(items, "No crash courses have been published yet. Add them from Staff login as educational writing.")}</section>`;
