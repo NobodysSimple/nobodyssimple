@@ -6767,7 +6767,7 @@ body.app-body .library-shelf-list {
 body.app-body .library-tool-item {
   display: flex;
   align-items: stretch;
-  gap: 7px;
+  gap: 10px;
   min-width: 0;
   border: 1px solid #e1e7de;
   border-radius: 11px;
@@ -6787,38 +6787,67 @@ body.app-body .library-tool-link {
   flex: 1;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  padding: 12px 13px;
+  gap: 13px;
+  padding: 16px 17px;
   color: inherit;
+  text-decoration: none;
+}
+
+body.app-body .library-tool-link:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 3px solid #b9cdbb;
+  outline-offset: -3px;
+}
+
+body.app-body .library-tool-icon {
+  display: grid;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  place-items: center;
+  border: 1px solid #cbd8ca;
+  border-radius: 12px;
+  background: #f3f7ef;
+  color: #52705d;
+  font: 400 20px Georgia, serif;
 }
 
 body.app-body .library-tool-copy {
   display: grid;
   min-width: 0;
-  gap: 4px;
+  flex: 1;
+  gap: 6px;
+  text-decoration: none;
 }
 
 body.app-body .library-tool-title {
   color: #315746;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
 }
 
 body.app-body .library-tool-description {
+  display: -webkit-box;
   overflow: hidden;
   color: #6b796e;
-  font-size: 11px;
+  font-size: 12.5px;
   line-height: 1.4;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  text-decoration: none;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 body.app-body .library-tool-meta {
   color: #879389;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: .04em;
+  line-height: 1.35;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 body.app-body .library-tool-arrow {
@@ -6847,7 +6876,7 @@ body.app-body .library-favourite.active {
 }
 
 body.app-body .library-tool-item.compact .library-tool-link {
-  padding: 10px 12px;
+  padding: 13px 14px;
 }
 
 body.app-body .library-tool-item.compact .library-tool-description {

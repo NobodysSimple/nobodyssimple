@@ -212,23 +212,6 @@ export const tools = [
     tags: ["thinking", "spiralling", "uncertain", "patterns", "journal", "experiments"],
   },
   {
-    id: "alternative-models",
-    title: "Alternative explanations",
-    group: "think",
-    short:
-      "Compare possible explanations. None gets treated as fact without evidence.",
-    fields: [
-      field("event", "What are you trying to explain?"),
-      field("models", "What are two or three different explanations?"),
-      field(
-        "fits",
-        "For each: fits / possible / does not fit / need more information.",
-      ),
-      field("next", "What observation would help distinguish them?"),
-    ],
-    tags: ["spiralling", "thinking", "uncertain"],
-  },
-  {
     id: "certainty",
     title: "Certainty slider",
     group: "think",

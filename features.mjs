@@ -412,6 +412,10 @@ function renderToolLibrary(root) {
 
   const find = (id) => allItems.find((item) => item.id === id);
   const collection = (id) => libraryCollections.find((item) => item.id === id);
+  const libraryIcon = (item) => {
+    if (item.format === "Interactive") return "✦";
+    return ({ feel: "◌", calm: "≈", think: "⌁", choose: "→", relate: "∞", identity: "✳", learn: "◇" })[item.collection] || "•";
+  };
   const matches = (item) => {
     const queryMatch = !state.query || item.searchText.includes(state.query.toLowerCase());
     const collectionMatch = state.collection === "all" || item.collection === state.collection;
@@ -421,7 +425,7 @@ function renderToolLibrary(root) {
   };
   const visibleItems = () => allItems.filter(matches);
   const favouriteButton = (item) => `<button type="button" class="library-favourite ${favourites.includes(item.id) ? "active" : ""}" data-library-favourite="${esc(item.id)}" aria-label="${favourites.includes(item.id) ? "Remove" : "Save"} ${esc(item.title)} ${favourites.includes(item.id) ? "from" : "to"} favourites">${favourites.includes(item.id) ? "♥" : "♡"}</button>`;
-  const itemMarkup = (item, compact = false) => `<article class="library-tool-item ${compact ? "compact" : ""}"><a class="library-tool-link" href="${esc(item.href)}" data-library-open="${esc(item.id)}"><span class="library-tool-copy"><span class="library-tool-title">${esc(item.title)}</span><span class="library-tool-description">${esc(item.short)}</span><span class="library-tool-meta">${esc(collection(item.collection)?.label || "Tool")} · ${esc(item.time)} · ${esc(item.format)}</span></span><span class="library-tool-arrow" aria-hidden="true">↗</span></a>${favouriteButton(item)}</article>`;
+  const itemMarkup = (item, compact = false) => `<article class="library-tool-item ${compact ? "compact" : ""}"><a class="library-tool-link" href="${esc(item.href)}" data-library-open="${esc(item.id)}"><span class="library-tool-icon" aria-hidden="true">${libraryIcon(item)}</span><span class="library-tool-copy"><span class="library-tool-title">${esc(item.title)}</span><span class="library-tool-description">${esc(item.short)}</span><span class="library-tool-meta">${esc(item.time)} · ${esc(item.format)}</span></span><span class="library-tool-arrow" aria-hidden="true">↗</span></a>${favouriteButton(item)}</article>`;
   const previewMarkup = (items) => items.slice(0, 4).map((item) => itemMarkup(item, true)).join("");
   const sectionMarkup = (group) => {
     const items = visibleItems().filter((item) => item.collection === group.id).sort((a, b) => a.title.localeCompare(b.title));
