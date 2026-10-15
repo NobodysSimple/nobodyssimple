@@ -29,6 +29,7 @@ import {
 import { renderSimplyFocus } from "./simplyfocus.mjs";
 import { renderPersonalityTest } from "./personality-test.mjs";
 import { renderBigFive, renderQuestionnaires } from "./questionnaires.mjs";
+import { renderSystemsQuestionnaire } from "./systems-questionnaire.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderSupport } from "./referrals.mjs";
 const main = document.querySelector("main");
@@ -674,7 +675,7 @@ function route() {
     const linkName = (a.hash || "").slice(1).split("/")[0];
     const active =
       currentName === linkName ||
-      (["personality", "big-five"].includes(currentName) && linkName === "questionnaires") ||
+      (["personality", "big-five", "systems"].includes(currentName) && linkName === "questionnaires") ||
       (startRoutes.has(currentName) && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
       (["tool", "play", "guided"].includes(currentName) && linkName === "tools") ||
@@ -703,6 +704,7 @@ function route() {
       "stim-space": renderStimSpace,
       questionnaires: () => renderQuestionnaires(main),
       "big-five": () => renderBigFive(main),
+      systems: () => renderSystemsQuestionnaire(main),
       personality: () => renderPersonalityTest(main),
       compass: () =>
         renderCompass(main, emotions, (e) => (selectedEmotion = e)),
@@ -735,6 +737,8 @@ function route() {
       ? "Questionnaires"
       : name === "big-five"
       ? "Big Five questionnaire"
+      : name === "systems"
+      ? "Systems questionnaire"
       : name === "personality"
       ? "Nobody’s Simple Personality Test"
       : name === "simplyfocus"
@@ -764,6 +768,7 @@ function route() {
     "stim-space": "Stim Space",
     questionnaires: "Questionnaires",
     "big-five": "Questionnaires",
+    systems: "Questionnaires",
     personality: "Questionnaires",
     community: "Feedback",
     volunteer: "Get involved",
@@ -782,7 +787,7 @@ function route() {
     ? "Today"
     : ["help", "navigate", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
-    : ["tools", "tool", "play", "guided", "simplyfocus", "questionnaires", "big-five", "personality"].includes(currentName)
+    : ["tools", "tool", "play", "guided", "simplyfocus", "questionnaires", "big-five", "systems", "personality"].includes(currentName)
         ? "Explore"
         : currentName === "support"
           ? "Real-world support"

@@ -160,10 +160,18 @@ export function renderQuestionnaires(root) {
         <p class="questionnaire-caution"><b>Important:</b> This browser version is an educational self-reflection. It is not clinical, diagnostic or a proven psychometric test, and the scores are not population percentiles.</p>
         <a class="button secondary" href="#big-five">Start the Big Five questionnaire ↗</a>
       </article>
+      <article class="questionnaire-card questionnaire-card-systems">
+        <div class="questionnaire-card-top"><span class="questionnaire-number">03</span><span class="questionnaire-meta">30 statements · 10–15 min</span></div>
+        <p class="eyebrow">Nobody’s Simple systems map</p>
+        <h2>How big are your systems?</h2>
+        <p>Adjust your first visual estimate, then answer ten questions about Drive, Soothing and Threat. Compare the two maps and explore what to try when the systems are balanced, uneven or pulling against each other.</p>
+        <p class="questionnaire-caution"><b>Important:</b> This is a reflective model of current prominence, not an objective measure of your worth, a diagnosis or a validated psychometric test.</p>
+        <a class="button secondary" href="#systems">Map my systems ↗</a>
+      </article>
     </section>
     <section class="questionnaire-chooser">
       <div><p class="eyebrow">Which route fits?</p><h2>Choose the amount of detail you want.</h2></div>
-      <div class="questionnaire-chooser-grid"><p><b>Want a broad snapshot?</b><br>Try the Big Five for five readable dimensions and a simple graph.</p><p><b>Want a richer map?</b><br>Try the Nobody’s Simple test for more situation-linked interpretation and practical experiments.</p></div>
+      <div class="questionnaire-chooser-grid"><p><b>Want a broad snapshot?</b><br>Try the Big Five for five readable dimensions and a simple graph.</p><p><b>Want a richer map?</b><br>Try the Nobody’s Simple test for more situation-linked interpretation and practical experiments.</p><p><b>Want to understand the current balance?</b><br>Map Drive, Soothing and Threat, then compare your first impression with your answers.</p></div>
     </section>
     <p class="pf-back"><a href="#home">← Back to the main screen</a></p>
   </div>`;
