@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v78-learn-shelves";
+const CACHE = "nobodyssimple-v79-crash-course-topics";
 const SHELL = [
   "./",
   "index.html",

@@ -1,4 +1,5 @@
 import { curriculum, emotions, questions } from "./data.mjs";
+import { crashCourseTopics, crashEmergencyTopics } from "./crash-topics.mjs";
 import {
   escapeHTML as esc,
   safeHref,
@@ -204,7 +205,6 @@ function legacyLibrary() {
 function library() {
   const s = libraryState;
   const view = ["crash", "courses", "quotes", "videos", "blog"].includes(s.view) ? s.view : "home";
-  const crashCourses = posts.filter((post) => post.type === "education");
   const videos = posts.filter((post) => post.type === "video");
   const blogs = posts.filter((post) => post.type === "blog");
   const searchItems = (items) => {
@@ -233,8 +233,12 @@ function library() {
   if (view === "home") {
     content = `<section class="learn-door-grid" aria-label="Learn sections">${doorMarkup}</section>`;
   } else if (view === "crash") {
-    const items = searchItems(crashCourses);
-    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-crash"><div><p class="eyebrow">Mini courses · five minutes max</p><h2>Crash Courses</h2><p>One compact idea at a time. Choose a topic, read the short piece and stop with one thing you can carry forward.</p></div><span class="learn-section-icon">↯</span></div><label class="learn-search">Search crash courses<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Try anxiety, boundaries, attention…"></label>${resourceGrid(items, "No crash courses have been published yet. Add them from Staff login as educational writing.")}</section>`;
+    const query = String(s.query || "").trim().toLowerCase();
+    const domains = crashCourseTopics.map((domain) => ({ ...domain, topics: domain.topics.filter((topic) => !query || `${domain.title} ${topic}`.toLowerCase().includes(query)) })).filter((domain) => domain.topics.length || !query);
+    const emergency = crashEmergencyTopics.filter((topic) => !query || topic.toLowerCase().includes(query));
+    const emergencyMarkup = emergency.length ? `<section class="learn-crash-start"><div><p class="eyebrow">Start here when you need a quick route</p><h3>Life emergency mini-courses</h3><p>These are topic placeholders for the most common immediate questions. Lessons will be added later.</p></div><div class="learn-topic-chip-grid">${emergency.map((topic) => `<span class="learn-topic-chip">${esc(topic)}</span>`).join("")}</div></section>` : "";
+    const domainMarkup = domains.map((domain) => `<article class="learn-crash-domain"><div class="learn-crash-domain-head"><span class="learn-crash-number">${String(crashCourseTopics.findIndex((item) => item.id === domain.id) + 1).padStart(2, "0")}</span><div><p class="eyebrow">${domain.topics.length} topic${domain.topics.length === 1 ? "" : "s"}</p><h3>${esc(domain.title)}</h3></div></div><div class="learn-topic-chip-grid">${domain.topics.map((topic) => `<span class="learn-topic-chip">${esc(topic)}</span>`).join("")}</div></article>`).join("");
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-crash"><div><p class="eyebrow">Topic catalogue · lessons coming later</p><h2>Crash Courses</h2><p>Short, practical explanations organised around real problems people encounter. This is the topic map for future 2–5 minute lessons; there is no lesson content here yet.</p></div><span class="learn-section-icon">↯</span></div><label class="learn-search">Search topics<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Try anxiety, boundaries, attention…"></label>${emergencyMarkup}<div class="learn-crash-domain-grid">${domainMarkup || `<p class="empty">No topics match that search yet.</p>`}</div></section>`;
   } else if (view === "courses") {
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-courses"><div><p class="eyebrow">Four quarters · twelve modules</p><h2>Nobody’s Simple Courses</h2><p>The course framework is ready for a new curriculum. The previous planned lessons have been removed; each module is now an open place for lessons you choose to build.</p></div><span class="learn-section-icon">▤</span></div><div class="learn-quarter-strip">${visibleCurriculum.quarters.map((quarter) => `<div><span>${quarter.id}</span><strong>${esc(quarter.name)}</strong><small>${esc(quarter.subtitle)}</small></div>`).join("")}</div><div class="learn-module-grid">${moduleCards}</div></section>`;
   } else if (view === "quotes") {
