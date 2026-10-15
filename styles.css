@@ -4482,6 +4482,9 @@ body.app-body .systems-results-banner p:not(.eyebrow) { max-width: 690px; margin
 body.app-body .systems-result-stamp { display: grid; width: 130px; height: 130px; flex: 0 0 130px; place-items: center; align-content: center; transform: rotate(5deg); border: 2px solid #a982aa; border-radius: 50%; color: #795c7d; }
 body.app-body .systems-result-stamp span { font: 700 22px Georgia, serif; letter-spacing: .08em; }
 body.app-body .systems-result-stamp b { font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+body.app-body .systems-response-check { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr); gap: 20px; align-items: center; margin-top: 14px; padding: 18px 22px; border: 1px solid #d6e0d3; border-radius: 17px; background: #f1f6ee; }
+body.app-body .systems-response-check h2 { margin: 5px 0 0; color: #315746; font: 400 22px Georgia, serif; }
+body.app-body .systems-response-check p { margin: 0; color: #617166; font-size: 12px; line-height: 1.65; }
 body.app-body .systems-results-map,
 body.app-body .systems-comparison,
 body.app-body .systems-conflicts,
@@ -4543,6 +4546,7 @@ body.app-body .systems-result-note p:last-child { margin-bottom: 0; }
   body.app-body .systems-recommendation-grid { grid-template-columns: 1fr; }
   body.app-body .systems-how ol { grid-template-columns: 1fr; }
   body.app-body .systems-results-heading { align-items: start; flex-direction: column; }
+  body.app-body .systems-response-check { grid-template-columns: 1fr; gap: 8px; }
   body.app-body .systems-bank-section { grid-template-columns: 1fr; }
 }
 @media (max-width: 620px) {

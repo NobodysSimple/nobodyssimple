@@ -28,8 +28,7 @@ import {
 } from "./interactive-tools.mjs";
 import { renderSimplyFocus } from "./simplyfocus.mjs";
 import { renderPersonalityTest } from "./personality-test.mjs";
-import { renderBigFive, renderQuestionnaires } from "./questionnaires.mjs";
-import { renderSystemsQuestionnaire } from "./systems-questionnaire.mjs";
+import { renderBigFive, renderQuestionnaires, renderSystemsQuestionnaire } from "./questionnaires.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderSupport } from "./referrals.mjs";
 const main = document.querySelector("main");
@@ -666,6 +665,14 @@ function install() {
 function renderStimSpace() {
   main.innerHTML = `<div class="wrap stim-space-page"><a class="back-link" href="#tools">← Back to the toolbox</a><section class="page-intro"><p class="eyebrow">Sensory & focus</p><h1>Stim Space</h1><p class="lead">A playful digital space for movement, touch, sound and visual stimulation. Pause, switch or leave whenever you like.</p></section><iframe class="stim-space-frame" title="Stim Space sensory playground" src="nd-play.html?embedded=1" loading="eager"></iframe><p class="fine stim-space-note">Stim Space is part of Nobody’s Simple. Your saved sensory recipes stay in this browser.</p></div>`;
 }
+function renderSystemsPage() {
+  try {
+    renderSystemsQuestionnaire(main);
+  } catch (error) {
+    console.error("Systems questionnaire could not be opened", error);
+    main.innerHTML = `<div class="wrap about-copy questionnaire-load-error"><p class="eyebrow">Questionnaires</p><h1>This questionnaire could not open.</h1><p>Refresh once and try again. Your existing questionnaires and the rest of Nobody’s Simple are still available.</p><div class="row"><a class="button" href="#questionnaires">Back to questionnaires</a><a href="#home">Back to the main screen</a></div></div>`;
+  }
+}
 function route() {
   const [name, id] = location.hash.slice(1).split("/");
   const currentName = name || "home";
@@ -704,7 +711,7 @@ function route() {
       "stim-space": renderStimSpace,
       questionnaires: () => renderQuestionnaires(main),
       "big-five": () => renderBigFive(main),
-      systems: () => renderSystemsQuestionnaire(main),
+      systems: renderSystemsPage,
       personality: () => renderPersonalityTest(main),
       compass: () =>
         renderCompass(main, emotions, (e) => (selectedEmotion = e)),
