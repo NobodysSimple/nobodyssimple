@@ -22,7 +22,6 @@ import {
   moodComparisonMarkup,
 } from "./features.mjs";
 import {
-  appendInteractiveToolbox,
   renderInteractiveTool,
   renderTeam,
 } from "./interactive-tools.mjs";
@@ -701,7 +700,6 @@ function route() {
       writing: blog,
       tools: () => {
         renderToolbox(main);
-        appendInteractiveToolbox(main);
       },
       tool: () => {
         const toolId = decodeURIComponent(id || "");

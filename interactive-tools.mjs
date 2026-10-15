@@ -118,7 +118,7 @@ const groupNames = [
   ["reflect", "Positive attention"],
 ];
 const groupFor = (key) => groupNames.find((group) => group[0] === key)?.[1] || "Interactive";
-const hrefFor = (tool) => {
+export const interactiveHrefFor = (tool) => {
   if (tool.id === "emotion-compass") return "#compass";
   if (tool.id === "sensory-playground") return "#stim-space";
   if (tool.id === "nobody-radio") return "#simplyfocus";
@@ -127,7 +127,7 @@ const hrefFor = (tool) => {
 };
 export const interactiveCardMarkup = (tool, index = 0) =>
   '<a class="interactive-tool-card" href="' +
-  escape(hrefFor(tool)) +
+  escape(interactiveHrefFor(tool)) +
   '"><span class="interactive-tool-kind">' + (tool.group === "navigate" ? "Guided tool · choose a route" : "Interactive · choose your way") + '</span><span class="interactive-tool-number">' +
   String(index + 1).padStart(2, "0") +
   '</span><h3>' +
@@ -1411,7 +1411,7 @@ export function renderInteractiveTool(root, id) {
     location.hash = "#tool/emotion-timeline";
     return;
   }
-  const link = hrefFor(tool);
+  const link = interactiveHrefFor(tool);
   if (tool.mode === "link") {
     location.hash = link.slice(1);
     return;

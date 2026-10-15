@@ -1,7 +1,7 @@
 import { escapeHTML as esc, nearestEmotions, safeHref, safeImage } from "./core.mjs";
 import { profileFor, stateItems } from "./emotion-profiles.mjs";
 import { tools, toolGroups, situations, situationSubparts } from "./tool-catalog.mjs";
-import { interactiveCardMarkup, recommendInteractiveTools } from "./interactive-tools.mjs";
+import { interactiveCardMarkup, interactiveHrefFor, interactiveTools, recommendInteractiveTools } from "./interactive-tools.mjs";
 import { renderSensoryRecipe } from "./sensory-recipe.mjs";
 import { renderSocialBattery } from "./social-battery.mjs";
 import { renderLoadBalancer } from "./load-balancer.mjs";
@@ -344,17 +344,146 @@ function renderToolboxLegacy(root, filter = "") {
   );
 }
 
-export function renderToolbox(root, filter = "") {
-  renderToolboxLegacy(root, filter);
-  const intro = root.querySelector(".page-intro");
-  if (intro) {
-    const eyebrow = intro.querySelector(".eyebrow");
-    const title = intro.querySelector("h1");
-    const lead = intro.querySelector(".lead");
-    if (eyebrow) eyebrow.textContent = "Tools";
-    if (title) title.textContent = "Find a tool for this moment.";
-    if (lead) lead.textContent = "Search by feeling, problem or goal. Try one tool and keep only what helps.";
+const libraryCollections = [
+  { id: "feel", label: "Feel & notice", description: "Understand emotions, body signals and inner experience.", keys: ["feel"] },
+  { id: "calm", label: "Calm & sensory", description: "Work with sensory load, grounding, energy and regulation.", keys: ["calm", "sensory", "energy"] },
+  { id: "think", label: "Think & organise", description: "Untangle thoughts, uncertainty, mental clutter and interpretations.", keys: ["think", "journal", "patterns"] },
+  { id: "choose", label: "Choose & act", description: "Compare options, reduce friction and move towards a next step.", keys: ["decide", "choose", "action"] },
+  { id: "relate", label: "Relate & repair", description: "Prepare conversations, understand interactions and protect boundaries.", keys: ["relate"] },
+  { id: "identity", label: "Self-understanding", description: "Explore values, identity, motives and changing needs.", keys: ["identity"] },
+  { id: "learn", label: "Learn & reflect", description: "Practise noticing patterns, perspective and useful psychological ideas.", keys: ["learn", "reflect"] },
+];
+
+const libraryTime = (item) => {
+  if (item.source === "interactive") {
+    if (["range", "wave", "scene", "savour", "memory", "match", "probability", "bias", "intensity", "meter"].includes(item.mode)) return "Quick";
+    if (["alternatives", "scripts", "quadrant", "radar", "masking", "balance"].includes(item.mode)) return "Deep dive";
+    return "2–5 min";
   }
+  return (item.fields || []).length > 4 ? "5–10 min" : (item.fields || []).length <= 2 ? "Quick" : "2–5 min";
+};
+
+const libraryCollectionFor = (item) => {
+  const group = item.group === "journal" ? "think" : item.group === "patterns" ? "think" : item.group === "reflect" ? "learn" : item.group === "sensory" || item.group === "energy" ? "calm" : item.group === "choose" || item.group === "action" ? "choose" : item.group;
+  return libraryCollections.find((collection) => collection.keys.includes(group))?.id || "think";
+};
+
+const libraryItems = () => [
+  ...tools.filter((item) => item.id !== "maps").map((item) => ({
+    ...item,
+    source: "writing",
+    format: "Reflection",
+    href: item.href || `#tool/${encodeURIComponent(item.id)}`,
+    collection: libraryCollectionFor(item),
+    time: libraryTime(item),
+    searchText: `${item.title} ${item.short} ${(item.tags || []).join(" ")}`.toLowerCase(),
+  })),
+  ...interactiveTools.map((item) => ({
+    ...item,
+    source: "interactive",
+    format: "Interactive",
+    href: interactiveHrefFor(item),
+    collection: libraryCollectionFor(item),
+    time: libraryTime(item),
+    searchText: `${item.title} ${item.short} ${(item.situations || []).join(" ")} ${(item.goals || []).join(" ")}`.toLowerCase(),
+  })),
+];
+
+const readLibraryList = (key) => {
+  try {
+    const value = JSON.parse(localStorage.getItem(key) || "[]");
+    return Array.isArray(value) ? value.filter((item) => typeof item === "string") : [];
+  } catch {
+    return [];
+  }
+};
+
+const writeLibraryList = (key, values) => {
+  try { localStorage.setItem(key, JSON.stringify(values.slice(0, 24))); } catch { /* local-only preference */ }
+};
+
+function renderToolLibrary(root) {
+  const allItems = libraryItems();
+  const favouriteKey = "ns-tool-favourites-v1";
+  const recentKey = "ns-tool-recent-v1";
+  const state = { query: "", collection: "all", time: "all", format: "all", view: "collections", expanded: "" };
+  let favourites = readLibraryList(favouriteKey);
+  let recent = readLibraryList(recentKey);
+
+  const find = (id) => allItems.find((item) => item.id === id);
+  const collection = (id) => libraryCollections.find((item) => item.id === id);
+  const matches = (item) => {
+    const queryMatch = !state.query || item.searchText.includes(state.query.toLowerCase());
+    const collectionMatch = state.collection === "all" || item.collection === state.collection;
+    const timeMatch = state.time === "all" || item.time === state.time;
+    const formatMatch = state.format === "all" || item.format === state.format;
+    return queryMatch && collectionMatch && timeMatch && formatMatch;
+  };
+  const visibleItems = () => allItems.filter(matches);
+  const favouriteButton = (item) => `<button type="button" class="library-favourite ${favourites.includes(item.id) ? "active" : ""}" data-library-favourite="${esc(item.id)}" aria-label="${favourites.includes(item.id) ? "Remove" : "Save"} ${esc(item.title)} ${favourites.includes(item.id) ? "from" : "to"} favourites">${favourites.includes(item.id) ? "♥" : "♡"}</button>`;
+  const itemMarkup = (item, compact = false) => `<article class="library-tool-item ${compact ? "compact" : ""}"><a class="library-tool-link" href="${esc(item.href)}" data-library-open="${esc(item.id)}"><span class="library-tool-copy"><span class="library-tool-title">${esc(item.title)}</span><span class="library-tool-description">${esc(item.short)}</span><span class="library-tool-meta">${esc(collection(item.collection)?.label || "Tool")} · ${esc(item.time)} · ${esc(item.format)}</span></span><span class="library-tool-arrow" aria-hidden="true">↗</span></a>${favouriteButton(item)}</article>`;
+  const previewMarkup = (items) => items.slice(0, 4).map((item) => itemMarkup(item, true)).join("");
+  const sectionMarkup = (group) => {
+    const items = visibleItems().filter((item) => item.collection === group.id).sort((a, b) => a.title.localeCompare(b.title));
+    if (!items.length) return "";
+    const expanded = state.expanded === group.id;
+    const shown = expanded ? items : items.slice(0, 4);
+    const remaining = items.length - shown.length;
+    return `<section class="library-collection" id="library-${esc(group.id)}"><div class="library-collection-head"><div><p class="eyebrow">Collection</p><h2>${esc(group.label)}</h2><p>${esc(group.description)}</p></div><strong>${items.length} tools</strong></div><div class="library-tool-list">${shown.map((item) => itemMarkup(item)).join("")}</div>${remaining > 0 ? `<button type="button" class="library-expand" data-library-expand="${esc(group.id)}">View all ${items.length} ${expanded ? "↑" : "↓"}</button>` : expanded ? `<button type="button" class="library-expand" data-library-expand="${esc(group.id)}">Show fewer ↑</button>` : ""}</section>`;
+  };
+  const directoryMarkup = (items) => {
+    const sorted = [...items].sort((a, b) => a.title.localeCompare(b.title));
+    let previous = "";
+    return sorted.map((item) => { const letter = item.title.trim().charAt(0).toUpperCase(); const heading = letter !== previous ? `<div class="library-directory-letter">${esc(letter)}</div>` : ""; previous = letter; return heading + itemMarkup(item, true); }).join("");
+  };
+  const utilityMarkup = (items) => {
+    const saved = favourites.map(find).filter(Boolean);
+    const used = recent.map(find).filter(Boolean);
+    return `${saved.length ? `<section class="library-shelf"><div class="library-shelf-head"><div><p class="eyebrow">Your shelf</p><h2>Saved tools</h2></div><span>${saved.length}</span></div><div class="library-shelf-list">${saved.slice(0, 5).map((item) => itemMarkup(item, true)).join("")}</div></section>` : ""}${used.length ? `<section class="library-recent"><span class="eyebrow">Recently used</span><div>${used.slice(0, 6).map((item) => `<a href="${esc(item.href)}" data-library-open="${esc(item.id)}">${esc(item.title)}</a>`).join("")}</div></section>` : ""}`;
+  };
+  const render = () => {
+    const items = visibleItems();
+    const searching = Boolean(state.query.trim());
+    const collectionIndex = libraryCollections.filter((group) => visibleItems().some((item) => item.collection === group.id)).map((group) => `<a href="#library-${esc(group.id)}">${esc(group.label)} <small>${visibleItems().filter((item) => item.collection === group.id).length}</small></a>`).join("");
+    const body = searching ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Search results</p><h2>${items.length} tool${items.length === 1 ? "" : "s"} matching “${esc(state.query)}”</h2></div><button type="button" class="chip" data-library-clear>Clear search</button></div><div class="library-directory">${directoryMarkup(items) || `<p class="library-empty">No tools matched. Try a broader word such as “feel”, “focus” or “decision”.</p>`}</div></section>` : state.view === "directory" ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Compact directory</p><h2>${items.length} tools, A–Z</h2></div></div><div class="library-directory">${directoryMarkup(items)}</div></section>` : `<nav class="library-index" aria-label="Tool collections">${collectionIndex}</nav><div class="library-collections">${libraryCollections.map(sectionMarkup).join("")}</div>`;
+    root.innerHTML = `<div class="wrap tools-library-page"><section class="tools-library-hero"><div><p class="eyebrow">Browse at your own pace</p><h1>Tools Library</h1><p class="lead">${allItems.length} tools across ${libraryCollections.length} collections. Search, filter or open a collection without needing to explain yourself first.</p><a class="tools-library-choose" href="#home">Not sure what you need? Use Help Me Choose →</a></div><div class="tools-library-mark" aria-hidden="true"><span>✳</span><i>+</i><span>◌</span></div></section><section class="library-controls"><label class="library-search"><span class="sr-only">Search tools</span><span aria-hidden="true">⌕</span><input id="library-search-input" type="search" value="${esc(state.query)}" placeholder="Search tools… e.g. overthinking, sensory, decision"></label><div class="library-filter-row"><div class="library-filter-group"><span>Theme</span><div>${[["all", "All"], ...libraryCollections.map((item) => [item.id, item.label])].map(([value, label]) => `<button type="button" class="chip ${state.collection === value ? "active" : ""}" data-library-collection="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group"><span>Time</span><div>${[["all", "Any"], ["Quick", "Under 2 min"], ["2–5 min", "2–5 min"], ["5–10 min", "Deep dive"], ["Deep dive", "Deep dive"]].filter((entry, index, all) => index === all.findIndex((candidate) => candidate[0] === entry[0])).map(([value, label]) => `<button type="button" class="chip ${state.time === value ? "active" : ""}" data-library-time="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group"><span>Format</span><div>${[["all", "All"], ["Reflection", "Reflection"], ["Interactive", "Interactive"]].map(([value, label]) => `<button type="button" class="chip ${state.format === value ? "active" : ""}" data-library-format="${esc(value)}">${esc(label)}</button>`).join("")}</div></div></div><div class="library-view-row"><span>View</span><button type="button" class="chip ${state.view === "collections" ? "active" : ""}" data-library-view="collections">Collections</button><button type="button" class="chip ${state.view === "directory" ? "active" : ""}" data-library-view="directory">Compact A–Z</button><span class="library-view-note">Save a tool with ♡</span></div></section>${utilityMarkup(items)}<main id="library-content">${body}</main><section class="library-footer-card"><div><p class="eyebrow">Keep what helps</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Your notes stay on this device.</p></div><a class="button" href="#maps">Open My Maps →</a></section></div>`;
+    root.querySelector("#library-search-input")?.addEventListener("input", (event) => { state.query = event.target.value; render(); requestAnimationFrame(() => { const input = root.querySelector("#library-search-input"); if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); } }); });
+  };
+  root.onclick = (event) => {
+    const favourite = event.target.closest("[data-library-favourite]");
+    if (favourite) {
+      event.preventDefault();
+      const id = favourite.dataset.libraryFavourite;
+      favourites = favourites.includes(id) ? favourites.filter((item) => item !== id) : [id, ...favourites];
+      writeLibraryList(favouriteKey, favourites);
+      render();
+      return;
+    }
+    const open = event.target.closest("[data-library-open]");
+    if (open) {
+      const id = open.dataset.libraryOpen;
+      recent = [id, ...recent.filter((item) => item !== id)].slice(0, 8);
+      writeLibraryList(recentKey, recent);
+      return;
+    }
+    const expand = event.target.closest("[data-library-expand]");
+    if (expand) { state.expanded = state.expanded === expand.dataset.libraryExpand ? "" : expand.dataset.libraryExpand; render(); return; }
+    const clear = event.target.closest("[data-library-clear]");
+    if (clear) { state.query = ""; render(); return; }
+    const collectionButton = event.target.closest("[data-library-collection]");
+    if (collectionButton) { state.collection = collectionButton.dataset.libraryCollection; state.view = "collections"; state.expanded = state.collection === "all" ? "" : state.collection; render(); return; }
+    const timeButton = event.target.closest("[data-library-time]");
+    if (timeButton) { state.time = timeButton.dataset.libraryTime; render(); return; }
+    const formatButton = event.target.closest("[data-library-format]");
+    if (formatButton) { state.format = formatButton.dataset.libraryFormat; render(); return; }
+    const viewButton = event.target.closest("[data-library-view]");
+    if (viewButton) { state.view = viewButton.dataset.libraryView; state.expanded = ""; render(); }
+  };
+  render();
+}
+
+export function renderToolbox(root, filter = "") {
+  renderToolLibrary(root);
 }
 
 const readField = (field, form) => {

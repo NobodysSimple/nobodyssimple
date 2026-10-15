@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v72-alternative-explanations-route-fix";
+const CACHE = "nobodyssimple-v73-tools-library";
 const SHELL = [
   "./",
   "index.html",
