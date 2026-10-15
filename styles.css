@@ -1824,6 +1824,37 @@ html {
   min-height: 105px;
   padding: 14px;
 }
+.brain-card-list {
+  display: grid;
+  gap: 12px;
+  max-width: 860px;
+  margin: 20px 0 25px;
+}
+.brain-card-editor {
+  padding: 17px;
+  border: 1px solid #d7dfd1;
+  border-radius: 12px;
+  background: #fbfcf7;
+}
+.brain-card-editor label {
+  display: block;
+  margin: 10px 0 6px;
+  color: #526156;
+  font-size: 13px;
+  font-weight: 650;
+}
+.brain-card-category {
+  margin-top: 15px !important;
+}
+.brain-bucket-select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cdd7c8;
+  border-radius: 8px;
+  background: #fffefa;
+  color: var(--brain-ink);
+  font-size: 14px;
+}
 .brain-capture-hint {
   margin: 9px 0 15px;
   color: #748078;
