@@ -414,6 +414,128 @@ function renderBrainMap(results) {
   return `<div class="brain-map"><p class="notice">A rough first sort based on the words in your notes. It can be wrong; every card below is editable and movable.</p>${brainBuckets.map((k) => `<label class="field"><b>${k}</b><textarea data-bucket="${esc(k)}">${esc(buckets[k].join("\n"))}</textarea></label>`).join("")}</div>`;
 }
 
+const brainDeskBuckets = [
+  ["NOW", "Needs a small useful move today."],
+  ["LATER", "Matters, but not in this moment."],
+  ["ASK / FIND OUT", "Needs information or another person."],
+  ["FEEL / PROCESS", "Needs noticing, not fixing."],
+  ["WAITING", "Not actionable until something changes."],
+  ["DROP", "Does not deserve more attention for now."],
+];
+const brainThoughtTypes = ["Task", "Question", "Decision", "Worry", "Feeling", "Idea", "Reminder", "Loop"];
+
+function brainSuggestedBucket(text) {
+  const line = text.toLowerCase();
+  if (/\b(waiting for|waiting on|await|pending|reply|response)\b/.test(line)) return "WAITING";
+  if (/\?|how do|why do|find out|look up|research|information/.test(line)) return "ASK / FIND OUT";
+  if (/\b(worry|worried|afraid|scared|what if|might|whether)\b/.test(line)) return "FEEL / PROCESS";
+  if (/\b(decide|decision|choose|choice|option)\b/.test(line)) return "LATER";
+  if (/\b(need to|have to|email|call|write|book|buy|send|finish|do )\b/.test(line)) return "NOW";
+  return "FEEL / PROCESS";
+}
+
+function renderBrainDump(root, tool) {
+  root.innerHTML = `<div class="wrap tool-page brain-dump-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Think & organise / Clear the desk</p><h1>${esc(tool.title)}</h1><p class="lead">Capture first. Structure second. Decide third. Not every thought needs solving.</p><p class="privacy-note">Your writing stays on this device. Nothing is sent to Nobody’s Simple, and you can stop after the capture stage.</p></section><div id="brain-dump-content"></div><div class="tool-next row"><a class="chip" href="#tool/load-balancer">Overloaded?</a><a class="chip" href="#tool/cbt-journal">Work with a worry</a><a class="chip" href="#maps">My Maps</a></div></div>`;
+  const content = root.querySelector("#brain-dump-content");
+  const state = { screen: "capture", mode: "sort", dump: "", cards: [], activeIndex: 0, before: "", after: "", clearer: "", voice: null };
+  const activeBuckets = () => state.mode === "quick" ? [["NOW", "Needs attention today."], ["LATER", "Can wait."], ["NOT ACTIONABLE", "Nothing needs doing right now."]] : state.mode === "night" ? [["REMEMBER TOMORROW", "Needs a reminder or tomorrow’s first step."], ["PARK", "Not for tonight."], ["DROP", "Does not need carrying to bed."]] : brainDeskBuckets;
+
+  const splitThoughts = (value) => {
+    const lines = String(value || "").split(/\n+/).map((item) => item.trim()).filter(Boolean);
+    if (lines.length > 1) return lines;
+    return String(value || "").split(/(?<=[.!?])\s+/).map((item) => item.trim()).filter(Boolean);
+  };
+  const makeCards = () => splitThoughts(state.dump).map((text, index) => ({ id: `${Date.now()}-${index}`, text, bucket: "", type: "", step: "", suggestion: brainSuggestedBucket(text) }));
+  const counts = () => activeBuckets().map(([name]) => [name, state.cards.filter((card) => card.bucket === name).length]);
+  const navProgress = (phase) => `<div class="brain-progress" aria-label="Brain dump progress"><span class="active">01 <b>Empty the desk</b></span><i aria-hidden="true">→</i><span class="${phase === "sort" || phase === "summary" ? "active" : ""}">02 <b>Spread it out</b></span><i aria-hidden="true">→</i><span class="${phase === "summary" ? "active" : ""}">03 <b>Clear the desk</b></span></div>`;
+  const headCheck = (where) => `<details class="brain-head-check"><summary>Optional: mark how full your head feels</summary><label class="brain-range-label" for="brain-${where}"><span>${where === "before" ? "Before" : "Now"}</span><output id="brain-${where}-value">${state[where] || 5} / 10</output></label><input id="brain-${where}" type="range" min="0" max="10" value="${state[where] || 5}" aria-label="How full your head feels, from empty to completely full"><div class="brain-range-ends"><span>More space</span><span>Completely full</span></div></details>`;
+  const modeCards = `<div class="brain-mode-grid"><button type="button" class="brain-mode ${state.mode === "sort" ? "selected" : ""}" data-brain-mode="sort"><strong>Sort my head</strong><span>Turn each line into a small, editable card.</span></button><button type="button" class="brain-mode ${state.mode === "quick" ? "selected" : ""}" data-brain-mode="quick"><strong>Quick clear</strong><span>Choose only now, later or not actionable.</span></button><button type="button" class="brain-mode ${state.mode === "night" ? "selected" : ""}" data-brain-mode="night"><strong>Get it out for tonight</strong><span>Capture what needs remembering and park the rest.</span></button></div>`;
+
+  function renderCapture() {
+    state.screen = "capture";
+    content.innerHTML = `${navProgress("capture")}<section class="brain-stage brain-capture"><p class="eyebrow">Phase 1 / Empty the desk</p><h2>Put everything here. No order needed.</h2><p class="brain-stage-lead">Do not organise it yet. Write in fragments, repeat yourself, change subject—anything that gets it out.</p>${modeCards}<div class="brain-capture-tools"><div class="brain-capture-tabs"><button type="button" class="chip active" data-brain-input="type">Type</button><button type="button" class="chip" data-brain-input="bullets">Rapid bullets</button><button type="button" class="chip" data-brain-input="speak" ${"SpeechRecognition" in window || "webkitSpeechRecognition" in window ? "" : "disabled"}>Speak</button></div><label class="brain-dump-label" for="brain-dump-text"><span class="sr-only">Brain dump</span><textarea id="brain-dump-text" rows="12" placeholder="Everything taking up space…">${esc(state.dump)}</textarea></label><p class="brain-capture-hint" id="brain-capture-hint">One thought per line works well. It does not have to make sense yet.</p><div class="brain-capture-actions"><button type="button" class="button" data-brain-start>Turn this into cards →</button><button type="button" class="button secondary" data-brain-finish>Leave it here</button></div><p class="fine" id="brain-voice-status" role="status"></p></div>${headCheck("before")}</section>`;
+    const textarea = content.querySelector("#brain-dump-text");
+    content.querySelectorAll("[data-brain-mode]").forEach((button) => button.addEventListener("click", () => { state.mode = button.dataset.brainMode; renderCapture(); }));
+    content.querySelectorAll("[data-brain-input]").forEach((button) => button.addEventListener("click", () => {
+      content.querySelectorAll("[data-brain-input]").forEach((item) => item.classList.toggle("active", item === button));
+      const hint = content.querySelector("#brain-capture-hint");
+      if (button.dataset.brainInput === "bullets") { textarea.placeholder = "One thought…\nAnother thought…\nA thing to remember…"; hint.textContent = "Press Enter after each thought. Each line will become its own card."; }
+      if (button.dataset.brainInput === "type") { textarea.placeholder = "Everything taking up space…"; hint.textContent = "One thought per line works well. It does not have to make sense yet."; }
+      if (button.dataset.brainInput === "speak") startVoice(textarea);
+    }));
+    textarea.addEventListener("input", (event) => { state.dump = event.target.value; });
+    content.querySelector("[data-brain-start]").addEventListener("click", () => { state.dump = textarea.value; state.cards = makeCards(); if (!state.cards.length) { content.querySelector("#brain-voice-status").textContent = "Add one thought first, or choose Leave it here."; return; } state.activeIndex = 0; state.screen = "sort"; renderSort(); });
+    content.querySelector("[data-brain-finish]").addEventListener("click", () => { state.dump = textarea.value; state.cards = makeCards(); state.cards.forEach((card) => { card.bucket = activeBuckets()[1][0]; }); renderQuietFinish(); });
+    const before = content.querySelector("#brain-before");
+    before?.addEventListener("input", (event) => { state.before = event.target.value; content.querySelector("#brain-before-value").textContent = `${event.target.value} / 10`; });
+  }
+
+  function startVoice(textarea) {
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!Recognition) return;
+    try {
+      state.voice?.stop?.();
+      const recognition = new Recognition();
+      state.voice = recognition;
+      recognition.continuous = true;
+      recognition.interimResults = false;
+      recognition.onresult = (event) => { const text = [...event.results].slice(-1).map((result) => result[0].transcript).join(" "); textarea.value = `${textarea.value}${textarea.value ? "\n" : ""}${text}`; state.dump = textarea.value; };
+      recognition.onerror = () => { content.querySelector("#brain-voice-status").textContent = "Voice capture stopped. You can keep typing instead."; };
+      recognition.onend = () => { content.querySelector("#brain-voice-status").textContent = "Voice capture stopped. Your words are still here."; };
+      recognition.start();
+      content.querySelector("#brain-voice-status").textContent = "Listening. Tap Speak again or stop speaking when you are done.";
+    } catch { content.querySelector("#brain-voice-status").textContent = "Voice capture is not available here. You can keep typing instead."; }
+  }
+
+  function renderSort() {
+    state.screen = "sort";
+    const card = state.cards[state.activeIndex];
+    const completed = state.cards.filter((item) => item.bucket).length;
+    const bucketButtons = activeBuckets().map(([name, description]) => `<button type="button" class="brain-destination ${card?.bucket === name ? "selected" : ""}" data-brain-bucket="${esc(name)}"><strong>${esc(name)}</strong><span>${esc(description)}</span></button>`).join("");
+    const suggestedBucket = card ? activeBuckets().some(([name]) => name === card.suggestion) ? card.suggestion : state.mode === "quick" ? "NOT ACTIONABLE" : state.mode === "night" ? "PARK" : card.suggestion : "";
+    const suggestion = card && suggestedBucket ? `<div class="brain-suggestion"><span>Possible match</span><strong>${esc(suggestedBucket)}</strong><button type="button" class="chip" data-brain-suggestion>Use this</button><small>This is only a word-based suggestion. You decide.</small></div>` : "";
+    content.innerHTML = `${navProgress("sort")}<section class="brain-stage brain-sort"><p class="eyebrow">Phase 2 / Spread it out</p><div class="brain-sort-heading"><div><h2>Your thoughts are out. What deserves attention?</h2><p class="brain-stage-lead">One card at a time. Nothing here has to become a task.</p></div><strong class="brain-count">${completed} / ${state.cards.length} sorted</strong></div><div class="brain-count-strip">${counts().map(([name, count]) => `<span>${esc(name)} <b>${count}</b></span>`).join("")}</div>${card ? `<article class="brain-thought-card"><div class="brain-card-topline"><span>Thought ${state.activeIndex + 1} of ${state.cards.length}</span><button type="button" class="chip" data-brain-edit>Keep editing</button></div><label for="brain-thought-text">Your words</label><textarea id="brain-thought-text" rows="4">${esc(card.text)}</textarea>${suggestion}<div class="brain-question"><h3>Where does this belong for now?</h3><p>Choose the lightest useful category. You can change it later.</p><div class="brain-destination-grid">${bucketButtons}</div></div><details class="brain-card-details"><summary>Optional: name the kind of thought</summary><div class="brain-type-grid">${brainThoughtTypes.map((type) => `<button type="button" class="chip ${card.type === type ? "active" : ""}" data-brain-type="${esc(type)}">${esc(type)}</button>`).join("")}</div></details></article>` : `<div class="notice">There are no thought cards yet.</div>`}<div class="brain-sort-actions"><button type="button" class="button secondary" data-brain-back>← Back to capture</button><button type="button" class="button secondary" data-brain-park>Park the rest and finish</button>${state.activeIndex < state.cards.length - 1 ? `<button type="button" class="button" data-brain-next>Next thought →</button>` : `<button type="button" class="button" data-brain-summary>Clear the desk →</button>`}</div><p class="fine" id="brain-sort-status" role="status"></p></section>`;
+    content.querySelector("#brain-thought-text")?.addEventListener("input", (event) => { card.text = event.target.value; });
+    content.querySelector("[data-brain-edit]")?.addEventListener("click", () => { content.querySelector("#brain-thought-text").focus(); });
+    content.querySelectorAll("[data-brain-bucket]").forEach((button) => button.addEventListener("click", () => { card.bucket = button.dataset.brainBucket; content.querySelector("#brain-sort-status").textContent = `${card.bucket} saved for this thought.`; if (state.activeIndex < state.cards.length - 1) { setTimeout(() => { state.activeIndex += 1; renderSort(); }, 180); } else renderSort(); }));
+    content.querySelector("[data-brain-suggestion]")?.addEventListener("click", () => { card.bucket = suggestedBucket; renderSort(); });
+    content.querySelectorAll("[data-brain-type]").forEach((button) => button.addEventListener("click", () => { card.type = button.dataset.brainType; renderSort(); }));
+    content.querySelector("[data-brain-back]")?.addEventListener("click", () => renderCapture());
+    content.querySelector("[data-brain-park]")?.addEventListener("click", () => { state.cards.filter((item) => !item.bucket).forEach((item) => { item.bucket = "LATER"; }); renderSummary(); });
+    content.querySelector("[data-brain-next]")?.addEventListener("click", () => { state.activeIndex += 1; renderSort(); });
+    content.querySelector("[data-brain-summary]")?.addEventListener("click", () => renderSummary());
+  }
+
+  function renderQuietFinish() {
+    state.screen = "summary";
+    content.innerHTML = `${navProgress("summary")}<section class="brain-stage brain-quiet-finish"><p class="eyebrow">A lighter finish</p><h2>You got it out. That may be enough.</h2><p class="brain-stage-lead">Nothing has to be solved tonight. Your thoughts are outside your head and parked for later.</p><div class="brain-quiet-card"><strong>${state.cards.length} thought${state.cards.length === 1 ? "" : "s"} parked</strong><p>You can return to sort them when there is more capacity.</p></div><div class="row"><button type="button" class="button" data-brain-save>Save this dump</button><button type="button" class="button secondary" data-brain-new>Start a new dump</button></div><p class="fine" id="brain-result-status" role="status"></p></section>`;
+    bindResultActions();
+  }
+
+  function renderSummary() {
+    state.screen = "summary";
+    const grouped = Object.fromEntries(activeBuckets().map(([name]) => [name, state.cards.filter((card) => card.bucket === name)]));
+    const cardList = (name) => grouped[name].length ? `<ul class="brain-summary-list">${grouped[name].map((card) => `<li><span>${esc(card.text)}</span>${name === "NOW" ? `<label class="brain-next-step"><small>Smallest useful next step</small><input data-brain-step="${esc(card.id)}" value="${esc(card.step)}" placeholder="For example: open the document"></label>` : ""}</li>`).join("")}</ul>` : `<p class="fine">Nothing here yet.</p>`;
+    const routes = state.cards.filter((card) => ["Worry", "Feeling", "Decision"].includes(card.type) || /worry|worried|afraid|feeling|decision|choose|body|social/i.test(card.text)).slice(0, 4).map((card) => { const text = card.text.toLowerCase(); const route = /worry|worried|afraid/.test(text) || card.type === "Worry" ? ["CBT Journal", "#tool/cbt-journal"] : /decision|choose/.test(text) || card.type === "Decision" ? ["Decision tool", "#tool/decision-map"] : /body/.test(text) ? ["Body & State Check", "#tool/state-check"] : ["A closer feelings check-in", "#tool/emotion-check-in"]; return `<li><span>${esc(card.text)}</span><a class="chip" href="${route[1]}">${route[0]} →</a></li>`; }).join("");
+    content.innerHTML = `${navProgress("summary")}<section class="brain-stage brain-summary-stage"><p class="eyebrow">Phase 3 / Clear the desk</p><h2>Nothing here has to be resolved all at once.</h2><p class="brain-stage-lead">You unloaded ${state.cards.length} thought${state.cards.length === 1 ? "" : "s"}. The point is not to turn every one into work—it is to see what kind of attention each one needs.</p><div class="brain-summary-grid">${activeBuckets().map(([name, description]) => `<article class="brain-summary-bucket"><span class="brain-bucket-label">${esc(name)}</span><h3>${esc(description)}</h3>${cardList(name)}</article>`).join("")}</div>${routes ? `<section class="brain-routes"><p class="eyebrow">Only if useful</p><h3>One of these thoughts may want a different tool</h3><ul>${routes}</ul></section>` : ""}<details class="brain-head-check brain-after-check" open><summary>Does your head feel any clearer?</summary><label class="brain-range-label" for="brain-after"><span>Now</span><output id="brain-after-value">${state.after || 5} / 10</output></label><input id="brain-after" type="range" min="0" max="10" value="${state.after || 5}" aria-label="How full your head feels now, from empty to completely full"><div class="brain-range-ends"><span>More space</span><span>Completely full</span></div><div class="brain-clearer-row"><button type="button" class="chip ${state.clearer === "more space" ? "active" : ""}" data-brain-clearer="more space">More space</button><button type="button" class="chip ${state.clearer === "same" ? "active" : ""}" data-brain-clearer="same">About the same</button><button type="button" class="chip ${state.clearer === "not sure" ? "active" : ""}" data-brain-clearer="not sure">Not sure</button></div></details><div class="row"><button type="button" class="button" data-brain-save>Save this clear desk</button><button type="button" class="button secondary" data-brain-download>Download</button><button type="button" class="button secondary" data-brain-copy>Copy</button><button type="button" class="button secondary" data-brain-new>Start again</button></div><p class="fine" id="brain-result-status" role="status"></p></section>`;
+    content.querySelectorAll("[data-brain-step]").forEach((input) => input.addEventListener("input", (event) => { const card = state.cards.find((item) => item.id === event.target.dataset.brainStep); if (card) card.step = event.target.value; }));
+    const after = content.querySelector("#brain-after");
+    after.addEventListener("input", (event) => { state.after = event.target.value; content.querySelector("#brain-after-value").textContent = `${event.target.value} / 10`; });
+    content.querySelectorAll("[data-brain-clearer]").forEach((button) => button.addEventListener("click", () => { state.clearer = button.dataset.brainClearer; renderSummary(); }));
+    bindResultActions();
+  }
+
+  const mapText = () => `Brain dump — clear desk\n\n${activeBuckets().map(([name]) => `${name}\n${state.cards.filter((card) => card.bucket === name).map((card) => `- ${card.text}${card.step ? `\n  Next step: ${card.step}` : ""}`).join("\n") || "- None"}`).join("\n\n")}\n\nHead before: ${state.before || "Not marked"} / 10\nHead now: ${state.after || "Not marked"} / 10\nClearer: ${state.clearer || "Not marked"}`;
+  function bindResultActions() {
+    content.querySelector("[data-brain-save]")?.addEventListener("click", () => { try { saveMap({ title: "Brain dump · clear desk", tool: "brain-dump", answers: JSON.parse(JSON.stringify(state)) }); content.querySelector("#brain-result-status").textContent = "Saved on this device."; } catch { content.querySelector("#brain-result-status").textContent = "This browser could not save it. Use Download instead."; } });
+    content.querySelector("[data-brain-download]")?.addEventListener("click", () => { downloadText("brain-dump-clear-desk.txt", mapText()); content.querySelector("#brain-result-status").textContent = "Downloaded."; });
+    content.querySelector("[data-brain-copy]")?.addEventListener("click", async () => { try { await navigator.clipboard.writeText(mapText()); content.querySelector("#brain-result-status").textContent = "Copied."; } catch { content.querySelector("#brain-result-status").textContent = "Copy was blocked by this browser. Use Download instead."; } });
+    content.querySelector("[data-brain-new]")?.addEventListener("click", () => { state.dump = ""; state.cards = []; state.activeIndex = 0; state.before = ""; state.after = ""; state.clearer = ""; renderCapture(); });
+  }
+
+  renderCapture();
+}
+
 function renderBodyCheckLegacy(root, tool) {
   root.innerHTML = `<div class="wrap tool-page body-check-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">Feel & notice / Body Map</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your answers stay in this browser unless you choose to save the map.</p></section><section id="body-mood-gate">${moodRatingMarkup({ id: "body-mood-before", outputId: "body-mood-before-value", buttonId: "body-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This is the existing starting check for the tool.", buttonText: "Open the Body Map" })}</section><div id="body-check-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Body & State Check</a><a class="chip" href="#compass">Emotion Compass</a><a class="chip" href="#maps">My Maps</a></div></div>`;
   bindMoodRating(root, {
@@ -1820,6 +1942,10 @@ export function renderTool(root, id) {
   }
   if (tool.id === "cbt-journal") {
     renderCbtJournal(root, tool);
+    return;
+  }
+  if (tool.id === "brain-dump") {
+    renderBrainDump(root, tool);
     return;
   }
   root.innerHTML = `<div class="wrap tool-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")} / ${esc(tool.kind === "pattern" ? "Creative pause" : tool.kind === "sound" ? "Sound & sensation" : "Interactive prompt")}</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your writing stays in this browser tab unless you choose “Save to My Maps”. It is not sent to Nobody’s Simple.</p></section><section id="tool-mood-gate">${moodRatingMarkup({ id: "tool-mood-before", outputId: "tool-mood-before-value", buttonId: "tool-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you use the tool.", buttonText: "Open this tool →" })}</section><div id="tool-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Check my body/state</a><a class="chip" href="#questions">Work through a difficult question</a><a class="chip" href="#maps">My Maps</a></div></div>`;

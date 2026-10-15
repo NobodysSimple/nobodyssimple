@@ -158,7 +158,7 @@ export const tools = [
     title: "Brain dump",
     group: "think",
     short:
-      "Get the thoughts out first. Then sort them yourself into things, questions and next steps.",
+      "Empty your head, separate thoughts by what they need, and choose only the next useful attention.",
     fields: [
       field(
         "dump",

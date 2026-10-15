@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v65-systems-questionnaire-reliability";
+const CACHE = "nobodyssimple-v66-brain-dump-clear-desk";
 const SHELL = [
   "./",
   "index.html",
