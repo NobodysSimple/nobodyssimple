@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v80-quotes-expansion";
+const CACHE = "nobodyssimple-v81-mobile-nav-random-quotes";
 const SHELL = [
   "./",
   "index.html",

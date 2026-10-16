@@ -257,7 +257,7 @@ function library() {
   const search = main.querySelector("#learn-search");
   if (search) search.addEventListener("input", (event) => { s.query = event.target.value; library(); requestAnimationFrame(() => { const input = main.querySelector("#learn-search"); input?.focus(); input?.setSelectionRange(input.value.length, input.value.length); }); });
   if (view === "quotes") {
-    let quoteIndex = 0;
+    let quoteIndex = Math.floor(Math.random() * quoteDeck.length);
     let quoteNotes = {};
     try { quoteNotes = JSON.parse(localStorage.getItem("ns-learn-quote-notes-v1") || "{}"); } catch { quoteNotes = {}; }
     const label = main.querySelector("#learn-quote-label");

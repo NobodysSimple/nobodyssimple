@@ -32,3 +32,6 @@ Files in this update
 - data.mjs
 - crash-topics.mjs
 - quote-content.mjs
+- Mobile navigation now shows Home, Tools, Learn, Maps and More; the top-right
+  heart is labelled Help.
+- The Quotes deck opens on a random card each time the section is opened.
