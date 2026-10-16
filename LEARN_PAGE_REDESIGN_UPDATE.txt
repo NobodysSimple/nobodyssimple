@@ -37,3 +37,5 @@ Files in this update
 - The Quotes deck opens on a random card each time the section is opened.
 - Learn has been removed from the More menu because it now has its own mobile
   tab, and the mobile top-right heart now visibly includes the Help label.
+- Crash Course topics now appear as horizontally scrollable cards by domain,
+  including a separate rail for immediate-help topic placeholders.

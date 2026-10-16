@@ -6342,7 +6342,8 @@ body.app-body .learn-crash-domain h3 { margin: 4px 0 0; }
 body.app-body .learn-crash-start p:not(.eyebrow) { margin: 10px 0 0; color: var(--muted); }
 body.app-body .learn-crash-domain-grid { display: grid; gap: 14px; }
 body.app-body .learn-crash-domain {
-  padding: 22px;
+  overflow: hidden;
+  padding: 22px 0 22px 22px;
   border: 1px solid var(--line);
   border-radius: 20px;
   background: rgba(255, 255, 255, .68);
@@ -6364,6 +6365,53 @@ body.app-body .learn-crash-number {
   font-size: 12px;
   font-weight: 700;
 }
+body.app-body .learn-crash-rail {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 2px 22px 8px 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(141, 85, 72, .35) transparent;
+  overscroll-behavior-inline: contain;
+}
+body.app-body .learn-crash-rail::-webkit-scrollbar { height: 7px; }
+body.app-body .learn-crash-rail::-webkit-scrollbar-thumb { border-radius: 99px; background: rgba(141, 85, 72, .35); }
+body.app-body .learn-crash-card {
+  position: relative;
+  flex: 0 0 min(230px, 72vw);
+  min-height: 166px;
+  padding: 18px;
+  border: 1px solid rgba(141, 85, 72, .18);
+  border-radius: 18px;
+  background: linear-gradient(150deg, #fffdf9, #f7eee6);
+  box-shadow: 0 8px 18px rgba(92, 67, 54, .07);
+  scroll-snap-align: start;
+}
+body.app-body .learn-crash-card:nth-child(3n + 2) { background: linear-gradient(150deg, #f5f3e8, #e8eee1); }
+body.app-body .learn-crash-card:nth-child(3n + 3) { background: linear-gradient(150deg, #f2edf3, #e9e2ec); }
+body.app-body .learn-crash-card-index {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 18px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .72);
+  color: #8d5548;
+  font-size: 10px;
+  font-weight: 800;
+}
+body.app-body .learn-crash-card h4 {
+  margin: 7px 0 12px;
+  color: var(--app-ink);
+  font: 400 21px/1.12 Georgia, serif;
+}
+body.app-body .learn-crash-card p { margin: 0; color: var(--muted); font-size: 12px; }
+body.app-body .learn-crash-start .learn-crash-rail { min-width: 0; }
+body.app-body .learn-topic-chip-grid,
+body.app-body .learn-topic-chip { display: none; }
+/* Keep the legacy chip rules harmless if older cached markup is encountered. */
 body.app-body .learn-topic-chip-grid {
   display: flex;
   flex-wrap: wrap;
@@ -6383,7 +6431,9 @@ body.app-body .learn-topic-chip {
 }
 @media (max-width: 700px) {
   body.app-body .learn-crash-start { grid-template-columns: 1fr; padding: 18px; }
-  body.app-body .learn-crash-domain { padding: 18px; }
+  body.app-body .learn-crash-domain { padding: 18px 0 18px 18px; }
+  body.app-body .learn-crash-domain-head { padding-right: 18px; }
+  body.app-body .learn-crash-card { flex-basis: min(238px, 78vw); }
 }
 
 /* Tools Library: a calm catalogue view for the full toolbox. */
