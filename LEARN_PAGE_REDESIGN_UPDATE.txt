@@ -1,0 +1,34 @@
+Nobody’s Simple — Learn page redesign
+
+What changed
+
+- The public Learn page now opens with five clear, colour-coded content areas:
+  Crash Courses, Nobody’s Simple Courses, Quotes, Videos, and Blog.
+- The currently planned curriculum lessons have been removed from the public
+  module view. The four-quarter, twelve-module framework remains as an empty
+  structure ready for new lessons to be added from scratch.
+- Crash Courses is set up for short education posts with a five-minute maximum
+  reading frame. It now contains a 40-domain, 693-topic catalogue plus 18
+  prominent emergency mini-course topics. These are topic placeholders only;
+  no lessons or course content have been added.
+- Quotes now has a swipeable/previous-next deck of mission-aligned facts,
+  reassurances, affirmations, and invitations, with optional private journaling
+  saved on the device. The deck now includes 72 additional original entries,
+  spanning context, emotion, autonomy, relationships, access, learning and
+  repair.
+- Videos uses the existing YouTube/video content, and Blog now lives inside
+  Learn rather than as a separate navigation destination.
+- Older #blog links still resolve into the Learn Blog view for compatibility.
+- The service-worker cache version was bumped so the new Learn layout is picked
+  up after deployment.
+
+Files in this update
+
+- index.html
+- site.mjs
+- features.mjs
+- styles.css
+- sw.js
+- data.mjs
+- crash-topics.mjs
+- quote-content.mjs

@@ -1,5 +1,6 @@
 import { curriculum, emotions, questions } from "./data.mjs";
 import { crashCourseTopics, crashEmergencyTopics } from "./crash-topics.mjs";
+import { quoteDeckExtended } from "./quote-content.mjs";
 import {
   escapeHTML as esc,
   safeHref,
@@ -73,7 +74,7 @@ let libraryState = {
   quarter: "",
 };
 const visibleCurriculum = { ...curriculum, weeks: [] };
-const quoteDeck = [
+const quoteDeckCore = [
   { type: "fact", label: "A fact to carry", text: "A feeling can be useful information without being a complete explanation of what is happening.", prompt: "What might this feeling be telling you to notice—not what is it ordering you to conclude?" },
   { type: "reassurance", label: "Reassurance", text: "You can take your experience seriously without treating your first interpretation as final.", prompt: "What would it look like to take yourself seriously and stay open at the same time?" },
   { type: "affirmation", label: "An affirmation", text: "You are allowed to need conditions that make participation possible. Access is not a character flaw.", prompt: "Which condition would make one part of today more workable?" },
@@ -87,6 +88,7 @@ const quoteDeck = [
   { type: "invitation", label: "An invitation", text: "Understanding is not surrender. Seeing the forces shaping you can create more choices about how to respond.", prompt: "What influence can you name without giving it total control?" },
   { type: "reassurance", label: "Reassurance", text: "A pause is not the same as avoidance. Sometimes a pause is how you return with more choice.", prompt: "What would make a pause restorative rather than indefinite?" },
 ];
+const quoteDeck = [...quoteDeckCore, ...quoteDeckExtended];
 const colours = {
   Fear: "#b77553",
   Anger: "#ba5f63",
