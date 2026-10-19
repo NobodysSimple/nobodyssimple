@@ -1,0 +1,20 @@
+Nobody’s Simple — Audios, pinned tools and smaller tool collections
+
+What changed
+
+• Added an Audios shelf to Learn. It is ready for future relaxation tracks, letting-go courses and other guided learning audio, while remaining intentionally empty until content is added.
+• Added pinning to Tools. Each tool has a pin control; pinned tools appear in a Pinned tools shelf above the main library and remain saved on the device.
+• Reorganised the Tools browsing path into three layers: main theme → smaller collection card → tools.
+• Smaller collections are grouped by purpose and automatically split when needed so no collection contains more than six tools.
+• Search and the compact A–Z directory remain available for people who want a direct route.
+• Bumped the service-worker cache so the update is picked up by installed app versions.
+
+How to use
+
+1. Open Learn and choose Audios when audio content is ready to be added.
+2. In Tools, open a theme, then choose a smaller collection card.
+3. Use the ◇ pin control on any tool. Pinned tools appear at the top of the Tools page; use the same control again to unpin.
+
+Notes
+
+Pinned tools use the existing local-only saved-tools storage, so existing saved tools are preserved and treated as pinned tools. No account or server data is required.

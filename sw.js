@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v83-crash-course-card-rails";
+const CACHE = "nobodyssimple-v84-audios-pinned-tool-collections";
 const SHELL = [
   "./",
   "index.html",

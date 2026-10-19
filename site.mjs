@@ -206,7 +206,7 @@ function legacyLibrary() {
 }
 function library() {
   const s = libraryState;
-  const view = ["crash", "courses", "quotes", "videos", "blog"].includes(s.view) ? s.view : "home";
+  const view = ["crash", "courses", "quotes", "videos", "audios", "blog"].includes(s.view) ? s.view : "home";
   const videos = posts.filter((post) => post.type === "video");
   const blogs = posts.filter((post) => post.type === "blog");
   const searchItems = (items) => {
@@ -228,6 +228,7 @@ function library() {
     ["courses", "Nobody’s Simple Courses", "The full curriculum", "The course architecture stays: four quarters, twelve modules and a place for the new lessons you will add from scratch.", "▤", "learn-door-courses"],
     ["quotes", "Quotes", "Words to carry", "Swipe through facts, affirmations, invitations and reassurances that fit the project’s way of seeing people.", "❝", "learn-door-quotes"],
     ["videos", "Videos", "Watch and think", "YouTube videos brought into the same learning space as the writing and courses.", "▷", "learn-door-videos"],
+    ["audios", "Audios", "Listen and learn", "Future guided audio lessons for relaxation, letting go and learning at your own pace.", "♪", "learn-door-audios"],
     ["blog", "Blog", "Longer notes", "Read the essays, arguments and reflections from Nobody’s Simple without leaving Learn.", "Aa", "learn-door-blog"],
   ];
   const doorMarkup = doors.map(([id, title, kicker, description, icon, className]) => `<button type="button" class="learn-door-card ${className}" data-learn-view="${id}"><span class="learn-door-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${kicker}</span><h2>${title}</h2><p>${description}</p><strong>Open ${title} →</strong></button>`).join("");
@@ -249,6 +250,8 @@ function library() {
   } else if (view === "videos") {
     const items = searchItems(videos);
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-videos"><div><p class="eyebrow">YouTube · watch and think</p><h2>Videos</h2><p>Follow the channel’s conversations and ideas from inside the same learning space.</p></div><span class="learn-section-icon">▷</span></div><label class="learn-search">Search videos<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a video…"></label>${resourceGrid(items, "No videos have been published here yet. New YouTube posts will appear automatically.")}</section>`;
+  } else if (view === "audios") {
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-audios"><div><p class="eyebrow">Coming later · listen and learn</p><h2>Audios</h2><p>Guided relaxation, short learning courses and audio reflections will live here when they are ready.</p></div><span class="learn-section-icon">♪</span></div><div class="learn-audio-empty"><span class="learn-audio-empty-icon" aria-hidden="true">◌</span><h3>Audio learning is on the way.</h3><p>No audio courses have been added yet. This shelf is ready for relaxation tracks, letting-go courses and other guided listening.</p></div></section>`;
   } else {
     const items = searchItems(blogs);
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-blog"><div><p class="eyebrow">Longer notes · arguments · reflections</p><h2>Blog</h2><p>The blog now lives inside Learn, alongside the courses, quotes and videos.</p></div><span class="learn-section-icon">Aa</span></div><label class="learn-search">Search the blog<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a thought…"></label>${resourceGrid(items, "No blog posts have been published yet. New writing will appear here automatically.")}</section>`;

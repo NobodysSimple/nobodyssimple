@@ -389,6 +389,69 @@ const libraryItems = () => [
   })),
 ];
 
+const librarySubcollectionRules = {
+  feel: [
+    ["feel-name", "Name & explore feelings", /emotion|feeling|state|mood|weather|intensity|savour|memory|gratitude|needs compass|closer/],
+    ["feel-body", "Body & inner signals", /body|sensation|somatic|sensory profile|body check/],
+    ["feel-reflect", "Reflect on what is here", /.*/],
+  ],
+  calm: [
+    ["calm-regulate", "Ground & regulate", /reset|present|grounding|breath|muscle|regulation|urge|safe-enough|overload|intensity/],
+    ["calm-sensory", "Sensory & stimulation", /sensory|stim|radio|pattern|social battery|recipe|load-balancer/],
+    ["calm-energy", "Energy & recovery", /.*/],
+  ],
+  think: [
+    ["think-clarify", "Clarify thoughts", /thought|brain|facts|interpretation|certainty|assumption|worry|rumination|defusion|attention|reality/],
+    ["think-patterns", "Notice patterns", /pattern|loop|function|trigger|maintenance|context/],
+    ["think-reflect", "Reflect & write", /.*/],
+  ],
+  choose: [
+    ["choose-plan", "Plan a next step", /start|friction|goal|smallest|if.?then|transition|priority|task|urgent|important|motivation|action/],
+    ["choose-decide", "Compare & decide", /decision|choice|cost|benefit|balance|control|worry|reversib|value conflict/],
+    ["choose-explore", "Explore options", /.*/],
+  ],
+  relate: [
+    ["relate-communicate", "Communicate clearly", /conversation|conflict decoder|social script|perspective|relationship/],
+    ["relate-boundaries", "Boundaries & repair", /boundary|repair|apology|conflict|needs/],
+    ["relate-explore", "Understand the relationship", /.*/],
+  ],
+  identity: [
+    ["identity-values", "Values & identity", /value|identity|self|possible|life area|personal rule|origin/],
+    ["identity-adapt", "Adaptation & self-compassion", /masking|adapt|compassion|motivation|contradiction/],
+    ["identity-explore", "Explore what matters", /.*/],
+  ],
+  learn: [
+    ["learn-evidence", "Evidence & uncertainty", /claim|evidence|correlation|base.?rate|counterexample|uncertainty|certainty/],
+    ["learn-experiment", "Test & learn", /experiment|mechanism|argument|compare explanation/],
+    ["learn-reflect", "Learn through reflection", /.*/],
+  ],
+};
+
+const librarySubcollectionsFor = (groupId, items) => {
+  const rules = librarySubcollectionRules[groupId] || [[`${groupId}-tools`, "Explore these tools", /.*/]];
+  const buckets = rules.map(([id, label]) => ({ id, label, items: [] }));
+  items.forEach((item) => {
+    const text = `${item.title} ${item.short} ${item.searchText}`.toLowerCase();
+    const ruleIndex = rules.findIndex(([, , pattern]) => pattern.test(text));
+    buckets[ruleIndex < 0 ? buckets.length - 1 : ruleIndex].items.push(item);
+  });
+  const output = [];
+  buckets.forEach((bucket) => {
+    const sorted = bucket.items.sort((a, b) => a.title.localeCompare(b.title));
+    for (let index = 0; index < sorted.length; index += 6) {
+      const part = sorted.slice(index, index + 6);
+      const partNumber = Math.floor(index / 6) + 1;
+      output.push({
+        id: `${bucket.id}-${partNumber}`,
+        label: partNumber > 1 ? `${bucket.label} · Part ${partNumber}` : bucket.label,
+        description: `A small set of tools for ${bucket.label.toLowerCase()}.`,
+        items: part,
+      });
+    }
+  });
+  return output;
+};
+
 const readLibraryList = (key) => {
   try {
     const value = JSON.parse(localStorage.getItem(key) || "[]");
@@ -406,7 +469,7 @@ function renderToolLibrary(root) {
   const allItems = libraryItems();
   const favouriteKey = "ns-tool-favourites-v1";
   const recentKey = "ns-tool-recent-v1";
-  const state = { query: "", collection: "all", time: "all", format: "all", view: "collections", expanded: "" };
+  const state = { query: "", collection: "all", subcollection: "", time: "all", format: "all", view: "collections" };
   let favourites = readLibraryList(favouriteKey);
   let recent = readLibraryList(recentKey);
 
@@ -424,17 +487,9 @@ function renderToolLibrary(root) {
     return queryMatch && collectionMatch && timeMatch && formatMatch;
   };
   const visibleItems = () => allItems.filter(matches);
-  const favouriteButton = (item) => `<button type="button" class="library-favourite ${favourites.includes(item.id) ? "active" : ""}" data-library-favourite="${esc(item.id)}" aria-label="${favourites.includes(item.id) ? "Remove" : "Save"} ${esc(item.title)} ${favourites.includes(item.id) ? "from" : "to"} favourites">${favourites.includes(item.id) ? "♥" : "♡"}</button>`;
+  const favouriteButton = (item) => `<button type="button" class="library-favourite ${favourites.includes(item.id) ? "active" : ""}" data-library-favourite="${esc(item.id)}" aria-label="${favourites.includes(item.id) ? "Unpin" : "Pin"} ${esc(item.title)}" title="${favourites.includes(item.id) ? "Unpin" : "Pin"} this tool">${favourites.includes(item.id) ? "⌖" : "◇"}</button>`;
   const itemMarkup = (item, compact = false) => `<article class="library-tool-item ${compact ? "compact" : ""}"><a class="library-tool-link" href="${esc(item.href)}" data-library-open="${esc(item.id)}"><span class="library-tool-icon" aria-hidden="true">${libraryIcon(item)}</span><span class="library-tool-copy"><span class="library-tool-title">${esc(item.title)}</span><span class="library-tool-description">${esc(item.short)}</span><span class="library-tool-meta">${esc(item.time)} · ${esc(item.format)}</span></span><span class="library-tool-arrow" aria-hidden="true">↗</span></a>${favouriteButton(item)}</article>`;
-  const previewMarkup = (items) => items.slice(0, 4).map((item) => itemMarkup(item, true)).join("");
-  const sectionMarkup = (group) => {
-    const items = visibleItems().filter((item) => item.collection === group.id).sort((a, b) => a.title.localeCompare(b.title));
-    if (!items.length) return "";
-    const expanded = state.expanded === group.id;
-    const shown = expanded ? items : items.slice(0, 4);
-    const remaining = items.length - shown.length;
-    return `<section class="library-collection" id="library-${esc(group.id)}"><div class="library-collection-head"><div><p class="eyebrow">Collection</p><h2>${esc(group.label)}</h2><p>${esc(group.description)}</p></div><strong>${items.length} tools</strong></div><div class="library-tool-list">${shown.map((item) => itemMarkup(item)).join("")}</div>${remaining > 0 ? `<button type="button" class="library-expand" data-library-expand="${esc(group.id)}">View all ${items.length} ${expanded ? "↑" : "↓"}</button>` : expanded ? `<button type="button" class="library-expand" data-library-expand="${esc(group.id)}">Show fewer ↑</button>` : ""}</section>`;
-  };
+  const subcollectionCardsMarkup = (group, items) => librarySubcollectionsFor(group.id, items).map((subcollection) => `<button type="button" class="library-subcollection-card theme-${esc(group.id)}" data-library-subcollection="${esc(subcollection.id)}"><span class="library-subcollection-symbol" aria-hidden="true">✦</span><span class="library-subcollection-copy"><strong>${esc(subcollection.label)}</strong><small>${esc(subcollection.description)}</small></span><span class="library-subcollection-count">${subcollection.items.length} tools</span><span class="library-theme-card-arrow" aria-hidden="true">↗</span></button>`).join("");
   const directoryMarkup = (items) => {
     const sorted = [...items].sort((a, b) => a.title.localeCompare(b.title));
     let previous = "";
@@ -443,7 +498,7 @@ function renderToolLibrary(root) {
   const utilityMarkup = (items) => {
     const saved = favourites.map(find).filter(Boolean);
     const used = recent.map(find).filter(Boolean);
-    return `${saved.length ? `<section class="library-shelf"><div class="library-shelf-head"><div><p class="eyebrow">Your shelf</p><h2>Saved tools</h2></div><span>${saved.length}</span></div><div class="library-shelf-list">${saved.slice(0, 5).map((item) => itemMarkup(item, true)).join("")}</div></section>` : ""}${used.length ? `<section class="library-recent"><span class="eyebrow">Recently used</span><div>${used.slice(0, 6).map((item) => `<a href="${esc(item.href)}" data-library-open="${esc(item.id)}">${esc(item.title)}</a>`).join("")}</div></section>` : ""}`;
+    return `${saved.length ? `<section class="library-shelf"><div class="library-shelf-head"><div><p class="eyebrow">Your pinned shelf</p><h2>Pinned tools</h2></div><span>${saved.length}</span></div><div class="library-shelf-list">${saved.slice(0, 5).map((item) => itemMarkup(item, true)).join("")}</div></section>` : ""}${used.length ? `<section class="library-recent"><span class="eyebrow">Recently used</span><div>${used.slice(0, 6).map((item) => `<a href="${esc(item.href)}" data-library-open="${esc(item.id)}">${esc(item.title)}</a>`).join("")}</div></section>` : ""}`;
   };
   const themeCardsMarkup = () => libraryCollections.map((group) => {
     const count = visibleItems().filter((item) => item.collection === group.id).length;
@@ -454,8 +509,10 @@ function renderToolLibrary(root) {
     const items = visibleItems();
     const searching = Boolean(state.query.trim());
     const selectedGroup = collection(state.collection);
-    const body = searching ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Search results</p><h2>${items.length} tool${items.length === 1 ? "" : "s"} matching “${esc(state.query)}”</h2></div><button type="button" class="chip" data-library-clear>Clear search</button></div><div class="library-directory">${directoryMarkup(items) || `<p class="library-empty">No tools matched. Try a broader word such as “feel”, “focus" or "decision".</p>`}</div></section>` : state.view === "directory" ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Compact directory</p><h2>${items.length} tools, A–Z</h2></div></div><div class="library-directory">${directoryMarkup(items)}</div></section>` : state.collection === "all" ? `<section class="library-theme-picker"><div class="library-theme-picker-head"><div><p class="eyebrow">Choose a theme</p><h2>Explore the library by area</h2><p>Each theme opens a smaller set of tools. You can always return here and browse another.</p></div><span>${libraryCollections.length} themes</span></div><div class="library-theme-grid">${themeCardsMarkup()}</div></section>` : `<section class="library-selected-theme"><button type="button" class="library-back-to-themes" data-library-themes>← All themes</button><div class="library-selected-theme-card theme-${esc(selectedGroup.id)}"><div><p class="eyebrow">Theme</p><h2>${esc(selectedGroup.label)}</h2><p>${esc(selectedGroup.description)}</p></div><strong>${items.length} tools</strong></div><div class="library-collections">${sectionMarkup(selectedGroup)}</div></section>`;
-    root.innerHTML = `<div class="wrap tools-library-page"><section class="tools-library-hero"><div><p class="eyebrow">Browse at your own pace</p><h1>Tools Library</h1><p class="lead">${allItems.length} tools across ${libraryCollections.length} themes. Search, filter or open a theme without needing to explain yourself first.</p><a class="tools-library-choose" href="#home">Not sure what you need? Use Help Me Choose →</a></div><div class="tools-library-mark" aria-hidden="true"><span>✳</span><i>+</i><span>◌</span></div></section><section class="library-controls"><label class="library-search"><span class="sr-only">Search tools</span><span aria-hidden="true">⌕</span><input id="library-search-input" type="search" value="${esc(state.query)}" placeholder="Search tools… e.g. overthinking, sensory, decision"></label><div class="library-filter-row"><div class="library-filter-group"><span>Time</span><div>${[["all", "Any"], ["Quick", "Under 2 min"], ["2–5 min", "2–5 min"], ["Deep dive", "Deep dive"]].map(([value, label]) => `<button type="button" class="chip ${state.time === value ? "active" : ""}" data-library-time="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group"><span>Format</span><div>${[["all", "All"], ["Reflection", "Reflection"], ["Interactive", "Interactive"]].map(([value, label]) => `<button type="button" class="chip ${state.format === value ? "active" : ""}" data-library-format="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group library-filter-guidance"><span>Browse</span><small>Choose a theme below, or use the directory.</small></div></div><div class="library-view-row"><span>View</span><button type="button" class="chip ${state.view === "collections" ? "active" : ""}" data-library-view="collections">Themes</button><button type="button" class="chip ${state.view === "directory" ? "active" : ""}" data-library-view="directory">Compact A–Z</button><span class="library-view-note">Save a tool with ♡</span></div></section>${utilityMarkup(items)}<main id="library-content">${body}</main><section class="library-footer-card"><div><p class="eyebrow">Keep what helps</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Your notes stay on this device.</p></div><a class="button" href="#maps">Open My Maps →</a></section></div>`;
+    const subcollections = selectedGroup ? librarySubcollectionsFor(selectedGroup.id, items.filter((item) => item.collection === selectedGroup.id)) : [];
+    const activeSubcollection = subcollections.find((subcollection) => subcollection.id === state.subcollection);
+    const body = searching ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Search results</p><h2>${items.length} tool${items.length === 1 ? "" : "s"} matching “${esc(state.query)}”</h2></div><button type="button" class="chip" data-library-clear>Clear search</button></div><div class="library-directory">${directoryMarkup(items) || `<p class="library-empty">No tools matched. Try a broader word such as “feel”, “focus" or "decision”.</p>`}</div></section>` : state.view === "directory" ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Compact directory</p><h2>${items.length} tools, A–Z</h2></div></div><div class="library-directory">${directoryMarkup(items)}</div></section>` : state.collection === "all" ? `<section class="library-theme-picker"><div class="library-theme-picker-head"><div><p class="eyebrow">Choose a theme</p><h2>Explore the library by area</h2><p>Each theme opens smaller tool collections, so no single card becomes a wall of options.</p></div><span>${libraryCollections.length} themes</span></div><div class="library-theme-grid">${themeCardsMarkup()}</div></section>` : `<section class="library-selected-theme"><button type="button" class="library-back-to-themes" data-library-themes>← All themes</button><div class="library-selected-theme-card theme-${esc(selectedGroup.id)}"><div><p class="eyebrow">Theme</p><h2>${esc(selectedGroup.label)}</h2><p>${esc(selectedGroup.description)}</p></div><strong>${items.length} tools</strong></div>${activeSubcollection ? `<button type="button" class="library-back-to-subcollections" data-library-subcollections>← All ${esc(selectedGroup.label)} collections</button><section class="library-collection library-tool-collection"><div class="library-collection-head"><div><p class="eyebrow">Smaller collection</p><h2>${esc(activeSubcollection.label)}</h2><p>${esc(activeSubcollection.description)}</p></div><strong>${activeSubcollection.items.length} tools</strong></div><div class="library-tool-list">${activeSubcollection.items.map((item) => itemMarkup(item)).join("")}</div></section>` : `<section class="library-subcollection-picker"><div class="library-subcollection-picker-head"><div><p class="eyebrow">Choose a smaller collection</p><h2>Start with one part of ${esc(selectedGroup.label)}</h2><p>These smaller shelves keep the next choice visible. Each one contains no more than six tools.</p></div><span>${subcollections.length} collections</span></div><div class="library-subcollection-grid">${subcollectionCardsMarkup(selectedGroup, items.filter((item) => item.collection === selectedGroup.id))}</div></section>`}</section>`;
+    root.innerHTML = `<div class="wrap tools-library-page"><section class="tools-library-hero"><div><p class="eyebrow">Browse at your own pace</p><h1>Tools Library</h1><p class="lead">${allItems.length} tools across ${libraryCollections.length} themes. Search, filter or open a theme without needing to explain yourself first.</p><a class="tools-library-choose" href="#home">Not sure what you need? Use Help Me Choose →</a></div><div class="tools-library-mark" aria-hidden="true"><span>✳</span><i>+</i><span>◌</span></div></section><section class="library-controls"><label class="library-search"><span class="sr-only">Search tools</span><span aria-hidden="true">⌕</span><input id="library-search-input" type="search" value="${esc(state.query)}" placeholder="Search tools… e.g. overthinking, sensory, decision"></label><div class="library-filter-row"><div class="library-filter-group"><span>Time</span><div>${[["all", "Any"], ["Quick", "Under 2 min"], ["2–5 min", "2–5 min"], ["Deep dive", "Deep dive"]].map(([value, label]) => `<button type="button" class="chip ${state.time === value ? "active" : ""}" data-library-time="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group"><span>Format</span><div>${[["all", "All"], ["Reflection", "Reflection"], ["Interactive", "Interactive"]].map(([value, label]) => `<button type="button" class="chip ${state.format === value ? "active" : ""}" data-library-format="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group library-filter-guidance"><span>Browse</span><small>Choose a theme, then a smaller collection.</small></div></div><div class="library-view-row"><span>View</span><button type="button" class="chip ${state.view === "collections" ? "active" : ""}" data-library-view="collections">Themes</button><button type="button" class="chip ${state.view === "directory" ? "active" : ""}" data-library-view="directory">Compact A–Z</button><span class="library-view-note">Pin a tool with ◇</span></div></section>${utilityMarkup(items)}<main id="library-content">${body}</main><section class="library-footer-card"><div><p class="eyebrow">Keep what helps</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Your notes stay on this device.</p></div><a class="button" href="#maps">Open My Maps →</a></section></div>`;
     root.querySelector("#library-search-input")?.addEventListener("input", (event) => { state.query = event.target.value; render(); requestAnimationFrame(() => { const input = root.querySelector("#library-search-input"); if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); } }); });
   };
   root.onclick = (event) => {
@@ -475,29 +532,31 @@ function renderToolLibrary(root) {
       writeLibraryList(recentKey, recent);
       return;
     }
-    const expand = event.target.closest("[data-library-expand]");
-    if (expand) { state.expanded = state.expanded === expand.dataset.libraryExpand ? "" : expand.dataset.libraryExpand; render(); return; }
     const clear = event.target.closest("[data-library-clear]");
     if (clear) { state.query = ""; render(); return; }
     const themeCard = event.target.closest("[data-library-theme-card]");
     if (themeCard) {
       state.collection = themeCard.dataset.libraryThemeCard;
       state.view = "collections";
-      state.expanded = state.collection;
+      state.subcollection = "";
       render();
       requestAnimationFrame(() => root.querySelector(".library-selected-theme")?.scrollIntoView({ behavior: "smooth", block: "start" }));
       return;
     }
     const allThemes = event.target.closest("[data-library-themes]");
-    if (allThemes) { state.collection = "all"; state.expanded = ""; render(); return; }
+    if (allThemes) { state.collection = "all"; state.subcollection = ""; render(); return; }
+    const allSubcollections = event.target.closest("[data-library-subcollections]");
+    if (allSubcollections) { state.subcollection = ""; render(); return; }
+    const subcollection = event.target.closest("[data-library-subcollection]");
+    if (subcollection) { state.subcollection = subcollection.dataset.librarySubcollection; render(); return; }
     const collectionButton = event.target.closest("[data-library-collection]");
-    if (collectionButton) { state.collection = collectionButton.dataset.libraryCollection; state.view = "collections"; state.expanded = state.collection === "all" ? "" : state.collection; render(); return; }
+    if (collectionButton) { state.collection = collectionButton.dataset.libraryCollection; state.view = "collections"; state.subcollection = ""; render(); return; }
     const timeButton = event.target.closest("[data-library-time]");
     if (timeButton) { state.time = timeButton.dataset.libraryTime; render(); return; }
     const formatButton = event.target.closest("[data-library-format]");
     if (formatButton) { state.format = formatButton.dataset.libraryFormat; render(); return; }
     const viewButton = event.target.closest("[data-library-view]");
-    if (viewButton) { state.view = viewButton.dataset.libraryView; state.expanded = ""; render(); }
+    if (viewButton) { state.view = viewButton.dataset.libraryView; state.subcollection = ""; render(); }
   };
   render();
 }

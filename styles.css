@@ -6771,6 +6771,146 @@ body.app-body .library-theme-card.theme-learn {
   color: #536e87;
 }
 
+body.app-body .library-subcollection-picker {
+  padding: clamp(18px, 3vw, 26px);
+  border: 1px solid #d9e1d5;
+  border-radius: 18px;
+  background: #fffdf8;
+}
+
+body.app-body .library-subcollection-picker-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+body.app-body .library-subcollection-picker-head h2 {
+  margin: 4px 0 6px;
+  color: #315746;
+  font: 400 clamp(1.45rem, 3vw, 2.1rem)/1.08 Georgia, serif;
+}
+
+body.app-body .library-subcollection-picker-head p:not(.eyebrow) {
+  max-width: 610px;
+  margin: 0;
+  color: #69776d;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+body.app-body .library-subcollection-picker-head > span {
+  flex: 0 0 auto;
+  color: #809083;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+body.app-body .library-subcollection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+}
+
+body.app-body .library-subcollection-card {
+  position: relative;
+  display: grid;
+  min-height: 142px;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  gap: 9px 11px;
+  padding: 15px;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  color: #315746;
+  cursor: pointer;
+  text-align: left;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+body.app-body .library-subcollection-card:hover,
+body.app-body .library-subcollection-card:focus-visible {
+  border-color: currentColor;
+  box-shadow: 0 9px 20px rgba(47, 69, 55, .11);
+  transform: translateY(-2px);
+}
+
+body.app-body .library-subcollection-card::after {
+  position: absolute;
+  right: -30px;
+  bottom: -36px;
+  width: 92px;
+  height: 92px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  content: "";
+  opacity: .14;
+}
+
+body.app-body .library-subcollection-card.theme-feel { background: #fbefe8; color: #8d5548; }
+body.app-body .library-subcollection-card.theme-calm { background: #eaf4f1; color: #3d746c; }
+body.app-body .library-subcollection-card.theme-think { background: #efedf6; color: #5f587d; }
+body.app-body .library-subcollection-card.theme-choose { background: #fbf3df; color: #896f35; }
+body.app-body .library-subcollection-card.theme-relate { background: #f6eaf3; color: #805d79; }
+body.app-body .library-subcollection-card.theme-identity { background: #edf4e8; color: #56704f; }
+body.app-body .library-subcollection-card.theme-learn { background: #edf2f7; color: #536e87; }
+
+body.app-body .library-subcollection-symbol {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  font: 400 16px Georgia, serif;
+}
+
+body.app-body .library-subcollection-copy {
+  display: grid;
+  min-width: 0;
+  grid-column: 1 / span 2;
+  gap: 5px;
+}
+
+body.app-body .library-subcollection-copy strong {
+  font: 700 16px/1.15 Georgia, serif;
+}
+
+body.app-body .library-subcollection-copy small {
+  max-width: 220px;
+  color: currentColor;
+  font-size: 11px;
+  line-height: 1.45;
+  opacity: .78;
+}
+
+body.app-body .library-subcollection-count {
+  align-self: end;
+  color: currentColor;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  opacity: .72;
+}
+
+body.app-body .library-back-to-subcollections {
+  justify-self: start;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  color: #55715e;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+body.app-body .library-tool-collection {
+  margin-top: 0;
+}
+
 body.app-body .library-selected-theme {
   display: grid;
   gap: 14px;
@@ -7199,6 +7339,45 @@ body.app-body .learn-door-videos,
 body.app-body .learn-section-heading.learn-door-videos { background: #e8eef4; color: #536e87; }
 body.app-body .learn-door-blog,
 body.app-body .learn-section-heading.learn-door-blog { background: #f7efd8; color: #896f35; }
+body.app-body .learn-door-audios,
+body.app-body .learn-section-heading.learn-door-audios { background: #e9eee9; color: #527363; }
+
+body.app-body .learn-audio-empty {
+  display: grid;
+  justify-items: start;
+  gap: 7px;
+  margin-top: 18px;
+  padding: 28px;
+  border: 1px dashed #b8c9bc;
+  border-radius: 18px;
+  background: #f8fbf7;
+}
+
+body.app-body .learn-audio-empty-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 4px;
+  place-items: center;
+  border: 1px solid #9fbaa8;
+  border-radius: 15px;
+  color: #527363;
+  font: 400 25px Georgia, serif;
+}
+
+body.app-body .learn-audio-empty h3 {
+  margin: 0;
+  color: #315746;
+  font: 400 1.65rem/1.1 Georgia, serif;
+}
+
+body.app-body .learn-audio-empty p {
+  max-width: 650px;
+  margin: 0;
+  color: #69776d;
+  font-size: 13px;
+  line-height: 1.55;
+}
 
 body.app-body .learn-empty-note {
   margin-top: 17px;
@@ -7773,6 +7952,13 @@ body.app-body .alternative-simple-result-card h3 {
   }
   body.app-body .library-theme-grid {
     grid-template-columns: 1fr;
+  }
+  body.app-body .library-subcollection-grid {
+    grid-template-columns: 1fr;
+  }
+  body.app-body .library-subcollection-picker-head {
+    align-items: flex-start;
+    flex-direction: column;
   }
   body.app-body .library-theme-picker-head,
   body.app-body .library-selected-theme-card {
