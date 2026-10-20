@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v84-audios-pinned-tool-collections";
+const CACHE = "nobodyssimple-v85-named-tool-cards";
 const SHELL = [
   "./",
   "index.html",

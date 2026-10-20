@@ -391,65 +391,68 @@ const libraryItems = () => [
 
 const librarySubcollectionRules = {
   feel: [
-    ["feel-name", "Name & explore feelings", /emotion|feeling|state|mood|weather|intensity|savour|memory|gratitude|needs compass|closer/],
-    ["feel-body", "Body & inner signals", /body|sensation|somatic|sensory profile|body check/],
-    ["feel-reflect", "Reflect on what is here", /.*/],
+    ["feel-name", "Name the feeling", "Choose words for the emotional experience and how it changes.", /emotion compass|mixed feelings|closer feelings|emotion matching|personal weather/],
+    ["feel-timeline", "Track how it changes", "Look at when a feeling appears, shifts or settles across an experience.", /emotion timeline/],
+    ["feel-body", "Notice body signals", "Use sensations and state changes as information without forcing an explanation.", /body|state check/],
+    ["feel-needs", "Find what may matter", "Explore needs, appreciation and the parts of experience that deserve attention.", /needs compass|gratitude|savour|memory/],
   ],
   calm: [
-    ["calm-regulate", "Ground & regulate", /reset|present|grounding|breath|muscle|regulation|urge|safe-enough|overload|intensity/],
-    ["calm-sensory", "Sensory & stimulation", /sensory|stim|radio|pattern|social battery|recipe|load-balancer/],
-    ["calm-energy", "Energy & recovery", /.*/],
+    ["calm-ground", "Ground the present", "Reconnect with the room, the senses and what is happening now.", /quick sensory reset|orient to the present|5-senses|safe-enough/],
+    ["calm-regulate", "Release and regulate", "Try a small, deliberate way to shift activation or make it more workable.", /regulation picker|breathing|muscle|urge surfing/],
+    ["calm-load", "Read overload and energy", "Notice capacity, social demand and the point where input becomes too much.", /overload|load-balancer|intensity thermometer|energy budget|social battery/],
+    ["calm-profile", "Build your sensory setup", "Understand the conditions, textures and supports that fit your nervous system.", /sensory profile|sensory recipe|masking & adaptation/],
+    ["calm-stim", "Sensory play and stimulation", "Choose or shape input when your system needs movement, texture, sound or visual pattern.", /stim space|sensory stimulation|sensory mixer|infinite pattern|nobody radio/],
+    ["calm-recover", "Recover after demand", "Make a gentler landing after effort, change or overload.", /recovery menu/],
   ],
   think: [
-    ["think-clarify", "Clarify thoughts", /thought|brain|facts|interpretation|certainty|assumption|worry|rumination|defusion|attention|reality/],
-    ["think-patterns", "Notice patterns", /pattern|loop|function|trigger|maintenance|context/],
-    ["think-reflect", "Reflect & write", /.*/],
+    ["think-certainty", "Gauge certainty", "Mark what you know, what you suspect and where the picture is still open.", /certainty|uncertainty game/],
+    ["think-clarify", "Clarify what happened", "Separate events and interpretations so the situation is easier to see.", /brain dump|what happened|facts \/ interpretation|control \/ influence/],
+    ["think-story", "Make sense of the story", "Look at the thoughts, assumptions and rules shaping the first explanation.", /thought map|cbt journal|assumption|internal rules/],
+    ["think-worry", "Work with worry", "Unhook from repetitive thinking and decide whether something needs action or space.", /thinking-loop|worry|defusion/],
+    ["think-patterns", "See patterns in action", "Trace triggers, loops and contexts that keep a response going.", /pattern mapper|pattern experiment|context map|maintenance loop|what keeps the loop going|trigger chain|pattern loop/],
+    ["think-function", "Understand what a response does", "Explore the function, cost and bias of a thought or behaviour.", /function finder|cost & benefit map|cognitive bias|uncertainty game/],
+    ["think-perspective", "Shift attention and perspective", "Try another angle without pretending the first view was meaningless.", /perspective wheel|attention spotlight/],
+    ["think-review", "Review and write", "Use a short record to make experience more usable over time.", /difficult day|weekly review|free journal|thought & feeling journal/],
+    ["think-appreciate", "Notice what is worth keeping", "Give attention to specific moments, memories and sources of appreciation.", /gratitude|specific appreciation|positive memory|attention mission/],
   ],
   choose: [
-    ["choose-plan", "Plan a next step", /start|friction|goal|smallest|if.?then|transition|priority|task|urgent|important|motivation|action/],
-    ["choose-decide", "Compare & decide", /decision|choice|cost|benefit|balance|control|worry|reversib|value conflict/],
-    ["choose-explore", "Explore options", /.*/],
+    ["choose-start", "Start and shrink the task", "Reduce friction until the next action is small enough to begin.", /why can.?t i start|smallest useful step|task shrinker|friction finder|choice pause/],
+    ["choose-plan", "Plan the conditions", "Turn an intention into a sequence, environment or if–then plan.", /goal builder|if.?then|priority sorter|urgent \/ important|transition planner|transition bridge/],
+    ["choose-motivation", "Find workable motivation", "Notice what might make effort more meaningful, rewarding or possible.", /motivation mixer|make effort rewarding|energy budget|collect evidence of progress/],
+    ["choose-values", "Values and direction", "Use what matters to you as one source of guidance when the options pull different ways.", /values compass/],
+    ["choose-compare", "Compare the options", "Lay out trade-offs, consequences and reversibility before choosing.", /decision map|future perspectives|decision balance|cost \/ benefit|reversibility|value conflict/],
+    ["choose-commit", "Commit with room to learn", "Make a decision without pretending you can predict everything in advance.", /pre-mortem|reopening a decision|control \/ influence|worry parking/],
+    ["choose-environment", "Shape the environment", "Change the surrounding conditions so the useful action has less resistance.", /design the environment/],
   ],
   relate: [
-    ["relate-communicate", "Communicate clearly", /conversation|conflict decoder|social script|perspective|relationship/],
-    ["relate-boundaries", "Boundaries & repair", /boundary|repair|apology|conflict|needs/],
-    ["relate-explore", "Understand the relationship", /.*/],
+    ["relate-talk", "Have the conversation", "Prepare words, perspective and distance for a real interaction.", /conversation mapper|social script|perspective switch|relationship distance/],
+    ["relate-boundaries", "Boundaries and needs", "Work out what matters, what is available and what you want to communicate.", /boundary|needs clarifier/],
+    ["relate-repair", "Repair and conflict", "Understand a rupture and choose a proportionate next move.", /conflict|repair|apology|repeated conflict/],
   ],
   identity: [
-    ["identity-values", "Values & identity", /value|identity|self|possible|life area|personal rule|origin/],
-    ["identity-adapt", "Adaptation & self-compassion", /masking|adapt|compassion|motivation|contradiction/],
-    ["identity-explore", "Explore what matters", /.*/],
+    ["identity-values", "Values and identity", "Explore what feels important, coherent and genuinely yours.", /values discovery|values compass|identity map|possible selves|life areas/],
+    ["identity-rules", "Rules and origins", "Notice inherited rules and the experiences that gave them their force.", /personal rules|origin map|why ladder|both can be true|where did this rule come from/],
+    ["identity-adapt", "Adaptation and self-compassion", "Understand protection, masking, contradiction and kinder ways of relating to yourself.", /masking|self-compassion|contradictions|motivation map/],
   ],
   learn: [
-    ["learn-evidence", "Evidence & uncertainty", /claim|evidence|correlation|base.?rate|counterexample|uncertainty|certainty/],
-    ["learn-experiment", "Test & learn", /experiment|mechanism|argument|compare explanation/],
-    ["learn-reflect", "Learn through reflection", /.*/],
+    ["learn-evidence", "Check evidence and claims", "Practise looking at support, alternatives and the strength of a conclusion.", /claim checker|evidence guide|correlation|base-rate|counterexample/],
+    ["learn-models", "Build and compare explanations", "Make the moving parts of an explanation visible and compare what each predicts.", /argument map|compare explanations|mechanism builder|build a mechanism|life balance radar/],
+    ["learn-experiment", "Test and learn", "Use a small experiment or calibration step to learn from what actually happens.", /behavioural experiment|calibrate uncertainty/],
   ],
 };
 
 const librarySubcollectionsFor = (groupId, items) => {
-  const rules = librarySubcollectionRules[groupId] || [[`${groupId}-tools`, "Explore these tools", /.*/]];
-  const buckets = rules.map(([id, label]) => ({ id, label, items: [] }));
+  const rules = librarySubcollectionRules[groupId] || [[`${groupId}-tools`, "Explore these tools", "A focused set of tools to browse.", /.*/]];
+  const buckets = rules.map(([id, label, description]) => ({ id, label, description, items: [] }));
   items.forEach((item) => {
-    const text = `${item.title} ${item.short} ${item.searchText}`.toLowerCase();
-    const ruleIndex = rules.findIndex(([, , pattern]) => pattern.test(text));
+    const text = item.title.toLowerCase();
+    const ruleIndex = rules.findIndex(([, , , pattern]) => pattern.test(text));
     buckets[ruleIndex < 0 ? buckets.length - 1 : ruleIndex].items.push(item);
   });
-  const output = [];
-  buckets.forEach((bucket) => {
-    const sorted = bucket.items.sort((a, b) => a.title.localeCompare(b.title));
-    for (let index = 0; index < sorted.length; index += 6) {
-      const part = sorted.slice(index, index + 6);
-      const partNumber = Math.floor(index / 6) + 1;
-      output.push({
-        id: `${bucket.id}-${partNumber}`,
-        label: partNumber > 1 ? `${bucket.label} · Part ${partNumber}` : bucket.label,
-        description: `A small set of tools for ${bucket.label.toLowerCase()}.`,
-        items: part,
-      });
-    }
-  });
-  return output;
+  return buckets.filter((bucket) => bucket.items.length).map((bucket) => ({
+    ...bucket,
+    items: bucket.items.sort((a, b) => a.title.localeCompare(b.title)),
+  }));
 };
 
 const readLibraryList = (key) => {
@@ -511,7 +514,7 @@ function renderToolLibrary(root) {
     const selectedGroup = collection(state.collection);
     const subcollections = selectedGroup ? librarySubcollectionsFor(selectedGroup.id, items.filter((item) => item.collection === selectedGroup.id)) : [];
     const activeSubcollection = subcollections.find((subcollection) => subcollection.id === state.subcollection);
-    const body = searching ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Search results</p><h2>${items.length} tool${items.length === 1 ? "" : "s"} matching “${esc(state.query)}”</h2></div><button type="button" class="chip" data-library-clear>Clear search</button></div><div class="library-directory">${directoryMarkup(items) || `<p class="library-empty">No tools matched. Try a broader word such as “feel”, “focus" or "decision”.</p>`}</div></section>` : state.view === "directory" ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Compact directory</p><h2>${items.length} tools, A–Z</h2></div></div><div class="library-directory">${directoryMarkup(items)}</div></section>` : state.collection === "all" ? `<section class="library-theme-picker"><div class="library-theme-picker-head"><div><p class="eyebrow">Choose a theme</p><h2>Explore the library by area</h2><p>Each theme opens smaller tool collections, so no single card becomes a wall of options.</p></div><span>${libraryCollections.length} themes</span></div><div class="library-theme-grid">${themeCardsMarkup()}</div></section>` : `<section class="library-selected-theme"><button type="button" class="library-back-to-themes" data-library-themes>← All themes</button><div class="library-selected-theme-card theme-${esc(selectedGroup.id)}"><div><p class="eyebrow">Theme</p><h2>${esc(selectedGroup.label)}</h2><p>${esc(selectedGroup.description)}</p></div><strong>${items.length} tools</strong></div>${activeSubcollection ? `<button type="button" class="library-back-to-subcollections" data-library-subcollections>← All ${esc(selectedGroup.label)} collections</button><section class="library-collection library-tool-collection"><div class="library-collection-head"><div><p class="eyebrow">Smaller collection</p><h2>${esc(activeSubcollection.label)}</h2><p>${esc(activeSubcollection.description)}</p></div><strong>${activeSubcollection.items.length} tools</strong></div><div class="library-tool-list">${activeSubcollection.items.map((item) => itemMarkup(item)).join("")}</div></section>` : `<section class="library-subcollection-picker"><div class="library-subcollection-picker-head"><div><p class="eyebrow">Choose a smaller collection</p><h2>Start with one part of ${esc(selectedGroup.label)}</h2><p>These smaller shelves keep the next choice visible. Each one contains no more than six tools.</p></div><span>${subcollections.length} collections</span></div><div class="library-subcollection-grid">${subcollectionCardsMarkup(selectedGroup, items.filter((item) => item.collection === selectedGroup.id))}</div></section>`}</section>`;
+    const body = searching ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Search results</p><h2>${items.length} tool${items.length === 1 ? "" : "s"} matching “${esc(state.query)}”</h2></div><button type="button" class="chip" data-library-clear>Clear search</button></div><div class="library-directory">${directoryMarkup(items) || `<p class="library-empty">No tools matched. Try a broader word such as “feel”, “focus" or "decision”.</p>`}</div></section>` : state.view === "directory" ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Compact directory</p><h2>${items.length} tools, A–Z</h2></div></div><div class="library-directory">${directoryMarkup(items)}</div></section>` : state.collection === "all" ? `<section class="library-theme-picker"><div class="library-theme-picker-head"><div><p class="eyebrow">Choose a theme</p><h2>Explore the library by area</h2><p>Each theme opens smaller tool collections, so no single card becomes a wall of options.</p></div><span>${libraryCollections.length} themes</span></div><div class="library-theme-grid">${themeCardsMarkup()}</div></section>` : `<section class="library-selected-theme"><button type="button" class="library-back-to-themes" data-library-themes>← All themes</button><div class="library-selected-theme-card theme-${esc(selectedGroup.id)}"><div><p class="eyebrow">Theme</p><h2>${esc(selectedGroup.label)}</h2><p>${esc(selectedGroup.description)}</p></div><strong>${items.length} tools</strong></div>${activeSubcollection ? `<button type="button" class="library-back-to-subcollections" data-library-subcollections>← All ${esc(selectedGroup.label)} collections</button><section class="library-collection library-tool-collection"><div class="library-collection-head"><div><p class="eyebrow">Smaller collection</p><h2>${esc(activeSubcollection.label)}</h2><p>${esc(activeSubcollection.description)}</p></div><strong>${activeSubcollection.items.length} tools</strong></div><div class="library-tool-list">${activeSubcollection.items.map((item) => itemMarkup(item)).join("")}</div></section>` : `<section class="library-subcollection-picker"><div class="library-subcollection-picker-head"><div><p class="eyebrow">Choose a smaller collection</p><h2>Start with one area of ${esc(selectedGroup.label)}</h2><p>These smaller shelves keep the next choice visible. Each one contains no more than six tools.</p></div><span>${subcollections.length} collections</span></div><div class="library-subcollection-grid">${subcollectionCardsMarkup(selectedGroup, items.filter((item) => item.collection === selectedGroup.id))}</div></section>`}</section>`;
     root.innerHTML = `<div class="wrap tools-library-page"><section class="tools-library-hero"><div><p class="eyebrow">Browse at your own pace</p><h1>Tools Library</h1><p class="lead">${allItems.length} tools across ${libraryCollections.length} themes. Search, filter or open a theme without needing to explain yourself first.</p><a class="tools-library-choose" href="#home">Not sure what you need? Use Help Me Choose →</a></div><div class="tools-library-mark" aria-hidden="true"><span>✳</span><i>+</i><span>◌</span></div></section><section class="library-controls"><label class="library-search"><span class="sr-only">Search tools</span><span aria-hidden="true">⌕</span><input id="library-search-input" type="search" value="${esc(state.query)}" placeholder="Search tools… e.g. overthinking, sensory, decision"></label><div class="library-filter-row"><div class="library-filter-group"><span>Time</span><div>${[["all", "Any"], ["Quick", "Under 2 min"], ["2–5 min", "2–5 min"], ["Deep dive", "Deep dive"]].map(([value, label]) => `<button type="button" class="chip ${state.time === value ? "active" : ""}" data-library-time="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group"><span>Format</span><div>${[["all", "All"], ["Reflection", "Reflection"], ["Interactive", "Interactive"]].map(([value, label]) => `<button type="button" class="chip ${state.format === value ? "active" : ""}" data-library-format="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group library-filter-guidance"><span>Browse</span><small>Choose a theme, then a smaller collection.</small></div></div><div class="library-view-row"><span>View</span><button type="button" class="chip ${state.view === "collections" ? "active" : ""}" data-library-view="collections">Themes</button><button type="button" class="chip ${state.view === "directory" ? "active" : ""}" data-library-view="directory">Compact A–Z</button><span class="library-view-note">Pin a tool with ◇</span></div></section>${utilityMarkup(items)}<main id="library-content">${body}</main><section class="library-footer-card"><div><p class="eyebrow">Keep what helps</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Your notes stay on this device.</p></div><a class="button" href="#maps">Open My Maps →</a></section></div>`;
     root.querySelector("#library-search-input")?.addEventListener("input", (event) => { state.query = event.target.value; render(); requestAnimationFrame(() => { const input = root.querySelector("#library-search-input"); if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); } }); });
   };

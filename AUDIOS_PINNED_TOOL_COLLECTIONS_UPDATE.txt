@@ -6,8 +6,9 @@ What changed
 • Added pinning to Tools. Each tool has a pin control; pinned tools appear in a Pinned tools shelf above the main library and remain saved on the device.
 • Reorganised the Tools browsing path into three layers: main theme → smaller collection card → tools.
 • Smaller collections are grouped by purpose and automatically split when needed so no collection contains more than six tools.
+• Replaced artificial “Part 2/3/4” labels with distinct named routes such as “Make sense of the story”, “Work with worry”, “Gauge certainty”, “Ground the present” and “Sensory play and stimulation”.
 • Search and the compact A–Z directory remain available for people who want a direct route.
-• Bumped the service-worker cache so the update is picked up by installed app versions.
+• Bumped the service-worker cache again so installed app versions do not continue serving the older numbered-card version.
 
 How to use
 
