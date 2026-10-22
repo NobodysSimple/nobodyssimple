@@ -92,6 +92,47 @@ const rows = [
   ["guided-rebuild", "Life Rebuild · guided map", "navigate", "guided", "rebuild,many-things,overload,foundation", "organise,action,understand", "Put safety, stability, connection and direction in a workable order."],
 ];
 
+// Keep one clear version of each activity. These interactive copies are
+// retired because a stronger written/custom tool already covers the same job,
+// or because the activity was too thin to justify a separate entry.
+const retiredInteractiveToolIds = new Set([
+  "body-sensation-map",
+  "state-check",
+  "five-senses-grounding",
+  "sensory-playground",
+  "sensory-mixer",
+  "nobody-radio",
+  "overload-meter",
+  "social-battery",
+  "sensory-profile",
+  "needs-compass",
+  "values-compass",
+  "facts-interpretation-unknown",
+  "certainty-dial",
+  "emotion-timeline",
+  "function-finder",
+  "decision-balance",
+  "reversibility-gauge",
+  "motivation-mixer",
+  "priority-sorter",
+  "recovery-menu",
+  "boundary-sorter",
+  "conflict-decoder",
+  "relationship-distance",
+  "masking-map",
+  "transition-bridge",
+  "attention-spotlight",
+  "worry-conveyor",
+  "gratitude-lens",
+  "memory-jar",
+  "emotion-matching",
+  "cognitive-bias-games",
+  "uncertainty-game",
+  "life-balance-radar",
+  "personal-weather",
+  "intensity-thermometer",
+]);
+
 export const interactiveTools = rows.filter((row) => row[2] !== "navigate").map(
   ([id, title, group, mode, situations, goals, short]) => ({
     id,
@@ -102,7 +143,7 @@ export const interactiveTools = rows.filter((row) => row[2] !== "navigate").map(
     goals: goals.split(","),
     short,
   }),
-);
+).filter((tool) => !retiredInteractiveToolIds.has(tool.id));
 
 const groupNames = [
   ["feel", "Feeling & body"],
@@ -144,13 +185,13 @@ export function recommendInteractiveTools(goal, selectedSituations, energy) {
     (tool.id === "urgent-important-matrix" && (goal === "organise" || goal === "action" || chosen.some((tag) => ["start", "decision", "think"].includes(tag))) ? 6 : 0) +
     (Number(energy) === 0 && ["body", "calm", "feel", "sensory"].some((tag) => tool.situations.includes(tag)) ? 1 : 0);
   const defaults = {
-    calmer: ["breathing-pacer", "five-senses-grounding", "urge-surfing"],
-    organise: ["urgent-important-matrix", "overload-meter", "priority-sorter"],
-    decide: ["decision-balance", "values-compass", "reversibility-gauge"],
-    communicate: ["social-script-builder", "boundary-sorter", "perspective-wheel"],
-    action: ["task-shrinker", "friction-finder", "transition-bridge"],
-    minutes: ["breathing-pacer", "choice-pause", "attention-spotlight"],
-    understand: ["body-sensation-map", "facts-interpretation-unknown", "emotion-compass"],
+    calmer: ["breathing-pacer", "urge-surfing", "regulation-picker"],
+    organise: ["urgent-important-matrix", "energy-budget", "control-zones"],
+    decide: ["value-conflict-balance", "control-zones", "choice-pause"],
+    communicate: ["social-script-builder", "perspective-wheel", "safe-enough-scale"],
+    action: ["task-shrinker", "friction-finder", "urgent-important-matrix"],
+    minutes: ["breathing-pacer", "choice-pause", "urge-surfing"],
+    understand: ["emotion-compass", "safe-enough-scale", "trigger-chain-builder"],
   };
   const ranked = [...interactiveTools].sort((a, b) => score(b) - score(a));
   const extra = (defaults[goal] || defaults.understand)

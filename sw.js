@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v86-plain-quotes-200";
+const CACHE = "nobodyssimple-v87-toolbox-cleanup";
 const SHELL = [
   "./",
   "index.html",

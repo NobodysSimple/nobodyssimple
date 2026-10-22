@@ -286,7 +286,7 @@ export function renderHelp(root, options = {}) {
     chosen.forEach((situation) => situation.tools.forEach(addTool));
     chosenSubparts.forEach((part) => (part.tools || []).forEach(addTool));
     if (!chosen.length) ["state-check", "brain-dump", "quick-reset"].forEach(addTool);
-    const boost = goal === "calmer" ? ["quick-reset", "grounding", "load-balancer"] : goal === "organise" ? ["brain-dump", "thought-map", "reality-map"] : goal === "decide" ? ["decision-map", "values-discovery", "certainty"] : goal === "communicate" ? ["conversation-map", "needs-clarifier", "boundary-builder"] : goal === "action" ? ["small-step", "friction", "decision-map"] : goal === "minutes" ? ["quick-reset", "grounding", "state-check"] : ["state-check", "emotion-check-in", "pattern-map"];
+    const boost = goal === "calmer" ? ["quick-reset", "grounding", "load-balancer"] : goal === "organise" ? ["brain-dump", "thought-map", "reality-map"] : goal === "decide" ? ["decision-map", "values-discovery", "uncertainty-calibration"] : goal === "communicate" ? ["conversation-map", "needs-clarifier", "boundary-builder"] : goal === "action" ? ["small-step", "friction", "decision-map"] : goal === "minutes" ? ["quick-reset", "grounding", "state-check"] : ["state-check", "emotion-check-in", "pattern-map"];
     const rank = (tool) => (chosenSubparts.some((part) => part.tools.includes(tool.id)) ? 8 : 0) + (boost.includes(tool.id) ? 4 : 0) + (energy === 0 && ["grounding", "quick-reset", "state-check", "small-step"].includes(tool.id) ? 3 : 0) + (chosen.some((situation) => situation.tools.includes(tool.id)) ? 3 : 0);
     pool.sort((a, b) => rank(b) - rank(a));
     const picks = [...pool, ...boost.map((id) => tools.find((tool) => tool.id === id)).filter(Boolean)].filter((tool, i, all) => all.findIndex((item) => item.id === tool.id) === i).slice(0, 3);
@@ -3076,7 +3076,7 @@ const routes = [
   [
     "spiralling",
     "I’m spiralling",
-    ["state-check", "grounding", "reality-map", "control-map"],
+    ["state-check", "grounding", "reality-map", "worry-sort"],
     "Start with a state check, then separate what happened from what the worry says it means.",
   ],
   [
@@ -3088,7 +3088,7 @@ const routes = [
   [
     "argument",
     "We had an argument",
-    ["quick-reset", "conversation-map", "perspective-switch", "repair"],
+    ["quick-reset", "conversation-map", "repair", "needs-clarifier"],
     "If useful, settle first; then map what happened and what each person may need.",
   ],
   [
@@ -3110,7 +3110,7 @@ const routes = [
       "reality-map",
       "personal-rules",
       "assumption-finder",
-      "experiment-builder",
+      "pattern-experiment",
     ],
     "Separate a specific event from a global judgement and find one assumption to test.",
   ],
