@@ -85,7 +85,10 @@ trigger.type = "button";
 trigger.className = "button small ns-account-trigger";
 trigger.setAttribute("aria-haspopup", "dialog");
 trigger.textContent = "Sign in";
-trigger.addEventListener("click", () => dialog.showModal());
+trigger.addEventListener("click", () => {
+  renderDialog();
+  dialog.showModal();
+});
 const actions = document.querySelector(".app-top-actions");
 if (actions) actions.prepend(trigger);
 
