@@ -13,6 +13,7 @@
     <link rel="apple-touch-icon" href="icon-192.png" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="account.css" />
   </head>
   <body class="app-body">
     <a class="skip" href="#main">Skip to content</a>
@@ -29,11 +30,11 @@
         <div class="app-sidebar-scroll">
           <p class="app-nav-label">Start here</p>
           <nav class="app-nav" aria-label="Primary">
-            <a href="#home" data-route-link><span class="app-nav-icon" aria-hidden="true">⌂</span><span>Home</span><small>Navigation console</small></a>
-            <a href="#tools" data-route-link><span class="app-nav-icon" aria-hidden="true">✳</span><span>Tools</span><small>Try something</small></a>
-            <a href="#library" data-route-link><span class="app-nav-icon" aria-hidden="true">▤</span><span>Learn</span><small>Build context</small></a>
-            <a href="#maps" data-route-link><span class="app-nav-icon" aria-hidden="true">⌁</span><span>My Maps</span><small>Saved locally</small></a>
-            <a href="#support" data-route-link><span class="app-nav-icon" aria-hidden="true">♡</span><span>Get help</span><small>Real-world support</small></a>
+            <a href="#home" data-route-link><span class="app-nav-icon" aria-hidden="true">⌂</span><span data-i18n="navHome">Home</span><small>Navigation console</small></a>
+            <a href="#tools" data-route-link><span class="app-nav-icon" aria-hidden="true">✳</span><span data-i18n="tools">Tools</span><small>Try something</small></a>
+            <a href="#library" data-route-link><span class="app-nav-icon" aria-hidden="true">▤</span><span data-i18n="learn">Learn</span><small>Build context</small></a>
+            <a href="#account" data-route-link><span class="app-nav-icon" aria-hidden="true">⌁</span><span data-i18n="account">Account</span><small>Your saved work and settings</small></a>
+            <a href="#support" data-route-link><span class="app-nav-icon" aria-hidden="true">♡</span><span data-i18n="help">Get help</span><small>Real-world support</small></a>
           </nav>
 
           <p class="app-nav-label app-nav-label-secondary">Your space</p>
@@ -47,7 +48,7 @@
 
         <div class="app-sidebar-bottom">
           <a class="app-install-link" href="#install" data-route-link><span aria-hidden="true">↓</span><span><b>Save as an app</b><small>Keep it close on your device</small></span></a>
-          <small class="app-sidebar-privacy">Your reflections stay on this device unless you choose to share them.</small>
+          <small class="app-sidebar-privacy">Your reflections stay private. Account syncing is your choice.</small>
         </div>
       </aside>
 
@@ -91,10 +92,10 @@
     </div>
 
     <nav class="app-bottom-nav" aria-label="Quick navigation">
-      <a href="#home" data-route-link><span aria-hidden="true">⌂</span><small>Home</small></a>
-      <a href="#tools" data-route-link><span aria-hidden="true">✳</span><small>Tools</small></a>
-      <a href="#library" data-route-link><span aria-hidden="true">▤</span><small>Learn</small></a>
-      <a href="#maps" data-route-link><span aria-hidden="true">⌁</span><small>Maps</small></a>
+      <a href="#home" data-route-link><span aria-hidden="true">⌂</span><small data-i18n="navHome">Home</small></a>
+      <a href="#tools" data-route-link><span aria-hidden="true">✳</span><small data-i18n="tools">Tools</small></a>
+      <a href="#library" data-route-link><span aria-hidden="true">▤</span><small data-i18n="learn">Learn</small></a>
+      <a href="#account" data-route-link><span aria-hidden="true">⌁</span><small data-i18n="account">Account</small></a>
       <details class="app-bottom-more" data-more-menu>
         <summary><span aria-hidden="true">⋯</span><small>More</small></summary>
         <div class="app-more-menu">

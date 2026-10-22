@@ -1,3 +1,4 @@
+import './account-play-bridge.mjs';
 const $ = (selector, root = document) => root.querySelector(selector);
 const stage = $("#game-stage");
 const page = $(".ndp-page");
@@ -170,7 +171,7 @@ function renderGame(game) {
   if (activeSurface && activeSurface.resizeObserver) activeSurface.resizeObserver.disconnect();
   activeGame = game;
   activeSurface = null;
-  paused = false;
+  paused = !!(window.nsPlayPreferences?.lowStim || window.nsPlayPreferences?.motion==='reduce');
   followMode = false;
   followClock = 0;
   followIndex = 0;
@@ -756,6 +757,7 @@ function drawLiquidPreview(surface, now, dt) {
   }
 }
 function ensureAudio() {
+  if(window.nsPlayPreferences?.lowStim || window.nsPlayPreferences?.sound===false)return null;
   if (audioContext) {
     if (audioContext.state === "suspended") audioContext.resume();
     return audioContext;
@@ -1030,3 +1032,7 @@ renderRecipes();
 createMixer();
 renderGame("bubbles");
 requestAnimationFrame(frame);
+
+function applyAccountPlayPrefs(p=window.nsPlayPreferences){if(!p)return;document.documentElement.dataset.theme=p.theme==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):p.theme;document.documentElement.dataset.motion=p.lowStim||p.motion==='reduce'?'reduce':'full';document.documentElement.style.colorScheme=p.theme==='dark'?'dark':'light';if(p.lowStim||p.motion==='reduce'){settings.motion=0;input.motion.value='0';paused=true;}if(p.lowStim||!p.sound){soundEnabled=false;audioContext?.suspend();}document.querySelectorAll('[data-action=sound]').forEach(b=>{b.textContent=soundEnabled?'Sound on':'Sound off';b.setAttribute('aria-pressed',String(soundEnabled));});}
+window.addEventListener('ns:play-preferences',e=>applyAccountPlayPrefs(e.detail));
+applyAccountPlayPrefs();

@@ -1,352 +1,197 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-import {
-  getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup,
-  createUserWithEmailAndPassword, signInWithEmailAndPassword,
-  sendEmailVerification, sendPasswordResetEmail, signOut,
-} from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
-import {
-  getFirestore, collection, doc, getDocs, onSnapshot, writeBatch, serverTimestamp,
-} from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
-
-/* Nobody's Simple Firebase web configuration. Firebase web config is public. */
-const firebaseConfig = {
-  apiKey: "AIzaSyBQLrbiby_zNc0gIoefTsOzkCBECprXbMA",
-  authDomain: "nobodys-simple.firebaseapp.com",
-  projectId: "nobodys-simple",
-  storageBucket: "nobodys-simple.firebasestorage.app",
-  messagingSenderId: "239548972013",
-  appId: "1:239548972013:web:ce9085c4cb6e0c872645e4",
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-/* Only these known Nobody's Simple saved-work keys are eligible for sync. */
-const savedKeys = new Set([
-  "ns-personal-maps-v1",
-  "ns-tool-favourites-v1",
-  "ns-tool-recent-v1",
-  "ns-learn-quote-notes-v1",
-  "ns-reflection",
-  "ns-sensory-recipe-v1",
-  "ns-memory-jar-v1",
-  "nobodys-simple-full-profile-draft-v3",
-  "nobodys-simple-profile-state-checkins-v1",
-  "nobodys-simple-profile-feedback-v1",
-  "ns-simplyfocus-recipe-v1",
-  "ns-simplyfocus-tasks-v1",
-  "ns-navigation-context-v1",
-  "ns-navigation-projects-v1",
-]);
-const preferenceKey = (uid) => `ns-cloud-sync-consent-v1:${uid}`;
-let currentUser = null;
-let applyingCloudData = false;
-let stopCloudListener = null;
-let pendingWrites = new Map();
-let writeTimer = 0;
-
-const style = document.createElement("style");
-style.textContent = `
-  .ns-account-trigger { margin-inline: 4px; }
-  .ns-account-dialog { width:min(620px,calc(100% - 28px)); max-height:calc(100% - 32px); padding:0; border:1px solid #d7ded4; border-radius:22px; background:#fffdf8; color:#315746; box-shadow:0 24px 80px #17251c55; }
-  .ns-account-dialog::backdrop { background:#14201999; backdrop-filter:blur(3px); }
-  .ns-account-inner { position:relative; padding:clamp(22px,5vw,38px); overflow:auto; max-height:calc(100vh - 32px); }
-  .ns-account-close { position:absolute; top:12px; right:15px; width:42px; height:42px; border:0; border-radius:50%; background:#edf2eb; color:#315746; font-size:25px; cursor:pointer; }
-  .ns-account-inner h1 { margin:7px 40px 10px 0; font:400 clamp(2rem,6vw,3.2rem)/1.05 Georgia,serif; }
-  .ns-account-inner h2 { margin:5px 0 10px; font:400 1.55rem/1.15 Georgia,serif; }
-  .ns-account-inner p { color:#5f7064; font-size:14px; line-height:1.65; }
-  .ns-account-inner .ns-eyebrow { margin:0; color:#a26c3d; font-size:10px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
-  .ns-account-card,.ns-sync-card { margin:20px 0; padding:20px; border:1px solid #dbe1d8; border-radius:16px; background:#fff; }
-  .ns-account-inner label { display:grid; gap:6px; margin:13px 0; color:#526558; font-size:13px; font-weight:700; }
-  .ns-account-inner input { min-height:45px; width:100%; box-sizing:border-box; padding:10px 12px; border:1px solid #cbd6ca; border-radius:9px; font:inherit; }
-  .ns-account-inner button.ns-btn { min-height:43px; padding:10px 16px; border:1px solid #315746; border-radius:999px; background:#315746; color:white; font:700 13px Arial,sans-serif; cursor:pointer; }
-  .ns-account-inner button.ns-btn.secondary { background:#fffdf8; color:#315746; }
-  .ns-account-inner button.ns-btn:disabled { opacity:.6; cursor:wait; }
-  .ns-account-inner .ns-full { width:100%; margin:5px 0; }
-  .ns-account-inner .ns-divider { margin:18px 0; color:#78877b; text-align:center; font-size:12px; }
-  .ns-account-inner .ns-mode { display:flex; gap:8px; margin:12px 0; }
-  .ns-account-inner .ns-mode button { padding:8px 12px; border:1px solid #d4ddd2; border-radius:999px; background:#f5f7f1; color:#526558; cursor:pointer; }
-  .ns-account-inner .ns-mode button.active { border-color:#315746; background:#315746; color:white; }
-  .ns-account-inner .ns-reset { display:block; margin:11px auto 0; padding:4px; border:0; background:transparent; color:#496a57; text-decoration:underline; cursor:pointer; }
-  .ns-account-inner .ns-status { min-height:22px; color:#8b5537; font-weight:700; }
-  .ns-account-inner .ns-sync-actions { display:grid; gap:9px; }
-  .ns-account-inner .ns-small { font-size:11px; color:#768278; }
-  @media(max-width:520px) { .ns-account-trigger { padding:8px 10px !important; font-size:11px !important; } .ns-account-inner { padding:24px 18px; } }
-`;
-document.head.append(style);
-
-const dialog = document.createElement("dialog");
-dialog.className = "ns-account-dialog";
-dialog.setAttribute("aria-label", "Nobody's Simple account");
-document.body.append(dialog);
-
-const trigger = document.createElement("button");
-trigger.type = "button";
-trigger.className = "button small ns-account-trigger";
-trigger.setAttribute("aria-haspopup", "dialog");
-trigger.textContent = "Sign in";
-trigger.addEventListener("click", () => {
-  renderDialog();
-  dialog.showModal();
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js';
+import {getAuth,onAuthStateChanged,GoogleAuthProvider,signInWithPopup,createUserWithEmailAndPassword,signInWithEmailAndPassword,sendEmailVerification,sendPasswordResetEmail,signOut,setPersistence,browserLocalPersistence,browserSessionPersistence,reauthenticateWithPopup,reauthenticateWithCredential,EmailAuthProvider,updatePassword,verifyBeforeUpdateEmail,linkWithPopup,linkWithCredential,unlink,multiFactor,TotpMultiFactorGenerator,getMultiFactorResolver,connectAuthEmulator,reload} from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js';
+import {getFirestore,collection,doc,getDoc,getDocs,onSnapshot,query,where,orderBy,limit,connectFirestoreEmulator} from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js';
+import {freeAccountCall} from './account-free.mjs';
+import {firebaseConfig,accountConfig} from './account-config.mjs';
+import {AVATARS,SAVED,CATEGORIES,DEFAULTS,cleanSettings,nicknamePolicy,COOLDOWN_MS,parseJSON} from './account-policy.mjs';
+import {Workspace} from './account-storage.mjs';
+import {SavedSync} from './account-sync.mjs';
+import {t,setLanguage,translateShell} from './account-i18n.mjs';
+const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
+if(accountConfig.emulators&&['localhost','127.0.0.1'].includes(location.hostname)){connectAuthEmulator(auth,'http://127.0.0.1:9099',{disableWarnings:true});connectFirestoreEmulator(db,'127.0.0.1',8080);}
+if(accountConfig.appCheckSiteKey){const {initializeAppCheck,ReCaptchaEnterpriseProvider}=await import('https://www.gstatic.com/firebasejs/13.0.0/firebase-app-check.js');initializeAppCheck(app,{provider:new ReCaptchaEnterpriseProvider(accountConfig.appCheckSiteKey),isTokenAutoRefreshEnabled:true});}
+const ws=new Workspace(localStorage,sessionStorage);ws.install();
+window.nsAccountStorage={get:key=>localStorage.getItem(key),set:(key,value)=>localStorage.setItem(key,value),remove:key=>localStorage.removeItem(key)};
+let user=null,profile={},prefs={...DEFAULTS},host={},currentRoot=null,activeTab='home',initialized=false,backendError='',stops=[],devices=[],notices=[],blocks=[],staff=false,editing=false,cloudPrefsLoaded=false,preserveCurrentSession=false;
+const raw=ws.original;
+const local=(key,fallback)=>parseJSON(raw.get(key),fallback);
+const store=(key,value)=>raw.set(key,JSON.stringify(value));
+const prefKey=()=>`ns-account-prefs-v2:${user?.uid||'guest'}`;
+const sync=new SavedSync(db,ws,(source,key)=>{
+  if(source==='local'&&key==='ns-personal-maps-v1'&&!location.hash.startsWith('#account')){const drafts=readWork('ns-account-tool-drafts-v2',{});if(drafts[location.hash]){delete drafts[location.hash];writeWork('ns-account-tool-drafts-v2',drafts);}}
+  document.querySelectorAll('[data-sync-state]').forEach(el=>el.textContent=sync.state);
+  if(source==='cloud'&&currentRoot&&['maps','saved','home','learning'].includes(activeTab)&&!editing)renderAccount(currentRoot,activeTab);
 });
-const actions = document.querySelector(".app-top-actions");
-if (actions) actions.prepend(trigger);
+export const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+const date=value=>{const n=value?.toMillis?.()??(typeof value==='number'?value:value?Date.parse(value):NaN);return Number.isFinite(n)?new Date(n).toLocaleDateString(prefs.language,{year:'numeric',month:'short',day:'numeric'}):'—';};
+const stamp=value=>value?.toMillis?.()??(typeof value==='number'?value:value?Date.parse(value):0);
+const avatar=p=>p.avatarData||`media/avatars/${AVATARS.includes(p.avatarId)?p.avatarId:'base'}.png`;
+const button=(label,action,secondary=false)=>`<button type="button" class="button ${secondary?'secondary':''}" data-action="${action}">${escape(label)}</button>`;
+const note=(text,type='')=>`<div class="account-note ${type}" role="status">${escape(text)}</div>`;
+const empty=()=>`<p class="account-empty">${t('empty')}</p>`;
+const pendingCount=()=>Object.keys(sync.pending).length;
+const readWork=(key,fallback)=>parseJSON(localStorage.getItem(key),fallback);
+const writeWork=(key,value)=>localStorage.setItem(key,JSON.stringify(value));
+export function accountState(){return {signedIn:!!user,uid:user?.uid,syncKeys:[...sync.keys],locked:ws.locked,preferences:{...prefs}};}
+async function call(name,data={}){return freeAccountCall(db,auth,name,data);}
+function friendly(error){const messages={'auth/invalid-credential':'The email and password were not recognised.','auth/invalid-email':'Enter a complete email address.','auth/email-already-in-use':'An account already uses that email. Sign in with its existing method, then link another method in Account.','auth/weak-password':'Use a longer password that meets the project password policy.','auth/popup-closed-by-user':'The sign-in window was closed.','auth/account-exists-with-different-credential':'Sign in using the existing method for that email, then link Google in Login & security.','auth/requires-recent-login':'Confirm your identity again before continuing.','auth/unauthorized-domain':'This website address is not authorised in Firebase Authentication.','auth/operation-not-allowed':'This sign-in or security method is not enabled in Firebase.','auth/unsupported-first-factor':'This sign-in method cannot use this second factor.','auth/unverified-email':'Verify your email before setting up an authenticator.','permission-denied':'Cloud access was denied. Confirm your identity and check the published Firestore rules.','auth/network-request-failed':'The connection failed. Please try again when online.'};return messages[error.code]||String(error.message||'The action could not finish.').replace(/^Firebase: /,'');}
+function updateTrigger(){const node=document.querySelector('.ns-account-trigger');if(!node)return;node.innerHTML=user?`<img src="${escape(avatar(profile))}" alt=""><span>${t('account')}</span>`:`<span>${t('signin')}</span>`;node.setAttribute('aria-label',user?`${t('account')}: ${profile.nickname||user.email||''}`:t('signin'));}
+function applyPreferences(next){prefs=cleanSettings(next);store(prefKey(),prefs);setLanguage(prefs.language);auth.languageCode=prefs.language;const root=document.documentElement;root.dataset.theme=prefs.theme==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):prefs.theme;root.dataset.contrast=prefs.contrast;root.dataset.motion=prefs.lowStim||prefs.motion==='reduce'||(prefs.motion==='system'&&matchMedia('(prefers-reduced-motion: reduce)').matches)?'reduce':'full';root.dataset.lowStim=String(prefs.lowStim);root.dataset.simple=String(prefs.simpleMode);root.dataset.reading=prefs.font;root.dataset.tap=String(prefs.tapControls);root.dataset.visual=prefs.visualMode;root.style.setProperty('--account-text-scale',prefs.textScale/100);root.style.setProperty('--account-line-height',prefs.lineSpacing);document.querySelectorAll('audio,video').forEach(el=>{el.autoplay=false;if(prefs.lowStim||!prefs.sound)el.pause();});translateShell();updateTrigger();window.nsAccountPreferences={...prefs};document.querySelectorAll('iframe.stim-space-frame').forEach(f=>f.contentWindow?.postMessage({type:'ns:preferences',prefs},location.origin));window.dispatchEvent(new CustomEvent('ns:preferences',{detail:prefs}));}
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>applyPreferences(prefs));
+matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',()=>applyPreferences(prefs));
+function stopSubscriptions(){for(const stop of stops)stop();stops=[];sync.end();}
+function rerender(){if(currentRoot&&!editing)renderAccount(currentRoot,activeTab);updateTrigger();}
+export const accountReady=new Promise(resolve=>onAuthStateChanged(auth,async next=>{
+  const previous=user?.uid||null;user=next;
+  if(initialized&&previous!==(next?.uid||null)){stopSubscriptions();ws.scope(next?.uid,sessionStorage.getItem('ns-shared-device')==='yes');document.querySelector('main').textContent='Opening your space…';location.hash=next?'#account':'#home';location.reload();return;}
+  stopSubscriptions();ws.scope(next?.uid,sessionStorage.getItem('ns-shared-device')==='yes');applyPreferences(local(prefKey(),DEFAULTS));ws.locked=!!user&&prefs.sensitiveLock;
+  initialized=true;resolve();updateTrigger();
+  if(!user)return;
+  getDoc(doc(db,'siteAdmins',user.uid)).then(snap=>{staff=snap.exists();rerender();}).catch(()=>{});
+  stops.push(onSnapshot(doc(db,'profiles',user.uid),snap=>{profile=snap.data()||{};updateTrigger();if(activeTab!=='profile'||!editing)rerender();},e=>{backendError=friendly(e);rerender();}));
+  stops.push(onSnapshot(doc(db,'users',user.uid,'settings','account'),snap=>{
+    cloudPrefsLoaded=true;if(snap.exists()){const previousLock=prefs.sensitiveLock;applyPreferences(snap.data());if(prefs.sensitiveLock&&!previousLock)ws.locked=true;}
+    if(sync.uid!==user.uid)sync.start(user.uid);else sync.listen();rerender();
+  },e=>{backendError=friendly(e);rerender();}));
+  stops.push(onSnapshot(doc(db,'accountSecurity',user.uid),async snap=>{const data=snap.data();if(!data)return;if(data.deleting){ws.locked=true;backendError='Account deletion has started. Open Privacy & data to finish it if the process was interrupted.';rerender();return;}const token=await user?.getIdTokenResult();if(!preserveCurrentSession&&token&&(data.revokedAt?.toMillis?.()||0)>=Number(token.claims.auth_time)*1000){await signOut(auth);}},()=>{}));
+  for(const [col,set] of [['devices',v=>devices=v],['notifications',v=>notices=v],['blocks',v=>blocks=v]])stops.push(onSnapshot(collection(db,'users',user.uid,col),snap=>{set(snap.docs.map(d=>({id:d.id,...d.data()})));if(['home','notifications','security','community'].includes(activeTab))rerender();},()=>{}));
+  let id=raw.get('ns-account-device-v2');if(!id){id=crypto.randomUUID();raw.set('ns-account-device-v2',id);}const label=/Android/i.test(navigator.userAgent)?'Android browser':/iPhone|iPad/i.test(navigator.userAgent)?'iPhone / iPad browser':/Edg\//.test(navigator.userAgent)?'Microsoft Edge':/Firefox\//.test(navigator.userAgent)?'Firefox':/Chrome\//.test(navigator.userAgent)?'Chrome':'Web browser';
+  call('accountSession',{id,label}).then(()=>rerender()).catch(()=>rerender());
+}));
+const trigger=document.createElement('button');trigger.type='button';trigger.className='button small ns-account-trigger';trigger.addEventListener('click',()=>user?location.hash='#account':showSignIn());document.querySelector('.app-top-actions')?.prepend(trigger);updateTrigger();
+function newDialog(title,markup){const dialog=document.createElement('dialog');dialog.className='account-dialog';dialog.setAttribute('aria-label',title);dialog.innerHTML=`<div class="account-dialog-content"><button class="account-close" type="button" data-close aria-label="${t('close')}">×</button>${markup}<p class="account-status" role="status" aria-live="polite"></p></div>`;document.body.append(dialog);dialog.querySelector('[data-close]').onclick=()=>dialog.close();dialog.addEventListener('close',()=>dialog.remove(),{once:true});dialog.showModal();return dialog;}
+async function runDialog(dialog,work){const status=dialog.querySelector('.account-status');dialog.querySelectorAll('button').forEach(b=>b.disabled=true);status.textContent='Please wait…';try{await work();if(status.textContent==='Please wait…')status.textContent='Done.';}catch(e){status.textContent=friendly(e);}finally{dialog.querySelectorAll('button').forEach(b=>b.disabled=false);}}
+async function mfaResolve(error){const resolver=getMultiFactorResolver(auth,error);const dialog=newDialog('Authenticator code',`<h2>Authenticator code</h2><form><label>Authenticator<select name="factor">${resolver.hints.filter(h=>h.factorId==='totp').map(h=>`<option value="${escape(h.uid)}">${escape(h.displayName||'Authenticator')}</option>`).join('')}</select></label><label>Six-digit code<input name="code" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" required></label><button class="button">Confirm code</button></form>`);return new Promise((resolve,reject)=>{dialog.addEventListener('close',()=>reject(Error('Verification cancelled.')),{once:true});dialog.querySelector('form').onsubmit=e=>{e.preventDefault();runDialog(dialog,async()=>{const f=e.target;const result=await resolver.resolveSignIn(TotpMultiFactorGenerator.assertionForSignIn(f.elements.factor.value,f.elements.code.value));resolve(result);dialog.close();});};});}
+async function authTask(work){try{return await work();}catch(e){if(e.code==='auth/multi-factor-auth-required')return mfaResolve(e);throw e;}}
+export function showSignIn(){const dialog=newDialog(t('signin'),`<p class="eyebrow">${t('account')}</p><h1>${t('home')}</h1><p>Keep exploring as a guest, or sign in to access your private account.</p><label class="account-check"><input type="checkbox" name="remember" checked> ${t('remember')}</label>${button(t('google'),'google')}<div class="account-divider">or</div><form><label>${t('email')}<input name="email" type="email" autocomplete="email" required></label><label>${t('password')}<input name="password" type="password" autocomplete="current-password" minlength="8" required></label><div class="row"><button class="button" type="submit" name="submit">${t('signin')}</button><button class="button secondary" type="button" data-create>${t('create')}</button></div></form><button type="button" class="account-text-button" data-reset>${t('forgot')}</button><button type="button" class="account-text-button" data-guest>${t('guest')}</button><p class="fine">Guest work stays separate. Saved-work syncing always asks you first. On shared devices, untick “Stay signed in”.</p>`);let create=false;const form=dialog.querySelector('form');const prepare=async()=>{const remember=dialog.querySelector('[name=remember]').checked;sessionStorage.setItem('ns-shared-device',remember?'no':'yes');await setPersistence(auth,remember?browserLocalPersistence:browserSessionPersistence);};
+  dialog.querySelector('[data-action=google]').onclick=()=>runDialog(dialog,async()=>{await prepare();await authTask(()=>signInWithPopup(auth,new GoogleAuthProvider()));});
+  dialog.querySelector('[data-create]').onclick=()=>{create=!create;form.querySelector('[name=submit]').textContent=t(create?'create':'signin');form.elements.password.autocomplete=create?'new-password':'current-password';dialog.querySelector('[data-create]').textContent=t(create?'signin':'create');};
+  form.onsubmit=e=>{e.preventDefault();runDialog(dialog,async()=>{await prepare();if(create){const result=await createUserWithEmailAndPassword(auth,form.elements.email.value.trim(),form.elements.password.value);await sendEmailVerification(result.user);}else await authTask(()=>signInWithEmailAndPassword(auth,form.elements.email.value.trim(),form.elements.password.value));});};
+  dialog.querySelector('[data-reset]').onclick=()=>runDialog(dialog,async()=>{if(!form.elements.email.checkValidity()||!form.elements.email.value)throw Error('Enter your email address first.');await sendPasswordResetEmail(auth,form.elements.email.value.trim());dialog.querySelector('.account-status').textContent='If an account uses that address, a reset email will be sent.';});
+  dialog.querySelector('[data-guest]').onclick=()=>dialog.close();
+}
+async function reauthenticate(){if(!user)throw Error('Sign in first.');const google=user.providerData.some(p=>p.providerId==='google.com'),password=user.providerData.some(p=>p.providerId==='password');const dialog=newDialog('Confirm your identity',`<h2>Confirm your identity</h2><p>This protects sensitive account actions. Your password is sent only to Firebase.</p>${google?button('Confirm with Google','confirm-google'):''}${password?'<form><label>Current password<input name="password" type="password" autocomplete="current-password" required></label><button class="button">Confirm password</button></form>':''}`);return new Promise((resolve,reject)=>{let done=false;dialog.addEventListener('close',()=>{if(!done)reject(Error('Verification cancelled.'));},{once:true});const finish=async work=>{await authTask(work);await user.getIdToken(true);done=true;resolve();dialog.close();};if(google)dialog.querySelector('[data-action=confirm-google]').onclick=()=>runDialog(dialog,()=>finish(()=>reauthenticateWithPopup(user,new GoogleAuthProvider())));if(password)dialog.querySelector('form').onsubmit=e=>{e.preventDefault();runDialog(dialog,()=>finish(()=>reauthenticateWithCredential(user,EmailAuthProvider.credential(user.email,e.target.elements.password.value))));};});}
+async function unlock(){await reauthenticate();ws.locked=false;sync.listen();rerender();}
+function tabs(){return ['home','profile','security','appearance','maps','saved','learning','community','notifications','privacy'];}
+function profileHeading(){return `<div class="account-identity"><img class="account-avatar" src="${escape(avatar(profile))}" alt="Your chosen avatar"><div><p class="eyebrow">${t('home')}</p><h1>${escape(profile.nickname||t('home'))}</h1><p>${profile.handle?'@'+escape(profile.handle)+' · ':''}${user?t(user.emailVerified?'verified':'unverified'):t('local')}</p></div></div>`;}
+export function configureAccountHost(value){host=value;}
+export function renderAccount(root,tab='home'){
+  currentRoot=root;activeTab=tabs().includes(tab)||tab==='moderation'?tab:'home';editing=false;
+  root.innerHTML=`<div class="account-hub"><header class="account-hero">${profileHeading()}<p>${t('welcome')}</p><div class="account-hero-actions">${user?button(t('signout'),'signout',true):button(t('signin'),'signin')}<span class="account-sync-pill" data-sync-state>${escape(user?sync.state:'Local guest saving')}</span></div></header>${backendError?note(backendError,'warning'):''}${!user?note('You are a guest. Your maps and settings stay in this browser. Sign in to choose a nickname, manage account security and enable cross-device saving.'):''}${prefs.language!=='en'?note(t('original')):''}<div class="account-layout"><nav class="account-nav" aria-label="Account settings">${tabs().map(key=>`<a href="#account/${key}" ${key===activeTab?'aria-current="page"':''}>${t(key)}</a>`).join('')}${staff?'<a href="#account/moderation">Staff moderation</a>':''}</nav><section class="account-pane" aria-label="${escape(t(activeTab))}"><h2>${escape(t(activeTab))}</h2><div class="account-pane-body"></div><p class="account-status" role="status" aria-live="polite"></p></section></div></div>`;
+  const pane=root.querySelector('.account-pane-body');
+  const locked=['maps','saved','home','learning'].includes(activeTab)&&ws.locked;
+  if(locked)pane.innerHTML=note('Your saved work is hidden until you confirm your identity. This is an account access check, not encryption of this browser’s storage.')+button('Unlock saved work','unlock');
+  else if(activeTab==='home')renderHome(pane);
+  else if(activeTab==='maps')host.maps?.(pane,{scope:user?'account':'guest',sync:sync.keys.has('ns-personal-maps-v1')});
+  else if(activeTab==='profile')renderProfile(pane);
+  else if(activeTab==='appearance')renderAppearance(pane);
+  else if(activeTab==='security')renderSecurity(pane);
+  else if(activeTab==='saved'||activeTab==='privacy')renderData(pane,activeTab==='privacy');
+  else if(activeTab==='learning')renderLearning(pane);
+  else if(activeTab==='community')renderCommunity(pane);
+  else if(activeTab==='notifications')renderNotifications(pane);
+  else if(activeTab==='moderation')renderModeration(pane);
+  root.querySelectorAll('[data-action]').forEach(el=>el.addEventListener('click',()=>handleAction(el.dataset.action,el)));
+  root.querySelectorAll('[data-draft-delete]').forEach(b=>b.onclick=()=>{const drafts=readWork('ns-account-tool-drafts-v2',{});delete drafts[b.dataset.draftDelete];writeWork('ns-account-tool-drafts-v2',drafts);renderAccount(currentRoot,activeTab);});
+  root.querySelectorAll('form').forEach(f=>{f.addEventListener('input',()=>editing=true);});
+}
+function renderHome(pane){const maps=readWork('ns-personal-maps-v1',[]),drafts=readWork('ns-account-tool-drafts-v2',{}),favourites=readWork('ns-tool-favourites-v1',[]),learning=readWork('ns-account-learning-v2',{});pane.innerHTML=`<div class="account-quick-grid">${[['maps',maps.length],['favourites',favourites.length],['drafts',Object.keys(drafts).length],['learning',Object.values(learning).filter(x=>x.completed).length]].map(([key,count])=>`<a class="account-stat" href="#account/${key==='favourites'||key==='drafts'?'saved':key}"><strong>${count}</strong><span>${t(key)}</span></a>`).join('')}</div><h3>${t('drafts')}</h3>${draftList(drafts)}<h3>${t('maps')}</h3>${maps.slice(0,3).map(m=>`<a class="account-record" href="#account/maps"><b>${escape(m.title||'Saved map')}</b><small>${date(m.savedAt)}</small></a>`).join('')||empty()}<h3>${t('favourites')}</h3>${toolList(favourites.slice(0,6))}${prefs.personalise?recommendations(favourites):''}<p class="fine">Private reflections are never part of your public profile. Your email address is not shared in comments.</p>`;}
+function toolList(ids){return ids.map(id=>{const item=host.tools?.find(x=>x.id===id);return item?`<a class="account-record" href="${escape(item.href)}"><b>${escape(item.title)}</b><small>${escape(item.short||item.format||'')}</small></a>`:'';}).join('')||empty();}
+function draftList(drafts){return Object.entries(drafts).slice(0,8).map(([hash,d])=>`<div class="account-record"><a href="${escape(/^#[a-z0-9-]+(?:\/[^<>]*)?$/i.test(hash)?hash:'#account')}"><b>${escape(d.title||'Unfinished activity')}</b></a><small>${date(d.updatedAt)}</small><button class="chip" data-draft-delete="${escape(hash)}">${t('delete')}</button></div>`).join('')||empty();}
+function recommendations(ids){const favourites=host.tools?.filter(x=>ids.includes(x.id))||[],suggested=(host.tools||[]).filter(x=>!ids.includes(x.id)&&favourites.some(f=>f.group===x.group)).slice(0,3);return suggested.length?`<h3>Related to your bookmarked tools</h3><p class="fine">Based on your tool favourites only, with your permission. Personal reflection text is not analysed.</p>${toolList(suggested.map(x=>x.id))}`:'';}
+function renderProfile(pane){if(!user){pane.innerHTML=note('Sign in to create a profile.')+button(t('signin'),'signin');return;}const next=stamp(profile.nicknameChangedAt)+COOLDOWN_MS,locked=profile.nickname&&Date.now()<next;
+  pane.innerHTML=`<form id="account-profile-form"><label>${t('nickname')}<input name="nickname" value="${escape(profile.nickname||'')}" maxlength="24" minlength="3" required ${locked?'readonly':''} autocomplete="off"></label><p class="fine">3–24 letters, numbers, spaces, underscores or hyphens. Nicknames are unique after spaces and punctuation are removed. Brand, staff and offensive names are reserved.${locked?' You can change yours on '+date(new Date(next).toISOString())+'.':' You can change yours once every 14 days.'}</p><fieldset><legend>${t('avatar')}</legend><div class="account-avatar-grid">${AVATARS.map(id=>`<label title="${id}"><input type="radio" name="avatar" value="${id}" ${id===(profile.avatarId||'base')?'checked':''}><img src="media/avatars/${id}.png" alt="${id.replaceAll('-',' ')}"></label>`).join('')}</div></fieldset><details class="account-upload"><summary>${t('upload')}</summary><label>Choose a PNG, JPEG or WebP image<input type="file" accept="image/png,image/jpeg,image/webp" id="account-avatar-file"></label><canvas width="192" height="192" id="account-avatar-crop" aria-label="Profile picture crop preview"></canvas><label>Zoom<input type="range" id="account-crop-zoom" min="1" max="3" step="0.01" value="1"></label><label>Move horizontally<input type="range" id="account-crop-x" min="-100" max="100" value="0"></label><label>Move vertically<input type="range" id="account-crop-y" min="-100" max="100" value="0"></label><p class="fine">Only the cropped picture is saved. Pictures are public only on a public profile or when you post a comment.</p></details><label>${t('bio')}<textarea name="bio" maxlength="280" rows="3">${escape(profile.bio||'')}</textarea></label><label>${t('pronouns')}<input name="pronouns" value="${escape(profile.pronouns||'')}" maxlength="40"></label><label>${t('visibility')}<select name="visibility"><option value="private" ${profile.visibility!=='public'?'selected':''}>${t('private')}</option><option value="public" ${profile.visibility==='public'?'selected':''}>${t('public')}</option></select></label><p class="fine">A public profile contains only your chosen nickname, avatar, bio and pronouns. Saved work and email stay private.</p><button class="button">${t('save')}</button></form><h3>Account information</h3><dl class="account-details"><dt>Email</dt><dd>${escape(user.email||'—')}</dd><dt>Joined</dt><dd>${date(user.metadata.creationTime)}</dd><dt>Private account ID</dt><dd><code>${escape(user.uid)}</code></dd></dl>${profile.visibility==='public'?`<a href="#profile/${encodeURIComponent(user.uid)}">View my public profile →</a>`:''}`;
+  let image=null,custom=profile.avatarData||'';const canvas=pane.querySelector('canvas'),ctx=canvas.getContext('2d');if(custom){const im=new Image();im.onload=()=>ctx.drawImage(im,0,0,192,192);im.src=custom;}
+  const draw=()=>{if(!image)return;const z=Number(pane.querySelector('#account-crop-zoom').value),scale=Math.max(192/image.width,192/image.height)*z,w=image.width*scale,h=image.height*scale,x=(192-w)/2+Number(pane.querySelector('#account-crop-x').value)/100*(w-192)/2,y=(192-h)/2+Number(pane.querySelector('#account-crop-y').value)/100*(h-192)/2;ctx.fillStyle='#fffdf8';ctx.fillRect(0,0,192,192);ctx.drawImage(image,x,y,w,h);custom=canvas.toDataURL('image/webp',0.78);};
+  pane.querySelector('#account-avatar-file').onchange=async e=>{try{const file=e.target.files[0];if(!file)return;if(!['image/png','image/jpeg','image/webp'].includes(file.type)||file.size>8*1024*1024)throw Error('Choose a PNG, JPEG or WebP smaller than 8 MB.');image?.close?.();image=await createImageBitmap(file);draw();}catch(err){status(friendly(err));}};
+  pane.querySelectorAll('[id^=account-crop-]').forEach(el=>el.oninput=draw);pane.querySelectorAll('[name=avatar]').forEach(el=>el.onchange=()=>{custom='';image?.close?.();image=null;ctx.clearRect(0,0,192,192);});
+  pane.querySelector('form').onsubmit=e=>{e.preventDefault();perform(async()=>{const f=e.target;nicknamePolicy(f.elements.nickname.value);await call('accountProfile',{nickname:f.elements.nickname.value,avatarId:f.elements.avatar.value,avatarData:custom,bio:f.elements.bio.value,pronouns:f.elements.pronouns.value,visibility:f.elements.visibility.value});editing=false;renderAccount(currentRoot,'profile');status('Profile saved.');});};
+}
+function options(name,label,values){return `<label>${escape(label)}<select name="${name}">${values.map(([v,l])=>`<option value="${v}" ${prefs[name]===v?'selected':''}>${escape(l)}</option>`).join('')}</select></label>`;}
+function check(name,label,description=''){return `<label class="account-check"><input type="checkbox" name="${name}" ${prefs[name]?'checked':''}><span>${escape(label)}${description?`<small>${escape(description)}</small>`:''}</span></label>`;}
+function renderAppearance(pane){pane.innerHTML=`<form id="account-preferences-form" class="account-settings-form">${options('theme',t('theme'),[['system',t('system')],['light',t('light')],['dark',t('dark')]])}${options('language',t('language'),[['en','English'],['es','Español'],['fr','Français'],['de','Deutsch']])}<p class="fine">${t('original')}</p>${options('textScale',t('textSize'),[100,110,125,150].map(n=>[n,n+'%']))}${options('contrast',t('contrast'),[['standard',t('standard')],['high',t('high')]])}${options('motion',t('motion'),[['system',t('system')],['reduce',t('reduce')],['full',t('full')]])}${options('font',t('font'),[['system',t('system')],['readable',t('readable')]])}${options('lineSpacing',t('spacing'),[1.6,1.9,2.2].map(n=>[n,String(n)]))}${options('visualMode','Presentation preference',[['balanced','Balanced'],['text','Text first'],['visual','Visual first']])}${check('lowStim',t('lowStim'),'Stops decorative animation, reduces transitions and keeps media from autoplaying.')}${check('sound',t('sound'),'Sounds still require a deliberate start. Turning this off stops active soundscapes.')}${check('simpleMode',t('simple'),'Hides decorative home-page panels and reduces visual extras.')}${check('tapControls',t('tap'),'Highlights existing tap/keyboard alternatives and disables native card dragging.') }<button class="button">${t('save')}</button></form>`;bindSettings(pane);}
+function formSettings(form){const next={...prefs,retentionDays:0,reminders:false,replyNotifications:false,mentions:false};for(const el of form.elements){if(!el.name||!(el.name in DEFAULTS))continue;next[el.name]=el.type==='checkbox'?el.checked:typeof DEFAULTS[el.name]==='number'?Number(el.value):el.value;}return cleanSettings(next);}
+function bindSettings(pane){pane.querySelector('form').onsubmit=e=>{e.preventDefault();perform(async()=>{const next=formSettings(e.target);if(user&&prefs.sensitiveLock&&!next.sensitiveLock)await reauthenticate();if(user)await call('accountSettings',next);applyPreferences(next);editing=false;if(next.sensitiveLock){ws.locked=true;sync.listen();}renderAccount(currentRoot,activeTab);status(user?'Settings saved to your account.':'Settings saved on this device.');});};}
+function renderSecurity(pane){if(!user){pane.innerHTML=note('Sign in to manage your login and security.')+button(t('signin'),'signin');return;}const providers=user.providerData.map(p=>p.providerId),factors=[];pane.innerHTML=`<div class="account-note"><b>${escape(user.email||'')}</b> · ${t(user.emailVerified?'verified':'unverified')}</div><div class="account-action-list">${!user.emailVerified?button('Send verification email','verify',true):''}${button('Refresh verification status','refresh-user',true)}${button('Send password reset email','reset',true)}${button('Change email','email-change',true)}${button(providers.includes('password')?'Change password':'Add email/password sign-in','password-change',true)}${!providers.includes('google.com')?button('Link Google to this account','link-google',true):''}${providers.length>1?providers.map(p=>button('Unlink '+(p==='password'?'email/password':'Google'),'unlink:'+p,true)).join(''):''}</div><p class="fine">Connected methods: ${escape(providers.join(', '))}. Linking methods while signed in keeps them on this same account.</p><h3>Additional authentication</h3>${factors.map(f=>`<div class="account-record"><b>${escape(f.displayName||'Authenticator')}</b><button class="chip" data-action="mfa-remove:${escape(f.uid)}">Remove</button></div>`).join('')||'<p>Use your Google account’s security settings for two-step verification.</p>'}<p class="fine">This free-plan edition uses Google or email/password sign-in. You can enable two-step verification on your Google account through Google. In-app authenticator enrolment is not included.</p><h3>Browsers used with this account</h3>${devices.sort((a,b)=>stamp(b.lastSeen)-stamp(a.lastSeen)).map(d=>`<div class="account-record"><b>${escape(d.label)}</b><small>Last seen ${date(d.lastSeen)}${d.id===raw.get('ns-account-device-v2')?' · this browser':''}</small></div>`).join('')||empty()}<p class="fine">This lists app visits recorded since this update, not every session in your Google account. No location or IP address is collected here.</p><div class="row">${button('End website sessions on all devices','revoke-all',true)}${button('End other website sessions; keep this one','revoke-others',true)}</div><p class="fine">This ends access to Nobody’s Simple account data. Connected browsers sign out when they receive the change. It does not revoke your Google sessions or immediately erase an offline device’s local copy.</p><h3>Recovery</h3><p>For email/password, use the reset email above. For Google sign-in, recover your Google account through Google. A nickname is not a sign-in credential. Before unlinking a provider, make sure another method works.</p>`;}
+function renderData(pane,privacy=false){const values=ws.entries(),guest=ws.guestEntries();pane.innerHTML=`${privacy?`<form id="account-preferences-form">${check('sensitiveLock','Ask me to confirm my identity before opening saved work','Cloud reads require a sign-in from the last five minutes. A local browser copy is not an encrypted vault.')}${check('saveDrafts','Save unfinished activities locally','Applies to supported tool forms. Cloud draft syncing is a separate choice below.')}${check('personalise','Suggest related tools from my favourites','Off by default. Personal reflection text is not analysed.')}${check('moodHistory','Keep an optional local mood history','Off by default. Cloud upload requires selecting mood history below.')}<button class="button">${t('save')}</button></form>`:`<h3>${t('favourites')}</h3>${toolList(readWork('ns-tool-favourites-v1',[]))}<h3>${t('recent')}</h3>${toolList(readWork('ns-tool-recent-v1',[]))}<h3>${t('drafts')}</h3>${draftList(readWork('ns-account-tool-drafts-v2',{}))}`}${user?`<h3>${t('sync')}</h3><p>Account profile and preferences sync automatically. The private work below syncs only after your explicit choice on this device. Selecting “Use account copy” replaces the selected local records. Importing local records can replace an older account copy; review conflicts before continuing.</p><form id="account-sync-form"><fieldset><legend>Choose which private work this device may sync</legend>${Object.entries(CATEGORIES).map(([category,label])=>`<details open><summary>${escape(label)}</summary>${Object.entries(SAVED).filter(([,v])=>v[0]===category).map(([key,[,label]])=>`<label class="account-check"><input type="checkbox" name="syncKey" value="${key}" ${sync.keys.has(key)?'checked':''}>${escape(label)}</label>`).join('')}</details>`).join('')}</fieldset><fieldset><legend>Optional: bring over selected guest work from this browser</legend><p class="fine">Only import work that belongs to you. Guest saving was not account-specific before this update.</p>${guest.map(([key])=>`<label class="account-check"><input type="checkbox" name="guestKey" value="${key}">${escape(SAVED[key][1])}</label>`).join('')||empty()}</fieldset><div class="row"><button class="button" name="mode" value="import">Import selected local work</button><button class="button secondary" name="mode" value="cloud">Use selected account copies</button></div></form>${sync.conflicts.size?`<h3>Changes from another device</h3>${[...sync.conflicts].map(([key])=>`<div class="account-record"><b>${escape(SAVED[key][1])}</b><p>Both devices changed this saved item. Download local data before choosing if you want to keep both copies.</p><button class="chip" data-conflict="${key}" data-choice="local">Keep this device’s copy</button><button class="chip" data-conflict="${key}" data-choice="cloud">Use account copy</button></div>`).join('')}`:''}`:note('Sign in to enable cross-device saving. Guest work stays on this device.')}
+    <h3>Saved records on this device</h3>${values.map(([key,value])=>`<div class="account-record"><b>${escape(SAVED[key][1])}</b><small>${Math.ceil(new TextEncoder().encode(value).length/1024)} KB · ${sync.keys.has(key)?t('cloud'):t('local')}</small><button class="chip" data-work-download="${key}">Download</button><button class="chip" data-work-delete="${key}">${t('delete')}</button></div>`).join('')||empty()}<div class="row">${button('Download this device’s work','local-export',true)}${user?button(t('export'),'account-export',true):''}</div>${privacy?`<h3>Clear data</h3><p>Deleting data from synced categories propagates to other connected devices. Switching off syncing does not erase the copy already in your account.</p><div class="account-action-list">${user?button('Clear this account’s work on this device','clear-local',true):''}${user?button('Delete all private saved work from account','clear-cloud',true)+button('Permanently delete my account','delete-account',true):button('Delete guest work on this device','clear-guest',true)}</div><p class="fine">Data export contains personal reflections. Keep the downloaded file somewhere private. Account deletion removes your identity, profile, saved work, settings, device records and reports, and removes your comments. A minimal deletion marker remains to deny old login tokens access.</p>`:''}`;
+  if(privacy)bindSettings(pane);
+  const form=pane.querySelector('#account-sync-form');if(form)form.onsubmit=e=>{e.preventDefault();perform(async()=>{const keys=[...form.querySelectorAll('[name=syncKey]:checked')].map(x=>x.value),guestKeys=[...form.querySelectorAll('[name=guestKey]:checked')].map(x=>x.value),mode=e.submitter.value;if(mode==='cloud'&&!confirm('Replace the selected saved work on this device with the account copies? Guest work is not removed.'))return;if(mode==='import'&&!confirm('Upload selected personal work to your private account? An existing account copy may be replaced.'))return;const missing=guestKeys.filter(k=>!keys.includes(k));for(const k of missing){const value=raw.get(k);if(value!==null)ws.write(k,value,false,{remote:true});}await sync.configure(keys,mode,guestKeys);editing=false;renderAccount(currentRoot,activeTab);status(sync.state);});};
+  pane.querySelectorAll('[data-conflict]').forEach(b=>b.onclick=()=>{sync.resolve(b.dataset.conflict,b.dataset.choice);});
+  pane.querySelectorAll('[data-work-download]').forEach(b=>b.onclick=()=>download(b.dataset.workDownload+'.json',localStorage.getItem(b.dataset.workDownload)));
+  pane.querySelectorAll('[data-work-delete]').forEach(b=>b.onclick=()=>{if(confirm('Delete this saved item? Synced deletion reaches other connected devices.')){localStorage.removeItem(b.dataset.workDelete);renderAccount(currentRoot,activeTab);}});
+  pane.querySelectorAll('[data-draft-delete]').forEach(b=>b.onclick=()=>{const drafts=readWork('ns-account-tool-drafts-v2',{});delete drafts[b.dataset.draftDelete];writeWork('ns-account-tool-drafts-v2',drafts);renderAccount(currentRoot,activeTab);});
+}
+function renderLearning(pane){const progress=readWork('ns-account-learning-v2',{}),posts=(host.posts||[]).filter(p=>['education','lesson','video'].includes(p.type));pane.innerHTML=`<form id="account-preferences-form">${check('trackLearning','Keep learning progress','Stores pages you open, bookmarks and lessons you explicitly mark complete.')}${options('learningFormat','Preferred format',[['any','Any available format'],['reading','Reading'],['audio','Audio'],['video','Video'],['interactive','Interactive']])}<p class="fine">Formats are offered only where content exists. No streaks or public progress sharing.</p><button class="button">${t('save')}</button></form><h3>Continue learning</h3>${Object.entries(progress).filter(([,p])=>!p.completed).sort(([,a],[,b])=>String(b.updatedAt).localeCompare(String(a.updatedAt))).slice(0,6).map(([id,p])=>`<a class="account-record" href="#post/${encodeURIComponent(id)}"><b>${escape(posts.find(x=>x.id===id)?.title||p.title||'Learning page')}</b><small>${p.bookmarked?'Bookmarked · ':''}${date(p.updatedAt)}</small></a>`).join('')||empty()}<h3>Learning library</h3>${posts.filter(p=>prefs.learningFormat==='any'||prefs.learningFormat==='reading'&&p.type!=='video'||prefs.learningFormat==='video'&&p.type==='video').map(p=>`<a class="account-record" href="#post/${encodeURIComponent(p.id)}"><b>${escape(p.title)}</b><small>${progress[p.id]?.completed?'Completed':progress[p.id]?.bookmarked?'Bookmarked':p.type}</small></a>`).join('')||empty()}<h3>Optional mood history</h3>${readWork('ns-account-mood-v2',[]).slice(-12).reverse().map(m=>`<div class="account-record"><b>${escape(m.value)} / 10</b><small>${date(m.at)} · ${escape(m.title||'Check-in')}</small></div>`).join('')||empty()}`;bindSettings(pane);}
+function renderCommunity(pane){pane.innerHTML=`<p>Your comments use your chosen nickname and avatar. Your private tool answers are never attached to your public identity.</p><form id="account-preferences-form">${options('profileVisibility',t('visibility'),[['private',t('private')],['public',t('public')]])}<button class="button">${t('save')}</button></form><h3>${t('blocked')}</h3>${blocks.map(b=>`<div class="account-record"><code>${escape(b.id)}</code><button class="chip" data-action="unblock:${escape(b.id)}">${t('unblock')}</button></div>`).join('')||empty()}<p class="fine">Blocking hides an account’s comments for you and prevents new direct replies between the accounts. Public comments remain public to other visitors. Comments can be edited for 15 minutes and are reviewed before publication.</p>`;bindSettings(pane);}
+function renderNotifications(pane){const updates=prefs.siteUpdates?(host.posts||[]).filter(p=>p.type==='announcement').slice(0,5):[];pane.innerHTML=`<form id="account-preferences-form">${check('siteUpdates','Show site updates in my account')}<label>Calendar reminder time<input type="time" name="reminderTime" value="${prefs.reminderTime}"></label><label>Time zone<input name="timeZone" value="${escape(prefs.timeZone)}" required></label><button class="button">${t('save')}</button></form>${button('Download a recurring calendar reminder','calendar',true)}<p class="fine">The calendar file lets your own calendar handle reminders. This free-plan edition does not send scheduled emails, background push alerts or reply/mention notifications.</p>${updates.length?'<h3>Site updates</h3>'+updates.map(p=>`<a class="account-record" href="#post/${encodeURIComponent(p.id)}">${escape(p.title)}</a>`).join(''):empty()}`;bindSettings(pane);}
+function safeHash(value){return typeof value==='string'&&/^#(?:account(?:\/[a-z]+)?|post\/[a-zA-Z0-9_%.-]+)$/.test(value)?value:'#account';}
+function status(message){currentRoot?.querySelector('.account-pane>.account-status')?.replaceChildren(document.createTextNode(message));}
+async function perform(work){try{status('Please wait…');await work();}catch(e){status(friendly(e));} }
+async function handleAction(action,element){if(action==='signin'){showSignIn();return;}await perform(async()=>{
+  if(action==='unlock')await unlock();
+  else if(action==='signout'){await sync.flush();if(pendingCount()&&!confirm('Some changes have not reached your account yet. They remain in this browser for your next sign-in. Sign out now?'))return;await signOut(auth);}
+  else if(action==='verify'){await sendEmailVerification(user);status('Verification email sent.');}
+  else if(action==='refresh-user'){await reload(user);await user.getIdToken(true);renderAccount(currentRoot,activeTab);}
+  else if(action==='reset'){if(!user.email)throw Error('No email is linked to this account.');await sendPasswordResetEmail(auth,user.email);status('If password sign-in is available, a reset email will be sent.');}
+  else if(action==='email-change')await changeCredential('email');
+  else if(action==='password-change')await changeCredential('password');
+  else if(action==='link-google'){await reauthenticate();await linkWithPopup(user,new GoogleAuthProvider());renderAccount(currentRoot,activeTab);status('Google is linked to this account.');}
+  else if(action.startsWith('unlink:')){if(user.providerData.length<2)throw Error('Keep at least one sign-in method.');if(!confirm('Remove this sign-in method? Confirm another method works first.'))return;await reauthenticate();await unlink(user,action.slice(7));renderAccount(currentRoot,activeTab);}
 
-dialog.addEventListener("click", (event) => {
-  if (event.target === dialog || event.target.closest("[data-close]")) dialog.close();
-});
+  else if(action==='revoke-all'||action==='revoke-others'){await reauthenticate();preserveCurrentSession=action==='revoke-others';try{const data=await call('accountRevoke');if(action==='revoke-all'){await signOut(auth);}else{await new Promise(r=>setTimeout(r,Math.max(0,(data.revokeTime+1)*1000-Date.now()+100)));await reauthenticate();await user.getIdToken(true);status('Other website sessions have ended. Reopening this browser with a fresh session.');location.reload();}}catch(e){if(preserveCurrentSession)await signOut(auth);throw e;}finally{preserveCurrentSession=false;}}
+  else if(action==='local-export')download('nobodyssimple-device-work.json',JSON.stringify({exportedAt:new Date().toISOString(),workspace:user?'account':'guest',items:Object.fromEntries(ws.entries())},null,2));
+  else if(action==='account-export'){await reauthenticate();const data=await call('accountExport',{part:'metadata'});data.localWork=Object.fromEntries(ws.entries());data.collections={};for(const part of ['savedWork','settings','devices','notifications','blocks','comments','reports']){const list=[];let after='';do{const page=await call('accountExport',{part,after});list.push(...page.items);after=page.next;}while(after);data.collections[part]=list;}download('nobodyssimple-account-export.json',JSON.stringify(data,null,2));status('Export downloaded. Keep it somewhere private.');}
+  else if(action==='clear-local'){if(!confirm('Clear this account’s local work without deleting cloud copies? Unsynced work will be lost.'))return;sync.end();for(const key of Object.keys(SAVED))ws.write(key,'',true,{remote:true});raw.remove('ns-account-pending-v2:'+user.uid);raw.remove('ns-account-sync-v2:'+user.uid);sync.start(user.uid);renderAccount(currentRoot,activeTab);}
+  else if(action==='clear-guest'){if(confirm('Delete all guest work from this browser? This cannot be undone.')){for(const key of Object.keys(SAVED))localStorage.removeItem(key);renderAccount(currentRoot,activeTab);}}
+  else if(action==='clear-cloud'){await reauthenticate();if(!confirm('Delete all private saved work in this account and connected devices? This cannot be undone.'))return;await call('accountClearWork');for(const key of Object.keys(SAVED))ws.write(key,'',true,{remote:true});sync.pending={};sync.persist();renderAccount(currentRoot,activeTab);}
+  else if(action==='delete-account')await deleteAccountFlow();
+  else if(action.startsWith('unblock:')){await call('accountBlock',{target:action.slice(8),block:false});status('Account unblocked.');}
+  else if(action.startsWith('notice:')){await call('accountNotice',{id:action.slice(7)});}
+  else if(action==='calendar'){const [hour,minute]=prefs.reminderTime.split(':');const start=new Date();start.setDate(start.getDate()+1);start.setHours(Number(hour),Number(minute),0,0);const utc=start.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z');const dayParts=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:prefs.timeZone,year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(start).map(p=>[p.type,p.value]));const localStart=`${dayParts.year}${dayParts.month}${dayParts.day}T${hour}${minute}00`;download('nobodyssimple-reminder.ics',`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//Nobodys Simple//Optional reminder//EN\r\nBEGIN:VEVENT\r\nUID:${crypto.randomUUID()}@nobodyssimple.com\r\nDTSTAMP:${utc}\r\nDTSTART;TZID=${prefs.timeZone}:${localStart}\r\nDURATION:PT10M\r\nRRULE:FREQ=DAILY\r\nSUMMARY:Optional Nobody's Simple learning time\r\nDESCRIPTION:Return to a saved map or learning activity when it suits you.\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n`,'text/calendar');}
+});}
+async function changeCredential(kind){await reauthenticate();const dialog=newDialog(kind==='email'?'Change email':'Change password',`<h2>${kind==='email'?'Change email':'Change password'}</h2><form><label>${kind==='email'?'New email address':'New password'}<input name="value" type="${kind==='email'?'email':'password'}" ${kind==='password'?'minlength="8" autocomplete="new-password"':'autocomplete="email"'} required></label><button class="button">Continue</button></form>`);dialog.querySelector('form').onsubmit=e=>{e.preventDefault();runDialog(dialog,async()=>{const value=e.target.elements.value.value;if(kind==='email'){await verifyBeforeUpdateEmail(user,value);dialog.querySelector('form').remove();dialog.querySelector('.account-status').textContent='Check the new email address for the verification link.';}else{if(user.providerData.some(p=>p.providerId==='password'))await updatePassword(user,value);else await linkWithCredential(user,EmailAuthProvider.credential(user.email,value));dialog.close();status('Password sign-in updated.');}});};}
 
-function safeText(value) {
-  return String(value ?? "").replace(/[&<>"']/g, (char) => ({
-    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
-  })[char]);
-}
-function friendlyError(error) {
-  const messages = {
-    "auth/invalid-email": "Enter a valid email address.",
-    "auth/invalid-credential": "That email and password combination was not recognised.",
-    "auth/email-already-in-use": "An account already uses that email. Try signing in.",
-    "auth/weak-password": "Choose a password with at least 6 characters.",
-    "auth/popup-closed-by-user": "Google sign-in was closed before it finished.",
-    "auth/unauthorized-domain": "Add nobodyssimple.com under Firebase Authentication → Settings → Authorized domains.",
-    "permission-denied": "Firestore rejected this request. Check that the security rules have been published.",
-    "unavailable": "Firebase could not be reached. Check your internet connection and try again.",
-  };
-  return messages[error?.code] || "That action did not finish. Check the Firebase setup and try again.";
-}
-function localSavedEntries() {
-  return [...savedKeys].flatMap((key) => {
-    try {
-      const value = localStorage.getItem(key);
-      return value === null ? [] : [[key, value]];
-    } catch { return []; }
-  });
-}
-function savedWork(uid) {
-  return collection(db, "users", uid, "savedWork");
-}
-async function fetchCloudItems(uid) {
-  const snapshot = await getDocs(savedWork(uid));
-  const items = new Map();
-  snapshot.forEach((item) => {
-    let key;
-    try { key = decodeURIComponent(item.id); } catch { return; }
-    if (savedKeys.has(key)) items.set(key, item.data());
-  });
-  return items;
-}
-async function saveEntries(uid, entries) {
-  if (!entries.length) return;
-  const batch = writeBatch(db);
-  for (const [key, value] of entries) {
-    if (value.length > 850000) throw new Error("A saved item is too large to sync. Keep it on this device for now.");
-    batch.set(doc(db, "users", uid, "savedWork", encodeURIComponent(key)), {
-      value, deleted: false, updatedAt: serverTimestamp(),
-    });
-  }
-  await batch.commit();
-}
-function watchCloud(uid) {
-  stopCloudListener?.();
-  stopCloudListener = onSnapshot(savedWork(uid), (snapshot) => {
-    applyingCloudData = true;
-    try {
-      for (const item of snapshot.docs) {
-        let key;
-        try { key = decodeURIComponent(item.id); } catch { continue; }
-        if (!savedKeys.has(key)) continue;
-        const record = item.data();
-        if (record.deleted) localStorage.removeItem(key);
-        else if (typeof record.value === "string") localStorage.setItem(key, record.value);
-      }
-    } finally {
-      queueMicrotask(() => { applyingCloudData = false; });
+async function deleteAccountFlow(){await reauthenticate();const uid=user.uid;const dialog=newDialog('Delete account',`<h2>Permanently delete your account?</h2><p>This removes your sign-in account, private cloud data, nickname reservations and comments. Keep this page open until it finishes. If interrupted, sign in again, open Privacy & data and repeat deletion. A browser that is offline may retain an old local copy until it reconnects. Export anything you want to keep first.</p><form><label>Type DELETE to confirm<input name="confirmation" autocomplete="off" pattern="DELETE" required></label><button class="button danger">Delete account permanently</button></form>`);dialog.querySelector('form').onsubmit=e=>{e.preventDefault();runDialog(dialog,async()=>{await call('accountDelete',{confirmation:e.target.elements.confirmation.value});ws.clearUser(uid);dialog.close();if(auth.currentUser)await signOut(auth);});};}
+function download(name,content,type='application/json'){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([content],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+export async function renderPublicProfile(root,uid){currentRoot=null;root.innerHTML='<div class="wrap"><h1>Profile</h1><p>Loading…</p></div>';try{if(!/^[a-zA-Z0-9_-]{1,128}$/.test(uid))throw Error();const snap=await getDoc(doc(db,'profiles',uid)),p=snap.data();if(!p||p.visibility!=='public')throw Error();root.innerHTML=`<div class="wrap account-public-profile"><img class="account-avatar" src="${escape(avatar(p))}" alt="Chosen avatar"><h1>${escape(p.nickname)}</h1><p>@${escape(p.handle)}</p><p>${escape(p.pronouns)}</p><p>${escape(p.bio)}</p><a href="#home">Back to the site</a></div>`;}catch{root.innerHTML='<div class="wrap"><h1>This profile is private or unavailable.</h1><a href="#home">Back to the site</a></div>';}}
+
+// Route integration: real saved records, learning controls and opt-in form drafts.
+let routeCleanup=()=>{},draftTimer=0;
+export function enhanceAccountRoute(root,name,id){routeCleanup();routeCleanup=()=>{};if(name!=='account')currentRoot=null;translateShell();if(prefs.tapControls)root.querySelectorAll('[draggable=true]').forEach(el=>el.draggable=false);root.querySelectorAll('iframe.stim-space-frame').forEach(frame=>frame.addEventListener('load',()=>frame.contentWindow.postMessage({type:'ns:preferences',prefs},location.origin),{once:true}));
+  if(name==='post'){
+    const p=(host.posts||[]).find(p=>p.id===id);if(p){const controls=document.createElement('section');controls.className='account-learning-controls';controls.innerHTML=button(t('bookmark'),'bookmark',true)+button(t('complete'),'complete',true)+'<span role="status"></span>';root.querySelector('article')?.append(controls);
+      const record=()=>readWork('ns-account-learning-v2',{});const update=()=>{const d=record()[id]||{};controls.querySelector('[data-action=bookmark]').textContent=d.bookmarked?'Remove bookmark':t('bookmark');controls.querySelector('[data-action=complete]').textContent=d.completed?'Mark unfinished':t('complete');};
+      if(prefs.trackLearning){const all=record();all[id]={...all[id],title:p.title,lastOpened:new Date().toISOString(),updatedAt:new Date().toISOString()};writeWork('ns-account-learning-v2',all);}update();
+      controls.querySelectorAll('button').forEach(b=>b.onclick=()=>{if(ws.locked){controls.querySelector('span').textContent='Unlock saved work in Account first.';return;}const all=record(),key=b.dataset.action==='bookmark'?'bookmarked':'completed';all[id]={...all[id],[key]:!all[id]?.[key],title:p.title,updatedAt:new Date().toISOString()};writeWork('ns-account-learning-v2',all);update();controls.querySelector('span').textContent=sync.keys.has('ns-account-learning-v2')?'Saved; syncing to your account.':'Saved on this device.';});
+      if(p.type==='blog'||p.type==='education')mountComments(root,id);
     }
-  }, (error) => console.warn("Nobody's Simple saved-work sync stopped:", error));
+  }
+  if(!['tool','play','guided','questions','compass','personality','systems','big-five'].includes(name)||!prefs.saveDrafts||ws.locked)return;
+  const hash=location.hash;let saved=readWork('ns-account-tool-drafts-v2',{})[hash],restoring=false;
+  const fields=()=>[...root.querySelectorAll('input,textarea,select')].filter(x=>!['password','email','file','hidden','submit','button'].includes(x.type)&&!x.closest('.account-draft-banner')&&!x.autocomplete?.includes('password'));
+  const capture=()=>{if(restoring||location.hash!==hash)return;const all=readWork('ns-account-tool-drafts-v2',{}),values=fields().slice(0,150).map((el,index)=>({id:el.id,name:el.name,index,tag:el.tagName,type:el.type,value:el.type==='checkbox'||el.type==='radio'?el.checked:el.value}));if(!values.length)return;all[hash]={title:root.querySelector('h1')?.textContent?.trim()||name,updatedAt:new Date().toISOString(),fields:values};writeWork('ns-account-tool-drafts-v2',all);};
+  const onInput=()=>{clearTimeout(draftTimer);draftTimer=setTimeout(()=>{try{capture();}catch(error){console.warn('Draft could not be saved',error.name);}},450);};root.addEventListener('input',onInput);root.addEventListener('change',onInput);routeCleanup=()=>{clearTimeout(draftTimer);root.removeEventListener('input',onInput);root.removeEventListener('change',onInput);};
+  if(saved?.fields?.length){const banner=document.createElement('div');banner.className='account-draft-banner account-note';banner.innerHTML=`<span>There is an unfinished activity from ${date(saved.updatedAt)}.</span><button class="chip" data-resume>${t('resume')}</button><button class="chip" data-discard>Discard draft</button><p class="fine">Form answers can be restored. Freehand drawings and temporary activity states are not captured by this form draft.</p>`;root.prepend(banner);banner.querySelector('[data-resume]').onclick=()=>{restoring=true;for(const field of saved.fields){const all=fields(),el=field.id?all.find(x=>x.id===field.id):field.name?(all[field.index]?.name===field.name?all[field.index]:all.find(x=>x.name===field.name&&x.type===field.type)):all[field.index];if(!el||el.tagName!==field.tag||el.type!==field.type)continue;if(['checkbox','radio'].includes(el.type))el.checked=!!field.value;else el.value=String(field.value??'');el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}));}restoring=false;banner.remove();};banner.querySelector('[data-discard]').onclick=()=>{const all=readWork('ns-account-tool-drafts-v2',{});delete all[hash];writeWork('ns-account-tool-drafts-v2',all);banner.remove();};}
 }
-function queueCloudWrite(key, value, deleted = false) {
-  if (!currentUser || applyingCloudData || !savedKeys.has(key)) return;
-  try {
-    if (localStorage.getItem(preferenceKey(currentUser.uid)) !== "enabled") return;
-  } catch { return; }
-  pendingWrites.set(key, { value, deleted });
-  clearTimeout(writeTimer);
-  writeTimer = setTimeout(async () => {
-    const uid = currentUser?.uid;
-    const entries = [...pendingWrites.entries()];
-    pendingWrites.clear();
-    if (!uid || !entries.length) return;
-    const batch = writeBatch(db);
-    for (const [changedKey, change] of entries) {
-      const ref = doc(db, "users", uid, "savedWork", encodeURIComponent(changedKey));
-      if (change.deleted) batch.set(ref, { deleted: true, updatedAt: serverTimestamp() });
-      else if (change.value.length <= 850000) batch.set(ref, { value: change.value, deleted: false, updatedAt: serverTimestamp() });
-    }
-    try { await batch.commit(); }
-    catch (error) { console.warn("Saved work could not sync:", error); }
-  }, 500);
-}
-function installStorageSync() {
-  const originalSet = Storage.prototype.setItem;
-  const originalRemove = Storage.prototype.removeItem;
-  Storage.prototype.setItem = function(key, value) {
-    originalSet.call(this, key, value);
-    if (this === localStorage) queueCloudWrite(String(key), String(value));
+window.addEventListener('ns:mood',event=>{if(!prefs.moodHistory||ws.locked)return;const value=Number(event.detail?.value);if(!Number.isFinite(value)||value<0||value>10)return;const history=readWork('ns-account-mood-v2',[]);history.push({value,at:new Date().toISOString(),title:document.querySelector('main h1')?.textContent||'Check-in'});writeWork('ns-account-mood-v2',history.slice(-365));});
+
+let commentStops=[];
+function stopComments(){commentStops.forEach(s=>s());commentStops=[];}
+window.addEventListener('hashchange',stopComments);
+export function mountComments(root,postId){stopComments();const section=document.createElement('section');section.className='account-comments wrap';section.innerHTML=`<h2>Discussion</h2><p>Comments are public after staff review. Use a nickname; do not include private information about yourself or others. Links are not allowed.</p><div class="account-comment-list"></div>${user?`<form class="account-comment-form"><label>Your comment<textarea name="body" minlength="2" maxlength="2000" rows="4" required></textarea></label><input name="commentId" type="hidden"><input name="parentId" type="hidden"><p class="fine" data-reply-label></p><button class="button">Submit for moderation</button><p role="status"></p></form>`:`<button class="button" data-login>${t('signin')} to comment</button>`}`;root.append(section);let approved=[],own=[];
+  const render=()=>{const all=[...new Map([...approved,...own].map(c=>[c.id,c])).values()].filter(c=>c.status!=='deleted'&&!blocks.some(b=>b.id===c.authorUid)).sort((a,b)=>stamp(a.createdAt)-stamp(b.createdAt));section.querySelector('.account-comment-list').innerHTML=all.map(c=>`<article class="account-comment"><img src="${escape(avatar(c))}" alt=""><div><b>${escape(c.nickname)}</b><small>${date(c.createdAt)}${c.status!=='approved'?' · '+escape(c.status):''}${c.parentId?' · reply':''}</small><p>${escape(c.body)}</p>${c.moderationReason&&c.authorUid===user?.uid?`<p class="fine">${escape(c.moderationReason)}</p>`:''}<div class="row">${user&&c.status==='approved'?`<button class="chip" data-reply="${c.id}">Reply</button>`:''}${user&&c.authorUid===user.uid?`${Date.now()-stamp(c.createdAt)<900000?`<button class="chip" data-edit="${c.id}">Edit</button>`:''}<button class="chip" data-delete="${c.id}">Delete</button>`:user&&c.status==='approved'?`<button class="chip" data-report="${c.id}">Report</button><button class="chip" data-block="${escape(c.authorUid)}">Block account</button>`:''}</div></div></article>`).join('')||empty();
+    const form=section.querySelector('form');section.querySelectorAll('[data-reply]').forEach(b=>b.onclick=()=>{const c=all.find(x=>x.id===b.dataset.reply);form.elements.parentId.value=c.id;form.querySelector('[data-reply-label]').textContent='Replying to '+c.nickname;form.elements.body.focus();});
+    section.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>{const c=all.find(x=>x.id===b.dataset.edit);form.elements.body.value=c.body;form.elements.commentId.value=c.id;form.elements.parentId.value=c.parentId||'';form.elements.body.focus();});
+    section.querySelectorAll('[data-delete]').forEach(b=>b.onclick=async()=>{if(!confirm('Delete your comment?'))return;try{await call('communityDelete',{id:b.dataset.delete});}catch(e){alert(friendly(e));}});
+    section.querySelectorAll('[data-report]').forEach(b=>b.onclick=async()=>{const reason=prompt('Why are you reporting this comment?');if(!reason)return;try{await call('communityReport',{id:b.dataset.report,reason});alert('Report sent to staff.');}catch(e){alert(friendly(e));}});
+    section.querySelectorAll('[data-block]').forEach(b=>b.onclick=async()=>{if(!confirm('Hide this account’s comments and prevent direct replies between your accounts?'))return;try{await call('accountBlock',{target:b.dataset.block,block:true});section.querySelectorAll(`[data-block="${b.dataset.block}"]`).forEach(x=>x.closest('article').remove());}catch(e){alert(friendly(e));}});
   };
-  Storage.prototype.removeItem = function(key) {
-    originalRemove.call(this, key);
-    if (this === localStorage) queueCloudWrite(String(key), "", true);
-  };
+  commentStops.push(onSnapshot(query(collection(db,'comments'),where('postId','==',postId),where('status','==','approved'),limit(200)),s=>{approved=s.docs.map(d=>({id:d.id,...d.data()}));render();},()=>{section.querySelector('.account-comment-list').textContent='Discussion is unavailable. Check your connection and confirm the free-plan Firestore rules have been published.';}));
+  if(user)commentStops.push(onSnapshot(query(collection(db,'comments'),where('postId','==',postId),where('authorUid','==',user.uid),limit(200)),s=>{own=s.docs.map(d=>({id:d.id,...d.data()}));render();},()=>{}));
+  section.querySelector('[data-login]')?.addEventListener('click',showSignIn);
+  const form=section.querySelector('form');if(form)form.onsubmit=async e=>{e.preventDefault();const submit=form.querySelector('button');submit.disabled=true;try{await call('communityComment',{postId,body:form.elements.body.value,id:form.elements.commentId.value||undefined,parentId:form.elements.parentId.value||''});form.reset();form.querySelector('[data-reply-label]').textContent='';form.querySelector('[role=status]').textContent='Submitted for moderation. Only you and staff can see it until approved.';}catch(err){form.querySelector('[role=status]').textContent=friendly(err);}finally{submit.disabled=false;}};
 }
-async function enableSync(mode) {
-  const user = currentUser;
-  if (!user) throw new Error("Sign in before turning on sync.");
-  const local = localSavedEntries();
-  const remote = await fetchCloudItems(user.uid);
-  if (mode === "import") {
-    const combined = new Map(remote);
-    for (const entry of local) combined.set(entry[0], { value: entry[1], deleted: false });
-    await saveEntries(user.uid, [...combined.entries()].filter(([, record]) => !record.deleted).map(([key, record]) => [key, record.value]));
-  } else {
-    applyingCloudData = true;
-    try {
-      for (const key of savedKeys) localStorage.removeItem(key);
-      for (const [key, record] of remote) {
-        if (!record.deleted && typeof record.value === "string") localStorage.setItem(key, record.value);
-      }
-    } finally { applyingCloudData = false; }
-  }
-  localStorage.setItem(preferenceKey(user.uid), "enabled");
-  watchCloud(user.uid);
-}
-function syncMarkup() {
-  let enabled = false;
-  try { enabled = localStorage.getItem(preferenceKey(currentUser.uid)) === "enabled"; } catch {}
-  if (enabled) return `
-    <section class="ns-sync-card"><p class="ns-eyebrow">Private saved-work sync</p>
-      <h2>Sync is on in this browser</h2>
-      <p>Your saved tools, maps, notes, questionnaire results and preferences can sync to this account. Other devices will ask before they sync.</p>
-      <button class="ns-btn secondary" type="button" data-sync-off>Turn off sync in this browser</button>
-    </section>`;
-  return `
-    <section class="ns-sync-card"><p class="ns-eyebrow">Private saved-work sync</p>
-      <h2>Choose how to begin</h2>
-      <p>Guest saving stays on this device. If you turn on sync, the selected saved work below—including personal reflections and questionnaire results—will be stored in your private account for use on other devices.</p>
-      <div class="ns-sync-actions">
-        <button class="ns-btn" type="button" data-sync-choice="import">Bring over this browser’s saved work</button>
-        <button class="ns-btn secondary" type="button" data-sync-choice="fresh">Use the saved work already in my account</button>
-      </div>
-    </section>`;
-}
-function renderDialog() {
-  if (currentUser) {
-    const emailLogin = currentUser.providerData.some((provider) => provider.providerId === "password");
-    dialog.innerHTML = `
-      <div class="ns-account-inner"><button class="ns-account-close" type="button" data-close aria-label="Close">×</button>
-        <p class="ns-eyebrow">Your account</p><h1>Welcome back.</h1>
-        <p>${safeText(currentUser.email || "Signed in with Google")}${currentUser.emailVerified ? " · Email verified" : " · Email not verified"}</p>
-        ${emailLogin && !currentUser.emailVerified ? '<p>Check your inbox for the verification link. You can use the site while you wait.</p><button class="ns-btn secondary" type="button" data-resend-verification>Resend verification email</button>' : ""}
-        ${syncMarkup()}
-        <button class="ns-btn secondary" type="button" data-sign-out>Sign out</button>
-        <p class="ns-small">Firebase handles sign-in; Nobody’s Simple does not store your password. Saved work stays on this device unless you choose to sync it.</p>
-      </div>`;
-    dialog.querySelector("[data-sign-out]")?.addEventListener("click", () => signOut(auth));
-    dialog.querySelector("[data-resend-verification]")?.addEventListener("click", async (event) => {
-      try { await sendEmailVerification(currentUser); event.currentTarget.textContent = "Verification email sent"; }
-      catch { event.currentTarget.textContent = "Could not send yet. Try again in a moment."; }
-    });
-    dialog.querySelector("[data-sync-off]")?.addEventListener("click", () => {
-      localStorage.removeItem(preferenceKey(currentUser.uid));
-      stopCloudListener?.();
-      stopCloudListener = null;
-      renderDialog();
-    });
-    dialog.querySelectorAll("[data-sync-choice]").forEach((button) => button.addEventListener("click", async () => {
-      const mode = button.dataset.syncChoice;
-      const message = mode === "import"
-        ? "This uploads saved work from this browser—including personal reflections and questionnaire results—to your private account. Continue?"
-        : "This replaces saved work in this browser with the saved work in your account. Continue?";
-      if (!window.confirm(message)) return;
-      button.disabled = true;
-      try { await enableSync(mode); renderDialog(); }
-      catch (error) {
-        button.disabled = false;
-        const note = document.createElement("p");
-        note.textContent = error.message?.startsWith("A saved item") ? error.message : friendlyError(error);
-        dialog.querySelector(".ns-sync-card")?.append(note);
-      }
-    }));
-    return;
-  }
-  dialog.innerHTML = `
-    <div class="ns-account-inner"><button class="ns-account-close" type="button" data-close aria-label="Close">×</button>
-      <p class="ns-eyebrow">Your account</p><h1>Save your work<br>across devices.</h1>
-      <p>Sign in, or close this window to continue as a guest. Guest saving stays in this browser.</p>
-      <section class="ns-account-card">
-        <button class="ns-btn ns-full" type="button" data-google>Continue with Google</button>
-        <p class="ns-divider">or use email</p>
-        <div class="ns-mode"><button type="button" data-mode="signin" class="active">Sign in</button><button type="button" data-mode="create">Create account</button></div>
-        <form data-form><label>Email address<input name="email" type="email" autocomplete="email" required></label>
-          <label>Password<input name="password" type="password" minlength="6" autocomplete="current-password" required></label>
-          <button class="ns-btn ns-full" type="submit" data-submit>Sign in</button>
-          <button class="ns-reset" type="button" data-reset>Forgot password? Enter your email above first.</button>
-        </form>
-        <p class="ns-status" role="status" aria-live="polite"></p>
-      </section>
-      <p class="ns-small">You can keep using the site as a guest. Nobody’s Simple does not receive or store your password.</p>
-    </div>`;
-  const form = dialog.querySelector("[data-form]");
-  const status = dialog.querySelector(".ns-status");
-  let mode = "signin";
-  dialog.querySelectorAll("[data-mode]").forEach((button) => button.addEventListener("click", () => {
-    mode = button.dataset.mode;
-    dialog.querySelectorAll("[data-mode]").forEach((item) => item.classList.toggle("active", item === button));
-    dialog.querySelector("[data-submit]").textContent = mode === "create" ? "Create account" : "Sign in";
-    form.elements.password.autocomplete = mode === "create" ? "new-password" : "current-password";
-  }));
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    status.textContent = "Please wait…";
-    try {
-      if (mode === "create") {
-        const result = await createUserWithEmailAndPassword(auth, form.elements.email.value.trim(), form.elements.password.value);
-        await sendEmailVerification(result.user);
-      } else {
-        await signInWithEmailAndPassword(auth, form.elements.email.value.trim(), form.elements.password.value);
-      }
-    } catch (error) { status.textContent = friendlyError(error); }
-  });
-  dialog.querySelector("[data-google]").addEventListener("click", async () => {
-    status.textContent = "Opening Google sign-in…";
-    try { await signInWithPopup(auth, new GoogleAuthProvider()); }
-    catch (error) { status.textContent = friendlyError(error); }
-  });
-  dialog.querySelector("[data-reset]").addEventListener("click", async () => {
-    const email = form.elements.email.value.trim();
-    if (!email) { status.textContent = "Enter your email address above first."; return; }
-    try {
-      await sendPasswordResetEmail(auth, email);
-      status.textContent = "If an account uses that address, Firebase will send a password-reset email.";
-    } catch (error) { status.textContent = friendlyError(error); }
-  });
-}
-trigger.textContent = "Sign in";
-installStorageSync();
-onAuthStateChanged(auth, (user) => {
-  currentUser = user;
-  trigger.textContent = user ? "Account" : "Sign in";
-  if (user) {
-    try {
-      if (localStorage.getItem(preferenceKey(user.uid)) === "enabled") watchCloud(user.uid);
-    } catch {}
-  } else {
-    stopCloudListener?.();
-    stopCloudListener = null;
-  }
-  if (dialog.open) renderDialog();
-});
-dialog.addEventListener("close", () => {});
-dialog.addEventListener("cancel", () => {});
-dialog.addEventListener("click", (event) => {
-  if (event.target.closest("[data-close]")) dialog.close();
-});
+async function renderModeration(pane){if(!staff){pane.innerHTML=note('Staff access required.');return;}pane.innerHTML=button('Confirm identity and load review queue','moderate-load',true);pane.querySelector('button').onclick=()=>perform(async()=>{await reauthenticate();const queue=await call('communityModerate',{action:'list'});pane.innerHTML=`<h3>Pending comments</h3>${queue.comments.map(c=>`<article class="account-record"><b>${escape(c.nickname)}</b><p>${escape(c.body)}</p><button class="chip" data-moderate="${c.id}" data-state="approved">Approve</button><button class="chip" data-moderate="${c.id}" data-state="rejected">Reject</button></article>`).join('')||empty()}<h3>Reports</h3>${queue.reports.map(r=>`<article class="account-record"><b>Comment ${escape(r.commentId)}</b><p>${escape(r.reason)}</p><button class="chip" data-reject="${escape(r.commentId)}">Remove reported comment</button><button class="chip" data-resolve="${escape(r.id)}">Resolve report</button></article>`).join('')||empty()}`;pane.querySelectorAll('[data-moderate],[data-reject],[data-resolve]').forEach(b=>b.onclick=()=>perform(async()=>{if(b.dataset.resolve)await call('communityModerate',{action:'resolveReport',id:b.dataset.resolve});else{const state=b.dataset.state||'rejected',reason=state==='rejected'?prompt('Reason for the author (optional):')||'':'';await call('communityModerate',{id:b.dataset.moderate||b.dataset.reject,status:state,reason});}b.closest('article').remove();status('Moderation saved.');}));});}
+
+setInterval(async()=>{if(!user||!prefs.sensitiveLock||ws.locked)return;try{const token=await user.getIdTokenResult();if(Date.now()/1000-Number(token.claims.auth_time)>=300){ws.locked=true;sync.listen();if(currentRoot)renderAccount(currentRoot,activeTab);else location.hash='#account';}}catch{}},15000);

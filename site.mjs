@@ -1,3 +1,5 @@
+import { accountReady, configureAccountHost, renderAccount, renderPublicProfile, enhanceAccountRoute, accountState } from './accounts.mjs';
+import { tools as accountTools } from './tool-catalog.mjs';
 import { curriculum, emotions, questions } from "./data.mjs";
 import { crashCourseTopics, crashEmergencyTopics } from "./crash-topics.mjs";
 import { quoteDeckExtended } from "./quote-content.mjs";
@@ -12,6 +14,7 @@ import {
 } from "./core.mjs";
 import {
   renderHome,
+  renderMaps,
   renderHelp,
   renderToolbox,
   renderTool,
@@ -762,7 +765,11 @@ function renderSystemsPage() {
 }
 function route() {
   const [name, id] = location.hash.slice(1).split("/");
+  if (name === "maps" || (name === "tool" && id === "maps")) { location.replace("#account/maps"); return; }
   const currentName = name || "home";
+  if(accountState().locked && ['tool','play','guided','questions','compass','personality','systems','big-five','stim-space'].includes(name)){
+    main.innerHTML='<div class="wrap"><h1>Your saved work is locked</h1><p>Confirm your identity in Account before opening an activity that can read or save private work.</p><a class="button" href="#account">Open account to unlock</a></div>';return;
+  }
   const startRoutes = new Set(["help", "navigate", "questions", "navigator", "compass"]);
   document.querySelector("[data-more-menu]")?.removeAttribute("open");
   document.querySelectorAll("[data-route-link]").forEach((a) => {
@@ -811,7 +818,9 @@ function route() {
       community: () => renderCommunity(main, "feedback"),
       volunteer: () => renderCommunity(main, "volunteer"),
       routes: () => renderRoutes(main),
-      maps: () => renderTool(main, "maps"),
+      account: () => renderAccount(main, id || "home"),
+      profile: () => renderPublicProfile(main, decodeURIComponent(id || "")),
+      maps: () => renderAccount(main, "maps"),
       support: () => renderSupport(main),
       watch: () => {
         libraryState.view = "videos";
@@ -821,6 +830,7 @@ function route() {
       post: () => post(decodeURIComponent(id || "")),
     })[name] || (() => renderHome(main, posts))
   )();
+  enhanceAccountRoute(main, currentName, decodeURIComponent(id || ""));
   window.scrollTo(0, 0);
   const title =
     name === "navigate"
@@ -858,6 +868,8 @@ function route() {
     learn: "Learn",
     blog: "Learn",
     writing: "Learn",
+    account: "Account",
+    profile: "Profile",
     maps: "My Maps",
     support: "Get help",
     simplyfocus: "SimplyFocus",
@@ -905,6 +917,8 @@ try {
   loadError =
     "Published content could not be loaded. Check your connection and refresh; the curriculum and tools remain available.";
 }
+await accountReady;
+configureAccountHost({maps:renderMaps, tools:accountTools.map(x=>({...x,href:x.href||`#tool/${encodeURIComponent(x.id)}`})), posts});
 window.addEventListener("hashchange", route);
 route();
 if ("serviceWorker" in navigator)
