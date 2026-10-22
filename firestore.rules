@@ -1,33 +1,123 @@
 rules_version = '2';
 service cloud.firestore {
-  match /databases/{database}/documents {
-    match /users/{userId}/savedWork/{itemId} {
-      function isOwner() {
-        return request.auth != null && request.auth.uid == userId;
-      }
-
-      allow read: if isOwner();
-
-      allow create, update: if isOwner()
-        && request.resource.data.keys().hasOnly(['value', 'deleted', 'updatedAt'])
-        && request.resource.data.keys().hasAll(['deleted', 'updatedAt'])
-        && request.resource.data.deleted is bool
-        && request.resource.data.updatedAt is timestamp
-        && (
-          request.resource.data.deleted == true
-            ? !('value' in request.resource.data)
-            : request.resource.data.value is string
-              && request.resource.data.value.size() <= 900000
-        );
-
-      // Deletes are represented by a private tombstone so sync can remove data
-      // from other signed-in devices without granting permanent deletion access.
-      allow delete: if false;
-    }
-
-    // Deny every other database path until a feature has specific rules.
-    match /{document=**} {
-      allow read, write: if false;
-    }
+ match /databases/{database}/documents {
+  function signed(){return request.auth != null;}
+  function own(uid){return signed() && request.auth.uid == uid;}
+  function recent(){return signed() && request.time.toMillis() - request.auth.token.auth_time * 1000 < 300000;}
+  function security(uid){return /databases/$(database)/documents/accountSecurity/$(uid);}
+  function active(uid){return !exists(security(uid)) || get(security(uid)).data.get('deleting',false)==false;}
+  function current(uid){return !exists(security(uid))||!('revokedAt' in get(security(uid)).data)||request.auth.token.auth_time*1000>get(security(uid)).data.revokedAt.toMillis();}
+  function owner(uid){return own(uid)&&active(uid)&&current(uid);}
+  function cleanup(uid){return own(uid)&&recent()&&current(uid)&&exists(security(uid))&&get(security(uid)).data.get('deleting',false)==true;}
+  function unlocked(uid){return !exists(/databases/$(database)/documents/users/$(uid)/settings/account) || get(/databases/$(database)/documents/users/$(uid)/settings/account).data.get('sensitiveLock',false)==false || recent();}
+  function moderator(){return signed() && owner(request.auth.uid) && exists(/databases/$(database)/documents/siteAdmins/$(request.auth.uid));}
+  function knownKey(item){return item in ['ns-personal-maps-v1','ns-tool-favourites-v1','ns-tool-recent-v1','ns-account-learning-v2','ns-account-tool-drafts-v2','ns-account-mood-v2','ns-learn-quote-notes-v1','ns-reflection','ns-memory-jar-v1','nobodys-simple-full-profile-draft-v3','nobodys-simple-profile-state-checkins-v1','nobodys-simple-profile-feedback-v1','ns-navigation-context-v1','ns-navigation-projects-v1','ns-sensory-recipe-v1','ns-sensory-recipes-v3','nobodys-simple-sensory-recipes-v1','ns-social-battery-v3','ns-load-balancer-v2','ns-masking-contexts-v1','ns-masking-map-v2','ns-simplyfocus-recipe-v1','ns-simplyfocus-tasks-v1'];}
+  function validWork(){let d=request.resource.data;return d.keys().hasOnly(['value','deleted','updatedAt','revision']) && d.keys().hasAll(['deleted','updatedAt','revision']) && d.deleted is bool && d.updatedAt==request.time && d.revision is int && (d.deleted ? !('value' in d) : d.value is string && d.value.size()<=800000);}
+  match /users/{uid}/savedWork/{item}{
+   allow read: if (owner(uid)&&unlocked(uid)) || cleanup(uid);
+   allow create: if owner(uid)&&unlocked(uid)&&knownKey(item)&&validWork()&&request.resource.data.revision==1;
+   allow update: if owner(uid)&&unlocked(uid)&&knownKey(item)&&validWork()&&request.resource.data.revision==resource.data.get('revision',0)+1;
+   allow delete: if cleanup(uid);
   }
+  function suitable(handle){
+   let folded=handle.replace('0','o').replace('1','i').replace('3','e').replace('4','a').replace('5','s').replace('7','t').replace('8','b');
+   let blocked='.*(nobodyssimple|nobodysimple|nobodysimpl|nobodyssimpie|admin|moderator|staff|official|support|firebase|system|fuck|shit|bitch|nigger|nigga|faggot|retard|whore|hitler).*';
+   return !handle.matches(blocked)&&!folded.matches(blocked)&&!folded.replace('i','l').matches(blocked)&&!folded.matches('cunt.*')&&!(folded in ['cunt','fag','nazi']);
+  }
+  function validProfile(uid){
+   let d=request.resource.data;
+   return d.keys().hasOnly(['nickname','handle','avatarId','avatarData','bio','pronouns','visibility','createdAt','nicknameChangedAt','updatedAt'])
+    && d.keys().hasAll(['nickname','handle','avatarId','avatarData','bio','pronouns','visibility','createdAt','nicknameChangedAt','updatedAt'])
+    && d.nickname is string && d.nickname.matches('[A-Za-z0-9][A-Za-z0-9 _-]{2,23}')
+    && d.handle == d.nickname.lower().replace('[ _-]','') && suitable(d.handle)
+    && d.avatarId in ['base','affirmed','bowing','dancing','drawing','excited-wave','excited','frolicking','peering','thinking','reading','running','sitting','still','sulking','waiting','waltzing','yippie']
+    && d.avatarData is string && d.avatarData.size()<=60000 && (d.avatarData=='' || d.avatarData.matches('data:image/(webp|jpeg|png);base64,[A-Za-z0-9+/=]+'))
+    && d.bio is string && d.bio.size()<=280 && d.pronouns is string && d.pronouns.size()<=40
+    && !(d.bio+d.pronouns).lower().matches('.*(https?:|www[.]|<|>).*')
+    && d.visibility in ['private','public'] && d.updatedAt==request.time
+    && getAfter(/databases/$(database)/documents/nicknames/$(d.handle)).data.uid==uid;
+  }
+  match /profiles/{uid}{
+   allow get: if owner(uid)||cleanup(uid)||(resource.data.visibility=='public'&&active(uid));
+   allow create: if owner(uid)&&validProfile(uid)&&request.resource.data.createdAt==request.time&&request.resource.data.nicknameChangedAt==request.time;
+   allow update: if owner(uid)&&validProfile(uid)&&request.resource.data.createdAt==resource.data.createdAt
+    && (request.resource.data.nickname==resource.data.nickname ? request.resource.data.nicknameChangedAt==resource.data.nicknameChangedAt : request.time>=resource.data.nicknameChangedAt+duration.value(14,'d')&&request.resource.data.nicknameChangedAt==request.time);
+   allow delete: if cleanup(uid);
+  }
+  match /nicknames/{handle}{
+   allow get: if signed();
+   allow list: if own(resource.data.uid);
+   allow create: if owner(request.resource.data.uid)&&request.resource.data.keys().hasOnly(['uid','createdAt'])&&request.resource.data.createdAt==request.time
+    && getAfter(/databases/$(database)/documents/profiles/$(request.auth.uid)).data.handle==handle;
+   allow update: if false;
+   allow delete: if cleanup(resource.data.uid);
+  }
+  function validSettings(){
+   let d=request.resource.data;
+   return d.keys().hasOnly(['theme','language','textScale','contrast','motion','lowStim','sound','font','lineSpacing','simpleMode','tapControls','visualMode','saveDrafts','retentionDays','personalise','moodHistory','sensitiveLock','learningFormat','trackLearning','replyNotifications','siteUpdates','reminders','reminderTime','timeZone','mentions','profileVisibility','updatedAt'])
+    && d.theme in ['system','light','dark'] && d.language in ['en','es','fr','de'] && d.textScale in [100,110,125,150] && d.contrast in ['standard','high'] && d.motion in ['system','reduce','full'] && d.font in ['system','readable'] && d.lineSpacing in [1.6,1.9,2.2] && d.visualMode in ['balanced','text','visual'] && d.learningFormat in ['any','reading','audio','video','interactive'] && d.profileVisibility in ['private','public']
+    && d.lowStim is bool && d.sound is bool && d.simpleMode is bool && d.tapControls is bool && d.saveDrafts is bool && d.personalise is bool && d.moodHistory is bool && d.sensitiveLock is bool && d.trackLearning is bool && d.replyNotifications is bool && d.siteUpdates is bool && d.reminders is bool && d.mentions is bool
+    && d.retentionDays==0 && d.reminders==false && d.replyNotifications==false && d.mentions==false
+    && d.reminderTime is string && d.reminderTime.matches('([01][0-9]|2[0-3]):[0-5][0-9]') && d.timeZone is string && d.timeZone.size()<=80 && d.updatedAt==request.time;
+  }
+  match /users/{uid}/settings/account{
+   allow read: if owner(uid)||cleanup(uid);
+   allow create: if owner(uid)&&validSettings();
+   allow update: if owner(uid)&&validSettings()&&(!resource.data.sensitiveLock||request.resource.data.sensitiveLock||recent());
+   allow delete: if cleanup(uid);
+  }
+  match /users/{uid}/settings/communityRate{
+   allow read: if owner(uid)||cleanup(uid);
+   allow create: if owner(uid)&&request.resource.data.keys().hasOnly(['lastCommentAt','lastCommentId'])&&request.resource.data.lastCommentAt==request.time&&getAfter(/databases/$(database)/documents/comments/$(request.resource.data.lastCommentId)).data.authorUid==uid;
+   allow update: if owner(uid)&&request.resource.data.keys().hasOnly(['lastCommentAt','lastCommentId'])&&request.resource.data.lastCommentAt==request.time&&request.time>=resource.data.lastCommentAt+duration.value(20,'s')&&getAfter(/databases/$(database)/documents/comments/$(request.resource.data.lastCommentId)).data.authorUid==uid;
+   allow delete: if cleanup(uid);
+  }
+  match /users/{uid}/devices/{id}{
+   allow read: if owner(uid)||cleanup(uid);
+   allow create: if owner(uid)&&request.resource.data.keys().hasOnly(['label','firstSeen','lastSeen'])&&request.resource.data.label is string&&request.resource.data.label.size()<=80&&request.resource.data.firstSeen==request.time&&request.resource.data.lastSeen==request.time;
+   allow update: if owner(uid)&&request.resource.data.keys().hasOnly(['label','firstSeen','lastSeen'])&&request.resource.data.label is string&&request.resource.data.label.size()<=80&&request.resource.data.firstSeen==resource.data.firstSeen&&request.resource.data.lastSeen==request.time;
+   allow delete: if cleanup(uid);
+  }
+  match /users/{uid}/blocks/{target}{
+   allow read: if owner(uid)||cleanup(uid);
+   allow create,update: if owner(uid)&&uid!=target&&request.resource.data.keys().hasOnly(['createdAt'])&&request.resource.data.createdAt==request.time;
+   allow delete: if owner(uid)||cleanup(uid);
+  }
+  match /users/{uid}/notifications/{id}{allow read: if owner(uid)||cleanup(uid);allow delete: if cleanup(uid);}
+  match /accountSecurity/{uid}{
+   allow get: if own(uid);
+   allow create: if own(uid)&&recent()&&request.resource.data.keys().hasOnly(['revokedAt','deleting','deleteRequestedAt'])&&((request.resource.data.keys().hasOnly(['revokedAt'])&&request.resource.data.revokedAt==request.time)||(request.resource.data.deleting==true&&request.resource.data.deleteRequestedAt==request.time));
+   allow update: if own(uid)&&recent()&&current(uid)&&request.resource.data.keys().hasOnly(['revokedAt','deleting','deleteRequestedAt'])
+    && (!resource.data.get('deleting',false)||request.resource.data.deleting==true)
+    && ((!resource.data.get('deleting',false)&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['revokedAt'])&&request.resource.data.revokedAt==request.time)||(request.resource.data.diff(resource.data).affectedKeys().hasOnly(['deleting','deleteRequestedAt'])&&request.resource.data.deleting==true&&request.resource.data.deleteRequestedAt==request.time));
+   allow delete,list: if false;
+  }
+  match /siteAdmins/{uid}{allow get: if own(uid);allow write,list: if false;}
+  function profile(uid){return get(/databases/$(database)/documents/profiles/$(uid)).data;}
+  function canReply(d){return d.parentId=='' || (get(/databases/$(database)/documents/comments/$(d.parentId)).data.status=='approved'&&get(/databases/$(database)/documents/comments/$(d.parentId)).data.postId==d.postId&&!exists(/databases/$(database)/documents/users/$(request.auth.uid)/blocks/$(get(/databases/$(database)/documents/comments/$(d.parentId)).data.authorUid))&&!exists(/databases/$(database)/documents/users/$(get(/databases/$(database)/documents/comments/$(d.parentId)).data.authorUid)/blocks/$(request.auth.uid)));}
+  function validComment(id){
+   let d=request.resource.data;let p=profile(request.auth.uid);let r=/databases/$(database)/documents/users/$(request.auth.uid)/settings/communityRate;
+   return owner(request.auth.uid)&&request.auth.token.email_verified==true&&d.keys().hasOnly(['postId','body','authorUid','nickname','handle','avatarId','avatarData','status','parentId','createdAt','updatedAt'])
+    && d.authorUid==request.auth.uid&&d.status=='pending'&&d.postId is string&&d.postId.matches('[A-Za-z0-9_-]{1,150}')&&d.body is string&&d.body.size()>=2&&d.body.size()<=2000&&!d.body.lower().matches('(?s).*(https?://|www[.]).*')&&d.updatedAt==request.time
+    && d.nickname==p.nickname&&d.handle==p.handle&&d.avatarId==p.avatarId&&d.avatarData==p.avatarData&&d.parentId is string&&canReply(d)
+    && getAfter(r).data.lastCommentAt==request.time&&getAfter(r).data.lastCommentId==id&&(!exists(r)||request.time>=get(r).data.lastCommentAt+duration.value(20,'s'));
+  }
+  match /comments/{id}{
+   allow get:if signed()&&owner(request.auth.uid)&&!exists(/databases/$(database)/documents/comments/$(id));
+   allow read: if resource.data.status=='approved'||(signed()&&(owner(request.auth.uid)||cleanup(request.auth.uid))&&resource.data.authorUid==request.auth.uid)||moderator();
+   allow create: if validComment(id)&&request.resource.data.createdAt==request.time;
+   allow update: if (validComment(id)&&resource.data.authorUid==request.auth.uid&&resource.data.status!='deleted'&&request.time<resource.data.createdAt+duration.value(15,'m')&&request.resource.data.createdAt==resource.data.createdAt&&request.resource.data.postId==resource.data.postId&&request.resource.data.parentId==resource.data.parentId)
+    || (signed()&&owner(request.auth.uid)&&resource.data.authorUid==request.auth.uid&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['body','status','avatarData','updatedAt'])&&request.resource.data.body==''&&request.resource.data.status=='deleted'&&request.resource.data.avatarData==''&&request.resource.data.updatedAt==request.time)
+    || (moderator()&&recent()&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','moderatedAt','moderationReason'])&&request.resource.data.status in ['approved','rejected']&&request.resource.data.moderatedAt==request.time&&request.resource.data.moderationReason is string&&request.resource.data.moderationReason.size()<=300);
+   allow delete: if cleanup(resource.data.authorUid);
+  }
+  match /reports/{id}{
+   allow read: if moderator()||(signed()&&resource.data.reporterUid==request.auth.uid&&(owner(request.auth.uid)||cleanup(request.auth.uid)));
+   allow create: if signed()&&owner(request.auth.uid)&&request.auth.token.email_verified==true&&request.resource.data.keys().hasOnly(['commentId','reporterUid','reason','status','createdAt'])&&request.resource.data.reporterUid==request.auth.uid&&id==request.resource.data.commentId+'_'+request.auth.uid&&get(/databases/$(database)/documents/comments/$(request.resource.data.commentId)).data.status=='approved'&&request.resource.data.reason is string&&request.resource.data.reason.size()>=3&&request.resource.data.reason.size()<=500&&request.resource.data.status=='open'&&request.resource.data.createdAt==request.time;
+   allow update: if moderator()&&recent()&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])&&request.resource.data.status=='resolved';
+   allow delete: if cleanup(resource.data.reporterUid);
+  }
+  match /users/{uid}/{col}/{id}{allow read:if (owner(uid)||cleanup(uid))&&col in ['settings','devices','notifications','blocks'];allow delete:if cleanup(uid)&&col in ['settings','devices','notifications','blocks'];}
+  match /{document=**}{allow read,write:if false;}
+ }
 }

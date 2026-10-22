@@ -390,6 +390,7 @@ export function renderSimplyFocus(root) {
       if (context) setTimeout(() => context && context.state === "running" && context.suspend(), 180);
       return;
     }
+    if(window.nsAccountPreferences?.lowStim || window.nsAccountPreferences?.sound===false){setStatus("Sound is switched off in Account → Appearance. Enable optional sounds there to play a soundscape.");return;}
     const ctx = ensureAudio();
     if (!ctx) return;
     try {
@@ -434,7 +435,9 @@ export function renderSimplyFocus(root) {
     $("#focus-play", root).textContent = "Start soundscape";
     setStatus("All sounds stopped. Your slider settings are still here.");
   }
-  window.addEventListener("hashchange", stopPlayback, { once: true });
+  const accountSound = e => { if(e.detail?.lowStim || !e.detail?.sound) stopPlayback(); };
+  window.addEventListener("ns:preferences", accountSound);
+  window.addEventListener("hashchange", () => { window.removeEventListener("ns:preferences", accountSound); stopPlayback(); }, { once: true });
 }
 
 function iconFor(id) {

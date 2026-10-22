@@ -1,0 +1,13 @@
+import {SAVED,parseJSON} from './account-policy.mjs';
+export class Workspace {
+  constructor(storage,session){this.storage=storage;this.session=session;this.original={get:storage.getItem.bind(storage),set:storage.setItem.bind(storage),remove:storage.removeItem.bind(storage)};this.uid=null;this.locked=false;this.onChange=()=>{};this.shared=false;this.memory=new Map();}
+  key(key){return this.uid?`ns-work-v2:${this.uid}:${key}`:key;}
+  read(key){if(this.locked&&SAVED[key])return null;return this.shared&&this.uid?(this.session?this.session.getItem(this.key(key)):(this.memory.get(key)??null)):this.original.get(this.key(key));}
+  write(key,value,deleted=false,{remote=false}={}){if(this.locked&&!remote)throw Error('Unlock your saved work first.');const text=String(value??'');if(this.shared&&this.uid){if(this.session){if(deleted)this.session.removeItem(this.key(key));else this.session.setItem(this.key(key),text);}else if(deleted)this.memory.delete(key);else this.memory.set(key,text);}else if(deleted)this.original.remove(this.key(key));else this.original.set(this.key(key),text);if(!remote)this.onChange(key,text,deleted);}
+  scope(uid,shared=false){this.uid=uid||null;this.shared=shared;this.locked=false;this.memory.clear();}
+  entries(){return Object.keys(SAVED).flatMap(k=>{const v=this.read(k);return v===null?[]:[[k,v]];});}
+  guestEntries(){return Object.keys(SAVED).flatMap(k=>{const v=this.original.get(k);return v===null?[]:[[k,v]];});}
+  install(){const proto=Object.getPrototypeOf(this.storage),self=this;this.prototypeOriginals={get:proto.getItem,set:proto.setItem,remove:proto.removeItem,clear:proto.clear};proto.getItem=function(key){return this===self.storage&&SAVED[key]?self.read(String(key)):self.prototypeOriginals.get.call(this,key);};proto.setItem=function(key,value){if(this===self.storage&&SAVED[key])return self.write(String(key),value);return self.prototypeOriginals.set.call(this,key,value);};proto.removeItem=function(key){if(this===self.storage&&SAVED[key])return self.write(String(key),'',true);return self.prototypeOriginals.remove.call(this,key);};proto.clear=function(){if(this!==self.storage)return self.prototypeOriginals.clear.call(this);for(const k of Object.keys(SAVED))self.write(k,'',true);};}
+  clearUser(uid){const prefix=`ns-work-v2:${uid}:`;for(let i=this.storage.length-1;i>=0;i--){const k=this.storage.key(i);if(k?.startsWith(prefix))this.original.remove(k);}for(const p of ['ns-account-pending-v2:','ns-account-sync-v2:','ns-account-prefs-v2:'])this.original.remove(p+uid);this.memory.clear();}
+}
+export function readPending(storage,uid){return parseJSON(storage.get(`ns-account-pending-v2:${uid}`),{});}

@@ -1,0 +1,42 @@
+// DOM interaction checks with SDK doubles; does not assert visual layout or real OAuth.
+import {createRequire} from 'node:module';
+import {readFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import * as policy from '../../account-policy.mjs';
+import {Workspace} from '../../account-storage.mjs';
+const require=createRequire(process.env.ACCOUNT_TEST_MODULES?process.env.ACCOUNT_TEST_MODULES+'/package.json':import.meta.url),{JSDOM}=require('jsdom');
+const dom=new JSDOM(readFileSync('index.html','utf8'),{url:'https://nobodyssimple.com/#account',pretendToBeVisual:true});
+for(const key of ['window','document','localStorage','sessionStorage','location','CustomEvent','Event','Image','HTMLElement'])globalThis[key]=dom.window[key];
+globalThis.matchMedia=()=>({matches:false,addEventListener(){}});globalThis.confirm=()=>true;globalThis.alert=()=>{};
+dom.window.HTMLCanvasElement.prototype.getContext=()=>({clearRect(){},fillRect(){},drawImage(){}});
+dom.window.HTMLDialogElement.prototype.showModal=function(){this.open=true;};dom.window.HTMLDialogElement.prototype.close=function(){this.open=false;this.dispatchEvent(new Event('close'));};
+const realInterval=globalThis.setInterval;globalThis.setInterval=(...args)=>{const timer=realInterval(...args);timer.unref();return timer;};
+let signedIn=false,authCallback;const auth={languageCode:'en'},profile={nickname:'TestFox',handle:'testfox',avatarId:'reading'},settings={...policy.DEFAULTS};const watchers=new Map();
+const user={uid:'dom-user',email:'test@example.test',emailVerified:true,metadata:{creationTime:'2026-10-01'},providerData:[{providerId:'google.com'}],getIdTokenResult:async()=>({claims:{auth_time:Date.now()/1000}}),getIdToken:async()=>''};
+const snap=(path)=>({exists:()=>path==='profiles/dom-user'||path.endsWith('/settings/account'),data:()=>path==='profiles/dom-user'?profile:path.endsWith('/settings/account')?settings:undefined,docs:[]});
+const sdk=new Proxy({initializeApp:()=>({}),getAuth:()=>auth,getFirestore:()=>({}),getFunctions:()=>({}),onAuthStateChanged:(_,cb)=>{authCallback=cb;queueMicrotask(()=>cb(null));return ()=>{};},doc:(_,...p)=>p.join('/'),collection:(_,...p)=>p.join('/'),onSnapshot:(path,cb)=>{watchers.set(path,cb);queueMicrotask(()=>cb(snap(path)));return ()=>watchers.delete(path);},getDoc:async()=>({exists:()=>false}),multiFactor:()=>({enrolledFactors:[]}),GoogleAuthProvider:class{},httpsCallable:(_,name)=>async data=>{if(name==='accountProfile'){Object.assign(profile,data);watchers.get('profiles/dom-user')?.(snap('profiles/dom-user'));}if(name==='accountSettings'){Object.assign(settings,data);watchers.get('users/dom-user/settings/account')?.(snap('users/dom-user/settings/account'));}return {data:{ok:true}};},signInWithPopup:async()=>{signedIn=true;return {user};},setPersistence:async()=>{},browserLocalPersistence:{},browserSessionPersistence:{}},{get:(obj,k)=>obj[k]??(()=>{})});
+class Sync{constructor(db,ws,notify){this.ws=ws;this.notify=notify;this.keys=new Set();this.pending={};this.conflicts=new Map();this.state='Local saving';}start(uid){this.uid=uid;}end(){this.uid=null;}listen(){}async flush(){}persist(){}async configure(){}}
+const i18n=await import('../../account-i18n.mjs');
+let source=readFileSync('accounts.mjs','utf8'),prelude='';for(const line of source.split('\n').filter(l=>l.startsWith('import '))){const names=line.match(/\{([^}]+)\}/)?.[1];if(!names)continue;let group=line.includes('gstatic.com')?'sdk':line.includes('account-config')?'config':line.includes('account-policy')?'policy':line.includes('account-storage')?'storage':line.includes('account-sync')?'syncModule':line.includes('account-free')?'freeModule':'i18n';prelude+=`const {${names}}=${group};\n`;}
+source=source.replace(/^import .*\n/gm,'').replace(/export (const|function|async function)/g,'$1');
+const AsyncFunction=Object.getPrototypeOf(async function(){}).constructor;
+const api=await new AsyncFunction('sdk','config','policy','storage','syncModule','i18n','freeModule',prelude+source+';return {accountReady,renderAccount,showSignIn,configureAccountHost,accountState};')(sdk,{firebaseConfig:{},accountConfig:{region:'europe-west2'}},policy,{Workspace},{SavedSync:Sync},i18n,{freeAccountCall:async(_,__,name,data)=>{if(name==='accountProfile'){Object.assign(profile,data);watchers.get('profiles/dom-user')?.(snap('profiles/dom-user'));}if(name==='accountSettings'){Object.assign(settings,data);watchers.get('users/dom-user/settings/account')?.(snap('users/dom-user/settings/account'));}return {ok:true};}});
+await api.accountReady;const root=document.querySelector('main');api.configureAccountHost({maps:p=>p.innerHTML='<h3>Test maps</h3>',posts:[],tools:[]});
+for(const tab of ['home','profile','appearance','maps','saved','learning','community','notifications','privacy','security']){api.renderAccount(root,tab);assert.ok(root.querySelector('.account-pane'));}
+api.showSignIn();document.querySelector('[data-create]').click();assert.equal(document.querySelector('.account-dialog [name=submit]').textContent,'Create account');document.querySelector('[data-create]').click();assert.equal(document.querySelector('.account-dialog [name=submit]').textContent,'Sign in');document.querySelector('[data-close]').click();
+// Simulate a cold-start signed-in user by re-evaluating with the auth callback returning the user.
+// The existing instance's auth callback would intentionally reload when the user changes.
+console.log('PASS: 10 guest account sections and sign-in/create form mode switch');
+// Test signed-in rendering with a fresh DOM and module execution, without triggering navigation reload.
+const oldRemove=dom.window.Storage.prototype.removeItem;
+sdk.onAuthStateChanged=(_,cb)=>{queueMicrotask(()=>cb(user));return ()=>{};};
+// Workspace wraps Storage's prototype; reset to the original methods by using a fresh storage realm.
+const signedDOM=new JSDOM(readFileSync('index.html','utf8'),{url:'https://nobodyssimple.com/#account',pretendToBeVisual:true});
+for(const key of ['window','document','localStorage','sessionStorage','location','CustomEvent','Event','Image','HTMLElement'])globalThis[key]=signedDOM.window[key];
+signedDOM.window.HTMLCanvasElement.prototype.getContext=()=>({clearRect(){},fillRect(){},drawImage(){}});
+const signed=await new AsyncFunction('sdk','config','policy','storage','syncModule','i18n','freeModule',prelude+source+';return {accountReady,renderAccount,configureAccountHost};')(sdk,{firebaseConfig:{},accountConfig:{region:'europe-west2'}},policy,{Workspace},{SavedSync:Sync},i18n,{freeAccountCall:async(_,__,name,data)=>{if(name==='accountProfile'){Object.assign(profile,data);watchers.get('profiles/dom-user')?.(snap('profiles/dom-user'));}if(name==='accountSettings'){Object.assign(settings,data);watchers.get('users/dom-user/settings/account')?.(snap('users/dom-user/settings/account'));}return {ok:true};}});await signed.accountReady;await new Promise(r=>setTimeout(r,5));const signedRoot=document.querySelector('main');signed.configureAccountHost({maps:p=>p.innerHTML='<h3>Test maps</h3>',posts:[],tools:[]});
+for(const tab of ['home','profile','appearance','maps','saved','learning','community','notifications','privacy','security']){signed.renderAccount(signedRoot,tab);assert.ok(signedRoot.querySelector('.account-pane'));}
+signed.renderAccount(signedRoot,'profile');assert.equal(document.querySelectorAll('.account-avatar-grid input').length,18);assert.ok(document.querySelector('.ns-account-trigger img').src.endsWith('/reading.png'));document.querySelector('[name=avatar][value=dancing]').click();document.querySelector('#account-profile-form').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));await new Promise(r=>setTimeout(r,5));assert.equal(profile.avatarId,'dancing');
+signed.renderAccount(signedRoot,'appearance');document.querySelector('[name=theme]').value='dark';document.querySelector('[name=language]').value='es';document.querySelector('#account-preferences-form').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));await new Promise(r=>setTimeout(r,5));assert.equal(document.documentElement.dataset.theme,'dark');assert.equal(document.documentElement.lang,'es');assert.equal(document.querySelector('.ns-account-trigger span').textContent,'Cuenta');
+console.log('PASS: 10 signed-in sections, 18 avatars, profile save, header avatar and dark/Spanish preferences');
+dom.window.close();signedDOM.window.close();

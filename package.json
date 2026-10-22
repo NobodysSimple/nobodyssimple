@@ -1,0 +1,1 @@
+{"name":"nobodyssimple","private":true,"type":"module","scripts":{"test":"node --test tests/free/*.test.mjs","check":"node tests/free/check.mjs"}}
