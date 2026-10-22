@@ -2,6 +2,63 @@
   "version": 1,
   "posts": [
     {
+      "id": "814c9fd1-998f-47b4-81da-32b9419b33ee",
+      "type": "announcement",
+      "title": "22/10/2026",
+      "excerpt": "",
+      "intro": "",
+      "body": "Hi everyone, currently working on getting accounts up and running, that way we can have comment sections, personal settings and accessibility, and saved content saved across devices and browsers.",
+      "blocks": [
+        {
+          "id": "20172366-1bcc-4d0c-a4c6-b8f888f0b128",
+          "type": "paragraph",
+          "html": "<p>Hi everyone, currently working on getting accounts up and running, that way we can have comment sections, personal settings and accessibility, and saved content saved across devices and browsers.</p>"
+        },
+        {
+          "id": "d6283457-3780-4b20-9ce0-ccff0d7c3b59",
+          "type": "cta",
+          "eyebrow": "Next step",
+          "title": "Find out more",
+          "text": "",
+          "button": "Explore",
+          "href": "#community"
+        }
+      ],
+      "youtube": "",
+      "topics": [],
+      "category": "",
+      "modules": [],
+      "weeks": [],
+      "thumbnail": "",
+      "thumbnailAlt": "",
+      "destinations": [
+        "home"
+      ],
+      "status": "published",
+      "author": "Drew Horrobin",
+      "createdAt": "2026-10-22T16:48:40.487Z",
+      "updatedAt": "2026-10-22T16:50:02.650Z",
+      "publishedAt": "2026-10-22T16:50:02.650Z",
+      "slug": "22-10-2026",
+      "seoTitle": "",
+      "seoDescription": "",
+      "socialImage": "",
+      "theme": "cream",
+      "hero": "standard",
+      "announcementLabel": "Update",
+      "announcementPinned": true,
+      "announcementPriority": 0,
+      "announcementStart": "2026-10-22T17:48",
+      "announcementEnd": "",
+      "announcementLink": "#post/814c9fd1-998f-47b4-81da-32b9419b33ee",
+      "announcementLinkText": "Open update",
+      "layout": "standard",
+      "thumbnailRatio": "auto",
+      "thumbnailFocalX": 50,
+      "thumbnailFocalY": 50,
+      "thumbnailRotate": 0
+    },
+    {
       "id": "5fec6e2b-bbab-4a11-b0ec-f9de1a12b5b4",
       "type": "announcement",
       "title": "15/10/2026: Learn update",
