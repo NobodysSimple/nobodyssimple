@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v85-named-tool-cards";
+const CACHE = "nobodyssimple-v86-plain-quotes-200";
 const SHELL = [
   "./",
   "index.html",
@@ -7,6 +7,7 @@ const SHELL = [
   "nd-play-v4.mjs",
   "styles.css",
   "site.mjs",
+  "quote-content.mjs",
   "features.mjs",
   "sensory-recipe.mjs",
   "social-battery.mjs",

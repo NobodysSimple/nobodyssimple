@@ -74,20 +74,7 @@ let libraryState = {
   quarter: "",
 };
 const visibleCurriculum = { ...curriculum, weeks: [] };
-const quoteDeckCore = [
-  { type: "fact", label: "A fact to carry", text: "A feeling can be useful information without being a complete explanation of what is happening.", prompt: "What might this feeling be telling you to notice—not what is it ordering you to conclude?" },
-  { type: "reassurance", label: "Reassurance", text: "You can take your experience seriously without treating your first interpretation as final.", prompt: "What would it look like to take yourself seriously and stay open at the same time?" },
-  { type: "affirmation", label: "An affirmation", text: "You are allowed to need conditions that make participation possible. Access is not a character flaw.", prompt: "Which condition would make one part of today more workable?" },
-  { type: "fact", label: "A fact to carry", text: "A pattern can be real without being a fixed identity. Context can change what a person can do.", prompt: "Where does this pattern change, even slightly?" },
-  { type: "reassurance", label: "Reassurance", text: "Not knowing yet is a position you can occupy honestly. It does not require panic, performance or a forced answer.", prompt: "What can remain unknown for now while you choose one sensible next step?" },
-  { type: "affirmation", label: "An affirmation", text: "Your limits are information about the conditions of the task—not proof that you are incapable of the task.", prompt: "What could you change about the conditions before judging yourself?" },
-  { type: "invitation", label: "An invitation", text: "Look for the smallest variable that changes the whole situation. Bigger effort is not always the better intervention.", prompt: "What is one variable you could alter today?" },
-  { type: "reassurance", label: "Reassurance", text: "You do not have to resolve an entire life to make one decision that is kinder to your future self.", prompt: "What decision is small enough to make without solving everything?" },
-  { type: "fact", label: "A fact to carry", text: "The same behaviour can serve different functions in different contexts. Ask what it is doing before deciding what it means.", prompt: "What might this response be helping you obtain, avoid or protect?" },
-  { type: "affirmation", label: "An affirmation", text: "You can build a life around what helps you function, not only around what looks effortless from the outside.", prompt: "Which helpful condition deserves to become part of the design?" },
-  { type: "invitation", label: "An invitation", text: "Understanding is not surrender. Seeing the forces shaping you can create more choices about how to respond.", prompt: "What influence can you name without giving it total control?" },
-  { type: "reassurance", label: "Reassurance", text: "A pause is not the same as avoidance. Sometimes a pause is how you return with more choice.", prompt: "What would make a pause restorative rather than indefinite?" },
-];
+const quoteDeckCore = [];
 const quoteDeck = [...quoteDeckCore, ...quoteDeckExtended];
 const colours = {
   Fear: "#b77553",
