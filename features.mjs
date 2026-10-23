@@ -215,20 +215,45 @@ export function renderHelp(root, options = {}) {
     const subparts = situationSubparts[s.id] || [];
     return `<div class="situation-option"><label class="choice-tile"><input type="checkbox" name="situation" value="${esc(s.id)}"><span><b>${esc(s.label)}</b><small>${esc(s.examples)}</small></span></label>${subparts.length ? `<details class="situation-subparts" data-subparts-for="${esc(s.id)}" hidden><summary>Narrow this down (optional)</summary><div class="subpart-grid">${subparts.map((part) => `<label class="subpart-pill"><input type="checkbox" name="subpart" value="${esc(s.id)}:${esc(part.id)}"><span><b>${esc(part.label)}</b><small>${esc(part.examples)}</small></span></label>`).join("")}</div></details>` : ""}</div>`;
   }).join("");
-  const intro = homeMode
-    ? `<header class="page-intro"><p class="eyebrow">Navigation console</p><h2>What would help today?</h2><p class="lead">Choose what fits, then narrow it down if you want. Find tools that match the problem and the energy you have.</p></header>`
-    : area("Quick help", "What do you need?", "Choose what fits. Then narrow it down if you want.");
-  const notSure = homeMode ? "" : `<section class="not-sure-panel" aria-labelledby="not-sure-title"><div><p class="eyebrow">Not sure yet?</p><h2 id="not-sure-title">Use the emotion compass first.</h2><p>Find a feeling word by looking at energy and pleasantness.</p></div><a class="button bright" href="#compass">Open the emotion compass ↗</a></section>`;
-  root.innerHTML = `<div class="wrap${homeMode ? " home-console-wrap" : ""}">${intro}<form id="navigator-form" class="navigator-layout"><section class="navigator-left"><fieldset><legend>What is happening?</legend><div class="choice-grid">${situationMarkup}</div></fieldset><fieldset><legend>What would help?</legend><div class="choice-grid compact-choices">${[
-    ["understand", "Understand it"],
-    ["calmer", "Feel calmer"],
-    ["organise", "Organise it"],
-    ["decide", "Make a decision"],
-    ["action", "Do something"],
-    ["communicate", "Communicate"],
+  const goals = [
+    ["understand", "Understand it"], ["calmer", "Feel calmer"], ["organise", "Organise it"],
+    ["decide", "Make a decision"], ["action", "Do something"], ["communicate", "Communicate"],
     ["minutes", "Get through the next few minutes"],
-  ].map(([v, l]) => `<label class="choice-pill"><input type="radio" name="goal" value="${v}"><span>${l}</span></label>`).join("")}</div></fieldset></section><aside class="navigator-side"><label class="field">How much energy is available right now?<input type="range" name="energy" min="0" max="2" value="1"><span class="range-ends"><span>Very little</span><output id="energy-label">Some</output><span>Plenty</span></span></label><label class="field">How intense does it feel?<input type="range" name="intensity" min="0" max="10" value="5"><span class="range-ends"><span>Gentle</span><output id="intensity-label">5 / 10</output><span>Very intense</span></span></label><label class="interactive-opt-in"><input type="checkbox" name="includeInteractive" checked><span><b>Show interactive tools too</b><small>Move, tap or sort instead of writing.</small></span></label><button class="button full" type="submit">Find my starting points ↗</button><p class="fine">These console choices are not saved. Reflection drafts and finished maps follow your Account settings.</p></aside></form>${notSure}<section id="recommendations" class="recommendations" aria-live="polite"></section></div>`;
+  ];
+  root.innerHTML = `<div class="wrap home-console-wrap"><header class="console-dialogue"><div class="console-character-frame"><img id="console-character" src="media/console/nobody-base.png" alt="" width="240" height="280"></div><div class="console-speech"><p class="eyebrow">Navigation console · a few quick choices</p><h2 id="console-question" tabindex="-1">What’s happening?</h2><p id="console-prompt" aria-live="polite">Choose anything that sounds close. You can select more than one.</p></div></header><ol class="console-progress" aria-label="Your steps"><li aria-current="step">What’s happening?</li><li>What would help?</li><li>Available energy</li><li>Suggestions</li></ol><form id="navigator-form" class="navigator-layout console-form"><section class="console-stage" data-console-stage="0"><fieldset><legend>What is happening?</legend><p class="fine">Choose one or more. If you are not sure, continue without choosing.</p><div class="choice-grid">${situationMarkup}</div></fieldset></section><section class="console-stage" data-console-stage="1" hidden><fieldset><legend>What would help?</legend><div class="choice-grid compact-choices">${goals.map(([v,l])=>`<label class="choice-pill"><input type="radio" name="goal" value="${v}"><span>${esc(l)}</span></label>`).join("")}</div></fieldset><p class="fine">Choose the kind of help you want, or skip this question.</p></section><section class="console-stage" data-console-stage="2" hidden><div class="console-energy-grid"><label class="field">How much energy do you have for this right now?<input type="range" name="energy" min="0" max="2" value="1"><span class="range-ends"><span>Very little</span><output id="energy-label">Some</output><span>Plenty</span></span></label><label class="field">How intense does it feel?<input type="range" name="intensity" min="0" max="10" value="5"><span class="range-ends"><span>Gentle</span><output id="intensity-label">5 / 10</output><span>Very intense</span></span></label></div><label class="interactive-opt-in"><input type="checkbox" name="includeInteractive" checked><span><b>Include interactive tools</b><small>Activities you can move, tap or sort through instead of writing.</small></span></label><p class="fine">Use your best guess. You can change it later.</p></section><section class="console-stage console-results-stage" data-console-stage="3" hidden><div id="recommendations" class="recommendations" aria-live="polite"></div><button type="button" class="button secondary" data-console-back-to-energy>← Change my answers</button></section><div class="console-step-actions"><button type="button" class="button secondary" data-console-back hidden>← Back</button><span class="fine" data-console-step-label>Step 1 of 3</span><button type="button" class="button" data-console-next>Continue →</button></div><p class="fine">Your selections are not saved. Reflection drafts and finished maps follow your Account settings.</p></form><section class="not-sure-panel"><p class="eyebrow">Prefer to explore</p><h3>Not sure where to start?</h3><p>Try the Emotion Compass or explore tools on your own.</p><a class="button bright" href="#compass">Open Emotion Compass →</a></section></div>`;
   const form = root.querySelector("#navigator-form");
+  const stages = [...form.querySelectorAll("[data-console-stage]")];
+  const questions = ["What’s happening?", "What would help?", "How much energy do you have?", "A few ideas to try"];
+  const prompts = ["Choose anything that sounds close. You can select more than one.", "Pick the kind of help you want. You can skip this.", "A rough guess is enough. We’ll use it to suggest a manageable starting point.", "Here are a few options based on what you chose. Keep only what fits."];
+  const poses = ["base", "comparing", "waiting", "positing"];
+  let currentStage = 0;
+  const showStage = (next, focus = true) => {
+    currentStage = Math.max(0, Math.min(3, next));
+    stages.forEach((stage, i) => { stage.hidden = i !== currentStage; });
+    const character = root.querySelector("#console-character");
+    character.classList.remove("pose-changed");
+    character.src = `media/console/nobody-${poses[currentStage]}.png`;
+    if (!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      void character.offsetWidth;
+      character.classList.add("pose-changed");
+    }
+    root.querySelector("#console-question").textContent = questions[currentStage];
+    root.querySelector("#console-prompt").textContent = prompts[currentStage];
+    root.querySelectorAll(".console-progress li").forEach((item, i) => {
+      if (i === currentStage) item.setAttribute("aria-current", "step"); else item.removeAttribute("aria-current");
+    });
+    const back = form.querySelector("[data-console-back]");
+    back.hidden = currentStage === 0 || currentStage === 3;
+    const nextButton = form.querySelector("[data-console-next]");
+    nextButton.hidden = currentStage === 3;
+    form.querySelector("[data-console-step-label]").textContent = currentStage === 3 ? "Your suggestions" : `Step ${currentStage + 1} of 3`;
+    nextButton.textContent = currentStage === 2 ? "Show my suggestions →" : "Continue →";
+    if (focus) root.querySelector("#console-question").focus();
+  };
+  form.querySelector("[data-console-back]").onclick = () => showStage(currentStage - 1);
+  form.querySelector("[data-console-next]").onclick = () => currentStage < 2 ? showStage(currentStage + 1) : form.requestSubmit();
+  form.querySelector("[data-console-back-to-energy]").onclick = () => showStage(2);
+  showStage(0, false);
   form.querySelectorAll("[name=situation]").forEach((input) => {
     const panel = form.querySelector(`[data-subparts-for="${input.value}"]`);
     if (!panel) return;
@@ -295,6 +320,7 @@ export function renderHelp(root, options = {}) {
       section.append(grid);
       recommendations.append(section);
     }
+    showStage(3, false);
     recommendations.setAttribute("tabindex", "-1");
     recommendations.focus({preventScroll:true});
     recommendations.scrollIntoView({ behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" });
