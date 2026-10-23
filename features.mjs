@@ -1,3 +1,4 @@
+import {renderStrategyHome} from './strategy.mjs';
 import { escapeHTML as esc, nearestEmotions, safeHref, safeImage } from "./core.mjs";
 import { profileFor, stateItems } from "./emotion-profiles.mjs";
 import { tools, toolGroups, situations, situationSubparts } from "./tool-catalog.mjs";
@@ -205,35 +206,7 @@ function renderHomeLegacy(root, posts) {
 }
 
 export function renderHome(root, posts = []) {
-  renderHelp(root, { home: true });
-  const wrap = root.querySelector(".home-console-wrap");
-  if (!wrap) return;
-  const railHolder = document.createElement("div");
-  railHolder.innerHTML = announcementRail(posts).trim();
-  const rail = railHolder.firstElementChild;
-  if (rail) {
-    // Keep the announcement at the top of the console, before the form.
-    wrap.insertBefore(rail, wrap.firstElementChild);
-    const slides = [...rail.querySelectorAll("[data-announcement-slide]")];
-    let index = 0;
-    const show = (next) => {
-      index = (next + slides.length) % slides.length;
-      slides.forEach((slide, i) => { slide.hidden = i !== index; });
-      const position = rail.querySelector("[data-announcement-position]");
-      if (position) position.textContent = `${index + 1} / ${slides.length}`;
-    };
-    rail.querySelector("[data-announcement-prev]")?.addEventListener("click", () => show(index - 1));
-    rail.querySelector("[data-announcement-next]")?.addEventListener("click", () => show(index + 1));
-  }
-  const branding = document.createElement("section");
-  branding.className = "home-console-branding";
-  branding.setAttribute("aria-label", "Nobody’s Simple");
-  branding.innerHTML = `<div class="home-console-branding-copy"><img src="logo.png" alt="Nobody’s Simple logo"><div><p class="eyebrow">Nobody’s Simple</p><p>Psychology for real life.</p></div></div><img class="home-console-banner" src="banner.png" alt="Illustrated Nobody’s Simple landscape">`;
-  wrap.insertBefore(branding, wrap.firstElementChild);
-  const support = document.createElement("section");
-  support.className = "home-support-strip";
-  support.innerHTML = `<div class="home-support-grid"><section class="home-feedback-card" aria-labelledby="home-feedback-title"><p class="eyebrow">Help shape the project</p><h2 id="home-feedback-title">Tell me what would make this more useful.</h2><p>Share feedback about the tools, writing or anything that would make Nobody’s Simple easier to use.</p><a class="button" href="${forms.feedback}" target="_blank" rel="noopener noreferrer">Open the feedback form ↗</a></section><section class="kofi-support" aria-labelledby="kofi-support-title"><div class="kofi-spark kofi-spark-one" aria-hidden="true"></div><div class="kofi-spark kofi-spark-two" aria-hidden="true"></div><div class="kofi-profile"><div class="kofi-profile-art"><img src="kofi-profile.png" alt="A small character bowing with gratitude"></div><div class="kofi-copy"><p class="eyebrow">Support the project</p><h2 id="kofi-support-title">Help keep Nobody’s Simple growing.</h2><p>If this platform has helped you, you can tip to support the time, tools and hosting behind it.</p></div></div><a class="button kofi-button" href="https://ko-fi.com/nobodyssimple" target="_blank" rel="noopener noreferrer">Tip on Ko-fi <span aria-hidden="true">↗</span></a></section></div><section class="home-channel-card" aria-labelledby="home-channel-title"><div><p class="eyebrow">The Nobody’s Simple channel</p><h2 id="home-channel-title">Watch the ideas take shape.</h2><p>Animated psychology, complicated questions and useful ways to choose what to do next.</p></div><a class="button" href="https://www.youtube.com/@nobodyssimple" target="_blank" rel="noopener noreferrer">Visit the YouTube channel ↗</a></section>`;
-  wrap.append(support);
+  renderStrategyHome(root, posts, announcementRail(posts));
 }
 
 export function renderHelp(root, options = {}) {
@@ -515,7 +488,7 @@ function renderToolLibrary(root) {
     const subcollections = selectedGroup ? librarySubcollectionsFor(selectedGroup.id, items.filter((item) => item.collection === selectedGroup.id)) : [];
     const activeSubcollection = subcollections.find((subcollection) => subcollection.id === state.subcollection);
     const body = searching ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Search results</p><h2>${items.length} tool${items.length === 1 ? "" : "s"} matching “${esc(state.query)}”</h2></div><button type="button" class="chip" data-library-clear>Clear search</button></div><div class="library-directory">${directoryMarkup(items) || `<p class="library-empty">No tools matched. Try a broader word such as “feel”, “focus" or "decision”.</p>`}</div></section>` : state.view === "directory" ? `<section class="library-results"><div class="library-results-head"><div><p class="eyebrow">Compact directory</p><h2>${items.length} tools, A–Z</h2></div></div><div class="library-directory">${directoryMarkup(items)}</div></section>` : state.collection === "all" ? `<section class="library-theme-picker"><div class="library-theme-picker-head"><div><p class="eyebrow">Choose a theme</p><h2>Explore the library by area</h2><p>Each theme opens smaller tool collections, so no single card becomes a wall of options.</p></div><span>${libraryCollections.length} themes</span></div><div class="library-theme-grid">${themeCardsMarkup()}</div></section>` : `<section class="library-selected-theme"><button type="button" class="library-back-to-themes" data-library-themes>← All themes</button><div class="library-selected-theme-card theme-${esc(selectedGroup.id)}"><div><p class="eyebrow">Theme</p><h2>${esc(selectedGroup.label)}</h2><p>${esc(selectedGroup.description)}</p></div><strong>${items.length} tools</strong></div>${activeSubcollection ? `<button type="button" class="library-back-to-subcollections" data-library-subcollections>← All ${esc(selectedGroup.label)} collections</button><section class="library-collection library-tool-collection"><div class="library-collection-head"><div><p class="eyebrow">Smaller collection</p><h2>${esc(activeSubcollection.label)}</h2><p>${esc(activeSubcollection.description)}</p></div><strong>${activeSubcollection.items.length} tools</strong></div><div class="library-tool-list">${activeSubcollection.items.map((item) => itemMarkup(item)).join("")}</div></section>` : `<section class="library-subcollection-picker"><div class="library-subcollection-picker-head"><div><p class="eyebrow">Choose a smaller collection</p><h2>Start with one area of ${esc(selectedGroup.label)}</h2><p>These smaller shelves keep the next choice visible. Each one contains no more than six tools.</p></div><span>${subcollections.length} collections</span></div><div class="library-subcollection-grid">${subcollectionCardsMarkup(selectedGroup, items.filter((item) => item.collection === selectedGroup.id))}</div></section>`}</section>`;
-    root.innerHTML = `<div class="wrap tools-library-page"><section class="tools-library-hero"><div><p class="eyebrow">Browse at your own pace</p><h1>Tools Library</h1><p class="lead">${allItems.length} tools across ${libraryCollections.length} themes. Search, filter or open a theme without needing to explain yourself first.</p><a class="tools-library-choose" href="#home">Not sure what you need? Use Help Me Choose →</a></div><div class="tools-library-mark" aria-hidden="true"><span>✳</span><i>+</i><span>◌</span></div></section><section class="library-controls"><label class="library-search"><span class="sr-only">Search tools</span><span aria-hidden="true">⌕</span><input id="library-search-input" type="search" value="${esc(state.query)}" placeholder="Search tools… e.g. overthinking, sensory, decision"></label><div class="library-filter-row"><div class="library-filter-group"><span>Time</span><div>${[["all", "Any"], ["Quick", "Under 2 min"], ["2–5 min", "2–5 min"], ["Deep dive", "Deep dive"]].map(([value, label]) => `<button type="button" class="chip ${state.time === value ? "active" : ""}" data-library-time="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group"><span>Format</span><div>${[["all", "All"], ["Reflection", "Reflection"], ["Interactive", "Interactive"]].map(([value, label]) => `<button type="button" class="chip ${state.format === value ? "active" : ""}" data-library-format="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group library-filter-guidance"><span>Browse</span><small>Choose a theme, then a smaller collection.</small></div></div><div class="library-view-row"><span>View</span><button type="button" class="chip ${state.view === "collections" ? "active" : ""}" data-library-view="collections">Themes</button><button type="button" class="chip ${state.view === "directory" ? "active" : ""}" data-library-view="directory">Compact A–Z</button><span class="library-view-note">Pin a tool with ◇</span></div></section>${utilityMarkup(items)}<main id="library-content">${body}</main><section class="library-footer-card"><div><p class="eyebrow">Keep what helps</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Your notes stay on this device.</p></div><a class="button" href="#account/maps">Open My Maps →</a></section></div>`;
+    root.innerHTML = `<div class="wrap tools-library-page"><section class="tools-library-hero"><div><p class="eyebrow">Browse at your own pace</p><h1>Tools Library</h1><p class="lead">${allItems.length} tools across ${libraryCollections.length} themes. Search, filter or open a theme without needing to explain yourself first.</p><a class="tools-library-choose" href="#home">Not sure what you need? Use Help Me Choose →</a></div><div class="tools-library-mark" aria-hidden="true"><span>✳</span><i>+</i><span>◌</span></div></section><section class="library-controls"><label class="library-search"><span class="sr-only">Search tools</span><span aria-hidden="true">⌕</span><input id="library-search-input" type="search" value="${esc(state.query)}" placeholder="Search tools… e.g. overthinking, sensory, decision"></label><div class="library-filter-row"><div class="library-filter-group"><span>Time</span><div>${[["all", "Any"], ["Quick", "Under 2 min"], ["2–5 min", "2–5 min"], ["Deep dive", "Deep dive"]].map(([value, label]) => `<button type="button" class="chip ${state.time === value ? "active" : ""}" data-library-time="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group"><span>Format</span><div>${[["all", "All"], ["Reflection", "Reflection"], ["Interactive", "Interactive"]].map(([value, label]) => `<button type="button" class="chip ${state.format === value ? "active" : ""}" data-library-format="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group library-filter-guidance"><span>Browse</span><small>Choose a theme, then a smaller collection.</small></div></div><div class="library-view-row"><span>View</span><button type="button" class="chip ${state.view === "collections" ? "active" : ""}" data-library-view="collections">Themes</button><button type="button" class="chip ${state.view === "directory" ? "active" : ""}" data-library-view="directory">Compact A–Z</button><span class="library-view-note">Pin a tool with ◇</span></div></section>${utilityMarkup(items)}<div id="library-content">${body}</div><section class="library-footer-card"><div><p class="eyebrow">Keep what helps</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Saving and optional syncing follow your Account settings.</p></div><a class="button" href="#account/maps">Open My Maps →</a></section></div>`;
     root.querySelector("#library-search-input")?.addEventListener("input", (event) => { state.query = event.target.value; render(); requestAnimationFrame(() => { const input = root.querySelector("#library-search-input"); if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); } }); });
   };
   root.onclick = (event) => {
@@ -1808,7 +1781,7 @@ function renderMixedFeelings(root, tool) {
         });
       });
       if (state.showSummary) {
-        bindMoodRating(content, { id: "mixed-mood-after", outputId: "mixed-mood-after-value", buttonId: "mixed-mood-compare", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#mixed-mood-comparison"); comparison.innerHTML = moodComparisonMarkup(moodBefore, moodAfter); comparison.hidden = false; } });
+        bindMoodRating(content, { id: "mixed-mood-after", outputId: "mixed-mood-after-value", buttonId: "mixed-mood-compare", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#mixed-mood-comparison"); comparison.innerHTML = Number.isFinite(moodBefore) ? moodComparisonMarkup(moodBefore, moodAfter) : `<p>Your optional rating now: ${moodAfter} / 10. There is no before rating to compare.</p>`; comparison.hidden = false; } });
         content.querySelector("#mixed-save-map")?.addEventListener("click", () => { try { saveMap({ title: "Mixed Feelings Map", tool: "mixed-feelings", answers: JSON.parse(JSON.stringify(state)), moodCheck: state.moodAfter === null ? null : { before: moodBefore, after: state.moodAfter } }); content.querySelector("#mixed-result-status").textContent = "Saved on this device."; } catch { content.querySelector("#mixed-result-status").textContent = "This browser could not save the map."; } });
         content.querySelector("#mixed-download-map")?.addEventListener("click", () => downloadText("mixed-feelings-map.txt", summaryText()));
         content.querySelector("#mixed-copy-map")?.addEventListener("click", async () => { try { await navigator.clipboard.writeText(summaryText()); content.querySelector("#mixed-result-status").textContent = "Copied."; } catch { content.querySelector("#mixed-result-status").textContent = "Copy was blocked by this browser. Use Download instead."; } });
@@ -1910,7 +1883,7 @@ function renderEmotionTimeline(root, tool) {
       content.querySelectorAll("[data-timeline-pause]").forEach((button) => button.addEventListener("click", () => { state.pauseStage = state.pauseStage === button.dataset.timelinePause ? "" : button.dataset.timelinePause; render(); }));
       content.querySelector("#timeline-build-summary")?.addEventListener("click", () => { state.showSummary = true; render(); setTimeout(() => content.querySelector("#timeline-summary")?.scrollIntoView({ behavior: "smooth", block: "start" }), 0); });
       if (state.showSummary) {
-        bindMoodRating(content, { id: "timeline-mood-after", outputId: "timeline-mood-after-value", buttonId: "timeline-mood-compare", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#timeline-mood-comparison"); comparison.innerHTML = moodComparisonMarkup(moodBefore, moodAfter); comparison.hidden = false; } });
+        bindMoodRating(content, { id: "timeline-mood-after", outputId: "timeline-mood-after-value", buttonId: "timeline-mood-compare", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#timeline-mood-comparison"); comparison.innerHTML = Number.isFinite(moodBefore) ? moodComparisonMarkup(moodBefore, moodAfter) : `<p>Your optional rating now: ${moodAfter} / 10. There is no before rating to compare.</p>`; comparison.hidden = false; } });
         content.querySelector("#timeline-save-map")?.addEventListener("click", () => { try { saveMap({ title: "Emotion Timeline", tool: "emotion-timeline", answers: JSON.parse(JSON.stringify(state)), moodCheck: state.moodAfter === null ? null : { before: moodBefore, after: state.moodAfter } }); content.querySelector("#timeline-result-status").textContent = "Saved on this device."; } catch { content.querySelector("#timeline-result-status").textContent = "This browser could not save the timeline."; } });
         content.querySelector("#timeline-download-map")?.addEventListener("click", () => downloadText("emotion-timeline.txt", summaryText()));
         content.querySelector("#timeline-copy-map")?.addEventListener("click", async () => { try { await navigator.clipboard.writeText(summaryText()); content.querySelector("#timeline-result-status").textContent = "Copied."; } catch { content.querySelector("#timeline-result-status").textContent = "Copy was blocked by this browser. Use Download instead."; } });
@@ -1987,7 +1960,7 @@ function renderPresentOrientation(root, tool) {
         if (value === "next") { if (state.stage === "start" && !state.lens) return; state.stage = stages[Math.min(stages.length - 1, stages.indexOf(state.stage) + 1)]; render(); }
       }));
       if (state.stage === "summary") {
-        bindMoodRating(content, { id: "present-mood-after", outputId: "present-mood-after-value", buttonId: "present-mood-compare", heading: "How are you feeling now?", intro: "Optional: this compares overall mood, not whether you are calm.", buttonText: "Show the change", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#present-mood-comparison"); comparison.innerHTML = moodComparisonMarkup(moodBefore, moodAfter); comparison.hidden = false; } });
+        bindMoodRating(content, { id: "present-mood-after", outputId: "present-mood-after-value", buttonId: "present-mood-compare", heading: "How are you feeling now?", intro: "Optional: this compares overall mood, not whether you are calm.", buttonText: "Show the change", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#present-mood-comparison"); comparison.innerHTML = Number.isFinite(moodBefore) ? moodComparisonMarkup(moodBefore, moodAfter) : `<p>Your optional rating now: ${moodAfter} / 10. There is no before rating to compare.</p>`; comparison.hidden = false; } });
         const entry = { title: "Orient to the Present", tool: "grounding", answers: JSON.parse(JSON.stringify(state)), moodCheck: state.moodAfter === null ? null : { before: moodBefore, after: state.moodAfter } };
         content.querySelector("#present-save-map")?.addEventListener("click", () => { try { saveMap(entry); content.querySelector("#present-result-status").textContent = "Saved on this device."; } catch { content.querySelector("#present-result-status").textContent = "This browser could not save the map."; } });
         content.querySelector("#present-download-map")?.addEventListener("click", () => downloadText("orient-to-the-present.txt", summaryText()));
@@ -2058,7 +2031,7 @@ function renderQuickSensoryReset(root, tool) {
         if (value === "next") { if (state.stage === "entry" && !state.direction) return; if (state.stage === "plan" && !state.capacity) state.capacity = "A little"; state.stage = stages[Math.min(stages.length - 1, stages.indexOf(state.stage) + 1)]; render(); }
       }));
       if (state.stage === "summary") {
-        bindMoodRating(content, { id: "sensory-reset-mood-after", outputId: "sensory-reset-mood-after-value", buttonId: "sensory-reset-mood-compare", heading: "How are you feeling now?", intro: "Optional: this compares overall mood, not whether the situation is solved.", buttonText: "Show the change", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#sensory-reset-mood-comparison"); comparison.innerHTML = moodComparisonMarkup(moodBefore, moodAfter); comparison.hidden = false; } });
+        bindMoodRating(content, { id: "sensory-reset-mood-after", outputId: "sensory-reset-mood-after-value", buttonId: "sensory-reset-mood-compare", heading: "How are you feeling now?", intro: "Optional: this compares overall mood, not whether the situation is solved.", buttonText: "Show the change", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#sensory-reset-mood-comparison"); comparison.innerHTML = Number.isFinite(moodBefore) ? moodComparisonMarkup(moodBefore, moodAfter) : `<p>Your optional rating now: ${moodAfter} / 10. There is no before rating to compare.</p>`; comparison.hidden = false; } });
         const entry = { title: "Quick Sensory Reset", tool: "quick-reset", answers: JSON.parse(JSON.stringify(state)), moodCheck: state.moodAfter === null ? null : { before: moodBefore, after: state.moodAfter } };
         content.querySelector("#sensory-save-map")?.addEventListener("click", () => { try { saveMap(entry); content.querySelector("#sensory-result-status").textContent = "Saved on this device."; } catch { content.querySelector("#sensory-result-status").textContent = "This browser could not save the map."; } });
         content.querySelector("#sensory-download-map")?.addEventListener("click", () => downloadText("quick-sensory-reset.txt", summaryText()));
@@ -2154,7 +2127,7 @@ function renderCloserFeelingsCheckIn(root, tool) {
       }));
       ["closer-intensity-before", "closer-intensity-after"].forEach((id) => content.querySelector(`#${id}`)?.addEventListener("input", (event) => { const key = id.includes("before") ? "intensityBefore" : "intensityAfter"; state[key] = Number(event.target.value); content.querySelector(`#${id}-value`).textContent = `${state[key]} / 4`; }));
       if (state.stage === "summary") {
-        bindMoodRating(content, { id: "closer-mood-after", outputId: "closer-mood-after-value", buttonId: "closer-mood-compare", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#closer-mood-comparison"); comparison.innerHTML = moodComparisonMarkup(moodBefore, moodAfter); comparison.hidden = false; } });
+        bindMoodRating(content, { id: "closer-mood-after", outputId: "closer-mood-after-value", buttonId: "closer-mood-compare", onSubmit: (moodAfter) => { state.moodAfter = moodAfter; const comparison = content.querySelector("#closer-mood-comparison"); comparison.innerHTML = Number.isFinite(moodBefore) ? moodComparisonMarkup(moodBefore, moodAfter) : `<p>Your optional rating now: ${moodAfter} / 10. There is no before rating to compare.</p>`; comparison.hidden = false; } });
         const entry = { title: "Closer Feelings Check-In", tool: "emotion-check-in", answers: JSON.parse(JSON.stringify(state)), moodCheck: state.moodAfter === null ? null : { before: moodBefore, after: state.moodAfter } };
         content.querySelector("#closer-save-map")?.addEventListener("click", () => { try { saveMap(entry); content.querySelector("#closer-result-status").textContent = "Saved on this device."; } catch { content.querySelector("#closer-result-status").textContent = "This browser could not save the map."; } });
         content.querySelector("#closer-download-map")?.addEventListener("click", () => downloadText("closer-feelings-check-in.txt", summaryText()));
@@ -2415,7 +2388,7 @@ export function renderTool(root, id) {
     renderRealityMap(root, tool);
     return;
   }
-  root.innerHTML = `<div class="wrap tool-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")} / ${esc(tool.kind === "pattern" ? "Creative pause" : tool.kind === "sound" ? "Sound & sensation" : "Interactive prompt")}</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Your writing stays in this browser tab unless you choose “Save to My Maps”. It is not sent to Nobody’s Simple.</p></section><section id="tool-mood-gate">${moodRatingMarkup({ id: "tool-mood-before", outputId: "tool-mood-before-value", buttonId: "tool-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you use the tool.", buttonText: "Open this tool →" })}</section><div id="tool-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Check my body/state</a><a class="chip" href="#questions">Work through a difficult question</a><a class="chip" href="#account/maps">My Maps</a></div></div>`;
+  root.innerHTML = `<div class="wrap tool-page"><a class="back-link" href="#tools">← All tools</a><section class="tool-heading"><p class="eyebrow">${esc(toolGroups.find((g) => g[0] === tool.group)?.[1] || "Tool")} / ${esc(tool.kind === "pattern" ? "Creative pause" : tool.kind === "sound" ? "Sound & sensation" : "Interactive prompt")}</p><h1>${esc(tool.title)}</h1><p class="lead">${esc(tool.short)}</p><p class="privacy-note">Draft saving follows your Account settings. Save a finished reflection to My Maps when it helps. Cross-device syncing is optional in Account.</p></section><section id="tool-mood-gate">${moodRatingMarkup({ id: "tool-mood-before", outputId: "tool-mood-before-value", buttonId: "tool-mood-start", heading: "How are you feeling before you begin?", intro: "Slide to mark your overall mood. This starting point stays in this tab while you use the tool.", buttonText: "Open this tool →" })}<button type="button" class="button secondary" id="tool-skip-rating">Skip the rating and open this tool</button></section><div id="tool-content" hidden></div><div class="tool-next row"><a class="chip" href="#tool/state-check">Check my body/state</a><a class="chip" href="#questions">Work through a difficult question</a><a class="chip" href="#account/maps">My Maps</a></div></div>`;
   bindMoodRating(root, {
     id: "tool-mood-before",
     outputId: "tool-mood-before-value",
@@ -2427,6 +2400,8 @@ export function renderTool(root, id) {
       mountTool(content, moodBefore);
     },
   });
+
+  root.querySelector("#tool-skip-rating").onclick = () => { root.querySelector("#tool-mood-gate").hidden = true; const content = root.querySelector("#tool-content"); content.hidden = false; mountTool(content, null); };
 
   function mountTool(content, moodBefore) {
     content.innerHTML = `${tool.kind === "pattern" ? patternControls() : ""}<form id="feature-form" class="tool-form">${tool.fields.map(fieldHtml).join("")}${tool.fields.length ? `<div class="row"><button class="button" type="submit">Build my reflection ↗</button><button class="button secondary" type="reset">Clear this form</button></div>` : `<p class="fine">Use the interactive controls above, then build a reflection to compare your mood.</p><div class="row"><button class="button" type="submit">Build my reflection ↗</button></div>`}</form>${tool.kind === "pattern" ? `<div id="pattern-preview" class="pattern-preview" aria-label="Decorative animated pattern"></div>` : ""}${tool.kind === "sound" ? `<div class="row"><button type="button" class="button" id="sound-play">Play mix</button><button type="button" class="button secondary" id="sound-stop">Stop sound</button><p class="fine" id="sound-status" role="status">Silent until you press Play. No audio is recorded or transmitted.</p></div>` : ""}<section id="tool-result" class="tool-result" hidden aria-live="polite"></section>`;
@@ -2461,7 +2436,7 @@ export function renderTool(root, id) {
             })
             .join("") ||
           "<p>No notes added yet. Save nothing or return to the questions whenever you like.</p>"
-        }</div>${extra}${moodRatingMarkup({ id: "tool-mood-after", outputId: "tool-mood-after-value", buttonId: "tool-mood-compare", heading: "How are you feeling now?", intro: "After trying the activity, slide to mark your overall mood again.", buttonText: "Show my mood change →" })}<div id="mood-comparison" hidden></div><div class="row mood-result-actions" id="result-actions" hidden><button id="save-map" type="button" class="button">Save to My Maps</button><button id="download-map" class="button secondary" type="button">Download these notes</button><button id="copy-map" class="button secondary" type="button">Copy text</button></div><p id="result-status" class="fine" role="status"></p>`;
+        }</div>${extra}${moodRatingMarkup({ id: "tool-mood-after", outputId: "tool-mood-after-value", buttonId: "tool-mood-compare", heading: "How are you feeling now?", intro: "After trying the activity, slide to mark your overall mood again.", buttonText: "Show my mood change →" })}<div id="mood-comparison" hidden></div><div class="row mood-result-actions" id="result-actions"><button id="save-map" type="button" class="button">Save to My Maps</button><button id="download-map" class="button secondary" type="button">Download these notes</button><button id="copy-map" class="button secondary" type="button">Copy text</button></div><p id="result-status" class="fine" role="status"></p>`;
       const entry = {
         title: tool.title,
         tool: tool.id,
@@ -2476,7 +2451,7 @@ export function renderTool(root, id) {
             return `${f.label}: ${Array.isArray(v) ? v.join(", ") : v || "—"}`;
           })
           .join("\n\n") +
-        `\n\nMood before activity: ${entry.moodCheck?.before ?? moodBefore} / 10` +
+        `\n\nMood before activity: ${entry.moodCheck?.before ?? moodBefore ?? "Not recorded"}` +
         (entry.moodCheck
           ? `\nMood after activity: ${entry.moodCheck.after} / 10\nMood rating change: ${entry.moodCheck.after - entry.moodCheck.before} points`
           : "");
@@ -2485,9 +2460,9 @@ export function renderTool(root, id) {
         outputId: "tool-mood-after-value",
         buttonId: "tool-mood-compare",
         onSubmit: (moodAfter) => {
-          entry.moodCheck = { before: moodBefore, after: moodAfter };
+          entry.moodCheck = Number.isFinite(moodBefore) ? { before: moodBefore, after: moodAfter } : null;
           const comparison = content.querySelector("#mood-comparison");
-          comparison.innerHTML = moodComparisonMarkup(moodBefore, moodAfter);
+          comparison.innerHTML = Number.isFinite(moodBefore) ? moodComparisonMarkup(moodBefore, moodAfter) : `<p>Your optional rating now: ${moodAfter} / 10. There is no before rating to compare.</p>`;
           comparison.hidden = false;
           content.querySelector("#result-actions").hidden = false;
           comparison.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -2644,7 +2619,7 @@ export function renderMaps(root, context = {}) {
     maps
       .map(
         (m) =>
-          `<article class="map-note"><div class="row spaced"><div><span class="badge">${esc(m.status || "New observation")}</span><h3>${esc(m.title)}</h3><small>${new Date(m.savedAt).toLocaleString()}</small></div><button class="chip" data-delete-map="${esc(m.id)}">Delete note</button></div><div class="map-note-body">${Object.entries(
+          `<article class="map-note"><div class="row spaced"><div><span class="badge">${esc(m.status || "New observation")}</span><h3>${esc(m.title)}</h3><small>${new Date(m.savedAt).toLocaleString()}</small></div><button class="chip" data-delete-map="${esc(m.id)}">Delete note</button></div>${m.strategy ? `<a class="button secondary" href="#route/${encodeURIComponent(m.id)}">Edit or review this map →</a>` : `<details class="map-edit"><summary>Edit these observations</summary><form data-edit-map="${esc(m.id)}">${Object.entries(m.answers || {}).map(([k,v],i)=>`<label class="field">${esc(k)}<textarea name="answer-${i}" rows="3">${esc(Array.isArray(v)?v.join(", "):v)}</textarea></label>`).join("")}<button class="button" type="submit">Save changes</button><p role="status"></p></form></details>`}<div class="map-note-body">${Object.entries(
             m.answers || {},
           )
             .map(
@@ -2658,6 +2633,12 @@ export function renderMaps(root, context = {}) {
       .join("") ||
     '<div class="empty">Nothing saved yet. In a tool, choose “Save to My Maps” when a note is useful to keep.</div>'
   }</section></div>`;
+  root.querySelectorAll('[data-edit-map]').forEach(form => { form.onsubmit = event => {
+    event.preventDefault();
+    try { const next = loadMaps().map(map => map.id !== form.dataset.editMap ? map : {...map, updatedAt:new Date().toISOString(), answers:Object.fromEntries(Object.keys(map.answers || {}).map((key,i)=>[key,form.elements.namedItem(`answer-${i}`).value]))});
+      localStorage.setItem(mapKey,JSON.stringify(next)); renderMaps(root,context);
+    } catch { form.querySelector('[role=status]').textContent='Changes could not be saved. Copy your changes before leaving.'; }
+  }; });
   root.querySelector("#export-maps").onclick = () =>
     downloadText(
       "my-maps.json",

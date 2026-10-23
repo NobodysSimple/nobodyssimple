@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v89-account-hub-spark";
+const CACHE = "nobodyssimple-v90-strategy-lab";
 const SHELL = [
   "./",
   "index.html",
@@ -6,7 +6,7 @@ const SHELL = [
   "nd-play.css",
   "nd-play-v4.mjs",
   "styles.css",
-  "site.mjs",
+  "site.mjs", "strategy.mjs", "tool-guidance.mjs", "strategy.css", "media/strategy/wisbody.png",
   "accounts.mjs", "account-config.mjs", "account-free.mjs", "account-policy.mjs", "account-storage.mjs", "account-sync.mjs", "account-i18n.mjs", "account.css", "account-play-bridge.mjs",
   "media/avatars/base.png", "media/avatars/affirmed.png", "media/avatars/bowing.png", "media/avatars/dancing.png", "media/avatars/drawing.png", "media/avatars/excited-wave.png", "media/avatars/excited.png", "media/avatars/frolicking.png", "media/avatars/peering.png", "media/avatars/thinking.png", "media/avatars/reading.png", "media/avatars/running.png", "media/avatars/sitting.png", "media/avatars/still.png", "media/avatars/sulking.png", "media/avatars/waiting.png", "media/avatars/waltzing.png", "media/avatars/yippie.png",
   "quote-content.mjs",

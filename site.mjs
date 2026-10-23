@@ -1,3 +1,5 @@
+import {enhanceToolGuide} from './tool-guidance.mjs';
+import {configureStrategy, renderStrategyRoutes, renderStrategyRoute, renderWisbody} from './strategy.mjs';
 import { accountReady, configureAccountHost, renderAccount, renderPublicProfile, enhanceAccountRoute, accountState } from './accounts.mjs';
 import { tools as accountTools } from './tool-catalog.mjs';
 import { curriculum, emotions, questions } from "./data.mjs";
@@ -35,6 +37,7 @@ import { renderPersonalityTest } from "./personality-test.mjs";
 import { renderBigFive, renderQuestionnaires, renderSystemsQuestionnaire } from "./questionnaires.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderSupport } from "./referrals.mjs";
+configureStrategy(accountState);
 const main = document.querySelector("main");
 const imageLightbox = document.createElement("dialog");
 imageLightbox.className = "site-image-lightbox";
@@ -156,6 +159,7 @@ function home() {
 }
 function legacyLibrary() {
   const s = libraryState;
+  if (s.view === "quotes") { main.innerHTML = '<div class="wrap"><a href="#library">← All learning</a><div id="wisbody-learn"></div></div>'; renderWisbody(main.querySelector("#wisbody-learn")); return; }
   const formats = [...new Set(["video", "education", ...posts.filter((p) => p.destinations?.includes("library")).map((p) => p.type)])];
   const formatOptions = formats.map((type) => `<option value="${esc(type)}" ${s.type === type ? "selected" : ""}>${esc(typeLabel[type] || "Resource")}</option>`).join("");
   main.innerHTML = `<div class="wrap">${heading("The learning library", "Follow a thread.<br>Build a bigger picture.", "Explore the full curriculum, or find a video or educational piece by topic.")}<div class="tabs" role="group" aria-label="Library view"><button data-view="curriculum" class="${s.view === "curriculum" ? "active" : ""}">Curriculum map</button><button data-view="resources" class="${s.view === "resources" ? "active" : ""}">Videos & writing</button></div><div class="filters"><label>Search lessons and resources<input id="search" type="search" placeholder="Attention, values, belonging…" value="${esc(s.query)}"></label><label>Format<select id="format"><option value="">All formats</option>${formatOptions}</select></label><label>Topic<select id="topic"><option value="">All topics</option>${[
@@ -196,6 +200,7 @@ function legacyLibrary() {
 }
 function library() {
   const s = libraryState;
+  if (s.view === "quotes") { main.innerHTML = '<div class="wrap"><a href="#library">← All learning</a><div id="wisbody-learn"></div></div>'; renderWisbody(main.querySelector("#wisbody-learn")); return; }
   const view = ["crash", "courses", "quotes", "videos", "audios", "blog"].includes(s.view) ? s.view : "home";
   const videos = posts.filter((post) => post.type === "video");
   const blogs = posts.filter((post) => post.type === "blog");
@@ -211,17 +216,17 @@ function library() {
   };
   const moduleCards = visibleCurriculum.modules.map((module) => {
     const quarter = visibleCurriculum.quarters.find((item) => item.id === module.quarter);
-    return `<article class="learn-module-card"><p class="eyebrow">Module ${String(module.id).padStart(2, "0")} · ${esc(quarter?.name || "Course")}</p><h3>${esc(module.title)}</h3><p>${esc(module.question)}</p><span class="badge">Ready for new lessons</span></article>`;
+    return `<article class="learn-module-card"><p class="eyebrow">Module ${String(module.id).padStart(2, "0")} · ${esc(quarter?.name || "Course")}</p><h3>${esc(module.title)}</h3><p>${esc(module.question)}</p><span class="badge">In development</span></article>`;
   }).join("");
   const doors = [
     ["crash", "Crash Courses", "Mini courses", "Short, focused lessons across the kinds of problems people face in real life. Each piece is designed to take five minutes or less.", "↯", "learn-door-crash"],
     ["courses", "Nobody’s Simple Courses", "The full curriculum", "The course architecture stays: four quarters, twelve modules and a place for the new lessons you will add from scratch.", "▤", "learn-door-courses"],
-    ["quotes", "Quotes", "Words to carry", "Swipe through facts, affirmations, invitations and reassurances that fit the project’s way of seeing people.", "❝", "learn-door-quotes"],
+    ["quotes", "Wisbody’s thoughts", "Reflect and journal", "Explore a thought inside Wisbody’s speech bubble and keep a note if it helps.", "❝", "learn-door-quotes"],
     ["videos", "Videos", "Watch and think", "YouTube videos brought into the same learning space as the writing and courses.", "▷", "learn-door-videos"],
     ["audios", "Audios", "Listen and learn", "Future guided audio lessons for relaxation, letting go and learning at your own pace.", "♪", "learn-door-audios"],
     ["blog", "Blog", "Longer notes", "Read the essays, arguments and reflections from Nobody’s Simple without leaving Learn.", "Aa", "learn-door-blog"],
   ];
-  const doorMarkup = doors.map(([id, title, kicker, description, icon, className]) => `<button type="button" class="learn-door-card ${className}" data-learn-view="${id}"><span class="learn-door-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${kicker}</span><h2>${title}</h2><p>${description}</p><strong>Open ${title} →</strong></button>`).join("");
+  const doorMarkup = doors.filter(([id]) => ["blog","videos","quotes"].includes(id)).map(([id, title, kicker, description, icon, className]) => `<button type="button" class="learn-door-card ${className}" data-learn-view="${id}"><span class="learn-door-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${kicker}</span><h2>${title}</h2><p>${description}</p><strong>Open ${title} →</strong></button>`).join("");
   let content = "";
   if (view === "home") {
     content = `<section class="learn-door-grid" aria-label="Learn sections">${doorMarkup}</section>`;
@@ -234,7 +239,7 @@ function library() {
     const domainMarkup = domains.map((domain) => `<article class="learn-crash-domain"><div class="learn-crash-domain-head"><span class="learn-crash-number">${String(crashCourseTopics.findIndex((item) => item.id === domain.id) + 1).padStart(2, "0")}</span><div><p class="eyebrow">${domain.topics.length} topic${domain.topics.length === 1 ? "" : "s"} · swipe to browse</p><h3>${esc(domain.title)}</h3></div></div><div class="learn-crash-rail" tabindex="0" aria-label="${esc(domain.title)} topics">${domain.topics.map((topic, index) => topicCard(topic, index)).join("")}</div></article>`).join("");
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-crash"><div><p class="eyebrow">Topic catalogue · lessons coming later</p><h2>Crash Courses</h2><p>Short, practical explanations organised around real problems people encounter. This is the topic map for future 2–5 minute lessons; there is no lesson content here yet.</p></div><span class="learn-section-icon">↯</span></div><label class="learn-search">Search topics<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Try anxiety, boundaries, attention…"></label>${emergencyMarkup}<div class="learn-crash-domain-grid">${domainMarkup || `<p class="empty">No topics match that search yet.</p>`}</div></section>`;
   } else if (view === "courses") {
-    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-courses"><div><p class="eyebrow">Four quarters · twelve modules</p><h2>Nobody’s Simple Courses</h2><p>The course framework is ready for a new curriculum. The previous planned lessons have been removed; each module is now an open place for lessons you choose to build.</p></div><span class="learn-section-icon">▤</span></div><div class="learn-quarter-strip">${visibleCurriculum.quarters.map((quarter) => `<div><span>${quarter.id}</span><strong>${esc(quarter.name)}</strong><small>${esc(quarter.subtitle)}</small></div>`).join("")}</div><div class="learn-module-grid">${moduleCards}</div></section>`;
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-courses"><div><p class="eyebrow">Four quarters · twelve modules</p><h2>Nobody’s Simple Courses</h2><p>Courses are in development. These topics are a preview; lessons are not yet available.</p></div><span class="learn-section-icon">▤</span></div><div class="learn-quarter-strip">${visibleCurriculum.quarters.map((quarter) => `<div><span>${quarter.id}</span><strong>${esc(quarter.name)}</strong><small>${esc(quarter.subtitle)}</small></div>`).join("")}</div><div class="learn-module-grid">${moduleCards}</div></section>`;
   } else if (view === "quotes") {
     content = `<section class="learn-section-panel learn-quotes-panel"><div class="learn-section-heading learn-door-quotes"><div><p class="eyebrow">Swipe, save, reflect</p><h2>Quotes</h2><p>Short pieces of language for when you want a fact, a little reassurance or a more useful question.</p></div><span class="learn-section-icon">❝</span></div><div class="learn-quote-stage" id="learn-quote-stage"><div class="learn-quote-card"><span class="badge" id="learn-quote-label"></span><p id="learn-quote-text"></p><p class="learn-quote-prompt" id="learn-quote-prompt"></p></div><div class="learn-quote-controls"><button type="button" class="button secondary" id="learn-quote-prev" aria-label="Previous quote">←</button><span id="learn-quote-position"></span><button type="button" class="button secondary" id="learn-quote-next" aria-label="Next quote">→</button></div><section class="learn-quote-journal"><button type="button" class="chip" id="learn-quote-journal-toggle">Journal on this</button><div id="learn-quote-journal-wrap" hidden><label class="field">What does this bring up for you?<textarea id="learn-quote-note" rows="4" placeholder="A few words is enough…"></textarea></label><button type="button" class="button secondary" id="learn-quote-save">Save note on this device</button><span class="fine" id="learn-quote-status" role="status"></span></div></section></div></section>`;
   } else if (view === "videos") {
@@ -274,6 +279,7 @@ function library() {
 }
 function libraryResults() {
   const s = libraryState;
+  if (s.view === "quotes") { main.innerHTML = '<div class="wrap"><a href="#library">← All learning</a><div id="wisbody-learn"></div></div>'; renderWisbody(main.querySelector("#wisbody-learn")); return; }
   const query = s.query.toLowerCase();
   const content = posts.filter(
     (p) =>
@@ -764,10 +770,11 @@ function renderSystemsPage() {
   }
 }
 function route() {
+  main.onclick = null;
   const [name, id] = location.hash.slice(1).split("/");
   if (name === "maps" || (name === "tool" && id === "maps")) { location.replace("#account/maps"); return; }
   const currentName = name || "home";
-  if(accountState().locked && ['tool','play','guided','questions','compass','personality','systems','big-five','stim-space'].includes(name)){
+  if(accountState().locked && ['route','wisbody','tool','play','guided','questions','compass','personality','systems','big-five','stim-space'].includes(name)){
     main.innerHTML='<div class="wrap"><h1>Your saved work is locked</h1><p>Confirm your identity in Account before opening an activity that can read or save private work.</p><a class="button" href="#account">Open account to unlock</a></div>';return;
   }
   const startRoutes = new Set(["help", "navigate", "questions", "navigator", "compass"]);
@@ -776,6 +783,8 @@ function route() {
     const linkName = (a.hash || "").slice(1).split("/")[0];
     const active =
       currentName === linkName ||
+      (currentName === "route" && linkName === "routes") ||
+      (currentName === "wisbody" && linkName === "library") ||
       (["personality", "big-five", "systems"].includes(currentName) && linkName === "questionnaires") ||
       (startRoutes.has(currentName) && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
@@ -789,7 +798,7 @@ function route() {
       home: () => renderHome(main, posts),
       help: () => renderHome(main, posts),
       navigate: () => renderHome(main, posts),
-      library,
+      library: () => { libraryState.view = ["blog","videos","quotes","courses","crash","audios"].includes(id) ? id : "home"; library(); },
       learn: library,
       blog,
       writing: blog,
@@ -799,6 +808,7 @@ function route() {
       tool: () => {
         const toolId = decodeURIComponent(id || "");
         renderTool(main, toolId);
+        enhanceToolGuide(main, toolId);
       },
       play: () => renderInteractiveTool(main, decodeURIComponent(id || "")),
       guided: () => renderLifeNavigation(main, decodeURIComponent(id || "")),
@@ -817,7 +827,9 @@ function route() {
       install: () => renderInstall(main),
       community: () => renderCommunity(main, "feedback"),
       volunteer: () => renderCommunity(main, "volunteer"),
-      routes: () => renderRoutes(main),
+      routes: () => renderStrategyRoutes(main),
+      route: () => renderStrategyRoute(main, decodeURIComponent(id || "")),
+      wisbody: () => { main.innerHTML = '<div class="wrap" id="wisbody-page"></div>'; renderWisbody(main.firstElementChild); },
       account: () => renderAccount(main, id || "home"),
       profile: () => renderPublicProfile(main, decodeURIComponent(id || "")),
       maps: () => renderAccount(main, "maps"),
