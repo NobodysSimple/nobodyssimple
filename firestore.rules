@@ -97,7 +97,7 @@ service cloud.firestore {
   function canReply(d){return d.parentId=='' || (get(/databases/$(database)/documents/comments/$(d.parentId)).data.status=='approved'&&get(/databases/$(database)/documents/comments/$(d.parentId)).data.postId==d.postId&&!exists(/databases/$(database)/documents/users/$(request.auth.uid)/blocks/$(get(/databases/$(database)/documents/comments/$(d.parentId)).data.authorUid))&&!exists(/databases/$(database)/documents/users/$(get(/databases/$(database)/documents/comments/$(d.parentId)).data.authorUid)/blocks/$(request.auth.uid)));}
   function validComment(id){
    let d=request.resource.data;let p=profile(request.auth.uid);let r=/databases/$(database)/documents/users/$(request.auth.uid)/settings/communityRate;
-   return owner(request.auth.uid)&&request.auth.token.email_verified==true&&d.keys().hasOnly(['postId','body','authorUid','nickname','handle','avatarId','avatarData','status','parentId','createdAt','updatedAt'])
+   return verified()&&d.keys().hasOnly(['postId','body','authorUid','nickname','handle','avatarId','avatarData','status','parentId','createdAt','updatedAt'])
     && d.authorUid==request.auth.uid&&d.status=='pending'&&d.postId is string&&d.postId.matches('[A-Za-z0-9_-]{1,150}')&&d.body is string&&d.body.size()>=2&&d.body.size()<=2000&&!d.body.lower().matches('(?s).*(https?://|www[.]).*')&&d.updatedAt==request.time
     && d.nickname==p.nickname&&d.handle==p.handle&&d.avatarId==p.avatarId&&d.avatarData==p.avatarData&&d.parentId is string&&canReply(d)
     && getAfter(r).data.lastCommentAt==request.time&&getAfter(r).data.lastCommentId==id&&(!exists(r)||request.time>=get(r).data.lastCommentAt+duration.value(20,'s'));
@@ -118,6 +118,87 @@ service cloud.firestore {
    allow delete: if cleanup(resource.data.reporterUid);
   }
   match /users/{uid}/{col}/{id}{allow read:if (owner(uid)||cleanup(uid))&&col in ['settings','devices','notifications','blocks'];allow delete:if cleanup(uid)&&col in ['settings','devices','notifications','blocks'];}
+  // Public community content and verified-only participation.
+  function verifiedIdentity(){return signed()&&owner(request.auth.uid)&&request.auth.token.email_verified==true;}
+  function verified(){return verifiedIdentity()&&!exists(/databases/$(database)/documents/communityBans/$(request.auth.uid));}
+  function boardMod(){return verified()&&moderator()&&recent();}
+  function identityMatches(d){let p=profile(request.auth.uid);return d.authorUid==request.auth.uid&&d.nickname==p.nickname&&d.handle==p.handle&&d.avatarId==p.avatarId&&d.avatarData==p.avatarData;}
+  function postPath(id){return /databases/$(database)/documents/boardPosts/$(id);}
+  function livePost(id){return exists(postPath(id))&&get(postPath(id)).data.status=='published';}
+  function parentCleanup(id){return signed()&&exists(postPath(id))&&cleanup(get(postPath(id)).data.authorUid);}
+  function unblocked(a,b){return !exists(/databases/$(database)/documents/users/$(a)/blocks/$(b))&&!exists(/databases/$(database)/documents/users/$(b)/blocks/$(a));}
+  function rated(kind,id,container,seconds){let r=/databases/$(database)/documents/users/$(request.auth.uid)/communityRates/$(kind);let d=getAfter(r).data;return d.at==request.time&&d.objectId==id&&d.containerId==container&&(!exists(r)||request.time>=get(r).data.at+duration.value(seconds,'s'));}
+  match /users/{uid}/communityRates/{kind}{
+   allow read: if owner(uid)||cleanup(uid);
+   allow create,update: if verified()&&own(uid)&&request.resource.data.keys().hasOnly(['at','objectId','containerId'])&&request.resource.data.at==request.time&&request.resource.data.objectId is string&&request.resource.data.containerId is string&&(
+    (kind=='post'&&rated(kind,request.resource.data.objectId,'',60)&&getAfter(/databases/$(database)/documents/boardPosts/$(request.resource.data.objectId)).data.authorUid==uid&&getAfter(/databases/$(database)/documents/boardPosts/$(request.resource.data.objectId)).data.createdAt==request.time)
+    ||(kind=='reply'&&rated(kind,request.resource.data.objectId,request.resource.data.containerId,20)&&getAfter(/databases/$(database)/documents/boardPosts/$(request.resource.data.containerId)/replies/$(request.resource.data.objectId)).data.authorUid==uid&&getAfter(/databases/$(database)/documents/boardPosts/$(request.resource.data.containerId)/replies/$(request.resource.data.objectId)).data.createdAt==request.time)
+    ||(kind=='message'&&rated(kind,request.resource.data.objectId,request.resource.data.containerId,3)&&getAfter(/databases/$(database)/documents/conversations/$(request.resource.data.containerId)/messages/$(request.resource.data.objectId)).data.authorUid==uid&&getAfter(/databases/$(database)/documents/conversations/$(request.resource.data.containerId)/messages/$(request.resource.data.objectId)).data.createdAt==request.time));
+   allow delete: if cleanup(uid);
+  }
+  match /communityMembers/{uid}{
+   allow get: if true;
+   allow create,update: if verified()&&own(uid)&&request.resource.data.keys().hasOnly(['uid','nickname','handle','avatarId','avatarData','createdAt','updatedAt'])&&request.resource.data.uid==uid&&request.resource.data.nickname==profile(uid).nickname&&request.resource.data.handle==profile(uid).handle&&request.resource.data.avatarId==profile(uid).avatarId&&request.resource.data.avatarData==profile(uid).avatarData&&request.resource.data.updatedAt==request.time&&(resource==null?request.resource.data.createdAt==request.time:request.resource.data.createdAt==resource.data.createdAt);
+   allow delete: if cleanup(uid);
+  }
+  function validBoardPost(){let d=request.resource.data;return d.keys().hasOnly(['title','body','status','authorUid','nickname','handle','avatarId','avatarData','attachmentCount','createdAt','updatedAt'])&&identityMatches(d)&&d.title is string&&d.title.size()>=3&&d.title.size()<=120&&d.body is string&&d.body.size()>0&&d.body.size()<=40000&&d.status=='published'&&d.attachmentCount is int&&d.attachmentCount>=0&&d.attachmentCount<=2&&d.updatedAt==request.time;}
+  match /boardPosts/{id}{
+   allow read: if resource.data.status=='published'||moderator()||(signed()&&resource.data.authorUid==request.auth.uid&&(owner(request.auth.uid)||cleanup(request.auth.uid)));
+   allow create: if verified()&&validBoardPost()&&request.resource.data.createdAt==request.time&&rated('post',id,'',60)
+    &&(request.resource.data.attachmentCount<1||existsAfter(/databases/$(database)/documents/boardPosts/$(id)/attachments/0))&&(request.resource.data.attachmentCount<2||existsAfter(/databases/$(database)/documents/boardPosts/$(id)/attachments/1));
+   allow update: if verified()&&resource.data.status=='published'&&resource.data.authorUid==request.auth.uid&&request.resource.data.updatedAt==request.time&&(
+     (request.resource.data.diff(resource.data).affectedKeys().hasOnly(['title','body','updatedAt'])&&request.resource.data.title is string&&request.resource.data.title.size()>=3&&request.resource.data.title.size()<=120&&request.resource.data.body is string&&request.resource.data.body.size()>0&&request.resource.data.body.size()<=40000)
+     ||(request.resource.data.diff(resource.data).affectedKeys().hasOnly(['title','body','status','attachmentCount','updatedAt'])&&request.resource.data.title=='Removed post'&&request.resource.data.body==''&&request.resource.data.status=='deleted'&&request.resource.data.attachmentCount==0))
+    ||(boardMod()&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','updatedAt'])&&request.resource.data.status=='hidden'&&request.resource.data.updatedAt==request.time);
+   allow delete: if cleanup(resource.data.authorUid);
+   match /attachments/{slot}{
+    allow read: if livePost(id)||parentCleanup(id)||moderator()||(signed()&&owner(get(postPath(id)).data.authorUid));
+    allow create: if verified()&&slot in ['0','1']&&getAfter(postPath(id)).data.authorUid==request.auth.uid&&getAfter(postPath(id)).data.createdAt==request.time&&getAfter(postPath(id)).data.attachmentCount>(slot=='0'?0:1)
+     &&request.resource.data.keys().hasOnly(['name','mime','size','data'])&&request.resource.data.name is string&&request.resource.data.name.size()>0&&request.resource.data.name.size()<=100&&request.resource.data.mime in ['image/png','image/jpeg','image/webp','application/pdf','text/plain']&&((request.resource.data.mime=='image/png'&&request.resource.data.name.matches('.+[.]png'))||(request.resource.data.mime=='image/jpeg'&&request.resource.data.name.matches('.+[.]jpg'))||(request.resource.data.mime=='image/webp'&&request.resource.data.name.matches('.+[.]webp'))||(request.resource.data.mime=='application/pdf'&&request.resource.data.name.matches('.+[.]pdf'))||(request.resource.data.mime=='text/plain'&&request.resource.data.name.matches('.+[.]txt')))&&request.resource.data.size is int&&request.resource.data.size>0&&request.resource.data.size<=122880&&request.resource.data.data is string&&request.resource.data.data.size()<=163840&&request.resource.data.data.matches('[A-Za-z0-9+/=]+');
+    allow delete: if parentCleanup(id)||(verified()&&get(postPath(id)).data.authorUid==request.auth.uid&&getAfter(postPath(id)).data.status=='deleted');
+   }
+   match /replies/{replyId}{
+    allow read: if (livePost(id)&&resource.data.status=='published')||moderator()||parentCleanup(id)||(signed()&&resource.data.authorUid==request.auth.uid&&(owner(request.auth.uid)||cleanup(request.auth.uid)));
+    allow create: if verified()&&livePost(id)&&unblocked(request.auth.uid,get(postPath(id)).data.authorUid)&&identityMatches(request.resource.data)&&request.resource.data.keys().hasOnly(['authorUid','nickname','handle','avatarId','avatarData','body','status','createdAt','updatedAt'])&&request.resource.data.body is string&&request.resource.data.body.size()>0&&request.resource.data.body.size()<=12000&&request.resource.data.status=='published'&&request.resource.data.createdAt==request.time&&request.resource.data.updatedAt==request.time&&rated('reply',replyId,id,20);
+    allow update: if (verified()&&resource.data.authorUid==request.auth.uid&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['body','status','updatedAt'])&&request.resource.data.body==''&&request.resource.data.status=='deleted'&&request.resource.data.updatedAt==request.time)||(boardMod()&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','updatedAt'])&&request.resource.data.status=='hidden'&&request.resource.data.updatedAt==request.time);
+    allow delete: if cleanup(resource.data.authorUid)||parentCleanup(id);
+   }
+   match /reactions/{uid}{
+    allow read: if livePost(id)||parentCleanup(id);
+    allow create,update: if verified()&&own(uid)&&livePost(id)&&unblocked(uid,get(postPath(id)).data.authorUid)&&request.resource.data.keys().hasOnly(['authorUid','kind','updatedAt'])&&request.resource.data.authorUid==uid&&request.resource.data.kind in ['like','care','relate','thoughtful','thanks','celebrate']&&request.resource.data.updatedAt==request.time;
+    allow delete: if (verified()&&own(uid))||cleanup(resource.data.authorUid)||parentCleanup(id);
+   }
+  }
+  function threadPath(id){return /databases/$(database)/documents/conversations/$(id);}
+  function inThread(id){return signed()&&request.auth.uid in get(threadPath(id)).data.members;}
+  function validThread(id){let d=request.resource.data;return id==d.members[0]+'~'+d.members[1]&& d.keys().hasOnly(['members','createdBy','createdAt','updatedAt','lastMessageId'])&&d.members is list&&d.members.size()==2&&d.members[0] is string&&d.members[1] is string&&d.members[0]!=d.members[1]&&request.auth.uid in d.members&&exists(/databases/$(database)/documents/profiles/$(d.members[0]))&&exists(/databases/$(database)/documents/profiles/$(d.members[1]))&&unblocked(d.members[0],d.members[1])&&d.updatedAt==request.time;}
+  match /conversations/{id}{
+   allow get: if verifiedIdentity()&&unlocked(request.auth.uid)&&(!exists(threadPath(id))||request.auth.uid in resource.data.members);
+   allow list: if verifiedIdentity()&&unlocked(request.auth.uid)&&request.auth.uid in resource.data.members;
+   allow create: if verified()&&unlocked(request.auth.uid)&&validThread(id)&&request.resource.data.createdBy==request.auth.uid&&request.resource.data.createdAt==request.time&&getAfter(/databases/$(database)/documents/conversations/$(id)/messages/$(request.resource.data.lastMessageId)).data.authorUid==request.auth.uid&&getAfter(/databases/$(database)/documents/conversations/$(id)/messages/$(request.resource.data.lastMessageId)).data.createdAt==request.time;
+   allow update: if verified()&&unlocked(request.auth.uid)&&request.auth.uid in resource.data.members&&validThread(id)&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['updatedAt','lastMessageId'])&&getAfter(/databases/$(database)/documents/conversations/$(id)/messages/$(request.resource.data.lastMessageId)).data.authorUid==request.auth.uid&&getAfter(/databases/$(database)/documents/conversations/$(id)/messages/$(request.resource.data.lastMessageId)).data.createdAt==request.time;
+   match /messages/{messageId}{
+    allow read: if verifiedIdentity()&&unlocked(request.auth.uid)&&(!exists(threadPath(id))||inThread(id));
+    allow create: if verified()&&unlocked(request.auth.uid)&&request.auth.uid in getAfter(threadPath(id)).data.members&&unblocked(getAfter(threadPath(id)).data.members[0],getAfter(threadPath(id)).data.members[1])&&active(getAfter(threadPath(id)).data.members[0])&&active(getAfter(threadPath(id)).data.members[1])&&request.resource.data.keys().hasOnly(['authorUid','body','kind','flowerCount','createdAt'])&&request.resource.data.authorUid==request.auth.uid&&request.resource.data.createdAt==request.time&&request.resource.data.body is string&&((request.resource.data.kind=='text'&&request.resource.data.body.size()>0&&request.resource.data.body.size()<=12000&&request.resource.data.flowerCount==0)||(request.resource.data.kind=='flowers'&&request.resource.data.body==''&&request.resource.data.flowerCount is int&&request.resource.data.flowerCount>=1&&request.resource.data.flowerCount<=12))&&getAfter(threadPath(id)).data.lastMessageId==messageId&&getAfter(threadPath(id)).data.updatedAt==request.time&&rated('message',messageId,id,3);
+    allow delete: if cleanup(resource.data.authorUid);
+   }
+  }
+  function validBoardReport(id){let d=request.resource.data;return d.keys().hasOnly(['kind','postId','replyId','threadId','messageId','reporterUid','reportedUid','reason','quotedText','status','createdAt'])&&d.reporterUid==request.auth.uid&&d.reason is string&&d.reason.size()>=3&&d.reason.size()<=500&&d.status=='open'&&d.createdAt==request.time&&(
+   (d.kind=='post'&&livePost(d.postId)&&d.quotedText==get(postPath(d.postId)).data.body&&d.reportedUid==get(postPath(d.postId)).data.authorUid&&id=='post~'+d.postId+'~'+request.auth.uid)
+   ||(d.kind=='reply'&&livePost(d.postId)&&d.quotedText==get(/databases/$(database)/documents/boardPosts/$(d.postId)/replies/$(d.replyId)).data.body&&d.reportedUid==get(/databases/$(database)/documents/boardPosts/$(d.postId)/replies/$(d.replyId)).data.authorUid&&id=='reply~'+d.replyId+'~'+request.auth.uid)
+   ||(d.kind=='message'&&inThread(d.threadId)&&d.quotedText==get(/databases/$(database)/documents/conversations/$(d.threadId)/messages/$(d.messageId)).data.body&&d.reportedUid==get(/databases/$(database)/documents/conversations/$(d.threadId)/messages/$(d.messageId)).data.authorUid&&id=='message~'+d.messageId+'~'+request.auth.uid));}
+  match /boardReports/{id}{
+   allow read: if moderator()||(signed()&&resource.data.reporterUid==request.auth.uid&&(owner(request.auth.uid)||cleanup(request.auth.uid)));
+   allow create: if verified()&&validBoardReport(id);
+   allow update: if boardMod()&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status'])&&request.resource.data.status=='resolved';
+   allow delete: if cleanup(resource.data.reporterUid);
+  }
+  match /communityBans/{uid}{allow get:if own(uid)||moderator();allow create,update:if boardMod()&&request.resource.data.keys().hasOnly(['createdAt','reason'])&&request.resource.data.createdAt==request.time&&request.resource.data.reason is string&&request.resource.data.reason.size()<=300;allow delete:if boardMod();}
+  // Owner export and account deletion across nested public/private collections.
+  match /{path=**}/replies/{id}{allow read:if signed()&&resource.data.authorUid==request.auth.uid&&(owner(request.auth.uid)||cleanup(request.auth.uid));}
+  match /{path=**}/reactions/{id}{allow read:if signed()&&resource.data.authorUid==request.auth.uid&&(owner(request.auth.uid)||cleanup(request.auth.uid));}
+  match /{path=**}/messages/{id}{allow read:if signed()&&resource.data.authorUid==request.auth.uid&&((verifiedIdentity()&&unlocked(request.auth.uid))||cleanup(request.auth.uid));}
+
   match /{document=**}{allow read,write:if false;}
  }
 }

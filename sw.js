@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v92-dialogue-console";
+const CACHE = "nobodyssimple-v93-community";
 const SHELL = [
   "./",
   "index.html",
@@ -6,6 +6,7 @@ const SHELL = [
   "nd-play.css",
   "nd-play-v4.mjs",
   "styles.css",
+  "community-ui.mjs", "community-data.mjs", "community-policy.mjs", "community.css",
   "site.mjs", "strategy.mjs", "tool-guidance.mjs", "strategy.css", "media/strategy/wisbody.png",
   "accounts.mjs", "account-config.mjs", "account-free.mjs", "account-policy.mjs", "account-storage.mjs", "account-sync.mjs", "account-i18n.mjs", "account.css", "account-play-bridge.mjs",
   "media/console/nobody-base.png", "media/console/nobody-comparing.png", "media/console/nobody-waiting.png", "media/console/nobody-positing.png",

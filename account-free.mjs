@@ -1,3 +1,4 @@
+import {deleteCommunityAccountData,exportCommunityAccountData} from './community-data.mjs';
 // Spark-plan data operations. Firestore rules enforce permissions, names and cooldowns.
 import {doc,collection,getDoc,getDocs,setDoc,deleteDoc,query,where,orderBy,limit,startAfter,documentId,serverTimestamp,runTransaction,writeBatch} from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js';
 import {deleteUser} from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js';
@@ -23,6 +24,7 @@ export async function freeAccountCall(db,auth,name,data={}){
   const docs=(await getDocs(collection(db,'users',uid,'savedWork'))).docs;for(const d of docs)await runTransaction(db,async tx=>{const old=await tx.get(d.ref);if(old.exists())tx.set(d.ref,{deleted:true,revision:(old.data().revision||0)+1,updatedAt:serverTimestamp()});});return {ok:true};
  }
  if(name==='accountExport'){
+  if(data.part==='community')return exportCommunityAccountData(db,uid,{includeMessages:user.emailVerified});
   if(data.part==='metadata')return {format:'nobodyssimple-spark-v1',exportedAt:new Date().toISOString(),profile:(await getDoc(ref('profiles',uid))).data()||null,identity:{uid,email:user.email,providers:user.providerData.map(x=>x.providerId),createdAt:user.metadata.creationTime}};
   const part=data.part;if(!['savedWork','settings','devices','notifications','blocks','comments','reports'].includes(part))throw Error('Invalid export section.');let c=collection(db,...(['comments','reports'].includes(part)?[part]:['users',uid,part]));const clauses=[];if(['comments','reports'].includes(part))clauses.push(where(part==='comments'?'authorUid':'reporterUid','==',uid));clauses.push(orderBy(documentId()),limit(5));if(data.after)clauses.push(startAfter(data.after));const docs=(await getDocs(query(c,...clauses))).docs;return {items:docs.map(d=>({id:d.id,...d.data()})),next:docs.length===5?docs.at(-1).id:''};
  }
@@ -31,6 +33,7 @@ export async function freeAccountCall(db,auth,name,data={}){
   // A persistent marker denies old tokens access, including if cleanup is interrupted.
   await setDoc(ref('accountSecurity',uid),{deleting:true,deleteRequestedAt:serverTimestamp()},{merge:true});
   async function removeQuery(q){const rows=(await getDocs(q)).docs;for(let i=0;i<rows.length;i+=100){const batch=writeBatch(db);for(const d of rows.slice(i,i+100))batch.delete(d.ref);await batch.commit();}}
+  await deleteCommunityAccountData(db,uid);
   for(const col of ['savedWork','settings','devices','notifications','blocks'])await removeQuery(collection(db,'users',uid,col));
   for(const [col,field] of [['comments','authorUid'],['reports','reporterUid'],['nicknames','uid']])await removeQuery(query(collection(db,col),where(field,'==',uid)));
   await deleteDoc(ref('profiles',uid));await deleteUser(user);return {ok:true};

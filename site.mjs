@@ -1,6 +1,7 @@
+import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
 import {configureStrategy, renderStrategyRoutes, renderStrategyRoute, renderWisbody} from './strategy.mjs';
-import { accountReady, configureAccountHost, renderAccount, renderPublicProfile, enhanceAccountRoute, accountState } from './accounts.mjs';
+import { accountReady, configureAccountHost, renderAccount, renderPublicProfile, enhanceAccountRoute, accountState, communityConnection, communitySignIn, communityConfirmIdentity } from './accounts.mjs';
 import { tools as accountTools } from './tool-catalog.mjs';
 import { curriculum, emotions, questions } from "./data.mjs";
 import { crashCourseTopics, crashEmergencyTopics } from "./crash-topics.mjs";
@@ -38,6 +39,7 @@ import { renderBigFive, renderQuestionnaires, renderSystemsQuestionnaire } from 
 import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
+configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
 const main = document.querySelector("main");
 const supportDialog = document.createElement('dialog');
 supportDialog.className = 'support-dialog'; supportDialog.setAttribute('aria-label','Get help');
@@ -761,6 +763,7 @@ function renderSystemsPage() {
   }
 }
 function route() {
+  cleanupCommunity();
   main.onclick = null;
   const [name, id] = location.hash.slice(1).split("/");
   if (name === "maps" || (name === "tool" && id === "maps")) { location.replace("#account/maps"); return; }
@@ -823,7 +826,10 @@ function route() {
       route: () => renderStrategyRoute(main, decodeURIComponent(id || "")),
       wisbody: () => homePage({scrollTo:"#home-wisbody"}),
       account: () => renderAccount(main, id || "home"),
-      profile: () => renderPublicProfile(main, decodeURIComponent(id || "")),
+      profile: () => renderMemberProfile(main, decodeURIComponent(id || "")),
+      discussion: () => renderDiscussion(main, decodeURIComponent(id || "")),
+      messages: () => renderMessages(main, decodeURIComponent(id || "")),
+      "discussion-moderation": () => renderDiscussionModeration(main),
       maps: () => renderAccount(main, "maps"),
       support: () => { homePage({learningView:"home"}); openSupport(); },
       watch: () => {
@@ -874,6 +880,9 @@ function route() {
     writing: "Home",
     account: "Account",
     profile: "Profile",
+    discussion: "Discussion board",
+    messages: "Messages",
+    "discussion-moderation": "Community moderation",
     maps: "My Maps",
     support: "Get help",
     simplyfocus: "SimplyFocus",

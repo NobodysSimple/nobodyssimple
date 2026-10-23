@@ -1,0 +1,58 @@
+import {collection,collectionGroup,doc,getDoc,getDocs,getCountFromServer,query,where,orderBy,limit,startAfter,serverTimestamp,writeBatch,runTransaction,onSnapshot} from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js';
+import {reload} from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js';
+import {text,title,threadId,flowers,checkFile,attachmentName,LIMITS,REACTIONS} from './community-policy.mjs';
+const rows=s=>s.docs.map(d=>({id:d.id,...d.data(),cursor:d}));
+const millis=v=>v?.toMillis?.()||0;
+export function createCommunityClient(connection){
+ const state=()=>connection(),db=()=>state().db,user=()=>state().auth.currentUser;
+ const ref=(...p)=>doc(db(),...p),col=(...p)=>collection(db(),...p);
+ function verified(privateWork=false){const u=user();if(!u?.emailVerified)throw Error('Sign in and verify your email to take part.');if(privateWork&&state().locked)throw Error('Unlock your saved work in Account before opening messages.');return u;}
+ async function identity(){const u=verified(),p=(await getDoc(ref('profiles',u.uid))).data();if(!p?.nickname)throw Error('Choose a nickname in Account > Profile before joining the discussion.');return {authorUid:u.uid,nickname:p.nickname,handle:p.handle,avatarId:p.avatarId,avatarData:p.avatarData||''};}
+ async function join(){const a=await identity(),r=ref('communityMembers',a.authorUid);await runTransaction(db(),async tx=>{const old=await tx.get(r);tx.set(r,{uid:a.authorUid,nickname:a.nickname,handle:a.handle,avatarId:a.avatarId,avatarData:a.avatarData,createdAt:old.data()?.createdAt||serverTimestamp(),updatedAt:serverTimestamp()});});return a;}
+ async function rate(tx,kind,objectId,containerId,seconds){const r=ref('users',verified().uid,'communityRates',kind),s=await tx.get(r),wait=seconds*1000-(Date.now()-millis(s.data()?.at));if(s.exists()&&wait>0)throw Error(`Please wait ${Math.ceil(wait/1000)} seconds before sending again.`);return ()=>tx.set(r,{at:serverTimestamp(),objectId,containerId});}
+ async function profile(uid){const member=await getDoc(ref('communityMembers',uid));let full=null;try{const s=await getDoc(ref('profiles',uid));if(s.exists()&&(s.data().visibility==='public'||uid===user()?.uid))full=s.data();}catch{}return {uid,...member.data(),full};}
+ async function isStaff(){if(!user())return false;try{return (await getDoc(ref('siteAdmins',user().uid))).exists();}catch{return false;}}
+ async function refreshVerification(){const u=user();if(!u)throw Error('Sign in first.');await reload(u);await u.getIdToken(true);return u.emailVerified;}
+ async function attachments(files){if(files.length>LIMITS.files)throw Error('Attach up to two files.');return Promise.all(files.map(async f=>{checkFile(f);const bytes=new Uint8Array(await f.arrayBuffer());let binary='';for(let i=0;i<bytes.length;i+=16384)binary+=String.fromCharCode(...bytes.subarray(i,i+16384));return {name:attachmentName(f.name,f.type),mime:f.type,size:f.size,data:btoa(binary)};}));}
+ async function publish({heading,body,files=[]}){const a=await join(),post=ref('boardPosts',doc(col('boardPosts')).id),uploads=await attachments(files),content=text(body),headingText=title(heading);await runTransaction(db(),async tx=>{const mark=await rate(tx,'post',post.id,'',60);tx.set(post,{...a,title:headingText,body:content,status:'published',attachmentCount:uploads.length,createdAt:serverTimestamp(),updatedAt:serverTimestamp()});uploads.forEach((f,i)=>tx.set(doc(post,'attachments',String(i)),f));mark();});return post.id;}
+ async function feed(cursor){const q=[where('status','==','published'),orderBy('createdAt','desc'),limit(15)];if(cursor)q.push(startAfter(cursor));return rows(await getDocs(query(col('boardPosts'),...q)));}
+ async function post(id){const snap=await getDoc(ref('boardPosts',id));return snap.exists()?{id:snap.id,...snap.data()}:null;}
+ async function editPost(id,heading,body){verified();const r=ref('boardPosts',id);await runTransaction(db(),async tx=>{const snap=await tx.get(r);if(snap.data()?.authorUid!==user().uid)throw Error('Only the author can edit this post.');tx.update(r,{title:title(heading),body:text(body),updatedAt:serverTimestamp()});});}
+ async function removePost(id){verified();const r=ref('boardPosts',id),s=await getDoc(r),batch=writeBatch(db());batch.update(r,{title:'Removed post',body:'',status:'deleted',attachmentCount:0,updatedAt:serverTimestamp()});for(let i=0;i<(s.data()?.attachmentCount||0);i++)batch.delete(doc(r,'attachments',String(i)));await batch.commit();}
+ async function getAttachment(id,slot){return (await getDoc(ref('boardPosts',id,'attachments',String(slot)))).data();}
+ async function reply(postId,body){const a=await join(),r=doc(col('boardPosts',postId,'replies'));await runTransaction(db(),async tx=>{const mark=await rate(tx,'reply',r.id,postId,20);tx.set(r,{...a,body:text(body,'reply'),status:'published',createdAt:serverTimestamp(),updatedAt:serverTimestamp()});mark();});}
+ async function replies(postId,cursor){const q=[where('status','==','published'),orderBy('createdAt','asc'),limit(30)];if(cursor)q.push(startAfter(cursor));return rows(await getDocs(query(col('boardPosts',postId,'replies'),...q)));}
+ async function removeReply(postId,id){verified();const batch=writeBatch(db());batch.update(ref('boardPosts',postId,'replies',id),{body:'',status:'deleted',updatedAt:serverTimestamp()});await batch.commit();}
+ async function reactions(postId){const counts=await Promise.all(REACTIONS.map(async r=>[r.id,(await getCountFromServer(query(col('boardPosts',postId,'reactions'),where('kind','==',r.id)))).data().count]));let own='';if(user())try{own=(await getDoc(ref('boardPosts',postId,'reactions',user().uid))).data()?.kind||'';}catch{}return {counts:Object.fromEntries(counts),own};}
+ async function react(postId,kind){const u=verified();if(!REACTIONS.some(r=>r.id===kind))throw Error('Choose a reaction.');const r=ref('boardPosts',postId,'reactions',u.uid);await runTransaction(db(),async tx=>{const old=await tx.get(r);if(old.data()?.kind===kind)tx.delete(r);else tx.set(r,{authorUid:u.uid,kind,updatedAt:serverTimestamp()});});}
+ async function send(to,{body='',flowerCount=0}={}){const u=verified(true),a=await join(),id=threadId(u.uid,to),thread=ref('conversations',id),message=doc(col('conversations',id,'messages')),kind=flowerCount?'flowers':'text';const value=kind==='flowers'?flowers(flowerCount):0,content=kind==='text'?text(body,'message'):'';await runTransaction(db(),async tx=>{const old=await tx.get(thread),mark=await rate(tx,'message',message.id,id,3);if(!old.exists())tx.set(thread,{members:[u.uid,to].sort(),createdBy:u.uid,createdAt:serverTimestamp(),updatedAt:serverTimestamp(),lastMessageId:message.id});else tx.update(thread,{updatedAt:serverTimestamp(),lastMessageId:message.id});tx.set(message,{authorUid:u.uid,body:content,kind,flowerCount:value,createdAt:serverTimestamp()});mark();});return id;}
+ function inbox(onData,onError){verified(true);return onSnapshot(query(col('conversations'),where('members','array-contains',user().uid),orderBy('updatedAt','desc'),limit(30)),s=>onData(rows(s)),onError);}
+ function messages(to,onData,onError){const u=verified(true),id=threadId(u.uid,to);return onSnapshot(query(col('conversations',id,'messages'),orderBy('createdAt','desc'),limit(50)),s=>onData(rows(s).reverse()),onError);}
+ async function earlierMessages(to,cursor){const id=threadId(verified(true).uid,to);return rows(await getDocs(query(col('conversations',id,'messages'),orderBy('createdAt','desc'),startAfter(cursor),limit(50)))).reverse();}
+ async function block(uid,blocked=true){verified();const r=ref('users',user().uid,'blocks',uid),b=writeBatch(db());if(blocked)b.set(r,{createdAt:serverTimestamp()});else b.delete(r);await b.commit();}
+ async function blocked(){if(!user())return [];return (await getDocs(col('users',user().uid,'blocks'))).docs.map(d=>d.id);}
+ async function report(target,reason,quotedText){const u=verified(),why=String(reason||'').trim();if(why.length<3||why.length>500)throw Error('Give a reason of 3–500 characters.');const r=ref('boardReports',target.kind+'~'+(target.replyId||target.messageId||target.postId)+'~'+u.uid),b=writeBatch(db());b.set(r,{kind:target.kind,postId:target.postId||'',replyId:target.replyId||'',threadId:target.threadId||'',messageId:target.messageId||'',reporterUid:u.uid,reportedUid:target.authorUid,reason:why,quotedText:String(quotedText).slice(0,40000),status:'open',createdAt:serverTimestamp()});await b.commit();}
+ async function reports(){return rows(await getDocs(query(col('boardReports'),where('status','==','open'),limit(50))));}
+ async function moderate(target,action){const b=writeBatch(db());if(action==='resolve')b.update(ref('boardReports',target.id),{status:'resolved'});else if(action==='ban')b.set(ref('communityBans',target.uid),{createdAt:serverTimestamp(),reason:'Community moderation'});else if(target.kind==='post')b.update(ref('boardPosts',target.postId),{status:'hidden',updatedAt:serverTimestamp()});else if(target.kind==='reply')b.update(ref('boardPosts',target.postId,'replies',target.replyId),{status:'hidden',updatedAt:serverTimestamp()});else throw Error('Choose a public post or comment to hide.');if(['hide','ban'].includes(action)&&target.id)b.update(ref('boardReports',target.id),{status:'resolved'});await b.commit();}
+ return {state,verified,identity,join,profile,isStaff,refreshVerification,publish,feed,post,editPost,removePost,getAttachment,reply,replies,removeReply,reactions,react,send,inbox,messages,earlierMessages,block,blocked,report,reports,moderate};
+}
+export async function deleteCommunityAccountData(db,uid){
+ const remove=async docs=>{for(let i=0;i<docs.length;i+=100){const b=writeBatch(db);docs.slice(i,i+100).forEach(d=>b.delete(d.ref));await b.commit();}};
+ const authored=await getDocs(query(collection(db,'boardPosts'),where('authorUid','==',uid)));
+ for(const p of authored.docs){for(const sub of ['attachments','replies','reactions'])await remove((await getDocs(collection(p.ref,sub))).docs);await remove([p]);}
+ for(const sub of ['replies','reactions','messages'])await remove((await getDocs(query(collectionGroup(db,sub),where('authorUid','==',uid)))).docs);
+ await remove((await getDocs(query(collection(db,'boardReports'),where('reporterUid','==',uid)))).docs);
+ await remove((await getDocs(collection(db,'users',uid,'communityRates'))).docs);
+ const b=writeBatch(db);b.delete(doc(db,'communityMembers',uid));await b.commit();
+}
+export async function exportCommunityAccountData(db,uid,{includeMessages=true}={}){
+ const sections={};
+ for(const [name,q] of [['posts',query(collection(db,'boardPosts'),where('authorUid','==',uid))],['comments',query(collectionGroup(db,'replies'),where('authorUid','==',uid))],['reactions',query(collectionGroup(db,'reactions'),where('authorUid','==',uid))]])sections[name]=(await getDocs(q)).docs.map(d=>({path:d.ref.path,id:d.id,...d.data()}));
+ for(const post of sections.posts)post.attachments=(await getDocs(collection(db,'boardPosts',post.id,'attachments'))).docs.map(d=>({id:d.id,...d.data()}));
+ if(includeMessages){
+  sections.messagesSent=(await getDocs(query(collectionGroup(db,'messages'),where('authorUid','==',uid)))).docs.map(d=>({path:d.ref.path,...d.data()}));
+  const threads=await getDocs(query(collection(db,'conversations'),where('members','array-contains',uid)));sections.conversations=[];
+  for(const thread of threads.docs)sections.conversations.push({id:thread.id,...thread.data(),messages:(await getDocs(collection(thread.ref,'messages'))).docs.map(d=>({id:d.id,...d.data()}))});
+ }else sections.messages='Verify your email to export any private messages.';
+ return sections;
+}
