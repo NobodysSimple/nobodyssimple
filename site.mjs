@@ -39,6 +39,14 @@ import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 const main = document.querySelector("main");
+const supportDialog = document.createElement('dialog');
+supportDialog.className = 'support-dialog'; supportDialog.setAttribute('aria-label','Get help');
+supportDialog.innerHTML = '<div class="support-dialog-bar"><strong>Get help</strong><button type="button" class="button secondary" data-close-support>Close ×</button></div><div data-support-content></div>';
+document.body.append(supportDialog);
+supportDialog.querySelector('[data-close-support]').onclick = () => supportDialog.close();
+supportDialog.addEventListener('click',event=>{if(event.target===supportDialog)supportDialog.close();});
+function openSupport(){ if(supportDialog.open)return; supportDialog.showModal(); renderSupport(supportDialog.querySelector('[data-support-content]')); supportDialog.querySelector('[data-close-support]').focus(); }
+document.addEventListener('click',event=>{const link=event.target.closest('a[href="#support"]');if(!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;event.preventDefault();openSupport();});
 const imageLightbox = document.createElement("dialog");
 imageLightbox.className = "site-image-lightbox";
 imageLightbox.setAttribute("aria-label", "Full-size image");
@@ -159,7 +167,6 @@ function home() {
 }
 function legacyLibrary() {
   const s = libraryState;
-  if (s.view === "quotes") { main.innerHTML = '<div class="wrap"><a href="#library">← All learning</a><div id="wisbody-learn"></div></div>'; renderWisbody(main.querySelector("#wisbody-learn")); return; }
   const formats = [...new Set(["video", "education", ...posts.filter((p) => p.destinations?.includes("library")).map((p) => p.type)])];
   const formatOptions = formats.map((type) => `<option value="${esc(type)}" ${s.type === type ? "selected" : ""}>${esc(typeLabel[type] || "Resource")}</option>`).join("");
   main.innerHTML = `<div class="wrap">${heading("The learning library", "Follow a thread.<br>Build a bigger picture.", "Explore the full curriculum, or find a video or educational piece by topic.")}<div class="tabs" role="group" aria-label="Library view"><button data-view="curriculum" class="${s.view === "curriculum" ? "active" : ""}">Curriculum map</button><button data-view="resources" class="${s.view === "resources" ? "active" : ""}">Videos & writing</button></div><div class="filters"><label>Search lessons and resources<input id="search" type="search" placeholder="Attention, values, belonging…" value="${esc(s.query)}"></label><label>Format<select id="format"><option value="">All formats</option>${formatOptions}</select></label><label>Topic<select id="topic"><option value="">All topics</option>${[
@@ -198,10 +205,18 @@ function legacyLibrary() {
   );
   libraryResults();
 }
-function library() {
+function homePage({learningView=null,scrollTo=null}={}) {
+  if(learningView !== null) { libraryState.view = ['crash','courses','videos','audios','blog'].includes(learningView) ? learningView : 'home'; libraryState.query = ''; }
+  renderHome(main, posts, {renderLearning:renderLearningHub});
+  if(scrollTo) requestAnimationFrame(() => {
+    const section = main.querySelector(scrollTo); if(!section)return;
+    section.scrollIntoView({block:'start'}); section.setAttribute('tabindex','-1'); section.focus({preventScroll:true});
+  });
+}
+function library() { homePage({learningView:libraryState.view,scrollTo:'#home-learning'}); }
+function renderLearningHub(root) {
   const s = libraryState;
-  if (s.view === "quotes") { main.innerHTML = '<div class="wrap"><a href="#library">← All learning</a><div id="wisbody-learn"></div></div>'; renderWisbody(main.querySelector("#wisbody-learn")); return; }
-  const view = ["crash", "courses", "quotes", "videos", "audios", "blog"].includes(s.view) ? s.view : "home";
+  const view = ["crash", "courses", "videos", "audios", "blog"].includes(s.view) ? s.view : "home";
   const videos = posts.filter((post) => post.type === "video");
   const blogs = posts.filter((post) => post.type === "blog");
   const searchItems = (items) => {
@@ -220,13 +235,12 @@ function library() {
   }).join("");
   const doors = [
     ["crash", "Crash Courses", "Mini courses", "Short, focused lessons across the kinds of problems people face in real life. Each piece is designed to take five minutes or less.", "↯", "learn-door-crash"],
-    ["courses", "Nobody’s Simple Courses", "The full curriculum", "The course architecture stays: four quarters, twelve modules and a place for the new lessons you will add from scratch.", "▤", "learn-door-courses"],
-    ["quotes", "Wisbody’s thoughts", "Reflect and journal", "Explore a thought inside Wisbody’s speech bubble and keep a note if it helps.", "❝", "learn-door-quotes"],
+    ["courses", "Nobody’s Simple Courses", "The full curriculum", "Four quarters and twelve modules exploring people, patterns and the forces that shape our choices.", "▤", "learn-door-courses"],
     ["videos", "Videos", "Watch and think", "YouTube videos brought into the same learning space as the writing and courses.", "▷", "learn-door-videos"],
     ["audios", "Audios", "Listen and learn", "Future guided audio lessons for relaxation, letting go and learning at your own pace.", "♪", "learn-door-audios"],
     ["blog", "Blog", "Longer notes", "Read the essays, arguments and reflections from Nobody’s Simple without leaving Learn.", "Aa", "learn-door-blog"],
   ];
-  const doorMarkup = doors.filter(([id]) => ["blog","videos","quotes"].includes(id)).map(([id, title, kicker, description, icon, className]) => `<button type="button" class="learn-door-card ${className}" data-learn-view="${id}"><span class="learn-door-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${kicker}</span><h2>${title}</h2><p>${description}</p><strong>Open ${title} →</strong></button>`).join("");
+  const doorMarkup = doors.map(([id, title, kicker, description, icon, className]) => `<button type="button" class="learn-door-card ${className}" data-learn-view="${id}"><span class="learn-door-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${kicker}</span><h2>${title}</h2><p>${description}</p><strong>Open ${title} →</strong></button>`).join("");
   let content = "";
   if (view === "home") {
     content = `<section class="learn-door-grid" aria-label="Learn sections">${doorMarkup}</section>`;
@@ -240,8 +254,6 @@ function library() {
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-crash"><div><p class="eyebrow">Topic catalogue · lessons coming later</p><h2>Crash Courses</h2><p>Short, practical explanations organised around real problems people encounter. This is the topic map for future 2–5 minute lessons; there is no lesson content here yet.</p></div><span class="learn-section-icon">↯</span></div><label class="learn-search">Search topics<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Try anxiety, boundaries, attention…"></label>${emergencyMarkup}<div class="learn-crash-domain-grid">${domainMarkup || `<p class="empty">No topics match that search yet.</p>`}</div></section>`;
   } else if (view === "courses") {
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-courses"><div><p class="eyebrow">Four quarters · twelve modules</p><h2>Nobody’s Simple Courses</h2><p>Courses are in development. These topics are a preview; lessons are not yet available.</p></div><span class="learn-section-icon">▤</span></div><div class="learn-quarter-strip">${visibleCurriculum.quarters.map((quarter) => `<div><span>${quarter.id}</span><strong>${esc(quarter.name)}</strong><small>${esc(quarter.subtitle)}</small></div>`).join("")}</div><div class="learn-module-grid">${moduleCards}</div></section>`;
-  } else if (view === "quotes") {
-    content = `<section class="learn-section-panel learn-quotes-panel"><div class="learn-section-heading learn-door-quotes"><div><p class="eyebrow">Swipe, save, reflect</p><h2>Quotes</h2><p>Short pieces of language for when you want a fact, a little reassurance or a more useful question.</p></div><span class="learn-section-icon">❝</span></div><div class="learn-quote-stage" id="learn-quote-stage"><div class="learn-quote-card"><span class="badge" id="learn-quote-label"></span><p id="learn-quote-text"></p><p class="learn-quote-prompt" id="learn-quote-prompt"></p></div><div class="learn-quote-controls"><button type="button" class="button secondary" id="learn-quote-prev" aria-label="Previous quote">←</button><span id="learn-quote-position"></span><button type="button" class="button secondary" id="learn-quote-next" aria-label="Next quote">→</button></div><section class="learn-quote-journal"><button type="button" class="chip" id="learn-quote-journal-toggle">Journal on this</button><div id="learn-quote-journal-wrap" hidden><label class="field">What does this bring up for you?<textarea id="learn-quote-note" rows="4" placeholder="A few words is enough…"></textarea></label><button type="button" class="button secondary" id="learn-quote-save">Save note on this device</button><span class="fine" id="learn-quote-status" role="status"></span></div></section></div></section>`;
   } else if (view === "videos") {
     const items = searchItems(videos);
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-videos"><div><p class="eyebrow">YouTube · watch and think</p><h2>Videos</h2><p>Follow the channel’s conversations and ideas from inside the same learning space.</p></div><span class="learn-section-icon">▷</span></div><label class="learn-search">Search videos<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a video…"></label>${resourceGrid(items, "No videos have been published here yet. New YouTube posts will appear automatically.")}</section>`;
@@ -249,37 +261,16 @@ function library() {
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-audios"><div><p class="eyebrow">Coming later · listen and learn</p><h2>Audios</h2><p>Guided relaxation, short learning courses and audio reflections will live here when they are ready.</p></div><span class="learn-section-icon">♪</span></div><div class="learn-audio-empty"><span class="learn-audio-empty-icon" aria-hidden="true">◌</span><h3>Audio learning is on the way.</h3><p>No audio courses have been added yet. This shelf is ready for relaxation tracks, letting-go courses and other guided listening.</p></div></section>`;
   } else {
     const items = searchItems(blogs);
-    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-blog"><div><p class="eyebrow">Longer notes · arguments · reflections</p><h2>Blog</h2><p>The blog now lives inside Learn, alongside the courses, quotes and videos.</p></div><span class="learn-section-icon">Aa</span></div><label class="learn-search">Search the blog<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a thought…"></label>${resourceGrid(items, "No blog posts have been published yet. New writing will appear here automatically.")}</section>`;
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-blog"><div><p class="eyebrow">Longer notes · arguments · reflections</p><h2>Blog</h2><p>Essays, arguments and reflections to explore at your own pace.</p></div><span class="learn-section-icon">Aa</span></div><label class="learn-search">Search the blog<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a thought…"></label>${resourceGrid(items, "No blog posts have been published yet. New writing will appear here automatically.")}</section>`;
   }
-  main.innerHTML = `<div class="wrap learn-page"><section class="learn-page-hero"><div><p class="eyebrow">Learn · context without flattening</p><h1>Make a bigger picture.</h1><p class="lead">Read, watch, reflect and build understanding at the pace that fits. Choose one shelf; you do not need to commit to the whole library.</p></div><div class="learn-page-mark" aria-hidden="true">✳</div></section>${view !== "home" ? `<button type="button" class="learn-back" data-learn-view="home">← All Learn sections</button>` : ""}${loadError ? `<p class="notice error">${esc(loadError)}</p>` : ""}<div id="learn-content">${content}</div></div>`;
-  main.querySelectorAll("[data-learn-view]").forEach((button) => button.addEventListener("click", () => { s.view = button.dataset.learnView; s.query = ""; library(); }));
-  const search = main.querySelector("#learn-search");
-  if (search) search.addEventListener("input", (event) => { s.query = event.target.value; library(); requestAnimationFrame(() => { const input = main.querySelector("#learn-search"); input?.focus(); input?.setSelectionRange(input.value.length, input.value.length); }); });
-  if (view === "quotes") {
-    let quoteIndex = Math.floor(Math.random() * quoteDeck.length);
-    let quoteNotes = {};
-    try { quoteNotes = JSON.parse(localStorage.getItem("ns-learn-quote-notes-v1") || "{}"); } catch { quoteNotes = {}; }
-    const label = main.querySelector("#learn-quote-label");
-    const text = main.querySelector("#learn-quote-text");
-    const prompt = main.querySelector("#learn-quote-prompt");
-    const position = main.querySelector("#learn-quote-position");
-    const note = main.querySelector("#learn-quote-note");
-    const renderQuote = () => { const quote = quoteDeck[quoteIndex]; label.textContent = quote.label; text.textContent = `“${quote.text}”`; prompt.textContent = quote.prompt; position.textContent = `${quoteIndex + 1} / ${quoteDeck.length}`; note.value = quoteNotes[quoteIndex] || ""; };
-    const moveQuote = (amount) => { quoteNotes[quoteIndex] = note.value; quoteIndex = (quoteIndex + amount + quoteDeck.length) % quoteDeck.length; renderQuote(); };
-    main.querySelector("#learn-quote-prev").addEventListener("click", () => moveQuote(-1));
-    main.querySelector("#learn-quote-next").addEventListener("click", () => moveQuote(1));
-    main.querySelector("#learn-quote-journal-toggle").addEventListener("click", () => { const wrap = main.querySelector("#learn-quote-journal-wrap"); wrap.hidden = !wrap.hidden; if (!wrap.hidden) note.focus(); });
-    main.querySelector("#learn-quote-save").addEventListener("click", () => { quoteNotes[quoteIndex] = note.value; localStorage.setItem("ns-learn-quote-notes-v1", JSON.stringify(quoteNotes)); main.querySelector("#learn-quote-status").textContent = "Saved on this device."; });
-    let startX = null;
-    const stage = main.querySelector("#learn-quote-stage");
-    stage.addEventListener("touchstart", (event) => { startX = event.changedTouches[0].clientX; }, { passive: true });
-    stage.addEventListener("touchend", (event) => { if (startX === null) return; const delta = event.changedTouches[0].clientX - startX; startX = null; if (Math.abs(delta) > 45) moveQuote(delta < 0 ? 1 : -1); }, { passive: true });
-    renderQuote();
-  }
+  root.innerHTML = `<div class="learn-page"><section class="learn-page-hero"><div><p class="eyebrow">Learn · context without flattening</p><h2 id="home-learning-title">Learn with Nobody’s Simple.</h2><p class="lead">Read, watch, reflect and build understanding at the pace that fits. Choose one shelf; you do not need to commit to the whole library.</p></div><div class="learn-page-mark" aria-hidden="true">✳</div></section>${view !== "home" ? `<button type="button" class="learn-back" data-learn-view="home">← All Learn sections</button>` : ""}${loadError ? `<p class="notice error">${esc(loadError)}</p>` : ""}<div id="learn-content">${content}</div></div>`;
+  root.querySelectorAll("[data-learn-view]").forEach((button) => button.addEventListener("click", () => { s.view = button.dataset.learnView; s.query = ""; renderLearningHub(root); const heading=root.querySelector("#home-learning-title"); heading.setAttribute("tabindex","-1"); heading.focus({preventScroll:true}); }));
+  const search = root.querySelector("#learn-search");
+  if (search) search.addEventListener("input", (event) => { s.query = event.target.value; renderLearningHub(root); requestAnimationFrame(() => { const input = root.querySelector("#learn-search"); input?.focus(); input?.setSelectionRange(input.value.length, input.value.length); }); });
 }
+
 function libraryResults() {
   const s = libraryState;
-  if (s.view === "quotes") { main.innerHTML = '<div class="wrap"><a href="#library">← All learning</a><div id="wisbody-learn"></div></div>'; renderWisbody(main.querySelector("#wisbody-learn")); return; }
   const query = s.query.toLowerCase();
   const content = posts.filter(
     (p) =>
@@ -783,6 +774,7 @@ function route() {
     const linkName = (a.hash || "").slice(1).split("/")[0];
     const active =
       currentName === linkName ||
+      (["library","learn","blog","writing","watch","wisbody","support"].includes(currentName) && linkName === "home") ||
       (currentName === "route" && linkName === "routes") ||
       (currentName === "wisbody" && linkName === "library") ||
       (["personality", "big-five", "systems"].includes(currentName) && linkName === "questionnaires") ||
@@ -795,10 +787,10 @@ function route() {
   });
   (
     ({
-      home: () => renderHome(main, posts),
-      help: () => renderHome(main, posts),
-      navigate: () => renderHome(main, posts),
-      library: () => { libraryState.view = ["blog","videos","quotes","courses","crash","audios"].includes(id) ? id : "home"; library(); },
+      home: () => homePage({learningView:"home"}),
+      help: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
+      navigate: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
+      library: () => id === "quotes" ? homePage({scrollTo:"#home-wisbody"}) : homePage({learningView:id || "home",scrollTo:"#home-learning"}),
       learn: library,
       blog,
       writing: blog,
@@ -829,18 +821,18 @@ function route() {
       volunteer: () => renderCommunity(main, "volunteer"),
       routes: () => renderStrategyRoutes(main),
       route: () => renderStrategyRoute(main, decodeURIComponent(id || "")),
-      wisbody: () => { main.innerHTML = '<div class="wrap" id="wisbody-page"></div>'; renderWisbody(main.firstElementChild); },
+      wisbody: () => homePage({scrollTo:"#home-wisbody"}),
       account: () => renderAccount(main, id || "home"),
       profile: () => renderPublicProfile(main, decodeURIComponent(id || "")),
       maps: () => renderAccount(main, "maps"),
-      support: () => renderSupport(main),
+      support: () => { homePage({learningView:"home"}); openSupport(); },
       watch: () => {
         libraryState.view = "videos";
         libraryState.query = "";
         library();
       },
       post: () => post(decodeURIComponent(id || "")),
-    })[name] || (() => renderHome(main, posts))
+    })[name] || (() => homePage({learningView:"home"}))
   )();
   enhanceAccountRoute(main, currentName, decodeURIComponent(id || ""));
   window.scrollTo(0, 0);
@@ -876,10 +868,10 @@ function route() {
     help: "Home",
     navigate: "Home",
     tools: "Tools",
-    library: "Learn",
-    learn: "Learn",
-    blog: "Learn",
-    writing: "Learn",
+    library: "Home",
+    learn: "Home",
+    blog: "Home",
+    writing: "Home",
     account: "Account",
     profile: "Profile",
     maps: "My Maps",

@@ -205,8 +205,8 @@ function renderHomeLegacy(root, posts) {
   }
 }
 
-export function renderHome(root, posts = []) {
-  renderStrategyHome(root, posts, announcementRail(posts));
+export function renderHome(root, posts = [], options = {}) {
+  renderStrategyHome(root, posts, announcementRail(posts), {...options, renderConsole: pane => renderHelp(pane, {home:true})});
 }
 
 export function renderHelp(root, options = {}) {
@@ -216,7 +216,7 @@ export function renderHelp(root, options = {}) {
     return `<div class="situation-option"><label class="choice-tile"><input type="checkbox" name="situation" value="${esc(s.id)}"><span><b>${esc(s.label)}</b><small>${esc(s.examples)}</small></span></label>${subparts.length ? `<details class="situation-subparts" data-subparts-for="${esc(s.id)}" hidden><summary>Narrow this down (optional)</summary><div class="subpart-grid">${subparts.map((part) => `<label class="subpart-pill"><input type="checkbox" name="subpart" value="${esc(s.id)}:${esc(part.id)}"><span><b>${esc(part.label)}</b><small>${esc(part.examples)}</small></span></label>`).join("")}</div></details>` : ""}</div>`;
   }).join("");
   const intro = homeMode
-    ? area("Navigation console", "What would help today?", "Choose what fits. The console will point you toward a useful starting place.")
+    ? `<header class="page-intro"><p class="eyebrow">Navigation console</p><h2>What would help today?</h2><p class="lead">Choose what fits, then narrow it down if you want. Find tools that match the problem and the energy you have.</p></header>`
     : area("Quick help", "What do you need?", "Choose what fits. Then narrow it down if you want.");
   const notSure = homeMode ? "" : `<section class="not-sure-panel" aria-labelledby="not-sure-title"><div><p class="eyebrow">Not sure yet?</p><h2 id="not-sure-title">Use the emotion compass first.</h2><p>Find a feeling word by looking at energy and pleasantness.</p></div><a class="button bright" href="#compass">Open the emotion compass ↗</a></section>`;
   root.innerHTML = `<div class="wrap${homeMode ? " home-console-wrap" : ""}">${intro}<form id="navigator-form" class="navigator-layout"><section class="navigator-left"><fieldset><legend>What is happening?</legend><div class="choice-grid">${situationMarkup}</div></fieldset><fieldset><legend>What would help?</legend><div class="choice-grid compact-choices">${[
@@ -227,7 +227,7 @@ export function renderHelp(root, options = {}) {
     ["action", "Do something"],
     ["communicate", "Communicate"],
     ["minutes", "Get through the next few minutes"],
-  ].map(([v, l]) => `<label class="choice-pill"><input type="radio" name="goal" value="${v}"><span>${l}</span></label>`).join("")}</div></fieldset></section><aside class="navigator-side"><label class="field">How much energy is available right now?<input type="range" name="energy" min="0" max="2" value="1"><span class="range-ends"><span>Very little</span><output id="energy-label">Some</output><span>Plenty</span></span></label><label class="field">How intense does it feel?<input type="range" name="intensity" min="0" max="10" value="5"><span class="range-ends"><span>Gentle</span><output id="intensity-label">5 / 10</output><span>Very intense</span></span></label><label class="interactive-opt-in"><input type="checkbox" name="includeInteractive" checked><span><b>Show interactive tools too</b><small>Move, tap or sort instead of writing.</small></span></label><button class="button full" type="submit">Find my starting points ↗</button><p class="fine">Nothing is saved unless you choose to save an individual reflection.</p></aside></form>${notSure}<section id="recommendations" class="recommendations" aria-live="polite"></section></div>`;
+  ].map(([v, l]) => `<label class="choice-pill"><input type="radio" name="goal" value="${v}"><span>${l}</span></label>`).join("")}</div></fieldset></section><aside class="navigator-side"><label class="field">How much energy is available right now?<input type="range" name="energy" min="0" max="2" value="1"><span class="range-ends"><span>Very little</span><output id="energy-label">Some</output><span>Plenty</span></span></label><label class="field">How intense does it feel?<input type="range" name="intensity" min="0" max="10" value="5"><span class="range-ends"><span>Gentle</span><output id="intensity-label">5 / 10</output><span>Very intense</span></span></label><label class="interactive-opt-in"><input type="checkbox" name="includeInteractive" checked><span><b>Show interactive tools too</b><small>Move, tap or sort instead of writing.</small></span></label><button class="button full" type="submit">Find my starting points ↗</button><p class="fine">These console choices are not saved. Reflection drafts and finished maps follow your Account settings.</p></aside></form>${notSure}<section id="recommendations" class="recommendations" aria-live="polite"></section></div>`;
   const form = root.querySelector("#navigator-form");
   form.querySelectorAll("[name=situation]").forEach((input) => {
     const panel = form.querySelector(`[data-subparts-for="${input.value}"]`);
@@ -251,21 +251,40 @@ export function renderHelp(root, options = {}) {
     }).filter(Boolean);
     const goal = form.elements.goal?.value || "understand";
     const energy = +form.elements.energy.value;
+    const intensity = +form.elements.intensity.value;
+    const gentle = energy === 0 || intensity >= 8;
     const showInteractive = form.elements.includeInteractive.checked;
     const selectedTags = [...new Set([...chosen.map((item) => item.id), ...chosenSubparts.flatMap((item) => item.tags || [])])];
-    const interactivePicks = recommendInteractiveTools(goal, selectedTags, energy);
+    const interactivePicks = recommendInteractiveTools(goal, selectedTags, gentle ? 0 : energy);
     const pool = [];
     const addTool = (id) => { const tool = tools.find((item) => item.id === id); if (tool && !pool.some((item) => item.id === tool.id)) pool.push(tool); };
     chosen.forEach((situation) => situation.tools.forEach(addTool));
     chosenSubparts.forEach((part) => (part.tools || []).forEach(addTool));
     if (!chosen.length) ["state-check", "brain-dump", "quick-reset"].forEach(addTool);
-    const boost = goal === "calmer" ? ["quick-reset", "grounding", "load-balancer"] : goal === "organise" ? ["brain-dump", "thought-map", "reality-map"] : goal === "decide" ? ["decision-map", "values-discovery", "uncertainty-calibration"] : goal === "communicate" ? ["conversation-map", "needs-clarifier", "boundary-builder"] : goal === "action" ? ["small-step", "friction", "decision-map"] : goal === "minutes" ? ["quick-reset", "grounding", "state-check"] : ["state-check", "emotion-check-in", "pattern-map"];
-    const rank = (tool) => (chosenSubparts.some((part) => part.tools.includes(tool.id)) ? 8 : 0) + (boost.includes(tool.id) ? 4 : 0) + (energy === 0 && ["grounding", "quick-reset", "state-check", "small-step"].includes(tool.id) ? 3 : 0) + (chosen.some((situation) => situation.tools.includes(tool.id)) ? 3 : 0);
-    pool.sort((a, b) => rank(b) - rank(a));
-    const picks = [...pool, ...boost.map((id) => tools.find((tool) => tool.id === id)).filter(Boolean)].filter((tool, i, all) => all.findIndex((item) => item.id === tool.id) === i).slice(0, 3);
+    const goalTools = {
+      calmer:['quick-reset','grounding','load-balancer'], organise:['brain-dump','thought-map','reality-map'],
+      decide:['decision-map','values-discovery','uncertainty-calibration'], communicate:['conversation-map','needs-clarifier','boundary-builder'],
+      action:['small-step','friction','if-then'], minutes:['quick-reset','grounding','state-check'], understand:['state-check','emotion-check-in','pattern-map']
+    };
+    const boost = goalTools[goal] || goalTools.understand;
+    const light = new Set(['quick-reset','grounding','state-check','small-step','needs-clarifier','emotion-check-in','worry-sort']);
+    boost.forEach(addTool);
+    if(gentle) ['quick-reset','grounding','small-step'].forEach(addTool);
+    const rank = tool =>
+      (chosenSubparts.some(part => part.tools.includes(tool.id)) ? 9 : 0) +
+      (boost.includes(tool.id) ? 6 : 0) +
+      (chosen.some(situation => situation.tools.includes(tool.id)) ? 4 : 0) +
+      (gentle ? (light.has(tool.id) ? 12 : -6) : 0);
+    const picks = pool.sort((a,b)=>rank(b)-rank(a)).slice(0,3);
+    const goalLabel = form.querySelector('[name=goal]:checked')?.closest('label')?.textContent.trim() || 'a starting point';
     const selectedText = [...chosen.map((item) => item.label), ...chosenSubparts.map((item) => item.label)];
     const recommendations = root.querySelector("#recommendations");
-    recommendations.innerHTML = `<p class="eyebrow">Three starting points</p><h2>Take what fits.</h2><p class="fine">Matched to: ${selectedText.length ? selectedText.map((text) => esc(text)).join(" · ") : "not sure yet"}. This is a simple route, not an assessment.</p><div class="grid">${picks.map((tool, i) => { const matchedPart = chosenSubparts.find((part) => part.tools.includes(tool.id)); const reason = matchedPart ? `You narrowed this to “${matchedPart.label}”.` : chosen.some((situation) => situation.tools.includes(tool.id)) ? "It matches something you selected." : goal === "calmer" ? "You asked for a lower-pressure starting point." : "It gives you one clear place to begin."; return `<a class="card recommendation-card" href="#tool/${encodeURIComponent(tool.id)}"><span class="number">0${i + 1}</span><h3>${esc(tool.title)}</h3><p>${esc(tool.short)}</p><small>Why this might fit: ${esc(reason)}</small><span class="arrow">Try this tool →</span></a>`; }).join("")}</div><p class="fine">You can also <a href="#tools">browse the full toolbox</a>.</p>`;
+    recommendations.innerHTML = `<p class="eyebrow">Three starting points</p><h2>Take what fits.</h2><p class="fine">Matched to: ${selectedText.length ? selectedText.map((text) => esc(text)).join(" · ") : "not sure yet"}. ${gentle ? "Smaller first steps are prioritised because of your energy or intensity setting. " : ""}These are suggestions, not an assessment.</p><div class="grid">${picks.map((tool, i) => { const matchedPart = chosenSubparts.find((part) => part.tools.includes(tool.id)); const matchedSituation = chosen.find(situation => situation.tools.includes(tool.id)); const reasons = [];
+      if(matchedPart) reasons.push(`You narrowed this to “${matchedPart.label}”.`);
+      else if(matchedSituation) reasons.push(`You selected “${matchedSituation.label}”.`);
+      if(boost.includes(tool.id)) reasons.push(`It offers a way to ${goalLabel.toLowerCase()}.`);
+      if(gentle && light.has(tool.id)) reasons.push(energy===0 ? 'It can begin with one small observation or adjustment when energy is low.' : 'You marked high intensity, so a smaller first step may be easier to use.');
+      const reason = reasons.join(' ') || 'It offers a way to notice what is happening before choosing a next step.' ; return `<a class="card recommendation-card" href="#tool/${encodeURIComponent(tool.id)}"><span class="number">0${i + 1}</span><h3>${esc(tool.title)}</h3><p>${esc(tool.short)}</p><small>Why this might fit: ${esc(reason)}</small><span class="arrow">Try this tool →</span></a>`; }).join("")}</div><p class="fine">You can also <a href="#tools">browse the full toolbox</a>.</p>`;
     if (showInteractive) {
       const section = document.createElement("section");
       section.className = "interactive-recommendations";
@@ -276,7 +295,9 @@ export function renderHelp(root, options = {}) {
       section.append(grid);
       recommendations.append(section);
     }
-    recommendations.scrollIntoView({ behavior: "smooth" });
+    recommendations.setAttribute("tabindex", "-1");
+    recommendations.focus({preventScroll:true});
+    recommendations.scrollIntoView({ behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" });
   };
 }
 
