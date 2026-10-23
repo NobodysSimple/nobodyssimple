@@ -2666,7 +2666,7 @@ export function renderMaps(root, context = {}) {
     maps
       .map(
         (m) =>
-          `<article class="map-note"><div class="row spaced"><div><span class="badge">${esc(m.status || "New observation")}</span><h3>${esc(m.title)}</h3><small>${new Date(m.savedAt).toLocaleString()}</small></div><button class="chip" data-delete-map="${esc(m.id)}">Delete note</button></div>${m.strategy ? `<a class="button secondary" href="#route/${encodeURIComponent(m.id)}">Edit or review this map →</a>` : `<details class="map-edit"><summary>Edit these observations</summary><form data-edit-map="${esc(m.id)}">${Object.entries(m.answers || {}).map(([k,v],i)=>`<label class="field">${esc(k)}<textarea name="answer-${i}" rows="3">${esc(Array.isArray(v)?v.join(", "):v)}</textarea></label>`).join("")}<button class="button" type="submit">Save changes</button><p role="status"></p></form></details>`}<div class="map-note-body">${Object.entries(
+          `<article class="map-note"><div class="row spaced"><div><span class="badge">${esc(m.status || "New observation")}</span><h3>${esc(m.title)}</h3><small>${new Date(m.savedAt).toLocaleString()}</small></div><button class="chip" data-delete-map="${esc(m.id)}">Delete note</button></div><details class="map-edit"><summary>Edit these observations</summary><form data-edit-map="${esc(m.id)}">${Object.entries(m.answers || {}).map(([k,v],i)=>`<label class="field">${esc(k)}<textarea name="answer-${i}" rows="3">${esc(Array.isArray(v)?v.join(", "):v)}</textarea></label>`).join("")}<button class="button" type="submit">Save changes</button><p role="status"></p></form></details><div class="map-note-body">${Object.entries(
             m.answers || {},
           )
             .map(

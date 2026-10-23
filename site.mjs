@@ -1,6 +1,6 @@
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
-import {configureStrategy, renderStrategyRoutes, renderStrategyRoute, renderWisbody} from './strategy.mjs';
+import {configureStrategy, renderWisbody} from './strategy.mjs';
 import { accountReady, configureAccountHost, renderAccount, renderPublicProfile, enhanceAccountRoute, accountState, communityConnection, communitySignIn, communityConfirmIdentity } from './accounts.mjs';
 import { tools as accountTools } from './tool-catalog.mjs';
 import { curriculum, emotions, questions } from "./data.mjs";
@@ -768,7 +768,8 @@ function route() {
   const [name, id] = location.hash.slice(1).split("/");
   if (name === "maps" || (name === "tool" && id === "maps")) { location.replace("#account/maps"); return; }
   const currentName = name || "home";
-  if(accountState().locked && ['route','wisbody','tool','play','guided','questions','compass','personality','systems','big-five','stim-space'].includes(name)){
+  if(name === "routes" || name === "route") { location.replace("#home"); return; }
+  if(accountState().locked && ['wisbody','tool','play','guided','questions','compass','personality','systems','big-five','stim-space'].includes(name)){
     main.innerHTML='<div class="wrap"><h1>Your saved work is locked</h1><p>Confirm your identity in Account before opening an activity that can read or save private work.</p><a class="button" href="#account">Open account to unlock</a></div>';return;
   }
   const startRoutes = new Set(["help", "navigate", "questions", "navigator", "compass"]);
@@ -778,7 +779,6 @@ function route() {
     const active =
       currentName === linkName ||
       (["library","learn","blog","writing","watch","wisbody","support"].includes(currentName) && linkName === "home") ||
-      (currentName === "route" && linkName === "routes") ||
       (currentName === "wisbody" && linkName === "library") ||
       (["personality", "big-five", "systems"].includes(currentName) && linkName === "questionnaires") ||
       (startRoutes.has(currentName) && linkName === "home") ||
@@ -822,8 +822,6 @@ function route() {
       install: () => renderInstall(main),
       community: () => renderCommunity(main, "feedback"),
       volunteer: () => renderCommunity(main, "volunteer"),
-      routes: () => renderStrategyRoutes(main),
-      route: () => renderStrategyRoute(main, decodeURIComponent(id || "")),
       wisbody: () => homePage({scrollTo:"#home-wisbody"}),
       account: () => renderAccount(main, id || "home"),
       profile: () => renderMemberProfile(main, decodeURIComponent(id || "")),
