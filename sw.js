@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v98-app-feedback-form";
+const CACHE = "nobodyssimple-v99-mobile-console-static-tip";
 const SHELL = [
   "./",
   "index.html",

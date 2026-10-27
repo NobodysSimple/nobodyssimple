@@ -70,3 +70,41 @@ html[data-contrast=high] .console-speech,html[data-contrast=high] .console-stage
 @media(max-width:760px){.console-dialogue{grid-template-columns:100px minmax(0,1fr);gap:13px}.console-character-frame{height:138px}.console-speech{padding:20px;border-radius:22px 22px 22px 7px}.console-speech:before{left:-12px;width:21px;height:21px}.console-progress{gap:5px}.console-progress li{display:grid;justify-items:center;gap:4px;text-align:center;padding:7px 3px;font-size:.7rem}.console-progress li:before{width:24px;height:24px}.console-stage .choice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.console-energy-grid{grid-template-columns:1fr;gap:10px}.console-stage{min-height:0}}
 @media(max-width:430px){.console-dialogue{grid-template-columns:75px minmax(0,1fr);gap:9px}.console-character-frame{height:112px}.console-speech{padding:16px}.console-speech .eyebrow{font-size:.72rem}.console-speech h2{font-size:1.6rem}.console-speech #console-prompt{font-size:.94rem}.console-stage .choice-grid,.console-stage .compact-choices{grid-template-columns:1fr}.console-step-actions .button{min-width:auto;padding:11px}.console-step-actions [data-console-step-label]{font-size:.78rem}}
 @media(prefers-reduced-motion:reduce){.console-character-frame img,.console-stage .choice-tile{animation:none!important;transition:none!important}.console-character-frame img.pose-changed{animation:none!important}}
+
+/* The console already lives in a speech bubble; avoid a second inset frame. */
+body.app-body .strategy-console .home-console-wrap .navigator-layout{max-width:none;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.strategy-project-links .chip-tip{background:#fcbf47;border-color:#c88922;color:#263c34}
+.strategy-project-links .chip-tip:hover{background:#ffe09a;border-color:#ad741d}
+html[data-theme=dark] body.app-body main .strategy-project-links .chip-tip{background:#fcbf47;color:#263c34!important;border-color:#c88922}
+html[data-theme=dark] body.app-body main .strategy-project-links .chip-tip :is(strong,small){color:#263c34!important}
+
+@media(max-width:760px){
+  body.app-body .strategy-console{padding:16px;margin-inline:0}
+  .console-dialogue{display:grid;grid-template-columns:minmax(0,1fr);gap:0;width:100%;max-width:620px;margin-inline:auto}
+  .console-character-frame{width:112px;height:116px;margin:0 auto -2px;align-items:flex-end}
+  .console-speech{width:100%;min-width:0;padding:clamp(18px,5vw,26px);border-radius:24px}
+  .console-speech:before{top:-13px;bottom:auto;left:calc(50% - 12px);width:24px;height:24px;border:1.5px solid #789080;border-right:0;border-bottom:0;transform:rotate(45deg)}
+  html[data-theme=dark] .console-speech:before{border-color:#91ac97}
+  .console-speech h2{font-size:clamp(1.7rem,6vw,2.2rem)}
+  .console-progress{gap:5px;margin:20px 0 22px}
+  .console-progress li{display:grid;justify-items:center;gap:4px;padding:8px 2px;text-align:center;font-size:clamp(.68rem,2.5vw,.8rem)}
+  .console-stage .choice-grid,.console-stage .compact-choices{grid-template-columns:minmax(0,1fr);gap:12px;max-width:none}
+  .console-stage .choice-tile,.console-stage .choice-pill{width:100%;min-width:0;min-height:76px;align-items:center;gap:14px;padding:16px 18px;border-radius:16px}
+  .console-stage .choice-tile input,.console-stage .choice-pill input{width:21px;height:21px;margin:0}
+  .console-stage .choice-tile span,.console-stage .choice-pill span{min-width:0}
+  .console-stage .choice-tile b{font-size:1.04rem;line-height:1.25}
+  .console-stage .choice-tile small{margin-top:4px;font-size:.85rem;line-height:1.45}
+  .console-stage .situation-subparts{margin:0 0 5px;padding:14px}
+  .console-step-actions{flex-wrap:wrap}
+  .console-step-actions .button{min-width:0}
+}
+@media(max-width:430px){
+  body.app-body .strategy-console{padding:12px}
+  .console-character-frame{height:104px;width:100px}
+  .console-speech{padding:18px 16px}
+  .console-speech h2{font-size:clamp(1.65rem,7vw,2rem)}
+  .console-speech #console-prompt{font-size:1rem;line-height:1.5}
+  .console-stage .choice-tile,.console-stage .choice-pill{padding:14px;min-height:72px}
+  .console-step-actions .button{flex:1 1 120px}
+  .console-step-actions [data-console-step-label]{order:-1;width:100%;text-align:left}
+}
