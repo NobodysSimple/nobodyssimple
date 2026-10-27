@@ -102,6 +102,8 @@ const colours = {
 };
 const typeLabel = {
   blog: "Blog post",
+  story: "Story",
+  debate: "Debate",
   education: "Educational writing",
   video: "Video",
   resource: "Resource",
@@ -208,7 +210,7 @@ function legacyLibrary() {
   libraryResults();
 }
 function homePage({learningView=null,scrollTo=null}={}) {
-  if(learningView !== null) { libraryState.view = ['crash','courses','videos','audios','blog'].includes(learningView) ? learningView : 'home'; libraryState.query = ''; }
+  if(learningView !== null) { libraryState.view = ['crash','courses','videos','audios','blog','stories','debates'].includes(learningView) ? learningView : 'home'; libraryState.query = ''; }
   renderHome(main, posts, {renderLearning:renderLearningHub});
   if(scrollTo) requestAnimationFrame(() => {
     const section = main.querySelector(scrollTo); if(!section)return;
@@ -218,7 +220,7 @@ function homePage({learningView=null,scrollTo=null}={}) {
 function library() { homePage({learningView:libraryState.view,scrollTo:'#home-learning'}); }
 function renderLearningHub(root) {
   const s = libraryState;
-  const view = ["crash", "courses", "videos", "audios", "blog"].includes(s.view) ? s.view : "home";
+  const view = ["crash", "courses", "videos", "audios", "blog", "stories", "debates"].includes(s.view) ? s.view : "home";
   const videos = posts.filter((post) => post.type === "video");
   const blogs = posts.filter((post) => post.type === "blog");
   const searchItems = (items) => {
@@ -241,6 +243,8 @@ function renderLearningHub(root) {
     ["videos", "Videos", "Watch and think", "YouTube videos brought into the same learning space as the writing and courses.", "▷", "learn-door-videos"],
     ["audios", "Audios", "Listen and learn", "Future guided audio lessons for relaxation, letting go and learning at your own pace.", "♪", "learn-door-audios"],
     ["blog", "Blog", "Longer notes", "Read the essays, arguments and reflections from Nobody’s Simple without leaving Learn.", "Aa", "learn-door-blog"],
+    ["stories", "Stories", "Case vignettes", "Explore people’s situations, what they tried and what they found helpful. Personal examples will be shared with care.", "◌", "learn-door-stories"],
+    ["debates", "Debates", "Questions with more than one side", "Watch or read structured debates on current topics and difficult questions.", "↔", "learn-door-debates"],
   ];
   const doorMarkup = doors.map(([id, title, kicker, description, icon, className]) => `<button type="button" class="learn-door-card ${className}" data-learn-view="${id}"><span class="learn-door-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${kicker}</span><h2>${title}</h2><p>${description}</p><strong>Open ${title} →</strong></button>`).join("");
   let content = "";
@@ -261,6 +265,12 @@ function renderLearningHub(root) {
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-videos"><div><p class="eyebrow">YouTube · watch and think</p><h2>Videos</h2><p>Follow the channel’s conversations and ideas from inside the same learning space.</p></div><span class="learn-section-icon">▷</span></div><label class="learn-search">Search videos<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a video…"></label>${resourceGrid(items, "No videos have been published here yet. New YouTube posts will appear automatically.")}</section>`;
   } else if (view === "audios") {
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-audios"><div><p class="eyebrow">Coming later · listen and learn</p><h2>Audios</h2><p>Guided relaxation, short learning courses and audio reflections will live here when they are ready.</p></div><span class="learn-section-icon">♪</span></div><div class="learn-audio-empty"><span class="learn-audio-empty-icon" aria-hidden="true">◌</span><h3>Audio learning is on the way.</h3><p>No audio courses have been added yet. This shelf is ready for relaxation tracks, letting-go courses and other guided listening.</p></div></section>`;
+  } else if (view === "stories") {
+    const items = searchItems(posts.filter((post) => post.type === "story"));
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-stories"><div><p class="eyebrow">Case vignettes · practical learning</p><h2>Stories</h2><p>Short case vignettes explore what was happening in someone’s life, what they tried and what they found helpful. Each story is one person’s experience, not a promise that the same approach will work for everyone.</p></div><span class="learn-section-icon">◌</span></div><label class="learn-search">Search stories<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a situation…"></label>${resourceGrid(items, "Stories will appear here once a vignette has been published.")}</section>`;
+  } else if (view === "debates") {
+    const items = searchItems(posts.filter((post) => post.type === "debate"));
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-debates"><div><p class="eyebrow">Current topics · competing perspectives</p><h2>Debates</h2><p>Explore a focused question, understand the strongest arguments on different sides and decide what you think.</p></div><span class="learn-section-icon">↔</span></div><label class="learn-search">Search debates<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a question…"></label>${resourceGrid(items, "No debates have been published yet. New discussions will appear here when they are ready.")}</section>`;
   } else {
     const items = searchItems(blogs);
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-blog"><div><p class="eyebrow">Longer notes · arguments · reflections</p><h2>Blog</h2><p>Essays, arguments and reflections to explore at your own pace.</p></div><span class="learn-section-icon">Aa</span></div><label class="learn-search">Search the blog<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a thought…"></label>${resourceGrid(items, "No blog posts have been published yet. New writing will appear here automatically.")}</section>`;

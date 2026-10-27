@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v95-guest-settings-accessibility";
+const CACHE = "nobodyssimple-v96-supporter-thanks-stories-debates";
 const SHELL = [
   "./",
   "index.html",
@@ -34,10 +34,11 @@ const SHELL = [
   "icon-512.png",
   "drew-profile.png",
   "kofi-profile.png",
+  "half-banner.png",
 ];
 const SAFE = new Set(
   SHELL.map((path) => new URL(path, self.registration.scope).pathname).concat(
-    ["logo.png", "banner.png", "characters.png", "characters2.png"].map(
+    ["logo.png", "banner.png", "half-banner.png", "characters.png", "characters2.png"].map(
       (path) => new URL(path, self.registration.scope).pathname,
     ),
   ),
