@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v97-kofi-floating-widget";
+const CACHE = "nobodyssimple-v98-app-feedback-form";
 const SHELL = [
   "./",
   "index.html",

@@ -12,6 +12,8 @@ const yt = "https://www.youtube.com/@nobodyssimple";
 const forms = {
   feedback:
     "https://docs.google.com/forms/d/e/1FAIpQLSdrMFICnfVKFyEMVYW0wnj0_XWKCM8i89s9lZ1ixFLN5od_bw/viewform",
+  appFeedback:
+    "https://docs.google.com/forms/d/e/1FAIpQLSfQLjiIGB16nCsxHJ-eRGGqeqbDFOEGFV9QBSjn0ZVDfQmfyg/viewform?usp=header",
   volunteer:
     "https://docs.google.com/forms/d/e/1FAIpQLSewCnWbRoRvElX6a6ZcbByvjJu6yRuHTIAWipQr5sb3gb7p_Q/viewform",
 };
@@ -3178,17 +3180,16 @@ export function renderRoutes(root) {
 }
 
 export function renderCommunity(root, initial = "feedback") {
-  const embed = (url) => url.replace("/viewform", "/viewform?embedded=true");
-  root.innerHTML = `<div class="wrap">${area("Community", "Help shape what we make next.", "Vote for the questions you want explored, suggest improvements, challenge an idea, or share a counterexample.")}<div class="notice community-note"><b>Thoughtful disagreement belongs here.</b> “This didn’t fit me” or “another explanation may be…” can be more useful than simple agreement. Please don’t submit passwords or urgent/private health details to a public project form.</div><div class="form-tabs"><button class="chip" data-form="feedback">Community feedback</button><button class="chip" data-form="volunteer">Volunteer Guild</button></div><section id="community-form"></section><div class="community-mail"><p>Prefer a direct email? Contact <a href="mailto:nobodyssimple@outlook.com">nobodyssimple@outlook.com</a>.</p><p class="fine">The forms are operated by Google. Their responses and notification settings are controlled in Google Forms, not by this website. See the setup guide before launch to verify who receives submissions.</p></div></div>`;
+  const embed = (url) => { const target = new URL(url); target.searchParams.set("embedded", "true"); return target.toString(); };
+  root.innerHTML = `<div class="wrap">${area("Community", "Help shape what we make next.", "Vote for the questions you want explored, suggest improvements, challenge an idea, or share a counterexample.")}<div class="notice community-note"><b>Thoughtful disagreement belongs here.</b> “This didn’t fit me” or “another explanation may be…” can be more useful than simple agreement. Please don’t submit passwords or urgent/private health details to a public project form.</div><div class="form-tabs"><button class="chip" data-form="feedback">Community feedback</button><button class="chip" data-form="appFeedback">App feedback</button><button class="chip" data-form="volunteer">Volunteer Guild</button></div><section id="community-form"></section><div class="community-mail"><p>Prefer a direct email? Contact <a href="mailto:nobodyssimple@outlook.com">nobodyssimple@outlook.com</a>.</p><p class="fine">The forms are operated by Google. Their responses and notification settings are controlled in Google Forms, not by this website. See the setup guide before launch to verify who receives submissions.</p></div></div>`;
   const show = (kind) => {
-    const url = kind === "feedback" ? forms.feedback : forms.volunteer,
-      label =
-        kind === "feedback" ? "Community Feedback form" : "Volunteer Guild";
+    const url = kind === "feedback" ? forms.feedback : kind === "appFeedback" ? forms.appFeedback : forms.volunteer,
+      label = kind === "feedback" ? "Community Feedback form" : kind === "appFeedback" ? "App feedback form" : "Volunteer Guild";
     root
       .querySelectorAll("[data-form]")
       .forEach((b) => b.classList.toggle("active", b.dataset.form === kind));
     root.querySelector("#community-form").innerHTML =
-      `<div class="embed-shell"><div class="embed-title"><p class="eyebrow">${kind === "feedback" ? "Ideas, votes & counterexamples" : "Join the contributor guild"}</p><h2>${label}</h2><a href="${url}" rel="noopener noreferrer" target="_blank">Open this form in a new tab ↗</a></div><iframe src="${embed(url)}" title="Nobody’s Simple ${label}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
+      `<div class="embed-shell"><div class="embed-title"><p class="eyebrow">${kind === "feedback" ? "Ideas, votes & counterexamples" : kind === "appFeedback" ? "Tell us about using Nobody’s Simple" : "Join the contributor guild"}</p><h2>${label}</h2><a href="${url}" rel="noopener noreferrer" target="_blank">Open this form in a new tab ↗</a></div><iframe src="${embed(url)}" title="Nobody’s Simple ${label}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
   };
   root
     .querySelectorAll("[data-form]")
