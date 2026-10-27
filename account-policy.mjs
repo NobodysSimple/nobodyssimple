@@ -27,7 +27,7 @@ export const SAVED = {
   'ns-simplyfocus-tasks-v1': ['tools','SimplyFocus tasks'],
 };
 export const CATEGORIES = {maps:'Maps and projects',library:'Favourites and recent tools',learning:'Learning progress',drafts:'Unfinished activities',reflections:'Personal reflections',mood:'Mood and check-in history',tools:'Saved tool settings'};
-export const DEFAULTS = Object.freeze({theme:'system',language:'en',textScale:100,contrast:'standard',motion:'system',lowStim:false,sound:false,font:'system',lineSpacing:1.6,simpleMode:false,tapControls:false,visualMode:'balanced',saveDrafts:true,retentionDays:0,personalise:false,moodHistory:false,sensitiveLock:false,learningFormat:'any',trackLearning:false,replyNotifications:false,siteUpdates:false,reminders:false,reminderTime:'18:00',timeZone:'Europe/London',mentions:false,profileVisibility:'private'});
+export const DEFAULTS = Object.freeze({theme:'light',language:'en',textScale:100,contrast:'standard',motion:'system',lowStim:false,sound:true,font:'system',lineSpacing:1.6,simpleMode:false,tapControls:false,visualMode:'balanced',saveDrafts:true,retentionDays:0,personalise:false,moodHistory:false,sensitiveLock:false,learningFormat:'any',trackLearning:false,replyNotifications:false,siteUpdates:false,reminders:false,reminderTime:'18:00',timeZone:'Europe/London',mentions:false,profileVisibility:'private'});
 const OPTIONS = {theme:['system','light','dark'],language:['en','es','fr','de'],textScale:[100,110,125,150],contrast:['standard','high'],motion:['system','reduce','full'],font:['system','readable'],lineSpacing:[1.6,1.9,2.2],retentionDays:[0,30,90,365],learningFormat:['any','reading','audio','video','interactive'],profileVisibility:['private','public'],visualMode:['balanced','text','visual']};
 export function cleanSettings(input={}) {
   const out={...DEFAULTS};
@@ -56,7 +56,7 @@ export function nicknamePolicy(raw) {
 export function canRename(lastChange,now=Date.now()) {return !lastChange || now-lastChange>=COOLDOWN_MS;}
 export function safeProfile(input={}) {
   const avatarId=AVATARS.includes(input.avatarId)?input.avatarId:'base';
-  const avatarData=typeof input.avatarData==='string' && input.avatarData.length<=60000 && /^data:image\/(webp|jpeg|png);base64,[A-Za-z0-9+/=]+$/.test(input.avatarData)?input.avatarData:'';
+  const avatarData='';
   const text=(v,n)=>String(v||'').normalize('NFKC').replace(/[\u0000-\u001f\u007f]/g,'').slice(0,n);
   const bio=text(input.bio,280),pronouns=text(input.pronouns,40);
   if(/https?:|www\.|<|>/i.test(bio+pronouns))throw Error('Keep links and markup out of your bio and pronouns.');

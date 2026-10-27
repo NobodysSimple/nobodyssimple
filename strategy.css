@@ -25,7 +25,7 @@ html[data-low-stim=true] .strategy-project-links img,html[data-visual=text] .str
 @media(max-width:480px){.home-learning .learn-door-grid{grid-template-columns:1fr}}
 /* Character led, one question at a time navigation console. */
 body.app-body .strategy-console{background:linear-gradient(145deg,#f7f3e6 0%,#eef3e7 56%,#f6eee1 100%);border-color:#b6c4b4;box-shadow:0 16px 44px rgb(32 62 52 / .10)}
-.console-dialogue{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:24px;align-items:center;max-width:980px;margin:0 auto 18px}
+.console-dialogue{display:grid;grid-template-columns:minmax(150px,220px) minmax(0,1fr);gap:24px;align-items:start;max-width:1120px;margin:0 auto 18px}
 .console-character-frame{height:192px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
 .console-character-frame img{width:auto;height:100%;max-width:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 8px 8px rgb(35 59 44 / .12));transition:transform .22s ease,opacity .16s ease}
 .console-character-frame img.pose-changed{animation:console-pose-in .24s ease both}
@@ -33,11 +33,11 @@ body.app-body .strategy-console{background:linear-gradient(145deg,#f7f3e6 0%,#ee
 .console-speech{position:relative;padding:25px 30px;border:1.5px solid #789080;border-radius:28px 28px 28px 8px;background:#fffdf7;box-shadow:0 8px 22px rgb(30 60 44 / .07)}
 .console-speech:before{content:"";position:absolute;left:-15px;bottom:30px;width:26px;height:26px;background:#fffdf7;border-left:1.5px solid #789080;border-bottom:1.5px solid #789080;transform:rotate(45deg)}
 .console-speech h2{position:relative;margin:8px 0 10px;font-size:clamp(1.8rem,3.3vw,2.8rem);line-height:1.1;color:#203e34}.console-speech #console-prompt{position:relative;margin:0;max-width:60ch;font-size:1.05rem}
-.console-progress{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:0;margin:18px auto 24px;max-width:980px;counter-reset:console}
+.console-progress{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:0;margin:22px 0 12px;max-width:none;counter-reset:console}
 .console-progress li{counter-increment:console;display:flex;align-items:center;gap:9px;min-width:0;padding:9px 11px;border-radius:12px;background:rgb(255 255 255 / .56);color:#59695d;font-size:.86rem;line-height:1.25}
 .console-progress li:before{content:counter(console);display:grid;place-items:center;flex:none;width:27px;height:27px;border:1px solid #a3b1a3;border-radius:50%;font-weight:700}
 .console-progress li[aria-current=step]{background:#284d3d;color:#fff;font-weight:700}.console-progress li[aria-current=step]:before{background:#fff;color:#284d3d;border-color:#fff}
-.console-form{display:block;max-width:1040px;margin:auto}.console-stage{min-height:260px;padding:4px 0}.console-stage[hidden]{display:none!important}.console-stage fieldset{min-width:0}
+.console-form{display:block;max-width:none;margin:0}.console-stage{min-height:260px;padding:4px 0}.console-stage[hidden]{display:none!important}.console-stage fieldset{min-width:0}
 .console-stage>fieldset>legend{font:700 clamp(1.3rem,2vw,1.65rem) Georgia,serif;margin:0 0 8px}
 .console-stage .choice-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
 .console-stage .situation-option{min-width:0}.console-stage .choice-tile{height:100%;min-height:68px;border:1px solid #b2c0b3;border-radius:15px;background:rgb(255 255 255 / .76);transition:background .15s,border-color .15s,transform .15s}

@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v94-community-home-cleanup";
+const CACHE = "nobodyssimple-v95-guest-settings-accessibility";
 const SHELL = [
   "./",
   "index.html",
