@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v99-mobile-console-static-tip";
+const CACHE = "nobodyssimple-v100-simplyfocus-audio-breathing";
 const SHELL = [
   "./",
   "index.html",
@@ -35,6 +35,7 @@ const SHELL = [
   "drew-profile.png",
   "kofi-profile.png",
   "half-banner.png",
+  "simplyfocus-rain.mp3", "simplyfocus-fire.mp3", "simplyfocus-wind.mp3", "simplyfocus-ocean.mp3", "simplyfocus-bowl.mp3", "simplyfocus-pink.mp3", "simplyfocus-trees.mp3", "simplyfocus-lofi.mp3", "simplyfocus-focus.mp3", "simplyfocus-pomodoro-bell.mp3", "simplyfocus-task-tick.mp3",
 ];
 const SAFE = new Set(
   SHELL.map((path) => new URL(path, self.registration.scope).pathname).concat(
