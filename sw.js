@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v96-supporter-thanks-stories-debates";
+const CACHE = "nobodyssimple-v97-kofi-floating-widget";
 const SHELL = [
   "./",
   "index.html",
