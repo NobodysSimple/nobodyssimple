@@ -5732,7 +5732,7 @@ footer {
 .breathing-visual { display: grid; min-height: 370px; place-items: center; align-content: center; overflow: hidden; padding: 26px; border: 1px solid rgb(66 119 95 / 18%); border-radius: 22px; background: radial-gradient(circle at 50% 43%, #fffdf4 0 10%, #e6f3e5 31%, #c6e0cf 64%, #a1c7b5 100%); }
 .breath-orb-shell { display: grid; width: min(56vw, 252px); aspect-ratio: 1; place-items: center; border: 1px solid rgb(53 110 87 / 22%); border-radius: 50%; background: rgb(255 255 255 / 24%); box-shadow: 0 0 0 15px rgb(255 255 255 / 12%), 0 20px 45px rgb(48 101 79 / 13%); }
 .breath-orb { display: grid; width: 76%; aspect-ratio: 1; place-items: center; padding: 24px; border: 2px solid #4c8b75; border-radius: 50%; background: radial-gradient(circle at 34% 30%, #fffef4 0, #e4f2df 52%, #acd2bc 100%); color: #214d3c; font-size: clamp(1rem, 2.4vw, 1.3rem); font-weight: 800; text-align: center; box-shadow: 0 12px 27px rgb(41 100 76 / 22%), inset 0 0 0 7px rgb(255 255 255 / 31%); transform: scale(.72); }
-.breath-orb.breathing { animation: box-breathing 16s linear infinite; }
+.breath-orb.breathing { animation: box-breathing 16s ease-in-out infinite; animation-direction: normal; will-change: transform; }
 @keyframes box-breathing {
   0% { transform: scale(.72); }
   25% { transform: scale(1); }
@@ -6029,7 +6029,7 @@ html[data-theme="dark"] .box-breathing-step.is-active { border-color: #acd5b2; b
 .needs-map-card .icon-button { grid-column: 2; grid-row: 1 / span 2; }
 .breath-stage { display: grid; min-height: 300px; place-items: center; overflow: hidden; border-radius: 16px; background: radial-gradient(ellipse at center, #eff6e9, #dcebe2 62%, #d1e1dc); }
 .breath-stage .breath-orb { width: clamp(160px, 32vw, 245px); transform: scale(.84); }
-.breath-orb.breathing { animation-duration: var(--breath-half-duration, 3.5s); }
+.breath-stage .breath-orb.breathing { animation-duration: var(--breath-half-duration, 3.5s); }
 .breath-phase { margin: -3px 12px 18px; color: #526158; text-align: center; }
 .urge-surf-stage { overflow: hidden; padding: 14px; border: 1px solid #d9d5ca; border-radius: 16px; background: linear-gradient(#e9f0eb, #fffdf6); }
 .urge-surf-stage .urge-wave { height: 240px; margin: 12px 0; overflow: hidden; border-radius: 22px 22px 8px 8px; background: linear-gradient(180deg, #92cfc9 0%, #3f8990 55%, #28616b 100%); animation-play-state: paused; }
