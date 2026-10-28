@@ -5732,7 +5732,7 @@ footer {
 .breathing-visual { display: grid; min-height: 370px; place-items: center; align-content: center; overflow: hidden; padding: 26px; border: 1px solid rgb(66 119 95 / 18%); border-radius: 22px; background: radial-gradient(circle at 50% 43%, #fffdf4 0 10%, #e6f3e5 31%, #c6e0cf 64%, #a1c7b5 100%); }
 .breath-orb-shell { display: grid; width: min(56vw, 252px); aspect-ratio: 1; place-items: center; border: 1px solid rgb(53 110 87 / 22%); border-radius: 50%; background: rgb(255 255 255 / 24%); box-shadow: 0 0 0 15px rgb(255 255 255 / 12%), 0 20px 45px rgb(48 101 79 / 13%); }
 .breath-orb { display: grid; width: 76%; aspect-ratio: 1; place-items: center; padding: 24px; border: 2px solid #4c8b75; border-radius: 50%; background: radial-gradient(circle at 34% 30%, #fffef4 0, #e4f2df 52%, #acd2bc 100%); color: #214d3c; font-size: clamp(1rem, 2.4vw, 1.3rem); font-weight: 800; text-align: center; box-shadow: 0 12px 27px rgb(41 100 76 / 22%), inset 0 0 0 7px rgb(255 255 255 / 31%); transform: scale(.72); }
-.breath-orb.breathing { animation: box-breathing 16s ease-in-out infinite; animation-direction: normal; will-change: transform; }
+.timed-breathing-card .breath-orb.breathing { animation: box-breathing 16s cubic-bezier(.42, 0, .58, 1) infinite; animation-direction: normal; animation-play-state: running; transform-origin: center; will-change: transform; }
 @keyframes box-breathing {
   0% { transform: scale(.72); }
   25% { transform: scale(1); }
@@ -5767,7 +5767,7 @@ html[data-theme="dark"] .breathing-control-panel { border-color: #789b82; backgr
 html[data-theme="dark"] .breathing-countdown span, html[data-theme="dark"] .box-breathing-step small, html[data-theme="dark"] .timed-breathing-card > .interactive-status { color: #c3d6c7; }
 html[data-theme="dark"] .box-breathing-step { border-color: #789b82; background: rgb(35 59 46 / 82%); }
 html[data-theme="dark"] .box-breathing-step.is-active { border-color: #acd5b2; background: #365842; }
-@media (prefers-reduced-motion: reduce) { .breath-orb.breathing { animation: none; transform: scale(.86); } }
+@media (prefers-reduced-motion: reduce) { .breath-stage .breath-orb.breathing { animation: none; transform: scale(.86); } }
 @media (max-width: 760px) {
   .pomodoro-head { display:grid; }
   .pomodoro-modes { justify-content:stretch; }
