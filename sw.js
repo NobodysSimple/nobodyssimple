@@ -1,7 +1,9 @@
-const CACHE = "nobodyssimple-v102-simplyfocus-gentle-breathing";
+const CACHE = "nobodyssimple-v103-illustrated-app";
 const SHELL = [
   "./",
   "index.html",
+  "ns-art-reading.png", "ns-art-listening.png", "ns-art-thinking.png", "ns-art-guide.png", "ns-art-friends.png", "ns-art-writing.png", "ns-art-meditate.png", "ns-art-compass.png",
+  "ns-scene-mountains.webp", "ns-scene-sunset.webp", "ns-scene-forest.webp", "ns-scene-path.webp",
   "nd-play.html",
   "nd-play.css",
   "nd-play-v4.mjs",
