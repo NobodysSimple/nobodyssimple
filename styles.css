@@ -5701,57 +5701,81 @@ footer {
 }
 
 .timed-breathing-card {
+  --breath-ink: #173f35;
+  --breath-muted: #60766d;
+  --breath-line: rgb(46 101 83 / 18%);
+  position: relative;
   display: grid;
-  gap: 22px;
-  margin-top: 20px;
-  padding: clamp(20px, 4vw, 38px);
-  border: 1px solid #cfded0;
-  border-radius: 20px;
-  background: linear-gradient(145deg, #f5f1e4, #e4eee6);
-  box-shadow: 0 16px 35px rgb(47 74 59 / 8%);
-}
-.timed-breathing-head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   gap: 24px;
+  margin-top: 22px;
+  padding: clamp(20px, 4vw, 42px);
+  overflow: hidden;
+  border: 1px solid #c7dbcd;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #f8f3e5 0%, #eef5ec 48%, #dfeee4 100%);
+  box-shadow: 0 20px 44px rgb(35 76 61 / 11%);
+  color: var(--breath-ink);
 }
-.timed-breathing-card h2 { margin: 4px 0 8px; color: #294d3f; }
-.timed-breathing-card p:not(.eyebrow) { max-width: 650px; margin: 0; color: #5f7064; line-height: 1.55; }
-.breathing-duration { display: flex; flex-wrap: wrap; gap: 5px; padding: 5px; border: 1px solid #c8d7ca; border-radius: 12px; background: rgb(255 255 255 / 60%); }
-.breathing-duration button { min-width: 60px; padding: 9px 11px; border: 0; border-radius: 8px; background: transparent; color: #5d7166; cursor: pointer; font: inherit; font-size: .82rem; }
-.breathing-duration button[aria-pressed="true"] { background: #39745d; color: #fffdf7; }
-.timed-breathing-main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, .7fr); gap: 18px; align-items: stretch; }
-.breathing-visual { display: grid; min-height: 300px; place-items: center; align-content: center; overflow: hidden; padding: 20px; border-radius: 17px; background: radial-gradient(circle at 50% 43%, #fafff3 0 9%, #cfe4d6 30%, #a9cbbf 70%, #8fb3a8 100%); }
-.breath-orb { display: grid; width: clamp(155px, 25vw, 225px); aspect-ratio: 1; place-items: center; padding: 25px; border: 2px solid #477e6e; border-radius: 50%; background: radial-gradient(circle at 37% 32%, #fffdf2, #d4e9d6 70%, #a9d0be); color: #294d3f; font-weight: 750; text-align: center; box-shadow: 0 12px 32px rgb(37 83 67 / 18%); transform: scale(.76); }
-.breath-orb.breathing { animation: focus-breath-pulse var(--breath-half-duration, 3.5s) ease-in-out infinite alternate; }
-@keyframes focus-breath-pulse { from { transform: scale(.76); box-shadow: 0 8px 22px rgb(37 83 67 / 15%); } to { transform: scale(1); box-shadow: 0 16px 38px rgb(37 83 67 / 25%); } }
-.timed-breathing-card .breath-phase { max-width: 35ch; margin: 19px 12px 0; color: #526158; text-align: center; }
-.breathing-controls { display: grid; align-content: center; gap: 19px; padding: 24px; border: 1px solid #c9d8ca; border-radius: 16px; background: rgb(255 253 247 / 72%); }
-.breathing-countdown { display: grid; gap: 4px; color: #537064; }
-.breathing-countdown span { font-size: .76rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.breathing-countdown strong { color: #294d3f; font: 700 clamp(3rem, 8vw, 5rem)/.95 Georgia, serif; letter-spacing: .03em; }
-.breathing-pace { display: grid; gap: 7px; color: #526158; font-weight: 700; }
-.breathing-pace output { color: #39745d; font-weight: 800; }
-.breathing-pace input { width: 100%; accent-color: #39745d; }
+.timed-breathing-card::before { position: absolute; top: -140px; right: -80px; width: 330px; height: 330px; border: 1px solid rgb(61 123 99 / 15%); border-radius: 50%; content: ""; pointer-events: none; }
+.timed-breathing-card::after { position: absolute; right: 18%; bottom: -110px; width: 220px; height: 220px; border: 1px solid rgb(201 151 78 / 19%); border-radius: 50%; content: ""; pointer-events: none; }
+.timed-breathing-top { position: relative; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
+.timed-breathing-title { display: flex; align-items: flex-start; gap: 15px; }
+.breathing-mark { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border: 1px solid #c7974e; border-radius: 14px; background: #f3c86f; color: #244b3d; font-size: 20px; box-shadow: 0 7px 15px rgb(177 122 45 / 16%); }
+.timed-breathing-card h2 { margin: 3px 0 9px; color: var(--breath-ink); font-size: clamp(1.6rem, 3vw, 2.45rem); letter-spacing: -.02em; }
+.timed-breathing-card p:not(.eyebrow) { max-width: 650px; margin: 0; color: var(--breath-muted); line-height: 1.6; }
+.timed-breathing-card .eyebrow { color: #9a6a32; }
+.breathing-duration { position: relative; z-index: 1; display: flex; flex: 0 0 auto; flex-wrap: wrap; gap: 5px; padding: 5px; border: 1px solid #c4d7c8; border-radius: 14px; background: rgb(255 255 255 / 65%); box-shadow: 0 5px 13px rgb(41 80 63 / 6%); }
+.breathing-duration button { min-width: 62px; padding: 10px 12px; border: 0; border-radius: 9px; background: transparent; color: #5a7166; cursor: pointer; font: inherit; font-size: .82rem; font-weight: 750; }
+.breathing-duration button:hover { background: rgb(255 255 255 / 72%); color: var(--breath-ink); }
+.breathing-duration button[aria-pressed="true"] { background: #285746; color: #fffdf7; box-shadow: 0 4px 9px rgb(32 73 57 / 20%); }
+.box-breathing-panel { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(250px, .85fr); gap: 18px; align-items: stretch; }
+.breathing-visual { display: grid; min-height: 370px; place-items: center; align-content: center; overflow: hidden; padding: 26px; border: 1px solid rgb(66 119 95 / 18%); border-radius: 22px; background: radial-gradient(circle at 50% 43%, #fffdf4 0 10%, #e6f3e5 31%, #c6e0cf 64%, #a1c7b5 100%); }
+.breath-orb-shell { display: grid; width: min(56vw, 252px); aspect-ratio: 1; place-items: center; border: 1px solid rgb(53 110 87 / 22%); border-radius: 50%; background: rgb(255 255 255 / 24%); box-shadow: 0 0 0 15px rgb(255 255 255 / 12%), 0 20px 45px rgb(48 101 79 / 13%); }
+.breath-orb { display: grid; width: 76%; aspect-ratio: 1; place-items: center; padding: 24px; border: 2px solid #4c8b75; border-radius: 50%; background: radial-gradient(circle at 34% 30%, #fffef4 0, #e4f2df 52%, #acd2bc 100%); color: #214d3c; font-size: clamp(1rem, 2.4vw, 1.3rem); font-weight: 800; text-align: center; box-shadow: 0 12px 27px rgb(41 100 76 / 22%), inset 0 0 0 7px rgb(255 255 255 / 31%); transform: scale(.72); }
+.breath-orb.breathing { animation: box-breathing 16s linear infinite; }
+@keyframes box-breathing {
+  0% { transform: scale(.72); }
+  25% { transform: scale(1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(.72); }
+  100% { transform: scale(.72); }
+}
+.timed-breathing-card .breath-phase { max-width: 36ch; margin: 22px 8px 0; color: #526a5f; font-size: .9rem; line-height: 1.5; text-align: center; }
+.breathing-control-panel { display: grid; align-content: center; gap: 21px; padding: clamp(20px, 3vw, 30px); border: 1px solid var(--breath-line); border-radius: 22px; background: rgb(255 253 247 / 72%); box-shadow: 0 10px 25px rgb(39 77 60 / 6%); }
+.breathing-countdown { display: grid; gap: 6px; }
+.breathing-countdown span { color: #6b806f; font-size: .71rem; font-weight: 850; letter-spacing: .14em; text-transform: uppercase; }
+.breathing-countdown strong { color: var(--breath-ink); font: 700 clamp(3rem, 7vw, 5rem)/.9 Georgia, serif; letter-spacing: .025em; }
+.box-breathing-steps { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.box-breathing-step { display: grid; gap: 3px; min-height: 72px; padding: 11px; border: 1px solid #cbdacf; border-radius: 13px; background: rgb(255 255 255 / 52%); transition: border-color .2s, background .2s, transform .2s, box-shadow .2s; }
+.box-breathing-step > span { color: #9a6a32; font-size: .66rem; font-weight: 850; letter-spacing: .1em; }
+.box-breathing-step strong { color: var(--breath-ink); font-size: .95rem; }
+.box-breathing-step small { color: #6a7d71; font-size: .72rem; }
+.box-breathing-step.is-active { border-color: #4d8b73; background: #e6f3e4; box-shadow: 0 5px 13px rgb(48 112 83 / 13%); transform: translateY(-2px); }
+.box-breathing-step.is-active strong { color: #285746; }
 .breathing-actions { display: flex; flex-wrap: wrap; gap: 8px; }
-.pomodoro-notification-button { justify-self: center; padding: 7px 11px; border: 1px solid rgb(255 253 247 / 60%); border-radius: 99px; background: transparent; color: #fffdf7; cursor: pointer; font: inherit; font-size: .78rem; }
-.pomodoro-notification-button:disabled { cursor: default; opacity: .72; }
-html[data-theme="dark"] .timed-breathing-card { background: linear-gradient(145deg, #263d31, #20372e); border-color: #91ac97; }
-html[data-theme="dark"] .timed-breathing-card :is(h2, p, .breath-phase, .breathing-pace, .breathing-countdown, .breathing-countdown strong) { color: #ecf1e8; }
-html[data-theme="dark"] .breathing-controls { background: #233b2e; border-color: #91ac97; }
-html[data-theme="dark"] .breathing-duration { background: rgb(35 59 46 / 85%); border-color: #91ac97; }
-html[data-theme="dark"] .breathing-duration button { color: #dce8da; }
-@media (prefers-reduced-motion: reduce) { .breath-orb.breathing { animation: none; transform: scale(.88); } }
-
+.timed-breathing-card > .interactive-status { position: relative; z-index: 1; margin: 0; border-color: var(--breath-line); color: #60766d; }
+html[data-theme="dark"] .timed-breathing-card { --breath-ink: #edf4ea; --breath-muted: #c3d6c7; --breath-line: rgb(174 211 183 / 30%); border-color: #789b82; background: linear-gradient(135deg, #263f32 0%, #20372e 55%, #2b4737 100%); }
+html[data-theme="dark"] .timed-breathing-card :is(h2, p:not(.eyebrow), .breath-phase, .breathing-countdown strong, .box-breathing-step strong) { color: var(--breath-ink); }
+html[data-theme="dark"] .timed-breathing-card .eyebrow { color: #f2c875; }
+html[data-theme="dark"] .breathing-duration { border-color: #789b82; background: rgb(35 59 46 / 85%); }
+html[data-theme="dark"] .breathing-duration button { color: #d9e8da; }
+html[data-theme="dark"] .breathing-duration button[aria-pressed="true"] { background: #b9d9bf; color: #132a20; }
+html[data-theme="dark"] .breathing-visual { border-color: rgb(174 211 183 / 30%); background: radial-gradient(circle at 50% 43%, #dfeeda 0 10%, #a7cdb2 44%, #648d76 100%); }
+html[data-theme="dark"] .breath-orb-shell { border-color: rgb(228 246 227 / 35%); background: rgb(255 255 255 / 12%); }
+html[data-theme="dark"] .breath-orb { border-color: #9fd0a8; background: radial-gradient(circle at 34% 30%, #f7f4dc 0, #cce8cf 55%, #8fbea0 100%); color: #183c2e; }
+html[data-theme="dark"] .breathing-control-panel { border-color: #789b82; background: rgb(25 49 38 / 76%); }
+html[data-theme="dark"] .breathing-countdown span, html[data-theme="dark"] .box-breathing-step small, html[data-theme="dark"] .timed-breathing-card > .interactive-status { color: #c3d6c7; }
+html[data-theme="dark"] .box-breathing-step { border-color: #789b82; background: rgb(35 59 46 / 82%); }
+html[data-theme="dark"] .box-breathing-step.is-active { border-color: #acd5b2; background: #365842; }
+@media (prefers-reduced-motion: reduce) { .breath-orb.breathing { animation: none; transform: scale(.86); } }
 @media (max-width: 760px) {
   .pomodoro-head { display:grid; }
   .pomodoro-modes { justify-content:stretch; }
   .pomodoro-modes button { flex:1; }
-  .timed-breathing-head { display: grid; }
+  .timed-breathing-top { display: grid; }
   .breathing-duration { justify-content: stretch; }
   .breathing-duration button { flex: 1; }
-  .timed-breathing-main { grid-template-columns: 1fr; }
+  .box-breathing-panel { grid-template-columns: 1fr; }
   .pomodoro-task-options { grid-template-columns:1fr; }
   .pomodoro-project-form { align-items:stretch; flex-direction:column; }
   .interactive-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -5779,7 +5803,7 @@ html[data-theme="dark"] .breathing-duration button { color: #dce8da; }
   .tap-scene,
   .spotlight-scene { grid-template-columns: repeat(2, 1fr); }
   .focus-mixer-head { grid-template-columns: 1fr; }
-  .breathing-controls { padding: 19px; }
+  .breathing-control-panel { padding: 19px; }
   .focus-track { grid-template-columns: 38px 1fr 44px; }
   .focus-track input { grid-column: 2 / 3; grid-row: 2; }
   .focus-track-value { grid-column: 3; grid-row: 1 / 3; }

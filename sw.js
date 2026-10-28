@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v100-simplyfocus-audio-breathing";
+const CACHE = "nobodyssimple-v101-simplyfocus-live-mix-box-breathing";
 const SHELL = [
   "./",
   "index.html",
