@@ -577,6 +577,9 @@ body.app-body .library-theme-card-count { align-self:flex-start; }
 
 /* Direct toolbox directory: the actual tools sit beneath clear headings. */
 body.app-body .library-grouped-results { margin-top: 18px; }
+body.app-body .library-theme-back { min-height:40px;margin:0 0 8px;padding:8px 15px;border:1px solid var(--ui-line);border-radius:999px;background:var(--ui-paper);color:var(--ui-ink);font-size:12px;font-weight:650;cursor:pointer; }
+body.app-body .library-theme-back:hover,body.app-body .library-theme-back:focus-visible { border-color:#789276;background:var(--ui-soft); }
+body.app-body .library-theme-picker { margin-top:18px; }
 body.app-body .library-tool-group { margin: 28px 0 40px; scroll-margin-top: 24px; }
 body.app-body .library-tool-group-head { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; align-items: start; gap: 14px; margin-bottom: 14px; padding: 0 2px 12px; border-bottom: 1px solid var(--ui-line); }
 body.app-body .library-tool-group-number { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--ui-line); border-radius: 50%; background: var(--ui-soft); color: var(--ui-muted); font-size: 11px; font-weight: 700; }
