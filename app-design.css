@@ -574,3 +574,28 @@ body.app-body .support-dialog :is(.support-emergency,.support-primary) { padding
 body.app-body .support-dialog :is(h1,h2,h3,p,span,strong,small,label,a:not(.button)) { color:var(--ui-ink); }
 @media(max-width:620px){body.app-body .support-dialog .support-intro{padding:22px 85px 22px 18px;background-size:65px 90px;background-position:calc(100% - 10px) 30px}body.app-body .support-dialog .support-intro h1{font-size:27px}}
 body.app-body .library-theme-card-count { align-self:flex-start; }
+
+/* Direct toolbox directory: the actual tools sit beneath clear headings. */
+body.app-body .library-grouped-results { margin-top: 18px; }
+body.app-body .library-tool-group { margin: 28px 0 40px; scroll-margin-top: 24px; }
+body.app-body .library-tool-group-head { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; align-items: start; gap: 14px; margin-bottom: 14px; padding: 0 2px 12px; border-bottom: 1px solid var(--ui-line); }
+body.app-body .library-tool-group-number { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--ui-line); border-radius: 50%; background: var(--ui-soft); color: var(--ui-muted); font-size: 11px; font-weight: 700; }
+body.app-body .library-tool-group-head .eyebrow { margin: 2px 0 4px; }
+body.app-body .library-tool-group-head h2 { margin: 0; font-family: Georgia, serif; font-size: clamp(20px, 2.4vw, 28px); font-weight: 400; line-height: 1.1; }
+body.app-body .library-tool-group-head p:not(.eyebrow) { max-width: 580px; margin: 7px 0 0; color: var(--ui-muted); font-size: 12px; line-height: 1.5; }
+body.app-body .library-tool-group-head > strong { align-self: center; min-width: 28px; color: var(--ui-muted); font-size: 11px; text-align: right; }
+body.app-body .library-group-jump { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0 10px; }
+body.app-body .library-group-jump a { display: inline-flex; align-items: center; gap: 7px; min-height: 34px; padding: 7px 11px; border: 1px solid var(--ui-line); border-radius: 999px; background: var(--ui-paper); color: var(--ui-muted); font-size: 11px; text-decoration: none; }
+body.app-body .library-group-jump a:hover, body.app-body .library-group-jump a:focus-visible { border-color: var(--ui-green); color: var(--ui-ink); }
+body.app-body .library-tool-group .library-tool-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px; }
+body.app-body .library-tool-group .library-tool-link { min-height: 112px; }
+html[data-theme=dark] body.app-body .library-tool-group-head { border-color: var(--ui-line); }
+html[data-theme=dark] body.app-body .library-group-jump a { background: var(--ui-paper); color: var(--ui-muted); }
+@media (max-width: 700px) {
+  body.app-body .library-tool-group { margin: 24px 0 32px; }
+  body.app-body .library-tool-group-head { grid-template-columns: 34px minmax(0, 1fr) auto; gap: 10px; }
+  body.app-body .library-tool-group-number { width: 30px; height: 30px; font-size: 10px; }
+  body.app-body .library-tool-group-head h2 { font-size: 22px; }
+  body.app-body .library-tool-group-head p:not(.eyebrow) { font-size: 11px; }
+  body.app-body .library-tool-group .library-tool-list { grid-template-columns: 1fr; }
+}

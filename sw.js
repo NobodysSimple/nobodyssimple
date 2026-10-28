@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v104-total-illustrated-redesign";
+const CACHE = "nobodyssimple-v105-flat-tool-directory";
 const SHELL = [
   "./",
   "index.html",
