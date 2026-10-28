@@ -1,9 +1,11 @@
-const CACHE = "nobodyssimple-v105-flat-tool-directory";
+const CACHE = "nobodyssimple-v107-illustrated-home";
 const SHELL = [
   "./",
   "index.html",
   "app-design.css",
   "app-design.mjs",
+  "ns-home-hero.webp",
+  "ns-home-console.webp",
   "ns-character-base.webp",
   "ns-character-building.webp",
   "ns-character-checklist.webp",
