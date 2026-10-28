@@ -227,14 +227,14 @@ export function renderHelp(root, options = {}) {
   const stages = [...form.querySelectorAll("[data-console-stage]")];
   const questions = ["What’s happening?", "What would help?", "How much energy do you have?", "A few ideas to try"];
   const prompts = ["Choose anything that sounds close. You can select more than one.", "Pick the kind of help you want. You can skip this.", "A rough guess is enough. We’ll use it to suggest a manageable starting point.", "Here are a few options based on what you chose. Keep only what fits."];
-  const poses = ["base", "comparing", "waiting", "positing"];
+  const poses = ["guide", "thinking", "sitting", "compass"];
   let currentStage = 0;
   const showStage = (next, focus = true) => {
     currentStage = Math.max(0, Math.min(3, next));
     stages.forEach((stage, i) => { stage.hidden = i !== currentStage; });
     const character = root.querySelector("#console-character");
     character.classList.remove("pose-changed");
-    character.src = `media/console/nobody-${poses[currentStage]}.png`;
+    character.src = `ns-character-${poses[currentStage]}.webp`;
     if (!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
       void character.offsetWidth;
       character.classList.add("pose-changed");
