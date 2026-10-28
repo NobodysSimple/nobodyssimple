@@ -673,6 +673,9 @@ body.app-body .learn-door-card .eyebrow { font-size:8px;letter-spacing:1px; }
 body.app-body .learn-door-card p { margin:0 0 6px;font-size:10px;line-height:1.4; }
 body.app-body .learn-door-card strong { margin-top:auto;font-size:10px; }
 body.app-body .learn-door-card::after { display:block;right:5px;bottom:4px;width:68px;height:68px;opacity:.42; }
+body.app-body .home-learning .learn-door-card::after { display:none; }
+body.app-body .wisbody-bubble::before { content:"";position:absolute;top:42px;left:-10px;bottom:auto;width:18px;height:18px;transform:rotate(45deg);border:0;border-left:1px solid var(--ui-line);border-bottom:1px solid var(--ui-line);border-radius:0;background:var(--ui-paper); }
+@media(max-width:760px){body.app-body .wisbody-bubble::before { top:auto;left:56px;bottom:-10px;border:0;border-right:1px solid var(--ui-line);border-bottom:1px solid var(--ui-line); }}
 html[data-theme=dark] body.app-body #main .strategy-brand { background:#f6ecd7!important; }
 html[data-theme=dark] body.app-body #main .strategy-brand :is(h1,h2,p,.eyebrow,span,strong) { color:#244b3e!important; }
 html[data-theme=dark] body.app-body #main .strategy-project-links .chip { background:#2b4536;color:var(--ui-ink);border-color:var(--ui-line); }
