@@ -1,3 +1,4 @@
+import { renderInterventionBook } from './intervention-book.mjs';
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
 import {configureStrategy, renderWisbody} from './strategy.mjs';
@@ -819,6 +820,7 @@ function route() {
       guided: () => renderLifeNavigation(main, decodeURIComponent(id || "")),
       team: () => renderTeam(main),
       simplyfocus: () => renderSimplyFocus(main),
+      "intervention-book": () => renderInterventionBook(main),
       "stim-space": renderStimSpace,
       questionnaires: () => renderQuestionnaires(main),
       "big-five": () => renderBigFive(main),
@@ -865,6 +867,8 @@ function route() {
       ? "Systems questionnaire"
       : name === "personality"
       ? "Nobody’s Simple Personality Test"
+      : name === "intervention-book"
+      ? "Intervention Book"
       : name === "simplyfocus"
       ? "SimplyFocus"
       : name === "stim-space"
@@ -894,6 +898,7 @@ function route() {
     maps: "My Maps",
     support: "Get help",
     simplyfocus: "SimplyFocus",
+    "intervention-book": "Intervention Book",
     "stim-space": "Stim Space",
     questionnaires: "Questionnaires",
     "big-five": "Questionnaires",

@@ -43,7 +43,7 @@ function themeFor(text='') {
  if(/learn|read|blog|story|storie|debate|course|evidence/i.test(text)) return 'learn';
  return 'think';
 }
-const routeIcons={home:'home',tools:'tools',account:'account',discussion:'discussion',messages:'messages',simplyfocus:'audio','stim-space':'play',questionnaires:'map',community:'feedback',support:'help',install:'download',maps:'map',appearance:'settings',privacy:'shield',security:'shield',saved:'pin',learning:'book',notifications:'sun',profile:'account'};
+const routeIcons={'intervention-book':'book',home:'home',tools:'tools',account:'account',discussion:'discussion',messages:'messages',simplyfocus:'audio','stim-space':'play',questionnaires:'map',community:'feedback',support:'help',install:'download',maps:'map',appearance:'settings',privacy:'shield',security:'shield',saved:'pin',learning:'book',notifications:'sun',profile:'account'};
 function poseFor(text, fallback='thinking') {
  const choices=[[/brain.dump|journal/i,'writing'],[/reality|fact|evidence|thought.map/i,'mapping'],[/body|state.check/i,'checklist'],[/mixed|confus/i,'confused'],[/timeline|gratitude|savour/i,'star'],[/sensory.recipe|garden/i,'plant'],[/sensory.profile|learn/i,'reading'],[/battery|energy|capacity/i,'waiting'],[/load|budget|task|build/i,'building'],[/masking|self/i,'base'],[/CBT|probab|uncertain/i,'solving'],[/personality|perspective/i,'lantern'],[/big.five|questionnaire/i,'checklist'],[/system|course/i,'teaching'],[/focus|sound|audio|listen/i,'radio'],[/ground|support|safe/i,'shield'],[/decision|values|choose/i,'hiking'],[/communicat|friend|relation/i,'friends'],[/calm|breath|reset/i,'meditate'],[/feel|emotion|compass/i,'compass'],[/help|feedback/i,'helping']];
  return choices.find(([test])=>test.test(text))?.[1]||fallback;

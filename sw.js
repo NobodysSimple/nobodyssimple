@@ -1,8 +1,11 @@
-const CACHE = "nobodyssimple-v109-learn-wisbody";
+const CACHE = "nobodyssimple-v110-intervention-book";
 const SHELL = [
   "./",
   "index.html",
   "app-design.css",
+  "intervention-book.css",
+  "intervention-book.mjs",
+  "intervention-data.mjs",
   "app-design.mjs",
   "ns-home-hero.webp",
   "ns-home-console.webp",

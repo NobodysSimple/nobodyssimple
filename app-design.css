@@ -771,3 +771,9 @@ html[data-low-stim=true] body.app-body .strategy-brand-scene,html[data-visual=te
  body.app-body .thankyou-heading p:last-child { font-size:10px; }
  body.app-body .thankyou-slide p:last-child { font-size:10px;line-height:1.4; }
 }
+
+/* Soundscape colours follow the card surface in both themes. */
+body.app-body #main .focus-track .focus-track-copy b { color:var(--ui-ink)!important;font-size:14px; }
+body.app-body #main .focus-track .focus-track-copy small { color:var(--ui-muted)!important;font-size:12px; }
+body.app-body #main .focus-track .focus-track-value { color:var(--ui-ink)!important;font-size:12px;font-weight:650; }
+body.app-body #main .focus-master,body.app-body #main .focus-master output { color:var(--ui-ink)!important; }
