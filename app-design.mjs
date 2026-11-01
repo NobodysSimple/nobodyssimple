@@ -19,6 +19,7 @@ const paths = {
  check:'m5 12 5 5L20 6',
  flower:'M12 12c-10-8-12 4-2 2C0 21 15 25 12 14c8 10 15-4 2-2 9-10-7-15-2 0zM12 15v8',
  time:'M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0zM12 6v6l4 3',
+ calendar:'M4 5h16v16H4zM8 2v6M16 2v6M4 10h16M8 14h3M13 14h3M8 18h3',
  arrow:'M4 12h16M14 6l6 6-6 6',
  feedback:'m4 3 16 0v13H9l-5 5zM8 7h8M8 11h6',
  shield:'m12 2 9 4v6c0 6-9 10-9 10S3 18 3 12V6zM8 12l3 3 5-6',
@@ -43,7 +44,7 @@ function themeFor(text='') {
  if(/learn|read|blog|story|storie|debate|course|evidence/i.test(text)) return 'learn';
  return 'think';
 }
-const routeIcons={'intervention-book':'book',home:'home',tools:'tools',account:'account',discussion:'discussion',messages:'messages',simplyfocus:'audio','stim-space':'play',questionnaires:'map',community:'feedback',support:'help',install:'download',maps:'map',appearance:'settings',privacy:'shield',security:'shield',saved:'pin',learning:'book',notifications:'sun',profile:'account'};
+const routeIcons={'intervention-book':'book',lifestyle:'calendar',home:'home',tools:'tools',account:'account',discussion:'discussion',messages:'messages',simplyfocus:'audio','stim-space':'play',questionnaires:'map',community:'feedback',support:'help',install:'download',maps:'map',appearance:'settings',privacy:'shield',security:'shield',saved:'pin',learning:'book',notifications:'sun',profile:'account'};
 function poseFor(text, fallback='thinking') {
  const choices=[[/brain.dump|journal/i,'writing'],[/reality|fact|evidence|thought.map/i,'mapping'],[/body|state.check/i,'checklist'],[/mixed|confus/i,'confused'],[/timeline|gratitude|savour/i,'star'],[/sensory.recipe|garden/i,'plant'],[/sensory.profile|learn/i,'reading'],[/battery|energy|capacity/i,'waiting'],[/load|budget|task|build/i,'building'],[/masking|self/i,'base'],[/CBT|probab|uncertain/i,'solving'],[/personality|perspective/i,'lantern'],[/big.five|questionnaire/i,'checklist'],[/system|course/i,'teaching'],[/focus|sound|audio|listen/i,'radio'],[/ground|support|safe/i,'shield'],[/decision|values|choose/i,'hiking'],[/communicat|friend|relation/i,'friends'],[/calm|breath|reset/i,'meditate'],[/feel|emotion|compass/i,'compass'],[/help|feedback/i,'helping']];
  return choices.find(([test])=>test.test(text))?.[1]||fallback;

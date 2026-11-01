@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v112-problem-guidebooks";
+const CACHE = "nobodyssimple-v113-lifestyle";
 const SHELL = [
   "./",
   "index.html",
@@ -8,6 +8,11 @@ const SHELL = [
   "intervention-data.mjs",
   "intervention-resources.mjs",
   "intervention-guides.mjs",
+  "lifestyle.css",
+  "lifestyle.mjs",
+  "lifestyle-deeds.mjs",
+  "lifestyle-storage.mjs",
+  "lifestyle-reminders.mjs",
   "app-design.mjs",
   "ns-home-hero.webp",
   "ns-home-console.webp",
@@ -158,5 +163,19 @@ self.addEventListener("fetch", (event) => {
             status: 503,
           }),
       ),
+  );
+});
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const destination = new URL("./#lifestyle", self.registration.scope).href;
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then(async (windows) => {
+      const existing = windows[0];
+      if (existing) {
+        if ("navigate" in existing) await existing.navigate(destination);
+        return existing.focus();
+      }
+      return self.clients.openWindow ? self.clients.openWindow(destination) : undefined;
+    }),
   );
 });

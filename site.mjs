@@ -35,6 +35,8 @@ import {
   renderTeam,
 } from "./interactive-tools.mjs";
 import { renderSimplyFocus } from "./simplyfocus.mjs";
+import { renderLifestyle } from "./lifestyle.mjs";
+import { initLifestyleReminders } from "./lifestyle-reminders.mjs";
 import { renderPersonalityTest } from "./personality-test.mjs";
 import { renderBigFive, renderQuestionnaires, renderSystemsQuestionnaire } from "./questionnaires.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
@@ -780,7 +782,7 @@ function route() {
   if (name === "maps" || (name === "tool" && id === "maps")) { location.replace("#account/maps"); return; }
   const currentName = name || "home";
   if(name === "routes" || name === "route") { location.replace("#home"); return; }
-  if(accountState().locked && ['wisbody','tool','play','guided','questions','compass','personality','systems','big-five','stim-space'].includes(name)){
+if(accountState().locked && ['wisbody','tool','play','guided','questions','compass','personality','systems','big-five','stim-space','lifestyle'].includes(name)){
     main.innerHTML='<div class="wrap"><h1>Your saved work is locked</h1><p>Confirm your identity in Account before opening an activity that can read or save private work.</p><a class="button" href="#account">Open account to unlock</a></div>';return;
   }
   const startRoutes = new Set(["help", "navigate", "questions", "navigator", "compass"]);
@@ -819,6 +821,7 @@ function route() {
       play: () => renderInteractiveTool(main, decodeURIComponent(id || "")),
       guided: () => renderLifeNavigation(main, decodeURIComponent(id || "")),
       team: () => renderTeam(main),
+      lifestyle: () => renderLifestyle(main),
       simplyfocus: () => renderSimplyFocus(main),
       "intervention-book": () => renderInterventionBook(main),
       "stim-space": renderStimSpace,
@@ -869,6 +872,8 @@ function route() {
       ? "Nobody’s Simple Personality Test"
       : name === "intervention-book"
       ? "Intervention Book"
+      : name === "lifestyle"
+      ? "Lifestyle"
       : name === "simplyfocus"
       ? "SimplyFocus"
       : name === "stim-space"
@@ -897,6 +902,7 @@ function route() {
     "discussion-moderation": "Community moderation",
     maps: "My Maps",
     support: "Get help",
+    lifestyle: "Lifestyle",
     simplyfocus: "SimplyFocus",
     "intervention-book": "Intervention Book",
     "stim-space": "Stim Space",
@@ -921,7 +927,7 @@ function route() {
     ? "Today"
     : ["help", "navigate", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
-    : ["tools", "tool", "play", "guided", "simplyfocus", "questionnaires", "big-five", "systems", "personality"].includes(currentName)
+    : ["tools", "tool", "play", "guided", "lifestyle", "simplyfocus", "questionnaires", "big-five", "systems", "personality"].includes(currentName)
         ? "Explore"
         : currentName === "support"
           ? "Real-world support"
@@ -949,3 +955,4 @@ window.addEventListener("hashchange", route);
 route();
 if ("serviceWorker" in navigator)
   navigator.serviceWorker.register("sw.js").catch(() => {});
+initLifestyleReminders();
