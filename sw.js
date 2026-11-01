@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v113-lifestyle";
+const CACHE = "nobodyssimple-v114-illustrated-lifestyle";
 const SHELL = [
   "./",
   "index.html",
@@ -8,6 +8,16 @@ const SHELL = [
   "intervention-data.mjs",
   "intervention-resources.mjs",
   "intervention-guides.mjs",
+  "ui-resources.css",
+  "ui-resources.mjs",
+  "ns-ui-sheet-1.webp",
+  "ns-ui-sheet-2.webp",
+  "ns-ui-sheet-3.webp",
+  "ns-ui-sheet-4.webp",
+  "ns-ui-sheet-5.webp",
+  "ns-ui-sheet-6.webp",
+  "ns-ui-sheet-7.webp",
+  "ns-ui-sheet-8.webp",
   "lifestyle.css",
   "lifestyle.mjs",
   "lifestyle-deeds.mjs",
