@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v115-illustrated-lifestyle";
+const CACHE = "nobodyssimple-v117-personality-atlas";
 const SHELL = [
   "./",
   "index.html",
@@ -101,6 +101,7 @@ const SHELL = [
   "simplyfocus.mjs",
   "personality-test.mjs",
   "questionnaires.mjs",
+  "big-five-atlas.mjs",
   "life-navigation.mjs",
   "referrals.mjs",
   "personality-map.png",

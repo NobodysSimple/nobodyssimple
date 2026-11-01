@@ -1,11 +1,12 @@
 import { escapeHTML as esc } from "./core.mjs";
+import { ATLAS, CONTEXTS, GOALS, position, makeManual, sourceLinks } from "./big-five-atlas.mjs";
 
 const SCALE = [
-  [1, "Disagree strongly"],
-  [2, "Disagree a little"],
-  [3, "Neither agree nor disagree"],
-  [4, "Agree a little"],
-  [5, "Agree strongly"],
+  [1, "Very inaccurate"],
+  [2, "Mostly inaccurate"],
+  [3, "Neither accurate nor inaccurate"],
+  [4, "Mostly accurate"],
+  [5, "Very accurate"],
 ];
 
 const TRAITS = [
@@ -116,6 +117,14 @@ const state = {
   page: "intro",
   section: 0,
   answers: Array(ITEMS.length).fill(null),
+  chapter: "E",
+  notes: {},
+  contexts: {},
+  goals: [],
+  experiment: "",
+  review: "",
+  reflections: {},
+  example: {},
 };
 
 const traitFor = (id) => TRAITS.find((trait) => trait.id === id);
@@ -126,6 +135,14 @@ function resetState() {
   state.page = "intro";
   state.section = 0;
   state.answers = Array(ITEMS.length).fill(null);
+  state.chapter = "E";
+  state.notes = {};
+  state.contexts = {};
+  state.goals = [];
+  state.experiment = "";
+  state.review = "";
+  state.reflections = {};
+  state.example = {};
 }
 
 function answeredCount(items) {
@@ -156,7 +173,7 @@ export function renderQuestionnaires(root) {
         <div class="questionnaire-card-top"><span class="questionnaire-number">02</span><span class="questionnaire-meta">50 statements · 8–12 min</span></div>
         <p class="eyebrow">Five broad dimensions</p>
         <h2>Big Five Personality Questionnaire</h2>
-        <p>Rate short statements about how you generally tend to be. You’ll get a raw-score graph across Extraversion, Agreeableness, Conscientiousness, Neuroticism and Openness.</p>
+        <p>Rate short IPIP statements, then explore an interactive personality atlas: five dimensions, real-life contexts, chosen goals and practical experiments.</p>
         <p class="questionnaire-caution"><b>Important:</b> This browser version is an educational self-reflection. It is not clinical, diagnostic or a proven psychometric test, and the scores are not population percentiles.</p>
         <a class="button secondary" href="#big-five">Start the Big Five questionnaire ↗</a>
       </article>
@@ -171,7 +188,7 @@ export function renderQuestionnaires(root) {
     </section>
     <section class="questionnaire-chooser">
       <div><p class="eyebrow">Which route fits?</p><h2>Choose the amount of detail you want.</h2></div>
-      <div class="questionnaire-chooser-grid"><p><b>Want a broad snapshot?</b><br>Try the Big Five for five readable dimensions and a simple graph.</p><p><b>Want a richer map?</b><br>Try the Nobody’s Simple test for more situation-linked interpretation and practical experiments.</p><p><b>Want to understand the current balance?</b><br>Map Drive, Soothing and Threat, then compare your first impression with your answers.</p></div>
+      <div class="questionnaire-chooser-grid"><p><b>Want a researched five-dimension map?</b><br>Try the Big Five and explore the optional interactive atlas.</p><p><b>Prefer situation choices?</b><br>Try the Nobody’s Simple test for a different, original reflective route.</p><p><b>Want to understand the current balance?</b><br>Map Drive, Soothing and Threat, then compare your first impression with your answers.</p></div>
     </section>
     <p class="pf-back"><a href="#home">← Back to the main screen</a></p>
   </div>`;
@@ -183,25 +200,40 @@ function renderBigFiveIntro(root) {
       <div class="big-five-hero-copy">
         <p class="eyebrow">Questionnaires · 50 statements</p>
         <h1>Big Five<br><em>personality map.</em></h1>
-        <p class="lead">Rate how much each statement sounds like you in general—not only today. At the end, you’ll see a raw score graph and a cautious, plain-language reading of what the pattern might suggest.</p>
+        <p class="lead">Rate how accurately each statement describes you in general. Your results open into a personal field guide you can explore at your own pace.</p>
         <div class="big-five-facts"><span>5 dimensions</span><span>10 statements each</span><span>About 8–12 minutes</span><span>Results stay in this tab</span></div>
         <button class="button" id="bf-start" type="button">Start the questionnaire <span aria-hidden="true">↗</span></button>
+        ${safeStorage.read() ? '<button class="button secondary" id="bf-restore" type="button">Open saved atlas</button>' : ''}
       </div>
       <div class="big-five-orbit" aria-hidden="true"><span class="bf-orbit-core">5</span><i></i><i></i><i></i><i></i><i></i></div>
     </section>
     <section class="big-five-disclaimer" aria-labelledby="bf-disclaimer-title">
       <p class="eyebrow">Please read before starting</p>
       <h2 id="bf-disclaimer-title">A reflection tool, not a test of your worth.</h2>
-      <p>This version is based on a supplied 50-item Big Five questionnaire and uses its five broad trait areas. It is not a clinical assessment, diagnosis or treatment tool. It has not been proven as a psychometric test in this app, and the scores are raw responses on this questionnaire—not validated percentiles or predictions of what you will do.</p>
+      <p>These are the public-domain IPIP 50-item Big Five markers. The app scores the five broad dimensions, but this implementation has no local validation or suitable population norms. The graph shows scale positions, not percentiles, facet scores, diagnoses or predictions. Optional reflections add your own context without changing the questionnaire scores.</p>
       <p>There are no good or bad profiles. If a result feels wrong, specific situations and lived experience are more important than the graph.</p>
     </section>
-    <section class="big-five-how"><div><p class="eyebrow">How it works</p><h2>Five pages, one dimension at a time.</h2></div><ol>${TRAITS.map((trait, index) => `<li><span style="--bf-colour:${trait.colour}">${String(index + 1).padStart(2, "0")}</span><div><b>${esc(trait.name)}</b><small>${esc(trait.plain)}</small></div></li>`).join("")}</ol></section>
+    <section class="big-five-how"><div><p class="eyebrow">How it works</p><h2>Five pages, then your atlas.</h2><p>The statements are grouped by dimension for easier navigation. This changes the presentation from the interleaved IPIP sample format, which could affect response patterns; interpret the results cautiously.</p></div><ol>${TRAITS.map((trait, index) => `<li><span style="--bf-colour:${trait.colour}">${String(index + 1).padStart(2, "0")}</span><div><b>${esc(trait.name)}</b><small>${esc(trait.plain)}</small></div></li>`).join("")}</ol></section>
     <div class="big-five-backlinks"><a href="#questionnaires">← Back to questionnaires</a><a href="#home">Back to main screen</a></div>
   </div>`;
   root.querySelector("#bf-start").addEventListener("click", () => {
     state.page = "questions";
     state.section = 0;
     renderBigFiveView(root);
+  });
+  root.querySelector("#bf-restore")?.addEventListener("click", () => {
+    const saved=safeStorage.read();
+    if (!saved || !Array.isArray(saved.answers) || saved.answers.length!==ITEMS.length || !saved.answers.every(v=>Number.isInteger(v)&&v>=1&&v<=5)) return;
+    state.answers=[...saved.answers];
+    state.notes=Object.fromEntries(Object.entries(saved.notes||{}).filter(([key,value])=>ATLAS[key]&&typeof value==='string').map(([key,value])=>[key,value.slice(0,500)]));
+    state.contexts=Object.fromEntries(Object.entries(saved.contexts||{}).filter(([key,value])=>typeof key==='string'&&typeof value==='string').slice(0,100));
+    state.goals=Array.isArray(saved.goals)?GOALS.filter(g=>saved.goals.includes(g.id)).map(g=>g.id):[];
+    state.experiment=typeof saved.experiment==='string'?saved.experiment.slice(0,700):'';
+    state.review=typeof saved.review==='string'?saved.review.slice(0,700):'';
+    state.reflections=Object.fromEntries(Object.entries(saved.reflections||{}).filter(([key,value])=>ATLAS[key]&&['fits','sometimes','no'].includes(value)));
+    state.example=Object.fromEntries(Object.entries(saved.example||{}).filter(([key,value])=>ATLAS[key]&&ATLAS[key].choices.includes(value)));
+    state.contextTrait=ATLAS[saved.contextTrait]?saved.contextTrait:'E';
+    state.page='results';renderBigFiveView(root);
   });
 }
 
@@ -258,77 +290,92 @@ function renderBigFiveQuestions(root) {
   });
 }
 
-function calculateScores() {
+export function scoreBigFiveAnswers(answers) {
+  if (!Array.isArray(answers) || answers.length!==ITEMS.length || !answers.every(value=>Number.isInteger(value)&&value>=1&&value<=5)) throw new Error('Complete all 50 answers before scoring.');
   return TRAITS.map((trait) => {
     const items = itemsFor(trait.id);
     const total = items.reduce((sum, item) => {
-      const value = Number(state.answers[item.number - 1]);
+      const value = answers[item.number - 1];
       return sum + (item.reverse ? 6 - value : value);
     }, 0);
     const score = total - items.length;
-    const level = score <= 13 ? "lower" : score >= 27 ? "higher" : "middle";
+    const level = score <= 14 ? "lower" : score >= 26 ? "higher" : "middle";
     return { trait, items, total, score, level, percent: Math.max(0, Math.min(100, (score / 40) * 100)) };
   });
 }
-
-function levelLabel(level) {
-  return { lower: "Lower on this scale", middle: "Middle range", higher: "Higher on this scale" }[level];
-}
+const calculateScores=()=>scoreBigFiveAnswers(state.answers);
 
 function broadShape(scores) {
-  const ordered = [...scores].sort((a, b) => b.score - a.score);
-  const high = ordered.filter((entry) => entry.level === "higher");
-  const low = ordered.filter((entry) => entry.level === "lower");
-  if (high.length && low.length) return `Your highest raw score here is ${high[0].trait.name}, while ${low[0].trait.name} is lower on this questionnaire. That is a place to ask better context questions—not a ranking of what is good or bad.`;
-  if (high.length) return `${high[0].trait.name} is the clearest higher signal in this response pattern. Notice when that tendency helps, and when the same tendency becomes effortful or costly.`;
-  if (low.length) return `${low[0].trait.name} is the clearest lower signal in this response pattern. Lower does not mean missing; it points to a style or preference worth comparing across real situations.`;
-  return "Your five scores sit mostly in the middle range on this questionnaire. That may mean your pattern is mixed, context-dependent or not well captured by broad trait labels.";
+  const order = [...scores].sort((a,b)=>Math.abs(b.score-20)-Math.abs(a.score-20));
+  const first = order[0];
+  return Math.abs(first.score-20)<3 ? 'Your responses stayed close to the scale midpoints. Open a chapter to explore where the statements fit and where they miss important context.' : `Your clearest departure from the response midpoint in this set is ${first.trait.name}. That is a feature of these answers, not a comparison with other people. Open a chapter and tell the atlas where it fits or does not.`;
 }
 
 function practicalReading(scores, id) {
-  const get = (traitId) => scores.find((entry) => entry.trait.id === traitId);
-  const e = get("E").level;
-  const a = get("A").level;
-  const c = get("C").level;
-  const n = get("N").level;
-  const o = get("O").level;
-  if (id === "work") {
-    const social = e === "higher" ? "shared work, discussion or visible collaboration" : e === "lower" ? "protected focus and fewer unnecessary interruptions" : "a mix of contact and protected focus";
-    const structure = c === "higher" ? "clear plans and finish lines" : c === "lower" ? "lightweight external checkpoints" : "structure that can flex when priorities change";
-    const novelty = o === "higher" ? "with room for ideas or variation" : o === "lower" ? "with concrete examples and a usable purpose" : "with a balance of familiar and new material";
-    return `You might investigate environments with ${social}, ${structure}, and ${novelty}. If stress sensitivity is higher, reduce avoidable ambiguity and build in recovery around evaluation or deadline-heavy work.`;
-  }
-  if (id === "relationships") {
-    const connection = e === "higher" ? "regular contact and shared activity" : e === "lower" ? "space, depth and lower-pressure contact" : "contact that can expand or contract with energy";
-    const repair = a === "higher" ? "Make room for your own preferences as well as other people’s needs." : a === "lower" ? "Make directness legible as care when the relationship is important." : "Notice when cooperation and candour pull in different directions.";
-    const uncertainty = n === "higher" ? "Explicit reassurance and clear repair may be especially useful when something is unresolved." : "When something is unresolved, check the facts and the relationship rather than assuming the graph explains the whole moment.";
-    return `Connection may work best through ${connection}. ${repair} ${uncertainty}`;
-  }
-  const recovery = n === "higher" ? "Predictable decompression, lower-stakes transitions and a named next step may help when feelings run high." : n === "lower" ? "You may be able to return to baseline relatively readily, while still taking specific distress seriously." : "Compare what changes your steadiness: uncertainty, conflict, fatigue, novelty or the people involved.";
-  const attention = o === "higher" ? "Curiosity may help you reframe or find possibilities." : o === "lower" ? "Concrete routines and familiar anchors may make recovery easier to repeat." : "Use whichever mix of ideas and concrete anchors helps the moment become workable.";
-  return `${recovery} ${attention}`;
+  const find = (key) => position(scores.find(s=>s.trait.id===key).score);
+  const e=find('E'), a=find('A'), c=find('C'), n=find('N'), o=find('O');
+  if (id==='work') return `${e==='toward'?'Discussion may help you start':e==='away'?'Protected focus may help you start':'Try alternating contact and quiet focus'}. ${c==='toward'?'A clear stopping point may protect recovery':c==='away'?'A visible two-minute first step may reduce friction':'Test whether planning or starting is your main bottleneck'}. ${o==='toward'?'Give new ideas a time limit and output':o==='away'?'Ask for concrete examples of unfamiliar approaches':'Choose when exploration is useful'}.`;
+  if (id==='relationships') return `${a==='toward'?'Pause before agreeing to a request':a==='away'?'Make the care behind a direct view visible':'Compare when to cooperate and when to disagree'}. ${e==='away'?'Name the sort of contact that works for you':e==='toward'?'Protect time for both connection and rest':'Notice which people and settings change your social energy'}. ${n==='toward'?'When unsure, ask a specific clarifying question instead of reading a delay as a verdict':'Check what is actually known before interpreting an ambiguous moment'}.`;
+  if (id==='stress') return `${n==='toward'?'Plan a predictable pause and separate facts from predictions':n==='away'?'Notice quieter strain signs such as fatigue':'Notice which stressors change your response'}. ${c==='toward'?'Loosen one unnecessary standard when the load rises':c==='away'?'Use a small external cue for the next action':'Choose just enough structure for the situation'}.`;
+  return `${o==='toward'?'Novel ideas can engage you, but set a testable output':o==='away'?'Ground new tasks in a concrete purpose':'Pair curiosity with a workable next step'}. ${e==='toward'?'Some goals may move with company':e==='away'?'Some goals may move better in quiet':'Test whether company or quiet helps this goal'}. Let the goal you actually chose guide the strategy.`;
 }
 
 function renderChart(scores) {
   return `<div class="bf-chart" aria-label="Big Five raw score graph"><div class="bf-chart-axis"><span>0</span><span>10</span><span>20</span><span>30</span><span>40</span></div>${scores.map((entry) => `<div class="bf-chart-row"><div class="bf-chart-label"><b>${esc(entry.trait.name)}</b><small>${esc(entry.trait.plain)}</small></div><div class="bf-chart-track"><i style="width:${entry.percent}%;background:${entry.trait.colour}"></i><span style="left:${entry.percent}%" aria-hidden="true"></span></div><strong>${entry.score}<small>/40</small></strong></div>`).join("")}<p class="bf-chart-note">These are raw scores on this questionnaire. They are not percentiles and are not compared with a population sample.</p></div>`;
 }
 
+const SAVED_ATLAS = 'ns-big-five-atlas-v1';
+const safeStorage = {read(){try{return JSON.parse(localStorage.getItem(SAVED_ATLAS)||'null');}catch{return null;}},write(value){try{localStorage.setItem(SAVED_ATLAS,JSON.stringify(value));return true;}catch{return false;}},remove(){try{localStorage.removeItem(SAVED_ATLAS);}catch{}}};
+
+function chapterMarkup(entry){
+  const info=ATLAS[entry.trait.id], key=position(entry.score), read=info.poles[key], current=state.reflections[entry.trait.id]||'', response=state.example[entry.trait.id]||'';
+  const anchors=entry.items.map(item=>({text:displayText(item.text),raw:state.answers[item.number-1],keyed:item.reverse?6-state.answers[item.number-1]:state.answers[item.number-1]})).sort((a,b)=>Math.abs(b.keyed-3)-Math.abs(a.keyed-3)).slice(0,2);
+  return `<div class="bf-atlas-chapter" style="--bf-card-colour:${entry.trait.colour}">
+    <div class="bf-atlas-chapter-intro"><span class="bf-atlas-icon" aria-hidden="true">${info.icon}</span><div><p class="eyebrow">One of five broad dimensions</p><h2>${esc(info.title)}</h2><p>${esc(info.question)}</p></div></div>
+    <div class="bf-atlas-insight"><p class="eyebrow">What your responses can suggest</p><p>${esc(read.reading)}</p><small>${entry.score}/40 is this scale’s position. It is not a percentile or a facet score.</small></div>
+    <div class="bf-atlas-two"><section><h3>When it may help</h3><p>${esc(read.strength)}</p></section><section><h3>When it may cost</h3><p>${esc(read.cost)}</p></section></div>
+    <div class="bf-atlas-two"><section><h3>Adjust the conditions</h3><p>${esc(read.fit)}</p></section><section><h3>Practise flexibility</h3><p>${esc(read.practice)}</p><button type="button" class="bf-text-action" data-copy-experiment="${entry.trait.id}">Use as my experiment →</button></section></div>
+    <details class="bf-atlas-details"><summary>What is inside this broad dimension?</summary><ul>${info.parts.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p>These are examples of narrower aspects from personality research, not separately measured scores in this IPIP-50 form. The BFI-2 measures its own 15 facets with different items.</p></details>
+    <details class="bf-atlas-details"><summary>Which answers contributed most?</summary><p>Two responses furthest from the middle after scoring, shown as your actual choices. One item never defines a person.</p><ul>${anchors.map(x=>`<li>“${esc(x.text)}” — ${esc(SCALE.find(s=>s[0]===x.raw)?.[1]||'')}</li>`).join('')}</ul></details>
+    <div class="bf-atlas-scenario"><p class="eyebrow">Optional everyday example · your interpretation</p><h3>${esc(info.scene)}</h3><div class="bf-choice-row">${info.choices.map((x,i)=>`<button type="button" class="bf-choice ${response===x?'is-selected':''}" data-example="${entry.trait.id}" data-choice="${i}" aria-pressed="${response===x}">${esc(x)}</button>`).join('')}</div><p>Your choice is a reflection prompt. It does not recalculate your score.</p></div>
+    <div class="bf-atlas-feedback"><p>Does this interpretation fit your experience?</p>${[['fits','That fits'],['sometimes','Only sometimes'],['no','Not really']].map(([v,label])=>`<button class="bf-choice ${current===v?'is-selected':''}" type="button" data-reflection="${entry.trait.id}" data-fit="${v}" aria-pressed="${current===v}">${label}</button>`).join('')}<label for="bf-note-${entry.trait.id}">What would you add or correct?</label><textarea id="bf-note-${entry.trait.id}" data-atlas-note="${entry.trait.id}" maxlength="500" placeholder="For example, I speak up with friends but not in unfamiliar groups…">${esc(state.notes[entry.trait.id]||'')}</textarea></div>
+  </div>`;
+}
+
 function renderBigFiveResults(root) {
-  const scores = calculateScores();
-  root.innerHTML = `<div class="wrap questionnaires-page big-five-page bf-results-page">
-    <section class="bf-results-hero"><div><p class="eyebrow">Big Five questionnaire · results</p><h1>Your broad<br><em>pattern map.</em></h1><p class="lead">${esc(broadShape(scores))}</p></div><div class="bf-results-seal" aria-hidden="true"><span>5</span><small>dimensions</small></div></section>
-    <section class="bf-results-card bf-graph-card"><div class="bf-results-card-head"><div><p class="eyebrow">Raw score graph</p><h2>Five dimensions, held lightly.</h2></div><p>Higher or lower is not better. The useful part is what changes the pattern in real life.</p></div>${renderChart(scores)}</section>
-    <section class="bf-score-grid">${scores.map((entry) => `<article class="bf-score-card" style="--bf-card-colour:${entry.trait.colour}"><div class="bf-score-card-top"><span>${esc(entry.trait.name)}</span><strong>${entry.score}<small>/40</small></strong></div><p class="bf-score-band">${levelLabel(entry.level)}</p><div class="bf-mini-track"><i style="width:${entry.percent}%"></i></div><h3>What it might suggest</h3><p>${esc(entry.trait[entry.level])}</p></article>`).join("")}</section>
-    <section class="bf-practical-section"><div class="bf-results-card-head"><div><p class="eyebrow">Bring it back to life</p><h2>Possible uses for this map.</h2></div><p>These are prompts to test against your own experience, not predictions about you.</p></div><div class="bf-practical-grid"><article><span>01</span><h3>Work and study</h3><p>${esc(practicalReading(scores, "work"))}</p></article><article><span>02</span><h3>Relationships</h3><p>${esc(practicalReading(scores, "relationships"))}</p></article><article><span>03</span><h3>Recovery and regulation</h3><p>${esc(practicalReading(scores, "recovery"))}</p></article></div></section>
-    <section class="bf-reflection-card"><p class="eyebrow">Keep the result open</p><h2>Three questions worth asking next.</h2><ul><li>Which score feels recognisable, and which feels too simple?</li><li>When does the pattern change with tiredness, safety, sensory load, role or relationship?</li><li>What small change would let a useful tendency help without becoming a demand?</li></ul><p class="bf-result-caution"><b>Remember:</b> this is a non-clinical, non-diagnostic reflection. It has not been proven as a psychometric test in this app. Your lived experience is more important than the graph.</p></section>
-    <details class="bf-scoring-details"><summary>How the scores were worked out</summary><div><p>Each dimension has ten statements rated from 1 to 5. Reverse-keyed statements are flipped before the ten adjusted responses are combined into a 0–40 raw score. The graph uses the conventional direction for Neuroticism: higher means more emotional reactivity/stress sensitivity on these statements.</p><p>This scoring does not create a clinical measure, percentile, diagnosis or prediction. It only makes your answers easier to inspect and discuss.</p></div></details>
+  const scores=calculateScores();
+  const selected=scores.find(s=>s.trait.id===state.chapter)||scores[0];
+  root.innerHTML=`<div class="wrap questionnaires-page big-five-page bf-results-page bf-atlas-page">
+    <section class="bf-atlas-hero"><div><p class="eyebrow">Nobody’s Simple · your personality atlas</p><h1>Five tendencies.<br><em>Many ways to be.</em></h1><p class="lead">${esc(broadShape(scores))}</p><p>Start with your scores. The chapters and life map below are optional; you can stop whenever you have what you need.</p></div><img src="ns-character-reading.webp" alt="" loading="lazy"></section>
+    <section class="bf-atlas-overview" aria-label="Your five dimensions"><div class="bf-results-card-head"><div><p class="eyebrow">01 · Overview</p><h2>Your five scale positions</h2></div><p>These scores describe agreement with questionnaire items, not where you rank among people.</p></div>${renderChart(scores)}<details class="bf-atlas-details"><summary>How should I read a score?</summary><p><b>Raw scale position:</b> ten answers rated 1–5, reverse-keyed where needed, then shifted to 0–40. A 30/40 means responses leaned more towards the named dimension; it is not “higher than 75% of people”.</p><p><b>Comparison with people:</b> no validated, relevant reference sample is used here. Broad scores cannot tell you a precise facet, your cause, your diagnosis, or what you will do in a particular situation.</p></details></section>
+    <section class="bf-atlas-section" id="bf-chapters"><div class="bf-atlas-heading"><span>02 · Explore a dimension</span><h2>Open one chapter at a time.</h2><p>What fits, what does not, and where the pattern changes are as useful as the score itself.</p></div><div class="bf-chapter-tabs" role="tablist" aria-label="Personality dimensions">${scores.map(s=>`<button type="button" role="tab" id="bf-tab-${s.trait.id}" aria-controls="bf-chapter-panel" aria-selected="${state.chapter===s.trait.id}" data-atlas-chapter="${s.trait.id}" style="--bf-card-colour:${s.trait.colour}">${esc(s.trait.name)}</button>`).join('')}</div><div id="bf-chapter-panel" role="tabpanel" aria-labelledby="bf-tab-${selected.trait.id}">${chapterMarkup(selected)}</div></section>
+    <section class="bf-atlas-section" id="bf-context"><div class="bf-atlas-heading"><span>03 · Context and development</span><h2>When do you feel most like this?</h2><p>Choose a dimension and mark how often it appears in different settings. These are your observations, not extra trait scores.</p></div><label class="bf-atlas-field">Dimension to map <select id="bf-context-trait">${scores.map(s=>`<option value="${s.trait.id}" ${state.contextTrait===s.trait.id?'selected':''}>${esc(s.trait.name)}</option>`).join('')}</select></label><div class="bf-context-list">${CONTEXTS.map(label=>{const key=`${state.contextTrait||'E'}:${label}`;return `<label>${esc(label)}<select data-context="${esc(key)}"><option value="">Not marked</option>${['Less often','Sometimes','Often','It depends'].map(v=>`<option value="${v}" ${state.contexts[key]===v?'selected':''}>${v}</option>`).join('')}</select></label>`;}).join('')}</div><details class="bf-atlas-details"><summary>Why can I be different in different places?</summary><p>Traits describe general patterns, while roles, goals, safety, fatigue and social demands affect the behaviour you show at a particular moment. The book’s Five-Factor Theory distinguishes broad tendencies from learned habits, roles and relationships (“characteristic adaptations”). Whole Trait Theory also describes variation across situations. Neither theory lets this questionnaire identify the cause of your pattern.</p></details></section>
+    <section class="bf-atlas-section"><div class="bf-atlas-heading"><span>04 · In everyday life</span><h2>Possible starting points.</h2><p>These prompts use your questionnaire pattern, but are hypotheses to compare with your life.</p></div><div class="bf-life-grid">${[['work','Work and learning'],['relationships','Relationships'],['stress','Stress and recovery'],['motivation','Motivation and ideas']].map(([id,title])=>`<article><h3>${title}</h3><p>${esc(practicalReading(scores,id))}</p></article>`).join('')}</div></section>
+    <section class="bf-atlas-section" id="bf-action"><div class="bf-atlas-heading"><span>05 · Work with your personality</span><h2>Choose what matters to you.</h2><p>Tool suggestions follow the concerns you select, never an assumed problem inferred from a trait score.</p></div><div class="bf-goals">${GOALS.map(g=>`<label><input type="checkbox" data-atlas-goal="${g.id}" ${state.goals.includes(g.id)?'checked':''}><span>${esc(g.label)}</span></label>`).join('')}</div><div class="bf-goal-suggestions">${state.goals.length?state.goals.map(id=>GOALS.find(g=>g.id===id)).filter(Boolean).map(g=>`<article><h3>${esc(g.label)}</h3><p>${esc(g.prompt)}</p><a href="#tool/${esc(g.tool)}">Open a related tool →</a></article>`).join(''):'<p>Choose one concern to see a relevant tool. No concern selected means no recommendation.</p>'}</div><label class="bf-atlas-field" for="bf-experiment">One small experiment to try<textarea id="bf-experiment" maxlength="700" placeholder="When a non-urgent request arrives, I’ll pause before answering…">${esc(state.experiment)}</textarea></label><p>Review what happened and whether the step helped. One exercise cannot prove that an underlying trait changed.</p><label class="bf-atlas-field" for="bf-review">After trying it, what happened?<textarea id="bf-review" maxlength="700" placeholder="What did I do, what happened, and would I repeat or adapt it?">${esc(state.review)}</textarea></label></section>
+    <section class="bf-atlas-section" id="bf-manual"><div class="bf-atlas-heading"><span>06 · Your manual</span><h2>Keep only what fits.</h2><p>Your corrections, chosen contexts and experiment become a personal note. Export it, or explicitly save it in this browser for later. Nothing is uploaded by this feature.</p></div><div class="bf-manual-actions"><button class="button" type="button" id="bf-export">Download my manual</button><button class="button secondary" type="button" id="bf-save">Save on this device</button><button class="button secondary" type="button" id="bf-delete">Delete saved copy</button><p id="bf-save-status" role="status" aria-live="polite"></p></div></section>
+    <details class="bf-atlas-science"><summary>07 · The research and limits behind this atlas</summary><div><p><b>Measurement:</b> The statements come from the public-domain 50-item IPIP Big Five factor markers. We display Neuroticism (negative emotionality), the reverse direction of the original Emotional Stability marker. This site groups items into five pages and uses accuracy-style response labels; the exact site implementation has not been locally validated. No age or population norms are applied.</p><p><b>Theory:</b> McCrae and Costa describe broad tendencies alongside habits, roles, relationships and self-concept. The book is used to explain ideas, not to infer your personal history. BFI-2 research offers an example of more detailed facet measurement, but this is a different instrument and does not calculate those facets.</p><p><b>Change:</b> People can adjust conditions, build skills and practise different behaviours; evidence on lasting intentional trait change remains developing. A short experiment is about behaviour, not a promised score change.</p><ul>${sourceLinks()}</ul></div></details>
     <div class="big-five-backlinks"><button class="button" type="button" id="bf-print">Print / save as PDF</button><button class="button secondary" type="button" id="bf-restart">Take it again</button><a href="#questionnaires">Back to questionnaires</a></div>
   </div>`;
-  root.querySelector("#bf-print").addEventListener("click", () => window.print());
-  root.querySelector("#bf-restart").addEventListener("click", () => {
-    resetState();
-    renderBigFiveView(root);
+  const updateChapter=()=>{const s=scores.find(x=>x.trait.id===state.chapter);const panel=root.querySelector('#bf-chapter-panel');panel.innerHTML=chapterMarkup(s);panel.setAttribute('aria-labelledby',`bf-tab-${s.trait.id}`);root.querySelectorAll('[data-atlas-chapter]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.atlasChapter===state.chapter)));};
+  root.querySelectorAll('[data-atlas-chapter]').forEach(b=>b.addEventListener('click',()=>{state.chapter=b.dataset.atlasChapter;updateChapter();b.focus();}));
+  root.querySelector('#bf-chapters').addEventListener('click',e=>{
+    const ex=e.target.closest('[data-example]');if(ex){const info=ATLAS[ex.dataset.example];state.example[ex.dataset.example]=info.choices[Number(ex.dataset.choice)];updateChapter();return;}
+    const fit=e.target.closest('[data-reflection]');if(fit){state.reflections[fit.dataset.reflection]=fit.dataset.fit;updateChapter();return;}
+    const copy=e.target.closest('[data-copy-experiment]');if(copy){state.experiment=ATLAS[copy.dataset.copyExperiment].poles[position(scores.find(s=>s.trait.id===copy.dataset.copyExperiment).score)].practice;root.querySelector('#bf-experiment').value=state.experiment;root.querySelector('#bf-experiment').focus();}
   });
+  root.querySelector('#bf-chapters').addEventListener('input',e=>{if(e.target.matches('[data-atlas-note]'))state.notes[e.target.dataset.atlasNote]=e.target.value;});
+  const updateContexts=()=>{const grid=root.querySelector('.bf-context-list');grid.innerHTML=CONTEXTS.map(label=>{const key=`${state.contextTrait}:${label}`;return `<label>${esc(label)}<select data-context="${esc(key)}"><option value="">Not marked</option>${['Less often','Sometimes','Often','It depends'].map(v=>`<option value="${v}" ${state.contexts[key]===v?'selected':''}>${v}</option>`).join('')}</select></label>`;}).join('');};
+  state.contextTrait ||= 'E';root.querySelector('#bf-context-trait').value=state.contextTrait;
+  root.querySelector('#bf-context-trait').addEventListener('change',e=>{state.contextTrait=e.target.value;updateContexts();});
+  root.querySelector('.bf-context-list').addEventListener('change',e=>{if(e.target.matches('[data-context]'))state.contexts[e.target.dataset.context]=e.target.value;});
+  root.querySelector('.bf-goals').addEventListener('change',e=>{if(!e.target.matches('[data-atlas-goal]'))return;state.goals=GOALS.filter(g=>root.querySelector(`[data-atlas-goal="${g.id}"]`).checked).map(g=>g.id);root.querySelector('.bf-goal-suggestions').innerHTML=state.goals.length?state.goals.map(id=>GOALS.find(g=>g.id===id)).map(g=>`<article><h3>${esc(g.label)}</h3><p>${esc(g.prompt)}</p><a href="#tool/${esc(g.tool)}">Open a related tool →</a></article>`).join(''):'<p>Choose one concern to see a relevant tool. No concern selected means no recommendation.</p>';});
+  root.querySelector('#bf-experiment').addEventListener('input',e=>state.experiment=e.target.value);
+  root.querySelector('#bf-review').addEventListener('input',e=>state.review=e.target.value);
+  root.querySelector('#bf-export').addEventListener('click',()=>{const blob=new Blob([makeManual(scores,state.notes,state.contexts,state.goals,state.experiment,state.reflections,state.example,state.review)],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='my-personality-manual.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+  root.querySelector('#bf-save').addEventListener('click',()=>{const ok=safeStorage.write({answers:state.answers,notes:state.notes,contexts:state.contexts,goals:state.goals,experiment:state.experiment,review:state.review,reflections:state.reflections,example:state.example,contextTrait:state.contextTrait});root.querySelector('#bf-save-status').textContent=ok?'Saved in this browser. Anyone using this browser profile may be able to see it.':'Could not save here. Use Download my manual instead.';});
+  root.querySelector('#bf-delete').addEventListener('click',()=>{safeStorage.remove();root.querySelector('#bf-save-status').textContent='Saved copy removed from this browser. The current page remains until you leave or restart.';});
+  root.querySelector('#bf-print').addEventListener('click',()=>window.print());
+  root.querySelector('#bf-restart').addEventListener('click',()=>{resetState();renderBigFiveView(root);});
 }
 
 function renderBigFiveView(root) {
@@ -338,7 +385,6 @@ function renderBigFiveView(root) {
 }
 
 export function renderBigFive(root) {
-  resetState();
   renderBigFiveView(root);
 }
 

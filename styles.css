@@ -12314,3 +12314,60 @@ html[data-theme="dark"] .ns-explore-card { color:#203c30; }
 @media (prefers-reduced-motion:reduce) { .ns-explore-card { transition:none; } }
 .ns-explore-card::before { content:""; position:absolute; inset:48% 0 0; background:var(--ns-scene) center/cover no-repeat; opacity:.16; pointer-events:none; }
 .ns-feel { --ns-scene:url('ns-scene-sunset.webp'); }.ns-calm { --ns-scene:url('ns-scene-mountains.webp'); }.ns-think { --ns-scene:url('ns-scene-forest.webp'); }.ns-connect { --ns-scene:url('ns-scene-path.webp'); }
+
+/* Personality atlas — progressive detail, one chapter at a time. */
+body.app-body .bf-atlas-page { --atlas-ink:#244638; --atlas-muted:#586d5f; --atlas-line:#d8e3d7; color:var(--atlas-ink); }
+body.app-body .bf-atlas-page :is(h1,h2,h3) { color:var(--atlas-ink); }
+body.app-body .bf-atlas-page :is(p,li,label) { line-height:1.6; }
+body.app-body .bf-atlas-page button:focus-visible, body.app-body .bf-atlas-page :is(select,textarea,a,summary):focus-visible { outline:3px solid #a65f35; outline-offset:3px; }
+body.app-body .bf-atlas-hero { display:grid; grid-template-columns:minmax(0,1fr) 210px; gap:30px; align-items:center; border-radius:24px; padding:clamp(24px,5vw,52px); background:linear-gradient(125deg,#f4e8dd,#f7f5e9 70%,#dfebe3); border:1px solid var(--atlas-line); }
+body.app-body .bf-atlas-hero h1 { font:400 clamp(2.2rem,5vw,4.5rem)/1.08 Georgia,serif; letter-spacing:-.035em; margin:.18em 0; }
+body.app-body .bf-atlas-hero h1 em { font-style:italic; color:#a15948; }
+body.app-body .bf-atlas-hero .lead { font-size:1rem; color:var(--atlas-ink); max-width:58ch; }
+body.app-body .bf-atlas-hero p:last-child { color:var(--atlas-muted); }
+body.app-body .bf-atlas-hero img { width:100%; max-height:220px; object-fit:contain; }
+body.app-body .bf-atlas-overview,body.app-body .bf-atlas-section,body.app-body .bf-atlas-science { margin:18px 0; padding:clamp(20px,3vw,32px); border:1px solid var(--atlas-line); border-radius:22px; background:#fffdf8; }
+body.app-body .bf-atlas-heading { margin-bottom:18px; }
+body.app-body .bf-atlas-heading>span,body.app-body .bf-atlas-chapter .eyebrow { text-transform:uppercase; color:#9a613d; letter-spacing:.13em; font-size:.7rem; font-weight:700; }
+body.app-body .bf-atlas-heading h2 { font:400 clamp(1.7rem,3vw,2.6rem)/1.15 Georgia,serif; margin:.35em 0; }
+body.app-body .bf-atlas-heading p { color:var(--atlas-muted); max-width:70ch; }
+body.app-body .bf-chapter-tabs { display:flex; gap:8px; overflow-x:auto; padding:4px 2px 12px; scroll-snap-type:x proximity; }
+body.app-body .bf-chapter-tabs button { flex:0 0 auto; scroll-snap-align:start; border:1px solid #d8e3d7; background:#f1f5ef; color:var(--atlas-ink); padding:12px 16px; border-radius:100px; cursor:pointer; font-weight:650; min-height:44px; }
+body.app-body .bf-chapter-tabs button[aria-selected="true"] { background:var(--atlas-ink); color:#fffdf8; }
+body.app-body .bf-atlas-chapter { border-top:3px solid var(--bf-card-colour); padding-top:22px; }
+body.app-body .bf-atlas-chapter-intro { display:flex; gap:16px; align-items:center; }
+body.app-body .bf-atlas-chapter-intro h2 { font:400 clamp(1.7rem,3vw,2.5rem) Georgia,serif; margin:4px 0; }
+body.app-body .bf-atlas-icon { display:grid; place-items:center; width:62px; height:62px; flex:none; border-radius:18px; color:#244638; background:color-mix(in srgb,var(--bf-card-colour) 18%,#fffdf8); font-size:2rem; }
+body.app-body .bf-atlas-insight { margin:20px 0; padding:20px; border-radius:17px; background:color-mix(in srgb,var(--bf-card-colour) 9%,#fffdf8); border-left:4px solid var(--bf-card-colour); }
+body.app-body .bf-atlas-insight p:not(.eyebrow) { font-size:1.05rem; margin:8px 0; }
+body.app-body .bf-atlas-insight small { color:var(--atlas-muted); }
+body.app-body .bf-atlas-two,body.app-body .bf-life-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:12px 0; }
+body.app-body .bf-atlas-two section,body.app-body .bf-life-grid article,body.app-body .bf-goal-suggestions article { padding:18px; background:#f5f6ee; border:1px solid var(--atlas-line); border-radius:15px; }
+body.app-body .bf-atlas-two h3,body.app-body .bf-life-grid h3,body.app-body .bf-goal-suggestions h3 { font:400 1.3rem Georgia,serif; margin:0 0 8px; }
+body.app-body .bf-atlas-two p,body.app-body .bf-life-grid p,body.app-body .bf-goal-suggestions p { color:var(--atlas-muted); margin:0; }
+body.app-body .bf-atlas-details { margin-top:12px; border:1px solid var(--atlas-line); border-radius:13px; padding:13px 17px; background:#fafaf5; }
+body.app-body .bf-atlas-details summary { cursor:pointer; font-weight:700; color:var(--atlas-ink); }
+body.app-body .bf-atlas-details p,body.app-body .bf-atlas-details li { color:var(--atlas-muted); }
+body.app-body .bf-atlas-scenario,body.app-body .bf-atlas-feedback { margin-top:17px; padding:19px; border:1px solid var(--atlas-line); border-radius:17px; background:#f4f8f4; }
+body.app-body .bf-atlas-scenario h3 { font:400 1.4rem Georgia,serif; margin:7px 0 15px; }
+body.app-body .bf-choice-row { display:flex; flex-wrap:wrap; gap:8px; }
+body.app-body .bf-choice { padding:10px 13px; margin:3px; border:1px solid #b7ccba; border-radius:12px; background:#fffdf8; color:var(--atlas-ink); cursor:pointer; min-height:44px; }
+body.app-body .bf-choice.is-selected { color:#fffdf8; background:var(--atlas-ink); }
+body.app-body .bf-atlas-feedback label,body.app-body .bf-atlas-field { display:grid; gap:8px; margin-top:15px; font-weight:650; color:var(--atlas-ink); }
+body.app-body .bf-atlas-page :is(select,textarea) { width:100%; border:1px solid #aebfaf; border-radius:12px; color:#244638; background:#fffdf8; padding:11px 13px; font:inherit; }
+body.app-body .bf-atlas-page textarea { min-height:80px; resize:vertical; }
+body.app-body .bf-context-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:15px; }
+body.app-body .bf-context-list label { display:grid; grid-template-columns:minmax(0,1fr) minmax(135px,40%); align-items:center; gap:10px; padding:9px 13px; border-radius:12px; background:#f2f5ee; }
+body.app-body .bf-goals { display:flex; flex-wrap:wrap; gap:9px; }
+body.app-body .bf-goals label { display:flex; gap:8px; align-items:center; border:1px solid var(--atlas-line); border-radius:100px; padding:9px 14px; background:#f5f8f1; cursor:pointer; }
+body.app-body .bf-goals input { accent-color:#315746; width:18px; height:18px; }
+body.app-body .bf-goal-suggestions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:16px 0; }
+body.app-body .bf-goal-suggestions a { display:inline-block; margin-top:10px; color:#315746; font-weight:700; }
+body.app-body .bf-text-action { border:0; padding:8px 0; text-decoration:underline; background:none; color:#315746; cursor:pointer; }
+body.app-body .bf-manual-actions { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+body.app-body .bf-manual-actions p { flex-basis:100%; color:var(--atlas-muted); }
+body.app-body .bf-atlas-science summary { cursor:pointer; color:var(--atlas-ink); font:400 1.5rem Georgia,serif; }
+body.app-body .bf-atlas-science>div { margin-top:20px; color:var(--atlas-muted); }
+body.app-body .bf-atlas-science a { color:#315746; text-underline-offset:3px; }
+@media(max-width:760px){body.app-body .bf-atlas-hero { grid-template-columns:1fr; }body.app-body .bf-atlas-hero img { display:none; }body.app-body .bf-atlas-two,body.app-body .bf-life-grid,body.app-body .bf-context-list,body.app-body .bf-goal-suggestions { grid-template-columns:1fr; }body.app-body .bf-context-list label { grid-template-columns:1fr; }body.app-body .bf-atlas-page .bf-chart-row { grid-template-columns:minmax(105px,35%) minmax(60px,1fr) 42px; gap:8px; }}
+@media print { body.app-body .bf-atlas-page .bf-chapter-tabs,body.app-body .bf-atlas-page button,body.app-body .bf-atlas-page textarea,body.app-body .bf-atlas-page select { display:none!important; } body.app-body .bf-atlas-page { color:#111; } }
