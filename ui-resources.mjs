@@ -61,7 +61,16 @@ const sceneFor={feel:'land-sunset',calm:'land-mountains',think:'scene-desk',choo
 export function enhanceResourceUI(main){
  const theme=main.dataset.uiTheme||'think';
  main.querySelectorAll('[data-library-theme-card]').forEach(card=>{
-  const t=card.dataset.libraryThemeCard;place(card.querySelector('.ui-collection-art'),t==='relate'?'theme-relate-safe':`theme-${t}`,'ui-theme-viewport');
+  const t=card.dataset.libraryThemeCard,art=card.querySelector('.ui-collection-art');
+  if(!art)return;
+  // Use the finished landscape thumbnails as whole images. The earlier SVG
+  // sprite windows clipped baked headings and characters at card edges.
+  const asset=t==='relate'?'relate':t;
+  art.replaceChildren();
+  art.dataset.thumbnailAsset=asset;
+  art.style.backgroundImage=`url("ns-landscape-${asset}.webp")`;
+  art.style.backgroundPosition='center';
+  art.style.backgroundSize='cover';
  });
  main.querySelectorAll('.learn-door-card').forEach(card=>{
   const key=card.dataset.learnView,name=key==='courses'?'theme-learn':key==='videos'?'card-video':`learn-${key}`;
