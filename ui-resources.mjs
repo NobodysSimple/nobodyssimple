@@ -24,11 +24,17 @@ add('banner-walk',3,21,808,315,91);add('banner-camp',3,345,807,314,92);add('bann
 ['glad','angry','worried','sad','mixed','numb','tired','steady','unsure'].forEach((name,i)=>add(`mood-${name}`,4,638+(i%3)*50,590+Math.floor(i/3)*59,42,46));
 add('empty-peace',4,1535,785,80,70);add('decor-clouds',4,1126,617,174,54);add('decor-sprigs',4,1309,564,85,56);
 // Sheet 5's navigation system is recreated with accessible SVG controls.
-add('nav-empty',5,23,1006,228,80);add('nav-avatar',5,1010,1012,75,74);add('nav-landscape',5,1200,7,243,109);
+add('nav-empty',5,23,1006,228,80);add('nav-landscape',5,1200,7,243,109);
 // Theme thumbnails, learning shelves, seasonal backgrounds and character moments.
 const themeRects={feel:[20,16,462,236],calm:[493,16,464,236],think:[969,16,461,236],choose:[20,267,347,246],relate:[380,267,367,246],identity:[760,267,331,246],learn:[1104,267,325,246]};
 // Crop illustration areas only; all headings remain selectable HTML text.
-for(const [name,rect] of Object.entries({feel:[302,130,166,118],calm:[495,132,457,115],think:[1194,80,230,168],choose:[99,363,263,145],relate:[440,354,301,155],identity:[770,370,316,138],learn:[1120,371,302,139]}))add(`theme-${name}`,6,...rect);
+// Use a larger, balanced illustration window for each card. The relate card is
+// deliberately cropped to the blank Nobody character and landscape; the
+// source sheet's second, brown character is not used anywhere in the app.
+for(const [name,rect] of Object.entries({feel:[170,100,300,152],calm:[493,105,464,145],think:[1164,72,266,176],choose:[122,350,245,160],relate:[480,344,150,170],identity:[760,350,331,160],learn:[1110,350,319,160]}))add(`theme-${name}`,6,...rect);
+// A relation illustration from the character sheet keeps both figures as the
+// same blank Nobody character and avoids the brown figure in the reference card.
+add('theme-relate-safe',3,515,615,135,110);
 ['crash','blog','videos','audios','stories','debates'].forEach((name,i)=>add(`learn-${name}`,6,25+i*239,613,211,107));
 ['mountains','sunset','night','forest','meadow','clouds'].forEach((name,i)=>add(`land-${name}`,6,30+(i%3)*275,778+Math.floor(i/3)*130,263,120));
 ['fireside','thinking','hiking','reflecting','together','resting'].forEach((name,i)=>add(`moment-${name}`,6,877+(i%3)*180,778+Math.floor(i/3)*130,168,120));
@@ -41,7 +47,7 @@ let clipSequence=0;
 export function resourceMarkup(name,className=''){
  const asset=resourceAtlas[name];if(!asset)return '';
  const {sheet,x,y,w,h}=asset,[width,height]=sheets[sheet];
- const clip=`resource-clip-${++clipSequence}`,fit=/^(land-|scene-|moment-|weather-|world-|banner-|theme-|learn-|home-footer)/.test(name)?'slice':'meet';
+ const clip=`resource-clip-${++clipSequence}`,fit=/^(land-|scene-|moment-|weather-|world-|banner-|home-footer)/.test(name)?'slice':'meet';
  return `<svg class="ui-resource ${className}" data-resource="${name}" viewBox="${x} ${y} ${w} ${h}" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid ${fit}"><defs><clipPath id="${clip}" clipPathUnits="userSpaceOnUse"><rect x="${x}" y="${y}" width="${w}" height="${h}"/></clipPath></defs><image href="ns-ui-sheet-${sheet}.webp" width="${width}" height="${height}" clip-path="url(#${clip})"/></svg>`;
 }
 function place(slot,name,className=''){
@@ -51,11 +57,11 @@ function appendResource(parent,name,className){
  if(!parent||parent.querySelector(`:scope > .${className}`))return;
  parent.insertAdjacentHTML('beforeend',resourceMarkup(name,className));
 }
-const sceneFor={feel:'land-sunset',calm:'land-mountains',think:'scene-desk',choose:'banner-walk',relate:'moment-together',identity:'moment-reflecting',learn:'scene-lake'};
+const sceneFor={feel:'land-sunset',calm:'land-mountains',think:'scene-desk',choose:'banner-walk',relate:'moment-resting',identity:'moment-reflecting',learn:'scene-lake'};
 export function enhanceResourceUI(main){
  const theme=main.dataset.uiTheme||'think';
  main.querySelectorAll('[data-library-theme-card]').forEach(card=>{
-  const t=card.dataset.libraryThemeCard;place(card.querySelector('.ui-collection-art'),`theme-${t}`,'ui-theme-viewport');
+  const t=card.dataset.libraryThemeCard;place(card.querySelector('.ui-collection-art'),t==='relate'?'theme-relate-safe':`theme-${t}`,'ui-theme-viewport');
  });
  main.querySelectorAll('.learn-door-card').forEach(card=>{
   const key=card.dataset.learnView,name=key==='courses'?'theme-learn':key==='videos'?'card-video':`learn-${key}`;
@@ -105,7 +111,6 @@ export function enhanceResourceUI(main){
  // Section dividers and existing footer become illustrated rather than more content.
  main.querySelectorAll('.strategy-divider').forEach(slot=>place(slot,'decor-botanical','ui-divider-resource'));
  const footer=document.querySelector('.app-sidebar-bottom');appendResource(footer,'home-footer','ui-sidebar-landscape');
- document.querySelectorAll('.ns-account-trigger').forEach(button=>{if(!button.querySelector('.ui-account-resource'))button.insertAdjacentHTML('afterbegin',resourceMarkup('nav-avatar','ui-account-resource'));});
  const mark=main.querySelector('.learn-page-mark');if(mark)place(mark,'prop-book','ui-learn-mark');
 }
 
