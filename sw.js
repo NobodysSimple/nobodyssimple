@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v119-intervention-layers";
+const CACHE = "nobodyssimple-v111-intervention-guides";
 const SHELL = [
   "./",
   "index.html",
@@ -6,25 +6,6 @@ const SHELL = [
   "intervention-book.css",
   "intervention-book.mjs",
   "intervention-data.mjs",
-  "intervention-resources.mjs",
-  "intervention-guides.mjs",
-  "intervention-layers.mjs",
-  "intervention-method-library.mjs",
-  "ui-resources.css",
-  "ui-resources.mjs",
-  "ns-ui-sheet-1.webp",
-  "ns-ui-sheet-2.webp",
-  "ns-ui-sheet-3.webp",
-  "ns-ui-sheet-4.webp",
-  "ns-ui-sheet-5.webp",
-  "ns-ui-sheet-6.webp",
-  "ns-ui-sheet-7.webp",
-  "ns-ui-sheet-8.webp",
-  "lifestyle.css",
-  "lifestyle.mjs",
-  "lifestyle-deeds.mjs",
-  "lifestyle-storage.mjs",
-  "lifestyle-reminders.mjs",
   "app-design.mjs",
   "ns-home-hero.webp",
   "ns-home-console.webp",
@@ -103,8 +84,6 @@ const SHELL = [
   "simplyfocus.mjs",
   "personality-test.mjs",
   "questionnaires.mjs",
-  "big-five-atlas.mjs",
-  "big-five-profile.mjs",
   "life-navigation.mjs",
   "referrals.mjs",
   "personality-map.png",
@@ -177,19 +156,5 @@ self.addEventListener("fetch", (event) => {
             status: 503,
           }),
       ),
-  );
-});
-self.addEventListener("notificationclick", (event) => {
-  event.notification.close();
-  const destination = new URL("./#lifestyle", self.registration.scope).href;
-  event.waitUntil(
-    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then(async (windows) => {
-      const existing = windows[0];
-      if (existing) {
-        if ("navigate" in existing) await existing.navigate(destination);
-        return existing.focus();
-      }
-      return self.clients.openWindow ? self.clients.openWindow(destination) : undefined;
-    }),
   );
 });
