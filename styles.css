@@ -12371,3 +12371,44 @@ body.app-body .bf-atlas-science>div { margin-top:20px; color:var(--atlas-muted);
 body.app-body .bf-atlas-science a { color:#315746; text-underline-offset:3px; }
 @media(max-width:760px){body.app-body .bf-atlas-hero { grid-template-columns:1fr; }body.app-body .bf-atlas-hero img { display:none; }body.app-body .bf-atlas-two,body.app-body .bf-life-grid,body.app-body .bf-context-list,body.app-body .bf-goal-suggestions { grid-template-columns:1fr; }body.app-body .bf-context-list label { grid-template-columns:1fr; }body.app-body .bf-atlas-page .bf-chart-row { grid-template-columns:minmax(105px,35%) minmax(60px,1fr) 42px; gap:8px; }}
 @media print { body.app-body .bf-atlas-page .bf-chapter-tabs,body.app-body .bf-atlas-page button,body.app-body .bf-atlas-page textarea,body.app-body .bf-atlas-page select { display:none!important; } body.app-body .bf-atlas-page { color:#111; } }
+
+/* Big Five working model: progressively reveal combinations and life lenses. */
+body.app-body .bf-profile-section { background:linear-gradient(145deg,#fffaf2,#f6f8f1 90%); }
+body.app-body .bf-profile-story { display:grid; grid-template-columns:minmax(0,1fr) 125px; gap:15px; align-items:center; padding:clamp(19px,3vw,30px); border:1px solid #dccfba; border-radius:19px; background:#fbf1e4; }
+body.app-body .bf-profile-story p { margin:0 0 12px; font-size:1.08rem; }
+body.app-body .bf-profile-story .eyebrow { color:#9a613d; font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+body.app-body .bf-profile-story .bf-model-principle { margin:0; color:#506459; font-size:.9rem; }
+body.app-body .bf-profile-story img { width:100%; max-height:150px; object-fit:contain; }
+body.app-body .bf-featured-hypotheses { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:15px 0; }
+body.app-body .bf-model-hypothesis,body.app-body .bf-model-pattern { min-width:0; padding:20px; border:1px solid #d8e3d7; border-radius:17px; background:#fffdf8; box-shadow:0 7px 22px rgba(32,70,49,.045); }
+body.app-body .bf-model-hypothesis:nth-child(3n+2) { background:#f4f8f5; }
+body.app-body .bf-model-hypothesis:nth-child(3n+3) { background:#f7f2f4; }
+body.app-body .bf-model-tag { display:inline-block; margin-bottom:7px; color:#915b3d; font-size:.7rem; font-weight:700; letter-spacing:.11em; text-transform:uppercase; }
+body.app-body .bf-model-hypothesis h3,body.app-body .bf-model-pattern h3,body.app-body .bf-life-lens h3 { margin:0 0 10px; color:#264b3e; font:400 clamp(1.25rem,2vw,1.65rem)/1.2 Georgia,serif; }
+body.app-body .bf-model-hypothesis p,body.app-body .bf-model-pattern p { margin:0 0 11px; color:#445d50; }
+body.app-body .bf-model-two { display:grid; gap:10px; margin:16px 0; }
+body.app-body .bf-model-two>div { border-top:1px solid #dce5d8; padding-top:12px; }
+body.app-body .bf-model-two b { color:#285343; font-size:.8rem; }
+body.app-body .bf-model-two p { margin:5px 0; font-size:.89rem; }
+body.app-body .bf-profile-votes { display:flex; flex-wrap:wrap; gap:5px; margin-top:13px; }
+body.app-body .bf-profile-votes .bf-choice { margin:0; padding:7px 10px; font-size:.8rem; }
+body.app-body .bf-model-more { margin:12px 0; padding:16px; border:1px solid #d8e3d7; border-radius:15px; background:#f8faf4; }
+body.app-body .bf-model-more>summary { cursor:pointer; color:#285343; font-weight:700; }
+body.app-body .bf-model-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:16px; }
+body.app-body .bf-model-more>p { color:#52695b; }
+body.app-body .bf-model-boundary { padding:11px 15px; border-left:3px solid #ba9358; color:#52665a; background:#f3f4e8; font-size:.83rem; }
+body.app-body .bf-life-tabs { display:flex; overflow-x:auto; gap:8px; padding:4px 2px 13px; scroll-snap-type:x proximity; }
+body.app-body .bf-life-tabs button { flex:none; min-height:44px; padding:10px 15px; border:1px solid #cddcce; border-radius:100px; background:#f4f8f2; color:#274b3b; cursor:pointer; scroll-snap-align:start; font-weight:650; }
+body.app-body .bf-life-tabs button[aria-selected="true"] { background:#244638; color:#fffdf8; }
+body.app-body .bf-life-lens { border:1px solid #d8e3d7; border-radius:18px; overflow:hidden; background:#f8faf5; }
+body.app-body .bf-life-scenario { padding:clamp(20px,3vw,30px); background:linear-gradient(120deg,#e8f0e7,#f7f4e9); }
+body.app-body .bf-life-scenario p { max-width:70ch; color:#405d4d; }
+body.app-body .bf-life-drivers { padding:12px 28px; border-block:1px solid #d8e3d7; background:#fffdf8; }
+body.app-body .bf-life-drivers span { color:#916047; font-size:.73rem; font-weight:700; text-transform:uppercase; letter-spacing:.09em; }
+body.app-body .bf-life-drivers p { margin:4px 0; font-size:.85rem; }
+body.app-body .bf-life-synthesis { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; padding:20px; }
+body.app-body .bf-life-synthesis>div { padding:18px; border-radius:14px; background:#fffdf8; }
+body.app-body .bf-life-lens>.bf-atlas-details,body.app-body .bf-life-lens>.bf-atlas-feedback { margin:0 20px 20px; }
+@media(max-width:980px) { body.app-body .bf-featured-hypotheses { grid-template-columns:1fr; } body.app-body .bf-model-hypothesis .bf-model-two { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:620px) { body.app-body .bf-profile-story { grid-template-columns:1fr; } body.app-body .bf-profile-story img { display:none; } body.app-body .bf-model-grid,body.app-body .bf-life-synthesis,body.app-body .bf-model-hypothesis .bf-model-two { grid-template-columns:1fr; } body.app-body .bf-life-drivers { padding-inline:20px; } }
+@media print { body.app-body .bf-model-more { break-inside:avoid; } body.app-body .bf-life-tabs { display:none; } }

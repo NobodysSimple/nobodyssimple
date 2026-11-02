@@ -26,9 +26,20 @@ export const SOURCES=[
   ['Review of intentional personality change research (2024)','https://pmc.ncbi.nlm.nih.gov/articles/PMC11608366/']
 ];
 export function position(score){ return score>=26?'toward':score<=14?'away':'mixed'; }
-export function makeManual(scores,notes,contexts,goals,experiment,reflections={},examples={},review=''){
+export function makeManual(scores,notes,contexts,goals,experiment,reflections={},examples={},review='',model={}){
   const lines=['Nobody’s Simple — My personality manual','Self-report IPIP-50 scale positions (0–40; not population percentiles):'];
   for(const s of scores) lines.push(`${s.trait.name}: ${s.score}/40. ${ATLAS[s.trait.id].poles[position(s.score)].reading}`);
+  if(model.profile){
+    lines.push('A working model, not a verdict: '+model.profile.summary);
+    for(const h of [...model.profile.pairs,...model.profile.contrasts]){
+      const vote=model.profileVotes?.[h.id];
+      if(vote) lines.push(`${h.name} — ${vote==='fits'?'Fits':vote==='sometimes'?'Sometimes':'Does not fit'}. ${h.reading}`);
+    }
+    for(const lens of model.profile.lenses){
+      const vote=model.lensVotes?.[lens.id],note=model.lensNotes?.[lens.id];
+      if(vote||note?.trim())lines.push(`${lens.title} — ${vote==='fits'?'Fits':vote==='sometimes'?'Sometimes':vote==='no'?'Does not fit':'Not marked'}. ${note?.trim()||lens.question}`);
+    }
+  }
   lines.push('My observations (user-entered, not questionnaire scores):');
   for(const [id,text] of Object.entries(notes)) if(text?.trim()) lines.push(`${ATLAS[id]?.title || id}: ${text.trim()}`);
   for(const [id,value] of Object.entries(reflections)) if(ATLAS[id]&&['fits','sometimes','no'].includes(value)) lines.push(`${ATLAS[id].title} interpretation: ${{fits:'Fits',sometimes:'Fits only in some settings',no:'Does not fit'}[value]}`);

@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v117-personality-atlas";
+const CACHE = "nobodyssimple-v119-intervention-layers";
 const SHELL = [
   "./",
   "index.html",
@@ -8,6 +8,8 @@ const SHELL = [
   "intervention-data.mjs",
   "intervention-resources.mjs",
   "intervention-guides.mjs",
+  "intervention-layers.mjs",
+  "intervention-method-library.mjs",
   "ui-resources.css",
   "ui-resources.mjs",
   "ns-ui-sheet-1.webp",
@@ -102,6 +104,7 @@ const SHELL = [
   "personality-test.mjs",
   "questionnaires.mjs",
   "big-five-atlas.mjs",
+  "big-five-profile.mjs",
   "life-navigation.mjs",
   "referrals.mjs",
   "personality-map.png",
