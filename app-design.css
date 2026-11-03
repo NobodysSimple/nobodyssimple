@@ -1175,3 +1175,75 @@ body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble :is(summary,butt
   body.app-body .strategy-dashboard #home-wisbody .wisbody-controls .chip { flex:1 1 110px; }
   body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble details .row { display:grid; grid-template-columns:1fr; }
 }
+
+/* Part 4: shared mobile hierarchy across existing destinations and workspaces. */
+body.app-body {
+  --mobile-space-1:8px; --mobile-space-2:12px; --mobile-space-3:16px;
+  --mobile-space-4:24px; --mobile-card-radius:16px;
+}
+@media (max-width:900px) {
+  body.app-body #main { overflow-wrap:anywhere; }
+  body.app-body #main :is(.tool-form,.interactive-stage,.brain-stage,.thought-map-stage,.reality-map-stage,.body-scan-card,.state-scan-card,.closer-stage,.mixed-step,.timeline-stage-card,.sensory-plan-card,.recipe-card,.sb-panel,.lb-panel,.mm-panel,.ln-navigator-panel,.bf-question-panel,.bf-results-card,.systems-question-intro,.systems-result-card,.pf-question-card,.pf-guide-chapter,.cbt-stage-card,.account-pane,.learn-section-panel,.focus-mixer,.board-compose,.board-full-post,.board-reply-form,.board-message-form) {
+    min-width:0; border-radius:var(--mobile-card-radius); padding:clamp(16px,3vw,24px);
+  }
+  body.app-body #main :is(.library-theme-card,.library-tool-item,.learn-door-card,.questionnaire-card,.account-stat,.board-feed-card,.post-card,.feature-card,.recommendation-card,.focus-track,.console-situation-card,.console-goal-card,.console-energy-card) { border-radius:var(--mobile-card-radius); }
+  body.app-body #main :is(.library-theme-grid,.library-tool-list,.learn-door-grid,.learn-module-grid,.learn-content-grid,.questionnaire-grid,.account-quick-grid) { gap:var(--mobile-space-2); }
+  body.app-body #main :is(.button,.chip,button,a,summary,select,input,textarea):focus-visible,
+  body.app-body .app-bottom-nav a:focus-visible { outline:3px solid #bd8138; outline-offset:2px; }
+  body.app-body #main :is(.button,button.chip,a.chip,.learn-back,.library-back-to-themes,.library-back-to-subcollections,.account-nav a,.board-nav a,.board-reaction) { min-height:44px; }
+  body.app-body #main :is(input:not([type=checkbox],[type=radio],[type=range],[type=color]),textarea,select) { font-size:16px; line-height:1.4; }
+  body.app-body #main :is(.lead,.learn-page-hero .lead,.page-intro .lead) { font-size:16px; line-height:1.55; }
+  body.app-body #main :is(.library-theme-card-copy small,.library-tool-description,.library-subcollection-copy small,.learn-door-card p,.learn-crash-card p,.learn-module-card p,.questionnaire-card p,.account-pane p,.board-feed-card p,.board-full-post p,.post-card p,.feature-card p,.focus-track-copy small) { font-size:14px; line-height:1.5; }
+  body.app-body #main :is(.library-tool-title,.learn-crash-card h4,.library-subcollection-copy strong) { font-size:17px; line-height:1.25; }
+  body.app-body #main :is(.fine,.library-tool-meta,.learn-door-card .eyebrow,.learn-crash-card .eyebrow,.library-theme-card-count,.home-latest-badge) { font-size:12px; line-height:1.4; letter-spacing:.02em; }
+  body.app-body #main :is(.library-tool-link,.account-record,.board-author,.home-latest-card) { min-width:0; }
+  body.app-body #main :is(.library-tool-link,.learn-door-card,.library-theme-card,.home-latest-card,.questionnaire-card,.board-feed-card):focus-within { outline:3px solid #bd8138; outline-offset:2px; }
+}
+@media (max-width:620px) {
+  body.app-body { font-size:16px; line-height:1.5; }
+  body.app-body #main > .wrap, body.app-body #main > .account-hub { padding:16px 16px calc(84px + env(safe-area-inset-bottom)); }
+  body.app-body #main :is(h1,.page-intro h1) { font-size:clamp(28px,8vw,36px); line-height:1.1; }
+  body.app-body #main h2 { font-size:clamp(23px,6vw,29px); line-height:1.15; }
+  body.app-body #main h3 { font-size:19px; line-height:1.2; }
+  body.app-body #main .eyebrow { font-size:11px; line-height:1.35; letter-spacing:.07em; }
+  body.app-body #main :is(.button,button.chip,a.chip,.learn-back,.library-back-to-themes,.library-back-to-subcollections) { min-height:44px; padding:10px 14px; font-size:14px; }
+  body.app-body #main :is(.notice,.account-note,.interactive-status,.privacy-note,.tool-guide-note) { font-size:14px; line-height:1.5; padding:12px 14px; }
+  body.app-body #main :is(.library-controls,.learn-section-panel,.account-pane,.focus-mixer,.board-feed-card,.board-compose,.questionnaire-card) { padding:var(--mobile-space-3); }
+  body.app-body #main :is(.library-theme-grid,.home-learning .learn-door-grid,.standalone-learn .learn-door-grid) { gap:var(--mobile-space-2); }
+  body.app-body #main .library-theme-card { min-height:0; padding-bottom:var(--mobile-space-3); }
+  body.app-body #main .library-theme-card-copy strong { font-size:21px; }
+  body.app-body #main .library-tool-link { padding:14px; min-height:82px; }
+  body.app-body #main .library-tool-icon { width:48px; height:48px; }
+  body.app-body #main .library-tool-meta { margin-top:5px; }
+  body.app-body #main .learn-door-card { min-height:0; padding:14px; }
+  body.app-body #main .learn-door-icon { width:58px; height:58px; }
+  body.app-body #main .learn-door-card h2 { font-size:20px; }
+  body.app-body #main .learn-door-card strong { font-size:13px; }
+  body.app-body #main :is(.account-nav a,.board-nav a) { min-height:44px; font-size:14px; }
+  body.app-body #main :is(.board-reaction,.account-check) { min-height:44px; }
+  body.app-body #main .focus-track-copy b { font-size:16px!important; }
+  body.app-body #main .focus-track-copy small { font-size:14px!important; }
+  body.app-body #main .home-latest-summary { font-size:14px; }
+  body.app-body #main .home-latest-card small { font-size:12px; }
+  body.app-body #main .strategy-console .console-situation-card b { font-size:15px; }
+  body.app-body #main .strategy-console .console-situation-card small { font-size:12px; }
+  body.app-body #main .strategy-console .console-goal-card b,
+  body.app-body #main .strategy-console .console-energy-card b { font-size:14px; }
+  body.app-body #main .strategy-console .console-goal-card small,
+  body.app-body #main .strategy-console .console-energy-card small { font-size:12px; }
+  body.app-body #main .strategy-console .console-stage-hint { font-size:14px; }
+  body.app-body #main .strategy-console .console-step-actions .button { min-height:48px; }
+  body.app-body #main .strategy-dashboard .wisbody-bubble :is(.wisbody-prompt,summary) { font-size:14px; }
+  body.app-body #main .strategy-dashboard .wisbody-bubble blockquote { font-size:18px; }
+}
+@media (max-width:430px) {
+  body.app-body #main .standalone-learn .learn-door-grid { grid-template-columns:1fr; }
+  body.app-body #main .standalone-learn .learn-door-card { display:grid; grid-template-columns:64px minmax(0,1fr); gap:3px 12px; align-items:start; }
+  body.app-body #main .standalone-learn .learn-door-icon { grid-row:1 / span 4; width:60px; height:60px; }
+  body.app-body #main .standalone-learn .learn-door-card :is(h2,p,strong) { margin:0; }
+  body.app-body #main .standalone-learn .learn-door-card strong { margin-top:7px; }
+  body.app-body #main .library-tool-link { grid-template-columns:48px minmax(0,1fr) 16px; gap:10px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.app-body #main :is(.library-theme-card,.learn-door-card,.library-tool-item,.home-latest-card) { transition:none; }
+}
