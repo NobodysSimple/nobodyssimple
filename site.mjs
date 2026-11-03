@@ -227,6 +227,10 @@ function library() {
   main.innerHTML = '<div class="wrap standalone-learn"><section id="home-learning" aria-label="Learn with Nobody’s Simple"></section></div>';
   renderLearningHub(main.querySelector('#home-learning'));
 }
+function wisbodyPage() {
+  main.innerHTML = '<div class="wrap wisbody-page"><a class="back-link" href="#home">← Home</a><div id="wisbody-full"></div></div>';
+  renderWisbody(main.querySelector('#wisbody-full'));
+}
 function renderLearningHub(root) {
   const s = libraryState;
   const view = ["crash", "courses", "videos", "audios", "blog", "stories", "debates"].includes(s.view) ? s.view : "home";
@@ -813,7 +817,7 @@ function route() {
       help: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
       navigate: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
       library: () => {
-        if(id === "quotes") homePage({scrollTo:"#home-wisbody"});
+        if(id === "quotes") wisbodyPage();
         else {libraryState.view=id||"home";libraryState.query="";library();}
       },
       learn: () => {
@@ -847,7 +851,7 @@ function route() {
       install: () => renderInstall(main),
       community: () => renderCommunity(main, "feedback"),
       volunteer: () => renderCommunity(main, "volunteer"),
-      wisbody: () => homePage({scrollTo:"#home-wisbody"}),
+      wisbody: wisbodyPage,
       account: () => renderAccount(main, id || "home"),
       profile: () => renderMemberProfile(main, decodeURIComponent(id || "")),
       discussion: () => renderDiscussion(main, decodeURIComponent(id || "")),
