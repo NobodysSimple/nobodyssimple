@@ -43,7 +43,7 @@ function themeFor(text='') {
  if(/learn|read|blog|story|storie|debate|course|evidence/i.test(text)) return 'learn';
  return 'think';
 }
-const routeIcons={home:'home',tools:'tools',account:'account',discussion:'discussion',messages:'messages',simplyfocus:'audio','stim-space':'play',questionnaires:'map',community:'feedback',support:'help',install:'download',maps:'map',appearance:'settings',privacy:'shield',security:'shield',saved:'pin',learning:'book',notifications:'sun',profile:'account'};
+const routeIcons={home:'home',tools:'tools',learn:'book',account:'account',discussion:'discussion',messages:'messages',simplyfocus:'audio','stim-space':'play',questionnaires:'map',community:'feedback',support:'help',install:'download',maps:'map',appearance:'settings',privacy:'shield',security:'shield',saved:'pin',learning:'book',notifications:'sun',profile:'account'};
 function poseFor(text, fallback='thinking') {
  const choices=[[/brain.dump|journal/i,'writing'],[/reality|fact|evidence|thought.map/i,'mapping'],[/body|state.check/i,'checklist'],[/mixed|confus/i,'confused'],[/timeline|gratitude|savour/i,'star'],[/sensory.recipe|garden/i,'plant'],[/sensory.profile|learn/i,'reading'],[/battery|energy|capacity/i,'waiting'],[/load|budget|task|build/i,'building'],[/masking|self/i,'base'],[/CBT|probab|uncertain/i,'solving'],[/personality|perspective/i,'lantern'],[/big.five|questionnaire/i,'checklist'],[/system|course/i,'teaching'],[/focus|sound|audio|listen/i,'radio'],[/ground|support|safe/i,'shield'],[/decision|values|choose/i,'hiking'],[/communicat|friend|relation/i,'friends'],[/calm|breath|reset/i,'meditate'],[/feel|emotion|compass/i,'compass'],[/help|feedback/i,'helping']];
  return choices.find(([test])=>test.test(text))?.[1]||fallback;
@@ -102,6 +102,17 @@ function decorate() {
   if(card.dataset.uiOption)return;card.dataset.uiOption='true';card.classList.add('ui-art-option');
   const title=card.querySelector('strong,b,h3,h2')?.textContent||'';card.append(picture(poseFor(title,themes[theme][0]),'ui-option-art'));
  });
+ // Keep all former More destinations reachable from the You tab.
+ const accountHero=main.querySelector('.account-hub .account-hero');
+ if(route==='account'&&accountHero&&!main.querySelector('.account-more-links')){
+  const more=document.createElement('details');more.className='account-more-links';
+  const summary=document.createElement('summary');summary.textContent='More places in the app';more.append(summary);
+  const nav=document.createElement('nav');nav.setAttribute('aria-label','More app destinations');
+  for(const [label,href] of [['My Maps','#account/maps'],['Discussion board','#discussion'],['Messages','#messages'],['Stim Space','#stim-space'],['Questionnaires','#questionnaires'],['Feedback','#community'],['Appearance & accessibility','#account/appearance'],['Meet the team','#team'],['Save as an app','#install']]){
+   const a=document.createElement('a');a.href=href;a.textContent=label;nav.append(a);
+  }
+  more.append(nav);accountHero.after(more);
+ }
  const boardHeader=main.querySelector('.board-header > img');if(boardHeader&&!boardHeader.dataset.uiArt){boardHeader.src='ns-character-friends.webp';boardHeader.dataset.uiArt='true';}
  main.querySelectorAll('.account-note,.board-gate,.library-empty,.board-empty,.account-empty').forEach(note=>{
   // Empty states use their existing space, no new panels or copy.

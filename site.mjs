@@ -788,7 +788,7 @@ function route() {
     const linkName = (a.hash || "").slice(1).split("/")[0];
     const active =
       currentName === linkName ||
-      (["library","learn","blog","writing","watch","wisbody","support"].includes(currentName) && linkName === "home") ||
+      (["library","blog","writing","watch","wisbody","support"].includes(currentName) && linkName === "home") ||
       (currentName === "wisbody" && linkName === "library") ||
       (["personality", "big-five", "systems"].includes(currentName) && linkName === "questionnaires") ||
       (startRoutes.has(currentName) && linkName === "home") ||
@@ -804,7 +804,12 @@ function route() {
       help: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
       navigate: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
       library: () => id === "quotes" ? homePage({scrollTo:"#home-wisbody"}) : homePage({learningView:id || "home",scrollTo:"#home-learning"}),
-      learn: library,
+      learn: () => {
+        main.innerHTML = '<div class="wrap standalone-learn"><section id="home-learning" aria-label="Learn with Nobody’s Simple"></section></div>';
+        const learning = main.querySelector('#home-learning');
+        if (id) libraryState.view = id;
+        renderLearningHub(learning);
+      },
       blog,
       writing: blog,
       tools: () => {
@@ -883,7 +888,7 @@ function route() {
     navigate: "Home",
     tools: "Tools",
     library: "Home",
-    learn: "Home",
+    learn: "Learn",
     blog: "Home",
     writing: "Home",
     account: "Account",

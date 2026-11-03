@@ -781,3 +781,51 @@ body.app-body #main .focus-master,body.app-body #main .focus-master output { col
 
 /* Remove the inset green timer box; keep the clock clean on the Pomodoro colour field. */
 body.app-body .pomodoro-clock { background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+
+
+/* Mobile redesign, part one: fixed five-tab shell and wizard-first landing. */
+@media (max-width: 900px) {
+  html { scroll-padding-top: 68px; }
+  body.app-body .app-bottom-nav {
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: stretch;
+    height: calc(64px + env(safe-area-inset-bottom)); gap: 0;
+    padding: 4px max(6px, env(safe-area-inset-left)) calc(4px + env(safe-area-inset-bottom)) max(6px, env(safe-area-inset-right));
+    border: 0; border-top: 1px solid var(--ui-line); border-radius: 0;
+    background: var(--ui-paper); box-shadow: 0 -5px 20px rgb(36 75 62 / 8%);
+  }
+  body.app-body .app-bottom-nav > a {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    min-width: 0; min-height: 48px; gap: 2px; padding: 3px 0; border-radius: 12px;
+  }
+  body.app-body .app-bottom-nav .ui-icon { width: 23px; height: 23px; }
+  body.app-body .app-bottom-nav small { display: block; max-width: 100%; font-size: 10px; line-height: 1.1; white-space: nowrap; }
+  body.app-body #main { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+  body.app-body .app-footer { padding-bottom: calc(82px + env(safe-area-inset-bottom)); }
+  body.app-body .strategy-console { margin-top: 0; }
+  body.app-body .account-more-links { margin: 12px 0 20px; padding: 12px 15px; border: 1px solid var(--ui-line); border-radius: 14px; background: var(--ui-paper); }
+  body.app-body .account-more-links summary { min-height: 30px; cursor: pointer; font-size: 14px; font-weight: 700; }
+  body.app-body .account-more-links nav { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; margin-top: 12px; }
+  body.app-body .account-more-links a { min-height: 44px; display: flex; align-items: center; padding: 9px 11px; border: 1px solid var(--ui-line); border-radius: 10px; color: var(--ui-ink); text-decoration: none; font-size: 12px; }
+  body.app-body .account-more-links a:focus-visible { outline: 3px solid #ba7539; outline-offset: 2px; }
+}
+@media (max-width: 620px) {
+  body.app-body .app-topbar { min-height: 56px; padding: 7px 10px; gap: 6px; }
+  body.app-body .app-mobile-brand { font-size: clamp(13px, 3.8vw, 17px); gap: 6px; }
+  body.app-body .app-mobile-brand img { width: 32px !important; height: 32px !important; }
+  body.app-body .app-top-actions { gap: 5px; }
+  body.app-body .app-search-link { width: 38px; min-height: 38px; }
+  body.app-body .ns-account-trigger { width: 38px; height: 38px; min-height: 38px; padding: 2px !important; border-radius: 50%; }
+  body.app-body .ns-account-trigger span { display: none; }
+  body.app-body .ns-account-trigger img { width: 30px; height: 30px; }
+  body.app-body .ns-account-trigger:not(:has(img))::before { content: ''; width: 29px; height: 29px; border-radius: 50%; background: url('logo.png') center/cover no-repeat; }
+  body.app-body .app-help-pill { min-height: 38px; padding: 7px 9px; font-size: 11px; }
+  body.app-body .strategy-home { padding-top: 9px !important; }
+  body.app-body .strategy-console { margin: 0 0 15px; }
+  body.app-body #main .standalone-learn { padding: 15px 12px 30px; }
+  body.app-body .standalone-learn #home-learning { margin-top: 0; }
+}
+@media (max-width: 370px) {
+  body.app-body .app-bottom-nav small { font-size: 9px; }
+  body.app-body .app-help-pill { padding-inline: 6px; }
+  body.app-body .account-more-links nav { grid-template-columns: 1fr; }
+}
