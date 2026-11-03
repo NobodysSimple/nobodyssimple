@@ -1,4 +1,4 @@
-import {escapeHTML as esc} from './core.mjs';
+import {escapeHTML as esc, safeImage} from './core.mjs';
 import {quoteDeckExtended as quotes} from './quote-content.mjs';
 
 export const DRAFT_KEY='ns-account-tool-drafts-v2', QUOTE_KEY='ns-learn-quote-notes-v1';
@@ -11,7 +11,7 @@ function download(name,value){const a=document.createElement('a'),url=URL.create
 const status=(root,text)=>{const el=root.querySelector('[data-status]');if(el)el.textContent=text;};
 export function renderStrategyHome(root,posts=[],rail='',options={}){
  root.onclick=null;
- root.innerHTML=`<div class="wrap strategy-home"><section class="strategy-brand" aria-label="Welcome to Nobody’s Simple"><div class="strategy-brand-scene" aria-hidden="true"></div><div class="strategy-brand-content"><p class="eyebrow">Nobody’s Simple · psychology for real life</p><h1>Welcome to Nobody’s Simple.</h1><p class="strategy-brand-intro">A practical space for noticing what is happening and choosing a next step.</p><div class="thankyou-carousel" aria-label="Supporter credits"><span class="supporter-heart" aria-hidden="true">♡</span><div class="thankyou-heading"><p class="eyebrow">Thank you, supporters</p><p>Every tip helps keep these tools open.</p></div><div class="thankyou-slide supporter-placeholder"><p class="eyebrow">Supporter names</p><h2>Tipper names will appear here</h2><p>Want your name shown? Include your preferred display name in a Ko-fi message. Names are added manually, and only with permission.</p></div></div></div></section><nav class="strategy-project-links" aria-label="Support and follow the project"><a class="chip" href="https://www.youtube.com/@nobodyssimple" target="_blank" rel="noopener noreferrer"><img src="ns-character-guide.webp" alt="" width="64" height="64"><span><strong>YouTube ↗</strong><small>Watch the ideas take shape</small></span><span class="project-link-arrow" aria-hidden="true">↗</span></a><a class="chip chip-tip" href="https://ko-fi.com/nobodyssimple" target="_blank" rel="noopener noreferrer" aria-label="Leave a tip on Ko-fi (opens in a new tab)"><img src="ns-character-star.webp" alt="" width="64" height="64"><span><strong>Leave a tip ↗</strong><small>Support Nobody’s Simple on Ko-fi</small></span><span class="project-link-arrow" aria-hidden="true">↗</span></a><a class="chip" href="#community"><img src="ns-character-drawing.webp" alt="" width="64" height="64"><span><strong>Share feedback →</strong><small>Help shape what comes next</small></span><span class="project-link-arrow" aria-hidden="true">→</span></a></nav>${rail}<section class="strategy-console" aria-label="Navigation console"><div class="strategy-console-illustration" aria-hidden="true"></div><div id="home-navigation-console"></div><nav class="strategy-shortcuts" aria-label="More starting points"><a href="#account/maps">My Maps →</a><a href="#tools">Browse tools →</a><a href="#support">Need a person? Get help →</a></nav></section><div class="strategy-divider" aria-hidden="true"><span>✳</span><i></i><span>⌁</span><i></i><span>✳</span></div><section id="home-learning" class="home-learning" aria-label="Learning hub"></section><div id="home-wisbody"></div></div>`;
+ root.innerHTML=`<div class="wrap strategy-home"><section class="strategy-brand" aria-label="Welcome to Nobody’s Simple"><div class="strategy-brand-scene" aria-hidden="true"></div><div class="strategy-brand-content"><p class="eyebrow">Nobody’s Simple · psychology for real life</p><h1>Welcome to Nobody’s Simple.</h1><p class="strategy-brand-intro">A practical space for noticing what is happening and choosing a next step.</p><div class="thankyou-carousel" aria-label="Supporter credits"><span class="supporter-heart" aria-hidden="true">♡</span><div class="thankyou-heading"><p class="eyebrow">Thank you, supporters</p><p>Every tip helps keep these tools open.</p></div><div class="thankyou-slide supporter-placeholder"><p class="eyebrow">Supporter names</p><h2>Tipper names will appear here</h2><p>Want your name shown? Include your preferred display name in a Ko-fi message. Names are added manually, and only with permission.</p></div></div></div></section><nav class="strategy-project-links" aria-label="Support and follow the project"><a class="chip" href="https://www.youtube.com/@nobodyssimple" target="_blank" rel="noopener noreferrer"><img src="ns-character-guide.webp" alt="" width="64" height="64"><span><strong>YouTube ↗</strong><small>Watch the ideas take shape</small></span><span class="project-link-arrow" aria-hidden="true">↗</span></a><a class="chip chip-tip" href="https://ko-fi.com/nobodyssimple" target="_blank" rel="noopener noreferrer" aria-label="Leave a tip on Ko-fi (opens in a new tab)"><img src="ns-character-star.webp" alt="" width="64" height="64"><span><strong>Leave a tip ↗</strong><small>Support Nobody’s Simple on Ko-fi</small></span><span class="project-link-arrow" aria-hidden="true">↗</span></a><a class="chip" href="#community"><img src="ns-character-drawing.webp" alt="" width="64" height="64"><span><strong>Share feedback →</strong><small>Help shape what comes next</small></span><span class="project-link-arrow" aria-hidden="true">→</span></a></nav>${rail}<section class="strategy-console" aria-label="Navigation console"><div class="strategy-console-illustration" aria-hidden="true"></div><div id="home-navigation-console"></div><nav class="strategy-shortcuts" aria-label="More starting points"><a href="#account/maps">My Maps →</a><a href="#tools">Browse tools →</a><a href="#support">Need a person? Get help →</a></nav></section><div class="strategy-divider" aria-hidden="true"><span>✳</span><i></i><span>⌁</span><i></i><span>✳</span></div><section id="home-latest" class="home-latest" aria-labelledby="home-latest-title"><div class="home-latest-header"><div><p class="eyebrow">Recent from the project</p><h2 id="home-latest-title">Latest from Nobody’s Simple</h2><p>New writing, videos and conversations from the community.</p></div><div class="home-latest-controls"><button type="button" data-latest-prev aria-label="Previous recent item">←</button><span data-latest-position aria-live="off"></span><button type="button" data-latest-next aria-label="Next recent item">→</button></div></div><div class="home-latest-track" tabindex="0" aria-label="Recent content; swipe or scroll sideways"></div><div class="home-latest-links"><a href="#learn">Explore Learn →</a><a href="#discussion">All discussions →</a></div></section><div id="home-wisbody"></div></div>`;
  // On small screens the wizard leads the page in both visual and keyboard order.
  const home=root.querySelector('.strategy-home');
  const console=home?.querySelector('.strategy-console');
@@ -25,11 +25,47 @@ export function renderStrategyHome(root,posts=[],rail='',options={}){
  const onLayoutChange=()=>{if(!home?.isConnected){mobileLayout.removeEventListener('change',onLayoutChange);return;}positionConsole();};
  mobileLayout.addEventListener('change',onLayoutChange);
  options.renderConsole?.(root.querySelector('#home-navigation-console'));
- options.renderLearning?.(root.querySelector('#home-learning'));
+ renderLatest(root.querySelector('#home-latest'),posts,options.loadDiscussions);
  const slides=[...root.querySelectorAll('[data-announcement-slide]')];let index=0;
  function show(n){if(!slides.length)return;index=(n+slides.length)%slides.length;slides.forEach((s,i)=>s.hidden=i!==index);const p=root.querySelector('[data-announcement-position]');if(p)p.textContent=`${index+1} / ${slides.length}`;}
  root.querySelector('[data-announcement-prev]')?.addEventListener('click',()=>show(index-1));root.querySelector('[data-announcement-next]')?.addEventListener('click',()=>show(index+1));
  renderWisbody(root.querySelector('#home-wisbody'));
+}
+function renderLatest(section,posts,loadDiscussions){
+ const track=section.querySelector('.home-latest-track');
+ const label=section.querySelector('[data-latest-position]');
+ const previous=section.querySelector('[data-latest-prev]');
+ const next=section.querySelector('[data-latest-next]');
+ const types={blog:'Blog',video:'Video',audio:'Audio',story:'Story',debate:'Debate',education:'Article',lesson:'Lesson',resource:'Resource'};
+ const published=posts.filter(p=>p?.id&&p?.title&&p.type!=='announcement').slice(0,5)
+  .map(p=>({kind:'project',time:Date.parse(p.publishedAt||p.updatedAt||'')||0,post:p}));
+ const summary=value=>{const text=String(value||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();return text.length>145?`${text.slice(0,142).trimEnd()}…`:text;};
+ let items=published;
+ function updatePosition(){
+  const cards=[...track.children];const origin=cards[0]?.offsetLeft||0;const closest=cards.reduce((best,card,index)=>Math.abs(card.offsetLeft-origin-track.scrollLeft)<Math.abs(cards[best].offsetLeft-origin-track.scrollLeft)?index:best,0);
+  label.textContent=cards.length?`${closest+1} / ${cards.length}`:'';
+  previous.disabled=cards.length<2||closest===0;
+  next.disabled=cards.length<2||closest===cards.length-1;
+ }
+ function paint(){
+  if(!section.isConnected)return;
+  track.innerHTML=items.length?items.map(({kind,post:p})=>kind==='discussion'
+   ?`<a class="home-latest-card discussion" href="#discussion/${encodeURIComponent(p.id)}"><span class="home-latest-badge">Community discussion</span><span class="home-latest-image" aria-hidden="true"><img src="ns-character-friends.webp" alt="" loading="lazy"></span><strong>${esc(p.title)}</strong><span class="home-latest-summary">${esc(summary(p.body))}</span><small>By ${esc(p.nickname||'a community member')} · Join the conversation →</small></a>`
+   :`<a class="home-latest-card" href="#post/${encodeURIComponent(p.id)}"><span class="home-latest-badge">${esc(types[p.type]||'From Nobody’s Simple')}</span><span class="home-latest-image">${safeImage(p.thumbnail)?`<img src="${esc(p.thumbnail)}" alt="" loading="lazy">`:'<img src="ns-character-reading.webp" alt="" loading="lazy">'}</span><strong>${esc(p.title)}</strong><span class="home-latest-summary">${esc(summary(p.excerpt||p.intro))}</span><small>${p.type==='video'?'Watch':'Explore'} →</small></a>`).join('')
+   :'<div class="home-latest-empty"><p>New posts will appear here as they are published.</p><a href="#learn">Explore Learn →</a><a href="#discussion">Open the discussion board →</a></div>';
+  track.scrollLeft=0;updatePosition();
+ }
+ const scrollOne=direction=>track.scrollBy({left:direction*((track.firstElementChild?.getBoundingClientRect().width||280)+14),behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+ previous.addEventListener('click',()=>scrollOne(-1));
+ next.addEventListener('click',()=>scrollOne(1));
+ track.addEventListener('scroll',()=>requestAnimationFrame(updatePosition),{passive:true});
+ paint();
+ if(loadDiscussions)Promise.resolve().then(loadDiscussions).then(discussions=>{
+  if(!section.isConnected)return;
+  const board=(Array.isArray(discussions)?discussions:[]).filter(p=>p?.id&&p?.title&&p.status==='published').slice(0,5)
+   .map(p=>({kind:'discussion',time:p.createdAt?.toMillis?.()||0,post:p}));
+  items=[...published,...board].sort((a,b)=>b.time-a.time);paint();
+ }).catch(()=>{if(section.isConnected&&!published.length){track.innerHTML='<div class="home-latest-empty"><p>Recent posts are unavailable right now.</p><a href="#learn">Explore Learn →</a><a href="#discussion">Open the discussion board →</a></div>';updatePosition();}});
 }
 export function renderWisbody(root){
  const existingDraft=read(DRAFT_KEY,{})['#wisbody']?.quoteDraft;

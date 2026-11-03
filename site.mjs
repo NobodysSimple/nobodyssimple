@@ -1,4 +1,5 @@
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
+import {createCommunityClient} from './community-data.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
 import {configureStrategy, renderWisbody} from './strategy.mjs';
 import { accountReady, configureAccountHost, renderAccount, renderPublicProfile, enhanceAccountRoute, accountState, communityConnection, communitySignIn, communityConfirmIdentity } from './accounts.mjs';
@@ -40,6 +41,11 @@ import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
+const communityForHome=createCommunityClient(communityConnection);
+async function latestDiscussions(){
+  const [items,blocked]=await Promise.all([communityForHome.feed(),communityForHome.blocked()]);
+  return items.filter(post=>!blocked.includes(post.authorUid));
+}
 const main = document.querySelector("main");
 const supportDialog = document.createElement('dialog');
 supportDialog.className = 'support-dialog'; supportDialog.setAttribute('aria-label','Get help');
@@ -211,13 +217,16 @@ function legacyLibrary() {
 }
 function homePage({learningView=null,scrollTo=null}={}) {
   if(learningView !== null) { libraryState.view = ['crash','courses','videos','audios','blog','stories','debates'].includes(learningView) ? learningView : 'home'; libraryState.query = ''; }
-  renderHome(main, posts, {renderLearning:renderLearningHub});
+  renderHome(main, posts, {loadDiscussions:latestDiscussions});
   if(scrollTo) requestAnimationFrame(() => {
     const section = main.querySelector(scrollTo); if(!section)return;
     section.scrollIntoView({block:'start'}); section.setAttribute('tabindex','-1'); section.focus({preventScroll:true});
   });
 }
-function library() { homePage({learningView:libraryState.view,scrollTo:'#home-learning'}); }
+function library() {
+  main.innerHTML = '<div class="wrap standalone-learn"><section id="home-learning" aria-label="Learn with Nobody’s Simple"></section></div>';
+  renderLearningHub(main.querySelector('#home-learning'));
+}
 function renderLearningHub(root) {
   const s = libraryState;
   const view = ["crash", "courses", "videos", "audios", "blog", "stories", "debates"].includes(s.view) ? s.view : "home";
@@ -803,12 +812,13 @@ function route() {
       home: () => homePage({learningView:"home"}),
       help: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
       navigate: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
-      library: () => id === "quotes" ? homePage({scrollTo:"#home-wisbody"}) : homePage({learningView:id || "home",scrollTo:"#home-learning"}),
+      library: () => {
+        if(id === "quotes") homePage({scrollTo:"#home-wisbody"});
+        else {libraryState.view=id||"home";libraryState.query="";library();}
+      },
       learn: () => {
-        main.innerHTML = '<div class="wrap standalone-learn"><section id="home-learning" aria-label="Learn with Nobody’s Simple"></section></div>';
-        const learning = main.querySelector('#home-learning');
         if (id) libraryState.view = id;
-        renderLearningHub(learning);
+        library();
       },
       blog,
       writing: blog,

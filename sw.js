@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v114-mobile-redesign-part1";
+const CACHE = "nobodyssimple-v115-home-latest-tool-names";
 const SHELL = [
   "./",
   "index.html",
