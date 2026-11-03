@@ -322,26 +322,64 @@ export function renderHome(root, posts = [], options = {}) {
 }
 
 export function renderHelp(root, options = {}) {
-  const homeMode = Boolean(options.home);
-  const situationMarkup = situations.map((s) => {
-    const subparts = situationSubparts[s.id] || [];
-    return `<div class="situation-option"><label class="choice-tile"><input type="checkbox" name="situation" value="${esc(s.id)}"><span><b>${esc(s.label)}</b><small>${esc(s.examples)}</small></span></label>${subparts.length ? `<details class="situation-subparts" data-subparts-for="${esc(s.id)}" hidden><summary>Narrow this down (optional)</summary><div class="subpart-grid">${subparts.map((part) => `<label class="subpart-pill"><input type="checkbox" name="subpart" value="${esc(s.id)}:${esc(part.id)}"><span><b>${esc(part.label)}</b><small>${esc(part.examples)}</small></span></label>`).join("")}</div></details>` : ""}</div>`;
-  }).join("");
-  const goals = [
-    ["understand", "Understand it"], ["calmer", "Feel calmer"], ["organise", "Organise it"],
-    ["decide", "Make a decision"], ["action", "Do something"], ["communicate", "Communicate"],
-    ["minutes", "Get through the next few minutes"],
+  const primaryChoices = [
+    { key: "feel", label: "Feeling something", examples: "upset, numb, angry or anxious", icon: "♡", sourceIds: ["feel"] },
+    { key: "think", label: "Thinking too much", examples: "worry, confusion or spiralling", icon: "⌁", sourceIds: ["think"] },
+    { key: "body", label: "Body feels off", examples: "tired, overloaded or restless", icon: "≈", sourceIds: ["body"] },
+    { key: "act", label: "Need to act", examples: "tasks, choices or getting started", icon: "→", sourceIds: ["decision", "start"] },
+    { key: "relate", label: "Dealing with someone", examples: "conflict, boundaries or relationships", icon: "∞", sourceIds: ["relate"] },
+    { key: "unsure", label: "Not sure", examples: "explore gently from here", icon: "?", sourceIds: ["unsure"] },
   ];
-  root.innerHTML = `<div class="wrap home-console-wrap"><header class="console-dialogue"><div class="console-character-frame"><img id="console-character" src="media/console/nobody-base.png" alt="" width="240" height="280"></div><div class="console-speech"><p class="eyebrow">Navigation console · a few quick choices</p><h2 id="console-question" tabindex="-1">What’s happening?</h2><p id="console-prompt" aria-live="polite">Choose anything that sounds close. You can select more than one.</p><ol class="console-progress" aria-label="Your steps"><li aria-current="step">Moment</li><li>What helps</li><li>Energy</li><li>Ideas</li></ol><form id="navigator-form" class="navigator-layout console-form"><section class="console-stage" data-console-stage="0"><fieldset><legend class="sr-only">Select any situations that fit</legend><div class="choice-grid">${situationMarkup}</div></fieldset></section><section class="console-stage" data-console-stage="1" hidden><fieldset><legend class="sr-only">What would help?</legend><div class="choice-grid compact-choices">${goals.map(([v,l])=>`<label class="choice-pill"><input type="radio" name="goal" value="${v}"><span>${esc(l)}</span></label>`).join("")}</div></fieldset></section><section class="console-stage" data-console-stage="2" hidden><fieldset><legend class="sr-only">Available energy and intensity</legend><div class="console-energy-grid"><label class="field">Energy available<input type="range" name="energy" min="0" max="2" value="1"><span class="range-ends"><span>Very little</span><output id="energy-label">Some</output><span>Plenty</span></span></label><label class="field">Intensity<input type="range" name="intensity" min="0" max="10" value="5"><span class="range-ends"><span>Gentle</span><output id="intensity-label">5 / 10</output><span>Very intense</span></span></label></div></fieldset><label class="interactive-opt-in"><input type="checkbox" name="includeInteractive" checked><span><b>Include interactive tools</b><small>Activities you can move, tap or sort through instead of writing.</small></span></label></section><section class="console-stage console-results-stage" data-console-stage="3" hidden><div id="recommendations" class="recommendations" aria-live="polite"></div><button type="button" class="button secondary" data-console-back-to-energy>← Change my answers</button></section><div class="console-step-actions"><button type="button" class="button secondary" data-console-back hidden>← Back</button><span class="fine" data-console-step-label>Step 1 of 3</span><button type="button" class="button" data-console-next>Continue →</button></div><p class="fine">Your selections are not saved. Reflection drafts and finished maps follow your Account settings.</p></form></div></header><section class="not-sure-panel"><p class="eyebrow">Prefer to explore</p><h3>Not sure where to start?</h3><p>Try the Emotion Compass or explore tools on your own.</p><a class="button bright" href="#compass">Open Emotion Compass →</a></section></div>`;
+  const primaryIds = new Set(["feel", "think", "body", "relate", "unsure"]);
+  const moreChoices = situations
+    .filter((situation) => !primaryIds.has(situation.id))
+    .map((situation) => ({
+      key: situation.id,
+      label: situation.label,
+      examples: situation.examples,
+      icon: "✦",
+      sourceIds: [situation.id],
+    }));
+  const allChoices = [...primaryChoices, ...moreChoices];
+  const choiceFor = (key) => allChoices.find((choice) => choice.key === key);
+  const subpartsMarkup = (choice) => {
+    if (choice.sourceIds.length !== 1) return "";
+    const parent = choice.sourceIds[0];
+    const parts = situationSubparts[parent] || [];
+    if (!parts.length) return "";
+    return `<details class="console-narrow-options" data-subparts-for="${esc(choice.key)}" hidden><summary>Make this more specific <span>(optional)</span></summary><div class="console-subpart-grid">${parts.map((part) => `<label class="console-subpart-card"><input class="console-choice-input" type="checkbox" name="subpart" value="${esc(parent)}:${esc(part.id)}"><span><b>${esc(part.label)}</b><small>${esc(part.examples)}</small></span><i aria-hidden="true">✓</i></label>`).join("")}</div></details>`;
+  };
+  const choiceMarkup = (choice, extraClass = "") => `<div class="console-option ${extraClass}"><label class="console-situation-card"><input class="console-choice-input" type="checkbox" name="situation" value="${esc(choice.key)}"><span class="console-choice-icon" aria-hidden="true">${choice.icon}</span><span class="console-choice-copy"><b>${esc(choice.label)}</b><small>${esc(choice.examples)}</small></span><i class="console-choice-tick" aria-hidden="true">✓</i></label>${subpartsMarkup(choice)}</div>`;
+  const goals = [
+    ["understand", "Understand it", "make more sense of what is happening"],
+    ["calmer", "Feel steadier", "settle or regulate first"],
+    ["organise", "Organise it", "sort thoughts, demands or information"],
+    ["decide", "Make a choice", "compare options or priorities"],
+    ["action", "Start something", "reduce friction and take one step"],
+    ["communicate", "Handle a conversation", "prepare a request, boundary or repair"],
+  ];
+  const energyLevels = [
+    ["0", "Very little", "Keep the first step as small as possible."],
+    ["1", "Some", "A short reflection or practical step may fit."],
+    ["2", "Plenty", "You can choose a fuller activity if you want to."],
+  ];
+  root.innerHTML = `<div class="wrap home-console-wrap"><header class="console-dialogue"><div class="console-character-frame"><img id="console-character" src="ns-character-guide.webp" alt="" width="240" height="280"></div><div class="console-speech"><p class="eyebrow">Help me choose</p><h2 id="console-question" tabindex="-1">What’s happening?</h2><p id="console-prompt" aria-live="polite">Choose anything that feels close. More than one is okay.</p><ol class="console-progress" aria-label="Your progress"><li aria-current="step">Moment</li><li>What helps</li><li>Energy</li></ol><form id="navigator-form" class="navigator-layout console-form"><section class="console-stage" data-console-stage="0"><fieldset><legend class="sr-only">Select the situations that fit</legend><div class="console-primary-grid">${primaryChoices.map((choice) => choiceMarkup(choice, "primary")).join("")}</div><details class="console-more-situations"><summary>More situations <span>See all options</span></summary><div class="console-more-grid">${moreChoices.map((choice) => choiceMarkup(choice, "more")).join("")}</div></details></fieldset></section><section class="console-stage" data-console-stage="1" hidden><fieldset><legend class="sr-only">What would help?</legend><p class="console-stage-hint">Choose one, or continue without choosing.</p><div class="console-goal-grid">${goals.map(([value, label, description]) => `<label class="console-goal-card"><input class="console-choice-input" type="radio" name="goal" value="${value}"><span><b>${esc(label)}</b><small>${esc(description)}</small></span><i aria-hidden="true">✓</i></label>`).join("")}</div></fieldset></section><section class="console-stage" data-console-stage="2" hidden><fieldset><legend class="sr-only">How much energy is available?</legend><div class="console-energy-options">${energyLevels.map(([value, label, description]) => `<label class="console-energy-card"><input class="console-choice-input" type="radio" name="energy" value="${value}" ${value === "1" ? "checked" : ""}><span><b>${label}</b><small>${description}</small></span><i aria-hidden="true">✓</i></label>`).join("")}</div></fieldset><label class="interactive-opt-in"><input type="checkbox" name="includeInteractive" checked><span><b>Also show hands-on activities</b><small>Options you can tap, move or sort instead of writing.</small></span></label></section><section class="console-stage console-results-stage" data-console-stage="3" hidden><div id="recommendations" class="recommendations" aria-live="polite"></div><button type="button" class="button secondary" data-console-back-to-energy>← Change my answers</button></section><div class="console-step-actions"><button type="button" class="button secondary" data-console-back hidden>← Back</button><span class="fine" data-console-step-label>Step 1 of 3</span><button type="button" class="button" data-console-next>Continue →</button></div><p class="fine">Your selections are not saved. Finished maps and drafts follow your Account settings.</p></form></div></header><section class="not-sure-panel"><p class="eyebrow">Prefer to explore</p><h3>Need something quick?</h3><p>Open the Emotion Compass or browse all tools on your own.</p><a class="button bright" href="#compass">Open Emotion Compass →</a></section></div>`;
+
   const form = root.querySelector("#navigator-form");
   const stages = [...form.querySelectorAll("[data-console-stage]")];
-  const questions = ["What’s happening?", "What would help?", "How much energy do you have?", "A few ideas to try"];
-  const prompts = ["Choose anything that sounds close. You can select more than one.", "Pick the kind of help you want. You can skip this.", "A rough guess is enough. We’ll use it to suggest a manageable starting point.", "Here are a few options based on what you chose. Keep only what fits."];
+  const questions = ["What’s happening?", "What would help?", "How much energy do you have?", "Choose a starting point"];
+  const prompts = [
+    "Choose anything that feels close. More than one is okay.",
+    "Pick the kind of help you want. You can skip this.",
+    "A rough guess is enough. We’ll keep the first step manageable.",
+    "Start with one option. The alternatives are there if it does not fit.",
+  ];
   const poses = ["guide", "thinking", "sitting", "compass"];
   let currentStage = 0;
+
   const showStage = (next, focus = true) => {
     currentStage = Math.max(0, Math.min(3, next));
-    stages.forEach((stage, i) => { stage.hidden = i !== currentStage; });
+    stages.forEach((stage, index) => { stage.hidden = index !== currentStage; });
     const character = root.querySelector("#console-character");
     character.classList.remove("pose-changed");
     character.src = `ns-character-${poses[currentStage]}.webp`;
@@ -351,93 +389,108 @@ export function renderHelp(root, options = {}) {
     }
     root.querySelector("#console-question").textContent = questions[currentStage];
     root.querySelector("#console-prompt").textContent = prompts[currentStage];
-    root.querySelectorAll(".console-progress li").forEach((item, i) => {
-      if (i === currentStage) item.setAttribute("aria-current", "step"); else item.removeAttribute("aria-current");
+    root.querySelectorAll(".console-progress li").forEach((item, index) => {
+      item.toggleAttribute("data-complete", index < currentStage);
+      if (currentStage < 3 && index === currentStage) item.setAttribute("aria-current", "step");
+      else item.removeAttribute("aria-current");
     });
     const back = form.querySelector("[data-console-back]");
-    back.hidden = currentStage === 0 || currentStage === 3;
     const nextButton = form.querySelector("[data-console-next]");
+    back.hidden = currentStage === 0 || currentStage === 3;
     nextButton.hidden = currentStage === 3;
-    form.querySelector("[data-console-step-label]").textContent = currentStage === 3 ? "Your suggestions" : `Step ${currentStage + 1} of 3`;
-    nextButton.textContent = currentStage === 2 ? "Show my suggestions →" : "Continue →";
+    form.querySelector("[data-console-step-label]").textContent = currentStage === 3 ? "Your starting point" : `Step ${currentStage + 1} of 3`;
+    nextButton.textContent = currentStage === 2 ? "See my starting point →" : "Continue →";
     if (focus) root.querySelector("#console-question").focus();
   };
+  const syncSubparts = (input) => {
+    const panel = form.querySelector(`[data-subparts-for="${input.value}"]`);
+    if (!panel) return;
+    panel.hidden = !input.checked;
+    if (!input.checked) panel.querySelectorAll("input").forEach((part) => { part.checked = false; });
+  };
+  form.querySelectorAll("[name=situation]").forEach((input) => {
+    input.addEventListener("change", () => syncSubparts(input));
+    syncSubparts(input);
+  });
   form.querySelector("[data-console-back]").onclick = () => showStage(currentStage - 1);
   form.querySelector("[data-console-next]").onclick = () => currentStage < 2 ? showStage(currentStage + 1) : form.requestSubmit();
   form.querySelector("[data-console-back-to-energy]").onclick = () => showStage(2);
   showStage(0, false);
-  form.querySelectorAll("[name=situation]").forEach((input) => {
-    const panel = form.querySelector(`[data-subparts-for="${input.value}"]`);
-    if (!panel) return;
-    const sync = () => {
-      panel.hidden = !input.checked;
-      if (!input.checked) panel.querySelectorAll("input").forEach((part) => (part.checked = false));
-    };
-    input.addEventListener("change", sync);
-    sync();
-  });
-  form.elements.energy.oninput = (e) => (root.querySelector("#energy-label").value = ["Very little", "Some", "Plenty"][+e.target.value]);
-  form.elements.intensity.oninput = (e) => (root.querySelector("#intensity-label").value = `${e.target.value} / 10`);
-  form.onsubmit = (e) => {
-    e.preventDefault();
-    const chosen = [...form.querySelectorAll("[name=situation]:checked")].map((x) => situations.find((s) => s.id === x.value)).filter(Boolean);
-    const chosenSubparts = [...form.querySelectorAll("[name=subpart]:checked")].map((x) => {
-      const [parent, id] = x.value.split(":");
-      const part = (situationSubparts[parent] || []).find((item) => item.id === id);
-      return part ? { ...part, parent } : null;
-    }).filter(Boolean);
+
+  form.onsubmit = (event) => {
+    event.preventDefault();
+    const selectedChoices = [...form.querySelectorAll("[name=situation]:checked")]
+      .map((input) => choiceFor(input.value))
+      .filter(Boolean);
+    const chosen = [...new Map(selectedChoices.flatMap((choice) => choice.sourceIds)
+      .map((id) => situations.find((situation) => situation.id === id))
+      .filter(Boolean)
+      .map((situation) => [situation.id, situation])).values()];
+    const chosenSubparts = [...form.querySelectorAll("[name=subpart]:checked")]
+      .map((input) => {
+        const [parent, id] = input.value.split(":");
+        const part = (situationSubparts[parent] || []).find((item) => item.id === id);
+        return part ? { ...part, parent } : null;
+      })
+      .filter(Boolean);
     const goal = form.elements.goal?.value || "understand";
-    const energy = +form.elements.energy.value;
-    const intensity = +form.elements.intensity.value;
-    const gentle = energy === 0 || intensity >= 8;
+    const energy = Number(form.elements.energy.value);
+    const gentle = energy === 0;
     const showInteractive = form.elements.includeInteractive.checked;
-    const selectedTags = [...new Set([...chosen.map((item) => item.id), ...chosenSubparts.flatMap((item) => item.tags || [])])];
+    const selectedTags = [...new Set([
+      ...chosen.map((item) => item.id),
+      ...chosenSubparts.flatMap((item) => item.tags || []),
+    ])];
     const interactivePicks = recommendInteractiveTools(goal, selectedTags, gentle ? 0 : energy);
     const pool = [];
-    const addTool = (id) => { const tool = tools.find((item) => item.id === id); if (tool && !pool.some((item) => item.id === tool.id)) pool.push(tool); };
+    const addTool = (id) => {
+      const tool = tools.find((item) => item.id === id);
+      if (tool && !pool.some((item) => item.id === tool.id)) pool.push(tool);
+    };
     chosen.forEach((situation) => situation.tools.forEach(addTool));
     chosenSubparts.forEach((part) => (part.tools || []).forEach(addTool));
     if (!chosen.length) ["state-check", "brain-dump", "quick-reset"].forEach(addTool);
     const goalTools = {
-      calmer:['quick-reset','grounding','load-balancer'], organise:['brain-dump','thought-map','reality-map'],
-      decide:['decision-map','values-discovery','uncertainty-calibration'], communicate:['conversation-map','needs-clarifier','boundary-builder'],
-      action:['small-step','friction','if-then'], minutes:['quick-reset','grounding','state-check'], understand:['state-check','emotion-check-in','pattern-map']
+      calmer: ["quick-reset", "grounding", "load-balancer"],
+      organise: ["brain-dump", "thought-map", "reality-map"],
+      decide: ["decision-map", "values-discovery", "uncertainty-calibration"],
+      communicate: ["conversation-map", "needs-clarifier", "boundary-builder"],
+      action: ["small-step", "friction", "if-then"],
+      understand: ["state-check", "emotion-check-in", "pattern-map"],
     };
     const boost = goalTools[goal] || goalTools.understand;
-    const light = new Set(['quick-reset','grounding','state-check','small-step','needs-clarifier','emotion-check-in','worry-sort']);
+    const light = new Set(["quick-reset", "grounding", "state-check", "small-step", "needs-clarifier", "emotion-check-in", "worry-sort"]);
     boost.forEach(addTool);
-    if(gentle) ['quick-reset','grounding','small-step'].forEach(addTool);
-    const rank = tool =>
-      (chosenSubparts.some(part => part.tools.includes(tool.id)) ? 9 : 0) +
-      (boost.includes(tool.id) ? 6 : 0) +
-      (chosen.some(situation => situation.tools.includes(tool.id)) ? 4 : 0) +
-      (gentle ? (light.has(tool.id) ? 12 : -6) : 0);
-    const picks = pool.sort((a,b)=>rank(b)-rank(a)).slice(0,3);
-    const goalLabel = form.querySelector('[name=goal]:checked')?.closest('label')?.textContent.trim() || 'a starting point';
-    const selectedText = [...chosen.map((item) => item.label), ...chosenSubparts.map((item) => item.label)];
+    if (gentle) ["quick-reset", "grounding", "small-step"].forEach(addTool);
+    const rank = (tool) =>
+      (chosenSubparts.some((part) => part.tools.includes(tool.id)) ? 10 : 0) +
+      (boost.includes(tool.id) ? 7 : 0) +
+      (chosen.some((situation) => situation.tools.includes(tool.id)) ? 4 : 0) +
+      (gentle ? (light.has(tool.id) ? 13 : -6) : 0);
+    const picks = pool.sort((a, b) => rank(b) - rank(a)).slice(0, 3);
+    const primary = picks[0] || tools.find((tool) => tool.id === "state-check");
+    const alternatives = picks.slice(1);
+    const selectedText = selectedChoices.map((choice) => choice.label);
+    const goalLabel = goals.find(([value]) => value === goal)?.[1] || "Understand it";
+    const reasonParts = [];
+    const matchedPart = chosenSubparts.find((part) => part.tools.includes(primary.id));
+    if (matchedPart) reasonParts.push(`You narrowed this to “${matchedPart.label}”.`);
+    else if (selectedText.length) reasonParts.push(`You selected ${selectedText.map((text) => `“${text}”`).join(" and ")}.`);
+    if (boost.includes(primary.id)) reasonParts.push(`It is a good first move when you want to ${goalLabel.toLowerCase()}.`);
+    if (gentle && light.has(primary.id)) reasonParts.push("It starts small because you chose very little energy.");
+    const reason = reasonParts.join(" ") || "It is a short way to notice what is happening before deciding what comes next.";
     const recommendations = root.querySelector("#recommendations");
-    recommendations.innerHTML = `<p class="eyebrow">Three starting points</p><h2>Take what fits.</h2><p class="fine">Matched to: ${selectedText.length ? selectedText.map((text) => esc(text)).join(" · ") : "not sure yet"}. ${gentle ? "Smaller first steps are prioritised because of your energy or intensity setting. " : ""}These are suggestions, not an assessment.</p><div class="grid">${picks.map((tool, i) => { const matchedPart = chosenSubparts.find((part) => part.tools.includes(tool.id)); const matchedSituation = chosen.find(situation => situation.tools.includes(tool.id)); const reasons = [];
-      if(matchedPart) reasons.push(`You narrowed this to “${matchedPart.label}”.`);
-      else if(matchedSituation) reasons.push(`You selected “${matchedSituation.label}”.`);
-      if(boost.includes(tool.id)) reasons.push(`It offers a way to ${goalLabel.toLowerCase()}.`);
-      if(gentle && light.has(tool.id)) reasons.push(energy===0 ? 'It can begin with one small observation or adjustment when energy is low.' : 'You marked high intensity, so a smaller first step may be easier to use.');
-      const reason = reasons.join(' ') || 'It offers a way to notice what is happening before choosing a next step.' ; return `<a class="card recommendation-card" href="#tool/${encodeURIComponent(tool.id)}"><span class="number">0${i + 1}</span><h3>${esc(tool.title)}</h3><p>${esc(tool.short)}</p><small>Why this might fit: ${esc(reason)}</small><span class="arrow">Try this tool →</span></a>`; }).join("")}</div><p class="fine">You can also <a href="#tools">browse the full toolbox</a>.</p>`;
-    if (showInteractive) {
-      const section = document.createElement("section");
-      section.className = "interactive-recommendations";
-      section.innerHTML = '<p class="eyebrow">Interactive tools · move, explore, choose</p><h2>Try something hands-on.</h2><p class="fine">These are matched to the same choices. Nothing above has been replaced.</p>';
-      const grid = document.createElement("div");
-      grid.className = "grid interactive-recommendation-grid";
-      interactivePicks.forEach((tool, index) => { const holder = document.createElement("div"); holder.innerHTML = interactiveCardMarkup(tool, index); if (holder.firstElementChild) grid.append(holder.firstElementChild); });
-      section.append(grid);
-      recommendations.append(section);
-    }
+    recommendations.innerHTML = `<p class="eyebrow">Your suggested start</p><article class="console-recommended-start"><span class="console-recommendation-number" aria-hidden="true">01</span><div><h2>${esc(primary.title)}</h2><p>${esc(primary.short)}</p><small>Why this might fit: ${esc(reason)}</small><a class="button" href="#tool/${encodeURIComponent(primary.id)}">Start ${esc(primary.title)} →</a></div></article>${alternatives.length ? `<details class="console-alternatives"><summary>Also consider ${alternatives.length} alternative${alternatives.length === 1 ? "" : "s"}</summary><div>${alternatives.map((tool) => `<a class="console-alternative-card" href="#tool/${encodeURIComponent(tool.id)}"><span><b>${esc(tool.title)}</b><small>${esc(tool.short)}</small></span><i aria-hidden="true">→</i></a>`).join("")}</div></details>` : ""}${showInteractive && interactivePicks.length ? `<details class="console-interactive-alternatives"><summary>Try a hands-on activity instead</summary><div class="interactive-recommendation-grid">${interactivePicks.slice(0, 2).map((tool, index) => interactiveCardMarkup(tool, index)).join("")}</div></details>` : ""}<p class="fine">You can also <a href="#tools">browse the full toolbox</a>.</p>`;
     showStage(3, false);
     recommendations.setAttribute("tabindex", "-1");
-    recommendations.focus({preventScroll:true});
-    recommendations.scrollIntoView({ behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start" });
+    recommendations.focus({ preventScroll: true });
+    recommendations.scrollIntoView({
+      behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start",
+    });
   };
 }
+
 
 function renderToolboxLegacy(root, filter = "") {
   root.innerHTML = `<div class="wrap">${area("A toolbox, not a test", "Find a tool by the kind of help you want.", "Nothing here knows you better than you know yourself. Try one prompt, skip anything that does not fit, and save only what you choose.")}<div class="toolbox-controls"><label class="field">Search tools<input id="tool-search" type="search" placeholder="e.g. tired, decision, relationship…"></label><div class="tabs" id="tool-tabs">${[["all", "Everything"], ...toolGroups.filter((g) => g[0] !== "maps").map((g) => [g[0], g[1]])].map(([id, label]) => `<button type="button" class="chip ${id === "all" ? "active" : ""}" data-group="${id}">${esc(label)}</button>`).join("")}</div></div><div id="tool-groups">${toolGroups
