@@ -1,11 +1,8 @@
-const CACHE = "nobodyssimple-v111-intervention-guides";
+const CACHE = "nobodyssimple-v112-remove-intervention-book";
 const SHELL = [
   "./",
   "index.html",
   "app-design.css",
-  "intervention-book.css",
-  "intervention-book.mjs",
-  "intervention-data.mjs",
   "app-design.mjs",
   "ns-home-hero.webp",
   "ns-home-console.webp",
@@ -95,6 +92,10 @@ const SHELL = [
   "manifest.webmanifest",
   "icon-192.png",
   "icon-512.png",
+  "icon-192-maskable.png",
+  "icon-512-maskable.png",
+  "apple-touch-icon.png",
+  "favicon-96.png",
   "drew-profile.png",
   "kofi-profile.png",
   "half-banner.png",

@@ -1,9 +1,8 @@
-import {enhanceResourceUI} from './ui-resources.mjs';
 // Presentation only: decorates existing screens without adding routes or activities.
 const paths = {
  home:'M3 10 12 3l9 7M5 9v12h5v-7h4v7h5V9',
- tools:'M12 2v20M2 12h20M5 5l14 14M5 19 19 5',
- discussion:'M9 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM2 20v-4a6 6 0 0 1 12 0v4ZM17 9a3 3 0 0 0 0-6M17 12a5 5 0 0 1 5 5v3h-5',
+ tools:'M8 4h8v5h5v7h-5v5H8v-5H3V9h5z',
+ discussion:'M4 4h16v12H9l-5 4zM8 8h8M8 12h5',
  messages:'M3 6h18v13H3zM3 6l9 7 9-7',
  audio:'M4 14v-3a8 8 0 0 1 16 0v3M4 12H2v7h4v-7zM20 12h2v7h-4v-7z',
  play:'M9 5 20 12 9 19z',
@@ -20,10 +19,6 @@ const paths = {
  check:'m5 12 5 5L20 6',
  flower:'M12 12c-10-8-12 4-2 2C0 21 15 25 12 14c8 10 15-4 2-2 9-10-7-15-2 0zM12 15v8',
  time:'M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0zM12 6v6l4 3',
- focus:'M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM12 1v3M12 20v3M1 12h3M20 12h3',
- clipboard:'M8 4H4v18h16V4h-4M8 2h8v5H8ZM8 11h8M8 15h8M8 19h5',
- pencil:'m4 16 12-12 4 4L8 20l-6 2ZM14 6l4 4',
- calendar:'M4 5h16v16H4zM8 2v6M16 2v6M4 10h16M8 14h3M13 14h3M8 18h3',
  arrow:'M4 12h16M14 6l6 6-6 6',
  feedback:'m4 3 16 0v13H9l-5 5zM8 7h8M8 11h6',
  shield:'m12 2 9 4v6c0 6-9 10-9 10S3 18 3 12V6zM8 12l3 3 5-6',
@@ -48,7 +43,7 @@ function themeFor(text='') {
  if(/learn|read|blog|story|storie|debate|course|evidence/i.test(text)) return 'learn';
  return 'think';
 }
-const routeIcons={'intervention-book':'book',lifestyle:'calendar',home:'home',tools:'tools',account:'account',discussion:'discussion',messages:'messages',simplyfocus:'focus','stim-space':'play',questionnaires:'clipboard',community:'pencil',support:'help',install:'download',maps:'map',appearance:'settings',privacy:'shield',security:'shield',saved:'pin',learning:'book',notifications:'sun',profile:'account'};
+const routeIcons={home:'home',tools:'tools',account:'account',discussion:'discussion',messages:'messages',simplyfocus:'audio','stim-space':'play',questionnaires:'map',community:'feedback',support:'help',install:'download',maps:'map',appearance:'settings',privacy:'shield',security:'shield',saved:'pin',learning:'book',notifications:'sun',profile:'account'};
 function poseFor(text, fallback='thinking') {
  const choices=[[/brain.dump|journal/i,'writing'],[/reality|fact|evidence|thought.map/i,'mapping'],[/body|state.check/i,'checklist'],[/mixed|confus/i,'confused'],[/timeline|gratitude|savour/i,'star'],[/sensory.recipe|garden/i,'plant'],[/sensory.profile|learn/i,'reading'],[/battery|energy|capacity/i,'waiting'],[/load|budget|task|build/i,'building'],[/masking|self/i,'base'],[/CBT|probab|uncertain/i,'solving'],[/personality|perspective/i,'lantern'],[/big.five|questionnaire/i,'checklist'],[/system|course/i,'teaching'],[/focus|sound|audio|listen/i,'radio'],[/ground|support|safe/i,'shield'],[/decision|values|choose/i,'hiking'],[/communicat|friend|relation/i,'friends'],[/calm|breath|reset/i,'meditate'],[/feel|emotion|compass/i,'compass'],[/help|feedback/i,'helping']];
  return choices.find(([test])=>test.test(text))?.[1]||fallback;
@@ -124,7 +119,6 @@ function decorate() {
  document.querySelectorAll('.account-dialog-content').forEach(dialog=>{
   if(dialog.dataset.uiArt)return;dialog.dataset.uiArt='true';dialog.prepend(picture('shield','ui-dialog-art'));
  });
- enhanceResourceUI(main);
 }
 let scheduled=false;
 const observer=new MutationObserver(records=>{
