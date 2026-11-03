@@ -12323,3 +12323,44 @@ html[data-theme="dark"] .ns-explore-card { color:#203c30; }
 @media (prefers-reduced-motion:reduce) { .ns-explore-card { transition:none; } }
 .ns-explore-card::before { content:""; position:absolute; inset:48% 0 0; background:var(--ns-scene) center/cover no-repeat; opacity:.16; pointer-events:none; }
 .ns-feel { --ns-scene:url('ns-scene-sunset.webp'); }.ns-calm { --ns-scene:url('ns-scene-mountains.webp'); }.ns-think { --ns-scene:url('ns-scene-forest.webp'); }.ns-connect { --ns-scene:url('ns-scene-path.webp'); }
+
+
+/* Mobile emotion compass: keep the plot compact and show the live explanation. */
+@media (max-width: 560px) {
+  .compass-redesign { display: flex; flex-direction: column; gap: 12px; }
+  .compass-card { width: 100%; padding: 14px; }
+  .compass-controls { gap: 8px 12px; }
+  .compass-plot { width: min(100%, 220px); aspect-ratio: 1; max-height: 220px; margin: 28px auto 30px; }
+  .plot-left { left: -10px; }
+  .plot-right { right: -10px; }
+  .emotion-side { order: 0 !important; width: 100%; max-height: none; overflow: visible; padding: 15px; }
+  .emotion-side .compass-emotion-detail { display: block !important; }
+  .compass-suggestions { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin: 10px 0 14px; }
+  .compass-suggestion { min-width: 0; min-height: 54px; padding: 8px 6px; }
+  .compass-suggestion b { font-size: 11px; line-height: 1.2; }
+  .compass-suggestion small { font-size: 9px; }
+}
+@media (max-width: 370px) {
+  .compass-plot { width: min(100%, 196px); max-height: 196px; }
+  .compass-suggestions { grid-template-columns: 1fr; }
+}
+
+/* The character illustrations stay centred and fully visible in homepage links. */
+body.app-body .strategy-project-links { align-items: stretch; }
+body.app-body .strategy-project-links .chip { display: flex; align-items: center; justify-content: flex-start; gap: 12px; min-height: 88px; padding: 10px 15px; }
+body.app-body .strategy-project-links .chip img { display: block; width: 64px; height: 64px; flex: 0 0 64px; align-self: center; object-fit: contain; object-position: center; }
+body.app-body .strategy-project-links .chip > span:not(.project-link-arrow) { display: grid; align-content: center; gap: 4px; min-width: 0; }
+body.app-body .strategy-project-links .project-link-arrow { margin-left: auto; align-self: center; }
+
+/* Keep the six mobile destinations above the device safe area. */
+@media (max-width: 900px) {
+  body.app-body .app-bottom-nav { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  body.app-body .app-bottom-nav a { align-content: center; min-width: 0; }
+  body.app-body .app-bottom-nav a small { font-size: 9px; white-space: nowrap; }
+  body.app-body .app-bottom-avatar { display: grid; width: 24px; height: 24px; place-items: center; overflow: hidden; border: 1px solid #d3dfd2; border-radius: 50%; background: #fffdf7; }
+  body.app-body .app-bottom-nav .app-bottom-avatar img { display: block; width: 100%; height: 100%; object-fit: cover; }
+}
+@media (max-width: 370px) {
+  body.app-body .app-bottom-nav a small { font-size: 8px; letter-spacing: -.02em; }
+  body.app-body .app-bottom-nav a > span { font-size: 16px; }
+}

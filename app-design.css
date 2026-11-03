@@ -777,3 +777,7 @@ body.app-body #main .focus-track .focus-track-copy b { color:var(--ui-ink)!impor
 body.app-body #main .focus-track .focus-track-copy small { color:var(--ui-muted)!important;font-size:12px; }
 body.app-body #main .focus-track .focus-track-value { color:var(--ui-ink)!important;font-size:12px;font-weight:650; }
 body.app-body #main .focus-master,body.app-body #main .focus-master output { color:var(--ui-ink)!important; }
+
+
+/* Remove the inset green timer box; keep the clock clean on the Pomodoro colour field. */
+body.app-body .pomodoro-clock { background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; }

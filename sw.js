@@ -1,7 +1,8 @@
-const CACHE = "nobodyssimple-v120-targeted-tools";
+const CACHE = "nobodyssimple-v113-mobile-ui-fixes";
 const SHELL = [
   "./",
   "index.html",
+  "logo.png",
   "app-design.css",
   "app-design.mjs",
   "ns-home-hero.webp",
@@ -85,7 +86,6 @@ const SHELL = [
   "referrals.mjs",
   "personality-map.png",
   "tool-catalog.mjs",
-  "targeted-tools.mjs",
   "emotion-profiles.mjs",
   "core.mjs",
   "data.mjs",
