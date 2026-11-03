@@ -1133,3 +1133,45 @@ html[data-theme=dark] body.app-body .home-wisbody-card > a,html[data-theme=dark]
 @media (prefers-reduced-motion:reduce) {
   body.app-body .home-quick-route { transition:none; }
 }
+
+/* Part 3 follow-up: Home keeps the full Wisbody tools in a compact, usable panel. */
+body.app-body .strategy-dashboard #home-wisbody .wisbody { display:grid; grid-template-columns:108px minmax(0,1fr); gap:14px; margin:0; padding:14px; border-radius:18px; background:#edf1e6; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-character { align-self:start; text-align:center; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-character img { width:96px; height:126px; object-fit:contain; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-character p { margin:0; font-size:9px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble { min-width:0; padding:15px 16px; border-radius:14px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble::before { top:34px; left:-8px; width:15px; height:15px; }
+body.app-body #main .strategy-dashboard #home-wisbody .wisbody-bubble h2 { margin:3px 0 8px; font-size:24px; line-height:1.08; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-filter { display:grid; grid-template-columns:auto minmax(120px,190px); align-items:center; gap:8px; color:var(--ui-muted); font-size:11px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-filter select { min-height:34px; padding:6px 9px; border:1px solid var(--ui-line); border-radius:9px; background:var(--ui-paper); color:var(--ui-ink); }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble > .fine { margin:8px 0 0; font-size:10px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble blockquote { margin:10px 0; font-size:clamp(16px,2vw,20px); line-height:1.38; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-prompt { margin:0 0 10px; font-size:11px; line-height:1.4; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-controls { display:flex; align-items:center; flex-wrap:wrap; gap:7px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-controls .chip { min-height:34px; padding:7px 10px; font-size:10px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-controls span { font-size:10px; color:var(--ui-muted); }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble details { margin-top:11px; border-top:1px dashed var(--ui-line); padding-top:10px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble summary { min-height:34px; cursor:pointer; color:var(--ui-ink); font-size:12px; font-weight:750; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble details .field { margin-top:9px; font-size:11px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble textarea { min-height:88px; font-size:13px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble details .row { gap:7px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble details .button,
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble details .chip { min-height:38px; padding:8px 11px; font-size:10px; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble details [data-status],
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble > .fine:last-child { font-size:10px; line-height:1.4; }
+body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble :is(summary,button,a,select,textarea):focus-visible { outline:3px solid #ba7539; outline-offset:3px; }
+@media (max-width:900px) { body.app-body #home-wisbody { order:4; } body.app-body .home-project-footer { order:5; } }
+@media (max-width:640px) {
+  body.app-body .strategy-dashboard #home-wisbody .wisbody { grid-template-columns:66px minmax(0,1fr); gap:9px; padding:11px; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-character img { width:62px; height:88px; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-character p { display:none; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble { padding:12px; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble::before { top:auto; bottom:-8px; left:27px; width:14px; height:14px; border:0; border-right:1px solid var(--ui-line); border-bottom:1px solid var(--ui-line); }
+  body.app-body #main .strategy-dashboard #home-wisbody .wisbody-bubble h2 { font-size:21px; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-filter { grid-template-columns:1fr; gap:4px; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-filter select { width:100%; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble blockquote { font-size:16px; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-controls { align-items:stretch; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-controls .chip { flex:1 1 110px; }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble details .row { display:grid; grid-template-columns:1fr; }
+}
