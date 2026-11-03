@@ -1,3 +1,4 @@
+import { targetedTools } from './targeted-tools.mjs';
 const field = (id, label, placeholder = "") => ({
   id,
   label,
@@ -1538,6 +1539,7 @@ export const tools = [
     fields: [],
     tags: ["maps"],
   },
+...targetedTools
 ].filter((tool) => !retiredToolIds.has(tool.id));
 
 export const situations = [
@@ -1732,3 +1734,16 @@ export const situationSubparts = {
     { id: "next", label: "Just give me one next step", examples: "keep it small and practical", tools: ["quick-reset", "small-step", "state-check"], tags: ["unsure", "start"] },
   ],
 };
+
+// Put targeted options first in the existing guided console where the problem matches.
+const addedRecommendations = {
+  'feel/angry':['anger-pause','resentment-load'], 'feel/low':['low-mood-reconnect'],
+  'body/tired':['burnout-adjustments'], 'calm/sensory':['meltdown-plan','shutdown-card'],
+  'calm/panic':['panic-preparation'], 'think/rumination':['guilt-responsibility'],
+  'decision/money':['impulse-pause']
+};
+for (const [path, ids] of Object.entries(addedRecommendations)) {
+  const [group,id] = path.split('/');
+  const option = situationSubparts[group]?.find(option=>option.id===id);
+  if(option) option.tools = [...new Set([...ids,...option.tools])];
+}

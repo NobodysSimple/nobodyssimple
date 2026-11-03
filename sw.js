@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v112-remove-intervention-book";
+const CACHE = "nobodyssimple-v120-targeted-tools";
 const SHELL = [
   "./",
   "index.html",
@@ -85,6 +85,7 @@ const SHELL = [
   "referrals.mjs",
   "personality-map.png",
   "tool-catalog.mjs",
+  "targeted-tools.mjs",
   "emotion-profiles.mjs",
   "core.mjs",
   "data.mjs",
