@@ -1134,6 +1134,41 @@ html[data-theme=dark] body.app-body .home-wisbody-card > a,html[data-theme=dark]
   body.app-body .home-quick-route { transition:none; }
 }
 
+/* Part 5: quiet continuity and paths built only from published learning pieces. */
+body.app-body .home-resume-actions { display:flex; flex-direction:column; align-items:flex-start; gap:7px; }
+body.app-body .home-resume-actions > a:not(.button) { color:#315a47; font-size:12px; font-weight:700; text-underline-offset:3px; }
+body.app-body .home-resume-card .home-resume-revisit { margin-top:6px!important; font-size:12px!important; }
+body.app-body .home-resume-revisit a { color:#315a47; font-weight:700; text-underline-offset:3px; }
+body.app-body .library-history-optin { display:inline-flex; align-items:center; gap:8px; min-height:44px; margin-top:8px; color:var(--ui-ink); font-size:13px; line-height:1.35; cursor:pointer; }
+body.app-body .library-history-optin input { width:20px; height:20px; accent-color:#24513f; }
+body.app-body .learn-continue-card { display:grid; grid-template-columns:64px minmax(0,1fr) auto; align-items:center; gap:13px; padding:14px; margin:0 0 16px; border:1px solid #cbdacb; border-radius:16px; background:#edf4e9; }
+body.app-body .learn-continue-card img { width:64px; height:64px; object-fit:contain; }
+body.app-body .learn-continue-card .eyebrow { margin:0 0 3px; color:#5f7869; font-size:11px; }
+body.app-body #main .learn-continue-card h3 { margin:0 0 3px; color:#214b3c; font:400 21px/1.15 Georgia,serif; }
+body.app-body .learn-continue-card p:not(.eyebrow) { margin:0; color:#52665b; font-size:13px; }
+body.app-body .learn-continue-card .button { min-height:44px; }
+body.app-body .learn-path { margin-top:13px; border-top:1px solid #cad6cc; padding-top:10px; }
+body.app-body .learn-path summary { cursor:pointer; color:#244f3d; font-size:14px; font-weight:700; line-height:1.4; min-height:44px; padding:9px 0; }
+body.app-body .learn-path .fine { margin:2px 0 10px; }
+body.app-body .learn-path ol { display:grid; gap:6px; list-style:none; margin:0; padding:0; }
+body.app-body .learn-path li a { display:grid; grid-template-columns:38px minmax(0,1fr) 20px; align-items:center; gap:9px; min-height:56px; padding:8px 10px; border:1px solid #d3ded2; border-radius:12px; background:#fffdf7; color:#214b3c; text-decoration:none; }
+body.app-body .learn-path li a:hover,body.app-body .learn-path li a:focus-visible { border-color:#72977c; outline-offset:2px; }
+body.app-body .learn-path-step { display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:#e4eddf; color:#214b3c; font-weight:700; }
+body.app-body .learn-path li strong,body.app-body .learn-path li small { display:block; overflow-wrap:anywhere; }
+body.app-body .learn-path li strong { font-size:14px; }
+body.app-body .learn-path li small { margin-top:2px; color:#52665b; font-size:12px; }
+html[data-theme=dark] body.app-body .learn-continue-card,html[data-theme=dark] body.app-body .learn-path li a { background:#294238; border-color:#607867; }
+html[data-theme=dark] body.app-body :is(.learn-continue-card,.learn-path) :is(h3,p,summary,strong,small,a) { color:#f8f3e8!important; }
+html[data-theme=dark] body.app-body .learn-path-step { background:#416654; color:#fffdf5; }
+html[data-theme=dark] body.app-body .home-resume-actions > a:not(.button) { color:#f8f3e8; }
+html[data-theme=dark] body.app-body .home-resume-revisit a { color:#f8f3e8; }
+@media (max-width:700px) {
+  body.app-body .learn-continue-card { grid-template-columns:48px minmax(0,1fr); gap:10px; padding:12px; }
+  body.app-body .learn-continue-card img { width:48px; height:48px; }
+  body.app-body .learn-continue-card .button { grid-column:2; justify-self:start; }
+  body.app-body .learn-path li a { min-height:60px; }
+}
+
 /* Part 3 follow-up: Home keeps the full Wisbody tools in a compact, usable panel. */
 body.app-body .strategy-dashboard #home-wisbody .wisbody { display:grid; grid-template-columns:108px minmax(0,1fr); gap:14px; margin:0; padding:14px; border-radius:18px; background:#edf1e6; }
 body.app-body .strategy-dashboard #home-wisbody .wisbody-character { align-self:start; text-align:center; }

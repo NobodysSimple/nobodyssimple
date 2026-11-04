@@ -1,5 +1,6 @@
 import {escapeHTML as esc, safeImage} from './core.mjs';
 import {quoteDeckExtended as quotes} from './quote-content.mjs';
+import {tools as toolCatalogue} from './tool-catalog.mjs';
 
 export const DRAFT_KEY='ns-account-tool-drafts-v2', QUOTE_KEY='ns-learn-quote-notes-v1';
 let account=()=>({preferences:window.nsAccountPreferences||{},syncKeys:[],locked:false});
@@ -11,14 +12,26 @@ function download(name,value){const a=document.createElement('a'),url=URL.create
 const status=(root,text)=>{const el=root.querySelector('[data-status]');if(el)el.textContent=text;};
 export function renderStrategyHome(root,posts=[],rail='',options={}){
  root.onclick=null;
- const savedMaps=read('ns-personal-maps-v1',[]);
- const drafts=read(DRAFT_KEY,{});
- const learning=read('ns-account-learning-v2',{});
+ const state=account(),locked=Boolean(state.locked),prefs=state.preferences||{};
+ const savedMaps=locked?[]:read('ns-personal-maps-v1',[]);
+ const drafts=locked?{}:read(DRAFT_KEY,{});
+ const learning=locked||!prefs.trackLearning?{}:read('ns-account-learning-v2',{});
+ const favourites=locked?[]:read('ns-tool-favourites-v1',[]);
  const mapCount=Array.isArray(savedMaps)?savedMaps.length:0;
  const draftCount=drafts&&typeof drafts==='object'?Object.keys(drafts).length:0;
- const lessonCount=learning&&typeof learning==='object'?Object.values(learning).filter(item=>item?.completed).length:0;
- const hasActivity=mapCount+draftCount+lessonCount>0;
- const resume=hasActivity?`<section class="home-resume-card" aria-labelledby="home-resume-title"><span class="home-resume-icon" aria-hidden="true">↗</span><div><p class="eyebrow">Your space</p><h2 id="home-resume-title">Continue privately.</h2><p>${mapCount?`${mapCount} saved map${mapCount===1?'':'s'}`:''}${mapCount&&draftCount?' · ':''}${draftCount?`${draftCount} draft${draftCount===1?'':'s'}`:''}${(mapCount||draftCount)&&lessonCount?' · ':''}${lessonCount?`${lessonCount} completed lesson${lessonCount===1?'':'s'}`:''}</p></div><a class="button secondary" href="#account">Open You →</a></section>`:`<section class="home-resume-card home-first-visit" aria-labelledby="home-resume-title"><span class="home-resume-icon" aria-hidden="true">✳</span><div><p class="eyebrow">Start here</p><h2 id="home-resume-title">Keep what helps.</h2><p>Save a map or favourite when you want to come back to it. Nothing needs to be saved to use the app.</p></div><a class="button secondary" href="#tools">Browse tools →</a></section>`;
+ const favouriteCount=Array.isArray(favourites)?favourites.length:0;
+ const published=new Map(posts.filter(p=>p?.id&&['education','lesson','video'].includes(p.type)).map(p=>[String(p.id),p]));
+ const learningEntries=Object.entries(learning||{}).filter(([id])=>published.has(id));
+ const lessonCount=learningEntries.filter(([,item])=>item?.completed).length;
+ const nextLesson=learningEntries.filter(([,item])=>!item?.completed&&item?.lastOpened).sort(([,a],[,b])=>String(b.lastOpened).localeCompare(String(a.lastOpened)))[0];
+ const nextDraft=Object.entries(drafts||{}).filter(([hash,item])=>/^#[a-z0-9-]+(?:\/[a-z0-9-]+)?$/i.test(hash)&&item?.fields?.length).sort(([,a],[,b])=>String(b.updatedAt||'').localeCompare(String(a.updatedAt||'')))[0];
+ const hasActivity=mapCount+draftCount+lessonCount+favouriteCount+Number(Boolean(nextLesson))>0;
+ const counts=[mapCount&&`${mapCount} saved map${mapCount===1?'':'s'}`,draftCount&&`${draftCount} draft${draftCount===1?'':'s'}`,favouriteCount&&`${favouriteCount} pinned tool${favouriteCount===1?'':'s'}`,lessonCount&&`${lessonCount} completed learning piece${lessonCount===1?'':'s'}`].filter(Boolean).join(' · ');
+ const primary=nextDraft?{href:nextDraft[0],label:'Resume activity →'}:nextLesson?{href:`#post/${encodeURIComponent(nextLesson[0])}`,label:'Continue learning →'}:mapCount?{href:'#account/maps',label:'Open My Maps →'}:favouriteCount?{href:'#tools',label:'Pinned tools →'}:{href:'#learn',label:'Open Learn →'};
+ const pinned=Array.isArray(favourites)?favourites.map(id=>toolCatalogue.find(item=>item.id===id)).filter(Boolean):[];
+ const revisit=prefs.personalise&&pinned.length?pinned[Math.floor(Date.now()/86400000)%pinned.length]:null;
+ const revisitLink=revisit?`<p class="home-resume-revisit">Useful today · <a href="${esc(revisit.href||`#tool/${encodeURIComponent(revisit.id)}`)}">Revisit ${esc(revisit.title)} →</a></p>`:'';
+ const resume=locked?`<section class="home-resume-card" aria-labelledby="home-resume-title"><span class="home-resume-icon" aria-hidden="true">↗</span><div><p class="eyebrow">Your space</p><h2 id="home-resume-title">Saved work is hidden.</h2><p>Confirm your identity in You to open it.</p></div><a class="button secondary" href="#account">Open You →</a></section>`:hasActivity?`<section class="home-resume-card" aria-labelledby="home-resume-title"><span class="home-resume-icon" aria-hidden="true">↗</span><div><p class="eyebrow">Your space</p><h2 id="home-resume-title">Continue when ready.</h2><p>${counts||'A learning page is ready to revisit.'}</p>${revisitLink}</div><div class="home-resume-actions"><a class="button" href="${esc(primary.href)}">${primary.label}</a>${state.signedIn?'<a href="#account">All saved work →</a>':''}</div></section>`:`<section class="home-resume-card home-first-visit" aria-labelledby="home-resume-title"><span class="home-resume-icon" aria-hidden="true">✳</span><div><p class="eyebrow">Start here</p><h2 id="home-resume-title">Keep what helps.</h2><p>Save a map or pin a tool when you want to come back to it. Nothing needs to be saved to use the app.</p></div><a class="button secondary" href="#tools">Browse tools →</a></section>`;
  root.innerHTML=`<div class="wrap strategy-home strategy-dashboard"><section class="home-dashboard-intro" aria-label="Nobody’s Simple"><img src="logo.png" alt="" width="48" height="48"><div><p class="eyebrow">Nobody’s Simple · psychology for real life</p><h1>${hasActivity?'Welcome back.':'A useful next step.'}</h1><p>${hasActivity?'Start where you are, or return to something you chose to keep.':'Notice what is happening, then choose one useful thing to try.'}</p></div></section><section class="strategy-console" aria-label="Help me choose"><div class="strategy-console-illustration" aria-hidden="true"></div><div id="home-navigation-console"></div><nav class="strategy-shortcuts" aria-label="More starting points"><a href="#account/maps">My Maps →</a><a href="#tools">Browse tools →</a><a href="#support">Need a person? Get help →</a></nav></section>${resume}<section id="home-latest" class="home-latest" aria-labelledby="home-latest-title"><div class="home-latest-header"><div><p class="eyebrow">Latest</p><h2 id="home-latest-title">Recent from Nobody’s Simple</h2><p>New writing, videos and conversations from the community.</p></div><div class="home-latest-controls"><button type="button" data-latest-prev aria-label="Previous recent item">←</button><span data-latest-position aria-live="off"></span><button type="button" data-latest-next aria-label="Next recent item">→</button></div></div><div class="home-latest-track" tabindex="0" aria-label="Recent content; swipe or scroll sideways"></div><div class="home-latest-links"><a href="#learn">Explore Learn →</a><a href="#discussion">All discussions →</a></div></section><div id="home-wisbody"></div><section class="home-project-footer" aria-label="Support Nobody’s Simple"><img src="ns-character-star.webp" alt="" width="48" height="48"><div><b>Help keep the project open.</b><small>Tips support the time and tools behind Nobody’s Simple.</small></div><a href="https://ko-fi.com/nobodyssimple" target="_blank" rel="noopener noreferrer">Support on Ko-fi ↗</a></section></div>`;
  // The main decision aid is the first focusable content on mobile; desktop keeps the compact orientation card first.
  const home=root.querySelector('.strategy-home');
@@ -73,9 +86,9 @@ function renderLatest(section,posts,loadDiscussions){
  }).catch(()=>{if(section.isConnected&&!published.length){track.innerHTML='<div class="home-latest-empty"><p>Recent posts are unavailable right now.</p><a href="#learn">Explore Learn →</a><a href="#discussion">Open the discussion board →</a></div>';updatePosition();}});
 }
 export function renderWisbody(root){
- const existingDraft=read(DRAFT_KEY,{})['#wisbody']?.quoteDraft;
+ const existingDraft=account().locked?null:read(DRAFT_KEY,{})['#wisbody']?.quoteDraft;
  let index=Math.max(0,Math.min(quotes.length-1,existingDraft?.index??Math.floor(Math.random()*quotes.length))),theme='all';
- const notes=read(QUOTE_KEY,{}),pending={...(existingDraft?.notes||{})};
+ const notes=account().locked?{}:read(QUOTE_KEY,{}),pending={...(existingDraft?.notes||{})};
  const themes=[...new Set(quotes.map(q=>q.theme))];
  const paint=()=>{
   const q=quotes[index],value=Object.hasOwn(pending,index)?pending[index]:(notes[index]||'');

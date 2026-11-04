@@ -658,9 +658,11 @@ function renderFlatToolLibrary(root) {
   const allItems = libraryItems();
   const favouriteKey = "ns-tool-favourites-v1";
   const recentKey = "ns-tool-recent-v1";
+  const historyKey = () => `ns-tool-history-enabled-v1:${window.nsAccountHistoryScope||'guest'}`;
+  const historyEnabled = () => localStorage.getItem(historyKey()) === 'true';
   const state = { query: "", time: "all", format: "all", view: "groups", selectedGroup: null };
   let favourites = readLibraryList(favouriteKey);
-  let recent = readLibraryList(recentKey);
+  let recent = historyEnabled() ? readLibraryList(recentKey) : [];
   const find = (id) => allItems.find((item) => item.id === id);
   const titleFor = (item) => item.title;
   const libraryIcon = (item) => {
@@ -708,7 +710,7 @@ function renderFlatToolLibrary(root) {
         : state.selectedGroup
           ? `<section class="library-grouped-results"><button type="button" class="library-theme-back" data-library-back>← All themes</button>${groupedMarkup(items.filter((item) => item.collection === state.selectedGroup)) || `<p class="library-empty">No tools match these filters in this theme.</p>`}</section>`
           : themeMarkup(items);
-    root.innerHTML = `<div class="wrap tools-library-page"><section class="tools-library-hero"><div><p class="eyebrow">Browse at your own pace</p><h1>Tools Library</h1><p class="lead">${allItems.length} practical tools. Choose a theme, then open a tool directly from its illustrated list.</p><a class="tools-library-choose" href="#home">Not sure what you need? Use Help Me Choose →</a></div><div class="tools-library-mark" aria-hidden="true"><span>✳</span><i>+</i><span>◌</span></div></section><section class="library-controls"><label class="library-search"><span class="sr-only">Search tools</span><span aria-hidden="true">⌕</span><input id="library-search-input" type="search" value="${esc(state.query)}" placeholder="Search by problem or purpose… e.g. overthinking, sensory, decision"></label><div class="library-filter-row"><div class="library-filter-group"><span>Time</span><div>${[["all", "Any"], ["Quick", "Under 2 min"], ["2–5 min", "2–5 min"], ["Deep dive", "Deep dive"]].map(([value, label]) => `<button type="button" class="chip ${state.time === value ? "active" : ""}" data-library-time="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group"><span>Format</span><div>${[["all", "All"], ["Reflection", "Reflection"], ["Interactive", "Interactive"]].map(([value, label]) => `<button type="button" class="chip ${state.format === value ? "active" : ""}" data-library-format="${esc(value)}">${esc(label)}</button>`).join("")}</div></div></div><div class="library-view-row"><span>View</span><button type="button" class="chip ${state.view === "groups" ? "active" : ""}" data-library-view="groups">Themes</button><button type="button" class="chip ${state.view === "directory" ? "active" : ""}" data-library-view="directory">Compact A–Z</button><span class="library-view-note">Pin a tool with ◇</span></div></section>${utilityMarkup()}<div id="library-content">${body}</div><section class="library-footer-card"><div><p class="eyebrow">Keep what helps</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Saving and optional syncing follow your Account settings.</p></div><a class="button" href="#account/maps">Open My Maps →</a></section></div>`;
+    root.innerHTML = `<div class="wrap tools-library-page"><section class="tools-library-hero"><div><p class="eyebrow">Browse at your own pace</p><h1>Tools Library</h1><p class="lead">${allItems.length} practical tools. Choose a theme, then open a tool directly from its illustrated list.</p><a class="tools-library-choose" href="#home">Not sure what you need? Use Help Me Choose →</a></div><div class="tools-library-mark" aria-hidden="true"><span>✳</span><i>+</i><span>◌</span></div></section><section class="library-controls"><label class="library-search"><span class="sr-only">Search tools</span><span aria-hidden="true">⌕</span><input id="library-search-input" type="search" value="${esc(state.query)}" placeholder="Search by problem or purpose… e.g. overthinking, sensory, decision"></label><div class="library-filter-row"><div class="library-filter-group"><span>Time</span><div>${[["all", "Any"], ["Quick", "Under 2 min"], ["2–5 min", "2–5 min"], ["Deep dive", "Deep dive"]].map(([value, label]) => `<button type="button" class="chip ${state.time === value ? "active" : ""}" data-library-time="${esc(value)}">${esc(label)}</button>`).join("")}</div></div><div class="library-filter-group"><span>Format</span><div>${[["all", "All"], ["Reflection", "Reflection"], ["Interactive", "Interactive"]].map(([value, label]) => `<button type="button" class="chip ${state.format === value ? "active" : ""}" data-library-format="${esc(value)}">${esc(label)}</button>`).join("")}</div></div></div><div class="library-view-row"><span>View</span><button type="button" class="chip ${state.view === "groups" ? "active" : ""}" data-library-view="groups">Themes</button><button type="button" class="chip ${state.view === "directory" ? "active" : ""}" data-library-view="directory">Compact A–Z</button><span class="library-view-note">Pin a tool with ◇</span></div><label class="library-history-optin"><input type="checkbox" data-library-history ${historyEnabled()?'checked':''}> Keep recent tools on this device</label></section>${utilityMarkup()}<div id="library-content">${body}</div><section class="library-footer-card"><div><p class="eyebrow">Keep what helps</p><h2>My Maps</h2><p>Revisit observations and patterns you chose to keep. Saving and optional syncing follow your Account settings.</p></div><a class="button" href="#account/maps">Open My Maps →</a></section></div>`;
     root.querySelector("#library-search-input")?.addEventListener("input", (event) => {
       state.query = event.target.value;
       render();
@@ -717,6 +719,14 @@ function renderFlatToolLibrary(root) {
         if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); }
       });
     });
+  };
+  root.onchange = (event) => {
+    if (event.target.matches('[data-library-history]')) {
+      localStorage.setItem(historyKey(), event.target.checked ? 'true' : 'false');
+      recent = event.target.checked ? readLibraryList(recentKey) : [];
+      render();
+      root.querySelector('[data-library-history]')?.focus();
+    }
   };
   root.onclick = (event) => {
     const theme = event.target.closest("[data-library-theme-card]");
@@ -733,9 +743,11 @@ function renderFlatToolLibrary(root) {
     }
     const open = event.target.closest("[data-library-open]");
     if (open) {
-      const id = open.dataset.libraryOpen;
-      recent = [id, ...recent.filter((item) => item !== id)].slice(0, 8);
-      writeLibraryList(recentKey, recent);
+      if (historyEnabled()) {
+        const id = open.dataset.libraryOpen;
+        recent = [id, ...recent.filter((item) => item !== id)].slice(0, 8);
+        writeLibraryList(recentKey, recent);
+      }
       return;
     }
     const clear = event.target.closest("[data-library-clear]");

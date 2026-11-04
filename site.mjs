@@ -1,7 +1,7 @@
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {createCommunityClient} from './community-data.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
-import {configureStrategy, renderWisbody} from './strategy.mjs';
+import {configureStrategy, renderWisbody, read as readStrategy} from './strategy.mjs';
 import { accountReady, configureAccountHost, renderAccount, renderPublicProfile, enhanceAccountRoute, accountState, communityConnection, communitySignIn, communityConfirmIdentity } from './accounts.mjs';
 import { tools as accountTools } from './tool-catalog.mjs';
 import { curriculum, emotions, questions } from "./data.mjs";
@@ -234,6 +234,16 @@ function wisbodyPage() {
 function renderLearningHub(root) {
   const s = libraryState;
   const view = ["crash", "courses", "videos", "audios", "blog", "stories", "debates"].includes(s.view) ? s.view : "home";
+  const account=accountState(),track=account.preferences?.trackLearning&&!account.locked;
+  // Explicit bookmarks/completions remain visible even if automatic page history is off.
+  const progress=account.locked?{}:readStrategy('ns-account-learning-v2',{});
+  const available=posts.filter((post)=>post?.id&&['education','lesson','video'].includes(post.type));
+  const byId=new Map(available.map((post)=>[String(post.id),post]));
+  const continueEntry=track?Object.entries(progress||{}).filter(([id,p])=>byId.has(id)&&!p?.completed&&p?.lastOpened).sort(([,a],[,b])=>String(b.lastOpened).localeCompare(String(a.lastOpened)))[0]:null;
+  const modulePieces=(module)=>available.filter((post)=>(post.modules||[]).includes(module.id)||(post.weeks||[]).some((id)=>curriculum.weeks.find((week)=>week.id===id)?.module===module.id)).sort((a,b)=>{
+    const first=(post)=>Math.min(...(post.weeks||[]).filter((id)=>curriculum.weeks.some((week)=>week.id===id&&week.module===module.id)),Infinity);
+    return first(a)-first(b)||String(a.publishedAt||a.updatedAt||'').localeCompare(String(b.publishedAt||b.updatedAt||''));
+  });
   const videos = posts.filter((post) => post.type === "video");
   const blogs = posts.filter((post) => post.type === "blog");
   const searchItems = (items) => {
@@ -248,7 +258,8 @@ function renderLearningHub(root) {
   };
   const moduleCards = visibleCurriculum.modules.map((module) => {
     const quarter = visibleCurriculum.quarters.find((item) => item.id === module.quarter);
-    return `<article class="learn-module-card"><p class="eyebrow">Module ${String(module.id).padStart(2, "0")} · ${esc(quarter?.name || "Course")}</p><h3>${esc(module.title)}</h3><p>${esc(module.question)}</p><span class="badge">In development</span></article>`;
+    const pieces=modulePieces(module),done=pieces.filter((post)=>progress?.[post.id]?.completed).length;
+    return `<article class="learn-module-card"><p class="eyebrow">Module ${String(module.id).padStart(2, "0")} · ${esc(quarter?.name || "Course")}</p><h3>${esc(module.title)}</h3><p>${esc(module.question)}</p>${pieces.length?`<details class="learn-path"><summary>${pieces.length} published piece${pieces.length===1?'':'s'}${done?` · ${done} marked complete`:''} · View path</summary><p class="fine">Read in order or open any piece. Completion records learning activity, not wellbeing.</p><ol>${pieces.map((post,index)=>{const record=progress?.[post.id],label=record?.completed?'Completed':track&&record?.lastOpened?'Continue':'Available';return `<li><a href="#post/${encodeURIComponent(post.id)}"><span class="learn-path-step" aria-hidden="true">${record?.completed?'✓':index+1}</span><span><strong>${esc(post.title)}</strong><small>${esc(typeLabel[post.type]||'Learning')} · ${label}</small></span><span aria-hidden="true">→</span></a></li>`;}).join('')}</ol></details>`:'<span class="badge">In development</span>'}</article>`;
   }).join("");
   const doors = [
     ["crash", "Crash Courses", "Mini courses", "Short, focused lessons across the kinds of problems people face in real life. Each piece is designed to take five minutes or less.", "↯", "learn-door-crash"],
@@ -262,7 +273,7 @@ function renderLearningHub(root) {
   const doorMarkup = doors.map(([id, title, kicker, description, icon, className]) => `<button type="button" class="learn-door-card ${className}" data-learn-view="${id}"><span class="learn-door-icon" aria-hidden="true">${icon}</span><span class="eyebrow">${kicker}</span><h2>${title}</h2><p>${description}</p><strong>Open ${title} →</strong></button>`).join("");
   let content = "";
   if (view === "home") {
-    content = `<section class="learn-door-grid" aria-label="Learn sections">${doorMarkup}</section>`;
+    content = `${continueEntry?`<section class="learn-continue-card" aria-label="Continue learning"><img src="ns-character-reading.webp" alt="" loading="lazy"><div><p class="eyebrow">Pick up a published piece</p><h3>${esc(byId.get(continueEntry[0]).title)}</h3><p>Your place is saved on this device.</p></div><a class="button" href="#post/${encodeURIComponent(continueEntry[0])}">Continue →</a></section>`:''}<section class="learn-door-grid" aria-label="Learn sections">${doorMarkup}</section>`;
   } else if (view === "crash") {
     const query = String(s.query || "").trim().toLowerCase();
     const domains = crashCourseTopics.map((domain) => ({ ...domain, topics: domain.topics.filter((topic) => !query || `${domain.title} ${topic}`.toLowerCase().includes(query)) })).filter((domain) => domain.topics.length || !query);
@@ -272,7 +283,8 @@ function renderLearningHub(root) {
     const domainMarkup = domains.map((domain) => `<article class="learn-crash-domain"><div class="learn-crash-domain-head"><span class="learn-crash-number">${String(crashCourseTopics.findIndex((item) => item.id === domain.id) + 1).padStart(2, "0")}</span><div><p class="eyebrow">${domain.topics.length} topic${domain.topics.length === 1 ? "" : "s"} · swipe to browse</p><h3>${esc(domain.title)}</h3></div></div><div class="learn-crash-rail" tabindex="0" aria-label="${esc(domain.title)} topics">${domain.topics.map((topic, index) => topicCard(topic, index)).join("")}</div></article>`).join("");
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-crash"><div><p class="eyebrow">Topic catalogue · lessons coming later</p><h2>Crash Courses</h2><p>Short, practical explanations organised around real problems people encounter. This is the topic map for future 2–5 minute lessons; there is no lesson content here yet.</p></div><span class="learn-section-icon">↯</span></div><label class="learn-search">Search topics<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Try anxiety, boundaries, attention…"></label>${emergencyMarkup}<div class="learn-crash-domain-grid">${domainMarkup || `<p class="empty">No topics match that search yet.</p>`}</div></section>`;
   } else if (view === "courses") {
-    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-courses"><div><p class="eyebrow">Four quarters · twelve modules</p><h2>Nobody’s Simple Courses</h2><p>Courses are in development. These topics are a preview; lessons are not yet available.</p></div><span class="learn-section-icon">▤</span></div><div class="learn-quarter-strip">${visibleCurriculum.quarters.map((quarter) => `<div><span>${quarter.id}</span><strong>${esc(quarter.name)}</strong><small>${esc(quarter.subtitle)}</small></div>`).join("")}</div><div class="learn-module-grid">${moduleCards}</div></section>`;
+    const pathCount=visibleCurriculum.modules.filter((module)=>modulePieces(module).length).length;
+    content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-courses"><div><p class="eyebrow">Four quarters · twelve modules</p><h2>Nobody’s Simple Courses</h2><p>${pathCount?`${pathCount} module${pathCount===1?' has':'s have'} published learning to explore. The remaining modules are previews. Open any available piece; no lessons are locked.`:'Courses are in development. These topics are a preview; lessons are not yet available.'}</p></div><span class="learn-section-icon">▤</span></div><div class="learn-quarter-strip">${visibleCurriculum.quarters.map((quarter) => `<div><span>${quarter.id}</span><strong>${esc(quarter.name)}</strong><small>${esc(quarter.subtitle)}</small></div>`).join("")}</div><div class="learn-module-grid">${moduleCards}</div>${account.signedIn?`<p class="fine">${track?'Learning history is private to your saved space.':'Automatically remember pages you open in You → Learning.'} <a href="#account/learning">Learning settings →</a></p>`:''}</section>`;
   } else if (view === "videos") {
     const items = searchItems(videos);
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-videos"><div><p class="eyebrow">YouTube · watch and think</p><h2>Videos</h2><p>Follow the channel’s conversations and ideas from inside the same learning space.</p></div><span class="learn-section-icon">▷</span></div><label class="learn-search">Search videos<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a video…"></label>${resourceGrid(items, "No videos have been published here yet. New YouTube posts will appear automatically.")}</section>`;
