@@ -40,6 +40,7 @@ import { renderPersonalityTest } from "./personality-test.mjs";
 import { renderBigFive, renderQuestionnaires, renderSystemsQuestionnaire } from "./questionnaires.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderToolDiscovery } from './ns-tool-library.mjs';
+import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
@@ -227,7 +228,9 @@ function homePage({learningView=null,scrollTo=null,wizardOnly=false}={}) {
 }
 function library() {
   main.innerHTML = '<div class="wrap standalone-learn"><section id="home-learning" aria-label="Learn with Nobody’s Simple"></section></div>';
-  renderLearningHub(main.querySelector('#home-learning'));
+  const root=main.querySelector('#home-learning');
+  if(libraryState.view === 'home') renderNSLearnHub(root,{posts,account:accountState()});
+  else renderLearningHub(root);
 }
 function wisbodyPage() {
   main.innerHTML = '<div class="wrap wisbody-page"><a class="back-link" href="#home">← Home</a><div id="wisbody-full"></div></div>';
@@ -305,7 +308,12 @@ function renderLearningHub(root) {
     content = `<section class="learn-section-panel"><div class="learn-section-heading learn-door-blog"><div><p class="eyebrow">Longer notes · arguments · reflections</p><h2>Blog</h2><p>Essays, arguments and reflections to explore at your own pace.</p></div><span class="learn-section-icon">Aa</span></div><label class="learn-search">Search the blog<input id="learn-search" type="search" value="${esc(s.query)}" placeholder="Find a thought…"></label>${resourceGrid(items, "No blog posts have been published yet. New writing will appear here automatically.")}</section>`;
   }
   root.innerHTML = `<div class="learn-page"><section class="learn-page-hero"><div><p class="eyebrow">Learn · context without flattening</p><h2 id="home-learning-title">Learn with Nobody’s Simple.</h2><p class="lead">Read, watch, reflect and build understanding at the pace that fits. Choose one shelf; you do not need to commit to the whole library.</p></div><div class="learn-page-mark" aria-hidden="true">✳</div></section>${view !== "home" ? `<button type="button" class="learn-back" data-learn-view="home">← All Learn sections</button>` : ""}${loadError ? `<p class="notice error">${esc(loadError)}</p>` : ""}<div id="learn-content">${content}</div></div>`;
-  root.querySelectorAll("[data-learn-view]").forEach((button) => button.addEventListener("click", () => { s.view = button.dataset.learnView; s.query = ""; renderLearningHub(root); const heading=root.querySelector("#home-learning-title"); heading.setAttribute("tabindex","-1"); heading.focus({preventScroll:true}); }));
+  root.querySelectorAll("[data-learn-view]").forEach((button) => button.addEventListener("click", () => {
+    const view=button.dataset.learnView;
+    const next=view==='home'?'#learn':`#learn/${view}`;
+    if(location.hash!==next) location.hash=next;
+    else {s.view=view;s.query='';renderLearningHub(root);const heading=root.querySelector('#home-learning-title');heading?.setAttribute('tabindex','-1');heading?.focus({preventScroll:true});}
+  }));
   const search = root.querySelector("#learn-search");
   if (search) search.addEventListener("input", (event) => { s.query = event.target.value; renderLearningHub(root); requestAnimationFrame(() => { const input = root.querySelector("#learn-search"); input?.focus(); input?.setSelectionRange(input.value.length, input.value.length); }); });
 }
@@ -807,7 +815,9 @@ function route() {
   cleanupToolDiscovery=()=>{};
   cleanupCommunity();
   main.onclick = null;
-  const [name, id] = location.hash.slice(1).split("/");
+  const routeParts = location.hash.slice(1).split("/");
+  const [name,id] = routeParts;
+  const safeRoutePart = raw => {try{return decodeURIComponent(raw||'');}catch{return '';}};
   if (name === "maps" || (name === "tool" && id === "maps")) { location.replace("#account/maps"); return; }
   const currentName = name || "home";
   if(name === "routes" || name === "route") { location.replace("#home"); return; }
@@ -841,8 +851,16 @@ function route() {
         else {libraryState.view=id||"home";libraryState.query="";library();}
       },
       learn: () => {
-        if (id) libraryState.view = id;
-        library();
+        if (id === 'lesson') {
+          main.innerHTML='<div class="wrap standalone-learn"><section id="home-learning" aria-label="Interactive learning lesson"></section></div>';
+          renderNSLesson(main.querySelector('#home-learning'),safeRoutePart(routeParts.length===3?routeParts[2]:''),{account:accountState()});
+        } else if (id === 'path') {
+          main.innerHTML='<div class="wrap standalone-learn"><section id="home-learning" aria-label="Learning path"></section></div>';
+          renderNSLearnPath(main.querySelector('#home-learning'),safeRoutePart(routeParts.length===3?routeParts[2]:''),{account:accountState()});
+        } else {
+          libraryState.view=id||'home';
+          library();
+        }
       },
       blog,
       writing: blog,
@@ -890,7 +908,9 @@ function route() {
   enhanceAccountRoute(main, currentName, decodeURIComponent(id || ""));
   window.scrollTo(0, 0);
   const title =
-    name === "navigate"
+    name === "learn" && (id === "lesson" || id === "path")
+      ? (main.querySelector("h1")?.textContent?.trim() || "Learn")
+      : name === "navigate"
       ? "Find your next step"
       : name === "help"
       ? "Find your next step"

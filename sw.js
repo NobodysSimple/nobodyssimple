@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v125-stage3-tools";
+const CACHE = "nobodyssimple-v126-stage4-learn";
 const SHELL = [
   "./",
   "index.html",
@@ -10,6 +10,9 @@ const SHELL = [
   "ns-tool-library.css",
   "ns-tool-library.mjs",
   "app-design.mjs",
+  "ns-learn.css",
+  "ns-learn.mjs",
+  "ns-lessons.mjs",
   "ns-home-hero.webp",
   "ns-home-console.webp",
   "ns-character-base.webp",
