@@ -1301,3 +1301,95 @@ html[data-theme=dark] body.app-body .learn-available-shelf,html[data-theme=dark]
 html[data-theme=dark] body.app-body .learn-available-shelf :is(h3,p,a,strong,small) { color:#f8f3e8!important; }
 html[data-theme=dark] body.app-body .learn-available-icon { background:#416654; }
 @media (max-width:620px) { body.app-body .learn-available-shelf { padding:14px; } body.app-body .learn-available-list a { min-height:64px; } }
+
+/* Debug pass: keep one Learn tile illustration and prevent narrow mobile text columns. */
+body.app-body .learn-door-card::before,
+body.app-body .learn-door-card::after {
+  content:none !important;
+  display:none !important;
+  background:none !important;
+}
+body.app-body .learn-door-card .learn-door-icon {
+  position:relative;
+  z-index:1;
+  flex:none;
+}
+body.app-body .pomodoro-task-copy {
+  min-width:0 !important;
+  width:100%;
+  max-width:100%;
+  writing-mode:horizontal-tb !important;
+  white-space:normal !important;
+  overflow-wrap:normal;
+  word-break:normal;
+}
+body.app-body .pomodoro-task-copy :is(strong,p,small) {
+  display:block;
+  min-width:0;
+  max-width:100%;
+  writing-mode:horizontal-tb !important;
+  white-space:normal !important;
+  overflow-wrap:anywhere;
+  word-break:normal;
+}
+@media (max-width:620px) {
+  body.app-body .pomodoro-task {
+    grid-template-columns:24px minmax(0,1fr) !important;
+    min-width:0;
+    width:100%;
+    align-items:start;
+  }
+  body.app-body .pomodoro-task > input { grid-column:1; }
+  body.app-body .pomodoro-task-copy { grid-column:2; }
+  body.app-body .pomodoro-task-controls {
+    grid-column:2;
+    min-width:0;
+    max-width:100%;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+  }
+  body.app-body .pomodoro-task-controls button { min-width:44px; }
+}
+@media (max-width:640px) {
+  body.app-body .strategy-dashboard #home-wisbody .wisbody {
+    grid-template-columns:minmax(0,1fr) !important;
+    width:100%;
+    min-width:0;
+  }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-character,
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble {
+    min-width:0;
+    width:100%;
+    max-width:100%;
+  }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-character {
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:10px;
+    text-align:left;
+  }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-character img {
+    flex:none;
+    width:58px;
+    height:72px;
+  }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble {
+    overflow:visible;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-bubble * {
+    min-width:0;
+    max-width:100%;
+  }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-filter {
+    width:100%;
+    min-width:0;
+  }
+  body.app-body .strategy-dashboard #home-wisbody .wisbody-controls {
+    width:100%;
+    min-width:0;
+    flex-wrap:wrap;
+  }
+}
