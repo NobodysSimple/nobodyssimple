@@ -1,176 +1,91 @@
-const CACHE = "nobodyssimple-v128-stage7-integration";
-const SHELL = [
-  "./",
-  "index.html",
-  "logo.png",
-  "app-design.css",
-  "ns-shell.css",
-  "ns-shell.mjs",
-  "ns-home.css",
-  "ns-tool-library.css",
-  "ns-tool-library.mjs",
-  "app-design.mjs",
-  "ns-integrations.mjs", "ns-integrations.css",
-  "ns-learn.css",
-  "ns-learn.mjs",
-  "ns-lessons.mjs",
-  "ns-life-lab.css",
-  "ns-life-lab.mjs",
-  "ns-field-guide-data.mjs",
-  "ns-field-guide.mjs",
-  "ns-field-guide.css",
-  "ns-home-hero.webp",
-  "ns-home-console.webp",
-  "ns-character-base.webp",
-  "ns-character-building.webp",
-  "ns-character-checklist.webp",
-  "ns-character-compass.webp",
-  "ns-character-confused.webp",
-  "ns-character-drawing.webp",
-  "ns-character-friends.webp",
-  "ns-character-guide.webp",
-  "ns-character-helping.webp",
-  "ns-character-hiking.webp",
-  "ns-character-lantern.webp",
-  "ns-character-mapping.webp",
-  "ns-character-meditate.webp",
-  "ns-character-message.webp",
-  "ns-character-moon.webp",
-  "ns-character-plant.webp",
-  "ns-character-radio.webp",
-  "ns-character-reading.webp",
-  "ns-character-shield.webp",
-  "ns-character-sitting.webp",
-  "ns-character-solving.webp",
-  "ns-character-star.webp",
-  "ns-character-teaching.webp",
-  "ns-character-thinking.webp",
-  "ns-character-waiting.webp",
-  "ns-character-watering.webp",
-  "ns-character-wave.webp",
-  "ns-character-writing.webp",
-  "ns-landscape-calm.webp",
-  "ns-landscape-choose.webp",
-  "ns-landscape-clouds.webp",
-  "ns-landscape-desk.webp",
-  "ns-landscape-feel.webp",
-  "ns-landscape-fireside.webp",
-  "ns-landscape-forest.webp",
-  "ns-landscape-identity.webp",
-  "ns-landscape-learn.webp",
-  "ns-landscape-mountains.webp",
-  "ns-landscape-night.webp",
-  "ns-landscape-path.webp",
-  "ns-landscape-relate.webp",
-  "ns-landscape-sunset.webp",
-  "ns-landscape-think.webp",
-  "ns-prop-backpack.webp",
-  "ns-prop-book.webp",
-  "ns-prop-cup.webp",
-  "ns-prop-headphones.webp",
-  "ns-prop-journal.webp",
-  "ns-prop-lantern.webp",
-  "ns-prop-leaf.webp",
-  "ns-prop-notebook.webp",
-  "ns-prop-pencil.webp",
-  "ns-prop-plant.webp",
-  "ns-prop-search.webp",
-  "ns-prop-signpost.webp",
-
-  "nd-play.html",
-  "nd-play.css",
-  "nd-play-v4.mjs",
-  "styles.css",
-  "community-ui.mjs", "community-data.mjs", "community-policy.mjs", "community.css",
-  "site.mjs", "strategy.mjs", "tool-guidance.mjs", "strategy.css", "media/strategy/wisbody.png",
-  "accounts.mjs", "account-config.mjs", "account-free.mjs", "account-policy.mjs", "account-storage.mjs", "account-sync.mjs", "account-i18n.mjs", "account.css", "account-play-bridge.mjs",
-  "media/console/nobody-base.png", "media/console/nobody-comparing.png", "media/console/nobody-waiting.png", "media/console/nobody-positing.png",
-  "media/avatars/base.png", "media/avatars/affirmed.png", "media/avatars/bowing.png", "media/avatars/dancing.png", "media/avatars/drawing.png", "media/avatars/excited-wave.png", "media/avatars/excited.png", "media/avatars/frolicking.png", "media/avatars/peering.png", "media/avatars/thinking.png", "media/avatars/reading.png", "media/avatars/running.png", "media/avatars/sitting.png", "media/avatars/still.png", "media/avatars/sulking.png", "media/avatars/waiting.png", "media/avatars/waltzing.png", "media/avatars/yippie.png",
-  "quote-content.mjs",
-  "features.mjs",
-  "sensory-recipe.mjs",
-  "social-battery.mjs",
-  "load-balancer.mjs",
-  "masking-map.mjs",
-  "interactive-tools.mjs",
-  "simplyfocus.mjs",
-  "personality-test.mjs",
-  "questionnaires.mjs",
-  "life-navigation.mjs",
-  "referrals.mjs",
-  "personality-map.png",
-  "tool-catalog.mjs",
-  "emotion-profiles.mjs",
-  "core.mjs",
-  "data.mjs",
-  "content.json",
-  "manifest.webmanifest",
-  "icon-192.png",
-  "icon-512.png",
-  "icon-192-maskable.png",
-  "icon-512-maskable.png",
-  "apple-touch-icon.png",
-  "favicon-96.png",
-  "drew-profile.png",
-  "kofi-profile.png",
-  "half-banner.png",
-  "simplyfocus-rain.mp3", "simplyfocus-fire.mp3", "simplyfocus-wind.mp3", "simplyfocus-ocean.mp3", "simplyfocus-bowl.mp3", "simplyfocus-pink.mp3", "simplyfocus-trees.mp3", "simplyfocus-lofi.mp3", "simplyfocus-focus.mp3", "simplyfocus-pomodoro-bell.mp3", "simplyfocus-task-tick.mp3",
+/* Nobody's Simple — Stage 8 service worker.
+ * A small, reliable install cache and deliberate offline fallback. Public
+ * static assets may be cached; Firebase requests and personal data never are.
+ * New assets are cached when visited rather than forcing a large precache.
+ */
+const CACHE = 'nobodyssimple-release-v129';
+const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
+const SCOPE = self.registration.scope;
+const OFFLINE = new URL('offline.html', SCOPE).href;
+const INSTALL_ESSENTIAL = ['offline.html'];
+const INSTALL_OPTIONAL = [
+  'index.html', 'logo.png', 'manifest.webmanifest',
+  'styles.css', 'account.css', 'strategy.css', 'community.css',
+  'app-design.css', 'ns-shell.css', 'ns-home.css',
+  'ns-tool-library.css', 'ns-learn.css', 'ns-life-lab.css',
+  'ns-field-guide.css', 'ns-integrations.css'
 ];
-const SAFE = new Set(
-  SHELL.map((path) => new URL(path, self.registration.scope).pathname).concat(
-    ["logo.png", "banner.png", "half-banner.png", "characters.png", "characters2.png"].map(
-      (path) => new URL(path, self.registration.scope).pathname,
-    ),
-  ),
-);
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches
-      .open(CACHE)
-      .then((cache) => cache.addAll(SHELL))
-      .then(() => self.skipWaiting()),
-  );
+const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
+const SAFE_QUERY = /^\?v=[a-z0-9._-]{1,40}$/i;
+const EXCLUDED_PATH = /(?:^|\/)(?:admin|staff)(?:\.html|\/|$)/i;
+const isOwnCache = name => OWN_CACHE_PREFIXES.some(prefix => name.startsWith(prefix));
+const safePublicRequest = (request, url) => {
+  if (request.method !== 'GET' || url.origin !== self.location.origin) return false;
+  if (!url.href.startsWith(SCOPE) || request.headers.has('authorization')) return false;
+  if (EXCLUDED_PATH.test(url.pathname)) return false;
+  if (url.search && !SAFE_QUERY.test(url.search)) return false;
+  if (url.pathname.endsWith('/content.json')) return true; // Published site content only.
+  return PUBLIC_EXTENSION.test(url.pathname);
+};
+const cacheable = response => {
+  if (!response || response.status !== 200 || response.type === 'opaque') return false;
+  const policy = response.headers.get('cache-control') || '';
+  return !/\b(?:private|no-store)\b/i.test(policy) && !response.headers.has('set-cookie');
+};
+
+self.addEventListener('install', event => {
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE);
+    // The offline fallback is the one critical resource. Optional network
+    // errors must not abort installing an otherwise functional update.
+    for (const path of INSTALL_ESSENTIAL) await cache.add(new URL(path, SCOPE).href);
+    await Promise.allSettled(INSTALL_OPTIONAL.map(path => cache.add(new URL(path, SCOPE).href)));
+    await self.skipWaiting();
+  })());
 });
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches
-      .keys()
-      .then((keys) =>
-        Promise.all(
-          keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)),
-        ),
-      )
-      .then(() => self.clients.claim()),
-  );
+
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const names = await caches.keys();
+    await Promise.all(names.filter(name => name !== CACHE && isOwnCache(name)).map(name => caches.delete(name)));
+    await self.clients.claim();
+  })());
 });
-self.addEventListener("fetch", (event) => {
-  const request = event.request,
-    url = new URL(request.url);
-  if (
-    request.method !== "GET" ||
-    url.origin !== self.location.origin ||
-    !SAFE.has(url.pathname) ||
-    url.search ||
-    request.headers.has("authorization")
-  )
+
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  const url = new URL(request.url);
+  if (request.method !== 'GET' || url.origin !== self.location.origin || !url.href.startsWith(SCOPE)) return;
+
+  if (request.mode === 'navigate') {
+    event.respondWith((async () => {
+      try {
+        return await fetch(request); // Current pages, never an accidentally stale app shell.
+      } catch {
+        const cache = await caches.open(CACHE);
+        return await cache.match(OFFLINE) || new Response('You are offline. Reconnect and reload.', {
+          status: 503, headers: {'Content-Type':'text/plain; charset=utf-8'}
+        });
+      }
+    })());
     return;
-  event.respondWith(
-    fetch(request)
-      .then((response) => {
-        if (response.ok) {
-          const copy = response.clone();
-          event.waitUntil(
-            caches.open(CACHE).then((cache) => cache.put(request, copy)),
-          );
-        }
-        return response;
-      })
-      .catch(
-        async () =>
-          (await caches.match(request)) ||
-          new Response("Offline: this resource has not been saved yet.", {
-            status: 503,
-          }),
-      ),
-  );
+  }
+  if (!safePublicRequest(request, url)) return; // Auth, API and unknown paths bypass caches.
+
+  // Ignore an approved version query in the cache key, not in the HTTP fetch.
+  const key = new URL(url.pathname, url.origin).href;
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE);
+    try {
+      const response = await fetch(request);
+      if (cacheable(response)) {
+        event.waitUntil(cache.put(key, response.clone()).catch(() => {}));
+      }
+      return response;
+    } catch {
+      return await cache.match(key) || new Response('Offline: this file is not available yet.', {
+        status: 503, headers: {'Content-Type':'text/plain; charset=utf-8'}
+      });
+    }
+  })());
 });

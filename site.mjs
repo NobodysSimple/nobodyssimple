@@ -873,12 +873,12 @@ function route() {
         cleanupToolDiscovery=renderToolDiscovery(main,id||'');
       },
       tool: () => {
-        const toolId = decodeURIComponent(id || "");
+        const toolId = safeRoutePart(id);
         renderTool(main, toolId);
         enhanceToolGuide(main, toolId);
       },
-      play: () => renderInteractiveTool(main, decodeURIComponent(id || "")),
-      guided: () => renderLifeNavigation(main, decodeURIComponent(id || "")),
+      play: () => renderInteractiveTool(main, safeRoutePart(id)),
+      guided: () => renderLifeNavigation(main, safeRoutePart(id)),
       team: () => renderTeam(main),
       simplyfocus: () => renderSimplyFocus(main),
       "stim-space": renderStimSpace,
@@ -896,9 +896,9 @@ function route() {
       volunteer: () => renderCommunity(main, "volunteer"),
       wisbody: wisbodyPage,
       account: () => renderAccount(main, id || "home"),
-      profile: () => renderMemberProfile(main, decodeURIComponent(id || "")),
-      discussion: () => renderDiscussion(main, decodeURIComponent(id || "")),
-      messages: () => renderMessages(main, decodeURIComponent(id || "")),
+      profile: () => renderMemberProfile(main, safeRoutePart(id)),
+      discussion: () => renderDiscussion(main, safeRoutePart(id)),
+      messages: () => renderMessages(main, safeRoutePart(id)),
       "discussion-moderation": () => renderDiscussionModeration(main),
       maps: () => renderAccount(main, "maps"),
       support: () => { homePage({learningView:"home"}); openSupport(); },
@@ -907,10 +907,10 @@ function route() {
         libraryState.query = "";
         library();
       },
-      post: () => post(decodeURIComponent(id || "")),
+      post: () => post(safeRoutePart(id)),
     })[name] || (() => homePage({learningView:"home"}))
   )();
-  enhanceAccountRoute(main, currentName, decodeURIComponent(id || ""));
+  enhanceAccountRoute(main, currentName, safeRoutePart(id));
   window.scrollTo(0, 0);
   const title =
     name === "learn" && (id === "lesson" || id === "path")

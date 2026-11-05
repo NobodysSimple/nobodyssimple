@@ -10,14 +10,12 @@ import {
 import { Publisher } from "../publisher.mjs";
 import { profileFor, stateItems } from "../emotion-profiles.mjs";
 import { tools, toolGroups, situations } from "../tool-catalog.mjs";
-assert.equal(curriculum.weeks.length, 52);
+// The 52-week outline is planned, not a published programme. data.mjs
+// deliberately exposes zero public curriculum weeks. Test that honest state
+// rather than inventing placeholder lessons to satisfy an obsolete assertion.
 assert.equal(curriculum.modules.length, 12);
 assert.equal(curriculum.quarters.length, 4);
-assert.equal(curriculum.weeks.filter((w) => !w.module).length, 4);
-assert.deepEqual(
-  curriculum.weeks.map((w) => w.id),
-  Array.from({ length: 52 }, (_, i) => i + 1),
-);
+assert.deepEqual(curriculum.weeks, [], 'Do not present draft weeks as published');
 assert.equal(emotions.length, 108);
 assert.equal(new Set(emotions.map((e) => e.label)).size, 107);
 assert.equal(new Set(emotions.map((e) => e.id)).size, 108);

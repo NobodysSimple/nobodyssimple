@@ -10,7 +10,7 @@ test('brand, staff, profanity and common obfuscation rejected; ordinary names pa
 });
 test('14 day cooldown boundary and safe profile/settings',()=>{
  const now=Date.now();assert.ok(canRename(null,now));assert.ok(!canRename(now-COOLDOWN_MS+1,now));assert.ok(canRename(now-COOLDOWN_MS,now));
- const s=cleanSettings({theme:'bogus',language:'es',textScale:1000,sound:'true',sensitiveLock:true});assert.equal(s.theme,'system');assert.equal(s.language,'es');assert.equal(s.textScale,100);assert.equal(s.sound,false);assert.equal(s.sensitiveLock,true);
+ const s=cleanSettings({theme:'bogus',language:'es',textScale:1000,sound:'true',sensitiveLock:true});assert.equal(s.theme,'light');assert.equal(cleanSettings({theme:'system'}).theme,'system');assert.equal(s.language,'es');assert.equal(s.textScale,100);assert.equal(s.sound,true);assert.equal(cleanSettings({sound:false}).sound,false);assert.equal(s.sensitiveLock,true);
  assert.throws(()=>safeProfile({bio:'https://spam.test'}));assert.equal(safeProfile({avatarId:'../../secret'}).avatarId,'base');assert.equal(safeProfile({avatarData:'data:image/svg+xml;base64,x'}).avatarData,'');
  assert.ok(shouldConflict(1,2));assert.ok(!shouldConflict(0,undefined));assert.ok(withinSize('x'.repeat(800000)));assert.ok(!withinSize('😀'.repeat(200001)));
 });
