@@ -1,0 +1,11 @@
+{
+  "baseline": "a05d5b656a539360345c470b723776970adfe2ff",
+  "method": "Supported cloud browser against isolated local copy of baseline. CSS-sized iframe; not device emulation.",
+  "captures": [
+    {"file":"home-390-browser.jpg","route":"#home","frameWidth":390,"frameHeight":844,"displayScale":1,"observation":"Five-cell single-row bottom navigation; labels approximately 9px; narrow choice-card text breaks within words; Continue below initial viewport."},
+    {"file":"home-1440-browser.jpg","route":"#home","frameWidth":1440,"frameHeight":900,"displayScale":0.9,"observation":"Full 1440px layout fits through display scaling. Large console and illustration; desktop secondary rail has internal scrolling."},
+    {"file":"learn-390-browser.jpg","route":"#learn","frameWidth":390,"frameHeight":844,"displayScale":1,"observation":"Large repeated category cards and reading mascots. Active navigation is Learn; order remains Home, Tools, Learn, Focus, You."}
+  ],
+  "prototypeObservation": "Supplied reference #lab links to #lab/mission/reality-sorter. Selecting Inferred shows explicit observed-versus-inferred feedback. Continue navigates to #lab/mission/alternatives. This is reference behavior, not implemented app functionality.",
+  "limitations": ["Desktop scrollbar reserves approximately 15px within iframe", "No real touch device, safe-area or software keyboard verification", "No live sign-in or user record mutation", "No screenshot content altered"]
+}

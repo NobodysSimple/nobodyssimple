@@ -1,0 +1,42 @@
+
+> test
+> node --test tests/free/*.test.mjs
+
+✔ brand, staff, profanity and common obfuscation rejected; ordinary names pass (4.746184ms)
+✖ 14 day cooldown boundary and safe profile/settings (2.616684ms)
+✔ guest/A/B work isolated; shared mode transient; lock blocks local reads and writes (0.781342ms)
+✔ offline edits retained, retried, and tombstone deletion propagates (3.953809ms)
+✔ two device collision preserves both versions until user chooses (0.616994ms)
+✔ editing while a save is in flight retains the later edit (0.852495ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 835.951549
+
+✖ failing tests:
+
+test at tests/free/policy.test.mjs:11:1
+✖ 14 day cooldown boundary and safe profile/settings (2.616684ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'light' !== 'system'
+
+      at TestContext.<anonymous> (file:///workspace/scratch/ce82f5f02919/nobodyssimple-audit/tests/free/policy.test.mjs:13:109)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'light',
+    expected: 'system',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.

@@ -1,0 +1,875 @@
+[
+  {
+    "id": "#tool/state-check",
+    "status": "pass",
+    "heading": "Body & State Check",
+    "controls": 6,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/body-check",
+    "status": "pass",
+    "heading": "Body Check",
+    "controls": 6,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/mixed-feelings",
+    "status": "pass",
+    "heading": "Mixed Feelings",
+    "controls": 6,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/emotion-timeline",
+    "status": "pass",
+    "heading": "Emotion Timeline",
+    "controls": 6,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/emotion-check-in",
+    "status": "pass",
+    "heading": "Feelings Check-In",
+    "controls": 6,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/brain-dump",
+    "status": "pass",
+    "heading": "Brain Dump",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/thought-map",
+    "status": "pass",
+    "heading": "Thought Map",
+    "controls": 11,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/reality-map",
+    "status": "pass",
+    "heading": "Reality Map",
+    "controls": 9,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/cbt-journal",
+    "status": "pass",
+    "heading": "CBT Journal",
+    "controls": 4,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/assumption-finder",
+    "status": "pass",
+    "heading": "Assumption Finder",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/rumination",
+    "status": "pass",
+    "heading": "Rumination Check",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/quick-reset",
+    "status": "pass",
+    "heading": "Sensory Reset",
+    "controls": 6,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/grounding",
+    "status": "pass",
+    "heading": "Grounding",
+    "controls": 6,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/sensory-profile",
+    "status": "pass",
+    "heading": "Build a sensory manual for real situations.",
+    "controls": 10,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/sensory-recipe",
+    "status": "pass",
+    "heading": "Make one sensory recipe.",
+    "controls": 45,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/social-battery",
+    "status": "pass",
+    "heading": "What did you bring into this interaction?",
+    "controls": 35,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/load-balancer",
+    "status": "pass",
+    "heading": "What is loading you right now?",
+    "controls": 26,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/transition",
+    "status": "pass",
+    "heading": "Transition Planner",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/start-starter",
+    "status": "pass",
+    "heading": "Start Barrier",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/motivation-map",
+    "status": "pass",
+    "heading": "Motivation Map",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/friction",
+    "status": "pass",
+    "heading": "Friction Finder",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/small-step",
+    "status": "pass",
+    "heading": "Small Step",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/if-then",
+    "status": "pass",
+    "heading": "If–Then Plan",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/decision-map",
+    "status": "pass",
+    "heading": "Decision Map",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/future-perspectives",
+    "status": "pass",
+    "heading": "Future Perspectives",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/premortem",
+    "status": "pass",
+    "heading": "Pre-Mortem",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/commitment",
+    "status": "pass",
+    "heading": "Decision Review",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/pattern-map",
+    "status": "pass",
+    "heading": "Pattern Map",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/function-finder",
+    "status": "pass",
+    "heading": "Function Finder",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/pattern-experiment",
+    "status": "pass",
+    "heading": "Pattern Experiment",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/conversation-map",
+    "status": "pass",
+    "heading": "Conversation Map",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/needs-clarifier",
+    "status": "pass",
+    "heading": "Needs Clarifier",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/boundary-builder",
+    "status": "pass",
+    "heading": "Boundary Builder",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/conflict-map",
+    "status": "pass",
+    "heading": "Conflict Map",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/repair",
+    "status": "pass",
+    "heading": "Repair Plan",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/values-discovery",
+    "status": "pass",
+    "heading": "Values Discovery",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/identity-map",
+    "status": "pass",
+    "heading": "Identity Map",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/possible-selves",
+    "status": "pass",
+    "heading": "Possible Selves",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/personal-rules",
+    "status": "pass",
+    "heading": "Personal Rules",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/contradictions",
+    "status": "pass",
+    "heading": "Two Truths",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/life-areas",
+    "status": "pass",
+    "heading": "Life Areas",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/gratitude",
+    "status": "pass",
+    "heading": "Appreciation",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/difficult-day",
+    "status": "pass",
+    "heading": "Difficult Day",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/weekly-review",
+    "status": "pass",
+    "heading": "Weekly Review",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/claim-checker",
+    "status": "pass",
+    "heading": "Claim Checker",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/evidence-strength",
+    "status": "pass",
+    "heading": "Evidence Guide",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/argument-map",
+    "status": "pass",
+    "heading": "Argument Map",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#stim-space",
+    "status": "static-link",
+    "note": "iframe route inspected separately in site.mjs and browser"
+  },
+  {
+    "id": "#tool/worry-sort",
+    "status": "pass",
+    "heading": "Worry Sort",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/masking-map",
+    "status": "pass",
+    "heading": "Map one situation first.",
+    "controls": 21,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/environment-design",
+    "status": "pass",
+    "heading": "Environment Design",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/reward-design",
+    "status": "pass",
+    "heading": "Reward Design",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/progress-evidence",
+    "status": "pass",
+    "heading": "Progress Evidence",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/conflict-pattern",
+    "status": "pass",
+    "heading": "Conflict Pattern",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/positive-memory",
+    "status": "pass",
+    "heading": "Positive Memory",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/competing-models",
+    "status": "pass",
+    "heading": "Alternative Explanations",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/uncertainty-calibration",
+    "status": "pass",
+    "heading": "Confidence Check",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/anger-pause",
+    "status": "pass",
+    "heading": "Anger Pause",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/resentment-load",
+    "status": "pass",
+    "heading": "Fair Load",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/shame-context",
+    "status": "pass",
+    "heading": "Shame Check",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/guilt-responsibility",
+    "status": "pass",
+    "heading": "Guilt Check",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/jealousy-request",
+    "status": "pass",
+    "heading": "Jealousy Plan",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/rejection-response",
+    "status": "pass",
+    "heading": "Rejection Reset",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/grief-date",
+    "status": "pass",
+    "heading": "Grief Plan",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/low-mood-reconnect",
+    "status": "pass",
+    "heading": "Low Mood Plan",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/panic-preparation",
+    "status": "pass",
+    "heading": "Panic Plan",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/disappointment-reset",
+    "status": "pass",
+    "heading": "Disappointment Reset",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/loneliness-contact",
+    "status": "pass",
+    "heading": "Connection Plan",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/perfection-finish",
+    "status": "pass",
+    "heading": "Good Enough",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/shutdown-card",
+    "status": "pass",
+    "heading": "Shutdown Card",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/meltdown-plan",
+    "status": "pass",
+    "heading": "Meltdown Plan",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/burnout-adjustments",
+    "status": "pass",
+    "heading": "Burnout Reset",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/time-reality",
+    "status": "pass",
+    "heading": "Time Reality",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/memory-offload",
+    "status": "pass",
+    "heading": "Memory Offload",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/impulse-pause",
+    "status": "pass",
+    "heading": "Impulse Pause",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/change-preview",
+    "status": "pass",
+    "heading": "Change Preview",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/processing-request",
+    "status": "pass",
+    "heading": "Processing Request",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/reading-access",
+    "status": "pass",
+    "heading": "Reading Access",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/coordination-plan",
+    "status": "pass",
+    "heading": "Coordination Plan",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/appointment-brief",
+    "status": "pass",
+    "heading": "Appointment Brief",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tool/care-balance",
+    "status": "pass",
+    "heading": "Care Balance",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#compass",
+    "status": "pass",
+    "heading": "A feeling has more than one dimension.",
+    "controls": 2,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/regulation-picker",
+    "status": "pass",
+    "heading": "Regulation Picker",
+    "controls": 8,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/breathing-pacer",
+    "status": "pass",
+    "heading": "Breathing Pacer",
+    "controls": 4,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/muscle-release",
+    "status": "pass",
+    "heading": "Muscle Release",
+    "controls": 10,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/infinite-pattern",
+    "status": "pass",
+    "heading": "Infinite Pattern",
+    "controls": 56,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/control-zones",
+    "status": "pass",
+    "heading": "Control Zones",
+    "controls": 13,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/perspective-wheel",
+    "status": "pass",
+    "heading": "Perspective Wheel",
+    "controls": 9,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/trigger-chain-builder",
+    "status": "pass",
+    "heading": "Trigger Chain",
+    "controls": 18,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/pattern-loop-simulator",
+    "status": "pass",
+    "heading": "Pattern Loop",
+    "controls": 3,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/cost-benefit-balance",
+    "status": "pass",
+    "heading": "Cost–Benefit",
+    "controls": 12,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/value-conflict-balance",
+    "status": "pass",
+    "heading": "Values Balance",
+    "controls": 15,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/friction-finder",
+    "status": "pass",
+    "heading": "Friction Finder",
+    "controls": 16,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/task-shrinker",
+    "status": "pass",
+    "heading": "Task Shrinker",
+    "controls": 7,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/urgent-important-matrix",
+    "status": "pass",
+    "heading": "Priority Matrix",
+    "controls": 8,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/energy-budget",
+    "status": "pass",
+    "heading": "Energy Budget",
+    "controls": 10,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/thought-defusion",
+    "status": "pass",
+    "heading": "Thought Defusion",
+    "controls": 11,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/urge-surfing",
+    "status": "pass",
+    "heading": "Urge Surfing",
+    "controls": 5,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/safe-enough-scale",
+    "status": "pass",
+    "heading": "Safety Scale",
+    "controls": 3,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/self-compassion-perspective",
+    "status": "pass",
+    "heading": "Self-Compassion",
+    "controls": 8,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/savouring-timer",
+    "status": "pass",
+    "heading": "Savouring Timer",
+    "controls": 6,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/choice-pause",
+    "status": "pass",
+    "heading": "Choice Pause",
+    "controls": 4,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#play/social-script-builder",
+    "status": "pass",
+    "heading": "Social Scripts",
+    "controls": 14,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/triage",
+    "status": "pass",
+    "heading": "Life Triage",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/bottleneck",
+    "status": "pass",
+    "heading": "Life Bottleneck Finder",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/crossroads",
+    "status": "pass",
+    "heading": "Crossroads",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/direction",
+    "status": "pass",
+    "heading": "Direction Finder",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/career",
+    "status": "pass",
+    "heading": "Career Strategy",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/relationship-crossroads",
+    "status": "pass",
+    "heading": "Relationship Crossroads",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/relationship-pattern",
+    "status": "pass",
+    "heading": "Relationship Pattern Lab",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/burnout",
+    "status": "pass",
+    "heading": "Burnout & Overload Map",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/motivation",
+    "status": "pass",
+    "heading": "Motivation Diagnostic",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/mental-load",
+    "status": "pass",
+    "heading": "Mental Load Audit",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/identity",
+    "status": "pass",
+    "heading": "Identity Transition",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/environment",
+    "status": "pass",
+    "heading": "Environment Fit",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/money",
+    "status": "pass",
+    "heading": "Money & Independence Strategy",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#guided/rebuild",
+    "status": "pass",
+    "heading": "Life Rebuild",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#questionnaires",
+    "status": "pass",
+    "heading": "Questionnaires.",
+    "controls": 4,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#big-five",
+    "status": "pass",
+    "heading": "Big Fivepersonality map.",
+    "controls": 3,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#systems",
+    "status": "pass",
+    "heading": "How big are your systems right now?",
+    "controls": 6,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#personality",
+    "status": "pass",
+    "heading": "A map of how you workwith room for change.",
+    "controls": 2,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#simplyfocus",
+    "status": "pass",
+    "heading": "Make a little room for focus.",
+    "controls": 40,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#help",
+    "status": "pass",
+    "heading": "What’s happening?",
+    "controls": 71,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#tools",
+    "status": "pass",
+    "heading": "Tools Library",
+    "controls": 20,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  },
+  {
+    "id": "#maps",
+    "status": "pass",
+    "heading": "My Maps.",
+    "controls": 3,
+    "note": "Initial renderer smoke only; not completion, layout, auth or effectiveness."
+  }
+]

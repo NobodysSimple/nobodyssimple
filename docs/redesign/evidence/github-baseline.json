@@ -1,0 +1,14 @@
+{
+  "repository": "NobodysSimple/nobodyssimple",
+  "branch": "main",
+  "commit": "a05d5b656a539360345c470b723776970adfe2ff",
+  "tree": "99caa851d4d2582b4f1133364e7ff148aa52df8b",
+  "commitDate": "2026-11-05T01:15:55Z",
+  "recheckedOn": "2026-11-05",
+  "remoteBranchCreation": {
+    "result": "blocked",
+    "status": 403,
+    "message": "Resource not accessible by integration"
+  },
+  "localBranch": "redesign/living-field-guide"
+}

@@ -1,0 +1,29 @@
+{
+  "baseline": "a05d5b656a539360345c470b723776970adfe2ff",
+  "registeredKeysTested": 23,
+  "registeredIsolationAndLock": "pass",
+  "gapsReproduced": [
+    {
+      "key": "ns-simplyfocus-recipe-v2",
+      "scoped": false,
+      "blockedByWorkspaceLock": false,
+      "inWorkspaceEntries": false,
+      "removedByClearUser": false
+    },
+    {
+      "key": "ns-big-five-atlas-v1",
+      "scoped": false,
+      "blockedByWorkspaceLock": false,
+      "inWorkspaceEntries": false,
+      "removedByClearUser": false
+    },
+    {
+      "key": "ns-lifestyle-tasks-v1",
+      "scoped": false,
+      "blockedByWorkspaceLock": false,
+      "inWorkspaceEntries": false,
+      "removedByClearUser": false
+    }
+  ],
+  "interpretation": "Current behavior reproduced; three unregistered keys remain outside Workspace isolation, enumeration and clearing. This test does not validate privacy compliance or live Firebase."
+}
