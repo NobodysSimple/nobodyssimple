@@ -1,0 +1,230 @@
+[
+  {
+    "file": "00_START_HERE.md",
+    "bytes": 3407,
+    "sha256": "76cf841c27cb951c963b05a0acd1ca4aef438ade2a69ad577430bfc20ad08ba2",
+    "review": "Read full written specification/source"
+  },
+  {
+    "file": "01_MASTER_AI_BUILD_BRIEF.md",
+    "bytes": 25277,
+    "sha256": "92dc2d0c998abd041cbf765e232521967012e1c09b6cd3aa18c81f805a5e6b15",
+    "review": "Read full written specification/source"
+  },
+  {
+    "file": "02_SCREEN_AND_ROUTE_ATLAS.md",
+    "bytes": 12169,
+    "sha256": "9d11127f7316f112b947db078765a0404ce0e7b40c116bcc4c8a3a8e2b12c1c4",
+    "review": "Read full written specification/source"
+  },
+  {
+    "file": "03_STAGE_BY_STAGE_PROMPTS.md",
+    "bytes": 8136,
+    "sha256": "6806fb42322d8c71050455ddbe1e432ff0028554361ff3e18240c922ae7cc0f9",
+    "review": "Read full written specification/source"
+  },
+  {
+    "file": "04_VISUAL_REFERENCE_GUIDE.md",
+    "bytes": 6539,
+    "sha256": "3847ea8e483260132cf3983c45dcb6fa952f5a5fc0ff689484f169c7e38e2ef5",
+    "review": "Read full written specification/source"
+  },
+  {
+    "file": "05_REFERENCES_AND_QA.md",
+    "bytes": 6007,
+    "sha256": "ef15b64f868abf19be2f1b594d239f3bef03a2e867dafd42ccda8f724f269fc0",
+    "review": "Read full written specification/source"
+  },
+  {
+    "file": "06_PROTOTYPE_TEST_REPORT.txt",
+    "bytes": 1190,
+    "sha256": "c2b206fce1ad2092179b5056a1516513909f63cc0483c9c0bb607fffbf8ac1fc",
+    "review": "Read full written specification/source"
+  },
+  {
+    "file": "build_visual_sheets.py",
+    "bytes": 4137,
+    "sha256": "4d9ddc62c3c89378da45d215e8829ba794dae156bec4e726712140e9e94b998c",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "prototype/assets/nobody-base.png",
+    "bytes": 63231,
+    "sha256": "0cda172a674e50831d7f7a69c8fd8e664322b291f4d38583a9d2c5019f7ff90f",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "prototype/index.html",
+    "bytes": 56537,
+    "sha256": "b03b7093d0b8fe55458c4d9a2d3cafb3ed2c4b2751d1eafa27f1440868f3a5dc",
+    "review": "Read full written specification/source"
+  },
+  {
+    "file": "visual_sheets/Clickable_Prototype_Home.png",
+    "bytes": 64210,
+    "sha256": "9c27ea298b7603b25d3ad78401d43e902cca55fe72758ad7442d3e8c1234123a",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Concept_01_Core_App.png",
+    "bytes": 2346417,
+    "sha256": "0fb92e9d1e4923d1846ca9cf742fb20c61b06dc2a240502da8772af687782d82",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Concept_02_Life_Lab.png",
+    "bytes": 1999174,
+    "sha256": "1993264584ba7c2429163448805fd0c28eefdf86b83fc5be92862fcefe18f0d8",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Concept_03_System_Overview.png",
+    "bytes": 1997125,
+    "sha256": "18cea71f3712ab3a881ff0939ed79ca57654896185be8b6e3d2e5db84eadd842",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Concept_04_Implementation_Overview.png",
+    "bytes": 2043607,
+    "sha256": "60c8867bd8b947ca1b20a58d2954116add3b57b3d8a547c897db1d3271fe6e57",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Desktop_Home.png",
+    "bytes": 141097,
+    "sha256": "46faaa50b72f6a734fa294cf283e84cf81edf8884f49c107cc1b482a6758d8e0",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Desktop_Learn.png",
+    "bytes": 108154,
+    "sha256": "992c4b42b06a1327957e68c4dde71d4c11a1728a8b7a110035e9dfbf2b5d12f5",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Desktop_LifeLab.png",
+    "bytes": 141409,
+    "sha256": "78e5f8771f0b0a8a19777a2daaffe3acc2fbcbe864f7214cc7c9428d42de774d",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Desktop_Tools.png",
+    "bytes": 108877,
+    "sha256": "e0cbb6896ffc7aa72946e84f6d552c84f9dcda683bc682de9b9f3778da2842bd",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Desktop_You.png",
+    "bytes": 187811,
+    "sha256": "eb0195a319b8f2065cf5a034b9edbc2ff3a84328d8e6d42e1c97f68a17eff90d",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Wireframe_01_Home_Navigation.png",
+    "bytes": 342911,
+    "sha256": "9238d8c53603d2b3366fb83c899fe717bafecf7467817e8ed16da60d2ded67d8",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Wireframe_02_Life_Lab_Worlds.png",
+    "bytes": 329941,
+    "sha256": "5e0e73a4ff304e06a73ea64650aaad04252bd7b60fcce25f3d69d246c0c718c2",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Wireframe_03_Lab_Experiences.png",
+    "bytes": 293944,
+    "sha256": "6487aa90a770d5f497d2a4552daf4d5c66a93817ea0de3b114ccd93657928c68",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Wireframe_04_Learn.png",
+    "bytes": 378200,
+    "sha256": "4c818af57f327df14cec4f1d0a921b19c08f1ee0025fbf587543614158bc99d0",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Wireframe_05_Tools.png",
+    "bytes": 329731,
+    "sha256": "41c2d1d497eb9167879751eca012af8ed4924bf2650b661e7c05ce3ab4d7d043",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Wireframe_06_You_And_Support.png",
+    "bytes": 383645,
+    "sha256": "3f8d6360d111eb1916ec07c2f5539a9f36666e7a5ef4133a5f5dfee53154014f",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "visual_sheets/Wireframe_07_Secondary.png",
+    "bytes": 247593,
+    "sha256": "dfc7975d7559a2368442eb89ebc4c440d3015018485e2b9af889dec7c3f13188",
+    "review": "Visual reference or prototype asset; metadata recorded"
+  },
+  {
+    "file": "upload/NobodysSimple_Clickable_Prototype_SelfContained(1).html",
+    "bytes": 393769,
+    "sha256": "696fffbcd19f5fd9fdeb8462fa7f26bcc9b381e926156f259f32ddd6cad0091f",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/NobodysSimple_Complete_Redesign_Handoff(1).zip",
+    "bytes": 11048713,
+    "sha256": "72a97830f996da79e4b1213dcbd44849f09cdeb0072d564ff623de3a5bd156b5",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/Pasted text(20261105-011921).txt",
+    "bytes": 28565,
+    "sha256": "9bd09a14147337338161efa8aef9cbf15d5b73507505a2a68dcc7f6d2238c137",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/image(20261105-012034).png",
+    "bytes": 11561,
+    "sha256": "c81c8fc164ab8092a072e9acdc272d9b3ccb2388ab6f5664f04679e828438dd4",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/image(20261105-012050).png",
+    "bytes": 31901,
+    "sha256": "bc3491f5ff6429b699f4af79dd4ac950e2385db8611a337104ed7cc79d8c406c",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/image(20261105-012200).png",
+    "bytes": 24699,
+    "sha256": "fcbc8da5989dda8b3ef2f9553d73d0d2f67fbf6b9b84f9f41c67b6cbb45c4bd4",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/image(20261105-012249).png",
+    "bytes": 16100,
+    "sha256": "072b1683e634c323ed9272a832e317bd7d4d2c6629216bb84b539ba252740519",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/image(20261105-012545).png",
+    "bytes": 3230935,
+    "sha256": "c8e2ac306bb4bc3e1c4c11156e3e909485fbb8a6d7ab2049025acad823bd9aed",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/image(20261105-012552).png",
+    "bytes": 2746146,
+    "sha256": "242fcdebe86f502a94536ee05610652beda56eaec15ad58f09ff7a204c2788a1",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/image(20261105-012603).png",
+    "bytes": 2782652,
+    "sha256": "fed8e9630a0681785da8dde87d5e8448d5dd5ef83d688514b1fff68a842e70e3",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  },
+  {
+    "file": "upload/image(20261105-012705).png",
+    "bytes": 2851801,
+    "sha256": "f7ad092ae568c5cb6f3a17c23643e1df4346b24b06b35c4fd7946c51079439f4",
+    "review": "Provided attachment; handoff, feedback and visual direction reviewed as described in main report"
+  }
+]
