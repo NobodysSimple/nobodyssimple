@@ -12,43 +12,59 @@ function download(name,value){const a=document.createElement('a'),url=URL.create
 const status=(root,text)=>{const el=root.querySelector('[data-status]');if(el)el.textContent=text;};
 export function renderStrategyHome(root,posts=[],rail='',options={}){
  root.onclick=null;
+ // Stage 2 gives the original decision aid its own route. Its questions,
+ // selected options and recommendation calculations still live in renderHelp.
+ if(options.wizardOnly){
+  root.innerHTML=`<div class="ns-wizard-page"><a class="ns-home-back" href="#home">← Back to Home</a><header class="ns-wizard-intro"><p class="ns-home-eyebrow">FIND YOUR NEXT STEP</p><h1>Let's work out what might help.</h1><p>Three short questions. No account needed, and you can change your answers.</p></header><section class="strategy-console ns-wizard-console" aria-label="Help me choose"><div id="home-navigation-console"></div></section><aside class="ns-wizard-options"><p>Already know what you need?</p><a href="#tools">Browse all tools →</a><a href="#lab">Explore Life Lab →</a><a href="#support">Get help from a person →</a></aside></div>`;
+  options.renderConsole?.(root.querySelector('#home-navigation-console'));
+  return;
+ }
  const state=account(),locked=Boolean(state.locked),prefs=state.preferences||{};
  const savedMaps=locked?[]:read('ns-personal-maps-v1',[]);
  const drafts=locked?{}:read(DRAFT_KEY,{});
  const learning=locked||!prefs.trackLearning?{}:read('ns-account-learning-v2',{});
  const favourites=locked?[]:read('ns-tool-favourites-v1',[]);
  const mapCount=Array.isArray(savedMaps)?savedMaps.length:0;
- const draftCount=drafts&&typeof drafts==='object'?Object.keys(drafts).length:0;
+ const draftEntries=drafts&&typeof drafts==='object'?Object.entries(drafts):[];
+ const draftCount=draftEntries.length;
  const favouriteCount=Array.isArray(favourites)?favourites.length:0;
  const published=new Map(posts.filter(p=>p?.id&&['education','lesson','video'].includes(p.type)).map(p=>[String(p.id),p]));
  const learningEntries=Object.entries(learning||{}).filter(([id])=>published.has(id));
  const lessonCount=learningEntries.filter(([,item])=>item?.completed).length;
  const nextLesson=learningEntries.filter(([,item])=>!item?.completed&&item?.lastOpened).sort(([,a],[,b])=>String(b.lastOpened).localeCompare(String(a.lastOpened)))[0];
- const nextDraft=Object.entries(drafts||{}).filter(([hash,item])=>/^#[a-z0-9-]+(?:\/[a-z0-9-]+)?$/i.test(hash)&&item?.fields?.length).sort(([,a],[,b])=>String(b.updatedAt||'').localeCompare(String(a.updatedAt||'')))[0];
+ const nextDraft=draftEntries.filter(([hash,item])=>/^#[a-z0-9-]+(?:\/[a-z0-9-]+)?$/i.test(hash)&&Array.isArray(item?.fields)&&item.fields.length).sort(([,a],[,b])=>String(b.updatedAt||'').localeCompare(String(a.updatedAt||'')))[0];
  const hasActivity=mapCount+draftCount+lessonCount+favouriteCount+Number(Boolean(nextLesson))>0;
- const counts=[mapCount&&`${mapCount} saved map${mapCount===1?'':'s'}`,draftCount&&`${draftCount} draft${draftCount===1?'':'s'}`,favouriteCount&&`${favouriteCount} pinned tool${favouriteCount===1?'':'s'}`,lessonCount&&`${lessonCount} completed learning piece${lessonCount===1?'':'s'}`].filter(Boolean).join(' · ');
- const primary=nextDraft?{href:nextDraft[0],label:'Resume activity →'}:nextLesson?{href:`#post/${encodeURIComponent(nextLesson[0])}`,label:'Continue learning →'}:mapCount?{href:'#account/maps',label:'Open My Maps →'}:favouriteCount?{href:'#tools',label:'Pinned tools →'}:{href:'#learn',label:'Open Learn →'};
- const pinned=Array.isArray(favourites)?favourites.map(id=>toolCatalogue.find(item=>item.id===id)).filter(Boolean):[];
- const revisit=prefs.personalise&&pinned.length?pinned[Math.floor(Date.now()/86400000)%pinned.length]:null;
- const revisitLink=revisit?`<p class="home-resume-revisit">Useful today · <a href="${esc(revisit.href||`#tool/${encodeURIComponent(revisit.id)}`)}">Revisit ${esc(revisit.title)} →</a></p>`:'';
- const resume=locked?`<section class="home-resume-card" aria-labelledby="home-resume-title"><span class="home-resume-icon" aria-hidden="true">↗</span><div><p class="eyebrow">Your space</p><h2 id="home-resume-title">Saved work is hidden.</h2><p>Confirm your identity in You to open it.</p></div><a class="button secondary" href="#account">Open You →</a></section>`:hasActivity?`<section class="home-resume-card" aria-labelledby="home-resume-title"><span class="home-resume-icon" aria-hidden="true">↗</span><div><p class="eyebrow">Your space</p><h2 id="home-resume-title">Continue when ready.</h2><p>${counts||'A learning page is ready to revisit.'}</p>${revisitLink}</div><div class="home-resume-actions"><a class="button" href="${esc(primary.href)}">${primary.label}</a>${state.signedIn?'<a href="#account">All saved work →</a>':''}</div></section>`:`<section class="home-resume-card home-first-visit" aria-labelledby="home-resume-title"><span class="home-resume-icon" aria-hidden="true">✳</span><div><p class="eyebrow">Start here</p><h2 id="home-resume-title">Keep what helps.</h2><p>Save a map or pin a tool when you want to come back to it. Nothing needs to be saved to use the app.</p></div><a class="button secondary" href="#tools">Browse tools →</a></section>`;
- root.innerHTML=`<div class="wrap strategy-home strategy-dashboard"><section class="home-dashboard-intro" aria-label="Nobody’s Simple"><img src="logo.png" alt="" width="48" height="48"><div><p class="eyebrow">Nobody’s Simple · psychology for real life</p><h1>${hasActivity?'Welcome back.':'A useful next step.'}</h1><p>${hasActivity?'Start where you are, or return to something you chose to keep.':'Notice what is happening, then choose one useful thing to try.'}</p></div></section><section class="strategy-console" aria-label="Help me choose"><div class="strategy-console-illustration" aria-hidden="true"></div><div id="home-navigation-console"></div><nav class="strategy-shortcuts" aria-label="More starting points"><a href="#account/maps">My Maps →</a><a href="#tools">Browse tools →</a><a href="#support">Need a person? Get help →</a></nav></section>${resume}<section id="home-latest" class="home-latest" aria-labelledby="home-latest-title"><div class="home-latest-header"><div><p class="eyebrow">Latest</p><h2 id="home-latest-title">Recent from Nobody’s Simple</h2><p>New writing, videos and conversations from the community.</p></div><div class="home-latest-controls"><button type="button" data-latest-prev aria-label="Previous recent item">←</button><span data-latest-position aria-live="off"></span><button type="button" data-latest-next aria-label="Next recent item">→</button></div></div><div class="home-latest-track" tabindex="0" aria-label="Recent content; swipe or scroll sideways"></div><div class="home-latest-links"><a href="#learn">Explore Learn →</a><a href="#discussion">All discussions →</a></div></section><div id="home-wisbody"></div><section class="home-project-footer" aria-label="Support Nobody’s Simple"><img src="ns-character-star.webp" alt="" width="48" height="48"><div><b>Help keep the project open.</b><small>Tips support the time and tools behind Nobody’s Simple.</small></div><a href="https://ko-fi.com/nobodyssimple" target="_blank" rel="noopener noreferrer">Support on Ko-fi ↗</a></section></div>`;
- // The main decision aid is the first focusable content on mobile; desktop keeps the compact orientation card first.
- const home=root.querySelector('.strategy-home');
- const console=home?.querySelector('.strategy-console');
- const mobileLayout=window.matchMedia('(max-width: 900px)');
- const positionConsole=()=>{
-  if(!home?.isConnected||!console)return;
-  if(mobileLayout.matches)home.prepend(console);
-  else home.querySelector('.home-dashboard-intro')?.after(console);
- };
- positionConsole();
- const onLayoutChange=()=>{if(!home?.isConnected){mobileLayout.removeEventListener('change',onLayoutChange);return;}positionConsole();};
- mobileLayout.addEventListener('change',onLayoutChange);
- options.renderConsole?.(root.querySelector('#home-navigation-console'));
+ const counts=[mapCount&&`${mapCount} saved map${mapCount===1?'':'s'}`,draftCount&&`${draftCount} saved draft${draftCount===1?'':'s'}`,favouriteCount&&`${favouriteCount} pinned tool${favouriteCount===1?'':'s'}`,lessonCount&&`${lessonCount} completed learning item${lessonCount===1?'':'s'}`].filter(Boolean).join(' · ');
+ const primary=nextDraft?{href:nextDraft[0],label:'Resume activity'}:nextLesson?{href:`#post/${encodeURIComponent(nextLesson[0])}`,label:'Continue learning'}:mapCount?{href:'#account/maps',label:'Open My Maps'}:favouriteCount?{href:'#tools',label:'Find my pinned tools'}:{href:'#account',label:'Open your space'};
+ const resume=locked?`<section class="ns-home-saved ns-home-saved--locked" aria-labelledby="home-resume-title"><div class="ns-home-saved__icon" aria-hidden="true">⌁</div><div><p class="ns-home-eyebrow">YOUR SPACE</p><h2 id="home-resume-title">Saved work is locked.</h2><p>Unlock it in You to see what you've kept.</p></div><a href="#account">Open You →</a></section>`:hasActivity?`<section class="ns-home-saved" aria-labelledby="home-resume-title"><div class="ns-home-saved__icon" aria-hidden="true">✧</div><div><p class="ns-home-eyebrow">YOUR SPACE</p><h2 id="home-resume-title">${nextDraft||nextLesson?'Pick up where you left off.':'Your saved things.'}</h2><p>${esc(counts)}</p></div><a href="${esc(primary.href)}">${esc(primary.label)} →</a></section>`:'';
+ // Only describe the existing My Maps area here. A new Field Guide is not
+ // presented as available until its separate, tested storage stage ships.
+ root.innerHTML=`<div class="wrap strategy-home ns-home-v2">
+  <section class="ns-home-hero" aria-labelledby="ns-home-title">
+   <div class="ns-home-hero__copy"><p class="ns-home-eyebrow">A GOOD PLACE TO BEGIN</p><h1 id="ns-home-title">What would help right now?</h1><p class="ns-home-hero__lead">Start with what's happening. We'll help you find one useful next step.</p><a class="ns-home-primary" href="#navigate">Find my next step <span aria-hidden="true">→</span></a><p class="ns-home-hero__note">A few choices, no pressure and no sign-in needed.</p></div>
+   <div class="ns-home-hero__art" aria-hidden="true"><img class="ns-home-hero__land" src="ns-landscape-path.webp" alt="" width="450" height="275"/><img class="ns-home-hero__mascot" src="ns-character-compass.webp" alt="" width="190" height="190"/></div>
+  </section>
+  <section class="ns-home-quick" aria-label="Two other ways to start">
+   <a class="ns-home-quick__card ns-home-quick__card--lab" href="#lab"><span class="ns-home-quick__art" aria-hidden="true"><img src="ns-character-hiking.webp" alt="" width="76" height="76"/></span><span class="ns-home-quick__body"><span class="ns-home-eyebrow">PRACTISE</span><strong>Try something small.</strong><span>Explore useful skills in Life Lab.</span></span><span class="ns-home-quick__arrow" aria-hidden="true">↗</span></a>
+   <a class="ns-home-quick__card ns-home-quick__card--learn" href="#learn"><span class="ns-home-quick__art" aria-hidden="true"><img src="ns-character-reading.webp" alt="" width="76" height="76"/></span><span class="ns-home-quick__body"><span class="ns-home-eyebrow">LEARN</span><strong>Understand a little more.</strong><span>Read, watch and explore psychology.</span></span><span class="ns-home-quick__arrow" aria-hidden="true">↗</span></a>
+  </section>
+  ${resume}
+  <section class="ns-home-middle" aria-label="Personal tools and reflections">
+   <div class="ns-home-guide"><div class="ns-home-guide__heading"><span class="ns-home-guide__icon" aria-hidden="true">✎</span><div><p class="ns-home-eyebrow">YOUR SPACE</p><h2>Keep what helps.</h2></div></div><p>Save observations and tools you want to return to. Your existing My Maps and saved work are available in You.</p><a href="#account/maps">Open My Maps <span aria-hidden="true">→</span></a></div>
+   <section class="ns-home-wisbody" aria-labelledby="ns-home-wisbody-title"><div class="ns-home-wisbody__head"><img src="media/strategy/wisbody.png" alt="" width="82" height="110" loading="lazy"/><div><p class="ns-home-eyebrow">A MOMENT WITH WISBODY</p><h2 id="ns-home-wisbody-title">A thought worth carrying.</h2><p>Take a question with you, or explore the full quote collection.</p></div></div><details data-ns-wisbody-toggle><summary>Open Wisbody's reflections <span aria-hidden="true">⌄</span></summary><div data-ns-wisbody-full></div></details><a class="ns-home-wisbody__link" href="#wisbody">Visit full Wisbody →</a></section>
+  </section>
+  <section id="home-latest" class="home-latest ns-home-latest" aria-labelledby="home-latest-title"><div class="home-latest-header"><div><p class="ns-home-eyebrow">FROM THE COMMUNITY</p><h2 id="home-latest-title">Latest from Nobody's Simple</h2><p>Writing and conversations worth exploring.</p></div><div class="home-latest-controls"><button type="button" data-latest-prev aria-label="Previous recent item">←</button><span data-latest-position aria-live="off"></span><button type="button" data-latest-next aria-label="Next recent item">→</button></div></div><div class="home-latest-track" tabindex="0" aria-label="Recent content; swipe or scroll sideways"></div><div class="home-latest-links"><a href="#learn">Explore Learn →</a><a href="#discussion">Community conversations →</a></div></section>
+  <section class="ns-home-footer" aria-label="Other ways to explore"><div><p>Not sure where to begin?</p><span>All existing tools are available whenever you want them.</span></div><a href="#tools">Browse every tool →</a><a href="#support">Get help →</a><a href="https://ko-fi.com/nobodyssimple" target="_blank" rel="noopener noreferrer">Support the project ↗</a></section>
+ </div>`;
  renderLatest(root.querySelector('#home-latest'),posts,options.loadDiscussions);
- renderWisbody(root.querySelector('#home-wisbody'));
+ const wisbodyToggle=root.querySelector('[data-ns-wisbody-toggle]');
+ wisbodyToggle?.addEventListener('toggle',()=>{
+  if(!wisbodyToggle.open)return;
+  const target=wisbodyToggle.querySelector('[data-ns-wisbody-full]');
+  if(target&&!target.dataset.nsReady){target.dataset.nsReady='true';renderWisbody(target);}
+ });
 }
+
 function renderLatest(section,posts,loadDiscussions){
  const track=section.querySelector('.home-latest-track');
  const label=section.querySelector('[data-latest-position]');

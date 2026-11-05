@@ -216,9 +216,9 @@ function legacyLibrary() {
   );
   libraryResults();
 }
-function homePage({learningView=null,scrollTo=null}={}) {
+function homePage({learningView=null,scrollTo=null,wizardOnly=false}={}) {
   if(learningView !== null) { libraryState.view = ['crash','courses','videos','audios','blog','stories','debates'].includes(learningView) ? learningView : 'home'; libraryState.query = ''; }
-  renderHome(main, posts, {loadDiscussions:latestDiscussions});
+  renderHome(main, posts, {loadDiscussions:latestDiscussions,wizardOnly});
   if(scrollTo) requestAnimationFrame(() => {
     const section = main.querySelector(scrollTo); if(!section)return;
     section.scrollIntoView({block:'start'}); section.setAttribute('tabindex','-1'); section.focus({preventScroll:true});
@@ -830,8 +830,8 @@ function route() {
     ({
       home: () => homePage({learningView:"home"}),
       lab: () => renderLabStage1(main, id || ""),
-      help: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
-      navigate: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
+      help: () => homePage({learningView:"home",wizardOnly:true}),
+      navigate: () => homePage({learningView:"home",wizardOnly:true}),
       library: () => {
         if(id === "quotes") wisbodyPage();
         else {libraryState.view=id||"home";libraryState.query="";library();}
@@ -887,9 +887,9 @@ function route() {
   window.scrollTo(0, 0);
   const title =
     name === "navigate"
-      ? "Home"
+      ? "Find your next step"
       : name === "help"
-      ? "Home"
+      ? "Find your next step"
       : name === "support"
       ? "Get help"
       : name === "questionnaires"
