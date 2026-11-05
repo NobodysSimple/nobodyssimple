@@ -1,0 +1,196 @@
+/* Nobody's Simple · Stage 7 — unifies existing experiences without changing renderers.
+   Loaded after historical stylesheets. Every rule is scoped to the application
+   and to established page classes; custom tool internals keep their own state. */
+body.app-body.ns-shell-v1 {
+  --ns7-paper:#faf9f2;--ns7-card:#fffdf8;--ns7-ink:#294a39;
+  --ns7-muted:#5c7162;--ns7-border:#dce5d8;--ns7-soft:#edf2e9;
+  --ns7-action:#315f46;--ns7-focus:#bb812e;--ns7-shadow:0 8px 26px #233f2a0b;
+}
+/* Predictable container widths and a quiet, consistent page header. */
+body.app-body.ns-shell-v1 #main > :is(.simplyfocus-page,.questionnaires-page,.big-five-page,.board-page,.support-page,.stim-space-page,.wisbody-page,.tool-page,.interactive-page,.account-hub,.systems-questionnaire-page,.personality-page,.about-copy) {
+  width:min(100%,1270px);max-width:1270px;margin-inline:auto;min-width:0;
+  padding-inline:clamp(16px,3vw,44px);padding-bottom:clamp(46px,6vw,86px);
+}
+body.app-body.ns-shell-v1 #main :is(.simplyfocus-page,.questionnaires-page,.big-five-page,.board-page,.support-page,.stim-space-page,.wisbody-page,.tool-page,.interactive-page,.account-hub) :is(.page-intro,.focus-intro,.support-intro,.board-header,.account-hero,.big-five-hero) {
+  margin-bottom:clamp(18px,2.8vw,34px);
+}
+body.app-body.ns-shell-v1 #main :is(.simplyfocus-page,.questionnaires-page,.big-five-page,.board-page,.support-page,.stim-space-page,.wisbody-page,.account-hub) :is(h1,.page-intro h1,.board-header h1,.account-hero h1,.support-intro h1) {
+  color:var(--ns7-ink);letter-spacing:-.038em;overflow-wrap:normal;word-break:normal;
+}
+body.app-body.ns-shell-v1 #main :is(.focus-intro,.support-intro,.board-header,.account-hero,.questionnaires-page .page-intro) p:not(.eyebrow) {color:var(--ns7-muted);line-height:1.6;}
+body.app-body.ns-shell-v1 #main :is(.simplyfocus-page,.questionnaires-page,.big-five-page,.board-page,.support-page,.stim-space-page,.wisbody-page,.account-hub) .eyebrow {
+  font-size:11px;letter-spacing:.13em;color:#59745d;font-weight:800;
+}
+/* Cards: retain existing buttons, form targets and event handlers. */
+body.app-body.ns-shell-v1 #main :is(.focus-mixer,.timed-breathing-card,.pomodoro-card,.questionnaire-card,.board-feed-card,.board-full-post,.board-compose,.board-gate,.board-chat,.board-profile,.referral-card,.support-note,.account-pane,.account-record,.questionnaire-notice) {
+  border-radius:21px;border:1px solid var(--ns7-border);box-shadow:var(--ns7-shadow);
+}
+body.app-body.ns-shell-v1 #main :is(.questionnaire-card,.board-feed-card,.board-compose,.board-gate,.referral-card,.account-pane,.account-record,.questionnaire-notice) {
+  background:var(--ns7-card);color:var(--ns7-ink);
+}
+body.app-body.ns-shell-v1 #main :is(.focus-mixer,.timed-breathing-card,.pomodoro-card,.questionnaire-card,.board-feed-card,.board-compose,.board-gate,.board-full-post,.board-chat,.referral-card,.account-pane) {
+  min-width:0;overflow-wrap:anywhere;
+}
+body.app-body.ns-shell-v1 #main :is(.simplyfocus-page,.questionnaires-page,.board-page,.support-page,.account-hub) :is(button,.button,a.button) {touch-action:manipulation;}
+body.app-body.ns-shell-v1 #main :is(.simplyfocus-page,.questionnaires-page,.board-page,.support-page,.account-hub) :is(input,select,textarea) {max-width:100%;}
+body.app-body.ns-shell-v1 #main :is(.simplyfocus-page,.questionnaires-page,.board-page,.support-page,.stim-space-page,.wisbody-page,.account-hub) :is(a,button,input,select,textarea,summary):focus-visible,
+body.app-body.ns-shell-v1 #main .ns-integration7-related a:focus-visible {
+  outline:3px solid var(--ns7-focus);outline-offset:3px;
+}
+/* SimplyFocus: the original mixer, audio controls, breathing guidance and
+   task board remain completely interactive. No pseudo controls are added. */
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-intro {
+  position:relative;border-radius:25px;border:1px solid #d8e6d6;
+  background:linear-gradient(116deg,#eaf1e7,#f4f0e2);
+  padding:clamp(22px,3vw,43px);overflow:hidden;
+}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-intro h1 {max-width:17ch;font-size:clamp(32px,4vw,57px);}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-intro .lead {max-width:66ch;font-size:clamp(14px,1.5vw,17px);}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-mixer {padding:clamp(18px,2.7vw,33px);}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-tracks {gap:12px;}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-track {
+  min-width:0;border-radius:14px;border-color:#dce5d8;
+}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-track :is(b,small){overflow-wrap:normal;word-break:normal;}
+body.app-body.ns-shell-v1 #main .simplyfocus-page :is(.focus-actions,.breathing-actions,.pomodoro-actions) {gap:10px;flex-wrap:wrap;}
+body.app-body.ns-shell-v1 #main .simplyfocus-page :is(.focus-actions,.breathing-actions,.pomodoro-actions) button {min-height:43px;}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-note {border-top:1px solid var(--ns7-border);padding-top:25px;}
+/* Questionnaires and results: do not alter scale labels, scoring or numerical charts. */
+body.app-body.ns-shell-v1 #main .questionnaires-page .questionnaire-grid {gap:clamp(12px,2vw,19px);}
+body.app-body.ns-shell-v1 #main .questionnaires-page .questionnaire-card {padding:clamp(17px,2vw,29px);transition:border-color .16s,box-shadow .16s;}
+body.app-body.ns-shell-v1 #main .questionnaires-page .questionnaire-card:hover {border-color:#a4bba7;box-shadow:0 10px 28px #315e451c;}
+body.app-body.ns-shell-v1 #main .questionnaires-page .questionnaire-caution {border-radius:14px;}
+body.app-body.ns-shell-v1 #main .big-five-page :is(.bf-question-panel,.bf-results-card,.bf-atlas-chapter,.bf-profile-section) {min-width:0;max-width:100%;}
+body.app-body.ns-shell-v1 #main .big-five-page .bf-actions {gap:10px;flex-wrap:wrap;}
+body.app-body.ns-shell-v1 #main .big-five-page .bf-scale-option {min-width:0;}
+/* Community and messages: keep public/guest and locked states honest. */
+body.app-body.ns-shell-v1 #main .board-page .board-header {
+  border:1px solid #d8e5d6;background:linear-gradient(125deg,#e8efe6,#f4f1e7);
+  border-radius:25px;padding:clamp(20px,3.5vw,40px);gap:20px;
+}
+body.app-body.ns-shell-v1 #main .board-page .board-header h1 {font-size:clamp(31px,3.5vw,52px);}
+body.app-body.ns-shell-v1 #main .board-page .board-nav {display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;margin-bottom:25px;}
+body.app-body.ns-shell-v1 #main .board-page .board-nav a {min-height:40px;display:inline-flex;align-items:center;}
+body.app-body.ns-shell-v1 #main .board-page .board-toolbar {display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+body.app-body.ns-shell-v1 #main .board-page .board-toolbar h2 {flex:1 1 190px;}
+body.app-body.ns-shell-v1 #main .board-page .board-feed-card {padding:clamp(17px,2vw,25px);}
+body.app-body.ns-shell-v1 #main .board-page .board-empty {border:1px dashed #bed3bd;border-radius:18px;background:#f0f4ec;padding:25px;}
+body.app-body.ns-shell-v1 #main .board-page .board-gate {padding:clamp(17px,2vw,25px);border-left:4px solid #ba9255;}
+body.app-body.ns-shell-v1 #main .board-page .board-post-link {display:block;min-width:0;}
+body.app-body.ns-shell-v1 #main .board-page .board-message-form {min-width:0;}
+body.app-body.ns-shell-v1 #main .board-page .board-message-form :is(input,textarea) {max-width:100%;}
+/* You: keep all account/auth forms and roles intact, with a calmer visual frame. */
+body.app-body.ns-shell-v1 #main .account-hub .account-hero {
+  border-radius:25px;border:1px solid #d9e4d6;
+  background:linear-gradient(120deg,#e8f0e6,#f4f1e6);
+  padding:clamp(19px,2.8vw,35px);box-shadow:none;
+}
+body.app-body.ns-shell-v1 #main .account-hub .account-layout {gap:clamp(12px,2vw,23px);min-width:0;}
+body.app-body.ns-shell-v1 #main .account-hub .account-nav {border-radius:19px;min-width:0;}
+body.app-body.ns-shell-v1 #main .account-hub .account-nav a {min-height:41px;border-radius:10px;}
+body.app-body.ns-shell-v1 #main .account-hub .account-pane {padding:clamp(18px,2.7vw,30px);min-width:0;}
+body.app-body.ns-shell-v1 #main .account-hub .account-pane-body {min-width:0;}
+body.app-body.ns-shell-v1 #main .account-hub .account-quick-grid {gap:11px;}
+body.app-body.ns-shell-v1 #main .account-hub .account-stat {border-radius:16px;min-width:0;}
+body.app-body.ns-shell-v1 #main .account-hub .account-record {padding:14px;border-radius:13px;}
+body.app-body.ns-shell-v1 #main .account-hub .account-settings-form :is(input,select,textarea) {min-height:40px;}
+body.app-body.ns-shell-v1 #main .account-hub .account-avatar-grid {max-width:100%;}
+/* Stim is embedded: style the frame without interfering with its interactive
+   game controls or the separate account-preference bridge. */
+body.app-body.ns-shell-v1 #main .stim-space-page .page-intro {border:1px solid #d9e5d5;background:#edf1e8;border-radius:24px;padding:clamp(21px,3vw,34px);}
+body.app-body.ns-shell-v1 #main .stim-space-page .stim-space-frame {width:100%;max-width:100%;border-radius:22px;border:1px solid #dce5d8;background:#f4f5ee;min-height:550px;}
+body.app-body.ns-shell-v1 #main .stim-space-page .stim-space-note {margin-top:16px;}
+/* Wisbody: preserve full controls and saved reflection, rather than shrinking
+   the whole interactive tool into an uneditable quote preview. */
+body.app-body.ns-shell-v1 #main .wisbody-page {max-width:920px;}
+body.app-body.ns-shell-v1 #main .wisbody-page > .back-link {display:inline-flex;min-height:42px;align-items:center;margin-bottom:16px;}
+body.app-body.ns-shell-v1 #main .wisbody-page .wisbody {border-radius:21px;border:1px solid var(--ns7-border);background:var(--ns7-card);padding:clamp(17px,2.5vw,28px);box-shadow:var(--ns7-shadow);}
+body.app-body.ns-shell-v1 #main .wisbody-page .wisbody-controls {display:flex;flex-wrap:wrap;gap:9px;}
+/* Help and referrals: emergency information MUST remain visually dominant. */
+body.app-body.ns-shell-v1 #main .support-page .support-intro {padding:clamp(20px,3vw,35px);background:#edf2e9;border:1px solid #dbe7d9;border-radius:24px;}
+body.app-body.ns-shell-v1 #main .support-page .support-emergency {border:2px solid #ba806d;border-radius:20px;padding:clamp(18px,2.5vw,28px);}
+body.app-body.ns-shell-v1 #main .support-page .support-controls {border-radius:17px;padding:clamp(15px,2vw,23px);}
+body.app-body.ns-shell-v1 #main .support-page .referral-grid {gap:13px;}
+body.app-body.ns-shell-v1 #main .support-page .referral-card {padding:clamp(15px,2vw,23px);}
+body.app-body.ns-shell-v1 #main .support-page .support-primary {border-radius:20px;}
+/* Optional next step, appended after existing functionality. */
+body.app-body.ns-shell-v1 #main .ns-integration7-related {
+  margin:clamp(27px,4vw,48px) auto 0;max-width:100%;border:1px solid #d9e5d6;
+  background:linear-gradient(122deg,#f1f5ed,#f8f5eb);border-radius:22px;
+  padding:clamp(18px,2.5vw,30px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(15px,3vw,35px);align-items:center;
+}
+body.app-body.ns-shell-v1 #main .ns-integration7-overline {color:#668369;font-size:10px;letter-spacing:.15em;font-weight:800;}
+body.app-body.ns-shell-v1 #main .ns-integration7-related h2 {color:var(--ns7-ink);font:400 clamp(23px,2.1vw,31px)/1.2 Georgia,serif;letter-spacing:-.035em;margin:8px 0;}
+body.app-body.ns-shell-v1 #main .ns-integration7-related p {font-size:13px;line-height:1.55;color:var(--ns7-muted);margin:0;max-width:52ch;}
+body.app-body.ns-shell-v1 #main .ns-integration7-related__links {display:grid;gap:7px;min-width:0;}
+body.app-body.ns-shell-v1 #main .ns-integration7-related__links a {display:flex;align-items:center;justify-content:space-between;min-height:45px;gap:13px;padding:11px 15px;border:1px solid #e0e8dc;border-radius:12px;background:#fffef9;text-decoration:none;color:#2c5b40;font-size:13px;font-weight:700;}
+body.app-body.ns-shell-v1 #main .ns-integration7-related__links a:hover {background:#e5efe3;border-color:#adc6af;}
+body.app-body.ns-shell-v1 #main .ns-integration7-related__links a>span:last-child {font-size:20px;flex:none;}
+/* Carefully scoped responsive rules; never collapse questionnaire choices or
+   active media controls, and never hide notices, warnings or errors. */
+@media (max-width:900px) {
+ body.app-body.ns-shell-v1 #main .ns-integration7-related {grid-template-columns:1fr;gap:16px;}
+ body.app-body.ns-shell-v1 #main .account-hub .account-layout {min-width:0;}
+}
+@media (max-width:620px) {
+ body.app-body.ns-shell-v1 #main > :is(.simplyfocus-page,.questionnaires-page,.big-five-page,.board-page,.support-page,.stim-space-page,.wisbody-page,.tool-page,.interactive-page,.account-hub,.systems-questionnaire-page,.personality-page,.about-copy) {padding-inline:14px;}
+ body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-intro h1 {font-size:clamp(29px,8.5vw,39px);}
+ body.app-body.ns-shell-v1 #main .board-page .board-header {padding:19px;}
+ body.app-body.ns-shell-v1 #main .board-page .board-header img {max-width:75px;height:auto;}
+ body.app-body.ns-shell-v1 #main .stim-space-page .stim-space-frame {min-height:480px;}
+ body.app-body.ns-shell-v1 #main .ns-integration7-related {padding:19px 15px;border-radius:18px;}
+ body.app-body.ns-shell-v1 #main .ns-integration7-related__links a {font-size:13px;}
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 {
+ --ns7-card:#23392d;--ns7-ink:#ecf3e8;--ns7-muted:#c5d5c7;
+ --ns7-border:#4d6c56;--ns7-soft:#30483a;--ns7-action:#bddac5;--ns7-shadow:none;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main :is(.simplyfocus-page .focus-intro,.board-page .board-header,.account-hub .account-hero,.stim-space-page .page-intro,.support-page .support-intro,.ns-integration7-related){background:#263e31;border-color:#506a56;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main :is(.questionnaire-card,.board-feed-card,.board-compose,.board-gate,.referral-card,.account-pane,.account-record,.questionnaire-notice,.wisbody-page .wisbody) {background:#22382c;color:#e9f1e8;border-color:#506e57;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main :is(.simplyfocus-page,.questionnaires-page,.big-five-page,.board-page,.support-page,.account-hub,.stim-space-page,.wisbody-page,.ns-integration7-related) :is(h1,h2,h3) {color:#e9f1e8;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main :is(.focus-intro,.support-intro,.board-header,.account-hero,.questionnaires-page .page-intro,.ns-integration7-related) p:not(.eyebrow) {color:#c7d5c7;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-integration7-related__links a {background:#294635;color:#eaf5e9;border-color:#53715b;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-integration7-overline {color:#b5d3b3;}
+html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-integration7-related {background:var(--ns7-card);box-shadow:none;}
+html[data-motion="reduce"] body.app-body.ns-shell-v1 #main .questionnaire-card {transition:none;}
+@media (prefers-reduced-motion:reduce){body.app-body.ns-shell-v1 #main .questionnaire-card {transition:none;}}
+/* Legibility repair: the legacy Focus actions assumed a dark mixer; the new
+   lighter treatment must not inherit nearly-white text on cream surfaces. */
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-actions .subtle-button {
+  color:#28543d!important;background:#f9fcf5!important;border:1px solid #b5cbb5!important;
+  box-shadow:none!important;min-height:44px;
+}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-actions .subtle-button:hover {background:#e3eee0!important;}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-track-value,
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-track output {color:#2c503c!important;}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-presets .chip {
+  color:#2c503c;background:#fffdf8;border-color:#bdcdb8;
+}
+body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-presets .chip:is(:hover,.active) {background:#e5f0df;border-color:#8eb095;color:#254834;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-actions .subtle-button {
+  background:#294635!important;color:#e5f2e2!important;border-color:#74927b!important;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-track-value,
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-track output {color:#e5f0e5!important;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .simplyfocus-page .focus-presets .chip {background:#2b4736;color:#eaf5e7;border-color:#607d67;}
+/* The real Get Help UI is a modal dialog; style it too while leaving its
+   country/topic filters, links and emergency content untouched. */
+body.app-body.ns-shell-v1 .support-dialog {max-width:min(1000px,calc(100vw - 22px));border-radius:22px;border:1px solid #c8d9ca;background:#fafaf3;color:#294a39;box-shadow:0 26px 90px #142c1b4b;}
+body.app-body.ns-shell-v1 .support-dialog::backdrop {background:#14271dc2;}
+body.app-body.ns-shell-v1 .support-dialog .support-dialog-bar {background:#edf1e9;border-bottom:1px solid #d6e4d3;}
+body.app-body.ns-shell-v1 .support-dialog .support-intro {border:1px solid #d9e5d6;background:#eef3e9;border-radius:18px;padding:clamp(16px,2vw,27px);}
+body.app-body.ns-shell-v1 .support-dialog .support-emergency {border:2px solid #af765f;border-radius:17px;}
+body.app-body.ns-shell-v1 .support-dialog :is(a,button,input,select):focus-visible {outline:3px solid #bb812e;outline-offset:3px;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 .support-dialog {background:#22382d;color:#eaf2e7;border-color:#59765e;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 .support-dialog :is(.support-intro,.support-dialog-bar) {background:#2c4736;border-color:#58765d;}
+/* Individual activities share the same calm outer framework, while every
+   specialised scanner, diagram, scoring control and warning remains owned by
+   the original tool renderer. */
+body.app-body.ns-shell-v1 #main .tool-page .tool-heading {margin-bottom:clamp(18px,3vw,31px);}
+body.app-body.ns-shell-v1 #main .tool-page .tool-heading h1 {font-size:clamp(31px,3.7vw,52px);color:var(--ns7-ink);letter-spacing:-.04em;}
+body.app-body.ns-shell-v1 #main .tool-page :is(.privacy-note,.tool-guide-note,.interactive-status) {max-width:100%;border-radius:14px;line-height:1.55;}
+body.app-body.ns-shell-v1 #main .tool-page :is(.tool-form,.tool-next,.cbt-stage-card,.state-scan-shell,.body-map-shell) {min-width:0;max-width:100%;}
+body.app-body.ns-shell-v1 #main .tool-page :is(input,textarea,select) {max-width:100%;}
+body.app-body.ns-shell-v1 #main .interactive-page :is(.interactive-stage,.interactive-page-content,.interactive-stage-controls) {min-width:0;max-width:100%;}
+body.app-body.ns-shell-v1 #main .tool-page :is(a,button,input,select,textarea):focus-visible,
+body.app-body.ns-shell-v1 #main .interactive-page :is(a,button,input,select,textarea):focus-visible {outline:3px solid var(--ns7-focus);outline-offset:3px;}
