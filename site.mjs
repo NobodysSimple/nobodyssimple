@@ -1,5 +1,6 @@
 import './ns-shell.mjs';
 import { renderNSLab, cleanupNSLab } from './ns-life-lab.mjs';
+import { renderNSFieldGuide, cleanupNSFieldGuide } from './ns-field-guide.mjs';
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {createCommunityClient} from './community-data.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
@@ -813,6 +814,7 @@ function renderSystemsPage() {
 let cleanupToolDiscovery=()=>{};
 function route() {
   cleanupNSLab();
+  cleanupNSFieldGuide();
   cleanupToolDiscovery();
   cleanupToolDiscovery=()=>{};
   cleanupCommunity();
@@ -846,6 +848,7 @@ function route() {
     ({
       home: () => homePage({learningView:"home"}),
       lab: () => renderNSLab(main, routeParts.slice(1).map(safeRoutePart)),
+      guide: () => renderNSFieldGuide(main, routeParts.slice(1).map(safeRoutePart), accountState()),
       help: () => homePage({learningView:"home",wizardOnly:true}),
       navigate: () => homePage({learningView:"home",wizardOnly:true}),
       library: () => {
@@ -941,6 +944,7 @@ function route() {
   const appLabels = {
     home: "Home",
     lab: "Life Lab",
+    guide: "My Field Guide",
     help: "Home",
     navigate: "Home",
     tools: "Tools",
@@ -978,6 +982,7 @@ function route() {
     ? "Today"
     : ["help", "navigate", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
+    : currentName === "guide" ? "Your private notes"
     : ["tools", "tool", "play", "guided", "simplyfocus", "questionnaires", "big-five", "systems", "personality"].includes(currentName)
         ? "Explore"
         : currentName === "support"

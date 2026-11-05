@@ -1,4 +1,4 @@
-const CACHE = "nobodyssimple-v127-stage5-lab";
+const CACHE = "nobodyssimple-v128-stage6-field-guide";
 const SHELL = [
   "./",
   "index.html",
@@ -15,6 +15,9 @@ const SHELL = [
   "ns-lessons.mjs",
   "ns-life-lab.css",
   "ns-life-lab.mjs",
+  "ns-field-guide-data.mjs",
+  "ns-field-guide.mjs",
+  "ns-field-guide.css",
   "ns-home-hero.webp",
   "ns-home-console.webp",
   "ns-character-base.webp",

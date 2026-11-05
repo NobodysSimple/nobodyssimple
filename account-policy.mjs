@@ -23,10 +23,14 @@ export const SAVED = {
   'ns-load-balancer-v2': ['tools','Load balancer'],
   'ns-masking-contexts-v1': ['tools','Masking contexts'],
   'ns-masking-map-v2': ['tools','Masking map'],
-  'ns-simplyfocus-recipe-v1': ['tools','SimplyFocus mixer'],
+  'ns-simplyfocus-recipe-v1': ['tools','SimplyFocus mixer (earlier version)'],
+  'ns-simplyfocus-recipe-v2': ['tools','SimplyFocus mixer (current)'],
+  'ns-big-five-atlas-v1': ['tools','Saved Big Five atlas'],
+  'ns-lifestyle-tasks-v1': ['tools','Older transferred focus tasks'],
+  'ns-field-guide-v1': ['guide','My private Field Guide'],
   'ns-simplyfocus-tasks-v1': ['tools','SimplyFocus tasks'],
 };
-export const CATEGORIES = {maps:'Maps and projects',library:'Favourites and recent tools',learning:'Learning progress',drafts:'Unfinished activities',reflections:'Personal reflections',mood:'Mood and check-in history',tools:'Saved tool settings'};
+export const CATEGORIES = {guide:'My private Field Guide',maps:'Maps and projects',library:'Favourites and recent tools',learning:'Learning progress',drafts:'Unfinished activities',reflections:'Personal reflections',mood:'Mood and check-in history',tools:'Saved tool settings'};
 export const DEFAULTS = Object.freeze({theme:'light',language:'en',textScale:100,contrast:'standard',motion:'system',lowStim:false,sound:true,font:'system',lineSpacing:1.6,simpleMode:false,tapControls:false,visualMode:'balanced',saveDrafts:true,retentionDays:0,personalise:false,moodHistory:false,sensitiveLock:false,learningFormat:'any',trackLearning:false,replyNotifications:false,siteUpdates:false,reminders:false,reminderTime:'18:00',timeZone:'Europe/London',mentions:false,profileVisibility:'private'});
 const OPTIONS = {theme:['system','light','dark'],language:['en','es','fr','de'],textScale:[100,110,125,150],contrast:['standard','high'],motion:['system','reduce','full'],font:['system','readable'],lineSpacing:[1.6,1.9,2.2],retentionDays:[0,30,90,365],learningFormat:['any','reading','audio','video','interactive'],profileVisibility:['private','public'],visualMode:['balanced','text','visual']};
 export function cleanSettings(input={}) {
