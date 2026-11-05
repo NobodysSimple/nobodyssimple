@@ -529,7 +529,7 @@ function renderToolboxLegacy(root, filter = "") {
   );
 }
 
-const libraryCollections = [
+export const libraryCollections = [
   { id: "feel", label: "Feel & notice", description: "Understand emotions, body signals and inner experience.", prompt: "Notice what is happening inside.", keys: ["feel"] },
   { id: "calm", label: "Calm & sensory", description: "Work with sensory load, grounding, energy and regulation.", prompt: "Find a steadier sensory footing.", keys: ["calm", "sensory", "energy"] },
   { id: "think", label: "Think & organise", description: "Untangle thoughts, uncertainty, mental clutter and interpretations.", prompt: "Make the tangled parts easier to see.", keys: ["think", "journal", "patterns"] },
@@ -553,7 +553,7 @@ const libraryCollectionFor = (item) => {
   return libraryCollections.find((collection) => collection.keys.includes(group))?.id || "think";
 };
 
-const libraryItems = () => [
+export const libraryItems = () => [
   ...tools.filter((item) => item.id !== "maps").map((item) => ({
     ...item,
     source: "writing",

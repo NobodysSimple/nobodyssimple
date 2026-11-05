@@ -39,6 +39,7 @@ import { renderSimplyFocus } from "./simplyfocus.mjs";
 import { renderPersonalityTest } from "./personality-test.mjs";
 import { renderBigFive, renderQuestionnaires, renderSystemsQuestionnaire } from "./questionnaires.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
+import { renderToolDiscovery } from './ns-tool-library.mjs';
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
@@ -800,7 +801,10 @@ function renderSystemsPage() {
     main.innerHTML = `<div class="wrap about-copy questionnaire-load-error"><p class="eyebrow">Questionnaires</p><h1>This questionnaire could not open.</h1><p>Refresh once and try again. Your existing questionnaires and the rest of Nobody’s Simple are still available.</p><div class="row"><a class="button" href="#questionnaires">Back to questionnaires</a><a href="#home">Back to the main screen</a></div></div>`;
   }
 }
+let cleanupToolDiscovery=()=>{};
 function route() {
+  cleanupToolDiscovery();
+  cleanupToolDiscovery=()=>{};
   cleanupCommunity();
   main.onclick = null;
   const [name, id] = location.hash.slice(1).split("/");
@@ -843,7 +847,7 @@ function route() {
       blog,
       writing: blog,
       tools: () => {
-        renderToolbox(main);
+        cleanupToolDiscovery=renderToolDiscovery(main,id||'');
       },
       tool: () => {
         const toolId = decodeURIComponent(id || "");
