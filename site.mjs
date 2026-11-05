@@ -1,4 +1,5 @@
-import { renderLabStage1 } from './ns-shell.mjs';
+import './ns-shell.mjs';
+import { renderNSLab, cleanupNSLab } from './ns-life-lab.mjs';
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {createCommunityClient} from './community-data.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
@@ -811,6 +812,7 @@ function renderSystemsPage() {
 }
 let cleanupToolDiscovery=()=>{};
 function route() {
+  cleanupNSLab();
   cleanupToolDiscovery();
   cleanupToolDiscovery=()=>{};
   cleanupCommunity();
@@ -843,7 +845,7 @@ function route() {
   (
     ({
       home: () => homePage({learningView:"home"}),
-      lab: () => renderLabStage1(main, id || ""),
+      lab: () => renderNSLab(main, routeParts.slice(1).map(safeRoutePart)),
       help: () => homePage({learningView:"home",wizardOnly:true}),
       navigate: () => homePage({learningView:"home",wizardOnly:true}),
       library: () => {

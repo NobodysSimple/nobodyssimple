@@ -7,13 +7,13 @@ import { libraryItems, libraryCollections } from './features.mjs';
 
 const html = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const ART = {
-  feel:['ns-landscape-feel.webp','ns-character-compass.webp','01'],
+  feel:['ns-landscape-sunset.webp','ns-character-compass.webp','01'],
   calm:['ns-landscape-calm.webp','ns-character-meditate.webp','02'],
-  think:['ns-landscape-think.webp','ns-character-thinking.webp','03'],
-  choose:['ns-landscape-choose.webp','ns-character-hiking.webp','04'],
-  relate:['ns-landscape-relate.webp','ns-character-friends.webp','05'],
-  identity:['ns-landscape-identity.webp','ns-character-sitting.webp','06'],
-  learn:['ns-landscape-learn.webp','ns-character-reading.webp','07'],
+  think:['ns-landscape-forest.webp','ns-character-thinking.webp','03'],
+  choose:['ns-landscape-path.webp','ns-character-hiking.webp','04'],
+  relate:['ns-landscape-mountains.webp','ns-character-message.webp','05'],
+  identity:['ns-landscape-night.webp','ns-character-sitting.webp','06'],
+  learn:['ns-landscape-clouds.webp','ns-character-reading.webp','07'],
 };
 const FAVOURITE_KEY = 'ns-tool-favourites-v1';
 const RECENT_KEY = 'ns-tool-recent-v1';
@@ -77,8 +77,11 @@ function card(item,pinned,compact=false) {
 const sortByTitle = items => [...items].sort((a,b)=>a.title.localeCompare(b.title,'en',{sensitivity:'base'}));
 function themeCard(c,items){
   const [art,pose,n] = ART[c.id];
+  // Each thumbnail uses a landscape WITHOUT a baked-in character, plus
+  // exactly one separate mascot. No overlapping/doubled figures.
+  const oneCharacter = `<img class="ns-tools-theme__mascot" src="${pose}" alt="" loading="lazy" decoding="async">`;
   return `<a class="ns-tools-theme ns-tools-theme--${c.id}" href="#tools/${c.id}" aria-label="${html(c.label)}, ${countText(items.length)}">
-    <span class="ns-tools-theme__scene"><img src="${art}" alt="" loading="lazy" decoding="async"><img class="ns-tools-theme__mascot" src="${pose}" alt="" loading="lazy" decoding="async"></span>
+    <span class="ns-tools-theme__scene"><img src="${art}" alt="" loading="lazy" decoding="async">${oneCharacter}</span>
     <span class="ns-tools-theme__text"><small>AREA ${n}<span class="ns-tools-theme__count">${countText(items.length)}</span></small><strong>${html(c.label)}</strong><span>${html(c.prompt)}</span></span>
     <span class="ns-tools-theme__arrow">${icon('arrow')}</span>
   </a>`;
