@@ -1,9 +1,11 @@
-const CACHE = "nobodyssimple-v123-debugging";
+const CACHE = "nobodyssimple-v124-stage1-shell";
 const SHELL = [
   "./",
   "index.html",
   "logo.png",
   "app-design.css",
+  "ns-shell.css",
+  "ns-shell.mjs",
   "app-design.mjs",
   "ns-home-hero.webp",
   "ns-home-console.webp",

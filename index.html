@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="account.css" />
     <link rel="stylesheet" href="strategy.css" />
     <link rel="stylesheet" href="community.css" />
-      <link rel="stylesheet" href="app-design.css?v=debug-123" />
+      <link rel="stylesheet" href="app-design.css" />
     <script type="module" src="app-design.mjs"></script>
+    <link rel="stylesheet" href="ns-shell.css" />
   </head>
-  <body class="app-body">
+  <body class="app-body ns-shell-v1">
     <a class="skip" href="#main">Skip to content</a>
     <div class="app-shell">
       <aside class="app-sidebar" aria-label="App navigation">
@@ -32,15 +33,17 @@
         </div>
 
         <div class="app-sidebar-scroll">
-          <p class="app-nav-label">Start here</p>
-          <nav class="app-nav" aria-label="Primary">
-            <a href="#home" data-route-link><span class="app-nav-icon" aria-hidden="true">⌂</span><span data-i18n="navHome">Home</span><small>Navigation console</small></a>
-            <a href="#tools" data-route-link><span class="app-nav-icon" aria-hidden="true">✳</span><span data-i18n="tools">Tools</span><small>Try something</small></a>
-            <a href="#learn" data-route-link><span class="app-nav-icon" aria-hidden="true">▤</span><span>Learn</span><small>Courses, writing and more</small></a>
+          <p class="app-nav-label">EXPLORE</p>
+          <nav class="app-nav app-nav-primary" aria-label="Primary" data-ns-primary-nav>
+            <a href="#home" data-route-link><span class="app-nav-icon" aria-hidden="true">⌂</span><span data-i18n="navHome">Home</span></a>
+            <a href="#lab" data-route-link><span class="app-nav-icon" aria-hidden="true">✧</span><span>Life Lab</span></a>
+            <a href="#learn" data-route-link><span class="app-nav-icon" aria-hidden="true">▤</span><span data-i18n="learn">Learn</span></a>
+            <a href="#tools" data-route-link><span class="app-nav-icon" aria-hidden="true">✳</span><span data-i18n="tools">Tools</span></a>
+            <a href="#account" data-route-link><span class="app-nav-icon" aria-hidden="true">◯</span><span>You</span></a>
           </nav>
-
-          <p class="app-nav-label app-nav-label-secondary">Your space</p>
-          <nav class="app-nav app-nav-secondary" aria-label="Your space">
+          <details class="ns-more-menu">
+            <summary>More places</summary>
+            <nav class="app-nav app-nav-secondary" aria-label="More places">
             <a href="#discussion" data-route-link><span class="app-nav-icon" aria-hidden="true">☏</span><span>Discussion board</span></a>
             <a href="#messages" data-route-link><span class="app-nav-icon" aria-hidden="true">✉</span><span>Messages</span></a>
             <a href="#simplyfocus" data-route-link><span class="app-nav-icon" aria-hidden="true">◌</span><span>SimplyFocus</span></a>
@@ -48,6 +51,7 @@
             <a href="#questionnaires" data-route-link><span class="app-nav-icon" aria-hidden="true">◎</span><span>Questionnaires</span></a>
             <a href="#community" data-route-link><span class="app-nav-icon" aria-hidden="true">↗</span><span>Feedback</span></a>
           </nav>
+          </details>
         </div>
 
         <div class="app-sidebar-bottom">
@@ -95,11 +99,11 @@
       </div>
     </div>
 
-    <nav class="app-bottom-nav" aria-label="Main navigation">
+    <nav class="app-bottom-nav" aria-label="Main navigation" data-ns-primary-nav>
       <a href="#home" data-route-link><span aria-hidden="true">⌂</span><small data-i18n="navHome">Home</small></a>
+      <a href="#lab" data-route-link><span aria-hidden="true">✧</span><small>Lab</small></a>
+      <a href="#learn" data-route-link><span aria-hidden="true">▤</span><small data-i18n="learn">Learn</small></a>
       <a href="#tools" data-route-link><span aria-hidden="true">✳</span><small data-i18n="tools">Tools</small></a>
-      <a href="#learn" data-route-link><span aria-hidden="true">▤</span><small>Learn</small></a>
-      <a href="#simplyfocus" data-route-link><span aria-hidden="true">♫</span><small>Focus</small></a>
       <a href="#account" data-route-link><span aria-hidden="true">◯</span><small>You</small></a>
     </nav>
 

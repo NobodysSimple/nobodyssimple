@@ -1,3 +1,4 @@
+import { renderLabStage1 } from './ns-shell.mjs';
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {createCommunityClient} from './community-data.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
@@ -828,6 +829,7 @@ function route() {
   (
     ({
       home: () => homePage({learningView:"home"}),
+      lab: () => renderLabStage1(main, id || ""),
       help: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
       navigate: () => homePage({learningView:"home",scrollTo:"#home-navigation-console"}),
       library: () => {
@@ -912,6 +914,7 @@ function route() {
   document.title = `${title ? title + " · " : ""}Nobody’s Simple`;
   const appLabels = {
     home: "Home",
+    lab: "Life Lab",
     help: "Home",
     navigate: "Home",
     tools: "Tools",
