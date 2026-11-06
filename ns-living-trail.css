@@ -173,3 +173,23 @@ body.app-body.ns-shell-v1 .ns-trail-unit-chip{background:#f8f6e9e8;border:1px so
 html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-unit-chip{background:#263e31;color:#d5e4d2;border-color:#658371;}
 
 body.app-body.ns-shell-v1 .ns-trail-list{scroll-margin-top:165px;}
+
+/* Forty-unit curriculum preview: artwork is reusable; planned destinations are not buttons. */
+body.app-body.ns-shell-v1 .ns-trail-unit--planned{content-visibility:auto;contain-intrinsic-size:auto 540px;}
+body.app-body.ns-shell-v1 .ns-trail-scenetile--planned{height:540px;}
+body.app-body.ns-shell-v1 .ns-trail-planned-stone{position:absolute;top:43%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:72px;height:72px;border-radius:50%;border:4px solid #b2baae;background:linear-gradient(#f7f4e9,#d9d7c8);box-shadow:0 7px 0 #84938b6b,0 12px 14px #2447343b;color:#6c776d;font-size:31px;z-index:3;}
+body.app-body.ns-shell-v1 .ns-trail-planned-label{position:absolute;top:62%;left:50%;transform:translateX(-50%);width:min(360px,85%);padding:11px 15px;background:#fffbf0f2;border:1px solid #d7cba7;border-radius:19px;display:grid;gap:5px;text-align:center;box-shadow:0 5px 15px #253b2c2d;z-index:4;}
+body.app-body.ns-shell-v1 .ns-trail-planned-label>span{font:800 10px/1.25 system-ui,sans-serif;color:#806b47;letter-spacing:.09em;}
+body.app-body.ns-shell-v1 .ns-trail-planned-label strong{font:750 clamp(17px,2.5vw,23px)/1.13 Georgia,serif;color:#234b37;overflow-wrap:normal;word-break:normal;}
+body.app-body.ns-shell-v1 .ns-trail-planned-label small{color:#59685d;font-size:12px;}
+body.app-body.ns-shell-v1 .ns-trail-plan-count{font-weight:750!important;color:#39724c!important;font-size:12px!important;margin:6px 0!important;}
+body.app-body.ns-shell-v1 .ns-trail-unit-list-group{padding:9px 0;border-top:1px solid #dbe5d4;}
+body.app-body.ns-shell-v1 .ns-trail-unit-list-jump{display:grid;grid-template-columns:minmax(0,1fr) 24px;gap:4px 8px;align-items:center;width:100%;text-align:left;border:1px solid #d5dfca;border-radius:13px;background:#f9f8ed;color:#244f37;padding:12px 13px;cursor:pointer;}
+body.app-body.ns-shell-v1 .ns-trail-unit-list-jump strong{font:750 16px/1.18 Georgia,serif;grid-column:1;}
+body.app-body.ns-shell-v1 .ns-trail-unit-list-jump small{font:600 11px/1.35 system-ui,sans-serif;color:#627967;grid-column:1;}
+body.app-body.ns-shell-v1 .ns-trail-unit-list-jump span{grid-column:2;grid-row:1/span 2;text-align:center;font-size:23px;}
+body.app-body.ns-shell-v1 .ns-trail-unit-list-jump:hover{background:#ebf1e3;}
+body.app-body.ns-shell-v1 .ns-trail-unit-list-jump:focus-visible{outline:3px solid #ce8e3a;outline-offset:2px;}
+html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-planned-label,html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-unit-list-jump{background:#263f32;color:#e0efdf;border-color:#6b8a6d;}
+html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-planned-label strong,html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-unit-list-jump strong{color:#e1f1df;}
+html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-unit-list-jump small,html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-planned-label small{color:#c5d7c5;}

@@ -25,6 +25,24 @@ const WORLD_META = Object.freeze({
   {id:'values-discovery',title:'Values Discovery',type:'discover',status:'tool',href:'#tool/values-discovery',detail:'Explore values as flexible directions, not fixed labels.'} ]},
 });
 
+// Forty named curriculum *outlines* per world. Only Unit 1 currently has live activities.
+// These names are an editorial roadmap, NOT published lessons or achieved progress.
+const PLANNED_UNIT_TITLES = Object.freeze({
+ meadow:Object.freeze(['Making sense of feelings', "Naming what's here", 'Mixed emotions', 'Feelings and physical sensations', 'Listening to body signals', 'Emotional intensity', 'Emotions change over time', 'When feelings are hard to name', 'Recognising personal triggers', 'Feeling versus reacting', 'Stress signals', 'Understanding your needs', 'Comfort and regulation', 'Sensory patterns', 'Rest and recovery', 'Responding to overwhelm', 'Making space for sadness', 'Working with anger', 'Fear and uncertainty', 'Joy and appreciation', 'Shame and self-kindness', 'Emotional boundaries', 'Needs in relationships', 'Changing emotional patterns', 'Recognising rumination', 'Thoughts that amplify feelings', 'Calming without avoiding', 'Self-compassion in action', 'When feelings disagree', 'Healthy ways to express emotion', 'Finding your rhythm', 'Coping during transitions', 'Recognising your limits', 'Asking for support', 'Resilience without pressure', 'Practising emotional flexibility', 'Building helpful routines', 'Navigating difficult days', 'Applying skills in new settings', 'Your emotional toolkit']),
+ forest:Object.freeze(['Facts, stories & uncertainty', 'Observation or interpretation?', 'Why we assume motives', 'Considering other explanations', 'Checking the evidence', 'Confidence and doubt', 'Dealing with the unknown', 'Common thinking traps', 'Attention and selective evidence', 'Memory is reconstructive', 'Recognising confirmation bias', 'When thoughts spiral', 'Worry and prediction', 'Rumination and reflection', 'The need for certainty', 'Interpreting social situations', 'Separating feelings from facts', 'When information is incomplete', 'Patterns versus coincidences', 'Testing assumptions gently', 'Questioning first impressions', 'Noticing the story you tell', 'Thinking in probabilities', 'Avoiding all-or-nothing conclusions', 'Understanding disagreement', 'Reasoning under pressure', 'Learning from mistakes', 'Dealing with ambiguity', 'Distinguishing possibility from likelihood', 'Social comparison and beliefs', 'Interpreting intentions cautiously', 'Media claims and evidence', 'Evidence quality and sources', 'Spotting persuasive language', 'Making flexible judgments', 'Reasoning with competing values', 'When to seek more information', 'Transferring the skill to work', 'Transferring the skill to relationships', 'Thinking clearly in everyday life']),
+ bridge:Object.freeze(['Understanding each other', 'Seeing different perspectives', 'Listening with curiosity', 'What makes communication difficult?', 'Needs beneath reactions', 'Asking rather than assuming', 'Clear requests', 'Boundaries as information', 'Saying no respectfully', 'Hearing no from others', 'Repairing misunderstandings', 'When conversations escalate', 'Emotion and conflict', 'Timing difficult conversations', 'Working with defensiveness', 'Taking responsibility without shame', 'Apologies that address impact', 'Different communication styles', 'Trust and uncertainty', 'How expectations form', 'Respecting autonomy', 'Handling disappointments', 'Responding to criticism', 'Giving constructive feedback', 'Asking for reassurance clearly', 'Recognising power differences', 'Friendship and reciprocity', 'Digital communication', 'Group belonging', 'Handling social exclusion', 'Conflict without winning', 'Negotiating different needs', 'Repair after a disagreement', 'Supporting without rescuing', 'Recognising unhealthy dynamics', 'Protecting your boundaries', 'Collaborative problem solving', 'Relationships during change', 'Applying skills across settings', 'Your relationship toolkit']),
+ workshop:Object.freeze(['From stuck to started', 'Clarifying what matters', 'Choosing one next step', 'Understanding procrastination', 'Finding friction', 'Reducing the starting barrier', 'Planning around energy', 'If–then plans', 'Small experiments', 'Defining a workable goal', 'Priorities and trade-offs', 'Decisions under uncertainty', 'Comparing options fairly', 'Recognising hidden constraints', 'Working around obstacles', 'Habits and environments', 'Designing a helpful routine', 'Motivation comes and goes', 'Making tasks manageable', 'Attention and distractions', 'Working with perfectionism', 'Time estimates and planning', 'When plans need to change', 'Feedback versus failure', 'Recovering after setbacks', 'Managing competing demands', 'Asking for practical support', 'Progress without streak pressure', 'Knowing when to pause', 'Working toward long projects', 'Values-based decisions', 'Risk and reversibility', 'Anticipating obstacles', 'Building consistent follow-through', 'Avoiding overcommitment', 'Experimenting with alternatives', 'Reviewing decisions', 'Adapting to life changes', 'Using skills in difficult weeks', 'Your action toolkit']),
+ observatory:Object.freeze(['Self in context', 'The many parts of identity', 'Values and what matters', 'Roles we occupy', 'How context shapes behaviour', 'Belonging and difference', 'Strengths and their limits', 'Labels and self-description', 'Identity across situations', 'The stories we inherit', 'Family and social expectations', 'Cultural influences', 'Self-criticism and standards', 'The self across time', 'Changing your mind', 'Who you are with others', 'Authenticity and safety', 'Comparing possible selves', 'Interests and exploration', 'Personal boundaries and identity', 'Social norms and pressure', 'The influence of institutions', 'Status and comparison', 'Stereotypes and assumptions', 'Seeing systems around us', 'Power and opportunities', 'Community and connection', 'Identity during transitions', 'Holding contradictions', 'Finding meaning in everyday life', 'Purpose without perfection', 'Learning from experience', 'What helps you thrive?', 'Values in difficult choices', 'Understanding privilege and barriers', 'Future possibilities', 'Adapting your self-story', 'Living with uncertainty about self', 'Making room for change', 'Your evolving field guide']),
+});
+export const trailUnitPlan = Object.freeze(Object.fromEntries(
+ Object.entries(PLANNED_UNIT_TITLES).map(([id,titles])=>[id,titles.map((title,i)=>({id:`unit-${i+1}`,title,number:i+1,availability:i===0?'activities-available':'planned'}))])
+));
+function unitsForWorld(world){
+ return PLANNED_UNIT_TITLES[world.id].map((title,i)=>({
+  id:`unit-${i+1}`,title,nodes:i===0?world.nodes:[],status:i===0?'available':'planned'
+ }));
+}
+
 export const trailSegmentCount = count => Math.max(1,Math.ceil(Math.max(0,Number(count)||0)/4));
 const GLYPHS=Object.freeze({
  capstone:'★', discover:'▤', notice:'◉', explore:'⌕', compare:'⚖', rehearse:'☏', practise:'✳', apply:'♧', recall:'↻', transfer:'➜', reflect:'✎', review:'✓'
@@ -38,7 +56,7 @@ export function cleanupLivingTrail(){cleanup();cleanup=()=>{};}
 // Stable seeded composition: adding a unit never rearranges already published ones.
 function seeded(seed){let h=2166136261;for(const char of seed){h^=char.charCodeAt(0);h=Math.imul(h,16777619)}return ()=>{h^=h<<13;h^=h>>>17;h^=h<<5;return (h>>>0)/4294967296;};}
 const poly=(pts,fill,extra='')=>`<polygon points="${pts}" fill="${fill}" ${extra}/>`;
-function scenery(world,unitId='intro'){
+function scenery(world,unitId='intro',simplified=false){
  const rand=seeded(`${world}:${unitId}:living-trail-v1`);
  const palette={
   meadow:['#fce9b7','#ecedd4','#9fc779','#6d9760','#558561','#fdf1cb','#d69b56'],
@@ -49,7 +67,7 @@ function scenery(world,unitId='intro'){
  }[world]||['#ecead8','#e6ebd8','#aacc9a','#7bb38d','#397e55','#f8e8c9','#bba068'];
  const [sky,hill,mid,near,deep,path,accent]=palette;
  let flora='';
- for(let i=0;i<31;i++){
+ for(let i=0;i<(simplified?11:31);i++){
   const left=i%2===0;
   const x=left?(9+rand()*112):(365+rand()*100),y=80+rand()*950;
   const size=12+rand()*27;
@@ -90,22 +108,33 @@ function nodeMarkup(node,index,unitNumber=1,segmentCount=1){
   <span class="ns-trail-node-title" data-side="${point.side}"><strong>${escapeText(node.title)}</strong><small>${kind==='mission'?'READY · MISSION':'OPEN TOOL'}</small></span>
   ${state==='current'?'<span class="ns-trail-start" aria-hidden="true">START</span>':''}</button>`;
 }
+function plannedUnitSection(world,unit,index,nextUnit=null){
+ // Preview section is short and the scenery is generated from the stable world+unit seed.
+ // The stone is an informational landmark, not a fake playable lesson.
+ return `<section class="ns-trail-unit ns-trail-unit--planned" tabindex="-1" aria-label="Unit ${index+1}, ${escapeText(unit.title)}, planned" data-unit="${escapeText(unit.id)}" data-unit-number="${index+1}" data-unit-title="${escapeText(unit.title)}" style="--unit-height:540px">
+  <div class="ns-trail-scenetile ns-trail-scenetile--planned" style="top:0">${scenery(world.id,unit.id,true)}</div>
+  <span class="ns-trail-planned-stone" aria-hidden="true">◇</span>
+  <div class="ns-trail-planned-label"><span>UNIT ${index+1} · PLANNED</span><strong>${escapeText(unit.title)}</strong><small>COMING LATER · Lessons are not published yet</small></div>
+ </section>`;
+}
 function unitSection(world,unit,index,nextUnit=null){
+ if(unit.status==='planned')return plannedUnitSection(world,unit,index,nextUnit);
  const nodes=unit.nodes;
  const segmentCount=trailSegmentCount(nodes.length);
  const order = nodes.map((node,i)=>nodeMarkup(node,i,index+1,segmentCount)).join('');
- return `<section class="ns-trail-unit" aria-label="Unit ${index+1}, ${escapeText(unit.title)}" data-unit="${escapeText(unit.id)}" data-unit-number="${index+1}" data-unit-title="${escapeText(unit.title)}" style="--unit-height:${segmentCount*1050}px">
+ return `<section class="ns-trail-unit" tabindex="-1" aria-label="Unit ${index+1}, ${escapeText(unit.title)}" data-unit="${escapeText(unit.id)}" data-unit-number="${index+1}" data-unit-title="${escapeText(unit.title)}" style="--unit-height:${segmentCount*1050}px">
   ${Array.from({length:segmentCount},(_,i)=>`<div class="ns-trail-scenetile" style="top:${i*1050}px">${scenery(world.id,unit.id+'-'+i)}</div>`).join('')}
-  <div class="ns-trail-nextunit"><span class="ns-trail-nextunit__kicker">${nextUnit?'NEXT UNIT':'COMING LATER'}</span><strong>Unit ${index+2} · ${escapeText(nextUnit?.title||world.next)}</strong><small>${nextUnit?'Continue the path above':'More missions are being developed'}</small></div>
+  <div class="ns-trail-nextunit"><span class="ns-trail-nextunit__kicker">${nextUnit?'NEXT UNIT':'COMING LATER'}</span><strong>Unit ${index+2} · ${escapeText(nextUnit?.title||world.next)}</strong><small>${nextUnit?'Planned curriculum ahead':'More missions are being developed'}</small></div>
   ${order}
   <div class="ns-trail-unit-banner"><span>UNIT ${index+1}</span><strong>${escapeText(unit.title)}</strong><small>${world.id==='forest'?'1 interactive mission · 2 existing tools':'2 existing tools · missions in development'}</small></div>
   <img class="ns-trail-mascot" src="${escapeText(world.pose)}" alt="" loading="lazy" decoding="async" />
  </section>`;
 }
-function listMarkup(world){
- return `<div class="ns-trail-list-content"><div class="ns-trail-list-title"><h2>Unit 1 · ${escapeText(world.unit)}</h2><p>Choose an available activity. The recommended order is optional.</p></div>
-  ${world.nodes.map((node,i)=>`<button type="button" class="ns-trail-list-row" data-trail-node="${escapeText(node.id)}"><span class="ns-trail-list-glyph" aria-hidden="true">${GLYPHS[node.type]||'✳'}</span><span><strong>${i+1}. ${escapeText(node.title)}</strong><small>${node.status==='mission'?'Interactive mission, ready to start':'Existing working tool'}</small></span><span aria-hidden="true">›</span></button>`).join('')}
-  <div class="ns-trail-list-upcoming"><strong>Next: ${escapeText(world.next)}</strong><p>Further lessons in this world are being prepared. No progress is required to use the tools above.</p></div></div>`;
+function listMarkup(world,units){
+ return `<div class="ns-trail-list-content"><div class="ns-trail-list-title"><h2>All 40 units · ${escapeText(world.name)}</h2><p>Browse every proposed topic. Unit 1 has working activities; Units 2–40 are an outline, not playable lessons.</p></div>
+  ${units.map((unit,index)=>`<div class="ns-trail-unit-list-group"><button type="button" class="ns-trail-unit-list-jump" data-trail-jump="${escapeText(unit.id)}" aria-label="Locate Unit ${index+1} on the illustrated trail"><strong>Unit ${index+1} · ${escapeText(unit.title)}</strong><small>${index===0?'Available activities':'Planned — lessons not yet available'}</small><span aria-hidden="true">↑</span></button>
+  ${index===0?unit.nodes.map((node,i)=>`<button type="button" class="ns-trail-list-row" data-trail-node="${escapeText(node.id)}"><span class="ns-trail-list-glyph" aria-hidden="true">${GLYPHS[node.type]||'✳'}</span><span><strong>${i+1}. ${escapeText(node.title)}</strong><small>${node.status==='mission'?'Interactive mission, ready to start':'Existing working tool'}</small></span><span aria-hidden="true">›</span></button>`).join(''):''}</div>`).join('')}
+  </div>`;
 }
 const WORLD_ICONS={
  '✿':'<path d="M12 21v-9M12 13C4 13 3 7 3 3c5 0 9 2 9 10ZM12 13c0-7 4-10 9-10 0 7-3 10-9 10Z"/>',
@@ -140,6 +169,13 @@ function attach(main,world){
  root.addEventListener('click',e=>{
   const switchBtn=e.target.closest('[data-trail-switch]');
   if(switchBtn){const open=menu.hidden;menu.hidden=!open;toggle.setAttribute('aria-expanded',String(open));return;}
+  const jump=e.target.closest('[data-trail-jump]');if(jump){
+   const target=[...map.querySelectorAll('[data-unit]')].find(el=>el.dataset.unit===jump.dataset.trailJump);
+   if(!target)return;
+   applyView('map');
+   focusDelay(()=>{target.focus({preventScroll:true});target.scrollIntoView({block:'center',behavior:document.documentElement.dataset.motion==='reduce'?'auto':'smooth'});});
+   return;
+  }
   const view=e.target.closest('[data-trail-view]');if(view){
    if(view.dataset.trailView===preferredView)return;
    if(preferredView==='map')saveScroll();
@@ -156,7 +192,7 @@ function attach(main,world){
  dialog.addEventListener('click',e=>{if(e.target===dialog){dialog.close();}},{signal:controller.signal});
  if(typeof window!=='undefined')window.addEventListener('scroll',()=>{if(preferredView==='map' && !map.hidden){
  const activeSection=[...map.querySelectorAll('[data-unit-title]')].find(section=>section.getBoundingClientRect().bottom>160);
- if(activeSection&&unitChip)unitChip.textContent='UNIT '+activeSection.dataset.unitNumber+' · '+activeSection.dataset.unitTitle;const currentNode=map.querySelector('.ns-trail-node--current')||map.querySelector('.ns-trail-node');const scrollTo=main.querySelector('[data-trail-return]');if(currentNode&&scrollTo){let rect=currentNode.getBoundingClientRect();scrollTo.hidden=rect.top>115&&rect.bottom<window.innerHeight-120;}}},{signal:controller.signal,passive:true});
+ if(activeSection&&unitChip){const label='UNIT '+activeSection.dataset.unitNumber+' · '+activeSection.dataset.unitTitle;if(unitChip.textContent!==label)unitChip.textContent=label;}const currentNode=map.querySelector('.ns-trail-node--current')||map.querySelector('.ns-trail-node');const scrollTo=main.querySelector('[data-trail-return]');if(currentNode&&scrollTo){let rect=currentNode.getBoundingClientRect();scrollTo.hidden=rect.top>115&&rect.bottom<window.innerHeight-120;}}},{signal:controller.signal,passive:true});
  root.querySelector('[data-trail-return]')?.addEventListener('click',()=>{map.querySelector('.ns-trail-node--current,.ns-trail-node')?.scrollIntoView({block:'center',behavior:document.documentElement.dataset.motion==='reduce'?'auto':'smooth'});},{signal:controller.signal});
  cleanup=()=>{if(preferredView==='map')saveScroll();if(dialog.open)dialog.close();controller.abort();};
  if(preferredView==='map'&&typeof window!=='undefined'){
@@ -184,19 +220,19 @@ export function renderLivingTrail(main,requestedWorld,sourceWorlds=[]){
  if(!world){main.innerHTML=`<section class="ns-living-trail ns-trail-error"><h1>That world isn't available.</h1><p>Choose one of the five existing worlds instead.</p><a href="#lab">Back to Life Lab</a></section>`;return;}
  currentWorld=id;
  // A data-driven sequence. Appending future reviewed units does not change the map engine.
- const units=[{id:'foundations',title:world.unit,nodes:world.nodes}];
+ const units=unitsForWorld({...world,id});
  const existingWorlds=sourceWorlds.length?sourceWorlds.filter(w=>WORLD_META[w.id]):Object.keys(WORLD_META).map(id=>({id,title:WORLD_META[id].name,theme:''}));
  main.innerHTML=`<div class="ns-living-trail" data-living-trail data-trail-world="${id}">
   <div class="ns-trail-sticky"><div class="ns-trail-sticky__inner"><div class="ns-trail-switch"><button type="button" class="ns-trail-switch-btn" data-trail-switch aria-expanded="false" aria-controls="ns-trail-world-menu">${iconMini(world.icon)} <span>${escapeText(world.name)}</span><span aria-hidden="true">⌄</span></button>${chooser(world,existingWorlds)}</div><div class="ns-trail-toolbar" aria-label="Trail display"><button type="button" data-trail-view="map" aria-pressed="true" aria-label="Show illustrated trail" title="Map view">⌁</button><button type="button" data-trail-view="list" aria-pressed="false" aria-label="Show ordered mission list" title="List view">☷</button></div><span class="ns-trail-sr" role="status" data-trail-view-status>Illustrated trail view</span></div><div class="ns-trail-unit-chip" data-trail-unit-chip>UNIT 1 · ${escapeText(world.unit)}</div></div>
-  <header class="ns-trail-intro"><div><p class="ns-trail-eyebrow">LIFE LAB · A JOURNEY AT YOUR PACE</p><h1>${escapeText(world.name)}</h1><p>${escapeText((sourceWorlds.find(w=>w.id===id)?.line)||'Discover, practise and apply useful skills through real situations.')}</p></div><span class="ns-trail-intro-icon" aria-hidden="true">${iconMini(world.icon)}</span></header>
+  <header class="ns-trail-intro"><div><p class="ns-trail-eyebrow">LIFE LAB · A JOURNEY AT YOUR PACE</p><h1>${escapeText(world.name)}</h1><p class="ns-trail-plan-count">40 units to explore · 1 unit with available activities</p><p>${escapeText((sourceWorlds.find(w=>w.id===id)?.line)||'Discover, practise and apply useful skills through real situations.')}</p></div><span class="ns-trail-intro-icon" aria-hidden="true">${iconMini(world.icon)}</span></header>
   <div class="ns-trail-layout"><aside class="ns-trail-aside"><div class="ns-trail-aside-card"><p class="ns-trail-eyebrow">YOUR WORLD</p><img src="${world.art}" alt="" loading="lazy"/><h2>${escapeText(world.unit)}</h2><p>Follow the stepping stones from the foreground up into the world. Tap a stone to see what it offers.</p><p class="ns-trail-aside-note">${id==='forest'?'1 complete mission and 2 existing tools are ready.':'Working tools are available now. New Life Lab missions are being prepared.'}</p><a href="#learn">Explore the Learn library <span aria-hidden="true">→</span></a></div></aside>
   <div class="ns-trail-canvas" data-trail-map>${units.map((unit,i)=>unitSection({...world,id},unit,i,units[i+1])).reverse().join('')}</div>
   </div>
-  <div class="ns-trail-list" hidden data-trail-list>${listMarkup(world)}</div>
+  <div class="ns-trail-list" hidden data-trail-list>${listMarkup(world,units)}</div>
   <button type="button" class="ns-trail-return" data-trail-return hidden>↟ Return to my place</button>
-  <footer class="ns-trail-footer"><h2>More journeys are being prepared</h2><p>New missions will extend this trail when their content is ready. You can still practise with the available activities today.</p><a href="#tools">Browse all tools →</a></footer>
+  <footer class="ns-trail-footer"><h2>40 units mapped out</h2><p>All 40 unit topics are visible in advance. Only the first unit currently links to working activities; future units will become playable when their lessons are published.</p><a href="#tools">Browse all tools →</a></footer>
   <dialog class="ns-trail-dialog" data-trail-dialog aria-labelledby="ns-trail-dialog-title"><div data-trail-dialog-body></div></dialog>
  </div>`;
  attach(main,world);
 }
-export const livingTrailManifest = Object.freeze({worlds:Object.entries(WORLD_META).map(([id,w])=>({id,unit:w.unit,available:w.nodes.map(n=>({id:n.id,status:n.status,href:n.href}))})),missionRoute:FOREST_MISSION,viewModes:['map','list']});
+export const livingTrailManifest = Object.freeze({worlds:Object.entries(WORLD_META).map(([id,w])=>({id,unit:w.unit,unitCount:PLANNED_UNIT_TITLES[id].length,available:w.nodes.map(n=>({id:n.id,status:n.status,href:n.href}))})),missionRoute:FOREST_MISSION,viewModes:['map','list']});
