@@ -10,7 +10,7 @@ test('Living Trail replaces duplicate world hub while keeping five real world ro
  renderNSLab(root,[]);
  assert.ok(root.innerHTML.includes('data-living-trail'));
  assert.ok(root.innerHTML.includes('data-trail-map'));
- assert.ok(root.innerHTML.includes('data-trail-list'));
+ assert.ok(!root.innerHTML.includes('data-trail-list'));
  assert.ok(!root.innerHTML.includes('ns-vision-worldmap'));
  assert.ok(!root.innerHTML.includes('ns-lab5-worldgrid'));
  for(const id of ['meadow','forest','bridge','workshop','observatory']) assert.ok(root.innerHTML.includes(`href="#lab/${id}"`));

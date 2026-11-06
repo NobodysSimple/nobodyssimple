@@ -22,8 +22,8 @@ test('a single course view replaces both duplicated world selectors',()=>{
   assert.ok(root.innerHTML.includes('data-living-trail'));
   assert.ok(root.innerHTML.includes(`data-trail-world="${world.id}"`));
   assert.ok(root.innerHTML.includes('data-trail-switch'));
-  assert.ok(root.innerHTML.includes('data-trail-list'));
-  assert.ok(root.innerHTML.includes('COMING LATER'));
+  assert.ok(!root.innerHTML.includes('data-trail-list'));
+  assert.ok(root.innerHTML.includes('New activities to come'));
   assert.ok(!root.innerHTML.includes('ns-lab5-worldgrid'));
   cleanupNSLab();
  }
@@ -37,7 +37,7 @@ test('invalid routes are honest and the established mission is unchanged',()=>{
  cleanupNSLab();
  assert.deepEqual(lifeLabDefinition.stages,['notice','explore','evidence','choose','test','review']);
 });
-test('map CSS is scoped and provides accessible list/reduced-stimulation',()=>{
+test('map CSS is scoped and provides continuous map/reduced-stimulation',()=>{
  const css=file('ns-living-trail.css');const html=file('index.html'),sw=file('sw.js');
  for(const token of ['.ns-living-trail','.ns-trail-scenery','.ns-trail-node','[hidden]','data-low-stim','data-theme=dark'])assert.ok(css.includes(token),token);
  assert.ok(html.includes('ns-living-trail.css'));
@@ -45,7 +45,7 @@ test('map CSS is scoped and provides accessible list/reduced-stimulation',()=>{
  assert.ok(sw.includes('ns-living-trail.css'));
 });
 
-test('scenery segmentation scales with real authored mission counts',()=>{
+test('legacy segment-count helper remains backward compatible while scenery is continuous',()=>{
  assert.equal(trailSegmentCount(0),1);
  assert.equal(trailSegmentCount(1),1);
  assert.equal(trailSegmentCount(4),1);

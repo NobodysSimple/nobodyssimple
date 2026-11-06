@@ -193,3 +193,137 @@ body.app-body.ns-shell-v1 .ns-trail-unit-list-jump:focus-visible{outline:3px sol
 html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-planned-label,html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-unit-list-jump{background:#263f32;color:#e0efdf;border-color:#6b8a6d;}
 html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-planned-label strong,html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-unit-list-jump strong{color:#e1f1df;}
 html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-unit-list-jump small,html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-planned-label small{color:#c5d7c5;}
+
+/* =============================================================
+   Living Trail · Seamless continent update (40 units / 8 chapters)
+   All units float over ONE SVG: no tile/section background boundaries.
+   Older scenery/list declarations above are dormant and can be retired
+   separately after release; no shared styles or other pages change.
+   ============================================================= */
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-canvas{
+  background:#a6bca8;position:relative;isolation:isolate;
+  overflow:hidden;border-color:#b7c9b4;border-radius:23px;
+  width:100%;height:var(--trail-scene-height);min-height:0;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-continuous-scene{
+  position:absolute;inset:0;display:block;width:100%;height:100%;
+  z-index:0;pointer-events:none;max-width:none;max-height:none;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit{
+  position:absolute;left:0;right:0;width:100%;height:360px!important;
+  overflow:visible;isolation:auto;z-index:2;background:none;border:none;
+  content-visibility:visible;contain-intrinsic-size:none;scroll-margin-top:140px;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit--planned{
+  content-visibility:visible!important;contain:none!important;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-future-node{
+  position:absolute;left:var(--ghost-x);top:var(--ghost-y);transform:translate(-50%,-50%);
+  display:grid;place-items:center;width:48px;height:48px;z-index:2;
+  border:3px solid #c2c9bd;border-radius:50%;
+  background:linear-gradient(155deg,#f6f6eee9,#dce4d9de);
+  box-shadow:0 5px 0 #53655b47,0 8px 15px #234d3c24;
+  color:#7c9286;font:600 24px/1 Georgia,serif;
+  pointer-events:none;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-future-node:first-child{
+  background:#f9f5e6e8;color:#647e6b;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque{
+  position:absolute;top:150px;z-index:3;width:min(200px,43%);
+  display:grid;gap:3px;padding:10px 12px;
+  border:1px solid #d3c8a4;border-radius:16px;
+  background:#fffcf0e8;box-shadow:0 5px 13px #26453629;
+  backdrop-filter:blur(3px);
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque[data-side=left]{left:3.5%;text-align:left;}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque[data-side=right]{right:3.5%;text-align:right;}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque span{
+  font:850 9px/1.2 system-ui,sans-serif;letter-spacing:.08em;color:#88643a;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque strong{
+  font:700 clamp(14px,1.6vw,18px)/1.17 Georgia,serif;color:#244c39;overflow-wrap:normal;word-break:normal;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque small{
+  font:600 10px/1.3 system-ui,sans-serif;color:#556a58;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit--active .ns-trail-unit-plaque{
+  top:auto;bottom:6px;width:min(245px,68%);left:50%;right:auto;
+  transform:translateX(-50%);text-align:center;background:#fff9e9eb;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit--active .ns-trail-mascot{
+  width:78px;left:1%;bottom:80px;z-index:3;pointer-events:none;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker{
+  position:absolute;left:50%;transform:translateX(-50%);
+  width:min(285px,72%);z-index:6;display:flex;align-items:center;gap:9px;
+  padding:8px 11px;border-radius:13px;border:2px solid #b99666;
+  background:linear-gradient(145deg,#f9e9c6f0,#e9cf9cee);
+  box-shadow:0 6px 0 #88653d47,0 9px 18px #34492b36;
+  color:#315744;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker>span{
+  display:grid;place-items:center;flex:none;width:29px;height:29px;
+  border-radius:50%;background:#e5f1d2;color:#51754c;font-size:19px;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker>div{display:grid;gap:1px;}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker small{
+  font:850 9px/1.2 system-ui,sans-serif;letter-spacing:.06em;color:#7c613e;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker strong{
+  font:700 16px/1.14 Georgia,serif;color:#274936;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-destination{
+  position:absolute;top:45px;left:50%;transform:translateX(-50%);
+  z-index:4;width:min(345px,82%);padding:16px 15px;
+  border:1px solid #78958b;border-radius:22px;text-align:center;
+  background:linear-gradient(155deg,#1f3736dd,#39504cd9);color:#fffbed;
+  box-shadow:0 14px 35px #1836304d;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-destination__lock{
+  display:grid;place-items:center;margin:0 auto 4px;
+  width:38px;height:38px;border-radius:50%;background:#f8efd125;color:#f4dcad;font-size:26px;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-destination .ns-trail-eyebrow{color:#e6d6ab;}
+body.app-body.ns-shell-v1 #main .ns-trail-continuum .ns-trail-destination h2{
+  color:#fff9e8;font-size:clamp(23px,3vw,30px);margin:5px 0 7px;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-destination p{
+  color:#e9eee2;font:500 12px/1.48 system-ui,sans-serif;margin:0 auto 8px;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-destination__unavailable{
+  display:inline-block;padding:5px 9px;border-radius:100px;
+  background:#f3efd625;color:#ecdec3;font:750 10px system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-return{z-index:40;}
+@media (max-width:900px){
+ body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-canvas{
+  border-radius:0;border-left:0;border-right:0;
+ }
+}
+@media(max-width:500px){
+ body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque{
+  width:min(165px,44%);padding:7px 8px;top:157px;
+ }
+ body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque strong{font-size:14px;}
+ body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque small{font-size:9px;}
+ body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-future-node{width:42px;height:42px;font-size:20px;}
+ body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker{
+  width:min(270px,77%);padding:7px 9px;
+ }
+ body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker strong{font-size:14px;}
+ body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker small{font-size:8px;}
+ body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit--active .ns-trail-mascot{
+  width:63px;left:2%;bottom:80px;
+ }
+}
+@media (prefers-reduced-motion:reduce){body.app-body.ns-shell-v1 .ns-trail-continuum *{scroll-behavior:auto;}}
+html[data-low-stim=true] body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-continuous-scene{opacity:.34;}
+html[data-low-stim=true] body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-mascot{display:none;}
+html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker{background:#283f35;border-color:#967c53;}
+html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker :is(strong,small){color:#e9e5d8;}
+html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque{background:#2a473be9;border-color:#79937c;}
+html[data-theme=dark] body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-unit-plaque :is(strong,small,span){color:#ecf2e4;}
+/* Chapter 1 is identified by the initial unit and sticky chip; this avoids a
+   signpost covering the first playable activity. Chapters 2–8 get signs. */
+body.app-body.ns-shell-v1 .ns-trail-continuum .ns-trail-chapter-marker[data-chapter-marker="1"]{display:none;}
