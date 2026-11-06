@@ -16,7 +16,7 @@ const ICONS = Object.freeze({
   learn:'<path d="M12 5C8.5 3 5 3 2 4v16c3-1 6.5-1 10 1 3.5-2 7-2 10-1V4c-3-1-6.5-1-10 1zM12 5v16"/>',
   tools:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
   you:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2c0-4 3.3-6 8-6s8 2 8 6v2"/>',
-  feed:'<path d="M4 5h16v13H8l-4 3z"/><path d="M8 9h8M8 13h6"/>'
+  feed:'<circle cx="12" cy="8" r="3"/><path d="M5.5 20v-1.1c0-3 2.7-5 6.5-5s6.5 2 6.5 5V20"/><path d="M4.5 7.2a2.4 2.4 0 0 0 0 4.6M19.5 7.2a2.4 2.4 0 0 1 0 4.6M1.5 19v-.7c0-1.7.9-3 2.6-3.6M22.5 19v-.7c0-1.7-.9-3-2.6-3.6"/>'
 });
 const routeName = () => (location.hash.slice(1).split('/')[0]||'home').toLowerCase();
 const areaFor = name => {
