@@ -1,3 +1,4 @@
+import {renderLivingTrail, cleanupLivingTrail} from './ns-living-trail.mjs';
 import {startFieldGuideDraft} from './ns-field-guide.mjs';
 /**
  * Nobody's Simple · Stage 5 Life Lab.
@@ -58,7 +59,7 @@ const STEPS = Object.freeze([
 const fresh = () => ({sort:{},sortChecked:false,hypotheses:[],evidence:'',response:'',action:'',started:false});
 let mission=fresh();
 let clean=()=>{};
-export function cleanupNSLab(){clean();clean=()=>{};}
+export function cleanupNSLab(){clean();clean=()=>{};cleanupLivingTrail();}
 
 const card = world => `<a href="#lab/${world.id}" class="ns-lab5-world" data-accent="${world.accent}">
   <span class="ns-lab5-world__scene"><img src="${world.image}" alt="" loading="lazy" decoding="async"/><img class="ns-lab5-world__mascot" src="${world.pose}" alt="" loading="lazy" decoding="async"/></span>
@@ -164,9 +165,10 @@ export function renderNSLab(main,parts=[]){
  const segs=Array.isArray(parts)?parts:[];
  const [first,second,third,...extra]=segs;
  let inner;
- if(!first)inner=hub();
+ if(!first){renderLivingTrail(main,null,WORLDS);return;}
  else if(first==='mission')inner=(!extra.length&&second==='reality-sorter')?missionPage(third||'notice'):unavailable('That mission is not available.');
- else inner=(segs.length===1)?world(first):unavailable('That Life Lab page is not available.');
+ else if(segs.length===1){renderLivingTrail(main,first,WORLDS);return;}
+ else inner=unavailable('That Life Lab page is not available.');
  main.innerHTML=inner;
  if(main.querySelector('[data-lab-mission]'))attach(main.querySelector('[data-lab-mission]'));
 }

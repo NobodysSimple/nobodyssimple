@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v131-home-feed-updates';
+const CACHE = 'nobodyssimple-release-v132-living-trail';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -13,7 +13,8 @@ const INSTALL_OPTIONAL = [
   'styles.css', 'account.css', 'strategy.css', 'community.css',
   'app-design.css', 'ns-shell.css', 'ns-home.css',
   'ns-tool-library.css', 'ns-learn.css', 'ns-life-lab.css',
-  'ns-field-guide.css', 'ns-integrations.css', 'ns-vision.css', 'ns-home-refined.css', 'ns-home-updates.mjs'
+  'ns-field-guide.css', 'ns-integrations.css', 'ns-vision.css', 'ns-home-refined.css', 'ns-home-updates.mjs',
+  'ns-living-trail.css', 'ns-living-trail.mjs'
 ];
 const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
 const SAFE_QUERY = /^\?v=[a-z0-9._-]{1,40}$/i;
