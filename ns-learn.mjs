@@ -75,23 +75,23 @@ export function renderNSLearnHub(root,{posts=[],account={}}={}){
   })[0];
   root.innerHTML=`<div class="ns-learn-v2" data-ns-learn>
     <header class="ns-learn-hero"><div class="ns-learn-hero__copy">
-      <p class="ns-learn-eyebrow">NOBODY'S SIMPLE / LEARN</p>
-      <h1>Understand more.<br><em>Navigate better.</em></h1>
-      <p>Learn practical psychological skills, try them in realistic situations, and carry what you discover into everyday life.</p>
+      <p class="ns-learn-eyebrow">LEARN · EVERYDAY SKILLS</p>
+      <h1>Learn</h1>
+      <p>Short, practical lessons that build useful skills for everyday life.</p>
       <div class="ns-learn-hero__actions"><a class="ns-learn-primary" href="${lessonHref(lesson.id)}">${saved?'Review the first lesson':'Try your first lesson'} <span aria-hidden="true">→</span></a>
         <a class="ns-learn-secondary" href="#learn/crash">Browse learning topics</a></div>
       <small class="ns-learn-hero__note">One interactive demonstration is available. Other learning paths are in development.</small>
     </div><div class="ns-learn-hero__art"><div class="ns-learn-hero__landscape" aria-hidden="true"></div><img src="ns-character-reading.webp" alt="" decoding="async"></div></header>
     ${continuePost?`<section class="ns-learn-continue" aria-label="Continue a published piece"><span><small>${progress[String(continuePost.id)]?.bookmarked?'BOOKMARKED READING':'CONTINUE READING'}</small><strong>${esc(continuePost.title)}</strong><span>This is a real piece from your published library.</span></span><a href="#post/${encodeURIComponent(String(continuePost.id))}">Continue →</a></section>`:''}
     <section class="ns-learn-section ns-learn-feature" aria-labelledby="ns-learn-feature-heading">
-      <div class="ns-learn-feature__picture"><img src="ns-landscape-think.webp" alt="" loading="lazy"><span class="ns-learn-feature__stamp">THE FOREST / THINKING</span></div>
+      <div class="ns-learn-feature__picture"><img src="ns-landscape-forest.webp" alt="" loading="lazy"><img class="ns-vision-feature-nobody" src="ns-character-reading.webp" alt="" loading="lazy"><span class="ns-learn-feature__stamp">CONTINUE LEARNING · THE FOREST</span></div>
       <div class="ns-learn-feature__copy"><p class="ns-learn-eyebrow">INTERACTIVE DEMONSTRATION · ${esc(lesson.durationLabel.toUpperCase())}</p>
         <h2 id="ns-learn-feature-heading">${esc(lesson.title)}</h2><p>${esc(lesson.subtitle)} Make choices, see why the answers differ, and practise a flexible next step.</p>
         <div class="ns-learn-feature__foot"><span>${saved?'Saved as completed':'Practice without signing in'}</span><a href="${lessonHref(lesson.id)}">${saved?'Review this lesson':'Begin the lesson'} <span aria-hidden="true">→</span></a></div>
       </div></section>
     <section class="ns-learn-section" aria-labelledby="ns-learn-paths-heading"><div class="ns-learn-section__top"><div>
-      <p class="ns-learn-eyebrow">SMALL SKILLS, REAL SITUATIONS</p><h2 id="ns-learn-paths-heading">Choose a learning path.</h2>
-      <p>Five areas of life. Start anywhere. Nothing is locked behind a streak.</p></div></div>
+      <p class="ns-learn-eyebrow">SMALL SKILLS, REAL SITUATIONS</p><h2 id="ns-learn-paths-heading">Build skills for everyday life.</h2>
+      <p>Try a practical skill, or explore the ideas behind it. No compulsory streaks.</p></div></div>
       <div class="ns-learn-paths">${NS_SKILL_PATHS.map(path=>skillCard(path,account)).join('')}</div></section>
     <section class="ns-learn-section" aria-labelledby="ns-learn-shelves-heading"><div class="ns-learn-section__top"><div>
       <p class="ns-learn-eyebrow">READ · WATCH · EXPLORE</p><h2 id="ns-learn-shelves-heading">The rest of the library.</h2>

@@ -44,7 +44,7 @@ test('all root ES module imports resolve to local files or approved external mod
 function serviceWorkerHarness(){
  const handlers={};
  const data=new Map(); const entries=new Map();
- const CACHE='nobodyssimple-release-v129';
+ const CACHE = txt('sw.js').match(/const CACHE\s*=\s*['"]([^'"]+)['"]/)[1];
  const origin='https://nobodyssimple.com';
  let online=true,optionalFailure=false;
  const cachedObject = name => {

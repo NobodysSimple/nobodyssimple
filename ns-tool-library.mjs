@@ -124,10 +124,10 @@ function renderDiscoverContent(category,unknown=false){
     const pinned=favourites.map(id=>byID.get(id)).filter(Boolean);
     const recent=historyEnabled()?readList(RECENT_KEY).map(id=>byID.get(id)).filter(Boolean):[];
     place.innerHTML=`${pinned.length?`<section class="ns-tools-section ns-tools-pinned">${heading('YOUR SHORTCUTS','Pinned tools','The tools you chose to keep nearby.')}${renderCards(pinned.slice(0,4),favourites)}${pinned.length>4?`<button class="ns-tools-text-link" data-ns-view="pinned" type="button">See all ${pinned.length} pinned tools ${icon('arrow')}</button>`:''}</section>`:''}
-    <section class="ns-tools-section ns-tools-themes">${heading('EXPLORE BY NEED','Where would you like to begin?','Choose a theme. Every tool is still available independently.')}
+    <section class="ns-tools-section ns-tools-themes">${heading('BROWSE BY THEME','Choose a theme','Choose a theme, or open any of the 103 tools directly.')}
     <div class="ns-tools-theme-grid">${libraryCollections.map(c=>themeCard(c,all.filter(x=>x.collection===c.id))).join('')}</div></section>
     ${recent.length?`<section class="ns-tools-section">${heading('YOUR HISTORY','Recently opened','Shown only because you enabled recent-tool history.')}${renderCards(recent.slice(0,4),favourites)}</section>`:''}
-    <section class="ns-tools-section ns-tools-featured">${heading('SOME PLACES TO START','A useful first exercise','These are examples, not recommendations based on personal information.')}
+    <section class="ns-tools-section ns-tools-featured">${heading('QUICK TOOLS','Try one small action','These are examples, not recommendations based on personal information.')}
       <div class="ns-tools-featured-grid">${[
         ['#tool/body-check','Notice what is happening','Body Check','ns-character-checklist.webp'],
         ['#tool/assumption-finder','Examine an assumption','Assumption Finder','ns-character-thinking.webp'],
@@ -159,20 +159,21 @@ export function renderToolDiscovery(root,category='') {
   if(root.querySelector('.ns-tools-v3')) root.replaceChildren();
   root.innerHTML=`<div class="ns-tools-v3 wrap" data-ns-theme="${html(theme)}">
     <section class="ns-tools-hero" aria-labelledby="ns-tools-main-heading">
-      <div class="ns-tools-hero__copy"><p class="ns-tools-eyebrow">THE NOBODY'S SIMPLE TOOLKIT</p><h1 id="ns-tools-main-heading">Small tools.<br>Real-life moments.</h1>
-      <p>Find an exercise for what you're facing. Pick one, try what helps, and leave the rest.</p>
+      <div class="ns-tools-hero__copy"><p class="ns-tools-eyebrow">PRACTICAL ACTIVITIES</p><h1 id="ns-tools-main-heading">Tools</h1>
+      <p>Practical activities for different situations and needs.</p>
       <div class="ns-tools-hero__actions"><a href="#navigate" class="ns-tools-hero__primary">Help me choose ${icon('arrow')}</a><a href="#lab" class="ns-tools-hero__secondary">Explore Life Lab ${icon('chevron')}</a></div>
       </div>
       <div class="ns-tools-hero__art" aria-hidden="true"><img class="ns-tools-hero__landscape" src="ns-landscape-forest.webp" alt=""/><img class="ns-tools-hero__nobody" src="ns-character-reading.webp" alt=""/><span class="ns-tools-hero__count"><strong>${all.length}</strong><small>ways to explore</small></span></div>
     </section>
     <section class="ns-tools-filter" aria-label="Find a tool">
-      <div class="ns-tools-filter__head"><div><p class="ns-tools-eyebrow">FIND YOUR WAY</p><h2>What would be useful?</h2></div><span data-ns-result-count aria-live="polite" aria-atomic="true">${countText(all.length)}</span></div>
-      <label class="ns-tools-search">${icon('search')}<span class="sr-only">Search all tools by name or situation</span><input type="search" data-ns-tool-query placeholder="Try overthinking, sensory, boundaries, decisions..." autocomplete="off" value="${html(state.query)}"/><span class="ns-tools-search__hint">Search</span></label>
+      <div class="ns-tools-filter__head"><div><p class="ns-tools-eyebrow">SEARCH TOOLS</p><h2>Find a useful tool</h2></div><span data-ns-result-count aria-live="polite" aria-atomic="true">${countText(all.length)}</span></div>
+      <label class="ns-tools-search">${icon('search')}<span class="sr-only">Search all tools by name or situation</span><input type="search" data-ns-tool-query placeholder="Search tools, e.g. “overthinking”" autocomplete="off" value="${html(state.query)}"/><span class="ns-tools-search__hint">Search</span></label>
+      <details class="ns-vision-refine"><summary>Refine results <span>Effort and format <span aria-hidden="true">⌄</span></span></summary>
       <div class="ns-tools-filter__rows">
         <div class="ns-tools-filter__row"><span class="ns-tools-filter__label">Effort</span><div class="ns-tools-chips">${filterOptions.effort.map(([v,l])=>`<button type="button" data-ns-effort="${v}" aria-pressed="${state.effort===v}">${l}</button>`).join('')}</div></div>
         <div class="ns-tools-filter__row"><span class="ns-tools-filter__label">Format</span><div class="ns-tools-chips">${filterOptions.format.map(([v,l])=>`<button type="button" data-ns-format="${v}" aria-pressed="${state.format===v}">${l}</button>`).join('')}</div></div>
       </div>
-      <div class="ns-tools-filter__end"><p>Effort is an approximate guide based on the exercise structure, not a measured duration.</p><button type="button" data-ns-reset ${state.query.trim()||state.effort!=='all'||state.format!=='all'?'':'hidden'}>Clear filters ${icon('close')}</button></div>
+      <div class="ns-tools-filter__end"><p>Effort is an approximate guide based on the exercise structure, not a measured duration.</p><button type="button" data-ns-reset ${state.query.trim()||state.effort!=='all'||state.format!=='all'?'':'hidden'}>Clear filters ${icon('close')}</button></div></details>
     </section>
     <nav class="ns-tools-switcher" aria-label="Tool browsing view"><span>Browse</span><div class="ns-tools-switcher__items">
       <button type="button" data-ns-view="themes" aria-pressed="${state.view==='themes'}">${icon('grid')} Themes</button>

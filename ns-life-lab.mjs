@@ -68,11 +68,19 @@ function hero(kicker,title,description,img,extra=''){
   return `<header class="ns-lab5-hero"><div class="ns-lab5-hero__copy"><p class="ns-lab5-eyebrow">${kicker}</p><h1>${title}</h1><p>${description}</p>${extra}</div><img class="ns-lab5-hero__art" src="${img}" alt="" decoding="async"/></header>`;
 }
 function hub(){
- return `<div class="ns-lab5 ns-lab5-hub">
- ${hero('THE LIFE LAB · LEARN BY DOING','A place to practise being human.','Investigate everyday situations, try different responses and keep what you discover useful. No grades for feelings, and no pressure to return every day.','ns-character-compass.webp','<a class="ns-lab5-primary" href="#lab/mission/reality-sorter/notice">Try the Reality Sorter <span aria-hidden="true">↗</span></a>')}
- <section class="ns-lab5-feature" aria-labelledby="ns-lab5-feature-title"><div><p class="ns-lab5-eyebrow">FIRST INTERACTIVE MISSION · THE FOREST</p><h2 id="ns-lab5-feature-title">What do I know, and what am I adding?</h2><p>Use a fictional cancellation to sort observations from interpretations, compare explanations and choose a proportionate next step.</p><div class="ns-lab5-feature__meta"><span>6 short stages</span><span>Tap or keyboard friendly</span><span>No automatic saving</span></div><a href="#lab/mission/reality-sorter/notice" class="ns-lab5-secondary">Begin this mission <span aria-hidden="true">→</span></a></div><img src="ns-landscape-forest.webp" alt="" loading="lazy"/></section>
- <section class="ns-lab5-section" aria-labelledby="ns-lab5-worlds-title"><div class="ns-lab5-sectionhead"><div><p class="ns-lab5-eyebrow">FIVE WORLDS · DIFFERENT SKILLS</p><h2 id="ns-lab5-worlds-title">Where would you like to explore?</h2></div><p>All existing tools remain available independently.</p></div><div class="ns-lab5-worldgrid">${WORLDS.map(card).join('')}</div></section>
- <aside class="ns-lab5-after"><span aria-hidden="true">✦</span><div><h2>Learning is more than getting it right.</h2><p>A useful result can be spotting uncertainty, changing an assumption, or deciding there is nothing you need to do yet.</p></div><a href="#tools">Browse all tools →</a></aside></div>`;
+ const mapNodes=WORLDS.map((w,i)=>`<a class="ns-vision-mapnode ns-vision-mapnode--${w.id}" href="#lab/${w.id}" data-vision-world="${w.id}">
+   <span class="ns-vision-mapnode__icon" aria-hidden="true">${['✿','♠','♧','⚒','✦'][i]}</span><span><strong>${esc(w.title)}</strong><small>${esc(w.theme)}</small></span></a>`).join('');
+ return `<div class="ns-lab5 ns-lab5-hub ns-vision-lab-hub">
+   <header class="ns-vision-lab-intro"><p class="ns-lab5-eyebrow">LEARN LIFE BY LIVING IT</p><h1>The Life Lab</h1><p>Explore real-life situations, practise skills and build your own understanding.</p></header>
+   <section class="ns-vision-worldmap" aria-label="Five illustrated Life Lab worlds">
+    <div class="ns-vision-worldmap__land" aria-hidden="true"><img src="ns-home-hero.webp" alt=""/></div>
+    <div class="ns-vision-worldmap__nodes">${mapNodes}</div>
+    <a class="ns-vision-worldmap__start" href="#lab/mission/reality-sorter/notice"><span aria-hidden="true">◉</span> Start a Life Lab mission <span aria-hidden="true">→</span></a>
+   </section>
+   <section class="ns-lab5-feature" aria-labelledby="ns-lab5-feature-title"><div><p class="ns-lab5-eyebrow">READY TO TRY · THE FOREST</p><h2 id="ns-lab5-feature-title">Reality Sorter</h2><p>A real interaction: separate what happened from the meaning you added, explore different explanations and choose a next step.</p><div class="ns-lab5-feature__meta"><span>Six short stages</span><span>Keyboard and touch</span><span>No automatic saving</span></div><a href="#lab/mission/reality-sorter/notice" class="ns-lab5-secondary">Begin the mission <span aria-hidden="true">→</span></a></div><img src="ns-character-thinking.webp" alt="" loading="lazy"/></section>
+   <section class="ns-lab5-section ns-vision-world-directory" aria-labelledby="ns-lab5-worlds-title"><div class="ns-lab5-sectionhead"><div><p class="ns-lab5-eyebrow">EXPLORE AT YOUR OWN PACE</p><h2 id="ns-lab5-worlds-title">All five worlds</h2></div><p>Only the first mission is ready; other worlds link to working tools.</p></div><div class="ns-lab5-worldgrid">${WORLDS.map(card).join('')}</div></section>
+   <aside class="ns-lab5-after"><span aria-hidden="true">✦</span><div><h2>Learn, practise, apply.</h2><p>Some discoveries are worth keeping. Others simply help you get on with your day.</p></div><a href="#guide">Open Field Guide →</a></aside>
+ </div>`;
 }
 function world(slug){
  const w=WORLDS.find(w=>w.id===slug);
@@ -87,7 +95,7 @@ function unavailable(message){return `<div class="ns-lab5 ns-lab5-unavailable"><
 const currentStep = step => STEPS.findIndex(s=>s.id===step);
 const missionHref = step => `#lab/mission/reality-sorter/${step}`;
 const nav = (i) => `<nav class="ns-lab5-missionnav" aria-label="Mission navigation"><a href="#lab/forest" class="ns-lab5-back">← The Forest</a><a href="#lab" class="ns-lab5-exit">Leave mission ×</a></nav>
-<div class="ns-lab5-progress"><div class="ns-lab5-progress__copy"><span>STEP ${i+1} OF ${STEPS.length}</span><span>${STEPS[i].label}</span></div><div role="progressbar" aria-label="Mission stage" aria-valuemin="1" aria-valuemax="${STEPS.length}" aria-valuenow="${i+1}" class="ns-lab5-progress__bar"><span style="width:${100*(i+1)/STEPS.length}%"></span></div></div>`;
+<div class="ns-lab5-progress"><div class="ns-lab5-progress__copy"><span>STEP ${i+1} OF ${STEPS.length}</span><span>${STEPS[i].label}</span></div><div role="progressbar" aria-label="Mission stage" aria-valuemin="1" aria-valuemax="${STEPS.length}" aria-valuenow="${i+1}" class="ns-lab5-progress__bar"><span style="width:${100*(i+1)/STEPS.length}%"></span></div><div class="ns-vision-steps" aria-hidden="true">${STEPS.map((s,n)=>`<span class="${n<=i?'is-complete':''}"></span>`).join('')}</div></div>`;
 function scene(){return `<div class="ns-lab5-scene"><span class="ns-lab5-scene__tag">THE SITUATION</span><div><span class="ns-lab5-scene__message">“I can’t make it tonight.”</span><p>You planned to meet a friend. They cancelled with this short message. You feel disappointed and start wondering why.</p></div><img src="ns-character-thinking.webp" alt="" loading="lazy"/></div>`;}
 const navigation = (i,ready=true,nextText='Continue') => `<div class="ns-lab5-actions">${i>0?`<a class="ns-lab5-textbutton" href="${missionHref(STEPS[i-1].id)}">← Previous stage</a>`:'<a class="ns-lab5-textbutton" href="#lab/forest">← The Forest</a>'}${i<STEPS.length-1?`<button type="button" data-lab-action="next" class="ns-lab5-primary" ${ready?'':'disabled'}>${nextText} <span aria-hidden="true">→</span></button>`:'<a href="#lab/forest" class="ns-lab5-primary">Return to The Forest →</a>'}</div>`;
 const chosen = (id,value) => mission[id]===value;
@@ -115,7 +123,7 @@ const STAGE_RENDERERS=[notice,explore,evidence,choose,test,review];
 function missionPage(step){const i=currentStep(step);
  if(i<0)return unavailable('That mission stage is not available.');
  mission.started=true;
- return `<div class="ns-lab5 ns-lab5-experience" data-lab-mission="reality-sorter">${nav(i)}<div class="ns-lab5-workspace"><aside class="ns-lab5-workspace__side"><img src="ns-landscape-think.webp" alt=""/><span class="ns-lab5-eyebrow">THE FOREST / REALITY SORTER</span><h2>From one message to many possible meanings.</h2><p>Notice → Explore → Evidence → Choose → Test → Keep</p><small>Your selections exist only while this page remains open.</small></aside><div class="ns-lab5-workspace__main">${STAGE_RENDERERS[i](i)}</div></div></div>`;}
+ return `<div class="ns-lab5 ns-lab5-experience" data-lab-mission="reality-sorter" data-vision-step="${esc(STEPS[i].id)}">${nav(i)}<div class="ns-lab5-workspace"><aside class="ns-lab5-workspace__side"><img src="ns-landscape-think.webp" alt=""/><span class="ns-lab5-eyebrow">THE FOREST / REALITY SORTER</span><h2>From one message to many possible meanings.</h2><p>Notice → Explore → Evidence → Choose → Test → Keep</p><small>Your selections exist only while this page remains open.</small></aside><div class="ns-lab5-workspace__main">${STAGE_RENDERERS[i](i)}</div></div></div>`;}
 function focusAfterChange(root,match){const b=match?root.querySelector(match):null;if(b) b.focus({preventScroll:true});}
 function attach(root){const controller=new AbortController();clean=()=>controller.abort();
  root.addEventListener('click', async (event)=>{
