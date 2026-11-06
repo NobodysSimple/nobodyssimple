@@ -2,7 +2,6 @@ import './ns-shell.mjs';
 import { renderNSLab, cleanupNSLab } from './ns-life-lab.mjs';
 import { renderNSFieldGuide, cleanupNSFieldGuide } from './ns-field-guide.mjs';
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
-import {createCommunityClient} from './community-data.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
 import {configureStrategy, renderWisbody, read as readStrategy} from './strategy.mjs';
 import { accountReady, configureAccountHost, renderAccount, renderPublicProfile, enhanceAccountRoute, accountState, communityConnection, communitySignIn, communityConfirmIdentity } from './accounts.mjs';
@@ -46,11 +45,6 @@ import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mj
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
-const communityForHome=createCommunityClient(communityConnection);
-async function latestDiscussions(){
-  const [items,blocked]=await Promise.all([communityForHome.feed(),communityForHome.blocked()]);
-  return items.filter(post=>!blocked.includes(post.authorUid));
-}
 const main = document.querySelector("main");
 const supportDialog = document.createElement('dialog');
 supportDialog.className = 'support-dialog'; supportDialog.setAttribute('aria-label','Get help');
@@ -222,7 +216,7 @@ function legacyLibrary() {
 }
 function homePage({learningView=null,scrollTo=null,wizardOnly=false}={}) {
   if(learningView !== null) { libraryState.view = ['crash','courses','videos','audios','blog','stories','debates'].includes(learningView) ? learningView : 'home'; libraryState.query = ''; }
-  renderHome(main, posts, {loadDiscussions:latestDiscussions,wizardOnly});
+  renderHome(main, posts, {wizardOnly});
   if(scrollTo) requestAnimationFrame(() => {
     const section = main.querySelector(scrollTo); if(!section)return;
     section.scrollIntoView({block:'start'}); section.setAttribute('tabindex','-1'); section.focus({preventScroll:true});

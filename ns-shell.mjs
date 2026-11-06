@@ -15,17 +15,19 @@ const ICONS = Object.freeze({
   lab:'<circle cx="12" cy="12" r="9"/><path d="m15.6 8.4-2.4 4.8-4.8 2.4 2.4-4.8z"/>',
   learn:'<path d="M12 5C8.5 3 5 3 2 4v16c3-1 6.5-1 10 1 3.5-2 7-2 10-1V4c-3-1-6.5-1-10 1zM12 5v16"/>',
   tools:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
-  you:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2c0-4 3.3-6 8-6s8 2 8 6v2"/>'
+  you:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2c0-4 3.3-6 8-6s8 2 8 6v2"/>',
+  feed:'<path d="M4 5h16v13H8l-4 3z"/><path d="M8 9h8M8 13h6"/>'
 });
 const routeName = () => (location.hash.slice(1).split('/')[0]||'home').toLowerCase();
 const areaFor = name => {
   if(['help','navigate','support','route','routes','compass','questions','navigator'].includes(name)) return 'home';
   if(['play','tool','guided','simplyfocus','stim-space','questionnaires','big-five','systems','personality'].includes(name)) return 'tools';
   if(['library','blog','writing','watch','post','wisbody'].includes(name)) return 'learn';
-  if(['maps','guide','account','profile','discussion','messages','discussion-moderation','community','volunteer','team','about','install'].includes(name)) return 'account';
+  if(['discussion','discussion-moderation'].includes(name)) return 'feed';
+  if(['maps','guide','account','profile','messages','community','volunteer','team','about','install'].includes(name)) return 'account';
   return name;
 };
-const ids = Object.freeze({home:'#home',lab:'#lab',learn:'#learn',tools:'#tools',account:'#account'});
+const ids = Object.freeze({home:'#home',lab:'#lab',learn:'#learn',tools:'#tools',feed:'#discussion'});
 const svg = name => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${ICONS[name]}</svg>`;
 function refreshNav() {
   const current=areaFor(routeName());
@@ -41,8 +43,7 @@ function refreshNav() {
     if(!name) return;
     const slot=link.querySelector('.app-nav-icon')||link.querySelector(':scope > span[aria-hidden]');
     if(!slot||slot.dataset.nsIcon===name) return;
-    // Signed-in users may have a deliberate avatar in the You tab.
-    if(name==='account' && slot.querySelector('.app-bottom-avatar')) return;
+    // Feed is a shared space, never a profile avatar. Account remains in the header.
     slot.innerHTML=svg(name);
     slot.dataset.nsIcon=name;
     link.dataset.uiNav='true';
