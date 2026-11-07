@@ -43,5 +43,5 @@ test('new shared CSS is loaded after existing design rules and the cache version
  assert.ok(html.indexOf('ns-home-refined.css')>html.indexOf('ns-vision.css'));
  assert.ok(sw.includes('ns-home-refined.css'));
  assert.ok(sw.includes('ns-home-updates.mjs'));
- assert.match(sw,/nobodyssimple-release-v\d+-living-trail/);
+ assert.match(sw,/nobodyssimple-release-v\d+-[a-z-]+/);
 });

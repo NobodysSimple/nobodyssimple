@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import * as policy from '../../account-policy.mjs';
 import {Workspace} from '../../account-storage.mjs';
-const text=readFileSync(new URL('../../account-sync.mjs',import.meta.url),'utf8').replace(/^import .*\n/gm,'').replace('export class SavedSync','class SavedSync');
+const text=readFileSync(new URL('../../account-sync.mjs',import.meta.url),'utf8').replace(/^import .*\r?\n/gm,'').replace('export class SavedSync','class SavedSync');
 const factory=new Function('sdk','policy',`const {collection,doc,getDocs,onSnapshot,runTransaction,serverTimestamp}=sdk;const {SAVED,parseJSON,withinSize,shouldConflict}=policy;${text};return SavedSync;`);
 class Store{constructor(){this.d=new Map();}getItem(k){return this.d.get(k)??null;}setItem(k,v){this.d.set(k,String(v));}removeItem(k){this.d.delete(k);}key(i){return [...this.d.keys()][i];}get length(){return this.d.size;}}
 const key='ns-personal-maps-v1';

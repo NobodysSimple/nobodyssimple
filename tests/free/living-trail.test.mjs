@@ -7,7 +7,7 @@ test('five world routes and one authored mission',()=>{
  assert.equal(livingTrailManifest.worlds.length,5);
  assert.equal(livingTrailManifest.worlds.flatMap(w=>w.available).filter(n=>n.status==='mission').length,1);
  assert.equal(livingTrailManifest.missionRoute,'#lab/mission/reality-sorter/notice');
- for(const world of livingTrailManifest.worlds){renderNSLab(root,[world.id]);assert.ok(root.innerHTML.includes(`data-trail-world="${world.id}"`));assert.ok(root.innerHTML.includes('data-trail-switch'));assert.ok(!root.innerHTML.includes('ns-lab5-worldgrid'));cleanupNSLab();}
+ for(const world of livingTrailManifest.worlds){renderNSLab(root,[world.id]);assert.ok(root.innerHTML.includes(`${world.id}-unit-40-stone-5`));assert.ok(root.innerHTML.includes('ll-trail-link'));assert.ok(!root.innerHTML.includes('ns-lab5-worldgrid'));cleanupNSLab();}
 });
 test('the immersive course has no design/showcase panels or list view',()=>{
  const main={innerHTML:''};renderLivingTrail(main,'forest');
@@ -25,7 +25,7 @@ test('explicit completion advances the character and preserves other learning re
  assert.equal(JSON.parse(store.get('ns-account-learning-v2'))['ns-skill:existing'].completed,true);
 });
 test('invalid routes remain honest and mission content remains unchanged',()=>{
- renderNSLab(root,['neverland']);assert.ok(root.innerHTML.includes("That world isn't available"));
+ renderNSLab(root,['neverland']);assert.ok(root.innerHTML.includes('That world isn’t available'));
  renderNSLab(root,['forest','invalid']);assert.ok(root.innerHTML.includes('not available'));
  renderNSLab(root,['mission','reality-sorter','notice']);assert.ok(root.innerHTML.includes('data-lab-action="sort"'));
  cleanupNSLab();assert.deepEqual(lifeLabDefinition.stages,['notice','explore','evidence','choose','test','review']);

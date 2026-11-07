@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict';
-import { forestCourseDefinition } from '../../ns-living-trail.mjs';
+import { curriculum, STONE_LABELS } from '../../ns-lifelab-content.mjs';
 
-const types = new Set(forestCourseDefinition.units.flatMap(unit => unit.lessons.map(lesson => lesson.type)));
-for (const required of ['learn','explore','compare','practise','choose','apply','reflect','review','milestone']) {
+assert.deepEqual(STONE_LABELS,['Learn','Practise','Compare','Capstone','Apply']);
+const types = new Set(curriculum.forest.flatMap(unit => unit.lessons.map(lesson => lesson.type)));
+for (const required of ['standard','capstone','application']) {
   assert.ok(types.has(required), `Forest lessons should include the ${required} lesson type`);
 }
 console.log('lesson-types.test.mjs passed');
