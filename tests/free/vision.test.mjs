@@ -8,9 +8,9 @@ const root={innerHTML:'',querySelector(){return null},addEventListener(){}};
 const safeStorage={getItem(){return null},setItem(){throw Error('Unexpected write')},removeItem(){throw Error('Unexpected delete')}};
 test('the five worlds are accessed through one switcher rather than duplicate map/cards',()=>{
  renderNSLab(root,[]);
- assert.equal((root.innerHTML.match(/class="ll-trail-card"/g)||[]).length,5);
- for(const id of ['garden','forest','harbour','forge','observatory'])assert.ok(root.innerHTML.includes(`href="#lab/${id}"`));
- assert.ok(root.innerHTML.includes('Choose one of five trails'));
+ assert.equal((root.innerHTML.match(/data-trail-switch/g)||[]).length,1);
+ for(const id of ['garden','forest','harbour','forge','observatory'])assert.ok(root.innerHTML.includes(`value="${id}"`));
+ assert.ok(!root.innerHTML.includes('Choose one of five trails'));
  assert.ok(!root.innerHTML.includes('ns-vision-worldmap'));
  assert.deepEqual(lifeLabDefinition.stages,['notice','explore','evidence','choose','test','review']);
  cleanupNSLab();

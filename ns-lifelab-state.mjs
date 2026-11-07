@@ -43,3 +43,8 @@ export function completeLesson(lessonId,storage,now=new Date().toISOString()){
   }catch{return {ok:false,error:'Progress could not be saved. Check browser storage and try again. Your lesson is still open.'};}
 }
 export function trailProgress(world,records){return curriculum[world].reduce((n,u)=>n+u.lessons.filter(l=>lessonDone(l,records)).length,0);}
+export function finaleDone(world,records){return records[`ns-lifelab-finale:${world}`]?.completed===true;}
+export function completeFinale(world,storage){
+ if(!curriculum[world]||!storage)return {ok:false,error:'This finale could not be saved.'};
+ try{const records=JSON.parse(storage.getItem(STORAGE_KEY)||'{}');if(!records||typeof records!=='object'||Array.isArray(records))throw Error('Invalid records');if(trailProgress(world,records)!==400)return {ok:false,error:'Complete all forty units before the finale.'};const key=`ns-lifelab-finale:${world}`;if(!records[key]?.completed)records[key]={kind:'life-lab-finale',completed:true,completedAt:new Date().toISOString()};storage.setItem(STORAGE_KEY,JSON.stringify(records));return {ok:true,records};}catch{return {ok:false,error:'The finale could not be saved. Check browser storage and try again.'};}
+}

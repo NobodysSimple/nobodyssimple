@@ -1,35 +1,28 @@
-# Nobody's Simple — Life Lab update
+# Life Lab — Worlds update, 7 November 2026
 
-## Install on your existing GitHub site
+## Install on GitHub
+1. Extract this ZIP.
+2. Open NobodysSimple/nobodyssimple on the main branch.
+3. Upload the extracted files and folders to the repository root, preserving the media/, tests/ and docs/ paths. Replace the matching files. Upload the contents, not the enclosing folder or ZIP.
+4. Commit the upload and allow the existing hosting deployment to finish.
+5. Reload the site and open #lab. The service-worker cache version is v136-lifelab-worlds.
 
-1. Extract `Nobodyssimple-LifeLab-Update-2026-11-07.zip` on your computer.
-2. Open the **root** of `NobodysSimple/nobodyssimple`, on `main`.
-3. Choose **Add file → Upload files**.
-4. Drag the extracted files **and folders** into the upload area. Keep `media/lifelab`, `docs`, and `tests/free` intact. `index.html` must be at the repository root, not inside another update folder.
-5. Commit the upload to replace the matching files and add the new ones. Existing unrelated files stay in place.
-6. Let your existing website publishing process finish, then open `/#lab`. Refresh once if an older page is still open.
-
-Do not upload the ZIP itself as the website update: GitHub does not unpack it into your source files.
-
-No package installation, build step, database migration, API key, or new hosting service is required. This is a static HTML/CSS/JavaScript update for the existing site. It was prepared against main commit `da0fe5951143b036e4a27b10b157cdaa121e873f`.
+This is an update overlay for the existing repository, not a standalone replacement repository. It includes the previous Life Lab rebuild and this worlds update. No npm build or new hosting service is required. The live site has not been deployed by this package.
 
 ## Included
+- Direct entry to the remembered trail; a persistent trail switcher replaces the selection screen.
+- Removed the “One unit, five stones” explanation panel.
+- Five worlds, forty units each, five stones per unit, 3/3/2/1/1 lessons.
+- 200 deterministic, distinct vector environment compositions with matching colour boundaries. Shared scenery motifs are recomposed rather than tiling one background image.
+- Five illustrated destinations and gated finale challenges.
+- All twenty named companions and their supplied quotes, plus five-stage storylines.
+- All twenty-four named games from the new sheets, implemented with sorting/reveal, ordering, tool selection, timed choice, and multi-step scenario mechanics.
+- Per-unit learning checks and application prompts, explicit completion saves, review, +20 lesson XP and +200 finale XP.
+- Mobile controls, keyboard-accessible alternatives to dragging, pause/untimed play, and reduced-motion support.
 
-- One shared responsive trail renderer for all five worlds.
-- Simplified 2D environments based on the later branding reference, with the app's existing Nobody characters.
-- Forty units per world; five stones per unit; 3/3/2/1/1 lesson grouping.
-- 2,000 playable lesson slots using 200 unit-specific teaching points and practical exercises with a shared question format.
-- Previews, questions, feedback, three-step capstones, written applications, explicit saving, review, sequential unlocks, encounters, and final destinations.
-- Existing completed lesson records remain readable. New progress uses the existing device learning store.
-- A service-worker cache version update.
+## Art and content
+The reference sheets guide the names, structure, characters, game objectives and destinations. Original simplified vector scenery and a generated companion atlas adapt those designs to the app’s requested 2D style; this is not a pixel-for-pixel reproduction of the sheets. The 2,000 lesson slots use shared game templates alongside unit-specific teaching points and checks. They are not 2,000 individually illustrated games.
 
-The course expansion uses shared exercise templates; it is not 2,000 individually written narrative lessons. See `docs/LIFELAB-REBUILD.md` for the implementation checklist, artwork prompts/provenance, educational review notes and remaining fidelity limits.
+Progress remains in the existing learning-record store. Game practice from the library does not award course completion. Opening a lesson or choosing an answer does not save completion. Reflection text is not retained.
 
-## Verification
-
-- JavaScript syntax and project checks passed.
-- All 53 automated tests passed, including completing every course in sequence, storage failures and old progress records.
-- Browser checked on desktop, 390 px and 320 px mobile layouts.
-- Browser completed an entire ten-lesson unit, including the capstone and application; verified abandonment does not save progress, Done does save it, reload preserves it, and the next unit unlocks.
-
-The ZIP is an update payload, not a standalone copy of the entire website. Apply it over the existing repository.
+See docs/LIFELAB-REBUILD.md for implementation and validation details.

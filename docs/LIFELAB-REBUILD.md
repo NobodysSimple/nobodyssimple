@@ -1,69 +1,31 @@
-# Life Lab rebuild
+# Life Lab implementation
 
-## Scope
+## Components
+- ns-life-lab.mjs: existing route integration; legacy Reality Sorter remains available.
+- ns-lifelab-content.mjs: five curricula, 200 units, 1,000 stones and 2,000 lesson slots.
+- ns-lifelab-worlds.mjs: exact companion names/quotes, story stages, game labels, 40 region names per world.
+- ns-lifelab-scenery.mjs: seeded original SVG scenery, shared boundary colours, five finale environments and game illustrations.
+- ns-lifelab-games.mjs: 24 named games using six interaction families, drag and click sorting, reveal, ordering controls, tools, timed choice and three-stage scenarios.
+- ns-lifelab-state.mjs: completion validation, legacy progress, sequential unlocks, finale gating.
+- ns-lifelab-v3.mjs: direct trail routing, switcher, map, dialogs, character conversations, review and reward display.
+- ns-lifelab-v3.css and ns-lifelab-worlds.css: isolated responsive design.
+- media/lifelab/companions.png: original generated 4-by-5 companion atlas; columns follow each trail’s supplied character order. Rows: Forest, Garden, Harbour, Forge, Observatory.
+- media/lifelab/world-atlas.png and trail-header.png: previous simplified brand illustrations retained for lesson scenes.
 
-Replaces the overlapping trail enhancement scripts with one renderer at the existing `#lab` routes. The rest of the application and the original six-stage Reality Sorter route are retained. The old trail modules remain available for legacy consumers but no longer enhance the new map.
+## Reference coverage
+Forest: Moss, Briar, Echo, Rowan; Clue Tracker, Fog or Fact, Assumption Finder, Summit Route Planner, Reality Sorter; The Summit Ascent.
+Garden: Fern, Poppy, Sunny, Thistle; Feeling Bloom, Need Matcher, Body Signal Sort, Glasshouse Care Plan, Signal Garden; The Glasshouse Revival.
+Harbour: Milo, Ari, Nell, Cove; Dockside Dialogue, Signal & Intent, Boundary Beacon, Repair Map, Harbour Dialogue Builder; The Grand Port Council.
+Forge: Pip, Rook, Tavi, Ember; Friction Forge, Habit Engine, Priority Press, Momentum Run; The Great Engine Ignition.
+Observatory: Sora, Indi, Vale, Lyra; Value Constellation, Lens Switch, Story Orbit, Perspective Telescope; The Star Dome Alignment.
+Shared: Capstone Path, centered chapter breaks, destination chips, character conversations, lesson objective and progress, explicit reward confirmation.
 
-The five worlds use the names, destinations, colors and learning rhythm in the four supplied resource sheets. Canonical URLs are `#lab/forest`, `#lab/garden`, `#lab/harbour`, `#lab/forge`, and `#lab/observatory`; the older meadow/bridge/workshop URLs still resolve.
+## Progress and content
+The five-stone sequence remains 3/3/2/1/1. Games run inside the lesson flow and are followed by the unit-specific learning check; application lessons use a short response. Each finale combines four trail games and a capstone scenario after all 400 trail lessons are complete. XP is derived from persisted completion, so review cannot repeatedly award it. Earlier stored records remain intact.
 
-## Files
+Scenery is generated deterministically from the trail and unit number. Every composition is distinct; its motifs and road curve are deliberately reusable. Adjacent sections match their boundary colours. Chapter cards at units 9, 17, 25 and 33 provide larger transitions. The supplied reference images are adapted into original simple artwork, not embedded as UI screenshots.
 
-- `ns-lifelab-content.mjs`: existing 200 unit titles, 200 new teaching points and practical exercises, 2,000 lesson records, five stones per unit, question construction.
-- `ns-lifelab-state.mjs`: lesson completion, prerequisites, legacy record compatibility and storage errors.
-- `ns-lifelab-v3.mjs`: selector, all forty units, stone previews, lesson start, questions/feedback, capstones, application, completion, review and encounters.
-- `ns-lifelab-v3.css`: isolated responsive styles and shared path coordinates.
-- `media/lifelab/`: generated flat five-world atlas and panoramic header; characters reuse the app’s existing artwork.
-
-## Reference requirements implemented
-
-- 5 trails × 40 units × 10 lessons = 2,000 lessons; 1,000 stones.
-- Every unit visibly contains exactly five stones, grouped 3/3/2/1/1.
-- Learn, Practise, Compare, Capstone, Apply order.
-- Five final destinations, centered unit cards and varied harmonious stone colors.
-- Path and stones share one 480 × 840 coordinate system and scale together.
-- Background artwork is cropped proportionally, never stretched to path coordinates.
-- Locked, current/in-progress and completed states; completed stones are green.
-- Only multi-lesson stones have segmented rings; segments use actual saved lessons.
-- Sequential unlocks, a current Nobody and a Continue control.
-- Unit selector provides direct navigation to all forty units.
-- Preview → start → question → feedback → completion → updated preview.
-- Three-step capstone mission, application text prompt, and completed lesson review.
-- Opening a lesson, selecting an answer, and reaching the completion screen do not save progress. Done/Claim Badge saves standard/capstone lessons; Complete saves an application lesson.
-- Application text is transient and is not persisted or transmitted.
-- Storage errors leave the lesson open and explain that saving failed.
-- Optional Nobody encounters every fourth unit.
-- Keyboard controls, native dialog focus containment, Escape to close, focus restoration, reduced-motion support and mobile layouts.
-
-## Editorial and visual fidelity limits
-
-This is a playable implementation, not a claim of pixel-identical reproduction or a fully bespoke published psychology curriculum. The supplied sheets contain design requirements and example screens, not 2,000 complete lesson scripts. Each unit has its own teaching point and exercise, but questions use shared instructional templates. The capstone scenarios and encounter prose also use shared patterns. An editorial pass should replace these templates with richer unit-specific stories and plausible distractors before treating the course as finished editorial content.
-
-The environments are newly generated, simple 2D interpretations of the user’s later branding reference. The existing app characters are reused without replacement. Backgrounds repeat within each world. Nobody moves to the next stone with a short walking transition (disabled for reduced motion); bespoke encounter animations are not implemented. Completed capstone records serve as mission badges; there is no separate badge gallery. No new account-sync protocol is introduced: completion uses the existing local learning key.
-
-The data model uses a unit with five stone groups containing lessons, rather than the inconsistent Stone→Lesson foreign key drawn in sheet 4. Lesson numbering remains 1–10 within each unit.
-
-## Educational sources and review direction
-
-The added prose is original general education, not diagnostic or treatment advice. Relevant background readings for continued editorial review:
-
-- [Noba: Self-Regulation and Conscientiousness](https://nobaproject.com/modules/self-regulation-and-conscientiousness), for standards, monitoring and adapting action.
-- [Noba: Emotional Intelligence](https://nobaproject.com/modules/emotional-intelligence), for noticing, understanding and regulating emotions.
-- [Gollwitzer & Brandstätter (1997): Implementation intentions and effective goal pursuit](https://sparq.stanford.edu/sites/g/files/sbiybj19021/files/media/file/gollwitzer_brandstatter_1997_-_implementation_intentions_effective_goal_pursuit.pdf), for specific situation/action plans.
-
-These readings support the general direction, not validation of every generated exercise. No clinical efficacy claim is made.
-
-## Verification
-
-Run `npm test` and `npm run check` (or their Node script equivalents). New tests check totals, IDs, 3/3/2/1/1 structure, question validity, all 2,000 sequential completions, prerequisite enforcement, idempotence, legacy records, corrupt/unavailable storage, forty-unit rendering, ring counts and shared path coordinates.
-
-The older tests that expected five lessons per unit, removed lesson kinds, obsolete selector classes and a fixed historical cache suffix have been updated to the current resource-sheet contract.
-
-Browser checks cover desktop and mobile, lesson preview/start/feedback, abandonment without saving, explicit saving and review. The local test origin is separate from the live site.
-
-## Artwork provenance
-
-Environment art generated with the built-in imagegen tool using the later Nobody’s Simple brand illustration as a style reference. The earlier detailed painterly art and generated scarf mascot are excluded from this release.
-
-Atlas prompt: five equal-width flat paper-cut Forest/Garden/Harbour/Forge/Observatory panels, muted sage/rose/blue/ochre/lavender, warm cream paper grain, simple silhouettes, no realistic lighting or 3D, sparse scenery at edges and an open middle for a coded path, no UI or characters.
-
-Header prompt: a new panoramic composition with simple sage hills, triangular evergreen trees, mustard winding path, angular mountain and ochre sun; calm ivory negative space on the left for HTML text; flat shapes and subtle grain; no text or character.
+## Validation
+Run node --test tests/free/*.test.mjs and node tests/free/check.mjs.
+57 tests cover curriculum totals, sequential progress through all 2,000 lessons, malformed storage, old progress, route integration, all 24 game definitions/solutions, twenty companions, 200 scenery compositions, and finale gating/idempotence.
+Browser checks cover desktop/mobile layouts, direct entry/switching, finale preview, lesson completion and review, card sorting, tool selection, ordered routine building, and three-step scenario completion.
