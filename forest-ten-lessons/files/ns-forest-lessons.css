@@ -1,0 +1,29 @@
+/* Forest-only lesson progress. Intentionally no scene, path, stone, icon,
+   typography, sizing, or layout overrides for the existing trail art. */
+body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-trail-lesson-dots{
+  position:absolute;inset:0;pointer-events:none;z-index:6;
+}
+body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-trail-lesson-dot{
+  position:absolute;top:50%;left:50%;width:11px;height:11px;
+  margin:-5.5px 0 0 -5.5px;border:2px solid #fffdf5;border-radius:50%;
+  background:#a8b6ab;box-shadow:0 1px 3px #133a2366;
+  transform:rotate(var(--dot-angle)) translateY(-49px);
+}
+body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-trail-lesson-dot.is-done{
+  background:#f5bf16;border-color:#fffdf2;box-shadow:0 1px 4px #37682577;
+}
+@media(max-width:600px){
+  body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-trail-lesson-dot{
+    width:9px;height:9px;margin:-4.5px 0 0 -4.5px;
+    transform:rotate(var(--dot-angle)) translateY(-42px);
+  }
+}
+/* The new seven mini-lessons reuse the established Life Lab layout and buttons. */
+body.app-body.ns-shell-v1 #main .ns-forest-micro-lesson .ns-forest-micro-count{
+  font:700 11px/1.4 system-ui,sans-serif;letter-spacing:.06em;color:#557c60;
+}
+body.app-body.ns-shell-v1 #main .ns-forest-micro-lesson .ns-forest-micro-question{
+  font-size:clamp(20px,2.5vw,28px);margin:20px 0 16px;
+}
+body.app-body.ns-shell-v1 #main .ns-forest-micro-lesson .ns-lab5-feedback p + p{margin-top:10px;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-forest-micro-lesson .ns-forest-micro-count{color:#c0d9bb;}
