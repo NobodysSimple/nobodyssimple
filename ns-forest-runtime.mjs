@@ -94,11 +94,18 @@ function createExtraStone(root,id){
   root.append(node);
   return node;
 }
-function ringSVG(status,group,records) {
-  const r=41.5,circ=2*Math.PI*r,arc=circ/group.length,gap=9,draw=arc-gap;
-  const arcs=group.map((id,i)=>{
-    const done=isForestLessonDone(id,records),current=status.next===id;
-    return `<circle cx="50" cy="50" r="${r}" fill="none" stroke="${done?'#74cb2a':current?'#e7ba39':'#cbd4cf'}" stroke-width="5.8" stroke-linecap="round" stroke-dasharray="${draw.toFixed(2)} ${(circ-draw).toFixed(2)}" stroke-dashoffset="${(-i*arc+gap/2).toFixed(2)}" transform="rotate(-90 50 50)"/>`;
+/**
+ * Every segment reflects an actual saved lesson completion, never the position
+ * of the next unfinished lesson. The old amber "current" segment incorrectly
+ * looked like a completed lesson on every untouched stone, even locked ones.
+ * Single-lesson capstone/application stones intentionally have no progress ring.
+ */
+export function forestRingSVG(lessonIds,records=readForestRecords()) {
+  if (!Array.isArray(lessonIds) || lessonIds.length < 2) return '';
+  const r=41.5,circ=2*Math.PI*r,arc=circ/lessonIds.length,gap=9,draw=arc-gap;
+  const arcs=lessonIds.map((id,i)=>{
+    const completed=isForestLessonDone(id,records);
+    return `<circle cx="50" cy="50" r="${r}" fill="none" data-forest-lesson="${escapeText(id)}" data-forest-completed="${String(completed)}" stroke="${completed?'#74cb2a':'#cbd4cf'}" stroke-width="5.8" stroke-linecap="round" stroke-dasharray="${draw.toFixed(2)} ${(circ-draw).toFixed(2)}" stroke-dashoffset="${(-i*arc+gap/2).toFixed(2)}" transform="rotate(-90 50 50)"/>`;
   }).join('');
   return `<svg class="ns-forest-stone-progress" viewBox="0 0 100 100" aria-hidden="true" focusable="false">${arcs}</svg>`;
 }
@@ -163,7 +170,7 @@ function refreshStones(root){
     const stone=node.querySelector('.ns-trail-stone');
     if(stone && stone.innerHTML!==icon(id)) stone.innerHTML=icon(id);
     node.querySelector('.ns-forest-stone-progress')?.remove();
-    if(lessons.length>1) node.insertAdjacentHTML('beforeend',ringSVG(status,lessons,records));
+    if(lessons.length>1) node.insertAdjacentHTML('beforeend',forestRingSVG(lessons,records));
   });
   // Move the original Nobody walker and START label, never create another one.
   const destination=root.querySelector(`[data-trail-node="${current||forestStoneOrder.at(-1)}"]`);
@@ -284,6 +291,16 @@ export function activateForestLessonEnhancement(doc=typeof document==='undefined
     const root=doc.querySelector('#main [data-living-trail][data-trail-world="forest"]');
     if(root)decorateForest(root);
   };
+  const refreshVisible=()=>{
+    const root=doc.querySelector('#main [data-living-trail][data-trail-world="forest"]');
+    if(root?.dataset.forestLessonsEnhanced==='five-stones')refreshStones(root);
+    else run();
+  };
+  // Keep an already-open trail accurate when account progress changes in another
+  // tab, or when the user returns after an account sync or native mission.
+  doc.defaultView?.addEventListener('storage',event=>{if(event.key===KEY||event.key===null)refreshVisible();});
+  doc.defaultView?.addEventListener('focus',refreshVisible);
+  doc.addEventListener('visibilitychange',()=>{if(!doc.hidden)refreshVisible();});
   doc.addEventListener('click',event=>{
     const root=event.target.closest?.('#main [data-living-trail][data-trail-world="forest"]');
     if(!root)return;
