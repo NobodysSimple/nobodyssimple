@@ -36,11 +36,24 @@ const TEN_PART_SEQUENCE = Object.freeze([
   'learn','compare','choose','apply','review'
 ]);
 
-/** Keep the EXISTING three Forest stones and their original icons/order. */
+/** Five Forest Unit 1 stones: 3+3+2+1+1 lessons; no filler lessons.
+ * The original magnifier, scales and star icons are reused on their stones.
+ * Two new stones use the existing book and apply glyphs from the trail.
+ * Only the first three stones need segmented progress indicators.
+ */
 export const forestStoneLessonGroups = Object.freeze({
-  'reality-sorter':Object.freeze(['observed-or-inferred','feeling-not-proof','unknown-is-unknown','reality-sorter']),
+  'assumption-finder':Object.freeze(['observed-or-inferred','feeling-not-proof','unknown-is-unknown']),
   'reality-map':Object.freeze(['competing-explanations','discriminating-evidence','reality-map']),
-  'assumption-finder':Object.freeze(['hidden-assumption','confidence-and-certainty','assumption-finder'])
+  'perspective-window':Object.freeze(['hidden-assumption','confidence-and-certainty']),
+  'reality-sorter':Object.freeze(['reality-sorter']),
+  'life-application':Object.freeze(['apply-to-life'])
+});
+export const forestStoneMeta = Object.freeze({
+  'assumption-finder':Object.freeze({title:'Spot the Difference',type:'notice',objective:'Notice observations, interpretations and feelings.'}),
+  'reality-map':Object.freeze({title:'Weigh the Evidence',type:'compare',objective:'Compare explanations and test the quality of clues.'}),
+  'perspective-window':Object.freeze({title:'Try Another Perspective',type:'discover',objective:'Transfer the skill to a new situation.'}),
+  'reality-sorter':Object.freeze({title:'Reality Sorter',type:'capstone',objective:'Complete the six-stage interactive mission.'}),
+  'life-application':Object.freeze({title:'Take It Into Life',type:'apply',objective:'Choose an optional action or reflect on a useful next step.'})
 });
 export const forestPlayableLessonIds = Object.freeze(Object.values(forestStoneLessonGroups).flat());
 const PLAYABLE_META = Object.freeze({
@@ -53,8 +66,11 @@ const PLAYABLE_META = Object.freeze({
   'reality-map':{title:'Reality Map',kind:'apply',type:'tool',href:'#tool/reality-map'},
   'hidden-assumption':{title:'Find the hidden assumption',kind:'explore',type:'lesson'},
   'confidence-and-certainty':{title:'Confidence is not certainty',kind:'review',type:'lesson'},
-  'assumption-finder':{title:'Assumption Finder',kind:'apply',type:'tool',href:'#tool/assumption-finder'}
+  'apply-to-life':{title:'One Small Test in Real Life',kind:'apply',type:'lesson'}
 });
+
+const STONE_SIZES=Object.freeze([3,3,2,1,1]);
+const STONE_KINDS=Object.freeze(['learn','practise','transfer','capstone','application']);
 
 export const forestUnitOutlines=Object.freeze(FOREST_TITLES.map((title,index)=>{
   const number=index+1,chapter=Math.floor(index/5)+1;
@@ -75,11 +91,18 @@ export const forestUnitOutlines=Object.freeze(FOREST_TITLES.map((title,index)=>{
         availability:'available',href:meta.href||`#lab/lesson/forest/${lessonId}`};
     });
   }
+  const stones=STONE_SIZES.map((size,i)=>{
+    const offset=STONE_SIZES.slice(0,i).reduce((a,b)=>a+b,0);
+    return Object.freeze({number:i+1,kind:STONE_KINDS[i],lessonCount:size,
+      lessonIds:Object.freeze(steps.slice(offset,offset+size).map(x=>x.lessonId||x.id)),
+      availability:number===1?'available':'planned'});
+  });
   return Object.freeze({id:`forest-unit-${number}`,number,chapter,title,
-    availability:number===1?'available':'planned',steps:Object.freeze(steps.map(Object.freeze))});
+    availability:number===1?'available':'planned',steps:Object.freeze(steps.map(Object.freeze)),
+    stones:Object.freeze(stones)});
 }));
 export const forestCurriculumManifest=Object.freeze({world:'forest',chapters:8,units:40,
-  stepsPerUnit:10,publishedOriginalLabMissions:1,playableUnit1Lessons:10,
+  stepsPerUnit:10,stonesPerUnit:5,publishedOriginalLabMissions:1,playableUnit1Lessons:10,
   reviewStatus:'draft-curriculum'});
 export function getForestUnitOutline(unitNumber){
   return forestUnitOutlines.find(u=>u.number===Number(unitNumber))||null;

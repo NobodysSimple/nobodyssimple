@@ -1,23 +1,39 @@
-/* Forest-only lesson progress enhancement. No changes to scene, path,
-   illustrations, page layout, stone dimensions, positions, or SVG icons. */
-body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-trail-lesson-dots {
-  position:absolute;inset:0;pointer-events:none;z-index:6;
+/* Forest Unit 1 five-stone learning progression (v5).
+ * The original scene SVG is unchanged; only the new bottom road continuation is added.
+ * The existing original stone SVG glyphs are preserved exactly. Other worlds untouched.
+ */
+body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-trail-unit[data-unit-number="1"] {
+  height:580px!important;
 }
-body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-trail-lesson-dot {
-  position:absolute;top:50%;left:50%;width:11px;height:11px;
-  margin:-5.5px 0 0 -5.5px;border:2px solid #fffdf5;border-radius:50%;
-  background:#95a89b;box-shadow:0 1px 3px #133a2366;
-  transform:rotate(var(--dot-angle)) translateY(-46px);
+body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-forest-scene-tail {
+  position:absolute;z-index:0;left:0;top:14970px;width:100%;height:220px;
+  overflow:hidden;pointer-events:none;display:block;
 }
-body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-trail-lesson-dot.is-done {
-  background:#ffcb25;border-color:#fffdf2;box-shadow:0 1px 4px #37682577;
+body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-forest-scene-tail svg {
+  display:block;width:100%;height:100%;
+}
+/* Progress lives IN the existing stone rim; never free-floating dots.
+ * Rings are only created for Forest stones with two or more lessons. */
+body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] svg.ns-forest-stone-progress {
+  display:block;position:absolute;z-index:9;left:50%;top:50%;width:90px;height:90px;
+  overflow:visible;transform:translate(-50%,-50%);pointer-events:none;
+  filter:drop-shadow(0 1px 1px #21432b50);
+}
+body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-forest-stone-complete .ns-trail-stone {
+  background:linear-gradient(160deg,#49c66c,#19864d)!important;
+  border-color:#f9ffe8!important;
+  color:#fff!important;
+  box-shadow:0 0 0 4px #2d8c50a1,0 7px 0 #21683c,0 12px 18px #193f1e65,inset 0 3px 0 #b9edc4!important;
+}
+body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-forest-stone-finished {
+  color:#1c7644;font-weight:850;font-size:18px;padding:8px 0 0;
 }
 @media(max-width:600px){
-  body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-trail-lesson-dot {
-    width:9px;height:9px;margin:-4.5px 0 0 -4.5px;
-    transform:rotate(var(--dot-angle)) translateY(-41px);
+  body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] svg.ns-forest-stone-progress {
+    width:78px;height:78px;
   }
 }
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-trail-fidelity[data-trail-world="forest"] .ns-forest-stone-finished {color:#9bdfae;}
 /* Content within the original existing trail dialog; no new map panels. */
 body.app-body.ns-shell-v1 #main .ns-trail-fidelity .ns-forest-progress-label {
   color:#3f7351;font-size:12px;font-weight:800;margin:0 0 14px;

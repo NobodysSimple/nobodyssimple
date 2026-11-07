@@ -1,5 +1,5 @@
 /**
- * Seven original, short interactive Forest encounters. Uses the existing
+ * Eight original, short interactive Forest encounters. Uses the existing
  * Life Lab mission visual system; does not alter the illustrated trail.
  * Selections exist in memory. Completion is an explicit user action.
  */
@@ -75,6 +75,17 @@ export const forestMicroLessons=Object.freeze({
       ['I must give every possible explanation equal weight forever.','Keeping an open mind does not require treating all explanations as equally well supported.']
     ],best:0,principle:'You can make provisional judgements while remaining willing to change them when evidence changes.',
     transfer:'Try “My best guess is…” followed by the evidence you would need to revise that guess.'
+  },
+  'apply-to-life':{
+    lead:'A friend sends a short message and you notice yourself guessing what it means. You do not need to contact anyone or share private details.',
+    question:'Which is a realistic, optional way to practise the skill outside this lesson?',
+    choices:[
+      ['Treat my first interpretation as the full explanation.', 'A first interpretation can be plausible, but it is not automatically the whole picture.'],
+      ['Write down what happened, one interpretation, and what is still unknown.', 'Good. This is a private, reversible way to practise without assuming another person’s motive.'],
+      ['Ask the person repeatedly until they reassure me.', 'Repeated demands for reassurance may increase pressure without resolving uncertainty.']
+    ],best:1,
+    principle:'A useful real-world application is small, respectful, and revisable. Planning it does not guarantee a particular outcome.',
+    transfer:'Next time you face an ambiguous situation, separate what you observed from what you inferred. You can also choose not to act. No action is recorded or scheduled.'
   }
 });
 
