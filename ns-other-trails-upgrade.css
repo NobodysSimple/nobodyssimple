@@ -1,0 +1,37 @@
+/* Nobody's Simple · modern trail upgrade for Meadow, Bridge, Workshop and Observatory.
+   Preserves the existing trail layout and icons while adding five-stone lesson progression,
+   segmented progress rings on multi-lesson stones, and themed bottom extensions. */
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="meadow"] .ns-trail-unit[data-unit-number="1"],
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="bridge"] .ns-trail-unit[data-unit-number="1"],
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="workshop"] .ns-trail-unit[data-unit-number="1"],
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="observatory"] .ns-trail-unit[data-unit-number="1"]{height:580px!important;}
+
+body.app-body.ns-shell-v1 #main .ns-othertrail-scene-tail{position:absolute;left:0;right:0;top:14970px;height:220px;pointer-events:none;z-index:0;overflow:hidden;}
+body.app-body.ns-shell-v1 #main .ns-othertrail-scene-tail svg{display:block;width:100%;height:100%;}
+body.app-body.ns-shell-v1 #main .ns-othertrail-node .ns-trail-stone{position:relative;overflow:visible;}
+body.app-body.ns-shell-v1 #main .ns-othertrail-node .ns-trail-node-title{max-width:168px;}
+body.app-body.ns-shell-v1 #main .ns-othertrail-node .ns-trail-node-title small{display:block;margin-top:3px;font-size:10px;line-height:1.2;letter-spacing:.06em;text-transform:uppercase;opacity:.92;}
+body.app-body.ns-shell-v1 #main .ns-othertrail-progress-ring{position:absolute;inset:-7px;z-index:0;pointer-events:none;filter:drop-shadow(0 1px 2px rgba(22,53,30,.15));}
+body.app-body.ns-shell-v1 #main .ns-othertrail-node .ns-trail-stone{z-index:1;}
+body.app-body.ns-shell-v1 #main .ns-othertrail-node.ns-trail-node--locked{opacity:.72;filter:saturate(.78);}
+body.app-body.ns-shell-v1 #main .ns-othertrail-node.ns-trail-node--current .ns-trail-stone{box-shadow:0 0 0 4px rgba(255,255,255,.65),0 0 0 8px rgba(255,230,120,.38);}
+body.app-body.ns-shell-v1 #main .ns-othertrail-node.ns-othertrail-stone-complete .ns-trail-stone{background:linear-gradient(180deg,#8fe143,#67bf1f)!important;color:#fff!important;}
+body.app-body.ns-shell-v1 #main .ns-othertrail-node.ns-othertrail-stone-complete .ns-trail-stone svg{filter:none;}
+
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="meadow"] .ns-othertrail-node.ns-trail-node--current .ns-trail-stone{box-shadow:0 0 0 4px rgba(255,255,255,.72),0 0 0 8px rgba(118,201,73,.32);}
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="bridge"] .ns-othertrail-node.ns-trail-node--current .ns-trail-stone{box-shadow:0 0 0 4px rgba(255,255,255,.72),0 0 0 8px rgba(91,185,255,.32);}
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="workshop"] .ns-othertrail-node.ns-trail-node--current .ns-trail-stone{box-shadow:0 0 0 4px rgba(255,255,255,.72),0 0 0 8px rgba(244,163,64,.34);}
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="observatory"] .ns-othertrail-node.ns-trail-node--current .ns-trail-stone{box-shadow:0 0 0 4px rgba(255,255,255,.72),0 0 0 8px rgba(157,115,255,.32);}
+
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="meadow"] .ns-trail-unit-card{background:rgba(250,250,236,.92);}
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="bridge"] .ns-trail-unit-card{background:rgba(244,251,255,.93);}
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="workshop"] .ns-trail-unit-card{background:rgba(255,248,236,.93);}
+body.app-body.ns-shell-v1 #main [data-living-trail][data-trail-world="observatory"] .ns-trail-unit-card{background:rgba(249,244,255,.93);}
+
+body.app-body.ns-shell-v1 #main .ns-forest-lesson-list button[data-upgrade-review]{display:flex;align-items:center;justify-content:space-between;width:100%;padding:12px 14px;border:0;border-radius:14px;background:#f7f5eb;box-shadow:inset 0 0 0 1px rgba(55,76,50,.09);font:inherit;text-align:left;cursor:pointer;}
+body.app-body.ns-shell-v1 #main .ns-forest-lesson-list button[data-upgrade-review]+button[data-upgrade-review]{margin-top:8px;}
+body.app-body.ns-shell-v1 #main .ns-forest-choices .ns-forest-choice{cursor:pointer;}
+body.app-body.ns-shell-v1 #main .ns-forest-choice.is-selected{box-shadow:0 0 0 3px rgba(132,205,65,.22);}
+
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-othertrail-node .ns-trail-node-title small{color:#dbe8da;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-forest-lesson-list button[data-upgrade-review]{background:#243026;color:#f1f5ed;}
