@@ -9,7 +9,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 assert.equal(livingTrailManifest.worlds.length,5);
 assert.equal(trailUnitPlan.forest.length,40);
 assert.equal(forestUnitOutlines.length,40);
-assert.ok(forestUnitOutlines.every(u=>u.steps.length===5));
+assert.ok(forestUnitOutlines.every(u=>u.steps.length===10));
 assert.equal(getForestUnitOutline(40).title,'Thinking clearly in everyday life');
 assert.equal(getForestUnitOutline(999),null);
 const stored=new Map([['ns-account-learning-v2',JSON.stringify({'ns-skill:existing':{completed:true}})]]);
