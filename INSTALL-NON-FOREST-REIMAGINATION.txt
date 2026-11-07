@@ -1,0 +1,37 @@
+Nobody's Simple — Non-Forest Trail Reimagination Upgrade
+
+This package upgrades The Meadow, The Bridge, The Workshop and The Observatory
+so they better match the finished Forest trail while also adding the new ideas requested.
+
+Included in this package:
+- renamed display themes: The Garden, The Harbour, The Forge, The Observatory
+- 40 units per trail
+- 10 lessons per unit
+- 5 visible stepping stones per unit
+- 3 + 3 + 2 + 1 + 1 lesson structure
+- segmented progress rings only on multi-lesson stones
+- centered unit break cards between units (instead of side cards)
+- varied accent styling between units
+- themed five-colour stone sets per trail
+- encounter flavour text featuring other Nobodys along the trail
+- preserved Forest files (this package only upgrades the non-Forest trails)
+
+Files included:
+- index.html
+- ns-other-trails-curriculum.mjs
+- ns-other-trails-reimagination.mjs
+- ns-other-trails-reimagination.css
+- tests/free/other-trails-reimagination.test.mjs
+
+How to install on GitHub:
+1. Extract this ZIP on your computer.
+2. Open your repository on the main branch.
+3. Choose Add file -> Upload files.
+4. Upload the extracted files and preserve the tests/free folder path.
+5. Commit the changes.
+6. Wait for GitHub Pages to redeploy.
+7. Hard refresh the site with Ctrl + F5.
+
+Important:
+- GitHub does not apply a ZIP directly. You must upload the extracted files.
+- This package does not replace Forest files.

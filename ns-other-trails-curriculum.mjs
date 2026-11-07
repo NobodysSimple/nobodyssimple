@@ -13,8 +13,9 @@ const STEP_META = Object.freeze({
 
 const WORLD_DATA = Object.freeze({
   meadow:Object.freeze({
-    title:'The Meadow',
-    theme:'Feelings, needs and body awareness',
+    title:'The Garden',
+    subtitle:'Feelings, self-care and emotional steadiness',
+    destination:'The Glasshouse',
     accent:'#76c949',
     accentSoft:'#dff4c8',
     tailGround:'#b6ea70',
@@ -28,15 +29,16 @@ const WORLD_DATA = Object.freeze({
       Object.freeze({id:'daily-care',title:'Take It Into the Day',type:'apply',objective:'Choose one small caring action for everyday life.'})
     ]),
     units:Object.freeze([
-      'Feelings, needs and body signals','Naming feelings without panic','What your body might be saying','Comfort versus avoidance','What helps when feelings swell','Emotions move and change','Need, urge or value?','Listening to the body kindly','Self-compassion in hard moments','Rest and restoration',
-      'When emotions feel mixed','Recognising overwhelm early','The difference between soothing and numbing','What tiredness can look like','Gentle grounding','Permission to pause','Body tension and what it signals','What brings relief','Letting feelings be temporary','Staying with discomfort kindly',
-      'Small signals before shutdown','Reassurance and self-talk','Identifying unmet needs','Shame and softness','Feeling safe enough to feel','What helps after stress','Finding steadiness again','Being kind to your future self','Movement and regulation','When to ask for support',
-      'Protecting your energy','Pleasure without guilt','Making room for grief','Responding to loneliness','What calm really feels like','Creating personal rituals','Listening without judging yourself','Recovering from overload','The emotional basics of care','Caring for yourself in everyday life'
+      'Notice, name and care','What feelings are trying to say','Listening to your body kindly','Comfort versus avoidance','What helps when feelings swell','Emotions move and change','Need, urge or value?','Listening without judging yourself','Self-compassion in hard moments','Rest and restoration',
+      'Mixed emotions and muddled days','Recognising overwhelm early','The difference between soothing and numbing','What tiredness can look like','Gentle grounding','Permission to pause','Body tension and what it signals','What brings relief','Letting feelings be temporary','Staying with discomfort kindly',
+      'Small signs before shutdown','Reassurance and self-talk','Identifying unmet needs','Shame and softness','Feeling safe enough to feel','What helps after stress','Finding steadiness again','Being kind to your future self','Movement and regulation','When to ask for support',
+      'Protecting your energy','Pleasure without guilt','Making room for grief','Responding to loneliness','What calm really feels like','Creating personal rituals','Recovering from overload','The emotional basics of care','Nurturing yourself consistently','Carrying care into everyday life'
     ])
   }),
   bridge:Object.freeze({
-    title:'The Bridge',
-    theme:'Relationships, communication and boundaries',
+    title:'The Harbour',
+    subtitle:'Relationships, communication and repair',
+    destination:'The Grand Port',
     accent:'#5bb9ff',
     accentSoft:'#d8f0ff',
     tailGround:'#98d5f8',
@@ -46,19 +48,20 @@ const WORLD_DATA = Object.freeze({
       Object.freeze({id:'read-the-moment',title:'Read the Moment',type:'notice',objective:'Notice cues, context and what is actually happening in the interaction.'}),
       Object.freeze({id:'say-it-clearly',title:'Say It Clearly',type:'compare',objective:'Practise clear, respectful communication.'}),
       Object.freeze({id:'repair-or-boundary',title:'Repair or Boundary',type:'rehearse',objective:'Choose between repairing a connection and setting a limit.'}),
-      Object.freeze({id:'bridge-builder',title:'Bridge Builder',type:'capstone',objective:'Bring the communication skills together in one mission.'}),
+      Object.freeze({id:'bridge-builder',title:'Harbour Mission',type:'capstone',objective:'Bring the communication skills together in one mission.'}),
       Object.freeze({id:'relationship-step',title:'Take It Into a Relationship',type:'apply',objective:'Choose one real-life communication step.'})
     ]),
     units:Object.freeze([
-      'Conversations, cues and context','Listening without jumping in','Saying what you mean simply','Asking rather than assuming','Boundaries without hostility','Repair after misunderstanding','What respect feels like','Speaking when anxious','Handling awkward moments','When connection feels fragile',
-      'The difference between honesty and harshness','How to disagree well','What to do when you feel ignored','Clarifying needs in conversation','Being curious about another view','Noticing power dynamics','When to step back','What makes someone feel heard','Asserting yourself calmly','Letting silence do work',
+      'Connection and repair','Listening without jumping in','Saying what you mean simply','Asking rather than assuming','Boundaries without hostility','Repair after misunderstanding','What respect feels like','Speaking when anxious','Handling awkward moments','When connection feels fragile',
+      'Honesty without harshness','How to disagree well','What to do when you feel ignored','Clarifying needs in conversation','Being curious about another view','Noticing power dynamics','When to step back','What makes someone feel heard','Asserting yourself calmly','Letting silence do work',
       'Trust and consistency','Responding without escalating','When to apologise','Accepting that others differ','Repairing after conflict','Not every problem needs solving','Saying no with less guilt','Communicating under stress','Feeling rejected in social situations','Checking whether a conversation is safe',
       'Responding to criticism','Balancing closeness and distance','Friendship maintenance','Digital communication and tone','When to end a conversation','Choosing the right moment','Boundaries in family life','Boundaries in romantic life','Social courage in everyday life','Healthy relationships in everyday life'
     ])
   }),
   workshop:Object.freeze({
-    title:'The Workshop',
-    theme:'Decisions, habits and action',
+    title:'The Forge',
+    subtitle:'Decisions, habits and action',
+    destination:'The Great Engine',
     accent:'#f4a340',
     accentSoft:'#ffe5c9',
     tailGround:'#f3cc7a',
@@ -72,7 +75,7 @@ const WORLD_DATA = Object.freeze({
       Object.freeze({id:'weekly-step',title:'Take It Into the Week',type:'apply',objective:'Choose one action you can actually carry out this week.'})
     ]),
     units:Object.freeze([
-      'Goals, steps and action','Making a task smaller','Friction and momentum','Starting before you feel ready','Why plans fail','Habit loops in real life','What makes follow-through easier','Choosing priorities wisely','Motivation versus structure','Building a reliable routine',
+      'From intention to action','Making a task smaller','Friction and momentum','Starting before you feel ready','Why plans fail','Habit loops in real life','What makes follow-through easier','Choosing priorities wisely','Motivation versus structure','Building a reliable routine',
       'Turning intention into action','Tiny wins and consistency','Removing barriers','Doing the next right thing','Perfectionism and procrastination','When you feel stuck','Decision fatigue','Planning for low-energy days','The role of environment','Breaking avoidance gently',
       'What helps you begin','Commitment devices','Visible cues and reminders','How to recover after missing a day','Progress over mood','Short-term versus long-term rewards','Choosing what matters most','Energy budgeting','Learning by trying','Making decisions under uncertainty',
       'Habits and identity','When to stop overplanning','Choosing between options','Action after setbacks','Replacing bad defaults','Handling distractions','Doing hard things kindly','Making a system that fits you','Sustainable productivity','Acting on what matters in everyday life'
@@ -80,7 +83,8 @@ const WORLD_DATA = Object.freeze({
   }),
   observatory:Object.freeze({
     title:'The Observatory',
-    theme:'Identity, values and society',
+    subtitle:'Identity, values and perspective',
+    destination:'The Star Dome',
     accent:'#9d73ff',
     accentSoft:'#eadfff',
     tailGround:'#8f83d8',
@@ -94,7 +98,7 @@ const WORLD_DATA = Object.freeze({
       Object.freeze({id:'alignment-step',title:'Take It Into Life',type:'apply',objective:'Choose one action that aligns more closely with what matters.'})
     ]),
     units:Object.freeze([
-      'Values, identity and perspective','What matters to you and why','Stories you tell about yourself','Belonging and individuality','Values under pressure','Who you are with different people','What you admire in others','Identity is not fixed','Personal meaning in everyday life','Living with more alignment',
+      'Notice, identity and values','What matters to you and why','Stories you tell about yourself','Belonging and individuality','Values under pressure','Who you are with different people','What you admire in others','Identity is not fixed','Personal meaning in everyday life','Living with more alignment',
       'How culture shapes perspective','What success means to you','Roles, labels and self-concept','Whose voice are you hearing?','Beliefs you inherited','What kind of person are you becoming?','Values in conflict','Comparing yourself with others','Social expectations and the self','Self-definition without certainty',
       'Integrity in ordinary choices','How media influences self-view','Who gets to define normal?','Personal freedom and constraint','Meaning after disappointment','When your values change','Balancing authenticity and safety','Identity and belonging online','Living with contradiction','Admiration, envy and aspiration',
       'How groups influence judgment','Moral discomfort and reflection','Agency in a complex world','Seeing beyond your own lens','Using values to guide choices','Identity after change','What kind of future fits you','Ordinary courage and conviction','Living by values with flexibility','Identity and values in everyday life'
@@ -104,13 +108,6 @@ const WORLD_DATA = Object.freeze({
 
 export const otherTrailWorldIds = Object.freeze(Object.keys(WORLD_DATA));
 export const otherTrailWorldMeta = WORLD_DATA;
-export const otherTrailStoneGroups = Object.freeze(Object.fromEntries(otherTrailWorldIds.map(worldId => {
-  const stones = WORLD_DATA[worldId].stoneMeta;
-  return [worldId, Object.freeze(Object.fromEntries(stones.map((stone, stoneIndex) => {
-    const offset = STONE_SPLITS.slice(0, stoneIndex).reduce((a,b)=>a+b,0);
-    return [stone.id, Object.freeze(Array.from({length:STONE_SPLITS[stoneIndex]}, (_, lessonIndex) => `${worldId}-${stone.id}-${lessonIndex+1}`))];
-  })))]
-})));
 
 function buildUnit(worldId, title, number){
   const chapter = Math.floor((number-1)/5)+1;
@@ -121,7 +118,6 @@ function buildUnit(worldId, title, number){
     const withinStone = index - (stoneIndex===0?0:stoneIndex===1?3:stoneIndex===2?6:stoneIndex===3?8:9) + 1;
     return Object.freeze({
       id:`${worldId}-unit-${number}-lesson-${index+1}`,
-      lessonId:`${worldId}-${stone.id}-${withinStone}`,
       kind,
       label:STEP_META[kind].label,
       title:`${STEP_META[kind].verb} · ${title}`,
@@ -132,7 +128,8 @@ function buildUnit(worldId, title, number){
       stoneId:stone.id,
       stoneTitle:stone.title,
       objective:stone.objective,
-      availability:'available'
+      availability:'available',
+      withinStone
     });
   });
   const stoneObjects = stones.map((stone, stoneIndex) => {
@@ -161,10 +158,7 @@ function buildUnit(worldId, title, number){
   });
 }
 
-export const otherTrailCurricula = Object.freeze(Object.fromEntries(otherTrailWorldIds.map(worldId => [
-  worldId,
-  Object.freeze(WORLD_DATA[worldId].units.map((title, index) => buildUnit(worldId, title, index+1)))
-])));
+export const otherTrailCurricula = Object.freeze(Object.fromEntries(otherTrailWorldIds.map(worldId => [worldId, Object.freeze(WORLD_DATA[worldId].units.map((title,index)=>buildUnit(worldId,title,index+1)))])));
 
 export function getOtherTrailUnit(worldId, unitNumber){
   return otherTrailCurricula[worldId]?.find(unit => unit.number === Number(unitNumber)) || null;
@@ -175,11 +169,13 @@ export function getOtherTrailStep(worldId, unitNumber, lessonNumber){
 export function getOtherTrailManifest(worldId){
   return Object.freeze({
     world:worldId,
+    title:WORLD_DATA[worldId]?.title || '',
+    destination:WORLD_DATA[worldId]?.destination || '',
     chapters:8,
     units:40,
     stepsPerUnit:10,
     stonesPerUnit:5,
     reviewStatus:'full-outline',
-    theme:WORLD_DATA[worldId]?.theme || ''
+    theme:WORLD_DATA[worldId]?.subtitle || ''
   });
 }
