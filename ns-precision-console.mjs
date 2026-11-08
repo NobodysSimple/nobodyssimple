@@ -15,18 +15,18 @@ const phraseAliases=Object.freeze({
  'social-anxiety':'social anxiety social phobia fear judged judging embarrassed blushing talking to strangers public speaking scrutiny awkward performance anxiety',
  'panic-experiences':'panic panic attack sudden rush fear heart racing breathless physical terror fear of fear losing control',
  'insomnia':'sleep insomnia cannot sleep cant sleep trouble sleeping awake night wake early falling asleep staying asleep',
- 'rumination':'rumination ruminate replay replaying obsess overthinking overthink analysing thinking again past mistakes looping thoughts',
+ 'rumination':'rumination ruminate ruminating replay replaying obsess overthinking overthink analysing thinking again past mistakes looping thoughts',
  'submissive-patterns':'submissive submissiveness cannot say no cant say no people pleasing compliant always agree assertiveness boundary fear conflict permission consent'
 });
 export function searchPrecisionTopics(query,limit=20){
  const q=String(query||'').trim().toLowerCase().replace(/[’']/g,'');
  if(!q)return[];
- const ignored=new Set(['the','and','for','with','want','need','help','my','me','feel','feeling','have','im','ive','cannot','that','this','about','someone','something']);
+ const ignored=new Set(['the','and','for','with','want','need','help','my','me','feel','feeling','have','im','ive','cannot','cant','that','this','about','someone','something','problems','problem','over','always','keep']);
  const words=(q.match(/[\p{L}\p{N}]+/gu)||[]).filter(w=>w.length>=3&&!ignored.has(w));
  if(!words.length)return[];
  const named=preciseProfiles.map(p=>{
-  const blob=(phraseAliases[p.id]+' '+p.title).toLowerCase();
-  const score=words.reduce((a,w)=>a+(blob.includes(w)?5:0),0);
+  const aliases=phraseAliases[p.id].toLowerCase().split(/\s+/);
+  const score=words.reduce((a,w)=>a+(aliases.some(token=>token===w||(w.length>=5&&token.startsWith(w)))?5:0),0);
   return {p:{id:p.id,title:p.title,hint:p.definition.slice(0,88)},score};
  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).map(x=>x.p);
  const old=findProblems(q,limit).filter(p=>!named.some(x=>x.id===p.id));
