@@ -101,7 +101,9 @@ export const problemsInDomain=domain=>problemIndex.filter(p=>p.domain===domain);
 export function findProblems(query,limit=18){
  const q=String(query||'').trim().toLowerCase();
  if(!q)return problemIndex.slice(0,limit);
- const words=q.match(/[\p{L}\p{N}]+/gu)||[];
+ const stop=new Set(['i','im','my','me','a','an','the','is','it','am','have','can','to','of','with','and','feel','feeling','something','please','help']);
+ const words=(q.match(/[\p{L}\p{N}]+/gu)||[]).filter(w=>w.length>2&&!stop.has(w));
+ if(!words.length)return problemIndex.filter(p=>['anxiety','overthinking','procrastination','arguments','overwhelm','fatigue'].includes(p.id)).slice(0,limit);
  const score=p=>{
   const title=p.title.toLowerCase(),hint=p.hint.toLowerCase(),alias=p.aliases.join(' ');
   return words.reduce((sum,w)=>sum+(title.includes(w)?5:0)+(hint.includes(w)?3:0)+(alias.includes(w)?4:0),0);
