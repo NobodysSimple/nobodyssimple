@@ -32,7 +32,7 @@ function start(groups,search,showOther){
  const searchResults=search.trim()?findProblems(search,18):[];
  const alternate=showOther||search.trim().length>0;
  return pageFrame(
- '<section class="ns-precise-surface">'+title(1,3)+
+ '<section class="ns-precise-surface">'+title(1,4)+
  '<h2>What feels most familiar?</h2><p class="ns-precise-lead">Choose the closest, even if more than one could fit. You can change your mind later.</p>'+
  '<div class="ns-precise-main-options">'+front.map(preview).join('')+'</div>'+
  '<div class="ns-precise-other"><button type="button" class="ns-precise-expand" data-open-other aria-expanded="'+alternate+'">My problem is something else <span aria-hidden="true">'+(alternate?'−':'+')+'</span></button>'+
@@ -48,7 +48,7 @@ function start(groups,search,showOther){
 }
 function questionPage(profile,index,answers){
  const q=profile.questions[index],chosen=answers[q.id]||'';
- return pageFrame('<section class="ns-precise-surface">'+title(index+2,3)+
+ return pageFrame('<section class="ns-precise-surface">'+title(index+2,4)+
  '<div class="ns-precise-topic-head"><p class="eyebrow">EXPLORING · '+safe(profile.title)+'</p><h2>'+safe(q.q)+'</h2>'+
  '<p class="ns-precise-lead">Choose the closest answer. The purpose is to distinguish possible difficulties—not to diagnose you.</p></div>'+
  '<div class="ns-precise-answers">'+q.options.map(([id,label],i)=>'<label class="ns-precise-answer"><input type="radio" name="precision-answer" value="'+safe(id)+'" '+(chosen===id?'checked':'')+'><span><em>'+String.fromCharCode(65+i)+'</em>'+safe(label)+'</span></label>').join('')+'</div>'+
@@ -70,7 +70,7 @@ function resultPage(p,answers){
  const mismatch=otherId?'<section class="ns-precise-disambiguate"><strong>Another interpretation may fit better.</strong><p>Your first answer might also fit '+safe(otherProfile?.title||getProblem(otherId)?.title||'another problem')+'. You can switch directly rather than accepting the first label.</p>'+
  (otherProfile?'<button class="button secondary" type="button" data-switch="'+safe(otherId)+'">Explore '+safe(otherProfile.title)+' →</button>':
  link('#problem/'+otherId,'Open the closer topic'))+'</section>':'';
- return pageFrame('<section class="ns-precise-surface">'+title(3,3)+
+ return pageFrame('<section class="ns-precise-surface">'+title(4,4)+
  '<p class="eyebrow">YOUR STARTING POINT</p><h2>'+safe(p.title)+'</h2>'+
  '<p>'+safe(p.definition)+'</p>'+
  mismatch+selectedNote+
