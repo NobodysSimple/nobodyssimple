@@ -46,6 +46,10 @@ import { renderNSProblemGuide } from './ns-problem-guide.mjs';
 import {renderPrecisionConsole} from './ns-precision-console.mjs';
 import {renderPrecisionGuide} from './ns-precision-guide.mjs';
 import {getPreciseProfile} from './ns-precision-content.mjs';
+import {renderAtlasConsole} from './ns-atlas-console.mjs';
+import {renderAtlasGuide} from './ns-atlas-guide.mjs';
+import {renderAtlasTool} from './ns-atlas-tool.mjs';
+import {atlasGet} from './ns-atlas-core.mjs';
 import { renderToolDiscovery } from './ns-tool-library.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
 import { renderSupport } from "./referrals.mjs";
@@ -850,9 +854,9 @@ function route() {
     ({
       home: () => homePage({learningView:"home"}),
       guide: () => renderNSFieldGuide(main, routeParts.slice(1).map(safeRoutePart), accountState()),
-      help: () => renderPrecisionConsole(main),
-      navigate: () => renderPrecisionConsole(main),
-      problem: () => {const key=safeRoutePart(id); if(getPreciseProfile(key))renderPrecisionGuide(main,key); else renderNSProblemGuide(main,key);},
+      help: () => renderAtlasConsole(main),
+      navigate: () => renderAtlasConsole(main),
+      problem: () => {const key=safeRoutePart(id);if(atlasGet(key))renderAtlasGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => renderNSInvestigator(main,safeRoutePart(id)),
       library: () => {
         if(id === "quotes") wisbodyPage();
@@ -877,8 +881,8 @@ function route() {
       },
       tool: () => {
         const toolId = safeRoutePart(id);
-        renderTool(main, toolId);
-        enhanceToolGuide(main, toolId);
+        if(toolId.startsWith('atlas-')&&atlasGet(toolId.slice(6))){renderAtlasTool(main,toolId.slice(6));}
+        else {renderTool(main, toolId);enhanceToolGuide(main, toolId);}
       },
       play: () => renderInteractiveTool(main, safeRoutePart(id)),
       guided: () => renderLifeNavigation(main, safeRoutePart(id)),
