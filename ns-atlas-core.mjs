@@ -2,6 +2,7 @@ import {problemIndex,problemDomains,knowledgeFamilies,sourceForProblem,nhsHelp,n
 import {extendedProblemIndex} from './ns-atlas-extended.mjs';
 import {preciseProfiles,getPreciseProfile} from './ns-precision-content.mjs';
 import {explicitVariants} from './ns-atlas-variations.mjs';
+import {extendedVariants} from './ns-atlas-extended-variations.mjs';
 
 const M=(id,label,detail,target,tool,worksheet)=>({id,label,detail,target,tool,worksheet});
 export const atlasDomains=problemDomains;
@@ -165,7 +166,7 @@ export function atlasProfile(id){
    progress:precise.progress,cycle:precise.cycle};
  }
  const domain=p.domain,desc=knowledgeFamilies[domain];
- const variations=explicitVariants[id]||fallbackScenes(p);
+ const variations=explicitVariants[id]||extendedVariants[id]||fallbackScenes(p);
  const fam=families[domain]||families.feel;
  return {...p,definition:p.hint+'. This describes an experience, not a diagnosis. Different people can arrive at a similar difficulty for different reasons.',
   variants:variations,
