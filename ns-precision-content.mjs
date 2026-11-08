@@ -80,7 +80,7 @@ card('panic-experiences','Sudden episodes of intense fear or alarm',
  {id:'fear',q:'What feels most frightening during the episode?',options:[
  ['body','The physical sensations or fear of losing control','panic-experiences'],
  ['judged','Other people noticing or judging me','social-anxiety'],
- ['health','A new or unresolved health concern',null],
+ ['health','A new or unresolved health concern','health-worry'],
  ['unclear','Several things or unsure',null]]},
  {id:'pattern',q:'What usually happens afterwards?',options:[
  ['avoid','I avoid places in case it happens again',null,'avoidance'],
@@ -123,7 +123,7 @@ card('insomnia','Difficulty falling or staying asleep',
  ['onset','I struggle to fall asleep','insomnia'],
  ['middle','I wake up repeatedly','insomnia'],
  ['early','I wake too early and cannot return to sleep','insomnia'],
- ['unrefreshed','I sleep but wake unrefreshed',null],
+ ['unrefreshed','I sleep but wake unrefreshed','fatigue'],
  ['other','My schedule changes or something else',null]]},
  {id:'influence',q:'What seems to interfere most?',options:[
  ['pressure','Pressure and clock-watching',null,'sleep-pressure'],
@@ -164,9 +164,9 @@ card('rumination','Replaying thoughts or problems repeatedly',
  [
  {id:'type',q:'What kind of repeated thinking is most familiar?',options:[
  ['past','I replay past events or personal mistakes','rumination'],
- ['future','I think through future “what ifs”',null],
- ['intrusions','Unwanted intrusive thoughts that alarm me',null],
- ['checks','I feel driven to check or neutralise something',null],
+ ['future','I think through future “what ifs”','what-if'],
+ ['intrusions','Unwanted intrusive thoughts that alarm me','intrusive'],
+ ['checks','I feel driven to check or neutralise something','checking'],
  ['not-sure','A mixture / not sure',null]]},
  {id:'pattern',q:'What tends to keep the loop going?',options:[
  ['why','Trying to find the ultimate explanation',null,'abstract'],
@@ -207,7 +207,7 @@ card('submissive-patterns','Difficulty asserting needs or saying no',
  {id:'kind',q:'Which description fits most closely?',options:[
  ['unwanted','I say yes when I genuinely want to say no','submissive-patterns'],
  ['chosen','I enjoy a consensual submissive role and feel free to decline','submissive-patterns'],
- ['unsafe','I feel pressured or unsafe if I disagree',null],
+ ['unsafe','I feel pressured or unsafe if I disagree','control-harm'],
  ['social','I fear being judged more generally','social-anxiety'],
  ['other','A mixture / unsure',null]]},
  {id:'pattern',q:'What tends to be most difficult?',options:[
