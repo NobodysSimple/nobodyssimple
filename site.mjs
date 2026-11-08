@@ -847,7 +847,7 @@ function route() {
     ({
       home: () => homePage({learningView:"home"}),
       guide: () => renderNSFieldGuide(main, routeParts.slice(1).map(safeRoutePart), accountState()),
-      help: () => homePage({learningView:"home",wizardOnly:true}),
+      help: () => renderUniversalConsole(main),
       navigate: () => renderUniversalConsole(main),
       problem: () => renderNSProblemGuide(main,safeRoutePart(id)),
       investigate: () => renderNSInvestigator(main,safeRoutePart(id)),
