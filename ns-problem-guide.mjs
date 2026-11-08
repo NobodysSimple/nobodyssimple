@@ -67,11 +67,81 @@ const severityNote=p=>{
  if(p.medical)return '<section class="ns-guide-health"><strong>Consider health factors too.</strong> Persistent, new or concerning physical symptoms deserve appropriate medical attention; do not assume a purely psychological cause.</section>';
  return '';
 };
+/* Mechanism-specific teaching is deliberately a distinction, not a diagnostic inference. */
+const mechanismLessons={
+ feel:[
+  'A feeling can be an understandable response to an event. Consider whether the event itself needs practical attention, reassurance from evidence, or a change in circumstances.',
+  'Sleep, illness, recovery and sustained stress can shape emotions. If changing your physical or environmental state changes the experience, this may be an important contributor.',
+  'Expectations and previous experiences can shape what feels threatening or shameful. Compare the immediate feeling with the current evidence rather than treating them as identical.',
+  'Power, conflict, workload and lack of support can maintain distress. A coping exercise will not fix a situation that continues to cause harm.'
+ ],
+ think:[
+  'If a problem is solvable, thinking becomes useful when it leads to an action, information request or decision. Repeated analysis without a next step may not be productive.',
+  'Uncertainty cannot always be removed. Compare how much the next check is likely to teach you against how long its relief usually lasts.',
+  'An interpretation is a hypothesis, even when it feels obvious. Look for observations that support and challenge it rather than simply finding reassurance.',
+  'Repeated checking or reassurance may temporarily reduce discomfort. Notice whether the same question returns soon afterward, and whether another check would add new information.'
+ ],
+ act:[
+  'Vague tasks create hidden decisions. Replacing “do the work” with “open the document and outline one point” can reveal whether ambiguity is part of the barrier.',
+  'If mistakes feel threatening, the task may carry more emotional weight than its practical demands. Compare an adequate first attempt with waiting for a perfect one.',
+  'When demands exceed capacity, more willpower is not a complete answer. Consider time, adjustments, rest, accessibility and support.',
+  'A task with delayed rewards may be difficult to initiate. Immediate cues, visible progress and a more suitable environment can change the conditions for action.'
+ ],
+ relate:[
+  'Different people can read the same message differently. Clarifying what actually occurred may help—but only where communication is safe and welcome.',
+  'An unresolved need or limit may be contributing. A useful boundary focuses on what you can do and what behaviour is acceptable to you.',
+  'Recurring arguments can follow patterns of hurt, defence, distance and attempted repair. Notice whether both people can acknowledge the impact and change behaviour.',
+  'Fear, dependency or coercion changes the problem. Safety, support and practical options matter more than perfect phrasing.'
+ ],
+ body:[
+  'Physical symptoms can have medical causes and interact with stress. New, persistent or concerning symptoms deserve appropriate health assessment.',
+  'Sensory intensity, demands and inaccessible surroundings may make coping harder. Modifying the environment can be a legitimate first intervention.',
+  'Stress can affect the body, but a stress explanation should not be assumed without considering other causes.',
+  'Repeated monitoring of sensations can sometimes increase attention to them. Appropriate medical care and proportionate checking remain important.'
+ ],
+ identity:[
+  'Different roles and communities can ask different things of you. Conflict between them does not necessarily mean your identity is incoherent.',
+  'Values may be difficult to name when you have spent a long time responding to demands. Consider choices you endorse when external pressure is lower.',
+  'Old experiences can shape self-beliefs. A self-description learned in one environment may not describe every situation.',
+  'Social pressure, discrimination and lack of safety can constrain self-expression. The environment may need to change as much as your response.'
+ ],
+ focus:[
+  'Large cognitive demands can exceed available working memory. External notes, smaller steps and visual cues reduce what must be held in mind.',
+  'Attention often changes with interest, distraction and immediate feedback. Adjusting the task and environment can clarify which factors matter.',
+  'Poor sleep and prolonged stress can impair concentration. Addressing those conditions may be more useful than a productivity technique.',
+  'Longstanding difficulties in many settings may warrant an assessment. A short website quiz cannot establish a neurodevelopmental condition.'
+ ],
+ change:[
+  'Some distress reflects what a change meant to you. Acknowledging the meaning can be more useful than forcing quick positivity.',
+  'Transitions disrupt routines and relationships. Restoring structure or support may reduce the practical load.',
+  'There is no fixed timetable for grief or adjustment. Mixed feelings are common and do not need to be eliminated to function.',
+  'Housing, money, work and caregiving consequences of change are real problems. Practical assistance may be central.'
+ ],
+ work:[
+  'Workload and costs can exceed realistic capacity. The intervention may be reducing demands rather than increasing resilience.',
+  'Lack of control or adjustments can create avoidable distress. Consider accessible conditions, rights and practical help.',
+  'Conflicting roles produce competing obligations. Prioritisation has limits if all demands remain non-negotiable.',
+  'Anxiety or avoidance may follow persistent stress. Treating the emotional response alone may leave the original pressure unchanged.'
+ ],
+ experiences:[
+  'Physical causes, medications and substances can contribute to unusual experiences. A healthcare professional can help assess these possibilities.',
+  'Sleep deprivation and stress can affect perception, arousal and the sense of self. That does not rule out a clinical concern.',
+  'Trauma and dissociation may affect perception and connection to the present. Avoid forcing yourself through distressing memories without appropriate support.',
+  'Several mental health conditions can present with overlapping experiences. A website cannot reliably distinguish them from brief answers.'
+ ],
+ safety:[
+  'Immediate danger needs practical action, not a psychological explanation.',
+  'Intense distress is easier to manage with reliable human support than alone.',
+  'Coercion, threats and lack of safe options require a safety-oriented response.',
+  'Clinical assessment and crisis support are appropriate when someone cannot keep themselves safe.'
+ ]
+};
 function customWorksheet(p,answer,domain){
  const mechanism=knowledgeFamilies[domain]?.explanations[Number(answer?.barrier)]||null;
+ const lesson=mechanismLessons[domain]?.[Number(answer?.barrier)]||null;
  const contextMap={demands:'workload, time and environmental demands',health:'health, sleep, energy and sensory factors',people:'relationships, safety and other people',thoughts:'thoughts, emotions and habits',unknown:'several overlapping circumstances'};
  return '<div class="ns-guide-personal"><h3>Your working direction</h3>'+
- (mechanism?'<p><strong>You wanted to explore:</strong> '+safe(mechanism)+'.</p>':
+ (mechanism?'<p><strong>You wanted to explore:</strong> '+safe(mechanism)+'.</p><p>'+safe(lesson)+'</p>':
  '<p><strong>There is not yet enough information to favour one explanation.</strong> This guide considers several possibilities.</p>')+
  (answer?.context?'<p><strong>A condition you highlighted:</strong> '+safe(contextMap[answer.context]||'something worth considering')+'.</p>':'')+
  '<p>These selections prioritise educational material; they are not diagnostic evidence or certainty ratings.</p></div>';
@@ -85,6 +155,7 @@ function landingGuide(p){
  const knowledge=knowledgeFamilies[p.domain];
  const handoff=peekProblemHandoff(p.id);
  const from=handoff?.answers||{};
+ const otherSelected=(handoff?.selected||[]).filter(id=>id!==p.id).map(getProblem).filter(Boolean);
  const special=notes[p.id]||[p.hint+'. There may be several different explanations, and one label cannot establish a cause.',
   'Look at when it happens, what helps, what makes it harder and what is happening around you.'];
  const directLearnId={procrastination:'procrastination',overthinking:'overthinking',overwhelm:'feelings',arguments:'relationships',boundaries:'relationships'}[p.id];
@@ -96,6 +167,7 @@ function landingGuide(p){
  '<header class="ns-guide-hero"><p class="eyebrow">YOUR PSYCHOLOGICAL FIELD GUIDE · '+safe(domain?.name||'')+'</p>'+
  '<h1>'+safe(p.title)+'</h1><p>'+safe(p.hint)+'. A clear walkthrough of what might be involved and which responses could help.</p>'+
  '<div class="ns-guide-meta"><span>~3 min to read</span><span>Optional questions and worksheet</span></div></header>'+
+ (otherSelected.length?'<div class="ns-guide-related"><strong>You also selected:</strong> '+otherSelected.map(x=>link(x.title,'#problem/'+x.id)).join('')+'</div>':'')+
  severityNote(p)+
  '<nav class="ns-guide-jumplinks" aria-label="Guide sections"><a href="#guide-understand">Understand</a><a href="#guide-possibilities">Possibilities</a><a href="#guide-actions">What might help</a><a href="#guide-worksheet">Worksheet</a></nav>'+
  '<section class="ns-guide-card" id="guide-understand"><p class="eyebrow">1 · UNDERSTAND THE EXPERIENCE</p><h2>What could be going on?</h2>'+
