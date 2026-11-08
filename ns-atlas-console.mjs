@@ -26,7 +26,7 @@ function first(state){
  atlasDomains.map(d=>'<button data-atlas-domain="'+s(d.id)+'" type="button" aria-pressed="'+(state.domain===d.id)+'">'+s(d.name)+'</button>').join('')+'</div>'+
  '<div class="ns-atlas-list" data-atlas-results>'+(items.length?items.map(item).join(''):
  '<p class="ns-atlas-noresults">No precise match. This library is still expanding; avoid forcing a label. You can describe the situation in an open-ended tool. <a href="#tool/context-map">Open Context Map →</a></p>')+'</div>'+
- '<p class="ns-atlas-footnote">'+atlasCount+' mapped entries (not 166 diagnoses). A difficulty can have several explanations and may overlap with others. You can always come back and change your selection.</p></section>');
+ '<p class="ns-atlas-footnote">'+atlasCount+' mapped entries describing difficulties, not a list of diagnoses. A difficulty can have several explanations and may overlap with others. You can always come back and change your selection.</p></section>');
 }
 function step(profile,state){
  const options=state.stage===1?profile.variants.map((label,i)=>({id:'v'+i,label})):
@@ -47,7 +47,9 @@ export function renderAtlasConsole(root){
  const state={mode:'tools',domain:'',query:'',selected:'',variant:'',maintainer:'',stage:0};
  const select=id=>{
   if(!atlasGet(id))return;
-  state.selected=id;state.variant='';state.maintainer='';state.stage=isSafetyPriority(id)?2:1;paint(true);
+  state.selected=id;state.variant='';state.maintainer='';
+  if(isSafetyPriority(id)){handoff={id,variant:'',maintainer:'',mode:state.mode};location.hash=state.mode==='learn'?'#problem/'+id:'#tool/atlas-'+id;return;}
+  state.stage=1;paint(true);
  };
  const next=()=>{
   handoff={id:state.selected,variant:state.variant,maintainer:state.maintainer,mode:state.mode};
