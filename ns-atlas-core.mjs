@@ -175,7 +175,7 @@ export function atlasProfile(id){
  const domain=p.domain,desc=knowledgeFamilies[domain];
  const variations=explicitVariants[id]||extendedVariants[id]||fallbackScenes(p);
  const fam=families[domain]||families.feel;
- return {...p,definition:p.hint+'. This describes an experience, not a diagnosis. Different people can arrive at a similar difficulty for different reasons.',
+ return {...p,definition:'“'+p.title+'” describes an experience involving '+p.hint.charAt(0).toLowerCase()+p.hint.slice(1)+'. People can experience it in different ways; the description alone does not establish a diagnosis or cause.',
   variants:variations,
   signs:genericSigns[domain]||genericSigns.feel,
   maintainers:fam.map(m=>({...m})),
