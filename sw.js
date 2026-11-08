@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v137-the-journey';
+const CACHE = 'nobodyssimple-release-v138-home-navigation';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -12,9 +12,10 @@ const INSTALL_OPTIONAL = [
   'index.html', 'logo.png', 'manifest.webmanifest',
   'styles.css', 'account.css', 'strategy.css', 'community.css',
   'app-design.css', 'ns-shell.css', 'ns-home.css',
-  'ns-tool-library.css', 'ns-learn.css', 'ns-life-lab.css',
-  'ns-field-guide.css', 'ns-integrations.css', 'ns-vision.css', 'ns-home-refined.css', 'ns-home-updates.mjs',
-  'ns-living-trail.css', 'ns-trail-fidelity.css', 'ns-living-trail.mjs', 'ns-forest-curriculum.mjs', 'ns-forest-foliage-left.webp', 'ns-forest-foliage-right.webp'
+  'ns-tool-library.css', 'ns-learn.css', 'ns-field-guide.css',
+  'ns-integrations.css', 'ns-vision.css', 'ns-home-refined.css',
+  'lifestyle.css', 'lifestyle.mjs', 'strategy.mjs', 'site.mjs', 'ns-shell.mjs',
+  'ns-home-updates.mjs'
 ];
 const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
 const SAFE_QUERY = /^\?v=[a-z0-9._-]{1,40}$/i;
