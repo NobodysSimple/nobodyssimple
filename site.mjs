@@ -1,5 +1,5 @@
 import './ns-shell.mjs';
-import { renderNSLab, cleanupNSLab } from './ns-life-lab.mjs';
+import { renderLifestyle } from './lifestyle.mjs';
 import { renderNSFieldGuide, cleanupNSFieldGuide } from './ns-field-guide.mjs';
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
@@ -807,7 +807,6 @@ function renderSystemsPage() {
 }
 let cleanupToolDiscovery=()=>{};
 function route() {
-  cleanupNSLab();
   cleanupNSFieldGuide();
   cleanupToolDiscovery();
   cleanupToolDiscovery=()=>{};
@@ -815,6 +814,7 @@ function route() {
   main.onclick = null;
   const routeParts = location.hash.slice(1).split("/");
   const [name,id] = routeParts;
+  if(name==='lab'||name==='journey'){location.replace('#home');return;}
   const safeRoutePart = raw => {try{return decodeURIComponent(raw||'');}catch{return '';}};
   if (name === "maps" || (name === "tool" && id === "maps")) { location.replace("#account/maps"); return; }
   const currentName = name || "home";
@@ -841,7 +841,6 @@ function route() {
   (
     ({
       home: () => homePage({learningView:"home"}),
-      lab: () => renderNSLab(main, routeParts.slice(1).map(safeRoutePart)),
       guide: () => renderNSFieldGuide(main, routeParts.slice(1).map(safeRoutePart), accountState()),
       help: () => homePage({learningView:"home",wizardOnly:true}),
       navigate: () => homePage({learningView:"home",wizardOnly:true}),
@@ -875,6 +874,7 @@ function route() {
       guided: () => renderLifeNavigation(main, safeRoutePart(id)),
       team: () => renderTeam(main),
       simplyfocus: () => renderSimplyFocus(main),
+      lifestyle: () => renderLifestyle(main),
       "stim-space": renderStimSpace,
       questionnaires: () => renderQuestionnaires(main),
       "big-five": () => renderBigFive(main),
@@ -934,10 +934,10 @@ function route() {
           : name && name !== "home"
             ? name.charAt(0).toUpperCase() + name.slice(1)
             : "";
-  document.title = name === "lab" ? "The Journey · Nobody’s Simple" : `${title ? title + " · " : ""}Nobody’s Simple`;
+  document.title = `${title ? title + " · " : ""}Nobody’s Simple`;
   const appLabels = {
     home: "Home",
-    lab: "The Journey",
+    lifestyle: "Nobody’s Simple Lifestyle",
     guide: "My Field Guide",
     help: "Home",
     navigate: "Home",
@@ -976,6 +976,7 @@ function route() {
     ? "Today"
     : ["help", "navigate", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
+    : currentName === "lifestyle" ? "Your everyday life"
     : currentName === "guide" ? "Your private notes"
     : ["tools", "tool", "play", "guided", "simplyfocus", "questionnaires", "big-five", "systems", "personality"].includes(currentName)
         ? "Explore"
