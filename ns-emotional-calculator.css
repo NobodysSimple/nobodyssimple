@@ -290,3 +290,11 @@ html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide-work textarea{
  body.app-body #main .ns-guide-shell{max-width:100%;padding:0;}
  body.app-body #main .ns-guide-card{break-inside:avoid;box-shadow:none;}
 }
+
+/* Cross-linked concerns and concise live feedback for the new journey. */
+body.app-body.ns-shell-v1 #main .ns-guide-related{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 17px;padding:13px 18px;background:#f2f5ec;border-radius:14px;font-size:13px;color:#416451;}
+body.app-body.ns-shell-v1 #main .ns-guide-related a{font-weight:750;text-decoration:none;color:#266d4d;border-bottom:1px solid #669777;padding:3px;}
+body.app-body.ns-shell-v1 #main .ns-console-selection-info{margin:14px 0 0;color:#4b7457;font-size:12px;font-weight:750;}
+body.app-body.ns-shell-v1 #main .ns-console-selection-message{margin:4px 0 0;min-height:0;color:#a65a30;font-size:12px;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide-related{background:#365341;color:#f0f6ee;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide-related a{color:#d8f3d5;}
