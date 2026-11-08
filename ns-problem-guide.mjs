@@ -169,7 +169,7 @@ function landingGuide(p){
  '<div class="ns-guide-meta"><span>~3 min to read</span><span>Optional questions and worksheet</span></div></header>'+
  (otherSelected.length?'<div class="ns-guide-related"><strong>You also selected:</strong> '+otherSelected.map(x=>link(x.title,'#problem/'+x.id)).join('')+'</div>':'')+
  severityNote(p)+
- '<nav class="ns-guide-jumplinks" aria-label="Guide sections"><a href="#guide-understand">Understand</a><a href="#guide-possibilities">Possibilities</a><a href="#guide-actions">What might help</a><a href="#guide-worksheet">Worksheet</a></nav>'+
+ '<nav class="ns-guide-jumplinks" aria-label="Guide sections"><button type="button" data-guide-jump="understand">Understand</button><button type="button" data-guide-jump="possibilities">Possibilities</button><button type="button" data-guide-jump="actions">What might help</button><button type="button" data-guide-jump="worksheet">Worksheet</button></nav>'+
  '<section class="ns-guide-card" id="guide-understand"><p class="eyebrow">1 · UNDERSTAND THE EXPERIENCE</p><h2>What could be going on?</h2>'+
  '<p>'+safe(special[0])+'</p><p>'+safe(knowledge.what)+'</p><p>'+safe(special[1])+'</p>'+
  '<p class="ns-guide-caption">Problems often overlap. These are educational possibilities, not a personal diagnosis.</p></section>'+
@@ -206,7 +206,10 @@ export function renderNSProblemGuide(root,id){
  const p=getProblem(id);
  if(!p){location.hash='#navigate';return;}
  root.innerHTML=landingGuide(p);
- root.querySelector('[data-guide-refine]')?.addEventListener('click',()=>{
+ root.querySelectorAll('[data-guide-jump]').forEach(button=>button.addEventListener('click',()=>{
+  root.querySelector('#guide-'+button.dataset.guideJump)?.scrollIntoView({behavior:'smooth',block:'start'});
+ }));
+ root.querySelector('[data-guide-refine]'?.addEventListener('click',()=>{
   const choice=root.querySelector('input[name="guide-mechanism"]:checked');
   const handoff=peekProblemHandoff(p.id);
   const updated={...(handoff?.answers||{}),barrier:choice?.value};
