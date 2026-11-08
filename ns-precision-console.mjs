@@ -9,6 +9,29 @@ let handoff=null; // transient, not copied to storage
 export const getPrecisionHandoff=id=>handoff?.id===id?handoff:null;
 export const clearPrecisionHandoff=()=>{handoff=null;};
 const scroll=()=>{try{window.scrollTo({top:0,behavior:'instant'});}catch{}};
+/* User-language aliases keep the precise guides findable without forcing a diagnosis.
+   Wider-library topics remain searchable and are explicitly less deeply authored. */
+const phraseAliases=Object.freeze({
+ 'social-anxiety':'social anxiety social phobia fear judged judging embarrassed blushing talking to strangers public speaking scrutiny awkward performance anxiety',
+ 'panic-experiences':'panic panic attack sudden rush fear heart racing breathless physical terror fear of fear losing control',
+ 'insomnia':'sleep insomnia cannot sleep cant sleep trouble sleeping awake night wake early falling asleep staying asleep',
+ 'rumination':'rumination ruminate replay replaying obsess overthinking overthink analysing thinking again past mistakes looping thoughts',
+ 'submissive-patterns':'submissive submissiveness cannot say no cant say no people pleasing compliant always agree assertiveness boundary fear conflict permission consent'
+});
+export function searchPrecisionTopics(query,limit=20){
+ const q=String(query||'').trim().toLowerCase().replace(/[’']/g,'');
+ if(!q)return[];
+ const ignored=new Set(['the','and','for','with','want','need','help','my','me','feel','feeling','have','im','ive','cannot','that','this','about','someone','something']);
+ const words=(q.match(/[\p{L}\p{N}]+/gu)||[]).filter(w=>w.length>=3&&!ignored.has(w));
+ if(!words.length)return[];
+ const named=preciseProfiles.map(p=>{
+  const blob=(phraseAliases[p.id]+' '+p.title).toLowerCase();
+  const score=words.reduce((a,w)=>a+(blob.includes(w)?5:0),0);
+  return {p:{id:p.id,title:p.title,hint:p.definition.slice(0,88)},score};
+ }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score).map(x=>x.p);
+ const old=findProblems(q,limit).filter(p=>!named.some(x=>x.id===p.id));
+ return [...named,...old].slice(0,limit);
+}
 const front=Object.freeze([
  {id:'social-anxiety',label:'I worry what people think of me',hint:'Judgement, embarrassment, scrutiny',symbol:'◌'},
  {id:'panic-experiences',label:'I get sudden waves of panic',hint:'Intense fear and bodily symptoms',symbol:'ϟ'},
@@ -29,7 +52,7 @@ function pageFrame(content){
  '<img src="ns-character-guide.webp" alt="" width="88" height="110"></header>'+content+'</div>';
 }
 function start(groups,search,showOther){
- const searchResults=search.trim()?findProblems(search,18):[];
+ const searchResults=search.trim()?searchPrecisionTopics(search,18):[];
  const alternate=showOther||search.trim().length>0;
  return pageFrame(
  '<section class="ns-precise-surface">'+title(1,4)+
@@ -109,7 +132,7 @@ export function renderPrecisionConsole(root){
   root.querySelector('[data-precision-search]')?.addEventListener('input',e=>{
    state.search=e.target.value;
    const results=root.querySelector('[data-legacy-results]');
-   if(results){const found=findProblems(state.search,20);results.innerHTML=found.map(x=>'<a href="#problem/'+safe(x.id)+'">'+safe(x.title)+'<span>→</span></a>').join('')||(state.search.trim()?'<p>No exact match yet. Try a related phrase or select an area.</p>':'<p>Search or select an area.</p>');}
+   if(results){const found=searchPrecisionTopics(state.search,20);results.innerHTML=found.map(x=>'<a href="#problem/'+safe(x.id)+'">'+safe(x.title)+'<span>→</span></a>').join('')||(state.search.trim()?'<p>No exact match yet. Try a related phrase or select an area.</p>':'<p>Search or select an area.</p>');}
   });
   root.querySelectorAll('[data-legacy-domain]').forEach(b=>b.addEventListener('click',()=>{
    state.domain=b.dataset.legacyDomain;state.search='';paint();
