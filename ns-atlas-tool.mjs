@@ -15,6 +15,7 @@ export function renderAtlasTool(root,id){
  if(!p){root.innerHTML='<p>This exercise is not yet available. <a href="#navigate">Return to the console</a>.</p>';return;}
  const from=readAtlasSession(id)||getAtlasHandoff(id)||{};
  const state={variant:from.variant||'',maintainer:from.maintainer||'',customSituation:from.customSituation||'',notes:{...from.notes}};
+ const hold=()=>writeAtlasSession({...from,id,variant:state.variant,maintainer:state.maintainer,customSituation:state.customSituation,notes:state.notes});
  const intro='<div class="ns-atlas-tool"><a href="#problem/'+s(id)+'" class="ns-atlas-back">← Back to the learning guide</a>'+
  '<header class="ns-atlas-guide-hero"><p class="eyebrow">NOBODY’S SIMPLE · PERSONAL PRACTICE</p><h1>'+s(p.title)+'</h1>'+
  '<p>A specific tool for this problem. Choose what fits your situation and explore an appropriate next step.</p></header>'+
@@ -42,6 +43,7 @@ export function renderAtlasTool(root,id){
   container.querySelectorAll('[data-tool-answer]').forEach(ta=>ta.addEventListener('input',()=>{
    const entry=state.notes[spec.kind]||(state.notes[spec.kind]=[]);
    entry[Number(ta.dataset.toolAnswer)]=ta.value;
+   hold();
   }));
   container.querySelector('[data-tool-result]')?.addEventListener('click',()=>{
    const given=(state.notes[spec.kind]||[]).filter(x=>String(x||'').trim()).length;
@@ -55,7 +57,7 @@ export function renderAtlasTool(root,id){
    save('nobodyssimple-'+id+'-'+spec.kind+'-exercise.txt',worksheetText(spec,state.notes[spec.kind]||[]));
    container.querySelector('[data-tool-reflection]').textContent='Your local worksheet was prepared for download.';
   });
-  writeAtlasSession({...from,id,variant:state.variant,maintainer:state.maintainer,customSituation:state.customSituation});
+  hold();
  };
  root.querySelector('[data-tool-variant]')?.addEventListener('change',e=>{state.variant=e.target.value;update()});
  root.querySelector('[data-tool-maintainer]')?.addEventListener('change',e=>{state.maintainer=e.target.value;update()});
