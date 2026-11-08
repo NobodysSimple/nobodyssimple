@@ -31,7 +31,7 @@ export function renderStrategyHome(root,posts=[],rail='',options={}){
  // Stage 2 gives the original decision aid its own route. Its questions,
  // selected options and recommendation calculations still live in renderHelp.
  if(options.wizardOnly){
-  root.innerHTML=`<div class="ns-wizard-page"><a class="ns-home-back" href="#home">← Back to Home</a><header class="ns-wizard-intro"><p class="ns-home-eyebrow">FIND YOUR NEXT STEP</p><h1>Let's work out what might help.</h1><p>Three short questions. No account needed, and you can change your answers.</p></header><section class="strategy-console ns-wizard-console" aria-label="Help me choose"><div id="home-navigation-console"></div></section><aside class="ns-wizard-options"><p>Already know what you need?</p><a href="#tools">Browse all tools →</a><a href="#guide">Open my Field Guide →</a><a href="#support">Get help from a person →</a></aside></div>`;
+  root.innerHTML=`<div class="ns-wizard-page"><a class="ns-home-back" href="#home">← Back to Home</a><header class="ns-wizard-intro"><p class="ns-home-eyebrow">FIND YOUR NEXT STEP</p><h1>Let's work out what might help.</h1><p>Three short questions. No account needed, and you can change your answers.</p></header><section class="strategy-console ns-wizard-console" aria-label="Help me choose"><div id="home-navigation-console"></div></section><aside class="ns-wizard-options"><p>Already know what you need?</p><a href="#investigate">Investigate and learn about a problem →</a><a href="#tools">Browse all tools →</a><a href="#guide">Open my Field Guide →</a><a href="#support">Get help from a person →</a></aside></div>`;
   options.renderConsole?.(root.querySelector('#home-navigation-console'));
   return;
  }
