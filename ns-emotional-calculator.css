@@ -195,9 +195,9 @@ body.app-body.ns-shell-v1 #main .ns-guide-meta span{
 body.app-body.ns-shell-v1 #main .ns-guide-jumplinks{
  display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 24px;
 }
-body.app-body.ns-shell-v1 #main .ns-guide-jumplinks a{
+body.app-body.ns-shell-v1 #main .ns-guide-jumplinks button{
  padding:10px 14px;border:1px solid #ccdec7;border-radius:100px;background:#f1f6ed;
- text-decoration:none;color:#2a684a;font-size:12px;font-weight:750;
+ text-decoration:none;color:#2a684a;font-size:12px;font-weight:750;font-family:inherit;cursor:pointer;
 }
 body.app-body.ns-shell-v1 #main .ns-guide-card{
  padding:clamp(21px,3.6vw,36px);background:#fffdf8;border:1px solid #e2e8de;
