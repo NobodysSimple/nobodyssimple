@@ -413,7 +413,7 @@ export function renderHelp(root, options = {}) {
     syncSubparts(input);
   });
   form.querySelector("[data-console-back]").onclick = () => showStage(currentStage - 1);
-  form.querySelector("[data-console-next]").onclick = () => currentStage < 2 ? showStage(currentStage + 1) : form.requestSubmit();
+  form.querySelector("[data-console-next]").onclick = () => { if (currentStage === 0 && form.querySelector('[name="situation"][value="learn"]')?.checked) { location.hash = "#investigate"; return; } currentStage < 2 ? showStage(currentStage + 1) : form.requestSubmit(); };
   form.querySelector("[data-console-back-to-energy]").onclick = () => showStage(2);
   showStage(0, false);
 
