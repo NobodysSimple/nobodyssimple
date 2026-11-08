@@ -142,7 +142,7 @@ body.app-body.ns-shell-v1 .ns-lab-error h1 {font:400 40px/1.1 Georgia,serif;colo
   body.app-body.ns-shell-v1 .app-top-install {display:none;}
   body.app-body.ns-shell-v1 #main {min-height:calc(100dvh - var(--ns-nav-height));padding-bottom:calc(var(--ns-nav-height) + env(safe-area-inset-bottom) + 12px);}
   body.app-body.ns-shell-v1 .app-bottom-nav {
-    display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;
+    display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
     position:fixed;bottom:0;left:0;right:0;z-index:70;
     height:calc(var(--ns-nav-height) + env(safe-area-inset-bottom));
     gap:1px;margin:0;padding:5px max(8px,env(safe-area-inset-left)) calc(6px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-right));
