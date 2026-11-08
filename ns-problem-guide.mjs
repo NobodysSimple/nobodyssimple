@@ -209,7 +209,7 @@ export function renderNSProblemGuide(root,id){
  root.querySelectorAll('[data-guide-jump]').forEach(button=>button.addEventListener('click',()=>{
   root.querySelector('#guide-'+button.dataset.guideJump)?.scrollIntoView({behavior:'smooth',block:'start'});
  }));
- root.querySelector('[data-guide-refine]'?.addEventListener('click',()=>{
+ root.querySelector('[data-guide-refine]')?.addEventListener('click',()=>{
   const choice=root.querySelector('input[name="guide-mechanism"]:checked');
   const handoff=peekProblemHandoff(p.id);
   const updated={...(handoff?.answers||{}),barrier:choice?.value};
