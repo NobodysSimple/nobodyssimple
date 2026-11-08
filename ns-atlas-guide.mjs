@@ -15,7 +15,8 @@ const checkSet=(name,items,selected)=>items.map((x,i)=>{
  const id=typeof x==='string'?String(i):x.id;
  const label=typeof x==='string'?x:x.label;
  const detail=typeof x==='string'?'':x.detail||'';
- return '<label class="ns-atlas-check"><input type="checkbox" name="'+name+'" value="'+s(id)+'" '+(selected.has(id)?'checked':'')+'>'+
+ const key=name.startsWith('sign-')?name.slice(5)+':'+id:id;
+ return '<label class="ns-atlas-check"><input type="checkbox" name="'+name+'" value="'+s(id)+'" '+(selected.has(key)?'checked':'')+'>'+
  '<span><strong>'+s(label)+'</strong>'+(detail?'<small>'+s(detail)+'</small>':'')+'</span></label>';
 }).join('');
 const signFields=(p,state)=>{
