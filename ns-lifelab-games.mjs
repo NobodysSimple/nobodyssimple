@@ -1,3 +1,4 @@
+import {caseFor} from './ns-journey-stories.mjs';
 import {GAME_LABELS,WORLD_STORIES,characterFor} from './ns-lifelab-worlds.mjs';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const sort=(lanes,items,reveal=false)=>({type:'sort',lanes,items:items.map(([text,target])=>({text,target})),reveal});
@@ -10,7 +11,7 @@ const WORLDS={
  workshop:{situation:'Pip has a detailed engine blueprint but has not begun. Rook missed a day, Tavi is juggling several tasks, and Ember is waiting to feel motivated.',observe:choose('What helps Pip get started?',['Add another hour of planning before touching a part.','Identify one small action and put the necessary tool within reach.','Wait until the whole assembly feels easy.'],1,'A clear first action and available materials reduce starting friction.'),plan:choose('A power cable blocks the assembly bench. What comes next?',['Clear the access safely before beginning assembly.','Try to work around the obstacle indefinitely.','Start every task at once.'],0,'Remove a bottleneck before adding more work. Sequence actions around real constraints.'),reflect:choose('Rook missed yesterday’s routine. What supports recovery?',['Double the work as punishment.','Abandon the routine completely.','Restart with a manageable version at the next cue.'],2,'A missed attempt offers information. A smaller restart helps rebuild consistency.')},
  observatory:{situation:'Sora wants meaningful work, Indi notices different sides of themselves with different people, and Vale is following a route chosen by others.',observe:choose('What could help Sora notice a value?',['Choose whichever label wins most approval.','Ask which actions feel worthwhile and why.','Assume a value must be fixed forever.'],1,'Values are directions you care about. Concrete choices can help you notice them.'),plan:choose('Indi worries that acting differently in different settings means being fake. What offers another lens?',['Different contexts can bring out different real parts of a person.','Only one social role can be genuine.','Other people should decide Indi’s identity.'],0,'Identity can include multiple roles and contexts without one cancelling all the others.'),reflect:choose('Vale wants to choose a different path. What is an aligned first step?',['Reject every inherited value automatically.','Wait for complete certainty about who to be.','Name a chosen value, consider constraints and try a small action.'],2,'An aligned action can be small, provisional and sensitive to real constraints.')}
 };
-export function gameDefinition(id,world='forest',unit=1){
+export function gameDefinition(id,world='forest',unit=1,variant=0){
  const c=characterFor(world,unit),w=WORLDS[world];let task;
  switch(id){
  case 'reality-sorter':task=sort(['Observation','Interpretation','Feeling','Unknown'],[['The sign says “bridge closed”.',0],['The keeper does not want us here.',1],['I feel disappointed.',2],['Why the keeper closed the bridge.',3]]);break;
@@ -39,7 +40,17 @@ export function gameDefinition(id,world='forest',unit=1){
  case 'capstone-path':task={type:'branch',situation:w.situation,steps:[w.observe,w.plan,w.reflect]};break;
  default:throw new Error(`Unknown Life Lab game: ${id}`);
  }
- return {id,title:GAME_LABELS[id][0],objective:GAME_LABELS[id][1],character:c,unit,world,...task};
+ const story=caseFor(world,unit,variant),shift=variant%3;
+ if(unit<=8){
+  if(task.type==='sort'){
+   const distinctions=world==='forest'||world==='observatory'||id==='signal-and-intent';
+   task=sort(distinctions?['Observed','Possible meaning','Useful question']:['Notice the situation','Consider the context','Choose a caring action'],distinctions?[[story.fact,0],[story.interpretation,1],[story.question,2]]:[[story.fact,0],[story.interpretation,1],[story.action,2]],task.reveal);
+   if(variant%2)task.items.reverse();
+  }else if(task.type==='order')task=order(world==='bridge'?['I noticed: '+story.fact,'Could I check something? '+story.question,'A possible next step: '+story.action]:['Notice: '+story.fact,'Prepare: '+story.action,'Review: check what helped and adjust the next attempt.'],'A useful sequence starts with the situation, moves to a concrete action and leaves room for review.');
+  else if(task.type==='tools')task={type:'tools',prompt:story.scene+' Choose TWO useful ways to explore this.',options:[story.question,story.action,'Decide that one observation tells the whole story.','Insist on the same response regardless of circumstances.'],correct:[0,1],why:story.interpretation+' Ask rather than assume.'};
+  else {const q=choose(story.scene+' What is a useful next step?',[story.action,'Treat the first interpretation as certain.','Wait for a perfect answer before doing anything.'],0,story.fact+' '+story.interpretation);if(task.type==='branch')task={type:'branch',situation:story.scene,steps:[choose('What can we directly observe?',[story.fact,story.interpretation,'Everything about the situation is already known.'],0,'The observation describes what is available; the explanation remains provisional.'),q,choose('After trying that step, what should the group do?',['Demand the same result next time.','Notice the result and revise the plan if needed.','Treat a difficulty as proof the traveller cannot learn.'],1,'A helpful plan can change. '+story.question)]};else task={...q,type:task.type,seconds:40};}
+ }
+ return {id,title:GAME_LABELS[id][0],objective:GAME_LABELS[id][1],character:c,unit,world,caseTitle:story.title,context:unit<=8?story.scene:'',...task};
 }
 export function isGameCorrect(game,state){
  if(game.type==='sort')return game.items.every((item,i)=>state.assignments?.[i]===item.target);
@@ -47,9 +58,9 @@ export function isGameCorrect(game,state){
  if(game.type==='tools')return game.correct.length===state.selected?.length&&game.correct.every(i=>state.selected.includes(i));
  const question=game.type==='branch'?game.steps[state.step||0]:game;return state.answer===question.correct;
 }
-export function mountGame(host,game,{onComplete,onChange=()=>{}}={}){
+export function mountGame(host,game,{onComplete,onChange=()=>{},untimed=false}={}){
  const controller=new AbortController();let timer=null,dragged=null;
- const state={assignments:{},revealed:[],order:game.items?.map((_,i)=>i).reverse()||[],selected:[],active:null,answer:null,step:0,checked:false,correct:false,remaining:game.seconds||0,paused:false,timed:true};
+ const state={assignments:{},revealed:[],order:game.items?.map((_,i)=>i).reverse()||[],selected:[],active:null,answer:null,step:0,checked:false,correct:false,remaining:game.seconds||0,paused:false,timed:!untimed,hadMistake:false};
  function ready(){if(game.type==='timed'&&state.timed&&state.remaining<=0)return false;if(game.type==='sort')return Object.keys(state.assignments).length===game.items.length;if(game.type==='order')return true;if(game.type==='tools')return state.selected.length>0;return state.answer!==null;}
  function content(){
   if(game.type==='sort')return `<p class="ll-game-help">${game.reveal?'Reveal each clue, then ':''}Select a card and choose a destination. You can also drag cards into the lanes.</p><div class="ll-game-cards">${game.items.map((item,i)=>`<button class="ll-game-item${state.active===i?' is-selected':''}" draggable="${!state.checked}" data-item="${i}" ${state.checked?'disabled':''} aria-pressed="${state.active===i}">${game.reveal&&!state.revealed.includes(i)?`<span class="ll-fog">? Hidden clue ${i+1}</span>`:`${esc(item.text)}${state.assignments[i]!==undefined?`<small>${esc(game.lanes[state.assignments[i]])}</small>`:''}`}</button>`).join('')}</div><div class="ll-game-lanes">${game.lanes.map((label,i)=>`<button data-lane="${i}" class="ll-game-lane" ${state.checked?'disabled':''}><span>${esc(label)}</span><small>${Object.values(state.assignments).filter(v=>v===i).length} card(s)</small></button>`).join('')}</div>${game.world==='meadow'||game.id==='signal-and-intent'?'<p class="ll-save-note">These are possible connections in this example, not a diagnosis or a way to read someone’s mind. Ask what fits their experience.</p>':''}`;
@@ -60,7 +71,7 @@ export function mountGame(host,game,{onComplete,onChange=()=>{}}={}){
  }
  function render(){
   const q=game.type==='branch'?game.steps[state.step]:game;
-  host.innerHTML=`<div class="ll-game" data-game="${game.id}"><div class="ll-game-goal"><strong>Objective</strong><p>${esc(game.objective)}</p></div>${content()}${state.checked?`<div class="${state.correct?'ll-success':'ll-feedback'}" role="status"><strong>${state.correct?'✓ You’ve got it!':game.type==='branch'?'That path needs a rethink.':'Let’s try another approach.'}</strong><p>${esc(state.correct?(q.why||'Each piece now fits its destination.'):game.type==='sort'?game.items.map(item=>item.text+' → '+game.lanes[item.target]).join(' • '):game.type==='order'?'Look for what needs to happen first, then what can follow.':q.why||'Choose the changes that directly support this situation.')}</p></div>`:''}<button class="ll-primary" data-game-action="${state.checked?(state.correct?'continue':'retry'):'check'}" ${!state.checked&&!ready()?'disabled':''}>${state.checked?(state.correct?(game.type==='branch'&&state.step<game.steps.length-1?'Take this path →':'Continue →'):'Try again'):'Check'}</button></div>`;
+  host.innerHTML=`<div class="ll-game" data-game="${game.id}">${game.context?'<p class="ll-branch-scene">'+esc(game.context)+'</p>':''}<details class="j-hint"><summary>Hint / worked example</summary><p>${esc(game.type==='sort'?'Read the literal observation first. A possible meaning leaves room for other explanations; a useful question asks for missing context.':game.why||game.objective)}</p></details><div class="ll-game-goal"><strong>Objective</strong><p>${esc(game.objective)}</p></div>${content()}${state.checked?`<div class="${state.correct?'ll-success':'ll-feedback'}" role="status"><strong>${state.correct?'✓ You’ve got it!':game.type==='branch'?'That path needs a rethink.':'Let’s try another approach.'}</strong><p>${esc(state.correct?(q.why||'Each piece now fits its destination.'):game.type==='sort'?game.items.map(item=>item.text+' → '+game.lanes[item.target]).join(' • '):game.type==='order'?'Look for what needs to happen first, then what can follow.':q.why||'Choose the changes that directly support this situation.')}</p></div>`:''}<button class="ll-primary" data-game-action="${state.checked?(state.correct?'continue':'retry'):'check'}" ${!state.checked&&!ready()?'disabled':''}>${state.checked?(state.correct?(game.type==='branch'&&state.step<game.steps.length-1?'Take this path →':'Continue →'):'Try again'):'Check'}</button></div>`;
   updateClock();onChange(state);
  }
  function updateClock(){const el=host.querySelector('[data-clock]');if(el)el.textContent=!state.timed?'Untimed':state.remaining<=0?'Time’s up — retry or play untimed':`${state.remaining}s${state.paused?' · paused':''}`;const b=host.querySelector('[data-pause]');if(b){b.textContent=state.paused?'Resume timer':'Pause timer';b.disabled=!state.timed||state.remaining<=0;}}
@@ -75,9 +86,9 @@ export function mountGame(host,game,{onComplete,onChange=()=>{}}={}){
   else if(b.hasAttribute('data-pause')){state.paused=!state.paused;updateClock();}
   else if(b.hasAttribute('data-untimed')){state.timed=false;render();}
   else if(b.hasAttribute('data-restart')){state.remaining=game.seconds;state.paused=false;state.checked=false;state.answer=null;state.timed=true;render();}
-  else if(b.dataset.gameAction==='check'&&ready()){state.checked=true;state.correct=isGameCorrect(game,state);render();}
+  else if(b.dataset.gameAction==='check'&&ready()){state.checked=true;state.correct=isGameCorrect(game,state);if(!state.correct)state.hadMistake=true;render();}
   else if(b.dataset.gameAction==='retry'){state.checked=false;state.answer=null;render();}
-  else if(b.dataset.gameAction==='continue'&&state.correct){if(game.type==='branch'&&state.step<game.steps.length-1){state.step++;state.answer=null;state.checked=false;state.correct=false;render();}else{clearInterval(timer);onComplete?.();}}
+  else if(b.dataset.gameAction==='continue'&&state.correct){if(game.type==='branch'&&state.step<game.steps.length-1){state.step++;state.answer=null;state.checked=false;state.correct=false;render();}else{clearInterval(timer);onComplete?.({hadMistake:state.hadMistake});}}
  },{signal:controller.signal});
  host.addEventListener('dragstart',e=>{const item=e.target.closest('[data-item],[data-order]');if(!item||state.checked)return;dragged={type:item.hasAttribute('data-item')?'item':'order',index:Number(item.dataset.item??item.dataset.order)};e.dataTransfer.setData('text/plain',String(dragged.index));},{signal:controller.signal});
  host.addEventListener('dragover',e=>{if(e.target.closest('[data-lane],[data-order]'))e.preventDefault();},{signal:controller.signal});

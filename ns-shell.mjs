@@ -1,5 +1,5 @@
 /**
- * Nobody's Simple · Stage 1 app shell and Life Lab entry.
+ * Nobody's Simple · Stage 1 app shell and The Journey entry.
  * Keeps existing page renderers intact. The full mission system is a later stage.
  * No localStorage, account or Firestore writes occur in this module.
  */
@@ -50,7 +50,7 @@ function refreshNav() {
   });
   if(routeName()==='lab'){
     const context=document.querySelector('[data-app-page-label]');
-    if(context) context.textContent='Life Lab';
+    if(context) context.textContent='The Journey';
     const kicker=document.querySelector('[data-app-page-kicker]');
     if(kicker) kicker.textContent='Practise';
   }
@@ -89,8 +89,8 @@ function worldCard(w) {
 }
 function worldPage(w) {
   return `<div class="ns-lab-page ns-lab-page--world ns-world-detail" data-world="${w.tone}">
-    <a class="ns-text-back" href="#lab">← All Life Lab worlds</a>
-    <header class="ns-lab-hero"><div class="ns-lab-hero__copy"><p class="ns-eyebrow">LIFE LAB / ${w.overline.toUpperCase()}</p><h1>${w.title}</h1><p>${w.summary}</p><p class="ns-soft-notice">Interactive Life Lab missions are in development. You can explore these working tools now.</p></div><div class="ns-lab-hero__image"><img src="${w.art}" alt="" decoding="async"/></div></header>
+    <a class="ns-text-back" href="#lab">← All The Journey worlds</a>
+    <header class="ns-lab-hero"><div class="ns-lab-hero__copy"><p class="ns-eyebrow">LIFE LAB / ${w.overline.toUpperCase()}</p><h1>${w.title}</h1><p>${w.summary}</p><p class="ns-soft-notice">Interactive The Journey missions are in development. You can explore these working tools now.</p></div><div class="ns-lab-hero__image"><img src="${w.art}" alt="" decoding="async"/></div></header>
     <section class="ns-lab-section" aria-labelledby="ns-existing-tools-title"><h2 id="ns-existing-tools-title">Try something that works today</h2><div class="ns-lab-links"><a class="ns-lab-tool-link" href="${w.tool}"><span><strong>${w.toolName}</strong><small>Open the existing activity</small></span><span aria-hidden="true">→</span></a><a class="ns-lab-tool-link" href="${w.second}"><span><strong>${w.secondName}</strong><small>Open the existing activity</small></span><span aria-hidden="true">→</span></a></div></section>
     <section class="ns-lab-section ns-lab-upcoming" aria-labelledby="ns-upcoming-title"><h2 id="ns-upcoming-title">What comes next</h2><p>Short, interactive psychological skills you can practise through realistic situations—without grades for emotions or pressure to return every day.</p><a href="#tools">Browse all tools <span aria-hidden="true">→</span></a></section>
   </div>`;
@@ -100,9 +100,9 @@ export function renderLabStage1(main,world=''){
   const selection=NS_WORLDS.find(w=>w.slug===world);
   const hasSuffix=Boolean(world);
   if(selection){main.innerHTML=worldPage(selection);return;}
-  if(hasSuffix){main.innerHTML=`<div class="ns-lab-page ns-lab-error"><a class="ns-text-back" href="#lab">← Life Lab</a><h1>This world isn't available.</h1><p>That link may be outdated. Explore one of the available worlds or use the existing tools.</p><a class="ns-lab-tool-link" href="#lab">View Life Lab <span aria-hidden="true">→</span></a></div>`;return;}
+  if(hasSuffix){main.innerHTML=`<div class="ns-lab-page ns-lab-error"><a class="ns-text-back" href="#lab">← The Journey</a><h1>This world isn't available.</h1><p>That link may be outdated. Explore one of the available worlds or use the existing tools.</p><a class="ns-lab-tool-link" href="#lab">View The Journey <span aria-hidden="true">→</span></a></div>`;return;}
   main.innerHTML=`<div class="ns-lab-page ns-lab-hub">
-    <header class="ns-lab-hero"><div class="ns-lab-hero__copy"><p class="ns-eyebrow">NOBODY'S SIMPLE / PRACTISE</p><h1>Life Lab</h1><p>A place to practise useful psychological skills through everyday situations.</p><p class="ns-soft-notice">We're building interactive missions. For now, each world connects to existing working tools.</p><a class="ns-hero-action" href="#tools">Explore the full toolkit <span aria-hidden="true">→</span></a></div><div class="ns-lab-hero__image"><img src="ns-character-hiking.webp" alt="" decoding="async"/></div></header>
+    <header class="ns-lab-hero"><div class="ns-lab-hero__copy"><p class="ns-eyebrow">NOBODY'S SIMPLE / PRACTISE</p><h1>The Journey</h1><p>A place to practise useful psychological skills through everyday situations.</p><p class="ns-soft-notice">We're building interactive missions. For now, each world connects to existing working tools.</p><a class="ns-hero-action" href="#tools">Explore the full toolkit <span aria-hidden="true">→</span></a></div><div class="ns-lab-hero__image"><img src="ns-character-hiking.webp" alt="" decoding="async"/></div></header>
     <section class="ns-lab-section" aria-labelledby="ns-worlds-title"><div class="ns-lab-section__heading"><div><p class="ns-eyebrow">FIVE PLACES TO EXPLORE</p><h2 id="ns-worlds-title">Choose a world.</h2></div><span class="ns-muted">No order to follow</span></div><div class="ns-world-grid">${NS_WORLDS.map(worldCard).join('')}</div></section>
     <section class="ns-lab-section ns-lab-upcoming"><h2>Learn by trying</h2><p>Future missions will combine a short scenario, an interaction, clear feedback and an optional real-life experiment. Until they are released, your existing activities remain available at any time.</p><a href="#learn">Explore learning <span aria-hidden="true">→</span></a></section>
   </div>`;

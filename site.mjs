@@ -934,10 +934,10 @@ function route() {
           : name && name !== "home"
             ? name.charAt(0).toUpperCase() + name.slice(1)
             : "";
-  document.title = `${title ? title + " · " : ""}Nobody’s Simple`;
+  document.title = name === "lab" ? "The Journey · Nobody’s Simple" : `${title ? title + " · " : ""}Nobody’s Simple`;
   const appLabels = {
     home: "Home",
-    lab: "Life Lab",
+    lab: "The Journey",
     guide: "My Field Guide",
     help: "Home",
     navigate: "Home",

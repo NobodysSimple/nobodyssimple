@@ -2,7 +2,7 @@ import {renderLivingTrail, cleanupLivingTrail, markLabNodeComplete} from './ns-l
 import {startFieldGuideDraft} from './ns-field-guide.mjs';
 import {renderLifeLabV3,cleanupLifeLabV3} from './ns-lifelab-v3.mjs';
 /**
- * Nobody's Simple · Stage 5 Life Lab.
+ * Nobody's Simple · Stage 5 The Journey.
  * An instructional encounter, NOT a questionnaire, diagnostic assessment or
  * simulated prediction of another person's intentions.
  * Mission selections are in memory only: no implicit persistence or sync.
@@ -73,11 +73,11 @@ function hub(){
  const mapNodes=WORLDS.map((w,i)=>`<a class="ns-vision-mapnode ns-vision-mapnode--${w.id}" href="#lab/${w.id}" data-vision-world="${w.id}">
    <span class="ns-vision-mapnode__icon" aria-hidden="true">${['✿','♠','♧','⚒','✦'][i]}</span><span><strong>${esc(w.title)}</strong><small>${esc(w.theme)}</small></span></a>`).join('');
  return `<div class="ns-lab5 ns-lab5-hub ns-vision-lab-hub">
-   <header class="ns-vision-lab-intro"><p class="ns-lab5-eyebrow">LEARN LIFE BY LIVING IT</p><h1>The Life Lab</h1><p>Explore real-life situations, practise skills and build your own understanding.</p></header>
-   <section class="ns-vision-worldmap" aria-label="Five illustrated Life Lab worlds">
+   <header class="ns-vision-lab-intro"><p class="ns-lab5-eyebrow">LEARN LIFE BY LIVING IT</p><h1>The The Journey</h1><p>Explore real-life situations, practise skills and build your own understanding.</p></header>
+   <section class="ns-vision-worldmap" aria-label="Five illustrated The Journey worlds">
     <div class="ns-vision-worldmap__land" aria-hidden="true"><img src="ns-home-hero.webp" alt=""/></div>
     <div class="ns-vision-worldmap__nodes">${mapNodes}</div>
-    <a class="ns-vision-worldmap__start" href="#lab/mission/reality-sorter/notice"><span aria-hidden="true">◉</span> Start a Life Lab mission <span aria-hidden="true">→</span></a>
+    <a class="ns-vision-worldmap__start" href="#lab/mission/reality-sorter/notice"><span aria-hidden="true">◉</span> Start a The Journey mission <span aria-hidden="true">→</span></a>
    </section>
    <section class="ns-lab5-feature" aria-labelledby="ns-lab5-feature-title"><div><p class="ns-lab5-eyebrow">READY TO TRY · THE FOREST</p><h2 id="ns-lab5-feature-title">Reality Sorter</h2><p>A real interaction: separate what happened from the meaning you added, explore different explanations and choose a next step.</p><div class="ns-lab5-feature__meta"><span>Six short stages</span><span>Keyboard and touch</span><span>No automatic saving</span></div><a href="#lab/mission/reality-sorter/notice" class="ns-lab5-secondary">Begin the mission <span aria-hidden="true">→</span></a></div><img src="ns-character-thinking.webp" alt="" loading="lazy"/></section>
    <section class="ns-lab5-section ns-vision-world-directory" aria-labelledby="ns-lab5-worlds-title"><div class="ns-lab5-sectionhead"><div><p class="ns-lab5-eyebrow">EXPLORE AT YOUR OWN PACE</p><h2 id="ns-lab5-worlds-title">All five worlds</h2></div><p>Only the first mission is ready; other worlds link to working tools.</p></div><div class="ns-lab5-worldgrid">${WORLDS.map(card).join('')}</div></section>
@@ -93,7 +93,7 @@ function world(slug){
  <section class="ns-lab5-section" aria-labelledby="ns-lab5-mission-head"><div class="ns-lab5-sectionhead"><div><p class="ns-lab5-eyebrow">PRACTICE PATH</p><h2 id="ns-lab5-mission-head">Three ways to practise</h2></div><p>Start wherever something feels relevant.</p></div><div class="ns-lab5-missions">${w.missions.map(([title,id],i)=>`<article class="ns-lab5-missioncard${id==='planned'?' is-planned':''}"><span class="ns-lab5-missioncard__number">0${i+1}</span><div><span class="ns-lab5-missioncard__status">${id==='planned'?'IN DEVELOPMENT':'READY TO TRY'}</span><h3>${esc(title)}</h3><p>${id==='planned'?'A future skill encounter. This is not yet an active activity.':'Investigate the difference between what happened, what you inferred and what remains unknown.'}</p></div>${id==='planned'?'<span class="ns-lab5-missioncard__soon">Coming later</span>':`<a href="#lab/mission/${id}/notice" class="ns-lab5-secondary">Start mission →</a>`}</article>`).join('')}</div></section>
  <section class="ns-lab5-section ns-lab5-tools" aria-labelledby="ns-lab5-tool-head"><div class="ns-lab5-sectionhead"><div><p class="ns-lab5-eyebrow">EXISTING, WORKING ACTIVITIES</p><h2 id="ns-lab5-tool-head">Practise with a tool</h2></div></div><div class="ns-lab5-toollinks">${w.tools.map(([title,href])=>`<a href="${href}"><span><strong>${esc(title)}</strong><small>Open the existing tool</small></span><span aria-hidden="true">→</span></a>`).join('')}</div></section></div>`;
 }
-function unavailable(message){return `<div class="ns-lab5 ns-lab5-unavailable"><a class="ns-lab5-back" href="#lab">← Life Lab</a><h1>${esc(message)}</h1><p>That destination may be incomplete or the link may have changed. No mission data has been loaded.</p><a class="ns-lab5-primary" href="#lab">Explore Life Lab →</a></div>`;}
+function unavailable(message){return `<div class="ns-lab5 ns-lab5-unavailable"><a class="ns-lab5-back" href="#lab">← The Journey</a><h1>${esc(message)}</h1><p>That destination may be incomplete or the link may have changed. No mission data has been loaded.</p><a class="ns-lab5-primary" href="#lab">Explore The Journey →</a></div>`;}
 const currentStep = step => STEPS.findIndex(s=>s.id===step);
 const missionHref = step => `#lab/mission/reality-sorter/${step}`;
 const nav = (i) => `<nav class="ns-lab5-missionnav" aria-label="Mission navigation"><a href="#lab/forest" class="ns-lab5-back">← The Forest</a><a href="#lab" class="ns-lab5-exit">Leave mission ×</a></nav>
@@ -179,7 +179,7 @@ export function renderNSLab(main,parts=[]){
  else if(first==='mission')inner=(!extra.length&&second==='reality-sorter')?missionPage(third||'notice'):unavailable('That mission is not available.');
  else if(first==='lesson'&&second&&third&&!extra.length){renderLifeLabV3(main,[second,third]);return;}
  else if(segs.length===1){renderLifeLabV3(main,segs);return;}
- else inner=unavailable('That Life Lab page is not available.');
+ else inner=unavailable('That The Journey page is not available.');
  main.innerHTML=inner;
  if(main.querySelector('[data-lab-mission]'))attach(main.querySelector('[data-lab-mission]'));
 }

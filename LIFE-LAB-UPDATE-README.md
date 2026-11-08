@@ -1,28 +1,34 @@
-# Life Lab — Worlds update, 7 November 2026
+# The Journey — v137 update
 
-## Install on GitHub
+The Journey replaces the visible Life Lab name. Existing #lab links and saved lesson progress remain compatible.
+
+## Upload to GitHub
 1. Extract this ZIP.
-2. Open NobodysSimple/nobodyssimple on the main branch.
-3. Upload the extracted files and folders to the repository root, preserving the media/, tests/ and docs/ paths. Replace the matching files. Upload the contents, not the enclosing folder or ZIP.
-4. Commit the upload and allow the existing hosting deployment to finish.
-5. Reload the site and open #lab. The service-worker cache version is v136-lifelab-worlds.
+2. Upload its contents to the root of NobodysSimple/nobodyssimple on main, preserving the folders and replacing matching files.
+3. Commit the upload and wait for the existing hosting deployment.
+4. Reload the app and open #lab. The service-worker version is v137-the-journey.
 
-This is an update overlay for the existing repository, not a standalone replacement repository. It includes the previous Life Lab rebuild and this worlds update. No npm build or new hosting service is required. The live site has not been deployed by this package.
+Upload the extracted contents, not the ZIP or an extra enclosing folder. This is an update overlay for the existing repository, not a standalone site. It includes the earlier Life Lab rebuild and worlds update. No new build step or paid service is required. Nothing has been published automatically.
 
-## Included
-- Direct entry to the remembered trail; a persistent trail switcher replaces the selection screen.
-- Removed the “One unit, five stones” explanation panel.
-- Five worlds, forty units each, five stones per unit, 3/3/2/1/1 lessons.
-- 200 deterministic, distinct vector environment compositions with matching colour boundaries. Shared scenery motifs are recomposed rather than tiling one background image.
-- Five illustrated destinations and gated finale challenges.
-- All twenty named companions and their supplied quotes, plus five-stage storylines.
-- All twenty-four named games from the new sheets, implemented with sorting/reveal, ordering, tool selection, timed choice, and multi-step scenario mechanics.
-- Per-unit learning checks and application prompts, explicit completion saves, review, +20 lesson XP and +200 finale XP.
-- Mobile controls, keyboard-accessible alternatives to dragging, pause/untimed play, and reduced-motion support.
+## What changed
+- Incorrect learning-check answers now require a corrected attempt before advancing.
+- A current-chapter view replaces the overwhelming full trail by default; the full forty-unit world map remains available.
+- Stone icons remain visible in locked and completed states.
+- Forty authored opening-chapter situations, accessible hints and worked examples.
+- Twenty companion stories with five persistent stages each, choices, later dialogue and visible meeting/practice places.
+- World restoration, small discoveries, visitors and chapter festivals every eight units.
+- A shared progression model: XP/levels, Trail Gems, 25 achievements, mission and chapter badges.
+- A cosmetic wardrobe/shop, equipment, trail outfits and a homebase with collectible decorations.
+- Flexible weekly goals by default, daily or no-streak options, daily discovery, spaced retrieval and weekly quests.
+- Optional partner quests for two people taking turns on the same device.
+- Quieter visuals, reduced animation, untimed play, optional sound and reward-display controls.
+- Optional evaluation records and export, without a new analytics service or collection of reflection text.
 
-## Art and content
-The reference sheets guide the names, structure, characters, game objectives and destinations. Original simplified vector scenery and a generated companion atlas adapt those designs to the app’s requested 2D style; this is not a pixel-for-pixel reproduction of the sheets. The 2,000 lesson slots use shared game templates alongside unit-specific teaching points and checks. They are not 2,000 individually illustrated games.
+## Saving and sync
+Journey records use the existing account-scoped learning store. Account syncing remains opt-in through the existing saved-work settings. Compatible completion and Journey events merge; unknown conflicts still use the account conflict-review flow. Cosmetic purchases reconcile deterministically, never taking the balance below zero. Existing progress supplies XP and gems without replaying reward grants.
 
-Progress remains in the existing learning-record store. Game practice from the library does not award course completion. Opening a lesson or choosing an answer does not save completion. Reflection text is not retained.
+## Scope and validation
+The first eight units of each world now use authored situations. Later units still use shared game scenarios with unit-specific learning checks; this is not 2,000 separately authored games. Partner play is local, not online matchmaking. Live multi-device Firebase testing was not performed; the account-sync path was verified using automated transaction/conflict tests. No mental-health or retention improvement is claimed.
 
-See docs/LIFELAB-REBUILD.md for implementation and validation details.
+Run node --test tests/free/*.test.mjs and node tests/free/check.mjs.
+See docs/JOURNEY-EVOLUTION.md for the feedback checklist and technical notes.

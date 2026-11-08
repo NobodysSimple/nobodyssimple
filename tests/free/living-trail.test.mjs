@@ -7,7 +7,7 @@ test('five world routes and one authored mission',()=>{
  assert.equal(livingTrailManifest.worlds.length,5);
  assert.equal(livingTrailManifest.worlds.flatMap(w=>w.available).filter(n=>n.status==='mission').length,1);
  assert.equal(livingTrailManifest.missionRoute,'#lab/mission/reality-sorter/notice');
- for(const world of livingTrailManifest.worlds){renderNSLab(root,[world.id]);assert.ok(root.innerHTML.includes(`${world.id}-unit-40-stone-5`));assert.ok(root.innerHTML.includes('data-trail-switch'));assert.ok(!root.innerHTML.includes('ns-lab5-worldgrid'));cleanupNSLab();}
+ for(const world of livingTrailManifest.worlds){renderNSLab(root,[world.id]);assert.ok(root.innerHTML.includes(`${world.id}-unit-8-stone-5`));assert.ok(root.innerHTML.includes('data-trail-switch'));assert.ok(!root.innerHTML.includes('ns-lab5-worldgrid'));cleanupNSLab();}
 });
 test('the immersive course has no design/showcase panels or list view',()=>{
  const main={innerHTML:''};renderLivingTrail(main,'forest');

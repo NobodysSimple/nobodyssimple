@@ -40,6 +40,6 @@ test('legacy completion survives; malformed or unavailable storage never reports
  assert.equal(completeLesson(curriculum.forest[0].lessons[1].id,{getItem:()=>JSON.stringify(readRecords(store)),setItem:()=>{throw Error('quota');}}).ok,false);
 });
 test('all forty units render, all stones sit at actual path endpoints, and single lessons have no ring',()=>{
- for(const t of trails){const root={innerHTML:''};renderLifeLabV3(root,[t.slug]);assert.equal((root.innerHTML.match(/class="ll-unit"/g)||[]).length,40);assert.equal((root.innerHTML.match(/data-stone="/g)||[]).length,200);assert.equal((root.innerHTML.match(/class="ll-ring"/g)||[]).length,120);assert.ok(root.innerHTML.includes(t.destination));cleanupLifeLabV3();}
+ for(const t of trails){const root={innerHTML:''};renderLifeLabV3(root,[t.slug],{fullMap:true});assert.equal((root.innerHTML.match(/class="ll-unit"/g)||[]).length,40);assert.equal((root.innerHTML.match(/data-stone="/g)||[]).length,200);assert.equal((root.innerHTML.match(/class="ll-ring"/g)||[]).length,120);assert.ok(root.innerHTML.includes(t.destination));cleanupLifeLabV3();}
  for(const p of STONE_POINTS)assert.ok(TRAIL_PATH.includes(`${p.x} ${p.y}`));
 });

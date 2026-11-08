@@ -57,12 +57,12 @@ const PLAN = Object.freeze({
   tool: {
     title:'Continue at your own pace',
     description:'This activity remains available on its own. There is no required next step.',
-    links:[['Browse all tools','#tools'],['Practise in Life Lab','#lab'],['Your Field Guide','#guide']]
+    links:[['Browse all tools','#tools'],['Practise in The Journey','#lab'],['Your Field Guide','#guide']]
   },
   play: {
     title:'Explore another approach',
     description:'You can move between activities without completing a course.',
-    links:[['All tools','#tools'],['Life Lab','#lab'],['Your space','#account']]
+    links:[['All tools','#tools'],['The Journey','#lab'],['Your space','#account']]
   },
   guided: {
     title:'Decide what fits next',

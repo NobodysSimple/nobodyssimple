@@ -29,3 +29,7 @@ Scenery is generated deterministically from the trail and unit number. Every com
 Run node --test tests/free/*.test.mjs and node tests/free/check.mjs.
 57 tests cover curriculum totals, sequential progress through all 2,000 lessons, malformed storage, old progress, route integration, all 24 game definitions/solutions, twenty companions, 200 scenery compositions, and finale gating/idempotence.
 Browser checks cover desktop/mobile layouts, direct entry/switching, finale preview, lesson completion and review, card sorting, tool selection, ordered routine building, and three-step scenario completion.
+
+
+## v137 superseding update
+The current feature is The Journey. See JOURNEY-EVOLUTION.md for the current chapter view, corrected-answer rules, progression, character stories, rewards, optional evaluation and legacy-style audit. Earlier sections describe the underlying v136 foundation.

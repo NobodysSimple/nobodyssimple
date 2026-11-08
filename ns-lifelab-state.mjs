@@ -30,7 +30,7 @@ export function canComplete(lesson,records){
 }
 // This is called only by the explicit Done/Complete button after the exercise.
 // Re-read before writing so other lessons and unrelated learning records survive.
-export function completeLesson(lessonId,storage,now=new Date().toISOString()){
+export function completeLesson(lessonId,storage,now=new Date().toISOString(),details={}){
   const lesson=allLessons.get(lessonId);
   if(!lesson||!storage)return {ok:false,error:'Progress could not be saved on this device.'};
   try {
@@ -38,6 +38,7 @@ export function completeLesson(lessonId,storage,now=new Date().toISOString()){
     if(!raw||typeof raw!=='object'||Array.isArray(raw))throw new Error('Invalid learning records');
     if(!canComplete(lesson,raw))return {ok:false,error:'Finish the earlier lesson first.'};
     if(!lessonDone(lesson,raw))raw[key(lesson.id)]={kind:'life-lab-lesson',completed:true,completedAt:now,updatedAt:now};
+    if(details.improved)raw['ns-journey:improved:'+lesson.id]={type:'improved',lessonId:lesson.id,at:now,day:now.slice(0,10)};
     storage.setItem(STORAGE_KEY,JSON.stringify(raw));
     return {ok:true,records:raw};
   }catch{return {ok:false,error:'Progress could not be saved. Check browser storage and try again. Your lesson is still open.'};}

@@ -1,10 +1,11 @@
+import {mergeLearningRecords} from '../../ns-journey-progress.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import * as policy from '../../account-policy.mjs';
 import {Workspace} from '../../account-storage.mjs';
 const text=readFileSync(new URL('../../account-sync.mjs',import.meta.url),'utf8').replace(/^import .*\r?\n/gm,'').replace('export class SavedSync','class SavedSync');
-const factory=new Function('sdk','policy',`const {collection,doc,getDocs,onSnapshot,runTransaction,serverTimestamp}=sdk;const {SAVED,parseJSON,withinSize,shouldConflict}=policy;${text};return SavedSync;`);
+const factory=new Function('sdk','policy','mergeLearningRecords',`const {collection,doc,getDocs,onSnapshot,runTransaction,serverTimestamp}=sdk;const {SAVED,parseJSON,withinSize,shouldConflict}=policy;${text};return SavedSync;`);
 class Store{constructor(){this.d=new Map();}getItem(k){return this.d.get(k)??null;}setItem(k,v){this.d.set(k,String(v));}removeItem(k){this.d.delete(k);}key(i){return [...this.d.keys()][i];}get length(){return this.d.size;}}
 const key='ns-personal-maps-v1';
 function setup(){
@@ -12,7 +13,7 @@ function setup(){
  const records=new Map(),listeners=[];let fail=false,gate=null;
  const snapshot=()=>({docs:[...records].map(([path,data])=>({id:path.split('/').at(-1),data:()=>data}))});
  const sdk={collection:(_,...parts)=>parts.join('/'),doc:(_,...parts)=>parts.join('/'),getDocs:async()=>snapshot(),onSnapshot:(path,callback)=>{listeners.push(callback);return ()=>{};},serverTimestamp:()=>Date.now(),runTransaction:async(_,work)=>{if(fail)throw Error('offline');await work({get:async ref=>{if(gate)await gate;return {data:()=>records.get(ref)};},set:(ref,value)=>records.set(ref,value)});}};
- const ws=new Workspace(new Store(),new Store());ws.scope('A');const Sync=factory(sdk,policy),sync=new Sync({},ws,()=>{});sync.start('A');sync.keys.add(key);
+ const ws=new Workspace(new Store(),new Store());ws.scope('A');const Sync=factory(sdk,policy,mergeLearningRecords),sync=new Sync({},ws,()=>{});sync.start('A');sync.keys.add(key);
  return {sync,ws,records,emit:()=>listeners.at(-1)(snapshot()),setFail:v=>fail=v,setGate:v=>gate=v};
 }
 test('offline edits retained, retried, and tombstone deletion propagates',async()=>{
@@ -33,4 +34,12 @@ test('editing while a save is in flight retains the later edit',async()=>{
  x.setGate(new Promise(r=>release=r));x.ws.write(key,'first');const flushing=x.sync.flush();x.ws.write(key,'second');release();await flushing;assert.equal(x.sync.pending[key].value,'second');assert.equal(x.sync.pending[key].base,1);
  x.setGate(null);await x.sync.flush();assert.equal(x.records.get('users/A/savedWork/'+key).value,'second');assert.equal(x.records.get('users/A/savedWork/'+key).revision,2);
  }finally{release?.();x.sync.end();}
+});
+test('Journey events from two devices merge and retry instead of overwriting either device',async()=>{
+ const x=setup(),learning='ns-account-learning-v2';try{
+ x.sync.keys.add(learning);x.sync.revisions.set(learning,1);
+ const a={'ns-journey:story:forest:0:0':{type:'story',world:'forest',index:0,stage:0,choice:1,at:'2026-11-07T12:00:00Z',day:'2026-11-07'}};
+ const b={'ns-lifelab-v3:forest-unit-1-lesson-1':{completed:true,completedAt:'2026-11-07T12:00:00Z'}};
+ x.records.set('users/A/savedWork/'+learning,{revision:2,value:JSON.stringify(b),deleted:false});x.ws.write(learning,JSON.stringify(a));await x.sync.flush();assert.equal(x.sync.conflicts.size,0);assert.equal(Object.keys(JSON.parse(x.ws.read(learning))).length,2);await x.sync.flush();assert.equal(Object.keys(JSON.parse(x.records.get('users/A/savedWork/'+learning).value)).length,2);
+ }finally{x.sync.end();}
 });

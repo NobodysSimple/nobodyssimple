@@ -5,7 +5,7 @@ export const SAVED = {
   'ns-personal-maps-v1': ['maps','My Maps'],
   'ns-tool-favourites-v1': ['library','Favourite tools'],
   'ns-tool-recent-v1': ['library','Recent tools'],
-  'ns-account-learning-v2': ['learning','Learning progress and bookmarks'],
+  'ns-account-learning-v2': ['learning','Learning progress, Journey collection and bookmarks'],
   'ns-account-tool-drafts-v2': ['drafts','Unfinished activities'],
   'ns-account-mood-v2': ['mood','Optional mood history'],
   'ns-learn-quote-notes-v1': ['reflections','Quote reflections'],
