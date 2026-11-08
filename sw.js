@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v140-emotional-calculator';
+const CACHE = 'nobodyssimple-release-v141-precision-console';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -16,7 +16,8 @@ const INSTALL_OPTIONAL = [
   'ns-integrations.css', 'ns-vision.css', 'ns-home-refined.css',
   'lifestyle.css', 'lifestyle.mjs', 'strategy.mjs', 'site.mjs', 'ns-shell.mjs',
   'ns-home-updates.mjs', 'ns-investigate.mjs', 'ns-investigate.css',
-  'ns-problem-map.mjs', 'ns-universal-console.mjs', 'ns-problem-guide.mjs', 'ns-emotional-calculator.css'
+  'ns-problem-map.mjs', 'ns-universal-console.mjs', 'ns-problem-guide.mjs', 'ns-emotional-calculator.css',
+  'ns-precision-content.mjs', 'ns-precision-console.mjs', 'ns-precision-guide.mjs', 'ns-precision.css'
 ];
 const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
 const SAFE_QUERY = /^\?v=[a-z0-9._-]{1,40}$/i;
