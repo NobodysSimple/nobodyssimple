@@ -89,12 +89,14 @@ const targetMarkup=(p,state)=>{
  '<p>'+s(t.why)+'</p><p><strong>Try:</strong> '+s(t.action)+'</p></div></article>').join('')+
  (!f.targets.length?'<p class="ns-atlas-fine">These are broad starting ideas. Select a maintaining process to tailor them.</p>':'');
 };
+const focusFor=state=>state.worksheetFocus&&state.maintainers.has(state.worksheetFocus)?state.worksheetFocus:([...state.maintainers][0]||'');
 function worksheetMarkup(p,state){
- const primary=state.maintainers.size?[...state.maintainers][0]:'';
+ const primary=focusFor(state);
  const spec=worksheetFor(p.id,{variant:state.variant,maintainer:primary,contributors:[...state.contributors],customSituation:state.customSituation});
  if(!spec)return '';
  const notes=state.notes[spec.kind]||[];
- return '<div class="ns-atlas-work"><p class="ns-atlas-work-title"><strong>'+s(spec.title)+'</strong><small>Adapted to: '+s(spec.situation)+'</small></p>'+
+ return '<div class="ns-atlas-work">'+(state.maintainers.size>1?'<label class="ns-atlas-variation"><strong>Choose which maintaining factor your worksheet should focus on</strong><select data-worksheet-focus>'+[...state.maintainers].map(id=>{const m=p.maintainers.find(x=>x.id===id);return '<option value="'+s(id)+'" '+(primary===id?'selected':'')+'>'+s(m?.label||id)+'</option>';}).join('')+'</select></label>':'')+
+ '<p class="ns-atlas-work-title"><strong>'+s(spec.title)+'</strong><small>Adapted to: '+s(spec.situation)+'</small></p>'+
  '<p>'+s(spec.intro)+'</p>'+spec.prompts.map((q,i)=>'<label>'+s(q)+'<textarea data-worksheet-answer="'+i+'" maxlength="1700" rows="3" placeholder="Your own words (optional)">'+s(notes[i]||'')+'</textarea></label>').join('')+
  '<div class="ns-atlas-resource-links"><a href="'+s(spec.topicTool)+'">Open the interactive exercise for this topic →</a></div>'+
  '<p class="ns-atlas-fine">'+s(spec.how)+'</p><button class="button secondary" type="button" data-download-worksheet>Download this worksheet</button>'+
@@ -110,11 +112,11 @@ const qualityNote=p=>p.quality==='expert-draft'?
 export function renderAtlasGuide(root,id){
  const p=atlasProfile(id);if(!p){root.innerHTML='<p>This topic is not yet mapped. <a href="#navigate">Return to the console</a>.</p>';return;}
  const hand=readAtlasSession(id)||getAtlasHandoff(id)||{};
- const state={variant:hand.variant||'',customSituation:hand.customSituation||'',
+ const state={variant:hand.variant||'',customSituation:hand.customSituation||'',worksheetFocus:hand.worksheetFocus||'',
  maintainers:new Set(hand.maintainer&&hand.maintainer!=='unknown'?[hand.maintainer]:[]),
  contributors:new Set(hand.contributors||[]),signs:new Set(hand.signs||[]),
  custom:[...(hand.custom||[])],notes:{...(hand.notes||{})},nextId:0};
- const write=()=>writeAtlasSession({id,variant:state.variant,customSituation:state.customSituation,maintainer:[...state.maintainers][0]||'',contributors:[...state.contributors],signs:[...state.signs],custom:[...state.custom],notes:state.notes});
+ const write=()=>writeAtlasSession({id,variant:state.variant,customSituation:state.customSituation,maintainer:[...state.maintainers][0]||'',worksheetFocus:focusFor(state),contributors:[...state.contributors],signs:[...state.signs],custom:[...state.custom],notes:state.notes});
  const markup='<div class="ns-atlas-guide"><a class="ns-atlas-back" href="#navigate">← Back to Emotional Calculator</a>'+
  '<header class="ns-atlas-guide-hero"><p class="eyebrow">YOUR PSYCHOLOGICAL FIELD GUIDE</p><h1>'+s(p.title)+'</h1>'+
  '<p>Find what fits your experience, test possible explanations, and choose what might be useful—without turning a few answers into a diagnosis.</p>'+
@@ -169,13 +171,14 @@ export function renderAtlasGuide(root,id){
  root.querySelector('[data-atlas-variant]')?.addEventListener('change',e=>{state.variant=e.target.value;update()});
  root.querySelector('[data-atlas-own-situation]')?.addEventListener('input',e=>{state.customSituation=e.target.value;update()});
  function bindDynamic(){
-  const spec=worksheetFor(p.id,{variant:state.variant,maintainer:[...state.maintainers][0]||'',contributors:[...state.contributors],customSituation:state.customSituation});
+  const spec=worksheetFor(p.id,{variant:state.variant,maintainer:focusFor(state),contributors:[...state.contributors],customSituation:state.customSituation});
+  root.querySelector('[data-worksheet-focus]')?.addEventListener('change',e=>{state.worksheetFocus=e.target.value;update()});
   root.querySelectorAll('[data-worksheet-answer]').forEach(textarea=>textarea.addEventListener('input',()=>{
    const arr=state.notes[spec.kind]||(state.notes[spec.kind]=[]);
    arr[Number(textarea.dataset.worksheetAnswer)]=textarea.value;
   }));
   root.querySelector('[data-download-worksheet]')?.addEventListener('click',()=>{
-   const specNow=worksheetFor(p.id,{variant:state.variant,maintainer:[...state.maintainers][0]||'',contributors:[...state.contributors],customSituation:state.customSituation});
+   const specNow=worksheetFor(p.id,{variant:state.variant,maintainer:focusFor(state),contributors:[...state.contributors],customSituation:state.customSituation});
    download('nobodyssimple-'+p.id+'-'+specNow.kind+'-worksheet.txt',worksheetText(specNow,state.notes[specNow.kind]||[]));
    setText('[data-worksheet-status]','The selected worksheet was prepared as a text file.');
   });
@@ -193,7 +196,7 @@ export function renderAtlasGuide(root,id){
  });
  root.querySelector('[data-download-map]')?.addEventListener('click',()=>{
   const f=makeAtlasFormulation(p,state);
-  const ws=worksheetFor(id,{variant:state.variant,maintainer:[...state.maintainers][0]||'',contributors:[...state.contributors],customSituation:state.customSituation});
+  const ws=worksheetFor(id,{variant:state.variant,maintainer:focusFor(state),contributors:[...state.contributors],customSituation:state.customSituation});
   const txt=['Nobody’s Simple · Working psychological formulation',f.summary,'','Specific difficulty: '+p.title,'Specific situation: '+f.situation,
    'Recognised signs:',...f.signs.map(x=>'- '+x),'Possible maintainers:',...f.maintainers.map(x=>'- '+x.label),
    'Contributors:',...f.contributors.map(x=>'- '+x.label),'Other variables:',...f.extra.map(x=>'- '+x.label+' → '+x.target),'',
