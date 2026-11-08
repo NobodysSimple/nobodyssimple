@@ -117,9 +117,12 @@ export function atlasSearch(query,limit=25){
  if(!words.length)return [];
  return atlasProblemIndex.map(p=>{
   const title=normalize(p.title),hint=normalize(p.hint),alias=(p.aliases||[]).flatMap(normalize);
+  const idTokens=p.id.split('-');
+  const direct=String(query||'').trim().toLowerCase().replace(/[’']/g,'').replace(/\s+/g,'-');
   const score=words.reduce((a,w)=>a+(title.some(y=>y===w||(w.length>=5&&y.startsWith(w)))?7:0)+
   (hint.some(y=>y===w||(w.length>=5&&y.startsWith(w)))?3:0)+
-  (alias.some(y=>y===w||(w.length>=5&&y.startsWith(w)))?4:0),0);
+  (alias.some(y=>y===w||(w.length>=5&&y.startsWith(w)))?4:0)+
+  (idTokens.includes(w)?12:0),0)+(p.id===direct?30:0);
   return {p,score};
  }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score||(a.p.quality==='expert-draft'?-1:1)).slice(0,limit).map(x=>x.p);
 }
