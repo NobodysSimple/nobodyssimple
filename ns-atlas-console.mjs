@@ -16,7 +16,7 @@ function shell(body){
  '<p>Start with the experience, not a diagnosis. Find a useful exercise or understand the patterns that might be involved.</p></header>'+body+'</div>';
 }
 function first(state){
- const items=state.query.trim()?atlasSearch(state.query,24):state.domain?atlasByDomain(state.domain).slice(0,24):favorites.map(atlasGet).filter(Boolean);
+ const items=state.query.trim()?atlasSearch(state.query,24):state.domain?atlasByDomain(state.domain).slice(0,60):favorites.map(atlasGet).filter(Boolean);
  return shell('<div class="ns-atlas-modes" role="group" aria-label="What would help?">'+
  '<button type="button" data-atlas-mode="tools" aria-pressed="'+(state.mode==='tools')+'"><strong>Find something to try</strong><small>One practical exercise matched to your situation</small></button>'+
  '<button type="button" data-atlas-mode="learn" aria-pressed="'+(state.mode==='learn')+'"><strong>Understand & learn</strong><small>Clear psychoeducation and a personal formulation</small></button></div>'+
@@ -68,7 +68,7 @@ export function renderAtlasConsole(root){
   const search=root.querySelector('[data-atlas-search]');
   if(search)search.oninput=()=>{
    state.query=search.value;const target=root.querySelector('[data-atlas-results]');
-   const candidates=state.query.trim()?atlasSearch(state.query,24):state.domain?atlasByDomain(state.domain).slice(0,24):favorites.map(atlasGet).filter(Boolean);
+   const candidates=state.query.trim()?atlasSearch(state.query,24):state.domain?atlasByDomain(state.domain).slice(0,60):favorites.map(atlasGet).filter(Boolean);
    target.innerHTML=candidates.length?candidates.map(item).join(''):
    '<p class="ns-atlas-noresults">No precise match. Try another description or explore <a href="#tool/context-map">Context Map</a>.</p>';
    target.querySelectorAll('[data-atlas-pick]').forEach(b=>b.onclick=()=>select(b.dataset.atlasPick));
