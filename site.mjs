@@ -43,6 +43,9 @@ import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderNSInvestigator } from './ns-investigate.mjs';
 import { renderUniversalConsole } from './ns-universal-console.mjs';
 import { renderNSProblemGuide } from './ns-problem-guide.mjs';
+import {renderPrecisionConsole} from './ns-precision-console.mjs';
+import {renderPrecisionGuide} from './ns-precision-guide.mjs';
+import {getPreciseProfile} from './ns-precision-content.mjs';
 import { renderToolDiscovery } from './ns-tool-library.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
 import { renderSupport } from "./referrals.mjs";
@@ -847,9 +850,9 @@ function route() {
     ({
       home: () => homePage({learningView:"home"}),
       guide: () => renderNSFieldGuide(main, routeParts.slice(1).map(safeRoutePart), accountState()),
-      help: () => renderUniversalConsole(main),
-      navigate: () => renderUniversalConsole(main),
-      problem: () => renderNSProblemGuide(main,safeRoutePart(id)),
+      help: () => renderPrecisionConsole(main),
+      navigate: () => renderPrecisionConsole(main),
+      problem: () => {const key=safeRoutePart(id); if(getPreciseProfile(key))renderPrecisionGuide(main,key); else renderNSProblemGuide(main,key);},
       investigate: () => renderNSInvestigator(main,safeRoutePart(id)),
       library: () => {
         if(id === "quotes") wisbodyPage();
