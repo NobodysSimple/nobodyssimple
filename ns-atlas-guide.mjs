@@ -32,8 +32,9 @@ export function makeAtlasFormulation(p,state){
  const extra=state.custom||[];
  const situation=state.customSituation?.trim()||p.variants[Number((state.variant||'').replace(/^v/,''))]||'the difficulty you described';
  const targets=maintainers.length?p.targets.filter(t=>maintainers.some(m=>m.id===t.id)).slice(0,3):[];
+ const chosenPreference=p.id==='submissive-patterns'&&state.variant==='v1';
  const words=[
- 'You are exploring: '+p.title+'.',
+ chosenPreference?'You selected a freely chosen, consensual submissive preference; this is not inherently a difficulty or disorder.':'You are exploring: '+p.title+'.',
  'The situation you selected: '+situation+'.',
  signs.length?'You recognised: '+signs.slice(0,8).join('; ')+'.':'You have not selected specific signs yet.',
  maintainers.length?'Possible maintaining processes to investigate: '+maintainers.map(m=>m.label).join(', ')+'.':'No maintaining process has been selected, so the pattern remains open.',
@@ -82,6 +83,7 @@ const support=p=>{
  (urgent?'':'<a target="_blank" rel="noopener noreferrer" href="'+s(nhsTalking)+'">NHS Talking Therapies (where appropriate) ↗</a>')+'</div>';
 };
 const targetMarkup=(p,state)=>{
+ if(p.id==='submissive-patterns'&&state.variant==='v1'&&!state.maintainers.size)return '<div class="ns-atlas-target"><div><h3>No preference needs to be fixed merely because it is submissive.</h3><p>What matters is free consent, boundaries, the ability to decline, and whether the role works for you. You can explore communication skills if they are useful, not because the preference itself is pathological.</p></div></div>';
  if(isSafetyPriority(p.id))return '<div class="ns-atlas-urgent"><strong>Immediate safety and human support are the priority.</strong><p>This topic is not appropriate for automatically generated exposure, confrontation or self-diagnosis tasks.</p><a href="#support">Find support →</a></div>';
  const f=makeAtlasFormulation(p,state);
  const targets=f.targets.length?f.targets:p.targets.slice(0,2);
