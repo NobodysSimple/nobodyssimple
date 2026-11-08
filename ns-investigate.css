@@ -191,3 +191,8 @@ body.app-body.ns-shell-v1 #main .console-investigate-link:hover{background:#e7f1
 @media(max-width:760px){body.app-body.ns-shell-v1 #main .ns-wizard-console .console-all-situations{grid-template-columns:minmax(0,1fr)!important;}}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .console-investigate-link{background:#2d4c38;color:#e4f3e4;border-color:#71967b;}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-wizard-console .console-all-situations .console-situation-card{background:#2d4b37!important;color:#e6f2e5!important;border-color:#6b8f75;}
+
+body.app-body.ns-shell-v1 #main .ns-inv-systems-list{display:grid;gap:10px;margin:19px 0;padding:0;list-style:none;}
+body.app-body.ns-shell-v1 #main .ns-inv-systems-list li{position:relative;padding:12px 14px 12px 38px;border-radius:13px;background:#eef4e9;color:#31543d;font-size:14px;line-height:1.55;}
+body.app-body.ns-shell-v1 #main .ns-inv-systems-list li::before{content:'◇';position:absolute;left:15px;color:#487951;font-size:18px;line-height:1;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-inv-systems-list li{background:#34523f;color:#e4f2e5;}
