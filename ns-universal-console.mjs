@@ -51,7 +51,7 @@ function cardHtml(domain,mode,selected,query){
  '<div class="ns-console-topic-grid" data-topic-grid>'+ (list.length?cards(list,selected):
  '<div class="ns-console-unmatched"><strong>We have not mapped that phrase precisely yet.</strong><p>Try a broader word or choose an area above. You can also explore a general starting point without pretending we know the cause.</p><button type="button" class="button secondary" data-unmatched>Explore a general starting point</button></div>')+'</div>'+
  (chosen.length?'<p class="ns-console-selected"><strong>Selected:</strong> '+chosen.map(p=>s(p.title)).join(' · ')+'</p>':'')+
- '<div class="ns-console-actions"><a class="button secondary" href="#home">← Home</a>'+
+ '<p class="ns-console-selection-info" data-selected-live aria-live="polite">'+selected.length+' selected</p><p class="ns-console-selection-message" data-selection-message aria-live="polite"></p>'+'<div class="ns-console-actions"><a class="button secondary" href="#home">← Home</a>'+
  '<button type="button" class="button" data-next '+(!selected.length?'disabled':'')+'>Continue with '+selected.length+' '+(selected.length===1?'problem':'problems')+' →</button></div>'+
  '<p class="ns-console-privacy">No account needed. These selections are not saved or sent anywhere by this console.</p></section></div>';
 }
@@ -146,7 +146,6 @@ export function renderUniversalConsole(root){
    state.step=2;update();scrollTop();
   });
  };
- root.addEventListener('change',()=>{}, {once:true});
  update();
 }
 function generalResultHtml(mode){
