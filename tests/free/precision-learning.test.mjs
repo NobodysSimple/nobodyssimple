@@ -4,6 +4,7 @@ import {preciseProfiles,getPreciseProfile} from '../../ns-precision-content.mjs'
 import {getProblem} from '../../ns-problem-map.mjs';
 import {tools} from '../../tool-catalog.mjs';
 import {renderPrecisionGuide} from '../../ns-precision-guide.mjs';
+import {searchPrecisionTopics} from '../../ns-precision-console.mjs';
 
 const expected=['social-anxiety','panic-experiences','insomnia','rumination','submissive-patterns'];
 test('five worked examples have distinct granular concepts and no diagnostic shortcuts',()=>{
@@ -72,4 +73,14 @@ test('chosen consensual submission is explicitly not pathologised',()=>{
 test('panic and insomnia retain physical health escalation advice',()=>{
  assert.match(getPreciseProfile('panic-experiences').alert,/medical attention/);
  assert.match(getPreciseProfile('insomnia').alert,/GP assessment/);
+});
+
+test('plain-language search prioritises exact pathways without generic false positives',()=>{
+ assert.equal(searchPrecisionTopics("I can't sleep",4)[0]?.id,'insomnia');
+ assert.equal(searchPrecisionTopics('ruminating over conversations',4)[0]?.id,'rumination');
+ assert.equal(searchPrecisionTopics('fear of being judged',4)[0]?.id,'social-anxiety');
+ assert.equal(searchPrecisionTopics('sudden panic attack',4)[0]?.id,'panic-experiences');
+ assert.equal(searchPrecisionTopics("I can't say no to my partner",4)[0]?.id,'submissive-patterns');
+ assert.equal(searchPrecisionTopics('checking door repeatedly',4)[0]?.id,'checking');
+ assert.equal(searchPrecisionTopics('housing problems',4)[0]?.id,'housing');
 });
