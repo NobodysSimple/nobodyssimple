@@ -96,6 +96,7 @@ function toolsResultHtml(selected,answers){
  const r=recommendForProblems(selected,{mechanism:answers.barrier,context:answers.context});
  const first=r.problems.find(p=>p.needsHuman)||r.problems[0];if(!first)return '';
  const others=r.problems.filter(p=>p!==first);
+ const urgentSafety=['self-harm','immediate-danger','control-harm'].includes(first.id);
  const contextExplanation=answers.context==='demands'?'Environmental and practical demands may matter. Look for ways to change conditions, not only yourself.':
  answers.context==='health'?'Sleep, health, energy and sensory load may matter. Consider appropriate health and accessibility support.':
  answers.context==='people'?'Relationships, safety and power may matter. Self-help tools alone cannot resolve unsafe circumstances.':
@@ -105,7 +106,7 @@ function toolsResultHtml(selected,answers){
  '<section class="ns-console-panel ns-console-result"><p class="eyebrow">YOUR NEXT STEPS · '+s(first.title)+'</p>'+
  '<h2>Start with something useful</h2><p>These tools match the difficulties you selected; they are options, not a judgment about their cause.</p>'+
  urgentMarkup(first)+'<p class="ns-console-context">'+s(contextExplanation)+'</p>'+
- '<div class="ns-console-tool-cards">'+(r.tools.length?r.tools.map((t,i)=>'<a href="'+s(t.href)+'" class="ns-console-tool-card"><span class="ns-console-tool-number">'+(i+1)+'</span><span><strong>'+s(t.title)+'</strong><small>'+s(t.short)+'</small></span><span aria-hidden="true">→</span></a>').join(''):'<p>No dedicated tool is available for this specific concern yet. You can still explore the learning guide and relevant support.</p>')+'</div>'+
+ '<div class="ns-console-tool-cards">'+(urgentSafety?'<a href="'+nhsHelp+'" target="_blank" rel="noopener noreferrer" class="ns-console-tool-card"><span class="ns-console-tool-number">!</span><span><strong>Get urgent help</strong><small>NHS guidance for immediate and urgent mental health support.</small></span><span aria-hidden="true">↗</span></a>':r.tools.length?r.tools.map((t,i)=>'<a href="'+s(t.href)+'" class="ns-console-tool-card"><span class="ns-console-tool-number">'+(i+1)+'</span><span><strong>'+s(t.title)+'</strong><small>'+s(t.short)+'</small></span><span aria-hidden="true">→</span></a>').join(''):'<p>No dedicated tool is available for this specific concern yet. You can still explore the learning guide and relevant support.</p>')+'</div>'+
  '<div class="ns-console-learn-cta"><strong>Want to understand why this might be happening?</strong><p>Explore competing explanations, systems-level factors, learning resources and a practical worksheet.</p>'+
  '<a class="button" href="#problem/'+s(first.id)+'">Understand '+s(first.title.toLowerCase())+' →</a></div>'+
  (others.length?'<div class="ns-console-other-results"><p class="eyebrow">ALSO SELECTED</p>'+others.map(p=>'<a href="#problem/'+s(p.id)+'">'+s(p.title)+' →</a>').join('')+'</div>':'')+
