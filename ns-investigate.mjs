@@ -212,25 +212,83 @@ export function investigationQuestions(topicId,answers={}){
  const t=findInvestigationTopic(topicId);
  return t?answersFor(t,answers):[];
 }
+const evidenceRules={
+ procrastination:{
+  context:[null,'ambiguity','perfectionism','capacity',null],
+  exceptions:['ambiguity','attention','perfectionism','capacity',null],
+  constraints:['capacity','attention','capacity','capacity',null],
+  detail:{perfectionism:['perfectionism','ambiguity','capacity',null],
+   ambiguity:['ambiguity','perfectionism','capacity',null],
+   capacity:['capacity','perfectionism','ambiguity',null],
+   attention:['attention','perfectionism','capacity',null]}
+ },
+ overthinking:{
+  context:['interpretation','uncertainty','reassurance','practical',null],
+  exceptions:['practical','reassurance','uncertainty',null,null],
+  constraints:['interpretation','uncertainty','practical','uncertainty',null],
+  detail:{uncertainty:['uncertainty','practical','interpretation',null],
+   interpretation:['interpretation','practical','practical',null],
+   reassurance:['reassurance','practical','practical',null],
+   practical:['practical','practical','practical',null]}
+ },
+ feelings:{
+  context:['load','emotion','sensory','emotion','load'],
+  exceptions:['load','sensory','emotion','recovery',null],
+  constraints:['load','sensory','load','recovery',null],
+  detail:{load:['load','sensory','emotion',null],
+   sensory:['sensory','recovery','emotion',null],
+   emotion:['emotion','load','emotion',null],
+   recovery:['recovery','recovery','load',null]}
+ },
+ relationships:{
+  context:['repair','boundary','ambiguity','boundary',null],
+  exceptions:['ambiguity','repair','boundary','safety',null],
+  constraints:['safety','safety','ambiguity','repair',null],
+  detail:{ambiguity:['ambiguity','boundary','ambiguity',null],
+   boundary:['boundary','boundary','safety',null],
+   repair:['repair','boundary','safety',null],
+   safety:['safety','safety','ambiguity',null]}
+ }
+};
+/* Simple documented relevance rules, not calibrated scores or diagnostic probabilities.
+   Multiple observations can support or challenge the user's initial hypothesis. */
 export function investigationFormulation(topicId,answers={}){
  const t=findInvestigationTopic(topicId);if(!t)return null;
- const focus=t.possibilities.find(x=>x.id===answers.mechanism);
- const issue=answers.mechanism==='unsure'||!focus;
- const first=focus||t.possibilities[0];
- const alt=t.possibilities.find(x=>x!==first&&((answers.constraint!=='4'&&x.id==='capacity')||(answers.constraint!=='4'&&x.id==='load')||(answers.constraint==='0'&&x.id==='safety')||(answers.constraint==='1'&&x.id==='sensory')))||t.possibilities.find(x=>x!==first);
+ const rules=evidenceRules[t.id];
+ const scores=Object.fromEntries(t.possibilities.map(x=>[x.id,0]));
+ const add=(id,weight=1)=>{if(id&&Object.hasOwn(scores,id))scores[id]+=weight;};
+ const chosen=t.possibilities.find(x=>x.id===answers.mechanism);
+ if(chosen)add(chosen.id,2);
+ const evidence=rules.detail[chosen?.id]?.[Number(answers.detail)];
+ if(evidence)add(evidence,Number(answers.detail)===0?2:3);
+ if(answers.context!==undefined)add(rules.context[Number(answers.context)],1);
+ if(answers.exception!==undefined)add(rules.exceptions[Number(answers.exception)],1);
+ if(answers.constraint!==undefined)add(rules.constraints[Number(answers.constraint)],t.id==='relationships'&&answers.constraint==='0'?4:2);
+ const ranked=[...t.possibilities].sort((a,b)=>scores[b.id]-scores[a.id]||(a.id===chosen?.id?-1:0)-(b.id===chosen?.id?-1:0));
+ const first=ranked[0],alt=ranked[1];
  const context=t.contexts[Number(answers.context)]||'the situation you described';
  const environments=t.constraints[Number(answers.constraint)]||'conditions not yet identified';
  const exceptions=t.patterns[Number(answers.exception)]||'exceptions not yet identified';
  const prior=t.attempts[Number(answers.attempt)]||'previous approaches not yet identified';
- const branch= t.branch[first.id];
- const detail = !issue&&branch?.opts?.[Number(answers.detail)]||null;
- const caution=t.id==='relationships'&&(first.id==='safety'||answers.constraint==='0'||(first.id==='boundary'&&answers.detail==='2'));
- return {topic:t,primary:first,alternative:alt,context,environments,exceptions,prior,detail,uncertain:issue,caution,
-  why:'You selected “'+(focus?.title||'more than one explanation')+'” and described '+context.toLowerCase()+'. That makes this a starting hypothesis, not a clinical conclusion.',
-  limitations:issue?'Several mechanisms could fit. Consider exploring one at a time rather than selecting a label.':first.test,
-  systemNote:answers.constraint==='4'?'You did not identify a main external barrier in this brief questionnaire. That does not rule out contextual factors.':'You identified “'+environments+'”. Consider whether changing this condition would be more useful than trying harder individually.'
- };
+ const branch=t.branch[chosen?.id];
+ const detail=branch?.opts?.[Number(answers.detail)]||null;
+ const caution=t.id==='relationships'&&(first.id==='safety'||answers.constraint==='0'||(chosen?.id==='boundary'&&answers.detail==='2'));
+ const changed=Boolean(chosen&&chosen.id!==first.id);
+ const uncertain=!chosen||scores[first.id]-scores[alt.id]<2;
+ const why=(changed
+  ?'You initially considered “'+chosen.title+'”, but your later answers also point toward “'+first.title+'”. '
+  :chosen?'You recognised “'+chosen.title+'” as a possible explanation. '
+  :'You were unsure which mechanism best fits, so the contextual answers help identify a starting point. ')+
+  'You described '+context.toLowerCase()+'. '+(detail?'Your follow-up answer was “'+detail+'”. ':'')+
+  'This is an organising hypothesis, not evidence that a cause has been established.';
+ const limitations=(changed?'The answers are mixed: '+chosen.title.toLowerCase()+' may still contribute. ':'')+first.test;
+ const systemNote=answers.constraint==='4'
+  ?'You did not identify a main external barrier in this brief questionnaire. That does not rule out contextual factors.'
+  :'You identified “'+environments+'”. Consider whether changing this condition would be more useful than trying harder individually.';
+ return {topic:t,primary:first,alternative:alt,context,environments,exceptions,prior,detail,
+   uncertain,caution,why,limitations,systemNote};
 }
+
 function questionMarkup(q,index,total,answer){
  return '<div class="ns-inv-progress"><span>QUESTION '+(index+1)+' OF '+total+'</span><div class="ns-inv-meter"><span style="width:'+Math.round(index/total*100)+'%"></span></div></div>'+
  '<fieldset><legend>'+safe(q.label)+'</legend><p class="ns-inv-support">'+safe(q.help)+'</p><div class="ns-inv-answer-grid">'+
