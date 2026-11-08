@@ -7,6 +7,21 @@ export const DRAFT_KEY='ns-account-tool-drafts-v2', QUOTE_KEY='ns-learn-quote-no
 let account=()=>({preferences:window.nsAccountPreferences||{},syncKeys:[],locked:false});
 export function configureStrategy(getState){account=getState;}
 export const read=(key,fallback)=>{try{const v=JSON.parse(localStorage.getItem(key));return v??fallback;}catch{return fallback;}};
+export function homeGreeting(now=new Date(),nickname=''){
+ const hour=now.getHours();
+ const salutation=hour>=5&&hour<11?'Good morning':hour===11?'Good day':hour>=12&&hour<17?'Good afternoon':hour>=17&&hour<22?'Good evening':'Goodnight';
+ const name=String(nickname||'').trim().slice(0,50).replace(/[<>]/g,'').split(/\s+/)[0];
+ return salutation+(name?', '+name:'')+'.';
+}
+if(typeof window!=='undefined'){
+ const refreshGreeting=()=>{
+  const node=document.querySelector('#main .ns-home-refined .ns-home-greeting');
+  if(node)node.textContent=homeGreeting(new Date(),account().nickname);
+ };
+ window.addEventListener('ns:account-profile-change',refreshGreeting);
+ window.addEventListener('focus',refreshGreeting);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshGreeting();});
+}
 function write(key,value){if(account().locked)throw Error('Unlock your saved work in Account first.');localStorage.setItem(key,JSON.stringify(value));}
 function storageNote(key){return account().syncKeys?.includes(key)?'Saved in this browser and queued for your selected account sync. Check Account for sync status.':'Saved in this browser. Cross-device syncing is optional in Account.';}
 function download(name,value){const a=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
@@ -16,7 +31,7 @@ export function renderStrategyHome(root,posts=[],rail='',options={}){
  // Stage 2 gives the original decision aid its own route. Its questions,
  // selected options and recommendation calculations still live in renderHelp.
  if(options.wizardOnly){
-  root.innerHTML=`<div class="ns-wizard-page"><a class="ns-home-back" href="#home">← Back to Home</a><header class="ns-wizard-intro"><p class="ns-home-eyebrow">FIND YOUR NEXT STEP</p><h1>Let's work out what might help.</h1><p>Three short questions. No account needed, and you can change your answers.</p></header><section class="strategy-console ns-wizard-console" aria-label="Help me choose"><div id="home-navigation-console"></div></section><aside class="ns-wizard-options"><p>Already know what you need?</p><a href="#tools">Browse all tools →</a><a href="#lab">Explore Life Lab →</a><a href="#support">Get help from a person →</a></aside></div>`;
+  root.innerHTML=`<div class="ns-wizard-page"><a class="ns-home-back" href="#home">← Back to Home</a><header class="ns-wizard-intro"><p class="ns-home-eyebrow">FIND YOUR NEXT STEP</p><h1>Let's work out what might help.</h1><p>Three short questions. No account needed, and you can change your answers.</p></header><section class="strategy-console ns-wizard-console" aria-label="Help me choose"><div id="home-navigation-console"></div></section><aside class="ns-wizard-options"><p>Already know what you need?</p><a href="#tools">Browse all tools →</a><a href="#guide">Open my Field Guide →</a><a href="#support">Get help from a person →</a></aside></div>`;
   options.renderConsole?.(root.querySelector('#home-navigation-console'));
   return;
  }
@@ -45,14 +60,14 @@ export function renderStrategyHome(root,posts=[],rail='',options={}){
  // presented as available until its separate, tested storage stage ships.
  root.innerHTML=`<div class="wrap strategy-home ns-home-v2 ns-home-refined">
   <section class="ns-home-hero" aria-labelledby="ns-home-title">
-   <div class="ns-home-hero__copy"><h1 id="ns-home-title"><span>What would help</span><span>right now?</span></h1><p class="ns-home-hero__lead">Choose what feels closest. We'll find something useful to try.</p></div>
+   <div class="ns-home-hero__copy"><h1 id="ns-home-title"><span class="ns-home-greeting">${esc(homeGreeting(new Date(),state.nickname))}</span><span>What would help you?</span></h1></div>
    <div class="ns-home-hero__art" aria-hidden="true"><img class="ns-home-hero__land" src="ns-landscape-path.webp" alt="" width="940" height="520"/><span class="ns-home-hero__sun"></span><img class="ns-home-hero__mascot" src="ns-character-sitting.webp" alt="" width="230" height="230"/></div>
-   <a class="ns-home-primary" href="#navigate">Find my next step <span aria-hidden="true">→</span></a>
+   <div class="ns-home-actions"><a class="ns-home-primary" href="#navigate">Find my next step <span aria-hidden="true">→</span></a><a class="ns-home-lifestyle" href="#lifestyle"><span class="ns-home-lifestyle__icon" aria-hidden="true">☼</span><span>Nobody's Simple Lifestyle</span><span aria-hidden="true">→</span></a></div>
   </section>
   ${resume}
   <section class="ns-home-wisbody" aria-label="A moment with Wisbody"><div data-ns-wisbody-full></div><a class="ns-home-wisbody__link" href="#wisbody">Open Wisbody's reflections <span aria-hidden="true">→</span></a></section>
   <section id="home-latest" class="home-latest ns-home-latest" aria-labelledby="home-latest-title"><div class="home-latest-header"><div><p class="ns-home-eyebrow">FROM NOBODY'S SIMPLE</p><h2 id="home-latest-title">Latest from Nobody's Simple</h2><p>News, writing and resources published by the project.</p></div><div class="home-latest-controls"><button type="button" data-latest-prev aria-label="Previous item">←</button><span data-latest-position aria-live="off"></span><button type="button" data-latest-next aria-label="Next item">→</button></div></div><div class="home-latest-track" tabindex="0" aria-label="Recently published content; scroll sideways"></div><div class="home-latest-links"><a href="#learn">More from Nobody's Simple →</a></div></section>
-  <section class="ns-home-footer" aria-label="Other ways to explore"><div><p>Explore at your own pace.</p><span>Tools, learning paths, your Field Guide and community conversations are available through the navigation.</span></div><a href="#guide">My Field Guide →</a><a href="#tools">Browse tools →</a><a href="#support">Get help →</a></section>
+  <section class="ns-home-shortcuts" aria-label="More ways to explore"><a class="ns-home-shortcut" href="#tools"><span class="ns-home-shortcut__icon" aria-hidden="true">✳</span><span><strong>Browse tools</strong><small>Explore exercises and practical activities</small></span><span class="ns-home-shortcut__arrow" aria-hidden="true">→</span></a><a class="ns-home-shortcut" href="#community"><span class="ns-home-shortcut__icon" aria-hidden="true">♡</span><span><strong>Share feedback</strong><small>Help shape the future of Nobody's Simple</small></span><span class="ns-home-shortcut__arrow" aria-hidden="true">→</span></a></section>
  </div>`;
  renderLatest(root.querySelector('#home-latest'),posts);
  renderWisbody(root.querySelector('[data-ns-wisbody-full]'),{compact:true});
