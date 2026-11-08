@@ -94,8 +94,8 @@ function urgentMarkup(p){
 }
 function toolsResultHtml(selected,answers){
  const r=recommendForProblems(selected,{mechanism:answers.barrier,context:answers.context});
- const first=r.problems[0];if(!first)return '';
- const others=r.problems.slice(1);
+ const first=r.problems.find(p=>p.needsHuman)||r.problems[0];if(!first)return '';
+ const others=r.problems.filter(p=>p!==first);
  const contextExplanation=answers.context==='demands'?'Environmental and practical demands may matter. Look for ways to change conditions, not only yourself.':
  answers.context==='health'?'Sleep, health, energy and sensory load may matter. Consider appropriate health and accessibility support.':
  answers.context==='people'?'Relationships, safety and power may matter. Self-help tools alone cannot resolve unsafe circumstances.':
@@ -140,7 +140,7 @@ export function renderUniversalConsole(root){
   root.querySelectorAll('input[name="barrier"],input[name="context"]').forEach(input=>input.onchange=()=>{state.answers[input.name]=input.value;});
   root.querySelector('[data-back]')?.addEventListener('click',()=>{state.step=Math.max(0,state.step-1);update();scrollTop();});
   root.querySelectorAll('[data-finish]').forEach(b=>b.onclick=()=>{
-   const primary=state.selected.find(id=>getProblem(id));if(!primary)return;
+   const primary=state.selected.find(id=>getProblem(id)?.needsHuman)||state.selected.find(id=>getProblem(id));if(!primary)return;
    ephemeralHandoff={primary,selected:state.selected.slice(),answers:{...state.answers},mode:state.mode};
    if(state.mode==='learn'){location.hash='#problem/'+primary;return;}
    state.step=2;update();scrollTop();
