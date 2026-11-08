@@ -151,6 +151,13 @@ const genericSigns={
  experiences:{thoughts:['I do not understand this','Am I safe?','What does it mean?','I need help'],feelings:['Fear','Distress','Confusion','Uncertainty'],behaviours:['Withdrawing','Checking','Avoiding reminders','Seeking support'],body:['Changes in sleep','Changes in energy','Tension','Unusual sensations']},
  safety:{thoughts:['I am not safe','I need support','I cannot manage alone','What can I do now?'],feelings:['Fear','Distress','Panic','Numbness'],behaviours:['Seeking help','Withdrawing','Avoiding danger','Contacting a trusted person'],body:['Agitation','Exhaustion','Physical alarm','Sleep disruption']}
 };
+const preciseWorksheetKinds={
+ 'social-anxiety':{avoidance:'experiment','self-focus':'pattern',safety:'experiment',replay:'rumination'},
+ 'panic-experiences':{catastrophic:'evidence',monitoring:'checking',avoidance:'pattern',reassurance:'checking'},
+ insomnia:{'sleep-pressure':'sleep',schedule:'sleep',arousal:'sleep',environment:'systems'},
+ rumination:{abstract:'rumination',certainty:'checking',avoidance:'action','self-criticism':'evidence'},
+ 'submissive-patterns':{'fear-disapproval':'conversation',conflict:'conversation','self-worth':'values',pressure:'safety'}
+};
 const riskIds=new Set(['self-harm','immediate-danger','suicidal-thoughts','self-injury','danger-others','unsafe-home','control-harm','eating','food-restriction','purging-urges','withdrawal-worries','voices','suspicion','mania','elevated-mood','grandiose-beliefs']);
 export const isSafetyPriority=id=>riskIds.has(id)||Boolean(atlasGet(id)?.needsHuman);
 export function atlasProfile(id){
@@ -160,7 +167,7 @@ export function atlasProfile(id){
   const variants=[...new Set(precise.questions[0].options.map(x=>x[1]))].slice(0,5);
   return {...precise,domain:p.domain,quality:p.quality,variants,
    signs:{thoughts:core.thoughts,feelings:core.feelings,behaviours:core.behaviours,body:core.body},
-   maintainers:precise.maintainers.map(m=>({...m,worksheet:m.id.includes('avoid')?'pattern':m.id.includes('self')?'evidence':m.id.includes('pressure')?'safety':m.id.includes('sleep')?'sleep':'pattern'})),
+   maintainers:precise.maintainers.map(m=>({...m,worksheet:preciseWorksheetKinds[id]?.[m.id]||'pattern'})),
    source:precise.links[0],needsHuman:isSafetyPriority(id),medical:p.medical,
    contributors:precise.contributors.map(x=>({id:x.id,label:x.label})),targets:precise.targets,
    progress:precise.progress,cycle:precise.cycle};
