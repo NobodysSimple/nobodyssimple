@@ -16,18 +16,21 @@ const ICONS = Object.freeze({
   learn:'<path d="M12 5C8.5 3 5 3 2 4v16c3-1 6.5-1 10 1 3.5-2 7-2 10-1V4c-3-1-6.5-1-10 1zM12 5v16"/>',
   tools:'<rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>',
   you:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2c0-4 3.3-6 8-6s8 2 8 6v2"/>',
+  account:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2c0-4 3.3-6 8-6s8 2 8 6v2"/>',
+  guide:'<path d="M12 6C8 4 5 4 2 5v15c3-1 6-1 10 1 4-2 7-2 10-1V5c-3-1-6-1-10 1ZM12 6v15"/><path d="m6 12 2 2 3-4"/>',
   feed:'<circle cx="12" cy="8" r="3"/><path d="M5.5 20v-1.1c0-3 2.7-5 6.5-5s6.5 2 6.5 5V20"/><path d="M4.5 7.2a2.4 2.4 0 0 0 0 4.6M19.5 7.2a2.4 2.4 0 0 1 0 4.6M1.5 19v-.7c0-1.7.9-3 2.6-3.6M22.5 19v-.7c0-1.7-.9-3-2.6-3.6"/>'
 });
 const routeName = () => (location.hash.slice(1).split('/')[0]||'home').toLowerCase();
 const areaFor = name => {
-  if(['help','navigate','support','route','routes','compass','questions','navigator'].includes(name)) return 'home';
+  if(['help','navigate','support','route','routes','compass','questions','navigator','lifestyle'].includes(name)) return 'home';
+  if(name==='guide') return 'guide';
   if(['play','tool','guided','simplyfocus','stim-space','questionnaires','big-five','systems','personality'].includes(name)) return 'tools';
   if(['library','blog','writing','watch','post','wisbody'].includes(name)) return 'learn';
   if(['discussion','discussion-moderation'].includes(name)) return 'feed';
-  if(['maps','guide','account','profile','messages','community','volunteer','team','about','install'].includes(name)) return 'account';
+  if(['maps','account','profile','messages','community','volunteer','team','about','install'].includes(name)) return 'account';
   return name;
 };
-const ids = Object.freeze({home:'#home',lab:'#lab',learn:'#learn',tools:'#tools',feed:'#discussion'});
+const ids = Object.freeze({home:'#home',guide:'#guide',feed:'#discussion',account:'#account'});
 const svg = name => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${ICONS[name]}</svg>`;
 function refreshNav() {
   const current=areaFor(routeName());
@@ -48,12 +51,6 @@ function refreshNav() {
     slot.dataset.nsIcon=name;
     link.dataset.uiNav='true';
   });
-  if(routeName()==='lab'){
-    const context=document.querySelector('[data-app-page-label]');
-    if(context) context.textContent='The Journey';
-    const kicker=document.querySelector('[data-app-page-kicker]');
-    if(kicker) kicker.textContent='Practise';
-  }
 }
 let lastHash='';
 function onRoute() {
