@@ -857,7 +857,8 @@ function route() {
       help: () => renderAtlasConsole(main),
       navigate: () => renderAtlasConsole(main),
       problem: () => {const key=safeRoutePart(id);if(atlasGet(key))renderAtlasGuide(main,key);else renderNSProblemGuide(main,key);},
-      investigate: () => renderNSInvestigator(main,safeRoutePart(id)),
+      investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
+        location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
       library: () => {
         if(id === "quotes") wisbodyPage();
         else {libraryState.view=id||"home";libraryState.query="";library();}
