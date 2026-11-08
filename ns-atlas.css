@@ -1,0 +1,246 @@
+/* Nobody's Simple: complete atlas console, ten-part guides and topic exercises.
+ * Scoped by feature roots; does not style the homepage. */
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool){
+ --na-ink:#1c4936;--na-muted:#5d7463;--na-line:#dce5d9;--na-paper:#fffdf7;
+ max-width:1030px;margin:auto;padding:clamp(16px,3.3vw,38px) clamp(12px,3.2vw,35px) 95px;
+ font-family:system-ui,-apple-system,sans-serif;color:var(--na-ink);box-sizing:border-box;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) *,
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) *::before{box-sizing:border-box;}
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) h1{
+ font:750 clamp(31px,4.4vw,49px)/1.07 Georgia,serif;color:#133f30;letter-spacing:-.04em;margin:0 0 13px;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) h2{
+ font:750 clamp(21px,2.8vw,31px)/1.16 Georgia,serif;color:#224c38;margin:0 0 11px;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) h3{font:750 18px/1.3 Georgia,serif;color:#2d583e;margin:15px 0 11px;}
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) .eyebrow{
+ letter-spacing:.13em;color:#658574;font:800 11px/1.4 system-ui,sans-serif;margin:0 0 12px;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) :is(button,input,select,textarea):focus-visible{
+ outline:3px solid #bb8947;outline-offset:3px;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-back{
+ display:inline-flex;align-items:center;min-height:38px;margin:0 0 14px;
+ color:#337351;font:750 13px system-ui,sans-serif;text-decoration:none;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-header,.ns-atlas-guide-hero){
+ padding:clamp(22px,4vw,38px);border:1px solid #e3e8d9;border-radius:25px;
+ background:linear-gradient(125deg,#fffbf0,#edf5e8);
+ box-shadow:0 10px 26px #3156310b;margin:0 0 16px;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-header,.ns-atlas-guide-hero)>p:not(.eyebrow){
+ max-width:73ch;font:400 14px/1.65 system-ui,sans-serif;color:#526f5e;margin:0;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-modes{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 16px;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-modes button{
+ min-height:78px;padding:15px 20px;text-align:left;cursor:pointer;
+ border:1px solid #d2dfcf;background:#f7f9f1;color:#2c6043;border-radius:17px;
+ transition:background .16s,border-color .16s;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-modes button[aria-pressed=true]{
+ border:2px solid #45825b;background:#e5f3df;padding:14px 19px;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-modes strong{display:block;font-size:15px;margin-bottom:4px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-modes small{font-size:12px;line-height:1.5;color:#61806b;}
+body.app-body.ns-shell-v1 #main .ns-atlas-main{
+ background:var(--na-paper);padding:clamp(20px,3.4vw,34px);
+ border:1px solid var(--na-line);border-radius:24px;box-shadow:0 9px 25px #26452a0a;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-search{
+ display:flex;align-items:center;gap:10px;border:1px solid #bcd3bd;
+ border-radius:15px;background:#fafff6;padding:8px 14px;margin:20px 0 14px;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-search input{
+ width:100%;min-height:34px;min-width:0;color:#204b36;border:0;
+ background:transparent;outline:none;font:400 14px system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-search>span:last-child{font-size:24px;color:#497e5e;}
+body.app-body.ns-shell-v1 #main .ns-atlas-domains{
+ display:flex;flex-wrap:wrap;gap:7px;margin:0 0 20px;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-domains button{
+ border:1px solid #d6e0d1;background:#f4f7ee;color:#486952;border-radius:99px;
+ padding:9px 11px;min-height:36px;cursor:pointer;font:750 12px system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-domains button[aria-pressed=true]{background:#225d40;color:white;border-color:#225d40;}
+body.app-body.ns-shell-v1 #main .ns-atlas-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-item{
+ display:grid;grid-template-columns:minmax(0,1fr) 18px;align-content:center;
+ min-width:0;min-height:86px;gap:4px;text-align:left;border:1px solid #dae5d7;
+ background:#eaf4e5;border-radius:15px;padding:15px;color:#24553c;cursor:pointer;
+ transition:transform .13s,border-color .13s;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-item:nth-child(4n+2){background:#eaf1f8;}
+body.app-body.ns-shell-v1 #main .ns-atlas-item:nth-child(4n+3){background:#f9f0dc;}
+body.app-body.ns-shell-v1 #main .ns-atlas-item:nth-child(4n){background:#f3eaf2;}
+body.app-body.ns-shell-v1 #main .ns-atlas-item:hover{transform:translateY(-2px);border-color:#87ad8a;}
+body.app-body.ns-shell-v1 #main .ns-atlas-item strong{font-size:14px;line-height:1.35;grid-column:1;}
+body.app-body.ns-shell-v1 #main .ns-atlas-item small{font-size:12px;line-height:1.4;color:#64796b;grid-column:1;}
+body.app-body.ns-shell-v1 #main .ns-atlas-item>span{grid-column:2;grid-row:1/3;align-self:center;font-size:19px;}
+body.app-body.ns-shell-v1 #main :is(.ns-atlas-footnote,.ns-atlas-fine,.ns-atlas-noresults){
+ font:400 12px/1.6 system-ui,sans-serif;color:#67806d;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-footnote{margin:17px 0 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-question>p{font:400 14px/1.6 system-ui,sans-serif;color:#57715e;}
+body.app-body.ns-shell-v1 #main .ns-atlas-step{display:flex;gap:15px;align-items:center;margin:0 0 20px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-step span{font:800 11px system-ui,sans-serif;letter-spacing:.08em;color:#5f846c;}
+body.app-body.ns-shell-v1 #main .ns-atlas-step i{display:block;flex:1;height:7px;border-radius:99px;background:#d9ead2;position:relative;overflow:hidden;}
+body.app-body.ns-shell-v1 #main .ns-atlas-step i::before{content:'';position:absolute;inset:0 50% 0 0;background:#619d66;border-radius:99px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-options{display:grid;gap:9px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-options label{position:relative;display:block;cursor:pointer;}
+body.app-body.ns-shell-v1 #main .ns-atlas-options input{position:absolute;opacity:0;width:1px;height:1px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-options label span{
+ display:block;padding:15px 17px;min-height:50px;background:#f9faf5;border:1px solid #d2e0d0;border-radius:13px;
+ color:#335c43;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-options label span strong{font:750 14px/1.4 system-ui,sans-serif;display:block;}
+body.app-body.ns-shell-v1 #main .ns-atlas-options label span small{font:400 12px/1.45 system-ui,sans-serif;color:#6b806d;display:block;margin-top:4px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-options input:checked+span{border:2px solid #4c9661;background:#e3f1df;padding:14px 16px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-options input:focus-visible+span{outline:3px solid #b98138;outline-offset:3px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-actions{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin:23px 0 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-actions .button{min-height:44px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-actions .button[disabled]{opacity:.5;}
+body.app-body.ns-shell-v1 #main .ns-atlas-skip{background:none;border:0;cursor:pointer;font:750 12px system-ui,sans-serif;color:#568569;text-decoration:underline;padding:13px 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-safety{margin-top:18px;background:#fff0df;color:#64482f;border:1px solid #ddbc95;border-radius:15px;padding:19px;font-size:13px;line-height:1.55;}
+body.app-body.ns-shell-v1 #main .ns-atlas-safety p{margin:8px 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-safety a{font-weight:750;color:#704b2b;}
+body.app-body.ns-shell-v1 #main .ns-atlas-section{
+ border:1px solid var(--na-line);border-radius:17px;
+ margin:0 0 10px;overflow:hidden;background:var(--na-paper);
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-section>summary{
+ display:grid;grid-template-columns:45px minmax(0,1fr) 22px;gap:15px;align-items:center;
+ padding:18px 22px;cursor:pointer;list-style:none;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-section>summary::-webkit-details-marker{display:none;}
+body.app-body.ns-shell-v1 #main .ns-atlas-section[open]>summary{border-bottom:1px solid #e2e9dd;background:#f3f8ef;}
+body.app-body.ns-shell-v1 #main .ns-atlas-section-no{
+ display:grid;place-items:center;width:39px;height:39px;border-radius:13px;background:#e4f0df;
+ color:#46825b;font:800 12px system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-section>summary strong{font:750 clamp(17px,2.1vw,22px)/1.22 Georgia,serif;color:#244e3a;display:block;}
+body.app-body.ns-shell-v1 #main .ns-atlas-section>summary small{font:400 12px/1.4 system-ui,sans-serif;color:#6c8170;display:block;margin-top:5px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-chevron{color:#67926c;transition:transform .15s;}
+body.app-body.ns-shell-v1 #main .ns-atlas-section[open] .ns-atlas-chevron{transform:rotate(180deg);}
+body.app-body.ns-shell-v1 #main .ns-atlas-section-body{padding:clamp(17px,3vw,30px);font:400 14px/1.7 system-ui,sans-serif;color:#3c5c47;}
+body.app-body.ns-shell-v1 #main .ns-atlas-section-body>p{margin:0 0 17px;max-width:78ch;}
+body.app-body.ns-shell-v1 #main .ns-atlas-sign-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-sign-grid fieldset{min-width:0;margin:0;padding:14px;border:1px solid #dbe6d7;background:#f7faf4;border-radius:13px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-sign-grid legend{font:800 13px system-ui,sans-serif;color:#36664b;padding:0 5px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-checkbox-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-check{
+ display:flex;gap:9px;align-items:start;min-height:37px;padding:9px;
+ background:#f7faf4;border:1px solid #e1e9dc;border-radius:10px;cursor:pointer;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-check input{margin:3px 0 0;flex:none;accent-color:#478853;}
+body.app-body.ns-shell-v1 #main .ns-atlas-check strong{font:700 12px/1.5 system-ui,sans-serif;color:#365842;display:block;}
+body.app-body.ns-shell-v1 #main .ns-atlas-check small{font:400 11px/1.5 system-ui,sans-serif;color:#70816e;display:block;}
+body.app-body.ns-shell-v1 #main .ns-atlas-cycle{display:flex;align-items:stretch;flex-wrap:wrap;gap:8px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-cycle-node{
+ min-width:120px;flex:1 1 135px;display:flex;align-items:center;gap:11px;
+ padding:12px;border-radius:13px;border:1px solid #d3e3d1;background:#eff6e9;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-cycle-node span{display:grid;place-items:center;flex:none;width:27px;height:27px;border-radius:50%;background:#57935f;color:#fff;font:800 12px system-ui,sans-serif;}
+body.app-body.ns-shell-v1 #main .ns-atlas-cycle-node strong{font:700 12px/1.45 system-ui,sans-serif;}
+body.app-body.ns-shell-v1 #main .ns-atlas-cycle-arrow{font-size:19px;align-self:center;color:#72977a;transform:rotate(-90deg);}
+body.app-body.ns-shell-v1 #main .ns-atlas-variation{display:grid;gap:7px;margin:0 0 18px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-variation strong{font-size:13px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-variation :is(select,input){
+ display:block;width:100%;min-height:45px;padding:10px 14px;color:#2d583f;background:#f9fbf5;
+ border:1px solid #cbdcc9;border-radius:11px;font:400 13px/1.4 system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-all-targets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-all-targets article{padding:15px;border:1px solid #d9e4d4;border-radius:12px;background:#f1f6ed;}
+body.app-body.ns-shell-v1 #main .ns-atlas-all-targets article strong{font-size:13px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-all-targets article p{font-size:12px;line-height:1.5;margin:5px 0 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-target{display:grid;grid-template-columns:30px minmax(0,1fr);gap:11px;padding:15px;background:#f1f6ec;border:1px solid #d9e6d5;border-radius:13px;margin:0 0 9px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-target>span{display:grid;place-items:center;width:29px;height:29px;border-radius:50%;background:#56865b;color:#fff;font-weight:800;}
+body.app-body.ns-shell-v1 #main .ns-atlas-target h3{font:800 15px/1.3 system-ui,sans-serif;margin:0 0 7px;color:#315c44;}
+body.app-body.ns-shell-v1 #main .ns-atlas-target p{font:400 13px/1.55 system-ui,sans-serif;margin:4px 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-work{margin:19px 0;padding:17px;background:#faf7ed;border:1px solid #e8ddc8;border-radius:15px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-work-title{margin:0 0 7px!important;}
+body.app-body.ns-shell-v1 #main .ns-atlas-work-title strong{display:block;font-size:16px;color:#3b5e45;}
+body.app-body.ns-shell-v1 #main .ns-atlas-work-title small{display:block;font-size:12px;color:#69806d;}
+body.app-body.ns-shell-v1 #main .ns-atlas-work>p{font-size:13px;line-height:1.55;}
+body.app-body.ns-shell-v1 #main .ns-atlas-work label{display:grid;gap:7px;margin:12px 0;font:750 13px/1.45 system-ui,sans-serif;}
+body.app-body.ns-shell-v1 #main .ns-atlas-work textarea{
+ width:100%;resize:vertical;min-height:75px;padding:12px 13px;border:1px solid #c8d8bf;
+ border-radius:11px;background:white;color:#234a35;font:400 13px/1.5 system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-resource-links{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-resource-links a,
+body.app-body.ns-shell-v1 #main .ns-atlas-sources a{
+ display:inline-flex;align-items:center;min-height:39px;padding:10px 13px;border-radius:11px;
+ background:#eaf3e3;border:1px solid #cbdcc2;color:#34684a;text-decoration:none;font:750 12px/1.3 system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-progress-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;list-style:none;padding:0;margin:0 0 16px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-progress-list li{display:flex;align-items:center;gap:10px;padding:12px;background:#f0f6ed;border:1px solid #e0eadb;border-radius:10px;font-size:13px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-progress-list li span{display:grid;place-items:center;flex:none;width:28px;height:28px;border-radius:50%;background:#d5e5d0;color:#47774f;font-weight:800;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-box{padding:clamp(13px,2.5vw,22px);border-radius:16px;border:1px solid #d5e3d1;background:#f4f9ef;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-row{display:grid;grid-template-columns:minmax(0,1fr) 22px minmax(0,1fr);align-items:center;gap:8px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-row>div{padding:12px;min-width:0;min-height:88px;border-radius:12px;background:#fffdf8;border:1px solid #dce6d7;overflow-wrap:anywhere;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-row small,.ns-atlas-map-outcome small{font:800 10px system-ui,sans-serif;letter-spacing:.08em;color:#749075;display:block;margin-bottom:9px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-row>span,.ns-atlas-map-arrow{text-align:center;color:#7d9c7d;font-size:20px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-arrow{margin:8px 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-row strong{font:750 13px/1.4 system-ui,sans-serif;color:#376448;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-chip{display:inline-flex;align-items:center;gap:4px;padding:5px 8px;border:1px solid #cee1ce;border-radius:9px;background:#e6f3e4;color:#38634a;margin:3px;font:750 11px/1.3 system-ui,sans-serif;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-chip.user{background:#e4f0fa;border-color:#c6d5e8;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-chip.protect{background:#e0f2cd;border-color:#aed394;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-chip button{border:0;background:none;cursor:pointer;font-size:15px;color:inherit;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-outcome{max-width:560px;margin:auto;padding:14px 19px;text-align:center;background:#fff0e0;border:1px solid #e7d5c0;border-radius:12px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-outcome strong{font:750 14px/1.4 system-ui,sans-serif;color:#6d573b;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-protect{margin:15px 0 0;padding:13px;background:#eaf6e2;border:1px dashed #abceaa;border-radius:12px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-map-protect small{font:800 10px system-ui,sans-serif;color:#5d8169;}
+body.app-body.ns-shell-v1 #main .ns-atlas-extra-links{font-size:12px;line-height:1.5;padding:13px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-extra-links p{margin:5px 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-add{border:1px solid #dbe7d5;border-radius:12px;background:#f7faf5;padding:12px 16px;margin:14px 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-add summary{cursor:pointer;font-size:13px;font-weight:800;color:#467558;}
+body.app-body.ns-shell-v1 #main .ns-atlas-add form{margin:14px 0 0;display:grid;gap:10px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-add label,.ns-atlas-tool-options label{display:grid;gap:6px;font:750 12px system-ui,sans-serif;}
+body.app-body.ns-shell-v1 #main .ns-atlas-add :is(input,select),
+body.app-body.ns-shell-v1 #main .ns-atlas-tool-options select{
+ min-height:43px;width:100%;padding:10px;border:1px solid #c4d5c0;border-radius:10px;background:#fff;color:#25513a;font:400 13px system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-add .button{justify-self:start;}
+body.app-body.ns-shell-v1 #main .ns-atlas-summary{margin:16px 0;padding:18px;background:#eaf3e7;border-radius:13px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-summary p{font:400 13px/1.7 system-ui,sans-serif;}
+body.app-body.ns-shell-v1 #main .ns-atlas-sources{margin:15px 0 0;padding:15px;border:1px solid #dce6d9;border-radius:12px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-sources summary{cursor:pointer;color:#487659;font-weight:750;font-size:13px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-sources>div{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-footer{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;font-weight:800;}
+body.app-body.ns-shell-v1 #main .ns-atlas-footer a{color:#367a50;text-decoration:none;}
+body.app-body.ns-shell-v1 #main .ns-atlas-tool-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;background:#fffcf4;border:1px solid #e1e8d8;border-radius:16px;padding:18px;margin-bottom:13px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-tool-scenario{background:#edf5e8;border-radius:12px;padding:16px;margin-bottom:14px;}
+body.app-body.ns-shell-v1 #main .ns-atlas-tool-scenario small{font:800 10px system-ui,sans-serif;letter-spacing:.1em;color:#60826c;}
+body.app-body.ns-shell-v1 #main .ns-atlas-tool-scenario p{font:750 14px system-ui,sans-serif;margin:7px 0 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-tool .ns-atlas-work{margin:0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-tool-actions{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-reflection{border-left:4px solid #91b887;background:#f2f8ed;padding:16px;font-size:13px;border-radius:0 12px 12px 0;}
+body.app-body.ns-shell-v1 #main .ns-atlas-reflection p{margin:7px 0;line-height:1.65;}
+@media(max-width:750px){
+ body.app-body.ns-shell-v1 #main .ns-atlas-domains{flex-wrap:nowrap;overflow-x:auto;padding-bottom:9px;}
+ body.app-body.ns-shell-v1 #main .ns-atlas-domains button{white-space:nowrap;flex:none;}
+ body.app-body.ns-shell-v1 #main .ns-atlas-sign-grid{grid-template-columns:minmax(0,1fr);}
+}
+@media(max-width:560px){
+ body.app-body.ns-shell-v1 #main :is(.ns-atlas-modes,.ns-atlas-list,.ns-atlas-checkbox-grid,.ns-atlas-sign-grid,.ns-atlas-all-targets,.ns-atlas-progress-list,.ns-atlas-tool-options){grid-template-columns:minmax(0,1fr);}
+ body.app-body.ns-shell-v1 #main .ns-atlas-section>summary{grid-template-columns:32px minmax(0,1fr) 17px;gap:10px;padding:15px 13px;}
+ body.app-body.ns-shell-v1 #main .ns-atlas-section-no{width:31px;height:31px;font-size:11px;}
+ body.app-body.ns-shell-v1 #main .ns-atlas-map-row{grid-template-columns:minmax(0,1fr);gap:5px;}
+ body.app-body.ns-shell-v1 #main .ns-atlas-map-row>span{transform:rotate(90deg);}
+ body.app-body.ns-shell-v1 #main .ns-atlas-cycle-arrow{display:none;}
+ body.app-body.ns-shell-v1 #main .ns-atlas-cycle-node{flex-basis:100%;}
+ body.app-body.ns-shell-v1 #main .ns-atlas-actions .button{flex:1 1 120px;}
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool){--na-ink:#e7f3e7;--na-muted:#c5dac8;--na-line:#5a7c62;--na-paper:#243b2e;color:#e7f3e7;}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) :is(h1,h2,h3){color:#f1f8ed;}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-atlas-header,.ns-atlas-main,.ns-atlas-guide-hero,.ns-atlas-section,.ns-atlas-tool-options){background:#253f30;color:#e7f2e7;border-color:#64836b;}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-atlas-item,.ns-atlas-options label span,.ns-atlas-modes button,.ns-atlas-section[open]>summary,.ns-atlas-check,.ns-atlas-target,.ns-atlas-work,.ns-atlas-map-box,.ns-atlas-map-row>div,.ns-atlas-cycle-node,.ns-atlas-summary){background:#355440!important;color:#e8f4e9!important;border-color:#64876c!important;}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-atlas-item strong,.ns-atlas-section>summary strong,.ns-atlas-check strong,.ns-atlas-target h3,.ns-atlas-cycle-node strong,.ns-atlas-map-row strong){color:#f0f8ef;}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-atlas-guide-hero>p,.ns-atlas-header>p,.ns-atlas-section-body,.ns-atlas-item small){color:#c8dcce;}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-atlas-variation input,.ns-atlas-variation select,.ns-atlas-work textarea,.ns-atlas-tool-options select,.ns-atlas-add input,.ns-atlas-add select){background:#203a29;color:#eff7ee;border-color:#7a9a80;}
+@media(prefers-reduced-motion:reduce){body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
+@media print{body.app-body :is(.app-sidebar,.app-topbar,.app-bottom-nav),body.app-body #main :is(.ns-atlas-back,.ns-atlas-footer,.ns-atlas-add,.ns-atlas-actions){display:none!important;}body.app-body #main .ns-atlas-section{break-inside:avoid;}body.app-body #main .ns-atlas-section>summary{background:#fff!important;}}
