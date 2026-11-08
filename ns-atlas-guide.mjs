@@ -44,7 +44,8 @@ export function makeAtlasFormulation(p,state){
  ].filter(Boolean);
  return {signs,maintainers,contributors,extra,situation,targets,summary:words.join(' ')};
 }
-const parts=p=>p.cycle.map((x,i)=>'<div class="ns-atlas-cycle-node"><span>'+String(i+1)+'</span><strong>'+s(x)+'</strong></div>').join('<span aria-hidden="true" class="ns-atlas-cycle-arrow">↓</span>');
+const parts=(p,state)=>{const m=p.maintainers.find(x=>state.maintainers.has(x.id));const cycle=[p.cycle[0],m?.label||p.cycle[1],p.cycle[2],p.cycle[3]];
+ return cycle.map((x,i)=>'<div class="ns-atlas-cycle-node"><span>'+String(i+1)+'</span><strong>'+s(x)+'</strong></div>').join('<span aria-hidden="true" class="ns-atlas-cycle-arrow">↓</span>');};
 function mapMarkup(p,state){
  const f=makeAtlasFormulation(p,state);
  const ch=(text,cls='',id='')=>'<span class="ns-atlas-map-chip '+cls+'">'+s(text)+
@@ -123,7 +124,7 @@ export function renderAtlasGuide(root,id){
  headline(2,'What does it look like in my life?','Recognise thoughts, feelings, behaviours and physical reactions.',
  '<p>Tick anything that sounds familiar. These examples are not diagnostic criteria.</p>'+signFields(p,state),true)+
  headline(3,'What keeps it going?','A possible feedback loop, not a proven explanation.',
- '<div class="ns-atlas-cycle">'+parts(p)+'</div><p>Different processes may maintain similar symptoms. Choose the ones you recognise later in the guide.</p>')+
+ '<div class="ns-atlas-cycle" data-atlas-cycle>'+parts(p,state)+'</div><p>Different processes may maintain similar symptoms. Choose the ones you recognise later in the guide.</p>')+
  headline(4,'What contributes?','Include context, health, relationships and systems.',
  '<p>Contributors are not necessarily causes. Some are outside your control and may need practical support.</p>'+
  '<div class="ns-atlas-checkbox-grid">'+checkSet('contributor',p.contributors,state.contributors)+'</div>')+
@@ -137,7 +138,7 @@ export function renderAtlasGuide(root,id){
  headline(8,'What progress should look like','Small changes in functioning often come before symptom change.',
  stepsToProgress(p)+'<p>These are examples of progress, not a required order or guarantee.</p>')+
  headline(9,'When self-help may not be enough','Safety, health and professional support matter.',
- support(p)+'<p>If an intervention worsens your situation or is unsafe, do not force it. Reassess the explanation and seek relevant help.</p>')+
+ (p.alert?'<p class="ns-atlas-safety">'+s(p.alert)+'</p>':'')+support(p)+'<p>If an intervention worsens your situation or is unsafe, do not force it. Reassess the explanation and seek relevant help.</p>')+
  headline(10,'Your personalised formulation','Review your own editable map and next steps.',
  '<div data-atlas-map></div><details class="ns-atlas-add"><summary>＋ Add a variable or protective factor</summary>'+
  '<form data-atlas-add-form><label>Variable<input name="label" maxlength="80" required placeholder="e.g. Housing noise, fatigue, support from a friend"></label>'+
@@ -153,7 +154,7 @@ export function renderAtlasGuide(root,id){
  const setHtml=(q,html)=>{const el=root.querySelector(q);if(el)el.innerHTML=html};
  const setText=(q,text)=>{const el=root.querySelector(q);if(el)el.textContent=text};
  const update=()=>{
-  const f=makeAtlasFormulation(p,state);setHtml('[data-atlas-targets]',targetMarkup(p,state));
+  const f=makeAtlasFormulation(p,state);setHtml('[data-atlas-cycle]',parts(p,state));setHtml('[data-atlas-targets]',targetMarkup(p,state));
   setHtml('[data-atlas-worksheet]',worksheetMarkup(p,state));
   setHtml('[data-atlas-map]',mapMarkup(p,state));
   setText('[data-atlas-summary]',f.summary);
