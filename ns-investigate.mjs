@@ -314,6 +314,16 @@ function stepMarkup(t,q,index,total,answer){
 function itemLink([label,url]){return '<a class="ns-inv-resource" href="'+safe(url)+'" '+(url.startsWith('https://')?'target="_blank" rel="noopener noreferrer"':'')+'><strong>'+safe(label)+'</strong><span aria-hidden="true">↗</span></a>';}
 function resultMarkup(f){
  const p=f.primary,a=f.alternative;
+ const systemsPrompts={
+  procrastination:['Can the deadline, workload or task expectation change?','Would clearer instructions, fewer interruptions or support change the difficulty?','Does the task require an adjustment rather than a motivation technique?'],
+  overthinking:['Is the uncertainty created by missing information, unstable circumstances or unclear communication?','Who could provide reliable information or reduce the uncertainty?','Which part requires action, and which part cannot be controlled right now?'],
+  feelings:['Which demands, sensory conditions or expectations are currently too high?','Could recovery time, accessibility or practical support change the situation?','What is within your control, and what requires someone else or an institution to act?'],
+  relationships:['Is there a power imbalance or risk in expressing your needs?','Who has the ability to change the pattern, and are they willing to?','What support or safer alternative is available if direct communication is not appropriate?']
+ };
+ const systemsLinks=[['NHS: Practical problem solving',nhsSolve]];
+ if(['procrastination','feelings'].includes(f.topic.id))systemsLinks.push(['Acas: Workplace adjustments where applicable','https://www.acas.org.uk/reasonable-adjustments']);
+ if(f.caution)systemsLinks.unshift(['Get help and support','#support']);
+
  const cycle=p.cycle.map((s,i)=>'<li><span>'+(i+1)+'</span>'+safe(s)+'</li>').join('');
  const worksheet=p.worksheet.map((s,i)=>'<label>'+safe(s)+'<textarea data-inv-note="'+i+'" rows="3" maxlength="1500" placeholder="Write a few words, or leave this blank"></textarea></label>').join('');
  return '<div class="ns-inv-shell ns-inv-results"><a class="ns-inv-back" href="#investigate">← All investigations</a>'+
@@ -330,6 +340,11 @@ function resultMarkup(f){
  '<p><strong>When it is easier:</strong> '+safe(f.exceptions)+'. <strong>Previously tried:</strong> '+safe(f.prior)+'.</p></section>'+
  '<section class="ns-inv-panel"><p class="eyebrow">TRY SOMETHING PROPORTIONATE</p><h2>A practical next step</h2><p>'+safe(p.tryIt)+'</p>'+
  '<p class="ns-inv-support">If this does not fit, choose a different hypothesis or change the environmental conditions. No single strategy is right for everybody.</p>'+itemLink(p.tool)+'</section>'+
+ '<section class="ns-inv-panel"><p class="eyebrow">LOOK BEYOND THE INDIVIDUAL</p><h2>What could change around you?</h2>'+
+ '<p>'+safe(f.systemNote)+'</p><p>Psychological strategies are not a substitute for safer conditions, reasonable demands, resources or support. Consider these questions:</p>'+
+ '<ul class="ns-inv-systems-list">'+systemsPrompts[f.topic.id].map(x=>'<li>'+safe(x)+'</li>').join('')+'</ul>'+
+ '<div class="ns-inv-resource-list">'+systemsLinks.map(itemLink).join('')+'</div>'+
+ (['procrastination','feelings'].includes(f.topic.id)?'<p class="ns-inv-fine">Workplace adjustments guidance applies where a disability or health condition creates a relevant disadvantage. It is not a general entitlement for every situation.</p>':'')+'</section>'+
  '<section class="ns-inv-panel"><p class="eyebrow">YOUR WORKSHEET</p><h2>Investigate it for yourself</h2><p>Use the prompts to test your understanding. Your answers remain in this browser page and are not automatically stored.</p><div class="ns-inv-worksheet">'+worksheet+'</div>'+
  '<div class="ns-inv-actions"><button class="button" type="button" data-inv-download>Download my worksheet</button><button class="button secondary" type="button" data-inv-print>Print guide</button></div><p class="ns-inv-fine" role="status" data-inv-file-status></p></section>'+
  '<section class="ns-inv-panel"><p class="eyebrow">EVIDENCE-INFORMED READING</p><h2>Learn more from trusted resources</h2><div class="ns-inv-resource-list">'+itemLink(p.source)+itemLink(a.source)+itemLink(['NHS: Practical CBT self-help techniques',nhsCBT])+'</div>'+
