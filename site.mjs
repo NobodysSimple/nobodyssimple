@@ -41,6 +41,8 @@ import { renderPersonalityTest } from "./personality-test.mjs";
 import { renderBigFive, renderQuestionnaires, renderSystemsQuestionnaire } from "./questionnaires.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
 import { renderNSInvestigator } from './ns-investigate.mjs';
+import { renderUniversalConsole } from './ns-universal-console.mjs';
+import { renderNSProblemGuide } from './ns-problem-guide.mjs';
 import { renderToolDiscovery } from './ns-tool-library.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
 import { renderSupport } from "./referrals.mjs";
@@ -834,6 +836,7 @@ function route() {
       (["personality", "big-five", "systems"].includes(currentName) && linkName === "questionnaires") ||
       (startRoutes.has(currentName) && linkName === "home") ||
       (currentName === "investigate" && linkName === "home") ||
+      (currentName === "problem" && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
       (["tool", "play", "guided"].includes(currentName) && linkName === "tools") ||
       (currentName === "post" && linkName === "blog");
@@ -845,7 +848,8 @@ function route() {
       home: () => homePage({learningView:"home"}),
       guide: () => renderNSFieldGuide(main, routeParts.slice(1).map(safeRoutePart), accountState()),
       help: () => homePage({learningView:"home",wizardOnly:true}),
-      navigate: () => homePage({learningView:"home",wizardOnly:true}),
+      navigate: () => renderUniversalConsole(main),
+      problem: () => renderNSProblemGuide(main,safeRoutePart(id)),
       investigate: () => renderNSInvestigator(main,safeRoutePart(id)),
       library: () => {
         if(id === "quotes") wisbodyPage();
@@ -945,6 +949,7 @@ function route() {
     help: "Home",
     navigate: "Home",
     investigate: "Investigate & Learn",
+    problem: "Your Psychological Guide",
     tools: "Tools",
     library: "Home",
     learn: "Learn",
@@ -980,6 +985,7 @@ function route() {
     ? "Today"
     : ["help", "navigate", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
+    : currentName === "problem" ? "Understand a problem"
     : currentName === "investigate" ? "Understand a problem"
     : currentName === "lifestyle" ? "Your everyday life"
     : currentName === "guide" ? "Your private notes"
