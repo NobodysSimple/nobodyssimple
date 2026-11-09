@@ -52,6 +52,8 @@ import {renderAtlasTool} from './ns-atlas-tool.mjs';
 import {atlasGet} from './ns-atlas-core.mjs';
 import {renderNeedsConsole} from './ns-needs-console.mjs';
 import {renderNeedsActivity} from './ns-needs-activities.mjs';
+import {getNeedsMode} from './ns-needs-catalog.mjs';
+import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
 import {attachSteadyGuidebookToTool,steadyGuide} from './ns-steady-guidebook.mjs';
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
 import { renderToolDiscovery } from './ns-tool-library.mjs';
@@ -833,7 +835,7 @@ function route() {
   if (name === "maps" || (name === "tool" && id === "maps")) { location.replace("#account/maps"); return; }
   const currentName = name || "home";
   if(name === "routes" || name === "route") { location.replace("#home"); return; }
-  if(accountState().locked && ['wisbody','tool','play','guided','questions','compass','personality','systems','big-five','stim-space'].includes(name)){
+  if(accountState().locked && ['wisbody','tool','route-tool','play','guided','questions','compass','personality','systems','big-five','stim-space'].includes(name)){
     main.innerHTML='<div class="wrap"><h1>Your saved work is locked</h1><p>Confirm your identity in Account before opening an activity that can read or save private work.</p><a class="button" href="#account">Open account to unlock</a></div>';return;
   }
   const startRoutes = new Set(["help", "navigate", "questions", "navigator", "compass"]);
@@ -847,7 +849,7 @@ function route() {
       (["personality", "big-five", "systems"].includes(currentName) && linkName === "questionnaires") ||
       (startRoutes.has(currentName) && linkName === "home") ||
       (currentName === "investigate" && linkName === "home") ||
-      (currentName === "need" && linkName === "home") ||
+      (["need","route-tool","route-topic","route-activity","route-atlas"].includes(currentName) && linkName === "home") ||
       (currentName === "steady-tool" && linkName === "home") ||
       (currentName === "problem" && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
@@ -863,6 +865,33 @@ function route() {
       help: () => renderNeedsConsole(main),
       navigate: () => renderNeedsConsole(main,routeParts.slice(1).map(safeRoutePart)),
       need: () => renderNeedsActivity(main,safeRoutePart(id)),
+      "route-activity": () => {
+        const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]),target=safeRoutePart(routeParts[3]);
+        const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='activity'&&x.target===target);
+        if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate';return;}
+        renderNeedsActivity(main,target,{mode,option:choice});
+      },
+      "route-tool": () => {
+        const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]),target=safeRoutePart(routeParts[3]);
+        const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='tool'&&x.target===target);
+        if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate';return;}
+        renderTool(main,target);enhanceToolGuide(main,target);
+        attachPathGuide(main,mode,choice,{position:'start'});
+      },
+      "route-topic": () => {
+        const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]),target=safeRoutePart(routeParts[3]);
+        const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='topic'&&x.target===target);
+        if(!selected||!pathGuideForOption(mode,choice)||!atlasGet(target)){location.hash='#navigate';return;}
+        renderReasoningGuide(main,target);
+        attachPathGuide(main,mode,choice,{position:'start'});
+      },
+      "route-atlas": () => {
+        const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]);
+        const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='atlas');
+        if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate/atlas';return;}
+        renderNeedsConsole(main,['atlas']);
+        attachPathGuide(main,mode,choice);
+      },
       problem: () => {const key=safeRoutePart(id);if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
         location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
@@ -943,7 +972,7 @@ function route() {
       ? "Find your next step"
       : name === "help"
       ? "Find your next step"
-      : name === "need" || name === "steady-tool"
+      : ["need","steady-tool","route-activity","route-tool","route-topic","route-atlas"].includes(name)
       ? (main.querySelector('h1')?.textContent?.trim() || 'Your next step')
       : name === "support"
       ? "Get help"
@@ -975,6 +1004,10 @@ function route() {
     navigate: "Home",
     need: "Your next step",
     "steady-tool": "Your next step",
+    "route-activity": "Your next step",
+    "route-tool": "Your next step",
+    "route-topic": "Your psychological guide",
+    "route-atlas": "Find a topic",
     investigate: "Investigate & Learn",
     problem: "Your Psychological Guide",
     tools: "Tools",
@@ -1003,14 +1036,14 @@ function route() {
     questions: "Work something out",
     navigator: "Navigate my life",
   };
-  const pageLabel = name === "tool"
+  const pageLabel = ["tool","route-tool"].includes(name)
     ? main.querySelector(".tool-heading h1, .tool-page h1")?.textContent?.trim() || "Tool"
     : name === "play"
       ? main.querySelector("#interactive-title")?.textContent?.trim() || "Interactive tool"
       : appLabels[currentName] || (title || "Nobody’s Simple");
   const pageKicker = (currentName === "home" || startRoutes.has(currentName))
     ? "Today"
-    : ["help", "navigate", "need", "steady-tool", "questions", "navigator", "compass"].includes(currentName)
+    : ["help", "navigate", "need", "steady-tool", "route-activity","route-tool","route-topic","route-atlas", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
     : currentName === "problem" ? "Understand a problem"
     : currentName === "investigate" ? "Understand a problem"
