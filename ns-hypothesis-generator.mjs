@@ -73,7 +73,7 @@ function asking(state){
  const q=nextHypothesisQuestion(state);
  if(!q)return resultPage(state);
  const track=TRACK_BY_ID[state.trackId],n=state.answers.length;
- const pose=n%3===0?'ns-character-positing.webp':n%3===1?'ns-character-thinking.webp':'ns-character-mapping.webp';
+ const pose=n%3===0?'ns-character-guide.webp':n%3===1?'ns-character-thinking.webp':'ns-character-mapping.webp';
  return page('<section class="ns-hypo-question-stage">'+progress(n)+
   '<div class="ns-hypo-dialogue">'+
   '<div class="ns-hypo-guide">'+art(pose,'ns-hypo-guide-art')+
