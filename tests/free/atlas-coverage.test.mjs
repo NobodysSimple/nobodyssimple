@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {atlasCount,atlasProblemIndex,atlasProfile,atlasSearch,atlasByDomain,isSafetyPriority} from '../../ns-atlas-core.mjs';
+import {inclusiveProblemIndex,inclusiveDomains} from '../../ns-inclusive-topics.mjs';
 import {extendedVariants} from '../../ns-atlas-extended-variations.mjs';
 import {explicitVariants} from '../../ns-atlas-variations.mjs';
 import {worksheetFor,worksheetKinds} from '../../ns-atlas-worksheets.mjs';
@@ -16,8 +17,10 @@ function root(){
   return map.get(selector);
  }};
 }
-test('the atlas contains unique named difficulties with all 166 map routes',()=>{
- assert.equal(atlasCount,166);
+test('the atlas retains 166 existing routes and includes every inclusive experience',()=>{
+ assert.equal(atlasCount,166+inclusiveProblemIndex.length);
+ assert.equal(inclusiveProblemIndex.length,326);
+ assert.equal(inclusiveDomains.length,19);
  assert.equal(new Set(atlasProblemIndex.map(p=>p.id)).size,atlasCount);
  assert.equal(Object.keys(explicitVariants).length,69);
  assert.equal(Object.keys(extendedVariants).length,92);
@@ -39,7 +42,7 @@ test('every mapped problem has a working ten-section guide and specific interact
   for(let n=1;n<=10;n++){
    assert.ok(g.innerHTML.includes('class="ns-atlas-section-no">'+String(n).padStart(2,'0')),p.id+' section '+n);
   }
-  assert.match(g.nodes.get('[data-atlas-map]').innerHTML,/POSSIBLE MAINTAINERS/);
+  assert.match(g.nodes.get('[data-atlas-map]').innerHTML,p.contextFirst?/POSSIBLE INFLUENCES/:/POSSIBLE MAINTAINERS/);
   assert.ok(g.nodes.get('[data-atlas-summary]').textContent.length>30,p.id);
   const t=root();renderAtlasTool(t,p.id);
   assert.ok(t.innerHTML.includes('data-atlas-tool-exercise'),p.id);
