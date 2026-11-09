@@ -58,7 +58,7 @@ body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-topic strong{
 body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-mode small,
 body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-choice small,
 body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-topic small{
- display:block;font:400 12px/1.5 system-ui,sans-serif;color:#587262;
+ display:block;font:400 12px/1.5 system-ui,sans-serif;color:#3b5945;
 }
 body.app-body.ns-shell-v1 #main .ns-needs-mode-mark{
  display:grid;place-items:center;width:36px;height:36px;background:#ffffffa8;
@@ -83,7 +83,7 @@ body.app-body.ns-shell-v1 #main .ns-needs :is(.ns-needs-choice,.ns-needs-topic):
  background:#eaf4e8;border-color:#9ac19e;
 }
 body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-footnote{
- font:400 12px/1.6 system-ui,sans-serif;color:#667e6d;margin:16px 0;
+ font:400 12px/1.6 system-ui,sans-serif;color:#435a49;margin:16px 0;
 }
 body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-footnote a{color:#32744e;font-weight:750;}
 body.app-body.ns-shell-v1 #main .ns-needs-search-label{
