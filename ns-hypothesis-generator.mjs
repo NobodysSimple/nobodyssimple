@@ -15,7 +15,6 @@ import {
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
 const art=(src,css='')=>'<img class="'+css+'" src="'+e(src)+'" loading="eager" alt="Nobody, your curious companion" width="200" height="210">';
-const safe=(x,len=700)=>String(x??'').trim().slice(0,len);
 const stageText='Your answers stay in this open page and disappear when you leave. You can revise every answer and every part of the map.';
 const supportLinks=(kind)=>{
  const medical=kind==='medical'||kind==='physical';
@@ -42,13 +41,13 @@ function landing(){
  return page('<header class="ns-hypo-hero">'+
   '<div><p class="ns-hypo-eyebrow">NOBODY’S SIMPLE · HYPOTHESIS GENERATOR</p>'+
   '<h1>Shall we work out what could be going on?</h1>'+
-  '<p>Tell Nobody what you are experiencing. Together, you will examine different explanations—not receive a label or a verdict.</p>'+
+  '<p>Choose a starting area and Nobody will ask the first question. There is nothing to write or explain in advance.</p>'+
   '<div class="ns-hypo-hero-pills"><span>Follow-up questions adapt to you</span><span>Clickable formulation map</span><span>Revise any part</span></div></div>'+
   '<div class="ns-hypo-hero-art">'+art('ns-character-thinking.webp','ns-hypo-hero-nobody')+
   '<div class="ns-hypo-speech">I’ll ask about what happens, what changes it and what else could explain it.</div></div></header>'+
   '<section class="ns-hypo-pick" aria-labelledby="ns-hypo-start-title"><div class="ns-hypo-section-head">'+
   '<span>01</span><div><p class="ns-hypo-eyebrow">START WITH WHAT YOU NOTICE</p>'+
-  '<h2 id="ns-hypo-start-title">What would you like to investigate?</h2></div></div>'+
+  '<h2 id="ns-hypo-start-title">Where should Nobody begin?</h2><p>Pick the closest area. Nobody will ask follow-up questions and narrow down the details with you.</p></div></div>'+
   '<div class="ns-hypo-track-grid">'+HYPOTHESIS_TRACKS.map(t=>
    '<button type="button" data-hypo-track="'+e(t.id)+'" class="ns-hypo-track">'+
    '<img src="'+e(t.art)+'" loading="lazy" alt="" width="72" height="72"><span><strong>'+e(t.title)+
@@ -58,8 +57,6 @@ function landing(){
   ' placeholder="e.g. rumination, insomnia, perfectionism" autocomplete="off">'+
   '<div class="ns-hypo-topics" data-hypo-topic-results aria-live="polite"></div>'+
   '<p>Only a subset of topics has a dedicated formulation pathway. You can always open the existing field guide directly.</p></details>'+
-  '<label class="ns-hypo-note-label" for="ns-hypo-description">Optional: describe this in your own words</label>'+
-  '<textarea id="ns-hypo-description" rows="3" data-hypo-description maxlength="700" placeholder="For example: I enjoy shaving my legs but I feel uncertain what that means about me. Avoid identifying details."></textarea>'+ '<div class="ns-hypo-description-actions"><button type="button" data-hypo-from-description>Investigate what I described →</button><p data-hypo-description-help aria-live="polite">Or choose one of the starting areas above.</p></div>'+
   '<p class="ns-hypo-quiet">'+e(stageText)+'</p></section>'+
   '<section class="ns-hypo-safety-short"><strong>Need safety or urgent help instead?</strong>'+
   '<p>In immediate danger, call 999 in the UK. You do not need to complete questions.</p>'+
@@ -274,23 +271,19 @@ function saveText(name,raw){
 }
 export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}={}){
  let state=null,stage='start',preselected=initialTrack,topic=initialTopic,selectedNode='';
- let description='';
  const render=(focus=false)=>{
   root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
-  const text=root.querySelector('[data-hypo-description]');if(text)text.value=description;
   if(focus){
    const heading=root.querySelector('#ns-hypo-question, .ns-hypo-result-hero h1, .ns-hypo-pick h2, .ns-hypo-safety-page h1');
    if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
   }
  };
  const begin=(trackId,topicId='')=>{
-  description=safe(root.querySelector('[data-hypo-description]')?.value??description);
-  state=startHypothesis({trackId,topicId,description});
+  state=startHypothesis({trackId,topicId});
   selectedNode='';stage='question';render(true);
  };
  root.addEventListener('input',event=>{
   const el=event.target;
-  if(el.matches('[data-hypo-description]'))description=safe(el.value);
   if(el.matches('[data-hypo-search]')){
    const found=selectableAtlasTopics(el.value);
    const list=root.querySelector('[data-hypo-topic-results]');
@@ -304,15 +297,8 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
  });
  root.addEventListener('click',event=>{
   const b=event.target.closest('button');if(!b)return;
-  if(b.hasAttribute('data-hypo-from-description')){
-   const value=safe(root.querySelector('[data-hypo-description]')?.value??description);
-   const match=findHypothesisTrack(value);
-   if(!value){root.querySelector('[data-hypo-description-help]').textContent='Describe what you would like to understand first, or choose a starting area above.';return;}
-   if(!match){root.querySelector('[data-hypo-description-help]').textContent='I could not place that concern reliably. Choose the closest starting area above; your description will still be included.';return;}
-   begin(match.id);return;
-  }
   if(b.dataset.hypoTrack){begin(b.dataset.hypoTrack,b.dataset.hypoTopic||'');return;}
-  if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';description='';render(true);return;}
+  if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';render(true);return;}
   if(b.hasAttribute('data-hypo-back')){
    if(state?.answers.length){state=backHypothesis(state);stage='question';}
    else {stage='start';state=null;}
