@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | 1. Broad-to-specific discovery | Use the synthetic atlas taxonomy to identify one confirmed target, without an intake textbox | 21 categories, 84 clusters, 440 exact experiences available; ambiguous choices not converted to facts |
 | **2. Structured case evidence** | Elicit personal timeframe, frequency, impact, situation range, exceptions and explicit goal, in addition to the existing valence, meaning and setting | No-writing interview, typed source-backed observations, unknowns/refusal omitted from facts, exact fact cards visible on graph, comprehensive tests |
-| 3. Real adaptive differentiation | Select questions based on missing information, question semantics, contrary cases, actual context and information-gain | Every selected question has an answerable target and avoidable duplicates are demonstrably rare on held-out cases |
+| 3. Functional inquiry and adaptive differentiation | First functional-investigation module now implements a structured, partly conditional inquiry. Further domain-specific differentiation, missing-information prioritisation and empirical calibration remain outstanding | Person-confirmed event–emotion–meaning–response–consequence sequences, sleep, coping, material context, exceptions, counterfactuals and alternatives; stronger selector benchmarks still needed |
 | 4. Correctable causal formulation graph | Distinguish direct observations from theory-based mechanisms and testable edges; allow local repairs | Exact, evidence-backed situation map; revise any node and link, with targeted follow-ups |
 | 5. Synthetic and expert evaluation | Evaluate factual precision, burden, safety, bias and formulation quality | Held-out synthetic benchmark and independently reviewed cases show acceptable results against a simple baseline |
 | 6. Empirical research and calibration | Obtain consented real assessment data and independent clinician judgments | Ethics/data governance, external validation, inter-rater variability and justified uncertainty estimates |
@@ -53,6 +53,20 @@ Only explicit selection values are represented as `source:'user_selection'` fact
 - `tests/free/hypothesis-case-facts.test.mjs` — all 440 exact experience routes, unknown/refusal, regression.
 - `tests/browser/hypothesis-case-facts.spec.mjs` — actual browser interactions and accessibility.
 
-### Next sprint: Stage 3
+### Stage 3 implementation (first vertical slice)
+
+The new `ns-hypothesis-investigation.mjs` adds **19 individually authored, no-writing investigation questions**. Starting from an existing console topic, the visitor can choose "Investigate what might be keeping this going". This complements (not replaces) the 440-node subtype drill and six factual case questions.
+
+The investigation probes: who is involved; observed interactions separately from labels used about other people; the event just before an emotion; the specific emotion; meaning or threat; actual next behaviour; main emotion-regulation strategy; immediate change; longer-term effect; sleep and capacity; material constraints; exceptions; counterfactual consequences; chosen values and tradeoffs; alternative explanations; and optional safe ways of testing them. Some questions are conditional, for example asking about paternal behaviour only after the person chooses "my dad".
+
+**Evidence in the graph:** An explicitly selected phrase such as "I describe my dad as narcissistic" is displayed as the person's *own interpretation*. It does **not** classify the father as having narcissistic personality disorder. The separate "what behaviour did you observe?" answer appears as a reported observation. Other tiles now use verbatim option labels for emotion, meaning, response, coping, immediate relief or worsening, later effect, sleep and values, where answered.
+
+**Proposed links:** The graph only draws an event → emotion → meaning → response → consequence link when both endpoints were explicitly selected. It labels links as hypotheses, includes each endpoint's original option wording and asks what would challenge the link. The visitor can mark the link "worth testing", "uncertain" or "wrong"; this review is recorded locally without changing the underlying observations or claiming a causal discovery.
+
+**Safety:** A response indicating intimidation by the father ends the investigative branch with safety-first information; the answer can be corrected. Unknown, "other" and refusal answers do not become specific case facts. The investigation does not submit, store, share or learn from private answers.
+
+**Not yet delivered:** An expert clinician's open-ended interviewing capabilities, person-specific language understanding, empirically fitted conditional likelihoods, validated inference of latent factors, safe and independently validated treatment recommendations, and the complete domain-specific branching question web. The 19 questions are a **first functional-analysis layer**, not full completion of the entire Stage 3 or a clinical diagnostic engine. Broad score-based candidate ranking remains heuristic and uncalibrated. The next work should expand genuinely differential/conditional questions and test whether new questions predict distinct answers or reveal new facts, rather than rewarding simply longer interviews.
+
+### Remaining Stage 3 work
 
 Use curated synthetic contrast cases from the ZIP as **test fixtures**, not population samples. Introduce `concept_id`/precondition/gating metadata across the full question pool; compute priority from genuine missing fact slots, explicit competing hypotheses and contraindications, rather than principally from hand-authored signal scores. Add a user-controlled 'not included' outcome and a clinically reviewed question-adequacy rubric. Compare the proposed selector with the present baseline against held-out cases, testing factual precision and redundancy before making the new policy the default.
