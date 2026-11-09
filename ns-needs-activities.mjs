@@ -4,6 +4,7 @@
 import {escapeHTML as escape} from './core.mjs';
 import {getNeedsActivity} from './ns-needs-catalog.mjs';
 import {attachSteadyGuidebook} from './ns-steady-guidebook.mjs';
+import {attachPathGuide} from './ns-pathway-guidebook.mjs';
 const e=value=>escape(String(value??''));
 export const PROCESSING_ACTIVITIES=Object.freeze({
  'process-feel':{
@@ -112,14 +113,15 @@ function downloadLocal(filename,content){
  const link=document.createElement('a');link.href=url;link.download=filename;document.body.appendChild(link);link.click();link.remove();
  setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
-function renderSupport(root){
+function renderSupport(root,context=null){
  root.innerHTML=shell('<header class="ns-needs-header ns-tone-peach"><p class="ns-needs-eyebrow">SAFETY AND PRACTICAL SUPPORT</p>'+
  '<h1>Support and safety come first</h1><p>If someone threatens, controls or monitors you, you do not have to confront them or complete a worksheet. You can choose safe practical support instead.</p></header>'+
  '<section class="ns-needs-panel"><h2>Ways to get help</h2><div class="ns-needs-support-list">'+
  support.map(x=>'<article><h3>'+e(x.name)+'</h3><p>'+e(x.copy)+'</p><a href="'+e(x.url)+'" target="_blank" rel="noopener noreferrer">Official guidance and support ↗</a></article>').join('')+
  '</div><p class="ns-needs-footnote">You do not need to describe private experiences to access these links. This page does not assess risk or replace emergency care.</p></section>','relate');
+ attachPathGuide(root,context?.mode||'relate',context?.option||'unsafe',{label:'Read the safety and support guide'});
 }
-function renderProcess(root,id){
+function renderProcess(root,id,context=null){
  const activity=PROCESSING_ACTIVITIES[id];
  const chosen=getNeedsActivity(id);
  if(!activity||!chosen)return;
@@ -147,6 +149,7 @@ function renderProcess(root,id){
   root.innerHTML=shell(head+section+'<p class="ns-needs-footnote">'+
    'Processing is not a test of how quickly sadness, anger or grief disappears. If reflection becomes too distressing, you can stop or switch to '+ 
    '<a href="#navigate/regulate">feeling steadier</a>.</p>','process');
+   attachPathGuide(root,context?.mode||'process',context?.option||id.replace(/^process-/,''));
   const update=()=>{const input=root.querySelector('#ns-process-text');if(input)notes[step]=input.value};
   root.querySelector('#ns-process-text')?.addEventListener('input',update);
   root.querySelector('[data-process-prev]')?.addEventListener('click',()=>{update();step=Math.max(0,step-1);paint()});
@@ -189,9 +192,9 @@ function renderSteady(root,id){
  };
  paint();
 }
-export function renderNeedsActivity(root,id){
- if(id==='support-safety')return renderSupport(root);
- if(PROCESSING_ACTIVITIES[id])return renderProcess(root,id);
+export function renderNeedsActivity(root,id,context=null){
+ if(id==='support-safety')return renderSupport(root,context);
+ if(PROCESSING_ACTIVITIES[id])return renderProcess(root,id,context);
  if(SETTLING_ACTIVITIES[id])return renderSteady(root,id);
  root.innerHTML=shell('<section class="ns-needs-panel"><h1>Activity not found</h1>'+
  '<p>This activity is not available. Choose another starting point instead.</p><a href="#navigate">Back to the navigator</a></section>','');
