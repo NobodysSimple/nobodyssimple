@@ -367,3 +367,41 @@ export function adaptiveLinks(state){
   'Could the conflict be created by outside constraints rather than opposing personal values?');
  return out;
 }
+
+/* Disconfirmation is not simply the absence of supporting answers. These
+ * counter-leads require affirmative person-selected observations that make a
+ * popular single-cause interpretation insufficient. */
+const CONTRAST_CHALLENGES=Object.freeze([
+ {id:'sleep-alone',title:'Poor sleep alone may not explain this',
+  needs:{sleep:['too_little','difficulty','irregular','oversleep'],'adaptive:sleep_contrast':['unchanged']},
+  explanation:'The person reported a sleep problem, but the particular difficulty stayed similar after rest. Sleep might still contribute, but the simple sleep-only story is weakened.'},
+ {id:'self-response-alone',title:'The person’s response alone may not maintain the problem',
+  needs:{father_behaviour:['dismissal','rules','broken_promises','unavailable','inconsistent'],'adaptive:external_persistence':['persists']},
+  explanation:'The other person’s conduct was reported to persist regardless of the user’s reaction. Do not replace actual conduct with an explanation based only on coping.'},
+ {id:'setting-alone',title:'Changing the setting did not resolve everything',
+  needs:{environment:['power','resources','support','sensory','unclear'],'adaptive:external_action':['unchanged']},
+  explanation:'A reported external condition matters, but changing it did not eliminate the difficulty. The current evidence does not establish what else contributes.'},
+ {id:'coping-as-cause',title:'Changing the response did not remove the original difficulty',
+  needs:{short_term:['relief','numb','control'],'adaptive:coping_counterfactual':['same']},
+  explanation:'The person reported a comparable difficulty after a different response. That weakens the claim that the coping response alone caused persistence.'},
+ {id:'pure-interpretation',title:'The difficulty is not established as merely a mistaken interpretation',
+  needs:{interpretation:['rejected','inadequate','controlled','unsafe','mistake'],'adaptive:meaning_evidence':['events']},
+  explanation:'Specific observed events were cited for the feared meaning. Their motives remain unknown, but a blanket cognitive-reframing explanation would overlook reported events.'},
+ {id:'pure-inner-conflict',title:'An internal values conflict is not necessarily the primary problem',
+  needs:{'adaptive:values_external':['external']},
+  explanation:'The person located the constraint outside their personal preferences. Do not invent an internal conflict where actual opportunities or choices are restricted.'},
+ {id:'recurrent-loop',title:'A stable maintaining cycle has not been observed',
+  needs:{short_term:['relief','numb','control'],'adaptive:recurrent_cycle':['different','only_once']},
+  explanation:'The reported sequence either varies or has occurred too rarely to establish a repeated reinforcement pattern.'}
+]);
+export function adaptiveChallenges(state){
+ if(!state||state.safety)return [];
+ const evidence=[...investigationFacts(state),...adaptiveFacts(state)];
+ const by=new Map(evidence.map(f=>[f.kind,f]));
+ return CONTRAST_CHALLENGES.filter(c=>
+   Object.entries(c.needs).every(([kind,values])=>values.includes(by.get(kind)?.value)))
+  .map(c=>({id:'challenge:'+c.id,title:c.title,explanation:c.explanation,
+    source:'user_reported_contrast_not_proof',
+    evidence:Object.keys(c.needs).map(k=>by.get(k)).filter(Boolean)
+      .map(f=>({id:f.id,question:f.question,answer:f.text}))}));
+}
