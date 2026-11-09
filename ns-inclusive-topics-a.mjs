@@ -1081,6 +1081,48 @@ export const INCLUSIVE_GROUPS_A = [
     "Someone is taking advantage of my financial situation",
     "Fraud, unfair terms or pressure can undermine autonomy.",
     "scams money exploitation"
+   ],
+   [
+    "sexism",
+    "I am experiencing sexism",
+    "Gender-based unequal treatment can affect safety, access and opportunity.",
+    "gender discrimination misogyny"
+   ],
+   [
+    "misogyny",
+    "I am dealing with hostility towards women",
+    "Misogynistic behaviour may require protection and institutional response.",
+    "sexism prejudice women"
+   ],
+   [
+    "gendered-double-standards",
+    "Different rules seem to apply to me because of my gender",
+    "Norms and unequal expectations can influence opportunity and relationships.",
+    "gender roles stereotypes"
+   ],
+   [
+    "pregnancy-discrimination",
+    "I am being treated unfairly because of pregnancy or parenthood",
+    "Unequal opportunities or conditions connected to pregnancy or parenting deserve practical attention.",
+    "maternity discrimination employment"
+   ],
+   [
+    "workplace-sexism",
+    "Sexism at work is affecting my wellbeing",
+    "Bias, harassment and unequal recognition may need workplace remedies.",
+    "gender pay gap bias"
+   ],
+   [
+    "sexual-objectification",
+    "I feel reduced to my appearance or sexuality",
+    "Objectification can affect dignity, safety and social participation.",
+    "sexualised harassment"
+   ],
+   [
+    "gender-role-pressure",
+    "I am pressured to conform to traditional gender roles",
+    "Expectations about care, work and expression may constrain choice.",
+    "masculinity femininity social norms"
    ]
   ]
  },
