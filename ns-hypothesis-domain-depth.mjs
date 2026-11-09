@@ -158,10 +158,10 @@ function domainQuestions(state){
  const cluster=subtypeNode(state.drill?.clusterId);
  const subject=leaf?.label||cluster?.label||'this experience';
  const lens=profile.lenses.find((_,i)=>sel(state,'primary')==='factor'+(i+1));
- const make=(id,layer,question,choices,why,prereq=true)=>
+ const make=(id,layer,question,choices,why,prereq=true)=>(
   {id,layer,questionId:'Q-NS-DOMAIN-'+id.toUpperCase(),conceptId:'domain:'+profile.area+':'+id,
    prompt:question,options:options(choices),why,subject,category:profile.area,
-   clusterId:state.drill.clusterId,prereq};
+   clusterId:state.drill.clusterId,prereq});
  return [
   make('primary','context','Which circumstance seems most closely associated with your experience of '+subject+'?',
    [...profile.lenses.map((x,i)=>['factor'+(i+1),x]),['none','No clear condition stands out']],
