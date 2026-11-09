@@ -36,7 +36,7 @@ test('every mode offers direct explicit choices with working destinations and wi
    if(option.type==='tool')assert.ok(idSet.has(option.target),mode.id+' broken tool '+option.target);
    if(option.type==='topic')assert.ok(atlasGet(option.target),mode.id+' missing topic '+option.target);
    if(option.type==='activity')assert.ok(getNeedsActivity(option.target),mode.id+' missing activity '+option.target);
-   if(option.type==='atlas')assert.equal(destination,'#navigate/atlas');
+   if(option.type==='atlas')assert.match(destination,/^#route-atlas\//);
   }
   assert.ok(ids.has(getNeedsMode(mode.id).id));
  }
