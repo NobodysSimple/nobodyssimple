@@ -32,7 +32,7 @@ test('direct legacy settling link displays the one-task chooser and a genuine ad
 test('Feel steadier retains DBT-informed options as voluntary cards, not compulsory steps',async({page})=>{
  await load(page,'overwhelmed');
  await page.locator('[data-pick-filter="regulation"]').click();
- await expect(page.locator('[data-pick-card]').toHaveCount(3);
+ await expect(page.locator('[data-pick-card]')).toHaveCount(3);
  const first=page.locator('[data-pick-open]').first();
  const id=await first.getAttribute('data-pick-open');
  await first.click();
