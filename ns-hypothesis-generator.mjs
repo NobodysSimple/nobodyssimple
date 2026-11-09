@@ -126,7 +126,7 @@ function functionalInvestigationPage(state){
   '" data-hypo-invest-question="'+e(q.questionId)+'"><span>'+e(o.label)+'</span><span aria-hidden="true">→</span></button>').join('');
  return page('<section class="ns-hypo-drill ns-hypo-functional" aria-labelledby="ns-hypo-question">'+
   '<div class="ns-hypo-drill-top"><p class="ns-hypo-eyebrow">INVESTIGATING THE POSSIBLE PATTERN · '+(count+1)+' QUESTIONS SO FAR</p>'+
-  '<p>Events → feelings → meanings → responses → consequences. Each link must be tested, not assumed.</p></div>'+
+  '<p><strong>Your selected concern: '+e(q.subject)+'</strong> · Events → feelings → meanings → responses → consequences. Each link must be tested, not assumed.</p></div>'+
   '<div class="ns-hypo-dialogue"><div class="ns-hypo-guide">'+art('ns-character-thinking.webp','ns-hypo-guide-art')+
   '<div class="ns-hypo-guide-caption"><strong>Nobody</strong><span>Looking for alternatives</span></div></div>'+
   '<div class="ns-hypo-speech-card"><p class="ns-hypo-eyebrow">'+e(q.concept.toUpperCase())+'</p>'+
