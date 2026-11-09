@@ -149,7 +149,7 @@ test('specialised questions cover every starting area, and safety gates remain a
  assert.equal(unsafe.safety.kind,'coercion');
  assert.equal(nextHypothesisQuestion(unsafe),null);
 });
-test('actual UI includes narrative entry, clickable graph, individual correction and question history',()=>{
+test('retired UI source remains inspectable but its stylesheet is no longer loaded',()=>{
  const ui=readFileSync('ns-hypothesis-generator.mjs','utf8');
  const css=readFileSync('ns-hypothesis-depth.css','utf8');
  const index=readFileSync('index.html','utf8');
@@ -165,7 +165,7 @@ test('actual UI includes narrative entry, clickable graph, individual correction
  assert.match(ui,/data-hypo-node-save/);
  assert.match(ui,/ns-hypo-graph-branches/);
  assert.match(css,/ns-hypo-graph-node/);
- assert.match(index,/ns-hypothesis-depth.css/);
+ assert.doesNotMatch(index,/ns-hypothesis-depth.css/);
  assert.match(sw,/ns-hypothesis-deep-content.mjs/);
  assert.doesNotMatch(ui,/localStorage|sessionStorage|sendBeacon|fetch\(/);
 });
