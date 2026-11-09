@@ -372,7 +372,7 @@ export function hypothesisResult(state){
   alternatives,patterns:[...patterns,...deepFormulation.hypotheses],challenges,domain:deepFormulation,graph,links:[...investigationLinks(state),...adaptiveLinks(state),...deepFormulation.links].map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
    deepFormulation.hypotheses.length?'Your answers suggest a possible relationship between conditions and changes in the experience. This is a working explanation to challenge, not an established cause.':
-   state.drill?.unsupportedCategory?'You have identified an experience, but this area lacks a reviewed general mechanism interview. The optional domain-specific questions can investigate what may contribute without guessing a diagnosis.':
+   state.drill?.unsupportedCategory?'You have identified a specific experience. This part of the synthetic atlas does not yet have a reviewed explanatory interview, so no psychological mechanism is inferred. The optional domain-specific questions can investigate possible contributors without guessing a diagnosis.':
    patterns.length?'Your answers support testing specific patterns and their alternatives, but do not establish a cause.':
    examined===0?'There is not enough distinguishing information yet.':
    unresolved?'Several explanations remain plausible. The answers cannot establish one cause.':
