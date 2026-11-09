@@ -128,8 +128,9 @@ export function startHypothesis({trackId='',topicId='',description=''}={}){
  const track=TRACK_BY_ID[trackId]||findHypothesisTrack(topicId)||findHypothesisTrack(description)||TRACK_BY_ID.procrastination;
  const raw=cap(description),risk=isSafetyPriority(topicId);
  const indicator=raw?safetyScreen(raw):null;
- const safety=risk?{kind:'crisis',reason:'This issue requires support before an automated formulation.'}:
-  indicator&&['crisis','coercion','harm'].includes(indicator.kind)?indicator:null;
+ const safety=risk?{kind:'support',reason:'This issue requires individual support before an automated formulation.'}:
+  indicator&&['crisis','coercion','harm','physical','unusual'].includes(indicator.kind)?
+    {...indicator,kind:indicator.kind==='physical'?'medical':indicator.kind==='unusual'?'support':indicator.kind}:null;
  return {version:'2026-11-09-original-1',trackId:track.id,topicId:topicId&&atlasGet(topicId)&&!risk?topicId:null,
   description:raw,answers:[],feedback:{},safety};
 }
