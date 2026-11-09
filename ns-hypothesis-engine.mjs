@@ -9,7 +9,7 @@ import {DEEP_PROCESSES,DEEP_BY_ID,EXTRA_BY_TRACK,DEEP_QUESTIONS,DEEP_QUESTION_BY
 import {buildFormulationGraph,graphCoverage,graphText,layerQuestionTags,editGraphNode,reopenGraphLayer} from './ns-hypothesis-graph.mjs';
 import {beginSubtypeDrill,answerSubtypeDrill,subtypeQuestion,subtypeNode} from './ns-hypothesis-subtype-atlas.mjs';
 import {newCaseDetailInterview,caseDetailReport} from './ns-hypothesis-case-facts.mjs';
-import {newInvestigation,investigationReport,investigationLinks} from './ns-hypothesis-investigation.mjs';
+import {newInvestigation,investigationReport,investigationLinks,investigationFacts} from './ns-hypothesis-investigation.mjs';
 import {testableDifferentials} from './ns-hypothesis-differentials.mjs';
 import {newAdaptiveInquiry,adaptiveDifferentials,adaptiveFacts,adaptiveReport,SYNTHETIC_MECHANISMS} from './ns-hypothesis-adaptive.mjs';
 
