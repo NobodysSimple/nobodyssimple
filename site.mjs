@@ -52,6 +52,7 @@ import {renderAtlasTool} from './ns-atlas-tool.mjs';
 import {atlasGet} from './ns-atlas-core.mjs';
 import {renderNeedsConsole} from './ns-needs-console.mjs';
 import {renderIntegratedWorkbook} from './ns-integrated-workbook.mjs';
+import {renderHypothesisGenerator} from './ns-hypothesis-generator.mjs';
 import {renderNeedsActivity} from './ns-needs-activities.mjs';
 import {getNeedsMode} from './ns-needs-catalog.mjs';
 import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
@@ -855,6 +856,7 @@ function route() {
       (currentName === "steady-tool" && linkName === "home") ||
       (currentName === "problem" && linkName === "home") ||
       (["workbook","workbook-topic"].includes(currentName) && linkName === "home") ||
+       (currentName === "hypothesis" && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
       (["tool", "play", "guided"].includes(currentName) && linkName === "tools") ||
       (currentName === "post" && linkName === "blog");
@@ -874,6 +876,7 @@ function route() {
       },
       workbook: () => showWorkbook({mode:safeRoutePart(id),option:safeRoutePart(routeParts[2])}),
       "workbook-topic": () => showWorkbook({topic:safeRoutePart(id)}),
+      hypothesis: () => renderHypothesisGenerator(main,{initialTrack:safeRoutePart(id)}),
       need: () => {
         const target=safeRoutePart(id);
         if(target==='support-safety'){renderNeedsActivity(main,target);return;}
@@ -986,6 +989,8 @@ function route() {
       ? (main.querySelector("h1")?.textContent?.trim() || "Learn")
       : name === "navigate"
       ? "Find your next step"
+      : name === "hypothesis"
+      ? "Hypothesis Generator"
       : name === "workbook" || name === "workbook-topic"
       ? (main.querySelector('h1')?.textContent?.trim() || 'Interactive field guide')
       : name === "help"
@@ -1022,6 +1027,7 @@ function route() {
     navigate: "Home",
     workbook: "Interactive field guide",
     "workbook-topic": "Interactive field guide",
+    hypothesis: "Hypothesis Generator",
     need: "Your next step",
     "steady-tool": "Your next step",
     "route-activity": "Your next step",
@@ -1066,6 +1072,7 @@ function route() {
     : ["help", "navigate", "need", "steady-tool", "workbook", "workbook-topic", "route-activity","route-tool","route-topic","route-atlas", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
     : currentName === "problem" ? "Understand a problem"
+    : currentName === "hypothesis" ? "Explore a working hypothesis"
     : currentName === "investigate" ? "Understand a problem"
     : currentName === "lifestyle" ? "Your everyday life"
     : currentName === "guide" ? "Your private notes"
