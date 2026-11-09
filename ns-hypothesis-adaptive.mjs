@@ -285,7 +285,7 @@ const RULES=[
  {id:'external-persistent',title:'External conditions may be a primary contributor',
   mechanisms:['relationship_power','boundary_mismatch'],requires:{'adaptive:external_persistence':['persists'],'father_behaviour':['dismissal','rules','broken_promises','unavailable','inconsistent']},
   contrary:{'adaptive:external_persistence':['stopped']},
-  alternative:'The person's response can still alter its impact; the other person's motives remain unknown.'},
+  alternative:'The response may affect its impact, even when the other person\u2019s motives remain unknown.'},
  {id:'capacity-sensitive',title:'Rest and limited capacity may be contributing',
   mechanisms:['sleep_restriction','cognitive_fatigue'],requires:{sleep:['too_little','difficulty','irregular','oversleep'],'adaptive:sleep_contrast':['easier']},
   contrary:{'adaptive:sleep_contrast':['unchanged']},
