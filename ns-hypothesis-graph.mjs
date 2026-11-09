@@ -6,6 +6,7 @@ import {DEEP_QUESTION_BY_ID} from './ns-hypothesis-deep-content.mjs';
 import {drillFacts,subtypeNode} from './ns-hypothesis-subtype-atlas.mjs';
 import {caseDetailFacts} from './ns-hypothesis-case-facts.mjs';
 import {investigationFacts,investigationLinks} from './ns-hypothesis-investigation.mjs';
+import {testableDifferentials} from './ns-hypothesis-differentials.mjs';
 const reply={yes:'Yes',probably:'Probably',unsure:'Not sure','probably-not':'Probably not',no:'No'};
 const positive=a=>['yes','probably'].includes(a.answerId);
 const significant=a=>a.answerId!=='unsure';
@@ -42,6 +43,7 @@ export function buildFormulationGraph(state,candidates,questionIndex){
  const direct=(items)=>items.filter(x=>positive(x.a)).slice(0,3).map(x=>x.item);
  const normal=(items)=>items.slice(0,3).map(x=>x.item);
  const supporting=leader?.positive?.length||0;
+ const differentialPatterns=testableDifferentials(state);
  // Preserve exact details explicitly selected by the person, never infer
  // more than the available selection establishes.
  const drill=state.drill;
@@ -88,6 +90,13 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    detail:'What you said you do, including how you regulate difficult feelings. A response is not necessarily a protective strategy.',
    evidence:[...inquiryEvidence('action','regulation'),...normal(responses)].slice(0,7),
    status:inquiryFor('action')||inquiryFor('regulation')||responses.length?'reported':'unknown'},
+  ...differentialPatterns.map((pattern,i)=>({
+   id:pattern.id,layer:'mechanism',title:pattern.title,
+   detail:pattern.description+' Why it may be wrong: '+pattern.falsifier+
+    ' Alternative: '+pattern.alternative,
+   evidence:pattern.evidence,challenges:[],
+   status:'tentative',rank:i+1,
+   source:'multi_observation_test_not_clinical_probability'})),
   ...[leader,...other].filter(Boolean).map((c,i)=>({
    id:'mechanism:'+c.id,layer:'mechanism',title:c.process.title,
    detail:c.process.description,
