@@ -45,7 +45,7 @@ test('an independent Games scroller sits after the worksheet area on several rou
   await expect(games.locator('textarea,input')).toHaveCount(0);
   await expect(worksheet.locator('.ns-pick-empty')).toBeVisible();
   const before=await games.evaluate(el=>el.compareDocumentPosition(document.querySelector('#ns-pick-selected')));
-  expect((before&Node.DOCUMENT_POSITION_PRECEDING)!==0,route).toBeTruthy();
+  expect((before&2)!==0,route).toBeTruthy(); // DOM Node.DOCUMENT_POSITION_PRECEDING
  }
 });
 test('games horizontally scroll, filter independently and open exactly one no-writing interaction',async({page})=>{
