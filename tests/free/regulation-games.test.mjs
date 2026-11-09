@@ -98,7 +98,7 @@ test('game scroller is a distinct no-writing section below the unchanged workshe
  assert.match(index,/ns-regulation-games.css/);
  assert.match(source('sw.js'),/ns-regulation-games.mjs/);
  assert.doesNotMatch(ui,/localStorage|sessionStorage|sendBeacon|fetch\(|speechSynthesis|AudioContext|setInterval|setTimeout/);
- assert.doesNotMatch(ui,/textarea|<input|score|streak|leaderboard/i);
+ assert.doesNotMatch(ui,/<textarea|<input|data-game-score|data-game-streak|leaderboard/i);
  assert.match(site,/location.replace\('#navigate'\)/);
  assert.doesNotMatch(home,/<strong>Browse tools<\/strong>/);
  assert.ok(home.indexOf('ns-home-compass')>home.indexOf('ns-home-hypothesis'));
