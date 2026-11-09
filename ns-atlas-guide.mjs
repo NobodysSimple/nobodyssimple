@@ -118,7 +118,7 @@ export function renderAtlasGuide(root,id){
  maintainers:new Set(hand.maintainer&&hand.maintainer!=='unknown'?[hand.maintainer]:[]),
  contributors:new Set(hand.contributors||[]),signs:new Set(hand.signs||[]),
  custom:[...(hand.custom||[])],notes:{...(hand.notes||{})},nextId:0};
- const write=()=>writeAtlasSession({id,variant:state.variant,customSituation:state.customSituation,maintainer:[...state.maintainers][0]||'',worksheetFocus:focusFor(state),contributors:[...state.contributors],signs:[...state.signs],custom:[...state.custom],notes:state.notes});
+ const write=()=>writeAtlasSession({...((readAtlasSession(id)||hand)),id,variant:state.variant,customSituation:state.customSituation,maintainer:[...state.maintainers][0]||'',worksheetFocus:focusFor(state),contributors:[...state.contributors],signs:[...state.signs],custom:[...state.custom],notes:state.notes});
  const markup='<div class="ns-atlas-guide"><a class="ns-atlas-back" href="#navigate">← Back to Emotional Calculator</a>'+
  '<header class="ns-atlas-guide-hero"><p class="eyebrow">YOUR PSYCHOLOGICAL FIELD GUIDE</p><h1>'+s(p.title)+'</h1>'+
  '<p>Find what fits your experience, test possible explanations, and choose what might be useful—without turning a few answers into a diagnosis.</p>'+

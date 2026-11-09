@@ -15,7 +15,7 @@ export function renderAtlasTool(root,id){
  if(!p){root.innerHTML='<p>This exercise is not yet available. <a href="#navigate">Return to the console</a>.</p>';return;}
  const from=readAtlasSession(id)||getAtlasHandoff(id)||{};
  const state={variant:from.variant||'',maintainer:from.maintainer||'',customSituation:from.customSituation||'',notes:{...from.notes}};
- const hold=()=>writeAtlasSession({...from,id,variant:state.variant,maintainer:state.maintainer,customSituation:state.customSituation,notes:state.notes});
+ const hold=()=>writeAtlasSession({...((readAtlasSession(id)||from)),id,variant:state.variant,maintainer:state.maintainer,customSituation:state.customSituation,notes:state.notes});
  const intro='<div class="ns-atlas-tool"><a href="#problem/'+s(id)+'" class="ns-atlas-back">← Back to the learning guide</a>'+
  '<header class="ns-atlas-guide-hero"><p class="eyebrow">NOBODY’S SIMPLE · PERSONAL PRACTICE</p><h1>'+s(p.title)+'</h1>'+
  '<p>A specific tool for this problem. Choose what fits your situation and explore an appropriate next step.</p></header>'+

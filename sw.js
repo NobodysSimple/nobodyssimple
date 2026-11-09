@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v143-atlas-worksheets';
+const CACHE = 'nobodyssimple-release-v144-reasoning-rebuild';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -19,7 +19,8 @@ const INSTALL_OPTIONAL = [
   'ns-problem-map.mjs', 'ns-universal-console.mjs', 'ns-problem-guide.mjs', 'ns-emotional-calculator.css',
   'ns-precision-content.mjs', 'ns-precision-console.mjs', 'ns-precision-guide.mjs', 'ns-precision.css',
   'ns-atlas-extended.mjs','ns-atlas-variations.mjs','ns-atlas-extended-variations.mjs','ns-atlas-core.mjs','ns-atlas-console.mjs',
-  'ns-atlas-session.mjs','ns-atlas-worksheets.mjs','ns-atlas-guide.mjs','ns-atlas-tool.mjs','ns-atlas.css'
+  'ns-atlas-session.mjs','ns-atlas-worksheets.mjs','ns-atlas-guide.mjs','ns-atlas-tool.mjs','ns-atlas.css',
+  'ns-reasoning-model.mjs','ns-reasoning-console.mjs','ns-reasoning-bridge.mjs','ns-reasoning.css'
 ];
 const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
 const SAFE_QUERY = /^\?v=[a-z0-9._-]{1,40}$/i;

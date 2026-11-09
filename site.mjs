@@ -50,6 +50,8 @@ import {renderAtlasConsole} from './ns-atlas-console.mjs';
 import {renderAtlasGuide} from './ns-atlas-guide.mjs';
 import {renderAtlasTool} from './ns-atlas-tool.mjs';
 import {atlasGet} from './ns-atlas-core.mjs';
+import {renderReasoningConsole} from './ns-reasoning-console.mjs';
+import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
 import { renderToolDiscovery } from './ns-tool-library.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
 import { renderSupport } from "./referrals.mjs";
@@ -854,9 +856,9 @@ function route() {
     ({
       home: () => homePage({learningView:"home"}),
       guide: () => renderNSFieldGuide(main, routeParts.slice(1).map(safeRoutePart), accountState()),
-      help: () => renderAtlasConsole(main),
-      navigate: () => renderAtlasConsole(main),
-      problem: () => {const key=safeRoutePart(id);if(atlasGet(key))renderAtlasGuide(main,key);else renderNSProblemGuide(main,key);},
+      help: () => renderReasoningConsole(main),
+      navigate: () => renderReasoningConsole(main),
+      problem: () => {const key=safeRoutePart(id);if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
         location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
       library: () => {
@@ -882,7 +884,7 @@ function route() {
       },
       tool: () => {
         const toolId = safeRoutePart(id);
-        if(toolId.startsWith('atlas-')&&atlasGet(toolId.slice(6))){renderAtlasTool(main,toolId.slice(6));}
+        if(toolId.startsWith('atlas-')&&atlasGet(toolId.slice(6))){renderReasoningTool(main,toolId.slice(6));}
         else {renderTool(main, toolId);enhanceToolGuide(main, toolId);}
       },
       play: () => renderInteractiveTool(main, safeRoutePart(id)),
