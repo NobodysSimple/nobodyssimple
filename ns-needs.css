@@ -33,7 +33,7 @@ body.app-body.ns-shell-v1 #main .ns-needs h2{
 }
 body.app-body.ns-shell-v1 #main .ns-needs h3{font:750 18px/1.33 Georgia,serif;color:#30583d;margin:0 0 8px;}
 body.app-body.ns-shell-v1 #main .ns-needs :is(.ns-needs-hero,.ns-needs-header)>p:not(.ns-needs-eyebrow){
- font:400 14px/1.65 system-ui,sans-serif;color:#597360;max-width:70ch;margin:0;
+ font:400 14px/1.65 system-ui,sans-serif;color:#405b49;max-width:70ch;margin:0;
 }
 body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-panel{
  background:var(--need-paper);border:1px solid var(--need-edge);border-radius:20px;
