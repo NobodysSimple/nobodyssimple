@@ -326,7 +326,7 @@ unsure:{
  'Accept uncertainty about the underlying cause for now.|Choose care rather than a forced emotional outcome.',
  'Seek urgent assistance if health or safety requires it.|Return to a named guide only if useful.'
  ],'mind urgent'),
- room:D('Making space is a reasonable starting point even when you cannot define the experience.','Pressure to decide what the emotion means may get in the way of letting it be felt or expressed.','Do not pressure yourself to disclose or relive trauma.',[
+ room:D('Making space is a reasonable starting point even when you cannot define the experience.','Pressure to decide what the emotion means may get in the way of letting it be felt or expressed.','Do not pressure yourself to disclose or relive trauma; a brief pause, privacy or external support may be safer than introspection.',[
  'Find privacy, comfort or distance from demands.|Choose whether to write, draw, speak or sit quietly.',
  'Give the experience a few words if you want.|Finish at any time without producing a conclusion.',
  'Leave interpretations open when little information is available.|Do not confuse intensity with certainty.',
