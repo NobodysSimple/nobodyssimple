@@ -10,7 +10,8 @@ const make=(track='procrastination')=>startInvestigation(startHypothesis({trackI
 const step=(s,choice)=>{const q=investigationQuestion(s);assert.ok(q);assert.ok(q.options.some(o=>o.id===choice),q.id+' lacks '+choice);return answerInvestigation(s,q.questionId,choice);};
 const by=(s,id)=>{while(investigationQuestion(s)&&investigationQuestion(s).id!==id){
  const q=investigationQuestion(s);
- s=answerInvestigation(s,q.questionId,'unsure');
+ s=answerInvestigation(s,q.questionId,
+  q.id==='action'&&['short_term','long_term'].includes(id)?'communicate':'unsure');
  }return s;};
 test('twelve differential patterns are multi-evidence hypotheses, not a diagnostic classifier',()=>{
  assert.equal(DIFFERENTIAL_RULES.length,12);
