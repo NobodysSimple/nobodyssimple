@@ -9,7 +9,7 @@ import {DEEP_PROCESSES,DEEP_BY_ID,EXTRA_BY_TRACK,DEEP_QUESTIONS,DEEP_QUESTION_BY
 import {buildFormulationGraph,graphCoverage,graphText,layerQuestionTags,editGraphNode,reopenGraphLayer} from './ns-hypothesis-graph.mjs';
 import {beginSubtypeDrill,answerSubtypeDrill,subtypeQuestion,subtypeNode} from './ns-hypothesis-subtype-atlas.mjs';
 import {newCaseDetailInterview,caseDetailReport} from './ns-hypothesis-case-facts.mjs';
-import {newInvestigation,investigationReport} from './ns-hypothesis-investigation.mjs';
+import {newInvestigation,investigationReport,investigationLinks} from './ns-hypothesis-investigation.mjs';
 
 const P=(id,title,description,possibleFunction,possibleCost,need,check,link)=>
  Object.freeze({id,title,description,possibleFunction,possibleCost,need,check,link});
@@ -358,7 +358,7 @@ export function hypothesisResult(state){
  const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
  const canContinue=Boolean(nextHypothesisQuestion(state));
  return {track:TRACK_BY_ID[state.trackId],situation:state.description||(state.drill?.confirmed&&subtypeNode(state.drill.leafId)?'Exploring: '+subtypeNode(state.drill.leafId).label:TRACK_BY_ID[state.trackId].title),
-  alternatives,graph,coverage,examined,unresolved,topic:safeTopic,canContinue,
+  alternatives,graph,links:investigationLinks(state),coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
    state.drill?.unsupportedCategory?'You have identified a specific experience. This part of the synthetic atlas does not yet have a reviewed explanatory interview, so no psychological mechanism is inferred.':
    examined===0?'There is not enough distinguishing information yet.':
@@ -383,7 +383,8 @@ export function formulationPlainText(state){
  return ['Nobody’s Simple | Hypothesis Generator',r.track.title,'',
   'Situation: '+r.situation,'Observations considered: '+r.examined,r.summary,'',
   'Specific details explicitly selected:',...(caseDetailReport(state).length?caseDetailReport(state):['Not established']),'',
-  'Functional investigation — person-selected answers:',...(investigationReport(state).length?investigationReport(state):['Not investigated']),'',
+  'Functional investigation — person-selected answers:',...(investigationReport(state).length?investigationReport(state):['Not investigated']),
+  'Potential links to TEST (not demonstrated causes):',...(r.links.length?r.links.map(x=>x.title+' | '+x.challenge):['No linked sequence has been established']),'',
   ...r.alternatives.flatMap((c,i)=>{
    const f=describeFormulation(state,c);
    return ['Possibility '+(i+1)+': '+c.process.title,f.explanation,
