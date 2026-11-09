@@ -12,7 +12,7 @@ import {
  questionPool,QUESTION_BY_ID,reviseHypothesisAnswer,focusHypothesisLayer,
  reviseHypothesisNode,HYPOTHESIS_DEEP_QUESTION_COUNT
 } from './ns-hypothesis-engine.mjs';
-import {subtypeQuestion,subtypeNode,subtypeChildren} from './ns-hypothesis-subtype-atlas.mjs';
+import {subtypeQuestion,subtypeNode,subtypeChildren,beginSubtypeDrill,TRACK_FOR_CATEGORY} from './ns-hypothesis-subtype-atlas.mjs';
 
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
@@ -54,6 +54,12 @@ function landing(){
    '<button type="button" data-hypo-track="'+e(t.id)+'" class="ns-hypo-track">'+
    '<img src="'+e(t.art)+'" loading="lazy" alt="" width="72" height="72"><span><strong>'+e(t.title)+
    '</strong><small>'+e(t.description)+'</small></span><span aria-hidden="true">→</span></button>').join('')+'</div>'+
+  '<details class="ns-hypo-all-areas"><summary>Or explore all 21 psychological and life areas</summary>'+
+  '<p>Your starting topic may not fit one of the twelve common choices. These categories can be ordinary experiences or practical issues, not disorders.</p>'+
+  '<div class="ns-hypo-area-grid">'+subtypeChildren('ROOT').map(n=>
+  '<button type="button" data-hypo-category="'+e(n.id)+'">'+e(n.label)+
+  '<span aria-hidden="true"> →</span></button>').join('')+'</div>'+
+  '<p>Some less-common topics still use general follow-up questions after the exact details. The 21-area taxonomy is an editorial prototype, not a clinical classification.</p></details>'+
   '<details class="ns-hypo-search"><summary>Or look for a named difficulty in the psychological atlas</summary>'+
   '<label for="ns-hypo-search-input">Search topics</label><input id="ns-hypo-search-input" type="search" data-hypo-search'+
   ' placeholder="e.g. rumination, insomnia, perfectionism" autocomplete="off">'+
@@ -308,6 +314,20 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
   state=startHypothesis({trackId,topicId});
   selectedNode='';stage=state.drill?'drill':'question';render(true);
  };
+ const beginCategory=(categoryId)=>{
+  const trackId=TRACK_FOR_CATEGORY[categoryId];
+  if(trackId===undefined)return;
+  if(!trackId){
+   state={...startHypothesis({trackId:'emotion'}),drill:null,
+    safety:{kind:'support',reason:'Safety, coercion, self-injury concerns or serious immediate danger require appropriate human support rather than automated psychological guessing.'}};
+   selectedNode='';stage='result';render(true);return;
+  }
+  state=startHypothesis({trackId});
+  state={...state,drill:{...beginSubtypeDrill(trackId),categoryId,
+   entryCategoryId:categoryId,possibleCategories:null,clusterId:'',leafId:'',
+   confirmed:false,details:{},events:[],finished:false}};
+  selectedNode='';stage='drill';render(true);
+ };
  root.addEventListener('input',event=>{
   const el=event.target;
   if(el.matches('[data-hypo-search]')){
@@ -323,6 +343,7 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
  });
  root.addEventListener('click',event=>{
   const b=event.target.closest('button');if(!b)return;
+  if(b.dataset.hypoCategory){beginCategory(b.dataset.hypoCategory);return;}
   if(b.dataset.hypoTrack){begin(b.dataset.hypoTrack,b.dataset.hypoTopic||'');return;}
   if(b.dataset.hypoDrillAnswer&&state?.drill){
    state=answerHypothesisDrill(state,b.dataset.hypoDrillQuestion,b.dataset.hypoDrillAnswer);
