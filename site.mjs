@@ -63,6 +63,7 @@ import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
 const main = document.querySelector("main");
+const showWorkbook = options => renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
 const supportDialog = document.createElement('dialog');
 supportDialog.className = 'support-dialog'; supportDialog.setAttribute('aria-label','Get help');
 supportDialog.innerHTML = '<div class="support-dialog-bar"><strong>Get help</strong><button type="button" class="button secondary" data-close-support>Close ×</button></div><div data-support-content></div>';
@@ -867,19 +868,19 @@ function route() {
       help: () => renderNeedsConsole(main),
       navigate: () => {
         const bits=routeParts.slice(1).map(safeRoutePart);
-        if(bits[0]==='atlas'&&bits[1]&&atlasGet(bits[1]))renderIntegratedWorkbook(main,{topic:bits[1]});
-        else if(bits[0]==='atlas')renderIntegratedWorkbook(main,{mode:'learn',option:'browse'});
+        if(bits[0]==='atlas'&&bits[1]&&atlasGet(bits[1]))showWorkbook({topic:bits[1]});
+        else if(bits[0]==='atlas')showWorkbook({mode:'learn',option:'browse'});
         else renderNeedsConsole(main,bits);
       },
-      workbook: () => renderIntegratedWorkbook(main,{mode:safeRoutePart(id),option:safeRoutePart(routeParts[2])}),
-      "workbook-topic": () => renderIntegratedWorkbook(main,{topic:safeRoutePart(id)}),
+      workbook: () => showWorkbook({mode:safeRoutePart(id),option:safeRoutePart(routeParts[2])}),
+      "workbook-topic": () => showWorkbook({topic:safeRoutePart(id)}),
       need: () => {
         const target=safeRoutePart(id);
         if(target==='support-safety'){renderNeedsActivity(main,target);return;}
         const match=getNeedsMode('regulate')?.options.find(x=>x.target===target);
         const mode=match?'regulate':target.startsWith('process-')?'process':null;
         const found=match||(mode&&getNeedsMode(mode)?.options.find(x=>x.target===target));
-        if(found)renderIntegratedWorkbook(main,{mode,option:found.id});
+        if(found)showWorkbook({mode,option:found.id});
         else renderNeedsActivity(main,target);
       },
       "route-activity": () => {
@@ -887,25 +888,25 @@ function route() {
         const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='activity'&&x.target===target);
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate';return;}
         if(target==='support-safety'){renderNeedsActivity(main,target,{mode,option:choice});return;}
-        renderIntegratedWorkbook(main,{mode,option:choice});
+        showWorkbook({mode,option:choice});
       },
       "route-tool": () => {
         const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]),target=safeRoutePart(routeParts[3]);
         const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='tool'&&x.target===target);
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate';return;}
-        renderIntegratedWorkbook(main,{mode,option:choice});
+        showWorkbook({mode,option:choice});
       },
       "route-topic": () => {
         const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]),target=safeRoutePart(routeParts[3]);
         const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='topic'&&x.target===target);
         if(!selected||!pathGuideForOption(mode,choice)||!atlasGet(target)){location.hash='#navigate';return;}
-        renderIntegratedWorkbook(main,{mode,option:choice});
+        showWorkbook({mode,option:choice});
       },
       "route-atlas": () => {
         const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]);
         const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='atlas');
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate/atlas';return;}
-        renderIntegratedWorkbook(main,{mode,option:choice});
+        showWorkbook({mode,option:choice});
       },
       problem: () => {const key=safeRoutePart(id);if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
@@ -941,7 +942,7 @@ function route() {
         const toolId=safeRoutePart(routeParts[2]||'');
         if(!steadyGuide(guideId)){location.hash='#navigate/regulate';return;}
         const match=getNeedsMode('regulate')?.options.find(x=>x.target===guideId);
-        if(match)renderIntegratedWorkbook(main,{mode:'regulate',option:match.id});
+        if(match)showWorkbook({mode:'regulate',option:match.id});
         else {renderTool(main,toolId);enhanceToolGuide(main,toolId);attachSteadyGuidebookToTool(main,toolId,guideId);}
       },
       play: () => renderInteractiveTool(main, safeRoutePart(id)),
