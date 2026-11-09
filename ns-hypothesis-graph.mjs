@@ -29,7 +29,7 @@ function specificEvidence(state,questionIndex,requestedTags){
  }).filter(Boolean);
 }
 export function buildFormulationGraph(state,candidates,questionIndex){
- const leader=candidates?.[0],other=candidates?.slice(1,3)||[];
+ const leader=candidates?.[0],other=candidates?.slice(1,6)||[]; // Retain reviewed/rejected models in the editable map.
  const p=leader?.process;
  const observations=specificEvidence(state,questionIndex,['context','constraint','counterfactual']);
  const meanings=specificEvidence(state,questionIndex,['meaning','emotion','body','identity','expression']);
