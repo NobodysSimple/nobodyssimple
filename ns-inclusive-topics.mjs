@@ -59,7 +59,7 @@ const FOCUS={
  ['Roles and expectations','Consider patterns of responsibility, reciprocity and dependence.'],
  ['Safety and choice','Assess whether any conversation or boundary is safe and freely chosen.'],
  ['Outside resources','Consider practical support, distance or changes in conditions.']],
- goals:['Define what you need and what is realistically negotiable.','Consider a conversation only where it is safe and useful.','Do not assume all parties are equally responsible for harm; you can choose to maintain, change or leave an agreement.'},
+ goals:['Define what you need and what is realistically negotiable.','Consider a conversation only where it is safe and useful.','Do not assume all parties are equally responsible for harm; you can choose to maintain, change or leave an agreement.']},
  safety:{
  factors:['Immediate safety','Coercion, threats or control','Privacy of devices and notes','Dependence and access to resources','Trusted support','Institutional protection'],
  lenses:[
