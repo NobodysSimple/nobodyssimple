@@ -189,7 +189,7 @@ test('semantic guard avoids equivalent questions while preserving meaningful con
    }
   }
  }
- const identity=startHypothesis({trackId:'identity',description:'I am curious about how I present'});
+ const identity=startHypothesis({trackId:'identity',description:'I enjoy grooming and shaving my legs'});
  const after=answerHypothesis(identity,'d-id-sexual','yes');
  assert.ok(questionPool(after).some(q=>q.id==='d-id-outside-sex'),'Complementary questions should not be suppressed');
 });
