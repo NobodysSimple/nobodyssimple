@@ -10,7 +10,7 @@ It is a provisional, collaborative **formulation discovery** tool—not a sympto
 
 ## Current coverage
 
-The pilot provides 12 individually designated starting areas: procrastination, overthinking, relationships, social concerns, fatigue, emotions, sleep, checking, decisions, identity, sensory load and loss. These use 21 distinct psychological, biological, social and environmental processes and 40 original, authored discriminating questions. Questions are selected by the difference between the processes they could help distinguish, rather than asked in a fixed order. Up to nine questions can be answered per visit; results are accessible early, and users can skip or go back.
+The pilot provides 12 individually designated starting areas: procrastination, overthinking, relationships, social concerns, fatigue, emotions, sleep, checking, decisions, identity, sensory load and loss. The original engine's 21 processes and 40 questions have been expanded with **37 additional process models and 143 individually authored deeper questions**: 58 candidate processes and 183 questions in the combined editorial bank (with only context-relevant questions available in any given journey). There is **no fixed nine-question cap**. Nobody continues selecting useful questions until the user requests a working formulation or the relevant authored bank is exhausted. Users may skip, go back, revisit answers, and initiate focused further questioning about any node in the result. A workflow checkpoint suggests when a provisional map is worth considering; it is not a calibrated confidence threshold.
 
 The existing 166-topic psychological atlas supports searching and contextual reading. Its many topics do NOT imply 166 fully reviewed differential-formulation engines. Unsupported named concerns take the user to the relevant field guide, not to an unrelated psychological guess.
 
@@ -24,7 +24,13 @@ The uploaded OpenAkinator-master.zip is a GPLv3-licensed C project. Only the bro
 
 The engine in ns-hypothesis-engine.mjs uses hand-authored, bounded relative compatibility weights. Those values are **uncalibrated** and must never be shown as clinical probabilities, diagnostic certainty or risk categories. The output always describes explanations as hypotheses. Contradictory responses remain available; users can rate fit and reject a suggestion, which changes prioritisation without deleting what the user actually answered.
 
-The formulation is generated using controlled text templates and recorded answers. There is no remote generative AI model or automatic case-note transmission.
+Questions are selected through an **expected-information-gain heuristic** based on editorial yes/no compatibility assumptions and consideration of missing formulation dimensions. This is Bayesian-style question discrimination mathematically, **not a validated posterior probability for someone's psychological causes**; there are no defensible clinical percentages to display.
+
+The result is now a **clickable, editable evidence-linked graph** separating (a) the user's description, (b) circumstances and constraints, (c) feelings and meaning, (d) reported responses, (e) multiple candidate processes, (f) possible immediate effects, (g) potential maintaining costs, (h) needs and resources, and (i) an optional *reported* internal tension. Each node distinguishes directly reported observations from speculative interpretations. Users can mark a node as fitting, uncertain or inaccurate; rewrite the wording; and ask the tool to prioritise questions about that particular part. An answer-history editor allows revisions, re-evaluates the graph and removes specialised follow-up answers if their gateway is rejected.
+
+**Specific case-design safeguard:** Grooming, shaving legs, wearing particular clothes and other expressions are not symptoms or proof of gender identity or sexual orientation. The identity/presentation branch asks separately about genuine enjoyment, sensory or aesthetic preference, social expectations, identity exploration, sexual context, personal privacy and desired autonomy. The tool must not conclude that one behaviour reveals a hidden wound or identity. A person may not need to change the behaviour at all.
+
+The formulation remains template-based and grounded in answers. There is no remote generative AI model, semantic reasoning about arbitrary free text or automatic clinical-note transmission. More questions and graph interaction improve the amount and structure of elicited information, but do not establish validation or causal accuracy.
 
 ## Safety
 
@@ -40,11 +46,15 @@ The interface uses existing Nobody character artwork, clearly labelled five-way 
 
 ## Engineering files
 
-- ns-hypothesis-engine.mjs — knowledge bank, question selection, evidence and safety rules.
+- ns-hypothesis-engine.mjs — original knowledge bank, upgraded question selection, history revision and safety rules.
+- ns-hypothesis-deep-content.mjs — 37 expanded candidate processes, 143 additional questions, and conditional presentation-specific exploration.
+- ns-hypothesis-graph.mjs — transparent graph construction, user-supplied wording, corrections and layer-level re-investigation.
+- ns-hypothesis-depth.css — editable formulation graph, evidence panels and responsive deep-question presentation.
 - ns-hypothesis-generator.mjs — character-led question and results UI, feedback, export and routing.
 - ns-hypothesis-generator.css — responsive visual design and homepage CTA.
 - strategy.mjs, site.mjs, index.html, sw.js — homepage, routing and cached assets.
-- tests/free/hypothesis-generator.test.mjs and tests/browser/hypothesis-generator.spec.mjs — content, behaviour, safety and accessibility coverage.
+- tests/free/hypothesis-generator.test.mjs and tests/browser/hypothesis-generator.spec.mjs — initial core behaviour and regression coverage.
+- tests/free/hypothesis-depth.test.mjs and tests/browser/hypothesis-depth.spec.mjs — longer investigations, presentation-specific differentiation, graph correction, answer editing and mobile accessibility.
 
 ## Scientific status and next evaluation phase
 
