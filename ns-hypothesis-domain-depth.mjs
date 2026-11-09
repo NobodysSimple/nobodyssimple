@@ -177,6 +177,22 @@ function domainQuestions(state){
   make('additional','context','Which SECOND influence, if any, may also matter for '+subject+'?',[
    ...profile.second.map((x,i)=>['extra'+(i+1),x]),['none','No second influence I can identify']
   ],'More than one contributor may operate at once. Naming a second does not establish either as causal.'),
+  make('stake','meaning','Beyond the event itself, what feels most at stake for you, if anything, when '+subject+' is difficult?',[
+   ['safety','Feeling safe in the situation'],
+   ['dignity','Being treated with dignity and respect'],
+   ['belonging','Keeping an important relationship or connection'],
+   ['autonomy','Having choice and control over my life'],
+   ['competence','Being able to meet a realistic demand or responsibility'],
+   ['practical','Money, health, housing or another real-life consequence'],
+   ['none','It does not feel connected to an underlying value or threat']
+  ],'A personal meaning is worth checking, but it does not replace actual circumstances or prove a hidden belief.'),
+  make('body','context','Which bodily or capacity factor changes your experience of '+subject+', if any?',[
+   ['sleep','It tends to be harder when I am short of sleep'],
+   ['illness','It tends to be harder when I have pain or physical symptoms'],
+   ['medication','Medication, substances or treatment may be relevant'],
+   ['sensory','Sensory load or overstimulation makes it harder'],
+   ['none','I have not noticed a bodily influence']
+  ],'Sleep, pain, treatment and capacity can be influences; not every difficulty needs a psychological cause.'),
   make('response','response','When '+subject+' becomes difficult, what do you usually do next?',[
    ['reduce','I reduce contact, exposure or demands'],
    ['check','I check, plan, analyse or seek reassurance'],
@@ -212,6 +228,14 @@ function domainQuestions(state){
    ['external','Real conditions keep causing problems despite coping changes'],
    ['not_checked','I do not have a meaningful comparison yet']
   ],'Actively look for evidence *against* the apparent explanation.'),
+  make('protective','need','Which change has actually helped you feel safer or more able to manage '+subject+', if any?',[
+   ['rest','Enough rest or recovery has helped'],
+   ['support','Someone trustworthy or supportive has helped'],
+   ['clarity','Clearer instructions or accurate information has helped'],
+   ['choice','More freedom to decide or set boundaries has helped'],
+   ['access','Better resources, accessibility or practical conditions have helped'],
+   ['none','I have not observed a reliable helpful change']
+  ],'A protective factor is an observation to compare, not a promised treatment.'),
   make('history','history','What best describes how '+subject+' has changed over time?',[
    ['recent','It followed a recent identifiable change'],
    ['longstanding','It has happened across several periods and places'],
@@ -339,6 +363,13 @@ export function domainFormulation(state){
   counter('counterexample','A reported counterexample challenges a single explanation',
    'You selected an observation where the initial condition or your response does not fully account for what happens.',
    ['exception']);
+ }
+ if(fact('protective')&&fact('exception')?.value==='protected'){
+  add('protection','Conditions that help may buffer "'+subject+'"',
+   'You reported a helpful condition and an exception when support or the environment was different. That suggests a potentially protective influence worth examining.',
+   ['protective','exception'],
+   'Other conditions may have changed alongside the helpful factor.',
+   'Does this benefit recur under otherwise comparable circumstances?');
  }
  if(fact('goal')?.value==='no_change'){
   counter('nonpathological','You have not identified this experience as something you want to change',
