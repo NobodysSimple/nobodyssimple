@@ -99,7 +99,7 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    status:inquiryFor('action')||inquiryFor('regulation')||responses.length?'reported':'unknown'},
   ...differentialPatterns.map((pattern,i)=>({
    id:pattern.id,layer:'mechanism',title:pattern.title,
-   detail:pattern.description+(pattern.falsifier?' How to challenge it: '+pattern.falsifier:'')+
+   detail:pattern.description+(pattern.falsifier?' Why it may be wrong: '+pattern.falsifier:'')+
     ' Alternative: '+pattern.alternative,
    evidence:pattern.evidence,challenges:pattern.challenges||[],
    status:'tentative',rank:i+1,
