@@ -66,7 +66,7 @@ test('after a few answers, results show alternatives, uncertainty, supporting an
  await expect(page.locator('.ns-hypo-need').first()).toContainText('not something we have inferred');
  await expect(page.locator('.ns-hypo-graph')).toBeVisible();
  await expect(page.locator('.ns-hypo-graph-node').first()).toBeVisible();
- await expect(page.locator('.ns-hypo-transparency')).toContainText('probability');
+ await expect(page.locator('.ns-hypo-transparency')).toContainText('clinical probabilities');
  await expect(page.locator('.ns-hypo-final-buttons a[href="#workbook-topic/procrastination"]')).toHaveCount(1);
  const feedback=page.locator('.ns-hypo-result-card').first().locator('[data-hypo-feedback="no-fit"]');
  await feedback.click();
