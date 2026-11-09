@@ -11,7 +11,7 @@ import {beginSubtypeDrill,answerSubtypeDrill,subtypeQuestion,subtypeNode} from '
 import {newCaseDetailInterview,caseDetailReport} from './ns-hypothesis-case-facts.mjs';
 import {newInvestigation,investigationReport,investigationLinks,investigationFacts} from './ns-hypothesis-investigation.mjs';
 import {testableDifferentials} from './ns-hypothesis-differentials.mjs';
-import {newAdaptiveInquiry,adaptiveDifferentials,adaptiveFacts,adaptiveReport,adaptiveLinks,SYNTHETIC_MECHANISMS} from './ns-hypothesis-adaptive.mjs';
+import {newAdaptiveInquiry,adaptiveDifferentials,adaptiveFacts,adaptiveReport,adaptiveLinks,adaptiveChallenges,SYNTHETIC_MECHANISMS} from './ns-hypothesis-adaptive.mjs';
 
 const P=(id,title,description,possibleFunction,possibleCost,need,check,link)=>
  Object.freeze({id,title,description,possibleFunction,possibleCost,need,check,link});
@@ -363,10 +363,11 @@ export function hypothesisResult(state){
  const safeTopic=topic&&atlasGet(topic)&&!isSafetyPriority(topic)?topic:null;
  const coverage=graphCoverage(state,QUESTION_BY_ID);
  const patterns=[...testableDifferentials(state),...adaptiveDifferentials(state)];
+ const challenges=adaptiveChallenges(state);
  const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
  const canContinue=Boolean(nextHypothesisQuestion(state));
  return {track:TRACK_BY_ID[state.trackId],situation:state.description||(state.drill?.confirmed&&subtypeNode(state.drill.leafId)?'Exploring: '+subtypeNode(state.drill.leafId).label:TRACK_BY_ID[state.trackId].title),
-  alternatives,patterns,graph,links:[...investigationLinks(state),...adaptiveLinks(state)].map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
+  alternatives,patterns,challenges,graph,links:[...investigationLinks(state),...adaptiveLinks(state)].map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
    state.drill?.unsupportedCategory?'You have identified a specific experience. This part of the synthetic atlas does not yet have a reviewed explanatory interview, so no psychological mechanism is inferred.':
    patterns.length?'Your answers support testing specific patterns and their alternatives, but do not establish a cause.':
@@ -401,6 +402,7 @@ export function formulationPlainText(state){
   'Functional investigation — person-selected answers:',...(investigationReport(state).length?investigationReport(state):['Not investigated']),
   'Adaptive causal inquiry — person-selected answers:',...(adaptiveReport(state).length?adaptiveReport(state):['Not investigated']),'',
   'Mechanism index: '+SYNTHETIC_MECHANISMS.length+' provisional authored entries from synthetic database v1 (not diagnostic evidence).','',
+  'Observations that CHALLENGE simple explanations:',...(r.challenges.length?r.challenges.flatMap(x=>[x.title,x.explanation,...x.evidence.map(e=>e.question+': '+e.answer)]):['No contrasting observation established yet']),'',
   'Multi-observation hypotheses to TEST:',...(r.patterns.length?r.patterns.flatMap(p=>[p.title,p.description,'What could disconfirm it: '+(p.falsifier||'Not established yet; gather contrasting observations'),'Alternative: '+p.alternative]):['No pattern has enough support to propose']),'',
   'Potential links to TEST (not demonstrated causes):',...(r.links.length?r.links.map(x=>x.title+' | '+x.challenge):['No linked sequence has been established']),'',
   ...r.alternatives.flatMap((c,i)=>{

@@ -108,3 +108,12 @@ Source assets remain development/evaluation inputs; the index is for transparenc
 3. Audit contrasting cases: external harm vs coping maintenance, restorative sleep vs persistent difficulty, effective coping vs short-lived relief, chosen preference vs unwanted symptom, and real risk vs overinterpretation.
 4. Test that answering "unsure", "prefer not" or "none" does not establish mechanisms; risk branches interrupt speculation.
 5. Compare with genuinely independent clinician and lived-experience review. Do not present the prototype as a clinical assessment or scientifically calibrated differential diagnosis.
+
+
+## Stage 5 technical QA and independent review preparation
+
+The implementation now includes `ns-hypothesis-quality.mjs` for source-quotation fidelity, proposed-arrow provenance, missing-domain coverage and structural assertion checks. In the results UI, visitors can inspect direct evidence challenging simplistic explanations, the factors actually investigated (as distinct from unasked factors) and a verbatim evidence ledger. These audits check software consistency, not clinical validity.
+
+The synthetic ZIP is audited using `scripts/hypothesis-stage5-source-audit.py`. The verified source baseline and eight-item blinded clinician/lived-experience review protocol are in `docs/hypothesis-stage5-evaluation.md`. A dedicated regression suite checks scripted fictional contrasts against the current app and compares targeted adaptive questions with a fixed conditional-order baseline.
+
+**Stage 5 remains incomplete until independent clinicians and lived-experience reviewers actually assess the full scenario/output pairings.** The original ZIP contains no clinician gold-standard diagnoses or causal findings and its generated case templates are correlated. Do not describe source statistics, authored contrasts or automated accessibility checks as proof of clinical accuracy.

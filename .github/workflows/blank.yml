@@ -23,6 +23,8 @@ jobs:
         run: npm run check
       - name: Run JavaScript unit and regression tests
         run: npm test
+      - name: Self-test synthetic corpus audit and reviewer-pack generator
+        run: python3 scripts/hypothesis-stage5-source-audit.py --self-test
 
   browser:
     name: Mobile, desktop and automated accessibility smoke checks

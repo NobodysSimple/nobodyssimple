@@ -460,3 +460,20 @@ html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-own-words small
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-own-words textarea{
  background:#17261d;color:#f3f6ef;border-color:#9db09e;
 }
+
+/* Stage 5 — clarity-first contradicting evidence and remaining coverage. */
+body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review{margin:22px 0;padding:18px 16px;border:1px solid #cdd9cd;border-radius:20px;background:#fafbf6;color:#243b2d}
+body.app-body.ns-shell-v1 #main .ns-hypo-counter-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:11px;margin:14px 0}
+body.app-body.ns-shell-v1 #main .ns-hypo-counter-card{border:1px solid #bbd0c0;border-radius:15px;background:#fff;padding:14px}
+body.app-body.ns-shell-v1 #main .ns-hypo-counter-card h3{font:700 16px/1.4 system-ui,sans-serif;margin:0 0 7px;color:#244b37}
+body.app-body.ns-shell-v1 #main .ns-hypo-counter-card p{font:400 14px/1.55 system-ui,sans-serif;margin:0 0 11px;color:#355544}
+body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review details{border:1px solid #c5d6c7;border-radius:12px;margin:12px 0;background:#fff;padding:10px 13px}
+body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review summary{cursor:pointer;font:700 14px/1.5 system-ui,sans-serif;color:#204b35}
+body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review details p{font:400 13px/1.5 system-ui,sans-serif;margin:10px 0;color:#3a5845}
+body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review ul{padding:0;margin:12px 0;display:grid;gap:7px;list-style:none}
+body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review li{border-bottom:1px solid #e0e9dd;padding:6px 0;display:grid;gap:3px;overflow-wrap:anywhere;font:400 13px/1.5 system-ui,sans-serif}
+body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review li strong{font-weight:700;color:#243f2e}
+body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review li span{color:#3d5948}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review{background:#203127;color:#eef4ed;border-color:#5b7963}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review :is(details,.ns-hypo-counter-card){background:#2d3a2f;border-color:#65826b}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review :is(h2,h3,summary,p,li strong,li span){color:#edf4e6}
