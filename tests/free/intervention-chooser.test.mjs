@@ -48,7 +48,7 @@ test('all 53 choice pages have a usable varied intervention deck or safety-first
  assert.equal(total,53);
 });
 test('all 166 atlas pages have appropriate intervention decks without bypassing safeguarding',()=>{
- assert.equal(atlasProblemIndex.length,166);
+ assert.equal(atlasProblemIndex.length,492);
  for(const topic of atlasProblemIndex){
   const g=workbookForTopic(topic.id);
   const cards=deckForWorkbook(g);
