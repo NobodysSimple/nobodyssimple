@@ -1,83 +1,119 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const go=async(page,hash)=>{await page.goto('/index.html#'+hash);await expect(page.locator('#main')).toBeVisible();};
-const open=async page=>{
- await expect(page.locator('button[data-path-open]')).toHaveCount(1);
- await page.locator('button[data-path-open]').click();
- const modal=page.locator('dialog[data-path-guide-dialog]');
- await expect(modal).toBeVisible();
- await expect(modal.locator('details.ns-guidebook-lane')).toHaveCount(5);
- await expect(modal.locator('button[data-path-pin]')).toHaveCount(5);
- return modal;
+const go=async(page,hash)=>{
+ await page.goto('/index.html#'+hash);
+ if(hash.startsWith('navigate/'))await expect(page.locator('.ns-needs')).toBeVisible();
+ else await expect(page.locator('[data-workbook]')).toBeVisible();
 };
-test('processing guide stays accessible while moving through private prompts',async({page})=>{
+const chapters=page=>page.locator('.ns-wb-chapter[data-wb-chapter]');
+test('processing guide integrates explanation, five practice tools and personal notes on the same page',async({page})=>{
  await go(page,'navigate/process');
- await page.locator('a[href="#route-activity/process/grief/process-grief"]').click();
- await expect(page.getByRole('heading',{name:'Make room for grief or loss'})).toBeVisible();
- const modal=await open(page);
- await expect(modal.locator('h2')).toContainText('I am dealing with grief or loss');
- await modal.locator('[data-path-jump="acceptance"]').click();
- await expect(modal.locator('#pathbook-acceptance')).toHaveAttribute('open','');
- await expect(page).toHaveURL(/#route-activity\/process\/grief\/process-grief$/);
- await modal.locator('[data-path-pin="3"]').click();
- await expect(page.locator('.ns-steady-pinned')).toBeVisible();
- await page.locator('#ns-process-text').fill('A temporary, private sentence.');
- await page.locator('[data-process-next]').click();
- await expect(page.locator('button[data-path-open]')).toHaveCount(1);
- await page.locator('[data-process-prev]').click();
- await expect(page.locator('#ns-process-text')).toHaveValue('A temporary, private sentence.');
- await open(page);
- await page.keyboard.press('Escape');
- await expect(page.locator('dialog[data-path-guide-dialog]')).not.toBeVisible();
- await expect(page.locator('[data-path-open]')).toBeFocused();
+ await page.locator('a[href="#workbook/process/grief"]').click();
+ await expect(page.locator('h1')).toHaveText('I am dealing with grief or loss');
+ await expect(chapters(page)).toHaveCount(6);
+ await expect(page.locator('[data-wb-widget]')).toHaveCount(6);
+ await expect(page.locator('.ns-wb-cycle')).toContainText('reminder');
+ await expect(page.locator('.ns-wb-methods')).toHaveCount(5);
+ await expect(page.locator('dialog.ns-guidebook-dialog')).toHaveCount(0);
+ await page.locator('[data-wb-field="recognition.situation"]').fill('A private grief reflection');
+ await page.locator('[data-wb-field="context.condition"]').fill('Too many demands this week');
+ await page.locator('[data-wb-field="context.kind"]').selectOption('share');
+ await page.locator('[data-wb-field="context.change"]').fill('Ask someone to handle groceries');
+ await page.locator('[data-wb-action="context"]').click();
+ await expect(page.locator('[data-wb-feedback="context"]')).toContainText('Too many demands this week');
+ await page.locator('[data-wb-field="thinking.observed"]').fill('A recent reminder');
+ await page.locator('[data-wb-field="thinking.interpretation"]').fill('I will never feel happy again');
+ await page.locator('[data-wb-action="thinking"]').click();
+ await expect(page.locator('[data-wb-feedback="thinking"]')).toContainText('separated');
+ await page.locator('[data-wb-summary]').click();
+ await expect(page.locator('[data-wb-summary-output]')).toContainText('Ask someone to handle groceries');
+ await expect(page.locator('[data-wb-summary-output]')).toContainText('I will never feel happy again');
+ await expect(page).toHaveURL(/#workbook\/process\/grief$/);
 });
-test('understand and action tools carry the correct contextual guide rather than a generic one',async({page})=>{
- await go(page,'navigate/understand');
- await page.locator('a[href="#route-tool/understand/pattern/pattern-map"]').click();
- let modal=await open(page);
- await expect(modal.locator('h2')).toContainText('A pattern keeps repeating');
- await modal.locator('[data-path-close]').click();
+test('action and understand pages embed adjustable conditions and cognitive exercises alongside advice',async({page})=>{
  await go(page,'navigate/act');
- await page.locator('a[href="#route-tool/act/environment/environment-design"]').click();
- modal=await open(page);
- await expect(modal.locator('h2')).toContainText('My circumstances or environment get in the way');
- await expect(modal.locator('.ns-guidebook-sources a').first()).toHaveAttribute('href',/^https:/);
+ await page.locator('a[href="#workbook/act/environment"]').click();
+ await expect(page.locator('.ns-wb-methods')).toHaveCount(5);
+ await expect(page.locator('[data-wb-field="context.change"]')).toBeVisible();
+ await expect(page.locator('#ns-wb-context .ns-wb-method')).toContainText('sensory');
+ await page.locator('[data-wb-jump="thinking"]').click();
+ await expect(page).toHaveURL(/#workbook\/act\/environment$/);
+ await page.locator('[data-wb-field="thinking.observed"]').fill('The meeting room is loud');
+ await page.locator('[data-wb-field="thinking.interpretation"]').fill('My response is a personal failure');
+ await page.locator('[data-wb-field="thinking.alternative"]').fill('The sound may exceed my capacity');
+ await page.locator('[data-wb-action="thinking"]').click();
+ await expect(page.locator('[data-wb-feedback="thinking"]')).toContainText('evidence');
+ await go(page,'workbook/understand/pattern');
+ await expect(page.locator('.ns-wb-tool')).toHaveCount(6);
+ await expect(page.locator('#ns-wb-recognition')).toContainText('A repeated pattern');
 });
-test('relationship safety and named topics retain distinct cautions and guides',async({page})=>{
+test('related original tool can open within its chapter without navigating away',async({page})=>{
+ await go(page,'workbook/act/load');
+ const el=page.locator('[data-wb-original="context"]');
+ await el.locator('summary').click();
+ await el.locator('button[data-wb-mount]').click();
+ await expect(el.locator('[data-wb-tool-host] .tool-page')).toBeVisible();
+ await expect(page).toHaveURL(/#workbook\/act\/load$/);
+ await el.locator('button[data-wb-mount]').click();
+ await expect(el.locator('[data-wb-tool-host]')).toBeEmpty();
+ await expect(page.locator('[data-wb-widget="context"]')).toBeVisible();
+});
+test('relationship safety page prioritises support rather than unsupervised exercises',async({page})=>{
  await go(page,'navigate/relate');
- await page.locator('a[href="#route-activity/relate/unsafe/support-safety"]').click();
- await expect(page.getByRole('heading',{name:'Support and safety come first'})).toBeVisible();
- let modal=await open(page);
- await expect(modal.locator('.ns-guidebook-caution')).toContainText('Do not confront');
- await modal.locator('[data-path-close]').click();
- await go(page,'navigate/learn');
- await page.locator('a[href="#route-topic/learn/checking/checking"]').click();
- modal=await open(page);
- await expect(modal.locator('.ns-guidebook-caution')).toContainText('exposure and response prevention');
+ await page.locator('a[href="#workbook/relate/unsafe"]').click();
+ await expect(page.locator('.ns-wb-care-first')).toBeVisible();
+ await expect(page.locator('[data-wb-field]')).toHaveCount(0);
+ await expect(page.locator('[data-wb-mount]')).toHaveCount(0);
+ await page.locator('[data-wb-care="private"]').click();
+ await expect(page.locator('[data-wb-care-result]')).toContainText('unmonitored');
+ await expect(page.locator('.ns-wb-sources a').first()).toHaveAttribute('href',/^https:/);
 });
-test('atlas and unsure routes have meaningful contextual guidance',async({page})=>{
- await go(page,'navigate/learn');
- await page.locator('a[href="#route-atlas/learn/browse"]').click();
- let modal=await open(page);
- await expect(modal.locator('h2')).toContainText('Browse all psychological difficulties');
- await modal.locator('[data-path-close]').click();
- await expect(page.locator('#needs-topic-search')).toBeVisible();
+test('named difficulty and atlas browsing lead to in-page psychology workbooks',async({page})=>{
+ await go(page,'workbook/learn/checking');
+ await expect(page.locator('.ns-wb-safety')).toContainText('exposure and response prevention');
+ await expect(page.locator('#ns-wb-practice .ns-wb-tool')).toBeVisible();
+ await go(page,'workbook/learn/browse');
+ await expect(page.locator('[data-wb-search]')).toBeVisible();
+ await expect(page.locator('[data-wb-topic-results] a')).toHaveCount(12);
+ await page.locator('[data-wb-search]').fill('insomnia');
+ await expect(page.locator('[data-wb-topic-results]')).toContainText('Insomnia');
+ await page.locator('a[href="#workbook-topic/insomnia"]').first().click();
+ await expect(page.locator('[data-workbook="topic/insomnia"]')).toBeVisible();
+ await expect(page.locator('.ns-wb-tool')).toHaveCount(6);
+});
+test('uncertain entry points offer real exercises without compulsory diagnosis or submission',async({page})=>{
  await go(page,'navigate/unsure');
- await page.locator('a[href="#route-tool/unsure/clarity/emotion-check-in"]').click();
- modal=await open(page);
- await expect(modal.locator('h2')).toContainText('I would like more clarity');
+ await page.locator('a[href="#workbook/unsure/clarity"]').click();
+ await expect(page.locator('#ns-wb-recognition')).toBeVisible();
+ await page.locator('[data-wb-field="acceptance.value"]').selectOption('Autonomy');
+ await page.locator('[data-wb-field="acceptance.direction"]').fill('Choose a comfortable next step');
+ await page.locator('[data-wb-action="acceptance"]').click();
+ await expect(page.locator('[data-wb-feedback="acceptance"]')).toContainText('Autonomy');
+ await page.locator('[data-wb-summary]').click();
+ await expect(page.locator('[data-wb-summary-output]')).toContainText('Choose a comfortable next step');
 });
-test('other pathway guides fit a narrow screen and avoid serious automated accessibility violations',async({page})=>{
- for(const route of ['navigate/process','route-activity/process/feel/process-feel','route-tool/act/decision/decision-map']){
-  await go(page,route);
-  const result=await new AxeBuilder({page}).include('#main').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
-  expect(result.violations.filter(x=>['serious','critical'].includes(x.impact)),
-    JSON.stringify({route,violations:result.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,html:n.html,summary:n.failureSummary})).slice(0,12)}))},null,2)).toEqual([]);
+test('explicit download and two-step clear work without silent persistence',async({page})=>{
+ await go(page,'workbook/process/feel');
+ await page.locator('[data-wb-field="recognition.situation"]').fill('Sensitive notes');
+ const [download]=await Promise.all([page.waitForEvent('download'),page.locator('[data-wb-download]').click()]);
+ expect(download.suggestedFilename()).toMatch(/nobodys-simple-process-feel-notes\.txt/);
+ await page.locator('[data-wb-clear]').click();
+ await expect(page.locator('[data-wb-clear]')).toHaveText('Confirm clearing all notes');
+ await expect(page.locator('[data-wb-field="recognition.situation"]')).toHaveValue('Sensitive notes');
+ await page.locator('[data-wb-clear]').click();
+ await expect(page.locator('[data-wb-field="recognition.situation"]')).toHaveValue('');
+ await expect(page.locator('[data-wb-summary-output]')).toContainText('cleared');
+});
+test('workbook screens are readable on mobile and have no serious or critical WCAG findings',async({page})=>{
+ for(const hash of ['workbook/regulate/overwhelmed','workbook/process/feel','workbook/act/decision','workbook/learn/checking','workbook-topic/insomnia']){
+  await go(page,hash);
+  const b=await page.locator('.ns-wb-wrap').evaluate(el=>({width:el.clientWidth,scroll:el.scrollWidth,x:el.getBoundingClientRect().x,right:el.getBoundingClientRect().right,viewport:innerWidth}));
+  expect(b.scroll,hash).toBeLessThanOrEqual(b.width+2);
+  expect(b.x,hash).toBeGreaterThanOrEqual(-2);
+  expect(b.right,hash).toBeLessThanOrEqual(b.viewport+2);
+  const axe=await new AxeBuilder({page}).include('.ns-wb-wrap').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
+  expect(axe.violations.filter(v=>['serious','critical'].includes(v.impact)),
+   JSON.stringify({hash,violations:axe.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({html:n.html,target:n.target,summary:n.failureSummary})).slice(0,5)}))},null,2)).toEqual([]);
  }
- await go(page,'route-activity/process/feel/process-feel');
- const modal=await open(page);
- const bounds=await modal.evaluate(el=>({x:el.getBoundingClientRect().x,right:el.getBoundingClientRect().right,width:innerWidth}));
- expect(bounds.x).toBeGreaterThanOrEqual(-2);
- expect(bounds.right).toBeLessThanOrEqual(bounds.width+2);
 });
