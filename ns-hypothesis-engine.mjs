@@ -168,7 +168,8 @@ export function backHypothesisDrill(state){
  const events=state.drill.events.slice(0,-1);
  let drill=beginSubtypeDrill(state.trackId);
  if(state.drill.entryCategoryId)drill={...drill,categoryId:state.drill.entryCategoryId,
-  entryCategoryId:state.drill.entryCategoryId,possibleCategories:null};
+  entryCategoryId:state.drill.entryCategoryId,possibleCategories:null,
+  unsupportedCategory:state.drill.unsupportedCategory||false};
  for(const step of events)drill=answerSubtypeDrill(drill,step.questionId,step.answerId);
  return {...state,drill,safety:state.initialSafety||null};
 }
