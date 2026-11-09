@@ -234,7 +234,7 @@ function domainReasoningSection(state,result){
   (d.counterpoints.length?'<div class="ns-hypo-depth-counters"><h3>What makes a simple explanation less convincing?</h3>'+
     d.counterpoints.map(c=>'<article><strong>'+e(c.title)+'</strong><p>'+e(c.explanation)+'</p>'+evidence(c)+'</article>').join('')+'</div>':'')+
 
-  '<div class="ns-hypo-depth-novelty"><h3>Did this uncover anything beyond what you already knew?</h3>'+
+  (domainFacts(state).length>=2?'<div class="ns-hypo-depth-novelty"><h3>Did this uncover anything beyond what you already knew?</h3>'+
   '<p>This is your judgement, not an algorithmic claim that Nobody has found a hidden cause. If it mostly repeats your own knowledge, this formulation needs more investigation.</p>'+
   '<div role="group" aria-label="Was the investigation useful in finding new contributing factors?">'+
   [['new','A new factor worth testing'],['repeat','Mostly repeated what I knew'],['uncertain','Still uncertain']].map(([id,label])=>
@@ -243,7 +243,7 @@ function domainReasoningSection(state,result){
   (state.depthNovelty==='repeat'?'<p role="status">No new contributing factor has been established from your perspective. Treat this as an incomplete map. You can examine another explanation, change a reported detail or return to deeper questioning.</p>':
    state.depthNovelty==='new'?'<p role="status">You identified a potentially useful new lead. It still needs real-world corroboration, and alternative explanations remain possible.</p>':
    state.depthNovelty==='uncertain'?'<p role="status">There is not yet enough clarity to call this a useful discovery. That is a valid outcome.</p>':'')+
-  '</div>'+
+  '</div>':'')+
   '<p class="ns-hypo-quiet">Source-check: '+e(String(audit.sourceFacts))+' directly reported details · '+
    e(String(audit.contrastsCollected))+' contrasting observations · '+
    e(String(audit.candidateExplanations))+' provisional cross-answer explanations. '+
