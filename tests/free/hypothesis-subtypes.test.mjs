@@ -152,3 +152,18 @@ test('unreviewed specialty domains report observations without scoring unrelated
  const previous=backHypothesisDrill(s);
  assert.equal(previous.drill.unsupportedCategory,true);
 });
+
+test('urgent substance withdrawal and coercive home conditions bypass speculative formulation',()=>{
+ let withdrawal=startHypothesis({trackId:'emotion'});
+ withdrawal={...withdrawal,drill:{...withdrawal.drill,categoryId:'SUBSTANCE',
+  entryCategoryId:'SUBSTANCE',unsupportedCategory:true}};
+ withdrawal=answerHypothesisDrill(withdrawal,subtypeQuestion(withdrawal.drill).id,'SUBSTANCE-DRUG');
+ withdrawal=answerHypothesisDrill(withdrawal,subtypeQuestion(withdrawal.drill).id,'SUBSTANCE-DRUG-SUBSTANCE-WITHDRAWAL');
+ assert.equal(withdrawal.safety?.kind,'medical');
+
+ let family=startHypothesis({trackId:'relationships'});
+ family={...family,drill:{...family.drill,categoryId:'FAMILY',
+  entryCategoryId:'FAMILY',unsupportedCategory:true}};
+ family=answerHypothesisDrill(family,subtypeQuestion(family.drill).id,'FAMILY-SAFETY');
+ assert.equal(family.safety?.kind,'coercion');
+});
