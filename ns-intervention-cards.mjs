@@ -83,7 +83,7 @@ function suitableExtras(g){
  const isChecking=/checking|ritual|reassurance/.test(g.id);
  const isPanic=/panic/.test(g.id);
  const isSleep=/sleep|insomnia/.test(g.id);
- const isDepleted=/deplet|fatigue|exhaustion/.test(g.id);
+ const isDepleted=/deplet|drain|fatigue|exhaustion/.test(g.id);
  const isTrauma=/trauma|event|grief/.test(g.id);
  return supplementary.filter(c=>{
   if(isChecking&&['track-context','reality-control','separate-facts','gentle-orientation'].includes(c.id))return false;
