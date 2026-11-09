@@ -16,7 +16,8 @@ import {subtypeQuestion,subtypeNode,subtypeChildren,beginSubtypeDrill,TRACK_FOR_
 import {startCaseDetailInterview,answerCaseDetail,caseDetailQuestion,backCaseDetail,skipCaseDetail,caseDetailFacts,CASE_FACT_QUESTIONS} from './ns-hypothesis-case-facts.mjs';
 import {INVESTIGATION_QUESTIONS,startInvestigation,investigationQuestion,answerInvestigation,backInvestigation,stopInvestigation,investigationFacts} from './ns-hypothesis-investigation.mjs';
 import {ADAPTIVE_LIMIT,SYNTHETIC_MECHANISMS,adaptiveQuestion,startAdaptiveInquiry,answerAdaptiveInquiry,backAdaptiveInquiry,stopAdaptiveInquiry,adaptiveFacts} from './ns-hypothesis-adaptive.mjs';
-import {evidenceCoverage,auditFormulationEvidence} from './ns-hypothesis-quality.mjs';
+import {evidenceCoverage,auditFormulationEvidence,formulationDepthAudit} from './ns-hypothesis-quality.mjs';
+import {domainEligible,domainQuestion,startDomainInquiry,answerDomainInquiry,backDomainInquiry,stopDomainInquiry,domainFacts,DOMAIN_LENSES} from './ns-hypothesis-domain-depth.mjs';
 
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
@@ -171,6 +172,70 @@ function adaptiveInquiryPage(state){
    adaptiveFacts(state).slice(-5).map(f=>'<li>'+e(f.text)+'</li>').join('')+'</ul></div>':'')+
   '<p class="ns-hypo-quiet">The synthetic database contains possible mechanisms, not facts about you. Every causal relationship remains a hypothesis to investigate.</p></section>');
 }
+
+function domainInquiryPage(state){
+ const q=domainQuestion(state);
+ if(!q)return resultPage(state);
+ const completed=state.domain.answers.length;
+ const choices=q.options.map(o=>'<button type="button" class="ns-hypo-drill-option" data-hypo-domain-answer="'+e(o.id)+
+  '" data-hypo-domain-question="'+e(q.questionId)+'"><span>'+e(o.label)+'</span><span aria-hidden="true">→</span></button>').join('');
+ return page('<section class="ns-hypo-drill ns-hypo-domain" aria-labelledby="ns-hypo-question">'+
+  '<div class="ns-hypo-drill-top"><p class="ns-hypo-eyebrow">BEYOND THE SURFACE · QUESTION '+(completed+1)+'</p>'+
+  '<p><strong>'+e(q.subject)+'</strong> · '+e(DOMAIN_LENSES[q.category]?.area||q.category)+' · Questions about what changes it, what may maintain it and what could contradict our explanation.</p></div>'+
+  '<div class="ns-hypo-dialogue"><div class="ns-hypo-guide">'+art('ns-character-thinking.webp','ns-hypo-guide-art')+
+  '<div class="ns-hypo-guide-caption"><strong>Nobody</strong><span>Looking underneath the pattern</span></div></div>'+
+  '<div class="ns-hypo-speech-card"><p class="ns-hypo-eyebrow">'+e(q.layer.toUpperCase())+' · '+e(q.conceptId)+'</p>'+
+  '<h1 id="ns-hypo-question" tabindex="-1">'+e(q.prompt)+'</h1>'+
+  '<p>'+e(q.why)+'</p></div></div>'+
+  '<div class="ns-hypo-own-words"><label for="ns-hypo-domain-words">Describe the real detail in your own words (optional)</label>'+
+  '<textarea id="ns-hypo-domain-words" data-hypo-domain-words maxlength="280" rows="2" placeholder="The exact words you would use to describe what happened…"></textarea>'+
+  '<small>The selected option helps choose the next question. Only your reported answer appears as a fact; tentative connections are labelled separately.</small></div>'+
+  '<div class="ns-hypo-drill-options" role="group" aria-label="Choose the closest answer">'+choices+'</div>'+
+  '<div class="ns-hypo-question-footer"><button type="button" data-hypo-domain-back>← Back</button>'+
+  '<button type="button" data-hypo-domain-stop>Show my formulation now</button></div>'+
+  (completed?'<div class="ns-hypo-case-recap"><strong>What you have said</strong><ul>'+
+   domainFacts(state).slice(-5).map(f=>'<li>'+e(f.text)+'</li>').join('')+'</ul></div>':'')+
+  '<p class="ns-hypo-quiet">No questions discover a hidden cause with certainty. An answer indicating actual harm, physical risk or lack of freedom must not be reframed as your personal psychological failure.</p></section>');
+}
+function domainReasoningSection(state,result){
+ if(!domainEligible(state))return '';
+ const d=result.domain;
+ const by=new Map(domainFacts(state).map(f=>[f.kind,f]));
+ const f=id=>by.get('domain:'+id);
+ const tile=(label,value)=>value?'<div class="ns-hypo-depth-step"><span>'+e(label)+'</span><strong>'+e(value.text)+'</strong></div>':'';
+ const evidence=p=>'<ul>'+p.evidence.map(x=>'<li>“'+e(x.answer)+'”</li>').join('')+'</ul>';
+ const audit=formulationDepthAudit(state,result);
+ return '<section class="ns-hypo-depth-map" aria-labelledby="ns-hypo-depth-heading">'+
+  '<div class="ns-hypo-section-head"><span>02</span><div><p class="ns-hypo-eyebrow">YOUR INDIVIDUAL INVESTIGATION</p>'+
+  '<h2 id="ns-hypo-depth-heading">What may be contributing—and why?</h2>'+
+  '<p>Your actual words and choices come first. Connections below are possibilities that still need to survive counterexamples.</p></div></div>'+
+  (domainFacts(state).length?
+   '<div class="ns-hypo-depth-sequence">'+
+    tile('Condition you identified',f('primary'))+
+    tile('What changed when that condition was different',f('contrast'))+
+    tile('Another influence you mentioned',f('additional'))+
+    tile('Your actual response',f('response'))+
+    tile('Immediate effect',f('immediate'))+
+    tile('Longer-term consequence',f('later'))+
+    tile('Does this pattern repeat?',f('recurrence'))+
+    tile('Observation that challenges a simple story',f('exception'))+
+   '</div>':
+   '<p>We have not yet investigated a changeable condition, your response and its consequences for this exact experience.</p>')+
+  (d.hypotheses.length?
+   '<div class="ns-hypo-depth-explanations"><h3>Possible influences, not established causes</h3>'+
+    d.hypotheses.map(p=>'<article class="ns-hypo-depth-hypothesis"><h4>'+e(p.title)+'</h4><p>'+e(p.description)+'</p>'+
+     '<details><summary>What in your answers supports this?</summary>'+evidence(p)+'</details>'+
+     '<p><strong>Another explanation:</strong> '+e(p.alternative)+'</p>'+
+     '<p><strong>What would challenge it?</strong> '+e(p.falsifier)+'</p></article>').join('')+'</div>':
+   '<p class="ns-hypo-graph-unknown">We cannot yet link your answers into a tested explanation. A longer interview does not itself prove that something hidden has been uncovered.</p>')+
+  (d.counterpoints.length?'<div class="ns-hypo-depth-counters"><h3>What makes a simple explanation less convincing?</h3>'+
+    d.counterpoints.map(c=>'<article><strong>'+e(c.title)+'</strong><p>'+e(c.explanation)+'</p>'+evidence(c)+'</article>').join('')+'</div>':'')+
+  '<p class="ns-hypo-quiet">Source-check: '+e(String(audit.sourceFacts))+' directly reported details · '+
+   e(String(audit.contrastsCollected))+' contrasting observations · '+
+   e(String(audit.candidateExplanations))+' provisional cross-answer explanations. '+
+   (audit.passed?'No factual mismatches detected in this technical audit.':'Some evidence links need review.')+
+   ' Neither technical consistency nor interview length proves clinical accuracy.</p></section>';
+}
 function progress(state){
  const n=state.answers.length;
  const result=hypothesisResult(state);
@@ -211,7 +276,8 @@ function asking(state){
   '<div class="ns-hypo-question-footer"><button type="button" data-hypo-back '+(n?'':'disabled')+'>← Back</button>'+
   '<button type="button" data-hypo-skip data-hypo-question="'+e(q.id)+'">Skip</button>'+
   (state.drill?.confirmed&&!state.caseDetails?.finished?'<button type="button" data-hypo-fact-start>Explore the specifics first →</button>':'')+
-  (!state.investigation?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-invest-start>Investigate what might be keeping this going →</button>':'')+
+  (domainEligible(state)&&!state.domain?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-domain-start>Investigate the WHY behind this exact experience →</button>':'')+
+   (!state.investigation?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-invest-start>Investigate what might be keeping this going →</button>':'')+
   (n>=3?'<button type="button" data-hypo-results>'+(ready?'View my detailed working map':'See my tentative map')+'</button>':'')+'</div>'+
   (ready?'<p class="ns-hypo-ready">Nobody has enough information to sketch a provisional picture. You can inspect it now or keep answering to test other explanations.</p>':'')+
   '<details class="ns-hypo-why"><summary>Why is Nobody asking this question?</summary>'+
@@ -388,7 +454,7 @@ function resultPage(state,selectedNode=''){
   '<p class="ns-hypo-concern">'+e(r.situation)+'</p>'+
   '<p>There may be nothing wrong with a behaviour or preference itself. Sometimes the relevant difficulty is the social response, uncertainty, available resources or what the situation means to you.</p>'+
   '<p class="ns-hypo-quiet">Every interpretation below is provisional. A question about gender presentation cannot establish gender identity, sexual orientation or an underlying wound.</p></section>'+
-  graphSection(r,selectedNode)+
+  domainReasoningSection(state,r)+graphSection(r,selectedNode)+
   '<div data-hypo-node-editor>'+nodeEditor(r,selectedNode)+'</div>'+evidenceReviewSection(state,r)+
   '<section class="ns-hypo-possibilities"><div class="ns-hypo-section-head"><span>03</span><div>'+
   '<p class="ns-hypo-eyebrow">REASONS FOR AND AGAINST</p><h2>Compare our possible explanations.</h2></div></div>'+
@@ -399,7 +465,8 @@ function resultPage(state,selectedNode=''){
   '<section class="ns-hypo-final-actions"><div><h2>Keep exploring—or put something into practice</h2>'+
   '<p>There is no fixed question count. Each further question tries to distinguish explanations or investigate a part you challenged. You may also stop, revise, or choose something helpful without deciding on one cause.</p></div>'+
   '<div class="ns-hypo-final-buttons">'+
-  (!state.investigation?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-invest-start>Investigate possible causes and maintaining cycles →</button>':'')+
+  (domainEligible(state)&&!state.domain?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-domain-start>Investigate the deeper WHY for this specific experience →</button>':'')+
+   (!state.investigation?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-invest-start>Investigate possible causes and maintaining cycles →</button>':'')+
    (!state.adaptive?.finished&&state.investigation?.answers?.length?'<button type="button" class="ns-hypo-invest-action" data-hypo-adaptive-start>Test competing explanations in depth →</button>':'')+
   (state.drill?.confirmed&&!state.caseDetails?.finished?'<button type="button" data-hypo-fact-start>Explore more precise details →</button>':'')+
   (r.canContinue?'<button type="button" data-hypo-more>Keep investigating →</button>':
@@ -424,7 +491,7 @@ function saveText(name,raw){
 export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}={}){
  let state=null,stage='start',preselected=initialTrack,topic=initialTopic,selectedNode='';
  const render=(focus=false)=>{
-  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='drill'?narrowing(state):stage==='case'?specificFactsPage(state):stage==='investigation'?functionalInvestigationPage(state):stage==='adaptive'?adaptiveInquiryPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
+  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='drill'?narrowing(state):stage==='case'?specificFactsPage(state):stage==='investigation'?functionalInvestigationPage(state):stage==='adaptive'?adaptiveInquiryPage(state):stage==='domain'?domainInquiryPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
   if(focus){
    const heading=root.querySelector('#ns-hypo-question, .ns-hypo-result-hero h1, .ns-hypo-pick h2, .ns-hypo-safety-page h1');
    if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
@@ -529,6 +596,24 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
   }
   if(b.hasAttribute('data-hypo-adaptive-stop')&&state){
    state=stopAdaptiveInquiry(state);stage='result';render(true);return;
+  }
+  
+  if(b.hasAttribute('data-hypo-domain-start')&&state){
+   state=startDomainInquiry(state);
+   stage=domainQuestion(state)?'domain':'result';render(true);return;
+  }
+  if(b.dataset.hypoDomainAnswer&&state){
+   state=answerDomainInquiry(state,b.dataset.hypoDomainQuestion,b.dataset.hypoDomainAnswer,
+    root.querySelector('[data-hypo-domain-words]')?.value||'');
+   stage=state.domain?.active?'domain':'result';render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-domain-back')&&state){
+   if(state.domain?.answers?.length){state=backDomainInquiry(state);stage='domain';}
+   else{state=stopDomainInquiry(state);stage='result';}
+   render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-domain-stop')&&state){
+   state=stopDomainInquiry(state);stage='result';render(true);return;
   }
   if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';render(true);return;}
   if(b.hasAttribute('data-hypo-back')){
