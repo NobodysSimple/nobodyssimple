@@ -7,6 +7,7 @@ import {STEADY_REFERENCES} from './ns-steady-guide-utils.mjs';
 import {PATH_SOURCES} from './ns-pathway-content.mjs';
 import {renderTool} from './features.mjs';
 import {deckForWorkbook,filterCards,cardFilters} from './ns-intervention-cards.mjs';
+import {renderGameCarousel} from './ns-regulation-games.mjs';
 
 const e=x=>esc(String(x??''));
 const textOf=x=>String(x??'').trim().slice(0,3000);
@@ -205,7 +206,7 @@ function layout(g){
   (g.safetyFirst?careFirst(g)+sources(g):
    introduction(g)+(g.showAtlas?atlasPicker():'')+chooser()+
    '<section class="ns-pick-selected" id="ns-pick-selected" aria-live="off"><div data-pick-selected>'+selectedEmpty()+'</div></section>'+
-   dialogMarkup()+sources(g))+
+   '<div data-ns-games-host></div>'+dialogMarkup()+sources(g))+
   '<footer class="ns-pick-footer"><a href="#navigate/'+e(g.modeId)+'">← Change my choice</a>'+
   '<a href="#navigate">Choose another starting point →</a></footer></div>';
 }
@@ -350,5 +351,6 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
  surface.addEventListener('change',event=>{
   if(event.target.matches('[data-pick-field]')&&selected)drafts.set(selected.id,valuesFrom(sheet));
  });
+ renderGameCarousel(surface.querySelector('[data-ns-games-host]'),g);
  paintCards();paintTopics(surface);
 }
