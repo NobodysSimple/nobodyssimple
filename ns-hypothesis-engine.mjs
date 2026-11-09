@@ -7,6 +7,7 @@ import {atlasGet,atlasProblemIndex,isSafetyPriority} from './ns-atlas-core.mjs';
 import {safetyScreen} from './ns-reasoning-model.mjs';
 import {DEEP_PROCESSES,DEEP_BY_ID,EXTRA_BY_TRACK,DEEP_QUESTIONS,DEEP_QUESTION_BY_ID,isPresentationQuery,presentationBranchActive} from './ns-hypothesis-deep-content.mjs';
 import {buildFormulationGraph,graphCoverage,graphText,layerQuestionTags,editGraphNode,reopenGraphLayer} from './ns-hypothesis-graph.mjs';
+import {beginSubtypeDrill,answerSubtypeDrill,subtypeQuestion,subtypeNode} from './ns-hypothesis-subtype-atlas.mjs';
 
 const P=(id,title,description,possibleFunction,possibleCost,need,check,link)=>
  Object.freeze({id,title,description,possibleFunction,possibleCost,need,check,link});
@@ -134,8 +135,42 @@ export function startHypothesis({trackId='',topicId='',description=''}={}){
   indicator&&['crisis','coercion','harm','physical','unusual'].includes(indicator.kind)?
     {...indicator,kind:indicator.kind==='physical'?'medical':indicator.kind==='unusual'?'support':indicator.kind}:null;
  return {version:'2026-11-09-deep-2',trackId:track.id,topicId:topicId&&atlasGet(topicId)&&!risk?topicId:null,
-  description:raw,answers:[],feedback:{},nodeEdits:{},focusLayer:'',safety,initialSafety:safety};
+  description:raw,answers:[],feedback:{},nodeEdits:{},focusLayer:'',
+  drill:!safety&&!topicId?beginSubtypeDrill(track.id):null,safety,initialSafety:safety};
 }
+
+/**
+ * Domain-specific narrowing is an authored navigation path, not a clinical
+ * inference. The chosen experience is only reported after explicit "yes".
+ * Fictional training cases are not used to weight or diagnose anything.
+ */
+export function answerHypothesisDrill(state,questionId,answerId){
+ if(!state?.drill||state.safety)return state;
+ const q=subtypeQuestion(state.drill);
+ if(!q||q.id!==questionId)return state;
+ const drill=answerSubtypeDrill(state.drill,questionId,answerId);
+ if(drill===state.drill)return state;
+ // A dangerous physical-symptom branch triggers advice rather than trying
+ // to formulate new neurological or cardiopulmonary symptoms psychologically.
+ const dangerous=drill.clusterId==='HEALTH-ALARM'||
+   (drill.leafId&&(
+    drill.leafId==='SLEEP-HEALTH-GASPING-DURING-SLEEP'||
+    drill.leafId==='EATING-EATING-COMPENSATORY-ACTIONS'));
+ const safety=dangerous?{kind:'medical',reason:'This concern may require a physical-health assessment. A question pathway cannot establish its medical cause.'}:state.safety;
+ return {...state,drill,safety};
+}
+export function skipHypothesisDrill(state){
+ if(!state?.drill)return state;
+ return {...state,drill:{...state.drill,finished:true,exitReason:'skip'}};
+}
+export function backHypothesisDrill(state){
+ if(!state?.drill?.events?.length)return state;
+ const events=state.drill.events.slice(0,-1);
+ let drill=beginSubtypeDrill(state.trackId);
+ for(const step of events)drill=answerSubtypeDrill(drill,step.questionId,step.answerId);
+ return {...state,drill,safety:state.initialSafety||null};
+}
+
 function eligibleDeepQuestion(state,q){
  if(q.when==='presentation'&&!presentationBranchActive(state))return false;
  return true;
@@ -310,7 +345,7 @@ export function hypothesisResult(state){
  const coverage=graphCoverage(state,QUESTION_BY_ID);
  const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
  const canContinue=Boolean(nextHypothesisQuestion(state));
- return {track:TRACK_BY_ID[state.trackId],situation:state.description||TRACK_BY_ID[state.trackId].title,
+ return {track:TRACK_BY_ID[state.trackId],situation:state.description||(state.drill?.confirmed&&subtypeNode(state.drill.leafId)?'Exploring: '+subtypeNode(state.drill.leafId).label:TRACK_BY_ID[state.trackId].title),
   alternatives,graph,coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
    examined===0?'There is not enough distinguishing information yet.':
