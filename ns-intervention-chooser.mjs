@@ -42,34 +42,35 @@ function cardHTML(card,active){
 }
 function sources(g){
  return '<details class="ns-pick-sources"><summary>Evidence, safeguards and sources</summary>'+
-  '<p>'+e(g.review)+'</p><p>These sources explain background principles or clinical cautions. They do not validate this specific worksheet or guarantee it will help.</p>'+
+  '<p>'+e(g.review)+'</p><p>'+(g.contextFirst?'No topic-specific research review is assigned to this new editorial entry. Its suggested activities are general, optional and not validated treatments.':'These sources explain background principles or clinical cautions. They do not validate this specific worksheet or guarantee it will help.')+'</p>'+
   '<ul>'+g.sources.map(r=>'<li><a target="_blank" rel="noopener noreferrer" href="'+e(r.url)+'">'+e(r.name)+'</a>'+
   (r.scope?'<small>'+e(r.scope)+'</small>':'')+'</li>').join('')+'</ul>'+
   '<p>Not every approach fits every person. Some symptoms or unsafe situations need assessment, support or an environmental change instead.</p></details>';
 }
 function introduction(g){
  const list=(title,items)=>items?.length?'<div><h3>'+e(title)+'</h3><ul>'+items.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul></div>':'';
- const mechanisms=g.mechanisms?.length?'<div><h3>Different possible maintaining processes</h3>'+
+ const mechanisms=g.mechanisms?.length?'<div><h3>'+(g.contextFirst?'Conditions and influences worth checking':'Different possible maintaining processes')+'</h3>'+
   g.mechanisms.map(m=>'<div class="ns-pick-mechanism"><strong>'+e(m.label)+'</strong><p>'+e(m.detail)+'</p>'+
   (m.target?'<small>Potential target: '+e(m.target)+'</small>':'')+'</div>').join('')+'</div>':'';
  const caution='<aside class="ns-pick-cautions" role="note"><strong>Check the fit and safety first</strong>'+
   '<p>'+e(g.cautions?.[0]||'No single approach is appropriate for everybody.')+'</p>'+
   (g.medical?'<p>New or concerning physical symptoms require appropriate medical evaluation; do not assume they are psychological.</p>':'')+
+  (g.supportFirst?'<p>For abuse, coercion or monitoring, avoid recording private details on a device someone else may access. Do not attempt unsafe confrontation.</p>':'')+
   '<a href="#need/support-safety">Urgent support</a></aside>';
  return '<section class="ns-pick-understand" id="ns-pick-understand"><div class="ns-pick-headline">'+
   '<span class="ns-pick-step">01</span><div><p class="ns-pick-kicker">START HERE</p><h2>What is this experience?</h2></div></div>'+
   '<p class="ns-pick-definition">'+e(g.what)+'</p>'+
-  '<div class="ns-pick-cycle"><strong>One possible pattern</strong><p>'+e(g.cycle||'Experiences and causes vary. No pattern is assumed.')+'</p></div>'+
+  '<div class="ns-pick-cycle"><strong>'+(g.contextFirst?'Context, not a diagnosis':'One possible pattern')+'</strong><p>'+e(g.cycle||'Experiences and causes vary. No pattern is assumed.')+'</p></div>'+
   '<details class="ns-pick-deeper"><summary>Explore examples, possible contributors and different explanations</summary>'+
   '<div class="ns-pick-deeper-grid">'+list('What it can look like',g.recognise)+
   list('Contributors that might matter',g.contributors)+mechanisms+'</div>'+
-  '<p class="ns-pick-limits">These are hypotheses to consider—not a way to infer the cause of your own situation.</p></details>'+
+  '<p class="ns-pick-limits">'+(g.contextFirst?'These are questions to explore, not explanations for discrimination, evidence of a disorder or reasons to blame the person affected.':'These are hypotheses to consider—not a way to infer the cause of your own situation.')+'</p></details>'+
   caution+'</section>';
 }
 function atlasPicker(){
  return '<section class="ns-pick-topic-search" aria-labelledby="ns-pick-topic-title">'+
-  '<h2 id="ns-pick-topic-title">Looking for a particular difficulty?</h2>'+
-  '<label for="ns-pick-search">Search the psychological atlas</label>'+
+  '<h2 id="ns-pick-topic-title">Looking for a particular experience or difficulty?</h2>'+
+  '<label for="ns-pick-search">Search the psychological atlas</label><p><a href="#navigate/atlas">Browse every category and topic</a></p>'+
   '<input type="search" id="ns-pick-search" data-pick-search autocomplete="off" placeholder="e.g. procrastination, sleep, rumination…">'+
   '<div class="ns-pick-topic-meta"><output data-pick-count aria-live="polite"></output>'+
   '<button type="button" data-pick-show-all>Browse all</button></div>'+
@@ -196,6 +197,7 @@ function careFirst(g){
 function introductionCover(g){
  return '<header class="ns-pick-cover ns-tone-'+e(g.tone||'sage')+'"><p class="ns-pick-kicker">NOBODY’S SIMPLE · YOUR FIELD GUIDE</p>'+
   '<h1>'+e(g.title)+'</h1><p>'+e(g.lead)+'</p>'+
+  (g.contextFirst?'<p class="ns-pick-editorial-status">Editorial overview · explore safely. This topic has not had an individual evidence review, and an identity or background is not a disorder.</p>':'')+
   '<div class="ns-pick-cover-bottom"><span>Understand what is happening</span><span>Choose only what fits</span><span>Work at your pace</span></div></header>';
 }
 function layout(g){
@@ -236,7 +238,7 @@ function paintTopics(surface){
  const all=[...atlasProblemIndex].sort((a,b)=>a.title.localeCompare(b.title));
  let showAll=false;
  const paint=()=>{
-  const q=input.value.trim();const found=q?atlasSearch(q,166):showAll?all:all.slice(0,8);
+  const q=input.value.trim();const found=q?atlasSearch(q,all.length):showAll?all:all.slice(0,8);
   list.innerHTML=found.length?found.map(p=>'<a href="#workbook-topic/'+encodeURIComponent(p.id)+'">'+
    '<strong>'+e(p.title)+'</strong><span>'+e(p.hint)+'</span>'+arrow+'</a>').join(''):
    '<p>No exact match. Try a broader name, or seek advice for concerning symptoms.</p>';
