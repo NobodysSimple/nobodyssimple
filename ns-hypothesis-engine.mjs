@@ -5,6 +5,8 @@
  */
 import {atlasGet,atlasProblemIndex,isSafetyPriority} from './ns-atlas-core.mjs';
 import {safetyScreen} from './ns-reasoning-model.mjs';
+import {DEEP_PROCESSES,DEEP_BY_ID,EXTRA_BY_TRACK,DEEP_QUESTIONS,DEEP_QUESTION_BY_ID,isPresentationQuery,presentationBranchActive} from './ns-hypothesis-deep-content.mjs';
+import {buildFormulationGraph,graphCoverage,graphText,layerQuestionTags,editGraphNode,reopenGraphLayer} from './ns-hypothesis-graph.mjs';
 
 const P=(id,title,description,possibleFunction,possibleCost,need,check,link)=>
  Object.freeze({id,title,description,possibleFunction,possibleCost,need,check,link});
@@ -31,7 +33,7 @@ export const FORMULATION_PROCESSES=Object.freeze([
  P('social','Social evaluation and exclusion','Social situations may carry a fear of embarrassment or exclusion.','Remaining quiet or avoiding a situation can reduce immediate exposure.','Belonging or corrective experiences may be limited.','Genuine inclusion, safety and respectful connection.','Is this different with accepting people?','#workbook-topic/social-anxiety'),
  P('identity','Identity and social expectations','Social expectations can conflict with how someone understands themselves.','Masking or withholding may preserve short-term acceptance.','Autonomy and connection may be restricted.','Belonging, privacy, agency and acceptance.','Does the experience change in safer environments?','#workbook/understand/identity')
 ]);
-export const PROCESS_BY_ID=Object.freeze(Object.fromEntries(FORMULATION_PROCESSES.map(p=>[p.id,p])));
+export const PROCESS_BY_ID=Object.freeze(Object.fromEntries([...FORMULATION_PROCESSES,...DEEP_PROCESSES].map(p=>[p.id,p])));
 const T=(id,title,description,art,processes,topic)=>Object.freeze({
  id,title,description,art,processes:Object.freeze(processes),topic
 });
@@ -95,7 +97,7 @@ export const QUESTIONS=Object.freeze([
  Q('constraints','Are money, disability access, care duties or another person limiting your options?','Checks real conditions and unequal power.',{capacity:1,environment:2,power:1.5,values:.5},['choices','relationships','procrastination','fatigue'],2),
  Q('slowing','Does practical help or reduced demands help more than analysing it?','Compares changes in conditions with more self-reflection.',{capacity:1.7,environment:1,emotion:1,uncertainty:-1},['fatigue','emotion','loss'],1.7)
 ]);
-export const QUESTION_BY_ID=Object.freeze(Object.fromEntries(QUESTIONS.map(q=>[q.id,q])));
+export const QUESTION_BY_ID=Object.freeze(Object.fromEntries([...QUESTIONS,...DEEP_QUESTIONS].map(q=>[q.id,q])));
 export const ANSWER_OPTIONS=Object.freeze([
  {id:'yes',label:'Yes',value:1},
  {id:'probably',label:'Probably',value:.55},
@@ -104,7 +106,7 @@ export const ANSWER_OPTIONS=Object.freeze([
  {id:'no',label:'No',value:-1}
 ]);
 const ANSWER_BY_ID=Object.freeze(Object.fromEntries(ANSWER_OPTIONS.map(a=>[a.id,a])));
-const MAX_QUESTIONS=9;
+// No arbitrary nine-question cap: conclude only when the user chooses or useful questions are exhausted.
 const cap=(x,n=700)=>String(x??'').trim().slice(0,n);
 const findTrack=raw=>{
  const q=cap(raw,150).toLowerCase();
@@ -117,7 +119,7 @@ const findTrack=raw=>{
  [/insomn|sleep|nightmare|waking/,'sleep'],
  [/check|ritual|compulsi|repeat/,'checking'],
  [/decision|decide|choice|future/,'choices'],
- [/identity|belong|self-worth/,'identity'],
+ [/identity|belong|self-worth|gender|presentation|feminin|masculin|shav(?:e|ed|ing)|grooming|cross.?dress|clothes|nail polish|appearance/,'identity'],
  [/sensory|noise|crowd|overstimulat/,'sensory'],
  [/grief|loss|bereav|separat|transition/,'loss'],
  [/angry|emotion|react|feelings|panic/,'emotion']];
@@ -125,24 +127,32 @@ const findTrack=raw=>{
 };
 export function findHypothesisTrack(raw){return TRACK_BY_ID[findTrack(raw)]||null;}
 export function startHypothesis({trackId='',topicId='',description=''}={}){
- const track=TRACK_BY_ID[trackId]||findHypothesisTrack(topicId)||findHypothesisTrack(description)||TRACK_BY_ID.procrastination;
+ const track=TRACK_BY_ID[trackId]||findHypothesisTrack(description)||findHypothesisTrack(topicId)||TRACK_BY_ID.procrastination;
  const raw=cap(description),risk=isSafetyPriority(topicId);
  const indicator=raw?safetyScreen(raw):null;
  const safety=risk?{kind:'support',reason:'This issue requires individual support before an automated formulation.'}:
   indicator&&['crisis','coercion','harm','physical','unusual'].includes(indicator.kind)?
     {...indicator,kind:indicator.kind==='physical'?'medical':indicator.kind==='unusual'?'support':indicator.kind}:null;
- return {version:'2026-11-09-original-1',trackId:track.id,topicId:topicId&&atlasGet(topicId)&&!risk?topicId:null,
-  description:raw,answers:[],feedback:{},safety};
+ return {version:'2026-11-09-deep-2',trackId:track.id,topicId:topicId&&atlasGet(topicId)&&!risk?topicId:null,
+  description:raw,answers:[],feedback:{},nodeEdits:{},focusLayer:'',safety,initialSafety:safety};
+}
+function eligibleDeepQuestion(state,q){
+ if(q.when==='presentation'&&!presentationBranchActive(state))return false;
+ return true;
 }
 export function questionPool(state){
  const track=TRACK_BY_ID[state?.trackId];if(!track)return [];
- const set=new Set(track.processes);
- return QUESTIONS.filter(q=>(!q.tracks.length||q.tracks.includes(track.id))&&Object.keys(q.signals).some(x=>set.has(x)));
+ const allowed=new Set([...track.processes,...(EXTRA_BY_TRACK[track.id]||[])]);
+ return [...QUESTIONS,...DEEP_QUESTIONS].filter(q=>
+  (q.tracks.length===0||q.tracks.includes(track.id))&&
+  Object.keys(q.signals).some(id=>allowed.has(id))&&
+  eligibleDeepQuestion(state,q));
 }
+const trackProcesses=state=>[...(TRACK_BY_ID[state.trackId]?.processes||[]),...(EXTRA_BY_TRACK[state.trackId]||[])];
 const weight=(answer,q,id)=>(ANSWER_BY_ID[answer.answerId]?.value||0)*(q.signals[id]||0);
 function rawCandidates(state){
  const t=TRACK_BY_ID[state.trackId];if(!t)return [];
- return t.processes.map((id,index)=>{
+ return trackProcesses(state).map((id,index)=>{
   const process=PROCESS_BY_ID[id];
   const evidence=state.answers.map(a=>{
    const q=QUESTION_BY_ID[a.questionId];return q?{
@@ -159,66 +169,138 @@ function rawCandidates(state){
  });
 }
 export function rankedHypotheses(state,n=3){return rawCandidates(state).slice(0,n);}
+/**
+ * Expected information gain based on assumed (NOT calibrated) yes/no
+ * compatibility. It is a question-selection heuristic, not diagnostic Bayes.
+ * Unknown answers never count as confirmation.
+ */
+const entropy=prob=>-prob.reduce((a,p)=>a+(p>0?p*Math.log2(p):0),0);
+function expectedDiscrimination(q,candidates){
+ const relevant=candidates.slice(0,12);
+ if(relevant.length<2)return 0;
+ const strengths=relevant.map(c=>Math.exp(Math.max(-6,Math.min(6,c.score*.22))));
+ const total=strengths.reduce((a,b)=>a+b,0);
+ const prior=strengths.map(v=>v/total);
+ const yesLikelihood=relevant.map(c=>{
+  const signal=Math.max(-2,Math.min(2,q.signals[c.id]||0));
+  return Math.max(.12,Math.min(.88,.5+signal*.17));
+ });
+ const yes=prior.reduce((sum,p,i)=>sum+p*yesLikelihood[i],0);
+ const no=1-yes;
+ const yesPosterior=prior.map((p,i)=>p*yesLikelihood[i]/yes);
+ const noPosterior=prior.map((p,i)=>p*(1-yesLikelihood[i])/no);
+ const gain=entropy(prior)-yes*entropy(yesPosterior)-no*entropy(noPosterior);
+ return Math.max(0,gain);
+}
 export function nextHypothesisQuestion(state){
- if(!state||state.safety||state.answers.length>=MAX_QUESTIONS)return null;
+ if(!state||state.safety)return null;
  const used=new Set(state.answers.map(a=>a.questionId));
  const pool=questionPool(state).filter(q=>!used.has(q.id));
  if(!pool.length)return null;
  if(!state.answers.length){
   const first={procrastination:'first',overthinking:'certainty',relationships:'unsafe',
    social:'accepted',fatigue:'energy',emotion:'react',sleep:'external-sleep',
-   checking:'ritual',choices:'value-clash',identity:'expectations',sensory:'sensory',loss:'loss'};
+   checking:'ritual',choices:'value-clash',identity:isPresentationQuery(state.description)?'d-id-presentation':'expectations',
+   sensory:'sensory',loss:'loss'};
   return pool.find(q=>q.id===first[state.trackId])||pool[0];
  }
- const candidates=rawCandidates(state).slice(0,5);
- const mean=arr=>arr.reduce((s,x)=>s+x,0)/Math.max(arr.length,1);
+ const candidates=rawCandidates(state);
+ const coverage=graphCoverage(state,QUESTION_BY_ID);
+ const tagCount=new Map();
+ for(const a of state.answers){
+  const q=QUESTION_BY_ID[a.questionId];
+  for(const tag of q?.tags||[])tagCount.set(tag,(tagCount.get(tag)||0)+1);
+ }
+ const focusTags=layerQuestionTags(state.focusLayer||'');
  const last=QUESTION_BY_ID[state.answers.at(-1)?.questionId];
- const scored=pool.map(q=>{
-  const signals=candidates.map(c=>q.signals[c.id]||0),avg=mean(signals);
-  const variance=mean(signals.map(x=>(x-avg)**2));
-  const overlapping=last&&Object.keys(q.signals).some(k=>(q.signals[k]||0)>=1.5&&(last.signals[k]||0)>=1.5);
-  return {q,score:1.8*variance+new Set(signals).size*.13+q.priority*.15-(overlapping?.35:0)};
+ const ranked=pool.map(q=>{
+  const gain=expectedDiscrimination(q,candidates);
+  const missing=(q.tags||[]).filter(tag=>(tagCount.get(tag)||0)===0).length;
+  const repeated=last&&(q.tags||[]).length>0&&
+    (q.tags||[]).some(tag=>(last.tags||[]).includes(tag));
+  const focus=focusTags.length&&(q.tags||[]).some(t=>focusTags.includes(t))?1.8:0;
+  const presentation=state.trackId==='identity'&&presentationBranchActive(state)&&q.when==='presentation'?.28:0;
+  const questionPriority=q.priority||1.4;
+  const score=gain*10+missing*.29+(q.tags?.includes('counterfactual')&&!coverage.counterfactual?.7:0)+
+    questionPriority*.14+focus+presentation-(repeated?.18:0);
+  return {q,score};
  });
- return scored.sort((a,b)=>b.score-a.score||a.q.id.localeCompare(b.q.id))[0].q;
+ return ranked.sort((a,b)=>b.score-a.score||a.q.id.localeCompare(b.q.id))[0]?.q||null;
+}
+function answerSafety(q,answerId){
+ if(!q.flag||!['yes','probably'].includes(answerId))return null;
+ return {kind:q.flag,reason:q.flag==='medical'?
+  'Concerning physical health symptoms deserve an appropriate medical assessment.':
+  'Possible intimidation or coercion deserves a safety-first response.'};
 }
 export function answerHypothesis(state,questionId,answerId){
  if(!state||state.safety||!ANSWER_BY_ID[answerId])return state;
  const q=questionPool(state).find(x=>x.id===questionId);
- if(!q||state.answers.some(a=>a.questionId===questionId)||state.answers.length>=MAX_QUESTIONS)return state;
- const safety=q.flag&&ANSWER_BY_ID[answerId].value>=.55?{
-  kind:q.flag,reason:q.flag==='medical'?'Possible physical health concerns deserve appropriate medical assessment.':
-   'Possible intimidation or coercion deserves a safety-first response.'}:null;
- return {...state,answers:[...state.answers,{questionId,answerId}],safety:safety||state.safety};
+ if(!q||state.answers.some(a=>a.questionId===questionId))return state;
+ const safety=answerSafety(q,answerId);
+ return {...state,answers:[...state.answers,{questionId,answerId}],
+  safety:safety||state.initialSafety||null,
+  // A focused re-investigation continues to target the same branch until
+  // the user explicitly chooses another.
+  focusLayer:state.focusLayer||''};
+}
+export function reviseHypothesisAnswer(state,questionId,answerId){
+ if(!state||!ANSWER_BY_ID[answerId]||!state.answers.some(a=>a.questionId===questionId))return state;
+ let revision={...state,answers:state.answers.map(a=>a.questionId===questionId?{questionId,answerId}:a),
+  safety:state.initialSafety||null};
+ // Remove now-irrelevant specialised branch answers when its gateway changes.
+ if(revision.trackId==='identity'&&!presentationBranchActive(revision))
+  revision={...revision,answers:revision.answers.filter(a=>QUESTION_BY_ID[a.questionId]?.when!=='presentation')};
+ for(const a of revision.answers){
+  const q=QUESTION_BY_ID[a.questionId];
+  const safety=q&&answerSafety(q,a.answerId);
+  if(safety){revision={...revision,safety};break;}
+ }
+ return revision;
+}
+export function focusHypothesisLayer(state,layer){
+ if(!state||state.safety)return state;
+ return reopenGraphLayer(state,layer);
+}
+export function reviseHypothesisNode(state,id,change){
+ if(!state||state.safety)return state;
+ const result=hypothesisResult(state);
+ if(!result?.graph.some(node=>node.id===id))return state;
+ let updated=editGraphNode(state,id,change);
+ if(id.startsWith('mechanism:')&&['fits','unsure','no-fit'].includes(change?.verdict))
+  updated=reviewHypothesis(updated,id.slice('mechanism:'.length),change.verdict);
+ return updated;
 }
 export function backHypothesis(state){
  if(!state?.answers.length)return state;
- return {...state,answers:state.answers.slice(0,-1),safety:null,feedback:{}};
+ return {...state,answers:state.answers.slice(0,-1),safety:state.initialSafety||null,feedback:{},focusLayer:''};
 }
 export function reviewHypothesis(state,id,value){
- if(!state||!TRACK_BY_ID[state.trackId]?.processes.includes(id)||!['fits','unsure','no-fit'].includes(value))return state;
+ if(!state||!trackProcesses(state).includes(id)||!['fits','unsure','no-fit'].includes(value))return state;
  return {...state,feedback:{...state.feedback,[id]:value}};
 }
 export function hypothesisResult(state){
  if(!state)return null;
- const all=rankedHypotheses(state,30);
+ const all=rankedHypotheses(state,100);
  const leading=all.slice(0,3);
- // A rejected hypothesis stays visible for review: do not silently erase the
- // user's disagreement merely because its position fell out of the top three.
  const reviewed=all.filter(c=>!leading.some(x=>x.id===c.id)&&c.feedback!=='unreviewed');
  const alternatives=[...leading,...reviewed];
  const examined=state.answers.filter(a=>ANSWER_BY_ID[a.answerId]?.value!==0).length;
  const first=alternatives[0],second=alternatives[1];
- const unresolved=examined<3||!first?.positive.length||(first?.score||0)-(second?.score||0)<1;
+ const unresolved=examined<5||!first?.positive.length||(first?.score||0)-(second?.score||0)<1;
  const topic=state.topicId||TRACK_BY_ID[state.trackId].topic;
  const safeTopic=topic&&atlasGet(topic)&&!isSafetyPriority(topic)?topic:null;
+ const coverage=graphCoverage(state,QUESTION_BY_ID);
+ const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
+ const canContinue=Boolean(nextHypothesisQuestion(state));
  return {track:TRACK_BY_ID[state.trackId],situation:state.description||TRACK_BY_ID[state.trackId].title,
-  alternatives,examined,unresolved,topic:safeTopic,canContinue:Boolean(nextHypothesisQuestion(state)),
+  alternatives,graph,coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
    examined===0?'There is not enough distinguishing information yet.':
-   unresolved?'Several different explanations still fit. The answers cannot establish one cause.':
-   'Some observations favour one possibility, but alternatives and contextual influences remain important.',
-  notes:'These are provisional possibilities, not a diagnosis, risk estimate, discovered trauma or proof of a cause.',
-  method:'Question selection uses uncalibrated relative evidence rules, not verified clinical likelihoods.'};
+   unresolved?'Several explanations remain plausible. The answers cannot establish one cause.':
+   'Your answers provide a provisional picture to examine. More questions and corrections may change it.',
+  notes:'A formulation is an editable working hypothesis, not a diagnosis, risk estimate, recovered memory or hidden-cause discovery.',
+  method:'Uncalibrated relative compatibility signals and expected question-discrimination, not validated clinical probabilities.'};
 }
 export function describeFormulation(state,candidate){
  const p=candidate.process;
@@ -243,9 +325,12 @@ export function formulationPlainText(state){
     'Possible need to consider (not inferred): '+f.need,
     'A distinguishing question: '+f.challenge,
     'Your feedback: '+c.feedback,''];
-  }),r.notes,r.method].join('\n');
+  }),graphText(state,r.graph),r.notes,r.method].join('\n');
 }
-export const HYPOTHESIS_LIMIT=MAX_QUESTIONS;
+// Retained for API compatibility only: the engine has no fixed nine-question stopping rule.
+export const HYPOTHESIS_LIMIT=QUESTIONS.length+DEEP_QUESTIONS.length;
+export const HYPOTHESIS_DEEP_QUESTION_COUNT=DEEP_QUESTIONS.length;
+export const HYPOTHESIS_PROCESS_COUNT=FORMULATION_PROCESSES.length+DEEP_PROCESSES.length;
 export function selectableAtlasTopics(query,limit=12){
  const text=cap(query,80).toLowerCase();
  if(!text)return [];
