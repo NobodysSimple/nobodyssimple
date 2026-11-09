@@ -3,6 +3,7 @@
  */
 import {investigationFacts} from './ns-hypothesis-investigation.mjs';
 import {adaptiveFacts} from './ns-hypothesis-adaptive.mjs';
+import {domainFacts} from './ns-hypothesis-domain-depth.mjs';
 
 export const FORMULATION_DIMENSIONS=Object.freeze([
  {id:'situation',label:'The immediate situation',core:['who','father_behaviour','event','environment'],adaptive:['external_persistence','external_action']},
@@ -18,7 +19,8 @@ export const FORMULATION_DIMENSIONS=Object.freeze([
 const neutral=new Set(['unsure','other','prefer_not','unknown']);
 const states=(state)=>new Map([
  ...(state?.investigation?.answers||[]).map(a=>['core:'+a.field,a.answerId]),
- ...(state?.adaptive?.answers||[]).map(a=>['adaptive:'+a.field,a.answerId])
+ ...(state?.adaptive?.answers||[]).map(a=>['adaptive:'+a.field,a.answerId]),
+  ...(state?.domain?.answers||[]).map(a=>['domain:'+a.field,a.answerId])
 ]);
 export function evidenceCoverage(state){
  const answers=states(state);
@@ -33,7 +35,7 @@ export function evidenceCoverage(state){
  });
 }
 export function auditFormulationEvidence(state,result){
- const direct=[...investigationFacts(state),...adaptiveFacts(state)];
+ const direct=[...investigationFacts(state),...adaptiveFacts(state),...domainFacts(state)];
  const graph=result?.graph||[];
  const links=result?.links||[];
  const graphEvidence=graph.flatMap(node=>node.evidence||[]);
@@ -53,7 +55,7 @@ export function auditFormulationEvidence(state,result){
  for(const link of links){
   // Only Stage 3/4 evidence-linked edges are checked. Existing earlier
   // hypothetical process edges may use a different representation.
-  if(!(link.id||'').startsWith('invest-link:')&&!(link.id||'').startsWith('adaptive-link:'))continue;
+  if(!(link.id||'').startsWith('invest-link:')&&!(link.id||'').startsWith('adaptive-link:')&&!(link.id||'').startsWith('domain-link:'))continue;
   const a=byId.get(link.from),b=byId.get(link.to);
   if(!a||!b)add('unsupported_edge',link.id,'Missing one or both source facts');
   else if(a.text!==link.fromText||b.text!==link.toText)
@@ -72,4 +74,28 @@ export function auditFormulationEvidence(state,result){
   verbatimAnswers:direct.filter(f=>!!f.verbatim).length,
   coverage:evidenceCoverage(state),
   clinicalValidityAssessed:false};
+}
+
+/* Stage 6 research-readiness: field evidence provenance is auditable but
+ * cannot replace independent clinician/lived-experience judgements. */
+export function formulationDepthAudit(state,result){
+ const facts=domainFacts(state);
+ const hypotheses=result?.domain?.hypotheses||[];
+ const contrasts=facts.filter(f=>['domain:contrast','domain:exception','domain:recurrence'].includes(f.kind));
+ const issues=[];
+ const index=new Map(facts.map(f=>[f.id,f]));
+ for(const pattern of hypotheses){
+  if((pattern.evidence||[]).length<2)
+   issues.push({kind:'surface_only',id:pattern.id,reason:'Inferred pattern lacks at least two reported source facts'});
+  for(const ev of pattern.evidence||[]){
+   if(!index.has(ev.id)||index.get(ev.id).text!==ev.answer)
+    issues.push({kind:'source_mismatch',id:pattern.id,reason:'Pattern wording differs from the person-reported source'});
+  }
+  if(!pattern.falsifier||!pattern.alternative)
+   issues.push({kind:'missing_disconfirmation',id:pattern.id,reason:'An alternative and disconfirmation check are required'});
+ }
+ return {sourceFacts:facts.length,contrastsCollected:contrasts.length,
+  candidateExplanations:hypotheses.length,unexaminedContrasts:(result?.domain?.untested||[]).length,
+  structuralIssues:issues,passed:issues.length===0,
+  causalTruthEstablished:false,clinicalAccuracyMeasured:false};
 }
