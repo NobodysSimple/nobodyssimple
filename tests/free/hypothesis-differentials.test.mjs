@@ -31,7 +31,10 @@ test('withdrawal, relief and continuing difficulty yields a testable temporary-r
  assert.ok(p.some(x=>x.id==='pattern:relief-return'));
  assert.ok(p.some(x=>x.id==='pattern:social-approval'));
  assert.ok(p.every(x=>x.status==='testable_not_established'));
- const g=hypothesisResult(s).graph;
+ const report=hypothesisResult(s);
+ assert.equal(report.alternatives.length,0,'No generic ranking without original interview answers');
+ assert.ok(report.patterns.some(p=>p.id==='pattern:relief-return'));
+ const g=report.graph;
  const node=g.find(x=>x.id==='pattern:relief-return');
  assert.ok(node&&node.detail.includes('Why it may be wrong'));
  assert.ok(node.evidence.some(x=>x.answer.includes('relief')));
