@@ -310,3 +310,13 @@ body.app-body.ns-shell-v1 #main .ns-hypo-answer-history :is(button,select):focus
  body.app-body.ns-shell-v1 #main .ns-hypo-node-actions,
  body.app-body.ns-shell-v1 #main .ns-hypo-node-editor textarea{display:none!important;}
 }
+
+/* Show the precise answer and question within each relevant graph node:
+ * a factual audit trail rather than inferring a more specific narrative. */
+body.app-body.ns-shell-v1 #main .ns-hypo-node-observations{
+ display:grid;gap:5px;margin:1px 0 3px;
+ padding:8px 9px;border:1px solid #ffffffad;border-radius:9px;
+ background:#ffffff8a;color:#335640;font:550 11px/1.5 system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-node-observations>span{display:block;overflow-wrap:anywhere;}
+body.app-body.ns-shell-v1 #main .ns-hypo-node-observations b{color:#245438;font-weight:850;}
