@@ -159,6 +159,10 @@ function graphNodeButton(node,selected){
   '" data-hypo-node="'+e(node.id)+'" aria-pressed="'+(selected===node.id)+'">'+
   '<span class="ns-hypo-node-overline">'+e(layers[node.layer]||node.layer)+'</span>'+
   '<strong>'+e(node.summary)+'</strong>'+
+  (node.evidence?.length?'<span class="ns-hypo-node-observations">'+
+   node.evidence.slice(0,node.layer==='mechanism'?1:2).map(item=>
+    '<span><b>'+e(item.answer)+'</b> · '+e(item.question)+'</span>').join('')+
+   '</span>':'')+
   '<span class="ns-hypo-node-detail">'+
   (node.review==='no-fit'?'You challenged this part':
    node.review==='fits'?'Marked as fitting':
