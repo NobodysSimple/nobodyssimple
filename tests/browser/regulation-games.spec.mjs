@@ -10,18 +10,19 @@ const game=async(page,id)=>{
  await open.click();
  await expect(page.locator('[data-game-active="'+id+'"]')).toBeVisible();
 };
-test('Emotion Compass appears directly below Hypothesis Generator; tool catalogue shortcut is removed',async({page})=>{
+test('Emotion Compass follows Lifestyle, with the retired hypothesis card absent',async({page})=>{
  await page.goto('/index.html#home');
- const hypothesis=page.locator('.ns-home-hypothesis');
+ const lifestyle=page.locator('.ns-home-lifestyle');
  const compass=page.locator('.ns-home-compass');
- await expect(hypothesis).toBeVisible();
+ await expect(lifestyle).toBeVisible();
+ await expect(page.locator('.ns-home-hypothesis')).toHaveCount(0);
  await expect(compass).toBeVisible();
  await expect(compass).toContainText('Emotion Compass');
  const order=await compass.evaluate(el=>({
   here:[...el.parentElement.children].indexOf(el),
-  hypothesis:[...el.parentElement.children].indexOf(el.parentElement.querySelector('.ns-home-hypothesis'))
+  lifestyle:[...el.parentElement.children].indexOf(el.parentElement.querySelector('.ns-home-lifestyle'))
  }));
- expect(order.here).toBe(order.hypothesis+1);
+ expect(order.here).toBe(order.lifestyle+1);
  await expect(page.locator('.ns-home-shortcuts a[href="#tools"]')).toHaveCount(0);
  await compass.click();
  await expect(page).toHaveURL(/#compass$/);

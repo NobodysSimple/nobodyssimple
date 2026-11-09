@@ -149,19 +149,17 @@ test('named atlas topics link to genuine site routes; unsupported topics are not
   if(href.startsWith('#workbook-topic/'))assert.ok(atlasGet(href.slice('#workbook-topic/'.length)),href);
  }
 });
-test('homepage, route and style actually load the new original app',()=>{
+test('retired generator is absent from app navigation while source remains preserved',()=>{
  const site=readFileSync('site.mjs','utf8');
  const home=readFileSync('strategy.mjs','utf8');
  const html=readFileSync('index.html','utf8');
  const css=readFileSync('ns-hypothesis-generator.css','utf8');
  const ui=readFileSync('ns-hypothesis-generator.mjs','utf8');
  const sw=readFileSync('sw.js','utf8');
- assert.match(site,/hypothesis: \(\) => renderHypothesisGenerator/);
- assert.match(site,/Hypothesis Generator/);
- assert.match(home,/ns-home-hypothesis/);
- const i=home.indexOf('ns-home-hypothesis');
- assert.ok(home.lastIndexOf('ns-home-lifestyle',i)>0,'button must follow Lifestyle');
- assert.match(html,/ns-hypothesis-generator.css/);
+ assert.doesNotMatch(site,/hypothesis: \(\) => renderHypothesisGenerator/);
+ assert.doesNotMatch(site,/import \{renderHypothesisGenerator\}/);
+ assert.doesNotMatch(home,/ns-home-hypothesis|href="#hypothesis"/);
+ assert.doesNotMatch(html,/ns-hypothesis-generator.css/);
  assert.match(css,/ns-home-hypothesis/);
  assert.match(ui,/data-hypo-answer/);
  assert.match(ui,/data-hypo-feedback/);
@@ -169,7 +167,7 @@ test('homepage, route and style actually load the new original app',()=>{
  assert.match(ui,/data-hypo-back/);
  assert.match(ui,/data-hypo-skip/);
  assert.match(ui,/ns-hypo-safety-page/);
- assert.match(sw,/ns-hypothesis-engine.mjs/);
+ assert.doesNotMatch(sw,/ns-hypothesis-engine.mjs/);
  assert.doesNotMatch(ui,/localStorage|sessionStorage|sendBeacon|fetch\(/);
  assert.doesNotMatch(ui,/OpenAkinator|Akinator|genie|guess your character/i);
 });
