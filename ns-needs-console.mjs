@@ -38,7 +38,7 @@ function subjectCard(p){
 function getSubjectMatches(search,domain){
  let set=atlasProblemIndex.filter(p=>!domain||p.domain===domain);
  const words=norm(search).split(/\s+/).filter(Boolean);
- if(words.length)set=set.filter(p=>{const hay=norm(p.title+' '+p.hint+' '+(p.aliases||[]).join(' '));return words.every(w=>hay.includes(w));});
+ if(words.length)set=set.filter(p=>{const hay=norm(p.id+' '+p.title+' '+p.hint+' '+(p.aliases||[]).join(' '));return words.every(w=>hay.includes(w));});
  return set.sort((a,b)=>a.title.localeCompare(b.title));
 }
 function atlasScreen(root){
