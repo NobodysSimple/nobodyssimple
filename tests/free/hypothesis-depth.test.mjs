@@ -8,7 +8,7 @@ import {
  HYPOTHESIS_DEEP_QUESTION_COUNT,HYPOTHESIS_PROCESS_COUNT,
  startHypothesis,nextHypothesisQuestion,questionPool,answerHypothesis,
  hypothesisResult,rankedHypotheses,reviseHypothesisAnswer,
- focusHypothesisLayer,reviseHypothesisNode,formulationPlainText
+ focusHypothesisLayer,reviseHypothesisNode,formulationPlainText,EQUIVALENT_QUESTION_GROUPS
 } from '../../ns-hypothesis-engine.mjs';
 const answer=(s,id,value='yes')=>answerHypothesis(s,id,value);
 test('added content is original, broad and structurally validated without inventing probabilities',()=>{
@@ -167,4 +167,29 @@ test('actual UI includes narrative entry, clickable graph, individual correction
  assert.match(index,/ns-hypothesis-depth.css/);
  assert.match(sw,/ns-hypothesis-deep-content.mjs/);
  assert.doesNotMatch(ui,/localStorage|sessionStorage|sendBeacon|fetch\(/);
+});
+
+test('semantic guard avoids equivalent questions while preserving meaningful contrasts',()=>{
+ for(const group of EQUIVALENT_QUESTION_GROUPS){
+  assert.ok(group.length>=2);
+  for(const id of group)assert.ok(QUESTION_BY_ID[id],id);
+  const tracks=new Set(group.flatMap(id=>QUESTION_BY_ID[id].tracks));
+  for(const trackId of tracks){
+   let s=startHypothesis({trackId});
+   const available=group.filter(id=>questionPool(s).some(q=>q.id===id));
+   if(available.length<2)continue;
+   s=answerHypothesis(s,available[0],'yes');
+   const siblingIds=new Set(available.slice(1));
+   let count=0;
+   while(count++<90){
+    const q=nextHypothesisQuestion(s);
+    if(!q)break;
+    assert.ok(!siblingIds.has(q.id),trackId+': repeated equivalent of '+available[0]+' using '+q.id);
+    s=answerHypothesis(s,q.id,q.flag?'no':'probably');
+   }
+  }
+ }
+ const identity=startHypothesis({trackId:'identity',description:'I am curious about how I present'});
+ const after=answerHypothesis(identity,'d-id-sexual','yes');
+ assert.ok(questionPool(after).some(q=>q.id==='d-id-outside-sex'),'Complementary questions should not be suppressed');
 });
