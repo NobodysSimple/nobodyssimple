@@ -269,10 +269,10 @@ function saveText(name,raw){
  setTimeout(()=>URL.revokeObjectURL(url),1600);
 }
 export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}={}){
- let state=null,stage='start',preselected=initialTrack,topic=initialTopic;
+ let state=null,stage='start',preselected=initialTrack,topic=initialTopic,selectedNode='';
  let description='';
  const render=(focus=false)=>{
-  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='result'?resultPage(state):asking(state);
+  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
   const text=root.querySelector('[data-hypo-description]');if(text)text.value=description;
   if(focus){
    const heading=root.querySelector('#ns-hypo-question, .ns-hypo-result-hero h1, .ns-hypo-pick h2, .ns-hypo-safety-page h1');
@@ -282,7 +282,7 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
  const begin=(trackId,topicId='')=>{
   description=safe(root.querySelector('[data-hypo-description]')?.value??description);
   state=startHypothesis({trackId,topicId,description});
-  stage='question';render(true);
+  selectedNode='';stage='question';render(true);
  };
  root.addEventListener('input',event=>{
   const el=event.target;
@@ -300,8 +300,15 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
  });
  root.addEventListener('click',event=>{
   const b=event.target.closest('button');if(!b)return;
+  if(b.hasAttribute('data-hypo-from-description')){
+   const value=safe(root.querySelector('[data-hypo-description]')?.value??description);
+   const match=findHypothesisTrack(value);
+   if(!value){root.querySelector('[data-hypo-description-help]').textContent='Describe what you would like to understand first, or choose a starting area above.';return;}
+   if(!match){root.querySelector('[data-hypo-description-help]').textContent='I could not place that concern reliably. Choose the closest starting area above; your description will still be included.';return;}
+   begin(match.id);return;
+  }
   if(b.dataset.hypoTrack){begin(b.dataset.hypoTrack,b.dataset.hypoTopic||'');return;}
-  if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;description='';render(true);return;}
+  if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';description='';render(true);return;}
   if(b.hasAttribute('data-hypo-back')){
    if(state?.answers.length){state=backHypothesis(state);stage='question';}
    else {stage='start';state=null;}
@@ -323,6 +330,55 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
    stage='result';render(false);
    const anchor=root.querySelector('[data-hypo-process="'+b.dataset.hypoProcess+'"][data-hypo-feedback="'+b.dataset.hypoFeedback+'"]');
    anchor?.focus({preventScroll:true});return;
+  }
+  if(b.dataset.hypoNode&&state){
+   selectedNode=b.dataset.hypoNode;
+   stage='result';render(false);
+   root.querySelector('[data-hypo-node-editor]')?.scrollIntoView({block:'nearest',behavior:'instant'});
+   root.querySelector('.ns-hypo-node-editor h3')?.setAttribute('tabindex','-1');
+   root.querySelector('.ns-hypo-node-editor h3')?.focus({preventScroll:true});
+   return;
+  }
+  if(b.hasAttribute('data-hypo-node-deselect')&&state){
+   selectedNode='';render(false);
+   root.querySelector('#ns-hypo-graph-heading')?.focus({preventScroll:true});
+   return;
+  }
+  if(b.dataset.hypoNodeVerdict&&state){
+   const id=b.dataset.hypoNodeId;
+   selectedNode=id;
+   state=reviseHypothesisNode(state,id,{verdict:b.dataset.hypoNodeVerdict});
+   render(false);
+   root.querySelector('[data-hypo-node-verdict="'+b.dataset.hypoNodeVerdict+'"]')?.focus({preventScroll:true});
+   return;
+  }
+  if(b.dataset.hypoNodeSave&&state){
+   const id=b.dataset.hypoNodeSave;
+   state=reviseHypothesisNode(state,id,{text:root.querySelector('[data-hypo-node-text]')?.value||''});
+   selectedNode=id;render(false);
+   root.querySelector('[data-hypo-node-text]')?.focus({preventScroll:true});
+   return;
+  }
+  if(b.dataset.hypoNodeInvestigate&&state){
+   selectedNode=b.dataset.hypoNodeInvestigate;
+   state=focusHypothesisLayer(state,selectedNode);
+   if(nextHypothesisQuestion(state)){stage='question';render(true);}
+   else {
+    const editor=root.querySelector('[data-hypo-node-editor]');
+    if(editor){const p=document.createElement('p');p.setAttribute('role','status');
+     p.textContent='There are no further authored questions for this part. You can correct its wording or revise earlier answers.';
+     editor.append(p);}
+   }
+   return;
+  }
+  if(b.dataset.hypoSaveAnswer&&state){
+   const id=b.dataset.hypoSaveAnswer;
+   const selector=[...root.querySelectorAll('[data-hypo-answer-edit]')].find(el=>el.dataset.hypoAnswerEdit===id);
+   if(!selector)return;
+   state=reviseHypothesisAnswer(state,id,selector.value);
+   selectedNode='';render(false);
+   root.querySelector('.ns-hypo-answer-history summary')?.focus({preventScroll:true});
+   return;
   }
   if(b.hasAttribute('data-hypo-download')&&state){
    saveText('nobodys-simple-hypothesis-'+state.trackId+'.txt',formulationPlainText(state));
