@@ -9,8 +9,9 @@ import {DEEP_PROCESSES,DEEP_BY_ID,EXTRA_BY_TRACK,DEEP_QUESTIONS,DEEP_QUESTION_BY
 import {buildFormulationGraph,graphCoverage,graphText,layerQuestionTags,editGraphNode,reopenGraphLayer} from './ns-hypothesis-graph.mjs';
 import {beginSubtypeDrill,answerSubtypeDrill,subtypeQuestion,subtypeNode} from './ns-hypothesis-subtype-atlas.mjs';
 import {newCaseDetailInterview,caseDetailReport} from './ns-hypothesis-case-facts.mjs';
-import {newInvestigation,investigationReport,investigationLinks} from './ns-hypothesis-investigation.mjs';
+import {newInvestigation,investigationReport,investigationLinks,investigationFacts} from './ns-hypothesis-investigation.mjs';
 import {testableDifferentials} from './ns-hypothesis-differentials.mjs';
+import {newAdaptiveInquiry,adaptiveDifferentials,adaptiveFacts,adaptiveReport,adaptiveLinks,SYNTHETIC_MECHANISMS} from './ns-hypothesis-adaptive.mjs';
 
 const P=(id,title,description,possibleFunction,possibleCost,need,check,link)=>
  Object.freeze({id,title,description,possibleFunction,possibleCost,need,check,link});
@@ -137,8 +138,8 @@ export function startHypothesis({trackId='',topicId='',description=''}={}){
  const safety=risk?{kind:'support',reason:'This issue requires individual support before an automated formulation.'}:
   indicator&&['crisis','coercion','harm','physical','unusual'].includes(indicator.kind)?
     {...indicator,kind:indicator.kind==='physical'?'medical':indicator.kind==='unusual'?'support':indicator.kind}:null;
- return {version:'2026-11-09-deep-2',trackId:track.id,topicId:topicId&&atlasGet(topicId)&&!risk?topicId:null,
-   description:raw,answers:[],feedback:{},nodeEdits:{},linkFeedback:{},focusLayer:'',caseDetails:newCaseDetailInterview(),investigation:newInvestigation(),
+ return {version:'2026-11-09-causal-4',trackId:track.id,topicId:topicId&&atlasGet(topicId)&&!risk?topicId:null,
+   description:raw,answers:[],feedback:{},nodeEdits:{},linkFeedback:{},focusLayer:'',caseDetails:newCaseDetailInterview(),investigation:newInvestigation(),adaptive:newAdaptiveInquiry(),
   drill:!safety&&!topicId?beginSubtypeDrill(track.id):null,safety,initialSafety:safety};
 }
 
@@ -354,17 +355,18 @@ export function hypothesisResult(state){
  const leading=all.slice(0,3);
  const reviewed=all.filter(c=>!leading.some(x=>x.id===c.id)&&c.feedback!=='unreviewed');
  const alternatives=[...leading,...reviewed];
- const examined=state.answers.filter(a=>ANSWER_BY_ID[a.answerId]?.value!==0).length;
+ const examined=state.answers.filter(a=>ANSWER_BY_ID[a.answerId]?.value!==0).length+
+  investigationFacts(state).length+adaptiveFacts(state).length;
  const first=alternatives[0],second=alternatives[1];
  const unresolved=examined<5||!first?.positive.length||(first?.score||0)-(second?.score||0)<1;
  const topic=state.drill?.unsupportedCategory?null:state.topicId||TRACK_BY_ID[state.trackId].topic;
  const safeTopic=topic&&atlasGet(topic)&&!isSafetyPriority(topic)?topic:null;
  const coverage=graphCoverage(state,QUESTION_BY_ID);
- const patterns=testableDifferentials(state);
+ const patterns=[...testableDifferentials(state),...adaptiveDifferentials(state)];
  const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
  const canContinue=Boolean(nextHypothesisQuestion(state));
  return {track:TRACK_BY_ID[state.trackId],situation:state.description||(state.drill?.confirmed&&subtypeNode(state.drill.leafId)?'Exploring: '+subtypeNode(state.drill.leafId).label:TRACK_BY_ID[state.trackId].title),
-  alternatives,patterns,graph,links:investigationLinks(state).map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
+  alternatives,patterns,graph,links:[...investigationLinks(state),...adaptiveLinks(state)].map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
    state.drill?.unsupportedCategory?'You have identified a specific experience. This part of the synthetic atlas does not yet have a reviewed explanatory interview, so no psychological mechanism is inferred.':
    patterns.length?'Your answers support testing specific patterns and their alternatives, but do not establish a cause.':
@@ -376,7 +378,7 @@ export function hypothesisResult(state){
 }
 export function reviewHypothesisLink(state,linkId,verdict){
  if(!state||state.safety||!['fits','uncertain','no-fit'].includes(verdict))return state;
- const link=investigationLinks(state).find(x=>x.id===linkId);
+ const link=[...investigationLinks(state),...adaptiveLinks(state)].find(x=>x.id===linkId);
  if(!link)return state;
  return {...state,linkFeedback:{...(state.linkFeedback||{}),[linkId]:verdict}};
 }
@@ -397,7 +399,9 @@ export function formulationPlainText(state){
   'Situation: '+r.situation,'Observations considered: '+r.examined,r.summary,'',
   'Specific details explicitly selected:',...(caseDetailReport(state).length?caseDetailReport(state):['Not established']),'',
   'Functional investigation — person-selected answers:',...(investigationReport(state).length?investigationReport(state):['Not investigated']),
-  'Multi-observation hypotheses to TEST:',...(r.patterns.length?r.patterns.flatMap(p=>[p.title,p.description,'What could disconfirm it: '+p.falsifier,'Alternative: '+p.alternative]):['No pattern has enough support to propose']),'',
+  'Adaptive causal inquiry — person-selected answers:',...(adaptiveReport(state).length?adaptiveReport(state):['Not investigated']),'',
+  'Mechanism index: '+SYNTHETIC_MECHANISMS.length+' provisional authored entries from synthetic database v1 (not diagnostic evidence).','',
+  'Multi-observation hypotheses to TEST:',...(r.patterns.length?r.patterns.flatMap(p=>[p.title,p.description,'What could disconfirm it: '+(p.falsifier||'Not established yet; gather contrasting observations'),'Alternative: '+p.alternative]):['No pattern has enough support to propose']),'',
   'Potential links to TEST (not demonstrated causes):',...(r.links.length?r.links.map(x=>x.title+' | '+x.challenge):['No linked sequence has been established']),'',
   ...r.alternatives.flatMap((c,i)=>{
    const f=describeFormulation(state,c);

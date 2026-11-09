@@ -432,3 +432,31 @@ html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-home-refined :is(.ns
  background:#34463d;color:#e8f4e9;border-color:#6b8671;
 }
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-home-refined :is(.ns-home-hypothesis,.ns-home-compass) :is(strong,small){color:#eff5e8;}
+
+/* Stage 4 optional verbatim descriptions and adaptive questions. */
+body.app-body.ns-shell-v1 #main .ns-hypo-own-words{
+ display:grid;gap:7px;margin:15px 0;padding:15px;
+ border:1px solid #b7cbb8;border-radius:17px;background:#f5f9f2;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-own-words label{
+ display:block;font:700 14px/1.45 system-ui,sans-serif;color:#214938;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-own-words textarea{
+ display:block;box-sizing:border-box;width:100%;min-height:70px;padding:11px 12px;
+ resize:vertical;border:1px solid #8ba990;border-radius:10px;background:#fff;
+ font:500 15px/1.45 system-ui,sans-serif;color:#1c3628;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-own-words textarea:focus-visible{
+ outline:3px solid #317451;outline-offset:2px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-own-words small{
+ display:block;font:500 12px/1.55 system-ui,sans-serif;color:#355743;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-own-words{
+ background:#203629;border-color:#708d76;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-own-words label,
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-own-words small{color:#e3f1df;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-own-words textarea{
+ background:#17261d;color:#f3f6ef;border-color:#9db09e;
+}

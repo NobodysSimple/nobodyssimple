@@ -80,3 +80,31 @@ The example "I describe my dad as narcissistic" is explicitly stored as a **pers
 ### Remaining Stage 3 work
 
 Use curated synthetic contrast cases from the ZIP as **test fixtures**, not population samples. Introduce `concept_id`/precondition/gating metadata across the full question pool; compute priority from genuine missing fact slots, explicit competing hypotheses and contraindications, rather than principally from hand-authored signal scores. Add a user-controlled 'not included' outcome and a clinically reviewed question-adequacy rubric. Compare the proposed selector with the present baseline against held-out cases, testing factual precision and redundancy before making the new policy the default.
+
+
+## Stage 4 prototype — adaptive causal investigation and verbatim case map (9 November 2026)
+
+**Development status: proposed on feature branch, pending CI and review.** This is a substantial prototype of Stage 4, not completion of a validated formulation engine.
+
+### What changes
+
+- Visitors may optionally describe their concern in **their own exact words** (up to 280 characters). That description takes priority as the graph's presenting concern. Each functional and adaptive question also offers optional verbatim wording alongside a structured response. User text is shown as *self-report*, never silently rewritten as an objective conclusion, diagnosis, motive, or finding about a third party.
+- The new adaptive module indexes **all 72 provisional mechanism IDs/names** from the uploaded synthetic database's mechanisms.jsonl, explicitly labelled editorial and unvalidated. It contributes **15 new authored differential questions**, with explicit prerequisites, concept identifiers, missing-information priorities, and an **eight-question maximum per pass**. Relevant questions ask whether another person's behaviour persists independently of the visitor's response, what occurs when circumstances change, sleep and demand contrasts, the purpose and automaticity of coping, repeated temporal sequences, real evidence versus feared prediction, value conflict versus externally constrained choice, and safe next observations.
+- Differential rules require combinations of person-selected evidence, output a competing explanation and preserve source evidence. They do **not** infer trauma, attachment history, diagnoses, or numerical causal probabilities. "Not observed", "unsure", "prefer not" and refusal options do not become factual findings.
+- The graph now places verbatim answers in relevant tiles and links *reported* conditions to *reported* contrasts with challengeable **hypothesised arrows**. Users can reject an arrow without erasing the original reports.
+- A selection suggesting that trying a different response to another person would be unsafe diverts to safety-first support, with a back action for corrections.
+- The deeper interview is voluntary; the shorter 19-question functional interview retains its stopping point. A prominent "Test competing explanations in depth" button appears when functional evidence has been entered.
+
+### Dataset integration — exact scope
+
+The uploaded ZIP comprises **12,716 question records, 26,377 synthetic cases, 72 editorial mechanisms and 545 navigation nodes**. The current website already incorporates its compact 545-node navigation subset (21 categories, 84 clusters and 440 exact experiences). This change incorporates **the complete 72-entry mechanism name/ID index and a deliberately selected subset of 15 differential questions**. It **does not** ship the full ZIP, embed 26,377 cases in browsers, expose all 12,716 unreviewed generated questions to visitors, fit the synthetic cases as patient evidence, or claim all 72 mechanisms have been tested for a particular person.
+
+Source assets remain development/evaluation inputs; the index is for transparency and future expert review, not an automated clinical knowledge base. **Full database ingestion, source-linked question selection, benchmarking against held-out synthetic contrasts, and independent professional review remain further work.**
+
+### Quality criteria for advancing
+
+1. Verify exact-quotation fidelity and XSS-safe rendering; do not use a generic label where user-provided text exists.
+2. Verify branching prerequisites, deduplication by concept ID, stopping within eight new questions, and no looping after back/skip.
+3. Audit contrasting cases: external harm vs coping maintenance, restorative sleep vs persistent difficulty, effective coping vs short-lived relief, chosen preference vs unwanted symptom, and real risk vs overinterpretation.
+4. Test that answering "unsure", "prefer not" or "none" does not establish mechanisms; risk branches interrupt speculation.
+5. Compare with genuinely independent clinician and lived-experience review. Do not present the prototype as a clinical assessment or scientifically calibrated differential diagnosis.

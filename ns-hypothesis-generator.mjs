@@ -15,6 +15,7 @@ import {
 import {subtypeQuestion,subtypeNode,subtypeChildren,beginSubtypeDrill,TRACK_FOR_CATEGORY,REVIEWED_INTERVIEW_CATEGORIES} from './ns-hypothesis-subtype-atlas.mjs';
 import {startCaseDetailInterview,answerCaseDetail,caseDetailQuestion,backCaseDetail,skipCaseDetail,caseDetailFacts,CASE_FACT_QUESTIONS} from './ns-hypothesis-case-facts.mjs';
 import {INVESTIGATION_QUESTIONS,startInvestigation,investigationQuestion,answerInvestigation,backInvestigation,stopInvestigation,investigationFacts} from './ns-hypothesis-investigation.mjs';
+import {ADAPTIVE_LIMIT,SYNTHETIC_MECHANISMS,adaptiveQuestion,startAdaptiveInquiry,answerAdaptiveInquiry,backAdaptiveInquiry,stopAdaptiveInquiry,adaptiveFacts} from './ns-hypothesis-adaptive.mjs';
 
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
@@ -45,14 +46,17 @@ function landing(){
  return page('<header class="ns-hypo-hero">'+
   '<div><p class="ns-hypo-eyebrow">NOBODY’S SIMPLE · HYPOTHESIS GENERATOR</p>'+
   '<h1>Shall we work out what could be going on?</h1>'+
-  '<p>Choose a starting area and Nobody will ask the first question. There is nothing to write or explain in advance.</p>'+
+  '<p>Choose a starting area. Describe your difficulty in your own words if you want, or simply use the choices.</p>'+
   '<div class="ns-hypo-hero-pills"><span>Follow-up questions adapt to you</span><span>Clickable formulation map</span><span>Revise any part</span></div></div>'+
   '<div class="ns-hypo-hero-art">'+art('ns-character-thinking.webp','ns-hypo-hero-nobody')+
   '<div class="ns-hypo-speech">I’ll ask about what happens, what changes it and what else could explain it.</div></div></header>'+
   '<section class="ns-hypo-pick" aria-labelledby="ns-hypo-start-title"><div class="ns-hypo-section-head">'+
   '<span>01</span><div><p class="ns-hypo-eyebrow">START WITH WHAT YOU NOTICE</p>'+
   '<h2 id="ns-hypo-start-title">Where should Nobody begin?</h2><p>Pick the closest area. Nobody will ask follow-up questions and narrow down the details with you.</p></div></div>'+
-  '<div class="ns-hypo-track-grid">'+HYPOTHESIS_TRACKS.map(t=>
+  '<div class="ns-hypo-own-words"><label for="ns-hypo-start-words"><strong>Your difficulty in your exact words (optional)</strong></label>'+
+   '<textarea id="ns-hypo-start-words" data-hypo-start-words rows="2" maxlength="280" placeholder="For example: My dad keeps belittling me and I feel powerless."></textarea>'+
+   '<small>This is your report, not a diagnosis of another person. Your wording will appear in your map.</small></div>'+
+   '<div class="ns-hypo-track-grid">'+HYPOTHESIS_TRACKS.map(t=>
    '<button type="button" data-hypo-track="'+e(t.id)+'" class="ns-hypo-track">'+
    '<img src="'+e(t.art)+'" loading="lazy" alt="" width="72" height="72"><span><strong>'+e(t.title)+
    '</strong><small>'+e(t.description)+'</small></span><span aria-hidden="true">→</span></button>').join('')+'</div>'+
@@ -132,12 +136,39 @@ function functionalInvestigationPage(state){
   '<div class="ns-hypo-speech-card"><p class="ns-hypo-eyebrow">'+e(q.concept.toUpperCase())+'</p>'+
   '<h1 id="ns-hypo-question" tabindex="-1">'+e(q.prompt)+'</h1>'+
   '<p>'+e(q.why)+' Only what you select will be recorded. This cannot establish a hidden cause.</p></div></div>'+
-  '<div class="ns-hypo-drill-options" role="group" aria-label="Choose the closest experience">'+opts+'</div>'+
+  '<div class="ns-hypo-own-words"><label for="ns-hypo-invest-words">Add your exact wording to this answer (optional)</label>'+
+   '<textarea id="ns-hypo-invest-words" data-hypo-invest-words maxlength="280" rows="2" placeholder="For example: He calls me dramatic whenever I disagree."></textarea>'+
+   '<small>Choose a response below to keep the interview adaptive. Your wording is shown on the graph verbatim.</small></div>'+
+   '<div class="ns-hypo-drill-options" role="group" aria-label="Choose the closest experience">'+opts+'</div>'+
   '<div class="ns-hypo-question-footer"><button type="button" data-hypo-invest-back>← Back</button>'+
   '<button type="button" data-hypo-invest-stop>View my working map / stop questions</button></div>'+
   (count?'<div class="ns-hypo-case-recap"><strong>Observations so far</strong><ul>'+
    investigationFacts(state).slice(-5).map(f=>'<li>'+e(f.text)+'</li>').join('')+'</ul></div>':'')+
   '<p class="ns-hypo-quiet">No response is uploaded. An explanation about another person is kept as your interpretation, not a diagnosis of them.</p></section>');
+}
+function adaptiveInquiryPage(state){
+ const q=adaptiveQuestion(state);
+ if(!q)return resultPage(state);
+ const count=state.adaptive?.answers?.length||0;
+ const options=q.options.map(o=>'<button type="button" class="ns-hypo-drill-option" data-hypo-adaptive-answer="'+e(o.id)+
+  '" data-hypo-adaptive-question="'+e(q.questionId)+'"><span>'+e(o.label)+'</span><span aria-hidden="true">→</span></button>').join('');
+ return page('<section class="ns-hypo-drill ns-hypo-adaptive" aria-labelledby="ns-hypo-question">'+
+  '<div class="ns-hypo-drill-top"><p class="ns-hypo-eyebrow">TESTING COMPETING EXPLANATIONS · '+(count+1)+' OF AT MOST '+ADAPTIVE_LIMIT+'</p>'+
+  '<p>Questions are selected from unanswered distinctions; unasked factors remain unknown. This is not a clinical diagnosis.</p></div>'+
+  '<div class="ns-hypo-dialogue"><div class="ns-hypo-guide">'+art('ns-character-mapping.webp','ns-hypo-guide-art')+
+  '<div class="ns-hypo-guide-caption"><strong>Nobody</strong><span>Testing the explanation</span></div></div>'+
+  '<div class="ns-hypo-speech-card"><p class="ns-hypo-eyebrow">'+e(q.layer.toUpperCase())+' · '+e(q.conceptId)+'</p>'+
+  '<h1 id="ns-hypo-question" tabindex="-1">'+e(q.prompt)+'</h1>'+
+  '<p>'+e(q.why)+'</p></div></div>'+
+  '<div class="ns-hypo-own-words"><label for="ns-hypo-adaptive-words">What happened in your exact words? (optional)</label>'+
+  '<textarea id="ns-hypo-adaptive-words" data-hypo-adaptive-words maxlength="280" rows="2" placeholder="Add your own precise description, if useful."></textarea>'+
+  '<small>The selected answer guides follow-ups. Your words remain attributed to you; the tool does not infer meaning from unanalysed free text.</small></div>'+
+  '<div class="ns-hypo-drill-options" role="group" aria-label="Choose the closest answer">'+options+'</div>'+
+  '<div class="ns-hypo-question-footer"><button type="button" data-hypo-adaptive-back>← Back</button>'+
+  '<button type="button" data-hypo-adaptive-stop>Stop and view my formulation</button></div>'+
+  (count?'<div class="ns-hypo-case-recap"><strong>New distinctions</strong><ul>'+
+   adaptiveFacts(state).slice(-5).map(f=>'<li>'+e(f.text)+'</li>').join('')+'</ul></div>':'')+
+  '<p class="ns-hypo-quiet">The synthetic database contains possible mechanisms, not facts about you. Every causal relationship remains a hypothesis to investigate.</p></section>');
 }
 function progress(state){
  const n=state.answers.length;
@@ -341,6 +372,7 @@ function resultPage(state,selectedNode=''){
   '<p>There is no fixed question count. Each further question tries to distinguish explanations or investigate a part you challenged. You may also stop, revise, or choose something helpful without deciding on one cause.</p></div>'+
   '<div class="ns-hypo-final-buttons">'+
   (!state.investigation?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-invest-start>Investigate possible causes and maintaining cycles →</button>':'')+
+   (!state.adaptive?.finished&&state.investigation?.answers?.length?'<button type="button" class="ns-hypo-invest-action" data-hypo-adaptive-start>Test competing explanations in depth →</button>':'')+
   (state.drill?.confirmed&&!state.caseDetails?.finished?'<button type="button" data-hypo-fact-start>Explore more precise details →</button>':'')+
   (r.canContinue?'<button type="button" data-hypo-more>Keep investigating →</button>':
    '<p>We have used the currently available authored questions for this area. You can still revise the graph or an earlier answer.</p>')+
@@ -350,7 +382,7 @@ function resultPage(state,selectedNode=''){
   '<button type="button" data-hypo-restart>Begin a different investigation</button></div>'+
   '<output class="ns-hypo-export-status" data-hypo-export aria-live="polite"></output></section>'+
   '<details class="ns-hypo-transparency"><summary>How were questions selected? What can it and can’t it establish?</summary>'+
-  '<p>There are '+HYPOTHESIS_DEEP_QUESTION_COUNT+' additional authored deeper questions beyond the original bank. The engine compares plausible models using subjective, uncalibrated compatibility signals and chooses follow-ups designed to distinguish them. This resembles the general idea of information-gain questioning, not a validated Bayesian clinical assessment. The results cannot be interpreted as clinical probabilities.</p>'+
+  '<p>There are '+HYPOTHESIS_DEEP_QUESTION_COUNT+' authored deeper questions beyond the original bank, plus '+SYNTHETIC_MECHANISMS.length+' provisional mechanisms indexed from the synthetic database and a focused adaptive inquiry. The engine compares plausible models using subjective, uncalibrated compatibility signals and chooses follow-ups designed to distinguish them. This resembles the general idea of information-gain questioning, not a validated Bayesian clinical assessment. The results cannot be interpreted as clinical probabilities.</p>'+
   '<p>Answers can be wrong, incomplete or context-dependent. Several models may be relevant, and the real explanation may not be included. No number of questions proves a psychological cause. The graph explicitly separates what you reported from what is merely suggested.</p>'+
   '<p>Preferences in grooming, gender expression, sexuality, culture, disability or relationships are not disorders just because they depart from social expectations. No trauma or attachment origin is inferred without you describing it.</p>'+
   '<p>For safety guidance see <a href="https://www.nice.org.uk/guidance/ng225/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE NG225</a>.</p>'+
@@ -364,25 +396,26 @@ function saveText(name,raw){
 export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}={}){
  let state=null,stage='start',preselected=initialTrack,topic=initialTopic,selectedNode='';
  const render=(focus=false)=>{
-  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='drill'?narrowing(state):stage==='case'?specificFactsPage(state):stage==='investigation'?functionalInvestigationPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
+  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='drill'?narrowing(state):stage==='case'?specificFactsPage(state):stage==='investigation'?functionalInvestigationPage(state):stage==='adaptive'?adaptiveInquiryPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
   if(focus){
    const heading=root.querySelector('#ns-hypo-question, .ns-hypo-result-hero h1, .ns-hypo-pick h2, .ns-hypo-safety-page h1');
    if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
   }
  };
+ const ownWords=()=>root.querySelector('[data-hypo-start-words]')?.value?.trim()||'';
  const begin=(trackId,topicId='')=>{
-  state=startHypothesis({trackId,topicId});
+  state=startHypothesis({trackId,topicId,description:ownWords()});
   selectedNode='';stage=state.drill?'drill':'question';render(true);
  };
  const beginCategory=(categoryId)=>{
   const trackId=TRACK_FOR_CATEGORY[categoryId];
   if(trackId===undefined)return;
   if(!trackId){
-   state={...startHypothesis({trackId:'emotion'}),drill:null,
+   state={...startHypothesis({trackId:'emotion',description:ownWords()}),drill:null,
     safety:{kind:'support',reason:'Safety, coercion, self-injury concerns or serious immediate danger require appropriate human support rather than automated psychological guessing.'}};
    selectedNode='';stage='result';render(true);return;
   }
-  state=startHypothesis({trackId});
+  state=startHypothesis({trackId,description:ownWords()});
   state={...state,drill:{...beginSubtypeDrill(trackId),categoryId,
    entryCategoryId:categoryId,possibleCategories:null,
    unsupportedCategory:!REVIEWED_INTERVIEW_CATEGORIES.includes(categoryId),
@@ -439,7 +472,8 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
    return;
   }
   if(b.dataset.hypoInvestAnswer&&state){
-   state=answerInvestigation(state,b.dataset.hypoInvestQuestion,b.dataset.hypoInvestAnswer);
+   state=answerInvestigation(state,b.dataset.hypoInvestQuestion,b.dataset.hypoInvestAnswer,
+    root.querySelector('[data-hypo-invest-words]')?.value||'');
    stage=state.safety?'result':state.investigation?.active?'investigation':'result';
    render(true);return;
   }
@@ -451,9 +485,27 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
   if(b.hasAttribute('data-hypo-invest-stop')&&state){
    state=stopInvestigation(state);stage='result';render(true);return;
   }
+    if(b.hasAttribute('data-hypo-adaptive-start')&&state){
+   state=startAdaptiveInquiry(state);
+   stage=adaptiveQuestion(state)?'adaptive':'result';render(true);return;
+  }
+  if(b.dataset.hypoAdaptiveAnswer&&state){
+   state=answerAdaptiveInquiry(state,b.dataset.hypoAdaptiveQuestion,b.dataset.hypoAdaptiveAnswer,
+    root.querySelector('[data-hypo-adaptive-words]')?.value||'');
+   stage=state.adaptive?.active?'adaptive':'result';render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-adaptive-back')&&state){
+   if(state.adaptive?.answers?.length){state=backAdaptiveInquiry(state);stage='adaptive';}
+   else{state=stopAdaptiveInquiry(state);stage='result';}
+   render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-adaptive-stop')&&state){
+   state=stopAdaptiveInquiry(state);stage='result';render(true);return;
+  }
   if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';render(true);return;}
   if(b.hasAttribute('data-hypo-back')){
-   if(state?.safety&&state.investigation?.answers?.length){state=backInvestigation(state);stage='investigation';}
+   if(state?.safety&&state.adaptive?.answers?.length){state=backAdaptiveInquiry(state);stage='adaptive';}
+   else if(state?.safety&&state.investigation?.answers?.length){state=backInvestigation(state);stage='investigation';}
    else if(state?.answers.length){state=backHypothesis(state);stage='question';}
    else if(state?.drill?.events?.length){
     state=backHypothesisDrill(state);stage='drill';
