@@ -68,13 +68,13 @@ function narrowing(state){
  const d=state.drill,q=subtypeQuestion(d);
  if(!q)return asking(state);
  const category=subtypeNode(d.categoryId),cluster=subtypeNode(d.clusterId),leaf=subtypeNode(d.leafId);
- const step=q.stage==='cluster'?1:q.stage==='experience'?2:q.stage==='confirm'?3:q.stage==='valence'?4:q.stage==='meaning'?5:6;
+ const step=q.stage==='area'?0:q.stage==='cluster'?1:q.stage==='experience'?2:q.stage==='confirm'?3:q.stage==='valence'?4:q.stage==='meaning'?5:6;
  const breadcrumb=[category?.label,cluster?.label,leaf?.label].filter(Boolean);
  const cards=q.options.map(o=>'<button type="button" data-hypo-drill-answer="'+e(o.id)+
   '" data-hypo-drill-question="'+e(q.id)+'" class="ns-hypo-drill-option">'+
   '<span>'+e(o.label)+'</span><span aria-hidden="true">→</span></button>').join('');
  return page('<section class="ns-hypo-drill" aria-labelledby="ns-hypo-question">'+
-  '<div class="ns-hypo-drill-top"><p class="ns-hypo-eyebrow">GETTING TO THE SPECIFICS · STEP '+step+' OF 6</p>'+
+  '<div class="ns-hypo-drill-top"><p class="ns-hypo-eyebrow">'+(q.stage==='area'?'FIRST, LET’S NARROW THE AREA':'GETTING TO THE SPECIFICS · STEP '+step+' OF 6')+'</p>'+
   '<p>'+breadcrumb.map(e).join(' <span aria-hidden="true">›</span> ')+'</p></div>'+
   '<div class="ns-hypo-dialogue"><div class="ns-hypo-guide">'+art('ns-character-thinking.webp','ns-hypo-guide-art')+
   '<div class="ns-hypo-guide-caption"><strong>Nobody</strong><span>One detail at a time</span></div></div>'+
