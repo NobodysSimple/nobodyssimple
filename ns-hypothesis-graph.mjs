@@ -57,11 +57,15 @@ export function buildFormulationGraph(state,candidates,questionIndex){
  const entry=factFor('specific_experience'),setting=factFor('context'),
   valence=factFor('valence'),meaning=factFor('meaning');
  const sourced=(fact,question)=>fact?[{id:fact.questionId,question,answer:fact.text}]:[];
- const title=state.description?.trim()||(exact?exact.label:state.trackId||'A difficulty I want to understand');
+ const personPhrase=inquiryFor('father_label')?.text;
+ const title=personPhrase?
+  personPhrase+(exact?' · '+exact.label:''):
+  (state.description?.trim()||(exact?exact.label:state.trackId||'A difficulty I want to understand'));
  const nodes=[
   {id:'presenting',layer:'presenting',title:short(title),
    detail:exact?'You confirmed this specific experience as something you want to explore. This does not establish a problem or a disorder.':'This is your selected general starting area. The exact experience has not yet been established.',
-   evidence:sourced(entry,'Is this a specific experience you want to explore?'),status:exact?'reported':'unknown'},
+   evidence:[...inquiryEvidence('father_label'),...sourced(entry,'Is this a specific experience you want to explore?')],
+   status:exact||personPhrase?'reported':'unknown'},
   {id:'context',layer:'context',
    title:[inquiryFor('who')?.text,inquiryFor('father_behaviour')?.text,inquiryFor('event')?.text,
     setting?.text,preciseFor('timeframe')?.text].filter(Boolean).slice(0,3).join(' · ')||
