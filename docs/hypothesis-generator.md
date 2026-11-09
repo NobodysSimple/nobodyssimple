@@ -10,6 +10,34 @@ It is a provisional, collaborative **formulation discovery** tool—not a sympto
 
 ## Current coverage
 
+## Stage 1 · Real subtype-driven investigation (9 November 2026)
+
+**Now implemented:** The 545 authored navigation nodes from the user's Synthetic Formulation Database v1 have been distilled into a roughly 20 kB standalone index (`ns-hypothesis-subtype-atlas.mjs`): 21 broad categories, 84 clusters and 440 specific experiences. Identifiers were preserved by their source-derived parent IDs and normalised label slugs; the source labels, not fictional cases, are bundled with the static site. No real data, clinical probabilities or 26,377 synthetic case examples are delivered to the visitor's browser.
+
+A visitor selects one of the existing 12 starting areas, then Nobody asks them to choose a specific subtopic and exact experience (for example **Personal identity → Grooming and body hair → shaving legs**). The visitor must explicitly confirm the exact experience before the graph considers it a reported fact. The next three no-writing questions record:
+
+1. **Valence**: distressing, neutral, enjoyable, mixed, uncertain or withheld.
+2. **Meaning**: personal preference, social expectations, physical/sensory, practical conditions, relationships, multiple, uncertain or other.
+3. **Context**: private, social, work/study, home/family, multiple, uncertain or other.
+
+Only user-confirmed facts appear in the graph's *presenting concern*, *feeling and meaning* and *circumstances* nodes. Selecting a theme such as 'Other people's expectations' does not itself establish rejection, trauma, actual discrimination or a gender identity. 'Not sure' or 'prefer not to say' does not become an affirmative fact. No personal answer is saved, submitted or used for model learning. Anyone can skip to the existing longer adaptive questions.
+
+For the broad **overthinking** starting area, the visitor first chooses among several relevant domains rather than having the tool assume their thoughts concern personal identity.
+
+The flow has a back action that replays the valid question history and invalidates withdrawn details. A potential acute physical-health concern such as the new-symptom category interrupts ordinary formulation and shows medical-support guidance rather than an inferred psychological explanation. The existing safeguarding and source-model protections continue.
+
+**Not yet implemented:** Multi-experience selection; compound mixed or free-form answers; graph edges supported by verified repeated within-person sequences; import of all 12,716 authored questions as a conditional authoring system; use of the 72-mechanism network for learned classification; prospective clinical validity or calibrated probabilities.
+
+### Roadmap to a final evidence-tested feature
+
+1. **Stage 1 — Integrate taxonomy and person-confirmed facts** (current).
+2. **Stage 2 — Conditional conversations and multiple experiences**: author preconditions, contradictions, skip/unknown, alternative domains and multi-select, with no semantic duplicates.
+3. **Stage 3 — Evidence-linked hypothesis discrimination**: compare 72 reviewed mechanisms with credible alternatives, active disconfirmation, medical/structural safeguards and appropriate stopping; avoid treating synthetic case frequencies as probabilities.
+4. **Stage 4 — Precise, editable formulation map**: reported people/places/contexts, experience over time, effects, hypotheses and individual proposed arrows; corrections propagate to dependent claims.
+5. **Stage 5 — Synthetic benchmark and expert review**: regression test against 26,377 **non-independent** simulated variants and especially 63 hand-authored contrast cases. Independent clinician and lived-experience review must be added.
+6. **Stage 6 — Governed real-world research and calibration**: separately consented and protected human data, appropriate research permissions, independent clinical reference formulations, external testing and subgroup fairness audits.
+7. **Stage 7 — Release safety and monitoring**: accessibility, mobile, content review, privacy, escalation, security, feedback and product effectiveness. A functional release does not prove specialist-clinician equivalence.
+
 The homepage intake now has **no personal-description textbox**. Users select a broad area, then Nobody asks the first question. For the identity pathway, it starts by asking whether presentation/grooming is relevant; that choice gates specialised follow-ups. This removes the initial writing requirement but does not, by itself, give the engine specific knowledge of a user's grooming practice or life history: further authored branching questions and structured fact capture are still required. The optional atlas search is only for selecting an existing educational topic, not submitting a case narrative.
 
 The pilot provides 12 individually designated starting areas: procrastination, overthinking, relationships, social concerns, fatigue, emotions, sleep, checking, decisions, identity, sensory load and loss. The original engine's 21 processes and 40 questions have been expanded with **37 additional process models and 143 individually authored deeper questions**: 58 candidate processes and 183 questions in the combined editorial bank (with only context-relevant questions available in any given journey). There is **no fixed nine-question cap**. Nobody continues selecting useful questions until the user requests a working formulation or the relevant authored bank is exhausted. Users may skip, go back, revisit answers, and initiate focused further questioning about any node in the result. A workflow checkpoint suggests when a provisional map is worth considering; it is not a calibrated confidence threshold.
