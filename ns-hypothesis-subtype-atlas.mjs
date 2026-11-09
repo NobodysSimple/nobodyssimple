@@ -11,6 +11,7 @@ export const TRACK_DRILL_CATEGORY=Object.freeze({
  identity:'IDENTITY',sensory:'SENSORY',loss:'LOSS'
 });
 const TRACK_CROSS_CATEGORIES=Object.freeze({overthinking:Object.freeze(['SELF','CHECKING','VALUES','RELATIONSHIPS','EMOTIONS'])});
+export const REVIEWED_INTERVIEW_CATEGORIES=Object.freeze([...new Set(Object.values(TRACK_DRILL_CATEGORY).filter(Boolean))]);
 export const TRACK_FOR_CATEGORY=Object.freeze({
  IDENTITY:'identity',SELF:'identity',RELATIONSHIPS:'relationships',TASKS:'procrastination',
  SLEEP:'sleep',CHECKING:'checking',SENSORY:'sensory',EMOTIONS:'emotion',SOCIAL:'social',
@@ -116,7 +117,7 @@ export function answerSubtypeDrill(drill,questionId,answerId){
  if(!q||q.id!==questionId||!q.options.some(o=>o.id===answerId))return drill;
  const next={...drill,details:{...drill.details},events:[...drill.events,{questionId,answerId}]};
  if(q.stage==='area'){
-  if(subtypeNode(answerId))next.categoryId=answerId;
+  if(subtypeNode(answerId)){next.categoryId=answerId;next.unsupportedCategory=!REVIEWED_INTERVIEW_CATEGORIES.includes(answerId);}
   else {next.finished=true;next.exitReason=answerId;}
  }else if(q.stage==='cluster'){
   if(!subtypeNode(answerId)){next.finished=true;next.exitReason=answerId;}
