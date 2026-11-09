@@ -22,7 +22,7 @@ const ICONS = Object.freeze({
 });
 const routeName = () => (location.hash.slice(1).split('/')[0]||'home').toLowerCase();
 const areaFor = name => {
-  if(['help','navigate','support','route','routes','compass','questions','navigator','lifestyle','investigate'].includes(name)) return 'home';
+  if(['help','navigate','need','support','route','routes','compass','questions','navigator','lifestyle','investigate'].includes(name)) return 'home';
   if(name==='guide') return 'guide';
   if(['play','tool','guided','simplyfocus','stim-space','questionnaires','big-five','systems','personality'].includes(name)) return 'tools';
   if(['library','blog','writing','watch','post','wisbody'].includes(name)) return 'learn';

@@ -50,7 +50,8 @@ import {renderAtlasConsole} from './ns-atlas-console.mjs';
 import {renderAtlasGuide} from './ns-atlas-guide.mjs';
 import {renderAtlasTool} from './ns-atlas-tool.mjs';
 import {atlasGet} from './ns-atlas-core.mjs';
-import {renderReasoningConsole} from './ns-reasoning-console.mjs';
+import {renderNeedsConsole} from './ns-needs-console.mjs';
+import {renderNeedsActivity} from './ns-needs-activities.mjs';
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
 import { renderToolDiscovery } from './ns-tool-library.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
@@ -845,6 +846,7 @@ function route() {
       (["personality", "big-five", "systems"].includes(currentName) && linkName === "questionnaires") ||
       (startRoutes.has(currentName) && linkName === "home") ||
       (currentName === "investigate" && linkName === "home") ||
+      (currentName === "need" && linkName === "home") ||
       (currentName === "problem" && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
       (["tool", "play", "guided"].includes(currentName) && linkName === "tools") ||
@@ -856,8 +858,9 @@ function route() {
     ({
       home: () => homePage({learningView:"home"}),
       guide: () => renderNSFieldGuide(main, routeParts.slice(1).map(safeRoutePart), accountState()),
-      help: () => renderReasoningConsole(main),
-      navigate: () => renderReasoningConsole(main),
+      help: () => renderNeedsConsole(main),
+      navigate: () => renderNeedsConsole(main,routeParts.slice(1).map(safeRoutePart)),
+      need: () => renderNeedsActivity(main,safeRoutePart(id)),
       problem: () => {const key=safeRoutePart(id);if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
         location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
@@ -930,6 +933,8 @@ function route() {
       ? "Find your next step"
       : name === "help"
       ? "Find your next step"
+      : name === "need"
+      ? (main.querySelector('h1')?.textContent?.trim() || 'Your next step')
       : name === "support"
       ? "Get help"
       : name === "questionnaires"
@@ -958,6 +963,7 @@ function route() {
     guide: "My Field Guide",
     help: "Home",
     navigate: "Home",
+    need: "Your next step",
     investigate: "Investigate & Learn",
     problem: "Your Psychological Guide",
     tools: "Tools",
@@ -993,7 +999,7 @@ function route() {
       : appLabels[currentName] || (title || "Nobody’s Simple");
   const pageKicker = (currentName === "home" || startRoutes.has(currentName))
     ? "Today"
-    : ["help", "navigate", "questions", "navigator", "compass"].includes(currentName)
+    : ["help", "navigate", "need", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
     : currentName === "problem" ? "Understand a problem"
     : currentName === "investigate" ? "Understand a problem"
