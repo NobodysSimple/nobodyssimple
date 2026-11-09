@@ -4,6 +4,7 @@
  */
 import {DEEP_QUESTION_BY_ID} from './ns-hypothesis-deep-content.mjs';
 import {drillFacts,subtypeNode} from './ns-hypothesis-subtype-atlas.mjs';
+import {caseDetailFacts} from './ns-hypothesis-case-facts.mjs';
 const reply={yes:'Yes',probably:'Probably',unsure:'Not sure','probably-not':'Probably not',no:'No'};
 const positive=a=>['yes','probably'].includes(a.answerId);
 const significant=a=>a.answerId!=='unsure';
@@ -45,6 +46,9 @@ export function buildFormulationGraph(state,candidates,questionIndex){
  const drill=state.drill;
  const exact=drill?.confirmed?subtypeNode(drill.leafId):null;
  const facts=drillFacts(drill);
+ const precise=caseDetailFacts(state);
+ const preciseFor=kind=>precise.find(f=>f.kind===kind);
+ const evidenceFor=(...kinds)=>precise.filter(f=>kinds.includes(f.kind)).map(f=>({id:f.id,question:f.label,answer:f.text}));
  const factFor=kind=>facts.find(f=>f.kind===kind);
  const entry=factFor('specific_experience'),setting=factFor('context'),
   valence=factFor('valence'),meaning=factFor('meaning');
@@ -55,18 +59,19 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    detail:exact?'You confirmed this specific experience as something you want to explore. This does not establish a problem or a disorder.':'This is your selected general starting area. The exact experience has not yet been established.',
    evidence:sourced(entry,'Is this a specific experience you want to explore?'),status:exact?'reported':'unknown'},
   {id:'context',layer:'context',
-   title:setting?setting.text:observations.length?'Situations and constraints mentioned':'Context not established',
+   title:[setting?.text,preciseFor('timeframe')?.text,preciseFor('situations')?.text].filter(Boolean).join(' · ')||
+    (observations.length?'Situations and constraints mentioned':'Context not established'),
    detail:setting?'You selected this setting or situation. The tool has not established what causes the experience there.':
     observations.length?'These are the circumstances and contrasts you have reported.':'Nobody has not yet established when the problem changes or what practical barriers are present.',
-   evidence:[...sourced(setting,'Where or when does this matter most?'),...normal(observations)].slice(0,3),
-   status:setting||observations.length?'reported':'unknown'},
+   evidence:[...sourced(setting,'Where or when does this matter most?'),...evidenceFor('timeframe','frequency','situations','exceptions'),...normal(observations)].slice(0,7),
+   status:setting||observations.length||precise.length?'reported':'unknown'},
   {id:'experience',layer:'experience',
-   title:[valence?.text,meaning?.text].filter(Boolean).join(' · ')||
+   title:[valence?.text,meaning?.text,preciseFor('impact')?.text].filter(Boolean).join(' · ')||
     (meanings.length?'What you report feeling or considering':'Personal meaning not established'),
    detail:'These are the meanings or descriptions you selected, not an interpretation of your identity or a hidden motive. A feeling cannot be inferred from a behaviour.',
    evidence:[...sourced(valence,'How would you describe this experience?'),
-    ...sourced(meaning,'What is most relevant to understanding it?'),...normal(meanings)].slice(0,4),
-   status:valence||meaning||meanings.length?'reported':'unknown'},
+    ...sourced(meaning,'What is most relevant to understanding it?'),...evidenceFor('impact'),...normal(meanings)].slice(0,6),
+   status:valence||meaning||meanings.length||preciseFor('impact')?'reported':'unknown'},
   {id:'response',layer:'response',title:responses.length?'Responses and choices mentioned':'Response not established',
    detail:'A behaviour is not automatically an attempt to protect against a hidden fear. Here we record what you actually report.',
    evidence:normal(responses),status:responses.length?'reported':'unknown'},
@@ -83,9 +88,12 @@ export function buildFormulationGraph(state,candidates,questionIndex){
   {id:'cost',layer:'cost',title:supporting?'A possible continuing cost':'Maintaining consequences not established',
    detail:supporting?'To test, not presume: '+p.possibleCost:'The presence of a behaviour does not itself prove that it is maintaining a problem.',
    evidence:normal(specificEvidence(state,questionIndex,['cost'])),status:supporting?'tentative':'unknown'},
-  {id:'need',layer:'need',title:needs.length?'Needs or resources to consider':'Possible needs, still unconfirmed',
-   detail:'These are options to discuss, not unmet needs discovered by an algorithm. '+(p?.need||'A need has not been identified.'),
-   evidence:normal(needs),status:needs.length?'tentative':'unknown'}
+  {id:'need',layer:'need',title:preciseFor('goal')?'My stated goal: '+preciseFor('goal').text:
+   (needs.length?'Needs or resources to consider':'Possible needs, still unconfirmed'),
+   detail:preciseFor('goal')?'The goal shown here was explicitly selected by the person. It does not prove that a particular need is unmet.':
+    'These are options to discuss, not unmet needs discovered by an algorithm. '+(p?.need||'A need has not been identified.'),
+   evidence:[...evidenceFor('goal'),...normal(needs)].slice(0,5),
+   status:preciseFor('goal')?'reported':needs.length?'tentative':'unknown'}
  ];
  // Only surface an opposing-goals hypothesis when a person actually reports
  // a tension — do not produce a romanticised 'two parts of yourself' narrative.
