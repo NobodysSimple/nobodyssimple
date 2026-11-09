@@ -8,6 +8,7 @@ import {safetyScreen} from './ns-reasoning-model.mjs';
 import {DEEP_PROCESSES,DEEP_BY_ID,EXTRA_BY_TRACK,DEEP_QUESTIONS,DEEP_QUESTION_BY_ID,isPresentationQuery,presentationBranchActive} from './ns-hypothesis-deep-content.mjs';
 import {buildFormulationGraph,graphCoverage,graphText,layerQuestionTags,editGraphNode,reopenGraphLayer} from './ns-hypothesis-graph.mjs';
 import {beginSubtypeDrill,answerSubtypeDrill,subtypeQuestion,subtypeNode} from './ns-hypothesis-subtype-atlas.mjs';
+import {newCaseDetailInterview,caseDetailReport} from './ns-hypothesis-case-facts.mjs';
 
 const P=(id,title,description,possibleFunction,possibleCost,need,check,link)=>
  Object.freeze({id,title,description,possibleFunction,possibleCost,need,check,link});
@@ -135,7 +136,7 @@ export function startHypothesis({trackId='',topicId='',description=''}={}){
   indicator&&['crisis','coercion','harm','physical','unusual'].includes(indicator.kind)?
     {...indicator,kind:indicator.kind==='physical'?'medical':indicator.kind==='unusual'?'support':indicator.kind}:null;
  return {version:'2026-11-09-deep-2',trackId:track.id,topicId:topicId&&atlasGet(topicId)&&!risk?topicId:null,
-  description:raw,answers:[],feedback:{},nodeEdits:{},focusLayer:'',
+   description:raw,answers:[],feedback:{},nodeEdits:{},focusLayer:'',caseDetails:newCaseDetailInterview(),
   drill:!safety&&!topicId?beginSubtypeDrill(track.id):null,safety,initialSafety:safety};
 }
 
@@ -380,6 +381,7 @@ export function formulationPlainText(state){
  const r=hypothesisResult(state);if(!r)return '';
  return ['Nobody’s Simple | Hypothesis Generator',r.track.title,'',
   'Situation: '+r.situation,'Observations considered: '+r.examined,r.summary,'',
+  'Specific details explicitly selected:',...(caseDetailReport(state).length?caseDetailReport(state):['Not established']),'',
   ...r.alternatives.flatMap((c,i)=>{
    const f=describeFormulation(state,c);
    return ['Possibility '+(i+1)+': '+c.process.title,f.explanation,
