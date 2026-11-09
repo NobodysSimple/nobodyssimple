@@ -26,14 +26,15 @@ const important=[
  ['clinical','bipolar-experiences','ocd-contamination','psychosis-recovery','access-mental-health-care'],
  ['environment','climate-anxiety','eco-grief','community-violence','institutional-trust-loss'],
  ['growth','building-belonging','creative-expression','developing-autonomy','healthy-identity-exploration'],
+ ['appearance','weight-stigma','appearance-bullying','hair-loss-distress','body-dysmorphic-concerns'],
 ];
 
 test('every previously identified missing topic family is now represented as reachable named atlas entries',()=>{
  assert.equal(inclusiveDomains.length,19);
- assert.equal(inclusiveProblemIndex.length,326);
- assert.equal(atlasProblemIndex.length,492);
- assert.equal(inclusiveIds.size,326);
- assert.equal(new Set(atlasProblemIndex.map(p=>p.id)).size,492,'no collision with legacy atlas IDs');
+ assert.equal(inclusiveProblemIndex.length,352);
+ assert.equal(atlasProblemIndex.length,518);
+ assert.equal(inclusiveIds.size,352);
+ assert.equal(new Set(atlasProblemIndex.map(p=>p.id)).size,518,'no collision with legacy atlas IDs');
  assert.equal(atlasDomains.length,30);
  for(const [domain,...ids] of important){
   assert.ok(inclusiveDomains.some(d=>d.id===domain),domain);
