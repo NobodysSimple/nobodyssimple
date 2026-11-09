@@ -32,6 +32,7 @@ test('homepage shows Hypothesis Generator immediately below Nobody’s Simple Li
  await hypothesis.click();
  await expect(page).toHaveURL(/#hypothesis$/);
  await expect(page.locator('.ns-hypo-track')).toHaveCount(12);
+ await expect(page.locator('[data-hypo-description]')).toHaveCount(0);
 });
 test('Nobody asks a new adaptive question after each yes/no/maybe answer',async({page})=>{
  await open(page);
@@ -52,7 +53,6 @@ test('Nobody asks a new adaptive question after each yes/no/maybe answer',async(
 });
 test('after a few answers, results show alternatives, uncertainty, supporting and challenging evidence',async({page})=>{
  await open(page);
- await page.locator('[data-hypo-description]').fill('A report I keep delaying at work');
  await begin(page,'procrastination');
  await answer(page,4,'probably');
  await expect(page.locator('[data-hypo-results]')).toBeVisible();
@@ -103,12 +103,11 @@ test('safety responses stop generic formulation and show appropriate support',as
 });
 test('personal answers and working formulations are not automatically retained across reloads',async({page})=>{
  await open(page);
- await page.locator('[data-hypo-description]').fill('A private concern');
  await begin(page,'fatigue');
  await page.locator('[data-hypo-answer="probably"]').click();
  await page.reload();
  await expect(page.locator('.ns-hypo-track-grid')).toBeVisible();
- await expect(page.locator('[data-hypo-description]')).toHaveValue('');
+ await expect(page.locator('[data-hypo-description]')).toHaveCount(0);
  await expect(page.locator('.ns-hypo-result-card')).toHaveCount(0);
 });
 test('atlas lookup does not assign an unrelated formulation when a topic is not supported',async({page})=>{
