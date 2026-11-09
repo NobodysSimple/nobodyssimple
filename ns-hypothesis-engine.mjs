@@ -11,7 +11,7 @@ import {beginSubtypeDrill,answerSubtypeDrill,subtypeQuestion,subtypeNode} from '
 import {newCaseDetailInterview,caseDetailReport} from './ns-hypothesis-case-facts.mjs';
 import {newInvestigation,investigationReport,investigationLinks,investigationFacts} from './ns-hypothesis-investigation.mjs';
 import {testableDifferentials} from './ns-hypothesis-differentials.mjs';
-import {newAdaptiveInquiry,adaptiveDifferentials,adaptiveFacts,adaptiveReport,SYNTHETIC_MECHANISMS} from './ns-hypothesis-adaptive.mjs';
+import {newAdaptiveInquiry,adaptiveDifferentials,adaptiveFacts,adaptiveReport,adaptiveLinks,SYNTHETIC_MECHANISMS} from './ns-hypothesis-adaptive.mjs';
 
 const P=(id,title,description,possibleFunction,possibleCost,need,check,link)=>
  Object.freeze({id,title,description,possibleFunction,possibleCost,need,check,link});
@@ -366,7 +366,7 @@ export function hypothesisResult(state){
  const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
  const canContinue=Boolean(nextHypothesisQuestion(state));
  return {track:TRACK_BY_ID[state.trackId],situation:state.description||(state.drill?.confirmed&&subtypeNode(state.drill.leafId)?'Exploring: '+subtypeNode(state.drill.leafId).label:TRACK_BY_ID[state.trackId].title),
-  alternatives,patterns,graph,links:investigationLinks(state).map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
+  alternatives,patterns,graph,links:[...investigationLinks(state),...adaptiveLinks(state)].map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
    state.drill?.unsupportedCategory?'You have identified a specific experience. This part of the synthetic atlas does not yet have a reviewed explanatory interview, so no psychological mechanism is inferred.':
    patterns.length?'Your answers support testing specific patterns and their alternatives, but do not establish a cause.':
@@ -378,7 +378,7 @@ export function hypothesisResult(state){
 }
 export function reviewHypothesisLink(state,linkId,verdict){
  if(!state||state.safety||!['fits','uncertain','no-fit'].includes(verdict))return state;
- const link=investigationLinks(state).find(x=>x.id===linkId);
+ const link=[...investigationLinks(state),...adaptiveLinks(state)].find(x=>x.id===linkId);
  if(!link)return state;
  return {...state,linkFeedback:{...(state.linkFeedback||{}),[linkId]:verdict}};
 }
