@@ -27,9 +27,7 @@ test('all 45 non-Steadier choices have separately authored contextual guides',()
   assert.ok(g.refs.length>=1,id+' needs relevant sources');
   for(const ref of g.refs)assert.ok(PATH_SOURCES[ref],id+' unknown source '+ref);
   const url=needsDestination(option);
-  const expected=option.type==='activity'?(mode.id==='unsure'&&option.id==='relief'?'#need/':'#route-activity/'):
-   option.type==='tool'?'#route-tool/':option.type==='topic'?'#route-topic/':'#route-atlas/';
-  assert.ok(url.startsWith(expected),id+' incorrect destination '+url);
+  assert.equal(url,'#workbook/'+mode.id+'/'+option.id,id+' incorrect destination '+url);
  }
  assert.equal(pathGuide('regulate','overwhelmed'),null);
  assert.equal(pathGuide('act','nonexistent'),null);
