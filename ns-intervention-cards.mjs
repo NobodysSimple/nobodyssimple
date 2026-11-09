@@ -82,7 +82,7 @@ function suitableExtras(g){
  // New inclusive routes are navigation guides, not evidence for a full clinical intervention catalogue.
  // Offer fewer voluntary context/support choices, and never encourage direct confrontation for harm.
  if(g.contextFirst){
-  const allowed=g.supportFirst?['tiny-pause','reduce-one-input','name-a-need']:['tiny-pause','reduce-one-input','name-a-need','request-help','recovery-window'];
+  const allowed=g.supportFirst?['tiny-pause','reduce-one-input','name-a-need']:['tiny-pause','reduce-one-input','name-a-need','request-help'];
   return supplementary.filter(c=>allowed.includes(c.id));
  }
  // Not every low-demand exercise is appropriate for every physical or cognitive problem.
