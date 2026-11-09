@@ -36,7 +36,7 @@ test('every mode offers direct explicit choices with working destinations and wi
    if(option.type==='tool')assert.ok(idSet.has(option.target),mode.id+' broken tool '+option.target);
    if(option.type==='topic')assert.ok(atlasGet(option.target),mode.id+' missing topic '+option.target);
    if(option.type==='activity')assert.ok(getNeedsActivity(option.target),mode.id+' missing activity '+option.target);
-   assert.equal(destination,'#workbook/'+mode.id+'/'+option.id);
+   assert.equal(destination,option.type==='atlas'?'#navigate/atlas':'#workbook/'+mode.id+'/'+option.id);
   }
   assert.ok(ids.has(getNeedsMode(mode.id).id));
  }
