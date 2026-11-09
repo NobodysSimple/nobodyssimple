@@ -346,7 +346,8 @@ export function reviewHypothesis(state,id,value){
 }
 export function hypothesisResult(state){
  if(!state)return null;
- const onlyObservedFunctional=(state.investigation?.answers?.length||0)>0&&state.answers.length===0;
+ const onlyObservedFunctional=(state.investigation?.answers?.length||0)>0&&
+  !state.answers.some(a=>a.answerId!=='unsure');
  // Do not present ranked generic processes where no supporting
  // original interview answers were collected.
  const all=state.drill?.unsupportedCategory||onlyObservedFunctional?[]:rankedHypotheses(state,100);
