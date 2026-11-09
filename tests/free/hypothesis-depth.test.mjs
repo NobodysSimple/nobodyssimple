@@ -166,7 +166,7 @@ test('retired UI source remains inspectable but its stylesheet is no longer load
  assert.match(ui,/ns-hypo-graph-branches/);
  assert.match(css,/ns-hypo-graph-node/);
  assert.doesNotMatch(index,/ns-hypothesis-depth.css/);
- assert.match(sw,/ns-hypothesis-deep-content.mjs/);
+ assert.doesNotMatch(sw,/ns-hypothesis-deep-content.mjs/);
  assert.doesNotMatch(ui,/localStorage|sessionStorage|sendBeacon|fetch\(/);
 });
 
