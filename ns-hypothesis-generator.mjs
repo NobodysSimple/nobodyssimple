@@ -16,6 +16,7 @@ import {subtypeQuestion,subtypeNode,subtypeChildren,beginSubtypeDrill,TRACK_FOR_
 import {startCaseDetailInterview,answerCaseDetail,caseDetailQuestion,backCaseDetail,skipCaseDetail,caseDetailFacts,CASE_FACT_QUESTIONS} from './ns-hypothesis-case-facts.mjs';
 import {INVESTIGATION_QUESTIONS,startInvestigation,investigationQuestion,answerInvestigation,backInvestigation,stopInvestigation,investigationFacts} from './ns-hypothesis-investigation.mjs';
 import {ADAPTIVE_LIMIT,SYNTHETIC_MECHANISMS,adaptiveQuestion,startAdaptiveInquiry,answerAdaptiveInquiry,backAdaptiveInquiry,stopAdaptiveInquiry,adaptiveFacts} from './ns-hypothesis-adaptive.mjs';
+import {evidenceCoverage,auditFormulationEvidence} from './ns-hypothesis-quality.mjs';
 
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
@@ -346,6 +347,33 @@ function answerHistory(state){
    '</select><button type="button" data-hypo-save-answer="'+e(a.questionId)+'">Update</button></div>';
  }).join('')+'</div></details>';
 }
+function evidenceReviewSection(state,r){
+ const area=evidenceCoverage(state);
+ const audit=auditFormulationEvidence(state,r);
+ const remarks=r.challenges||[];
+ const facts=[...investigationFacts(state),...adaptiveFacts(state)];
+ return '<section class="ns-hypo-evidence-review" aria-label="Critical evidence and gaps">'+
+  '<div class="ns-hypo-section-head"><span>03</span><div><p class="ns-hypo-eyebrow">CHALLENGE THE EASY ANSWER</p>'+
+  '<h2>What could make our first explanation wrong?</h2><p>Real counterexamples matter. These are specific observations that weaken one-cause stories; they do not prove a different cause.</p></div></div>'+
+  (remarks.length?'<div class="ns-hypo-counter-grid">'+remarks.map(c=>
+   '<article class="ns-hypo-counter-card"><h3>'+e(c.title)+'</h3><p>'+e(c.explanation)+'</p>'+
+   '<details><summary>See the actual evidence</summary><ul>'+c.evidence.map(x=>
+    '<li><strong>'+e(x.answer)+'</strong><span>'+e(x.question)+'</span></li>').join('')+'</ul></details></article>'
+  ).join('')+'</div>':
+  '<p class="ns-hypo-graph-unknown">We have not recorded a clear observation that challenges a simple explanation yet. That does not make any explanation correct.</p>')+
+  '<details class="ns-hypo-factor-review"><summary>Which contributing factors have we actually examined? ('+
+   area.filter(x=>x.status==='reported').length+' of '+area.length+' domains with reported details)</summary>'+
+   '<p>“Not investigated” means no relevant question was answered—not that this factor is absent. A question answered uncertainly is also not a confirmed fact.</p>'+
+   '<ul>'+area.map(x=>'<li><strong>'+e(x.label)+'</strong> <span>'+e(
+    x.status==='reported'?'Some person-reported details':x.status==='asked_no_confirmed_detail'?'Asked, not established':'Not investigated yet')+'</span></li>').join('')+'</ul></details>'+
+  '<details class="ns-hypo-evidence-ledger"><summary>Read every source-backed answer in its exact wording ('+
+   facts.length+')</summary><p>Typed descriptions are your own words. Choice-based answers keep the original wording of the option you selected. Neither establishes a medical diagnosis or somebody else’s motive.</p>'+
+   '<ul>'+facts.map(x=>'<li><strong>'+e(x.text)+'</strong><span>'+e(x.question)+'</span></li>').join('')+'</ul></details>'+
+  '<p class="ns-hypo-quiet">Automated provenance audit: '+(audit.passed?
+   'No source mismatch found in the checked causal links.':
+   audit.structuralIssues.length+' items need technical review; this does not make the remaining ideas true.')+
+   ' Clinical accuracy has not been measured.</p></section>';
+}
 function resultPage(state,selectedNode=''){
  const r=hypothesisResult(state);
  if(state.safety)return safetyPage(state);
@@ -361,7 +389,7 @@ function resultPage(state,selectedNode=''){
   '<p>There may be nothing wrong with a behaviour or preference itself. Sometimes the relevant difficulty is the social response, uncertainty, available resources or what the situation means to you.</p>'+
   '<p class="ns-hypo-quiet">Every interpretation below is provisional. A question about gender presentation cannot establish gender identity, sexual orientation or an underlying wound.</p></section>'+
   graphSection(r,selectedNode)+
-  '<div data-hypo-node-editor>'+nodeEditor(r,selectedNode)+'</div>'+
+  '<div data-hypo-node-editor>'+nodeEditor(r,selectedNode)+'</div>'+evidenceReviewSection(state,r)+
   '<section class="ns-hypo-possibilities"><div class="ns-hypo-section-head"><span>03</span><div>'+
   '<p class="ns-hypo-eyebrow">REASONS FOR AND AGAINST</p><h2>Compare our possible explanations.</h2></div></div>'+
   (r.alternatives.length?'<p>These are ranked by uncalibrated relative compatibility with your answers. They are not measured likelihoods, diagnoses or a prediction of your future.</p>':'<p>No specific explanatory model is asserted for this area. Your own observations remain the primary record.</p>')+
