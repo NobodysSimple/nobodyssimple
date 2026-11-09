@@ -477,3 +477,70 @@ body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review li span{color:#3d5948}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review{background:#203127;color:#eef4ed;border-color:#5b7963}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review :is(details,.ns-hypo-counter-card){background:#2d3a2f;border-color:#65826b}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-evidence-review :is(h2,h3,summary,p,li strong,li span){color:#edf4e6}
+
+
+/* Stage 6: evidence-first causal formulation, deliberately readable at phone width */
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-map{
+ margin:22px 0;padding:clamp(14px,3vw,24px);
+ border:1px solid #aec5b4;border-radius:22px;background:#f8faf5;
+ color:#234233;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-map h2{
+ color:#1d4433;font-size:clamp(21px,3vw,29px);line-height:1.2;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-map h3{
+ margin:19px 0 11px;font-size:18px;color:#234c38;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-map h4{
+ margin:0 0 8px;font-size:17px;color:#284836;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-sequence{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0 20px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-step{
+ border:1px solid #dae6da;border-radius:14px;background:#fff;
+ padding:13px;display:grid;gap:7px;min-width:0;overflow-wrap:anywhere;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-step span{
+ font:750 11px/1.4 system-ui,sans-serif;color:#526e58;
+ text-transform:uppercase;letter-spacing:.035em;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-step strong{
+ font:650 15px/1.5 system-ui,sans-serif;color:#213f2d;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-hypothesis,
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-counters article{
+ border:1px solid #d4e2d3;background:#fff;border-radius:15px;
+ padding:16px;margin-bottom:12px;overflow-wrap:anywhere;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-hypothesis details{
+ border-top:1px solid #e1e9dd;margin-top:11px;padding-top:10px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-hypothesis summary{
+ cursor:pointer;font-weight:700;color:#2a5841;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-hypothesis li,
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-counters li{
+ margin:7px 0;line-height:1.55;overflow-wrap:anywhere;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-map .ns-hypo-quiet{
+ border-top:1px solid #c9d9c7;padding-top:12px;
+ font-size:12px;line-height:1.55;color:#4b5c50;
+}
+@media(max-width:720px){
+ body.app-body.ns-shell-v1 #main .ns-hypo-depth-sequence{
+  grid-template-columns:minmax(0,1fr);
+ }
+ body.app-body.ns-shell-v1 #main .ns-hypo-depth-map{padding:14px;}
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-map{
+ background:#203127;border-color:#667f6b;color:#f0f5ea;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-map :is(h2,h3,h4),
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-step strong,
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-hypothesis summary{color:#e6f4e8;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main :is(.ns-hypo-depth-step,.ns-hypo-depth-hypothesis,.ns-hypo-depth-counters article){
+ background:#293c2e;border-color:#637f67;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-step span,
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-map .ns-hypo-quiet{color:#d7e4d8;}
