@@ -138,3 +138,13 @@ test('unreviewed digital-life route reports facts but abstains from unrelated ca
  await expect(page.locator('.ns-hypo-result-hero')).toContainText('does not yet have a reviewed explanatory interview');
  await expect(page.locator('.ns-hypo-final-buttons a[href="#navigate"]')).toHaveCount(1);
 });
+
+test('family intimidation route offers safety resources before exploring psychological mechanisms',async({page})=>{
+ await page.goto('/index.html#hypothesis');
+ await page.locator('.ns-hypo-all-areas > summary').click();
+ await page.locator('[data-hypo-category="FAMILY"]').click();
+ await choose(page,'FAMILY-SAFETY');
+ await expect(page.locator('.ns-hypo-safety-page')).toBeVisible();
+ await expect(page.locator('.ns-hypo-safety-links')).toContainText('domestic abuse');
+ await expect(page.locator('.ns-hypo-graph')).toHaveCount(0);
+});
