@@ -240,6 +240,7 @@ export function investigationLinks(state){
   if(!fact.has(from)||!fact.has(to))return;
   edges.push({id:'invest-link:'+from+'-'+to,from:fact.get(from).id,to:fact.get(to).id,
    title:label,status:'proposed_not_causal',
+   fromText:fact.get(from).text,toText:fact.get(to).text,
    evidence:[fact.get(from),fact.get(to)].map(f=>f.id),
    challenge:contrary||'This sequence alone cannot prove a cause. What changes if this factor is absent?'});
  };
