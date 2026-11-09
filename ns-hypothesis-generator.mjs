@@ -13,6 +13,7 @@ import {
  reviseHypothesisNode,HYPOTHESIS_DEEP_QUESTION_COUNT
 } from './ns-hypothesis-engine.mjs';
 import {subtypeQuestion,subtypeNode,subtypeChildren,beginSubtypeDrill,TRACK_FOR_CATEGORY,REVIEWED_INTERVIEW_CATEGORIES} from './ns-hypothesis-subtype-atlas.mjs';
+import {startCaseDetailInterview,answerCaseDetail,caseDetailQuestion,backCaseDetail,skipCaseDetail,caseDetailFacts,CASE_FACT_QUESTIONS} from './ns-hypothesis-case-facts.mjs';
 
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
@@ -94,6 +95,28 @@ function narrowing(state){
   '<p class="ns-hypo-drill-caution">This is an editorially authored, non-diagnostic question map from the Nobody’s Simple synthetic atlas. You can leave any answer uncertain. More precise questions come after selecting a specific experience.</p>'+
   '<p class="ns-hypo-quiet">'+e(stageText)+'</p></section>');
 }
+function specificFactsPage(state){
+ const q=caseDetailQuestion(state);
+ if(!q)return asking(state);
+ const leaf=subtypeNode(state.drill?.leafId);
+ const done=state.caseDetails.answers.length;
+ const options=q.options.map(o=>'<button type="button" class="ns-hypo-drill-option" data-hypo-fact-answer="'+e(o.id)+
+  '" data-hypo-fact-question="'+e(q.id)+'"><span>'+e(o.label)+'</span><span aria-hidden="true">→</span></button>').join('');
+ return page('<section class="ns-hypo-drill ns-hypo-case-specific" aria-labelledby="ns-hypo-question">'+
+  '<div class="ns-hypo-drill-top"><p class="ns-hypo-eyebrow">UNDERSTAND YOUR EXPERIENCE · DETAIL '+(done+1)+' OF '+CASE_FACT_QUESTIONS.length+'</p>'+
+  '<p>'+e(leaf?.label||'Your experience')+' · These answers are facts you choose, not psychological conclusions.</p></div>'+
+  '<div class="ns-hypo-dialogue"><div class="ns-hypo-guide">'+art('ns-character-mapping.webp','ns-hypo-guide-art')+
+  '<div class="ns-hypo-guide-caption"><strong>Nobody</strong><span>Getting the details right</span></div></div>'+
+  '<div class="ns-hypo-speech-card"><p class="ns-hypo-eyebrow">A LITTLE MORE ABOUT WHAT HAPPENS</p>'+
+  '<h1 id="ns-hypo-question" tabindex="-1">'+e(q.prompt)+'</h1>'+
+  '<p>No answer will be treated as evidence of a diagnosis or hidden motive. Only what you choose becomes part of your case map.</p></div></div>'+
+  '<div class="ns-hypo-drill-options" role="group" aria-label="Choose the most accurate answer">'+options+'</div>'+
+  '<div class="ns-hypo-question-footer"><button type="button" data-hypo-fact-back>← Back</button>'+
+  '<button type="button" data-hypo-fact-stop>Skip remaining details</button></div>'+
+  (done?'<div class="ns-hypo-case-recap"><strong>What you have selected so far</strong><ul>'+
+   caseDetailFacts(state).map(f=>'<li>'+e(f.label)+': '+e(f.text)+'</li>').join('')+'</ul></div>':'')+
+  '<p class="ns-hypo-quiet">'+e(stageText)+'</p></section>');
+}
 function progress(state){
  const n=state.answers.length;
  const result=hypothesisResult(state);
@@ -133,6 +156,7 @@ function asking(state){
    '<strong>'+e(a.id==='unsure'?'Maybe / not sure':a.label)+'</strong><span aria-hidden="true">→</span></button>').join('')+'</div>'+
   '<div class="ns-hypo-question-footer"><button type="button" data-hypo-back '+(n?'':'disabled')+'>← Back</button>'+
   '<button type="button" data-hypo-skip data-hypo-question="'+e(q.id)+'">Skip</button>'+
+  (state.drill?.confirmed&&!state.caseDetails?.finished?'<button type="button" data-hypo-fact-start>Explore the specifics first →</button>':'')+
   (n>=3?'<button type="button" data-hypo-results>'+(ready?'View my detailed working map':'See my tentative map')+'</button>':'')+'</div>'+
   (ready?'<p class="ns-hypo-ready">Nobody has enough information to sketch a provisional picture. You can inspect it now or keep answering to test other explanations.</p>':'')+
   '<details class="ns-hypo-why"><summary>Why is Nobody asking this question?</summary>'+
@@ -282,6 +306,7 @@ function resultPage(state,selectedNode=''){
   '<section class="ns-hypo-final-actions"><div><h2>Keep exploring—or put something into practice</h2>'+
   '<p>There is no fixed question count. Each further question tries to distinguish explanations or investigate a part you challenged. You may also stop, revise, or choose something helpful without deciding on one cause.</p></div>'+
   '<div class="ns-hypo-final-buttons">'+
+  (state.drill?.confirmed&&!state.caseDetails?.finished?'<button type="button" data-hypo-fact-start>Explore more precise details →</button>':'')+
   (r.canContinue?'<button type="button" data-hypo-more>Keep investigating →</button>':
    '<p>We have used the currently available authored questions for this area. You can still revise the graph or an earlier answer.</p>')+
   (r.topic?'<a class="ns-hypo-primary" href="#workbook-topic/'+e(r.topic)+'">Explore practical options →</a>':
@@ -304,7 +329,7 @@ function saveText(name,raw){
 export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}={}){
  let state=null,stage='start',preselected=initialTrack,topic=initialTopic,selectedNode='';
  const render=(focus=false)=>{
-  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='drill'?narrowing(state):stage==='result'?resultPage(state,selectedNode):asking(state);
+  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='drill'?narrowing(state):stage==='case'?specificFactsPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
   if(focus){
    const heading=root.querySelector('#ns-hypo-question, .ns-hypo-result-hero h1, .ns-hypo-pick h2, .ns-hypo-safety-page h1');
    if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
@@ -353,6 +378,25 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
   }
   if(b.hasAttribute('data-hypo-drill-skip')&&state?.drill){
    state=skipHypothesisDrill(state);stage=state.drill.unsupportedCategory?'result':'question';render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-fact-start')&&state?.drill?.confirmed){
+   state=startCaseDetailInterview(state);
+   if(caseDetailQuestion(state)){stage='case';render(true);}
+   return;
+  }
+  if(b.dataset.hypoFactAnswer&&state){
+   state=answerCaseDetail(state,b.dataset.hypoFactQuestion,b.dataset.hypoFactAnswer);
+   stage=state.caseDetails?.active?'case':(state.drill?.unsupportedCategory?'result':'question');
+   render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-fact-back')&&state){
+   if(state.caseDetails?.answers?.length){state=backCaseDetail(state);stage='case';}
+   else{state=skipCaseDetail(state);stage=state.drill?.unsupportedCategory?'result':'question';}
+   render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-fact-stop')&&state){
+   state=skipCaseDetail(state);stage=state.drill?.unsupportedCategory?'result':'question';
+   render(true);return;
   }
   if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';render(true);return;}
   if(b.hasAttribute('data-hypo-back')){
