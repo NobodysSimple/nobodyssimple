@@ -111,7 +111,7 @@ test('changing answers and giving feedback revises ranking without rewriting evi
  const edited=reviewHypothesis(s,top.id,'no-fit');
  assert.equal(edited.answers.length,before);
  assert.equal(edited.feedback[top.id],'no-fit');
- assert.equal(rankedHypotheses(edited).find(c=>c.id===top.id).score,top.score);
+ assert.equal(rankedHypotheses(edited,10).find(c=>c.id===top.id).score,top.score);
  const back=backHypothesis(s);
  assert.equal(back.answers.length,before-1);
  assert.equal(back.safety,null);
