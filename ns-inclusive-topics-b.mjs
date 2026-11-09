@@ -977,7 +977,8 @@ export const INCLUSIVE_GROUPS_B = [
     "body-dysmorphic-concerns",
     "Concerns about a perceived flaw in my appearance take over my attention",
     "Repeated checking and distress may merit specialist assessment; a brief topic cannot diagnose BDD.",
-    "body dysmorphia bdd"
+    "body dysmorphia bdd",
+    "medical"
    ],
    [
     "scars-burns-appearance",
