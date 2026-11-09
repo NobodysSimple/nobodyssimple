@@ -7,6 +7,8 @@ const open=async page=>{
 };
 async function begin(page,id){
  await page.locator('[data-hypo-track="'+id+'"]').first().click();
+ await expect(page.locator('.ns-hypo-drill')).toBeVisible();
+ await page.locator('[data-hypo-drill-skip]').click();
  await expect(page.locator('#ns-hypo-question')).toBeVisible();
 }
 async function answer(page,n=4,answerId='probably'){
