@@ -107,7 +107,7 @@ const FOCUS={
  ['Opportunities and support','Access, resources and other people can create possibilities.'],
  ['Freedom to choose','A positive goal should be yours, not an obligation to improve.'],
  ['What counts as worthwhile','Connection, joy and rest do not need a productivity justification.']],
- goals:['Choose an experience you genuinely value.','Consider one optional opportunity or supportive condition.','No improvement or diagnosis is required to use this topic.']}
+ goals:['Choose an experience you genuinely value.','Consider one optional opportunity or supportive condition.','You can explore without treating anything as a problem or requiring improvement or diagnosis.']}
 };
 export function inclusiveProfile(p){
  if(!p?.contextFirst)return null;
