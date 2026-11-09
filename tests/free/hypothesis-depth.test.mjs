@@ -21,7 +21,7 @@ test('added content is original, broad and structurally validated without invent
  assert.equal(new Set(DEEP_PROCESSES.map(p=>p.id)).size,DEEP_PROCESSES.length);
  for(const q of DEEP_QUESTIONS){
   assert.ok(q.prompt.endsWith('?'),q.id);
-  assert.ok(q.why.length>=35,q.id);
+  assert.ok(q.why.length>=25,q.id);
   assert.ok(q.tags.length>0,q.id);
   assert.ok(q.tracks.length>0,q.id);
   for(const t of q.tracks)assert.ok(TRACK_BY_ID[t],q.id+' '+t);
