@@ -192,10 +192,27 @@ function expectedDiscrimination(q,candidates){
  const gain=entropy(prior)-yes*entropy(yesPosterior)-no*entropy(noPosterior);
  return Math.max(0,gain);
 }
+// Distinct question IDs can still describe the same observation. Keep only
+// carefully reviewed *equivalent* concepts here: complementary contrasts
+// deliberately remain available as separate questions.
+// This guard prevents paraphrased repeats, not all possible semantic overlap.
+export const EQUIVALENT_QUESTION_GROUPS=Object.freeze([
+ Object.freeze(['masking','d-id-masking']),
+ Object.freeze(['accepted','d-id-safe-company','d-so-safe']),
+ Object.freeze(['ritual','d-ck-intrusive']),
+ Object.freeze(['needed-check','d-ck-need']),
+ Object.freeze(['value-clash','d-de-values']),
+ Object.freeze(['external-sleep','d-sl-shifts'])
+]);
+const conceptGroupById=Object.freeze(Object.fromEntries(
+ EQUIVALENT_QUESTION_GROUPS.flatMap((ids,index)=>ids.map(id=>[id,'equiv-'+index]))
+));
 export function nextHypothesisQuestion(state){
  if(!state||state.safety)return null;
  const used=new Set(state.answers.map(a=>a.questionId));
- const pool=questionPool(state).filter(q=>!used.has(q.id));
+ const usedGroups=new Set([...used].map(id=>conceptGroupById[id]).filter(Boolean));
+ const pool=questionPool(state).filter(q=>!used.has(q.id)&&
+   (!conceptGroupById[q.id]||!usedGroups.has(conceptGroupById[q.id])));
  if(!pool.length)return null;
  if(!state.answers.length){
   const first={procrastination:'first',overthinking:'certainty',relationships:'unsafe',
