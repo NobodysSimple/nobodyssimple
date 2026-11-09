@@ -19,7 +19,7 @@ test('every one of 53 console choices leads directly to a complete integrated wo
    assert.equal(w.id,mode.id+'/'+option.id);
    assert.equal(w.modeId,mode.id);
    assert.equal(w.optionId,option.id);
-   assert.equal(needsDestination(option),'#workbook/'+mode.id+'/'+option.id);
+   assert.equal(needsDestination(option),option.type==='atlas'?'#navigate/atlas':'#workbook/'+mode.id+'/'+option.id);
    assert.ok(w.what.length>=70,w.id+' should explain experience');
    assert.ok(w.cycle.length>=50,w.id+' must give possible pattern');
    assert.ok(w.cautions.length>=1,w.id+' must indicate limits');
