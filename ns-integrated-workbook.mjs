@@ -266,10 +266,14 @@ function download(name,content){
  document.body.append(link);link.click();link.remove();
  setTimeout(()=>URL.revokeObjectURL(url),2000);
 }
-function handleFullTool(surface,button){
+function handleFullTool(surface,button,locked=false){
  const id=button.dataset.wbMount,lane=button.dataset.wbMountLane;
  const host=surface.querySelector('[data-wb-tool-host="'+lane+'"]');
  if(!host)return;
+ if(locked){
+  host.innerHTML='<p>Your saved work is locked. Unlock it in <a href="#account">Account</a> before opening an additional full tool. You can still read and use the private worksheets above.</p>';
+  return;
+ }
  // Only one full legacy renderer is active: many old tools use fixed internal IDs.
  surface.querySelectorAll('[data-wb-tool-host]').forEach(other=>{
   if(other!==host)other.replaceChildren();
@@ -284,7 +288,7 @@ function handleFullTool(surface,button){
   host.innerHTML='<p>That additional tool could not be opened here. The inline worksheet above remains available.</p>';
  }
 }
-function wire(surface,g){
+function wire(surface,g,locked=false){
  surface.querySelectorAll('[data-wb-jump]').forEach(b=>b.addEventListener('click',()=>{
   const section=surface.querySelector('#ns-wb-'+b.dataset.wbJump);
   section?.scrollIntoView({block:'start',behavior:'instant'});
@@ -304,7 +308,7 @@ function wire(surface,g){
    return;
   }
   const button=event.target.closest('button');if(!button)return;
-  if(button.dataset.wbMount){handleFullTool(surface,button);return;}
+  if(button.dataset.wbMount){handleFullTool(surface,button,locked);return;}
   if(button.dataset.wbAction){updateFeedback(surface,button.dataset.wbAction);return;}
   if(button.hasAttribute('data-wb-summary')){
    const notes=getNotes(surface);const text=notesText(g,notes);
@@ -333,10 +337,10 @@ function wire(surface,g){
  });
  setupAtlas(surface);
 }
-export function renderIntegratedWorkbook(root,{mode='',option='',topic=''}={}){
+export function renderIntegratedWorkbook(root,{mode='',option='',topic='',locked=false}={}){
  const g=topic?workbookForTopic(topic):workbookForChoice(mode,option);
  if(!g){root.innerHTML='<div class="ns-wb-wrap"><h1>We could not find this guide.</h1><p>Choose a starting point to continue.</p><a href="#navigate">Back to starting points</a></div>';return;}
  root.innerHTML=g.safetyFirst?safeMarkup(g):worksheetMarkup(g);
  const surface=root.querySelector('[data-workbook]');
- wire(surface,g);
+ wire(surface,g,locked);
 }
