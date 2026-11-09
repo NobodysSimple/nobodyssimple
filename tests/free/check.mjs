@@ -2,7 +2,7 @@ import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 for(const f of readdirSync('.').filter(x=>x.endsWith('.mjs')||x==='sw.js'))execFileSync(process.execPath,['--check',f]);
-const html=readFileSync('index.html','utf8');assert.ok(html.includes('account.css'));assert.ok(html.includes('href="#account"'));assert.ok(!html.includes('href="#maps"'));
+const html=readFileSync('index.html','utf8');assert.ok(html.includes('account.css'));assert.ok(html.includes('href="#guide"'));assert.ok(html.includes('href="#discussion"'));assert.ok(!html.includes('href="#maps"'));
 // Stage 8: account modules are loaded on demand and cache only as public
 // static JS/CSS files. They no longer have to be in the install precache.
 const sw=readFileSync('sw.js','utf8');
