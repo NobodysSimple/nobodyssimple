@@ -18,18 +18,18 @@ function landing(){
  '<h1>What would help you right now?</h1><p>Choose what you want to do, not what you think is wrong with you. You can change direction at any time.</p></header>'+
  '<section class="ns-needs-panel"><h2>Choose a starting point</h2>'+
  '<div class="ns-needs-grid">'+NEEDS_MODES.map(modeCard).join('')+'</div></section>'+
- '<p class="ns-needs-footnote">No questionnaire or diagnosis is required. Each choice leads directly to support, reflection, an exercise or a topic you want to explore.</p>');
+ '<p class="ns-needs-footnote">No questionnaire or diagnosis is required. Each choice opens a continuous guide with the explanation, research-informed options and practical exercises together on one page.</p>');
 }
 function modeScreen(mode){
  return area('<header class="ns-needs-header ns-tone-'+e(mode.tone)+'"><p class="ns-needs-eyebrow">YOUR CHOICE · '+e(mode.title.toUpperCase())+'</p>'+
  '<h1>'+e(mode.title)+'</h1><p>'+e(mode.summary)+'</p></header>'+
- '<section class="ns-needs-panel"><h2>What feels closest?</h2><p class="ns-needs-sub">Choose one. No need to explain yourself or answer a series of questions.</p>'+
+ '<section class="ns-needs-panel"><h2>What feels closest?</h2><p class="ns-needs-sub">Choose one to open its field guide: read about the experience and try practical worksheets directly under each approach, without leaving the page.</p>'+
  '<div class="ns-needs-choices">'+mode.options.map(optionCard).join('')+'</div></section>'+
  '<p class="ns-needs-footnote">Different situations need different support. You can always '+href('#navigate','change your starting point')+'.</p>',
  '#navigate');
 }
 function subjectCard(p){
- return href('#navigate/atlas/'+encodeURIComponent(p.id),
+ return href('#workbook-topic/'+encodeURIComponent(p.id),
  '<span><strong>'+e(p.title)+'</strong><small>'+e(p.hint)+'</small></span><span class="ns-needs-next" aria-hidden="true">→</span>',
  'ns-needs-topic');
 }
@@ -41,7 +41,7 @@ function getSubjectMatches(search,domain){
 }
 function atlasScreen(root){
  root.innerHTML=area('<header class="ns-needs-header ns-tone-lilac"><p class="ns-needs-eyebrow">PSYCHOLOGICAL ATLAS</p>'+
- '<h1>Choose a specific difficulty</h1><p>Browse named experiences without being assigned a diagnosis. Select what you want to learn about or work on.</p></header>'+
+ '<h1>Choose a specific difficulty</h1><p>Browse named experiences without being assigned a diagnosis. Every topic opens an integrated guide with optional worksheets inside the chapters.</p></header>'+
  '<section class="ns-needs-panel"><label class="ns-needs-search-label" for="needs-topic-search">Search a named difficulty</label>'+
  '<input id="needs-topic-search" type="search" autocomplete="off" placeholder="e.g. insomnia, rumination, boundaries…" data-needs-search>'+
  '<p class="ns-needs-footnote">Search filters topic names and descriptions. It does not interpret your symptoms or decide what condition you have.</p>'+
