@@ -49,7 +49,7 @@ test('relationship investigation distinguishes an attributed narcissism label fr
  const chosen=links[0];
  s=reviewHypothesisLink(s,chosen.id,'no-fit');
  assert.equal(hypothesisResult(s).links.find(x=>x.id===chosen.id).review,'no-fit');
- assert.match(formulationPlainText(s),/Possible links to TEST/);
+ assert.match(formulationPlainText(s),/Potential links to TEST/);
 });
 test('investigation includes differential testing even when there is no identifiable person',()=>{
  let s=startInvestigation(startHypothesis({trackId:'procrastination'}));
@@ -59,7 +59,7 @@ test('investigation includes differential testing even when there is no identifi
  assert.equal(s.investigation.finished,true);
  assert.equal(investigationQuestion(s),null);
  const graph=hypothesisResult(s).graph;
- assert.match(graph.find(x=>x.id==='context').title,/uncertainty/i);
+ assert.match(graph.find(x=>x.id==='context').title,/did not know what would happen/i);
  assert.match(graph.find(x=>x.id==='response').title,/put off a task/i);
  assert.ok(investigationLinks(s).some(x=>x.title.includes('Sleep and capacity')));
 });
