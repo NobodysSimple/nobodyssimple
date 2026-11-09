@@ -1,5 +1,10 @@
 # Feel steadier — targeted scientific review and content coverage (9 November 2026)
 
+## Interface update · 9 November 2026
+
+The **Choose a starting point** console now opens one continuous educational workbook at each selected result. The scientific principles and qualifications below remain the editorial basis, but the previous modal/overlay presentation has been **superseded in the console**: techniques are explained in-page with interactive worksheets immediately under their guidance and optional expanded original tools. See [Integrated console workbooks](integrated-console-workbooks.md) for architecture, user-data rules, full route coverage and remaining evaluation needs. Older overlay components remain for legacy compatibility and are not the new default console workflow.
+
+
 **Status:** Evidence-informed editorial build. This is a targeted, non-systematic source review, **not independent clinical peer review or validation** of eight app interventions. The user-facing copy and the individual exercise/guidebook pairs need clinician and lived-experience review before clinical-efficacy claims.
 
 ## Scope of this review
