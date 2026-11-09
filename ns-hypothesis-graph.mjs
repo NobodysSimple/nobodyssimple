@@ -160,7 +160,8 @@ export function buildFormulationGraph(state,candidates,questionIndex){
  const layerToNode={context:'context',experience:'experience',meaning:'experience',
   response:'response',function:'function',cost:'cost',need:'need',tension:'tension',
   mechanism:'experience'};
- const seen=new Set(nodes.flatMap(n=>(n.evidence||[]).map(item=>item.id)));
+ // A hypothesis may cite a fact; do not let it hide the same report from its factual tile.
+  const seen=new Set(nodes.filter(n=>n.layer!=='mechanism').flatMap(n=>(n.evidence||[]).map(item=>item.id)));
  for(const fact of [...inquiry,...advanced,...domain]){
   if(seen.has(fact.id))continue;
   const id=layerToNode[fact.layer]||'context';
