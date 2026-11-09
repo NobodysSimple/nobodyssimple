@@ -96,3 +96,30 @@ test('mobile broad-to-specific questions and graph remain operable and WCAG-crit
  await page.locator('[data-hypo-results]').click();
  await audit('graph');
 });
+
+test('all 21 original atlas categories are available without a textbox, including other life issues',async({page})=>{
+ await page.goto('/index.html#hypothesis');
+ await page.locator('.ns-hypo-all-areas > summary').click();
+ await expect(page.locator('[data-hypo-category]')).toHaveCount(21);
+ await page.locator('[data-hypo-category="DIGITAL"]').click();
+ await expect(page.locator('#ns-hypo-question')).toContainText('Digital life');
+ await page.locator('[data-hypo-drill-answer="DIGITAL-GAMES"]').click();
+ await expect(page.locator('#ns-hypo-question')).toContainText('Gaming and entertainment');
+ await page.locator('[data-hypo-drill-answer="DIGITAL-GAMES-VALUED-ONLINE-FRIENDSHIPS"]').click();
+ await expect(page.locator('#ns-hypo-question')).toContainText('valued online friendships');
+ await page.locator('[data-hypo-back]').click();
+ await expect(page.locator('[data-hypo-drill-answer="DIGITAL-GAMES-VALUED-ONLINE-FRIENDSHIPS"]')).toBeVisible();
+});
+test('generic overthinking starts by clarifying what type of concern, not assuming self-concept',async({page})=>{
+ await openTrack(page,'overthinking');
+ await expect(page.locator('#ns-hypo-question')).toContainText('thinking about');
+ await page.locator('[data-hypo-drill-answer="CHECKING"]').click();
+ await expect(page.locator('#ns-hypo-question')).toContainText('checking, repetition and reassurance');
+});
+test('safety category does not offer psychological classification before support',async({page})=>{
+ await page.goto('/index.html#hypothesis');
+ await page.locator('.ns-hypo-all-areas > summary').click();
+ await page.locator('[data-hypo-category="SAFETY"]').click();
+ await expect(page.locator('.ns-hypo-safety-page')).toBeVisible();
+ await expect(page.locator('[data-hypo-answer]')).toHaveCount(0);
+});
