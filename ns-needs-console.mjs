@@ -1,6 +1,7 @@
 import {escapeHTML as esc} from './core.mjs';
 import {NEEDS_MODES,getNeedsMode,needsDestination} from './ns-needs-catalog.mjs';
 import {atlasProblemIndex,atlasGet,atlasDomains,isSafetyPriority} from './ns-atlas-core.mjs';
+import {attachPathGuide} from './ns-pathway-guidebook.mjs';
 const e=x=>esc(String(x??''));
 const href=(url,title,cls='')=>'<a class="'+cls+'" href="'+e(url)+'">'+title+'</a>';
 const area=(body,back='#home')=>'<div class="ns-needs">'+
@@ -59,6 +60,7 @@ function atlasScreen(root){
  root.querySelector('[data-needs-search]').addEventListener('input',event=>{search=event.target.value;paint()});
  root.querySelectorAll('[data-needs-domain]').forEach(b=>b.addEventListener('click',()=>{domain=b.dataset.needsDomain;paint()}));
  paint();
+ attachPathGuide(root,'learn','browse',{label:'How to use the atlas'});
 }
 function topicScreen(id){
  const topic=atlasGet(id);
