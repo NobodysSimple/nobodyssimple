@@ -9,6 +9,7 @@ import {workbookForChoice,workbookForTopic} from './ns-integrated-workbook-data.
 import {PATH_SOURCES} from './ns-pathway-content.mjs';
 import {STEADY_REFERENCES} from './ns-steady-guide-utils.mjs';
 import {renderTool} from './features.mjs';
+import {renderInterventionChooser} from './ns-intervention-chooser.mjs';
 
 const e=value=>escape(String(value??''));
 const summaryValue=value=>String(value??'').trim().slice(0,2000);
@@ -354,7 +355,5 @@ function wire(surface,g,locked=false){
 export function renderIntegratedWorkbook(root,{mode='',option='',topic='',locked=false}={}){
  const g=topic?workbookForTopic(topic):workbookForChoice(mode,option);
  if(!g){root.innerHTML='<div class="ns-wb-wrap"><h1>We could not find this guide.</h1><p>Choose a starting point to continue.</p><a href="#navigate">Back to starting points</a></div>';return;}
- root.innerHTML=g.safetyFirst?safeMarkup(g):worksheetMarkup(g);
- const surface=root.querySelector('[data-workbook]');
- wire(surface,g,locked);
+ renderInterventionChooser(root,g,{locked});
 }
