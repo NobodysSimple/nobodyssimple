@@ -102,9 +102,9 @@ test('all 21 original atlas categories are available without a textbox, includin
  await page.locator('.ns-hypo-all-areas > summary').click();
  await expect(page.locator('[data-hypo-category]')).toHaveCount(21);
  await page.locator('[data-hypo-category="DIGITAL"]').click();
- await expect(page.locator('#ns-hypo-question')).toContainText('Digital life');
+ await expect(page.locator('#ns-hypo-question')).toContainText('digital life');
  await page.locator('[data-hypo-drill-answer="DIGITAL-GAMES"]').click();
- await expect(page.locator('#ns-hypo-question')).toContainText('Gaming and entertainment');
+ await expect(page.locator('#ns-hypo-question')).toContainText('gaming and entertainment');
  await page.locator('[data-hypo-drill-answer="DIGITAL-GAMES-VALUED-ONLINE-FRIENDSHIPS"]').click();
  await expect(page.locator('#ns-hypo-question')).toContainText('valued online friendships');
  await page.locator('[data-hypo-back]').click();
