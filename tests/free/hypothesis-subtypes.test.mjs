@@ -8,7 +8,7 @@ import {
  drillFacts,detailLabel
 } from '../../ns-hypothesis-subtype-atlas.mjs';
 import {
- startHypothesis,answerHypothesisDrill,skipHypothesisDrill,backHypothesisDrill,hypothesisResult
+ startHypothesis,answerHypothesisDrill,skipHypothesisDrill,backHypothesisDrill,hypothesisResult,nextHypothesisQuestion
 } from '../../ns-hypothesis-engine.mjs';
 
 const pick=(drill,value)=>{
@@ -134,4 +134,21 @@ test('static site has isolated client-only navigation data, no fabricated probab
  assert.match(ui,/ns-hypo-drill-options/);
  assert.doesNotMatch(source,/localStorage|sessionStorage|fetch\(|sendBeacon|XMLHttpRequest/);
  assert.doesNotMatch(source.replace(/\/\*[\s\S]*?\*\//g,''),/26[,_]?377|trained_probability|Bayesian.*confidence/i);
+});
+
+test('unreviewed specialty domains report observations without scoring unrelated mechanisms',()=>{
+ let s=startHypothesis({trackId:'overthinking'});
+ s={...s,drill:{...s.drill,categoryId:'DIGITAL',entryCategoryId:'DIGITAL',
+  unsupportedCategory:true,possibleCategories:null}};
+ for(const choice of ['DIGITAL-GAMES','DIGITAL-GAMES-VALUED-ONLINE-FRIENDSHIPS',
+  'yes','mostly_neutral','personal_preference','with_other_people'])
+  s=answerHypothesisDrill(s,subtypeQuestion(s.drill).id,choice);
+ assert.equal(s.drill.finished,true);
+ assert.equal(nextHypothesisQuestion(s),null);
+ const r=hypothesisResult(s);
+ assert.equal(r.alternatives.length,0);
+ assert.equal(r.graph.find(n=>n.id==='presenting').title,'valued online friendships');
+ assert.ok(!r.graph.some(n=>n.layer==='mechanism'));
+ const previous=backHypothesisDrill(s);
+ assert.equal(previous.drill.unsupportedCategory,true);
 });
