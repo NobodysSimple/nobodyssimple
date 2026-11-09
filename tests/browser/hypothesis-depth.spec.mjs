@@ -28,6 +28,8 @@ test('shaving-legs example gets a nuanced presentation pathway, not an imposed i
  await page.locator('[data-hypo-results]').first().click();
  await expect(page.locator('.ns-hypo-graph')).toBeVisible();
  await expect(page.locator('.ns-hypo-graph-branches .ns-hypo-graph-node').first()).toBeVisible();
+ await expect(page.locator('.ns-hypo-graph .ns-hypo-node-observations').first()).toBeVisible();
+ await expect(page.locator('.ns-hypo-node-observations').first()).toContainText(/Yes|Probably/);
  await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="presenting"]')).toContainText('shaving my legs');
  await expect(page.locator('.ns-hypo-pattern')).toContainText('cannot establish gender identity');
  const pageText=await page.locator('.ns-hypo-graph').innerText();
