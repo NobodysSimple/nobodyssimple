@@ -320,3 +320,55 @@ body.app-body.ns-shell-v1 #main .ns-hypo-node-observations{
 }
 body.app-body.ns-shell-v1 #main .ns-hypo-node-observations>span{display:block;overflow-wrap:anywhere;}
 body.app-body.ns-shell-v1 #main .ns-hypo-node-observations b{color:#245438;font-weight:850;}
+
+/* Stage-one synthetic atlas drill-down — choices stay text-free and accessible. */
+body.app-body.ns-shell-v1 #main .ns-hypo-drill{
+ display:grid;gap:18px;min-width:0;
+ max-width:100%;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-drill-top{
+ display:grid;gap:6px;padding:14px 19px;
+ border:1px solid #ccdfc9;border-radius:15px;
+ background:#edf5e8;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-drill-top p{
+ margin:0;color:#345942;font:700 12px/1.55 system-ui,sans-serif;
+ overflow-wrap:anywhere;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-drill-top p span{
+ color:#5c7c65;padding:0 3px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-drill-options{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-drill-option{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+ min-width:0;min-height:61px;padding:15px 17px;text-align:left;
+ border:1px solid #bad4ba;border-radius:14px;
+ background:#f7faf4;color:#27503a;
+ font:760 13px/1.55 system-ui,sans-serif;
+ cursor:pointer;overflow-wrap:anywhere;
+ transition:background .12s,border-color .12s,box-shadow .12s;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-drill-option:hover{
+ background:#e9f5e7;border-color:#5e9e76;
+ box-shadow:0 5px 14px #274b2c18;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-drill-option:focus-visible{
+ outline:3px solid #9c6b12;outline-offset:3px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-drill-option>span:last-child{
+ flex:none;color:#467856;font-size:18px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-drill-caution{
+ border:1px solid #e0dfc9;border-radius:12px;padding:12px 15px;
+ background:#faf9ee;color:#4d5f43;
+ font:500 12px/1.65 system-ui,sans-serif;
+}
+@media(max-width:650px){
+ body.app-body.ns-shell-v1 #main .ns-hypo-drill-options{grid-template-columns:1fr;}
+ body.app-body.ns-shell-v1 #main .ns-hypo-drill-option{min-height:54px;}
+}
+@media(prefers-reduced-motion:reduce){
+ body.app-body.ns-shell-v1 #main .ns-hypo-drill-option{transition:none!important;}
+}
