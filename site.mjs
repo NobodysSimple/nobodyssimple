@@ -58,7 +58,6 @@ import {getNeedsMode} from './ns-needs-catalog.mjs';
 import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
 import {attachSteadyGuidebookToTool,steadyGuide} from './ns-steady-guidebook.mjs';
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
-import { renderToolDiscovery } from './ns-tool-library.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
@@ -824,11 +823,8 @@ function renderSystemsPage() {
     main.innerHTML = `<div class="wrap about-copy questionnaire-load-error"><p class="eyebrow">Questionnaires</p><h1>This questionnaire could not open.</h1><p>Refresh once and try again. Your existing questionnaires and the rest of Nobody’s Simple are still available.</p><div class="row"><a class="button" href="#questionnaires">Back to questionnaires</a><a href="#home">Back to the main screen</a></div></div>`;
   }
 }
-let cleanupToolDiscovery=()=>{};
 function route() {
   cleanupNSFieldGuide();
-  cleanupToolDiscovery();
-  cleanupToolDiscovery=()=>{};
   cleanupCommunity();
   main.onclick = null;
   const routeParts = location.hash.slice(1).split("/");
