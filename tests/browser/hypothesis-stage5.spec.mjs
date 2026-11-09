@@ -38,7 +38,8 @@ test('untrusted exact wording is rendered as text, not parsed as HTML',async({pa
  await page.locator('[data-hypo-start-words]').fill('<img src=x onerror=alert(1)>');
  await page.locator('[data-hypo-track="relationships"]').click();
  await page.locator('[data-hypo-drill-skip]').click();
- await page.locator('[data-hypo-results]').click();
+ await page.locator('[data-hypo-invest-start]').click();
+ await page.locator('[data-hypo-invest-stop]').click();
  await expect(page.locator('.ns-hypo-graph')).toContainText('<img src=x onerror=alert(1)>');
  await expect(page.locator('.ns-hypo-shell img[src="x"]')).toHaveCount(0);
 });
