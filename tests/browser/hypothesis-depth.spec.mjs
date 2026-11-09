@@ -35,7 +35,7 @@ test('guided identity interview can investigate presentation preferences without
  await expect(page.locator('.ns-hypo-graph')).toBeVisible();
  await expect(page.locator('.ns-hypo-graph-branches .ns-hypo-graph-node').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-graph .ns-hypo-node-observations').first()).toBeVisible();
- await expect(page.locator('.ns-hypo-node-observations').first()).toContainText(/Yes|Probably/);
+ await expect(page.locator('.ns-hypo-node-observations').first()).toContainText('shaving legs');
  await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="presenting"]')).toContainText('shaving legs');
  await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="experience"]')).toContainText('Mostly enjoyable');
  await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="context"]')).toContainText('With other people');
