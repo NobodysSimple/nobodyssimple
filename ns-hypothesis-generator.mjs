@@ -83,7 +83,7 @@ function liveInsight(state){
   '<p>These are the current leads, not a hidden explanation:</p>'+
   '<ul>'+r.alternatives.slice(0,3).map(c=>'<li><strong>'+e(c.process.title)+'</strong> · '+
    c.positive.length+' supporting observation'+(c.positive.length===1?'':'s')+'</li>').join('')+'</ul>'+
-  '<button type="button" data-hypo-results>Open my editable working map</button></details>';
+  '</details>';
 }
 function asking(state){
  const q=nextHypothesisQuestion(state);
@@ -104,7 +104,7 @@ function asking(state){
    '<strong>'+e(a.id==='unsure'?'Maybe / not sure':a.label)+'</strong><span aria-hidden="true">→</span></button>').join('')+'</div>'+
   '<div class="ns-hypo-question-footer"><button type="button" data-hypo-back '+(n?'':'disabled')+'>← Back</button>'+
   '<button type="button" data-hypo-skip data-hypo-question="'+e(q.id)+'">Skip</button>'+
-  (n>=4?'<button type="button" data-hypo-results>'+(ready?'View my detailed working map':'See my tentative map')+'</button>':'')+'</div>'+
+  (n>=3?'<button type="button" data-hypo-results>'+(ready?'View my detailed working map':'See my tentative map')+'</button>':'')+'</div>'+
   (ready?'<p class="ns-hypo-ready">Nobody has enough information to sketch a provisional picture. You can inspect it now or keep answering to test other explanations.</p>':'')+
   '<details class="ns-hypo-why"><summary>Why is Nobody asking this question?</summary>'+
   '<p>'+e(q.why)+'</p><p>Questions are selected to distinguish competing models and fill gaps in the information. The signals are not calibrated clinical probabilities.</p></details>'+
