@@ -10,6 +10,7 @@ import {buildFormulationGraph,graphCoverage,graphText,layerQuestionTags,editGrap
 import {beginSubtypeDrill,answerSubtypeDrill,subtypeQuestion,subtypeNode} from './ns-hypothesis-subtype-atlas.mjs';
 import {newCaseDetailInterview,caseDetailReport} from './ns-hypothesis-case-facts.mjs';
 import {newInvestigation,investigationReport,investigationLinks} from './ns-hypothesis-investigation.mjs';
+import {testableDifferentials} from './ns-hypothesis-differentials.mjs';
 
 const P=(id,title,description,possibleFunction,possibleCost,need,check,link)=>
  Object.freeze({id,title,description,possibleFunction,possibleCost,need,check,link});
@@ -345,7 +346,10 @@ export function reviewHypothesis(state,id,value){
 }
 export function hypothesisResult(state){
  if(!state)return null;
- const all=state.drill?.unsupportedCategory?[]:rankedHypotheses(state,100);
+ const onlyObservedFunctional=(state.investigation?.answers?.length||0)>0&&state.answers.length===0;
+ // Do not present ranked generic processes where no supporting
+ // original interview answers were collected.
+ const all=state.drill?.unsupportedCategory||onlyObservedFunctional?[]:rankedHypotheses(state,100);
  const leading=all.slice(0,3);
  const reviewed=all.filter(c=>!leading.some(x=>x.id===c.id)&&c.feedback!=='unreviewed');
  const alternatives=[...leading,...reviewed];
@@ -355,12 +359,14 @@ export function hypothesisResult(state){
  const topic=state.drill?.unsupportedCategory?null:state.topicId||TRACK_BY_ID[state.trackId].topic;
  const safeTopic=topic&&atlasGet(topic)&&!isSafetyPriority(topic)?topic:null;
  const coverage=graphCoverage(state,QUESTION_BY_ID);
+ const patterns=testableDifferentials(state);
  const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
  const canContinue=Boolean(nextHypothesisQuestion(state));
  return {track:TRACK_BY_ID[state.trackId],situation:state.description||(state.drill?.confirmed&&subtypeNode(state.drill.leafId)?'Exploring: '+subtypeNode(state.drill.leafId).label:TRACK_BY_ID[state.trackId].title),
-  alternatives,graph,links:investigationLinks(state).map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
+  alternatives,patterns,graph,links:investigationLinks(state).map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
    state.drill?.unsupportedCategory?'You have identified a specific experience. This part of the synthetic atlas does not yet have a reviewed explanatory interview, so no psychological mechanism is inferred.':
+   patterns.length?'Your answers support testing specific patterns and their alternatives, but do not establish a cause.':
    examined===0?'There is not enough distinguishing information yet.':
    unresolved?'Several explanations remain plausible. The answers cannot establish one cause.':
    'Your answers provide a provisional picture to examine. More questions and corrections may change it.',
@@ -390,6 +396,7 @@ export function formulationPlainText(state){
   'Situation: '+r.situation,'Observations considered: '+r.examined,r.summary,'',
   'Specific details explicitly selected:',...(caseDetailReport(state).length?caseDetailReport(state):['Not established']),'',
   'Functional investigation — person-selected answers:',...(investigationReport(state).length?investigationReport(state):['Not investigated']),
+  'Multi-observation hypotheses to TEST:',...(r.patterns.length?r.patterns.flatMap(p=>[p.title,p.description,'What could disconfirm it: '+p.falsifier,'Alternative: '+p.alternative]):['No pattern has enough support to propose']),'',
   'Potential links to TEST (not demonstrated causes):',...(r.links.length?r.links.map(x=>x.title+' | '+x.challenge):['No linked sequence has been established']),'',
   ...r.alternatives.flatMap((c,i)=>{
    const f=describeFormulation(state,c);
