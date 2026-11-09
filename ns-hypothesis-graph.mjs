@@ -148,6 +148,22 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    'People do not necessarily have an unconscious conflict. A simple preference or a real-world constraint may explain the concern.',
   evidence:[...inquiryEvidence('values_cost'),...advancedEvidence('values_external'),...normal(confirmed)].slice(0,6),
   status:inquiryFor('values_cost')?'reported':confirmed.length?'tentative':'unknown'});
+ // Stage 5: every direct answer remains inspectable on an appropriate graph tile,
+ // including the original verbatim text. A tile may show a concise preview,
+ // but its inspector must never omit a recorded source fact.
+ const layerToNode={context:'context',experience:'experience',meaning:'experience',
+  response:'response',function:'function',cost:'cost',need:'need',tension:'tension',
+  mechanism:'experience'};
+ const seen=new Set(nodes.flatMap(n=>(n.evidence||[]).map(item=>item.id)));
+ for(const fact of [...inquiry,...advanced]){
+  if(seen.has(fact.id))continue;
+  const id=layerToNode[fact.layer]||'context';
+  const destination=nodes.find(n=>n.id===id);
+  if(!destination)continue;
+  destination.evidence=[...(destination.evidence||[]),
+   {id:fact.id,question:fact.question,answer:fact.text}];
+  seen.add(fact.id);
+ }
  return nodes.map(n=>{
   const saved=state.nodeEdits?.[n.id];
   return {...n,editedTitle:saved?.text?.trim()||'',
