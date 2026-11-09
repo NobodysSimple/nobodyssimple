@@ -6,6 +6,8 @@ import {escapeHTML as escape} from './core.mjs';
 import {NEEDS_MODES} from './ns-needs-catalog.mjs';
 import {atlasProblemIndex,atlasSearch} from './ns-atlas-core.mjs';
 import {workbookForChoice,workbookForTopic} from './ns-integrated-workbook-data.mjs';
+import {PATH_SOURCES} from './ns-pathway-content.mjs';
+import {STEADY_REFERENCES} from './ns-steady-guide-utils.mjs';
 import {renderTool} from './features.mjs';
 
 const e=value=>escape(String(value??''));
@@ -74,11 +76,15 @@ function widgetMarkup(lane,g){
   '<div class="ns-wb-fields">'+fields+editNote(id)+'</div>'+original+'</div>';
 }
 function methodMarkup(method,index){
+ const evidence=(method.refs||[]).slice(0,3).map(key=>STEADY_REFERENCES[key]||PATH_SOURCES[key]).filter(Boolean);
+ const links=evidence.length?'<p class="ns-wb-evidence-links"><strong>Supporting guidance:</strong> '+
+  evidence.map(r=>'<a href="'+e(r.url)+'" target="_blank" rel="noopener noreferrer">'+e(r.name)+'</a>').join(' · ')+'</p>':'';
  return '<article class="ns-wb-method"><div class="ns-wb-method-number">'+String(index+1).padStart(2,'0')+'</div>'+
   '<div><h4>'+e(method.title)+'</h4><p class="ns-wb-why">'+e(method.why)+'</p>'+
   '<ol>'+method.steps.map(step=>'<li>'+e(step)+'</li>').join('')+'</ol>'+
   (method.caution?'<p class="ns-wb-method-caution"><strong>When to adapt or avoid:</strong> '+e(method.caution)+'</p>':'')+
-  '<p class="ns-wb-evidence-note">'+e(method.note||'This is an adapted educational technique, not an individually tested treatment.')+'</p></div></article>';
+  '<p class="ns-wb-evidence-note">'+e(method.note||'This is an adapted educational technique, not an individually tested treatment.')+'</p>'+
+  links+'</div></article>';
 }
 function laneMarkup(lane,index,g){
  return '<section class="ns-wb-chapter" id="ns-wb-'+e(lane.id)+'" data-wb-chapter="'+e(lane.id)+'">'+
@@ -93,6 +99,13 @@ function recognitionMarkup(g){
   g.recognise.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul></div>':'';
  const contributors=g.contributors?.length?'<div class="ns-wb-recognition-list"><h3>Possible contributors to consider</h3><ul>'+
   g.contributors.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul></div>':'';
+ const mechanismMap=g.mechanisms?.length?'<div class="ns-wb-mechanisms"><h3>Different possible maintaining processes</h3>'+
+  '<p>These mechanisms can explain some situations, but none is established by recognising a description. Notice what seems possible, and keep alternatives open.</p>'+
+  g.mechanisms.map(m=>'<article><h4>'+e(m.label)+'</h4><p>'+e(m.detail)+'</p>'+
+   (m.target?'<p><strong>Possible change target:</strong> '+e(m.target)+'</p>':'')+'</article>').join('')+'</div>':'';
+ const progress='<div class="ns-wb-progress-meaning">'+(g.goals?.length?'<h3>What could help?</h3><ul>'+
+  g.goals.map(goal=>'<li>'+e(goal)+'</li>').join('')+'</ul>':'')+
+  '<h3>What progress might look like</h3><p>'+e(g.progress)+'</p></div>';
  const preface=g.safetyFirst?'':'<div class="ns-wb-tool ns-wb-recognition-tool" data-wb-widget="recognition">'+
   '<div class="ns-wb-tool-head"><span aria-hidden="true">✎</span><div><strong class="ns-wb-tool-title">Map this to one situation</strong>'+
   '<p class="ns-wb-tool-intro">Optional: give the rest of the workbook a concrete reference point. You can leave everything blank.</p></div></div>'+
@@ -107,7 +120,8 @@ function recognitionMarkup(g){
   '<h2>What is this experience?</h2></div></div><p class="ns-wb-large-text">'+e(g.what)+'</p>'+
   examples+'<h3>One possible pattern, not a verdict</h3>'+
   '<p class="ns-wb-cycle">'+e(g.cycle||'Different patterns may fit, and there is not enough information to choose one.')+'</p>'+
-  contributors+'<p class="ns-wb-epistemic">These are possibilities to investigate. A name or questionnaire cannot establish what is causing an individual experience.</p>'+
+  contributors+mechanismMap+progress+
+  '<p class="ns-wb-epistemic">These are possibilities to investigate. A name or questionnaire cannot establish what is causing an individual experience.</p>'+
   preface+'</section>';
 }
 function safetyNotice(g){
@@ -157,7 +171,7 @@ function summaryMarkup(){
   '<p class="ns-wb-epistemic">Downloaded notes stay wherever your device saves them. Avoid downloading sensitive reflections on shared or monitored devices.</p></section>';
 }
 function worksheetMarkup(g){
- const sections=['recognition',...g.lanes.map(l=>l.id),'review','sources'];
+ const sections=[...(g.showAtlas?['topics']:[]),'recognition',...g.lanes.map(l=>l.id),'review','sources'];
  return '<div class="ns-wb-wrap" data-workbook="'+e(g.id)+'">'+
   '<nav class="ns-wb-breadcrumb" aria-label="Workbook navigation"><a href="#navigate/'+e(g.modeId)+'">← '+e(g.modeTitle)+'</a>'+
   '<a href="#navigate">All starting points</a><a href="#need/support-safety">Urgent support</a></nav>'+
@@ -166,11 +180,11 @@ function worksheetMarkup(g){
   '<p>'+e(g.lead)+'</p><div class="ns-wb-cover-meta"><span>Read the advice. Try a worksheet below it.</span>'+
   '<span>'+g.lanes.length+' practical chapters · all optional</span></div></header>'+
   '<nav class="ns-wb-toc" aria-label="Jump to a chapter"><strong>Go to a chapter</strong><div>'+
-  sections.map(id=>'<button type="button" data-wb-jump="'+e(id)+'">'+e(id==='recognition'?'Understand':id==='review'?'My notes':id==='sources'?'Sources':g.lanes.find(x=>x.id===id)?.title||id)+'</button>').join('')+
+  sections.map(id=>'<button type="button" data-wb-jump="'+e(id)+'">'+e(id==='recognition'?'Understand':id==='topics'?'Find a difficulty':id==='review'?'My notes':id==='sources'?'Sources':g.lanes.find(x=>x.id===id)?.title||id)+'</button>').join('')+
   '</div></nav>'+
   safetyNotice(g)+
-  recognitionMarkup(g)+
   (g.showAtlas?atlasChooser():'')+
+  recognitionMarkup(g)+
   g.lanes.map((lane,i)=>laneMarkup(lane,i,g)).join('')+
   summaryMarkup()+sourcesMarkup(g)+
   '<footer class="ns-wb-footer"><a href="#navigate/'+e(g.modeId)+'">← Change my choice</a><a href="#navigate">Choose another starting point →</a></footer></div>';
