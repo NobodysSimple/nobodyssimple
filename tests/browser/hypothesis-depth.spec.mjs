@@ -78,7 +78,7 @@ test('graph is still provisional when the user says unsure to every question',as
  await page.locator('[data-hypo-results]').first().click();
  await expect(page.locator('.ns-hypo-result-hero')).toContainText('not enough distinguishing information');
  await expect(page.locator('.ns-hypo-graph-node.ns-hypo-status-unknown').first()).toBeVisible();
- await expect(page.locator('.ns-hypo-graph')).toContainText('needs more information');
+ await expect(page.locator('.ns-hypo-graph')).toContainText('Needs more information');
  await expect(page.locator('.ns-hypo-graph')).not.toContainText('90%');
 });
 test('graph nodes and revision controls fit desktop/mobile and meet critical accessibility checks',async({page})=>{
