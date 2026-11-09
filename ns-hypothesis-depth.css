@@ -409,3 +409,8 @@ body.app-body.ns-shell-v1 #main .ns-hypo-area-grid button:focus-visible{
 @media(max-width:430px){
  body.app-body.ns-shell-v1 #main .ns-hypo-area-grid{grid-template-columns:1fr;}
 }
+
+body.app-body.ns-shell-v1 #main .ns-hypo-graph-unknown{
+ padding:14px 16px;border:1px dashed #b8d1b6;border-radius:11px;
+ background:#f8faf4;color:#31553d;font:600 13px/1.65 system-ui,sans-serif;
+}
