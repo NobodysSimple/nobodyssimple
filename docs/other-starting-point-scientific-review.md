@@ -1,4 +1,9 @@
 # Choose a starting point — remaining pathways
+
+## Interface update · 9 November 2026
+
+The **Choose a starting point** console now opens one continuous educational workbook at each selected result. The scientific principles and qualifications below remain the editorial basis, but the previous modal/overlay presentation has been **superseded in the console**: techniques are explained in-page with interactive worksheets immediately under their guidance and optional expanded original tools. See [Integrated console workbooks](integrated-console-workbooks.md) for architecture, user-data rules, full route coverage and remaining evaluation needs. Older overlay components remain for legacy compatibility and are not the new default console workflow.
+
 **Editorial and scientific provenance · 9 November 2026**
 
 This record accompanies the expansion of the *Feel steadier* system to **Process something**, **Understand myself**, **Work out what to do**, **Work through something with someone**, **Explore a specific difficulty**, and **I'm not sure**.
