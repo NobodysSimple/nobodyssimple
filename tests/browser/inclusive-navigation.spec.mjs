@@ -28,9 +28,10 @@ test('search preserves full catalogue, opens a race experience and presents prac
  await page.getByRole('link',{name:/I am experiencing racism/}).click();
  await expect(page).toHaveURL(/#workbook-topic\/racial-discrimination$/);
  await expect(page.getByText('I am experiencing racism').first()).toBeVisible();
- await expect(page.locator('[data-wb-chapter="recognition"]')).toBeVisible();
- await expect(page.getByText('Conditions and influences to consider')).toBeVisible();
- await expect(page.getByText(/editorial overview/i)).toBeVisible();
+ await expect(page.locator('.ns-pick-understand')).toBeVisible();
+ await expect(page.locator('.ns-pick-editorial-status')).toContainText('Editorial overview');
+ await page.locator('.ns-pick-deeper summary').click();
+ await expect(page.getByText('Conditions and influences worth checking')).toBeVisible();
 });
 
 test('health and neurodivergent topics can be searched by familiar terms and reached directly',async({page})=>{
@@ -45,7 +46,8 @@ test('health and neurodivergent topics can be searched by familiar terms and rea
 
 test('current sexual coercion offers safety support before any personal exercise',async({page})=>{
  await page.goto('/index.html#workbook-topic/sexual-coercion');
- await expect(page.getByRole('heading',{name:'Safety and support take priority'})).toBeVisible();
- await expect(page.locator('[data-wb-widget="recognition"]')).toHaveCount(0);
- await expect(page.locator('[data-wb-care="private"]')).toBeVisible();
+ await expect(page.getByRole('heading',{name:'Safety and support before a worksheet'})).toBeVisible();
+ await expect(page.locator('[data-pick-field]')).toHaveCount(0);
+ await expect(page.locator('[data-pick-open]')).toHaveCount(0);
+ await expect(page.locator('.ns-pick-care-actions a[href="#need/support-safety"]')).toBeVisible();
 });
