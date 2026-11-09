@@ -372,3 +372,6 @@ body.app-body.ns-shell-v1 #main .ns-hypo-drill-caution{
 @media(prefers-reduced-motion:reduce){
  body.app-body.ns-shell-v1 #main .ns-hypo-drill-option{transition:none!important;}
 }
+
+/* Correct the quiet privacy text's 4.45:1 contrast on the cream drill screen. */
+body.app-body.ns-shell-v1 #main .ns-hypo-drill .ns-hypo-quiet{color:#455648;}
