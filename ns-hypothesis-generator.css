@@ -409,3 +409,7 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hypothesis>span:last-c
  body.app-body.ns-shell-v1 #main .ns-hypo-question-footer{display:none!important;}
  body.app-body.ns-shell-v1 #main .ns-hypo-result-card{break-inside:avoid;}
 }
+
+/* WCAG AA: footer copy must contrast against the cream shell on both devices. */
+body.app-body.ns-shell-v1 #main .ns-hypo-shell .ns-hypo-foot,
+body.app-body.ns-shell-v1 #main .ns-hypo-shell .ns-hypo-foot p{color:#34503e!important;}
