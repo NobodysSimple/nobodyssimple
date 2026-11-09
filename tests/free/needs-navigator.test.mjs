@@ -36,7 +36,7 @@ test('every mode offers direct explicit choices with working destinations and wi
    if(option.type==='tool')assert.ok(idSet.has(option.target),mode.id+' broken tool '+option.target);
    if(option.type==='topic')assert.ok(atlasGet(option.target),mode.id+' missing topic '+option.target);
    if(option.type==='activity')assert.ok(getNeedsActivity(option.target),mode.id+' missing activity '+option.target);
-   assert.equal(destination,'#workbook/'+mode.id+'/'+option.id);
+   assert.equal(destination,option.type==='atlas'?'#navigate/atlas':'#workbook/'+mode.id+'/'+option.id);
   }
   assert.ok(ids.has(getNeedsMode(mode.id).id));
  }
@@ -84,9 +84,9 @@ test('the previous ten frustrating use cases now point to explicit visitor selec
  assert.ok(getNeedsMode('relate').options.some(o=>o.id==='unsafe'));
  assert.ok(getNeedsMode('learn').options.some(o=>o.target==='insomnia'));
 });
-test('all 166 existing psychological problems remain accessible without symptom inference',()=>{
- assert.equal(atlasProblemIndex.length,166);
- assert.equal(getSubjectMatchesForTest('','').length,166);
+test('all original topics and the inclusive experience inventory are searchable without symptom inference',()=>{
+ assert.equal(atlasProblemIndex.length,518);
+ assert.equal(getSubjectMatchesForTest('','').length,518);
  assert.ok(getSubjectMatchesForTest('insomnia','').some(x=>x.id==='insomnia'));
  assert.ok(getSubjectMatchesForTest('rumination','').some(x=>x.id==='rumination'));
  assert.ok(getSubjectMatchesForTest('','body').length>15);

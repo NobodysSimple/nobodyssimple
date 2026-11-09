@@ -94,6 +94,13 @@ const topicGeneric={
  acceptance:{title:'Allow complexity while choosing what matters',why:'Psychological flexibility can involve making room for uncertainty without surrendering real needs or safety.',steps:['Name one feeling or uncertainty without declaring it the whole story.','Choose a small action consistent with a personal value, only if it is realistically possible.','Do not use acceptance to justify coercion, deprivation or avoidable medical harm.']},
  support:{title:'Choose an appropriate level of support',why:'Professional, relational, material or accessibility support can address needs beyond a self-help worksheet.',steps:['Consider whether the difficulty is new, severe, prolonged or materially limiting daily life.','Identify an appropriate person, adjustment or service rather than handling everything alone.','Seek urgent help when immediate safety or serious physical symptoms are involved.']}
 };
+const inclusiveGeneric={
+ context:{title:'Describe the actual conditions',why:'The situation may reflect real-world demands, rights, safety, resources or unequal treatment.',steps:['Identify what is directly observable about this experience.','Ask which people, systems, accessibility needs or material resources affect the situation.','Consider a safe change in conditions or practical support, only if one is feasible.']},
+ practice:{title:'Choose a voluntary practical option',why:'An action is not required; safety, time and resources may limit choices.',steps:['Name one option that serves your own goals, if any.','Check whether it requires cooperation, access or safety you do not currently have.','Choose not to act, seek support, or make a reversible adjustment as appropriate.']},
+ thinking:{title:'Keep facts, meaning and uncertainty distinct',why:'Clear thinking must not dismiss discrimination, coercion, physical illness or other genuine harms.',steps:['Record only what is known without forcing an explanation.','Identify what is uncertain or disputed, without treating a person’s identity as the cause.','Consider which information or practical support matters to your decision.']},
+ acceptance:{title:'Respect autonomy and a personally meaningful goal',why:'Acceptance of feelings does not require acceptance of mistreatment or an inaccessible environment.',steps:['Decide whether this is something you want to understand, change or simply acknowledge.','Choose an option consistent with your safety and values.','Remember that your background, identity or consent-based preference does not need fixing.']},
+ support:{title:'Consider practical, relational or healthcare support',why:'The most useful response may belong to a system, another person or an appropriate service.',steps:['Identify the type of help that matches the actual issue.','Consider whether privacy, accessibility, finance or safety affects access to that help.','Avoid recording sensitive details on a monitored or shared device.']}
+};
 function targetMethod(t){
  const steps=[t.action||'Choose a suitable next step only when it fits your situation.',t.why||'Look for both individual and contextual contributors.'];
  if(t.tryFirst)steps.push(t.tryFirst);
@@ -111,7 +118,7 @@ export function workbookForTopic(topicId){
  }
  const lanes=['context','practice','thinking','acceptance','support'].map(id=>{
   const methods=targetGroups[id].slice(0,3);
-  if(!methods.length)methods.push({...topicGeneric[id],caution:'Skip this exercise if unsafe or inappropriate; a condition may need care or an adjustment instead.',refs:[],note:'General contextual skill, not a disorder-specific treatment.'});
+  if(!methods.length)methods.push({...(p.contextFirst?inclusiveGeneric[id]:topicGeneric[id]),caution:'Skip this exercise if unsafe or inappropriate; a condition may need care or an adjustment instead.',refs:[],note:'General contextual skill, not a disorder-specific treatment.'});
   const tool=methods.find(m=>availableTools.has(m.tool))?.tool||pickTool(
     id==='practice'?domainFallback[p.domain]:baseTool[id],baseTool[id]);
   return bookLane(id,fromMode[id],laneExplanations[id],methods,tool);
@@ -120,15 +127,15 @@ export function workbookForTopic(topicId){
   [{name:p.source.title||p.source.label||'Clinical or background reference',url:p.source.url,scope:'General educational context for this topic'}]:[];
  const risk=isSafetyPriority(topicId);
  const signs=Object.values(p.signs||{}).flat().filter(x=>typeof x==='string').slice(0,12);
- return {id:'topic/'+topicId,modeId:'learn',optionId:topicId,modeTitle:'Explore a specific difficulty',
-  title:p.title,lead:p.definition,what:p.definition,cycle:Array.isArray(p.cycle)?p.cycle.join(' → '):String(p.cycle||''),
+ return {id:'topic/'+topicId,modeId:'learn',optionId:topicId,modeTitle:p.contextFirst?'Explore an experience':'Explore a specific difficulty',
+  title:p.title,lead:p.definition,what:p.definition,cycle:p.contextFirst?'Start with what is actually happening, including material conditions, relationships, safety, health and available choices. These topics do not establish a personal causal cycle.':Array.isArray(p.cycle)?p.cycle.join(' → '):String(p.cycle||''),
   recognise:signs,contributors:(p.contributors||[]).map(x=>typeof x==='string'?x:x.label),
   mechanisms:(p.maintainers||[]).map(x=>({id:x.id,label:x.label,detail:x.detail||'',target:x.target||''})),
   variants:p.variants||[],
   cautions:[p.alert||'Descriptions and hypothetical patterns do not establish a diagnosis or a cause.',
    risk?'Appropriate human support and clinical assessment take priority over self-guided psychological experiments.':'Persistent, severe, new or unfamiliar symptoms may merit clinical or medical assessment.'],
-  goals:[],progress:Array.isArray(p.progress)?p.progress.join('; '):String(p.progress||'Progress may include improved functioning and appropriate support.'),
-  lanes,sources:source,relatedTarget:topicId,review:p.quality==='expert-draft'?'Topic-specific educational draft · not a clinical diagnosis or validated treatment programme':'Structured topic overview · possible mechanisms and suggested exercises need topic-by-topic expert review',
-  kind:'topic',safetyFirst:risk,medical:Boolean(p.medical),showAtlas:false};
+  goals:p.contextFirst?p.progress:[],progress:Array.isArray(p.progress)?p.progress.join('; '):String(p.progress||'Progress may include improved functioning and appropriate support.'),
+  lanes,sources:source,relatedTarget:topicId,review:p.contextFirst?'Inclusive topic navigation · editorial overview. This entry and these generic reflection methods have not been individually clinically or empirically validated.':p.quality==='expert-draft'?'Topic-specific educational draft · not a clinical diagnosis or validated treatment programme':'Structured topic overview · possible mechanisms and suggested exercises need topic-by-topic expert review',
+  kind:'topic',contextFirst:Boolean(p.contextFirst),supportFirst:Boolean(p.supportFirst),safetyFirst:risk,medical:Boolean(p.medical),showAtlas:false};
 }
 export const workbookCoverage=Object.freeze(NEEDS_MODES.map(m=>({mode:m.id,options:m.options.map(o=>o.id)})));

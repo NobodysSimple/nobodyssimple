@@ -47,15 +47,16 @@ test('all 53 choice pages have a usable varied intervention deck or safety-first
  }
  assert.equal(total,53);
 });
-test('all 166 atlas pages have appropriate intervention decks without bypassing safeguarding',()=>{
- assert.equal(atlasProblemIndex.length,166);
+test('all 518 atlas entries have proportionate choices without bypassing safeguarding',()=>{
+ assert.equal(atlasProblemIndex.length,518);
  for(const topic of atlasProblemIndex){
   const g=workbookForTopic(topic.id);
   const cards=deckForWorkbook(g);
   if(g.safetyFirst){
    assert.equal(cards.length,0,topic.id+' safety-first topic should not expose self-treatment');
   }else{
-   assert.ok(cards.length>=12,topic.id+' needs a range of choices');
+   assert.ok(cards.length>=(g.contextFirst?8:12),topic.id+' needs an appropriate range of optional choices');
+    if(g.contextFirst)assert.ok(cards.length<=10,topic.id+' editorial topic should not be given a full unvalidated treatment deck');
    assert.ok(cards.some(c=>c.source==='guide'),topic.id+' must preserve contextual methods');
    assert.ok(cards.some(c=>c.source==='general'),topic.id+' must label broader skills');
   }

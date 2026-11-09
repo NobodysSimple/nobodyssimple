@@ -100,14 +100,14 @@ function recognitionMarkup(g){
   g.recognise.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul></div>':'';
  const contributors=g.contributors?.length?'<div class="ns-wb-recognition-list"><h3>Possible contributors to consider</h3><ul>'+
   g.contributors.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul></div>':'';
- const mechanismMap=g.mechanisms?.length?'<div class="ns-wb-mechanisms"><h3>Different possible maintaining processes</h3>'+
-  '<p>These mechanisms can explain some situations, but none is established by recognising a description. Notice what seems possible, and keep alternatives open.</p>'+
+ const mechanismMap=g.mechanisms?.length?'<div class="ns-wb-mechanisms"><h3>'+(g.contextFirst?'Conditions and influences to consider':'Different possible maintaining processes')+'</h3>'+
+  '<p>'+(g.contextFirst?'The conditions below are questions to explore, not diagnoses, explanations for inequality or claims that you caused harm.':'These mechanisms can explain some situations, but none is established by recognising a description. Notice what seems possible, and keep alternatives open.')+'</p>'+
   g.mechanisms.map(m=>'<article><h4>'+e(m.label)+'</h4><p>'+e(m.detail)+'</p>'+
    (m.target?'<p><strong>Possible change target:</strong> '+e(m.target)+'</p>':'')+'</article>').join('')+'</div>':'';
  const progress='<div class="ns-wb-progress-meaning">'+(g.goals?.length?'<h3>What could help?</h3><ul>'+
   g.goals.map(goal=>'<li>'+e(goal)+'</li>').join('')+'</ul>':'')+
   '<h3>What progress might look like</h3><p>'+e(g.progress)+'</p></div>';
- const preface=g.safetyFirst?'':'<div class="ns-wb-tool ns-wb-recognition-tool" data-wb-widget="recognition">'+
+ const preface=g.safetyFirst||g.supportFirst?'':'<div class="ns-wb-tool ns-wb-recognition-tool" data-wb-widget="recognition">'+
   '<div class="ns-wb-tool-head"><span aria-hidden="true">✎</span><div><strong class="ns-wb-tool-title">Map this to one situation</strong>'+
   '<p class="ns-wb-tool-intro">Optional: give the rest of the workbook a concrete reference point. You can leave everything blank.</p></div></div>'+
   '<div class="ns-wb-fields">'+
@@ -119,7 +119,8 @@ function recognitionMarkup(g){
  return '<section class="ns-wb-chapter ns-wb-recognition" id="ns-wb-recognition" data-wb-chapter="recognition">'+
   '<div class="ns-wb-chapter-heading"><span class="ns-wb-step">01</span><div><p class="ns-wb-kicker">UNDERSTAND FIRST</p>'+
   '<h2>What is this experience?</h2></div></div><p class="ns-wb-large-text">'+e(g.what)+'</p>'+
-  examples+'<h3>One possible pattern, not a verdict</h3>'+
+  (g.supportFirst?'<p class="ns-wb-epistemic">If this involves abuse, threats or monitoring, do not record details here on a device that may be checked. Safety and confidential practical support matter more than an exercise.</p>':'')+
+ examples+'<h3>'+(g.contextFirst?'Experiences and conditions can interact':'One possible pattern, not a verdict')+'</h3>'+
   '<p class="ns-wb-cycle">'+e(g.cycle||'Different patterns may fit, and there is not enough information to choose one.')+'</p>'+
   contributors+mechanismMap+progress+
   '<p class="ns-wb-epistemic">These are possibilities to investigate. A name or questionnaire cannot establish what is causing an individual experience.</p>'+
@@ -135,7 +136,7 @@ function atlasChooser(){
  return '<section class="ns-wb-chapter ns-wb-atlas" id="ns-wb-topics"><div class="ns-wb-chapter-heading"><span class="ns-wb-step">⌕</span>'+
   '<div><p class="ns-wb-kicker">EXPLORE THE PSYCHOLOGICAL ATLAS</p><h2>Find a specific difficulty</h2>'+
   '<p>Each topic now opens its own integrated educational guide and worksheets, not a separate tool page.</p></div></div>'+
-  '<label class="ns-wb-field" for="ns-wb-search"><span>Search 166 named experiences</span><input type="search" id="ns-wb-search" data-wb-search autocomplete="off" placeholder="e.g. rumination, panic, sleep, relationships…"></label>'+
+  '<label class="ns-wb-field" for="ns-wb-search"><span>Search '+atlasProblemIndex.length+' named experiences and topics</span><input type="search" id="ns-wb-search" data-wb-search autocomplete="off" placeholder="e.g. rumination, panic, sleep, relationships…"></label>'+
   '<div class="ns-wb-atlas-meta"><output data-wb-count aria-live="polite"></output><button type="button" data-wb-all>Browse all topics</button></div>'+
   '<div class="ns-wb-atlas-grid" data-wb-topic-results></div></section>';
 }
@@ -155,7 +156,7 @@ function safetyOnly(g){
   '<p data-wb-care-result role="status">If you or someone else is in immediate danger in the UK, call 999.</p></div></section>';
 }
 function sourcesMarkup(g){
- const links=g.sources?.length?g.sources.map(refLink).join(''):'<li>Review the relevant NHS and NICE guidance for this topic; no claim is made that this exercise is clinically validated.</li>';
+ const links=g.sources?.length?g.sources.map(refLink).join(''):g.contextFirst?'<li>No individual topic-specific research source has yet been assigned to this editorial entry. Generic reflection suggestions are not evidence of a cause or intervention effectiveness.</li>':'<li>Review the relevant NHS and NICE guidance for this topic; no claim is made that this exercise is clinically validated.</li>';
  return '<section class="ns-wb-chapter ns-wb-sources" id="ns-wb-sources"><h2>Evidence, limits and where to go next</h2>'+
   '<p>'+e(g.review)+'</p>'+
   '<p>The references inform broad psychological principles, clinical advice or caution. They do not show that these new micro-tools, this combination of chapters, or a particular user response is an effective treatment.</p>'+
@@ -263,7 +264,7 @@ function setupAtlas(surface){
  let all=false;
  const paint=()=>{
   const text=input.value.trim(),matches=text?
-    atlasSearch(text,166):all?ordered:ordered.slice(0,12);
+    atlasSearch(text,atlasProblemIndex.length):all?ordered:ordered.slice(0,12);
   list.innerHTML=matches.length?matches.map(p=>'<a href="#workbook-topic/'+encodeURIComponent(p.id)+'">'+
    '<strong>'+e(p.title)+'</strong><small>'+e(p.hint)+'</small><span aria-hidden="true">→</span></a>').join(''):
    '<p>No matching topic. Try a broader word, or find appropriate human support when needed.</p>';

@@ -19,7 +19,7 @@ test('every one of 53 console choices leads directly to a complete integrated wo
    assert.equal(w.id,mode.id+'/'+option.id);
    assert.equal(w.modeId,mode.id);
    assert.equal(w.optionId,option.id);
-   assert.equal(needsDestination(option),'#workbook/'+mode.id+'/'+option.id);
+   assert.equal(needsDestination(option),option.type==='atlas'?'#navigate/atlas':'#workbook/'+mode.id+'/'+option.id);
    assert.ok(w.what.length>=70,w.id+' should explain experience');
    assert.ok(w.cycle.length>=50,w.id+' must give possible pattern');
    assert.ok(w.cautions.length>=1,w.id+' must indicate limits');
@@ -44,8 +44,8 @@ test('every one of 53 console choices leads directly to a complete integrated wo
  assert.equal(workbookForChoice('unknown','anything'),null);
  assert.equal(workbookForChoice('regulate','unknown'),null);
 });
-test('all 166 existing atlas topics now offer an integrated educational page with situation-specific targets',()=>{
- assert.equal(atlasProblemIndex.length,166);
+test('all existing and new atlas entries open an integrated educational page',()=>{
+ assert.equal(atlasProblemIndex.length,518);
  for(const p of atlasProblemIndex){
   const w=workbookForTopic(p.id);
   assert.ok(w,'no workbook for '+p.id);

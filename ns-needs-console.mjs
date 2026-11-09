@@ -3,6 +3,8 @@ import {NEEDS_MODES,getNeedsMode,needsDestination} from './ns-needs-catalog.mjs'
 import {atlasProblemIndex,atlasGet,atlasDomains,isSafetyPriority} from './ns-atlas-core.mjs';
 import {attachPathGuide} from './ns-pathway-guidebook.mjs';
 const e=x=>esc(String(x??''));
+const areaNames=new Map(atlasDomains.map(d=>[d.id,d.name]));
+const norm=x=>String(x??'').toLocaleLowerCase().replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 const href=(url,title,cls='')=>'<a class="'+cls+'" href="'+e(url)+'">'+title+'</a>';
 const area=(body,back='#home')=>'<div class="ns-needs">'+
  '<nav class="ns-needs-top" aria-label="Navigator"><a href="'+e(back)+'">← '+(back==='#home'?'Home':'Back')+'</a>'+
@@ -30,35 +32,45 @@ function modeScreen(mode){
 }
 function subjectCard(p){
  return href('#workbook-topic/'+encodeURIComponent(p.id),
- '<span><strong>'+e(p.title)+'</strong><small>'+e(p.hint)+'</small></span><span class="ns-needs-next" aria-hidden="true">→</span>',
+ '<span><strong>'+e(p.title)+'</strong><small class="ns-needs-topic-area">'+e(areaNames.get(p.domain)||'Topic')+'</small><small>'+e(p.hint)+'</small></span><span class="ns-needs-next" aria-hidden="true">→</span>',
  'ns-needs-topic');
 }
 function getSubjectMatches(search,domain){
  let set=atlasProblemIndex.filter(p=>!domain||p.domain===domain);
- const q=String(search||'').trim().toLocaleLowerCase();
- if(q)set=set.filter(p=>(p.title+' '+p.hint+' '+(p.aliases||[]).join(' ')).toLocaleLowerCase().includes(q));
+ const words=norm(search).split(/\s+/).filter(Boolean);
+ if(words.length)set=set.filter(p=>{const hay=norm(p.id+' '+p.title+' '+p.hint+' '+(p.aliases||[]).join(' '));return words.every(w=>hay.includes(w));});
  return set.sort((a,b)=>a.title.localeCompare(b.title));
 }
 function atlasScreen(root){
  root.innerHTML=area('<header class="ns-needs-header ns-tone-lilac"><p class="ns-needs-eyebrow">PSYCHOLOGICAL ATLAS</p>'+
- '<h1>Choose a specific difficulty</h1><p>Browse named experiences without being assigned a diagnosis. Every topic opens an integrated guide with optional worksheets inside the chapters.</p></header>'+
+ '<h1>Explore an experience or difficulty</h1><p>Find a topic about feelings, relationships, identity, discrimination, disability, health or everyday life. Identities are not disorders. Every topic opens a guide with optional reflection and practical support.</p></header>'+
  '<section class="ns-needs-panel"><label class="ns-needs-search-label" for="needs-topic-search">Search a named difficulty</label>'+
- '<input id="needs-topic-search" type="search" autocomplete="off" placeholder="e.g. insomnia, rumination, boundaries…" data-needs-search>'+
+ '<input id="needs-topic-search" type="search" autocomplete="off" placeholder="e.g. racism, ADHD, LGBTQIA+, grief, insomnia…" data-needs-search>'+
  '<p class="ns-needs-footnote">Search filters topic names and descriptions. It does not interpret your symptoms or decide what condition you have.</p>'+
- '<div class="ns-needs-filter" role="group" aria-label="Filter topics by area"><button type="button" data-needs-domain="" aria-pressed="true">All topics</button>'+
- atlasDomains.map(d=>'<button type="button" data-needs-domain="'+e(d.id)+'" aria-pressed="false">'+e(d.name)+'</button>').join('')+'</div>'+
- '<div data-needs-match-count role="status" class="ns-needs-match-count"></div><div data-needs-topic-results class="ns-needs-subjects"></div>'+
+ '<p class="ns-needs-footnote">Start with a common area, or use the full area selector to browse every subject.</p>'+ 
+ '<div class="ns-needs-filter" role="group" aria-label="Quick topic filters"><button type="button" data-needs-domain="" aria-pressed="true">All topics</button>'+
+ ['culture','lgbtq','neuro','disability','harm','family'].map(id=>'<button type="button" data-needs-domain="'+e(id)+'" aria-pressed="false">'+e(areaNames.get(id))+'</button>').join('')+'</div>'+ 
+ '<label class="ns-needs-search-label" for="needs-topic-area">Or choose any topic area</label>'+ 
+ '<select id="needs-topic-area" data-needs-domain-select><option value="">All topic areas</option>'+atlasDomains.map(d=>'<option value="'+e(d.id)+'">'+e(d.name)+'</option>').join('')+'</select>'+
+ '<div data-needs-match-count role="status" class="ns-needs-match-count"></div><div data-needs-topic-results class="ns-needs-subjects"></div>'+ 
+ '<button type="button" class="ns-needs-more" data-needs-more hidden>Show more topics</button>'+
  '</section>', '#navigate/learn');
- let search='',domain='';
+ let search='',domain='',shown=48;
  const paint=()=>{
   const list=getSubjectMatches(search,domain);
-  root.querySelector('[data-needs-match-count]').textContent=list.length+' named '+(list.length===1?'difficulty':'difficulties')+' shown';
-  root.querySelector('[data-needs-topic-results]').innerHTML=list.length?list.map(subjectCard).join(''):
+  root.querySelector('[data-needs-match-count]').textContent=list.length?('Showing '+Math.min(shown,list.length)+' of '+list.length+' topics'): 'No matching topics';
+  root.querySelector('[data-needs-topic-results]').innerHTML=list.length?list.slice(0,shown).map(subjectCard).join(''):
    '<p class="ns-needs-empty">No topic matches those words. Try a broader name, choose another area, or return to the starting points.</p>';
   root.querySelectorAll('[data-needs-domain]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.needsDomain===domain)));
+  root.querySelector('[data-needs-domain-select]').value=domain;
+  const more=root.querySelector('[data-needs-more]');more.hidden=shown>=list.length;
+  more.textContent='Show more topics ('+(list.length-Math.min(shown,list.length))+' remaining)';
  };
- root.querySelector('[data-needs-search]').addEventListener('input',event=>{search=event.target.value;paint()});
- root.querySelectorAll('[data-needs-domain]').forEach(b=>b.addEventListener('click',()=>{domain=b.dataset.needsDomain;paint()}));
+ const filter=(id)=>{domain=id;shown=48;paint();};
+ root.querySelector('[data-needs-search]').addEventListener('input',event=>{search=event.target.value;shown=48;paint()});
+ root.querySelectorAll('[data-needs-domain]').forEach(b=>b.addEventListener('click',()=>filter(b.dataset.needsDomain)));
+ root.querySelector('[data-needs-domain-select]').addEventListener('change',event=>filter(event.target.value));
+ root.querySelector('[data-needs-more]').addEventListener('click',()=>{shown+=48;paint()});
  paint();
  attachPathGuide(root,'learn','browse',{label:'How to use the atlas'});
 }
@@ -71,12 +83,12 @@ function topicScreen(id){
  '<h1>'+e(topic.title)+'</h1><p>'+e(topic.hint)+'</p></header>'+
  '<section class="ns-needs-panel"><h2>What would you like to do with this?</h2>'+
  '<div class="ns-needs-choices">'+
- optionCard({title:'Understand this difficulty',description:'Recognise its signs, possible maintaining processes, contributors and sources.',type:'topic',target:id})+
+ optionCard({title:topic.contextFirst?'Understand this experience':'Understand this difficulty',description:topic.contextFirst?'Explore context, practical barriers, safety, choices and sources of support.':'Recognise its signs, possible maintaining processes, contributors and sources.',type:'topic',target:id})+
  (risk?optionCard({title:'Consider safety and appropriate support first',description:'Some experiences require more than a self-help exercise.',type:'activity',target:'support-safety'}):
- optionCard({title:'Try a practical exercise',description:'An optional worksheet that explores one aspect of the difficulty.',type:'tool',target:'atlas-'+id}))+
+ optionCard({title:'Try a practical exercise',description:'An optional worksheet that explores one aspect of this experience.',type:'tool',target:'atlas-'+id}))+
  optionCard({title:'Process how this is affecting me',description:'Express or reflect without needing to change how you feel.',type:'activity',target:'process-event'})+
  optionCard({title:'Feel steadier first',description:'Try a gentle grounding or settling exercise.',type:'activity',target:'steady-overwhelm'})+
- '</div><p class="ns-needs-footnote">A named topic is not a diagnosis. The educational guides include optional personal formulation, not compulsory testing.</p></section>',
+ '</div><p class="ns-needs-footnote">A topic is not a diagnosis. Identities, backgrounds and preferences are not conditions to cure. These new entries are editorial guides, not individually validated treatments.</p></section>',
  '#navigate/atlas');
 }
 export function renderNeedsConsole(root,parts=[]){

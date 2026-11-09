@@ -867,7 +867,7 @@ function route() {
       navigate: () => {
         const bits=routeParts.slice(1).map(safeRoutePart);
         if(bits[0]==='atlas'&&bits[1]&&atlasGet(bits[1]))showWorkbook({topic:bits[1]});
-        else if(bits[0]==='atlas')showWorkbook({mode:'learn',option:'browse'});
+        else if(bits[0]==='atlas')renderNeedsConsole(main,bits);
         else renderNeedsConsole(main,bits);
       },
       workbook: () => showWorkbook({mode:safeRoutePart(id),option:safeRoutePart(routeParts[2])}),

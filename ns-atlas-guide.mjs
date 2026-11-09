@@ -41,7 +41,7 @@ export function makeAtlasFormulation(p,state){
  contributors.length?'Possible contributors: '+contributors.map(c=>c.label).join(', ')+'.':'Contributing circumstances are not yet specified.',
  extra.length?'Other variables you added: '+extra.map(x=>x.label+' ('+x.kind+')').join('; ')+'.':'',
  targets.length?'Potential targets: '+targets.map(t=>t.title).join(', ')+'.':'Select a possible maintainer to receive more specific targets.',
- 'This is an editable working hypothesis, not an established causal network or diagnosis.'
+ p.contextFirst?'This is an optional context reflection, not evidence that an identity or person experiencing harm caused it.':'This is an editable working hypothesis, not an established causal network or diagnosis.'
  ].filter(Boolean);
  return {signs,maintainers,contributors,extra,situation,targets,summary:words.join(' ')};
 }
@@ -60,7 +60,7 @@ function mapMarkup(p,state){
  return '<div class="ns-atlas-map-box"><div class="ns-atlas-map-row"><div><small>POSSIBLE CONTRIBUTING FACTORS</small>'+
  (conditions.join('')||'<em>Choose contributors above or add your own.</em>')+'</div><span aria-hidden="true">→</span>'+
  '<div><small>SPECIFIC SITUATION</small><strong>'+s(f.situation)+'</strong></div></div>'+
- '<div class="ns-atlas-map-arrow">↓</div><div class="ns-atlas-map-row"><div><small>POSSIBLE MAINTAINERS</small>'+
+ '<div class="ns-atlas-map-arrow">↓</div><div class="ns-atlas-map-row"><div><small>'+(p.contextFirst?'POSSIBLE INFLUENCES':'POSSIBLE MAINTAINERS')+'</small>'+
  (maint.join('')||'<em>Choose a process to investigate.</em>')+'</div><span aria-hidden="true">→</span>'+
  '<div><small>IMMEDIATE EFFECT</small><strong>'+s(p.cycle[2])+'</strong></div></div>'+
  '<div class="ns-atlas-map-arrow">↓</div><div class="ns-atlas-map-outcome"><small>POSSIBLE LONGER-TERM PATTERN</small><strong>'+s(p.cycle[3])+'</strong></div>'+
@@ -84,6 +84,7 @@ const support=p=>{
 };
 const targetMarkup=(p,state)=>{
  if(p.id==='submissive-patterns'&&state.variant==='v1'&&!state.maintainers.size)return '<div class="ns-atlas-target"><div><h3>No preference needs to be fixed merely because it is submissive.</h3><p>What matters is free consent, boundaries, the ability to decline, and whether the role works for you. You can explore communication skills if they are useful, not because the preference itself is pathological.</p></div></div>';
+ if(p.supportFirst&&!isSafetyPriority(p.id))return '<div class="ns-atlas-urgent"><strong>Safety, autonomy and appropriate support come first.</strong><p>Do not undertake risky confrontation or record private details on a monitored device.</p><a href="#support">Find support →</a></div>';
  if(isSafetyPriority(p.id))return '<div class="ns-atlas-urgent"><strong>Immediate safety and human support are the priority.</strong><p>This topic is not appropriate for automatically generated exposure, confrontation or self-diagnosis tasks.</p><a href="#support">Find support →</a></div>';
  const f=makeAtlasFormulation(p,state);
  const targets=f.targets.length?f.targets:p.targets.slice(0,2);
@@ -108,7 +109,7 @@ const selectSituation=(p,state)=>'<label class="ns-atlas-variation"><strong>Whic
  '<option value="">I am not sure / several situations</option>'+
  p.variants.map((v,i)=>'<option value="v'+i+'" '+(state.variant==='v'+i?'selected':'')+'>'+s(v)+'</option>').join('')+'</select></label>'+
  '<label class="ns-atlas-variation"><strong>Or describe your own situation (optional)</strong><input type="text" data-atlas-own-situation maxlength="150" placeholder="e.g. It happens after a difficult call…" value="'+s(state.customSituation||'')+'"></label>';
-const qualityNote=p=>p.quality==='expert-draft'?
+const qualityNote=p=>p.contextFirst?'Inclusive editorial topic entry; no individually validated explanation or intervention is implied.':p.quality==='expert-draft'?
  'This topic has additional authored examples and differentiated mechanisms.':
  'This page uses a structured educational starting model. Its specific explanations and resource links require further topic-by-topic expert review.';
 export function renderAtlasGuide(root,id){
@@ -127,13 +128,13 @@ export function renderAtlasGuide(root,id){
  headline(1,'What is this?','Understand the difficulty in plain language.','<p>'+s(p.definition)+'</p>',true)+
  headline(2,'What does it look like in my life?','Recognise thoughts, feelings, behaviours and physical reactions.',
  '<p>Tick anything that sounds familiar. These examples are not diagnostic criteria.</p>'+signFields(p,state),true)+
- headline(3,'What keeps it going?','A possible feedback loop, not a proven explanation.',
+ headline(3,p.contextFirst?'What influences this experience?':'What keeps it going?','A possible pattern, not a proven explanation.',
  '<div class="ns-atlas-cycle" data-atlas-cycle>'+parts(p,state)+'</div><p>Different processes may maintain similar symptoms. Choose the ones you recognise later in the guide.</p>')+
  headline(4,'What contributes?','Include context, health, relationships and systems.',
  '<p>Contributors are not necessarily causes. Some are outside your control and may need practical support.</p>'+
  '<div class="ns-atlas-checkbox-grid">'+checkSet('contributor',p.contributors,state.contributors)+'</div>')+
  headline(5,'Which parts apply to me?','Tell us which specific version you experience.',
- selectSituation(p,state)+'<h3>What seems to keep it going?</h3><div class="ns-atlas-checkbox-grid">'+checkSet('maintainer',p.maintainers,state.maintainers)+'</div>'+
+ selectSituation(p,state)+'<h3>'+(p.contextFirst?'Which circumstances are relevant?':'What seems to keep it going?')+'</h3><div class="ns-atlas-checkbox-grid">'+checkSet('maintainer',p.maintainers,state.maintainers)+'</div>'+
  '<p class="ns-atlas-fine">You can choose several, none, or revise them as you learn more.</p>',true)+
  headline(6,'What can help?','Psychological skills organised by what they target.',
  '<div class="ns-atlas-all-targets">'+p.targets.map(t=>'<article><strong>'+s(t.title)+'</strong><p>'+s(t.why)+'</p></article>').join('')+'</div>')+
@@ -143,7 +144,7 @@ export function renderAtlasGuide(root,id){
  stepsToProgress(p)+'<p>These are examples of progress, not a required order or guarantee.</p>')+
  headline(9,'When self-help may not be enough','Safety, health and professional support matter.',
  (p.alert?'<p class="ns-atlas-safety">'+s(p.alert)+'</p>':'')+support(p)+'<p>If an intervention worsens your situation or is unsafe, do not force it. Reassess the explanation and seek relevant help.</p>')+
- headline(10,'Your personalised formulation','Review your own editable map and next steps.',
+ headline(10,p.contextFirst?'Your editable context map':'Your personalised formulation','Review your own selections and possible next steps.',
  '<div data-atlas-map></div><details class="ns-atlas-add"><summary>＋ Add a variable or protective factor</summary>'+
  '<form data-atlas-add-form><label>Variable<input name="label" maxlength="80" required placeholder="e.g. Housing noise, fatigue, support from a friend"></label>'+
  '<label>Possible role<select name="kind"><option value="contributor">Contributor</option><option value="maintainer">Maintainer</option><option value="protective">Protective factor</option></select></label>'+

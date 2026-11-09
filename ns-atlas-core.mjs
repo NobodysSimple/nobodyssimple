@@ -1,11 +1,12 @@
 import {problemIndex,problemDomains,knowledgeFamilies,sourceForProblem,nhsHelp,nhsTalking,resolveProblemToolId} from './ns-problem-map.mjs';
 import {extendedProblemIndex} from './ns-atlas-extended.mjs';
+import {inclusiveDomains,inclusiveProblemIndex,inclusiveProfile} from './ns-inclusive-topics.mjs';
 import {preciseProfiles,getPreciseProfile} from './ns-precision-content.mjs';
 import {explicitVariants} from './ns-atlas-variations.mjs';
 import {extendedVariants} from './ns-atlas-extended-variations.mjs';
 
 const M=(id,label,detail,target,tool,worksheet)=>({id,label,detail,target,tool,worksheet});
-export const atlasDomains=problemDomains;
+export const atlasDomains=Object.freeze([...problemDomains,...inclusiveDomains]);
 const families={
  feel:[
  M('intensity','Strong immediate emotional response','The intensity of the response may make the situation harder to navigate.','Respond to emotional activation','emotion-check-in','emotion'),
@@ -106,7 +107,8 @@ const typeTools={feel:'emotion-check-in',think:'reality-map',act:'small-step',re
 export const atlasProblemIndex=Object.freeze([...preciseProfiles.map(p=>({id:p.id,title:p.title,hint:p.definition,domain:p.id==='submissive-patterns'?'relate':p.id==='insomnia'?'body':p.id==='rumination'?'think':'feel',
  aliases:[p.title.toLowerCase(),...p.signs.thoughts.slice(0,2)],needsHuman:false,medical:p.id==='insomnia'||p.id==='panic-experiences',quality:'expert-draft'})),
  ...problemIndex.map(p=>({...p,quality:'structured'})),
- ...extendedProblemIndex.map(p=>({...p,quality:'structured'}))]);
+ ...extendedProblemIndex.map(p=>({...p,quality:'structured'})),
+ ...inclusiveProblemIndex]);
 const lookup=new Map(atlasProblemIndex.map(p=>[p.id,p]));
 export const atlasGet=id=>lookup.get(id)||null;
 export const atlasByDomain=domain=>atlasProblemIndex.filter(p=>p.domain===domain);
@@ -162,6 +164,7 @@ const riskIds=new Set(['self-harm','immediate-danger','suicidal-thoughts','self-
 export const isSafetyPriority=id=>riskIds.has(id)||Boolean(atlasGet(id)?.needsHuman);
 export function atlasProfile(id){
  const p=atlasGet(id);if(!p)return null;
+ if(p.contextFirst)return inclusiveProfile(p);
  const precise=getPreciseProfile(id);if(precise){
   const core=precise.signs;
   const variants=[...new Set(precise.questions[0].options.map(x=>x[1]))].slice(0,5);

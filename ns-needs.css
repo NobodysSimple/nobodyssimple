@@ -5,10 +5,10 @@ body.app-body.ns-shell-v1 #main .ns-needs{
  color:var(--need-ink);font-family:system-ui,-apple-system,sans-serif;line-height:1.6;
 }
 body.app-body.ns-shell-v1 #main .ns-needs *{box-sizing:border-box;}
-body.app-body.ns-shell-v1 #main .ns-needs :is(button,a,input,textarea):focus-visible{
+body.app-body.ns-shell-v1 #main .ns-needs :is(button,a,input,select,textarea):focus-visible{
  outline:3px solid #b28347;outline-offset:3px;
 }
-body.app-body.ns-shell-v1 #main .ns-needs :is(button,textarea,input){font-family:inherit;}
+body.app-body.ns-shell-v1 #main .ns-needs :is(button,textarea,input,select){font-family:inherit;}
 body.app-body.ns-shell-v1 #main .ns-needs-top{
  display:flex;gap:13px;justify-content:space-between;align-items:center;flex-wrap:wrap;
  font-size:12px;margin-bottom:14px;font-weight:700;
@@ -101,6 +101,22 @@ body.app-body.ns-shell-v1 #main .ns-needs-filter button{
  color:#457451;padding:8px 11px;min-height:35px;cursor:pointer;font:750 12px system-ui,sans-serif;
 }
 body.app-body.ns-shell-v1 #main .ns-needs-filter button[aria-pressed=true]{background:#2c7051;color:white;border-color:#2c7051;}
+body.app-body.ns-shell-v1 #main .ns-needs #needs-topic-area{
+ width:100%;min-height:46px;padding:10px 13px;background:#fff;
+ border:1px solid #bdd5c0;border-radius:12px;color:#28553b;
+ font:600 13px/1.45 system-ui,sans-serif;margin:3px 0 11px;
+}
+body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-topic-area{
+ margin-bottom:3px;color:#416b50;font-weight:800;font-size:10px;
+ letter-spacing:.03em;
+}
+body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-more{
+ display:block;margin:18px auto 4px;min-height:44px;padding:11px 21px;
+ border:1px solid #9bbb9e;border-radius:12px;background:#f0f7ed;
+ color:#275a3c;font:750 13px system-ui,sans-serif;cursor:pointer;
+}
+body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-more:hover{background:#e4f2e1}
+body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-more[hidden]{display:none}
 body.app-body.ns-shell-v1 #main .ns-needs-match-count{font:750 12px system-ui,sans-serif;color:#47624e;margin:10px 0 13px;}
 body.app-body.ns-shell-v1 #main .ns-needs-subjects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;}
 body.app-body.ns-shell-v1 #main .ns-needs-subjects .ns-needs-topic{min-height:73px;}
