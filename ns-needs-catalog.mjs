@@ -80,6 +80,7 @@ export function getNeedsActivity(id){return NEEDS_ACTIVITIES[id]||null}
 export function needsDestination(option){
  if(!option)return '#navigate';
  const mode=NEEDS_MODES.find(m=>m.options.includes(option))?.id;
+ if(mode&&option.type==='atlas')return '#navigate/atlas';
  if(mode)return '#workbook/'+encodeURIComponent(mode)+'/'+encodeURIComponent(option.id);
  // Historical one-off links generated outside the starting-point catalogue.
  if(option.type==='activity')return '#need/'+encodeURIComponent(option.target);
