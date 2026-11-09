@@ -204,11 +204,12 @@ export function startInvestigation(state){
  if(!state||state.safety||state.drill?.unsupportedCategory)return state;
  return {...state,investigation:{...(state.investigation||newInvestigation()),active:true,finished:false}};
 }
-export function answerInvestigation(state,questionId,answerId){
+export function answerInvestigation(state,questionId,answerId,verbatim=''){
  const q=investigationQuestion(state);
  if(!q||q.questionId!==questionId||!q.options.some(o=>o.id===answerId))return state;
  const answers=[...state.investigation.answers,{field:q.id,questionId:q.questionId,
-  conceptId:q.concept,layer:q.layer,answerId}];
+  conceptId:q.concept,layer:q.layer,answerId,
+   verbatim:typeof verbatim==='string'?verbatim.trim().slice(0,280):''}];
  const safety=q.id==='father_behaviour'&&answerId==='intimidation'?{
   kind:'coercion',reason:'You reported intimidation or threats. A safety-first response is more important than guessing an underlying psychological explanation.'
  }:state.safety;
@@ -233,7 +234,8 @@ export function investigationFacts(state){
   if(!q||!choice||UNKNOWN.has(answer.answerId))return [];
   const isAttribution=q.id==='father_label';
   return [{id:answer.questionId,conceptId:q.concept,kind:q.id,layer:q.layer,
-   text:choice.label,value:answer.answerId,question:q.prompt,
+   text:answer.verbatim||choice.label,optionLabel:choice.label,
+    verbatim:answer.verbatim||'',value:answer.answerId,question:q.prompt,
    status:isAttribution?'user_interpretation':'person_reported',
    subject:leaf?.label||state.trackId,
    source:'user_selection',hypothesis:false}];
