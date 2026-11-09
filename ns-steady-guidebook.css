@@ -8,7 +8,7 @@ body.app-body.ns-shell-v1 #main .ns-steady-guide-widget{
 }
 body.app-body.ns-shell-v1 #main .ns-steady-guide-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;}
 body.app-body.ns-shell-v1 #main .ns-steady-guide-bar strong{font:750 13px/1.35 system-ui,sans-serif;display:block;color:#2a523d;}
-body.app-body.ns-shell-v1 #main .ns-steady-guide-bar p{font:400 12px/1.5 system-ui,sans-serif;color:#607463;margin:4px 0 0;max-width:58ch;}
+body.app-body.ns-shell-v1 #main .ns-steady-guide-bar p{font:400 12px/1.5 system-ui,sans-serif;color:#46604e;margin:4px 0 0;max-width:58ch;}
 body.app-body.ns-shell-v1 #main .ns-steady-guide-bar button{
  background:#2c704f;color:#fff;border:0;border-radius:11px;
  padding:11px 15px;font:750 12px/1.3 system-ui,sans-serif;cursor:pointer;
@@ -72,8 +72,8 @@ body.app-body.ns-shell-v1 #main .ns-steady-pinned>button{
  padding:clamp(19px,3vw,31px);background:linear-gradient(115deg,#f0f5ea,#fdf5e9);
  border:1px solid #dce9d8;border-radius:16px;
 }
-.ns-guidebook-eyebrow{font:800 10px/1.5 system-ui,sans-serif;color:#67836d;letter-spacing:.1em;margin-bottom:9px!important;}
-.ns-guidebook-cover>p:nth-of-type(2){font:400 14px/1.55 system-ui,sans-serif;color:#577664;}
+.ns-guidebook-eyebrow{font:800 10px/1.5 system-ui,sans-serif;color:#45604b;letter-spacing:.1em;margin-bottom:9px!important;}
+.ns-guidebook-cover>p:nth-of-type(2){font:400 14px/1.55 system-ui,sans-serif;color:#45604b;}
 .ns-guidebook-status{font:700 11px/1.45 system-ui,sans-serif;color:#826b4f;margin:10px 0 0!important;}
 .ns-guidebook-toc{
  border:1px solid #d9e4d7;border-radius:13px;padding:16px;background:#f7f9f3;margin-bottom:19px;
@@ -99,7 +99,7 @@ body.app-body.ns-shell-v1 #main .ns-steady-pinned>button{
 }
 .ns-guidebook-lane summary::-webkit-details-marker{display:none;}
 .ns-guidebook-lane summary strong{font:800 14px/1.35 system-ui,sans-serif;color:#2b6244;display:block;}
-.ns-guidebook-lane summary small{font:400 12px/1.5 system-ui,sans-serif;color:#648271;display:block;margin-top:4px;}
+.ns-guidebook-lane summary small{font:400 12px/1.5 system-ui,sans-serif;color:#44614c;display:block;margin-top:4px;}
 .ns-guidebook-lane[open] summary{border-bottom:1px solid #dce9d7;}
 .ns-guidebook-method-list{display:grid;gap:12px;padding:15px;}
 .ns-guidebook-method{padding:18px;border:1px solid #dce7dc;border-radius:12px;background:white;}
@@ -108,15 +108,15 @@ body.app-body.ns-shell-v1 #main .ns-steady-pinned>button{
 .ns-guidebook-method ol{margin:9px 0;padding-left:20px;}
 .ns-guidebook-method li{font:400 13px/1.55 system-ui,sans-serif;margin-bottom:8px;}
 .ns-guidebook-method .ns-guidebook-method-warning{padding:11px;border-radius:8px;background:#fdf3e6;color:#785836;}
-.ns-guidebook-method .ns-guidebook-method-evidence{font:400 11px/1.55 system-ui,sans-serif;color:#627568;margin:0 0 12px;}
+.ns-guidebook-method .ns-guidebook-method-evidence{font:400 11px/1.55 system-ui,sans-serif;color:#45614f;margin:0 0 12px;}
 .ns-guidebook-pick{
  border:1px solid #9fc4a4;color:#276848;background:#e8f5e8;border-radius:9px;
  padding:10px 13px;min-height:40px;cursor:pointer;font:800 12px/1.4 system-ui,sans-serif;
 }
 .ns-guidebook-sources li{margin-bottom:12px;}
 .ns-guidebook-sources a{color:#2b7650;font-weight:750;overflow-wrap:anywhere;}
-.ns-guidebook-sources small{display:block;color:#688070;font-size:11px;line-height:1.5;}
-.ns-guidebook-final{margin-top:17px;padding-top:12px;border-top:1px solid #d8e5d6;font-size:12px;color:#627767;}
+.ns-guidebook-sources small{display:block;color:#46604e;font-size:11px;line-height:1.5;}
+.ns-guidebook-final{margin-top:17px;padding-top:12px;border-top:1px solid #d8e5d6;font-size:12px;color:#48624f;}
 .ns-guidebook-dialog :is(button,a,summary):focus-visible,
 body.app-body.ns-shell-v1 #main .ns-steady-guide-widget :is(button,select):focus-visible{
  outline:3px solid #b78b53;outline-offset:3px;
