@@ -81,8 +81,8 @@ test('overthinking has a different first question and can hand off to an existin
  await answer(page,3,'yes');
  await page.locator('[data-hypo-results]').click();
  await expect(page.locator('.ns-hypo-result-hero')).toBeVisible();
- await expect(page.locator('a[href="#workbook-topic/rumination"]')).toHaveCount(1);
- await page.locator('a[href="#workbook-topic/rumination"]').click();
+ await expect(page.locator('.ns-hypo-final-buttons a[href="#workbook-topic/rumination"]')).toHaveCount(1);
+ await page.locator('.ns-hypo-final-buttons a[href="#workbook-topic/rumination"]').click();
  await expect(page.locator('[data-workbook="topic/rumination"]')).toBeVisible();
  await expect(page.locator('.ns-pick-chooser')).toBeVisible();
 });
