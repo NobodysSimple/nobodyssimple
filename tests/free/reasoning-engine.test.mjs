@@ -9,7 +9,7 @@ test('high-risk safety signals take precedence over unrelated keyword matches',(
  assert.equal(safetyScreen("I don't feel safe at home")?.kind,'coercion');
  assert.equal(safetyScreen("I wake up gasping")?.kind,'physical');
  assert.equal(safetyScreen('I hear voices')?.kind,'unusual');
- assert.equal(safetyScreen('I think of harming someone')?.kind,'unusual');
+ assert.equal(safetyScreen('I think of harming someone')?.kind,'harm');
  assert.equal(safetyScreen('I will hurt someone')?.kind,'crisis');
  assert.equal(safetyScreen('I have suicidal thoughts')?.kind,'crisis');
  assert.equal(safetyScreen('I am NOT suicidal'),null);
