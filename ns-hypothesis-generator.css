@@ -544,3 +544,29 @@ html[data-theme="dark"] body.app-body.ns-shell-v1 #main :is(.ns-hypo-depth-step,
 }
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-step span,
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-map .ns-hypo-quiet{color:#d7e4d8;}
+
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-novelty{
+ padding:16px;margin:17px 0;border:1px solid #bfd4c1;border-radius:16px;background:#edf4ec;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-novelty>div[role="group"]{
+ display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-novelty button{
+ padding:9px 12px;border:1px solid #779983;border-radius:12px;
+ background:#fff;color:#204a32;font-weight:700;cursor:pointer;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-novelty button[aria-pressed="true"]{
+ background:#24503b;color:#fff;border-color:#24503b;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-depth-novelty button:focus-visible{
+ outline:3px solid #2f7651;outline-offset:2px;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-novelty{
+ background:#26382c;border-color:#779a80;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-novelty button{
+ background:#324b3b;color:#f2f8ef;border-color:#a6bca7;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-hypo-depth-novelty button[aria-pressed="true"]{
+ background:#d4ebd8;color:#1a3424;
+}
