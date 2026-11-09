@@ -82,6 +82,34 @@ body.app-body.ns-shell-v1 #main .ns-wb-chapter-heading p{
 body.app-body.ns-shell-v1 #main .ns-wb-large-text{font-size:16px;color:#2e4b3a;max-width:84ch;}
 body.app-body.ns-shell-v1 #main .ns-wb-recognition-list ul{columns:2;column-gap:30px;padding-left:24px;margin:10px 0 18px;}
 body.app-body.ns-shell-v1 #main .ns-wb-recognition-list li{break-inside:avoid;margin-bottom:8px;font-size:14px;}
+body.app-body.ns-shell-v1 #main .ns-wb-mechanisms{margin:20px 0;}
+body.app-body.ns-shell-v1 #main .ns-wb-mechanisms>p{font-size:14px;color:#415e48;}
+body.app-body.ns-shell-v1 #main .ns-wb-mechanisms article{
+ border:1px solid #d5e4d4;background:#f6f9f2;border-radius:12px;
+ padding:15px 18px;margin:9px 0;
+}
+body.app-body.ns-shell-v1 #main .ns-wb-mechanisms h4{
+ font:750 15px/1.4 system-ui,sans-serif;margin:0 0 6px;
+}
+body.app-body.ns-shell-v1 #main .ns-wb-mechanisms article p{font-size:13px;line-height:1.6;margin:5px 0;}
+body.app-body.ns-shell-v1 #main .ns-wb-progress-meaning{
+ padding-top:11px;margin:20px 0 6px;border-top:1px solid #d4e3d3;
+}
+body.app-body.ns-shell-v1 #main .ns-wb-progress-meaning p,
+body.app-body.ns-shell-v1 #main .ns-wb-progress-meaning li{font-size:14px;color:#395541;}
+body.app-body.ns-shell-v1 #main .ns-wb-evidence-links{
+ font-size:12px;margin-top:7px;color:#365843;line-height:1.6;
+}
+body.app-body.ns-shell-v1 #main .ns-wb-evidence-links a{
+ color:#246345;text-decoration:underline;text-underline-offset:3px;font-weight:700;
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-wb-mechanisms article{
+ background:#2b4c37;border-color:#6f9375;
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-wb-wrap :is(.ns-wb-mechanisms>p,.ns-wb-mechanisms article p,.ns-wb-progress-meaning p,.ns-wb-progress-meaning li,.ns-wb-evidence-links,.ns-wb-evidence-links a){
+ color:#e7f1e7;
+}
+
 body.app-body.ns-shell-v1 #main .ns-wb-cycle{
  padding:17px;border-left:4px solid #729d7a;background:#f1f6ed;color:#314f3b;border-radius:0 12px 12px 0;
  line-height:1.75;font-weight:620;
