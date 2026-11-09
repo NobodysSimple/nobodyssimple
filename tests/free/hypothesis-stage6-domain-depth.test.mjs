@@ -32,13 +32,13 @@ function complete(s,choices={}){
  let steps=0;
  while(domainQuestion(s)){
   const q=domainQuestion(s),choice=choices[q.id]||{
-   primary:'factor1',contrast:'easier',additional:'extra1',response:'reduce',
+   primary:'factor1',contrast:'easier',additional:'extra1',stake:'dignity',body:'sleep',response:'reduce',
    immediate:'relief',later:'returns',recurrence:'repeated',
-   exception:'protected',history:'situational',goal:'understand'
+   exception:'protected',protective:'support',history:'situational',goal:'understand'
   }[q.id];
   assert.ok(q.options.some(o=>o.id===choice),q.id+' '+choice);
   s=answerDomainInquiry(s,q.questionId,choice);
-  assert.ok(++steps<=10);
+  assert.ok(++steps<=13);
  }
  return s;
 }
