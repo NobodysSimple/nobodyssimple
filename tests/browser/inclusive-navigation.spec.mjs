@@ -6,7 +6,7 @@ const atlas='/index.html#navigate/atlas';
 test('expanded atlas has discoverable categories, manageable pagination and searchable specific experiences',async({page})=>{
  await page.goto(atlas);
  await expect(page.getByRole('heading',{name:'Explore an experience or difficulty'})).toBeVisible();
- await expect(page.locator('[data-needs-match-count]')).toContainText('492 topics');
+ await expect(page.locator('[data-needs-match-count]')).toContainText('518 topics');
  await expect(page.locator('[data-needs-topic-results] .ns-needs-topic')).toHaveCount(48);
  await expect(page.locator('[data-needs-more]')).toBeVisible();
  await page.locator('[data-needs-domain="lgbtq"]').click();
