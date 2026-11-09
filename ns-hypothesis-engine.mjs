@@ -217,7 +217,7 @@ export function nextHypothesisQuestion(state){
  if(!state.answers.length){
   const first={procrastination:'first',overthinking:'certainty',relationships:'unsafe',
    social:'accepted',fatigue:'energy',emotion:'react',sleep:'external-sleep',
-   checking:'ritual',choices:'value-clash',identity:isPresentationQuery(state.description)?'d-id-presentation':'expectations',
+   checking:'ritual',choices:'value-clash',identity:'d-id-presentation',
    sensory:'sensory',loss:'loss'};
   return pool.find(q=>q.id===first[state.trackId])||pool[0];
  }
