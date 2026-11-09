@@ -1,4 +1,6 @@
 import {test,expect} from '@playwright/test';
+// Feature retired from the live app; preserve legacy scenarios for possible future review.
+test.skip(true,'Hypothesis Generator is retired from the application');
 import AxeBuilder from '@axe-core/playwright';
 
 async function investigate(page){
