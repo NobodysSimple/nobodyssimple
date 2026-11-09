@@ -8,6 +8,7 @@ import {caseDetailFacts} from './ns-hypothesis-case-facts.mjs';
 import {investigationFacts,investigationLinks} from './ns-hypothesis-investigation.mjs';
 import {testableDifferentials} from './ns-hypothesis-differentials.mjs';
 import {adaptiveFacts,adaptiveDifferentials} from './ns-hypothesis-adaptive.mjs';
+import {domainFacts,domainFormulation} from './ns-hypothesis-domain-depth.mjs';
 const reply={yes:'Yes',probably:'Probably',unsure:'Not sure','probably-not':'Probably not',no:'No'};
 const positive=a=>['yes','probably'].includes(a.answerId);
 const significant=a=>a.answerId!=='unsure';
@@ -44,7 +45,7 @@ export function buildFormulationGraph(state,candidates,questionIndex){
  const direct=(items)=>items.filter(x=>positive(x.a)).slice(0,3).map(x=>x.item);
  const normal=(items)=>items.slice(0,3).map(x=>x.item);
  const supporting=leader?.positive?.length||0;
- const differentialPatterns=[...testableDifferentials(state),...adaptiveDifferentials(state)];
+ const differentialPatterns=[...testableDifferentials(state),...adaptiveDifferentials(state),...domainFormulation(state).hypotheses];
  // Preserve exact details explicitly selected by the person, never infer
  // more than the available selection establishes.
  const drill=state.drill;
@@ -53,6 +54,8 @@ export function buildFormulationGraph(state,candidates,questionIndex){
  const precise=caseDetailFacts(state);
  const inquiry=investigationFacts(state);
  const advanced=adaptiveFacts(state);
+ const domain=domainFacts(state);
+ const fromDomain=id=>domain.find(f=>f.kind==='domain:'+id);
  const advancedFor=key=>advanced.find(f=>f.kind==='adaptive:'+key);
  const advancedEvidence=(...keys)=>advanced.filter(f=>keys.includes(f.kind.slice(9)))
   .map(f=>({id:f.id,question:f.question,answer:f.text}));
@@ -74,7 +77,7 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    status:exact||personPhrase?'reported':'unknown'},
   {id:'context',layer:'context',
    title:[inquiryFor('who')?.text,inquiryFor('father_behaviour')?.text,inquiryFor('event')?.text,
-    setting?.text,preciseFor('timeframe')?.text,advancedFor('external_persistence')?.text,
+    setting?.text,preciseFor('timeframe')?.text,fromDomain('primary')?.text,advancedFor('external_persistence')?.text,
     advancedFor('external_action')?.text].filter(Boolean).slice(0,4).join(' · ')||
     (observations.length?'Situations and constraints mentioned':'Context not established'),
    detail:setting?'You selected this setting or situation. The tool has not established what causes the experience there.':
@@ -92,7 +95,7 @@ export function buildFormulationGraph(state,candidates,questionIndex){
     ...sourced(meaning,'What is most relevant to understanding it?'),...inquiryEvidence('emotion','interpretation','father_label'),
     ...evidenceFor('impact'),...advancedEvidence('meaning_evidence','meaning_reframe'),...normal(meanings)].slice(0,12),
    status:valence||meaning||meanings.length||preciseFor('impact')||inquiryFor('emotion')||inquiryFor('interpretation')?'reported':'unknown'},
-  {id:'response',layer:'response',title:[inquiryFor('action')?.text,inquiryFor('regulation')?.text,advancedFor('coping_pattern')?.text].filter(Boolean).join(' · ')||
+  {id:'response',layer:'response',title:[inquiryFor('action')?.text,inquiryFor('regulation')?.text,fromDomain('response')?.text,advancedFor('coping_pattern')?.text].filter(Boolean).slice(0,3).join(' · ')||
     (responses.length?'Responses and choices mentioned':'Response not established'),
    detail:'What you said you do, including how you regulate difficult feelings. A response is not necessarily a protective strategy.',
    evidence:[...inquiryEvidence('action','regulation'),...advancedEvidence('coping_pattern'),...normal(responses)].slice(0,9),
@@ -111,7 +114,8 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    challenges:c.negative.slice(0,2).map(x=>({id:x.questionId,question:x.prompt,answer:x.label})),
    status:c.positive.length>0?'tentative':'unknown',
    rank:i+1})),
-  {id:'function',layer:'function',title:advancedFor('coping_intention')?'Intended effect: '+advancedFor('coping_intention').text:
+  {id:'function',layer:'function',title:fromDomain('immediate')?'Immediate: '+fromDomain('immediate').text:
+    advancedFor('coping_intention')?'Intended effect: '+advancedFor('coping_intention').text:
    inquiryFor('short_term')?'Afterwards: '+inquiryFor('short_term').text:
    (supporting?'A possible immediate effect':'Immediate effect not established'),
    detail:inquiryFor('short_term')?'This consequence was selected by the person. The response causing it has NOT been established.':
@@ -119,7 +123,8 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    evidence:[...inquiryEvidence('short_term','if_stop'),...advancedEvidence('coping_intention','protective_response'),
     ...direct(specificEvidence(state,questionIndex,['function']))].slice(0,9),
    status:inquiryFor('short_term')?'reported':supporting?'tentative':'unknown'},
-  {id:'cost',layer:'cost',title:advancedFor('recurrent_cycle')?'Repeated pattern: '+advancedFor('recurrent_cycle').text:
+  {id:'cost',layer:'cost',title:fromDomain('later')?'Later: '+fromDomain('later').text:
+    advancedFor('recurrent_cycle')?'Repeated pattern: '+advancedFor('recurrent_cycle').text:
    inquiryFor('long_term')?'Later: '+inquiryFor('long_term').text:
    (supporting?'A possible continuing cost':'Maintaining consequences not established'),
    detail:inquiryFor('long_term')?'A later consequence was reported; whether the response maintains the problem remains a question.':
@@ -127,7 +132,8 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    evidence:[...inquiryEvidence('long_term'),...advancedEvidence('recurrent_cycle','coping_counterfactual'),
     ...normal(specificEvidence(state,questionIndex,['cost']))].slice(0,9),
    status:inquiryFor('long_term')?'reported':supporting?'tentative':'unknown'},
-  {id:'need',layer:'need',title:inquiryFor('values')?'What matters: '+inquiryFor('values').text:
+  {id:'need',layer:'need',title:fromDomain('goal')?'My goal: '+fromDomain('goal').text:
+    inquiryFor('values')?'What matters: '+inquiryFor('values').text:
    (preciseFor('goal')?'My stated goal: '+preciseFor('goal').text:
    (needs.length?'Needs or resources to consider':'Possible needs, still unconfirmed')),
    detail:inquiryFor('values')?'This priority was selected by the person; it is not an inferred unmet need.':preciseFor('goal')?'The goal shown here was explicitly selected by the person. It does not prove that a particular need is unmet.':
@@ -155,7 +161,7 @@ export function buildFormulationGraph(state,candidates,questionIndex){
   response:'response',function:'function',cost:'cost',need:'need',tension:'tension',
   mechanism:'experience'};
  const seen=new Set(nodes.flatMap(n=>(n.evidence||[]).map(item=>item.id)));
- for(const fact of [...inquiry,...advanced]){
+ for(const fact of [...inquiry,...advanced,...domain]){
   if(seen.has(fact.id))continue;
   const id=layerToNode[fact.layer]||'context';
   const destination=nodes.find(n=>n.id===id);
