@@ -253,13 +253,16 @@ export function answerAdaptiveInquiry(state,questionId,answerId,verbatim=''){
   field:q.id,questionId:q.questionId,conceptId:q.conceptId,layer:q.layer,answerId,
   verbatim:typeof verbatim==='string'?verbatim.trim().slice(0,280):''
  }];
- const update={...state,adaptive:{...state.adaptive,answers}};
- const more=adaptiveCandidates(update).length>0;
+ const safety=q.id==='external_persistence'&&answerId==='unsafe'?{
+  kind:'coercion',reason:'You indicated it would be unsafe to respond differently to another person. Safety and practical support take priority over testing a causal hypothesis.'
+ }:state.safety;
+ const update={...state,safety,adaptive:{...state.adaptive,answers}};
+ const more=!safety&&adaptiveCandidates(update).length>0;
  return {...update,adaptive:{...update.adaptive,active:more,finished:!more}};
 }
 export function backAdaptiveInquiry(state){
  if(!state?.adaptive?.answers?.length)return state;
- return {...state,adaptive:{...state.adaptive,answers:state.adaptive.answers.slice(0,-1),active:true,finished:false}};
+ return {...state,safety:state.initialSafety||null,adaptive:{...state.adaptive,answers:state.adaptive.answers.slice(0,-1),active:true,finished:false}};
 }
 export function stopAdaptiveInquiry(state){
  if(!state?.adaptive)return state;
@@ -333,4 +336,34 @@ export function adaptiveDifferentials(state){
 }
 export function adaptiveReport(state){
  return adaptiveFacts(state).map(f=>f.question+' — '+f.text);
+}
+
+export function adaptiveLinks(state){
+ if(!state||state.safety)return [];
+ const by=new Map([...investigationFacts(state),...adaptiveFacts(state)].map(f=>[f.kind,f]));
+ const out=[];
+ const add=(from,to,title,challenge)=>{
+  const a=by.get(from),b=by.get(to);
+  if(!a||!b)return;
+  out.push({id:'adaptive-link:'+from+'-'+to,from:a.id,to:b.id,
+   fromText:a.text,toText:b.text,title,status:'proposed_not_causal',
+   evidence:[a.id,b.id],challenge});
+ };
+ add('sleep','adaptive:sleep_contrast','Sleep → experience: contrast to examine',
+  'Does the experience still change when external demands stay the same? Could medication, pain or health explain both?');
+ add('capacity','adaptive:load_contrast','Demand → capacity: contrast to examine',
+  'What happens at similar demand levels when practical support changes?');
+ add('environment','adaptive:external_action','Circumstance → difficulty: contrast to examine',
+  'Was something else different when the external condition changed?');
+ add('father_behaviour','adaptive:external_persistence','Other person’s behaviour → difficulty: test independence',
+  'Does the reported behaviour occur even without the usual response? The other person’s motives are not known.');
+ add('regulation','adaptive:coping_intention','Regulation strategy → intended effect: compare',
+  'An intended function is not necessarily the actual consequence. What happened afterwards?');
+ add('short_term','adaptive:coping_counterfactual','Relief → later effects: compare alternatives',
+  'Without a safe comparison, relief alone cannot show a reinforcing cycle.');
+ add('action','adaptive:recurrent_cycle','Response → recurrence: test temporal stability',
+  'Has the same sequence happened repeatedly, or only in one example?');
+ add('values_cost','adaptive:values_external','Value trade-off → external constraint: distinguish',
+  'Could the conflict be created by outside constraints rather than opposing personal values?');
+ return out;
 }
