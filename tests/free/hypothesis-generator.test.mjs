@@ -167,7 +167,7 @@ test('retired generator is absent from app navigation while source remains prese
  assert.match(ui,/data-hypo-back/);
  assert.match(ui,/data-hypo-skip/);
  assert.match(ui,/ns-hypo-safety-page/);
- assert.match(sw,/ns-hypothesis-engine.mjs/);
+ assert.doesNotMatch(sw,/ns-hypothesis-engine.mjs/);
  assert.doesNotMatch(ui,/localStorage|sessionStorage|sendBeacon|fetch\(/);
  assert.doesNotMatch(ui,/OpenAkinator|Akinator|genie|guess your character/i);
 });
