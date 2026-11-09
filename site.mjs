@@ -51,6 +51,7 @@ import {renderAtlasGuide} from './ns-atlas-guide.mjs';
 import {renderAtlasTool} from './ns-atlas-tool.mjs';
 import {atlasGet} from './ns-atlas-core.mjs';
 import {renderNeedsConsole} from './ns-needs-console.mjs';
+import {renderIntegratedWorkbook} from './ns-integrated-workbook.mjs';
 import {renderNeedsActivity} from './ns-needs-activities.mjs';
 import {getNeedsMode} from './ns-needs-catalog.mjs';
 import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
@@ -852,6 +853,7 @@ function route() {
       (["need","route-tool","route-topic","route-activity","route-atlas"].includes(currentName) && linkName === "home") ||
       (currentName === "steady-tool" && linkName === "home") ||
       (currentName === "problem" && linkName === "home") ||
+      (["workbook","workbook-topic"].includes(currentName) && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
       (["tool", "play", "guided"].includes(currentName) && linkName === "tools") ||
       (currentName === "post" && linkName === "blog");
@@ -863,34 +865,47 @@ function route() {
       home: () => homePage({learningView:"home"}),
       guide: () => renderNSFieldGuide(main, routeParts.slice(1).map(safeRoutePart), accountState()),
       help: () => renderNeedsConsole(main),
-      navigate: () => renderNeedsConsole(main,routeParts.slice(1).map(safeRoutePart)),
-      need: () => renderNeedsActivity(main,safeRoutePart(id)),
+      navigate: () => {
+        const bits=routeParts.slice(1).map(safeRoutePart);
+        if(bits[0]==='atlas'&&bits[1]&&atlasGet(bits[1]))renderIntegratedWorkbook(main,{topic:bits[1]});
+        else if(bits[0]==='atlas')renderIntegratedWorkbook(main,{mode:'learn',option:'browse'});
+        else renderNeedsConsole(main,bits);
+      },
+      workbook: () => renderIntegratedWorkbook(main,{mode:safeRoutePart(id),option:safeRoutePart(routeParts[2])}),
+      "workbook-topic": () => renderIntegratedWorkbook(main,{topic:safeRoutePart(id)}),
+      need: () => {
+        const target=safeRoutePart(id);
+        if(target==='support-safety'){renderNeedsActivity(main,target);return;}
+        const match=getNeedsMode('regulate')?.options.find(x=>x.target===target);
+        const mode=match?'regulate':target.startsWith('process-')?'process':null;
+        const found=match||(mode&&getNeedsMode(mode)?.options.find(x=>x.target===target));
+        if(found)renderIntegratedWorkbook(main,{mode,option:found.id});
+        else renderNeedsActivity(main,target);
+      },
       "route-activity": () => {
         const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]),target=safeRoutePart(routeParts[3]);
         const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='activity'&&x.target===target);
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate';return;}
-        renderNeedsActivity(main,target,{mode,option:choice});
+        if(target==='support-safety'){renderNeedsActivity(main,target,{mode,option:choice});return;}
+        renderIntegratedWorkbook(main,{mode,option:choice});
       },
       "route-tool": () => {
         const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]),target=safeRoutePart(routeParts[3]);
         const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='tool'&&x.target===target);
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate';return;}
-        renderTool(main,target);enhanceToolGuide(main,target);
-        attachPathGuide(main,mode,choice,{position:'start'});
+        renderIntegratedWorkbook(main,{mode,option:choice});
       },
       "route-topic": () => {
         const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]),target=safeRoutePart(routeParts[3]);
         const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='topic'&&x.target===target);
         if(!selected||!pathGuideForOption(mode,choice)||!atlasGet(target)){location.hash='#navigate';return;}
-        renderReasoningGuide(main,target);
-        attachPathGuide(main,mode,choice,{position:'start'});
+        renderIntegratedWorkbook(main,{mode,option:choice});
       },
       "route-atlas": () => {
         const mode=safeRoutePart(id),choice=safeRoutePart(routeParts[2]);
         const selected=getNeedsMode(mode)?.options.find(x=>x.id===choice&&x.type==='atlas');
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate/atlas';return;}
-        renderNeedsConsole(main,['atlas']);
-        attachPathGuide(main,mode,choice);
+        renderIntegratedWorkbook(main,{mode,option:choice});
       },
       problem: () => {const key=safeRoutePart(id);if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
@@ -925,9 +940,9 @@ function route() {
         const guideId=safeRoutePart(id);
         const toolId=safeRoutePart(routeParts[2]||'');
         if(!steadyGuide(guideId)){location.hash='#navigate/regulate';return;}
-        renderTool(main,toolId);
-        enhanceToolGuide(main,toolId);
-        attachSteadyGuidebookToTool(main,toolId,guideId);
+        const match=getNeedsMode('regulate')?.options.find(x=>x.target===guideId);
+        if(match)renderIntegratedWorkbook(main,{mode:'regulate',option:match.id});
+        else {renderTool(main,toolId);enhanceToolGuide(main,toolId);attachSteadyGuidebookToTool(main,toolId,guideId);}
       },
       play: () => renderInteractiveTool(main, safeRoutePart(id)),
       guided: () => renderLifeNavigation(main, safeRoutePart(id)),
@@ -970,6 +985,8 @@ function route() {
       ? (main.querySelector("h1")?.textContent?.trim() || "Learn")
       : name === "navigate"
       ? "Find your next step"
+      : name === "workbook" || name === "workbook-topic"
+      ? (main.querySelector('h1')?.textContent?.trim() || 'Interactive field guide')
       : name === "help"
       ? "Find your next step"
       : ["need","steady-tool","route-activity","route-tool","route-topic","route-atlas"].includes(name)
@@ -1002,6 +1019,8 @@ function route() {
     guide: "My Field Guide",
     help: "Home",
     navigate: "Home",
+    workbook: "Interactive field guide",
+    "workbook-topic": "Interactive field guide",
     need: "Your next step",
     "steady-tool": "Your next step",
     "route-activity": "Your next step",
@@ -1043,7 +1062,7 @@ function route() {
       : appLabels[currentName] || (title || "Nobody’s Simple");
   const pageKicker = (currentName === "home" || startRoutes.has(currentName))
     ? "Today"
-    : ["help", "navigate", "need", "steady-tool", "route-activity","route-tool","route-topic","route-atlas", "questions", "navigator", "compass"].includes(currentName)
+    : ["help", "navigate", "need", "steady-tool", "workbook", "workbook-topic", "route-activity","route-tool","route-topic","route-atlas", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
     : currentName === "problem" ? "Understand a problem"
     : currentName === "investigate" ? "Understand a problem"
