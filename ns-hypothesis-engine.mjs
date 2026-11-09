@@ -400,7 +400,8 @@ export function describeFormulation(state,candidate){
 export function formulationPlainText(state){
  const r=hypothesisResult(state);if(!r)return '';
  return ['Nobody’s Simple | Hypothesis Generator',r.track.title,'',
-  'Situation: '+r.situation,'Observations considered: '+r.examined,r.summary,'',
+  'Situation: '+r.situation,'Observations considered: '+r.examined,r.summary,
+   'Person-rated new insight: '+({new:'New lead worth testing',repeat:'Mainly restated prior knowledge',uncertain:'Still uncertain'}[state.depthNovelty]||'Not rated'),',
   'Specific details explicitly selected:',...(caseDetailReport(state).length?caseDetailReport(state):['Not established']),'',
   'Functional investigation — person-selected answers:',...(investigationReport(state).length?investigationReport(state):['Not investigated']),
   'Adaptive causal inquiry — person-selected answers:',...(adaptiveReport(state).length?adaptiveReport(state):['Not investigated']),'',
