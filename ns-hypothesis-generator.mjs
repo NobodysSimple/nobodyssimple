@@ -148,7 +148,7 @@ function safetyPage(state){
   'If you or someone else is in immediate danger, call 999. If you can, contact an appropriate service or trusted person.')+'</p>'+
   '<div class="ns-hypo-safety-links">'+supportLinks(kind)+'</div>'+
   '<div class="ns-hypo-safety-buttons">'+href('#need/support-safety','See further support')+
-  (state.answers.length?'<button type="button" data-hypo-back>← Change my last answer</button>':'<button type="button" data-hypo-restart>Start a different topic</button>')+'</div>'+
+  (state.answers.length||state.drill?.events?.length?'<button type="button" data-hypo-back>← Change my last answer</button>':'<button type="button" data-hypo-restart>Start a different topic</button>')+'</div>'+
   '<p>No formulation or private responses are shown on this screen.</p></section>');
 }
 function feedbackButtons(candidate){
