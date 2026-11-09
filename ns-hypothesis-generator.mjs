@@ -236,7 +236,7 @@ function graphNodeButton(node,selected){
   '<span class="ns-hypo-node-overline">'+e(layers[node.layer]||node.layer)+'</span>'+
   '<strong>'+e(node.summary)+'</strong>'+
   (node.evidence?.length?'<span class="ns-hypo-node-observations">'+
-   node.evidence.slice(0,node.layer==='mechanism'?1:2).map(item=>
+   node.evidence.slice(0,node.layer==='mechanism'?3:8).map(item=>
     '<span><b>'+e(item.answer)+'</b> · '+e(item.question)+'</span>').join('')+
    '</span>':'')+
   '<span class="ns-hypo-node-detail">'+
