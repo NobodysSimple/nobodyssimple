@@ -60,7 +60,7 @@ test('after a few answers, results show alternatives, uncertainty, supporting an
  await expect(page.locator('.ns-hypo-result-hero')).toBeVisible();
  await expect(page.locator('.ns-hypo-result-card')).toHaveCount(3);
  await expect(page.locator('.ns-hypo-result-card').first()).toContainText('Possibility 1');
- await page.locator('.ns-hypo-full-evidence summary').click();
+ await page.locator('.ns-hypo-full-evidence > summary').click();
  await expect(page.locator('.ns-hypo-observations').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-counters').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-need').first()).toContainText('not something we have inferred');
