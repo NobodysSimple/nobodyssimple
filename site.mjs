@@ -933,7 +933,9 @@ function route() {
       blog,
       writing: blog,
       tools: () => {
-        cleanupToolDiscovery=renderToolDiscovery(main,id||'');
+        // The separate, uncontextualised tools catalogue is retired. Old
+        // #tools bookmarks enter the supported choice-led navigation instead.
+        location.replace('#navigate');
       },
       tool: () => {
         const toolId = safeRoutePart(id);
