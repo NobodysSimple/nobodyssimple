@@ -14,6 +14,13 @@ async function answerOne(page,prefer='probably'){
 test('guided identity interview can investigate presentation preferences without imposing an identity label',async({page})=>{
  await open(page);
  await page.locator('[data-hypo-track="identity"]').click();
+ await expect(page.locator('#ns-hypo-question')).toContainText('personal identity and expression');
+ await page.locator('[data-hypo-drill-answer="IDENTITY-GROOMING"]').click();
+ await page.locator('[data-hypo-drill-answer="IDENTITY-GROOMING-SHAVING-LEGS"]').click();
+ await page.locator('[data-hypo-drill-answer="yes"]').click();
+ await page.locator('[data-hypo-drill-answer="mostly_enjoyable"]').click();
+ await page.locator('[data-hypo-drill-answer="social_expectation"]').click();
+ await page.locator('[data-hypo-drill-answer="with_other_people"]').click();
  await expect(page.locator('#ns-hypo-question')).toContainText('grooming');
  await expect(page.locator('.ns-hypo-progress')).toContainText('No fixed question limit');
  await page.locator('[data-hypo-answer="yes"]').click();
@@ -29,7 +36,9 @@ test('guided identity interview can investigate presentation preferences without
  await expect(page.locator('.ns-hypo-graph-branches .ns-hypo-graph-node').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-graph .ns-hypo-node-observations').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-node-observations').first()).toContainText(/Yes|Probably/);
- await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="presenting"]')).toContainText('identity');
+ await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="presenting"]')).toContainText('shaving legs');
+ await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="experience"]')).toContainText('Mostly enjoyable');
+ await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="context"]')).toContainText('With other people');
  await expect(page.locator('.ns-hypo-pattern')).toContainText('cannot establish gender identity');
  const pageText=await page.locator('.ns-hypo-graph').innerText();
  expect(pageText).not.toMatch(/you are (transgender|gay|bisexual)|a (hidden|childhood) wound/i);
@@ -37,6 +46,7 @@ test('guided identity interview can investigate presentation preferences without
 test('a graph node can be challenged, rewritten and selectively re-investigated',async({page})=>{
  await open(page);
  await page.locator('[data-hypo-track="identity"]').click();
+ await page.locator('[data-hypo-drill-skip]').click();
  for(let i=0;i<10;i++)await answerOne(page,i%3?'probably':'no');
  await page.locator('[data-hypo-results]').first().click();
  const branches=page.locator('.ns-hypo-graph-branches [data-hypo-node]');
@@ -58,6 +68,7 @@ test('a graph node can be challenged, rewritten and selectively re-investigated'
 test('all previous answers can be revised and the formulation rebuilt',async({page})=>{
  await open(page);
  await page.locator('[data-hypo-track="overthinking"]').click();
+ await page.locator('[data-hypo-drill-skip]').click();
  for(let i=0;i<9;i++)await answerOne(page,i%2?'probably':'yes');
  await page.locator('[data-hypo-results]').first().click();
  await page.locator('.ns-hypo-answer-history summary').click();
@@ -75,6 +86,7 @@ test('all previous answers can be revised and the formulation rebuilt',async({pa
 test('graph is still provisional when the user says unsure to every question',async({page})=>{
  await open(page);
  await page.locator('[data-hypo-track="identity"]').click();
+ await page.locator('[data-hypo-drill-skip]').click();
  for(let i=0;i<11;i++)await answerOne(page,'unsure');
  await page.locator('[data-hypo-results]').first().click();
  await expect(page.locator('.ns-hypo-result-hero')).toContainText('not enough distinguishing information');
@@ -85,6 +97,7 @@ test('graph is still provisional when the user says unsure to every question',as
 test('graph nodes and revision controls fit desktop/mobile and meet critical accessibility checks',async({page})=>{
  await open(page);
  await page.locator('[data-hypo-track="identity"]').click();
+ await page.locator('[data-hypo-drill-skip]').click();
  for(let i=0;i<9;i++)await answerOne(page,i%3?'probably-not':'probably');
  await page.locator('[data-hypo-results]').first().click();
  const audit=async context=>{
