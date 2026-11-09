@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 import {
  TRACK_DRILL_CATEGORY,SUBTYPE_COUNTS,SUBTYPE_NODES,subtypeNode,subtypeChildren,
  beginSubtypeDrill,subtypeStage,subtypeQuestion,answerSubtypeDrill,
@@ -41,6 +42,11 @@ test('exact source-atlas subtype count, IDs, tree depth and parent relationships
  const thinking=pick(overthinking,'CHECKING');
  assert.equal(subtypeStage(thinking),'cluster');
  assert.equal(thinking.categoryId,'CHECKING');
+});
+test('client navigation labels and canonical source IDs match the uploaded 545-node atlas exactly',()=>{
+ const canonical=SUBTYPE_NODES.map(n=>[n.id,n.label,n.level,n.parent||''].join('|')).join('\n');
+ const sha=createHash('sha256').update(canonical).digest('hex');
+ assert.equal(sha,'f55e3055e99d6df3123d563b01798e4864dda3977fa9124031ef31e8b6e83dfc');
 });
 test('every one of 440 exact experiences can be selected in a valid question flow',()=>{
  for(const n of SUBTYPE_NODES.filter(n=>n.level==='specific_experience')){
