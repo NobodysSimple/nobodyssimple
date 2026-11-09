@@ -59,7 +59,7 @@ function landing(){
   '<div class="ns-hypo-area-grid">'+subtypeChildren('ROOT').map(n=>
   '<button type="button" data-hypo-category="'+e(n.id)+'">'+e(n.label)+
   '<span aria-hidden="true"> →</span></button>').join('')+'</div>'+
-  '<p>Some less-common topics still use general follow-up questions after the exact details. The 21-area taxonomy is an editorial prototype, not a clinical classification.</p></details>'+
+  '<p>Where no suitable explanatory interview has been reviewed, Nobody will record your exact experience without guessing a psychological cause. The taxonomy is an editorial prototype, not a diagnosis.</p></details>'+
   '<details class="ns-hypo-search"><summary>Or look for a named difficulty in the psychological atlas</summary>'+
   '<label for="ns-hypo-search-input">Search topics</label><input id="ns-hypo-search-input" type="search" data-hypo-search'+
   ' placeholder="e.g. rumination, insomnia, perfectionism" autocomplete="off">'+
@@ -275,7 +275,7 @@ function resultPage(state,selectedNode=''){
   '<div data-hypo-node-editor>'+nodeEditor(r,selectedNode)+'</div>'+
   '<section class="ns-hypo-possibilities"><div class="ns-hypo-section-head"><span>03</span><div>'+
   '<p class="ns-hypo-eyebrow">REASONS FOR AND AGAINST</p><h2>Compare our possible explanations.</h2></div></div>'+
-  '<p>These are ranked by uncalibrated relative compatibility with your answers. They are not measured likelihoods, diagnoses or a prediction of your future.</p>'+
+  (r.alternatives.length?'<p>These are ranked by uncalibrated relative compatibility with your answers. They are not measured likelihoods, diagnoses or a prediction of your future.</p>':'<p>No specific explanatory model is asserted for this area. Your own observations remain the primary record.</p>')+
   (r.alternatives.length?'<details class="ns-hypo-full-evidence"><summary>Open the detailed evidence for each possibility ('+r.alternatives.length+')</summary>'+
   '<div class="ns-hypo-results-list">'+r.alternatives.map((c,i)=>resultCard(state,c,i)).join('')+'</div></details>':'<p class="ns-hypo-graph-unknown">This synthetic atlas area does not yet have a reviewed explanatory interview. Nobody will not invent a psychological mechanism for your experience.</p>')+'</section>'+
   answerHistory(state)+
