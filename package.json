@@ -1,1 +1,14 @@
-{"name":"nobodyssimple","private":true,"type":"module","scripts":{"test":"node --test tests/free/*.test.mjs","check":"node tests/free/check.mjs"}}
+{
+  "name": "nobodyssimple",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/free/*.test.mjs",
+    "check": "node tests/free/check.mjs",
+    "test:browser": "playwright test --config=playwright.config.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.55.0"
+  }
+}

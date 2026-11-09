@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v145-needs-navigation';
+const CACHE = 'nobodyssimple-release-v146-steady-guidebooks';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -21,7 +21,8 @@ const INSTALL_OPTIONAL = [
   'ns-atlas-extended.mjs','ns-atlas-variations.mjs','ns-atlas-extended-variations.mjs','ns-atlas-core.mjs','ns-atlas-console.mjs',
   'ns-atlas-session.mjs','ns-atlas-worksheets.mjs','ns-atlas-guide.mjs','ns-atlas-tool.mjs','ns-atlas.css',
   'ns-reasoning-model.mjs','ns-reasoning-console.mjs','ns-reasoning-bridge.mjs','ns-reasoning.css',
-  'ns-needs-catalog.mjs','ns-needs-console.mjs','ns-needs-activities.mjs','ns-needs.css'
+  'ns-needs-catalog.mjs','ns-needs-console.mjs','ns-needs-activities.mjs','ns-needs.css',
+  'ns-steady-guide-utils.mjs','ns-steady-guides-a.mjs','ns-steady-guides-b.mjs','ns-steady-guidebook.mjs','ns-steady-guidebook.css'
 ];
 const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
 const SAFE_QUERY = /^\?v=[a-z0-9._-]{1,40}$/i;

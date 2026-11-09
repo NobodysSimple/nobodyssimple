@@ -23,3 +23,19 @@ jobs:
         run: npm run check
       - name: Run JavaScript unit and regression tests
         run: npm test
+
+  browser:
+    name: Mobile, desktop and automated accessibility smoke checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install browser test tools
+        run: npm install --no-audit --no-fund --no-package-lock
+      - name: Install Chromium and system dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Run browser, mobile and accessibility checks
+        run: npm run test:browser

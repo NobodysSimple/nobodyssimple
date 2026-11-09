@@ -3,6 +3,7 @@
  */
 import {escapeHTML as escape} from './core.mjs';
 import {getNeedsActivity} from './ns-needs-catalog.mjs';
+import {attachSteadyGuidebook} from './ns-steady-guidebook.mjs';
 const e=value=>escape(String(value??''));
 export const PROCESSING_ACTIVITIES=Object.freeze({
  'process-feel':{
@@ -178,9 +179,10 @@ function renderSteady(root,id){
    activity.strategies.map((p,i)=>'<button type="button" data-steady-option="'+i+'" aria-pressed="'+(i===active)+'">'+e(p.title)+'</button>').join('')+'</div>'+
    '<div class="ns-steady-content"><h3>'+e(option.title)+'</h3><ol>'+
    option.steps.map(s=>'<li>'+e(s)+'</li>').join('')+'</ol><p>Notice whether this is useful. If not, you can choose a different approach or stop.</p></div>'+
-   '<div class="ns-needs-actions"><a class="ns-needs-action-link" href="#tool/'+e(option.tool)+'">Open a related interactive tool →</a>'+
+   '<div class="ns-needs-actions"><a class="ns-needs-action-link" href="#steady-tool/'+e(id)+'/'+e(option.tool)+'">Open a related interactive tool →</a>'+
    '<a class="ns-needs-action-link secondary" href="#navigate/process">I would rather process how I feel</a></div></section>'+
    '<p class="ns-needs-footnote">There is no required outcome or time limit. Strategies differ in suitability and should not substitute for care when symptoms are new or serious.</p>',chosen.mode);
+  attachSteadyGuidebook(root,id,{label:'Open the full guidebook'});
   root.querySelectorAll('[data-steady-option]').forEach(button=>button.addEventListener('click',()=>{
    active=Number(button.dataset.steadyOption);paint();
   }));

@@ -52,6 +52,7 @@ import {renderAtlasTool} from './ns-atlas-tool.mjs';
 import {atlasGet} from './ns-atlas-core.mjs';
 import {renderNeedsConsole} from './ns-needs-console.mjs';
 import {renderNeedsActivity} from './ns-needs-activities.mjs';
+import {attachSteadyGuidebookToTool,steadyGuide} from './ns-steady-guidebook.mjs';
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
 import { renderToolDiscovery } from './ns-tool-library.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
@@ -847,6 +848,7 @@ function route() {
       (startRoutes.has(currentName) && linkName === "home") ||
       (currentName === "investigate" && linkName === "home") ||
       (currentName === "need" && linkName === "home") ||
+      (currentName === "steady-tool" && linkName === "home") ||
       (currentName === "problem" && linkName === "home") ||
       (["learn", "writing", "watch"].includes(currentName) && linkName === "library") ||
       (["tool", "play", "guided"].includes(currentName) && linkName === "tools") ||
@@ -888,7 +890,15 @@ function route() {
       tool: () => {
         const toolId = safeRoutePart(id);
         if(toolId.startsWith('atlas-')&&atlasGet(toolId.slice(6))){renderReasoningTool(main,toolId.slice(6));}
-        else {renderTool(main, toolId);enhanceToolGuide(main, toolId);}
+        else {renderTool(main, toolId);enhanceToolGuide(main, toolId);attachSteadyGuidebookToTool(main,toolId);}
+      },
+      "steady-tool": () => {
+        const guideId=safeRoutePart(id);
+        const toolId=safeRoutePart(routeParts[2]||'');
+        if(!steadyGuide(guideId)){location.hash='#navigate/regulate';return;}
+        renderTool(main,toolId);
+        enhanceToolGuide(main,toolId);
+        attachSteadyGuidebookToTool(main,toolId,guideId);
       },
       play: () => renderInteractiveTool(main, safeRoutePart(id)),
       guided: () => renderLifeNavigation(main, safeRoutePart(id)),
@@ -933,7 +943,7 @@ function route() {
       ? "Find your next step"
       : name === "help"
       ? "Find your next step"
-      : name === "need"
+      : name === "need" || name === "steady-tool"
       ? (main.querySelector('h1')?.textContent?.trim() || 'Your next step')
       : name === "support"
       ? "Get help"
@@ -964,6 +974,7 @@ function route() {
     help: "Home",
     navigate: "Home",
     need: "Your next step",
+    "steady-tool": "Your next step",
     investigate: "Investigate & Learn",
     problem: "Your Psychological Guide",
     tools: "Tools",
@@ -999,7 +1010,7 @@ function route() {
       : appLabels[currentName] || (title || "Nobody’s Simple");
   const pageKicker = (currentName === "home" || startRoutes.has(currentName))
     ? "Today"
-    : ["help", "navigate", "need", "questions", "navigator", "compass"].includes(currentName)
+    : ["help", "navigate", "need", "steady-tool", "questions", "navigator", "compass"].includes(currentName)
       ? "Start here"
     : currentName === "problem" ? "Understand a problem"
     : currentName === "investigate" ? "Understand a problem"
