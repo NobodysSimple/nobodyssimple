@@ -44,8 +44,8 @@ test('every one of 53 console choices leads directly to a complete integrated wo
  assert.equal(workbookForChoice('unknown','anything'),null);
  assert.equal(workbookForChoice('regulate','unknown'),null);
 });
-test('all 166 existing atlas topics now offer an integrated educational page with situation-specific targets',()=>{
- assert.equal(atlasProblemIndex.length,166);
+test('all existing and new atlas entries open an integrated educational page',()=>{
+ assert.equal(atlasProblemIndex.length,492);
  for(const p of atlasProblemIndex){
   const w=workbookForTopic(p.id);
   assert.ok(w,'no workbook for '+p.id);
