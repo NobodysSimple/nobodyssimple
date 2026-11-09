@@ -85,8 +85,8 @@ test('the previous ten frustrating use cases now point to explicit visitor selec
  assert.ok(getNeedsMode('learn').options.some(o=>o.target==='insomnia'));
 });
 test('all original topics and the inclusive experience inventory are searchable without symptom inference',()=>{
- assert.equal(atlasProblemIndex.length,492);
- assert.equal(getSubjectMatchesForTest('','').length,492);
+ assert.equal(atlasProblemIndex.length,518);
+ assert.equal(getSubjectMatchesForTest('','').length,518);
  assert.ok(getSubjectMatchesForTest('insomnia','').some(x=>x.id==='insomnia'));
  assert.ok(getSubjectMatchesForTest('rumination','').some(x=>x.id==='rumination'));
  assert.ok(getSubjectMatchesForTest('','body').length>15);
