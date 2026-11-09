@@ -26,6 +26,8 @@ For the broad **overthinking** starting area, the visitor first chooses among se
 
 The flow has a back action that replays the valid question history and invalidates withdrawn details. A potential acute physical-health concern such as the new-symptom category interrupts ordinary formulation and shows medical-support guidance rather than an inferred psychological explanation. The existing safeguarding and source-model protections continue.
 
+**Coverage safeguard:** For optional source-atlas areas without a reviewed route (for example, sexual pain or substance withdrawal), the question sequence records selected facts and stops rather than borrowing an unrelated identity/procrastination hypothesis model. Safety and medical-priority categories route to support. A detailed explanatory interview for those topics is a later stage.
+
 **Not yet implemented:** Multi-experience selection; compound mixed or free-form answers; graph edges supported by verified repeated within-person sequences; import of all 12,716 authored questions as a conditional authoring system; use of the 72-mechanism network for learned classification; prospective clinical validity or calibrated probabilities.
 
 ### Roadmap to a final evidence-tested feature
