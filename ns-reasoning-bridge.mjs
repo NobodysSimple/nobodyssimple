@@ -112,18 +112,19 @@ export function renderReasoningGuide(root,id){
  goUnderstand.type='button';goUnderstand.onclick=()=>show('understand');recognition.append(goUnderstand);
  const goAction=el('button','ns-reason-next','Continue: choose a useful next step →');
  goAction.type='button';goAction.onclick=()=>show('act');understanding.append(goAction);
- const alternatives=evidence.querySelectorAll('[data-reason-alternative]');
- alternatives.forEach(button=>button.addEventListener('click',()=>{
+ evidence.addEventListener('click',event=>{
+  const button=event.target.closest('[data-reason-alternative]');
+  if(!button)return;
   const target=button.dataset.reasonAlternative;
   if(!atlasProfile(target))return;
   const current=readAtlasSession(id)||session;
   writeAtlasSession({...current,id:target,maintainer:'',signs:[],contributors:[],custom:[],notes:{},alternativeFrom:id});
   location.hash='#problem/'+target;
- }));
+ });
  review.querySelectorAll('[data-reason-review]').forEach(button=>button.addEventListener('click',()=>{
   const code=button.dataset.reasonReview;
   const current=readAtlasSession(id)||session;
-  const next=current.reasoning?reviewReasoning(current.reasoning,code):null;
+  const next=current.reasoning?reviewReasoning(current.reasoning,code,id):null;
   writeAtlasSession({...current,id,reasoning:next||current.reasoning,
     review:[...(current.review||[]),{code,at:new Date().toISOString()}]});
   const message=next?.reviewMessage||(
@@ -133,6 +134,7 @@ export function renderReasoningGuide(root,id){
    code==='helped'?'That is a useful observation, but not proof of a cause.':
    'You can keep the explanation open and revisit it later.');
   get(review,'[data-reason-review-message]').textContent=message;
+  if(next)evidence.innerHTML=(inheritedSafety?warningMarkup(inheritedSafety):'')+evidencePanel(id,{...current,reasoning:next});
   if(code==='not-fit')show('understand');
  }));
  // Explicit user choice to inspect more material rather than a compulsory workbook.
@@ -171,7 +173,7 @@ export function renderReasoningTool(root,id){
   ].map(([key,label])=>'<button type="button" data-tool-review="'+key+'">'+e(label)+'</button>').join('')+'</div><p data-tool-review-message aria-live="polite"></p></section>';
   host.querySelectorAll('[data-tool-review]').forEach(b=>b.addEventListener('click',()=>{
    const value=b.dataset.toolReview;const current=readAtlasSession(id)||{id};
-   const state=current.reasoning?reviewReasoning(current.reasoning,value):null;
+   const state=current.reasoning?reviewReasoning(current.reasoning,value,id):null;
    writeAtlasSession({...current,id,reasoning:state||current.reasoning,
     review:[...(current.review||[]),{code:value,at:new Date().toISOString()}]});
    get(host,'[data-tool-review-message]').innerHTML='<p>'+e(state?.reviewMessage||

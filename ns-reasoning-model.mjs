@@ -254,16 +254,31 @@ export function answerQuestion(state,qid,oid){
  candidates.push({id,score:5+weight,supports:[question.reason+': '+option.label],challenges:[]});}
  return {...state,candidates:candidates.sort((a,b)=>b.score-a.score),answers:[...state.answers.filter(a=>a.qid!==qid),{qid,oid,label:option.label,process:option.process||null}],safety};
 }
-export function reviewReasoning(state,feedback){
+export function reviewReasoning(state,feedback,focusId=null){
  const code=String(feedback||'unsure');
- const top=rankedCandidates(state)[0];
+ const top=(focusId&&state.candidates.find(c=>c.id===focusId))||rankedCandidates(state)[0];
  const revision=[...state.revision,{topic:top?.id||null,feedback:code,time:Date.now()}];
+ // Feedback modifies the provisional candidate ranking; these are heuristic
+ // signals, not diagnoses or evidence that an intervention caused an outcome.
+ const candidates=state.candidates.map(candidate=>{
+  if(candidate.id!==top?.id)return {...candidate,
+    score:candidate.score+(code==='barrier'&&['work-stress','too-many-tasks','access-needs','caregiver-burnout','housing'].includes(candidate.id)?2:0)};
+  if(code==='not-fit')return {...candidate,score:candidate.score-5,
+    challenges:[...candidate.challenges,'You reported that this explanation does not fit your experience.']};
+  if(code==='no-change')return {...candidate,score:candidate.score-1,
+    challenges:[...candidate.challenges,'A trial produced no perceived change; this does not by itself rule out the explanation.']};
+  if(code==='barrier')return {...candidate,score:candidate.score-2,
+    challenges:[...candidate.challenges,'External conditions prevented a fair test of this explanation.']};
+  if(code==='helped')return {...candidate,score:candidate.score+1,
+    supports:[...candidate.supports,'You reported a useful outcome; a single attempt cannot establish a cause.']};
+  return candidate;
+ });
  const changes=code==='not-fit'?'This explanation may not fit. Consider another possibility or a different context.':
  code==='no-change'?'The action did not produce the hoped-for change. Review whether the target was relevant, feasible and safe.':
  code==='helped'?'The action seemed useful. This observation is encouraging but does not prove the proposed cause.':
  code==='barrier'?'A practical barrier prevented a fair test. Consider adapting the environment or demands first.':
  'The result remains uncertain. You can keep several hypotheses open.';
- return {...state,revision,reviewMessage:changes};
+ return {...state,candidates,revision,reviewMessage:changes};
 }
 export function rankedCandidates(state,limit=5){
  if(!state)return[];

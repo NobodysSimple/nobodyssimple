@@ -59,6 +59,19 @@ test('question sequences stop and preserve alternatives rather than inventing ce
  assert.ok(st.revision.length===1);
  assert.match(st.reviewMessage,/may not fit/i);
 });
+test('reviewing an explanation changes the targeted hypothesis without pretending to establish causality',()=>{
+ let st=startReasoning('I keep checking my messages');
+ st=answerQuestion(st,nextQuestion(st).id,'routine');
+ const original=st.candidates.find(c=>c.id==='binge-scroll');
+ const revised=reviewReasoning(st,'not-fit','binge-scroll');
+ const changed=revised.candidates.find(c=>c.id==='binge-scroll');
+ assert.ok(changed.score<original.score);
+ assert.ok(changed.challenges.some(x=>/does not fit/i.test(x)));
+ assert.ok(revised.candidates.find(c=>c.id==='checking').score===st.candidates.find(c=>c.id==='checking').score);
+ const helpful=reviewReasoning(st,'helped','binge-scroll');
+ assert.ok(helpful.candidates.find(c=>c.id==='binge-scroll').supports.some(x=>/cannot establish a cause/i.test(x)));
+});
+
 test('the ten educational sections are retained inside three visible guide stages',()=>{
  assert.deepEqual(LEARNING_STAGES.flatMap(x=>x.sections).sort((a,b)=>a-b),[0,1,2,3,4,5,6,7,8,9]);
  assert.equal(evidenceMetadata('work-stress').reviewStatus,'Not independently clinically validated');
