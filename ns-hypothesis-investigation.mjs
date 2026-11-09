@@ -32,7 +32,7 @@ export const INVESTIGATION_QUESTIONS=Object.freeze([
  ['unavailable','He is emotionally unavailable'],
  ['intimidation','He threatens, intimidates or makes me afraid'],
  ['inconsistent','His treatment changes unpredictably']
- ],{after:'who',when:'father',why:'Separates a person's interpretation of another from observable actions.'}),
+ ],{after:'who',when:'father',why:'Separates an attributed interpretation from observable actions.'}),
  Q('event','sequence.trigger','context',
  'In a recent instance, what happened just BEFORE your reaction?',[
  ['criticism','I was criticised, dismissed or judged'],['uncertainty','I did not know what would happen'],
