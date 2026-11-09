@@ -23,7 +23,7 @@ function parse(){
  };
  for(const line of compact.trim().split('\n')){
   const [id,label,parts]=line.split('|');push(id,label,'category');
-  for(const cluster of parts.split(',')){
+  for(const cluster of parts.split(/,(?=[A-Z][A-Z0-9]+-[A-Z0-9-]+:)/)){
    const [prefix,leaves]=cluster.split('>');
    const cut=prefix.indexOf(':');const cid=prefix.slice(0,cut),clabel=prefix.slice(cut+1);
    push(cid,clabel,'cluster',id);
