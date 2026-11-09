@@ -11,10 +11,9 @@ async function answerOne(page,prefer='probably'){
  await page.locator('[data-hypo-answer="'+(id==='unsafe'||id==='medical-sleep'?'no':prefer)+'"]').click();
  return id;
 }
-test('shaving-legs example gets a nuanced presentation pathway, not an imposed identity label',async({page})=>{
+test('guided identity interview can investigate presentation preferences without imposing an identity label',async({page})=>{
  await open(page);
- await page.locator('[data-hypo-description]').fill('I like shaving my legs, but I am unsure what that says about me as a man');
- await page.locator('[data-hypo-from-description]').click();
+ await page.locator('[data-hypo-track="identity"]').click();
  await expect(page.locator('#ns-hypo-question')).toContainText('grooming');
  await expect(page.locator('.ns-hypo-progress')).toContainText('No fixed question limit');
  await page.locator('[data-hypo-answer="yes"]').click();
@@ -30,7 +29,7 @@ test('shaving-legs example gets a nuanced presentation pathway, not an imposed i
  await expect(page.locator('.ns-hypo-graph-branches .ns-hypo-graph-node').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-graph .ns-hypo-node-observations').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-node-observations').first()).toContainText(/Yes|Probably/);
- await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="presenting"]')).toContainText('shaving my legs');
+ await expect(page.locator('.ns-hypo-graph-node[data-hypo-node="presenting"]')).toContainText('identity');
  await expect(page.locator('.ns-hypo-pattern')).toContainText('cannot establish gender identity');
  const pageText=await page.locator('.ns-hypo-graph').innerText();
  expect(pageText).not.toMatch(/you are (transgender|gay|bisexual)|a (hidden|childhood) wound/i);
