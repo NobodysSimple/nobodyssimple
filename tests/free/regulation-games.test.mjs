@@ -63,10 +63,10 @@ test('every atlas topic has a safe no-writing game selection or human-support-fi
  assert.ok(noGames>=5);
 });
 test('regulation games vary by situation and avoid potentially aggravating options',()=>{
- const get=id=>gamesForGuide(workbookForTopic(id)).map(x=>x.id);
+ const get=id=>{const g=workbookForTopic(id);assert.ok(g,'Expected real atlas topic '+id);return gamesForGuide(g).map(x=>x.id);};
  const anxiety=get('anxiety'),panic=get('panic-experiences'),
   checking=get('checking'),insomnia=get('insomnia'),
-  sensory=get('sensory-overload');
+  sensory=get('sensory');
  assert.ok(anxiety.includes('breath-garden'),'anxiety has optional visual breathing');
  assert.ok(!panic.includes('breath-garden'),'panic must not push a breath-monitoring exercise');
  assert.ok(!checking.includes('pair-garden'),'checking excludes compulsive matching loops');
