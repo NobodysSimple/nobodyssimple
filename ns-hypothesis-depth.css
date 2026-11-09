@@ -414,3 +414,64 @@ body.app-body.ns-shell-v1 #main .ns-hypo-graph-unknown{
  padding:14px 16px;border:1px dashed #b8d1b6;border-radius:11px;
  background:#f8faf4;color:#31553d;font:600 13px/1.65 system-ui,sans-serif;
 }
+
+/* Stage 3 — individual reported observations and explicitly testable edges. */
+body.app-body.ns-shell-v1 #main .ns-hypo-invest-action{
+ background:#265f43!important;color:#fff!important;border-color:#265f43!important;
+ font-weight:800!important;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-functional .ns-hypo-drill-top{
+ max-width:900px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-causal-links{
+ margin:18px 0 10px;padding:19px;border:1px solid #cbdccc;
+ border-radius:16px;background:#f9fcf5;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-causal-links h3{
+ color:#244b34;margin:0 0 8px;font:780 20px/1.3 Georgia,serif;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-causal-links>p{
+ color:#4b6552;font-size:13px;line-height:1.6;margin:0 0 13px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-causal-link-grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:11px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-causal-link{
+ border:1px solid #d5dfd1;background:#fff;border-radius:13px;
+ padding:14px;display:grid;gap:8px;align-content:start;min-width:0;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-causal-link>strong{
+ color:#254b35;font-size:14px;line-height:1.4;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-link-tag{
+ display:inline-block;width:max-content;max-width:100%;border-radius:6px;
+ background:#f3e9d3;color:#695324;padding:4px 7px;
+ font:790 9px/1.3 system-ui,sans-serif;letter-spacing:.05em;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-link-sources{
+ display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:6px;
+ background:#eef5ec;border:1px solid #dbe6d6;border-radius:10px;
+ padding:9px;color:#284d37;font:680 11px/1.45 system-ui,sans-serif;
+ overflow-wrap:anywhere;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-causal-link>p{
+ color:#4a6250;margin:0;font:500 12px/1.55 system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-link-feedback{
+ display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-link-feedback button{
+ border:1px solid #bad4c0;background:#f6faf2;color:#345d42;
+ border-radius:9px;padding:7px 10px;min-height:35px;
+ font:760 11px/1.3 system-ui,sans-serif;cursor:pointer;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-link-feedback button[aria-pressed=true]{
+ border-color:#2b6044;background:#dcefe0;color:#245439;box-shadow:inset 0 0 0 1px #2b6044;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-causal-links button:focus-visible{
+ outline:3px solid #996a12;outline-offset:3px;
+}
+@media(max-width:700px){
+ body.app-body.ns-shell-v1 #main .ns-hypo-causal-links{padding:13px;}
+ body.app-body.ns-shell-v1 #main .ns-hypo-link-sources{grid-template-columns:1fr;gap:3px;text-align:center;}
+}
