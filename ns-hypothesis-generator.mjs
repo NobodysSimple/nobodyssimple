@@ -214,11 +214,14 @@ function domainReasoningSection(state,result){
     tile('Condition you identified',f('primary'))+
     tile('What changed when that condition was different',f('contrast'))+
     tile('Another influence you mentioned',f('additional'))+
+    tile('What feels personally at stake',f('stake'))+
+    tile('Sleep, health or capacity influence',f('body'))+
     tile('Your actual response',f('response'))+
     tile('Immediate effect',f('immediate'))+
     tile('Longer-term consequence',f('later'))+
     tile('Does this pattern repeat?',f('recurrence'))+
     tile('Observation that challenges a simple story',f('exception'))+
+    tile('Protective factor that has actually helped',f('protective'))+
    '</div>':
    '<p>We have not yet investigated a changeable condition, your response and its consequences for this exact experience.</p>')+
   (d.hypotheses.length?
