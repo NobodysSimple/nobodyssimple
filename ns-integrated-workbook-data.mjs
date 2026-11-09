@@ -53,6 +53,7 @@ export function workbookForChoice(modeId,optionId){
   });
   return {id:modeId+'/'+optionId,modeId,optionId,modeTitle:mode.title,tone:mode.tone,title:g.title,lead:g.subtitle,
    what:g.what,cycle:g.possibleLoop,recognise:g.variations,contributors:g.contributors,
+   mechanisms:[],variants:[],
    cautions:g.cautions,goals:g.goals,progress:g.progress,lanes,
    sources:referenceMap([...g.refs,...lanes.flatMap(l=>l.methods.flatMap(m=>m.refs||[]))],STEADY_REFERENCES),
    relatedTarget:option.target,review:g.reviewStatus,kind:'choice',safetyFirst:false,showAtlas:false};
@@ -71,6 +72,7 @@ export function workbookForChoice(modeId,optionId){
  const unsafe=modeId==='relate'&&optionId==='unsafe';
  return {id:modeId+'/'+optionId,modeId,optionId,modeTitle:mode.title,tone:mode.tone,
   title:g.title,lead:g.summary,what:g.what,cycle:g.cycle,recognise:[],contributors:[],
+  mechanisms:[],variants:[],
   cautions:[g.caution],goals:[],progress:'Useful progress may mean clearer understanding, changing a condition, asking for support, making a workable choice or deciding to stop. There is no required emotional outcome.',
   lanes,sources:referenceMap(g.refs,PATH_SOURCES),relatedTarget:option.target,review:'Evidence-informed educational draft · not individually clinically reviewed or validated',
   kind:'choice',showAtlas:option.type==='atlas',safetyFirst:unsafe};
@@ -121,6 +123,8 @@ export function workbookForTopic(topicId){
  return {id:'topic/'+topicId,modeId:'learn',optionId:topicId,modeTitle:'Explore a specific difficulty',
   title:p.title,lead:p.definition,what:p.definition,cycle:Array.isArray(p.cycle)?p.cycle.join(' → '):String(p.cycle||''),
   recognise:signs,contributors:(p.contributors||[]).map(x=>typeof x==='string'?x:x.label),
+  mechanisms:(p.maintainers||[]).map(x=>({id:x.id,label:x.label,detail:x.detail||'',target:x.target||''})),
+  variants:p.variants||[],
   cautions:[p.alert||'Descriptions and hypothetical patterns do not establish a diagnosis or a cause.',
    risk?'Appropriate human support and clinical assessment take priority over self-guided psychological experiments.':'Persistent, severe, new or unfamiliar symptoms may merit clinical or medical assessment.'],
   goals:[],progress:Array.isArray(p.progress)?p.progress.join('; '):String(p.progress||'Progress may include improved functioning and appropriate support.'),
