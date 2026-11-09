@@ -67,6 +67,16 @@ The investigation probes: who is involved; observed interactions separately from
 
 **Not yet delivered:** An expert clinician's open-ended interviewing capabilities, person-specific language understanding, empirically fitted conditional likelihoods, validated inference of latent factors, safe and independently validated treatment recommendations, and the complete domain-specific branching question web. The 19 questions are a **first functional-analysis layer**, not full completion of the entire Stage 3 or a clinical diagnostic engine. Broad score-based candidate ranking remains heuristic and uncalibrated. The next work should expand genuinely differential/conditional questions and test whether new questions predict distinct answers or reveal new facts, rather than rewarding simply longer interviews.
 
+### Multi-observation differential layer
+
+`ns-hypothesis-differentials.mjs` adds **12 original, transparent differential hypotheses** that require combinations of user-selected facts before appearing in the graph. Examples include short-term relief with recurring concerns, reassurance/rechecking loops, loss of autonomy, contextual social safety, sleep/capacity limitations and **effective** responses that should not be labelled maladaptive. Every generated pattern contains its exact supporting answers, an alternative explanation and a counterexample or question that could disconfirm it. These are editorial rules, not trained probabilities or validated clinical causal models.
+
+When somebody has completed only the functional investigation and no informative original questionnaire answers, the results now **abstain from ranking generic mechanisms without evidence**. On the graph, speculative links show both original response options and can be marked *worth testing*, *uncertain* or *wrong*; criticism of a proposed link never rewrites what the person actually reported.
+
+The example "I describe my dad as narcissistic" is explicitly stored as a **person's interpretation**. A separate question asks whether specific behaviour such as dismissal, intimidation or broken commitments occurred. Intimidation diverts to safety support before psychological interpretation. No personality disorder is diagnosed in a third party.
+
+`tests/free/hypothesis-differentials.test.mjs`, `tests/free/hypothesis-investigation.test.mjs` and `tests/browser/hypothesis-investigation.spec.mjs` cover contrasting mechanisms, real-world conditions, unknown answers, safety and challenge controls.
+
 ### Remaining Stage 3 work
 
 Use curated synthetic contrast cases from the ZIP as **test fixtures**, not population samples. Introduce `concept_id`/precondition/gating metadata across the full question pool; compute priority from genuine missing fact slots, explicit competing hypotheses and contraindications, rather than principally from hand-authored signal scores. Add a user-controlled 'not included' outcome and a clinically reviewed question-adequacy rubric. Compare the proposed selector with the present baseline against held-out cases, testing factual precision and redundancy before making the new policy the default.
