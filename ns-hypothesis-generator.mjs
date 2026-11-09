@@ -12,7 +12,7 @@ import {
  questionPool,QUESTION_BY_ID,reviseHypothesisAnswer,focusHypothesisLayer,
  reviseHypothesisNode,HYPOTHESIS_DEEP_QUESTION_COUNT
 } from './ns-hypothesis-engine.mjs';
-import {subtypeQuestion,subtypeNode,subtypeChildren,beginSubtypeDrill,TRACK_FOR_CATEGORY} from './ns-hypothesis-subtype-atlas.mjs';
+import {subtypeQuestion,subtypeNode,subtypeChildren,beginSubtypeDrill,TRACK_FOR_CATEGORY,REVIEWED_INTERVIEW_CATEGORIES} from './ns-hypothesis-subtype-atlas.mjs';
 
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
@@ -212,7 +212,7 @@ function graphSection(result,selectedNode){
  '<div class="ns-hypo-graph-scroll"><div class="ns-hypo-graph-linear">'+
  ['presenting','context','experience','response'].map((id,i)=>(i?connector:'')+button(id)).join('')+
  '</div><div class="ns-hypo-graph-branch-label"><span>↘</span> Several explanations may operate together, or none may fit <span>↙</span></div>'+
- '<div class="ns-hypo-graph-branches">'+nodes.filter(n=>n.layer==='mechanism').map(n=>graphNodeButton(n,selectedNode)).join('')+'</div>'+
+ '<div class="ns-hypo-graph-branches">'+(nodes.some(n=>n.layer==='mechanism')?nodes.filter(n=>n.layer==='mechanism').map(n=>graphNodeButton(n,selectedNode)).join(''):'<p class="ns-hypo-graph-unknown">No reviewed explanation is yet linked to this particular area. Only your actual answers are reported.</p>')+'</div>'+
  '<div class="ns-hypo-graph-link-down" aria-hidden="true">↓ possible consequences to investigate ↓</div>'+
  '<div class="ns-hypo-graph-linear">'+['function','cost','need'].map((id,i)=>(i?connector:'')+button(id)).join('')+'</div>'+
  '<div class="ns-hypo-graph-tension">'+button('tension')+'</div></div>'+
@@ -276,8 +276,8 @@ function resultPage(state,selectedNode=''){
   '<section class="ns-hypo-possibilities"><div class="ns-hypo-section-head"><span>03</span><div>'+
   '<p class="ns-hypo-eyebrow">REASONS FOR AND AGAINST</p><h2>Compare our possible explanations.</h2></div></div>'+
   '<p>These are ranked by uncalibrated relative compatibility with your answers. They are not measured likelihoods, diagnoses or a prediction of your future.</p>'+
-  '<details class="ns-hypo-full-evidence"><summary>Open the detailed evidence for each possibility ('+r.alternatives.length+')</summary>'+
-  '<div class="ns-hypo-results-list">'+r.alternatives.map((c,i)=>resultCard(state,c,i)).join('')+'</div></details></section>'+
+  (r.alternatives.length?'<details class="ns-hypo-full-evidence"><summary>Open the detailed evidence for each possibility ('+r.alternatives.length+')</summary>'+
+  '<div class="ns-hypo-results-list">'+r.alternatives.map((c,i)=>resultCard(state,c,i)).join('')+'</div></details>':'<p class="ns-hypo-graph-unknown">This synthetic atlas area does not yet have a reviewed explanatory interview. Nobody will not invent a psychological mechanism for your experience.</p>')+'</section>'+
   answerHistory(state)+
   '<section class="ns-hypo-final-actions"><div><h2>Keep exploring—or put something into practice</h2>'+
   '<p>There is no fixed question count. Each further question tries to distinguish explanations or investigate a part you challenged. You may also stop, revise, or choose something helpful without deciding on one cause.</p></div>'+
@@ -324,8 +324,9 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
   }
   state=startHypothesis({trackId});
   state={...state,drill:{...beginSubtypeDrill(trackId),categoryId,
-   entryCategoryId:categoryId,possibleCategories:null,clusterId:'',leafId:'',
-   confirmed:false,details:{},events:[],finished:false}};
+   entryCategoryId:categoryId,possibleCategories:null,
+   unsupportedCategory:!REVIEWED_INTERVIEW_CATEGORIES.includes(categoryId),
+   clusterId:'',leafId:'',confirmed:false,details:{},events:[],finished:false}};
   selectedNode='';stage='drill';render(true);
  };
  root.addEventListener('input',event=>{
@@ -347,11 +348,11 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
   if(b.dataset.hypoTrack){begin(b.dataset.hypoTrack,b.dataset.hypoTopic||'');return;}
   if(b.dataset.hypoDrillAnswer&&state?.drill){
    state=answerHypothesisDrill(state,b.dataset.hypoDrillQuestion,b.dataset.hypoDrillAnswer);
-   stage=state.safety?'result':state.drill?.finished?'question':'drill';
+   stage=state.safety?'result':state.drill?.finished?(state.drill.unsupportedCategory?'result':'question'):'drill';
    render(true);return;
   }
   if(b.hasAttribute('data-hypo-drill-skip')&&state?.drill){
-   state=skipHypothesisDrill(state);stage='question';render(true);return;
+   state=skipHypothesisDrill(state);stage=state.drill.unsupportedCategory?'result':'question';render(true);return;
   }
   if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';render(true);return;}
   if(b.hasAttribute('data-hypo-back')){
