@@ -200,7 +200,12 @@ export function reviewHypothesis(state,id,value){
 }
 export function hypothesisResult(state){
  if(!state)return null;
- const alternatives=rankedHypotheses(state,3);
+ const all=rankedHypotheses(state,30);
+ const leading=all.slice(0,3);
+ // A rejected hypothesis stays visible for review: do not silently erase the
+ // user's disagreement merely because its position fell out of the top three.
+ const reviewed=all.filter(c=>!leading.some(x=>x.id===c.id)&&c.feedback!=='unreviewed');
+ const alternatives=[...leading,...reviewed];
  const examined=state.answers.filter(a=>ANSWER_BY_ID[a.answerId]?.value!==0).length;
  const first=alternatives[0],second=alternatives[1];
  const unresolved=examined<3||!first?.positive.length||(first?.score||0)-(second?.score||0)<1;
