@@ -10,7 +10,7 @@ import {
  formulationPlainText,findHypothesisTrack,selectableAtlasTopics,
  answerHypothesisDrill,backHypothesisDrill,skipHypothesisDrill,
  questionPool,QUESTION_BY_ID,reviseHypothesisAnswer,focusHypothesisLayer,
- reviseHypothesisNode,HYPOTHESIS_DEEP_QUESTION_COUNT
+ reviseHypothesisNode,reviewHypothesisLink,HYPOTHESIS_DEEP_QUESTION_COUNT
 } from './ns-hypothesis-engine.mjs';
 import {subtypeQuestion,subtypeNode,subtypeChildren,beginSubtypeDrill,TRACK_FOR_CATEGORY,REVIEWED_INTERVIEW_CATEGORIES} from './ns-hypothesis-subtype-atlas.mjs';
 import {startCaseDetailInterview,answerCaseDetail,caseDetailQuestion,backCaseDetail,skipCaseDetail,caseDetailFacts,CASE_FACT_QUESTIONS} from './ns-hypothesis-case-facts.mjs';
@@ -268,7 +268,12 @@ function graphSection(result,selectedNode){
    '<div class="ns-hypo-causal-link-grid">'+result.links.map(edge=>
     '<article class="ns-hypo-causal-link"><strong>'+e(edge.title)+'</strong>'+
     '<span class="ns-hypo-link-tag">HYPOTHESIS, NOT ESTABLISHED</span>'+
-    '<p>'+e(edge.challenge)+'</p></article>').join('')+'</div></section>':'')+
+    '<div class="ns-hypo-link-sources"><span>'+e(edge.fromText)+'</span><span aria-hidden="true">⇢</span><span>'+e(edge.toText)+'</span></div>'+
+    '<p><strong>Challenge:</strong> '+e(edge.challenge)+'</p>'+
+    '<div class="ns-hypo-link-feedback" role="group" aria-label="Review this possible link">'+
+    [['fits','Worth testing'],['uncertain','Uncertain'],['no-fit','This link is wrong']].map(([v,label])=>
+     '<button type="button" data-hypo-link-verdict="'+v+'" data-hypo-link-id="'+e(edge.id)+
+     '" aria-pressed="'+(edge.review===v)+'">'+e(label)+'</button>').join('')+'</div></article>').join('')+'</div></section>':'')+
  '<p class="ns-hypo-graph-foot">Not all behaviour serves a protective purpose. A presentation preference, an emotion or a response to actual circumstances may not need a psychological explanation.</p>'+
  '</section>';
 }
@@ -470,6 +475,14 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
    stage='result';render(false);
    const anchor=root.querySelector('[data-hypo-process="'+b.dataset.hypoProcess+'"][data-hypo-feedback="'+b.dataset.hypoFeedback+'"]');
    anchor?.focus({preventScroll:true});return;
+  }
+  if(b.dataset.hypoLinkVerdict&&state){
+   state=reviewHypothesisLink(state,b.dataset.hypoLinkId,b.dataset.hypoLinkVerdict);
+   const selected=b.dataset.hypoLinkId,verdict=b.dataset.hypoLinkVerdict;
+   render(false);
+   [...root.querySelectorAll('[data-hypo-link-verdict]')].find(x=>
+    x.dataset.hypoLinkId===selected&&x.dataset.hypoLinkVerdict===verdict)?.focus({preventScroll:true});
+   return;
   }
   if(b.dataset.hypoNode&&state){
    selectedNode=b.dataset.hypoNode;
