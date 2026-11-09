@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v154-hypothesis-taxonomy-reviewed-boundaries';
+const CACHE = 'nobodyssimple-release-v155-case-facts';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -28,7 +28,7 @@ const INSTALL_OPTIONAL = [
   'ns-intervention-cards.mjs','ns-intervention-chooser.mjs','ns-intervention-chooser.css',
   'ns-regulation-games-data.mjs','ns-regulation-games.mjs','ns-regulation-games.css',
   'ns-hypothesis-engine.mjs','ns-hypothesis-generator.mjs','ns-hypothesis-generator.css',
-  'ns-hypothesis-deep-content.mjs','ns-hypothesis-graph.mjs','ns-hypothesis-depth.css','ns-hypothesis-subtype-atlas.mjs'
+  'ns-hypothesis-deep-content.mjs','ns-hypothesis-graph.mjs','ns-hypothesis-depth.css','ns-hypothesis-subtype-atlas.mjs','ns-hypothesis-case-facts.mjs'
 ];
 const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
 const SAFE_QUERY = /^\?v=[a-z0-9._-]{1,40}$/i;
