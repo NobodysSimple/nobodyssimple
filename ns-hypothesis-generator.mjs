@@ -150,40 +150,118 @@ function resultCard(state,candidate,index){
   feedbackButtons(candidate)+
   '<a class="ns-hypo-next-link" href="'+e(f.link)+'">Explore what could help <span aria-hidden="true">→</span></a></article>';
 }
-function resultPage(state){
+function graphNodeButton(node,selected){
+ const layers={presenting:'Your starting point',context:'Circumstances',experience:'Feeling and meaning',
+  response:'What you do',mechanism:'Competing explanation',function:'Possible short-term effect',
+  cost:'What might keep it going',need:'Needs and resources',tension:'Possible tension'};
+ return '<button type="button" class="ns-hypo-graph-node ns-hypo-node-'+e(node.layer)+
+  ' ns-hypo-status-'+e(node.status)+(selected===node.id?' is-selected':'')+
+  '" data-hypo-node="'+e(node.id)+'" aria-pressed="'+(selected===node.id)+'">'+
+  '<span class="ns-hypo-node-overline">'+e(layers[node.layer]||node.layer)+'</span>'+
+  '<strong>'+e(node.summary)+'</strong>'+
+  '<span class="ns-hypo-node-detail">'+
+  (node.review==='no-fit'?'You challenged this part':
+   node.review==='fits'?'Marked as fitting':
+   node.editedTitle?'Your revised wording':
+   node.status==='reported'?'From your answers':
+   node.status==='unknown'?'Needs more information':'A possibility to test')+'</span>'+
+  '<span class="ns-hypo-node-open">Inspect or correct ↗</span></button>';
+}
+function graphSection(result,selectedNode){
+ const nodes=result.graph;
+ const get=id=>nodes.find(n=>n.id===id);
+ const button=id=>{const n=get(id);return n?graphNodeButton(n,selectedNode):'';};
+ const connector='<span class="ns-hypo-graph-link" aria-hidden="true">⇢</span>';
+ return '<section class="ns-hypo-graph" aria-labelledby="ns-hypo-graph-heading">'+
+ '<div class="ns-hypo-section-head"><span>02</span><div><p class="ns-hypo-eyebrow">YOUR EDITABLE FORMULATION</p>'+
+ '<h2 id="ns-hypo-graph-heading">A map we can question together.</h2>'+
+ '<p>Click any part to review its evidence, correct the wording or ask more focused questions. Arrows show possible relationships—not proven causes.</p></div></div>'+
+ '<div class="ns-hypo-graph-scroll"><div class="ns-hypo-graph-linear">'+
+ ['presenting','context','experience','response'].map((id,i)=>(i?connector:'')+button(id)).join('')+
+ '</div><div class="ns-hypo-graph-branch-label"><span>↘</span> Several explanations may operate together, or none may fit <span>↙</span></div>'+
+ '<div class="ns-hypo-graph-branches">'+nodes.filter(n=>n.layer==='mechanism').map(n=>graphNodeButton(n,selectedNode)).join('')+'</div>'+
+ '<div class="ns-hypo-graph-link-down" aria-hidden="true">↓ possible consequences to investigate ↓</div>'+
+ '<div class="ns-hypo-graph-linear">'+['function','cost','need'].map((id,i)=>(i?connector:'')+button(id)).join('')+'</div>'+
+ '<div class="ns-hypo-graph-tension">'+button('tension')+'</div></div>'+
+ '<p class="ns-hypo-graph-foot">Not all behaviour serves a protective purpose. A presentation preference, an emotion or a response to actual circumstances may not need a psychological explanation.</p>'+
+ '</section>';
+}
+function nodeEditor(result,nodeId){
+ if(!nodeId)return '<div class="ns-hypo-node-prompt">Choose a box in the graph to see exactly what supports it—and change what is wrong.</div>';
+ const node=result.graph.find(n=>n.id===nodeId);
+ if(!node)return '<div class="ns-hypo-node-prompt">Choose a box in the graph to inspect it.</div>';
+ const supporting=(node.evidence||[]).length?'<ul>'+node.evidence.map(o=>
+  '<li><span>'+e(o.question)+'</span><strong>'+e(o.answer)+'</strong></li>').join('')+'</ul>':
+  '<p>No specific supporting observation recorded for this part. It may be an open question.</p>';
+ const challenge=(node.challenges||[]).length?'<div class="ns-hypo-node-challenges"><strong>Contrary observations</strong><ul>'+
+  node.challenges.map(o=>'<li>'+e(o.question)+' <em>('+e(o.answer)+')</em></li>').join('')+'</ul></div>':'';
+ return '<section class="ns-hypo-node-editor" aria-label="Revise selected part of formulation">'+
+  '<div class="ns-hypo-node-editor-head"><div><p class="ns-hypo-eyebrow">REVIEW THIS PART</p>'+
+  '<h3>'+e(node.title)+'</h3></div><button type="button" data-hypo-node-deselect>✕ Close</button></div>'+
+  '<p>'+e(node.detail)+'</p>'+
+  '<div class="ns-hypo-node-evidence"><strong>What your answers actually say</strong>'+supporting+challenge+'</div>'+
+  '<div class="ns-hypo-feedback" role="group" aria-label="Do you agree with this part?">'+
+  [['fits','This fits'],['unsure','Partly / uncertain'],['no-fit','This is wrong']].map(([id,label])=>
+   '<button type="button" data-hypo-node-verdict="'+e(id)+'" data-hypo-node-id="'+e(node.id)+
+   '" aria-pressed="'+(node.review===id)+'">'+e(label)+'</button>').join('')+'</div>'+
+  '<label class="ns-hypo-node-edit-label" for="ns-hypo-node-note">How would you describe this part instead? (optional)</label>'+
+  '<textarea id="ns-hypo-node-note" data-hypo-node-text maxlength="280" rows="2" placeholder="Write a more accurate version of this part…">'+e(node.editedTitle)+'</textarea>'+
+  '<div class="ns-hypo-node-actions"><button type="button" data-hypo-node-save="'+e(node.id)+'">Use my wording</button>'+
+  '<button type="button" data-hypo-node-investigate="'+e(node.id)+'">Ask more questions about this →</button></div>'+
+  '<p class="ns-hypo-node-privacy">Your wording is treated as your correction, not proof of a hidden cause. If no new question remains, you can still edit earlier answers.</p>'+
+  '</section>';
+}
+function answerHistory(state){
+ return '<details class="ns-hypo-answer-history"><summary>Review and change any earlier answer ('+state.answers.length+')</summary>'+
+ '<p>Changing an answer updates all dependent interpretations. If an earlier answer opened a specialised branch, changing it may remove questions that no longer apply.</p>'+
+ '<div class="ns-hypo-history-list">'+state.answers.map((a,i)=>{
+  const q=QUESTION_BY_ID[a.questionId];
+  if(!q)return '';
+  return '<div class="ns-hypo-history-item"><label for="ns-hypo-history-'+i+'">'+
+   '<span>Question '+(i+1)+'</span><strong>'+e(q.prompt)+'</strong></label>'+
+   '<select id="ns-hypo-history-'+i+'" data-hypo-answer-edit="'+e(a.questionId)+'">'+
+   ANSWER_OPTIONS.map(opt=>'<option value="'+e(opt.id)+'"'+(a.answerId===opt.id?' selected':'')+'>'+e(opt.label)+'</option>').join('')+
+   '</select><button type="button" data-hypo-save-answer="'+e(a.questionId)+'">Update</button></div>';
+ }).join('')+'</div></details>';
+}
+function resultPage(state,selectedNode=''){
  const r=hypothesisResult(state);
  if(state.safety)return safetyPage(state);
- return page('<header class="ns-hypo-result-hero"><div><p class="ns-hypo-eyebrow">YOUR WORKING FORMULATION</p>'+
-  '<h1>Here are a few explanations worth testing.</h1>'+
+ return page('<header class="ns-hypo-result-hero"><div><p class="ns-hypo-eyebrow">YOUR WORKING FORMULATION · VERSION YOU CAN REVISE</p>'+
+  '<h1>We have some possibilities. Let’s test the map.</h1>'+
   '<p>'+e(r.summary)+'</p>'+
-  '<span class="ns-hypo-result-count">'+r.examined+' distinguishing observations · Not a clinical probability</span></div>'+
+  '<span class="ns-hypo-result-count">'+r.examined+' informative answers · '+r.coverage.layers.length+
+  ' areas explored · No clinical probability</span></div>'+
   art('ns-character-solving.webp','ns-hypo-results-art')+'</header>'+
-  '<section class="ns-hypo-pattern"><div class="ns-hypo-section-head"><span>02</span><div>'+
-  '<p class="ns-hypo-eyebrow">UNDERSTAND THE PATTERN</p><h2>What might be keeping this going?</h2></div></div>'+
-  '<p>Your starting concern: <strong>'+e(r.track.title)+'</strong></p>'+
-  '<div class="ns-hypo-path">'+
-  '<div><span>WHAT YOU NOTICE</span><strong>'+e(r.track.title)+'</strong></div>'+
-  '<span aria-hidden="true">→</span><div><span>POSSIBLE PROCESS</span><strong>'+e(r.alternatives[0]?.process.title||'Still unknown')+'</strong></div>'+
-  '<span aria-hidden="true">→</span><div><span>WHAT MAY CONTINUE IT</span><strong>'+e(r.alternatives[0]?.process.possibleCost||'More information needed')+'</strong></div></div>'+
-  '<p class="ns-hypo-quiet">This is a hypothesis, not a discovered inner cause. Your responses do not establish childhood experiences, attachment wounds or personal disorders.</p></section>'+
+  '<section class="ns-hypo-pattern"><div class="ns-hypo-section-head"><span>01</span><div>'+
+  '<p class="ns-hypo-eyebrow">YOUR STARTING QUESTION</p><h2>What are we actually trying to understand?</h2></div></div>'+
+  '<p class="ns-hypo-concern">'+e(r.situation)+'</p>'+
+  '<p>There may be nothing wrong with a behaviour or preference itself. Sometimes the relevant difficulty is the social response, uncertainty, available resources or what the situation means to you.</p>'+
+  '<p class="ns-hypo-quiet">Every interpretation below is provisional. A question about gender presentation cannot establish gender identity, sexual orientation or an underlying wound.</p></section>'+
+  graphSection(r,selectedNode)+
+  '<div data-hypo-node-editor>'+nodeEditor(r,selectedNode)+'</div>'+
   '<section class="ns-hypo-possibilities"><div class="ns-hypo-section-head"><span>03</span><div>'+
-  '<p class="ns-hypo-eyebrow">COMPARE IDEAS</p><h2>Which explanations fit your experience?</h2></div></div>'+
-  '<p>Compare what supports each idea, what challenges it and what information is missing. You can disagree with Nobody.</p>'+
-  '<div class="ns-hypo-results-list">'+r.alternatives.map((c,i)=>resultCard(state,c,i)).join('')+'</div></section>'+
-  '<section class="ns-hypo-final-actions"><div><h2>One useful next step</h2>'+
-  '<p>Choose an explanation to explore, or keep investigating. The intervention guides let you choose one practical task at a time.</p></div>'+
+  '<p class="ns-hypo-eyebrow">REASONS FOR AND AGAINST</p><h2>Compare our possible explanations.</h2></div></div>'+
+  '<p>These are ranked by uncalibrated relative compatibility with your answers. They are not measured likelihoods, diagnoses or a prediction of your future.</p>'+
+  '<details class="ns-hypo-full-evidence"><summary>Open the detailed evidence for each possibility ('+r.alternatives.length+')</summary>'+
+  '<div class="ns-hypo-results-list">'+r.alternatives.map((c,i)=>resultCard(state,c,i)).join('')+'</div></details></section>'+
+  answerHistory(state)+
+  '<section class="ns-hypo-final-actions"><div><h2>Keep exploring—or put something into practice</h2>'+
+  '<p>There is no fixed question count. Each further question tries to distinguish explanations or investigate a part you challenged. You may also stop, revise, or choose something helpful without deciding on one cause.</p></div>'+
   '<div class="ns-hypo-final-buttons">'+
-  (r.topic?'<a class="ns-hypo-primary" href="#workbook-topic/'+e(r.topic)+'">Open the '+e(r.track.title)+' guide →</a>':
+  (r.canContinue?'<button type="button" data-hypo-more>Keep investigating →</button>':
+   '<p>We have used the currently available authored questions for this area. You can still revise the graph or an earlier answer.</p>')+
+  (r.topic?'<a class="ns-hypo-primary" href="#workbook-topic/'+e(r.topic)+'">Explore practical options →</a>':
    '<a class="ns-hypo-primary" href="'+e(r.alternatives[0]?.process.link||'#navigate')+'">Explore relevant interventions →</a>')+
-  (r.canContinue?'<button type="button" data-hypo-more>Explore another question</button>':'')+
-  '<button type="button" data-hypo-download>Download my working formulation</button>'+
-  '<button type="button" data-hypo-restart>Start again</button></div>'+
+  '<button type="button" data-hypo-download>Download my working formulation and graph</button>'+
+  '<button type="button" data-hypo-restart>Begin a different investigation</button></div>'+
   '<output class="ns-hypo-export-status" data-hypo-export aria-live="polite"></output></section>'+
-  '<details class="ns-hypo-transparency"><summary>How was this generated? What are its limits?</summary>'+
-  '<p>The tool checks stated observations against a set of editorially authored process hypotheses and prioritises questions that might distinguish them. The ranking is heuristic—not a statistically validated probability or clinical prediction.</p>'+
-  '<p>Multiple patterns can operate together. Environmental, health, cultural and interpersonal factors may be more important than beliefs or protective strategies. The tool does not infer trauma or childhood explanations from responses.</p>'+
-  '<p>No diagnosis, hidden personality profile or suicide-risk category is produced. For research-informed self-harm safety guidance see <a href="https://www.nice.org.uk/guidance/ng225/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE NG225</a>.</p>'+
-  '<p>The working result is temporary unless you explicitly download it. It is not saved to your account or automatically transmitted.</p></details>');
+  '<details class="ns-hypo-transparency"><summary>How were questions selected? What can it and can’t it establish?</summary>'+
+  '<p>There are '+HYPOTHESIS_DEEP_QUESTION_COUNT+' additional authored deeper questions beyond the original bank. The engine compares plausible models using subjective, uncalibrated compatibility signals and chooses follow-ups designed to distinguish them. This resembles the general idea of information-gain questioning, not a validated Bayesian clinical assessment.</p>'+
+  '<p>Answers can be wrong, incomplete or context-dependent. Several models may be relevant, and the real explanation may not be included. No number of questions proves a psychological cause. The graph explicitly separates what you reported from what is merely suggested.</p>'+
+  '<p>Preferences in grooming, gender expression, sexuality, culture, disability or relationships are not disorders just because they depart from social expectations. No trauma or attachment origin is inferred without you describing it.</p>'+
+  '<p>For safety guidance see <a href="https://www.nice.org.uk/guidance/ng225/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE NG225</a>.</p>'+
+  '<p>The entire session is held only in this page memory; download happens only by direct choice. No personal answers are uploaded by this feature.</p></details>');
 }
 function saveText(name,raw){
  const url=URL.createObjectURL(new Blob([raw],{type:'text/plain;charset=utf-8'}));
