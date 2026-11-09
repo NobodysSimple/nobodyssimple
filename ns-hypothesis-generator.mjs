@@ -8,9 +8,11 @@ import {
  startHypothesis,answerHypothesis,backHypothesis,reviewHypothesis,
  nextHypothesisQuestion,hypothesisResult,describeFormulation,
  formulationPlainText,findHypothesisTrack,selectableAtlasTopics,
+ answerHypothesisDrill,backHypothesisDrill,skipHypothesisDrill,
  questionPool,QUESTION_BY_ID,reviseHypothesisAnswer,focusHypothesisLayer,
  reviseHypothesisNode,HYPOTHESIS_DEEP_QUESTION_COUNT
 } from './ns-hypothesis-engine.mjs';
+import {subtypeQuestion,subtypeNode,subtypeChildren} from './ns-hypothesis-subtype-atlas.mjs';
 
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
@@ -61,6 +63,30 @@ function landing(){
   '<section class="ns-hypo-safety-short"><strong>Need safety or urgent help instead?</strong>'+
   '<p>In immediate danger, call 999 in the UK. You do not need to complete questions.</p>'+
   href('#need/support-safety','Open support options →')+'</section>');
+}
+function narrowing(state){
+ const d=state.drill,q=subtypeQuestion(d);
+ if(!q)return asking(state);
+ const category=subtypeNode(d.categoryId),cluster=subtypeNode(d.clusterId),leaf=subtypeNode(d.leafId);
+ const step=q.stage==='cluster'?1:q.stage==='experience'?2:q.stage==='confirm'?3:q.stage==='valence'?4:q.stage==='meaning'?5:6;
+ const breadcrumb=[category?.label,cluster?.label,leaf?.label].filter(Boolean);
+ const cards=q.options.map(o=>'<button type="button" data-hypo-drill-answer="'+e(o.id)+
+  '" data-hypo-drill-question="'+e(q.id)+'" class="ns-hypo-drill-option">'+
+  '<span>'+e(o.label)+'</span><span aria-hidden="true">→</span></button>').join('');
+ return page('<section class="ns-hypo-drill" aria-labelledby="ns-hypo-question">'+
+  '<div class="ns-hypo-drill-top"><p class="ns-hypo-eyebrow">GETTING TO THE SPECIFICS · STEP '+step+' OF 6</p>'+
+  '<p>'+breadcrumb.map(e).join(' <span aria-hidden="true">›</span> ')+'</p></div>'+
+  '<div class="ns-hypo-dialogue"><div class="ns-hypo-guide">'+art('ns-character-thinking.webp','ns-hypo-guide-art')+
+  '<div class="ns-hypo-guide-caption"><strong>Nobody</strong><span>One detail at a time</span></div></div>'+
+  '<div class="ns-hypo-speech-card"><p class="ns-hypo-eyebrow">I AM LISTENING FOR EXACT DETAILS</p>'+
+  '<h1 id="ns-hypo-question" tabindex="-1">'+e(q.prompt)+'</h1>'+
+  '<p>Choose the closest answer. This records only what you select—nothing about a diagnosis, hidden cause or identity.</p></div></div>'+
+  '<div class="ns-hypo-drill-options" role="group" aria-label="Choose a detail">'+cards+'</div>'+
+  '<div class="ns-hypo-question-footer"><button type="button" data-hypo-back>← Back</button>'+
+  '<button type="button" data-hypo-drill-skip>Skip details and ask broader questions</button>'+
+  '<button type="button" data-hypo-restart>Choose another area</button></div>'+
+  '<p class="ns-hypo-drill-caution">This is an editorially authored, non-diagnostic question map from the Nobody’s Simple synthetic atlas. You can leave any answer uncertain. More precise questions come after selecting a specific experience.</p>'+
+  '<p class="ns-hypo-quiet">'+e(stageText)+'</p></section>');
 }
 function progress(state){
  const n=state.answers.length;
@@ -272,7 +298,7 @@ function saveText(name,raw){
 export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}={}){
  let state=null,stage='start',preselected=initialTrack,topic=initialTopic,selectedNode='';
  const render=(focus=false)=>{
-  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
+  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='drill'?narrowing(state):stage==='result'?resultPage(state,selectedNode):asking(state);
   if(focus){
    const heading=root.querySelector('#ns-hypo-question, .ns-hypo-result-hero h1, .ns-hypo-pick h2, .ns-hypo-safety-page h1');
    if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
@@ -280,7 +306,7 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
  };
  const begin=(trackId,topicId='')=>{
   state=startHypothesis({trackId,topicId});
-  selectedNode='';stage='question';render(true);
+  selectedNode='';stage=state.drill?'drill':'question';render(true);
  };
  root.addEventListener('input',event=>{
   const el=event.target;
@@ -298,10 +324,20 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
  root.addEventListener('click',event=>{
   const b=event.target.closest('button');if(!b)return;
   if(b.dataset.hypoTrack){begin(b.dataset.hypoTrack,b.dataset.hypoTopic||'');return;}
+  if(b.dataset.hypoDrillAnswer&&state?.drill){
+   state=answerHypothesisDrill(state,b.dataset.hypoDrillQuestion,b.dataset.hypoDrillAnswer);
+   stage=state.safety?'result':state.drill?.finished?'question':'drill';
+   render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-drill-skip')&&state?.drill){
+   state=skipHypothesisDrill(state);stage='question';render(true);return;
+  }
   if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';render(true);return;}
   if(b.hasAttribute('data-hypo-back')){
    if(state?.answers.length){state=backHypothesis(state);stage='question';}
-   else {stage='start';state=null;}
+   else if(state?.drill?.events?.length){
+    state=backHypothesisDrill(state);stage='drill';
+   }else {stage='start';state=null;}
    render(true);return;
   }
   if(b.dataset.hypoAnswer&&state){
