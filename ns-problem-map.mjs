@@ -87,12 +87,15 @@ const D=[
    'support|I need help from another person|Finding appropriate human support|crisis professional help therapist|needs-clarifier,conversation-map,context-map']]
 ];
 
+export const TOOL_FALLBACKS=Object.freeze({"internal-rules":"personal-rules","control-map":"worry-sort","certainty":"uncertainty-calibration","counterexample":"competing-models","worry-parking":"worry-sort","attention-mission":"environment-design","experiment-builder":"pattern-experiment","perspective-switch":"future-perspectives","apology":"repair","context-map":"life-areas","goal-builder":"small-step"});
+export const resolveProblemToolId=id=>TOOL_FALLBACKS[id]||id;
+
 export const problemDomains=Object.freeze(D.map(([id,name,description,icon])=>Object.freeze({id,name,description,icon})));
 const highRisk=new Set(['self-harm','immediate-danger','voices','suspicion','mania','eating','control-harm']);
 const medical=new Set(['pain','fatigue','health-worry','sleep','eating','voices','mania','suspicion','substances']);
 export const problemIndex=Object.freeze(D.flatMap(([domain,, , ,items])=>items.map((line)=>{
  const [id,title,hint,aliases,tools]=line.split('|');
- return Object.freeze({id,title,hint,domain,aliases:aliases.split(' '),tools:tools.split(','),
+ return Object.freeze({id,title,hint,domain,aliases:aliases.split(' '),tools:tools.split(',').map(resolveProblemToolId),
   needsHuman:highRisk.has(id),medical:medical.has(id)});
 })));
 const byId=new Map(problemIndex.map(item=>[item.id,item]));

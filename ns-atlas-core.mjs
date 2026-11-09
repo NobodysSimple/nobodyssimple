@@ -1,4 +1,4 @@
-import {problemIndex,problemDomains,knowledgeFamilies,sourceForProblem,nhsHelp,nhsTalking} from './ns-problem-map.mjs';
+import {problemIndex,problemDomains,knowledgeFamilies,sourceForProblem,nhsHelp,nhsTalking,resolveProblemToolId} from './ns-problem-map.mjs';
 import {extendedProblemIndex} from './ns-atlas-extended.mjs';
 import {preciseProfiles,getPreciseProfile} from './ns-precision-content.mjs';
 import {explicitVariants} from './ns-atlas-variations.mjs';
@@ -178,11 +178,11 @@ export function atlasProfile(id){
  return {...p,definition:'“'+p.title+'” describes an experience involving '+p.hint.charAt(0).toLowerCase()+p.hint.slice(1)+'. People can experience it in different ways; the description alone does not establish a diagnosis or cause.',
   variants:variations,
   signs:genericSigns[domain]||genericSigns.feel,
-  maintainers:fam.map(m=>({...m})),
+  maintainers:fam.map(m=>({...m,tool:resolveProblemToolId(m.tool)})),
   contributors:(contributors[domain]||contributors.feel).map((label,i)=>({id:'c'+i,label})),
   cycle:effects[domain]||effects.feel,
   progress:indicators[domain]||indicators.feel,
-  targets:fam.map(m=>({id:m.id,title:m.target,why:m.detail,action:'Explore how '+m.label.toLowerCase()+' affects this specific situation, and consider one realistic adjustment.',tool:m.tool,worksheet:m.worksheet})),
+  targets:fam.map(m=>({id:m.id,title:m.target,why:m.detail,action:'Explore how '+m.label.toLowerCase()+' affects this specific situation, and consider one realistic adjustment.',tool:resolveProblemToolId(m.tool),worksheet:m.worksheet})),
   source:sourceForProblem(p),knowledge:desc?.what,limits:desc?.alternative,
   needsHuman:isSafetyPriority(id),medical:p.medical,
   quality:p.quality};

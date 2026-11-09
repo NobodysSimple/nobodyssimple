@@ -1,3 +1,4 @@
+import {resolveProblemToolId} from './ns-problem-map.mjs';
 /* Five deliberately fine-grained, clinically informed *educational* example
    pathways. Separate symptoms, traits and diagnostic constructs.
    No item here is a validated diagnostic instrument. No cause can be inferred
@@ -221,7 +222,7 @@ card('submissive-patterns','Difficulty asserting needs or saying no',
  link('NHS: Get help for domestic abuse','https://www.nhs.uk/live-well/getting-help-for-domestic-violence/')],
  ['A consensual preferred role is not a deficit to treat. The relevant questions are choice, consent, comfort and whether needs can be expressed.','If setting limits may lead to retaliation, support and safety planning matter more than a communication exercise.']
 )
-]);
+].map(p=>({...p,maintainers:p.maintainers.map(m=>({...m,tool:resolveProblemToolId(m.tool)})),targets:p.targets.map(t=>({...t,tool:resolveProblemToolId(t.tool)}))})));
 const index=new Map(preciseProfiles.map(p=>[p.id,p]));
 export const getPreciseProfile=id=>index.get(id)||null;
 export const preciseGroups=Object.freeze([

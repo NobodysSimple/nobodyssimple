@@ -36,8 +36,8 @@ test('a valid standalone learning guide is readable without any stored profile',
  assert.match(root.innerHTML,/I keep putting things off/);
  assert.match(root.innerHTML,/UNDERSTAND THE EXPERIENCE/);
  assert.match(root.innerHTML,/INVESTIGATE THE POSSIBILITIES/);
- assert.match(root.innerHTML,/LOOK BEYOND THE INDIVIDUAL/);
- assert.match(root.innerHTML,/YOUR WORKSHEET/);
+ assert.match(root.innerHTML,/Look beyond the individual/i);
+ assert.match(root.innerHTML,/A SMALL WORKSHEET/);
  assert.match(root.innerHTML,/data-guide-jump="worksheet"/);
 });
 test('risk-sensitive guides include human support guidance',()=>{

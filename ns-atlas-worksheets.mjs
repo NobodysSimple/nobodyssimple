@@ -1,6 +1,7 @@
 /* Every atlas topic has an addressable worksheet. The questions are chosen by
  * situation, maintaining process and risk, rather than by therapy brand. */
 import {atlasProfile,isSafetyPriority} from './ns-atlas-core.mjs';
+import {resolveProblemToolId} from './ns-problem-map.mjs';
 const types={
  emotion:{
  title:'Emotion, need and response map',
@@ -148,7 +149,7 @@ export function worksheetFor(id,selection={}){
  const prompts=template.prompts.map((question,i)=>i===0?promptPrefix+question:question);
  return {id:p.id,kind,title:template.title,intro:template.intro,how:template.how,
   prompts,situation,maintainer:m?.label||'not yet selected',contributors:factors,
-  relatedTool:template.tool,topicTool:'#tool/atlas-'+p.id,risk:isRisk};
+  relatedTool:resolveProblemToolId(template.tool),topicTool:'#tool/atlas-'+p.id,risk:isRisk};
 }
 export function worksheetText(spec,answers=[]){
  if(!spec)return '';

@@ -54,7 +54,7 @@ test('question sequences stop and preserve alternatives rather than inventing ce
  for(let i=0;i<4;i++){const q=nextQuestion(st);if(!q)break;st=answerQuestion(st,q.id,q.options.at(-1).id);}
  assert.equal(nextQuestion(st),null);
  assert.ok(rankedCandidates(st).length>1);
- assert.match(explainSuitability(st,rankedCandidates(st)[0].id).limits,/not a diagnosis|not established|A safety/i);
+ assert.match(explainSuitability(st,rankedCandidates(st)[0].id).limits,/not a diagnosis|not an established|not established|A safety/i);
  st=reviewReasoning(st,'not-fit');
  assert.ok(st.revision.length===1);
  assert.match(st.reviewMessage,/may not fit/i);

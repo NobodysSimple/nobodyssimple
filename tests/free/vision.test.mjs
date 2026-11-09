@@ -33,5 +33,5 @@ test('Learn and Field Guide remain independent',()=>{
 });
 test('scoped CSS and existing site assets remain linked',()=>{
  const html=readFileSync(new URL('../../index.html',import.meta.url),'utf8');
- for(const asset of ['ns-vision.css','ns-life-lab.css','ns-journey.css'])assert.ok(html.includes(asset));
+ for(const asset of ['ns-vision.css','ns-atlas.css','ns-reasoning.css'])assert.ok(html.includes(asset));
 });

@@ -29,9 +29,10 @@ test('Home has one primary action, visible real Wisbody controls, and project-on
  assert.ok(strategy.includes('href="#navigate"'));
 });
 test('Feed is primary on mobile and desktop while account remains accessible',()=>{
- const page=src('index.html'),shell=src('ns-shell.mjs');
+ const page=src('index.html'),shell=src('ns-shell.mjs'),accounts=src('accounts.mjs');
  assert.match(page,/<nav class="app-bottom-nav"[\s\S]*href="#discussion"[\s\S]*>Feed<\/small>/);
- assert.ok(page.includes('href="#account"'));
+ assert.ok(page.includes('app-top-actions'));
+ assert.ok(accounts.includes('ns-account-trigger'));
  assert.ok(page.includes('href="#messages"'));
  assert.ok(page.includes('data-ns-updates-toggle'));
  assert.ok(!page.includes('class="app-search-link"'));
