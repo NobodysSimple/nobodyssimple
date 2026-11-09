@@ -130,6 +130,10 @@ test('editing a gateway answer discards only now-inapplicable presentation quest
  assert.ok(!changed.answers.some(a=>a.questionId==='d-id-felt'));
  assert.ok(changed.answers.some(a=>a.questionId==='d-id-role'),'other answers survive revision');
  assert.ok(changed.answers.some(a=>a.questionId==='d-id-presentation'));
+ const described=startHypothesis({trackId:'identity',description:'I shave my legs'});
+ const denied=answer(described,'d-id-presentation','no');
+ assert.equal(presentationBranchActive(denied),false,'The person’s answer must outrank a description keyword');
+ assert.ok(!questionPool(denied).some(q=>q.id==='d-id-alone'));
 });
 test('specialised questions cover every starting area, and safety gates remain active',()=>{
  for(const t of Object.keys(TRACK_BY_ID)){
