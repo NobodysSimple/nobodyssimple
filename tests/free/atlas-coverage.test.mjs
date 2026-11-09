@@ -20,7 +20,7 @@ function root(){
 test('the atlas retains 166 existing routes and includes every inclusive experience',()=>{
  assert.equal(atlasCount,166+inclusiveProblemIndex.length);
  assert.equal(inclusiveProblemIndex.length,352);
- assert.equal(inclusiveDomains.length,19);
+ assert.equal(inclusiveDomains.length,20);
  assert.equal(new Set(atlasProblemIndex.map(p=>p.id)).size,atlasCount);
  assert.equal(Object.keys(explicitVariants).length,69);
  assert.equal(Object.keys(extendedVariants).length,92);
