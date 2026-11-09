@@ -154,13 +154,14 @@ test('actual UI includes narrative entry, clickable graph, individual correction
  const css=readFileSync('ns-hypothesis-depth.css','utf8');
  const index=readFileSync('index.html','utf8');
  const sw=readFileSync('sw.js','utf8');
- assert.match(ui,/data-hypo-from-description/);
+ assert.doesNotMatch(ui,/data-hypo-from-description|<textarea id="ns-hypo-description"/);
  assert.match(ui,/data-hypo-node="/);
  assert.match(ui,/data-hypo-node-verdict/);
  assert.match(ui,/data-hypo-node-investigate/);
  assert.match(ui,/data-hypo-answer-edit/);
  assert.match(ui,/data-hypo-save-answer/);
  assert.match(ui,/No fixed question limit/);
+ assert.match(ui,/Pick the closest area/);
  assert.match(ui,/data-hypo-node-save/);
  assert.match(ui,/ns-hypo-graph-branches/);
  assert.match(css,/ns-hypo-graph-node/);
