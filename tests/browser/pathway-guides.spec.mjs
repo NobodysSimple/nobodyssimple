@@ -73,7 +73,7 @@ test('other pathway guides fit a narrow screen and avoid serious automated acces
   await go(page,route);
   const result=await new AxeBuilder({page}).include('#main').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
   expect(result.violations.filter(x=>['serious','critical'].includes(x.impact)),
-    JSON.stringify(result.violations.map(v=>({id:v.id,impact:v.impact})),null,2)).toEqual([]);
+    JSON.stringify({route,violations:result.violations.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>({target:n.target,html:n.html,summary:n.failureSummary})).slice(0,12)}))},null,2)).toEqual([]);
  }
  await go(page,'route-activity/process/feel/process-feel');
  const modal=await open(page);
