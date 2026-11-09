@@ -229,6 +229,9 @@ const presentationRegex=/shav(?:e|es|ed|ing)|hairless|groom|clothes|cloth(?:ing|
 export const isPresentationQuery=description=>presentationRegex.test(String(description||''));
 export const presentationBranchActive=state=>{
  if(state?.trackId!=='identity')return false;
- if(isPresentationQuery(state.description))return true;
- return state.answers.some(a=>a.questionId==='d-id-presentation'&&['yes','probably'].includes(a.answerId));
+ const gateway=state.answers.find(a=>a.questionId==='d-id-presentation');
+ // The person's explicit response always overrides keyword guesses from
+ // optional free text, including when they revise their earlier answer.
+ if(gateway)return ['yes','probably'].includes(gateway.answerId);
+ return isPresentationQuery(state.description);
 };
