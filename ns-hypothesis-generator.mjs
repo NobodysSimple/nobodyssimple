@@ -14,6 +14,7 @@ import {
 } from './ns-hypothesis-engine.mjs';
 import {subtypeQuestion,subtypeNode,subtypeChildren,beginSubtypeDrill,TRACK_FOR_CATEGORY,REVIEWED_INTERVIEW_CATEGORIES} from './ns-hypothesis-subtype-atlas.mjs';
 import {startCaseDetailInterview,answerCaseDetail,caseDetailQuestion,backCaseDetail,skipCaseDetail,caseDetailFacts,CASE_FACT_QUESTIONS} from './ns-hypothesis-case-facts.mjs';
+import {INVESTIGATION_QUESTIONS,startInvestigation,investigationQuestion,answerInvestigation,backInvestigation,stopInvestigation,investigationFacts} from './ns-hypothesis-investigation.mjs';
 
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
@@ -117,6 +118,27 @@ function specificFactsPage(state){
    caseDetailFacts(state).map(f=>'<li>'+e(f.label)+': '+e(f.text)+'</li>').join('')+'</ul></div>':'')+
   '<p class="ns-hypo-quiet">'+e(stageText)+'</p></section>');
 }
+function functionalInvestigationPage(state){
+ const q=investigationQuestion(state);
+ if(!q)return resultPage(state);
+ const count=state.investigation.answers.length;
+ const opts=q.options.map(o=>'<button type="button" class="ns-hypo-drill-option" data-hypo-invest-answer="'+e(o.id)+
+  '" data-hypo-invest-question="'+e(q.questionId)+'"><span>'+e(o.label)+'</span><span aria-hidden="true">→</span></button>').join('');
+ return page('<section class="ns-hypo-drill ns-hypo-functional" aria-labelledby="ns-hypo-question">'+
+  '<div class="ns-hypo-drill-top"><p class="ns-hypo-eyebrow">INVESTIGATING THE POSSIBLE PATTERN · '+(count+1)+' QUESTIONS SO FAR</p>'+
+  '<p>Events → feelings → meanings → responses → consequences. Each link must be tested, not assumed.</p></div>'+
+  '<div class="ns-hypo-dialogue"><div class="ns-hypo-guide">'+art('ns-character-thinking.webp','ns-hypo-guide-art')+
+  '<div class="ns-hypo-guide-caption"><strong>Nobody</strong><span>Looking for alternatives</span></div></div>'+
+  '<div class="ns-hypo-speech-card"><p class="ns-hypo-eyebrow">'+e(q.concept.toUpperCase())+'</p>'+
+  '<h1 id="ns-hypo-question" tabindex="-1">'+e(q.prompt)+'</h1>'+
+  '<p>'+e(q.why)+' Only what you select will be recorded. This cannot establish a hidden cause.</p></div></div>'+
+  '<div class="ns-hypo-drill-options" role="group" aria-label="Choose the closest experience">'+opts+'</div>'+
+  '<div class="ns-hypo-question-footer"><button type="button" data-hypo-invest-back>← Back</button>'+
+  '<button type="button" data-hypo-invest-stop>View my working map / stop questions</button></div>'+
+  (count?'<div class="ns-hypo-case-recap"><strong>Observations so far</strong><ul>'+
+   investigationFacts(state).slice(-5).map(f=>'<li>'+e(f.text)+'</li>').join('')+'</ul></div>':'')+
+  '<p class="ns-hypo-quiet">No response is uploaded. An explanation about another person is kept as your interpretation, not a diagnosis of them.</p></section>');
+}
 function progress(state){
  const n=state.answers.length;
  const result=hypothesisResult(state);
@@ -157,6 +179,7 @@ function asking(state){
   '<div class="ns-hypo-question-footer"><button type="button" data-hypo-back '+(n?'':'disabled')+'>← Back</button>'+
   '<button type="button" data-hypo-skip data-hypo-question="'+e(q.id)+'">Skip</button>'+
   (state.drill?.confirmed&&!state.caseDetails?.finished?'<button type="button" data-hypo-fact-start>Explore the specifics first →</button>':'')+
+  (!state.investigation?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-invest-start>Investigate what might be keeping this going →</button>':'')+
   (n>=3?'<button type="button" data-hypo-results>'+(ready?'View my detailed working map':'See my tentative map')+'</button>':'')+'</div>'+
   (ready?'<p class="ns-hypo-ready">Nobody has enough information to sketch a provisional picture. You can inspect it now or keep answering to test other explanations.</p>':'')+
   '<details class="ns-hypo-why"><summary>Why is Nobody asking this question?</summary>'+
@@ -240,6 +263,12 @@ function graphSection(result,selectedNode){
  '<div class="ns-hypo-graph-link-down" aria-hidden="true">↓ possible consequences to investigate ↓</div>'+
  '<div class="ns-hypo-graph-linear">'+['function','cost','need'].map((id,i)=>(i?connector:'')+button(id)).join('')+'</div>'+
  '<div class="ns-hypo-graph-tension">'+button('tension')+'</div></div>'+
+ (result.links?.length?'<section class="ns-hypo-causal-links"><h3>Links worth testing — not discovered causes</h3>'+
+   '<p>These are candidate relationships between the events and consequences you selected. The arrow is a question, not proof.</p>'+
+   '<div class="ns-hypo-causal-link-grid">'+result.links.map(edge=>
+    '<article class="ns-hypo-causal-link"><strong>'+e(edge.title)+'</strong>'+
+    '<span class="ns-hypo-link-tag">HYPOTHESIS, NOT ESTABLISHED</span>'+
+    '<p>'+e(edge.challenge)+'</p></article>').join('')+'</div></section>':'')+
  '<p class="ns-hypo-graph-foot">Not all behaviour serves a protective purpose. A presentation preference, an emotion or a response to actual circumstances may not need a psychological explanation.</p>'+
  '</section>';
 }
@@ -306,6 +335,7 @@ function resultPage(state,selectedNode=''){
   '<section class="ns-hypo-final-actions"><div><h2>Keep exploring—or put something into practice</h2>'+
   '<p>There is no fixed question count. Each further question tries to distinguish explanations or investigate a part you challenged. You may also stop, revise, or choose something helpful without deciding on one cause.</p></div>'+
   '<div class="ns-hypo-final-buttons">'+
+  (!state.investigation?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-invest-start>Investigate possible causes and maintaining cycles →</button>':'')+
   (state.drill?.confirmed&&!state.caseDetails?.finished?'<button type="button" data-hypo-fact-start>Explore more precise details →</button>':'')+
   (r.canContinue?'<button type="button" data-hypo-more>Keep investigating →</button>':
    '<p>We have used the currently available authored questions for this area. You can still revise the graph or an earlier answer.</p>')+
@@ -329,7 +359,7 @@ function saveText(name,raw){
 export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}={}){
  let state=null,stage='start',preselected=initialTrack,topic=initialTopic,selectedNode='';
  const render=(focus=false)=>{
-  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='drill'?narrowing(state):stage==='case'?specificFactsPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
+  root.innerHTML=stage==='start'?landing():state?.safety?safetyPage(state):stage==='drill'?narrowing(state):stage==='case'?specificFactsPage(state):stage==='investigation'?functionalInvestigationPage(state):stage==='result'?resultPage(state,selectedNode):asking(state);
   if(focus){
    const heading=root.querySelector('#ns-hypo-question, .ns-hypo-result-hero h1, .ns-hypo-pick h2, .ns-hypo-safety-page h1');
    if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
@@ -397,6 +427,24 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
   if(b.hasAttribute('data-hypo-fact-stop')&&state){
    state=skipCaseDetail(state);stage=state.drill?.unsupportedCategory?'result':'question';
    render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-invest-start')&&state){
+   state=startInvestigation(state);
+   if(investigationQuestion(state)){stage='investigation';render(true);}
+   return;
+  }
+  if(b.dataset.hypoInvestAnswer&&state){
+   state=answerInvestigation(state,b.dataset.hypoInvestQuestion,b.dataset.hypoInvestAnswer);
+   stage=state.safety?'result':state.investigation?.active?'investigation':'result';
+   render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-invest-back')&&state){
+   if(state.investigation?.answers?.length){state=backInvestigation(state);stage='investigation';}
+   else{state=stopInvestigation(state);stage='question';}
+   render(true);return;
+  }
+  if(b.hasAttribute('data-hypo-invest-stop')&&state){
+   state=stopInvestigation(state);stage='result';render(true);return;
   }
   if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';render(true);return;}
   if(b.hasAttribute('data-hypo-back')){
