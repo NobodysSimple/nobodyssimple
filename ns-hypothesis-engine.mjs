@@ -137,7 +137,7 @@ export function startHypothesis({trackId='',topicId='',description=''}={}){
   indicator&&['crisis','coercion','harm','physical','unusual'].includes(indicator.kind)?
     {...indicator,kind:indicator.kind==='physical'?'medical':indicator.kind==='unusual'?'support':indicator.kind}:null;
  return {version:'2026-11-09-deep-2',trackId:track.id,topicId:topicId&&atlasGet(topicId)&&!risk?topicId:null,
-   description:raw,answers:[],feedback:{},nodeEdits:{},focusLayer:'',caseDetails:newCaseDetailInterview(),investigation:newInvestigation(),
+   description:raw,answers:[],feedback:{},nodeEdits:{},linkFeedback:{},focusLayer:'',caseDetails:newCaseDetailInterview(),investigation:newInvestigation(),
   drill:!safety&&!topicId?beginSubtypeDrill(track.id):null,safety,initialSafety:safety};
 }
 
@@ -358,7 +358,7 @@ export function hypothesisResult(state){
  const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
  const canContinue=Boolean(nextHypothesisQuestion(state));
  return {track:TRACK_BY_ID[state.trackId],situation:state.description||(state.drill?.confirmed&&subtypeNode(state.drill.leafId)?'Exploring: '+subtypeNode(state.drill.leafId).label:TRACK_BY_ID[state.trackId].title),
-  alternatives,graph,links:investigationLinks(state),coverage,examined,unresolved,topic:safeTopic,canContinue,
+  alternatives,graph,links:investigationLinks(state).map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
    state.drill?.unsupportedCategory?'You have identified a specific experience. This part of the synthetic atlas does not yet have a reviewed explanatory interview, so no psychological mechanism is inferred.':
    examined===0?'There is not enough distinguishing information yet.':
@@ -366,6 +366,12 @@ export function hypothesisResult(state){
    'Your answers provide a provisional picture to examine. More questions and corrections may change it.',
   notes:'A formulation is an editable working hypothesis, not a diagnosis, risk estimate, recovered memory or hidden-cause discovery.',
   method:'Uncalibrated relative compatibility signals and expected question-discrimination, not validated clinical probabilities.'};
+}
+export function reviewHypothesisLink(state,linkId,verdict){
+ if(!state||state.safety||!['fits','uncertain','no-fit'].includes(verdict))return state;
+ const link=investigationLinks(state).find(x=>x.id===linkId);
+ if(!link)return state;
+ return {...state,linkFeedback:{...(state.linkFeedback||{}),[linkId]:verdict}};
 }
 export function describeFormulation(state,candidate){
  const p=candidate.process;
