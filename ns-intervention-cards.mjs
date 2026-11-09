@@ -79,6 +79,12 @@ function originalCard(g,lane,method,index){
   why:method.why,steps:method.steps,caution:method.caution||'',refs:method.refs||[],source:'guide',tool:lane.tool,mode:g.modeId};
 }
 function suitableExtras(g){
+ // New inclusive routes are navigation guides, not evidence for a full clinical intervention catalogue.
+ // Offer fewer voluntary context/support choices, and never encourage direct confrontation for harm.
+ if(g.contextFirst){
+  const allowed=g.supportFirst?['tiny-pause','reduce-one-input','name-a-need']:['tiny-pause','reduce-one-input','name-a-need','request-help','recovery-window'];
+  return supplementary.filter(c=>allowed.includes(c.id));
+ }
  // Not every low-demand exercise is appropriate for every physical or cognitive problem.
  const isChecking=/checking|ritual|reassurance/.test(g.id);
  const isPanic=/panic/.test(g.id);
