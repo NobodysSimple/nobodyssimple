@@ -375,3 +375,37 @@ body.app-body.ns-shell-v1 #main .ns-hypo-drill-caution{
 
 /* Correct the quiet privacy text's 4.45:1 contrast on the cream drill screen. */
 body.app-body.ns-shell-v1 #main .ns-hypo-drill .ns-hypo-quiet{color:#455648;}
+
+/* Optional entry to all 21 synthetic atlas areas; separate from diagnosis. */
+body.app-body.ns-shell-v1 #main .ns-hypo-all-areas{
+ margin:17px 0;border:1px solid #c8d8c5;border-radius:15px;
+ padding:2px 15px 14px;background:#f7faf3;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-all-areas summary{
+ cursor:pointer;min-height:44px;padding:14px 1px 10px;
+ color:#24563a;font:790 14px/1.5 system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-all-areas p{
+ color:#415e46;font:520 12px/1.6 system-ui,sans-serif;margin:9px 0;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-area-grid{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-area-grid button{
+ display:flex;justify-content:space-between;align-items:center;gap:9px;
+ padding:12px;min-height:55px;overflow-wrap:anywhere;text-align:left;
+ border:1px solid #c0d7bf;border-radius:11px;background:#fff;
+ color:#2b593d;font:720 12px/1.4 system-ui,sans-serif;cursor:pointer;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-area-grid button:hover{
+ background:#e9f4e8;border-color:#77a885;
+}
+body.app-body.ns-shell-v1 #main .ns-hypo-area-grid button:focus-visible{
+ outline:3px solid #8d5b09;outline-offset:3px;
+}
+@media(max-width:740px){
+ body.app-body.ns-shell-v1 #main .ns-hypo-area-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:430px){
+ body.app-body.ns-shell-v1 #main .ns-hypo-area-grid{grid-template-columns:1fr;}
+}
