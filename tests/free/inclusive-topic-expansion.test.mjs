@@ -30,12 +30,12 @@ const important=[
 ];
 
 test('every previously identified missing topic family is now represented as reachable named atlas entries',()=>{
- assert.equal(inclusiveDomains.length,19);
+ assert.equal(inclusiveDomains.length,20);
  assert.equal(inclusiveProblemIndex.length,352);
  assert.equal(atlasProblemIndex.length,518);
  assert.equal(inclusiveIds.size,352);
  assert.equal(new Set(atlasProblemIndex.map(p=>p.id)).size,518,'no collision with legacy atlas IDs');
- assert.equal(atlasDomains.length,30);
+ assert.equal(atlasDomains.length,31);
  for(const [domain,...ids] of important){
   assert.ok(inclusiveDomains.some(d=>d.id===domain),domain);
   assert.ok(inclusiveProblemIndex.filter(p=>p.domain===domain).length>=11,domain);
