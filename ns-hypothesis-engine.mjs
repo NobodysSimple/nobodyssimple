@@ -12,6 +12,7 @@ import {newCaseDetailInterview,caseDetailReport} from './ns-hypothesis-case-fact
 import {newInvestigation,investigationReport,investigationLinks,investigationFacts} from './ns-hypothesis-investigation.mjs';
 import {testableDifferentials} from './ns-hypothesis-differentials.mjs';
 import {newAdaptiveInquiry,adaptiveDifferentials,adaptiveFacts,adaptiveReport,adaptiveLinks,adaptiveChallenges,SYNTHETIC_MECHANISMS} from './ns-hypothesis-adaptive.mjs';
+import {newDomainInquiry,domainFormulation,domainFacts,domainReport} from './ns-hypothesis-domain-depth.mjs';
 
 const P=(id,title,description,possibleFunction,possibleCost,need,check,link)=>
  Object.freeze({id,title,description,possibleFunction,possibleCost,need,check,link});
@@ -139,7 +140,7 @@ export function startHypothesis({trackId='',topicId='',description=''}={}){
   indicator&&['crisis','coercion','harm','physical','unusual'].includes(indicator.kind)?
     {...indicator,kind:indicator.kind==='physical'?'medical':indicator.kind==='unusual'?'support':indicator.kind}:null;
  return {version:'2026-11-09-causal-4',trackId:track.id,topicId:topicId&&atlasGet(topicId)&&!risk?topicId:null,
-   description:raw,answers:[],feedback:{},nodeEdits:{},linkFeedback:{},focusLayer:'',caseDetails:newCaseDetailInterview(),investigation:newInvestigation(),adaptive:newAdaptiveInquiry(),
+   description:raw,answers:[],feedback:{},nodeEdits:{},linkFeedback:{},focusLayer:'',caseDetails:newCaseDetailInterview(),investigation:newInvestigation(),adaptive:newAdaptiveInquiry(),domain:newDomainInquiry(),
   drill:!safety&&!topicId?beginSubtypeDrill(track.id):null,safety,initialSafety:safety};
 }
 
@@ -356,20 +357,22 @@ export function hypothesisResult(state){
  const reviewed=all.filter(c=>!leading.some(x=>x.id===c.id)&&c.feedback!=='unreviewed');
  const alternatives=[...leading,...reviewed];
  const examined=state.answers.filter(a=>ANSWER_BY_ID[a.answerId]?.value!==0).length+
-  investigationFacts(state).length+adaptiveFacts(state).length;
+  investigationFacts(state).length+adaptiveFacts(state).length+domainFacts(state).length;
  const first=alternatives[0],second=alternatives[1];
  const unresolved=examined<5||!first?.positive.length||(first?.score||0)-(second?.score||0)<1;
  const topic=state.drill?.unsupportedCategory?null:state.topicId||TRACK_BY_ID[state.trackId].topic;
  const safeTopic=topic&&atlasGet(topic)&&!isSafetyPriority(topic)?topic:null;
  const coverage=graphCoverage(state,QUESTION_BY_ID);
  const patterns=[...testableDifferentials(state),...adaptiveDifferentials(state)];
- const challenges=adaptiveChallenges(state);
+ const deepFormulation=domainFormulation(state);
+ const challenges=[...adaptiveChallenges(state),...deepFormulation.counterpoints];
  const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
  const canContinue=Boolean(nextHypothesisQuestion(state));
  return {track:TRACK_BY_ID[state.trackId],situation:state.description||(state.drill?.confirmed&&subtypeNode(state.drill.leafId)?'Exploring: '+subtypeNode(state.drill.leafId).label:TRACK_BY_ID[state.trackId].title),
-  alternatives,patterns,challenges,graph,links:[...investigationLinks(state),...adaptiveLinks(state)].map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
+  alternatives,patterns:[...patterns,...deepFormulation.hypotheses],challenges,domain:deepFormulation,graph,links:[...investigationLinks(state),...adaptiveLinks(state),...deepFormulation.links].map(link=>({...link,review:state.linkFeedback?.[link.id]||'unreviewed'})),coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
-   state.drill?.unsupportedCategory?'You have identified a specific experience. This part of the synthetic atlas does not yet have a reviewed explanatory interview, so no psychological mechanism is inferred.':
+   deepFormulation.hypotheses.length?'Your answers suggest a possible relationship between conditions and changes in the experience. This is a working explanation to challenge, not an established cause.':
+   state.drill?.unsupportedCategory?'You have identified an experience, but this area lacks a reviewed general mechanism interview. The optional domain-specific questions can investigate what may contribute without guessing a diagnosis.':
    patterns.length?'Your answers support testing specific patterns and their alternatives, but do not establish a cause.':
    examined===0?'There is not enough distinguishing information yet.':
    unresolved?'Several explanations remain plausible. The answers cannot establish one cause.':
@@ -379,7 +382,7 @@ export function hypothesisResult(state){
 }
 export function reviewHypothesisLink(state,linkId,verdict){
  if(!state||state.safety||!['fits','uncertain','no-fit'].includes(verdict))return state;
- const link=[...investigationLinks(state),...adaptiveLinks(state)].find(x=>x.id===linkId);
+ const link=[...investigationLinks(state),...adaptiveLinks(state),...domainFormulation(state).links].find(x=>x.id===linkId);
  if(!link)return state;
  return {...state,linkFeedback:{...(state.linkFeedback||{}),[linkId]:verdict}};
 }
@@ -401,6 +404,8 @@ export function formulationPlainText(state){
   'Specific details explicitly selected:',...(caseDetailReport(state).length?caseDetailReport(state):['Not established']),'',
   'Functional investigation — person-selected answers:',...(investigationReport(state).length?investigationReport(state):['Not investigated']),
   'Adaptive causal inquiry — person-selected answers:',...(adaptiveReport(state).length?adaptiveReport(state):['Not investigated']),'',
+  'DOMAIN-SPECIFIC DEEP INVESTIGATION — exact reports:',...(domainReport(state).length?domainReport(state):['Not investigated']),'',
+  'DOMAIN CAUSAL HYPOTHESES (not demonstrated):',...(r.domain.hypotheses.length?r.domain.hypotheses.flatMap(p=>[p.title,p.description,'Evidence: '+p.evidence.map(e=>e.answer).join('; '),'What challenges it: '+p.falsifier,'Alternative: '+p.alternative]):['No cross-answer domain pattern established']),'',
   'Mechanism index: '+SYNTHETIC_MECHANISMS.length+' provisional authored entries from synthetic database v1 (not diagnostic evidence).','',
   'Observations that CHALLENGE simple explanations:',...(r.challenges.length?r.challenges.flatMap(x=>[x.title,x.explanation,...x.evidence.map(e=>e.question+': '+e.answer)]):['No contrasting observation established yet']),'',
   'Multi-observation hypotheses to TEST:',...(r.patterns.length?r.patterns.flatMap(p=>[p.title,p.description,'What could disconfirm it: '+(p.falsifier||'Not established yet; gather contrasting observations'),'Alternative: '+p.alternative]):['No pattern has enough support to propose']),'',
