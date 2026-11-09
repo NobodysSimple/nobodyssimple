@@ -474,8 +474,7 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
   if(b.dataset.hypoInvestAnswer&&state){
    state=answerInvestigation(state,b.dataset.hypoInvestQuestion,b.dataset.hypoInvestAnswer,
     root.querySelector('[data-hypo-invest-words]')?.value||'');
-   if(!state.safety&&!state.investigation?.active)state=startAdaptiveInquiry(state);
-   stage=state.safety?'result':state.investigation?.active?'investigation':adaptiveQuestion(state)?'adaptive':'result';
+   stage=state.safety?'result':state.investigation?.active?'investigation':'result';
    render(true);return;
   }
   if(b.hasAttribute('data-hypo-invest-back')&&state){
