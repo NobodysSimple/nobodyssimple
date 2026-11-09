@@ -11,6 +11,13 @@ export const TRACK_DRILL_CATEGORY=Object.freeze({
  identity:'IDENTITY',sensory:'SENSORY',loss:'LOSS'
 });
 const TRACK_CROSS_CATEGORIES=Object.freeze({overthinking:Object.freeze(['SELF','CHECKING','VALUES','RELATIONSHIPS','EMOTIONS'])});
+export const TRACK_FOR_CATEGORY=Object.freeze({
+ IDENTITY:'identity',SELF:'identity',RELATIONSHIPS:'relationships',TASKS:'procrastination',
+ SLEEP:'sleep',CHECKING:'checking',SENSORY:'sensory',EMOTIONS:'emotion',SOCIAL:'social',
+ HEALTH:'fatigue',LOSS:'loss',NEURO:'sensory',SEXUAL:'identity',WORK:'procrastination',
+ MONEY:'choices',DIGITAL:'overthinking',FAMILY:'relationships',EATING:'emotion',
+ SUBSTANCE:'emotion',SAFETY:null,VALUES:'choices'
+});
 const slug=label=>label.toUpperCase().replace(/[^A-Z0-9]+/g,'-').replace(/^-|-$/g,'');
 function parse(){
  const nodes=[],byId=Object.create(null),byParent=Object.create(null);
