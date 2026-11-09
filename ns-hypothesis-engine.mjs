@@ -245,7 +245,7 @@ const conceptGroupById=Object.freeze(Object.fromEntries(
  EQUIVALENT_QUESTION_GROUPS.flatMap((ids,index)=>ids.map(id=>[id,'equiv-'+index]))
 ));
 export function nextHypothesisQuestion(state){
- if(!state||state.safety)return null;
+ if(!state||state.safety||state.drill?.unsupportedCategory)return null;
  const used=new Set(state.answers.map(a=>a.questionId));
  const usedGroups=new Set([...used].map(id=>conceptGroupById[id]).filter(Boolean));
  const pool=questionPool(state).filter(q=>!used.has(q.id)&&
@@ -335,14 +335,14 @@ export function reviewHypothesis(state,id,value){
 }
 export function hypothesisResult(state){
  if(!state)return null;
- const all=rankedHypotheses(state,100);
+ const all=state.drill?.unsupportedCategory?[]:rankedHypotheses(state,100);
  const leading=all.slice(0,3);
  const reviewed=all.filter(c=>!leading.some(x=>x.id===c.id)&&c.feedback!=='unreviewed');
  const alternatives=[...leading,...reviewed];
  const examined=state.answers.filter(a=>ANSWER_BY_ID[a.answerId]?.value!==0).length;
  const first=alternatives[0],second=alternatives[1];
  const unresolved=examined<5||!first?.positive.length||(first?.score||0)-(second?.score||0)<1;
- const topic=state.topicId||TRACK_BY_ID[state.trackId].topic;
+ const topic=state.drill?.unsupportedCategory?null:state.topicId||TRACK_BY_ID[state.trackId].topic;
  const safeTopic=topic&&atlasGet(topic)&&!isSafetyPriority(topic)?topic:null;
  const coverage=graphCoverage(state,QUESTION_BY_ID);
  const graph=buildFormulationGraph(state,alternatives,QUESTION_BY_ID);
@@ -350,6 +350,7 @@ export function hypothesisResult(state){
  return {track:TRACK_BY_ID[state.trackId],situation:state.description||(state.drill?.confirmed&&subtypeNode(state.drill.leafId)?'Exploring: '+subtypeNode(state.drill.leafId).label:TRACK_BY_ID[state.trackId].title),
   alternatives,graph,coverage,examined,unresolved,topic:safeTopic,canContinue,
   summary:state.safety?'Safety and practical support take priority over a questionnaire.':
+   state.drill?.unsupportedCategory?'You have identified a specific experience. This part of the synthetic atlas does not yet have a reviewed explanatory interview, so no psychological mechanism is inferred.':
    examined===0?'There is not enough distinguishing information yet.':
    unresolved?'Several explanations remain plausible. The answers cannot establish one cause.':
    'Your answers provide a provisional picture to examine. More questions and corrections may change it.',
