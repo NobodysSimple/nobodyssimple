@@ -20,8 +20,8 @@ const booksHtml=(guide,id)=>{
  '<h2 id="ns-guidebook-title">'+e(guide.title)+'</h2><p>'+e(guide.subtitle)+'</p>'+
  '<p class="ns-guidebook-status">'+e(guide.reviewStatus)+'</p></div>'+
  '<div class="ns-guidebook-toc" aria-label="Contents"><strong>In this guide</strong><div>'+
- STEADY_LANES.map(x=>'<a href="#guide-'+e(id)+'-'+e(x.id)+'">'+e(x.label)+'</a>').join('')+
- '<a href="#guide-'+e(id)+'-sources">Evidence and sources</a></div></div>'+
+ STEADY_LANES.map(x=>'<button type="button" data-guide-jump="'+e(x.id)+'">'+e(x.label)+'</button>').join('')+
+ '<button type="button" data-guide-jump="sources">Evidence and sources</button></div></div>'+
  '<section class="ns-guidebook-recognition"><h3>1. What am I experiencing?</h3><p>'+e(guide.what)+'</p>'+
  '<h4>What this can look like</h4><ul>'+guide.variations.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul>'+
  '<h4>One possible feedback cycle</h4><p>'+e(guide.possibleLoop)+'</p>'+
@@ -86,6 +86,12 @@ export function attachSteadyGuidebook(root,id,{position='after-header',label='Fu
   pinned.querySelector('[data-guide-unpin]').addEventListener('click',()=>{activeGuideKeys.delete(id);pinned.innerHTML='';opener.focus()});
  };
  dialog.addEventListener('click',event=>{
+  const jump=event.target.closest('[data-guide-jump]');
+  if(jump){
+   const target=dialog.querySelector('#guide-'+uniqueId+'-'+jump.dataset.guideJump);
+   if(target){if(target.tagName==='DETAILS')target.open=true;target.scrollIntoView({block:'start',behavior:'smooth'});}
+   return;
+  }
   const button=event.target.closest('[data-guide-choose]');if(!button)return;
   setPin(button.dataset.guideChoose);close();
   pinned.querySelector('button')?.focus();

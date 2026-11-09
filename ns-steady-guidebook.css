@@ -80,8 +80,9 @@ body.app-body.ns-shell-v1 #main .ns-steady-pinned>button{
 }
 .ns-guidebook-toc strong{font:800 12px system-ui,sans-serif;}
 .ns-guidebook-toc>div{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px;}
-.ns-guidebook-toc a{
+.ns-guidebook-toc :is(a,button){
  text-decoration:none;color:#376f50;background:#fff;border:1px solid #d3e3d1;
+ cursor:pointer;
  border-radius:100px;padding:6px 9px;font:700 11px/1.4 system-ui,sans-serif;
 }
 .ns-guidebook-recognition,.ns-guidebook-priorities,.ns-guidebook-sources{

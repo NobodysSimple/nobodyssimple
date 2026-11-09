@@ -16,6 +16,11 @@ test('simple non-diagnostic choice navigation and full guidebook keep the tool a
  await expect(modal.locator('h2')).toContainText('Sensory overload');
  await expect(modal.locator('.ns-guidebook-lane')).toHaveCount(6);
  await expect(modal.locator('.ns-guidebook-method')).toHaveCount(12);
+ // Contents navigate inside the dialog; they must not change the SPA hash or lose tool state.
+ await modal.locator('[data-guide-jump="act"]').click();
+ await expect(modal.locator('details[id$="-act"]')).toHaveAttribute('open','');
+ await expect(page).toHaveURL(/#need\/steady-sensory$/);
+ await expect(modal).toBeVisible();
  await modal.locator('.ns-guidebook-pick').first().click();
  await expect(modal).not.toBeVisible();
  await expect(page.locator('.ns-steady-pinned')).toBeVisible();
