@@ -608,6 +608,48 @@ export const INCLUSIVE_GROUPS_B = [
     "I act in ways that feel out of control",
     "Identify specific patterns and safety implications before assuming one cause.",
     "impulsivity compulsive"
+   ],
+   [
+    "emotional-dependency",
+    "I feel unable to cope without one particular person's reassurance",
+    "Safety, support, relationships and coping may interact.",
+    "emotional reliance attachment"
+   ],
+   [
+    "rigidity-and-change",
+    "I find it difficult when plans or expectations change",
+    "Predictability can be important; investigate context, neurotype and actual demands.",
+    "inflexible rigid"
+   ],
+   [
+    "self-sabotaging-patterns",
+    "I keep acting against goals that matter to me",
+    "Look for realistic barriers and competing needs before assuming self-sabotage.",
+    "self sabotage"
+   ],
+   [
+    "difficulty-receiving-affection",
+    "I find it hard to accept care or affection",
+    "Past experience, comfort, boundaries and social context may be relevant.",
+    "love reassurance intimacy"
+   ],
+   [
+    "frustration-tolerance",
+    "Strong frustration makes it hard to respond as I want",
+    "Difficult conditions, skills and physical capacity can interact.",
+    "anger distress tolerance"
+   ],
+   [
+    "coping-through-avoidance",
+    "I keep avoiding something even when it matters to me",
+    "Avoidance can protect temporarily; what happens depends on safety and context.",
+    "avoidant coping"
+   ],
+   [
+    "automatic-habit-cycle",
+    "I act on autopilot and want to understand the pattern",
+    "Context, cue, short-term effect and values may help explain the behaviour.",
+    "habit automatic"
    ]
   ]
  },
@@ -886,6 +928,86 @@ export const INCLUSIVE_GROUPS_B = [
     "I want my actions to better reflect what matters to me",
     "Values can guide choices without requiring a perfect identity.",
     "values growth"
+   ]
+  ]
+ },
+ {
+  "id": "appearance",
+  "title": "Appearance, body & stigma",
+  "description": "Beauty standards, visible differences, weight stigma and changing bodies",
+  "tags": "appearance body image beauty weight stigma hair loss ageing dysmorphia",
+  "rows": [
+   [
+    "weight-stigma",
+    "I am being judged because of my body weight",
+    "Weight-based stigma can affect relationships, healthcare and opportunities.",
+    "fatphobia weight discrimination"
+   ],
+   [
+    "appearance-bullying",
+    "I am being bullied because of my appearance",
+    "Comments, exclusion and harassment about looks are social harms.",
+    "looks bullying body shaming"
+   ],
+   [
+    "body-changes-illness",
+    "Illness or treatment has changed how my body looks",
+    "Changes in appearance can affect comfort, identity and social treatment.",
+    "cancer treatment body image"
+   ],
+   [
+    "visible-difference",
+    "People react to a visible difference in my appearance",
+    "Scars, birthmarks or other visible differences can attract unwanted attention.",
+    "facial difference birthmark"
+   ],
+   [
+    "hair-loss-distress",
+    "Hair loss is affecting how I feel or how people treat me",
+    "Hair changes can be medically and personally significant.",
+    "alopecia baldness"
+   ],
+   [
+    "ageing-appearance",
+    "I feel pressure about how my appearance changes with age",
+    "Beauty expectations may affect people differently across life stages.",
+    "wrinkles aging looks"
+   ],
+   [
+    "body-dysmorphic-concerns",
+    "Concerns about a perceived flaw in my appearance take over my attention",
+    "Repeated checking and distress may merit specialist assessment; a brief topic cannot diagnose BDD.",
+    "body dysmorphia bdd"
+   ],
+   [
+    "scars-burns-appearance",
+    "I am adapting to scars, burns or changes in appearance",
+    "Visible changes may influence comfort and social interactions.",
+    "scarring burns disfigurement"
+   ],
+   [
+    "appearance-after-pregnancy",
+    "My body changes after pregnancy are difficult to navigate",
+    "Physical recovery, expectations and support may matter.",
+    "postpartum body image"
+   ],
+   [
+    "body-neutrality",
+    "I want a less judgmental relationship with my appearance",
+    "It is possible to value a body without demanding constant positivity.",
+    "body acceptance neutrality"
+   ],
+   [
+    "beauty-standards-pressure",
+    "Beauty standards make me feel pressured to change my appearance",
+    "Media, culture and discrimination can shape expectations.",
+    "appearance pressure beauty"
+   ],
+   [
+    "eating-weight-stigma",
+    "I face stigma about food, eating or body size",
+    "Weight stigma and food-related judgments can affect care and participation.",
+    "food shaming"
    ]
   ]
  }
