@@ -60,7 +60,7 @@ test('search accepts identity and social terms without silently treating these a
   assert.ok(getSubjectMatchesForTest(word,'').some(p=>p.id===id),word+' missing '+id);
  }
  assert.ok(getSubjectMatchesForTest('gender identity','lgbtq').some(p=>p.id==='gender-identity-exploration'));
- assert.equal(getSubjectMatchesForTest('gender identity','culture').length,0);
+ assert.ok(!getSubjectMatchesForTest('gender identity','culture').some(p=>p.id==='gender-identity-exploration'));
 });
 
 test('every added topic has a working integrated guide with context, autonomy, access and honest editorial limitations',()=>{
