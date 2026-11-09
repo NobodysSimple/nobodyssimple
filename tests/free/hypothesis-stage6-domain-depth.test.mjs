@@ -59,7 +59,11 @@ test('all 84 clusters and 440 exact selectable experiences receive a grounded in
  for(const leaf of leaves){
   const cluster=subtypeNode(leaf.parent),category=subtypeNode(cluster.parent);
   if(category.id==='SAFETY')continue;
-  const state=startDomainInquiry(caseFor(category.id,cluster.id,leaf.id));
+  const sample=caseFor(category.id,cluster.id,leaf.id);
+  // The safety scanner intentionally diverts urgent physical symptoms and
+  // coercion even when these appear outside the general SAFETY category.
+  if(sample.safety){assert.equal(domainEligible(sample),false,leaf.id);continue;}
+  const state=startDomainInquiry(sample);
   assert.equal(domainEligible(state),true,leaf.id);
   const q=domainQuestion(state);
   assert.ok(q&&q.prompt.includes(leaf.label),leaf.id);
