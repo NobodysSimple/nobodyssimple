@@ -25,7 +25,10 @@ test('Emotion Compass appears directly below Hypothesis Generator; tool catalogu
  await expect(page.locator('.ns-home-shortcuts a[href="#tools"]')).toHaveCount(0);
  await compass.click();
  await expect(page).toHaveURL(/#compass$/);
- await expect(page.locator('svg.compass')).toBeVisible();
+ await expect(page.locator('#compass-mood-before')).toBeVisible();
+ await page.locator('#compass-mood-before').fill('6');
+ await page.locator('#compass-mood-start').click();
+ await expect(page.locator('#compass-plot')).toBeVisible();
 });
 test('old Browse tools route now enters the choice-led console instead',async({page})=>{
  await page.goto('/index.html#tools');
@@ -84,7 +87,7 @@ test('breathing visual is optional, user-started, pausable and has no breath-hol
  await expect(page.locator('[data-game-active]')).toHaveCount(1);
 });
 test('sensory mode offers visual environmental control without forced breathing or flashing',async({page})=>{
- await go(page,'workbook-topic/sensory-overload');
+ await go(page,'workbook-topic/sensory');
  await expect(page.locator('[data-game-card="star-garden"]')).toHaveCount(0);
  await expect(page.locator('[data-game-card="steady-taps"]')).toHaveCount(0);
  await game(page,'quiet-room');
