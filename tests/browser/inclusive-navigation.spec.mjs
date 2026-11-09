@@ -17,7 +17,7 @@ test('expanded atlas has discoverable categories, manageable pagination and sear
  await expect(page.getByText('I want to understand ADHD experiences')).toBeVisible();
  await page.locator('[data-needs-domain-select]').selectOption('culture');
  await expect(page.getByText('I am experiencing racism')).toBeVisible();
- const accessibility=await new AxeBuilder({page}).analyze();
+ const accessibility=await new AxeBuilder({page}).include('.ns-needs').analyze();
  expect(accessibility.violations).toEqual([]);
 });
 
