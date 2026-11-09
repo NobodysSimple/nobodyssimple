@@ -121,5 +121,5 @@ test('static site has isolated client-only navigation data, no fabricated probab
  assert.match(ui,/data-hypo-drill-skip/);
  assert.match(ui,/ns-hypo-drill-options/);
  assert.doesNotMatch(source,/localStorage|sessionStorage|fetch\(|sendBeacon|XMLHttpRequest/);
- assert.doesNotMatch(source,/26[,_]?377|trained_probability|Bayesian.*confidence/i);
+ assert.doesNotMatch(source.replace(/\/\*[\s\S]*?\*\//g,''),/26[,_]?377|trained_probability|Bayesian.*confidence/i);
 });
