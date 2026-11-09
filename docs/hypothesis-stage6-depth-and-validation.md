@@ -11,7 +11,7 @@ The code in this branch addresses the user's urgent design blocker **in preparat
 ## Coverage
 
 - The discovery atlas remains **21 categories, 84 clusters and 440 experience labels**. These labels are an editorial taxonomy, not a complete catalogue of human distress, diagnostic categories or all possible mechanisms.
-- The **20 non-SAFETY categories** now each have a bespoke bank of **four primary contextual lenses and four additional-factor lenses** (160 domain-labelled differential options), applied in a **10-step reversible, optional investigative sequence**. Every confirmed non-urgent leaf is eligible; question prompts explicitly use the exact selected experience and retain up to 280 characters of the visitor's own wording per answer.
+- The **20 non-SAFETY categories** now each have a bespoke bank of **four primary contextual lenses and four additional-factor lenses** (160 domain-labelled differential options), applied in a **13-step reversible, optional investigative sequence**. Every confirmed non-urgent leaf is eligible; question prompts explicitly use the exact selected experience and retain up to 280 characters of the visitor's own wording per answer.
 - The **SAFETY** category, specific coercion/violence concerns, dangerous physical symptoms, certain substance-withdrawal concerns, and other identified urgent routes continue to divert into a safety-oriented response. A safety gate is not a gap to force through a psychological formulation.
 - A person may have a meaningful preference, structural problem, disability/access need, physical-health problem, family issue or practical constraint **without any maladaptive internal mechanism**. The interview explicitly permits that outcome.
 - A broad category being covered does **not** mean every possible subtype-specific causal hypothesis has been written, empirically checked or professionally reviewed. The new bank provides a usable mechanism-testing starting point, not exhaustiveness.
@@ -29,7 +29,10 @@ The system cannot conclude "X causes Y" because a label or preference was select
 7. Whether the sequence is repeated across occasions, before suggesting a continuing feedback cycle.
 8. A potential counterexample that could weaken the first explanation.
 9. Developmental/chronological context without inventing trauma.
-10. The person's desired outcome, including **no change** or **understanding only**.
+10. Personal stakes or meaning, without presuming an underlying psychological cause.
+11. Reported bodily modifiers such as sleep, pain, sensory overload or treatment.
+12. Protective conditions that have actually helped, without presuming a guaranteed intervention.
+13. The person's desired outcome, including **no change** or **understanding only**.
 
 An explanatory tile needs at least **two directly reported selections** with known question IDs; an ongoing relief cycle requires four (response + immediate consequence + later consequence + repeated sequence). The result must include an explicit *alternative* and *what would challenge it*. The method is an authored educational reasoning scaffold, not an expert interview, causal model, clinically calibrated classifier, diagnostic instrument or evidence that a hidden cause has been discovered.
 
