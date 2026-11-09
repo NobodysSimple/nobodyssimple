@@ -60,12 +60,14 @@ test('after a few answers, results show alternatives, uncertainty, supporting an
  await expect(page.locator('.ns-hypo-result-hero')).toBeVisible();
  await expect(page.locator('.ns-hypo-result-card')).toHaveCount(3);
  await expect(page.locator('.ns-hypo-result-card').first()).toContainText('Possibility 1');
+ await page.locator('.ns-hypo-full-evidence summary').click();
  await expect(page.locator('.ns-hypo-observations').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-counters').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-need').first()).toContainText('not something we have inferred');
- await expect(page.locator('.ns-hypo-path')).toBeVisible();
+ await expect(page.locator('.ns-hypo-graph')).toBeVisible();
+ await expect(page.locator('.ns-hypo-graph-node').first()).toBeVisible();
  await expect(page.locator('.ns-hypo-transparency')).toContainText('probability');
- await expect(page.locator('a[href="#workbook-topic/procrastination"]')).toHaveCount(1);
+ await expect(page.locator('.ns-hypo-final-buttons a[href="#workbook-topic/procrastination"]')).toHaveCount(1);
  const feedback=page.locator('.ns-hypo-result-card').first().locator('[data-hypo-feedback="no-fit"]');
  await feedback.click();
  await expect(page.locator('[data-hypo-feedback="no-fit"][aria-pressed="true"]')).toHaveCount(1);
