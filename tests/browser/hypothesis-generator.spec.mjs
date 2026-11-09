@@ -48,7 +48,7 @@ test('Nobody asks a new adaptive question after each yes/no/maybe answer',async(
  await expect(page.locator('img.ns-hypo-guide-art')).toBeVisible();
  await expect(page.locator('.ns-hypo-why summary')).toBeVisible();
  await page.locator('.ns-hypo-why summary').click();
- await expect(page.locator('.ns-hypo-why')).toContainText('compare possible processes');
+ await expect(page.locator('.ns-hypo-why')).toContainText('distinguish competing models');
 });
 test('after a few answers, results show alternatives, uncertainty, supporting and challenging evidence',async({page})=>{
  await open(page);
