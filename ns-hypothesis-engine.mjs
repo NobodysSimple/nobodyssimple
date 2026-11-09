@@ -152,11 +152,18 @@ export function answerHypothesisDrill(state,questionId,answerId){
  if(drill===state.drill)return state;
  // A dangerous physical-symptom branch triggers advice rather than trying
  // to formulate new neurological or cardiopulmonary symptoms psychologically.
- const dangerous=drill.clusterId==='HEALTH-ALARM'||
-   (drill.leafId&&(
-    drill.leafId==='SLEEP-HEALTH-GASPING-DURING-SLEEP'||
-    drill.leafId==='EATING-EATING-COMPENSATORY-ACTIONS'));
- const safety=dangerous?{kind:'medical',reason:'This concern may require a physical-health assessment. A question pathway cannot establish its medical cause.'}:state.safety;
+ const medicalLeaf=new Set([
+  'SLEEP-HEALTH-GASPING-DURING-SLEEP','EATING-EATING-COMPENSATORY-ACTIONS',
+  'SUBSTANCE-ALCOHOL-WITHDRAWAL-CONCERNS','SUBSTANCE-DRUG-SUBSTANCE-WITHDRAWAL'
+ ]);
+ const coercionLeaf=new Set([
+  'SEXUAL-DESIRE-UNWANTED-PRESSURE-FOR-SEX','FAMILY-SAFETY-FINANCIAL-COERCION',
+  'FAMILY-SAFETY-INTIMIDATION-AT-HOME','FAMILY-SAFETY-CONTROLLING-RELATIVES'
+ ]);
+ const medical=drill.clusterId==='HEALTH-ALARM'||medicalLeaf.has(drill.leafId);
+ const coercion=drill.clusterId==='FAMILY-SAFETY'||coercionLeaf.has(drill.leafId);
+ const safety=medical?{kind:'medical',reason:'This concern may require a physical-health assessment. A question pathway cannot establish its medical cause.'}:
+  coercion?{kind:'coercion',reason:'Possible coercion, intimidation or pressure deserves a safety-first response rather than an inferred personal psychological explanation.'}:state.safety;
  return {...state,drill,safety};
 }
 export function skipHypothesisDrill(state){
