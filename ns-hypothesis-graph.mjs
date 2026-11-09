@@ -74,7 +74,7 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    detail:exact?'You confirmed this specific experience as something you want to explore. This does not establish a problem or a disorder.':'This is your selected general starting area. The exact experience has not yet been established.',
    evidence:[...(state.description?.trim()?[{id:'person-own-words',question:'Your description in your own words',answer:state.description.trim()}]:[]),
     ...inquiryEvidence('father_label'),...sourced(entry,'Is this a specific experience you want to explore?')],
-   status:exact||personPhrase?'reported':'unknown'},
+   status:exact||personPhrase||state.description?.trim()?'reported':'unknown'},
   {id:'context',layer:'context',
    title:[inquiryFor('who')?.text,inquiryFor('father_behaviour')?.text,inquiryFor('event')?.text,
     setting?.text,preciseFor('timeframe')?.text,fromDomain('primary')?.text,advancedFor('external_persistence')?.text,
@@ -88,13 +88,13 @@ export function buildFormulationGraph(state,candidates,questionIndex){
     ...normal(observations)].slice(0,16),
    status:setting||observations.length||precise.length||inquiryEvidence('event','environment','sleep').length?'reported':'unknown'},
   {id:'experience',layer:'experience',
-   title:[inquiryFor('emotion')?.text,inquiryFor('interpretation')?.text,valence?.text,meaning?.text,preciseFor('impact')?.text].filter(Boolean).slice(0,3).join(' · ')||
+   title:[inquiryFor('emotion')?.text,inquiryFor('interpretation')?.text,fromDomain('stake')?.text,valence?.text,meaning?.text,preciseFor('impact')?.text].filter(Boolean).slice(0,3).join(' · ')||
     (meanings.length?'What you report feeling or considering':'Personal meaning not established'),
    detail:'These are the meanings or descriptions you selected, not an interpretation of your identity or a hidden motive. A feeling cannot be inferred from a behaviour.',
    evidence:[...sourced(valence,'How would you describe this experience?'),
     ...sourced(meaning,'What is most relevant to understanding it?'),...inquiryEvidence('emotion','interpretation','father_label'),
     ...evidenceFor('impact'),...advancedEvidence('meaning_evidence','meaning_reframe'),...normal(meanings)].slice(0,12),
-   status:valence||meaning||meanings.length||preciseFor('impact')||inquiryFor('emotion')||inquiryFor('interpretation')?'reported':'unknown'},
+   status:valence||meaning||meanings.length||preciseFor('impact')||inquiryFor('emotion')||inquiryFor('interpretation')||fromDomain('stake')?'reported':'unknown'},
   {id:'response',layer:'response',title:[inquiryFor('action')?.text,inquiryFor('regulation')?.text,fromDomain('response')?.text,advancedFor('coping_pattern')?.text].filter(Boolean).slice(0,3).join(' · ')||
     (responses.length?'Responses and choices mentioned':'Response not established'),
    detail:'What you said you do, including how you regulate difficult feelings. A response is not necessarily a protective strategy.',
@@ -134,13 +134,14 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    status:inquiryFor('long_term')?'reported':supporting?'tentative':'unknown'},
   {id:'need',layer:'need',title:fromDomain('goal')?'My goal: '+fromDomain('goal').text:
     inquiryFor('values')?'What matters: '+inquiryFor('values').text:
-   (preciseFor('goal')?'My stated goal: '+preciseFor('goal').text:
-   (needs.length?'Needs or resources to consider':'Possible needs, still unconfirmed')),
+   (fromDomain('protective')?'What has helped: '+fromDomain('protective').text:
+    (preciseFor('goal')?'My stated goal: '+preciseFor('goal').text:
+   (needs.length?'Needs or resources to consider':'Possible needs, still unconfirmed'))),
    detail:inquiryFor('values')?'This priority was selected by the person; it is not an inferred unmet need.':preciseFor('goal')?'The goal shown here was explicitly selected by the person. It does not prove that a particular need is unmet.':
     'These are options to discuss, not unmet needs discovered by an algorithm. '+(p?.need||'A need has not been identified.'),
    evidence:[...inquiryEvidence('values','what_changes','alternative'),...advancedEvidence('safe_probe','values_external'),
     ...evidenceFor('goal'),...normal(needs)].slice(0,10),
-   status:inquiryFor('values')||preciseFor('goal')?'reported':needs.length?'tentative':'unknown'}
+   status:inquiryFor('values')||preciseFor('goal')||fromDomain('goal')||fromDomain('protective')?'reported':needs.length?'tentative':'unknown'}
  ];
  // Only surface an opposing-goals hypothesis when a person actually reports
  // a tension — do not produce a romanticised 'two parts of yourself' narrative.
