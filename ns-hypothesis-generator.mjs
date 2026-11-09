@@ -463,6 +463,7 @@ function resultPage(state,selectedNode=''){
   '<span class="ns-hypo-result-count">'+r.examined+' informative answers · '+r.coverage.layers.length+
   ' areas explored · No clinical probability</span></div>'+
   art('ns-character-solving.webp','ns-hypo-results-art')+'</header>'+
+  (domainEligible(state)&&!state.domain?.finished?'<section class="ns-hypo-first-depth"><div><strong>Ready to investigate why this is happening?</strong><p>Test competing circumstances, coping effects, bodily influences, exceptions and what might challenge your first explanation.</p></div><button type="button" data-hypo-domain-start>Investigate the deeper WHY for this specific experience →</button></section>':'')+
   '<section class="ns-hypo-pattern"><div class="ns-hypo-section-head"><span>01</span><div>'+
   '<p class="ns-hypo-eyebrow">YOUR STARTING QUESTION</p><h2>What are we actually trying to understand?</h2></div></div>'+
   '<p class="ns-hypo-concern">'+e(r.situation)+'</p>'+
@@ -479,7 +480,7 @@ function resultPage(state,selectedNode=''){
   '<section class="ns-hypo-final-actions"><div><h2>Keep exploring—or put something into practice</h2>'+
   '<p>There is no fixed question count. Each further question tries to distinguish explanations or investigate a part you challenged. You may also stop, revise, or choose something helpful without deciding on one cause.</p></div>'+
   '<div class="ns-hypo-final-buttons">'+
-  (domainEligible(state)&&!state.domain?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-domain-start>Investigate the deeper WHY for this specific experience →</button>':'')+
+  
    (!state.investigation?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-invest-start>Investigate possible causes and maintaining cycles →</button>':'')+
    (!state.adaptive?.finished&&state.investigation?.answers?.length?'<button type="button" class="ns-hypo-invest-action" data-hypo-adaptive-start>Test competing explanations in depth →</button>':'')+
   (state.drill?.confirmed&&!state.caseDetails?.finished?'<button type="button" data-hypo-fact-start>Explore more precise details →</button>':'')+
