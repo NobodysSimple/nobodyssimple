@@ -41,7 +41,7 @@ export const INVESTIGATION_QUESTIONS=Object.freeze([
  ['task','I faced an unfinished task or responsibility'],['nothing_obvious','No obvious event stood out']
  ],{why:'Elicits the antecedent, not an assumed early-life cause.'}),
  Q('emotion','sequence.feeling','experience',
- 'What did you FEEL in that moment? Select what came closest.',[
+ 'Which feeling came closest in that moment?',[
  ['fear','Fear or alarm'],['shame','Shame or embarrassment'],['guilt','Guilt'],
  ['anger','Anger or resentment'],['sadness','Sadness or grief'],
  ['confusion','Confusion or uncertainty'],['relief','Relief or enjoyment'],
