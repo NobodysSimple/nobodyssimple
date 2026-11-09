@@ -46,7 +46,7 @@ test('game scrollers cover all seven navigation modes and all 53 choices with ex
  assert.equal(count,53);
 });
 test('every atlas topic has a safe no-writing game selection or human-support-first exception',()=>{
- assert.equal(atlasProblemIndex.length,166);
+ assert.equal(atlasProblemIndex.length,492);
  let noGames=0;
  for(const topic of atlasProblemIndex){
   const guide=workbookForTopic(topic.id);
