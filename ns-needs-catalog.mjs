@@ -79,10 +79,15 @@ export function getNeedsMode(id){return NEEDS_MAP[id]||null}
 export function getNeedsActivity(id){return NEEDS_ACTIVITIES[id]||null}
 export function needsDestination(option){
  if(!option)return '#navigate';
- if(option.type==='activity')return '#need/'+encodeURIComponent(option.target);
- if(option.type==='tool')return '#tool/'+encodeURIComponent(option.target);
- if(option.type==='topic')return '#problem/'+encodeURIComponent(option.target);
- if(option.type==='atlas')return '#navigate/atlas';
+ const mode=NEEDS_MODES.find(m=>m.options.includes(option))?.id;
+ const prefix=mode?encodeURIComponent(mode)+'/'+encodeURIComponent(option.id)+'/':'';
+ if(option.type==='activity'){
+  if(mode&&mode!=='regulate'&&!(mode==='unsure'&&option.id==='relief'))return '#route-activity/'+prefix+encodeURIComponent(option.target);
+  return '#need/'+encodeURIComponent(option.target);
+ }
+ if(option.type==='tool')return mode?'#route-tool/'+prefix+encodeURIComponent(option.target):'#tool/'+encodeURIComponent(option.target);
+ if(option.type==='topic')return mode?'#route-topic/'+prefix+encodeURIComponent(option.target):'#problem/'+encodeURIComponent(option.target);
+ if(option.type==='atlas')return mode?'#route-atlas/'+encodeURIComponent(mode)+'/'+encodeURIComponent(option.id):'#navigate/atlas';
  return '#navigate';
 }
 export const NEEDS_REVIEW_CASES=Object.freeze([
