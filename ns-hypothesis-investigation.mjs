@@ -181,10 +181,16 @@ export function investigationCandidates(state){
  if(!state||state.safety||state.drill?.unsupportedCategory)return [];
  const track=state.trackId||'';
  const answers=new Set(state.investigation?.answers?.map(a=>a.field)||[]);
+ const unanswerable=new Set(['unsure','other','prefer_not']);
  return INVESTIGATION_QUESTIONS.filter(q=>!answers.has(q.id)&&
  (!q.tracks.length||q.tracks.includes(track))&&
  (!q.after||chosen(state,q.after))&&
- (!q.when||chosen(state,q.after)===q.when));
+ (!q.when||chosen(state,q.after)===q.when)&&
+ // Don't question the function of a response that was never selected, or
+ // invent a tradeoff around a value the person declined to identify.
+ (!['short_term','if_stop'].includes(q.id)||
+   (!!chosen(state,'action')&&!unanswerable.has(chosen(state,'action'))&&chosen(state,'action')!=='no_change'))&&
+ (q.id!=='values_cost'||!unanswerable.has(chosen(state,'values'))));
 }
 export function investigationQuestion(state){
  if(!state?.investigation?.active)return null;
