@@ -7,6 +7,7 @@ import {drillFacts,subtypeNode} from './ns-hypothesis-subtype-atlas.mjs';
 import {caseDetailFacts} from './ns-hypothesis-case-facts.mjs';
 import {investigationFacts,investigationLinks} from './ns-hypothesis-investigation.mjs';
 import {testableDifferentials} from './ns-hypothesis-differentials.mjs';
+import {adaptiveFacts,adaptiveDifferentials} from './ns-hypothesis-adaptive.mjs';
 const reply={yes:'Yes',probably:'Probably',unsure:'Not sure','probably-not':'Probably not',no:'No'};
 const positive=a=>['yes','probably'].includes(a.answerId);
 const significant=a=>a.answerId!=='unsure';
@@ -43,7 +44,7 @@ export function buildFormulationGraph(state,candidates,questionIndex){
  const direct=(items)=>items.filter(x=>positive(x.a)).slice(0,3).map(x=>x.item);
  const normal=(items)=>items.slice(0,3).map(x=>x.item);
  const supporting=leader?.positive?.length||0;
- const differentialPatterns=testableDifferentials(state);
+ const differentialPatterns=[...testableDifferentials(state),...adaptiveDifferentials(state)];
  // Preserve exact details explicitly selected by the person, never infer
  // more than the available selection establishes.
  const drill=state.drill;
@@ -51,6 +52,10 @@ export function buildFormulationGraph(state,candidates,questionIndex){
  const facts=drillFacts(drill);
  const precise=caseDetailFacts(state);
  const inquiry=investigationFacts(state);
+ const advanced=adaptiveFacts(state);
+ const advancedFor=key=>advanced.find(f=>f.kind==='adaptive:'+key);
+ const advancedEvidence=(...keys)=>advanced.filter(f=>keys.includes(f.kind.slice(9)))
+  .map(f=>({id:f.id,question:f.question,answer:f.text}));
  const inquiryFor=key=>inquiry.find(f=>f.kind===key);
  const inquiryEvidence=(...keys)=>inquiry.filter(f=>keys.includes(f.kind)).map(f=>({id:f.id,question:f.question,answer:f.text}));
  const preciseFor=kind=>precise.find(f=>f.kind===kind);
@@ -60,22 +65,24 @@ export function buildFormulationGraph(state,candidates,questionIndex){
   valence=factFor('valence'),meaning=factFor('meaning');
  const sourced=(fact,question)=>fact?[{id:fact.questionId,question,answer:fact.text}]:[];
  const personPhrase=inquiryFor('father_label')?.text;
- const title=personPhrase?
-  personPhrase+(exact?' · '+exact.label:''):
-  (state.description?.trim()||(exact?exact.label:state.trackId||'A difficulty I want to understand'));
+ const title=state.description?.trim()||personPhrase||(exact?exact.label:state.trackId||'A difficulty I want to understand');
  const nodes=[
-  {id:'presenting',layer:'presenting',title:short(title),
+  {id:'presenting',layer:'presenting',title:short(title,280),
    detail:exact?'You confirmed this specific experience as something you want to explore. This does not establish a problem or a disorder.':'This is your selected general starting area. The exact experience has not yet been established.',
-   evidence:[...inquiryEvidence('father_label'),...sourced(entry,'Is this a specific experience you want to explore?')],
+   evidence:[...(state.description?.trim()?[{id:'person-own-words',question:'Your description in your own words',answer:state.description.trim()}]:[]),
+    ...inquiryEvidence('father_label'),...sourced(entry,'Is this a specific experience you want to explore?')],
    status:exact||personPhrase?'reported':'unknown'},
   {id:'context',layer:'context',
    title:[inquiryFor('who')?.text,inquiryFor('father_behaviour')?.text,inquiryFor('event')?.text,
-    setting?.text,preciseFor('timeframe')?.text].filter(Boolean).slice(0,3).join(' · ')||
+    setting?.text,preciseFor('timeframe')?.text,advancedFor('external_persistence')?.text,
+    advancedFor('external_action')?.text].filter(Boolean).slice(0,4).join(' · ')||
     (observations.length?'Situations and constraints mentioned':'Context not established'),
    detail:setting?'You selected this setting or situation. The tool has not established what causes the experience there.':
     observations.length?'These are the circumstances and contrasts you have reported.':'Nobody has not yet established when the problem changes or what practical barriers are present.',
    evidence:[...inquiryEvidence('who','father_behaviour','event','sleep','capacity','environment','counterexample'),
-    ...sourced(setting,'Where or when does this matter most?'),...evidenceFor('timeframe','frequency','situations','exceptions'),...normal(observations)].slice(0,12),
+    ...sourced(setting,'Where or when does this matter most?'),...evidenceFor('timeframe','frequency','situations','exceptions'),
+    ...advancedEvidence('external_persistence','external_action','sleep_contrast','load_contrast','context_history','history_clarify'),
+    ...normal(observations)].slice(0,16),
    status:setting||observations.length||precise.length||inquiryEvidence('event','environment','sleep').length?'reported':'unknown'},
   {id:'experience',layer:'experience',
    title:[inquiryFor('emotion')?.text,inquiryFor('interpretation')?.text,valence?.text,meaning?.text,preciseFor('impact')?.text].filter(Boolean).slice(0,3).join(' · ')||
@@ -83,18 +90,18 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    detail:'These are the meanings or descriptions you selected, not an interpretation of your identity or a hidden motive. A feeling cannot be inferred from a behaviour.',
    evidence:[...sourced(valence,'How would you describe this experience?'),
     ...sourced(meaning,'What is most relevant to understanding it?'),...inquiryEvidence('emotion','interpretation','father_label'),
-    ...evidenceFor('impact'),...normal(meanings)].slice(0,10),
+    ...evidenceFor('impact'),...advancedEvidence('meaning_evidence','meaning_reframe'),...normal(meanings)].slice(0,12),
    status:valence||meaning||meanings.length||preciseFor('impact')||inquiryFor('emotion')||inquiryFor('interpretation')?'reported':'unknown'},
-  {id:'response',layer:'response',title:[inquiryFor('action')?.text,inquiryFor('regulation')?.text].filter(Boolean).join(' · ')||
+  {id:'response',layer:'response',title:[inquiryFor('action')?.text,inquiryFor('regulation')?.text,advancedFor('coping_pattern')?.text].filter(Boolean).join(' · ')||
     (responses.length?'Responses and choices mentioned':'Response not established'),
    detail:'What you said you do, including how you regulate difficult feelings. A response is not necessarily a protective strategy.',
-   evidence:[...inquiryEvidence('action','regulation'),...normal(responses)].slice(0,7),
+   evidence:[...inquiryEvidence('action','regulation'),...advancedEvidence('coping_pattern'),...normal(responses)].slice(0,9),
    status:inquiryFor('action')||inquiryFor('regulation')||responses.length?'reported':'unknown'},
   ...differentialPatterns.map((pattern,i)=>({
    id:pattern.id,layer:'mechanism',title:pattern.title,
-   detail:pattern.description+' Why it may be wrong: '+pattern.falsifier+
+   detail:pattern.description+(pattern.falsifier?' How to challenge it: '+pattern.falsifier:'')+
     ' Alternative: '+pattern.alternative,
-   evidence:pattern.evidence,challenges:[],
+   evidence:pattern.evidence,challenges:pattern.challenges||[],
    status:'tentative',rank:i+1,
    source:'multi_observation_test_not_clinical_probability'})),
   ...[leader,...other].filter(Boolean).map((c,i)=>({
@@ -104,36 +111,42 @@ export function buildFormulationGraph(state,candidates,questionIndex){
    challenges:c.negative.slice(0,2).map(x=>({id:x.questionId,question:x.prompt,answer:x.label})),
    status:c.positive.length>0?'tentative':'unknown',
    rank:i+1})),
-  {id:'function',layer:'function',title:inquiryFor('short_term')?'Afterwards: '+inquiryFor('short_term').text:
+  {id:'function',layer:'function',title:advancedFor('coping_intention')?'Intended effect: '+advancedFor('coping_intention').text:
+   inquiryFor('short_term')?'Afterwards: '+inquiryFor('short_term').text:
    (supporting?'A possible immediate effect':'Immediate effect not established'),
    detail:inquiryFor('short_term')?'This consequence was selected by the person. The response causing it has NOT been established.':
     supporting?'One possibility to explore: '+p.possibleFunction:'There is not yet enough evidence to infer what the response accomplishes.',
-   evidence:[...inquiryEvidence('short_term','if_stop'),...direct(specificEvidence(state,questionIndex,['function']))].slice(0,6),
+   evidence:[...inquiryEvidence('short_term','if_stop'),...advancedEvidence('coping_intention','protective_response'),
+    ...direct(specificEvidence(state,questionIndex,['function']))].slice(0,9),
    status:inquiryFor('short_term')?'reported':supporting?'tentative':'unknown'},
-  {id:'cost',layer:'cost',title:inquiryFor('long_term')?'Later: '+inquiryFor('long_term').text:
+  {id:'cost',layer:'cost',title:advancedFor('recurrent_cycle')?'Repeated pattern: '+advancedFor('recurrent_cycle').text:
+   inquiryFor('long_term')?'Later: '+inquiryFor('long_term').text:
    (supporting?'A possible continuing cost':'Maintaining consequences not established'),
    detail:inquiryFor('long_term')?'A later consequence was reported; whether the response maintains the problem remains a question.':
     supporting?'To test, not presume: '+p.possibleCost:'A continuing psychological cycle has not been established.',
-   evidence:[...inquiryEvidence('long_term'),...normal(specificEvidence(state,questionIndex,['cost']))].slice(0,6),
+   evidence:[...inquiryEvidence('long_term'),...advancedEvidence('recurrent_cycle','coping_counterfactual'),
+    ...normal(specificEvidence(state,questionIndex,['cost']))].slice(0,9),
    status:inquiryFor('long_term')?'reported':supporting?'tentative':'unknown'},
   {id:'need',layer:'need',title:inquiryFor('values')?'What matters: '+inquiryFor('values').text:
    (preciseFor('goal')?'My stated goal: '+preciseFor('goal').text:
    (needs.length?'Needs or resources to consider':'Possible needs, still unconfirmed')),
    detail:inquiryFor('values')?'This priority was selected by the person; it is not an inferred unmet need.':preciseFor('goal')?'The goal shown here was explicitly selected by the person. It does not prove that a particular need is unmet.':
     'These are options to discuss, not unmet needs discovered by an algorithm. '+(p?.need||'A need has not been identified.'),
-   evidence:[...inquiryEvidence('values','what_changes','alternative'),...evidenceFor('goal'),...normal(needs)].slice(0,8),
+   evidence:[...inquiryEvidence('values','what_changes','alternative'),...advancedEvidence('safe_probe','values_external'),
+    ...evidenceFor('goal'),...normal(needs)].slice(0,10),
    status:inquiryFor('values')||preciseFor('goal')?'reported':needs.length?'tentative':'unknown'}
  ];
  // Only surface an opposing-goals hypothesis when a person actually reports
  // a tension — do not produce a romanticised 'two parts of yourself' narrative.
  const confirmed=tensions.filter(x=>positive(x.a));
  nodes.push({id:'tension',layer:'tension',
-  title:inquiryFor('values_cost')?'A possible trade-off: '+inquiryFor('values_cost').text:
+  title:advancedFor('values_external')?'You described the conflict as: '+advancedFor('values_external').text:
+   inquiryFor('values_cost')?'A possible trade-off: '+inquiryFor('values_cost').text:
    (confirmed.length?'A tension you may be describing':'No inner conflict established'),
   detail:confirmed.length?
    'Your answers suggest that more than one value, preference or concern could be present. This does not mean they are pathological or incompatible.':
    'People do not necessarily have an unconscious conflict. A simple preference or a real-world constraint may explain the concern.',
-  evidence:[...inquiryEvidence('values_cost'),...normal(confirmed)].slice(0,5),
+  evidence:[...inquiryEvidence('values_cost'),...advancedEvidence('values_external'),...normal(confirmed)].slice(0,6),
   status:inquiryFor('values_cost')?'reported':confirmed.length?'tentative':'unknown'});
  return nodes.map(n=>{
   const saved=state.nodeEdits?.[n.id];
