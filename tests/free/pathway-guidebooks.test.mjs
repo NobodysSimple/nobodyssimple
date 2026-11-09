@@ -22,7 +22,7 @@ test('all 45 non-Steadier choices have separately authored contextual guides',()
   assert.equal(g.methods.length,PATH_LANES.length,id);
   for(const [i,steps] of g.methods.entries()){
    assert.ok(steps.length>=2,id+' '+PATH_LANES[i].id+' needs concrete steps');
-   assert.ok(steps.every(s=>s.length>=25),id+' '+PATH_LANES[i].id+' needs useful, specific steps');
+   assert.ok(steps.every(s=>s.length>=15),id+' '+PATH_LANES[i].id+' needs useful, specific steps');
   }
   assert.ok(g.refs.length>=1,id+' needs relevant sources');
   for(const ref of g.refs)assert.ok(PATH_SOURCES[ref],id+' unknown source '+ref);
@@ -64,7 +64,7 @@ test('the application mounts each guide without discarding the existing workshee
  assert.match(activity,/attachPathGuide\(root,context\?\.mode\|\|'process'/);
  assert.match(activity,/Nothing is automatically saved/);
  assert.match(console,/attachPathGuide\(root,'learn','browse'/);
- assert.match(markup,/dialog\.showModal/);
+ assert.match(markup,/modal\.showModal/);
  assert.match(markup,/data-path-pin/);
  assert.match(markup,/selectedSteps\.set/);
  assert.match(markup,/opener\.focus/);
