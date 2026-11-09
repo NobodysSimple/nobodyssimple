@@ -34,7 +34,13 @@ test('exact source-atlas subtype count, IDs, tree depth and parent relationships
  assert.equal(SUBTYPE_NODES.filter(n=>n.level==='cluster').length,84);
  assert.equal(SUBTYPE_NODES.filter(n=>n.level==='specific_experience').length,440);
  for(const [track,category] of Object.entries(TRACK_DRILL_CATEGORY))
-  assert.equal(beginSubtypeDrill(track).categoryId,category);
+  assert.equal(beginSubtypeDrill(track).categoryId,category||'');
+ const overthinking=beginSubtypeDrill('overthinking');
+ assert.equal(subtypeStage(overthinking),'area');
+ assert.ok(subtypeQuestion(overthinking).options.some(x=>x.id==='CHECKING'));
+ const thinking=pick(overthinking,'CHECKING');
+ assert.equal(subtypeStage(thinking),'cluster');
+ assert.equal(thinking.categoryId,'CHECKING');
 });
 test('every one of 440 exact experiences can be selected in a valid question flow',()=>{
  for(const n of SUBTYPE_NODES.filter(n=>n.level==='specific_experience')){
