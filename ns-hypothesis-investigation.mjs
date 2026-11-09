@@ -203,14 +203,17 @@ export function answerInvestigation(state,questionId,answerId){
  if(!q||q.questionId!==questionId||!q.options.some(o=>o.id===answerId))return state;
  const answers=[...state.investigation.answers,{field:q.id,questionId:q.questionId,
   conceptId:q.concept,layer:q.layer,answerId}];
- const updated={...state,investigation:{...state.investigation,answers}};
- const remaining=investigationCandidates(updated);
+ const safety=q.id==='father_behaviour'&&answerId==='intimidation'?{
+  kind:'coercion',reason:'You reported intimidation or threats. A safety-first response is more important than guessing an underlying psychological explanation.'
+ }:state.safety;
+ const updated={...state,safety,investigation:{...state.investigation,answers}};
+ const remaining=safety?[]:investigationCandidates(updated);
  return {...updated,investigation:{...updated.investigation,
   active:remaining.length>0,finished:!remaining.length}};
 }
 export function backInvestigation(state){
  if(!state?.investigation?.answers?.length)return state;
- return {...state,investigation:{...state.investigation,
+ return {...state,safety:state.initialSafety||null,investigation:{...state.investigation,
   answers:state.investigation.answers.slice(0,-1),active:true,finished:false}};
 }
 export function stopInvestigation(state){
