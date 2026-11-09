@@ -4,17 +4,19 @@
  */
 import {escapeHTML as escape} from './core.mjs';
 import {
- HYPOTHESIS_TRACKS,TRACK_BY_ID,ANSWER_OPTIONS,HYPOTHESIS_LIMIT,
+ HYPOTHESIS_TRACKS,TRACK_BY_ID,ANSWER_OPTIONS,
  startHypothesis,answerHypothesis,backHypothesis,reviewHypothesis,
  nextHypothesisQuestion,hypothesisResult,describeFormulation,
- formulationPlainText,findHypothesisTrack,selectableAtlasTopics
+ formulationPlainText,findHypothesisTrack,selectableAtlasTopics,
+ questionPool,QUESTION_BY_ID,reviseHypothesisAnswer,focusHypothesisLayer,
+ reviseHypothesisNode,HYPOTHESIS_DEEP_QUESTION_COUNT
 } from './ns-hypothesis-engine.mjs';
 
 const e=x=>escape(String(x??''));
 const href=(to,label)=>'<a href="'+e(to)+'">'+e(label)+'</a>';
 const art=(src,css='')=>'<img class="'+css+'" src="'+e(src)+'" loading="eager" alt="Nobody, your curious companion" width="200" height="210">';
 const safe=(x,len=700)=>String(x??'').trim().slice(0,len);
-const stageText='Your answers stay in this open page. No account, diagnosis or personal profile is created.';
+const stageText='Your answers stay in this open page and disappear when you leave. You can revise every answer and every part of the map.';
 const supportLinks=(kind)=>{
  const medical=kind==='medical'||kind==='physical';
  return (medical?[
@@ -41,7 +43,7 @@ function landing(){
   '<div><p class="ns-hypo-eyebrow">NOBODY’S SIMPLE · HYPOTHESIS GENERATOR</p>'+
   '<h1>Shall we work out what could be going on?</h1>'+
   '<p>Tell Nobody what you are experiencing. Together, you will examine different explanations—not receive a label or a verdict.</p>'+
-  '<div class="ns-hypo-hero-pills"><span>Short yes/no/maybe questions</span><span>Competing explanations</span><span>One next step</span></div></div>'+
+  '<div class="ns-hypo-hero-pills"><span>Follow-up questions adapt to you</span><span>Clickable formulation map</span><span>Revise any part</span></div></div>'+
   '<div class="ns-hypo-hero-art">'+art('ns-character-thinking.webp','ns-hypo-hero-nobody')+
   '<div class="ns-hypo-speech">I’ll ask about what happens, what changes it and what else could explain it.</div></div></header>'+
   '<section class="ns-hypo-pick" aria-labelledby="ns-hypo-start-title"><div class="ns-hypo-section-head">'+
@@ -57,39 +59,56 @@ function landing(){
   '<div class="ns-hypo-topics" data-hypo-topic-results aria-live="polite"></div>'+
   '<p>Only a subset of topics has a dedicated formulation pathway. You can always open the existing field guide directly.</p></details>'+
   '<label class="ns-hypo-note-label" for="ns-hypo-description">Optional: describe this in your own words</label>'+
-  '<textarea id="ns-hypo-description" rows="3" data-hypo-description maxlength="700" placeholder="A few words about your situation (optional). Avoid names or identifying details."></textarea>'+
+  '<textarea id="ns-hypo-description" rows="3" data-hypo-description maxlength="700" placeholder="For example: I enjoy shaving my legs but I feel uncertain what that means about me. Avoid identifying details."></textarea>'+ '<div class="ns-hypo-description-actions"><button type="button" data-hypo-from-description>Investigate what I described →</button><p data-hypo-description-help aria-live="polite">Or choose one of the starting areas above.</p></div>'+
   '<p class="ns-hypo-quiet">'+e(stageText)+'</p></section>'+
   '<section class="ns-hypo-safety-short"><strong>Need safety or urgent help instead?</strong>'+
   '<p>In immediate danger, call 999 in the UK. You do not need to complete questions.</p>'+
   href('#need/support-safety','Open support options →')+'</section>');
 }
-function progress(n){
- const dots=Array.from({length:HYPOTHESIS_LIMIT},(_,i)=>
-  '<i class="'+(i<n?'done':'')+'" aria-hidden="true"></i>').join('');
- return '<div class="ns-hypo-progress"><span>Question '+(n+1)+' · Up to '+HYPOTHESIS_LIMIT+'</span>'+
-  '<div class="ns-hypo-dots" aria-hidden="true">'+dots+'</div></div>';
+function progress(state){
+ const n=state.answers.length;
+ const result=hypothesisResult(state);
+ const coverage=result.coverage;
+ return '<div class="ns-hypo-progress"><span>Question '+(n+1)+' · No fixed question limit</span>'+
+  '<p>'+coverage.meaningful+' informative answers · '+coverage.layers.length+
+  ' formulation areas explored · '+(result.canContinue?'More distinctions available':'No further authored questions available')+'</p>'+
+  '<div class="ns-hypo-investigation-bar" role="group" aria-label="Aspects investigated">'+
+  ['Circumstances','Experience','Response','Explanations','Alternatives','Needs'].map((x,i)=>
+  '<span class="'+(coverage.layers.length>i?'is-done':'')+'">'+e(x)+'</span>').join('')+'</div></div>';
+}
+function liveInsight(state){
+ if(state.answers.length<4)return '';
+ const r=hypothesisResult(state);
+ return '<details class="ns-hypo-live-insight"><summary>What has Nobody learned so far?</summary>'+
+  '<p>These are the current leads, not a hidden explanation:</p>'+
+  '<ul>'+r.alternatives.slice(0,3).map(c=>'<li><strong>'+e(c.process.title)+'</strong> · '+
+   c.positive.length+' supporting observation'+(c.positive.length===1?'':'s')+'</li>').join('')+'</ul>'+
+  '<button type="button" data-hypo-results>Open my editable working map</button></details>';
 }
 function asking(state){
  const q=nextHypothesisQuestion(state);
  if(!q)return resultPage(state);
  const track=TRACK_BY_ID[state.trackId],n=state.answers.length;
  const pose=n%3===0?'ns-character-guide.webp':n%3===1?'ns-character-thinking.webp':'ns-character-mapping.webp';
- return page('<section class="ns-hypo-question-stage">'+progress(n)+
+ const ready=hypothesisResult(state).coverage.canDraft;
+ return page('<section class="ns-hypo-question-stage">'+progress(state)+
   '<div class="ns-hypo-dialogue">'+
   '<div class="ns-hypo-guide">'+art(pose,'ns-hypo-guide-art')+
   '<div class="ns-hypo-guide-caption"><strong>Nobody</strong><span>Your thinking companion</span></div></div>'+
   '<div class="ns-hypo-speech-card"><p class="ns-hypo-eyebrow">ABOUT '+e(track.title.toUpperCase())+'</p>'+
   '<h1 id="ns-hypo-question" tabindex="-1">'+e(q.prompt)+'</h1>'+
-  '<p>Choose the answer that comes closest. If it varies, “Maybe” is useful too.</p></div></div>'+
+  '<p>Choose the closest answer. Nothing here determines a diagnosis, identity or hidden motive.</p></div></div>'+
   '<div class="ns-hypo-options" role="group" aria-label="Answer the question">'+
   ANSWER_OPTIONS.map((a,i)=>'<button type="button" data-hypo-answer="'+e(a.id)+'" data-hypo-question="'+e(q.id)+'">'+
    '<span class="ns-hypo-answer-symbol" aria-hidden="true">'+['✓','↗','◇','↘','×'][i]+'</span>'+
    '<strong>'+e(a.id==='unsure'?'Maybe / not sure':a.label)+'</strong><span aria-hidden="true">→</span></button>').join('')+'</div>'+
   '<div class="ns-hypo-question-footer"><button type="button" data-hypo-back '+(n?'':'disabled')+'>← Back</button>'+
   '<button type="button" data-hypo-skip data-hypo-question="'+e(q.id)+'">Skip</button>'+
-  (n>=3?'<button type="button" data-hypo-results>See possibilities now</button>':'')+'</div>'+
-  '<details class="ns-hypo-why"><summary>Why is Nobody asking this?</summary>'+
-  '<p>'+e(q.why)+'</p><p>It helps compare possible processes. Your answer never establishes a cause or diagnosis.</p></details>'+
+  (n>=4?'<button type="button" data-hypo-results>'+(ready?'View my detailed working map':'See my tentative map')+'</button>':'')+'</div>'+
+  (ready?'<p class="ns-hypo-ready">Nobody has enough information to sketch a provisional picture. You can inspect it now or keep answering to test other explanations.</p>':'')+
+  '<details class="ns-hypo-why"><summary>Why is Nobody asking this question?</summary>'+
+  '<p>'+e(q.why)+'</p><p>Questions are selected to distinguish competing models and fill gaps in the information. The signals are not calibrated clinical probabilities.</p></details>'+
+  liveInsight(state)+
   '<p class="ns-hypo-quiet">'+e(stageText)+'</p></section>');
 }
 function safetyPage(state){
