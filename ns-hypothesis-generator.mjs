@@ -372,7 +372,7 @@ function resultPage(state,selectedNode=''){
   '<p>There is no fixed question count. Each further question tries to distinguish explanations or investigate a part you challenged. You may also stop, revise, or choose something helpful without deciding on one cause.</p></div>'+
   '<div class="ns-hypo-final-buttons">'+
   (!state.investigation?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-invest-start>Investigate possible causes and maintaining cycles →</button>':'')+
-   (!state.adaptive?.finished?'<button type="button" class="ns-hypo-invest-action" data-hypo-adaptive-start>Test competing explanations in depth →</button>':'')+
+   (!state.adaptive?.finished&&state.investigation?.answers?.length?'<button type="button" class="ns-hypo-invest-action" data-hypo-adaptive-start>Test competing explanations in depth →</button>':'')+
   (state.drill?.confirmed&&!state.caseDetails?.finished?'<button type="button" data-hypo-fact-start>Explore more precise details →</button>':'')+
   (r.canContinue?'<button type="button" data-hypo-more>Keep investigating →</button>':
    '<p>We have used the currently available authored questions for this area. You can still revise the graph or an earlier answer.</p>')+
@@ -504,7 +504,8 @@ export function renderHypothesisGenerator(root,{initialTrack='',initialTopic=''}
   }
   if(b.hasAttribute('data-hypo-restart')){stage='start';state=null;selectedNode='';render(true);return;}
   if(b.hasAttribute('data-hypo-back')){
-   if(state?.safety&&state.investigation?.answers?.length){state=backInvestigation(state);stage='investigation';}
+   if(state?.safety&&state.adaptive?.answers?.length){state=backAdaptiveInquiry(state);stage='adaptive';}
+   else if(state?.safety&&state.investigation?.answers?.length){state=backInvestigation(state);stage='investigation';}
    else if(state?.answers.length){state=backHypothesis(state);stage='question';}
    else if(state?.drill?.events?.length){
     state=backHypothesisDrill(state);stage='drill';
