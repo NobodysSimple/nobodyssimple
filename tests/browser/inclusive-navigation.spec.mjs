@@ -53,15 +53,25 @@ test('current sexual coercion offers safety support before any personal exercise
 });
 
 
-test('the first What would help screen displays inclusive topic areas and opens a filtered atlas',async({page})=>{
+test('the seven original console tiles contain related topics without a second landing section',async({page})=>{
  await page.goto('/index.html#navigate');
  await expect(page.getByRole('heading',{name:'What would help you right now?'})).toBeVisible();
- await expect(page.getByRole('heading',{name:'Explore a topic or experience'})).toBeVisible();
- await expect(page.locator('a[href="#navigate/atlas/area/culture"]')).toBeVisible();
- await expect(page.locator('a[href="#navigate/atlas/area/lgbtq"]')).toBeVisible();
- await expect(page.locator('a[href="#navigate/atlas/area/neuro"]')).toBeVisible();
- await page.locator('a[href="#navigate/atlas/area/neuro"]').click();
- await expect(page).toHaveURL(/#navigate\/atlas\/area\/neuro$/);
+ await expect(page.locator('.ns-needs-mode')).toHaveCount(7);
+ await expect(page.locator('.ns-needs-topic-entry,.ns-needs-area-link')).toHaveCount(0);
+
+ await page.getByRole('link',{name:/Understand myself/}).click();
+ await expect(page).toHaveURL(/#navigate\/understand$/);
+ await expect(page.getByRole('heading',{name:'Find a related experience'})).toBeVisible();
+ const neuro=page.locator('a[href="#navigate/atlas/area/neuro"]');
+ await expect(neuro).toBeVisible();
+ await neuro.click();
  await expect(page.locator('[data-needs-domain-select]')).toHaveValue('neuro');
  await expect(page.getByText('I want to understand ADHD experiences')).toBeVisible();
+
+ await page.goto('/index.html#navigate/relate');
+ const family=page.locator('a[href="#navigate/atlas/area/family"]');
+ await expect(family).toBeVisible();
+ await family.click();
+ await expect(page.locator('[data-needs-domain-select]')).toHaveValue('family');
+ await expect(page.getByText('I had to take on adult responsibilities as a child')).toBeVisible();
 });

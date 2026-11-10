@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {NEEDS_MODES,getNeedsMode,getNeedsActivity,needsDestination,NEEDS_REVIEW_CASES} from '../../ns-needs-catalog.mjs';
 import {PROCESSING_ACTIVITIES,SETTLING_ACTIVITIES,renderNeedsActivity} from '../../ns-needs-activities.mjs';
-import {renderNeedsConsole,getSubjectMatchesForTest} from '../../ns-needs-console.mjs';
+import {renderNeedsConsole,getSubjectMatchesForTest,TOPIC_AREAS_BY_MODE} from '../../ns-needs-console.mjs';
 import {atlasProblemIndex,atlasGet} from '../../ns-atlas-core.mjs';
 import {tools} from '../../tool-catalog.mjs';
 
@@ -119,14 +119,30 @@ test('no questionnaire or speculative diagnostic ranking appears in any default 
 });
 
 
-test('all inclusive categories are directly discoverable from the first starting screen',()=>{
+test('the original seven goal tiles remain the only starting choices',()=>{
  const page=fakeRoot();renderNeedsConsole(page);
- assert.match(page.innerHTML,/Explore a topic or experience/);
- assert.match(page.innerHTML,/Search all 518 topics/);
- for(const area of ['culture','lgbtq','neuro','disability','family','harm','faith','migration','digital','growth']){
-  assert.match(page.innerHTML,new RegExp('href="#navigate/atlas/area/'+area+'"'),area);
+ assert.equal((page.innerHTML.match(/class="ns-needs-mode /g)||[]).length,7);
+ assert.doesNotMatch(page.innerHTML,/Explore a topic or experience|ns-needs-topic-entry|ns-needs-area-link/);
+ assert.match(page.innerHTML,/Explore a specific difficulty/);
+});
+test('all 31 topic areas are accessible from within the existing seven modes',()=>{
+ const ids=new Set();
+ for(const mode of NEEDS_MODES){
+  const page=fakeRoot();renderNeedsConsole(page,[mode.id]);
+  assert.match(page.innerHTML,/Find a related experience/,mode.id);
+  assert.match(page.innerHTML,/Search all 518 topics/,mode.id);
+  for(const area of TOPIC_AREAS_BY_MODE[mode.id]){
+   ids.add(area);
+   assert.ok(page.innerHTML.includes('href="#navigate/atlas/area/'+area+'"'),mode.id+' missing '+area);
+  }
  }
- assert.equal((page.innerHTML.match(/class="ns-needs-area-link"/g)||[]).length,31);
+ assert.equal(ids.size,31);
+ for(const area of ['culture','lgbtq','neuro','disability','family','harm','faith','migration','digital','growth'])
+  assert.ok(ids.has(area),area);
+ assert.ok(TOPIC_AREAS_BY_MODE.understand.includes('neuro'));
+ assert.ok(TOPIC_AREAS_BY_MODE.relate.includes('family'));
+ assert.ok(TOPIC_AREAS_BY_MODE.relate.includes('harm'));
+ assert.equal(TOPIC_AREAS_BY_MODE.learn.length,31);
 });
 test('direct area links preselect their topic filter',()=>{
  for(const id of ['culture','lgbtq','neuro','faith']){
