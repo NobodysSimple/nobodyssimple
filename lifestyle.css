@@ -306,3 +306,10 @@ html[data-theme="dark"] body.app-body #main .lifestyle-page .calendar-weekdays s
 /* A stable readable colour for day and night, independent of earlier muted UI tokens. */
 body.app-body #main .lifestyle-page{--ns-life-readable-ink:#244735;}
 html[data-theme="dark"] body.app-body #main .lifestyle-page{--ns-life-readable-ink:#e1eee1;}
+
+
+/* Accessibility: the legacy interface dimmed whole containers, which also dimmed
+ * their text even when the foreground color passed contrast checks in CSS. */
+body.app-body #main .lifestyle-page .lifestyle-empty{opacity:1!important;}
+body.app-body #main .lifestyle-page .calendar-weekdays{opacity:1!important;}
+body.app-body #main .lifestyle-page .calendar-day.is-muted{opacity:.78;}
