@@ -241,10 +241,43 @@ export function renderLifestyle(root,view='daily'){
  }
  // Built-in pointer events allow both mouse and touch dragging by the little
  // grab handle. Ordinary page scrolling still works away from that handle.
+
  let matrixDrag=null;
+ const updateDragTarget=(drag)=>{
+  root.querySelectorAll('.life-drop-active,.life-drop-before,.life-drop-after').forEach(el=>
+   el.classList.remove('life-drop-active','life-drop-before','life-drop-after'));
+  // The source card does not block hit testing while it is being dragged.
+  const under=document.elementFromPoint(drag.lastX,drag.lastY);
+  const zone=under?.closest('[data-life-dropzone]');
+  drag.zone=zone?.dataset.lifeDropzone||null;drag.anchor=null;drag.after=false;
+  if(zone){
+   zone.classList.add('life-drop-active');
+   const target=under.closest('[data-matrix-task]');
+   if(target&&target!==drag.card){
+    drag.anchor=target.dataset.matrixTask;
+    drag.after=drag.lastY>=target.getBoundingClientRect().top+target.offsetHeight/2;
+    target.classList.add(drag.after?'life-drop-after':'life-drop-before');
+   }
+  }
+ };
+ const autoScrollDrag=()=>{
+  const drag=matrixDrag;
+  if(!drag?.started)return;
+  // Repeating while the finger is held near an edge means the next quadrant
+  // can be reached on a short phone screen, even without a second gesture.
+  const edge=125,screen=window.innerHeight;
+  const top=drag.lastY<edge?-(edge-drag.lastY):0;
+  const bottom=drag.lastY>screen-edge?drag.lastY-(screen-edge):0;
+  const amount=top||bottom;
+  if(!amount){drag.frame=0;return;}
+  window.scrollBy(0,Math.max(-38,Math.min(38,amount*0.48)));
+  updateDragTarget(drag);
+  drag.frame=requestAnimationFrame(autoScrollDrag);
+ };
  const clearDrag=()=>{
   root.querySelectorAll('.life-drop-active,.life-drop-before,.life-drop-after').forEach(el=>
    el.classList.remove('life-drop-active','life-drop-before','life-drop-after'));
+  if(matrixDrag?.frame)cancelAnimationFrame(matrixDrag.frame);
   if(matrixDrag?.card){matrixDrag.card.classList.remove('life-task-dragging');matrixDrag.card.style.pointerEvents='';}
   if(matrixDrag?.grip&&matrixDrag.grip.hasPointerCapture?.(matrixDrag.pointerId))
    matrixDrag.grip.releasePointerCapture(matrixDrag.pointerId);
@@ -254,40 +287,29 @@ export function renderLifestyle(root,view='daily'){
   const grip=event.target.closest('[data-life-grip]');
   if(!grip||taskView!=='quadrants'||!event.isPrimary||event.button!==0)return;
   matrixDrag={id:grip.dataset.lifeGrip,pointerId:event.pointerId,grip,card:grip.closest('[data-matrix-task]'),
-   x:event.clientX,y:event.clientY,started:false,zone:null,anchor:null,after:false};
+   x:event.clientX,y:event.clientY,lastX:event.clientX,lastY:event.clientY,started:false,
+   zone:null,anchor:null,after:false,frame:0};
   grip.setPointerCapture?.(event.pointerId);
  },{signal});
  root.addEventListener('pointermove',event=>{
   const drag=matrixDrag;
   if(!drag||drag.pointerId!==event.pointerId)return;
+  drag.lastX=event.clientX;drag.lastY=event.clientY;
   if(!drag.started&&Math.hypot(event.clientX-drag.x,event.clientY-drag.y)<7)return;
   drag.started=true;drag.card.classList.add('life-task-dragging');drag.card.style.pointerEvents='none';
   if(event.cancelable)event.preventDefault();
-  root.querySelectorAll('.life-drop-active,.life-drop-before,.life-drop-after').forEach(el=>
-   el.classList.remove('life-drop-active','life-drop-before','life-drop-after'));
-  const under=document.elementFromPoint(event.clientX,event.clientY);
-  const zone=under?.closest('[data-life-dropzone]');
-  drag.zone=zone?.dataset.lifeDropzone||null;drag.anchor=null;drag.after=false;
-  if(zone){
-   zone.classList.add('life-drop-active');
-   const target=under.closest('[data-matrix-task]');
-   if(target&&target!==drag.card){
-    drag.anchor=target.dataset.matrixTask;
-    drag.after=event.clientY>=target.getBoundingClientRect().top+target.offsetHeight/2;
-    target.classList.add(drag.after?'life-drop-after':'life-drop-before');
-   }
-  }
-  if(event.clientY>window.innerHeight-65)window.scrollBy(0,13);
-  else if(event.clientY<80)window.scrollBy(0,-13);
+  updateDragTarget(drag);
+  if(!drag.frame)drag.frame=requestAnimationFrame(autoScrollDrag);
  },{signal});
  root.addEventListener('pointerup',event=>{
   if(!matrixDrag||matrixDrag.pointerId!==event.pointerId)return;
   const {id,zone,anchor,after,started}=matrixDrag;
   clearDrag();
   if(started&&zone&&relocateTask(id,zone,anchor,after))
-   $('#lifestyle-task-status').textContent='Task moved. You can drag again, or use the Move to and arrow controls.';
+   $('#lifestyle-task-status').textContent='Task moved. Drag again, or use the Move to and arrow controls.';
  },{signal});
  root.addEventListener('pointercancel',()=>{if(matrixDrag)clearDrag();},{signal});
+ window.addEventListener('hashchange',()=>{if(matrixDrag)clearDrag();},{once:true,signal});
  root.addEventListener('submit',event=>{
   const form=event.target;
   if(form.matches('[data-quad-add]')){
