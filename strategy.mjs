@@ -2,6 +2,7 @@ import {escapeHTML as esc, safeImage} from './core.mjs';
 import {quoteDeckExtended as quotes} from './quote-content.mjs';
 import {tools as toolCatalogue} from './tool-catalog.mjs';
 import {setupHomeUpdates} from './ns-home-updates.mjs';
+import {renderCultureAtlas} from './ns-cultural-atlas.mjs';
 
 export const DRAFT_KEY='ns-account-tool-drafts-v2', QUOTE_KEY='ns-learn-quote-notes-v1';
 let account=()=>({preferences:window.nsAccountPreferences||{},syncKeys:[],locked:false});
@@ -68,10 +69,12 @@ export function renderStrategyHome(root,posts=[],rail='',options={}){
   <section class="ns-home-wisbody" aria-label="A moment with Wisbody"><div data-ns-wisbody-full></div><a class="ns-home-wisbody__link" href="#wisbody">Open Wisbody's reflections <span aria-hidden="true">→</span></a></section>
   <section id="home-latest" class="home-latest ns-home-latest" aria-labelledby="home-latest-title"><div class="home-latest-header"><div><p class="ns-home-eyebrow">FROM NOBODY'S SIMPLE</p><h2 id="home-latest-title">Latest from Nobody's Simple</h2><p>News, writing and resources published by the project.</p></div><div class="home-latest-controls"><button type="button" data-latest-prev aria-label="Previous item">←</button><span data-latest-position aria-live="off"></span><button type="button" data-latest-next aria-label="Next item">→</button></div></div><div class="home-latest-track" tabindex="0" aria-label="Recently published content; scroll sideways"></div><div class="home-latest-links"><a href="#learn">More from Nobody's Simple →</a></div></section>
   <section class="ns-home-shortcuts" aria-label="More ways to explore"><a class="ns-home-shortcut" href="#community"><span class="ns-home-shortcut__icon" aria-hidden="true">♡</span><span><strong>Share feedback</strong><small>Help shape the future of Nobody's Simple</small></span><span class="ns-home-shortcut__arrow" aria-hidden="true">→</span></a></section>
+   <div id="ns-home-culture-map" aria-label="Cultural psychology world atlas"></div>
  </div>`;
  renderLatest(root.querySelector('#home-latest'),posts);
  renderWisbody(root.querySelector('[data-ns-wisbody-full]'),{compact:true});
  setupHomeUpdates(posts);
+ renderCultureAtlas(root.querySelector('#ns-home-culture-map'));
 }
 
 function renderLatest(section,posts){
