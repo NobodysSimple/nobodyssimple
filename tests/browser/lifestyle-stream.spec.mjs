@@ -98,3 +98,78 @@ test('Lifestyle essentials remain visible with compact controls, and no duplicat
  await expect(page.locator('#lifestyle-reminder-form')).toBeVisible();
  await expect(page.locator('.emotion-choice-grid label')).toHaveCount(12);
 });
+
+test('List / four quadrants toggle keeps the same task and its priority on reload',async({page})=>{
+ await page.goto('/index.html#lifestyle');
+ const name='Send the library book back';
+ await page.locator('#lifestyle-task-title').fill(name);
+ await page.locator('#lifestyle-task-priority').selectOption('do');
+ await page.locator('#lifestyle-task-form button[type="submit"]').click();
+ await page.locator('[data-task-view="quadrants"]').click();
+ const board=page.locator('#lifestyle-quadrants');
+ await expect(board).toBeVisible();
+ await expect(board.locator('.life-quadrant')).toHaveCount(4);
+ await expect(board.locator('.life-quadrant--do')).toContainText(name);
+ await board.locator('.life-quadrant--do [data-task-priority]').selectOption('delegate');
+ await expect(board.locator('.life-quadrant--delegate')).toContainText(name);
+ await expect(board.locator('.life-quadrant--do')).not.toContainText(name);
+ await page.locator('[data-task-view="list"]').click();
+ await expect(page.locator('#lifestyle-task-list')).toContainText(name);
+ await expect(page.locator('#lifestyle-quadrants')).toBeHidden();
+ await page.reload();
+ await expect(page.locator('#lifestyle-task-list [data-task-priority]')).toHaveValue('delegate');
+ await page.locator('[data-task-view="quadrants"]').click();
+ await expect(page.locator('.life-quadrant--delegate')).toContainText(name);
+ await expect(page.locator('.life-quadrant--schedule')).toBeVisible();
+});
+
+test('existing uncategorised tasks can be sorted in place and stay classified after SimplyFocus transfer',async({page})=>{
+ await page.goto('/index.html#lifestyle');
+ const name='A task to classify later';
+ await page.locator('#lifestyle-task-title').fill(name);
+ await page.locator('#lifestyle-task-form button[type="submit"]').click();
+ await page.locator('[data-task-view="quadrants"]').click();
+ await expect(page.locator('.life-priority-inbox')).toContainText(name);
+ await page.locator('.life-priority-inbox [data-task-priority]').selectOption('schedule');
+ await expect(page.locator('.life-quadrant--schedule')).toContainText(name);
+ await page.locator('.life-quadrant--schedule [data-to-focus]').click();
+ await page.locator('[data-life-mode="focus"]').click();
+ await expect(page.locator('#pomodoro-task-list')).toContainText(name);
+ await page.locator('.pomodoro-task').filter({hasText:name}).getByRole('button',{name:'Move to Lifestyle'}).click();
+ await page.locator('[data-life-mode="daily"]').click();
+ await expect(page.locator('.life-quadrant--schedule')).toContainText(name);
+});
+
+test('Home primary button stays above the Compass and header does not show a second logo in guest profile control',async({page})=>{
+ await page.goto('/index.html#home');
+ const primary=page.locator('.ns-home-actions > .ns-home-primary');
+ const compass=page.locator('.ns-home-actions > .ns-home-compass');
+ await expect(primary).toBeVisible();
+ await expect(compass).toBeVisible();
+ const positions=await page.locator('.ns-home-actions').evaluate(el=>({
+  primary:el.querySelector('.ns-home-primary').getBoundingClientRect().top,
+  compass:el.querySelector('.ns-home-compass').getBoundingClientRect().top
+ }));
+ expect(positions.primary).toBeLessThanOrEqual(positions.compass);
+ const profile=page.locator('.ns-account-trigger');
+ await expect(profile).toBeVisible();
+ const background=await profile.evaluate(el=>getComputedStyle(el,'::before').backgroundImage);
+ expect(background).not.toContain('logo.png');
+});
+
+test('Compass graph has no two-axis sliders and selected feeling appears directly beneath it',async({page})=>{
+ await page.goto('/index.html#compass');
+ await page.locator('#compass-mood-before').fill('6');
+ await page.locator('#compass-mood-start').click();
+ await expect(page.locator('#pleasantness,#energy,#pleasantness-value,#energy-value')).toHaveCount(0);
+ const plot=page.locator('#compass-plot'),detail=page.locator('.compass-card #compass-emotion-detail');
+ await expect(plot).toBeVisible();
+ await expect(detail).toBeVisible();
+ expect(await plot.evaluate(el=>el.compareDocumentPosition(document.querySelector('.compass-card #compass-emotion-detail')) & Node.DOCUMENT_POSITION_FOLLOWING)).toBeTruthy();
+ await expect(page.locator('#compass-feedback')).not.toContainText('Your position:');
+ const before=await page.locator('#marker').evaluate(el=>el.style.left);
+ await plot.focus();
+ await page.keyboard.press('ArrowRight');
+ await expect.poll(()=>page.locator('#marker').evaluate(el=>el.style.left)).not.toBe(before);
+ await expect(detail.locator('.compass-profile-heading')).toBeVisible();
+});
