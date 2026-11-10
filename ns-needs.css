@@ -215,7 +215,7 @@ body.app-body.ns-shell-v1 #main .ns-needs-area-link strong{font-size:14px;}
 body.app-body.ns-shell-v1 #main .ns-needs-area-link small{font-size:12px;color:var(--need-muted);}
 body.app-body.ns-shell-v1 #main .ns-needs-area-details{margin-top:14px;}
 body.app-body.ns-shell-v1 #main .ns-needs-area-details summary{font-weight:700;cursor:pointer;padding:9px 0;}
-body.app-body.ns-shell-v1 #main .ns-needs-topic-entry .ns-needs-cta{display:inline-flex;margin-top:6px;}
+body.app-body.ns-shell-v1 #main .ns-needs-related a[href='#navigate/atlas']{display:inline-flex;margin-top:6px;}
 @media(max-width:650px){
  body.app-body.ns-shell-v1 #main .ns-needs-area-grid{grid-template-columns:1fr;}
  body.app-body.ns-shell-v1 #main .ns-needs-area-link{min-height:64px;}
@@ -224,3 +224,8 @@ html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-needs-area-link{
  background:#32503b;color:#ecf3ea;border-color:#648469;
 }
 html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-needs-area-link small{color:#c5dac9;}
+
+/* Topic families live within the chosen starting-point tile, never in a second entry panel. */
+body.app-body.ns-shell-v1 #main .ns-needs-related{margin-top:24px;padding-top:17px;border-top:1px solid var(--need-edge);}
+body.app-body.ns-shell-v1 #main .ns-needs-related h2{margin:0 0 6px;font-size:18px;}
+body.app-body.ns-shell-v1 #main .ns-needs-related .ns-needs-area-grid{margin-top:10px;}
