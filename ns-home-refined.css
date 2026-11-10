@@ -313,3 +313,27 @@ html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-home-refined :is(.ns
 }
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-shortcut small{color:#c2d8c8;}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-shortcut__icon{background:#3d604a;color:#ecf4eb;}
+
+/* Keep the primary action above Emotion Compass at every mobile width.
+   Earlier home rules placed the primary button in an explicit grid row. */
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-actions>.ns-home-primary{
+ order:0!important;grid-area:auto!important;
+}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-actions>.ns-home-compass{
+ order:1!important;grid-area:auto!important;
+}
+@media(max-width:640px){
+ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero>.ns-home-actions{
+  display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ }
+ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-actions>.ns-home-primary{order:0!important}
+ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-actions>.ns-home-compass{order:1!important}
+}
+/* Guest account control uses a neutral profile symbol, not a second brand mark. */
+@media(max-width:900px){
+ body.app-body .ns-account-trigger:not(:has(img))::before{
+  content:'👤';display:grid;place-items:center;width:29px;height:29px;
+  font:19px/1 system-ui,sans-serif;background:#e6efe7!important;border:1px solid #a6c3b0;
+  border-radius:50%;
+ }
+}
