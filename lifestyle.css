@@ -44,3 +44,233 @@ body.app-body #main .lifestyle-page .ui-resource image{pointer-events:none;}
 body.app-body #main .lifestyle-page .ui-symbol{display:inline-block;flex:none;width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;}
 body.app-body #main .lifestyle-page .life-hero-scene{width:100%;height:170px;display:block;}
 /* Reactivated Lifestyle UI sprite basics */
+
+
+/* Lifestyle stream: every everyday module is visible in a single, calm scroll. */
+body.app-body #main .lifestyle-page{
+ max-width:980px;width:100%;padding:18px clamp(12px,2.7vw,28px) 115px;
+ color:var(--ui-ink);line-height:1.5;
+}
+body.app-body #main .lifestyle-page .lifestyle-hero{
+ grid-template-columns:minmax(0,1fr) 130px;gap:14px;min-height:0;
+ padding:clamp(18px,3vw,26px);border-radius:20px;margin:0;
+ border:1px solid var(--ui-line);box-shadow:none;background:var(--ui-paper);
+}
+body.app-body #main .lifestyle-page .lifestyle-hero h1{
+ font:500 clamp(27px,3.5vw,36px)/1.15 Georgia,serif;margin:3px 0 7px;
+}
+body.app-body #main .lifestyle-page .life-hero-scene{
+ height:105px;max-height:105px;align-self:center;object-fit:contain;
+}
+body.app-body #main .lifestyle-page .life-date{margin-top:10px}
+body.app-body #main .lifestyle-page .life-mode-switch{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;
+ margin:14px 0;padding:5px;max-width:100%;
+ border-radius:16px;background:var(--ui-soft);border:1px solid var(--ui-line);
+}
+body.app-body #main .lifestyle-page .life-mode-switch a{
+ display:flex;align-items:center;justify-content:center;gap:8px;
+ min-width:0;min-height:46px;padding:9px;border-radius:11px;
+ text-decoration:none;font:750 14px/1.3 system-ui,sans-serif;
+ color:var(--ui-ink);
+}
+body.app-body #main .lifestyle-page .life-mode-switch a[aria-current="page"]{
+ background:#2e7051;color:#fff;box-shadow:0 2px 6px #173f3416;
+}
+body.app-body #main .lifestyle-page .life-mode-switch a:focus-visible,
+body.app-body #main .lifestyle-page :is(button,input,textarea,a,select):focus-visible{
+ outline:3px solid #b58543;outline-offset:2px;
+}
+body.app-body #main .lifestyle-page .life-glance{
+ background:var(--ui-paper);border:1px solid var(--ui-line);
+ padding:18px;border-radius:18px;margin:0 0 14px;
+}
+body.app-body #main .lifestyle-page .life-glance-heading{
+ display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:12px;
+}
+body.app-body #main .lifestyle-page .life-glance-heading h2{font:500 22px/1.2 Georgia,serif;margin:0}
+body.app-body #main .lifestyle-page .life-glance-heading .eyebrow{margin:0;font-size:10px}
+body.app-body #main .lifestyle-page .life-overview{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+}
+body.app-body #main .lifestyle-page .life-glance-item{
+ display:flex;align-items:center;gap:11px;min-width:0;padding:13px;
+ background:var(--ui-soft);border-radius:13px;
+}
+body.app-body #main .lifestyle-page .life-glance-item>span:last-child{display:grid;gap:3px;min-width:0}
+body.app-body #main .lifestyle-page .life-glance-item small{font:750 10px/1.3 system-ui,sans-serif;letter-spacing:.045em;color:var(--ui-muted)}
+body.app-body #main .lifestyle-page .life-glance-item strong{font:600 17px/1.3 system-ui,sans-serif}
+body.app-body #main .lifestyle-page .life-glance-item span span{font:400 12px/1.45 system-ui,sans-serif;color:var(--ui-muted)}
+body.app-body #main .lifestyle-page .life-glance-icon{
+ flex:none;display:grid;place-items:center;width:36px;height:36px;
+ border-radius:11px;background:var(--ui-paper);
+}
+body.app-body #main .lifestyle-page .life-dashboard-flow{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:14px;
+}
+body.app-body #main .lifestyle-page .lifestyle-card{
+ min-width:0;margin:0;padding:clamp(16px,2.6vw,25px);
+ border:1px solid var(--ui-line);border-radius:18px;
+ box-shadow:none;background:var(--ui-paper);
+}
+body.app-body #main .lifestyle-page :is(#lifestyle-deed,#lifestyle-checkin){grid-column:1/-1}
+body.app-body #main .lifestyle-page .lifestyle-section-head{gap:12px;flex-wrap:wrap}
+body.app-body #main .lifestyle-page .lifestyle-section-head h2,
+body.app-body #main .lifestyle-page .calendar-head h2,
+body.app-body #main .lifestyle-page .deed-heading h2{
+ margin:2px 0 7px;font:500 clamp(20px,2.5vw,26px)/1.25 Georgia,serif;
+}
+body.app-body #main .lifestyle-page .lifestyle-section-head p{margin:0;color:var(--ui-muted);font:400 13px/1.5 system-ui,sans-serif}
+body.app-body #main .lifestyle-page .lifestyle-deed{
+ background:var(--ui-paper);overflow:hidden;
+}
+body.app-body #main .lifestyle-page #lifestyle-deed-card>p{
+ min-height:0;max-width:67ch;margin:10px 0 14px;
+ font:500 clamp(19px,2.6vw,25px)/1.4 Georgia,serif;
+}
+body.app-body #main .lifestyle-page #lifestyle-deed-card>div{display:flex;flex-wrap:wrap;gap:8px}
+body.app-body #main .lifestyle-page #lifestyle-deed-card>small{display:block;margin-top:8px;font-size:12px;line-height:1.45}
+body.app-body #main .lifestyle-page .deed-mark{width:39px;height:39px}
+body.app-body #main .lifestyle-page .lifestyle-period-switch{display:flex;flex-wrap:wrap}
+body.app-body #main .lifestyle-page .lifestyle-period-switch button{min-height:39px;padding:7px 12px}
+body.app-body #main .lifestyle-page .emotion-choice-grid{
+ display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;
+}
+body.app-body #main .lifestyle-page .emotion-choice-grid span{
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ min-height:96px;gap:5px;padding:9px 4px;
+ border-radius:13px;font-size:12px;
+}
+body.app-body #main .lifestyle-page .life-emotion-face{
+ width:52px;height:52px;margin:0 auto;border-radius:50%;
+}
+body.app-body #main .lifestyle-page .life-checkin-detail{
+ margin:14px 0 0;padding:14px;background:var(--ui-soft);border:0;border-radius:14px;
+}
+body.app-body #main .lifestyle-page .life-form-label{margin:0 0 8px;font:700 12px/1.4 system-ui,sans-serif;color:var(--ui-muted)}
+body.app-body #main .lifestyle-page .life-checkin-detail .lifestyle-sliders{margin:6px 0 12px;gap:10px}
+body.app-body #main .lifestyle-page .life-checkin-detail .lifestyle-sliders label{padding:10px 12px;border-radius:11px}
+body.app-body #main .lifestyle-page .life-checkin-detail textarea{min-height:70px}
+body.app-body #main .lifestyle-page .lifestyle-checkin-actions{margin-top:13px}
+body.app-body #main .lifestyle-page .lifestyle-tool-shelf{
+ grid-column:1/-1;display:grid;grid-template-columns:1fr;
+ background:var(--ui-paper);color:var(--ui-ink);
+ border:1px solid var(--ui-line);border-radius:18px;
+ margin:0;padding:18px;box-shadow:none;gap:12px;
+}
+body.app-body #main .lifestyle-page .lifestyle-tool-shelf h3{font:500 22px Georgia,serif;color:var(--ui-ink)}
+body.app-body #main .lifestyle-page .lifestyle-tool-shelf>div:last-child{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+body.app-body #main .lifestyle-page .lifestyle-tool-shelf a{
+ display:flex;align-items:center;justify-content:space-between;gap:9px;
+ padding:12px;border:1px solid var(--ui-line);border-radius:11px;
+ background:var(--ui-soft);color:var(--ui-ink);text-decoration:none;font:600 12px/1.4 system-ui,sans-serif;
+}
+body.app-body #main .lifestyle-page .lifestyle-task-form{gap:10px}
+body.app-body #main .lifestyle-page .lifestyle-task-form :is(input,textarea){min-width:0}
+body.app-body #main .lifestyle-page .lifestyle-task-form .button{min-height:43px}
+body.app-body #main .lifestyle-page .task-board-columns{grid-template-columns:1fr;gap:10px}
+body.app-body #main .lifestyle-page .task-board-columns>div{padding:12px;border-radius:13px;background:var(--ui-soft);min-width:0}
+body.app-body #main .lifestyle-page .task-board-columns>div h3{margin:0 0 9px;font-size:16px}
+body.app-body #main .lifestyle-page .lifestyle-task,
+body.app-body #main .lifestyle-page .focus-import-task{max-width:100%;overflow-wrap:anywhere}
+body.app-body #main .lifestyle-page .lifestyle-empty{min-height:95px;text-align:center}
+body.app-body #main .lifestyle-page .lifestyle-empty>.ui-resource{width:90px;height:55px}
+body.app-body #main .lifestyle-page .calendar-day{min-height:55px}
+body.app-body #main .lifestyle-page .calendar-head{flex-wrap:wrap}
+body.app-body #main .lifestyle-page .calendar-head>div:last-child{
+ display:flex;align-items:center;gap:7px;flex-wrap:nowrap;
+}
+body.app-body #main .lifestyle-page .calendar-head strong{font-size:13px;text-align:center}
+body.app-body #main .lifestyle-page .lifestyle-day-detail{padding:12px;border-radius:12px}
+body.app-body #main .lifestyle-page .lifestyle-reminders form{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+ align-items:center;gap:9px 12px;
+}
+body.app-body #main .lifestyle-page .lifestyle-reminders form :is(label,input,button){min-width:0}
+body.app-body #main .lifestyle-page .lifestyle-reminders form label{font-size:13px}
+body.app-body #main .lifestyle-page .lifestyle-reminders form :is(button){width:100%;min-height:43px}
+body.app-body #main .lifestyle-page .reminder-limit{font-size:11px;margin-top:13px;line-height:1.5}
+body.app-body #main .lifestyle-page :is(.life-glance-item,#lifestyle-deed,#lifestyle-checkin,#lifestyle-tasks,#lifestyle-calendar,#lifestyle-reminders,.lifestyle-tool-shelf){scroll-margin-top:90px}
+/* SimplyFocus lives in Lifestyle; its storage and controls remain unchanged. */
+body.app-body #main .lifestyle-page .life-compact-heading{
+ padding:8px 0 2px;
+}
+body.app-body #main .lifestyle-page .life-compact-heading h1{
+ margin:4px 0 7px;font:500 clamp(27px,4vw,38px)/1.15 Georgia,serif;
+}
+body.app-body #main .lifestyle-page .life-compact-heading p:not(.eyebrow){margin:0;color:var(--ui-muted);font-size:14px}
+body.app-body #main .lifestyle-page .life-focus-host{min-width:0}
+body.app-body #main .lifestyle-page .life-focus-host .simplyfocus-page{
+ max-width:100%;width:100%;padding:0;margin:0;
+}
+body.app-body #main .lifestyle-page .life-focus-host .focus-intro{
+ padding:12px 0 14px;
+}
+body.app-body #main .lifestyle-page .life-focus-host .focus-intro h2{
+ margin:0 0 7px;font:500 25px/1.25 Georgia,serif;color:var(--ui-ink);
+}
+body.app-body #main .lifestyle-page .life-focus-host .focus-intro .lead{
+ font-size:13px;line-height:1.5;margin:0;max-width:70ch;
+}
+body.app-body #main .lifestyle-page .life-focus-host :is(.focus-mixer,.timed-breathing-card,.pomodoro-card){
+ border-radius:17px;box-shadow:none;
+}
+@media(max-width:800px){
+ body.app-body #main .lifestyle-page .life-dashboard-flow{grid-template-columns:1fr}
+ body.app-body #main .lifestyle-page .life-dashboard-flow>*{grid-column:1/-1}
+ body.app-body #main .lifestyle-page .emotion-choice-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ body.app-body #main .lifestyle-page .life-focus-host .focus-mixer-head{grid-template-columns:1fr}
+ body.app-body #main .lifestyle-page .life-focus-host .focus-tracks{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+ body.app-body #main .lifestyle-page{padding:12px 12px 105px}
+ body.app-body #main .lifestyle-page .lifestyle-hero{
+  grid-template-columns:1fr;min-height:0;padding:17px;border-radius:17px;
+ }
+ body.app-body #main .lifestyle-page .life-hero-scene{display:none}
+ body.app-body #main .lifestyle-page .lifestyle-hero h1{font-size:29px;margin:3px 0}
+ body.app-body #main .lifestyle-page .life-mode-switch{margin:11px 0}
+ body.app-body #main .lifestyle-page .life-mode-switch a{min-height:44px;font-size:13px}
+ body.app-body #main .lifestyle-page .life-glance{padding:13px;margin-bottom:12px}
+ body.app-body #main .lifestyle-page .life-glance-heading h2{font-size:20px}
+ body.app-body #main .lifestyle-page .life-overview{grid-template-columns:1fr;gap:7px}
+ body.app-body #main .lifestyle-page .life-glance-item{padding:10px}
+ body.app-body #main .lifestyle-page .life-dashboard-flow{gap:12px}
+ body.app-body #main .lifestyle-page .lifestyle-card{padding:16px;border-radius:15px}
+ body.app-body #main .lifestyle-page .lifestyle-section-head h2,
+ body.app-body #main .lifestyle-page .deed-heading h2{font-size:21px}
+ body.app-body #main .lifestyle-page .lifestyle-period-switch{width:100%}
+ body.app-body #main .lifestyle-page .lifestyle-period-switch button{flex:1}
+ body.app-body #main .lifestyle-page .emotion-choice-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ body.app-body #main .lifestyle-page .emotion-choice-grid span{min-height:79px;font-size:11px;padding:6px 2px;gap:4px}
+ body.app-body #main .lifestyle-page .life-emotion-face{width:39px;height:39px}
+ body.app-body #main .lifestyle-page .life-checkin-detail{padding:10px;margin-top:11px}
+ body.app-body #main .lifestyle-page .life-checkin-detail .lifestyle-sliders{grid-template-columns:1fr;gap:8px}
+ body.app-body #main .lifestyle-page .lifestyle-task-form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ body.app-body #main .lifestyle-page .lifestyle-task-form>.field:first-child,
+ body.app-body #main .lifestyle-page .lifestyle-task-form .lifestyle-task-notes,
+ body.app-body #main .lifestyle-page .lifestyle-task-form>.button{grid-column:1/-1}
+ body.app-body #main .lifestyle-page .lifestyle-reminders form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ body.app-body #main .lifestyle-page .calendar-day{min-height:43px}
+ body.app-body #main .lifestyle-page .calendar-head>div:last-child{width:100%;justify-content:space-between}
+ body.app-body #main .lifestyle-page .lifestyle-tool-shelf>div:last-child{grid-template-columns:1fr;gap:7px}
+ body.app-body #main .lifestyle-page .lifestyle-tool-shelf{padding:14px}
+ body.app-body #main .lifestyle-page .life-focus-host :is(.focus-mixer,.timed-breathing-card,.pomodoro-card){padding:15px}
+ body.app-body #main .lifestyle-page .life-focus-host .focus-track{
+  grid-template-columns:30px minmax(0,1fr) 52px;gap:8px;
+  min-height:68px;padding:9px;
+ }
+ body.app-body #main .lifestyle-page .life-focus-host .focus-track-icon{width:30px;height:30px;font-size:17px}
+ body.app-body #main .lifestyle-page .life-focus-host .focus-track input{grid-column:2/4;width:100%}
+ body.app-body #main .lifestyle-page .life-focus-host .focus-track-value{grid-column:3;grid-row:1}
+ body.app-body #main .lifestyle-page .life-focus-host .focus-track-copy small{font-size:11px}
+ body.app-body #main .lifestyle-page .life-focus-host .pomodoro-modes{width:100%}
+ body.app-body #main .lifestyle-page .life-focus-host .pomodoro-modes button{min-width:0;padding:9px 6px}
+ body.app-body #main .lifestyle-page .life-focus-host .pomodoro-main{padding:18px 12px}
+}
+html[data-theme="dark"] body.app-body #main .lifestyle-page .life-mode-switch a[aria-current="page"]{color:#fff}
+html[data-theme="dark"] body.app-body #main .lifestyle-page .life-glance-item,
+html[data-theme="dark"] body.app-body #main .lifestyle-page .lifestyle-tool-shelf a{background:var(--ui-soft);color:var(--ui-ink)}
+@media(prefers-reduced-motion:reduce){
+ body.app-body #main .lifestyle-page *,body.app-body #main .lifestyle-page *::before,body.app-body #main .lifestyle-page *::after{transition:none!important;animation-duration:.01ms!important}
+}
