@@ -56,7 +56,7 @@ export function renderLifestyle(root,view='daily'){
   <section id="lifestyle-tasks" class="lifestyle-card lifestyle-tasks" aria-labelledby="lifestyle-tasks-title"><div class="lifestyle-section-head"><div><p class="eyebrow">Today and later</p><h2 id="lifestyle-tasks-title">My tasks</h2><p>Keep today’s actions visible. You can move tasks into SimplyFocus.</p></div></div>
    <div class="life-task-view-switch" role="group" aria-label="Task list view"><button type="button" data-task-view="list" aria-pressed="${taskView==='list'}">☷ List</button><button type="button" data-task-view="quadrants" aria-pressed="${taskView==='quadrants'}">✿ Four quadrants</button></div>
    <form id="lifestyle-task-form" class="lifestyle-task-form"><label class="field">Task<input id="lifestyle-task-title" maxlength="120" required placeholder="e.g. Call the pharmacy"></label><label class="field">Date<input id="lifestyle-task-date" type="date" required value="${selectedDate}"></label><label class="field">Time <span class="fine">optional</span><input id="lifestyle-task-time" type="time"></label><label class="field life-task-priority-field">Priority <select id="lifestyle-task-priority"><option value="inbox">Choose later</option>${EISENHOWER_QUADRANTS.map(q=>`<option value="${q.id}">${q.title} · ${q.subtitle}</option>`).join('')}</select></label><label class="field lifestyle-task-notes">Notes <span class="fine">optional</span><input id="lifestyle-task-note" maxlength="500" placeholder="A useful detail or first step"></label><button class="button" type="submit">Add task</button></form>
-   <div class="task-board-columns"><div><h3>Lifestyle tasks</h3><div id="lifestyle-task-list"></div><div id="lifestyle-quadrants" class="life-quadrants" aria-label="Four-quadrant priority board" hidden></div></div><div class="life-focus-queue" data-life-focus-queue hidden><h3>Focus tasks</h3><p class="fine">Move a task back to your calendar, or open SimplyFocus above.</p><div id="lifestyle-focus-import"></div></div></div><p id="lifestyle-task-status" role="status"></p>
+   <div class="task-board-columns"><div class="life-task-list-surface" data-life-list-surface><h3>Lifestyle tasks</h3><div id="lifestyle-task-list"></div></div><div id="lifestyle-quadrants" class="life-quadrants" aria-label="Four-quadrant priority board" hidden></div><div class="life-focus-queue" data-life-focus-queue hidden><h3>Focus tasks</h3><p class="fine">Move a task back to your calendar, or open SimplyFocus above.</p><div id="lifestyle-focus-import"></div></div></div><p id="lifestyle-task-status" role="status"></p>
   </section>
   <section id="lifestyle-reminders" class="lifestyle-card lifestyle-reminders" aria-labelledby="lifestyle-reminders-title"><div class="lifestyle-section-head"><div><p class="eyebrow">Gentle prompts</p><h2 id="lifestyle-reminders-title">Reminders</h2><p>Optional morning and evening nudges.</p></div><span class="reminder-bell">${uiSymbol('bell')}</span></div><form id="lifestyle-reminder-form"><label><input id="morning-reminder-enabled" type="checkbox"> Morning reminder</label><input id="morning-reminder-time" type="time" value="08:30" aria-label="Morning reminder time"><label><input id="evening-reminder-enabled" type="checkbox"> Evening reminder</label><input id="evening-reminder-time" type="time" value="21:00" aria-label="Evening reminder time"><button class="button" type="submit">Save reminder times</button><button class="button secondary" id="lifestyle-enable-notifications" type="button">Enable device notifications</button></form><p class="reminder-limit">Browser notifications work only on supported HTTPS browsers after permission is granted. With the current free static setup, reminders are checked while Nobody’s Simple is open or backgrounded; an exact alert is not guaranteed after the browser or installed app has been fully closed.</p><p id="lifestyle-reminder-status" role="status"></p></section>
   </div>
@@ -103,21 +103,81 @@ export function renderLifestyle(root,view='daily'){
    </label><button type="button" data-to-focus="${esc(task.id)}">Focus</button><button type="button" data-delete-task="${esc(task.id)}" aria-label="Delete ${esc(task.title)}">Delete</button></div>
   </article>`;
  }
+
+ function renderMatrixTask(task){
+  const priority=taskPriority(task);
+  const options=[{id:'inbox',title:'Choose later'},...EISENHOWER_QUADRANTS.map(q=>({id:q.id,title:q.title}))];
+  return `<article class="lifestyle-task life-matrix-task ${task.done?'is-done':''}" data-matrix-task="${esc(task.id)}" data-task-id="${esc(task.id)}">
+   <div class="life-matrix-task-line">
+    <button type="button" class="life-drag-handle" data-life-grip="${esc(task.id)}" aria-label="Drag ${esc(task.title)} to another quadrant or position" title="Drag to move task">⠿</button>
+    <input type="checkbox" data-task-done="${esc(task.id)}" ${task.done?'checked':''} aria-label="Complete ${esc(task.title)}">
+    <button type="button" class="life-matrix-title" data-edit-matrix-task="${esc(task.id)}" aria-expanded="false" aria-label="Edit ${esc(task.title)}">
+     <strong>${esc(task.title)}</strong><small>${task.date?esc(task.date):'No date'}${task.time?' · '+esc(task.time):''}${task.notes?' · Notes':''}</small>
+    </button>
+   </div>
+   <div class="life-matrix-card-actions">
+    <button type="button" data-matrix-up="${esc(task.id)}" aria-label="Move ${esc(task.title)} up within quadrant" title="Move up">↑</button>
+    <button type="button" data-matrix-down="${esc(task.id)}" aria-label="Move ${esc(task.title)} down within quadrant" title="Move down">↓</button>
+    <label class="life-matrix-move">Move to <select data-task-priority="${esc(task.id)}" aria-label="Move ${esc(task.title)} to quadrant">
+     ${options.map(q=>`<option value="${q.id}" ${q.id===priority?'selected':''}>${esc(q.title)}</option>`).join('')}
+    </select></label>
+    <button type="button" data-to-focus="${esc(task.id)}" title="Move task to SimplyFocus">Focus</button>
+    <button type="button" data-delete-task="${esc(task.id)}" aria-label="Delete ${esc(task.title)}">Delete</button>
+   </div>
+   <form class="life-matrix-editor" data-matrix-edit="${esc(task.id)}" hidden>
+    <label>Task name<input name="title" type="text" required maxlength="120" value="${esc(task.title)}"></label>
+    <label>Description<textarea name="notes" rows="2" maxlength="500" placeholder="Details, notes, or a next step">${esc(task.notes||'')}</textarea></label>
+    <div class="life-matrix-date-row">
+     <label>Date<input name="date" type="date" value="${esc(task.date||'')}"></label>
+     <label>Time<input name="time" type="time" value="${esc(task.time||'')}"></label>
+    </div>
+    <div class="life-matrix-editor-buttons">
+     <button class="life-matrix-save" type="submit">Save changes</button>
+     <button type="button" data-cancel-matrix="${esc(task.id)}">Cancel</button>
+    </div>
+   </form>
+  </article>`;
+ }
+ function renderQuadrantAdd(q){
+  return `<form class="life-quad-add" data-quad-add="${q.id}">
+    <label class="life-quad-entry-label" for="life-add-${q.id}">Add to ${esc(q.title)}</label>
+    <div class="life-quad-add-row">
+     <input id="life-add-${q.id}" name="title" maxlength="120" required placeholder="+ Write a task here…" autocomplete="off">
+     <button type="submit" aria-label="Add task to ${esc(q.title)}">Add</button>
+    </div>
+    <details class="life-quad-more"><summary>Date, time & description</summary>
+     <div class="life-quad-more-fields">
+      <label>Description<textarea name="notes" rows="2" maxlength="500" placeholder="What needs doing?"></textarea></label>
+      <div class="life-matrix-date-row">
+       <label>Date<input name="date" type="date"></label>
+       <label>Time<input name="time" type="time"></label>
+      </div>
+     </div>
+    </details>
+   </form>`;
+ }
  function renderTasks(){
   tasks=readLifestyleTasks();
   const focus=readFocusBoard();
   const sorted=[...tasks].sort((a,b)=>`${a.date} ${a.time||'99:99'}`.localeCompare(`${b.date} ${b.time||'99:99'}`));
   $('#lifestyle-task-list').innerHTML=sorted.length?sorted.map(renderTaskItem).join(''):'<p class="lifestyle-empty life-task-empty">Nothing on your list yet. Add a task above.</p>';
-  const items=priority=>sorted.filter(t=>taskPriority(t)===priority);
+  const items=priority=>tasks.filter(t=>taskPriority(t)===priority);
   const inbox=items('inbox');
-  $('#lifestyle-quadrants').innerHTML=(inbox.length?`<section class="life-priority-inbox-panel" aria-label="Tasks to sort"><div><strong>✎ Choose a quadrant</strong><small>${inbox.length} uncategorised ${inbox.length===1?'task':'tasks'}</small></div>${inbox.map(renderTaskItem).join('')}</section>`:'')+
-   EISENHOWER_QUADRANTS.map(q=>`<section class="life-quadrant life-quadrant--${q.id}" aria-labelledby="life-q-${q.id}">
+  $('#lifestyle-quadrants').innerHTML=(inbox.length?`<section class="life-priority-inbox-panel" data-life-dropzone="inbox" aria-label="Tasks to sort">
+    <div class="life-inbox-title"><strong>✎ Choose a quadrant</strong><small>${inbox.length} unclassified ${inbox.length===1?'task':'tasks'}</small></div>
+    <div class="life-quadrant-items">${inbox.map(renderMatrixTask).join('')}</div></section>`:'')+
+   EISENHOWER_QUADRANTS.map(q=>`<section class="life-quadrant life-quadrant--${q.id}" data-life-dropzone="${q.id}" aria-labelledby="life-q-${q.id}">
     <header class="life-quadrant-head"><span aria-hidden="true">${q.icon}</span><div><h3 id="life-q-${q.id}">${q.title}</h3><small>${q.subtitle}</small></div><b aria-label="${items(q.id).length} tasks">${items(q.id).length}</b></header>
-    <p class="life-quadrant-hint">${q.hint}</p><div class="life-quadrant-items">${items(q.id).map(renderTaskItem).join('')||'<p class="life-quadrant-empty">A little breathing room ✧</p>'}</div>
+    <p class="life-quadrant-hint">${q.hint}</p>
+    <div class="life-quadrant-items">${items(q.id).map(renderMatrixTask).join('')||'<p class="life-quadrant-empty">Drop a task here or write one below ✧</p>'}</div>
+    ${renderQuadrantAdd(q)}
    </section>`).join('');
   const matrix=taskView==='quadrants';
   $('#lifestyle-quadrants').hidden=!matrix;
   $('#lifestyle-task-list').hidden=matrix;
+  $('[data-life-list-surface]').hidden=matrix;
+  $('#lifestyle-task-form').hidden=matrix;
+  $('#lifestyle-tasks').classList.toggle('is-matrix-mode',matrix);
   root.querySelectorAll('[data-task-view]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.taskView===taskView)));
   $('#lifestyle-focus-import').innerHTML=focus.tasks.length?focus.tasks.map(task=>`<article class="focus-import-task"><div><strong>${esc(task.title)}</strong><small>${esc(task.project||'Personal')} · ${Number(task.estimate)||1} Pomodoro${Number(task.estimate)===1?'':'s'}</small></div><button type="button" data-from-focus="${esc(task.id)}">Move to Lifestyle</button></article>`).join(''):'';
   $('[data-life-focus-queue]').hidden=!focus.tasks.length;
@@ -140,14 +200,162 @@ export function renderLifestyle(root,view='daily'){
   }
   root.querySelectorAll('[data-life-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lifeMode===mode)));
  }
+
+ // The matrix and the ordinary list share a single source of truth. The array
+ // position is the user's manual order within each quadrant; dates never
+ // silently override their drag/reorder choices.
+ function relocateTask(id,destination,beforeId='',after=false){
+  const next=readLifestyleTasks();
+  const from=next.findIndex(task=>String(task.id)===String(id));
+  if(from<0||String(id)===String(beforeId))return false;
+  const [task]=next.splice(from,1);
+  task.priority=validPriority(destination);
+  let at=-1;
+  if(beforeId){
+   at=next.findIndex(item=>String(item.id)===String(beforeId));
+   if(at>=0&&after)at++;
+  }
+  if(at<0){
+   at=0;
+   next.forEach((item,index)=>{if(taskPriority(item)===task.priority)at=index+1;});
+  }
+  next.splice(at,0,task);
+  writeLifestyleTasks(next);renderTasks();
+  return true;
+ }
+ function shiftMatrixTask(id,direction){
+  const group=tasks.filter(task=>taskPriority(task)===taskPriority(tasks.find(t=>String(t.id)===String(id))));
+  const at=group.findIndex(item=>String(item.id)===String(id));
+  const target=group[at+direction];
+  if(!target)return false;
+  return relocateTask(id,taskPriority(group[at]),target.id,direction>0);
+ }
+ function openMatrixEditor(id,open){
+  const card=[...root.querySelectorAll('[data-matrix-task]')].find(el=>el.dataset.matrixTask===String(id)&&!el.closest('[hidden]'));
+  if(!card)return;
+  const form=card.querySelector('[data-matrix-edit]');
+  if(!open)form.reset();
+  form.hidden=!open;
+  card.querySelector('[data-edit-matrix-task]')?.setAttribute('aria-expanded',String(open));
+  if(open)form.elements.namedItem('title')?.focus();
+ }
+ // Built-in pointer events allow both mouse and touch dragging by the little
+ // grab handle. Ordinary page scrolling still works away from that handle.
+
+ let matrixDrag=null;
+ const updateDragTarget=(drag)=>{
+  root.querySelectorAll('.life-drop-active,.life-drop-before,.life-drop-after').forEach(el=>
+   el.classList.remove('life-drop-active','life-drop-before','life-drop-after'));
+  // The source card does not block hit testing while it is being dragged.
+  const under=document.elementFromPoint(drag.lastX,drag.lastY);
+  const zone=under?.closest('[data-life-dropzone]');
+  drag.zone=zone?.dataset.lifeDropzone||null;drag.anchor=null;drag.after=false;
+  if(zone){
+   zone.classList.add('life-drop-active');
+   const target=under.closest('[data-matrix-task]');
+   if(target&&target!==drag.card){
+    drag.anchor=target.dataset.matrixTask;
+    drag.after=drag.lastY>=target.getBoundingClientRect().top+target.offsetHeight/2;
+    target.classList.add(drag.after?'life-drop-after':'life-drop-before');
+   }
+  }
+ };
+ const autoScrollDrag=()=>{
+  const drag=matrixDrag;
+  if(!drag?.started)return;
+  // Repeating while the finger is held near an edge means the next quadrant
+  // can be reached on a short phone screen, even without a second gesture.
+  const edge=125,screen=window.innerHeight;
+  const top=drag.lastY<edge?-(edge-drag.lastY):0;
+  const bottom=drag.lastY>screen-edge?drag.lastY-(screen-edge):0;
+  const amount=top||bottom;
+  if(!amount){drag.frame=0;return;}
+  window.scrollBy(0,Math.max(-38,Math.min(38,amount*0.48)));
+  updateDragTarget(drag);
+  drag.frame=requestAnimationFrame(autoScrollDrag);
+ };
+ const clearDrag=()=>{
+  root.querySelectorAll('.life-drop-active,.life-drop-before,.life-drop-after').forEach(el=>
+   el.classList.remove('life-drop-active','life-drop-before','life-drop-after'));
+  if(matrixDrag?.frame)cancelAnimationFrame(matrixDrag.frame);
+  if(matrixDrag?.card){matrixDrag.card.classList.remove('life-task-dragging');matrixDrag.card.style.pointerEvents='';}
+  if(matrixDrag?.grip&&matrixDrag.grip.hasPointerCapture?.(matrixDrag.pointerId))
+   matrixDrag.grip.releasePointerCapture(matrixDrag.pointerId);
+  matrixDrag=null;
+ };
+ root.addEventListener('pointerdown',event=>{
+  const grip=event.target.closest('[data-life-grip]');
+  if(!grip||taskView!=='quadrants'||!event.isPrimary||event.button!==0)return;
+  matrixDrag={id:grip.dataset.lifeGrip,pointerId:event.pointerId,grip,card:grip.closest('[data-matrix-task]'),
+   x:event.clientX,y:event.clientY,lastX:event.clientX,lastY:event.clientY,started:false,
+   zone:null,anchor:null,after:false,frame:0};
+  grip.setPointerCapture?.(event.pointerId);
+ },{signal});
+ root.addEventListener('pointermove',event=>{
+  const drag=matrixDrag;
+  if(!drag||drag.pointerId!==event.pointerId)return;
+  drag.lastX=event.clientX;drag.lastY=event.clientY;
+  if(!drag.started&&Math.hypot(event.clientX-drag.x,event.clientY-drag.y)<7)return;
+  drag.started=true;drag.card.classList.add('life-task-dragging');drag.card.style.pointerEvents='none';
+  if(event.cancelable)event.preventDefault();
+  updateDragTarget(drag);
+  if(!drag.frame)drag.frame=requestAnimationFrame(autoScrollDrag);
+ },{signal});
+ root.addEventListener('pointerup',event=>{
+  if(!matrixDrag||matrixDrag.pointerId!==event.pointerId)return;
+  const {id,zone,anchor,after,started}=matrixDrag;
+  clearDrag();
+  if(started&&zone&&relocateTask(id,zone,anchor,after))
+   $('#lifestyle-task-status').textContent='Task moved. Drag again, or use the Move to and arrow controls.';
+ },{signal});
+ root.addEventListener('pointercancel',()=>{if(matrixDrag)clearDrag();},{signal});
+ signal.addEventListener('abort',()=>{if(matrixDrag)clearDrag();},{once:true});
+ root.addEventListener('submit',event=>{
+  const form=event.target;
+  if(form.matches('[data-quad-add]')){
+   event.preventDefault();
+   const value=name=>String(new FormData(form).get(name)||'').trim();
+   const title=value('title');
+   if(!title)return;
+   const added=addLifestyleTask({title,priority:form.dataset.quadAdd,notes:value('notes'),
+    date:value('date')||localDate(),time:value('time')});
+   if(!added)return;
+   renderTasks();
+   $('#lifestyle-task-status').textContent='Added to '+EISENHOWER_QUADRANTS.find(q=>q.id===form.dataset.quadAdd).title+'.';
+   const replacement=root.querySelector('[data-quad-add="'+form.dataset.quadAdd+'"] input[name="title"]');
+   replacement?.focus({preventScroll:true});
+   return;
+  }
+  if(form.matches('[data-matrix-edit]')){
+   event.preventDefault();
+   const id=form.dataset.matrixEdit,existing=readLifestyleTasks();
+   const task=existing.find(t=>String(t.id)===String(id));
+   if(!task)return;
+   const value=name=>String(new FormData(form).get(name)||'').trim();
+   const title=value('title').slice(0,120);
+   if(!title)return;
+   task.title=title;task.notes=value('notes').slice(0,500);
+   task.date=value('date')||localDate();task.time=value('time');
+   writeLifestyleTasks(existing);renderTasks();
+   $('#lifestyle-task-status').textContent='Changes saved for '+title+'.';
+  }
+ },{signal});
  root.addEventListener('click',event=>{
   const button=event.target.closest('button');if(!button)return;
   if(button.dataset.lifeMode){showMode(button.dataset.lifeMode);return;}
-  if(button.dataset.taskView){taskView=button.dataset.taskView==='quadrants'?'quadrants':'list';localStorage.setItem(lifestyleTaskViewKey,taskView);renderTasks();return;}
+  if(button.dataset.taskView){if(matrixDrag)clearDrag();taskView=button.dataset.taskView==='quadrants'?'quadrants':'list';localStorage.setItem(lifestyleTaskViewKey,taskView);renderTasks();return;}
+   if(button.dataset.editMatrixTask){const card=button.closest('[data-matrix-task]');openMatrixEditor(button.dataset.editMatrixTask,card.querySelector('[data-matrix-edit]').hidden);return;}
+   if(button.dataset.cancelMatrix){openMatrixEditor(button.dataset.cancelMatrix,false);return;}
+   if(button.dataset.matrixUp){if(shiftMatrixTask(button.dataset.matrixUp,-1))$('#lifestyle-task-status').textContent='Task moved up.';return;}
+   if(button.dataset.matrixDown){if(shiftMatrixTask(button.dataset.matrixDown,1))$('#lifestyle-task-status').textContent='Task moved down.';return;}
   if(button.dataset.checkMode){checkMode=button.dataset.checkMode;$('#lifestyle-checkin-title').textContent=`${checkMode==='daytime'?'Daytime':checkMode[0].toUpperCase()+checkMode.slice(1)} check-in`;$('#lifestyle-checkin-title').nextElementSibling.textContent=checkMode==='morning'?'Arrive before you organise the day.':checkMode==='evening'?'Put down what can wait before bed.':'Notice what is here before choosing what comes next.';root.querySelectorAll('[data-check-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.checkMode===checkMode)));}
   if(button.dataset.calendarMove){calendarDate=new Date(calendarDate.getFullYear(),calendarDate.getMonth()+Number(button.dataset.calendarMove),1);renderCalendar();}
   if(button.dataset.calendarDate){selectedDate=button.dataset.calendarDate;$('#lifestyle-task-date').value=selectedDate;renderCalendar();}
-  if(button.hasAttribute('data-add-selected-date')){$('#lifestyle-task-date').value=selectedDate;$('#lifestyle-tasks').scrollIntoView({block:'start'});$('#lifestyle-task-title').focus({preventScroll:true});}
+  if(button.hasAttribute('data-add-selected-date')){
+    $('#lifestyle-tasks').scrollIntoView({block:'start'});
+    if(taskView==='quadrants'){$('#lifestyle-quadrants [data-quad-add="do"] input[name="title"]')?.focus({preventScroll:true});}
+    else{$('#lifestyle-task-date').value=selectedDate;$('#lifestyle-task-title').focus({preventScroll:true});}
+   }
   if(button.hasAttribute('data-deed-next')){deed={...deed,index:randomDeed(deed.index),done:false,skips:(deed.skips||0)+1};writeDeed(deed);renderDeed();}
   if(button.hasAttribute('data-deed-done')){deed={...deed,done:true};writeDeed(deed);renderDeed();}
   if(button.dataset.deleteEntry){entries=entries.filter(item=>item.id!==button.dataset.deleteEntry);writeEmotions(entries);renderCalendar();}
