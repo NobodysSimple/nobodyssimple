@@ -309,7 +309,7 @@ export function renderLifestyle(root,view='daily'){
    $('#lifestyle-task-status').textContent='Task moved. Drag again, or use the Move to and arrow controls.';
  },{signal});
  root.addEventListener('pointercancel',()=>{if(matrixDrag)clearDrag();},{signal});
- window.addEventListener('hashchange',()=>{if(matrixDrag)clearDrag();},{once:true,signal});
+ signal.addEventListener('abort',()=>{if(matrixDrag)clearDrag();},{once:true});
  root.addEventListener('submit',event=>{
   const form=event.target;
   if(form.matches('[data-quad-add]')){
@@ -343,7 +343,7 @@ export function renderLifestyle(root,view='daily'){
  root.addEventListener('click',event=>{
   const button=event.target.closest('button');if(!button)return;
   if(button.dataset.lifeMode){showMode(button.dataset.lifeMode);return;}
-  if(button.dataset.taskView){taskView=button.dataset.taskView==='quadrants'?'quadrants':'list';localStorage.setItem(lifestyleTaskViewKey,taskView);renderTasks();return;}
+  if(button.dataset.taskView){if(matrixDrag)clearDrag();taskView=button.dataset.taskView==='quadrants'?'quadrants':'list';localStorage.setItem(lifestyleTaskViewKey,taskView);renderTasks();return;}
    if(button.dataset.editMatrixTask){const card=button.closest('[data-matrix-task]');openMatrixEditor(button.dataset.editMatrixTask,card.querySelector('[data-matrix-edit]').hidden);return;}
    if(button.dataset.cancelMatrix){openMatrixEditor(button.dataset.cancelMatrix,false);return;}
    if(button.dataset.matrixUp){if(shiftMatrixTask(button.dataset.matrixUp,-1))$('#lifestyle-task-status').textContent='Task moved up.';return;}
