@@ -129,11 +129,12 @@ test('all 31 topic areas are accessible from within the existing seven modes',()
  const ids=new Set();
  for(const mode of NEEDS_MODES){
   const page=fakeRoot();renderNeedsConsole(page,[mode.id]);
-  assert.match(page.innerHTML,/Find a related experience/,mode.id);
-  assert.match(page.innerHTML,/Search all 518 topics/,mode.id);
+  assert.doesNotMatch(page.innerHTML,/Find a related experience|More topics related|ns-needs-related|ns-needs-area-grid|ns-needs-area-details/,mode.id);
+  const expected=mode.options.length+TOPIC_AREAS_BY_MODE[mode.id].length;
+  assert.equal((page.innerHTML.match(/class="ns-needs-choice"/g)||[]).length,expected,mode.id+' must use ONE card grid');
   for(const area of TOPIC_AREAS_BY_MODE[mode.id]){
    ids.add(area);
-   assert.ok(page.innerHTML.includes('href="#navigate/atlas/area/'+area+'"'),mode.id+' missing '+area);
+   assert.ok(page.innerHTML.includes('class="ns-needs-choice" href="#navigate/atlas/area/'+area+'"'),mode.id+' missing ordinary card for '+area);
   }
  }
  assert.equal(ids.size,31);
@@ -143,6 +144,11 @@ test('all 31 topic areas are accessible from within the existing seven modes',()
  assert.ok(TOPIC_AREAS_BY_MODE.relate.includes('family'));
  assert.ok(TOPIC_AREAS_BY_MODE.relate.includes('harm'));
  assert.equal(TOPIC_AREAS_BY_MODE.learn.length,31);
+ assert.ok(TOPIC_AREAS_BY_MODE.relate.includes('culture'));
+ const relation=fakeRoot();renderNeedsConsole(relation,['relate']);
+ assert.equal((relation.innerHTML.match(/class="ns-needs-choices"/g)||[]).length,1);
+ assert.doesNotMatch(relation.innerHTML,/<details|Find a related experience|<div class="ns-needs-related"/);
+ assert.ok(relation.innerHTML.indexOf('I feel unsafe, pressured or controlled')<relation.innerHTML.indexOf('Race, ethnicity &amp; culture'));
 });
 test('direct area links preselect their topic filter',()=>{
  for(const id of ['culture','lgbtq','neuro','faith']){
