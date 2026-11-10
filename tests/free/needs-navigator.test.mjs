@@ -2,8 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {NEEDS_MODES,getNeedsMode,getNeedsActivity,needsDestination,NEEDS_REVIEW_CASES} from '../../ns-needs-catalog.mjs';
 import {PROCESSING_ACTIVITIES,SETTLING_ACTIVITIES,renderNeedsActivity} from '../../ns-needs-activities.mjs';
-import {renderNeedsConsole,getSubjectMatchesForTest,TOPIC_AREAS_BY_MODE} from '../../ns-needs-console.mjs';
-import {atlasProblemIndex,atlasGet} from '../../ns-atlas-core.mjs';
+import {renderNeedsConsole,getSubjectMatchesForTest,TOPIC_AREAS_BY_MODE,topicsForNeedsMode} from '../../ns-needs-console.mjs';
+import {atlasProblemIndex,atlasGet,isSafetyPriority} from '../../ns-atlas-core.mjs';
 import {tools} from '../../tool-catalog.mjs';
 
 const idSet=new Set(tools.map(t=>t.id));
@@ -36,7 +36,7 @@ test('every mode offers direct explicit choices with working destinations and wi
    if(option.type==='tool')assert.ok(idSet.has(option.target),mode.id+' broken tool '+option.target);
    if(option.type==='topic')assert.ok(atlasGet(option.target),mode.id+' missing topic '+option.target);
    if(option.type==='activity')assert.ok(getNeedsActivity(option.target),mode.id+' missing activity '+option.target);
-   assert.equal(destination,option.type==='atlas'?'#navigate/atlas':'#workbook/'+mode.id+'/'+option.id);
+   assert.equal(destination,option.type==='topic'?'#workbook-topic/'+option.target:'#workbook/'+mode.id+'/'+option.id);
   }
   assert.ok(ids.has(getNeedsMode(mode.id).id));
  }
@@ -84,29 +84,28 @@ test('the previous ten frustrating use cases now point to explicit visitor selec
  assert.ok(getNeedsMode('relate').options.some(o=>o.id==='unsafe'));
  assert.ok(getNeedsMode('learn').options.some(o=>o.target==='insomnia'));
 });
-test('all original topics and the inclusive experience inventory are searchable without symptom inference',()=>{
+test('the complete catalogue appears as matching cards within a starting point, never on a separate page',()=>{
  assert.equal(atlasProblemIndex.length,518);
  assert.equal(getSubjectMatchesForTest('','').length,518);
  assert.ok(getSubjectMatchesForTest('insomnia','').some(x=>x.id==='insomnia'));
  assert.ok(getSubjectMatchesForTest('rumination','').some(x=>x.id==='rumination'));
  assert.ok(getSubjectMatchesForTest('','body').length>15);
- const root=fakeRoot();renderNeedsConsole(root,['atlas']);
- assert.match(root.innerHTML,/Search a named difficulty/);
- assert.match(root.innerHTML,/does not interpret your symptoms/);
- const topic=fakeRoot();renderNeedsConsole(topic,['atlas','insomnia']);
- assert.match(topic.innerHTML,/Understand this difficulty/);
- assert.match(topic.innerHTML,/Try a practical exercise/);
- assert.match(topic.innerHTML,/Process how this is affecting me/);
+ const root=fakeRoot();renderNeedsConsole(root,['learn']);
+ assert.match(root.innerHTML,/What feels closest/);
+ assert.match(root.innerHTML,/Filter these choices/);
+ assert.match(root.innerHTML,/href="#workbook-topic\/racial-discrimination"/);
+ assert.match(root.innerHTML,/href="#workbook-topic\/autism-understanding"/);
+ assert.doesNotMatch(root.innerHTML,/Search a named difficulty|Explore an experience or difficulty|data-needs-domain-select/);
 });
-test('safety-related topics prioritise support, and the support route is always available',()=>{
+test('safety-related topics retain their support-first guides and the support route is always available',()=>{
  const root=fakeRoot();renderNeedsActivity(root,'support-safety');
  assert.match(root.innerHTML,/999/);
  assert.match(root.innerHTML,/NHS 111/);
  assert.match(root.innerHTML,/control|monitors/i);
  assert.match(root.innerHTML,/not.*confront/i);
- const topic=fakeRoot();renderNeedsConsole(topic,['atlas','suicidal-thoughts']);
- assert.match(topic.innerHTML,/Consider safety and appropriate support first/);
- assert.doesNotMatch(topic.innerHTML,/Try a practical worksheet/);
+ assert.equal(isSafetyPriority('suicidal-thoughts'),true);
+ const page=fakeRoot();renderNeedsConsole(page,['regulate']);
+ assert.match(page.innerHTML,/href="#workbook-topic\/suicidal-thoughts"/);
  const landing=fakeRoot();renderNeedsConsole(landing);
  assert.match(landing.innerHTML,/href="#need\/support-safety"/);
 });
@@ -125,36 +124,32 @@ test('the original seven goal tiles remain the only starting choices',()=>{
  assert.doesNotMatch(page.innerHTML,/Explore a topic or experience|ns-needs-topic-entry|ns-needs-area-link/);
  assert.match(page.innerHTML,/Explore a specific difficulty/);
 });
-test('all 31 topic areas are accessible from within the existing seven modes',()=>{
- const ids=new Set();
+test('all 518 named entries are direct ordinary cards in relevant starting points',()=>{
+ const covered=new Set();
  for(const mode of NEEDS_MODES){
   const page=fakeRoot();renderNeedsConsole(page,[mode.id]);
-  assert.doesNotMatch(page.innerHTML,/Find a related experience|More topics related|ns-needs-related|ns-needs-area-grid|ns-needs-area-details/,mode.id);
-  const expected=mode.options.length+TOPIC_AREAS_BY_MODE[mode.id].length;
-  assert.equal((page.innerHTML.match(/class="ns-needs-choice"/g)||[]).length,expected,mode.id+' must use ONE card grid');
-  for(const area of TOPIC_AREAS_BY_MODE[mode.id]){
-   ids.add(area);
-   assert.ok(page.innerHTML.includes('class="ns-needs-choice" href="#navigate/atlas/area/'+area+'"'),mode.id+' missing ordinary card for '+area);
+  const topics=topicsForNeedsMode(mode.id);
+  assert.equal((page.innerHTML.match(/class="ns-needs-choice"/g)||[]).length,mode.options.length+topics.length,mode.id);
+  assert.equal((page.innerHTML.match(/class="ns-needs-choices"/g)||[]).length,1,mode.id);
+  assert.doesNotMatch(page.innerHTML,/Find a related experience|More topics related|ns-needs-related|ns-needs-area-grid|ns-needs-area-details|href="#navigate\/atlas/,mode.id);
+  for(const topic of topics){
+   covered.add(topic.domain);
+   assert.ok(page.innerHTML.includes('class="ns-needs-choice" href="#workbook-topic/'+topic.id+'"'),mode.id+' '+topic.id);
   }
  }
- assert.equal(ids.size,31);
- for(const area of ['culture','lgbtq','neuro','disability','family','harm','faith','migration','digital','growth'])
-  assert.ok(ids.has(area),area);
- assert.ok(TOPIC_AREAS_BY_MODE.understand.includes('neuro'));
- assert.ok(TOPIC_AREAS_BY_MODE.relate.includes('family'));
- assert.ok(TOPIC_AREAS_BY_MODE.relate.includes('harm'));
+ assert.equal(covered.size,31);
  assert.equal(TOPIC_AREAS_BY_MODE.learn.length,31);
- assert.ok(TOPIC_AREAS_BY_MODE.relate.includes('culture'));
+ const featured=new Set(getNeedsMode('learn').options.filter(o=>o.type==='topic').map(o=>o.target));
+ const allLearn=new Set([...topicsForNeedsMode('learn').map(p=>p.id),...featured]);
+ assert.equal(allLearn.size,518,'no atlas entry lost or duplicated');
+ for(const domain of ['culture','lgbtq','neuro','disability','family','harm','faith','migration','digital','growth','sexuality','behaviour','safety'])
+  assert.ok(NEEDS_MODES.some(m=>!['learn','unsure'].includes(m.id)&&TOPIC_AREAS_BY_MODE[m.id].includes(domain)),domain);
  const relation=fakeRoot();renderNeedsConsole(relation,['relate']);
- assert.equal((relation.innerHTML.match(/class="ns-needs-choices"/g)||[]).length,1);
- assert.doesNotMatch(relation.innerHTML,/<details|Find a related experience|<div class="ns-needs-related"/);
- assert.ok(relation.innerHTML.indexOf('I feel unsafe, pressured or controlled')<relation.innerHTML.indexOf('Race, ethnicity &amp; culture'));
+ assert.ok(relation.innerHTML.indexOf('I feel unsafe, pressured or controlled')<relation.innerHTML.indexOf('I am experiencing racism'));
 });
-test('direct area links preselect their topic filter',()=>{
- for(const id of ['culture','lgbtq','neuro','faith']){
-  const page=fakeRoot();renderNeedsConsole(page,['atlas','area',id]);
-  assert.match(page.innerHTML,/Explore an experience or difficulty/);
-  assert.equal(page.entries.get('[data-needs-domain-select]').value,id);
-  assert.match(page.entries.get('[data-needs-match-count]').textContent,/topics/);
- }
+test('historical atlas links land on the existing starting-point grid instead of a browse page',()=>{
+ const page=fakeRoot();renderNeedsConsole(page,['atlas','area','neuro']);
+ assert.match(page.innerHTML,/What feels closest/);
+ assert.match(page.innerHTML,/href="#workbook-topic\/adhd-understanding"/);
+ assert.doesNotMatch(page.innerHTML,/data-needs-domain-select|data-needs-topic-results|Search a named difficulty/);
 });
