@@ -31,8 +31,7 @@ export const NEEDS_MODES=Object.freeze([
  action('thought','I want to untangle my thoughts','Separate different questions and interpretations.','tool','thought-map'),
  action('identity','I want to explore my identity','Explore roles and identities without needing a fixed label.','tool','identity-map'),
  action('values','What actually matters to me?','Clarify values rather than imposing a universal ideal.','tool','values-discovery'),
- action('question','I want to compare explanations','Explore competing ideas without forcing certainty.','tool','competing-models'),
- action('topic','I want to understand a specific difficulty','Browse detailed psychological psychoeducation.','atlas','atlas')
+ action('question','I want to compare explanations','Explore competing ideas without forcing certainty.','tool','competing-models')
  ]},
  {id:'act',title:'Work out what to do',summary:'Choose, start, plan, solve or change a practical condition.',tone:'gold',icon:'↗',options:[
  action('decision','I need to make a decision','Compare realistic options, costs, values and uncertainty.','tool','decision-map'),
@@ -55,21 +54,18 @@ export const NEEDS_MODES=Object.freeze([
  action('unsafe','I feel unsafe, pressured or controlled','Prioritise safety, practical choice and confidential support.','activity','support-safety')
  ]},
  {id:'learn',title:'Explore a specific difficulty',summary:'Choose a named difficulty such as sleep, rumination or social anxiety.',tone:'lilac',icon:'▤',options:[
- action('browse','Browse all psychological difficulties','Explore the complete existing atlas by topic area.','atlas','atlas'),
  action('sleep','I want to understand sleep problems','Explore insomnia and different sleep patterns.','topic','insomnia'),
  action('rumination','I want to understand rumination','Learn about repetitive thinking and possible maintainers.','topic','rumination'),
  action('social','I want to understand social anxiety','Explore fear of judgement, safety behaviours and context.','topic','social-anxiety'),
  action('panic','I want to understand panic experiences','Explore panic sensations and physical-health considerations.','topic','panic-experiences'),
  action('checking','I want to understand checking or rituals','Explore checking and its different possible functions.','topic','checking'),
- action('submission','I want to understand unwanted compliance','Distinguish consent, self-assertion and unsafe pressure.','topic','submissive-patterns'),
- action('other','I want to find something more specific','Search by named difficulty, with no automatic interpretation.','atlas','atlas')
+ action('submission','I want to understand unwanted compliance','Distinguish consent, self-assertion and unsafe pressure.','topic','submissive-patterns')
  ]},
  {id:'unsure',title:"I'm not sure",summary:'Begin with what would be useful rather than naming a problem.',tone:'slate',icon:'?',options:[
  action('relief','I would like a little relief','Start with a gentle, optional settling exercise.','activity','steady-overwhelm'),
  action('room','I want space to feel or express','Start with an open-ended processing activity.','activity','process-feel'),
  action('clarity','I would like more clarity','Choose a gentle emotional check-in.','tool','emotion-check-in'),
- action('practical','I need a practical next step','Find a manageable first action.','tool','small-step'),
- action('look','I would rather browse','Explore named difficulties without answering questions.','atlas','atlas')
+ action('practical','I need a practical next step','Find a manageable first action.','tool','small-step')
  ]}
 ]);
 export const NEEDS_MAP=Object.freeze(Object.fromEntries(NEEDS_MODES.map(mode=>[mode.id,mode])));
@@ -79,14 +75,13 @@ export function getNeedsMode(id){return NEEDS_MAP[id]||null}
 export function getNeedsActivity(id){return NEEDS_ACTIVITIES[id]||null}
 export function needsDestination(option){
  if(!option)return '#navigate';
+ // Every named atlas entry now uses the same integrated topic field guide.
+ if(option.type==='topic')return '#workbook-topic/'+encodeURIComponent(option.target);
+ if(option.type==='atlas')return '#navigate/learn'; // legacy links only
  const mode=NEEDS_MODES.find(m=>m.options.includes(option))?.id;
- if(mode&&option.type==='atlas')return '#navigate/atlas';
  if(mode)return '#workbook/'+encodeURIComponent(mode)+'/'+encodeURIComponent(option.id);
- // Historical one-off links generated outside the starting-point catalogue.
  if(option.type==='activity')return '#need/'+encodeURIComponent(option.target);
  if(option.type==='tool')return '#tool/'+encodeURIComponent(option.target);
- if(option.type==='topic')return '#workbook-topic/'+encodeURIComponent(option.target);
- if(option.type==='atlas')return '#navigate/atlas';
  return '#navigate';
 }
 export const NEEDS_REVIEW_CASES=Object.freeze([

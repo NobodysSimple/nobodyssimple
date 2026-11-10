@@ -4,7 +4,6 @@
  */
 import {escapeHTML as escape} from './core.mjs';
 import {NEEDS_MODES} from './ns-needs-catalog.mjs';
-import {atlasProblemIndex,atlasSearch} from './ns-atlas-core.mjs';
 import {workbookForChoice,workbookForTopic} from './ns-integrated-workbook-data.mjs';
 import {PATH_SOURCES} from './ns-pathway-content.mjs';
 import {STEADY_REFERENCES} from './ns-steady-guide-utils.mjs';
@@ -132,14 +131,6 @@ function safetyNotice(g){
   (g.medical?'<p>New or concerning physical symptoms deserve appropriate medical assessment; do not assume the cause is psychological.</p>':'')+
   '<a href="#need/support-safety">Safety and urgent support →</a></aside>';
 }
-function atlasChooser(){
- return '<section class="ns-wb-chapter ns-wb-atlas" id="ns-wb-topics"><div class="ns-wb-chapter-heading"><span class="ns-wb-step">⌕</span>'+
-  '<div><p class="ns-wb-kicker">EXPLORE THE PSYCHOLOGICAL ATLAS</p><h2>Find a specific difficulty</h2>'+
-  '<p>Each topic now opens its own integrated educational guide and worksheets, not a separate tool page.</p></div></div>'+
-  '<label class="ns-wb-field" for="ns-wb-search"><span>Search '+atlasProblemIndex.length+' named experiences and topics</span><input type="search" id="ns-wb-search" data-wb-search autocomplete="off" placeholder="e.g. rumination, panic, sleep, relationships…"></label>'+
-  '<div class="ns-wb-atlas-meta"><output data-wb-count aria-live="polite"></output><button type="button" data-wb-all>Browse all topics</button></div>'+
-  '<div class="ns-wb-atlas-grid" data-wb-topic-results></div></section>';
-}
 function safetyOnly(g){
  return '<section class="ns-wb-chapter ns-wb-care-first" id="ns-wb-care"><h2>Safety and support take priority</h2>'+
   '<p class="ns-wb-large-text">'+e(g.what)+'</p>'+
@@ -173,7 +164,7 @@ function summaryMarkup(){
   '<p class="ns-wb-epistemic">Downloaded notes stay wherever your device saves them. Avoid downloading sensitive reflections on shared or monitored devices.</p></section>';
 }
 function worksheetMarkup(g){
- const sections=[...(g.showAtlas?['topics']:[]),'recognition',...g.lanes.map(l=>l.id),'review','sources'];
+ const sections=['recognition',...g.lanes.map(l=>l.id),'review','sources'];
  return '<div class="ns-wb-wrap" data-workbook="'+e(g.id)+'">'+
   '<nav class="ns-wb-breadcrumb" aria-label="Workbook navigation"><a href="#navigate/'+e(g.modeId)+'">← '+e(g.modeTitle)+'</a>'+
   '<a href="#navigate">All starting points</a><a href="#need/support-safety">Urgent support</a></nav>'+
@@ -182,10 +173,10 @@ function worksheetMarkup(g){
   '<p>'+e(g.lead)+'</p><div class="ns-wb-cover-meta"><span>Read the advice. Try a worksheet below it.</span>'+
   '<span>'+g.lanes.length+' practical chapters · all optional</span></div></header>'+
   '<nav class="ns-wb-toc" aria-label="Jump to a chapter"><strong>Go to a chapter</strong><div>'+
-  sections.map(id=>'<button type="button" data-wb-jump="'+e(id)+'">'+e(id==='recognition'?'Understand':id==='topics'?'Find a difficulty':id==='review'?'My notes':id==='sources'?'Sources':g.lanes.find(x=>x.id===id)?.title||id)+'</button>').join('')+
+  sections.map(id=>'<button type="button" data-wb-jump="'+e(id)+'">'+e(id==='recognition'?'Understand':id==='review'?'My notes':id==='sources'?'Sources':g.lanes.find(x=>x.id===id)?.title||id)+'</button>').join('')+
   '</div></nav>'+
   safetyNotice(g)+
-  (g.showAtlas?atlasChooser():'')+
+  
   recognitionMarkup(g)+
   g.lanes.map((lane,i)=>laneMarkup(lane,i,g)).join('')+
   summaryMarkup()+sourcesMarkup(g)+
@@ -256,25 +247,6 @@ function updateFeedback(surface,chapter){
   feedback(surface,chapter,'Possible request: '+(val('need')||'describe a specific need if safe')+
    '. Appropriate support: '+(val('kind')||'still to decide')+'. You decide whether to share anything.');
  }
-}
-function setupAtlas(surface){
- const input=surface.querySelector('[data-wb-search]'),list=surface.querySelector('[data-wb-topic-results]');
- if(!input||!list)return;
- const ordered=[...atlasProblemIndex].sort((a,b)=>a.title.localeCompare(b.title));
- let all=false;
- const paint=()=>{
-  const text=input.value.trim(),matches=text?
-    atlasSearch(text,atlasProblemIndex.length):all?ordered:ordered.slice(0,12);
-  list.innerHTML=matches.length?matches.map(p=>'<a href="#workbook-topic/'+encodeURIComponent(p.id)+'">'+
-   '<strong>'+e(p.title)+'</strong><small>'+e(p.hint)+'</small><span aria-hidden="true">→</span></a>').join(''):
-   '<p>No matching topic. Try a broader word, or find appropriate human support when needed.</p>';
-  const count=surface.querySelector('[data-wb-count]');
-  if(count)count.textContent=matches.length+' of '+ordered.length+' topics shown';
-  const btn=surface.querySelector('[data-wb-all]');if(btn)btn.textContent=all?'Show a few topics':'Browse all '+ordered.length+' topics';
- };
- input.addEventListener('input',paint);
- surface.querySelector('[data-wb-all]')?.addEventListener('click',()=>{all=!all;input.value='';paint();});
- paint();
 }
 function download(name,content){
  const url=URL.createObjectURL(new Blob([content],{type:'text/plain;charset=utf-8'}));
@@ -351,7 +323,6 @@ function wire(surface,g,locked=false){
    button.removeAttribute('data-confirm');button.textContent='Clear my notes';
   }
  });
- setupAtlas(surface);
 }
 export function renderIntegratedWorkbook(root,{mode='',option='',topic='',locked=false}={}){
  const g=topic?workbookForTopic(topic):workbookForChoice(mode,option);
