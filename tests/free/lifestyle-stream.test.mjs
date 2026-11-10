@@ -73,8 +73,8 @@ test('four different Eisenhower quadrants are available without guessing legacy 
  assert.equal(taskPriority({priority:'do'}),'do');
  const data=src('lifestyle-storage.mjs');
  assert.match(data,/priority:validPriority\(task.priority\)/);
- assert.match(data,/scheduledDate:task.date\|\|'',priority:taskPriority\(task\)/);
- assert.match(data,/date:task.scheduledDate\|\|localDate\(\),priority:taskPriority\(task\)/);
+ assert.match(data,/scheduledDate:task.date\|\|'',scheduledTime:task.time\|\|'',priority:taskPriority\(task\)/);
+ assert.match(data,/date:task.scheduledDate\|\|localDate\(\),time:task.scheduledTime\|\|'',priority:taskPriority\(task\)/);
 });
 test('Lifestyle task list and quadrant board share one dataset and are accessible from a visible toggle',()=>{
  const life=src('lifestyle.mjs'),css=src('lifestyle.css');
