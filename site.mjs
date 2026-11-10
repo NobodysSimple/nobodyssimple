@@ -36,7 +36,6 @@ import {
   renderInteractiveTool,
   renderTeam,
 } from "./interactive-tools.mjs";
-import { renderSimplyFocus } from "./simplyfocus.mjs";
 import { renderPersonalityTest } from "./personality-test.mjs";
 import { renderBigFive, renderQuestionnaires, renderSystemsQuestionnaire } from "./questionnaires.mjs";
 import { renderLifeNavigation } from "./life-navigation.mjs";
@@ -948,8 +947,8 @@ function route() {
       play: () => renderInteractiveTool(main, safeRoutePart(id)),
       guided: () => renderLifeNavigation(main, safeRoutePart(id)),
       team: () => renderTeam(main),
-      simplyfocus: () => renderSimplyFocus(main),
-      lifestyle: () => renderLifestyle(main),
+      simplyfocus: () => location.replace('#lifestyle/focus'),
+      lifestyle: () => renderLifestyle(main, safeRoutePart(id)),
       "stim-space": renderStimSpace,
       questionnaires: () => renderQuestionnaires(main),
       "big-five": () => renderBigFive(main),
@@ -1042,7 +1041,7 @@ function route() {
     "discussion-moderation": "Community moderation",
     maps: "My Maps",
     support: "Get help",
-    simplyfocus: "SimplyFocus",
+    simplyfocus: "Lifestyle",
     "stim-space": "Stim Space",
     questionnaires: "Questionnaires",
     "big-five": "Questionnaires",
