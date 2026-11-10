@@ -73,5 +73,5 @@ test('the seven original console tiles contain related topics without a second l
  await expect(family).toBeVisible();
  await family.click();
  await expect(page.locator('[data-needs-domain-select]')).toHaveValue('family');
- await expect(page.getByText(/parentification/i).first()).toBeVisible();
+ await expect(page.getByText('I had to take on adult responsibilities as a child')).toBeVisible();
 });
