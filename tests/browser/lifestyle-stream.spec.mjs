@@ -22,6 +22,10 @@ test('Lifestyle keeps daily essentials on screen without tab switching or hidden
  await expect(page.locator('#lifestyle-intensity')).toBeVisible();
  await expect(page.locator('#lifestyle-note')).toBeVisible();
  await expect(page.locator('#lifestyle-task-title')).toBeVisible();
+ const emptyState=page.locator('.lifestyle-empty').first();
+ await expect(emptyState).toBeVisible();
+ expect(await emptyState.evaluate(el=>getComputedStyle(el).opacity)).toBe('1');
+ expect(await page.locator('.calendar-weekdays').evaluate(el=>getComputedStyle(el).opacity)).toBe('1');
  const audit=await new AxeBuilder({page}).include('.lifestyle-page').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
  expect(audit.violations.filter(v=>['serious','critical'].includes(v.impact))).toEqual([]);
 });
