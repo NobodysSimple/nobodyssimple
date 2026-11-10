@@ -37,7 +37,7 @@ test('old Browse tools route now enters the choice-led console instead',async({p
  await expect(page.locator('.ns-needs')).toBeVisible();
 });
 test('an independent Games scroller sits after the worksheet area on several routes',async({page})=>{
- for(const route of ['workbook/regulate/overwhelmed','workbook/act/begin','workbook/learn/browse',
+ for(const route of ['workbook/regulate/overwhelmed','workbook/act/begin','workbook/learn/sleep',
   'workbook/process/grief','workbook-topic/procrastination','workbook-topic/insomnia','workbook-topic/anxiety']){
   await go(page,route);
   await expect(page.locator('.ns-pick-chooser')).toBeVisible();
