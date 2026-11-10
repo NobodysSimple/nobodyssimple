@@ -502,7 +502,11 @@ body.app-body #main .life-unified .life-task-move select{
  background:#fffdf8;border:1px solid #b8cdbc;border-radius:8px;color:#2c493a;font-size:11px;
 }
 body.app-body #main .life-unified #lifestyle-task-list .lifestyle-task{min-width:0}
-html[data-theme=dark] body.app-body #main .life-unified .life-quadrant{background:var(--ui-soft);border-color:var(--ui-line)}
+html[data-theme=dark] body.app-body #main .life-unified .life-quadrant{border-width:1px}
+html[data-theme=dark] body.app-body #main .life-unified .life-quadrant--do{background:#45312f;border-color:#96635e}
+html[data-theme=dark] body.app-body #main .life-unified .life-quadrant--schedule{background:#293e32;border-color:#60866a}
+html[data-theme=dark] body.app-body #main .life-unified .life-quadrant--delegate{background:#2c3b4b;border-color:#62819d}
+html[data-theme=dark] body.app-body #main .life-unified .life-quadrant--eliminate{background:#3d3149;border-color:#866c99}
 html[data-theme=dark] body.app-body #main .life-unified .life-quadrant-head :is(h3,small,b),
 html[data-theme=dark] body.app-body #main .life-unified .life-quadrant-hint,
 html[data-theme=dark] body.app-body #main .life-unified .life-quadrant-empty{color:#e4f0e6}
