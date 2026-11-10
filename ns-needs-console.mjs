@@ -32,7 +32,7 @@ const topicAreaLink=d=>href('#navigate/atlas/area/'+encodeURIComponent(d.id),
  '<strong>'+e(d.name)+'</strong><small>'+e(d.description)+'</small>','ns-needs-area-link');
 const relatedTopicMarkup=mode=>{
  const all=TOPIC_AREAS_BY_MODE[mode.id]||[];
- const areas=atlasDomains.filter(d=>all.includes(d.id));
+ const areas=atlasDomains.filter(d=>all.includes(d.id)).sort((a,b)=>all.indexOf(a.id)-all.indexOf(b.id));
  const featured=mode.id==='learn'||mode.id==='unsure'
   ?areas.filter(d=>quickAreaIds.includes(d.id))
   :areas.slice(0,6);
