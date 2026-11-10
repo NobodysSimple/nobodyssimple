@@ -59,3 +59,17 @@ test('Lifestyle tasks can move into SimplyFocus and return without data loss',as
  await page.locator('.life-mode-switch a[href="#lifestyle"]').click();
  await expect(page.locator('#lifestyle-task-list .lifestyle-task').filter({hasText:title})).toBeVisible();
 });
+
+test('Everyday and SimplyFocus fit narrow and wide screens without horizontal page scrolling',async({page})=>{
+ for(const hash of ['lifestyle','lifestyle/focus']){
+  await page.goto('/index.html#'+hash);
+  await expect(page.locator('.lifestyle-page')).toBeVisible();
+  const dimensions=await page.evaluate(()=>({
+   viewport:document.documentElement.clientWidth,
+   full:document.documentElement.scrollWidth,
+   body:document.body.scrollWidth
+  }));
+  expect(dimensions.full,hash+' document overflow').toBeLessThanOrEqual(dimensions.viewport+3);
+  expect(dimensions.body,hash+' body overflow').toBeLessThanOrEqual(dimensions.viewport+3);
+ }
+});
