@@ -474,13 +474,13 @@ body.app-body #main .life-unified .life-quadrant-head b{
 body.app-body #main .life-unified .life-quadrant-hint{margin:8px 0 9px;font-size:11px;line-height:1.45;color:var(--quadrant-strong)}
 body.app-body #main .life-unified .life-quadrant-items{display:grid;gap:7px}
 body.app-body #main .life-unified .life-quadrant-empty{margin:0;padding:10px 5px;font-size:12px;color:var(--quadrant-strong);font-style:italic}
-body.app-body #main .life-unified .life-priority-inbox{
+body.app-body #main .life-unified .life-priority-inbox-panel{
  grid-column:1/-1;background:var(--ui-soft);border:1px dashed var(--ui-line);border-radius:13px;padding:12px;
 }
-body.app-body #main .life-unified .life-priority-inbox>div:first-child{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
-body.app-body #main .life-unified .life-priority-inbox strong{font-size:13px;color:var(--ui-ink)}
-body.app-body #main .life-unified .life-priority-inbox small{color:var(--ui-muted);font-size:11px}
-body.app-body #main .life-unified :is(.life-quadrant-items,.life-priority-inbox) .lifestyle-task{
+body.app-body #main .life-unified .life-priority-inbox-panel>div:first-child{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+body.app-body #main .life-unified .life-priority-inbox-panel strong{font-size:13px;color:var(--ui-ink)}
+body.app-body #main .life-unified .life-priority-inbox-panel small{color:var(--ui-muted);font-size:11px}
+body.app-body #main .life-unified :is(.life-quadrant-items,.life-priority-inbox-panel) .lifestyle-task{
  display:grid;grid-template-columns:auto minmax(0,1fr);gap:7px 8px;
  min-width:0;margin-top:6px;padding:9px;background:#fffcf8;border:1px solid #d7e3d8;border-radius:11px;box-shadow:none;
 }
@@ -506,7 +506,7 @@ html[data-theme=dark] body.app-body #main .life-unified .life-quadrant{backgroun
 html[data-theme=dark] body.app-body #main .life-unified .life-quadrant-head :is(h3,small,b),
 html[data-theme=dark] body.app-body #main .life-unified .life-quadrant-hint,
 html[data-theme=dark] body.app-body #main .life-unified .life-quadrant-empty{color:#e4f0e6}
-html[data-theme=dark] body.app-body #main .life-unified :is(.life-quadrant-items,.life-priority-inbox) .lifestyle-task{background:#273c30;border-color:#54735c}
+html[data-theme=dark] body.app-body #main .life-unified :is(.life-quadrant-items,.life-priority-inbox-panel) .lifestyle-task{background:#273c30;border-color:#54735c}
 html[data-theme=dark] body.app-body #main .life-unified .life-task-main :is(strong,small,p),
 html[data-theme=dark] body.app-body #main .life-unified .life-task-move{color:#e4f0e6}
 html[data-theme=dark] body.app-body #main .life-unified .life-quadrant-head>span,
@@ -514,5 +514,5 @@ html[data-theme=dark] body.app-body #main .life-unified .life-quadrant-head>b{ba
 @media(max-width:650px){
  body.app-body #main .life-unified .life-quadrants{grid-template-columns:minmax(0,1fr)}
  body.app-body #main .life-unified .life-quadrant{padding:12px}
- body.app-body #main .life-unified .life-priority-inbox{grid-column:1}
+ body.app-body #main .life-unified .life-priority-inbox-panel{grid-column:1}
 }
