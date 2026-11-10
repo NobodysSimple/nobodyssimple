@@ -1,30 +1,24 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const atlas='/index.html#navigate/atlas';
+const entrance='/index.html#navigate/learn';
 
-test('expanded atlas has discoverable categories, manageable pagination and searchable specific experiences',async({page})=>{
- await page.goto(atlas);
- await expect(page.getByRole('heading',{name:'Explore an experience or difficulty'})).toBeVisible();
- await expect(page.locator('[data-needs-match-count]')).toContainText('518 topics');
- await expect(page.locator('[data-needs-topic-results] .ns-needs-topic')).toHaveCount(48);
- await expect(page.locator('[data-needs-more]')).toBeVisible();
- await page.locator('[data-needs-domain="lgbtq"]').click();
- await expect(page.locator('[data-needs-match-count]')).toContainText('24 topics');
- await expect(page.locator('[data-needs-domain-select]')).toHaveValue('lgbtq');
- await expect(page.getByText('I am exploring my gender identity')).toBeVisible();
- await page.locator('[data-needs-domain="neuro"]').click();
- await expect(page.getByText('I want to understand ADHD experiences')).toBeVisible();
- await page.locator('[data-needs-domain-select]').selectOption('culture');
- await expect(page.getByText('I am experiencing racism')).toBeVisible();
+test('all topic choices are identical cards inside the existing starting point',async({page})=>{
+ await page.goto(entrance);
+ await expect(page.getByRole('heading',{name:'What feels closest?'})).toBeVisible();
+ await expect(page.locator('.ns-needs-choices')).toHaveCount(1);
+ await expect(page.locator('.ns-needs-choices > .ns-needs-choice')).toHaveCount(518);
+ await expect(page.locator('[href="#workbook-topic/racial-discrimination"]')).toBeVisible();
+ await expect(page.locator('[href="#workbook-topic/adhd-understanding"]')).toBeVisible();
+ await expect(page.locator('.ns-needs-related,.ns-needs-area-grid,.ns-needs-area-details,[data-needs-domain-select],[data-needs-more]')).toHaveCount(0);
  const accessibility=await new AxeBuilder({page}).include('.ns-needs').analyze();
  expect(accessibility.violations).toEqual([]);
 });
 
-test('search preserves full catalogue, opens a race experience and presents practical context instead of individual blame',async({page})=>{
- await page.goto(atlas);
- await page.locator('[data-needs-search]').fill('racial discrimination');
- await expect(page.getByText('I am experiencing racism')).toBeVisible();
+test('in-place filter finds a topic and its card opens the existing field guide',async({page})=>{
+ await page.goto(entrance);
+ await page.locator('[data-needs-choice-filter]').fill('racial discrimination');
+ await expect(page.locator('.ns-needs-choices > .ns-needs-choice:visible')).toHaveCount(1);
  await page.getByRole('link',{name:/I am experiencing racism/}).click();
  await expect(page).toHaveURL(/#workbook-topic\/racial-discrimination$/);
  await expect(page.getByText('I am experiencing racism').first()).toBeVisible();
@@ -34,14 +28,17 @@ test('search preserves full catalogue, opens a race experience and presents prac
  await expect(page.getByText('Conditions and influences worth checking')).toBeVisible();
 });
 
-test('health and neurodivergent topics can be searched by familiar terms and reached directly',async({page})=>{
- await page.goto(atlas);
- await page.locator('[data-needs-search]').fill('dyspraxia');
+test('search, identity, disability and health topics remain discoverable in the same grid',async({page})=>{
+ await page.goto(entrance);
+ const filter=page.locator('[data-needs-choice-filter]');
+ await filter.fill('dyspraxia');
  await expect(page.getByText('Coordination or motor planning is difficult for me')).toBeVisible();
- await page.locator('[data-needs-search]').fill('perimenopause');
+ await filter.fill('perimenopause');
  await expect(page.getByText('Menopause or perimenopause is affecting my life')).toBeVisible();
- await page.locator('[data-needs-search]').fill('LGBTQIA+');
+ await filter.fill('LGBTQIA+');
  await expect(page.getByText('I am exploring my gender identity')).toBeVisible();
+ await filter.fill('');
+ await expect(page.locator('.ns-needs-choice:visible')).toHaveCount(518);
 });
 
 test('current sexual coercion offers safety support before any personal exercise',async({page})=>{
@@ -52,31 +49,24 @@ test('current sexual coercion offers safety support before any personal exercise
  await expect(page.locator('.ns-pick-care-actions a[href="#need/support-safety"]')).toBeVisible();
 });
 
-
-test('the seven original console tiles contain related topics without a second landing section',async({page})=>{
+test('starting points cross-list their relevant topics without category detours',async({page})=>{
  await page.goto('/index.html#navigate');
  await expect(page.getByRole('heading',{name:'What would help you right now?'})).toBeVisible();
  await expect(page.locator('.ns-needs-mode')).toHaveCount(7);
- await expect(page.locator('.ns-needs-topic-entry,.ns-needs-area-link')).toHaveCount(0);
 
  await page.getByRole('link',{name:/Understand myself/}).click();
  await expect(page).toHaveURL(/#navigate\/understand$/);
- await expect(page.getByRole('heading',{name:'What feels closest?'})).toBeVisible();
  await expect(page.locator('.ns-needs-choices')).toHaveCount(1);
- await expect(page.locator('.ns-needs-related,.ns-needs-area-grid,.ns-needs-area-details')).toHaveCount(0);
- const neuro=page.locator('.ns-needs-choices > a.ns-needs-choice[href="#navigate/atlas/area/neuro"]');
- await expect(neuro).toBeVisible();
- await neuro.click();
- await expect(page.locator('[data-needs-domain-select]')).toHaveValue('neuro');
- await expect(page.getByText('I want to understand ADHD experiences')).toBeVisible();
+ await expect(page.locator('.ns-needs-choices > a.ns-needs-choice[href="#workbook-topic/adhd-understanding"]')).toBeVisible();
 
  await page.goto('/index.html#navigate/relate');
- const family=page.locator('.ns-needs-choices > a.ns-needs-choice[href="#navigate/atlas/area/family"]');
- await expect(family).toBeVisible();
- await family.click();
- await expect(page.locator('[data-needs-domain-select]')).toHaveValue('family');
- await expect(page.getByText('I had to take on adult responsibilities as a child')).toBeVisible();
- await page.goto('/index.html#navigate/relate');
- await expect(page.locator('.ns-needs-choices > a.ns-needs-choice')).toHaveCount(17);
- await expect(page.locator('.ns-needs-choices > a.ns-needs-choice[href="#navigate/atlas/area/culture"]')).toBeVisible();
+ await expect(page.locator('.ns-needs-choices > a.ns-needs-choice[href="#workbook-topic/parentification"]')).toBeVisible();
+ await expect(page.locator('.ns-needs-choices > a.ns-needs-choice[href="#workbook-topic/racial-discrimination"]')).toBeVisible();
+ await expect(page.locator('.ns-needs-related,.ns-needs-area-grid,.ns-needs-area-details')).toHaveCount(0);
+});
+
+test('old atlas links return to the unified mode rather than a separate search page',async({page})=>{
+ await page.goto('/index.html#navigate/atlas/area/neuro');
+ await expect(page).toHaveURL(/#navigate\/learn$/);
+ await expect(page.getByRole('heading',{name:'What feels closest?'})).toBeVisible();
 });
