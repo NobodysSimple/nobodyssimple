@@ -18,19 +18,21 @@ const ICONS = Object.freeze({
   you:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2c0-4 3.3-6 8-6s8 2 8 6v2"/>',
   account:'<circle cx="12" cy="8" r="4"/><path d="M4 21v-2c0-4 3.3-6 8-6s8 2 8 6v2"/>',
   guide:'<path d="M12 6C8 4 5 4 2 5v15c3-1 6-1 10 1 4-2 7-2 10-1V5c-3-1-6-1-10 1ZM12 6v15"/><path d="m6 12 2 2 3-4"/>',
+  lifestyle:'<circle cx="12" cy="12" r="8"/><path d="M12 7v5l3.5 2.5M7 3.5 5.5 2M17 3.5 18.5 2"/>',
   feed:'<circle cx="12" cy="8" r="3"/><path d="M5.5 20v-1.1c0-3 2.7-5 6.5-5s6.5 2 6.5 5V20"/><path d="M4.5 7.2a2.4 2.4 0 0 0 0 4.6M19.5 7.2a2.4 2.4 0 0 1 0 4.6M1.5 19v-.7c0-1.7.9-3 2.6-3.6M22.5 19v-.7c0-1.7-.9-3-2.6-3.6"/>'
 });
 const routeName = () => (location.hash.slice(1).split('/')[0]||'home').toLowerCase();
 const areaFor = name => {
-  if(['help','navigate','need','steady-tool','support','route','routes','compass','questions','navigator','lifestyle','investigate'].includes(name)) return 'home';
+  if(['help','navigate','need','steady-tool','support','route','routes','compass','questions','navigator','investigate'].includes(name)) return 'home';
   if(name==='guide') return 'guide';
-  if(['play','tool','guided','simplyfocus','stim-space','questionnaires','big-five','systems','personality'].includes(name)) return 'tools';
+  if(['lifestyle','simplyfocus'].includes(name)) return 'lifestyle';
+  if(['play','tool','guided','stim-space','questionnaires','big-five','systems','personality'].includes(name)) return 'tools';
   if(['library','blog','writing','watch','post','wisbody'].includes(name)) return 'learn';
   if(['discussion','discussion-moderation'].includes(name)) return 'feed';
   if(['maps','account','profile','messages','community','volunteer','team','about','install'].includes(name)) return 'account';
   return name;
 };
-const ids = Object.freeze({home:'#home',guide:'#guide',feed:'#discussion',account:'#account'});
+const ids = Object.freeze({home:'#home',guide:'#guide',lifestyle:'#lifestyle',feed:'#discussion',account:'#account'});
 const svg = name => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${ICONS[name]}</svg>`;
 function refreshNav() {
   const current=areaFor(routeName());
