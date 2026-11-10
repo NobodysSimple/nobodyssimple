@@ -16,6 +16,7 @@ test('Lifestyle has its own primary desktop and four-item bottom mobile navigati
 test('Home no longer shows Lifestyle; old focus bookmarks redirect to the internal mode',()=>{
  const home=src('strategy.mjs'),router=src('site.mjs'),features=src('features.mjs');
  assert.doesNotMatch(home,/ns-home-lifestyle|href="#lifestyle"/);
+ assert.doesNotMatch(features,/class="card new-offering focus-offering"/);
  assert.match(router,/simplyfocus: \(\) => location\.replace\('#lifestyle\/focus'\)/);
  assert.match(router,/lifestyle: \(\) => renderLifestyle\(main, safeRoutePart\(id\)\)/);
  assert.doesNotMatch(features,/href="#simplyfocus"/);
@@ -27,6 +28,11 @@ test('Everyday sections form one continuous dashboard, without hidden tabs',()=>
  }
  assert.match(ui,/life-dashboard-flow/);
  assert.match(ui,/life-mode-switch/);
+ assert.match(ui,/data-life-mode="daily"/);
+ assert.match(ui,/data-life-mode="focus"/);
+ assert.match(ui,/data-life-everyday/);
+ assert.match(ui,/data-life-focus-panel hidden/);
+ assert.doesNotMatch(ui,/lifestyle-tool-shelf/);
  assert.doesNotMatch(ui,/data-life-panel|showPanel\(|lifestyle-tabs|life-panel-today/);
  assert.doesNotMatch(ui,/<details class="life-checkin-detail"/);
  assert.match(ui,/<div class="life-checkin-detail"/);
@@ -35,10 +41,24 @@ test('Everyday sections form one continuous dashboard, without hidden tabs',()=>
 });
 test('SimplyFocus is mounted inside Lifestyle with lifecycle cleanup for audio and timers',()=>{
  const life=src('lifestyle.mjs'),focus=src('simplyfocus.mjs');
- assert.match(life,/renderSimplyFocus\(root\.querySelector\('\[data-life-focus-host\]'\),\{embedded:true\}\)/);
+ assert.match(life,/renderSimplyFocus\(host,\{embedded:true\}\)/);
+ assert.match(life,/host\._nsSimplyFocusCleanup\(\)/);
+ assert.match(life,/host\.replaceChildren\(\)/);
  assert.match(focus,/root\._nsSimplyFocusCleanup=cleanup/);
  assert.match(focus,/pauseAudio\(\); playing=false/);
  assert.match(focus,/if\(pomodoroTimer\)clearInterval/);
  assert.match(focus,/if\(breathTimer\)clearInterval/);
  assert.match(focus,/window\.removeEventListener\('hashchange',cleanup\)/);
+});
+
+test('Lifestyle is a direct, always-visible dashboard with optional same-page focus mode',()=>{
+ const life=src('lifestyle.mjs'),css=src('lifestyle.css'),routes=src('site.mjs');
+ assert.match(life,/flow\.append\(\$\('#lifestyle-deed'\),\$\('#lifestyle-tasks'\),\$\('#lifestyle-checkin'\),\$\('#lifestyle-calendar'\),\$\('#lifestyle-reminders'\)\)/);
+ assert.match(life,/root\.querySelectorAll\('\[data-life-mode\]'\)/);
+ assert.match(life,/focusPanel\.hidden=false/);
+ assert.match(life,/dailyPanel\.hidden=false/);
+ assert.match(life,/\[data-life-focus-queue\]/);
+ assert.match(css,/life-unified \.life-dashboard-flow/);
+ assert.match(css,/life-unified \[hidden\]/);
+ assert.match(routes,/simplyfocus: \(\) => location\.replace\('#lifestyle\/focus'\)/);
 });
