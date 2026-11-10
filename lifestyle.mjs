@@ -103,6 +103,59 @@ export function renderLifestyle(root,view='daily'){
    </label><button type="button" data-to-focus="${esc(task.id)}">Focus</button><button type="button" data-delete-task="${esc(task.id)}" aria-label="Delete ${esc(task.title)}">Delete</button></div>
   </article>`;
  }
+
+ function renderMatrixTask(task){
+  const priority=taskPriority(task);
+  const options=[{id:'inbox',title:'Choose later'},...EISENHOWER_QUADRANTS.map(q=>({id:q.id,title:q.title}))];
+  return `<article class="lifestyle-task life-matrix-task ${task.done?'is-done':''}" data-matrix-task="${esc(task.id)}" data-task-id="${esc(task.id)}">
+   <div class="life-matrix-task-line">
+    <button type="button" class="life-drag-handle" data-life-grip="${esc(task.id)}" aria-label="Drag ${esc(task.title)} to another quadrant or position" title="Drag to move task">⠿</button>
+    <input type="checkbox" data-task-done="${esc(task.id)}" ${task.done?'checked':''} aria-label="Complete ${esc(task.title)}">
+    <button type="button" class="life-matrix-title" data-edit-matrix-task="${esc(task.id)}" aria-expanded="false" aria-label="Edit ${esc(task.title)}">
+     <strong>${esc(task.title)}</strong><small>${task.date?esc(task.date):'No date'}${task.time?' · '+esc(task.time):''}${task.notes?' · Notes':''}</small>
+    </button>
+   </div>
+   <div class="life-matrix-card-actions">
+    <button type="button" data-matrix-up="${esc(task.id)}" aria-label="Move ${esc(task.title)} up within quadrant" title="Move up">↑</button>
+    <button type="button" data-matrix-down="${esc(task.id)}" aria-label="Move ${esc(task.title)} down within quadrant" title="Move down">↓</button>
+    <label class="life-matrix-move">Move to <select data-task-priority="${esc(task.id)}" aria-label="Move ${esc(task.title)} to quadrant">
+     ${options.map(q=>`<option value="${q.id}" ${q.id===priority?'selected':''}>${esc(q.title)}</option>`).join('')}
+    </select></label>
+    <button type="button" data-to-focus="${esc(task.id)}" title="Move task to SimplyFocus">Focus</button>
+    <button type="button" data-delete-task="${esc(task.id)}" aria-label="Delete ${esc(task.title)}">Delete</button>
+   </div>
+   <form class="life-matrix-editor" data-matrix-edit="${esc(task.id)}" hidden>
+    <label>Task name<input name="title" type="text" required maxlength="120" value="${esc(task.title)}"></label>
+    <label>Description<textarea name="notes" rows="2" maxlength="500" placeholder="Details, notes, or a next step">${esc(task.notes||'')}</textarea></label>
+    <div class="life-matrix-date-row">
+     <label>Date<input name="date" type="date" value="${esc(task.date||'')}"></label>
+     <label>Time<input name="time" type="time" value="${esc(task.time||'')}"></label>
+    </div>
+    <div class="life-matrix-editor-buttons">
+     <button class="life-matrix-save" type="submit">Save changes</button>
+     <button type="button" data-cancel-matrix="${esc(task.id)}">Cancel</button>
+    </div>
+   </form>
+  </article>`;
+ }
+ function renderQuadrantAdd(q){
+  return `<form class="life-quad-add" data-quad-add="${q.id}">
+    <label class="life-quad-entry-label" for="life-add-${q.id}">Add to ${esc(q.title)}</label>
+    <div class="life-quad-add-row">
+     <input id="life-add-${q.id}" name="title" maxlength="120" required placeholder="+ Write a task here…" autocomplete="off">
+     <button type="submit" aria-label="Add task to ${esc(q.title)}">Add</button>
+    </div>
+    <details class="life-quad-more"><summary>Date, time & description</summary>
+     <div class="life-quad-more-fields">
+      <label>Description<textarea name="notes" rows="2" maxlength="500" placeholder="What needs doing?"></textarea></label>
+      <div class="life-matrix-date-row">
+       <label>Date<input name="date" type="date"></label>
+       <label>Time<input name="time" type="time"></label>
+      </div>
+     </div>
+    </details>
+   </form>`;
+ }
  function renderTasks(){
   tasks=readLifestyleTasks();
   const focus=readFocusBoard();
@@ -110,10 +163,14 @@ export function renderLifestyle(root,view='daily'){
   $('#lifestyle-task-list').innerHTML=sorted.length?sorted.map(renderTaskItem).join(''):'<p class="lifestyle-empty life-task-empty">Nothing on your list yet. Add a task above.</p>';
   const items=priority=>tasks.filter(t=>taskPriority(t)===priority);
   const inbox=items('inbox');
-  $('#lifestyle-quadrants').innerHTML=(inbox.length?`<section class="life-priority-inbox-panel" aria-label="Tasks to sort"><div><strong>✎ Choose a quadrant</strong><small>${inbox.length} uncategorised ${inbox.length===1?'task':'tasks'}</small></div>${inbox.map(renderTaskItem).join('')}</section>`:'')+
-   EISENHOWER_QUADRANTS.map(q=>`<section class="life-quadrant life-quadrant--${q.id}" aria-labelledby="life-q-${q.id}">
+  $('#lifestyle-quadrants').innerHTML=(inbox.length?`<section class="life-priority-inbox-panel" data-life-dropzone="inbox" aria-label="Tasks to sort">
+    <div class="life-inbox-title"><strong>✎ Choose a quadrant</strong><small>${inbox.length} unclassified ${inbox.length===1?'task':'tasks'}</small></div>
+    <div class="life-quadrant-items">${inbox.map(renderMatrixTask).join('')}</div></section>`:'')+
+   EISENHOWER_QUADRANTS.map(q=>`<section class="life-quadrant life-quadrant--${q.id}" data-life-dropzone="${q.id}" aria-labelledby="life-q-${q.id}">
     <header class="life-quadrant-head"><span aria-hidden="true">${q.icon}</span><div><h3 id="life-q-${q.id}">${q.title}</h3><small>${q.subtitle}</small></div><b aria-label="${items(q.id).length} tasks">${items(q.id).length}</b></header>
-    <p class="life-quadrant-hint">${q.hint}</p><div class="life-quadrant-items">${items(q.id).map(renderTaskItem).join('')||'<p class="life-quadrant-empty">A little breathing room ✧</p>'}</div>
+    <p class="life-quadrant-hint">${q.hint}</p>
+    <div class="life-quadrant-items">${items(q.id).map(renderMatrixTask).join('')||'<p class="life-quadrant-empty">Drop a task here or write one below ✧</p>'}</div>
+    ${renderQuadrantAdd(q)}
    </section>`).join('');
   const matrix=taskView==='quadrants';
   $('#lifestyle-quadrants').hidden=!matrix;
