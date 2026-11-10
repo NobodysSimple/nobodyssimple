@@ -200,10 +200,132 @@ export function renderLifestyle(root,view='daily'){
   }
   root.querySelectorAll('[data-life-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lifeMode===mode)));
  }
+
+ // The matrix and the ordinary list share a single source of truth. The array
+ // position is the user's manual order within each quadrant; dates never
+ // silently override their drag/reorder choices.
+ function relocateTask(id,destination,beforeId='',after=false){
+  const next=readLifestyleTasks();
+  const from=next.findIndex(task=>String(task.id)===String(id));
+  if(from<0||String(id)===String(beforeId))return false;
+  const [task]=next.splice(from,1);
+  task.priority=validPriority(destination);
+  let at=-1;
+  if(beforeId){
+   at=next.findIndex(item=>String(item.id)===String(beforeId));
+   if(at>=0&&after)at++;
+  }
+  if(at<0){
+   at=0;
+   next.forEach((item,index)=>{if(taskPriority(item)===task.priority)at=index+1;});
+  }
+  next.splice(at,0,task);
+  writeLifestyleTasks(next);renderTasks();
+  return true;
+ }
+ function shiftMatrixTask(id,direction){
+  const group=tasks.filter(task=>taskPriority(task)===taskPriority(tasks.find(t=>String(t.id)===String(id))));
+  const at=group.findIndex(item=>String(item.id)===String(id));
+  const target=group[at+direction];
+  if(!target)return false;
+  return relocateTask(id,taskPriority(group[at]),target.id,direction>0);
+ }
+ function openMatrixEditor(id,open){
+  const card=[...root.querySelectorAll('[data-matrix-task]')].find(el=>el.dataset.matrixTask===String(id)&&!el.closest('[hidden]'));
+  if(!card)return;
+  const form=card.querySelector('[data-matrix-edit]');
+  if(!open)form.reset();
+  form.hidden=!open;
+  card.querySelector('[data-edit-matrix-task]')?.setAttribute('aria-expanded',String(open));
+  if(open)form.elements.namedItem('title')?.focus();
+ }
+ // Built-in pointer events allow both mouse and touch dragging by the little
+ // grab handle. Ordinary page scrolling still works away from that handle.
+ let matrixDrag=null;
+ const clearDrag=()=>{
+  root.querySelectorAll('.life-drop-active,.life-drop-before,.life-drop-after').forEach(el=>
+   el.classList.remove('life-drop-active','life-drop-before','life-drop-after'));
+  if(matrixDrag?.card){matrixDrag.card.classList.remove('life-task-dragging');matrixDrag.card.style.pointerEvents='';}
+  if(matrixDrag?.grip&&matrixDrag.grip.hasPointerCapture?.(matrixDrag.pointerId))
+   matrixDrag.grip.releasePointerCapture(matrixDrag.pointerId);
+  matrixDrag=null;
+ };
+ root.addEventListener('pointerdown',event=>{
+  const grip=event.target.closest('[data-life-grip]');
+  if(!grip||taskView!=='quadrants'||!event.isPrimary||event.button!==0)return;
+  matrixDrag={id:grip.dataset.lifeGrip,pointerId:event.pointerId,grip,card:grip.closest('[data-matrix-task]'),
+   x:event.clientX,y:event.clientY,started:false,zone:null,anchor:null,after:false};
+  grip.setPointerCapture?.(event.pointerId);
+ },{signal});
+ root.addEventListener('pointermove',event=>{
+  const drag=matrixDrag;
+  if(!drag||drag.pointerId!==event.pointerId)return;
+  if(!drag.started&&Math.hypot(event.clientX-drag.x,event.clientY-drag.y)<7)return;
+  drag.started=true;drag.card.classList.add('life-task-dragging');drag.card.style.pointerEvents='none';
+  if(event.cancelable)event.preventDefault();
+  root.querySelectorAll('.life-drop-active,.life-drop-before,.life-drop-after').forEach(el=>
+   el.classList.remove('life-drop-active','life-drop-before','life-drop-after'));
+  const under=document.elementFromPoint(event.clientX,event.clientY);
+  const zone=under?.closest('[data-life-dropzone]');
+  drag.zone=zone?.dataset.lifeDropzone||null;drag.anchor=null;drag.after=false;
+  if(zone){
+   zone.classList.add('life-drop-active');
+   const target=under.closest('[data-matrix-task]');
+   if(target&&target!==drag.card){
+    drag.anchor=target.dataset.matrixTask;
+    drag.after=event.clientY>=target.getBoundingClientRect().top+target.offsetHeight/2;
+    target.classList.add(drag.after?'life-drop-after':'life-drop-before');
+   }
+  }
+  if(event.clientY>window.innerHeight-65)window.scrollBy(0,13);
+  else if(event.clientY<80)window.scrollBy(0,-13);
+ },{signal});
+ root.addEventListener('pointerup',event=>{
+  if(!matrixDrag||matrixDrag.pointerId!==event.pointerId)return;
+  const {id,zone,anchor,after,started}=matrixDrag;
+  clearDrag();
+  if(started&&zone&&relocateTask(id,zone,anchor,after))
+   $('#lifestyle-task-status').textContent='Task moved. You can drag again, or use the Move to and arrow controls.';
+ },{signal});
+ root.addEventListener('pointercancel',()=>{if(matrixDrag)clearDrag();},{signal});
+ root.addEventListener('submit',event=>{
+  const form=event.target;
+  if(form.matches('[data-quad-add]')){
+   event.preventDefault();
+   const value=name=>String(new FormData(form).get(name)||'').trim();
+   const title=value('title');
+   if(!title)return;
+   const added=addLifestyleTask({title,priority:form.dataset.quadAdd,notes:value('notes'),
+    date:value('date')||localDate(),time:value('time')});
+   if(!added)return;
+   renderTasks();
+   $('#lifestyle-task-status').textContent='Added to '+EISENHOWER_QUADRANTS.find(q=>q.id===form.dataset.quadAdd).title+'.';
+   const replacement=root.querySelector('[data-quad-add="'+form.dataset.quadAdd+'"] input[name="title"]');
+   replacement?.focus({preventScroll:true});
+   return;
+  }
+  if(form.matches('[data-matrix-edit]')){
+   event.preventDefault();
+   const id=form.dataset.matrixEdit,existing=readLifestyleTasks();
+   const task=existing.find(t=>String(t.id)===String(id));
+   if(!task)return;
+   const value=name=>String(new FormData(form).get(name)||'').trim();
+   const title=value('title').slice(0,120);
+   if(!title)return;
+   task.title=title;task.notes=value('notes').slice(0,500);
+   task.date=value('date')||localDate();task.time=value('time');
+   writeLifestyleTasks(existing);renderTasks();
+   $('#lifestyle-task-status').textContent='Changes saved for '+title+'.';
+  }
+ },{signal});
  root.addEventListener('click',event=>{
   const button=event.target.closest('button');if(!button)return;
   if(button.dataset.lifeMode){showMode(button.dataset.lifeMode);return;}
   if(button.dataset.taskView){taskView=button.dataset.taskView==='quadrants'?'quadrants':'list';localStorage.setItem(lifestyleTaskViewKey,taskView);renderTasks();return;}
+   if(button.dataset.editMatrixTask){const card=button.closest('[data-matrix-task]');openMatrixEditor(button.dataset.editMatrixTask,card.querySelector('[data-matrix-edit]').hidden);return;}
+   if(button.dataset.cancelMatrix){openMatrixEditor(button.dataset.cancelMatrix,false);return;}
+   if(button.dataset.matrixUp){if(shiftMatrixTask(button.dataset.matrixUp,-1))$('#lifestyle-task-status').textContent='Task moved up.';return;}
+   if(button.dataset.matrixDown){if(shiftMatrixTask(button.dataset.matrixDown,1))$('#lifestyle-task-status').textContent='Task moved down.';return;}
   if(button.dataset.checkMode){checkMode=button.dataset.checkMode;$('#lifestyle-checkin-title').textContent=`${checkMode==='daytime'?'Daytime':checkMode[0].toUpperCase()+checkMode.slice(1)} check-in`;$('#lifestyle-checkin-title').nextElementSibling.textContent=checkMode==='morning'?'Arrive before you organise the day.':checkMode==='evening'?'Put down what can wait before bed.':'Notice what is here before choosing what comes next.';root.querySelectorAll('[data-check-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.checkMode===checkMode)));}
   if(button.dataset.calendarMove){calendarDate=new Date(calendarDate.getFullYear(),calendarDate.getMonth()+Number(button.dataset.calendarMove),1);renderCalendar();}
   if(button.dataset.calendarDate){selectedDate=button.dataset.calendarDate;$('#lifestyle-task-date').value=selectedDate;renderCalendar();}
