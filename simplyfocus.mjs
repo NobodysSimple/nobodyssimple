@@ -30,7 +30,8 @@ const el = (tag, className = "", text = "") => {
 const formatTime = (seconds) => `${String(Math.floor(Math.max(0, seconds) / 60)).padStart(2, "0")}:${String(Math.max(0, seconds) % 60).padStart(2, "0")}`;
 const soundAllowed = () => !window.nsAccountPreferences?.lowStim && window.nsAccountPreferences?.sound !== false;
 
-export function renderSimplyFocus(root) {
+export function renderSimplyFocus(root,{embedded=false}={}) {
+  root._nsSimplyFocusCleanup?.();
   root.innerHTML = `<div class="wrap simplyfocus-page">
     <section class="page-intro focus-intro"><p class="eyebrow">A sound space · SimplyFocus</p><h1>Make a little room for focus.</h1><p class="lead">Blend carefully made ambient loops with the original Nobody’s Simple radio tracks. Start with one layer, add another if you like, and stop whenever you want.</p></section>
     <section class="focus-mixer" aria-labelledby="focus-mixer-title"><div class="focus-mixer-head"><div><p class="eyebrow">Your soundscape</p><h2 id="focus-mixer-title">Turn each sound up or down.</h2></div><label class="focus-master">Master volume <output id="focus-master-output">35%</output><input id="focus-master" type="range" min="0" max="100" value="35" aria-label="Master volume"></label></div><div id="focus-tracks" class="focus-tracks"></div><div class="focus-presets"><span class="eyebrow">Start with a mix</span><div id="focus-preset-buttons" class="choice-cloud"></div></div><div class="focus-actions"><button class="button" id="focus-play" type="button">Start soundscape</button><button class="button subtle-button" id="focus-stop" type="button">Stop all</button><button class="button subtle-button" id="focus-save" type="button">Save my mix on this device</button><button class="button subtle-button" id="focus-load" type="button" hidden>Load saved mix</button></div><p id="focus-status" class="interactive-status" aria-live="polite">Nothing plays until you press Start. Your mix stays on this device if you choose Save.</p></section>
@@ -39,6 +40,14 @@ export function renderSimplyFocus(root) {
     <section class="focus-note"><h2>A quiet note on sound</h2><p>There is no ideal focus mix. Some days call for silence; some days call for a little movement or repetition. Keep the volume comfortable, and leave out any sound that feels like too much.</p><a href="#tools">Explore other interactive activities →</a></section>
   </div>`;
 
+  if(embedded){
+    const page=$(".simplyfocus-page",root);
+    page.classList.add('is-embedded');
+    const heading=$(".focus-intro h1",root);
+    if(heading){const title=document.createElement('h2');title.textContent='Make room for focus';heading.replaceWith(title);}
+    const intro=$(".focus-intro .eyebrow",root);
+    if(intro)intro.textContent='SimplyFocus · Inside Lifestyle';
+  }
   const mixer = $(".focus-mixer", root);
   const breathing = $(".timed-breathing-card", root);
   const pomodoro = $(".pomodoro-card", root);
@@ -159,9 +168,27 @@ export function renderSimplyFocus(root) {
   breathStart.addEventListener("click", () => { if (breathTimer) { stopBreathing(); breathStatus.textContent = "Pacer paused. Your soundscape can continue underneath."; return; } if (!breathRemaining) breathRemaining = breathTotal; breathStartedAt = Date.now(); breathStartRemaining = breathRemaining; breathTimer = setInterval(tickBreathing, 200); breathStart.textContent = "Pause breathing"; breathStatus.textContent = "Box breathing is running gently: 4 in, 4 hold, 4 out, 4 hold."; tickBreathing(); });
   $("#focus-breath-reset", root).addEventListener("click", () => { if (breathTimer) clearInterval(breathTimer); breathTimer = null; breathRemaining = breathTotal; breathCountdown.textContent = formatTime(breathRemaining); breathOrb.classList.remove("breathing"); breathOrb.textContent = "Ready"; breathPhase.textContent = "Four gentle 4-second stages. Let each change happen slowly."; breathing.querySelectorAll(".box-breathing-step").forEach((step) => step.classList.remove("is-active")); breathStart.textContent = "Start breathing"; breathStatus.textContent = "Breathe naturally. There is no need to force a deep breath or continue if it feels uncomfortable."; });
 
-  const cleanup = () => { stopAudio(); if (pomodoroTimer) clearInterval(pomodoroTimer); if (breathTimer) clearInterval(breathTimer); window.removeEventListener("ns:preferences", preferenceHandler); Object.values(uiSounds).forEach((audio) => { audio.pause(); }); };
-  const preferenceHandler = (event) => { if (event.detail?.lowStim || event.detail?.sound === false) { stopAudio(); if (breathTimer) stopBreathing("Sound has been stopped by your Account preference. Your breathing can continue when you are ready."); } };
-  window.addEventListener("ns:preferences", preferenceHandler); window.addEventListener("hashchange", cleanup, { once: true });
+  let cleaned=false;
+  const cleanup = () => {
+    if(cleaned)return;
+    cleaned=true;
+    pauseAudio(); playing=false;
+    if(pomodoroTimer)clearInterval(pomodoroTimer);
+    if(breathTimer)clearInterval(breathTimer);
+    window.removeEventListener('ns:preferences',preferenceHandler);
+    window.removeEventListener('hashchange',cleanup);
+    Object.values(uiSounds).forEach(audio=>audio.pause());
+  };
+  const preferenceHandler = (event) => {
+    if(event.detail?.lowStim || event.detail?.sound===false){
+      stopAudio();
+      if(breathTimer)stopBreathing('Sound has been stopped by your Account preference. Your breathing can continue when you are ready.');
+    }
+  };
+  window.addEventListener('ns:preferences',preferenceHandler);
+  window.addEventListener('hashchange',cleanup,{once:true});
+  root._nsSimplyFocusCleanup=cleanup;
+  return cleanup;
 }
 
 function iconFor(id) { return ({ rain: "☂", fire: "♨", wind: "↝", ocean: "≈", bowl: "◉", pink: "∿", trees: "❋", lofi: "♫", focus: "◌" })[id] || "♪"; }
