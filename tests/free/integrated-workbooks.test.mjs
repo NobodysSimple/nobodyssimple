@@ -7,7 +7,7 @@ import {atlasProblemIndex,isSafetyPriority} from '../../ns-atlas-core.mjs';
 import {tools} from '../../tool-catalog.mjs';
 
 const toolsById=new Set(tools.map(t=>t.id));
-test('every one of 53 console choices leads directly to a complete integrated workbook',()=>{
+test('every retained action choice has a guide and topics use their integrated atlas guides',()=>{
  assert.equal(NEEDS_MODES.length,7);
  assert.equal(workbookCoverage.length,7);
  let count=0;
@@ -19,7 +19,7 @@ test('every one of 53 console choices leads directly to a complete integrated wo
    assert.equal(w.id,mode.id+'/'+option.id);
    assert.equal(w.modeId,mode.id);
    assert.equal(w.optionId,option.id);
-   assert.equal(needsDestination(option),option.type==='atlas'?'#navigate/atlas':'#workbook/'+mode.id+'/'+option.id);
+   assert.equal(needsDestination(option),option.type==='topic'?'#workbook-topic/'+option.target:'#workbook/'+mode.id+'/'+option.id);
    assert.ok(w.what.length>=70,w.id+' should explain experience');
    assert.ok(w.cycle.length>=50,w.id+' must give possible pattern');
    assert.ok(w.cautions.length>=1,w.id+' must indicate limits');
@@ -37,10 +37,10 @@ test('every one of 53 console choices leads directly to a complete integrated wo
     assert.equal(w.lanes.reduce((a,l)=>a+l.methods.length,0),12);
    }
    if(mode.id==='relate'&&option.id==='unsafe')assert.equal(w.safetyFirst,true);
-   if(option.type==='atlas')assert.equal(w.showAtlas,true);
+   assert.notEqual(option.type,'atlas','no duplicate atlas browse card');
   }
  }
- assert.equal(count,53);
+ assert.equal(count,49);
  assert.equal(workbookForChoice('unknown','anything'),null);
  assert.equal(workbookForChoice('regulate','unknown'),null);
 });
@@ -87,7 +87,7 @@ test('new renderer contains genuine in-page interactive worksheets, private expo
  assert.match(ui,/data-wb-download/);
  assert.match(ui,/data-wb-clear/);
  assert.match(ui,/selectedIndex=0/);
- assert.match(ui,/data-wb-topic-results/);
+ assert.doesNotMatch(ui,/data-wb-topic-results|Find a specific difficulty|atlasChooser/);
  assert.match(ui,/if\(locked\)/);
  assert.doesNotMatch(ui,/localStorage|sessionStorage|sendBeacon|fetch\(/);
  assert.doesNotMatch(ui,/anxiety score|diagnostic score|validated treatment/);
