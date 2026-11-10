@@ -19,7 +19,7 @@ test('old account keys and accessibility preferences remain available',()=>{
 });
 test('shell and publication links resolve to existing files',()=>{
  const page=txt('index.html');
- for(const url of ['#home','#guide','#discussion','#questionnaires','#simplyfocus']) assert.ok(page.includes(`href="${url}"`),url);
+ for(const url of ['#home','#guide','#lifestyle','#discussion','#questionnaires']) assert.ok(page.includes(`href="${url}"`),url);
  for(const [,source] of page.matchAll(/<(?:script|link)\b[^>]*(?:src|href)="([^"#?]+\.(?:mjs|js|css))"/g)) assert.ok(existsSync(new URL(source,root)),`Missing shell resource ${source}`);
  const router=txt('site.mjs');
  for(const route of ['navigate:','problem:','guide:','learn:','tools:','tool:','play:','account:','messages:','discussion:','simplyfocus:']) assert.ok(router.includes(route),route);
