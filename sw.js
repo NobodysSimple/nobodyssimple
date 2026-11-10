@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v160-inclusive-topics';
+const CACHE = 'nobodyssimple-release-v162-cultural-atlas';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -15,7 +15,7 @@ const INSTALL_OPTIONAL = [
   'ns-tool-library.css', 'ns-learn.css', 'ns-field-guide.css',
   'ns-integrations.css', 'ns-vision.css', 'ns-home-refined.css',
   'lifestyle.css', 'lifestyle.mjs', 'strategy.mjs', 'site.mjs', 'ns-shell.mjs',
-  'ns-home-updates.mjs', 'ns-investigate.mjs', 'ns-investigate.css',
+  'ns-home-updates.mjs', 'ns-cultural-atlas.css', 'ns-cultural-atlas.mjs', 'ns-cultural-atlas-articles.mjs', 'ns-investigate.mjs', 'ns-investigate.css',
   'ns-problem-map.mjs', 'ns-universal-console.mjs', 'ns-problem-guide.mjs', 'ns-emotional-calculator.css',
   'ns-precision-content.mjs', 'ns-precision-console.mjs', 'ns-precision-guide.mjs', 'ns-precision.css',
   'ns-inclusive-topics-a.mjs','ns-inclusive-topics-b.mjs','ns-inclusive-topics.mjs',
