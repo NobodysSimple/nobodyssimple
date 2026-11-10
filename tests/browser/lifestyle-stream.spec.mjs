@@ -11,7 +11,7 @@ test('Home is uncluttered and Lifestyle gets a dedicated mobile bottom button',a
 
 test('Lifestyle keeps daily essentials on screen without tab switching or hidden forms',async({page})=>{
  await page.goto('/index.html#lifestyle');
- await expect(page.getByRole('heading',{name:/good/i}).first()).toBeVisible();
+ await expect(page.locator('#lifestyle-deed-title')).toBeVisible();
  const flow=page.locator('.life-dashboard-flow');
  await expect(flow).toBeVisible();
  for(const id of ['lifestyle-deed','lifestyle-checkin','lifestyle-tasks','lifestyle-calendar','lifestyle-reminders']){
