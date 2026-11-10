@@ -242,11 +242,23 @@ test('matrix drag handle moves tasks directly to another colour box',async({page
  await page.locator('[data-quad-add="do"] button[type="submit"]').click();
  const handle=page.locator('.life-quadrant--do [data-life-grip]').first();
  const dest=page.locator('.life-quadrant--schedule .life-quadrant-hint');
- const from=await handle.boundingBox(),to=await dest.boundingBox();
- expect(from).not.toBeNull();expect(to).not.toBeNull();
+ await handle.scrollIntoViewIfNeeded();
+ const from=await handle.boundingBox();
+ expect(from).not.toBeNull();
  await page.mouse.move(from.x+from.width/2,from.y+from.height/2);
  await page.mouse.down();
- await page.mouse.move(to.x+to.width/2,to.y+to.height/2,{steps:12});
+ if(test.info().project.name.includes('mobile')){
+  // Stack on phones: hold at the lower edge to auto-scroll to the next box.
+  const screen=page.viewportSize();
+  await page.mouse.move(from.x+from.width/2,screen.height-38,{steps:12});
+  await page.waitForFunction(()=>{
+   const r=document.querySelector('.life-quadrant--schedule .life-quadrant-hint').getBoundingClientRect();
+   return r.top>0&&r.top<innerHeight-115;
+  },null,{timeout:8000});
+ }
+ const to=await dest.boundingBox();
+ expect(to).not.toBeNull();
+ await page.mouse.move(to.x+to.width/2,to.y+to.height/2,{steps:8});
  await page.mouse.up();
  await expect(page.locator('.life-quadrant--schedule')).toContainText('Drag between quadrants');
  await expect(page.locator('.life-quadrant--do')).not.toContainText('Drag between quadrants');
