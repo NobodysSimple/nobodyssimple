@@ -110,7 +110,7 @@ export function renderLifestyle(root,view='daily'){
   $('#lifestyle-task-list').innerHTML=sorted.length?sorted.map(renderTaskItem).join(''):'<p class="lifestyle-empty life-task-empty">Nothing on your list yet. Add a task above.</p>';
   const items=priority=>sorted.filter(t=>taskPriority(t)===priority);
   const inbox=items('inbox');
-  $('#lifestyle-quadrants').innerHTML=(inbox.length?`<section class="life-priority-inbox" aria-label="Tasks to sort"><div><strong>✎ Choose a quadrant</strong><small>${inbox.length} uncategorised ${inbox.length===1?'task':'tasks'}</small></div>${inbox.map(renderTaskItem).join('')}</section>`:'')+
+  $('#lifestyle-quadrants').innerHTML=(inbox.length?`<section class="life-priority-inbox-panel" aria-label="Tasks to sort"><div><strong>✎ Choose a quadrant</strong><small>${inbox.length} uncategorised ${inbox.length===1?'task':'tasks'}</small></div>${inbox.map(renderTaskItem).join('')}</section>`:'')+
    EISENHOWER_QUADRANTS.map(q=>`<section class="life-quadrant life-quadrant--${q.id}" aria-labelledby="life-q-${q.id}">
     <header class="life-quadrant-head"><span aria-hidden="true">${q.icon}</span><div><h3 id="life-q-${q.id}">${q.title}</h3><small>${q.subtitle}</small></div><b aria-label="${items(q.id).length} tasks">${items(q.id).length}</b></header>
     <p class="life-quadrant-hint">${q.hint}</p><div class="life-quadrant-items">${items(q.id).map(renderTaskItem).join('')||'<p class="life-quadrant-empty">A little breathing room ✧</p>'}</div>
