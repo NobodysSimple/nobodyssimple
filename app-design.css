@@ -817,7 +817,7 @@ body.app-body .pomodoro-clock { background: transparent !important; border: 0 !i
   body.app-body .ns-account-trigger { width: 38px; height: 38px; min-height: 38px; padding: 2px !important; border-radius: 50%; }
   body.app-body .ns-account-trigger span { display: none; }
   body.app-body .ns-account-trigger img { width: 30px; height: 30px; }
-  body.app-body .ns-account-trigger:not(:has(img))::before { content: ''; width: 29px; height: 29px; border-radius: 50%; background: url('logo.png') center/cover no-repeat; }
+  body.app-body .ns-account-trigger:not(:has(img))::before { content: ''; width: 29px; height: 29px; border-radius: 50%; background:#e6efe7; }
   body.app-body .app-help-pill { min-height: 38px; padding: 7px 9px; font-size: 11px; }
   body.app-body .strategy-home { padding-top: 9px !important; }
   body.app-body .strategy-console { margin: 0 0 15px; }
