@@ -27,23 +27,14 @@ export const TOPIC_AREAS_BY_MODE=Object.freeze({
  learn:atlasDomains.map(d=>d.id),
  unsure:atlasDomains.map(d=>d.id)
 });
-const quickAreaIds=['culture','lgbtq','neuro','disability','family','harm'];
-const topicAreaLink=d=>href('#navigate/atlas/area/'+encodeURIComponent(d.id),
- '<strong>'+e(d.name)+'</strong><small>'+e(d.description)+'</small>','ns-needs-area-link');
-const relatedTopicMarkup=mode=>{
- const all=TOPIC_AREAS_BY_MODE[mode.id]||[];
- const areas=atlasDomains.filter(d=>all.includes(d.id)).sort((a,b)=>all.indexOf(a.id)-all.indexOf(b.id));
- const featured=mode.id==='learn'||mode.id==='unsure'
-  ?areas.filter(d=>quickAreaIds.includes(d.id))
-  :areas.slice(0,6);
- const remainder=areas.filter(d=>!featured.includes(d));
- return '<div class="ns-needs-related" aria-labelledby="ns-needs-related-title">'+
-  '<h2 id="ns-needs-related-title">Find a related experience</h2>'+
-  '<p class="ns-needs-sub">You can also choose a named experience that fits this starting point. These are topics to explore, not diagnoses.</p>'+
-  '<div class="ns-needs-area-grid">'+featured.map(topicAreaLink).join('')+'</div>'+
-  (remainder.length?'<details class="ns-needs-area-details"><summary>More topics related to this choice ('+remainder.length+')</summary>'+
-  '<div class="ns-needs-area-grid">'+remainder.map(topicAreaLink).join('')+'</div></details>':'')+
-  '<p><a href="#navigate/atlas">Search all '+atlasProblemIndex.length+' topics →</a></p></div>';
+// Topic families are rendered as *ordinary choice cards* alongside existing
+// options, not as a second heading, grid, accordion, or navigation section.
+const topicChoiceCard=d=>href('#navigate/atlas/area/'+encodeURIComponent(d.id),
+ '<span><strong>'+e(d.name)+'</strong><small>'+e(d.description)+'</small></span><span class="ns-needs-next" aria-hidden="true">→</span>',
+ 'ns-needs-choice');
+const topicChoicesFor=mode=>{
+ const ids=TOPIC_AREAS_BY_MODE[mode.id]||[];
+ return ids.map(id=>atlasDomains.find(d=>d.id===id)).filter(Boolean).map(topicChoiceCard).join('');
 };
 function landing(){
  return area('<header class="ns-needs-hero"><p class="ns-needs-eyebrow">NOBODY’S SIMPLE · EMOTIONAL CALCULATOR</p>'+
@@ -56,7 +47,7 @@ function modeScreen(mode){
  return area('<header class="ns-needs-header ns-tone-'+e(mode.tone)+'"><p class="ns-needs-eyebrow">YOUR CHOICE · '+e(mode.title.toUpperCase())+'</p>'+
  '<h1>'+e(mode.title)+'</h1><p>'+e(mode.summary)+'</p></header>'+
  '<section class="ns-needs-panel"><h2>What feels closest?</h2><p class="ns-needs-sub">Choose one to open its field guide: read about the experience and try practical worksheets directly under each approach, without leaving the page.</p>'+
- '<div class="ns-needs-choices">'+mode.options.map(optionCard).join('')+'</div>'+relatedTopicMarkup(mode)+'</section>'+
+ '<div class="ns-needs-choices">'+mode.options.map(optionCard).join('')+topicChoicesFor(mode)+'</div></section>'+
  '<p class="ns-needs-footnote">Different situations need different support. You can always '+href('#navigate','change your starting point')+'.</p>',
  '#navigate');
 }
