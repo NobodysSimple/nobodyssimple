@@ -12364,3 +12364,39 @@ body.app-body .strategy-project-links .project-link-arrow { margin-left: auto; a
   body.app-body .app-bottom-nav a small { font-size: 8px; letter-spacing: -.02em; }
   body.app-body .app-bottom-nav a > span { font-size: 16px; }
 }
+
+/* Compass: direct graph manipulation without duplicate pleasantness/energy sliders. */
+body.app-body .emotion-page .compass-direct-instructions{
+ margin:0 0 8px;font-size:13px;line-height:1.45;color:#3b5948;
+}
+body.app-body .emotion-page .compass-card .compass-plot{
+ margin-top:32px;margin-bottom:27px;
+}
+body.app-body .emotion-page .compass-card .compass-emotion-detail{
+ display:block!important;position:static!important;max-height:none;
+ padding:15px 0 0;border-top:1px solid #dce5da;
+ margin:4px 0 0;overflow:visible;
+}
+body.app-body .emotion-page .compass-card .compass-profile-heading{
+ display:flex;align-items:center;gap:10px;margin:0 0 8px;
+}
+body.app-body .emotion-page .compass-card .compass-profile-heading h2{font-size:clamp(20px,2.6vw,25px)}
+body.app-body .emotion-page .compass-card .compass-profile-grid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;
+}
+body.app-body .emotion-page .compass-card .compass-profile-grid article{
+ min-width:0;padding:10px 11px;background:#fafbf6;
+}
+body.app-body .emotion-page .compass-card .compass-profile-grid p{overflow-wrap:anywhere}
+body.app-body .emotion-page .compass-card .compass-sr-feedback{
+ position:absolute!important;width:1px!important;height:1px!important;clip:rect(0,0,0,0)!important;overflow:hidden!important;
+}
+body.app-body .emotion-page .compass-card .compass-plot:focus-visible{
+ outline:3px solid #916323!important;outline-offset:4px;
+}
+@media(max-width:760px){
+ body.app-body .emotion-page .compass-card .compass-profile-grid{grid-template-columns:1fr}
+ body.app-body .emotion-page .compass-card .compass-plot{margin-bottom:24px}
+}
+html[data-theme=dark] body.app-body .emotion-page .compass-direct-instructions{color:#e5f0e6}
+html[data-theme=dark] body.app-body .emotion-page .compass-card .compass-profile-grid article{background:var(--ui-soft)}
