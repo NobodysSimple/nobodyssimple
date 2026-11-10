@@ -74,6 +74,7 @@ export function renderStrategyHome(root,posts=[],rail='',options={}){
  renderLatest(root.querySelector('#home-latest'),posts);
  renderWisbody(root.querySelector('[data-ns-wisbody-full]'),{compact:true});
  setupHomeUpdates(posts);
+ renderCultureAtlas(root.querySelector('#ns-home-culture-map'));
 }
 
 function renderLatest(section,posts){
