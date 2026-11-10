@@ -109,12 +109,11 @@ test('longer-term and low-demand options have different worksheets rather than a
  await expect(page.locator('[data-pick-field="permission"]')).toBeVisible();
  await expect(page.locator('[data-pick-field="cue"]')).toHaveCount(0);
 });
-test('atlas browsing links to topic-specific choosers rather than another decision page',async({page})=>{
- await go(page,'workbook/learn/browse');
- await expect(page.locator('[data-pick-search]')).toBeVisible();
- await expect(page.locator('[data-pick-topics] a')).toHaveCount(8);
- await page.locator('[data-pick-search]').fill('insomnia');
- await expect(page.locator('[data-pick-topics]')).toContainText('Insomnia');
+test('named topic cards open their existing chooser directly from the starting point',async({page})=>{
+ await go(page,'navigate/learn');
+ await expect(page.locator('.ns-needs-choices')).toHaveCount(1);
+ await page.locator('[data-needs-choice-filter]').fill('insomnia');
+ await expect(page.locator('a[href="#workbook-topic/insomnia"]')).toBeVisible();
  await page.locator('a[href="#workbook-topic/insomnia"]').first().click();
  await expect(page.locator('[data-workbook="topic/insomnia"]')).toBeVisible();
  await expect(page.locator('.ns-pick-chooser')).toBeVisible();
