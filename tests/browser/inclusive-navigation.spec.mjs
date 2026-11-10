@@ -61,17 +61,22 @@ test('the seven original console tiles contain related topics without a second l
 
  await page.getByRole('link',{name:/Understand myself/}).click();
  await expect(page).toHaveURL(/#navigate\/understand$/);
- await expect(page.getByRole('heading',{name:'Find a related experience'})).toBeVisible();
- const neuro=page.locator('a[href="#navigate/atlas/area/neuro"]');
+ await expect(page.getByRole('heading',{name:'What feels closest?'})).toBeVisible();
+ await expect(page.locator('.ns-needs-choices')).toHaveCount(1);
+ await expect(page.locator('.ns-needs-related,.ns-needs-area-grid,.ns-needs-area-details')).toHaveCount(0);
+ const neuro=page.locator('.ns-needs-choices > a.ns-needs-choice[href="#navigate/atlas/area/neuro"]');
  await expect(neuro).toBeVisible();
  await neuro.click();
  await expect(page.locator('[data-needs-domain-select]')).toHaveValue('neuro');
  await expect(page.getByText('I want to understand ADHD experiences')).toBeVisible();
 
  await page.goto('/index.html#navigate/relate');
- const family=page.locator('a[href="#navigate/atlas/area/family"]');
+ const family=page.locator('.ns-needs-choices > a.ns-needs-choice[href="#navigate/atlas/area/family"]');
  await expect(family).toBeVisible();
  await family.click();
  await expect(page.locator('[data-needs-domain-select]')).toHaveValue('family');
  await expect(page.getByText('I had to take on adult responsibilities as a child')).toBeVisible();
+ await page.goto('/index.html#navigate/relate');
+ await expect(page.locator('.ns-needs-choices > a.ns-needs-choice')).toHaveCount(17);
+ await expect(page.locator('.ns-needs-choices > a.ns-needs-choice[href="#navigate/atlas/area/culture"]')).toBeVisible();
 });
