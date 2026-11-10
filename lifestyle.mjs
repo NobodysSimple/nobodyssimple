@@ -1,7 +1,7 @@
 import {resourceMarkup,uiSymbol} from './ui-resources.mjs';
 import {goodDeeds} from './lifestyle-deeds.mjs';
 import {renderSimplyFocus} from './simplyfocus.mjs';
-import {addLifestyleTask,moveLifestyleToFocus,moveFocusToLifestyle,readFocusBoard,readLifestyleTasks,writeLifestyleTasks} from './lifestyle-storage.mjs';
+import {addLifestyleTask,moveLifestyleToFocus,moveFocusToLifestyle,readFocusBoard,readLifestyleTasks,writeLifestyleTasks,EISENHOWER_QUADRANTS,taskPriority,validPriority,lifestyleTaskViewKey} from './lifestyle-storage.mjs';
 import {readLifestyleReminders,writeLifestyleReminders} from './lifestyle-reminders.mjs';
 import {escapeHTML as esc} from './core.mjs';
 
@@ -27,7 +27,7 @@ function todayDeed(){const today=localDate(),state=deedState();if(state.date===t
 export function renderLifestyle(root,view='daily'){
  root.querySelector('[data-life-focus-host]')?._nsSimplyFocusCleanup?.();
  root._lifestyleAbort?.abort();const abort=new AbortController();root._lifestyleAbort=abort;const {signal}=abort;window.addEventListener('hashchange',()=>abort.abort(),{once:true});
- let entries=readEmotions(),tasks=readLifestyleTasks(),calendarDate=new Date(),selectedDate=localDate(),checkMode=timeOfDay(new Date().getHours()),deed=todayDeed();
+ let entries=readEmotions(),tasks=readLifestyleTasks(),calendarDate=new Date(),selectedDate=localDate(),checkMode=timeOfDay(new Date().getHours()),deed=todayDeed(),taskView=localStorage.getItem(lifestyleTaskViewKey)==='quadrants'?'quadrants':'list';
  root.innerHTML=`<div class="wrap lifestyle-page life-unified">
   <header class="life-page-header">
    <div><p class="eyebrow">NOBODY’S SIMPLE · YOUR EVERYDAY SPACE</p><h1>Lifestyle</h1><p>Good habits, room to reflect, and a focused moment when you need it.</p></div>
@@ -54,8 +54,9 @@ export function renderLifestyle(root,view='daily'){
    <section id="lifestyle-deed" class="lifestyle-card lifestyle-deed" aria-labelledby="lifestyle-deed-title"><div class="deed-heading"><span class="deed-mark">${uiSymbol('flower')}</span><div><p class="eyebrow">One good deed</p><h2 id="lifestyle-deed-title">A good deed today</h2></div></div><div id="lifestyle-deed-card"></div></section>
   </div>
   <section id="lifestyle-tasks" class="lifestyle-card lifestyle-tasks" aria-labelledby="lifestyle-tasks-title"><div class="lifestyle-section-head"><div><p class="eyebrow">Today and later</p><h2 id="lifestyle-tasks-title">My tasks</h2><p>Keep today’s actions visible. You can move tasks into SimplyFocus.</p></div></div>
-   <form id="lifestyle-task-form" class="lifestyle-task-form"><label class="field">Task<input id="lifestyle-task-title" maxlength="120" required placeholder="e.g. Call the pharmacy"></label><label class="field">Date<input id="lifestyle-task-date" type="date" required value="${selectedDate}"></label><label class="field">Time <span class="fine">optional</span><input id="lifestyle-task-time" type="time"></label><label class="field lifestyle-task-notes">Notes <span class="fine">optional</span><input id="lifestyle-task-note" maxlength="500" placeholder="A useful detail or first step"></label><button class="button" type="submit">Add task</button></form>
-   <div class="task-board-columns"><div><h3>Lifestyle tasks</h3><div id="lifestyle-task-list"></div></div><div class="life-focus-queue" data-life-focus-queue hidden><h3>Focus tasks</h3><p class="fine">Move a task back to your calendar, or open SimplyFocus above.</p><div id="lifestyle-focus-import"></div></div></div><p id="lifestyle-task-status" role="status"></p>
+   <div class="life-task-view-switch" role="group" aria-label="Task list view"><button type="button" data-task-view="list" aria-pressed="${taskView==='list'}">☷ List</button><button type="button" data-task-view="quadrants" aria-pressed="${taskView==='quadrants'}">✿ Four quadrants</button></div>
+   <form id="lifestyle-task-form" class="lifestyle-task-form"><label class="field">Task<input id="lifestyle-task-title" maxlength="120" required placeholder="e.g. Call the pharmacy"></label><label class="field">Date<input id="lifestyle-task-date" type="date" required value="${selectedDate}"></label><label class="field">Time <span class="fine">optional</span><input id="lifestyle-task-time" type="time"></label><label class="field life-task-priority-field">Priority <select id="lifestyle-task-priority"><option value="inbox">Choose later</option>${EISENHOWER_QUADRANTS.map(q=>`<option value="${q.id}">${q.title} · ${q.subtitle}</option>`).join('')}</select></label><label class="field lifestyle-task-notes">Notes <span class="fine">optional</span><input id="lifestyle-task-note" maxlength="500" placeholder="A useful detail or first step"></label><button class="button" type="submit">Add task</button></form>
+   <div class="task-board-columns"><div><h3>Lifestyle tasks</h3><div id="lifestyle-task-list"></div><div id="lifestyle-quadrants" class="life-quadrants" aria-label="Four-quadrant priority board" hidden></div></div><div class="life-focus-queue" data-life-focus-queue hidden><h3>Focus tasks</h3><p class="fine">Move a task back to your calendar, or open SimplyFocus above.</p><div id="lifestyle-focus-import"></div></div></div><p id="lifestyle-task-status" role="status"></p>
   </section>
   <section id="lifestyle-reminders" class="lifestyle-card lifestyle-reminders" aria-labelledby="lifestyle-reminders-title"><div class="lifestyle-section-head"><div><p class="eyebrow">Gentle prompts</p><h2 id="lifestyle-reminders-title">Reminders</h2><p>Optional morning and evening nudges.</p></div><span class="reminder-bell">${uiSymbol('bell')}</span></div><form id="lifestyle-reminder-form"><label><input id="morning-reminder-enabled" type="checkbox"> Morning reminder</label><input id="morning-reminder-time" type="time" value="08:30" aria-label="Morning reminder time"><label><input id="evening-reminder-enabled" type="checkbox"> Evening reminder</label><input id="evening-reminder-time" type="time" value="21:00" aria-label="Evening reminder time"><button class="button" type="submit">Save reminder times</button><button class="button secondary" id="lifestyle-enable-notifications" type="button">Enable device notifications</button></form><p class="reminder-limit">Browser notifications work only on supported HTTPS browsers after permission is granted. With the current free static setup, reminders are checked while Nobody’s Simple is open or backgrounded; an exact alert is not guaranteed after the browser or installed app has been fully closed.</p><p id="lifestyle-reminder-status" role="status"></p></section>
   </div>
@@ -91,10 +92,36 @@ export function renderLifestyle(root,view='daily'){
  function renderDeed(){
   const item=goodDeeds[deed.index];$('#lifestyle-deed-card').innerHTML=`<span class="deed-category">${esc(item.category)}</span><p>${esc(item.task)}</p><div><button type="button" class="button" data-deed-done ${deed.done?'disabled':''}>${deed.done?'Completed today':'I did this'}</button><button type="button" class="button secondary" data-deed-next>Show another</button></div><small>${deed.skips?`${deed.skips} alternative${deed.skips===1?'':'s'} viewed today. `:''}Choose another whenever the suggestion does not fit your circumstances.</small>`;
  }
+ function renderTaskItem(task){
+  const priority=taskPriority(task);
+  const choices=[{id:'inbox',title:'Choose later'},...EISENHOWER_QUADRANTS.map(q=>({id:q.id,title:q.title}))];
+  return `<article class="lifestyle-task life-priority-${priority} ${task.done?'is-done':''}" data-task-id="${esc(task.id)}">
+   <input type="checkbox" data-task-done="${esc(task.id)}" ${task.done?'checked':''} aria-label="Complete ${esc(task.title)}">
+   <div class="life-task-main"><strong>${esc(task.title)}</strong><small>${esc(task.date)}${task.time?' · '+esc(task.time):''}</small>${task.notes?`<p>${esc(task.notes)}</p>`:''}</div>
+   <div class="life-task-controls"><label class="life-task-move">Priority
+     <select data-task-priority="${esc(task.id)}" aria-label="Priority for ${esc(task.title)}">${choices.map(q=>`<option value="${q.id}" ${priority===q.id?'selected':''}>${q.title}</option>`).join('')}</select>
+   </label><button type="button" data-to-focus="${esc(task.id)}">Focus</button><button type="button" data-delete-task="${esc(task.id)}" aria-label="Delete ${esc(task.title)}">Delete</button></div>
+  </article>`;
+ }
  function renderTasks(){
-  tasks=readLifestyleTasks();const focus=readFocusBoard();
-  $('#lifestyle-task-list').innerHTML=tasks.length?tasks.sort((a,b)=>`${a.date} ${a.time||'99:99'}`.localeCompare(`${b.date} ${b.time||'99:99'}`)).map(task=>`<article class="lifestyle-task ${task.done?'is-done':''}"><input type="checkbox" data-task-done="${task.id}" ${task.done?'checked':''} aria-label="Complete ${esc(task.title)}"><div><strong>${esc(task.title)}</strong><small>${esc(task.date)}${task.time?' · '+esc(task.time):''}</small>${task.notes?`<p>${esc(task.notes)}</p>`:''}</div><div><button type="button" data-to-focus="${task.id}">Move to SimplyFocus</button><button type="button" data-delete-task="${task.id}" aria-label="Delete ${esc(task.title)}">Delete</button></div></article>`).join(''):`<p class="lifestyle-empty life-task-empty">Nothing on your list yet. Add a task above.</p>`;
-  $('#lifestyle-focus-import').innerHTML=focus.tasks.length?focus.tasks.map(task=>`<article class="focus-import-task"><div><strong>${esc(task.title)}</strong><small>${esc(task.project||'Personal')} · ${Number(task.estimate)||1} Pomodoro${Number(task.estimate)===1?'':'s'}</small></div><button type="button" data-from-focus="${task.id}">Move to Lifestyle</button></article>`).join('') :''; $('[data-life-focus-queue]').hidden=!focus.tasks.length;renderCalendar();
+  tasks=readLifestyleTasks();
+  const focus=readFocusBoard();
+  const sorted=[...tasks].sort((a,b)=>`${a.date} ${a.time||'99:99'}`.localeCompare(`${b.date} ${b.time||'99:99'}`));
+  $('#lifestyle-task-list').innerHTML=sorted.length?sorted.map(renderTaskItem).join(''):'<p class="lifestyle-empty life-task-empty">Nothing on your list yet. Add a task above.</p>';
+  const items=priority=>sorted.filter(t=>taskPriority(t)===priority);
+  const inbox=items('inbox');
+  $('#lifestyle-quadrants').innerHTML=(inbox.length?`<section class="life-priority-inbox-panel" aria-label="Tasks to sort"><div><strong>✎ Choose a quadrant</strong><small>${inbox.length} uncategorised ${inbox.length===1?'task':'tasks'}</small></div>${inbox.map(renderTaskItem).join('')}</section>`:'')+
+   EISENHOWER_QUADRANTS.map(q=>`<section class="life-quadrant life-quadrant--${q.id}" aria-labelledby="life-q-${q.id}">
+    <header class="life-quadrant-head"><span aria-hidden="true">${q.icon}</span><div><h3 id="life-q-${q.id}">${q.title}</h3><small>${q.subtitle}</small></div><b aria-label="${items(q.id).length} tasks">${items(q.id).length}</b></header>
+    <p class="life-quadrant-hint">${q.hint}</p><div class="life-quadrant-items">${items(q.id).map(renderTaskItem).join('')||'<p class="life-quadrant-empty">A little breathing room ✧</p>'}</div>
+   </section>`).join('');
+  const matrix=taskView==='quadrants';
+  $('#lifestyle-quadrants').hidden=!matrix;
+  $('#lifestyle-task-list').hidden=matrix;
+  root.querySelectorAll('[data-task-view]').forEach(btn=>btn.setAttribute('aria-pressed',String(btn.dataset.taskView===taskView)));
+  $('#lifestyle-focus-import').innerHTML=focus.tasks.length?focus.tasks.map(task=>`<article class="focus-import-task"><div><strong>${esc(task.title)}</strong><small>${esc(task.project||'Personal')} · ${Number(task.estimate)||1} Pomodoro${Number(task.estimate)===1?'':'s'}</small></div><button type="button" data-from-focus="${esc(task.id)}">Move to Lifestyle</button></article>`).join(''):'';
+  $('[data-life-focus-queue]').hidden=!focus.tasks.length;
+  renderCalendar();
  }
  function loadReminders(){const state=readLifestyleReminders();$('#morning-reminder-enabled').checked=state.morningEnabled;$('#morning-reminder-time').value=state.morningTime;$('#evening-reminder-enabled').checked=state.eveningEnabled;$('#evening-reminder-time').value=state.eveningTime;const button=$('#lifestyle-enable-notifications');if(!('Notification' in window)){button.hidden=true;$('#lifestyle-reminder-status').textContent='This browser does not offer web notifications.'}else if(Notification.permission==='granted'){button.textContent='Device notifications enabled';button.disabled=true}else if(Notification.permission==='denied')button.textContent='Notifications are blocked in browser settings';}
 
@@ -116,6 +143,7 @@ export function renderLifestyle(root,view='daily'){
  root.addEventListener('click',event=>{
   const button=event.target.closest('button');if(!button)return;
   if(button.dataset.lifeMode){showMode(button.dataset.lifeMode);return;}
+  if(button.dataset.taskView){taskView=button.dataset.taskView==='quadrants'?'quadrants':'list';localStorage.setItem(lifestyleTaskViewKey,taskView);renderTasks();return;}
   if(button.dataset.checkMode){checkMode=button.dataset.checkMode;$('#lifestyle-checkin-title').textContent=`${checkMode==='daytime'?'Daytime':checkMode[0].toUpperCase()+checkMode.slice(1)} check-in`;$('#lifestyle-checkin-title').nextElementSibling.textContent=checkMode==='morning'?'Arrive before you organise the day.':checkMode==='evening'?'Put down what can wait before bed.':'Notice what is here before choosing what comes next.';root.querySelectorAll('[data-check-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.checkMode===checkMode)));}
   if(button.dataset.calendarMove){calendarDate=new Date(calendarDate.getFullYear(),calendarDate.getMonth()+Number(button.dataset.calendarMove),1);renderCalendar();}
   if(button.dataset.calendarDate){selectedDate=button.dataset.calendarDate;$('#lifestyle-task-date').value=selectedDate;renderCalendar();}
@@ -127,10 +155,10 @@ export function renderLifestyle(root,view='daily'){
   if(button.dataset.toFocus&&moveLifestyleToFocus(button.dataset.toFocus)){renderTasks();$('#lifestyle-task-status').textContent='Task moved to SimplyFocus.';}
   if(button.dataset.fromFocus&&moveFocusToLifestyle(button.dataset.fromFocus)){renderTasks();$('#lifestyle-task-status').textContent='Task moved to Lifestyle and added to the calendar.';}
  },{signal});
- root.addEventListener('change',event=>{if(event.target.matches('[data-task-done]')){const task=tasks.find(item=>item.id===event.target.dataset.taskDone);if(task){task.done=event.target.checked;writeLifestyleTasks(tasks);renderTasks();}}},{signal});
+ root.addEventListener('change',event=>{if(event.target.matches('[data-task-done]')){const task=tasks.find(item=>item.id===event.target.dataset.taskDone);if(task){task.done=event.target.checked;writeLifestyleTasks(tasks);renderTasks();return;}}if(event.target.matches('[data-task-priority]')){const task=tasks.find(item=>item.id===event.target.dataset.taskPriority);if(task){task.priority=validPriority(event.target.value);writeLifestyleTasks(tasks);renderTasks();$('#lifestyle-task-status').textContent='Task moved to '+(EISENHOWER_QUADRANTS.find(q=>q.id===task.priority)?.title||'Choose later')+'.';}}},{signal});
  $('#lifestyle-intensity').addEventListener('input',event=>$('#lifestyle-intensity-output').textContent=`${event.target.value} / 10`);$('#lifestyle-energy').addEventListener('input',event=>$('#lifestyle-energy-output').textContent=`${event.target.value} / 10`);
  $('#lifestyle-checkin-form').addEventListener('submit',event=>{event.preventDefault();const emotion=new FormData(event.currentTarget).get('lifestyle-emotion');if(!emotion)return;const now=new Date();entries.push({id:`${Date.now()}-${Math.random().toString(36).slice(2)}`,date:localDate(now),time:now.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}),period:checkMode,emotion,intensity:Number($('#lifestyle-intensity').value),energy:Number($('#lifestyle-energy').value),note:$('#lifestyle-note').value.trim()});writeEmotions(entries);selectedDate=localDate(now);$('#lifestyle-checkin-status').textContent='Check-in saved to today’s calendar.';event.currentTarget.reset();$('#lifestyle-intensity-output').textContent='5 / 10';$('#lifestyle-energy-output').textContent='5 / 10';renderCalendar();});
- $('#lifestyle-task-form').addEventListener('submit',event=>{event.preventDefault();const added=addLifestyleTask({title:$('#lifestyle-task-title').value,notes:$('#lifestyle-task-note').value,date:$('#lifestyle-task-date').value,time:$('#lifestyle-task-time').value});if(!added)return;event.currentTarget.reset();$('#lifestyle-task-date').value=selectedDate;renderTasks();$('#lifestyle-task-status').textContent='Task added to Lifestyle and its calendar date.';});
+ $('#lifestyle-task-form').addEventListener('submit',event=>{event.preventDefault();const added=addLifestyleTask({title:$('#lifestyle-task-title').value,notes:$('#lifestyle-task-note').value,date:$('#lifestyle-task-date').value,time:$('#lifestyle-task-time').value,priority:$('#lifestyle-task-priority').value});if(!added)return;event.currentTarget.reset();$('#lifestyle-task-date').value=selectedDate;renderTasks();$('#lifestyle-task-status').textContent='Task added to Lifestyle and its calendar date.';});
  $('#lifestyle-reminder-form').addEventListener('submit',event=>{event.preventDefault();const old=readLifestyleReminders();writeLifestyleReminders({...old,morningEnabled:$('#morning-reminder-enabled').checked,morningTime:$('#morning-reminder-time').value,eveningEnabled:$('#evening-reminder-enabled').checked,eveningTime:$('#evening-reminder-time').value});$('#lifestyle-reminder-status').textContent='Reminder times saved on this device.';});
  $('#lifestyle-enable-notifications').addEventListener('click',async()=>{if(!('Notification' in window))return;const permission=await Notification.requestPermission();loadReminders();$('#lifestyle-reminder-status').textContent=permission==='granted'?'Device notifications are enabled. Save the times you want above.':'Permission was not granted. Check-ins and saved times still work without notifications.';});
  renderDeed();renderTasks();loadReminders();if(view==='focus')showMode('focus');

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const src=path=>readFileSync(new URL('../../'+path,import.meta.url),'utf8');
+import {EISENHOWER_QUADRANTS,validPriority,taskPriority} from '../../lifestyle-storage.mjs';
 
 test('Lifestyle has its own primary desktop and four-item bottom mobile navigation',()=>{
  const page=src('index.html'),shell=src('ns-shell.mjs'),css=src('ns-shell.css');
@@ -61,4 +62,34 @@ test('Lifestyle is a direct, always-visible dashboard with optional same-page fo
  assert.match(css,/life-unified \.life-dashboard-flow/);
  assert.match(css,/life-unified \[hidden\]/);
  assert.match(routes,/simplyfocus: \(\) => location\.replace\('#lifestyle\/focus'\)/);
+});
+
+test('four different Eisenhower quadrants are available without guessing legacy priorities',()=>{
+ assert.deepEqual(EISENHOWER_QUADRANTS.map(q=>q.id),['do','schedule','delegate','eliminate']);
+ assert.equal(new Set(EISENHOWER_QUADRANTS.map(q=>q.title)).size,4);
+ assert.equal(validPriority('delegate'),'delegate');
+ assert.equal(validPriority('arbitrary'),'inbox');
+ assert.equal(taskPriority({title:'Old task without a priority'}),'inbox');
+ assert.equal(taskPriority({priority:'do'}),'do');
+ const data=src('lifestyle-storage.mjs');
+ assert.match(data,/priority:validPriority\(task.priority\)/);
+ assert.match(data,/scheduledDate:task.date\|\|'',priority:taskPriority\(task\)/);
+ assert.match(data,/date:task.scheduledDate\|\|localDate\(\),priority:taskPriority\(task\)/);
+});
+test('Lifestyle task list and quadrant board share one dataset and are accessible from a visible toggle',()=>{
+ const life=src('lifestyle.mjs'),css=src('lifestyle.css');
+ assert.match(life,/data-task-view="list"/);
+ assert.match(life,/data-task-view="quadrants"/);
+ assert.match(life,/id="lifestyle-task-priority"/);
+ assert.match(life,/id="lifestyle-quadrants"/);
+ assert.match(life,/EISENHOWER_QUADRANTS\.map/);
+ assert.match(life,/taskView==='quadrants'/);
+ assert.match(life,/localStorage\.setItem\(lifestyleTaskViewKey,taskView\)/);
+ assert.match(life,/data-task-priority/);
+ assert.match(life,/writeLifestyleTasks\(tasks\)/);
+ assert.match(css,/life-quadrant--do/);
+ assert.match(css,/life-quadrant--schedule/);
+ assert.match(css,/life-quadrant--delegate/);
+ assert.match(css,/life-quadrant--eliminate/);
+ assert.match(css,/@media\(max-width:650px\)/);
 });
