@@ -292,3 +292,13 @@ html[data-theme="dark"] body.app-body #main .lifestyle-page .task-board-columns 
 html[data-theme="dark"] body.app-body #main .lifestyle-page .lifestyle-day-detail .fine,
 html[data-theme="dark"] body.app-body #main .lifestyle-page .calendar-weekdays>span,
 html[data-theme="dark"] body.app-body #main .lifestyle-page #lifestyle-day-detail .eyebrow{color:#e1eee1;}
+
+
+/* Override legacy illustrated empty states and calendar weekday tint, which had low contrast. */
+body.app-body #main .lifestyle-page #lifestyle-task-list .lifestyle-empty b,
+body.app-body #main .lifestyle-page #lifestyle-focus-import .lifestyle-empty b{color:#244735!important;}
+body.app-body #main .lifestyle-page #lifestyle-task-list .lifestyle-empty p,
+body.app-body #main .lifestyle-page #lifestyle-focus-import .lifestyle-empty p{color:#345343!important;}
+body.app-body #main .lifestyle-page .calendar-weekdays span{color:#345343!important;}
+html[data-theme="dark"] body.app-body #main .lifestyle-page :is(#lifestyle-task-list,#lifestyle-focus-import) .lifestyle-empty :is(b,p),
+html[data-theme="dark"] body.app-body #main .lifestyle-page .calendar-weekdays span{color:#e1eee1!important;}
