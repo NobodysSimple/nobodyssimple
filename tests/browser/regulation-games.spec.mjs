@@ -20,7 +20,7 @@ test('Emotion Compass remains on Home while the Lifestyle CTA and hypothesis car
  await expect(compass).toContainText('Emotion Compass');
  const order=await compass.evaluate(el=>({
   here:[...el.parentElement.children].indexOf(el),
-  lifestyle:[...el.parentElement.children].indexOf(el.parentElement.querySelector('.ns-home-lifestyle'))
+  primary:[...el.parentElement.children].indexOf(el.parentElement.querySelector('.ns-home-primary'))
  }));
  expect(order.here).toBe(order.primary+1);
  await expect(page.locator('.ns-home-shortcuts a[href="#tools"]')).toHaveCount(0);
