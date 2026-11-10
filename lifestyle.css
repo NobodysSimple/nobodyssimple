@@ -274,3 +274,21 @@ html[data-theme="dark"] body.app-body #main .lifestyle-page .lifestyle-tool-shel
 @media(prefers-reduced-motion:reduce){
  body.app-body #main .lifestyle-page *,body.app-body #main .lifestyle-page *::before,body.app-body #main .lifestyle-page *::after{transition:none!important;animation-duration:.01ms!important}
 }
+
+
+/* Readable quiet text across soft panels: meet WCAG AA contrast. */
+body.app-body #main .lifestyle-page .life-glance-item :is(small,span span),
+body.app-body #main .lifestyle-page .life-form-label,
+body.app-body #main .lifestyle-page .life-checkin-detail .field .fine,
+body.app-body #main .lifestyle-page .task-board-columns .lifestyle-empty p,
+body.app-body #main .lifestyle-page .lifestyle-day-detail .fine{color:#345343;}
+body.app-body #main .lifestyle-page .task-board-columns .lifestyle-empty b{color:#244735;}
+body.app-body #main .lifestyle-page .calendar-weekdays>span{color:#365846;}
+body.app-body #main .lifestyle-page #lifestyle-day-detail .eyebrow{color:#714a29;}
+html[data-theme="dark"] body.app-body #main .lifestyle-page .life-glance-item :is(small,span span),
+html[data-theme="dark"] body.app-body #main .lifestyle-page .life-form-label,
+html[data-theme="dark"] body.app-body #main .lifestyle-page .life-checkin-detail .field .fine,
+html[data-theme="dark"] body.app-body #main .lifestyle-page .task-board-columns .lifestyle-empty :is(b,p),
+html[data-theme="dark"] body.app-body #main .lifestyle-page .lifestyle-day-detail .fine,
+html[data-theme="dark"] body.app-body #main .lifestyle-page .calendar-weekdays>span,
+html[data-theme="dark"] body.app-body #main .lifestyle-page #lifestyle-day-detail .eyebrow{color:#e1eee1;}
