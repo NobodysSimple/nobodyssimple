@@ -35,7 +35,7 @@ const relatedTopicMarkup=mode=>{
  const areas=atlasDomains.filter(d=>all.includes(d.id));
  const featured=mode.id==='learn'||mode.id==='unsure'
   ?areas.filter(d=>quickAreaIds.includes(d.id))
-  :areas.slice(0,4);
+  :areas.slice(0,6);
  const remainder=areas.filter(d=>!featured.includes(d));
  return '<div class="ns-needs-related" aria-labelledby="ns-needs-related-title">'+
   '<h2 id="ns-needs-related-title">Find a related experience</h2>'+
