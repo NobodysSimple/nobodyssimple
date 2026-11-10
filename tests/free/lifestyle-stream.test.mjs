@@ -93,3 +93,23 @@ test('Lifestyle task list and quadrant board share one dataset and are accessibl
  assert.match(css,/life-quadrant--eliminate/);
  assert.match(css,/@media\(max-width:650px\)/);
 });
+
+test('quadrant mode replaces the full task form, offers editable details in every box, and preserves manual ordering',()=>{
+ const life=src('lifestyle.mjs'),css=src('lifestyle.css'),storage=src('lifestyle-storage.mjs');
+ assert.match(life,/data-life-list-surface/);
+ assert.match(life,/\$\('#lifestyle-task-form'\)\.hidden=matrix/);
+ assert.match(life,/data-quad-add=/);
+ assert.match(life,/data-matrix-edit=/);
+ assert.match(life,/data-life-grip=/);
+ assert.match(life,/function relocateTask\(/);
+ assert.match(life,/function shiftMatrixTask\(/);
+ assert.match(life,/pointerdown/);
+ assert.match(life,/pointermove/);
+ assert.match(life,/pointerup/);
+ assert.match(life,/new FormData\(form\)/);
+ assert.match(life,/writeLifestyleTasks\(existing\)/);
+ assert.match(css,/\.is-matrix-mode\{grid-column:1\/-1\}/);
+ assert.match(css,/touch-action:none/);
+ assert.match(storage,/scheduledTime:task.time\|\|''/);
+ assert.match(storage,/time:task.scheduledTime\|\|''/);
+});
