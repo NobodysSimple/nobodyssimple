@@ -26,7 +26,7 @@ test('twelve distinct original no-writing games provide a playable and useful ch
  }
  assert.ok(GAME_FILTERS.some(f=>f.id==='all'));
 });
-test('game scrollers cover all seven navigation modes and all 53 choices with explicit safety exceptions',()=>{
+test('game scrollers cover all seven navigation modes and all 49 retained choices with explicit safety exceptions',()=>{
  let count=0;
  for(const mode of NEEDS_MODES){
   for(const option of mode.options){
@@ -43,7 +43,7 @@ test('game scrollers cover all seven navigation modes and all 53 choices with ex
   }
  }
  assert.equal(NEEDS_MODES.length,7);
- assert.equal(count,53);
+ assert.equal(count,49);
 });
 test('every atlas topic has a safe no-writing game selection or human-support-first exception',()=>{
  assert.equal(atlasProblemIndex.length,518);
