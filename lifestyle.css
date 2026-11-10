@@ -302,3 +302,7 @@ body.app-body #main .lifestyle-page #lifestyle-focus-import .lifestyle-empty p{c
 body.app-body #main .lifestyle-page .calendar-weekdays span{color:#345343!important;}
 html[data-theme="dark"] body.app-body #main .lifestyle-page :is(#lifestyle-task-list,#lifestyle-focus-import) .lifestyle-empty :is(b,p),
 html[data-theme="dark"] body.app-body #main .lifestyle-page .calendar-weekdays span{color:#e1eee1!important;}
+
+/* A stable readable colour for day and night, independent of earlier muted UI tokens. */
+body.app-body #main .lifestyle-page{--ns-life-readable-ink:#244735;}
+html[data-theme="dark"] body.app-body #main .lifestyle-page{--ns-life-readable-ink:#e1eee1;}
