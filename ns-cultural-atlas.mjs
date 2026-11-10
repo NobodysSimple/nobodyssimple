@@ -49,9 +49,10 @@ export function countryViewBox(feature){
 }
 export const normaliseCountryData=data=>{
  if(!data||data.type!=='FeatureCollection'||!Array.isArray(data.features))throw Error('Country boundaries are invalid.');
- return data.features.filter(f=>f?.geometry&&f?.properties?.name).map(f=>({
-  ...f,code:String(f.properties.iso3||f.id||'').toUpperCase(),name:String(f.properties.name)
- })).sort((a,b)=>a.name.localeCompare(b.name));
+ return data.features.filter(f=>f?.geometry&&f?.properties?.name).map((f,index)=>{
+  const iso=String(f.properties.iso3||f.id||'').toUpperCase();
+  return {...f,code:/^[A-Z]{3}$/.test(iso)?iso:'AREA-'+index,name:String(f.properties.name)};
+ }).sort((a,b)=>a.name.localeCompare(b.name));
 };
 export function normaliseRegions(data){
  if(!data||data.type!=='FeatureCollection'||!Array.isArray(data.features))return [];
