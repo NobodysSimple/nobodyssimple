@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {inclusiveDomains,inclusiveProblemIndex,inclusiveIds} from '../../ns-inclusive-topics.mjs';
 import {atlasProblemIndex,atlasDomains,atlasGet,atlasProfile,isSafetyPriority} from '../../ns-atlas-core.mjs';
-import {getSubjectMatchesForTest} from '../../ns-needs-console.mjs';
+import {getSubjectMatchesForTest,topicsForNeedsMode,renderNeedsConsole} from '../../ns-needs-console.mjs';
 import {workbookForTopic} from '../../ns-integrated-workbook-data.mjs';
 
 const important=[
@@ -102,13 +102,17 @@ test('current coercion and stalking route to support first, while ordinary explo
  assert.equal(atlasGet('menopause-transition').medical,true);
 });
 
-test('navigator includes usable category controls and does not surface hundreds of cards simultaneously',()=>{
+test('all 518 topic guides are reachable through the same uninterrupted cards, without a second atlas finder',()=>{
+ const featured=new Set(['insomnia','rumination','social-anxiety','panic-experiences','checking','submissive-patterns']);
+ const topics=topicsForNeedsMode('learn');
+ assert.equal(topics.length+featured.size,518);
+ for(const p of inclusiveProblemIndex){
+  assert.ok(topics.some(t=>t.id===p.id),'missing card '+p.id);
+ }
  const ui=readFileSync('ns-needs-console.mjs','utf8');
- const html=readFileSync('ns-integrated-workbook.mjs','utf8');
- assert.match(ui,/data-needs-domain-select/);
- assert.match(ui,/data-needs-more/);
- assert.match(ui,/\.slice\(0,shown\)/);
- assert.match(ui,/contextFirst\?'Understand this experience'/);
- assert.doesNotMatch(html,/Search 166 named experiences/);
- assert.match(html,/atlasProblemIndex\.length/);
+ const workbook=readFileSync('ns-integrated-workbook.mjs','utf8');
+ assert.match(ui,/topics\.map\(topicChoiceCard\)/);
+ assert.match(ui,/data-needs-choice-filter/);
+ assert.doesNotMatch(ui,/function atlasScreen|data-needs-domain-select|data-needs-more|navigate\/atlas\/area/);
+ assert.doesNotMatch(workbook,/data-wb-topic-results|function atlasChooser/);
 });
