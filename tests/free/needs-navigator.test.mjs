@@ -117,3 +117,22 @@ test('no questionnaire or speculative diagnostic ranking appears in any default 
   assert.ok(mode.options.every(option=>option.description.length>15));
  }
 });
+
+
+test('all inclusive categories are directly discoverable from the first starting screen',()=>{
+ const page=fakeRoot();renderNeedsConsole(page);
+ assert.match(page.innerHTML,/Explore a topic or experience/);
+ assert.match(page.innerHTML,/Search all 518 topics/);
+ for(const area of ['culture','lgbtq','neuro','disability','family','harm','faith','migration','digital','growth']){
+  assert.match(page.innerHTML,new RegExp('href="#navigate/atlas/area/'+area+'"'),area);
+ }
+ assert.equal((page.innerHTML.match(/class="ns-needs-area-link"/g)||[]).length,31);
+});
+test('direct area links preselect their topic filter',()=>{
+ for(const id of ['culture','lgbtq','neuro','faith']){
+  const page=fakeRoot();renderNeedsConsole(page,['atlas','area',id]);
+  assert.match(page.innerHTML,/Explore an experience or difficulty/);
+  assert.equal(page.entries.get('[data-needs-domain-select]').value,id);
+  assert.match(page.entries.get('[data-needs-match-count]').textContent,/topics/);
+ }
+});

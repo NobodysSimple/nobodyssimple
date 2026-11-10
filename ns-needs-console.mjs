@@ -15,11 +15,19 @@ const modeCard=(mode)=>'<a class="ns-needs-mode ns-tone-'+e(mode.tone)+'" href="
 const optionCard=(option)=>href(needsDestination(option),
  '<span><strong>'+e(option.title)+'</strong><small>'+e(option.description)+'</small></span><span class="ns-needs-next" aria-hidden="true">→</span>',
  'ns-needs-choice');
+const featuredTopicAreas=['culture','lgbtq','neuro','disability','family','harm'];
+const topicAreaLink=d=>href('#navigate/atlas/area/'+encodeURIComponent(d.id),
+ '<strong>'+e(d.name)+'</strong><small>'+e(d.description)+'</small>','ns-needs-area-link');
 function landing(){
  return area('<header class="ns-needs-hero"><p class="ns-needs-eyebrow">NOBODY’S SIMPLE · EMOTIONAL CALCULATOR</p>'+
  '<h1>What would help you right now?</h1><p>Choose what you want to do, not what you think is wrong with you. You can change direction at any time.</p></header>'+
  '<section class="ns-needs-panel"><h2>Choose a starting point</h2>'+
  '<div class="ns-needs-grid">'+NEEDS_MODES.map(modeCard).join('')+'</div></section>'+
+ '<section class="ns-needs-panel ns-needs-topic-entry" aria-labelledby="ns-needs-browse-title"><h2 id="ns-needs-browse-title">Explore a topic or experience</h2>'+
+ '<p class="ns-needs-sub">Browse 518 experiences across 31 areas, including race, LGBTQIA+, neurodivergence, disability, relationships, health and everyday life. Your identity is not a problem to fix.</p>'+
+ '<div class="ns-needs-area-grid">'+atlasDomains.filter(d=>featuredTopicAreas.includes(d.id)).map(topicAreaLink).join('')+'</div>'+
+ '<details class="ns-needs-area-details"><summary>See every topic area ('+atlasDomains.length+')</summary><div class="ns-needs-area-grid">'+atlasDomains.filter(d=>!featuredTopicAreas.includes(d.id)).map(topicAreaLink).join('')+'</div></details>'+
+ '<p><a class="ns-needs-cta" href="#navigate/atlas">Search all 518 topics →</a></p></section>'+
  '<p class="ns-needs-footnote">No questionnaire or diagnosis is required. Each choice opens a continuous guide with the explanation, research-informed options and practical exercises together on one page.</p>');
 }
 function modeScreen(mode){
@@ -41,7 +49,7 @@ function getSubjectMatches(search,domain){
  if(words.length)set=set.filter(p=>{const hay=norm(p.id+' '+p.title+' '+p.hint+' '+(p.aliases||[]).join(' '));return words.every(w=>hay.includes(w));});
  return set.sort((a,b)=>a.title.localeCompare(b.title));
 }
-function atlasScreen(root){
+function atlasScreen(root,initialDomain=''){
  root.innerHTML=area('<header class="ns-needs-header ns-tone-lilac"><p class="ns-needs-eyebrow">PSYCHOLOGICAL ATLAS</p>'+
  '<h1>Explore an experience or difficulty</h1><p>Find a topic about feelings, relationships, identity, discrimination, disability, health or everyday life. Identities are not disorders. Every topic opens a guide with optional reflection and practical support.</p></header>'+
  '<section class="ns-needs-panel"><label class="ns-needs-search-label" for="needs-topic-search">Search a named difficulty</label>'+
@@ -55,7 +63,7 @@ function atlasScreen(root){
  '<div data-needs-match-count role="status" class="ns-needs-match-count"></div><div data-needs-topic-results class="ns-needs-subjects"></div>'+ 
  '<button type="button" class="ns-needs-more" data-needs-more hidden>Show more topics</button>'+
  '</section>', '#navigate/learn');
- let search='',domain='',shown=48;
+ let search='',domain=atlasDomains.some(d=>d.id===initialDomain)?initialDomain:'',shown=48;
  const paint=()=>{
   const list=getSubjectMatches(search,domain);
   root.querySelector('[data-needs-match-count]').textContent=list.length?('Showing '+Math.min(shown,list.length)+' of '+list.length+' topics'): 'No matching topics';
@@ -94,7 +102,8 @@ function topicScreen(id){
 export function renderNeedsConsole(root,parts=[]){
  const path=Array.isArray(parts)?parts:[String(parts||'')];
  const mode=path[0]||'';
- if(mode==='atlas'&&path[1])root.innerHTML=topicScreen(path[1]);
+ if(mode==='atlas'&&path[1]==='area')atlasScreen(root,path[2]);
+ else if(mode==='atlas'&&path[1])root.innerHTML=topicScreen(path[1]);
  else if(mode==='atlas')atlasScreen(root);
  else if(getNeedsMode(mode))root.innerHTML=modeScreen(getNeedsMode(mode));
  else root.innerHTML=landing();

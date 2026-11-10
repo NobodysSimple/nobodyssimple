@@ -51,3 +51,17 @@ test('current sexual coercion offers safety support before any personal exercise
  await expect(page.locator('[data-pick-open]')).toHaveCount(0);
  await expect(page.locator('.ns-pick-care-actions a[href="#need/support-safety"]')).toBeVisible();
 });
+
+
+test('the first What would help screen displays inclusive topic areas and opens a filtered atlas',async({page})=>{
+ await page.goto('/index.html#navigate');
+ await expect(page.getByRole('heading',{name:'What would help you right now?'})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'Explore a topic or experience'})).toBeVisible();
+ await expect(page.locator('a[href="#navigate/atlas/area/culture"]')).toBeVisible();
+ await expect(page.locator('a[href="#navigate/atlas/area/lgbtq"]')).toBeVisible();
+ await expect(page.locator('a[href="#navigate/atlas/area/neuro"]')).toBeVisible();
+ await page.locator('a[href="#navigate/atlas/area/neuro"]').click();
+ await expect(page).toHaveURL(/#navigate\/atlas\/area\/neuro$/);
+ await expect(page.locator('[data-needs-domain-select]')).toHaveValue('neuro');
+ await expect(page.getByText('I want to understand ADHD experiences')).toBeVisible();
+});
