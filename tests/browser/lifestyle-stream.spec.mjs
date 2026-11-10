@@ -129,8 +129,8 @@ test('existing uncategorised tasks can be sorted in place and stay classified af
  await page.locator('#lifestyle-task-title').fill(name);
  await page.locator('#lifestyle-task-form button[type="submit"]').click();
  await page.locator('[data-task-view="quadrants"]').click();
- await expect(page.locator('.life-priority-inbox')).toContainText(name);
- await page.locator('.life-priority-inbox [data-task-priority]').selectOption('schedule');
+ await expect(page.locator('.life-priority-inbox-panel')).toContainText(name);
+ await page.locator('.life-priority-inbox-panel [data-task-priority]').selectOption('schedule');
  await expect(page.locator('.life-quadrant--schedule')).toContainText(name);
  await page.locator('.life-quadrant--schedule [data-to-focus]').click();
  await page.locator('[data-life-mode="focus"]').click();
@@ -151,7 +151,8 @@ test('Home primary button stays above the Compass and header does not show a sec
   compass:el.querySelector('.ns-home-compass').getBoundingClientRect().top
  }));
  expect(positions.primary).toBeLessThanOrEqual(positions.compass);
- const profile=page.locator('.ns-account-trigger');
+ const profile=page.locator('.app-top-actions > .ns-account-trigger');
+ await expect(profile).toHaveCount(1);
  await expect(profile).toBeVisible();
  const background=await profile.evaluate(el=>getComputedStyle(el,'::before').backgroundImage);
  expect(background).not.toContain('logo.png');
