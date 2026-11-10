@@ -174,3 +174,80 @@ test('Compass graph has no two-axis sliders and selected feeling appears directl
  await expect.poll(()=>page.locator('#marker').evaluate(el=>el.style.left)).not.toBe(before);
  await expect(detail.locator('.compass-profile-heading')).toBeVisible();
 });
+
+test('matrix replaces the full list/form and each coloured quadrant supports direct writing',async({page})=>{
+ await page.goto('/index.html#lifestyle');
+ await page.locator('[data-task-view="quadrants"]').click();
+ await expect(page.locator('#lifestyle-task-form')).toBeHidden();
+ await expect(page.locator('[data-life-list-surface]')).toBeHidden();
+ await expect(page.locator('#lifestyle-quadrants')).toBeVisible();
+ await expect(page.locator('#lifestyle-quadrants [data-quad-add]')).toHaveCount(4);
+ const quadrant=page.locator('.life-quadrant--do');
+ await quadrant.locator('[data-quad-add="do"] input[name="title"]').fill('Prepare tomorrow’s presentation');
+ await quadrant.locator('[data-quad-add="do"] details').evaluate(el=>el.open=true);
+ await quadrant.locator('[data-quad-add="do"] textarea[name="notes"]').fill('Practice the opening twice');
+ await quadrant.locator('[data-quad-add="do"] input[name="date"]').fill('2026-11-18');
+ await quadrant.locator('[data-quad-add="do"] input[name="time"]').fill('14:35');
+ await quadrant.locator('[data-quad-add="do"] button[type="submit"]').click();
+ const card=quadrant.locator('[data-matrix-task]').filter({hasText:'Prepare tomorrow’s presentation'});
+ await expect(card).toBeVisible();
+ await expect(card).toContainText('2026-11-18 · 14:35');
+ await card.locator('[data-edit-matrix-task]').click();
+ await expect(card.locator('[data-matrix-edit]')).toBeVisible();
+ await expect(card.locator('[data-matrix-edit] textarea[name="notes"]')).toHaveValue('Practice the opening twice');
+ await card.locator('[data-matrix-edit] input[name="title"]').fill('Present tomorrow');
+ await card.locator('[data-matrix-edit] textarea[name="notes"]').fill('Slides, handout and introduction');
+ await card.locator('[data-matrix-edit] input[name="time"]').fill('15:00');
+ await card.locator('[data-matrix-edit] button[type="submit"]').click();
+ await expect(quadrant).toContainText('Present tomorrow');
+ await page.reload();
+ await expect(page.locator('.life-quadrant--do')).toContainText('Present tomorrow');
+ await page.locator('.life-quadrant--do [data-edit-matrix-task]').click();
+ await expect(page.locator('.life-quadrant--do [data-matrix-edit] textarea[name="notes"]')).toHaveValue('Slides, handout and introduction');
+ await expect(page.locator('.life-quadrant--do [data-matrix-edit] input[name="time"]')).toHaveValue('15:00');
+ await page.locator('[data-task-view="list"]').click();
+ await expect(page.locator('#lifestyle-task-form')).toBeVisible();
+ await expect(page.locator('#lifestyle-task-list')).toContainText('Present tomorrow');
+});
+
+test('matrix supports manual sorting, moving between boxes and saving order',async({page})=>{
+ await page.goto('/index.html#lifestyle');
+ await page.locator('[data-task-view="quadrants"]').click();
+ const add=async(title)=>{
+  await page.locator('[data-quad-add="do"] input[name="title"]').fill(title);
+  await page.locator('[data-quad-add="do"] button[type="submit"]').click();
+ };
+ await add('First piece of work');
+ await add('Second piece of work');
+ await add('Third piece of work');
+ const doQuadrant=page.locator('.life-quadrant--do');
+ await expect(doQuadrant.locator('[data-matrix-task]')).toHaveCount(3);
+ await doQuadrant.locator('[data-matrix-down]').first().click();
+ await expect(doQuadrant.locator('.life-matrix-title strong').first()).toHaveText('Second piece of work');
+ await doQuadrant.locator('[data-matrix-up]').last().click();
+ await expect(doQuadrant.locator('.life-matrix-title strong').nth(1)).toHaveText('Third piece of work');
+ const movingCard=doQuadrant.locator('[data-matrix-task]').filter({hasText:'Third piece of work'});
+ await movingCard.locator('[data-task-priority]').selectOption('delegate');
+ await expect(page.locator('.life-quadrant--delegate')).toContainText('Third piece of work');
+ await expect(doQuadrant).not.toContainText('Third piece of work');
+ await page.reload();
+ await expect(page.locator('.life-quadrant--delegate')).toContainText('Third piece of work');
+ await expect(page.locator('.life-quadrant--do .life-matrix-title strong').first()).toHaveText('Second piece of work');
+});
+
+test('matrix drag handle moves tasks directly to another colour box',async({page})=>{
+ await page.goto('/index.html#lifestyle');
+ await page.locator('[data-task-view="quadrants"]').click();
+ await page.locator('[data-quad-add="do"] input[name="title"]').fill('Drag between quadrants');
+ await page.locator('[data-quad-add="do"] button[type="submit"]').click();
+ const handle=page.locator('.life-quadrant--do [data-life-grip]').first();
+ const dest=page.locator('.life-quadrant--schedule .life-quadrant-hint');
+ const from=await handle.boundingBox(),to=await dest.boundingBox();
+ expect(from).not.toBeNull();expect(to).not.toBeNull();
+ await page.mouse.move(from.x+from.width/2,from.y+from.height/2);
+ await page.mouse.down();
+ await page.mouse.move(to.x+to.width/2,to.y+to.height/2,{steps:12});
+ await page.mouse.up();
+ await expect(page.locator('.life-quadrant--schedule')).toContainText('Drag between quadrants');
+ await expect(page.locator('.life-quadrant--do')).not.toContainText('Drag between quadrants');
+});
