@@ -5,9 +5,9 @@ import {NEEDS_MODES,needsDestination} from '../../ns-needs-catalog.mjs';
 import {PATH_GUIDES,PATH_LANES,PATH_SOURCES,pathGuide} from '../../ns-pathway-content.mjs';
 
 const modes=['process','understand','act','relate','learn','unsure'];
-test('all 45 non-Steadier choices have separately authored contextual guides',()=>{
+test('every retained non-Steadier choice has a contextual guide, with earlier guides preserved',()=>{
  const options=NEEDS_MODES.filter(x=>modes.includes(x.id)).flatMap(mode=>mode.options.map(option=>({mode,option})));
- assert.equal(options.length,45);
+ assert.equal(options.length,41);
  assert.equal(Object.keys(PATH_GUIDES).length,45);
  assert.equal(PATH_LANES.length,5);
  for(const {mode,option} of options){
@@ -27,7 +27,7 @@ test('all 45 non-Steadier choices have separately authored contextual guides',()
   assert.ok(g.refs.length>=1,id+' needs relevant sources');
   for(const ref of g.refs)assert.ok(PATH_SOURCES[ref],id+' unknown source '+ref);
   const url=needsDestination(option);
-  assert.equal(url,option.type==='atlas'?'#navigate/atlas':'#workbook/'+mode.id+'/'+option.id,id+' incorrect destination '+url);
+  assert.equal(url,option.type==='topic'?'#workbook-topic/'+option.target:'#workbook/'+mode.id+'/'+option.id,id+' incorrect destination '+url);
  }
  assert.equal(pathGuide('regulate','overwhelmed'),null);
  assert.equal(pathGuide('act','nonexistent'),null);
@@ -61,7 +61,8 @@ test('the application mounts each guide without discarding the existing workshee
  assert.match(site,/accountState\(\)\.locked.*'route-tool'/);
  assert.match(activity,/attachPathGuide\(root,context\?\.mode\|\|'process'/);
  assert.match(activity,/Nothing is automatically saved/);
- assert.match(console,/attachPathGuide\(root,'learn','browse'/);
+ assert.match(console,/topics\.map\(topicChoiceCard\)/);
+ assert.doesNotMatch(console,/attachPathGuide\(root,'learn','browse'/);
  assert.match(markup,/modal\.showModal/);
  assert.match(markup,/data-path-pin/);
  assert.match(markup,/selectedSteps\.set/);

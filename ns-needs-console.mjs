@@ -21,9 +21,9 @@ const optionCard=option=>href(needsDestination(option),
  '<span><strong>'+e(option.title)+'</strong><small>'+e(option.description)+'</small></span><span class="ns-needs-next" aria-hidden="true">→</span>',
  'ns-needs-choice');
 
-const topicChoiceCard=topic=>href('#workbook-topic/'+encodeURIComponent(topic.id),
- '<span><strong>'+e(topic.title)+'</strong><small>'+e(topic.hint)+'</small></span><span class="ns-needs-next" aria-hidden="true">→</span>',
- 'ns-needs-choice');
+const topicChoiceCard=topic=>'<a class="ns-needs-choice" href="#workbook-topic/'+encodeURIComponent(topic.id)+'" data-needs-search-text="'+
+ e([topic.id,topic.title,topic.hint,...(topic.aliases||[])].join(' '))+'">'+
+ '<span><strong>'+e(topic.title)+'</strong><small>'+e(topic.hint)+'</small></span><span class="ns-needs-next" aria-hidden="true">→</span></a>';
 
 // Topic areas are cross-listed where multiple aims may reasonably fit.
 // "Learn" and "I'm not sure" keep the full catalogue discoverable.
@@ -77,7 +77,7 @@ function wireModeFilter(root){
   const words=norm(filter.value).split(/\s+/).filter(Boolean);
   let visible=0;
   for(const card of cards){
-   const match=words.every(word=>norm(card.textContent).includes(word));
+   const match=words.every(word=>norm(card.getAttribute('data-needs-search-text')||card.textContent).includes(word));
    card.hidden=!match;
    if(match)visible++;
   }

@@ -7,7 +7,7 @@ import {workbookForChoice,workbookForTopic} from '../../ns-integrated-workbook-d
 import {deckForWorkbook,filterCards,cardFilters,interventionKinds,supplementaryInterventions} from '../../ns-intervention-cards.mjs';
 
 const kinds=new Set(Object.keys(interventionKinds));
-test('all 53 choice pages have a usable varied intervention deck or safety-first instructions',()=>{
+test('all 49 retained choice pages have a usable varied intervention deck or safety-first instructions',()=>{
  let total=0;
  for(const mode of NEEDS_MODES){
   for(const choice of mode.options){
@@ -45,7 +45,7 @@ test('all 53 choice pages have a usable varied intervention deck or safety-first
    }
   }
  }
- assert.equal(total,53);
+ assert.equal(total,49);
 });
 test('all 518 atlas entries have proportionate choices without bypassing safeguarding',()=>{
  assert.equal(atlasProblemIndex.length,518);

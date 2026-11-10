@@ -2,7 +2,6 @@
  * Source chapters are represented as cards, not expanded into a syllabus.
  * No storage, scoring, tracking or auto-submission. */
 import {escapeHTML as esc} from './core.mjs';
-import {atlasProblemIndex,atlasSearch} from './ns-atlas-core.mjs';
 import {STEADY_REFERENCES} from './ns-steady-guide-utils.mjs';
 import {PATH_SOURCES} from './ns-pathway-content.mjs';
 import {renderTool} from './features.mjs';
@@ -66,15 +65,6 @@ function introduction(g){
   list('Contributors that might matter',g.contributors)+mechanisms+'</div>'+
   '<p class="ns-pick-limits">'+(g.contextFirst?'These are questions to explore, not explanations for discrimination, evidence of a disorder or reasons to blame the person affected.':'These are hypotheses to consider—not a way to infer the cause of your own situation.')+'</p></details>'+
   caution+'</section>';
-}
-function atlasPicker(){
- return '<section class="ns-pick-topic-search" aria-labelledby="ns-pick-topic-title">'+
-  '<h2 id="ns-pick-topic-title">Looking for a particular experience or difficulty?</h2>'+
-  '<label for="ns-pick-search">Search the psychological atlas</label><p><a href="#navigate/atlas">Browse every category and topic</a></p>'+
-  '<input type="search" id="ns-pick-search" data-pick-search autocomplete="off" placeholder="e.g. procrastination, sleep, rumination…">'+
-  '<div class="ns-pick-topic-meta"><output data-pick-count aria-live="polite"></output>'+
-  '<button type="button" data-pick-show-all>Browse all</button></div>'+
-  '<div class="ns-pick-topic-results" data-pick-topics></div></section>';
 }
 function filters(){
  return '<div class="ns-pick-filters" role="group" aria-label="Show intervention cards">'+
@@ -206,7 +196,7 @@ function layout(g){
   '<a href="#navigate">All starting points</a><a href="#need/support-safety">Urgent support</a></nav>'+
   introductionCover(g)+
   (g.safetyFirst?careFirst(g)+sources(g):
-   introduction(g)+(g.showAtlas?atlasPicker():'')+chooser()+
+   introduction(g)+chooser()+
    '<section class="ns-pick-selected" id="ns-pick-selected" aria-live="off"><div data-pick-selected>'+selectedEmpty()+'</div></section>'+
    '<div data-ns-games-host></div>'+dialogMarkup()+sources(g))+
   '<footer class="ns-pick-footer"><a href="#navigate/'+e(g.modeId)+'">← Change my choice</a>'+
@@ -231,23 +221,6 @@ function notesText(g,card,values){
   '',...((worksheetTypes[card.worksheet]||worksheetTypes.step).flatMap(([id,label])=>[label,values[id]||'Not answered',''])),
   'Review: '+(outcomes[values.review]||outcomes.untried),'',
   note,'This material is educational and not a clinically validated intervention or a diagnosis.'].join('\n');
-}
-function paintTopics(surface){
- const input=surface.querySelector('[data-pick-search]');if(!input)return;
- const list=surface.querySelector('[data-pick-topics]');
- const all=[...atlasProblemIndex].sort((a,b)=>a.title.localeCompare(b.title));
- let showAll=false;
- const paint=()=>{
-  const q=input.value.trim();const found=q?atlasSearch(q,all.length):showAll?all:all.slice(0,8);
-  list.innerHTML=found.length?found.map(p=>'<a href="#workbook-topic/'+encodeURIComponent(p.id)+'">'+
-   '<strong>'+e(p.title)+'</strong><span>'+e(p.hint)+'</span>'+arrow+'</a>').join(''):
-   '<p>No exact match. Try a broader name, or seek advice for concerning symptoms.</p>';
-  surface.querySelector('[data-pick-count]').textContent=found.length+' of '+all.length+' topics shown';
-  surface.querySelector('[data-pick-show-all]').textContent=showAll?'Show fewer':'Browse all '+all.length;
- };
- input.addEventListener('input',paint);
- surface.querySelector('[data-pick-show-all]').addEventListener('click',()=>{showAll=!showAll;input.value='';paint()});
- paint();
 }
 export function renderInterventionChooser(root,g,{locked=false}={}){
  const cards=deckForWorkbook(g);
@@ -354,5 +327,5 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
   if(event.target.matches('[data-pick-field]')&&selected)drafts.set(selected.id,valuesFrom(sheet));
  });
  renderGameCarousel(surface.querySelector('[data-ns-games-host]'),g);
- paintCards();paintTopics(surface);
+ paintCards();
 }
