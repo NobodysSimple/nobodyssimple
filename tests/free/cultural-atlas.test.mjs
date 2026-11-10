@@ -21,8 +21,8 @@ test('the atlas includes a selectable world map with small states and territorie
  }
 });
 test('cultural readings use documentary sources and distinguish place from a psychological claim',()=>{
- assert.ok(CULTURE_ARTICLES.length>=15);
- assert.ok(articleCountries.length>=10);
+ assert.ok(CULTURE_ARTICLES.length>=47);
+ assert.ok(articleCountries.length>=36);
  for(const a of CULTURE_ARTICLES){
   assert.ok(countries.some(c=>c.code===a.country),a.id+' country missing');
   assert.ok(a.body.length>=3&&a.body.every(p=>p.length>100),a.id+' missing article');
@@ -35,6 +35,14 @@ test('cultural readings use documentary sources and distinguish place from a psy
  assert.equal(regionArticles('IND','Gujarat')[0].id,'garba');
  assert.equal(regionArticles('JPN','Hokkaidō')[0].id,'ainu-dance');
  assert.equal(regionArticles('ESP','Catalonia')[0].id,'castells');
+ assert.equal(regionArticles('ESP','Andalusia')[0].id,'flamenco');
+ assert.equal(regionArticles('KOR','Jeju')[0].id,'haenyeo');
+ assert.equal(regionArticles('PER','Puno')[0].id,'taquile');
+ assert.equal(regionArticles('BRA','Pernambuco')[0].id,'frevo');
+ assert.equal(articlesForCountry('IND').length,3);
+ assert.equal(articlesForCountry('MEX').length,2);
+ assert.equal(articlesForCountry('MAR').length,2);
+ assert.equal(articleById('tango-argentina').source.url,articleById('tango-uruguay').source.url,'transnational heritage has a shared documentary source');
  assert.equal(articlesForCountry('USA').length,0,'do not fabricate traditions for countries not yet covered');
 });
 test('administrative regions have independent clickable geometries',()=>{
