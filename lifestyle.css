@@ -306,3 +306,10 @@ html[data-theme="dark"] body.app-body #main .lifestyle-page .calendar-weekdays s
 /* A stable readable colour for day and night, independent of earlier muted UI tokens. */
 body.app-body #main .lifestyle-page{--ns-life-readable-ink:#244735;}
 html[data-theme="dark"] body.app-body #main .lifestyle-page{--ns-life-readable-ink:#e1eee1;}
+
+
+/* The previous interface faded whole sections; that reduces effective text contrast.
+ * Keep the new dashboard's quiet surfaces, but never reduce child-text opacity. */
+body.app-body #main .lifestyle-page .lifestyle-empty{opacity:1!important;}
+body.app-body #main .lifestyle-page .calendar-weekdays{opacity:1!important;}
+body.app-body #main .lifestyle-page .calendar-day.is-muted{opacity:.78;}
