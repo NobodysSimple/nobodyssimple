@@ -10,11 +10,11 @@ const game=async(page,id)=>{
  await open.click();
  await expect(page.locator('[data-game-active="'+id+'"]')).toBeVisible();
 };
-test('Emotion Compass follows Lifestyle, with the retired hypothesis card absent',async({page})=>{
+test('Emotion Compass remains on Home while the Lifestyle CTA and hypothesis card are removed',async({page})=>{
  await page.goto('/index.html#home');
  const lifestyle=page.locator('.ns-home-lifestyle');
  const compass=page.locator('.ns-home-compass');
- await expect(lifestyle).toBeVisible();
+ await expect(lifestyle).toHaveCount(0);
  await expect(page.locator('.ns-home-hypothesis')).toHaveCount(0);
  await expect(compass).toBeVisible();
  await expect(compass).toContainText('Emotion Compass');
@@ -22,7 +22,7 @@ test('Emotion Compass follows Lifestyle, with the retired hypothesis card absent
   here:[...el.parentElement.children].indexOf(el),
   lifestyle:[...el.parentElement.children].indexOf(el.parentElement.querySelector('.ns-home-lifestyle'))
  }));
- expect(order.here).toBe(order.lifestyle+1);
+ expect(order.here).toBe(order.primary+1);
  await expect(page.locator('.ns-home-shortcuts a[href="#tools"]')).toHaveCount(0);
  await compass.click();
  await expect(page).toHaveURL(/#compass$/);
