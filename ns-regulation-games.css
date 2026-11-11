@@ -368,3 +368,12 @@ body.app-body.ns-shell-v1 #main .ns-game-path-options button span{font-size:11px
  }
 }
 @media print{body.app-body.ns-shell-v1 #main .ns-game-carousel{display:none!important;}}
+
+
+/* A smaller, calmer game shelf: the selection changes by guide. */
+body.app-body.ns-shell-v1 #main .ns-game-carousel{box-shadow:none;border-radius:18px;padding:clamp(16px,2.5vw,23px);}
+body.app-body.ns-shell-v1 #main .ns-game-card{min-height:222px;padding:15px;flex-basis:clamp(195px,26%,244px);border-radius:14px;box-shadow:none;}
+body.app-body.ns-shell-v1 #main .ns-game-card-icon{height:39px;width:39px;font-size:22px;border-radius:10px;}
+body.app-body.ns-shell-v1 #main .ns-game-card h3{font:760 16px/1.26 system-ui,sans-serif;}
+body.app-body.ns-shell-v1 #main .ns-game-card p{font-size:12px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+body.app-body.ns-shell-v1 #main .ns-game-card-category{margin:7px 0 4px;}
