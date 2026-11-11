@@ -2,9 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {NEEDS_MODES,getNeedsMode,getNeedsActivity,needsDestination,NEEDS_REVIEW_CASES} from '../../ns-needs-catalog.mjs';
 import {PROCESSING_ACTIVITIES,SETTLING_ACTIVITIES,renderNeedsActivity} from '../../ns-needs-activities.mjs';
-import {renderNeedsConsole,getSubjectMatchesForTest,TOPIC_AREAS_BY_MODE,topicsForNeedsMode} from '../../ns-needs-console.mjs';
+import {renderNeedsConsole,getSubjectMatchesForTest,TOPIC_AREAS_BY_MODE,topicsForNeedsMode,themesForNeedsMode,NAV_TOPIC_PAGE_SIZE} from '../../ns-needs-console.mjs';
 import {atlasProblemIndex,atlasGet,isSafetyPriority} from '../../ns-atlas-core.mjs';
 import {tools} from '../../tool-catalog.mjs';
+import {NAV_THEMES,topicTheme,topicsInTheme,matchingTopics} from '../../ns-needs-themes.mjs';
 
 const idSet=new Set(tools.map(t=>t.id));
 const fakeRoot=()=>{
@@ -84,18 +85,19 @@ test('the previous ten frustrating use cases now point to explicit visitor selec
  assert.ok(getNeedsMode('relate').options.some(o=>o.id==='unsafe'));
  assert.ok(getNeedsMode('learn').options.some(o=>o.target==='insomnia'));
 });
-test('the complete catalogue appears as matching cards within a starting point, never on a separate page',()=>{
+test('the full topic catalogue remains searchable, without rendering 518 cards on entry',()=>{
  assert.equal(atlasProblemIndex.length,518);
  assert.equal(getSubjectMatchesForTest('','').length,518);
  assert.ok(getSubjectMatchesForTest('insomnia','').some(x=>x.id==='insomnia'));
  assert.ok(getSubjectMatchesForTest('rumination','').some(x=>x.id==='rumination'));
- assert.ok(getSubjectMatchesForTest('','body').length>15);
- const root=fakeRoot();renderNeedsConsole(root,['learn']);
- assert.match(root.innerHTML,/What feels closest/);
- assert.match(root.innerHTML,/Filter these choices/);
- assert.match(root.innerHTML,/href="#workbook-topic\/racial-discrimination"/);
- assert.match(root.innerHTML,/href="#workbook-topic\/autism-understanding"/);
- assert.doesNotMatch(root.innerHTML,/Search a named difficulty|Explore an experience or difficulty|data-needs-domain-select/);
+ const page=fakeRoot();renderNeedsConsole(page,['learn']);
+ assert.match(page.innerHTML,/What feels closest/);
+ assert.match(page.innerHTML,/Search any topic/);
+ assert.match(page.innerHTML,/data-needs-theme="health"/);
+ assert.match(page.innerHTML,/data-needs-topic-list/);
+ assert.doesNotMatch(page.innerHTML,/href="#workbook-topic\/racial-discrimination"/);
+ assert.ok(NAV_TOPIC_PAGE_SIZE<=24);
+ assert.ok(matchingTopics(topicsForNeedsMode('learn'),'racial discrimination').some(p=>p.id==='racial-discrimination'));
 });
 test('safety-related topics retain their support-first guides and the support route is always available',()=>{
  const root=fakeRoot();renderNeedsActivity(root,'support-safety');
@@ -105,7 +107,8 @@ test('safety-related topics retain their support-first guides and the support ro
  assert.match(root.innerHTML,/not.*confront/i);
  assert.equal(isSafetyPriority('suicidal-thoughts'),true);
  const page=fakeRoot();renderNeedsConsole(page,['regulate']);
- assert.match(page.innerHTML,/href="#workbook-topic\/suicidal-thoughts"/);
+ assert.ok(topicsForNeedsMode('regulate').some(p=>p.id==='suicidal-thoughts'));
+ assert.match(page.innerHTML,/data-needs-theme="emotions"/);
  const landing=fakeRoot();renderNeedsConsole(landing);
  assert.match(landing.innerHTML,/href="#need\/support-safety"/);
 });
@@ -124,32 +127,37 @@ test('the original seven goal tiles remain the only starting choices',()=>{
  assert.doesNotMatch(page.innerHTML,/Explore a topic or experience|ns-needs-topic-entry|ns-needs-area-link/);
  assert.match(page.innerHTML,/Explore a specific difficulty/);
 });
-test('all 518 named entries are direct ordinary cards in relevant starting points',()=>{
+test('all 31 domains are grouped under six themes and every topic remains reachable',()=>{
+ const all=atlasProblemIndex;
+ assert.equal(NAV_THEMES.length,6);
+ const categories=NAV_THEMES.flatMap(t=>t.domains);
+ assert.equal(new Set(categories).size,31);
+ assert.equal(categories.length,31);
+ assert.ok(all.every(p=>topicTheme(p)),'each topic has an assigned theme');
  const covered=new Set();
  for(const mode of NEEDS_MODES){
   const page=fakeRoot();renderNeedsConsole(page,[mode.id]);
   const topics=topicsForNeedsMode(mode.id);
-  assert.equal((page.innerHTML.match(/class="ns-needs-choice"/g)||[]).length,mode.options.length+topics.length,mode.id);
-  assert.equal((page.innerHTML.match(/class="ns-needs-choices"/g)||[]).length,1,mode.id);
-  assert.doesNotMatch(page.innerHTML,/Find a related experience|More topics related|ns-needs-related|ns-needs-area-grid|ns-needs-area-details|href="#navigate\/atlas/,mode.id);
-  for(const topic of topics){
-   covered.add(topic.domain);
-   assert.ok(page.innerHTML.includes('class="ns-needs-choice" href="#workbook-topic/'+topic.id+'"'),mode.id+' '+topic.id);
+  const themes=themesForNeedsMode(mode.id);
+  assert.equal((page.innerHTML.match(/class="ns-needs-theme"/g)||[]).length,themes.length);
+  assert.equal((page.innerHTML.match(/class="ns-needs-choice"/g)||[]).length,mode.options.length);
+  assert.ok(page.innerHTML.includes('data-needs-topic-list'),mode.id);
+  for(const theme of themes){
+   assert.equal(topicsInTheme(topics,theme.id).length,theme.count);
+   topicsInTheme(topics,theme.id).forEach(p=>covered.add(p.domain));
   }
  }
  assert.equal(covered.size,31);
  assert.equal(TOPIC_AREAS_BY_MODE.learn.length,31);
  const featured=new Set(getNeedsMode('learn').options.filter(o=>o.type==='topic').map(o=>o.target));
  const allLearn=new Set([...topicsForNeedsMode('learn').map(p=>p.id),...featured]);
- assert.equal(allLearn.size,518,'no atlas entry lost or duplicated');
+ assert.equal(allLearn.size,518,'no Atlas entry lost');
  for(const domain of ['culture','lgbtq','neuro','disability','family','harm','faith','migration','digital','growth','sexuality','behaviour','safety'])
   assert.ok(NEEDS_MODES.some(m=>!['learn','unsure'].includes(m.id)&&TOPIC_AREAS_BY_MODE[m.id].includes(domain)),domain);
- const relation=fakeRoot();renderNeedsConsole(relation,['relate']);
- assert.ok(relation.innerHTML.indexOf('I feel unsafe, pressured or controlled')<relation.innerHTML.indexOf('I am experiencing racism'));
 });
 test('historical atlas links land on the existing starting-point grid instead of a browse page',()=>{
  const page=fakeRoot();renderNeedsConsole(page,['atlas','area','neuro']);
  assert.match(page.innerHTML,/What feels closest/);
- assert.match(page.innerHTML,/href="#workbook-topic\/adhd-understanding"/);
+ assert.match(page.innerHTML,/data-needs-theme="health"/);
  assert.doesNotMatch(page.innerHTML,/data-needs-domain-select|data-needs-topic-results|Search a named difficulty/);
 });
