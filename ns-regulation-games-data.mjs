@@ -104,6 +104,7 @@ export function gamesForGuide(guide){
  add(preferred[1]);
  add(GAME_BY_ID['choice-path']);
  add(preferred.find(x=>x.type==='ground'||x.type==='calm'));
+ if(family==='action'&&!exclude.has('colour-mosaic'))add(GAME_BY_ID['colour-mosaic']);
  const pool=preferred.filter(g=>!chosen.some(x=>x.id===g.id));
  const offset=pool.length?topicSeed(guide.optionId||guide.id)%pool.length:0;
  const rotated=[...pool.slice(offset),...pool.slice(0,offset)];
