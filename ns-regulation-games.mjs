@@ -161,7 +161,18 @@ function path(st){
  message('You built a possible path. It is just an idea: you can change it, ask for help, or choose not to follow it.'))+
  '<div class="ns-game-controls">'+action('undo',null,'Change last choice')+reset()+'</div>';
 }
+function topicLens(game,st){
+ return '<div class="ns-game-topic-lens" role="group" aria-label="Explore three perspectives on this topic">'+
+ game.items.map((item,i)=>'<button type="button" data-game-action="lens" data-game-choice="'+i+
+ '" aria-pressed="'+(st.picked===i)+'" class="'+(st.picked===i?'is-picked':'')+'">'+
+ '<strong>'+e(item.label)+'</strong><span aria-hidden="true">→</span></button>').join('')+'</div>'+
+ '<div class="ns-game-lens-result" role="status">'+
+ (st.picked===null?'Choose any card to reveal a perspective. You do not need to agree with it.':
+ e(game.items[st.picked]?.text||'You can choose another card or finish.'))+'</div>'+
+ '<div class="ns-game-controls">'+reset()+'</div>';
+}
 function scene(game,st){
+ if(game.id==='topic-lens')return topicLens(game,st);
  const byId={'breath-garden':breathing,'colour-mosaic':mosaic,'quiet-room':room,
  'anchor-scene':grounding,'pebble-garden':pebbles,'cloud-watching':clouds,
  'star-garden':stars,'steady-taps':tap,'finger-trail':trail,
@@ -188,11 +199,11 @@ const carousel=games=>'<section class="ns-game-carousel" id="ns-games" aria-labe
 function updateGame(st,actionName,choice){
  const n=safeIndex(choice,16);
  switch(actionName){
-  case 'reset':return initialState(GAME_BY_ID[st.id]);
+  case 'reset':return initialState(GAME_BY_ID[st.id]||{id:st.id});
   case 'toggle':return {...st,playing:!st.playing};
   case 'pace':return {...st,pace:pace.some(x=>x[0]===choice)?choice:st.pace};
   case 'paint':return {...st,tiles:st.tiles.map((x,i)=>i===n?((x<0?i:x)+1)%palette.length:x)};
-  case 'anchor':return {...st,picked:n};
+  case 'anchor':case 'lens':return {...st,picked:n};
   case 'room':return {...st,bool:{...st.bool,[choice]:!st.bool[choice]}};
   case 'pebble':return {...st,chosen:st.chosen.length>=9?st.chosen:[...st.chosen,n]};
   case 'undo':return {...st,chosen:st.chosen.slice(0,-1)};
