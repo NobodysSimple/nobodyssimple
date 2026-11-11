@@ -7,6 +7,7 @@ import {PATH_SOURCES} from './ns-pathway-content.mjs';
 import {renderTool} from './features.mjs';
 import {deckForWorkbook,filterCards,APPROACH_FAMILIES,groupInterventions} from './ns-intervention-cards.mjs';
 import {renderGameCarousel} from './ns-regulation-games.mjs';
+import {renderTopicQuickNav,renderTopicReadingStart,renderTopicReadingEnd,renderTopicSafetyReading,bindTopicProfile,bindTopicJumps} from './ns-topic-reading-ui.mjs';
 
 const e=x=>esc(String(x??''));
 const textOf=x=>String(x??'').trim().slice(0,3000);
@@ -196,14 +197,16 @@ function introductionCover(g){
   '</header>';
 }
 function layout(g){
- return '<div class="ns-wb-wrap ns-pick-wrap" data-workbook="'+e(g.id)+'">'+
+ return '<div class="ns-wb-wrap ns-pick-wrap'+(g.kind==='topic'?' ns-pick-topic-layout':'')+'" data-workbook="'+e(g.id)+'">'+
   '<nav class="ns-pick-breadcrumb" aria-label="Guide navigation"><a href="#navigate/'+e(g.modeId)+'">← '+e(g.modeTitle)+'</a>'+
   '<a href="#navigate">All starting points</a><a href="#need/support-safety">Urgent support</a></nav>'+
   introductionCover(g)+
-  (g.safetyFirst?careFirst(g)+sources(g):
-   introduction(g)+chooser()+
+  (g.safetyFirst?careFirst(g)+renderTopicSafetyReading(g)+sources(g):
+   (g.kind==='topic'?renderTopicQuickNav(g)+renderTopicReadingStart(g):introduction(g))+
+   chooser()+
    '<section class="ns-pick-selected" id="ns-pick-selected" aria-live="off"><div data-pick-selected>'+selectedEmpty()+'</div></section>'+
-   '<div data-ns-games-host></div>'+dialogMarkup()+sources(g))+
+   '<div data-ns-games-host></div>'+dialogMarkup()+
+   (g.kind==='topic'?renderTopicReadingEnd(g):'')+sources(g))+
   '<footer class="ns-pick-footer"><a href="#navigate/'+e(g.modeId)+'">← Change my choice</a>'+
   '<a href="#navigate">Choose another starting point →</a></footer></div>';
 }
@@ -231,6 +234,7 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
  const cards=deckForWorkbook(g);
  root.innerHTML=layout(g);
  const surface=root.querySelector('[data-workbook]');
+ if(g.kind==='topic'&&!g.safetyFirst){bindTopicProfile(surface);bindTopicJumps(surface);}
  if(g.safetyFirst)return;
  let selected=null,filter='all',refine='all',opener=null,preview=null;
  const drafts=new Map();
