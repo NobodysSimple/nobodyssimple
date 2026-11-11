@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {WORLD_COUNTRY_DATA,geoPath,featureBounds,countryViewBox,normaliseCountryData,normaliseRegions,regionArticles} from '../../ns-cultural-atlas.mjs';
 import {CULTURE_ARTICLES,articlesForCountry,articleCountries,articleById} from '../../ns-cultural-atlas-articles.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
-import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
+import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
 
 const source=path=>readFileSync(new URL('../../'+path,import.meta.url),'utf8');
 const world=JSON.parse(source(WORLD_COUNTRY_DATA));
@@ -128,4 +128,33 @@ test('cities require an explicit search term, while geography supports ADM2 laye
  const {data}=await fetchAdministrativeLayer(fetcher,'GBR','ADM2');
  assert.equal(data.type,'FeatureCollection');
  assert.ok(calls.some(url=>url.includes('gbOpen/GBR/ADM2/')));
+});
+
+test('all 50 US states, DC and populated US territories have stable Census identifiers',()=>{
+ const states=['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware',
+ 'Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana',
+ 'Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana',
+ 'Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina',
+ 'North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina',
+ 'South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia',
+ 'Wisconsin','Wyoming'];
+ assert.equal(states.length,50);
+ assert.ok(states.every(state=>/^\\d{2}$/.test(US_STATE_FIPS[state])));
+ for(const name of ['District of Columbia','Puerto Rico','Guam','American Samoa','Northern Mariana Islands','U.S. Virgin Islands']){
+  assert.ok(US_STATE_FIPS[name],name);
+ }
+});
+test('US county drilldown is state-filtered on the Census 2026 layer',async()=>{
+ let url='';
+ const response=await fetchUSCounties(async input=>{
+  url=String(input);
+  return {ok:true,json:async()=>({type:'FeatureCollection',features:[{
+   type:'Feature',properties:{NAME:'Travis County',STATE:'48'},geometry:{type:'Polygon',coordinates:[[[-98,30],[-97,30],[-97,31],[-98,30]]]}}
+  }]})};
+ },'Texas');
+ assert.equal(response.data.features.length,1);
+ assert.ok(url.includes('State_County/MapServer/1/query'));
+ assert.ok(decodeURIComponent(url).includes("STATE='48'"));
+ assert.equal(response.source,'US Census TIGERweb, January 2026');
+ await assert.rejects(fetchUSCounties(async()=>{throw Error('must not fetch')},'Atlantis'),/identifier not available/);
 });
