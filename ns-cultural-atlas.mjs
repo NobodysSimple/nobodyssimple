@@ -95,7 +95,9 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
  '<div class="ns-culture-drill" data-culture-sub-wrap hidden><button type="button" data-culture-sub-load>Explore counties / districts / municipalities</button>'+
  '<label data-culture-sub-control hidden>County / district / second-level area<select data-culture-subregion><option value="">All local areas</option></select></label>'+
  '<p data-culture-sub-note>Load the next administrative level for the selected region.</p></div>'+
- '<div class="ns-culture-indigenous-control" data-culture-indigenous-wrap hidden><label><input type="checkbox" data-culture-indigenous> Show US Indigenous lands and statistical areas</label><p data-culture-indigenous-note>Independent US Census geography. Zoom into a state to load a section.</p></div>'+
+ '<div class="ns-culture-indigenous-control" data-culture-indigenous-wrap hidden><label><input type="checkbox" data-culture-indigenous> Show US Indigenous lands and statistical areas</label>'+
+ '<label data-culture-indigenous-list-wrap hidden>Browse visible mapped areas<select data-culture-indigenous-list><option value="">Select an area…</option></select></label>'+
+ '<p data-culture-indigenous-note>Independent US Census geography. Zoom into a state to load a section.</p></div>'+
  '<div class="ns-culture-place-search" data-culture-place-wrap hidden><label>Find any city or town<input type="search" data-culture-place-query minlength="3" maxlength="100" placeholder="Type a place name" aria-label="City or town name"></label>'+
  '<button type="button" data-culture-place-search>Find place</button><label data-culture-place-results-wrap hidden>Choose a matching place<select data-culture-place-results></select></label><p data-culture-place-note>Search only happens when you press Find place.</p></div>'+
  '<p class="ns-culture-map-source">Country outlines: Natural Earth. Civil boundaries: <a href="https://www.geoboundaries.org/" rel="noopener noreferrer" target="_blank">geoBoundaries gbOpen ↗</a> (licences vary). Indigenous geography: <a href="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/AIANNHA/MapServer/47" rel="noopener noreferrer" target="_blank">US Census AIANNHA, 2026 ↗</a>. Place search © <a href="https://www.openstreetmap.org/copyright" rel="noopener noreferrer" target="_blank">OpenStreetMap contributors ↗</a>. These boundaries are illustrative, never claims about sovereignty, ancestry, or the full extent of Indigenous homelands.</p></div>'+
@@ -111,6 +113,7 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
    subChoose=root.querySelector('[data-culture-subregion]'),subControl=root.querySelector('[data-culture-sub-control]'),
    subNote=root.querySelector('[data-culture-sub-note]'),indigenousWrap=root.querySelector('[data-culture-indigenous-wrap]'),
    indigenousToggle=root.querySelector('[data-culture-indigenous]'),indigenousNote=root.querySelector('[data-culture-indigenous-note]'),
+   indigenousList=root.querySelector('[data-culture-indigenous-list]'),indigenousListWrap=root.querySelector('[data-culture-indigenous-list-wrap]'),
    placeWrap=root.querySelector('[data-culture-place-wrap]'),placeQuery=root.querySelector('[data-culture-place-query]'),
    placeChoose=root.querySelector('[data-culture-place-results]'),placeResultWrap=root.querySelector('[data-culture-place-results-wrap]'),
    placeNote=root.querySelector('[data-culture-place-note]');
@@ -152,6 +155,9 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
    subregions.length+' local areas in '+selectedRegion.name:subError||'Select “Explore” to load smaller administrative areas.';
   indigenousWrap.hidden=selectedCountry?.code!=='USA';
   indigenousToggle.checked=indigenousOn;
+  indigenousListWrap.hidden=!indigenousOn||indigenousAreas.length===0;
+  indigenousList.innerHTML='<option value="">Select a visible area…</option>'+indigenousAreas.map((f,i)=>
+   '<option value="'+i+'">'+e(f.properties?.NAMELSAD||f.properties?.NAME||'Census area')+'</option>').join('');
   indigenousNote.textContent=indigenousError||(indigenousOn?
    indigenousAreas.length+' mapped Census areas currently visible'+(indigenousPartial?' (partial response; zoom closer)':''):
    'Independent US Census 2026 geography: reservations, trust lands and statistical areas. Zoom into a state, then enable.');
@@ -257,7 +263,13 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   }catch(err){
    if(token!==tribalGeneration||removed)return;
    indigenousAreas=[];indigenousError=String(err.message||'Could not load Census data.');
-  }finally{if(token===tribalGeneration&&!removed){drawIndigenous();indigenousNote.textContent=indigenousError||indigenousAreas.length+' Census geographic areas shown'+(indigenousPartial?' · result truncated; zoom closer':'');}}
+  }finally{if(token===tribalGeneration&&!removed){
+   drawIndigenous();
+   indigenousListWrap.hidden=!indigenousAreas.length;
+   indigenousList.innerHTML='<option value="">Select a visible area…</option>'+indigenousAreas.map((f,i)=>
+    '<option value="'+i+'">'+e(f.properties?.NAMELSAD||f.properties?.NAME||'Census area')+'</option>').join('');
+   indigenousNote.textContent=indigenousError||indigenousAreas.length+' Census geographic areas shown'+(indigenousPartial?' · result truncated; zoom closer':'');
+  }}
  };
  const scheduleTribal=()=>{
   if(!indigenousOn||selectedCountry?.code!=='USA'||!viewport)return;
@@ -307,15 +319,16 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   const available=articlesForCountry(code);
   if(available.length>1){activeArticle=available[Math.min(available.length-1,Math.floor(Number(random())*available.length)||0)].id;paintPanel();}
  };
+ const selectIndigenous=index=>{
+  const feature=indigenousAreas[Number(index)];if(!feature)return;
+  selectedIndigenousName=String(feature.properties?.NAMELSAD||feature.properties?.NAME||'Census area');
+  mapStatus.textContent=selectedCountry.name+' · '+selectedIndigenousName;
+  indigenousNote.textContent=selectedIndigenousName+' — Census-defined area; not a comprehensive Indigenous homeland or cultural affiliation.';
+  focusFeature(feature,1.5);
+ };
  const respondToMap=(target)=>{
   const tribalNode=target.closest('[data-culture-indigenous-id]');
-  if(tribalNode&&indigenousOn){
-   const feature=indigenousAreas[Number(tribalNode.dataset.cultureIndigenousId)];
-   selectedIndigenousName=String(feature?.properties?.NAMELSAD||feature?.properties?.NAME||'Census area');
-   mapStatus.textContent=selectedCountry.name+' · '+selectedIndigenousName;
-   indigenousNote.textContent=selectedIndigenousName+' — Census-defined area; not a comprehensive Indigenous homeland or cultural affiliation.';
-   return;
-  }
+  if(tribalNode&&indigenousOn){selectIndigenous(tribalNode.dataset.cultureIndigenousId);return;}
   const subNode=target.closest('[data-culture-subregion-id]');
   if(subNode&&selectedCountry){selectSubregion(subNode.dataset.cultureSubregionId);return;}
   const regionNode=target.closest('[data-culture-region-id]');
@@ -345,6 +358,7 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   indigenousOn=indigenousToggle.checked;cancelTribal();indigenousAreas=[];indigenousError='';selectedIndigenousName='';
   paintMap();if(indigenousOn)void loadTribal();
  });
+ indigenousList.addEventListener('change',()=>selectIndigenous(indigenousList.value));
  root.querySelector('[data-culture-place-search]').addEventListener('click',()=>void findPlaces());
  placeQuery.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();void findPlaces();}});
  placeChoose.addEventListener('change',()=>selectPlace(placeChoose.value));
