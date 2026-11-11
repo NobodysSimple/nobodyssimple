@@ -107,7 +107,7 @@ test('the US Indigenous layer uses a geographically bounded 2026 Census service 
   url=input;
   return {ok:true,json:async()=>({type:'FeatureCollection',features:[{
    type:'Feature',properties:{NAME:'Example reservation'},geometry:{type:'Polygon',coordinates:[[[-111,35],[-110,35],[-110,36],[-111,35]]]}}
-  }]})};
+  ]})};
  };
  await assert.rejects(fetchUSIndigenousAreas(fetcher,WORLD_VIEW),/Zoom closer/);
  const result=await fetchUSIndigenousAreas(fetcher,{x:180,y:110,w:90,h:45});
@@ -153,7 +153,7 @@ test('US county drilldown is state-filtered on the Census 2026 layer',async()=>{
   url=String(input);
   return {ok:true,json:async()=>({type:'FeatureCollection',features:[{
    type:'Feature',properties:{NAME:'Travis County',STATE:'48'},geometry:{type:'Polygon',coordinates:[[[-98,30],[-97,30],[-97,31],[-98,30]]]}}
-  }]})};
+  ]})};
  },'Texas');
  assert.equal(response.data.features.length,1);
  assert.ok(url.includes('State_County/MapServer/1/query'));
