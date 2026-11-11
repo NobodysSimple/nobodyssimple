@@ -135,7 +135,7 @@ export function gamesForGuide(guide){
  }
  if(guide.kind==='topic'){
   const lens=topicLensGame(guide);
-  if(lens){if(chosen.length>=5)chosen[chosen.length-1]=lens;else add(lens);}
+  if(lens)add(lens);
  }
  return chosen;
 }
