@@ -1,6 +1,6 @@
-/* Needs-first navigation: simple starting points, six discoverable themes,
- * and a paginated/searchable topic library. Every Atlas entry keeps its stable
- * direct link to the integrated field guide; no diagnostic inference is made.
+/* Needs-first navigation: seven goals, eleven balanced subject themes and
+ * a paged/searchable library of all existing topics under every starting point.
+ * Topics relevant to the selected goal appear earlier within each theme.
  */
 import {escapeHTML as esc} from './core.mjs';
 import {NEEDS_MODES,getNeedsMode,needsDestination} from './ns-needs-catalog.mjs';
@@ -57,53 +57,49 @@ function landing(){
  '<div class="ns-needs-grid">'+NEEDS_MODES.map(modeCard).join('')+'</div></section>'+
  '<p class="ns-needs-footnote">No questionnaire or diagnosis is required. Each choice opens a continuous guide with the explanation, research-informed options and practical exercises together on one page.</p>');
 }
-// The first screen now exposes just a few practical suggestions and six broad
-// topic themes. Nothing is hidden from search: all canonical Atlas routes remain.
 export const NAV_TOPIC_PAGE_SIZE=24;
-// Featured topic shortcuts also belong in their normal theme: no topic vanishes
-// when somebody chooses to browse instead of using a suggested shortcut.
+// Every starting point now shows the same complete directory. It remains
+// meaningful as a lens: its most relevant topics sort first inside each theme,
+// without hiding the rest of the catalogue or inflating tiny category counts.
 export function browsableTopicsForNeedsMode(modeId){
  const mode=getNeedsMode(modeId);
  if(!mode)return [];
- const topics=topicsForNeedsMode(modeId);
- const featured=mode.options.filter(o=>o.type==='topic').map(o=>atlasGet(o.target)).filter(Boolean);
- return [...topics,...featured].sort((a,b)=>a.title.localeCompare(b.title));
+ const preferred=new Set(TOPIC_AREAS_BY_MODE[modeId]||[]);
+ return [...atlasProblemIndex].sort((a,b)=>
+  Number(preferred.has(b.domain))-Number(preferred.has(a.domain)) ||
+  a.title.localeCompare(b.title));
 }
 export function themesForNeedsMode(modeId){
  const topics=browsableTopicsForNeedsMode(modeId);
- const available=new Set(topics.map(p=>p.domain));
- return NAV_THEMES.filter(t=>t.domains.some(d=>available.has(d))).map(t=>({
-  ...t,count:topics.filter(p=>t.domains.includes(p.domain)).length
+ if(!topics.length)return [];
+ return NAV_THEMES.map(t=>({
+  ...t,count:topics.reduce((total,p)=>total+Number(topicTheme(p)===t.id),0)
  }));
 }
 function themeCard(t){
- return '<button type="button" class="ns-needs-theme" data-needs-theme="'+e(t.id)+'" aria-expanded="false">'+
+ return '<button type="button" class="ns-needs-theme" data-needs-theme="'+e(t.id)+'" aria-expanded="false" aria-controls="ns-needs-topic-panel">'+
   '<span class="ns-needs-theme-icon" aria-hidden="true">'+e(t.icon)+'</span>'+
   '<span><strong>'+e(t.title)+'</strong><small>'+e(t.short)+'</small><em>'+t.count+' topics</em></span>'+
   '<span class="ns-needs-next" aria-hidden="true">→</span></button>';
 }
 function modeScreen(mode){
- const groups=themesForNeedsMode(mode.id);
+ const themes=themesForNeedsMode(mode.id);
  return area('<header class="ns-needs-header ns-tone-'+e(mode.tone)+'"><p class="ns-needs-eyebrow">YOUR STARTING POINT</p>'+
  '<h1>'+e(mode.title)+'</h1><p>'+e(mode.summary)+'</p></header>'+
- '<section class="ns-needs-panel ns-needs-browse"><h2>What feels closest?</h2>'+
- '<p class="ns-needs-sub">Start with a suggestion, choose a theme, or search for something specific. One choice is enough.</p>'+
- '<label class="ns-needs-filter-label" for="needs-choice-filter">Search any topic</label>'+
- '<input id="needs-choice-filter" type="search" autocomplete="off" placeholder="Try sleep, relationships, ADHD, discrimination…" data-needs-choice-filter>'+
- '<section class="ns-needs-featured" data-needs-featured><h3>A few places to start</h3><div class="ns-needs-choices" data-needs-featured-list>'+
-  mode.options.map(optionCard).join('')+'</div></section>'+
- '<section class="ns-needs-theme-section" data-needs-theme-section><h3 tabindex="-1" data-needs-theme-heading>Explore by theme</h3>'+
- '<div class="ns-needs-theme-grid" data-needs-theme-grid>'+groups.map(themeCard).join('')+'</div></section>'+
+ '<section class="ns-needs-panel ns-needs-browse"><h2 tabindex="-1" data-needs-theme-heading>Explore by theme</h2>'+
+ '<p class="ns-needs-sub">Choose an area that interests you. All topics are available; those most relevant to your starting point appear first.</p>'+
+ '<div class="ns-needs-theme-section" data-needs-theme-section>'+
+ '<div class="ns-needs-theme-grid" data-needs-theme-grid>'+themes.map(themeCard).join('')+'</div></div>'+
+ '<label class="ns-needs-filter-label" for="needs-choice-filter">Or search all topics</label>'+
+ '<input id="needs-choice-filter" type="search" autocomplete="off" placeholder="Search sleep, friendships, anxiety, ADHD…" data-needs-choice-filter>'+
  '<section class="ns-needs-topic-panel" id="ns-needs-topic-panel" data-needs-topic-panel hidden aria-label="Topics in your chosen theme">'+
   '<div class="ns-needs-topic-heading"><button type="button" class="ns-needs-back-themes" data-needs-back-themes>← All themes</button>'+
   '<h3 data-needs-topic-heading tabindex="-1"></h3><p data-needs-topic-intro></p></div>'+
-  '<div class="ns-needs-domain-chips" data-needs-domain-chips role="group" aria-label="Narrow topics by area"></div>'+
   '<p class="ns-needs-filter-count" data-needs-choice-count role="status" aria-live="polite"></p>'+
   '<div class="ns-needs-choices" data-needs-topic-list></div>'+
   '<button type="button" class="ns-needs-more" data-needs-more hidden>Show more topics</button></section>'+
- '<p class="ns-needs-footnote">These are descriptions of experiences, not diagnoses. Each topic opens its existing guide.</p>'+
- '</section>'+
- '<p class="ns-needs-footnote">You can always '+href('#navigate','change your starting point')+'.</p>',
+ '<p class="ns-needs-footnote">These are experiences, not diagnoses. Choose any topic to open its existing guide.</p>'+
+ '</section><p class="ns-needs-footnote">You can always '+href('#navigate','change your starting point')+'.</p>',
  '#navigate');
 }
 function wireModeFilter(root,mode){
@@ -111,64 +107,46 @@ function wireModeFilter(root,mode){
  if(!filter)return;
  const topics=browsableTopicsForNeedsMode(mode.id);
  const themes=themesForNeedsMode(mode.id);
- const feature=root.querySelector('[data-needs-featured]');
- const featureCards=[...root.querySelectorAll('[data-needs-featured-list] .ns-needs-choice')];
  const groups=root.querySelector('[data-needs-theme-section]');
  const groupButtons=[...root.querySelectorAll('[data-needs-theme]')];
+ const themeHeading=root.querySelector('[data-needs-theme-heading]');
  const panel=root.querySelector('[data-needs-topic-panel]');
  const heading=root.querySelector('[data-needs-topic-heading]');
  const intro=root.querySelector('[data-needs-topic-intro]');
- const chips=root.querySelector('[data-needs-domain-chips]');
  const list=root.querySelector('[data-needs-topic-list]');
  const count=root.querySelector('[data-needs-choice-count]');
  const more=root.querySelector('[data-needs-more]');
- let theme='',domain='',limit=NAV_TOPIC_PAGE_SIZE;
+ let theme='',limit=NAV_TOPIC_PAGE_SIZE;
  const render=()=>{
-  const query=filter.value.trim();
-  const searching=Boolean(query);
-  feature.hidden=Boolean(theme)&&!searching;
-  let visibleFeatures=0;
-  for(const card of featureCards){
-   const matched=!searching||matchingTopics([{id:'suggestion',title:card.textContent,hint:'',aliases:[]}],query).length>0;
-   card.hidden=!matched;if(matched)visibleFeatures++;
-  }
-  if(searching&&visibleFeatures===0)feature.hidden=true;
+  const query=filter.value.trim(),searching=Boolean(query);
   groups.hidden=searching||Boolean(theme);
   panel.hidden=!searching&&!theme;
   for(const button of groupButtons)button.setAttribute('aria-expanded',String(button.dataset.needsTheme===theme));
   if(panel.hidden)return;
   const chosen=themes.find(x=>x.id===theme);
-  const matching=searching?matchingTopics(topics,query):topicsInTheme(topics,theme,domain);
-  const sorted=matching; // Alphabetical ordering is already supplied by topicsForNeedsMode.
+  const found=searching?matchingTopics(topics,query):topicsInTheme(topics,theme);
   heading.textContent=searching?'Search results':chosen?.title||'Explore topics';
-  intro.textContent=searching?'Matches from all the topics in this starting point.':chosen?.short||'Choose a topic to open its guide.';
-  chips.hidden=searching;
-  if(!searching&&chosen){
-   const available=atlasDomains.filter(d=>chosen.domains.includes(d.id)&&topics.some(p=>p.domain===d.id));
-   chips.innerHTML='<button type="button" data-needs-area="" aria-pressed="'+(!domain)+'">All in this theme</button>'+
-    available.map(d=>'<button type="button" data-needs-area="'+e(d.id)+'" aria-pressed="'+(domain===d.id)+'">'+e(d.name)+'</button>').join('');
-  }else chips.innerHTML='';
-  list.innerHTML=sorted.slice(0,limit).map(topicChoiceCard).join('')||
-   '<p class="ns-needs-empty">No matches here. Try another word or choose a different theme.</p>';
-  more.hidden=sorted.length<=limit;
-  count.textContent=sorted.length?
-   'Showing '+Math.min(limit,sorted.length)+' of '+sorted.length+' topics':
+  intro.textContent=searching?'Results across all themes.':chosen?.short||'Choose a topic to open its guide.';
+  list.innerHTML=found.slice(0,limit).map(topicChoiceCard).join('')||
+   '<p class="ns-needs-empty">No matching topics. Try another word or return to the themes.</p>';
+  more.hidden=found.length<=limit;
+  count.textContent=found.length?
+   'Showing '+Math.min(limit,found.length)+' of '+found.length+' topics':
    'No matching topics';
  };
  root.addEventListener?.('click',event=>{
   const themeButton=event.target.closest('[data-needs-theme]');
-  if(themeButton){theme=themeButton.dataset.needsTheme;domain='';limit=NAV_TOPIC_PAGE_SIZE;render();
-   heading?.focus?.({preventScroll:true});
-   panel.querySelector('[data-needs-topic-heading]')?.scrollIntoView?.({block:'nearest',behavior:'instant'});return;}
-  const areaButton=event.target.closest('[data-needs-area]');
-  if(areaButton){domain=areaButton.dataset.needsArea;limit=NAV_TOPIC_PAGE_SIZE;render();return;}
+  if(themeButton){
+   theme=themeButton.dataset.needsTheme;filter.value='';limit=NAV_TOPIC_PAGE_SIZE;render();
+   heading?.focus?.({preventScroll:true});return;
+  }
   if(event.target.closest('[data-needs-back-themes]')){
-   theme='';domain='';limit=NAV_TOPIC_PAGE_SIZE;filter.value='';render();
-   groups.querySelector('[data-needs-theme-heading]')?.focus?.({preventScroll:true});return;
+   theme='';filter.value='';limit=NAV_TOPIC_PAGE_SIZE;render();
+   themeHeading?.focus?.({preventScroll:true});return;
   }
   if(event.target.closest('[data-needs-more]')){limit+=NAV_TOPIC_PAGE_SIZE;render();}
  });
- filter.addEventListener?.('input',()=>{limit=NAV_TOPIC_PAGE_SIZE;render();});
+ filter.addEventListener?.('input',()=>{theme='';limit=NAV_TOPIC_PAGE_SIZE;render();});
  render();
 }
 export function renderNeedsConsole(root,parts=[]){
