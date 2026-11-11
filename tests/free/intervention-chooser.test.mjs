@@ -126,4 +126,10 @@ test('every deck keeps related methods together and uses short display names',()
  const procrastination=deckForWorkbook(workbookForTopic('procrastination')).map(c=>c.id);
  const insomnia=deckForWorkbook(workbookForTopic('insomnia')).map(c=>c.id);
  assert.notDeepEqual(procrastination,insomnia,'two topics should not have identical approach decks');
+ const one=deckForWorkbook(workbookForTopic('procrastination')).find(c=>c.id==='topic-context-procrastination');
+ const two=deckForWorkbook(workbookForTopic('insomnia')).find(c=>c.id==='topic-context-insomnia');
+ assert.ok(one&&two,'each topic has a context-grounded optional reflection');
+ assert.notEqual(one.why,two.why);
+ assert.match(one.caution,/not a validated treatment/i);
+
 });
