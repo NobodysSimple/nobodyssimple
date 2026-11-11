@@ -80,6 +80,25 @@ export function gameFamilyForGuide(guide){
 // Each topic gets a stable, small selection of genuinely different mechanics.
 // This is not a recommendation that a visual game treats the named difficulty.
 const topicSeed=id=>[...String(id||'')].reduce((n,ch)=>((n*37+ch.charCodeAt(0))>>>0),11);
+export function topicLensGame(guide){
+ if(!guide||guide.kind!=='topic'||guide.safetyFirst)return null;
+ const plain=value=>String(value||'').trim();
+ const take=(value,fallback)=>plain(value)||fallback;
+ const title=take(guide.title,'this topic');
+ const items=[
+  {label:'What it can look like',text:take(guide.recognise?.[0],guide.what)},
+  {label:'What might shape it',text:take(guide.contributors?.[0],guide.contextFirst?
+   'Circumstances, rights, access and support may matter here.':'Several processes may be involved; no single cause is assumed.')},
+  {label:'What could matter next',text:take(Array.isArray(guide.goals)?guide.goals[0]:guide.progress,
+   'Choose what fits your circumstances, or decide that no action is needed.')}
+ ];
+ return Object.freeze({
+  id:'topic-lens',title:'Explore this topic',description:'Tap three cards to look at '+title+' from different angles.',
+  type:'agency',tone:'blue',duration:'2–3 min',effort:'low',help:'Explore possible descriptions, context and next steps without scoring or self-diagnosis.',
+  caution:'These prompts are general editorial reflections, not evidence of a particular cause, personal diagnosis or treatment.',
+  items:Object.freeze(items.map(x=>Object.freeze(x)))
+ });
+}
 export function gamesForGuide(guide){
  if(!guide||guide.safetyFirst)return [];
  const family=gameFamilyForGuide(guide),id=(guide.id+' '+guide.title).toLowerCase();
@@ -113,6 +132,10 @@ export function gamesForGuide(guide){
  if(chosen.filter(g=>g.effort==='low').length<3){
   const low=preferred.find(g=>g.effort==='low'&&!chosen.some(c=>c.id===g.id));
   if(low){chosen[chosen.length-1]=low;}
+ }
+ if(guide.kind==='topic'){
+  const lens=topicLensGame(guide);
+  if(lens){if(chosen.length>=5)chosen[chosen.length-1]=lens;else add(lens);}
  }
  return chosen;
 }
