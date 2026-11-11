@@ -117,6 +117,6 @@ test('all 518 topic guides remain reachable through themed browsing and search',
  assert.match(ui,/data-needs-choice-filter/);
  assert.match(ui,/data-needs-more/);
  assert.match(ui,/NAV_TOPIC_PAGE_SIZE=24/);
- assert.doesNotMatch(ui,/function atlasScreen|data-needs-domain-select|navigate\\/atlas\\/area/);
+ assert.doesNotMatch(ui,/function atlasScreen|data-needs-domain-select|navigate\/atlas\/area/);
  assert.doesNotMatch(workbook,/data-wb-topic-results|function atlasChooser/);
 });
