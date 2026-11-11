@@ -3,7 +3,7 @@
  * Topics relevant to the selected goal appear earlier within each theme.
  */
 import {escapeHTML as esc} from './core.mjs';
-import {NEEDS_MODES,getNeedsMode,needsDestination} from './ns-needs-catalog.mjs';
+import {NEEDS_MODES,getNeedsMode} from './ns-needs-catalog.mjs';
 import {atlasProblemIndex,atlasGet,atlasDomains} from './ns-atlas-core.mjs';
 import {NAV_THEMES,topicsInTheme,matchingTopics,topicTheme} from './ns-needs-themes.mjs';
 
@@ -17,10 +17,6 @@ const area=(body,back='#home')=>'<div class="ns-needs">'+
 const modeCard=mode=>'<a class="ns-needs-mode ns-tone-'+e(mode.tone)+'" href="#navigate/'+e(mode.id)+'">'+
  '<span class="ns-needs-mode-mark" aria-hidden="true">'+e(mode.icon)+'</span><span class="ns-needs-mode-content"><strong>'+e(mode.title)+'</strong>'+
  '<small>'+e(mode.summary)+'</small></span><span class="ns-needs-next" aria-hidden="true">↗</span></a>';
-
-const optionCard=option=>href(needsDestination(option),
- '<span><strong>'+e(option.title)+'</strong><small>'+e(option.description)+'</small></span><span class="ns-needs-next" aria-hidden="true">→</span>',
- 'ns-needs-choice');
 
 const topicChoiceCard=topic=>'<a class="ns-needs-choice" href="#workbook-topic/'+encodeURIComponent(topic.id)+'" data-needs-search-text="'+
  e([topic.id,topic.title,topic.hint,...(topic.aliases||[])].join(' '))+'">'+
