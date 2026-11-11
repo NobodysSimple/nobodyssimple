@@ -23,9 +23,9 @@ export const topicTheme=topic=>THEME_FOR_DOMAIN[topic?.domain]||null;
 export const topicsInTheme=(topics,themeId,domain='')=>topics.filter(p=>
  topicTheme(p)===themeId&&(!domain||p.domain===domain));
 export const matchingTopics=(topics,query)=> {
- const needle=String(query||'').toLocaleLowerCase().replace(/[’']/g,'').replace(/[^\\p{L}\\p{N}]+/gu,' ').trim();
- const words=needle.split(/\\s+/).filter(Boolean);
+ const needle=String(query||'').toLocaleLowerCase().replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
+ const words=needle.split(/\s+/).filter(Boolean);
  if(!words.length)return topics;
- const clean=x=>String(x??'').toLocaleLowerCase().replace(/[’']/g,'').replace(/[^\\p{L}\\p{N}]+/gu,' ').trim();
+ const clean=x=>String(x??'').toLocaleLowerCase().replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
  return topics.filter(p=>words.every(w=>clean([p.id,p.title,p.hint,...(p.aliases||[])].join(' ')).includes(w)));
 };
