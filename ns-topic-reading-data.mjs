@@ -194,6 +194,7 @@ function recognitionFor(g){
  return distinct(pool).slice(0,4);
 }
 function supportFor(g){
+ if(g.safetyFirst)return 'If there is immediate danger, serious self-harm risk or an urgent health concern, prioritise human help now. In the UK call 999 for immediate danger; NHS 111 can direct urgent non-emergency care. Confidential specialist support may be safer than a web exercise.';
  if(g.medical)return 'If symptoms are new, severe, changing, physically concerning or affect daily functioning, seek an appropriate healthcare assessment. Do not presume the cause is psychological.';
  if(g.supportFirst)return 'When another person is threatening, controlling or monitoring you, focus on confidential and practical support. Avoid unsafe confrontation or recording sensitive details on a shared device.';
  if(['identity','access','systems'].includes(themeOf(normalizeDomain(g))))
