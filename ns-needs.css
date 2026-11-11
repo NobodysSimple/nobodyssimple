@@ -174,11 +174,14 @@ html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-needs :is(textarea,inp
 }
 
 
-/* Topic browser: show a handful of suggested routes before progressive theme choice. */
+/* Topic browser: 11 equally weighted themes are the only follow-up choices.
+ * Search is secondary and does not add a second row of shortcuts. */
 body.app-body.ns-shell-v1 #main .ns-needs-browse{max-width:100%;}
-body.app-body.ns-shell-v1 #main .ns-needs-browse h3{font:750 16px/1.3 system-ui,sans-serif;margin:5px 0 13px;color:#2e5740;}
-body.app-body.ns-shell-v1 #main .ns-needs-featured{margin:11px 0 25px;}
-body.app-body.ns-shell-v1 #main .ns-needs-theme-section{border-top:1px solid var(--need-edge);padding-top:20px;}
+body.app-body.ns-shell-v1 #main .ns-needs-browse>.ns-needs-sub{margin-bottom:19px;}
+body.app-body.ns-shell-v1 #main .ns-needs-theme-section{margin-bottom:20px;padding:0;border:0;}
+body.app-body.ns-shell-v1 #main .ns-needs-browse .ns-needs-filter-label{
+ margin:18px 0 7px;padding-top:17px;border-top:1px solid var(--need-edge);
+}
 body.app-body.ns-shell-v1 #main .ns-needs-theme-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;}
 body.app-body.ns-shell-v1 #main .ns-needs-theme{
  display:grid;grid-template-columns:36px minmax(0,1fr) 19px;align-items:center;gap:12px;
@@ -193,19 +196,11 @@ body.app-body.ns-shell-v1 #main .ns-needs-theme small{display:block;font-size:12
 body.app-body.ns-shell-v1 #main .ns-needs-theme em{display:inline-block;font:650 11px/1.4 system-ui,sans-serif;color:#58725e;margin-top:6px;font-style:normal;}
 body.app-body.ns-shell-v1 #main .ns-needs-topic-panel{padding-top:20px;margin-top:16px;border-top:1px solid var(--need-edge);}
 body.app-body.ns-shell-v1 #main .ns-needs-topic-panel[hidden],
-body.app-body.ns-shell-v1 #main .ns-needs-featured[hidden],
 body.app-body.ns-shell-v1 #main .ns-needs-theme-section[hidden]{display:none!important;}
 body.app-body.ns-shell-v1 #main .ns-needs-topic-heading{margin-bottom:12px;}
 body.app-body.ns-shell-v1 #main .ns-needs-back-themes{border:0;background:none;color:#32734d;font:750 12px system-ui,sans-serif;cursor:pointer;padding:8px 0;min-height:42px;}
 body.app-body.ns-shell-v1 #main .ns-needs-topic-heading h3{font:750 clamp(20px,2.5vw,25px)/1.24 Georgia,serif;margin:5px 0;}
 body.app-body.ns-shell-v1 #main .ns-needs-topic-heading p{color:#56715c;font-size:13px;margin:0;}
-body.app-body.ns-shell-v1 #main .ns-needs-domain-chips{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0;}
-body.app-body.ns-shell-v1 #main .ns-needs-domain-chips[hidden]{display:none!important;}
-body.app-body.ns-shell-v1 #main .ns-needs-domain-chips button{
- min-height:39px;border:1px solid #c7dac7;background:#f7f9f3;color:#3b6048;border-radius:99px;
- padding:7px 12px;font:700 12px/1.3 system-ui,sans-serif;cursor:pointer;
-}
-body.app-body.ns-shell-v1 #main .ns-needs-domain-chips button[aria-pressed=true]{background:#285a42;color:white;border-color:#285a42;}
 body.app-body.ns-shell-v1 #main .ns-needs-more{display:block;margin:15px auto 0;min-height:44px;border:1px solid #a4c1ab;background:#edf6ea;border-radius:12px;padding:10px 22px;color:#27533c;font-weight:750;cursor:pointer;}
 body.app-body.ns-shell-v1 #main .ns-needs-more[hidden]{display:none;}
 body.app-body.ns-shell-v1 #main .ns-needs-empty{grid-column:1/-1;color:#4e6955;font-size:13px;}
@@ -214,6 +209,11 @@ body.app-body.ns-shell-v1 #main .ns-needs :is(.ns-needs-choice,.ns-needs-theme){
  body.app-body.ns-shell-v1 #main .ns-needs-theme-grid{grid-template-columns:1fr;}
  body.app-body.ns-shell-v1 #main .ns-needs-theme{min-height:84px;padding:14px;}
 }
-html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-needs :is(.ns-needs-theme,.ns-needs-domain-chips button,.ns-needs-more){background:#31503b;color:#f0f7ee;border-color:#6a8a6d;}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-needs :is(.ns-needs-theme,.ns-needs-more){background:#31503b;color:#f0f7ee;border-color:#6a8a6d;}
 html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-needs :is(.ns-needs-theme small,.ns-needs-theme em,.ns-needs-topic-heading p){color:#cfe2d0;}
 html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-needs :is(.ns-needs-back-themes,.ns-needs-topic-heading h3){color:#edf7eb;}
+
+/* Keep the theme cards balanced in height rather than magnifying the last card. */
+body.app-body.ns-shell-v1 #main .ns-needs-theme-grid{align-items:stretch;}
+body.app-body.ns-shell-v1 #main .ns-needs-theme{height:100%;min-height:100px;}
+body.app-body.ns-shell-v1 #main .ns-needs-theme em{white-space:nowrap;}
