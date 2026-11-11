@@ -42,7 +42,7 @@ test('search across all themes still finds identity, disability, racism and heal
  }
  await filter.fill('racial discrimination');
  await page.getByRole('link',{name:/I am experiencing racism/}).click();
- await expect(page).toHaveURL(/#workbook-topic\\/racial-discrimination$/);
+ await expect(page).toHaveURL(/#workbook-topic\/racial-discrimination$/);
  await expect(page.locator('.ns-pick-understand')).toBeVisible();
  await expect(page.locator('.ns-pick-editorial-status')).toContainText('Editorial overview');
 });
@@ -66,6 +66,6 @@ test('other starting points retain relevant cross-listed themes and direct sugge
 });
 test('old Atlas URLs redirect into the current themed navigator',async({page})=>{
  await page.goto('/index.html#navigate/atlas/area/neuro');
- await expect(page).toHaveURL(/#navigate\\/learn$/);
+ await expect(page).toHaveURL(/#navigate\/learn$/);
  await expect(page.locator('[data-needs-theme="health"]')).toBeVisible();
 });
