@@ -108,28 +108,54 @@ function originalCard(g,lane,method,index){
   worksheet:kind==='environment'?'environment':kind==='cognitive'?'thought':kind==='acceptance'?'values':kind==='dbt'?'ground':kind==='support'?'request':'step',
   why:method.why,steps:method.steps,caution:method.caution||'',refs:method.refs||[],source:'guide',tool:lane.tool,mode:g.modeId};
 }
+// Different problems should offer different options, not the same unrelated
+// 14-card list. These are editorial choices, never efficacy rankings.
+const DOMAIN_EXTRAS=Object.freeze({
+ feel:['tiny-pause','gentle-orientation','name-a-need','kind-countervoice','values-step','reduce-one-input','request-help','recovery-window','cloud-watching'],
+ think:['separate-facts','reality-control','tiny-pause','values-step','name-a-need','plan-if-then','reduce-one-input','request-help','recovery-window','kind-countervoice'],
+ act:['micro-first-step','plan-if-then','reduce-one-input','reality-control','request-help','values-step','recovery-window','name-a-need','tiny-pause','separate-facts'],
+ focus:['micro-first-step','plan-if-then','reduce-one-input','recovery-window','reality-control','request-help','tiny-pause','name-a-need','values-step'],
+ relate:['relationship-check','request-help','name-a-need','reality-control','kind-countervoice','values-step','tiny-pause','reduce-one-input','plan-if-then'],
+ body:['reduce-one-input','recovery-window','request-help','name-a-need','tiny-pause','values-step','plan-if-then','reality-control'],
+ identity:['values-step','name-a-need','request-help','kind-countervoice','reality-control','tiny-pause','reduce-one-input','relationship-check'],
+ work:['reduce-one-input','plan-if-then','request-help','recovery-window','micro-first-step','name-a-need','reality-control','tiny-pause'],
+ experiences:['name-a-need','reduce-one-input','request-help','recovery-window','tiny-pause','values-step','kind-countervoice'],
+ change:['values-step','name-a-need','plan-if-then','request-help','tiny-pause','kind-countervoice','recovery-window','reduce-one-input']
+});
+const DEFAULT_EXTRAS=['name-a-need','reduce-one-input','request-help','tiny-pause','values-step','kind-countervoice','recovery-window','plan-if-then','reality-control'];
+const hashTopic=id=>[...String(id||'')].reduce((sum,char)=>((sum*31+char.charCodeAt(0))>>>0),7);
 function suitableExtras(g){
- // New inclusive routes are navigation guides, not evidence for a full clinical intervention catalogue.
- // Offer fewer voluntary context/support choices, and never encourage direct confrontation for harm.
- if(g.contextFirst){
-  const allowed=g.supportFirst?['tiny-pause','reduce-one-input','name-a-need']:['tiny-pause','reduce-one-input','name-a-need','request-help'];
-  return supplementary.filter(c=>allowed.includes(c.id));
- }
- // Not every low-demand exercise is appropriate for every physical or cognitive problem.
- const isChecking=/checking|ritual|reassurance/.test(g.id);
+ const isChecking=/checking|ritual|reassurance|compuls|ocd/.test(g.id);
  const isPanic=/panic/.test(g.id);
  const isSleep=/sleep|insomnia/.test(g.id);
  const isDepleted=/deplet|drain|fatigue|exhaustion/.test(g.id);
  const isTrauma=/trauma|event|grief/.test(g.id);
- return supplementary.filter(c=>{
+ const allowed=c=>{
   if(isChecking&&['track-context','reality-control','separate-facts','gentle-orientation'].includes(c.id))return false;
-  if(isPanic&&c.id==='track-context')return false;
-  if(isSleep&&c.id==='track-context')return false;
+  if((isPanic||isSleep||isTrauma)&&c.id==='track-context')return false;
   if(isDepleted&&c.id==='micro-first-step')return false;
-  if(isTrauma&&c.id==='track-context')return false;
   if(g.modeId==='relate'&&c.id==='relationship-check'&&g.optionId==='unsafe')return false;
   return true;
- });
+ };
+ if(g.contextFirst){
+  // Context-first identity, discrimination, disability and safety-related
+  // routes are not assigned a large pseudo-specific treatment package.
+  const preferred=g.supportFirst?['name-a-need','reduce-one-input','tiny-pause']:
+   ['name-a-need','reduce-one-input','request-help',
+    ...(g.topicDomain==='lgbtq'||g.topicDomain==='growth'?['values-step']:['tiny-pause'])];
+  return supplementary.filter(c=>preferred.includes(c.id)&&allowed(c));
+ }
+ if(g.kind==='topic'){
+  const preferred=[...new Set([...(DOMAIN_EXTRAS[g.topicDomain]||DEFAULT_EXTRAS),...DEFAULT_EXTRAS])]
+   .filter(id=>supplementary.some(c=>c.id===id&&allowed(c)));
+  // Preserve several high-relevance choices, rotate the remainder by
+  // canonical topic ID to avoid identical decks across a large catalogue.
+  const core=preferred.slice(0,5),tail=preferred.slice(5);
+  const rotate=tail.length?hashTopic(g.optionId)%tail.length:0;
+  const selection=[...core,...tail.slice(rotate),...tail.slice(0,rotate)].slice(0,8);
+  return selection.map(id=>supplementary.find(c=>c.id===id)).filter(Boolean);
+ }
+ return supplementary.filter(allowed);
 }
 export function deckForWorkbook(g){
  if(!g||g.safetyFirst)return [];
