@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v169-balanced-navigator-themes';
+const CACHE = 'nobodyssimple-release-v170-topic-reading';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -26,7 +26,7 @@ const INSTALL_OPTIONAL = [
   'ns-steady-guide-utils.mjs','ns-steady-guides-a.mjs','ns-steady-guides-b.mjs','ns-steady-guidebook.mjs','ns-steady-guidebook.css',
   'ns-pathway-content.mjs','ns-pathway-guidebook.mjs',
   'ns-integrated-workbook-data.mjs','ns-integrated-workbook.mjs','ns-integrated-workbook.css',
-  'ns-intervention-cards.mjs','ns-intervention-chooser.mjs','ns-intervention-chooser.css',
+  'ns-intervention-cards.mjs','ns-intervention-chooser.mjs', 'ns-topic-reading-data.mjs', 'ns-topic-reading-ui.mjs','ns-intervention-chooser.css',
   'ns-regulation-games-data.mjs','ns-regulation-games.mjs','ns-regulation-games.css',
 ];
 const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
