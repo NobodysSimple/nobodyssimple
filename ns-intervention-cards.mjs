@@ -14,6 +14,36 @@ const KINDS=Object.freeze({
  planning:{label:'Planning',tone:'sand',group:'action'}
 });
 export const interventionKinds=KINDS;
+export const APPROACH_FAMILIES=Object.freeze([
+ {id:'practical',label:'Practical changes',hint:'Environment, demands and access',kinds:['environment']},
+ {id:'action',label:'Behaviour & planning',hint:'Experiments, actions and routines',kinds:['behaviour','planning']},
+ {id:'thinking',label:'CBT & thinking',hint:'Thoughts, evidence and patterns',kinds:['cognitive','observe']},
+ {id:'regulation',label:'DBT & grounding',hint:'Optional distress-tolerance skills',kinds:['dbt']},
+ {id:'acceptance',label:'ACT & values',hint:'Acceptance and chosen directions',kinds:['acceptance']},
+ {id:'compassion',label:'Self-compassion',hint:'A fairer response to yourself',kinds:['compassion']},
+ {id:'support',label:'Support & connection',hint:'People, services and practical help',kinds:['support']}
+].map(f=>Object.freeze({...f,kinds:Object.freeze(f.kinds)})));
+export const familyForCard=card=>APPROACH_FAMILIES.find(f=>f.kinds.includes(card.kind))?.id||'practical';
+export const groupInterventions=cards=>APPROACH_FAMILIES.map(f=>({
+ ...f,cards:cards.filter(c=>familyForCard(c)===f.id)
+})).filter(f=>f.cards.length);
+export const shortInterventionTitle=(card)=>{
+ const known={
+ 'tiny-pause':'Pause for a moment','reduce-one-input':'Change one thing','name-a-need':'Name a need',
+ 'micro-first-step':'Take a first step','separate-facts':'Check the evidence',
+ 'gentle-orientation':'Try grounding','kind-countervoice':'Answer self-criticism',
+ 'values-step':'Choose by your values','reality-control':'What can I change?',
+ 'request-help':'Ask for help','track-context':'Notice a pattern',
+ 'plan-if-then':'Make an if–then plan','recovery-window':'Protect rest time',
+ 'relationship-check':'Prepare a safe request'
+ };
+ if(known[card.id])return known[card.id];
+ const plain=String(card.title||'Explore an approach').replace(/\\s+/g,' ').trim();
+ if(plain.length<=48)return plain;
+ const head=plain.slice(0,47),breakAt=head.lastIndexOf(' ');
+ return head.slice(0,breakAt>=28?breakAt:47)+'…';
+};
+
 const supplementary=[
  {id:'tiny-pause',title:'Give yourself a permission-to-pause moment',kind:'acceptance',time:'now',effort:'light',duration:'1–2 min',worksheet:'pause',
   why:'A brief pause can make space for a response without requiring an immediate change in emotion.',
@@ -109,8 +139,11 @@ export function deckForWorkbook(g){
   refs:[],tool:null}));
  return [...original,...extras].map(c=>Object.freeze({
   ...c,kindLabel:KINDS[c.kind].label,tone:KINDS[c.kind].tone,group:KINDS[c.kind].group,
+  family:familyForCard(c),shortTitle:shortInterventionTitle(c),
   steps:Object.freeze([...c.steps])
- }));
+ })).sort((a,b)=>
+  APPROACH_FAMILIES.findIndex(f=>f.id===a.family)-APPROACH_FAMILIES.findIndex(f=>f.id===b.family) ||
+  Number(a.source==='general')-Number(b.source==='general'));
 }
 export const cardFilters=Object.freeze([
  {id:'all',label:'All approaches'},
