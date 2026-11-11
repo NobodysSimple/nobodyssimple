@@ -26,10 +26,10 @@ export function renderTopicQuickNav(g){
  if(g.kind!=='topic'||g.safetyFirst)return '';
  return '<nav class="ns-topic-quick-nav" aria-label="On this guide">'+
   '<span class="ns-topic-nav-label">Go straight to</span>'+
-  '<a href="#ns-topic-understand">Understand</a>'+
-  '<a href="#ns-topic-profile">Explore</a>'+
-  '<a href="#ns-pick-chooser">Try something</a>'+
-  '<a href="#ns-topic-answers">More answers</a>'+
+  '<button type="button" data-topic-jump="ns-topic-understand">Understand</button>'+
+  '<button type="button" data-topic-jump="ns-topic-profile">Explore</button>'+
+  '<button type="button" data-topic-jump="ns-pick-chooser">Try something</button>'+
+  '<button type="button" data-topic-jump="ns-topic-answers">More answers</button>'+
   '</nav>';
 }
 export function renderTopicReadingStart(g){
@@ -43,7 +43,7 @@ export function renderTopicReadingStart(g){
  const core=m.core;
  const profile=m.profile.length?
   '<section class="ns-topic-section ns-topic-profile-section" id="ns-topic-profile" aria-labelledby="ns-topic-profile-title">'+
-   '<p class="ns-topic-kicker">PART 02 · EXPLORE</p><h2 id="ns-topic-profile-title">Which parts feel familiar?</h2>'+
+   '<p class="ns-topic-kicker">OPTIONAL CHECK-IN</p><h2 id="ns-topic-profile-title">Which parts feel familiar?</h2>'+
    '<p class="ns-topic-helper">An optional personal map—not a diagnostic checklist or a score. Skip it if looking inward feels unhelpful right now.</p>'+
    '<fieldset data-topic-profile class="ns-topic-profile-options"><legend>'+e(m.profileQuestion)+'</legend>'+
    m.profile.map(item=>'<label class="ns-topic-check"><input type="checkbox" data-topic-pattern="'+e(item.id)+'" value="'+e(item.label)+'">'+
@@ -62,10 +62,11 @@ export function renderTopicReadingStart(g){
  const caution=g.medical?'<p class="ns-topic-medical-note">Physical and medical needs matter. New, severe or changing symptoms deserve appropriate healthcare assessment.</p>':'';
  return '<div class="ns-topic-reading" data-topic-reading>'+
   '<section class="ns-topic-section ns-topic-opening ns-pick-understand" id="ns-topic-understand">'+
-    '<p class="ns-topic-kicker">PART 01 · UNDERSTAND</p>'+
+    '<p class="ns-topic-kicker">START HERE</p>'+
     '<h2>Does any of this sound familiar?</h2>'+
     '<ul class="ns-topic-recognition">'+recognition.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul>'+
     '<p class="ns-topic-quiet-note">You do not have to recognise every example, or agree with this description, to explore your situation.</p>'+
+   (g.supportFirst?'<p class="ns-topic-medical-note">Your safety and privacy come first. You do not need to write about harm, confront someone or try an exercise. Confidential practical support may be the safest next step.</p>':'')+
     '<div class="ns-topic-reframe">'+heading('THE KEY IDEA','What might be happening?')+
      '<p class="ns-pick-definition">'+e(g.what)+'</p>'+
      '<p class="ns-topic-key-line">'+e(m.reframe)+'</p>'+
@@ -84,12 +85,12 @@ export function renderTopicReadingStart(g){
    '<p>Not every pattern applies to you. Some problems are caused or sustained by real circumstances that need changing, not by your reaction to them.</p></div></details>'+
   '</section>'+
   '<section class="ns-topic-section ns-topic-framework" id="ns-topic-framework">'+
-   heading('PART 03 · YOUR OPTIONS',frameworkTitle)+
+   heading('WAYS FORWARD',frameworkTitle)+
    '<p class="ns-topic-helper">These are directions to consider, not stages you must finish in order. Choose what is relevant and safe.</p>'+
    '<ol class="ns-topic-steps">'+m.steps.map((x,i)=>'<li><span class="ns-topic-index">'+String(i+1).padStart(2,'0')+'</span>'+
     '<div><strong>'+e(x.label)+'</strong><p>'+e(x.detail)+'</p></div></li>').join('')+'</ol>'+
    '<p class="ns-topic-bridge">You can stop at understanding, or continue to the existing activities below.</p>'+
-   '<a class="ns-topic-to-tools" href="#ns-pick-chooser">Explore optional tools <span aria-hidden="true">↓</span></a>'+
+   '<button type="button" class="ns-topic-to-tools" data-topic-jump="ns-pick-chooser">Explore optional tools <span aria-hidden="true">↓</span></button>'+
   '</section></div>';
 }
 export function renderTopicReadingEnd(g){
@@ -97,7 +98,7 @@ export function renderTopicReadingEnd(g){
  if(!m||g.safetyFirst)return '';
  return '<div class="ns-topic-reading ns-topic-reading-end" id="ns-topic-answers">'+
   '<section class="ns-topic-section ns-topic-progress" id="ns-topic-progress">'+
-   heading('PART 05 · NOTICE CHANGE','What might progress look like?')+
+   heading('LOOKING AHEAD','What might progress look like?')+
    '<p class="ns-topic-helper">There is no expected timeline or mandatory emotional outcome. Progress can also mean better support, access or safety.</p>'+
    list(m.progress)+
    '<p class="ns-topic-quiet-note">The aim is not to monitor yourself constantly or prove that you are improving every day.</p>'+
@@ -141,5 +142,22 @@ export function bindTopicProfile(surface){
  surface.querySelector('[data-topic-clear]')?.addEventListener('click',()=>{
   fieldset.querySelectorAll('[data-topic-pattern]').forEach(c=>{c.checked=false;});
   update();
+ });
+}
+
+/* Hash URLs are used by the app router. Local guide jumps therefore use
+ * buttons: fragment links would replace the workbook route and lose the page.
+ */
+export function bindTopicJumps(surface){
+ surface.addEventListener('click',event=>{
+  const button=event.target.closest?.('[data-topic-jump]');
+  if(!button)return;
+  const id=button.dataset.topicJump;
+  if(!['ns-topic-understand','ns-topic-profile','ns-pick-chooser','ns-topic-answers'].includes(id))return;
+  const section=surface.querySelector('#'+id);
+  if(!section)return;
+  section.scrollIntoView({block:'start',behavior:'instant'});
+  const heading=section.querySelector('h2,h3');
+  if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
  });
 }
