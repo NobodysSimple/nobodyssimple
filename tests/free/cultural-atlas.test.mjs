@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {WORLD_COUNTRY_DATA,geoPath,featureBounds,countryViewBox,normaliseCountryData,normaliseRegions,regionArticles} from '../../ns-cultural-atlas.mjs';
 import {CULTURE_ARTICLES,articlesForCountry,articleCountries,articleById} from '../../ns-cultural-atlas-articles.mjs';
+import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
+import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
 
 const source=path=>readFileSync(new URL('../../'+path,import.meta.url),'utf8');
 const world=JSON.parse(source(WORLD_COUNTRY_DATA));
@@ -21,8 +23,8 @@ test('the atlas includes a selectable world map with small states and territorie
  }
 });
 test('cultural readings use documentary sources and distinguish place from a psychological claim',()=>{
- assert.ok(CULTURE_ARTICLES.length>=47);
- assert.ok(articleCountries.length>=36);
+ assert.ok(CULTURE_ARTICLES.length>=67);
+ assert.ok(articleCountries.length>=50);
  for(const a of CULTURE_ARTICLES){
   assert.ok(countries.some(c=>c.code===a.country),a.id+' country missing');
   assert.ok(a.body.length>=3&&a.body.every(p=>p.length>100),a.id+' missing article');
@@ -43,7 +45,17 @@ test('cultural readings use documentary sources and distinguish place from a psy
  assert.equal(articlesForCountry('MEX').length,2);
  assert.equal(articlesForCountry('MAR').length,2);
  assert.equal(articleById('tango-argentina').source.url,articleById('tango-uruguay').source.url,'transnational heritage has a shared documentary source');
- assert.equal(articlesForCountry('USA').length,0,'do not fabricate traditions for countries not yet covered');
+ assert.ok(articlesForCountry('USA').length>=2);
+ assert.equal(regionArticles('GBR','Scotland')[0].id,'gaelic-stories');
+ assert.equal(regionArticles('GBR','Cornwall')[0].id,'cornish-language');
+ assert.equal(regionArticles('GBR','Wales')[0].id,'welsh-eisteddfod');
+ assert.equal(regionArticles('USA','Oklahoma')[0].id,'cherokee-language');
+ assert.equal(regionArticles('USA','Louisiana')[0].id,'new-orleans-jazz');
+ assert.equal(regionArticles('AUS','Victoria')[0].id,'budj-bim');
+ for(const id of ['matariki','vanuatu-sand','tonga-lakalaka','kankurang-senegal','kankurang-gambia']){
+  assert.ok(articleById(id),id+' must be published');
+ }
+ assert.equal(articleById('cherokee-language').source.label,'Cherokee Nation');
 });
 test('administrative regions have independent clickable geometries',()=>{
  const regionData={type:'FeatureCollection',features:[
@@ -65,4 +77,55 @@ test('culture discovery is at the bottom of the homepage, not a separate tab',()
  assert.ok(index.includes('ns-cultural-atlas.css'));
  assert.ok(sw.includes('ns-cultural-atlas.mjs'));
  assert.ok(!sw.includes("'data/culture-world-countries.geojson'"),'country polygons should lazy-load');
+});
+
+test('map zoom is continuous but remains inside the world, with deterministic pan and reset',()=>{
+ const near=zoomAtlasView(WORLD_VIEW,4,.25,.75);
+ assert.equal(near.w,240);assert.equal(near.h,120);
+ assert.equal(near.x,180);assert.equal(near.y,270);
+ const moved=panAtlasView(near,20,-45);
+ assert.equal(moved.x,200);assert.equal(moved.y,225);
+ assert.deepEqual(zoomAtlasView(WORLD_VIEW,.001),WORLD_VIEW);
+ assert.equal(zoomAtlasView(WORLD_VIEW,999999).w,8);
+ assert.deepEqual(clampAtlasView({x:-10000,y:10000,w:960}),WORLD_VIEW);
+ const london=fitAtlasBounds([475,135,476,136]);
+ assert.ok(london.w>=8&&london.w<=20);
+ assert.equal(atlasViewDegrees(WORLD_VIEW)[0],-180);
+});
+test('subregions are geographically filtered instead of treating every district as part of the chosen state',()=>{
+ const mk=(name,x,y)=>({name,geometry:{type:'Polygon',coordinates:[[[x,y],[x+1,y],[x+1,y+1],[x,y+1],[x,y]]]}});
+ const england=mk('England',-4,50),cornwall=mk('Cornwall',-4,50),scottishDistrict=mk('Scotland county',-5,57);
+ assert.equal(geometryContains(england.geometry,[-3.5,50.5]),true);
+ assert.deepEqual(filterAdministrativeChildren([cornwall,scottishDistrict],england).map(x=>x.name),['Cornwall']);
+});
+test('the US Indigenous layer uses a geographically bounded 2026 Census service and distinguishes partial results',async()=>{
+ let url='';
+ const fetcher=async input=>{
+  url=input;
+  return {ok:true,json:async()=>({type:'FeatureCollection',features:[{
+   type:'Feature',properties:{NAME:'Example reservation'},geometry:{type:'Polygon',coordinates:[[[-111,35],[-110,35],[-110,36],[-111,35]]]}}
+  }]})};
+ };
+ await assert.rejects(fetchUSIndigenousAreas(fetcher,WORLD_VIEW),/Zoom closer/);
+ const result=await fetchUSIndigenousAreas(fetcher,{x:180,y:110,w:90,h:45});
+ assert.equal(result.features.length,1);
+ assert.ok(url.startsWith('https://tigerweb.geo.census.gov/'));
+ assert.ok(url.includes('geometryType=esriGeometryEnvelope'));
+ assert.ok(url.includes('outSR=4326'));
+});
+test('cities require an explicit search term, while geography supports ADM2 layers',async()=>{
+ const calls=[];
+ const fetcher=async url=>{
+  calls.push(url);
+  if(url.includes('/ADM2/'))return {ok:true,json:async()=>({simplifiedGeometryGeoJSON:'https://example.test/local.geojson'})};
+  if(url.includes('local.geojson'))return {ok:true,json:async()=>({type:'FeatureCollection',features:[]})};
+  return {ok:true,json:async()=>[{place_id:5,display_name:'Cornwall, United Kingdom',lon:'-4.8',lat:'50.2'}]};
+ };
+ await assert.rejects(searchMapPlaces(fetcher,'UK',{name:'United Kingdom'}),/at least 3 characters/);
+ const places=await searchMapPlaces(fetcher,'Cornwall',{name:'United Kingdom'});
+ assert.equal(places[0].lon,-4.8);
+ assert.ok(calls[0].includes('nominatim.openstreetmap.org/search'));
+ const {data}=await fetchAdministrativeLayer(fetcher,'GBR','ADM2');
+ assert.equal(data.type,'FeatureCollection');
+ assert.ok(calls.some(url=>url.includes('gbOpen/GBR/ADM2/')));
 });
