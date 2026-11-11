@@ -145,7 +145,7 @@ function wireModeFilter(root,mode){
    'Showing '+Math.min(limit,sorted.length)+' of '+sorted.length+' topics':
    'No matching topics';
  };
- root.addEventListener('click',event=>{
+ root.addEventListener?.('click',event=>{
   const themeButton=event.target.closest('[data-needs-theme]');
   if(themeButton){theme=themeButton.dataset.needsTheme;domain='';limit=NAV_TOPIC_PAGE_SIZE;render();
    panel.querySelector('[data-needs-topic-heading]')?.scrollIntoView?.({block:'nearest',behavior:'instant'});return;}
@@ -157,7 +157,7 @@ function wireModeFilter(root,mode){
   }
   if(event.target.closest('[data-needs-more]')){limit+=NAV_TOPIC_PAGE_SIZE;render();}
  });
- filter.addEventListener('input',()=>{limit=NAV_TOPIC_PAGE_SIZE;render();});
+ filter.addEventListener?.('input',()=>{limit=NAV_TOPIC_PAGE_SIZE;render();});
  render();
 }
 export function renderNeedsConsole(root,parts=[]){
