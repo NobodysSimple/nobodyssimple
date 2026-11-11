@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {NEEDS_MODES} from '../../ns-needs-catalog.mjs';
 import {atlasProblemIndex,isSafetyPriority} from '../../ns-atlas-core.mjs';
 import {workbookForChoice,workbookForTopic} from '../../ns-integrated-workbook-data.mjs';
-import {REGULATION_GAMES,GAME_BY_ID,GAME_FILTERS,gamesForGuide,gamesForFilter,gameFamilyForGuide} from '../../ns-regulation-games-data.mjs';
+import {REGULATION_GAMES,GAME_BY_ID,GAME_FILTERS,gamesForGuide,gamesForFilter,gameFamilyForGuide,topicLensGame} from '../../ns-regulation-games-data.mjs';
 
 const source=path=>readFileSync(path,'utf8');
 test('twelve distinct original no-writing games provide a playable and useful choice of activity',()=>{
@@ -61,6 +61,7 @@ test('every atlas topic has a safe no-writing game selection or human-support-fi
   }
  }
  assert.ok(noGames>=5);
+ assert.ok(gamesForGuide(workbookForTopic('procrastination')).length<=6);
 });
 test('regulation games vary by situation and avoid potentially aggravating options',()=>{
  const get=id=>{const g=workbookForTopic(id);assert.ok(g,'Expected real atlas topic '+id);return gamesForGuide(g).map(x=>x.id);};
@@ -79,8 +80,15 @@ test('regulation games vary by situation and avoid potentially aggravating optio
  assert.equal(gameFamilyForGuide(workbookForTopic('procrastination')),'action');
  for(const f of GAME_FILTERS){
   const selected=gamesForFilter(gamesForGuide(workbookForTopic('procrastination')),f.id);
-  assert.ok(selected.length>0,f.id+' should provide options for action-related difficulties');
+  assert.ok(selected.every(g=>f.id==='all'||g.type===f.id),f.id+' should filter correctly');
  }
+ const lens=topicLensGame(workbookForTopic('procrastination'));
+ assert.equal(lens.id,'topic-lens');
+ assert.equal(lens.items.length,3);
+ assert.equal(topicLensGame(workbookForTopic('sexual-coercion')),null);
+ assert.notDeepEqual(topicLensGame(workbookForTopic('insomnia')).items,topicLensGame(workbookForTopic('procrastination')).items);
+ assert.ok(gamesForGuide(workbookForTopic('insomnia')).some(g=>g.id==='topic-lens'));
+
 });
 test('game scroller is a distinct no-writing section below the unchanged worksheet and never saves or submits',()=>{
  const chooser=source('ns-intervention-chooser.mjs'),ui=source('ns-regulation-games.mjs');
