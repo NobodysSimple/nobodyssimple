@@ -374,7 +374,7 @@ body.app-body.ns-shell-v1 #main .ns-pick-filters button{min-height:40px;}
 body.app-body.ns-shell-v1 #main .ns-pick-refine{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#58705b;margin:6px 0 17px;}
 body.app-body.ns-shell-v1 #main .ns-pick-refine select{min-height:40px;border:1px solid #b9d0bb;background:#fffef9;color:#31553e;border-radius:10px;padding:7px 12px;max-width:240px;}
 body.app-body.ns-shell-v1 #main .ns-pick-track{min-height:208px;gap:22px;align-items:stretch;padding-bottom:11px;}
-body.app-body.ns-shell-v1 #main .ns-pick-family{flex:0 0 auto;max-width:100%;min-width:0;scroll-snap-align:start;}
+body.app-body.ns-shell-v1 #main .ns-pick-family{flex:0 0 auto;width:max-content;max-width:none;min-width:0;scroll-snap-align:start;}
 body.app-body.ns-shell-v1 #main .ns-pick-family-heading{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;padding:2px 0 12px;}
 body.app-body.ns-shell-v1 #main .ns-pick-family-heading strong{font-size:13px;color:#315941;}
 body.app-body.ns-shell-v1 #main .ns-pick-family-heading small{font-size:11px;color:#587160;}
