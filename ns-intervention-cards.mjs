@@ -157,11 +157,31 @@ function suitableExtras(g){
  }
  return supplementary.filter(allowed);
 }
+// One authored-from-guide contextual reflection per named topic. Its content
+// changes with the selected topic; this is not an individually validated therapy.
+function topicContextCard(g){
+ if(g.kind!=='topic'||g.safetyFirst)return null;
+ const topic=String(g.title||'this experience').trim();
+ const clue=String(g.contributors?.[0]||'The situation, available resources and other people may matter.').trim();
+ const purpose=String(Array.isArray(g.goals)?g.goals[0]:g.progress||'Notice what options fit your needs.').trim();
+ return {
+  id:'topic-context-'+g.optionId,
+  title:'Explore '+topic+' in your own context',kind:'observe',time:'short',effort:'light',
+  duration:'A few minutes',worksheet:'needs',
+  why:'Use this topic’s own questions as a starting point. A possible influence to consider: '+clue.slice(0,190),
+  steps:[
+   'Describe what '+topic.toLowerCase()+' means in this particular situation, without assuming a cause or a diagnosis.',
+   'Consider whether this factor matters here: '+clue.slice(0,220),
+   'Explore whether this direction would be relevant and safe: '+purpose.slice(0,220)
+  ],
+  caution:'Topic-specific editorial reflection only, not a validated treatment. You may decide that no change, disclosure or self-exercise is appropriate.'
+ };
+}
 export function deckForWorkbook(g){
  if(!g||g.safetyFirst)return [];
  const original=g.lanes.flatMap(lane=>lane.methods.map((m,i)=>originalCard(g,lane,m,i)));
- const extras=suitableExtras(g).map(c=>({...c,source:'general',
-  caution:'General optional skill, not a topic-specific treatment. Skip if unsuitable, unsafe or likely to increase compulsive checking or distress.',
+ const extras=[...suitableExtras(g),...(topicContextCard(g)?[topicContextCard(g)]:[])].map(c=>({...c,source:'general',
+  caution:c.caution||'General optional skill, not a topic-specific treatment. Skip if unsuitable, unsafe or likely to increase compulsive checking or distress.',
   refs:[],tool:null}));
  return [...original,...extras].map(c=>Object.freeze({
   ...c,kindLabel:KINDS[c.kind].label,tone:KINDS[c.kind].tone,group:KINDS[c.kind].group,
