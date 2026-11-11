@@ -643,3 +643,20 @@ html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-pick-topic-layout .ns-
 @media(prefers-reduced-motion:reduce){
  body.app-body.ns-shell-v1 #main .ns-pick-topic-layout *{transition:none!important;scroll-behavior:auto!important;}
 }
+
+
+/* These are in-page buttons, not hash links: retain the current workbook route. */
+body.app-body.ns-shell-v1 #main .ns-topic-quick-nav button{
+ appearance:none;display:inline-flex;align-items:center;min-height:39px;
+ padding:7px 0;border:0;border-bottom:2px solid transparent;
+ color:#2e6c4c;background:transparent;
+ font:730 12px/1.25 system-ui,sans-serif;cursor:pointer;
+}
+body.app-body.ns-shell-v1 #main .ns-topic-quick-nav button:hover{border-bottom-color:#6a9875;}
+body.app-body.ns-shell-v1 #main .ns-topic-reading button.ns-topic-to-tools{
+ appearance:none;border:0;border-bottom:1px solid #619879;background:transparent;
+ min-height:44px;padding:5px 0;cursor:pointer;
+ color:#2d6e48;font:740 13px/1.4 system-ui,sans-serif;
+ display:inline-flex;align-items:center;gap:12px;
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-pick-topic-layout :is(.ns-topic-quick-nav button,.ns-topic-reading button.ns-topic-to-tools){color:#d1edd4;}
