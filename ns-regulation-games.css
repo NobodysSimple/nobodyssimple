@@ -377,3 +377,16 @@ body.app-body.ns-shell-v1 #main .ns-game-card-icon{height:39px;width:39px;font-s
 body.app-body.ns-shell-v1 #main .ns-game-card h3{font:760 16px/1.26 system-ui,sans-serif;}
 body.app-body.ns-shell-v1 #main .ns-game-card p{font-size:12px;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 body.app-body.ns-shell-v1 #main .ns-game-card-category{margin:7px 0 4px;}
+
+
+body.app-body.ns-shell-v1 #main .ns-game-topic-lens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;}
+body.app-body.ns-shell-v1 #main .ns-game-topic-lens button{display:flex;justify-content:space-between;align-items:center;gap:8px;
+ border:1px solid #bfd3c0;border-radius:12px;min-height:78px;padding:12px;background:#f0f6ec;
+ color:#31583f;text-align:left;cursor:pointer;font:750 13px/1.35 system-ui,sans-serif;}
+body.app-body.ns-shell-v1 #main .ns-game-topic-lens button[aria-pressed=true]{background:#dcecdc;border-color:#53856a;}
+body.app-body.ns-shell-v1 #main .ns-game-lens-result{background:#f9fbf5;border-left:3px solid #7aa389;
+ padding:15px;margin:12px 0 16px;border-radius:0 12px 12px 0;color:#32533e;font-size:14px;line-height:1.6;min-height:72px;}
+@media(max-width:580px){body.app-body.ns-shell-v1 #main .ns-game-topic-lens{grid-template-columns:1fr;}
+ body.app-body.ns-shell-v1 #main .ns-game-topic-lens button{min-height:49px;}}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-game-topic-lens button,
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-game-lens-result{background:#2c4939;color:#e9f3e7;border-color:#729a7a;}
