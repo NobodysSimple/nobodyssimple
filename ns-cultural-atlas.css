@@ -126,3 +126,7 @@ html[data-theme=dark] .ns-culture-atlas :is(.ns-culture-drill,.ns-culture-indige
 html[data-theme=dark] .ns-culture-atlas :is(.ns-culture-place-search input){background:#2a4939;border-color:#668b70;color:#fff}
 html[data-theme=dark] .ns-culture-atlas :is(.ns-culture-drill p,.ns-culture-indigenous-control p,.ns-culture-place-search p){color:#e3f1e1}
 @media(max-width:540px){.ns-culture-zoom{top:8px;right:8px;gap:4px}.ns-culture-atlas .ns-culture-zoom button{min-width:40px;min-height:40px}}
+
+.ns-culture-indigenous-control label[data-culture-indigenous-list-wrap]{display:grid;flex-basis:100%;gap:6px;font-size:.79rem}
+.ns-culture-indigenous-control label[data-culture-indigenous-list-wrap][hidden]{display:none}
+.ns-culture-indigenous-control select{min-height:44px;max-width:100%;font-size:.82rem}
