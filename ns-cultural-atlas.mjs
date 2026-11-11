@@ -249,7 +249,8 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
    }
    if(token!==subGeneration||removed)return;
    const all=normaliseRegions(data);
-   subregions=filterAdministrativeChildren(all,selectedRegion);
+   // Census counties are already filtered by exact state FIPS, so do not discard coastal/island counties by approximated parent geometry.
+   subregions=selectedCountry.code==='USA'?all:filterAdministrativeChildren(all,selectedRegion);
    subError=subregions.length?'':'No matching second-level areas found in this dataset.';
   }catch(err){
    if(token!==subGeneration||removed)return;
