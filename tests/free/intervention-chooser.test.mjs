@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {NEEDS_MODES} from '../../ns-needs-catalog.mjs';
 import {atlasProblemIndex} from '../../ns-atlas-core.mjs';
 import {workbookForChoice,workbookForTopic} from '../../ns-integrated-workbook-data.mjs';
-import {deckForWorkbook,filterCards,cardFilters,interventionKinds,supplementaryInterventions} from '../../ns-intervention-cards.mjs';
+import {deckForWorkbook,filterCards,cardFilters,interventionKinds,supplementaryInterventions,APPROACH_FAMILIES,groupInterventions,familyForCard} from '../../ns-intervention-cards.mjs';
 
 const kinds=new Set(Object.keys(interventionKinds));
 test('all 49 retained choice pages have a usable varied intervention deck or safety-first instructions',()=>{
@@ -105,4 +105,25 @@ test('renderer loads one selected task after the explanation; no mandatory score
  assert.match(chooser,/showModal\(/);
  assert.match(index,/ns-intervention-chooser.css/);
  assert.doesNotMatch(chooser,/localStorage|sessionStorage|sendBeacon|fetch\(/);
+});
+
+test('every deck keeps related methods together and uses short display names',()=>{
+ const guides=[workbookForChoice('regulate','overwhelmed'),workbookForTopic('procrastination'),workbookForTopic('insomnia'),
+  workbookForTopic('gender-identity-exploration'),workbookForTopic('racial-discrimination')];
+ assert.equal(APPROACH_FAMILIES.length,7);
+ const kindSet=APPROACH_FAMILIES.flatMap(f=>f.kinds);
+ assert.equal(new Set(kindSet).size,kindSet.length);
+ for(const guide of guides){
+  const cards=deckForWorkbook(guide);
+  const ordered=groupInterventions(cards);
+  assert.deepEqual(ordered.flatMap(g=>g.cards.map(c=>c.id)),cards.map(c=>c.id),guide.id+' intersperses families');
+  assert.ok(cards.every(c=>c.family===familyForCard(c)),guide.id);
+  assert.ok(cards.every(c=>c.shortTitle.length<=49),guide.id+' card name too long');
+  for(const group of ordered){
+   assert.ok(group.cards.every(c=>c.family===group.id));
+  }
+ }
+ const procrastination=deckForWorkbook(workbookForTopic('procrastination')).map(c=>c.id);
+ const insomnia=deckForWorkbook(workbookForTopic('insomnia')).map(c=>c.id);
+ assert.notDeepEqual(procrastination,insomnia,'two topics should not have identical approach decks');
 });
