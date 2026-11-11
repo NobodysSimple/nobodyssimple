@@ -60,10 +60,20 @@ function landing(){
 // The first screen now exposes just a few practical suggestions and six broad
 // topic themes. Nothing is hidden from search: all canonical Atlas routes remain.
 export const NAV_TOPIC_PAGE_SIZE=24;
+// Featured topic shortcuts also belong in their normal theme: no topic vanishes
+// when somebody chooses to browse instead of using a suggested shortcut.
+export function browsableTopicsForNeedsMode(modeId){
+ const mode=getNeedsMode(modeId);
+ if(!mode)return [];
+ const topics=topicsForNeedsMode(modeId);
+ const featured=mode.options.filter(o=>o.type==='topic').map(o=>atlasGet(o.target)).filter(Boolean);
+ return [...topics,...featured].sort((a,b)=>a.title.localeCompare(b.title));
+}
 export function themesForNeedsMode(modeId){
- const available=new Set(topicsForNeedsMode(modeId).map(p=>p.domain));
+ const topics=browsableTopicsForNeedsMode(modeId);
+ const available=new Set(topics.map(p=>p.domain));
  return NAV_THEMES.filter(t=>t.domains.some(d=>available.has(d))).map(t=>({
-  ...t,count:topicsForNeedsMode(modeId).filter(p=>t.domains.includes(p.domain)).length
+  ...t,count:topics.filter(p=>t.domains.includes(p.domain)).length
  }));
 }
 function themeCard(t){
@@ -99,7 +109,7 @@ function modeScreen(mode){
 function wireModeFilter(root,mode){
  const filter=root.querySelector('[data-needs-choice-filter]');
  if(!filter)return;
- const topics=topicsForNeedsMode(mode.id);
+ const topics=browsableTopicsForNeedsMode(mode.id);
  const themes=themesForNeedsMode(mode.id);
  const feature=root.querySelector('[data-needs-featured]');
  const featureCards=[...root.querySelectorAll('[data-needs-featured-list] .ns-needs-choice')];
