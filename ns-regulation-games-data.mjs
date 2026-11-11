@@ -101,6 +101,7 @@ export function gamesForGuide(guide){
  const chosen=[];
  const add=game=>{if(game&&!chosen.some(x=>x.id===game.id))chosen.push(game);};
  add(preferred[0]);
+ add(preferred[1]);
  add(GAME_BY_ID['choice-path']);
  add(preferred.find(x=>x.type==='ground'||x.type==='calm'));
  const pool=preferred.filter(g=>!chosen.some(x=>x.id===g.id));
