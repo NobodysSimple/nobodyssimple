@@ -1,6 +1,6 @@
-/* Needs-first navigation: one continuous grid per starting point.
- * Every named atlas entry is presented as the same choice card as a practical
- * activity and opens the existing integrated field guide directly.
+/* Needs-first navigation: simple starting points, six discoverable themes,
+ * and a paginated/searchable topic library. Every Atlas entry keeps its stable
+ * direct link to the integrated field guide; no diagnostic inference is made.
  */
 import {escapeHTML as esc} from './core.mjs';
 import {NEEDS_MODES,getNeedsMode,needsDestination} from './ns-needs-catalog.mjs';
