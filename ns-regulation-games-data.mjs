@@ -77,6 +77,9 @@ export function gameFamilyForGuide(guide){
  if(/relationship|boundary|argument|resent|jealous|partner|trust/.test(t)||guide.modeId==='relate'||domain==='relate')return 'relation';
  return 'general';
 }
+// Each topic gets a stable, small selection of genuinely different mechanics.
+// This is not a recommendation that a visual game treats the named difficulty.
+const topicSeed=id=>[...String(id||'')].reduce((n,ch)=>((n*37+ch.charCodeAt(0))>>>0),11);
 export function gamesForGuide(guide){
  if(!guide||guide.safetyFirst)return [];
  const family=gameFamilyForGuide(guide),id=(guide.id+' '+guide.title).toLowerCase();
@@ -91,11 +94,24 @@ export function gamesForGuide(guide){
   ...(lightRisk?['star-garden','steady-taps','focus-finder','pair-garden']:[]),
   ...(tired?['pair-garden','focus-finder']:[])
  ]);
- const ids=[...(preference[family]||preference.general),...preference.general];
- const available=[...new Set(ids)].filter(x=>!exclude.has(x)).map(x=>GAME_BY_ID[x]).filter(Boolean);
- // A concise topic-sensitive carousel with genuine variety and no imposed sequence.
- const picked=available.slice(0,9);
- if(!picked.some(x=>x.type==='agency'))picked.push(GAME_BY_ID['choice-path']);
- return picked;
+ const preferred=[...new Set([...(preference[family]||preference.general),...preference.general])]
+  .filter(x=>!exclude.has(x)).map(x=>GAME_BY_ID[x]).filter(Boolean);
+ // One first-match game, one agency activity, one calm/ground option, plus
+ // rotating activities across play, focus and optional engagement types.
+ const chosen=[];
+ const add=game=>{if(game&&!chosen.some(x=>x.id===game.id))chosen.push(game);};
+ add(preferred[0]);
+ add(GAME_BY_ID['choice-path']);
+ add(preferred.find(x=>x.type==='ground'||x.type==='calm'));
+ const pool=preferred.filter(g=>!chosen.some(x=>x.id===g.id));
+ const offset=pool.length?topicSeed(guide.optionId||guide.id)%pool.length:0;
+ const rotated=[...pool.slice(offset),...pool.slice(0,offset)];
+ for(const game of rotated){if(chosen.length>=5)break;add(game);}
+ // Keep a reasonable low-demand alternative even for focus/action topics.
+ if(chosen.filter(g=>g.effort==='low').length<3){
+  const low=preferred.find(g=>g.effort==='low'&&!chosen.some(c=>c.id===g.id));
+  if(low){chosen[chosen.length-1]=low;}
+ }
+ return chosen;
 }
 export const gamesForFilter=(deck,filter)=>filter==='all'?deck:deck.filter(x=>x.type===filter);
