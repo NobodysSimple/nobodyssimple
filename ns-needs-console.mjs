@@ -5,6 +5,7 @@
 import {escapeHTML as esc} from './core.mjs';
 import {NEEDS_MODES,getNeedsMode,needsDestination} from './ns-needs-catalog.mjs';
 import {atlasProblemIndex,atlasGet,atlasDomains} from './ns-atlas-core.mjs';
+import {NAV_THEMES,topicsInTheme,matchingTopics,topicTheme} from './ns-needs-themes.mjs';
 
 const e=x=>esc(String(x??''));
 const norm=x=>String(x??'').toLocaleLowerCase().replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
@@ -56,34 +57,108 @@ function landing(){
  '<div class="ns-needs-grid">'+NEEDS_MODES.map(modeCard).join('')+'</div></section>'+
  '<p class="ns-needs-footnote">No questionnaire or diagnosis is required. Each choice opens a continuous guide with the explanation, research-informed options and practical exercises together on one page.</p>');
 }
+// The first screen now exposes just a few practical suggestions and six broad
+// topic themes. Nothing is hidden from search: all canonical Atlas routes remain.
+export const NAV_TOPIC_PAGE_SIZE=24;
+export function themesForNeedsMode(modeId){
+ const available=new Set(topicsForNeedsMode(modeId).map(p=>p.domain));
+ return NAV_THEMES.filter(t=>t.domains.some(d=>available.has(d))).map(t=>({
+  ...t,count:topicsForNeedsMode(modeId).filter(p=>t.domains.includes(p.domain)).length
+ }));
+}
+function themeCard(t){
+ return '<button type="button" class="ns-needs-theme" data-needs-theme="'+e(t.id)+'" aria-expanded="false">'+
+  '<span class="ns-needs-theme-icon" aria-hidden="true">'+e(t.icon)+'</span>'+
+  '<span><strong>'+e(t.title)+'</strong><small>'+e(t.short)+'</small><em>'+t.count+' topics</em></span>'+
+  '<span class="ns-needs-next" aria-hidden="true">→</span></button>';
+}
 function modeScreen(mode){
- const topics=topicsForNeedsMode(mode.id);
- return area('<header class="ns-needs-header ns-tone-'+e(mode.tone)+'"><p class="ns-needs-eyebrow">YOUR CHOICE · '+e(mode.title.toUpperCase())+'</p>'+
+ const groups=themesForNeedsMode(mode.id);
+ return area('<header class="ns-needs-header ns-tone-'+e(mode.tone)+'"><p class="ns-needs-eyebrow">YOUR STARTING POINT</p>'+
  '<h1>'+e(mode.title)+'</h1><p>'+e(mode.summary)+'</p></header>'+
- '<section class="ns-needs-panel"><h2>What feels closest?</h2><p class="ns-needs-sub">Choose one to open its field guide: read about the experience and try practical worksheets directly under each approach, without leaving the page. These topics are not diagnoses.</p>'+
- '<label class="ns-needs-filter-label" for="needs-choice-filter">Filter these choices (optional)</label>'+
- '<input id="needs-choice-filter" type="search" autocomplete="off" placeholder="Find a choice in the cards below…" data-needs-choice-filter>'+
- '<p class="ns-needs-filter-count" data-needs-choice-count role="status" aria-live="polite"></p>'+
- '<div class="ns-needs-choices">'+mode.options.map(optionCard).join('')+topics.map(topicChoiceCard).join('')+'</div></section>'+
- '<p class="ns-needs-footnote">Different situations need different support. You can always '+href('#navigate','change your starting point')+'.</p>',
+ '<section class="ns-needs-panel ns-needs-browse"><h2>What feels closest?</h2>'+
+ '<p class="ns-needs-sub">Start with a suggestion, choose a theme, or search for something specific. One choice is enough.</p>'+
+ '<label class="ns-needs-filter-label" for="needs-choice-filter">Search any topic</label>'+
+ '<input id="needs-choice-filter" type="search" autocomplete="off" placeholder="Try sleep, relationships, ADHD, discrimination…" data-needs-choice-filter>'+
+ '<section class="ns-needs-featured" data-needs-featured><h3>A few places to start</h3><div class="ns-needs-choices" data-needs-featured-list>'+
+  mode.options.map(optionCard).join('')+'</div></section>'+
+ '<section class="ns-needs-theme-section" data-needs-theme-section><h3>Explore by theme</h3>'+
+ '<div class="ns-needs-theme-grid" data-needs-theme-grid>'+groups.map(themeCard).join('')+'</div></section>'+
+ '<section class="ns-needs-topic-panel" data-needs-topic-panel hidden aria-label="Topics in your chosen theme">'+
+  '<div class="ns-needs-topic-heading"><button type="button" class="ns-needs-back-themes" data-needs-back-themes>← All themes</button>'+
+  '<h3 data-needs-topic-heading></h3><p data-needs-topic-intro></p></div>'+
+  '<div class="ns-needs-domain-chips" data-needs-domain-chips role="group" aria-label="Narrow topics by area"></div>'+
+  '<p class="ns-needs-filter-count" data-needs-choice-count role="status" aria-live="polite"></p>'+
+  '<div class="ns-needs-choices" data-needs-topic-list></div>'+
+  '<button type="button" class="ns-needs-more" data-needs-more hidden>Show more topics</button></section>'+
+ '<p class="ns-needs-footnote">These are descriptions of experiences, not diagnoses. Each topic opens its existing guide.</p>'+
+ '</section>'+
+ '<p class="ns-needs-footnote">You can always '+href('#navigate','change your starting point')+'.</p>',
  '#navigate');
 }
-function wireModeFilter(root){
+function wireModeFilter(root,mode){
  const filter=root.querySelector('[data-needs-choice-filter]');
  if(!filter)return;
- const cards=[...root.querySelectorAll('.ns-needs-choices > .ns-needs-choice')];
+ const topics=topicsForNeedsMode(mode.id);
+ const themes=themesForNeedsMode(mode.id);
+ const feature=root.querySelector('[data-needs-featured]');
+ const featureCards=[...root.querySelectorAll('[data-needs-featured-list] .ns-needs-choice')];
+ const groups=root.querySelector('[data-needs-theme-section]');
+ const groupButtons=[...root.querySelectorAll('[data-needs-theme]')];
+ const panel=root.querySelector('[data-needs-topic-panel]');
+ const heading=root.querySelector('[data-needs-topic-heading]');
+ const intro=root.querySelector('[data-needs-topic-intro]');
+ const chips=root.querySelector('[data-needs-domain-chips]');
+ const list=root.querySelector('[data-needs-topic-list]');
  const count=root.querySelector('[data-needs-choice-count]');
- const update=()=>{
-  const words=norm(filter.value).split(/\s+/).filter(Boolean);
-  let visible=0;
-  for(const card of cards){
-   const match=words.every(word=>norm(card.getAttribute('data-needs-search-text')||card.textContent).includes(word));
-   card.hidden=!match;
-   if(match)visible++;
+ const more=root.querySelector('[data-needs-more]');
+ let theme='',domain='',limit=NAV_TOPIC_PAGE_SIZE;
+ const render=()=>{
+  const query=filter.value.trim();
+  const searching=Boolean(query);
+  feature.hidden=false;
+  let visibleFeatures=0;
+  for(const card of featureCards){
+   const matched=!searching||matchingTopics([{id:'suggestion',title:card.textContent,hint:'',aliases:[]}],query).length>0;
+   card.hidden=!matched;if(matched)visibleFeatures++;
   }
-  if(count)count.textContent=words.length?(visible+' matching choices'):'';
+  if(searching&&visibleFeatures===0)feature.hidden=true;
+  groups.hidden=searching;
+  panel.hidden=!searching&&!theme;
+  for(const button of groupButtons)button.setAttribute('aria-expanded',String(button.dataset.needsTheme===theme));
+  if(panel.hidden)return;
+  const chosen=themes.find(x=>x.id===theme);
+  const matching=searching?matchingTopics(topics,query):topicsInTheme(topics,theme,domain);
+  const sorted=matching; // Alphabetical ordering is already supplied by topicsForNeedsMode.
+  heading.textContent=searching?'Search results':chosen?.title||'Explore topics';
+  intro.textContent=searching?'Matches from all the topics in this starting point.':chosen?.short||'Choose a topic to open its guide.';
+  chips.hidden=searching;
+  if(!searching&&chosen){
+   const available=atlasDomains.filter(d=>chosen.domains.includes(d.id)&&topics.some(p=>p.domain===d.id));
+   chips.innerHTML='<button type="button" data-needs-area="" aria-pressed="'+(!domain)+'">All in this theme</button>'+
+    available.map(d=>'<button type="button" data-needs-area="'+e(d.id)+'" aria-pressed="'+(domain===d.id)+'">'+e(d.name)+'</button>').join('');
+  }else chips.innerHTML='';
+  list.innerHTML=sorted.slice(0,limit).map(topicChoiceCard).join('')||
+   '<p class="ns-needs-empty">No matches here. Try another word or choose a different theme.</p>';
+  more.hidden=sorted.length<=limit;
+  count.textContent=sorted.length?
+   'Showing '+Math.min(limit,sorted.length)+' of '+sorted.length+' topics':
+   'No matching topics';
  };
- filter.addEventListener('input',update);
+ root.addEventListener('click',event=>{
+  const themeButton=event.target.closest('[data-needs-theme]');
+  if(themeButton){theme=themeButton.dataset.needsTheme;domain='';limit=NAV_TOPIC_PAGE_SIZE;render();
+   panel.querySelector('[data-needs-topic-heading]')?.scrollIntoView?.({block:'nearest',behavior:'instant'});return;}
+  const areaButton=event.target.closest('[data-needs-area]');
+  if(areaButton){domain=areaButton.dataset.needsArea;limit=NAV_TOPIC_PAGE_SIZE;render();return;}
+  if(event.target.closest('[data-needs-back-themes]')){
+   theme='';domain='';limit=NAV_TOPIC_PAGE_SIZE;filter.value='';render();
+   groups.querySelector('h3')?.focus?.();return;
+  }
+  if(event.target.closest('[data-needs-more]')){limit+=NAV_TOPIC_PAGE_SIZE;render();}
+ });
+ filter.addEventListener('input',()=>{limit=NAV_TOPIC_PAGE_SIZE;render();});
+ render();
 }
 export function renderNeedsConsole(root,parts=[]){
  const path=Array.isArray(parts)?parts:[String(parts||'')];
@@ -94,10 +169,10 @@ export function renderNeedsConsole(root,parts=[]){
    location.hash='#workbook-topic/'+encodeURIComponent(path[1]);return;
   }
   if(typeof location!=='undefined'){location.hash='#navigate/learn';return;}
-  root.innerHTML=modeScreen(getNeedsMode('learn'));wireModeFilter(root);return;
+  root.innerHTML=modeScreen(getNeedsMode('learn'));wireModeFilter(root,getNeedsMode('learn'));return;
  }
  const chosen=getNeedsMode(mode);
- if(chosen){root.innerHTML=modeScreen(chosen);wireModeFilter(root);}
+ if(chosen){root.innerHTML=modeScreen(chosen);wireModeFilter(root,chosen);}
  else root.innerHTML=landing();
 }
 
