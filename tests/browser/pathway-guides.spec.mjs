@@ -38,17 +38,18 @@ test('all advice is compact until one intervention is selected, then tailored wo
  await expect(page.locator('[data-pick-output]')).toContainText('Ask for help with groceries');
  await expect(page).toHaveURL(/#workbook\/process\/grief$/);
 });
-test('the chooser has colourful, filterable horizontally scrollable cards with keyboard-accessible details',async({page})=>{
+test('the chooser keeps methods together in family groups and has keyboard-accessible details',async({page})=>{
  await go(page,'workbook/act/environment');
- const colors=await page.locator('[data-pick-card]').evaluateAll(items=>
-  [...new Set(items.map(x=>getComputedStyle(x).backgroundColor))]);
- expect(colors.length).toBeGreaterThanOrEqual(5);
+ const groups=await page.locator('[data-pick-family]').evaluateAll(items=>items.map(x=>x.dataset.pickFamily));
+ expect(groups.length).toBeGreaterThanOrEqual(5);
+ expect(new Set(groups).size).toBe(groups.length);
+ await expect(page.locator('[data-pick-family="regulation"] [data-pick-card]')).not.toHaveCount(0);
  const track=page.locator('[data-pick-track]');
  const before=await track.evaluate(x=>x.scrollLeft);
  await page.locator('[data-pick-direction="1"]').click();
  await expect.poll(()=>track.evaluate(x=>x.scrollLeft)).toBeGreaterThan(before);
- await page.locator('[data-pick-filter="light"]').click();
- await expect(page.locator('[data-pick-filter="light"]')).toHaveAttribute('aria-pressed','true');
+ await page.locator('[data-pick-refine]').selectOption('light');
+ await expect(page.locator('[data-pick-refine]')).toHaveValue('light');
  const count=await page.locator('[data-pick-card]').count();
  expect(count).toBeGreaterThan(0);
  const ids=await page.locator('[data-pick-card]').evaluateAll(items=>items.map(x=>x.dataset.pickCard));

@@ -77,6 +77,28 @@ export function gameFamilyForGuide(guide){
  if(/relationship|boundary|argument|resent|jealous|partner|trust/.test(t)||guide.modeId==='relate'||domain==='relate')return 'relation';
  return 'general';
 }
+// Each topic gets a stable, small selection of genuinely different mechanics.
+// This is not a recommendation that a visual game treats the named difficulty.
+const topicSeed=id=>[...String(id||'')].reduce((n,ch)=>((n*37+ch.charCodeAt(0))>>>0),11);
+export function topicLensGame(guide){
+ if(!guide||guide.kind!=='topic'||guide.safetyFirst)return null;
+ const plain=value=>String(value||'').trim();
+ const take=(value,fallback)=>plain(value)||fallback;
+ const title=take(guide.title,'this topic');
+ const items=[
+  {label:'What it can look like',text:take(guide.recognise?.[0],guide.what)},
+  {label:'What might shape it',text:take(guide.contributors?.[0],guide.contextFirst?
+   'Circumstances, rights, access and support may matter here.':'Several processes may be involved; no single cause is assumed.')},
+  {label:'What could matter next',text:take(Array.isArray(guide.goals)?guide.goals[0]:guide.progress,
+   'Choose what fits your circumstances, or decide that no action is needed.')}
+ ];
+ return Object.freeze({
+  id:'topic-lens',title:'Explore this topic',description:'Tap three cards to look at '+title+' from different angles.',
+  type:'agency',tone:'blue',duration:'2–3 min',effort:'low',help:'Explore possible descriptions, context and next steps without scoring or self-diagnosis.',
+  caution:'These prompts are general editorial reflections, not evidence of a particular cause, personal diagnosis or treatment.',
+  items:Object.freeze(items.map(x=>Object.freeze(x)))
+ });
+}
 export function gamesForGuide(guide){
  if(!guide||guide.safetyFirst)return [];
  const family=gameFamilyForGuide(guide),id=(guide.id+' '+guide.title).toLowerCase();
@@ -91,11 +113,30 @@ export function gamesForGuide(guide){
   ...(lightRisk?['star-garden','steady-taps','focus-finder','pair-garden']:[]),
   ...(tired?['pair-garden','focus-finder']:[])
  ]);
- const ids=[...(preference[family]||preference.general),...preference.general];
- const available=[...new Set(ids)].filter(x=>!exclude.has(x)).map(x=>GAME_BY_ID[x]).filter(Boolean);
- // A concise topic-sensitive carousel with genuine variety and no imposed sequence.
- const picked=available.slice(0,9);
- if(!picked.some(x=>x.type==='agency'))picked.push(GAME_BY_ID['choice-path']);
- return picked;
+ const preferred=[...new Set([...(preference[family]||preference.general),...preference.general])]
+  .filter(x=>!exclude.has(x)).map(x=>GAME_BY_ID[x]).filter(Boolean);
+ // One first-match game, one agency activity, one calm/ground option, plus
+ // rotating activities across play, focus and optional engagement types.
+ const chosen=[];
+ const add=game=>{if(game&&!chosen.some(x=>x.id===game.id))chosen.push(game);};
+ add(preferred[0]);
+ add(preferred[1]);
+ add(GAME_BY_ID['choice-path']);
+ add(preferred.find(x=>x.type==='ground'||x.type==='calm'));
+ if(family==='action'&&!exclude.has('colour-mosaic'))add(GAME_BY_ID['colour-mosaic']);
+ const pool=preferred.filter(g=>!chosen.some(x=>x.id===g.id));
+ const offset=pool.length?topicSeed(guide.optionId||guide.id)%pool.length:0;
+ const rotated=[...pool.slice(offset),...pool.slice(0,offset)];
+ for(const game of rotated){if(chosen.length>=5)break;add(game);}
+ // Keep a reasonable low-demand alternative even for focus/action topics.
+ if(chosen.filter(g=>g.effort==='low').length<3){
+  const low=preferred.find(g=>g.effort==='low'&&!chosen.some(c=>c.id===g.id));
+  if(low){chosen[chosen.length-1]=low;}
+ }
+ if(guide.kind==='topic'){
+  const lens=topicLensGame(guide);
+  if(lens)add(lens);
+ }
+ return chosen;
 }
 export const gamesForFilter=(deck,filter)=>filter==='all'?deck:deck.filter(x=>x.type===filter);

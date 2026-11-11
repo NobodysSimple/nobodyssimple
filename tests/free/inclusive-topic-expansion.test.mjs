@@ -102,17 +102,21 @@ test('current coercion and stalking route to support first, while ordinary explo
  assert.equal(atlasGet('menopause-transition').medical,true);
 });
 
-test('all 518 topic guides are reachable through the same uninterrupted cards, without a second atlas finder',()=>{
+test('all 518 topic guides remain reachable through themed browsing and search',()=>{
  const featured=new Set(['insomnia','rumination','social-anxiety','panic-experiences','checking','submissive-patterns']);
  const topics=topicsForNeedsMode('learn');
  assert.equal(topics.length+featured.size,518);
  for(const p of inclusiveProblemIndex){
-  assert.ok(topics.some(t=>t.id===p.id),'missing card '+p.id);
+  assert.ok(topics.some(t=>t.id===p.id),'missing topic '+p.id);
  }
  const ui=readFileSync('ns-needs-console.mjs','utf8');
  const workbook=readFileSync('ns-integrated-workbook.mjs','utf8');
- assert.match(ui,/topics\.map\(topicChoiceCard\)/);
+ assert.match(ui,/themesForNeedsMode/);
+ assert.match(ui,/topicsInTheme/);
+ assert.match(ui,/matchingTopics/);
  assert.match(ui,/data-needs-choice-filter/);
- assert.doesNotMatch(ui,/function atlasScreen|data-needs-domain-select|data-needs-more|navigate\/atlas\/area/);
+ assert.match(ui,/data-needs-more/);
+ assert.match(ui,/NAV_TOPIC_PAGE_SIZE=24/);
+ assert.doesNotMatch(ui,/function atlasScreen|data-needs-domain-select|navigate\/atlas\/area/);
  assert.doesNotMatch(workbook,/data-wb-topic-results|function atlasChooser/);
 });
