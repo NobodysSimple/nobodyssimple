@@ -197,7 +197,7 @@ function introductionCover(g){
   '</header>';
 }
 function layout(g){
- return '<div class="ns-wb-wrap ns-pick-wrap" data-workbook="'+e(g.id)+'">'+
+ return '<div class="ns-wb-wrap ns-pick-wrap'+(g.kind==='topic'?' ns-pick-topic-layout':'')+'" data-workbook="'+e(g.id)+'">'+
   '<nav class="ns-pick-breadcrumb" aria-label="Guide navigation"><a href="#navigate/'+e(g.modeId)+'">← '+e(g.modeTitle)+'</a>'+
   '<a href="#navigate">All starting points</a><a href="#need/support-safety">Urgent support</a></nav>'+
   introductionCover(g)+
