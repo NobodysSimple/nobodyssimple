@@ -6,7 +6,7 @@
 import {escapeHTML as esc} from './core.mjs';
 import {CULTURE_ARTICLES,articlesForCountry,articleCountries,articleById} from './ns-cultural-atlas-articles.mjs';
 import {bindAtlasViewport,fitAtlasBounds,clampAtlasView,WORLD_VIEW} from './ns-cultural-atlas-viewport.mjs';
-import {fetchAdministrativeLayer,fetchUSIndigenousAreas,searchMapPlaces,filterAdministrativeChildren,mapDegreesToAtlas} from './ns-cultural-atlas-geography.mjs';
+import {fetchAdministrativeLayer,fetchUSCounties,fetchUSIndigenousAreas,searchMapPlaces,filterAdministrativeChildren,mapDegreesToAtlas} from './ns-cultural-atlas-geography.mjs';
 
 export const WORLD_COUNTRY_DATA='data/culture-world-countries.geojson';
 export const SUBDIVISION_API='https://www.geoboundaries.org/api/current/gbOpen/';
@@ -59,7 +59,7 @@ export const normaliseCountryData=data=>{
 export function normaliseRegions(data){
  if(!data||data.type!=='FeatureCollection'||!Array.isArray(data.features))return [];
  return data.features.filter(f=>f?.geometry&&polys(f.geometry).length).map((f,i)=>({
-  id:String(i),name:String(f.properties?.shapeName||f.properties?.name||f.properties?.NAME_1||'Region '+(i+1)),
+  id:String(i),name:String(f.properties?.shapeName||f.properties?.name||f.properties?.NAME||f.properties?.NAME_1||'Region '+(i+1)),
   geometry:f.geometry
  })).sort((a,b)=>a.name.localeCompare(b.name));
 }
@@ -145,7 +145,8 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   regionChoose.innerHTML='<option value="">All regions</option>'+regions.map(r=>'<option value="'+e(r.id)+'">'+e(r.name)+'</option>').join('');
   regionChoose.value=selectedRegion?.id||'';
   regionInfo.textContent=loadingRegions?'Loading first-level boundaries…':selectedCountry?
-    (regions.length?regions.length+' first-level regions · choose one to explore smaller places':regionError||'No administrative regions available for this country.'):
+    (regions.length?regions.length+' first-level regions · choose one to explore smaller places'+(selectedCountry.code==='GBR'?' · Scotland and Wales here; Cornwall under England → counties':''):
+     regionError||'No administrative regions available for this country.'):
     'Select a country to explore its states or provinces.';
   subWrap.hidden=!selectedRegion;
   subControl.hidden=!selectedRegion||subregions.length===0;
@@ -240,7 +241,12 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   cancelSub();const token=subGeneration;
   loadingSub=true;subError='';subAbort=typeof AbortController!=='undefined'?new AbortController():null;paintMap();
   try{
-   const {data}=await fetchAdministrativeLayer(fetcher,selectedCountry.code,'ADM2',subAbort?{signal:subAbort.signal}:{});
+   let data;
+   if(selectedCountry.code==='USA'){
+    ({data}=await fetchUSCounties(fetcher,selectedRegion.name,subAbort?{signal:subAbort.signal}:{}));
+   }else{
+    ({data}=await fetchAdministrativeLayer(fetcher,selectedCountry.code,'ADM2',subAbort?{signal:subAbort.signal}:{}));
+   }
    if(token!==subGeneration||removed)return;
    const all=normaliseRegions(data);
    subregions=filterAdministrativeChildren(all,selectedRegion);
