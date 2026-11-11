@@ -139,7 +139,7 @@ test('all 50 US states, DC and populated US territories have stable Census ident
  'South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia',
  'Wisconsin','Wyoming'];
  assert.equal(states.length,50);
- assert.ok(states.every(state=>/^\\d{2}$/.test(US_STATE_FIPS[state])));
+ assert.ok(states.every(state=>/^\d{2}$/.test(US_STATE_FIPS[state])));
  for(const name of ['District of Columbia','Puerto Rico','Guam','American Samoa','Northern Mariana Islands','U.S. Virgin Islands']){
   assert.ok(US_STATE_FIPS[name],name);
  }
