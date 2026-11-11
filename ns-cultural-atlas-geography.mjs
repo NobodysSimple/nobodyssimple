@@ -60,9 +60,22 @@ export async function fetchAdministrativeLayer(fetcher,code,level,{signal}={}){
  const meta=await checkResponse(await fetcher(GEOBOUNDARIES_API+encodeURIComponent(code)+'/'+level+'/',options),'Boundary metadata');
  const url=meta.simplifiedGeometryGeoJSON||meta.gjDownloadURL;
  if(typeof url!=='string'||!url.startsWith('https://'))throw Error('No geographic shapes supplied');
- const data=await checkResponse(await fetcher(url,options),'Boundary shapes');
- if(data?.type!=='FeatureCollection'||!Array.isArray(data.features))throw Error('Invalid boundary shapes');
- return {data,meta};
+ // geoBoundaries release files are held in Git LFS; github.com/raw may redirect
+ // to media.githubusercontent.com, while raw.githubusercontent.com can expose an
+ // LFS pointer instead of the GeoJSON. Retry the official Git LFS media path.
+ const alternatives=[url];
+ if(url.startsWith('https://github.com/wmgeolab/geoBoundaries/raw/')){
+  alternatives.push(url.replace('https://github.com/wmgeolab/geoBoundaries/raw/','https://media.githubusercontent.com/media/wmgeolab/geoBoundaries/'));
+ }
+ let lastError=Error('Boundary shapes unavailable');
+ for(const candidate of alternatives){
+  try{
+   const data=await checkResponse(await fetcher(candidate,options),'Boundary shapes');
+   if(data?.type==='FeatureCollection'&&Array.isArray(data.features))return {data,meta};
+   lastError=Error('Boundary provider returned a non-GeoJSON payload');
+  }catch(err){if(signal?.aborted)throw err;lastError=err;}
+ }
+ throw lastError;
 }
 export async function fetchUSIndigenousAreas(fetcher,view,{signal}={}){
  // National layer is too large to draw in one request; request only a zoomed viewport.
