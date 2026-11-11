@@ -363,3 +363,41 @@ html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-pick-topic-search inpu
  body.app-body.ns-shell-v1 #main .ns-pick-understand,
  body.app-body.ns-shell-v1 #main .ns-pick-selected{box-shadow:none;break-inside:avoid;}
 }
+
+
+/* Family-first approach browsing: short labels, contiguous methodologies. */
+body.app-body.ns-shell-v1 #main .ns-pick-filter-heading{display:grid;gap:2px;margin:13px 0 10px;}
+body.app-body.ns-shell-v1 #main .ns-pick-filter-heading strong{font-size:13px;color:#2d573e;}
+body.app-body.ns-shell-v1 #main .ns-pick-filter-heading small{font-size:12px;color:#58705d;}
+body.app-body.ns-shell-v1 #main .ns-pick-filters{flex-wrap:wrap;overflow:visible;padding:0;margin:8px 0 12px;}
+body.app-body.ns-shell-v1 #main .ns-pick-filters button{min-height:40px;}
+body.app-body.ns-shell-v1 #main .ns-pick-refine{display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:#58705b;margin:6px 0 17px;}
+body.app-body.ns-shell-v1 #main .ns-pick-refine select{min-height:40px;border:1px solid #b9d0bb;background:#fffef9;color:#31553e;border-radius:10px;padding:7px 12px;max-width:240px;}
+body.app-body.ns-shell-v1 #main .ns-pick-track{min-height:208px;gap:22px;align-items:stretch;padding-bottom:11px;}
+body.app-body.ns-shell-v1 #main .ns-pick-family{flex:0 0 auto;max-width:100%;min-width:0;scroll-snap-align:start;}
+body.app-body.ns-shell-v1 #main .ns-pick-family-heading{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;padding:2px 0 12px;}
+body.app-body.ns-shell-v1 #main .ns-pick-family-heading strong{font-size:13px;color:#315941;}
+body.app-body.ns-shell-v1 #main .ns-pick-family-heading small{font-size:11px;color:#587160;}
+body.app-body.ns-shell-v1 #main .ns-pick-family-cards{display:flex;gap:10px;width:max-content;max-width:none;}
+body.app-body.ns-shell-v1 #main .ns-pick-card{
+ flex:0 0 clamp(212px,24vw,255px);width:clamp(212px,24vw,255px);min-height:194px;padding:15px;gap:5px;
+ border-radius:14px;background:#f3f7f1;border-color:#d7e3d5;box-shadow:none;
+}
+body.app-body.ns-shell-v1 #main .ns-pick-card h3{font:770 16px/1.3 system-ui,sans-serif;margin:5px 0 1px;}
+body.app-body.ns-shell-v1 #main .ns-pick-card>p{-webkit-line-clamp:2;font-size:12px;line-height:1.45;margin:2px 0 8px;}
+body.app-body.ns-shell-v1 #main .ns-pick-card-foot{align-items:end;}
+body.app-body.ns-shell-v1 #main .ns-pick-card-foot button{min-height:42px;white-space:nowrap;}
+body.app-body.ns-shell-v1 #main .ns-pick-noresults{color:#506957;font-size:13px;}
+body.app-body.ns-shell-v1 #main .ns-pick-cover{padding:clamp(20px,3vw,30px);box-shadow:none;border-radius:18px;}
+body.app-body.ns-shell-v1 #main .ns-pick-cover h1{font-size:clamp(27px,4vw,37px);}
+body.app-body.ns-shell-v1 #main .ns-pick-cover>p:not(.ns-pick-kicker){font-size:14px;line-height:1.55;margin-bottom:4px;}
+body.app-body.ns-shell-v1 #main .ns-pick-wrap :is(.ns-pick-understand,.ns-pick-chooser,.ns-pick-selected){box-shadow:none;}
+@media(max-width:620px){
+ body.app-body.ns-shell-v1 #main .ns-pick-family-cards{gap:8px;}
+ body.app-body.ns-shell-v1 #main .ns-pick-card{width:213px;flex-basis:213px;min-height:198px;}
+ body.app-body.ns-shell-v1 #main .ns-pick-filters{gap:5px;}
+ body.app-body.ns-shell-v1 #main .ns-pick-filters button{font-size:11px;padding:7px 10px;}
+}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-pick-wrap :is(.ns-pick-filter-heading strong,.ns-pick-family-heading strong){color:#edf5e9;}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-pick-wrap :is(.ns-pick-filter-heading small,.ns-pick-family-heading small,.ns-pick-refine){color:#d0e2d2;}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-pick-refine select{background:#213b2a;color:#f1f7ee;border-color:#6e9475;}
