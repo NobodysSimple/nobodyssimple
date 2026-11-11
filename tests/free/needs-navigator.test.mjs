@@ -5,7 +5,7 @@ import {PROCESSING_ACTIVITIES,SETTLING_ACTIVITIES,renderNeedsActivity} from '../
 import {renderNeedsConsole,getSubjectMatchesForTest,TOPIC_AREAS_BY_MODE,topicsForNeedsMode,themesForNeedsMode,browsableTopicsForNeedsMode,NAV_TOPIC_PAGE_SIZE} from '../../ns-needs-console.mjs';
 import {atlasProblemIndex,atlasGet,isSafetyPriority} from '../../ns-atlas-core.mjs';
 import {tools} from '../../tool-catalog.mjs';
-import {NAV_THEMES,topicTheme,topicsInTheme,matchingTopics} from '../../ns-needs-themes.mjs';
+import {NAV_THEMES,TOPIC_THEME_OVERRIDES,topicTheme,topicsInTheme,matchingTopics} from '../../ns-needs-themes.mjs';
 
 const idSet=new Set(tools.map(t=>t.id));
 const fakeRoot=()=>{
@@ -22,18 +22,20 @@ test('the entrance is needs-first, short and contains no unvalidated free-text r
  assert.match(root.innerHTML,/Feel steadier/);
  assert.match(root.innerHTML,/I'm not sure|I&#39;m not sure/);
 });
-test('every mode offers direct explicit choices with working destinations and without diagnostic questions',()=>{
+test('every mode retains old deep links but presents only balanced theme cards, not shortcuts',()=>{
  assert.equal(NEEDS_MODES.length,7);
  const ids=new Set(NEEDS_MODES.map(m=>m.id));assert.equal(ids.size,7);
  for(const mode of NEEDS_MODES){
   assert.ok(mode.options.length>=4,mode.id);
   assert.equal(new Set(mode.options.map(o=>o.id)).size,mode.options.length,mode.id);
   const root=fakeRoot();renderNeedsConsole(root,[mode.id]);
-  assert.match(root.innerHTML,/What feels closest/);
+  assert.match(root.innerHTML,/Explore by theme/);
+  assert.doesNotMatch(root.innerHTML,/A few places to start|data-needs-featured|data-needs-area/);
+  assert.equal((root.innerHTML.match(/data-needs-theme="/g)||[]).length,11);
   assert.doesNotMatch(root.innerHTML,/<textarea|data-reason-/);
   for(const option of mode.options){
    const destination=needsDestination(option);
-   assert.ok(root.innerHTML.includes('href="'+destination+'"'),mode.id+' '+option.id);
+   assert.ok(destination.startsWith('#'),mode.id+' '+option.id);
    if(option.type==='tool')assert.ok(idSet.has(option.target),mode.id+' broken tool '+option.target);
    if(option.type==='topic')assert.ok(atlasGet(option.target),mode.id+' missing topic '+option.target);
    if(option.type==='activity')assert.ok(getNeedsActivity(option.target),mode.id+' missing activity '+option.target);
@@ -91,8 +93,8 @@ test('the full topic catalogue remains searchable, without rendering 518 cards o
  assert.ok(getSubjectMatchesForTest('insomnia','').some(x=>x.id==='insomnia'));
  assert.ok(getSubjectMatchesForTest('rumination','').some(x=>x.id==='rumination'));
  const page=fakeRoot();renderNeedsConsole(page,['learn']);
- assert.match(page.innerHTML,/What feels closest/);
- assert.match(page.innerHTML,/Search any topic/);
+ assert.match(page.innerHTML,/Explore by theme/);
+ assert.match(page.innerHTML,/Or search all topics/);
  assert.match(page.innerHTML,/data-needs-theme="health"/);
  assert.match(page.innerHTML,/data-needs-topic-list/);
  assert.doesNotMatch(page.innerHTML,/href="#workbook-topic\/racial-discrimination"/);
@@ -108,7 +110,7 @@ test('safety-related topics retain their support-first guides and the support ro
  assert.equal(isSafetyPriority('suicidal-thoughts'),true);
  const page=fakeRoot();renderNeedsConsole(page,['regulate']);
  assert.ok(topicsForNeedsMode('regulate').some(p=>p.id==='suicidal-thoughts'));
- assert.match(page.innerHTML,/data-needs-theme="emotions"/);
+ assert.match(page.innerHTML,/data-needs-theme="family"/);
  const landing=fakeRoot();renderNeedsConsole(landing);
  assert.match(landing.innerHTML,/href="#need\/support-safety"/);
 });
@@ -127,41 +129,55 @@ test('the original seven goal tiles remain the only starting choices',()=>{
  assert.doesNotMatch(page.innerHTML,/Explore a topic or experience|ns-needs-topic-entry|ns-needs-area-link/);
  assert.match(page.innerHTML,/Explore a specific difficulty/);
 });
-test('all 31 domains are grouped under six themes and every topic remains reachable',()=>{
+test('all 518 topics are distributed exactly once across eleven near-equal semantic themes for all starting points',()=>{
  const all=atlasProblemIndex;
- assert.equal(NAV_THEMES.length,6);
+ assert.equal(all.length,518);
+ assert.equal(NAV_THEMES.length,11);
  const categories=NAV_THEMES.flatMap(t=>t.domains);
  assert.equal(new Set(categories).size,31);
  assert.equal(categories.length,31);
- assert.ok(all.every(p=>topicTheme(p)),'each topic has an assigned theme');
- const covered=new Set();
- for(const mode of NEEDS_MODES){
-  const page=fakeRoot();renderNeedsConsole(page,[mode.id]);
-  const topics=topicsForNeedsMode(mode.id);
-  const themes=themesForNeedsMode(mode.id);
-  assert.equal((page.innerHTML.match(/class="ns-needs-theme"/g)||[]).length,themes.length);
-  assert.equal((page.innerHTML.match(/class="ns-needs-choice"/g)||[]).length,mode.options.length);
-  assert.ok(page.innerHTML.includes('data-needs-topic-list'),mode.id);
-  for(const theme of themes){
-   assert.equal(topicsInTheme(topics,theme.id).length,theme.count);
-   topicsInTheme(topics,theme.id).forEach(p=>covered.add(p.domain));
+ assert.ok(all.every(p=>topicTheme(p)),'every topic has a theme');
+ const ids=new Set(all.map(p=>p.id));
+ assert.equal(ids.size,518);
+ const counted=new Set();
+ for(const theme of NAV_THEMES){
+  const group=topicsInTheme(all,theme.id);
+  assert.ok(group.length>=42&&group.length<=50,theme.id+' has '+group.length+' topics');
+  for(const topic of group){
+   assert.ok(!counted.has(topic.id),'duplicate topic '+topic.id);
+   counted.add(topic.id);
   }
  }
- assert.equal(covered.size,31);
+ assert.equal(counted.size,518);
+ for(const [id,theme] of Object.entries(TOPIC_THEME_OVERRIDES)){
+  assert.ok(ids.has(id),'invalid override '+id);
+  assert.equal(topicTheme(atlasGet(id)),theme);
+ }
+ for(const mode of NEEDS_MODES){
+  const root=fakeRoot();renderNeedsConsole(root,[mode.id]);
+  const themes=themesForNeedsMode(mode.id),available=browsableTopicsForNeedsMode(mode.id);
+  assert.equal(themes.length,11,mode.id);
+  assert.equal(available.length,518,mode.id);
+  assert.equal(new Set(available.map(p=>p.id)).size,518,mode.id);
+  assert.equal(themes.reduce((sum,t)=>sum+t.count,0),518,mode.id);
+  assert.equal((root.innerHTML.match(/class="ns-needs-theme"/g)||[]).length,11,mode.id);
+  assert.equal((root.innerHTML.match(/class="ns-needs-choice"/g)||[]).length,0,mode.id);
+  assert.ok(!root.innerHTML.includes('A few places to start'),mode.id);
+  assert.ok(root.innerHTML.includes('data-needs-topic-list'));
+  for(const theme of themes)
+   assert.equal(topicsInTheme(available,theme.id).length,theme.count,mode.id+' '+theme.id);
+ }
  assert.equal(TOPIC_AREAS_BY_MODE.learn.length,31);
- assert.equal(browsableTopicsForNeedsMode('learn').length,518,'featured topics still appear in their relevant theme');
- assert.equal(new Set(browsableTopicsForNeedsMode('learn').map(x=>x.id)).size,518);
- assert.equal(themesForNeedsMode('learn').reduce((sum,t)=>sum+t.count,0),518);
-
- const featured=new Set(getNeedsMode('learn').options.filter(o=>o.type==='topic').map(o=>o.target));
- const allLearn=new Set([...topicsForNeedsMode('learn').map(p=>p.id),...featured]);
- assert.equal(allLearn.size,518,'no Atlas entry lost');
- for(const domain of ['culture','lgbtq','neuro','disability','family','harm','faith','migration','digital','growth','sexuality','behaviour','safety'])
-  assert.ok(NEEDS_MODES.some(m=>!['learn','unsure'].includes(m.id)&&TOPIC_AREAS_BY_MODE[m.id].includes(domain)),domain);
+ assert.equal(NAV_TOPIC_PAGE_SIZE,24);
+ // Different starting points change ordering, not access.
+ const feel=browsableTopicsForNeedsMode('regulate'),act=browsableTopicsForNeedsMode('act');
+ assert.notDeepEqual(feel.slice(0,10).map(p=>p.id),act.slice(0,10).map(p=>p.id));
+ for(const id of ['sexual-coercion','parentification','adhd-understanding','racial-discrimination','insomnia'])
+  assert.ok(browsableTopicsForNeedsMode('regulate').some(p=>p.id===id));
 });
 test('historical atlas links land on the existing starting-point grid instead of a browse page',()=>{
  const page=fakeRoot();renderNeedsConsole(page,['atlas','area','neuro']);
- assert.match(page.innerHTML,/What feels closest/);
+ assert.match(page.innerHTML,/Explore by theme/);
  assert.match(page.innerHTML,/data-needs-theme="health"/);
  assert.doesNotMatch(page.innerHTML,/data-needs-domain-select|data-needs-topic-results|Search a named difficulty/);
 });
