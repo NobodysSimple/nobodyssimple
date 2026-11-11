@@ -136,6 +136,6 @@ export function workbookForTopic(topicId){
    risk?'Appropriate human support and clinical assessment take priority over self-guided psychological experiments.':'Persistent, severe, new or unfamiliar symptoms may merit clinical or medical assessment.'],
   goals:p.contextFirst?p.progress:[],progress:Array.isArray(p.progress)?p.progress.join('; '):String(p.progress||'Progress may include improved functioning and appropriate support.'),
   lanes,sources:source,relatedTarget:topicId,review:p.contextFirst?'Inclusive topic navigation · editorial overview. This entry and these generic reflection methods have not been individually clinically or empirically validated.':p.quality==='expert-draft'?'Topic-specific educational draft · not a clinical diagnosis or validated treatment programme':'Structured topic overview · possible mechanisms and suggested exercises need topic-by-topic expert review',
-  kind:'topic',contextFirst:Boolean(p.contextFirst),supportFirst:Boolean(p.supportFirst),safetyFirst:risk,medical:Boolean(p.medical),showAtlas:false};
+  kind:'topic',topicDomain:p.domain,contextFirst:Boolean(p.contextFirst),supportFirst:Boolean(p.supportFirst),safetyFirst:risk,medical:Boolean(p.medical),showAtlas:false};
 }
 export const workbookCoverage=Object.freeze(NEEDS_MODES.map(m=>({mode:m.id,options:m.options.map(o=>o.id)})));
