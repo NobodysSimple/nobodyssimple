@@ -93,7 +93,10 @@ test('map zoom is continuous but remains inside the world, with deterministic pa
  assert.equal(atlasViewDegrees(WORLD_VIEW)[0],-180);
 });
 test('subregions are geographically filtered instead of treating every district as part of the chosen state',()=>{
- const mk=(name,x,y)=>({name,geometry:{type:'Polygon',coordinates:[[[x,y],[x+1,y],[x+1,y+1],[x,y+1],[x,y]]]}});
+ const mk=(name,x,y)=>({
+  name,
+  geometry:{type:'Polygon',coordinates:[[[x,y],[x+1,y],[x+1,y+1],[x,y+1],[x,y]]]}
+ });
  const england=mk('England',-4,50),cornwall=mk('Cornwall',-4,50),scottishDistrict=mk('Scotland county',-5,57);
  assert.equal(geometryContains(england.geometry,[-3.5,50.5]),true);
  assert.deepEqual(filterAdministrativeChildren([cornwall,scottishDistrict],england).map(x=>x.name),['Cornwall']);
