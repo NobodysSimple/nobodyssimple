@@ -75,7 +75,7 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
  let countries=[],selectedCountry=null,regions=[],selectedRegion=null,activeArticle='',regionError='',
      loadingRegions=false,regionSource=null,abort=null,generation=0,started=false,removed=false;
  let subregions=[],selectedSubregion=null,loadingSub=false,subError='',subAbort=null,subGeneration=0;
- let indigenousOn=false,indigenousAreas=[],indigenousError='',indigenousPartial=false,tribalAbort=null,tribalGeneration=0,tribalTimer=null;
+ let indigenousOn=false,indigenousAreas=[],indigenousError='',indigenousPartial=false,selectedIndigenousName='',tribalAbort=null,tribalGeneration=0,tribalTimer=null;
  let placeResults=[],selectedPlace=null,placeError='',loadingPlaces=false,placeAbort=null,placeGeneration=0,viewport=null;
  const articlesAvailable=articleCountries.length;
  root.innerHTML='<section class="ns-culture-atlas" aria-labelledby="ns-culture-heading">'+
@@ -115,6 +115,17 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
    placeChoose=root.querySelector('[data-culture-place-results]'),placeResultWrap=root.querySelector('[data-culture-place-results-wrap]'),
    placeNote=root.querySelector('[data-culture-place-note]');
  count.textContent=articlesAvailable+' countries with stories';
+ const drawIndigenous=()=>{
+  tribalLayer.innerHTML=indigenousOn&&selectedCountry?.code==='USA'?indigenousAreas.map((f,i)=>{
+   const name=String(f.properties?.NAMELSAD||f.properties?.NAME||'Census area');
+   return '<path class="ns-culture-indigenous" data-culture-indigenous-id="'+i+'" role="button" tabindex="0" aria-label="View '+e(name)+'" d="'+geoPath(f.geometry)+'"><title>'+e(name)+'</title></path>';
+  }).join(''):'';
+ };
+ const drawPlace=()=>{
+  if(!selectedPlace){pinLayer.innerHTML='';return;}
+  const [x,y]=mapDegreesToAtlas(selectedPlace.lon,selectedPlace.lat);
+  pinLayer.innerHTML='<circle class="ns-culture-place-halo" cx="'+fmt(x)+'" cy="'+fmt(y)+'" r="4"/><circle class="ns-culture-place-dot" cx="'+fmt(x)+'" cy="'+fmt(y)+'" r="1.65"/>';
+ };
  const paintMap=()=>{
   // The viewport is managed independently: changing a story must not erase manual zoom or pan.
   land.innerHTML=countries.map(c=>'<path class="ns-culture-country'+(selectedCountry?(selectedCountry.code===c.code?' is-selected':' is-dimmed'):'')+
@@ -124,7 +135,7 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   subLayer.innerHTML=selectedCountry?subregions.map(r=>'<path class="ns-culture-subregion'+(selectedSubregion?.id===r.id?' is-selected':'')+
    '" data-culture-subregion-id="'+e(r.id)+'" role="button" tabindex="0" aria-label="Explore '+e(r.name)+'" d="'+geoPath(r.geometry)+'"><title>'+e(r.name)+'</title></path>').join(''):'';
   drawIndigenous();drawPlace();
-  mapStatus.textContent=selectedCountry?selectedCountry.name+(selectedRegion?' · '+selectedRegion.name:'')+(selectedSubregion?' · '+selectedSubregion.name:'')+(selectedPlace?' · '+selectedPlace.name.split(',')[0]:''):'World view · select a country';
+  mapStatus.textContent=selectedCountry?selectedCountry.name+(selectedRegion?' · '+selectedRegion.name:'')+(selectedSubregion?' · '+selectedSubregion.name:'')+(selectedPlace?' · '+selectedPlace.name.split(',')[0]:'')+(selectedIndigenousName?' · '+selectedIndigenousName:''):'World view · select a country';
   worldButton.disabled=!selectedCountry;
   choose.value=selectedCountry?.code||'';
   regionWrap.hidden=!selectedCountry||regions.length===0;
@@ -183,38 +194,108 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
     list.map(articleCard).join('')+'</details>':'');
  };
  const cancelRegions=()=>{generation++;if(abort)abort.abort();abort=null;};
+ const cancelSub=()=>{subGeneration++;if(subAbort)subAbort.abort();subAbort=null;loadingSub=false;};
+ const cancelTribal=()=>{tribalGeneration++;if(tribalAbort)tribalAbort.abort();tribalAbort=null;if(tribalTimer)clearTimeout(tribalTimer);tribalTimer=null;};
+ const cancelPlace=()=>{placeGeneration++;if(placeAbort)placeAbort.abort();placeAbort=null;loadingPlaces=false;};
+ const focusFeature=(feature,pad=1.35)=>{if(feature&&viewport)viewport.setView(fitAtlasBounds(featureBounds(feature),pad));};
+ const selectSubregion=id=>{
+  selectedSubregion=subregions.find(r=>r.id===String(id))||null;
+  selectedPlace=null;
+  if(selectedSubregion)focusFeature(selectedSubregion,1.45);
+  else if(selectedRegion)focusFeature(selectedRegion,1.3);
+  const list=regionArticles(selectedCountry?.code,selectedSubregion?.name||selectedRegion?.name||'');
+  activeArticle=list[0]?.id||'';
+  paintMap();paintPanel();
+ };
  const selectRegion=id=>{
-  selectedRegion=regions.find(r=>r.id===String(id))||null;
+  cancelSub();selectedRegion=regions.find(r=>r.id===String(id))||null;
+  selectedSubregion=null;selectedPlace=null;subregions=[];subError='';placeResults=[];selectedIndigenousName='';
+  if(selectedRegion)focusFeature(selectedRegion);
+  else if(selectedCountry)focusFeature(selectedCountry);
   const list=regionArticles(selectedCountry?.code,selectedRegion?.name||'');activeArticle=list[0]?.id||'';
   paintMap();paintPanel();
  };
  const loadRegions=async(country,token)=>{
-  if(!/^[A-Z]{3}$/.test(country.code)){regionError='Administrative boundaries unavailable for this area.';loadingRegions=false;paintMap();return;}
+  if(!/^[A-Z]{3}$/.test(country.code)){regionError='Civil subdivisions unavailable for this mapped unit.';loadingRegions=false;paintMap();return;}
   abort=typeof AbortController!=='undefined'?new AbortController():null;
   try{
-   const metadataResponse=await fetcher(SUBDIVISION_API+encodeURIComponent(country.code)+'/ADM1/',abort?{signal:abort.signal}:{});
-   if(!metadataResponse.ok)throw Error('No first-level boundary record was found.');
-   const meta=await metadataResponse.json();
+   const {data,meta}=await fetchAdministrativeLayer(fetcher,country.code,'ADM1',abort?{signal:abort.signal}:{});
    if(token!==generation||removed)return;
-   const geomUrl=meta.simplifiedGeometryGeoJSON||meta.gjDownloadURL;
-   if(typeof geomUrl!=='string'||!geomUrl.startsWith('https://'))throw Error('No readable subdivision geometry available.');
-   const shapesResponse=await fetcher(geomUrl,abort?{signal:abort.signal}:{});
-   if(!shapesResponse.ok)throw Error('Subdivision map is unavailable.');
-   const sub=normaliseRegions(await shapesResponse.json());
-   if(token!==generation||removed)return;
-   regions=sub;regionSource=meta;regionError=sub.length?'':'No first-level regions in this boundary dataset.';
+   regions=normaliseRegions(data);regionSource=meta;
+   regionError=regions.length?'':'No first-level boundaries available for this mapped unit.';
   }catch(err){
    if(token!==generation||removed)return;
-   regionError='Subdivisions could not load. Country stories remain available; try again when online.';
+   regionError='Regions could not load. Check your connection or try a different place.';
    regions=[];
-  }finally{
-   if(token===generation&&!removed){loadingRegions=false;paintMap();}
-  }
+  }finally{if(token===generation&&!removed){loadingRegions=false;paintMap();}}
+ };
+ const loadSubregions=async()=>{
+  if(!selectedCountry||!selectedRegion||loadingSub)return;
+  cancelSub();const token=subGeneration;
+  loadingSub=true;subError='';subAbort=typeof AbortController!=='undefined'?new AbortController():null;paintMap();
+  try{
+   const {data}=await fetchAdministrativeLayer(fetcher,selectedCountry.code,'ADM2',subAbort?{signal:subAbort.signal}:{});
+   if(token!==subGeneration||removed)return;
+   const all=normaliseRegions(data);
+   subregions=filterAdministrativeChildren(all,selectedRegion);
+   subError=subregions.length?'':'No matching second-level areas found in this dataset.';
+  }catch(err){
+   if(token!==subGeneration||removed)return;
+   subError='Local boundaries unavailable here. Try another area or use the town/city search.';
+   subregions=[];
+  }finally{if(token===subGeneration&&!removed){loadingSub=false;paintMap();}}
+ };
+ const loadTribal=async()=>{
+  if(!indigenousOn||selectedCountry?.code!=='USA'||!viewport)return;
+  cancelTribal();const token=tribalGeneration;
+  tribalAbort=typeof AbortController!=='undefined'?new AbortController():null;
+  indigenousError='Loading US Census areas…';paintMap();
+  try{
+   const result=await fetchUSIndigenousAreas(fetcher,viewport.view,tribalAbort?{signal:tribalAbort.signal}:{});
+   if(token!==tribalGeneration||removed)return;
+   indigenousAreas=result.features;indigenousPartial=result.partial;indigenousError='';
+  }catch(err){
+   if(token!==tribalGeneration||removed)return;
+   indigenousAreas=[];indigenousError=String(err.message||'Could not load Census data.');
+  }finally{if(token===tribalGeneration&&!removed){drawIndigenous();indigenousNote.textContent=indigenousError||indigenousAreas.length+' Census geographic areas shown'+(indigenousPartial?' · result truncated; zoom closer':'');}}
+ };
+ const scheduleTribal=()=>{
+  if(!indigenousOn||selectedCountry?.code!=='USA'||!viewport)return;
+  if(tribalTimer)clearTimeout(tribalTimer);
+  tribalTimer=setTimeout(()=>{tribalTimer=null;void loadTribal();},400);
+ };
+ const findPlaces=async()=>{
+  if(!selectedCountry||loadingPlaces)return;
+  cancelPlace();const token=placeGeneration;
+  loadingPlaces=true;placeError='';placeResults=[];placeResultWrap.hidden=true;
+  placeAbort=typeof AbortController!=='undefined'?new AbortController():null;
+  placeNote.textContent='Searching OpenStreetMap…';
+  try{
+   const result=await searchMapPlaces(fetcher,placeQuery.value,selectedCountry,placeAbort?{signal:placeAbort.signal}:{});
+   if(token!==placeGeneration||removed)return;
+   placeResults=result;placeError=result.length?'':'No matching places found. Try a more specific name.';
+  }catch(err){
+   if(token!==placeGeneration||removed)return;
+   placeError=err.message||'Place search unavailable. Please try again.';
+  }finally{if(token===placeGeneration&&!removed){loadingPlaces=false;paintMap();}}
+ };
+ const selectPlace=index=>{
+  const found=placeResults[Number(index)];if(!found)return;
+  selectedPlace=found;selectedRegion=null;selectedSubregion=null;subregions=[];
+  const [x,y]=mapDegreesToAtlas(found.lon,found.lat);
+  const w=Math.min(viewport?.view.w||960,27);
+  viewport?.setView(clampAtlasView({x:x-w/2,y:y-w/4,w}));
+  activeArticle=regionArticles(selectedCountry.code,found.name)[0]?.id||'';
+  paintMap();paintPanel();
  };
  const selectCountry=code=>{
   const found=countryIndex(countries).get(code)||null;
-  cancelRegions();selectedCountry=found;selectedRegion=null;regions=[];regionError='';regionSource=null;loadingRegions=Boolean(found);
+  cancelRegions();cancelSub();cancelTribal();cancelPlace();
+  selectedCountry=found;selectedRegion=null;selectedSubregion=null;selectedPlace=null;selectedIndigenousName='';
+  regions=[];subregions=[];placeResults=[];placeError='';subError='';regionError='';regionSource=null;
+  indigenousAreas=[];indigenousOn=false;indigenousError='';indigenousPartial=false;loadingRegions=Boolean(found);
   activeArticle=found?articlesForCountry(found.code)[0]?.id||'':'';
+  if(found)focusFeature(found,1.3);else viewport?.reset();
   paintMap();paintPanel();
   if(found)void loadRegions(found,generation);
  };
@@ -227,20 +308,46 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   if(available.length>1){activeArticle=available[Math.min(available.length-1,Math.floor(Number(random())*available.length)||0)].id;paintPanel();}
  };
  const respondToMap=(target)=>{
+  const tribalNode=target.closest('[data-culture-indigenous-id]');
+  if(tribalNode&&indigenousOn){
+   const feature=indigenousAreas[Number(tribalNode.dataset.cultureIndigenousId)];
+   selectedIndigenousName=String(feature?.properties?.NAMELSAD||feature?.properties?.NAME||'Census area');
+   mapStatus.textContent=selectedCountry.name+' · '+selectedIndigenousName;
+   indigenousNote.textContent=selectedIndigenousName+' — Census-defined area; not a comprehensive Indigenous homeland or cultural affiliation.';
+   return;
+  }
+  const subNode=target.closest('[data-culture-subregion-id]');
+  if(subNode&&selectedCountry){selectSubregion(subNode.dataset.cultureSubregionId);return;}
   const regionNode=target.closest('[data-culture-region-id]');
   if(regionNode&&selectedCountry){selectRegion(regionNode.dataset.cultureRegionId);return;}
   const countryNode=target.closest('[data-culture-code]');
   if(countryNode)selectCountry(countryNode.dataset.cultureCode);
  };
- svg.addEventListener('click',event=>respondToMap(event.target));
+ viewport=bindAtlasViewport(svg,{onChange:()=>scheduleTribal()});
+ svg.addEventListener('click',event=>{
+  if(viewport.consumeDragClick())return;
+  respondToMap(event.target);
+ });
+ root.querySelector('[data-culture-zoom-in]').addEventListener('click',()=>viewport.zoom(1.55));
+ root.querySelector('[data-culture-zoom-out]').addEventListener('click',()=>viewport.zoom(1/1.55));
+ root.querySelector('[data-culture-zoom-fit]').addEventListener('click',()=>selectedSubregion?focusFeature(selectedSubregion):selectedRegion?focusFeature(selectedRegion):selectedCountry?focusFeature(selectedCountry):viewport.reset());
  svg.addEventListener('keydown',event=>{
   if(event.key!=='Enter'&&event.key!==' ')return;
-  const target=event.target.closest('[data-culture-code],[data-culture-region-id]');
+  const target=event.target.closest('[data-culture-code],[data-culture-region-id],[data-culture-subregion-id],[data-culture-indigenous-id]');
   if(!target)return;
   event.preventDefault();respondToMap(target);
  });
  choose.addEventListener('change',()=>selectCountry(choose.value));
  regionChoose.addEventListener('change',()=>selectRegion(regionChoose.value));
+ subChoose.addEventListener('change',()=>selectSubregion(subChoose.value));
+ root.querySelector('[data-culture-sub-load]').addEventListener('click',()=>void loadSubregions());
+ indigenousToggle.addEventListener('change',()=>{
+  indigenousOn=indigenousToggle.checked;cancelTribal();indigenousAreas=[];indigenousError='';selectedIndigenousName='';
+  paintMap();if(indigenousOn)void loadTribal();
+ });
+ root.querySelector('[data-culture-place-search]').addEventListener('click',()=>void findPlaces());
+ placeQuery.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();void findPlaces();}});
+ placeChoose.addEventListener('change',()=>selectPlace(placeChoose.value));
  worldButton.addEventListener('click',()=>selectCountry(''));
  root.addEventListener('click',event=>{
   if(event.target.closest('[data-culture-random]')){selectRandom();return;}
@@ -248,7 +355,7 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   if(story){activeArticle=story.dataset.cultureArticle;paintPanel();return;}
   const step=event.target.closest('[data-culture-step]');
   if(step&&selectedCountry){
-   const list=regionArticles(selectedCountry.code,selectedRegion?.name||'');
+   const list=regionArticles(selectedCountry.code,selectedSubregion?.name||selectedPlace?.name||selectedRegion?.name||'');
    const current=list.findIndex(a=>a.id===activeArticle);
    if(list.length)activeArticle=list[(current+Number(step.dataset.cultureStep)+list.length)%list.length].id;
    paintPanel();
@@ -274,8 +381,8 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
  if(typeof IntersectionObserver!=='undefined'){
   const observer=new IntersectionObserver(entries=>{if(entries.some(item=>item.isIntersecting)){observer.disconnect();void boot();}},{rootMargin:'280px'});
   observer.observe(root);
-  return ()=>{removed=true;cancelRegions();observer.disconnect();};
+  return ()=>{removed=true;cancelRegions();cancelSub();cancelTribal();cancelPlace();viewport?.destroy();observer.disconnect();};
  }
  void boot();
- return ()=>{removed=true;cancelRegions();};
+ return ()=>{removed=true;cancelRegions();cancelSub();cancelTribal();cancelPlace();viewport?.destroy();};
 }
