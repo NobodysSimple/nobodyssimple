@@ -5,7 +5,7 @@ import {escapeHTML as esc} from './core.mjs';
 import {STEADY_REFERENCES} from './ns-steady-guide-utils.mjs';
 import {PATH_SOURCES} from './ns-pathway-content.mjs';
 import {renderTool} from './features.mjs';
-import {deckForWorkbook,filterCards,cardFilters} from './ns-intervention-cards.mjs';
+import {deckForWorkbook,filterCards,APPROACH_FAMILIES,groupInterventions} from './ns-intervention-cards.mjs';
 import {renderGameCarousel} from './ns-regulation-games.mjs';
 
 const e=x=>esc(String(x??''));
@@ -34,10 +34,10 @@ const supportingSources=(card,g)=>{
 function cardHTML(card,active){
  return '<article class="ns-pick-card ns-pick-card-'+e(card.tone)+(active===card.id?' is-active':'')+'" data-pick-card="'+e(card.id)+'">'+
   '<div class="ns-pick-card-top">'+marker(card)+'<span class="ns-pick-card-time">'+e(card.duration)+'</span></div>'+
-  '<h3>'+e(card.title)+'</h3><p>'+e(card.why)+'</p>'+
+  '<h3>'+e(card.shortTitle||card.title)+'</h3><p>'+e(card.why)+'</p>'+
   '<div class="ns-pick-card-foot"><span>'+e(effortLabel[card.effort])+' · '+e(timeLabel[card.time])+'</span>'+
-  '<button type="button" data-pick-open="'+e(card.id)+'" aria-label="Explore intervention: '+e(card.title)+'">'+
-  (active===card.id?'Selected · View':'Explore')+' '+arrow+'</button></div></article>';
+  '<button type="button" data-pick-open="'+e(card.id)+'" aria-label="Read steps for '+e(card.title)+'">'+
+  (active===card.id?'Selected':'See steps')+' '+arrow+'</button></div></article>';
 }
 function sources(g){
  return '<details class="ns-pick-sources"><summary>Evidence, safeguards and sources</summary>'+
@@ -67,20 +67,25 @@ function introduction(g){
   caution+'</section>';
 }
 function filters(){
- return '<div class="ns-pick-filters" role="group" aria-label="Show intervention cards">'+
-  cardFilters.map((f,i)=>'<button type="button" data-pick-filter="'+e(f.id)+'" aria-pressed="'+(i===0)+'">'+e(f.label)+'</button>').join('')+'</div>';
+ return '<div class="ns-pick-filter-heading"><strong>Choose an approach family</strong><small>Related methods stay together. You can switch at any time.</small></div>'+
+ '<div class="ns-pick-filters" role="group" aria-label="Approach families">'+
+ '<button type="button" data-pick-filter="all" aria-pressed="true">All</button>'+
+ APPROACH_FAMILIES.map(f=>'<button type="button" data-pick-filter="'+e(f.id)+'" aria-pressed="false">'+e(f.label)+'</button>').join('')+'</div>'+
+ '<label class="ns-pick-refine">Optional: narrow by effort or timing <select data-pick-refine>'+
+ '<option value="all">Any effort or time</option><option value="light">Low effort</option>'+
+ '<option value="now">Right now</option><option value="long">Over time</option></select></label>';
 }
 function chooser(){
  return '<section class="ns-pick-chooser" id="ns-pick-chooser">'+
   '<div class="ns-pick-headline"><span class="ns-pick-step">02</span><div>'+
-  '<p class="ns-pick-kicker">ONE THING AT A TIME</p><h2>What can help?</h2>'+
-  '<p>Find one approach that fits your energy, circumstances and goals. There is no best answer and you do not need to do everything.</p></div></div>'+
+  '<p class="ns-pick-kicker">CHOOSE ONE THING</p><h2>Find an approach</h2>'+
+  '<p>Browse a family below, then try one idea that fits. You do not need to complete everything.</p></div></div>'+
   filters()+
   '<div class="ns-pick-track-head"><p data-pick-count-cards aria-live="polite"></p>'+
-  '<div class="ns-pick-arrows"><button type="button" data-pick-direction="-1" aria-label="Previous interventions">←</button>'+
-  '<button type="button" data-pick-direction="1" aria-label="Next interventions">→</button></div></div>'+
-  '<div class="ns-pick-track" data-pick-track tabindex="0" aria-label="Scrollable intervention cards. Scroll sideways or use the previous and next buttons."></div>'+
-  '<p class="ns-pick-chooser-foot">Select a card for details. Only one worksheet opens below, and you can change your choice at any time.</p>'+
+  '<div class="ns-pick-arrows"><button type="button" data-pick-direction="-1" aria-label="Previous approach">←</button>'+
+  '<button type="button" data-pick-direction="1" aria-label="Next approach">→</button></div></div>'+
+  '<div class="ns-pick-track" data-pick-track tabindex="0" aria-label="Approaches organised by family. Scroll sideways or use the previous and next buttons."></div>'+
+  '<p class="ns-pick-chooser-foot">Cards are starting points, not prescriptions. Select a card to read its steps and open an optional worksheet.</p>'+
   '</section>';
 }
 function dialogMarkup(){
@@ -172,7 +177,7 @@ function worksheet(card){
 }
 function selectedEmpty(){
  return '<div class="ns-pick-empty"><div class="ns-pick-empty-icon" aria-hidden="true">✦</div>'+
-  '<h2>One small choice is enough.</h2><p>Pick an intervention above and its worksheet will appear here. You can simply read if you are not ready to choose.</p></div>';
+  '<h2>Try an approach when you are ready</h2><p>Your chosen steps will appear here. Reading without completing a worksheet is fine.</p></div>';
 }
 function careFirst(g){
  return '<section class="ns-pick-care-first"><h2>Safety and support before a worksheet</h2><p>'+e(g.what)+'</p>'+
@@ -188,7 +193,7 @@ function introductionCover(g){
  return '<header class="ns-pick-cover ns-tone-'+e(g.tone||'sage')+'"><p class="ns-pick-kicker">NOBODY’S SIMPLE · YOUR FIELD GUIDE</p>'+
   '<h1>'+e(g.title)+'</h1><p>'+e(g.lead)+'</p>'+
   (g.contextFirst?'<p class="ns-pick-editorial-status">Editorial overview · explore safely. This topic has not had an individual evidence review, and an identity or background is not a disorder.</p>':'')+
-  '<div class="ns-pick-cover-bottom"><span>Understand what is happening</span><span>Choose only what fits</span><span>Work at your pace</span></div></header>';
+  '</header>';
 }
 function layout(g){
  return '<div class="ns-wb-wrap ns-pick-wrap" data-workbook="'+e(g.id)+'">'+
@@ -227,7 +232,7 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
  root.innerHTML=layout(g);
  const surface=root.querySelector('[data-workbook]');
  if(g.safetyFirst)return;
- let selected=null,filter='all',opener=null,preview=null;
+ let selected=null,filter='all',refine='all',opener=null,preview=null;
  const drafts=new Map();
  const track=surface.querySelector('[data-pick-track]');
  const dialog=surface.querySelector('[data-pick-dialog]');
@@ -237,10 +242,14 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
   if(selected)drafts.set(selected.id,valuesFrom(sheet));
  };
  const paintCards=()=>{
-  const visible=filterCards(cards,filter);
-  track.innerHTML=visible.map(c=>cardHTML(c,selected?.id)).join('');
+  const visible=filterCards(cards,refine).filter(c=>filter==='all'||c.family===filter);
+  const groups=groupInterventions(visible);
+  track.innerHTML=groups.length?groups.map(g=>'<div class="ns-pick-family" data-pick-family="'+e(g.id)+'">'+
+   '<div class="ns-pick-family-heading"><strong>'+e(g.label)+'</strong><small>'+e(g.hint)+'</small></div>'+
+   '<div class="ns-pick-family-cards">'+g.cards.map(c=>cardHTML(c,selected?.id)).join('')+'</div></div>').join(''):
+   '<p class="ns-pick-noresults">No approaches match this combination. Try a different family or remove the extra filter.</p>';
   surface.querySelector('[data-pick-count-cards]').textContent=
-   visible.length+' approaches · Browse sideways and choose one';
+   visible.length+' approaches across '+groups.length+' '+(groups.length===1?'family':'families');
   surface.querySelectorAll('[data-pick-filter]').forEach(b=>{
    b.setAttribute('aria-pressed',String(b.dataset.pickFilter===filter));
   });
@@ -319,6 +328,9 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
    try{renderTool(host,el.dataset.pickFullTool);el.textContent='Close the full tool';}
    catch(err){host.textContent='This additional tool could not be opened, but your main worksheet is still available.';}
   }
+ });
+ surface.addEventListener('change',event=>{
+  if(event.target.matches('[data-pick-refine]')){refine=event.target.value;paintCards();return;}
  });
  surface.addEventListener('input',event=>{
   if(event.target.matches('[data-pick-field]')&&selected)drafts.set(selected.id,valuesFrom(sheet));
