@@ -92,11 +92,11 @@ function modeScreen(mode){
  '<input id="needs-choice-filter" type="search" autocomplete="off" placeholder="Try sleep, relationships, ADHD, discrimination…" data-needs-choice-filter>'+
  '<section class="ns-needs-featured" data-needs-featured><h3>A few places to start</h3><div class="ns-needs-choices" data-needs-featured-list>'+
   mode.options.map(optionCard).join('')+'</div></section>'+
- '<section class="ns-needs-theme-section" data-needs-theme-section><h3>Explore by theme</h3>'+
+ '<section class="ns-needs-theme-section" data-needs-theme-section><h3 tabindex="-1" data-needs-theme-heading>Explore by theme</h3>'+
  '<div class="ns-needs-theme-grid" data-needs-theme-grid>'+groups.map(themeCard).join('')+'</div></section>'+
  '<section class="ns-needs-topic-panel" id="ns-needs-topic-panel" data-needs-topic-panel hidden aria-label="Topics in your chosen theme">'+
   '<div class="ns-needs-topic-heading"><button type="button" class="ns-needs-back-themes" data-needs-back-themes>← All themes</button>'+
-  '<h3 data-needs-topic-heading></h3><p data-needs-topic-intro></p></div>'+
+  '<h3 data-needs-topic-heading tabindex="-1"></h3><p data-needs-topic-intro></p></div>'+
   '<div class="ns-needs-domain-chips" data-needs-domain-chips role="group" aria-label="Narrow topics by area"></div>'+
   '<p class="ns-needs-filter-count" data-needs-choice-count role="status" aria-live="polite"></p>'+
   '<div class="ns-needs-choices" data-needs-topic-list></div>'+
@@ -158,12 +158,13 @@ function wireModeFilter(root,mode){
  root.addEventListener?.('click',event=>{
   const themeButton=event.target.closest('[data-needs-theme]');
   if(themeButton){theme=themeButton.dataset.needsTheme;domain='';limit=NAV_TOPIC_PAGE_SIZE;render();
+   heading?.focus?.({preventScroll:true});
    panel.querySelector('[data-needs-topic-heading]')?.scrollIntoView?.({block:'nearest',behavior:'instant'});return;}
   const areaButton=event.target.closest('[data-needs-area]');
   if(areaButton){domain=areaButton.dataset.needsArea;limit=NAV_TOPIC_PAGE_SIZE;render();return;}
   if(event.target.closest('[data-needs-back-themes]')){
    theme='';domain='';limit=NAV_TOPIC_PAGE_SIZE;filter.value='';render();
-   groups.querySelector('h3')?.focus?.();return;
+   groups.querySelector('[data-needs-theme-heading]')?.focus?.({preventScroll:true});return;
   }
   if(event.target.closest('[data-needs-more]')){limit+=NAV_TOPIC_PAGE_SIZE;render();}
  });
