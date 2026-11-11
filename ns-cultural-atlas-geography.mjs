@@ -6,6 +6,21 @@
 export const GEOBOUNDARIES_API='https://www.geoboundaries.org/api/current/gbOpen/';
 export const CENSUS_TRIBAL_LAYER='https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/AIANNHA/MapServer/47';
 export const OSM_PLACE_SEARCH='https://nominatim.openstreetmap.org/search';
+
+export const US_COUNTY_LAYER='https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/1';
+// US Census two-digit state/territory codes, including DC and populated territories.
+export const US_STATE_FIPS=Object.freeze({
+ Alabama:'01',Alaska:'02',Arizona:'04',Arkansas:'05',California:'06',Colorado:'08',Connecticut:'09',
+ Delaware:'10','District of Columbia':'11',Florida:'12',Georgia:'13',Hawaii:'15',Idaho:'16',Illinois:'17',
+ Indiana:'18',Iowa:'19',Kansas:'20',Kentucky:'21',Louisiana:'22',Maine:'23',Maryland:'24',
+ Massachusetts:'25',Michigan:'26',Minnesota:'27',Mississippi:'28',Missouri:'29',Montana:'30',
+ Nebraska:'31',Nevada:'32','New Hampshire':'33','New Jersey':'34','New Mexico':'35','New York':'36',
+ 'North Carolina':'37','North Dakota':'38',Ohio:'39',Oklahoma:'40',Oregon:'41',Pennsylvania:'42',
+ 'Rhode Island':'44','South Carolina':'45','South Dakota':'46',Tennessee:'47',Texas:'48',Utah:'49',
+ Vermont:'50',Virginia:'51',Washington:'53','West Virginia':'54',Wisconsin:'55',Wyoming:'56',
+ 'American Samoa':'60',Guam:'66','Northern Mariana Islands':'69','Puerto Rico':'72','U.S. Virgin Islands':'78',
+ 'United States Virgin Islands':'78'
+});
 const polygonSets=g=>g?.type==='Polygon'?[g.coordinates]:g?.type==='MultiPolygon'?g.coordinates:[];
 export function ringContains(point,ring){
  const [x,y]=point;let inside=false;
@@ -76,6 +91,20 @@ export async function fetchAdministrativeLayer(fetcher,code,level,{signal}={}){
   }catch(err){if(signal?.aborted)throw err;lastError=err;}
  }
  throw lastError;
+}
+export async function fetchUSCounties(fetcher,stateName,{signal}={}){
+ const code=US_STATE_FIPS[String(stateName).trim()];
+ if(!code)throw Error('US Census state identifier not available for this area.');
+ const params=new URLSearchParams({
+  where:"STATE='"+code+"'",outFields:'NAME,STATE,COUNTY,GEOID',returnGeometry:'true',
+  outSR:'4326',geometryPrecision:'3',maxAllowableOffset:'0.015',f:'geojson',resultRecordCount:'500'
+ });
+ const response=await fetcher(US_COUNTY_LAYER+'/query?'+params.toString(),signal?{signal}:{});
+ const data=await checkResponse(response,'US Census county layer');
+ if(data?.error||data?.type!=='FeatureCollection'||!Array.isArray(data.features))
+  throw Error('US Census county data unavailable.');
+ if(data.exceededTransferLimit||data.features.length>=500)throw Error('County response exceeded its coverage limit.');
+ return {data,source:'US Census TIGERweb, January 2026'};
 }
 export async function fetchUSIndigenousAreas(fetcher,view,{signal}={}){
  // National layer is too large to draw in one request; request only a zoomed viewport.
