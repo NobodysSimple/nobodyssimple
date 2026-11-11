@@ -84,7 +84,7 @@ function modeScreen(mode){
   mode.options.map(optionCard).join('')+'</div></section>'+
  '<section class="ns-needs-theme-section" data-needs-theme-section><h3>Explore by theme</h3>'+
  '<div class="ns-needs-theme-grid" data-needs-theme-grid>'+groups.map(themeCard).join('')+'</div></section>'+
- '<section class="ns-needs-topic-panel" data-needs-topic-panel hidden aria-label="Topics in your chosen theme">'+
+ '<section class="ns-needs-topic-panel" id="ns-needs-topic-panel" data-needs-topic-panel hidden aria-label="Topics in your chosen theme">'+
   '<div class="ns-needs-topic-heading"><button type="button" class="ns-needs-back-themes" data-needs-back-themes>← All themes</button>'+
   '<h3 data-needs-topic-heading></h3><p data-needs-topic-intro></p></div>'+
   '<div class="ns-needs-domain-chips" data-needs-domain-chips role="group" aria-label="Narrow topics by area"></div>'+
@@ -116,14 +116,14 @@ function wireModeFilter(root,mode){
  const render=()=>{
   const query=filter.value.trim();
   const searching=Boolean(query);
-  feature.hidden=false;
+  feature.hidden=Boolean(theme)&&!searching;
   let visibleFeatures=0;
   for(const card of featureCards){
    const matched=!searching||matchingTopics([{id:'suggestion',title:card.textContent,hint:'',aliases:[]}],query).length>0;
    card.hidden=!matched;if(matched)visibleFeatures++;
   }
   if(searching&&visibleFeatures===0)feature.hidden=true;
-  groups.hidden=searching;
+  groups.hidden=searching||Boolean(theme);
   panel.hidden=!searching&&!theme;
   for(const button of groupButtons)button.setAttribute('aria-expanded',String(button.dataset.needsTheme===theme));
   if(panel.hidden)return;
