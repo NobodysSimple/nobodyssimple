@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {NEEDS_MODES,getNeedsMode,getNeedsActivity,needsDestination,NEEDS_REVIEW_CASES} from '../../ns-needs-catalog.mjs';
 import {PROCESSING_ACTIVITIES,SETTLING_ACTIVITIES,renderNeedsActivity} from '../../ns-needs-activities.mjs';
-import {renderNeedsConsole,getSubjectMatchesForTest,TOPIC_AREAS_BY_MODE,topicsForNeedsMode,themesForNeedsMode,NAV_TOPIC_PAGE_SIZE} from '../../ns-needs-console.mjs';
+import {renderNeedsConsole,getSubjectMatchesForTest,TOPIC_AREAS_BY_MODE,topicsForNeedsMode,themesForNeedsMode,browsableTopicsForNeedsMode,NAV_TOPIC_PAGE_SIZE} from '../../ns-needs-console.mjs';
 import {atlasProblemIndex,atlasGet,isSafetyPriority} from '../../ns-atlas-core.mjs';
 import {tools} from '../../tool-catalog.mjs';
 import {NAV_THEMES,topicTheme,topicsInTheme,matchingTopics} from '../../ns-needs-themes.mjs';
@@ -149,6 +149,10 @@ test('all 31 domains are grouped under six themes and every topic remains reacha
  }
  assert.equal(covered.size,31);
  assert.equal(TOPIC_AREAS_BY_MODE.learn.length,31);
+ assert.equal(browsableTopicsForNeedsMode('learn').length,518,'featured topics still appear in their relevant theme');
+ assert.equal(new Set(browsableTopicsForNeedsMode('learn').map(x=>x.id)).size,518);
+ assert.equal(themesForNeedsMode('learn').reduce((sum,t)=>sum+t.count,0),518);
+
  const featured=new Set(getNeedsMode('learn').options.filter(o=>o.type==='topic').map(o=>o.target));
  const allLearn=new Set([...topicsForNeedsMode('learn').map(p=>p.id),...featured]);
  assert.equal(allLearn.size,518,'no Atlas entry lost');
