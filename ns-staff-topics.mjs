@@ -113,6 +113,7 @@ function validRecord(raw,known){
  }
  if(r.progress.length<3||r.closing.length<40||r.supportText.length<40)
   throw Error('Finish progress markers, closing and support information.');
+ if(new Set(r.customTools.map(t=>t.id)).size!==r.customTools.length)throw Error('Each additional approach needs a unique identifier.');
  for(const t of r.customTools)if(t.steps.length<2||t.why.length<25)throw Error('Custom approaches need at least two steps and a useful rationale.');
  return r;
 }
@@ -297,7 +298,16 @@ export function mountTopicWorkspace(root,{getPublisher,onNotice=()=>{}}={}){
    const old=current.id;
    current.id=value;
    if(old!==value)clearLocal(old);
-  }else resolvePath(current,name,value);
+  }else{
+   resolvePath(current,name,value);
+   if(name==='title'&&!expected&&!atlasGet(current.id)&&current.id==='new-topic'){
+    const candidate=slug(value);
+    if(candidate.length>=3&&!atlasGet(candidate)){
+     clearLocal(current.id);current.id=candidate;
+     const idInput=q('[data-topic-input="id"]');if(idInput)idInput.value=candidate;
+    }
+   }
+  }
   q('[data-topic-editor-title]').textContent=current.title||'New topic';
   renderPreview();schedule();
  }
@@ -350,7 +360,7 @@ export function mountTopicWorkspace(root,{getPublisher,onNotice=()=>{}}={}){
   if(el.hasAttribute('data-topic-delete')){void remove();return;}
   if(el.hasAttribute('data-topic-refresh')){void refresh();return;}
   if(el.hasAttribute('data-topic-add-tool')){
-   current.customTools.push({id:'method-'+(current.customTools.length+1),kind:'behaviour',
+   current.customTools.push({id:'method-'+Math.random().toString(36).slice(2,10),kind:'behaviour',
     title:'',why:'',steps:[],caution:'',worksheet:'step'});
    editor();schedule();return;
   }
