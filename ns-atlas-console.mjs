@@ -25,10 +25,7 @@ function first(state){
  const active=atlasThemes.find(t=>t.id===state.theme);
  const items=state.query.trim()?atlasSearch(state.query,36):active?atlasByTheme(active.id).slice(0,state.limit):[];
  const listTitle=state.query.trim()?'Search results':active?'Problems in '+active.name:'';
- return shell('<div class="ns-atlas-modes" role="group" aria-label="What would help?">'+
- '<button type="button" data-atlas-mode="tools" aria-pressed="'+(state.mode==='tools')+'"><strong>Find something to try</strong><small>One practical exercise matched to your situation</small></button>'+
- '<button type="button" data-atlas-mode="learn" aria-pressed="'+(state.mode==='learn')+'"><strong>Understand & learn</strong><small>Clear explanations and a personal guide</small></button></div>'+
- '<section class="ns-atlas-main"><p class="eyebrow">BROWSE BY THEME</p><h2>'+(active?s(active.name):'What part of life feels difficult right now?')+'</h2>'+
+ return shell('<section class="ns-atlas-main"><p class="eyebrow">BROWSE BY THEME</p><h2>'+(active?s(active.name):'What part of life feels difficult right now?')+'</h2>'+
  '<p class="ns-atlas-theme-intro">'+(active?s(active.description)+' Choose a problem card below to open its guide.':"Start with the part that feels closest. Each theme opens a set of specific experiences; you can also search in your own words.")+'</p>'+
  '<label class="ns-atlas-search"><span class="sr-only">Search problems</span><input data-atlas-search type="search" maxlength="120" value="'+s(state.query)+'" placeholder="Search: boundaries, waking at night, stigma, deadlines…"><span aria-hidden="true">⌕</span></label>'+
  (active?'<button type="button" class="ns-atlas-theme-back" data-atlas-themes-back>← All themes</button>':'')+
@@ -39,11 +36,11 @@ function first(state){
  '<p class="ns-atlas-footnote">'+atlasCount+' topics describe experiences, not diagnoses. A difficulty can have several explanations and may overlap with others.</p></section>');
 }
 export function renderAtlasConsole(root){
- const state={mode:'tools',theme:'',query:'',limit:24};
+ const state={theme:'',query:'',limit:24};
  const select=id=>{
   if(!atlasGet(id))return;
-  handoff={id,variant:'',maintainer:'',mode:state.mode};
-  location.hash=state.mode==='learn'?'#problem/'+id:'#tool/atlas-'+id;
+  handoff={id,variant:'',maintainer:'',mode:'learn'};
+  location.hash='#problem/'+id;
  };
  const paint=(jump=false)=>{
   root.innerHTML=first(state);
@@ -51,9 +48,6 @@ export function renderAtlasConsole(root){
   if(jump)safeScroll();
  };
  const bind=()=>{
-  root.querySelectorAll('[data-atlas-mode]').forEach(b=>b.onclick=()=>{
-   state.mode=b.dataset.atlasMode;paint();
-  });
   root.querySelectorAll('[data-atlas-theme]').forEach(b=>b.onclick=()=>{
    state.theme=b.dataset.atlasTheme;state.query='';state.limit=24;paint(true);
   });
