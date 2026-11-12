@@ -178,7 +178,7 @@ export function bindTopicJumps(surface){
   if(!allowed.includes(id))return;
   const section=surface.querySelector('#'+id);
   if(!section)return;
-  if(section instanceof HTMLDetailsElement)section.open=true;
+  if(section.tagName==='DETAILS')section.open=true;
   section.scrollIntoView({block:'start',behavior:'instant'});
   const heading=section.matches('details')?section.querySelector('summary'):section.querySelector('h2,h3');
   if(heading){heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}
