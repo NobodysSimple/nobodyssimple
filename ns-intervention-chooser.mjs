@@ -215,8 +215,13 @@ function careFirst(g){
   '<p>For immediate danger in the UK, call 999.</p></section>';
 }
 function introductionCover(g){
+ const diagnosisIdentity=g.id==='mental-health-diagnosis-identity';
+ const title=diagnosisIdentity?'A mental health diagnosis has affected how I see myself':g.title;
+ const lead=diagnosisIdentity?
+  'A diagnosis can be a relief and still bring grief or questions. It may explain something about your experience without defining who you are. You do not have to decide today what it means about you.':
+  g.lead;
  return '<header class="ns-pick-cover ns-tone-'+e(g.tone||'sage')+'"><p class="ns-pick-kicker">NOBODY’S SIMPLE · YOUR FIELD GUIDE</p>'+
-  '<h1>'+e(g.title)+'</h1><p>'+e(g.lead)+'</p>'+
+  '<h1>'+e(title)+'</h1><p>'+e(lead)+'</p>'+
   (g.contextFirst?'<p class="ns-pick-editorial-status">Editorial overview · explore safely. This topic has not had an individual evidence review, and an identity or background is not a disorder.</p>':'')+
   '</header>';
 }
