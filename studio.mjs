@@ -455,6 +455,11 @@ function openEditor(post = null, type = "blog", opts = {}) {
   document.querySelectorAll(".rail-button[data-view]").forEach((button) => button.classList.remove("active"));
   setSaveState(opts.fromDraft ? "Recovered local draft" : "Ready to edit");
   setDeploy(previous?.status === "published" ? "Editing a live post. Click Update live post when ready." : "Changes stay on this device until you publish.");
+  const showPreview=window.matchMedia("(min-width:1150px)").matches;
+  $("live-preview").hidden=!showPreview;
+  $("editor-grid").classList.toggle("split-mode",showPreview);
+  $("toggle-split").textContent=showPreview?"Hide preview":"Split preview";
+  updateLivePreview();
 }
 
 function markDirty({ render = false, checkpoint = false } = {}) {
@@ -466,6 +471,7 @@ function markDirty({ render = false, checkpoint = false } = {}) {
   updateSearchPreview();
   updateThumbPreview();
   runQuality(false);
+  if(!$("live-preview").hidden)updateLivePreview();
   scheduleAutosave();
   if (checkpoint) pushUndoState();
 }
@@ -662,7 +668,7 @@ async function fileData(file) {
     ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height); bitmap.close();
     const outputMime = ext === "png" ? "image/png" : "image/webp";
     const blob = await new Promise((resolve) => canvas.toBlob(resolve, outputMime, 0.84));
-    if (blob) { mime = outputMime; ext = outputMime === "image/png" ? "png" : "webp"; const buffer = new Uint8Array(await blob.arrayBuffer()); raw.set(buffer.subarray(0, Math.min(raw.length, buffer.length))); return base64Asset(buffer, mime, ext, file.name); }
+    if (blob) { mime = outputMime; ext = outputMime === "image/png" ? "png" : "webp"; const buffer = new Uint8Array(await blob.arrayBuffer()); return base64Asset(buffer, mime, ext, file.name); }
   }
   return base64Asset(raw, mime, ext, file.name);
 }
@@ -1140,7 +1146,7 @@ $("block-list").addEventListener("paste", (event) => {
   if (html.includes("<table")) {
     event.preventDefault();
     const parsed = new DOMParser().parseFromString(html, "text/html");
-    const rows = [...parsed.querySelectorAll("table tr")].map((row) => [...row.querySelectorAll("th,td")].map((cell) => cell.innerText.trim()));
+    const rows = [...parsed.querySelectorAll("table tr")].map((row) => [...row.querySelectorAll("th,td")].map((cell) => (cell.textContent||"").trim()));
     if (rows.length) { addBlock("table"); current.blocks[selectedIndex].rows = rows; current.blocks[selectedIndex].headerRow = !!parsed.querySelector("th"); renderBlocksEditor(); markDirty(); }
   } else if (html && event.target.closest("[contenteditable=true]")) {
     event.preventDefault();
