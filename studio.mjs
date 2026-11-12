@@ -12,6 +12,7 @@ import {
   youtubeID,
 } from "./core.mjs";
 import { Publisher } from "./publisher.mjs";
+import { TopicStudio } from "./ns-topic-studio.mjs";
 
 const $ = (id) => document.getElementById(id);
 const now = () => new Date().toISOString();
@@ -38,6 +39,7 @@ const templates = {
 };
 
 let publisher = null;
+let topicStudio = null;
 let githubUser = null;
 let posts = [];
 let repoAssets = [];
@@ -64,10 +66,10 @@ let dbPromise = null;
 const openDB = () => {
   if (dbPromise) return dbPromise;
   dbPromise = new Promise((resolve, reject) => {
-    const request = indexedDB.open("nobodyssimple-creator", 1);
+    const request = indexedDB.open("nobodyssimple-creator", 2);
     request.onupgradeneeded = () => {
       const db = request.result;
-      for (const name of ["drafts", "versions", "snippets", "notes", "templates"]) {
+      for (const name of ["drafts", "versions", "snippets", "notes", "templates", "topicDrafts"]) {
         if (!db.objectStoreNames.contains(name)) db.createObjectStore(name, { keyPath: "id" });
       }
     };
@@ -233,6 +235,8 @@ async function setView(view) {
   $("media-view").hidden = view !== "media";
   $("templates-view").hidden = view !== "templates";
   $("editor-view").hidden = view !== "editor";
+  $("topics-view").hidden = view !== "topics";
+  if(view === "topics" && topicStudio) await topicStudio.open();
   document.querySelectorAll(".rail-button[data-view]").forEach((button) => button.classList.toggle("active", button.dataset.view === view));
   if (view === "dashboard") renderDashboard();
   if (view === "media") renderMediaLibrary();
@@ -987,6 +991,8 @@ $("login-form").addEventListener("submit", async (event) => {
     githubUser = await candidate.connect();
     const snapshot = await candidate.snapshot();
     publisher = candidate; posts = snapshot.data.posts; repoAssets = snapshot.assets;
+    topicStudio = new TopicStudio({root:$("topic-studio-root"),publisher:candidate,
+     dbAll,dbPut,dbDelete,notify:toast});
     $("token").value = ""; $("login").hidden = true; $("studio").hidden = false;
     $("connection-label").textContent = `Connected as ${githubUser.login}`;
     await refreshLocal(); setView("dashboard");
@@ -997,6 +1003,7 @@ $("login-form").addEventListener("submit", async (event) => {
 });
 $("disconnect").onclick = async () => {
   if (dirty && !confirm("Sign out? Your latest changes are autosaved in this browser.")) return;
+  topicStudio?.disconnect();topicStudio=null;
   publisher?.disconnect(); publisher = null; githubUser = null; current = null; uploads = [];
   $("studio").hidden = true; $("login").hidden = false; $("login-status").textContent = "Signed out.";
 };
