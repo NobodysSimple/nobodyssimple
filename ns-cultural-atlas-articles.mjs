@@ -4,7 +4,7 @@
  * Every entry identifies a documentary source and a question for the reader.
  */
 const article=(id,country,title,theme,place,body,reflection,question,source,region='')=>Object.freeze({
- id,country,title,theme,place,body:Object.freeze(body),reflection,question,
+ id,country,title,theme,place,body:Object.freeze(body),psychology:body[1]||'',reflection,question,
  source:Object.freeze({label:source.includes('ich.unesco.org')?'UNESCO Intangible Cultural Heritage':source.includes('whc.unesco.org')?'UNESCO World Heritage Centre':source.includes('cornwall.gov.uk')?'Cornwall Council':source.includes('nls.uk')?'National Library of Scotland':source.includes('gov.wales')?'Welsh Government':source.includes('mbie.govt.nz')?'New Zealand Government':source.includes('cherokee.org')?'Cherokee Nation':source.includes('nps.gov')?'US National Park Service':'Documentary source',url:source}),region
 });
 export const CULTURE_ARTICLES=Object.freeze([
@@ -402,8 +402,103 @@ export const CULTURE_ARTICLES=Object.freeze([
   "UNESCO traces kabuki theatre to Japan's Edo period and describes its stylised roles, performance conventions, costumes and theatrical devices. The practice has changed with its audiences and social status over several centuries.",
   "On a stage, a character is created through gestures and agreed conventions that an audience learns to read. That offers a way to question how we interpret roles, without claiming everyday identity is merely acting.",
   "Gendered casting and historical changes in access also matter. A cultural form can be admired for its artistry while its social conventions remain open to historical analysis and discussion."
- ],"A role can be socially learned and artistically powerful without describing every person outside the stage.","What familiar social role feels natural until you notice the conventions that sustain it?","https://ich.unesco.org/en/RL/kabuki-theatre-00163")
+ ],"A role can be socially learned and artistically powerful without describing every person outside the stage.","What familiar social role feels natural until you notice the conventions that sustain it?","https://ich.unesco.org/en/RL/kabuki-theatre-00163"),
+ article('turkish-coffee','TUR','Turkish coffee: hospitality with time to talk','Hospitality & attention','Coffee-house and family traditions in Türkiye',[
+  'UNESCO describes Turkish coffee as a preparation tradition and a social setting: people meet over small cups to talk, share news and take part in family and ceremonial occasions.',
+  'Psychologically, hospitality is a structured invitation to connect. The host offers a shared object and a familiar sequence; that can lower the effort of beginning a conversation and create room for everyday concerns.',
+  'This is a lens on one living tradition, not a claim that all Turkish people drink coffee or that coffee itself improves wellbeing. The social value can be considered separately from the beverage.'
+ ],'Connection can be supported by a repeated welcome and time set aside for conversation.','What small, familiar gesture helps people feel there is room to talk?','https://ich.unesco.org/en/RL/turkish-coffee-culture-and-tradition-00645'),
+ article('mahadra','MRT','Mahadra: learning held together by trust','Learning & community','Mauritanian community learning circles',[
+  'UNESCO describes the mahadra as a community system for passing on traditional knowledge and oral expression. Its teaching relationship is based on commitment and trust between teachers and students.',
+  'Psychologically, learning depends on more than information transfer. A dependable relationship can make it easier to ask questions, practise publicly and accept correction without treating a mistake as rejection.',
+  'The mahadra has its own religious and social setting. This example invites reflection on trust in learning, not a claim that one educational model suits every learner.'
+ ],'Trust and belonging can be part of the conditions that make sustained learning possible.','What helps you feel safe enough to be a beginner?','https://ich.unesco.org/en/RL/mahadra-a-community-system-for-transmission-of-traditional-knowledge-and-oral-expressions-01960'),
+ article('xeer-ciise-djibouti','DJI','Xeer Ciise: community rules that make repair imaginable','Justice & reconciliation','Somali-Issa communities of Djibouti',[
+  'Xeer Ciise is an oral customary legal system practised by Somali-Issa communities across the Horn of Africa. UNESCO describes rules for governance and social conduct, including a justice approach centred on reconciliation and compensation.',
+  'Psychologically, repair changes the question after harm from “Who is the bad person?” to “What happened, who was affected, and what could restore safety or balance?” A shared process can make accountability more concrete than private intention alone.',
+  'This is a specific customary system with its own authority and history. It should not be treated as a template for every community or as a substitute for protections against coercion and abuse.'
+ ],'Accountability can include both naming harm and organising a path toward repair.','What would make an apology or repair feel real to the person affected?','https://ich.unesco.org/en/RL/xeer-ciise-oral-customary-laws-of-somali-issa-communities-in-ethiopia-djibouti-and-somalia-02087'),
+ article('xeer-ciise-somalia','SOM','Xeer Ciise: belonging through shared responsibility','Belonging & social conduct','Somali-Issa communities of Somalia',[
+  'Xeer Ciise is an oral customary legal system maintained among Somali-Issa communities in Somalia, Djibouti and Ethiopia. UNESCO describes it as a framework for governance, community justice and shared social principles.',
+  'Psychologically, belonging is not only a feeling of closeness; it can also be a set of responsibilities people expect one another to uphold. Shared rules make those expectations visible and give a community language for addressing breaches.',
+  'The system belongs to Somali-Issa communities and has internal complexity. Describing its social function does not imply that all members agree or that customary authority is automatically fair in every case.'
+ ],'Shared expectations can turn belonging into practical obligations, while accountability remains open to scrutiny.','Which shared responsibilities make a group feel dependable to you?','https://ich.unesco.org/en/RL/xeer-ciise-oral-customary-laws-of-somali-issa-communities-in-ethiopia-djibouti-and-somalia-02087'),
+ article('gada','ETH','The Gada system: rotating responsibility and public accountability','Governance & responsibility','Oromo communities in Ethiopia',[
+  'The Gada system is an Indigenous Oromo system of governance organised around age-sets and changing periods of responsibility. UNESCO records its political, social and cultural roles, including ways of teaching norms and resolving disputes.',
+  'Psychologically, rotating roles can distribute responsibility across a life course instead of locating authority permanently in one person. Public expectations and shared procedures also make leadership answerable to a wider group.',
+  'Gada is a living Oromo institution with histories and practices that vary. This discussion focuses on how roles and accountability are organised, not on treating the system as an ideal or universal model.'
+ ],'Clear roles and reviewable authority can shape how a group understands responsibility.','Where would a shared process make leadership or decision-making more accountable?','https://ich.unesco.org/en/RL/gada-system-an-indigenous-democratic-socio-political-system-of-the-oromo-01164'),
+ article('ngondo','CMR','Ngondo: a shared ritual for carrying community concerns','Ritual & collective voice','Sawa communities around the Wouri River, Cameroon',[
+  'Ngondo is an annual tradition among Sawa communities in Cameroon, combining public festivities with sacred practices around the Wouri River. UNESCO describes a ritual in which community wishes and grievances are carried in a canoe and a message is later shared.',
+  'Psychologically, a collective ritual can give private worries a public form. Naming concerns through an agreed sequence may help people recognise that uncertainty is shared, and that the group has a way to attend to it.',
+  'Ngondo is a sacred Sawa tradition, not a general-purpose wellbeing exercise. Its meaning rests with the communities who practise and transmit it.'
+ ],'Shared rituals can make collective concerns speakable without making them identical.','How could a group make space for concerns that are usually carried alone?','https://ich.unesco.org/en/RL/ngondo-worship-of-water-oracles-and-associated-cultural-traditions-among-the-sawa-02140'),
+ article('nguon','CMR','Nguon: a tradition that makes power answer questions','Accountability & voice','Bamoun community, Cameroon',[
+  'Nguon is a Bamoun tradition involving a relationship between the monarch and the community. UNESCO describes a process in which community views are gathered, grievances are presented publicly and governance is discussed.',
+  'Psychologically, voice matters when people can see how feedback travels into a decision. A formal route for criticism can reduce the burden on individuals to challenge authority alone and can communicate that disagreement has a place.',
+  'Nguon has a specific Bamoun history and ritual structure. It is not evidence that every public hearing is safe or that traditional authority is always accountable.'
+ ],'A visible route from feedback to response can make participation feel consequential.','When you raise a concern, what would help you know it was genuinely heard?','https://ich.unesco.org/en/RL/nguon-rituals-of-governance-and-associated-expressions-in-the-bamoun-community-01955'),
+ article('mvet-oyeng','CMR','Mvet Oyeng: an epic learned in company','Storytelling & shared memory','Ekang communities in Central Africa',[
+  'Mvet Oyeng brings together epic singing, dance and a string instrument among Ekang communities. UNESCO describes stories passed on informally through ritual and hands-on learning.',
+  'Psychologically, a shared story can act as a memory structure: listeners meet characters, choices and consequences together, then use them to discuss what matters. Learning the performance also links knowledge to relationships, not only to a written text.',
+  'The stories belong to the communities who carry them. This reflection is about storytelling and memory, not a claim that one narrative represents every Ekang person.'
+ ],'Stories can help a community remember and interpret experience together.','Which story has helped you think through a difficult choice?','https://ich.unesco.org/en/RL/mvet-oyeng-musical-art-practices-and-skills-associated-with-the-ekang-community-02253'),
+ article('mwazindika','KEN','Mwazindika: dance, story and communal wellbeing','Movement & shared meaning','Daida community, Kenya',[
+  'Mwazindika is a spiritual dance of the Daida community in Kenya, combining music, movement, ritual and storytelling at important moments, including rites of passage and times of crisis. UNESCO records that practitioners understand it as supporting physical, mental and spiritual wellbeing.',
+  'Psychologically, coordinated movement and rhythm can organise attention and provide a shared way to express what is difficult to say directly. In this tradition, those actions sit inside relationships with elders, ancestors and community history.',
+  'The practice is specifically Daida and spiritual. The atlas describes what its custodians say it means; it does not turn the dance into a clinical technique or invite outsiders to copy sacred elements.'
+ ],'Movement can carry meaning and emotion within a community’s own spiritual framework.','What forms of expression help you feel accompanied during a difficult time?','https://ich.unesco.org/en/USL/mwazindika-spiritual-dance-of-the-daida-community-of-kenya-02297'),
+ article('xoe','VNM','Xòe dance: learning harmony by moving together','Coordination & belonging','Tai communities of north-west Viet Nam',[
+  'Xòe is a dance practised by Tai communities in north-west Viet Nam at rituals, weddings, festivals and other gatherings. UNESCO describes circle dances in which people hold hands and move in time, expressing wishes for health and harmony.',
+  'Psychologically, synchronised action can make cooperation tangible: each person adjusts to the shared rhythm and to the person beside them. The circle offers a physical model of participation in which no single dancer has to carry the whole performance.',
+  'Xòe includes distinct forms and meanings. The psychological idea concerns this described practice; it should not be turned into a claim about the personality of Tai people or all Vietnamese communities.'
+ ],'Shared rhythm can make mutual adjustment visible and felt.','What activity helps you experience cooperation rather than only talk about it?','https://ich.unesco.org/en/RL/art-of-xoe-dance-of-the-tai-people-in-viet-nam-01575'),
+ article('compas','HTI','Compas: music as a place to meet and express','Expression & social connection','Haitian music and dance communities',[
+  'Compas is a Haitian music and dance genre whose lyrics and performances address themes including love, freedom, peace and resistance. UNESCO describes it as bringing together people across generations and backgrounds.',
+  'Psychologically, music gives emotion a shared rhythm and language. Dancing also coordinates attention between people, creating a form of connection that does not depend on lengthy explanation or identical experiences.',
+  'Compas is a living Haitian art form with varied practitioners. Its value is not reducible to a mental-health effect, and no single performance speaks for every Haitian listener.'
+ ],'Shared art can help people express emotion and recognise one another.','What song has helped you feel connected to people whose experiences differ from yours?','https://ich.unesco.org/en/RL/the-compas-of-haiti-02273'),
+ article('palenque-kuagro','COL','Kuagro: friendship organised as mutual responsibility','Friendship & solidarity','Palenque de San Basilio, Colombia',[
+  'In the cultural space of Palenque de San Basilio, kuagro are age-group networks with shared rights and duties. UNESCO describes members working together in daily life and at important events.',
+  'Psychologically, friendship becomes more dependable when care is expressed through actions and recognised responsibilities. A network can spread practical support across several relationships rather than expecting one person to meet every need.',
+  'Kuagro belongs to the history and social organisation of Palenque de San Basilio. It is not a model to extract from its context or a claim that all friendship networks work the same way.'
+ ],'Reliable relationships often combine affection with practical, shared responsibility.','What kind of support would you like your friendships to include more often?','https://ich.unesco.org/en/RL/cultural-space-of-palenque-de-san-basilio-00102'),
+ article('washi','JPN','Washi: patient craft and the value of guided practice','Attention & apprenticeship','Washi-making communities in Japan',[
+  'Washi is handmade Japanese paper made from plant fibres through a sequence of preparation and forming. UNESCO describes skills passed through craft families, preservation groups and local teaching.',
+  'Psychologically, apprenticeship turns a complex skill into observable steps. A learner can watch, try, receive feedback and gradually take on responsibility, which gives progress a shape beyond “be good at this now.”',
+  'Washi is a living craft with different makers and settings. This lesson concerns how knowledge can be transmitted through practice; it is not a claim that every person learns best in the same way.'
+ ],'Breaking a skill into visible steps can make learning and feedback easier to bear.','What complex task could you approach through watching, trying and adjusting?','https://ich.unesco.org/en/RL/washi-craftsmanship-of-traditional-japanese-hand-made-paper-02291'),
+ article('gusle','SRB','Gusle singing: memory performed with an audience','Historical memory & identity','Serbian gusle communities',[
+  'Gusle singers perform epic poetry with a single-string instrument. UNESCO describes the practice as a form of historical memory and notes that audiences and performers shape the telling together.',
+  'Psychologically, remembering is not only retrieving facts; stories organise events into meaning. A live audience also signals which details matter, keeping memory social and open to interpretation.',
+  'Epic performance is not a neutral record of all history. The stories and their meanings need to be understood in their historical setting and alongside other accounts.'
+ ],'Stories can preserve memory while also shaping how a community interprets it.','Whose stories are central to the history you were taught, and whose are missing?','https://ich.unesco.org/en/RL/singing-to-the-accompaniment-of-the-gusle-01377'),
+ article('khoomei','MNG','Khoomei: listening as a relationship with place','Attention & environment','Mongolian throat-singing traditions',[
+  'Khoomei is a Mongolian style of singing in which one performer creates several simultaneous tones. UNESCO describes songs connected with ritual, respect for the natural world, ancestors and cultural identity.',
+  'Psychologically, attentive listening can change what stands out in an environment. The practice invites a relationship with place in which sound is not background but something to notice, learn and respond to.',
+  'Khoomei has specific musical and cultural lineages. This reflection does not treat it as a generic mindfulness method or suggest that one sound carries the same meaning for every listener.'
+ ],'Attention can be trained through a tradition’s own ways of listening to place.','What changes when you listen to a familiar place as if it had something to teach you?','https://ich.unesco.org/en/RL/mongolian-art-of-singing-khoomei-00210'),
+ article('sebeiba','DZA','Sebeïba: turning rivalry into shared performance','Conflict & social repair','Tuareg communities of Djanet, Algeria',[
+  'Sebeïba is an annual ritual and ceremony practised in Djanet, Algeria. UNESCO describes two communities preparing and performing together in a tradition that includes music, dance and ceremonial dress.',
+  'Psychologically, a shared performance can give tension boundaries: people meet through agreed roles, rules and timing. It offers a way to recognise difference while creating a common event that neither group can stage alone.',
+  'Sebeïba is a specific Tuareg tradition with sacred and local meaning. It should not be reduced to a general conflict-resolution exercise or copied without the community’s consent.'
+ ],'Shared rules can create a setting where groups encounter one another without erasing difference.','What kind of shared activity might make cooperation possible when trust is low?','https://ich.unesco.org/en/RL/ritual-and-ceremonies-of-sebeiba-in-the-oasis-of-djanet-algeria-00665'),
+ article('khidr-feast','IRN','The Khidr Elias feast: vows, food and shared belonging','Ritual & social ties','Communities practising the Khidr Elias feast in Iran',[
+  'The Khidr Elias feast brings people together in a religious tradition that includes vows, shared food and dance. UNESCO notes that identification with the practice has contributed to social cohesion among practising communities.',
+  'Psychologically, a shared ritual can connect personal hopes with group recognition. People make commitments in a setting where others witness them, and the meal creates time for social contact around those commitments.',
+  'The feast has religious meanings that belong to its practitioners. This account does not treat vows as a psychological intervention or assume that every community member relates to the tradition in the same way.'
+ ],'Ritual can give personal commitments a social setting and shared memory.','Which hopes or commitments would you want trusted people to witness?','https://ich.unesco.org/en/RL/khidr-elias-feast-and-its-vows-01159'),
+ article('visoko-singing','BGR','Visoko singing: a voice learned in a village choir','Identity & group learning','Dolen and Satovcha, Bulgaria',[
+  'Visoko multipart singing is a vocal tradition maintained by singing groups in the Bulgarian villages of Dolen and Satovcha. UNESCO describes it as an important marker of local identity.',
+  'Psychologically, group singing requires listening and adjustment: each voice contributes while responding to others. Repeated practice can turn membership into a skill people enact together, rather than an abstract label.',
+  'The form belongs to specific villages and performers. This is a reflection on shared practice and identity, not a claim that all Bulgarians sing this way or experience belonging identically.'
+ ],'Group performance can make mutual listening part of how identity is practised.','Where do you feel you belong because of something you do together?','https://ich.unesco.org/en/RL/visoko-multipart-singing-from-dolen-and-satovcha-south-western-bulgaria-00967'),
+ article('xooy','SEN','Xooy: gathering to face uncertainty together','Uncertainty & shared interpretation','Serer community in Senegal',[
+  'Xooy is a nocturnal divination ceremony among Serer communities in Senegal, held before the rainy season. UNESCO describes seers addressing community concerns such as rain, illness and harvest through a public gathering of stories, songs and interpretation.',
+  'Psychologically, uncertainty can feel less isolating when a group gives it a shared language. A ceremony can organise attention around common concerns, even though its spiritual explanations differ from psychological science.',
+  'Xooy is a Serer spiritual practice, not a forecasting method endorsed by this atlas. Its meaning should be described through its custodians rather than translated into a clinical technique.'
+ ],'Communities develop different ways to face uncertainty and make shared concerns visible.','When uncertainty is shared, what helps a group respond without pretending to know everything?','https://ich.unesco.org/en/RL/xooy-a-divination-ceremony-among-the-serer-of-senegal-00878')
 ]);
 export const articlesForCountry=code=>CULTURE_ARTICLES.filter(a=>a.country===code);
-export const articleCountries=Object.freeze([...new Set(CULTURE_ARTICLES.map(a=>a.country))]);
+export const articleCountries=Object.freeze([...new Set(CULTURE_ARTICLES.map(a=>a.country));
 export const articleById=id=>CULTURE_ARTICLES.find(a=>a.id===id)||null;
