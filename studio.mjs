@@ -12,6 +12,7 @@ import {
   youtubeID,
 } from "./core.mjs";
 import { Publisher } from "./publisher.mjs";
+import {mountTopicWorkspace} from "./ns-staff-topics.mjs";
 
 const $ = (id) => document.getElementById(id);
 const now = () => new Date().toISOString();
@@ -38,6 +39,7 @@ const templates = {
 };
 
 let publisher = null;
+const topicDesk=mountTopicWorkspace(document.getElementById("topics-view"),{getPublisher:()=>publisher});
 let githubUser = null;
 let posts = [];
 let repoAssets = [];
@@ -232,11 +234,13 @@ async function setView(view) {
   $("dashboard-view").hidden = view !== "dashboard";
   $("media-view").hidden = view !== "media";
   $("templates-view").hidden = view !== "templates";
+  $("topics-view").hidden = view !== "topics";
   $("editor-view").hidden = view !== "editor";
   document.querySelectorAll(".rail-button[data-view]").forEach((button) => button.classList.toggle("active", button.dataset.view === view));
   if (view === "dashboard") renderDashboard();
   if (view === "media") renderMediaLibrary();
   if (view === "templates") renderTemplates();
+  if (view === "topics") await topicDesk.refresh();
 }
 
 async function refreshLocal() {
@@ -446,10 +450,16 @@ function openEditor(post = null, type = "blog", opts = {}) {
   $("dashboard-view").hidden = true;
   $("media-view").hidden = true;
   $("templates-view").hidden = true;
+  $("topics-view").hidden = true;
   $("editor-view").hidden = false;
   document.querySelectorAll(".rail-button[data-view]").forEach((button) => button.classList.remove("active"));
   setSaveState(opts.fromDraft ? "Recovered local draft" : "Ready to edit");
   setDeploy(previous?.status === "published" ? "Editing a live post. Click Update live post when ready." : "Changes stay on this device until you publish.");
+  const showPreview=window.matchMedia("(min-width:1150px)").matches;
+  $("live-preview").hidden=!showPreview;
+  $("editor-grid").classList.toggle("split-mode",showPreview);
+  $("toggle-split").textContent=showPreview?"Hide preview":"Split preview";
+  updateLivePreview();
 }
 
 function markDirty({ render = false, checkpoint = false } = {}) {
@@ -461,6 +471,7 @@ function markDirty({ render = false, checkpoint = false } = {}) {
   updateSearchPreview();
   updateThumbPreview();
   runQuality(false);
+  if(!$("live-preview").hidden)updateLivePreview();
   scheduleAutosave();
   if (checkpoint) pushUndoState();
 }
@@ -657,7 +668,7 @@ async function fileData(file) {
     ctx.drawImage(bitmap, 0, 0, canvas.width, canvas.height); bitmap.close();
     const outputMime = ext === "png" ? "image/png" : "image/webp";
     const blob = await new Promise((resolve) => canvas.toBlob(resolve, outputMime, 0.84));
-    if (blob) { mime = outputMime; ext = outputMime === "image/png" ? "png" : "webp"; const buffer = new Uint8Array(await blob.arrayBuffer()); raw.set(buffer.subarray(0, Math.min(raw.length, buffer.length))); return base64Asset(buffer, mime, ext, file.name); }
+    if (blob) { mime = outputMime; ext = outputMime === "image/png" ? "png" : "webp"; const buffer = new Uint8Array(await blob.arrayBuffer()); return base64Asset(buffer, mime, ext, file.name); }
   }
   return base64Asset(raw, mime, ext, file.name);
 }
@@ -997,12 +1008,15 @@ $("login-form").addEventListener("submit", async (event) => {
 });
 $("disconnect").onclick = async () => {
   if (dirty && !confirm("Sign out? Your latest changes are autosaved in this browser.")) return;
-  publisher?.disconnect(); publisher = null; githubUser = null; current = null; uploads = [];
+  topicDesk.close();publisher?.disconnect(); publisher = null; githubUser = null; current = null; uploads = [];
   $("studio").hidden = true; $("login").hidden = false; $("login-status").textContent = "Signed out.";
 };
 
 document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => void setView(button.dataset.view)));
 document.querySelectorAll("[data-new]").forEach((button) => button.addEventListener("click", () => openEditor(null, button.dataset.new)));
+document.querySelectorAll("[data-topic-quick-new]").forEach(button=>button.addEventListener("click",async()=>{
+  await setView("topics");topicDesk.newTopic();
+}));
 $("dash-search").addEventListener("input", renderDashboard);
 $("dash-status").addEventListener("change", renderDashboard);
 $("dash-type").addEventListener("change", renderDashboard);
@@ -1132,7 +1146,7 @@ $("block-list").addEventListener("paste", (event) => {
   if (html.includes("<table")) {
     event.preventDefault();
     const parsed = new DOMParser().parseFromString(html, "text/html");
-    const rows = [...parsed.querySelectorAll("table tr")].map((row) => [...row.querySelectorAll("th,td")].map((cell) => cell.innerText.trim()));
+    const rows = [...parsed.querySelectorAll("table tr")].map((row) => [...row.querySelectorAll("th,td")].map((cell) => (cell.textContent||"").trim()));
     if (rows.length) { addBlock("table"); current.blocks[selectedIndex].rows = rows; current.blocks[selectedIndex].headerRow = !!parsed.querySelector("th"); renderBlocksEditor(); markDirty(); }
   } else if (html && event.target.closest("[contenteditable=true]")) {
     event.preventDefault();

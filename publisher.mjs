@@ -71,9 +71,10 @@ export class Publisher {
 
   async connect() {
     const user = await this.api("/user");
-    if (user.login.toLowerCase() !== this.owner.toLowerCase()) throw Error("Sign in with the NobodysSimple owner account.");
+    // GitHub's repository write permission is the actual publishing role.
+    // No Firebase site-member role or public username grants this access.
     const repo = await this.api(this.base);
-    if (!repo.permissions?.push) throw Error("This account does not have permission to publish to this repository.");
+    if (!repo.permissions?.push) throw Error("This GitHub account needs repository write access to publish.");
     await this.api(`${this.base}/git/ref/heads/${this.branch}`);
     return user;
   }
@@ -94,6 +95,53 @@ export class Publisher {
       // Publishing remains available if the repository's asset tree is too large.
     }
     return { head, tree: commit.tree.sha, data, assets };
+  }
+
+  // Topics use their own versioned repository file. A publish is an
+  // authenticated non-force GitHub commit, not a write to localStorage.
+  async topicSnapshot() {
+    const ref=await this.api(`${this.base}/git/ref/heads/${this.branch}`);
+    const head=ref.object.sha;
+    const commit=await this.api(`${this.base}/git/commits/${head}`);
+    // Use Git blob instead of the Contents API, which stops returning file
+    // bodies beyond 1 MB. This registry can grow as more topics are edited.
+    const root=await this.api(`${this.base}/git/trees/${commit.tree.sha}`);
+    const file=(root.tree||[]).find(x=>x.path==='topic-content.json'&&x.type==='blob');
+    if(!file)throw Error('The topic registry is missing on GitHub. Update the site before using the topic editor.');
+    const blob=await this.api(`${this.base}/git/blobs/${file.sha}`);
+    if(blob.encoding!=='base64'||typeof blob.content!=='string')throw Error('GitHub returned an unsupported topic data format.');
+    const data=JSON.parse(new TextDecoder().decode(Uint8Array.from(
+      atob(blob.content.replace(/\s/g,'')),ch=>ch.charCodeAt(0))));
+    if(!Array.isArray(data?.topics))throw Error('Invalid topic publication registry.');
+    return {head,tree:commit.tree.sha,data};
+  }
+  async updateTopics(targetId,expectedRecord,record=null,action='Publish'){
+    const snapshot=await this.topicSnapshot();
+    const found=snapshot.data.topics.find(x=>x.id===targetId)||null;
+    if(JSON.stringify(found)!==JSON.stringify(expectedRecord||null)){
+      throw Error('This topic changed on GitHub since it was opened. Reload the latest version before publishing.');
+    }
+    const next={...snapshot.data,version:1,topics:[
+      ...snapshot.data.topics.filter(x=>x.id!==targetId),
+      ...(record?[record]:[])
+    ]};
+    const tree=await this.api(`${this.base}/git/trees`,'POST',{
+      base_tree:snapshot.tree,
+      tree:[{path:'topic-content.json',mode:'100644',type:'blob',content:JSON.stringify(next,null,2)+'\n'}]
+    });
+    const commit=await this.api(`${this.base}/git/commits`,'POST',{
+      message:action+' topic: '+targetId,tree:tree.sha,parents:[snapshot.head]
+    });
+    await this.api(`${this.base}/git/refs/heads/${this.branch}`,'PATCH',{sha:commit.sha,force:false});
+    return {sha:commit.sha,record:record||null};
+  }
+  async publishTopic(record,expectedRecord=null){
+    if(!record?.id||!/^[a-z][a-z0-9-]{2,89}$/.test(record.id))throw Error('Topic ID must use lowercase letters, numbers and dashes.');
+    return this.updateTopics(record.id,expectedRecord,record,record.status==='archived'?'Archive':'Publish');
+  }
+  async deleteTopic(id,expectedRecord){
+    if(!expectedRecord)throw Error('This topic has no published version to delete.');
+    return this.updateTopics(id,expectedRecord,null,'Delete');
   }
 
   async contentHistory(limit = 12) {

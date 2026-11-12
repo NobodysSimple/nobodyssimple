@@ -11,6 +11,8 @@
     <link rel="icon" href="logo.png" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="studio.css" />
+    <link rel="stylesheet" href="ns-notepad.css" />
+    <link rel="stylesheet" href="ns-staff-topics.css" />
       <link rel="stylesheet" href="app-design.css" />
     <script type="module" src="app-design.mjs"></script>
   </head>
@@ -42,9 +44,11 @@
             <button class="rail-button active" data-view="dashboard" type="button"><span>▤</span> Content</button>
             <button class="rail-button" data-view="media" type="button"><span>▧</span> Media</button>
             <button class="rail-button" data-view="templates" type="button"><span>▦</span> Templates</button>
+            <button class="rail-button" data-view="topics" type="button"><span>✧</span> Topic desk</button>
             <div class="rail-divider"></div>
             <p class="rail-label">CREATE</p>
             <button class="rail-new" data-new="blog" type="button">＋ Blog post</button>
+            <button class="rail-new" data-topic-quick-new type="button">＋ Psychology topic</button>
             <button class="rail-new" data-new="announcement" type="button">＋ Announcement</button>
             <button class="rail-new" data-new="education" type="button">＋ Education</button>
             <button class="rail-new" data-new="video" type="button">＋ YouTube video</button>
@@ -65,6 +69,44 @@
               <p class="dashboard-footnote">Published content is public in GitHub. Drafts, notes and local versions stay in this browser.</p>
             </div>
 
+            <section id="topics-view" class="creator-view ns-topic-desk" hidden aria-label="Manage psychology topics">
+              <div class="ns-topic-desk-header">
+                <div><p class="eyebrow">NOBODY’S SIMPLE · TOPIC DESK</p>
+                  <h1>Every topic, in your hands.</h1>
+                  <p>Revise the living psychology library. Every change has a preview, a local draft, and a deliberate publish step.</p>
+                </div>
+                <button class="button" data-topic-new type="button">＋ New topic</button>
+              </div>
+              <p class="ns-topic-desk-status" data-topic-status role="status" aria-live="polite">Connect to GitHub to edit published topics.</p>
+              <div data-topic-list-panel>
+                <div class="ns-topic-desk-tools">
+                  <label>Find a topic<input type="search" data-topic-search placeholder="Search all existing pages, e.g. betrayal or ADHD…"></label>
+                  <button type="button" class="chip" data-topic-refresh>Refresh published topics</button>
+                </div>
+                <p class="ns-topic-desk-count" data-topic-count></p>
+                <div class="ns-topic-desk-list" data-topic-list aria-label="Published psychology topic library"></div>
+                <p class="fine" data-topic-results-note></p>
+              </div>
+              <div data-topic-editor-panel hidden>
+                <div class="ns-topic-editor-top">
+                  <button type="button" class="chip" data-topic-back>← All topics</button>
+                  <div><h2 data-topic-editor-title></h2><p data-topic-editor-meta></p></div>
+                  <div class="ns-topic-editor-actions">
+                    <button class="button" type="button" data-topic-publish>Publish / update page</button>
+                    <button type="button" class="chip" data-topic-restore hidden>Restore published page</button>
+                    <button type="button" class="chip danger-chip" data-topic-delete hidden>Archive topic</button>
+                  </div>
+                </div>
+                <p class="ns-topic-desk-guidance">Changes preview as you write. Nothing is sent to the public website until you publish. Publishing commits to GitHub; GitHub Pages then deploys the update.</p>
+                <div class="ns-topic-editor-grid">
+                  <div class="ns-topic-edit-inputs" data-topic-editor-fields></div>
+                  <aside class="ns-topic-editor-preview-wrap" aria-label="Live reader preview">
+                    <div class="ns-topic-preview-head"><strong>✦ Reader preview</strong><small>Nobody’s Simple notepad</small></div>
+                    <div data-topic-live-preview></div>
+                  </aside>
+                </div>
+              </div>
+            </section>
             <div id="media-view" class="creator-view" hidden>
               <div class="dashboard-heading"><div><p class="eyebrow">REPOSITORY MEDIA</p><h1>Media library</h1><p>Reuse images and files already uploaded to the website, or add new assets.</p></div><label class="button upload-button">＋ Upload files<input id="media-upload" type="file" accept="image/png,image/jpeg,image/webp,image/gif,audio/mpeg,audio/mp4,audio/ogg,audio/wav,application/pdf" multiple /></label></div>
               <div class="dashboard-tools"><label class="search-field"><span>⌕</span><input id="media-search" type="search" placeholder="Search filename" /></label><select id="media-kind" aria-label="Filter media"><option value="all">All media</option><option value="image">Images</option><option value="audio">Audio</option><option value="pdf">PDFs</option></select></div>
@@ -78,13 +120,34 @@
 
             <div id="editor-view" class="editor-view" hidden>
               <div class="editor-topline"><button class="back-button" id="back-dashboard" type="button">← Content</button><span class="save-indicator" id="save-status" role="status">Draft</span><div class="editor-top-right"><button class="chip" id="full-editor" type="button">Full screen</button><button class="chip" id="save-version" type="button">＋ Save version</button><button class="chip" id="download-backup" type="button">Export backup</button><label class="chip upload-button">Import backup<input id="import-backup" type="file" accept="application/json,.json" /></label></div></div>
-              <div class="editor-toolbar" id="format-toolbar" aria-label="Text formatting">
-                <select id="paragraph-style" aria-label="Text style"><option value="p">Paragraph</option><option value="h2">Heading 2</option><option value="h3">Heading 3</option><option value="h4">Heading 4</option><option value="quote">Quote</option></select>
-                <span class="toolbar-separator"></span>
-                <button type="button" data-cmd="bold" aria-label="Bold"><strong>B</strong></button><button type="button" data-cmd="italic" aria-label="Italic"><em>I</em></button><button type="button" data-cmd="underline" aria-label="Underline"><u>U</u></button><button type="button" data-cmd="strikeThrough" aria-label="Strikethrough"><s>S</s></button><button type="button" data-cmd="superscript" aria-label="Superscript">x²</button><button type="button" data-cmd="subscript" aria-label="Subscript">x₂</button>
-                <label class="color-control" title="Text colour">A<input id="text-color" type="color" value="#20332f" /></label><label class="color-control highlight-control" title="Highlight colour">▰<input id="highlight-color" type="color" value="#f1d889" /></label><select id="font-size" aria-label="Text size"><option value="3">Normal</option><option value="2">Small</option><option value="4">Large</option><option value="5">Larger</option><option value="6">Title</option></select>
-                <span class="toolbar-separator"></span><button type="button" data-cmd="justifyLeft" title="Align left">≡</button><button type="button" data-cmd="justifyCenter" title="Align centre">☰</button><button type="button" data-cmd="justifyRight" title="Align right">≣</button><button type="button" data-cmd="insertUnorderedList" title="Bulleted list">• List</button><button type="button" data-cmd="insertOrderedList" title="Numbered list">1. List</button><button type="button" data-cmd="indent" title="Indent">⇥</button><button type="button" data-cmd="outdent" title="Outdent">⇤</button><button type="button" id="format-link" title="Insert link">↗ Link</button><button type="button" id="format-code" title="Inline code">&lt;/&gt;</button><button type="button" id="insert-symbol" title="Insert special character">Ω</button><button type="button" data-cmd="removeFormat" title="Clear formatting">Tx</button>
-                <span class="toolbar-spacer"></span><button type="button" id="undo" title="Undo">↶</button><button type="button" id="redo" title="Redo">↷</button><button type="button" id="find-replace" title="Find and replace">⌕</button><button type="button" id="command-menu" title="Insert block or command">/ Insert</button>
+              <div class="editor-toolbar ns-writing-toolbar" id="format-toolbar" aria-label="Text formatting">
+                <select id="paragraph-style" aria-label="Paragraph style"><option value="p">Paragraph</option><option value="h2">Main heading</option><option value="h3">Subheading</option><option value="h4">Small heading</option><option value="quote">Quote</option></select>
+                <button type="button" data-cmd="bold" aria-label="Bold"><strong>B</strong></button>
+                <button type="button" data-cmd="italic" aria-label="Italic"><em>I</em></button>
+                <button type="button" data-cmd="underline" aria-label="Underline"><u>U</u></button>
+                <button type="button" data-cmd="insertUnorderedList" aria-label="Bullet list">• List</button>
+                <button type="button" data-cmd="insertOrderedList" aria-label="Numbered list">1. List</button>
+                <button type="button" id="format-link" aria-label="Insert link">↗ Link</button>
+                <button type="button" id="undo" aria-label="Undo">↶</button>
+                <button type="button" id="redo" aria-label="Redo">↷</button>
+                <details class="ns-writing-more"><summary>More formatting</summary><div class="ns-writing-extra">
+                  <button type="button" data-cmd="strikeThrough" aria-label="Strikethrough"><s>S</s></button>
+                  <button type="button" data-cmd="superscript" aria-label="Superscript">x²</button>
+                  <button type="button" data-cmd="subscript" aria-label="Subscript">x₂</button>
+                  <label class="color-control" title="Text colour">A<input id="text-color" type="color" value="#20332f" /></label>
+                  <label class="color-control highlight-control" title="Highlight colour">▰<input id="highlight-color" type="color" value="#f1d889" /></label>
+                  <select id="font-size" aria-label="Text size"><option value="3">Normal</option><option value="2">Small</option><option value="4">Large</option><option value="5">Larger</option><option value="6">Title</option></select>
+                  <button type="button" data-cmd="justifyLeft" title="Align left">≡</button>
+                  <button type="button" data-cmd="justifyCenter" title="Align centre">☰</button>
+                  <button type="button" data-cmd="justifyRight" title="Align right">≣</button>
+                  <button type="button" data-cmd="indent" title="Indent">⇥</button>
+                  <button type="button" data-cmd="outdent" title="Outdent">⇤</button>
+                  <button type="button" id="format-code" title="Inline code">&lt;/&gt;</button>
+                  <button type="button" id="insert-symbol" title="Insert special character">Ω</button>
+                  <button type="button" data-cmd="removeFormat" title="Clear formatting">Tx</button>
+                </div></details>
+                <button type="button" id="find-replace" title="Find and replace">⌕ Find</button>
+                <button type="button" id="command-menu" title="Insert block or command">＋ Insert</button>
               </div>
 
               <div class="editor-grid" id="editor-grid">
@@ -93,7 +156,7 @@
                   <input id="doc-excerpt" class="document-excerpt" maxlength="400" placeholder="Card excerpt — a short summary shown in the blog or library" aria-label="Card excerpt" />
                   <div class="intro-field"><label for="doc-intro">Opening introduction</label><textarea id="doc-intro" rows="2" placeholder="Optional text shown below the title"></textarea></div>
                   <div class="document-layout-controls"><span>Page width</span><button data-page-width="narrow" type="button">Narrow</button><button data-page-width="standard" class="selected" type="button">Standard</button><button data-page-width="wide" type="button">Wide</button><button id="toggle-split" type="button">Split preview</button></div>
-                  <div class="editing-and-preview"><div id="block-list" class="block-list" aria-label="Article blocks"></div><div id="live-preview" class="live-preview" hidden><div class="preview-device-label">LIVE PREVIEW <span><button type="button" data-preview-size="desktop">Desktop</button><button type="button" data-preview-size="tablet">Tablet</button><button type="button" data-preview-size="mobile">Mobile</button></span></div><article id="live-preview-article" class="article preview-article"></article></div></div>
+                  <div class="editing-and-preview"><div id="block-list" class="block-list" aria-label="Article blocks"></div><div id="live-preview" class="live-preview" hidden><div class="preview-device-label">LIVE PREVIEW <span><button type="button" data-preview-size="desktop">Desktop</button><button type="button" data-preview-size="tablet">Tablet</button><button type="button" data-preview-size="mobile">Mobile</button></span></div><article id="live-preview-article" class="article preview-article ns-notepad"></article></div></div>
                   <div class="add-block-wrap"><button class="add-block-button" id="add-block-open" type="button">＋ Add a content block</button><div id="block-menu" class="block-menu" hidden></div><button id="save-reusable" class="text-button" type="button">Save selected block as reusable</button></div>
                   <div id="quality-panel" class="quality-panel"><button id="run-quality" class="quality-heading" type="button"><span>Publishing checklist</span><span id="quality-count">Check content</span></button><div id="quality-results" class="quality-results"></div></div>
                   <div class="bottom-stats"><span id="word-count">0 words</span><span id="reading-time">1 min read</span><span id="block-count">0 blocks</span><span id="image-count">0 images</span></div>

@@ -28,6 +28,9 @@ export function renderTopicQuickNav(g){
   '<span class="ns-topic-nav-label">Go straight to</span>'+
   '<button type="button" data-topic-jump="ns-topic-common">Common experiences</button>'+
   '<button type="button" data-topic-jump="ns-topic-understand">Understand</button>'+
+
+  '<button type="button" data-topic-jump="ns-pick-chooser">Try something</button>'+
+  '<button type="button" data-topic-jump="ns-topic-answers">More answers</button>'+
   '<button type="button" data-topic-jump="ns-pick-chooser">What may help</button>'+
   '<button type="button" data-topic-jump="ns-topic-relief">Quick relief</button>'+
   '<button type="button" data-topic-jump="ns-topic-support">Support</button>'+
@@ -46,6 +49,11 @@ export function renderTopicReadingStart(g){
  ]:m.recognition.length?m.recognition:[
   g.title,g.lead||g.what,'Different people can experience this in different ways.'
  ];
+ const core=m.core;
+ const coreTitle=m.id==='betrayal-trauma'?'The four injuries that betrayal can affect':
+  (m.contextFirst?'Four ways to understand the context':'Four possible parts of the picture');
+ const frameworkTitle=m.id==='betrayal-trauma'?'Four areas of rebuilding':
+  (m.contextFirst?'Four directions you can choose from':'Four directions that may help');
  const identityTopic=/(identity|diagnos|stigma|self-image)/i.test((g.id||'')+' '+(g.title||''));
  const needs=[
   ['overwhelmed','Everything feels like too much'],
@@ -106,6 +114,20 @@ export function renderTopicReadingStart(g){
     '<div class="ns-topic-aspect-section"><h3>'+(m.contextFirst?'Ways to understand the context':'Possible parts of the picture')+'</h3>'+
      '<ol class="ns-topic-aspects">'+core.map(x=>group(x.label,x.detail)).join('')+'</ol></div>'+
     compactMechanisms(g)+
+  '</section>'+
+  '<section class="ns-topic-section ns-topic-traps">'+
+   '<details class="ns-topic-details"><summary>Things that can make this harder</summary>'+
+   '<div class="ns-topic-detail-body"><ol class="ns-topic-trap-list">'+m.traps.map(x=>group(x[0],x[1])).join('')+'</ol>'+
+   '<p>Not every pattern applies to you. Some problems are caused or sustained by real circumstances that need changing, not by your reaction to them.</p></div></details>'+
+  '</section>'+
+  '<section class="ns-topic-section ns-topic-framework" id="ns-topic-framework">'+
+   heading('WAYS FORWARD',frameworkTitle)+
+   '<p class="ns-topic-helper">These are directions to consider, not stages you must finish in order. Choose what is relevant and safe.</p>'+
+   '<ol class="ns-topic-steps">'+m.steps.map((x,i)=>'<li><span class="ns-topic-index">'+String(i+1).padStart(2,'0')+'</span>'+
+    '<div><strong>'+e(x.label)+'</strong><p>'+e(x.detail)+'</p></div></li>').join('')+'</ol>'+
+   '<p class="ns-topic-bridge">You can stop at understanding, or continue to the existing activities below.</p>'+
+   '<button type="button" class="ns-topic-to-tools" data-topic-jump="ns-pick-chooser">Explore optional tools <span aria-hidden="true">↓</span></button>'+
+  '</section></div>';
     '<details class="ns-topic-details"><summary>Things that can make this harder</summary><div class="ns-topic-detail-body"><ol class="ns-topic-trap-list">'+m.traps.map(x=>group(x[0],x[1])).join('')+'</ol>'+
      '<p>Not every pattern applies to you. Some problems are caused or sustained by real circumstances that need changing, not by your reaction to them.</p></div></details>'+
    '</div></details>'+
@@ -122,6 +144,12 @@ export function renderTopicReadingEnd(g){
    list(m.progress)+
    '<p class="ns-topic-quiet-note">You do not need to monitor yourself every day or prove that you are improving.</p>'+
   '</section>'+
+  (m.guidedPrompts?.length?'<section class="ns-topic-section ns-topic-editor-prompts">'+
+    heading('OPTIONAL REFLECTIONS','Questions to consider, only if useful')+
+    '<p class="ns-topic-helper">These are staff-authored guided prompts. You can simply read them; no answer is collected.</p>'+
+    '<div class="ns-topic-faq-list">'+m.guidedPrompts.map(item=>
+      '<details class="ns-topic-details"><summary>'+e(item.q)+'</summary><p>'+e(item.a)+'</p></details>').join('')+'</div>'+
+   '</section>':'')+
   '<section class="ns-topic-section ns-topic-faq">'+
    heading('COMMON QUESTIONS','Things you might still be wondering')+
    '<div class="ns-topic-faq-list">'+m.faq.map(([q,a])=>
@@ -146,23 +174,6 @@ export function renderTopicSafetyReading(g){
    '<p class="ns-topic-quiet-note">There is no checklist, score, journal or behavioural experiment to complete on this page. Keep your privacy and immediate safety first.</p>'+
   '</section>';
 }
-export function bindTopicProfile(surface){
- const fieldset=surface.querySelector('[data-topic-profile]');
- if(!fieldset)return;
- const result=surface.querySelector('[data-topic-profile-result]');
- const update=()=>{
-  const selected=[...fieldset.querySelectorAll('[data-topic-pattern]:checked')].map(x=>x.value);
-  result.textContent=selected.length?
-   'You marked: '+selected.join('; ')+'. These are areas to explore, not a diagnosis or an automatically interpreted profile.':
-   'There is no correct combination. The patterns can overlap—or none may fit.';
- };
- fieldset.addEventListener('change',update);
- surface.querySelector('[data-topic-clear]')?.addEventListener('click',()=>{
-  fieldset.querySelectorAll('[data-topic-pattern]').forEach(c=>{c.checked=false;});
-  update();
- });
-}
-
 /* Hash URLs are used by the app router. Local guide jumps therefore use
  * buttons: fragment links would replace the workbook route and lose the page.
  */
@@ -170,6 +181,8 @@ export function bindTopicJumps(surface){
  surface.addEventListener('click',event=>{
   const button=event.target.closest?.('[data-topic-jump],[data-topic-need]');
   if(!button)return;
+  const id=button.dataset.topicJump;
+  if(!['ns-topic-understand','ns-pick-chooser','ns-topic-answers'].includes(id))return;
   let id=button.dataset.topicJump||'';
   if(button.dataset.topicNeed){
    const need=button.dataset.topicNeed;
