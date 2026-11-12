@@ -229,15 +229,23 @@ export function topicPageModel(g){
   ({label:x,detail:clean((g.goals||[])[i])||clean(g.mechanisms?.[i]?.target)||'Choose what is realistic, safe and meaningful to you.'}));
  const faq=faqFor(g,recipe,specific);
  const published=g.publishedRecord?.status==='published'?g.publishedRecord:null;
- const editedCore=published?.core?.length===4?published.core:core;
- const editedSteps=published?.steps?.length===4?published.steps.map(x=>({label:x.label,detail:x.detail})):steps.slice(0,4);
- const editedFaq=published?.faq?.length?published.faq.map(x=>[x.q,x.a]):faq;
+ const editedCore=core.slice(0,4).map((part,i)=>{
+  const candidate=published?.core?.[i];
+  return candidate?.label&&candidate?.detail?candidate:part;
+ });
+ const editedSteps=steps.slice(0,4).map((part,i)=>{
+  const candidate=published?.steps?.[i];
+  return candidate?.label&&candidate?.detail?{label:candidate.label,detail:candidate.detail}:part;
+ });
+ const editedFaq=published?.faq?.some(x=>x.q&&x.a)?
+  published.faq.filter(x=>x.q&&x.a).map(x=>[x.q,x.a]):faq;
  return Object.freeze({
   id:g.optionId,kind:themeOf(normalizeDomain(g)),title:published?.title||g.title,
   recognition:published?.recognition?.length?published.recognition:questions,
   reframe:published?.reframe||summary,cycle:context?'':clean(g.cycle),core:Object.freeze(editedCore.slice(0,4)),
   profile:Object.freeze([]),profileQuestion:'',
-  traps:Object.freeze(published?.traps?.length?published.traps.map(x=>[x.label,x.detail]):specific?.traps||recipe.traps),
+  traps:Object.freeze(published?.traps?.some(x=>x.label&&x.detail)?
+    published.traps.filter(x=>x.label&&x.detail).map(x=>[x.label,x.detail]):specific?.traps||recipe.traps),
   steps:Object.freeze(editedSteps),
   progress:Object.freeze(published?.progress?.length?published.progress:specific?.progress||recipe.progress),
   faq:Object.freeze(editedFaq),
