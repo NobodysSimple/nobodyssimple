@@ -4,9 +4,100 @@
  * Every entry identifies a documentary source and a question for the reader.
  */
 const article=(id,country,title,theme,place,body,reflection,question,source,region='')=>Object.freeze({
- id,country,title,theme,place,body:Object.freeze(body),psychology:body[1]||'',reflection,question,
+ id,country,title,theme,place,body:Object.freeze(body.filter((p,index)=>index<2||!cautionaryParagraph(p))),psychology:body[1]||'',research:researchFor(theme,title,body),reflection,question,
  source:Object.freeze({label:source.includes('ich.unesco.org')?'UNESCO Intangible Cultural Heritage':source.includes('whc.unesco.org')?'UNESCO World Heritage Centre':source.includes('cornwall.gov.uk')?'Cornwall Council':source.includes('nls.uk')?'National Library of Scotland':source.includes('gov.wales')?'Welsh Government':source.includes('mbie.govt.nz')?'New Zealand Government':source.includes('cherokee.org')?'Cherokee Nation':source.includes('nps.gov')?'US National Park Service':'Documentary source',url:source}),region
 });
+
+const researchLenses=Object.freeze({
+ ritual:Object.freeze({
+  heading:'Ritual, control and shared meaning',
+  explanation:'Ritual research separates the actions people repeat from the meaning they attach to them. A familiar sequence can organise attention and give a person an action to take during uncertainty; shared sequences also coordinate expectations and mark who is taking part. The exact effect depends on both form and interpretation.',
+  studies:Object.freeze([
+   Object.freeze({title:'The Psychology of Rituals: An Integrative Review and Process-Based Framework',citation:'Hobson et al. · Personality and Social Psychology Review (2018)',url:'https://doi.org/10.1177/1088868317734944',finding:'This review organizes research around emotion regulation, goal states and social connection. It explains how the physical structure of a ritual and the meaning a person gives it can work through different pathways.'}),
+   Object.freeze({title:'Rituals Alleviate Grieving for Loved Ones, Lovers, and Lotteries',citation:'Norton & Gino · Journal of Experimental Psychology: General (2014)',url:'https://pubmed.ncbi.nlm.nih.gov/23398180/',finding:'Across three experiments involving different kinds of loss, the authors found that ritual actions could reduce grief, with perceived control helping explain the effect. This offers a focused comparison for remembrance practices.'})
+  ])
+ }),
+ synchrony:Object.freeze({
+  heading:'Synchrony, cooperation and group feeling',
+  explanation:'When people move or act in time, they must attend to a shared pace and adjust to one another. Laboratory and field research links synchrony with cooperation and social connection; studies also suggest that shared movement and a practice’s sacred or symbolic meaning may work together.',
+  studies:Object.freeze([
+   Object.freeze({title:'To Be in Synchrony or Not? A Meta-analysis of Synchrony’s Effects',citation:'Mogan, Fischer & Bulbulia · Journal of Experimental Social Psychology (2017)',url:'https://doi.org/10.1016/j.jesp.2017.03.009',finding:'The meta-analysis combined 42 studies and 4,327 participants. Synchronous action had a medium positive effect on prosocial behaviour, small-to-medium effects on perceived bonding and social cognition, and a small effect on positive affect.'}),
+   Object.freeze({title:'How Do Rituals Affect Cooperation? An Experimental Field Study Comparing Nine Ritual Types',citation:'Fischer et al. · Human Nature (2013)',url:'https://doi.org/10.1007/s12110-013-9167-y',finding:'In a field comparison of nine naturally occurring rituals, synchronised movement was associated with more positive attitudes toward fellow participants. Rituals judged sacred were associated with higher contributions in a public-goods game; the authors propose perceived “oneness” as part of the pathway.'})
+  ])
+ }),
+ singing:Object.freeze({
+  heading:'Group singing and social bonds',
+  explanation:'Singing combines coordinated timing with attention to other voices. It can also produce a social bond quickly, before group members know much about one another. Research asks whether that effect comes from singing itself or from taking part in any valued group activity.',
+  studies:Object.freeze([
+   Object.freeze({title:'The Ice-breaker Effect: Singing Mediates Fast Social Bonding',citation:'Pearce, Launay & Dunbar · Royal Society Open Science (2015)',url:'https://doi.org/10.1098/rsos.150221',finding:'New adult classes were followed for seven months. Singing groups reported faster early closeness than creative-writing or craft groups; by the third month, non-singing groups had caught up.'}),
+   Object.freeze({title:'A Systematic Review of Mental Health and Wellbeing Outcomes of Group Singing',citation:'Williams, Dingle & Clift · European Journal of Public Health (2018)',url:'https://doi.org/10.1093/eurpub/cky115',finding:'The review included 13 studies with 667 participants. Findings suggested improvements in wellbeing and belonging, while moderate-to-high risk of bias meant the authors considered the evidence promising rather than conclusive.'})
+  ])
+ }),
+ meals:Object.freeze({
+  heading:'Shared meals, connection and wellbeing',
+  explanation:'A shared meal creates a repeated social setting: people coordinate time, attend to one another and share a common activity. Large surveys find links between eating with others and wellbeing. They cannot by themselves show whether meals improve wellbeing, whether wellbeing makes shared meals more likely, or whether both are shaped by other conditions.',
+  studies:Object.freeze([
+   Object.freeze({title:'Breaking Bread: The Functions of Social Eating',citation:'Dunbar · Adaptive Human Behavior and Physiology (2017)',url:'https://doi.org/10.1007/s40750-017-0061-4',finding:'In a UK national survey, more frequent social eating was associated with greater happiness, life satisfaction, trust, community engagement and access to dependable friends.'}),
+   Object.freeze({title:'Sharing Meals Is Associated with Greater Wellbeing',citation:'De Neve et al. · Scientific Reports (2026)',url:'https://doi.org/10.1038/s41598-026-46771-9',finding:'Survey data from 142 countries and territories linked shared meals with higher wellbeing. US time-use data also connected eating with others to happier, less stressful days. The authors identify causal direction as an open question.'})
+  ])
+ }),
+ memory:Object.freeze({
+  heading:'Stories, memory and identity',
+  explanation:'A story gives events an order and a point of view. Repeating it can carry knowledge across generations, while retelling lets people connect inherited memory to present concerns. Psychological research treats collective memory as something people actively shape through stories, objects and public practices.',
+  studies:Object.freeze([
+   Object.freeze({title:'A Framework for Vicarious and Collective Memory, Future Projections and Narrative Identity',citation:'Thomsen et al. · Nature Reviews Psychology (2025)',url:'https://doi.org/10.1038/s44159-025-00429-x',finding:'This perspective explains how memories of other people’s experiences and shared community events can inform group identity and ideas about the future, alongside personal memory.'}),
+   Object.freeze({title:'Narratives and Collective Memory',citation:'Lopez, van Alphen & Carmona · Current Opinion in Psychology (2025)',url:'https://doi.org/10.1016/j.copsyc.2025.102087',finding:'The review treats narratives as active tools for remembering. It examines how shared stories can be adapted, contested and joined by counter-narratives rather than simply passed on unchanged.'})
+  ])
+ }),
+ learning:Object.freeze({
+  heading:'Learning through participation',
+  explanation:'A craft or performance can teach through watching, listening, trying a step and adjusting alongside an experienced person. This form of learning makes the social arrangement part of the lesson: who may observe, when they can contribute and how responsibility grows all shape what is learned.',
+  studies:Object.freeze([
+   Object.freeze({title:'Firsthand Learning Through Intent Participation',citation:'Rogoff et al. · Annual Review of Psychology (2003)',url:'https://doi.org/10.1146/annurev.psych.54.101601.145118',finding:'This review describes learning through attentive observation and contribution within shared activities. It compares participation structures across communities and shows why learning cannot be judged only by whether an adult gives a formal lesson.'}),
+   Object.freeze({title:'The Social Function of Imitation in Development',citation:'Over · Annual Review of Developmental Psychology (2020)',url:'https://doi.org/10.1146/annurev-devpsych-033020-024051',finding:'The review finds that imitation can support affiliation as well as skill learning. Children may copy people they want to connect with, while group conventions and social pressure also shape what gets copied.'})
+  ])
+ }),
+ identity:Object.freeze({
+  heading:'Belonging and collective identity',
+  explanation:'Psychology distinguishes a person’s own sense of membership from the shared story and symbols through which a group describes itself. A dance, garment, language or gathering can make membership visible and give people a way to enact it. People within one community can still attach different meanings to the same practice.',
+  studies:Object.freeze([
+   Object.freeze({title:'A Sociopsychological Conception of Collective Identity',citation:'David & Bar-Tal · Personality and Social Psychology Review (2009)',url:'https://doi.org/10.1177/1088868309344412',finding:'The authors separate individual recognition and experience of belonging from a group’s shared awareness of itself. This distinction helps explain why one public symbol can matter differently to different people.'}),
+   Object.freeze({title:'Social Identity Makes Group-based Social Connection Possible',citation:'Haslam et al. · British Journal of Social Psychology (2021)',url:'https://pubmed.ncbi.nlm.nih.gov/34403958/',finding:'This review describes how psychologically meaningful group memberships can provide collective meaning, purpose, support and a sense of efficacy, linking belonging with mental health.'})
+  ])
+ }),
+ clothing:Object.freeze({
+  heading:'Dress, symbols and the self',
+  explanation:'Clothing can carry a public meaning that a wearer may accept, adapt or reject. Research on “enclothed cognition” tests whether clothing’s symbolism changes the wearer’s thoughts or actions. The evidence has improved in newer studies, while early results raised replication concerns; the effect depends on what a garment means in its setting.',
+  studies:Object.freeze([
+   Object.freeze({title:'Evaluating the Evidence for Enclothed Cognition: Z-Curve and Meta-Analyses',citation:'Horton, Adam & Galinsky · Personality and Social Psychology Bulletin (2025)',url:'https://doi.org/10.1177/01461672231182478',finding:'The authors analysed 105 effects from 40 studies. Their review raised concerns about early findings but found evidential value in studies published after 2015, supporting a qualified version of the idea that clothing symbolism can influence the wearer.'}),
+   Object.freeze({title:'An Old Task in New Clothes: A Preregistered Direct Replication Attempt',citation:'Lobel et al. · Journal of Experimental Social Psychology (2019)',url:'https://doi.org/10.1016/j.jesp.2018.10.002',finding:'A larger preregistered replication did not reproduce the original doctor’s-coat effect on Stroop performance. This debate is a reminder to distinguish the social meaning of clothing from claims about reliable changes in core cognitive performance.'})
+  ])
+ }),
+ justice:Object.freeze({
+  heading:'Justice, voice and repair',
+  explanation:'Repair processes focus attention on what happened to someone, how the harm changed their life and what response could address it. The psychological questions include whether people have a meaningful voice, whether responsibility is acknowledged and whether any repair is safe and fair.',
+  studies:Object.freeze([
+   Object.freeze({title:'The Psychological Impact of Restorative Justice Practices on Victims of Crimes',citation:'da Silva et al. · Trauma, Violence, & Abuse (2023)',url:'https://doi.org/10.1177/15248380221082085',finding:'This systematic review gathered studies of victims who took part in restorative practices. Reports included empowerment, social support and closure, while the underlying studies varied in design and quality.'}),
+   Object.freeze({title:'The Social Psychology of Justice Repair',citation:'Annual Review of Psychology (2025)',url:'https://pubmed.ncbi.nlm.nih.gov/39378290/',finding:'This review examines the psychological needs people have after injustice from victim, offender and observer perspectives, helping explain why voice, recognition and accountability matter in repair.'})
+  ])
+ })
+});
+const researchFor=(theme,title,body)=>{
+ const text=(theme+' '+title+' '+body.join(' ')).toLowerCase();
+ const lenses=[];
+ const add=key=>{if(lenses.length<3&&!lenses.includes(key))lenses.push(key);};
+ if(/meal|food|coffee|bread|soup|kimchi|kimjang|culinary|hospitality/.test(text))add('meals');
+ if(/clothing|garment|textile|kebaya|dress|wear|batik|kente/.test(text))add('clothing');
+ if(/sing|song|music|dance|drum|rhythm|choir|performance|capoeira|tango|flamenco|reggae/.test(text)){add('synchrony');if(/sing|song|choir|voice/.test(text))add('singing');}
+ if(/story|memory|narrative|epic|language|history|oral|poetry|archive/.test(text))add('memory');
+ if(/apprentice|learn|learning|craft|skill|weav|making|maker|knowledge|teaching|transmi|carving|painting|calligraphy/.test(text))add('learning');
+ if(/law|justice|accountab|reconcil|repair|grievance|governance|conflict/.test(text))add('justice');
+ if(/ritual|ceremon|festival|pilgrim|vow|grief|remembrance|new year|feast|religious|spiritual/.test(text))add('ritual');
+ if(/identity|belong|cooperation|solidarity|community|collective|trust|friendship|care/.test(theme.toLowerCase()+' '+title.toLowerCase()))add('identity');
+ if(!lenses.length)add('identity');
+ return Object.freeze(lenses.map(key=>researchLenses[key]));
+};
+const cautionaryParagraph=p=>/\b(?:not a (?:generic|universal|clinical|medical|national|general|wellness|treatment)|not a claim about|not a template|does not mean|does not imply|should not be (?:treated|reduced|copied)|there is no single|not every|not everyone|does not turn)\b/i.test(p);
 export const CULTURE_ARTICLES=Object.freeze([
  article('washoku','JPN','Washoku: how a meal can hold memory','Ritual & belonging','Japan',
  [
