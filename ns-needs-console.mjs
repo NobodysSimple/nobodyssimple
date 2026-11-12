@@ -4,7 +4,7 @@
  */
 import {escapeHTML as esc} from './core.mjs';
 import {NEEDS_MODES,getNeedsMode} from './ns-needs-catalog.mjs';
-import {atlasProblemIndex,atlasGet,atlasDomains} from './ns-atlas-core.mjs';
+import {atlasProblemIndex,atlasGet,atlasDomains,allAtlasTopics} from './ns-atlas-core.mjs';
 import {NAV_THEMES,topicsInTheme,matchingTopics,topicTheme} from './ns-needs-themes.mjs';
 
 const e=x=>esc(String(x??''));
@@ -61,7 +61,7 @@ export function browsableTopicsForNeedsMode(modeId){
  const mode=getNeedsMode(modeId);
  if(!mode)return [];
  const preferred=new Set(TOPIC_AREAS_BY_MODE[modeId]||[]);
- return [...atlasProblemIndex].sort((a,b)=>
+ return [...allAtlasTopics()].sort((a,b)=>
   Number(preferred.has(b.domain))-Number(preferred.has(a.domain)) ||
   a.title.localeCompare(b.title));
 }
