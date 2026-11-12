@@ -180,10 +180,19 @@ function topicContextCard(g){
 export function deckForWorkbook(g){
  if(!g||g.safetyFirst)return [];
  const original=g.lanes.flatMap(lane=>lane.methods.map((m,i)=>originalCard(g,lane,m,i)));
+ const authorTools=(g.editorialTools||[]).filter(c=>KINDS[c.kind]&&c.title&&c.why&&c.steps?.length>=2)
+  .map(c=>({
+   id:'staff-'+c.id,title:c.title,kind:c.kind,time:'short',effort:'light',
+   duration:'At your own pace',
+   worksheet:['environment','step','thought','ground','values','request','pause','needs','compassion','control','track','plan','rest','conversation'].includes(c.worksheet)?
+    c.worksheet:({environment:'environment',cognitive:'thought',dbt:'ground',acceptance:'values',support:'request',compassion:'compassion',planning:'plan'}[c.kind]||'step'),
+   why:c.why,steps:c.steps,caution:c.caution||'An optional staff-authored educational activity, not a validated treatment.',
+   refs:[],source:'staff',tool:null
+  }));
  const extras=[...suitableExtras(g),...(topicContextCard(g)?[topicContextCard(g)]:[])].map(c=>({...c,source:'general',
   caution:c.caution||'General optional skill, not a topic-specific treatment. Skip if unsuitable, unsafe or likely to increase compulsive checking or distress.',
   refs:[],tool:null}));
- return [...original,...extras].map(c=>Object.freeze({
+ return [...original,...authorTools,...extras].map(c=>Object.freeze({
   ...c,kindLabel:KINDS[c.kind].label,tone:KINDS[c.kind].tone,group:KINDS[c.kind].group,
   family:familyForCard(c),shortTitle:shortInterventionTitle(c),
   steps:Object.freeze([...c.steps])
