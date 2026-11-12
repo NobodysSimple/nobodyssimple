@@ -6,6 +6,7 @@ import {escapeHTML as esc} from './core.mjs';
 import {NEEDS_MODES,getNeedsMode} from './ns-needs-catalog.mjs';
 import {atlasProblemIndex,atlasGet,atlasDomains} from './ns-atlas-core.mjs';
 import {NAV_THEMES,topicsInTheme,matchingTopics,topicTheme} from './ns-needs-themes.mjs';
+import {publishedTopicIndex} from './ns-topic-publications.mjs';
 
 const e=x=>esc(String(x??''));
 const norm=x=>String(x??'').toLocaleLowerCase().replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
@@ -41,7 +42,7 @@ export function topicsForNeedsMode(modeId){
  const domains=new Set(TOPIC_AREAS_BY_MODE[modeId]||[]);
  const featured=new Set(mode.options.filter(o=>o.type==='topic').map(o=>o.target));
  const seen=new Set();
- return atlasProblemIndex
+ return publishedTopicIndex(atlasProblemIndex)
   .filter(p=>domains.has(p.domain)&&!featured.has(p.id)&&!seen.has(p.id)&&Boolean(seen.add(p.id)))
   .sort((a,b)=>a.title.localeCompare(b.title));
 }
@@ -61,7 +62,7 @@ export function browsableTopicsForNeedsMode(modeId){
  const mode=getNeedsMode(modeId);
  if(!mode)return [];
  const preferred=new Set(TOPIC_AREAS_BY_MODE[modeId]||[]);
- return [...atlasProblemIndex].sort((a,b)=>
+ return publishedTopicIndex(atlasProblemIndex).sort((a,b)=>
   Number(preferred.has(b.domain))-Number(preferred.has(a.domain)) ||
   a.title.localeCompare(b.title));
 }
