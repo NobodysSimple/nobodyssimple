@@ -183,6 +183,39 @@ export class Publisher {
     return { sha: commit.sha, assets: assets.map(({ path }) => ({ path })) };
   }
 
+  // Separate authoritative topic collection. This is a GitHub Pages site;
+  // a successful commit is not an instant push to open visitor sessions.
+  async topicSnapshot() {
+    try {
+      const file = await this.api(`${this.base}/contents/topic-pages.json?ref=${this.branch}`);
+      const bytes = Uint8Array.from(atob(file.content.replace(/\\s/g, "")), c => c.charCodeAt(0));
+      return { sha:file.sha, data:JSON.parse(new TextDecoder().decode(bytes)) };
+    } catch(error) {
+      if(/404/.test(error.message)) return {sha:null,data:{version:1,topics:[]}};
+      throw error;
+    }
+  }
+
+  async publishTopics(next, expectedSha) {
+    const current = await this.topicSnapshot();
+    if(current.sha !== expectedSha)
+      throw Error("The topic library has changed on GitHub since you opened it. Refresh the staff library and review the latest version before publishing.");
+    // Work only with validated plain JSON data. GitHub checks the blob SHA as
+    // well, so concurrent writes cannot silently erase another editor's work.
+    const {validateTopicManifest}=await import('./ns-topic-manifest.mjs');
+    const clean=validateTopicManifest(next);
+    const content=JSON.stringify(clean,null,2)+"\\n";
+    const bytes=new TextEncoder().encode(content);
+    let binary="";
+    for(const byte of bytes)binary+=String.fromCharCode(byte);
+    const result=await this.api(`${this.base}/contents/topic-pages.json`,"PUT",{
+      message:"Publish topic library: "+clean.topics.length+" editorial records",
+      branch:this.branch,content:btoa(binary),
+      ...(current.sha?{sha:current.sha}:{})
+    });
+    return {sha:result.content?.sha||null,data:clean,commit:result.commit?.sha||null};
+  }
+
   disconnect() {
     this.token = "";
   }
