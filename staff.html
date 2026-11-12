@@ -42,9 +42,11 @@
             <button class="rail-button active" data-view="dashboard" type="button"><span>▤</span> Content</button>
             <button class="rail-button" data-view="media" type="button"><span>▧</span> Media</button>
             <button class="rail-button" data-view="templates" type="button"><span>▦</span> Templates</button>
+            <button class="rail-button" data-view="topics" type="button"><span>✧</span> Topic desk</button>
             <div class="rail-divider"></div>
             <p class="rail-label">CREATE</p>
             <button class="rail-new" data-new="blog" type="button">＋ Blog post</button>
+            <button class="rail-new" data-view="topics" data-topic-quick-new type="button">＋ Psychology topic</button>
             <button class="rail-new" data-new="announcement" type="button">＋ Announcement</button>
             <button class="rail-new" data-new="education" type="button">＋ Education</button>
             <button class="rail-new" data-new="video" type="button">＋ YouTube video</button>
@@ -65,6 +67,44 @@
               <p class="dashboard-footnote">Published content is public in GitHub. Drafts, notes and local versions stay in this browser.</p>
             </div>
 
+            <section id="topics-view" class="creator-view ns-topic-desk" hidden aria-label="Manage psychology topics">
+              <div class="ns-topic-desk-header">
+                <div><p class="eyebrow">NOBODY’S SIMPLE · TOPIC DESK</p>
+                  <h1>Every topic, in your hands.</h1>
+                  <p>Revise the living psychology library. Every change has a preview, a local draft, and a deliberate publish step.</p>
+                </div>
+                <button class="button" data-topic-new type="button">＋ New topic</button>
+              </div>
+              <p class="ns-topic-desk-status" data-topic-status role="status" aria-live="polite">Connect to GitHub to edit published topics.</p>
+              <div data-topic-list-panel>
+                <div class="ns-topic-desk-tools">
+                  <label>Find a topic<input type="search" data-topic-search placeholder="Search all existing pages, e.g. betrayal or ADHD…"></label>
+                  <button type="button" class="chip" data-topic-refresh>Refresh published topics</button>
+                </div>
+                <p class="ns-topic-desk-count" data-topic-count></p>
+                <div class="ns-topic-desk-list" data-topic-list aria-label="Published psychology topic library"></div>
+                <p class="fine" data-topic-results-note></p>
+              </div>
+              <div data-topic-editor-panel hidden>
+                <div class="ns-topic-editor-top">
+                  <button type="button" class="chip" data-topic-back>← All topics</button>
+                  <div><h2 data-topic-editor-title></h2><p data-topic-editor-meta></p></div>
+                  <div class="ns-topic-editor-actions">
+                    <button class="button" type="button" data-topic-publish>Publish / update page</button>
+                    <button type="button" class="chip" data-topic-restore hidden>Restore published page</button>
+                    <button type="button" class="chip danger-chip" data-topic-delete hidden>Archive topic</button>
+                  </div>
+                </div>
+                <p class="ns-topic-desk-guidance">Changes preview as you write. Nothing is sent to the public website until you publish. Publishing commits to GitHub; GitHub Pages then deploys the update.</p>
+                <div class="ns-topic-editor-grid">
+                  <div class="ns-topic-edit-inputs" data-topic-editor-fields></div>
+                  <aside class="ns-topic-editor-preview-wrap" aria-label="Live reader preview">
+                    <div class="ns-topic-preview-head"><strong>✦ Reader preview</strong><small>Nobody’s Simple notepad</small></div>
+                    <div data-topic-live-preview></div>
+                  </aside>
+                </div>
+              </div>
+            </section>
             <div id="media-view" class="creator-view" hidden>
               <div class="dashboard-heading"><div><p class="eyebrow">REPOSITORY MEDIA</p><h1>Media library</h1><p>Reuse images and files already uploaded to the website, or add new assets.</p></div><label class="button upload-button">＋ Upload files<input id="media-upload" type="file" accept="image/png,image/jpeg,image/webp,image/gif,audio/mpeg,audio/mp4,audio/ogg,audio/wav,application/pdf" multiple /></label></div>
               <div class="dashboard-tools"><label class="search-field"><span>⌕</span><input id="media-search" type="search" placeholder="Search filename" /></label><select id="media-kind" aria-label="Filter media"><option value="all">All media</option><option value="image">Images</option><option value="audio">Audio</option><option value="pdf">PDFs</option></select></div>
