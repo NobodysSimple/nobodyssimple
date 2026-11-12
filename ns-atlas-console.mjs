@@ -16,7 +16,7 @@ function shell(body){
  '<p>Start with the experience, not a diagnosis. Find a useful exercise or understand the patterns that might be involved.</p></header>'+body+'</div>';
 }
 function themeCards(){
- return '<div class="ns-atlas-themes" aria-label="Choose a problem theme">'+atlasThemes.map(t=>{
+ return '<div class="ns-atlas-themes" data-atlas-theme-grid aria-label="Choose a problem theme">'+atlasThemes.map(t=>{
   const count=atlasByTheme(t.id).length;
   return '<button type="button" class="ns-atlas-theme-card" data-atlas-theme="'+s(t.id)+'"><span class="ns-atlas-theme-icon" aria-hidden="true">'+s(t.icon)+'</span><span><strong>'+s(t.name)+'</strong><small>'+s(t.description)+'</small><em>'+count+' topics</em></span><span class="ns-atlas-theme-arrow" aria-hidden="true">→</span></button>';
  }).join('')+'</div>';
@@ -35,7 +35,7 @@ function first(state){
  (active||state.query?'<h3 class="ns-atlas-results-heading">'+s(listTitle)+'</h3><div class="ns-atlas-list" data-atlas-results>'+(items.length?items.map(item).join(''):
  '<p class="ns-atlas-noresults">No precise match yet. Try another phrase or choose a theme.</p>')+'</div>'+
  (active&&!state.query.trim()&&items.length<atlasByTheme(active.id).length?'<button class="ns-atlas-more" type="button" data-atlas-more>Show more problems</button>':''):
- themeCards())+
+ themeCards()+'<div class="ns-atlas-list" data-atlas-results hidden></div>')+
  '<p class="ns-atlas-footnote">'+atlasCount+' topics describe experiences, not diagnoses. A difficulty can have several explanations and may overlap with others.</p></section>');
 }
 export function renderAtlasConsole(root){
@@ -68,7 +68,10 @@ export function renderAtlasConsole(root){
   if(search)search.oninput=()=>{
    state.query=search.value;state.limit=24;
    const target=root.querySelector('[data-atlas-results]');
-   if(!target){paint();const next=root.querySelector('[data-atlas-search]');next?.focus();next?.setSelectionRange(state.query.length,state.query.length);return;}
+   if(!target){return;}
+   const grid=root.querySelector('[data-atlas-theme-grid]');
+   if(grid)grid.hidden=!!state.query.trim();
+   target.hidden=!state.query.trim();
    const candidates=state.query.trim()?atlasSearch(state.query,36):atlasByTheme(state.theme).slice(0,state.limit);
    target.innerHTML=candidates.length?candidates.map(item).join(''):
     '<p class="ns-atlas-noresults">No precise match yet. Try another phrase or choose a theme.</p>';
