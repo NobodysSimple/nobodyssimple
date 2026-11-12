@@ -55,29 +55,6 @@ export function renderTopicReadingStart(g){
  ];
  if(identityTopic)needs.splice(2,0,['identity','I am questioning how I see myself'],['stigma','I am worried about stigma']);
  const needButtons=needs.map(([id,label])=>'<button type="button" class="ns-topic-need-choice" data-topic-need="'+e(id)+'">'+e(label)+' <span aria-hidden="true">→</span></button>').join('');
- const profile=m.profile.length?
-  '<section class="ns-topic-section ns-topic-profile-section" id="ns-topic-profile" aria-labelledby="ns-topic-profile-title">'+
-   '<p class="ns-topic-kicker">IDENTITY AND SELF</p><h2 id="ns-topic-profile-title">What parts of you matter beyond this experience?</h2>'+
-   '<p class="ns-topic-helper">You can take what is useful from a label or explanation without letting it speak for your whole life.</p>'+
-   '<fieldset data-topic-profile class="ns-topic-profile-options"><legend>'+e(m.profileQuestion)+'</legend>'+
-   m.profile.map(item=>'<label class="ns-topic-check"><input type="checkbox" data-topic-pattern="'+e(item.id)+'" value="'+e(item.label)+'">'+
-    '<span><strong>'+e(item.label)+'</strong><small>'+e(item.detail)+'</small></span></label>').join('')+
-   '</fieldset>'+
-   '<p class="ns-topic-profile-result" data-topic-profile-result role="status" aria-live="polite">There is no correct combination. These patterns can overlap, or none may fit.</p>'+
-   '<button type="button" class="ns-topic-clear" data-topic-clear>Clear selections</button>'+
-   '<div class="ns-topic-reflections"><p class="ns-topic-kicker">OPTIONAL JOURNAL PROMPTS</p>'+
-    '<label><span>Before this became a concern, what parts of life felt important to me?</span><textarea rows="2" maxlength="1200" placeholder="You can leave this blank or write a few words…"></textarea></label>'+
-    '<label><span>What has changed, and what has stayed part of me?</span><textarea rows="2" maxlength="1200" placeholder="Notice both change and continuity…"></textarea></label>'+
-    '<label><span>What story am I telling myself about this?</span><textarea rows="2" maxlength="1200" placeholder="A story can be questioned without dismissing what happened…"></textarea></label>'+
-    '<p class="ns-topic-helper">These notes stay in this open page and are not sent. Copy anything you want to keep before leaving.</p></div>'+
-  '</section>':
-  '<section class="ns-topic-section ns-topic-profile-section" id="ns-topic-profile">'+
-  heading('IDENTITY AND SELF','What still matters to you?')+
-  '<p>You can take this experience seriously without reducing yourself to it. If writing does not feel useful or safe, skip the prompts.</p>'+
-  '<div class="ns-topic-reflections">'+
-   '<label><span>What parts of me matter beyond this problem?</span><textarea rows="2" maxlength="1200" placeholder="You can leave this blank…"></textarea></label>'+
-   '<label><span>What story am I telling myself about this?</span><textarea rows="2" maxlength="1200" placeholder="A story can be questioned without dismissing what happened…"></textarea></label>'+
-   '<p class="ns-topic-helper">These notes stay in this open page and are not sent. Copy anything you want to keep before leaving.</p></div></section>';
  const core=m.core;
  const caution=g.medical?'<p class="ns-topic-medical-note">Physical and medical needs matter. New, severe or changing symptoms deserve appropriate healthcare assessment.</p>':'';
  return '<div class="ns-topic-reading" data-topic-reading>'+
@@ -86,7 +63,7 @@ export function renderTopicReadingStart(g){
    '<div class="ns-topic-need-choices">'+needButtons+'</div></section>'+
   '<section class="ns-topic-section ns-topic-opening" id="ns-topic-common" aria-labelledby="ns-topic-common-title">'+
    '<p class="ns-topic-kicker">START HERE</p><h2 id="ns-topic-common-title">Common experiences</h2>'+
-   '<p class="ns-topic-helper">Select anything that feels familiar. You do not need to agree with every point.</p>'+
+   '<p class="ns-topic-helper">Read any examples that feel familiar. You do not need to agree with every point.</p>'+
    '<ul class="ns-topic-recognition">'+recognition.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul>'+
    '<p class="ns-topic-quiet-note">You do not have to recognise every example to take your situation seriously.</p>'+
    (g.supportFirst?'<p class="ns-topic-medical-note">Your safety and privacy come first. You do not need to write about harm, confront someone or try an exercise. Confidential practical support may be the safest next step.</p>':'')+
@@ -109,7 +86,6 @@ export function renderTopicReadingStart(g){
     '<details class="ns-topic-details"><summary>Things that can make this harder</summary><div class="ns-topic-detail-body"><ol class="ns-topic-trap-list">'+m.traps.map(x=>group(x[0],x[1])).join('')+'</ol>'+
      '<p>Not every pattern applies to you. Some problems are caused or sustained by real circumstances that need changing, not by your reaction to them.</p></div></details>'+
    '</div></details>'+
-  profile+
  '</div>';
 }
 export function renderTopicReadingEnd(g){
@@ -122,6 +98,12 @@ export function renderTopicReadingEnd(g){
    list(m.progress)+
    '<p class="ns-topic-quiet-note">You do not need to monitor yourself every day or prove that you are improving.</p>'+
   '</section>'+
+  (m.guidedPrompts?.length?'<section class="ns-topic-section ns-topic-editor-prompts">'+
+   heading('OPTIONAL REFLECTION','Questions you might consider')+
+   '<p class="ns-topic-helper">These guided questions are optional. Nothing is recorded here.</p>'+
+   '<div class="ns-topic-faq-list">'+m.guidedPrompts.map(item=>
+    '<details class="ns-topic-details"><summary>'+e(item.q)+'</summary><p>'+e(item.a)+'</p></details>').join('')+'</div>'+
+   '</section>':'')+
   '<section class="ns-topic-section ns-topic-faq">'+
    heading('COMMON QUESTIONS','Things you might still be wondering')+
    '<div class="ns-topic-faq-list">'+m.faq.map(([q,a])=>
@@ -146,23 +128,6 @@ export function renderTopicSafetyReading(g){
    '<p class="ns-topic-quiet-note">There is no checklist, score, journal or behavioural experiment to complete on this page. Keep your privacy and immediate safety first.</p>'+
   '</section>';
 }
-export function bindTopicProfile(surface){
- const fieldset=surface.querySelector('[data-topic-profile]');
- if(!fieldset)return;
- const result=surface.querySelector('[data-topic-profile-result]');
- const update=()=>{
-  const selected=[...fieldset.querySelectorAll('[data-topic-pattern]:checked')].map(x=>x.value);
-  result.textContent=selected.length?
-   'You marked: '+selected.join('; ')+'. These are areas to explore, not a diagnosis or an automatically interpreted profile.':
-   'There is no correct combination. The patterns can overlap—or none may fit.';
- };
- fieldset.addEventListener('change',update);
- surface.querySelector('[data-topic-clear]')?.addEventListener('click',()=>{
-  fieldset.querySelectorAll('[data-topic-pattern]').forEach(c=>{c.checked=false;});
-  update();
- });
-}
-
 /* Hash URLs are used by the app router. Local guide jumps therefore use
  * buttons: fragment links would replace the workbook route and lose the page.
  */
@@ -178,10 +143,10 @@ export function bindTopicJumps(surface){
     const option=surface.querySelector('[data-pick-need="'+route+'"]');
     option?.click();id='ns-pick-chooser';
    }else{
-    id=need==='understand'?'ns-topic-understand':need==='identity'?'ns-topic-profile':need==='stigma'?'ns-topic-reassurance':'ns-topic-support';
+    id=need==='understand'?'ns-topic-understand':need==='identity'?'ns-topic-reassurance':need==='stigma'?'ns-topic-reassurance':'ns-topic-support';
    }
   }
-  const allowed=['ns-topic-common','ns-topic-understand','ns-topic-profile','ns-pick-chooser','ns-topic-answers','ns-topic-reassurance','ns-topic-support','ns-topic-relief'];
+  const allowed=['ns-topic-common','ns-topic-understand','ns-pick-chooser','ns-topic-answers','ns-topic-reassurance','ns-topic-support','ns-topic-relief'];
   if(!allowed.includes(id))return;
   const section=surface.querySelector('#'+id);
   if(!section)return;
