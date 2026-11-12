@@ -155,8 +155,12 @@ const worksheetTypes={
   ['request','If safe, what specific request could you make?','Otherwise, confidential support may be the safest step…']]
 };
 export const interventionWorksheetTypes=Object.freeze(Object.keys(worksheetTypes));
+export function promptsForCard(card){
+ const supplied=(card.prompts||[]).filter(p=>p.id&&p.label).slice(0,3);
+ return supplied.length?supplied.map(p=>[p.id,p.label,p.hint||'']):worksheetTypes[card.worksheet]||worksheetTypes.step;
+}
 function worksheet(card){
- const questions=worksheetTypes[card.worksheet]||worksheetTypes.step;
+ const questions=promptsForCard(card);
  return '<div class="ns-pick-sheet-main">'+
   '<div class="ns-pick-sheet-heading"><span class="ns-pick-step">03</span><div>'+
   '<p class="ns-pick-kicker">YOUR CHOSEN TASK</p><h2>'+e(card.title)+'</h2>'+
@@ -226,7 +230,7 @@ const outcomes={untried:'Not tried (and that is valid)',useful:'It seemed useful
 function notesText(g,card,values){
  return ['Nobody’s Simple | One chosen approach',g.title,'Chosen task: '+card.title,
   'Approach: '+card.kindLabel+' | '+effortLabel[card.effort]+' | '+timeLabel[card.time],
-  '',...((worksheetTypes[card.worksheet]||worksheetTypes.step).flatMap(([id,label])=>[label,values[id]||'Not answered',''])),
+  '',...(promptsForCard(card).flatMap(([id,label])=>[label,values[id]||'Not answered',''])),
   'Review: '+(outcomes[values.review]||outcomes.untried),'',
   note,'This material is educational and not a clinically validated intervention or a diagnosis.'].join('\n');
 }
