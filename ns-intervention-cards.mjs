@@ -183,7 +183,25 @@ export function deckForWorkbook(g){
  const extras=[...suitableExtras(g),...(topicContextCard(g)?[topicContextCard(g)]:[])].map(c=>({...c,source:'general',
   caution:c.caution||'General optional skill, not a topic-specific treatment. Skip if unsuitable, unsafe or likely to increase compulsive checking or distress.',
   refs:[],tool:null}));
- return [...original,...extras].map(c=>Object.freeze({
+ // Existing guide methods stay unless explicitly edited by authorised staff.
+ // These edits are editorial and do not independently validate any treatment.
+ const edits=Array.isArray(g.methodEdits)?g.methodEdits:[];
+ const overrides=new Map(edits.filter(x=>x.type==='override').map(x=>[x.id,x]));
+ const apply=card=>{
+  const edit=overrides.get(card.id);
+  if(!edit)return card;
+  return {...card,title:edit.title||card.title,why:edit.why||card.why,
+   steps:edit.steps?.length?edit.steps:card.steps,caution:edit.caution||card.caution,
+   prompts:edit.prompts?.length?edit.prompts:card.prompts};
+ };
+ const custom=edits.filter(x=>x.type==='new').map(x=>({
+  id:x.id,title:x.title||'A guided reflection',why:x.why||'An optional editorial practice to consider.',
+  kind:x.kind,time:'short',duration:'At your own pace',effort:'light',
+  worksheet:x.worksheet,steps:x.steps?.length?x.steps:['Choose what fits your situation.','Stop if unhelpful or unsafe.'],
+  caution:x.caution||'Staff-authored educational exercise, not an independently validated treatment.',
+  prompts:x.prompts||[],tool:x.tool||null,source:'general',refs:[]
+ }));
+ return [...original,...extras].map(apply).concat(custom).map(c=>Object.freeze({
   ...c,kindLabel:KINDS[c.kind].label,tone:KINDS[c.kind].tone,group:KINDS[c.kind].group,
   family:familyForCard(c),shortTitle:shortInterventionTitle(c),
   steps:Object.freeze([...c.steps])
