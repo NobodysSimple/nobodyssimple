@@ -102,16 +102,15 @@ export class Publisher {
     const ref=await this.api(`${this.base}/git/ref/heads/${this.branch}`);
     const head=ref.object.sha;
     const commit=await this.api(`${this.base}/git/commits/${head}`);
-    let data={version:1,topics:[]};
-    try{
-      const file=await this.api(`${this.base}/contents/topic-content.json?ref=${head}`);
-      data=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(file.content.replace(/\\s/g,'')),ch=>ch.charCodeAt(0))));
-    }catch(error){
-      // An absent registry on a legacy deployment is different from a network
-      // failure. Do not interpret permission errors as an empty file.
-      if(!String(error.message).includes('denied')&&!String(error.message).includes('404'))throw error;
-      throw error;
-    }
+    // Use Git blob instead of the Contents API, which stops returning file
+    // bodies beyond 1 MB. This registry can grow as more topics are edited.
+    const root=await this.api(`${this.base}/git/trees/${commit.tree.sha}`);
+    const file=(root.tree||[]).find(x=>x.path==='topic-content.json'&&x.type==='blob');
+    if(!file)throw Error('The topic registry is missing on GitHub. Update the site before using the topic editor.');
+    const blob=await this.api(`${this.base}/git/blobs/${file.sha}`);
+    if(blob.encoding!=='base64'||typeof blob.content!=='string')throw Error('GitHub returned an unsupported topic data format.');
+    const data=JSON.parse(new TextDecoder().decode(Uint8Array.from(
+      atob(blob.content.replace(/\s/g,'')),ch=>ch.charCodeAt(0))));
     if(!Array.isArray(data?.topics))throw Error('Invalid topic publication registry.');
     return {head,tree:commit.tree.sha,data};
   }
