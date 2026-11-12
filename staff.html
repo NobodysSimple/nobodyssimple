@@ -11,6 +11,8 @@
     <link rel="icon" href="logo.png" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="studio.css" />
+    <link rel="stylesheet" href="ns-stationery.css" />
+    <link rel="stylesheet" href="ns-topic-studio.css" />
       <link rel="stylesheet" href="app-design.css" />
     <script type="module" src="app-design.mjs"></script>
   </head>
@@ -29,7 +31,7 @@
 
       <section id="studio" class="creator-app" hidden>
         <header class="creator-topbar">
-          <div class="creator-brand-lockup"><a href="index.html" aria-label="Nobody’s Simple home"><img src="logo.png" alt="" /></a><div><strong>Creator</strong><span id="connection-label">Connected to GitHub</span></div></div>
+          <div class="creator-brand-lockup"><a href="index.html" aria-label="Nobody’s Simple home"><img src="logo.png" alt="" /></a><div><strong>Nobody’s Simple Studio</strong><span id="connection-label">Connected to GitHub</span></div></div>
           <div class="creator-top-actions">
             <button class="creator-icon-button" id="focus-mode" type="button" title="Focus mode">Focus</button>
             <button class="creator-icon-button" id="help-shortcuts" type="button" title="Keyboard shortcuts">Shortcuts</button>
@@ -42,6 +44,7 @@
             <button class="rail-button active" data-view="dashboard" type="button"><span>▤</span> Content</button>
             <button class="rail-button" data-view="media" type="button"><span>▧</span> Media</button>
             <button class="rail-button" data-view="templates" type="button"><span>▦</span> Templates</button>
+            <button class="rail-button" data-view="topics" type="button"><span>✎</span> Topic pages</button>
             <div class="rail-divider"></div>
             <p class="rail-label">CREATE</p>
             <button class="rail-new" data-new="blog" type="button">＋ Blog post</button>
@@ -54,7 +57,7 @@
 
           <section class="creator-main-area">
             <div id="dashboard-view" class="creator-view">
-              <div class="dashboard-heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h1>Content</h1><p>Edit live posts or make a new one. Drafts stay on this device.</p></div><button class="button" data-new="blog" type="button">＋ Create content</button></div>
+              <div class="dashboard-heading"><div><p class="eyebrow">YOUR WORKSPACE</p><h1>The writing studio</h1><p>Write blogs, essays, resources and announcements. For psychology topic pages, open <strong>Topic pages</strong> in the sidebar.</p></div><button class="button" data-new="blog" type="button">＋ Create content</button></div>
               <div class="dashboard-tools">
                 <label class="search-field"><span>⌕</span><input id="dash-search" type="search" placeholder="Search titles, topics, content" /></label>
                 <select id="dash-status" aria-label="Filter by status"><option value="all">All content</option><option value="draft">Local drafts</option><option value="published">Published</option><option value="archived">Archived</option></select>
@@ -76,6 +79,8 @@
               <div id="template-grid" class="template-grid"></div>
             </div>
 
+            <div id="topics-view" class="creator-view" hidden><div id="topic-studio-root"></div></div>
+
             <div id="editor-view" class="editor-view" hidden>
               <div class="editor-topline"><button class="back-button" id="back-dashboard" type="button">← Content</button><span class="save-indicator" id="save-status" role="status">Draft</span><div class="editor-top-right"><button class="chip" id="full-editor" type="button">Full screen</button><button class="chip" id="save-version" type="button">＋ Save version</button><button class="chip" id="download-backup" type="button">Export backup</button><label class="chip upload-button">Import backup<input id="import-backup" type="file" accept="application/json,.json" /></label></div></div>
               <div class="editor-toolbar" id="format-toolbar" aria-label="Text formatting">
@@ -89,7 +94,7 @@
 
               <div class="editor-grid" id="editor-grid">
                 <aside class="outline-panel"><div class="panel-title">ON THIS PAGE</div><nav id="outline-list" aria-label="Document outline"><p class="fine">Add headings to build an outline.</p></nav><div class="panel-title panel-subtitle">LOCAL VERSIONS</div><div id="version-list" class="version-list"><p class="fine">No saved versions yet.</p></div><button id="compare-versions" class="text-button" type="button">Compare local versions</button><div class="panel-title panel-subtitle">PUBLISHED HISTORY</div><button id="load-published-history" class="text-button" type="button">Load GitHub versions</button><div id="published-history" class="version-list"><p class="fine">Published commit history can restore an earlier article draft.</p></div></aside>
-                <section class="document-stage"><div class="document-meta-line"><span id="type-pill" class="type-pill">Blog post</span><span id="document-slug-display" class="slug-hint"></span></div><input id="doc-title" class="document-title" maxlength="200" placeholder="Untitled" aria-label="Title" />
+                <section class="document-stage"><div class="document-meta-line"><span id="type-pill" class="type-pill">Blog post</span><span id="document-slug-display" class="slug-hint"></span></div><input id="doc-title" class="document-title" maxlength="200" placeholder="A title worth reading…" aria-label="Title" />
                   <input id="doc-excerpt" class="document-excerpt" maxlength="400" placeholder="Card excerpt — a short summary shown in the blog or library" aria-label="Card excerpt" />
                   <div class="intro-field"><label for="doc-intro">Opening introduction</label><textarea id="doc-intro" rows="2" placeholder="Optional text shown below the title"></textarea></div>
                   <div class="document-layout-controls"><span>Page width</span><button data-page-width="narrow" type="button">Narrow</button><button data-page-width="standard" class="selected" type="button">Standard</button><button data-page-width="wide" type="button">Wide</button><button id="toggle-split" type="button">Split preview</button></div>
