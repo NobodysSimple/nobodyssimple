@@ -127,7 +127,7 @@ export class Publisher {
     ]};
     const tree=await this.api(`${this.base}/git/trees`,'POST',{
       base_tree:snapshot.tree,
-      tree:[{path:'topic-content.json',mode:'100644',type:'blob',content:JSON.stringify(next,null,2)+'\\n'}]
+      tree:[{path:'topic-content.json',mode:'100644',type:'blob',content:JSON.stringify(next,null,2)+'\n'}]
     });
     const commit=await this.api(`${this.base}/git/commits`,'POST',{
       message:action+' topic: '+targetId,tree:tree.sha,parents:[snapshot.head]
