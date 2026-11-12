@@ -436,6 +436,11 @@ function openEditor(post = null, type = "blog", opts = {}) {
   $("doc-intro").value = current.intro || "";
   fillInspector();
   renderBlocksEditor();
+  const splitByDefault=window.matchMedia?.('(min-width:1180px)').matches??false;
+  $("live-preview").hidden=!splitByDefault;
+  $("editor-grid").classList.toggle("split-mode",splitByDefault);
+  $("toggle-split").textContent=splitByDefault?"Hide preview":"Split preview";
+  updateLivePreview();
   savedVersions = [];
   lastVersionAt = 0;
   void loadVersions();
@@ -624,7 +629,7 @@ function updateBlockFromDOM(index, target) {
   } else if (prop.startsWith("column-")) {
     const columnIndex = +prop.split("-")[1];
     const child = block.columns?.[columnIndex]?.[0];
-    if (child) child.html = target.innerHTML;
+    if (child) child.html = sanitizeRichHTML(target.innerHTML);
   } else if (["ordered", "headerRow", "striped", "decorative", "lightbox", "border"].includes(prop)) {
     block[prop] = target.type === "checkbox" ? target.checked : target.value === "true";
   } else if (target.isContentEditable) {
@@ -892,16 +897,23 @@ function selectionBlock() {
   return block ? +block.dataset.index : -1;
 }
 function selectionLink() {
-  const value = prompt("Link address (website, email, phone, page or #section)");
-  if (!value) return;
-  const href = safeHref(value);
-  if (!href) { toast("Use an https://, mailto:, tel:, #section or site-relative link.", true); return; }
-  document.execCommand("createLink", false, href);
-  if (/^https?:/i.test(href)) {
-    const selection = document.getSelection();
-    const anchor = selection?.anchorNode?.parentElement?.closest("a");
-    if (anchor) { anchor.target = "_blank"; anchor.rel = "noopener noreferrer"; }
-  }
+  // A browser prompt can move the selection away from the article. Keep the
+  // exact editor range and restore it before applying the link.
+  const selection=document.getSelection();
+  const range=selection?.rangeCount&&
+    selection.anchorNode?.parentElement?.closest?.('.rich-editor')?
+    selection.getRangeAt(0).cloneRange():null;
+  if(!range||range.collapsed){toast("Select text inside a writing block first.");return;}
+  const value=prompt("Link address (https://, mailto:, tel: or an internal page)");
+  if(!value)return;
+  const href=safeHref(value);
+  if(!href){toast("Choose an allowed website or internal page link.",true);return;}
+  selection.removeAllRanges();selection.addRange(range);
+  document.execCommand("createLink",false,href);
+  const anchor=range.commonAncestorContainer.nodeType===Node.ELEMENT_NODE?
+    range.commonAncestorContainer:range.commonAncestorContainer.parentElement;
+  const link=anchor?.closest?.('a')||anchor?.querySelector?.('a');
+  if(link&&/^https?:/i.test(href)){link.target="_blank";link.rel="noopener noreferrer";}
   captureFocusedRichEditor();
 }
 function captureFocusedRichEditor() {
