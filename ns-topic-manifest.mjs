@@ -41,6 +41,9 @@ export function normaliseTopicRecord(item){
  const methods=Array.isArray(item.methods)?item.methods.slice(0,40).map(normaliseMethod):[];
  if(new Set(methods.map(m=>m.id)).size!==methods.length)throw Error('A topic has duplicate approach identifiers.');
  if(item.kind==='new'&&(!String(item.title||'').trim()||!String(item.hint||'').trim()))throw Error('New topics require a title and a short summary.');
+ if(item.source?.url&&!safeSource(item.source))throw Error('Source URLs must use HTTPS.');
+ if(item.kind==='new'&&!NAV_THEMES.some(t=>t.domains.includes(item.domain)))
+  throw Error('Choose a valid editorial domain for a new topic.');
  if(item.status==='published'&&item.kind==='new'&&!String(guide.what||item.hint||'').trim())throw Error('A published new topic must explain its subject.');
  const result={
   id:item.id,kind:item.kind,status:item.status,theme:item.theme,
