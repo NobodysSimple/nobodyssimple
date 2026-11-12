@@ -154,6 +154,9 @@ html[data-theme=dark] .ns-culture-psychology :is(strong,p){color:#e3f1e1}
 .ns-culture-research article{margin:0;padding:12px 0;border-top:1px solid #d9e2d6}
 .ns-culture-research article h5{margin:0 0 7px;color:#315b45;font-size:.86rem}
 .ns-culture-research article>p{margin:0 0 10px;color:#435f50;line-height:1.55;font-size:.82rem}
+.ns-culture-research-debate{padding:11px 12px;margin:10px 0;border-left:3px solid #b67850;border-radius:0 10px 10px 0;background:#f2eee6}
+.ns-culture-research-debate strong{display:block;margin-bottom:5px;color:#68492f;font-size:.76rem}
+.ns-culture-research-debate p{margin:0;color:#5b5249;font-size:.78rem;line-height:1.55}
 .ns-culture-research-study{padding:9px 10px;margin:8px 0 0;border-radius:10px;background:#fffdf8}
 .ns-culture-research-study p{margin:0 0 7px;color:#4a6254;font-size:.79rem;line-height:1.5}
 .ns-culture-research-study a{color:#285b49;font-size:.75rem;font-weight:750;text-underline-offset:3px}
@@ -163,6 +166,8 @@ html[data-theme=dark] .ns-culture-practice :is(strong,p){color:#e3f1e1}
 html[data-theme=dark] .ns-culture-research{background:#2b4738;border-color:#607765}
 html[data-theme=dark] .ns-culture-research :is(h4,h5,p){color:#e3f1e1}
 html[data-theme=dark] .ns-culture-research article{border-color:#526c5c}
+html[data-theme=dark] .ns-culture-research-debate{background:#443b31;border-color:#dfac7f}
+html[data-theme=dark] .ns-culture-research-debate :is(strong,p){color:#f2e7da}
 html[data-theme=dark] .ns-culture-research-study{background:#203a2e}
 html[data-theme=dark] .ns-culture-research-study a{color:#b8dec3}
 html[data-theme=dark] .ns-culture-research-study small{color:#cbdece}
