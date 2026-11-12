@@ -35,7 +35,7 @@ function first(state){
  (active||state.query?'<h3 class="ns-atlas-results-heading">'+s(listTitle)+'</h3><div class="ns-atlas-list" data-atlas-results>'+(items.length?items.map(item).join(''):
  '<p class="ns-atlas-noresults">No precise match yet. Try another phrase or choose a theme.</p>')+'</div>'+
  (active&&!state.query.trim()&&items.length<atlasByTheme(active.id).length?'<button class="ns-atlas-more" type="button" data-atlas-more>Show more problems</button>':''):
- themeCards()+'<div class="ns-atlas-list" data-atlas-results hidden></div>')+
+ themeCards()+'<h3 class="ns-atlas-results-heading" hidden></h3><div class="ns-atlas-list" data-atlas-results hidden></div>')+
  '<p class="ns-atlas-footnote">'+atlasCount+' topics describe experiences, not diagnoses. A difficulty can have several explanations and may overlap with others.</p></section>');
 }
 export function renderAtlasConsole(root){
@@ -71,13 +71,13 @@ export function renderAtlasConsole(root){
    if(!target){return;}
    const grid=root.querySelector('[data-atlas-theme-grid]');
    if(grid)grid.hidden=!!state.query.trim();
-   target.hidden=!state.query.trim();
+   target.hidden=!state.query.trim()&&!state.theme;
    const candidates=state.query.trim()?atlasSearch(state.query,36):atlasByTheme(state.theme).slice(0,state.limit);
    target.innerHTML=candidates.length?candidates.map(item).join(''):
     '<p class="ns-atlas-noresults">No precise match yet. Try another phrase or choose a theme.</p>';
    target.querySelectorAll('[data-atlas-pick]').forEach(b=>b.onclick=()=>select(b.dataset.atlasPick));
    const heading=root.querySelector('.ns-atlas-results-heading');
-   if(heading)heading.textContent=state.query.trim()?'Search results':'Problems in '+(atlasThemes.find(t=>t.id===state.theme)?.name||'this theme');
+   if(heading){heading.textContent=state.query.trim()?'Search results':'Problems in '+(atlasThemes.find(t=>t.id===state.theme)?.name||'this theme');heading.hidden=!state.query.trim()&&!state.theme;}
    const more=root.querySelector('[data-atlas-more]');
    if(more)more.hidden=!!state.query.trim()||candidates.length>=atlasByTheme(state.theme).length;
   };
