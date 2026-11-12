@@ -27,7 +27,7 @@ export function renderTopicQuickNav(g){
  return '<nav class="ns-topic-quick-nav" aria-label="On this guide">'+
   '<span class="ns-topic-nav-label">Go straight to</span>'+
   '<button type="button" data-topic-jump="ns-topic-understand">Understand</button>'+
-  '<button type="button" data-topic-jump="ns-topic-profile">Explore</button>'+
+  '<button type="button" data-topic-jump="ns-topic-framework">Ways forward</button>'+
   '<button type="button" data-topic-jump="ns-pick-chooser">Try something</button>'+
   '<button type="button" data-topic-jump="ns-topic-answers">More answers</button>'+
   '</nav>';
@@ -41,20 +41,6 @@ export function renderTopicReadingStart(g){
   'Different people may experience this in different ways.'
  ];
  const core=m.core;
- const profile=m.profile.length?
-  '<section class="ns-topic-section ns-topic-profile-section" id="ns-topic-profile" aria-labelledby="ns-topic-profile-title">'+
-   '<p class="ns-topic-kicker">OPTIONAL CHECK-IN</p><h2 id="ns-topic-profile-title">Which parts feel familiar?</h2>'+
-   '<p class="ns-topic-helper">An optional personal map—not a diagnostic checklist or a score. Skip it if looking inward feels unhelpful right now.</p>'+
-   '<fieldset data-topic-profile class="ns-topic-profile-options"><legend>'+e(m.profileQuestion)+'</legend>'+
-   m.profile.map(item=>'<label class="ns-topic-check"><input type="checkbox" data-topic-pattern="'+e(item.id)+'" value="'+e(item.label)+'">'+
-    '<span><strong>'+e(item.label)+'</strong><small>'+e(item.detail)+'</small></span></label>').join('')+
-   '</fieldset>'+
-   '<p class="ns-topic-profile-result" data-topic-profile-result role="status" aria-live="polite">There is no correct combination. The patterns can overlap—or none may fit.</p>'+
-   '<button type="button" class="ns-topic-clear" data-topic-clear>Clear selections</button>'+
-  '</section>':
-  '<section class="ns-topic-section ns-topic-profile-section" id="ns-topic-profile">'+
-  heading('PART 02 · EXPLORE','Start with what you know')+
-  '<p>You do not need to categorise or record an experience to take it seriously. If privacy or safety is uncertain, avoid making notes or confronting anyone.</p></section>';
  const coreTitle=m.id==='betrayal-trauma'?'The four injuries that betrayal can affect':
   (m.contextFirst?'Four ways to understand the context':'Four possible parts of the picture');
  const frameworkTitle=m.id==='betrayal-trauma'?'Four areas of rebuilding':
@@ -78,7 +64,6 @@ export function renderTopicReadingStart(g){
      '<ol class="ns-topic-aspects">'+core.map(x=>group(x.label,x.detail)).join('')+'</ol></div>'+
     compactMechanisms(g)+
   '</section>'+
-  profile+
   '<section class="ns-topic-section ns-topic-traps">'+
    '<details class="ns-topic-details"><summary>Things that can make this harder</summary>'+
    '<div class="ns-topic-detail-body"><ol class="ns-topic-trap-list">'+m.traps.map(x=>group(x[0],x[1])).join('')+'</ol>'+
@@ -128,23 +113,6 @@ export function renderTopicSafetyReading(g){
    '<p class="ns-topic-quiet-note">There is no checklist, score, journal or behavioural experiment to complete on this page. Keep your privacy and immediate safety first.</p>'+
   '</section>';
 }
-export function bindTopicProfile(surface){
- const fieldset=surface.querySelector('[data-topic-profile]');
- if(!fieldset)return;
- const result=surface.querySelector('[data-topic-profile-result]');
- const update=()=>{
-  const selected=[...fieldset.querySelectorAll('[data-topic-pattern]:checked')].map(x=>x.value);
-  result.textContent=selected.length?
-   'You marked: '+selected.join('; ')+'. These are areas to explore, not a diagnosis or an automatically interpreted profile.':
-   'There is no correct combination. The patterns can overlap—or none may fit.';
- };
- fieldset.addEventListener('change',update);
- surface.querySelector('[data-topic-clear]')?.addEventListener('click',()=>{
-  fieldset.querySelectorAll('[data-topic-pattern]').forEach(c=>{c.checked=false;});
-  update();
- });
-}
-
 /* Hash URLs are used by the app router. Local guide jumps therefore use
  * buttons: fragment links would replace the workbook route and lose the page.
  */
@@ -153,7 +121,7 @@ export function bindTopicJumps(surface){
   const button=event.target.closest?.('[data-topic-jump]');
   if(!button)return;
   const id=button.dataset.topicJump;
-  if(!['ns-topic-understand','ns-topic-profile','ns-pick-chooser','ns-topic-answers'].includes(id))return;
+  if(!['ns-topic-understand','ns-topic-framework','ns-pick-chooser','ns-topic-answers'].includes(id))return;
   const section=surface.querySelector('#'+id);
   if(!section)return;
   section.scrollIntoView({block:'start',behavior:'instant'});
