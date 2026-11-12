@@ -188,7 +188,7 @@ export class Publisher {
   async topicSnapshot() {
     try {
       const file = await this.api(`${this.base}/contents/topic-pages.json?ref=${this.branch}`);
-      const bytes = Uint8Array.from(atob(file.content.replace(/\\s/g, "")), c => c.charCodeAt(0));
+      const bytes = Uint8Array.from(atob(file.content.replace(/\s/g, "")), c => c.charCodeAt(0));
       return { sha:file.sha, data:JSON.parse(new TextDecoder().decode(bytes)) };
     } catch(error) {
       if(/404/.test(error.message)) return {sha:null,data:{version:1,topics:[]}};
@@ -204,7 +204,7 @@ export class Publisher {
     // well, so concurrent writes cannot silently erase another editor's work.
     const {validateTopicManifest}=await import('./ns-topic-manifest.mjs');
     const clean=validateTopicManifest(next);
-    const content=JSON.stringify(clean,null,2)+"\\n";
+    const content=JSON.stringify(clean,null,2)+"\n";
     const bytes=new TextEncoder().encode(content);
     let binary="";
     for(const byte of bytes)binary+=String.fromCharCode(byte);
