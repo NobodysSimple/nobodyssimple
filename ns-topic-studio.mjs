@@ -86,7 +86,7 @@ function makeOriginalDraft(entry){
 }
 function newDraft(){
  const id='new-topic-'+Date.now().toString(36);
- return {id,kind:'new',status:'published',theme:'growth',domain:'growth',
+ return {id,kind:'new',status:'published',theme:'changes',domain:'growth',
   title:'',hint:'',safetyFirst:false,supportFirst:false,medical:false,
   updatedAt:'',guide:{lead:'',what:'',cycle:'',recognise:[],contributors:[],goals:[],progress:'',
    cautions:[],mechanisms:[]},
@@ -253,6 +253,11 @@ export class TopicStudio{
    (record.kind==='new'?'<label class="ns-desk-field"><span>URL identifier</span><input data-desk-field="id" value="'+e(record.id)+'" '+(original?'disabled':'')+'></label>':
    '<p class="ns-desk-muted">Permanent topic address: <code>#workbook-topic/'+e(record.id)+'</code></p>')+
    '</div>'+
+   (record.kind==='new'?'<div class="ns-desk-safety-choices">'+
+   '<label><input type="checkbox" data-desk-boolean="medical"'+(record.medical?' checked':'')+'> Medical or physical-health caution</label>'+
+   '<label><input type="checkbox" data-desk-boolean="supportFirst"'+(record.supportFirst?' checked':'')+'> Put safety and privacy first</label>'+
+   '<label><input type="checkbox" data-desk-boolean="safetyFirst"'+(record.safetyFirst?' checked':'')+'> Safety-only page (no self-guided tasks)</label>'+
+   '</div>':'')+
    '<div class="ns-desk-tab-buttons" role="group" aria-label="Topic writing sections">'+modeExamples.map(([id])=>this.formTab(id)).join('')+'</div>'+
    '<div class="ns-desk-writing-grid"><div class="ns-desk-form ns-desk-notepad">'+
    primary+understanding+next+answers+method+
@@ -338,14 +343,16 @@ export class TopicStudio{
   if(this.current.kind==='new'&&(!this.current.title.trim()||!this.current.hint.trim()))
    throw Error('Write a clear title and short description for the new topic.');
   const r=normaliseTopicRecord({...this.current,status:'published'});
-  if(r.editorial.core.length!==4||r.editorial.steps.length!==4)
+  if(!r.safetyFirst&&(r.editorial.core.length!==4||r.editorial.steps.length!==4))
    throw Error('Write four distinct parts of the explanation and four realistic ways forward.');
-  if(r.editorial.recognition.length<2||r.editorial.faq.length<2)
+  if(!r.safetyFirst&&(r.editorial.recognition.length<2||r.editorial.faq.length<2))
    throw Error('Add at least two recognition examples and two frequently asked questions.');
-  if(r.editorial.faq.some(f=>!f.question||!f.answer)||r.editorial.core.some(f=>!f.label||!f.detail)||
-   r.editorial.steps.some(f=>!f.label||!f.detail))
+  if(!r.safetyFirst&&(r.editorial.faq.some(f=>!f.question||!f.answer)||r.editorial.core.some(f=>!f.label||!f.detail)||
+   r.editorial.steps.some(f=>!f.label||!f.detail)))
    throw Error('Complete each heading and explanation; blank paired items cannot be published.');
   if(r.kind==='new'&&!r.guide.what.trim())throw Error('New topics require an accurate description of the experience.');
+  if(r.safetyFirst&&!r.editorial.supportText.trim())
+   throw Error('For a safety-only page, write specific human-support guidance.');
   if(r.methods.some(m=>!m.title||!m.why||m.steps.length<2))
    throw Error('Complete the title, rationale and at least two steps for every edited or new approach.');
   return r;
@@ -534,6 +541,9 @@ export class TopicStudio{
    }
    this.schedule();return;
   }
+  if(target.dataset.deskBoolean){
+   this.current[target.dataset.deskBoolean]=Boolean(target.checked);this.schedule();return;
+  }
   if(target.dataset.deskField){
    const field=target.dataset.deskField;
    if(field==='id'&&this.remote.topics.some(x=>x.id===this.originalId))return;
@@ -541,6 +551,8 @@ export class TopicStudio{
    else if(field==='source.name'||field==='source.url'){
     this.current.source||={name:'',url:''};assignPath(this.current,field,target.value);
    }else assignPath(this.current,field,target.value);
+   if(field==='theme'&&this.current.kind==='new')
+    this.current.domain=NAV_THEMES.find(t=>t.id===target.value)?.domains[0]||this.current.domain;
    if(field==='title')this.node('.ns-desk-editor-heading h2').textContent=target.value||'Untitled page';
    this.schedule();
   }
@@ -554,6 +566,7 @@ export class TopicStudio{
    else this.renderMethodEditor();
    return;
   }
-  if(target.dataset.deskMethodField||target.dataset.deskField==='theme')this.handleInput(event);
+  if(target.dataset.deskMethodField||target.dataset.deskField==='theme'||target.dataset.deskBoolean)
+   this.handleInput(event);
  }
 }
