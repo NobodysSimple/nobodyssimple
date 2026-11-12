@@ -124,6 +124,7 @@ function applyPublishedTopicGuide(g,record){
  });
  return {...g,title:record.title||g.title,lead:record.lead||g.lead,
   what:record.definition||g.what,lanes,
+  review:g.review+(record.sourceNote?' · Staff editorial note: '+record.sourceNote:''),
   editorialTools:record.customTools||[],guidedPrompts:record.guidedPrompts||[],
   publishedRecord:record};
 }
@@ -146,7 +147,8 @@ function createPublishedGuide(topicId,record){
   mechanisms:[],variants:[],cautions:['Editorial material. No individual clinical review or diagnostic assessment is implied.'],
   goals:[],progress:(record.progress||[]).join('; '),
   lanes,sources:[],relatedTarget:topicId,
-  review:'Staff-authored editorial topic · no independent topic-specific clinical validation or evidence review.',
+  review:'Staff-authored editorial topic · no independent topic-specific clinical validation or evidence review.'+
+   (record.sourceNote?' · Staff editorial note: '+record.sourceNote:''),
   kind:'topic',topicDomain:record.domain,contextFirst:true,supportFirst:false,
   safetyFirst:false,medical:false,showAtlas:false,
   editorialTools:record.customTools||[],guidedPrompts:record.guidedPrompts||[],
