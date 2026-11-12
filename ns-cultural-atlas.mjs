@@ -83,22 +83,22 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
  '<p>Travel through traditions, community practices and different ways of making meaning—without assuming everyone in a country thinks alike.</p></div>'+
  '<span class="ns-culture-stamp" aria-hidden="true">✦ CULTURE ATLAS</span></div>'+
  '<div class="ns-culture-controls"><label>Choose a country<select data-culture-country aria-label="Choose a country"><option value="">Select a country…</option></select></label>'+
- '<button type="button" data-culture-random class="ns-culture-random">✦ Surprise me with a country</button>'+
+ '<button type="button" data-culture-random class="ns-culture-random">✦ Surprise me with a territory</button>'+
  '<button type="button" data-culture-reset class="ns-culture-reset" disabled>← World view</button></div>'+
  '<div class="ns-culture-layout"><div class="ns-culture-map-column">'+
  '<div class="ns-culture-map-shell"><svg class="ns-culture-map" data-culture-map tabindex="0" viewBox="0 0 960 480" preserveAspectRatio="xMidYMid meet" role="group" aria-label="Map: drag to pan, pinch or scroll to zoom; arrow keys pan and plus or minus zoom">'+
  '<rect class="ns-culture-sea" x="0" y="0" width="960" height="480"></rect><g data-culture-shapes></g><g data-culture-regions></g><g data-culture-subregions></g><g data-culture-indigenous-areas></g><g data-culture-place-pin></g></svg>'+
- '<div class="ns-culture-zoom" role="group" aria-label="Map zoom controls"><button type="button" data-culture-zoom-in aria-label="Zoom in">+</button><button type="button" data-culture-zoom-out aria-label="Zoom out">−</button><button type="button" data-culture-zoom-fit aria-label="Fit selected area">⊡</button></div>'+
+ '<div class="ns-culture-zoom" role="group" aria-label="Map controls"><button type="button" data-culture-fullscreen aria-pressed="false" aria-label="View map full screen">⛶</button><button type="button" data-culture-zoom-in aria-label="Zoom in">+</button><button type="button" data-culture-zoom-out aria-label="Zoom out">−</button><button type="button" data-culture-zoom-fit aria-label="Fit selected area">⊡</button></div>'+
  '<div data-culture-map-status class="ns-culture-map-status" role="status">Preparing the world map…</div></div>'+
  '<div class="ns-culture-map-foot"><span data-culture-region-info>Select a country to explore its regions.</span><span data-culture-count></span></div>'+
  '<label class="ns-culture-region-control" data-culture-region-wrap hidden>State / province / constituent country<select data-culture-region><option value="">All regions</option></select></label>'+
  '<div class="ns-culture-drill" data-culture-sub-wrap hidden><button type="button" data-culture-sub-load>Explore counties / districts / municipalities</button>'+
  '<label data-culture-sub-control hidden>County / district / second-level area<select data-culture-subregion><option value="">All local areas</option></select></label>'+
  '<p data-culture-sub-note>Load the next administrative level for the selected region.</p></div>'+
- '<div class="ns-culture-indigenous-control" data-culture-indigenous-wrap hidden><label><input type="checkbox" data-culture-indigenous> Show US Indigenous lands and statistical areas</label>'+
+ '<div class="ns-culture-indigenous-control" data-culture-indigenous-wrap hidden><strong>Indigenous areas are shown automatically</strong>'+
  '<label data-culture-indigenous-list-wrap hidden>Browse visible mapped areas<select data-culture-indigenous-list><option value="">Select an area…</option></select></label>'+
- '<p data-culture-indigenous-note>Independent US Census geography. Zoom into a state to load a section.</p></div>'+
- '<div class="ns-culture-place-search" data-culture-place-wrap hidden><label>Find any city or town<input type="search" data-culture-place-query minlength="3" maxlength="100" placeholder="Type a place name" aria-label="City or town name"></label>'+
+ '<p data-culture-indigenous-note>U.S. Census statistical geography is included as you zoom into a state. These boundaries are not a complete map of Indigenous homelands or sovereignty.</p></div>'+
+ <div class="ns-culture-place-search" data-culture-place-wrap hidden><label>Find any city or town<input type="search" data-culture-place-query minlength="3" maxlength="100" placeholder="Type a place name" aria-label="City or town name"></label>'+
  '<button type="button" data-culture-place-search>Find place</button><label data-culture-place-results-wrap hidden>Choose a matching place<select data-culture-place-results></select></label><p data-culture-place-note>Search only happens when you press Find place.</p></div>'+
  '<p class="ns-culture-map-source">Country outlines: Natural Earth. Civil boundaries: <a href="https://www.geoboundaries.org/" rel="noopener noreferrer" target="_blank">geoBoundaries gbOpen ↗</a> (licences vary). Indigenous geography: <a href="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/AIANNHA/MapServer/47" rel="noopener noreferrer" target="_blank">US Census AIANNHA, 2026 ↗</a>. Place search © <a href="https://www.openstreetmap.org/copyright" rel="noopener noreferrer" target="_blank">OpenStreetMap contributors ↗</a>. These boundaries are illustrative, never claims about sovereignty, ancestry, or the full extent of Indigenous homelands.</p></div>'+
  '<aside class="ns-culture-reading" aria-label="Culture stories" data-culture-panel><div data-culture-panel-content></div></aside></div>'+
@@ -112,7 +112,7 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
    pinLayer=root.querySelector('[data-culture-place-pin]'),subWrap=root.querySelector('[data-culture-sub-wrap]'),
    subChoose=root.querySelector('[data-culture-subregion]'),subControl=root.querySelector('[data-culture-sub-control]'),
    subNote=root.querySelector('[data-culture-sub-note]'),indigenousWrap=root.querySelector('[data-culture-indigenous-wrap]'),
-   indigenousToggle=root.querySelector('[data-culture-indigenous]'),indigenousNote=root.querySelector('[data-culture-indigenous-note]'),
+   indigenousNote=root.querySelector('[data-culture-indigenous-note]'),
    indigenousList=root.querySelector('[data-culture-indigenous-list]'),indigenousListWrap=root.querySelector('[data-culture-indigenous-list-wrap]'),
    placeWrap=root.querySelector('[data-culture-place-wrap]'),placeQuery=root.querySelector('[data-culture-place-query]'),
    placeChoose=root.querySelector('[data-culture-place-results]'),placeResultWrap=root.querySelector('[data-culture-place-results-wrap]'),
@@ -155,13 +155,12 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   subNote.textContent=loadingSub?'Loading county/district boundaries…':subregions.length?
    subregions.length+' local areas in '+selectedRegion.name:subError||'Select “Explore” to load smaller administrative areas.';
   indigenousWrap.hidden=selectedCountry?.code!=='USA';
-  indigenousToggle.checked=indigenousOn;
   indigenousListWrap.hidden=!indigenousOn||indigenousAreas.length===0;
   indigenousList.innerHTML='<option value="">Select a visible area…</option>'+indigenousAreas.map((f,i)=>
    '<option value="'+i+'">'+e(f.properties?.NAMELSAD||f.properties?.NAME||'Census area')+'</option>').join('');
-  indigenousNote.textContent=indigenousError||(indigenousOn?
-   indigenousAreas.length+' mapped Census areas currently visible'+(indigenousPartial?' (partial response; zoom closer)':''):
-   'Independent US Census 2026 geography: reservations, trust lands and statistical areas. Zoom into a state, then enable.');
+  indigenousNote.textContent=indigenousError||(indigenousAreas.length+
+   ' U.S. Census areas currently visible'+(indigenousPartial?' (partial response; zoom closer)':'')+
+   '. Boundaries are statistical geography, not a complete map of Indigenous homelands.');
   placeWrap.hidden=!selectedCountry;
   placeResultWrap.hidden=placeResults.length===0;
   placeChoose.innerHTML='<option value="">Choose a result…</option>'+placeResults.map((p,i)=>'<option value="'+i+'">'+e(p.name)+'</option>').join('');
@@ -191,7 +190,8 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
    (localName&&!locallyRelevant?'<p class="ns-culture-region-note">This reading relates to '+e(selectedCountry.name)+' or a community within it; it is not specifically about '+e(localName.split(',')[0])+'.</p>':'')+
    '<div class="ns-culture-story-head"><span>'+e(active.theme)+'</span><span>'+String(pos+1)+' / '+String(list.length)+'</span></div>'+
    '<h3>'+e(active.title)+'</h3><p class="ns-culture-where">'+e(active.place)+'</p>'+
-   '<div class="ns-culture-story-body">'+active.body.map(p=>'<p>'+e(p)+'</p>').join('')+'</div>'+
+   '<div class="ns-culture-story-body">'+active.body.filter((_,i)=>i!==1).map(p=>'<p>'+e(p)+'</p>').join('')+'</div>'+
+   '<section class="ns-culture-psychology" aria-label="Psychology, unpacked"><strong>Psychology, unpacked</strong><p>'+e(active.psychology||active.body[1]||'')+'</p><small>This is an interpretation of the documented practice, not a claim about everyone in the community or a clinical treatment.</small></section>'+
    '<div class="ns-culture-lesson"><strong>What might we learn?</strong><p>'+e(active.reflection)+'</p></div>'+
    '<div class="ns-culture-question"><strong>Take a thought with you</strong><p>'+e(active.question)+'</p></div>'+
    '<a class="ns-culture-source" href="'+e(active.source.url)+'" target="_blank" rel="noopener noreferrer">Read the documentary source: '+e(active.source.label)+' ↗</a>'+
@@ -312,19 +312,31 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   cancelRegions();cancelSub();cancelTribal();cancelPlace();
   selectedCountry=found;selectedRegion=null;selectedSubregion=null;selectedPlace=null;selectedIndigenousName='';
   regions=[];subregions=[];placeResults=[];placeError='';subError='';regionError='';regionSource=null;
-  indigenousAreas=[];indigenousOn=false;indigenousError='';indigenousPartial=false;loadingRegions=Boolean(found);
+  indigenousAreas=[];indigenousOn=found?.code==='USA';indigenousError='';indigenousPartial=false;loadingRegions=Boolean(found);
   activeArticle=found?articlesForCountry(found.code)[0]?.id||'':'';
   if(found)focusFeature(found,1.3);else viewport?.reset();
   paintMap();paintPanel();
-  if(found)void loadRegions(found,generation);
+  if(found){
+   const pending=loadRegions(found,generation);
+   if(indigenousOn)void loadTribal();
+   return pending;
+  }
+  return Promise.resolve();
  };
- const selectRandom=()=>{
-  const pool=articleCountries.filter(code=>countries.some(c=>c.code===code));
-  if(!pool.length)return;
-  const idx=Math.min(pool.length-1,Math.max(0,Math.floor(Number(random())*pool.length)||0));
-  const code=pool[idx];selectCountry(code);
-  const available=articlesForCountry(code);
-  if(available.length>1){activeArticle=available[Math.min(available.length-1,Math.floor(Number(random())*available.length)||0)].id;paintPanel();}
+ const pickRandom=list=>list[Math.min(list.length-1,Math.max(0,Math.floor(Number(random())*list.length)||0))];
+ const selectRandom=async()=>{
+  if(!countries.length)return;
+  const storyCountries=countries.filter(item=>articleCountries.includes(item.code));
+  const country=pickRandom(storyCountries.length?storyCountries:countries);
+  const depth=Math.floor(Number(random())*3);
+  await selectCountry(country.code);
+  if(depth===0||!selectedCountry||!regions.length)return;
+  const region=pickRandom(regions);
+  if(!region)return;
+  selectRegion(region.id);
+  if(depth<2)return;
+  await loadSubregions();
+  if(subregions.length)selectSubregion(pickRandom(subregions).id);
  };
  const selectIndigenous=index=>{
   const feature=indigenousAreas[Number(index)];if(!feature)return;
@@ -344,6 +356,23 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   if(countryNode)selectCountry(countryNode.dataset.cultureCode);
  };
  viewport=bindAtlasViewport(svg,{onChange:()=>scheduleTribal()});
+ const fullscreenButton=root.querySelector('[data-culture-fullscreen]');
+ const mapShell=root.querySelector('.ns-culture-map-shell');
+ const syncFullscreen=()=>{
+  const active=document.fullscreenElement===mapShell;
+  fullscreenButton.setAttribute('aria-pressed',String(active));
+  fullscreenButton.setAttribute('aria-label',active?'Exit full screen map':'View map full screen');
+  fullscreenButton.textContent=active?'⤢':'⛶';
+ };
+ const onFullscreenChange=()=>syncFullscreen();
+ document.addEventListener('fullscreenchange',onFullscreenChange);
+ fullscreenButton.addEventListener('click',async()=>{
+  try{
+   if(document.fullscreenElement===mapShell)await document.exitFullscreen();
+   else if(mapShell.requestFullscreen)await mapShell.requestFullscreen();
+  }catch{mapStatus.textContent='Full screen is unavailable in this browser.';}
+  syncFullscreen();
+ });
  svg.addEventListener('click',event=>{
   if(viewport.consumeDragClick())return;
   respondToMap(event.target);
@@ -361,10 +390,6 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
  regionChoose.addEventListener('change',()=>selectRegion(regionChoose.value));
  subChoose.addEventListener('change',()=>selectSubregion(subChoose.value));
  root.querySelector('[data-culture-sub-load]').addEventListener('click',()=>void loadSubregions());
- indigenousToggle.addEventListener('change',()=>{
-  indigenousOn=indigenousToggle.checked;cancelTribal();indigenousAreas=[];indigenousError='';selectedIndigenousName='';
-  paintMap();if(indigenousOn)void loadTribal();
- });
  indigenousList.addEventListener('change',()=>selectIndigenous(indigenousList.value));
  root.querySelector('[data-culture-place-search]').addEventListener('click',()=>void findPlaces());
  placeQuery.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();void findPlaces();}});
@@ -402,8 +427,8 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
  if(typeof IntersectionObserver!=='undefined'){
   const observer=new IntersectionObserver(entries=>{if(entries.some(item=>item.isIntersecting)){observer.disconnect();void boot();}},{rootMargin:'280px'});
   observer.observe(root);
-  return ()=>{removed=true;cancelRegions();cancelSub();cancelTribal();cancelPlace();viewport?.destroy();observer.disconnect();};
+  return ()=>{removed=true;cancelRegions();cancelSub();cancelTribal();cancelPlace();viewport?.destroy();document.removeEventListener('fullscreenchange',onFullscreenChange);observer.disconnect();};
  }
  void boot();
- return ()=>{removed=true;cancelRegions();cancelSub();cancelTribal();cancelPlace();viewport?.destroy();};
+ return ()=>{removed=true;cancelRegions();cancelSub();cancelTribal();cancelPlace();viewport?.destroy();document.removeEventListener('fullscreenchange',onFullscreenChange);};
 }
