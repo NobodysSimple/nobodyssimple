@@ -150,20 +150,36 @@ export function mountTopicWorkspace(root,{getPublisher,onNotice=()=>{}}={}){
  const q=s=>root.querySelector(s);
  const notice=(message,error=false)=>{const output=q('[data-topic-status]');if(output){output.textContent=message;output.dataset.error=String(error)}onNotice(message,error)};
  const recordsForList=()=>new Map(remote.map(x=>[x.id,x]));
+ function localTopicDrafts(){
+  const found=[];
+  try{
+   for(let i=0;i<localStorage.length;i++){
+    const key=localStorage.key(i);
+    if(!key?.startsWith('ns-staff-topic-v1:'))continue;
+    const raw=JSON.parse(localStorage.getItem(key)||'null');
+    const record=normalizeTopicRecord(raw?.record);
+    if(record)found.push(record);
+   }
+  }catch{}
+  return found;
+ }
  function list(){
   const records=recordsForList();
-  const all=[...atlasProblemIndex.map(t=>({...t,record:records.get(t.id)||null})),
-   ...remote.filter(r=>!atlasGet(r.id)).map(r=>({id:r.id,title:r.title,domain:r.domain,record:r}))];
+  const drafts=new Map(localTopicDrafts().map(r=>[r.id,r]));
+  const all=[...atlasProblemIndex.map(t=>({...t,record:records.get(t.id)||null,local:drafts.get(t.id)||null})),
+   ...remote.filter(r=>!atlasGet(r.id)).map(r=>({id:r.id,title:r.title,domain:r.domain,record:r,local:drafts.get(r.id)||null})),
+   ...[...drafts.values()].filter(r=>!atlasGet(r.id)&&!records.has(r.id))
+    .map(r=>({id:r.id,title:r.title,domain:r.domain,record:null,local:r}))];
   const needle=query.toLocaleLowerCase().trim();
   const filtered=all.filter(t=>[t.title,t.id,t.domain,t.record?.theme].some(x=>String(x||'').toLocaleLowerCase().includes(needle)))
    .sort((a,b)=>a.title.localeCompare(b.title));
-  q('[data-topic-count]').textContent=filtered.length+' topics · '+remote.length+' repository changes';
+  q('[data-topic-count]').textContent=filtered.length+' topics · '+remote.length+' repository changes · '+drafts.size+' browser drafts';
   q('[data-topic-list]').innerHTML=filtered.slice(0,150).map(t=>{
    const record=t.record;
    return '<button type="button" class="ns-topic-row" data-topic-open="'+e(t.id)+'">'+
-    '<strong>'+e(record?.title||t.title)+'</strong><small>'+e(t.id)+' · '+
+    '<strong>'+e(t.local?.title||record?.title||t.title)+'</strong><small>'+e(t.id)+' · '+
       e(NAV_THEMES.find(g=>g.id===(record?.theme||topicTheme(t)))?.title||'Topic')+'</small>'+
-    '<span class="ns-topic-status-pill">'+e(record?.status==='archived'?'Archived':record?.status==='published'?'Edited':'Original')+'</span></button>';
+    '<span class="ns-topic-status-pill">'+e(t.local?'Local draft':record?.status==='archived'?'Archived':record?.status==='published'?'Edited':'Original')+'</span></button>'; 
   }).join('')||'<p>No matching topics.</p>';
   q('[data-topic-results-note]').textContent=filtered.length>150?'Showing the first 150 results. Search to find another topic.':'';
  }
@@ -256,11 +272,12 @@ export function mountTopicWorkspace(root,{getPublisher,onNotice=()=>{}}={}){
  function showList(){q('[data-topic-editor-panel]').hidden=true;q('[data-topic-list-panel]').hidden=false;list();}
  function open(id){
   const known=atlasGet(id),published=remote.find(r=>r.id===id)||null;
-  if(!known&&!published)return;
-  const baseline=published||fromGuide(id);
+  const saved=localFor(id);
+  if(!known&&!published&&!saved)return;
+  const baseline=published||(known?fromGuide(id):saved);
   if(!baseline){notice('Cannot edit this entry.',true);return;}
   expected=published?copy(published):null;
-  current=copy(localFor(id)||baseline);
+  current=copy(saved||baseline);
   selectedId=id;editor();
   notice(published?'Live version loaded. Edit and publish when ready.':'Original topic loaded. Your edits publish as a separate overlay.');
  }
