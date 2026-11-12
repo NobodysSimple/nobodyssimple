@@ -149,7 +149,7 @@ export function renderNeedsConsole(root,parts=[]){
    if(subdomainChoice){current.subdomain=subdomainChoice.dataset.needsSubdomain;current.query='';current.limit=NAV_TOPIC_PAGE_SIZE;root.__nsNeedsPaint();return;}
    if(event.target.closest('[data-needs-back-areas]')){current.theme='';current.subdomain='';current.query='';root.__nsNeedsPaint();return;}
    if(event.target.closest('[data-needs-back-subdomains]')){current.subdomain='';current.query='';root.__nsNeedsPaint();return;}
-   if(event.target.closest('[data-needs-more]')){current.limit+=NAV_TOPIC_PAGE_SIZE;root.__nsNeedsPaint(false);}
+   if(event.target.closest('[data-needs-more]')){current.limit+=NAV_TOPIC_PAGE_SIZE;root.__nsNeedsPaint(false);(root.querySelector('[data-needs-more]')||root.querySelector('[data-needs-focus-heading]'))?.focus?.({preventScroll:true});}
   });
   root.addEventListener('input',event=>{
    const input=event.target.closest('[data-needs-search]');if(!input)return;
