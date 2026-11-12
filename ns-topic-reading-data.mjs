@@ -228,13 +228,22 @@ export function topicPageModel(g){
  const steps=goals.map((x,i)=>Array.isArray(x)?{label:x[0],detail:x[1]}:
   ({label:x,detail:clean((g.goals||[])[i])||clean(g.mechanisms?.[i]?.target)||'Choose what is realistic, safe and meaningful to you.'}));
  const faq=faqFor(g,recipe,specific);
+ const edited=g.pageEditorial||{};
+ const text=(value,fallback)=>String(value||'').trim()||fallback;
+ const strList=(items,fallback)=>Array.isArray(items)&&items.length?items:fallback;
+ const pairs=(items,fallback)=>Array.isArray(items)&&items.length?items:fallback;
+ const adaptedCore=pairs(edited.core,core).map(x=>({label:x.label,detail:x.detail}));
+ const adaptedTraps=pairs(edited.traps,specific?.traps||recipe.traps).map(x=>
+  Array.isArray(x)?x:[x.label,x.detail]);
+ const adaptedSteps=pairs(edited.steps,steps).map(x=>Array.isArray(x)?{label:x[0],detail:x[1]}:x);
+ const adaptedFaq=pairs(edited.faq,faq).map(x=>Array.isArray(x)?x:[x.question,x.answer]);
  return Object.freeze({
-  id:g.optionId,kind:themeOf(normalizeDomain(g)),title:g.title,recognition:questions,
-  reframe:summary,cycle:context?'':clean(g.cycle),core:Object.freeze(core.slice(0,4)),
+  id:g.optionId,kind:themeOf(normalizeDomain(g)),title:g.title,recognition:strList(edited.recognition,questions),
+  reframe:text(edited.reframe,summary),cycle:context?'':clean(g.cycle),core:Object.freeze(adaptedCore.slice(0,4)),
   profile:Object.freeze(support?[]:profileFor(g,core)),profileQuestion:specific?.profileQuestion||'Which parts of this experience seem relevant?',
-  traps:Object.freeze(specific?.traps||recipe.traps),
-  steps:Object.freeze(steps.slice(0,4)),progress:Object.freeze(specific?.progress||recipe.progress),
-  faq:Object.freeze(faq),supportText:supportFor(g),closing:specific?.closing||
+  traps:Object.freeze(adaptedTraps),
+  steps:Object.freeze(adaptedSteps.slice(0,4)),progress:Object.freeze(strList(edited.progress,specific?.progress||recipe.progress)),
+  faq:Object.freeze(adaptedFaq),supportText:text(edited.supportText,supportFor(g)),closing:text(edited.closing,specific?.closing)||
    (context?'You do not have to turn an identity, difference or difficult circumstance into a personal problem to earn support. Start with what matters to you.':
    'The goal is not to become someone who never struggles. It is to understand what is happening more clearly and have more room for safe, meaningful choices.'),
   contextFirst:context,medical:Boolean(g.medical),supportFirst:support,
