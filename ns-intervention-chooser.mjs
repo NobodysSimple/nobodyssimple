@@ -261,7 +261,7 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
  const surface=root.querySelector('[data-workbook]');
  if(g.kind==='topic'&&!g.safetyFirst){bindTopicProfile(surface);bindTopicJumps(surface);}
  if(g.safetyFirst)return;
- let selected=null,filter='all',need='all',refine='all',opener=null,preview=null;
+ let selected=null,filter='all',need='choose',refine='all',opener=null,preview=null;
  const drafts=new Map();
  const track=surface.querySelector('[data-pick-track]');
  const dialog=surface.querySelector('[data-pick-dialog]');
@@ -271,16 +271,16 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
   if(selected)drafts.set(selected.id,valuesFrom(sheet));
  };
  const paintCards=()=>{
-  let visible=filterCards(cards,refine);
-  if(need!=='all')visible=visible.filter(c=>NEED_FAMILIES[need].includes(familyForCard(c)));
+  let visible=need==='choose'?[]:filterCards(cards,refine);
+  if(need!=='all'&&need!=='choose')visible=visible.filter(c=>NEED_FAMILIES[need].includes(familyForCard(c)));
   if(filter!=='all')visible=visible.filter(c=>familyForCard(c)===filter);
   const groups=need==='all'?groupInterventions(visible):visible.length?[{id:need,label:NEED_LABELS[need],hint:'Options selected around what you need right now',cards:visible}]:[];
   track.innerHTML=groups.length?groups.map(g=>'<div class="ns-pick-family" data-pick-family="'+e(g.id)+'">'+
    '<div class="ns-pick-family-heading"><strong>'+e(g.label)+'</strong><small>'+e(g.hint)+'</small></div>'+
    '<div class="ns-pick-family-cards">'+g.cards.map(c=>cardHTML(c,selected?.id)).join('')+'</div></div>').join(''):
-   '<p class="ns-pick-noresults">No options match this need and filter. Choose another need or change the optional filter.</p>';
+   '<p class="ns-pick-noresults">'+(need==='choose'?'Choose what you need above to see relevant options, or open “Browse by approach family” if you already know what you want.':'No options match this need and filter. Choose another need or change the optional filter.')+'</p>';
   surface.querySelector('[data-pick-count-cards]').textContent=
-   visible.length+' options '+(need==='all'?'across '+groups.length+' approach families':'for '+NEED_LABELS[need]);
+   need==='choose'?'Choose what you need first':visible.length+' options '+(need==='all'?'across '+groups.length+' approach families':'for '+NEED_LABELS[need]);
   surface.querySelectorAll('[data-pick-filter]').forEach(b=>{
    b.setAttribute('aria-pressed',String(b.dataset.pickFilter===filter));
   });
