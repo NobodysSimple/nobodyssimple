@@ -115,13 +115,16 @@ export class Publisher {
     if(!Array.isArray(data?.topics))throw Error('Invalid topic publication registry.');
     return {head,tree:commit.tree.sha,data};
   }
-  async updateTopics(next, expectedRecord=null, targetId='',action='Update'){
+  async updateTopics(targetId,expectedRecord,record=null,action='Publish'){
     const snapshot=await this.topicSnapshot();
     const found=snapshot.data.topics.find(x=>x.id===targetId)||null;
     if(JSON.stringify(found)!==JSON.stringify(expectedRecord||null)){
       throw Error('This topic changed on GitHub since it was opened. Reload the latest version before publishing.');
     }
-    if(!Array.isArray(next?.topics))throw Error('Topic registry is invalid.');
+    const next={...snapshot.data,version:1,topics:[
+      ...snapshot.data.topics.filter(x=>x.id!==targetId),
+      ...(record?[record]:[])
+    ]};
     const tree=await this.api(`${this.base}/git/trees`,'POST',{
       base_tree:snapshot.tree,
       tree:[{path:'topic-content.json',mode:'100644',type:'blob',content:JSON.stringify(next,null,2)+'\\n'}]
@@ -130,28 +133,15 @@ export class Publisher {
       message:action+' topic: '+targetId,tree:tree.sha,parents:[snapshot.head]
     });
     await this.api(`${this.base}/git/refs/heads/${this.branch}`,'PATCH',{sha:commit.sha,force:false});
-    return {sha:commit.sha,record:next.topics.find(x=>x.id===targetId)||null};
+    return {sha:commit.sha,record:record||null};
   }
   async publishTopic(record,expectedRecord=null){
     if(!record?.id||!/^[a-z][a-z0-9-]{2,89}$/.test(record.id))throw Error('Topic ID must use lowercase letters, numbers and dashes.');
-    const snapshot=await this.topicSnapshot();
-    const found=snapshot.data.topics.find(x=>x.id===record.id)||null;
-    if(JSON.stringify(found)!==JSON.stringify(expectedRecord||null)){
-      throw Error('This topic changed on GitHub since it was opened. Reload the latest version before publishing.');
-    }
-    const next={...snapshot.data,version:1,topics:[
-      ...snapshot.data.topics.filter(x=>x.id!==record.id),record
-    ]};
-    return this.updateTopics(next,expectedRecord,record.id,record.status==='archived'?'Archive':'Publish');
+    return this.updateTopics(record.id,expectedRecord,record,record.status==='archived'?'Archive':'Publish');
   }
   async deleteTopic(id,expectedRecord){
-    const snapshot=await this.topicSnapshot();
-    const found=snapshot.data.topics.find(x=>x.id===id)||null;
-    if(!found||JSON.stringify(found)!==JSON.stringify(expectedRecord||null)){
-      throw Error('This topic has changed on GitHub. Reload before deleting.');
-    }
-    const next={...snapshot.data,topics:snapshot.data.topics.filter(x=>x.id!==id)};
-    return this.updateTopics(next,expectedRecord,id,'Delete');
+    if(!expectedRecord)throw Error('This topic has no published version to delete.');
+    return this.updateTopics(id,expectedRecord,null,'Delete');
   }
 
   async contentHistory(limit = 12) {
