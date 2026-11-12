@@ -1,0 +1,70 @@
+/* Nobody's Simple / Field Notes. A calm editorial surface for public writing,
+ * live previews and the staff editor. No external fonts or images.
+ */
+:root{--ns-paper:#fcfaf3;--ns-ink:#274436;--ns-leaf:#5d8b68;--ns-border:#dfe9d9;}
+.article.ns-notepad{
+ position:relative;isolation:isolate;max-width:880px;
+ margin:16px auto 55px;padding:clamp(25px,5vw,57px);
+ border:1px solid #dae4d6;border-radius:23px;
+ background:linear-gradient(140deg,#fffdf7 0%,#faf8f0 95%);
+ box-shadow:0 10px 36px rgba(32,64,42,.055);color:var(--ns-ink);
+}
+.article.ns-notepad:before{
+ content:"✦  NOBODY’S SIMPLE  ·  FIELD NOTES";display:block;
+ font:750 10px/1.5 system-ui,sans-serif;letter-spacing:.14em;
+ color:#65846d;padding-bottom:15px;margin-bottom:22px;
+ border-bottom:1px solid #e0e9da;
+}
+.article.ns-notepad h1{
+ font-family:Georgia,"Times New Roman",serif;
+ font-size:clamp(31px,5vw,47px);letter-spacing:-.035em;
+ line-height:1.13;max-width:23ch;color:#264a36;margin:12px 0 17px;
+}
+.article.ns-notepad .lead{
+ max-width:65ch;color:#587061;font-size:clamp(15px,2vw,18px);
+ line-height:1.67;margin-bottom:28px;
+}
+.article.ns-notepad .article-body{max-width:74ch;margin-inline:auto;font:400 16px/1.82 system-ui,sans-serif;color:#344e3c;}
+.article.ns-notepad .article-body :is(h2,h3,h4){color:#28513b;line-height:1.3;letter-spacing:-.015em;margin-top:2em;}
+.article.ns-notepad .article-body h2{font-family:Georgia,serif;font-size:clamp(23px,3vw,30px);padding-bottom:11px;border-bottom:1px solid #e2eadd;}
+.article.ns-notepad .article-body h3{font-size:19px;}
+.article.ns-notepad .article-body :is(p,li){line-height:1.8;}
+.article.ns-notepad .article-body p{margin-bottom:1.1em;}
+.article.ns-notepad .article-body blockquote{border-left:3px solid #9bb6a0;background:#f4f7ee;border-radius:0 12px 12px 0;margin:25px 0;padding:17px 23px;color:#365742;}
+.article.ns-notepad .article-body :is(img,figure){max-width:100%;border-radius:13px;}
+.article.ns-notepad .article-body a{color:#256e4a;text-decoration-thickness:1.5px;text-underline-offset:4px;}
+.article.ns-notepad .article-body hr{border:0;border-top:1px solid #dbe5d8;margin:30px 0;}
+.article.ns-notepad.theme-dark{background:#283b31;border-color:#577362;color:#ebf2e9;}
+.article.ns-notepad.theme-dark :is(h1,h2,h3,h4,.article-body,.lead){color:#f1f6ed;}
+.article.ns-notepad.theme-dark:before{color:#c4dec8;border-color:#59715c;}
+.article.ns-notepad.theme-dark .article-body blockquote{background:#344a3b;color:#e7eee4;}
+.creator-body .document-stage{
+ background:#fffcf5;border:1px solid #e2e9db;border-radius:20px;
+ padding:clamp(20px,3vw,32px);
+ box-shadow:0 13px 38px #27412d0c;
+}
+.creator-body .document-stage:before{
+ content:"✦  NOBODY’S SIMPLE  ·  WRITING DESK";display:block;
+ color:#6d8b73;font:760 10px/1.3 system-ui,sans-serif;letter-spacing:.13em;
+ padding-bottom:15px;margin-bottom:21px;border-bottom:1px solid #e4eadd;
+}
+.creator-body .document-title{font-family:Georgia,serif;font-size:clamp(31px,4vw,45px);line-height:1.15;letter-spacing:-.03em;}
+.creator-body .document-excerpt{line-height:1.65;}
+.creator-body .editor-block{
+ border-radius:13px;box-shadow:none;border-color:#e0e9da;
+}
+.creator-body .editor-block.selected-block{border-color:#83a78c;box-shadow:0 0 0 2px #b5d0b56b;}
+.creator-body .rich-editor{font-size:15px;line-height:1.8;min-height:64px;}
+.creator-body .live-preview .article.ns-notepad{margin:12px auto;box-shadow:none;}
+.creator-body .creator-topbar{background:#f9fbf6;}
+@media(max-width:640px){
+ .article.ns-notepad{padding:21px;margin-inline:0;border-radius:14px;}
+ .article.ns-notepad .article-body{font-size:15px;}
+ .creator-body .document-stage{padding:16px;border-radius:13px;}
+}
+@media(prefers-reduced-motion:reduce){.article.ns-notepad *{transition:none!important}}
+@media(prefers-color-scheme:dark){
+ html[data-theme=dark] .article.ns-notepad:not(.theme-dark){background:#273c30;border-color:#597863;color:#eef4e9;}
+ html[data-theme=dark] .article.ns-notepad:not(.theme-dark) :is(h1,h2,h3,h4,.lead,.article-body){color:#eaf3e7;}
+ html[data-theme=dark] .article.ns-notepad:before{color:#d1e4d0;border-color:#5d7861;}
+}
