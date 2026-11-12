@@ -142,6 +142,27 @@ html[data-theme=dark] .ns-culture-atlas :is(.ns-culture-drill p,.ns-culture-indi
 .ns-culture-psychology{margin:15px 0;padding:15px 16px;border-left:4px solid #557f61;border-radius:0 13px 13px 0;background:#eef4e9}
 .ns-culture-psychology strong{display:block;margin-bottom:7px;color:#28513d;font-size:.9rem}
 .ns-culture-psychology p{margin:0;color:#314f3e;line-height:1.62}
-.ns-culture-psychology small{display:block;margin-top:8px;color:#597064;line-height:1.5}
 html[data-theme=dark] .ns-culture-psychology{background:#2e4c3c;border-color:#8fb88e}
-html[data-theme=dark] .ns-culture-psychology :is(strong,p,small){color:#e3f1e1}
+html[data-theme=dark] .ns-culture-psychology :is(strong,p){color:#e3f1e1}
+
+
+.ns-culture-practice{margin:12px 0 16px;padding:0 0 14px;border-bottom:1px solid #d9e2d6}
+.ns-culture-practice strong{display:block;margin-bottom:6px;color:#385b47;font-size:.82rem}
+.ns-culture-practice p{margin:0;line-height:1.65;color:#3f5d4e}
+.ns-culture-research{margin:17px 0;padding:16px;border:1px solid #d1dbcb;border-radius:14px;background:#f7f8ef}
+.ns-culture-research>h4{margin:0 0 14px;color:#294c3b;font-family:Georgia,serif;font-size:1.12rem}
+.ns-culture-research article{margin:0;padding:12px 0;border-top:1px solid #d9e2d6}
+.ns-culture-research article h5{margin:0 0 7px;color:#315b45;font-size:.86rem}
+.ns-culture-research article>p{margin:0 0 10px;color:#435f50;line-height:1.55;font-size:.82rem}
+.ns-culture-research-study{padding:9px 10px;margin:8px 0 0;border-radius:10px;background:#fffdf8}
+.ns-culture-research-study p{margin:0 0 7px;color:#4a6254;font-size:.79rem;line-height:1.5}
+.ns-culture-research-study a{color:#285b49;font-size:.75rem;font-weight:750;text-underline-offset:3px}
+.ns-culture-research-study small{display:block;margin-top:4px;color:#63786b;font-size:.68rem;line-height:1.45}
+html[data-theme=dark] .ns-culture-practice{border-color:#526c5c}
+html[data-theme=dark] .ns-culture-practice :is(strong,p){color:#e3f1e1}
+html[data-theme=dark] .ns-culture-research{background:#2b4738;border-color:#607765}
+html[data-theme=dark] .ns-culture-research :is(h4,h5,p){color:#e3f1e1}
+html[data-theme=dark] .ns-culture-research article{border-color:#526c5c}
+html[data-theme=dark] .ns-culture-research-study{background:#203a2e}
+html[data-theme=dark] .ns-culture-research-study a{color:#b8dec3}
+html[data-theme=dark] .ns-culture-research-study small{color:#cbdece}
