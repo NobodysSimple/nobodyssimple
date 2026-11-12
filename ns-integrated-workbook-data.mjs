@@ -8,6 +8,7 @@ import {STEADY_LANES,STEADY_REFERENCES} from './ns-steady-guide-utils.mjs';
 import {SETTLING_ACTIVITIES,PROCESSING_ACTIVITIES} from './ns-needs-activities.mjs';
 import {atlasProfile,isSafetyPriority} from './ns-atlas-core.mjs';
 import {tools} from './tool-catalog.mjs';
+import {publishedTopicRecord,topicIsArchived} from './ns-topic-publications.mjs';
 
 const availableTools=new Set(tools.map(t=>t.id));
 const pickTool=(id, fallback)=>availableTools.has(id)?id:(availableTools.has(fallback)?fallback:'');
@@ -108,9 +109,57 @@ function targetMethod(t){
   steps,caution:'This is an educational suggestion, not a diagnosis or treatment prescription. Choose a safe, voluntary approach and stop if unsuitable.',
   refs:[],note:'Atlas-derived educational intervention target',tool:t.tool};
 }
+function applyPublishedTopicGuide(g,record){
+ if(!record||record.status!=='published')return g;
+ const overrides=new Map((record.guideMethods||[]).map(x=>[x.id,x.methods]));
+ const lanes=g.lanes.map(lane=>{
+  const custom=overrides.get(lane.id);
+  return custom?.length?{...lane,methods:lane.methods.map((old,i)=>{
+   const changed=custom[i];return changed?{
+    ...old,title:changed.title||old.title,why:changed.why||old.why,
+    steps:changed.steps.length>=2?changed.steps:old.steps,
+    caution:changed.caution||old.caution
+   }:old;
+  })}:lane;
+ });
+ return {...g,title:record.title||g.title,lead:record.lead||g.lead,
+  what:record.definition||g.what,lanes,
+  review:g.review+(record.sourceNote?' · Staff editorial note: '+record.sourceNote:''),
+  editorialTools:record.customTools||[],guidedPrompts:record.guidedPrompts||[],
+  publishedRecord:record};
+}
+function createPublishedGuide(topicId,record){
+ const lanes=['context','practice','thinking','acceptance','support'].map(id=>{
+  const prior=record.guideMethods?.find(x=>x.id===id)?.methods;
+  const fallback=inclusiveGeneric[id];
+  const methods=prior?.length?prior.map(m=>({
+   ...fallback,title:m.title,why:m.why,steps:m.steps,
+   caution:m.caution,refs:[],note:'Staff-authored editorial method; not an individually evaluated protocol.'
+  })):[{...fallback,refs:[],caution:'Educational idea, not a validated treatment or diagnosis.'}];
+  return bookLane(id,fromMode[id],laneExplanations[id],methods,pickTool(baseTool[id],'small-step'));
+ });
+ return {
+  id:'topic/'+topicId,modeId:'learn',optionId:topicId,
+  modeTitle:'Explore an experience',tone:'sage',title:record.title,
+  lead:record.lead||record.definition,what:record.definition||record.lead,
+  cycle:'Circumstances, needs, resources and individual experiences can interact in several ways.',
+  recognise:record.recognition||[],contributors:[],
+  mechanisms:[],variants:[],cautions:['Editorial material. No individual clinical review or diagnostic assessment is implied.'],
+  goals:[],progress:(record.progress||[]).join('; '),
+  lanes,sources:[],relatedTarget:topicId,
+  review:'Staff-authored editorial topic · no independent topic-specific clinical validation or evidence review.'+
+   (record.sourceNote?' · Staff editorial note: '+record.sourceNote:''),
+  kind:'topic',topicDomain:record.domain,contextFirst:true,supportFirst:false,
+  safetyFirst:false,medical:false,showAtlas:false,
+  editorialTools:record.customTools||[],guidedPrompts:record.guidedPrompts||[],
+  publishedRecord:record
+ };
+}
 export function workbookForTopic(topicId){
+ if(topicIsArchived(topicId))return null;
+ const record=publishedTopicRecord(topicId);
  const p=atlasProfile(topicId);
- if(!p)return null;
+ if(!p)return record?.status==='published'?createPublishedGuide(topicId,record):null;
  const targetGroups={context:[],practice:[],thinking:[],acceptance:[],support:[]};
  for(const t of p.targets||[]){
   const category=topicKinds[t.worksheet]||'practice';
@@ -127,7 +176,7 @@ export function workbookForTopic(topicId){
   [{name:p.source.title||p.source.label||'Clinical or background reference',url:p.source.url,scope:'General educational context for this topic'}]:[];
  const risk=isSafetyPriority(topicId);
  const signs=Object.values(p.signs||{}).flat().filter(x=>typeof x==='string').slice(0,12);
- return {id:'topic/'+topicId,modeId:'learn',optionId:topicId,modeTitle:p.contextFirst?'Explore an experience':'Explore a specific difficulty',
+ return applyPublishedTopicGuide({id:'topic/'+topicId,modeId:'learn',optionId:topicId,modeTitle:p.contextFirst?'Explore an experience':'Explore a specific difficulty',
   title:p.title,lead:p.definition,what:p.definition,cycle:p.contextFirst?'Start with what is actually happening, including material conditions, relationships, safety, health and available choices. These topics do not establish a personal causal cycle.':Array.isArray(p.cycle)?p.cycle.join(' → '):String(p.cycle||''),
   recognise:signs,contributors:(p.contributors||[]).map(x=>typeof x==='string'?x:x.label),
   mechanisms:(p.maintainers||[]).map(x=>({id:x.id,label:x.label,detail:x.detail||'',target:x.target||''})),
@@ -136,6 +185,6 @@ export function workbookForTopic(topicId){
    risk?'Appropriate human support and clinical assessment take priority over self-guided psychological experiments.':'Persistent, severe, new or unfamiliar symptoms may merit clinical or medical assessment.'],
   goals:p.contextFirst?p.progress:[],progress:Array.isArray(p.progress)?p.progress.join('; '):String(p.progress||'Progress may include improved functioning and appropriate support.'),
   lanes,sources:source,relatedTarget:topicId,review:p.contextFirst?'Inclusive topic navigation · editorial overview. This entry and these generic reflection methods have not been individually clinically or empirically validated.':p.quality==='expert-draft'?'Topic-specific educational draft · not a clinical diagnosis or validated treatment programme':'Structured topic overview · possible mechanisms and suggested exercises need topic-by-topic expert review',
-  kind:'topic',topicDomain:p.domain,contextFirst:Boolean(p.contextFirst),supportFirst:Boolean(p.supportFirst),safetyFirst:risk,medical:Boolean(p.medical),showAtlas:false};
+  kind:'topic',topicDomain:p.domain,contextFirst:Boolean(p.contextFirst),supportFirst:Boolean(p.supportFirst),safetyFirst:risk,medical:Boolean(p.medical),showAtlas:false},record);
 }
 export const workbookCoverage=Object.freeze(NEEDS_MODES.map(m=>({mode:m.id,options:m.options.map(o=>o.id)})));
