@@ -11,6 +11,8 @@
     <link rel="icon" href="logo.png" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="studio.css" />
+    <link rel="stylesheet" href="ns-notepad.css" />
+    <link rel="stylesheet" href="ns-staff-topics.css" />
       <link rel="stylesheet" href="app-design.css" />
     <script type="module" src="app-design.mjs"></script>
   </head>
@@ -133,7 +135,7 @@
                   <input id="doc-excerpt" class="document-excerpt" maxlength="400" placeholder="Card excerpt — a short summary shown in the blog or library" aria-label="Card excerpt" />
                   <div class="intro-field"><label for="doc-intro">Opening introduction</label><textarea id="doc-intro" rows="2" placeholder="Optional text shown below the title"></textarea></div>
                   <div class="document-layout-controls"><span>Page width</span><button data-page-width="narrow" type="button">Narrow</button><button data-page-width="standard" class="selected" type="button">Standard</button><button data-page-width="wide" type="button">Wide</button><button id="toggle-split" type="button">Split preview</button></div>
-                  <div class="editing-and-preview"><div id="block-list" class="block-list" aria-label="Article blocks"></div><div id="live-preview" class="live-preview" hidden><div class="preview-device-label">LIVE PREVIEW <span><button type="button" data-preview-size="desktop">Desktop</button><button type="button" data-preview-size="tablet">Tablet</button><button type="button" data-preview-size="mobile">Mobile</button></span></div><article id="live-preview-article" class="article preview-article"></article></div></div>
+                  <div class="editing-and-preview"><div id="block-list" class="block-list" aria-label="Article blocks"></div><div id="live-preview" class="live-preview" hidden><div class="preview-device-label">LIVE PREVIEW <span><button type="button" data-preview-size="desktop">Desktop</button><button type="button" data-preview-size="tablet">Tablet</button><button type="button" data-preview-size="mobile">Mobile</button></span></div><article id="live-preview-article" class="article preview-article ns-notepad"></article></div></div>
                   <div class="add-block-wrap"><button class="add-block-button" id="add-block-open" type="button">＋ Add a content block</button><div id="block-menu" class="block-menu" hidden></div><button id="save-reusable" class="text-button" type="button">Save selected block as reusable</button></div>
                   <div id="quality-panel" class="quality-panel"><button id="run-quality" class="quality-heading" type="button"><span>Publishing checklist</span><span id="quality-count">Check content</span></button><div id="quality-results" class="quality-results"></div></div>
                   <div class="bottom-stats"><span id="word-count">0 words</span><span id="reading-time">1 min read</span><span id="block-count">0 blocks</span><span id="image-count">0 images</span></div>
