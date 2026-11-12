@@ -96,6 +96,64 @@ export class Publisher {
     return { head, tree: commit.tree.sha, data, assets };
   }
 
+  // Topics use their own versioned repository file. A publish is an
+  // authenticated non-force GitHub commit, not a write to localStorage.
+  async topicSnapshot() {
+    const ref=await this.api(`${this.base}/git/ref/heads/${this.branch}`);
+    const head=ref.object.sha;
+    const commit=await this.api(`${this.base}/git/commits/${head}`);
+    let data={version:1,topics:[]};
+    try{
+      const file=await this.api(`${this.base}/contents/topic-content.json?ref=${head}`);
+      data=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(file.content.replace(/\\s/g,'')),ch=>ch.charCodeAt(0))));
+    }catch(error){
+      // An absent registry on a legacy deployment is different from a network
+      // failure. Do not interpret permission errors as an empty file.
+      if(!String(error.message).includes('denied')&&!String(error.message).includes('404'))throw error;
+      throw error;
+    }
+    if(!Array.isArray(data?.topics))throw Error('Invalid topic publication registry.');
+    return {head,tree:commit.tree.sha,data};
+  }
+  async updateTopics(next, expectedRecord=null, targetId='',action='Update'){
+    const snapshot=await this.topicSnapshot();
+    const found=snapshot.data.topics.find(x=>x.id===targetId)||null;
+    if(JSON.stringify(found)!==JSON.stringify(expectedRecord||null)){
+      throw Error('This topic changed on GitHub since it was opened. Reload the latest version before publishing.');
+    }
+    if(!Array.isArray(next?.topics))throw Error('Topic registry is invalid.');
+    const tree=await this.api(`${this.base}/git/trees`,'POST',{
+      base_tree:snapshot.tree,
+      tree:[{path:'topic-content.json',mode:'100644',type:'blob',content:JSON.stringify(next,null,2)+'\\n'}]
+    });
+    const commit=await this.api(`${this.base}/git/commits`,'POST',{
+      message:action+' topic: '+targetId,tree:tree.sha,parents:[snapshot.head]
+    });
+    await this.api(`${this.base}/git/refs/heads/${this.branch}`,'PATCH',{sha:commit.sha,force:false});
+    return {sha:commit.sha,record:next.topics.find(x=>x.id===targetId)||null};
+  }
+  async publishTopic(record,expectedRecord=null){
+    if(!record?.id||!/^[a-z][a-z0-9-]{2,89}$/.test(record.id))throw Error('Topic ID must use lowercase letters, numbers and dashes.');
+    const snapshot=await this.topicSnapshot();
+    const found=snapshot.data.topics.find(x=>x.id===record.id)||null;
+    if(JSON.stringify(found)!==JSON.stringify(expectedRecord||null)){
+      throw Error('This topic changed on GitHub since it was opened. Reload the latest version before publishing.');
+    }
+    const next={...snapshot.data,version:1,topics:[
+      ...snapshot.data.topics.filter(x=>x.id!==record.id),record
+    ]};
+    return this.updateTopics(next,expectedRecord,record.id,record.status==='archived'?'Archive':'Publish');
+  }
+  async deleteTopic(id,expectedRecord){
+    const snapshot=await this.topicSnapshot();
+    const found=snapshot.data.topics.find(x=>x.id===id)||null;
+    if(!found||JSON.stringify(found)!==JSON.stringify(expectedRecord||null)){
+      throw Error('This topic has changed on GitHub. Reload before deleting.');
+    }
+    const next={...snapshot.data,topics:snapshot.data.topics.filter(x=>x.id!==id)};
+    return this.updateTopics(next,expectedRecord,id,'Delete');
+  }
+
   async contentHistory(limit = 12) {
     const commits = await this.api(`${this.base}/commits?path=content.json&per_page=${Math.max(1, Math.min(20, limit))}`);
     return commits.map((item) => ({ sha: item.sha, message: item.commit?.message || "Content update", date: item.commit?.author?.date || "" }));
