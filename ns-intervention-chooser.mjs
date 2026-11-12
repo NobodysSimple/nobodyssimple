@@ -7,7 +7,7 @@ import {PATH_SOURCES} from './ns-pathway-content.mjs';
 import {renderTool} from './features.mjs';
 import {deckForWorkbook,filterCards,APPROACH_FAMILIES,groupInterventions,familyForCard} from './ns-intervention-cards.mjs';
 import {renderGameCarousel} from './ns-regulation-games.mjs';
-import {renderTopicQuickNav,renderTopicReadingStart,renderTopicReadingEnd,renderTopicSafetyReading,bindTopicProfile,bindTopicJumps} from './ns-topic-reading-ui.mjs';
+import {renderTopicQuickNav,renderTopicReadingStart,renderTopicReadingEnd,renderTopicSafetyReading,bindTopicJumps} from './ns-topic-reading-ui.mjs';
 
 const e=x=>esc(String(x??''));
 const textOf=x=>String(x??'').trim().slice(0,3000);
@@ -90,7 +90,7 @@ const NEED_LABELS={
  stuck:'When you feel stuck',
  support:'When you need support'
 };
-function chooser(){
+function chooser(g){
  return '<section class="ns-pick-chooser" id="ns-pick-chooser">'+
   '<div class="ns-pick-headline"><span class="ns-pick-step">05</span><div>'+
   '<p class="ns-pick-kicker">WHAT HELPS NOW</p><h2>Start with what you need</h2>'+
@@ -98,14 +98,14 @@ function chooser(){
   '<div class="ns-pick-needs" role="group" aria-label="Choose the kind of help you need">'+
   Object.entries(NEED_LABELS).map(([id,label])=>'<button type="button" data-pick-need="'+id+'">'+label+' <span aria-hidden="true">→</span></button>').join('')+
   '</div>'+
-  '<details class="ns-pick-method-browse"><summary>Browse by approach family instead</summary>'+
+  (g.kind==='topic'?'':'<details class="ns-pick-method-browse"><summary>Browse by approach family instead</summary>'+
   '<div class="ns-pick-filter-heading"><strong>Choose an approach family</strong><small>Use this if you already know what kind of approach you want.</small></div>'+
   '<div class="ns-pick-filters" role="group" aria-label="Approach families">'+
   '<button type="button" data-pick-filter="all" aria-pressed="true">All approaches</button>'+
   APPROACH_FAMILIES.map(f=>'<button type="button" data-pick-filter="'+e(f.id)+'" aria-pressed="false">'+e(f.label)+'</button>').join('')+'</div></details>'+
   '<label class="ns-pick-refine">Optional: narrow by effort or timing <select data-pick-refine>'+
   '<option value="all">Any effort or time</option><option value="light">Low effort</option>'+
-  '<option value="now">Right now</option><option value="long">Over time</option></select></label>'+
+  '<option value="now">Right now</option><option value="long">Over time</option></select></label>')+
   '<div class="ns-pick-track-head"><p data-pick-count-cards aria-live="polite"></p>'+
   '<div class="ns-pick-arrows"><button type="button" data-pick-direction="-1" aria-label="Previous approach">←</button>'+
   '<button type="button" data-pick-direction="1" aria-label="Next approach">→</button></div></div>'+
@@ -232,7 +232,7 @@ function layout(g){
   introductionCover(g)+
   (g.safetyFirst?careFirst(g)+renderTopicSafetyReading(g)+sources(g):
    (g.kind==='topic'?renderTopicQuickNav(g)+renderTopicReadingStart(g):introduction(g))+
-   chooser()+
+   chooser(g)+
    '<section class="ns-pick-selected" id="ns-pick-selected" aria-live="off"><div data-pick-selected>'+selectedEmpty()+'</div></section>'+
    (g.kind==='topic'?'<section class="ns-topic-section ns-topic-relief" id="ns-topic-relief"><p class="ns-topic-kicker">QUICK RELIEF · NO WRITING REQUIRED</p><h2>Need a pause before thinking about all of this?</h2><p>Choose Ground, Focus, Settle or Choose. Each activity is brief. Stop whenever it stops helping.</p><div data-ns-games-host></div></section>':'<div data-ns-games-host></div>')+
    dialogMarkup()+
@@ -264,7 +264,7 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
  const cards=deckForWorkbook(g);
  root.innerHTML=layout(g);
  const surface=root.querySelector('[data-workbook]');
- if(g.kind==='topic'&&!g.safetyFirst){bindTopicProfile(surface);bindTopicJumps(surface);}
+ if(g.kind==='topic'&&!g.safetyFirst)bindTopicJumps(surface);
  if(g.safetyFirst)return;
  let selected=null,filter='all',need='choose',refine='all',opener=null,preview=null;
  const drafts=new Map();
