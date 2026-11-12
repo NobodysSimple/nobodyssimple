@@ -184,9 +184,9 @@ const gameControls=(game,st)=>'<section class="ns-game-play" aria-labelledby="ns
  (game.caution?'<details class="ns-game-caution"><summary>When might I skip this?</summary><p>'+e(game.caution)+'</p></details>':'')+
  '<p class="ns-game-small">Choose what feels useful. This is an optional brief activity, not an emotion test or validated treatment.</p></section>';
 const carousel=games=>'<section class="ns-game-carousel" id="ns-games" aria-label="No-writing games">'+
- '<div class="ns-pick-headline"><span class="ns-pick-step">04</span><div>'+
- '<p class="ns-pick-kicker">NO WRITING REQUIRED</p><h2>Games to try instead</h2>'+
- '<p>Prefer doing to writing? Try a little visual activity for settling, grounding, attention or choice. You can stop at any moment.</p></div></div>'+
+ '<div class="ns-pick-headline"><span class="ns-pick-step">06</span><div>'+
+ '<p class="ns-pick-kicker">QUICK RELIEF · NO WRITING REQUIRED</p><h2>Ground, Focus, Settle or Choose</h2>'+
+ '<p>Use a short activity if you need a pause before thinking things through. You can stop at any moment; these games are optional, not a test.</p></div></div>'+
  '<div class="ns-game-filters" role="group" aria-label="Filter games">'+
  GAME_FILTERS.map((x,i)=>'<button type="button" data-game-filter="'+e(x.id)+'" aria-pressed="'+(i===0)+'">'+e(x.label)+'</button>').join('')+'</div>'+
  '<div class="ns-game-carousel-head"><p data-game-count aria-live="polite">'+games.length+' games · Swipe or use the arrows</p>'+
