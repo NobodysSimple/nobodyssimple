@@ -71,9 +71,10 @@ export class Publisher {
 
   async connect() {
     const user = await this.api("/user");
-    if (user.login.toLowerCase() !== this.owner.toLowerCase()) throw Error("Sign in with the NobodysSimple owner account.");
+    // GitHub's repository write permission is the actual publishing role.
+    // No Firebase site-member role or public username grants this access.
     const repo = await this.api(this.base);
-    if (!repo.permissions?.push) throw Error("This account does not have permission to publish to this repository.");
+    if (!repo.permissions?.push) throw Error("This GitHub account needs repository write access to publish.");
     await this.api(`${this.base}/git/ref/heads/${this.branch}`);
     return user;
   }
