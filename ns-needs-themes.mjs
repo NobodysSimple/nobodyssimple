@@ -46,7 +46,7 @@ export const TOPIC_THEME_OVERRIDES=Object.freeze({
 export const THEME_FOR_DOMAIN=Object.freeze(Object.fromEntries(
  NAV_THEMES.flatMap(theme=>theme.domains.map(domain=>[domain,theme.id]))
 ));
-export const topicTheme=topic=>topic?TOPIC_THEME_OVERRIDES[topic.id]||THEME_FOR_DOMAIN[topic.domain]||null:null;
+export const topicTheme=topic=>topic?(NAV_THEMES.some(t=>t.id===topic.editorTheme)?topic.editorTheme:null)||TOPIC_THEME_OVERRIDES[topic.id]||THEME_FOR_DOMAIN[topic.domain]||null:null;
 export const topicsInTheme=(topics,themeId)=>topics.filter(p=>topicTheme(p)===themeId);
 export const matchingTopics=(topics,query)=>{
  const clean=x=>String(x??'').toLocaleLowerCase().replace(/[’']/g,'').replace(/[^\p{L}\p{N}]+/gu,' ').trim();
