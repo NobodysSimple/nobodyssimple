@@ -4,6 +4,7 @@ import {inclusiveDomains,inclusiveProblemIndex,inclusiveProfile} from './ns-incl
 import {preciseProfiles,getPreciseProfile} from './ns-precision-content.mjs';
 import {explicitVariants} from './ns-atlas-variations.mjs';
 import {extendedVariants} from './ns-atlas-extended-variations.mjs';
+import {publicTopicIndex,publicTopicById} from './ns-topic-manifest.mjs';
 
 const M=(id,label,detail,target,tool,worksheet)=>({id,label,detail,target,tool,worksheet});
 export const atlasDomains=Object.freeze([...problemDomains,...inclusiveDomains]);
@@ -110,7 +111,8 @@ export const atlasProblemIndex=Object.freeze([...preciseProfiles.map(p=>({id:p.i
  ...extendedProblemIndex.map(p=>({...p,quality:'structured'})),
  ...inclusiveProblemIndex]);
 const lookup=new Map(atlasProblemIndex.map(p=>[p.id,p]));
-export const atlasGet=id=>lookup.get(id)||null;
+export const atlasGet=id=>publicTopicById(id,atlasProblemIndex);
+export const allAtlasTopics=()=>publicTopicIndex(atlasProblemIndex);
 export const atlasByDomain=domain=>atlasProblemIndex.filter(p=>p.domain===domain);
 export const atlasCount=atlasProblemIndex.length;
 const wordStop=new Set(['i','im','my','me','myself','the','a','an','and','but','of','to','with','want','help','feel','feeling','problem','problems','have','having','getting','about','someone','something','cant','cannot','dont','not','keep']);
@@ -118,7 +120,7 @@ const normalize=x=>String(x||'').toLowerCase().replace(/[’']/g,'').match(/[\p{
 export function atlasSearch(query,limit=25){
  const words=normalize(query).filter(w=>w.length>=3&&!wordStop.has(w));
  if(!words.length)return [];
- return atlasProblemIndex.map(p=>{
+ return allAtlasTopics().map(p=>{
   const title=normalize(p.title),hint=normalize(p.hint),alias=(p.aliases||[]).flatMap(normalize);
   const idTokens=p.id.split('-');
   const direct=String(query||'').trim().toLowerCase().replace(/[’']/g,'').replace(/\s+/g,'-');
