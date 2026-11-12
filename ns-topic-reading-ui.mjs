@@ -119,23 +119,6 @@ export function renderTopicSafetyReading(g){
    '<p class="ns-topic-quiet-note">There is no checklist, score, journal or behavioural experiment to complete on this page. Keep your privacy and immediate safety first.</p>'+
   '</section>';
 }
-export function bindTopicProfile(surface){
- const fieldset=surface.querySelector('[data-topic-profile]');
- if(!fieldset)return;
- const result=surface.querySelector('[data-topic-profile-result]');
- const update=()=>{
-  const selected=[...fieldset.querySelectorAll('[data-topic-pattern]:checked')].map(x=>x.value);
-  result.textContent=selected.length?
-   'You marked: '+selected.join('; ')+'. These are areas to explore, not a diagnosis or an automatically interpreted profile.':
-   'There is no correct combination. The patterns can overlap—or none may fit.';
- };
- fieldset.addEventListener('change',update);
- surface.querySelector('[data-topic-clear]')?.addEventListener('click',()=>{
-  fieldset.querySelectorAll('[data-topic-pattern]').forEach(c=>{c.checked=false;});
-  update();
- });
-}
-
 /* Hash URLs are used by the app router. Local guide jumps therefore use
  * buttons: fragment links would replace the workbook route and lose the page.
  */
@@ -144,7 +127,7 @@ export function bindTopicJumps(surface){
   const button=event.target.closest?.('[data-topic-jump]');
   if(!button)return;
   const id=button.dataset.topicJump;
-  if(!['ns-topic-understand','ns-topic-profile','ns-pick-chooser','ns-topic-answers'].includes(id))return;
+  if(!['ns-topic-understand','ns-pick-chooser','ns-topic-answers'].includes(id))return;
   const section=surface.querySelector('#'+id);
   if(!section)return;
   section.scrollIntoView({block:'start',behavior:'instant'});
