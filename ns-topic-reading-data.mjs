@@ -228,13 +228,30 @@ export function topicPageModel(g){
  const steps=goals.map((x,i)=>Array.isArray(x)?{label:x[0],detail:x[1]}:
   ({label:x,detail:clean((g.goals||[])[i])||clean(g.mechanisms?.[i]?.target)||'Choose what is realistic, safe and meaningful to you.'}));
  const faq=faqFor(g,recipe,specific);
+ const published=g.publishedRecord?.status==='published'?g.publishedRecord:null;
+ const editedCore=core.slice(0,4).map((part,i)=>{
+  const candidate=published?.core?.[i];
+  return candidate?.label&&candidate?.detail?candidate:part;
+ });
+ const editedSteps=steps.slice(0,4).map((part,i)=>{
+  const candidate=published?.steps?.[i];
+  return candidate?.label&&candidate?.detail?{label:candidate.label,detail:candidate.detail}:part;
+ });
+ const editedFaq=published?.faq?.some(x=>x.q&&x.a)?
+  published.faq.filter(x=>x.q&&x.a).map(x=>[x.q,x.a]):faq;
  return Object.freeze({
-  id:g.optionId,kind:themeOf(normalizeDomain(g)),title:g.title,recognition:questions,
-  reframe:summary,cycle:context?'':clean(g.cycle),core:Object.freeze(core.slice(0,4)),
-  profile:Object.freeze(support?[]:profileFor(g,core)),profileQuestion:specific?.profileQuestion||'Which parts of this experience seem relevant?',
-  traps:Object.freeze(specific?.traps||recipe.traps),
-  steps:Object.freeze(steps.slice(0,4)),progress:Object.freeze(specific?.progress||recipe.progress),
-  faq:Object.freeze(faq),supportText:supportFor(g),closing:specific?.closing||
+  id:g.optionId,kind:themeOf(normalizeDomain(g)),title:published?.title||g.title,
+  recognition:published?.recognition?.length?published.recognition:questions,
+  reframe:published?.reframe||summary,cycle:context?'':clean(g.cycle),core:Object.freeze(editedCore.slice(0,4)),
+  profile:Object.freeze([]),profileQuestion:'',
+  traps:Object.freeze(published?.traps?.some(x=>x.label&&x.detail)?
+    published.traps.filter(x=>x.label&&x.detail).map(x=>[x.label,x.detail]):specific?.traps||recipe.traps),
+  steps:Object.freeze(editedSteps),
+  progress:Object.freeze(published?.progress?.length?published.progress:specific?.progress||recipe.progress),
+  faq:Object.freeze(editedFaq),
+  guidedPrompts:Object.freeze(published?.guidedPrompts||[]),
+  supportText:published?.supportText||supportFor(g),
+  closing:published?.closing||specific?.closing||
    (context?'You do not have to turn an identity, difference or difficult circumstance into a personal problem to earn support. Start with what matters to you.':
    'The goal is not to become someone who never struggles. It is to understand what is happening more clearly and have more room for safe, meaningful choices.'),
   contextFirst:context,medical:Boolean(g.medical),supportFirst:support,

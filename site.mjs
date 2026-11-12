@@ -51,6 +51,7 @@ import {renderAtlasTool} from './ns-atlas-tool.mjs';
 import {atlasGet} from './ns-atlas-core.mjs';
 import {renderNeedsConsole} from './ns-needs-console.mjs';
 import {renderIntegratedWorkbook} from './ns-integrated-workbook.mjs';
+import {loadPublishedTopics} from './ns-topic-publications.mjs';
 import {renderNeedsActivity} from './ns-needs-activities.mjs';
 import {getNeedsMode} from './ns-needs-catalog.mjs';
 import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
@@ -456,7 +457,7 @@ function post(id) {
   const hasVideoBlock = p.blocks?.some((block) => block.type === "youtube");
   const theme = ["cream", "sage", "dark"].includes(p.theme) ? p.theme : "cream";
   const hero = ["standard", "minimal", "image", "video"].includes(p.hero) ? p.hero : "standard";
-  main.innerHTML = `<div class="wrap"><a href="#library">← Back to Learn</a><article class="article theme-${theme} hero-${hero}"><p class="eyebrow">${typeLabel[p.type] || "Writing"} · ${esc((p.topics || []).join(" · "))}</p><h1>${esc(p.title)}</h1><p class="lead">${esc(p.intro || p.excerpt || "")}</p>${p.type === "video" && !hasVideoBlock ? `<div class="video-gate"><h3>Watch right here.</h3><p>Playing this video connects to YouTube.</p><button class="button secondary" id="play-video">▶ Play video</button></div>` : safeImage(p.thumbnail) ? `<img class="full" src="${esc(p.thumbnail)}" alt="${esc(p.thumbnailAlt || "")}" ${thumbnailDisplay(p)}>` : ""}<div class="article-body">${renderPostBody(p, posts)}</div>${p.modules?.length ? `<p class="fine">In ${p.modules.map((id) => esc(curriculum.modules.find((m) => m.id === id)?.title || "")).join(" · ")}</p>` : ""}</article></div>`;
+  main.innerHTML = `<div class="wrap"><a href="#library">← Back to Learn</a><article class="article ns-notepad theme-${theme} hero-${hero}"><p class="eyebrow">${typeLabel[p.type] || "Writing"} · ${esc((p.topics || []).join(" · "))}</p><h1>${esc(p.title)}</h1><p class="lead">${esc(p.intro || p.excerpt || "")}</p>${p.type === "video" && !hasVideoBlock ? `<div class="video-gate"><h3>Watch right here.</h3><p>Playing this video connects to YouTube.</p><button class="button secondary" id="play-video">▶ Play video</button></div>` : safeImage(p.thumbnail) ? `<img class="full" src="${esc(p.thumbnail)}" alt="${esc(p.thumbnailAlt || "")}" ${thumbnailDisplay(p)}>` : ""}<div class="article-body">${renderPostBody(p, posts)}</div>${p.modules?.length ? `<p class="fine">In ${p.modules.map((id) => esc(curriculum.modules.find((m) => m.id === id)?.title || "")).join(" · ")}</p>` : ""}</article></div>`;
   document.title = `${p.seoTitle || p.title} · Nobody’s Simple`;
   const description = document.querySelector('meta[name="description"]');
   if (description) description.content = p.seoDescription || p.excerpt || "Psychology for choosing what to do next.";
@@ -1090,7 +1091,7 @@ try {
   loadError =
     "Published content could not be loaded. Check your connection and refresh; the curriculum and tools remain available.";
 }
-await accountReady;
+await Promise.all([accountReady,loadPublishedTopics()]);
 configureAccountHost({maps:renderMaps, tools:accountTools.map(x=>({...x,href:x.href||`#tool/${encodeURIComponent(x.id)}`})), posts});
 window.addEventListener("hashchange", route);
 route();
