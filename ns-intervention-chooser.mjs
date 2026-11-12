@@ -283,7 +283,7 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
   track.innerHTML=groups.length?groups.map(g=>'<div class="ns-pick-family" data-pick-family="'+e(g.id)+'">'+
    '<div class="ns-pick-family-heading"><strong>'+e(g.label)+'</strong><small>'+e(g.hint)+'</small></div>'+
    '<div class="ns-pick-family-cards">'+g.cards.map(c=>cardHTML(c,selected?.id)).join('')+'</div></div>').join(''):
-   '<p class="ns-pick-noresults">'+(need==='choose'?'Choose what you need above to see relevant options, or open “Browse by approach family” if you already know what you want.':'No options match this need and filter. Choose another need or change the optional filter.')+'</p>';
+   '<p class="ns-pick-noresults">'+(need==='choose'?'Choose the kind of support you need above to see a few relevant options. You can change your selection at any time.':'No options match this need and filter. Choose another need or change the optional filter.')+'</p>';
   surface.querySelector('[data-pick-count-cards]').textContent=
    need==='choose'?'Choose what you need first':visible.length+' options '+(need==='all'?'across '+groups.length+' approach families':'for '+NEED_LABELS[need]);
   surface.querySelectorAll('[data-pick-filter]').forEach(b=>{
