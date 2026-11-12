@@ -1,5 +1,5 @@
 import {escapeHTML as esc} from './core.mjs';
-import {atlasGet,atlasByDomain,atlasSearch,atlasDomains,atlasProfile,atlasCount,isSafetyPriority} from './ns-atlas-core.mjs';
+import {atlasGet,atlasSearch,atlasThemes,atlasByTheme,atlasCount} from './ns-atlas-core.mjs';
 import {nhsHelp} from './ns-problem-map.mjs';
 const s=x=>esc(String(x??''));
 let handoff=null;
@@ -15,84 +15,66 @@ function shell(body){
  '<p class="eyebrow">NOBODY’S SIMPLE · EMOTIONAL CALCULATOR</p><h1>What exactly is happening?</h1>'+
  '<p>Start with the experience, not a diagnosis. Find a useful exercise or understand the patterns that might be involved.</p></header>'+body+'</div>';
 }
-function first(state){
- const items=state.query.trim()?atlasSearch(state.query,24):state.domain?atlasByDomain(state.domain).slice(0,60):favorites.map(atlasGet).filter(Boolean);
- return shell('<div class="ns-atlas-modes" role="group" aria-label="What would help?">'+
- '<button type="button" data-atlas-mode="tools" aria-pressed="'+(state.mode==='tools')+'"><strong>Find something to try</strong><small>One practical exercise matched to your situation</small></button>'+
- '<button type="button" data-atlas-mode="learn" aria-pressed="'+(state.mode==='learn')+'"><strong>Understand & learn</strong><small>Clear psychoeducation and a personal formulation</small></button></div>'+
- '<section class="ns-atlas-main"><p class="eyebrow">CHOOSE YOUR DIFFICULTY</p><h2>Find what feels closest.</h2>'+
- '<label class="ns-atlas-search"><span class="sr-only">Search psychological experiences</span><input data-atlas-search type="search" maxlength="120" value="'+s(state.query)+'" placeholder="Search: waking at night, reassurance, shame, feeling controlled…"><span aria-hidden="true">⌕</span></label>'+
- '<div class="ns-atlas-domains" aria-label="Browse problem areas"><button data-atlas-domain="" type="button" aria-pressed="'+(!state.domain)+'">Common problems</button>'+
- atlasDomains.map(d=>'<button data-atlas-domain="'+s(d.id)+'" type="button" aria-pressed="'+(state.domain===d.id)+'">'+s(d.name)+'</button>').join('')+'</div>'+
- '<div class="ns-atlas-list" data-atlas-results>'+(items.length?items.map(item).join(''):
- '<p class="ns-atlas-noresults">No precise match. This library is still expanding; avoid forcing a label. You can describe the situation in an open-ended tool. <a href="#tool/context-map">Open Context Map →</a></p>')+'</div>'+
- '<p class="ns-atlas-footnote">'+atlasCount+' mapped entries describing difficulties, not a list of diagnoses. A difficulty can have several explanations and may overlap with others. You can always come back and change your selection.</p></section>');
+function themeCards(){
+ return '<div class="ns-atlas-themes" data-atlas-theme-grid aria-label="Choose a problem theme">'+atlasThemes.map(t=>{
+  const count=atlasByTheme(t.id).length;
+  return '<button type="button" class="ns-atlas-theme-card" data-atlas-theme="'+s(t.id)+'"><span class="ns-atlas-theme-icon" aria-hidden="true">'+s(t.icon)+'</span><span><strong>'+s(t.name)+'</strong><small>'+s(t.description)+'</small><em>'+count+' topics</em></span><span class="ns-atlas-theme-arrow" aria-hidden="true">→</span></button>';
+ }).join('')+'</div>';
 }
-function step(profile,state){
- const options=state.stage===1?profile.variants.map((label,i)=>({id:'v'+i,label})):
- [...profile.maintainers.map(m=>({id:m.id,label:m.label,description:m.detail})),{id:'unknown',label:'Several factors / not sure',description:'You do not need to guess.'}];
- const title=state.stage===1?'Which version is most like yours?':'What might be keeping it going?';
- const answer=state.stage===1?state.variant:state.maintainer;
- return shell('<section class="ns-atlas-main ns-atlas-question"><div class="ns-atlas-step"><span>QUESTION '+state.stage+' OF 2 · '+s(profile.title)+'</span><i style="width:'+(state.stage===1?0:50)+'%"></i></div>'+
- '<h2>'+title+'</h2><p>'+(state.stage===1?'Choose what describes the context most closely. You can later select many more signs and contributors.':'This is only a hypothesis to explore. You will be able to revise it and add other explanations.')+'</p>'+
- '<div class="ns-atlas-options">'+options.map(o=>'<label><input type="radio" name="atlas-step" value="'+s(o.id)+'" '+(answer===o.id?'checked':'')+'><span><strong>'+s(o.label)+'</strong>'+
- (o.description?'<small>'+s(o.description)+'</small>':'')+'</span></label>').join('')+'</div>'+
- '<div class="ns-atlas-actions"><button class="button secondary" type="button" data-atlas-back>← Back</button>'+
- '<button class="button" type="button" data-atlas-continue disabled>'+(state.stage===1?'Continue':'Get my '+(state.mode==='learn'?'guide':'exercise'))+' →</button></div>'+
- '<button type="button" data-atlas-skip class="ns-atlas-skip">Skip this question</button>'+
- (isSafetyPriority(profile.id)?'<div class="ns-atlas-safety"><strong>Support is more important than a questionnaire.</strong><p>If you are in immediate danger in the UK, call 999. For urgent mental health support, contact NHS 111 and select the mental health option.</p><a href="'+s(nhsHelp)+'" target="_blank" rel="noopener noreferrer">NHS urgent support ↗</a></div>':'')+
- '</section>');
+function first(state){
+ const active=atlasThemes.find(t=>t.id===state.theme);
+ const items=state.query.trim()?atlasSearch(state.query,36):active?atlasByTheme(active.id).slice(0,state.limit):[];
+ const listTitle=state.query.trim()?'Search results':active?'Problems in '+active.name:'';
+ return shell('<section class="ns-atlas-main"><p class="eyebrow">BROWSE BY THEME</p><h2>'+(active?s(active.name):'What part of life feels difficult right now?')+'</h2>'+
+ '<p class="ns-atlas-theme-intro">'+(active?s(active.description)+' Choose a problem card below to open its guide.':"Start with the part that feels closest. Each theme opens a set of specific experiences; you can also search in your own words.")+'</p>'+
+ '<label class="ns-atlas-search"><span class="sr-only">Search problems</span><input data-atlas-search type="search" maxlength="120" value="'+s(state.query)+'" placeholder="Search: boundaries, waking at night, stigma, deadlines…"><span aria-hidden="true">⌕</span></label>'+
+ (active?'<button type="button" class="ns-atlas-theme-back" data-atlas-themes-back>← All themes</button>':'')+
+ (active||state.query?'<h3 class="ns-atlas-results-heading">'+s(listTitle)+'</h3><div class="ns-atlas-list" data-atlas-results>'+(items.length?items.map(item).join(''):
+ '<p class="ns-atlas-noresults">No precise match yet. Try another phrase or choose a theme.</p>')+'</div>'+
+ (active&&!state.query.trim()&&items.length<atlasByTheme(active.id).length?'<button class="ns-atlas-more" type="button" data-atlas-more>Show more problems</button>':''):
+ themeCards()+'<h3 class="ns-atlas-results-heading" hidden></h3><div class="ns-atlas-list" data-atlas-results hidden></div>')+
+ '<p class="ns-atlas-footnote">'+atlasCount+' topics describe experiences, not diagnoses. A difficulty can have several explanations and may overlap with others.</p></section>');
 }
 export function renderAtlasConsole(root){
- const state={mode:'tools',domain:'',query:'',selected:'',variant:'',maintainer:'',stage:0};
+ const state={theme:'',query:'',limit:24};
  const select=id=>{
   if(!atlasGet(id))return;
-  state.selected=id;state.variant='';state.maintainer='';
-  if(isSafetyPriority(id)){handoff={id,variant:'',maintainer:'',mode:state.mode};location.hash=state.mode==='learn'?'#problem/'+id:'#tool/atlas-'+id;return;}
-  state.stage=1;paint(true);
- };
- const next=()=>{
-  handoff={id:state.selected,variant:state.variant,maintainer:state.maintainer,mode:state.mode};
-  location.hash=state.mode==='learn'?'#problem/'+state.selected:'#tool/atlas-'+state.selected;
+  handoff={id,variant:'',maintainer:'',mode:'learn'};
+  location.hash='#problem/'+id;
  };
  const paint=(jump=false)=>{
-  root.innerHTML=state.stage?step(atlasProfile(state.selected),state):first(state);
-  bind();if(jump)safeScroll();
+  root.innerHTML=first(state);
+  bind();
+  if(jump)safeScroll();
  };
  const bind=()=>{
-  root.querySelectorAll('[data-atlas-mode]').forEach(b=>b.onclick=()=>{
-   state.mode=b.dataset.atlasMode;paint();
+  root.querySelectorAll('[data-atlas-theme]').forEach(b=>b.onclick=()=>{
+   state.theme=b.dataset.atlasTheme;state.query='';state.limit=24;paint(true);
   });
-  root.querySelectorAll('[data-atlas-domain]').forEach(b=>b.onclick=()=>{
-   state.domain=b.dataset.atlasDomain;state.query='';paint();
+  root.querySelector('[data-atlas-themes-back]')?.addEventListener('click',()=>{
+   state.theme='';state.query='';paint(true);
   });
   root.querySelectorAll('[data-atlas-pick]').forEach(b=>b.onclick=()=>select(b.dataset.atlasPick));
+  root.querySelector('[data-atlas-more]')?.addEventListener('click',()=>{
+   state.limit+=24;paint();
+  });
   const search=root.querySelector('[data-atlas-search]');
   if(search)search.oninput=()=>{
-   state.query=search.value;const target=root.querySelector('[data-atlas-results]');
-   const candidates=state.query.trim()?atlasSearch(state.query,24):state.domain?atlasByDomain(state.domain).slice(0,60):favorites.map(atlasGet).filter(Boolean);
+   state.query=search.value;state.limit=24;
+   const target=root.querySelector('[data-atlas-results]');
+   if(!target){return;}
+   const grid=root.querySelector('[data-atlas-theme-grid]');
+   if(grid)grid.hidden=!!state.query.trim();
+   target.hidden=!state.query.trim()&&!state.theme;
+   const candidates=state.query.trim()?atlasSearch(state.query,36):atlasByTheme(state.theme).slice(0,state.limit);
    target.innerHTML=candidates.length?candidates.map(item).join(''):
-   '<p class="ns-atlas-noresults">No precise match. Try another description or explore <a href="#tool/context-map">Context Map</a>.</p>';
+    '<p class="ns-atlas-noresults">No precise match yet. Try another phrase or choose a theme.</p>';
    target.querySelectorAll('[data-atlas-pick]').forEach(b=>b.onclick=()=>select(b.dataset.atlasPick));
+   const heading=root.querySelector('.ns-atlas-results-heading');
+   if(heading){heading.textContent=state.query.trim()?'Search results':'Problems in '+(atlasThemes.find(t=>t.id===state.theme)?.name||'this theme');heading.hidden=!state.query.trim()&&!state.theme;}
+   const more=root.querySelector('[data-atlas-more]');
+   if(more)more.hidden=!!state.query.trim()||candidates.length>=atlasByTheme(state.theme).length;
   };
-  const answer=root.querySelector('input[name="atlas-step"]:checked');
-  if(answer){const button=root.querySelector('[data-atlas-continue]');if(button)button.disabled=false}
-  root.querySelectorAll('input[name="atlas-step"]').forEach(x=>x.onchange=()=>{
-   root.querySelector('[data-atlas-continue]').disabled=false;
-  });
-  root.querySelector('[data-atlas-back]')?.addEventListener('click',()=>{
-   state.stage=Math.max(0,state.stage-1);paint(true);
-  });
-  const advance=skip=>{
-   const choice=skip?null:root.querySelector('input[name="atlas-step"]:checked');if(!skip&&!choice)return;
-   if(state.stage===1){
-    state.variant=choice?.value||'';state.stage=2;paint(true);
-   }else{
-    state.maintainer=choice?.value||'';next();
-   }
-  };
-  root.querySelector('[data-atlas-continue]')?.addEventListener('click',()=>advance(false));
-  root.querySelector('[data-atlas-skip]')?.addEventListener('click',()=>advance(true));
  };
  paint();
 }
