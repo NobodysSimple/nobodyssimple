@@ -17,7 +17,7 @@ The interactive Culture Atlas is rendered at the bottom of `#home`, after the ex
 - Browser coverage mocks the subdivision endpoint to avoid depending on third-party service availability in CI. Live external CORS availability and regional naming should also be checked after deployment.
 
 ## Editorial coverage
-- The atlas contains **94 source-linked short articles across 88 mapped countries and territories**, including several shared traditions that span borders. It still does not have a separate story for every one of the 258 mapped units; the reader labels uncovered places clearly instead of generating unsupported cultural generalisations. The reader labels unavailable entries explicitly rather than generating unsupported cultural generalisations.
+- The atlas contains **94 source-linked short articles across 88 mapped countries and territories**, including several shared traditions that span borders. It still does not have a separate story for every one of the 258 mapped units; uncovered places are labelled clearly instead of being filled with unsupported cultural generalisations.
 - The random discovery button chooses a country with a published story, then lands at random at country, first-level-region or second-level-area scale where geographic data is available.
 - Every article comprises documentary context, a clearly labelled tentative psychological interpretation, an optional reflection question and a primary documentary source link. UNESCO inscription is evidence of a tradition, **not evidence of a psychological or clinical outcome**.
 - Country-level stories remain visible after selecting a region, but the UI warns when the story is not genuinely region-specific. Region-tagged stories appear first when their name matches.
