@@ -244,3 +244,19 @@ html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-atlas-guide-hero>p
 html[data-theme=dark] body.app-body.ns-shell-v1 #main :is(.ns-atlas-variation input,.ns-atlas-variation select,.ns-atlas-work textarea,.ns-atlas-tool-options select,.ns-atlas-add input,.ns-atlas-add select){background:#203a29;color:#eff7ee;border-color:#7a9a80;}
 @media(prefers-reduced-motion:reduce){body.app-body.ns-shell-v1 #main :is(.ns-atlas-shell,.ns-atlas-guide,.ns-atlas-tool) *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
 @media print{body.app-body :is(.app-sidebar,.app-topbar,.app-bottom-nav),body.app-body #main :is(.ns-atlas-back,.ns-atlas-footer,.ns-atlas-add,.ns-atlas-actions){display:none!important;}body.app-body #main .ns-atlas-section{break-inside:avoid;}body.app-body #main .ns-atlas-section>summary{background:#fff!important;}}
+
+
+/* Semantic theme cards for the two-step problem navigator. */
+.ns-atlas-themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px;margin:22px 0}
+.ns-atlas-theme-card{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:14px;min-height:122px;padding:18px;border:1px solid var(--line,#d9d5e5);border-radius:18px;background:var(--surface,#fff);color:var(--ink,#262334);text-align:left;cursor:pointer;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.ns-atlas-theme-card:hover,.ns-atlas-theme-card:focus-visible{transform:translateY(-2px);border-color:var(--accent,#7c69a8);box-shadow:0 8px 24px rgba(39,31,61,.1)}
+.ns-atlas-theme-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:13px;background:var(--soft,#f2eff8);font-size:20px}
+.ns-atlas-theme-card strong,.ns-atlas-theme-card small,.ns-atlas-theme-card em{display:block}
+.ns-atlas-theme-card strong{font-size:1rem;line-height:1.3}
+.ns-atlas-theme-card small{margin-top:6px;color:var(--muted,#696678);line-height:1.45}
+.ns-atlas-theme-card em{margin-top:10px;color:var(--accent,#6e5a9d);font-size:.78rem;font-style:normal;font-weight:700}
+.ns-atlas-theme-arrow{align-self:center;color:var(--accent,#6e5a9d);font-size:1.2rem}
+.ns-atlas-theme-intro{max-width:68ch;color:var(--muted,#696678)}
+.ns-atlas-theme-back,.ns-atlas-more{margin:8px 0 16px;padding:10px 14px;border:1px solid var(--line,#d9d5e5);border-radius:999px;background:var(--surface,#fff);color:var(--ink,#262334);font:inherit;cursor:pointer}
+.ns-atlas-results-heading{margin:18px 0 12px}
+.ns-atlas-more[hidden]{display:none}
