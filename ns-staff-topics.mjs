@@ -253,11 +253,11 @@ export function mountTopicWorkspace(root,{getPublisher,onNotice=()=>{}}={}){
  }
  function schedule(){
   clearTimeout(timer);
-  notice('Editing · changes are not yet published.');
-  timer=setTimeout(()=>{
-   if(current)notice(saveLocal(current)?'Draft saved locally. Publish to update the website.':
-    'Browser storage unavailable. Keep a copy before leaving.',!localFor(current.id));
-  },550);
+  // Save the latest text synchronously on each input. A deferred-only save
+  // could lose the last sentence when the tab closes immediately.
+  const saved=Boolean(current&&saveLocal(current));
+  notice(saved?'Draft saved in this browser · not yet published.':
+   'Browser storage unavailable. Export your content before leaving.',!saved);
  }
  async function refresh(){
   const publisher=getPublisher();
