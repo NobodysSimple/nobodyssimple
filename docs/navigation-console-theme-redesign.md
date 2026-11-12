@@ -1,12 +1,18 @@
 # Problem navigation and topic-page redesign
 
-## Navigation flow
+## Three-step problem finder
 
-The problem finder now starts with eleven broad themes. Selecting a theme opens its problem cards; choosing a card opens that guide directly. People no longer have to choose a separate starting point or answer extra questions about causes before they can read a page.
+The seven “Choose a starting point” cards have been removed from the problem finder. They asked people to choose a kind of help before naming what was troubling them, even though the topic guide already brings explanations, practical options and activities together.
 
-The themes use existing topic domains, so canonical IDs and direct guide URLs remain stable. Search still looks across the full catalogue. Theme counts come from the current topic index rather than a manually maintained tally. Safety-priority topics keep their support-first routes.
+The new route is:
 
-The themes are:
+1. **Problem area** — a broad part of life, such as relationships, identity, health or work.
+2. **Type of problem** — a narrower catalogue area within that domain.
+3. **Topic** — the existing specific experience page.
+
+All topics remain available. The topic index is grouped first by the eleven plain-language problem areas, then by its existing source domains. Topics that have been placed in a different broad area for a better fit appear in a “Related experiences” subcategory. This keeps each topic reachable once without changing its ID or guide URL. Search can still reach any topic directly.
+
+The area names are:
 
 - Feelings & mental health
 - Thinking, habits & focus
@@ -20,20 +26,12 @@ The themes are:
 - Money, technology & society
 - Life changes, grief & growth
 
+The categories help people browse. They are not diagnoses, assessments or explanations of why a problem is happening.
+
 ## Topic-page flow
 
-Topic pages now follow the way people tend to approach a problem:
+Topic pages lead with common experiences and choices for what the reader needs most right now. Explanations are optional. The page then makes room for identity and self-reflection before practical options are grouped by need. Readers who prefer a psychological approach can still browse the method families.
 
-1. A clear page title and plain-language introduction.
-2. Quick choices for what the reader needs most right now.
-3. Common experiences, followed by a visible reminder that the page does not explain or define the whole person.
-4. Optional deeper reading about context and possible explanations.
-5. Identity and self-reflection, with optional journal prompts.
-6. Practical options grouped by need. Approach families remain available for readers who want to browse that way.
-7. A quick-relief games section, followed by examples of what progress can look like and routes to further support.
+Existing worksheets remain attached to selected intervention cards. Notes stay in the open page until explicitly downloaded. The no-writing games remain available in a quick-relief section.
 
-Existing worksheets remain attached to selected intervention cards. Notes stay in the open page until explicitly downloaded. The no-writing games remain optional and do not score or save activity.
-
-## Limits
-
-The theme names help people find material; they are not diagnoses or explanations of a person. A topic page is educational. Its content is not an individually validated treatment, and the page does not infer the cause of someone's experience. Urgent, coercive, unusual-perception and medical routes retain their existing safety guidance.
+Urgent, coercive, unusual-perception and medical routes retain their support-first guidance. The topic pages are educational and do not establish diagnoses or causes.
