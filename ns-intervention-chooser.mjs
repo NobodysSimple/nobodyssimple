@@ -5,7 +5,7 @@ import {escapeHTML as esc} from './core.mjs';
 import {STEADY_REFERENCES} from './ns-steady-guide-utils.mjs';
 import {PATH_SOURCES} from './ns-pathway-content.mjs';
 import {renderTool} from './features.mjs';
-import {deckForWorkbook,filterCards,APPROACH_FAMILIES,groupInterventions} from './ns-intervention-cards.mjs';
+import {deckForWorkbook,filterCards,APPROACH_FAMILIES,groupInterventions,familyForCard} from './ns-intervention-cards.mjs';
 import {renderGameCarousel} from './ns-regulation-games.mjs';
 import {renderTopicQuickNav,renderTopicReadingStart,renderTopicReadingEnd,renderTopicSafetyReading,bindTopicProfile,bindTopicJumps} from './ns-topic-reading-ui.mjs';
 
@@ -76,17 +76,41 @@ function filters(){
  '<option value="all">Any effort or time</option><option value="light">Low effort</option>'+
  '<option value="now">Right now</option><option value="long">Over time</option></select></label>';
 }
+const NEED_FAMILIES={
+ overwhelmed:['regulation','practical','acceptance'],
+ unsure:['thinking','compassion','acceptance'],
+ ashamed:['compassion','acceptance'],
+ stuck:['action','practical','support'],
+ support:['support']
+};
+const NEED_LABELS={
+ overwhelmed:'When everything feels like too much',
+ unsure:'When you are doubting yourself',
+ ashamed:'When shame or self-criticism is loud',
+ stuck:'When you feel stuck',
+ support:'When you need support'
+};
 function chooser(){
  return '<section class="ns-pick-chooser" id="ns-pick-chooser">'+
-  '<div class="ns-pick-headline"><span class="ns-pick-step">02</span><div>'+
-  '<p class="ns-pick-kicker">CHOOSE ONE THING</p><h2>Find an approach</h2>'+
-  '<p>Browse a family below, then try one idea that fits. You do not need to complete everything.</p></div></div>'+
-  filters()+
+  '<div class="ns-pick-headline"><span class="ns-pick-step">05</span><div>'+
+  '<p class="ns-pick-kicker">WHAT HELPS NOW</p><h2>Start with what you need</h2>'+
+  '<p>People usually arrive with a problem, not a therapy model. Choose the situation that feels closest, then browse a few relevant options.</p></div></div>'+
+  '<div class="ns-pick-needs" role="group" aria-label="Choose the kind of help you need">'+
+  Object.entries(NEED_LABELS).map(([id,label])=>'<button type="button" data-pick-need="'+id+'">'+label+' <span aria-hidden="true">→</span></button>').join('')+
+  '</div>'+
+  '<details class="ns-pick-method-browse"><summary>Browse by approach family instead</summary>'+
+  '<div class="ns-pick-filter-heading"><strong>Choose an approach family</strong><small>Use this if you already know what kind of approach you want.</small></div>'+
+  '<div class="ns-pick-filters" role="group" aria-label="Approach families">'+
+  '<button type="button" data-pick-filter="all" aria-pressed="true">All approaches</button>'+
+  APPROACH_FAMILIES.map(f=>'<button type="button" data-pick-filter="'+e(f.id)+'" aria-pressed="false">'+e(f.label)+'</button>').join('')+'</div></details>'+
+  '<label class="ns-pick-refine">Optional: narrow by effort or timing <select data-pick-refine>'+
+  '<option value="all">Any effort or time</option><option value="light">Low effort</option>'+
+  '<option value="now">Right now</option><option value="long">Over time</option></select></label>'+
   '<div class="ns-pick-track-head"><p data-pick-count-cards aria-live="polite"></p>'+
   '<div class="ns-pick-arrows"><button type="button" data-pick-direction="-1" aria-label="Previous approach">←</button>'+
   '<button type="button" data-pick-direction="1" aria-label="Next approach">→</button></div></div>'+
-  '<div class="ns-pick-track" data-pick-track tabindex="0" aria-label="Approaches organised by family. Scroll sideways or use the previous and next buttons."></div>'+
-  '<p class="ns-pick-chooser-foot">Cards are starting points, not prescriptions. Select a card to read its steps and open an optional worksheet.</p>'+
+  '<div class="ns-pick-track" data-pick-track tabindex="0" aria-label="Relevant options. Scroll sideways or use the previous and next buttons."></div>'+
+  '<p class="ns-pick-chooser-foot">These are optional starting points. Choose one to read its steps and open a private worksheet, or leave without choosing anything.</p>'+
   '</section>';
 }
 function dialogMarkup(){
@@ -199,16 +223,17 @@ function introductionCover(g){
 function layout(g){
  return '<div class="ns-wb-wrap ns-pick-wrap'+(g.kind==='topic'?' ns-pick-topic-layout':'')+'" data-workbook="'+e(g.id)+'">'+
   '<nav class="ns-pick-breadcrumb" aria-label="Guide navigation"><a href="#navigate/'+e(g.modeId)+'">← '+e(g.modeTitle)+'</a>'+
-  '<a href="#navigate">All starting points</a><a href="#need/support-safety">Urgent support</a></nav>'+
+  '<a href="#navigate">All themes</a><a href="#need/support-safety">Urgent support</a></nav>'+
   introductionCover(g)+
   (g.safetyFirst?careFirst(g)+renderTopicSafetyReading(g)+sources(g):
    (g.kind==='topic'?renderTopicQuickNav(g)+renderTopicReadingStart(g):introduction(g))+
    chooser()+
    '<section class="ns-pick-selected" id="ns-pick-selected" aria-live="off"><div data-pick-selected>'+selectedEmpty()+'</div></section>'+
-   '<div data-ns-games-host></div>'+dialogMarkup()+
+   (g.kind==='topic'?'<section class="ns-topic-section ns-topic-relief" id="ns-topic-relief"><p class="ns-topic-kicker">QUICK RELIEF · NO WRITING REQUIRED</p><h2>Need a pause before thinking about all of this?</h2><p>Choose Ground, Focus, Settle or Choose. Each activity is brief. Stop whenever it stops helping.</p><div data-ns-games-host></div></section>':'<div data-ns-games-host></div>')+
+   dialogMarkup()+
    (g.kind==='topic'?renderTopicReadingEnd(g):'')+sources(g))+
   '<footer class="ns-pick-footer"><a href="#navigate/'+e(g.modeId)+'">← Change my choice</a>'+
-  '<a href="#navigate">Choose another starting point →</a></footer></div>';
+  '<a href="#navigate">Choose another problem →</a></footer></div>';
 }
 function valuesFrom(host){
  const values={};
@@ -236,7 +261,7 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
  const surface=root.querySelector('[data-workbook]');
  if(g.kind==='topic'&&!g.safetyFirst){bindTopicProfile(surface);bindTopicJumps(surface);}
  if(g.safetyFirst)return;
- let selected=null,filter='all',refine='all',opener=null,preview=null;
+ let selected=null,filter='all',need='all',refine='all',opener=null,preview=null;
  const drafts=new Map();
  const track=surface.querySelector('[data-pick-track]');
  const dialog=surface.querySelector('[data-pick-dialog]');
@@ -246,16 +271,21 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
   if(selected)drafts.set(selected.id,valuesFrom(sheet));
  };
  const paintCards=()=>{
-  const visible=filterCards(cards,refine).filter(c=>filter==='all'||c.family===filter);
-  const groups=groupInterventions(visible);
+  let visible=filterCards(cards,refine);
+  if(need!=='all')visible=visible.filter(c=>NEED_FAMILIES[need].includes(familyForCard(c)));
+  if(filter!=='all')visible=visible.filter(c=>familyForCard(c)===filter);
+  const groups=need==='all'?groupInterventions(visible):visible.length?[{id:need,label:NEED_LABELS[need],hint:'Options selected around what you need right now',cards:visible}]:[];
   track.innerHTML=groups.length?groups.map(g=>'<div class="ns-pick-family" data-pick-family="'+e(g.id)+'">'+
    '<div class="ns-pick-family-heading"><strong>'+e(g.label)+'</strong><small>'+e(g.hint)+'</small></div>'+
    '<div class="ns-pick-family-cards">'+g.cards.map(c=>cardHTML(c,selected?.id)).join('')+'</div></div>').join(''):
-   '<p class="ns-pick-noresults">No approaches match this combination. Try a different family or remove the extra filter.</p>';
+   '<p class="ns-pick-noresults">No options match this need and filter. Choose another need or change the optional filter.</p>';
   surface.querySelector('[data-pick-count-cards]').textContent=
-   visible.length+' approaches across '+groups.length+' '+(groups.length===1?'family':'families');
+   visible.length+' options '+(need==='all'?'across '+groups.length+' approach families':'for '+NEED_LABELS[need]);
   surface.querySelectorAll('[data-pick-filter]').forEach(b=>{
    b.setAttribute('aria-pressed',String(b.dataset.pickFilter===filter));
+  });
+  surface.querySelectorAll('[data-pick-need]').forEach(b=>{
+   b.setAttribute('aria-pressed',String(b.dataset.pickNeed===need));
   });
   track.scrollLeft=0;
  };
@@ -297,7 +327,10 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
  surface.addEventListener('click',event=>{
   const el=event.target.closest('button');if(!el)return;
   if(el.dataset.pickFilter){
-   filter=el.dataset.pickFilter;paintCards();return;
+   filter=el.dataset.pickFilter;need='all';paintCards();return;
+  }
+  if(el.dataset.pickNeed){
+   need=el.dataset.pickNeed;filter='all';paintCards();track.scrollIntoView({block:'nearest',behavior:'instant'});return;
   }
   if(el.hasAttribute('data-pick-direction')){
    const first=track.querySelector('.ns-pick-card');if(!first)return;
