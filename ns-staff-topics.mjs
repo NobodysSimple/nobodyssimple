@@ -95,7 +95,16 @@ function blankTopic(){
   title:'',lead:'',definition:'',recognition:[],reframe:'',
   core:copy(placeholder.core),traps:copy(placeholder.traps),
   steps:copy(placeholder.steps),faq:copy(placeholder.faq),progress:[],closing:'',
-  supportText:'',sourceNote:'',guidedPrompts:[],guideMethods:[],customTools:[]
+  supportText:'',sourceNote:'',guidedPrompts:[],guideMethods:TOPIC_LANES.map(id=>({
+   id,methods:[{
+    title:({context:'Understand the circumstances',practice:'Choose a small, safe option',
+     thinking:'Separate observations and assumptions',acceptance:'Consider what matters',
+     support:'Look at available support'})[id],
+    why:'A possible approach to adapt to the specific situation and the reader’s needs.',
+    steps:['Describe what is relevant in this situation.','Choose a voluntary option or decide that no action is needed.'],
+    caution:'This is educational and may not fit everyone.'
+   }]
+  })),customTools:[]
  });
 }
 function validRecord(raw,known){
@@ -249,7 +258,14 @@ export function mountTopicWorkspace(root,{getPublisher,onNotice=()=>{}}={}){
    const guide=previewGuide(current);
    host.innerHTML='<div class="ns-staff-preview-paper"><div class="ns-staff-preview-eyebrow">NOBODY’S SIMPLE · FIELD NOTES</div>'+
     '<h1>'+e(current.title||'Untitled topic')+'</h1><p class="ns-staff-preview-deck">'+e(current.lead)+'</p>'+
-    renderTopicReadingStart(guide)+renderTopicReadingEnd(guide)+'</div>';
+    renderTopicReadingStart(guide)+
+    '<section class="ns-staff-preview-methods"><h2>Existing guided exercises</h2>'+
+    (current.guideMethods||[]).map(l=>'<details><summary>'+e(l.id.replace(/-/g,' '))+' · '+l.methods.length+' method(s)</summary>'+
+     l.methods.map(m=>'<h3>'+e(m.title)+'</h3><p>'+e(m.why)+'</p><ol>'+
+      m.steps.map(step=>'<li>'+e(step)+'</li>').join('')+'</ol>').join('')+'</details>').join('')+
+    (current.customTools?.length?'<h2>Additional approach cards</h2>'+
+      current.customTools.map(t=>'<h3>'+e(t.title)+'</h3><p>'+e(t.why)+'</p>').join(''):'')+
+    '</section>'+renderTopicReadingEnd(guide)+'</div>';
   }catch(error){host.textContent='Preview cannot render yet: '+error.message;}
  }
  function schedule(){
