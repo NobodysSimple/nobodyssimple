@@ -136,7 +136,8 @@ const THEME_FOR_DOMAIN=Object.freeze({
  change:'life',lifespan:'life',growth:'life'
 });
 export const atlasThemes=Object.freeze(THEME_DATA.map(([id,name,description,icon])=>Object.freeze({id,name,description,icon})));
-export const atlasThemeForTopic=topic=>THEME_FOR_DOMAIN[topic?.domain]||'feelings';
+const SPECIAL_THEME_FOR_ID=Object.freeze({'mental-health-diagnosis-identity':'identity','mental-health-stigma':'identity'});
+export const atlasThemeForTopic=topic=>SPECIAL_THEME_FOR_ID[topic?.id]||THEME_FOR_DOMAIN[topic?.domain]||'feelings';
 export const atlasByTheme=id=>atlasProblemIndex.filter(topic=>atlasThemeForTopic(topic)===id);
 
 const lookup=new Map(atlasProblemIndex.map(p=>[p.id,p]));
