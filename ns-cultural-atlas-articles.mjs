@@ -500,5 +500,5 @@ export const CULTURE_ARTICLES=Object.freeze([
  ],'Communities develop different ways to face uncertainty and make shared concerns visible.','When uncertainty is shared, what helps a group respond without pretending to know everything?','https://ich.unesco.org/en/RL/xooy-a-divination-ceremony-among-the-serer-of-senegal-00878')
 ]);
 export const articlesForCountry=code=>CULTURE_ARTICLES.filter(a=>a.country===code);
-export const articleCountries=Object.freeze([...new Set(CULTURE_ARTICLES.map(a=>a.country));
+export const articleCountries=Object.freeze([...new Set(CULTURE_ARTICLES.map(a=>a.country))]);
 export const articleById=id=>CULTURE_ARTICLES.find(a=>a.id===id)||null;
