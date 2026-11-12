@@ -1091,8 +1091,7 @@ try {
   loadError =
     "Published content could not be loaded. Check your connection and refresh; the curriculum and tools remain available.";
 }
-await loadPublishedTopics();
-await accountReady;
+await Promise.all([accountReady,loadPublishedTopics()]);
 configureAccountHost({maps:renderMaps, tools:accountTools.map(x=>({...x,href:x.href||`#tool/${encodeURIComponent(x.id)}`})), posts});
 window.addEventListener("hashchange", route);
 route();
