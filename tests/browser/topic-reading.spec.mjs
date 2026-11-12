@@ -15,23 +15,20 @@ test('betrayal opens with recognition and its own four-injuries / four-direction
  await expect(page.locator('.ns-topic-faq-list details')).toHaveCount(5);
  await expect(page.locator('.ns-topic-ending')).toContainText(/not to erase what happened/);
 });
-test('optional profile never scores, predicts, saves or changes the topic URL',async({page})=>{
+test('topic pages contain no approach-family filter and no optional profile, but still jump safely to tools',async({page})=>{
  await page.goto('/index.html#workbook-topic/betrayal-trauma');
  const before=page.url();
- const checks=page.locator('[data-topic-pattern]');
- await expect(checks).toHaveCount(4);
- await expect(page.locator('[data-topic-profile-result]')).toContainText('There is no correct combination');
- await checks.first().check();
- await expect(page.locator('[data-topic-profile-result]')).toContainText('You marked:');
- await expect(page.locator('[data-topic-profile-result]')).toContainText('not a diagnosis');
- await page.locator('[data-topic-clear]').click();
- await expect(checks.first()).not.toBeChecked();
- await expect(page.locator('[data-topic-profile-result]')).toContainText('There is no correct combination');
- await page.locator('[data-topic-jump="ns-pick-chooser"]').click();
+ await expect(page.getByText('Choose an approach family')).toHaveCount(0);
+ await expect(page.locator('[data-pick-filter],[data-pick-refine]')).toHaveCount(0);
+ await expect(page.locator('[data-topic-profile],[data-topic-pattern]')).toHaveCount(0);
+ await expect(page.getByRole('heading',{name:'Which parts feel familiar?'})).toHaveCount(0);
  await expect(page.locator('.ns-pick-chooser')).toBeVisible();
+ await expect(page.locator('[data-pick-card]').first()).toBeVisible();
+ await page.locator('[data-topic-jump="ns-pick-chooser"]').click();
  expect(page.url()).toBe(before);
- await page.reload();
- await expect(checks.first()).not.toBeChecked();
+ await page.locator('[data-topic-jump="ns-topic-framework"]').click();
+ await expect(page.locator('#ns-topic-framework')).toBeVisible();
+ expect(page.url()).toBe(before);
 });
 test('all existing tools, private worksheets and visual games still operate',async({page})=>{
  await page.goto('/index.html#workbook-topic/rumination');
@@ -55,7 +52,7 @@ test('identity and access pages do not treat identities or disability as conditi
   await page.goto('/index.html#workbook-topic/'+topic);
   await expect(page.locator('.ns-topic-key-line')).toContainText(phrase);
   await expect(page.locator('.ns-pick-editorial-status')).toBeVisible();
-  await expect(page.locator('.ns-topic-profile-options')).toBeVisible();
+  await expect(page.locator('.ns-topic-profile-options')).toHaveCount(0);
   await expect(page.locator('.ns-topic-faq-list')).toBeVisible();
  }
 });
