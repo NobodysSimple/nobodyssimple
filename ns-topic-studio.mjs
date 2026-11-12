@@ -99,7 +99,7 @@ export class TopicStudio{
   this.dbDelete=dbDelete;this.notify=notify||(()=>{});
   this.remote=emptyTopicManifest();this.sha=null;this.drafts=[];
   this.current=null;this.originalId='';this.activeTab='intro';this.methodId='';
-  this.methodDraft=null;this.timer=0;this.busy=false;this.initialized=false;
+  this.methodDraft=null;this.timer=0;this.busy=false;this.initialized=false;this.dirty=false;
   this.root.addEventListener('click',e=>this.handleClick(e));
   this.root.addEventListener('input',e=>this.handleInput(e));
   this.root.addEventListener('change',e=>this.handleChange(e));
@@ -126,7 +126,12 @@ export class TopicStudio{
   const newPublished=this.remote.topics.filter(p=>p.kind==='new').map(p=>({
    id:p.id,title:p.title||p.id,hint:p.hint,theme:p.theme
   }));
-  const additions=[...base,...newPublished.filter(p=>!inBase.has(p.id))];
+  const newDrafts=this.drafts.filter(x=>x.record?.kind==='new').map(x=>({
+   id:x.id,title:x.record.title||'(New topic draft)',hint:x.record.hint,
+   theme:x.record.theme
+  }));
+  const additions=[...base,...newPublished.filter(p=>!inBase.has(p.id)),
+   ...newDrafts.filter(p=>!inBase.has(p.id)&&!newPublished.some(r=>r.id===p.id))];
   return additions.map(p=>{
    const remote=this.remote.topics.find(r=>r.id===p.id);
    const draft=this.drafts.find(r=>r.id===p.id);
@@ -175,14 +180,14 @@ export class TopicStudio{
   try{
    this.current=clone(draft?.record||remote||(base?makeOriginalDraft(base):null));
    if(!this.current)throw Error('Topic not found in the library.');
-   this.originalId=id;this.methodId='';this.methodDraft=null;this.activeTab='intro';
+   this.originalId=id;this.methodId='';this.methodDraft=null;this.activeTab='intro';this.dirty=Boolean(draft);
    this.renderEditor();this.renderLibrary();this.updatePreview();
   }catch(error){this.notify(error.message,true);}
  }
  async createTopic(){
   await this.saveLocal({silent:true});
   this.current=newDraft();this.originalId=this.current.id;
-  this.methodId='';this.methodDraft=null;this.activeTab='intro';
+  this.methodId='';this.methodDraft=null;this.activeTab='intro';this.dirty=true;
   this.renderEditor();this.renderLibrary();this.updatePreview();
   this.node('[data-desk-field="title"]')?.focus();
  }
@@ -258,7 +263,8 @@ export class TopicStudio{
    '<div class="ns-desk-footer-actions"><button type="button" class="chip" data-desk-save>Save local draft</button>'+
    '<button type="button" class="chip" data-desk-export>Export JSON</button>'+
    '<button type="button" class="button" data-desk-publish>Publish changes</button>'+
-   '<button type="button" class="chip danger-chip" data-desk-delete>'+(record.status==='deleted'?'Restore topic':'Hide from website')+'</button></div></div>';
+   '<button type="button" class="chip danger-chip" data-desk-delete>'+
+   (record.kind==='new'&&!original?'Discard draft':record.status==='deleted'?'Restore topic':'Hide from website')+'</button></div></div>';
   this.renderMethodSelect();
  }
  renderTab(id){
@@ -304,12 +310,14 @@ export class TopicStudio{
   }
  }
  schedule(){
+  this.dirty=true;
   clearTimeout(this.timer);
   this.timer=setTimeout(()=>{this.updatePreview();void this.saveLocal({silent:true});},450);
   const node=this.node('[data-desk-status]');if(node)node.textContent='Unsaved changes';
  }
  async saveLocal({silent=false}={}){
   if(!this.current||!this.dbPut)return;
+  if(!this.dirty&&silent)return;
   const saved={id:this.current.id,record:clone(this.current),savedAt:new Date().toISOString()};
   try{
    // Delete a renamed draft's old local key so it does not fork a second page.
@@ -319,6 +327,7 @@ export class TopicStudio{
    }
    await this.dbPut('topicDrafts',saved);
    this.drafts=this.drafts.filter(x=>x.id!==saved.id).concat([saved]);
+   this.dirty=false;
    if(!silent)this.notify('Topic draft saved privately on this device.');
    this.renderLibrary();
    const status=this.node('[data-desk-status]');if(status)status.textContent='Draft saved on this device';
@@ -357,7 +366,7 @@ export class TopicStudio{
    this.sha=result.sha;this.remote=result.data;
    await this.dbDelete('topicDrafts',this.originalId);await this.dbDelete('topicDrafts',record.id);
    this.drafts=this.drafts.filter(x=>x.id!==record.id&&x.id!==this.originalId);
-   this.originalId=record.id;this.current=clone(record);
+   this.originalId=record.id;this.current=clone(record);this.dirty=false;
    this.renderEditor();this.renderLibrary();this.updatePreview();
    this.node('[data-desk-status]').textContent='Published to GitHub';
    this.notify('Published to GitHub. Your live site will update after deployment and refresh.');
@@ -367,6 +376,15 @@ export class TopicStudio{
  }
  async hideOrRestore(){
   if(!this.current||this.busy)return;
+  const isLocalNew=this.current.kind==='new'&&!this.remote.topics.some(r=>r.id===this.originalId);
+  if(isLocalNew){
+   if(!confirm('Discard this unpublished topic draft from this device?'))return;
+   await this.dbDelete('topicDrafts',this.originalId);
+   this.drafts=this.drafts.filter(x=>x.id!==this.originalId);
+   this.current=null;this.dirty=false;
+   this.node('[data-desk-workspace]').innerHTML='<div class="ns-desk-empty"><h2>Draft discarded</h2><p>Choose a topic to continue.</p></div>';
+   this.renderLibrary();return;
+  }
   const hiding=this.current.status!=='deleted';
   if(!confirm(hiding?'Hide this topic from all public navigation and direct topic routes? You can restore it from this desk.':
    'Restore this topic to the public website?'))return;
@@ -376,7 +394,7 @@ export class TopicStudio{
   try{
    this.busy=true;
    const result=await this.publisher.publishTopics(next,this.sha);
-   this.sha=result.sha;this.remote=result.data;this.current=clone(r);
+   this.sha=result.sha;this.remote=result.data;this.current=clone(r);this.dirty=false;
    await this.dbDelete('topicDrafts',this.originalId);
    this.drafts=this.drafts.filter(x=>x.id!==this.originalId);
    this.renderEditor();this.renderLibrary();this.updatePreview();
