@@ -109,37 +109,6 @@ export const atlasProblemIndex=Object.freeze([...preciseProfiles.map(p=>({id:p.i
  ...problemIndex.map(p=>({...p,quality:'structured'})),
  ...extendedProblemIndex.map(p=>({...p,quality:'structured'})),
  ...inclusiveProblemIndex]);
-const THEME_DATA=[
- ['feelings','Feelings & mental health','Mood, anxiety, distress and experiences that can be hard to make sense of','♡'],
- ['thinking','Thinking, habits & focus','Worry loops, decisions, attention and patterns that feel hard to shift','⌁'],
- ['relationships','Relationships & connection','Partners, friends, family relationships and the need to belong','↗'],
- ['family-safety','Family, harm & safety','Family pressures, coercion, trauma and situations where safety matters','⌂'],
- ['identity','Identity & self-image','How you see yourself, how others see you and the space to define yourself','◇'],
- ['culture','Culture, faith & migration','Belonging, heritage, religion, migration and living between worlds','◎'],
- ['body','Body, sleep & intimacy','Health, physical experience, sleep, sexuality and intimacy','☼'],
- ['neurodivergence','Neurodivergence & disability','Access, neurotype, disability and the demands of everyday settings','✳'],
- ['work','Work, learning & getting things done','Employment, study, tasks, motivation and practical demands','▤'],
- ['society','Money, technology & society','Material pressure, online life, inequality and wider social conditions','◌'],
- ['life','Life changes, grief & growth','Loss, transitions, changing roles and making room for what comes next','✦']
-];
-const THEME_FOR_DOMAIN=Object.freeze({
- feel:'feelings',experiences:'feelings',clinical:'feelings',
- think:'thinking',focus:'thinking',behaviour:'thinking',
- relate:'relationships',family:'relationships',social:'relationships',
- safety:'family-safety',harm:'family-safety',trauma:'family-safety',
- identity:'identity',lgbtq:'identity',
- culture:'culture',migration:'culture',faith:'culture',
- body:'body',sexuality:'body',
- neuro:'neurodivergence',disability:'neurodivergence',
- act:'work',work:'work',education:'work',
- inequality:'society',digital:'society',environment:'society',
- change:'life',lifespan:'life',growth:'life'
-});
-export const atlasThemes=Object.freeze(THEME_DATA.map(([id,name,description,icon])=>Object.freeze({id,name,description,icon})));
-const SPECIAL_THEME_FOR_ID=Object.freeze({'mental-health-diagnosis-identity':'identity','mental-health-stigma':'identity'});
-export const atlasThemeForTopic=topic=>SPECIAL_THEME_FOR_ID[topic?.id]||THEME_FOR_DOMAIN[topic?.domain]||'feelings';
-export const atlasByTheme=id=>atlasProblemIndex.filter(topic=>atlasThemeForTopic(topic)===id);
-
 const lookup=new Map(atlasProblemIndex.map(p=>[p.id,p]));
 export const atlasGet=id=>lookup.get(id)||null;
 export const atlasByDomain=domain=>atlasProblemIndex.filter(p=>p.domain===domain);
