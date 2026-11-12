@@ -49,6 +49,7 @@ import {renderAtlasConsole} from './ns-atlas-console.mjs';
 import {renderAtlasGuide} from './ns-atlas-guide.mjs';
 import {renderAtlasTool} from './ns-atlas-tool.mjs';
 import {atlasGet} from './ns-atlas-core.mjs';
+import {installTopicManifest} from './ns-topic-manifest.mjs';
 import {renderNeedsConsole} from './ns-needs-console.mjs';
 import {renderIntegratedWorkbook} from './ns-integrated-workbook.mjs';
 import {renderNeedsActivity} from './ns-needs-activities.mjs';
@@ -1089,6 +1090,13 @@ try {
 } catch {
   loadError =
     "Published content could not be loaded. Check your connection and refresh; the curriculum and tools remain available.";
+}
+// Staff-authored topic updates are fetched before the first route is rendered.
+try{
+ const response=await fetch('topic-pages.json',{cache:'no-store'});
+ if(response.ok)installTopicManifest(await response.json());
+}catch(error){
+ console.warn('Topic updates unavailable; using bundled guides.',error);
 }
 await accountReady;
 configureAccountHost({maps:renderMaps, tools:accountTools.map(x=>({...x,href:x.href||`#tool/${encodeURIComponent(x.id)}`})), posts});
