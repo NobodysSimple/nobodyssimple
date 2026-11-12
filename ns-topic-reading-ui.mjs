@@ -46,7 +46,7 @@ export function renderTopicReadingStart(g){
   ['stuck','I feel stuck and need a next step'],
   ['support','I need support from someone else']
  ];
- if(identityTopic)needs.splice(2,0,['identity','I am questioning how I see myself']);
+ if(identityTopic)needs.splice(2,0,['identity','I am questioning how I see myself'],['stigma','I am worried about stigma']);
  const needButtons=needs.map(([id,label])=>'<button type="button" class="ns-topic-need-choice" data-topic-need="'+e(id)+'">'+e(label)+' <span aria-hidden="true">→</span></button>').join('');
  const profile=m.profile.length?
   '<section class="ns-topic-section ns-topic-profile-section" id="ns-topic-profile" aria-labelledby="ns-topic-profile-title">'+
@@ -166,12 +166,12 @@ export function bindTopicJumps(surface){
   let id=button.dataset.topicJump||'';
   if(button.dataset.topicNeed){
    const need=button.dataset.topicNeed;
-   const route={overwhelmed:'overwhelmed',stuck:'stuck',understand:'understand',identity:'identity',support:'support'}[need];
+   const route={overwhelmed:'overwhelmed',stuck:'stuck',understand:'understand',identity:'identity',stigma:'stigma',support:'support'}[need];
    if(route==='overwhelmed'||route==='stuck'){
     const option=surface.querySelector('[data-pick-need="'+route+'"]');
     option?.click();id='ns-pick-chooser';
    }else{
-    id=need==='understand'?'ns-topic-understand':need==='identity'?'ns-topic-profile':'ns-topic-support';
+    id=need==='understand'?'ns-topic-understand':need==='identity'?'ns-topic-profile':need==='stigma'?'ns-topic-reassurance':'ns-topic-support';
    }
   }
   const allowed=['ns-topic-common','ns-topic-understand','ns-topic-profile','ns-pick-chooser','ns-topic-answers','ns-topic-reassurance','ns-topic-support','ns-topic-relief'];
