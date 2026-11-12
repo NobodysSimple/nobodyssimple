@@ -7,7 +7,7 @@ import {PATH_SOURCES} from './ns-pathway-content.mjs';
 import {renderTool} from './features.mjs';
 import {deckForWorkbook,filterCards,APPROACH_FAMILIES,groupInterventions} from './ns-intervention-cards.mjs';
 import {renderGameCarousel} from './ns-regulation-games.mjs';
-import {renderTopicQuickNav,renderTopicReadingStart,renderTopicReadingEnd,renderTopicSafetyReading,bindTopicProfile,bindTopicJumps} from './ns-topic-reading-ui.mjs';
+import {renderTopicQuickNav,renderTopicReadingStart,renderTopicReadingEnd,renderTopicSafetyReading,bindTopicJumps} from './ns-topic-reading-ui.mjs';
 
 const e=x=>esc(String(x??''));
 const textOf=x=>String(x??'').trim().slice(0,3000);
@@ -76,12 +76,12 @@ function filters(){
  '<option value="all">Any effort or time</option><option value="light">Low effort</option>'+
  '<option value="now">Right now</option><option value="long">Over time</option></select></label>';
 }
-function chooser(){
+function chooser(g){
  return '<section class="ns-pick-chooser" id="ns-pick-chooser">'+
   '<div class="ns-pick-headline"><span class="ns-pick-step">02</span><div>'+
   '<p class="ns-pick-kicker">CHOOSE ONE THING</p><h2>Find an approach</h2>'+
   '<p>Browse a family below, then try one idea that fits. You do not need to complete everything.</p></div></div>'+
-  filters()+
+  (g.kind==='topic'?'':filters())+
   '<div class="ns-pick-track-head"><p data-pick-count-cards aria-live="polite"></p>'+
   '<div class="ns-pick-arrows"><button type="button" data-pick-direction="-1" aria-label="Previous approach">←</button>'+
   '<button type="button" data-pick-direction="1" aria-label="Next approach">→</button></div></div>'+
@@ -203,7 +203,7 @@ function layout(g){
   introductionCover(g)+
   (g.safetyFirst?careFirst(g)+renderTopicSafetyReading(g)+sources(g):
    (g.kind==='topic'?renderTopicQuickNav(g)+renderTopicReadingStart(g):introduction(g))+
-   chooser()+
+   chooser(g)+
    '<section class="ns-pick-selected" id="ns-pick-selected" aria-live="off"><div data-pick-selected>'+selectedEmpty()+'</div></section>'+
    '<div data-ns-games-host></div>'+dialogMarkup()+
    (g.kind==='topic'?renderTopicReadingEnd(g):'')+sources(g))+
@@ -234,7 +234,7 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
  const cards=deckForWorkbook(g);
  root.innerHTML=layout(g);
  const surface=root.querySelector('[data-workbook]');
- if(g.kind==='topic'&&!g.safetyFirst){bindTopicProfile(surface);bindTopicJumps(surface);}
+ if(g.kind==='topic'&&!g.safetyFirst)bindTopicJumps(surface);
  if(g.safetyFirst)return;
  let selected=null,filter='all',refine='all',opener=null,preview=null;
  const drafts=new Map();
