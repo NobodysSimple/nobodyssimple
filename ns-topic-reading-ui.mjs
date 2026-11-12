@@ -88,6 +88,12 @@ export function renderTopicReadingEnd(g){
    list(m.progress)+
    '<p class="ns-topic-quiet-note">The aim is not to monitor yourself constantly or prove that you are improving every day.</p>'+
   '</section>'+
+  (m.guidedPrompts?.length?'<section class="ns-topic-section ns-topic-editor-prompts">'+
+    heading('OPTIONAL REFLECTIONS','Questions to consider, only if useful')+
+    '<p class="ns-topic-helper">These are staff-authored guided prompts. You can simply read them; no answer is collected.</p>'+
+    '<div class="ns-topic-faq-list">'+m.guidedPrompts.map(item=>
+      '<details class="ns-topic-details"><summary>'+e(item.q)+'</summary><p>'+e(item.a)+'</p></details>').join('')+'</div>'+
+   '</section>':'')+
   '<section class="ns-topic-section ns-topic-faq">'+
    heading('COMMON QUESTIONS','Things you might still be wondering')+
    '<div class="ns-topic-faq-list">'+m.faq.map(([q,a])=>
