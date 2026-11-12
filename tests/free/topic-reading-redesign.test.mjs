@@ -33,17 +33,12 @@ test('every one of 518 topic pages has a readable recognition-first model and su
    assert.match(renderTopicSafetyReading(guide),/no checklist, score, journal or behavioural experiment/i,entry.id);
   }else{
    const top=renderTopicReadingStart(guide),bottom=renderTopicReadingEnd(guide);
-   for(const piece of ['ns-topic-recognition','ns-pick-definition','ns-topic-profile','ns-topic-framework','ns-topic-steps'])
+   for(const piece of ['ns-topic-recognition','ns-pick-definition','ns-topic-framework','ns-topic-steps'])
     assert.ok(top.includes(piece),entry.id+' lacks '+piece);
    for(const piece of ['ns-topic-progress','ns-topic-faq-list','ns-topic-support','ns-topic-ending'])
     assert.ok(bottom.includes(piece),entry.id+' lacks '+piece);
-   if(guide.supportFirst){
-    assert.doesNotMatch(top,/data-topic-pattern|data-topic-profile/,entry.id+' should not prompt private disclosures');
-    assert.match(top,/safety and privacy come first/i,entry.id);
-   }else{
-    assert.equal((top.match(/data-topic-pattern=/g)||[]).length,4,entry.id+' expected four optional factors');
-    assert.match(top,/not a diagnostic checklist or a score/i,entry.id);
-   }
+   assert.doesNotMatch(top,/data-topic-pattern|data-topic-profile|Which parts feel familiar|OPTIONAL CHECK-IN/,entry.id+' check-in must be removed');
+   if(guide.supportFirst)assert.match(top,/safety and privacy come first/i,entry.id);
    if(guide.medical)assert.match(top,/appropriate healthcare assessment/i,entry.id);
    assert.ok(renderTopicQuickNav(guide).includes('data-topic-jump'),entry.id+' missing section jumps');
   }
@@ -62,7 +57,7 @@ test('the betrayal-specific page has meaningful injuries, traps, future-trust ad
  ]);
  assert.match(start,/The four injuries that betrayal can affect/);
  assert.match(start,/Four areas of rebuilding/);
- assert.match(start,/not a diagnostic checklist or a score/i);
+ assert.doesNotMatch(start,/not a diagnostic checklist or a score|data-topic-pattern|OPTIONAL CHECK-IN/i);
  assert.match(end,/Do I need to forgive them/);
  assert.match(end,/accountability/);
  assert.match(end,/not to erase what happened/);
@@ -89,16 +84,16 @@ test('page redesign preserves existing method decks, journal draft controls and 
  const html=chooser.slice(chooser.indexOf('function layout(g)'),chooser.indexOf('function valuesFrom(host)'));
  for(const expected of [
   'renderTopicReadingStart(g)','renderTopicReadingEnd(g)','renderTopicSafetyReading(g)',
-  'renderTopicQuickNav(g)','chooser()','data-pick-selected','data-ns-games-host','dialogMarkup()','sources(g)'
+  'renderTopicQuickNav(g)','chooser(g)','data-pick-selected','data-ns-games-host','dialogMarkup()','sources(g)'
  ])assert.ok(html.includes(expected),expected+' missing');
  for(const expected of ['const drafts=new Map()','data-pick-review','data-pick-download','data-pick-clear',
-  'renderGameCarousel(surface.querySelector(\'[data-ns-games-host]\'),g)','bindTopicProfile(surface)','bindTopicJumps(surface)']){
+  'renderGameCarousel(surface.querySelector(\'[data-ns-games-host]\'),g)','bindTopicJumps(surface)']){
   assert.ok(chooser.includes(expected),expected+' missing');
  }
  assert.doesNotMatch(chooser,/localStorage|sessionStorage|sendBeacon|fetch\(/);
  const ui=readFileSync('ns-topic-reading-ui.mjs','utf8');
  assert.match(ui,/data-topic-jump="ns-pick-chooser"/);
  assert.doesNotMatch(ui,/href="#ns-pick-chooser"|href="#ns-topic-/, 'internal anchors would break hash-based routing');
- assert.match(ui,/fieldset\.addEventListener\('change',update\)/);
+ assert.doesNotMatch(ui,/bindTopicProfile|data-topic-profile|data-topic-pattern/);
  assert.doesNotMatch(ui,/localStorage|sessionStorage|fetch\(|sendBeacon/);
 });
