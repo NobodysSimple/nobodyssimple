@@ -12,6 +12,7 @@ import {
   youtubeID,
 } from "./core.mjs";
 import { Publisher } from "./publisher.mjs";
+import {mountTopicWorkspace} from "./ns-staff-topics.mjs";
 
 const $ = (id) => document.getElementById(id);
 const now = () => new Date().toISOString();
@@ -38,6 +39,7 @@ const templates = {
 };
 
 let publisher = null;
+const topicDesk=mountTopicWorkspace(document.getElementById("topics-view"),{getPublisher:()=>publisher});
 let githubUser = null;
 let posts = [];
 let repoAssets = [];
@@ -232,11 +234,13 @@ async function setView(view) {
   $("dashboard-view").hidden = view !== "dashboard";
   $("media-view").hidden = view !== "media";
   $("templates-view").hidden = view !== "templates";
+  $("topics-view").hidden = view !== "topics";
   $("editor-view").hidden = view !== "editor";
   document.querySelectorAll(".rail-button[data-view]").forEach((button) => button.classList.toggle("active", button.dataset.view === view));
   if (view === "dashboard") renderDashboard();
   if (view === "media") renderMediaLibrary();
   if (view === "templates") renderTemplates();
+  if (view === "topics") await topicDesk.refresh();
 }
 
 async function refreshLocal() {
@@ -446,6 +450,7 @@ function openEditor(post = null, type = "blog", opts = {}) {
   $("dashboard-view").hidden = true;
   $("media-view").hidden = true;
   $("templates-view").hidden = true;
+  $("topics-view").hidden = true;
   $("editor-view").hidden = false;
   document.querySelectorAll(".rail-button[data-view]").forEach((button) => button.classList.remove("active"));
   setSaveState(opts.fromDraft ? "Recovered local draft" : "Ready to edit");
@@ -997,12 +1002,15 @@ $("login-form").addEventListener("submit", async (event) => {
 });
 $("disconnect").onclick = async () => {
   if (dirty && !confirm("Sign out? Your latest changes are autosaved in this browser.")) return;
-  publisher?.disconnect(); publisher = null; githubUser = null; current = null; uploads = [];
+  topicDesk.close();publisher?.disconnect(); publisher = null; githubUser = null; current = null; uploads = [];
   $("studio").hidden = true; $("login").hidden = false; $("login-status").textContent = "Signed out.";
 };
 
 document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => void setView(button.dataset.view)));
 document.querySelectorAll("[data-new]").forEach((button) => button.addEventListener("click", () => openEditor(null, button.dataset.new)));
+document.querySelectorAll("[data-topic-quick-new]").forEach(button=>button.addEventListener("click",async()=>{
+  await setView("topics");topicDesk.newTopic();
+}));
 $("dash-search").addEventListener("input", renderDashboard);
 $("dash-status").addEventListener("change", renderDashboard);
 $("dash-type").addEventListener("change", renderDashboard);
