@@ -86,6 +86,12 @@ export function renderTopicReadingStart(g){
     '<details class="ns-topic-details"><summary>Things that can make this harder</summary><div class="ns-topic-detail-body"><ol class="ns-topic-trap-list">'+m.traps.map(x=>group(x[0],x[1])).join('')+'</ol>'+
      '<p>Not every pattern applies to you. Some problems are caused or sustained by real circumstances that need changing, not by your reaction to them.</p></div></details>'+
    '</div></details>'+
+   '<section class="ns-topic-section ns-topic-framework" id="ns-topic-framework">'+
+    heading('WAYS FORWARD','Four directions you can consider')+
+    '<p class="ns-topic-helper">These are options, not a fixed recovery sequence. You can choose what is useful, including rest or seeking support.</p>'+
+    '<ol class="ns-topic-steps">'+m.steps.map((step,i)=>
+     '<li><span class="ns-topic-index">'+String(i+1).padStart(2,'0')+'</span><div><strong>'+e(step.label)+'</strong><p>'+e(step.detail)+'</p></div></li>').join('')+'</ol>'+
+   '</section>'+
  '</div>';
 }
 export function renderTopicReadingEnd(g){
