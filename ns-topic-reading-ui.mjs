@@ -36,7 +36,14 @@ export function renderTopicQuickNav(g){
 export function renderTopicReadingStart(g){
  const m=topicPageModel(g);
  if(!m||g.safetyFirst)return '';
- const recognition=m.recognition.length?m.recognition:[
+ const diagnosisIdentity=g.id==='mental-health-diagnosis-identity';
+ const recognition=diagnosisIdentity?[
+  'I feel like my diagnosis is taking over how I see myself.',
+  'I keep wondering whether the diagnosis is accurate or complete.',
+  'Part of me feels relieved; another part feels unsettled or sad.',
+  'I am worried that other people will see me differently.',
+  'I do not know what, if anything, I want to do next.'
+ ]:m.recognition.length?m.recognition:[
   g.title,g.lead||g.what,'Different people can experience this in different ways.'
  ];
  const identityTopic=/(identity|diagnos|stigma|self-image)/i.test((g.id||'')+' '+(g.title||''));
@@ -86,7 +93,7 @@ export function renderTopicReadingStart(g){
   '</section>'+
   '<aside class="ns-topic-reassurance" id="ns-topic-reassurance" aria-labelledby="ns-topic-reassurance-title">'+
    '<p class="ns-topic-kicker">A REMINDER</p><h2 id="ns-topic-reassurance-title">This experience does not tell the whole story.</h2>'+
-   '<ul><li>It does not, by itself, explain why this is happening.</li><li>It does not define everything about you or decide what comes next.</li><li>You do not have to settle on an answer today.</li><li>Real circumstances, health, access and support can matter as much as personal coping.</li></ul>'+
+   '<ul>'+(diagnosisIdentity?['A diagnosis does not describe everything about you.','It does not decide what you can do or what your future must look like.','Not every difficulty has to come from the diagnosis.','You choose who you tell and when.']:['It does not, by itself, explain why this is happening.','It does not define everything about you or decide what comes next.','You do not have to settle on an answer today.','Real circumstances, health, access and support can matter as much as personal coping.']).map(x=>'<li>'+e(x)+'</li>').join('')+'</ul>'+
   '</aside>'+
   '<details class="ns-topic-section ns-topic-understand-details" id="ns-topic-understand">'+
    '<summary><span class="ns-topic-kicker">UNDERSTAND</span><strong>Explore what may be shaping this</strong><small>Optional reading. Open it when you have room to think about possible explanations.</small></summary>'+
