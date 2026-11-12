@@ -344,5 +344,5 @@ export function mountTopicWorkspace(root,{getPublisher,onNotice=()=>{}}={}){
    current.guidedPrompts.push({q:'',a:''});editor();schedule();
   }
  });
- return {refresh,open,showList,close(){current=null;clearTimeout(timer)}};
+ return {refresh,open,newTopic:create,showList,close(){current=null;clearTimeout(timer)}};
 }
