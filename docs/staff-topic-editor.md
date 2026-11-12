@@ -1,0 +1,30 @@
+# Nobody’s Simple · Staff writing and topic publication (November 2026)
+
+## Architecture and deliberate boundaries
+- **Existing blogs, announcements, resources and other articles** continue in `content.json`, edited with the original block-based writer in `staff.html` / `studio.mjs` and published by `publisher.mjs`.
+- **Psychology topic pages** are a separate structured product. The 518 original topics remain in their original source files and are resolved through `workbookForTopic`. The new **Topic desk** publishes an override/new-topic registry in `topic-content.json`; it never overwrites the original static psychology source code.
+- The public `site.mjs` loads `topic-content.json` before first route render. `ns-topic-publications.mjs` applies published titles, topic additions, theme placements, archive markers and authored educational sections. `ns-integrated-workbook-data.mjs` merges staff changes into existing guides, **preserving their original tools, journal templates, medical/safety flags, source references and worksheet mechanics**.
+- Custom approaches added by staff are additional editorial method cards using the existing worksheet types. The staff interface also edits the wording and guided steps within each existing context/behaviour/thinking/acceptance/support chapter, while its original tool and references remain linked.
+- An existing source topic can be **archived** to hide it from browsing and suppress direct workbook rendering. That does not delete the original source entry or its stable ID. A new staff-created topic can be permanently deleted from the published registry. Existing source IDs and linked routes are not overwritten by new topics.
+
+## Staff workflow
+1. Open **Staff login**. Authenticate with a GitHub identity that has repository **write** permission; a Firebase site/community role alone does not confer publishing rights. The personal access token is kept only in the session memory and cleared at sign-out.
+2. Choose **Topic desk** on the left. Search existing topics or select **New topic**. New topics have a unique, permanent lowercase URL ID and a source domain, and can be assigned to any of the eleven current navigation themes.
+3. Edit the **title, short introduction, definition, recognition examples, central reframe, four explanatory aspects, misconceptions, four suggested directions, progress markers, FAQs, support guidance, ending, editorial status notes, guided prompts and existing chapter method wording**. Add/remove optional authored method cards.
+4. The right-hand **Field Notes notepad preview** updates as fields change. Each input immediately saves an unsubmitted local draft in the current browser. It is not saved to the user account or sent to the public website.
+5. **Publish / update** validates the minimum usable content, compares the current GitHub record against the version that was opened, and commits the new record to the `main` branch with a non-force ref update. GitHub Pages deployment must complete before visitors see it; the site does not push live edits into already-open reader sessions.
+6. **Archive** an existing source topic, **restore** its published override, or **delete** a staff-created topic. The original source code is deliberately never deleted through the staff UI.
+7. For blog posts, use **Content → Blog post**. The writer now shows a branded notepad, a compact everyday formatting bar with expandable advanced actions, and a live desktop preview. The site renders blog post bodies with the same Field Notes branding.
+
+## Limits and safeguards
+- Publishing is **versioned GitHub content**, not instant real-time Firestore collaborative editing. The editor reflects the current draft immediately; readers get updates on page load after GitHub Pages finishes deploying. Parallel changes to the *same* topic are rejected by conflict detection. A non-force Git ref update protects against commits on a changed head.
+- The registry is fetched afresh on page load and can grow as topics are updated. Git Blob retrieval is used in the staff publisher, avoiding the 1 MB GitHub Contents API limitation. Large installations may ultimately benefit from per-topic files to reduce the reader’s initial JSON download.
+- The publication model trims and validates strings, limits list sizes, restricts method kinds and HTML-escapes content when rendering. It does not accept raw executable HTML or custom tool code from the topic editor. No quiz score or diagnostic inference is generated.
+- **Safety-first and support-first source flags cannot be unset via the editor**, and original safeguarding takes priority over staff-authored optional exercises. Archived high-risk pages should be reviewed with particular care because archiving also removes their public route.
+- Original references and editorial evidence limitations remain visible; a staff-authored note is appended, not used to overwrite the source disclosure.
+- The eleven theme groups were originally balanced for 518 topics. User-created new topics and manual moves naturally change the topic counts; the editor prioritises semantic fit over artificially equal numbers.
+
+## Testing and next steps
+- Unit coverage includes registry normalisation, published additions, changed themes, archive/deletion handling, safety-preserving guide overlays, edited copy, authored tools and optimistic Git publishing.
+- Existing topic-reading tests were updated to assert the **optional check-in and approach-family filters are absent from all topic pages**, while original approach cards, method details, journal fields and games remain.
+- Verify on the live site with desktop/mobile keyboard/assistive technology, fresh deployment, dark mode, cache refresh, remote conflict handling, large topic registry, and draft recovery. This work does not prove every formerly reported writing bug is solved; fixes explicitly included were live blog preview synchronisation, pasted-table text extraction, layout simplification and reliable topic draft recovery.
