@@ -55,8 +55,8 @@ test('the betrayal-specific page has meaningful injuries, traps, future-trust ad
  assert.deepEqual(model.steps.map(i=>i.label),[
   'Understand enough','Acknowledge the impact','Rebuild self-trust','Choose future trust carefully'
  ]);
- assert.match(start,/The four injuries that betrayal can affect/);
- assert.match(start,/Four areas of rebuilding/);
+ assert.match(start,/Possible parts of the picture/);
+ assert.match(start,/Four directions you can consider/);
  assert.doesNotMatch(start,/not a diagnostic checklist or a score|data-topic-pattern|OPTIONAL CHECK-IN/i);
  assert.match(end,/Do I need to forgive them/);
  assert.match(end,/accountability/);
