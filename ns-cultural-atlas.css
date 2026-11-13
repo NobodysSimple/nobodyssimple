@@ -201,3 +201,14 @@ html[data-theme=dark] .ns-culture-evidence-kind{background:#385440;color:#dcebdd
 html[data-theme=dark] .ns-culture-evidence-card blockquote{background:#34483a}
 html[data-theme=dark] .ns-culture-evidence-card blockquote p,html[data-theme=dark] .ns-culture-evidence-card blockquote cite{color:#e3eadf}
 html[data-theme=dark] .ns-culture-evidence-card>a{color:#b7d8bf}
+
+.ns-culture-story-image{margin:12px 0 18px;padding:9px;border:1px solid #dce4d8;border-radius:14px;background:#f8f7ee}
+.ns-culture-story-image figure{margin:0}
+.ns-culture-story-image img{display:block;width:100%;max-height:440px;object-fit:contain;border-radius:9px;background:#eeeadd}
+.ns-culture-story-image figcaption{margin:8px 2px 0;color:#52675a;font-size:.7rem;line-height:1.55}
+.ns-culture-story-image figcaption a{color:#315b45;text-underline-offset:2px}
+.ns-culture-image-status{margin:4px;color:#627467;font-size:.76rem;line-height:1.5}
+html[data-theme=dark] .ns-culture-story-image{background:#263b30;border-color:#536d5c}
+html[data-theme=dark] .ns-culture-story-image img{background:#18251d}
+html[data-theme=dark] .ns-culture-story-image figcaption,html[data-theme=dark] .ns-culture-image-status{color:#d0dfd1}
+html[data-theme=dark] .ns-culture-story-image figcaption a{color:#b7d8bf}
