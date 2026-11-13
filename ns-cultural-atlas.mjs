@@ -5,6 +5,7 @@
  */
 import {escapeHTML as esc} from './core.mjs';
 import {CULTURE_ARTICLES,articlesForCountry,articleCountries,articleById} from './ns-cultural-atlas-articles.mjs';
+import {CULTURE_INVESTIGATIONS} from './ns-cultural-atlas-investigations.mjs';
 import {bindAtlasViewport,fitAtlasBounds,clampAtlasView,WORLD_VIEW} from './ns-cultural-atlas-viewport.mjs';
 import {fetchAdministrativeLayer,fetchUSCounties,fetchUSIndigenousAreas,searchMapPlaces,filterAdministrativeChildren,mapDegreesToAtlas} from './ns-cultural-atlas-geography.mjs';
 
@@ -102,7 +103,7 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
  '<button type="button" data-culture-place-search>Find place</button><label data-culture-place-results-wrap hidden>Choose a matching place<select data-culture-place-results></select></label><p data-culture-place-note>Search only happens when you press Find place.</p></div>'+
  '<p class="ns-culture-map-source">Country outlines: Natural Earth. Civil boundaries: <a href="https://www.geoboundaries.org/" rel="noopener noreferrer" target="_blank">geoBoundaries gbOpen ↗</a> (licences vary). Indigenous geography: <a href="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/AIANNHA/MapServer/47" rel="noopener noreferrer" target="_blank">US Census AIANNHA, 2026 ↗</a>. Place search © <a href="https://www.openstreetmap.org/copyright" rel="noopener noreferrer" target="_blank">OpenStreetMap contributors ↗</a>. These boundaries are illustrative, never claims about sovereignty, ancestry, or the full extent of Indigenous homelands.</p></div>'+
  '<aside class="ns-culture-reading" aria-label="Culture stories" data-culture-panel><div data-culture-panel-content></div></aside></div>'+
- '<p class="ns-culture-disclaimer">Stories pair documentation from each practice’s cultural context with psychology research on related processes.</p></section>';
+ '<p class="ns-culture-disclaimer">Each story starts with a community’s own account of place and practice, then examines the psychological questions its local evidence can support.</p></section>';
  const svg=root.querySelector('[data-culture-map]'),land=root.querySelector('[data-culture-shapes]'),regionLayer=root.querySelector('[data-culture-regions]'),
    choose=root.querySelector('[data-culture-country]'),regionChoose=root.querySelector('[data-culture-region]'),
    regionWrap=root.querySelector('[data-culture-region-wrap]'),panel=root.querySelector('[data-culture-panel-content]'),
@@ -179,28 +180,19 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   const active=list.find(a=>a.id===activeArticle)||list[0];
   if(active)activeArticle=active.id;
   const locallyRelevant=list.some(a=>localName&&a.region&&localName.toLowerCase().includes(a.region.toLowerCase()));
-  const identity='<p class="ns-culture-eyebrow">CULTURAL PSYCHOLOGY FIELD NOTES</p><p class="ns-culture-place">'+e(selectedCountry.name)+(selectedRegion?' · '+e(selectedRegion.name):'')+(selectedSubregion?' · '+e(selectedSubregion.name):'')+(selectedPlace?' · '+e(selectedPlace.name.split(',')[0]):'')+'</p>';
+  const identity='<p class="ns-culture-eyebrow">CULTURE, HISTORY & PSYCHOLOGY</p><p class="ns-culture-place">'+e(selectedCountry.name)+(selectedRegion?' · '+e(selectedRegion.name):'')+(selectedSubregion?' · '+e(selectedSubregion.name):'')+(selectedPlace?' · '+e(selectedPlace.name.split(',')[0]):'')+'</p>';
   if(!list.length){
-   panel.innerHTML=identity+'<h3>No story for '+e(selectedCountry.name)+' yet</h3>'+
-    '<p>Choose another place to read a documented cultural practice and its psychology.</p>'+
-    '<button type="button" data-culture-random class="ns-culture-random ns-culture-random--inside">Find a story →</button>';return;
+   panel.innerHTML=identity+'<h3>No story for '+e(selectedCountry.name)+' yet</h3><p>Choose another place to read a documented cultural practice and its psychology.</p><button type="button" data-culture-random class="ns-culture-random ns-culture-random--inside">Find a story →</button>';return;
   }
   const pos=list.findIndex(a=>a.id===active.id);
-  panel.innerHTML=identity+
-   (localName&&!locallyRelevant?'<p class="ns-culture-region-note">Story scope: '+e(active.place)+'.</p>':'')+
+  const investigation=CULTURE_INVESTIGATIONS[active.id]||{sections:[],evidence:[]};
+  const investigationMarkup='<div class="ns-culture-investigation">'+investigation.sections.map(section=>'<section class="ns-culture-investigation-section"><h4>'+e(section.heading)+'</h4>'+section.paragraphs.map(paragraph=>'<p>'+e(paragraph)+'</p>').join('')+'</section>').join('')+'</div>';
+  const evidenceMarkup='<section class="ns-culture-evidence" aria-label="Local studies and cultural sources"><h4>Evidence from this place</h4><p class="ns-culture-evidence-intro">Local studies and community records are identified by source type, so the cultural account stays distinct from psychological findings.</p>'+investigation.evidence.map(item=>'<article class="ns-culture-evidence-card"><span class="ns-culture-evidence-kind">'+e(item.kind)+'</span><h5>'+e(item.title)+'</h5><p><strong>Method and setting.</strong> '+e(item.method)+'</p><p><strong>What it documents.</strong> '+e(item.finding)+'</p>'+(item.quote?'<blockquote><p>“'+e(item.quote)+'”</p><cite>'+e(item.quoteAttribution||item.citation)+'</cite></blockquote>':'')+'<a href="'+e(item.url)+'" target="_blank" rel="noopener noreferrer">Open source ↗</a><small>'+e(item.citation)+'</small></article>').join('')+'</section>';
+  panel.innerHTML=identity+(localName&&!locallyRelevant?'<p class="ns-culture-region-note">Story scope: '+e(active.place)+'.</p>':'')+
    '<div class="ns-culture-story-head"><span>'+e(active.theme)+'</span><span>'+String(pos+1)+' / '+String(list.length)+'</span></div>'+
-   '<h3>'+e(active.title)+'</h3><p class="ns-culture-where">'+e(active.place)+'</p>'+
-   '<section class="ns-culture-practice"><strong>What makes this practice distinctive</strong><p>'+e(active.body[0]||'')+'</p></section>'+
-   '<section class="ns-culture-psychology" aria-label="Psychology, unpacked"><strong>Psychology, unpacked</strong><p>'+e(active.psychology||active.body[1]||'')+'</p></section>'+
-   '<section class="ns-culture-research" aria-label="Related psychology research"><h4>Research on related psychological processes</h4>'+active.research.map(item=>'<article><h5>'+e(item.heading)+'</h5><p>'+e(item.explanation)+'</p>'+(item.debate?'<div class="ns-culture-research-debate"><strong>Debates and competing explanations</strong><p>'+e(item.debate)+'</p></div>':'')+item.studies.map(study=>'<div class="ns-culture-research-study"><p>'+e(study.finding)+'</p><a href="'+e(study.url)+'" target="_blank" rel="noopener noreferrer">'+e(study.title)+' ↗</a><small>'+e(study.citation)+'</small></div>').join('')+'</article>').join('')+'</section>'+
-   (active.body.slice(2).length?'<div class="ns-culture-story-body">'+active.body.slice(2).map(p=>'<p>'+e(p)+'</p>').join('')+'</div>':'')+
-   '<div class="ns-culture-lesson"><strong>What might we learn?</strong><p>'+e(active.reflection)+'</p></div>'+
-   '<div class="ns-culture-question"><strong>Take a thought with you</strong><p>'+e(active.question)+'</p></div>'+
-   '<a class="ns-culture-source" href="'+e(active.source.url)+'" target="_blank" rel="noopener noreferrer">Read the documentary source: '+e(active.source.label)+' ↗</a>'+
-   '<div class="ns-culture-story-nav"><button type="button" data-culture-step="-1" '+(list.length===1?'disabled':'')+'>← Previous</button>'+
-   '<button type="button" data-culture-step="1" '+(list.length===1?'disabled':'')+'>Next story →</button></div>'+
-   (list.length>1?'<details class="ns-culture-story-list"><summary>Browse '+list.length+' stories from this country</summary>'+
-    list.map(articleCard).join('')+'</details>':'');
+   '<h3>'+e(active.title)+'</h3><p class="ns-culture-where">'+e(active.place)+'</p>'+investigationMarkup+evidenceMarkup+
+   '<div class="ns-culture-story-nav"><button type="button" data-culture-step="-1" '+(list.length===1?'disabled':'')+'>← Previous</button><button type="button" data-culture-step="1" '+(list.length===1?'disabled':'')+'>Next story →</button></div>'+
+   (list.length>1?'<details class="ns-culture-story-list"><summary>Browse '+list.length+' stories from this country</summary>'+list.map(articleCard).join('')+'</details>':'');
  };
  const cancelRegions=()=>{generation++;if(abort)abort.abort();abort=null;};
  const cancelSub=()=>{subGeneration++;if(subAbort)subAbort.abort();subAbort=null;loadingSub=false;};
