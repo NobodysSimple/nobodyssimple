@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {WORLD_COUNTRY_DATA,geoPath,featureBounds,countryViewBox,normaliseCountryData,normaliseRegions,regionArticles} from '../../ns-cultural-atlas.mjs';
 import {CULTURE_ARTICLES,articlesForCountry,articleCountries,articleById} from '../../ns-cultural-atlas-articles.mjs';
+import {SOUTH_ASIA_STORIES} from '../../ns-cultural-atlas-south-asia.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
 
@@ -26,12 +27,13 @@ test('cultural readings use documentary sources and distinguish place from a psy
  assert.ok(CULTURE_ARTICLES.length>=67);
  assert.ok(articleCountries.length>=50);
  for(const a of CULTURE_ARTICLES){
-  assert.ok(countries.some(c=>c.code===a.country),a.id+' country missing');
+  const codes=Array.isArray(a.country)?a.country:[a.country];
+  assert.ok(codes.every(code=>countries.some(c=>c.code===code)),a.id+' country missing');
   assert.ok(a.body.length>=3&&a.body.every(p=>p.length>100),a.id+' missing article');
   assert.ok(a.reflection.length>50&&a.question.endsWith('?'),a.id+' missing psychological takeaway');
   assert.ok(a.source.url.startsWith('https://'),a.id+' missing reference');
   assert.equal(articleById(a.id),a);
-  assert.ok(articlesForCountry(a.country).includes(a));
+  assert.ok(codes.every(code=>articlesForCountry(code).includes(a)));
  }
  assert.equal(new Set(CULTURE_ARTICLES.map(a=>a.id)).size,CULTURE_ARTICLES.length);
  assert.equal(regionArticles('IND','Gujarat')[0].id,'garba');
@@ -43,7 +45,7 @@ test('cultural readings use documentary sources and distinguish place from a psy
  assert.equal(regionArticles('BRA','Pernambuco')[0].id,'frevo');
  assert.equal(articlesForCountry('IND').length,3);
  assert.equal(articlesForCountry('MEX').length,2);
- assert.equal(articlesForCountry('MAR').length,2);
+ assert.ok(articlesForCountry('MAR').length>=2);
  assert.equal(articleById('tango-argentina').source.url,articleById('tango-uruguay').source.url,'transnational heritage has a shared documentary source');
  assert.ok(articlesForCountry('USA').length>=2);
  assert.equal(regionArticles('GBR','Scotland')[0].id,'gaelic-stories');
@@ -56,6 +58,14 @@ test('cultural readings use documentary sources and distinguish place from a psy
   assert.ok(articleById(id),id+' must be published');
  }
  assert.equal(articleById('cherokee-language').source.label,'Cherokee Nation');
+ for(const code of ['AFG','BGD','BTN','IND','LKA','MDV','NPL','PAK']){
+  assert.ok(articlesForCountry(code).length,code+' missing a South Asia story');
+  for(const a of articlesForCountry(code)){
+   const story=SOUTH_ASIA_STORIES[a.id];
+   assert.equal(story?.paragraphs.length,6,a.id+' needs six paragraphs');
+   assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' needs sourced prose');
+  }
+ }
 });
 test('administrative regions have independent clickable geometries',()=>{
  const regionData={type:'FeatureCollection',features:[

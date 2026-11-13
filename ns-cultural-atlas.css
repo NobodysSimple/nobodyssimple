@@ -178,6 +178,9 @@ html[data-theme=dark] .ns-culture-research-study small{color:#cbdece}
 .ns-culture-investigation-section h4{margin:0 0 9px;color:#294c3b;font:600 1.04rem/1.3 Georgia,serif}
 .ns-culture-investigation-section p{margin:0 0 11px;color:#405e4f;font-size:.88rem;line-height:1.74}
 .ns-culture-investigation-section p:last-child{margin-bottom:0}
+.ns-culture-inline-sources{font-size:.76rem;line-height:1.7}
+.ns-culture-inline-sources a{color:#285b49;text-underline-offset:3px}
+html[data-theme=dark] .ns-culture-inline-sources a{color:#b7d8bf}
 .ns-culture-evidence{margin:18px 0;padding:16px;border:1px solid #d1dbcb;border-radius:15px;background:#f7f8ef}
 .ns-culture-evidence>h4{margin:0 0 7px;color:#294c3b;font:600 1.13rem/1.3 Georgia,serif}
 .ns-culture-evidence .ns-culture-evidence-intro{margin:0 0 12px;color:#597061;font-size:.78rem;line-height:1.55}
@@ -203,6 +206,8 @@ html[data-theme=dark] .ns-culture-evidence-card blockquote p,html[data-theme=dar
 html[data-theme=dark] .ns-culture-evidence-card>a{color:#b7d8bf}
 
 .ns-culture-story-image{margin:12px 0 18px;padding:9px;border:1px solid #dce4d8;border-radius:14px;background:#f8f7ee}
+.ns-culture-story-image--inline{margin:20px 0 22px}
+.ns-culture-story-image--inline[hidden]{display:none}
 .ns-culture-story-image figure{margin:0}
 .ns-culture-story-image img{display:block;width:100%;max-height:440px;object-fit:contain;border-radius:9px;background:#eeeadd}
 .ns-culture-story-image figcaption{margin:8px 2px 0;color:#52675a;font-size:.7rem;line-height:1.55}
