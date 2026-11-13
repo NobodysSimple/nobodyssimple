@@ -13,6 +13,62 @@ export const WORLD_COUNTRY_DATA='data/culture-world-countries.geojson';
 export const SUBDIVISION_API='https://www.geoboundaries.org/api/current/gbOpen/';
 export const WORLD_MAP_BOUNDS='0 0 960 480';
 const e=value=>esc(String(value??''));
+const cultureImageCache=new Map();
+const commonsText=value=>{
+ const raw=String(value||'');
+ if(typeof DOMParser==='undefined')return raw.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+ return new DOMParser().parseFromString(raw,'text/html').body.textContent.replace(/\s+/g,' ').trim();
+};
+const commonsLicenseAllowed=(name,url)=>{
+ const label=String(name||'').trim();
+ if(/^(?:CC0|Public domain|PD(?:[-\s]|$))/i.test(label))return true;
+ if(!/^(?:CC BY(?:-SA)?\s|Creative Commons Attribution(?:-Share Alike)?\s)/i.test(label))return false;
+ return /^https:\/\/creativecommons\.org\/licenses\/(?:by|by-sa)\/[0-9.]+\/?$/i.test(String(url||''));
+};
+const commonsImageFor=async article=>{
+ if(cultureImageCache.has(article.id))return cultureImageCache.get(article.id);
+ const subject=String(article.title||'').split(/[:–—]/)[0].trim().replace(/^(?:the|a|an)\s+/i,'');
+ const queries=[subject+' '+String(article.place||''),subject].filter((q,i,all)=>q&&all.indexOf(q)===i);
+ for(const query of queries){
+  try{
+   const params=new URLSearchParams({action:'query',generator:'search',gsrsearch:query,gsrnamespace:'6',gsrlimit:'30',prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'1200',format:'json',origin:'*'});
+   const response=await fetch('https://commons.wikimedia.org/w/api.php?'+params.toString(),{headers:{Accept:'application/json'}});
+   if(!response.ok)continue;
+   const data=await response.json();
+   const pages=Object.values(data?.query?.pages||{});
+   for(const page of pages){
+    const info=page.imageinfo?.[0],meta=info?.extmetadata||{};
+    const license=commonsText(meta.LicenseShortName?.value||'');
+    const licenseUrl=commonsText(meta.LicenseUrl?.value||'');
+    const artist=commonsText(meta.Artist?.value||meta.Credit?.value||'');
+    const thumb=String(info?.thumburl||'');
+    if(!/^https:\/\/upload\.wikimedia\.org\//i.test(thumb)||!commonsLicenseAllowed(license,licenseUrl))continue;
+    if(!artist&&!/^(?:CC0|Public domain|PD(?:[-\s]|$))/i.test(license))continue;
+    const fileName=String(page.title||'File:Image').replace(/^File:/,'').replace(/_/g,' ');
+    const fileUrl='https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(fileName.replace(/ /g,'_'));
+    const description=commonsText(meta.ImageDescription?.value||'');
+    const result={thumb,fileName,fileUrl,artist,license,licenseUrl,description};
+    cultureImageCache.set(article.id,result);
+    return result;
+   }
+  }catch{}
+ }
+ cultureImageCache.set(article.id,null);
+ return null;
+};
+const renderCultureStoryImage=async(article,host)=>{
+ host.innerHTML='<p class="ns-culture-image-status">Finding a reusable image for this story…</p>';
+ const image=await commonsImageFor(article);
+ if(!host.isConnected||host.dataset.articleId!==article.id)return;
+ if(!image){
+  host.innerHTML='<p class="ns-culture-image-status">No image with a compatible reuse licence was found for this story.</p>';
+  return;
+ }
+ const licenseHref=/^https:\/\/creativecommons\.org\//i.test(image.licenseUrl)?image.licenseUrl:'https://commons.wikimedia.org/wiki/Commons:Licensing';
+ host.innerHTML='<figure><a href="'+e(image.fileUrl)+'" target="_blank" rel="noopener noreferrer"><img src="'+e(image.thumb)+'" alt="'+e(image.description||article.title)+'" loading="lazy" decoding="async"></a><figcaption><cite>'+e(image.fileName)+'</cite>'+(image.artist?' · by '+e(image.artist):'')+' · '+(image.licenseUrl?'<a href="'+e(licenseHref)+'" target="_blank" rel="noopener noreferrer">'+e(image.license)+'</a>':e(image.license))+' · <a href="'+e(image.fileUrl)+'" target="_blank" rel="noopener noreferrer">Wikimedia Commons file details ↗</a></figcaption></figure>';
+ const img=host.querySelector('img');
+ img?.addEventListener('error',()=>{if(host.isConnected)host.innerHTML='<p class="ns-culture-image-status">This image is no longer available. Open another story to try a fresh Commons search.</p>';},{once:true});
+};
 const point=coord=>[(Number(coord[0])+180)*(960/360),(90-Number(coord[1]))*(480/180)];
 const polys=g=>g?.type==='Polygon'?[g.coordinates]:g?.type==='MultiPolygon'?g.coordinates:[];
 const fmt=n=>Number(n).toFixed(2);
@@ -190,9 +246,11 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   const evidenceMarkup='<section class="ns-culture-evidence" aria-label="Local studies and cultural sources"><h4>Evidence from this place</h4><p class="ns-culture-evidence-intro">Local studies and community records are identified by source type, so the cultural account stays distinct from psychological findings.</p>'+investigation.evidence.map(item=>'<article class="ns-culture-evidence-card"><span class="ns-culture-evidence-kind">'+e(item.kind)+'</span><h5>'+e(item.title)+'</h5><p><strong>Method and setting.</strong> '+e(item.method)+'</p><p><strong>What it documents.</strong> '+e(item.finding)+'</p>'+(item.quote?'<blockquote><p>“'+e(item.quote)+'”</p><cite>'+e(item.quoteAttribution||item.citation)+'</cite></blockquote>':'')+'<a href="'+e(item.url)+'" target="_blank" rel="noopener noreferrer">Open source ↗</a><small>'+e(item.citation)+'</small></article>').join('')+'</section>';
   panel.innerHTML=identity+(localName&&!locallyRelevant?'<p class="ns-culture-region-note">Story scope: '+e(active.place)+'.</p>':'')+
    '<div class="ns-culture-story-head"><span>'+e(active.theme)+'</span><span>'+String(pos+1)+' / '+String(list.length)+'</span></div>'+
-   '<h3>'+e(active.title)+'</h3><p class="ns-culture-where">'+e(active.place)+'</p>'+investigationMarkup+evidenceMarkup+
+   '<h3>'+e(active.title)+'</h3><p class="ns-culture-where">'+e(active.place)+'</p><div class="ns-culture-story-image" data-culture-story-image data-article-id="'+e(active.id)+'" aria-live="polite"></div>'+investigationMarkup+evidenceMarkup+
    '<div class="ns-culture-story-nav"><button type="button" data-culture-step="-1" '+(list.length===1?'disabled':'')+'>← Previous</button><button type="button" data-culture-step="1" '+(list.length===1?'disabled':'')+'>Next story →</button></div>'+
    (list.length>1?'<details class="ns-culture-story-list"><summary>Browse '+list.length+' stories from this country</summary>'+list.map(articleCard).join('')+'</details>':'');
+  const imageHost=panel.querySelector('[data-culture-story-image]');
+  if(imageHost)void renderCultureStoryImage(active,imageHost);
  };
  const cancelRegions=()=>{generation++;if(abort)abort.abort();abort=null;};
  const cancelSub=()=>{subGeneration++;if(subAbort)subAbort.abort();subAbort=null;loadingSub=false;};
