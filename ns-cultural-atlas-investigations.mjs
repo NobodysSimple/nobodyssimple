@@ -34,9 +34,9 @@ const positiveReflection=(a)=>{
  if(!raw)return 'The psychological meaning begins with how people in this place describe and take part in the practice.';
  if(!hasDefensiveFraming(raw))return raw;
  const positive=raw
-  .replace(/,\\s*not only\\b[^.!?]*[.!?]?/i,'.')
-  .replace(/;\\s*(?:it|this|that) (?:is|does|should)\\b[^.!?]*[.!?]?/i,'.')
-  .replace(/,\\s*(?:not proof|not evidence|rather than)\\b[^.!?]*[.!?]?/i,'.')
+  .replace(/,\s*not only\b[^.!?]*[.!?]?/i,'.')
+  .replace(/;\s*(?:it|this|that) (?:is|does|should)\b[^.!?]*[.!?]?/i,'.')
+  .replace(/,\s*(?:not proof|not evidence|rather than)\b[^.!?]*[.!?]?/i,'.')
   .trim();
  if(!hasDefensiveFraming(positive)&&positive.length>22)return positive;
  const first=positive.split(/[;.!?]/)[0].trim().replace(/[, :]+$/,'');
@@ -52,7 +52,7 @@ const DISCUSSIONS={
 };
 const debateFor=a=>{
  const raw=String(a.body?.[2]||'').trim();
- const sentences=raw.split(/(?<=[.!?])\\s+/).map(x=>x.trim()).filter(Boolean);
+ const sentences=raw.split(/(?<=[.!?])\s+/).map(x=>x.trim()).filter(Boolean);
  const useful=sentences.filter(x=>!hasDefensiveFraming(x));
  if(useful.length)return useful.join(' ');
  return DISCUSSIONS[a.id]||('An open question in this record is how '+a.title.split(':')[0]+' changes across generations in '+a.place+', and what practitioners choose to carry forward.');
