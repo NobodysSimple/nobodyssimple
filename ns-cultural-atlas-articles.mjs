@@ -4,118 +4,10 @@
  * Every entry identifies a documentary source and a question for the reader.
  */
 const article=(id,country,title,theme,place,body,reflection,question,source,region='')=>Object.freeze({
- id,country,title,theme,place,body:Object.freeze(body.filter((p,index)=>index<2||!cautionaryParagraph(p))),psychology:body[1]||'',research:researchFor(theme,title,body),reflection,question,
+ id,country,title,theme,place,body:Object.freeze(body),psychology:body[1]||'',reflection,question,
  source:Object.freeze({label:source.includes('ich.unesco.org')?'UNESCO Intangible Cultural Heritage':source.includes('whc.unesco.org')?'UNESCO World Heritage Centre':source.includes('cornwall.gov.uk')?'Cornwall Council':source.includes('nls.uk')?'National Library of Scotland':source.includes('gov.wales')?'Welsh Government':source.includes('mbie.govt.nz')?'New Zealand Government':source.includes('cherokee.org')?'Cherokee Nation':source.includes('nps.gov')?'US National Park Service':'Documentary source',url:source}),region
 });
 
-const researchLenses=Object.freeze({
- ritual:Object.freeze({
-  heading:'Ritual, control and shared meaning',
-  explanation:'Ritual research separates the actions people repeat from the meaning they attach to them. A familiar sequence can organise attention and give a person an action to take during uncertainty; shared sequences also coordinate expectations and mark who is taking part. The exact effect depends on both form and interpretation.',
-  debate:"The studies point to more than one route: a repeated sequence can organise action when outcomes feel uncertain, while participation can also create a shared social world. The Diwali field study found stronger responses around the festival day, alongside diminishing returns from additional time investment and effects shaped by local conditions. That makes timing, social setting and the meaning attached to the sequence part of the mechanism.",
-  studies:Object.freeze([
-   Object.freeze({title:'The Psychology of Rituals: An Integrative Review and Process-Based Framework',citation:'Hobson et al. · Personality and Social Psychology Review (2018)',url:'https://doi.org/10.1177/1088868317734944',finding:'This review organizes research around emotion regulation, goal states and social connection. It explains how the physical structure of a ritual and the meaning a person gives it can work through different pathways.'}),
-   Object.freeze({title:'Rituals Alleviate Grieving for Loved Ones, Lovers, and Lotteries',citation:'Norton & Gino · Journal of Experimental Psychology: General (2014)',url:'https://pubmed.ncbi.nlm.nih.gov/23398180/',finding:'Across three experiments involving different kinds of loss, the authors found that ritual actions could reduce grief, with perceived control helping explain the effect. This offers a focused comparison for remembrance practices.'}),
-   Object.freeze({title:'Time Investments in Rituals Are Associated with Social Bonding, Affect and Subjective Health',citation:'Singh et al. · Philosophical Transactions of the Royal Society B (2020)',url:'https://doi.org/10.1098/rstb.2019.0430',finding:'A two-week longitudinal study of Diwali in two Indian communities found that social cohesion, affect and subjective health rose around the focal festival day. More time spent in ritual showed diminishing returns, and the authors highlight how local social conditions shape the experience.'})
-  ])
- }),
- synchrony:Object.freeze({
-  heading:'Synchrony, cooperation and group feeling',
-  explanation:'When people move or act in time, they must attend to a shared pace and adjust to one another. Laboratory and field research links synchrony with cooperation and social connection; studies also suggest that shared movement and a practice’s sacred or symbolic meaning may work together.',
-  debate:"Synchrony may matter because it aligns attention and action, because it signals a shared intention, or because it strengthens attachment between participants. Evidence that cooperation can rise without a detectable boost in positive emotion weighs against a simple “people feel good, then cooperate” account. Shared rhythm can bind insiders while also making group boundaries more visible.",
-  studies:Object.freeze([
-   Object.freeze({title:'To Be in Synchrony or Not? A Meta-analysis of Synchrony’s Effects',citation:'Mogan, Fischer & Bulbulia · Journal of Experimental Social Psychology (2017)',url:'https://doi.org/10.1016/j.jesp.2017.03.009',finding:'The meta-analysis combined 42 studies and 4,327 participants. Synchronous action had a medium positive effect on prosocial behaviour, small-to-medium effects on perceived bonding and social cognition, and a small effect on positive affect.'}),
-   Object.freeze({title:'How Do Rituals Affect Cooperation? An Experimental Field Study Comparing Nine Ritual Types',citation:'Fischer et al. · Human Nature (2013)',url:'https://doi.org/10.1007/s12110-013-9167-y',finding:'In a field comparison of nine naturally occurring rituals, synchronised movement was associated with more positive attitudes toward fellow participants. Rituals judged sacred were associated with higher contributions in a public-goods game; the authors propose perceived “oneness” as part of the pathway.'}),
-   Object.freeze({title:'Synchrony and Cooperation',citation:'Wiltermuth & Heath · Psychological Science (2009)',url:'https://doi.org/10.1111/j.1467-9280.2008.02253.x',finding:'Across three experiments, people who acted in synchrony cooperated more in later group economic tasks, including tasks requiring personal sacrifice. The effect did not require positive emotion, supporting social attachment as one possible pathway.'})
-  ])
- }),
- singing:Object.freeze({
-  heading:'Group singing and social bonds',
-  explanation:'Singing combines coordinated timing with attention to other voices. It can also produce a social bond quickly, before group members know much about one another. Research asks whether that effect comes from singing itself or from taking part in any valued group activity.',
-  debate:"The “ice-breaker” account suggests that singing can accelerate early closeness, not that it is uniquely powerful forever. In adult classes, other group activities caught up after the first months. Reviews also report possible gains in connection and confidence, while the studies vary in age, setting and design. Repertoire, language, who leads, and whether a person feels able to join can shape the experience.",
-  studies:Object.freeze([
-   Object.freeze({title:'The Ice-breaker Effect: Singing Mediates Fast Social Bonding',citation:'Pearce, Launay & Dunbar · Royal Society Open Science (2015)',url:'https://doi.org/10.1098/rsos.150221',finding:'New adult classes were followed for seven months. Singing groups reported faster early closeness than creative-writing or craft groups; by the third month, non-singing groups had caught up.'}),
-   Object.freeze({title:'A Systematic Review of Mental Health and Wellbeing Outcomes of Group Singing',citation:'Williams, Dingle & Clift · European Journal of Public Health (2018)',url:'https://doi.org/10.1093/eurpub/cky115',finding:'The review included 13 studies with 667 participants. Findings suggested improvements in wellbeing and belonging, while moderate-to-high risk of bias meant the authors considered the evidence promising rather than conclusive.'}),
-   Object.freeze({title:'The Effects of Group Singing on the Wellbeing and Psychosocial Outcomes of Children and Young People',citation:'Glew et al. · Arts & Health (2021)',url:'https://doi.org/10.1080/17533015.2020.1802604',finding:'This integrative review of 13 studies found qualitative evidence that group singing may support young people’s wellbeing through social connectedness and confidence. It extends the literature beyond adult choirs while leaving questions about which settings and participants benefit most.'})
-  ])
- }),
- meals:Object.freeze({
-  heading:'Shared meals, connection and wellbeing',
-  explanation:'A shared meal creates a repeated social setting: people coordinate time, attend to one another and share a common activity. Large surveys find links between eating with others and wellbeing. They cannot by themselves show whether meals improve wellbeing, whether wellbeing makes shared meals more likely, or whether both are shaped by other conditions.',
-  debate:"A shared meal, an invitation to share food and a meal imposed by a schedule are psychologically different events. The laboratory food-sharing study found that choosing whom to share with changed social judgments; involuntary sharing did not produce the same effect. Survey links between communal eating and wellbeing therefore need to be read alongside autonomy, relationship, access and the practical work of preparing food.",
-  studies:Object.freeze([
-   Object.freeze({title:'Breaking Bread: The Functions of Social Eating',citation:'Dunbar · Adaptive Human Behavior and Physiology (2017)',url:'https://doi.org/10.1007/s40750-017-0061-4',finding:'In a UK national survey, more frequent social eating was associated with greater happiness, life satisfaction, trust, community engagement and access to dependable friends.'}),
-   Object.freeze({title:'Sharing Meals Is Associated with Greater Wellbeing',citation:'De Neve et al. · Scientific Reports (2026)',url:'https://doi.org/10.1038/s41598-026-46771-9',finding:'Survey data from 142 countries and territories linked shared meals with higher wellbeing. US time-use data also connected eating with others to happier, less stressful days. The authors identify causal direction as an open question.'}),
-   Object.freeze({title:'Food Sharing With Choice: Influence on Social Evaluation',citation:'Wang et al. · Frontiers in Psychology (2020)',url:'https://doi.org/10.3389/fpsyg.2020.02070',finding:'In a survey and a laboratory experiment with 90 young Chinese women, voluntary bread-sharing with a chosen partner led participants to judge that partner as more willing to help than a non-sharing person. Sharing arranged by an experimenter or offered without choice did not show the same effect.'})
-  ])
- }),
- memory:Object.freeze({
-  heading:'Stories, memory and identity',
-  explanation:'A story gives events an order and a point of view. Repeating it can carry knowledge across generations, while retelling lets people connect inherited memory to present concerns. Psychological research treats collective memory as something people actively shape through stories, objects and public practices.',
-  debate:"Life stories can help a person organise experience, but the psychological value of narrative does not mean that every community holds one agreed account. Stories are reconstructed, influenced by current identity and sometimes contested by memories that official accounts leave out. The research links some narrative themes with wellbeing, but treats causal direction and broad cultural variation as open questions.",
-  studies:Object.freeze([
-   Object.freeze({title:'A Framework for Vicarious and Collective Memory, Future Projections and Narrative Identity',citation:'Thomsen et al. · Nature Reviews Psychology (2025)',url:'https://doi.org/10.1038/s44159-025-00429-x',finding:'This perspective explains how memories of other people’s experiences and shared community events can inform group identity and ideas about the future, alongside personal memory.'}),
-   Object.freeze({title:'Narratives and Collective Memory',citation:'Lopez, van Alphen & Carmona · Current Opinion in Psychology (2025)',url:'https://doi.org/10.1016/j.copsyc.2025.102087',finding:'The review treats narratives as active tools for remembering. It examines how shared stories can be adapted, contested and joined by counter-narratives rather than simply passed on unchanged.'}),
-   Object.freeze({title:'Narrative Identity',citation:'McAdams & McLean · Current Directions in Psychological Science (2013)',url:'https://doi.org/10.1177/0963721413475622',finding:'This review describes narrative identity as an evolving life story connecting reconstructed past and imagined future. Themes of agency, exploration and redemptive meaning are associated with wellbeing and maturity, while the authors call for stronger causal evidence and closer study of cultural context.'})
-  ])
- }),
- learning:Object.freeze({
-  heading:'Learning through participation',
-  explanation:'A craft or performance can teach through watching, listening, trying a step and adjusting alongside an experienced person. This form of learning makes the social arrangement part of the lesson: who may observe, when they can contribute and how responsibility grows all shape what is learned.',
-  debate:"Learning by watching and pitching in is not the absence of teaching; it shifts attention to how contribution, observation and responsibility are organised. Formal instruction and participation can coexist. Who is invited to observe, when a learner may try a task and how correction is offered can shape both skill and belonging. These arrangements vary within communities and across generations.",
-  studies:Object.freeze([
-   Object.freeze({title:'Firsthand Learning Through Intent Participation',citation:'Rogoff et al. · Annual Review of Psychology (2003)',url:'https://doi.org/10.1146/annurev.psych.54.101601.145118',finding:'This review describes learning through attentive observation and contribution within shared activities. It compares participation structures across communities and shows why learning cannot be judged only by whether an adult gives a formal lesson.'}),
-   Object.freeze({title:'The Social Function of Imitation in Development',citation:'Over · Annual Review of Developmental Psychology (2020)',url:'https://doi.org/10.1146/annurev-devpsych-033020-024051',finding:'The review finds that imitation can support affiliation as well as skill learning. Children may copy people they want to connect with, while group conventions and social pressure also shape what gets copied.'}),
-   Object.freeze({title:'Culture and Participation: A Paradigm Shift',citation:'Rogoff · Current Opinion in Psychology (2016)',url:'https://doi.org/10.1016/j.copsyc.2015.12.002',finding:'Rogoff argues for studying culture as ways of life and participation across generations, rather than as static group characteristics. The review describes Learning by Observing and Pitching In as a pattern documented in some Indigenous and Indigenous-heritage communities of the Americas.'})
-  ])
- }),
- identity:Object.freeze({
-  heading:'Belonging and collective identity',
-  explanation:'Psychology distinguishes a person’s own sense of membership from the shared story and symbols through which a group describes itself. A dance, garment, language or gathering can make membership visible and give people a way to enact it. People within one community can still attach different meanings to the same practice.',
-  debate:"Belonging is not only the number of relationships someone has; the identity attached to a group can supply shared meaning, support and a sense of efficacy. The same membership can also carry status rules or exclusion, and individuals may hold several memberships at once. Intervention research makes group connection a plausible pathway, but a small pilot cannot stand in for every community or form of belonging.",
-  studies:Object.freeze([
-   Object.freeze({title:'A Sociopsychological Conception of Collective Identity',citation:'David & Bar-Tal · Personality and Social Psychology Review (2009)',url:'https://doi.org/10.1177/1088868309344412',finding:'The authors separate individual recognition and experience of belonging from a group’s shared awareness of itself. This distinction helps explain why one public symbol can matter differently to different people.'}),
-   Object.freeze({title:'Social Identity Makes Group-based Social Connection Possible',citation:'Haslam et al. · British Journal of Social Psychology (2021)',url:'https://pubmed.ncbi.nlm.nih.gov/34403958/',finding:'This review describes how psychologically meaningful group memberships can provide collective meaning, purpose, support and a sense of efficacy, linking belonging with mental health.'}),
-   Object.freeze({title:'Groups 4 Health: A Social-identity Intervention to Strengthen Group Membership and Mental Health',citation:'Haslam et al. · Journal of Affective Disorders (2016)',url:'https://doi.org/10.1016/j.jad.2016.01.010',finding:'A non-randomised pilot with socially isolated young adults found improved mental health, wellbeing and connectedness after a five-module intervention; change was associated with stronger identification with multiple groups. The authors describe this as preliminary evidence requiring randomized trials and broader populations.'})
-  ])
- }),
- clothing:Object.freeze({
-  heading:'Dress, symbols and the self',
-  explanation:'Clothing can carry a public meaning that a wearer may accept, adapt or reject. Research on “enclothed cognition” tests whether clothing’s symbolism changes the wearer’s thoughts or actions. The evidence has improved in newer studies, while early results raised replication concerns; the effect depends on what a garment means in its setting.',
-  debate:"A garment can affect the wearer through the meaning they attach to it, and through how other people respond. This makes clothing a social signal as well as a sensory object. The original lab findings and later replication work leave a more specific question than “does clothing change cognition?”: which meanings, contexts and behaviours produce an effect that can be reproduced?",
-  studies:Object.freeze([
-   Object.freeze({title:'Evaluating the Evidence for Enclothed Cognition: Z-Curve and Meta-Analyses',citation:'Horton, Adam & Galinsky · Personality and Social Psychology Bulletin (2025)',url:'https://doi.org/10.1177/01461672231182478',finding:'The authors analysed 105 effects from 40 studies. Their review raised concerns about early findings but found evidential value in studies published after 2015, supporting a qualified version of the idea that clothing symbolism can influence the wearer.'}),
-   Object.freeze({title:'An Old Task in New Clothes: A Preregistered Direct Replication Attempt',citation:'Lobel et al. · Journal of Experimental Social Psychology (2019)',url:'https://doi.org/10.1016/j.jesp.2018.10.002',finding:'A larger preregistered replication did not reproduce the original doctor’s-coat effect on Stroop performance. This debate is a reminder to distinguish the social meaning of clothing from claims about reliable changes in core cognitive performance.'}),
-   Object.freeze({title:'Enclothed Cognition',citation:'Adam & Galinsky · Journal of Experimental Social Psychology (2012)',url:'https://doi.org/10.1016/j.jesp.2012.02.008',finding:'Across experiments, the authors reported that wearing a lab coat associated with careful attention improved performance on an attention task when participants wore it and understood its symbolic meaning. Later replication work did not reproduce the original effect, which is why the broader claim remains debated.'})
-  ])
- }),
- justice:Object.freeze({
-  heading:'Justice, voice and repair',
-  explanation:'Repair processes focus attention on what happened to someone, how the harm changed their life and what response could address it. The psychological questions include whether people have a meaningful voice, whether responsibility is acknowledged and whether any repair is safe and fair.',
-  debate:"Restorative processes are often explained through two linked dynamics: a person harmed gets room to describe the impact, and the person responsible is asked to face it and respond. The qualitative synthesis found humanization, emotion, communication and support at the centre of participants’ accounts. The unresolved question is how these dynamics operate when power is unequal, participation is constrained or the promised repair does not follow.",
-  studies:Object.freeze([
-   Object.freeze({title:'The Psychological Impact of Restorative Justice Practices on Victims of Crimes',citation:'da Silva et al. · Trauma, Violence, & Abuse (2023)',url:'https://doi.org/10.1177/15248380221082085',finding:'This systematic review gathered studies of victims who took part in restorative practices. Reports included empowerment, social support and closure, while the underlying studies varied in design and quality.'}),
-   Object.freeze({title:'The Social Psychology of Justice Repair',citation:'Annual Review of Psychology (2025)',url:'https://pubmed.ncbi.nlm.nih.gov/39378290/',finding:'This review examines the psychological needs people have after injustice from victim, offender and observer perspectives, helping explain why voice, recognition and accountability matter in repair.'}),
-   Object.freeze({title:'How Does Restorative Justice Work? A Qualitative Metasynthesis',citation:'Suzuki & Yuan · Criminal Justice and Behavior (2021)',url:'https://doi.org/10.1177/0093854821994622',finding:'Across 26 studies, the authors identified three themes: humanization and learning through emotion, support networks and communication, and a potentially life-changing journey toward healing. The synthesis explains reported processes and conditions; it is not a single estimate of effectiveness.'})
-  ])
- })
-});
-const researchFor=(theme,title,body)=>{
- const text=(theme+' '+title+' '+body.join(' ')).toLowerCase();
- const lenses=[];
- const add=key=>{if(lenses.length<3&&!lenses.includes(key))lenses.push(key);};
- if(/meal|food|coffee|bread|soup|kimchi|kimjang|culinary|hospitality/.test(text))add('meals');
- if(/clothing|garment|textile|kebaya|dress|wear|batik|kente/.test(text))add('clothing');
- if(/sing|song|music|dance|drum|rhythm|choir|performance|capoeira|tango|flamenco|reggae/.test(text)){add('synchrony');if(/sing|song|choir|voice/.test(text))add('singing');}
- if(/story|memory|narrative|epic|language|history|oral|poetry|archive/.test(text))add('memory');
- if(/apprentice|learn|learning|craft|skill|weav|making|maker|knowledge|teaching|transmi|carving|painting|calligraphy/.test(text))add('learning');
- if(/law|justice|accountab|reconcil|repair|grievance|governance|conflict/.test(text))add('justice');
- if(/ritual|ceremon|festival|pilgrim|vow|grief|remembrance|new year|feast|religious|spiritual/.test(text))add('ritual');
- if(/identity|belong|cooperation|solidarity|community|collective|trust|friendship|care/.test(theme.toLowerCase()+' '+title.toLowerCase()))add('identity');
- if(!lenses.length)add('identity');
- return Object.freeze(lenses.map(key=>researchLenses[key]));
-};
-const cautionaryParagraph=p=>/\b(?:not a (?:generic|universal|clinical|medical|national|general|wellness|treatment)|not a claim about|not a template|does not mean|does not imply|should not be (?:treated|reduced|copied)|there is no single|not every|not everyone|does not turn)\b/i.test(p);
 export const CULTURE_ARTICLES=Object.freeze([
  article('washoku','JPN','Washoku: how a meal can hold memory','Ritual & belonging','Japan',
  [
@@ -491,12 +383,12 @@ export const CULTURE_ARTICLES=Object.freeze([
   "UNESCO records the Kankurang as an initiatory rite practised in Manding communities across parts of Senegal and The Gambia. It combines distinctive masked appearances, community roles and knowledge transmitted within particular social settings.",
   "A public observer may see spectacle; participants may understand responsibilities and spiritual meanings governed by rules about who may know and do what. Those differences warn against assuming every visible symbol is available for outside reinterpretation.",
   "UNESCO also records pressures on sacred spaces and transmission. The practice raises serious questions about rights, safeguarding and changing norms, rather than offering a template to imitate."
- ],"Understanding a ritual requires attention to its custodians, social rules and contested changes.","When should curiosity give way to respect for a community's decision not to share everything?","https://ich.unesco.org/en/RL/the-cultural-space-of-the-yaaral-and-deegal-00143","Casamance"),
+ ],"Understanding a ritual requires attention to its custodians, social rules and contested changes.","When should curiosity give way to respect for a community's decision not to share everything?","https://ich.unesco.org/en/RL/kankurang-manding-initiatory-rite-00143","Casamance"),
  article("kankurang-gambia","GMB","Kankurang across a border: a shared Manding heritage","Belonging & borders","Manding communities, The Gambia",[
   "The Kankurang tradition is documented by UNESCO as shared between Manding communities in The Gambia and Senegal. Its stories and practices do not stop neatly at the modern national boundary.",
   "The example shows why cultural maps and political maps answer different questions. A border may organise government, but kinship, language and ritual histories can follow other routes.",
   "Recognising shared heritage should not suggest that all Manding communities practise the rite identically. Particular custodians, restrictions and local histories determine how it is maintained."
- ],"The lived geography of culture can cross the lines used to draw a state.","What part of your family's story crosses a border that a map treats as decisive?","https://ich.unesco.org/en/RL/the-cultural-space-of-the-yaaral-and-deegal-00143"),
+ ],"The lived geography of culture can cross the lines used to draw a state.","What part of your family's story crosses a border that a map treats as decisive?","https://ich.unesco.org/en/RL/kankurang-manding-initiatory-rite-00143"),
  article("mongolian-calligraphy","MNG","Mongolian calligraphy: when a writing system needs teachers","Language & apprenticeship","Mongolia",[
   "UNESCO describes calligraphy in the classical Mongolian script as a demanding artistic practice transmitted through long periods of mentoring. Letters and strokes are used in invitations, correspondence and other forms of public and private writing.",
   "A script can carry practical communication and identity at the same time. Continuing a demanding craft requires more than admiration for its beauty: people need teachers, time and opportunities to practise.",
@@ -592,11 +484,11 @@ export const CULTURE_ARTICLES=Object.freeze([
   'Psychologically, a shared performance can give tension boundaries: people meet through agreed roles, rules and timing. It offers a way to recognise difference while creating a common event that neither group can stage alone.',
   'Sebeïba is a specific Tuareg tradition with sacred and local meaning. It should not be reduced to a general conflict-resolution exercise or copied without the community’s consent.'
  ],'Shared rules can create a setting where groups encounter one another without erasing difference.','What kind of shared activity might make cooperation possible when trust is low?','https://ich.unesco.org/en/RL/ritual-and-ceremonies-of-sebeiba-in-the-oasis-of-djanet-algeria-00665'),
- article('khidr-feast','IRN','The Khidr Elias feast: vows, food and shared belonging','Ritual & social ties','Communities practising the Khidr Elias feast in Iran',[
-  'The Khidr Elias feast brings people together in a religious tradition that includes vows, shared food and dance. UNESCO notes that identification with the practice has contributed to social cohesion among practising communities.',
-  'Psychologically, a shared ritual can connect personal hopes with group recognition. People make commitments in a setting where others witness them, and the meal creates time for social contact around those commitments.',
-  'The feast has religious meanings that belong to its practitioners. This account does not treat vows as a psychological intervention or assume that every community member relates to the tradition in the same way.'
- ],'Ritual can give personal commitments a social setting and shared memory.','Which hopes or commitments would you want trusted people to witness?','https://ich.unesco.org/en/RL/khidr-elias-feast-and-its-vows-01159'),
+ article('khidr-feast','IRQ','The Khidr Elias feast: vows, food and shared belonging','Ritual & social ties','Central Iraq, communities along the Tigris',[
+  'The Khidr Elias feast brings people together in a religious tradition that includes vows, shared food and dance. UNESCO documents the practice among communities along the Tigris in central Iraq.',
+  'A shared ritual connects personal commitments with group recognition. People make vows in a setting where others can witness them, and shared food creates time for those commitments to be discussed and remembered.',
+  'The feast’s religious meanings belong to the communities who practise it. This account follows the local description of the event and its social setting.'
+ ],'The feast gives personal commitments a social setting and shared memory.','Which hopes or commitments would you want trusted people to witness?','https://ich.unesco.org/en/RL/khidr-elias-feast-and-its-vows-01159'),
  article('visoko-singing','BGR','Visoko singing: a voice learned in a village choir','Identity & group learning','Dolen and Satovcha, Bulgaria',[
   'Visoko multipart singing is a vocal tradition maintained by singing groups in the Bulgarian villages of Dolen and Satovcha. UNESCO describes it as an important marker of local identity.',
   'Psychologically, group singing requires listening and adjustment: each voice contributes while responding to others. Repeated practice can turn membership into a skill people enact together, rather than an abstract label.',
@@ -637,12 +529,12 @@ export const CULTURE_ARTICLES=Object.freeze([
   'Psychologically, adornment can be a social act as well as a personal choice. The time spent preparing and applying henna can create conversation, attention and recognition around an important life event.',
   'There is no single regional henna practice. Ingredients, designs, meanings and participation differ, and some communities understand henna as sacred. This shared listing should not flatten those differences or invite copying restricted designs.'
  ],'Careful attention to appearance can also be a way of marking relationships and life events.','Which small act of preparation helps you feel seen or supported during an important moment?','https://ich.unesco.org/en/RL/henna-rituals-aesthetic-and-social-practices-02116'),
- article('nowruz',['AFG','AZE','IND','IRN','IRQ','KAZ','KGZ','PAK','TJK','TKM','TUR','UZB'],'Nowruz: a new year made through renewal and return','Renewal & continuity','Communities celebrating Nowruz across Central and West Asia',[
+ article('nowruz','IRN','Nowruz: a new year made through renewal and return','Renewal & continuity','Communities celebrating Nowruz across Central and West Asia',[
   'Nowruz is a spring new-year tradition shared across many countries and communities, with names and customs that vary by language and place. UNESCO describes it as a time associated with renewal, family visits, food and public celebration.',
   'Psychologically, a calendar ritual can make change easier to notice. A shared date offers a prompt to reconnect, remember what has passed and choose what to carry into the next season.',
   'Nowruz is not one uniform celebration, and the meaning of the new year differs among its practitioners. This story treats renewal as a question raised by the tradition, not a fixed belief held by everyone in the region.'
  ],'A shared marker in time can help people reflect, reconnect and begin again.','What would you like to carry forward, and what are you ready to leave behind?','https://ich.unesco.org/en/RL/nowruz-02097'),
- article('kebaya',['BRN','IDN','MYS','SGP','THA'],'Kebaya: clothing, identity and changing meanings','Identity & expression','Kebaya traditions across Southeast Asia',[
+ article('kebaya','IDN','Kebaya: clothing, identity and changing meanings','Identity & expression','Kebaya traditions across Southeast Asia',[
   'Kebaya is a garment with related traditions across Brunei Darussalam, Indonesia, Malaysia, Singapore and Thailand. UNESCO describes knowledge, skills and social practices connected with making, wearing and transmitting it.',
   'Psychologically, clothing can help people negotiate identity between personal choice and social expectation. A garment may communicate belonging, memory or occasion, while each wearer can interpret that meaning differently.',
   'Kebaya styles and meanings vary across communities and generations. The point is not that clothing reveals a person’s inner self, but that it can become one resource people use to express and negotiate identity.'
