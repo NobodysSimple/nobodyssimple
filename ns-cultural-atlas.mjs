@@ -39,7 +39,7 @@ const commonsImageFor=async article=>{
    for(const page of pages){
     const info=page.imageinfo?.[0],meta=info?.extmetadata||{};
     const license=commonsText(meta.LicenseShortName?.value||'');
-    const licenseUrl=commonsText(meta.LicenseUrl?.value||'');
+    const licenseUrl=commonsText(meta.LicenseUrl?.value||'').replace(/^http:\/\/creativecommons\.org\//i,'https://creativecommons.org/');
     const artist=commonsText(meta.Artist?.value||meta.Credit?.value||'');
     const thumb=String(info?.thumburl||'');
     if(!/^https:\/\/upload\.wikimedia\.org\//i.test(thumb)||!commonsLicenseAllowed(license,licenseUrl))continue;
