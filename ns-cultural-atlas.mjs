@@ -54,45 +54,89 @@ const wikipediaLeadPage=async article=>{
  }catch{}
  return null;
 };
+const commonsImageFromPage=(page,wikiPage)=>{
+ const info=page?.imageinfo?.[0],meta=info?.extmetadata||{};
+ const license=commonsText(meta.LicenseShortName?.value||'');
+ const licenseUrl=commonsText(meta.LicenseUrl?.value||'').replace(/^http:\/\/creativecommons\.org\//i,'https://creativecommons.org/');
+ const artist=commonsText(meta.Artist?.value||meta.Credit?.value||'');
+ const thumb=String(info?.thumburl||'');
+ if(!/^https:\/\/upload\.wikimedia\.org\//i.test(thumb)||!commonsLicenseAllowed(license,licenseUrl))return null;
+ if(!artist&&!/^(?:CC0|Public domain|PD(?:[-\s]|$))/i.test(license))return null;
+ const fileName=String(page.title||'File:Image').replace(/^File:/,'').replace(/_/g,' ');
+ const fileUrl='https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(fileName.replace(/ /g,'_'));
+ return {thumb,fileName,fileUrl,artist,license,licenseUrl,description:commonsText(meta.ImageDescription?.value||''),wikiTitle:wikiPage?.title||'',wikiUrl:wikiPage?.url||''};
+};
 const commonsFileMetadata=async(fileTitle,wikiPage)=>{
  const params=new URLSearchParams({action:'query',titles:'File:'+fileTitle,prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'1200',format:'json',origin:'*'});
  try{
   const response=await fetch('https://commons.wikimedia.org/w/api.php?'+params.toString(),{headers:{Accept:'application/json'}});
   if(!response.ok)return null;
   const data=await response.json(),page=Object.values(data?.query?.pages||{})[0];
-  const info=page?.imageinfo?.[0],meta=info?.extmetadata||{};
-  const license=commonsText(meta.LicenseShortName?.value||'');
-  const licenseUrl=commonsText(meta.LicenseUrl?.value||'').replace(/^http:\/\/creativecommons\.org\//i,'https://creativecommons.org/');
-  const artist=commonsText(meta.Artist?.value||meta.Credit?.value||'');
-  const thumb=String(info?.thumburl||'');
-  if(!/^https:\/\/upload\.wikimedia\.org\//i.test(thumb)||!commonsLicenseAllowed(license,licenseUrl))return null;
-  if(!artist&&!/^(?:CC0|Public domain|PD(?:[-\s]|$))/i.test(license))return null;
-  const fileName=String(page.title||'File:'+fileTitle).replace(/^File:/,'').replace(/_/g,' ');
-  const fileUrl='https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(fileName.replace(/ /g,'_'));
-  return {thumb,fileName,fileUrl,artist,license,licenseUrl,description:commonsText(meta.ImageDescription?.value||''),wikiTitle:wikiPage?.title||'',wikiUrl:wikiPage?.url||''};
+  return commonsImageFromPage(page,wikiPage);
  }catch{return null;}
+};
+const IMAGE_CONTEXT_TERMS={
+ 'henna-rituals':['wedding','ceremony','mehndi','body art','dye','pattern','ritual'],
+ 'uae-henna':['wedding','ceremony','mehndi','body art','ritual','adornment']
+};
+const normalizedImageText=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+const commonsSearchImage=async(article,country,wikiPage)=>{
+ const topic=wikipediaSearchTerm(article);
+ if(!topic)return null;
+ const countryName=String(country?.name||'');
+ const queries=[topic+' '+countryName,topic].filter((value,index,all)=>value&&all.indexOf(value)===index);
+ const topicTokens=wikipediaTopicTokens(article);
+ const contextTerms=IMAGE_CONTEXT_TERMS[article.id]||[];
+ for(const query of queries){
+  try{
+   const params=new URLSearchParams({action:'query',generator:'search',gsrsearch:query,gsrnamespace:'6',gsrlimit:'40',prop:'imageinfo|categories',iiprop:'url|extmetadata',iiurlwidth:'1200',cllimit:'30',format:'json',origin:'*'});
+   const response=await fetch('https://commons.wikimedia.org/w/api.php?'+params.toString(),{headers:{Accept:'application/json'}});
+   if(!response.ok)continue;
+   const data=await response.json();
+   const pages=Object.values(data?.query?.pages||{}).sort((a,b)=>(a.index||0)-(b.index||0));
+   const candidates=[];
+   for(const page of pages){
+    const image=commonsImageFromPage(page,wikiPage);
+    if(!image)continue;
+    const titleText=normalizedImageText(image.fileName);
+    const supportingText=normalizedImageText(image.description+' '+(page.categories||[]).map(category=>category.title||'').join(' '));
+    const searchable=titleText+' '+supportingText;
+    const topicHits=topicTokens.filter(token=>searchable.includes(token)||searchable.includes(token.replace(/s$/,''))).length;
+    const contextHits=contextTerms.filter(term=>supportingText.includes(normalizedImageText(term))).length;
+    if(!topicHits||contextTerms.length&&!contextHits)continue;
+    const countryTokens=normalizedImageText(countryName).split(' ').filter(token=>token.length>2&&!WIKIPEDIA_STOPWORDS.has(token));
+    const placeHits=countryTokens.filter(token=>searchable.includes(token)).length;
+    const titleHits=topicTokens.filter(token=>titleText.includes(token)||titleText.includes(token.replace(/s$/,''))).length;
+    candidates.push({image,score:topicHits*3+contextHits*2+placeHits+titleHits,index:Number(page.index)||0});
+   }
+   candidates.sort((a,b)=>b.score-a.score||a.index-b.index);
+   if(candidates.length)return candidates[0].image;
+  }catch{}
+ }
+ return null;
 };
 const commonsImageFor=async(article,country)=>{
  const cacheKey=article.id+'|'+String(country?.code||'');
  if(cultureImageCache.has(cacheKey))return cultureImageCache.get(cacheKey);
- let wikiPage=null,fileTitle='';
+ let wikiPage=null,result=null;
  if(article.id==='uae-henna'&&country?.code==='ARE'){
   wikiPage={title:'Henna',url:'https://en.wikipedia.org/wiki/Henna'};
-  fileTitle='Receiving henna; a symbol of culture being shared to you.jpg';
- }else{
-  wikiPage=await wikipediaLeadPage(article);
-  fileTitle=wikiPage?.file||'';
+  result=await commonsFileMetadata('Receiving henna; a symbol of culture being shared to you.jpg',wikiPage);
  }
- const result=fileTitle?await commonsFileMetadata(fileTitle,wikiPage):null;
+ if(!result){
+  wikiPage=await wikipediaLeadPage(article);
+  if(wikiPage?.file)result=await commonsFileMetadata(wikiPage.file,wikiPage);
+ }
+ if(!result)result=await commonsSearchImage(article,country,wikiPage);
  cultureImageCache.set(cacheKey,result);
  return result;
 };
 const renderCultureStoryImage=async(article,host,country)=>{
- host.innerHTML='<p class="ns-culture-image-status">Finding an image from the matching Wikipedia topic with a reusable licence…</p>';
+ host.innerHTML='<p class="ns-culture-image-status">Finding a topic-matched image with a reusable licence…</p>';
  const image=await commonsImageFor(article,country);
  if(!host.isConnected||host.dataset.articleId!==article.id)return;
  if(!image){
-  host.innerHTML='<p class="ns-culture-image-status">No matching freely reusable image was available for this topic.</p>';
+  host.innerHTML='<p class="ns-culture-image-status">No topic-matched image with a reusable licence was available.</p>';
   return;
  }
  const licenseHref=/^https:\/\/creativecommons\.org\//i.test(image.licenseUrl)?image.licenseUrl:'https://commons.wikimedia.org/wiki/Commons:Licensing';
