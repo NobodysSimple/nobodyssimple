@@ -33,15 +33,29 @@ const positiveReflection=(a)=>{
  const raw=String(a.reflection||'').trim();
  if(!raw)return 'The psychological meaning begins with how people in this place describe and take part in the practice.';
  if(!hasDefensiveFraming(raw))return raw;
- const first=raw.split(/[;.!?]/)[0].trim().replace(/[, :]+$/,'');
+ const positive=raw
+  .replace(/,\\s*not only\\b[^.!?]*[.!?]?/i,'.')
+  .replace(/;\\s*(?:it|this|that) (?:is|does|should)\\b[^.!?]*[.!?]?/i,'.')
+  .replace(/,\\s*(?:not proof|not evidence|rather than)\\b[^.!?]*[.!?]?/i,'.')
+  .trim();
+ if(!hasDefensiveFraming(positive)&&positive.length>22)return positive;
+ const first=positive.split(/[;.!?]/)[0].trim().replace(/[, :]+$/,'');
  return first.length>22?first+'.':'The practice makes '+lensFor(a)[0]+' visible in a specific local setting.';
+};
+const DISCUSSIONS={
+ kimjang:'A useful question sits inside reciprocity: when seasonal food work is shared, does each contribution feel like care, an expectation, or both?',
+ sauna:'The Finnish setting makes rest a social practice. A psychological question is how familiar routines and shared expectations create room for a pause.',
+ pizzaiuolo:'The apprenticeship raises a question about expertise: which parts of skilled handwork can be explained, and which are learned through watching and correction?',
+ petrykivka:'A motif can hold a local visual vocabulary. The detail worth following is how makers and learners explain that vocabulary across generations.',
+ mariachi:'Mariachi’s changing sound raises a question of authorship: how do performers carry inherited forms into new audiences and settings?',
+ 'light-rum-masters':'The craft raises a question about sensory expertise: how do master blenders describe the judgements built through years of practice?'
 };
 const debateFor=a=>{
  const raw=String(a.body?.[2]||'').trim();
- const sentences=raw.split(/(?<=[.!?])\s+/).map(x=>x.trim()).filter(Boolean);
+ const sentences=raw.split(/(?<=[.!?])\\s+/).map(x=>x.trim()).filter(Boolean);
  const useful=sentences.filter(x=>!hasDefensiveFraming(x));
  if(useful.length)return useful.join(' ');
- return positiveReflection(a);
+ return DISCUSSIONS[a.id]||('An open question in this record is how '+a.title.split(':')[0]+' changes across generations in '+a.place+', and what practitioners choose to carry forward.');
 };
 const mechanismFor=a=>{
  const t=(a.theme+' '+a.title).toLowerCase(),place=a.place,name=a.title.split(':')[0];
