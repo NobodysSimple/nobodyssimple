@@ -145,7 +145,7 @@ const commonsImageFromPage=(page,wikiPage,article,country,categories=[],curated=
  const license=commonsText(meta.LicenseShortName?.value||'');
  const licenseUrl=commonsText(meta.LicenseUrl?.value||'').replace(/^http:\/\/creativecommons\.org\//i,'https://creativecommons.org/');
  const artist=commonsText(meta.Artist?.value||meta.Credit?.value||'');
- const thumb=String(info?.thumburl||'');
+ const thumb=String(info?.thumburl||info?.url||'');
  if(!/^https:\/\/upload\.wikimedia\.org\//i.test(thumb)||!commonsLicenseAllowed(license,licenseUrl))return null;
  if(!artist&&!/^(?:CC0|Public domain|PD(?:[-\s]|$))/i.test(license))return null;
  const fileName=String(page.title||'File:Image').replace(/^File:/,'').replace(/_/g,' ');
