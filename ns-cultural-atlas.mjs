@@ -45,7 +45,8 @@ const wikipediaLeadPage=async article=>{
   const pages=Object.values(data?.query?.pages||{}).sort((a,b)=>(a.index||0)-(b.index||0));
   for(const page of pages){
    const title=String(page.title||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'');
-   const matched=tokens.filter(token=>title.includes(token)||title.includes(token.replace(/s$/,'')));
+   const titleTokens=new Set(title.normalize('NFKD').replace(/[\u0300-\u036f]/g,'').split(/[^a-z0-9]+/).filter(Boolean));
+   const matched=tokens.filter(token=>titleTokens.has(token)||(token.length>4&&token.endsWith('s')&&titleTokens.has(token.slice(0,-1))));
    const exactOverride=WIKIPEDIA_PAGE_OVERRIDES[article.id];
    if(exactOverride&&page.title.toLowerCase()!==exactOverride.toLowerCase())continue;
    if(!exactOverride&&tokens.length&&!matched.length)continue;
@@ -54,7 +55,91 @@ const wikipediaLeadPage=async article=>{
  }catch{}
  return null;
 };
-const commonsImageFromPage=(page,wikiPage)=>{
+const IMAGE_CONTEXT_TYPES=new Set('dance dances dancing painting paintings drawing drawings weaving woven textile textiles cloth meal food cuisine dish soup coffee tea beer bread cooking music song songs singing drum drumming mask masks theatre theater puppet puppets festival festivals ceremony ceremonies ritual rituals pilgrimage fishing sport competition calligraphy language sauna yoga harping carnival brewing performance storytelling epic craft crafts carving architecture henna adornment'.split(' '));
+const IMAGE_CONTEXT_ALIASES={
+ dance:['dance','dances','dancing','dancer','dancers'],
+ painting:['painting','paintings'],
+ drawing:['drawing','drawings'],
+ weaving:['weaving','woven','weaver','weavers','textile','textiles'],
+ textile:['textile','textiles','cloth','clothing','weaving'],
+ meal:['meal','food','cuisine','dish','cooking'],
+ food:['food','cuisine','dish','meal','cooking'],
+ soup:['soup'],
+ coffee:['coffee'],
+ tea:['tea'],
+ beer:['beer','brewing'],
+ bread:['bread','baking'],
+ music:['music','musician','musicians','song','singing'],
+ song:['song','songs','singing','music'],
+ singing:['singing','song','songs','music'],
+ drum:['drum','drums','drumming'],
+ mask:['mask','masks','masked'],
+ theatre:['theatre','theater','performance'],
+ theater:['theater','theatre','performance'],
+ puppet:['puppet','puppets','puppetry'],
+ festival:['festival','festivals','celebration'],
+ ceremony:['ceremony','ceremonies','ritual'],
+ ritual:['ritual','rituals','ceremony','ceremonies'],
+ pilgrimage:['pilgrimage','pilgrims'],
+ fishing:['fishing','fish'],
+ calligraphy:['calligraphy','writing'],
+ language:['language','linguistic'],
+ sauna:['sauna'],
+ yoga:['yoga'],
+ harping:['harp','harping'],
+ carnival:['carnival','parade'],
+ brewing:['brewing','beer'],
+ performance:['performance','performances','performing'],
+ storytelling:['storytelling','story','stories'],
+ epic:['epic','storytelling'],
+ craft:['craft','crafts','craftsmanship'],
+ carving:['carving','carved','woodworking'],
+ architecture:['architecture','building'],
+ henna:['henna','mehndi','body art'],
+ adornment:['adornment','decoration','henna','jewellery','jewelry']
+};
+const IMAGE_CONTEXT_TERMS={
+ 'henna-rituals':['wedding','ceremony','mehndi','body art','dye','pattern','ritual'],
+ 'uae-henna':['wedding','ceremony','mehndi','body art','ritual','adornment']
+};
+const IMAGE_LOCATION_STOPWORDS=new Set([...WIKIPEDIA_STOPWORDS,'a','across','area','areas','around','central','coast','coastal','community','communities','country','countries','east','eastern','federal','from','group','groups','island','islands','kingdom','middle','multiple','nation','nations','north','northern','of','people','peoples','province','provinces','region','regions','republic','rural','south','southern','state','states','the','united','urban','west','western','world','between','along','and','in']);
+const IMAGE_COUNTRY_ALIASES={
+ JPN:['japanese'],FIN:['finnish'],IDN:['indonesian'],BRA:['brazilian'],GHA:['ghanaian'],IND:['indian'],ESP:['spanish'],FRA:['french'],CHN:['chinese'],MAR:['moroccan'],IRL:['irish'],PRT:['portuguese'],GRC:['greek'],POL:['polish'],ITA:['italian'],UKR:['ukrainian'],NGA:['nigerian'],KEN:['kenyan'],UGA:['ugandan'],ETH:['ethiopian'],ZWE:['zimbabwean'],MDG:['malagasy'],BTN:['bhutanese'],KHM:['khmer','cambodian'],LKA:['sri lankan'],THA:['thai'],PHL:['filipino','philippine'],BGD:['bangladeshi'],MNG:['mongolian'],PER:['peruvian'],ARG:['argentine','argentinian'],URY:['uruguayan'],HTI:['haitian'],GBR:['british','scottish','welsh','cornish'],USA:['american'],AUS:['australian'],NZL:['maori','aotearoa','new zealander'],VUT:['vanuatuan'],TON:['tongan'],TUR:['turkish','turkiye'],NLD:['dutch'],EGY:['egyptian'],COL:['colombian'],MUS:['mauritian'],SEN:['senegalese'],GMB:['gambian'],MRT:['mauritanian'],DJI:['djiboutian'],SOM:['somali'],CMR:['cameroonian'],SRB:['serbian'],DZA:['algerian'],BGR:['bulgarian'],NER:['nigerien'],PRY:['paraguayan'],RWA:['rwandan'],ZMB:['zambian'],CUB:['cuban'],ARE:['emirati','uae'],IRN:['iranian','persian'],EST:['estonian'],MEX:['mexican'],JAM:['jamaican'],VNM:['vietnamese','viet','nam'],KOR:['korean']
+};
+const normalizedImageText=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+const imageTextHas=(text,term)=>{
+ const normalized=normalizedImageText(text),needle=normalizedImageText(term);
+ if(!normalized||!needle)return false;
+ const padded=' '+normalized+' ';
+ const variants=[needle];
+ if(needle.length>4&&needle.endsWith('s'))variants.push(needle.slice(0,-1));
+ return variants.some(variant=>padded.includes(' '+variant+' '));
+};
+const imageStoryContextTerms=article=>{
+ const words=normalizedImageText(article.title).split(' ').filter(Boolean);
+ return [...new Set([...words.filter(word=>IMAGE_CONTEXT_TYPES.has(word)),...(IMAGE_CONTEXT_TERMS[article.id]||[])])];
+};
+const imageStoryPlaceTerms=(article,country)=>{
+ const topicWords=new Set(wikipediaTopicTokens(article));
+ const raw=[article.place||'',article.region||'',country?.name||'',...(IMAGE_COUNTRY_ALIASES[country?.code]||[])].join(' ');
+ return [...new Set(normalizedImageText(raw).split(' ').filter(word=>word.length>2&&!IMAGE_LOCATION_STOPWORDS.has(word)&&!topicWords.has(word)))];
+};
+const imageStoryMatch=(image,article,country,categories=[])=>{
+ const imageSubjectText=image.fileName+' '+image.description;
+ const metadataText=imageSubjectText+' '+categories.join(' ');
+ const topicTokens=wikipediaTopicTokens(article);
+ const topicHits=topicTokens.filter(token=>imageTextHas(imageSubjectText,token));
+ if(!topicHits.length)return {matches:false,topicHits:0,contextHits:0,placeHits:0,titleHits:0};
+ const contextTerms=imageStoryContextTerms(article);
+ const contextHits=contextTerms.filter(term=>imageTextHas(metadataText,term));
+ if(contextTerms.length&&!contextHits.length)return {matches:false,topicHits:topicHits.length,contextHits:0,placeHits:0,titleHits:0};
+ const placeTerms=imageStoryPlaceTerms(article,country);
+ const placeHits=placeTerms.filter(term=>imageTextHas(metadataText,term));
+ if(placeTerms.length&&!placeHits.length)return {matches:false,topicHits:topicHits.length,contextHits:contextHits.length,placeHits:0,titleHits:0};
+ const titleHits=topicTokens.filter(token=>imageTextHas(image.fileName,token)).length;
+ return {matches:true,topicHits:topicHits.length,contextHits:contextHits.length,placeHits:placeHits.length,titleHits};
+};
+const commonsImageFromPage=(page,wikiPage,article,country,categories=[],curated=false)=>{
  const info=page?.imageinfo?.[0],meta=info?.extmetadata||{};
  const license=commonsText(meta.LicenseShortName?.value||'');
  const licenseUrl=commonsText(meta.LicenseUrl?.value||'').replace(/^http:\/\/creativecommons\.org\//i,'https://creativecommons.org/');
@@ -64,50 +149,39 @@ const commonsImageFromPage=(page,wikiPage)=>{
  if(!artist&&!/^(?:CC0|Public domain|PD(?:[-\s]|$))/i.test(license))return null;
  const fileName=String(page.title||'File:Image').replace(/^File:/,'').replace(/_/g,' ');
  const fileUrl='https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(fileName.replace(/ /g,'_'));
- return {thumb,fileName,fileUrl,artist,license,licenseUrl,description:commonsText(meta.ImageDescription?.value||''),wikiTitle:wikiPage?.title||'',wikiUrl:wikiPage?.url||''};
+ const image={thumb,fileName,fileUrl,artist,license,licenseUrl,description:commonsText(meta.ImageDescription?.value||''),wikiTitle:wikiPage?.title||'',wikiUrl:wikiPage?.url||''};
+ return curated||imageStoryMatch(image,article,country,categories).matches?image:null;
 };
-const commonsFileMetadata=async(fileTitle,wikiPage)=>{
- const params=new URLSearchParams({action:'query',titles:'File:'+fileTitle,prop:'imageinfo',iiprop:'url|extmetadata',iiurlwidth:'1200',format:'json',origin:'*'});
+const commonsFileMetadata=async(fileTitle,wikiPage,article,country,curated=false)=>{
+ const params=new URLSearchParams({action:'query',titles:'File:'+fileTitle,prop:'imageinfo|categories',iiprop:'url|extmetadata',iiurlwidth:'1200',cllimit:'40',format:'json',origin:'*'});
  try{
   const response=await fetch('https://commons.wikimedia.org/w/api.php?'+params.toString(),{headers:{Accept:'application/json'}});
   if(!response.ok)return null;
   const data=await response.json(),page=Object.values(data?.query?.pages||{})[0];
-  return commonsImageFromPage(page,wikiPage);
+  const categories=(page?.categories||[]).map(category=>category.title||'');
+  return commonsImageFromPage(page,wikiPage,article,country,categories,curated);
  }catch{return null;}
 };
-const IMAGE_CONTEXT_TERMS={
- 'henna-rituals':['wedding','ceremony','mehndi','body art','dye','pattern','ritual'],
- 'uae-henna':['wedding','ceremony','mehndi','body art','ritual','adornment']
-};
-const normalizedImageText=value=>String(value||'').toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim();
-const commonsSearchImage=async(article,country,wikiPage)=>{
+const commonsSearchImage=async(article,country)=>{
  const topic=wikipediaSearchTerm(article);
  if(!topic)return null;
  const countryName=String(country?.name||'');
  const queries=[topic+' '+countryName,topic].filter((value,index,all)=>value&&all.indexOf(value)===index);
  const topicTokens=wikipediaTopicTokens(article);
- const contextTerms=IMAGE_CONTEXT_TERMS[article.id]||[];
  for(const query of queries){
   try{
-   const params=new URLSearchParams({action:'query',generator:'search',gsrsearch:query,gsrnamespace:'6',gsrlimit:'40',prop:'imageinfo|categories',iiprop:'url|extmetadata',iiurlwidth:'1200',cllimit:'30',format:'json',origin:'*'});
+   const params=new URLSearchParams({action:'query',generator:'search',gsrsearch:query,gsrnamespace:'6',gsrlimit:'40',prop:'imageinfo|categories',iiprop:'url|extmetadata',iiurlwidth:'1200',cllimit:'40',format:'json',origin:'*'});
    const response=await fetch('https://commons.wikimedia.org/w/api.php?'+params.toString(),{headers:{Accept:'application/json'}});
    if(!response.ok)continue;
    const data=await response.json();
    const pages=Object.values(data?.query?.pages||{}).sort((a,b)=>(a.index||0)-(b.index||0));
    const candidates=[];
    for(const page of pages){
-    const image=commonsImageFromPage(page,wikiPage);
+    const categories=(page.categories||[]).map(category=>category.title||'');
+    const image=commonsImageFromPage(page,null,article,country,categories);
     if(!image)continue;
-    const titleText=normalizedImageText(image.fileName);
-    const supportingText=normalizedImageText(image.description+' '+(page.categories||[]).map(category=>category.title||'').join(' '));
-    const searchable=titleText+' '+supportingText;
-    const topicHits=topicTokens.filter(token=>searchable.includes(token)||searchable.includes(token.replace(/s$/,''))).length;
-    const contextHits=contextTerms.filter(term=>supportingText.includes(normalizedImageText(term))).length;
-    if(!topicHits||contextTerms.length&&!contextHits)continue;
-    const countryTokens=normalizedImageText(countryName).split(' ').filter(token=>token.length>2&&!WIKIPEDIA_STOPWORDS.has(token));
-    const placeHits=countryTokens.filter(token=>searchable.includes(token)).length;
-    const titleHits=topicTokens.filter(token=>titleText.includes(token)||titleText.includes(token.replace(/s$/,''))).length;
-    candidates.push({image,score:topicHits*3+contextHits*2+placeHits+titleHits,index:Number(page.index)||0});
+    const match=imageStoryMatch(image,article,country,categories);
+    candidates.push({image,score:match.topicHits*8+match.contextHits*4+match.placeHits*3+match.titleHits*2,index:Number(page.index)||0});
    }
    candidates.sort((a,b)=>b.score-a.score||a.index-b.index);
    if(candidates.length)return candidates[0].image;
@@ -121,13 +195,13 @@ const commonsImageFor=async(article,country)=>{
  let wikiPage=null,result=null;
  if(article.id==='uae-henna'&&country?.code==='ARE'){
   wikiPage={title:'Henna',url:'https://en.wikipedia.org/wiki/Henna'};
-  result=await commonsFileMetadata('Receiving henna; a symbol of culture being shared to you.jpg',wikiPage);
+  result=await commonsFileMetadata('Receiving henna; a symbol of culture being shared to you.jpg',wikiPage,article,country,true);
  }
  if(!result){
   wikiPage=await wikipediaLeadPage(article);
-  if(wikiPage?.file)result=await commonsFileMetadata(wikiPage.file,wikiPage);
+  if(wikiPage?.file)result=await commonsFileMetadata(wikiPage.file,wikiPage,article,country);
  }
- if(!result)result=await commonsSearchImage(article,country,wikiPage);
+ if(!result)result=await commonsSearchImage(article,country);
  cultureImageCache.set(cacheKey,result);
  return result;
 };
