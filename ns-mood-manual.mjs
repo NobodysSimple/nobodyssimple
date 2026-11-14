@@ -17,7 +17,9 @@ export function renderTopicManual(root,id,g,domain='feel'){
  const storageKey='ns-mood-manual-'+id+'-v1';
  let saved=false;
  try{const s=JSON.parse(localStorage.getItem(storageKey)||'null');if(s&&s.answers&&s.mode&&g.routes.some(r=>r.id===s.mode)){state.answers=s.answers;state.mode=s.mode;saved=true;}}catch{}
- const hero='<div class="ns-judge ns-mood" id="ns-mood-top"><nav class="ns-judge-back"><a href="'+(domain==='experiences'?'#navigate/atlas/experiences':'#navigate/atlas/feel')+'">← '+(domain==='experiences'?'Unusual or distressing experiences':'Feelings & mood')+'</a><a href="#home">Nobody’s Simple home</a></nav>'+
+ const backLink=domain==='clinical'?'#navigate/atlas/clinical':domain==='experiences'?'#navigate/atlas/experiences':'#navigate/atlas/feel';
+ const backLabel=domain==='clinical'?'Mental health & care experiences':domain==='experiences'?'Unusual or distressing experiences':'Feelings & mood';
+ const hero='<div class="ns-judge ns-mood" id="ns-mood-top"><nav class="ns-judge-back"><a href="'+backLink+'">← '+backLabel+'</a><a href="#home">Nobody’s Simple home</a></nav>'+
   '<header class="ns-judge-hero"><div><p class="ns-judge-kicker">NOBODY’S SIMPLE · A FIELD GUIDE FOR YOU</p><h1>'+esc(g.title)+'</h1><p class="ns-judge-subhead">'+esc(g.standfirst)+'</p>'+
   '<div class="ns-mood-jump"><button data-mood-scroll="read">Read and understand</button><button data-mood-scroll="start">Find my next step</button><button data-mood-scroll="now">Something to try now</button></div></div><img class="ns-judge-mascot" src="ns-character-guide.webp" alt="" loading="lazy"></header>';
 
