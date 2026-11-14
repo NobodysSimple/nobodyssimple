@@ -1,11 +1,11 @@
 import {resourceMarkup,uiSymbol} from './ui-resources.mjs';
-import {goodDeeds} from './lifestyle-deeds.mjs';
+import {mountLifestylePractice} from './lifestyle-practice-ui.mjs';
 import {renderSimplyFocus} from './simplyfocus.mjs';
 import {addLifestyleTask,moveLifestyleToFocus,moveFocusToLifestyle,readFocusBoard,readLifestyleTasks,writeLifestyleTasks,EISENHOWER_QUADRANTS,taskPriority,validPriority,lifestyleTaskViewKey} from './lifestyle-storage.mjs';
 import {readLifestyleReminders,writeLifestyleReminders} from './lifestyle-reminders.mjs';
 import {escapeHTML as esc} from './core.mjs';
 
-const emotionKey='ns-lifestyle-emotions-v1',deedKey='ns-lifestyle-deed-v1';
+const emotionKey='ns-lifestyle-emotions-v1';
 const emotions=[
  ['steady','Steady','◉',2],['glad','Glad','☀',3],['hopeful','Hopeful','✦',3],['energised','Energised','↗',3],
  ['tired','Tired','☾',-1],['sad','Sad','◡',-2],['worried','Worried','≈',-2],['angry','Angry','⌁',-2],['overwhelmed','Overwhelmed','≋',-3],['numb','Numb','○',-1],['mixed','Mixed','◐',0],['unsure','Unsure','?',0]
@@ -18,16 +18,10 @@ const timeOfDay=hour=>hour<12?'morning':hour>=18?'evening':'daytime';
 const greeting=hour=>hour<12?'Good morning.':hour>=18?'Good evening.':'How is your day going?';
 const readEmotions=()=>{const value=readJSON(emotionKey,[]);return Array.isArray(value)?value:[]};
 const writeEmotions=items=>localStorage.setItem(emotionKey,JSON.stringify(items));
-const deedState=()=>readJSON(deedKey,{});
-const writeDeed=value=>localStorage.setItem(deedKey,JSON.stringify(value));
-
-function randomDeed(previous=-1){if(goodDeeds.length<2)return 0;let next=previous;while(next===previous)next=Math.floor(Math.random()*goodDeeds.length);return next;}
-function todayDeed(){const today=localDate(),state=deedState();if(state.date===today&&Number.isInteger(state.index)&&goodDeeds[state.index])return state;const next={date:today,index:randomDeed(),done:false,skips:0};writeDeed(next);return next;}
-
 export function renderLifestyle(root,view='daily'){
  root.querySelector('[data-life-focus-host]')?._nsSimplyFocusCleanup?.();
  root._lifestyleAbort?.abort();const abort=new AbortController();root._lifestyleAbort=abort;const {signal}=abort;window.addEventListener('hashchange',()=>abort.abort(),{once:true});
- let entries=readEmotions(),tasks=readLifestyleTasks(),calendarDate=new Date(),selectedDate=localDate(),checkMode=timeOfDay(new Date().getHours()),deed=todayDeed(),taskView=localStorage.getItem(lifestyleTaskViewKey)==='quadrants'?'quadrants':'list';
+ let entries=readEmotions(),tasks=readLifestyleTasks(),calendarDate=new Date(),selectedDate=localDate(),checkMode=timeOfDay(new Date().getHours()),taskView=localStorage.getItem(lifestyleTaskViewKey)==='quadrants'?'quadrants':'list';
  root.innerHTML=`<div class="wrap lifestyle-page life-unified">
   <header class="life-page-header">
    <div><p class="eyebrow">NOBODY’S SIMPLE · YOUR EVERYDAY SPACE</p><h1>Lifestyle</h1><p>Good habits, room to reflect, and a focused moment when you need it.</p></div>
@@ -51,7 +45,7 @@ export function renderLifestyle(root,view='daily'){
   </section>
   <div class="lifestyle-two-column">
    <section id="lifestyle-calendar" class="lifestyle-card lifestyle-calendar" aria-labelledby="lifestyle-calendar-title"><div class="calendar-head"><div><p class="eyebrow">YOUR RECORD</p><h2 id="lifestyle-calendar-title">Calendar</h2></div><div><button type="button" data-calendar-move="-1" aria-label="Previous month">←</button><strong id="lifestyle-month-label"></strong><button type="button" data-calendar-move="1" aria-label="Next month">→</button></div></div><div class="calendar-weekdays" aria-hidden="true"><span style="color:var(--ns-life-readable-ink,#244735)!important">Mon</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Tue</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Wed</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Thu</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Fri</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Sat</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Sun</span></div><div id="lifestyle-calendar-grid" class="calendar-grid"></div><div id="lifestyle-day-detail" class="lifestyle-day-detail" aria-live="polite"></div></section>
-   <section id="lifestyle-deed" class="lifestyle-card lifestyle-deed" aria-labelledby="lifestyle-deed-title"><div class="deed-heading"><span class="deed-mark">${uiSymbol('flower')}</span><div><p class="eyebrow">One good deed</p><h2 id="lifestyle-deed-title">A good deed today</h2></div></div><div id="lifestyle-deed-card"></div></section>
+   <section id="lifestyle-deed" class="lifestyle-card lifestyle-deed" aria-labelledby="lifestyle-deed-title"><div class="deed-heading"><span class="deed-mark">${uiSymbol('flower')}</span><div><p class="eyebrow">A small step towards who you are becoming</p><h2 id="lifestyle-deed-title">Today’s Practice</h2></div></div><div id="lifestyle-deed-card"></div></section>
   </div>
   <section id="lifestyle-tasks" class="lifestyle-card lifestyle-tasks" aria-labelledby="lifestyle-tasks-title"><div class="lifestyle-section-head"><div><p class="eyebrow">Today and later</p><h2 id="lifestyle-tasks-title">My tasks</h2><p>Keep today’s actions visible. You can move tasks into SimplyFocus.</p></div></div>
    <div class="life-task-view-switch" role="group" aria-label="Task list view"><button type="button" data-task-view="list" aria-pressed="${taskView==='list'}">☷ List</button><button type="button" data-task-view="quadrants" aria-pressed="${taskView==='quadrants'}">✿ Four quadrants</button></div>
@@ -89,9 +83,7 @@ export function renderLifestyle(root,view='daily'){
   const dayEntries=entries.filter(item=>item.date===selectedDate),dayTasks=tasks.filter(item=>item.date===selectedDate),date=new Date(`${selectedDate}T12:00:00`);
   $('#lifestyle-day-detail').innerHTML=`<div><p class="eyebrow">Selected day</p><h3>${date.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'})}</h3></div>${dayEntries.length?`<ul>${dayEntries.map(item=>{const mood=emotionMap.get(item.emotion)||emotions[11];return `<li><span aria-hidden="true">${mood[2]}</span><div><b>${esc(mood[1])}${item.intensity==null?'':' · '+item.intensity+'/10'}</b><small>${esc(item.period)}${item.energy==null?'':' · energy '+item.energy+'/10'} · ${esc(item.time)}</small>${item.note?`<p>${esc(item.note)}</p>`:''}</div><button type="button" data-delete-entry="${item.id}" aria-label="Delete this check-in">×</button></li>`}).join('')}</ul>`:'<p class="fine">No emotional check-in saved for this day.</p>'}${dayTasks.length?`<div class="day-tasks"><b>Tasks</b>${dayTasks.map(task=>`<span class="${task.done?'is-done':''}">${task.time?esc(task.time)+' · ':''}${esc(task.title)}</span>`).join('')}</div>`:''}<button type="button" class="text-button" data-add-selected-date>Add a task to this day →</button>`;
  }
- function renderDeed(){
-  const item=goodDeeds[deed.index];$('#lifestyle-deed-card').innerHTML=`<span class="deed-category">${esc(item.category)}</span><p>${esc(item.task)}</p><div><button type="button" class="button" data-deed-done ${deed.done?'disabled':''}>${deed.done?'Completed today':'I did this'}</button><button type="button" class="button secondary" data-deed-next>Show another</button></div><small>${deed.skips?`${deed.skips} alternative${deed.skips===1?'':'s'} viewed today. `:''}Choose another whenever the suggestion does not fit your circumstances.</small>`;
- }
+ function renderDeed(){mountLifestylePractice($('#lifestyle-deed-card'),{signal});}
  function renderTaskItem(task){
   const priority=taskPriority(task);
   const choices=[{id:'inbox',title:'Choose later'},...EISENHOWER_QUADRANTS.map(q=>({id:q.id,title:q.title}))];
@@ -356,8 +348,6 @@ export function renderLifestyle(root,view='daily'){
     if(taskView==='quadrants'){$('#lifestyle-quadrants [data-quad-add="do"] input[name="title"]')?.focus({preventScroll:true});}
     else{$('#lifestyle-task-date').value=selectedDate;$('#lifestyle-task-title').focus({preventScroll:true});}
    }
-  if(button.hasAttribute('data-deed-next')){deed={...deed,index:randomDeed(deed.index),done:false,skips:(deed.skips||0)+1};writeDeed(deed);renderDeed();}
-  if(button.hasAttribute('data-deed-done')){deed={...deed,done:true};writeDeed(deed);renderDeed();}
   if(button.dataset.deleteEntry){entries=entries.filter(item=>item.id!==button.dataset.deleteEntry);writeEmotions(entries);renderCalendar();}
   if(button.dataset.deleteTask){writeLifestyleTasks(tasks.filter(item=>item.id!==button.dataset.deleteTask));renderTasks();$('#lifestyle-task-status').textContent='Task deleted.';}
   if(button.dataset.toFocus&&moveLifestyleToFocus(button.dataset.toFocus)){renderTasks();$('#lifestyle-task-status').textContent='Task moved to SimplyFocus.';}
