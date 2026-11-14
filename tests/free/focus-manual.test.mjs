@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {FOCUS_GUIDES,FOCUS_IDS,FOCUS_BY_ID} from '../../ns-focus-guide-data.mjs';
+import {FOCUS_DEEPENING} from '../../ns-focus-depth-additions.mjs';
 import {atlasByDomain} from '../../ns-atlas-core.mjs';
 
 const expected=['focus','memory','organization','bored','learning','hyperactivity','attention-drift','hyperfocus-cost','time-blindness','planning-overload','learning-block'];
@@ -55,11 +56,17 @@ test('176 individually authored worked examples map to correct possible causes',
   }
  }
 });
-test('528 optional practical ideas are available and safeguards fit health-related topics',()=>{
+test('528 optional practical ideas use independently written support guidance and safeguards',()=>{
+ const authoredSupport=new Set();
  assert.equal(FOCUS_GUIDES.reduce((n,g)=>n+g.ideas.actions.length+g.ideas.support.length,0),528);
  for(const g of FOCUS_GUIDES){
   assert.equal(g.ideas.actions.length,24,g.id);
   assert.equal(g.ideas.support.length,24,g.id);
+  const custom=FOCUS_DEEPENING[g.id].supportMore;
+  assert.equal(custom.length,12,g.id);
+  assert.deepEqual(g.ideas.support.slice(12),custom,g.id+' support suggestions were not wired');
+  for(const idea of custom){assert.ok(idea.length>=45,g.id+' generic support option');assert.ok(!authoredSupport.has(idea),g.id+' repeated support');authoredSupport.add(idea);}
+  assert.notEqual(g.whyStages[6],'A rule you may be following',g.id+' generic stage');
   assert.ok(g.sources.length>0&&g.evidence.length>90&&g.safety.length>80,g.id);
  }
  assert.match(FOCUS_BY_ID.get('memory').prominentSafety,/sudden confusion/i);
