@@ -45,7 +45,8 @@ import { renderNSProblemGuide } from './ns-problem-guide.mjs';
 import {renderPrecisionConsole} from './ns-precision-console.mjs';
 import {renderPrecisionGuide} from './ns-precision-guide.mjs';
 import {renderJudgementManual} from './ns-judgement-manual.mjs?v=20261114-why';
-import {renderMoodManual,MOOD_IDS} from './ns-mood-manual.mjs?v=feel-20261114-v4';
+import {renderMoodManual,renderTopicManual,MOOD_IDS} from './ns-mood-manual.mjs?v=experiences-20261114-v1';
+import {EXPERIENCE_GUIDES_BY_ID,EXPERIENCE_IDS} from './ns-experiences-guide-data.mjs?v=experiences-20261114-v1';
 import {getPreciseProfile} from './ns-precision-content.mjs';
 import {renderAtlasConsole} from './ns-atlas-console.mjs';
 import {renderAtlasGuide} from './ns-atlas-guide.mjs';
@@ -64,12 +65,16 @@ configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
 const main = document.querySelector("main");
 const moodGuideIds=new Set(MOOD_IDS);
+const experienceGuideIds=new Set(EXPERIENCE_IDS);
+const showExperienceGuide=id=>renderTopicManual(main,id,EXPERIENCE_GUIDES_BY_ID.get(id),'experiences');
 const showWorkbook = options => {
   if(options.topic==='social-anxiety')return renderJudgementManual(main);
   if(moodGuideIds.has(options.topic))return renderMoodManual(main,options.topic);
+  if(experienceGuideIds.has(options.topic))return showExperienceGuide(options.topic);
   const selected=getNeedsMode(options.mode)?.options.find(item=>item.id===options.option);
   if(selected?.type==='topic'&&selected.target==='social-anxiety')return renderJudgementManual(main);
   if(selected?.type==='topic'&&moodGuideIds.has(selected.target))return renderMoodManual(main,selected.target);
+  if(selected?.type==='topic'&&experienceGuideIds.has(selected.target))return showExperienceGuide(selected.target);
   return renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
 };
 const supportDialog = document.createElement('dialog');
@@ -915,7 +920,7 @@ function route() {
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate/atlas';return;}
         showWorkbook({mode,option:choice});
       },
-      problem: () => {const key=safeRoutePart(id);if(key==='social-anxiety')renderJudgementManual(main);else if(moodGuideIds.has(key))renderMoodManual(main,key);else if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
+      problem: () => {const key=safeRoutePart(id);if(key==='social-anxiety')renderJudgementManual(main);else if(moodGuideIds.has(key))renderMoodManual(main,key);else if(experienceGuideIds.has(key))showExperienceGuide(key);else if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
         location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
       library: () => {
