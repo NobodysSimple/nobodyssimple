@@ -3,6 +3,7 @@
  --nj-ink:#233d34;--nj-green:#2c604b;--nj-dark:#194536;--nj-line:#d7e2d5;
  --nj-cream:#fbfaf4;--nj-sage:#edf4eb;--nj-muted:#52665c;
  width:min(100% - 28px,960px);margin:0 auto 60px;color:var(--nj-ink);
+ background:#fcfbf6;color-scheme:light;padding:0 clamp(12px,2.5vw,24px) 36px;border-radius:22px;
  font-family:inherit;font-size:18px;line-height:1.7;overflow-wrap:anywhere;
 }
 .ns-judge *{box-sizing:border-box}
