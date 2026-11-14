@@ -108,7 +108,7 @@ test('cultural readings use documentary sources and distinguish place from a psy
    assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the full reading');
   }
  }
- for(const code of ['COL','BRA','PER','BOL','MEX','DOM','VEN']){
+ for(const code of ['COL','BRA','PER','BOL','MEX','DOM','VEN','ATG']){
   const entries=articlesForCountry(code).filter(a=>LATIN_AMERICA_ADDITIONAL[a.id]);
   assert.ok(entries.length,code+' missing a further researched reading');
   for(const a of entries){
