@@ -5,6 +5,7 @@
  */
 import {NORTH_AMERICA_STORIES} from './ns-cultural-atlas-north-america.mjs';
 import {LATIN_AMERICA_STORIES} from './ns-cultural-atlas-latin-america.mjs';
+import {EUROPE_STORIES,EUROPE_META} from './ns-cultural-atlas-europe.mjs';
 const article=(id,country,title,theme,place,body,reflection,question,source,region='')=>Object.freeze({
  id,country,title,theme,place,body:Object.freeze(body),psychology:body[1]||'',reflection,question,
  source:Object.freeze({label:source.includes('ich.unesco.org')?'UNESCO Intangible Cultural Heritage':source.includes('whc.unesco.org')?'UNESCO World Heritage Centre':source.includes('cornwall.gov.uk')?'Cornwall Council':source.includes('nls.uk')?'National Library of Scotland':source.includes('gov.wales')?'Welsh Government':source.includes('mbie.govt.nz')?'New Zealand Government':source.includes('cherokee.org')?'Cherokee Nation':source.includes('nps.gov')?'US National Park Service':source.includes('abudhabiculture.ae')?'Abu Dhabi Department of Culture and Tourism, Heritage Register':'Documentary source',url:source}),region
@@ -643,6 +644,10 @@ article('henna-rituals',['DZA','BHR','EGY','IRQ','JOR','KWT','MRT','MAR','OMN','
  }),
  ...Object.entries(LATIN_AMERICA_STORIES).filter(([id])=>id!=='taquile').map(([id,story])=>{
   const [country,title,theme,place,reflection,question,region]=LATIN_AMERICA_META[id];
+  return article(id,country,title,theme,place,story.paragraphs.slice(0,3).map(p=>p.text),reflection,question,story.paragraphs[0].sources[0].url,region||'');
+ }),
+ ...Object.entries(EUROPE_STORIES).map(([id,story])=>{
+  const [country,title,theme,place,reflection,question,region]=EUROPE_META[id];
   return article(id,country,title,theme,place,story.paragraphs.slice(0,3).map(p=>p.text),reflection,question,story.paragraphs[0].sources[0].url,region||'');
  }),
  article('pysanka-estonia',['EST','UKR'],'Pysanka: wishes, gifts and family memory','Ritual & family meaning','Ukrainian communities, including Ukrainians in Estonia',[
