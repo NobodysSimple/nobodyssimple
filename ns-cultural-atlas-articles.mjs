@@ -1,3 +1,4 @@
+import {LATIN_AMERICA_PHASE2C_META} from './ns-cultural-atlas-latin-america-phase2c.mjs';
 import {LATIN_AMERICA_PHASE2A_META} from './ns-cultural-atlas-latin-america-phase2a.mjs';
 import {LATIN_AMERICA_PHASE2B_META} from './ns-cultural-atlas-latin-america-phase2b.mjs';
 import {LATIN_AMERICA_ADDITIONAL_META} from './ns-cultural-atlas-latin-america-additional.mjs';
@@ -43,6 +44,7 @@ const LATIN_AMERICA_META={
  ...LATIN_AMERICA_ADDITIONAL_META,
  ...LATIN_AMERICA_PHASE2A_META,
  ...LATIN_AMERICA_PHASE2B_META,
+ ...LATIN_AMERICA_PHASE2C_META,
  'argentina-filete':['ARG','Filete porteño: who gets to learn the painted line','Craft & access','Filete painters in Buenos Aires','A craft persists when a newcomer can enter the place where it is taught.','Who can get into the room where a skill is taught?','Buenos Aires'],
  'bolivia-oruro':['BOL','Oruro: the work inside a carnival','Ritual & coordination','Carnival fraternities in Oruro','A public celebration needs people who prepare different parts and practise them together.','Who prepares the part of a festival that you rarely notice?','Oruro'],
  'ecuador-toquilla':['ECU','Toquilla: whose hands made the hat','Craft & livelihood','Hat weavers in Ecuador','A craft label can hide the maker’s time and the place where they worked.','Who made this object, and how were they paid?','Manabí'],
