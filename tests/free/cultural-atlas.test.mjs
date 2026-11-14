@@ -9,6 +9,8 @@ import {NORTH_AMERICA_STORIES} from '../../ns-cultural-atlas-north-america.mjs';
 import {LATIN_AMERICA_STORIES} from '../../ns-cultural-atlas-latin-america.mjs';
 import {LATIN_AMERICA_EXPANSION} from '../../ns-cultural-atlas-latin-america-expansion.mjs';
 import {LATIN_AMERICA_ADDITIONAL} from '../../ns-cultural-atlas-latin-america-additional.mjs';
+import {LATIN_AMERICA_PHASE2A} from '../../ns-cultural-atlas-latin-america-phase2a.mjs';
+import {LATIN_AMERICA_PHASE2B} from '../../ns-cultural-atlas-latin-america-phase2b.mjs';
 import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
@@ -95,6 +97,18 @@ test('cultural readings use documentary sources and distinguish place from a psy
    assert.ok(story.images.length>=2,a.id+' needs two curated images');
    assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the researched paragraphs');
   }
+ }
+
+ const nextLatinReads={...LATIN_AMERICA_PHASE2A,...LATIN_AMERICA_PHASE2B};
+ for(const id of ['argentina-chamame','chile-baile-chino','colombia-pasto-varnish','ecuador-pasillo','brazil-cirio-nazare','bolivia-pujllay-ayarichi','peru-hatajo','paraguay-poncho-parai']){
+  const entry=articleById(id);
+  assert.ok(entry,'missing second-batch reading '+id);
+  const story=nextLatinReads[id];
+  assert.equal(story?.paragraphs.length,6,id+' requires six sections');
+  assert.ok(story.paragraphs.every(p=>p.text.length>350&&p.sources.length&&p.sources.every(s=>/^https:\/\//.test(s.url))),id+' requires detailed sourced exposition');
+  assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),id+' needs primary documentation');
+  assert.ok(story.images.length>=1,id+' requires a verified subject or setting image');
+  assert.deepEqual(CULTURE_INVESTIGATIONS[id].sections[0].paragraphs,story.paragraphs,id+' must display full sourced narrative');
  }
  for(const code of ['GUY','SUR','FRA']){
   const entries=articlesForCountry(code).filter(a=>LATIN_AMERICA_EXPANSION[a.id]);
