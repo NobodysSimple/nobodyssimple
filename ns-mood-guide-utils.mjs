@@ -1,4 +1,5 @@
 /* Editorial structure and validation for the 16 Feelings & Mood field guides. */
+import {MOOD_DEPTH_EXTRAS} from './ns-mood-depth-extensions.mjs';
 const fail=(id,reason)=>{throw Error("Mood guide "+id+": "+reason)};
 export const Q=(question,help,guide,ideas='')=>[question,help,guide,ideas];
 export const R=(id,label,description,questions,finish,practiceTitle,practice)=>({id,label,title:label,description,questions,finish,practiceTitle,practice});
@@ -36,11 +37,14 @@ export function makeMood(d){
  }
  if(!d.ideas||Object.values(d.ideas).some(arr=>arr.length<22))fail(d.id,'ideas lists must contain at least 22 distinct actions each');
  for(const route of d.routes)for(const q of route.questions)if(q[3]&&!d.ideas[q[3]])fail(d.id,'missing idea list '+q[3]);
+ const extras=MOOD_DEPTH_EXTRAS[d.id]||[];
+ const combinedWhyCases=[...(d.whyCases||[]),...extras];
  if(!Array.isArray(d.whyCases)||d.whyCases.length<8)fail(d.id,'at least eight bespoke depth cases required');
  if(!Array.isArray(d.roots)||d.roots.length<3)fail(d.id,'topic-specific roots required');
- if(d.whyCases.some(x=>!d.roots.some(r=>r[0]===x.root)))fail(d.id,'unknown depth root');
+ if(combinedWhyCases.some(x=>!d.roots.some(r=>r[0]===x.root)))fail(d.id,'unknown depth root');
+ if(new Set(combinedWhyCases.map(x=>x.situation.toLowerCase())).size!==combinedWhyCases.length)fail(d.id,'duplicated depth situations');
  if(!Array.isArray(d.whyQuestions)||d.whyQuestions.length!==10)fail(d.id,'ten depth questions required');
  const sources=(d.sourceKeys||[]).flatMap(k=>defaultSources[k]||[]).concat(d.sources||[]);
  if(!sources.length)fail(d.id,'at least one identified evidence source required');
- return Object.freeze({...d,pullIndex:d.pullIndex??3,whyStages:d.whyStages||stages,sources,evidence:d.evidence||'These exercises are guided adaptations of psychological principles, not individually validated tests or treatments. The research cited supports specific treatment approaches; it does not prove that a particular explanation applies to you.'});
+ return Object.freeze({...d,whyCases:combinedWhyCases,pullIndex:d.pullIndex??3,whyStages:d.whyStages||stages,sources,evidence:d.evidence||'These exercises are guided adaptations of psychological principles, not individually validated tests or treatments. The research cited supports specific treatment approaches; it does not prove that a particular explanation applies to you.'});
 }
