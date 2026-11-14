@@ -7,6 +7,7 @@ import {SOUTH_ASIA_STORIES} from '../../ns-cultural-atlas-south-asia.mjs';
 import {SOUTHEAST_ASIA_STORIES} from '../../ns-cultural-atlas-southeast-asia.mjs';
 import {NORTH_AMERICA_STORIES} from '../../ns-cultural-atlas-north-america.mjs';
 import {LATIN_AMERICA_STORIES} from '../../ns-cultural-atlas-latin-america.mjs';
+import {EUROPE_STORIES,EUROPE_META,EUROPE_IMAGE_CONTEXT} from '../../ns-cultural-atlas-europe.mjs';
 import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
@@ -14,6 +15,29 @@ import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIn
 const source=path=>readFileSync(new URL('../../'+path,import.meta.url),'utf8');
 const world=JSON.parse(source(WORLD_COUNTRY_DATA));
 const countries=normaliseCountryData(world);
+
+
+test('European cultural readings provide six detailed source-linked paragraphs and curated image context',()=>{
+ const ids=Object.keys(EUROPE_STORIES);
+ assert.equal(ids.length,28,'Europe wave must include all 28 authored readings');
+ assert.equal(Object.keys(EUROPE_META).length,ids.length);
+ for(const id of ids){
+  const story=EUROPE_STORIES[id];
+  const a=articleById(id);
+  assert.ok(a,'missing European atlas entry '+id);
+  const codes=Array.isArray(a.country)?a.country:[a.country];
+  assert.ok(codes.every(c=>articlesForCountry(c).includes(a)),id+' must be indexed to each country');
+  assert.equal(story.paragraphs.length,6,id+' needs six complete documentary paragraphs');
+  assert.ok(story.paragraphs.every(p=>p.text.length>=350),id+' has an underdeveloped section');
+  assert.ok(story.paragraphs.every(p=>p.sources.length>=1&&p.sources.every(s=>s.url.startsWith('https://'))),id+' is not adequately sourced');
+  assert.ok(story.images.length>=1,id+' requires at least one curated image');
+  assert.equal(EUROPE_IMAGE_CONTEXT[id]?.length,story.images.length,id+' image captions must match the images selected');
+  assert.deepEqual(CULTURE_INVESTIGATIONS[id].sections[0].paragraphs,story.paragraphs,id+' full documentary text must render');
+ }
+ const sourceCode=source('ns-cultural-atlas.mjs');
+ assert.match(sourceCode,/STRICT_EUROPE_IMAGES/,'no unrelated photo search fallback for European stories');
+ assert.match(sourceCode,/EUROPE_IMAGE_CONTEXT/,'photo context must be visible in captions');
+});
 
 test('the atlas includes a selectable world map with small states and territories retained',()=>{
  assert.equal(world.type,'FeatureCollection');
