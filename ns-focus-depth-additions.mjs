@@ -38,7 +38,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Avoiding or giving up may spare you another attempt in conditions that have repeatedly failed you.",
         "A reasonable adjustment or shared check-in can change the task itself. The need for support is useful information about the arrangement."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask for written steps when verbal instructions disappear before you can act on them.",
+      "Request a quieter space or permission to use headphones where the setting allows it.",
+      "Ask a colleague to identify the one result needed at the end of a long task.",
+      "Agree on a place where interruptions can be recorded rather than handled immediately.",
+      "Request a short movement break during extended instruction.",
+      "Ask for a summary after a meeting if you missed an essential decision.",
+      "Discuss whether recurring concentration difficulties warrant assessment across settings.",
+      "Share a concrete example of what happens when instructions contain too many steps.",
+      "Arrange a short check-in at the point you usually lose the task thread.",
+      "Ask to complete a trial task in a more accessible environment.",
+      "Agree how to judge whether an adjustment improved completion rather than appearance.",
+      "Seek help negotiating a workload that leaves no reasonable room for focused work."
+    ]
   },
   "memory": {
     "addition": [
@@ -75,7 +89,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Repeated checking may briefly ease the fear that you have missed something, especially after an embarrassing mistake.",
         "Choose a proportionate confirmation procedure. If checking expands despite accurate records, the checking pattern may need attention too."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask for important appointments and changes to be confirmed in writing.",
+      "Request instructions in a format you can revisit without asking someone repeatedly.",
+      "Agree on a shared reminder for a responsibility that affects another person.",
+      "Ask a pharmacist about safe medication reminders if doses are being missed.",
+      "Tell a GP about memory changes that are new, persistent or affecting daily activities.",
+      "Bring a short timeline of memory difficulties to a clinical appointment.",
+      "Ask someone you trust to help check that a high-stakes reminder system works.",
+      "Request one clear place for essential work instructions rather than scattered messages.",
+      "Discuss whether sleep difficulties or medication changes are relevant to recent lapses.",
+      "Arrange a routine for reviewing calendar entries before they become urgent.",
+      "Ask for a written summary when several instructions are given quickly.",
+      "Share the practical impact of forgetting without trying to diagnose its cause."
+    ]
   },
   "organization": {
     "addition": [
@@ -112,7 +140,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Giving up on a complex system may protect you from repeated failure in a format that does not fit how you work.",
         "Written instructions, shared systems or a less demanding format may be the appropriate adjustment."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask for a single named destination for new tasks at work or in a course.",
+      "Agree which deadlines are fixed and which can be renegotiated.",
+      "Ask someone to help turn a complex project into its first three actions.",
+      "Request responsibilities in writing when several people assign work verbally.",
+      "Discuss a shared calendar for commitments that genuinely involve other people.",
+      "Ask for an accessible planning format instead of maintaining several incompatible systems.",
+      "Arrange a regular, brief priority check-in rather than a new meeting about every task.",
+      "Ask for a clear handover note when work is interrupted or passed between people.",
+      "Request a reduction in competing duties when the workload cannot fit available hours.",
+      "Discuss what assistance would make bill payments or appointments more reliable.",
+      "Ask for clarity about who owns a task before adding it to your own list.",
+      "Review together which part of the system saves effort and which part creates it."
+    ]
   },
   "bored": {
     "addition": [
@@ -149,7 +191,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Doing something new may feel easier than admitting you are tired, even when the novelty does not restore you.",
         "Compare your state before and after genuine rest. Persistent loss of pleasure or marked low mood deserves suitable support."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask a friend whether they would like to share an activity with a clear start time.",
+      "Request more varied tasks if repetitive work is making attention difficult.",
+      "Explore safe movement options during prolonged seated activities.",
+      "Ask for a brief, concrete goal within an otherwise open-ended responsibility.",
+      "Tell a trusted person when you are seeking risky excitement because ordinary activities feel flat.",
+      "Discuss persistent loss of enjoyment or low mood with an appropriate health professional.",
+      "Ask a teacher or manager whether feedback can be made more immediate and specific.",
+      "Arrange a genuine rest period without making it another performance target.",
+      "Find an affordable local activity that provides challenge without requiring impulsive spending.",
+      "Agree a phone-free activity with someone, if that fits the situation.",
+      "Request permission to vary the task format while preserving the required outcome.",
+      "Ask for help changing an environment that leaves you isolated for long periods."
+    ]
   },
   "learning": {
     "addition": [
@@ -186,7 +242,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "An explanation can help you feel consistent with your values or protect an important image of yourself.",
         "Notice whether the interpretation helps you act fairly toward yourself and other people, including when it is uncomfortable."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask where a psychological claim came from before using it to describe yourself.",
+      "Discuss a confusing behaviour with someone who can consider its actual context.",
+      "Request a source that explains how a conclusion was tested, not just what it claims.",
+      "Ask a teacher to distinguish a theory from an established finding.",
+      "Invite a trusted person to describe what they observed without assigning motives.",
+      "Seek a professional formulation when a difficulty is persistent and affecting life.",
+      "Ask whether a label changes the practical choices available in your situation.",
+      "Discuss how an interpretation may overlook disability, work pressure or social context.",
+      "Invite a different explanation that could also fit the available facts.",
+      "Ask for help choosing one action when reflection has become repetitive checking.",
+      "Find a reliable explanation of correlation and causation before interpreting a study.",
+      "Give yourself permission to leave a psychological question provisional while addressing real needs."
+    ]
   },
   "hyperactivity": {
     "addition": [
@@ -223,7 +293,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Trying to escape the setting may relieve intense physical agitation for a moment.",
         "If the restlessness is new, severe or associated with a medication change, seek assessment of possible physical contributors."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask whether standing during part of a meeting would be acceptable.",
+      "Request a quiet movement break during a long lesson or training session.",
+      "Explain what kind of movement helps you follow information without disrupting others.",
+      "Ask for a seat or workspace that makes discreet movement possible.",
+      "Discuss a sudden increase in restlessness after a medication change with the prescriber.",
+      "Request written instructions if trying to remain still makes spoken content hard to follow.",
+      "Agree how to step away briefly without losing the thread of an important meeting.",
+      "Ask a clinician to assess severe new agitation or major changes in sleep and mood.",
+      "Explore whether pacing during calls is compatible with the setting and safety needs.",
+      "Ask someone to tell you when movement genuinely affects them rather than assuming it does.",
+      "Arrange an accessible participation option when prolonged sitting is difficult.",
+      "Discuss whether persistent impairment across life settings warrants a broader assessment."
+    ]
   },
   "attention-drift": {
     "addition": [
@@ -260,7 +344,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Pretending to follow may protect you from the embarrassment of needing instructions repeated.",
         "A written summary or permission to ask for clarification can make re-entry much easier."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask the speaker to repeat the decision or instruction you lost, without apologising repeatedly.",
+      "Request a written agenda before a meeting so you can find the thread again.",
+      "Ask for short pauses between complex steps in teaching.",
+      "Agree on a way to mark where reading or listening stopped making sense.",
+      "Request a worked example when the explanation jumps too quickly.",
+      "Ask a colleague for the latest agreed action rather than guessing what you missed.",
+      "Discuss whether background noise could be reduced in a shared workspace.",
+      "Arrange brief comprehension checks that do not embarrass people for needing clarification.",
+      "Ask to see a summary after an important conversation if details were missed.",
+      "Share how worry is competing with attention when you need practical support.",
+      "Request more active learning opportunities when passive listening is not working.",
+      "Explore an assessment if drifting is persistent and affects several areas of life."
+    ]
   },
   "hyperfocus-cost": {
     "addition": [
@@ -297,7 +395,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Continuing may preserve the unusual pleasure of being fully engaged when daily life often feels interrupted.",
         "Give yourself a say over both beginning and ending the activity; autonomy includes a reliable exit."
       ]
-    }
+    },
+    "supportMore": [
+      "Arrange a check-in from someone you trust before a time-sensitive commitment.",
+      "Ask for help designing reliable safeguards for essential medication or care duties.",
+      "Agree on a clear stopping point before beginning a collaborative project.",
+      "Ask someone to leave a resumption note when an interruption is unavoidable.",
+      "Discuss whether deadlines require protected time for transitions between activities.",
+      "Request permission to save a draft rather than complete everything in one sitting.",
+      "Set up a safe, external signal for meals or necessary breaks.",
+      "Ask a trusted person to review whether a stopping cue actually gets your attention.",
+      "Discuss missed safety responsibilities promptly rather than relying on willpower.",
+      "Ask for a predictable end-of-session routine during absorbing work.",
+      "Arrange a workspace that allows an activity to be left unfinished safely.",
+      "Seek appropriate support when difficulty disengaging repeatedly disrupts daily functioning."
+    ]
   },
   "time-blindness": {
     "addition": [
@@ -334,7 +446,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Relying on memory alone may spare you the effort or embarrassment of asking for assistance.",
         "Where timing affects health, safeguarding or others' safety, arrange an appropriate backup that does not rely on noticing one alarm."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask for appointment details that include the required arrival time and location.",
+      "Agree on a reminder for when preparation starts rather than when the event begins.",
+      "Request a buffer between meetings where transitions regularly run over.",
+      "Tell someone affected by lateness which practical timing change you are making.",
+      "Ask whether travel or accessibility needs permit a reasonable scheduling adjustment.",
+      "Arrange a dependable backup for safety-critical reminders.",
+      "Discuss repeated time-management impairment in an ADHD or broader functional assessment.",
+      "Ask a colleague to confirm intermediate milestones before a large deadline.",
+      "Arrange a departure cue that cannot be confused with the appointment start time.",
+      "Ask for a realistic estimate from someone familiar with an unfamiliar task.",
+      "Request clarity on the consequences of a deadline so priorities can be set fairly.",
+      "Agree in advance what to do when a delay becomes unavoidable."
+    ]
   },
   "planning-overload": {
     "addition": [
@@ -371,7 +497,21 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Rebuilding the schedule may help you avoid the frightening fact that the work exceeds the available hours.",
         "Show the workload and available capacity plainly. Negotiating support or scope can be the honest next step."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask which deadline has the real consequence when every task has been called urgent.",
+      "Request a short written brief that separates required work from optional extras.",
+      "Tell a supervisor when the workload exceeds the available hours.",
+      "Ask someone to identify the first decision a project actually requires.",
+      "Request a single priority for the next work period rather than a total weekly plan.",
+      "Ask whether a task can be delayed, shared or removed rather than rescheduled again.",
+      "Arrange a brief planning conversation with an agreed stopping point.",
+      "Seek written clarification when several people give conflicting instructions.",
+      "Ask for a sample completed project to make the sequence visible.",
+      "Request extra processing time when a planning decision is complex.",
+      "Agree what will happen if a deadline changes so the whole plan need not be rebuilt.",
+      "Discuss how recovery time will be protected in a schedule with heavy demands."
+    ]
   },
   "learning-block": {
     "addition": [
@@ -408,6 +548,20 @@ export const FOCUS_DEEPENING=Object.freeze({
         "Stopping may be a reasonable response to fatigue or a learning session that has become too demanding.",
         "Adjust the study interval and recovery time. Persistent cognitive changes deserve appropriate assessment."
       ]
-    }
+    },
+    "supportMore": [
+      "Ask for a worked example of the earliest step you cannot explain.",
+      "Request a definition of a term that the lesson assumes you already know.",
+      "Ask a teacher to demonstrate the skill before expecting independent practice.",
+      "Request written or visual instructions if spoken explanations move too quickly.",
+      "Ask for feedback on a short recall attempt rather than only a final grade.",
+      "Arrange a manageable follow-up practice session after the first explanation.",
+      "Discuss access arrangements that would make the teaching format usable.",
+      "Ask for an example that resembles the task you will eventually be assessed on.",
+      "Request extra time to process an explanation without assuming you lack ability.",
+      "Ask a study partner to quiz you gently on one small concept with corrective feedback.",
+      "Discuss persistent learning barriers with someone who can assess support needs.",
+      "Seek help protecting sleep and recovery when fatigue is undermining concentration."
+    ]
   }
 });
