@@ -19,7 +19,7 @@ const countries=normaliseCountryData(world);
 
 test('European cultural readings provide six detailed source-linked paragraphs and curated image context',()=>{
  const ids=Object.keys(EUROPE_STORIES);
- assert.equal(ids.length,28,'Europe wave must include all 28 authored readings');
+ assert.equal(ids.length,34,'Europe wave must include all 34 authored readings');
  assert.equal(Object.keys(EUROPE_META).length,ids.length);
  for(const id of ids){
   const story=EUROPE_STORIES[id];
