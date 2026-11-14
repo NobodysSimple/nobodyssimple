@@ -19,6 +19,19 @@ export function renderMoodManual(root,id){
  const hero='<div class="ns-judge ns-mood" id="ns-mood-top"><nav class="ns-judge-back"><a href="#navigate/atlas/feel">← Feelings & mood</a><a href="#home">Nobody’s Simple home</a></nav>'+
   '<header class="ns-judge-hero"><div><p class="ns-judge-kicker">NOBODY’S SIMPLE · A FIELD GUIDE FOR YOU</p><h1>'+esc(g.title)+'</h1><p class="ns-judge-subhead">'+esc(g.standfirst)+'</p>'+
   '<div class="ns-mood-jump"><button data-mood-scroll="read">Read and understand</button><button data-mood-scroll="start">Find my next step</button><button data-mood-scroll="now">Something to try now</button></div></div><img class="ns-judge-mascot" src="ns-character-guide.webp" alt="" loading="lazy"></header>';
+
+ // A visible, topic-specific safety note where missing an urgent problem could be harmful.
+ const immediateNotes={
+  'hopelessness':'If you feel you may hurt yourself or cannot stay safe, please reach out to emergency support or someone who can stay with you now. You deserve help with this moment before working through a journal.',
+  'panic':'If this is a new or unusually severe physical episode, particularly with significant chest pain, collapse or dangerous breathing difficulty, seek urgent medical assessment rather than assuming it is panic.',
+  'panic-experiences':'Panic symptoms deserve proper medical assessment. New severe chest pain, fainting or dangerous breathing symptoms need urgent medical attention rather than a self-help exercise.',
+  'mood-shifts':'If your mood changes include markedly increased energy with little need for sleep, or risky decisions that feel unlike you, arrange prompt clinical assessment.',
+  'shame-after-sex':'If intimacy involved pressure or a boundary being ignored, you do not have to treat the harm as a problem with your shame. Safety and support come first.',
+  'emotional-numbness':'If this disconnection is sudden and comes with confusion, weakness or other new neurological symptoms, seek urgent medical assessment.'
+ };
+ const immediateNote=immediateNotes[g.id]?
+  '<aside class="ns-mood-safety" aria-label="When extra support may be important"><p>'+esc(immediateNotes[g.id])+'</p><a href="#support">Find support</a></aside>':'';
+
  const story='<section class="ns-mood-read" id="ns-mood-read"><h2 tabindex="-1">'+esc(g.readTitle)+'</h2>'+
   g.article.map((p,i)=>'<p'+(i===g.pullIndex?' class="ns-mood-pull"':'')+'>'+esc(p)+'</p>').join('')+
   '<h2>Why it can keep happening</h2>'+
@@ -40,7 +53,7 @@ export function renderMoodManual(root,id){
  const footer='<footer class="ns-judge-footer"><details><summary>Research, safety and further support</summary><p>'+esc(g.evidence)+'</p>'+
   '<ul>'+g.sources.map(s=>'<li><a target="_blank" rel="noopener noreferrer" href="'+esc(s[1])+'">'+esc(s[0])+'</a></li>').join('')+'</ul>'+
   '<p>'+esc(g.safety)+'</p><p>These exercises are educational guides, not a diagnosis or individualised psychological treatment. Learning a different response takes practice. If someone is at risk, practical support and safety come first.</p></details><p>Your words remain in this open page unless you choose to download them or explicitly save them on this device. A shared device may not be private.</p></footer>';
- root.innerHTML=hero+story+routes+'<section class="ns-judge-work" data-mood-work hidden aria-label="Your guided exercise"><div data-mood-screen></div></section>'+now+why+footer+'</div>'+
+ root.innerHTML=hero+immediateNote+story+routes+'<section class="ns-judge-work" data-mood-work hidden aria-label="Your guided exercise"><div data-mood-screen></div></section>'+now+why+footer+'</div>'+
   '<dialog class="ns-mood-dialog" data-mood-ideas aria-label="Optional ideas"><button type="button" data-mood-ideas-close class="ns-mood-dialog-close" aria-label="Close ideas">×</button><ul data-mood-ideas-list></ul></dialog>';
  const shell=root.querySelector('.ns-mood'),work=root.querySelector('[data-mood-work]'),screen=root.querySelector('[data-mood-screen]'),dialog=root.querySelector('[data-mood-ideas]'),whySection=root.querySelector('[data-mood-why-body]');
  let ideaTrigger=null;
