@@ -108,9 +108,19 @@ export function anotherPractice(raw,now=new Date(),{kindness=false}={}){
  const skips=kindness?Math.max(today.skips,eligibleTasks(today.skillId,today.level).length):today.skips+1;
  return {...state,today:{...today,skips,taskId:chooseTask(today.date,today.skillId,today.level,skips,kindness)}};
 }
+export function pausePractice(raw,now=new Date()){
+ const state=ensureDailyPractice(raw,now);
+ if(!state.today||state.today.done)return state;
+ return {...state,today:{...state.today,paused:true}};
+}
+export function resumePractice(raw,now=new Date()){
+ const state=ensureDailyPractice(raw,now);
+ if(!state.today||state.today.done)return state;
+ return {...state,today:{...state.today,paused:false}};
+}
 export function completePractice(raw,now=new Date()){
  const state=ensureDailyPractice(raw,now),today=state.today;
- if(!today||today.done||!getPracticeTask(state))return state;
+ if(!today||today.done||today.paused||!getPracticeTask(state))return state;
  const completedAt=now.toISOString(),skillId=today.skillId;
  const entry={date:today.date,skillId,taskId:today.taskId,level:today.level,identityId:state.identityId,completedAt};
  const history=[...state.history.filter(item=>item.date!==today.date),entry].slice(-MAX_HISTORY);
