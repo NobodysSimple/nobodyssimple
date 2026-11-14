@@ -39,7 +39,10 @@ test('Understand Why is a collapsed, searchable topic-specific map',async({page}
  await load(page,'anger');
  await page.locator('[data-mood-why-toggle]').click();
  await page.locator('[data-mood-why-browse]').click();
- await expect(page.locator('[data-mood-why-results] button')).toHaveCount(8);
+ await expect(page.locator('[data-mood-why-count]')).toContainText('16 matching examples');
+ await expect(page.locator('[data-mood-why-results] button')).toHaveCount(10);
+ await page.locator('[data-mood-why-more]').click();
+ await expect(page.locator('[data-mood-why-results] button')).toHaveCount(16);
  await page.locator('[data-mood-why-results] button').first().click();
  await expect(page.locator('[data-mood-why-graph] li')).toHaveCount(10);
  await expect(page.locator('[data-mood-why-title]')).not.toBeEmpty();
