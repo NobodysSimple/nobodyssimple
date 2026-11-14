@@ -81,7 +81,7 @@ test('cultural readings use documentary sources and distinguish place from a psy
    assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the researched paragraphs');
   }
  }
- for(const code of ['CAN','GRL','GTM','BLZ','HND','CRI','NIC','PAN','BHS','DOM','PRI','TTO','SLV','BRB']){
+ for(const code of ['CAN','GRL','GTM','BLZ','HND','CRI','NIC','PAN','BHS','DOM','PRI','TTO','SLV','BRB','BMU','CUW','HTI','CUB','JAM']){
   const entries=articlesForCountry(code).filter(a=>NORTH_AMERICA_STORIES[a.id]);
   assert.ok(entries.length,code+' missing a North America story');
   for(const a of entries){
