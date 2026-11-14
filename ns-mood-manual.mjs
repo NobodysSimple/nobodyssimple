@@ -10,13 +10,14 @@ export const MOOD_IDS=Object.freeze(MOOD_GUIDES.map(g=>g.id));
 const byId=new Map(MOOD_GUIDES.map(g=>[g.id,g]));
 const markers=['What happened','What it seemed to mean','What you felt','What you tried to do','What that response protected','What mattered to you','A rule you may be following','How it could have made sense','Another possibility','A different action'];
 const rootLabel=(g,root)=>g.roots.find(x=>x[0]===root)?.[1]||root;
-export function renderMoodManual(root,id){
- const g=byId.get(id);if(!g)return false;
+export function renderMoodManual(root,id){return renderTopicManual(root,id,byId.get(id),'feel');}
+export function renderTopicManual(root,id,g,domain='feel'){
+ if(!g)return false;
  const state={mode:null,step:0,answers:{},whyOpen:false,whyQuery:'',whyGroup:'',whyAll:false,whySelected:0,own:false,ownStep:0,ownData:{},whyDone:false};
  const storageKey='ns-mood-manual-'+id+'-v1';
  let saved=false;
  try{const s=JSON.parse(localStorage.getItem(storageKey)||'null');if(s&&s.answers&&s.mode&&g.routes.some(r=>r.id===s.mode)){state.answers=s.answers;state.mode=s.mode;saved=true;}}catch{}
- const hero='<div class="ns-judge ns-mood" id="ns-mood-top"><nav class="ns-judge-back"><a href="#navigate/atlas/feel">← Feelings & mood</a><a href="#home">Nobody’s Simple home</a></nav>'+
+ const hero='<div class="ns-judge ns-mood" id="ns-mood-top"><nav class="ns-judge-back"><a href="'+(domain==='experiences'?'#navigate/atlas/experiences':'#navigate/atlas/feel')+'">← '+(domain==='experiences'?'Unusual or distressing experiences':'Feelings & mood')+'</a><a href="#home">Nobody’s Simple home</a></nav>'+
   '<header class="ns-judge-hero"><div><p class="ns-judge-kicker">NOBODY’S SIMPLE · A FIELD GUIDE FOR YOU</p><h1>'+esc(g.title)+'</h1><p class="ns-judge-subhead">'+esc(g.standfirst)+'</p>'+
   '<div class="ns-mood-jump"><button data-mood-scroll="read">Read and understand</button><button data-mood-scroll="start">Find my next step</button><button data-mood-scroll="now">Something to try now</button></div></div><img class="ns-judge-mascot" src="ns-character-guide.webp" alt="" loading="lazy"></header>';
 
@@ -29,8 +30,9 @@ export function renderMoodManual(root,id){
   'shame-after-sex':'If intimacy involved pressure or a boundary being ignored, you do not have to treat the harm as a problem with your shame. Safety and support come first.',
   'emotional-numbness':'If this disconnection is sudden and comes with confusion, weakness or other new neurological symptoms, seek urgent medical assessment.'
  };
- const immediateNote=immediateNotes[g.id]?
-  '<aside class="ns-mood-safety" aria-label="When extra support may be important"><p>'+esc(immediateNotes[g.id])+'</p><a href="#support">Find support</a></aside>':'';
+ const safetySummary=g.prominentSafety||immediateNotes[g.id]||'';
+ const immediateNote=safetySummary?
+  '<aside class="ns-mood-safety" aria-label="When extra support may be important"><p>'+esc(safetySummary)+'</p><a href="#support">Find support</a></aside>':'';
 
  const story='<section class="ns-mood-read" id="ns-mood-read"><h2 tabindex="-1">'+esc(g.readTitle)+'</h2>'+
   g.article.map((p,i)=>'<p'+(i===g.pullIndex?' class="ns-mood-pull"':'')+'>'+esc(p)+'</p>').join('')+
