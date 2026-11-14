@@ -58,7 +58,7 @@ test('cultural readings use documentary sources and distinguish place from a psy
   assert.ok(articleById(id),id+' must be published');
  }
  assert.equal(articleById('cherokee-language').source.label,'Cherokee Nation');
- for(const code of ['AFG','BGD','BTN','IND','LKA','MDV','NPL','PAK']){
+ for(const code of ['AFG','BGD','BTN','IND','IRN','LKA','MDV','NPL','PAK']){
   assert.ok(articlesForCountry(code).length,code+' missing a South Asia story');
   for(const a of articlesForCountry(code)){
    const story=SOUTH_ASIA_STORIES[a.id];

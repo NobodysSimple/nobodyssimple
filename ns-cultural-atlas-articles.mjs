@@ -539,6 +539,21 @@ article('henna-rituals',['DZA','BHR','EGY','IRQ','JOR','KWT','MRT','MAR','OMN','
   'Psychologically, a calendar ritual can make change easier to notice. A shared date offers a prompt to reconnect, remember what has passed and choose what to carry into the next season.',
   'Nowruz is not one uniform celebration, and the meaning of the new year differs among its practitioners. This story treats renewal as a question raised by the tradition, not a fixed belief held by everyone in the region.'
  ],'A shared marker in time can help people reflect, reconnect and begin again.','What would you like to carry forward, and what are you ready to leave behind?','https://ich.unesco.org/en/RL/nowruz-02097'),
+ article('qalishuyan-kashan','IRN','Qālišuyān: the carpet passed between communities','Ritual & shared responsibility','Mašhad-e Ardehāl, Kāšān, Isfahan Province',[
+  'Each autumn, communities near Kāšān honour Soltān Ali by carrying a carpet from his mausoleum to running water. UNESCO records the date, the route and the distinct responsibilities of Xāve and Fin.',
+  'The handover requires people to know who prepares the carpet and who carries it next. Qualitative interviews with stakeholders also record tensions over how a growing public event is managed.',
+  'The ceremony is transmitted by people who perform its roles. Its local religious meaning and the practical work of coordination are both necessary to understand what happens.'
+ ],'A shared purpose needs clear responsibilities and a say for the people doing the work.','Where could you make a handover clearer to the people carrying it?','https://ich.unesco.org/en/RL/qlisuyn-rituals-of-mashad-e-ardehl-in-ksn-00580','Isfahan'),
+ article('khorasan-bakhshis','IRN','Khorasan’s bakhshis: a story in several languages','Music & transmission','North and Razavi Khorasan',[
+  'Bakhshis perform epics and poems with the two-string dotār in Khorasan. UNESCO documents their master–pupil training and their use of Persian, Khorasani Turkish and Kurmanji Kurdish.',
+  'Observed performances show spoken passages changing language according to the audience while sung verses keep a familiar musical form. A teller has to know both the tale and the listeners.',
+  'The instrument is made and taught as a living practice. Stories retain meaning through choices musicians make with people in front of them.'
+ ],'Being understood involves knowing what a listener can follow and changing the explanation accordingly.','What would you explain differently if you knew more about your listener?','https://ich.unesco.org/en/RL/music-of-the-bakhshis-of-khorasan-00381','Khorasan'),
+ article('yazd-qanat','IRN','Yazd’s qanats: sharing water means sharing repair','Cooperation & infrastructure','Yazd Province',[
+  'A qanat guides groundwater through a gently sloping tunnel to a settlement. UNESCO documents the shafts, outlet and communal rules that make the water useful in arid parts of Iran.',
+  'The Hasan Abad qanat crosses three beneficiary areas. Field researchers describe their water shares and the repair work needed along a tunnel about 40 kilometres long.',
+  'Access depends on maintenance and agreements between people along the route. The system makes the work behind a shared resource unusually easy to identify.'
+ ],'Cooperation lasts when people understand the resource, its rules and who repairs it.','Who keeps a shared resource you rely on working?','https://whc.unesco.org/en/list/1506','Yazd'),
  article('kebaya','IDN','Kebaya: clothing, identity and changing meanings','Identity & expression','Kebaya traditions across Southeast Asia',[
   'Kebaya is a garment with related traditions across Brunei Darussalam, Indonesia, Malaysia, Singapore and Thailand. UNESCO describes knowledge, skills and social practices connected with making, wearing and transmitting it.',
   'Psychologically, clothing can help people negotiate identity between personal choice and social expectation. A garment may communicate belonging, memory or occasion, while each wearer can interpret that meaning differently.',
