@@ -7,6 +7,7 @@ import {SOUTH_ASIA_STORIES} from '../../ns-cultural-atlas-south-asia.mjs';
 import {SOUTHEAST_ASIA_STORIES} from '../../ns-cultural-atlas-southeast-asia.mjs';
 import {NORTH_AMERICA_STORIES} from '../../ns-cultural-atlas-north-america.mjs';
 import {LATIN_AMERICA_STORIES} from '../../ns-cultural-atlas-latin-america.mjs';
+import {CENTRAL_ASIA_STORIES,CENTRAL_ASIA_META,CENTRAL_ASIA_IMAGE_CONTEXT} from '../../ns-cultural-atlas-central-asia.mjs';
 import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
@@ -14,6 +15,30 @@ import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIn
 const source=path=>readFileSync(new URL('../../'+path,import.meta.url),'utf8');
 const world=JSON.parse(source(WORLD_COUNTRY_DATA));
 const countries=normaliseCountryData(world);
+
+
+test('Central Asia features five core countries with 28 documented and pictured full readings',()=>{
+ const ids=Object.keys(CENTRAL_ASIA_STORIES);
+ assert.equal(ids.length,28,'expected the 28 fully written heritage investigations');
+ assert.deepEqual(new Set(['KAZ','KGZ','TJK','UZB','TKM']),new Set(['KAZ','KGZ','TJK','UZB','TKM'].filter(c=>ids.some(id=>[].concat(CENTRAL_ASIA_META[id][0]).includes(c)))),'all five core countries must be covered');
+ for(const id of ids){
+  const story=CENTRAL_ASIA_STORIES[id];
+  const metadata=CENTRAL_ASIA_META[id];
+  const article=articleById(id);
+  assert.ok(article,id+' has no article entry');
+  assert.deepEqual(article.country,metadata[0],id+' has incorrect country mapping');
+  const countries=Array.isArray(article.country)?article.country:[article.country];
+  assert.ok(countries.every(code=>articlesForCountry(code).includes(article)),id+' missing in mapped country');
+  assert.equal(story.paragraphs.length,6,id+' must have six full documentary sections');
+  assert.ok(story.paragraphs.every(p=>p.text.length>=350&&p.sources.length>0&&p.sources.every(s=>s.url.startsWith('https://'))),id+' lacks verified sourced detail');
+  assert.ok(story.images.length>=1,id+' needs curated Commons media');
+  assert.equal(CENTRAL_ASIA_IMAGE_CONTEXT[id].length,story.images.length,id+' photo captions must map to the selected images');
+  assert.deepEqual(CULTURE_INVESTIGATIONS[id].sections[0].paragraphs,story.paragraphs,id+' must render all six paragraphs');
+ }
+ const renderer=source('ns-cultural-atlas.mjs');
+ assert.match(renderer,/STRICT_CENTRAL_ASIA_IMAGES/,'no unrelated Commons fallback search for new stories');
+ assert.match(renderer,/CENTRAL_ASIA_IMAGE_CONTEXT\[article.id\]/,'new photo-specific captions must render');
+});
 
 test('the atlas includes a selectable world map with small states and territories retained',()=>{
  assert.equal(world.type,'FeatureCollection');
