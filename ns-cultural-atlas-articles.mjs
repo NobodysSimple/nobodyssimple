@@ -3,10 +3,27 @@
  * Reflections are editorial interpretations, not clinical efficacy claims.
  * Every entry identifies a documentary source and a question for the reader.
  */
+import {NORTH_AMERICA_STORIES} from './ns-cultural-atlas-north-america.mjs';
 const article=(id,country,title,theme,place,body,reflection,question,source,region='')=>Object.freeze({
  id,country,title,theme,place,body:Object.freeze(body),psychology:body[1]||'',reflection,question,
  source:Object.freeze({label:source.includes('ich.unesco.org')?'UNESCO Intangible Cultural Heritage':source.includes('whc.unesco.org')?'UNESCO World Heritage Centre':source.includes('cornwall.gov.uk')?'Cornwall Council':source.includes('nls.uk')?'National Library of Scotland':source.includes('gov.wales')?'Welsh Government':source.includes('mbie.govt.nz')?'New Zealand Government':source.includes('cherokee.org')?'Cherokee Nation':source.includes('nps.gov')?'US National Park Service':source.includes('abudhabiculture.ae')?'Abu Dhabi Department of Culture and Tourism, Heritage Register':'Documentary source',url:source}),region
 });
+const NORTH_AMERICA_META={
+ 'nunavik-katajjaq':['CAN','Katajjaniq: learning to answer another voice','Listening & learning','Inuit communities in Nunavik, Québec','A shared exchange improves when each person can hear and respond to what the other actually does.','Where could you give someone a turn and respond to their effort?','Québec'],
+ 'greenland-qilaat':['GRL','Qilaat: the songs someone has to teach','Memory & transmission','Inuit drum singers in Greenland','An oral repertoire needs people with time to practise it together.','Whose song would you like to learn while they can still teach it?'],
+ 'guatemala-barriletes':['GTM','Giant kites: how Sumpango makes remembrance visible','Remembrance & shared work','Sumpango and Santiago Sacatepéquez, Guatemala','A shared tribute becomes possible when people have concrete work to do together.','What task could you invite someone to share when remembering a person?','Sacatepéquez'],
+ 'belize-garifuna':['BLZ','Garifuna in Belize: a language needs places to be spoken','Language & belonging','Garifuna communities in Belize','Language learning depends on listeners and opportunities for real conversation.','Where can a learner use the language with someone who will answer?'],
+ 'honduras-garifuna-voice':['HND','Garifuna voices: dancing at a demand for rights','Culture & public claims','Garifuna communities on Honduras’s north coast','Hearing a public cultural expression includes hearing the concrete claim its performers make.','What is a group asking for beyond being seen?'],
+ 'costa-rica-carretas':['CRI','Carretas: the work behind a painted wheel','Craft & apprenticeship','Oxcart makers in Sarchí and other Costa Rican communities','A finished craft becomes easier to value when the maker explains what took time to learn.','What would you ask a maker about the hardest part of their work?','Alajuela'],
+ 'nicaragua-gueguense':['NIC','El Güegüense: the joke made in front of power','Satire & authority','Performers in Diriamba, Nicaragua','Satire works when its listeners can identify the rule a character is bending.','What real demand sits underneath a joke about authority?','Carazo'],
+ 'panama-congo':['PAN','Portobelo Congo: who tells the story in a performance','Memory & authorship','Congo practitioners in Portobelo, Panama','The people performing a community story should decide how it is told to an audience.','Whose account would make a public performance easier to understand?','Colón'],
+ 'bahamas-junkanoo':['BHS','Junkanoo: the months behind the parade','Apprenticeship & celebration','Junkanoo groups in The Bahamas','A recurring public celebration needs spaces where experienced makers can teach newcomers.','Who could you invite into the preparation before the celebration?'],
+ 'dominican-merengue':['DOM','Merengue típico: who gets a part in the band','Music & opportunity','Merengue musicians in the Dominican Republic','An invitation to join means access to an instrument, rehearsal and a real part.','Who is invited to learn and who gets a chance to lead?'],
+ 'puerto-rico-bomba':['PRI','Bomba: when the drummer follows the dancer','Response & agency','Afro-Puerto Rican bomba communities','A shared rhythm lets one person try something and receive an attentive answer.','What would change if you responded to this person’s actual move?'],
+ 'trinidad-steelpan':['TTO','Steelpan: why a band needs a panyard','Practice & teaching','Steelbands in Trinidad and Tobago','A group skill needs a place and repeated chances to hear and correct mistakes.','Where can a newcomer practise a real part before the performance?'],
+ 'salvador-historiantes':['SLV','Los Historiantes: restarting a dance after fifteen years','Memory & teaching','Historiantes groups in El Salvador','A remembered practice can return when an experienced person has time to teach it in action.','Who still remembers a practice your group has stopped doing?','Cabañas'],
+ 'barbados-crop-over':['BRB','Crop Over: whose harvest is remembered','Work & public memory','Crop Over participants in Barbados','Oral testimony can restore the people whose work came before a public festival.','Whose memory would change how you tell the history of an event?']
+};
 
 export const CULTURE_ARTICLES=Object.freeze([
  article('washoku','JPN','Washoku: how a meal can hold memory','Ritual & belonging','Japan',
@@ -601,6 +618,10 @@ article('henna-rituals',['DZA','BHR','EGY','IRQ','JOR','KWT','MRT','MAR','OMN','
  article('boduberu','MDV','Boduberu: keeping time together','Music & coordination','Maldivian islands',[
   'Boduberu is a Maldivian performance of large drums, singing and a rhythm that builds in tempo; a group can include three drummers, a lead singer and other performers.','Singers, drummers and dancers listen and respond to the changing pulse, learning where their own part fits in a sound that several people make together.','The music is performed in local celebrations and on public stages, including tourism settings in which the audience and occasion shape how a performance is presented.'
  ],'Shared timing requires people to listen, respond and make room for one another’s part in a piece of work.','When does listening to someone else’s pace help you join in?','https://visitmaldives.com/en/experience/the-hypnotizing-rhythms-of-boduberu'),
+ ...Object.entries(NORTH_AMERICA_STORIES).map(([id,story])=>{
+  const [country,title,theme,place,reflection,question,region]=NORTH_AMERICA_META[id];
+  return article(id,country,title,theme,place,story.paragraphs.slice(0,3).map(p=>p.text),reflection,question,story.paragraphs[0].sources[0].url,region||'');
+ }),
  article('pysanka-estonia',['EST','UKR'],'Pysanka: wishes, gifts and family memory','Ritual & family meaning','Ukrainian communities, including Ukrainians in Estonia',[
   'Pysanka is the Ukrainian art of decorating eggs with wax-resist patterns. UNESCO describes symbols carrying personal wishes and family traditions, with decorated eggs exchanged as gifts and kept for important occasions.',
   'Psychologically, a gift can make care visible: the object carries time, intention and a message that can be revisited later. Making and exchanging it also gives family members a shared activity through which knowledge travels.',

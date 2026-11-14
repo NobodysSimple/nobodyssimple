@@ -5,6 +5,7 @@ import {WORLD_COUNTRY_DATA,geoPath,featureBounds,countryViewBox,normaliseCountry
 import {CULTURE_ARTICLES,articlesForCountry,articleCountries,articleById} from '../../ns-cultural-atlas-articles.mjs';
 import {SOUTH_ASIA_STORIES} from '../../ns-cultural-atlas-south-asia.mjs';
 import {SOUTHEAST_ASIA_STORIES} from '../../ns-cultural-atlas-southeast-asia.mjs';
+import {NORTH_AMERICA_STORIES} from '../../ns-cultural-atlas-north-america.mjs';
 import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
@@ -77,6 +78,18 @@ test('cultural readings use documentary sources and distinguish place from a psy
    assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' needs six sourced paragraphs');
    assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' needs primary research');
    assert.ok(story.images.length,a.id+' needs a specifically selected image');
+   assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the researched paragraphs');
+  }
+ }
+ for(const code of ['CAN','GRL','GTM','BLZ','HND','CRI','NIC','PAN','BHS','DOM','PRI','TTO','SLV','BRB']){
+  const entries=articlesForCountry(code).filter(a=>NORTH_AMERICA_STORIES[a.id]);
+  assert.ok(entries.length,code+' missing a North America story');
+  for(const a of entries){
+   const story=NORTH_AMERICA_STORIES[a.id];
+   assert.equal(story.paragraphs.length,6,a.id+' needs six paragraphs');
+   assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' needs sourced prose');
+   assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' needs primary testimony or research');
+   assert.ok(story.images.length>=2,a.id+' needs two curated images');
    assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the researched paragraphs');
   }
  }
