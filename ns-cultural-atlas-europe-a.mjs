@@ -112,7 +112,7 @@ const RECORDS=[
         ]
       },
       {
-        "text": "The photographs from Ét el's 2019 fest-noz and the French Ministry of Culture's documented instrument players are different kinds of evidence. One records an actual local gathering, the other a musician's role. The second is not a photograph of every instrument used in Brittany, and the first is not proof that all villages dance alike. The UNESCO nomination explains the breadth of the practice and the circumstances in which local people continue to pass it on.",
+        "text": "The photographs from Étel's 2019 fest-noz and the French Ministry of Culture's documented instrument players are different kinds of evidence. One records an actual local gathering, the other a musician's role. The second is not a photograph of every instrument used in Brittany, and the first is not proof that all villages dance alike. The UNESCO nomination explains the breadth of the practice and the circumstances in which local people continue to pass it on.",
         "refs": [
           0
         ]
