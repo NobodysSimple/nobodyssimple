@@ -610,7 +610,7 @@ export const MOOD_GUIDES_01=[
         ],
         "finish": "You have treated the thought as something to examine rather than obey.",
         "practiceTitle": "Use the fairer sentence",
-        "practice": "Read it once and choose a small action."
+        "practice": "Read your fairer sentence once, then choose a manageable action that matters to you."
       },
       {
         "id": "support",
