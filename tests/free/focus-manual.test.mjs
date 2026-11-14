@@ -16,15 +16,17 @@ test('all eleven Attention, learning and habits catalogue topics have bespoke gu
  }
 });
 test('all guides contain distinct full-length editorial articles and 44 actionable journals',()=>{
- const openers=new Set(),outcomes=new Set();
+ const openers=new Set(),outcomes=new Set(),routeNotes=new Set(),explanations=new Set();
  for(const g of FOCUS_GUIDES){
-  assert.equal(g.article.length,8,g.id);
-  assert.ok(g.article.join(' ').split(/\s+/).length>=340,g.id+' short article');
+  assert.equal(g.article.length,10,g.id+' should include additional authored context');
+  assert.ok(g.article.join(' ').split(/\s+/).length>=470,g.id+' short article');
   assert.ok(!openers.has(g.article[0]),g.id+' duplicated opening');openers.add(g.article[0]);
   assert.equal(g.routes.length,4,g.id);
   assert.equal(new Set(g.routes.map(x=>x.id)).size,4,g.id);
   for(const route of g.routes){
    assert.ok(route.practice.length>=40,g.id+'/'+route.id);
+   assert.ok(route.description.length>95,g.id+'/'+route.id+' generic route');
+   assert.ok(!routeNotes.has(route.description),g.id+'/'+route.id+' repeated coaching');routeNotes.add(route.description);
    assert.ok(!outcomes.has(route.practice),g.id+' repeated practice');
    outcomes.add(route.practice);
    assert.equal(route.questions.length,4,g.id);
@@ -42,8 +44,11 @@ test('176 individually authored worked examples map to correct possible causes',
   assert.equal(g.whyCases.length,16,g.id);
   assert.equal(new Set(g.whyCases.map(x=>x.situation)).size,16,g.id);
   assert.equal(g.whyQuestions.length,10,g.id);
-  assert.ok(g.whyIntro.length>=95,g.id);
+  assert.ok(g.whyIntro.length>=180,g.id);
+  assert.ok(g.whyCases.every(x=>x.function.length>75&&x.adaptation.length>60),g.id+' explanations too thin');
   for(const x of g.whyCases){
+   assert.doesNotMatch(x.function,/This response may have offered relief or protected a need/i,g.id+' generic function');
+   assert.doesNotMatch(x.adaptation,/The map is a possibility, not a claim about your history/i,g.id+' generic explanation');
    assert.ok(g.roots.some(r=>r[0]===x.root),g.id+' invalid root: '+x.root);
    for(const f of ['interpretation','emotion','response','function','need','rule','adaptation','alternative','action'])
     assert.ok(x[f]?.length>=4,g.id+' missing '+f);
