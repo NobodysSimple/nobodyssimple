@@ -34,6 +34,15 @@ boundaries:'Guilt',sequence:'Confusion',agency:'Urgency',stimulation:'Restlessne
 escape:'Distress',security:'Fear',connection:'Loneliness',choice:'Urgency',belonging:'Pressure',
 attention:'Restlessness',structure:'Frustration',values:'Uncertainty'
 };
+const immediateSafety={
+ 'risk-taking':'If a risk could harm you or somebody else now, take immediate practical safety action and seek urgent support. Sudden reckless behaviour alongside markedly reduced sleep or unusually high energy warrants prompt clinical assessment.',
+ 'risky-sex':'Consent must be voluntary and can be withdrawn. If coercion or assault has occurred, seek safety and support. For a recent possible STI or HIV exposure, or pregnancy risk, seek prompt sexual-health advice because some options are time-sensitive.',
+ 'energy-action':'New or severe fatigue needs medical assessment. If physical or cognitive symptoms worsen after exertion (post-exertional worsening), avoid self-prescribed increases in activity and ask for condition-appropriate guidance.',
+ 'habit-urges':'If an urge presents immediate danger, seek urgent help. Abrupt withdrawal from alcohol or some dependent substances can be medically dangerous. Ask for qualified advice rather than using this journal to stop suddenly.',
+ 'unplanned-impulses':'New or markedly increased impulsivity, especially with little need for sleep or unusually elevated mood, may need prompt clinical assessment. Immediate danger to others requires urgent safety action.',
+ 'compulsive-buying':'If rent, food or essential bills are at risk, prioritise financial safety and seek appropriate debt support. Sudden heavy spending with very little sleep can warrant urgent clinical assessment.',
+ avoidance:'Do not approach a genuinely unsafe or abusive situation as an exposure challenge. Safety and appropriate accessibility adjustments take priority over tolerating discomfort.'
+};
 const stageNames=['What happened','What you thought it meant','What you felt','What you did next',
  'What the response provided briefly','Which need or value mattered','A possible rule you may be following',
  'Context and conditions that may explain it','Another reasonable understanding','A safer or more useful next action'];
@@ -87,7 +96,7 @@ function individualGuides(d){
  });
  if(mapped.length!==16||new Set(mapped.map(x=>x.situation)).size!==16)fail(id,'repeated or missing situations');
  for(const s of mapped)for(const f of ['interpretation','emotion','response','function','need','rule','adaptation','alternative','action','root'])if(!s[f])fail(id,'missing example field '+f);
- return Object.freeze({...d,routes:steps,ideas:{actions,support},
+ return Object.freeze({...d,routes:steps,ideas:{actions,support},prominentSafety:immediateSafety[id]||'',
   whyIntro:'A repeated action may be protecting something important, but its purpose and cause are not always obvious. Explore possible explanations without treating them as conclusions about your personality or childhood.',
   whyQuestions:w,whyCases:mapped,whyStages:stageNames,pullIndex:4});
 }
