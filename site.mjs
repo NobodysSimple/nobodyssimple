@@ -45,7 +45,7 @@ import { renderNSProblemGuide } from './ns-problem-guide.mjs';
 import {renderPrecisionConsole} from './ns-precision-console.mjs';
 import {renderPrecisionGuide} from './ns-precision-guide.mjs';
 import {renderJudgementManual} from './ns-judgement-manual.mjs?v=20261114-why';
-import {renderMoodManual,renderTopicManual,MOOD_IDS} from './ns-mood-manual.mjs?v=habit-20261114-v2';
+import {renderMoodManual,renderTopicManual,MOOD_IDS} from './ns-mood-manual.mjs?v=focus-20261114-v1';
 import {THINK_IDS,THINK_BY_ID} from './ns-think-guide-data.mjs?v=think-20261114-v1';
 import {HABIT_IDS,HABIT_BY_ID} from './ns-habit-guide-data.mjs?v=habit-20261114-v2';
 import {FOCUS_IDS,FOCUS_BY_ID} from './ns-focus-guide-data.mjs?v=focus-20261114-v1';
