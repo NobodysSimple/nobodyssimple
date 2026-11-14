@@ -1,0 +1,46 @@
+/* Wisbody's 500 original reflections — scoped, accessible additions. */
+body.app-body .wisbody-bubble .wisbody-context {
+ display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0 0 13px;
+ font-size:12px;line-height:1.4;color:var(--ui-muted,#51665b);
+}
+body.app-body .wisbody-context strong { color:var(--ui-ink,#254a3a);font-weight:750; }
+body.app-body .wisbody-context span { padding:4px 9px;border-radius:999px;border:1px solid var(--ui-line,#d6ddcf);background:var(--ui-paper,#faf9f4);font-size:11px; }
+body.app-body .wisbody-bubble .wisbody-prompt { margin:13px 0;font-size:14px;line-height:1.65;color:var(--ui-ink,#254a3a); }
+body.app-body .wisbody-prompt strong { display:block;margin-bottom:2px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ui-muted,#51665b); }
+body.app-body .wisbody-depth-action { margin:12px 0 18px; }
+body.app-body .wisbody-depth-action .wisbody-deeper {
+ background:#315746;color:#fffdf4;border-color:#315746;
+ min-height:42px;padding:10px 17px;font-weight:700;
+}
+body.app-body .wisbody-depth-action .wisbody-deeper:hover { background:#254637;color:#fff; }
+body.app-body .wisbody-end {font-size:12px;color:var(--ui-muted,#51665b);}
+body.app-body .wisbody-filters { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px; margin:16px 0; }
+body.app-body .wisbody-filters .wisbody-filter { display:flex;flex-direction:column;align-items:stretch;gap:6px;margin:0;min-width:0;font-size:12px; }
+body.app-body .wisbody-filters select { width:100%;min-width:0;min-height:40px;padding:7px 9px;border:1px solid var(--ui-line,#d6ddcf);border-radius:9px;background:var(--ui-paper,#fffdf7);color:var(--ui-ink,#254a3a);font:inherit; }
+body.app-body .wisbody-experiment { margin:16px 0 10px;padding:14px 16px;border-radius:14px;background:rgba(87,133,99,.09);border:1px solid rgba(87,133,99,.2); }
+body.app-body .wisbody-experiment strong {display:block;font-size:12px;color:var(--ui-ink,#254a3a);}
+body.app-body .wisbody-experiment p {margin:6px 0 0;line-height:1.6;font-size:13px;}
+body.app-body .wisbody-mechanism {margin:14px 0;padding:10px 0;border-top:1px solid var(--ui-line,#d6ddcf);}
+body.app-body .wisbody-mechanism p {margin:7px 0;font-size:13px;line-height:1.65;}
+body.app-body .wisbody-journal {margin:14px 0 0;padding:12px 0 0;border-top:1px solid var(--ui-line,#d6ddcf);}
+body.app-body .wisbody-journal p {font-size:13px;line-height:1.5;}
+body.app-body .wisbody-journal-modes {display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+body.app-body .wisbody-journal-modes .chip {min-height:38px;padding:8px 12px;}
+body.app-body .wisbody-journal-modes .wisbody-mode-active {background:#315746;color:#fff;border-color:#315746;}
+body.app-body .wisbody-journal textarea {width:100%;max-width:100%;font-size:14px;line-height:1.6;}
+body.app-body .wisbody-journal #wisbody-journal-question {display:block;margin:6px 0 9px;font-size:13px;font-weight:650;line-height:1.55;}
+body.app-body .wisbody .ns-wisbody-more {border-top:1px solid var(--ui-line,#d6ddcf);padding-top:12px;margin-top:10px;}
+body.app-body .wisbody .ns-wisbody-more > summary {cursor:pointer;font-size:12px;font-weight:750;min-height:40px;display:list-item;align-content:center;}
+body.app-body .wisbody .ns-wisbody-more[open] > .wisbody-browser {padding-top:8px;}
+body.app-body .wisbody :is(button,textarea,select,summary,a):focus-visible {outline:3px solid #a96a34;outline-offset:3px;}
+html[data-theme="dark"] body.app-body .wisbody-context span {background:#334b40;color:#f4f1e8;border-color:#587061;}
+html[data-theme="dark"] body.app-body .wisbody-experiment {background:#345043;border-color:#69846d;color:#f7f4e8;}
+html[data-theme="dark"] body.app-body .wisbody .wisbody-depth-action .wisbody-deeper,
+html[data-theme="dark"] body.app-body .wisbody-journal-modes .wisbody-mode-active {background:#d3e8cf;color:#203b2e;border-color:#d3e8cf;}
+@media(max-width:760px) {
+ body.app-body .wisbody-filters {grid-template-columns:minmax(0,1fr);}
+ body.app-body .wisbody-bubble .wisbody-context {gap:5px;}
+ body.app-body .wisbody-context span {font-size:10px;}
+ body.app-body .wisbody-bubble .wisbody-prompt {font-size:13px;}
+ body.app-body .wisbody-depth-action .wisbody-deeper {width:100%;}
+}
