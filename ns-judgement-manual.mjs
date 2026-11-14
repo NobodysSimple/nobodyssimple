@@ -76,36 +76,17 @@ const paras=[
 "The point is to begin learning what happens when you allow yourself to be present.",
 "And over time, I hope you'll find that you can give people a chance to know you without feeling that you must first make yourself impossible to dislike."
 ];
-function control(item,value){
- const options=item.options||item[4]||[];
- const type=item.type||item[3]||'text';
- const id=item.id||item[0];
- if(type==='radio'||type==='checks'){
-  const multiple=type==='checks';
-  const v=multiple?(Array.isArray(value)?value:[]):value;
-  return '<fieldset class="ns-judge-options"><legend class="ns-judge-sr">Your answer</legend>'+
-   options.map(([key,label])=>'<label class="ns-judge-option"><input type="'+(multiple?'checkbox':'radio')+'" name="answer" value="'+e(key)+'" '+((multiple?v.includes(key):(typeof v==='object'?v?.choice:v)===key)?'checked':'')+'><span>'+e(label)+'</span></label>').join('')+
-   '</fieldset>'+(id==='fear'?'<label class="ns-judge-detail">If you chose something else, you can describe it here <input type="text" name="fearOther" maxlength="180" value="'+e(value?.other||'')+'" autocomplete="off"></label>':'');
- }
- return '<label class="ns-judge-sr" for="ns-judge-answer">Your answer</label><textarea id="ns-judge-answer" name="answer" rows="4" maxlength="900" placeholder="Write as much or as little as you like.">'+e(value||'')+'</textarea>';
+
+function control(value){
+ const text=typeof value==='string'?value:'';
+ return '<label class="ns-judge-sr" for="ns-judge-answer">Your answer</label>'+
+ '<textarea id="ns-judge-answer" name="answer" rows="4" maxlength="1200" placeholder="You can write in your own words.">'+e(text)+'</textarea>';
 }
-function lineFor(item,value){
- const type=item.type||item[3]||'text';
- if(type==='checks')return (Array.isArray(value)?value:[]).map(k=>(item.options||item[4]||[]).find(o=>o[0]===k)?.[1]||k).join(', ');
- if(type==='radio'){const v=typeof value==='object'?value?.choice:value;return (item.options||item[4]||[]).find(o=>o[0]===v)?.[1]||'';}
- return String(value||'');
+function formValue(root,oldValue){
+ const form=root.querySelector('[data-nj-question]');
+ return form?String(form.elements.answer?.value||'').trim().slice(0,1200):oldValue;
 }
-function formValue(root,item,oldValue){
- const form=root.querySelector('[data-nj-question]');if(!form)return oldValue;
- const type=item.type||item[3]||'text',els=form.elements;
- if(type==='checks')return [...form.querySelectorAll('input[name="answer"]:checked')].map(x=>x.value);
- if(type==='radio'){
-  const chosen=form.querySelector('input[name="answer"]:checked')?.value||'';
-  if(item.id==='fear')return {choice:chosen,other:els.fearOther?.value?.trim()?.slice(0,180)||''};
-  return chosen;
- }
- return String(els.answer?.value||'').trim().slice(0,900);
-}
+
 function escapeNotes(s){return String(s||'').replace(/\s+/g,' ').trim();}
 const NOTE_KEY='ns-fear-judgement-notes-v1';
 export function renderJudgementManual(root){
@@ -114,6 +95,16 @@ export function renderJudgementManual(root){
  try{const saved=JSON.parse(localStorage.getItem(NOTE_KEY)||'null');
   if(saved&&['map',...Object.keys(guides)].includes(saved.mode)&&saved.answers&&saved.forms){
    state.answers=saved.answers;state.forms=saved.forms;savedMode=saved.mode;
+   const a=state.answers;
+   if(a.fear&&typeof a.fear==='object')a.fear=a.fear.other||({boring:'They might think I am boring',stupid:'They might think I am stupid',strange:'They might think I am strange',disappoint:'They might feel disappointed in me'})[a.fear.choice]||'';
+   if(Array.isArray(a.protect))a.protect=a.protect.map(k=>({quiet:'I stayed quiet',rehearse:'I rehearsed',perform:'I tried to look confident',agree:'I agreed',withdraw:'I withdrew',replay:'I replayed it later',reassure:'I asked for reassurance'})[k]||k).join('; ');
+   if(['yes','no','unsure'].includes(a.safety))a.safety=({yes:'I have experienced actual criticism or mistreatment',no:'Nothing I know of',unsure:"I am not sure what happened"})[a.safety];
+   if(state.forms.replay&&['action','guess','unsure'].includes(state.forms.replay.repair)){
+    state.forms.replay.repair=({action:'Something specific might need putting right',guess:'I am trying to know what they thought',unsure:'I am not sure yet'})[state.forms.replay.repair];
+   }
+   if(state.forms.review&&['tried','smaller','notyet','changed'].includes(state.forms.review.outcome)){
+    state.forms.review.outcome=({tried:'I tried the step',smaller:'I made a smaller attempt',notyet:"I haven't tried it yet",changed:'I changed my plan'})[state.forms.review.outcome];
+   }
   }
  }catch{}
  root.innerHTML='<div class="ns-judge" id="ns-judge-top">'+
@@ -129,7 +120,7 @@ export function renderJudgementManual(root){
   '<div class="ns-judge-saved" data-nj-saved>'+(savedMode?'<p>You have notes saved on this device.</p><button type="button" class="ns-judge-secondary" data-nj-resume>Continue my saved notes</button> <button type="button" class="ns-judge-secondary" data-nj-remove>Delete saved copy</button>':'')+'</div></section>'+ 
   '<section id="ns-judge-work" class="ns-judge-work" aria-label="Your guided journal" hidden><div data-nj-screen></div></section>'+
   '<section id="ns-judge-now" class="ns-judge-now" aria-labelledby="ns-judge-now-title"><h2 id="ns-judge-now-title" tabindex="-1">Something you can try in your next conversation</h2><p>If you catch yourself worrying about how you sound, gently notice what you’re afraid the other person might think. Then bring some attention back to what they are saying. You can continue the conversation while feeling awkward. There is no need to make the feeling disappear first.</p></section>'+
-  '<footer class="ns-judge-footer"><details><summary>Research and support</summary><p>These ideas draw on cognitive behavioural approaches for social anxiety, including reducing excessive self-monitoring and using safe behavioural experiments. If fear of judgement is seriously affecting your life, individual CBT designed for social anxiety is a recommended treatment.</p><ul><li><a href="https://www.nice.org.uk/guidance/cg159/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE social anxiety guidance</a></li><li><a href="https://www.nhs.uk/mental-health/conditions/social-anxiety/" target="_blank" rel="noopener noreferrer">NHS social anxiety information</a></li><li><a href="https://www.nhs.uk/nhs-services/mental-health-services/find-nhs-talking-therapies-for-anxiety-and-depression/" target="_blank" rel="noopener noreferrer">NHS Talking Therapies in England</a></li></ul><p>These exercises are educational. They are not a diagnosis or a substitute for individualised care. If someone is mistreating you, focus on safety and support rather than forcing yourself into an unsafe situation.</p></details><p>Nothing you write is saved or sent automatically. You can download your notes or choose to save them on this device. Only save on a device you trust.</p></footer></div>';
+  '<footer class="ns-judge-footer"><details><summary>Research and support</summary><p>These ideas draw on cognitive behavioural approaches for social anxiety, including reducing excessive self-monitoring and using safe behavioural experiments. If fear of judgement is seriously affecting your life, individual CBT designed for social anxiety is a recommended treatment.</p><ul><li><a href="https://www.nice.org.uk/guidance/cg159/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE social anxiety guidance</a></li><li><a href="https://www.nhs.uk/mental-health/conditions/social-anxiety/" target="_blank" rel="noopener noreferrer">NHS social anxiety information</a></li><li><a href="https://www.nhs.uk/nhs-services/mental-health-services/find-nhs-talking-therapies-for-anxiety-and-depression/" target="_blank" rel="noopener noreferrer">NHS Talking Therapies in England</a></li></ul><p>These exercises are educational. They are not a diagnosis or a substitute for individualised care. If someone is mistreating you, focus on safety and support rather than forcing yourself into an unsafe situation.</p></details><p>Nothing you write is saved or sent automatically. You can download your notes or choose to save them on this device. Only save on a device you trust.</p></footer><dialog class="ns-judge-ideas-dialog" data-nj-ideas-dialog aria-label="Practical ideas you can try"><button type="button" class="ns-judge-ideas-close" data-nj-ideas-close aria-label="Close ideas">×</button><ul data-nj-ideas-list></ul></dialog></div>';
  const work=root.querySelector('#ns-judge-work'),out=work.querySelector('[data-nj-screen]');
  function focusWork(){
   work.hidden=false;
@@ -139,51 +130,67 @@ export function renderJudgementManual(root){
  }
  function currentQuestions(){return state.mode==='map'?qs:guides[state.mode]?.questions||[];}
  function currentStore(){return state.mode==='map'?state.answers:(state.forms[state.mode]||(state.forms[state.mode]={}));}
+ 
+ function linkedObservation(){
+  const a=currentStore();
+  let previous='';
+  if(state.mode==='test'&&state.pos===3&&a.predict)previous='Earlier, your mind predicted: '+a.predict;
+  if(state.mode==='test'&&state.pos===4&&a.usual)previous='The precaution you noticed: '+a.usual;
+  if(state.mode==='replay'&&state.pos===2&&a.facts)previous='What you know, alongside what you guessed: '+a.facts;
+  if(state.mode==='kindness'&&state.pos===2&&a.fact)previous='The event you described: '+a.fact;
+  if(state.mode==='map'&&state.pos===4&&a.protect)previous='What you did to protect yourself: '+a.protect;
+  return previous?'<p class="ns-judge-linkback">'+e(previous.slice(0,265))+'</p>':'';
+ }
  function showStep(){
-  const a=currentQuestions(),item=a[state.pos];
+  const items=currentQuestions(),item=items[state.pos];
   if(!item){showFinish();return;}
-  const q=item.q||item[1],hint=item.help||item[2],id=item.id||item[0],store=currentStore();
-  out.innerHTML='<p class="ns-judge-kicker">'+(state.mode==='map'?'YOUR FEAR OF JUDGEMENT MAP':e(guides[state.mode].title))+'</p>'+
-   '<p class="ns-judge-progress">Question '+(state.pos+1)+' of '+a.length+'</p>'+
-   '<div class="ns-judge-progressbar" aria-hidden="true"><span style="width:'+((state.pos+1)/a.length*100).toFixed(1)+'%"></span></div>'+
-   '<h2 tabindex="-1">'+e(q)+'</h2><p class="ns-judge-help">'+e(hint||'')+'</p>'+
-   '<form data-nj-question novalidate>'+control(item,store[id])+'</form>'+
+  const store=currentStore();
+  out.innerHTML='<p class="ns-judge-kicker">'+e(state.mode==='map'?'YOUR FEAR OF JUDGEMENT MAP':guides[state.mode].title)+'</p>'+
+   '<p class="ns-judge-progress">Question '+(state.pos+1)+' of '+items.length+'</p>'+
+   '<div class="ns-judge-progressbar" aria-hidden="true"><span style="width:'+((state.pos+1)/items.length*100).toFixed(1)+'%"></span></div>'+
+   '<div class="ns-judge-question-line"><h2 tabindex="-1">'+e(item.q)+'</h2>'+
+   (item.ideas&&judgementIdeas[item.ideas]?.length?'<button type="button" class="ns-judge-idea-trigger" data-nj-ideas="'+e(item.ideas)+'" aria-haspopup="dialog">✦ Show me ideas</button>':'')+'</div>'+
+   '<p class="ns-judge-help">'+e(item.help||'')+'</p>'+
+   linkedObservation()+
+   (item.shift?'<div class="ns-judge-practice"><strong>Try this as you write</strong><p>'+e(item.shift)+'</p></div>':'')+
+   '<form data-nj-question novalidate>'+control(store[item.id])+'</form>'+
    '<div class="ns-judge-actions">'+(state.pos?'<button type="button" class="ns-judge-secondary" data-nj-back>Back</button>':'<button type="button" class="ns-judge-secondary" data-nj-close>Close</button>')+
-   '<button type="button" class="ns-judge-primary" data-nj-next>'+(state.pos===a.length-1?'See my notes':'Continue')+' →</button></div>'+
-   '<p class="ns-judge-muted">You can leave an answer blank. There is no right answer and no score.</p>';
+   '<button type="button" class="ns-judge-primary" data-nj-next>'+(state.pos===items.length-1?'See what I learned':'Continue')+' →</button></div>'+
+   '<p class="ns-judge-muted">Every answer is optional. There are no scores.</p>';
   focusWork();
  }
  function collect(){
   const item=currentQuestions()[state.pos];if(!item)return;
-  const id=item.id||item[0];
-  currentStore()[id]=formValue(root,item,currentStore()[id]);
+  currentStore()[item.id]=formValue(root,currentStore()[item.id]);
  }
  function recommendation(){
-  if(state.answers.safety==='yes')return 'protect';
-  if(state.answers.safety==='unsure' && /bullied|harass|unsafe|threat|mocked/i.test(state.answers.moment||''))return 'protect';
-  const protections=state.answers.protect||[];
-  if(protections.includes('replay'))return 'replay';
-  if(state.answers.fear?.choice==='stupid' && /asham|worth|defect|flaw|bad person/i.test(state.answers.meaning||''))return 'kindness';
+  const a=state.answers;
+  const harm=String(a.safety||'').trim().toLowerCase();
+  const clearlyNo=/^(nothing|none|no\b|not that i know|i don't know of|i do not know of|nothing i know)/.test(harm);
+  if(harm&&!clearlyNo&&/(mock|bully|harass|threat|intimida|discriminat|retaliat|insult|humiliat|unsafe|physical|coerc|exclude|ridicul)/.test(harm))return 'protect';
+  if(/replay|ruminat|overthink|keep going over|went over|again and again/.test(String(a.protect||'').toLowerCase()))return 'replay';
+  if(/worthless|unlovable|bad person|defect|flaw|inadequate|shame|asham|hate myself/.test(String(a.meaning||'').toLowerCase()))return 'kindness';
   return 'test';
  }
  function mapNotes(){
   const a=state.answers;
   const summary=[];
-  if(a.moment)summary.push('Your situation: '+escapeNotes(a.moment));
-  const feared=lineFor(qs[1],a.fear);if(feared)summary.push('Your feared judgement: '+(a.fear?.choice==='other'&&a.fear.other?a.fear.other:feared));
-  if(a.meaning)summary.push('Why it might hurt: '+escapeNotes(a.meaning));
-  if(a.protect?.length)summary.push('How you tried to protect yourself: '+lineFor(qs[3],a.protect));
-  if(a.cost)summary.push('What helped or cost you something: '+escapeNotes(a.cost));
-  if(a.safety)summary.push('What you know about actual criticism: '+lineFor(qs[5],a.safety));
-  if(a.wish)summary.push('What you would have liked: '+escapeNotes(a.wish));
-  if(a.step)summary.push('Your possible next step: '+escapeNotes(a.step));
+  if(a.moment)summary.push('The moment you chose: '+escapeNotes(a.moment));
+  if(a.fear)summary.push('The judgement you feared: '+escapeNotes(a.fear));
+  if(a.meaning)summary.push('Why it matters to you: '+escapeNotes(a.meaning));
+  if(a.protect)summary.push('How you tried to protect yourself: '+escapeNotes(a.protect));
+  if(a.cost)summary.push('The short-term help and longer-term cost: '+escapeNotes(a.cost));
+  if(a.safety)summary.push('What you know about how you were treated: '+escapeNotes(a.safety));
+  if(a.wish)summary.push('What you would like to be able to do: '+escapeNotes(a.wish));
+  if(a.step)summary.push('The step you might choose: '+escapeNotes(a.step));
   return summary;
  }
  function guideNotes(mode){
-  const a=guides[mode].questions,store=state.forms[mode]||{};
-  return a.map(item=>{const id=item[0],v=lineFor(item,store[id]);return v?item[1]+'\n'+v:''}).filter(Boolean);
+  const items=guides[mode].questions,store=state.forms[mode]||{};
+  return items.map(item=>store[item.id]?item.q+'\n'+String(store[item.id]):'').filter(Boolean);
  }
- function showFinish(){
+
+function showFinish(){
   if(state.mode==='map'){
    const rec=recommendation();state.suggest=rec;state.done.map=true;
    out.innerHTML='<p class="ns-judge-kicker">YOUR WORKING MAP</p><h2 tabindex="-1">Here’s what you noticed</h2>'+
@@ -192,11 +199,11 @@ export function renderJudgementManual(root){
     '<div class="ns-judge-next"><p class="ns-judge-kicker">YOUR SUGGESTED NEXT EXERCISE</p><h3>'+e(guides[rec].title)+'</h3><p>'+e(guides[rec].lead)+'</p>'+
     '<button class="ns-judge-primary" type="button" data-nj-open="'+rec+'">Start this exercise →</button></div>'+
     '<div class="ns-judge-actions"><button class="ns-judge-secondary" type="button" data-nj-edit>Review my answers</button><button class="ns-judge-secondary" type="button" data-nj-download>Download my notes</button><button class="ns-judge-secondary" type="button" data-nj-save>Save on this device</button><button class="ns-judge-secondary" type="button" data-nj-close>Finish for now</button></div><p class="ns-judge-muted" data-nj-storage-status role="status">Saving is optional. Anyone with access to this browser may be able to see saved notes.</p>'+ 
-    '<p class="ns-judge-muted">If someone has actually treated you badly, support and safety take priority over an experiment.</p>';
+    '<p class="ns-judge-muted">This suggestion is a starting point, not a judgement about you. If this situation involves actual mistreatment, the safer starting point is <button type="button" class="ns-judge-text-action" data-nj-open="protect">When the judgement is real</button>. You can choose any of the journals.</p>';
   }else{
    const mode=state.mode;state.done[mode]=true;
    const notes=guideNotes(mode);
-   const tail=mode==='replay'?(state.forms.replay?.repair==='action'?'If there is something specific to repair, choose one proportionate action.':'You may not be able to know what the other person thought. You can return to what matters to you now.'):
+   const tail=mode==='replay'?'If something genuinely needs putting right, one proportionate action is enough. You cannot discover another person’s private thoughts by replaying the event. You can return to your day now.':
     mode==='protect'?'You do not need to confront someone who might retaliate. Consider support and safer conditions first.':
     mode==='kindness'?'You can learn from an experience without condemning your whole self.':
     mode==='test'?'Try this only in a safe setting. Afterwards, return to review what actually happened.':'You can adjust the next step without losing any progress.';
@@ -228,9 +235,18 @@ export function renderJudgementManual(root){
   document.body.append(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),2000);
  }
+ let ideasTrigger=null;
+ const modal=root.querySelector('[data-nj-ideas-dialog]');
+ modal?.addEventListener('close',()=>ideasTrigger?.focus());
  root.querySelector('.ns-judge').addEventListener('click',event=>{
-  const button=event.target.closest('[data-nj-jump],[data-nj-open],[data-nj-next],[data-nj-back],[data-nj-edit],[data-nj-close],[data-nj-download],[data-nj-save],[data-nj-resume],[data-nj-remove]');
+  const button=event.target.closest('[data-nj-ideas],[data-nj-ideas-close],[data-nj-jump],[data-nj-open],[data-nj-next],[data-nj-back],[data-nj-edit],[data-nj-close],[data-nj-download],[data-nj-save],[data-nj-resume],[data-nj-remove]');
   if(!button||!root.contains(button))return;
+  if(button.dataset.njIdeas){
+   const list=judgementIdeas[button.dataset.njIdeas],dialog=root.querySelector('[data-nj-ideas-dialog]');
+   if(dialog&&list?.length){ideasTrigger=button;dialog.querySelector('[data-nj-ideas-list]').innerHTML=list.map(x=>'<li>'+e(x)+'</li>').join('');dialog.showModal();}
+   return;
+  }
+  if(button.hasAttribute('data-nj-ideas-close')){root.querySelector('[data-nj-ideas-dialog]')?.close();return;}
   if(button.dataset.njJump){const section=root.querySelector('#'+button.dataset.njJump);section?.scrollIntoView({block:'start',behavior:'auto'});section?.querySelector('h2')?.focus({preventScroll:true});return;}
   if(button.dataset.njOpen){open(button.dataset.njOpen);return;}
   if(button.hasAttribute('data-nj-resume')){state.mode=savedMode||'map';showFinish();return;}
