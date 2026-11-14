@@ -1,0 +1,103 @@
+/* Today's Practice: a calm, navigable identity × skill experience in Lifestyle. */
+body.app-body #main #lifestyle-deed.lifestyle-deed {
+ --practice-ink:var(--ui-ink,#254a3a);
+ --practice-muted:var(--ui-muted,#597164);
+ --practice-border:var(--ui-line,#d1ddcf);
+ --practice-paper:var(--ui-paper,#fffdf6);
+ --practice-soft:var(--ui-soft,#eef3e9);
+ background:var(--practice-paper);border:1px solid var(--practice-border);box-shadow:none;
+}
+body.app-body #main #lifestyle-deed.lifestyle-deed::after{display:none}
+body.app-body #main #lifestyle-deed .deed-heading{align-items:center;margin-bottom:14px;}
+body.app-body #main #lifestyle-deed .deed-heading .eyebrow{font-size:11px;line-height:1.45;letter-spacing:.06em;}
+body.app-body #main #lifestyle-deed h2{font-size:clamp(1.55rem,3vw,2.15rem);line-height:1.15;}
+#lifestyle-deed-card{max-width:960px;color:var(--practice-ink);}
+#lifestyle-deed-card .life-practice-intro{margin:0 0 16px;font:400 clamp(17px,2.2vw,21px)/1.5 system-ui,sans-serif;max-width:58ch;}
+#lifestyle-deed-card .life-practice-identities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}
+#lifestyle-deed-card .life-practice-identity{
+ display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:94px;min-width:0;width:100%;
+ border:1px solid var(--practice-border);border-radius:15px;padding:13px 15px;
+ color:var(--practice-ink);background:var(--practice-paper);text-align:left;cursor:pointer;
+}
+#lifestyle-deed-card .life-practice-identity strong{font-size:15px;font-weight:750;line-height:1.3;}
+#lifestyle-deed-card .life-practice-identity span{font-size:12px;line-height:1.5;color:var(--practice-muted);}
+#lifestyle-deed-card .life-practice-identity[aria-pressed="true"],#lifestyle-deed-card .life-practice-identity:hover{
+ border-color:#6e967b;background:var(--practice-soft);
+}
+#lifestyle-deed-card .life-practice-note{margin:12px 0;font:400 12px/1.6 system-ui,sans-serif;color:var(--practice-muted);}
+#lifestyle-deed-card .life-practice-persona{display:flex;flex-direction:column;gap:5px;margin:5px 0 21px;}
+#lifestyle-deed-card .life-practice-kicker{display:block;margin:0 0 5px;font:750 10px/1.3 system-ui,sans-serif;letter-spacing:.09em;color:var(--practice-muted);}
+#lifestyle-deed-card .life-practice-persona strong{font:400 clamp(24px,3vw,32px)/1.15 Georgia,serif;color:var(--practice-ink);}
+#lifestyle-deed-card .life-practice-persona small{font-size:13px;color:var(--practice-muted);line-height:1.5;}
+#lifestyle-deed-card .life-practice-today-label{display:flex;align-items:baseline;flex-wrap:wrap;gap:9px;font-size:12px;color:var(--practice-muted);}
+#lifestyle-deed-card .life-practice-today-label strong{font-size:16px;color:var(--practice-ink);}
+#lifestyle-deed-card .life-practice-tags{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 16px;}
+#lifestyle-deed-card .life-practice-tags span{border-radius:999px;background:var(--practice-soft);padding:5px 10px;font-size:11px;color:var(--practice-ink);}
+#lifestyle-deed-card .life-practice-focus{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 16px;}
+#lifestyle-deed-card .life-practice-chip{
+ min-height:37px;padding:7px 12px;border:1px solid var(--practice-border);border-radius:999px;background:var(--practice-paper);
+ color:var(--practice-ink);font-size:12px;font-weight:650;cursor:pointer;
+}
+#lifestyle-deed-card .life-practice-chip[aria-pressed="true"]{background:#315746;color:#fff;border-color:#315746;}
+#lifestyle-deed-card .life-practice-action{
+ padding:19px clamp(15px,2.5vw,25px);border:1px solid var(--practice-border);border-radius:20px;
+ background:var(--practice-soft);
+}
+#lifestyle-deed-card .life-practice-action .life-practice-task{
+ min-height:0;margin:7px 0 11px;max-width:36ch;font:400 clamp(19px,2.8vw,28px)/1.3 Georgia,serif;
+ color:var(--practice-ink);
+}
+#lifestyle-deed-card .life-practice-action .life-practice-why{margin:0;max-width:70ch;font:400 12px/1.6 system-ui,sans-serif;color:var(--practice-muted);}
+#lifestyle-deed-card .life-practice-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:15px 0 4px;}
+#lifestyle-deed-card .life-practice-actions .button{min-height:44px;}
+#lifestyle-deed-card .life-practice-plain{
+ border:0;background:transparent;color:var(--practice-ink);font-size:12px;font-weight:750;
+ min-height:40px;padding:7px 9px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;
+}
+#lifestyle-deed-card .life-practice-complete{margin-top:12px;padding:13px 15px;border:1px solid var(--practice-border);border-radius:14px;background:var(--practice-paper);}
+#lifestyle-deed-card .life-practice-complete strong{font-size:14px;color:var(--practice-ink);}
+#lifestyle-deed-card .life-practice-complete p{font-size:13px;line-height:1.6;margin:6px 0;}
+#lifestyle-deed-card .life-practice-levels,#lifestyle-deed-card .life-practice-custom{
+ margin-top:17px;border-top:1px solid var(--practice-border);padding-top:15px;
+}
+#lifestyle-deed-card .life-practice-levels summary,#lifestyle-deed-card .life-practice-custom summary{
+ cursor:pointer;min-height:38px;display:list-item;align-content:center;color:var(--practice-ink);font-size:13px;font-weight:750;
+}
+#lifestyle-deed-card .life-practice-level-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:10px 0;}
+#lifestyle-deed-card .life-practice-level-grid button{
+ display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:66px;padding:10px;
+ background:var(--practice-paper);border:1px solid var(--practice-border);border-radius:12px;
+ color:var(--practice-ink);text-align:left;cursor:pointer;
+}
+#lifestyle-deed-card .life-practice-level-grid button[aria-pressed="true"]{border-color:#578765;background:var(--practice-soft);}
+#lifestyle-deed-card .life-practice-level-grid button b{font-size:12px;}
+#lifestyle-deed-card .life-practice-level-grid button span{font-size:11px;color:var(--practice-muted);line-height:1.35;}
+#lifestyle-deed-card .life-practice-skills-field{margin:19px 0;padding:0;border:0;}
+#lifestyle-deed-card .life-practice-skills-field legend{font-size:14px;font-weight:750;}
+#lifestyle-deed-card .life-practice-skills-field legend small{font-weight:400;color:var(--practice-muted);}
+#lifestyle-deed-card .life-practice-skill-group{margin-top:16px;}
+#lifestyle-deed-card .life-practice-skill-group h4{margin:0 0 9px;font-size:12px;color:var(--practice-muted);}
+#lifestyle-deed-card .life-practice-skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;}
+#lifestyle-deed-card .life-practice-skill{display:flex;gap:10px;align-items:center;cursor:pointer;min-height:52px;padding:10px 12px;border:1px solid var(--practice-border);border-radius:12px;}
+#lifestyle-deed-card .life-practice-skill:has(input:checked){background:var(--practice-soft);border-color:#578765;}
+#lifestyle-deed-card .life-practice-skill input{accent-color:#315746;width:18px;height:18px;flex:0 0 auto;}
+#lifestyle-deed-card .life-practice-skill span{display:flex;flex-direction:column;gap:3px;min-width:0;}
+#lifestyle-deed-card .life-practice-skill strong{font-size:12px;line-height:1.35;}
+#lifestyle-deed-card .life-practice-skill small{font-size:10px;color:var(--practice-muted);}
+#lifestyle-deed-card .life-practice-progress{margin-top:18px;padding:14px 16px;background:var(--practice-soft);border-radius:15px;border:1px solid var(--practice-border);}
+#lifestyle-deed-card .life-practice-progress-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:7px;font-size:13px;}
+#lifestyle-deed-card .life-practice-progress-head span{font-size:11px;color:var(--practice-muted);}
+#lifestyle-deed-card .life-practice-progress-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px;}
+#lifestyle-deed-card .life-practice-progress-item{display:flex;flex-direction:column;gap:3px;font-size:12px;border:1px solid var(--practice-border);border-radius:10px;padding:9px;background:var(--practice-paper);}
+#lifestyle-deed-card .life-practice-progress-item small{font-size:10px;color:var(--practice-muted);line-height:1.45;}
+#lifestyle-deed-card .life-practice-status{margin:5px 0;font-size:12px;line-height:1.55;color:var(--practice-ink);}
+#lifestyle-deed-card :is(button,input,summary):focus-visible{outline:3px solid #bd8a46;outline-offset:3px;}
+#lifestyle-deed-card button:disabled{opacity:.55;cursor:default;}
+html[data-theme="dark"] body.app-body #main #lifestyle-deed .life-practice-chip[aria-pressed="true"]{background:#c9e2c7;color:#173f34;border-color:#c9e2c7;}
+html[data-theme="dark"] body.app-body #main #lifestyle-deed .life-practice-identity[aria-pressed="true"]{background:#314e3e;}
+@media(max-width:700px){
+ #lifestyle-deed-card .life-practice-identities,#lifestyle-deed-card .life-practice-skill-grid{grid-template-columns:1fr;}
+ #lifestyle-deed-card .life-practice-progress-list{grid-template-columns:1fr;}
+ #lifestyle-deed-card .life-practice-level-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+ #lifestyle-deed-card .life-practice-identity{min-height:76px;}
+}
