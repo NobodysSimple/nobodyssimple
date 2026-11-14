@@ -149,3 +149,7 @@
  .ns-judge-idea-trigger{margin:5px 0 10px}
  .ns-judge-ideas-dialog{width:calc(100vw - 20px);max-height:88dvh;padding:52px 16px 19px;font-size:1rem}
 }
+
+.ns-judge-finish-practice{margin:22px 0;padding:21px 23px;border:1px solid #cbdcc8;border-left:5px solid #437d58;border-radius:13px;background:#f0f6ee}
+.ns-judge-finish-practice h3{font-size:1.16rem;margin:0 0 11px}
+.ns-judge-finish-practice p{margin-bottom:0;line-height:1.7}
