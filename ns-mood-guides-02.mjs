@@ -670,7 +670,7 @@ export const MOOD_GUIDES_02=[
         ],
         "finish": "You have identified one limit to protect.",
         "practiceTitle": "Ask or decline",
-        "practice": "Make one realistic request when safe."
+        "practice": "Make one realistic request in a safe setting, and allow yourself to keep the limit."
       }
     ],
     "ideas": {
