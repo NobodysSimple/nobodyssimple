@@ -593,7 +593,7 @@ export const EXPERIENCE_CORE_A=[
       ],
       [
         "NHS: hallucinations and hearing voices",
-        "https://www.nhs.uk/mental-health/conditions/hallucinations-and-hearing-voices/"
+        "https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/hallucinations-hearing-voices/"
       ]
     ],
     "prominentSafety": "New unusual perceptions, distress or changes in functioning deserve timely assessment. If a voice commands harm, you feel unable to resist it, or you have sudden confusion, seek urgent help.",
