@@ -604,7 +604,7 @@ export const EXPERIENCE_CORE_C=[
       "I would encourage protecting your choices while the picture is unclear. Postpone commitments that could be difficult to reverse. Keep information about sleep and activity brief and factual. If you already have an agreed relapse plan, use it rather than building a new one while your thoughts are racing.",
       "You should still be treated with respect and involved in decisions about your care. A trusted person can help with practical steps such as contacting a clinician or delaying a purchase. The purpose is to protect your future options while you receive a proper assessment.",
       "NICE advises urgent referral if mania is suspected. A substantial reduction in sleep need and marked behaviour change are reasons to take this seriously, even when you feel better than usual.",
-      "You do not have to judge yourself for the change. Choose a small protective action today, and let appropriate support help you decide what the change means."
+      "You do not have to judge yourself for the change. Choose a small protective action today, and let appropriate support help you decide what the change means. A steady plan can be helpful precisely because the change may not feel worrying while you are experiencing it. You deserve that protection without being criticised for needing it."
     ],
     "mechanisms": [
       [
@@ -900,7 +900,7 @@ export const EXPERIENCE_CORE_C=[
       "I would not ask you to prove your ability through an experiment. Tests involving money, physical danger or confrontation can cause harm. A safer step is to protect choices that can wait and invite a professional assessment, particularly if this change is new or people close to you are worried.",
       "A trusted person can help with practical limits without treating you as someone who has lost the right to be heard. You may disagree about what the belief means and still agree to delay a risky action until you have more information.",
       "Specialist services can assess mood, sleep and the experience itself. NICE advises urgent assessment when mania is suspected and timely assessment for experiences suggestive of psychosis. That is the appropriate place to consider the whole context.",
-      "You deserve to be spoken to respectfully. Please give your future self the protection of a pause before an irreversible choice, especially when everything feels unusually certain."
+      "You deserve to be spoken to respectfully. Please give your future self the protection of a pause before an irreversible choice, especially when everything feels unusually certain. Taking a pause can protect relationships and resources that you may still value when your experience changes. Someone you trust can help keep those choices open."
     ],
     "mechanisms": [
       [
@@ -1065,7 +1065,7 @@ export const EXPERIENCE_CORE_C=[
           [
             "When did the feeling of unusual certainty begin?",
             "Approximate timing is sufficient.",
-            "Onset matters.",
+            "The timing can help a clinician assess the change.",
             ""
           ],
           [
