@@ -13,6 +13,9 @@ import {HABIT_IDEAS_C} from './ns-habit-ideas-c.mjs';
 import {HABIT_CASES_A} from './ns-habit-cases-a.mjs';
 import {HABIT_CASES_B} from './ns-habit-cases-b.mjs';
 import {HABIT_CASES_C} from './ns-habit-cases-c.mjs';
+import {HABIT_EXTRA_CASES_A} from './ns-habit-extra-cases-a.mjs';
+import {HABIT_EXTRA_CASES_B} from './ns-habit-extra-cases-b.mjs';
+import {HABIT_EXTRA_CASES_C} from './ns-habit-extra-cases-c.mjs';
 import {HABIT_WHY_QUESTIONS} from './ns-habit-why-questions.mjs';
 import {HABIT_EXTRA_ACTIONS} from './ns-habit-extra-actions.mjs';
 
@@ -20,73 +23,8 @@ const authored=[...HABIT_EDITORIAL_A,...HABIT_EDITORIAL_B,...HABIT_EDITORIAL_C];
 const journals={...HABIT_JOURNALS_A,...HABIT_JOURNALS_B,...HABIT_JOURNALS_C};
 const ideas={...HABIT_IDEAS_A,...HABIT_IDEAS_B,...HABIT_IDEAS_C};
 const seeds={...HABIT_CASES_A,...HABIT_CASES_B,...HABIT_CASES_C};
+const extraCases={...HABIT_EXTRA_CASES_A,...HABIT_EXTRA_CASES_B,...HABIT_EXTRA_CASES_C};
 const fail=(id,msg)=>{throw new Error('Habit guide '+id+': '+msg);};
-const rootRule={
-relief:'I must make this feeling go away before I can act',
-standards:'A worthwhile attempt must be completely satisfactory',
-capacity:'I ought to be able to do everything I planned',
-clarity:'If I cannot see the whole solution, I cannot begin',
-worth:'My achievements determine my value',
-control:'I must control what happens to avoid regret',
-environment:'I must manage regardless of the demands around me',
-activation:'Knowing what to do should make starting effortless',
-safety:'Feeling a threat means I must respond immediately',
-support:'I should manage without needing help',
-cue:'A good habit should happen without reminders',
-reward:'An activity should always feel rewarding',
-health:'I should function the same regardless of symptoms',
-limits:'Respecting a limit means giving up',
-priorities:'Every demand deserves immediate attention',
-acceptance:'If I am uncomfortable, other people will reject me',
-comfort:'A difficult feeling must be relieved immediately',
-access:'I must fit the environment instead of asking it to change',
-boundaries:'Saying no will make me less valued',
-sequence:'I should keep every step in my mind',
-agency:'I must decide quickly to stay in control',
-stimulation:'I need the most exciting option right now',
-escape:'The quickest escape is the only way to cope',
-security:'I cannot risk disappointing anyone or losing resources',
-connection:'Being available or desired is the same as being cared for',
-choice:'If I pause I will lose the opportunity',
-belonging:'To be needed I must always say yes',
-urgency:'Every new demand must be acted on immediately',
-attention:'I must follow every interesting or important thought',
-structure:'Needing a plan means I am incapable',
-values:'If I feel regret my desires must be wrong'
-};
-const alternative={
-relief:'Discomfort can be acknowledged without giving it every decision',
-standards:'Adequate work can be finished even while improvement remains possible',
-capacity:'My real capacity is a sensible basis for planning',
-clarity:'One concrete step can be chosen before the whole plan is clear',
-worth:'An outcome cannot settle my worth as a person',
-control:'I can make a considered choice without guaranteeing its outcome',
-environment:'Changing the environment can be a legitimate response',
-activation:'Intention may require a cue, a smaller task or practical help',
-safety:'Real risks require evidence and proportionate protection',
-support:'Asking for support can make an activity possible',
-cue:'External reminders and stable cues can support repetition',
-reward:'A meaningful habit may be worthwhile without constant excitement',
-health:'Health limitations deserve assessment and adjustments',
-limits:'Respecting medical and practical limits protects future choices',
-priorities:'Some tasks can wait while an essential task receives attention',
-acceptance:'An uncomfortable interaction does not automatically prove rejection',
-comfort:'The underlying feeling may have a safer response',
-access:'Accessibility needs deserve serious consideration',
-boundaries:'A respectful limit can protect time and relationships',
-sequence:'Writing down steps can reduce memory demands',
-agency:'A pause can protect my ability to choose',
-stimulation:'Excitement can be pursued without preventable danger',
-escape:'There may be a safer way to deal with the difficult feeling',
-security:'Practical support may protect essentials better than repeating the behaviour',
-connection:'Connection does not require constant availability or pressure',
-choice:'I can consider an opportunity without accepting it immediately',
-belonging:'Care and belonging do not depend on always being productive',
-urgency:'A new idea is not automatically an emergency',
-attention:'A chosen activity can have priority over a passing distraction',
-structure:'Clear task design can support attention',
-values:'My own choices and consent matter more than an outside verdict'
-};
 const emotion={
 relief:'Anxiety',standards:'Fear of criticism',capacity:'Exhaustion',clarity:'Overwhelm',
 worth:'Shame',control:'Anxiety',environment:'Pressure',activation:'Frustration',safety:'Fear',
@@ -127,30 +65,26 @@ function individualGuides(d){
   ...d.mechanisms.map(x=>'Ask about support for '+x[0].toLowerCase()+' when it affects daily life'),
   'Ask for a clear review of whether the plan is improving everyday functioning.'];
  if(actions.length!==24||support.length!==24)fail(id,'expected exactly 24 ideas in each list');
- const mapped=cases.map(([s,thought,response,rule,reframe,action,root])=>{
+ const mapped=cases.map(([s,thought,response,rule,reframe,action,root],i)=>{
   const rlabel=d.roots.find(x=>x[0]===root);if(!rlabel)fail(id,'unknown root '+root);
   return {
    situation:s,interpretation:thought,emotion:emotion[root]||'Discomfort',response,
    function:'The response may have offered immediate relief or protected '+rlabel[1].toLowerCase(),
-   need:rlabel[1],rule,adaptation:'This may reflect the present conditions or learned ways of responding; it is not proof of a particular past experience.',
+   need:rlabel[1],rule,adaptation:d.mechanisms[i%3][1],
    alternative:reframe,action,root
   };
  });
- // Extra contexts use each separately written profile and guided pathway.
- const toFirst=x=>x.replace(/^You /,'I ').replace(/^Your /,'My ');
- for(let i=0;i<8;i++){
-  const profile=d.profiles[i%4],path=steps[i%4],root=d.roots[(i+1)%4][0];
-  const situation=i<4?toFirst(profile[1]):'I am facing a situation where I need to '+path.label.charAt(0).toLowerCase()+path.label.slice(1);
-  const assumption=rootRule[root],reframe=alternative[root];
+ // Eight additional independently authored situations, with their own interpretation and response.
+ const further=extraCases[id];if(!further||further.length!==8)fail(id,'missing additional situations');
+ further.forEach(([s,thought,response,rule,reframe,action,root],i)=>{
+  const rlabel=d.roots.find(x=>x[0]===root);if(!rlabel)fail(id,'unknown additional root '+root);
   mapped.push({
-   situation,interpretation:assumption,emotion:emotion[root]||'Worry',
-   response:i<4?'I respond as described in this pattern: '+profile[0].toLowerCase():'I delay a decision or repeat an old response',
-   function:'It may briefly protect a need for '+d.roots.find(x=>x[0]===root)[1].toLowerCase(),
-   need:d.roots.find(x=>x[0]===root)[1],
-   rule:assumption,adaptation:d.mechanisms[(i+1)%3][1],
-   alternative:reframe,action:path.practice,root
+   situation:s,interpretation:thought,emotion:emotion[root]||'Discomfort',response,
+   function:'This response may briefly protect a need for '+rlabel[1].toLowerCase(),
+   need:rlabel[1],rule,adaptation:d.mechanisms[(i+1)%3][1],
+   alternative:reframe,action,root
   });
- }
+ });
  if(mapped.length!==16||new Set(mapped.map(x=>x.situation)).size!==16)fail(id,'repeated or missing situations');
  for(const s of mapped)for(const f of ['interpretation','emotion','response','function','need','rule','adaptation','alternative','action','root'])if(!s[f])fail(id,'missing example field '+f);
  return Object.freeze({...d,routes:steps,ideas:{actions,support},
