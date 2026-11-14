@@ -1,6 +1,6 @@
 /* Separate, clinically tailored editorial models for unusual or distressing experiences.
    Reuses Nobody's Simple page components, never a generic assessment or diagnosis. */
-import {EXPERIENCE_DEPTH_CASES} from './ns-experiences-depth-data.mjs';
+import {EXPERIENCE_DEPTH_CASES} from './ns-experiences-depth-data.mjs?v=experiences-20261114-v2';
 const topicEvidence={
  trauma:'NICE recommends trauma-focused CBT and, in appropriate circumstances, EMDR for PTSD. These journals provide orientation and help-seeking guidance; they are not trauma-processing treatment.',
  voices:'NICE recommends timely assessment when psychosis may be emerging and offers CBT for psychosis and family intervention in appropriate care. This page does not establish the origin of an unusual perception.',
