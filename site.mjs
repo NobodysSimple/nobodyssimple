@@ -45,7 +45,8 @@ import { renderNSProblemGuide } from './ns-problem-guide.mjs';
 import {renderPrecisionConsole} from './ns-precision-console.mjs';
 import {renderPrecisionGuide} from './ns-precision-guide.mjs';
 import {renderJudgementManual} from './ns-judgement-manual.mjs?v=20261114-why';
-import {renderMoodManual,renderTopicManual,MOOD_IDS} from './ns-mood-manual.mjs?v=clinical-20261114-v1';
+import {renderMoodManual,renderTopicManual,MOOD_IDS} from './ns-mood-manual.mjs?v=think-20261114-v1';
+import {THINK_IDS,THINK_BY_ID} from './ns-think-guide-data.mjs?v=think-20261114-v1';
 import {CLINICAL_IDS,CLINICAL_BY_ID} from './ns-clinical-guide-data.mjs?v=clinical-20261114-v1';
 import {EXPERIENCE_GUIDES_BY_ID,EXPERIENCE_IDS} from './ns-experiences-guide-data.mjs?v=experiences-20261114-v2';
 import {getPreciseProfile} from './ns-precision-content.mjs';
@@ -70,14 +71,16 @@ const experienceGuideIds=new Set(EXPERIENCE_IDS);
 const showExperienceGuide=id=>renderTopicManual(main,id,EXPERIENCE_GUIDES_BY_ID.get(id),'experiences');
 const clinicalGuideIds=new Set(CLINICAL_IDS);
 const showClinicalGuide=id=>renderTopicManual(main,id,CLINICAL_BY_ID.get(id),'clinical');
+const thinkGuideIds=new Set(THINK_IDS);
+const showThinkGuide=id=>renderTopicManual(main,id,THINK_BY_ID.get(id),'think');
 const showWorkbook = options => {
   if(options.topic==='social-anxiety')return renderJudgementManual(main);
   if(moodGuideIds.has(options.topic))return renderMoodManual(main,options.topic);
-  if(experienceGuideIds.has(options.topic))return showExperienceGuide(options.topic);if(clinicalGuideIds.has(options.topic))return showClinicalGuide(options.topic);
+  if(experienceGuideIds.has(options.topic))return showExperienceGuide(options.topic);if(clinicalGuideIds.has(options.topic))return showClinicalGuide(options.topic);if(thinkGuideIds.has(options.topic))return showThinkGuide(options.topic);
   const selected=getNeedsMode(options.mode)?.options.find(item=>item.id===options.option);
   if(selected?.type==='topic'&&selected.target==='social-anxiety')return renderJudgementManual(main);
   if(selected?.type==='topic'&&moodGuideIds.has(selected.target))return renderMoodManual(main,selected.target);
-  if(selected?.type==='topic'&&experienceGuideIds.has(selected.target))return showExperienceGuide(selected.target);if(selected?.type==='topic'&&clinicalGuideIds.has(selected.target))return showClinicalGuide(selected.target);
+  if(selected?.type==='topic'&&experienceGuideIds.has(selected.target))return showExperienceGuide(selected.target);if(selected?.type==='topic'&&clinicalGuideIds.has(selected.target))return showClinicalGuide(selected.target);if(selected?.type==='topic'&&thinkGuideIds.has(selected.target))return showThinkGuide(selected.target);
   return renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
 };
 const supportDialog = document.createElement('dialog');
@@ -923,7 +926,7 @@ function route() {
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate/atlas';return;}
         showWorkbook({mode,option:choice});
       },
-      problem: () => {const key=safeRoutePart(id);if(key==='social-anxiety')renderJudgementManual(main);else if(moodGuideIds.has(key))renderMoodManual(main,key);else if(experienceGuideIds.has(key))showExperienceGuide(key);else if(clinicalGuideIds.has(key))showClinicalGuide(key);else if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
+      problem: () => {const key=safeRoutePart(id);if(key==='social-anxiety')renderJudgementManual(main);else if(moodGuideIds.has(key))renderMoodManual(main,key);else if(experienceGuideIds.has(key))showExperienceGuide(key);else if(clinicalGuideIds.has(key))showClinicalGuide(key);else if(thinkGuideIds.has(key))showThinkGuide(key);else if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
         location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
       library: () => {
