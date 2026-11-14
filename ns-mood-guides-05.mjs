@@ -1,4 +1,4 @@
-import {makeMood} from './ns-mood-guide-utils.mjs';
+import {makeMood} from './ns-mood-guide-utils.mjs?v=feel-20261114-v4';
 export const MOOD_GUIDES_05=[
   {
     "id": "anhedonia",
