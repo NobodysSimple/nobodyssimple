@@ -45,6 +45,7 @@ import { renderNSProblemGuide } from './ns-problem-guide.mjs';
 import {renderPrecisionConsole} from './ns-precision-console.mjs';
 import {renderPrecisionGuide} from './ns-precision-guide.mjs';
 import {renderJudgementManual} from './ns-judgement-manual.mjs?v=20261114-why';
+import {renderMoodManual,MOOD_IDS} from './ns-mood-manual.mjs?v=feel-20261114-v1';
 import {getPreciseProfile} from './ns-precision-content.mjs';
 import {renderAtlasConsole} from './ns-atlas-console.mjs';
 import {renderAtlasGuide} from './ns-atlas-guide.mjs';
@@ -62,10 +63,13 @@ import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
 const main = document.querySelector("main");
+const moodGuideIds=new Set(MOOD_IDS);
 const showWorkbook = options => {
   if(options.topic==='social-anxiety')return renderJudgementManual(main);
+  if(moodGuideIds.has(options.topic))return renderMoodManual(main,options.topic);
   const selected=getNeedsMode(options.mode)?.options.find(item=>item.id===options.option);
   if(selected?.type==='topic'&&selected.target==='social-anxiety')return renderJudgementManual(main);
+  if(selected?.type==='topic'&&moodGuideIds.has(selected.target))return renderMoodManual(main,selected.target);
   return renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
 };
 const supportDialog = document.createElement('dialog');
@@ -911,7 +915,7 @@ function route() {
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate/atlas';return;}
         showWorkbook({mode,option:choice});
       },
-      problem: () => {const key=safeRoutePart(id);if(key==='social-anxiety')renderJudgementManual(main);else if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
+      problem: () => {const key=safeRoutePart(id);if(key==='social-anxiety')renderJudgementManual(main);else if(moodGuideIds.has(key))renderMoodManual(main,key);else if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
         location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
       library: () => {
