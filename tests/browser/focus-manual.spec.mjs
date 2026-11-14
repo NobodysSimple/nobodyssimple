@@ -10,10 +10,11 @@ test('all eleven attention, learning and habits topics open their dedicated manu
  for(const g of FOCUS_GUIDES){
   await open(page,g.id);
   await expect(page.locator('.ns-mood h1')).toHaveText(g.title);
-  await expect(page.locator('.ns-mood-read > p')).toHaveCount(8);
+  await expect(page.locator('.ns-mood-read > p')).toHaveCount(10);
   await expect(page.locator('.ns-mood-route-list button')).toHaveCount(4);
   await expect(page.locator('.ns-judge-back a').first()).toHaveAttribute('href','#navigate/atlas/focus');
   await expect(page.locator('[data-mood-why-body]')).toBeHidden();
+  await expect(page.locator('.ns-mood-why-head > p').last()).not.toBeEmpty();
  }
 });
 test('learning journal uses free writing with 24 optional evidence-based actions',async({page})=>{
