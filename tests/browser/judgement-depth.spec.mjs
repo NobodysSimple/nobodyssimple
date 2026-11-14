@@ -42,7 +42,7 @@ test('the personal dig is free-written and can end early without forced origins'
  await page.locator('[data-depth-finish]').click();
  await expect(page.locator('[data-depth-editor]')).toContainText('My colleague looked away while I was talking');
  await expect(page.locator('[data-depth-editor]')).toContainText('They must think I am boring');
- await expect(page.locator('[data-depth-editor]')).toContainText('not automatically saved or sent');
+ await expect(page.locator('[data-depth-editor]')).toContainText('Nothing is automatically saved or sent');
 });
 test('opened map and browser have no serious or critical WCAG errors',async({page})=>{
  await enter(page);
