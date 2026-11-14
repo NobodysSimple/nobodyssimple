@@ -9,6 +9,7 @@ import {NORTH_AMERICA_STORIES} from '../../ns-cultural-atlas-north-america.mjs';
 import {LATIN_AMERICA_STORIES} from '../../ns-cultural-atlas-latin-america.mjs';
 import {CENTRAL_ASIA_STORIES,CENTRAL_ASIA_META,CENTRAL_ASIA_IMAGE_CONTEXT} from '../../ns-cultural-atlas-central-asia.mjs';
 import {RUSSIA_STORIES,RUSSIA_META,RUSSIA_IMAGE_CONTEXT} from '../../ns-cultural-atlas-russia.mjs';
+import {MEXICO_STORIES,MEXICO_META,MEXICO_IMAGE_CONTEXT} from '../../ns-cultural-atlas-mexico.mjs';
 import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
@@ -69,6 +70,31 @@ test('Russian regions and Indigenous cultures have deep sourced readings and acc
  assert.match(renderer,/RUSSIA_IMAGE_CONTEXT/,'captions must remain with verified Commons photos');
 });
 
+
+test('Mexico cultural expansion has 30 complete state-specific sourced readings and curated images',()=>{
+ const ids=Object.keys(MEXICO_STORIES);
+ assert.equal(ids.length,30,'all 30 new long-form Mexican cultural investigations are required');
+ const regions=new Set(ids.map(id=>MEXICO_META[id][6]));
+ assert.ok(regions.size>=18,'represent diverse states and Mexico City');
+ for(const id of ids){
+  const story=MEXICO_STORIES[id], meta=MEXICO_META[id], a=articleById(id);
+  assert.ok(a,id+' is missing from article catalogue');
+  assert.equal(a.country,'MEX',id+' must be indexed under Mexico');
+  assert.ok(articlesForCountry('MEX').includes(a),id+' missing from Mexico article list');
+  assert.equal(a.region,meta[6],id+' is not indexed to its own state');
+  assert.equal(story.paragraphs.length,6,id+' needs six complete paragraphs');
+  assert.ok(story.paragraphs.every(p=>p.text.length>=400),id+' has a thin paragraph');
+  assert.ok(story.paragraphs.every(p=>p.sources.length>0&&p.sources.every(s=>s.url.startsWith('https://'))),id+' needs documentary source links');
+  assert.ok(story.images.length>=1,id+' requires a specific image');
+  assert.equal(story.images.length,story.imageNotes.length,id+' needs a caption for every image');
+  assert.ok(story.imageNotes.every(note=>note.length>=45),id+' image context is too vague');
+  assert.deepEqual(CULTURE_INVESTIGATIONS[id].sections[0].paragraphs,story.paragraphs,id+' must render full investigation');
+ }
+ const renderer=source('ns-cultural-atlas.mjs');
+ assert.match(renderer,/STRICT_MEXICO_IMAGES/,'prevent unrelated automatic image fallback');
+ assert.match(renderer,/MEXICO_IMAGE_CONTEXT/,'specific image captions should be preserved');
+});
+
 test('the atlas includes a selectable world map with small states and territories retained',()=>{
  assert.equal(world.type,'FeatureCollection');
  assert.ok(countries.length>=250,'expect the full-resolution 258-feature administrative world catalogue');
@@ -102,7 +128,7 @@ test('cultural readings use documentary sources and distinguish place from a psy
  assert.equal(regionArticles('PER','Puno')[0].id,'taquile');
  assert.equal(regionArticles('BRA','Pernambuco')[0].id,'frevo');
  assert.equal(articlesForCountry('IND').length,3);
- assert.equal(articlesForCountry('MEX').length,3);
+ assert.ok(articlesForCountry('MEX').length>=33,'Mexico should include the original 3 plus 30 new readings');
  assert.ok(articlesForCountry('MAR').length>=2);
  assert.equal(articleById('tango-argentina').source.url,articleById('tango-uruguay').source.url,'transnational heritage has a shared documentary source');
  assert.ok(articlesForCountry('USA').length>=2);

@@ -12,6 +12,7 @@ import {NORTH_AMERICA_STORIES} from './ns-cultural-atlas-north-america.mjs';
 import {LATIN_AMERICA_STORIES} from './ns-cultural-atlas-latin-america.mjs';
 import {CENTRAL_ASIA_STORIES,CENTRAL_ASIA_IMAGE_CONTEXT} from './ns-cultural-atlas-central-asia.mjs';
 import {RUSSIA_STORIES,RUSSIA_IMAGE_CONTEXT} from './ns-cultural-atlas-russia.mjs';
+import {MEXICO_STORIES,MEXICO_IMAGE_CONTEXT} from './ns-cultural-atlas-mexico.mjs';
 import {bindAtlasViewport,fitAtlasBounds,clampAtlasView,WORLD_VIEW} from './ns-cultural-atlas-viewport.mjs';
 import {fetchAdministrativeLayer,fetchUSCounties,fetchUSIndigenousAreas,searchMapPlaces,filterAdministrativeChildren,mapDegreesToAtlas} from './ns-cultural-atlas-geography.mjs';
 
@@ -197,16 +198,18 @@ const commonsSearchImage=async(article,country)=>{
 };
 const STRICT_CENTRAL_ASIA_IMAGES=new Set(Object.keys(CENTRAL_ASIA_STORIES));
 const STRICT_RUSSIA_IMAGES=new Set(Object.keys(RUSSIA_STORIES));
+const STRICT_MEXICO_IMAGES=new Set(Object.keys(MEXICO_STORIES));
 const commonsImagesFor=async(article,country)=>{
  const cacheKey=article.id+'|'+String(country?.code||'');
  if(cultureImageCache.has(cacheKey))return cultureImageCache.get(cacheKey);
- const curated=(SOUTH_ASIA_STORIES[article.id]||SOUTHEAST_ASIA_STORIES[article.id]||NORTH_AMERICA_STORIES[article.id]||LATIN_AMERICA_STORIES[article.id]||CENTRAL_ASIA_STORIES[article.id]||RUSSIA_STORIES[article.id])?.images||[];
+ const curated=(SOUTH_ASIA_STORIES[article.id]||SOUTHEAST_ASIA_STORIES[article.id]||NORTH_AMERICA_STORIES[article.id]||LATIN_AMERICA_STORIES[article.id]||CENTRAL_ASIA_STORIES[article.id]||RUSSIA_STORIES[article.id]||MEXICO_STORIES[article.id])?.images||[];
  if(curated.length){
   const images=(await Promise.all(curated.map(file=>commonsFileMetadata(file,null,article,country,true))))
    .map((image,index)=>image&&CENTRAL_ASIA_STORIES[article.id]?{...image,curatedContext:CENTRAL_ASIA_IMAGE_CONTEXT[article.id]?.[index]||''}:image)
    .map((image,index)=>image&&RUSSIA_STORIES[article.id]?{...image,curatedContext:RUSSIA_IMAGE_CONTEXT[article.id]?.[index]||''}:image)
+   .map((image,index)=>image&&MEXICO_STORIES[article.id]?{...image,curatedContext:MEXICO_IMAGE_CONTEXT[article.id]?.[index]||''}:image)
    .filter(Boolean);
-  if(images.length||STRICT_CENTRAL_ASIA_IMAGES.has(article.id)||STRICT_RUSSIA_IMAGES.has(article.id)){cultureImageCache.set(cacheKey,images);return images;}
+  if(images.length||STRICT_CENTRAL_ASIA_IMAGES.has(article.id)||STRICT_RUSSIA_IMAGES.has(article.id)||STRICT_MEXICO_IMAGES.has(article.id)){cultureImageCache.set(cacheKey,images);return images;}
  }
  let wikiPage=null,result=null;
  if(article.id==='uae-henna'&&country?.code==='ARE'){
