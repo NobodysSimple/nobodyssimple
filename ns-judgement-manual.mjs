@@ -79,7 +79,7 @@ function control(item,value){
   const multiple=type==='checks';
   const v=multiple?(Array.isArray(value)?value:[]):value;
   return '<fieldset class="ns-judge-options"><legend class="ns-judge-sr">Your answer</legend>'+
-   options.map(([key,label])=>'<label class="ns-judge-option"><input type="'+(multiple?'checkbox':'radio')+'" name="answer" value="'+e(key)+'" '+(multiple?v.includes(key):v===key?'checked':'')+'><span>'+e(label)+'</span></label>').join('')+
+   options.map(([key,label])=>'<label class="ns-judge-option"><input type="'+(multiple?'checkbox':'radio')+'" name="answer" value="'+e(key)+'" '+((multiple?v.includes(key):(typeof v==='object'?v?.choice:v)===key)?'checked':'')+'><span>'+e(label)+'</span></label>').join('')+
    '</fieldset>'+(id==='fear'?'<label class="ns-judge-detail">If you chose something else, you can describe it here <input type="text" name="fearOther" maxlength="180" value="'+e(value?.other||'')+'" autocomplete="off"></label>':'');
  }
  return '<label class="ns-judge-sr" for="ns-judge-answer">Your answer</label><textarea id="ns-judge-answer" name="answer" rows="4" maxlength="900" placeholder="Write as much or as little as you like.">'+e(value||'')+'</textarea>';
@@ -111,7 +111,7 @@ export function renderJudgementManual(root){
   '<img class="ns-judge-mascot" src="ns-character-guide.webp" alt="" loading="lazy"></header>'+
   '<section id="ns-judge-read" class="ns-judge-reading" aria-labelledby="ns-judge-read-title"><h2 id="ns-judge-read-title">If this feels familiar</h2>'+
   paras.map((p,i)=>'<p'+(i===5?' class="ns-judge-reflection"':'')+'>'+e(p)+'</p>').join('')+'</section>'+
-  '<section class="ns-judge-start" id="ns-judge-start" aria-labelledby="ns-judge-start-title"><p class="ns-judge-kicker">A GENTLE PLACE TO BEGIN</p><h2 id="ns-judge-start-title">What would help you most right now?</h2><p>You can choose whichever feels closest. You won’t be asked to pick a therapy or work out a diagnosis.</p>'+
+  '<section class="ns-judge-start" id="ns-judge-start" aria-labelledby="ns-judge-start-title"><p class="ns-judge-kicker">A GENTLE PLACE TO BEGIN</p><h2 id="ns-judge-start-title" tabindex="-1">What would help you most right now?</h2><p>You can choose whichever feels closest. You won’t be asked to pick a therapy or work out a diagnosis.</p>'+
   '<div class="ns-judge-choices">'+Object.entries(choiceLabels).map(([id,[label,detail]])=>'<button type="button" class="ns-judge-choice" data-nj-open="'+e(id)+'"><span><strong>'+e(label)+'</strong><small>'+e(detail)+'</small></span><span aria-hidden="true">→</span></button>').join('')+'</div>'+
   '<p class="ns-judge-muted">If you’re unsure, start with “I want to understand why I feel this way”. You can change direction at any point.</p></section>'+
   '<section id="ns-judge-work" class="ns-judge-work" aria-label="Your guided journal" hidden><div data-nj-screen></div></section>'+
@@ -122,7 +122,7 @@ export function renderJudgementManual(root){
   work.hidden=false;
   const target=out.querySelector('h2[tabindex="-1"]');
   target?.focus({preventScroll:true});
-  work.scrollIntoView({block:'start',behavior:'instant'});
+  work.scrollIntoView({block:'start',behavior:'auto'});
  }
  function currentQuestions(){return state.mode==='map'?qs:guides[state.mode]?.questions||[];}
  function currentStore(){return state.mode==='map'?state.answers:(state.forms[state.mode]||(state.forms[state.mode]={}));}
@@ -214,14 +214,14 @@ export function renderJudgementManual(root){
   document.body.append(a);a.click();a.remove();
   setTimeout(()=>URL.revokeObjectURL(url),2000);
  }
- root.addEventListener('click',event=>{
+ root.querySelector('.ns-judge').addEventListener('click',event=>{
   const button=event.target.closest('[data-nj-open],[data-nj-next],[data-nj-back],[data-nj-edit],[data-nj-close],[data-nj-download]');
   if(!button||!root.contains(button))return;
   if(button.dataset.njOpen){open(button.dataset.njOpen);return;}
   if(button.hasAttribute('data-nj-download')){download();return;}
   if(button.hasAttribute('data-nj-close')){
    work.hidden=true;root.querySelector('#ns-judge-start-title')?.focus?.({preventScroll:true});
-   root.querySelector('#ns-judge-start')?.scrollIntoView({block:'start',behavior:'instant'});return;
+   root.querySelector('#ns-judge-start')?.scrollIntoView({block:'start',behavior:'auto'});return;
   }
   if(button.hasAttribute('data-nj-edit')){state.pos=0;showStep();return;}
   if(button.hasAttribute('data-nj-back')){collect();state.pos=Math.max(0,state.pos-1);showStep();return;}
