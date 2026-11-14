@@ -764,7 +764,7 @@ export const EXPERIENCE_CORE_C=[
         "Prepare for a respectful specialist assessment.",
         "Mood elevation with significant sleep or behaviour change deserves attention.",
         "An assessment request",
-        "Speak with a GP or mental health team promptly.",
+        "Speak with a GP or mental health team promptly, and describe the changes in sleep and energy compared with your normal pattern.",
         [
           [
             "When did the change start and how long has it lasted?",
