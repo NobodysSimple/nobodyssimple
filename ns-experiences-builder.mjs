@@ -21,6 +21,7 @@ export function makeExperience(d){
  if(whyCases.some(x=>!d.roots.some(r=>r[0]===x.root)))fail(d.id,'invalid depth root');
  if(d.whyQuestions.length!==10||d.roots.length<3)fail(d.id,'topic specific excavation missing');
  if(!d.sources?.length)fail(d.id,'research sources missing');
- return Object.freeze({...d,routes,whyCases,pullIndex:d.pullIndex??3,
+ const whyStages=['The current situation','What it seemed to mean','How you felt','What you did','What it did for you briefly','What you needed','A possible expectation or rule','Current or earlier influences to consider','Another possibility','One safer next response'];
+ return Object.freeze({...d,routes,whyCases,whyStages,pullIndex:d.pullIndex??3,
  evidence:d.evidence||'These exercises adapt selected evidence-based approaches. The individual online journals are educational tools, not validated assessments or replacements for specialist treatment. A reaction alone cannot establish its cause.'});
 }
