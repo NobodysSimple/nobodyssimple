@@ -193,13 +193,51 @@ const commonsSearchImage=async(article,country)=>{
  }
  return null;
 };
+const STRICT_CURATED_LATIN_IMAGES=new Set(["argentina-chamame","chile-baile-chino","colombia-pasto-varnish","ecuador-pasillo","brazil-cirio-nazare","bolivia-pujllay-ayarichi","peru-hatajo","paraguay-poncho-parai","uruguay-murga"]);
+const PHASE2_LATIN_IMAGE_CONTEXT=Object.freeze({
+  "argentina-chamame": [
+    "The 2023 Fiesta Nacional del Chamamé in Corrientes; the image does not document the older household tradition.",
+    "A public chamamé festival photograph; its particular performers cannot stand for all family gatherings."
+  ],
+  "chile-baile-chino": [
+    "The Cruz de Mayo Baile Chino brotherhood in El Boco, Chile.",
+    "A Baile Chino flute and hat displayed in Museo de La Ligua, photographed in 2017, rather than a live performance."
+  ],
+  "colombia-pasto-varnish": [
+    "Decorated Pasto-varnish work by Gilberto Granja, photographed in 2009.",
+    "Wooden objects decorated with mopa-mopa varnish in Pasto, photographed in 2009; the forest harvesting is not shown."
+  ],
+  "ecuador-pasillo": [
+    "A wax figure of singer Julio Jaramillo in the Guayaquil Museum of Popular Music in 2013; not a live pasillo performance.",
+    "An exhibit in the Guayaquil Museum of Popular Music; the display is not a recording of a pasillo performance."
+  ],
+  "brazil-cirio-nazare": [
+    "The Círio de Nazaré procession in Belém, photographed on 13 October 2013.",
+    "People waiting for the 2013 Círio procession to begin in Belém; this does not show the complete festival programme."
+  ],
+  "bolivia-pujllay-ayarichi": [
+    "Pujllay performers during the Gran Pukara in Tarabuco, 15 March 2026; this does not depict Ayarichi.",
+    "Musicians playing Pujllay in Tarabuco; this photograph does not show the distinct dry-season Ayarichi practice."
+  ],
+  "peru-hatajo": [
+    "The Torres Napa family's Atajo de Negritos from Sunampe at Festichincha in 2017; not Hatajo de Pallitas.",
+    "The Torres Napa Atajo de Negritos in Chincha in 2017; the female Hatajo de Pallitas is a distinct practice not pictured here."
+  ],
+  "paraguay-poncho-parai": [
+    "A 2016 dance at Piribebuy's Poncho Para’í festival; this photograph does not show the poncho-weaving technique."
+  ],
+  "uruguay-murga": [
+    "The murga Asaltantes con Patente performing at Montevideo's Municipal Velodrome during Carnival 2024.",
+    "Members of Asaltantes con Patente on stage at the 2024 Montevideo carnival; this is one contemporary troupe."
+  ]
+});
 const commonsImagesFor=async(article,country)=>{
  const cacheKey=article.id+'|'+String(country?.code||'');
  if(cultureImageCache.has(cacheKey))return cultureImageCache.get(cacheKey);
  const curated=(SOUTH_ASIA_STORIES[article.id]||SOUTHEAST_ASIA_STORIES[article.id]||NORTH_AMERICA_STORIES[article.id]||LATIN_AMERICA_STORIES[article.id])?.images||[];
  if(curated.length){
   const images=(await Promise.all(curated.map(file=>commonsFileMetadata(file,null,article,country,true)))).filter(Boolean);
-  if(images.length){cultureImageCache.set(cacheKey,images);return images;}
+  if(images.length||STRICT_CURATED_LATIN_IMAGES.has(article.id)){cultureImageCache.set(cacheKey,images);return images;}
  }
  let wikiPage=null,result=null;
  if(article.id==='uae-henna'&&country?.code==='ARE'){
@@ -226,7 +264,7 @@ const renderCultureStoryImages=async(article,hosts,country)=>{
   const context=article.id==='drametse'?'Drametse monastery, the festival’s setting. ':article.id==='suri-jagek'?'Kalasha Valley landscape, the setting of Suri Jagek. ':article.id==='brunei-pantun'?'An Indonesian-language example of the shared a-b-a-b pantun form; this is not a photograph of Bruneian recitation. ':article.id==='sbek-thom'?index?'A Cambodian Sbek Thom puppet displayed in a museum in Lisbon. ':'A Cambodian Sbek Thom puppet displayed in a museum in Phoenix. ':article.id==='hudhud'?'Artwork about the Ifugao epic of Aliguyon; it does not document a chant performance. ':article.id==='lao-khaen'&&index?'Lao musicians performing with a khaen at a Paris festival. ':article.id==='kelantan-mak-yong'&&index?'A Mak Yong costume displayed in a Kelantan museum. ':article.id==='greenland-qilaat'&&index?'A historical photograph of a Greenlandic drum-song duel, 1905. ':article.id==='nicaragua-gueguense'&&index?'El Güegüense masks displayed in a Costa Rican museum. ':article.id==='costa-rica-carretas'&&!index?'A large decorated oxcart displayed in Sarchí. ':article.id==='honduras-garifuna-voice'?'Garifuna participants at a rights demonstration in San Pedro Sula, 2021. ':article.id==='salvador-historiantes'?'Historiantes performers photographed at Panchimalco; the field study described here took place in Las Huertas. ':article.id==='curacao-tambu'?index?'The Tambú Museum in Curaçao; the photograph does not show a performance. ':'An older tambú drum from a Dutch museum collection, attributed to the Netherlands Antilles. ':article.id==='jamaica-moore-town'?'Moore Town photographed in 2010; the photograph does not show a Kromanti ritual. ':article.id==='cuba-rumba'&&index?'A cajón used for rumba percussion, photographed separately from the Camagüey dancers. ':'';
   const extraContext=article.id==='aruba-dera-gay'?'Dera Gay in Aruba, photographed in 1964. ':article.id==='dominica-larouman'?index?'A Kalinago Territory photograph; it does not document larouman preparation. ':'Baskets displayed in Kalinago Territory; their specific plant material is not recorded. ':article.id==='mexico-voladores'&&index?'Voladores photographed at the National Museum of Anthropology in Mexico City. ':'';
   const latinContext=article.id==='ecuador-toquilla'?index?'A toquilla hat prepared for sale; the photograph does not identify its maker. ':'A hat weaver photographed in Cuenca; the field interviews described here were conducted in Manabí. ':article.id==='chile-arpilleras'?index?'A 2021–22 arpillera about queer protest in Santiago, distinct from the 1970s relatives’ workshop. ':'Chilean arpilleras displayed in a 2025 exhibition in Italy. ':article.id==='taquile'&&index?'A Taquile woman wearing woven cloth; the field study followed a different family. ':article.id==='bolivia-oruro'&&!index?'Diablada costumes photographed in 2024; the image is not a record of the 2023 fraternity. ':'';
-  const captionContext=context||extraContext||latinContext;
+  const captionContext=context||extraContext||latinContext||(PHASE2_LATIN_IMAGE_CONTEXT[article.id]?.[index]||'');
   host.innerHTML='<figure><a href="'+e(image.fileUrl)+'" target="_blank" rel="noopener noreferrer"><img src="'+e(image.thumb)+'" alt="'+e(captionContext+image.description||article.title)+'" loading="lazy" decoding="async"></a><figcaption>'+e(captionContext)+'<cite>'+e(image.fileName)+'</cite>'+(image.artist?' · by '+e(image.artist):'')+' · '+(image.licenseUrl?'<a href="'+e(licenseHref)+'" target="_blank" rel="noopener noreferrer">'+e(image.license)+'</a>':e(image.license))+' · <a href="'+e(image.fileUrl)+'" target="_blank" rel="noopener noreferrer">Wikimedia Commons file details ↗</a>'+(image.wikiUrl?' · <a href="'+e(image.wikiUrl)+'" target="_blank" rel="noopener noreferrer">Wikipedia: '+e(image.wikiTitle)+' ↗</a>':'')+'</figcaption></figure>';
   host.querySelector('img')?.addEventListener('error',()=>{if(host.isConnected)host.innerHTML='<p class="ns-culture-image-status">This image is no longer available. Open another story to try again.</p>';},{once:true});
  });
