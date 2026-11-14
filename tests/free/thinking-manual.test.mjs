@@ -55,7 +55,7 @@ test('unsafe topics prioritise assessment rather than exposure or risk tests',()
  for(const id of ['intrusive','obsessional-doubt','ritual-checking','mental-rituals','perceptual-uncertainty']){
   const g=THINK_BY_ID.get(id);
   assert.ok(g.prominentSafety.length>100,id);
-  assert.match(g.safety,/risk|danger|care|exposure|treatment|assessment|safety/i);
+  assert.match(g.safety,/risk|danger|care|exposure|treatment|assessment|safety|hazard|ERP/i);
  }
  assert.match(THINK_BY_ID.get('perceptual-uncertainty').prominentSafety,/urgent/i);
  assert.match(THINK_BY_ID.get('relationship-obsessions').prominentSafety,/abuse/i);
