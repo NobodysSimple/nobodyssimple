@@ -279,62 +279,73 @@ const RECORDS=[
     ]
   },
   {
-    "id": "mexico-voladores",
+    "id": "mexico-parachicos",
     "meta": [
       "MEX",
-      "Voladores: what the ritual looks like from the top of the pole",
-      "Ritual & inherited skill",
-      "Totonac communities of Veracruz and other practising regions of Mexico",
-      "A spectacular public act acquires meaning through the people who prepare it and the cosmology in which it was learned.",
-      "How would a performance change for you if you knew what its performers were taught it means?",
-      "Veracruz"
+      "Parachicos: learning a sacred dance in Chiapa de Corzo",
+      "Ritual & apprenticeship",
+      "Chiapa de Corzo, Chiapas, Mexico",
+      "Joining a public tradition can require learning its precise obligations, not just copying its most recognisable movements.",
+      "What part of a community practice could only be taught by somebody who performs it?",
+      "Chiapas"
     ],
     "sources": [
       {
-        "label": "UNESCO: ritual ceremony of the Voladores",
-        "url": "https://ich.unesco.org/en/RL/ritual-ceremony-of-the-voladores-00175",
+        "label": "UNESCO: Parachicos in the traditional January feast of Chiapa de Corzo",
+        "url": "https://ich.unesco.org/en/RL/parachicos-in-the-traditional-january-feast-of-chiapa-de-corzo-00399",
         "kind": "Primary community heritage nomination"
+      },
+      {
+        "label": "Mexico National Institute of Anthropology and History: Parachicos in Chiapa de Corzo",
+        "url": "https://lugares.inah.gob.mx/en/node/6397",
+        "kind": "Primary national heritage documentation"
       }
     ],
     "images": [
-      "Voladores in Papantla.jpg",
-      "Voladores De Papantla.jpg"
+      "Parachicos en la Fiesta Grande de Chiapa de Corzo.jpg",
+      "Parachicos en chiapas.jpg"
     ],
     "paras": [
       {
-        "text": "At first glance, the Voladores ceremony seems almost impossible: a group climbs a high wooden pole, and four participants descend suspended by ropes that unwind as they circle the trunk. Another performer remains at the top, playing a flute and a small drum. The act is associated particularly with Totonac communities of Veracruz, although related traditions occur elsewhere. The height draws attention, but the ceremony is not reducible to an aerial stunt.",
+        "text": "Every January the streets of Chiapa de Corzo, in the Mexican state of Chiapas, fill with dancers wearing carved wooden masks and large fibre headdresses. They are called parachicos, a name that refers to both the people dancing and the dance itself. From 4 to 23 January, the Fiesta Grande honours the Lord of Esquipulas, Saint Anthony Abbot and especially Saint Sebastian. The procession is an offering within those celebrations. It is not simply a parade assembled for an audience to admire.",
         "cites": [
+          0,
+          1
+        ]
+      },
+      {
+        "text": "The costume tells an observer who has entered the procession, but it does not explain what they are doing. A parachico also carries a chinchín, a metal rattle shaken in time while moving through the town. The group is led by a patrón, whose stern-looking mask marks a particular office. He plays a small flute while one or two drummers accompany him, and the dancers answer his calls. To understand the event, listen for that exchange instead of assuming the man with the most elaborate costume is the only important performer.",
+        "cites": [
+          0,
+          1
+        ]
+      },
+      {
+        "text": "The ceremony also has a route. The dancers carry images of saints through Chiapa de Corzo and visit places of worship, continuing for much of the day. The Mexican National Institute of Anthropology and History records the festival as a local tradition with origins going back centuries. Its present form brings religious practice into ordinary streets. A visitor seeing one masked dancer near a plaza has encountered a fragment of a journey, not the entire festival or the reasons its participants continue to make it.",
+        "cites": [
+          1,
           0
         ]
       },
       {
-        "text": "UNESCO describes a ritual asking for harmony with the natural and spiritual worlds. The movements and the arrangement of participants have symbolic interpretations within practising communities. A reader should learn those explanations from the people who know the ceremony rather than assigning a universal meaning to every rotation. Different settings and histories may change how particular participants explain an action while leaving the visible descent recognisable.",
+        "text": "Making the mask is its own skilled inheritance. A piece of wood has to be selected and allowed to dry before somebody can carve the face and apply its decoration. UNESCO documents the technique passing between generations, just as the dance is learned. Children do not wait until they know every movement before attending. They join older people and imitate what they can see. This matters because a rehearsal alone does not teach them what each moment means to the people whose ceremony they are entering.",
         "cites": [
-          0
+          0,
+          1
         ]
       },
       {
-        "text": "Preparation includes the selection and securing of the pole, attention to ropes and the learning of movements at height. Skill is not merely confidence in the air. Someone has to be capable of inspecting the conditions that make a performance possible. The ceremony survives through practice and the teaching of younger participants, who must learn the social and spiritual responsibilities associated with performing it as well as the physical routine.",
+        "text": "Two Creative Commons photographs show the tradition in the streets of Chiapa de Corzo: Alonso Cerro's view of parachicos at the 2018 Fiesta Grande and a separate image from the January 2020 celebrations. They depict actual performers in the locality concerned, rather than unrelated carnival masks or a museum display. Yet they cannot show how long a mask took to make, what an individual promised the saint, or what a child learned on an earlier day. The heritage records supply context that the camera cannot recover.",
         "cites": [
-          0
+          0,
+          1
         ]
       },
       {
-        "text": "It is possible to see Voladores performed for visitors without knowing whether that occasion matches a particular community ceremony. Public visibility can provide a reason to maintain skills, but it also risks encouraging audiences to consume the danger as entertainment. That tension should be made explicit. The photographs show performances; UNESCO's record supplies the broader claim that the event belongs to a ritual tradition with living custodians.",
+        "text": "Learning a local tradition begins with recognising what another person knows that a spectator does not. The parachico can be photographed in a second; understanding the office of the patrón or the part played by a mask maker requires someone willing to explain it. If a festival matters to the community holding it, ask who trains the next dancers and who decides when a newcomer is ready to take part. A tradition survives because there are people to demonstrate its hardest parts, and other people prepared to learn them.",
         "cites": [
-          0
-        ]
-      },
-      {
-        "text": "The selected Commons images document Voladores in Papantla, Veracruz in 2002 and a performance in Chapala, Jalisco in 2019. They are not photographs of the same locality or ceremony. Their different settings are useful: they make visible how a recognisable practice may be staged away from its place of origin. A reader should not mistake that continuity of appearance for proof that every performer relates to it identically.",
-        "cites": [
-          0
-        ]
-      },
-      {
-        "text": "When you see a spectacular tradition, the easiest response is to marvel at what the body can do. A harder question is what responsibility its practitioners believe they are carrying. In the Voladores ceremony, learning the rope descent is necessary, but it is not the entire inheritance. The preparation and the explanations handed down by teachers are also part of what a newcomer has to receive.",
-        "cites": [
-          0
+          0,
+          1
         ]
       }
     ]
