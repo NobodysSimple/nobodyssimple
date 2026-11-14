@@ -178,7 +178,7 @@ export const HABIT_JOURNALS_C={
       "lapse",
       "Learn from a lapse without giving up",
       "Replace a shame spiral with a review of cues and support.",
-      "One change to try on the next occasion.",
+      "One change to try on the next occasion, with a practical cue that makes it easier to use.",
       [
         "What happened before the recent lapse, without judging yourself?",
         "Which part of the plan was difficult to use at the time?",
