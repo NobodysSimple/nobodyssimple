@@ -62,7 +62,12 @@ import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
 const main = document.querySelector("main");
-const showWorkbook = options => options.topic==='social-anxiety' ? renderJudgementManual(main) : renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
+const showWorkbook = options => {
+  if(options.topic==='social-anxiety')return renderJudgementManual(main);
+  const selected=getNeedsMode(options.mode)?.options.find(item=>item.id===options.option);
+  if(selected?.type==='topic'&&selected.target==='social-anxiety')return renderJudgementManual(main);
+  return renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
+};
 const supportDialog = document.createElement('dialog');
 supportDialog.className = 'support-dialog'; supportDialog.setAttribute('aria-label','Get help');
 supportDialog.innerHTML = '<div class="support-dialog-bar"><strong>Get help</strong><button type="button" class="button secondary" data-close-support>Close ×</button></div><div data-support-content></div>';
