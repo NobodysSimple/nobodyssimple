@@ -50,7 +50,7 @@ test('cultural readings use documentary sources and distinguish place from a psy
  assert.equal(regionArticles('PER','Puno')[0].id,'taquile');
  assert.equal(regionArticles('BRA','Pernambuco')[0].id,'frevo');
  assert.equal(articlesForCountry('IND').length,3);
- assert.equal(articlesForCountry('MEX').length,3);
+ assert.ok(articlesForCountry('MEX').length>=4,'additional Mexican tradition should be indexed');
  assert.ok(articlesForCountry('MAR').length>=2);
  assert.equal(articleById('tango-argentina').source.url,articleById('tango-uruguay').source.url,'transnational heritage has a shared documentary source');
  assert.ok(articlesForCountry('USA').length>=2);
