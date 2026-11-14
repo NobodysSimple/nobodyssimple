@@ -17,6 +17,7 @@ import {FOCUS_EXTRA_CASES_B} from './ns-focus-extra-cases-b.mjs';
 import {FOCUS_EXTRA_CASES_C} from './ns-focus-extra-cases-c.mjs';
 import {FOCUS_WHY_QUESTIONS} from './ns-focus-why-questions.mjs';
 import {FOCUS_EXTRA_ACTIONS} from './ns-focus-extra-actions.mjs';
+import {FOCUS_DEEPENING} from './ns-focus-depth-additions.mjs';
 
 const editorial=[...FOCUS_EDITORIAL_A,...FOCUS_EDITORIAL_B,...FOCUS_EDITORIAL_C];
 const journals={...FOCUS_JOURNALS_A,...FOCUS_JOURNALS_B,...FOCUS_JOURNALS_C};
@@ -59,26 +60,25 @@ const emotion={
 const stages=['The situation','What it seemed to mean','What you felt','What you did next',
  'What it provided in the moment','A need or value that may matter','A rule you may be following',
  'The situation or learning context','Another reasonable interpretation','A useful next response'];
-const hints=[
- 'Choose one recent example. There is no need to write every detail.',
- 'Try to describe what you noticed without treating an interpretation as a fact.',
- 'Consider what would help or what is realistically available in this situation.',
- 'A small and safe decision is enough. You can open ideas if you want examples.'
-];
 function createGuide(d){
- const id=d.id,seed=journals[id],base=ideas[id],cc=cases[id],ee=extras[id],why=FOCUS_WHY_QUESTIONS[id],additional=FOCUS_EXTRA_ACTIONS[id];
- if(!seed||seed.length!==4||!base||base.actions.length!==12||base.support.length!==12||!cc||cc.length!==8||!ee||ee.length!==8||!why||why.length!==10||!additional||additional.length!==5)fail(id,'missing distinct authored content');
+ const id=d.id,seed=journals[id],base=ideas[id],cc=cases[id],ee=extras[id],why=FOCUS_WHY_QUESTIONS[id],additional=FOCUS_EXTRA_ACTIONS[id],depth=FOCUS_DEEPENING[id];
+ if(!seed||seed.length!==4||!base||base.actions.length!==12||base.support.length!==12||!cc||cc.length!==8||!ee||ee.length!==8||!why||why.length!==10||!additional||additional.length!==5||!depth)fail(id,'missing distinct authored content');
  if(d.article.length!==8||d.article.join(' ').trim().split(/\s+/).length<340)fail(id,'substantive article missing');
  if(d.mechanisms.length<3||d.profiles.length!==4||d.roots.length!==4||d.cycle.length<4)fail(id,'incomplete explanation');
+ if(d.roots.some(r=>!depth.roots[r[0]])||seed.some(r=>!depth.routes[r[0]]))fail(id,'missing topic-specific route or explanatory coaching');
+ const article=[d.article[0],depth.addition[0],...d.article.slice(1,5),depth.addition[1],...d.article.slice(5)];
+ if(article.join(' ').split(/\s+/).length<470)fail(id,'expanded article too short');
  const routes=seed.map(([key,label,description,practice,qs])=>{
   if(qs.length!==4||practice.length<40)fail(id,'incomplete journal '+key);
   const support=/support|assessment|health|access|backup|renegotiate|accommodate|format/i.test(key);
   return {
-   id:key,label,title:label,description,finish:practice,
+   id:key,label,title:label,description:description+' '+depth.routes[key],finish:practice,
    practiceTitle:'Your next useful step',practice,
    questions:qs.map((q,i)=>{
     if(q.length<19)fail(id,'short journal question');
-    return [q,hints[i],i===3?practice:d.mechanisms[i%3][1],i===3?(support?'support':'actions'):''];
+    const coaching=i===0?depth.routes[key]:depth.hints[i];
+    const teaching=i===3?practice:i===0?depth.routes[key]:d.mechanisms[(i-1)%3][1];
+    return [q,coaching,teaching,i===3?(support?'support':'actions'):''];
    })
   };
  });
@@ -93,15 +93,15 @@ function createGuide(d){
   const match=d.roots.find(x=>x[0]===root);if(!match)fail(id,'invalid root '+root);
   return {
    situation:s,interpretation,emotion:emotion[root]||'Discomfort',response,
-   function:'This response may have offered relief or protected a need for '+match[1].toLowerCase(),
+   function:depth.roots[root][0],
    need:match[1],rule,
-   adaptation:d.mechanisms[i%3][1]+' The map is a possibility, not a claim about your history.',
+   adaptation:depth.roots[root][1],
    alternative,action,root
   };
  });
  if(mapped.length!==16||new Set(mapped.map(x=>x.situation)).size!==16)fail(id,'missing or duplicated cases');
- return Object.freeze({...d,routes,ideas:{actions,support},whyQuestions:why,whyCases:mapped,
-  whyIntro:intros[id],whyStages:stages,pullIndex:4,prominentSafety:safety[id]||''});
+ return Object.freeze({...d,article,routes,ideas:{actions,support},whyQuestions:why,whyCases:mapped,
+  whyIntro:depth.why,whyStages:stages,pullIndex:5,prominentSafety:safety[id]||''});
 }
 export const FOCUS_GUIDES=Object.freeze(editorial.map(createGuide));
 export const FOCUS_IDS=Object.freeze(FOCUS_GUIDES.map(g=>g.id));
