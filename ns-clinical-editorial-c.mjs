@@ -104,7 +104,7 @@ export const CLINICAL_EDITORIAL_C=[
       ],
       [
         "NHS: second opinions",
-        "https://www.nhs.uk/using-the-nhs/about-the-nhs/your-healthcare-rights/"
+        "https://www.nhs.uk/mental-health/social-care-and-your-rights/mental-health-assessments/"
       ]
     ]
   },
