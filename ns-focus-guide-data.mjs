@@ -25,19 +25,6 @@ const ideas={...FOCUS_IDEAS_A,...FOCUS_IDEAS_B,...FOCUS_IDEAS_C};
 const cases={...FOCUS_CASES_A,...FOCUS_CASES_B,...FOCUS_CASES_C};
 const extras={...FOCUS_EXTRA_CASES_A,...FOCUS_EXTRA_CASES_B,...FOCUS_EXTRA_CASES_C};
 const fail=(id,why)=>{throw Error('Attention, learning & habits '+id+': '+why)};
-const intros={
- focus:'An attention lapse can reflect the task, the environment or your current health. Explore what actually happened before deciding you are lacking discipline.',
- memory:'Forgetting a name, missing a future task and worrying about memory are different experiences. These examples help you notice where information or a timely cue was lost.',
- organization:'An organising difficulty can begin when a task arrives, while its steps are being arranged or when a plan no longer fits. Look for the point you could change.',
- bored:'Boredom does not always mean you need more entertainment. Explore whether an activity lacks interest, movement, human connection or room for recovery.',
- learning:'Psychology can offer useful explanations without revealing a single hidden truth about someone. These examples distinguish observations from assumptions and lead back to choice.',
- hyperactivity:'Physical restlessness may be a regulation need, a response to environmental demands or a health concern. Look for the conditions involved instead of assuming one cause.',
- 'attention-drift':'What made attention leave the task, and what made returning difficult? Different examples point to engagement, understanding, worry and re-entry supports.',
- 'hyperfocus-cost':'Deep absorption can be enjoyable while making disengagement difficult. These cases consider what the activity provides and what it costs when important needs are missed.',
- 'time-blindness':'Lateness or missed deadlines can begin with estimates, time cues or transitions. The examples focus on where a practical time support could make a difference.',
- 'planning-overload':'If planning feels impossible, the demands may exceed working memory or real resources. Explore which part needs simplification and what must genuinely change.',
- 'learning-block':'Difficulty learning a topic may reflect a missing foundation, inadequate retrieval practice or inaccessible teaching. The examples focus on identifying a useful next step.'
-};
 const safety={
  memory:'If memory difficulties are new, getting worse or affecting daily life, speak to a GP. Sudden confusion or an abrupt neurological change needs urgent assessment; do not rely on a memory journal to explain it.',
  hyperactivity:'Severe new agitation or restlessness, particularly after a medication change or with major sleep and mood changes, deserves prompt medical review. Do not alter prescribed treatment without your prescriber.',
@@ -60,6 +47,19 @@ const emotion={
 const stages=['The situation','What it seemed to mean','What you felt','What you did next',
  'What it provided in the moment','A need or value that may matter','A rule you may be following',
  'The situation or learning context','Another reasonable interpretation','A useful next response'];
+const topicStageLabels={
+ focus:['What you expect your attention to manage','The instructions and environment involved'],
+ memory:['What you expect yourself to remember unaided','Where the information or reminder was lost'],
+ organization:['What you expect yourself to keep in your head','The number of demands and available resources'],
+ bored:['What you believe you should be able to tolerate','What the activity and your current state allowed'],
+ learning:['The explanation you may have started relying on','What the actual evidence and context show'],
+ hyperactivity:['What the setting expects of your body','When the movement appears and what changes it'],
+ 'attention-drift':['What you tell yourself about losing the thread','Whether the material or setting supported re-entry'],
+ 'hyperfocus-cost':['What makes leaving an unfinished activity hard','The rewards and responsibilities competing for attention'],
+ 'time-blindness':['Your assumptions about how long things take','When a usable start cue was missing'],
+ 'planning-overload':['The standard you set for a finished plan','What the workload and available hours permit'],
+ 'learning-block':['What difficulty learning has come to mean to you','Which prerequisite or teaching condition was missing']
+};
 function createGuide(d){
  const id=d.id,seed=journals[id],base=ideas[id],cc=cases[id],ee=extras[id],why=FOCUS_WHY_QUESTIONS[id],additional=FOCUS_EXTRA_ACTIONS[id],depth=FOCUS_DEEPENING[id];
  if(!seed||seed.length!==4||!base||base.actions.length!==12||base.support.length!==12||!cc||cc.length!==8||!ee||ee.length!==8||!why||why.length!==10||!additional||additional.length!==5||!depth)fail(id,'missing distinct authored content');
@@ -83,11 +83,8 @@ function createGuide(d){
   };
  });
  const actions=[...base.actions,...routes.map(r=>r.practice),...d.now.steps,...additional];
- const support=[...base.support,
-  ...routes.map(r=>'Ask a suitable person about help with: '+r.label.toLowerCase()),
-  ...routes.map(r=>'Discuss whether support could help you '+r.description.charAt(0).toLowerCase()+r.description.slice(1)),
-  ...d.mechanisms.slice(0,3).map(x=>'Ask about practical support for '+x[0].toLowerCase()+' when it affects your daily life'),
-  'Agree how you will review whether the change is helping in real situations.'];
+ if(!depth.supportMore||depth.supportMore.length!==12)fail(id,'missing independently authored support ideas');
+ const support=[...base.support,...depth.supportMore];
  if(actions.length!==24||support.length!==24)fail(id,'two optional lists of 24 items required');
  const mapped=[...cc,...ee].map(([s,interpretation,response,rule,alternative,action,root],i)=>{
   const match=d.roots.find(x=>x[0]===root);if(!match)fail(id,'invalid root '+root);
@@ -101,7 +98,7 @@ function createGuide(d){
  });
  if(mapped.length!==16||new Set(mapped.map(x=>x.situation)).size!==16)fail(id,'missing or duplicated cases');
  return Object.freeze({...d,article,routes,ideas:{actions,support},whyQuestions:why,whyCases:mapped,
-  whyIntro:depth.why,whyStages:stages,pullIndex:5,prominentSafety:safety[id]||''});
+  whyIntro:depth.why,whyStages:stages.map((label,i)=>i===6?topicStageLabels[id][0]:i===7?topicStageLabels[id][1]:label),pullIndex:5,prominentSafety:safety[id]||''});
 }
 export const FOCUS_GUIDES=Object.freeze(editorial.map(createGuide));
 export const FOCUS_IDS=Object.freeze(FOCUS_GUIDES.map(g=>g.id));
