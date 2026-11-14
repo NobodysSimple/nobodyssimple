@@ -3,7 +3,7 @@ import {goodDeeds} from './lifestyle-deeds.mjs';
 import {
  PRACTICE_KEY,normalisePractice,ensureDailyPractice,choosePracticeIdentity,
  choosePracticeSkills,choosePracticeFocus,choosePracticeLevel,
- anotherPractice,completePractice,undoPractice,practiceLevel,practiceSummary,
+ anotherPractice,completePractice,undoPractice,pausePractice,resumePractice,practiceLevel,practiceSummary,
  practiceIdentities,practiceSkills,practiceSkillMap,practiceIdentityMap,getPracticeTask,dateKey
 } from './lifestyle-practice.mjs';
 
@@ -53,7 +53,7 @@ function practiceDisplay(state){
  const identity=practiceIdentityMap.get(id),today=state.today,task=getPracticeTask(state);
  const skill=practiceSkillMap.get(today?.skillId),total=state.counts[today?.skillId]||0;
  if(!today||!task||!skill)return '<p class="life-practice-note">Choose a skill to start your daily practice.</p>';
- const done=Boolean(today.done);
+ const done=Boolean(today.done),paused=Boolean(today.paused&&!done);
  const selector=`<details class="life-practice-custom">
   <summary>Change my direction or skills</summary>
   <p class="life-practice-note">Pick an identity as a starting point, then select one to three skills. Your next practice will follow your choices.</p>
@@ -77,12 +77,13 @@ function practiceDisplay(state){
    <p class="life-practice-task">${esc(task.task)}</p>
    <p class="life-practice-why">${esc(skill.why)}</p>
   </div>
-  ${done?`<div class="life-practice-complete" role="status"><strong>${esc(skill.name)} · +1 practice recorded</strong>
+  ${paused?`<div class="life-practice-complete"><strong>Taking today off is a valid choice.</strong><p>Your previous practice record stays exactly as it is. Return whenever it suits you.</p><button type="button" class="life-practice-plain" data-practice-resume>Show today's practice</button></div>`:done?`<div class="life-practice-complete" role="status"><strong>${esc(skill.name)} · +1 practice recorded</strong>
    <p>You practised this skill today. A new suggestion will appear on your next local day. No streak to protect.</p>
    <button type="button" class="life-practice-plain" data-practice-undo>Undo completion</button></div>`
    :`<div class="life-practice-actions">
    <button type="button" class="button" data-practice-done>I practised this</button>
    <button type="button" class="button secondary" data-practice-next>Another idea</button>
+   <button type="button" class="life-practice-plain" data-practice-pause>Not today</button>
    ${kindnessAvailable(skill.id)?'<button type="button" class="life-practice-plain" data-practice-kindness>Try a kindness idea</button>':''}
    </div>
    <p class="life-practice-note">No need to force a task that does not suit your circumstances. Choose another, take it more gently or skip today.</p>`}
@@ -102,9 +103,13 @@ function practiceDisplay(state){
 export function mountLifestylePractice(container,{signal}={}){
  if(!container)return;
  let state=ensureDailyPractice(read(),new Date());
+ let prefsOpen=false,levelsOpen=false;
  const status=message=>{const node=container.querySelector('[data-practice-status]');if(node)node.textContent=message;};
  const render=()=>{
   container.innerHTML=`${practiceDisplay(state)}<p class="life-practice-status" role="status" aria-live="polite" data-practice-status></p>`;
+  const prefs=container.querySelector('.life-practice-custom'),levels=container.querySelector('.life-practice-levels');
+  if(prefs)prefs.open=prefsOpen;
+  if(levels)levels.open=levelsOpen;
  };
  const apply=action=>{
   const next=action(ensureDailyPractice(state,new Date()));
@@ -127,7 +132,13 @@ export function mountLifestylePractice(container,{signal}={}){
   if(button.hasAttribute('data-practice-kindness')){apply(s=>anotherPractice(s,new Date(),{kindness:true}));return;}
   if(button.hasAttribute('data-practice-done')){apply(s=>completePractice(s));return;}
   if(button.hasAttribute('data-practice-undo')){apply(s=>undoPractice(s));return;}
+  if(button.hasAttribute('data-practice-pause')){apply(s=>pausePractice(s));return;}
+  if(button.hasAttribute('data-practice-resume')){apply(s=>resumePractice(s));return;}
  },{signal});
+ container.addEventListener('toggle',event=>{
+  if(event.target.matches('.life-practice-custom'))prefsOpen=event.target.open;
+  if(event.target.matches('.life-practice-levels'))levelsOpen=event.target.open;
+ },{capture:true,signal});
  container.addEventListener('change',event=>{
   const control=event.target;
   if(!control.matches('[data-practice-skill]'))return;
