@@ -21,7 +21,7 @@ test('Understand Why provides rich, distinct example paths without presenting th
 
 test('personal excavations remain hypotheses and include environment-first alternatives',()=>{
  const src=readFileSync('ns-judgement-depth.mjs','utf8');
- assert.match(src,/not automatically saved or sent/i);
+ assert.match(src,/nothing is automatically saved or sent/i);
  assert.match(src,/cannot uncover an unconscious cause/i);
  assert.match(src,/safety and support/i);
  assert.match(src,/data-depth-root/);
