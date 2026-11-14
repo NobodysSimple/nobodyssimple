@@ -322,7 +322,7 @@ export const CLINICAL_EDITORIAL_D=[
       ],
       [
         "NHS: medically unexplained symptoms",
-        "https://www.nhs.uk/mental-health/conditions/medically-unexplained-symptoms/"
+        "https://www.nhs.uk/conditions/medically-unexplained-symptoms/"
       ]
     ]
   }
