@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v199-mexico-atlas';
+const CACHE = 'nobodyssimple-release-v200-wisbody-reflections';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -28,6 +28,12 @@ const INSTALL_OPTIONAL = [
   'ns-integrated-workbook-data.mjs','ns-integrated-workbook.mjs','ns-integrated-workbook.css',
   'ns-intervention-cards.mjs','ns-intervention-chooser.mjs', 'ns-topic-reading-data.mjs', 'ns-topic-reading-ui.mjs','ns-intervention-chooser.css',
   'ns-regulation-games-data.mjs','ns-regulation-games.mjs','ns-regulation-games.css',
+  'quote-content.mjs','wisbody-content.mjs','wisbody-ui.mjs','wisbody-reflections.css',
+  'wisbody/reflections-self-worth.mjs','wisbody/reflections-relationships.mjs',
+  'wisbody/reflections-control.mjs','wisbody/reflections-identity.mjs',
+  'wisbody/reflections-emotions.mjs','wisbody/reflections-meaning.mjs',
+  'wisbody/reflections-action.mjs','wisbody/reflections-thinking.mjs',
+  'wisbody/reflections-past.mjs','wisbody/reflections-belonging.mjs',
 ];
 const PUBLIC_EXTENSION = /\.(?:css|mjs|js|webp|avif|png|jpe?g|svg|gif|ico|woff2?|mp3|ogg|wav)$/i;
 const SAFE_QUERY = /^\?v=[a-z0-9._-]{1,40}$/i;
