@@ -39,7 +39,7 @@ test('guides have individually authored articles, journals, suggestion lists and
     if(question[3])assert.ok(g.ideas[question[3]]?.length>=22,g.id+' missing practical ideas '+question[3]);
    }
   }
-  assert.equal(g.whyCases.length,8,g.id+' not enough unique excavations');
+  assert.equal(g.whyCases.length,16,g.id+' expected sixteen individually tailored excavations');
   assert.equal(g.whyQuestions.length,10,g.id+' no personalized formulation path');
   assert.ok(g.roots.length>=3);
   assert.ok(g.sources?.length>=1,g.id+' without sources');
@@ -50,6 +50,7 @@ test('guides have individually authored articles, journals, suggestion lists and
   }
   questions.add(g.routes[0].questions[0][0]);
  }
+ assert.equal(MOOD_GUIDES.reduce((total,g)=>total+g.whyCases.length,0),256,'expected 256 distinct context-specific examples');
  assert.ok(questions.size>=14,'initial questions too generic across topics');
 });
 test('safety-sensitive topics have subject-specific boundaries',()=>{
