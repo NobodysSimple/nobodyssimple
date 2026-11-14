@@ -143,8 +143,8 @@ const RECORDS=[
       }
     ],
     "images": [
-      "“Suitu sievas” singing.jpg",
-      "“Suitu sievas” singing the longest song in the coutry.jpg"
+      ""Suitu sievas" singing.jpg",
+      ""Suitu sievas" singing the longest song in the coutry.jpg"
     ],
     "paragraphs": [
       {
