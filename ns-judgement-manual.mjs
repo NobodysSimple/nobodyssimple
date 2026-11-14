@@ -107,15 +107,15 @@ export function renderJudgementManual(root){
  root.innerHTML='<div class="ns-judge" id="ns-judge-top">'+
   '<nav class="ns-judge-back" aria-label="Page navigation"><a href="#navigate">← Find another starting point</a><a href="#home">Nobody’s Simple home</a></nav>'+
   '<header class="ns-judge-hero"><div><p class="ns-judge-kicker">NOBODY’S SIMPLE · A FIELD GUIDE FOR YOU</p><h1>Fear of being judged by others</h1><p class="ns-judge-subhead">If you feel watched or worried about what people think, you can start here. You don’t have to have all the answers.</p>'+
-  '<div class="ns-judge-toplinks"><a href="#ns-judge-read">Read the guide</a><a href="#ns-judge-start">Find my next step</a><a href="#ns-judge-now">Something I can do now</a></div></div>'+
+  '<div class="ns-judge-toplinks" aria-label="Jump to a section"><button type="button" data-nj-jump="ns-judge-read">Read the guide</button><button type="button" data-nj-jump="ns-judge-start">Find my next step</button><button type="button" data-nj-jump="ns-judge-now">Something I can do now</button></div></div>'+
   '<img class="ns-judge-mascot" src="ns-character-guide.webp" alt="" loading="lazy"></header>'+
-  '<section id="ns-judge-read" class="ns-judge-reading" aria-labelledby="ns-judge-read-title"><h2 id="ns-judge-read-title">If this feels familiar</h2>'+
+  '<section id="ns-judge-read" class="ns-judge-reading" aria-labelledby="ns-judge-read-title"><h2 id="ns-judge-read-title" tabindex="-1">If this feels familiar</h2>'+
   paras.map((p,i)=>'<p'+(i===5?' class="ns-judge-reflection"':'')+'>'+e(p)+'</p>').join('')+'</section>'+
   '<section class="ns-judge-start" id="ns-judge-start" aria-labelledby="ns-judge-start-title"><p class="ns-judge-kicker">A GENTLE PLACE TO BEGIN</p><h2 id="ns-judge-start-title" tabindex="-1">What would help you most right now?</h2><p>You can choose whichever feels closest. You won’t be asked to pick a therapy or work out a diagnosis.</p>'+
   '<div class="ns-judge-choices">'+Object.entries(choiceLabels).map(([id,[label,detail]])=>'<button type="button" class="ns-judge-choice" data-nj-open="'+e(id)+'"><span><strong>'+e(label)+'</strong><small>'+e(detail)+'</small></span><span aria-hidden="true">→</span></button>').join('')+'</div>'+
   '<p class="ns-judge-muted">If you’re unsure, start with “I want to understand why I feel this way”. You can change direction at any point.</p></section>'+
   '<section id="ns-judge-work" class="ns-judge-work" aria-label="Your guided journal" hidden><div data-nj-screen></div></section>'+
-  '<section id="ns-judge-now" class="ns-judge-now" aria-labelledby="ns-judge-now-title"><h2 id="ns-judge-now-title">Something you can try in your next conversation</h2><p>If you catch yourself worrying about how you sound, gently notice what you’re afraid the other person might think. Then bring some attention back to what they are saying. You can continue the conversation while feeling awkward. There is no need to make the feeling disappear first.</p></section>'+
+  '<section id="ns-judge-now" class="ns-judge-now" aria-labelledby="ns-judge-now-title"><h2 id="ns-judge-now-title" tabindex="-1">Something you can try in your next conversation</h2><p>If you catch yourself worrying about how you sound, gently notice what you’re afraid the other person might think. Then bring some attention back to what they are saying. You can continue the conversation while feeling awkward. There is no need to make the feeling disappear first.</p></section>'+
   '<footer class="ns-judge-footer"><details><summary>Research and support</summary><p>These ideas draw on cognitive behavioural approaches for social anxiety, including reducing excessive self-monitoring and using safe behavioural experiments. If fear of judgement is seriously affecting your life, individual CBT designed for social anxiety is a recommended treatment.</p><ul><li><a href="https://www.nice.org.uk/guidance/cg159/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE social anxiety guidance</a></li><li><a href="https://www.nhs.uk/mental-health/conditions/social-anxiety/" target="_blank" rel="noopener noreferrer">NHS social anxiety information</a></li><li><a href="https://www.nhs.uk/nhs-services/mental-health-services/find-nhs-talking-therapies-for-anxiety-and-depression/" target="_blank" rel="noopener noreferrer">NHS Talking Therapies in England</a></li></ul><p>These exercises are educational. They are not a diagnosis or a substitute for individualised care. If someone is mistreating you, focus on safety and support rather than forcing yourself into an unsafe situation.</p></details><p>Nothing you write is saved or sent automatically. You can choose to download your notes.</p></footer></div>';
  const work=root.querySelector('#ns-judge-work'),out=work.querySelector('[data-nj-screen]');
  function focusWork(){
@@ -215,8 +215,9 @@ export function renderJudgementManual(root){
   setTimeout(()=>URL.revokeObjectURL(url),2000);
  }
  root.querySelector('.ns-judge').addEventListener('click',event=>{
-  const button=event.target.closest('[data-nj-open],[data-nj-next],[data-nj-back],[data-nj-edit],[data-nj-close],[data-nj-download]');
+  const button=event.target.closest('[data-nj-jump],[data-nj-open],[data-nj-next],[data-nj-back],[data-nj-edit],[data-nj-close],[data-nj-download]');
   if(!button||!root.contains(button))return;
+  if(button.dataset.njJump){const section=root.querySelector('#'+button.dataset.njJump);section?.scrollIntoView({block:'start',behavior:'auto'});section?.querySelector('h2')?.focus({preventScroll:true});return;}
   if(button.dataset.njOpen){open(button.dataset.njOpen);return;}
   if(button.hasAttribute('data-nj-download')){download();return;}
   if(button.hasAttribute('data-nj-close')){
