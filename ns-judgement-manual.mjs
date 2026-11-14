@@ -190,12 +190,34 @@ export function renderJudgementManual(root){
   return items.map(item=>store[item.id]?item.q+'\n'+String(store[item.id]):'').filter(Boolean);
  }
 
+
+ function tailoredPractice(mode){
+  const a=state.forms[mode]||{};
+  if(mode==='test')return '<section class="ns-judge-finish-practice"><h3>Practise your first step now</h3><p>'+
+   (a.when?'You planned: <strong>'+e(a.when.slice(0,240))+'</strong>. ':'')+
+   'Say your first sentence aloud or quietly practise the first action. You are practising participation, not perfection. Afterwards, compare your prediction with what really happens.</p></section>';
+  if(mode==='replay')return '<section class="ns-judge-finish-practice"><h3>Let the review end here</h3><p>'+
+   (a.return?'You chose to return to <strong>'+e(a.return.slice(0,180))+'</strong>. ':'')+
+   'Give that activity ten minutes. When the memory returns, recognise it without starting the investigation again.</p></section>';
+  if(mode==='kindness')return '<section class="ns-judge-finish-practice"><h3>Say the fairer sentence once</h3><p>'+
+   (a.fair?'<strong>'+e(a.fair.slice(0,240))+'</strong> ':'')+
+   'Read it slowly. You can respond fairly to yourself even if the shame has not disappeared.</p></section>';
+  if(mode==='protect')return '<section class="ns-judge-finish-practice"><h3>Choose safety over proving yourself</h3><p>'+
+   (a.next?'Your possible next step: <strong>'+e(a.next.slice(0,220))+'</strong>. ':'')+
+   'If this person may retaliate, asking for support or finding a safer setting is more important than confronting them.</p></section>';
+  if(mode==='review')return '<section class="ns-judge-finish-practice"><h3>Take one learning point with you</h3><p>'+
+   (a.learn?'<strong>'+e(a.learn.slice(0,220))+'</strong> ':'')+
+   'Your review can end here. Choose just one thing to adjust if you try again.</p></section>';
+  return '';
+ }
+
 function showFinish(){
   if(state.mode==='map'){
    const rec=recommendation();state.suggest=rec;state.done.map=true;
    out.innerHTML='<p class="ns-judge-kicker">YOUR WORKING MAP</p><h2 tabindex="-1">Here’s what you noticed</h2>'+
     '<p>These are your own observations. They are a starting point you can change, not a diagnosis or a judgement about who you are.</p>'+
     '<div class="ns-judge-summary">'+(mapNotes().map(s=>'<p>'+e(s)+'</p>').join('')||'<p>You can come back and add to this whenever you wish.</p>')+'</div>'+
+    (state.answers.fear&&state.answers.protect?'<div class="ns-judge-finish-practice"><h3>A possible pattern to understand</h3><p>You feared: <strong>'+e(String(state.answers.fear).slice(0,210))+'</strong>. To protect yourself, you responded: <strong>'+e(String(state.answers.protect).slice(0,210))+'</strong>. In a safe situation, could changing one small part help you learn what happens without that precaution?</p></div>':'')+
     '<div class="ns-judge-next"><p class="ns-judge-kicker">YOUR SUGGESTED NEXT EXERCISE</p><h3>'+e(guides[rec].title)+'</h3><p>'+e(guides[rec].lead)+'</p>'+
     '<button class="ns-judge-primary" type="button" data-nj-open="'+rec+'">Start this exercise →</button></div>'+
     '<div class="ns-judge-actions"><button class="ns-judge-secondary" type="button" data-nj-edit>Review my answers</button><button class="ns-judge-secondary" type="button" data-nj-download>Download my notes</button><button class="ns-judge-secondary" type="button" data-nj-save>Save on this device</button><button class="ns-judge-secondary" type="button" data-nj-close>Finish for now</button></div><p class="ns-judge-muted" data-nj-storage-status role="status">Saving is optional. Anyone with access to this browser may be able to see saved notes.</p>'+ 
@@ -209,7 +231,7 @@ function showFinish(){
     mode==='test'?'Try this only in a safe setting. Afterwards, return to review what actually happened.':'You can adjust the next step without losing any progress.';
    out.innerHTML='<p class="ns-judge-kicker">YOUR NOTES</p><h2 tabindex="-1">'+e(guides[mode].title)+'</h2>'+
     '<div class="ns-judge-summary">'+(notes.map(x=>'<p>'+e(x).replace(/\n/g,'<br>')+'</p>').join('')||'<p>You can return to these questions when you’re ready.</p>')+'</div>'+
-    '<p>'+e(tail)+'</p>'+
+    tailoredPractice(mode)+'<p>'+e(tail)+'</p>'+
     '<div class="ns-judge-actions">'+(mode==='test'?'<button class="ns-judge-primary" type="button" data-nj-open="review">Review what happened later →</button>':'')+
     '<button type="button" class="ns-judge-secondary" data-nj-edit>Review answers</button>'+
     '<button type="button" class="ns-judge-secondary" data-nj-download>Download notes</button>'+ 
