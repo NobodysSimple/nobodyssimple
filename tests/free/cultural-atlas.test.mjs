@@ -96,7 +96,7 @@ test('cultural readings use documentary sources and distinguish place from a psy
    assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the researched paragraphs');
   }
  }
- for(const code of ['GUY','SUR','GUF','GLP','MTQ']){
+ for(const code of ['GUY','SUR','FRA']){
   const entries=articlesForCountry(code).filter(a=>LATIN_AMERICA_EXPANSION[a.id]);
   assert.ok(entries.length,code+' missing an expanded cultural reading');
   for(const a of entries){
