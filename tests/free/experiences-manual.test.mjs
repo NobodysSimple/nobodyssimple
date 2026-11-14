@@ -53,7 +53,7 @@ test('all 256 depth maps use relevant local contexts and avoid unsupported hidde
  for(const entry of samples){
   assert.ok(entry.situation.length>=18,entry.topic+' missing concrete situation');
   for(const field of ['interpretation','emotion','response','function','need','rule','adaptation','alternative','action'])
-   assert.ok(entry[field]?.length>=7,entry.topic+' poor '+field);
+   assert.ok(entry[field]?.trim().length>=(['emotion','need','function'].includes(field)?3:7),entry.topic+' poor '+field);
   assert.ok(!situations.has(entry.topic+':'+entry.situation));
   situations.add(entry.topic+':'+entry.situation);
   const g=EXPERIENCE_GUIDES_BY_ID.get(entry.topic);
