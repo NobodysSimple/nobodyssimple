@@ -262,10 +262,10 @@ const RECORDS=[
       }
     ],
     "images": [
-      "Староверы Тарбагатая.jpg"
+      "Сагаалган.jpg"
     ],
     "imageNotes": [
-      "Old Believer residents of Buryatia, not a Buryat Sagaalgan celebration. This is a contextual regional image only; it should be replaced with a verified image of the actual Buddhist New Year."
+      "Sagaalgan Buddhist New Year photographed in Chita on 17 February 2018 by Vladimir (CC BY-SA 2.0). This is an actual holiday image, though it does not show the Ulan-Ude household preparations described in the field study."
     ],
     "paragraphs": [
       {
@@ -294,7 +294,7 @@ const RECORDS=[
         ]
       },
       {
-        "text": "Appropriately licensed photographs of the specific Sagaalgan preparations still need careful verification. A photograph of Buryatia's Old Believer community would misrepresent the Buddhist holiday, so the previously selected contextual image is not being used as documentary evidence of Sagaalgan. The linked ethnography provides the actual case descriptions of household preparation and temple observance. Better to leave a picture slot empty than let an unrelated regional photograph stand for this religious practice.",
+        "text": "A Commons photograph of Sagaalgan taken at Chita in February 2018 by Vladimir offers a direct image of the Buddhist New Year rather than an unrelated regional scene. The image is licensed CC BY-SA 2.0 and records a celebration in Zabaykalsky Krai, not the apartments in Ulan-Ude studied by Graber. The article therefore uses the photograph for the visible festival while attributing its detailed account of household preparation and contested traditions to the ethnographic fieldwork.",
         "refs": [
           0
         ]
