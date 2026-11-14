@@ -44,6 +44,7 @@ import { renderUniversalConsole } from './ns-universal-console.mjs';
 import { renderNSProblemGuide } from './ns-problem-guide.mjs';
 import {renderPrecisionConsole} from './ns-precision-console.mjs';
 import {renderPrecisionGuide} from './ns-precision-guide.mjs';
+import {renderJudgementManual} from './ns-judgement-manual.mjs';
 import {getPreciseProfile} from './ns-precision-content.mjs';
 import {renderAtlasConsole} from './ns-atlas-console.mjs';
 import {renderAtlasGuide} from './ns-atlas-guide.mjs';
@@ -61,7 +62,7 @@ import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
 const main = document.querySelector("main");
-const showWorkbook = options => renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
+const showWorkbook = options => options.topic==='social-anxiety' ? renderJudgementManual(main) : renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
 const supportDialog = document.createElement('dialog');
 supportDialog.className = 'support-dialog'; supportDialog.setAttribute('aria-label','Get help');
 supportDialog.innerHTML = '<div class="support-dialog-bar"><strong>Get help</strong><button type="button" class="button secondary" data-close-support>Close ×</button></div><div data-support-content></div>';
@@ -905,7 +906,7 @@ function route() {
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate/atlas';return;}
         showWorkbook({mode,option:choice});
       },
-      problem: () => {const key=safeRoutePart(id);if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
+      problem: () => {const key=safeRoutePart(id);if(key==='social-anxiety')renderJudgementManual(main);else if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
         location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
       library: () => {
