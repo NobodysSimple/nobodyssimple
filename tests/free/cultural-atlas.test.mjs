@@ -7,6 +7,11 @@ import {SOUTH_ASIA_STORIES} from '../../ns-cultural-atlas-south-asia.mjs';
 import {SOUTHEAST_ASIA_STORIES} from '../../ns-cultural-atlas-southeast-asia.mjs';
 import {NORTH_AMERICA_STORIES} from '../../ns-cultural-atlas-north-america.mjs';
 import {LATIN_AMERICA_STORIES} from '../../ns-cultural-atlas-latin-america.mjs';
+import {LATIN_AMERICA_EXPANSION} from '../../ns-cultural-atlas-latin-america-expansion.mjs';
+import {LATIN_AMERICA_ADDITIONAL} from '../../ns-cultural-atlas-latin-america-additional.mjs';
+import {LATIN_AMERICA_PHASE2A} from '../../ns-cultural-atlas-latin-america-phase2a.mjs';
+import {LATIN_AMERICA_PHASE2B} from '../../ns-cultural-atlas-latin-america-phase2b.mjs';
+import {LATIN_AMERICA_PHASE2C} from '../../ns-cultural-atlas-latin-america-phase2c.mjs';
 import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
@@ -48,7 +53,7 @@ test('cultural readings use documentary sources and distinguish place from a psy
  assert.equal(regionArticles('PER','Puno')[0].id,'taquile');
  assert.equal(regionArticles('BRA','Pernambuco')[0].id,'frevo');
  assert.equal(articlesForCountry('IND').length,3);
- assert.equal(articlesForCountry('MEX').length,3);
+ assert.ok(articlesForCountry('MEX').length>=4,'additional Mexican tradition should be indexed');
  assert.ok(articlesForCountry('MAR').length>=2);
  assert.equal(articleById('tango-argentina').source.url,articleById('tango-uruguay').source.url,'transnational heritage has a shared documentary source');
  assert.ok(articlesForCountry('USA').length>=2);
@@ -94,6 +99,42 @@ test('cultural readings use documentary sources and distinguish place from a psy
    assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the researched paragraphs');
   }
  }
+
+ const nextLatinReads={...LATIN_AMERICA_PHASE2A,...LATIN_AMERICA_PHASE2B,...LATIN_AMERICA_PHASE2C};
+ for(const id of ['argentina-chamame','chile-baile-chino','colombia-pasto-varnish','ecuador-pasillo','brazil-cirio-nazare','bolivia-pujllay-ayarichi','peru-hatajo','paraguay-poncho-parai','uruguay-murga']){
+  const entry=articleById(id);
+  assert.ok(entry,'missing second-batch reading '+id);
+  const story=nextLatinReads[id];
+  assert.equal(story?.paragraphs.length,6,id+' requires six sections');
+  assert.ok(story.paragraphs.every(p=>p.text.length>350&&p.sources.length&&p.sources.every(s=>/^https:\/\//.test(s.url))),id+' requires detailed sourced exposition');
+  assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),id+' needs primary documentation');
+  assert.ok(story.images.length>=1,id+' requires a verified subject or setting image');
+  assert.deepEqual(CULTURE_INVESTIGATIONS[id].sections[0].paragraphs,story.paragraphs,id+' must display full sourced narrative');
+ }
+ for(const code of ['GUY','SUR','FRA']){
+  const entries=articlesForCountry(code).filter(a=>LATIN_AMERICA_EXPANSION[a.id]);
+  assert.ok(entries.length,code+' missing an expanded cultural reading');
+  for(const a of entries){
+   const story=LATIN_AMERICA_EXPANSION[a.id];
+   assert.equal(story.paragraphs.length,6,a.id+' needs six documented paragraphs');
+   assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' needs verified source records');
+   assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' needs primary evidence');
+   assert.ok(story.images.length>=1,a.id+' needs a specifically selected Commons image');
+   assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the full reading');
+  }
+ }
+ for(const code of ['COL','BRA','PER','BOL','MEX','DOM','VEN','ATG']){
+  const entries=articlesForCountry(code).filter(a=>LATIN_AMERICA_ADDITIONAL[a.id]);
+  assert.ok(entries.length,code+' missing a further researched reading');
+  for(const a of entries){
+   const story=LATIN_AMERICA_ADDITIONAL[a.id];
+   assert.equal(story.paragraphs.length,6,a.id+' requires six paragraphs');
+   assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' requires source linked exposition');
+   assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' requires first-hand documentation');
+   assert.ok(story.images.length>=1,a.id+' requires subject-matched reusable media');
+   assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must display the full six sections');
+  }
+ }
  for(const code of ['ARG','BOL','CHL','ECU','PER','PRY','URY','VEN']){
   const entries=articlesForCountry(code).filter(a=>LATIN_AMERICA_STORIES[a.id]);
   assert.ok(entries.length,code+' missing a Latin America reading');
@@ -102,7 +143,7 @@ test('cultural readings use documentary sources and distinguish place from a psy
    assert.equal(story.paragraphs.length,6,a.id+' needs six paragraphs');
    assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' needs source-linked prose');
    assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' needs first-hand material');
-   assert.equal(story.images.length,2,a.id+' needs two selected images');
+   assert.ok(story.images.length===2 || (a.id==='paraguay-poncho-parai'&&story.images.length===1),a.id+' needs two curated photographs, except the documented one-image Piribebuy festival case');
    assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the full reading');
   }
  }

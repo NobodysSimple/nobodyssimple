@@ -1,3 +1,8 @@
+import {LATIN_AMERICA_PHASE2C} from './ns-cultural-atlas-latin-america-phase2c.mjs';
+import {LATIN_AMERICA_PHASE2A} from './ns-cultural-atlas-latin-america-phase2a.mjs';
+import {LATIN_AMERICA_PHASE2B} from './ns-cultural-atlas-latin-america-phase2b.mjs';
+import {LATIN_AMERICA_ADDITIONAL} from './ns-cultural-atlas-latin-america-additional.mjs';
+import {LATIN_AMERICA_EXPANSION} from './ns-cultural-atlas-latin-america-expansion.mjs';
 /* Source-linked, six-paragraph cultural readings from Latin America. */
 const source=(label,url,kind='Cultural documentation')=>({label,url,kind});
 const paragraph=(text,...sources)=>({text,sources});
@@ -25,6 +30,11 @@ const S={
  taquileVoices:source('Peru Ministry of Culture: Testimonies about Taquile textile art','https://hdl.handle.net/20.500.14427/1324','Primary practitioner testimonies')
 };
 export const LATIN_AMERICA_STORIES=Object.freeze({
+ ...LATIN_AMERICA_EXPANSION,
+ ...LATIN_AMERICA_ADDITIONAL,
+ ...LATIN_AMERICA_PHASE2A,
+ ...LATIN_AMERICA_PHASE2B,
+ ...LATIN_AMERICA_PHASE2C,
  'argentina-filete':{
   paragraphs:[
    paragraph('Filete porteño began as painted ornament on working vehicles in Buenos Aires around the turn of the twentieth century. The Buenos Aires Museum traces it to carriage workshops where painters made delivery carts recognisable to customers. Curving lines, painted lettering and flourishes turned a practical surface into a public advertisement. The museum warns that oral accounts cannot establish a single first artist or an exact year of origin.',S.fileteMuseum,S.filete),
