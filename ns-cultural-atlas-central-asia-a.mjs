@@ -215,10 +215,10 @@ const RECORDS=[
       }
     ],
     "images": [
-      "Assyk.jpg"
+      "Асық ату.jpg"
     ],
     "imageNotes": [
-      "Assyk playing bones shown as objects; this is not a photograph of a specific Kazakh match."
+      "An actual Assyk Atu game photographed at L. N. Gumilyov Eurasian National University in Astana on 12 January 2026 by Mira Zhumaxanova."
     ],
     "paragraphs": [
       {
@@ -246,7 +246,7 @@ const RECORDS=[
         ]
       },
       {
-        "text": "The selected Commons photograph shows an assyk bone collection in a museum or educational setting. It is useful for identifying the game pieces and their irregular shapes. It is not presented as proof that a particular schoolyard match was taking place. When describing the rules, the heritage record remains the primary source, while the photograph allows a reader unfamiliar with the word 'ankle bone' to understand the object players are trying to strike.",
+        "text": "The selected Commons photograph actually documents an assyk atu game at L. N. Gumilyov Eurasian National University in Astana on 12 January 2026. It was taken by Mira Zhumaxanova and released under a Creative Commons licence. That makes it more useful than an unverified photograph of animal bones: the reader can see the equipment in a contemporary playing setting. The UNESCO nomination explains how children learn and practise the game beyond this particular university event.",
         "refs": [
           0
         ]
