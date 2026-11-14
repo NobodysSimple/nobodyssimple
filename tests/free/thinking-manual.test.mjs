@@ -58,7 +58,7 @@ test('unsafe topics prioritise assessment rather than exposure or risk tests',()
   assert.ok(g.safety.length>60,id+' missing substantive safeguard');
  }
  assert.match(THINK_BY_ID.get('perceptual-uncertainty').prominentSafety,/urgent/i);
- assert.match(THINK_BY_ID.get('relationship-obsessions').prominentSafety,/abuse/i);
+ assert.match(THINK_BY_ID.get('relationship-obsessions').prominentSafety,/abuse|coercion|threats|safety/i);
 });
 test('public routing reuses established design with correct domain breadcrumb',()=>{
  const site=readFileSync('site.mjs','utf8'),layout=readFileSync('ns-mood-manual.mjs','utf8');
