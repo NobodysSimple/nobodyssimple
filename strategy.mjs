@@ -1,5 +1,5 @@
 import {escapeHTML as esc, safeImage} from './core.mjs';
-import {quoteDeckExtended as quotes} from './quote-content.mjs';
+import {renderWisbody as renderWisbodyUI} from './wisbody-ui.mjs';
 import {tools as toolCatalogue} from './tool-catalog.mjs';
 import {setupHomeUpdates} from './ns-home-updates.mjs';
 import {renderCultureAtlas} from './ns-cultural-atlas.mjs';
@@ -107,35 +107,5 @@ function renderLatest(section,posts){
  paint();
 
 }
-export function renderWisbody(root,{compact=false}={}){
- let extrasOpen=false;
- const existingDraft=account().locked?null:read(DRAFT_KEY,{})['#wisbody']?.quoteDraft;
- let index=Math.max(0,Math.min(quotes.length-1,existingDraft?.index??Math.floor(Math.random()*quotes.length))),theme='all';
- const notes=account().locked?{}:read(QUOTE_KEY,{}),pending={...(existingDraft?.notes||{})};
- const themes=[...new Set(quotes.map(q=>q.theme))];
- const paint=()=>{
-  const q=quotes[index],value=Object.hasOwn(pending,index)?pending[index]:(notes[index]||'');
-  root.innerHTML=`<section class="wisbody" aria-labelledby="wisbody-title"><div class="wisbody-character"><img src="media/strategy/wisbody.png" width="320" height="480" loading="lazy" alt="Wisbody, a wise Nobody with a white beard and wooden staff"><p>Meet Wisbody</p></div><div class="wisbody-bubble"><p class="eyebrow">A small thought to carry</p><h2 id="wisbody-title">A moment with Wisbody.</h2><label class="wisbody-filter">Choose a theme <select id="wisbody-theme"><option value="all">All themes</option>${themes.map(t=>`<option value="${esc(t)}" ${theme===t?'selected':''}>${esc(t.replaceAll('-',' '))}</option>`).join('')}</select></label><p class="fine">${esc(q.type==='fact'?'A perspective to consider':q.label)} · written for Nobody’s Simple</p><blockquote>${esc(q.text)}</blockquote><p class="wisbody-prompt">${esc(q.prompt)}</p><div class="wisbody-controls"><button type="button" class="chip" id="wisbody-prev" aria-label="Previous thought">← Previous</button><span>${index+1} / ${quotes.length}</span><button type="button" class="chip" id="wisbody-next" aria-label="Next thought">Next →</button></div><details ${value?'open':''}><summary>Journal on this thought</summary><label class="field" for="wisbody-note">What does this bring up for you?<textarea id="wisbody-note" maxlength="12000" rows="4" placeholder="A few words is enough…" ${account().locked?'disabled':''}>${esc(value)}</textarea></label><div class="row"><button type="button" class="button" id="wisbody-save" ${account().locked?'disabled':''}>Save this note</button><button type="button" class="button secondary" id="wisbody-export">Download my quote notes</button><button type="button" class="chip" id="wisbody-delete">Delete this note</button></div><p data-status role="status">${account().locked?'Unlock saved work in Account to journal here.':'Your saved quote notes are kept. Draft saving follows your Account preferences.'}</p><a href="#account/privacy">Privacy and syncing →</a></details><p class="fine">A quote is an invitation to reflect. It does not have to fit your experience.</p></div></section>`;
-  // Home shows the live quote immediately. Keep the full quote deck, theme,
-  // previous/next controls and journal in an optional, compact disclosure.
-  // The standalone #wisbody page retains its original expanded interface.
-  if(compact){
-   const bubble=root.querySelector('.wisbody-bubble');
-   const more=document.createElement('details');more.className='ns-wisbody-more';more.open=extrasOpen;
-   const summary=document.createElement('summary');summary.textContent='Browse quotes & journal';more.append(summary);
-   const pieces=bubble.querySelectorAll(':scope > .wisbody-filter, :scope > .wisbody-prompt, :scope > .wisbody-controls, :scope > details, :scope > .fine');
-   pieces.forEach(el=>more.append(el));
-   bubble.append(more);root.querySelector('.wisbody').classList.add('wisbody--compact');
-   more.addEventListener('toggle',()=>{extrasOpen=more.open;});
-  }
-  function saveDraft(){if(account().preferences?.saveDrafts===false){status(root,'Draft saving is off. Save this note or download before leaving.');return;}try{const all=read(DRAFT_KEY,{});all['#wisbody']={title:'Wisbody journal',updatedAt:new Date().toISOString(),quoteDraft:{index,notes:pending}};write(DRAFT_KEY,all);status(root,storageNote(DRAFT_KEY));}catch{status(root,'Draft could not be saved. Download your notes before leaving.');}}
-  root.querySelector('#wisbody-note').oninput=e=>{pending[index]=e.target.value;saveDraft();};
-  function move(amount){const indices=quotes.map((q,i)=>theme==='all'||q.theme===theme?i:-1).filter(i=>i>=0);index=indices[(indices.indexOf(index)+amount+indices.length)%indices.length];paint();}
-  root.querySelector('#wisbody-prev').onclick=()=>move(-1);root.querySelector('#wisbody-next').onclick=()=>move(1);
-  root.querySelector('#wisbody-theme').onchange=e=>{theme=e.target.value;index=quotes.findIndex(q=>theme==='all'||q.theme===theme);paint();};
-  root.querySelector('#wisbody-save').onclick=()=>{try{const fresh=read(QUOTE_KEY,{});fresh[index]=root.querySelector('#wisbody-note').value;write(QUOTE_KEY,fresh);notes[index]=fresh[index];delete pending[index];const all=read(DRAFT_KEY,{});if(Object.keys(pending).length)all['#wisbody']={title:'Wisbody journal',updatedAt:new Date().toISOString(),quoteDraft:{index,notes:pending}};else delete all['#wisbody'];write(DRAFT_KEY,all);status(root,storageNote(QUOTE_KEY));}catch{status(root,'Note could not be saved. Download a copy instead.');}};
-  root.querySelector('#wisbody-export').onclick=()=>download('wisbody-notes.json',{notes:{...read(QUOTE_KEY,{}),...pending},quotes:quotes.map(q=>q.text)});
-  root.querySelector('#wisbody-delete').onclick=()=>{if(!confirm('Delete your note for this thought?'))return;try{const fresh=read(QUOTE_KEY,{});delete fresh[index];write(QUOTE_KEY,fresh);delete notes[index];delete pending[index];const drafts=read(DRAFT_KEY,{});if(drafts['#wisbody']?.quoteDraft?.notes)delete drafts['#wisbody'].quoteDraft.notes[index];write(DRAFT_KEY,drafts);paint();status(root,'This note was deleted.');}catch{status(root,'The note could not be deleted.');}};
- };
- paint();
-}
+// Keep the public renderer signature used by Home and Learn.
+export function renderWisbody(root,options={}){return renderWisbodyUI(root,options,account);}
