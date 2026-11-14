@@ -8,6 +8,7 @@ import {SOUTHEAST_ASIA_STORIES} from '../../ns-cultural-atlas-southeast-asia.mjs
 import {NORTH_AMERICA_STORIES} from '../../ns-cultural-atlas-north-america.mjs';
 import {LATIN_AMERICA_STORIES} from '../../ns-cultural-atlas-latin-america.mjs';
 import {LATIN_AMERICA_EXPANSION} from '../../ns-cultural-atlas-latin-america-expansion.mjs';
+import {LATIN_AMERICA_ADDITIONAL} from '../../ns-cultural-atlas-latin-america-additional.mjs';
 import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
@@ -105,6 +106,18 @@ test('cultural readings use documentary sources and distinguish place from a psy
    assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' needs primary evidence');
    assert.ok(story.images.length>=1,a.id+' needs a specifically selected Commons image');
    assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the full reading');
+  }
+ }
+ for(const code of ['COL','BRA','PER','BOL','MEX','DOM','VEN']){
+  const entries=articlesForCountry(code).filter(a=>LATIN_AMERICA_ADDITIONAL[a.id]);
+  assert.ok(entries.length,code+' missing a further researched reading');
+  for(const a of entries){
+   const story=LATIN_AMERICA_ADDITIONAL[a.id];
+   assert.equal(story.paragraphs.length,6,a.id+' requires six paragraphs');
+   assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' requires source linked exposition');
+   assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' requires first-hand documentation');
+   assert.ok(story.images.length>=1,a.id+' requires subject-matched reusable media');
+   assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must display the full six sections');
   }
  }
  for(const code of ['ARG','BOL','CHL','ECU','PER','PRY','URY','VEN']){
