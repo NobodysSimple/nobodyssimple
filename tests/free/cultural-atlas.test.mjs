@@ -44,7 +44,7 @@ test('Central Asia features five core countries with 28 documented and pictured 
 
 test('Russian regions and Indigenous cultures have deep sourced readings and accurately captioned curated photos',()=>{
  const ids=Object.keys(RUSSIA_STORIES);
- assert.equal(ids.length,16,'sixteen distinct, full-length regional narratives');
+ assert.equal(ids.length,19,'nineteen distinct, full-length regional narratives');
  assert.equal(Object.keys(RUSSIA_META).length,ids.length);
  assert.equal(Object.keys(RUSSIA_IMAGE_CONTEXT).length,ids.length);
  assert.ok(articleCountries.includes('RUS'),'Russia needs an atlas listing');
