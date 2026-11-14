@@ -3,7 +3,7 @@
  * example comes from independently authored, topic-specific editorial data.
  */
 import {escapeHTML} from './core.mjs';
-import {MOOD_GUIDES} from './ns-mood-guide-data.mjs?v=feel-20261114-v2';
+import {MOOD_GUIDES} from './ns-mood-guide-data.mjs?v=feel-20261114-v3';
 const esc=x=>escapeHTML(String(x??''));
 const safeText=x=>String(x??'').trim().slice(0,1300);
 export const MOOD_IDS=Object.freeze(MOOD_GUIDES.map(g=>g.id));
