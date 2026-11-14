@@ -7,6 +7,7 @@ import {escapeHTML as esc} from './core.mjs';
 import {CULTURE_ARTICLES,articlesForCountry,articleCountries,articleById} from './ns-cultural-atlas-articles.mjs';
 import {CULTURE_INVESTIGATIONS} from './ns-cultural-atlas-investigations.mjs';
 import {SOUTH_ASIA_STORIES} from './ns-cultural-atlas-south-asia.mjs';
+import {SOUTHEAST_ASIA_STORIES} from './ns-cultural-atlas-southeast-asia.mjs';
 import {bindAtlasViewport,fitAtlasBounds,clampAtlasView,WORLD_VIEW} from './ns-cultural-atlas-viewport.mjs';
 import {fetchAdministrativeLayer,fetchUSCounties,fetchUSIndigenousAreas,searchMapPlaces,filterAdministrativeChildren,mapDegreesToAtlas} from './ns-cultural-atlas-geography.mjs';
 
@@ -193,7 +194,7 @@ const commonsSearchImage=async(article,country)=>{
 const commonsImagesFor=async(article,country)=>{
  const cacheKey=article.id+'|'+String(country?.code||'');
  if(cultureImageCache.has(cacheKey))return cultureImageCache.get(cacheKey);
- const curated=SOUTH_ASIA_STORIES[article.id]?.images||[];
+ const curated=(SOUTH_ASIA_STORIES[article.id]||SOUTHEAST_ASIA_STORIES[article.id])?.images||[];
  if(curated.length){
   const images=(await Promise.all(curated.map(file=>commonsFileMetadata(file,null,article,country,true)))).filter(Boolean);
   if(images.length){cultureImageCache.set(cacheKey,images);return images;}
@@ -220,7 +221,7 @@ const renderCultureStoryImages=async(article,hosts,country)=>{
   const image=images[index];
   if(!image){host.innerHTML=index?'':'<p class="ns-culture-image-status">No topic-matched image with a reusable licence was available.</p>';if(index)host.hidden=true;return;}
   const licenseHref=/^https:\/\/creativecommons\.org\//i.test(image.licenseUrl)?image.licenseUrl:'https://commons.wikimedia.org/wiki/Commons:Licensing';
-  const context=article.id==='drametse'?'Drametse monastery, the festival’s setting. ':article.id==='suri-jagek'?'Kalasha Valley landscape, the setting of Suri Jagek. ':'';
+  const context=article.id==='drametse'?'Drametse monastery, the festival’s setting. ':article.id==='suri-jagek'?'Kalasha Valley landscape, the setting of Suri Jagek. ':article.id==='brunei-pantun'?'An Indonesian-language example of the shared a-b-a-b pantun form; this is not a photograph of Bruneian recitation. ':article.id==='sbek-thom'?index?'A Cambodian Sbek Thom puppet displayed in a museum in Lisbon. ':'A Cambodian Sbek Thom puppet displayed in a museum in Phoenix. ':article.id==='hudhud'?'Artwork about the Ifugao epic of Aliguyon; it does not document a chant performance. ':article.id==='lao-khaen'&&index?'Lao musicians performing with a khaen at a Paris festival. ':article.id==='kelantan-mak-yong'&&index?'A Mak Yong costume displayed in a Kelantan museum. ':'';
   host.innerHTML='<figure><a href="'+e(image.fileUrl)+'" target="_blank" rel="noopener noreferrer"><img src="'+e(image.thumb)+'" alt="'+e(context+image.description||article.title)+'" loading="lazy" decoding="async"></a><figcaption>'+e(context)+'<cite>'+e(image.fileName)+'</cite>'+(image.artist?' · by '+e(image.artist):'')+' · '+(image.licenseUrl?'<a href="'+e(licenseHref)+'" target="_blank" rel="noopener noreferrer">'+e(image.license)+'</a>':e(image.license))+' · <a href="'+e(image.fileUrl)+'" target="_blank" rel="noopener noreferrer">Wikimedia Commons file details ↗</a>'+(image.wikiUrl?' · <a href="'+e(image.wikiUrl)+'" target="_blank" rel="noopener noreferrer">Wikipedia: '+e(image.wikiTitle)+' ↗</a>':'')+'</figcaption></figure>';
   host.querySelector('img')?.addEventListener('error',()=>{if(host.isConnected)host.innerHTML='<p class="ns-culture-image-status">This image is no longer available. Open another story to try again.</p>';},{once:true});
  });
@@ -400,7 +401,7 @@ export function renderCultureAtlas(root,{fetcher=(...args)=>fetch(...args),rando
   const investigation=CULTURE_INVESTIGATIONS[active.id]||{sections:[],evidence:[]};
   const investigationMarkup='<div class="ns-culture-investigation">'+investigation.sections.map(section=>'<section class="ns-culture-investigation-section"><h4>'+e(section.heading)+'</h4>'+section.paragraphs.map((paragraph,index)=>{
    const body=typeof paragraph==='string'?e(paragraph):e(paragraph.text)+' <span class="ns-culture-inline-sources">'+paragraph.sources.map(s=>'<a href="'+e(s.url)+'" target="_blank" rel="noopener noreferrer">'+e(s.label)+' ↗</a>').join(' · ')+'</span>';
-   const inlineImage=SOUTH_ASIA_STORIES[active.id]&&index===2?'<div class="ns-culture-story-image ns-culture-story-image--inline" data-culture-story-image data-article-id="'+e(active.id)+'"></div>':'';
+   const inlineImage=(SOUTH_ASIA_STORIES[active.id]||SOUTHEAST_ASIA_STORIES[active.id])&&index===2?'<div class="ns-culture-story-image ns-culture-story-image--inline" data-culture-story-image data-article-id="'+e(active.id)+'"></div>':'';
    return '<p>'+body+'</p>'+inlineImage;
   }).join('')+'</section>').join('')+'</div>';
   const evidenceMarkup='<section class="ns-culture-evidence" aria-label="Local studies and cultural sources"><h4>Evidence from this place</h4><p class="ns-culture-evidence-intro">Local studies and community records are identified by source type, so the cultural account stays distinct from psychological findings.</p>'+investigation.evidence.map(item=>'<article class="ns-culture-evidence-card"><span class="ns-culture-evidence-kind">'+e(item.kind)+'</span><h5>'+e(item.title)+'</h5><p><strong>Method and setting.</strong> '+e(item.method)+'</p><p><strong>What it documents.</strong> '+e(item.finding)+'</p>'+(item.quote?'<blockquote><p>“'+e(item.quote)+'”</p><cite>'+e(item.quoteAttribution||item.citation)+'</cite></blockquote>':'')+'<a href="'+e(item.url)+'" target="_blank" rel="noopener noreferrer">Open source ↗</a><small>'+e(item.citation)+'</small></article>').join('')+'</section>';

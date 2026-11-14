@@ -63,7 +63,7 @@ export const CULTURE_ARTICLES=Object.freeze([
  'Rest can be supported by environments and social customs, not only individual willpower.',
  'What signals could help you make room for rest in a way that suits your body?',
  'https://ich.unesco.org/en/RL/sauna-culture-in-finland-01596'),
- article('batik','IDN','Batik: stories held in pattern','Identity & creativity','Indonesia',
+ article('batik','IDN','Indonesian batik: making a pattern with wax','Identity & creativity','Indonesia',
  [
  'Indonesian batik uses wax-resist dyeing techniques. UNESCO describes motifs associated with life events, local influences and family transmission, alongside ongoing creativity by craftspeople.',
  'A pattern may hold information about history, celebration, identity or aspiration. This suggests an alternative to the idea that meaningful self-expression must always be a spoken explanation.',
@@ -219,12 +219,12 @@ export const CULTURE_ARTICLES=Object.freeze([
   "An outsider might focus only on striking costumes or movement. For participating communities, however, the performance has spiritual significance that cannot be translated faithfully into a generic lesson about mindfulness or emotion regulation.",
   "UNESCO also records concerns about transmission and rehearsal opportunities. A living ritual depends on practitioners, teachers and the settings that give it meaning; preserving images of the dance is not the same as supporting that living practice."
  ],"Understanding a practice means taking its participants' interpretations seriously, not only analysing what an observer sees.","When has the meaning of an event changed after you learned what it meant to participants?","https://ich.unesco.org/en/RL/mask-dance-of-the-drums-from-drametse-00161"),
- article("sbek-thom","KHM","Sbek Thom: the stories moving behind a screen","Storytelling & continuity","Khmer communities, Cambodia",[
+ article("sbek-thom","KHM","Sbek Thom: how Khmer shadow theatre is kept alive","Storytelling & continuity","Khmer communities, Cambodia",[
   "Sbek Thom is a Khmer shadow theatre using large carved leather figures. UNESCO describes its ceremonial history and its later development as an artistic performance, while maintaining religious and cultural dimensions.",
   "A story told through shadows relies on a shared convention: spectators understand characters and action although they see silhouettes rather than a full scene. This offers a way to think about how meaning is made collaboratively by performers and audiences.",
   "Calling the practice simply a creative therapy would replace a specific heritage with an outsider's purpose. Its survival also depends on trained performers and craftsmen, as well as on the social institutions that support them."
  ],"Stories can use simple visible forms to carry meanings that depend on shared knowledge and history.","What story or performance means more to you because of how it was passed down?","https://ich.unesco.org/en/RL/sbek-thom-khmer-shadow-theatre-00108"),
- article("angklung","IDN","Angklung: the music no one makes alone","Coordination & cooperation","Communities in Indonesia",[
+ article("angklung","IDN","Angklung: a melody divided among players","Coordination & cooperation","Communities in Indonesia",[
   "Angklung instruments contain tuned bamboo tubes that sound when shaken or tapped. UNESCO explains that an individual instrument typically makes only one note or chord, so melodies are produced when several players coordinate their parts.",
   "This gives a concrete example of interdependence: the outcome is not simply the sum of isolated talent but requires timing, listening and awareness of other people's contributions. It does not establish that playing angklung improves cooperation in every group.",
   "The instrument also has histories linked to ceremonies, agriculture and changing musical education. Reducing it to a team-building exercise would erase the knowledge of craftspeople and communities who maintain the tradition."
@@ -234,12 +234,12 @@ export const CULTURE_ARTICLES=Object.freeze([
   "Stories can create a safe distance from a difficult question: a character can face a dilemma before people discuss it directly. That is an editorial interpretation of how theatre may invite reflection, not evidence of a therapeutic effect.",
   "The practice is tied to particular lineages and coastal towns. Treating it as a generic national characteristic would obscure who has performed it, how the art is taught and what choices those practitioners face today."
  ],"Fiction and performance can invite discussion of values without prescribing one answer to every audience.","What fictional character helped you think differently about a real decision?","https://ich.unesco.org/en/RL/rkada-ntya-traditional-string-puppet-drama-in-sri-lanka-01370","Southern"),
- article("khon","THA","Khon: the social lessons inside a masked drama","Roles & social norms","Thailand",[
+ article("khon","THA","Khon: the training behind a masked role","Roles & social norms","Thailand",[
   "Khon combines masked dance, narrative, music, elaborate costume and craft. UNESCO describes dramatic episodes involving Rama and other characters, together with a long history of court performance and teaching in modern institutions.",
   "The production invites a question about the relationship between art and social norms. Stories can make values such as duty, hierarchy and justice memorable, but audiences may also interpret those values differently across generations.",
   "A mask does not reveal a single Thai psychology. The tradition exists within distinct religious, political and educational histories, and a description of its themes should not be confused with approval of every role or hierarchy represented."
  ],"Stories can transmit social expectations, which people may preserve, reinterpret or challenge.","Which story taught you a social rule that you later reconsidered?","https://ich.unesco.org/en/RL/khon-masked-dance-drama-01385"),
- article("hudhud","PHL","Hudhud: memory that lives in a shared voice","Oral memory & community","Ifugao communities, northern Philippines",[
+ article("hudhud","PHL","Hudhud: how an Ifugao epic is carried by singers","Oral memory & community","Ifugao communities, northern Philippines",[
   "The Hudhud chants of the Ifugao contain lengthy narratives associated with rice cultivation, harvest and funeral occasions. UNESCO describes elderly women as important narrators and explains that the chants preserve stories, beliefs and customary knowledge.",
   "Written archives are not the only way a community remembers. Repetition, alternating voices and occasions for performance can support transmission, although this does not mean that oral memory is infallible or identical for every listener.",
   "UNESCO records pressures on this heritage as agricultural practices and community life change. Safeguarding depends on the wishes and circumstances of narrators and learners, not simply recording a song and assuming the work is finished."
@@ -449,7 +449,7 @@ export const CULTURE_ARTICLES=Object.freeze([
   'Psychologically, coordinated movement and rhythm can organise attention and provide a shared way to express what is difficult to say directly. In this tradition, those actions sit inside relationships with elders, ancestors and community history.',
   'The practice is specifically Daida and spiritual. The atlas describes what its custodians say it means; it does not turn the dance into a clinical technique or invite outsiders to copy sacred elements.'
  ],'Movement can carry meaning and emotion within a community’s own spiritual framework.','What forms of expression help you feel accompanied during a difficult time?','https://ich.unesco.org/en/USL/mwazindika-spiritual-dance-of-the-daida-community-of-kenya-02297'),
- article('xoe','VNM','Xòe dance: learning harmony by moving together','Coordination & belonging','Tai communities of north-west Viet Nam',[
+ article('xoe','VNM','Xòe: joining a Tai dance circle','Coordination & belonging','Tai communities of north-west Viet Nam',[
   'Xòe is a dance practised by Tai communities in north-west Viet Nam at rituals, weddings, festivals and other gatherings. UNESCO describes circle dances in which people hold hands and move in time, expressing wishes for health and harmony.',
   'Psychologically, synchronised action can make cooperation tangible: each person adjusts to the shared rhythm and to the person beside them. The circle offers a physical model of participation in which no single dancer has to carry the whole performance.',
   'Xòe includes distinct forms and meanings. The psychological idea concerns this described practice; it should not be turned into a claim about the personality of Tai people or all Vietnamese communities.'
@@ -554,7 +554,37 @@ article('henna-rituals',['DZA','BHR','EGY','IRQ','JOR','KWT','MRT','MAR','OMN','
   'The Hasan Abad qanat crosses three beneficiary areas. Field researchers describe their water shares and the repair work needed along a tunnel about 40 kilometres long.',
   'Access depends on maintenance and agreements between people along the route. The system makes the work behind a shared resource unusually easy to identify.'
  ],'Cooperation lasts when people understand the resource, its rules and who repairs it.','Who keeps a shared resource you rely on working?','https://whc.unesco.org/en/list/1506','Yazd'),
- article('kebaya','IDN','Kebaya: clothing, identity and changing meanings','Identity & expression','Kebaya traditions across Southeast Asia',[
+ article('brunei-pantun','BRN','Pantun: saying a difficult thing in four lines','Language & social judgement','Malay pantun traditions in Brunei Darussalam',[
+  'A pantun usually uses four rhyming lines. UNESCO documents the form in Brunei and neighbouring countries, where it can be spoken or sung at weddings and public gatherings.',
+  'Its opening image gives a listener something to hold before the later lines deliver a thought. Fieldwork with Brunei Malay speakers in Sabah records the word choices used for indirect speech.',
+  'A verse works through people who know the occasion and can judge whether a gentle message will be understood. The form is shared regionally, with different local repertoires.'
+ ],'The way you introduce a difficult point can affect whether another person can hear it.','What would help someone understand the request behind your careful words?','https://ich.unesco.org/en/RL/pantun-02274'),
+ article('lao-khaen','LAO','Khaen: how a Lao mouth organ brings people into a song','Music & learning','Lao communities and khaen players',[
+  'The khaen uses bamboo pipes with metal reeds sounded through a shared air chamber. UNESCO documents its place in village festivals, singing and dancing across Laos.',
+  'Families, local player associations and schools teach the instrument. Lao fieldwork names teachers and students at the National School of Art, making the learning relationship visible.',
+  'A song can give newcomers a cue for joining when they can hear an experienced player and follow the rhythm. The instrument is part of a living performance.'
+ ],'Joining a group gets easier when someone shows you your part and its timing.','How could you make the first step into a shared activity clearer?','https://ich.unesco.org/en/RL/music-of-the-khaen-01296'),
+ article('kelantan-mak-yong','MYS','Mak Yong: learning the work behind a performance','Theatre & apprenticeship','Kelantan, Malaysia',[
+  'Mak Yong brings Malay tales to a stage through movement, dialogue and music. UNESCO documents Kelantan village performances for entertainment and in some healing rituals.',
+  'Performers learn songs, gestures and improvisation over years. Interviews with Kelantanese artists describe prayer and bodily attention during the opening Menghadap Rebab.',
+  'A finished scene depends on musicians, narrators and experienced teachers. Shorter presentations may show a story while leaving the demands of apprenticeship harder to see.'
+ ],'Supporting a skill requires time and access to the people who can teach it.','What part of a skill do you only notice after someone teaches you?','https://ich.unesco.org/en/RL/mak-yong-theatre-00167','Kelantan'),
+ article('myanmar-thingyan','MMR','Thingyan: the new year in actions of care','Ritual & family','Communities celebrating Atā Thingyan in Myanmar',[
+  'Atā Thingyan is Myanmar’s five-day traditional new year. UNESCO documents water play together with offerings, visits to family and acts of respect toward older relatives.',
+  'The national holiday gives people time to travel and take part. A village study in Rakhine examines how migrants and residents shape local Water Festival practices.',
+  'The festival is learned by doing its different tasks. Its symbolic fresh start is accompanied by arrangements that make a visit or act of care possible.'
+ ],'A shared date can turn an intention to see someone into a practical commitment.','Which visit have you been postponing that you could put on a date?','https://ich.unesco.org/en/RL/myanmar-traditional-new-year-at-thingyan-festival-02085'),
+ article('singapore-hawkers','SGP','Hawker centres: the work behind a shared meal','Food & social access','Hawker centres across Singapore',[
+  'Singapore’s hawker centres bring independent food stalls and shared seating into everyday neighbourhood life. UNESCO documents dishes refined and taught by working hawkers.',
+  'An interview study with 33 young workers found meals at hawker centres with colleagues, friends and family. The space makes such ordinary meetings practical when schedules allow.',
+  'The shared table depends on the labour behind each stall and the ability to learn a recipe. A full dining room says little about the conditions for its makers.'
+ ],'Accessible, familiar places help people meet when they have time to use them.','Where could you arrange a recurring meal with someone you want to see?','https://ich.unesco.org/en/RL/hawker-culture-in-singapore-community-dining-and-culinary-practices-in-a-multicultural-urban-context-01568'),
+ article('timor-tais','TLS','Tais: who keeps a textile tradition possible','Craft & livelihood','Women weavers and communities in Timor-Leste',[
+  'Tais is handwoven cloth used at ceremonies and between families in Timor-Leste. UNESCO documents motifs, dyeing and teaching among women weavers.',
+  'Its urgent-safeguarding record identifies falling incomes and fewer weavers. A participatory study with a Lautem cooperative asked makers about health and working conditions.',
+  'A finished cloth can communicate belonging while the work of making it goes underpaid. Keeping the skill alive requires materials and a realistic livelihood for its practitioners.'
+ ],'Respect for a handmade object includes attention to the time and pay of its maker.','Who made the last handmade thing you bought, and how were they paid?','https://ich.unesco.org/en/USL/tais-traditional-textile-01688'),
+ article('kebaya','IDN','Kebaya: how dress changes with its wearers','Identity & expression','Kebaya traditions across Southeast Asia',[
   'Kebaya is a garment with related traditions across Brunei Darussalam, Indonesia, Malaysia, Singapore and Thailand. UNESCO describes knowledge, skills and social practices connected with making, wearing and transmitting it.',
   'Psychologically, clothing can help people negotiate identity between personal choice and social expectation. A garment may communicate belonging, memory or occasion, while each wearer can interpret that meaning differently.',
   'Kebaya styles and meanings vary across communities and generations. The point is not that clothing reveals a person’s inner self, but that it can become one resource people use to express and negotiate identity.'

@@ -4,6 +4,8 @@ import {readFileSync} from 'node:fs';
 import {WORLD_COUNTRY_DATA,geoPath,featureBounds,countryViewBox,normaliseCountryData,normaliseRegions,regionArticles} from '../../ns-cultural-atlas.mjs';
 import {CULTURE_ARTICLES,articlesForCountry,articleCountries,articleById} from '../../ns-cultural-atlas-articles.mjs';
 import {SOUTH_ASIA_STORIES} from '../../ns-cultural-atlas-south-asia.mjs';
+import {SOUTHEAST_ASIA_STORIES} from '../../ns-cultural-atlas-southeast-asia.mjs';
+import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
 
@@ -64,6 +66,18 @@ test('cultural readings use documentary sources and distinguish place from a psy
    const story=SOUTH_ASIA_STORIES[a.id];
    assert.equal(story?.paragraphs.length,6,a.id+' needs six paragraphs');
    assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' needs sourced prose');
+  }
+ }
+ for(const code of ['BRN','KHM','IDN','LAO','MYS','MMR','PHL','SGP','THA','TLS','VNM']){
+  const entries=articlesForCountry(code);
+  assert.ok(entries.length,code+' missing a Southeast Asia story');
+  for(const a of entries){
+   const story=SOUTHEAST_ASIA_STORIES[a.id];
+   assert.equal(story?.paragraphs.length,6,a.id+' needs six paragraphs');
+   assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' needs six sourced paragraphs');
+   assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' needs primary research');
+   assert.ok(story.images.length,a.id+' needs a specifically selected image');
+   assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the researched paragraphs');
   }
  }
 });
