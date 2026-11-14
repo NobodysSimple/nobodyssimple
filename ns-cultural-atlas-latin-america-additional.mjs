@@ -32,7 +32,8 @@ const RECORDS=[
       }
     ],
     "images": [
-      "Marimba Esmeraldeña Group.jpg"
+      "Marimba Esmeraldeña Group.jpg",
+      "Esmeraldian (Afro-Ecuadorian) marimba.jpg"
     ],
     "paras": [
       {
@@ -64,7 +65,7 @@ const RECORDS=[
         ]
       },
       {
-        "text": "The selected Commons photograph shows a marimba teaching group associated with Esmeraldas in Ecuador, photographed in 2018. It does not depict all the Colombian communities named in the nomination, and it should not be used as an image of a funeral or a particular sacred rite. Its value is more modest and more precise: somebody is demonstrating a skill to other people who have a chance to copy and respond.",
+        "text": "The selected Commons photographs show a marimba teaching group associated with Esmeraldas, Ecuador, photographed in 2018, and a marimba from Esmeraldas photographed in a museum in Cuenca in 2009. Neither depicts all the Colombian communities named in the nomination. One records instruction and the other the instrument itself; neither should be presented as an image of a funeral or any particular sacred rite.",
         "cites": [
           0,
           2
