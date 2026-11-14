@@ -1,4 +1,4 @@
-import {MOOD_GUIDES_01} from './ns-mood-guides-01.mjs';
+import {MOOD_GUIDES_01} from './ns-mood-guides-01.mjs?v=feel-20261114-v2';
 import {MOOD_GUIDES_02} from './ns-mood-guides-02.mjs';
 import {MOOD_GUIDES_03} from './ns-mood-guides-03.mjs';
 import {MOOD_GUIDES_04A} from './ns-mood-guides-04a.mjs';
