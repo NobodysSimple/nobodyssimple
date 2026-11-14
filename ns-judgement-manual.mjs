@@ -102,8 +102,15 @@ function formValue(root,item,oldValue){
  return String(els.answer?.value||'').trim().slice(0,900);
 }
 function escapeNotes(s){return String(s||'').replace(/\s+/g,' ').trim();}
+const NOTE_KEY='ns-fear-judgement-notes-v1';
 export function renderJudgementManual(root){
  const state={mode:'',pos:0,answers:{},forms:{},done:{},suggest:'test'};
+ let savedMode='';
+ try{const saved=JSON.parse(localStorage.getItem(NOTE_KEY)||'null');
+  if(saved&&['map',...Object.keys(guides)].includes(saved.mode)&&saved.answers&&saved.forms){
+   state.answers=saved.answers;state.forms=saved.forms;savedMode=saved.mode;
+  }
+ }catch{}
  root.innerHTML='<div class="ns-judge" id="ns-judge-top">'+
   '<nav class="ns-judge-back" aria-label="Page navigation"><a href="#navigate">← Find another starting point</a><a href="#home">Nobody’s Simple home</a></nav>'+
   '<header class="ns-judge-hero"><div><p class="ns-judge-kicker">NOBODY’S SIMPLE · A FIELD GUIDE FOR YOU</p><h1>Fear of being judged by others</h1><p class="ns-judge-subhead">If you feel watched or worried about what people think, you can start here. You don’t have to have all the answers.</p>'+
@@ -113,10 +120,11 @@ export function renderJudgementManual(root){
   paras.map((p,i)=>'<p'+(i===5?' class="ns-judge-reflection"':'')+'>'+e(p)+'</p>').join('')+'</section>'+
   '<section class="ns-judge-start" id="ns-judge-start" aria-labelledby="ns-judge-start-title"><p class="ns-judge-kicker">A GENTLE PLACE TO BEGIN</p><h2 id="ns-judge-start-title" tabindex="-1">What would help you most right now?</h2><p>You can choose whichever feels closest. You won’t be asked to pick a therapy or work out a diagnosis.</p>'+
   '<div class="ns-judge-choices">'+Object.entries(choiceLabels).map(([id,[label,detail]])=>'<button type="button" class="ns-judge-choice" data-nj-open="'+e(id)+'"><span><strong>'+e(label)+'</strong><small>'+e(detail)+'</small></span><span aria-hidden="true">→</span></button>').join('')+'</div>'+
-  '<p class="ns-judge-muted">If you’re unsure, start with “I want to understand why I feel this way”. You can change direction at any point.</p></section>'+
+  '<p class="ns-judge-muted">If you’re unsure, start with “I want to understand why I feel this way”. You can change direction at any point.</p>'+ 
+  '<div class="ns-judge-saved" data-nj-saved>'+(savedMode?'<p>You have notes saved on this device.</p><button type="button" class="ns-judge-secondary" data-nj-resume>Continue my saved notes</button> <button type="button" class="ns-judge-secondary" data-nj-remove>Delete saved copy</button>':'')+'</div></section>'+ 
   '<section id="ns-judge-work" class="ns-judge-work" aria-label="Your guided journal" hidden><div data-nj-screen></div></section>'+
   '<section id="ns-judge-now" class="ns-judge-now" aria-labelledby="ns-judge-now-title"><h2 id="ns-judge-now-title" tabindex="-1">Something you can try in your next conversation</h2><p>If you catch yourself worrying about how you sound, gently notice what you’re afraid the other person might think. Then bring some attention back to what they are saying. You can continue the conversation while feeling awkward. There is no need to make the feeling disappear first.</p></section>'+
-  '<footer class="ns-judge-footer"><details><summary>Research and support</summary><p>These ideas draw on cognitive behavioural approaches for social anxiety, including reducing excessive self-monitoring and using safe behavioural experiments. If fear of judgement is seriously affecting your life, individual CBT designed for social anxiety is a recommended treatment.</p><ul><li><a href="https://www.nice.org.uk/guidance/cg159/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE social anxiety guidance</a></li><li><a href="https://www.nhs.uk/mental-health/conditions/social-anxiety/" target="_blank" rel="noopener noreferrer">NHS social anxiety information</a></li><li><a href="https://www.nhs.uk/nhs-services/mental-health-services/find-nhs-talking-therapies-for-anxiety-and-depression/" target="_blank" rel="noopener noreferrer">NHS Talking Therapies in England</a></li></ul><p>These exercises are educational. They are not a diagnosis or a substitute for individualised care. If someone is mistreating you, focus on safety and support rather than forcing yourself into an unsafe situation.</p></details><p>Nothing you write is saved or sent automatically. You can choose to download your notes.</p></footer></div>';
+  '<footer class="ns-judge-footer"><details><summary>Research and support</summary><p>These ideas draw on cognitive behavioural approaches for social anxiety, including reducing excessive self-monitoring and using safe behavioural experiments. If fear of judgement is seriously affecting your life, individual CBT designed for social anxiety is a recommended treatment.</p><ul><li><a href="https://www.nice.org.uk/guidance/cg159/chapter/recommendations" target="_blank" rel="noopener noreferrer">NICE social anxiety guidance</a></li><li><a href="https://www.nhs.uk/mental-health/conditions/social-anxiety/" target="_blank" rel="noopener noreferrer">NHS social anxiety information</a></li><li><a href="https://www.nhs.uk/nhs-services/mental-health-services/find-nhs-talking-therapies-for-anxiety-and-depression/" target="_blank" rel="noopener noreferrer">NHS Talking Therapies in England</a></li></ul><p>These exercises are educational. They are not a diagnosis or a substitute for individualised care. If someone is mistreating you, focus on safety and support rather than forcing yourself into an unsafe situation.</p></details><p>Nothing you write is saved or sent automatically. You can download your notes or choose to save them on this device. Only save on a device you trust.</p></footer></div>';
  const work=root.querySelector('#ns-judge-work'),out=work.querySelector('[data-nj-screen]');
  function focusWork(){
   work.hidden=false;
@@ -178,7 +186,7 @@ export function renderJudgementManual(root){
     '<div class="ns-judge-summary">'+(mapNotes().map(s=>'<p>'+e(s)+'</p>').join('')||'<p>You can come back and add to this whenever you wish.</p>')+'</div>'+
     '<div class="ns-judge-next"><p class="ns-judge-kicker">YOUR SUGGESTED NEXT EXERCISE</p><h3>'+e(guides[rec].title)+'</h3><p>'+e(guides[rec].lead)+'</p>'+
     '<button class="ns-judge-primary" type="button" data-nj-open="'+rec+'">Start this exercise →</button></div>'+
-    '<div class="ns-judge-actions"><button class="ns-judge-secondary" type="button" data-nj-edit>Review my answers</button><button class="ns-judge-secondary" type="button" data-nj-download>Download my notes</button><button class="ns-judge-secondary" type="button" data-nj-close>Finish for now</button></div>'+
+    '<div class="ns-judge-actions"><button class="ns-judge-secondary" type="button" data-nj-edit>Review my answers</button><button class="ns-judge-secondary" type="button" data-nj-download>Download my notes</button><button class="ns-judge-secondary" type="button" data-nj-save>Save on this device</button><button class="ns-judge-secondary" type="button" data-nj-close>Finish for now</button></div><p class="ns-judge-muted" data-nj-storage-status role="status">Saving is optional. Anyone with access to this browser may be able to see saved notes.</p>'+ 
     '<p class="ns-judge-muted">If someone has actually treated you badly, support and safety take priority over an experiment.</p>';
   }else{
    const mode=state.mode;state.done[mode]=true;
@@ -192,8 +200,9 @@ export function renderJudgementManual(root){
     '<p>'+e(tail)+'</p>'+
     '<div class="ns-judge-actions">'+(mode==='test'?'<button class="ns-judge-primary" type="button" data-nj-open="review">Review what happened later →</button>':'')+
     '<button type="button" class="ns-judge-secondary" data-nj-edit>Review answers</button>'+
-    '<button type="button" class="ns-judge-secondary" data-nj-download>Download notes</button>'+
-    '<button type="button" class="ns-judge-secondary" data-nj-close>Finish for now</button></div>';
+    '<button type="button" class="ns-judge-secondary" data-nj-download>Download notes</button>'+ 
+    '<button type="button" class="ns-judge-secondary" data-nj-save>Save on this device</button>'+ 
+    '<button type="button" class="ns-judge-secondary" data-nj-close>Finish for now</button></div><p class="ns-judge-muted" data-nj-storage-status role="status">Saving is optional. Anyone with access to this browser may be able to see saved notes.</p>';
   }
   focusWork();
  }
@@ -215,10 +224,24 @@ export function renderJudgementManual(root){
   setTimeout(()=>URL.revokeObjectURL(url),2000);
  }
  root.querySelector('.ns-judge').addEventListener('click',event=>{
-  const button=event.target.closest('[data-nj-jump],[data-nj-open],[data-nj-next],[data-nj-back],[data-nj-edit],[data-nj-close],[data-nj-download]');
+  const button=event.target.closest('[data-nj-jump],[data-nj-open],[data-nj-next],[data-nj-back],[data-nj-edit],[data-nj-close],[data-nj-download],[data-nj-save],[data-nj-resume],[data-nj-remove]');
   if(!button||!root.contains(button))return;
   if(button.dataset.njJump){const section=root.querySelector('#'+button.dataset.njJump);section?.scrollIntoView({block:'start',behavior:'auto'});section?.querySelector('h2')?.focus({preventScroll:true});return;}
   if(button.dataset.njOpen){open(button.dataset.njOpen);return;}
+  if(button.hasAttribute('data-nj-resume')){state.mode=savedMode||'map';showFinish();return;}
+  if(button.hasAttribute('data-nj-save')){
+   const message=root.querySelector('[data-nj-storage-status]');
+   try{localStorage.setItem(NOTE_KEY,JSON.stringify({mode:state.mode,answers:state.answers,forms:state.forms}));savedMode=state.mode;
+    root.querySelector('[data-nj-saved]').innerHTML='<p>You have notes saved on this device.</p><button type="button" class="ns-judge-secondary" data-nj-resume>Continue my saved notes</button> <button type="button" class="ns-judge-secondary" data-nj-remove>Delete saved copy</button>';
+    if(message)message.textContent='Saved in this browser only. You can delete this copy whenever you wish.';
+   }catch{if(message)message.textContent='This browser could not save your notes. You can still download them.';}
+   return;
+  }
+  if(button.hasAttribute('data-nj-remove')){
+   try{localStorage.removeItem(NOTE_KEY);savedMode='';root.querySelector('[data-nj-saved]').innerHTML='';
+    const message=root.querySelector('[data-nj-storage-status]');if(message)message.textContent='Saved copy deleted from this browser. Your current unsaved notes remain until you leave the page.';
+   }catch{}return;
+  }
   if(button.hasAttribute('data-nj-download')){download();return;}
   if(button.hasAttribute('data-nj-close')){
    work.hidden=true;root.querySelector('#ns-judge-start-title')?.focus?.({preventScroll:true});
