@@ -1,6 +1,24 @@
 /* Separate, clinically tailored editorial models for unusual or distressing experiences.
    Reuses Nobody's Simple page components, never a generic assessment or diagnosis. */
 import {EXPERIENCE_DEPTH_CASES} from './ns-experiences-depth-data.mjs';
+const topicEvidence={
+ trauma:'NICE recommends trauma-focused CBT and, in appropriate circumstances, EMDR for PTSD. These journals provide orientation and help-seeking guidance; they are not trauma-processing treatment.',
+ voices:'NICE recommends timely assessment when psychosis may be emerging and offers CBT for psychosis and family intervention in appropriate care. This page does not establish the origin of an unusual perception.',
+ suspicion:'Intense suspicion and functional changes can require medical and specialist mental health assessment. NICE guidance for psychosis includes collaborative evaluation and tailored psychological intervention.',
+ mania:'NICE recommends urgent specialist assessment when mania is suspected. Protecting sleep and postponing high-risk decisions are supportive measures while appropriate care is arranged.',
+ dissociation:'NHS guidance describes several dissociative experiences and advises appropriate assessment of symptoms and other possible causes. Grounding suggestions here are optional coping tools, not validated diagnostic tests.',
+ substances:'NHS substance services consider physical health, dependence and the effect of use on daily life. Psychological support may be combined with medically guided changes to substance use.',
+ derealisation:'NHS describes derealisation as a feeling that the surroundings are unreal or foggy. Persistent, new or impairing experiences should be assessed rather than assumed to have one psychological cause.',
+ depersonalisation:'NHS describes depersonalisation as feeling detached from oneself. A person may retain awareness of the change; a clinician can evaluate persistent symptoms and possible contributors.',
+ flashbacks:'NICE PTSD guidance includes treatment for flashbacks and distressing memories within trauma-focused CBT or EMDR where indicated. Brief orientation here does not replace supervised treatment.',
+ hypervigilance:'Trauma and anxiety can involve heightened alertness. NICE PTSD treatment includes management of arousal, while the reader must consider genuine present threats before reducing precautions.',
+ 'elevated-mood':'NICE bipolar guidance emphasises specialist assessment for suspected mania and monitoring significant changes in mood, energy and sleep. These journals do not assess bipolar disorder.',
+ 'grandiose-beliefs':'NICE psychosis and bipolar guidance supports specialist assessment of marked changes in beliefs, mood and functioning. The page focuses on practical safety and does not validate extraordinary claims.',
+ 'substance-craving':'Relapse-prevention approaches identify craving cues and develop alternative responses. Treatment needs to be substance-specific and account for physical dependence and withdrawal.',
+ 'alcohol-harm':'NICE recommends alcohol-focused psychological interventions for harmful drinking and medically assisted withdrawal when indicated. The goals and support depend on dependence severity and health.',
+ 'drug-harm':'NHS drug services can offer psychosocial treatment, harm reduction and medication-assisted care depending on the substance. Overdose prevention and safe withdrawal may be urgent priorities.',
+ 'withdrawal-worries':'NICE and NHS guidance identify serious risks during alcohol withdrawal, including seizures and severe confusion. Dependent alcohol or sedative use must not be stopped abruptly without medical advice.'
+};
 const required=['id','title','standfirst','article','mechanisms','profiles','cycle','now','routes','ideas','whyIntro','whyQuestions','roots','prominentSafety','safety','sources'];
 function fail(id,text){throw Error('Experience guide '+id+': '+text);}
 export function makeExperience(d){
@@ -23,5 +41,5 @@ export function makeExperience(d){
  if(!d.sources?.length)fail(d.id,'research sources missing');
  const whyStages=['The current situation','What it seemed to mean','How you felt','What you did','What it did for you briefly','What you needed','A possible expectation or rule','Current or earlier influences to consider','Another possibility','One safer next response'];
  return Object.freeze({...d,routes,whyCases,whyStages,pullIndex:d.pullIndex??3,
- evidence:d.evidence||'These exercises adapt selected evidence-based approaches. The individual online journals are educational tools, not validated assessments or replacements for specialist treatment. A reaction alone cannot establish its cause.'});
+ evidence:d.evidence||topicEvidence[d.id]||'These are educational reflections, not validated assessments or replacements for care.'});
 }
