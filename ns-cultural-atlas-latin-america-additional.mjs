@@ -478,6 +478,86 @@ const RECORDS=[
         ]
       }
     ]
+  },
+  {
+    "id": "antigua-carnival",
+    "meta": [
+      "ATG",
+      "Antigua Carnival: the public holiday that had to be won",
+      "Memory & organised celebration",
+      "St John's, Antigua and Barbuda",
+      "Public celebration depends on decisions about access to shared time, not just a crowd's willingness to dance.",
+      "Who needs to be released from work so that a community can actually celebrate?"
+    ],
+    "sources": [
+      {
+        "label": "Antigua Carnival: official history of the August festival",
+        "url": "https://antiguacarnival.com/about/history",
+        "kind": "Primary festival organising history"
+      },
+      {
+        "label": "Antigua and Barbuda: Carnival programme and J'ouvert conventions",
+        "url": "https://antiguacarnival.com/about/faqs",
+        "kind": "Primary festival organiser explanation"
+      },
+      {
+        "label": "Antigua and Barbuda Tourism Authority: festival history and events",
+        "url": "https://www.visitantiguabarbuda.com/wp-content/uploads/ANU-2020-ITA-ING.pdf",
+        "kind": "Primary national tourism publication"
+      }
+    ],
+    "images": [
+      "Anucarnival1.JPG",
+      "Anucarnival2.JPG"
+    ],
+    "paras": [
+      {
+        "text": "Antigua Carnival reaches its height on the streets of St John's around the first Monday and Tuesday in August. Costumed groups move along the parade route, while calypso and steelpan performances have already brought people together during the preceding days. It is tempting to call the festival an old, unchanged expression of Antiguan identity. The organisers' own history tells a more interesting story: the present August carnival was deliberately established in 1957.",
+        "cites": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "text": "The festival's date connects it with the emancipation of enslaved people in Antigua in August 1834, but the modern organisation had other aims too. Its founders wanted a regular celebration that could attract visitors and make room for local musicians and performers. A one-day carnival held for Queen Elizabeth II's coronation in 1953 helped demonstrate the scale of public interest. Maurice Ambrose, a builder and musician, subsequently drew up a plan for a summer celebration.",
+        "cites": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "text": "The early organising decisions have names. John Ferdie Shoul chaired the carnival committee, and officials were asked to make August Monday a public holiday. The carnival history describes resistance from a sugar factory concerned about losing a working day. That objection reveals something a photograph of dancing cannot show: a festival must take time from an economy that may not be willing to release it. Choosing a public holiday was therefore a practical decision about who could attend.",
+        "cites": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "text": "In 1957, the first carnival queen competition took place at the Deluxe Cinema, where Gloria White was crowned. Mighty Styler won the calypso contest at the same venue. Calypso remained central because its performers could use the competitive song to entertain and comment on life around them. Steelbands and other groups had their own place. The programme developed through work by organisers, instrument players, songwriters and costume makers whose contributions are easy to flatten into the word spectacle.",
+        "cites": [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        "text": "J'ouvert begins before dawn, when people gather in comparatively informal or playful dress. It has different rules and an atmosphere distinct from the elaborately costumed bands later in the parade. The carnival organisers make that distinction in their public guidance. Two photographs by Bluefizz32 show revellers at Antigua Carnival in August 2008. Both are licensed CC BY 3.0 and are labelled as Antigua, not the similarly named city in Guatemala. Their date also makes clear they do not depict the 1957 founding celebrations.",
+        "cites": [
+          1,
+          2
+        ]
+      },
+      {
+        "text": "The festival is often described as a release from ordinary duties. Its history invites a more precise question: release from whose duties, and who had to organise the time? The factory objection in the early accounts makes labour part of the story rather than an invisible background. If you want to understand a celebration in another community, learn who secured its public space and who still makes the costumes. The freedom people feel in a parade depends on somebody having made that parade possible.",
+        "cites": [
+          0,
+          2
+        ]
+      }
+    ]
   }
 ];
 export const LATIN_AMERICA_ADDITIONAL_META=Object.freeze(Object.fromEntries(RECORDS.map(r=>[r.id,r.meta])));
