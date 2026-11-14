@@ -22,22 +22,24 @@ test('fear of judgement opens one readable manual and keeps in-page navigation i
  await expect(page.locator('.ns-judge-progress')).toContainText('Question 1 of 8');
 });
 
-test('a report of real mistreatment recommends safety and deliberate saved notes survive reload',async({page})=>{
+test('free-written mistreatment directs towards safety and optional saved notes survive reload',async({page})=>{
  await load(page);
  await page.locator('[data-nj-open="map"]').click();
- await page.locator('[data-nj-question] textarea').fill('Somebody mocked me at work');
- await page.locator('[data-nj-next]').click();
- await page.locator('input[name="answer"][value="stupid"]').check();
- await page.locator('[data-nj-next]').click();
- await page.locator('[data-nj-next]').click(); // optional meaning
- await page.locator('input[name="answer"][value="quiet"]').check();
- await page.locator('[data-nj-next]').click();
- await page.locator('[data-nj-next]').click(); // optional cost
- await page.locator('input[name="answer"][value="yes"]').check();
- await page.locator('[data-nj-next]').click();
- await page.locator('[data-nj-question] textarea').fill('I wanted to participate without being mocked');
- await page.locator('[data-nj-next]').click();
- await page.locator('[data-nj-next]').click(); // optional next step
+ const answers=[
+  'Somebody mocked me at work',
+  'I thought they would think I am strange',
+  'I would feel rejected',
+  'I stayed quiet',
+  'Quiet felt safer but I could not contribute',
+  'A colleague mocked me repeatedly',
+  'I wanted to participate without being mocked',
+  'I would like support from a trusted colleague'
+ ];
+ for(const answer of answers){
+  await expect(page.locator('[data-nj-question] textarea')).toBeVisible();
+  await page.locator('[data-nj-question] textarea').fill(answer);
+  await page.locator('[data-nj-next]').click();
+ }
  await expect(page.locator('.ns-judge-next')).toContainText('When the judgement is real');
  await page.locator('[data-nj-save]').click();
  await expect(page.locator('[data-nj-storage-status]')).toContainText('Saved in this browser');
@@ -48,6 +50,22 @@ test('a report of real mistreatment recommends safety and deliberate saved notes
  await page.locator('#ns-judge-start').scrollIntoViewIfNeeded();
  await page.locator('[data-nj-remove]').click();
  await expect(page.locator('[data-nj-resume]')).toHaveCount(0);
+});
+
+test('ideas are an optional large continuous bullet list, without disrupting the draft',async({page})=>{
+ await load(page);
+ await page.locator('[data-nj-open="test"]').click();
+ await page.locator('[data-nj-question] textarea').fill('I want to ask a question at work');
+ await page.locator('[data-nj-ideas]').click();
+ const dialog=page.locator('[data-nj-ideas-dialog]');
+ await expect(dialog).toBeVisible();
+ expect(await dialog.locator('ul li').count()).toBeGreaterThanOrEqual(25);
+ await expect(dialog.locator('h2,section,fieldset')).toHaveCount(0);
+ await dialog.locator('[data-nj-ideas-close]').click();
+ await expect(dialog).not.toBeVisible();
+ await expect(page.locator('[data-nj-question] textarea')).toHaveValue('I want to ask a question at work');
+ await page.locator('[data-nj-next]').click();
+ await expect(page.locator('.ns-judge-progress')).toContainText('Question 2 of 6');
 });
 
 test('mobile manual and question screen have no serious automated accessibility issues',async({page})=>{
