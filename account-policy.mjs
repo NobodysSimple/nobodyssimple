@@ -27,6 +27,7 @@ export const SAVED = {
   'ns-simplyfocus-recipe-v2': ['tools','SimplyFocus mixer (current)'],
   'ns-big-five-atlas-v1': ['tools','Saved Big Five atlas'],
   'ns-lifestyle-tasks-v1': ['tools','Older transferred focus tasks'],
+  'ns-lifestyle-practice-v1': ['learning','Identity goals and everyday skill-practice history'],
   'ns-field-guide-v1': ['guide','My private Field Guide'],
   'ns-simplyfocus-tasks-v1': ['tools','SimplyFocus tasks'],
 };
