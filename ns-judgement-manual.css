@@ -29,7 +29,8 @@
 .ns-judge-subhead{font-size:clamp(1rem,2.2vw,1.2rem);max-width:49ch;line-height:1.65;color:#3b5749}
 .ns-judge-mascot{width:min(24%,200px);height:auto;max-height:210px;object-fit:contain;flex:none}
 .ns-judge-toplinks{display:flex;flex-wrap:wrap;gap:10px 17px;margin-top:24px;font-size:.9rem;font-weight:700}
-.ns-judge-toplinks a{border-bottom:2px solid #abc4b0;text-decoration:none}
+.ns-judge-toplinks button{appearance:none;background:transparent;border:0;border-bottom:2px solid #abc4b0;border-radius:0;color:var(--nj-dark);cursor:pointer;padding:8px 2px;font:inherit;font-weight:700;text-align:left;min-height:44px}
+.ns-judge-toplinks button:hover{border-bottom-color:var(--nj-dark)}
 .ns-judge-reading{max-width:740px;margin:0 auto 64px;scroll-margin-top:96px}
 .ns-judge-reading p{font-size:1.055rem;line-height:1.82;margin:0 0 1.15em}
 .ns-judge-reading h2{margin-bottom:20px}
