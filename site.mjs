@@ -44,7 +44,7 @@ import { renderUniversalConsole } from './ns-universal-console.mjs';
 import { renderNSProblemGuide } from './ns-problem-guide.mjs';
 import {renderPrecisionConsole} from './ns-precision-console.mjs';
 import {renderPrecisionGuide} from './ns-precision-guide.mjs';
-import {renderJudgementManual} from './ns-judgement-manual.mjs';
+import {renderJudgementManual} from './ns-judgement-manual.mjs?v=20261114-ideas-v2';
 import {getPreciseProfile} from './ns-precision-content.mjs';
 import {renderAtlasConsole} from './ns-atlas-console.mjs';
 import {renderAtlasGuide} from './ns-atlas-guide.mjs';
