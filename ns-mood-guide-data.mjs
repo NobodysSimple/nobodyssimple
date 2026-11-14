@@ -1,0 +1,10 @@
+import {MOOD_GUIDES_01} from './ns-mood-guides-01.mjs';
+import {MOOD_GUIDES_02} from './ns-mood-guides-02.mjs';
+import {MOOD_GUIDES_03} from './ns-mood-guides-03.mjs';
+import {MOOD_GUIDES_04A} from './ns-mood-guides-04a.mjs';
+import {MOOD_GUIDES_04B} from './ns-mood-guides-04b.mjs';
+import {MOOD_GUIDES_05} from './ns-mood-guides-05.mjs';
+import {MOOD_GUIDES_06} from './ns-mood-guides-06.mjs';
+import {MOOD_GUIDES_07} from './ns-mood-guides-07.mjs';
+import {MOOD_GUIDES_08} from './ns-mood-guides-08.mjs';
+export const MOOD_GUIDES=Object.freeze([...MOOD_GUIDES_01,...MOOD_GUIDES_02,...MOOD_GUIDES_03,...MOOD_GUIDES_04A,...MOOD_GUIDES_04B,...MOOD_GUIDES_05,...MOOD_GUIDES_06,...MOOD_GUIDES_07,...MOOD_GUIDES_08]);
