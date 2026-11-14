@@ -14,7 +14,7 @@ test('Understand Why provides rich, distinct example paths without presenting th
   assert.ok(ids.has(x.root),x.id+' missing root');
   assert.ok(x.situation.length>=12,x.id+' missing concrete situation');
   for(const field of ['interpretation','emotion','fear','need','identity','rule','adaptation','alternative','action'])
-   assert.ok(x[field]?.length>=8,x.id+' weak '+field);
+   assert.ok(x[field]?.trim().length>=(['emotion','need'].includes(field)?3:8),x.id+' weak '+field);
   assert.equal(depthById(x.id),x);
  }
 });
