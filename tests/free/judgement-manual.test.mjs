@@ -60,7 +60,8 @@ test('in-page navigation does not change the SPA hash route',()=>{
 test('both public entry routes display the replacement guide',()=>{
  const site=readFileSync('site.mjs','utf8');
  const html=readFileSync('index.html','utf8');
- assert.match(site,/options\.topic==='social-anxiety' \? renderJudgementManual\(main\)/);
+ assert.match(site,/if\(options\.topic==='social-anxiety'\)return renderJudgementManual\(main\)/);
+ assert.match(site,/selected\?\.type==='topic'&&selected\.target==='social-anxiety'/);
  assert.match(site,/if\(key==='social-anxiety'\)renderJudgementManual\(main\)/);
  assert.match(html,/ns-judgement-manual\.css/);
 });
