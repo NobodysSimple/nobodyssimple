@@ -114,3 +114,38 @@
  .ns-judge-hero,.ns-judge-start,.ns-judge-work{box-shadow:none;border:0;padding:12px}
  .ns-judge-work[hidden]{display:none}
 }
+
+
+/* Accessible, opt-in ideas: no categories, no method-picker, just one list. */
+.ns-judge-question-line{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;margin-bottom:10px}
+.ns-judge-question-line h2{flex:1 1 390px;margin-bottom:0}
+.ns-judge-idea-trigger{flex:0 0 auto;min-height:44px;max-width:100%;padding:10px 15px;border:1.5px solid #78a58b;border-radius:999px;background:#f0f7ef;color:#1b4b38;font:inherit;font-size:.87rem;font-weight:750;cursor:pointer;box-shadow:none}
+.ns-judge-idea-trigger:hover{background:#e0efdf;border-color:#376f4d}
+.ns-judge-practice{padding:13px 17px;margin:18px 0 20px;border-radius:11px;background:#edf4ec;border-left:4px solid #43805b;color:#214636}
+.ns-judge-practice strong{font-weight:760;font-size:.93rem}
+.ns-judge-practice p{font-size:.94rem;line-height:1.6;margin:4px 0 0}
+.ns-judge-linkback{background:#f7f5ec;color:#345744;padding:12px 16px;border-radius:12px;font-size:.89rem;line-height:1.55;overflow-wrap:anywhere}
+.ns-judge-text-action{font:inherit;border:0;padding:0;background:none;color:#215943;font-weight:750;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.ns-judge-ideas-dialog{
+ position:fixed;inset:0;width:min(91vw,680px);max-width:680px;max-height:min(84dvh,820px);
+ margin:auto;padding:54px clamp(16px,3vw,28px) 22px;border:2px solid #6f9c79;
+ border-radius:19px;background:#fffef9;color:#244235;color-scheme:light;
+ box-shadow:0 20px 85px #122b2099;font-size:1rem;line-height:1.65;overscroll-behavior:contain;
+}
+.ns-judge-ideas-dialog::backdrop{background:rgba(12,29,21,.68)}
+.ns-judge-ideas-dialog ul{list-style:disc outside;margin:0;padding:0 10px 0 23px}
+.ns-judge-ideas-dialog li{margin:0 0 13px;padding-left:3px;line-height:1.62;break-inside:avoid}
+.ns-judge-ideas-dialog li::marker{color:#4d805a}
+.ns-judge-ideas-close{
+ position:sticky;top:-46px;float:right;display:grid;place-items:center;z-index:1;margin-top:-40px;
+ width:45px;height:45px;border:1px solid #9fb8a4;border-radius:50%;background:#e8f2e6;
+ color:#1e4d36;font-family:inherit;font-weight:800;font-size:1.45rem;cursor:pointer
+}
+.ns-judge-ideas-close:hover{background:#d7e9d4}
+.ns-judge-ideas-dialog :is(button,a):focus-visible{outline:3px solid #a45b22;outline-offset:3px}
+@media(max-width:700px){
+ .ns-judge-question-line{gap:5px}
+ .ns-judge-question-line h2{flex-basis:100%}
+ .ns-judge-idea-trigger{margin:5px 0 10px}
+ .ns-judge-ideas-dialog{width:calc(100vw - 20px);max-height:88dvh;padding:52px 16px 19px;font-size:1rem}
+}
