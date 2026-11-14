@@ -45,7 +45,7 @@ import { renderNSProblemGuide } from './ns-problem-guide.mjs';
 import {renderPrecisionConsole} from './ns-precision-console.mjs';
 import {renderPrecisionGuide} from './ns-precision-guide.mjs';
 import {renderJudgementManual} from './ns-judgement-manual.mjs?v=20261114-why';
-import {renderMoodManual,MOOD_IDS} from './ns-mood-manual.mjs?v=feel-20261114-v1';
+import {renderMoodManual,MOOD_IDS} from './ns-mood-manual.mjs?v=feel-20261114-v2';
 import {getPreciseProfile} from './ns-precision-content.mjs';
 import {renderAtlasConsole} from './ns-atlas-console.mjs';
 import {renderAtlasGuide} from './ns-atlas-guide.mjs';
