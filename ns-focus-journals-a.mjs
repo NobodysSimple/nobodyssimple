@@ -78,7 +78,7 @@ export const FOCUS_JOURNALS_A={
       "onehome",
       "Make your memory system easier to trust",
       "Reduce the number of places where important information is stored.",
-      "One simple capture and review routine.",
+      "One simple place to capture new reminders and a realistic time to review them.",
       [
         "Where are your current reminders, messages and dates being kept?",
         "Which items get lost because you do not know where to look?",
