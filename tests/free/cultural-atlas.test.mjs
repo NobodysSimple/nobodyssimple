@@ -8,6 +8,7 @@ import {SOUTHEAST_ASIA_STORIES} from '../../ns-cultural-atlas-southeast-asia.mjs
 import {NORTH_AMERICA_STORIES} from '../../ns-cultural-atlas-north-america.mjs';
 import {LATIN_AMERICA_STORIES} from '../../ns-cultural-atlas-latin-america.mjs';
 import {CENTRAL_ASIA_STORIES,CENTRAL_ASIA_META,CENTRAL_ASIA_IMAGE_CONTEXT} from '../../ns-cultural-atlas-central-asia.mjs';
+import {RUSSIA_STORIES,RUSSIA_META,RUSSIA_IMAGE_CONTEXT} from '../../ns-cultural-atlas-russia.mjs';
 import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
@@ -38,6 +39,34 @@ test('Central Asia features five core countries with 28 documented and pictured 
  const renderer=source('ns-cultural-atlas.mjs');
  assert.match(renderer,/STRICT_CENTRAL_ASIA_IMAGES/,'no unrelated Commons fallback search for new stories');
  assert.match(renderer,/CENTRAL_ASIA_IMAGE_CONTEXT\[article.id\]/,'new photo-specific captions must render');
+});
+
+
+test('Russian regions and Indigenous cultures have deep sourced readings and accurately captioned curated photos',()=>{
+ const ids=Object.keys(RUSSIA_STORIES);
+ assert.equal(ids.length,19,'nineteen distinct, full-length regional narratives');
+ assert.equal(Object.keys(RUSSIA_META).length,ids.length);
+ assert.equal(Object.keys(RUSSIA_IMAGE_CONTEXT).length,ids.length);
+ assert.ok(articleCountries.includes('RUS'),'Russia needs an atlas listing');
+ for(const id of ids){
+  const story=RUSSIA_STORIES[id];
+  const meta=RUSSIA_META[id];
+  const a=articleById(id);
+  assert.ok(a,'missing Russia article '+id);
+  assert.equal(a.country,'RUS',id+' country must be RUS');
+  assert.ok(articlesForCountry('RUS').includes(a),id+' must be selectable from Russia');
+  assert.equal(a.region,meta[6],id+' missing subdivision');
+  assert.equal(story.paragraphs.length,6,id+' requires six substantive sections');
+  assert.ok(story.paragraphs.every(p=>p.text.length>=350),id+' contains short paragraphs');
+  assert.ok(story.paragraphs.every(p=>p.sources.length>0&&p.sources.every(s=>/^https:\/\//.test(s.url))),id+' must link documentary sources');
+  assert.ok(story.images.length>0,'no Wikimedia media for '+id);
+  assert.equal(story.images.length,story.imageNotes.length,'photo captions must match selected filenames for '+id);
+  assert.ok(story.imageNotes.every(note=>note.length>50),'insufficient image context for '+id);
+  assert.deepEqual(CULTURE_INVESTIGATIONS[id].sections[0].paragraphs,story.paragraphs,id+' must show full article, not truncated card');
+ }
+ const renderer=source('ns-cultural-atlas.mjs');
+ assert.match(renderer,/STRICT_RUSSIA_IMAGES/,'avoid unrelated fallback photo searches');
+ assert.match(renderer,/RUSSIA_IMAGE_CONTEXT/,'captions must remain with verified Commons photos');
 });
 
 test('the atlas includes a selectable world map with small states and territories retained',()=>{
