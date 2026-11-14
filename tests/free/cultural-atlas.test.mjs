@@ -71,11 +71,11 @@ test('Russian regions and Indigenous cultures have deep sourced readings and acc
 });
 
 
-test('Mexico cultural expansion has 24 complete state-specific sourced readings and curated images',()=>{
+test('Mexico cultural expansion has 30 complete state-specific sourced readings and curated images',()=>{
  const ids=Object.keys(MEXICO_STORIES);
- assert.equal(ids.length,24,'all 24 new long-form Mexican cultural investigations are required');
+ assert.equal(ids.length,30,'all 30 new long-form Mexican cultural investigations are required');
  const regions=new Set(ids.map(id=>MEXICO_META[id][6]));
- assert.ok(regions.size>=12,'represent diverse states and Mexico City');
+ assert.ok(regions.size>=18,'represent diverse states and Mexico City');
  for(const id of ids){
   const story=MEXICO_STORIES[id], meta=MEXICO_META[id], a=articleById(id);
   assert.ok(a,id+' is missing from article catalogue');
