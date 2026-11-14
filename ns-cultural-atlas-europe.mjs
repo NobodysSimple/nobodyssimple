@@ -2,8 +2,9 @@
 import {EUROPE_A_STORIES,EUROPE_A_META} from './ns-cultural-atlas-europe-a.mjs';
 import {EUROPE_B_STORIES,EUROPE_B_META} from './ns-cultural-atlas-europe-b.mjs';
 import {EUROPE_C_STORIES,EUROPE_C_META} from './ns-cultural-atlas-europe-c.mjs';
-export const EUROPE_STORIES=Object.freeze({...EUROPE_A_STORIES,...EUROPE_B_STORIES,...EUROPE_C_STORIES});
-export const EUROPE_META=Object.freeze({...EUROPE_A_META,...EUROPE_B_META,...EUROPE_C_META});
+import {EUROPE_D_STORIES,EUROPE_D_META} from './ns-cultural-atlas-europe-d.mjs';
+export const EUROPE_STORIES=Object.freeze({...EUROPE_A_STORIES,...EUROPE_B_STORIES,...EUROPE_C_STORIES,...EUROPE_D_STORIES});
+export const EUROPE_META=Object.freeze({...EUROPE_A_META,...EUROPE_B_META,...EUROPE_C_META,...EUROPE_D_META});
 export const EUROPE_IMAGE_CONTEXT=Object.freeze({
   "europe-ireland-uilleann": [
     "Finbar Furey playing the uilleann pipes in 2012; an example of performance, not a teaching lesson.",
@@ -101,6 +102,12 @@ export const EUROPE_IMAGE_CONTEXT=Object.freeze({
     "Busó wooden masks in Mohács, photographed in February 2006.",
     "The Busójárás carnival in Mohács in 2009; one year of the contemporary ceremony."
   ],
+  "europe-estonia-kihnu": ["Kihnu schoolgirls wearing locally traditional clothing, photographed in Estonia on 1 September 2011; not a weaving lesson.","A Kihnu woman photographed on the island in June 2014, showing local dress in use."],
+  "europe-finland-kaustinen": ["Kaustinen Folk Music Festival in July 2019; this photograph documents the local festival rather than a family music lesson.","A performance scene at Kaustinen Folk Music Festival in July 2007."],
+  "europe-spain-cordoba-patios": ["A decorated courtyard during the 2015 Córdoba Patios festival; its work of plant care is not pictured.","An actual Córdoba courtyard photographed in May 2017, rather than a generic Spanish garden."],
+  "europe-austria-coffeehouse": ["The interior of Vienna's Café Central in March 2006; one particular coffeehouse.","The interior of Café Central in Vienna in October 2004, documenting its public room."],
+  "europe-albania-isopolyphony": ["Folk singers photographed in Gjirokastër, Albania, in October 1988; the particular sung passage is not identified."],
+  "europe-montenegro-boka": ["A member of Kotor's Boka Navy in traditional dress, photographed in February 2023.","The Boka Navy group performing its kolo dance in the Bay of Kotor region."],
   "europe-slovenia-kurenti": [
     "Kurenti at nightfall in Ptuj, Slovenia, February 2023; not a doorstep visit.",
     "Close view of a Slovenian Kurent mask in 2023; a costume detail rather than a household visit."
