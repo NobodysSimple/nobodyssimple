@@ -95,3 +95,8 @@
 @media(max-width:700px){.ns-mood{padding:0 8px 25px}.ns-mood-read{padding:0 7px}.ns-mood-read>p{font-size:1rem;line-height:1.8}.ns-mood-profiles,.ns-mood-why-browser [data-mood-why-results],.ns-mood-related-list{grid-template-columns:1fr}.ns-mood-routes{padding:21px 17px}.ns-mood-why-actions{flex-direction:column}.ns-mood-why-actions button{width:100%}.ns-mood-why [data-mood-why-body]{padding:18px 13px}.ns-mood-why-head{padding:24px 19px}.ns-mood-why-self{padding:21px 15px}.ns-mood-why-graph li{gap:9px}.ns-mood-why-graph li>div{padding:11px 12px}.ns-mood+dialog.ns-mood-dialog{width:calc(100vw - 20px);max-height:88dvh}}
 @media(prefers-reduced-motion:reduce){.ns-mood *, .ns-mood+dialog *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 @media print{.ns-mood-routes,.ns-mood-why-actions,.ns-mood-route-list,.ns-mood-jump,.ns-mood+dialog.ns-mood-dialog{display:none!important}.ns-mood{padding:0;background:#fff}}
+
+/* Clear, proportionate urgent-care guidance on clinically sensitive topics. */
+.ns-mood-safety{max-width:780px;margin:0 auto 35px;padding:17px 21px;border:1px solid #d7ccae;border-left:4px solid #967c42;border-radius:0 13px 13px 0;background:#fdf8ed;color:#413d30}
+.ns-mood-safety p{font-size:.95rem;line-height:1.68;margin:0 0 9px}
+.ns-mood-safety a{font-size:.9rem;font-weight:750;color:#28583e;text-underline-offset:3px;min-height:44px;display:inline-flex;align-items:center}
