@@ -271,6 +271,10 @@ export const EXPERIENCE_CORE_B=[
       [
         "safety",
         "Feeling oriented and safe"
+      ],
+      [
+        "understanding",
+        "Understanding uncertainty"
       ]
     ],
     "whyIntro": "Disconnection does not establish a hidden trauma or belief. This optional map explores what changes before an episode and what supports you now.",
@@ -1167,6 +1171,10 @@ export const EXPERIENCE_CORE_B=[
       [
         "health",
         "Health and sleep"
+      ],
+      [
+        "safety",
+        "Present safety"
       ]
     ],
     "whyIntro": "This reflection explores the effect of detachment and repeated self-testing. It cannot establish the cause of a changed sense of self from a few answers.",
