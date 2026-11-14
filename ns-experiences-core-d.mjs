@@ -893,7 +893,7 @@ export const EXPERIENCE_CORE_D=[
       ],
       [
         "NHS: naloxone and opioid overdose",
-        "https://www.nhs.uk/conditions/opioid-overdose/"
+        "https://www.gmmh.nhs.uk/overdose-advice"
       ]
     ],
     "prominentSafety": "Suspected overdose, particularly slowed or absent breathing or unresponsiveness, is an emergency. Call 999 and use naloxone if available for possible opioid overdose. Withdrawal from some drugs can also be dangerous.",
