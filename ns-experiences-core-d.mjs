@@ -70,7 +70,7 @@ export const EXPERIENCE_CORE_D=[
         "Identify one cue, expected benefit and consequence.",
         "Understanding the sequence can support change without blame.",
         "A useful observation",
-        "Choose one cue to discuss in a treatment plan.",
+        "Choose one cue to discuss in your treatment plan and ask what medically safe support could make that situation easier.",
         [
           [
             "When does the urge usually become strongest?",
@@ -1038,7 +1038,7 @@ export const EXPERIENCE_CORE_D=[
         "Find a way to seek treatment when anxiety or shame is making it harder.",
         "Needing a medical plan is a reasonable response to dependence.",
         "A more useful belief",
-        "Replace self-blame with one specific care request.",
+        "Replace self-blame with one specific request for safe, professionally guided withdrawal advice.",
         [
           [
             "What worries you most about telling a clinician?",
