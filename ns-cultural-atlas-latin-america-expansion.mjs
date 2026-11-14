@@ -150,7 +150,7 @@ const RECORDS=[
   {
     "id": "french-guiana-touloulou",
     "meta": [
-      "GUF",
+      "FRA",
       "The Touloulou: anonymity at the centre of Cayenne Carnival",
       "Identity & social rules",
       "Cayenne, French Guiana",
@@ -216,7 +216,7 @@ const RECORDS=[
   {
     "id": "guadeloupe-gwoka",
     "meta": [
-      "GLP",
+      "FRA",
       "Gwoka: the Guadeloupean circle where the dancer answers the drum",
       "Music & improvisation",
       "Guadeloupe, especially Pointe-à-Pitre and community gatherings",
@@ -283,7 +283,7 @@ const RECORDS=[
   {
     "id": "martinique-yole",
     "meta": [
-      "MTQ",
+      "FRA",
       "Martinique's yoles: why balancing a boat became heritage",
       "Coordination & continuity",
       "Coastal communities of Martinique",
