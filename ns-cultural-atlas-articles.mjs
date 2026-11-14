@@ -4,6 +4,7 @@
  * Every entry identifies a documentary source and a question for the reader.
  */
 import {NORTH_AMERICA_STORIES} from './ns-cultural-atlas-north-america.mjs';
+import {LATIN_AMERICA_STORIES} from './ns-cultural-atlas-latin-america.mjs';
 const article=(id,country,title,theme,place,body,reflection,question,source,region='')=>Object.freeze({
  id,country,title,theme,place,body:Object.freeze(body),psychology:body[1]||'',reflection,question,
  source:Object.freeze({label:source.includes('ich.unesco.org')?'UNESCO Intangible Cultural Heritage':source.includes('whc.unesco.org')?'UNESCO World Heritage Centre':source.includes('cornwall.gov.uk')?'Cornwall Council':source.includes('nls.uk')?'National Library of Scotland':source.includes('gov.wales')?'Welsh Government':source.includes('mbie.govt.nz')?'New Zealand Government':source.includes('cherokee.org')?'Cherokee Nation':source.includes('nps.gov')?'US National Park Service':source.includes('abudhabiculture.ae')?'Abu Dhabi Department of Culture and Tourism, Heritage Register':'Documentary source',url:source}),region
@@ -32,6 +33,15 @@ const NORTH_AMERICA_META={
  'dominica-larouman':['DMA','Larouman: the work inside a basket','Craft & material knowledge','Kalinago basket makers in Dominica','The work in a handmade object starts with finding and preparing its raw material.','What would you ask a maker about the material before seeing the finished piece?'],
  'us-sweetgrass-baskets':['USA','Sweetgrass baskets: the land a maker needs','Craft & access','Gullah and Geechee basket makers in South Carolina','A skill depends on access to the materials and places needed to practise it.','Where does a maker get the material for their work?','South Carolina'],
  'mexico-voladores':['MEX','Voladores: who sets the terms of the flight','Ritual & livelihood','Voladores in Veracruz, Mexico','A performance depends on the people who practise it and decide how to present it.','Who teaches the performance, and who decides where it happens?','Veracruz']
+};
+const LATIN_AMERICA_META={
+ 'argentina-filete':['ARG','Filete porteño: who gets to learn the painted line','Craft & access','Filete painters in Buenos Aires','A craft persists when a newcomer can enter the place where it is taught.','Who can get into the room where a skill is taught?','Buenos Aires'],
+ 'bolivia-oruro':['BOL','Oruro: the work inside a carnival','Ritual & coordination','Carnival fraternities in Oruro','A public celebration needs people who prepare different parts and practise them together.','Who prepares the part of a festival that you rarely notice?','Oruro'],
+ 'ecuador-toquilla':['ECU','Toquilla: whose hands made the hat','Craft & livelihood','Hat weavers in Ecuador','A craft label can hide the maker’s time and the place where they worked.','Who made this object, and how were they paid?','Manabí'],
+ 'uruguay-candombe':['URY','Candombe: learning a place in the drum line','Music & belonging','Candombe groups in Montevideo','Joining a group means learning its history alongside its rhythm.','Who would you ask about the history of a group before joining it?','Montevideo'],
+ 'chile-arpilleras':['CHL','Arpilleras: a sewn demand for an answer','Memory & testimony','Arpillera makers in Chile','An object can carry a named maker’s account when its date and purpose travel with it.','Whose account is preserved in an object you have seen?','Región Metropolitana de Santiago'],
+ 'venezuela-yare':['VEN','Yare: the promise behind a devil mask','Ritual & obligation','Dancing Devils of Yare, Venezuela','A ritual costume makes sense within the sequence and obligations of its performers.','Who prepares the parts of a ritual you do not see?','Miranda'],
+ 'paraguay-terere':['PRY','Tereré: who prepares the herbs we share','Ritual & trust','Tereré makers and herb vendors in Paraguay','A shared drink starts with a person who chose and prepared its ingredients.','Who prepared what you are sharing, and how did they learn?']
 };
 
 export const CULTURE_ARTICLES=Object.freeze([
@@ -629,6 +639,10 @@ article('henna-rituals',['DZA','BHR','EGY','IRQ','JOR','KWT','MRT','MAR','OMN','
  ],'Shared timing requires people to listen, respond and make room for one another’s part in a piece of work.','When does listening to someone else’s pace help you join in?','https://visitmaldives.com/en/experience/the-hypnotizing-rhythms-of-boduberu'),
  ...Object.entries(NORTH_AMERICA_STORIES).map(([id,story])=>{
   const [country,title,theme,place,reflection,question,region]=NORTH_AMERICA_META[id];
+  return article(id,country,title,theme,place,story.paragraphs.slice(0,3).map(p=>p.text),reflection,question,story.paragraphs[0].sources[0].url,region||'');
+ }),
+ ...Object.entries(LATIN_AMERICA_STORIES).filter(([id])=>id!=='taquile').map(([id,story])=>{
+  const [country,title,theme,place,reflection,question,region]=LATIN_AMERICA_META[id];
   return article(id,country,title,theme,place,story.paragraphs.slice(0,3).map(p=>p.text),reflection,question,story.paragraphs[0].sources[0].url,region||'');
  }),
  article('pysanka-estonia',['EST','UKR'],'Pysanka: wishes, gifts and family memory','Ritual & family meaning','Ukrainian communities, including Ukrainians in Estonia',[

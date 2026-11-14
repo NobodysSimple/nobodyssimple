@@ -6,6 +6,7 @@ import {CULTURE_ARTICLES,articlesForCountry,articleCountries,articleById} from '
 import {SOUTH_ASIA_STORIES} from '../../ns-cultural-atlas-south-asia.mjs';
 import {SOUTHEAST_ASIA_STORIES} from '../../ns-cultural-atlas-southeast-asia.mjs';
 import {NORTH_AMERICA_STORIES} from '../../ns-cultural-atlas-north-america.mjs';
+import {LATIN_AMERICA_STORIES} from '../../ns-cultural-atlas-latin-america.mjs';
 import {CULTURE_INVESTIGATIONS} from '../../ns-cultural-atlas-investigations.mjs';
 import {WORLD_VIEW,clampAtlasView,zoomAtlasView,panAtlasView,fitAtlasBounds} from '../../ns-cultural-atlas-viewport.mjs';
 import {filterAdministrativeChildren,geometryContains,atlasViewDegrees,fetchUSIndigenousAreas,fetchUSCounties,US_STATE_FIPS,searchMapPlaces,fetchAdministrativeLayer} from '../../ns-cultural-atlas-geography.mjs';
@@ -91,6 +92,18 @@ test('cultural readings use documentary sources and distinguish place from a psy
    assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' needs primary testimony or research');
    assert.ok(story.images.length>=2,a.id+' needs two curated images');
    assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the researched paragraphs');
+  }
+ }
+ for(const code of ['ARG','BOL','CHL','ECU','PER','PRY','URY','VEN']){
+  const entries=articlesForCountry(code).filter(a=>LATIN_AMERICA_STORIES[a.id]);
+  assert.ok(entries.length,code+' missing a Latin America reading');
+  for(const a of entries){
+   const story=LATIN_AMERICA_STORIES[a.id];
+   assert.equal(story.paragraphs.length,6,a.id+' needs six paragraphs');
+   assert.ok(story.paragraphs.every(p=>p.text.length>200&&p.sources.length&&p.sources.every(s=>s.url.startsWith('https://'))),a.id+' needs source-linked prose');
+   assert.ok(story.paragraphs.some(p=>p.sources.some(s=>s.kind.startsWith('Primary'))),a.id+' needs first-hand material');
+   assert.equal(story.images.length,2,a.id+' needs two selected images');
+   assert.deepEqual(CULTURE_INVESTIGATIONS[a.id].sections[0].paragraphs,story.paragraphs,a.id+' must render the full reading');
   }
  }
 });
