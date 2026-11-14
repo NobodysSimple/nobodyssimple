@@ -147,12 +147,12 @@ const RECORDS=[
       }
     ],
     "images": [
-      "Tajik dastarkhan meal.jpg",
-      "Oshi palov tajik.jpg"
+      "Tajik plov.jpg",
+      "Tajik dastarkhan meal.jpg"
     ],
     "imageNotes": [
-      "A Tajik dastarkhon laid with oshi palav, photographed by Ibrahimjon in 2007; a finished shared meal.",
-      "An actual serving of Tajik oshi palav photographed in 2007; the apprentice ceremony is not pictured."
+      "A Tajik man cooking plov, photographed by Brian Harrington Spier in 2007; a direct image of preparation under CC BY-SA.",
+      "A Tajik dastarkhon laid with oshi palav, photographed by Ibrahimjon in 2007; the photo may not render if its GFDL-only licence is not accepted."
     ],
     "paragraphs": [
       {
@@ -180,7 +180,7 @@ const RECORDS=[
         ]
       },
       {
-        "text": "Two Commons photographs by Ibrahimjon, taken in 2007, show Tajik oshi palav served on a dastarkhon and a close view of the meal. They document the food and its place at the table. They do not depict an apprentice receiving the skimmer, so the caption should not imply that the photographed gathering was a qualification ceremony. The detail of that teaching practice comes from the UNESCO nomination.",
+        "text": "The first Commons photograph shows a Tajik man preparing plov in February 2007, captured by Brian Harrington Spier and released under CC BY-SA. A second photograph by Ibrahimjon shows oshi palav on a Tajik dastarkhon, though its older licence may prevent the atlas from displaying it. Neither photograph depicts an apprentice receiving the skimmer. The detail of that teaching ceremony comes from UNESCO rather than being invented to explain a meal photograph.",
         "refs": [
           0
         ]
