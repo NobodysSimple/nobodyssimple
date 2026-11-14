@@ -359,7 +359,7 @@ const RECORDS=[
     "sources": [
       {
         "label": "Documented primary cultural record",
-        "url": "https://ich.unesco.org/en/RL/sevdalinka-a-traditional-art-of-singing-and-playing-01990",
+        "url": "https://ich.unesco.org/en/lists?RL=01990",
         "kind": "Institutional heritage or original study"
       }
     ],
