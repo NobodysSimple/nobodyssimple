@@ -14,7 +14,7 @@ test('Home renders the illustrated scrapbook without replacing real features',as
  await expect(home.locator('.ns-culture-atlas')).toBeVisible();
  const layers=await page.locator('#main').evaluate(el=>getComputedStyle(el).backgroundImage);
  expect(layers).toContain('home-meadow.svg');
- const art=await page.request.get('/home-art/home-meadow.svg');
+ const art=await page.request.get('/home-art/watercolor-countryside.svg');
  expect(art.status()).toBe(200);
  expect(await art.text()).toContain('<svg');
  const paper=await home.locator('.ns-home-hero').evaluate(el=>getComputedStyle(el).boxShadow);
@@ -57,4 +57,32 @@ test('Scrapbook styling is applied only to Home; Learn and Blog retain their des
  await page.goto('/index.html#post/'+hello);
  await expect(page.locator('.ns-blog-notebook')).toBeVisible();
  expect(await page.locator('#main').evaluate(el=>getComputedStyle(el).backgroundImage)).not.toContain('home-meadow.svg');
+});
+
+test('Homepage botanical overlays are removed and the landscape has the intended sticker instead',async({page})=>{
+ await page.goto('/index.html#home');
+ const hero=page.locator('.ns-home-refined .ns-home-hero');
+ await expect(hero).toBeVisible();
+ const styles=await hero.evaluate(el=>{
+  const picture=el.querySelector('.ns-home-hero__art');
+  const wisbody=document.querySelector('.ns-home-wisbody');
+  const latest=document.querySelector('.ns-home-latest');
+  const atlas=document.querySelector('.ns-culture-atlas');
+  return {
+   clip:getComputedStyle(el,'::before').backgroundImage,
+   sticker:getComputedStyle(picture,'::after').backgroundImage,
+   wisbody:getComputedStyle(wisbody,'::before').backgroundImage,
+   latest:getComputedStyle(latest,'::before').content,
+   atlas:getComputedStyle(atlas,'::before').content,
+   landscape:getComputedStyle(document.querySelector('#main')).backgroundImage
+  };
+ });
+ expect(styles.clip).not.toContain('pressed-flowers.svg');
+ expect(styles.sticker).toContain('daisy-sticker.svg');
+ expect(styles.wisbody).not.toContain('pressed-flowers.svg');
+ expect(['none','normal','""']).toContain(styles.latest);
+ expect(['none','normal','""']).toContain(styles.atlas);
+ expect(styles.landscape).toContain('watercolor-countryside.svg');
+ const asset=await page.request.get('/home-art/daisy-sticker.svg');
+ expect(asset.status()).toBe(200);
 });
