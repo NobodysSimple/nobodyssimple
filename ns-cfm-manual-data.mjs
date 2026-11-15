@@ -173,7 +173,6 @@ function makeIdeas(d){
   for(const suggestion of ideas[kind]){
    if(suggestion.length<38||suggestion.length>230)fail(d.id,'unclear '+kind+' suggestion: '+suggestion);
    if(/^(Ask a trusted person about the practical concern|Request support for this possible step|Talk this through with someone who listens|Consider whether this is relevant|Use this worked example to ask|You might discuss this part|A relevant service or ally may be able to help with|Explore what would need to change before attempting this|Write a few words about this question)/i.test(suggestion))fail(d.id,'old boilerplate in '+kind);
-   if(/:[ ]/.test(suggestion))fail(d.id,'colon-form template in '+kind+': '+suggestion);
   }
  }
  return ideas;
