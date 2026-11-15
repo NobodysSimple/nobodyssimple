@@ -26,6 +26,17 @@ const stageNames={
  faith:['The experience','What you were told or believed','What it means to you','How you felt','What you did','What you hoped your response would do','A belief or community expectation','Choice, dependence and safety','Alternative interpretations or options','What you want to do next'],
  migration:['The event or update','What is confirmed','What is still uncertain','The emotional effect','Your immediate response','What your response helped manage','Rules, documents or expectations','Resources, safety and support','What is actually possible','A realistic next step']
 };
+const extraContext={
+ 'language-discrimination':'You may know exactly what you meant and still leave a conversation feeling that you were not listened to. The fairness of the exchange matters as much as your fluency.',
+ 'intergenerational-cultural-conflict':'You may sometimes wish you could explain your choices without being asked to reject your family’s history. That wish is reasonable, even if agreement is not possible.',
+ 'community-racial-harm':'When an incident attracts public attention, the same event can bring practical questions about safety and much longer questions about belonging. Each person may need a different response, and nobody owes the public a performance of grief.',
+ 'historical-collective-trauma':'A careful account should name which historical event and present consequence are being discussed. That keeps remembrance accurate and makes it possible to distinguish evidence about institutions from assumptions about individual families.',
+ 'intersectional-discrimination':'A person can spend considerable time being transferred between departments, each responsible for only one part of the problem. Coordinated support begins when someone accepts responsibility for understanding the entire barrier.',
+ 'language-barriers':'Being able to ask a question privately can be especially important when a medical or legal issue is involved. The goal is an informed decision that belongs to you.',
+ 'xenophobia':'If you are repeatedly expected to defend the reason you live somewhere, ordinary conversations can become tiring. You deserve chances to participate without your presence turning into a debate.',
+ 'belonging-between-countries':'Sometimes your answer will change depending on who is asking and what has happened that day. That does not make your history inconsistent. You are allowed to feel close to different places for different reasons.',
+ 'secular-religious-tension':'You might still share meals and celebrations with someone whose worldview differs from yours. Those ordinary relationships deserve attention when a disagreement becomes so large that it seems to define the whole person.'
+};
 const highPrivacy=new Set(['racial-profiling','institutional-racism','community-racial-harm','religious-discrimination','religious-trauma','fear-divine-punishment','faith-community-pressure','religious-family-conflict','immigration-uncertainty','asylum-stress','refugee-adjustment','xenophobia','migration-family-separation','migrant-work-exploitation','uncertain-reunification']);
 const sources={
  culture:[['Paradies et al. (2015), systematic review and meta-analysis of racism and health','https://pubmed.ncbi.nlm.nih.gov/26398658/']],
@@ -56,7 +67,7 @@ function articleFor(d,extra){
  if(open.length!==2)fail(d.id,'expected two authored opening paragraphs');
  if(extra.length!==3||!prose||prose.length!==3)fail(d.id,'missing original long-form passages');
  if(prose.some(p=>wordCount(p)<32))fail(d.id,'one of the version-specific article passages is too short');
- return [open[0],open[1],extra[0],d.why,extra[1],prose[0],prose[1],extra[2],prose[2],d.closing];
+ return [open[0],open[1],extra[0],d.why,extra[1],prose[0],prose[1],extra[2]+(extraContext[d.id]?' '+extraContext[d.id]:''),prose[2],d.closing];
 }
 function makeExamples(d,article,profiles,roots){
  const sentencesPool=article.flatMap((s,i)=>sentences(s).map(x=>({s:x,section:i})))
