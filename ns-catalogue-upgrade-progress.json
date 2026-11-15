@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-11-15",
+  "scope": {
+    "repository": "NobodysSimple/nobodyssimple",
+    "branch": "main",
+    "expectedTopics": 518,
+    "expectedProblemAreas": 11
+  },
+  "sourceOfTruth": {
+    "canonicalTopics": "ns-atlas-core.mjs:atlasProblemIndex",
+    "themes": "ns-needs-themes.mjs:NAV_THEMES",
+    "liveExactIdPartition": "ns-catalogue-progress.mjs:catalogueProgress",
+    "note": "The live JS ledger derives every exact pending and completed ID from the 518-topic atlas. This JSON records verified changes and does not mistake generic atlas fallbacks for completion."
+  },
+  "newlyUpgraded": [
+    {
+      "id": "sleep",
+      "area": "health",
+      "domain": "body",
+      "guide": "ns-body-guide-data.mjs",
+      "commits": [
+        "bf6f41e8e7f71d9a89d719bb398c617ee08cfb20",
+        "e12534dad12c5e036173d3ad792f1fbbc82866c0",
+        "a478cb3c61a211a90186679887a011e5158d0e77",
+        "1c71e7dd34ce7fea5faabb8fb8236fc566784159",
+        "acd41e9a66d319859eade97be7a30730f34998a9",
+        "468a7e4ed7105a7347d9cd1eb9f8b72655cec8f1"
+      ],
+      "contentChecks": {
+        "articleWords": 622,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 2
+      },
+      "routing": "direct atlas and workbook route; body return navigation",
+      "verification": "static review and assertions committed; CI execution pending"
+    }
+  ],
+  "pendingIds": "Derived exactly at runtime by ns-catalogue-progress.mjs:pending; not duplicated as potentially stale JSON",
+  "inProgressIds": [],
+  "qualityFindings": [
+    "Existing dedicated manuals are counted in the live ledger; generic atlas fallbacks remain pending.",
+    "The body-domain return link was added to the shared renderer.",
+    "Need verify GitHub Actions and browser tests; no live browser test has yet been performed."
+  ],
+  "lastStep": "Added sleep manual, routes, return link, live progress ledger and focused unit tests. Next: inspect CI, fix any failures, then systematically upgrade remaining Body, sleep & intimacy topics."
+}
