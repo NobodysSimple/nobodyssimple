@@ -78,44 +78,66 @@ function practiceDisplay(state){
    ${state.skillIds.map(skillId=>`<button type="button" data-practice-focus="${esc(skillId)}"
      class="life-practice-chip ${skillId===skill.id?'is-selected':''}" aria-pressed="${skillId===skill.id}" ${done?'disabled':''}>${esc(practiceSkillMap.get(skillId).name)}</button>`).join('')}
    </div>`:''; 
- return `<div class="life-practice-current">
-  <div class="life-practice-quest-hero">
-  <div class="life-practice-persona"><span class="life-practice-kicker">THE PERSON YOU ARE BECOMING</span><strong>${esc(identity.label)}</strong><small>${esc(identity.description)}</small></div>
-  <div class="life-practice-today-label"><span>Today you're developing</span><strong>${esc(skill.name)}</strong></div>
+ const nextMilestone=milestones.find(item=>completed<item.at);
+ const previousMilestone=[...milestones].reverse().find(item=>completed>=item.at)?.at||0;
+ const target=nextMilestone?.at||milestones[milestones.length-1].at;
+ const progressPercent=nextMilestone?Math.round(((completed-previousMilestone)/(target-previousMilestone))*100):100;
+ const trailTitle=done?'Completed for today':paused?'Resting today':'Your daily deed';
+ const actions=paused
+  ?`<div class="life-deed-result" role="status"><strong>Taking today off is fine.</strong><p>Nothing is lost. Your progress stays here when you return.</p><button type="button" class="life-practice-plain" data-practice-resume>Show today's deed</button></div>`
+  :done
+  ?`<div class="life-deed-result is-success" role="status"><strong>✦ Your deed is recorded</strong><p>One more action towards the person you're becoming. A new idea will appear tomorrow.</p><button type="button" class="life-practice-plain" data-practice-undo>Undo completion</button></div>`
+  :`<div class="life-deed-cta">
+   <button type="button" class="button life-deed-complete-button" data-practice-done>✓ I did this today</button>
+   <button type="button" class="button secondary" data-practice-next>↻ Another idea</button>
+   <button type="button" class="life-practice-plain" data-practice-pause>Skip today</button>
+   ${kindnessAvailable(skill.id)?'<button type="button" class="life-practice-plain" data-practice-kindness>Try a kindness deed</button>':''}
+  </div>`;
+ return `<div class="life-practice-current life-deed-quest">
+  <div class="life-deed-identity">
+   <p class="life-practice-kicker">THE PERSON YOU ARE BECOMING</p>
+   <h3>${esc(identity.label)}</h3>
+   <p>${esc(identity.description)}</p>
+   <span class="life-deed-current-skill">✦ Practising ${esc(skill.name)}</span>
   </div>
-  <div class="life-practice-tags">${skill.supports.map(s=>`<span>${esc(s)}</span>`).join('')}<span>Practice level ${today.level} of 4</span></div>
-  ${chooseFocus}
-  <div class="life-practice-quest-meta"><strong>✦ ${completed} ${completed===1?'practice':'practices'} recorded</strong><span>Real actions, not a score about who you are</span></div>
-  <div class="life-practice-trail" aria-label="Practice challenge level ${today.level} of four">
-   <div class="life-practice-trail-head"><strong>Choose your challenge</strong><small>Level ${today.level} / 4 · change this below</small></div>
-   <div class="life-practice-trail-steps">${trailMarkup}</div>
+  <div class="life-deed-layout">
+   <section class="life-deed-main" aria-labelledby="life-deed-mission-title">
+    <div class="life-deed-paper">
+     <div class="life-deed-paper-top"><span class="life-deed-seal" aria-hidden="true">✿</span><div><span class="life-practice-kicker">TODAY'S DEED</span><h3 id="life-deed-mission-title">${trailTitle}</h3></div><span class="life-deed-level">Level ${today.level}/4</span></div>
+     <div class="life-practice-action ${done?'is-complete':''}">
+      <p class="life-practice-task">${esc(task.task)}</p>
+      <p class="life-practice-why">${esc(skill.why)}</p>
+     </div>
+     ${actions}
+    </div>
+    <div class="life-deed-change-focus">
+     <span>Today's skill</span>${chooseFocus||'<strong>'+esc(skill.name)+'</strong>'}
+    </div>
+   </section>
+   <aside class="life-deed-journey" aria-labelledby="life-deed-journey-title">
+    <div class="life-deed-journey-top">
+     <div><p class="life-practice-kicker">YOUR GROWING RECORD</p><h3 id="life-deed-journey-title">The little things add up.</h3></div>
+     <span class="life-deed-count">${completed} <small>recorded</small></span>
+    </div>
+    <div class="life-deed-growth" aria-label="Practice milestone progression">
+     <div class="life-deed-growth-track" role="progressbar" aria-valuemin="0" aria-valuemax="${target-previousMilestone}" aria-valuenow="${completed-previousMilestone}" aria-label="Practices towards next milestone"><span style="width:${progressPercent}%"></span></div>
+     <p>${nextMilestone?`${nextMilestone.at-completed} more ${nextMilestone.at-completed===1?'practice':'practices'} until ${esc(nextMilestone.label.toLowerCase())}`:'You have reached every milestone. Keep practising at your own pace.'}</p>
+    </div>
+    <div class="life-deed-milestones" aria-label="Recorded-practice milestones">${milestoneMarkup}</div>
+    <details class="life-practice-levels">
+     <summary>✦ Adjust the challenge <span aria-hidden="true">⌄</span></summary>
+     <p class="life-practice-note">These four levels describe different tasks, not your ability. Choose what suits your circumstances.</p>
+     <div class="life-practice-level-grid" role="group" aria-label="Practice difficulty">
+      ${levelDescriptions.map((title,i)=>`<button type="button" data-practice-level="${i+1}" aria-pressed="${practiceLevel(state,skill.id)===i+1}" ${done?'disabled':''} class="${practiceLevel(state,skill.id)===i+1?'is-selected':''}"><b>Level ${i+1}</b><span>${esc(title)}</span></button>`).join('')}
+     </div>
+    </details>
+   </aside>
   </div>
-  <div class="life-practice-action ${done?'is-complete':''}">
-   <p class="life-practice-kicker">${done?'PRACTICE RECORDED':task.source==='kindness'?'AN ACT FOR SOMEONE ELSE':'TODAY’S SMALL PRACTICE'}</p>
-   <p class="life-practice-task">${esc(task.task)}</p>
-   <p class="life-practice-why">${esc(skill.why)}</p>
+  <div class="life-deed-bottom">
+   ${selector}
+   <details class="life-deed-record"><summary>View my practice history <span aria-hidden="true">⌄</span></summary>${progressMarkup(state)}</details>
   </div>
-  ${paused?`<div class="life-practice-complete"><strong>Taking today off is a valid choice.</strong><p>Your previous practice record stays exactly as it is. Return whenever it suits you.</p><button type="button" class="life-practice-plain" data-practice-resume>Show today's practice</button></div>`:done?`<div class="life-practice-complete" role="status"><strong>✦ Mission complete · +1 recorded practice</strong>
-   <p>You practised this skill today. A new suggestion will appear on your next local day. No streak to protect.</p>
-   <button type="button" class="life-practice-plain" data-practice-undo>Undo completion</button></div>`
-   :`<div class="life-practice-actions">
-   <button type="button" class="button" data-practice-done>Record this practice ✦</button>
-   <button type="button" class="button secondary" data-practice-next>Another idea</button>
-   <button type="button" class="life-practice-plain" data-practice-pause>Not today</button>
-   ${kindnessAvailable(skill.id)?'<button type="button" class="life-practice-plain" data-practice-kindness>Try a kindness idea</button>':''}
-   </div>
-   <p class="life-practice-note">No need to force a task that does not suit your circumstances. Choose another, take it more gently or skip today.</p>`}
-  <details class="life-practice-levels"><summary>Choose how challenging this feels</summary>
-   <p class="life-practice-note">Levels describe the task, not your ability. The default moves gradually with practice, and you can pick an easier option at any point.</p>
-   <div class="life-practice-level-grid" role="group" aria-label="Practice difficulty">
-   ${levelDescriptions.map((title,i)=>`<button type="button" data-practice-level="${i+1}"
-    aria-pressed="${practiceLevel(state,skill.id)===i+1}" ${done?'disabled':''}
-    class="${practiceLevel(state,skill.id)===i+1?'is-selected':''}"><b>Level ${i+1}</b><span>${esc(title)}</span></button>`).join('')}</div>
-  </details>
-  ${selector}
-  <div class="life-practice-milestones" aria-label="Practice milestones">${milestoneMarkup}</div>
-  ${progressMarkup(state)}
-  <p class="life-practice-note">This is optional everyday practice, not an exposure treatment plan. Keep necessary safety checks and respect your capacity, access needs and real-world responsibilities.</p>
+  <p class="life-practice-note life-deed-footnote">This is optional everyday practice. Missed days do not erase progress, and recorded actions are not a measure of psychological ability.</p>
  </div>`;
 }
 
