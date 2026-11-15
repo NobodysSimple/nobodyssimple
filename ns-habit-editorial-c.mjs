@@ -16,51 +16,51 @@ export const HABIT_EDITORIAL_C=[
     ],
     "mechanisms": [
       [
-        "Rapid variable content",
-        "The next item promises new information without a stopping point."
+        "When the next item keeps promising interest",
+        "A feed offers another possibility with almost no effort, even after the last item left you flat."
       ],
       [
-        "Avoiding discomfort",
-        "Scrolling can replace a task or feeling you do not want to face."
+        "When scrolling provides an escape",
+        "The phone may offer distraction from an unpleasant task or the feeling of being alone."
       ],
       [
-        "Easy access",
-        "Notifications and familiar hand movements reduce the effort needed to reopen an app."
+        "When opening becomes automatic",
+        "Notifications and familiar habits can make the feed appear before you've decided to use it."
       ]
     ],
     "profiles": [
       [
-        "The bedtime scroller",
-        "The feed displaces sleep."
+        "When you open an app without meaning to",
+        "You realise you're in the feed before you remember why you picked up the phone."
       ],
       [
-        "The anxious checker",
-        "You return for news or social reassurance."
+        "When you're searching for something that satisfies",
+        "You keep moving to the next video even though the experience has become dull."
       ],
       [
-        "The bored seeker",
-        "You want quick stimulation."
+        "When the phone takes your bedtime",
+        "You want to sleep but find it difficult to end the session."
       ],
       [
-        "The task avoider",
-        "Your phone becomes available whenever work gets difficult."
+        "When you miss activities you used to enjoy",
+        "You want to spend more time on something meaningful and the feed keeps filling the gap."
       ]
     ],
     "cycle": [
-      "A cue or uncomfortable moment appears.",
-      "You open a feed and receive quick stimulation.",
-      "Time passes without a natural stopping point.",
-      "Regret or fatigue makes another escape attractive."
+      "You reach for your phone at an ordinary point in the day.",
+      "The feed offers immediate interest or distraction.",
+      "You continue beyond the reason you opened it.",
+      "You put the phone down regretting time you wanted elsewhere."
     ],
     "now": {
-      "title": "Make the next stop easier than the next swipe",
+      "title": "Give your next evening a choice",
       "paras": [
-        "You can keep useful digital contact while changing the feature that is consuming your time."
+        "Think about when scrolling usually begins. We can change the moment before it takes over."
       ],
       "steps": [
-        "Identify the moment scrolling begins without a deliberate choice.",
-        "Change one access cue or notification.",
-        "Put the activity you want to do next within easy reach."
+        "Find the cue that brings you to the feed.",
+        "Make that route less automatic.",
+        "Prepare something you'd genuinely like to do instead."
       ]
     },
     "roots": [
@@ -107,51 +107,51 @@ export const HABIT_EDITORIAL_C=[
     ],
     "mechanisms": [
       [
-        "Performance-based worth",
-        "Productivity may become evidence that you are valuable."
+        "When productivity becomes personal",
+        "You may rely on completed work to reassure yourself that you're valuable."
       ],
       [
-        "Relief from falling behind",
-        "Another hour of work briefly reduces pressure."
+        "When another task eases pressure",
+        "Working longer can quiet the worry that you're falling behind for a little while."
       ],
       [
-        "External demands",
-        "Insecure or unreasonable working conditions may maintain the pattern."
+        "When the job demands more than it should",
+        "Financial pressure or an employer's expectations may make ordinary boundaries difficult to keep."
       ]
     ],
     "profiles": [
       [
-        "The always-available worker",
-        "You respond outside agreed hours."
+        "When you cannot quite finish the day",
+        "You keep thinking of another task every time you try to stop."
       ],
       [
-        "The achievement chaser",
-        "Finishing one project only raises the next standard."
+        "When rest brings guilt",
+        "Doing nothing productive makes you question whether you've earned the time."
       ],
       [
-        "The anxious worker",
-        "Stopping makes you fear you have done too little."
+        "When work expects constant availability",
+        "You receive demands outside reasonable working hours and feel unable to decline."
       ],
       [
-        "The financially pressured worker",
-        "Long hours may be a necessity rather than a chosen compulsion."
+        "When relationships get the time that's left",
+        "People you care about see less of you because work repeatedly extends into your evenings."
       ]
     ],
     "cycle": [
-      "A demand or self-imposed standard appears.",
-      "You work longer to reduce pressure.",
-      "Rest and relationships receive less time.",
-      "Fatigue or rising expectations create further pressure."
+      "You work towards a demanding goal.",
+      "Finishing brings relief, which fades when another task appears.",
+      "You stay longer to quiet the pressure again.",
+      "Rest and relationships receive less time, leaving you increasingly depleted."
     ],
     "now": {
-      "title": "Set one realistic boundary around work",
+      "title": "Give the day a responsible ending",
       "paras": [
-        "A boundary must be compatible with real duties and your employment situation."
+        "Choose a low-risk point where you could finish work or arrange a handover."
       ],
       "steps": [
-        "Identify which demand actually requires your attention.",
-        "Set one finishing point or ask for a more realistic workload.",
-        "Choose one non-work activity that matters independently of performance."
+        "Identify what genuinely needs attention before leaving.",
+        "Make a realistic stopping or cover arrangement.",
+        "Protect a little time for life outside work."
       ]
     },
     "roots": [
@@ -202,51 +202,51 @@ export const HABIT_EDITORIAL_C=[
     ],
     "mechanisms": [
       [
-        "Attention switching costs",
-        "Changing tasks requires time to recover the original goal."
+        "When switching costs more than it seems",
+        "Each interruption can leave you trying to rebuild the thread of what you were doing."
       ],
       [
-        "Uncaptured reminders",
-        "Unfinished responsibilities repeatedly compete for attention."
+        "When reminders feel urgent",
+        "A new responsibility can take over because you're afraid you'll forget it if you wait."
       ],
       [
-        "Unclear completion",
-        "Tasks without a defined end are easy to abandon mid-way."
+        "When tasks have no clear ending",
+        "You may move away repeatedly because you cannot tell what counts as finished."
       ]
     ],
     "profiles": [
       [
-        "The tab hopper",
-        "Every new idea becomes another open task."
+        "When your day fills with half-finished work",
+        "You have been busy for hours and struggle to see a completed result."
       ],
       [
-        "The anxious prioritiser",
-        "You switch to whichever task feels most dangerous to neglect."
+        "When a new thought takes over",
+        "You leave one task to deal with another idea before it disappears."
       ],
       [
-        "The interrupted worker",
-        "Other people or systems repeatedly disrupt your focus."
+        "When everything feels time-sensitive",
+        "You struggle to judge which new responsibility can wait."
       ],
       [
-        "The executive-function struggler",
-        "Longstanding planning and attention problems may need support."
+        "When other people keep interrupting",
+        "Your workplace gives you little chance to follow one task to its end."
       ]
     ],
     "cycle": [
-      "You begin a task.",
-      "Another responsibility or cue appears.",
-      "You switch before completing the first.",
-      "More unfinished work increases mental load."
+      "You begin work you want to complete.",
+      "Another responsibility draws you away.",
+      "Returning requires you to recover the original task.",
+      "The day ends with several things begun and little finished."
     ],
     "now": {
-      "title": "Make finishing one unit possible",
+      "title": "Finish one recognisable piece of work",
       "paras": [
-        "A clear unit of work can be smaller than the task itself."
+        "Choose a result small enough to complete or deliberately pause during one session."
       ],
       "steps": [
-        "Choose one small result that would count as complete.",
-        "Put new reminders in an external place instead of immediately acting on them.",
-        "Finish or deliberately pause the unit with a note about where to resume."
+        "Define what counts as finished for that piece.",
+        "Write down non-urgent interruptions without following them.",
+        "Leave a clear note about where to resume if you must switch."
       ]
     },
     "roots": [
@@ -293,51 +293,51 @@ export const HABIT_EDITORIAL_C=[
     ],
     "mechanisms": [
       [
-        "Cue and learned reward",
-        "A familiar situation can prompt a behaviour associated with relief or pleasure."
+        "When a cue brings back an old response",
+        "A familiar feeling may become linked to a behaviour that has given you relief before."
       ],
       [
-        "Narrowed attention",
-        "A strong urge can make immediate rewards feel more important than later costs."
+        "When the urge narrows your attention",
+        "The immediate effect of acting can feel more compelling than a plan you made earlier."
       ],
       [
-        "Shame after a lapse",
-        "Harsh self-judgement can interfere with a practical review of what happened."
+        "When shame interrupts your recovery",
+        "After a lapse, harsh self-judgement can make it harder to examine what support was missing."
       ]
     ],
     "profiles": [
       [
-        "The stress responder",
-        "An urge arrives when emotion is intense."
+        "When the urge follows a familiar feeling",
+        "You notice the same pull after a difficult situation."
       ],
       [
-        "The cue-driven person",
-        "A familiar place or app quickly prompts action."
+        "When acting has become automatic",
+        "The behaviour begins before you've had much chance to consider it."
       ],
       [
-        "The lapse critic",
-        "One setback leads to abandoning the plan."
+        "When a lapse makes you want to give up",
+        "You feel that one episode has undone all your efforts."
       ],
       [
-        "The person facing dependency",
-        "Withdrawal or severe harm requires specialist support."
+        "When the behaviour needs specialist treatment",
+        "There may be dependence or obsessive fears that require a different kind of help."
       ]
     ],
     "cycle": [
-      "A cue or difficult feeling appears.",
-      "An urge promises relief or reward.",
-      "Acting provides an immediate consequence.",
-      "The pattern becomes easier to repeat later."
+      "A cue or uncomfortable feeling arrives.",
+      "The urge promises a familiar form of relief.",
+      "You act or struggle to resist without a usable plan.",
+      "The consequences bring shame and leave the original cue unchanged."
     ],
     "now": {
-      "title": "Create a safer response for the first minutes of an urge",
+      "title": "Choose a response suited to the urge",
       "paras": [
-        "If the behaviour carries immediate danger or medical withdrawal risk, seek appropriate urgent clinical support."
+        "The right next step depends on the behaviour and its risks. Seek clinical care for dependence or immediate danger."
       ],
       "steps": [
-        "Name the cue and what the urge promises.",
-        "Choose a safe short delay or environmental change that fits the behaviour.",
-        "Decide who to contact if the urge becomes unsafe or unmanageable."
+        "Notice the earliest sign that the urge is arriving.",
+        "Consider a safe change in access or support.",
+        "Decide who to contact when the behaviour needs specialised care."
       ]
     },
     "roots": [
@@ -388,51 +388,51 @@ export const HABIT_EDITORIAL_C=[
     ],
     "mechanisms": [
       [
-        "Pressure and consent",
-        "Decisions can be shaped by another person's influence or by fear of saying no."
+        "When pressure affects freedom to choose",
+        "Fear of disappointing another person can make saying no feel difficult or unsafe."
       ],
       [
-        "Immediate emotional needs",
-        "A choice may offer closeness or relief that feels important in the moment."
+        "When closeness is especially important",
+        "A sexual decision may seem to promise connection during a vulnerable moment."
       ],
       [
-        "Actual health risks",
-        "Protection, intoxication and access to timely care affect safety."
+        "When practical health care is urgent",
+        "Possible exposure or pregnancy risk may need timely advice irrespective of how you feel about the encounter."
       ]
     ],
     "profiles": [
       [
-        "The pressure agreer",
-        "You consent before checking what you actually want."
+        "When you agreed despite being unsure",
+        "You were uncomfortable with part of what happened and struggled to express it."
       ],
       [
-        "The loneliness responder",
-        "Sex can feel like the quickest route to closeness."
+        "When you want to understand a consensual decision",
+        "You chose the encounter freely and later realised it wasn't what you wanted."
       ],
       [
-        "The intoxicated decision-maker",
-        "Judgement may be affected by alcohol or other substances."
+        "When you're worried about sexual health",
+        "You need timely information about possible exposure or pregnancy risk."
       ],
       [
-        "The person facing coercion",
-        "Your ability to refuse or withdraw consent has been compromised."
+        "When the same decision keeps troubling you",
+        "You want more choice about what happens when you feel lonely or under pressure."
       ]
     ],
     "cycle": [
-      "A desire or interpersonal situation arises.",
-      "Immediate reward or pressure narrows reflection.",
-      "The encounter happens without all your needs being considered.",
-      "Regret or a health concern may follow."
+      "A sexual encounter begins under particular circumstances.",
+      "You make a choice or feel pressured as the moment develops.",
+      "Afterwards, you question what happened or what you wanted.",
+      "Worry returns unless safety and personal boundaries are addressed."
     ],
     "now": {
-      "title": "Protect your freedom to choose",
+      "title": "Protect your right to choose",
       "paras": [
-        "If there has been assault, coercion or a recent health exposure, seek appropriate support promptly."
+        "Begin with consent and any immediate health concerns. Your boundaries deserve respect."
       ],
       "steps": [
-        "Identify which boundary or choice you want to protect.",
-        "Choose a clear sentence or practical safeguard you could use beforehand.",
-        "Arrange sexual-health or safeguarding support where relevant."
+        "Consider whether your choice was freely made.",
+        "Seek prompt care if there's a time-sensitive health concern.",
+        "Decide what boundary or support you need moving forward."
       ]
     },
     "roots": [
