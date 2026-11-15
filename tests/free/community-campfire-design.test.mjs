@@ -40,7 +40,7 @@ test('feed topic filters operate on loaded real post content',()=>{
 
 test('feed labels and post actions use actual metadata, not invented engagement counts',()=>{
  const source=ui();
- assert.match(source,/post\.attachmentCount/);
+ assert.match(source,/p\.attachmentCount/);
  assert.match(source,/encodeURIComponent\(post\.id\)/);
  assert.match(source,/esc\(post\.title\)/);
  assert.match(source,/esc\(short\)/);
@@ -86,7 +86,7 @@ test('campfire artwork and accessible, responsive UI styles exist',()=>{
 test('the app loads and precaches community assets without changing data backend',()=>{
  const index=read('index.html'),worker=read('sw.js');
  assert.match(index,/ns-community-campfire\.css/);
- assert.match(index,/site\.mjs\?v=campfire-community-20261115/);
+ assert.match(index,/site\.mjs\?v=campfire-parity-20261115/);
  for(const name of ['ns-community-campfire.css','community-ui.mjs','community-art/campfire-hero.svg','community-art/lantern-seat.svg','community-art/campfire-card.svg']){
   assert.ok(worker.includes("'"+name+"'"),name+' precached');
  }
