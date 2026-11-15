@@ -594,6 +594,741 @@
       },
       "routing": "topic routes and legacy problem routes; education subsection return",
       "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "grief",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 468,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "breakup",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 450,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "transition",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 456,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "future",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 441,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "disappointment",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 444,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "adjustment-stress",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 480,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "anticipatory-grief",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 468,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "traumatic-loss",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 464,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "life-regret",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 473,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "uncertainty-future",
+      "area": "changes",
+      "domain": "change",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 433,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "complex-trauma-history",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 438,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "childhood-adversity",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 437,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "ambiguous-loss",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 448,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "disenfranchised-grief",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 424,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "pet-bereavement",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 434,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "illness-identity-loss",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 456,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "survivor-guilt",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 445,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "moral-injury-experience",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 434,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "trauma-reminders",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 445,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "medical-loss-grief",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 437,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "grief-after-suicide",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 445,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "collective-loss",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 423,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "trauma-recovery-pace",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 446,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "grief-anniversaries",
+      "area": "changes",
+      "domain": "trauma",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 431,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "adolescent-identity",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 465,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "emerging-adult-transition",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 438,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "moving-out-home",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 416,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "quarter-life-uncertainty",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 440,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "midlife-reassessment",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 438,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "ageing-anxiety",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 435,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "ageism",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 408,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "retirement-adjustment",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 450,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "loss-of-independence",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 433,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "end-of-life-anxiety",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 455,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "new-parent-identity",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 453,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "late-life-bereavement",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 439,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "menopause-life-change",
+      "area": "changes",
+      "domain": "lifespan",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 428,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "difficulty-feeling-joy",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 443,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "accepting-compliments",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 426,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "recognising-strengths",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 429,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "developing-autonomy",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 421,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "confidence-through-experience",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 452,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "creative-expression",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 455,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "play-and-rest",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 423,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "positive-transition",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 424,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "meaningful-contribution",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 445,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "celebrating-progress",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 427,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "healthy-identity-exploration",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 470,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "living-by-values",
+      "area": "changes",
+      "domain": "growth",
+      "guide": "ns-changes-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 461,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "direct workbook and legacy problem routes; exact changes subsection return",
+      "verification": "Original content and static assertions committed; GitHub CI under review"
     }
   ],
   "pendingIds": "Derived exactly at runtime by ns-catalogue-progress.mjs:pending; not duplicated as potentially stale JSON",
@@ -604,5 +1339,5 @@
     "Need verify GitHub Actions and browser tests; no live browser test has yet been performed.",
     "The live ledger now includes existing society, self-image and thirteen new work manuals; generic atlas fallbacks remain pending."
   ],
-  "lastStep": "The two missing subcatalogues of Work, learning & getting things done now have 29 dedicated long-form interactive guides; the other 15 motivation topics retain their existing manuals. CI running; later broad areas remain pending."
+  "lastStep": "Part 2 adds 49 new dedicated manuals for changes, trauma, lifespan and growth. Nine other related topics already retain relationship manuals. The final Money, technology & society quality pass remains."
 }
