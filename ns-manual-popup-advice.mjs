@@ -12,9 +12,9 @@ const identity=s=>normalise(s).toLocaleLowerCase().replace(/[.!?]+$/,'').replace
  * only their optional popup presentation is edited.
  */
 export function practicalPopupIdeas(guide,kind,{limit}={}){
- // Culture, Faith, Migration and the health catalogue use extended authored lists.
+ // Culture, Faith, Migration, Health and Access catalogues use complete authored twenty-item lists.
  // Other completed catalogues retain their existing twelve-item presentation.
- const maxItems=limit??(['culture','faith','migration','body','sexuality'].includes(guide?.domain)?20:12);
+ const maxItems=limit??(['culture','faith','migration','body','sexuality','neuro','disability'].includes(guide?.domain)?20:12);
  const list=guide?.ideas?.[kind];
  if(!Array.isArray(list))return [];
  const result=[],seen=new Set();
