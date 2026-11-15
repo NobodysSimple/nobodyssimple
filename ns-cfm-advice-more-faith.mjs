@@ -264,10 +264,10 @@ export const CFM_ADVICE_MORE_FAITH={
  'Decide whether the community’s welcome extends to people with your actual circumstances.'
  ],
  support:[
- 'Ask an organiser about informal gatherings where friendship can develop.',
+ 'Attend an optional social event after worship to see whether conversations extend beyond formal religious practice.',
  'Find a member who can explain attendance and volunteering expectations.',
  'Look for a congregation where questioning is treated respectfully.',
- 'Ask a trusted person to accompany you on a first visit.',
+ 'Ask whether there is a contact person who can explain the format before you attend.',
  'Discuss any earlier exclusion with a supportive person at your own pace.',
  'Find another group if a leader dismisses reasonable concerns about safety or consent.',
  'Ask whether a service is accessible in the language and format you need.',
