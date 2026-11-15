@@ -60,7 +60,7 @@ function articleFor(d,extra){
 }
 function makeExamples(d,article,profiles,roots){
  const sentencesPool=article.flatMap((s,i)=>sentences(s).map(x=>({s:x,section:i})))
-  .filter(x=>/you|your|people|someone|family|home|work|community|faith|migration|religion|job|place|language|belief|relative|person|organisation|institution/i.test(x.s)&&x.s.length>40&&x.s.length<250);
+  .filter(x=>x.s.length>28&&x.s.length<320);
  if(sentencesPool.length<16)fail(d.id,'not enough specific material to create 16 distinct worked cases');
  const used=new Set();
  const examples=[];
