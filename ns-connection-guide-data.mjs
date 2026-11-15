@@ -30,6 +30,7 @@ import {CONNECTION_SUPPORT_F} from './ns-connection-support-f.mjs';
 import {CONNECTION_SUPPORT_G} from './ns-connection-support-g.mjs';
 import {CONNECTION_SUPPORT_H} from './ns-connection-support-h.mjs';
 import {CONNECTION_SUPPORT_I} from './ns-connection-support-i.mjs';
+import {CONNECTION_WHY_INTROS} from './ns-connection-why-intros.mjs';
 
 const authored=[...RELATE_EDITORIAL_A,...RELATE_EDITORIAL_B,...RELATE_EDITORIAL_C,...RELATE_EDITORIAL_D,
  ...SOCIAL_EDITORIAL_A,...SOCIAL_EDITORIAL_B,...SOCIAL_EDITORIAL_C,...CONNECTION_EDITORIAL_A,...CONNECTION_EDITORIAL_B];
@@ -42,6 +43,7 @@ const fail=(id,message)=>{throw new Error('Relationship manual '+id+': '+message
 function build(d){
  const id=d.id,w=work[id];
  if(!w)fail(id,'missing authored journals');
+ if(!CONNECTION_WHY_INTROS[id]||CONNECTION_WHY_INTROS[id].length<200)fail(id,'missing authored formulation introduction');
  if(d.article?.length!==10||d.article.join(' ').trim().split(/\s+/).length<400)fail(id,'missing longform article');
  if(d.mechanisms?.length!==3||d.profiles?.length!==4||d.now?.steps?.length!==3||!d.sources?.length||!d.safety)fail(id,'missing editorial elements');
  if(w.routes?.length!==4||w.why?.length!==10||w.cases?.length!==4||w.cases.some(g=>g.length!==4))fail(id,'incomplete individualised routes or examples');
@@ -75,7 +77,7 @@ function build(d){
  return Object.freeze({...d,cycle,roots,routes,
   ideas:{actions,support},
   prominentSafety:urgentIds.has(id)?d.safety:'',
-  whyIntro:d.article[2]+' '+d.article[3],
+  whyIntro:CONNECTION_WHY_INTROS[id],
   whyQuestions:w.why,whyCases:examples,whyStages:stages,pullIndex:5,
   evidence:d.sources.length>1?
     'This guide explores the possible psychological process described in its article. Its suggestions are educational and need to be judged against the actual relationship. The linked resources provide further relevant guidance.':
