@@ -29,7 +29,7 @@ test('sleep uses the dedicated manual on direct and workbook routes',()=>{
  assert.match(site,/bodyGuideIds\.has\(key\)\)showBodyGuide\(key\)/);
  assert.match(site,/bodyGuideIds\.has\(options\.topic\)/);
  assert.match(site,/bodyGuideIds\.has\(selected\.target\)/);
- assert.match(renderer,/#navigate\/atlas\/body/);
+ assert.match(renderer,/#navigate\/area\/health\/body/);
 });
 
 test('fatigue manual distinguishes clinical, workload and exertion pathways',()=>{
