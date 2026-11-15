@@ -1329,6 +1329,231 @@
       },
       "routing": "direct workbook and legacy problem routes; exact changes subsection return",
       "verification": "Original content and static assertions committed; GitHub CI under review"
+    },
+    {
+      "id": "online-harassment",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 499,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "online-privacy",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 472,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "parasocial-relationships",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 472,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "online-dating-distress",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 449,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "online-friendship-conflict",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 440,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "pornography-related-distress",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 470,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "pornography-expectations",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 437,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "problematic-gaming",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 466,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "algorithmic-comparison",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 439,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "online-misinformation",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 410,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "ai-related-anxiety",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 462,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "digital-overload",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 445,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "phone-relationship-conflict",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 426,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "online-radicalisation-concern",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 414,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
+    },
+    {
+      "id": "nonconsensual-digital-sharing",
+      "area": "society",
+      "domain": "digital",
+      "guide": "ns-digital-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 442,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook and legacy problem paths; Digital life subsection return",
+      "verification": "Structural tests authored and CI under review"
     }
   ],
   "pendingIds": "Derived exactly at runtime by ns-catalogue-progress.mjs:pending; not duplicated as potentially stale JSON",
@@ -1337,7 +1562,55 @@
     "Existing dedicated manuals are counted in the live ledger; generic atlas fallbacks remain pending.",
     "The body-domain return link was added to the shared renderer.",
     "Need verify GitHub Actions and browser tests; no live browser test has yet been performed.",
-    "The live ledger now includes existing society, self-image and thirteen new work manuals; generic atlas fallbacks remain pending."
+    "The live ledger now includes existing society, self-image and thirteen new work manuals; generic atlas fallbacks remain pending.",
+    "Audit correction: previously only Cyberbullying had a dedicated digital manual. The other 15 were generic atlas fallbacks; Part 3 authors them and updates the canonical completion ledger."
   ],
-  "lastStep": "Part 2 adds 49 new dedicated manuals for changes, trauma, lifespan and growth. Nine other related topics already retain relationship manuals. The final Money, technology & society quality pass remains."
+  "lastStep": "Part 3: corrected the audit's earlier overcount of Digital guides. Added 15 missing dedicated Digital manuals, preserved Cyberbullying, deepened 33 existing Money and Environment manuals; exact live society coverage now planned as 49/49 (22 inequality, 16 digital, 11 environment). CI and browser verification underway.",
+  "societyQualityPass": {
+    "revisedExistingCount": 33,
+    "revisedExistingIds": [
+      "poverty-shame",
+      "class-discrimination",
+      "food-insecurity",
+      "insecure-employment",
+      "benefits-stress",
+      "housing-discrimination",
+      "debt-coercion",
+      "social-mobility-pressure",
+      "financial-dependence",
+      "economic-inequality",
+      "homelessness-insecurity",
+      "living-cost-pressure",
+      "care-costs",
+      "debt-repayment-anxiety",
+      "financial-exploitation",
+      "sexism",
+      "misogyny",
+      "gendered-double-standards",
+      "pregnancy-discrimination",
+      "workplace-sexism",
+      "sexual-objectification",
+      "gender-role-pressure",
+      "climate-anxiety",
+      "eco-grief",
+      "war-conflict-distress",
+      "community-violence",
+      "neighbourhood-insecurity",
+      "political-uncertainty",
+      "institutional-trust-loss",
+      "loss-of-community",
+      "collective-injustice",
+      "disaster-recovery",
+      "public-health-fears"
+    ],
+    "addedIndividualExplanationWordsPerGuide": "at least 65",
+    "newIndividuallyAuthoredActionsPerGuide": 4,
+    "totalAdditionalIndividuallyAuthoredActions": 132,
+    "contentModule": [
+      "ns-society-revisions-inequality-a.mjs",
+      "ns-society-revisions-inequality-b.mjs",
+      "ns-society-revisions-environment.mjs"
+    ],
+    "privacy": "All digital journals now private; selected sensitive society journals opt out of persistence."
+  }
 }
