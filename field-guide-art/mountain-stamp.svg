@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="210" height="155" viewBox="0 0 210 155" role="img" aria-label="Tiny watercolor mountain postcard">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#bcd9df"/><stop offset="1" stop-color="#f7e5c8"/></linearGradient></defs>
+<path d="M3 3H207V152H3Z" fill="#fff7e7" stroke="#dfceac" stroke-width="3" stroke-dasharray="5 3"/>
+<rect x="13" y="13" width="184" height="129" rx="3" fill="url(#sky)"/>
+<circle cx="162" cy="50" r="18" fill="#f7ce7a"/>
+<path d="M13 99L49 66L83 93L120 49L154 82L181 59L197 76V142H13Z" fill="#9eb6a4"/>
+<path d="M13 119L63 86L109 116L156 90L197 108V142H13Z" fill="#7f9f8e"/>
+<path d="M13 139Q59 110 104 132T197 130V142H13Z" fill="#b7ba86"/>
+<path d="M104 142Q94 126 114 118T126 108" stroke="#f1e5c5" stroke-width="12" fill="none" opacity=".78"/>
+<g fill="#6d9279"><path d="M34 124l7 -20 8 20h-3l4 11H32l4 -11z"/><path d="M166 119l8 -22 8 22h-3l5 12H161l6 -12z"/></g>
+</svg>
