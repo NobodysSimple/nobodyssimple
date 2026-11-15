@@ -12,8 +12,8 @@ test('the new Learn page is deliberately courses-only and uses ten original subj
   assert.equal(course.status,'planned');
   assert.ok(course.title.length>4);
   assert.ok(course.description.length>26);
-  assert.ok(course.landscape.endsWith('.webp')&&course.mascot.endsWith('.webp'));
-  assert.match(read('sw.js'),/nobodyssimple-release-v204-learn-course-hub/);
+  assert.ok(/\.(?:webp|svg)$/.test(course.landscape)&&course.mascot.endsWith('.webp'));
+  assert.match(read('sw.js'),/nobodyssimple-release-v205-learn-artfix/);
  }
 });
 test('all asset paths used by Learn already exist in the public repository',()=>{
@@ -21,7 +21,7 @@ test('all asset paths used by Learn already exist in the public repository',()=>
   assert.ok(existsSync(new URL('../../'+course.landscape,import.meta.url)),course.landscape);
   assert.ok(existsSync(new URL('../../'+course.mascot,import.meta.url)),course.mascot);
  }
- for(const art of ['ns-landscape-learn.webp','ns-prop-book.webp','ns-prop-cup.webp','ns-forest-foliage-left.webp','ns-forest-foliage-right.webp']){
+ for(const art of ['learn-art/scenery-hero.svg','learn-art/scenery-featured.svg','learn-art/scenery-emotions.svg','learn-art/scenery-relationships.svg','learn-art/scenery-boundaries.svg','learn-art/scenery-focus.svg','learn-art/scenery-communication.svg','ns-forest-foliage-left.webp','ns-forest-foliage-right.webp']){
   assert.ok(existsSync(new URL('../../'+art,import.meta.url)),art);
  }
 });

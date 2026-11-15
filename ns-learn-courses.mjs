@@ -5,18 +5,20 @@
  * writing entry and 2026/27 curriculum are deliberately not mounted here.
  * These are illustrations of potential course subjects, NOT published lessons.
  * No completion counts, points or course availability are invented.
+ * Each scene is artwork without a mascot; each card adds one separate subject
+ * illustration only. Existing scenic-only compositions remain unchanged.
  */
 export const LEARN_COURSE_IDEAS=Object.freeze([
   {id:'self-trust',title:'Self-Trust',description:'Practise making decisions and giving your judgement a fair chance.',landscape:'ns-landscape-sunset.webp',mascot:'ns-character-meditate.webp',tone:'peach'},
   {id:'overthinking',title:'Overthinking',description:'Understand the thinking loops that leave you feeling stuck.',landscape:'ns-landscape-clouds.webp',mascot:'ns-character-thinking.webp',tone:'blue'},
-  {id:'emotions',title:'Emotions',description:'Make sense of feelings without forcing a perfect explanation.',landscape:'ns-landscape-feel.webp',mascot:'ns-character-helping.webp',tone:'gold'},
-  {id:'relationships',title:'Relationships',description:'Understand connection, communication and the patterns between people.',landscape:'ns-landscape-relate.webp',mascot:'ns-character-friends.webp',tone:'sage'},
-  {id:'boundaries',title:'Boundaries',description:'Explore limits that respect your needs and other people.',landscape:'ns-landscape-choose.webp',mascot:'ns-character-shield.webp',tone:'sage'},
+  {id:'emotions',title:'Emotions',description:'Make sense of feelings without forcing a perfect explanation.',landscape:'learn-art/scenery-emotions.svg',mascot:'ns-character-helping.webp',tone:'gold'},
+  {id:'relationships',title:'Relationships',description:'Understand connection, communication and the patterns between people.',landscape:'learn-art/scenery-relationships.svg',mascot:'ns-character-friends.webp',tone:'sage'},
+  {id:'boundaries',title:'Boundaries',description:'Explore limits that respect your needs and other people.',landscape:'learn-art/scenery-boundaries.svg',mascot:'ns-character-shield.webp',tone:'sage'},
   {id:'confidence',title:'Confidence',description:'Build a steadier relationship with mistakes and uncertainty.',landscape:'ns-landscape-mountains.webp',mascot:'ns-character-hiking.webp',tone:'sky'},
   {id:'habits',title:'Habits',description:'Make useful behaviours easier to repeat without relying on willpower alone.',landscape:'ns-landscape-calm.webp',mascot:'ns-character-checklist.webp',tone:'gold'},
   {id:'uncertainty',title:'Uncertainty',description:'Find room to move when the future cannot be guaranteed.',landscape:'ns-landscape-path.webp',mascot:'ns-character-sitting.webp',tone:'sky'},
-  {id:'focus',title:'Focus',description:'Work with your attention, energy and environment.',landscape:'ns-landscape-desk.webp',mascot:'ns-character-writing.webp',tone:'sage'},
-  {id:'communication',title:'Communication',description:'Learn to say what matters and listen for what is meant.',landscape:'ns-landscape-relate.webp',mascot:'ns-character-message.webp',tone:'peach'}
+  {id:'focus',title:'Focus',description:'Work with your attention, energy and environment.',landscape:'learn-art/scenery-focus.svg',mascot:'ns-character-writing.webp',tone:'sage'},
+  {id:'communication',title:'Communication',description:'Learn to say what matters and listen for what is meant.',landscape:'learn-art/scenery-communication.svg',mascot:'ns-character-message.webp',tone:'peach'}
 ].map(course=>Object.freeze({...course,status:'planned'})));
 
 function image(source,cls='',extra=''){
@@ -53,8 +55,6 @@ export function renderCourseHub(root,{focusCourses=false}={}){
    <div class="ns-courses-hero__figure" aria-hidden="true">
      <div class="ns-courses-picnic"></div>
      ${image('ns-character-reading.webp','ns-courses-hero__mascot','fetchpriority="high"')}
-     ${image('ns-prop-book.webp','ns-courses-hero__book')}
-     ${image('ns-prop-cup.webp','ns-courses-hero__cup')}
    </div>
   </section>
 
@@ -62,9 +62,8 @@ export function renderCourseHub(root,{focusCourses=false}={}){
    <section class="ns-courses-feature" aria-labelledby="ns-courses-featured-title">
      <span class="ns-courses-feature__label">FEATURED COURSE IDEA</span>
      <div class="ns-courses-feature__visual" aria-hidden="true">
-       ${image('ns-landscape-sunset.webp','ns-courses-feature__scene')}
-       ${image('ns-character-meditate.webp','ns-courses-feature__character')}
-       <span class="ns-courses-feature__sun">✺</span>
+       ${image('learn-art/scenery-featured.svg','ns-courses-feature__scene')}
+       ${image('ns-character-plant.webp','ns-courses-feature__character')}
      </div>
      <div class="ns-courses-feature__copy">
        <span class="ns-courses-feature__category">A FUTURE COURSE · SELF-TRUST</span>

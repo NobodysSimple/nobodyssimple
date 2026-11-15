@@ -62,3 +62,26 @@ test('Learn course hub contains no serious or critical automated accessibility v
  const results=await new AxeBuilder({page}).include('.ns-courses-hub').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
  expect(results.violations.filter(item=>['serious','critical'].includes(item.impact)),JSON.stringify(results.violations,null,2)).toEqual([]);
 });
+
+
+test('scenery-only art avoids giant ghost mascots and multi-character background collisions',async({page})=>{
+ await page.goto('/index.html#learn');
+ const hero=page.locator('.ns-courses-hero');
+ await expect(hero).toBeVisible();
+ expect(await hero.evaluate(el=>getComputedStyle(el).backgroundImage)).toContain('scenery-hero.svg');
+ await expect(hero.locator('.ns-courses-hero__figure img')).toHaveCount(1);
+ await expect(page.locator('.ns-courses-feature__visual img')).toHaveCount(2);
+ for(const id of ['emotions','relationships','boundaries','focus','communication']){
+  const card=page.locator('[data-course-subject="'+id+'"]');
+  await expect(card.locator('img')).toHaveCount(2);
+  await expect(card.locator('.ns-course-card__landscape')).toHaveAttribute('src','learn-art/scenery-'+id+'.svg');
+  await expect(card.locator('.ns-course-card__character')).toBeVisible();
+  const image=card.locator('.ns-course-card__landscape');
+  await expect.poll(()=>image.evaluate(el=>el.complete&&el.naturalWidth>0)).toBe(true);
+ }
+ for(const name of ['hero','featured','emotions','relationships','boundaries','focus','communication']){
+  const res=await page.request.get('/learn-art/scenery-'+name+'.svg');
+  expect(res.status(),name).toBe(200);
+  expect((await res.text()).includes('<svg'),name).toBe(true);
+ }
+});
