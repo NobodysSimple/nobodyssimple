@@ -209,38 +209,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "learning": {
     "addition": [
-      "A powerful explanation can become comforting precisely because it seems to put an end to uncertainty. Perhaps you find a description of attachment styles and begin using it to interpret every disagreement. The next time a relationship feels difficult, the label arrives before the facts. This is worth noticing. Psychological language should help you investigate a situation, not prevent you from seeing what actually happened in front of you.",
-      "Try treating your favourite explanation as a working idea. Write down one observation that supports it, then ask what you would expect to see if a different explanation were true. You may find the evidence is incomplete. That is a useful discovery, especially when the explanation has shaped how you treat yourself or another person. You can still change a behaviour today without settling the complete history of why it began."
+      "Perhaps the search began because an explanation once made you feel understood in a way you hadn't before. That feeling can be powerful. It makes sense to hope the next idea will finally resolve something that has troubled you for years. The trouble comes when every ordinary reaction starts demanding a theory, especially when those theories leave you feeling that there's something you need to fix about yourself.",
+      "If the same question keeps returning, try asking what you want the answer to let you do. You may be hoping to feel comfortable with a preference. Perhaps you want to respond differently in a relationship. Those are useful aims. You can decide which action would help and test it in everyday life. It may be possible to make that change while you continue to think about the larger question."
     ],
-    "why": "Wanting to understand yourself is reasonable. Sometimes the search becomes painful because every new explanation promises the final answer and then raises another question. The examples explore whether you are gathering useful evidence, seeking reassurance through labels or trying to find a choice that fits what matters to you. A good explanation should remain open to correction when life shows you something new.",
+    "why": "You may be searching for an explanation because a part of your experience has been difficult to accept or make sense of. Psychology can help you examine what happens in a particular situation. A description you've read online may fit some aspects of your experience and miss others. We can look at what made that description persuasive and whether it helps you make a decision. If you've begun checking one explanation after another, consider what you hope the search will finally settle. Sometimes an answer remains open while a helpful next action is already available.",
     "hints": [
-      "Start with a behaviour you can describe without naming a personality trait.",
-      "Separate what you observed from the explanation you have been using.",
-      "Notice whether the explanation changed your next action or merely gave a moment of certainty.",
-      "Choose a fair test or practical action without requiring one final story about yourself."
+      "Tell me about one response you want to understand. Try describing what happened before giving it a label.",
+      "What made you believe your current explanation? Think about what you've actually observed.",
+      "Has reading about this helped you act differently? You can mention if it mostly left you with more questions.",
+      "What is one choice you could make even if you were still uncertain about the underlying explanation?"
     ],
     "routes": {
-      "observe": "A single behaviour is a better starting point than a diagnosis you found online. Keep the description narrow.",
-      "evidence": "An attractive theory earns trust through its evidence and limits, not through how strongly you recognise yourself in it.",
-      "compare": "Several explanations may fit the same event. Look for observations that would help distinguish them.",
-      "agency": "If the explanation is useful, it should help you choose what to do differently in the next real situation."
+      "observe": "Let's begin with something you've actually experienced. It will give us a better basis for understanding what may have been happening.",
+      "evidence": "We'll examine a psychological claim you've come across and work out how much confidence it deserves.",
+      "compare": "There may be several ways to account for what happened. We'll look at what evidence would help you tell them apart.",
+      "agency": "If you've already spent time analysing this, I'd like you to leave with a decision you can use in real life."
     },
     "roots": {
       "understanding": [
-        "Collecting labels may offer a coherent story when a confusing experience has been hard to describe.",
-        "Ask which specific behaviour the idea explains and what it fails to account for."
+        "Finding a label can give shape to a confusing experience and make it easier to discuss. You may return to it when new doubts arise.",
+        "Ask which parts of the explanation fit what you've observed. Be willing to leave the parts you cannot support unanswered."
       ],
       "agency": [
-        "Researching motives may create a sense of control over an experience that currently feels hard to influence.",
-        "Identify what you can practise or change today even if the original cause remains uncertain."
+        "Researching possible causes may help you feel there is something you can do about an experience that seems difficult to control.",
+        "Choose a change you can make in the next situation. Its usefulness can be tested even when the original cause remains uncertain."
       ],
       "certainty": [
-        "A compelling label may briefly end the discomfort of not knowing, leading you to search again when doubt returns.",
-        "Give a hypothesis a provisional status. More reading is only useful if it could change a concrete conclusion."
+        "A convincing theory can offer temporary relief from an unanswered question. You may start searching again when another possibility occurs to you.",
+        "Consider what information could genuinely change your view. You can allow your explanation to remain provisional."
       ],
       "values": [
-        "An explanation can help you feel consistent with your values or protect an important image of yourself.",
-        "Notice whether the interpretation helps you act fairly toward yourself and other people, including when it is uncomfortable."
+        "A theory may help you feel more at ease with a part of yourself or defend how you've acted in the past.",
+        "Think about whether the explanation helps you behave in a way you respect. You can reconsider it if it stops fitting your experience."
       ]
     },
     "supportMore": [
@@ -260,38 +260,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "hyperactivity": {
     "addition": [
-      "People sometimes see movement as a statement about them. A teacher may think you are ignoring instructions, or a colleague may assume you are impatient to leave. You might then spend the whole meeting holding your body still to avoid giving the wrong impression. It is difficult to follow a discussion while using so much effort to control where your feet are. Explaining a simple movement need can be part of making participation possible.",
-      "It helps to distinguish movement that supports your attention from restlessness that feels frightening or new. Pacing while listening might be useful. An abrupt, unbearable urge to move after changing medication is a different concern and merits medical review. You can keep a record of when the feeling starts and what changes it, without deciding in advance that one diagnosis must explain it."
+      "I wonder how often you've felt you had to apologise for the way your body behaves. When other people treat small movements as a problem, you can begin noticing every time you shift position. That awareness follows you into situations where you'd like to relax. It can be difficult to feel comfortable when you're constantly checking whether you're disturbing somebody.",
+      "One useful question is what happens to your attention after you move. Perhaps a short walk lets you return to the discussion. Maybe pacing makes a phone call easier to follow. If movement helps, you can think about how to include it safely in the setting. If it makes you lose an activity you care about, we can look at where a planned break might work better."
     ],
-    "why": "Restlessness does not have one meaning. It may help someone stay alert in a slow setting, rise with anxiety or appear alongside a medication or health change. The people around you may respond to the visible movement without seeing what happens when you try to suppress it. These examples help examine that relationship while making room for access needs and medical concerns.",
+    "why": "I'd like to know what it feels like when you try to stay still. Does the urge to move become stronger until it consumes your attention? Does movement help you listen? Perhaps the restlessness appears at times when you're anxious. A recent change in the feeling may point towards something that needs medical attention. We can look at the setting and what happens when you move. The examples are intended to help you ask for a workable arrangement or seek assessment when the pattern is concerning.",
     "hints": [
-      "Recall when the need to move first became noticeable. What was the setting asking of you?",
-      "Notice whether movement helped you follow what was happening or interrupted it.",
-      "What happened when you tried to stay completely still?",
-      "Choose a safe accommodation or a health review when the change is new or severe."
+      "Choose a situation where sitting still became difficult. What was expected of you there?",
+      "Describe the urge to move as you experienced it. What happened when you were allowed to move?",
+      "How did you manage the situation? You may have been trying to hide the movement from other people.",
+      "What change would let you participate comfortably? If the restlessness is suddenly severe, consider medical review."
     ],
     "routes": {
-      "context": "Map the setting and the kind of movement you need before deciding anything should be suppressed.",
-      "accommodate": "A small adjustment can make participation possible without disturbing the people around you.",
-      "health": "A sudden change in agitation, sleep or medication effects deserves careful assessment rather than an assumption.",
-      "participate": "Look for movement that supports the activity and preserves your ability to listen or respond."
+      "context": "We'll look at when the urge to move appears and what it helps you manage. You may recognise a useful pattern.",
+      "accommodate": "Let's find an adjustment that would allow you to take part without spending the whole time trying to stay still.",
+      "health": "If the restlessness is new or has become disturbing, we'll gather what you need to describe it to a clinician.",
+      "participate": "We'll look for a way to move that helps you stay involved in an activity that matters to you."
     },
     "roots": {
       "movement": [
-        "Moving may regulate discomfort or help sustain alertness during prolonged stillness.",
-        "Notice the difference between harmless movement that helps and activity that creates problems needing a practical adjustment."
+        "Moving can ease physical discomfort when staying in one position has become hard to tolerate.",
+        "Think about what kind of movement feels helpful and whether it can be accommodated in the setting."
       ],
       "access": [
-        "Leaving a setting may briefly relieve the discomfort of rules that allow no movement.",
-        "A standing option or agreed break could change what participation requires."
+        "Leaving a setting can bring relief when its rules require you to suppress every movement.",
+        "Consider asking for a standing option or an agreed break so you can take part with less strain."
       ],
       "attention": [
-        "Pacing or fidgeting may make it easier to remain mentally involved in a conversation or task.",
-        "Test whether a quiet movement support helps you stay with the content, while respecting others' access needs."
+        "A quiet movement may help you stay alert during a long explanation or conversation.",
+        "Try one form of movement that suits the setting. Notice whether following the discussion becomes easier."
       ],
       "health": [
-        "Trying to escape the setting may relieve intense physical agitation for a moment.",
-        "If the restlessness is new, severe or associated with a medication change, seek assessment of possible physical contributors."
+        "Walking around may give momentary relief from intense agitation, even if the uncomfortable feeling returns soon afterwards.",
+        "New severe restlessness deserves medical assessment, particularly after changes in medication or sleep."
       ]
     },
     "supportMore": [
@@ -311,38 +311,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "attention-drift": {
     "addition": [
-      "What often hurts is the meaning other people give the lapse. You might miss part of a story told by somebody you love and then worry they will think you were not listening. The embarrassment can pull you away from the next sentence as well. If this happens, it may help to ask for the last point again instead of pretending you heard everything. A brief request can protect the connection you are trying to maintain.",
-      "There is a difference between preventing every drift and being able to recover quickly. You cannot guarantee that your attention will stay in one place for an hour. You can learn to recognise the moment the thread disappeared and create a marker to return to. In studying, a question at the end of each small section can do that. In conversation, it may be asking somebody to repeat the decision that matters."
+      "Perhaps you've begun to worry that somebody will interpret a missed sentence as a lack of care. That worry can make you hesitant to ask them to repeat themselves. Over time, you might start avoiding the conversations you most want to have because you're tired of being misunderstood. I think it matters that the relationship is important to you, even if your attention sometimes moves away from it.",
+      "Try agreeing a way of asking for clarification with somebody you trust. You could explain that you sometimes lose a few words and would rather ask again than pretend you've followed. This may take the pressure out of those moments. With written material, a note about the last idea you understood can serve the same purpose without needing another person."
     ],
-    "why": "When attention drifts, there is often a second difficulty: finding the thread again without becoming ashamed. The task may be too passive or too demanding. A thought may have taken over at an awkward moment. These examples help you identify both the reason for drifting and the re-entry support that could make the next lapse less disruptive.",
+    "why": "The moment you notice you've drifted can be more difficult than the lapse itself. You may feel embarrassed and begin guessing what you missed. If the explanation continues, catching up becomes harder. We can look at the point where the thread disappeared. Perhaps the material moved too quickly. Perhaps a private worry drew your attention away. What would have helped you return? The examples can help you find a way to recover that fits the situation you're in.",
     "hints": [
-      "Find the last sentence, instruction or moment you remember understanding.",
-      "What happened immediately before the thread disappeared?",
-      "Notice your response: guessing, pretending to follow, rereading or asking for clarification.",
-      "Choose a return marker that fits this task, rather than a rule to concentrate harder."
+      "Think of a time when you missed part of something important. What was the last part you understood?",
+      "Was there a moment when the explanation became unclear or another thought took over?",
+      "What did you do after noticing the gap? You can tell me if you felt too embarrassed to ask.",
+      "What could help you rejoin the activity next time? Choose something you could use in that setting."
     ],
     "routes": {
-      "marker": "Give yourself a place to re-enter. A brief marker is more useful than rewriting the whole task.",
-      "difficulty": "Ask whether the material needs more challenge or clearer steps. The same drifting behaviour can arise for different reasons.",
-      "thought": "An internal concern may need its own moment later. Record it without abandoning the task at hand.",
-      "feedback": "A short recall attempt can reveal where understanding ended without turning study into constant testing."
+      "marker": "We'll find a place where you can safely pick up the thread after your attention has moved away.",
+      "difficulty": "If you keep losing an explanation, we'll check which part you can follow and where you need more help.",
+      "thought": "We'll give the competing concern somewhere to wait so you can return to what you're doing.",
+      "feedback": "A brief recall attempt may show you where understanding was lost. We'll keep it small enough to be useful."
     },
     "roots": {
       "engagement": [
-        "Changing tasks may provide the interest or feedback missing from the original activity.",
-        "Make the task more active or define a question that gives attention something specific to follow."
+        "Changing activities can bring immediate interest when the original task offers little to hold your attention.",
+        "Give the task a question you want answered. Notice whether that helps you stay engaged."
       ],
       "clarity": [
-        "Looking away or starting over may relieve confusion when the material has lost its thread.",
-        "Return to the last point you genuinely understood and ask for the missing step."
+        "Starting the material again can feel easier than continuing when you no longer understand what's being said.",
+        "Return to the last point you understood. Ask for the missing step or find a worked example."
       ],
       "worry": [
-        "Mentally reviewing a concern may seem important because leaving it unresolved feels risky.",
-        "Capture the actionable part of the thought for later and return to the present question if it is safe to do so."
+        "Returning to a concern may feel necessary when you fear something important will be forgotten.",
+        "Write down the next action the concern requires, if there is one. Then try returning to the current activity."
       ],
       "support": [
-        "Pretending to follow may protect you from the embarrassment of needing instructions repeated.",
-        "A written summary or permission to ask for clarification can make re-entry much easier."
+        "Pretending you've followed may spare you embarrassment in the moment, even when it leaves you further behind.",
+        "Ask whether a written summary or a chance to request clarification would help you participate more comfortably."
       ]
     },
     "supportMore": [
@@ -362,38 +362,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "hyperfocus-cost": {
     "addition": [
-      "You may have been praised for the very behaviour that is exhausting you. Someone sees the finished piece of work and calls your concentration a gift. They cannot see the meal you missed, the message you forgot or how difficult it was to stop when you wanted to. That conflict matters. Enjoying an interest and needing help to disengage can both be true.",
-      "Think about what stopping threatens. If you are afraid the idea will disappear, leave yourself a short resumption note. If you keep going because the next small reward is close, arrange a stopping point outside the reward loop. If an essential care duty is at risk, make the safeguard strong enough to work even when you are absorbed. None of this requires giving up the pleasure or meaning that the activity provides."
+      "Sometimes stopping can feel like losing access to a part of yourself that you enjoy. If you're often interrupted during the day, the periods when you become completely immersed may be especially precious. You might resent anyone who asks you to leave the activity. That reaction may be telling you how much the time means to you. It can also make everyday commitments difficult to protect.",
+      "I'd like you to plan for the moment when leaving usually feels hardest. If you're midway through solving something, record where you reached and what you intend to try next. If you keep extending the session because another reward is close, choose a cue that breaks into the activity before that point. Try it during a low-stakes session and see whether it works."
     ],
-    "why": "Deep absorption may make an activity absorbing enough that outside signals lose their pull. Leaving can be difficult because you expect to lose your place, because the next reward is close or because stopping feels unfinished. The examples look at what makes the transition costly. The goal is to preserve an interest while protecting the needs that cannot safely wait.",
+    "why": "You may feel caught between wanting to spend more time with something you love and knowing that other parts of your life need your attention. I'd like to understand what happens when you decide to stop. Do you worry that the idea will disappear? Does finishing the next part feel irresistible? Perhaps you miss the cue entirely until much later. The examples explore those moments so you can protect important responsibilities and still make room for the activities you enjoy.",
     "hints": [
-      "Choose one session when stopping happened later than you intended.",
-      "Notice what you expected to lose if you stopped at the planned time.",
-      "What happened to meals, sleep or important responsibilities during that session?",
-      "Choose an exit cue and a resumption note that you can realistically use."
+      "Think of a time you stayed absorbed longer than you intended. What was holding your attention?",
+      "What made leaving difficult at the planned time? It may have been hard to find a satisfying pause.",
+      "What happened afterwards? Include any responsibility or bodily need that was missed.",
+      "What cue or stopping arrangement might have worked in that situation?"
     ],
     "routes": {
-      "exit": "Decide what finishing for now means before the task begins to absorb you.",
-      "needs": "For essential health or care needs, use safeguards reliable enough to function when you miss ordinary notifications.",
-      "transition": "A good resumption note can make leaving easier when you are afraid of losing a promising idea.",
-      "balance": "You may keep the activity you love while giving the rest of your day a dependable place."
+      "exit": "We'll choose a stopping point you can recognise before you begin. It should be realistic for the activity you enjoy.",
+      "needs": "If meals or important responsibilities disappear while you're absorbed, let's put dependable safeguards around them.",
+      "transition": "If you're afraid you'll lose your train of thought, we'll make returning easier before you stop.",
+      "balance": "We can protect time for an activity that matters to you and leave enough room for the rest of your day."
     },
     "roots": {
       "reward": [
-        "Continuing may offer another satisfying step or visible improvement when the activity keeps producing immediate feedback.",
-        "Choose a natural pause that does not depend on finishing every enticing next part."
+        "The activity continues to offer something satisfying, which makes one more step especially tempting.",
+        "Find a pause you can recognise before the next reward arrives. Test whether the cue actually reaches you."
       ],
       "transition": [
-        "Staying in the activity may protect you from the cost of reconstructing your progress later.",
-        "Write down exactly where and how to resume, so stopping does not require abandoning the idea."
+        "Staying longer can spare you the effort of recovering an unfinished idea later.",
+        "Leave yourself a short note about the exact point where you'll resume. Notice whether ending the session becomes easier."
       ],
       "needs": [
-        "Remaining absorbed can make interruptions feel remote until hunger, medication or responsibilities become urgent.",
-        "Use a proportionate backup for essential needs, especially where missing one could create danger."
+        "Deep involvement can keep hunger or outside responsibilities out of your attention until they become urgent.",
+        "Arrange safeguards that still work while you're absorbed. For health or caring duties, seek reliable backup support."
       ],
       "control": [
-        "Continuing may preserve the unusual pleasure of being fully engaged when daily life often feels interrupted.",
-        "Give yourself a say over both beginning and ending the activity; autonomy includes a reliable exit."
+        "Remaining immersed can preserve a rare feeling of freedom when your day is otherwise filled with interruptions.",
+        "Protect a chosen period for the activity and agree with yourself how it will end. You may need more room for transitions."
       ]
     },
     "supportMore": [
