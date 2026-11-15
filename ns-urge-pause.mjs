@@ -91,7 +91,7 @@ export function renderNSUrgePause(main) {
     const action=click.dataset.urgeAction;
     if(action==='demo')state.demo=!state.demo;
     else if(action==='intro')state.phase='intro';
-    else if(action==='choose')state.phase='choose';
+    else if(action==='choose'){if(state.phase==='done')state.draftAction='';state.phase='choose';}
     else if(action==='previous'){if(state.step>0)state.step--;else state.phase='choose';}
     else if(action==='next'){state.step=Math.min(5,state.step+1);}
     else if(action==='finish'){state.nextAction=clip(main.querySelector('#ns-urge-next-action')?.value ?? state.nextAction,160);state.phase='done';}
