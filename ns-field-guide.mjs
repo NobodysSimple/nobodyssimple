@@ -92,7 +92,7 @@ function listScreen(entries,category=''){
       </section>
     </div>
     <div class="ns-guide6-journal__binding" aria-hidden="true">
-      ${Array.from({length:8},(_,i)=>`<span class="ns-guide6-journal__ring" style="--ring:${i}"></span>`).join('')}
+      ${Array.from({length:8},(_,i)=>`<span class="ns-guide6-journal__ring" style="top:${(6+i*12.4).toFixed(1)}%"></span>`).join('')}
     </div>
     <div class="ns-guide6-journal__page ns-guide6-journal__page--right">
       ${records}
