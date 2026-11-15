@@ -22,9 +22,9 @@ test('Blog UI reuses the actual published posts and existing sanitized blog cont
  assert.match(script,/getMinutes\(post\)/);
  assert.doesNotMatch(script,/Helpful \(\d+\)|Inspiring \(\d+\)/);
 });
-test('Contents, real percentage, reactions and sharing are functional',()=>{
+test('Contents, reactions and sharing are functional',()=>{
  const script=read('ns-blog-notebook.mjs');
- for(const token of ['#nb-contents-list','actualHeadings','[data-nb-anchor]','scrollIntoView','requestAnimationFrame','aria-valuenow','[data-nb-reaction]','aria-pressed','readReaction','writeReaction','navigator.share','navigator.clipboard','hashchange','AbortController']){
+ for(const token of ['#nb-contents-list','actualHeadings','[data-nb-anchor]','scrollIntoView','requestAnimationFrame','[data-nb-reaction]','aria-pressed','readReaction','writeReaction','navigator.share','navigator.clipboard','hashchange','AbortController']){
   assert.ok(script.includes(token),token);
  }
  assert.match(script,/This preference is saved only on this device/);

@@ -12,17 +12,17 @@ async function openBlog(page){
  await expect(page.locator('.ns-blog-notebook')).toBeVisible();
  return posts;
 }
-test('published blog article is a unique notebook with contents and reading progress',async({page})=>{
+test('published blog article is a unique notebook with navigable contents',async({page})=>{
  await openBlog(page);
  await expect(page.locator('.ns-blog-paper #nb-article-title')).toBeVisible();
- await expect(page.locator('.nb-progress-track')).toHaveAttribute('role','progressbar');
+ await expect(page.locator('.nb-progress-card')).toHaveCount(0);
  await expect(page.locator('.nb-contents-card')).toBeVisible();
  await expect(page.locator('.nb-read-next-card')).toBeVisible();
  await expect(page.locator('.nb-hero-image,.nb-hero-illustration')).toHaveCount(1);
  const anchors=await page.locator('#nb-contents-list a[data-nb-anchor]').count();
  expect(anchors).toBeGreaterThanOrEqual(2);
  await page.locator('#nb-article-end').scrollIntoViewIfNeeded();
- await expect.poll(async()=>Number(await page.locator('#nb-reading-track').getAttribute('aria-valuenow'))).toBeGreaterThan(0);
+ await expect(page.locator('#nb-contents-list')).toBeVisible();
  await page.locator('#nb-contents-list a[data-nb-anchor="nb-story-start"]').click();
  await expect(page).toHaveURL(/#post\//);
 });

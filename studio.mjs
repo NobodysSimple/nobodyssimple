@@ -13,6 +13,7 @@ import {
 } from "./core.mjs";
 import { Publisher } from "./publisher.mjs";
 import {notebookBlogMarkup} from "./ns-blog-notebook.mjs";
+import {mountTopicStudio} from "./studio-topics.mjs";
 
 const $ = (id) => document.getElementById(id);
 const now = () => new Date().toISOString();
@@ -233,11 +234,14 @@ async function setView(view) {
   $("dashboard-view").hidden = view !== "dashboard";
   $("media-view").hidden = view !== "media";
   $("templates-view").hidden = view !== "templates";
+  $("topic-studio-view").hidden = view !== "topic-studio";
+  $("moderation-view").hidden = view !== "moderation";
   $("editor-view").hidden = view !== "editor";
   document.querySelectorAll(".rail-button[data-view]").forEach((button) => button.classList.toggle("active", button.dataset.view === view));
   if (view === "dashboard") renderDashboard();
   if (view === "media") renderMediaLibrary();
   if (view === "templates") renderTemplates();
+  if (view === "topic-studio") mountTopicStudio($("topic-studio-view"),()=>publisher,toast);
 }
 
 async function refreshLocal() {
@@ -431,6 +435,7 @@ function openEditor(post = null, type = "blog", opts = {}) {
   $("doc-title").value = current.title || "";
   $("doc-excerpt").value = current.excerpt || "";
   $("doc-intro").value = current.intro || "";
+  $("studio-blog-hint").hidden=current.type!=="blog";
   fillInspector();
   renderBlocksEditor();
   if(current.type==="blog"){
@@ -1061,7 +1066,7 @@ $("doc-excerpt").addEventListener("input", () => markDirty());
 $("doc-intro").addEventListener("input", () => markDirty());
 for (const id of ["meta-type", "meta-category", "meta-author", "meta-slug", "seo-title", "seo-description", "social-image", "thumb-alt", "thumb-ratio", "thumb-focus-x", "thumb-focus-y", "thumb-rotate", "youtube-url", "page-theme", "hero-style", "announcement-label", "announcement-pinned", "announcement-priority", "announcement-start", "announcement-end", "announcement-link", "announcement-link-text"]) {
   $(id).addEventListener("input", () => { if (id === "meta-slug") $(id).dataset.edited = "1"; syncModelFromFields(); updateSearchPreview(); updateThumbPreview(); updateLivePreview(); runQuality(false); markDirty(); });
-  $(id).addEventListener("change", () => { syncModelFromFields(); if (id === "meta-type") { current.destinations = [current.type === "blog" ? "blog" : current.type === "announcement" ? "home" : "library"]; $("video-settings").hidden = current.type !== "video"; $("announcement-settings").hidden = current.type !== "announcement"; $("type-pill").textContent = topicName(current.type); $("publish").textContent = previous?.status === "published" ? "Update live post" : "Publish to website"; } markDirty({ checkpoint: true }); });
+  $(id).addEventListener("change", () => { syncModelFromFields(); if (id === "meta-type") { current.destinations = [current.type === "blog" ? "blog" : current.type === "announcement" ? "home" : "library"]; $("video-settings").hidden = current.type !== "video"; $("announcement-settings").hidden = current.type !== "announcement"; $("type-pill").textContent = topicName(current.type); $("studio-blog-hint").hidden=current.type!=="blog"; $("publish").textContent = previous?.status === "published" ? "Update live post" : "Publish to website"; } markDirty({ checkpoint: true }); });
 }
 $("meta-topics").addEventListener("input", renderTopicChips);
 $("meta-topics").addEventListener("keydown", (event) => { if (["Enter", ","].includes(event.key)) { event.preventDefault(); const topic = $("meta-topics").value.trim().replace(/,$/, ""); if (topic && !current.topics.includes(topic)) current.topics.push(topic); $("meta-topics").value = ""; renderTopicChips(); markDirty(); } });
