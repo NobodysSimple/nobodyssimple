@@ -52,6 +52,17 @@ export async function mountPublishedTopicEditorial(root,id){
  root.querySelectorAll('.ns-editorial-topic').forEach(node=>node.remove());
  const container=root.querySelector('.ns-judge,.ns-atlas-guide,.ns-guide-shell,.ns-deep-shell,.ns-wb-wrap,.ns-wb-shell,.ns-wb-page');
  if(!container)return;
+ // Keep existing support-first warnings and safeguarding chapters ahead of
+ // optional staff-authored material, even when those warnings are nested.
+ const safety=container.querySelector(
+  '.ns-atlas-safety,.ns-guide-safety,.ns-mood-safety,.ns-deep-alert,.ns-wb-safety,.ns-wb-care-first,.ns-reason-initial-safety,[role="alert"]'
+ );
+ if(safety){
+  let anchor=safety;
+  while(anchor.parentElement&&anchor.parentElement!==container)anchor=anchor.parentElement;
+  if(anchor.parentElement===container){anchor.insertAdjacentHTML('afterend',html);return;}
+  return; // Never risk placing editorial material before emergency advice.
+ }
  const hero=container.querySelector('.ns-judge-hero,.ns-atlas-guide-hero,.ns-guide-hero,.ns-deep-header,.ns-wb-cover,.ns-wb-header,.ns-wb-hero');
  if(hero)hero.insertAdjacentHTML('afterend',html);
  else container.insertAdjacentHTML('afterbegin',html);

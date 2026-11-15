@@ -13,6 +13,8 @@ test('Navigation topic publications use the original safety-first guides and no 
  assert.match(site,/mountPublishedTopicEditorial\(main/);
  assert.match(site,/name === 'problem' \|\| name === 'workbook-topic'/);
  assert.match(source,/\.ns-wb-wrap/);
+ assert.match(source,/Keep existing support-first warnings/);
+ assert.match(source,/\.ns-wb-care-first/);
  for(const guide of ['ns-atlas-guide.mjs','ns-judgement-manual.mjs','ns-mood-manual.mjs','ns-integrated-workbook.mjs'])assert.ok(read(guide).length>2000,guide);
 });
 test('Staff text is plain, limited and safe to render even with HTML input',()=>{
@@ -74,7 +76,7 @@ test('Verified comments now publish immediately with removal, reporting and acco
  assert.match(account,/Live comment review/);
  assert.match(app,/action==='ban'/);
  assert.match(app,/communityBans/);
- assert.match(app,/where\('status','==','approved'\)/);
+ assert.match(app,/orderBy\('createdAt','desc'\)/);
  assert.match(rules,/communityBans/);
  assert.match(account,/data-mod-remove/);
 });
