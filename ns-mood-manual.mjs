@@ -15,8 +15,9 @@ export function renderTopicManual(root,id,g,domain='feel'){
  if(!g)return false;
  const state={mode:null,step:0,answers:{},whyOpen:false,whyQuery:'',whyGroup:'',whyAll:false,whySelected:0,own:false,ownStep:0,ownData:{},whyDone:false};
  const storageKey='ns-mood-manual-'+id+'-v1';
+ const privateSession=domain==='harm'||g.noPersist===true;
  let saved=false;
- try{const s=JSON.parse(localStorage.getItem(storageKey)||'null');if(s&&s.answers&&s.mode&&g.routes.some(r=>r.id===s.mode)){state.answers=s.answers;state.mode=s.mode;saved=true;}}catch{}
+ try{if(privateSession){saved=Boolean(localStorage.getItem(storageKey));}else{const s=JSON.parse(localStorage.getItem(storageKey)||'null');if(s&&s.answers&&s.mode&&g.routes.some(r=>r.id===s.mode)){state.answers=s.answers;state.mode=s.mode;saved=true;}}}catch{}
  const backLink=domain==='family'?'#navigate/area/family/family':domain==='harm'?'#navigate/area/family/harm':domain==='inequality'?'#navigate/area/society/inequality':domain==='environment'?'#navigate/area/society/environment':domain==='relate'?'#navigate/area/connection/relate':domain==='social'?'#navigate/area/connection/social':domain==='connection-related'?'#navigate/area/connection/related':domain==='behaviour'?'#navigate/atlas/behaviour':domain==='focus'?'#navigate/atlas/focus':domain==='act'?'#navigate/atlas/act':domain==='think'?'#navigate/atlas/think':domain==='digital'?'#navigate/area/society/digital':domain==='body'?'#navigate/atlas/body':domain==='clinical'?'#navigate/atlas/clinical':domain==='experiences'?'#navigate/atlas/experiences':'#navigate/atlas/feel';
  const backLabel=domain==='family'?'Family systems & caregiving':domain==='harm'?'Abuse, exploitation & safety':domain==='inequality'?'Money, class & social inequality':domain==='environment'?'Society, environment & community':domain==='relate'?'Relationships & communication':domain==='social'?'Friendships, love & belonging':domain==='connection-related'?'Related experiences':domain==='behaviour'?'Habits, impulses & compulsions':domain==='focus'?'Attention, learning & habits':domain==='act'?'Motivation & action':domain==='think'?'Thoughts & worry':domain==='digital'?'Digital life & online harms':domain==='body'?'Body, sleep & senses':domain==='clinical'?'Mental health & care experiences':domain==='experiences'?'Unusual or distressing experiences':'Feelings & mood';
  const hero='<div class="ns-judge ns-mood" id="ns-mood-top"><nav class="ns-judge-back"><a href="'+backLink+'">← '+backLabel+'</a><a href="#home">Nobody’s Simple home</a></nav>'+
@@ -44,7 +45,7 @@ export function renderTopicManual(root,id,g,domain='feel'){
   '<h2>Which part feels familiar?</h2><div class="ns-mood-profiles">'+g.profiles.map(p=>'<div><h3>'+esc(p[0])+'</h3><p>'+esc(p[1])+'</p></div>').join('')+'</div></section>';
  const routes='<section class="ns-mood-routes" id="ns-mood-start"><p class="ns-judge-kicker">ONE GENTLE PLACE TO START</p><h2 tabindex="-1">What would help you most?</h2><p>Choose the difficulty that feels closest. You do not have to work out which therapy you need, and you can change your mind.</p><div class="ns-mood-route-list">'+
   g.routes.map(route=>'<button type="button" data-mood-open="'+esc(route.id)+'"><span><strong>'+esc(route.label)+'</strong><small>'+esc(route.description)+'</small></span><span aria-hidden="true">→</span></button>').join('')+'</div>'+
-  '<p class="ns-mood-saved" data-mood-saved>'+(saved?'You have notes stored on this device. <button type="button" data-mood-resume>Resume saved notes</button> <button type="button" data-mood-delete>Delete saved copy</button>':'')+'</p>'+
+  '<p class="ns-mood-saved" data-mood-saved>'+(privateSession?(saved?'Notes saved during an earlier visit may remain on this device. <button type="button" data-mood-delete>Delete old saved copy</button>':'For privacy, this sensitive guide does not save your responses on this device.'):(saved?'You have notes stored on this device. <button type="button" data-mood-resume>Resume saved notes</button> <button type="button" data-mood-delete>Delete saved copy</button>':''))+'</p>'+
   '<p class="ns-judge-muted">All exercises use free writing. Every question can be skipped. Nothing is saved automatically.</p></section>';
  const now='<section id="ns-mood-now" class="ns-judge-now"><p class="ns-judge-kicker">SOMETHING YOU CAN DO NOW</p><h2 tabindex="-1">'+esc(g.now.title)+'</h2>'+g.now.paras.map(p=>'<p>'+esc(p)+'</p>').join('')+
   '<div class="ns-mood-now-steps">'+g.now.steps.map((s,i)=>'<p><strong>'+(i+1)+'.</strong> '+esc(s)+'</p>').join('')+'</div></section>';
@@ -92,8 +93,8 @@ export function renderTopicManual(root,id,g,domain='feel'){
    '<div class="ns-judge-finish-practice"><h3>'+esc(route.practiceTitle)+'</h3><p>'+esc(route.practice)+'</p>'+
    (answers[String(last)]?'<p><strong>Your own next step:</strong> '+esc(answers[String(last)])+'</p>':'')+'</div>'+
    '<div class="ns-judge-actions"><button class="ns-judge-primary" data-mood-revise>Review my answers</button><button class="ns-judge-secondary" data-mood-download>Download my notes</button>'+
-   '<button class="ns-judge-secondary" data-mood-save>Save on this device</button><button class="ns-judge-secondary" data-mood-close>Finish for now</button></div>'+
-   '<p role="status" data-mood-save-status class="ns-judge-muted">Saving is optional. Anyone with access to this browser could read saved notes.</p>';showWork();
+   (privateSession?'':'<button class="ns-judge-secondary" data-mood-save>Save on this device</button>')+'<button class="ns-judge-secondary" data-mood-close>Finish for now</button></div>'+
+   '<p role="status" data-mood-save-status class="ns-judge-muted">'+(privateSession?'Your answers are not stored by this guide. Downloading notes creates a separate file that someone with access to your device may see.':'Saving is optional. Anyone with access to this browser could read saved notes.')+'</p>';showWork();
  }
  function navigate(routeId){state.mode=routeId;state.step=0;showQuestion();}
  function exportNotes(){
@@ -185,13 +186,14 @@ export function renderTopicManual(root,id,g,domain='feel'){
   }
   if(b.hasAttribute('data-mood-ideas-close')){dialog.close();return;}
   if(b.hasAttribute('data-mood-save')){
+   if(privateSession)return;
    const n=root.querySelector('[data-mood-save-status]');
    try{localStorage.setItem(storageKey,JSON.stringify({answers:state.answers,mode:state.mode}));saved=true;
     root.querySelector('[data-mood-saved]').innerHTML='You have notes saved on this device. <button data-mood-resume>Resume saved notes</button> <button data-mood-delete>Delete saved copy</button>';
     if(n)n.textContent='Saved on this device. You can delete this copy from the starting section.';}
    catch{if(n)n.textContent='Saving was unavailable. You can still download your notes.';}return;
   }
-  if(b.hasAttribute('data-mood-resume')){if(!state.mode)state.mode=g.routes[0].id;finish();return;}
+  if(b.hasAttribute('data-mood-resume')){if(privateSession)return;if(!state.mode)state.mode=g.routes[0].id;finish();return;}
   if(b.hasAttribute('data-mood-delete')){
    try{localStorage.removeItem(storageKey);saved=false;root.querySelector('[data-mood-saved]').textContent='Saved copy deleted. Your current notes will be lost when you leave.';}catch{}return;
   }
