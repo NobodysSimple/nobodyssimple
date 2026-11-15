@@ -130,8 +130,8 @@ export const TRAUMA_EDITORIAL_A=[
     ],
     "safety": "Adversity does not prove a diagnosis or a particular hidden memory. Do not encourage recovered-memory techniques, unsafe confrontation or forced disclosure. Current abuse and safeguarding needs take priority.",
     "source": [
-      "NHS: Childhood trauma and adverse experiences",
-      "https://www.nhs.uk/mental-health/"
+      "NHS Safeguarding: Adverse childhood experiences and their lasting impact",
+      "https://safeguarding-guide.nhs.uk/context-of-NHS-safeguarding/s2-07/"
     ]
   },
   {
