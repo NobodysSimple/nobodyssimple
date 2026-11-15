@@ -12,6 +12,7 @@ import {
   youtubeID,
 } from "./core.mjs";
 import { Publisher } from "./publisher.mjs";
+import {notebookBlogMarkup} from "./ns-blog-notebook.mjs";
 
 const $ = (id) => document.getElementById(id);
 const now = () => new Date().toISOString();
@@ -432,6 +433,11 @@ function openEditor(post = null, type = "blog", opts = {}) {
   $("doc-intro").value = current.intro || "";
   fillInspector();
   renderBlocksEditor();
+  if(current.type==="blog"){
+   $("live-preview").hidden=false;
+   $("editor-grid").classList.add("split-mode");
+   $("toggle-split").textContent="Hide preview";
+  }
   savedVersions = [];
   lastVersionAt = 0;
   void loadVersions();
@@ -566,13 +572,34 @@ function updateStats() {
 }
 function countImages(blocks = []) { return blocks.reduce((count, block) => count + (block.type === "image" && block.src ? 1 : block.type === "gallery" || block.type === "carousel" ? block.items?.length || 0 : 0), 0); }
 function updateLivePreview() {
-  if (!current) return;
-  syncModelFromFields();
-  let bodyHTML = renderPostBody(current, posts);
-  for (const file of uploads) bodyHTML = bodyHTML.replaceAll(`src="${esc(file.path)}"`, `src="data:${file.mime};base64,${file.base64}"`);
-  $("live-preview-article").innerHTML = `<p class="eyebrow">${esc(topicName(current.type))}${current.topics?.length ? ` · ${esc(current.topics.join(" · "))}` : ""}</p><h1>${esc(current.title || "Untitled")}</h1><p class="lead">${esc(current.intro || current.excerpt || "")}</p>${current.thumbnail && safeImage(current.thumbnail) ? `<img class="full" src="${esc(assetUrl(current.thumbnail))}" alt="${esc(current.thumbnailAlt || "")}" ${thumbnailStyle(current)}>` : ""}<div class="article-body">${bodyHTML}</div>`;
+ if (!current) return;
+ syncModelFromFields();
+ const stage=$("live-preview-article");
+ if(current.type==="blog"){
+  const post={...current,title:current.title||"Your blog title",status:"published",publishedAt:current.publishedAt||now()};
+  let markup=notebookBlogMarkup(post,posts);
+  for(const file of uploads)markup=markup.replaceAll('src="'+esc(file.path)+'"','src="data:'+file.mime+';base64,'+file.base64+'"');
+  const documentFragment=new DOMParser().parseFromString(markup,"text/html");
+  const headings=[...documentFragment.querySelectorAll('.ns-blog-body h2,.ns-blog-body h3,.ns-blog-body h4')];
+  const toc=documentFragment.querySelector('#nb-contents-list');
+  if(toc){
+   toc.innerHTML='<li><a href="#nb-story-start">Start reading</a></li>'+
+    headings.map((h,i)=>{const id=h.id||'nb-preview-section-'+i;h.id=id;return '<li><a href="#'+esc(id)+'">'+esc(h.textContent.slice(0,130))+'</a></li>'}).join('')+
+    '<li><a href="#nb-article-end">Last page</a></li>';
+  }
+  const html=documentFragment.querySelector('.ns-blog-notebook')?.outerHTML||markup;
+  const base=location.origin+location.pathname.replace(/[^/]+$/,'');
+  const srcdoc='<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="'+esc(base)+'"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="ns-blog-notebook.css"></head><body style="margin:0;background:#f7f0df"><main id="main">'+html+'</main></body></html>';
+  stage.classList.add("studio-notebook-preview");
+  stage.innerHTML='<p class="studio-preview-message">Exact blog appearance preview · notebook styling is automatic when published.</p><iframe title="Nobody’s Simple notebook blog preview" sandbox="allow-same-origin" referrerpolicy="no-referrer" loading="lazy"></iframe>';
+  stage.querySelector('iframe').srcdoc=srcdoc;
+  return;
+ }
+ stage.classList.remove("studio-notebook-preview");
+ let bodyHTML = renderPostBody(current, posts);
+ for (const file of uploads) bodyHTML = bodyHTML.replaceAll('src="'+esc(file.path)+'"', 'src="data:'+file.mime+';base64,'+file.base64+'"');
+ stage.innerHTML = '<p class="eyebrow">'+esc(topicName(current.type))+(current.topics?.length?' · '+esc(current.topics.join(" · ")):'')+'</p><h1>'+esc(current.title||"Untitled")+'</h1><p class="lead">'+esc(current.intro||current.excerpt||"")+'</p>'+(current.thumbnail&&safeImage(current.thumbnail)?'<img class="full" src="'+esc(assetUrl(current.thumbnail))+'" alt="'+esc(current.thumbnailAlt||"")+'" '+thumbnailStyle(current)+'>':'')+'<div class="article-body">'+bodyHTML+'</div>';
 }
-
 function addBlock(type, after = selectedIndex) {
   const block = freshBlock(type);
   const next = Math.max(-1, Math.min(current.blocks.length - 1, after));

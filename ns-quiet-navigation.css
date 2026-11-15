@@ -1,0 +1,171 @@
+/* Quiet landscape + paper, scoped to navigation and topic guides only.
+   Users exploring distressing subjects should not face competing animation, hero text,
+   fake performance metrics, or a page full of bright colour. */
+body.app-body.ns-shell-v1 #main:has(> :is(.ns-needs,.ns-judge,.ns-guide-shell,.ns-atlas-guide,.ns-deep-shell,.ns-wb-page,.ns-wb-shell,.ns-atlas-shell)){
+ --quiet-forest:#264c3b;--quiet-sage:#71907a;--quiet-paper:#fffdf7;
+ --quiet-edge:#e1e5d8;--quiet-muted:#536957;
+ background:linear-gradient(180deg,rgba(245,247,236,.75) 0,rgba(250,247,237,.94) 400px,#faf8f2 100%);
+ position:relative;isolation:isolate;padding-block:clamp(10px,2vw,27px) 70px;
+}
+body.app-body.ns-shell-v1 #main:has(> :is(.ns-needs,.ns-judge,.ns-guide-shell,.ns-atlas-guide,.ns-deep-shell,.ns-wb-page,.ns-wb-shell,.ns-atlas-shell))::before{
+ content:"";position:absolute;z-index:-1;pointer-events:none;left:0;right:0;top:0;
+ height:clamp(120px,19vw,250px);
+ background:linear-gradient(180deg,rgba(247,249,241,.15),rgba(249,248,240,.97)),url('ns-landscape-mountains.webp') center center/cover no-repeat;
+ opacity:.27;
+}
+body.app-body.ns-shell-v1 #main:has(> :is(.ns-needs,.ns-judge,.ns-guide-shell,.ns-atlas-guide,.ns-deep-shell,.ns-wb-page,.ns-wb-shell,.ns-atlas-shell))::after{
+ content:"";position:absolute;z-index:-1;pointer-events:none;bottom:0;left:0;right:0;
+ height:clamp(130px,21vw,290px);
+ background:linear-gradient(0deg,rgba(246,248,239,.04),rgba(250,248,240,1) 96%),url('ns-landscape-path.webp') center 80%/cover no-repeat;
+ opacity:.14;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-needs,.ns-guide-shell,.ns-atlas-guide,.ns-deep-shell,.ns-atlas-shell){
+ position:relative;z-index:1;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-needs,.ns-guide-shell,.ns-atlas-guide,.ns-deep-shell,.ns-atlas-shell)::before{
+ content:"";pointer-events:none;position:absolute;top:0;right:0;width:110px;height:150px;
+ background:url('ns-prop-leaf.webp') top right/contain no-repeat;opacity:.12;z-index:0;
+}
+body.app-body.ns-shell-v1 #main .ns-needs{
+ max-width:1120px;padding:clamp(14px,3vw,33px) clamp(12px,3vw,38px) 82px;
+}
+body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-hero{
+ position:relative;overflow:hidden;
+ background:linear-gradient(115deg,rgba(255,253,246,.98) 0%,rgba(241,246,235,.96) 72%,rgba(242,241,221,.88) 100%);
+ border:1px solid var(--quiet-edge);border-radius:24px;
+ padding:clamp(23px,4vw,43px);box-shadow:0 12px 30px rgba(62,84,57,.05);
+}
+body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-hero::after{
+ content:"";pointer-events:none;position:absolute;right:8px;bottom:0;width:clamp(92px,18vw,210px);
+ height:130px;background:url('ns-character-sitting.webp') center bottom/contain no-repeat;opacity:.22;
+}
+body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-hero :is(h1,p){position:relative;z-index:1;max-width:min(65ch,calc(100% - 46px));}
+body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-hero h1{
+ color:var(--quiet-forest);font:700 clamp(29px,3.3vw,43px)/1.14 Georgia,serif;letter-spacing:-.035em;
+}
+body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-panel{
+ background:rgba(255,253,248,.96);border:1px solid var(--quiet-edge);border-radius:22px;
+ box-shadow:0 10px 30px rgba(55,72,52,.055);
+}
+body.app-body.ns-shell-v1 #main .ns-needs :is(.ns-needs-theme,.ns-needs-subdomain,.ns-needs-choice,.ns-needs-mode){
+ border-radius:16px;box-shadow:none;background:#f7f9f3;
+ border:1px solid #dce7db;transition:border-color .15s ease,background-color .15s ease;
+}
+body.app-body.ns-shell-v1 #main .ns-needs :is(.ns-needs-theme,.ns-needs-subdomain,.ns-needs-choice,.ns-needs-mode):hover{
+ transform:none;background:#eef4e9;border-color:#85aa8b;box-shadow:none;
+}
+body.app-body.ns-shell-v1 #main .ns-needs :is(input,button,a):focus-visible{
+ outline:3px solid #b48755;outline-offset:3px;
+}
+body.app-body.ns-shell-v1 #main .ns-judge{
+ max-width:1000px;width:calc(100% - 24px);padding:0 clamp(17px,4vw,50px) 45px;
+ background:rgba(255,253,247,.98);border:1px solid var(--quiet-edge);
+ box-shadow:0 20px 48px rgba(63,75,59,.08);border-radius:23px;
+}
+body.app-body.ns-shell-v1 #main .ns-judge .ns-judge-hero{
+ position:relative;min-height:235px;overflow:hidden;
+ background:linear-gradient(120deg,#f7f6ec,#edf3e9);
+ border:1px solid #e4e8dc;border-radius:19px;margin-top:18px;
+}
+body.app-body.ns-shell-v1 #main .ns-judge .ns-judge-hero::after{
+ content:"";position:absolute;inset:auto 0 0;height:83px;
+ pointer-events:none;background:linear-gradient(0deg,rgba(255,253,248,.4),rgba(255,253,248,0)),url('ns-landscape-path.webp') center 60%/cover;
+ opacity:.12;
+}
+body.app-body.ns-shell-v1 #main .ns-judge .ns-judge-hero > *{position:relative;z-index:1}
+body.app-body.ns-shell-v1 #main .ns-judge .ns-judge-hero h1{font:700 clamp(32px,4.5vw,53px)/1.12 Georgia,serif;letter-spacing:-.035em;color:#294b3a}
+body.app-body.ns-shell-v1 #main .ns-judge .ns-judge-hero p{max-width:70ch}
+body.app-body.ns-shell-v1 #main :is(.ns-judge-reading,.ns-mood-read,.ns-judge-start,.ns-judge-now,.ns-mood-routes,.ns-mood-now,.ns-judge-work){
+ background:rgba(255,253,247,.91);border-radius:18px;
+}
+body.app-body.ns-shell-v1 #main .ns-judge :is(.ns-judge-reading,.ns-mood-read,.ns-judge-start) :is(h2,h3){
+ color:#2b513d;
+}
+body.app-body.ns-shell-v1 #main .ns-judge :is(.ns-judge-reading,.ns-mood-read) > p{
+ line-height:1.83;max-width:74ch;font-size:clamp(16px,1.5vw,18px);
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-guide{
+ --na-paper:#fffdf8;--na-line:#dfe6da;
+ max-width:1070px;margin-inline:auto;background:rgba(255,253,247,.985);
+ border:1px solid #e1e5da;border-radius:24px;
+ box-shadow:0 20px 50px rgba(47,68,51,.08);
+ padding:clamp(20px,4vw,45px) clamp(17px,4.1vw,53px) 78px;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-guide-hero{
+ position:relative;border:1px solid #dce7d8!important;border-radius:18px!important;
+ background:linear-gradient(120deg,#f5f8ed,#fffdf5)!important;overflow:hidden;
+ padding:clamp(22px,3vw,36px)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-guide-hero::after{
+ content:"";pointer-events:none;position:absolute;right:6px;bottom:-19px;
+ width:clamp(115px,19vw,180px);height:145px;
+ background:url('ns-character-guide.webp') center/contain no-repeat;opacity:.16;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-guide-hero :is(h1,p){position:relative;z-index:1;max-width:73ch;}
+body.app-body.ns-shell-v1 #main .ns-atlas-guide :is(.ns-atlas-section,.ns-reason-evidence,.ns-reason-review){
+ border-radius:18px!important;border-color:#dee7dc!important;
+ box-shadow:none!important;background:rgba(255,254,249,.93)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-guide .ns-atlas-section[open]{
+ box-shadow:0 9px 24px rgba(70,88,63,.045)!important;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-guide .ns-atlas-section summary{
+ border-radius:15px;color:var(--quiet-forest);line-height:1.5;min-height:55px;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-guide .ns-atlas-section summary:hover{
+ background:#f0f5e9;
+}
+body.app-body.ns-shell-v1 #main .ns-atlas-guide :is(.ns-atlas-section-body,.ns-reason-guide-stage) p{
+ max-width:76ch;line-height:1.76;
+}
+body.app-body.ns-shell-v1 #main .ns-deep-shell{
+ background:rgba(255,253,248,.97);border:1px solid #e1e6d9;border-radius:24px;
+ padding:clamp(18px,3vw,40px);max-width:1080px;margin-inline:auto;box-shadow:0 18px 39px rgba(68,79,65,.065);
+}
+body.app-body.ns-shell-v1 #main .ns-deep-header{
+ background:linear-gradient(120deg,#f3f7ed,#fffdf7);border:1px solid #e1e8dc;border-radius:20px;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-guide-shell,.ns-deep-shell) :is(.ns-guide-card,.ns-deep-section){
+ background:rgba(255,254,249,.95);border:1px solid #e1e7dd;border-radius:17px;
+ box-shadow:0 6px 21px rgba(70,84,65,.045);
+}
+body.app-body.ns-shell-v1 #main .ns-guide-shell{
+ background:rgba(255,253,247,.96);border:1px solid #e3e7dc;
+ border-radius:24px;box-shadow:0 16px 42px rgba(57,76,55,.07);padding:clamp(20px,3.4vw,41px);
+}
+body.app-body.ns-shell-v1 #main .ns-guide-shell .ns-guide-hero{
+ background:linear-gradient(130deg,#f3f8ee,#fffdf7);border:1px solid #dfe8dd;border-radius:20px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide-shell :is(.ns-guide-card,.ns-guide-hero) h2{
+ color:var(--quiet-forest);
+}
+body.app-body.ns-shell-v1 #main :is(.ns-guide-shell,.ns-atlas-guide,.ns-deep-shell) :is(input:not([type="checkbox"]):not([type="radio"]),select,textarea){
+ max-width:100%;border-radius:12px;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-guide-shell,.ns-atlas-guide,.ns-deep-shell,.ns-judge) :is(button,a,input,textarea,select,summary):focus-visible{
+ outline:3px solid #b88b57;outline-offset:3px;
+}
+body.app-body.ns-shell-v1 #main :is(.ns-guide-shell,.ns-atlas-guide,.ns-deep-shell,.ns-judge) :is(.ns-guide-safety,.ns-atlas-safety,.ns-atlas-urgent,.ns-mood-safety,.ns-judge-safety,.ns-deep-alert){
+ border-radius:13px;box-shadow:none;
+}
+@media(max-width:720px){
+ body.app-body.ns-shell-v1 #main .ns-judge{width:calc(100% - 16px);padding:0 14px 26px}
+ body.app-body.ns-shell-v1 #main .ns-atlas-guide{padding:17px 13px 47px}
+ body.app-body.ns-shell-v1 #main .ns-needs{padding-inline:11px}
+ body.app-body.ns-shell-v1 #main .ns-needs .ns-needs-hero::after{opacity:.12}
+ body.app-body.ns-shell-v1 #main .ns-judge .ns-judge-hero h1{font-size:clamp(27px,7vw,41px)}
+}
+@media(prefers-reduced-motion:reduce){
+ body.app-body.ns-shell-v1 #main :is(.ns-needs,.ns-judge,.ns-atlas-guide,.ns-guide-shell,.ns-deep-shell) *{
+  scroll-behavior:auto!important;animation:none!important;transition:none!important;
+ }
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main:has(> :is(.ns-needs,.ns-judge,.ns-guide-shell,.ns-atlas-guide,.ns-deep-shell,.ns-wb-page,.ns-wb-shell,.ns-atlas-shell)){
+ --quiet-paper:#273b30;--quiet-edge:#466050;background:linear-gradient(180deg,#1e2f27,#263c2e);
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main :is(.ns-judge,.ns-atlas-guide,.ns-guide-shell,.ns-deep-shell,.ns-needs .ns-needs-panel){
+ background:#283d32;color:#e3ecdf;border-color:#526b57;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main :is(.ns-judge,.ns-atlas-guide,.ns-guide-shell,.ns-deep-shell) :is(h1,h2,h3){
+ color:#e1eee0;
+}

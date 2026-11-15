@@ -70,14 +70,13 @@ const reactionMarkup=id=>`<div class="nb-reactions" role="group" aria-label="How
  ${choices.map(c=>`<button type="button" data-nb-reaction="${c.id}" aria-pressed="${readReaction(id)===c.id?'true':'false'}"><span aria-hidden="true">${c.symbol}</span>${esc(c.label)}</button>`).join('')}
  </div>`;
 
-export function renderNotebookBlogPost(root,post,publishedPosts){
- ensureCSS();
+export function notebookBlogMarkup(post,publishedPosts){
  const suggestions=relatedBlogs(post,publishedPosts);
  const topics=(post.topics||[]).slice(0,3);
  const body=renderPostBody(post,publishedPosts);
  const date=publishedDate(post.publishedAt);
  const author=asText(post.authorName||post.author)||'Nobody’s Simple';
- root.innerHTML=`<div class="ns-blog-notebook" data-blog-id="${esc(post.id)}">
+ return `<div class="ns-blog-notebook" data-blog-id="${esc(post.id)}">
   <div class="nb-background nb-background-left" aria-hidden="true"></div>
   <div class="nb-background nb-background-right" aria-hidden="true"></div>
   <div class="nb-top-scene" aria-hidden="true"></div>
@@ -86,11 +85,6 @@ export function renderNotebookBlogPost(root,post,publishedPosts){
    <div class="nb-columns">
     <aside class="nb-left-rail" aria-label="Article navigation">
      <div class="nb-left-sticky">
-      <section class="nb-progress-card" aria-label="Reading progress">
-       <div class="nb-small-label">YOUR READING JOURNEY</div>
-       <div class="nb-progress-head"><strong>Article progress</strong><output id="nb-reading-percentage">0%</output></div>
-       <div class="nb-progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Article read" id="nb-reading-track"><span></span></div>
-      </section>
       <nav class="nb-contents-card" aria-label="Contents of this article">
        <span class="nb-sticky-tape" aria-hidden="true"></span>
        <h2><span aria-hidden="true">☷</span> Contents</h2>
@@ -142,6 +136,10 @@ export function renderNotebookBlogPost(root,post,publishedPosts){
    </footer>
   </div>
  </div>`;
+}
+export function renderNotebookBlogPost(root,post,publishedPosts){
+ ensureCSS();
+ root.innerHTML=notebookBlogMarkup(post,publishedPosts);
  const page=root.querySelector('.ns-blog-notebook');
  const actualHeadings=[...page.querySelectorAll('.ns-blog-body h2, .ns-blog-body h3, .ns-blog-body h4')]
   .filter(h=>!h.closest('.table-of-contents, .interactive-embed, .site-card, .related-block'));
@@ -163,17 +161,10 @@ export function renderNotebookBlogPost(root,post,publishedPosts){
   const anchor=page.querySelector('#'+link.dataset.nbAnchor);
   anchor?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
  },{signal});
- const readingPercent=page.querySelector('#nb-reading-percentage'),meter=page.querySelector('#nb-reading-track'),fill=meter.querySelector('span');
  const anchors=[page.querySelector('#nb-story-start'),...sectionNodes.map(x=>x.node),page.querySelector('#nb-article-end')].filter(Boolean);
  let scheduled=false;
  const measure=()=>{
   scheduled=false;if(!page.isConnected)return;
-  const article=page.querySelector('.ns-blog-paper');
-  const top=article.getBoundingClientRect().top+window.scrollY;
-  const bottom=article.getBoundingClientRect().bottom+window.scrollY;
-  const available=Math.max(1,bottom-top-window.innerHeight*.48);
-  const percent=Math.round(Math.max(0,Math.min(100,(window.scrollY-top+window.innerHeight*.28)/available*100)));
-  meter.setAttribute('aria-valuenow',String(percent));readingPercent.textContent=percent+'%';fill.style.width=percent+'%';
   const threshold=window.innerHeight*.28;
   let active='nb-story-start';
   for(const node of anchors){if(node.getBoundingClientRect().top<=threshold)active=node.id;}
