@@ -66,12 +66,16 @@ export async function freeAccountCall(db,auth,name,data={}){
  if(name==='communityReport'){const reason=String(data.reason||'').trim().slice(0,500);if(reason.length<3)throw Error('Give a short reason.');await setDoc(ref('reports',data.id+'_'+uid),{commentId:data.id,reporterUid:uid,reason,status:'open',createdAt:serverTimestamp()});return {ok:true};}
  if(name==='communityModerate'){
   if(data.action==='list'){
-   const [approved,pending,reports]=await Promise.all([
-     getDocs(query(collection(db,'comments'),where('status','==','approved'),limit(200))),
-     getDocs(query(collection(db,'comments'),where('status','==','pending'),limit(100))),
+   // Read recent comments in chronological order, rather than taking the first
+   // 200 random document IDs and misleadingly presenting them as recent.
+   // Firestore rules permit this unfiltered query only for authorised staff.
+   const [recent,reports]=await Promise.all([
+     getDocs(query(collection(db,'comments'),orderBy('createdAt','desc'),limit(200))),
      getDocs(query(collection(db,'reports'),where('status','==','open'),limit(100)))
    ]);
-   return {comments:[...approved.docs,...pending.docs].map(d=>({id:d.id,...d.data()})).sort((a,b)=>stamp(b.createdAt)-stamp(a.createdAt)),reports:reports.docs.map(d=>({id:d.id,...d.data()}))};
+   const comments=recent.docs.map(d=>({id:d.id,...d.data()}))
+     .filter(c=>c.status==='approved'||c.status==='pending');
+   return {comments,reports:reports.docs.map(d=>({id:d.id,...d.data()}))};
   }
   if(data.action==='ban'){
    const target=String(data.uid||'').trim(),reason=String(data.reason||'').trim().slice(0,300);
