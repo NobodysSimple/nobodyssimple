@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 265" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<defs>
+ <linearGradient id="a" x2="0" y2="1"><stop stop-color="#d3dbc4"/><stop offset="1" stop-color="#b5c7a4"/></linearGradient>
+ <linearGradient id="b" x2="0" y2="1"><stop stop-color="#a7be9d"/><stop offset="1" stop-color="#8ba881"/></linearGradient>
+ <linearGradient id="c" x2="0" y2="1"><stop stop-color="#87a587"/><stop offset="1" stop-color="#608f70"/></linearGradient>
+ <filter id="texture"><feTurbulence baseFrequency=".019 .046" numOctaves="3" seed="15" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".12"/></feComponentTransfer></filter>
+</defs>
+<path d="M0 134Q167 67 294 134T605 126Q779 44 976 119T1500 113V265H0Z" fill="url(#a)" opacity=".65"/>
+<path d="M0 183Q228 105 370 156 531 206 754 144T1178 182Q1313 145 1500 154V265H0Z" fill="url(#b)" opacity=".75"/>
+<path d="M0 227Q204 164 356 208 558 256 741 219 901 166 1060 221 1230 248 1500 205V265H0Z" fill="url(#c)" opacity=".8"/>
+<path d="M0 232Q184 194 302 218T603 216Q753 188 861 221" stroke="#d5d7af" stroke-width="4" fill="none" opacity=".55"/>
+<!-- One small path, green stalks, paper daisies at edges -->
+<path d="M1260 260Q1296 214 1327 218T1378 174" stroke="#e5d4a8" stroke-width="27" fill="none" stroke-linecap="round" opacity=".8"/>
+<path d="M1275 263Q1310 210 1330 220" stroke="#fff1d2" stroke-width="10" fill="none" opacity=".5"/>
+<g stroke="#557c5d" stroke-width="2.4" fill="none" opacity=".76">
+ <path d="M90 260Q66 239 67 207M90 260Q97 228 113 214M146 260Q130 233 134 194M146 260Q154 230 166 213"/>
+ <path d="M1369 262Q1357 234 1355 207M1369 262Q1380 230 1395 216M1411 261Q1428 224 1427 202"/>
+ <path d="M225 265q-16 -29 -17 -41M232 266q18 -26 26 -37M1208 264q-18 -24 -25 -31"/>
+</g>
+<g fill="#fffaf0" stroke="#e3d5ac" stroke-width=".5">
+ <g transform="translate(90 209)"><ellipse cy="-9" rx="6" ry="11"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(60)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(120)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(180)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(240)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(300)"/></g>
+ <g transform="translate(144 232) scale(.66)"><ellipse cy="-9" rx="6" ry="11"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(60)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(120)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(180)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(240)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(300)"/></g>
+ <g transform="translate(1368 208) scale(.85)"><ellipse cy="-9" rx="6" ry="11"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(60)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(120)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(180)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(240)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(300)"/></g>
+ <g transform="translate(1431 245) scale(.6)"><ellipse cy="-9" rx="6" ry="11"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(60)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(120)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(180)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(240)"/><ellipse cy="-9" rx="6" ry="11" transform="rotate(300)"/></g>
+</g>
+<g fill="#e8c176"><circle cx="90" cy="209" r="5"/><circle cx="144" cy="232" r="3.5"/><circle cx="1368" cy="208" r="5"/><circle cx="1431" cy="245" r="3.6"/></g>
+<rect width="1500" height="265" filter="url(#texture)" opacity=".22"/>
+</svg>
