@@ -28,7 +28,7 @@ const backLink = '<a class="ns-urge-back" href="#guide/quick-tools">← Quick Ac
 function intro(demo) {
   return '<div class="ns-guide6 ns-urge"><div class="ns-urge-wrap">'+backLink+
     '<div class="ns-urge-card"><p class="ns-guide6-kicker">QUICK ACCESS TOOLS · A MOMENT TO CHOOSE</p>'+
-    '<h1>The Urge Pause</h1><p class="ns-urge-lead">You can feel pulled to do something without having to do it.</p>'+
+    '<h1 tabindex="-1">The Urge Pause</h1><p class="ns-urge-lead">You can feel pulled to do something without having to do it.</p>'+
     '<h2>First, what does “being the observer” mean?</h2>'+
     '<p>It simply means <strong>noticing what is happening in your mind</strong>. A thought or desire can pop up without you deciding to have it. You can notice it just as you notice a sound. You do not need to stop it or believe it is an instruction.</p>'+
     '<div class="ns-urge-demo"><p class="ns-urge-kicker">TRY A TINY EXAMPLE</p>'+
@@ -41,7 +41,7 @@ function intro(demo) {
 
 function chooser(error) {
   return '<div class="ns-guide6 ns-urge"><div class="ns-urge-wrap">'+backLink+
-    '<div class="ns-urge-card"><p class="ns-guide6-kicker">MAKE IT YOUR OWN</p><h1>What are you feeling pulled to do?</h1>'+
+    '<div class="ns-urge-card"><p class="ns-guide6-kicker">MAKE IT YOUR OWN</p><h1 tabindex="-1">What are you feeling pulled to do?</h1>'+
     '<p>Choose an example or describe your own. Think of an action, such as “open social media” or “send another message”. This stays on this screen; it is not saved to your Field Guide.</p>'+
     '<form data-urge-form="choose"><fieldset class="ns-urge-choices"><legend>I am having an urge to…</legend>'+
     OPTIONS.map((opt,i)=>'<label class="ns-urge-choice"><input type="radio" name="urge" value="'+safe(opt[0])+'" '+(i===0?'checked':'')+'><span>'+safe(opt[1])+'</span></label>').join('')+
@@ -77,14 +77,14 @@ function exercise(action,step,notice,nextAction) {
     '<div class="ns-urge-progress" role="progressbar" aria-label="Exercise progress" aria-valuemin="1" aria-valuemax="6" aria-valuenow="'+(step+1)+'"><span style="width:'+((step+1)/6*100)+'%"></span></div>'+
     '<p class="ns-urge-current">Working with: <strong>'+safe(action)+'</strong> <button type="button" data-urge-action="choose">Change</button></p>'+
     '<div class="ns-urge-stage" aria-live="polite"><p class="ns-urge-kicker">'+(step+1)+' · '+safe(s.title)+'</p>'+
-    '<h1>'+s.line+'</h1><p>'+safe(s.copy)+'</p></div>'+options+next+
+    '<h1 tabindex="-1">'+s.line+'</h1><p>'+safe(s.copy)+'</p></div>'+options+next+
     '<div class="ns-urge-actions">'+button('← Back','previous',true)+button(step===5?'Finish this pause →':'Continue →',step===5?'finish':'next')+'</div>'+
     '<p class="ns-urge-small">The aim is choice, not forcing the feeling away. You can stop or come back at any point.</p></div></div></div>';
 }
 
 function complete(action,nextAction) {
   return '<div class="ns-guide6 ns-urge"><div class="ns-urge-wrap">'+backLink+
-    '<div class="ns-urge-card ns-urge-finish"><p class="ns-guide6-kicker">PAUSE COMPLETE</p><h1>The urge does not have to decide for you.</h1>'+
+    '<div class="ns-urge-card ns-urge-finish"><p class="ns-guide6-kicker">PAUSE COMPLETE</p><h1 tabindex="-1">The urge does not have to decide for you.</h1>'+
     '<p>You noticed the pull to <strong>'+safe(action)+'</strong>, put some space around it, and considered what to do. The urge might remain or return. That does not undo the practice.</p>'+
     (nextAction?'<div class="ns-urge-plan"><span>YOUR NEXT STEP</span><strong>'+safe(nextAction)+'</strong></div>':
     '<div class="ns-urge-plan"><span>YOUR NEXT STEP</span><strong>Return to one small part of your day.</strong></div>')+
@@ -134,6 +134,7 @@ export function renderNSUrgePause(main) {
     else if(action==='repeat'){state.step=0;state.notice='';state.nextAction='';state.phase='steps';}
     else return;
     paint(action!=='demo');
+    if(action==='demo')main.querySelector('[data-urge-action="demo"]')?.focus();
   },{signal:controller.signal});
   main.addEventListener('submit',event=>{
     const form=event.target.closest('[data-urge-form="choose"]');
