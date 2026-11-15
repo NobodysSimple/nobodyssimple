@@ -8,7 +8,11 @@ import {INCLUSIVE_GROUPS_A} from './ns-inclusive-topics-a.mjs';
 import {CFM_EXTRA_CULTURE} from './ns-cfm-extra-culture.mjs';
 import {CFM_EXTRA_FAITH} from './ns-cfm-extra-faith.mjs';
 import {CFM_EXTRA_MIGRATION} from './ns-cfm-extra-migration.mjs';
+import {CFM_PROSE_CULTURE} from './ns-cfm-prose-culture.mjs';
+import {CFM_PROSE_FAITH} from './ns-cfm-prose-faith.mjs';
+import {CFM_PROSE_MIGRATION} from './ns-cfm-prose-migration.mjs';
 const additions={...CFM_EXTRA_CULTURE,...CFM_EXTRA_FAITH,...CFM_EXTRA_MIGRATION};
+const authoredProse={...CFM_PROSE_CULTURE,...CFM_PROSE_FAITH,...CFM_PROSE_MIGRATION};
 const domains=['culture','faith','migration'];
 const groups=INCLUSIVE_GROUPS_A.filter(g=>domains.includes(g.id));
 const catalogue=new Map(groups.flatMap(g=>g.rows.map(row=>[row[0],{id:row[0],title:row[1],domain:g.id,flags:row[4]||''}])));
@@ -48,15 +52,11 @@ const safetyNotes={
 };
 function articleFor(d,extra){
  const open=d.opening.split(/\n\s*\n/).filter(Boolean);
+ const prose=authoredProse[d.id];
  if(open.length!==2)fail(d.id,'expected two authored opening paragraphs');
- if(extra.length!==3)fail(d.id,'missing three individually authored deepening passages');
- const v=d.versions;
- const expand=(i)=>{
-  const detail=strip(v[i][1]),proposal=strip(v[i][2]),question=strip(d.questions[Math.min(i+1,4)]);
-  return detail+'. '+proposal+'. '+question+' These are questions about the conditions of your life, and only you can judge whether this particular description fits.';
- };
- return [open[0],open[1],extra[0],d.why,extra[1],expand(0),expand(1),extra[2],expand(2),
-  d.closing+' '+d.questions[4]+' You can leave the question open or return to it later. Choose what is safe and useful in your circumstances.'];
+ if(extra.length!==3||!prose||prose.length!==3)fail(d.id,'missing original long-form passages');
+ if(prose.some(p=>wordCount(p)<32))fail(d.id,'one of the version-specific article passages is too short');
+ return [open[0],open[1],extra[0],d.why,extra[1],prose[0],prose[1],extra[2],prose[2],d.closing];
 }
 function makeExamples(d,article,profiles,roots){
  const sentencesPool=article.flatMap((s,i)=>sentences(s).map(x=>({s:x,section:i})))
@@ -156,11 +156,11 @@ function build(id){
  if(id==='fear-divine-punishment')sourceList.push(['International OCD Foundation: faith and scrupulosity','https://iocdf.org/faith-ocd/what-is-ocd-scrupulosity/']);
  const whyQuestions=[
   d.questions[0],d.questions[1],d.questions[2],d.questions[3],d.questions[4],
-  'When '+d.versions[0][0].toLowerCase()+' is relevant, which parts of '+strip(d.versions[0][1]).toLowerCase()+' are actually happening?',
-  'Does '+d.versions[1][0].toLowerCase()+' describe the situation accurately, or does something important differ?',
-  'What do you want to protect when '+d.versions[2][0].toLowerCase()+' becomes difficult?',
-  'How would your options change if you had the support needed for this: '+strip(d.versions[1][2]).toLowerCase()+'?',
-  'If you chose one safe next step, would '+strip(d.versions[2][2]).toLowerCase()+' suit your circumstances?'
+  'When you think about "'+d.versions[0][0]+'", what happened in your own situation?',
+  'Does this resemble your experience: "'+d.versions[1][1]+'"? What part feels different?',
+  'When "'+d.versions[2][0]+'" becomes difficult, what do you most want to protect?',
+  'Would this be practical in your circumstances: "'+d.versions[1][2]+'"? What might get in the way?',
+  'How would you decide whether this would help: "'+d.versions[2][2]+'"?'
  ];
  const safety=safetyNotes[id]||(
  d.domain==='culture'
