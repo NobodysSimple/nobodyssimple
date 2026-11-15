@@ -115,9 +115,18 @@ function supportiveIdeas(g,domain,scenes){
    :domain==='environment'
    ?'Check reliable local information relevant to this situation: '+clean(scene[0])+'.'
    :'Discuss the actual expectation illustrated here, if it is safe: '+clean(scene[0])+'.'),
+  ...scenes.map(scene=>domain==='harm'
+   ?'Consider whether the conduct shown here is continuing and whether specialist help is needed: '+clean(scene[0])+'.'
+   :domain==='family'?'If a similar family interaction occurs, decide beforehand what support would be safe: '+clean(scene[0])+'.'
+   :'Identify an organisation able to respond to the concern illustrated by: '+clean(scene[0])+'.'),
   ...g.profiles.map(p=>domain==='harm'
    ?'Discuss specialist protection for '+p[0].toLowerCase()+' with a confidential service.'
    :'Consider what practical change would address '+p[0].toLowerCase()+' in your circumstances.'),
+  ...g.profiles.map(p=>domain==='harm'
+   ?'Ask a safety specialist about resources that could reduce the risks associated with '+p[0].toLowerCase()+'.'
+   :domain==='inequality'?'Find independent advice about the material conditions involved in '+p[0].toLowerCase()+'.'
+   :domain==='environment'?'Identify the reliable information needed to understand '+p[0].toLowerCase()+'.'
+   :'Choose a trusted person with whom to discuss '+p[0].toLowerCase()+', without forcing reconciliation.'),
   'Read the linked reference for additional information: '+g.sources[0][0]+'.'
  ];
  // Carefully place independently written options first. The rest are
