@@ -13,10 +13,9 @@ export const HABIT_VOICE_A={
       "What would make the first step possible next time? You can choose support or a change in the task."
     ],
     "routes": {
-      "begin": "You may have spent long enough thinking about this task. We'll identify the precise movement that could get it started.",
-      "emotion": "Let's look at the feeling that arrives just before you avoid the task. I want you to understand what you've been trying to get away from.",
+      "relief": "Let's look at the feeling that arrives just before you avoid the task. I want you to understand what you've been trying to get away from.",
       "standard": "If you're frightened of doing the work badly, we'll make room for a first attempt that nobody has to judge.",
-      "support": "If the task is inaccessible or genuinely too much, we'll work out what could change around you."
+      "conditions": "If the task is inaccessible or genuinely too much, we'll work out what could change around you."
     },
     "roots": {
       "relief": [
@@ -51,9 +50,9 @@ export const HABIT_VOICE_A={
     ],
     "routes": {
       "finish": "We'll decide what finished actually means for a low-risk task. You can practise leaving it there.",
+      "mistake": "We'll look at what each extra check is doing for you and whether it still improves the work.",
       "worth": "If a mistake feels like evidence about your value as a person, we'll spend some time with that belief.",
-      "check": "We'll look at what each extra check is doing for you and whether it still improves the work.",
-      "conditions": "If the standard comes from somebody else's unrealistic demands, we'll consider what you can reasonably ask to change."
+      "pressure": "If the standard comes from somebody else's unrealistic demands, we'll consider what you can reasonably ask to change."
     },
     "roots": {
       "worth": [
@@ -87,9 +86,9 @@ export const HABIT_VOICE_A={
       "What small change or source of support could help you get past that point?"
     ],
     "routes": {
-      "first": "Let's identify where the action stops. You may need a cue or a much clearer first movement.",
-      "feeling": "If the step has an emotional cost, we'll look at what you're afraid might happen after taking it.",
-      "energy": "If your capacity is depleted, I want us to make a plan that respects that limit.",
+      "start": "Let's identify where the action stops. You may need a cue or a much clearer first movement.",
+      "fear": "If the step has an emotional cost, we'll look at what you're afraid might happen after taking it.",
+      "activation": "If your capacity is depleted, I want us to make a plan that respects that limit.",
       "help": "If you need another person or an adjustment, we'll work out how to ask for it."
     },
     "roots": {
@@ -125,9 +124,9 @@ export const HABIT_VOICE_A={
     ],
     "routes": {
       "cue": "We'll choose a reliable part of your day that can remind you to begin the activity.",
-      "small": "If the routine has become too demanding, we'll find a version you can manage on a more ordinary day.",
+      "design": "If the routine has become too demanding, we'll find a version you can manage on a more ordinary day.",
       "restart": "A missed day may leave you feeling you've ruined everything. We'll make it easier to return.",
-      "access": "If your schedule or health changes often, we'll adapt the routine around those conditions."
+      "fit": "If your schedule or health changes often, we'll adapt the routine around those conditions."
     },
     "roots": {
       "cue": [
@@ -161,10 +160,10 @@ export const HABIT_VOICE_A={
       "What could be delayed or shared while you get appropriate support?"
     ],
     "routes": {
-      "health": "If your fatigue is new or has changed, we'll prepare a clear account for a health professional.",
-      "pace": "We'll look at what happens after activity and work within the limits you currently have.",
+      "reconnect": "If your fatigue is new or has changed, we'll prepare a clear account for a health professional.",
+      "pacing": "We'll look at what happens after activity and work within the limits you currently have.",
       "support": "If responsibilities are using more energy than you can spare, we'll find a practical request for help.",
-      "priority": "Let's choose what genuinely needs your energy today and allow less urgent demands to wait."
+      "prioritise": "Let's choose what genuinely needs your energy today and allow less urgent demands to wait."
     },
     "roots": {
       "health": [
