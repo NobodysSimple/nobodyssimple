@@ -49,7 +49,7 @@ import {renderMoodManual,renderTopicManual,MOOD_IDS} from './ns-mood-manual.mjs?
 import {THINK_IDS,THINK_BY_ID} from './ns-think-guide-data.mjs?v=think-20261114-v1';
 import {HABIT_IDS,HABIT_BY_ID} from './ns-habit-guide-data.mjs?v=habit-20261115-human-v2';
 import {BEHAVIOUR_IDS,BEHAVIOUR_BY_ID} from './ns-behaviour-guide-data.mjs?v=behaviour-20261115-v2';
-import {CONNECTION_IDS,CONNECTION_BY_ID,CONNECTION_GROUPS} from './ns-connection-guide-data.mjs?v=connection-20261115-v1';
+import {CONNECTION_IDS,CONNECTION_BY_ID,CONNECTION_GROUPS} from './ns-connection-guide-data.mjs?v=connection-20261115-v3';
 import {FOCUS_IDS,FOCUS_BY_ID} from './ns-focus-guide-data.mjs?v=focus-20261115-voice-v1';
 import {CLINICAL_IDS,CLINICAL_BY_ID} from './ns-clinical-guide-data.mjs?v=clinical-20261114-v1';
 import {EXPERIENCE_GUIDES_BY_ID,EXPERIENCE_IDS} from './ns-experiences-guide-data.mjs?v=experiences-20261114-v2';
