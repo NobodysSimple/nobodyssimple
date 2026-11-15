@@ -8,6 +8,7 @@ export const SAVED = {
   'ns-account-learning-v2': ['learning','Learning progress, Journey collection and bookmarks'],
   'ns-account-tool-drafts-v2': ['drafts','Unfinished activities'],
   'ns-account-mood-v2': ['mood','Optional mood history'],
+  'ns-lifestyle-emotions-v1': ['mood','Daily check-ins and calendar emotion history'],
   'ns-learn-quote-notes-v1': ['reflections','Quote reflections'],
   'ns-reflection': ['reflections','Reflection draft'],
   'ns-memory-jar-v1': ['reflections','Memory jar'],
