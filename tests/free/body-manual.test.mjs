@@ -5,7 +5,7 @@ import {atlasProblemIndex} from '../../ns-atlas-core.mjs';
 import {BODY_GUIDES,BODY_IDS} from '../../ns-body-guide-data.mjs';
 import {verifiedCompleted,pending,catalogueTotal} from '../../ns-catalogue-progress.mjs';
 test('sleep manual is an authored and interactive atlas topic',()=>{
- assert.deepEqual(BODY_IDS,['sleep','fatigue']);
+ assert.deepEqual(BODY_IDS,['sleep','fatigue','pain']);
  const g=BODY_GUIDES[0];
  assert.equal(atlasProblemIndex.find(p=>p.id===g.id)?.domain,'body');
  assert.ok(g.article.join(' ').split(/\s+/).length>=450);
@@ -48,4 +48,23 @@ test('fatigue manual distinguishes clinical, workload and exertion pathways',()=
  for(const c of g.whyCases)for(const k of ['situation','interpretation','emotion','response','function','need','rule','adaptation','alternative','action','root'])assert.ok(c[k],k);
  assert.ok(verifiedCompleted.includes('fatigue'));
  assert.ok(!pending.includes('fatigue'));
+});
+
+test('pain manual has independently authored pathways, journals and safety information',()=>{
+ const g=BODY_GUIDES.find(x=>x.id==='pain');
+ assert.ok(g);
+ assert.equal(atlasProblemIndex.find(p=>p.id==='pain')?.domain,'body');
+ assert.ok(g.article.join(' ').split(/\\s+/).length>=600);
+ assert.equal(g.routes.length,4);
+ assert.equal(new Set(g.routes.map(r=>r.id)).size,4);
+ assert.ok(g.routes.every(r=>r.questions.length===4&&r.practice.length>45));
+ assert.equal(g.whyQuestions.length,10);
+ assert.equal(g.whyCases.length,16);
+ assert.equal(new Set(g.whyCases.map(c=>c.situation)).size,16);
+ assert.ok(g.whyCases.every(c=>['situation','interpretation','emotion','response','function','need','rule','adaptation','alternative','action','root'].every(k=>c[k])));
+ assert.equal(g.roots.length,4);
+ assert.ok(g.sources.some(x=>x[1].includes('nice.org.uk')));
+ assert.match(g.safety,/bladder or bowel/);
+ assert.ok(verifiedCompleted.includes('pain'));
+ assert.ok(!pending.includes('pain'));
 });
