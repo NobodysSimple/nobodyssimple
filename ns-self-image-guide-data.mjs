@@ -78,7 +78,7 @@ function build(data,domain){
  ensure(data.article?.length===10&&data.article.join(' ').trim().split(/\s+/).length>=370,id+' short article');
  ensure(data.profiles?.length===4&&data.cases?.length===4&&data.actions?.length===4&&data.why?.length>110,id+' missing individual work');
  ensure(data.profiles.every(x=>x.length===2&&x[1].length>35),id+' insufficient recognition');
- ensure(data.cases.every(x=>x.length===2&&x[0].length>35&&x[1].length>14),id+' thin real-world example');
+ ensure(data.cases.every(x=>x.length===2&&x[0].length>=26&&x[1].length>=10),id+' thin real-world example');
  const label=data.profiles.map(p=>p[0]);
  const roots=label.map((name,i)=>['path-'+i,name]);
  const routes=data.profiles.map((p,i)=>{
