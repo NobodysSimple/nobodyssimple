@@ -237,7 +237,7 @@ export const SOCIAL_WORK_A={
       "How did the exclusion affect you?",
       "Did you withdraw or try to gain approval?",
       "What did that response protect you from?",
-      "What kind of belonging were you hoping for?",
+      "What sort of welcome or inclusion did you want from that particular group?",
       "Have you begun believing you need to change yourself to be included?",
       "What pattern of actual exclusion or discrimination is present?",
       "Which people or settings have treated you more fairly?",
