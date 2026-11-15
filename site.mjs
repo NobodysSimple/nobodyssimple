@@ -1,6 +1,6 @@
 import './ns-shell.mjs';
 import { renderLifestyle } from './lifestyle.mjs';
-import { renderNSFieldGuide, cleanupNSFieldGuide } from './ns-field-guide.mjs';
+import { renderNSFieldGuide, cleanupNSFieldGuide } from './ns-field-guide.mjs?v=field-journal-20261115';
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
 import {configureStrategy, renderWisbody, read as readStrategy} from './strategy.mjs';
