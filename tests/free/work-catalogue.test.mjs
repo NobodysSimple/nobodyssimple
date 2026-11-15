@@ -1,13 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {WORK_GUIDES,WORK_IDS,WORK_BY_ID} from '../../ns-work-guide-data.mjs';
-import {atlasByDomain} from '../../ns-atlas-core.mjs';
+import {WORK_GUIDES,WORK_IDS,WORK_BY_ID,WORK_GUIDE_GROUPS} from '../../ns-work-guide-data.mjs';
+import {atlasByDomain,atlasProblemIndex} from '../../ns-atlas-core.mjs';
+import {topicsInTheme} from '../../ns-needs-themes.mjs';
 
-test('all thirteen work and circumstances topics have their own authored field guide',()=>{
- const atlas=new Set(atlasByDomain('work').map(x=>x.id));
- assert.equal(atlas.size,13);
- assert.equal(WORK_IDS.length,13);
+test('all 29 work and education topics have their own authored field guide',()=>{
+ const atlas=new Set(topicsInTheme(atlasProblemIndex,'work').filter(x=>['work','education'].includes(x.domain)).map(x=>x.id));
+ assert.equal(atlas.size,29);
+ assert.equal(WORK_IDS.length,29);
+ assert.equal(WORK_GUIDE_GROUPS.work.length,13);
+ assert.equal(WORK_GUIDE_GROUPS.education.length,16);
  assert.deepEqual(new Set(WORK_IDS),atlas);
  assert.equal(WORK_BY_ID.size,13);
  const openers=new Set();
@@ -37,7 +40,7 @@ test('workbook routes reflect four different everyday problems per manual',()=>{
   }
  }
 });
-test('all thirteen guides contain sixteen separate hypothetical cases and optional deeper work',()=>{
+test('all 29 guides contain sixteen separate hypothetical cases and optional deeper work',()=>{
  for(const g of WORK_GUIDES){
   assert.equal(g.whyCases.length,16,g.id);
   assert.equal(new Set(g.whyCases.map(c=>c.situation)).size,16,g.id);
@@ -62,7 +65,7 @@ test('each manual includes 24 unique contextual suggestions, without replacing e
   assert.equal(WORK_BY_ID.get(id).noPersist,true,id);
  }
 });
-test('new field guides are discoverable through both router entry points and return to work area',()=>{
+test('new field guides are discoverable through both router entry points and return to the right area',()=>{
  const site=readFileSync('site.mjs','utf8');
  const manual=readFileSync('ns-mood-manual.mjs','utf8');
  assert.match(site,/workGuideIds\.has\(options\.topic\)/);
@@ -70,4 +73,6 @@ test('new field guides are discoverable through both router entry points and ret
  assert.match(site,/workGuideIds\.has\(key\)/);
  assert.match(site,/showWorkGuide=id=>renderTopicManual/);
  assert.ok(manual.includes('#navigate/area/work/work'));
+ assert.ok(manual.includes('#navigate/area/work/education'));
+ assert.ok(site.includes("WORK_BY_ID.get(id)?.domain||'work'"));
 });
