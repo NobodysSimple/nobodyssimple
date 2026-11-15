@@ -102,7 +102,7 @@ export const CFM_ADVICE_MORE_CULTURE={
  'Request the specific equality impact or accessibility information used to develop a policy, where available.',
  'Invite a union representative or student advocate to accompany a review meeting.',
  'Seek confidential advice about whether a pattern amounts to unlawful discrimination.',
- 'Ask for a named contact responsible for completing any agreed adjustment.',
+ 'Request a written timescale for putting an agreed change into effect and checking whether it worked.',
  'Request that the organisation explain how similar decisions will be monitored in future.',
  'Ask a trusted colleague to help organise documents into a timeline.',
  'Seek support with stress caused by repeated institutional barriers while pursuing a practical remedy.'
@@ -119,7 +119,7 @@ export const CFM_ADVICE_MORE_CULTURE={
  'Revisit a former self-description when it no longer feels accurate without treating change as dishonesty.'
  ],
  support:[
- 'Ask a relative whether they would enjoy sharing a family story rather than demanding an exhaustive history.',
+ 'Create a short list of people or archives who might know different parts of your family history; ask only the questions they welcome.',
  'Visit a community archive or library if records of your heritage are available.',
  'Find a conversation partner who welcomes uncertainty about labels.',
  'Ask a form provider what information they need and whether you can use more than one category.',
@@ -259,7 +259,7 @@ export const CFM_ADVICE_MORE_CULTURE={
  'Choose a tradition you miss and describe what it gave your family before deciding how to preserve it.',
  'Record the words of a familiar song if you know them, without worrying whether your version is complete.',
  'Keep a family recipe with the memory of who taught it to you.',
- 'Allow yourself to mourn a cultural practice that cannot realistically be restored.',
+ 'Choose how to mark a discontinued celebration on its original date, even if you cannot recreate it.',
  'Try a language-learning activity for enjoyment rather than to prove authenticity.',
  'Notice whether a celebration feels meaningful when adapted to your present circumstances.',
  'Set aside time to listen to a relative’s story if they want to tell it.',
@@ -271,7 +271,7 @@ export const CFM_ADVICE_MORE_CULTURE={
  'Invite someone to cook a familiar dish with you.',
  'Ask a language speaker to share expressions that carry family meaning.',
  'Seek a community archive if original stories or records are missing.',
- 'Discuss unresolved grief with someone who understands cultural loss.',
+ 'Ask a family member what they would most like the next generation to remember about a lost tradition.',
  'Look for remote celebrations when travel or money prevents attending in person.',
  'Ask a relative what a particular tradition meant to them rather than relying only on written descriptions.'
  ]},
@@ -322,16 +322,16 @@ export const CFM_ADVICE_MORE_CULTURE={
  'Choose the kind of connection you miss most rather than trying to attend every social event.',
  'Check whether a local cultural gathering is accessible by your usual transport.',
  'Keep one routine conversation in your preferred language each week.',
- 'Invite a new friend to share a familiar custom without expecting them to know its history already.',
+ 'Set aside time to practise a familiar custom on your own when no one nearby can participate.',
  'Plan for the cost of community events so attending does not create additional stress.',
  'Try a smaller gathering if large groups leave you feeling unseen.',
  'Create a calendar reminder for a celebration that matters to you.',
  'Allow online community contact to count as meaningful connection when distance prevents meeting.'
  ],
  support:[
- 'Ask a local library about cultural or language groups nearby.',
+ 'Check whether a community centre offers activities in the language you miss speaking.',
  'Find an online community with clear moderation and respectful participation.',
- 'Invite a colleague to a shared meal where you can introduce a familiar food.',
+ 'Ask a friend to join you at a cultural event so you have company while meeting new people.',
  'Contact a local cultural organisation about events that do not require membership.',
  'Ask friends to remember or join an important celebration if they wish.',
  'Find a language exchange partner interested in regular conversation.',
@@ -350,7 +350,7 @@ export const CFM_ADVICE_MORE_CULTURE={
  'Make space for collective grief without feeling compelled to attend every public gathering.'
  ],
  support:[
- 'Ask a trusted community organisation where accurate local safety updates are shared.',
+ 'Request a clear contact point for reporting ongoing harassment in your area.',
  'Find out whether a relative wants company for an essential journey.',
  'Seek appropriate support if threats against your community are ongoing.',
  'Join a remembrance event if the organisers provide a respectful and safe setting.',
@@ -364,7 +364,7 @@ export const CFM_ADVICE_MORE_CULTURE={
  'Choose one historical event to research through a credible archive.',
  'Separate documented policy consequences from stories whose details remain uncertain.',
  'Ask consent before recording or publishing a relative’s painful memories.',
- 'Include accounts of ordinary community life alongside accounts of persecution.',
+ 'Check who produced a historical account and whether people from the affected community contributed to it.',
  'Avoid assuming that descendants of an injustice all experience the same psychological effects.',
  'Look for how a historical institution shaped a present-day resource or opportunity.',
  'Allow time away from distressing historical material when further reading is overwhelming.',
@@ -392,7 +392,7 @@ export const CFM_ADVICE_MORE_CULTURE={
  'Review whether an agreed adjustment works in practice rather than accepting it because it exists on paper.'
  ],
  support:[
- 'Ask for a named coordinator across the departments involved.',
+ 'Request a single written accessibility plan that covers the complete appointment or service.',
  'Request written confirmation of the complete adjustment, not separate partial promises.',
  'Invite an advocate who understands both access and discrimination concerns.',
  'Seek advice about combined barriers from an appropriate equality organisation.',
