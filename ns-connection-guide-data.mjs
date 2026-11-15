@@ -3,34 +3,34 @@
  * 9 related experiences explicitly assigned by ns-needs-themes.mjs.
  * Authors' articles and independent guided prompts are in named companion files.
  */
-import {RELATE_EDITORIAL_A} from './ns-relate-editorial-a.mjs';
-import {RELATE_EDITORIAL_B} from './ns-relate-editorial-b.mjs';
-import {RELATE_EDITORIAL_C} from './ns-relate-editorial-c.mjs';
-import {RELATE_EDITORIAL_D} from './ns-relate-editorial-d.mjs';
-import {SOCIAL_EDITORIAL_A} from './ns-social-editorial-a.mjs';
-import {SOCIAL_EDITORIAL_B} from './ns-social-editorial-b.mjs';
-import {SOCIAL_EDITORIAL_C} from './ns-social-editorial-c.mjs';
-import {CONNECTION_EDITORIAL_A} from './ns-connection-editorial-a.mjs';
-import {CONNECTION_EDITORIAL_B} from './ns-connection-editorial-b.mjs';
-import {RELATE_WORK_A} from './ns-relate-work-a.mjs';
-import {RELATE_WORK_B} from './ns-relate-work-b.mjs';
-import {RELATE_WORK_C} from './ns-relate-work-c.mjs';
-import {RELATE_WORK_D} from './ns-relate-work-d.mjs';
-import {SOCIAL_WORK_A} from './ns-social-work-a.mjs';
-import {SOCIAL_WORK_B} from './ns-social-work-b.mjs';
-import {SOCIAL_WORK_C} from './ns-social-work-c.mjs';
-import {CONNECTION_WORK_A} from './ns-connection-work-a.mjs';
-import {CONNECTION_WORK_B} from './ns-connection-work-b.mjs';
-import {CONNECTION_SUPPORT_A} from './ns-connection-support-a.mjs';
-import {CONNECTION_SUPPORT_B} from './ns-connection-support-b.mjs';
-import {CONNECTION_SUPPORT_C} from './ns-connection-support-c.mjs';
-import {CONNECTION_SUPPORT_D} from './ns-connection-support-d.mjs';
-import {CONNECTION_SUPPORT_E} from './ns-connection-support-e.mjs';
-import {CONNECTION_SUPPORT_F} from './ns-connection-support-f.mjs';
-import {CONNECTION_SUPPORT_G} from './ns-connection-support-g.mjs';
-import {CONNECTION_SUPPORT_H} from './ns-connection-support-h.mjs';
-import {CONNECTION_SUPPORT_I} from './ns-connection-support-i.mjs';
-import {CONNECTION_WHY_INTROS} from './ns-connection-why-intros.mjs';
+import {RELATE_EDITORIAL_A} from './ns-relate-editorial-a.mjs?v=connection-20261115-v3';
+import {RELATE_EDITORIAL_B} from './ns-relate-editorial-b.mjs?v=connection-20261115-v3';
+import {RELATE_EDITORIAL_C} from './ns-relate-editorial-c.mjs?v=connection-20261115-v3';
+import {RELATE_EDITORIAL_D} from './ns-relate-editorial-d.mjs?v=connection-20261115-v3';
+import {SOCIAL_EDITORIAL_A} from './ns-social-editorial-a.mjs?v=connection-20261115-v3';
+import {SOCIAL_EDITORIAL_B} from './ns-social-editorial-b.mjs?v=connection-20261115-v3';
+import {SOCIAL_EDITORIAL_C} from './ns-social-editorial-c.mjs?v=connection-20261115-v3';
+import {CONNECTION_EDITORIAL_A} from './ns-connection-editorial-a.mjs?v=connection-20261115-v3';
+import {CONNECTION_EDITORIAL_B} from './ns-connection-editorial-b.mjs?v=connection-20261115-v3';
+import {RELATE_WORK_A} from './ns-relate-work-a.mjs?v=connection-20261115-v3';
+import {RELATE_WORK_B} from './ns-relate-work-b.mjs?v=connection-20261115-v3';
+import {RELATE_WORK_C} from './ns-relate-work-c.mjs?v=connection-20261115-v3';
+import {RELATE_WORK_D} from './ns-relate-work-d.mjs?v=connection-20261115-v3';
+import {SOCIAL_WORK_A} from './ns-social-work-a.mjs?v=connection-20261115-v3';
+import {SOCIAL_WORK_B} from './ns-social-work-b.mjs?v=connection-20261115-v3';
+import {SOCIAL_WORK_C} from './ns-social-work-c.mjs?v=connection-20261115-v3';
+import {CONNECTION_WORK_A} from './ns-connection-work-a.mjs?v=connection-20261115-v3';
+import {CONNECTION_WORK_B} from './ns-connection-work-b.mjs?v=connection-20261115-v3';
+import {CONNECTION_SUPPORT_A} from './ns-connection-support-a.mjs?v=connection-20261115-v3';
+import {CONNECTION_SUPPORT_B} from './ns-connection-support-b.mjs?v=connection-20261115-v3';
+import {CONNECTION_SUPPORT_C} from './ns-connection-support-c.mjs?v=connection-20261115-v3';
+import {CONNECTION_SUPPORT_D} from './ns-connection-support-d.mjs?v=connection-20261115-v3';
+import {CONNECTION_SUPPORT_E} from './ns-connection-support-e.mjs?v=connection-20261115-v3';
+import {CONNECTION_SUPPORT_F} from './ns-connection-support-f.mjs?v=connection-20261115-v3';
+import {CONNECTION_SUPPORT_G} from './ns-connection-support-g.mjs?v=connection-20261115-v3';
+import {CONNECTION_SUPPORT_H} from './ns-connection-support-h.mjs?v=connection-20261115-v3';
+import {CONNECTION_SUPPORT_I} from './ns-connection-support-i.mjs?v=connection-20261115-v3';
+import {CONNECTION_WHY_INTROS} from './ns-connection-why-intros.mjs?v=connection-20261115-v3';
 
 const authored=[...RELATE_EDITORIAL_A,...RELATE_EDITORIAL_B,...RELATE_EDITORIAL_C,...RELATE_EDITORIAL_D,
  ...SOCIAL_EDITORIAL_A,...SOCIAL_EDITORIAL_B,...SOCIAL_EDITORIAL_C,...CONNECTION_EDITORIAL_A,...CONNECTION_EDITORIAL_B];
