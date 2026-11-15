@@ -1053,6 +1053,558 @@ export const BODY_GUIDES=Object.freeze([
       "A manageable next step is enough for today."
     ]
   }
+},
+{
+  "id": "pain",
+  "title": "I am struggling with pain",
+  "standfirst": "Pain deserves to be taken seriously. Understanding what has changed can help you find care and make daily life more workable without blaming yourself for your limits.",
+  "readTitle": "When pain starts deciding what your day can hold",
+  "article": [
+    "Pain can change the shape of an ordinary day. You might plan around how long you can stand, whether a journey has somewhere to sit, or how much energy you will have left after work. When other people cannot see what hurts, you may find yourself explaining the same limits repeatedly. That extra work can be tiring in its own right.",
+    "Pain is a real experience, even when a scan does not show a simple explanation. The nervous system helps produce pain in response to signals from the body and the wider context. Persistent pain can involve changes in how the nervous system processes threat. This does not mean the pain is imagined, nor does it establish that every person's pain has the same cause.",
+    "Start by noticing whether the pain is new, changing or familiar. Sudden severe pain, new weakness, loss of bladder or bowel control, fever with a serious illness, or pain following a significant injury may require urgent assessment. A reflective exercise cannot establish what is medically safe. If symptoms are unexplained or worsening, speak to a clinician rather than assuming they are part of a known pattern.",
+    "Some pain is linked to an identifiable condition or injury. Treatment may need to address inflammation, nerve injury or another physical process. Other people have pain that persists after an injury has healed, or pain for which tests do not identify a single cause. The absence of a neat explanation can leave you feeling disbelieved. It is reasonable to ask what has been assessed and what further review would change.",
+    "Pain can make movement feel risky. After an activity causes a flare, you may avoid it altogether because you cannot afford another difficult day. Avoidance can sometimes reduce confidence and limit valued activities. Yet forcing movement through severe symptoms can also be harmful. A useful plan distinguishes safe, tolerable activity from activities that require assessment or adjustment.",
+    "Another difficulty is the pressure to appear well. You might say yes to a social plan because you do not want to disappoint someone, then spend the next day recovering. The problem may be the expectations surrounding the activity rather than a lack of determination. An accessible venue, a shorter visit or a change of responsibilities can sometimes preserve participation without demanding the same physical cost.",
+    "Persistent pain also competes for attention. When pain increases, you may repeatedly check whether it has moved or whether a new sensation means something serious. Checking can be appropriate when symptoms have changed. Once a concerning change has been assessed, constant monitoring may leave less attention for the parts of life you want to engage with. The distinction depends on the actual medical context.",
+    "Sleep and mood can be affected by pain, and difficult sleep can make coping with pain harder. This interaction is not proof that stress caused the original problem. If you feel frustrated or low after months of interrupted plans, those feelings make sense in the circumstances. Psychological support may help with distress and function while medical care continues; it should never be presented as a test of whether the pain is genuine.",
+    "An effective conversation with a clinician often begins with function. Describe what has changed, where and when the pain occurs, what makes it worse, and what you have already tried. Include effects on sleep and work. If you have been dismissed, you can ask for the reasoning behind a decision, a review of your treatment options or a second opinion.",
+    "The next step depends on the pattern. New or dangerous symptoms call for medical attention. Persistent pain may benefit from a coordinated plan that considers your condition, accessible activity and the practical demands on your life. You do not need to wait until you can tolerate everything to ask for adjustments. Choose one change that makes an important part of your day more possible."
+  ],
+  "mechanisms": [
+    [
+      "Medical and tissue contributors",
+      "Injury, inflammation and other health conditions can require assessment or treatment."
+    ],
+    [
+      "Changes in pain processing",
+      "Persistent pain can involve altered nervous-system sensitivity without making the experience less real."
+    ],
+    [
+      "Activity and recovery constraints",
+      "Demanding tasks can create flares or limit recovery opportunities."
+    ],
+    [
+      "Fear and vigilance",
+      "Concern about another flare can narrow activity and draw attention repeatedly towards symptoms."
+    ]
+  ],
+  "profiles": [
+    [
+      "New or changing pain",
+      "Symptoms have appeared or changed and you need to establish what assessment is appropriate."
+    ],
+    [
+      "Persistent or unexplained pain",
+      "Pain continues and you may be unsure why, or feel dismissed when tests are inconclusive."
+    ],
+    [
+      "Pain and unequal demands",
+      "Work, care or social expectations do not account for the effect of pain on your capacity."
+    ],
+    [
+      "Pain-related fear",
+      "A previous flare makes movement or everyday activity feel dangerous, even when some adjustments may be possible."
+    ]
+  ],
+  "now": {
+    "title": "Choose the right response for this pain",
+    "paras": [
+      "Start with safety and what has changed. A new concerning symptom needs assessment; a familiar persistent pattern may call for a different plan."
+    ],
+    "steps": [
+      "Seek urgent assessment for sudden severe pain or concerning new neurological symptoms.",
+      "For persistent or unexplained pain, note the effect on function and arrange a clinical review.",
+      "Choose one reasonable adjustment that protects an activity you value."
+    ]
+  },
+  "safety": "Seek emergency help for sudden severe pain with serious symptoms, chest pain, stroke-like signs, or new loss of bladder or bowel control with back pain. Seek urgent assessment for fever with serious illness, new weakness, major injury or rapidly worsening symptoms. Do not use this journal to diagnose pain or delay necessary medical care.",
+  "sources": [
+    [
+      "NHS: Pain",
+      "https://www.nhs.uk/conditions/pain/"
+    ],
+    [
+      "NICE: Chronic pain in over 16s (NG193)",
+      "https://www.nice.org.uk/guidance/ng193"
+    ],
+    [
+      "NHS: Back pain and emergency warning signs",
+      "https://www.nhs.uk/conditions/back-pain/"
+    ]
+  ],
+  "cycle": [
+    "Pain affects an activity or creates uncertainty.",
+    "You change plans or monitor symptoms to stay safe.",
+    "The immediate response may help, yet participation can become narrower.",
+    "New information, treatment or an adjustment may change what is possible."
+  ],
+  "roots": [
+    [
+      "path-0",
+      "New or changing pain"
+    ],
+    [
+      "path-1",
+      "Persistent pain and sensitivity"
+    ],
+    [
+      "path-2",
+      "Pain amid difficult demands"
+    ],
+    [
+      "path-3",
+      "Pain, fear and reduced activity"
+    ]
+  ],
+  "whyIntro": "These questions help organise your experience. They cannot identify the medical cause of pain. You can omit personal health details, particularly on a shared device.",
+  "whyQuestions": [
+    "When did the pain begin and what has changed?",
+    "What medical assessment have you had, and what remains uncertain?",
+    "What does the pain stop you doing that matters to you?",
+    "What happens after activity, and how long does recovery take?",
+    "What are you most concerned the pain could mean?",
+    "Which responses protect you from a genuine risk?",
+    "Which expectations from others make your day harder?",
+    "What adjustment or support has helped before?",
+    "What would you like a clinician or trusted person to understand?",
+    "What is one safe next step that respects your actual limits?"
+  ],
+  "whyStages": [
+    "What happened",
+    "What you thought it meant",
+    "What you felt",
+    "How you responded",
+    "What that response did for you",
+    "What you needed",
+    "The expectation behind it",
+    "Relevant context",
+    "Another possibility",
+    "A safe next step"
+  ],
+  "pullIndex": 2,
+  "prominentSafety": "New or rapidly changing pain can need urgent assessment. Seek emergency help for serious neurological symptoms, chest pain or sudden severe symptoms. Reflection is not a substitute for medical care.",
+  "evidence": "NICE NG193 distinguishes chronic primary pain and supports person-centred assessment. NHS guidance describes when pain and back-pain symptoms warrant medical review.",
+  "routes": [
+    {
+      "id": "assess",
+      "label": "Prepare a useful clinical account",
+      "description": "Identify what has changed and what needs medical attention.",
+      "finish": "Write a concise symptom and function history to discuss with a clinician.",
+      "qs": [
+        "When did the pain begin, and what has changed recently?",
+        "What accompanying symptoms, injuries or illnesses need mentioning?",
+        "Which activities, sleep periods or responsibilities are affected?",
+        "What specific question or review would you like to request?"
+      ],
+      "title": "Prepare a useful clinical account",
+      "practiceTitle": "One next step",
+      "practice": "Write a concise symptom and function history to discuss with a clinician.",
+      "questions": [
+        [
+          "When did the pain begin, and what has changed recently?",
+          "Identify what has changed and what needs medical attention.",
+          "Symptoms have appeared or changed and you need to establish what assessment is appropriate.",
+          ""
+        ],
+        [
+          "What accompanying symptoms, injuries or illnesses need mentioning?",
+          "Identify what has changed and what needs medical attention.",
+          "Symptoms have appeared or changed and you need to establish what assessment is appropriate.",
+          ""
+        ],
+        [
+          "Which activities, sleep periods or responsibilities are affected?",
+          "Identify what has changed and what needs medical attention.",
+          "Symptoms have appeared or changed and you need to establish what assessment is appropriate.",
+          ""
+        ],
+        [
+          "What specific question or review would you like to request?",
+          "Identify what has changed and what needs medical attention.",
+          "Symptoms have appeared or changed and you need to establish what assessment is appropriate.",
+          "actions"
+        ]
+      ]
+    },
+    {
+      "id": "pattern",
+      "label": "Understand persistent pain",
+      "description": "Separate uncertainty about the cause from the reality of the experience.",
+      "finish": "Write down what is known, what remains uncertain and the next appropriate clinical question.",
+      "qs": [
+        "What explanations or test results have you been given?",
+        "What have you been told about persistent pain, and what remains unclear?",
+        "How has uncertainty affected the way you interpret symptoms?",
+        "What would help you feel heard and better informed at your next appointment?"
+      ],
+      "title": "Understand persistent pain",
+      "practiceTitle": "One next step",
+      "practice": "Write down what is known, what remains uncertain and the next appropriate clinical question.",
+      "questions": [
+        [
+          "What explanations or test results have you been given?",
+          "Separate uncertainty about the cause from the reality of the experience.",
+          "Pain continues and you may be unsure why, or feel dismissed when tests are inconclusive.",
+          ""
+        ],
+        [
+          "What have you been told about persistent pain, and what remains unclear?",
+          "Separate uncertainty about the cause from the reality of the experience.",
+          "Pain continues and you may be unsure why, or feel dismissed when tests are inconclusive.",
+          ""
+        ],
+        [
+          "How has uncertainty affected the way you interpret symptoms?",
+          "Separate uncertainty about the cause from the reality of the experience.",
+          "Pain continues and you may be unsure why, or feel dismissed when tests are inconclusive.",
+          ""
+        ],
+        [
+          "What would help you feel heard and better informed at your next appointment?",
+          "Separate uncertainty about the cause from the reality of the experience.",
+          "Pain continues and you may be unsure why, or feel dismissed when tests are inconclusive.",
+          "actions"
+        ]
+      ]
+    },
+    {
+      "id": "access",
+      "label": "Make a demanding day more accessible",
+      "description": "Identify changes in conditions rather than assuming you must tolerate the same load.",
+      "finish": "Request one specific adjustment that reduces unnecessary pain-related demands.",
+      "qs": [
+        "Which activity creates the greatest practical cost at present?",
+        "What part of the task or environment makes it harder?",
+        "Who has the ability to change that demand or arrangement?",
+        "What adjustment could you request without disclosing more health information than you wish?"
+      ],
+      "title": "Make a demanding day more accessible",
+      "practiceTitle": "One next step",
+      "practice": "Request one specific adjustment that reduces unnecessary pain-related demands.",
+      "questions": [
+        [
+          "Which activity creates the greatest practical cost at present?",
+          "Identify changes in conditions rather than assuming you must tolerate the same load.",
+          "Work, care or social expectations do not account for the effect of pain on your capacity.",
+          ""
+        ],
+        [
+          "What part of the task or environment makes it harder?",
+          "Identify changes in conditions rather than assuming you must tolerate the same load.",
+          "Work, care or social expectations do not account for the effect of pain on your capacity.",
+          ""
+        ],
+        [
+          "Who has the ability to change that demand or arrangement?",
+          "Identify changes in conditions rather than assuming you must tolerate the same load.",
+          "Work, care or social expectations do not account for the effect of pain on your capacity.",
+          ""
+        ],
+        [
+          "What adjustment could you request without disclosing more health information than you wish?",
+          "Identify changes in conditions rather than assuming you must tolerate the same load.",
+          "Work, care or social expectations do not account for the effect of pain on your capacity.",
+          "actions"
+        ]
+      ]
+    },
+    {
+      "id": "confidence",
+      "label": "Plan a safer return to an activity",
+      "description": "Explore fear after a flare without treating pain as something to ignore.",
+      "finish": "Choose one clinically appropriate, manageable activity or seek guidance about its safety.",
+      "qs": [
+        "What activity have you avoided since a painful experience?",
+        "What happened the last time you tried it?",
+        "What has a clinician advised about safe activity or limits?",
+        "What small adaptation or professional question could help you decide what to do next?"
+      ],
+      "title": "Plan a safer return to an activity",
+      "practiceTitle": "One next step",
+      "practice": "Choose one clinically appropriate, manageable activity or seek guidance about its safety.",
+      "questions": [
+        [
+          "What activity have you avoided since a painful experience?",
+          "Explore fear after a flare without treating pain as something to ignore.",
+          "A previous flare makes movement or everyday activity feel dangerous, even when some adjustments may be possible.",
+          ""
+        ],
+        [
+          "What happened the last time you tried it?",
+          "Explore fear after a flare without treating pain as something to ignore.",
+          "A previous flare makes movement or everyday activity feel dangerous, even when some adjustments may be possible.",
+          ""
+        ],
+        [
+          "What has a clinician advised about safe activity or limits?",
+          "Explore fear after a flare without treating pain as something to ignore.",
+          "A previous flare makes movement or everyday activity feel dangerous, even when some adjustments may be possible.",
+          ""
+        ],
+        [
+          "What small adaptation or professional question could help you decide what to do next?",
+          "Explore fear after a flare without treating pain as something to ignore.",
+          "A previous flare makes movement or everyday activity feel dangerous, even when some adjustments may be possible.",
+          "actions"
+        ]
+      ]
+    }
+  ],
+  "whyCases": [
+    {
+      "situation": "You wake with a new severe pain",
+      "interpretation": "It will probably settle if I ignore it",
+      "emotion": "Alarm",
+      "response": "Consider whether symptoms need assessment",
+      "function": "Injury, inflammation and other health conditions can require assessment or treatment.",
+      "need": "New or changing pain",
+      "rule": "It will probably settle if I ignore it",
+      "adaptation": "Identify what has changed and what needs medical attention.",
+      "alternative": "Seek an appropriate urgent assessment rather than testing it repeatedly",
+      "action": "Seek an appropriate urgent assessment rather than testing it repeatedly",
+      "root": "path-0"
+    },
+    {
+      "situation": "A familiar pain suddenly changes character",
+      "interpretation": "It must be the same thing as last time",
+      "emotion": "Uncertainty",
+      "response": "Consider whether symptoms need assessment",
+      "function": "Injury, inflammation and other health conditions can require assessment or treatment.",
+      "need": "New or changing pain",
+      "rule": "It must be the same thing as last time",
+      "adaptation": "Identify what has changed and what needs medical attention.",
+      "alternative": "Describe the change and associated symptoms to a clinician",
+      "action": "Describe the change and associated symptoms to a clinician",
+      "root": "path-0"
+    },
+    {
+      "situation": "Pain begins after a significant fall",
+      "interpretation": "I should keep working to avoid making a fuss",
+      "emotion": "Pressure",
+      "response": "Consider whether symptoms need assessment",
+      "function": "Injury, inflammation and other health conditions can require assessment or treatment.",
+      "need": "New or changing pain",
+      "rule": "I should keep working to avoid making a fuss",
+      "adaptation": "Identify what has changed and what needs medical attention.",
+      "alternative": "Stop the risky activity and obtain appropriate medical advice",
+      "action": "Stop the risky activity and obtain appropriate medical advice",
+      "root": "path-0"
+    },
+    {
+      "situation": "A new symptom appears alongside pain",
+      "interpretation": "I am overreacting by asking about it",
+      "emotion": "Doubt",
+      "response": "Consider whether symptoms need assessment",
+      "function": "Injury, inflammation and other health conditions can require assessment or treatment.",
+      "need": "New or changing pain",
+      "rule": "I am overreacting by asking about it",
+      "adaptation": "Identify what has changed and what needs medical attention.",
+      "alternative": "Check whether the symptom needs prompt medical review",
+      "action": "Check whether the symptom needs prompt medical review",
+      "root": "path-0"
+    },
+    {
+      "situation": "Tests do not identify a clear cause",
+      "interpretation": "No result means nobody believes me",
+      "emotion": "Isolation",
+      "response": "Try to make sense of uncertain findings",
+      "function": "Persistent pain can involve altered nervous-system sensitivity without making the experience less real.",
+      "need": "Persistent pain and sensitivity",
+      "rule": "No result means nobody believes me",
+      "adaptation": "Separate uncertainty about the cause from the reality of the experience.",
+      "alternative": "Ask what has been ruled out and what the next care options are",
+      "action": "Ask what has been ruled out and what the next care options are",
+      "root": "path-1"
+    },
+    {
+      "situation": "A clinician describes central sensitisation",
+      "interpretation": "They think the pain is in my head",
+      "emotion": "Hurt",
+      "response": "Try to make sense of uncertain findings",
+      "function": "Persistent pain can involve altered nervous-system sensitivity without making the experience less real.",
+      "need": "Persistent pain and sensitivity",
+      "rule": "They think the pain is in my head",
+      "adaptation": "Separate uncertainty about the cause from the reality of the experience.",
+      "alternative": "Ask for an explanation of nervous-system sensitivity and the proposed plan",
+      "action": "Ask for an explanation of nervous-system sensitivity and the proposed plan",
+      "root": "path-1"
+    },
+    {
+      "situation": "A treatment has not helped",
+      "interpretation": "Nothing will ever make a difference",
+      "emotion": "Discouragement",
+      "response": "Try to make sense of uncertain findings",
+      "function": "Persistent pain can involve altered nervous-system sensitivity without making the experience less real.",
+      "need": "Persistent pain and sensitivity",
+      "rule": "Nothing will ever make a difference",
+      "adaptation": "Separate uncertainty about the cause from the reality of the experience.",
+      "alternative": "Review the treatment's goals and alternatives with the care team",
+      "action": "Review the treatment's goals and alternatives with the care team",
+      "root": "path-1"
+    },
+    {
+      "situation": "Your symptoms fluctuate without a clear pattern",
+      "interpretation": "I must have caused the flare somehow",
+      "emotion": "Self-blame",
+      "response": "Try to make sense of uncertain findings",
+      "function": "Persistent pain can involve altered nervous-system sensitivity without making the experience less real.",
+      "need": "Persistent pain and sensitivity",
+      "rule": "I must have caused the flare somehow",
+      "adaptation": "Separate uncertainty about the cause from the reality of the experience.",
+      "alternative": "Record changes briefly without assuming every fluctuation has a personal cause",
+      "action": "Record changes briefly without assuming every fluctuation has a personal cause",
+      "root": "path-1"
+    },
+    {
+      "situation": "A long shift leaves you unable to cook",
+      "interpretation": "I should manage the same workload as everyone else",
+      "emotion": "Shame",
+      "response": "Try to meet the expectation despite pain",
+      "function": "Demanding tasks can create flares or limit recovery opportunities.",
+      "need": "Pain amid difficult demands",
+      "rule": "I should manage the same workload as everyone else",
+      "adaptation": "Identify changes in conditions rather than assuming you must tolerate the same load.",
+      "alternative": "Ask which duties or breaks could be adjusted",
+      "action": "Ask which duties or breaks could be adjusted",
+      "root": "path-2"
+    },
+    {
+      "situation": "Friends choose a venue with no seating",
+      "interpretation": "I will ruin the evening if I ask to change it",
+      "emotion": "Embarrassment",
+      "response": "Try to meet the expectation despite pain",
+      "function": "Demanding tasks can create flares or limit recovery opportunities.",
+      "need": "Pain amid difficult demands",
+      "rule": "I will ruin the evening if I ask to change it",
+      "adaptation": "Identify changes in conditions rather than assuming you must tolerate the same load.",
+      "alternative": "Explain the access need and suggest a workable venue",
+      "action": "Explain the access need and suggest a workable venue",
+      "root": "path-2"
+    },
+    {
+      "situation": "You are expected to lift heavy items at home",
+      "interpretation": "Saying no means I am letting everyone down",
+      "emotion": "Guilt",
+      "response": "Try to meet the expectation despite pain",
+      "function": "Demanding tasks can create flares or limit recovery opportunities.",
+      "need": "Pain amid difficult demands",
+      "rule": "Saying no means I am letting everyone down",
+      "adaptation": "Identify changes in conditions rather than assuming you must tolerate the same load.",
+      "alternative": "Share the task or request help with the lifting",
+      "action": "Share the task or request help with the lifting",
+      "root": "path-2"
+    },
+    {
+      "situation": "A family member questions why you need rest",
+      "interpretation": "I need to prove how bad it is",
+      "emotion": "Frustration",
+      "response": "Try to meet the expectation despite pain",
+      "function": "Demanding tasks can create flares or limit recovery opportunities.",
+      "need": "Pain amid difficult demands",
+      "rule": "I need to prove how bad it is",
+      "adaptation": "Identify changes in conditions rather than assuming you must tolerate the same load.",
+      "alternative": "Describe the functional impact and a practical boundary",
+      "action": "Describe the functional impact and a practical boundary",
+      "root": "path-2"
+    },
+    {
+      "situation": "A previous walk caused a painful flare",
+      "interpretation": "Walking is always dangerous for me",
+      "emotion": "Fear",
+      "response": "Reduce the chance of another flare",
+      "function": "Concern about another flare can narrow activity and draw attention repeatedly towards symptoms.",
+      "need": "Pain, fear and reduced activity",
+      "rule": "Walking is always dangerous for me",
+      "adaptation": "Explore fear after a flare without treating pain as something to ignore.",
+      "alternative": "Check clinical advice and consider a tolerable adapted route if appropriate",
+      "action": "Check clinical advice and consider a tolerable adapted route if appropriate",
+      "root": "path-3"
+    },
+    {
+      "situation": "You notice every small change in sensation",
+      "interpretation": "I must keep checking to stay safe",
+      "emotion": "Worry",
+      "response": "Reduce the chance of another flare",
+      "function": "Concern about another flare can narrow activity and draw attention repeatedly towards symptoms.",
+      "need": "Pain, fear and reduced activity",
+      "rule": "I must keep checking to stay safe",
+      "adaptation": "Explore fear after a flare without treating pain as something to ignore.",
+      "alternative": "After relevant symptoms are assessed, try a planned rather than constant check",
+      "action": "After relevant symptoms are assessed, try a planned rather than constant check",
+      "root": "path-3"
+    },
+    {
+      "situation": "You cancel an activity before asking about adjustments",
+      "interpretation": "There is no way I could manage any version of it",
+      "emotion": "Sadness",
+      "response": "Reduce the chance of another flare",
+      "function": "Concern about another flare can narrow activity and draw attention repeatedly towards symptoms.",
+      "need": "Pain, fear and reduced activity",
+      "rule": "There is no way I could manage any version of it",
+      "adaptation": "Explore fear after a flare without treating pain as something to ignore.",
+      "alternative": "Explore a shorter or accessible alternative within safe limits",
+      "action": "Explore a shorter or accessible alternative within safe limits",
+      "root": "path-3"
+    },
+    {
+      "situation": "You have one better day after weeks of pain",
+      "interpretation": "I should catch up on everything now",
+      "emotion": "Urgency",
+      "response": "Reduce the chance of another flare",
+      "function": "Concern about another flare can narrow activity and draw attention repeatedly towards symptoms.",
+      "need": "Pain, fear and reduced activity",
+      "rule": "I should catch up on everything now",
+      "adaptation": "Explore fear after a flare without treating pain as something to ignore.",
+      "alternative": "Consider your known limits and plan recovery rather than testing them",
+      "action": "Consider your known limits and plan recovery rather than testing them",
+      "root": "path-3"
+    }
+  ],
+  "actions": [
+    "Describe the impact of pain on one daily activity.",
+    "Ask for clarification about a test or diagnosis.",
+    "Arrange a review for new or worsening symptoms.",
+    "Request a more accessible meeting place.",
+    "Discuss medication effects with a clinician.",
+    "Ask for a work adjustment.",
+    "Plan a manageable break.",
+    "Keep a brief symptom record for an appointment.",
+    "Seek urgent help for serious warning signs.",
+    "Ask about physiotherapy or pain management options.",
+    "Share a demanding household task.",
+    "Choose a shorter social visit.",
+    "Check whether a feared activity is medically safe.",
+    "Ask a clinician about a persistent flare.",
+    "Write down what you want from your next consultation.",
+    "Make room for recovery after an essential activity.",
+    "Discuss sleep disruption linked to pain.",
+    "Ask for a second opinion when needed.",
+    "Avoid changing medication without advice.",
+    "Name a valued activity you want to preserve."
+  ],
+  "support": [
+    "Pain deserves assessment and care.",
+    "A normal test does not make the experience imaginary.",
+    "Your capacity may vary from day to day.",
+    "You can ask for a clearer explanation.",
+    "An adjustment can preserve participation.",
+    "You do not have to share every medical detail.",
+    "You can take symptoms seriously without monitoring them constantly.",
+    "Pain management should fit your condition.",
+    "The right next step depends on the pattern.",
+    "Being believed matters.",
+    "You can seek another clinical opinion.",
+    "A flare is information worth discussing.",
+    "An activity can sometimes be adapted.",
+    "You can ask for help before reaching a crisis.",
+    "Recovery time is part of planning.",
+    "The goal is a workable life, not proof of toughness.",
+    "Physical and psychological care can coexist.",
+    "You can ask about the risks of an activity.",
+    "It is reasonable to document how symptoms affect work.",
+    "Safety takes priority over completing an exercise."
+  ]
 }
 ]);
 export const BODY_IDS=Object.freeze(BODY_GUIDES.map(g=>g.id));
