@@ -14,7 +14,6 @@ const emotions=[
 const emotionMap=new Map(emotions.map(item=>[item[0],item]));
 const localDate=(date=new Date())=>`${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
 const monthTitle=date=>date.toLocaleDateString(undefined,{month:'long',year:'numeric'});
-const greeting=hour=>hour<12?'Good morning.':hour>=18?'Good evening.':'How is your day going?';
 export function renderLifestyle(root,view='daily'){
  root.querySelector('[data-life-focus-host]')?._nsSimplyFocusCleanup?.();
  root._lifestyleAbort?.abort();const abort=new AbortController();root._lifestyleAbort=abort;const {signal}=abort;window.addEventListener('hashchange',()=>abort.abort(),{once:true});
@@ -29,9 +28,17 @@ export function renderLifestyle(root,view='daily'){
    <button type="button" data-life-mode="focus" aria-pressed="false" aria-controls="life-focus-panel">◌ SimplyFocus</button>
   </div>
   <div id="life-everyday-panel" data-life-everyday>
-   <section class="life-today-strip" aria-labelledby="life-today-title">
-    <div class="life-today-head"><div><p class="eyebrow">YOUR DAY</p><h2 id="life-today-title">${greeting(new Date().getHours())}</h2></div><span>One step at a time.</span></div>
-    <div id="life-overview" class="life-overview"></div>
+   <section class="life-today-strip life-checkin-hero" aria-labelledby="life-today-title">
+    <div class="life-checkin-hero-copy">
+     <span class="life-checkin-hero-icon" aria-hidden="true">✧</span>
+     <div><p class="eyebrow">DAILY CHECK-IN</p><h2 id="life-today-title">How are you feeling today?</h2>
+     <p>Take a moment to notice how you're doing. You don't have to feel a certain way.</p></div>
+    </div>
+    <div class="life-checkin-hero-action">
+     <span class="life-checkin-hero-label">A MOMENT FOR YOURSELF</span>
+     <p data-ns-checkin-summary>Your feelings, in one place</p>
+     <button type="button" class="life-checkin-start" data-ns-open-checkin>✦ Start daily check-in <span aria-hidden="true">→</span></button>
+    </div>
    </section>
   <div class="lifestyle-two-column">
    <section id="lifestyle-calendar" class="lifestyle-card lifestyle-calendar" aria-labelledby="lifestyle-calendar-title"><div class="calendar-head"><div><p class="eyebrow">YOUR RECORD</p><h2 id="lifestyle-calendar-title">Calendar</h2></div><div><button type="button" data-calendar-move="-1" aria-label="Previous month">←</button><strong id="lifestyle-month-label"></strong><button type="button" data-calendar-move="1" aria-label="Next month">→</button></div></div><div class="calendar-weekdays" aria-hidden="true"><span style="color:var(--ns-life-readable-ink,#244735)!important">Mon</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Tue</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Wed</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Thu</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Fri</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Sat</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Sun</span></div><div id="lifestyle-calendar-grid" class="calendar-grid"></div><div id="lifestyle-day-detail" class="lifestyle-day-detail" aria-live="polite"></div></section>
@@ -55,19 +62,11 @@ export function renderLifestyle(root,view='daily'){
  $('.life-today-strip').after(flow);
  flow.append($('#lifestyle-deed'),$('#lifestyle-tasks'),$('#lifestyle-calendar'),$('#lifestyle-reminders'));
  $('.lifestyle-two-column')?.remove();
- function renderOverview(){
-  const today=localDate(),latest=entries.filter(item=>item.date===today).at(-1);
-  const due=tasks.filter(item=>item.date===today),done=due.filter(item=>item.done).length;
-  const mood=latest&&emotionMap.get(latest.emotion);
-  $('#life-overview').innerHTML=`
-   <div class="life-glance-item"><span class="life-glance-icon">${uiSymbol('heart')}</span><span><small>LAST CHECK-IN</small><strong>${latest?esc(checkinLabel(latest)):'Not checked in'}</strong><span>${latest?'At '+esc(latest.time):'No pressure to track your mood'}</span></span></div>
-   <div class="life-glance-item"><span class="life-glance-icon">${uiSymbol('checklist')}</span><span><small>TODAY’S TASKS</small><strong>${due.length?done+' of '+due.length+' done':'Nothing scheduled'}</strong><span>${due.length?due.length-done+' left for today':'Add what matters below'}</span></span></div>`;
- }
  function renderCalendar(){
   const year=calendarDate.getFullYear(),month=calendarDate.getMonth(),first=new Date(year,month,1),start=(first.getDay()+6)%7,days=new Date(year,month+1,0).getDate(),previousDays=new Date(year,month,0).getDate();
   $('#lifestyle-month-label').textContent=monthTitle(calendarDate);const cells=[];
   for(let i=0;i<42;i++){const day=i-start+1;let date,muted=false;if(day<1){date=new Date(year,month-1,previousDays+day);muted=true}else if(day>days){date=new Date(year,month+1,day-days);muted=true}else date=new Date(year,month,day);const key=localDate(date),dayEntries=entries.filter(item=>item.date===key),dayTasks=tasks.filter(item=>item.date===key),values=dayEntries.map(item=>emotionMap.get(item.emotion)?.[3]||0),tone=values.length?Math.round(values.reduce((a,b)=>a+b,0)/values.length):0;cells.push(`<button type="button" class="calendar-day ${muted?'is-muted':''} ${key===localDate()?'is-today':''} ${key===selectedDate?'is-selected':''}" data-calendar-date="${key}" data-tone="${tone}" aria-label="${date.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long'})}, ${dayEntries.length} check-ins, ${dayTasks.length} tasks"><span>${date.getDate()}</span><span class="calendar-marks">${dayEntries.length?`<i class="emotion-mark" aria-hidden="true"></i>`:''}${dayTasks.length?`<i class="task-mark" aria-hidden="true"></i>`:''}</span></button>`);}
-  $('#lifestyle-calendar-grid').innerHTML=cells.join('');renderDayDetail();renderOverview();
+  $('#lifestyle-calendar-grid').innerHTML=cells.join('');renderDayDetail();
  }
  function renderDayDetail(){
   const dayEntries=entries.filter(item=>item.date===selectedDate),dayTasks=tasks.filter(item=>item.date===selectedDate),date=new Date(`${selectedDate}T12:00:00`);
