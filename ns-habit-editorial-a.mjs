@@ -16,51 +16,51 @@ export const HABIT_EDITORIAL_A=[
     ],
     "mechanisms": [
       [
-        "Avoidance brings relief",
-        "Escaping the task lowers discomfort immediately, even when it creates difficulty later."
+        "When avoiding brings relief",
+        "Turning away can make the uncomfortable feeling disappear for a little while. The task often becomes harder to face afterwards."
       ],
       [
-        "Unclear starting points",
-        "A large or vague task hides the action that would actually begin it."
+        "When the task is hard to enter",
+        "A broad instruction can leave you deciding where to start every time you approach it."
       ],
       [
-        "Harsh standards",
-        "Fear of an imperfect attempt can make starting feel dangerous."
+        "When a first attempt feels exposing",
+        "You may delay because making something imperfect feels like inviting criticism."
       ]
     ],
     "profiles": [
       [
-        "The overwhelmed starter",
-        "You want to work but cannot find a first action."
+        "When you dread beginning",
+        "You think about the task throughout the day yet struggle to approach it."
       ],
       [
-        "The last-minute worker",
-        "Urgency finally pushes past discomfort."
+        "When a deadline finally forces action",
+        "You only manage to begin once the consequences become immediate."
       ],
       [
-        "The perfect-draft waiter",
-        "You delay until you believe you can do it properly."
+        "When the first draft feels impossible",
+        "You want the opening attempt to show what you're capable of."
       ],
       [
-        "The exhausted person",
-        "Your available capacity is smaller than the demand."
+        "When you're genuinely depleted",
+        "You want to act and have little energy or accessible support left."
       ]
     ],
     "cycle": [
-      "A task feels unpleasant or unclear.",
-      "You do something else and feel relief.",
-      "The deadline approaches and the task grows heavier.",
-      "Starting feels even more difficult."
+      "You approach work you want to complete.",
+      "The beginning brings discomfort or confusion.",
+      "Doing something else provides temporary relief.",
+      "Returning carries more pressure because the task remains unfinished."
     ],
     "now": {
-      "title": "Start with an action you can actually see",
+      "title": "Make one beginning possible",
       "paras": [
-        "You are allowed to begin badly. A first step only needs to be possible."
+        "Choose a task you've been avoiding. We can focus on the moment where getting started becomes difficult."
       ],
       "steps": [
-        "Name the exact first movement, not the whole project.",
-        "Make the start small enough to try now or schedule it for a realistic time.",
-        "Afterwards, notice whether the task became clearer; adjust rather than scold."
+        "Describe the very first action the task requires.",
+        "Change one barrier that makes that action hard.",
+        "Try a short attempt and leave a note about what comes next."
       ]
     },
     "roots": [
@@ -107,51 +107,51 @@ export const HABIT_EDITORIAL_A=[
     ],
     "mechanisms": [
       [
-        "Conditional self-worth",
-        "Achievement is treated as evidence that you deserve respect or acceptance."
+        "When approval depends on results",
+        "You may have come to believe that an imperfect performance would change how people value you."
       ],
       [
-        "Checking and revision",
-        "Extra effort lowers anxiety temporarily while delaying completion."
+        "When checking becomes hard to stop",
+        "Another revision can ease uncertainty even after the work already meets its purpose."
       ],
       [
-        "Moving standards",
-        "Success is dismissed or followed immediately by a higher demand."
+        "When success keeps moving away",
+        "You may reach a goal and immediately decide that the next result must be better."
       ]
     ],
     "profiles": [
       [
-        "The endless editor",
-        "You struggle to declare work finished."
+        "When you keep editing",
+        "You can see more changes to make long after the important work is complete."
       ],
       [
-        "The approval worker",
-        "Criticism feels like a verdict on you."
+        "When praise feels uncomfortable",
+        "You worry that the person complimenting you hasn't noticed the mistake."
       ],
       [
-        "The hesitant beginner",
-        "You avoid starting unless excellence seems possible."
+        "When beginning feels risky",
+        "You delay because you're afraid the result won't match your expectations."
       ],
       [
-        "The high-demand worker",
-        "External standards and consequences may actually be unfair."
+        "When others demand too much",
+        "You live with criticism or standards that leave little room for ordinary errors."
       ]
     ],
     "cycle": [
-      "A task activates a high standard.",
-      "You fear mistakes and increase checking.",
-      "Finishing is delayed or success feels insufficient.",
-      "The standard becomes harder to meet next time."
+      "You set a demanding standard for your work.",
+      "Finishing feels uncertain, so you continue checking.",
+      "Each revision briefly settles the worry.",
+      "The next task begins with even more pressure to perform."
     ],
     "now": {
-      "title": "Choose a safe 'good enough' standard",
+      "title": "Find a fair stopping point",
       "paras": [
-        "Use a low-stakes task, not one where errors could cause real harm."
+        "Choose something low stakes where an ordinary imperfection would cause no harm."
       ],
       "steps": [
-        "Write the actual requirement and a realistic time limit.",
-        "Finish once the requirement is met, even if you still see ways to improve it.",
-        "Check what happened and whether your feared consequence occurred."
+        "Write down what the task actually requires.",
+        "Decide how much checking is appropriate.",
+        "Stop when the requirement is met and notice what happens."
       ]
     },
     "roots": [
@@ -198,51 +198,51 @@ export const HABIT_EDITORIAL_A=[
     ],
     "mechanisms": [
       [
-        "Emotional friction",
-        "A step may carry fear or discomfort despite being understood."
+        "When starting carries fear",
+        "An apparently simple action may bring the possibility of rejection or another consequence you dread."
       ],
       [
-        "Initiation load",
-        "The task may hide sequencing or transition demands."
+        "When the first step needs too many decisions",
+        "Planning can conceal how much organisation the actual beginning requires."
       ],
       [
-        "Insufficient resources",
-        "Exhaustion and inaccessible conditions can block a reasonable plan."
+        "When resources are missing",
+        "Illness or insufficient support can leave you unable to carry out a plan you understand."
       ]
     ],
     "profiles": [
       [
-        "The frozen starter",
-        "You know the action but cannot initiate it."
+        "When you can't begin",
+        "You know the first step and still find yourself unable to do it."
       ],
       [
-        "The consequence avoider",
-        "You fear what the action could set in motion."
+        "When consequences frighten you",
+        "You want to act but fear what will happen once you do."
       ],
       [
-        "The overloaded planner",
-        "Your list exceeds your available capacity."
+        "When decisions pile up",
+        "The plan seems clear until you must choose what to do first."
       ],
       [
-        "The unsupported person",
-        "A practical adjustment or another person's help is missing."
+        "When you need help you haven't received",
+        "You have been expected to manage a task without workable conditions."
       ]
     ],
     "cycle": [
-      "You plan an important action.",
-      "The moment to begin brings friction or overload.",
-      "You remain still and criticise yourself.",
-      "The task becomes more emotionally demanding."
+      "You decide to do something important.",
+      "The moment of action brings fear or too many demands.",
+      "You remain still or move to something easier.",
+      "The unfinished action becomes another reason to criticise yourself."
     ],
     "now": {
-      "title": "Find the exact place the action stops",
+      "title": "Find the point where action stops",
       "paras": [
-        "A smaller step is useful only when the problem really is the size of the step."
+        "We can work with one moment instead of asking you to change your whole day."
       ],
       "steps": [
-        "Name the first moment you become stuck.",
-        "Decide whether you need less work, a clearer cue or actual support.",
-        "Change that condition and try one manageable action."
+        "Describe the first step that isn't happening.",
+        "Identify the barrier at that step.",
+        "Arrange one change that would help you try."
       ]
     },
     "roots": [
@@ -293,51 +293,51 @@ export const HABIT_EDITORIAL_A=[
     ],
     "mechanisms": [
       [
-        "Missing cues",
-        "The behaviour may depend on a routine that is not actually stable."
+        "When the reminder disappears",
+        "The routine may depend on a part of your day that changes more often than you realised."
       ],
       [
-        "Oversized expectations",
-        "A daily standard may be realistic only on unusually easy days."
+        "When the plan fits only your best days",
+        "A habit can be too demanding to repeat when you're tired or busy."
       ],
       [
-        "All-or-nothing resets",
-        "Missing once can become a reason to abandon the entire effort."
+        "When missing a day feels like failure",
+        "Shame about the gap may make returning harder than the activity itself."
       ]
     ],
     "profiles": [
       [
-        "The enthusiastic starter",
-        "You begin strongly and fade when novelty disappears."
+        "When you begin with enthusiasm",
+        "The first days feel promising and then the routine becomes difficult to maintain."
       ],
       [
-        "The disrupted scheduler",
-        "Changes in your day remove the habit cue."
+        "When your schedule changes",
+        "An interruption removes the cue that used to remind you."
       ],
       [
-        "The streak perfectionist",
-        "One missed day feels like complete failure."
+        "When a streak becomes stressful",
+        "One missed day makes the whole effort seem spoiled."
       ],
       [
-        "The accessibility planner",
-        "You need reminders or a flexible format to repeat actions."
+        "When life needs more flexibility",
+        "Health or caring duties make a rigid daily plan difficult to use."
       ]
     ],
     "cycle": [
-      "You set an ambitious routine.",
-      "The cue or available capacity changes.",
-      "A day is missed and guilt follows.",
-      "Restarting feels harder than starting did."
+      "You decide to build a routine you care about.",
+      "An ordinary change in your day interrupts it.",
+      "You feel disappointed that you missed the plan.",
+      "The feeling makes returning less appealing."
     ],
     "now": {
-      "title": "Design the restart before the routine",
+      "title": "Make returning easier",
       "paras": [
-        "A useful habit needs a way back after interruption."
+        "Choose a routine you want in your life and build the restart into the plan."
       ],
       "steps": [
-        "Choose one clear cue already in your real day.",
-        "Make the action manageable on an ordinary difficult day.",
-        "Write what you will do after a missed attempt, without doubling the work."
+        "Find a cue that reliably happens.",
+        "Make the activity manageable on an ordinary day.",
+        "Decide how you'll resume after an interruption."
       ]
     },
     "roots": [
@@ -388,51 +388,51 @@ export const HABIT_EDITORIAL_A=[
     ],
     "mechanisms": [
       [
-        "Limited capacity",
-        "Task demands can exceed energy available after sleep, illness or stress."
+        "When energy is genuinely limited",
+        "Illness and sleep difficulties can reduce what you can manage long before the task begins."
       ],
       [
-        "Overexertion",
-        "Continuing to push may worsen symptoms in some health conditions."
+        "When exertion makes symptoms worse",
+        "Some health conditions involve delayed deterioration after activity. A plan must respect those limits."
       ],
       [
-        "Mismatched planning",
-        "Tasks may be scheduled around an unrealistic estimate of daily functioning."
+        "When responsibilities exceed capacity",
+        "A reasonable task can become impossible when too many demands depend on the same limited energy."
       ]
     ],
     "profiles": [
       [
-        "The depleted caregiver",
-        "Other people's needs consume much of your capacity."
+        "When care for others uses all your energy",
+        "Your own needs keep being delayed because somebody depends on you."
       ],
       [
-        "The unwell person",
-        "Physical symptoms limit ordinary effort."
+        "When illness has changed daily life",
+        "Tasks that were ordinary before now require substantial recovery."
       ],
       [
-        "The low-mood person",
-        "A loss of interest makes beginning harder."
+        "When low mood makes action heavy",
+        "You may want to reconnect with things you value and struggle to begin."
       ],
       [
-        "The overextended worker",
-        "Unreasonable demands leave little recovery time."
+        "When work has become too much",
+        "The demands continue even when your body is telling you to stop."
       ]
     ],
     "cycle": [
-      "Daily demands exceed current resources.",
-      "You push through or leave essential tasks undone.",
-      "Fatigue and self-criticism increase.",
-      "The next day's capacity may be further reduced."
+      "You face a responsibility with little energy available.",
+      "You attempt to push through or fall behind.",
+      "Symptoms or exhaustion make recovery harder.",
+      "The next responsibility arrives before your capacity has returned."
     ],
     "now": {
-      "title": "Plan for the energy you have today",
+      "title": "Respect the energy available today",
       "paras": [
-        "When exertion makes symptoms worse, follow medical advice about activity and pacing."
+        "Let's identify what must happen and what can be shared or postponed."
       ],
       "steps": [
-        "Identify the single task that most needs attention.",
-        "Decide what can be simplified, delayed or shared.",
-        "Take an appropriate step without exceeding your health limits."
+        "Choose one genuinely necessary responsibility.",
+        "Consider what help would reduce its cost.",
+        "Act within your health limits and allow appropriate recovery."
       ]
     },
     "roots": [
