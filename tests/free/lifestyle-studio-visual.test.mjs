@@ -42,7 +42,7 @@ test('Every Lifestyle feature and its exact operational DOM hooks remain in sour
  const popup=read('ns-daily-checkin.mjs');
  assert.match(popup,/id="ns-daily-checkin-form"/);
  assert.match(popup,/renderEmbeddedCompass/);
- for(const hook of ['id="focus-master",'id="focus-tracks"','id="focus-play"','id="focus-stop"','id="focus-save"','id="focus-breath-start"','id="focus-breath-reset"','id="pomodoro-start"','id="pomodoro-reset"','id="pomodoro-task-form"','id="pomodoro-project-form"','id="pomodoro-task-list"']){
+ for(const hook of ['id="focus-master"','id="focus-tracks"','id="focus-play"','id="focus-stop"','id="focus-save"','id="focus-breath-start"','id="focus-breath-reset"','id="pomodoro-start"','id="pomodoro-reset"','id="pomodoro-task-form"','id="pomodoro-project-form"','id="pomodoro-task-list"']){
   assert.ok(focus.includes(hook),hook);
  }
 });
