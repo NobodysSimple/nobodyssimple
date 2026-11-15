@@ -354,6 +354,246 @@
       },
       "routing": "workbook-topic and legacy problem route; original work subdomain return",
       "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "workplace-discrimination",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 474,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "career-uncertainty",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 486,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "unemployment-distress",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 460,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "redundancy-job-loss",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 451,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "unfair-assessment",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 467,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "inaccessible-education",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 440,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "educational-exclusion",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 429,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "workplace-moral-injury",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 466,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "occupational-trauma",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 451,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "workplace-burnout",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 431,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "academic-imposter-feelings",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 450,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "work-life-boundaries",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 431,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "workplace-accommodations",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 442,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "unfair-organisation",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 422,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "first-generation-education",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 445,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
+    },
+    {
+      "id": "educational-pressure-family",
+      "area": "work",
+      "domain": "education",
+      "guide": "ns-work-guide-data.mjs",
+      "contentChecks": {
+        "articleWords": 454,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "topic routes and legacy problem routes; education subsection return",
+      "verification": "Structural regression tests authored; running in CI"
     }
   ],
   "pendingIds": "Derived exactly at runtime by ns-catalogue-progress.mjs:pending; not duplicated as potentially stale JSON",
@@ -364,5 +604,5 @@
     "Need verify GitHub Actions and browser tests; no live browser test has yet been performed.",
     "The live ledger now includes existing society, self-image and thirteen new work manuals; generic atlas fallbacks remain pending."
   ],
-  "lastStep": "Thirteen work-domain manuals authored and routed; automated and browser test execution pending. The sixteen education-domain topics remain to upgrade."
+  "lastStep": "The two missing subcatalogues of Work, learning & getting things done now have 29 dedicated long-form interactive guides; the other 15 motivation topics retain their existing manuals. CI running; later broad areas remain pending."
 }
