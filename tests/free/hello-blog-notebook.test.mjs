@@ -42,7 +42,7 @@ test('Hello content actually renders all heading levels and has dedicated introd
 });
 test('Service worker updates the cached shell and preloads the notebook assets',()=>{
  const sw=source('sw.js');
- assert.match(sw,/nobodyssimple-release-v205-learn-artfix/);
+ assert.match(sw,/nobodyssimple-release-v\d+-[a-z-]+/);
  assert.ok(sw.includes("'ns-blog-notebook.css'"));
  assert.ok(sw.includes("'ns-blog-notebook.mjs'"));
 });

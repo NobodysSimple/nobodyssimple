@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v207-urge-free-text';
+const CACHE = 'nobodyssimple-release-v208-home-scrapbook';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -14,7 +14,7 @@ const INSTALL_OPTIONAL = [
   'app-design.css', 'ns-shell.css', 'ns-home.css',
   'ns-tool-library.css', 'ns-learn.css', 'ns-learn-courses.css',
   'learn-art/scenery-hero.svg', 'learn-art/scenery-featured.svg', 'learn-art/scenery-emotions.svg', 'learn-art/scenery-relationships.svg', 'learn-art/scenery-boundaries.svg', 'learn-art/scenery-focus.svg', 'learn-art/scenery-communication.svg', 'ns-quiet-navigation.css', 'ns-blog-notebook.css', 'ns-field-guide.css', 'ns-urge-pause.css',
-  'ns-integrations.css', 'ns-vision.css', 'ns-home-refined.css',
+  'ns-integrations.css', 'ns-vision.css', 'ns-home-refined.css', 'ns-home-scrapbook.css', 'home-art/home-meadow.svg', 'home-art/pressed-flowers.svg',
   'lifestyle.css', 'lifestyle-practice.css', 'lifestyle.mjs', 'lifestyle-practice.mjs', 'lifestyle-practice-content.mjs', 'lifestyle-practice-ui.mjs', 'lifestyle-deeds.mjs', 'simplyfocus.mjs', 'strategy.mjs', 'ns-learn-courses.mjs', 'ns-topic-publications.mjs', 'ns-blog-notebook.mjs', 'site.mjs', 'ns-shell.mjs',
   'ns-home-updates.mjs', 'ns-field-guide.mjs', 'ns-field-guide-data.mjs', 'ns-urge-pause.mjs', 'ns-cultural-atlas.css', 'ns-cultural-atlas.mjs', 'ns-cultural-atlas-investigations.mjs', 'ns-cultural-atlas-south-asia.mjs', 'ns-cultural-atlas-southeast-asia.mjs', 'ns-cultural-atlas-north-america.mjs', 'ns-cultural-atlas-central-asia.mjs', 'ns-cultural-atlas-central-asia-a.mjs', 'ns-cultural-atlas-central-asia-b.mjs', 'ns-cultural-atlas-central-asia-c.mjs', 'ns-cultural-atlas-central-asia-d.mjs', 'ns-cultural-atlas-central-asia-e.mjs', 'ns-cultural-atlas-central-asia-f.mjs', 'ns-cultural-atlas-russia.mjs', 'ns-cultural-atlas-russia-a.mjs', 'ns-cultural-atlas-russia-b.mjs', 'ns-cultural-atlas-russia-c.mjs', 'ns-cultural-atlas-russia-d.mjs', 'ns-cultural-atlas-russia-e.mjs', 'ns-cultural-atlas-mexico.mjs', 'ns-cultural-atlas-mexico-a.mjs', 'ns-cultural-atlas-mexico-b.mjs', 'ns-cultural-atlas-mexico-c.mjs', 'ns-cultural-atlas-mexico-d.mjs', 'ns-cultural-atlas-mexico-e.mjs', 'ns-cultural-atlas-articles.mjs', 'ns-cultural-atlas-viewport.mjs', 'ns-cultural-atlas-geography.mjs', 'ns-investigate.mjs', 'ns-investigate.css',
   'ns-problem-map.mjs', 'ns-universal-console.mjs', 'ns-problem-guide.mjs', 'ns-emotional-calculator.css',
