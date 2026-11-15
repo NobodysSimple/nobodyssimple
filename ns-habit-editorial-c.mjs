@@ -358,7 +358,7 @@ export const HABIT_EDITORIAL_C=[
         "Health and safety"
       ]
     ],
-    "evidence": "Behavioural functional analysis examines triggers and short-term consequences. Skills for noticing urges and modifying access can be useful, but evidence and safety requirements depend on the specific behaviour and any dependency.",
+    "evidence": "A behaviour's triggers and short-term consequences can help identify where practical support may work. Treatment and risk depend on what the urge concerns. NICE recommends CBT including exposure and response prevention for OCD. NHS guidance warns that abruptly stopping alcohol can be dangerous when a person is dependent. A generic urge-delay worksheet is unsuitable as a replacement for these interventions.",
     "sources": [
       [
         "NICE: Behaviour change",
@@ -367,6 +367,14 @@ export const HABIT_EDITORIAL_C=[
       [
         "NHS: Drug addiction support",
         "https://www.nhs.uk/live-well/addiction-support/drug-addiction-getting-help/"
+      ],
+      [
+        "NICE: OCD treatment, including CBT with ERP",
+        "https://www.nice.org.uk/guidance/cg31/chapter/Recommendations"
+      ],
+      [
+        "NHS: Alcohol-use disorder and withdrawal",
+        "https://www.nhs.uk/conditions/alcohol-use-disorder/"
       ]
     ],
     "safety": "Do not advise abrupt withdrawal from alcohol or dependent substances. Risk of overdose, dangerous aggression or immediate self-harm requires urgent assessment. OCD compulsions need OCD-specific treatment rather than generic urge suppression."
