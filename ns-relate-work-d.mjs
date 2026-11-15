@@ -234,7 +234,7 @@ export const RELATE_WORK_D={
     "why": [
       "Which interaction has left you questioning your relationship's security?",
       "What did you think was about to happen?",
-      "How did the fear affect you?",
+      "What happened to your sense of closeness and security when that fear appeared?",
       "Did you seek reassurance or withdraw?",
       "What did that response provide immediately?",
       "What kind of reliability are you looking for?",
