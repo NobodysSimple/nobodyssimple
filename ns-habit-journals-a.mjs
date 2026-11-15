@@ -4,48 +4,48 @@ export const HABIT_JOURNALS_A={
       "begin",
       "Make the first step small enough to begin",
       "Find the point where an intended task becomes avoidable.",
-      "A named first movement you can start without finishing the entire task.",
+      "Choose the first action you can actually do. Try it once and notice what makes the next step clearer.",
       [
-        "What exact task have you been putting off, and what is its real deadline?",
-        "When you imagine starting it, which feeling makes you want to do something else?",
-        "What action would genuinely begin the task, without requiring you to do the whole thing?",
-        "When and where could you take that first step, even if you still feel reluctant?"
+        "Which task has been following you around lately, even when you're doing other things?",
+        "What happens when you try to begin? Is there a particular step where you stop?",
+        "Could you describe one small action that would count as starting, without needing to finish the task?",
+        "When can you make that attempt, and what would help you approach it?"
       ]
     ],
     [
       "relief",
       "Find what procrastination does for you",
       "Use functional analysis to understand the reward of avoiding.",
-      "An alternative response to the feeling that comes before delay.",
+      "Identify what avoidance relieved. Arrange one manageable way to meet that feeling before you return to the task.",
       [
-        "What do you usually do instead of the task?",
-        "What feeling changes immediately after you avoid it?",
-        "What is the longer-term cost of receiving that relief in this way?",
-        "How could you care for the difficult feeling while still taking a manageable step?"
+        "Think of the last time you turned away from the task. What were you about to do?",
+        "What feeling became easier when you decided to leave it for later?",
+        "How did you feel afterwards when the task was still unfinished?",
+        "What could help you face that first feeling safely without postponing the whole task?"
       ]
     ],
     [
       "standard",
       "Test a rule that keeps you waiting",
       "Examine a perfectionistic or all-or-nothing expectation safely.",
-      "A low-stakes experiment that allows a rough first attempt.",
+      "Create a private first attempt with a fair time limit. Review the work after it exists.",
       [
-        "What would you need to be sure of before you feel allowed to begin?",
-        "What are you afraid would happen if the first attempt were imperfect?",
-        "Which small, low-stakes task could you try to an adequate rather than perfect standard?",
-        "What prediction will you test, and how will you record what actually happened?"
+        "What work have you delayed because you're afraid your first attempt won't be good enough?",
+        "What would it mean to you if someone saw an imperfect version?",
+        "Would it be possible to keep the first attempt private while you work out what the task needs?",
+        "What low-risk first draft could you make, and when would you review it?"
       ]
     ],
     [
       "conditions",
       "Change a genuine obstacle",
       "Check whether time, health or support is preventing action.",
-      "A clear adjustment request or a more realistic commitment.",
+      "Name the barrier you're facing and ask for the change that would make the task possible.",
       [
-        "Which part of the task is impossible or inaccessible under present conditions?",
-        "What resources, information or recovery time are missing?",
-        "Who could change the demand or help you access what you need?",
-        "What specific request or revised deadline will you propose?"
+        "What makes this particular task unusually hard to begin under your current circumstances?",
+        "Is the problem unclear instructions, lack of resources or a genuine limit on your time?",
+        "Who could help change that condition, and what would you need from them?",
+        "What's the first practical request or adjustment you could make?"
       ]
     ]
   ],
@@ -54,48 +54,48 @@ export const HABIT_JOURNALS_A={
       "finish",
       "Define what good enough actually requires",
       "Separate essential standards from extra checking.",
-      "A realistic criterion for completing one safe, low-stakes task.",
+      "Agree a sensible completion standard for a safe task. Stop when it is met and check what happens.",
       [
-        "What piece of work do you keep improving past its useful endpoint?",
-        "What is the actual requirement, and which extra standards have you added?",
-        "What would finishing at the real requirement allow you to do with your time?",
-        "Where will you set a stopping point for the next safe, low-stakes attempt?"
+        "Which piece of work have you found hard to call finished?",
+        "What would it actually need to contain to meet its purpose?",
+        "How much further would another revision improve it, compared with the time it would take?",
+        "For a low-stakes task, when could you let it be completed?"
       ]
     ],
     [
       "mistake",
       "Test the feared consequence of imperfection",
       "Use a bounded behavioural experiment on a non-critical task.",
-      "One prediction and observation about a harmless imperfection.",
+      "Try a low-risk test of one feared imperfection. Keep all essential safety and accuracy checks.",
       [
-        "Which small imperfection are you most tempted to correct immediately?",
-        "What do you predict will happen if you leave it in a low-stakes situation?",
-        "Which safe experiment would give you useful evidence without harming anyone?",
-        "How will you compare the outcome with the specific prediction?"
+        "What mistake have you been working especially hard to prevent?",
+        "If it happened in a low-risk situation, what are you afraid people would think?",
+        "What does the evidence from similar situations tell you about that prediction?",
+        "Could you safely leave one small imperfection and observe the real outcome?"
       ]
     ],
     [
       "worth",
       "Separate achievement from personal worth",
       "Find the rule that makes every result feel like a character judgement.",
-      "A fair statement about value that does not depend on perfect performance.",
+      "Write a fair account of the work and what you learned. Leave your worth out of the grade.",
       [
-        "What does an imperfect outcome seem to say about you?",
-        "Whose expectations are you using to make that judgement?",
-        "Which relationships or qualities matter even when your performance is ordinary?",
-        "What more accurate standard could guide your next attempt?"
+        "What do you find yourself saying about your value when your work falls short?",
+        "Whose judgement do you imagine when you think about making a mistake?",
+        "How would you regard someone you cared about if they produced the same work?",
+        "What fairer standard could you use when reviewing your next attempt?"
       ]
     ],
     [
       "pressure",
       "Distinguish your rules from external demands",
       "Identify when the environment genuinely punishes mistakes.",
-      "A practical request about workload, feedback or reasonable expectations.",
+      "Identify one unreasonable expectation and decide who could help change it. Protect necessary professional standards.",
       [
-        "Which standards come from your own fears, and which are actually enforced?",
-        "What happens when someone makes a mistake in this setting?",
-        "What would change the unfair or unrealistic part of the situation?",
-        "What conversation or support would allow you to work more safely?"
+        "Who expects you to perform to this standard?",
+        "What has actually happened when you haven't met it?",
+        "Could any of these expectations be clarified or changed with support?",
+        "What would you ask for if you were allowed to describe the situation fairly?"
       ]
     ]
   ],
@@ -104,48 +104,48 @@ export const HABIT_JOURNALS_A={
       "start",
       "Find the exact moment action stops",
       "Locate the transition or decision that prevents movement.",
-      "A first step designed around the actual obstruction.",
+      "Change the condition at the point where you stop. Try one short beginning and note what happened.",
       [
-        "Which activity do you understand but still cannot begin?",
-        "What is the last moment when the plan feels clear?",
-        "What happens at the very next step that makes movement difficult?",
-        "What cue, simplification or help would make that particular step possible?"
+        "What have you been meaning to begin, even though you know how important it is?",
+        "At what moment does the next action become difficult?",
+        "What could make that precise step easier to start?",
+        "Can you arrange the cue or materials for one attempt?"
       ]
     ],
     [
       "fear",
       "Respond to the consequence you are avoiding",
       "Examine the feared outcome that makes an action feel unsafe.",
-      "One proportionate step towards an action that matters.",
+      "Name the feared consequence and choose an action that respects any real danger while allowing progress.",
       [
-        "If you took the action, what are you most afraid would happen?",
-        "What part of that consequence is supported by real evidence?",
-        "What would help you cope if something difficult did happen?",
-        "What safe, manageable action could you try without waiting for complete confidence?"
+        "Which action feels difficult because of something that may happen afterwards?",
+        "What's the consequence you're most afraid of?",
+        "Has that consequence happened before, or is it a possibility you've been anticipating?",
+        "What safe step or support would help you approach the decision?"
       ]
     ],
     [
       "activation",
       "Begin a meaningful activity with limited motivation",
       "Apply behavioural activation to one personally valued task.",
-      "A bounded activity that matters even if it is not immediately rewarding.",
+      "Choose a manageable action connected with something you value. Adjust it to your health and review its effect.",
       [
-        "What ordinary activity have you stopped doing that still matters to you?",
-        "What makes it difficult at your current energy or mood level?",
-        "What smaller version would fit your actual capacity today?",
-        "When will you try it, and what will count as enough even if enjoyment is low?"
+        "What meaningful activity have you struggled to return to?",
+        "What has your mood or energy been like when you've tried?",
+        "Is there a smaller version you could manage without worsening your health?",
+        "When might you try it, and how could you judge whether it helped?"
       ]
     ],
     [
       "help",
       "Ask for the missing practical support",
       "Identify the barrier that cannot be solved through determination.",
-      "A specific access, task-sharing or deadline request.",
+      "Prepare one specific request. Make it about the practical barrier you've identified.",
       [
-        "Which demand is difficult because information or support is missing?",
-        "What could another person or an adjustment change?",
-        "Who has the authority or ability to make that change?",
-        "How will you describe the obstacle and request what you need?"
+        "What task have you been trying to manage without enough support?",
+        "Which part would someone else need to help with?",
+        "Who is realistically able to offer that help or adjustment?",
+        "What could you ask them to do, in plain words?"
       ]
     ]
   ],
@@ -154,48 +154,48 @@ export const HABIT_JOURNALS_A={
       "cue",
       "Build a habit around a real cue",
       "Use an existing part of the day to reduce remembering demands.",
-      "An if–then plan connected to a dependable situation.",
+      "Choose a reliable cue in your existing day and link it to a small version of the activity.",
       [
-        "What small behaviour would improve an ordinary day for you?",
-        "What event already happens reliably on the days you want to do it?",
-        "What could interrupt that cue, and what alternative would still be realistic?",
-        "How would you phrase your plan as 'When this happens, I will do this'?"
+        "What activity have you wanted to make a regular part of your life?",
+        "When in your actual day would you usually have a chance to do it?",
+        "Is there an event you already notice at that time that could remind you?",
+        "What would you place there so the cue brings the activity to mind?"
       ]
     ],
     [
       "restart",
       "Plan for the day the habit gets interrupted",
       "Prevent one missed attempt becoming the end of the routine.",
-      "A restart rule that requires no punishment or doubling up.",
+      "Write a restart plan that asks for one ordinary return, with no punishment for missed days.",
       [
-        "What usually happens after you miss a day of this habit?",
-        "What thought or rule makes restarting harder than beginning?",
-        "What information does a missed day give about the size or timing of the routine?",
-        "What exactly will you do at the next available cue after a lapse?"
+        "What routine did you stop after an interruption?",
+        "What changed on the first day you missed it?",
+        "How did you feel about returning after that gap?",
+        "What could make restarting easier the next time life interrupts?"
       ]
     ],
     [
       "design",
       "Make a helpful action easier to repeat",
       "Adjust access, reminders and immediate feedback.",
-      "One environmental change that reduces the effort of repetition.",
+      "Make one part of the routine easier to begin. Keep the change if it helps you return.",
       [
-        "What has to be set up before the desired action can happen?",
-        "Which part of that setup is regularly missing or difficult?",
-        "What object, reminder or layout would remove that friction?",
-        "What small change will you make today to test whether repetition becomes easier?"
+        "Which helpful action do you keep intending to repeat?",
+        "What's difficult about setting it up each time?",
+        "Could you reduce the preparation needed or make progress easier to see?",
+        "What change could you test during your next opportunity?"
       ]
     ],
     [
       "fit",
       "Create a routine for your real capacity",
       "Adapt a habit for shifts, fatigue or attention differences.",
-      "A flexible plan that works on an ordinary difficult day.",
+      "Adapt the routine to your real circumstances. Keep essential treatment plans consistent with clinical advice.",
       [
-        "Which circumstances make your current habit plan fail?",
-        "Which parts are essential, and which expectations are optional?",
-        "What accessible version fits your lowest realistic capacity?",
-        "What support or flexibility will you build into the routine this week?"
+        "What about your health or schedule makes this routine difficult to keep?",
+        "Which parts of the activity are genuinely necessary, and which could be flexible?",
+        "What adjustment would let you participate on a difficult day?",
+        "Who could help you make that arrangement safely?"
       ]
     ]
   ],
@@ -204,48 +204,48 @@ export const HABIT_JOURNALS_A={
       "prioritise",
       "Protect energy for what matters today",
       "Separate essential tasks from things that can wait.",
-      "One realistic plan based on capacity rather than guilt.",
+      "Choose the necessary task and remove another demand. Protect enough energy for recovery.",
       [
-        "Which task has the most important consequence if it waits?",
-        "How much activity can you reasonably manage without worsening symptoms?",
-        "What can be postponed or simplified to protect that capacity?",
-        "What will you do first, and what will you deliberately leave for later?"
+        "Which responsibilities are weighing on you today?",
+        "What genuinely needs doing soon, given the consequences of leaving it?",
+        "Which other task could wait without creating serious harm?",
+        "What amount of effort could you safely spend on the priority?"
       ]
     ],
     [
       "pacing",
       "Understand what activity does to your symptoms",
       "Notice whether effort leads to delayed worsening that needs medical attention.",
-      "An observation and a safe clinical question, not an exercise target.",
+      "Record activity and later symptoms for an appropriate health review. Avoid fixed increases when exertion worsens symptoms.",
       [
-        "What changes during activity and afterwards when you are fatigued?",
-        "Do you experience symptom worsening that arrives after exertion?",
-        "What guidance have you received about activity or pacing?",
-        "What would you like a clinician to help you assess or adjust?"
+        "What happens to your symptoms after an ordinary activity?",
+        "Do you notice any worsening later in the day or on the following day?",
+        "Have you discussed this pattern with someone who understands your health condition?",
+        "What could you change to stay within your current limits?"
       ]
     ],
     [
       "support",
       "Reduce the demands you are carrying alone",
       "Translate exhaustion into a practical request.",
-      "A clear explanation of what help would change your day.",
+      "Ask for one practical change that reduces the demands on your available energy.",
       [
-        "Which caring or work demand takes the greatest amount of your energy?",
-        "What part of that responsibility could someone else reasonably take over?",
-        "What makes asking for help difficult in this setting?",
-        "What specific request could you send to an appropriate person?"
+        "What responsibility are you struggling to carry without help?",
+        "How is trying to do it affecting your ability to manage essential care?",
+        "Who could realistically take part of the responsibility or change a deadline?",
+        "What help would you feel comfortable asking for?"
       ]
     ],
     [
       "reconnect",
       "Reconnect with meaningful activity safely",
       "Choose an activity that fits current health limits.",
-      "A small supported activity with permission to stop.",
+      "Choose an accessible way to reconnect with an activity you value, guided by your health limits.",
       [
-        "Which meaningful activity has become difficult because of low energy?",
-        "What makes it valuable to you apart from productivity?",
-        "What adjustment would allow participation within medical advice and capacity?",
-        "What safe trial and stopping point would you agree in advance?"
+        "What meaningful activity have you missed because of low energy?",
+        "What has made it difficult or unsafe to return to it?",
+        "Would a different format or a smaller version fit your health needs?",
+        "What advice or help would you need before trying?"
       ]
     ]
   ]
