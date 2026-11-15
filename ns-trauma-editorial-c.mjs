@@ -63,7 +63,7 @@ export const TRAUMA_EDITORIAL_C=[
     ],
     "safety": "Suicide bereavement can increase risk of self-harm or suicidal thoughts. Anyone unable to stay safe needs immediate human support. Avoid detailed discussion of suicide methods or assigning blame for the death; use qualified bereavement support.",
     "source": [
-      "Samaritans: Support after a suicide",
+      "Support After Suicide Partnership: National services",
       "https://supportaftersuicide.org.uk/journey-days/national-services/"
     ]
   },
