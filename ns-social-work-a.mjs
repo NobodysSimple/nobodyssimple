@@ -119,7 +119,7 @@ export const SOCIAL_WORK_A={
       [
         "mutual",
         "Recognise reciprocal interest",
-        "Not every acquaintance has room to become a friend.",
+        "An acquaintance may be friendly while having limited capacity to develop a closer friendship.",
         [
           "What signs of interest have they shown?",
           "Who usually initiates and follows through?",
