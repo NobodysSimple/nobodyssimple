@@ -212,7 +212,7 @@ export const CFM_ADVICE_MORE_FAITH={
  ]},
 'spiritual-experience':{
  actions:[
- 'Describe exactly what you noticed before deciding what caused the experience.',
+ 'If the experience was brief, record how long it lasted and whether anything similar has happened since.',
  'Record when the event happened and whether sleep or illness may have been relevant.',
  'Avoid treating an alarming interpretation from another person as settled fact.',
  'Choose whether to share the experience with people who will respect your uncertainty.',
