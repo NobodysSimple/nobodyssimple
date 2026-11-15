@@ -40,7 +40,7 @@ test('Botanical sprigs are absent from the Home visual layer and replaced with p
  assert.doesNotMatch(css,/pressed-flowers\.svg/);
  assert.match(css,/home-art\/watercolor-countryside\.svg/);
  assert.match(css,/home-art\/daisy-sticker\.svg/);
- assert.match(css,/ns-home-hero::before[\\s\\S]*?border:3px solid #d1a55d/);
+ assert.match(css,/ns-home-hero::before[\s\S]*?border:3px solid #d1a55d/);
  assert.match(css,/ns-home-latest::before\{content:none!important;\}/);
  assert.match(css,/ns-culture-atlas::before\{content:none!important;\}/);
 });
