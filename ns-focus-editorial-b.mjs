@@ -16,51 +16,51 @@ export const FOCUS_EDITORIAL_B=[
     ],
     "mechanisms": [
       [
-        "Inference from behaviour",
-        "A single action can have several plausible functions and contexts."
+        "When an explanation seems to fit everything",
+        "A label can make a difficult experience easier to understand. It's worth checking which parts it actually explains."
       ],
       [
-        "Evidence and explanation",
-        "Group research can inform hypotheses without proving an individual cause."
+        "When research meets an individual life",
+        "A study may describe what happens across a group. We still need information about your situation to understand your behaviour."
       ],
       [
-        "Useful reflection versus checking",
-        "Searching for perfect self-certainty can become another repetitive process."
+        "When the search becomes difficult to leave",
+        "You may return to the same questions because uncertainty feels uncomfortable. More reading doesn't always help you decide what to do."
       ]
     ],
     "profiles": [
       [
-        "The self-explorer",
-        "You notice a repeated pattern and want a useful explanation."
+        "When you want to know yourself better",
+        "There's a pattern you've noticed and you'd like to understand why it happens."
       ],
       [
-        "The label seeker",
-        "A psychological term seems to explain your whole life."
+        "When one label feels very convincing",
+        "You've begun using a psychological idea to explain several different parts of your life."
       ],
       [
-        "The research reader",
-        "You want to tell strong evidence from plausible speculation."
+        "When you're unsure what to believe",
+        "You want to know whether an appealing explanation has good evidence behind it."
       ],
       [
-        "The relentless self-analyst",
-        "Reflection has begun taking time away from living."
+        "When reflection never seems finished",
+        "You've spent hours questioning yourself and still feel compelled to keep searching."
       ]
     ],
     "cycle": [
-      "You notice a recurring experience.",
-      "A convincing explanation offers temporary clarity.",
-      "New details seem to demand further interpretation.",
-      "You spend more time analysing than responding differently."
+      "Something about your experience leaves you curious or unsettled.",
+      "An explanation brings a moment of clarity.",
+      "A new detail makes you question whether it fits.",
+      "You begin searching again and postpone the decision you wanted help with."
     ],
     "now": {
-      "title": "Start with one observation, not a label",
+      "title": "Begin with the part you actually know",
       "paras": [
-        "You can explore a pattern without deciding that it reveals your entire personality."
+        "Choose one behaviour you want to understand. We'll look at what happened before settling on an explanation."
       ],
       "steps": [
-        "Describe one real event and what you did.",
-        "Write two plausible explanations and what evidence would distinguish them.",
-        "Choose one small response that would help regardless of which explanation is right."
+        "Describe the event in ordinary language.",
+        "Consider another explanation that could fit what you observed.",
+        "Choose a small action that would help whichever account proves more accurate."
       ]
     },
     "roots": [
@@ -111,51 +111,51 @@ export const FOCUS_EDITORIAL_B=[
     ],
     "mechanisms": [
       [
-        "Movement and attention",
-        "For some people, movement supports participation in low-stimulation tasks."
+        "When movement helps you listen",
+        "For some people, being allowed to move makes an explanation easier to follow."
       ],
       [
-        "Social suppression",
-        "Trying to appear still can consume attention needed for the activity."
+        "When hiding movement becomes exhausting",
+        "You may spend the whole activity monitoring your body. That leaves less attention for what's being said."
       ],
       [
-        "Multiple possible causes",
-        "Anxiety, medication effects and neurodevelopmental factors require different responses."
+        "When the feeling needs medical attention",
+        "Severe new restlessness can have health causes. A medicine change is especially important to mention."
       ]
     ],
     "profiles": [
       [
-        "The fidgeting listener",
-        "You move constantly while trying to pay attention."
+        "When you fidget to keep listening",
+        "Your hands or feet move while you're genuinely trying to concentrate."
       ],
       [
-        "The pacing thinker",
-        "Walking helps you concentrate on a conversation."
+        "When walking helps you think",
+        "You follow a conversation more comfortably when you can pace."
       ],
       [
-        "The restless sleeper",
-        "Agitation carries into the evening or night."
+        "When restlessness follows you into the evening",
+        "You want to settle down but the urge to move is still strong."
       ],
       [
-        "The sudden-onset mover",
-        "New restlessness may be related to health or medication."
+        "When the feeling has changed suddenly",
+        "The restlessness is new or much more intense than you're used to."
       ]
     ],
     "cycle": [
-      "A setting demands prolonged stillness.",
-      "Discomfort or restlessness builds.",
-      "You suppress movement and lose focus.",
-      "Participation becomes harder and more exhausting."
+      "You enter a setting where you're expected to stay still.",
+      "The urge to move becomes harder to ignore.",
+      "You try to hide the movement and struggle to keep listening.",
+      "The activity ends with you exhausted or feeling misunderstood."
     ],
     "now": {
-      "title": "Find the movement that helps rather than disrupts",
+      "title": "Make room for useful movement",
       "paras": [
-        "A useful change respects the people around you and any medical needs."
+        "Think of a situation where remaining still has become difficult. What change would let you stay involved?"
       ],
       "steps": [
-        "Notice when restlessness appears and what it changes about attention.",
-        "Identify a quiet movement or appropriate short break.",
-        "Ask for a relevant adjustment if the setting prevents you using it."
+        "Notice when the urge to move begins.",
+        "Choose a safe movement or agreed break that could help.",
+        "Ask about an adjustment if you need permission to use it."
       ]
     },
     "roots": [
@@ -206,51 +206,51 @@ export const FOCUS_EDITORIAL_B=[
     ],
     "mechanisms": [
       [
-        "Task engagement",
-        "Very low or excessive task demands can make sustained attention harder."
+        "When the material stops making sense",
+        "You may lose track after one unexplained step. Everything that follows then becomes harder to understand."
       ],
       [
-        "Internal competition",
-        "Worry and other thoughts can draw resources away from incoming information."
+        "When a concern takes your attention",
+        "An unfinished worry can keep returning during conversations. A trusted note may help you come back later."
       ],
       [
-        "Lack of re-entry cues",
-        "Without a clear place to resume, an ordinary lapse becomes a longer interruption."
+        "When there's no place to return",
+        "A brief lapse can turn into a longer interruption if you have no way to locate the last point you followed."
       ]
     ],
     "profiles": [
       [
-        "The lost listener",
-        "You miss a stretch of conversation."
+        "When you miss part of a conversation",
+        "You want to listen but suddenly realise you've missed something important."
       ],
       [
-        "The page finisher",
-        "You reach the end of a page without understanding it."
+        "When the page hasn't gone in",
+        "You reach the bottom and can't explain what you've just read."
       ],
       [
-        "The daydreamer",
-        "Unrelated thoughts repeatedly take over."
+        "When your thoughts take you elsewhere",
+        "You keep returning to something on your mind while another activity continues."
       ],
       [
-        "The overloaded student",
-        "Complex instructions cause you to lose the thread."
+        "When complex instructions become confusing",
+        "One missed explanation means you're struggling to follow the steps that come after it."
       ]
     ],
     "cycle": [
-      "You begin following information.",
-      "Attention shifts to something else.",
-      "You lose the thread and feel frustrated.",
-      "Re-entering becomes effortful or you give up."
+      "You begin following something you care about.",
+      "Your attention moves away or the explanation loses you.",
+      "You notice the gap and feel embarrassed.",
+      "You struggle to rejoin because the activity has continued without you."
     ],
     "now": {
-      "title": "Give yourself a place to return",
+      "title": "Find the thread you last understood",
       "paras": [
-        "It is normal to notice a lapse after it has happened. Your next response can be gentle and practical."
+        "Choose a short part of the activity. Give yourself an easy way to return when your attention moves."
       ],
       "steps": [
-        "Choose a short segment of the activity.",
-        "Use a one-line note or question to track the main point.",
-        "When you drift, return to that marker rather than restarting everything."
+        "Mark the last idea you understood.",
+        "After a small section, try saying its point in your own words.",
+        "If you drift, use the marker to begin again."
       ]
     },
     "roots": [
@@ -301,51 +301,51 @@ export const FOCUS_EDITORIAL_B=[
     ],
     "mechanisms": [
       [
-        "High engagement",
-        "A rewarding activity can hold attention and make competing needs less noticeable."
+        "When the activity keeps rewarding you",
+        "Deep engagement can make stopping difficult because the next satisfying step is already in sight."
       ],
       [
-        "Difficult transitions",
-        "Stopping can feel costly when it threatens progress or the current train of thought."
+        "When leaving feels like losing progress",
+        "You may worry that an idea will disappear if you stop in the middle. A resumption note can help."
       ],
       [
-        "Missed external cues",
-        "Time and bodily needs may go unnoticed during prolonged absorption."
+        "When the rest of the day goes unnoticed",
+        "You might miss meals or responsibilities while absorbed. Important duties need safeguards that work even when you forget to look at the time."
       ]
     ],
     "profiles": [
       [
-        "The creative absorber",
-        "Hours disappear while making something."
+        "When creative work takes over",
+        "You love what you're making and struggle to stop before it's finished."
       ],
       [
-        "The digital explorer",
-        "Games or online projects displace planned responsibilities."
+        "When a game keeps drawing you back",
+        "You mean to stop after one more part and repeatedly extend the session."
       ],
       [
-        "The work perfectionist",
-        "You keep going until the task feels entirely finished."
+        "When finishing feels essential",
+        "You stay longer because leaving work unfinished makes you uncomfortable."
       ],
       [
-        "The needs misser",
-        "Meals, breaks or other obligations go unnoticed."
+        "When you lose track of basic needs",
+        "You look up long after the time you meant to eat or rest."
       ]
     ],
     "cycle": [
-      "An absorbing activity begins.",
-      "Competing cues receive less attention.",
-      "A planned stopping point passes unnoticed.",
-      "Other needs are missed and returning to balance becomes harder."
+      "An activity holds your interest strongly.",
+      "Other signals become easier to miss.",
+      "You pass the stopping point you had intended to keep.",
+      "You eventually notice that something else important was missed."
     ],
     "now": {
-      "title": "Decide how you will leave before you begin",
+      "title": "Give yourself a way to finish for now",
       "paras": [
-        "Protect important health and care duties with reliable supports."
+        "Before you begin, decide how you will stop and how you'll find your place again later."
       ],
       "steps": [
-        "Choose a meaningful stopping point and a rough time window.",
-        "Arrange a cue that requires noticing and a realistic transition.",
-        "Write one sentence about where you can resume the activity later."
+        "Choose a stopping point you can recognise.",
+        "Arrange a cue that is likely to reach you while absorbed.",
+        "Write a short note about exactly where to resume."
       ]
     },
     "roots": [
