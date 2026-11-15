@@ -4,48 +4,48 @@ export const FOCUS_JOURNALS_B={
       "observe",
       "Start with one behaviour rather than a psychological label",
       "Formulate a pattern using what actually happened and what followed.",
-      "One defensible explanation that remains open to alternatives.",
+      "Write down one observation and a possible explanation. Choose a small response you can try without waiting for certainty.",
       [
-        "What specific event or behaviour has made you curious about yourself?",
-        "What did you do, and what happened immediately before and after it?",
-        "Which explanations fit those observations without requiring you to assume hidden motives?",
-        "What small practical response would help even if you never settle the exact cause?"
+        "Can you tell me about one response you've had that you'd like to understand better?",
+        "What happened shortly before it, and how did you respond?",
+        "What explanation seems to fit what you've actually observed? Is there anything you're still unsure about?",
+        "What would you like to try the next time something similar happens?"
       ]
     ],
     [
       "evidence",
       "Check a psychological claim before adopting it",
       "Distinguish research evidence from a persuasive personal story.",
-      "A fair verdict on what a claim does and does not support.",
+      "Keep the claim as a working possibility. Look at what evidence supports it before allowing it to shape an important decision.",
       [
-        "Which psychological claim or label has stayed in your mind?",
-        "What type of evidence was offered for it, and who was actually studied?",
-        "What alternative causes or missing information would change the interpretation?",
-        "How will you treat the claim until stronger evidence becomes available?"
+        "Is there a psychological claim you've read that has changed how you think about yourself?",
+        "What evidence did the writer offer? Do you know who was studied?",
+        "What information would you need before using the claim to explain your own life?",
+        "How could you hold this explanation while you continue to learn about it?"
       ]
     ],
     [
       "compare",
       "Use more than one plausible explanation",
       "Test the effect of circumstances instead of treating one cause as certain.",
-      "One useful observation that could distinguish two hypotheses.",
+      "Keep two reasonable explanations open. Look for one observation that could help you compare them and choose a useful action.",
       [
-        "What repeated reaction do you want to understand better?",
-        "Which two different explanations might account for it?",
-        "What real situation or observation would favour one explanation over the other?",
-        "What gentle, safe action can you choose while the question remains open?"
+        "Which reaction or part of yourself have you been trying to make sense of?",
+        "Can you think of another explanation that might fit the same experience?",
+        "What would you expect to notice if one explanation were more accurate?",
+        "What could you do now that would help you, whichever explanation turns out to fit?"
       ]
     ],
     [
       "agency",
       "Turn insight into something that changes your day",
       "Move from self-analysis to a practical, value-guided choice.",
-      "A specific response that does not require total self-understanding.",
+      "Choose one action that serves something important to you. Let the unanswered parts of the explanation remain open for now.",
       [
-        "What have you learned about a recurring pattern that seems useful?",
-        "What action have you been postponing while trying to understand it perfectly?",
-        "Which value or need would that action serve?",
-        "What is one realistic step you can take without analysing yourself further?"
+        "Is there something you've learnt about yourself that feels genuinely useful?",
+        "Have you been holding off on a decision because you want to understand everything first?",
+        "What would taking that decision allow you to do or protect in your life?",
+        "What is a small step you could take without returning to the same question again?"
       ]
     ]
   ],
@@ -54,48 +54,48 @@ export const FOCUS_JOURNALS_B={
       "context",
       "Understand when movement becomes necessary",
       "Notice whether movement supports attention or reflects other distress.",
-      "A movement arrangement suited to the situation.",
+      "Notice when movement helps you participate. Choose a safe way to make room for it in one everyday setting.",
       [
-        "Where do you notice your body becoming especially restless?",
-        "What happens to attention when you try to keep completely still?",
-        "What changes when you can move safely or take a short break?",
-        "What practical movement option would fit that setting and your needs?"
+        "When does the urge to move become difficult to ignore?",
+        "What happens to your attention when you try to hold yourself still?",
+        "When you can move, do you find it easier to stay with what's happening?",
+        "What small movement option could you try in that setting?"
       ]
     ],
     [
       "accommodate",
       "Ask for a workable environment",
       "Identify a setting that demands stillness unnecessarily.",
-      "A specific and respectful adjustment request.",
+      "Write a specific request for an adjustment that would make the setting easier to use. Keep it within what feels safe to disclose.",
       [
-        "Which school, work or social setting is hardest to remain in?",
-        "What requirement about movement or sitting is causing difficulty?",
-        "Which safe change would let you participate more effectively?",
-        "Who could authorise it, and what will you ask for?"
+        "Where have you felt most uncomfortable because you're expected to stay still?",
+        "What rule or arrangement makes that situation hard to manage?",
+        "What would allow you to participate without spending so much energy controlling your movement?",
+        "Who could you speak with about that adjustment, and what would you ask?"
       ]
     ],
     [
       "health",
       "Check for a change that needs medical review",
       "Separate longstanding restlessness from sudden agitation or medication effects.",
-      "A factual description to take to appropriate care.",
+      "Record when the restlessness changed and any possible health contributors. Seek prompt review for severe new agitation.",
       [
-        "Has your restlessness been present for years or changed recently?",
-        "Have medicines, sleep, substances or other symptoms changed around the same time?",
-        "Is the movement interfering with rest, safety or essential functioning?",
-        "What concerns will you raise with a prescriber or GP, and how promptly?"
+        "Has this restless feeling always been familiar to you, or has something changed?",
+        "Did the change begin around a change in medicine or sleep?",
+        "How much is the feeling affecting your ability to rest or manage essential activities?",
+        "What would you like a GP or prescriber to know, and how soon should you contact them?"
       ]
     ],
     [
       "participate",
       "Use movement without losing the activity",
       "Find a way to regulate physical needs while staying engaged.",
-      "One participation strategy that respects others and your body.",
+      "Plan a movement break that lets you rejoin the activity. Notice whether you could follow more of what mattered to you.",
       [
-        "What valued activity is disrupted by the need to move?",
-        "Which movement or break would help while protecting the task?",
-        "What cue would help you return after moving?",
-        "What small change can you try and how will you evaluate it?"
+        "Which activity matters to you but becomes difficult when you need to move?",
+        "Could you include a short movement break while still taking part?",
+        "What would help you return to the discussion or task afterwards?",
+        "What arrangement could you try the next time you're there?"
       ]
     ]
   ],
@@ -104,48 +104,48 @@ export const FOCUS_JOURNALS_B={
       "marker",
       "Build a place to return when you drift",
       "Use a short note or question as a re-entry cue.",
-      "One practical marker for a conversation or reading task.",
+      "Leave a one-line note at a natural pause in the task. Use it as your starting point if you lose the thread.",
       [
-        "Which activity are you trying to follow when attention drifts?",
-        "What is the last point you normally remember before losing the thread?",
-        "Which one-line marker could show where you were?",
-        "How will you use that marker to return without restarting everything?"
+        "Where do you tend to lose the thread of what you're trying to follow?",
+        "What is the last part you usually remember understanding?",
+        "Could you leave yourself a short note at that point? What would it say?",
+        "How might that note help you return when your attention moves away?"
       ]
     ],
     [
       "difficulty",
       "Check whether the material is too easy or too hard",
       "Change task demands rather than assuming all drift has one cause.",
-      "An appropriate adjustment to difficulty or explanation.",
+      "Find the last point you understood. Change one feature of the next section so you have a better chance of following it.",
       [
-        "What type of material makes drifting most likely?",
-        "Which terms or steps feel unclear, or where does the activity become repetitive?",
-        "What would make the next section more engaging or comprehensible?",
-        "What explanation, challenge or break will you try next?"
+        "What kind of explanation or material is hardest for you to stay with?",
+        "Is there a particular point where it stops making sense or stops holding your interest?",
+        "What would help at that point? You might need the earlier step explained again.",
+        "What's one change you could try with the next section?"
       ]
     ],
     [
       "thought",
       "Respond to an internal distraction",
       "Identify a recurring thought and give actionable concerns a proper place.",
-      "One reliable way to address a concern without losing the current activity.",
+      "Record any action the concern genuinely needs. Return to the activity and notice where you last understood the thread.",
       [
-        "What thought takes your attention during the activity?",
-        "Does it contain a task you can schedule or an uncertainty you cannot settle now?",
-        "What relevant step could genuinely be taken later, if any?",
-        "Where will you record that step and how will you return to the present activity?"
+        "What thought tends to take over when you're trying to listen or read?",
+        "Is there an action you need to remember, or are you still trying to settle something uncertain?",
+        "If the concern needs attention later, what would actually help you deal with it?",
+        "Where could you put that reminder so you can return to the person or task in front of you?"
       ]
     ],
     [
       "feedback",
       "Use retrieval to find where attention was lost",
       "Turn passive reading into short checks of comprehension.",
-      "An honest learning signal and a targeted next step.",
+      "Try recalling a short idea and checking it against the source. Spend the next attempt on the part you couldn't explain.",
       [
-        "What short section have you just read or heard?",
-        "What is its main idea when you explain it without looking?",
-        "Which part could you not reconstruct or understand clearly?",
-        "What will you revisit or ask about before continuing?"
+        "What is one short piece of information you've just tried to learn?",
+        "Without looking back, how would you explain its main point?",
+        "When you check the material, where does your explanation stop matching it?",
+        "Could you ask about that missing part or revisit it before moving on?"
       ]
     ]
   ],
@@ -154,48 +154,48 @@ export const FOCUS_JOURNALS_B={
       "exit",
       "Create a workable stopping point before you start",
       "Protect your enjoyment and your ability to move to other duties.",
-      "A specific exit cue and a way to resume the interest later.",
+      "Choose a visible stopping point and a cue you'll notice. Leave a brief note so returning later feels possible.",
       [
-        "Which absorbing activity most often runs longer than you intended?",
-        "What makes leaving it difficult, especially when you are midway through something?",
-        "What cue would genuinely reach you, and how could you preserve your place?",
-        "What stopping and transition plan will you put in place before beginning next time?"
+        "Which activity do you regularly stay with longer than you intended?",
+        "What makes the planned stopping point so hard to leave?",
+        "What cue could interrupt you reliably? How would you protect the place you've reached?",
+        "Can you arrange that cue before your next session begins?"
       ]
     ],
     [
       "needs",
       "Protect important bodily and practical needs",
       "Identify what gets missed during prolonged absorption.",
-      "A reliable reminder and appropriate backup for essential needs.",
+      "Set up safeguards appropriate to the importance of the responsibility. Arrange dependable help for health or care duties.",
       [
-        "Which meal, rest, appointment or responsibility do you sometimes miss?",
-        "How soon do you usually notice that the need was missed?",
-        "What safeguard would be reliable enough for the importance of that duty?",
-        "Who or what can help ensure the safeguard works in real conditions?"
+        "What important need or responsibility has been missed while you were absorbed?",
+        "When did you realise it had been missed?",
+        "What kind of reminder or safeguard would still work while your attention is elsewhere?",
+        "If the responsibility affects health or safety, who could help you arrange a reliable backup?"
       ]
     ],
     [
       "transition",
       "Make changing tasks less costly",
       "Understand why stopping in the middle feels so uncomfortable.",
-      "A short handover note and manageable first action for the next task.",
+      "Write a resumption note before leaving. Make the next action outside the activity clear enough to begin.",
       [
-        "What thought or feeling keeps you working past the planned end?",
-        "What information are you afraid of losing if you stop now?",
-        "How could you record a useful return point in less than a minute?",
-        "What first action would ease the switch to the next responsibility?"
+        "What do you find yourself thinking when it's time to stop?",
+        "Is there something about your progress you're afraid you'll lose?",
+        "What would you need to write down so you could return without reconstructing the whole activity?",
+        "After making that note, what's the first thing you need to do next?"
       ]
     ],
     [
       "balance",
       "Keep deep engagement without sacrificing your day",
       "Choose where immersion belongs in your life.",
-      "A realistic time window that respects other values.",
+      "Choose a period for your absorbing activity that leaves room for one important responsibility. Plan a realistic transition.",
       [
-        "What do you genuinely enjoy or gain from deep absorption?",
-        "Which important parts of life have been pushed aside by it?",
-        "What time and conditions would let you enjoy it more safely?",
-        "What arrangement will allow both your interest and the other priority to have room?"
+        "What do you love about the activity that absorbs you so deeply?",
+        "What else in your day has been difficult to protect because of it?",
+        "What amount of time would allow you to enjoy the activity and still meet that responsibility?",
+        "How could you arrange your next session to give both a place?"
       ]
     ]
   ]
