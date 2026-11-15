@@ -15,19 +15,13 @@ export function organiseLifestyle(root,{showMode,signal}={}){
  const page=$('.life-unified');
  if(!flow||!calendar||!tasks||!practice||!reminders||!strip||!page)return;
 
- // The action belongs directly above the shared calendar + task workspace.
- const actions=document.createElement('section');
- actions.className='life-daily-actions';
- actions.setAttribute('aria-label','Daily check-in and reminder settings');
- actions.innerHTML=
-  '<div class="life-daily-primary">'+
-   '<span class="life-daily-primary-icon" aria-hidden="true">♡</span>'+
-   '<span class="life-daily-primary-copy"><strong>Daily check-in</strong><small data-ns-checkin-summary>Your feelings, in one place</small></span>'+
-   '<button type="button" class="life-daily-open" data-ns-open-checkin>Check in <span aria-hidden="true">→</span></button>'+
-  '</div>'+
-  '<div class="life-daily-secondary">'+
-   '<button type="button" class="life-daily-breathe" data-life-breathe>✦ 2 min breathing</button>'+
-   '<button type="button" class="life-daily-reminders" data-life-reminders aria-haspopup="dialog">♧ Reminders</button>'+
+ // Keep secondary utilities available without duplicating the main check-in action.
+ const actions=document.createElement('div');
+ actions.className='life-daily-actions life-daily-utilities';
+ actions.setAttribute('aria-label','Breathing and reminder settings');
+ actions.innerHTML='<div class="life-daily-secondary">'+
+  '<button type="button" class="life-daily-breathe" data-life-breathe>✦ 2 min breathing</button>'+
+  '<button type="button" class="life-daily-reminders" data-life-reminders aria-haspopup="dialog">♧ Reminders</button>'+
   '</div>';
  strip.after(actions);
  updateDailyCheckinButtons();
@@ -51,12 +45,6 @@ export function organiseLifestyle(root,{showMode,signal}={}){
 
  // Keep calendar and tasks together. Identity mission follows as the day's practice.
  flow.append(calendar,tasks,practice);
- const missionJump=document.createElement('button');
- missionJump.type='button';
- missionJump.className='life-mission-jump';
- missionJump.textContent='✦ View my field mission';
- strip.querySelector('.life-today-head')?.append(missionJump);
-
  // The original task form handles all submits; advanced fields remain available.
  const form=$('#lifestyle-task-form');
  const title=form?.querySelector('#lifestyle-task-title')?.closest('.field');
@@ -80,7 +68,6 @@ export function organiseLifestyle(root,{showMode,signal}={}){
    block:'start'
   });
  };
- missionJump.addEventListener('click',()=>goTo('#lifestyle-deed'),{signal});
  actions.addEventListener('click',event=>{
   const button=event.target.closest('button');
   if(!button)return;
