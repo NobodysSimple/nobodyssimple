@@ -28,7 +28,7 @@ export const HABIT_VOICE_C={
         "Notice which feeling appears before you open the app. Consider what could help with it outside the feed."
       ],
       "connection": [
-        "The phone may be your easiest way of feeling close to other people.",
+        "The phone may be your easiest way of feeling close to other people, especially when you have been alone for a long time.",
         "Keep meaningful communication available and limit the part of the app that leaves you feeling less connected."
       ],
       "choice": [
