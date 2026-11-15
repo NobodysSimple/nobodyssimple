@@ -26,7 +26,7 @@ export function organiseLifestyle(root,{showMode,signal}={}){
    '<button type="button" class="life-arrival-primary" data-life-checkin>Check in <span aria-hidden="true">↗</span></button>'+
    '<button type="button" data-life-breathe>Breathe for 2 min</button>'+
    '<a href="#compass">Emotion Compass <span aria-hidden="true">↗</span></a></div>';
- $('.life-mode-switch').after(arrival);
+ strip.before(arrival);
 
  const checkDrawer=document.createElement('details');
  checkDrawer.className='life-checkin-drawer';
