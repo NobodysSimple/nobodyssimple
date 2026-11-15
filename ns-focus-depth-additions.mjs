@@ -5,38 +5,38 @@
 export const FOCUS_DEEPENING=Object.freeze({
   "focus": {
     "addition": [
-      "The hardest part may be how quickly one difficult afternoon becomes evidence against you. You notice the unfinished page, remember other times you fell behind and begin watching yourself for another lapse. That self-monitoring takes attention too. It is worth asking whether the task became harder because your concentration drifted, or because you began fighting with yourself about it.",
-      "You might test this with one ordinary task. Keep the goal the same, then change a single condition: written steps instead of verbal ones, a quieter place, or a break before beginning. Record whether you could return after losing your place. You are looking for a useful arrangement, not trying to prove you can concentrate perfectly. If your difficulties are longstanding or worsening, the support you need may go beyond a home experiment."
+      "Perhaps people around you see the unfinished task and assume you have been distracted by choice. They don't see the number of times you tried to bring yourself back. That gap between effort and outcome can leave you feeling unseen. It can even make you hesitant to tell people you're struggling, because you expect another lecture about discipline.",
+      "Once you've found the point where concentration breaks, choose a small change that belongs to that point. If the instructions keep slipping away, ask for them in writing. If the environment interrupts you, see whether you can work somewhere quieter. You can make one change and judge what happened without putting your entire ability to concentrate on trial."
     ],
-    "why": "When you lose focus, the visible moment is usually the part you blame yourself for. The more helpful question is what attention was being asked to do just before it slipped. A task may demand more mental holding space than you have available, or the room may keep interrupting you. Your response afterward can make returning harder still. Follow one example without deciding in advance which explanation fits.",
+    "why": "I want you to think about the last time you struggled to stay with something important. What did the task demand of you just before your attention went elsewhere? You may have had to remember several instructions while trying to complete the first one. You may have been trying to work through a worry that kept returning. Look at what happened when you noticed the lapse. If you became angry with yourself, returning might have felt harder still. The examples here can help you find a place where support would make a difference.",
     "hints": [
-      "Think of the exact point you left the task. A missed sentence tells us more than a judgement about being distracted.",
-      "Name the demand that competed with the task. It may have come from the room, the instructions or a worry.",
-      "Describe what you tried after noticing the lapse. Did it help you find your place again?",
-      "Choose one change you can actually try next time. Judge it by whether returning became easier."
+      "Think of one task you wanted to finish. Tell me where you were when you began losing your place.",
+      "What were you trying to keep in mind at that moment? You can describe the task in ordinary words.",
+      "How did you respond once you noticed your attention had gone? I'm interested in what made returning difficult.",
+      "Which change would give you the best chance of returning next time? Choose something you can test."
     ],
     "routes": {
-      "interrupt": "You may have been interrupted repeatedly. You deserve a setup that protects your work instead of demanding endless resistance.",
-      "unit": "A task with a finish line is easier to return to. Choose a unit that leaves evidence of what you completed.",
-      "worry": "A concern can matter without having to be solved during this task. Give it a safe, trustworthy place to wait.",
-      "access": "Describe the barrier and the adjustment you need. You should not have to disclose more personal information than necessary."
+      "interrupt": "Think about the interruption that happens most often. We'll work out what can be changed around it so you're not constantly starting again.",
+      "unit": "You may be asking yourself to stay with too much at once. We'll find one piece of the task you can finish and return to.",
+      "worry": "A concern can keep returning when you're afraid you'll forget it. We'll give it a place to wait until you can deal with it.",
+      "access": "If the setting itself makes concentrating difficult, let's work out what you could reasonably ask to change. You don't have to make that request perfectly."
     },
     "roots": {
       "clarity": [
-        "Repeating the instructions or starting over may briefly make the task feel manageable when the next action is unclear.",
-        "If the instructions change midway through, the obstacle may be clarity. Ask for the next step in writing or mark where to resume."
+        "Starting again may help you feel you've regained the thread after losing track of the instructions. It also takes time away from making progress.",
+        "See whether the next step becomes easier to follow when it's written down. You can ask for clarification at the point where the instructions stopped making sense."
       ],
       "environment": [
-        "Turning to another activity may remove you from noise or interruptions that make sustained attention difficult.",
-        "Compare the same small task in two different settings if that is safe and practical. The difference can tell you more than self-criticism."
+        "Leaving a task can bring relief when the room keeps interrupting you. Returning under the same conditions may lead to another difficult attempt.",
+        "Choose one interruption you can reduce. Compare what happens when you try the same kind of work with that interruption changed."
       ],
       "capacity": [
-        "Stopping may provide a needed break when sleep loss, distress or sustained demand has reduced what you can manage.",
-        "Look at the amount of attention the task requires relative to your current capacity. Breaks, care or reduced demands may matter more than effort."
+        "Stopping may bring needed relief after you've been working beyond what your attention can comfortably sustain.",
+        "Notice whether sleep or prolonged strain has made the task unusually difficult. Your next step may involve rest or fewer demands."
       ],
       "support": [
-        "Avoiding or giving up may spare you another attempt in conditions that have repeatedly failed you.",
-        "A reasonable adjustment or shared check-in can change the task itself. The need for support is useful information about the arrangement."
+        "Avoiding another attempt may protect you from the discouragement of struggling in conditions that haven't worked for you before.",
+        "Think about the adjustment that would make the largest difference. A written brief or regular check-in may be worth asking for."
       ]
     },
     "supportMore": [
@@ -56,38 +56,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "memory": {
     "addition": [
-      "Forgetfulness can be especially painful when somebody treats it as a measure of how much you care. Missing a birthday, forgetting a request or failing to reply may hurt another person, and the consequences deserve attention. Yet remembering something at the right moment involves more than caring about it. An intention has to survive the time between making it and acting on it. That gap is exactly where an external cue can help.",
-      "When you examine a lapse, ask where the information went missing. Did you never hear it clearly? Did you understand it but store it in several places? Or was it available, yet nothing prompted you at the moment you needed to act? Each answer calls for a different solution. You can acknowledge the impact of forgetting while changing the process that made it likely."
+      "Sometimes you might keep a mistake to yourself because you're afraid people will become impatient with you. Then you miss the chance to explain what would help. If you regularly forget verbal requests, it may be useful to tell someone that you take things in more reliably when they're written down. It can feel vulnerable to ask for that, especially after somebody has already expressed frustration.",
+      "I'd pay attention to the system you actually use on your hardest days. A reminder that needs you to remember to open another app may have the same weakness as the original intention. Put the cue close to the action. If you discover that a particular reminder works, there's no need to keep inventing a new system."
     ],
-    "why": "A missed commitment can bring shame long before you have worked out what failed. It helps to separate receiving information from keeping it and from remembering to act later. These are different jobs. The examples let you locate the handoff that broke down, while keeping health-related changes in view. There is no need to turn one lapse into a judgement about your character or intelligence.",
+    "why": "Forgetting can leave you questioning how much control you have over your own day. I want to help you identify what happens between receiving information and doing what you've promised. You might have heard the request at a busy moment and never had a chance to take it in. Or you might remember it clearly the following morning, only to miss the moment when you needed to act. Look at one lapse closely. It can tell us where a reminder or a different way of receiving information would have helped. New or worsening memory changes also deserve a medical conversation.",
     "hints": [
-      "Choose a missed action or detail rather than asking whether your memory is good or bad.",
-      "Find the moment the information was first presented or the intention was made.",
-      "Notice what you did after the lapse. Rechecking can feel necessary when trust in your memory has been shaken.",
-      "Design a prompt for the moment of action, or choose a professional conversation if the pattern is changing."
+      "Choose one thing you meant to remember. If it affected someone else, you can acknowledge that here.",
+      "Think back to when the information first reached you. Were you able to take it in at the time?",
+      "When did you realise it had been forgotten? What did you do afterwards?",
+      "What prompt could reach you when you need it? If the problem is new, consider what you'd want to tell your GP."
     ],
     "routes": {
-      "cue": "A reminder only helps if it reaches you when you can act. Think about the point where the task becomes possible.",
-      "encode": "When you were first told, the information may never have been clear enough to store. You can ask for it again.",
-      "onehome": "A system you know how to find is worth more than several perfect lists you rarely revisit.",
-      "assessment": "You can ask for a medical review without arriving with a theory about the cause. Describe changes and their practical effect."
+      "cue": "We'll find the point when you needed to act and place a reminder there. Remembering the task earlier in the day may not be enough.",
+      "encode": "Let's return to the moment you first received the information. You may need a way to check that you've understood it while it's still fresh.",
+      "onehome": "If reminders live in too many places, it can be hard to trust any of them. We'll choose somewhere you'll actually look.",
+      "assessment": "If something about your memory has changed, let's write down what you've noticed so you can explain it clearly to a clinician."
     },
     "roots": {
       "cue": [
-        "The action may still matter deeply to you; the missing part is a signal at the future moment when you need to do it.",
-        "Connect the intention to an event you reliably encounter. For safety-critical actions, seek a dependable backup."
+        "The intention can remain important to you even when it disappears at the moment it needs to become an action.",
+        "Connect the reminder to the event when the task becomes possible. For essential responsibilities, consider a dependable backup."
       ],
       "encoding": [
-        "Asking people to repeat themselves or checking messages may be an attempt to recover information that was unclear at the start.",
-        "Try receiving the same information in writing or repeating back the key instruction. See whether the later lapse changes."
+        "Checking the same message may be an attempt to recover a detail that was never clear enough when you first heard it.",
+        "Ask for the information in writing or repeat back the instruction. Notice whether this changes what you remember later."
       ],
       "capacity": [
-        "Putting information down may help when fatigue, worry or competing demands make mental rehearsal unreliable.",
-        "Notice whether lapses cluster around poor sleep or periods of overload. Persistent new symptoms deserve appropriate health review."
+        "Making repeated notes may be your way of coping when tiredness or distress leaves little room to hold new information.",
+        "Look for a pattern between the lapses and how you have been sleeping. Report persistent changes that affect everyday life."
       ],
       "confidence": [
-        "Repeated checking may briefly ease the fear that you have missed something, especially after an embarrassing mistake.",
-        "Choose a proportionate confirmation procedure. If checking expands despite accurate records, the checking pattern may need attention too."
+        "Checking again can briefly settle the fear of having missed something important. The fear may return even when the record is accurate.",
+        "Agree on a reasonable way to confirm important information once. If repeated checking remains hard to stop, it may deserve attention of its own."
       ]
     },
     "supportMore": [
@@ -107,38 +107,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "organization": {
     "addition": [
-      "There is a particular exhaustion in having to remember the system that is meant to help you remember everything else. You may be told to buy a planner, use reminders or become more disciplined. Each suggestion sounds simple until the planner itself becomes another place where unfinished tasks disappear. A useful system has to work on the days when you are busy, distracted or unwell. Those are the days you need it most.",
-      "Try tracing one responsibility from the moment you received it to the moment it was completed or lost. Maybe the problem happens at capture: someone asks you to do something while your hands are full. Perhaps the task reaches your list but stays there because it is not yet an action. Changing that one handoff can make everyday life more manageable than redesigning every calendar you own."
+      "Sometimes the most painful part is feeling that everybody else has been given an instruction manual for ordinary life. You may look at the way other people keep appointments or manage their belongings and wonder why it seems to require so little thought. Comparing yourself with the finished result of somebody else's system can make your own efforts seem smaller than they are.",
+      "You may also have tried a great many organisation methods already. If that's the case, I wouldn't ask you to start by making another beautiful planner. Find out where the previous ones became difficult to maintain. Maybe the system required daily attention you couldn't give it. The method you keep using will be the one that still works when life becomes demanding."
     ],
-    "why": "When life feels disorganised, it may seem as though everything has gone wrong at once. Usually a few repeatable points are causing much of the trouble. Information might arrive without being captured, or a project might stay on a list because nobody has chosen its first step. The examples help you identify those points. Sometimes the real difficulty is that the responsibilities exceed the time and help available.",
+    "why": "When you're struggling to keep up with everyday responsibilities, it's tempting to describe your whole life as disorganised. I'd begin with something smaller. Choose a task you intended to do. Did you lose it before you wrote it down? Did it stay on the list because the next action wasn't obvious? Or did everything reach the calendar and still exceed the time available? Follow the task until you find the point where it stopped moving. That may show us what could be changed without asking you to reorganise every part of your life.",
     "hints": [
-      "Follow one missed task through your system. Where did it begin and where was it meant to go?",
-      "Find the point when the next action stopped being visible.",
-      "Describe the workaround you used. Did it reduce work or create another thing to maintain?",
-      "Choose a system simple enough to use when you are already tired."
+      "Think of a task that's still troubling you. Where did the responsibility first come from?",
+      "At what point did it become hard to know what to do next?",
+      "What have you been using to keep track? Tell me what becomes difficult about maintaining it.",
+      "What's one place where the task could live safely until you're ready to act?"
     ],
     "routes": {
-      "capture": "The best capture point is the one you can use the moment a request arrives, including when you are busy.",
-      "sequence": "Make the first action something you could perform without deciding what the project means again.",
-      "triage": "Priorities are partly about consequences and capacity. You may need permission or support to remove a demand.",
-      "system": "A method that needs constant tending can become the problem. Keep only the pieces that save you effort."
+      "capture": "Let's give new responsibilities a place where you can find them. We'll choose something you can use even when you're busy.",
+      "sequence": "If a project has been sitting on your list for weeks, we'll work out the next action you can actually take.",
+      "triage": "When everything feels urgent, we'll examine the real deadlines and what you can safely set aside. You may also need to ask for help.",
+      "system": "If organising your system has become a task of its own, let's make it smaller. It should still work on the days when you have little energy."
     },
     "roots": {
       "structure": [
-        "Creating several lists can briefly reassure you that nothing has been forgotten, even if the lists are difficult to use.",
-        "Look for one reliable place to capture responsibilities and one realistic time to review them."
+        "Creating another list can bring a brief sense that your responsibilities are under control. You may still struggle to find the right list later.",
+        "Choose one place to capture a new task as it arrives. Decide when you will look at it again."
       ],
       "sequence": [
-        "Postponing a project may protect you from the frustration of starting without knowing the order of operations.",
-        "Turn one project heading into a visible action with materials, a starting point and a stopping point."
+        "Leaving a project for another day may spare you the frustration of trying to work out every step at once.",
+        "Write down the first action that can happen with the information you already have. Keep the remaining steps nearby."
       ],
       "capacity": [
-        "Avoiding a crowded plan may temporarily protect you from confronting how little time or energy remains.",
-        "Count the actual hours and recovery needed. A plan cannot create resources that do not exist."
+        "Avoiding an overflowing planner can protect you from confronting the number of commitments you cannot currently fit in.",
+        "Count the time you genuinely have available. If the tasks exceed it, identify what can be delayed or shared."
       ],
       "access": [
-        "Giving up on a complex system may protect you from repeated failure in a format that does not fit how you work.",
-        "Written instructions, shared systems or a less demanding format may be the appropriate adjustment."
+        "Giving up on a planner can become the only relief when its format demands more effort than it saves.",
+        "Ask whether a simpler format or shared system could carry the information for you. The solution should fit how you actually work."
       ]
     },
     "supportMore": [
@@ -158,38 +158,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "bored": {
     "addition": [
-      "Sometimes boredom is oddly close to sadness. You keep looking for the next thing because you hope it will make the hour feel different, yet every option seems flat. At other times, the problem is almost the opposite: you feel physically restless and hungry for a challenge. Those experiences deserve different responses. A new video may help neither if what you actually need is a walk or to see another person.",
-      "Notice what follows the choice you make to escape boredom. Did it leave you genuinely engaged, or did it give you thirty seconds of novelty before you needed another? A short period of trial and observation is enough to learn something. There is no requirement to make free time productive. You are trying to understand what makes an activity sustaining for you rather than continuing an endless search for something that will."
+      "Perhaps you feel guilty for being bored when there are things you could be doing. You may have hobbies you once loved and still find yourself unable to settle into them. That can be frightening, particularly when other people seem to enjoy their downtime easily. I'd like you to be curious about the feeling before you decide it says something unkind about you.",
+      "Try noticing what happens after a choice you make in the hope of feeling interested. Does it hold you for a little while? Do you feel better afterwards? If you keep returning to the same unsatisfying activity, perhaps you've learnt that it offers a quick change of feeling even though it seldom gives you the kind of engagement you're missing."
     ],
-    "why": "Boredom can mean too little meaningful engagement, too little stimulation or too little capacity to enjoy what is available. It can also arrive when someone is lonely or exhausted. The urge to switch activities may be a reasonable attempt to change the feeling. These examples invite you to check what actually follows the switch and whether it meets the need that brought it about.",
+    "why": "I wonder what you are hoping the next activity will give you. Sometimes boredom is an urge for more challenge. Sometimes you miss being with another person and end up trying to fill that gap with entertainment. You may also be too worn down to enjoy something you'd normally like. These experiences need different kinds of care. Choose an ordinary moment when you kept looking for something else to do. Look at what you tried and how you felt afterwards. We can work towards something that actually meets the need you've noticed.",
     "hints": [
-      "Choose an hour when restlessness or flatness was strongest. What were you hoping to feel?",
-      "Notice whether you wanted challenge, movement, company or a chance to rest.",
-      "What did the next distraction give you, and how long did it last?",
-      "Choose an experiment that respects your energy and leaves you safe."
+      "Think of a time when you wanted to feel more interested in something. What was missing?",
+      "Describe the feeling as it was for you. Did you want to move or were you too tired to engage?",
+      "What did you do to change the feeling? Did it help for longer than a moment?",
+      "What would you be willing to try next that fits the energy you have?"
     ],
     "routes": {
-      "need": "The right activity depends on what is missing. Start by noticing the need before choosing entertainment.",
-      "task": "An unrewarding task may need feedback or a visible endpoint, not another lecture about motivation.",
-      "safer": "If chasing stimulation leads to risky choices, consider what kind of excitement would feel worthwhile afterwards.",
-      "rest": "Adding novelty can become exhausting when the body needs recovery. Notice whether rest changes the feeling."
+      "need": "We'll work out what kind of engagement you've been missing. That should make choosing your next activity easier.",
+      "task": "If a responsibility feels painfully dull, let's see whether a clearer result or a different way of working helps.",
+      "safer": "If you're turning to excitement that leaves you worried afterwards, we'll look for a more satisfying way to meet that urge.",
+      "rest": "When you're worn down, even enjoyable activities can feel empty. We'll look at whether recovery changes the feeling."
     },
     "roots": {
       "interest": [
-        "Switching activities may offer a brief burst of novelty when the current activity gives little sense of progress.",
-        "Try adding a meaningful goal or feedback to the activity, then notice whether engagement lasts longer."
+        "Moving between activities may give you a short burst of novelty when the current task feels unrewarding.",
+        "Choose a task with a visible endpoint. Notice whether knowing what progress looks like changes your engagement."
       ],
       "movement": [
-        "Seeking another activity can give your body an opportunity to move when stillness has become uncomfortable.",
-        "A safe movement break or change of position may serve the need more directly than more screen time."
+        "Changing activities may give your body a chance to move after prolonged stillness has become uncomfortable.",
+        "Consider a safe opportunity to move. Pay attention to whether that helps you return to what you wanted to do."
       ],
       "connection": [
-        "Seeking entertainment can fill the space left by a missing conversation or shared experience, at least temporarily.",
-        "If connection seems to be the missing ingredient, choose a realistic opportunity to reach someone rather than another isolated distraction."
+        "Entertainment may briefly distract you from missing company, especially when you've spent a long time alone.",
+        "If you suspect you're missing connection, consider a small way of spending time with another person."
       ],
       "recovery": [
-        "Doing something new may feel easier than admitting you are tired, even when the novelty does not restore you.",
-        "Compare your state before and after genuine rest. Persistent loss of pleasure or marked low mood deserves suitable support."
+        "Seeking something new can postpone the feeling that you're too tired to engage with anything.",
+        "Try genuine rest and notice whether familiar interests become easier afterwards. Persistent loss of enjoyment deserves support."
       ]
     },
     "supportMore": [
