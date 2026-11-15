@@ -29,7 +29,8 @@ test('296 bespoke situations and 74 different introductions ground the four jour
   assert.equal(g.routes.length,4,g.id);
   const domain=Object.keys(groups).find(key=>g.id in groups[key]);
   const ctx=groups[domain][g.id];intros.push(g.whyIntro);
-  assert.equal(g.whyIntro,ctx.intro,g.id);
+  if(domain==='inequality'||domain==='environment')assert.ok(g.whyIntro.startsWith(ctx.intro+' '),g.id+' expanded intro');
+  else assert.equal(g.whyIntro,ctx.intro,g.id);
   assert.ok(g.whyIntro.length>175,g.id);
   for(let i=0;i<4;i++){
    const scene=ctx.cases[i][0];

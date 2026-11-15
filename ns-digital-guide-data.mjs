@@ -1,5 +1,6 @@
 /* Independently authored digital-life manual; shared interactive renderer. */
-export const DIGITAL_GUIDES=Object.freeze([
+import {DIGITAL_NEW_GUIDES} from './ns-digital-new-guide-data.mjs';
+export const DIGITAL_GUIDES=Object.freeze([...DIGITAL_NEW_GUIDES,
   {
     "id": "cyberbullying",
     "title": "I am being bullied online",
@@ -530,6 +531,6 @@ export const DIGITAL_GUIDES=Object.freeze([
     "prominentSafety": "If the harassment includes threats, stalking, location exposure or sexual-image extortion, prioritise immediate protection and specialist help over journaling or confrontation.",
     "evidence": "These are possible patterns rather than a diagnosis. The linked reporting and health resources explain practical support options."
   }
-]);
+].map(g=>Object.freeze({...g,noPersist:true})));
 export const DIGITAL_IDS=Object.freeze(DIGITAL_GUIDES.map(g=>g.id));
 export const DIGITAL_BY_ID=new Map(DIGITAL_GUIDES.map(g=>[g.id,g]));

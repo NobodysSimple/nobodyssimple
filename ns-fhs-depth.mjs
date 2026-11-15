@@ -12,9 +12,16 @@ import {FHS_SUPPORT_FAMILY_B} from './ns-fhs-support-family-b.mjs';
 import {FHS_SUPPORT_HARM} from './ns-fhs-support-harm.mjs';
 import {FHS_SUPPORT_INEQUALITY} from './ns-fhs-support-inequality.mjs';
 import {FHS_SUPPORT_ENVIRONMENT} from './ns-fhs-support-environment.mjs';
+import {SOCIETY_INEQUALITY_REVISIONS_A} from './ns-society-revisions-inequality-a.mjs';
+import {SOCIETY_INEQUALITY_REVISIONS_B} from './ns-society-revisions-inequality-b.mjs';
+import {SOCIETY_ENVIRONMENT_REVISIONS} from './ns-society-revisions-environment.mjs';
 
 const contexts={...FHS_CONTEXT_FAMILY,...FHS_CONTEXT_HARM,...FHS_CONTEXT_INEQUALITY,...FHS_CONTEXT_ENVIRONMENT};
 const support={...FHS_SUPPORT_FAMILY_A,...FHS_SUPPORT_FAMILY_B,...FHS_SUPPORT_HARM,...FHS_SUPPORT_INEQUALITY,...FHS_SUPPORT_ENVIRONMENT};
+const societyRevisions={...SOCIETY_INEQUALITY_REVISIONS_A,...SOCIETY_INEQUALITY_REVISIONS_B,...SOCIETY_ENVIRONMENT_REVISIONS};
+if(Object.keys(societyRevisions).length!==33)throw new Error('Society quality pass must cover all 33 inequality/environment topics');
+const privateSocietyIds=new Set(['debt-coercion','financial-exploitation','financial-dependence','homelessness-insecurity','housing-discrimination','pregnancy-discrimination','community-violence','war-conflict-distress','disaster-recovery']);
+const prominentSocietyIds=new Set(['financial-exploitation','pregnancy-discrimination','war-conflict-distress']);
 const countContext=Object.keys(contexts).length;
 if(countContext!==74||Object.keys(support).length!==74)throw new Error('All 74 FHS topics require authored contextual and support content');
 
@@ -64,9 +71,9 @@ function routeQuestions(g,domain,i,scene,thought){
    ?'What has actually happened, and which claims remain uncertain?'
    :'What did the family members actually say or do, and what did you understand from it?';
  const q3=domainQuestion[domain];
- const q4=domainNext[domain];
+ const q4=societyRevisions[g.id]?'Which practical response would fit this situation: '+clean(societyRevisions[g.id].actions[i])+'?':domainNext[domain];
  return [[q1,profile[1],profile[1],''],[q2,'The example does not establish a motive. Start with what can be observed.',g.article[(i+3)%10],''],
-  [q3,domainFunction[domain],g.safety,''],[q4,g.now.steps[i%3],g.now.steps[i%3],'actions']];
+  [q3,domainFunction[domain],g.safety,''],[q4,societyRevisions[g.id]?.actions[i]||g.now.steps[i%3],societyRevisions[g.id]?.actions[i]||g.now.steps[i%3],'actions']];
 }
 function whyQuestions(g,domain,scenes){
  return [
@@ -131,7 +138,7 @@ function supportiveIdeas(g,domain,scenes){
  ];
  // Carefully place independently written options first. The rest are
  // transparent scenario-specific reflection choices, not invented treatments.
- const options=[...written,...extras];
+ const options=[...written,...(societyRevisions[g.id]?.actions||[]),...extras];
  const unique=[...new Set(options)];
  if(unique.length<24)throw Error('Not enough practical options: '+g.id);
  return {actions:unique.slice(0,24),support:unique.slice(0,24)};
@@ -149,14 +156,15 @@ export function enrichFhsGuide(g,domain){
  }));
  const cases=enrichedCases(g,domain,context.cases);
  if(cases.length!==16||new Set(cases.map(c=>c.situation)).size!==16)throw new Error('Repeated worked situation: '+g.id);
- const noPersist=domain==='harm'||g.id==='family-financial-dependence'||g.id==='controlling-parenting'||g.id==='co-parenting-conflict';
+ const noPersist=domain==='harm'||g.id==='family-financial-dependence'||g.id==='controlling-parenting'||g.id==='co-parenting-conflict'||privateSocietyIds.has(g.id);
  return Object.freeze({...g,
   readTitle:g.title,
-  whyIntro:context.intro,
+  whyIntro:context.intro+(societyRevisions[g.id]?' '+societyRevisions[g.id].insight:''),
   routes,
   whyQuestions:whyQuestions(g,domain,context.cases),
   whyCases:cases,
   noPersist,
+  prominentSafety:prominentSocietyIds.has(g.id)?g.safety:g.prominentSafety,
   ideas:supportiveIdeas(g,domain,context.cases),
   evidence:domain==='harm'?
    'These are optional examples for recognising conduct and considering safety. They do not diagnose the person responsible. You do not have to share details, confront anyone or complete a journal to seek confidential help.':

@@ -9,7 +9,7 @@
  */
 import {INCLUSIVE_GROUPS_A} from './ns-inclusive-topics-a.mjs';
 import {INCLUSIVE_GROUPS_B} from './ns-inclusive-topics-b.mjs';
-import {enrichFhsGuide} from './ns-fhs-depth.mjs?v=fhs-20261115-v2';
+import {enrichFhsGuide} from './ns-fhs-depth.mjs?v=society-20261115-v3';
 import {FAMILY_EDITORIAL_1} from './ns-family-editorial-1.mjs?v=fhs-20261115-v1';
 import {FAMILY_EDITORIAL_2} from './ns-family-editorial-2.mjs?v=fhs-20261115-v1';
 import {FAMILY_EDITORIAL_3} from './ns-family-editorial-3.mjs?v=fhs-20261115-v1';
