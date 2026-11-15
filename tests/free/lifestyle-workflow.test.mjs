@@ -4,19 +4,19 @@ import {readFileSync} from 'node:fs';
 
 const src=name=>readFileSync(new URL('../../'+name,import.meta.url),'utf8');
 
-test('Lifestyle offers an optional arrival before the planner while preserving check-in form',()=>{
- const page=src('lifestyle.mjs');
- const workflow=src('ns-lifestyle-workflow.mjs');
- assert.match(page,/organiseLifestyle\(root,\{showMode,signal\}\)/);
- assert.match(workflow,/strip\.before\(arrival\)/);
- assert.match(workflow,/arrival\.after\(checkDrawer\)/);
- assert.match(workflow,/flow\.append\(calendar,tasks,practice\)/);
- assert.match(workflow,/settings\.append\(reminders\)/);
- assert.match(workflow,/data-life-checkin/);
- assert.match(workflow,/data-life-breathe/);
- assert.match(workflow,/href="#compass"/);
- assert.match(page,/id="lifestyle-checkin-form"/);
+test('Lifestyle uses a shared check-in popup and subtle reminder settings',()=>{
+ const page=src('lifestyle.mjs'),workflow=src('ns-lifestyle-workflow.mjs');
+ const shared=src('ns-daily-checkin.mjs');
+ assert.match(page,/organiseLifestyle\\(root,\\{showMode,signal\\}\\)/);
+ assert.match(workflow,/data-ns-open-checkin/);
+ assert.match(workflow,/life-daily-reminders/);
+ assert.match(workflow,/reminderDialog\\.showModal\\(\\)/);
+ assert.match(workflow,/flow\\.append\\(calendar,tasks,practice\\)/);
+ assert.ok(!page.includes('id="lifestyle-checkin-form"'));
  assert.match(page,/id="lifestyle-calendar"/);
+ assert.match(shared,/DAILY_CHECKIN_KEY='ns-lifestyle-emotions-v1'/);
+ assert.match(shared,/renderEmbeddedCompass/);
+ assert.match(page,/readDailyCheckins\\(\\)/);
 });
 
 test('Task quick-add still submits the original form and retains all scheduling controls',()=>{
@@ -38,14 +38,14 @@ test('SimplyFocus prioritises the timer and tasks ahead of sound and breathing',
   assert.ok(focus.includes(id));
 });
 
-test('Field Mission reports practice, not ability or punitive streaks',()=>{
- const practice=src('lifestyle-practice-ui.mjs');
- const page=src('lifestyle.mjs');
- assert.match(page,/Today’s Field Mission/);
- assert.match(practice,/life-practice-trail-steps/);
- assert.match(practice,/life-practice-milestones/);
+test('The Daily Deed reports actual practices with an accessible quest action',()=>{
+ const practice=src('lifestyle-practice-ui.mjs'),page=src('lifestyle.mjs');
+ assert.match(page,/The Daily Deed/);
+ assert.match(practice,/life-deed-layout/);
+ assert.match(practice,/life-deed-milestones/);
+ assert.match(practice,/data-practice-done/);
  assert.match(practice,/data-practice-pause/);
  assert.match(practice,/data-practice-undo/);
- assert.match(practice,/No streak to protect/);
- assert.match(src('sw.js'),/ns-lifestyle-workflow\.mjs/);
+ assert.match(practice,/Missed days do not erase progress/);
+ assert.match(src('sw.js'),/ns-lifestyle-workflow\\.mjs/);
 });
