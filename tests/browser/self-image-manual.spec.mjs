@@ -16,7 +16,7 @@ test('all 49 identity, LGBTQIA+ and appearance topics render their individual te
 test('original identity journal opens with the topic-specific question',async({page})=>{
  await open(page,'self-worth');
  await page.locator('[data-mood-open="path-0"]').click();
- await expect(page.locator('[data-mood-screen]')).toContainText('good result brings relief');
+ await expect(page.locator('[data-mood-screen]')).toContainText('What recent event made you feel less worthy of care or respect?');
  await expect(page.locator('[data-mood-answer]')).toBeVisible();
 });
 test('sensitive identity journals never offer browser storage of answers',async({page})=>{
