@@ -27,6 +27,12 @@ export function organiseLifestyle(root,{showMode,signal}={}){
    '<button type="button" data-life-breathe>Breathe for 2 min</button>'+
    '<a href="#compass">Emotion Compass <span aria-hidden="true">↗</span></a></div>';
  strip.before(arrival);
+ // The mission stays discoverable even when planning occupies the first screen.
+ const missionJump=document.createElement('button');
+ missionJump.type='button';
+ missionJump.className='life-mission-jump';
+ missionJump.textContent='✦ View my field mission';
+ strip.querySelector('.life-today-head')?.append(missionJump);
 
  const checkDrawer=document.createElement('details');
  checkDrawer.className='life-checkin-drawer';
@@ -55,10 +61,11 @@ export function organiseLifestyle(root,{showMode,signal}={}){
   wrap.className='life-task-options-grid';
   Array.from(form.children).filter(node=>node!==title&&node!==add).forEach(node=>wrap.append(node));
   advanced.append(wrap);
-  form.insertBefore(advanced,add);
+  form.append(advanced);
   form.classList.add('life-task-quick-form');
  }
  const options=form?.querySelector('.life-task-options');
+ missionJump.addEventListener('click',()=>goTo('#lifestyle-deed'),{signal});
  const goTo=(selector)=>{const node=$(selector);if(node){node.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}};
 
  arrival.addEventListener('click',event=>{

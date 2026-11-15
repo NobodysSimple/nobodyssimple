@@ -1170,3 +1170,14 @@ html[data-theme="dark"] body.app-body #main .life-unified :is(.life-checkin-draw
 html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-action .life-practice-task{
  color:#fff6df;
 }
+
+/* Keep the daily identity exercise reachable before scrolling through the planner. */
+body.app-body #main .life-unified .life-today-head .life-mission-jump{
+ display:inline-flex;align-items:center;justify-content:center;margin-top:8px;
+ padding:6px 11px;min-height:33px;border-radius:999px;
+ border:1px solid #b9d1af;background:#e1edda;color:#2b6041;
+ font:750 11px/1.2 system-ui,sans-serif;cursor:pointer;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-today-head .life-mission-jump{
+ background:#405f43;border-color:#719475;color:#eaf3df;
+}
