@@ -6,19 +6,19 @@ import {problemIndex} from './ns-problem-map.mjs';
 import {extendedProblemIndex} from './ns-atlas-extended.mjs';
 import {INCLUSIVE_GROUPS_A} from './ns-inclusive-topics-a.mjs';
 import {INCLUSIVE_GROUPS_B} from './ns-inclusive-topics-b.mjs';
-import {IDENTITY_EDITORIAL_A} from './ns-identity-editorial-a.mjs';
-import {IDENTITY_EDITORIAL_B} from './ns-identity-editorial-b.mjs';
-import {IDENTITY_EDITORIAL_C} from './ns-identity-editorial-c.mjs';
-import {LGBTQ_EDITORIAL_A} from './ns-lgbtq-editorial-a.mjs';
-import {LGBTQ_EDITORIAL_B} from './ns-lgbtq-editorial-b.mjs';
-import {LGBTQ_EDITORIAL_C} from './ns-lgbtq-editorial-c.mjs';
-import {LGBTQ_EDITORIAL_D} from './ns-lgbtq-editorial-d.mjs';
-import {APPEARANCE_EDITORIAL_A} from './ns-appearance-editorial-a.mjs';
-import {APPEARANCE_EDITORIAL_B} from './ns-appearance-editorial-b.mjs';
-import {SELF_IMAGE_SUPPORT_IDENTITY} from './ns-self-image-support-identity.mjs';
-import {SELF_IMAGE_SUPPORT_LGBTQ_A} from './ns-self-image-support-lgbtq-a.mjs';
-import {SELF_IMAGE_SUPPORT_LGBTQ_B} from './ns-self-image-support-lgbtq-b.mjs';
-import {SELF_IMAGE_SUPPORT_APPEARANCE} from './ns-self-image-support-appearance.mjs';
+import {IDENTITY_EDITORIAL_A} from './ns-identity-editorial-a.mjs?v=self-image-20261115-v2';
+import {IDENTITY_EDITORIAL_B} from './ns-identity-editorial-b.mjs?v=self-image-20261115-v2';
+import {IDENTITY_EDITORIAL_C} from './ns-identity-editorial-c.mjs?v=self-image-20261115-v2';
+import {LGBTQ_EDITORIAL_A} from './ns-lgbtq-editorial-a.mjs?v=self-image-20261115-v2';
+import {LGBTQ_EDITORIAL_B} from './ns-lgbtq-editorial-b.mjs?v=self-image-20261115-v2';
+import {LGBTQ_EDITORIAL_C} from './ns-lgbtq-editorial-c.mjs?v=self-image-20261115-v2';
+import {LGBTQ_EDITORIAL_D} from './ns-lgbtq-editorial-d.mjs?v=self-image-20261115-v2';
+import {APPEARANCE_EDITORIAL_A} from './ns-appearance-editorial-a.mjs?v=self-image-20261115-v2';
+import {APPEARANCE_EDITORIAL_B} from './ns-appearance-editorial-b.mjs?v=self-image-20261115-v2';
+import {SELF_IMAGE_SUPPORT_IDENTITY} from './ns-self-image-support-identity.mjs?v=self-image-20261115-v2';
+import {SELF_IMAGE_SUPPORT_LGBTQ_A} from './ns-self-image-support-lgbtq-a.mjs?v=self-image-20261115-v2';
+import {SELF_IMAGE_SUPPORT_LGBTQ_B} from './ns-self-image-support-lgbtq-b.mjs?v=self-image-20261115-v2';
+import {SELF_IMAGE_SUPPORT_APPEARANCE} from './ns-self-image-support-appearance.mjs?v=self-image-20261115-v2';
 
 const authored=Object.freeze({
  identity:Object.freeze([...IDENTITY_EDITORIAL_A,...IDENTITY_EDITORIAL_B,...IDENTITY_EDITORIAL_C]),
