@@ -1062,8 +1062,9 @@ body.app-body #main .life-unified #lifestyle-deed-card .life-practice-complete{
 body.app-body #main .life-unified #lifestyle-deed-card .life-practice-actions .button{min-height:44px}
 body.app-body #main .life-unified #lifestyle-deed-card .life-practice-tags{margin:0 0 15px}
 @media(max-width:1120px){
- body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-calendar{grid-column:span 5}
- body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-tasks{grid-column:span 7}
+ body.app-body #main .life-unified .life-dashboard-flow{grid-template-columns:minmax(0,1fr)}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-calendar{grid-column:1/-1;order:1}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-tasks{grid-column:1/-1;order:0}
  body.app-body #main .life-unified .life-arrival{grid-template-columns:1fr}
  body.app-body #main .life-unified .life-arrival-actions{justify-content:flex-start}
  body.app-body #main .life-unified .life-focus-host .pomodoro-card{grid-template-columns:1fr}
