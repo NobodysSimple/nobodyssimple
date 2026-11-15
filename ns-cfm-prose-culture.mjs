@@ -13,8 +13,8 @@ export const CFM_PROSE_CULTURE={
  'The strain often accumulates rather than arriving in one dramatic episode. You begin expecting the next question before anybody speaks. You may avoid gatherings that once felt easy. A useful first step might be telling one trusted person what the repeated comments actually cost you, rather than trying to convince every person who makes them.'
 ],
 'colourism':[
- 'A relative may praise one child's lighter skin while describing another child as someone who should stay out of the sun. Such comparisons can live in a family for years without anyone questioning the hierarchy beneath them. You may begin expecting that judgement before a photograph has even been taken.',
- 'Beauty standards can also affect relationships and employment. Sometimes that means a preference expressed openly; sometimes it is difficult to separate skin-shade prejudice from other factors. The response should match what can be established. You deserve to notice a pattern without having to invent certainty about every person's intention.',
+ 'A relative may praise one child’s lighter skin while describing another child as someone who should stay out of the sun. Such comparisons can live in a family for years without anyone questioning the hierarchy beneath them. You may begin expecting that judgement before a photograph has even been taken.',
+ 'Beauty standards can also affect relationships and employment. Sometimes that means a preference expressed openly; sometimes it is difficult to separate skin-shade prejudice from other factors. The response should match what can be established. You deserve to notice a pattern without having to invent certainty about every person’s intention.',
  'You might still catch yourself hoping to look different in photographs even after rejecting the standard intellectually. Learned comparisons do not disappear because someone tells you that all shades are beautiful. A kinder relationship with your appearance can begin by recognising whose voice is speaking when the criticism returns.'
 ],
 'racial-profiling':[
@@ -55,7 +55,7 @@ export const CFM_PROSE_CULTURE={
 'language-discrimination':[
  'A colleague may interrupt or finish your sentence before you have reached the word you wanted. After enough interruptions, you may speak less, even when you understand the subject very well. The resulting silence can then be mistaken for lack of knowledge, continuing the unfair impression.',
  'A language barrier in a hospital or government office raises practical questions about access. The goal is accurate communication about your needs and choices. An interpreter or written explanation may be necessary, especially when a mistake could affect treatment or rights. You should not have to apologise for asking.',
- 'Accent-related mockery can damage confidence in otherwise ordinary conversations. You might find yourself rehearsing a question before asking it. Try to notice when hesitation is caused by a listener's past behaviour rather than by your actual ability to communicate what matters.'
+ 'Accent-related mockery can damage confidence in otherwise ordinary conversations. You might find yourself rehearsing a question before asking it. Try to notice when hesitation is caused by a listener’s past behaviour rather than by your actual ability to communicate what matters.'
 ],
 'stereotype-threat':[
  'Imagine entering an examination already aware of assumptions others make about your group. The task is demanding enough without worrying that a single error will confirm those beliefs. That added pressure can occupy attention you would rather give to the question in front of you.',
@@ -88,9 +88,9 @@ export const CFM_PROSE_CULTURE={
  'A further difficulty is the pace of public attention. News coverage may fade before a community has recovered. You might feel responsible for remaining informed or active at all times. You can choose a sustainable contribution without confusing rest with indifference.'
 ],
 'historical-collective-trauma':[
- 'A grandparent's account of an injustice may help you understand the choices your family later made. It could explain why certain opportunities seemed impossible or why relatives became cautious around authority. The story matters, even when some details can no longer be verified.',
+ 'A grandparent’s account of an injustice may help you understand the choices your family later made. It could explain why certain opportunities seemed impossible or why relatives became cautious around authority. The story matters, even when some details can no longer be verified.',
  'Material effects can remain long after the original policy has ended. Housing, education and access to resources may have been shaped by decisions across generations. Those claims deserve evidence about the institutions and histories involved, rather than assuming every individual experience has the same cause.',
- 'Your community's history may also contain creativity and survival that deserve attention. Learning those stories can change what the past means in your present life. Honouring what people endured need not require reducing them to suffering alone.'
+ 'Your community’s history may also contain creativity and survival that deserve attention. Learning those stories can change what the past means in your present life. Honouring what people endured need not require reducing them to suffering alone.'
 ],
 'intersectional-discrimination':[
  'A disabled person from a minority language community may arrive at an accessible building and discover that the appointment has no interpreter. The first adjustment was real, yet the service remains unusable. Describing the combined barrier is more informative than asking which identity was responsible.',
