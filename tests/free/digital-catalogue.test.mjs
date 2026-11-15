@@ -6,8 +6,9 @@ import {DIGITAL_GUIDES,DIGITAL_IDS} from '../../ns-digital-guide-data.mjs';
 import {catalogueProgress,catalogueTotal,pending,verifiedCompleted,inProgress} from '../../ns-catalogue-progress.mjs';
 
 test('digital manual is a real atlas topic with substantial independent content',()=>{
- assert.deepEqual(DIGITAL_IDS,['cyberbullying']);
- const g=DIGITAL_GUIDES[0];
+ assert.equal(DIGITAL_IDS.length,16);
+ assert.ok(DIGITAL_IDS.includes('cyberbullying'));
+ const g=DIGITAL_GUIDES.find(x=>x.id==='cyberbullying');
  assert.equal(atlasProblemIndex.find(p=>p.id===g.id)?.domain,'digital');
  assert.ok(g.article.join(' ').split(/\s+/).length>=450);
  assert.equal(g.article.length,10);
