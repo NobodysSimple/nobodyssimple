@@ -185,7 +185,7 @@ export const RELATE_WORK_A={
       [
         "signal",
         "Separate what happened from the feared meaning",
-        "A short reply can carry several possible explanations.",
+        "A short reply can carry several meanings, especially when you already fear somebody is upset.",
         [
           "What exactly did the person say or do?",
           "What meaning did you immediately give it?",
