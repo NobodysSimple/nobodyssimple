@@ -66,7 +66,7 @@ function cfmTop(g,m){
   '</section>'+
   '<section class="ns-topic-section ns-cfm-journal" id="ns-cfm-journal" aria-labelledby="ns-cfm-journal-title" data-cfm-journal="'+e(id)+'">'+
    '<p class="ns-topic-kicker">YOUR GUIDED JOURNAL · OPTIONAL</p><h2 id="ns-cfm-journal-title">'+e(item.journalTitle)+'</h2>'+
-   '<p>We'll work through one question at a time, using your own experience. At the end, you'll see a short map and a possible next step based on the version you selected above.</p>'+
+   '<p>We’ll work through one question at a time, using your own experience. At the end, you’ll see a short map and a possible next step based on the version you selected above.</p>'+
    '<p class="ns-cfm-privacy">'+e(privateMessage(id))+'</p>'+
    '<div class="ns-cfm-journal-work" data-cfm-work>'+
     '<p class="ns-cfm-counter" data-cfm-counter aria-live="polite">Question 1 of '+item.questions.length+'</p>'+
