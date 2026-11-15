@@ -11,6 +11,7 @@ import {INCLUSIVE_GROUPS_A} from './ns-inclusive-topics-a.mjs';
 import {HEALTH_BODY_RECORDS} from './ns-health-body-records.mjs';
 import {HEALTH_SEXUALITY_RECORDS} from './ns-health-sexuality-records.mjs';
 import {SENSORY_ADVICE} from './ns-health-sensory-advice.mjs';
+import {LEGACY_HEALTH_ADVICE} from './ns-health-legacy-advice.mjs';
 
 const canonical=new Map([
  ...problemIndex,...extendedProblemIndex,...preciseProfiles.map(p=>({id:p.id,title:p.title,domain:p.id==='insomnia'?'body':null})),
@@ -116,10 +117,10 @@ function build(r){
  return Object.freeze(g);
 }
 const authored=Object.freeze([...HEALTH_BODY_RECORDS,...HEALTH_SEXUALITY_RECORDS].map(build));
-const legacy=BODY_GUIDES.map(g=>Object.freeze({...g,domain:'body',ideas:g.ideas||(g.id==='sensory'?SENSORY_ADVICE:{
- actions:Array.isArray(g.actions)?g.actions:[],
- support:Array.isArray(g.support)?g.support:[],
- }),noPersist:g.noPersist||false,hideCycle:g.hideCycle??true}));
+const legacy=BODY_GUIDES.map(g=>Object.freeze({...g,domain:'body',ideas:{
+ actions:LEGACY_HEALTH_ADVICE[g.id]?.actions||g.ideas?.actions||(g.id==='sensory'?SENSORY_ADVICE.actions:g.actions)||[],
+ support:LEGACY_HEALTH_ADVICE[g.id]?.support||g.ideas?.support||(g.id==='sensory'?SENSORY_ADVICE.support:g.support)||[],
+ },noPersist:g.noPersist||false,hideCycle:g.hideCycle??true}));
 export const HEALTH_GUIDES=Object.freeze([...legacy,...authored]);
 export const HEALTH_IDS=Object.freeze(HEALTH_GUIDES.map(g=>g.id));
 export const HEALTH_BY_ID=new Map(HEALTH_GUIDES.map(g=>[g.id,g]));
