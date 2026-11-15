@@ -25,7 +25,7 @@ test('Existing published Hello blog retains its ID, writing and original artwork
 });
 test('HTML bypasses previously cached app JS and loads versioned notebook code',()=>{
  const html=source('index.html'),site=source('site.mjs'),notebook=source('ns-blog-notebook.mjs');
- assert.ok(html.includes('site.mjs?v=learn-artfix-20261115'));
+ assert.ok(html.includes('site.mjs?v=learn-artfix-fhs-20261115'));
  assert.ok(site.includes('ns-blog-notebook.mjs?v='+appVersion));
  assert.ok(notebook.includes('ns-blog-notebook.css?v='+appVersion));
  assert.match(site,/if \(p\.type === "blog"\) \{\s*renderNotebookBlogPost\(main, p, posts\);/);
