@@ -221,7 +221,7 @@ export const RELATE_WORK_B={
       [
         "control",
         "Check whether you are being silenced",
-        "Someone else's conduct may be limiting your choices.",
+        "The other person's interruptions or threats may be limiting the choices you can safely express.",
         [
           "Are you routinely interrupted or dismissed?",
           "Has expressing yourself led to punishment?",
