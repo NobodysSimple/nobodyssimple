@@ -16,51 +16,51 @@ export const FOCUS_EDITORIAL_A=[
     ],
     "mechanisms": [
       [
-        "Task and environmental demands",
-        "Distraction and unclear instructions can consume attention before the intended work begins."
+        "When the next step disappears",
+        "Following a task becomes harder when you're trying to hold several instructions in mind. A written step can give you somewhere to return."
       ],
       [
-        "Competing mental demands",
-        "Worry or reminders may repeatedly pull attention away from the task."
+        "When a worry keeps interrupting",
+        "You may be frightened of forgetting another responsibility. The thought keeps coming back because you haven't put it somewhere you trust."
       ],
       [
-        "Health and neurodevelopment",
-        "Sleep, mood and longstanding attention differences may affect functioning and deserve assessment when impairing."
+        "When attention is stretched thin",
+        "Poor sleep can make concentration harder. If the difficulty has followed you through life, it may be worth exploring neurodevelopmental support."
       ]
     ],
     "profiles": [
       [
-        "The rereader",
-        "You return to the same sentence without retaining it."
+        "When reading doesn't sink in",
+        "You reach the end of a paragraph and realise you've taken in almost none of it."
       ],
       [
-        "The notification responder",
-        "A small interruption derails your work."
+        "When interruptions cost you your place",
+        "One message is enough to leave you trying to remember where you were."
       ],
       [
-        "The worried worker",
-        "Unfinished concerns keep entering your mind."
+        "When your mind won't leave a concern alone",
+        "You want to work, yet you keep returning to something unresolved."
       ],
       [
-        "The overloaded learner",
-        "Instructions and task steps exceed what you can hold at once."
+        "When instructions become too much",
+        "You can follow each individual step, then lose track when several need doing together."
       ]
     ],
     "cycle": [
-      "You begin a task that requires attention.",
-      "A competing demand pulls you away.",
-      "You lose your place and become frustrated.",
-      "Returning to the task becomes harder."
+      "You begin something you want to finish.",
+      "Your attention moves away at a difficult point.",
+      "You realise you've lost your place and begin criticising yourself.",
+      "Returning feels harder because the task is now tied to frustration."
     ],
     "now": {
-      "title": "Make the next few minutes easier to attend to",
+      "title": "Make it easier to return to the task",
       "paras": [
-        "Choose a manageable unit of work. Your attention does not need to behave perfectly for you to make progress."
+        "Choose one short piece of work you can finish. We want to learn what helps you stay with it."
       ],
       "steps": [
-        "Name a small result you can finish or reach a clear stopping point on.",
-        "Remove one avoidable interruption or clarify one confusing instruction.",
-        "Work for a realistic interval and leave a note about where to resume."
+        "Decide exactly which part you'll work on.",
+        "Change the interruption or instruction that usually gets in your way.",
+        "After a short attempt, note where you stopped so you can return."
       ]
     },
     "roots": [
@@ -111,51 +111,51 @@ export const FOCUS_EDITORIAL_A=[
     ],
     "mechanisms": [
       [
-        "Encoding and attention",
-        "Information may be missed when attention is divided at the time it is given."
+        "When information never settled",
+        "You may have heard an instruction while trying to manage something else. Asking for it in writing gives you something to check later."
       ],
       [
-        "Prospective memory",
-        "Remembering to do something later depends on noticing the right cue."
+        "When the right moment passes",
+        "You can remember a responsibility all morning and still forget to act when it's time. A reminder needs to reach you at that later moment."
       ],
       [
-        "Health and load",
-        "Stress, sleep and medical factors may affect memory and should not be overlooked."
+        "When something has changed",
+        "Sleep and health affect memory. New or worsening difficulties deserve assessment, especially when they affect everyday life."
       ]
     ],
     "profiles": [
       [
-        "The missed appointment person",
-        "You forget something you intended to do later."
+        "When a future task slips away",
+        "You remembered the appointment yesterday, then missed it today."
       ],
       [
-        "The instruction loser",
-        "Spoken directions vanish before you can use them."
+        "When spoken instructions vanish",
+        "You want to follow the request but can't recall exactly what was said."
       ],
       [
-        "The object searcher",
-        "You repeatedly misplace everyday items."
+        "When belongings seem to disappear",
+        "You lose time looking for something you were sure you'd put somewhere safe."
       ],
       [
-        "The anxious checker",
-        "You keep confirming a detail because you fear forgetting it."
+        "When checking takes over",
+        "You keep reopening a message because you're afraid you've forgotten an important detail."
       ]
     ],
     "cycle": [
-      "You intend to remember an action.",
-      "The appropriate cue is missed or information is lost.",
-      "A consequence makes you worry about your memory.",
-      "You rely on more checking without a dependable system."
+      "You mean to remember something important.",
+      "The information is lost or the moment to act passes.",
+      "The consequence leaves you worried about the next mistake.",
+      "You start checking more often without knowing whether the system will help."
     ],
     "now": {
-      "title": "Put one reminder where the action happens",
+      "title": "Help one important reminder reach you",
       "paras": [
-        "The best reminder is one you will encounter at the useful moment."
+        "Think of a responsibility you've forgotten before. We can build a reminder around the moment you actually need it."
       ],
       "steps": [
-        "Choose one recurring forgotten action.",
-        "Identify the time, place or event when it needs to happen.",
-        "Set up a reliable external reminder and decide how you will check it."
+        "Choose one action you want to remember.",
+        "Work out the moment when you'd need to begin doing it.",
+        "Put a reminder there and check that it's dependable."
       ]
     },
     "roots": [
@@ -206,51 +206,51 @@ export const FOCUS_EDITORIAL_A=[
     ],
     "mechanisms": [
       [
-        "Scattered information",
-        "Responsibilities stored in too many places are difficult to retrieve at the right time."
+        "When tasks have nowhere to live",
+        "A request can disappear when you don't have a place to record it at the moment it arrives."
       ],
       [
-        "Planning versus doing",
-        "A project name may conceal the first action and make progress hard to recognise."
+        "When a project never becomes an action",
+        "A list that says 'sort everything out' leaves you with the same decisions to make each time you see it."
       ],
       [
-        "Cognitive and resource demands",
-        "Limited working memory, interruptions or unrealistic workload can overwhelm planning."
+        "When there are too many demands",
+        "You may be trying to fit more work into the day than time allows. That needs an honest conversation about priorities."
       ]
     ],
     "profiles": [
       [
-        "The scattered collector",
-        "Your commitments live in several places."
+        "When responsibilities are scattered",
+        "You remember a task and then have to search several places to find it."
       ],
       [
-        "The elaborate planner",
-        "Maintaining the system consumes the time you need for tasks."
+        "When the planner becomes another job",
+        "Keeping the system updated takes the energy you wanted to spend doing the work."
       ],
       [
-        "The sequencing struggler",
-        "You know the goal but cannot order the steps."
+        "When you can't see what comes first",
+        "You know what needs finishing and still struggle to identify where to begin."
       ],
       [
-        "The overloaded organiser",
-        "The amount of work genuinely exceeds available time."
+        "When the workload can't fit",
+        "You keep moving unfinished tasks to tomorrow because the day was already full."
       ]
     ],
     "cycle": [
-      "A new responsibility arrives.",
-      "Information is stored inconsistently or left vague.",
-      "A task is forgotten or delayed.",
-      "You add another complicated system to compensate."
+      "A responsibility arrives while your attention is elsewhere.",
+      "It ends up somewhere you may struggle to find.",
+      "You miss the task or leave it because the next action is unclear.",
+      "Another planning system starts to seem necessary."
     ],
     "now": {
-      "title": "Give one responsibility a trustworthy home",
+      "title": "Give one responsibility a place you'll find",
       "paras": [
-        "You can organise one task without designing a whole new life system."
+        "Choose a task that's been worrying you. We'll make its next action easier to see."
       ],
       "steps": [
-        "Choose one place for tasks and a separate place for fixed dates if needed.",
-        "Rewrite one vague project as its first visible action.",
-        "Decide when you will check the system and what can wait."
+        "Put the task in a place you'll actually check.",
+        "Write the first action in words you can follow.",
+        "Decide when you'll look again and what can wait."
       ]
     },
     "roots": [
@@ -297,51 +297,51 @@ export const FOCUS_EDITORIAL_A=[
     ],
     "mechanisms": [
       [
-        "Low task engagement",
-        "An activity may offer too little challenge, novelty or feedback to hold attention."
+        "When an activity doesn't hold you",
+        "Some tasks offer little feedback. A clear challenge can help you see why staying with the activity is worthwhile."
       ],
       [
-        "Unidentified needs",
-        "Boredom may overlap with loneliness, fatigue or low mood."
+        "When something is missing",
+        "Boredom can come with loneliness. It can also become stronger when you're too tired to enjoy things."
       ],
       [
-        "Fast stimulation",
-        "Easy high-reward alternatives can repeatedly pull attention away from chosen activities."
+        "When novelty wears off quickly",
+        "A new video can provide brief interest. You may find yourself looking for another before you've enjoyed the first."
       ]
     ],
     "profiles": [
       [
-        "The novelty seeker",
-        "You move quickly between new interests."
+        "When you're always searching for the next thing",
+        "You start something with interest and soon feel the urge to move on."
       ],
       [
-        "The restless worker",
-        "Repetitive tasks feel almost painful to begin."
+        "When ordinary tasks feel unbearable",
+        "Repetitive work leaves you restless long before you're finished."
       ],
       [
-        "The tired understimulated person",
-        "More entertainment does not relieve the feeling."
+        "When entertainment doesn't reach you",
+        "You keep trying new things and still feel flat afterwards."
       ],
       [
-        "The disconnected person",
-        "What you may need is meaningful contact, not another app."
+        "When what you miss is company",
+        "Your evenings seem empty even though there's plenty available to do."
       ]
     ],
     "cycle": [
-      "An activity feels unrewarding.",
-      "You search for immediate stimulation.",
-      "The new activity loses its novelty.",
-      "You return to searching without addressing the underlying need."
+      "An activity feels hard to stay interested in.",
+      "You look for something that might feel better.",
+      "The next activity provides a short change of feeling.",
+      "You're left searching again without knowing what you need."
     ],
     "now": {
-      "title": "Choose stimulation that suits the need",
+      "title": "Find something that meets the feeling",
       "paras": [
-        "More stimulation is not always the answer. Check what the feeling is asking for."
+        "Think about what you've been missing during the times you feel bored. Choose your next activity with that in mind."
       ],
       "steps": [
-        "Identify whether you need interest, movement, connection or rest.",
-        "Choose one safe, accessible activity that serves that need.",
-        "Make its first step easier than opening another feed."
+        "Notice what you're hoping an activity will give you.",
+        "Choose one safe way to meet that particular need.",
+        "Afterwards, ask yourself whether it genuinely helped."
       ]
     },
     "roots": [
