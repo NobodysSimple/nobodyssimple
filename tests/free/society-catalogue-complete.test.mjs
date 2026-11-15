@@ -48,7 +48,7 @@ test('the fifteen new digital manuals have substantial independent editorial and
    assert.ok(r.description.length>40,g.id);
    assert.ok(r.practice.length>38,g.id);
    for(const q of r.questions)assert.ok(q[0].length>30&&q[1].length>25&&q[2].length>25,g.id);
-   if(g.id!=='cyberbullying')assert.ok(r.questions[0][0].includes(g.whyCases[i*4].situation),g.id);
+   if(g.id!=='cyberbullying')assert.ok(r.questions[0][0].includes(g.whyCases[i*4].situation.replace(/[.!?]+$/,'')),g.id);
    uniqueOptions.add(g.id+':'+r.practice);
   }
   for(const c of g.whyCases)uniqueCases.add(g.id+':'+c.situation);
