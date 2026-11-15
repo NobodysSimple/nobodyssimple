@@ -500,3 +500,218 @@ html[data-contrast="high"] body.app-body #main .board-campfire :is(.board-feed-c
  body.app-body #main .board-campfire .board-feed-card{transition:none}
  body.app-body #main .board-campfire .board-feed-card:hover{transform:none}
 }
+
+/* Community reference correction: isolate hero from generic header/image styling. */
+body.app-body #main .board-page.board-campfire .board-header.board-campfire-hero {
+ position:relative!important;display:block!important;isolation:isolate!important;
+ height:auto!important;min-height:226px!important;
+ background:#1d3936!important;
+ border:1px solid #506955!important;border-radius:23px!important;
+ padding:28px clamp(22px,5vw,70px)!important;
+ overflow:hidden!important;
+}
+body.app-body #main .board-page.board-campfire .board-header .board-hero-scene {
+ position:absolute!important;z-index:0!important;inset:0!important;
+ width:100%!important;height:100%!important;display:block!important;
+ background-image:url("community-art/campfire-hero.svg")!important;
+ background-position:center center!important;background-size:cover!important;
+ background-repeat:no-repeat!important;opacity:1!important;
+ pointer-events:none;
+}
+body.app-body #main .board-page.board-campfire .board-header.board-campfire-hero::before {
+ content:"";display:block!important;position:absolute!important;inset:0!important;
+ z-index:1!important;pointer-events:none!important;
+ background:linear-gradient(90deg,#182e2cf5 0%,#1b3431ef 22%,#1f3634b8 40%,#1d343251 56%,transparent 73%)!important;
+}
+body.app-body #main .board-page.board-campfire .board-header .board-hero-copy {
+ position:relative!important;z-index:2!important;
+ min-width:0!important;width:min(44%,530px)!important;
+ text-align:left!important;
+}
+body.app-body #main .board-page.board-campfire .board-header .board-hero-copy h1 {
+ font:500 clamp(32px,3.5vw,49px)/1.03 Georgia,serif!important;
+ color:#fff4dd!important;letter-spacing:-.035em!important;
+ text-shadow:0 2px 11px #11241bbb!important;
+ margin:0 0 10px!important;max-width:20ch!important;
+}
+body.app-body #main .board-page.board-campfire .board-header .board-hero-copy .eyebrow {
+ color:#f9c875!important;font:800 10px/1.35 system-ui,sans-serif!important;
+ letter-spacing:.15em!important;margin:0 0 11px!important;
+}
+body.app-body #main .board-page.board-campfire .board-header .board-hero-copy>p:last-child {
+ color:#fff1de!important;font:500 13px/1.55 system-ui,sans-serif!important;
+ max-width:46ch!important;letter-spacing:0!important;
+}
+body.app-body #main .board-campfire .board-feed-heading h2 {
+ display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+ font:500 clamp(28px,2.7vw,37px)/1.1 Georgia,serif;
+}
+body.app-body #main .board-campfire .board-fire-emoji{font-size:24px;line-height:1}
+body.app-body #main .board-campfire .board-leaf-emoji{color:#b69349;font-size:28px;line-height:.8}
+body.app-body #main .board-campfire .board-feed-card{
+ padding:17px clamp(15px,2vw,22px) 12px!important;
+ border-color:#d8ded0;background:#fffdf8;
+}
+body.app-body #main .board-campfire .board-featured-post {
+ background:#fff6e7!important;border-color:#e9b052!important;
+ box-shadow:0 5px 17px #b17b2c26!important;
+}
+body.app-body #main .board-campfire .board-featured-post .board-featured-label {
+ color:#956c2b!important;margin:0 0 8px!important;
+}
+body.app-body #main .board-campfire .board-post-link{
+ color:#264c39;text-decoration:none;
+}
+body.app-body #main .board-campfire .board-post-link h2{
+ font:500 clamp(18px,1.85vw,23px)/1.18 Georgia,serif!important;
+ color:#28563f!important;margin:0 0 5px!important;
+}
+body.app-body #main .board-campfire .board-post-link p{
+ font:450 12px/1.45 system-ui,sans-serif!important;
+ color:#516b59!important;max-width:76ch!important;
+}
+body.app-body #main .board-campfire .board-card-footer{
+ display:flex;align-items:center;justify-content:space-between;
+ column-gap:12px;row-gap:9px;flex-wrap:wrap;
+ margin:12px 0 0!important;padding:8px 0 0!important;
+ border-top:1px solid #e6e4d6!important;
+}
+body.app-body #main .board-campfire .board-post-tags{
+ display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+}
+body.app-body #main .board-campfire .board-post-tag{
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:4px 10px;min-height:23px;border-radius:99px;
+ background:#f1eee1;border:1px solid #e8e3ce;
+ color:#6a6049;font:750 10px/1.2 system-ui,sans-serif;
+ white-space:nowrap;
+}
+body.app-body #main .board-campfire .board-featured-post .board-post-tag{
+ background:#f8e8cc;border-color:#efd9b2;color:#71522b;
+}
+body.app-body #main .board-campfire .board-card-meta{
+ display:flex;justify-content:flex-end;align-items:center;
+ flex-wrap:wrap;gap:14px;min-width:0;margin-left:auto;
+}
+body.app-body #main .board-campfire .board-reply-link,
+body.app-body #main .board-campfire .board-feed-like{
+ display:inline-flex;align-items:center;gap:5px;padding:5px 3px;
+ min-height:30px;background:transparent;border:0;box-shadow:none;
+ color:#6a6d60;font:650 11px/1.35 system-ui,sans-serif;
+ text-decoration:none;cursor:pointer;
+}
+body.app-body #main .board-campfire .board-feed-like>span:first-child{
+ color:#aa5738;font-size:19px;line-height:1;
+}
+body.app-body #main .board-campfire .board-feed-like[aria-pressed=true]>span:first-child{
+ color:#b23e37;transform:scale(1.06);
+}
+body.app-body #main .board-campfire .board-feed-like:disabled{
+ opacity:.8;cursor:default;
+}
+body.app-body #main .board-campfire .board-card-open{
+ display:inline-flex;align-items:center;justify-content:center;
+ gap:9px;min-height:34px;padding:7px 13px;
+ border:1px solid #bdcfbd;border-radius:99px;
+ background:#f8faf3;color:#315c43;text-decoration:none;
+ font:800 11px/1.3 system-ui,sans-serif;white-space:nowrap;
+}
+body.app-body #main .board-campfire .board-card-open:hover{
+ border-color:#7aa68b;background:#e6f2e3;
+}
+body.app-body #main .board-campfire .board-community-aside{
+ display:grid;gap:14px;
+}
+body.app-body #main .board-campfire .board-seat-card{
+ min-height:205px;padding:20px 22px 80px!important;
+ background-size:cover!important;
+}
+body.app-body #main .board-campfire .board-seat-card h3{
+ font:500 clamp(23px,2vw,28px)/1.18 Georgia,serif!important;
+}
+body.app-body #main .board-campfire .board-safety-card{
+ padding:20px 18px 19px!important;
+ background:linear-gradient(150deg,#f7f7ed,#eef3e8)!important;
+}
+body.app-body #main .board-campfire .board-safety-heading{
+ display:flex;align-items:center;gap:9px;margin:0 0 7px;
+}
+body.app-body #main .board-campfire .board-safety-heading h3{
+ font:500 22px/1.13 Georgia,serif!important;margin:0!important;
+}
+body.app-body #main .board-campfire .board-safety-heading .board-section-eyebrow{
+ margin:0 0 3px;
+}
+body.app-body #main .board-campfire .board-safety-icon{
+ display:grid;place-items:center;flex:0 0 37px;width:37px;height:37px;
+ background:#deead5;border-radius:12px;color:#36734f;font-size:23px;
+}
+body.app-body #main .board-campfire .board-guidelines{
+ background:#fffdf8;border:1px solid #d9e3d6;border-radius:11px;margin:8px 0 0;
+}
+body.app-body #main .board-campfire .board-guidelines summary{
+ display:flex;align-items:center;gap:10px;min-height:42px;
+ list-style:none;cursor:pointer;padding:9px 11px;
+ font:750 11px/1.3 system-ui,sans-serif;color:#315c42;
+}
+body.app-body #main .board-campfire .board-guidelines summary::-webkit-details-marker{display:none}
+body.app-body #main .board-campfire .board-guidelines summary span:last-child{margin-left:auto}
+body.app-body #main .board-campfire .board-guidelines[open] summary span:last-child{transform:rotate(90deg)}
+body.app-body #main .board-campfire .board-guidelines p{
+ padding:2px 14px 13px;font-size:11px;line-height:1.55;
+}
+body.app-body #main .board-campfire .board-safety-card a{
+ gap:10px;
+}
+body.app-body #main .board-campfire .board-safety-card a>span:last-child{margin-left:auto}
+body.app-body #main .board-campfire .board-community-footer{display:none!important}
+@media(max-width:980px){
+ body.app-body #main .board-campfire .board-card-meta{gap:9px}
+ body.app-body #main .board-campfire .board-card-open{padding:7px 10px}
+}
+@media(max-width:640px){
+ body.app-body #main .board-page.board-campfire .board-header.board-campfire-hero{
+  min-height:230px!important;padding:20px!important;
+ }
+ body.app-body #main .board-page.board-campfire .board-header .board-hero-copy{
+  width:min(95%,410px)!important;
+ }
+ body.app-body #main .board-page.board-campfire .board-header .board-hero-scene{
+  background-position:68% center!important;opacity:.84!important;
+ }
+ body.app-body #main .board-page.board-campfire .board-header.board-campfire-hero::before{
+  background:linear-gradient(90deg,#1c3332f9 0%,#1c3332ed 38%,#1c3332bf 72%,#1c333274)!important;
+ }
+ body.app-body #main .board-page.board-campfire .board-header .board-hero-copy h1{font-size:32px!important}
+ body.app-body #main .board-campfire .board-card-footer{align-items:flex-start}
+ body.app-body #main .board-campfire .board-card-meta{justify-content:space-between;width:100%}
+ body.app-body #main .board-campfire .board-card-open{margin-left:auto}
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-feed-card{
+ background:#283f32!important;border-color:#607762!important;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-featured-post{
+ background:#444331!important;border-color:#b59865!important;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-post-link :is(h2,p),
+html[data-theme="dark"] body.app-body #main .board-campfire .board-post-tag,
+html[data-theme="dark"] body.app-body #main .board-campfire .board-reply-link,
+html[data-theme="dark"] body.app-body #main .board-campfire .board-feed-like{
+ color:#ecf1e5!important;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-post-tag{
+ background:#3c5945;border-color:#718775;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-safety-card{
+ background:#304c39!important;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-guidelines{
+ background:#35523e;border-color:#688467;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-guidelines summary,
+html[data-theme="dark"] body.app-body #main .board-campfire .board-guidelines p{
+ color:#e6f2e2!important;
+}
+html[data-low-stim=true] body.app-body #main .board-campfire .board-hero-scene{
+ background-image:none!important;
+}
