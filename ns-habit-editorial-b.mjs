@@ -16,51 +16,51 @@ export const HABIT_EDITORIAL_B=[
     ],
     "mechanisms": [
       [
-        "Relief reinforces escape",
-        "Leaving a feared situation lowers discomfort and can make avoidance more likely."
+        "When leaving provides relief",
+        "The discomfort drops once you cancel. That can make staying away feel more necessary next time."
       ],
       [
-        "Predictions remain untested",
-        "You have fewer chances to learn what would actually happen."
+        "When the feared outcome remains unknown",
+        "Avoiding a safe situation may leave you unsure what would really have happened."
       ],
       [
-        "Context matters",
-        "Some environments are genuinely inaccessible, harmful or unsafe."
+        "When the environment causes genuine harm",
+        "An inaccessible or threatening setting may require protection and practical changes."
       ]
     ],
     "profiles": [
       [
-        "The canceller",
-        "You back out of plans that matter to you."
+        "When you cancel at the last moment",
+        "You want to attend until the anxiety begins to feel unbearable."
       ],
       [
-        "The silent participant",
-        "You attend while using protective habits."
+        "When speaking feels too exposing",
+        "You stay quiet because you're worried about how people will react."
       ],
       [
-        "The overstimulated person",
-        "An environment itself may need adjusting."
+        "When the setting overwhelms you",
+        "The environment asks you to tolerate more than you can manage safely."
       ],
       [
-        "The safety-conscious person",
-        "There is actual danger that calls for protection."
+        "When past harm has made you cautious",
+        "You have reasons to expect mistreatment and need your safety taken seriously."
       ]
     ],
     "cycle": [
-      "A situation predicts discomfort.",
-      "You avoid it and feel immediate relief.",
-      "Your fear receives no new information.",
-      "The next opportunity feels more threatening."
+      "You consider joining an activity that matters to you.",
+      "A feared outcome makes approaching it difficult.",
+      "You leave or cancel and feel relieved.",
+      "The next opportunity arrives with the fear still unresolved."
     ],
     "now": {
-      "title": "Find a safe, meaningful next step",
+      "title": "Choose a next step that respects safety",
       "paras": [
-        "Choose an activity that is genuinely safe and accessible. This is not a test of whether you can tolerate harm."
+        "Begin with what you're hoping to regain. Check whether the situation is safe before deciding what to try."
       ],
       "steps": [
-        "Name what you want your life to include.",
-        "Identify the specific obstacle or fear, and check for actual danger.",
-        "Choose a safe small step or request an adjustment."
+        "Identify what you want to participate in.",
+        "Name the feared outcome and any real barrier.",
+        "Choose a safe attempt or ask for a change in the setting."
       ]
     },
     "roots": [
@@ -111,51 +111,51 @@ export const HABIT_EDITORIAL_B=[
     ],
     "mechanisms": [
       [
-        "Competing priorities",
-        "Too many demands make it difficult to identify a meaningful first step."
+        "When everything claims your attention",
+        "Competing commitments can make choosing the next action feel like disappointing someone."
       ],
       [
-        "Cognitive load",
-        "Holding unfinished commitments in mind makes switching and planning harder."
+        "When the list stays in your head",
+        "Rehearsing unfinished work consumes attention needed to do the work itself."
       ],
       [
-        "Structural demands",
-        "An excessive workload may require changed expectations rather than better self-management."
+        "When the demands cannot fit",
+        "An impossible workload needs a change in expectations or resources."
       ]
     ],
     "profiles": [
       [
-        "The all-urgent planner",
-        "Everything seems equally important."
+        "When everything seems urgent",
+        "You struggle to choose one task without worrying about another."
       ],
       [
-        "The overcommitted helper",
-        "You accept tasks when you have no capacity left."
+        "When you keep saying yes",
+        "Agreeing feels easier than explaining that you have no more time."
       ],
       [
-        "The disorganised worker",
-        "Sequencing and switching are especially difficult."
+        "When a complex task stops you",
+        "You need help seeing which part can happen first."
       ],
       [
-        "The unsupported carer",
-        "Essential responsibilities exceed the help available."
+        "When you carry responsibilities alone",
+        "You have essential work that cannot safely be managed without support."
       ]
     ],
     "cycle": [
-      "Demands exceed available time.",
-      "You try to hold and satisfy everything.",
-      "Attention fragments and work slows.",
-      "The backlog grows and urgency increases."
+      "Another responsibility arrives in an already full day.",
+      "You try to fit it in without removing anything.",
+      "Planning becomes overwhelming and work slows.",
+      "The unfinished tasks leave you facing another crowded day."
     ],
     "now": {
-      "title": "Remove one impossible demand from today's plan",
+      "title": "Make room for what matters most",
       "paras": [
-        "Prioritising means deciding what will not happen today, as well as what will."
+        "A fair plan should reflect the hours you really have. Let's decide what deserves them."
       ],
       "steps": [
-        "Choose the task with the most meaningful consequence.",
-        "Move, delegate or renegotiate at least one other demand.",
-        "Write one clear starting action for the chosen task."
+        "Choose the commitment with the most important consequence.",
+        "Identify another demand that can wait or be shared.",
+        "Take the first action on your chosen priority."
       ]
     },
     "roots": [
@@ -206,51 +206,51 @@ export const HABIT_EDITORIAL_B=[
     ],
     "mechanisms": [
       [
-        "Immediate reward",
-        "Relief or excitement can outweigh consequences that arrive later."
+        "When the immediate feeling is powerful",
+        "Anger or excitement can make a quick response seem necessary."
       ],
       [
-        "Reduced pause",
-        "High emotional arousal may make considered choices harder."
+        "When decisions are too easy to carry out",
+        "A saved payment method or open message can turn an urge into an action almost instantly."
       ],
       [
-        "Context and health",
-        "Sleep, ADHD or significant mood changes can affect impulse control."
+        "When health changes the picture",
+        "Sleep loss and some conditions can affect judgement. Sudden major changes need assessment."
       ]
     ],
     "profiles": [
       [
-        "The angry messenger",
-        "You send words you wish you had paused over."
+        "When you send the message too quickly",
+        "You regret words written at the peak of a strong feeling."
       ],
       [
-        "The instant buyer",
-        "An opportunity feels urgent until the payment is made."
+        "When an opportunity feels irresistible",
+        "You commit before you've had a chance to consider the cost."
       ],
       [
-        "The pressure agreer",
-        "You say yes before considering your needs."
+        "When agreeing seems easier",
+        "You say yes because there's pressure to decide immediately."
       ],
       [
-        "The high-risk actor",
-        "Some decisions have serious immediate safety consequences."
+        "When your choices have become unusually risky",
+        "The change in your behaviour may be worrying to you or those around you."
       ]
     ],
     "cycle": [
-      "A trigger produces a strong urge.",
-      "You act quickly and receive an immediate effect.",
-      "Costs or regret arrive later.",
-      "Stress may make another impulse more likely."
+      "Something triggers a strong urge to respond.",
+      "Acting immediately promises relief or reward.",
+      "You make a decision before considering later consequences.",
+      "Regret leaves you determined to change without a new safeguard."
     ],
     "now": {
-      "title": "Build a pause where the urge is strongest",
+      "title": "Protect a moment to choose",
       "paras": [
-        "If there is immediate danger, leave the unsafe situation and seek appropriate help."
+        "Think of a decision that often happens too quickly. What could slow it down before you're under pressure?"
       ],
       "steps": [
-        "Identify the decision most likely to happen too quickly.",
-        "Place one practical barrier between urge and action.",
-        "Choose whom or what you will consult before acting."
+        "Identify an early warning sign.",
+        "Put one real pause between the urge and action.",
+        "Choose what you will do during the pause."
       ]
     },
     "roots": [
@@ -301,51 +301,51 @@ export const HABIT_EDITORIAL_B=[
     ],
     "mechanisms": [
       [
-        "Immediate intensity",
-        "Excitement or relief arrives before the full consequences."
+        "When danger offers intensity",
+        "An unsafe act may feel rewarding immediately, especially when you're seeking stimulation."
       ],
       [
-        "Reduced access to safeguards",
-        "The urge can bypass plans that seemed clear while calm."
+        "When safeguards are too far away",
+        "A promise made in a calm moment may be difficult to remember once the dangerous choice is available."
       ],
       [
-        "Unmet needs and health",
-        "Stimulation, distress and clinical changes may require different kinds of support."
+        "When a health change needs attention",
+        "Sudden risk-taking with major changes in sleep or mood may require clinical assessment."
       ]
     ],
     "profiles": [
       [
-        "The excitement seeker",
-        "Risk provides stimulation missing elsewhere."
+        "When excitement outweighs fear",
+        "You know the danger and still feel drawn towards it."
       ],
       [
-        "The angry risk taker",
-        "An intense feeling precedes a dangerous action."
+        "When anger leads to unsafe choices",
+        "A strong feeling makes a risky action seem like a release."
       ],
       [
-        "The regretful decision-maker",
-        "Consequences become clear after acting."
+        "When regret follows a near miss",
+        "You become frightened afterwards by what could have happened."
       ],
       [
-        "The person with a sudden change",
-        "New reckless behaviour may warrant health assessment."
+        "When the behaviour is new",
+        "You or someone close to you has noticed a sharp change in your judgement."
       ]
     ],
     "cycle": [
-      "A powerful need or state builds.",
-      "A hazardous action offers immediate reward.",
-      "The result brings harm or regret.",
-      "The unmet need remains and the cycle may repeat."
+      "You enter a situation where a dangerous choice is possible.",
+      "The immediate feeling becomes more compelling than the future cost.",
+      "You take the risk or come close to doing so.",
+      "Fear afterwards leads to a promise that has no practical safeguard behind it."
     ],
     "now": {
-      "title": "Put safety between the urge and the opportunity",
+      "title": "Make the dangerous choice harder to reach",
       "paras": [
-        "For imminent harm, seek immediate human support rather than planning alone."
+        "If someone could be harmed now, take immediate safety action. A later reflection can help with the pattern."
       ],
       "steps": [
-        "Name the concrete high-risk behaviour and the situations that lead to it.",
-        "Reduce access to that danger using an appropriate real-world safeguard.",
-        "Arrange support for the need the behaviour has been meeting."
+        "Name the specific danger.",
+        "Put a safeguard in place before the usual trigger.",
+        "Arrange support for whatever need the risk has been meeting."
       ]
     },
     "roots": [
@@ -396,51 +396,51 @@ export const HABIT_EDITORIAL_B=[
     ],
     "mechanisms": [
       [
-        "Emotional reward",
-        "A purchase may briefly change mood or create excitement."
+        "When shopping changes a feeling",
+        "A purchase may briefly provide comfort or excitement when the day has been difficult."
       ],
       [
-        "Fast access",
-        "Digital shopping removes opportunities for reflection."
+        "When checkout happens quickly",
+        "Saved cards and promotional alerts can make buying almost automatic."
       ],
       [
-        "Financial consequences",
-        "Short-term relief can create longer-term pressure that fuels more distress."
+        "When financial pressure increases",
+        "The cost of earlier purchases can create distress that makes further shopping tempting."
       ]
     ],
     "profiles": [
       [
-        "The comfort shopper",
-        "Buying seems to soothe an upsetting day."
+        "When you shop after a bad day",
+        "Buying something seems to promise comfort when you're upset."
       ],
       [
-        "The boredom buyer",
-        "New objects provide brief stimulation."
+        "When novelty feels irresistible",
+        "You become excited by finding something new and regret the purchase afterwards."
       ],
       [
-        "The secret spender",
-        "Embarrassment makes discussing purchases harder."
+        "When shopping gives you control",
+        "Choosing a purchase offers a feeling of freedom in a difficult day."
       ],
       [
-        "The financially endangered person",
-        "Housing or essentials may already be affected."
+        "When the bills are frightening",
+        "You are worried that the spending has affected essential commitments."
       ]
     ],
     "cycle": [
-      "An uncomfortable feeling or cue appears.",
-      "Buying promises immediate relief.",
-      "Relief fades and financial pressure remains.",
-      "The next difficult feeling brings another urge."
+      "A difficult feeling makes shopping appealing.",
+      "Finding an item brings anticipation and relief.",
+      "You buy it with little time to reconsider.",
+      "The cost brings worry once the excitement has passed."
     ],
     "now": {
-      "title": "Make the next purchase harder to do automatically",
+      "title": "Give yourself time before checkout",
       "paras": [
-        "If rent, food or other essentials are at risk, prioritise practical financial help."
+        "Choose one shopping situation where you've felt unable to pause. Protect essential bills first if needed."
       ],
       "steps": [
-        "Identify the moment you most often buy without planning.",
-        "Remove one convenience, such as a saved card or shopping notification.",
-        "Choose a specific alternative for the feeling shopping normally relieves."
+        "Find the cue that leads you to browse.",
+        "Remove a convenience that makes buying automatic.",
+        "Choose another response to the feeling that usually leads you there."
       ]
     },
     "roots": [
