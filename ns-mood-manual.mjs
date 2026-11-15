@@ -3,6 +3,7 @@
  * example comes from independently authored, topic-specific editorial data.
  */
 import {escapeHTML} from './core.mjs';
+import {practicalPopupIdeas} from './ns-manual-popup-advice.mjs';
 import {MOOD_GUIDES} from './ns-mood-guide-data.mjs?v=feel-20261114-v3';
 const esc=x=>escapeHTML(String(x??''));
 const safeText=x=>String(x??'').trim().slice(0,1300);
@@ -182,7 +183,7 @@ export function renderTopicManual(root,id,g,domain='feel'){
   if(b.hasAttribute('data-mood-revise')){state.step=0;showQuestion();return;}
   if(b.hasAttribute('data-mood-download')){exportNotes();return;}
   if(b.dataset.moodIdea){
-   const ideas=g.ideas[b.dataset.moodIdea]||[];if(ideas.length){ideaTrigger=b;dialog.querySelector('[data-mood-ideas-list]').innerHTML=ideas.map(x=>'<li>'+esc(x)+'</li>').join('');dialog.showModal();}return;
+   const ideas=practicalPopupIdeas(g,b.dataset.moodIdea);if(ideas.length){ideaTrigger=b;dialog.querySelector('[data-mood-ideas-list]').innerHTML=ideas.map(x=>'<li>'+esc(x)+'</li>').join('');dialog.showModal();}return;
   }
   if(b.hasAttribute('data-mood-ideas-close')){dialog.close();return;}
   if(b.hasAttribute('data-mood-save')){
