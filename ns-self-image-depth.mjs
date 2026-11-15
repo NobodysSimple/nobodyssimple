@@ -34,7 +34,7 @@ const riskCases=new Set(['coming-out-rejection','transphobia','homophobia','misg
 function enrichedExamples(g,domain,d){
  const result=[];
  for(let i=0;i<4;i++){
-  const base=g.whyCases.slice(i*4,i*4+4),target=d[2][i];
+  const base=g.whyCases.slice(i*4,i*4+4),target=String(d[2][i]).split('|');
   const existing=base[0],framed={...existing,interpretation:existing.interpretation,
     response:'The immediate response may depend on your past experiences and your current safety.',
     function:context[domain],adaptation:g.profiles[i][1],rule:context[domain],action:g.routes[i].practice};
