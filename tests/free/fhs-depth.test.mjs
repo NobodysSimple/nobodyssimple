@@ -68,7 +68,7 @@ test('abuse recovery and high-risk family guides do not store journal answers on
 });
 test('support for abuse, poverty and climate concerns prioritises reality and safety',()=>{
  assert.match(FHS_BY_ID.get('emotional-abuse').evidence,/confront anyone/);
- assert.match(FHS_BY_ID.get('sexual-assault-recovery').safety,/assault|sexual/i);
+ assert.match(FHS_BY_ID.get('sexual-assault-recovery').safety,/SARCs|forensic|disclosure/i);
  assert.match(FHS_BY_ID.get('food-insecurity').evidence,/material|financial|institutional/i);
  assert.match(FHS_BY_ID.get('climate-anxiety').evidence,/hazards|public|real/i);
  assert.match(FHS_BY_ID.get('homelessness-insecurity').ideas.support.join(' '),/emergency|housing|shelter/i);
