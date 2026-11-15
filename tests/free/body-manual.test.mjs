@@ -8,7 +8,7 @@ test('sleep manual is an authored and interactive atlas topic',()=>{
  assert.deepEqual(BODY_IDS,['sleep']);
  const g=BODY_GUIDES[0];
  assert.equal(atlasProblemIndex.find(p=>p.id===g.id)?.domain,'body');
- assert.ok(g.article.join(' ').split(/\\s+/).length>=450);
+ assert.ok(g.article.join(' ').split(/\s+/).length>=450);
  assert.equal(g.article.length,10);
  assert.equal(g.routes.length,4);
  assert.equal(g.whyQuestions.length,10);
@@ -26,8 +26,8 @@ test('sleep manual is an authored and interactive atlas topic',()=>{
 test('sleep uses the dedicated manual on direct and workbook routes',()=>{
  const site=readFileSync(new URL('../../site.mjs',import.meta.url),'utf8');
  const renderer=readFileSync(new URL('../../ns-mood-manual.mjs',import.meta.url),'utf8');
- assert.match(site,/bodyGuideIds\\.has\\(key\\)\\)showBodyGuide\\(key\\)/);
- assert.match(site,/bodyGuideIds\\.has\\(options\\.topic\\)/);
- assert.match(site,/bodyGuideIds\\.has\\(selected\\.target\\)/);
- assert.match(renderer,/#navigate\\/atlas\\/body/);
+ assert.match(site,/bodyGuideIds\.has\(key\)\)showBodyGuide\(key\)/);
+ assert.match(site,/bodyGuideIds\.has\(options\.topic\)/);
+ assert.match(site,/bodyGuideIds\.has\(selected\.target\)/);
+ assert.match(renderer,/#navigate\/atlas\/body/);
 });
