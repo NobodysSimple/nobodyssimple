@@ -4,15 +4,15 @@ import {readFileSync} from 'node:fs';
 const src=path=>readFileSync(new URL('../../'+path,import.meta.url),'utf8');
 import {EISENHOWER_QUADRANTS,validPriority,taskPriority} from '../../lifestyle-storage.mjs';
 
-test('Lifestyle has its own primary desktop and four-item bottom mobile navigation',()=>{
+test('Lifestyle and Learn have distinct primary desktop and five-item bottom mobile navigation',()=>{
  const page=src('index.html'),shell=src('ns-shell.mjs'),css=src('ns-shell.css');
  const mobile=page.match(/<nav class="app-bottom-nav"[\s\S]*?<\/nav>/)?.[0]||'';
- assert.equal((mobile.match(/data-route-link/g)||[]).length,4);
+ assert.equal((mobile.match(/data-route-link/g)||[]).length,5);
  assert.ok(mobile.includes('href="#lifestyle"'));
  assert.match(page,/<nav class="app-nav app-nav-primary"[\s\S]*href="#lifestyle"/);
  assert.doesNotMatch(page,/<a href="#simplyfocus" data-route-link/);
  assert.match(shell,/lifestyle:'#lifestyle'/);
- assert.match(css,/grid-template-columns:repeat\(4,minmax\(0,1fr\)\)!important/);
+ assert.match(css,/grid-template-columns:repeat\(5,minmax\(0,1fr\)\)!important/);
 });
 test('Home no longer shows Lifestyle; old focus bookmarks redirect to the internal mode',()=>{
  const home=src('strategy.mjs'),router=src('site.mjs'),features=src('features.mjs');

@@ -25,7 +25,7 @@ test('Existing published Hello blog retains its ID, writing and original artwork
 });
 test('HTML bypasses previously cached app JS and loads versioned notebook code',()=>{
  const html=source('index.html'),site=source('site.mjs'),notebook=source('ns-blog-notebook.mjs');
- assert.ok(html.includes('site.mjs?v=quiet-topics-staff-20261115'));
+ assert.ok(html.includes('site.mjs?v=learn-course-hub-20261115'));
  assert.ok(site.includes('ns-blog-notebook.mjs?v='+appVersion));
  assert.ok(notebook.includes('ns-blog-notebook.css?v='+appVersion));
  assert.match(site,/if \(p\.type === "blog"\) \{\s*renderNotebookBlogPost\(main, p, posts\);/);
@@ -42,7 +42,7 @@ test('Hello content actually renders all heading levels and has dedicated introd
 });
 test('Service worker updates the cached shell and preloads the notebook assets',()=>{
  const sw=source('sw.js');
- assert.match(sw,/nobodyssimple-release-v203-quiet-topic-studio/);
+ assert.match(sw,/nobodyssimple-release-v204-learn-course-hub/);
  assert.ok(sw.includes("'ns-blog-notebook.css'"));
  assert.ok(sw.includes("'ns-blog-notebook.mjs'"));
 });
