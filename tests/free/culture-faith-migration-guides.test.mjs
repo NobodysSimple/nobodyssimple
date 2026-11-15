@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {atlasProblemIndex} from '../../ns-atlas-core.mjs';
 import {topicsInTheme} from '../../ns-needs-themes.mjs';
 import {CFM_IDS,CFM_BY_ID,CFM_GUIDES_FULL,CFM_GROUPS} from '../../ns-cfm-manual-data.mjs';
+import {practicalPopupIdeas} from '../../ns-manual-popup-advice.mjs';
 
 test('every topic in the actual Culture, Faith and Migration catalogue has the same dedicated manual format',()=>{
  const topics=topicsInTheme(atlasProblemIndex,'culture');
@@ -63,6 +64,17 @@ test('all practical and support popups contain direct unique guidance with no ge
   }
  }
  assert.equal(total,1800);
+});
+test('all Culture Faith Migration popups render the entire twenty-item list while other catalogues retain their limits',()=>{
+ for(const guide of CFM_GUIDES_FULL){
+  for(const kind of ['actions','support']){
+   const shown=practicalPopupIdeas(guide,kind);
+   assert.equal(shown.length,20,guide.id+' '+kind+' was truncated or filtered');
+   assert.equal(new Set(shown).size,20,guide.id+' '+kind+' duplicated a suggestion');
+   assert.ok(shown.every(text=>!/^((Ask a trusted person about|Request support for this possible step|Talk this through with someone|Consider whether this is relevant|Use this worked example))/i.test(text)),guide.id+' contains instructional padding');
+  }
+ }
+ assert.equal(practicalPopupIdeas({domain:'feel',ideas:{actions:Array.from({length:25},(_,i)=>'Take a useful next step '+i+'.')}},'actions').length,12);
 });
 test('each page exposes a search-enabled Understand Why map with contextual examples',()=>{
  let scenes=0;
