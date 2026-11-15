@@ -16,51 +16,51 @@ export const FOCUS_EDITORIAL_C=[
     ],
     "mechanisms": [
       [
-        "Duration estimation",
-        "An imagined task may omit preparation and transition time."
+        "When preparation takes longer than expected",
+        "We often remember the journey and forget the time spent getting ready. Past attempts can give you a fairer estimate."
       ],
       [
-        "Prospective timing",
-        "An intention to act later can be missed without a useful cue."
+        "When the reminder arrives too late",
+        "Knowing an appointment starts at three gives you little help if you needed to begin leaving at two."
       ],
       [
-        "Deadline salience",
-        "A distant goal may not influence daily action until urgency becomes immediate."
+        "When deadlines don't feel close until they are",
+        "A task due next week may be difficult to start today. An earlier piece of work needs its own prompt."
       ]
     ],
     "profiles": [
       [
-        "The late leaver",
-        "You know the appointment time but leave too late."
+        "When you leave later than you meant to",
+        "You know the appointment time but preparation begins too close to it."
       ],
       [
-        "The absorbed worker",
-        "You look up and hours have passed."
+        "When an activity absorbs your time",
+        "You look up and realise the hour you intended to use has passed."
       ],
       [
-        "The optimistic estimator",
-        "You repeatedly underestimate how long tasks require."
+        "When your estimates keep disappointing you",
+        "You allow too little time for something you've done before."
       ],
       [
-        "The deadline sprinter",
-        "You begin only when the due date feels immediate."
+        "When the deadline suddenly becomes urgent",
+        "The work feels distant until there's hardly enough time left."
       ]
     ],
     "cycle": [
-      "An event or deadline is planned.",
-      "Necessary stages or time passage go unnoticed.",
-      "The remaining time becomes too short.",
-      "Stress and self-criticism increase without a new cue system."
+      "You know an event or deadline is approaching.",
+      "Preparation takes longer than you expected or the start cue passes unnoticed.",
+      "You hurry and still struggle to meet the time.",
+      "You criticise yourself and promise to try harder next time."
     ],
     "now": {
-      "title": "Plan backwards from the time you must act",
+      "title": "Find the moment you actually need to begin",
       "paras": [
-        "Do not use the appointment time as the moment to start preparing."
+        "Think of something you're due to do. Let's make the first preparation step visible."
       ],
       "steps": [
-        "Name the required departure or submission time.",
-        "Include preparation and one realistic buffer based on past experience.",
-        "Set a cue for the first action, not just the final deadline."
+        "Write down the real time you need to leave or finish.",
+        "Work backwards using what similar tasks have taken before.",
+        "Set a cue that tells you when to begin preparing."
       ]
     },
     "roots": [
@@ -107,51 +107,51 @@ export const FOCUS_EDITORIAL_C=[
     ],
     "mechanisms": [
       [
-        "Working-memory demand",
-        "Holding tasks, steps and constraints together can overwhelm cognitive capacity."
+        "When planning asks you to remember too much",
+        "Holding several dependent tasks in mind can become exhausting. Writing the order down makes the next action easier to see."
       ],
       [
-        "Planning as avoidance",
-        "Refining the plan may replace beginning the task."
+        "When arranging takes the place of beginning",
+        "You may keep revising a schedule because choosing one task means accepting that another will wait."
       ],
       [
-        "Unrealistic workload",
-        "No method can fit commitments into time or capacity that does not exist."
+        "When the hours don't exist",
+        "A workload can exceed the time available. That needs a change in expectations or resources."
       ]
     ],
     "profiles": [
       [
-        "The elaborate planner",
-        "You keep designing systems instead of taking action."
+        "When you keep redesigning the calendar",
+        "Each new plan feels promising until you remember something else it has to contain."
       ],
       [
-        "The stuck prioritiser",
-        "Every task seems equally urgent."
+        "When everything feels equally urgent",
+        "You struggle to decide which responsibility should come first."
       ],
       [
-        "The overwhelmed sequencer",
-        "You cannot see the order of steps."
+        "When you can't see the order",
+        "You know the project needs completing but can't work out what depends on what."
       ],
       [
-        "The overloaded person",
-        "The plan fails because the demands genuinely exceed resources."
+        "When the plan is impossible to follow",
+        "The commitments require more hours than you have available."
       ]
     ],
     "cycle": [
-      "A complex set of demands needs organising.",
-      "You try to consider everything at once.",
-      "Planning becomes exhausting or indefinite.",
-      "No first task begins and the demands remain."
+      "You try to fit a demanding set of tasks into your day.",
+      "Each planning decision raises another problem to solve.",
+      "You spend the available energy rearranging the plan.",
+      "The work stays unfinished and tomorrow's plan begins under more pressure."
     ],
     "now": {
-      "title": "Create a plan that has only one job",
+      "title": "Make a plan you can use today",
       "paras": [
-        "For now, the plan only needs to tell you what to do first."
+        "Choose one thing a plan should help you do next. The rest can wait for a later review."
       ],
       "steps": [
-        "Write down the fixed commitments you cannot move.",
-        "Choose one priority and describe the smallest complete action.",
-        "Set a review point instead of designing the entire week again."
+        "Write down the appointments that cannot move.",
+        "Choose a task with a real deadline and describe its first action.",
+        "Decide when you'll review the other commitments."
       ]
     },
     "roots": [
@@ -198,51 +198,51 @@ export const FOCUS_EDITORIAL_C=[
     ],
     "mechanisms": [
       [
-        "Missing foundations",
-        "A new explanation may rely on earlier knowledge that is not secure."
+        "When an earlier idea hasn't become clear",
+        "The new lesson may depend on a word or concept you never fully understood. Finding that point can make later steps easier."
       ],
       [
-        "Recognition versus recall",
-        "Familiarity while rereading can differ from independently retrieving information."
+        "When recognising the answer feels like knowing it",
+        "Rereading can create familiarity. Trying to recall a small idea helps you find out what you can use on your own."
       ],
       [
-        "Presentation and access",
-        "Pacing, language and format may make learning unnecessarily difficult."
+        "When the explanation is hard to access",
+        "Instructions that move too quickly can leave important gaps. A written example may give you the time you need."
       ]
     ],
     "profiles": [
       [
-        "The familiar rereader",
-        "Everything looks known until the notes close."
+        "When you know it only with the notes open",
+        "The explanation seems familiar until you try to recall it alone."
       ],
       [
-        "The missing-step learner",
-        "One unexplained concept makes later information confusing."
+        "When one step makes the rest confusing",
+        "You missed an earlier idea and everything afterwards now depends on it."
       ],
       [
-        "The overloaded listener",
-        "Instructions move faster than you can process them."
+        "When lessons move faster than you can follow",
+        "You're still processing one instruction when the next arrives."
       ],
       [
-        "The exhausted student",
-        "Long study sessions leave little understanding behind."
+        "When studying has worn you down",
+        "You've spent a long time with the material and can no longer take much in."
       ]
     ],
     "cycle": [
-      "New material is presented.",
-      "An early step is missed or not retrievable.",
-      "Later steps become confusing.",
-      "You reread without locating what needs changing."
+      "You encounter something unfamiliar.",
+      "An early part remains confusing or difficult to recall.",
+      "The next explanation depends on that missing part.",
+      "You keep rereading the latest material without finding the gap."
     ],
     "now": {
-      "title": "Find one missing step and test it gently",
+      "title": "Find the first part you need help with",
       "paras": [
-        "You are trying to locate the gap, not prove how much you already know."
+        "Choose one concept that's been difficult. We'll find the point where learning began to break down."
       ],
       "steps": [
-        "Choose one idea from the topic you are learning.",
-        "Explain or demonstrate it without notes, then check the answer.",
-        "Identify the missing step and plan another short retrieval attempt later."
+        "Try explaining the idea in your own words without notes.",
+        "Check where your explanation becomes uncertain.",
+        "Ask for that missing step or practise it again after a break."
       ]
     },
     "roots": [
