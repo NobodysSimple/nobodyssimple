@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+<title id="title">A quiet path through a growing garden</title>
+<desc id="desc">Soft sunrise over rolling sage hills, trees and flowers; Nobody's Simple's little character tends a new plant.</desc>
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#f3dfbd"/><stop offset=".48" stop-color="#f6e8cb"/><stop offset="1" stop-color="#dce4c8"/></linearGradient>
+ <linearGradient id="hill" x2="0" y2="1"><stop stop-color="#b2caa8"/><stop offset="1" stop-color="#748f73"/></linearGradient>
+ <linearGradient id="ground" x2="0" y2="1"><stop stop-color="#719875"/><stop offset="1" stop-color="#3d654f"/></linearGradient>
+ <radialGradient id="light"><stop stop-color="#fff8d9" stop-opacity=".92"/><stop offset="1" stop-color="#fff0c6" stop-opacity="0"/></radialGradient>
+ <pattern id="specks" width="37" height="37" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r=".7" fill="#fff" opacity=".32"/></pattern>
+ <filter id="blur"><feGaussianBlur stdDeviation="12"/></filter>
+</defs>
+<rect width="1200" height="420" fill="url(#sky)"/>
+<circle cx="784" cy="140" r="150" fill="url(#light)"/><circle cx="784" cy="143" r="46" fill="#fdf4d8" opacity=".9"/>
+<path d="M0 236 Q130 163 260 222T544 200T830 224T1200 174V420H0Z" fill="#a5baa5" opacity=".52"/>
+<path d="M0 278Q170 203 319 259T661 244T1005 227T1200 244V420H0Z" fill="url(#hill)"/>
+<path d="M0 322Q189 277 360 306T700 288T1014 308T1200 280V420H0Z" fill="#77957a"/>
+<path d="M0 354Q216 323 389 347T711 325T1020 348T1200 318V420H0Z" fill="url(#ground)"/>
+<path d="M491 420Q588 346 710 333T877 317Q729 333 673 420Z" fill="#d1c3a1" opacity=".72"/>
+<path d="M546 420Q663 353 800 340" stroke="#efe3be" stroke-width="9" fill="none" stroke-linecap="round" opacity=".48"/>
+<path d="M0 35C89 17 140 67 150 146" stroke="#4e725c" stroke-width="24" fill="none" stroke-linecap="round"/>
+<path d="M0 57Q90 89 146 95" stroke="#517459" stroke-width="18" fill="none"/>
+<g fill="#597d5f">
+ <ellipse cx="42" cy="34" rx="49" ry="23" transform="rotate(24 42 34)"/>
+ <ellipse cx="118" cy="31" rx="55" ry="27" transform="rotate(-24 118 31)"/>
+ <ellipse cx="130" cy="95" rx="47" ry="22" transform="rotate(15 130 95)"/>
+ <ellipse cx="84" cy="85" rx="55" ry="25" transform="rotate(-24 84 85)"/>
+ <ellipse cx="154" cy="148" rx="35" ry="19" transform="rotate(42 154 148)"/>
+</g>
+<g fill="#769778" opacity=".85"><ellipse cx="22" cy="91" rx="40" ry="15" transform="rotate(35 22 91)"/><ellipse cx="111" cy="136" rx="34" ry="15" transform="rotate(-22 111 136)"/></g>
+<g transform="translate(1110 -20)"><path d="M43 0Q9 76 73 140" stroke="#43674d" stroke-width="24" fill="none"/><g fill="#567759"><ellipse cx="-10" cy="32" rx="55" ry="23"/><ellipse cx="75" cy="30" rx="64" ry="26"/><ellipse cx="63" cy="107" rx="49" ry="22"/></g></g>
+<!-- Little white mascot, keeping the familiar blank face and ink outline. -->
+<g transform="translate(843 182)" stroke="#252c27" stroke-width="6" stroke-linejoin="round" stroke-linecap="round">
+ <ellipse cx="88" cy="168" rx="79" ry="15" fill="#273f33" opacity=".13" stroke="none"/>
+ <path d="M78 79C39 91 34 134 46 156Q64 176 108 164Q137 143 122 106Q113 84 95 77Z" fill="#fffaf0"/>
+ <path d="M47 144Q21 159 20 145Q16 128 49 119" fill="#fffaf0"/>
+ <path d="M91 156Q114 175 132 155Q139 137 121 136" fill="#fffaf0"/>
+ <ellipse cx="80" cy="51" rx="52" ry="51" fill="#fffaf1"/>
+ <ellipse cx="67" cy="52" rx="4" ry="8" fill="#19251e" stroke="none"/>
+ <ellipse cx="98" cy="52" rx="4" ry="8" fill="#19251e" stroke="none"/>
+ <path d="M112 119Q135 116 140 103Q144 94 153 92" fill="none"/>
+ <path d="M143 88L184 80Q188 82 184 94L155 104Z" fill="#80a37f"/>
+ <path d="M151 90L144 77" fill="none"/>
+</g>
+<!-- Sapling and flower by the mascot -->
+<g transform="translate(1055 300)">
+ <path d="M0 65Q-2 24 8 -7" stroke="#416747" stroke-width="5" fill="none" stroke-linecap="round"/>
+ <path d="M3 29Q-24 11 -30 -4Q-6 -4 5 15Z" fill="#8fac73"/>
+ <path d="M8 10Q29 -11 40 -12Q42 6 10 21Z" fill="#a8c686"/>
+ <path d="M-30 65Q-17 41 2 58Q22 34 37 65" fill="#355b44"/>
+</g>
+<g fill="#e8c68d">
+ <circle cx="180" cy="366" r="4"/><circle cx="241" cy="387" r="3"/><circle cx="508" cy="360" r="4"/>
+ <circle cx="680" cy="348" r="3"/><circle cx="1147" cy="350" r="4"/>
+</g>
+<g fill="#d2dfba" opacity=".85"><path d="M23 420q24-55 54-43t40 43"/><path d="M1085 420q17-51 53-39t48 39"/></g>
+<rect width="1200" height="420" fill="url(#specks)"/>
+</svg>
