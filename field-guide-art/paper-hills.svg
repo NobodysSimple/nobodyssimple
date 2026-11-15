@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="280" viewBox="0 0 1050 280" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<defs>
+ <linearGradient id="a" x2="0" y2="1"><stop stop-color="#cad8c4"/><stop offset="1" stop-color="#e9e6cd"/></linearGradient>
+ <linearGradient id="b" x2="0" y2="1"><stop stop-color="#a9c3aa"/><stop offset="1" stop-color="#ced7b4"/></linearGradient>
+ <linearGradient id="c" x2="0" y2="1"><stop stop-color="#83a18d"/><stop offset="1" stop-color="#a8b497"/></linearGradient>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".025" numOctaves="2" seed="14" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".16"/></feComponentTransfer></filter>
+</defs>
+<path d="M0 112Q110 41 245 111T480 117Q630 27 764 102T1050 88V280H0Z" fill="url(#a)" opacity=".65"/>
+<path d="M0 175Q130 108 259 168T540 157Q685 87 813 158T1050 143V280H0Z" fill="url(#b)" opacity=".61"/>
+<path d="M0 237Q134 193 268 227T557 214Q704 158 816 218T1050 207V280H0Z" fill="url(#c)" opacity=".61"/>
+<g fill="#7b9b83" opacity=".67">
+ <path d="M37 235l20 -47 21 47h-9l12 26H32l11 -26z"/>
+ <path d="M88 245l16 -39 18 39h-7l11 22H85l7 -22z"/>
+ <path d="M945 245l16 -42 18 42h-6l10 25H940l8 -25z"/>
+ <path d="M988 242l20 -55 23 55h-9l12 28H982l11 -28z"/>
+</g>
+<path d="M0 261q88 -29 192 0M790 259q111 -33 260 0" stroke="#e5e7cb" stroke-width="6" fill="none" opacity=".55"/>
+<rect width="1050" height="280" filter="url(#grain)" opacity=".2"/>
+</svg>
