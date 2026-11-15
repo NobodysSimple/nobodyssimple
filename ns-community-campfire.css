@@ -513,7 +513,7 @@ body.app-body #main .board-page.board-campfire .board-header.board-campfire-hero
 body.app-body #main .board-page.board-campfire .board-header .board-hero-scene {
  position:absolute!important;z-index:0!important;inset:0!important;
  width:100%!important;height:100%!important;display:block!important;
- background-image:url("community-art/campfire-hero.svg")!important;
+ background-image:url("community-art/campfire-reference-hero.svg"),url("community-art/campfire-hero.svg")!important;
  background-position:center center!important;background-size:cover!important;
  background-repeat:no-repeat!important;opacity:1!important;
  pointer-events:none;
