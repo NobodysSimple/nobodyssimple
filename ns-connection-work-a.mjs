@@ -41,7 +41,7 @@ export const CONNECTION_WORK_A={
       [
         "support",
         "Seek protection when betrayal included abuse",
-        "The person's actions may still present a risk.",
+        "The person who caused the harm may still present a danger that needs practical protection.",
         [
           "Did the betrayal involve threats or coercive treatment?",
           "Has the harmful behaviour continued?",
