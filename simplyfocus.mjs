@@ -48,6 +48,31 @@ export function renderSimplyFocus(root,{embedded=false}={}) {
     const intro=$(".focus-intro .eyebrow",root);
     if(intro)intro.textContent='SimplyFocus · Inside Lifestyle';
   }
+  // Put the working session before its optional supporting environments.
+  const studio = $(".simplyfocus-page",root);
+  const intro = $(".focus-intro",root);
+  const session = $(".pomodoro-card",root);
+  const sound = $(".focus-mixer",root);
+  const breathe = $(".timed-breathing-card",root);
+  if(studio&&intro&&session&&sound&&breathe){
+    intro.after(session);
+    session.after(sound);
+    sound.after(breathe);
+    const description=$(".focus-intro .lead",root);
+    if(description)description.textContent="Start with a work session and one task. Add a soundscape or breathing break when it helps.";
+    const quick=document.createElement("nav");
+    quick.className="focus-quick-links";
+    quick.setAttribute("aria-label","Focus tools");
+    quick.innerHTML='<button type="button" data-focus-jump="timer">◷ Timer & tasks</button><button type="button" data-focus-jump="sound">♫ Soundscape</button><button type="button" data-focus-jump="breathing">✦ Breathing break</button>';
+    intro.after(quick);
+    quick.addEventListener("click",event=>{
+      const control=event.target.closest("button[data-focus-jump]");
+      if(!control)return;
+      const target=({timer:session,sound,breathing:breathe})[control.dataset.focusJump];
+      if(target)target.scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+    });
+  }
+
   const mixer = $(".focus-mixer", root);
   const breathing = $(".timed-breathing-card", root);
   const pomodoro = $(".pomodoro-card", root);
