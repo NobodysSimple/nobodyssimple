@@ -64,7 +64,7 @@ export const TRAUMA_EDITORIAL_A=[
     "safety": "This guide does not diagnose complex PTSD or establish childhood causes. Ongoing coercion requires safety support. Trauma-focused treatment should be guided by an appropriately qualified clinician; do not force exposure or memory retrieval.",
     "source": [
       "NHS: Post-traumatic stress disorder",
-      "https://www.nhs.uk/mental-health/conditions/post-traumatic-stress-disorder-ptsd/overview/"
+      "https://www.nhs.uk/mental-health/conditions/ptsd-post-traumatic-stress-disorder/"
     ]
   },
   {
@@ -332,7 +332,7 @@ export const TRAUMA_EDITORIAL_A=[
     "safety": "Pet loss can involve substantial distress and difficult veterinary decisions. Avoid second-guessing clinical decisions without the records and qualified context. Severe impairment or inability to stay safe requires appropriate support.",
     "source": [
       "Blue Cross: Pet bereavement",
-      "https://www.bluecross.org.uk/pet-bereavement-and-pet-loss"
+      "https://www.bluecross.org.uk/pet-loss-support"
     ]
   }
 ];
