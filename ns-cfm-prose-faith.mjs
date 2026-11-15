@@ -47,13 +47,13 @@ export const CFM_PROSE_FAITH={
 ],
 'meaning-of-life':[
  'You may feel directionless after achieving a goal you worked towards for years. The achievement happened, but it did not answer what you should want next. That gap can be disorienting because the previous plan gave structure to your time, even if you had begun questioning it.',
- 'Perhaps the path you are on was chosen because it pleased people whose judgement mattered to you. You may be capable of doing the work and still feel that it belongs to somebody else's idea of success. Revisiting one commitment can be less frightening than overturning every choice at once.',
+ 'Perhaps the path you are on was chosen because it pleased people whose judgement mattered to you. You may be capable of doing the work and still feel that it belongs to somebody else’s idea of success. Revisiting one commitment can be less frightening than overturning every choice at once.',
  'When nothing feels meaningful, it is worth considering whether exhaustion, depression or isolation is affecting your ability to feel involved. You may need rest or support before deciding your entire life lacks purpose. An ordinary connection can matter even when the larger question remains unresolved.'
 ],
 'spiritual-experience':[
  'An experience that brought comfort can become a private source of meaning. You may not know what caused it and still value what it felt like. Describing it carefully can help you keep the significance without requiring everybody else to endorse the same interpretation.',
  'A frightening experience deserves particular care. If you are unsure what happened, somebody who insists it proves danger may intensify the fear. You can describe the observable event and decide how to seek grounded information. You do not have to accept a dramatic explanation.',
- 'If unusual experiences begin affecting sleep or everyday functioning, it is sensible to consider physical and mental health factors. Assessment should be respectful of cultural beliefs. The aim is to understand whether support is needed, without dismissing the person's account or prematurely claiming a supernatural cause.'
+ 'If unusual experiences begin affecting sleep or everyday functioning, it is sensible to consider physical and mental health factors. Assessment should be respectful of cultural beliefs. The aim is to understand whether support is needed, without dismissing the person’s account or prematurely claiming a supernatural cause.'
 ],
 'secular-religious-tension':[
  'You may be expected to participate in a ceremony because everybody else is doing so. Refusing can seem disrespectful to people who see the practice as an expression of family love. You might want to honour the occasion while keeping the freedom to decline a religious act.',
