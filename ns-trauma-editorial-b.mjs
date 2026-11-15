@@ -63,8 +63,8 @@ export const TRAUMA_EDITORIAL_B=[
     ],
     "safety": "Illness-related grief must not be used to explain away physical symptoms. New or worsening changes need appropriate healthcare assessment. Avoid encouraging activity beyond medical limits or implying that every loss can be compensated by attitude.",
     "source": [
-      "NHS: Long-term conditions and wellbeing",
-      "https://www.nhs.uk/conditions/"
+      "Qualitative research: Long-term conditions, mental health and identity",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC6803559/"
     ]
   },
   {
@@ -197,8 +197,8 @@ export const TRAUMA_EDITORIAL_B=[
     ],
     "safety": "Current abuse or professional safeguarding duties require appropriate reporting. Preserve confidentiality and avoid unsafe exposure. Severe shame or self-harm thoughts warrant prompt support; moral injury is not a stand-alone diagnosis.",
     "source": [
-      "NHS: Mental health support",
-      "https://www.nhs.uk/mental-health/"
+      "BMJ Military Health (2026): Moral injury and PTSD in veterans",
+      "https://pubmed.ncbi.nlm.nih.gov/42297420/"
     ]
   },
   {
