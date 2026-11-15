@@ -20,8 +20,9 @@ import {ACCESS_IDS} from './ns-access-manual-data.mjs';
 import {FHS_IDS} from './ns-fhs-guide-data.mjs';
 import {IMAGE_IDS} from './ns-self-image-guide-data.mjs';
 import {WORK_IDS} from './ns-work-guide-data.mjs';
+import {CHANGES_IDS} from './ns-changes-guide-data.mjs';
 
-const existingDedicated=[...MOOD_IDS,...THINK_IDS,...HABIT_IDS,...BEHAVIOUR_IDS,...FOCUS_IDS,...CLINICAL_IDS,...EXPERIENCE_IDS,...CONNECTION_IDS,...DIGITAL_IDS,...HEALTH_IDS,...CFM_IDS,...ACCESS_IDS,...FHS_IDS,...IMAGE_IDS,...WORK_IDS,'social-anxiety'];
+const existingDedicated=[...MOOD_IDS,...THINK_IDS,...HABIT_IDS,...BEHAVIOUR_IDS,...FOCUS_IDS,...CLINICAL_IDS,...EXPERIENCE_IDS,...CONNECTION_IDS,...DIGITAL_IDS,...HEALTH_IDS,...CFM_IDS,...ACCESS_IDS,...FHS_IDS,...IMAGE_IDS,...WORK_IDS,...CHANGES_IDS,'social-anxiety'];
 const atlasIds=new Set(atlasProblemIndex.map(p=>p.id));
 const duplicate=existingDedicated.filter((id,i)=>existingDedicated.indexOf(id)!==i);
 if(duplicate.length)throw new Error('Duplicate dedicated manual IDs: '+duplicate.join(', '));
