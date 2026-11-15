@@ -10,6 +10,7 @@ import {BEHAVIOUR_INTERACTIVE_A} from './ns-behaviour-interactive-a.mjs';
 import {BEHAVIOUR_INTERACTIVE_B} from './ns-behaviour-interactive-b.mjs';
 import {BEHAVIOUR_INTERACTIVE_C} from './ns-behaviour-interactive-c.mjs';
 import {BEHAVIOUR_INTERACTIVE_D} from './ns-behaviour-interactive-d.mjs';
+import {BEHAVIOUR_SUPPORT_EXTRA} from './ns-behaviour-support-extra.mjs';
 
 const authored=[...BEHAVIOUR_EDITORIAL_A,...BEHAVIOUR_EDITORIAL_B,...BEHAVIOUR_EDITORIAL_C,...BEHAVIOUR_EDITORIAL_D];
 const interaction={...BEHAVIOUR_INTERACTIVE_A,...BEHAVIOUR_INTERACTIVE_B,...BEHAVIOUR_INTERACTIVE_C,...BEHAVIOUR_INTERACTIVE_D};
@@ -36,8 +37,8 @@ function makeGuide(d){
    rule:r[5],adaptation:r[4],alternative:r[7],action,root};
  });
  const actions=[...x.cases.map(c=>c[2]),...routes.map(r=>r.practice),...d.now.steps,x.roots[0][4]];
- const support=[...x.supportMore,...x.routes.map(r=>r[6]),...x.roots.map(r=>r[8])];
- if(actions.length!==24||support.length!==16)fail(id,'incomplete practical options');
+ const support=[...x.supportMore,...x.routes.map(r=>r[6]),...x.roots.map(r=>r[8]),...(BEHAVIOUR_SUPPORT_EXTRA[id]||[])];
+ if(actions.length!==24||support.length!==24)fail(id,'incomplete practical options');
  const guide={...d,roots:x.roots.map(r=>[r[0],r[1]]),routes,
    ideas:{actions,support},whyIntro:x.whyIntro,whyQuestions:x.whyQuestions,
    whyCases,whyStages:standardStages,pullIndex:5,
