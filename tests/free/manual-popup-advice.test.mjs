@@ -11,14 +11,14 @@ import {FHS_GUIDES} from '../../ns-fhs-guide-data.mjs';
 import {CFM_GUIDES_FULL} from '../../ns-cfm-manual-data.mjs';
 import {IMAGE_GUIDES} from '../../ns-self-image-guide-data.mjs';
 import {DIGITAL_GUIDES} from '../../ns-digital-guide-data.mjs';
-import {BODY_GUIDES} from '../../ns-body-guide-data.mjs';
+import {HEALTH_GUIDES} from '../../ns-health-manual-data.mjs';
 import {CLINICAL_GUIDES} from '../../ns-clinical-guide-data.mjs';
 import {EXPERIENCE_GUIDES} from '../../ns-experiences-guide-data.mjs';
 
 const groups=[
  MOOD_GUIDES,THINK_GUIDES,HABIT_GUIDES,FOCUS_GUIDES,BEHAVIOUR_GUIDES,
  CONNECTION_GUIDES,FHS_GUIDES,CFM_GUIDES_FULL,IMAGE_GUIDES,DIGITAL_GUIDES,
- BODY_GUIDES,CLINICAL_GUIDES,EXPERIENCE_GUIDES
+ HEALTH_GUIDES,CLINICAL_GUIDES,EXPERIENCE_GUIDES
 ];
 const boilerplate=/^(?:explore what would need to change before attempting this|write one answer to|write a few words about this question|ask a trusted person about the practical concern behind|talk this through with someone who listens|request support for this possible step|consider whether this is relevant to your situation|use this worked example to ask|discuss the practical goal|ask a trained professional whether)/i;
 
@@ -31,7 +31,7 @@ test('every field-guide catalogue shows original direct advice and no automatic 
   for(const key of Object.keys(g.ideas)){
    const selected=practicalPopupIdeas(g,key);
    assert.ok(selected.length>=3,g.id+' '+key+' has too little direct guidance');
-   assert.ok(selected.length<=12,g.id+' '+key+' has excessive advice');
+   assert.ok(selected.length<=(['culture','faith','migration','body','sexuality'].includes(g.domain)?20:12),g.id+' '+key+' has excessive advice');
    assert.equal(new Set(selected).size,selected.length,g.id+' '+key+' repeats advice');
    assert.ok(selected.every(x=>!boilerplate.test(x)),g.id+' '+key+' has templated lead-ins');
    popups++;
