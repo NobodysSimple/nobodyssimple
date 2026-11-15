@@ -43,6 +43,33 @@ const sources={
  faith:[['Religious and spiritual struggles: research background (deconversion study, 2023)','https://pubmed.ncbi.nlm.nih.gov/37664880/']],
  migration:[['WHO (2023), refugee and migrant mental health: risk, protection and access to care','https://www.who.int/publications/i/item/9789240081840']]
 };
+const topicResearch={
+ 'racial-discrimination':['Paradies et al. (2015), racism as a determinant of health, systematic review','https://pubmed.ncbi.nlm.nih.gov/26398658/'],
+ 'microaggressions':['Paradies et al. (2015), racism and health, systematic review','https://pubmed.ncbi.nlm.nih.gov/26398658/'],
+ 'institutional-racism':['UK Equality and Human Rights Commission: protected characteristics','https://www.equalityhumanrights.com/guidance/protected-characteristics'],
+ 'language-discrimination':['Spence et al., meta-analysis of accent bias in hiring','https://pubmed.ncbi.nlm.nih.gov/36326202/'],
+ 'cultural-code-switching':['Ward and Szabó (2023), acculturation, cultural identity and wellbeing','https://www.nature.com/articles/s44159-023-00171-2'],
+ 'mixed-heritage':['Ward and Szabó (2023), acculturation and multiple cultural identities','https://www.nature.com/articles/s44159-023-00171-2'],
+ 'racial-identity':['Ward and Szabó (2023), cultural identity and wellbeing','https://www.nature.com/articles/s44159-023-00171-2'],
+ 'cultural-belonging':['Ward and Szabó (2023), acculturation and identity','https://www.nature.com/articles/s44159-023-00171-2'],
+ 'cultural-family-expectations':['Ward and Szabó (2023), acculturation and identity','https://www.nature.com/articles/s44159-023-00171-2'],
+ 'intergenerational-cultural-conflict':['Ward and Szabó (2023), acculturation and identity','https://www.nature.com/articles/s44159-023-00171-2'],
+ 'religious-discrimination':['UK EHRC: religion or belief discrimination','https://www.equalityhumanrights.com/guidance/protected-characteristics/religion-or-belief-discrimination'],
+ 'secular-religious-tension':['UK EHRC: religion and non-belief protection','https://www.equalityhumanrights.com/guidance/protected-characteristics/religion-or-belief-discrimination'],
+ 'religious-identity-conflict':['Exline et al. (2014), religious and spiritual struggles','https://doi.org/10.1037/a0036465'],
+ 'religious-trauma':['Exline et al. (2014), interpersonal and moral spiritual struggles','https://doi.org/10.1037/a0036465'],
+ 'faith-community-pressure':['Exline et al. (2014), interpersonal religious struggles','https://doi.org/10.1037/a0036465'],
+ 'religious-family-conflict':['Exline et al. (2014), interpersonal religious struggles','https://doi.org/10.1037/a0036465'],
+ 'spiritual-uncertainty':['Exline et al. (2014), religious doubt and spiritual struggles','https://doi.org/10.1037/a0036465'],
+ 'existential-anxiety':['Exline et al. (2014), questions of ultimate meaning','https://doi.org/10.1037/a0036465'],
+ 'meaning-of-life':['Exline et al. (2014), ultimate meaning struggles','https://doi.org/10.1037/a0036465'],
+ 'losing-faith':['Longitudinal research on religious deconversion and wellbeing (2023)','https://pubmed.ncbi.nlm.nih.gov/37664880/'],
+ 'fear-divine-punishment':['NICE CG31: OCD and religious scrupulosity','https://www.nice.org.uk/guidance/cg31/chapter/Recommendations'],
+ 'migration-grief':['Renner et al. (2024), systematic review of migratory grief','https://pubmed.ncbi.nlm.nih.gov/38435975/'],
+ 'homesickness':['Renner et al. (2024), systematic review of migratory grief','https://pubmed.ncbi.nlm.nih.gov/38435975/'],
+ 'belonging-between-countries':['Ward and Szabó (2023), acculturation and cultural identity','https://www.nature.com/articles/s44159-023-00171-2'],
+ 'culture-shock':['Ward and Szabó (2023), acculturation and cultural identity','https://www.nature.com/articles/s44159-023-00171-2']
+};
 const safetyNotes={
  'racial-discrimination':'Racially unequal treatment may involve real threats or discrimination. Do not approach an unsafe person or assume changing your thoughts will resolve their behaviour. Appropriate practical or legal support may matter.',
  'racial-profiling':'If an authority or security officer has threatened or harmed you, immediate safety takes priority. Do not use a journal as a substitute for qualified legal advice, particularly if an encounter is ongoing.',
@@ -164,10 +191,8 @@ function build(id){
  const whyCases=makeExamples(d,article,profiles,roots);
  const ideas=makeIdeas(d,article,profiles,routes,whyCases);
  const sourceList=[...sources[d.domain]];
- if(id==='fear-divine-punishment')sourceList.unshift(['NICE CG31: OCD symptoms involving religion and culture','https://www.nice.org.uk/guidance/cg31/chapter/Recommendations']);
- if(id==='losing-faith')sourceList[0]=['Religious conversion and deconversion, longitudinal study (2023)','https://pubmed.ncbi.nlm.nih.gov/37664880/'];
- if(id==='racial-discrimination'||id==='institutional-racism'||id==='microaggressions')sourceList[0]=sources.culture[0];
- if(id==='fear-divine-punishment')sourceList.push(['International OCD Foundation: faith and scrupulosity','https://iocdf.org/faith-ocd/what-is-ocd-scrupulosity/']);
+ if(topicResearch[id])sourceList.unshift(topicResearch[id]);
+ if(id==='fear-divine-punishment')sourceList.push(['International OCD Foundation: religious scrupulosity','https://iocdf.org/faith-ocd/what-is-ocd-scrupulosity/']);
  const whyQuestions=[
   d.questions[0],d.questions[1],d.questions[2],d.questions[3],d.questions[4],
   'When you think about "'+d.versions[0][0]+'", what happened in your own situation?',
