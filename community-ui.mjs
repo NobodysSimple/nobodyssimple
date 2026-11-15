@@ -102,28 +102,94 @@ export async function renderDiscussion(root,id=''){
  `);
  bindGate(root,()=>renderDiscussion(root));root.querySelector('[data-feed-refresh]').onclick=()=>renderDiscussion(root);
  let loaded=[],hidden=[],cursor=null,activeTopic='all';
-  const paint=()=>{
-   const input=root.querySelector('[data-board-search]');
-   if(!input)return;
-   const needle=input.value.trim().toLowerCase();
-   const items=loaded.filter(post=>!hidden.includes(post.authorUid)
-      &&(String(post.title||'')+' '+String(post.body||'')).toLowerCase().includes(needle)
-      &&boardMatchesTopic(post,activeTopic));
-   root.querySelector('[data-board-feed]').innerHTML=items.map(post=>{
-    const featured=boardWelcomePost(post),preview=String(post.body||''),short=preview.slice(0,200);
-    return `<article class="board-feed-card ${featured?'board-featured-post':''}">
-     ${featured?'<p class="board-featured-label">✦ COMMUNITY WELCOME</p>':''}
-     <div class="board-byline">${author(post)}<time>${esc(date(post.createdAt))}</time></div>
-     <a class="board-post-link" href="#discussion/${encodeURIComponent(post.id)}">
-      <h2>${esc(post.title)}</h2><p>${esc(short)}${preview.length>200?'…':''}</p>
-      <span class="board-post-cta">Open discussion <span aria-hidden="true">→</span></span>
-     </a>
-     <div class="board-card-footer"><span class="board-card-label">${featured?'✧ Welcome to the fire':'☷ Community discussion'}</span>
-      ${post.attachmentCount? `<span class="board-card-label">↗ ${post.attachmentCount} ${post.attachmentCount===1?'attachment':'attachments'}</span>`:''}
+ const statsRequests=new Map();
+ let statsObserver=null;
+ const statsFor=id=>{
+  if(!statsRequests.has(id))statsRequests.set(id,client.postStats(id).catch(error=>{statsRequests.delete(id);throw error;}));
+  return statsRequests.get(id);
+ };
+ const updateCardStats=(id,stats)=>{
+  root.querySelectorAll('[data-board-card-id]').forEach(card=>{
+   if(card.dataset.boardCardId!==id)return;
+   const count=card.querySelector('[data-board-reply-total]');
+   const likes=card.querySelector('[data-board-like-total]');
+   const likeButton=card.querySelector('[data-board-like]');
+   if(count)count.textContent=`${stats.replies} ${stats.replies===1?'reply':'replies'}`;
+   if(likes)likes.textContent=String(stats.likes);
+   if(likeButton){
+    likeButton.setAttribute('aria-pressed',String(stats.liked));
+    likeButton.setAttribute('aria-label',`${stats.liked?'Unlike':'Like'} discussion (${stats.likes} likes)`);
+   }
+  });
+ };
+ const hydrateCard=card=>{
+  if(card.dataset.statsRequested==='true')return;
+  card.dataset.statsRequested='true';
+  const id=card.dataset.boardCardId;
+  statsFor(id).then(stats=>{if(alive(v))updateCardStats(id,stats);}).catch(()=>{
+   if(!alive(v))return;
+   const count=card.querySelector('[data-board-reply-total]');
+   if(count)count.textContent='View replies';
+  });
+ };
+ const hydrateStats=()=>{
+  statsObserver?.disconnect();
+  const cards=[...root.querySelectorAll('[data-board-card-id]')];
+  if(typeof IntersectionObserver!=='function'){cards.forEach(hydrateCard);return;}
+  const observer=new IntersectionObserver(entries=>{
+   for(const entry of entries){
+    if(!entry.isIntersecting)continue;
+    observer.unobserve(entry.target);
+    hydrateCard(entry.target);
+   }
+  },{rootMargin:'160px'});
+  statsObserver=observer;
+  cards.forEach(card=>observer.observe(card));
+ };
+ const paint=()=>{
+  const input=root.querySelector('[data-board-search]');
+  if(!input)return;
+  const needle=input.value.trim().toLowerCase();
+  const items=loaded.filter(post=>!hidden.includes(post.authorUid)
+    &&(String(post.title||'')+' '+String(post.body||'')).toLowerCase().includes(needle)
+    &&boardMatchesTopic(post,activeTopic))
+    .sort((a,b)=>Number(boardWelcomePost(b))-Number(boardWelcomePost(a)));
+  root.querySelector('[data-board-feed]').innerHTML=items.map(post=>{
+   const featured=boardWelcomePost(post),preview=String(post.body||''),short=preview.slice(0,210);
+   const postUrl='#discussion/'+encodeURIComponent(post.id);
+   const topics=boardTopicsForPost(post);
+   const tags=topics.length?topics.map(topic=>`<span class="board-post-tag" ${topic.suggested?'title="Suggested theme from post text"':''}>${topic.icon} ${esc(topic.label)}</span>`).join(''):'<span class="board-post-tag">☷ Community</span>';
+   return `<article class="board-feed-card ${featured?'board-featured-post':''}" data-board-card-id="${esc(post.id)}">
+    ${featured?'<p class="board-featured-label">✦ FEATURED WELCOME</p>':''}
+    <div class="board-byline">${author(post)}<time>${esc(date(post.createdAt))}</time></div>
+    <a class="board-post-link" href="${postUrl}">
+     <h2>${esc(post.title)}</h2><p>${esc(short)}${preview.length>210?'…':''}</p>
+    </a>
+    <div class="board-card-footer">
+     <div class="board-post-tags">${tags}</div>
+     <div class="board-card-meta">
+      <a class="board-reply-link" href="${postUrl}" aria-label="Read discussion and replies"><span aria-hidden="true">☏</span> <span data-board-reply-total>Replies</span></a>
+      <button type="button" class="board-feed-like" data-board-like="${esc(post.id)}" aria-label="Like discussion" aria-pressed="false" ${canWrite()?'':'disabled title="Verify an account to react"'}><span aria-hidden="true">♡</span> <span data-board-like-total>Like</span></button>
+      <a class="board-card-open" href="${postUrl}">Open discussion <span aria-hidden="true">→</span></a>
      </div>
-    </article>`;
-   }).join('')||'<div class="board-empty">No loaded discussions match these filters. Try All or load more discussions.</div>';
-  };
+    </div>
+   </article>`;
+  }).join('')||'<div class="board-empty">No loaded discussions match these filters. Try All or load more discussions.</div>';
+  root.querySelectorAll('[data-board-like]').forEach(button=>{
+   button.addEventListener('click',async()=>{
+    const id=button.dataset.boardLike;
+    button.disabled=true;
+    try{
+     await client.react(id,'like');
+     statsRequests.delete(id);
+     const stats=await statsFor(id);
+     if(alive(v))updateCardStats(id,stats);
+    }catch(error){if(alive(v))root.querySelector('[data-feed-status]').textContent=communityError(error);}
+    finally{if(alive(v))button.disabled=false;}
+   });
+  });
+  hydrateStats();
+ };
  const load=async()=>{const button=root.querySelector('[data-feed-more]');button.disabled=true;try{const page=await client.feed(cursor);if(!alive(v))return;loaded.push(...page);cursor=page.at(-1)?.cursor;paint();button.hidden=page.length<15;root.querySelector('[data-feed-status]').textContent='';}catch(e){if(alive(v))root.querySelector('[data-feed-status]').textContent=communityError(e);}finally{if(alive(v))button.disabled=false;}};
  root.querySelector('[data-board-search]').oninput=paint;root.querySelector('[data-feed-more]').onclick=load;
   root.querySelectorAll('[data-board-topic]').forEach(button=>{
