@@ -4,7 +4,6 @@
  */
 import {escapeHTML as escape} from './core.mjs';
 import {topicPageModel} from './ns-topic-reading-data.mjs';
-import {renderCfmStart,renderCfmEnd} from './ns-cfm-guide-ui.mjs';
 const e=x=>escape(String(x??''));
 const list=items=>'<ul>'+items.map(t=>'<li>'+e(t)+'</li>').join('')+'</ul>';
 const heading=(eyebrow,title)=>'<div class="ns-topic-section-heading">'+
@@ -35,8 +34,6 @@ export function renderTopicQuickNav(g){
   '</nav>';
 }
 export function renderTopicReadingStart(g){
- const authored=renderCfmStart(g);
- if(authored)return authored;
  const m=topicPageModel(g);
  if(!m||g.safetyFirst)return '';
  const diagnosisIdentity=g.id==='mental-health-diagnosis-identity';
@@ -116,8 +113,6 @@ export function renderTopicReadingStart(g){
  '</div>';
 }
 export function renderTopicReadingEnd(g){
- const authored=renderCfmEnd(g);
- if(authored)return authored;
  const m=topicPageModel(g);
  if(!m||g.safetyFirst)return '';
  return '<div class="ns-topic-reading ns-topic-reading-end" id="ns-topic-answers">'+
@@ -186,7 +181,7 @@ export function bindTopicJumps(surface){
     id=need==='understand'?'ns-topic-understand':need==='identity'?'ns-topic-profile':need==='stigma'?'ns-topic-reassurance':'ns-topic-support';
    }
   }
-  const allowed=['ns-topic-common','ns-topic-understand','ns-topic-profile','ns-pick-chooser','ns-topic-answers','ns-topic-reassurance','ns-topic-support','ns-topic-relief','ns-cfm-journal'];
+  const allowed=['ns-topic-common','ns-topic-understand','ns-topic-profile','ns-pick-chooser','ns-topic-answers','ns-topic-reassurance','ns-topic-support','ns-topic-relief'];
   if(!allowed.includes(id))return;
   const section=surface.querySelector('#'+id);
   if(!section)return;
