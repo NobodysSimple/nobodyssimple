@@ -30,7 +30,7 @@ test('all 45 long-form articles are individually written, complete and evidence-
   assert.equal(g.now.steps.length,3,g.id);
   assert.ok(g.safety.length>=70,g.id+' missing safety guidance');
   assert.ok(g.sources.length>=1,g.id+' missing sources');
- });
+ }
 });
 test('45 topics offer 180 distinct four-question free-writing journals and optional suggestions',()=>{
  const prompts=[];
@@ -57,7 +57,7 @@ test('all practical and support popups contain direct unique guidance with no ge
   for(const kind of ['actions','support']){
    const ideas=g.ideas[kind];
    assert.equal(ideas.length,20,g.id+' '+kind);
-   assert.equal(new Set(ideas).size,12,g.id+' '+kind+' repeated suggestions');
+   assert.equal(new Set(ideas).size,20,g.id+' '+kind+' repeated suggestions');
    assert.ok(ideas.every(x=>x.length>=38),g.id+' '+kind+' too vague');
    assert.ok(ideas.every(x=>!banned.test(x)),g.id+' '+kind+' has generic template');
    total+=ideas.length;
