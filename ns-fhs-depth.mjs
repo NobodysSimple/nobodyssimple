@@ -44,7 +44,7 @@ const domainEmotion={
  environment:'Concern, grief or anger may be understandable responses to a real-world problem.'
 };
 const domainRule={
- family:'A repeated family role may influence this moment; a single example cannot establish everyone's intentions.',
+ family:'A repeated family role may influence this moment; a single example cannot establish the intentions of everyone involved.',
  harm:'An account of the harmful conduct matters more than guessing why the person did it.',
  inequality:'Resource shortages and unequal treatment must not be dismissed as failures of personal motivation.',
  environment:'A real threat deserves proportionate evidence and safety action, not forced optimism.'
