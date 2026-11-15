@@ -96,6 +96,32 @@ export class Publisher {
     return { head, tree: commit.tree.sha, data, assets };
   }
 
+  // Staff-authored supplementary topic copy is stored separately from the 518
+  // underlying guides. A concurrent GitHub edit is rejected by the contents API.
+  async readTopicPublications() {
+    const file=await this.api(`${this.base}/contents/ns-topic-publications.json?ref=${this.branch}`);
+    const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\\s/g,'')),c=>c.charCodeAt(0));
+    const data=JSON.parse(new TextDecoder().decode(bytes));
+    if(data.version!==1||!data.topics||typeof data.topics!=='object'||Array.isArray(data.topics))throw Error('Topic publication format changed; re-open the studio before editing.');
+    return {sha:file.sha,data};
+  }
+
+  async publishTopicSections(topicId,sections) {
+    if(!/^[a-z0-9][a-z0-9-]{0,119}$/.test(topicId))throw Error('Invalid topic identifier.');
+    const {sha,data}=await this.readTopicPublications();
+    const clean=Object.fromEntries(['overview','variations','actions'].map(key=>[key,String(sections[key]||'').trim().slice(0,3600)]));
+    if(Object.values(clean).some(text=>text.length>3600))throw Error('Topic section is too long.');
+    const next={version:1,topics:{...data.topics}};
+    if(Object.values(clean).some(Boolean))next.topics[topicId]={...clean,updatedAt:new Date().toISOString()};
+    else delete next.topics[topicId];
+    const utf8=new TextEncoder().encode(JSON.stringify(next,null,2)+'\\n');
+    let binary='';for(let i=0;i<utf8.length;i+=8192)binary+=String.fromCharCode(...utf8.subarray(i,i+8192));
+    const result=await this.api(`${this.base}/contents/ns-topic-publications.json`,'PUT',{
+      message:`Update navigation topic copy: ${topicId}`,content:btoa(binary),sha,branch:this.branch
+    });
+    return {sha:result.commit?.sha,section:next.topics[topicId]||null};
+  }
+
   async contentHistory(limit = 12) {
     const commits = await this.api(`${this.base}/commits?path=content.json&per_page=${Math.max(1, Math.min(20, limit))}`);
     return commits.map((item) => ({ sha: item.sha, message: item.commit?.message || "Content update", date: item.commit?.author?.date || "" }));
