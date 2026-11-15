@@ -42,6 +42,30 @@ test('asylum and exploitation do not offer local saving of sensitive journal res
   await expect(page.locator('[data-mood-screen]')).toContainText('not stored');
  }
 });
+test('all Culture Faith Migration guides omit the extra Conditions box',async({page})=>{
+ for(const id of ['racial-discrimination','culture-shock','losing-faith','asylum-stress']){
+  await open(page,id);
+  await expect(page.locator('.ns-mood-cycle')).toHaveCount(0);
+  await expect(page.getByText('Conditions that may matter here',{exact:true})).toHaveCount(0);
+ }
+});
+test('the browser matches the reference format with short searchable situation cards and clear group labels',async({page})=>{
+ await open(page,'culture-shock');
+ await page.locator('[data-mood-why-toggle]').click();
+ await page.locator('[data-mood-why-browse]').click();
+ await expect(page.locator('[data-mood-why-count]')).toContainText('16 matching examples');
+ await expect(page.locator('[data-mood-why-results] button')).toHaveCount(10);
+ await expect(page.locator('[data-mood-why-results] button').first()).toContainText('A greeting I thought was polite seemed rude');
+ await page.locator('[data-mood-why-search]').fill('appointment');
+ await expect(page.locator('[data-mood-why-count]')).toContainText('0 matching examples');
+ await page.locator('[data-mood-why-search]').fill('book a service');
+ await expect(page.locator('[data-mood-why-count]')).toContainText('1 matching example');
+ await expect(page.locator('[data-mood-why-results] button')).toHaveCount(1);
+ await page.locator('[data-mood-why-search]').fill('');
+ await page.locator('[data-mood-why-more]').click();
+ await expect(page.locator('[data-mood-why-results] button')).toHaveCount(16);
+ await expect(page.locator('[data-mood-why-results] button strong').first()).not.toContainText('You can arrive somewhere exciting and still feel strangely incompetent');
+});
 test('deconversion Understand Why map has 16 examples and ten possible formulation layers',async({page})=>{
  await open(page,'losing-faith');
  await page.locator('[data-mood-why-toggle]').click();
