@@ -9,7 +9,7 @@ const title=(k,h)=>'<div class="ns-topic-section-heading"><p class="ns-topic-kic
 const HIGH_PRIVACY=new Set(['asylum-stress','migrant-work-exploitation','racial-profiling','religious-trauma','faith-community-pressure','religious-family-conflict']);
 const privateMessage=(id)=>HIGH_PRIVACY.has(id)?
  'If anyone can monitor this device or the details could affect your safety or legal situation, consider the questions privately without typing. Nothing here is required. Notes are not automatically saved or submitted.':
- 'This is a private, optional reflection in your current tab. Nothing is submitted or automatically saved. Avoid writing identifying details on a shared device.';
+ 'This is a private, optional reflection in your current tab. Notes are not automatically saved or submitted. Avoid writing identifying details on a shared device.';
 function cfmTop(g,m){
  const id=g.optionId||g.id, item=cfmGuide(id);
  const versionList=item.versions.map(([label,detail],i)=>
