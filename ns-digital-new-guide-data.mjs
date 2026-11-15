@@ -82,7 +82,7 @@ function build(d){
   'Identify the specific circumstance affecting '+p[0].toLowerCase()+': '+p[1],
   'Consider the route-specific response and whether it suits your situation: '+d.options[i],
   'Check which person or service has responsibility for the concern associated with '+p[0].toLowerCase()+'.',
-  'Review what happened after your response, especially whether the problem or risk was actually reduced.'
+  'Review what happened after responding to '+p[0].toLowerCase()+', including whether the actual risk or problem was reduced.'
  ]);
  const ideas=[...new Set([...d.options,...d.now,...extra,'Read the linked guidance: '+d.source[0]+'.'])].slice(0,24);
  if(ideas.length!==24)fail(d.id,'24 distinct optional actions required');
