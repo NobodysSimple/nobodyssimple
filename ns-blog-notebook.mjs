@@ -49,7 +49,7 @@ function ensureCSS(){
 function heroMarkup(post){
  const src=safeImage(post.thumbnail);
  if(src)return `<figure class="nb-hero-image nb-photo-frame"><span class="nb-tape" aria-hidden="true"></span>
-   <img src="${esc(src)}" alt="${esc(/^(?:[^./]+\\.)?(?:png|webp|jpe?g)$/i.test(asText(post.thumbnailAlt)) ? 'Illustration for '+post.title : asText(post.thumbnailAlt))}" decoding="async">
+   <img src="${esc(src)}" alt="${esc(/\.(?:png|webp|jpe?g)$/i.test(asText(post.thumbnailAlt)) ? 'Illustration for '+post.title : asText(post.thumbnailAlt))}" decoding="async">
    ${post.thumbnailAlt?`<figcaption>${esc(post.thumbnailAlt)}</figcaption>`:''}</figure>`;
  return `<div class="nb-hero-illustration" aria-hidden="true"><img class="nb-scene-picture" src="ns-landscape-path.webp" alt=""><img class="nb-hero-character" src="ns-character-reading.webp" alt=""></div>`;
 }
