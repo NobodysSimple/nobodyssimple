@@ -55,12 +55,12 @@ export const CFM_ADVICE_MORE_MIGRATION={
  ],
  support:[
  'Ask a settlement worker which local services can help with your next specific task.',
- 'Find a language class with a timetable that fits transport or caring responsibilities.',
+ 'Ask whether a language course offers childcare support or remote sessions.',
  'Seek an appropriate interpreter for healthcare decisions.',
  'Ask an organisation about safe ways to maintain contact with relatives abroad.',
  'Request help understanding official correspondence instead of relying on assumptions.',
  'Find a community gathering where your cultural background is recognised.',
- 'Ask a trusted neighbour to show you an essential route.',
+ 'Find out whether a community transport scheme can help you reach a necessary appointment.',
  'Consider trauma-informed mental health support alongside practical assistance when needed.'
  ]},
 'homesickness':{
@@ -69,14 +69,14 @@ export const CFM_ADVICE_MORE_MIGRATION={
  'Send a photograph of an ordinary part of your day rather than waiting for significant news.',
  'Keep a familiar meal or celebration in your calendar.',
  'Find a local place to visit repeatedly until it begins to feel recognisable.',
- 'Notice whether loneliness becomes strongest at a particular time and arrange connection then.',
+ 'Plan something enjoyable for the hour following a difficult goodbye call.',
  'Avoid comparing a new place’s hardest days with an idealised memory of home.',
  'Write down what the move has made possible alongside what it has cost.',
  'Choose an activity that helps you build a relationship where you currently live.'
  ],
  support:[
  'Invite a friend from home to share an ordinary activity over a call.',
- 'Ask someone local to introduce you to a neighbourhood activity.',
+ 'Check whether a nearby event has a low-cost or drop-in option so you can try it without committing.',
  'Find a community group that celebrates a tradition you miss.',
  'Tell a trusted person exactly which part of home feels absent.',
  'Request company for a new experience rather than waiting until you feel fully settled.',
@@ -117,7 +117,7 @@ export const CFM_ADVICE_MORE_MIGRATION={
  'Keep a tradition that matters to you even while learning different everyday practices.'
  ],
  support:[
- 'Ask a colleague or neighbour to explain an unfamiliar process step by step.',
+ 'Ask for an example of a completed form or procedure when written guidance is unclear.',
  'Find an orientation event for newcomers that covers actual local services.',
  'Request accessible information when a procedure is confusing.',
  'Practise one social interaction with someone patient and willing to explain differences.',
@@ -134,7 +134,7 @@ export const CFM_ADVICE_MORE_MIGRATION={
  'Avoid turning delays in replying into evidence that a loved one cares less.',
  'Plan how urgent family information will reach you across time zones.',
  'Keep a shared calendar for important dates when that helps connection.',
- 'Allow yourself to enjoy your current life without treating that enjoyment as disloyal.',
+ 'Agree with family on a way to share good news so happiness is not hidden across the distance.',
  'Set realistic expectations about visits rather than making promises that depend on finances or status.'
  ],
  support:[
@@ -182,16 +182,16 @@ export const CFM_ADVICE_MORE_MIGRATION={
  support:[
  'Ask a tutor which aspect of an assignment needs improvement.',
  'Contact the student hardship service if essentials are becoming unaffordable.',
- 'Request international-student advice about academic or visa conditions.',
+ 'Ask a student adviser whether a course change could affect your immigration permissions before applying.',
  'Find a student society that meets regularly and is accessible to you.',
  'Ask a librarian for help locating an example of the expected academic style.',
  'Seek confidential wellbeing support before difficulties become severe.',
  'Tell a trusted person at home what kind of practical support would help.',
- 'Request an extension through the proper process when circumstances justify one.'
+ 'Ask a tutor for a realistic recovery plan after missing essential teaching.'
  ]},
 'belonging-between-countries':{
  actions:[
- 'Describe what home means to you without requiring one geographical answer.',
+ 'Write two different answers to the question of home: one about your present relationships and one about your history.',
  'Keep everyday practices from both places when they are meaningful.',
  'Notice whether someone is asking about citizenship or personal belonging before answering.',
  'Allow your relationship with a country to change after another period of living there.',
@@ -243,7 +243,7 @@ export const CFM_ADVICE_MORE_MIGRATION={
  'Seek independent qualified guidance before changing a sponsorship-linked role.'
  ],
  support:[
- 'Contact an appropriately regulated employment or immigration adviser.',
+ 'Ask a specialist to explain the practical consequences of changing sponsors before signing anything.',
  'Ask an independent service about legal protections against threats involving sponsorship.',
  'Request confidential advice about housing tied to a job.',
  'Seek help obtaining wage records if they are being withheld.',
@@ -260,11 +260,11 @@ export const CFM_ADVICE_MORE_MIGRATION={
  'Plan conversations with family that are not entirely about the application.',
  'Agree how important official messages will be shared promptly.',
  'Recognise that different family members may cope differently with waiting.',
- 'Choose one ordinary shared activity that works across distance.',
+ 'Plan a shared decision about household routines that does not depend on the approval date.',
  'Keep confirmed dates separate from hoped-for timelines.'
  ],
  support:[
- 'Ask a qualified adviser which documents may be needed for the next stage.',
+ 'Ask your representative which future costs are unavoidable and which should wait for official confirmation.',
  'Request a reliable update channel from the relevant caseworker.',
  'Discuss provisional accommodation arrangements with someone who knows the local requirements.',
  'Ask family members what kind of contact helps them feel close.',
