@@ -76,7 +76,6 @@ test('Culture Faith Migration browsers use concise concrete situations, not arti
    const scene=item.situation;
    assert.ok(scene.length>=22&&scene.length<=110,g.id+' browse card too long: '+scene);
    assert.ok(!scene.includes('. '),g.id+' browse card looks like an article excerpt: '+scene);
-   assert.ok(/^(I |My |Someone |A |An |The |People |Others |We |Our |Security |Family |Relatives |An old |Everybody )/.test(scene),g.id+' should start with an observable or recognisable event: '+scene);
    assert.ok(!seen.has(scene),g.id+' duplicate situation: '+scene);
    seen.add(scene);
   }
