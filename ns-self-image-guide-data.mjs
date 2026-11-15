@@ -56,7 +56,7 @@ const stages={
 const domainReality={
  identity:'Your current choices and relationships matter. An earlier role or expectation may be relevant without proving one hidden explanation.',
  lgbtq:'Identity exploration and expression are not pathologies. Examine actual discrimination and disclosure safety before interpreting distress as an internal problem.',
- appearance:'Physical health and external stigma matter. The person's appearance does not need correcting to merit respectful treatment.'
+ appearance:'Physical health and external stigma matter. Appearance does not need correcting to merit respectful treatment.'
 };
 const privacy=new Set([
  'gender-identity-exploration','coming-out-decision','coming-out-rejection','gender-dysphoria','gender-euphoria',
@@ -130,7 +130,7 @@ function build(data,domain){
   ...routes.map(r=>r.practice),
   ...data.profiles.map((p,i)=>'Consider the actual circumstances behind '+p[0].toLowerCase()+': '+p[1]),
   ...data.cases.map((p,i)=>'Reflect on the specific situation: '+p[0]+'. '+data.actions[i]),
-  ...data.article.slice(5,9).map((p,i)=>'The article also discusses: '+first(p)),
+  ...data.article.slice(2,10).map((p,i)=>'Consider how this part of your experience may apply: '+first(p)),
   ...data.actions.map((a,i)=>'If you want additional support with '+label[i].toLowerCase()+', discuss this possibility with someone safe: '+a),
   'Read the linked guidance: '+source[0]+'.'
  ];
