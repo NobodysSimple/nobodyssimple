@@ -136,7 +136,9 @@ export function renderNeedsConsole(root,parts=[]){
  if(mode&&getNeedsMode(mode)){
   if(typeof location!=='undefined'){location.hash='#navigate';return;}
  }
- const state={theme:'',subdomain:'',query:'',limit:NAV_TOPIC_PAGE_SIZE};
+ const requestedTheme=mode==='area'&&NAV_THEMES.some(t=>t.id===path[1])?path[1]:'';
+ const requestedSubdomain=requestedTheme&&subdomainsForArea(requestedTheme).some(g=>g.id===path[2])?path[2]:'';
+ const state={theme:requestedTheme,subdomain:requestedSubdomain,query:'',limit:NAV_TOPIC_PAGE_SIZE};
  const paint=(focus=true)=>{root.innerHTML=landing(state);if(focus)focusHeading(root);};
  root.__nsNeedsState=state;root.__nsNeedsPaint=paint;
  if(root.dataset.nsNeedsNavigatorBound!=='true'){
