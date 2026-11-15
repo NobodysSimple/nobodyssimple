@@ -151,7 +151,7 @@ function makeRoutes(d,profiles){
    'What has this particular experience made harder for you, and which people or conditions affect your options?',
    'Would this response fit your situation: '+strip(v[2])+'? What would you change?'
   ];
-  return {id:'path-'+i,title:v[0],label:v[0],description:v[1],
+  return {id:'path-'+i,title:v[0],label:v[0],description:v[1].length>=38?v[1]:v[1]+' '+d.questions[3],
    finish:d.closing,practiceTitle:'A possible next step',practice:v[2],
    questions:questions.map((q,j)=>[q,
     j===0?d.questions[0]:j===1?d.questions[1]:j===2?d.questions[3]:d.questions[4],
