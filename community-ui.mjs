@@ -29,12 +29,12 @@ const shell=content=>{
 };
 const boardTopics=[
  {id:'all',label:'All',icon:'✦',pattern:null},
- {id:'support',label:'Support',icon:'♡',pattern:/\b(help|support|overwhelm|stuck|struggl|burnout|anxious|lonely|hard time|feeling low)\b/i},
+ {id:'support',label:'Support',icon:'♡',pattern:/\b(?:help|support|overwhelm\w*|stuck|struggl\w*|burnout|anxious|lonely|hard time|feeling low)\b/i},
  {id:'advice',label:'Advice',icon:'✧',pattern:/\b(advice|tips|suggest|recommend|how do|what should|help me|guidance|any ideas)\b/i},
- {id:'wins',label:'Small wins',icon:'✳',pattern:/\b(proud|win|achievement|managed|celebrat|finally|progress|good news|grateful)\b/i},
+ {id:'wins',label:'Small wins',icon:'✳',pattern:/\b(?:proud|win|achievement|managed|celebrat\w*|finally|progress|good news|grateful)\b/i},
  {id:'questions',label:'Questions',icon:'?',pattern:/\?|question|wonder|why\b|how\b|can anyone/i},
- {id:'venting',label:'Venting',icon:'☁',pattern:/\b(vent|rant|frustrat|angry|fed up|exhausted|upset)\b/i},
- {id:'creativity',label:'Creativity',icon:'✎',pattern:/\b(art|drawing|painting|poem|write|writing|music|craft|creativ|design)\b/i},
+ {id:'venting',label:'Venting',icon:'☁',pattern:/\b(?:vent|rant|frustrat\w*|angry|fed up|exhausted|upset)\b/i},
+ {id:'creativity',label:'Creativity',icon:'✎',pattern:/\b(?:art|drawing|painting|poem|write|writing|music|craft|creativ\w*|design)\b/i},
  {id:'everyday',label:'Daily life',icon:'☕',pattern:/\b(today|routine|daily|morning|evening|work|home|family|friend|sleep|habit|life)\b/i}
 ];
 const boardMatchesTopic=(post,topic)=>{
@@ -60,7 +60,7 @@ export async function renderDiscussion(root,id=''){
    <div class="board-feed-actions">${canWrite()?'<a class="button board-write-post" href="#discussion/new">✎ Write a post +</a>':''}<button class="chip" data-feed-refresh>↻ Refresh</button></div>
   </div>
   <div class="board-community-grid">
-   <main class="board-community-main">
+   <div class="board-community-main">
     <p class="board-public-note">Posts and comments are public. Use your nickname and avoid sharing anyone’s private information.</p>
     <label class="field board-search-field">Search loaded discussions<input type="search" data-board-search placeholder="Search discussions…" autocomplete="off"></label>
     <div class="board-topic-filters" role="group" aria-label="Filter loaded discussions by suggested topic">
@@ -70,7 +70,7 @@ export async function renderDiscussion(root,id=''){
     <div class="board-feed" data-board-feed><p role="status">Gathering conversations…</p></div>
     <button class="button secondary board-load-more" data-feed-more hidden>Load more discussions</button>
     <p role="status" data-feed-status></p><div data-staff-door></div>
-   </main>
+   </div>
    <aside class="board-community-aside" aria-label="Community information">
     <section class="board-seat-card"><p class="board-section-eyebrow">YOU BELONG HERE</p><h3>Pull up a seat.</h3>
      <p>You don’t need the perfect words to join in. Share a question or simply listen to the conversation.</p>
