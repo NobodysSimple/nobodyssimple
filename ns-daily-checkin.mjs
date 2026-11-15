@@ -26,18 +26,18 @@ export function readDailyCheckins(){
   return Array.isArray(records)?records.filter(item=>item&&typeof item==='object'&&typeof item.date==='string'):[];
  }catch{return [];}
 }
-function broadcast(){window.dispatchEvent(new CustomEvent(DAILY_CHECKIN_CHANGED));}
+function broadcast(detail){window.dispatchEvent(new CustomEvent(DAILY_CHECKIN_CHANGED,{detail}));}
 export function saveDailyCheckin(record){
  const next=[...readDailyCheckins(),record];
  localStorage.setItem(DAILY_CHECKIN_KEY,JSON.stringify(next));
- broadcast();
+ broadcast({type:'save',date:record.date});
  return record;
 }
 export function deleteDailyCheckin(id){
  const records=readDailyCheckins(),next=records.filter(item=>String(item.id)!==String(id));
  if(next.length===records.length)return false;
  localStorage.setItem(DAILY_CHECKIN_KEY,JSON.stringify(next));
- broadcast();
+ broadcast({type:'delete'});
  return true;
 }
 function summaryForToday(){
