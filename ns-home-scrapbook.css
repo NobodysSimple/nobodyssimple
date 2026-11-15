@@ -7,8 +7,8 @@ body.app-body.ns-shell-v1 #main:has(> .ns-home-refined){
  --home-ink:#214f3a;
  --home-gold:#d7a55a;
  --home-edge:#e4d9c2;
- background-color:#f8f2e5;
- background-image:linear-gradient(180deg,rgba(255,251,241,.13),rgba(254,249,236,.04)),url("home-art/home-meadow.svg");
+ background-color:#d9e5df;
+ background-image:linear-gradient(180deg,rgba(247,249,240,.045),rgba(250,245,230,.02)),url("home-art/watercolor-countryside.svg");
  background-size:100% 100%,cover;
  background-position:center,center top;
  background-repeat:no-repeat;
@@ -45,19 +45,15 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero{
   #fffbf1!important;
  box-shadow:0 13px 33px rgba(73,74,48,.14),0 2px 5px rgba(70,68,42,.065)!important;
 }
+/* A single paperclip replaces the oversized botanical cutout. */
 body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero::before{
- content:"";position:absolute;z-index:0;pointer-events:none;
- left:-38px;bottom:-31px;width:124px;height:188px;
- background:url("home-art/pressed-flowers.svg") center/contain no-repeat;opacity:.68;transform:rotate(-17deg);
+ content:"";position:absolute;z-index:5;pointer-events:none;
+ top:-16px;left:clamp(16px,3vw,34px);width:22px;height:51px;
+ border:3px solid #d1a55d;border-radius:13px;
+ background:transparent;transform:rotate(18deg);
+ box-shadow:0 2px 4px #725d3b19,inset 0 0 0 4px #fffbf1;
 }
-body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero::after{
- content:"";pointer-events:none;position:absolute;z-index:3;
- width:113px;height:25px;top:-13px;left:11%;
- transform:rotate(-9deg);
- background:repeating-linear-gradient(45deg,rgba(120,148,109,.8) 0 9px,rgba(221,232,206,.88) 9px 18px);
- border:1px solid rgba(120,148,109,.28);box-shadow:0 2px 3px #58624613;
- clip-path:polygon(2% 0,97% 0,100% 18%,97% 93%,1% 100%,0 66%);
-}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero::after{content:none!important;}
 body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero__copy{
  grid-column:1;grid-row:1;position:relative;z-index:2;align-self:end;
 }
@@ -95,11 +91,13 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero__art::before{
  box-shadow:0 2px 5px rgba(69,64,43,.08);
  clip-path:polygon(0 1%,100% 0,97% 93%,3% 100%);
 }
+/* One little flower sticker stays on the picture, never across a control. */
 body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero__art::after{
  content:"";position:absolute;z-index:4;pointer-events:none;
- right:-26px;bottom:-29px;width:89px;height:136px;
- background:url("home-art/pressed-flowers.svg") center/contain no-repeat;opacity:.9;
- transform:rotate(18deg);
+ right:-18px;bottom:-22px;width:67px;height:67px;
+ background:url("home-art/daisy-sticker.svg") center/contain no-repeat;
+ opacity:.97;transform:rotate(-12deg);
+ filter:drop-shadow(0 4px 4px rgba(73,73,45,.14));
 }
 body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero__land{
  position:absolute;inset:0;width:100%;height:100%;display:block;
@@ -154,10 +152,13 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-wisbody{
   linear-gradient(115deg,#fffcf5,#fff7e7)!important;
  box-shadow:0 10px 27px rgba(57,73,42,.11)!important;
 }
+/* Faded landscape at the far edge, without an intrusive branch. */
 body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-wisbody::before{
- content:"";position:absolute;z-index:0;pointer-events:none;right:7px;top:-16px;
- width:139px;height:166px;background:url("home-art/pressed-flowers.svg") center/contain no-repeat;
- opacity:.40;transform:rotate(14deg);
+ content:"";position:absolute;z-index:0;pointer-events:none;
+ right:0;bottom:0;top:auto;width:clamp(150px,24%,240px);height:96px;
+ border-radius:0 0 23px 0;
+ background:url("home-art/watercolor-countryside.svg") 93% 82%/390px auto no-repeat;
+ opacity:.12;mask-image:linear-gradient(90deg,transparent,#000 60%);
 }
 body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-wisbody::after{
  content:"";position:absolute;z-index:3;pointer-events:none;left:14px;top:-10px;
@@ -196,11 +197,7 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-latest{
   linear-gradient(112deg,#fffbf3,#fdf7ea)!important;
  box-shadow:0 11px 28px rgba(71,69,44,.12)!important;
 }
-body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-latest::before{
- content:"";position:absolute;z-index:0;pointer-events:none;left:6px;top:1px;
- width:115px;height:129px;background:url("home-art/pressed-flowers.svg") center/contain no-repeat;
- opacity:.38;transform:rotate(-29deg);
-}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-latest::before{content:none!important;}
 body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-latest::after{
  content:"";position:absolute;z-index:2;pointer-events:none;
  left:23px;top:-13px;width:96px;height:25px;transform:rotate(-7deg);
@@ -294,11 +291,7 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas{
   linear-gradient(130deg,#fffaf0 0%,#f0f4e7 100%)!important;
  box-shadow:0 14px 34px rgba(55,74,46,.13)!important;
 }
-body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas::before{
- content:"";position:absolute;z-index:0;pointer-events:none;right:-27px;top:-30px;
- width:118px;height:163px;background:url("home-art/pressed-flowers.svg") center/contain no-repeat;
- opacity:.51;transform:rotate(19deg);
-}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas::before{content:none!important;}
 body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas::after{
  content:"";position:absolute;z-index:0;pointer-events:none;left:34px;top:-13px;
  width:152px;height:27px;background:repeating-linear-gradient(90deg,#ecc479 0 13px,#f8e0a9 13px 26px);
@@ -346,8 +339,8 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas .ns-culture-r
 }
 @media(max-width:650px){
  body.app-body.ns-shell-v1 #main:has(> .ns-home-refined){
-  background-image:linear-gradient(180deg,rgba(255,251,242,.36),rgba(255,251,242,.23)),url("home-art/home-meadow.svg");
-  background-position:center,center top;background-size:100% 100%,auto 100%;
+  background-image:linear-gradient(180deg,rgba(255,251,242,.36),rgba(255,251,242,.23)),url("home-art/watercolor-countryside.svg");
+  background-position:center,67% top;background-size:100% 100%,auto 100%;
  }
  body.app-body.ns-shell-v1 #main .ns-home-refined{
   padding:21px 15px 107px!important;gap:16px!important;
@@ -374,7 +367,7 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas .ns-culture-r
  body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero__mascot{
   width:145px!important;height:145px!important;max-height:145px!important;
  }
- body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero__art::after{right:-17px;bottom:-16px;width:57px;height:86px;}
+ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero__art::after{right:-13px;bottom:-13px;width:48px;height:48px;}
  body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-actions{
   order:2;grid-area:auto;align-self:stretch;display:flex!important;flex-direction:column!important;
   gap:8px!important;width:100%!important;margin-top:3px!important;
@@ -383,9 +376,7 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas .ns-culture-r
  body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-wisbody{
   padding:23px 17px!important;
  }
- body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-wisbody::before{
-  width:80px;height:108px;opacity:.2;
- }
+ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-wisbody::before{width:120px;height:60px;opacity:.07;}
  body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-wisbody .wisbody-bubble blockquote{
   font:400 16px/1.56 Georgia,serif!important;padding-right:0;
  }
@@ -399,7 +390,7 @@ body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas .ns-culture-r
  body.app-body.ns-shell-v1 #main .ns-home-refined .home-latest-card:only-child .home-latest-image{height:94px;}
  body.app-body.ns-shell-v1 #main .ns-home-refined .home-latest-card:only-child strong{font-size:18px;}
  body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas{padding:23px 16px!important;}
- body.app-body.ns-shell-v1 #main .ns-home-refined .ns-culture-atlas::before{width:65px;height:92px;right:-5px;top:-15px;opacity:.24;}
+ 
 }
 @media(max-width:400px){
  body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-hero{padding:22px 14px 17px!important;}
