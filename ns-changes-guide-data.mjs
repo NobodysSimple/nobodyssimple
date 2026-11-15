@@ -39,7 +39,7 @@ const lower=s=>s[0].toLowerCase()+s.slice(1);
 const stages=Object.freeze({
  change:['The change or loss','The moment that stays with you','The expectation you had','What has changed in daily life','Your first response','What it helped you manage','An assumption worth checking','The actual constraints','What remains unknown','A possible next choice'],
  trauma:['The event or loss','What happened or was learned','A response you noticed','What may be affecting you now','What you did to stay safe','What support was missing','Responsibility and available choices','Present circumstances and safety','What is known and unknown','A supported next step'],
- lifespan:['The life-stage change','Your specific circumstances','The roles and expectations involved','The practical consequences','Your immediate response','What matters to you','Other people's assumptions','Available resources and access','What can be changed','An informed next decision'],
+ lifespan:['The life-stage change','Your specific circumstances','The roles and expectations involved','The practical consequences','Your immediate response','What matters to you','Other people’s assumptions','Available resources and access','What can be changed','An informed next decision'],
  growth:['The experience','What you genuinely want','The expectation affecting you','What you actually tried','What happened','What you learned','A rule you may be following','Your real resources','Alternative ways to approach it','A choice worth testing']
 });
 const domainPerspective=Object.freeze({
