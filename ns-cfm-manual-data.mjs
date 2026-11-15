@@ -17,10 +17,14 @@ import {CFM_SCENES_MIGRATION} from './ns-cfm-scenes-migration.mjs';
 import {CFM_ADVICE_CULTURE} from './ns-cfm-advice-culture.mjs';
 import {CFM_ADVICE_FAITH} from './ns-cfm-advice-faith.mjs';
 import {CFM_ADVICE_MIGRATION} from './ns-cfm-advice-migration.mjs';
+import {CFM_ADVICE_MORE_CULTURE} from './ns-cfm-advice-more-culture.mjs';
+import {CFM_ADVICE_MORE_FAITH} from './ns-cfm-advice-more-faith.mjs';
+import {CFM_ADVICE_MORE_MIGRATION} from './ns-cfm-advice-more-migration.mjs';
 const additions={...CFM_EXTRA_CULTURE,...CFM_EXTRA_FAITH,...CFM_EXTRA_MIGRATION};
 const authoredProse={...CFM_PROSE_CULTURE,...CFM_PROSE_FAITH,...CFM_PROSE_MIGRATION};
 const authoredScenes={...CFM_SCENES_CULTURE,...CFM_SCENES_FAITH,...CFM_SCENES_MIGRATION};
 const authoredAdvice={...CFM_ADVICE_CULTURE,...CFM_ADVICE_FAITH,...CFM_ADVICE_MIGRATION};
+const additionalAdvice={...CFM_ADVICE_MORE_CULTURE,...CFM_ADVICE_MORE_FAITH,...CFM_ADVICE_MORE_MIGRATION};
 const domains=['culture','faith','migration'];
 const groups=INCLUSIVE_GROUPS_A.filter(g=>domains.includes(g.id));
 const catalogue=new Map(groups.flatMap(g=>g.rows.map(row=>[row[0],{id:row[0],title:row[1],domain:g.id,flags:row[4]||''}])));
@@ -165,17 +169,23 @@ function makeRoutes(d,profiles){
  return [map,...specific];
 }
 function makeIdeas(d){
- const ideas=authoredAdvice[d.id];
- if(!ideas)fail(d.id,'missing individually written practical guidance');
+ const original=authoredAdvice[d.id],extension=additionalAdvice[d.id];
+ if(!original||!extension)fail(d.id,'missing individually authored practical guidance');
+ const output={};
+ const boilerplate=/^(Ask a trusted person about the practical concern|Request support for this possible step|Talk this through with someone who listens|Consider whether this is relevant|Use this worked example to ask|You might discuss this part|A relevant service or ally may be able to help with|Explore what would need to change before attempting this|Write a few words about this question)/i;
  for(const kind of ['actions','support']){
-  if(!Array.isArray(ideas[kind])||ideas[kind].length!==12)fail(d.id,'expected 12 specific '+kind+' suggestions');
-  if(new Set(ideas[kind]).size!==12)fail(d.id,'duplicate '+kind+' advice');
-  for(const suggestion of ideas[kind]){
-   if(suggestion.length<38||suggestion.length>230)fail(d.id,'unclear '+kind+' suggestion: '+suggestion);
-   if(/^(Ask a trusted person about the practical concern|Request support for this possible step|Talk this through with someone who listens|Consider whether this is relevant|Use this worked example to ask|You might discuss this part|A relevant service or ally may be able to help with|Explore what would need to change before attempting this|Write a few words about this question)/i.test(suggestion))fail(d.id,'old boilerplate in '+kind);
+  const main=original[kind],more=extension[kind];
+  if(!Array.isArray(main)||main.length!==12||!Array.isArray(more)||more.length!==8)fail(d.id,'expected 20 personally written '+kind+' suggestions');
+  const all=[...main,...more];
+  if(new Set(all.map(x=>x.toLocaleLowerCase())).size!==20)fail(d.id,'repeated '+kind+' advice');
+  for(const item of all){
+   if(item.length<36||item.length>245)fail(d.id,'unclear '+kind+' suggestion: '+item);
+   if(boilerplate.test(item))fail(d.id,'old boilerplate in '+kind);
+   if(item.includes(': '))fail(d.id,'colon-led instruction remains in '+kind+': '+item);
   }
+  output[kind]=all;
  }
- return ideas;
+ return Object.freeze(output);
 }
 function build(id){
  const d=CFM_GUIDES[id],entry=catalogue.get(id),extra=additions[id];
