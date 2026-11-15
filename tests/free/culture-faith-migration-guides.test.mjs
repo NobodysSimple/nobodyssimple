@@ -67,6 +67,22 @@ test('each page exposes a search-enabled Understand Why map with contextual exam
  }
  assert.equal(scenes,720);
 });
+test('Culture Faith Migration browsers use concise concrete situations, not article excerpts',()=>{
+ const seen=new Set();
+ for(const g of CFM_GUIDES_FULL){
+  assert.equal(g.hideCycle,true,g.id+' must omit the unrequested Conditions box');
+  assert.equal(g.whyCases.length,16,g.id);
+  for(const item of g.whyCases){
+   const scene=item.situation;
+   assert.ok(scene.length>=22&&scene.length<=110,g.id+' browse card too long: '+scene);
+   assert.ok(!scene.includes('. '),g.id+' browse card looks like an article excerpt: '+scene);
+   assert.ok(/^(I |My |Someone |A |An |The |People |Others |We |Our |Security |Family |Relatives |An old |Everybody )/.test(scene),g.id+' should start with an observable or recognisable event: '+scene);
+   assert.ok(!seen.has(scene),g.id+' duplicate situation: '+scene);
+   seen.add(scene);
+  }
+ }
+ assert.equal(seen.size,720);
+});
 test('safety-first considerations preserve practical rights and autonomy',()=>{
  for(const id of ['asylum-stress','migrant-work-exploitation','racial-profiling','religious-trauma','faith-community-pressure','religious-family-conflict']){
   const g=CFM_BY_ID.get(id);
