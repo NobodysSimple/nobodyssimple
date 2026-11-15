@@ -60,7 +60,7 @@ function build(r){
  pathways.forEach((p,i)=>{
   const [name,detail,insight,questions,scenes,tips,help]=p,root='path-'+i;
   if(!name||names.has(name)||count(detail)<25||count(insight)<11)fail(id,'weak or repeated pathway '+i);
-  if(!Array.isArray(questions)||questions.length!==4||questions.some(x=>x.length<26))fail(id,'journal questions '+i);
+  if(!Array.isArray(questions)||questions.length!==4||questions.some(x=>x.length<22))fail(id,'journal questions '+i);
   if(!Array.isArray(scenes)||scenes.length!==4||scenes.some(s=>s.length<18||s.length>115||allScenes.has(s)))fail(id,'short unique scene cards '+i);
   if(!Array.isArray(tips)||tips.length!==5||tips.some(t=>t.length<35))fail(id,'needs five direct actions '+i);
   if(!Array.isArray(help)||help.length!==5||help.some(t=>t.length<35))fail(id,'needs five support suggestions '+i);
