@@ -1,0 +1,502 @@
+/*
+ * Nobody's Simple · Campfire Community
+ * Presentation-only on the existing public board and private message routes.
+ * All posts, reactions, reporting, block rules and message persistence are unchanged.
+ */
+body.app-body #main:has(.board-campfire){
+ background:#f6f0e5;
+ background-image:radial-gradient(ellipse at 93% 7%,#eee4cfa8,transparent 48%),linear-gradient(#faf6ef,#f4ecdf);
+}
+body.app-body #main .board-page.board-campfire{
+ --camp-ink:#254f3c;--camp-ink-soft:#526c59;--camp-paper:#fffdf7;
+ --camp-border:#d7dfce;--camp-gold:#d69b48;--camp-sage:#e6efde;
+ box-sizing:border-box;width:min(100%,1430px);max-width:1430px;
+ padding:clamp(13px,1.8vw,27px) clamp(12px,2vw,28px) 90px;
+ color:var(--camp-ink);margin:0 auto;
+}
+body.app-body #main .board-campfire .board-header.board-campfire-hero{
+ position:relative;isolation:isolate;display:flex;align-items:center;
+ min-height:245px;padding:28px clamp(19px,5vw,68px);
+ overflow:hidden;border-radius:24px;border:1px solid #52644e;
+ box-shadow:0 12px 27px #35453724;background:#28463e;
+ margin:0 0 14px;
+}
+body.app-body #main .board-campfire .board-hero-scene{
+ position:absolute;inset:0;z-index:-2;width:100%;height:100%;
+ object-fit:cover;object-position:center center;display:block;
+}
+body.app-body #main .board-campfire .board-campfire-hero::before{
+ content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+ background:linear-gradient(90deg,#172f2ff2 0%,#1b3435e9 20%,#1b3435c6 34%,#213b3e70 49%,transparent 65%);
+}
+body.app-body #main .board-campfire .board-hero-copy{
+ width:min(47%,565px);min-width:290px;position:relative;z-index:1;
+}
+body.app-body #main .board-campfire .board-hero-copy .eyebrow{
+ color:#f1c67d;font:850 10px/1.4 system-ui,sans-serif;
+ letter-spacing:.16em;text-transform:uppercase;margin:0 0 9px;
+}
+body.app-body #main .board-campfire .board-hero-copy h1{
+ margin:0 0 10px;max-width:19ch;color:#fff6e9;
+ font:500 clamp(31px,3.7vw,49px)/.99 Georgia,serif;
+ letter-spacing:-.04em;text-wrap:balance;text-shadow:0 2px 9px #11251c66;
+}
+body.app-body #main .board-campfire .board-hero-copy>p:last-child{
+ max-width:46ch;color:#f3eadb;font:450 13px/1.58 system-ui,sans-serif;
+ text-shadow:0 1px 5px #102c2a70;margin:0;
+}
+/* Shared navigation: real discussion/messages routes, not fake tabs. */
+body.app-body #main .board-campfire .board-nav.board-campfire-nav{
+ margin:0 0 22px;padding:0 2px 14px;display:flex;gap:8px;
+ align-items:center;border:0;border-bottom:1px solid #d7ddce;
+}
+body.app-body #main .board-campfire .board-campfire-nav>a.button{
+ display:inline-flex;gap:9px;align-items:center;justify-content:center;
+ min-height:42px;padding:8px 17px;
+ border-radius:999px;border:1px solid #d5dfd1;
+ background:#fffdf7;color:#315743;text-decoration:none;
+ font:750 12px/1.2 system-ui,sans-serif;box-shadow:none;
+}
+body.app-body #main .board-campfire .board-campfire-nav>a.button.is-active{
+ background:#285d44;color:#fffdf6;border-color:#285d44;
+ box-shadow:0 3px 9px #2b5d4027;
+}
+body.app-body #main .board-campfire .board-nav-privacy{
+ color:#3b684d;margin-left:auto;text-decoration:underline;text-underline-offset:3px;
+ font:550 11px/1.4 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-gate{
+ margin:0 0 19px;padding:17px 19px;border:1px solid #d3dcc9;
+ border-radius:16px;background:#edf3e4;color:#294e3b;
+}
+body.app-body #main .board-campfire .board-gate strong{font-size:13px}
+body.app-body #main .board-campfire .board-gate p{font-size:12px;line-height:1.55;margin:6px 0}
+/* Feed: main discovery space and a supporting woodland side column. */
+body.app-body #main .board-campfire .board-feed-heading{
+ display:flex;flex-wrap:wrap;gap:15px;justify-content:space-between;
+ align-items:end;margin:8px 0 15px;padding:0 3px;
+}
+body.app-body #main .board-campfire .board-section-eyebrow{
+ display:block;font:800 9px/1.4 system-ui,sans-serif;
+ letter-spacing:.14em;color:#927043;text-transform:uppercase;margin:0 0 7px;
+}
+body.app-body #main .board-campfire .board-feed-heading h2{
+ margin:0 0 6px;color:#26513d;
+ font:500 clamp(28px,2.7vw,37px)/1.1 Georgia,serif;letter-spacing:-.035em;
+}
+body.app-body #main .board-campfire .board-feed-heading p:not(.board-section-eyebrow){
+ margin:0;color:#617266;font:450 12px/1.5 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-feed-actions{
+ display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+}
+body.app-body #main .board-campfire .board-feed-actions>a.button{
+ display:inline-flex;gap:8px;align-items:center;min-height:42px;padding:10px 19px;
+ border-radius:999px;background:#275f44;color:#fffdf5;border:1px solid #275f44;
+ font:750 12px/1.3 system-ui,sans-serif;text-decoration:none;
+}
+body.app-body #main .board-campfire .board-feed-actions>button{
+ min-height:42px;padding:9px 15px;border:1px solid #d4ded1;
+ border-radius:999px;background:#fffdf7;color:#355b44;
+ font:700 12px/1.3 system-ui,sans-serif;cursor:pointer;
+}
+body.app-body #main .board-campfire .board-community-grid{
+ display:grid;grid-template-columns:minmax(0,2.45fr) minmax(270px,.9fr);
+ align-items:start;gap:clamp(15px,2vw,28px);
+}
+body.app-body #main .board-campfire .board-community-main,
+body.app-body #main .board-campfire .board-community-aside{min-width:0}
+body.app-body #main .board-campfire .board-public-note{
+ margin:0 0 11px;color:#69806c;
+ font:450 11px/1.5 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-search-field{
+ display:grid;gap:6px;font:700 11px/1.4 system-ui,sans-serif;color:#486a50;
+ margin:0 0 10px;
+}
+body.app-body #main .board-campfire .board-search-field input{
+ width:100%;box-sizing:border-box;min-height:45px;
+ padding:11px 16px 11px 43px;border:1px solid #d0dcd0;border-radius:13px;
+ background:#fffdf8;color:#284d39;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='19' height='19' viewBox='0 0 24 24' fill='none' stroke='%235c7561' stroke-width='1.8' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.2'/%3E%3Cpath d='m15.2 15.2 4.5 4.5'/%3E%3C/svg%3E");
+ background-repeat:no-repeat;background-size:18px 18px;background-position:14px center;
+ font:450 12px/1.4 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-search-field input::placeholder{color:#849587}
+body.app-body #main .board-campfire .board-topic-filters{
+ display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:11px 0 2px;
+}
+body.app-body #main .board-campfire .board-topic-filter{
+ display:inline-flex;align-items:center;gap:7px;justify-content:center;
+ min-height:34px;padding:7px 12px;cursor:pointer;
+ border:1px solid #d7dfd1;border-radius:999px;background:#fffaf1;
+ color:#496451;font:720 11px/1.2 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-topic-filter span{color:#b17e37;font-size:14px}
+body.app-body #main .board-campfire .board-topic-filter[aria-pressed=true]{
+ background:#d6e6cc;border-color:#afc9b2;color:#28553a;
+}
+body.app-body #main .board-campfire .board-topic-filter:hover{border-color:#80ad8f;background:#e9f2e4}
+body.app-body #main .board-campfire .board-filter-note{
+ margin:6px 0 10px;color:#768b76;font:400 10px/1.4 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-feed{
+ display:grid;gap:12px;margin:12px 0 17px;
+}
+body.app-body #main .board-campfire .board-feed-card{
+ position:relative;isolation:isolate;display:block;min-width:0;
+ border:1px solid #d9dfd2;border-radius:18px;overflow:hidden;
+ background:#fffdf7;padding:19px clamp(16px,2vw,24px) 14px;
+ box-shadow:0 4px 12px #59624b0d;
+ transition:border-color .17s ease,box-shadow .17s ease,transform .17s ease;
+}
+body.app-body #main .board-campfire .board-feed-card:hover,
+body.app-body #main .board-campfire .board-feed-card:focus-within{
+ border-color:#91b69a;box-shadow:0 6px 18px #4c68551e;
+ transform:translateY(-1px);
+}
+body.app-body #main .board-campfire .board-feed-card .board-byline{
+ display:flex;gap:12px;align-items:center;justify-content:space-between;
+ margin:0 0 10px;min-width:0;
+}
+body.app-body #main .board-campfire .board-feed-card .board-author{
+ display:inline-flex;align-items:center;gap:10px;min-width:0;
+ color:#325844;text-decoration:none;position:relative;z-index:2;
+}
+body.app-body #main .board-campfire .board-feed-card .board-author img{
+ width:43px;height:43px;object-fit:contain;border:1px solid #dbe1d4;border-radius:11px;
+ background:#f2f3e8;padding:3px;
+}
+body.app-body #main .board-campfire .board-feed-card .board-author strong{
+ font:800 12px/1.35 system-ui,sans-serif;white-space:normal;
+}
+body.app-body #main .board-campfire .board-feed-card .board-author small{
+ font:450 10px/1.2 system-ui,sans-serif;color:#6b816f;
+}
+body.app-body #main .board-campfire .board-feed-card time{
+ font:400 10px/1.3 system-ui,sans-serif;color:#7b8b7e;text-align:right;white-space:nowrap;
+}
+body.app-body #main .board-campfire .board-feed-card .board-post-link{
+ display:block;color:inherit;text-decoration:none;position:relative;z-index:2;
+}
+body.app-body #main .board-campfire .board-feed-card .board-post-link h2{
+ margin:0 0 6px;color:#28543e;letter-spacing:-.023em;
+ font:500 clamp(19px,1.8vw,25px)/1.2 Georgia,serif;
+}
+body.app-body #main .board-campfire .board-feed-card .board-post-link p{
+ max-width:77ch;color:#52695a;margin:0;
+ font:450 12px/1.53 system-ui,sans-serif;white-space:normal;overflow-wrap:anywhere;
+}
+body.app-body #main .board-campfire .board-feed-card .board-post-cta{
+ display:inline-flex;align-items:center;gap:6px;
+ margin:9px 0 0;color:#2c6447;
+ font:800 11px/1.35 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-card-footer{
+ display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+ margin:9px 0 0;padding-top:8px;border-top:1px solid #ece9da;
+}
+body.app-body #main .board-campfire .board-card-label{
+ display:inline-flex;align-items:center;padding:5px 9px;
+ border-radius:999px;background:#edf1e5;color:#59705b;
+ font:650 9px/1.2 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-featured-post{
+ border-color:#e2ad54;background:#fff9e8;
+ box-shadow:0 5px 16px #aa7c3923;padding-bottom:17px;
+}
+body.app-body #main .board-campfire .board-featured-post::after{
+ content:"";position:absolute;z-index:-1;right:0;bottom:0;
+ width:min(54%,470px);height:83%;
+ background:url("community-art/campfire-card.svg") right bottom/contain no-repeat;
+ opacity:.52;pointer-events:none;
+}
+body.app-body #main .board-campfire .board-featured-post::before{
+ content:"";position:absolute;inset:0;z-index:-1;
+ background:linear-gradient(90deg,#fff9eb 0%,#fff9ebed 59%,#fff9eba3 85%,transparent);
+}
+body.app-body #main .board-campfire .board-featured-post .board-post-link p{
+ max-width:64ch;
+}
+body.app-body #main .board-campfire .board-featured-label{
+ margin:0 0 8px;font:850 9px/1.3 system-ui,sans-serif;
+ letter-spacing:.13em;color:#9d6b2d;
+}
+body.app-body #main .board-campfire .board-empty{
+ margin:6px 0;padding:26px;border:1px dashed #b9c8b6;border-radius:15px;
+ background:#f4f7ed;font:500 12px/1.5 system-ui,sans-serif;color:#587260;
+}
+body.app-body #main .board-campfire .board-load-more{min-height:42px;border-radius:12px}
+body.app-body #main .board-campfire .board-community-aside{
+ display:grid;gap:15px;position:relative;
+}
+body.app-body #main .board-campfire .board-seat-card,
+body.app-body #main .board-campfire .board-safety-card{
+ position:relative;isolation:isolate;overflow:hidden;
+ border:1px solid #d5dec9;border-radius:19px;
+ box-shadow:0 4px 13px #4a684915;
+ padding:23px clamp(17px,2vw,25px);
+}
+body.app-body #main .board-campfire .board-seat-card{
+ min-height:220px;padding-bottom:107px;background:#f8f3df url("community-art/lantern-seat.svg") right bottom/100% auto no-repeat;
+}
+body.app-body #main .board-campfire .board-seat-card::before{
+ content:"";position:absolute;inset:0;z-index:-1;
+ background:linear-gradient(180deg,#fff9ee 0%,#fff9eeda 48%,#fff9ee28 90%);
+}
+body.app-body #main .board-campfire .board-community-aside h3{
+ font:500 clamp(22px,2.1vw,29px)/1.12 Georgia,serif;
+ color:#2b553d;margin:0 0 11px;letter-spacing:-.03em;
+}
+body.app-body #main .board-campfire .board-community-aside p:not(.board-section-eyebrow){
+ margin:0 0 11px;color:#526e5a;font:450 12px/1.52 system-ui,sans-serif;max-width:44ch;
+}
+body.app-body #main .board-campfire .board-safety-card{
+ background:linear-gradient(155deg,#f6f8ed,#edf2e6);
+ padding-bottom:23px;
+}
+body.app-body #main .board-campfire .board-safety-card::after{
+ content:"";position:absolute;z-index:-1;right:-15px;bottom:-28px;width:200px;height:94px;
+ background:url("community-art/lantern-seat.svg") right bottom/cover no-repeat;
+ opacity:.27;
+}
+body.app-body #main .board-campfire .board-safety-card a{
+ display:flex;justify-content:space-between;align-items:center;gap:12px;
+ min-height:42px;padding:10px 11px;margin:9px 0 0;
+ text-decoration:none;border:1px solid #d9e3d6;border-radius:11px;
+ background:#fffdf8;color:#315c42;font:800 11px/1.3 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-safety-card a:hover{border-color:#98b69d;background:#edf4e9}
+body.app-body #main .board-campfire .board-community-footer{
+ margin:33px 0 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,.75fr);
+ gap:18px;align-items:center;padding:26px clamp(19px,3vw,37px);
+ border:1px solid #d0decb;border-radius:19px;
+ background:linear-gradient(100deg,#e9f1e3,#f4f6eb);
+}
+body.app-body #main .board-campfire .board-community-footer h2{
+ color:#2b5a43;font:500 clamp(24px,2.7vw,34px)/1.14 Georgia,serif;margin:0 0 8px;
+}
+body.app-body #main .board-campfire .board-community-footer p:not(.board-section-eyebrow){
+ max-width:47ch;color:#5e7661;font:450 12px/1.5 system-ui,sans-serif;margin:0;
+}
+body.app-body #main .board-campfire .board-footer-actions{display:grid;gap:7px}
+body.app-body #main .board-campfire .board-footer-actions a{
+ padding:11px 13px;min-height:41px;border:1px solid #d8e3d5;border-radius:12px;
+ background:#fffdf7;text-decoration:none;color:#2d5d43;
+ font:800 12px/1.3 system-ui,sans-serif;
+}
+/* A consistent destination for posting, full discussions, profiles and moderation. */
+body.app-body #main .board-campfire :is(.board-full-post,.board-comment,.board-profile,.board-report){
+ background:#fffdf7;border:1px solid #d8dfd3;border-radius:19px;
+ box-shadow:0 4px 15px #3f604014;padding:clamp(18px,2.3vw,29px);
+}
+body.app-body #main .board-campfire .board-full-post{margin:14px 0 20px}
+body.app-body #main .board-campfire :is(.board-full-post,.board-comment) .board-byline{
+ display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 17px;
+}
+body.app-body #main .board-campfire .board-full-post h2{
+ color:#244e3a;font:500 clamp(26px,3vw,39px)/1.13 Georgia,serif;
+ letter-spacing:-.025em;margin:0 0 12px;
+}
+body.app-body #main .board-campfire .board-body{
+ color:#35513f;font:450 14px/1.75 system-ui,sans-serif;max-width:78ch;
+}
+body.app-body #main .board-campfire :is(.board-compose,.board-reply-form,.board-message-form){
+ border:1px solid #d7dfce;border-radius:20px;padding:clamp(18px,2.6vw,30px);
+ background:#fffdf7;box-shadow:0 4px 13px #4f644915;
+}
+body.app-body #main .board-campfire .board-compose input,
+body.app-body #main .board-campfire :is(.board-compose,.board-reply-form,.board-message-form) textarea{
+ border-radius:12px;border-color:#ccd9cb;background:#fffefa;
+}
+body.app-body #main .board-campfire .board-reaction{
+ border-radius:14px;background:#fffdf7;border-color:#d7dfce;
+}
+body.app-body #main .board-campfire .board-reaction[aria-pressed=true]{
+ background:#e1edda;border-color:#7da58a;box-shadow:0 0 0 2px #bbd7b5;
+}
+body.app-body #main .board-campfire .board-comments .board-toolbar{
+ display:flex;justify-content:space-between;align-items:center;
+}
+body.app-body #main .board-campfire .board-comments .board-toolbar h2{color:#2d5a42}
+/* Inbox and direct messages borrow the campfire palette, but stay visually quieter. */
+body.app-body #main .board-messages-page .board-campfire-hero::before{
+ background:linear-gradient(90deg,#1c3534f5 0%,#1b3533d7 43%,transparent 75%);
+}
+body.app-body #main .board-campfire .board-private-intro{
+ display:flex;align-items:center;gap:16px;padding:20px 22px;
+ border-radius:18px;border:1px solid #d4dfd0;background:linear-gradient(110deg,#eaf1e4,#f8f5eb);
+ margin:16px 0 21px;
+}
+body.app-body #main .board-campfire .board-private-icon{
+ width:52px;height:52px;flex:0 0 52px;display:grid;place-items:center;
+ background:#d7e9d7;border-radius:16px;font-size:28px;color:#356e4f;
+}
+body.app-body #main .board-campfire .board-private-intro h2{
+ margin:0 0 5px;color:#2e583f;font:500 clamp(22px,2.5vw,31px)/1.14 Georgia,serif;
+}
+body.app-body #main .board-campfire .board-private-intro p:not(.board-section-eyebrow){
+ color:#597461;margin:0;max-width:75ch;font:450 12px/1.5 system-ui,sans-serif;
+}
+body.app-body #main .board-campfire .board-toolbar{
+ display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0;
+}
+body.app-body #main .board-campfire .board-toolbar h2{margin:0 auto 0 0;color:#2b563f}
+body.app-body #main .board-campfire .board-conversation{
+ display:flex;align-items:center;gap:14px;
+ min-height:83px;padding:16px 19px;margin:10px 0;
+ border:1px solid #d6dfd0;border-radius:17px;
+ background:#fffdf7;box-shadow:0 4px 13px #4b6b4910;
+ text-decoration:none;color:#355441;
+}
+body.app-body #main .board-campfire .board-conversation:hover{
+ border-color:#90b59a;background:#f4f9ef;
+}
+body.app-body #main .board-campfire .board-conversation img{
+ width:51px;height:54px;background:#ebf0e7;border:1px solid #dce3d5;
+ border-radius:14px;object-fit:contain;padding:4px;
+}
+body.app-body #main .board-campfire .board-conversation strong{font:800 13px/1.3 system-ui,sans-serif}
+body.app-body #main .board-campfire .board-conversation small{color:#728574;font:450 11px/1.4 system-ui,sans-serif}
+body.app-body #main .board-campfire .board-conversation>span:last-child{
+ font:800 11px/1.3 system-ui,sans-serif;color:#357250;
+}
+body.app-body #main .board-campfire .board-chat-person{margin:12px 0}
+body.app-body #main .board-campfire .board-chat{
+ border:1px solid #d8dfd1;border-radius:20px;padding:22px;
+ background:linear-gradient(180deg,#f5f7ed,#fefcf6);
+ min-height:180px;
+}
+body.app-body #main .board-campfire .board-message{
+ max-width:min(83%,610px);padding:14px 18px;margin:12px 0;
+ border:1px solid #d4ded0;border-radius:18px 18px 18px 5px;
+ background:#fffdf7;color:#2f523d;
+ box-shadow:0 3px 10px #45654b0e;
+}
+body.app-body #main .board-campfire .board-message.mine{
+ margin-left:auto;background:#deecdc;border-color:#b5d3b9;
+ border-radius:18px 18px 5px 18px;
+}
+body.app-body #main .board-campfire .board-message small{color:#627c65;font-size:10px}
+body.app-body #main .board-campfire .board-message .board-body{
+ font-size:13px;line-height:1.6;margin:8px 0;
+}
+body.app-body #main .board-campfire .board-flower-nudge{
+ display:inline-flex;padding:12px 18px;border-radius:13px;
+ background:#fff4d9;border:1px solid #e5d5ac;color:#805a2d;
+ font:500 20px/1.3 Georgia,serif;
+}
+body.app-body #main .board-campfire .board-flower-form{
+ border:1px solid #e5dac5;border-radius:17px;background:#fdf4df;
+ padding:17px 20px;margin-top:12px;
+}
+body.app-body #main .board-campfire :is(button,a,input,textarea,select,summary):focus-visible{
+ outline:3px solid #b7833d!important;outline-offset:3px;
+}
+@media(max-width:1050px){
+ body.app-body #main .board-campfire .board-community-grid{
+  grid-template-columns:minmax(0,1.9fr) minmax(240px,.9fr);gap:14px;
+ }
+ body.app-body #main .board-campfire .board-community-aside h3{font-size:22px}
+}
+@media(max-width:840px){
+ body.app-body #main .board-campfire .board-community-grid{grid-template-columns:1fr}
+ body.app-body #main .board-campfire .board-community-aside{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+ }
+ body.app-body #main .board-campfire .board-hero-copy{width:min(61%,490px);min-width:0}
+ body.app-body #main .board-campfire .board-community-footer{grid-template-columns:1fr}
+ body.app-body #main .board-campfire .board-seat-card{padding-bottom:90px}
+}
+@media(max-width:590px){
+ body.app-body #main .board-page.board-campfire{padding:11px 11px 75px}
+ body.app-body #main .board-campfire .board-header.board-campfire-hero{
+  min-height:215px;padding:20px 19px;border-radius:18px;
+ }
+ body.app-body #main .board-campfire .board-hero-scene{object-position:65% center;opacity:.72}
+ body.app-body #main .board-campfire .board-campfire-hero::before{
+  background:linear-gradient(90deg,#182f2ff5 0%,#1b3232e9 42%,#1b3232a8 70%,#1b323260);
+ }
+ body.app-body #main .board-campfire .board-hero-copy{min-width:0;width:100%}
+ body.app-body #main .board-campfire .board-hero-copy h1{font-size:32px;max-width:15ch}
+ body.app-body #main .board-campfire .board-hero-copy>p:last-child{font-size:11px;max-width:39ch}
+ body.app-body #main .board-campfire .board-campfire-nav{gap:6px;flex-wrap:wrap}
+ body.app-body #main .board-campfire .board-campfire-nav>a.button{padding:9px 11px;font-size:11px}
+ body.app-body #main .board-campfire .board-nav-privacy{
+  width:100%;margin:0;padding:7px 0;text-align:right;
+ }
+ body.app-body #main .board-campfire .board-feed-heading{align-items:start}
+ body.app-body #main .board-campfire .board-feed-heading h2{font-size:27px}
+ body.app-body #main .board-campfire .board-feed-actions{width:100%}
+ body.app-body #main .board-campfire .board-community-aside{grid-template-columns:1fr}
+ body.app-body #main .board-campfire .board-community-aside .board-seat-card{min-height:0;padding-bottom:108px}
+ body.app-body #main .board-campfire .board-feed-card{padding:15px 14px 12px}
+ body.app-body #main .board-campfire .board-feed-card time{font-size:9px;white-space:normal}
+ body.app-body #main .board-campfire .board-featured-post::after{width:42%;opacity:.3}
+ body.app-body #main .board-campfire .board-private-intro{padding:15px}
+ body.app-body #main .board-campfire .board-message{max-width:95%}
+ body.app-body #main .board-campfire .board-chat{padding:11px}
+ body.app-body #main .board-campfire .board-community-footer{padding:20px}
+}
+@media(max-width:390px){
+ body.app-body #main .board-campfire .board-header.board-campfire-hero{min-height:232px}
+ body.app-body #main .board-campfire .board-hero-copy h1{font-size:29px}
+ body.app-body #main .board-campfire .board-topic-filter{font-size:10px;padding:6px 10px}
+ body.app-body #main .board-campfire .board-feed-card .board-post-link h2{font-size:19px}
+}
+html[data-theme="dark"] body.app-body #main:has(.board-campfire){
+ background:linear-gradient(#1d3027,#1c2c25);
+}
+html[data-theme="dark"] body.app-body #main .board-page.board-campfire{
+ --camp-paper:#273d30;--camp-ink:#e6f2e3;--camp-ink-soft:#c7dbcd;--camp-border:#536e59;
+ color:#e4eee1;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire :is(.board-feed-heading h2,.board-toolbar h2,.board-full-post h2,.board-post-link h2,.board-community-footer h2,.board-private-intro h2,.board-community-aside h3){
+ color:#e6f2e3!important;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire :is(.board-nav,.board-feed-card,.board-full-post,.board-comment,.board-compose,.board-reply-form,.board-message-form,.board-safety-card,.board-community-footer,.board-private-intro,.board-chat,.board-conversation){
+ background:#273f31;border-color:#5d795f;color:#edf4e9;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-seat-card{
+ background-color:#354637;background-image:linear-gradient(180deg,#354637cc,#35463755),url("community-art/lantern-seat.svg");
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-seat-card::before{background:linear-gradient(180deg,#354637aa,#35463730)}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-featured-post{background:#4b4632;border-color:#a8854e}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-featured-post::before{background:linear-gradient(90deg,#3d422e,#3d422ecd 65%,transparent)}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-feed-card :is(.board-post-link p,.board-card-label,.board-author strong,.board-author small,.board-post-cta,.board-byline time),
+html[data-theme="dark"] body.app-body #main .board-campfire .board-community-aside p:not(.board-section-eyebrow),
+html[data-theme="dark"] body.app-body #main .board-campfire .board-feed-heading p:not(.board-section-eyebrow),
+html[data-theme="dark"] body.app-body #main .board-campfire .board-private-intro p:not(.board-section-eyebrow),
+html[data-theme="dark"] body.app-body #main .board-campfire .board-body,
+html[data-theme="dark"] body.app-body #main .board-campfire .board-public-note{
+ color:#d7e6d6;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire :is(.board-campfire-nav>a.button,.board-topic-filter,.board-safety-card a,.board-footer-actions a,.board-conversation,.board-message,.board-chat-person a){
+ background:#304a39;border-color:#678066;color:#e7f1e2;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-campfire-nav>a.button.is-active{
+ background:#bbdeb2;border-color:#bbdeb2;color:#1a422c;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-topic-filter[aria-pressed=true]{
+ background:#466a4e;border-color:#a9cfa8;color:#eaf6e5;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-search-field input{
+ background-color:#2f4737;color:#f3f7ee;border-color:#648064;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-message.mine{
+ background:#456b4c;border-color:#87ad87;color:#eff7eb;
+}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-seat-card p{color:#e7f1e0}
+html[data-theme="dark"] body.app-body #main .board-campfire .board-flower-form{
+ background:#53492e;border-color:#88734b;
+}
+html[data-low-stim=true] body.app-body #main .board-campfire .board-hero-scene,
+html[data-low-stim=true] body.app-body #main .board-campfire .board-featured-post::after,
+html[data-low-stim=true] body.app-body #main .board-campfire .board-safety-card::after{display:none}
+html[data-low-stim=true] body.app-body #main .board-campfire .board-campfire-hero{background:#2d4e3f}
+html[data-low-stim=true] body.app-body #main .board-campfire .board-seat-card{background:#f5f5e9}
+html[data-contrast="high"] body.app-body #main .board-campfire :is(.board-feed-card,.board-topic-filter,.board-seat-card,.board-safety-card){border-width:2px}
+@media(prefers-reduced-motion:reduce){
+ body.app-body #main .board-campfire .board-feed-card{transition:none}
+ body.app-body #main .board-campfire .board-feed-card:hover{transform:none}
+}
