@@ -64,7 +64,7 @@ export const TRAUMA_EDITORIAL_C=[
     "safety": "Suicide bereavement can increase risk of self-harm or suicidal thoughts. Anyone unable to stay safe needs immediate human support. Avoid detailed discussion of suicide methods or assigning blame for the death; use qualified bereavement support.",
     "source": [
       "Samaritans: Support after a suicide",
-      "https://www.samaritans.org/how-we-can-help/if-youre-having-difficult-time/support-after-suicide/"
+      "https://supportaftersuicide.org.uk/journey-days/national-services/"
     ]
   },
   {
@@ -198,7 +198,7 @@ export const TRAUMA_EDITORIAL_C=[
     "safety": "Persistent trauma symptoms may need effective clinical treatment rather than passive waiting. Forced exposure or disclosure can be harmful. Current threats and serious impairment require appropriate protective and clinical support.",
     "source": [
       "NHS: Post-traumatic stress disorder",
-      "https://www.nhs.uk/mental-health/conditions/post-traumatic-stress-disorder-ptsd/overview/"
+      "https://www.nhs.uk/mental-health/conditions/ptsd-post-traumatic-stress-disorder/"
     ]
   },
   {
