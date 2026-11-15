@@ -98,4 +98,15 @@ const rows=[
 ["What is the confirmed status of the process?","What information or support do you genuinely need?","What plans are delayed by the uncertainty?","How are you and your family keeping connected now?","What can you do this week that matters even if the decision is still pending?"],
 "Waiting to be together is part of your life. It is not all your life is allowed to contain."]
 ];
-export const MIGRATION_CFM_GUIDES=Object.freeze(Object.fromEntries(rows.map(([id,opening,why,versions,journalTitle,questions,closing])=>[id,Object.freeze({id,domain:"migration",opening,why,versions,journalTitle,questions,closing,sources:source})])));
+
+const tailoredSource={
+ "migration-grief":{label:"Systematic review of migratory grief (2024)",url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC10904569/"},
+ "homesickness":{label:"Systematic review of migratory grief and adjustment (2024)",url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC10904569/"},
+ "migration-family-separation":{label:"Study of refugee family separation and uncertain reunification",url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC5732089/"},
+ "uncertain-reunification":{label:"Research on refugee family separation and ambiguous loss",url:"https://pmc.ncbi.nlm.nih.gov/articles/PMC5732089/"},
+ "belonging-between-countries":{label:"Acculturation, cultural identity and wellbeing (2023)",url:"https://www.nature.com/articles/s44159-023-00171-2"},
+ "culture-shock":{label:"Systematic review of migrants' acculturation strategies (2021)",url:"https://pubmed.ncbi.nlm.nih.gov/36101596/"},
+ "asylum-stress":{label:"WHO global evidence review on refugees and migrants (2023)",url:"https://www.who.int/publications/i/item/9789240081840"}
+};
+
+export const MIGRATION_CFM_GUIDES=Object.freeze(Object.fromEntries(rows.map(([id,opening,why,versions,journalTitle,questions,closing])=>[id,Object.freeze({id,domain:"migration",opening,why,versions,journalTitle,questions,closing,sources:tailoredSource[id]?[tailoredSource[id],...source]:source})])));
