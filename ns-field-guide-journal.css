@@ -95,6 +95,19 @@ body.app-body.ns-shell-v1 #main .ns-guide6-journal__page--right::before{
  content:"";position:absolute;left:20px;right:20px;top:6px;bottom:9px;
  border:1px solid #e3cfae28;border-radius:22px;pointer-events:none;
 }
+/* Soft fabric bookmarks peek out below the journal, never over its content. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__bookmark{
+ position:absolute;z-index:-1;bottom:-28px;left:52%;
+ width:34px;height:53px;background:#8caa7f;
+ transform:rotate(-2deg);filter:drop-shadow(2px 3px 2px #3c3d2b35);
+ clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%);
+ pointer-events:none;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__bookmark::after{
+ content:"";position:absolute;z-index:-1;
+ width:21px;height:44px;left:42px;top:2px;background:#efe1bd;
+ clip-path:polygon(0 0,100% 0,100% 100%,50% 81%,0 100%);
+}
 /* Eight small brass rings down the spine. They have no interaction. */
 body.app-body.ns-shell-v1 #main .ns-guide6-journal__binding{
  position:absolute;z-index:7;pointer-events:none;left:50%;top:26px;bottom:26px;
