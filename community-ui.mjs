@@ -56,7 +56,7 @@ export async function renderDiscussion(root,id=''){
  if(id){await renderPost(root,id,v);return;}
   root.innerHTML=shell(`${gate()}
   <div class="board-feed-heading">
-   <div><p class="board-section-eyebrow">✦ COMMUNITY CAMPFIRE</p><h2>Conversations by the fire</h2><p>Real people, thoughtful questions and little victories. Come as you are.</p></div>
+   <div><p class="board-section-eyebrow">✦ COMMUNITY CAMPFIRE</p><h2><span aria-hidden="true" class="board-fire-emoji">🔥</span> Conversations by the fire <span class="board-leaf-emoji" aria-hidden="true">❧</span></h2><p>Real talk, kind support, new perspectives and small wins. Everyone is welcome.</p></div>
    <div class="board-feed-actions">${canWrite()?'<a class="button board-write-post" href="#discussion/new">✎ Write a post +</a>':''}<button class="chip" data-feed-refresh>↻ Refresh</button></div>
   </div>
   <div class="board-community-grid">
@@ -72,18 +72,20 @@ export async function renderDiscussion(root,id=''){
     <p role="status" data-feed-status></p><div data-staff-door></div>
    </div>
    <aside class="board-community-aside" aria-label="Community information">
-    <section class="board-seat-card"><p class="board-section-eyebrow">YOU BELONG HERE</p><h3>Pull up a seat.</h3>
-     <p>You don’t need the perfect words to join in. Share a question or simply listen to the conversation.</p>
-     <p>Everyone arrives with a different story. There’s space for yours.</p>
+    <section class="board-seat-card"><p class="board-section-eyebrow">COME AS YOU ARE</p><h3>Pull up a seat.</h3>
+     <p>You can be curious, uncertain or simply looking to be heard.</p>
+     <p>Share a thought when you feel ready. Listening counts too.</p>
     </section>
-    <section class="board-safety-card"><p class="board-section-eyebrow">LOOKING AFTER EACH OTHER</p><h3>Keep the fire welcoming.</h3>
-     <p>People can disagree and still speak with care. Privacy and respect matter here.</p>
-     <a href="#account/community">Community &amp; privacy settings <span aria-hidden="true">→</span></a>
-     <a href="#support">Get support <span aria-hidden="true">→</span></a>
+    <section class="board-safety-card"><div class="board-safety-heading"><span class="board-safety-icon" aria-hidden="true">♧</span><div><p class="board-section-eyebrow">A KINDER SPACE</p><h3>Community &amp; safety</h3></div></div>
+     <p>Simple ground rules help everyone feel welcome around the fire.</p>
+     <details class="board-guidelines"><summary><span aria-hidden="true">♧</span> Community guidelines <span aria-hidden="true">→</span></summary>
+       <p>Speak with care, even when you disagree. Keep other people's personal information private. Report harmful content rather than confronting someone.</p></details>
+     <a href="#account/community"><span aria-hidden="true">♙</span> Privacy &amp; blocked accounts <span aria-hidden="true">→</span></a>
+     <a href="#support"><span aria-hidden="true">⚑</span> Reporting &amp; support <span aria-hidden="true">→</span></a>
     </section>
    </aside>
   </div>
-  <section class="board-community-footer"><div><p class="board-section-eyebrow">WHEN YOU'RE READY</p><h2>Your community, your pace.</h2><p>Read quietly, join a discussion or step away whenever you need.</p></div><div class="board-footer-actions"><a href="#account/community">Community &amp; privacy settings →</a><a href="#messages">Your conversations →</a><a href="#support">Get help →</a></div></section>
+
  `);
  bindGate(root,()=>renderDiscussion(root));root.querySelector('[data-feed-refresh]').onclick=()=>renderDiscussion(root);
  let loaded=[],hidden=[],cursor=null,activeTopic='all';
