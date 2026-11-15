@@ -3,6 +3,7 @@
  * are illustrations, not medical diagnoses or claims about an individual's life.
  */
 import {problemIndex} from './ns-problem-map.mjs';
+import {deepenSelfImageGuide} from './ns-self-image-depth.mjs?v=self-image-20261115-v3';
 import {extendedProblemIndex} from './ns-atlas-extended.mjs';
 import {INCLUSIVE_GROUPS_A} from './ns-inclusive-topics-a.mjs';
 import {INCLUSIVE_GROUPS_B} from './ns-inclusive-topics-b.mjs';
@@ -159,7 +160,7 @@ function build(data,domain){
 const expected={identity:13,lgbtq:24,appearance:12};
 for(const [key,n] of Object.entries(expected))ensure(authored[key].length===n,key+' expected '+n);
 export const IMAGE_GUIDE_GROUPS=Object.freeze(Object.fromEntries(Object.entries(authored).map(([k,rows])=>[k,Object.freeze(rows.map(x=>x.id))])));
-export const IMAGE_GUIDES=Object.freeze(Object.entries(authored).flatMap(([domain,rows])=>rows.map(row=>build(row,domain))));
+export const IMAGE_GUIDES=Object.freeze(Object.entries(authored).flatMap(([domain,rows])=>rows.map(row=>deepenSelfImageGuide(build(row,domain),domain))));
 export const IMAGE_IDS=Object.freeze(IMAGE_GUIDES.map(x=>x.id));
 export const IMAGE_BY_ID=new Map(IMAGE_GUIDES.map(x=>[x.id,x]));
 ensure(IMAGE_IDS.length===49&&IMAGE_BY_ID.size===49,'missing or repeated topics');
