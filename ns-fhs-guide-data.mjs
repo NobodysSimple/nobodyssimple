@@ -9,6 +9,7 @@
  */
 import {INCLUSIVE_GROUPS_A} from './ns-inclusive-topics-a.mjs';
 import {INCLUSIVE_GROUPS_B} from './ns-inclusive-topics-b.mjs';
+import {enrichFhsGuide} from './ns-fhs-depth.mjs?v=fhs-20261115-v2';
 import {FAMILY_EDITORIAL_1} from './ns-family-editorial-1.mjs?v=fhs-20261115-v1';
 import {FAMILY_EDITORIAL_2} from './ns-family-editorial-2.mjs?v=fhs-20261115-v1';
 import {FAMILY_EDITORIAL_3} from './ns-family-editorial-3.mjs?v=fhs-20261115-v1';
@@ -132,7 +133,7 @@ for(const [domain,amount] of Object.entries(expected)){
  if(catalogues[domain].length!==amount)fail(domain,'expected '+amount+' entries, found '+catalogues[domain].length);
 }
 export const FHS_GUIDE_GROUPS=Object.freeze(Object.fromEntries(Object.entries(catalogues).map(([domain,items])=>[domain,Object.freeze(items.map(x=>x.id))])));
-export const FHS_GUIDES=Object.freeze(Object.entries(catalogues).flatMap(([domain,items])=>items.map(x=>build(x,domain))));
+export const FHS_GUIDES=Object.freeze(Object.entries(catalogues).flatMap(([domain,items])=>items.map(x=>enrichFhsGuide(build(x,domain),domain))));
 export const FHS_IDS=Object.freeze(FHS_GUIDES.map(g=>g.id));
 export const FHS_BY_ID=new Map(FHS_GUIDES.map(g=>[g.id,g]));
 if(FHS_IDS.length!==74||FHS_BY_ID.size!==74)throw new Error('Expected 74 unique Family, Harm & Systems manuals');
