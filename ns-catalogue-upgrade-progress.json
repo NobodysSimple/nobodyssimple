@@ -36,6 +36,26 @@
       },
       "routing": "direct atlas and workbook route; body return navigation",
       "verification": "static review and assertions committed; CI execution pending"
+    },
+    {
+      "id": "fatigue",
+      "area": "health",
+      "domain": "body",
+      "guide": "ns-body-guide-data.mjs",
+      "commits": [
+        "0ca5b5480313e317e25810a5fd5f357f5bda366b",
+        "0f9b3616a4ca32c12f292e133c4905d3c1296172",
+        "08b72322f173752d7872704497502c3831b9ca15"
+      ],
+      "contentChecks": {
+        "articleWords": 611,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 3
+      },
+      "routing": "existing body direct atlas and workbook routes",
+      "verification": "static structure reviewed; focused regression test committed; CI execution pending"
     }
   ],
   "pendingIds": "Derived exactly at runtime by ns-catalogue-progress.mjs:pending; not duplicated as potentially stale JSON",
@@ -45,5 +65,5 @@
     "The body-domain return link was added to the shared renderer.",
     "Need verify GitHub Actions and browser tests; no live browser test has yet been performed."
   ],
-  "lastStep": "Added sleep manual, routes, return link, live progress ledger and focused unit tests. Next: inspect CI, fix any failures, then systematically upgrade remaining Body, sleep & intimacy topics."
+  "lastStep": "Added fatigue manual and focused regression test; continue remaining Body, sleep & intimacy topics after checking test execution."
 }
