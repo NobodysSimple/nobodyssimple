@@ -96,7 +96,7 @@ const connectionRelateIds=new Set(CONNECTION_GROUPS.relate);
 const connectionSocialIds=new Set(CONNECTION_GROUPS.social);
 const showConnectionGuide=id=>renderTopicManual(main,id,CONNECTION_BY_ID.get(id),connectionRelateIds.has(id)?'relate':connectionSocialIds.has(id)?'social':'connection-related');
 const workGuideIds=new Set(WORK_IDS);
-const showWorkGuide=id=>renderTopicManual(main,id,WORK_BY_ID.get(id),'work');
+const showWorkGuide=id=>renderTopicManual(main,id,WORK_BY_ID.get(id),WORK_BY_ID.get(id)?.domain||'work');
 const fhsGuideIds=new Set(FHS_IDS);
 const fhsFamily=new Set(FHS_GUIDE_GROUPS.family),fhsHarm=new Set(FHS_GUIDE_GROUPS.harm),fhsInequality=new Set(FHS_GUIDE_GROUPS.inequality);
 const showFhsGuide=id=>renderTopicManual(main,id,FHS_BY_ID.get(id),fhsFamily.has(id)?'family':fhsHarm.has(id)?'harm':fhsInequality.has(id)?'inequality':'environment');
