@@ -209,7 +209,7 @@ export const SOCIAL_WORK_C={
       [
         "crisis",
         "Support a friend without becoming their only service",
-        "Serious risk needs appropriate professional resources.",
+        "A friend facing serious risk may need appropriate crisis services beyond what you can provide alone.",
         [
           "Is the friend asking you to manage a crisis alone?",
           "What help is available beyond your relationship?",
