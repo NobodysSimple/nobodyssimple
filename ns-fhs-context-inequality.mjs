@@ -46,7 +46,7 @@ export const FHS_CONTEXT_INEQUALITY={
     "intro": "Being unsure whether you can afford food is a material problem with direct health consequences. The immediate issue is access to meals and available assistance. Shame or worry may make seeking help harder, but a reflective exercise cannot replace food.",
     "cases": [
       [
-        "You skip a meal so a child can eat",
+        "You skip your own evening meal so the children in the household can eat",
         "There isn't enough food for everyone"
       ],
       [
@@ -264,7 +264,7 @@ export const FHS_CONTEXT_INEQUALITY={
         "The hidden cost is affecting my income"
       ],
       [
-        "A service explains fees unclearly",
+        "A residential care service provides a confusing breakdown of monthly fees",
         "I need reliable information before agreeing"
       ],
       [
