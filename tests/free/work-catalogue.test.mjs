@@ -12,7 +12,7 @@ test('all 29 work and education topics have their own authored field guide',()=>
  assert.equal(WORK_GUIDE_GROUPS.work.length,13);
  assert.equal(WORK_GUIDE_GROUPS.education.length,16);
  assert.deepEqual(new Set(WORK_IDS),atlas);
- assert.equal(WORK_BY_ID.size,13);
+ assert.equal(WORK_BY_ID.size,29);
  const openers=new Set();
  for(const g of WORK_GUIDES){
   assert.equal(g.article.length,10,g.id);
