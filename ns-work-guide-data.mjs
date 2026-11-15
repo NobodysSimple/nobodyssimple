@@ -1,15 +1,22 @@
 /* Nobody's Simple · Work, study & circumstances.
- * Thirteen original, separately written guides use the established field-guide
+ * Twenty-nine original, separately written guides use the established field-guide
  * renderer. Examples are hypotheses, not evidence of an individual cause.
  * Workload, finances, accessibility, rights and safety take priority where relevant.
  */
 import {WORK_EDITORIAL_A} from './ns-work-editorial-a.mjs';
 import {WORK_EDITORIAL_B} from './ns-work-editorial-b.mjs';
+import {EDUCATION_EDITORIAL_A} from './ns-education-editorial-a.mjs';
+import {EDUCATION_EDITORIAL_B} from './ns-education-editorial-b.mjs';
+import {EDUCATION_EDITORIAL_C} from './ns-education-editorial-c.mjs';
+import {EDUCATION_EDITORIAL_D} from './ns-education-editorial-d.mjs';
+import {INCLUSIVE_GROUPS_B} from './ns-inclusive-topics-b.mjs';
 import {problemIndex} from './ns-problem-map.mjs';
 import {extendedProblemIndex} from './ns-atlas-extended.mjs';
 
-const articles=Object.freeze([...WORK_EDITORIAL_A,...WORK_EDITORIAL_B]);
-const canonical=new Map([...problemIndex,...extendedProblemIndex].filter(p=>p.domain==='work').map(p=>[p.id,p]));
+const articles=Object.freeze([...WORK_EDITORIAL_A,...WORK_EDITORIAL_B,...EDUCATION_EDITORIAL_A,...EDUCATION_EDITORIAL_B,...EDUCATION_EDITORIAL_C,...EDUCATION_EDITORIAL_D]);
+const education=INCLUSIVE_GROUPS_B.find(g=>g.id==='education');
+if(education?.rows?.length!==16)throw new Error('Expected 16 education and opportunity topics');
+const canonical=new Map([...problemIndex,...extendedProblemIndex].filter(p=>p.domain==='work').concat(education.rows.map(r=>({id:r[0],title:r[1],domain:'education'}))).map(p=>[p.id,p]));
 const words=x=>String(x).trim().split(/\s+/).filter(Boolean).length;
 const clean=s=>String(s||'').trim().replace(/[.!?]+$/,'');
 const first=s=>String(s).split(/(?<=[.!?])\s+/)[0];
@@ -85,7 +92,7 @@ function build(d){
  const ideas=[...new Set(more)].slice(0,24);
  if(ideas.length!==24)fail(id,'expected 24 distinct adapted practical suggestions');
  return Object.freeze({
-  id,title:meta.title,standfirst:d.article[0].split(/(?<=[.!?])\s+/).slice(0,2).join(' '),
+  id,domain:meta.domain,title:meta.title,standfirst:d.article[0].split(/(?<=[.!?])\s+/).slice(0,2).join(' '),
   readTitle:meta.title,article:d.article,
   mechanisms:[
    [d.profiles[0][0],d.profiles[0][1]],
@@ -112,7 +119,7 @@ function build(d){
 export const WORK_GUIDES=Object.freeze(articles.map(build));
 export const WORK_IDS=Object.freeze(WORK_GUIDES.map(g=>g.id));
 export const WORK_BY_ID=new Map(WORK_GUIDES.map(g=>[g.id,g]));
-export const WORK_GUIDE_GROUPS=Object.freeze({work:WORK_IDS});
-if(WORK_IDS.length!==13||WORK_BY_ID.size!==13)fail('all','expected 13 unique guides');
+export const WORK_GUIDE_GROUPS=Object.freeze({work:Object.freeze(WORK_GUIDES.filter(g=>g.domain==='work').map(g=>g.id)),education:Object.freeze(WORK_GUIDES.filter(g=>g.domain==='education').map(g=>g.id))});
+if(WORK_IDS.length!==29||WORK_BY_ID.size!==29||WORK_GUIDE_GROUPS.work.length!==13||WORK_GUIDE_GROUPS.education.length!==16)fail('all','expected 29 unique guides');
 if(new Set(WORK_IDS).size!==WORK_IDS.length)fail('all','duplicate guide IDs');
-if(canonical.size!==13)fail('all','canonical work catalogue has changed; check coverage before publishing');
+if(canonical.size!==29)fail('all','canonical work and education catalogue has changed; check coverage before publishing');
