@@ -3,6 +3,8 @@ import {reload} from 'https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js
 import {text,title,threadId,flowers,checkFile,attachmentName,LIMITS,REACTIONS} from './community-policy.mjs';
 const rows=s=>s.docs.map(d=>({id:d.id,...d.data(),cursor:d}));
 const millis=v=>v?.toMillis?.()||0;
+const BOARD_CATEGORIES=new Set(['general','support','advice','wins','questions','venting','creativity','everyday']);
+const postCategory=value=>BOARD_CATEGORIES.has(value)?value:'general';
 export function createCommunityClient(connection){
  const state=()=>connection(),db=()=>state().db,user=()=>state().auth.currentUser;
  const ref=(...p)=>doc(db(),...p),col=(...p)=>collection(db(),...p);
@@ -14,16 +16,46 @@ export function createCommunityClient(connection){
  async function isStaff(){if(!user())return false;try{return (await getDoc(ref('siteAdmins',user().uid))).exists();}catch{return false;}}
  async function refreshVerification(){const u=user();if(!u)throw Error('Sign in first.');await reload(u);await u.getIdToken(true);return u.emailVerified;}
  async function attachments(files){if(files.length>LIMITS.files)throw Error('Attach up to two files.');return Promise.all(files.map(async f=>{checkFile(f);const bytes=new Uint8Array(await f.arrayBuffer());let binary='';for(let i=0;i<bytes.length;i+=16384)binary+=String.fromCharCode(...bytes.subarray(i,i+16384));return {name:attachmentName(f.name,f.type),mime:f.type,size:f.size,data:btoa(binary)};}));}
- async function publish({heading,body,files=[]}){const a=await join(),post=ref('boardPosts',doc(col('boardPosts')).id),uploads=await attachments(files),content=text(body),headingText=title(heading);await runTransaction(db(),async tx=>{const mark=await rate(tx,'post',post.id,'',60);tx.set(post,{...a,title:headingText,body:content,status:'published',attachmentCount:uploads.length,createdAt:serverTimestamp(),updatedAt:serverTimestamp()});uploads.forEach((f,i)=>tx.set(doc(post,'attachments',String(i)),f));mark();});return post.id;}
+ async function publish({heading,body,files=[],category='general'}){
+  const a=await join(),post=ref('boardPosts',doc(col('boardPosts')).id);
+  const uploads=await attachments(files),content=text(body),headingText=title(heading);
+  const chosen=postCategory(category);
+  const write=includeCategory=>runTransaction(db(),async tx=>{
+   const mark=await rate(tx,'post',post.id,'',60);
+   tx.set(post,{...a,title:headingText,body:content,status:'published',
+    ...(includeCategory?{category:chosen}:{}),
+    attachmentCount:uploads.length,createdAt:serverTimestamp(),updatedAt:serverTimestamp()});
+   uploads.forEach((item,i)=>tx.set(doc(post,'attachments',String(i)),item));
+   mark();
+  });
+  try{await write(true);}catch(error){
+   // Backward compatible while independently deployed Firestore rules catch up.
+   // A failed transaction commits neither the rate limit nor the post.
+   if(error?.code!=='permission-denied')throw error;
+   await write(false);
+  }
+  return post.id;
+ }
  async function feed(cursor){const q=[where('status','==','published'),orderBy('createdAt','desc'),limit(15)];if(cursor)q.push(startAfter(cursor));return rows(await getDocs(query(col('boardPosts'),...q)));}
  async function post(id){const snap=await getDoc(ref('boardPosts',id));return snap.exists()?{id:snap.id,...snap.data()}:null;}
- async function editPost(id,heading,body){verified();const r=ref('boardPosts',id);await runTransaction(db(),async tx=>{const snap=await tx.get(r);if(snap.data()?.authorUid!==user().uid)throw Error('Only the author can edit this post.');tx.update(r,{title:title(heading),body:text(body),updatedAt:serverTimestamp()});});}
+ async function editPost(id,heading,body,category){verified();const r=ref('boardPosts',id);await runTransaction(db(),async tx=>{const snap=await tx.get(r);if(snap.data()?.authorUid!==user().uid)throw Error('Only the author can edit this post.');tx.update(r,{title:title(heading),body:text(body),...(category?{category:postCategory(category)}:{}),updatedAt:serverTimestamp()});});}
  async function removePost(id){verified();const r=ref('boardPosts',id),s=await getDoc(r),batch=writeBatch(db());batch.update(r,{title:'Removed post',body:'',status:'deleted',attachmentCount:0,updatedAt:serverTimestamp()});for(let i=0;i<(s.data()?.attachmentCount||0);i++)batch.delete(doc(r,'attachments',String(i)));await batch.commit();}
  async function getAttachment(id,slot){return (await getDoc(ref('boardPosts',id,'attachments',String(slot)))).data();}
  async function reply(postId,body){const a=await join(),r=doc(col('boardPosts',postId,'replies'));await runTransaction(db(),async tx=>{const mark=await rate(tx,'reply',r.id,postId,20);tx.set(r,{...a,body:text(body,'reply'),status:'published',createdAt:serverTimestamp(),updatedAt:serverTimestamp()});mark();});}
  async function replies(postId,cursor){const q=[where('status','==','published'),orderBy('createdAt','asc'),limit(30)];if(cursor)q.push(startAfter(cursor));return rows(await getDocs(query(col('boardPosts',postId,'replies'),...q)));}
  async function removeReply(postId,id){verified();const batch=writeBatch(db());batch.update(ref('boardPosts',postId,'replies',id),{body:'',status:'deleted',updatedAt:serverTimestamp()});await batch.commit();}
  async function reactions(postId){const counts=await Promise.all(REACTIONS.map(async r=>[r.id,(await getCountFromServer(query(col('boardPosts',postId,'reactions'),where('kind','==',r.id)))).data().count]));let own='';if(user())try{own=(await getDoc(ref('boardPosts',postId,'reactions',user().uid))).data()?.kind||'';}catch{}return {counts:Object.fromEntries(counts),own};}
+ async function postStats(postId){
+  // Read-only aggregate counts. Never display guessed community metrics.
+  const replies=query(col('boardPosts',postId,'replies'),where('status','==','published'));
+  const likes=query(col('boardPosts',postId,'reactions'),where('kind','==','like'));
+  const uid=user()?.uid;
+  const [replySnap,likeSnap,ownSnap]=await Promise.all([
+   getCountFromServer(replies),getCountFromServer(likes),
+   uid?getDoc(ref('boardPosts',postId,'reactions',uid)):Promise.resolve(null)
+  ]);
+  return {replies:replySnap.data().count,likes:likeSnap.data().count,liked:ownSnap?.data()?.kind==='like'};
+ }
  async function react(postId,kind){const u=verified();if(!REACTIONS.some(r=>r.id===kind))throw Error('Choose a reaction.');const r=ref('boardPosts',postId,'reactions',u.uid);await runTransaction(db(),async tx=>{const old=await tx.get(r);if(old.data()?.kind===kind)tx.delete(r);else tx.set(r,{authorUid:u.uid,kind,updatedAt:serverTimestamp()});});}
  async function send(to,{body='',flowerCount=0}={}){const u=verified(true),a=await join(),id=threadId(u.uid,to),thread=ref('conversations',id),message=doc(col('conversations',id,'messages')),kind=flowerCount?'flowers':'text';const value=kind==='flowers'?flowers(flowerCount):0,content=kind==='text'?text(body,'message'):'';await runTransaction(db(),async tx=>{const old=await tx.get(thread),mark=await rate(tx,'message',message.id,id,3);if(!old.exists())tx.set(thread,{members:[u.uid,to].sort(),createdBy:u.uid,createdAt:serverTimestamp(),updatedAt:serverTimestamp(),lastMessageId:message.id});else tx.update(thread,{updatedAt:serverTimestamp(),lastMessageId:message.id});tx.set(message,{authorUid:u.uid,body:content,kind,flowerCount:value,createdAt:serverTimestamp()});mark();});return id;}
  function inbox(onData,onError){verified(true);return onSnapshot(query(col('conversations'),where('members','array-contains',user().uid),orderBy('updatedAt','desc'),limit(30)),s=>onData(rows(s)),onError);}
@@ -34,7 +66,7 @@ export function createCommunityClient(connection){
  async function report(target,reason,quotedText){const u=verified(),why=String(reason||'').trim();if(why.length<3||why.length>500)throw Error('Give a reason of 3–500 characters.');const r=ref('boardReports',target.kind+'~'+(target.replyId||target.messageId||target.postId)+'~'+u.uid),b=writeBatch(db());b.set(r,{kind:target.kind,postId:target.postId||'',replyId:target.replyId||'',threadId:target.threadId||'',messageId:target.messageId||'',reporterUid:u.uid,reportedUid:target.authorUid,reason:why,quotedText:String(quotedText).slice(0,40000),status:'open',createdAt:serverTimestamp()});await b.commit();}
  async function reports(){return rows(await getDocs(query(col('boardReports'),where('status','==','open'),limit(50))));}
  async function moderate(target,action){const b=writeBatch(db());if(action==='resolve')b.update(ref('boardReports',target.id),{status:'resolved'});else if(action==='ban')b.set(ref('communityBans',target.uid),{createdAt:serverTimestamp(),reason:'Community moderation'});else if(target.kind==='post')b.update(ref('boardPosts',target.postId),{status:'hidden',updatedAt:serverTimestamp()});else if(target.kind==='reply')b.update(ref('boardPosts',target.postId,'replies',target.replyId),{status:'hidden',updatedAt:serverTimestamp()});else throw Error('Choose a public post or comment to hide.');if(['hide','ban'].includes(action)&&target.id)b.update(ref('boardReports',target.id),{status:'resolved'});await b.commit();}
- return {state,verified,identity,join,profile,isStaff,refreshVerification,publish,feed,post,editPost,removePost,getAttachment,reply,replies,removeReply,reactions,react,send,inbox,messages,earlierMessages,block,blocked,report,reports,moderate};
+ return {state,verified,identity,join,profile,isStaff,refreshVerification,publish,feed,post,postStats,editPost,removePost,getAttachment,reply,replies,removeReply,reactions,react,send,inbox,messages,earlierMessages,block,blocked,report,reports,moderate};
 }
 export async function deleteCommunityAccountData(db,uid){
  const remove=async docs=>{for(let i=0;i<docs.length;i+=100){const b=writeBatch(db);docs.slice(i,i+100).forEach(d=>b.delete(d.ref));await b.commit();}};
