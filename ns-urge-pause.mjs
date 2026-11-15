@@ -143,7 +143,7 @@ export function renderNSUrgePause(main) {
     const selected=form.querySelector('input[name="urge"]:checked')?.value||'phone';
     const custom=clip(form.elements.namedItem('custom')?.value);
     const preset=OPTIONS.find(opt=>opt[0]===selected);
-    const action=custom || (selected==='other'?'':preset?.[1]||'');
+    const action=selected==='other'?clip(custom.replace(/^(?:i\s+(?:want|need|have)\s+to\s+|to\s+)/i,'')):preset?.[1]||'';
     if(!action){
       const error=form.querySelector('.ns-urge-error')||document.createElement('p');
       error.className='ns-urge-error';error.setAttribute('role','alert');
