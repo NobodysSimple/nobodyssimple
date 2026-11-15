@@ -32,7 +32,7 @@ const areaFor = name => {
   if(['maps','account','profile','messages','community','volunteer','team','about','install'].includes(name)) return 'account';
   return name;
 };
-const ids = Object.freeze({home:'#home',guide:'#guide',lifestyle:'#lifestyle',feed:'#discussion',account:'#account'});
+const ids = Object.freeze({home:'#home',guide:'#guide',lifestyle:'#lifestyle',feed:'#discussion',learn:'#learn',account:'#account'});
 const svg = name => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${ICONS[name]}</svg>`;
 function refreshNav() {
   const current=areaFor(routeName());
