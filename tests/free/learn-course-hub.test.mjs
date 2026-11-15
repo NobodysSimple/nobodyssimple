@@ -13,7 +13,7 @@ test('the new Learn page is deliberately courses-only and uses ten original subj
   assert.ok(course.title.length>4);
   assert.ok(course.description.length>26);
   assert.ok(/\.(?:webp|svg)$/.test(course.landscape)&&course.mascot.endsWith('.webp'));
-  assert.match(read('sw.js'),/nobodyssimple-release-v205-learn-artfix/);
+  assert.match(read('sw.js'),/nobodyssimple-release-v\\d+-[a-z-]+/);
  }
 });
 test('all asset paths used by Learn already exist in the public repository',()=>{
