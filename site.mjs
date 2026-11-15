@@ -1,5 +1,6 @@
 import './ns-shell.mjs';
 import { renderLifestyle } from './lifestyle.mjs';
+import {installDailyCheckin,updateDailyCheckinButtons} from './ns-daily-checkin.mjs';
 import { renderNSFieldGuide, cleanupNSFieldGuide } from './ns-field-guide.mjs?v=field-journal-20261115';
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
@@ -116,6 +117,7 @@ const showWorkbook = options => {
   if(selected?.type==='topic'&&experienceGuideIds.has(selected.target))return showExperienceGuide(selected.target);if(selected?.type==='topic'&&clinicalGuideIds.has(selected.target))return showClinicalGuide(selected.target);if(selected?.type==='topic'&&thinkGuideIds.has(selected.target))return showThinkGuide(selected.target);if(selected?.type==='topic'&&habitGuideIds.has(selected.target))return showHabitGuide(selected.target);if(selected?.type==='topic'&&behaviourGuideIds.has(selected.target))return showBehaviourGuide(selected.target);if(selected?.type==='topic'&&connectionGuideIds.has(selected.target))return showConnectionGuide(selected.target);if(selected?.type==='topic'&&fhsGuideIds.has(selected.target))return showFhsGuide(selected.target);if(selected?.type==='topic'&&cfmGuideIds.has(selected.target))return showCfmGuide(selected.target);if(selected?.type==='topic'&&selfImageGuideIds.has(selected.target))return showSelfImageGuide(selected.target);if(selected?.type==='topic'&&focusGuideIds.has(selected.target))return showFocusGuide(selected.target);if(selected?.type==='topic'&&digitalGuideIds.has(selected.target))return showDigitalGuide(selected.target);if(selected?.type==='topic'&&bodyGuideIds.has(selected.target))return showBodyGuide(selected.target);
   return renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
 };
+installDailyCheckin();
 const supportDialog = document.createElement('dialog');
 supportDialog.className = 'support-dialog'; supportDialog.setAttribute('aria-label','Get help');
 supportDialog.innerHTML = '<div class="support-dialog-bar"><strong>Get help</strong><button type="button" class="button secondary" data-close-support>Close ×</button></div><div data-support-content></div>';
@@ -287,6 +289,7 @@ function legacyLibrary() {
 function homePage({learningView=null,scrollTo=null,wizardOnly=false}={}) {
   if(learningView !== null) { libraryState.view = ['crash','courses','videos','audios','blog','stories','debates'].includes(learningView) ? learningView : 'home'; libraryState.query = ''; }
   renderHome(main, posts, {wizardOnly});
+  updateDailyCheckinButtons();
   if(scrollTo) requestAnimationFrame(() => {
     const section = main.querySelector(scrollTo); if(!section)return;
     section.scrollIntoView({block:'start'}); section.setAttribute('tabindex','-1'); section.focus({preventScroll:true});
