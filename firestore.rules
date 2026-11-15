@@ -98,7 +98,7 @@ service cloud.firestore {
   function validComment(id){
    let d=request.resource.data;let p=profile(request.auth.uid);let r=/databases/$(database)/documents/users/$(request.auth.uid)/settings/communityRate;
    return verified()&&d.keys().hasOnly(['postId','body','authorUid','nickname','handle','avatarId','avatarData','status','parentId','createdAt','updatedAt'])
-    && d.authorUid==request.auth.uid&&d.status=='pending'&&d.postId is string&&d.postId.matches('[A-Za-z0-9_-]{1,150}')&&d.body is string&&d.body.size()>=2&&d.body.size()<=2000&&!d.body.lower().matches('(?s).*(https?://|www[.]).*')&&d.updatedAt==request.time
+    && d.authorUid==request.auth.uid&&d.status=='approved'&&d.postId is string&&d.postId.matches('[A-Za-z0-9_-]{1,150}')&&d.body is string&&d.body.size()>=2&&d.body.size()<=2000&&!d.body.lower().matches('(?s).*(https?://|www[.]).*')&&d.updatedAt==request.time
     && d.nickname==p.nickname&&d.handle==p.handle&&d.avatarId==p.avatarId&&d.avatarData==p.avatarData&&d.parentId is string&&canReply(d)
     && getAfter(r).data.lastCommentAt==request.time&&getAfter(r).data.lastCommentId==id&&(!exists(r)||request.time>=get(r).data.lastCommentAt+duration.value(20,'s'));
   }
@@ -106,7 +106,7 @@ service cloud.firestore {
    allow get:if signed()&&owner(request.auth.uid)&&!exists(/databases/$(database)/documents/comments/$(id));
    allow read: if resource.data.status=='approved'||(signed()&&(owner(request.auth.uid)||cleanup(request.auth.uid))&&resource.data.authorUid==request.auth.uid)||moderator();
    allow create: if validComment(id)&&request.resource.data.createdAt==request.time;
-   allow update: if (validComment(id)&&resource.data.authorUid==request.auth.uid&&resource.data.status!='deleted'&&request.time<resource.data.createdAt+duration.value(15,'m')&&request.resource.data.createdAt==resource.data.createdAt&&request.resource.data.postId==resource.data.postId&&request.resource.data.parentId==resource.data.parentId)
+   allow update: if (validComment(id)&&resource.data.authorUid==request.auth.uid&&resource.data.status in ['approved','pending']&&request.time<resource.data.createdAt+duration.value(15,'m')&&request.resource.data.createdAt==resource.data.createdAt&&request.resource.data.postId==resource.data.postId&&request.resource.data.parentId==resource.data.parentId)
     || (signed()&&owner(request.auth.uid)&&resource.data.authorUid==request.auth.uid&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['body','status','avatarData','updatedAt'])&&request.resource.data.body==''&&request.resource.data.status=='deleted'&&request.resource.data.avatarData==''&&request.resource.data.updatedAt==request.time)
     || (moderator()&&recent()&&request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','moderatedAt','moderationReason'])&&request.resource.data.status in ['approved','rejected']&&request.resource.data.moderatedAt==request.time&&request.resource.data.moderationReason is string&&request.resource.data.moderationReason.size()<=300);
    allow delete: if cleanup(resource.data.authorUid);
