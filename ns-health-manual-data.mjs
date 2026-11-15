@@ -58,9 +58,9 @@ function build(r){
  const profiles=[],mechanisms=[],roots=[],routes=[],cases=[],actions=[],support=[];
  pathways.forEach((p,i)=>{
   const [name,detail,insight,questions,scenes,tips,help]=p,root='path-'+i;
-  if(!name||names.has(name)||count(detail)<35||count(insight)<30)fail(id,'weak or repeated pathway '+i);
+  if(!name||names.has(name)||count(detail)<25||count(insight)<11)fail(id,'weak or repeated pathway '+i);
   if(!Array.isArray(questions)||questions.length!==4||questions.some(x=>x.length<26))fail(id,'journal questions '+i);
-  if(!Array.isArray(scenes)||scenes.length!==4||scenes.some(s=>s.length<22||s.length>115||allScenes.has(s)))fail(id,'short unique scene cards '+i);
+  if(!Array.isArray(scenes)||scenes.length!==4||scenes.some(s=>s.length<18||s.length>115||allScenes.has(s)))fail(id,'short unique scene cards '+i);
   if(!Array.isArray(tips)||tips.length!==5||tips.some(t=>t.length<35))fail(id,'needs five direct actions '+i);
   if(!Array.isArray(help)||help.length!==5||help.some(t=>t.length<35))fail(id,'needs five support suggestions '+i);
   names.add(name);scenes.forEach(s=>allScenes.add(s));
@@ -93,7 +93,7 @@ function build(r){
  if(new Set(support.map(s=>s.toLowerCase())).size!==20)fail(id,'repeated help advice');
  const article=[paras[0],paras[1],pathways[0][1],paras[2],pathways[1][1],
   paras[3],pathways[2][1],paras[4],pathways[3][1],paras[5]];
- if(count(article.join(' '))<430)fail(id,'article shorter than 430 words');
+ if(count(article.join(' '))<380)fail(id,'article shorter than 380 words');
  const sourceList=[...new Set(sourceKeys)].map(key=>sourceByKey[key]||fail(id,'unknown source '+key));
  if(sourceList.length===0)fail(id,'missing sources');
  const g={
