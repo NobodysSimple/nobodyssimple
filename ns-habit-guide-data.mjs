@@ -51,6 +51,68 @@ const immediateSafety={
 const stageNames=['What happened','What you thought it meant','What you felt','What you did next',
  'What the response provided briefly','Which need or value mattered','A possible rule you may be following',
  'Context and conditions that may explain it','Another reasonable understanding','A safer or more useful next action'];
+const habitStageLabels={
+ "procrastination": [
+  "The rule that makes starting feel dangerous",
+  "What the task actually requires"
+ ],
+ "perfectionism": [
+  "What mistakes seem to say about your worth",
+  "The real standard and consequences"
+ ],
+ "stuck": [
+  "What you expect of yourself when you begin",
+  "The support and capacity available"
+ ],
+ "habits": [
+  "What a missed day seems to mean",
+  "The cues and conditions that changed"
+ ],
+ "energy-action": [
+  "The demand you feel obliged to meet",
+  "Your actual health and energy limits"
+ ],
+ "avoidance": [
+  "What you fear might happen if you attend",
+  "Any genuine harm or access barrier"
+ ],
+ "too-many-tasks": [
+  "What you've been expecting yourself to carry",
+  "The hours and support actually available"
+ ],
+ "unplanned-impulses": [
+  "What feels urgent in the moment",
+  "The trigger and health circumstances"
+ ],
+ "risk-taking": [
+  "What the danger seems to promise",
+  "The actual risk and any health changes"
+ ],
+ "compulsive-buying": [
+  "What buying promises to change",
+  "Your finances and the situation around the urge"
+ ],
+ "binge-scroll": [
+  "What another swipe seems to offer",
+  "The cue and the time being displaced"
+ ],
+ "workaholism": [
+  "What stopping work might say about you",
+  "The job's demands and real responsibilities"
+ ],
+ "task-switching": [
+  "Why the next task feels urgent",
+  "The interruption and point of return"
+ ],
+ "habit-urges": [
+  "What the urge seems to require",
+  "The cue and any clinical safety concern"
+ ],
+ "risky-sex": [
+  "What you felt you had to agree to",
+  "Consent and the actual circumstances"
+ ]
+};
 function individualGuides(d){
  const id=d.id, r=journals[id],baseIdeas=ideas[id],extra=HABIT_EXTRA_ACTIONS[id],cases=seeds[id],w=HABIT_WHY_QUESTIONS[id],depth=voice[id],supportMore=HABIT_SUPPORT_MORE[id];
  if(!r||r.length!==4||!baseIdeas||!extra||!cases||cases.length!==8||!w||w.length!==10||!depth||!supportMore||supportMore.length!==12)fail(id,'incomplete original editorial data');
@@ -99,7 +161,7 @@ function individualGuides(d){
  if(mapped.length!==16||new Set(mapped.map(x=>x.situation)).size!==16)fail(id,'repeated or missing situations');
  for(const s of mapped)for(const f of ['interpretation','emotion','response','function','need','rule','adaptation','alternative','action','root'])if(!s[f])fail(id,'missing example field '+f);
  return Object.freeze({...d,article,routes:steps,ideas:{actions,support},prominentSafety:immediateSafety[id]||'',
-  whyIntro:depth.why,whyQuestions:w,whyCases:mapped,whyStages:stageNames,pullIndex:5});
+  whyIntro:depth.why,whyQuestions:w,whyCases:mapped,whyStages:stageNames.map((label,i)=>i===6?habitStageLabels[id][0]:i===7?habitStageLabels[id][1]:label),pullIndex:5});
 }
 export const HABIT_GUIDES=Object.freeze(authored.map(individualGuides));
 export const HABIT_IDS=Object.freeze(HABIT_GUIDES.map(x=>x.id));
