@@ -99,6 +99,7 @@ function listScreen(entries,category=''){
       ${quickToolsSection()}
       <div class="ns-guide6-journal__footer-art" aria-hidden="true"></div>
     </div>
+    <span class="ns-guide6-journal__bookmark" aria-hidden="true"></span>
    </div>
    ${journalTabs(category)}
   </div>
