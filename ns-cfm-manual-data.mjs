@@ -14,9 +14,13 @@ import {CFM_PROSE_MIGRATION} from './ns-cfm-prose-migration.mjs';
 import {CFM_SCENES_CULTURE} from './ns-cfm-scenes-culture.mjs';
 import {CFM_SCENES_FAITH} from './ns-cfm-scenes-faith.mjs';
 import {CFM_SCENES_MIGRATION} from './ns-cfm-scenes-migration.mjs';
+import {CFM_ADVICE_CULTURE} from './ns-cfm-advice-culture.mjs';
+import {CFM_ADVICE_FAITH} from './ns-cfm-advice-faith.mjs';
+import {CFM_ADVICE_MIGRATION} from './ns-cfm-advice-migration.mjs';
 const additions={...CFM_EXTRA_CULTURE,...CFM_EXTRA_FAITH,...CFM_EXTRA_MIGRATION};
 const authoredProse={...CFM_PROSE_CULTURE,...CFM_PROSE_FAITH,...CFM_PROSE_MIGRATION};
 const authoredScenes={...CFM_SCENES_CULTURE,...CFM_SCENES_FAITH,...CFM_SCENES_MIGRATION};
+const authoredAdvice={...CFM_ADVICE_CULTURE,...CFM_ADVICE_FAITH,...CFM_ADVICE_MIGRATION};
 const domains=['culture','faith','migration'];
 const groups=INCLUSIVE_GROUPS_A.filter(g=>domains.includes(g.id));
 const catalogue=new Map(groups.flatMap(g=>g.rows.map(row=>[row[0],{id:row[0],title:row[1],domain:g.id,flags:row[4]||''}])));
@@ -160,23 +164,19 @@ function makeRoutes(d,profiles){
  });
  return [map,...specific];
 }
-function makeIdeas(d,article,profiles,routes,examples){
- const actions=[
- ...d.versions.map(v=>v[2]),
- ...d.versions.map(v=>'Explore what would need to change before attempting this: '+strip(v[2])+'.'),
- ...d.questions.map(q=>'Write a few words about this question, if it is helpful: '+q),
- ...article.slice(2,8).map(s=>'Consider whether this is relevant to your situation: '+sentences(s)[0]),
- ...examples.slice(0,7).map(ex=>'Use this worked example to ask what fits your life: '+ex.situation)
- ];
- const support=[
- ...d.versions.map(v=>'Ask a trusted person about the practical concern behind '+v[0].toLowerCase()+': '+strip(v[1])+'.'),
- ...d.versions.map(v=>'Request support for this possible step only if safe: '+strip(v[2])+'.'),
- ...d.questions.map(q=>'Talk this through with someone who listens without deciding the answer for you: '+q),
- ...article.slice(2,8).map(s=>'You might discuss this part of the experience with a relevant support person: '+sentences(s)[0]),
- ...examples.slice(0,7).map(ex=>'A relevant service or ally may be able to help with: '+ex.situation)
- ];
- if(actions.length!==24||support.length!==24)fail(d.id,'optional ideas must have 24 distinct entries per category');
- return {actions,support};
+function makeIdeas(d){
+ const ideas=authoredAdvice[d.id];
+ if(!ideas)fail(d.id,'missing individually written practical guidance');
+ for(const kind of ['actions','support']){
+  if(!Array.isArray(ideas[kind])||ideas[kind].length!==12)fail(d.id,'expected 12 specific '+kind+' suggestions');
+  if(new Set(ideas[kind]).size!==12)fail(d.id,'duplicate '+kind+' advice');
+  for(const suggestion of ideas[kind]){
+   if(suggestion.length<38||suggestion.length>230)fail(d.id,'unclear '+kind+' suggestion: '+suggestion);
+   if(/^(Ask a trusted person about the practical concern|Request support for this possible step|Talk this through with someone who listens|Consider whether this is relevant|Use this worked example to ask|You might discuss this part|A relevant service or ally may be able to help with|Explore what would need to change before attempting this|Write a few words about this question)/i.test(suggestion))fail(d.id,'old boilerplate in '+kind);
+   if(/:[ ]/.test(suggestion))fail(d.id,'colon-form template in '+kind+': '+suggestion);
+  }
+ }
+ return ideas;
 }
 function build(id){
  const d=CFM_GUIDES[id],entry=catalogue.get(id),extra=additions[id];
@@ -189,7 +189,7 @@ function build(id){
  const roots=profiles.map((p,i)=>['path-'+i,p[0]]);
  const routes=makeRoutes(d,profiles);
  const whyCases=makeExamples(d,article,profiles,roots);
- const ideas=makeIdeas(d,article,profiles,routes,whyCases);
+ const ideas=makeIdeas(d);
  const sourceList=[...sources[d.domain]];
  if(topicResearch[id])sourceList.unshift(topicResearch[id]);
  if(id==='fear-divine-punishment')sourceList.push(['International OCD Foundation: religious scrupulosity','https://iocdf.org/faith-ocd/what-is-ocd-scrupulosity/']);
