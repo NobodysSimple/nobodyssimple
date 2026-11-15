@@ -39,8 +39,8 @@ test('Reminders stay functional inside a compact modal instead of inline panels'
 test('Daily Deed has original artwork and a truthful, navigable mission',()=>{
  const deed=src('lifestyle-practice-ui.mjs'),css=src('ns-daily-deed-quest.css'),art=src('lifestyle-art/daily-deed-journey.svg');
  const core=src('lifestyle-practice.mjs');
- assert.match(deed,/life-deed-paper/);
- assert.match(deed,/life-deed-journey/);
+ assert.match(deed,/life-mission-task/);
+ assert.match(deed,/life-mission-steps/);
  assert.match(deed,/practiceSummary\(state\)\.total/);
  assert.match(deed,/data-practice-done/);
  assert.match(deed,/data-practice-next/);
@@ -48,8 +48,9 @@ test('Daily Deed has original artwork and a truthful, navigable mission',()=>{
  assert.match(deed,/data-practice-undo/);
  assert.match(deed,/data-practice-level/);
  assert.match(deed,/data-practice-identity/);
- assert.match(css,/lifestyle-art\/daily-deed-journey\.svg/);
+ assert.match(css,/lifestyle-art\/mission-garden\.svg/);
  assert.match(art,/<svg/);
+ assert.match(src('lifestyle-art/mission-garden.svg'),/<svg/);
  assert.match(core,/completePractice/);
  assert.ok(!deed.includes('7 day streak'));
 });

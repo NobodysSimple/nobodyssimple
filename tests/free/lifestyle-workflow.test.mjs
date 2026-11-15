@@ -40,12 +40,12 @@ test('SimplyFocus prioritises the timer and tasks ahead of sound and breathing',
 
 test('The Daily Deed reports actual practices with an accessible quest action',()=>{
  const practice=src('lifestyle-practice-ui.mjs'),page=src('lifestyle.mjs');
- assert.match(page,/The Daily Deed/);
- assert.match(practice,/life-deed-layout/);
- assert.match(practice,/life-deed-milestones/);
+ assert.match(page,/Today’s Field Mission/);
+ assert.match(practice,/life-mission-task/);
+ assert.match(practice,/life-mission-steps/);
  assert.match(practice,/data-practice-done/);
  assert.match(practice,/data-practice-pause/);
  assert.match(practice,/data-practice-undo/);
- assert.match(practice,/Missed days do not erase progress/);
+ assert.match(practice,/Skipping a day never erases progress/);
  assert.match(src('sw.js'),/ns-lifestyle-workflow\.mjs/);
 });
