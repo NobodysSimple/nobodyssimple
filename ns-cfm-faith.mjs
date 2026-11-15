@@ -98,4 +98,14 @@ const rows=[
 ["What do you most hope a community would offer?","What experience has made belonging difficult so far?","Which practices or values matter enough to seek out?","What signs would tell you a community respects your autonomy?","What first contact would feel manageable and safe?"],
 "Belonging is more than sitting in the right building. It includes being treated with care."]
 ];
-export const FAITH_CFM_GUIDES=Object.freeze(Object.fromEntries(rows.map(([id,opening,why,versions,journalTitle,questions,closing])=>[id,Object.freeze({id,domain:"faith",opening,why,versions,journalTitle,questions,closing,sources:source})])));
+
+const tailoredSource={
+ "losing-faith":{label:"Longitudinal study of conversion and deconversion (2023)",url:"https://pubmed.ncbi.nlm.nih.gov/37664880/"},
+ "religious-trauma":{label:"APA: psychological effects of religious and spiritual struggles",url:"https://www.apa.org/topics/belief-systems-religion/spiritual-struggles"},
+ "fear-divine-punishment":{label:"NICE OCD guideline: religion, culture and scrupulosity",url:"https://www.nice.org.uk/guidance/cg31"},
+ "spiritual-uncertainty":{label:"Religious and Spiritual Struggles Scale: doubt and meaning domains (2014)",url:"https://chaplaincyinnovation.org/wp-content/uploads/2020/03/exline-et-al-2014-r-s-struggles-scale.pdf"},
+ "religious-identity-conflict":{label:"Study of religious coping and spiritual struggles (2024)",url:"https://pubmed.ncbi.nlm.nih.gov/38625097/"},
+ "religious-belonging":{label:"Systematic review of spirituality, religion and youth mental health (2023)",url:"https://pubmed.ncbi.nlm.nih.gov/37817143/"}
+};
+
+export const FAITH_CFM_GUIDES=Object.freeze(Object.fromEntries(rows.map(([id,opening,why,versions,journalTitle,questions,closing])=>[id,Object.freeze({id,domain:"faith",opening,why,versions,journalTitle,questions,closing,sources:tailoredSource[id]?[tailoredSource[id],...source]:source})])));
