@@ -44,7 +44,23 @@ export async function freeAccountCall(db,auth,name,data={}){
   const body=String(data.body||'').trim();if(body.length<2||body.length>2000||/https?:\/\/|www\./i.test(body))throw Error('Use 2–2,000 characters and no links.');
   if(!user.emailVerified)throw Error('Verify your email before commenting.');
   const comment=data.id?ref('comments',data.id):doc(collection(db,'comments'));
-  await runTransaction(db,async tx=>{const p=(await tx.get(ref('profiles',uid))).data(),old=(await tx.get(comment)).data(),rate=ref('users',uid,'settings','communityRate'),r=(await tx.get(rate)).data();if(!p?.nickname)throw Error('Choose a nickname in Account first.');if(r&&Date.now()-stamp(r.lastCommentAt)<20000)throw Error('Wait 20 seconds between comment submissions.');if(old&&(old.authorUid!==uid||Date.now()-stamp(old.createdAt)>900000))throw Error('You can edit your own comment for 15 minutes.');tx.set(rate,{lastCommentAt:serverTimestamp(),lastCommentId:comment.id});tx.set(comment,{postId:data.postId,body,authorUid:uid,nickname:p.nickname,handle:p.handle,avatarId:p.avatarId,avatarData:p.avatarData||'',status:'approved',parentId:old?.parentId||String(data.parentId||''),createdAt:old?.createdAt||serverTimestamp(),updatedAt:serverTimestamp()});});return {ok:true,id:comment.id};
+  const write=async status=>runTransaction(db,async tx=>{
+   const p=(await tx.get(ref('profiles',uid))).data(),old=(await tx.get(comment)).data();
+   const rate=ref('users',uid,'settings','communityRate'),r=(await tx.get(rate)).data();
+   if(!p?.nickname)throw Error('Choose a nickname in Account first.');
+   if(r&&Date.now()-stamp(r.lastCommentAt)<20000)throw Error('Wait 20 seconds between comments.');
+   if(old&&(old.authorUid!==uid||Date.now()-stamp(old.createdAt)>900000||old.status==='rejected'||old.status==='deleted'))throw Error('This comment cannot be edited. You may edit your own visible comment for 15 minutes.');
+   tx.set(rate,{lastCommentAt:serverTimestamp(),lastCommentId:comment.id});
+   tx.set(comment,{postId:data.postId,body,authorUid:uid,nickname:p.nickname,handle:p.handle,avatarId:p.avatarId,avatarData:p.avatarData||'',status,
+    parentId:old?.parentId||String(data.parentId||''),createdAt:old?.createdAt||serverTimestamp(),updatedAt:serverTimestamp()});
+  });
+  // During the Firestore rule rollout, old rules only accept pending comments.
+  // Keep commenting operational and make the temporary state explicit to readers.
+  try{await write('approved');return {ok:true,id:comment.id,status:'approved'};}
+  catch(error){
+   if(error?.code!=='permission-denied')throw error;
+   await write('pending');return {ok:true,id:comment.id,status:'pending'};
+  }
  }
  if(name==='communityDelete'){await setDoc(ref('comments',data.id),{body:'',status:'deleted',avatarData:'',updatedAt:serverTimestamp()},{merge:true});return {ok:true};}
  if(name==='communityReport'){const reason=String(data.reason||'').trim().slice(0,500);if(reason.length<3)throw Error('Give a short reason.');await setDoc(ref('reports',data.id+'_'+uid),{commentId:data.id,reporterUid:uid,reason,status:'open',createdAt:serverTimestamp()});return {ok:true};}
