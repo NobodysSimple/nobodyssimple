@@ -1,5 +1,6 @@
 import {resourceMarkup,uiSymbol} from './ui-resources.mjs';
 import {mountLifestylePractice} from './lifestyle-practice-ui.mjs';
+import {organiseLifestyle} from './ns-lifestyle-workflow.mjs';
 import {renderSimplyFocus} from './simplyfocus.mjs';
 import {addLifestyleTask,moveLifestyleToFocus,moveFocusToLifestyle,readFocusBoard,readLifestyleTasks,writeLifestyleTasks,EISENHOWER_QUADRANTS,taskPriority,validPriority,lifestyleTaskViewKey} from './lifestyle-storage.mjs';
 import {readLifestyleReminders,writeLifestyleReminders} from './lifestyle-reminders.mjs';
@@ -45,7 +46,7 @@ export function renderLifestyle(root,view='daily'){
   </section>
   <div class="lifestyle-two-column">
    <section id="lifestyle-calendar" class="lifestyle-card lifestyle-calendar" aria-labelledby="lifestyle-calendar-title"><div class="calendar-head"><div><p class="eyebrow">YOUR RECORD</p><h2 id="lifestyle-calendar-title">Calendar</h2></div><div><button type="button" data-calendar-move="-1" aria-label="Previous month">←</button><strong id="lifestyle-month-label"></strong><button type="button" data-calendar-move="1" aria-label="Next month">→</button></div></div><div class="calendar-weekdays" aria-hidden="true"><span style="color:var(--ns-life-readable-ink,#244735)!important">Mon</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Tue</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Wed</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Thu</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Fri</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Sat</span><span style="color:var(--ns-life-readable-ink,#244735)!important">Sun</span></div><div id="lifestyle-calendar-grid" class="calendar-grid"></div><div id="lifestyle-day-detail" class="lifestyle-day-detail" aria-live="polite"></div></section>
-   <section id="lifestyle-deed" class="lifestyle-card lifestyle-deed" aria-labelledby="lifestyle-deed-title"><div class="deed-heading"><span class="deed-mark">${uiSymbol('flower')}</span><div><p class="eyebrow">A small step towards who you are becoming</p><h2 id="lifestyle-deed-title">Today’s Practice</h2></div></div><div id="lifestyle-deed-card"></div></section>
+   <section id="lifestyle-deed" class="lifestyle-card lifestyle-deed" aria-labelledby="lifestyle-deed-title"><div class="deed-heading"><span class="deed-mark">${uiSymbol('flower')}</span><div><p class="eyebrow">A REAL-LIFE STEP TOWARDS WHO YOU ARE BECOMING</p><h2 id="lifestyle-deed-title">Today’s Field Mission</h2></div></div><div id="lifestyle-deed-card"></div></section>
   </div>
   <section id="lifestyle-tasks" class="lifestyle-card lifestyle-tasks" aria-labelledby="lifestyle-tasks-title"><div class="lifestyle-section-head"><div><p class="eyebrow">Today and later</p><h2 id="lifestyle-tasks-title">My tasks</h2><p>Keep today’s actions visible. You can move tasks into SimplyFocus.</p></div></div>
    <div class="life-task-view-switch" role="group" aria-label="Task list view"><button type="button" data-task-view="list" aria-pressed="${taskView==='list'}">☷ List</button><button type="button" data-task-view="quadrants" aria-pressed="${taskView==='quadrants'}">✿ Four quadrants</button></div>
@@ -192,6 +193,8 @@ export function renderLifestyle(root,view='daily'){
   }
   root.querySelectorAll('[data-life-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.lifeMode===mode)));
  }
+
+ organiseLifestyle(root,{showMode,signal});
 
  // The matrix and the ordinary list share a single source of truth. The array
  // position is the user's manual order within each quadrant; dates never

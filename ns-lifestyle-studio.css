@@ -815,3 +815,358 @@ html[data-theme="dark"] body.app-body #main .life-unified .life-focus-host .brea
  background:radial-gradient(circle,#46664a,#294331);
  border-color:#5a745a;
 }
+
+
+/* Interaction-first workflow expansion. Keep rules together with Lifestyle Studio. */
+/* Lifestyle daily workspace / November 2026.
+   Loaded after ns-lifestyle-studio.css: no data model or storage changes. */
+body.app-body #main .life-unified .life-page-header {
+ min-height:157px;padding:19px clamp(20px,3vw,40px);margin-bottom:12px;border-radius:20px;
+}
+body.app-body #main .life-unified .life-page-header>div{max-width:min(62%,550px)}
+body.app-body #main .life-unified .life-page-header h1{font-size:clamp(35px,3.8vw,48px);margin-bottom:3px}
+body.app-body #main .life-unified .life-page-header .eyebrow{margin-bottom:7px}
+body.app-body #main .life-unified .life-page-header p:not(.eyebrow){font-size:12px}
+body.app-body #main .life-unified .life-page-header::after{width:137px;height:144px;right:10%;bottom:0}
+body.app-body #main .life-unified .life-mode-switch{margin-bottom:12px;min-height:49px}
+body.app-body #main .life-unified .life-mode-switch button{min-height:39px}
+body.app-body #main .life-unified .life-arrival{
+ display:grid;grid-template-columns:minmax(240px,1fr) auto;align-items:center;gap:15px;
+ margin-bottom:10px;padding:14px 19px;border:1px solid #bad4c0;border-radius:19px;
+ background:linear-gradient(105deg,#e6f0e6,#f6f7ec 64%,#f4eedf);
+ box-shadow:0 3px 12px #33584212;color:#244939;
+}
+body.app-body #main .life-unified .life-arrival-copy{display:flex;align-items:center;gap:12px}
+body.app-body #main .life-unified .life-arrival-mark{
+ display:grid;place-items:center;width:45px;height:45px;flex:0 0 45px;
+ background:#d3e6d8;border:1px solid #b4d4bd;border-radius:14px;
+ font-size:23px;color:#2d704a;
+}
+body.app-body #main .life-unified .life-arrival .eyebrow{margin:0 0 3px;letter-spacing:.13em;color:#68836a;font:800 10px/1.3 system-ui,sans-serif}
+body.app-body #main .life-unified .life-arrival h2{font:500 clamp(20px,2vw,26px)/1.2 Georgia,serif;letter-spacing:-.025em;color:#244a38;margin:0}
+body.app-body #main .life-unified .life-arrival p:not(.eyebrow){margin:4px 0 0;font:400 12px/1.45 system-ui,sans-serif;color:#58705c}
+body.app-body #main .life-unified .life-arrival-actions{display:flex;gap:7px;align-items:center;justify-content:end;flex-wrap:wrap}
+body.app-body #main .life-unified .life-arrival-actions :is(button,a){
+ display:inline-flex;justify-content:center;align-items:center;gap:5px;
+ min-height:42px;border:1px solid #c7d6c6;border-radius:12px;
+ padding:9px 13px;background:#fffdf5;color:#28503c;text-decoration:none;
+ font:750 12px/1.25 system-ui,sans-serif;cursor:pointer;white-space:nowrap;
+}
+body.app-body #main .life-unified .life-arrival-actions .life-arrival-primary{
+ background:#275c43;color:#fffef5;border-color:#275c43;box-shadow:0 3px 9px #2a60441e;
+}
+body.app-body #main .life-unified :is(.life-checkin-drawer,.life-settings-drawer){
+ min-width:0;border:1px solid #d5dfcd;border-radius:15px;
+ background:#f6f7ef;margin-bottom:11px;overflow:hidden;
+}
+body.app-body #main .life-unified :is(.life-checkin-drawer,.life-settings-drawer)>summary{
+ display:flex;gap:11px;align-items:center;list-style:none;cursor:pointer;
+ padding:12px 16px;color:#284b3c;
+}
+body.app-body #main .life-unified :is(.life-checkin-drawer,.life-settings-drawer)>summary::-webkit-details-marker{display:none}
+body.app-body #main .life-unified .life-drawer-icon{
+ display:grid;place-items:center;width:32px;height:32px;flex:0 0 32px;
+ background:#e2ecdf;border-radius:10px;color:#315c41;font-size:21px;
+}
+body.app-body #main .life-unified :is(.life-checkin-drawer,.life-settings-drawer)>summary>span:nth-child(2){display:grid;gap:2px;flex:1}
+body.app-body #main .life-unified :is(.life-checkin-drawer,.life-settings-drawer)>summary strong{font:750 13px/1.25 system-ui,sans-serif}
+body.app-body #main .life-unified :is(.life-checkin-drawer,.life-settings-drawer)>summary small{color:#64806d;font:400 11px/1.3 system-ui,sans-serif}
+body.app-body #main .life-unified .life-drawer-chevron{font-size:22px;transition:transform .2s ease}
+body.app-body #main .life-unified details[open]>.life-drawer-chevron,
+body.app-body #main .life-unified details[open]>summary .life-drawer-chevron{transform:rotate(180deg)}
+body.app-body #main .life-unified .life-checkin-drawer #lifestyle-checkin{
+ margin:0 11px 11px;border-color:#d7e3d6;box-shadow:none;
+}
+body.app-body #main .life-unified .life-today-strip{
+ display:grid;grid-template-columns:minmax(170px,.65fr) minmax(0,2fr);
+ gap:12px;min-height:75px;padding:10px 15px;margin-bottom:14px;border-radius:16px;
+}
+body.app-body #main .life-unified .life-today-head h2{font-size:clamp(18px,2vw,23px);max-width:none}
+body.app-body #main .life-unified .life-today-head>span{display:none}
+body.app-body #main .life-unified .life-overview{gap:8px}
+body.app-body #main .life-unified .life-glance-item{min-height:56px;padding:7px 10px;grid-template-columns:28px minmax(0,1fr)}
+body.app-body #main .life-unified .life-glance-icon{width:28px;height:28px}
+body.app-body #main .life-unified .life-dashboard-flow{
+ display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:15px;align-items:start;
+}
+body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-calendar{
+ grid-column:span 5;grid-row:auto;min-height:0;order:0;
+}
+body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-tasks{
+ grid-column:span 7;grid-row:auto;min-height:0;order:1;
+}
+body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-deed{
+ grid-column:1/-1;grid-row:auto;min-height:0;order:2;
+}
+body.app-body #main .life-unified .life-dashboard-flow>.life-settings-drawer{
+ grid-column:1/-1;grid-row:auto;order:3;margin:0;
+}
+body.app-body #main .life-unified #lifestyle-tasks,
+body.app-body #main .life-unified #lifestyle-calendar{scroll-margin-top:90px}
+body.app-body #main .life-unified .life-checkin-drawer{scroll-margin-top:85px}
+body.app-body #main .life-unified #lifestyle-calendar .calendar-day{min-height:45px}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-quick-form{
+ display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;align-items:end;
+}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-quick-form>.field:first-child{
+ grid-column:1;grid-row:1;min-width:0;
+}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-quick-form>.button{
+ grid-column:2;grid-row:1;min-width:112px;width:auto;min-height:43px;white-space:nowrap;
+}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-options{
+ grid-column:1/-1;grid-row:2;border:1px solid #d6e0d0;border-radius:11px;
+ background:#f2f5ed;margin:0;min-width:0;
+}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-options>summary{
+ cursor:pointer;min-height:38px;padding:9px 12px;display:flex;justify-content:space-between;
+ font:700 11px/1.3 system-ui,sans-serif;color:#365c42;
+}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-options>summary span{transition:transform .15s ease}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-options[open]>summary span{transform:rotate(180deg)}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-options-grid{
+ padding:9px 11px 12px;border-top:1px solid #d8e0d3;
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-options-grid .field{grid-column:auto;min-width:0}
+body.app-body #main .life-unified #lifestyle-tasks .life-task-options-grid .life-task-priority-field,
+body.app-body #main .life-unified #lifestyle-tasks .life-task-options-grid .lifestyle-task-notes{grid-column:1/-1}
+body.app-body #main .life-unified #lifestyle-deed{
+ background:linear-gradient(115deg,rgba(255,253,244,.97),rgba(238,246,228,.95));
+ border:1px solid #d3dfc3;box-shadow:0 9px 26px #58774420;
+}
+body.app-body #main .life-unified #lifestyle-deed .deed-heading{padding-right:160px;min-height:84px}
+body.app-body #main .life-unified #lifestyle-deed::after{
+ background-image:url("ns-character-watering.webp");width:130px;height:130px;right:25px;top:10px;display:block;
+}
+body.app-body #main .life-unified #lifestyle-deed #lifestyle-deed-card{max-width:none}
+body.app-body #main .life-unified .life-settings-drawer #lifestyle-reminders{
+ margin:0 10px 10px;box-shadow:none;
+}
+body.app-body #main .life-unified .life-settings-drawer:not([open]){max-height:58px}
+body.app-body #main .life-unified .life-focus-host .simplyfocus-page{grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+body.app-body #main .life-unified .life-focus-host .focus-intro{
+ min-height:110px;padding:17px 24px;
+}
+body.app-body #main .life-unified .life-focus-host .focus-intro::after{width:96px;height:105px}
+body.app-body #main .life-unified .life-focus-host .focus-intro :is(h1,h2){font-size:clamp(25px,2.7vw,34px)}
+body.app-body #main .life-unified .life-focus-host .focus-intro .lead{font-size:12px;max-width:57ch}
+body.app-body #main .life-unified .life-focus-host .focus-quick-links{
+ grid-column:1/-1;display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:-5px;
+}
+body.app-body #main .life-unified .life-focus-host .focus-quick-links button{
+ border:1px solid #d3ddca;padding:9px 15px;background:#eef3e8;border-radius:11px;
+ color:#284f3b;cursor:pointer;font:750 12px/1.3 system-ui,sans-serif;min-height:42px;
+}
+body.app-body #main .life-unified .life-focus-host .pomodoro-card{
+ grid-column:1/-1;display:grid;grid-template-columns:minmax(250px,5fr) minmax(310px,7fr);
+ gap:17px;align-items:start;scroll-margin-top:90px;
+}
+body.app-body #main .life-unified .life-focus-host .pomodoro-head{grid-column:1/-1}
+body.app-body #main .life-unified .life-focus-host .pomodoro-main{
+ grid-column:1;min-height:280px;margin:0;
+}
+body.app-body #main .life-unified .life-focus-host .pomodoro-tasks{
+ grid-column:2;margin:0;min-width:0;
+}
+body.app-body #main .life-unified .life-focus-host :is(.focus-mixer,.timed-breathing-card){grid-column:1/-1;scroll-margin-top:90px}
+body.app-body #main .life-unified .life-focus-host .focus-mixer{order:2}
+body.app-body #main .life-unified .life-focus-host .timed-breathing-card{order:3}
+body.app-body #main .life-unified .life-focus-host .focus-intro{order:0}
+body.app-body #main .life-unified .life-focus-host .focus-quick-links{order:1}
+body.app-body #main .life-unified .life-focus-host .pomodoro-card{order:1}
+body.app-body #main .life-unified .life-focus-host .focus-note{order:4}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-hero{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,.4fr);
+ align-items:center;gap:15px;padding:22px;
+ margin-bottom:15px;border-radius:19px;border:1px solid #bdd3b5;
+ background:linear-gradient(110deg,#dcead5,#edf4dd 68%,#f4eed3);
+ position:relative;overflow:hidden;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-hero::after{
+ content:"";position:absolute;right:4px;bottom:0;width:28%;height:100%;
+ background:url("lifestyle-art/studio-meadow.svg") right bottom/auto 100% no-repeat;opacity:.6;pointer-events:none;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-hero .life-practice-persona{margin:0;z-index:1}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-hero .life-practice-persona strong{font-size:clamp(30px,3vw,43px)}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-hero .life-practice-today-label{
+ justify-self:end;align-self:end;position:relative;z-index:1;display:flex;flex-direction:column;align-items:start;
+ padding:12px;background:#fffdf7dc;border:1px solid #d5dfc8;border-radius:12px;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail{
+ margin:13px 0 18px;padding:15px 18px;background:#f0f5e8;border-radius:15px;border:1px solid #d5e2cc;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-head{
+ display:flex;align-items:center;justify-content:space-between;gap:9px;margin-bottom:12px;flex-wrap:wrap;
+ font:750 12px/1.4 system-ui,sans-serif;color:#315841;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-head small{color:#5c745c;font-size:11px;font-weight:450}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-steps{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-step{
+ text-align:center;font:700 11px/1.25 system-ui,sans-serif;color:#6b7b64;
+ display:flex;flex-direction:column;align-items:center;gap:6px;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-step b{
+ display:grid;place-items:center;width:31px;height:31px;border-radius:50%;
+ background:#fffdf7;border:1px solid #b9d2b8;color:#4f7253;font-size:13px;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-step.is-current b{
+ background:#2b6145;color:white;border-color:#2b6145;
+ box-shadow:0 0 0 4px #c8e0c6;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-step.is-passed b{background:#d2e6d0}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-action{
+ padding:22px;border-radius:20px;min-height:155px;
+ border:1px solid #d3bf8d;
+ background:linear-gradient(120deg,#fff4d9,#f6e7bd);
+ position:relative;overflow:hidden;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-action::after{
+ content:"";position:absolute;right:12px;bottom:5px;width:96px;height:94px;
+ background:url("ns-character-watering.webp") center/contain no-repeat;opacity:.32;pointer-events:none;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-action .life-practice-task{
+ font-size:clamp(23px,2.4vw,34px);line-height:1.28;max-width:27ch;margin-bottom:10px;
+ position:relative;z-index:1;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-meta{
+ display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:6px 0 13px;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-meta strong{
+ display:inline-flex;align-items:center;min-height:32px;padding:6px 12px;border-radius:999px;
+ background:#e3efdd;color:#29533b;font:750 12px/1.3 system-ui,sans-serif;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestones{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:14px 0;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestone{
+ display:flex;align-items:center;gap:9px;border:1px solid #d6dfce;border-radius:13px;
+ background:#f7f8ee;padding:10px;opacity:.66;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestone.is-earned{
+ border-color:#b6d0ad;background:#e7f1df;opacity:1;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestone .symbol{
+ width:32px;height:32px;display:grid;place-items:center;border-radius:50%;
+ background:#fffdf6;flex:0 0 32px;font-size:19px;color:#426948;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestone span:last-child{
+ display:grid;gap:2px;font:750 12px/1.3 system-ui,sans-serif;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestone small{font-size:10px;font-weight:400;color:#577260}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-complete{
+ background:#e6f1de;border:1px solid #aec8a5;border-radius:15px;padding:14px 17px;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-actions .button{min-height:44px}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-tags{margin:0 0 15px}
+@media(max-width:1120px){
+ body.app-body #main .life-unified .life-dashboard-flow{grid-template-columns:minmax(0,1fr)}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-calendar{grid-column:1/-1;order:1}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-tasks{grid-column:1/-1;order:0}
+ body.app-body #main .life-unified .life-arrival{grid-template-columns:1fr}
+ body.app-body #main .life-unified .life-arrival-actions{justify-content:flex-start}
+ body.app-body #main .life-unified .life-focus-host .pomodoro-card{grid-template-columns:1fr}
+ body.app-body #main .life-unified .life-focus-host .pomodoro-main,
+ body.app-body #main .life-unified .life-focus-host .pomodoro-tasks{grid-column:1/-1}
+}
+@media(max-width:980px){
+ body.app-body #main .life-unified .life-dashboard-flow{grid-template-columns:1fr}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-tasks{grid-column:1/-1;order:0}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-calendar{grid-column:1/-1;order:1}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-deed{grid-column:1/-1;order:2}
+ body.app-body #main .life-unified .life-dashboard-flow>.life-settings-drawer{grid-column:1/-1;order:3}
+ body.app-body #main .life-unified .life-today-strip{grid-template-columns:1fr}
+ body.app-body #main .life-unified .life-today-head h2{max-width:none}
+}
+@media(max-width:620px){
+ body.app-body #main .life-unified .life-page-header{min-height:135px;padding:16px 16px 15px}
+ body.app-body #main .life-unified .life-page-header h1{font-size:35px}
+ body.app-body #main .life-unified .life-page-header::after{width:90px;height:104px;right:0}
+ body.app-body #main .life-unified .life-page-header .life-date{font-size:10px}
+ body.app-body #main .life-unified .life-arrival{padding:12px;border-radius:15px}
+ body.app-body #main .life-unified .life-arrival-mark{display:none}
+ body.app-body #main .life-unified .life-arrival-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.app-body #main .life-unified .life-arrival-actions :is(button,a){min-width:0;white-space:normal}
+ body.app-body #main .life-unified .life-arrival-actions a{grid-column:1/-1}
+ body.app-body #main .life-unified .life-overview{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.app-body #main .life-unified .life-glance-item{display:block;padding:10px;min-height:0}
+ body.app-body #main .life-unified .life-glance-icon{display:none}
+ body.app-body #main .life-unified .life-today-strip{gap:7px}
+ body.app-body #main .life-unified #lifestyle-tasks .life-task-quick-form{grid-template-columns:minmax(0,1fr) auto}
+ body.app-body #main .life-unified #lifestyle-tasks .life-task-quick-form>.button{min-width:87px}
+ body.app-body #main .life-unified #lifestyle-deed .deed-heading{min-height:72px;padding:0}
+ body.app-body #main .life-unified #lifestyle-deed::after{top:6px;right:-7px;width:79px;height:80px;opacity:.52}
+ body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-hero{grid-template-columns:1fr;padding:15px}
+ body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-hero .life-practice-today-label{justify-self:stretch}
+ body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestones{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.app-body #main .life-unified #lifestyle-deed-card .life-practice-action .life-practice-task{font-size:24px}
+ body.app-body #main .life-unified .life-focus-host .focus-quick-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.app-body #main .life-unified .life-focus-host .pomodoro-card{display:block}
+ body.app-body #main .life-unified .life-focus-host .pomodoro-tasks{margin-top:18px}
+}
+html[data-theme="dark"] body.app-body #main .life-unified :is(.life-arrival,.life-checkin-drawer,.life-settings-drawer){
+ background:#293f32;border-color:#526c56;color:#e9f1e4;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-arrival :is(h2,p,.eyebrow),
+html[data-theme="dark"] body.app-body #main .life-unified :is(.life-checkin-drawer,.life-settings-drawer)>summary{
+ color:#e9f1e4;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-arrival-actions :is(button,a){
+ background:#354e3c;border-color:#5b755e;color:#edf5e9;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-arrival-actions .life-arrival-primary{background:#3c8057;color:white}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-tasks .life-task-options,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card :is(.life-practice-trail,.life-practice-quest-hero,.life-practice-milestone,.life-practice-complete){
+ background:#354b39;border-color:#617c61;color:#edf5e9;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail :is(small,span,b),
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestone :is(span,small),
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-meta strong{color:#eaf3e4}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-hero .life-practice-today-label{
+ background:#2c4333;border-color:#637c5f;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-action{
+ background:#544b32;border-color:#8a7b56;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestone .symbol{
+ background:#415c42;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-tasks .life-task-options>summary{color:#e4f1e2}
+@media(prefers-reduced-motion:reduce){
+ body.app-body #main .life-unified .life-drawer-chevron{transition:none}
+}
+
+/* Specific dark palette for all high-priority surfaces.
+   ID-level studio selectors otherwise out-rank the generic dark card rule. */
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-tasks,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-calendar,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-checkin,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-reminders,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed{
+ background:linear-gradient(130deg,#283e31,#314938);
+ border-color:#526f58;color:#e5f0e4;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-meta strong{
+ background:#426447;color:#f2f9ee;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-step b{
+ background:#435d46;color:#edf6e9;border-color:#759479;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-step.is-current b{
+ background:#b9dfab;color:#153d2a;border-color:#b9dfab;box-shadow:0 0 0 4px #41644a;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestone .symbol{
+ color:#e9f3df;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-persona :is(strong,small),
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-today-label :is(span,strong),
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-meta span,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-tasks .life-task-options-grid .field,
+html[data-theme="dark"] body.app-body #main .life-unified :is(.life-checkin-drawer,.life-settings-drawer)>summary small{
+ color:#e5f0e4;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-action .life-practice-task{
+ color:#fff6df;
+}
