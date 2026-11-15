@@ -6,7 +6,7 @@ test('existing Hello! post is the notebook test case, not the legacy article tem
  const notebook=page.locator('.ns-blog-notebook');
  await expect(notebook).toBeVisible();
  await expect(notebook.locator('#nb-article-title')).toHaveText('Hello!');
- await expect(notebook.locator('.nb-progress-card')).toBeVisible();
+ await expect(notebook.locator('.nb-progress-card')).toHaveCount(0);
  await expect(notebook.locator('.nb-contents-card')).toBeVisible();
  await expect(notebook.locator('.nb-read-next-card')).toBeVisible();
  await expect(notebook.locator('.nb-hero-image img')).toHaveAttribute('src','banner.png');
