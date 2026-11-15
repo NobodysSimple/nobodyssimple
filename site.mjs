@@ -64,7 +64,7 @@ import {getNeedsMode} from './ns-needs-catalog.mjs';
 import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
 import {attachSteadyGuidebookToTool,steadyGuide} from './ns-steady-guidebook.mjs';
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
-import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
+import {renderCourseHub} from './ns-learn-courses.mjs';
 import {renderNotebookBlogPost} from './ns-blog-notebook.mjs?v=hello-notebook-20261115-2';
 import {mountPublishedTopicEditorial} from './ns-topic-publications.mjs';
 import { renderSupport } from "./referrals.mjs";
@@ -271,10 +271,15 @@ function homePage({learningView=null,scrollTo=null,wizardOnly=false}={}) {
   });
 }
 function library() {
-  main.innerHTML = '<div class="wrap standalone-learn"><section id="home-learning" aria-label="Learn with Nobody’s Simple"></section></div>';
-  const root=main.querySelector('#home-learning');
-  if(libraryState.view === 'home') renderNSLearnHub(root,{posts,account:accountState()});
-  else renderLearningHub(root);
+  // Course-only Learn is a standalone page. Legacy blog/video library routes
+  // are independent and are never advertised as Learn courses.
+  if(libraryState.view === 'home' || libraryState.view === 'courses'){
+    main.innerHTML='<div class="ns-course-page" aria-label="Nobody’s Simple Courses"><div id="learn-course-hub"></div></div>';
+    renderCourseHub(main.querySelector('#learn-course-hub'),{focusCourses:libraryState.view==='courses'});
+    return;
+  }
+  main.innerHTML='<div class="wrap standalone-learn"><section id="home-learning" aria-label="Published library"></section></div>';
+  renderLearningHub(main.querySelector('#home-learning'));
 }
 function wisbodyPage() {
   main.innerHTML = '<div class="wrap wisbody-page"><a class="back-link" href="#home">← Home</a><div id="wisbody-full"></div></div>';
@@ -948,20 +953,20 @@ function route() {
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
         location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
       library: () => {
-        if(id === "quotes") wisbodyPage();
-        else {libraryState.view=id||"home";libraryState.query="";library();}
+        if(id === 'quotes'){wisbodyPage();return;}
+        // Preserve external links to the public blog and other published media,
+        // but retire the curriculum and obsolete debate/crash shelves.
+        if(!id||id==='courses'){location.replace(id==='courses'?'#learn/courses':'#learn');return;}
+        if(['crash','debates'].includes(id)){location.replace('#learn');return;}
+        libraryState.view=id;libraryState.query='';library();
       },
       learn: () => {
-        if (id === 'lesson') {
-          main.innerHTML='<div class="wrap standalone-learn"><section id="home-learning" aria-label="Interactive learning lesson"></section></div>';
-          renderNSLesson(main.querySelector('#home-learning'),safeRoutePart(routeParts.length===3?routeParts[2]:''),{account:accountState()});
-        } else if (id === 'path') {
-          main.innerHTML='<div class="wrap standalone-learn"><section id="home-learning" aria-label="Learning path"></section></div>';
-          renderNSLearnPath(main.querySelector('#home-learning'),safeRoutePart(routeParts.length===3?routeParts[2]:''),{account:accountState()});
-        } else {
-          libraryState.view=id||'home';
-          library();
-        }
+        // Old interactive worlds, demos and shelves are no longer part of Learn.
+        // Their saved progress is untouched; no legacy route can mount them.
+        if(id && (id!=='courses'||routeParts.length>2)){location.replace('#learn');return;}
+        libraryState.view=id==='courses'?'courses':'home';
+        libraryState.query='';
+        library();
       },
       blog,
       writing: blog,
