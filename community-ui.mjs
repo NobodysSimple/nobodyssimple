@@ -14,11 +14,11 @@ const avatar=p=>`media/avatars/${AVATARS.includes(p?.avatarId)?p.avatarId:'base'
 const author=p=>`<a class="board-author" href="#profile/${encodeURIComponent(p.authorUid||p.uid)}"><img src="${esc(avatar(p))}" alt="" width="44" height="44"><span><strong>${esc(p.nickname||p.full?.nickname||'Community member')}</strong>${p.handle?`<small>@${esc(p.handle)}</small>`:''}</span></a>`;
 const shell=content=>{
  const messages=location.hash.startsWith('#messages'),heading=messages?'Your quiet corner.':'A place to talk things through.';
- const tagline=messages?'Continue a private conversation, or send someone a thoughtful note.':'Share a thought, ask a question or offer a useful perspective. There’s room for all kinds of days here.';
+ const tagline=messages?'Continue a private conversation, or send someone a thoughtful note.':'Share a thought, ask a question or offer a useful perspective. A supportive community for real, messy, human stuff.';
  return `<div class="wrap board-page board-campfire ${messages?'board-messages-page':'board-discussion-page'}">
   <header class="board-header board-campfire-hero">
    <div class="board-hero-copy"><p class="eyebrow">NOBODY’S SIMPLE · ${messages?'MESSAGES':'COMMUNITY'}</p><h1>${heading}</h1><p>${tagline}</p></div>
-   <img class="board-hero-scene" src="community-art/campfire-hero.svg" alt="" loading="eager" decoding="async">
+   <div class="board-hero-scene" aria-hidden="true"></div>
   </header>
   <nav class="board-nav board-campfire-nav" aria-label="Community">
    <a class="button secondary ${messages?'':'is-active'}" href="#discussion" ${messages?'':'aria-current="page"'}><span aria-hidden="true">☷</span> Discussion board</a>
