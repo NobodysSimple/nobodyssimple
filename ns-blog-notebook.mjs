@@ -43,18 +43,21 @@ function ensureCSS(){
  if(document.getElementById('ns-blog-notebook-styles'))return;
  const link=document.createElement('link');
  link.id='ns-blog-notebook-styles';link.rel='stylesheet';
- link.href='ns-blog-notebook.css?v=notebook-20261115';
+ link.href='ns-blog-notebook.css?v=hello-notebook-20261115-2';
  document.head.append(link);
 }
 function heroMarkup(post){
  const src=safeImage(post.thumbnail);
  if(src)return `<figure class="nb-hero-image nb-photo-frame"><span class="nb-tape" aria-hidden="true"></span>
-   <img src="${esc(src)}" alt="${esc(asText(post.thumbnailAlt))}" decoding="async">
+   <img src="${esc(src)}" alt="${esc(/\.(?:png|webp|jpe?g)$/i.test(asText(post.thumbnailAlt)) ? 'Illustration for '+post.title : asText(post.thumbnailAlt))}" decoding="async">
    ${post.thumbnailAlt?`<figcaption>${esc(post.thumbnailAlt)}</figcaption>`:''}</figure>`;
  return `<div class="nb-hero-illustration" aria-hidden="true"><img class="nb-scene-picture" src="ns-landscape-path.webp" alt=""><img class="nb-hero-character" src="ns-character-reading.webp" alt=""></div>`;
 }
 function suggestedMarkup(posts){
- if(!posts.length)return '<p class="nb-empty-next">More blog posts will appear here as they are published.</p><a class="nb-all-articles" href="#library/blog">Explore the blog <span aria-hidden="true">→</span></a>';
+ if(!posts.length)return `<p class="nb-empty-next">You're reading our first blog. While the next one takes shape, there's more to explore.</p>
+  <a class="nb-related-post nb-explore-link" href="#wisbody"><span class="nb-related-art"><img src="ns-character-reading.webp" alt="" loading="lazy"></span><span class="nb-related-copy"><b>Explore Wisbody</b><small>Short reflections to think about</small></span><span class="nb-related-arrow" aria-hidden="true">↗</span></a>
+  <a class="nb-related-post nb-explore-link" href="#library"><span class="nb-related-art"><img src="ns-landscape-learn.webp" alt="" loading="lazy"></span><span class="nb-related-copy"><b>Explore the Learn library</b><small>More psychology and learning</small></span><span class="nb-related-arrow" aria-hidden="true">↗</span></a>
+  <a class="nb-all-articles" href="#library/blog">Return to the blog <span aria-hidden="true">→</span></a>`;
  return `${posts.map(p=>{
   const image=safeImage(p.thumbnail);
   return `<a class="nb-related-post" href="#post/${encodeURIComponent(p.id)}">
@@ -140,12 +143,12 @@ export function renderNotebookBlogPost(root,post,publishedPosts){
   </div>
  </div>`;
  const page=root.querySelector('.ns-blog-notebook');
- const actualHeadings=[...page.querySelectorAll('.ns-blog-body h2, .ns-blog-body h3')]
+ const actualHeadings=[...page.querySelectorAll('.ns-blog-body h2, .ns-blog-body h3, .ns-blog-body h4')]
   .filter(h=>!h.closest('.table-of-contents, .interactive-embed, .site-card, .related-block'));
  const contents=page.querySelector('#nb-contents-list');
  const sectionNodes=actualHeadings.map((node,index)=>{
   if(!node.id)node.id=`nb-section-${index+1}`;
-  return {id:node.id,title:node.textContent.trim().slice(0,130),node,level:node.tagName==='H3'?3:2};
+  return {id:node.id,title:node.textContent.trim().slice(0,130),node,level:Number(node.tagName.slice(1))};
  }).filter(entry=>entry.title);
  contents.innerHTML='<li><a href="#nb-story-start" data-nb-anchor="nb-story-start">Start reading</a></li>'
   + sectionNodes.map(s=>`<li class="${s.level===3?'nb-toc-sub':''}"><a href="#${esc(s.id)}" data-nb-anchor="${esc(s.id)}">${esc(s.title)}</a></li>`).join('')

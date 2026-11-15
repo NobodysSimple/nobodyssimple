@@ -64,7 +64,7 @@ import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
 import {attachSteadyGuidebookToTool,steadyGuide} from './ns-steady-guidebook.mjs';
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
-import {renderNotebookBlogPost} from './ns-blog-notebook.mjs';
+import {renderNotebookBlogPost} from './ns-blog-notebook.mjs?v=hello-notebook-20261115-2';
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});

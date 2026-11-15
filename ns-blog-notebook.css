@@ -213,3 +213,28 @@ html[data-theme="dark"] #main .ns-blog-notebook .ns-blog-body :is(blockquote,.pu
 html[data-theme="dark"] #main .ns-blog-notebook .nb-article-footer{border-color:#617763}
 html[data-theme="dark"] #main .ns-blog-notebook .ns-blog-paper>.account-learning-controls{background:#314737;border-color:#60735b}
 html[data-theme="dark"] #main:has(> .ns-blog-notebook)>.account-comments{background:#263a2f;border-color:#536b54;color:#e3efdc}
+
+/* The first published post opens with a wave illustration before the written
+   introduction. Present it as a scrapbook illustration beside the introduction,
+   rather than as another full-width hero immediately below the banner. */
+#main .ns-blog-notebook[data-blog-id="c045368d-ce46-416f-8ce7-5245e0e30199"] .ns-blog-body > .block-image:first-child{
+ float:right;width:min(40%,300px);margin:3px 0 21px 27px;transform:rotate(2.2deg);
+}
+#main .ns-blog-notebook[data-blog-id="c045368d-ce46-416f-8ce7-5245e0e30199"] .ns-blog-body > .block-image:first-child img{
+ max-height:325px;object-fit:contain;background:#f5efd9;
+}
+#main .ns-blog-notebook[data-blog-id="c045368d-ce46-416f-8ce7-5245e0e30199"] .ns-blog-body > .block-image:first-child + .block-paragraph{
+ margin-top:19px;
+}
+#main .ns-blog-notebook .ns-blog-body > .block-heading{
+ clear:both;
+}
+#main .ns-blog-notebook .ns-blog-body h4{
+ font:700 clamp(20px,2vw,24px)/1.3 Georgia,serif;
+ margin:31px 0 14px;
+}
+@media(max-width:560px){
+ #main .ns-blog-notebook[data-blog-id="c045368d-ce46-416f-8ce7-5245e0e30199"] .ns-blog-body > .block-image:first-child{
+  float:none;width:min(100%,290px);margin:15px auto 24px;
+ }
+}
