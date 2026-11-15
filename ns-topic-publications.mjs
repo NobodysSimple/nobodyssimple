@@ -50,9 +50,9 @@ export async function mountPublishedTopicEditorial(root,id){
  const html=topicPublicationMarkup(data,title);
  if(!html)return;
  root.querySelectorAll('.ns-editorial-topic').forEach(node=>node.remove());
- const container=root.querySelector('.ns-judge,.ns-atlas-guide,.ns-guide-shell,.ns-deep-shell,.ns-wb-shell,.ns-wb-page');
+ const container=root.querySelector('.ns-judge,.ns-atlas-guide,.ns-guide-shell,.ns-deep-shell,.ns-wb-wrap,.ns-wb-shell,.ns-wb-page');
  if(!container)return;
- const hero=container.querySelector('.ns-judge-hero,.ns-atlas-guide-hero,.ns-guide-hero,.ns-deep-header,.ns-wb-header,.ns-wb-hero');
+ const hero=container.querySelector('.ns-judge-hero,.ns-atlas-guide-hero,.ns-guide-hero,.ns-deep-header,.ns-wb-cover,.ns-wb-header,.ns-wb-hero');
  if(hero)hero.insertAdjacentHTML('afterend',html);
  else container.insertAdjacentHTML('afterbegin',html);
 }
