@@ -1,55 +1,63 @@
 /**
- * Lifestyle's task-first daily workspace.
- * This is a presentation/interaction layer: existing form IDs, event handlers,
- * persistence and SimplyFocus lifecycle remain owned by their original modules.
+ * Task-first Lifestyle workspace. Forms and persistence remain in lifestyle.mjs.
+ * The unified Daily Check-in is global; reminders stay local to this view.
  */
+import {updateDailyCheckinButtons} from './ns-daily-checkin.mjs';
+
 export function organiseLifestyle(root,{showMode,signal}={}){
  const $=selector=>root.querySelector(selector);
  const flow=$('.life-dashboard-flow');
- const checkin=$('#lifestyle-checkin');
  const calendar=$('#lifestyle-calendar');
  const tasks=$('#lifestyle-tasks');
  const practice=$('#lifestyle-deed');
  const reminders=$('#lifestyle-reminders');
  const strip=$('.life-today-strip');
- if(!flow||!checkin||!calendar||!tasks||!practice||!reminders||!strip)return;
+ const page=$('.life-unified');
+ if(!flow||!calendar||!tasks||!practice||!reminders||!strip||!page)return;
 
- // A quick emotional arrival is offered before planning, never required.
- const arrival=document.createElement('section');
- arrival.className='life-arrival';
- arrival.setAttribute('aria-label','Before you plan');
- arrival.innerHTML=
-  '<div class="life-arrival-copy"><span class="life-arrival-mark" aria-hidden="true">✦</span>'+
-   '<div><p class="eyebrow">FIRST, ARRIVE</p><h2>How are you arriving today?</h2>'+
-   '<p>Take a moment if it helps, or head straight to your plans.</p></div></div>'+
-  '<div class="life-arrival-actions">'+
-   '<button type="button" class="life-arrival-primary" data-life-checkin>Check in <span aria-hidden="true">↗</span></button>'+
-   '<button type="button" data-life-breathe>Breathe for 2 min</button>'+
-   '<a href="#compass">Emotion Compass <span aria-hidden="true">↗</span></a></div>';
- strip.before(arrival);
- // The mission stays discoverable even when planning occupies the first screen.
+ // The action belongs directly above the shared calendar + task workspace.
+ const actions=document.createElement('section');
+ actions.className='life-daily-actions';
+ actions.setAttribute('aria-label','Daily check-in and reminder settings');
+ actions.innerHTML=
+  '<div class="life-daily-primary">'+
+   '<span class="life-daily-primary-icon" aria-hidden="true">♡</span>'+
+   '<span class="life-daily-primary-copy"><strong>Daily check-in</strong><small data-ns-checkin-summary>Your feelings, in one place</small></span>'+
+   '<button type="button" class="life-daily-open" data-ns-open-checkin>Check in <span aria-hidden="true">→</span></button>'+
+  '</div>'+
+  '<div class="life-daily-secondary">'+
+   '<button type="button" class="life-daily-breathe" data-life-breathe>✦ 2 min breathing</button>'+
+   '<button type="button" class="life-daily-reminders" data-life-reminders aria-haspopup="dialog">♧ Reminders</button>'+
+  '</div>';
+ strip.after(actions);
+ updateDailyCheckinButtons();
+
+ // The notification settings are removed from the document flow, not deleted.
+ const reminderDialog=document.createElement('dialog');
+ reminderDialog.className='life-reminder-dialog';
+ reminderDialog.setAttribute('aria-labelledby','lifestyle-reminders-title');
+ const header=document.createElement('div');
+ header.className='life-reminder-modal-head';
+ header.innerHTML='<strong>Reminder settings</strong><button type="button" data-life-reminders-close aria-label="Close reminder settings">×</button>';
+ reminderDialog.append(header,reminders);
+ page.append(reminderDialog);
+ let trigger=null;
+ reminderDialog.addEventListener('click',event=>{
+  if(event.target===reminderDialog)reminderDialog.close();
+  if(event.target.closest('[data-life-reminders-close]'))reminderDialog.close();
+ });
+ reminderDialog.addEventListener('close',()=>{if(trigger?.isConnected)trigger.focus({preventScroll:true});});
+ if(signal)signal.addEventListener('abort',()=>{if(reminderDialog.open)reminderDialog.close();},{once:true});
+
+ // Keep calendar and tasks together. Identity mission follows as the day's practice.
+ flow.append(calendar,tasks,practice);
  const missionJump=document.createElement('button');
  missionJump.type='button';
  missionJump.className='life-mission-jump';
  missionJump.textContent='✦ View my field mission';
  strip.querySelector('.life-today-head')?.append(missionJump);
 
- const checkDrawer=document.createElement('details');
- checkDrawer.className='life-checkin-drawer';
- checkDrawer.id='life-checkin-drawer';
- checkDrawer.innerHTML='<summary><span class="life-drawer-icon" aria-hidden="true">♡</span><span><strong>My emotional check-in</strong><small>Choose how you feel; reflection is optional</small></span><span class="life-drawer-chevron" aria-hidden="true">⌄</span></summary>';
- checkDrawer.append(checkin);
- arrival.after(checkDrawer);
-
- // Dates and tasks share one first-row workspace. Practice is a feature, not an obstacle.
- flow.append(calendar,tasks,practice);
- const settings=document.createElement('details');
- settings.className='life-settings-drawer';
- settings.innerHTML='<summary><span class="life-drawer-icon" aria-hidden="true">♧</span><span><strong>Check-in reminders</strong><small>Optional times and device notifications</small></span><span class="life-drawer-chevron" aria-hidden="true">⌄</span></summary>';
- settings.append(reminders);
- flow.append(settings);
-
- // One-line task entry by default; all original scheduling controls stay available.
+ // The original task form handles all submits; advanced fields remain available.
  const form=$('#lifestyle-task-form');
  const title=form?.querySelector('#lifestyle-task-title')?.closest('.field');
  const add=form?.querySelector('button[type="submit"]');
@@ -65,28 +73,28 @@ export function organiseLifestyle(root,{showMode,signal}={}){
   form.classList.add('life-task-quick-form');
  }
  const options=form?.querySelector('.life-task-options');
+ const goTo=selector=>{
+  const node=$(selector);
+  if(node)node.scrollIntoView({
+   behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',
+   block:'start'
+  });
+ };
  missionJump.addEventListener('click',()=>goTo('#lifestyle-deed'),{signal});
- const goTo=(selector)=>{const node=$(selector);if(node){node.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});}};
-
- arrival.addEventListener('click',event=>{
+ actions.addEventListener('click',event=>{
   const button=event.target.closest('button');
   if(!button)return;
-  if(button.hasAttribute('data-life-checkin')){
-   checkDrawer.open=true;
-   goTo('#life-checkin-drawer');
-   const first=checkDrawer.querySelector('input[name="lifestyle-emotion"]');
-   if(first)first.focus({preventScroll:true});
-  }
-  if(button.hasAttribute('data-life-breathe')){
+  if(button.hasAttribute('data-life-reminders')){
+   trigger=button;
+   if(!reminderDialog.open)reminderDialog.showModal();
+  }else if(button.hasAttribute('data-life-breathe')){
    if(typeof showMode==='function')showMode('focus');
-   const focusHost=$('[data-life-focus-host]');
-   const length=focusHost?.querySelector('[data-breath-minutes="2"]');
-   length?.click();
+   const host=$('[data-life-focus-host]');
+   host?.querySelector('[data-breath-minutes="2"]')?.click();
    requestAnimationFrame(()=>goTo('.life-focus-host .timed-breathing-card'));
   }
  },{signal});
- // Calendar's add-to-date button opens the date controls so the chosen date is visible.
  root.addEventListener('click',event=>{
-  if(event.target.closest('[data-add-selected-date]')&&options){options.open=true;}
+  if(event.target.closest('[data-add-selected-date]')&&options)options.open=true;
  },{signal});
 }
