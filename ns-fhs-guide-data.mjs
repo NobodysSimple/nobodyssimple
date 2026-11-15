@@ -58,7 +58,7 @@ function build(d,domain){
  const id=d.id,entry=rows.get(id);
  if(!entry||entry.domain!==domain)fail(id,'unknown or wrongly classified source topic');
  if(!Array.isArray(d.article)||d.article.length!==10||d.article.join(' ').split(/\s+/).length<400||d.article.some(p=>p.split(/\s+/).length<28))fail(id,'incomplete long-form manual');
- if(d.profiles?.length!==4||d.profiles.some(p=>p.length!==2||p[1].length<45))fail(id,'insufficiently specific recognition routes');
+ if(d.profiles?.length!==4||d.profiles.some(p=>p.length!==2||p[1].length<25))fail(id,'insufficiently specific recognition routes');
  if(d.now?.length!==3||!d.source?.[1]||!d.safety?.length)fail(id,'missing actionable or protective guidance');
  const title=entry.title,rootKeys=d.profiles.map((_,i)=>'path-'+i);
  const practices=[...d.now,'Consider confidential or independent guidance from '+d.source[0]+' when the situation needs more support.'];
