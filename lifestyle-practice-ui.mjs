@@ -54,6 +54,17 @@ function practiceDisplay(state){
  const skill=practiceSkillMap.get(today?.skillId),total=state.counts[today?.skillId]||0;
  if(!today||!task||!skill)return '<p class="life-practice-note">Choose a skill to start your daily practice.</p>';
  const done=Boolean(today.done),paused=Boolean(today.paused&&!done);
+ const completed=practiceSummary(state).total;
+ const milestones=[
+  {at:1,label:'First step',mark:'✦'},
+  {at:3,label:'Taking root',mark:'❧'},
+  {at:7,label:'Growing',mark:'❀'},
+  {at:15,label:'In bloom',mark:'✿'}
+ ];
+ const milestoneMarkup=milestones.map(item=>`<div class="life-practice-milestone ${completed>=item.at?'is-earned':''}" aria-label="${esc(item.label)}, ${completed>=item.at?'earned':'not yet earned'}">
+  <span class="symbol" aria-hidden="true">${item.mark}</span><span>${esc(item.label)}<small>${item.at} recorded ${item.at===1?'practice':'practices'}</small></span></div>`).join('');
+ const trailMarkup=[1,2,3,4].map(level=>`<span class="life-practice-trail-step ${level===today.level?'is-current':level<today.level?'is-passed':''}">
+  <b>${level}</b><span>${esc(levelDescriptions[level-1])}</span></span>`).join('');
  const selector=`<details class="life-practice-custom">
   <summary>Change my direction or skills</summary>
   <p class="life-practice-note">Pick an identity as a starting point, then select one to three skills. Your next practice will follow your choices.</p>
@@ -68,20 +79,27 @@ function practiceDisplay(state){
      class="life-practice-chip ${skillId===skill.id?'is-selected':''}" aria-pressed="${skillId===skill.id}" ${done?'disabled':''}>${esc(practiceSkillMap.get(skillId).name)}</button>`).join('')}
    </div>`:''; 
  return `<div class="life-practice-current">
+  <div class="life-practice-quest-hero">
   <div class="life-practice-persona"><span class="life-practice-kicker">THE PERSON YOU ARE BECOMING</span><strong>${esc(identity.label)}</strong><small>${esc(identity.description)}</small></div>
   <div class="life-practice-today-label"><span>Today you're developing</span><strong>${esc(skill.name)}</strong></div>
+  </div>
   <div class="life-practice-tags">${skill.supports.map(s=>`<span>${esc(s)}</span>`).join('')}<span>Practice level ${today.level} of 4</span></div>
   ${chooseFocus}
+  <div class="life-practice-quest-meta"><strong>✦ ${completed} ${completed===1?'practice':'practices'} recorded</strong><span>Real actions, not a score about who you are</span></div>
+  <div class="life-practice-trail" aria-label="Practice challenge level ${today.level} of four">
+   <div class="life-practice-trail-head"><strong>Choose your challenge</strong><small>Level ${today.level} / 4 · change this below</small></div>
+   <div class="life-practice-trail-steps">${trailMarkup}</div>
+  </div>
   <div class="life-practice-action ${done?'is-complete':''}">
    <p class="life-practice-kicker">${done?'PRACTICE RECORDED':task.source==='kindness'?'AN ACT FOR SOMEONE ELSE':'TODAY’S SMALL PRACTICE'}</p>
    <p class="life-practice-task">${esc(task.task)}</p>
    <p class="life-practice-why">${esc(skill.why)}</p>
   </div>
-  ${paused?`<div class="life-practice-complete"><strong>Taking today off is a valid choice.</strong><p>Your previous practice record stays exactly as it is. Return whenever it suits you.</p><button type="button" class="life-practice-plain" data-practice-resume>Show today's practice</button></div>`:done?`<div class="life-practice-complete" role="status"><strong>${esc(skill.name)} · +1 practice recorded</strong>
+  ${paused?`<div class="life-practice-complete"><strong>Taking today off is a valid choice.</strong><p>Your previous practice record stays exactly as it is. Return whenever it suits you.</p><button type="button" class="life-practice-plain" data-practice-resume>Show today's practice</button></div>`:done?`<div class="life-practice-complete" role="status"><strong>✦ Mission complete · +1 recorded practice</strong>
    <p>You practised this skill today. A new suggestion will appear on your next local day. No streak to protect.</p>
    <button type="button" class="life-practice-plain" data-practice-undo>Undo completion</button></div>`
    :`<div class="life-practice-actions">
-   <button type="button" class="button" data-practice-done>I practised this</button>
+   <button type="button" class="button" data-practice-done>Record this practice ✦</button>
    <button type="button" class="button secondary" data-practice-next>Another idea</button>
    <button type="button" class="life-practice-plain" data-practice-pause>Not today</button>
    ${kindnessAvailable(skill.id)?'<button type="button" class="life-practice-plain" data-practice-kindness>Try a kindness idea</button>':''}
@@ -95,6 +113,7 @@ function practiceDisplay(state){
     class="${practiceLevel(state,skill.id)===i+1?'is-selected':''}"><b>Level ${i+1}</b><span>${esc(title)}</span></button>`).join('')}</div>
   </details>
   ${selector}
+  <div class="life-practice-milestones" aria-label="Practice milestones">${milestoneMarkup}</div>
   ${progressMarkup(state)}
   <p class="life-practice-note">This is optional everyday practice, not an exposure treatment plan. Keep necessary safety checks and respect your capacity, access needs and real-world responsibilities.</p>
  </div>`;
