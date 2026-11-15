@@ -51,7 +51,22 @@ function enrichedExamples(g,domain,d){
   result.push({...base[2],function:context[domain]});
   result.push({...base[3],function:context[domain]});
  }
- if(result.length!==16||new Set(result.map(x=>x.situation)).size!==16)throw new Error('Repeated contextual cases for '+g.id);
+ // A new authored situation can coincide with a sentence already selected
+ // from the article. Keep every authored anchor and choose an unused original.
+ const used=new Set();
+ const reserve=new Set([1,5,9,13]);
+ for(const n of reserve){const current=result[n].situation;if(used.has(current))throw new Error('Duplicate new-authored situation for '+g.id);used.add(current);}
+ for(let n=0;n<result.length;n++){
+  if(reserve.has(n))continue;
+  const current=result[n].situation;
+  if(used.has(current)){
+   const unused=g.whyCases.find(c=>!used.has(c.situation));
+   if(!unused)throw new Error('No distinct original example for '+g.id);
+   result[n]={...result[n],situation:unused.situation};
+  }
+  used.add(result[n].situation);
+ }
+ if(result.length!==16||used.size!==16)throw new Error('Repeated contextual cases for '+g.id);
  return result;
 }
 export function deepenSelfImageGuide(g,domain){
