@@ -23,10 +23,10 @@ test('individual introductions and 196 new situations are present in journals an
   assert.equal(g.whyQuestions.length,10,g.id);
   for(let i=0;i<4;i++){
    assert.equal(g.routes[i].questions[0][0],d[1][i],g.id);
-   assert.ok(g.routes[i].description.includes(d[2][i][0]),g.id);
-   assert.equal(g.whyCases[i*4+1].situation,d[2][i][0],g.id);
-   assert.equal(g.whyCases[i*4+1].interpretation,d[2][i][1],g.id);
-   scenes.push(d[2][i][0]);
+   assert.ok(g.routes[i].description.includes(d[2][i].split('|')[0]),g.id);
+   assert.equal(g.whyCases[i*4+1].situation,d[2][i].split('|')[0],g.id);
+   assert.equal(g.whyCases[i*4+1].interpretation,d[2][i].split('|')[1],g.id);
+   scenes.push(d[2][i].split('|')[0]);
   }
   assert.equal(new Set(g.whyCases.map(c=>c.situation)).size,16,g.id);
  }
