@@ -18,8 +18,13 @@ import {HABIT_EXTRA_CASES_B} from './ns-habit-extra-cases-b.mjs';
 import {HABIT_EXTRA_CASES_C} from './ns-habit-extra-cases-c.mjs';
 import {HABIT_WHY_QUESTIONS} from './ns-habit-why-questions.mjs';
 import {HABIT_EXTRA_ACTIONS} from './ns-habit-extra-actions.mjs';
+import {HABIT_VOICE_A} from './ns-habit-voice-a.mjs';
+import {HABIT_VOICE_B} from './ns-habit-voice-b.mjs';
+import {HABIT_VOICE_C} from './ns-habit-voice-c.mjs';
+import {HABIT_SUPPORT_MORE} from './ns-habit-support-more.mjs';
 
 const authored=[...HABIT_EDITORIAL_A,...HABIT_EDITORIAL_B,...HABIT_EDITORIAL_C];
+const voice={...HABIT_VOICE_A,...HABIT_VOICE_B,...HABIT_VOICE_C};
 const journals={...HABIT_JOURNALS_A,...HABIT_JOURNALS_B,...HABIT_JOURNALS_C};
 const ideas={...HABIT_IDEAS_A,...HABIT_IDEAS_B,...HABIT_IDEAS_C};
 const seeds={...HABIT_CASES_A,...HABIT_CASES_B,...HABIT_CASES_C};
@@ -47,39 +52,36 @@ const stageNames=['What happened','What you thought it meant','What you felt','W
  'What the response provided briefly','Which need or value mattered','A possible rule you may be following',
  'Context and conditions that may explain it','Another reasonable understanding','A safer or more useful next action'];
 function individualGuides(d){
- const id=d.id, r=journals[id],baseIdeas=ideas[id],extra=HABIT_EXTRA_ACTIONS[id],cases=seeds[id],w=HABIT_WHY_QUESTIONS[id];
- if(!r||r.length!==4||!baseIdeas||!extra||!cases||cases.length!==8||!w||w.length!==10)fail(id,'incomplete original editorial data');
+ const id=d.id, r=journals[id],baseIdeas=ideas[id],extra=HABIT_EXTRA_ACTIONS[id],cases=seeds[id],w=HABIT_WHY_QUESTIONS[id],depth=voice[id],supportMore=HABIT_SUPPORT_MORE[id];
+ if(!r||r.length!==4||!baseIdeas||!extra||!cases||cases.length!==8||!w||w.length!==10||!depth||!supportMore||supportMore.length!==12)fail(id,'incomplete original editorial data');
  if(d.article.length!==8||d.article.join(' ').trim().split(/\s+/).length<340)fail(id,'article is too short');
  if(d.mechanisms.length<3||d.profiles.length!==4||d.cycle.length<4||d.roots.length!==4)fail(id,'incomplete explanation');
+ if(d.roots.some(root=>!depth.roots[root[0]])||r.some(route=>!depth.routes[route[0]]))fail(id,'missing personalised explanation or route');
+ const article=[d.article[0],depth.addition[0],...d.article.slice(1,5),depth.addition[1],...d.article.slice(5)];
+ if(article.join(' ').split(/\s+/).length<500)fail(id,'expanded article too short');
  const steps=r.map(([key,label,desc,practice,questions])=>{
   if(questions.length!==4||practice.length<40)fail(id,'journal '+key+' incomplete');
   const useSupport=/support|help|conditions|access|health|pacing|money|demands|care|protect/i.test(key);
   return {
-   id:key,label,title:label,description:desc,finish:practice,
+   id:key,label,title:label,description:desc+' '+depth.routes[key],finish:practice,
    practiceTitle:'One useful next step',practice,
    questions:questions.map((q,i)=>{
     if(q.length<19)fail(id,'question too short in '+key);
-    const hint=i===0?'Choose a recent real situation. You can keep personal details private.':
-      i===1?'Consider what the situation means to you, without assuming your interpretation is certain.':
-      i===2?'The answer may involve a practical limitation rather than a personal belief.':
-      'Choose a safe change that fits your current circumstances.';
-    const teaching=i===3?practice:d.mechanisms[i%3][1];
+    const hint=i===0?depth.routes[key]:depth.hints[i];
+    const teaching=i===3?practice:i===0?depth.routes[key]:d.mechanisms[(i-1)%3][1];
     return [q,hint,teaching,i===3?(useSupport?'support':'actions'):''];
    })
   };
  });
  const actions=[...baseIdeas.actions,...steps.map(x=>x.practice),...d.now.steps,...extra];
- const support=[...baseIdeas.support,...steps.map(x=>'Ask a suitable person to help you with: '+x.label.toLowerCase()),
-  ...steps.map(x=>'Discuss whether support could help you '+x.description.charAt(0).toLowerCase()+x.description.slice(1)),
-  ...d.mechanisms.map(x=>'Ask about support for '+x[0].toLowerCase()+' when it affects daily life'),
-  'Ask for a clear review of whether the plan is improving everyday functioning.'];
+ const support=[...baseIdeas.support,...supportMore];
  if(actions.length!==24||support.length!==24)fail(id,'expected exactly 24 ideas in each list');
  const mapped=cases.map(([s,thought,response,rule,reframe,action,root],i)=>{
   const rlabel=d.roots.find(x=>x[0]===root);if(!rlabel)fail(id,'unknown root '+root);
   return {
    situation:s,interpretation:thought,emotion:emotion[root]||'Discomfort',response,
-   function:'The response may have offered immediate relief or protected '+rlabel[1].toLowerCase(),
-   need:rlabel[1],rule,adaptation:d.mechanisms[i%3][1],
+   function:depth.roots[root][0],
+   need:rlabel[1],rule,adaptation:depth.roots[root][1],
    alternative:reframe,action,root
   };
  });
@@ -89,16 +91,15 @@ function individualGuides(d){
   const rlabel=d.roots.find(x=>x[0]===root);if(!rlabel)fail(id,'unknown additional root '+root);
   mapped.push({
    situation:s,interpretation:thought,emotion:emotion[root]||'Discomfort',response,
-   function:'This response may briefly protect a need for '+rlabel[1].toLowerCase(),
-   need:rlabel[1],rule,adaptation:d.mechanisms[(i+1)%3][1],
+   function:depth.roots[root][0],
+   need:rlabel[1],rule,adaptation:depth.roots[root][1],
    alternative:reframe,action,root
   });
  });
  if(mapped.length!==16||new Set(mapped.map(x=>x.situation)).size!==16)fail(id,'repeated or missing situations');
  for(const s of mapped)for(const f of ['interpretation','emotion','response','function','need','rule','adaptation','alternative','action','root'])if(!s[f])fail(id,'missing example field '+f);
- return Object.freeze({...d,routes:steps,ideas:{actions,support},prominentSafety:immediateSafety[id]||'',
-  whyIntro:'A repeated action may be protecting something important, but its purpose and cause are not always obvious. Explore possible explanations without treating them as conclusions about your personality or childhood.',
-  whyQuestions:w,whyCases:mapped,whyStages:stageNames,pullIndex:4});
+ return Object.freeze({...d,article,routes:steps,ideas:{actions,support},prominentSafety:immediateSafety[id]||'',
+  whyIntro:depth.why,whyQuestions:w,whyCases:mapped,whyStages:stageNames,pullIndex:5});
 }
 export const HABIT_GUIDES=Object.freeze(authored.map(individualGuides));
 export const HABIT_IDS=Object.freeze(HABIT_GUIDES.map(x=>x.id));
