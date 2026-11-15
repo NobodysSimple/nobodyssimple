@@ -175,7 +175,7 @@ export const LGBTQ_EDITORIAL_D=[
       "Choose a proportionate check rather than endlessly reviewing every account."
     ],
     "why": "Who could learn something about your identity without your agreement, and how? Some risks come from shared devices or other people's carelessness. Others involve active monitoring and potential retaliation. A useful response needs to be safe in the actual environment, even when the technical solution appears simple.",
-    "safety": "Where a person may monitor devices or accounts, seek specialist safety support before making detectable changes. Do not pressure coming out or public disclosure."
+    "safety": "Protect privacy. Where someone may monitor devices or accounts, seek specialist safety support before making detectable changes. Do not pressure coming out or public disclosure."
   },
   {
     "id": "fluid-identity-uncertainty",
