@@ -44,12 +44,39 @@ export async function freeAccountCall(db,auth,name,data={}){
   const body=String(data.body||'').trim();if(body.length<2||body.length>2000||/https?:\/\/|www\./i.test(body))throw Error('Use 2–2,000 characters and no links.');
   if(!user.emailVerified)throw Error('Verify your email before commenting.');
   const comment=data.id?ref('comments',data.id):doc(collection(db,'comments'));
-  await runTransaction(db,async tx=>{const p=(await tx.get(ref('profiles',uid))).data(),old=(await tx.get(comment)).data(),rate=ref('users',uid,'settings','communityRate'),r=(await tx.get(rate)).data();if(!p?.nickname)throw Error('Choose a nickname in Account first.');if(r&&Date.now()-stamp(r.lastCommentAt)<20000)throw Error('Wait 20 seconds between comment submissions.');if(old&&(old.authorUid!==uid||Date.now()-stamp(old.createdAt)>900000))throw Error('You can edit your own comment for 15 minutes.');tx.set(rate,{lastCommentAt:serverTimestamp(),lastCommentId:comment.id});tx.set(comment,{postId:data.postId,body,authorUid:uid,nickname:p.nickname,handle:p.handle,avatarId:p.avatarId,avatarData:p.avatarData||'',status:'pending',parentId:old?.parentId||String(data.parentId||''),createdAt:old?.createdAt||serverTimestamp(),updatedAt:serverTimestamp()});});return {ok:true,id:comment.id};
+  await runTransaction(db,async tx=>{const p=(await tx.get(ref('profiles',uid))).data(),old=(await tx.get(comment)).data(),rate=ref('users',uid,'settings','communityRate'),r=(await tx.get(rate)).data();if(!p?.nickname)throw Error('Choose a nickname in Account first.');if(r&&Date.now()-stamp(r.lastCommentAt)<20000)throw Error('Wait 20 seconds between comment submissions.');if(old&&(old.authorUid!==uid||Date.now()-stamp(old.createdAt)>900000))throw Error('You can edit your own comment for 15 minutes.');tx.set(rate,{lastCommentAt:serverTimestamp(),lastCommentId:comment.id});tx.set(comment,{postId:data.postId,body,authorUid:uid,nickname:p.nickname,handle:p.handle,avatarId:p.avatarId,avatarData:p.avatarData||'',status:'approved',parentId:old?.parentId||String(data.parentId||''),createdAt:old?.createdAt||serverTimestamp(),updatedAt:serverTimestamp()});});return {ok:true,id:comment.id};
  }
  if(name==='communityDelete'){await setDoc(ref('comments',data.id),{body:'',status:'deleted',avatarData:'',updatedAt:serverTimestamp()},{merge:true});return {ok:true};}
  if(name==='communityReport'){const reason=String(data.reason||'').trim().slice(0,500);if(reason.length<3)throw Error('Give a short reason.');await setDoc(ref('reports',data.id+'_'+uid),{commentId:data.id,reporterUid:uid,reason,status:'open',createdAt:serverTimestamp()});return {ok:true};}
  if(name==='communityModerate'){
-  if(data.action==='list'){const [comments,reports]=await Promise.all([getDocs(query(collection(db,'comments'),where('status','==','pending'),limit(100))),getDocs(query(collection(db,'reports'),where('status','==','open'),limit(100)))]);return {comments:comments.docs.map(d=>({id:d.id,...d.data()})),reports:reports.docs.map(d=>({id:d.id,...d.data()}))};}
+  if(data.action==='list'){
+   const [approved,pending,reports]=await Promise.all([
+     getDocs(query(collection(db,'comments'),where('status','==','approved'),limit(200))),
+     getDocs(query(collection(db,'comments'),where('status','==','pending'),limit(100))),
+     getDocs(query(collection(db,'reports'),where('status','==','open'),limit(100)))
+   ]);
+   return {comments:[...approved.docs,...pending.docs].map(d=>({id:d.id,...d.data()})).sort((a,b)=>stamp(b.createdAt)-stamp(a.createdAt)),reports:reports.docs.map(d=>({id:d.id,...d.data()}))};
+  }
+  if(data.action==='ban'){
+   const target=String(data.uid||'').trim(),reason=String(data.reason||'').trim().slice(0,300);
+   if(!target||target===uid||reason.length<5)throw Error('Select a different user and give a reason (at least 5 characters).');
+   await setDoc(ref('communityBans',target),{createdAt:serverTimestamp(),reason});
+   // Remove all currently visible blog comments by this account. The ban rules
+   // independently prevent future comments, posts, replies and reactions.
+   let hidden=0;
+   for(let pass=0;pass<15;pass++){
+    const visible=await getDocs(query(collection(db,'comments'),where('authorUid','==',target),limit(100)));
+    const toRemove=visible.docs.filter(doc=>doc.data().status==='approved'||doc.data().status==='pending');
+    if(!toRemove.length)break;
+    const batch=writeBatch(db);
+    for(const item of toRemove)batch.update(item.ref,{status:'rejected',moderatedAt:serverTimestamp(),moderationReason:reason});
+    await batch.commit();hidden+=toRemove.length;
+    if(visible.docs.length<100)break;
+    // If many older rejected comments precede the first 100, a narrower
+    // administrative cleanup may be required; never present a partial sweep as complete.
+   }
+   return {ok:true,hidden};
+  }
   if(data.action==='resolveReport'){await setDoc(ref('reports',data.id),{status:'resolved'},{merge:true});return {ok:true};}
   await setDoc(ref('comments',data.id),{status:data.status,moderatedAt:serverTimestamp(),moderationReason:String(data.reason||'').slice(0,300)},{merge:true});return {ok:true};
  }
