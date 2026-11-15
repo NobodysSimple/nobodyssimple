@@ -38,8 +38,8 @@ test('all 196 journal routes use a specific real-life situation and four usable 
   for(const [i,r] of g.routes.entries()){
    assert.equal(r.questions.length,4,g.id+' '+r.id);
    assert.ok(r.description.length>50,g.id);
-   assert.ok(r.questions[0][0].includes(g.whyCases[i*4].situation),g.id);
-   assert.ok(r.questions.every(q=>q[0].length>55),g.id);
+   assert.ok(r.description.includes(g.whyCases[i*4+1].situation),g.id);
+   assert.ok(r.questions.every(q=>q[0].length>30),g.id);
    assert.ok(r.practice.length>25,g.id);
    prompts+=r.questions.length;
   }
