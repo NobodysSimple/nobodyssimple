@@ -234,7 +234,7 @@ export const CONNECTION_WORK_B={
     "why": [
       "Which interaction with your teenager has felt most difficult lately?",
       "What did you believe their response meant about your relationship?",
-      "How did that interpretation affect you?",
+      "How did believing that change the way you responded to your teenager?",
       "What did you do to regain contact or control?",
       "What immediate reassurance or relief did it bring?",
       "What do you most want to protect as their parent?",
