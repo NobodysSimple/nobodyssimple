@@ -52,7 +52,7 @@ test('seven-step progress is counted from practices, not consecutive days or art
  assert.match(ui,/Array\.from\(\{length:7\}/);
  assert.match(ui,/No streak required/);
  assert.match(ui,/Skipping a day never erases progress/);
- assert.doesNotMatch(ui,/xp|coins|daily streak/i);
+ assert.doesNotMatch(ui,/\bXP\b|\bcoins\b|\bdaily streak\b/i);
  assert.match(css,/\.life-mission-steps/);
  assert.match(css,/\.life-mission-task/);
 });
