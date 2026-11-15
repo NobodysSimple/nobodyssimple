@@ -9,7 +9,7 @@ test('all fifteen Habits impulses and compulsions topics open original field gui
  for(const g of HABIT_GUIDES){
   await open(page,g.id);
   await expect(page.locator('.ns-mood h1')).toHaveText(g.title);
-  await expect(page.locator('.ns-mood-read > p')).toHaveCount(8);
+  await expect(page.locator('.ns-mood-read > p')).toHaveCount(10);
   await expect(page.locator('.ns-mood-route-list button')).toHaveCount(4);
   await expect(page.locator('.ns-judge-back a').first()).toHaveAttribute('href','#navigate/atlas/act');
   await expect(page.locator('[data-mood-why-body]')).toBeHidden();
