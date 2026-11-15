@@ -56,6 +56,25 @@
       },
       "routing": "existing body direct atlas and workbook routes",
       "verification": "static structure reviewed; focused regression test committed; CI execution pending"
+    },
+    {
+      "id": "pain",
+      "area": "health",
+      "domain": "body",
+      "guide": "ns-body-guide-data.mjs",
+      "commits": [
+        "a2223cb33679e83419b71a0ebb9d30cf4f312e3e",
+        "db7d9b042e76ea4aa96fb017f7863e0fd6e757cd"
+      ],
+      "contentChecks": {
+        "articleWords": 644,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 3
+      },
+      "routing": "existing body guide direct atlas and workbook routes; exact ID added to BODY_IDS",
+      "verification": "static schema review; regression test committed; runtime test execution pending"
     }
   ],
   "pendingIds": "Derived exactly at runtime by ns-catalogue-progress.mjs:pending; not duplicated as potentially stale JSON",
@@ -65,5 +84,5 @@
     "The body-domain return link was added to the shared renderer.",
     "Need verify GitHub Actions and browser tests; no live browser test has yet been performed."
   ],
-  "lastStep": "Added fatigue manual and focused regression test; continue remaining Body, sleep & intimacy topics after checking test execution."
+  "lastStep": "Added pain manual, four journals and sixteen contextual cases; test execution pending. Continue remaining body topics."
 }
