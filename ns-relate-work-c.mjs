@@ -41,7 +41,7 @@ export const RELATE_WORK_C={
       [
         "speak",
         "Repair communication that's become indirect",
-        "Sarcasm and distance can obscure a legitimate concern.",
+        "Sarcasm and distance can obscure a legitimate concern that deserves to be heard directly.",
         [
           "How do you show resentment when you don't say what's wrong?",
           "What might the other person believe you are upset about?",
