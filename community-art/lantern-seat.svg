@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 310" role="img" aria-labelledby="side-title">
+<title id="side-title">A warm lantern by a forest path</title>
+<defs><linearGradient id="s" x2="0" y2="1"><stop stop-color="#fff6da"/><stop offset="1" stop-color="#e9ecd9"/></linearGradient><radialGradient id="glow"><stop stop-color="#fce39a" stop-opacity=".88"/><stop offset="1" stop-color="#fce39a" stop-opacity="0"/></radialGradient></defs>
+<rect width="440" height="310" fill="url(#s)"/>
+<circle cx="344" cy="192" r="108" fill="url(#glow)"/>
+<path d="M0 250Q112 197 210 254T440 229V310H0Z" fill="#bdc9a2" opacity=".75"/>
+<path d="M0 280Q142 241 231 271T440 251V310H0Z" fill="#8da67d" opacity=".75"/>
+<path d="M0 308Q180 276 290 286T440 267V310H0Z" fill="#6d8c6c"/>
+<path d="M322 -20L344 95Q361 125 388 138M342 48Q290 33 251 13" fill="none" stroke="#5f7450" stroke-width="20" stroke-linecap="round"/>
+<g fill="#8ba470"><ellipse cx="251" cy="15" rx="44" ry="18" transform="rotate(-21 251 15)"/><ellipse cx="310" cy="29" rx="49" ry="21" transform="rotate(20 310 29)"/><ellipse cx="381" cy="90" rx="55" ry="24" transform="rotate(26 381 90)"/><ellipse cx="413" cy="136" rx="47" ry="21"/></g>
+<g transform="translate(344 145)" stroke-linecap="round">
+<ellipse cx="0" cy="93" rx="70" ry="17" fill="#728264" opacity=".3"/>
+<path d="M-10 -20Q-13-39 0-39Q14-39 12-20" stroke="#735a3c" stroke-width="6" fill="none"/>
+<path d="M-36 -19H36L29-4H-30Z" fill="#365747" stroke="#b28c55" stroke-width="4"/>
+<path d="M-29 -2L30 -2L25 71L-24 71Z" fill="#f8d993" fill-opacity=".42" stroke="#6e6042" stroke-width="5"/>
+<path d="M-17 2V70M18 2V70" stroke="#7e734e" stroke-width="5"/>
+<path d="M-36 71L36 71L41 84L-40 84Z" fill="#305144" stroke="#ac8851" stroke-width="4"/>
+<path d="M-9 65Q-24 39 -2 19Q-4 42 5 38Q20 53 10 67Z" fill="#f3a94b"/><ellipse cx="0" cy="57" rx="7" ry="14" fill="#ffebaa"/>
+</g>
+<g fill="#fffdf0"><g transform="translate(45 278)"><circle cx="-6" cy="-4" r="5"/><circle cx="6" cy="-4" r="5"/><circle cy="-10" r="5"/><circle r="4" fill="#ecc17a"/></g><g transform="translate(93 285)"><circle cx="-6" cy="-4" r="5"/><circle cx="6" cy="-4" r="5"/><circle cy="-10" r="5"/><circle r="4" fill="#ecc17a"/></g><g transform="translate(141 278)"><circle cx="-6" cy="-4" r="5"/><circle cx="6" cy="-4" r="5"/><circle cy="-10" r="5"/><circle r="4" fill="#ecc17a"/></g><g transform="translate(189 285)"><circle cx="-6" cy="-4" r="5"/><circle cx="6" cy="-4" r="5"/><circle cy="-10" r="5"/><circle r="4" fill="#ecc17a"/></g><g transform="translate(237 278)"><circle cx="-6" cy="-4" r="5"/><circle cx="6" cy="-4" r="5"/><circle cy="-10" r="5"/><circle r="4" fill="#ecc17a"/></g><g transform="translate(285 285)"><circle cx="-6" cy="-4" r="5"/><circle cx="6" cy="-4" r="5"/><circle cy="-10" r="5"/><circle r="4" fill="#ecc17a"/></g><g transform="translate(333 278)"><circle cx="-6" cy="-4" r="5"/><circle cx="6" cy="-4" r="5"/><circle cy="-10" r="5"/><circle r="4" fill="#ecc17a"/></g><g transform="translate(381 285)"><circle cx="-6" cy="-4" r="5"/><circle cx="6" cy="-4" r="5"/><circle cy="-10" r="5"/><circle r="4" fill="#ecc17a"/></g><g transform="translate(429 278)"><circle cx="-6" cy="-4" r="5"/><circle cx="6" cy="-4" r="5"/><circle cy="-10" r="5"/><circle r="4" fill="#ecc17a"/></g></g>
+</svg>
