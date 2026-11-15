@@ -43,7 +43,7 @@ function chooser(error) {
   return '<div class="ns-guide6 ns-urge"><div class="ns-urge-wrap">'+backLink+
     '<div class="ns-urge-card"><p class="ns-guide6-kicker">MAKE IT YOUR OWN</p><h1>What are you feeling pulled to do?</h1>'+
     '<p>Choose an example or describe your own. Think of an action, such as “open social media” or “send another message”. This stays on this screen; it is not saved to your Field Guide.</p>'+
-    '<form data-urge-form="choose"><fieldset class="ns-urge-choices"><legend>I'm having an urge to…</legend>'+
+    '<form data-urge-form="choose"><fieldset class="ns-urge-choices"><legend>I am having an urge to…</legend>'+
     OPTIONS.map((opt,i)=>'<label class="ns-urge-choice"><input type="radio" name="urge" value="'+safe(opt[0])+'" '+(i===0?'checked':'')+'><span>'+safe(opt[1])+'</span></label>').join('')+
     '</fieldset><label class="ns-urge-field" for="ns-urge-custom">Or write your own action <small>(optional unless you chose “something else”)</small></label>'+
     '<input id="ns-urge-custom" name="custom" type="text" maxlength="120" autocomplete="off" placeholder="e.g. check whether they replied">'+
