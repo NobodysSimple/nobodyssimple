@@ -65,6 +65,7 @@ import {attachSteadyGuidebookToTool,steadyGuide} from './ns-steady-guidebook.mjs
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
 import {renderNotebookBlogPost} from './ns-blog-notebook.mjs?v=hello-notebook-20261115-2';
+import {mountPublishedTopicEditorial} from './ns-topic-publications.mjs';
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
@@ -1014,6 +1015,7 @@ function route() {
     })[name] || (() => homePage({learningView:"home"}))
   )();
   enhanceAccountRoute(main, currentName, safeRoutePart(id));
+  if (name === 'problem' || name === 'workbook-topic') void mountPublishedTopicEditorial(main,safeRoutePart(name === 'problem'? id : routeParts[1]));
   window.scrollTo(0, 0);
   const title =
     name === "learn" && (id === "lesson" || id === "path")
