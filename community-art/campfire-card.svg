@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 210" role="img" aria-labelledby="tiny-title">
+<title id="tiny-title">Small campfire, books and a cup</title>
+<defs><radialGradient id="g"><stop stop-color="#ffe8a0" stop-opacity=".83"/><stop offset="1" stop-color="#ffe8a0" stop-opacity="0"/></radialGradient></defs>
+<rect width="490" height="210" fill="#f8f1df"/>
+<path d="M0 210Q96 155 202 176T490 157V210Z" fill="#dce5c7"/>
+<circle cx="260" cy="139" r="77" fill="url(#g)"/>
+<path d="M244 155Q221 123 252 74Q248 105 271 93Q282 121 279 143Q266 167 244 155" fill="#e79235"/>
+<path d="M250 149Q245 124 261 109Q258 135 270 139Q264 155 250 149Z" fill="#ffdc83"/>
+<path d="M212 166L300 187M300 165L219 189" stroke="#785638" stroke-width="14" stroke-linecap="round"/>
+<ellipse cx="207" cy="187" rx="10" ry="6" fill="#aa9d7f" stroke="#77755e" stroke-width="2"/><ellipse cx="222" cy="189" rx="10" ry="6" fill="#8b8c70" stroke="#77755e" stroke-width="2"/><ellipse cx="237" cy="187" rx="10" ry="6" fill="#aa9d7f" stroke="#77755e" stroke-width="2"/><ellipse cx="252" cy="189" rx="10" ry="6" fill="#8b8c70" stroke="#77755e" stroke-width="2"/><ellipse cx="267" cy="187" rx="10" ry="6" fill="#aa9d7f" stroke="#77755e" stroke-width="2"/><ellipse cx="282" cy="189" rx="10" ry="6" fill="#8b8c70" stroke="#77755e" stroke-width="2"/><ellipse cx="297" cy="187" rx="10" ry="6" fill="#aa9d7f" stroke="#77755e" stroke-width="2"/>
+<rect x="330" y="139" width="95" height="18" rx="3" fill="#ad8157" stroke="#8a6746" stroke-width="3"/>
+<rect x="334" y="119" width="87" height="17" rx="3" fill="#7b9d71" stroke="#55765e" stroke-width="3"/>
+<rect x="343" y="100" width="76" height="16" rx="3" fill="#ddbe85" stroke="#a88e5f" stroke-width="3"/>
+<path d="M126 140L160 140L156 173L132 173Z" fill="#fff8e2" stroke="#9d7d55" stroke-width="4"/><path d="M160 148Q179 143 173 158Q170 167 157 161" stroke="#9d7d55" stroke-width="4" fill="none"/>
+<path d="M139 128Q127 111 140 102M149 126Q163 109 151 97" stroke="#c29d73" stroke-width="3" fill="none"/>
+<g fill="#7b9d6c"><ellipse cx="79" cy="171" rx="18" ry="7" transform="rotate(-19 79 171)"/><ellipse cx="94" cy="171" rx="18" ry="7" transform="rotate(22 94 171)"/></g>
+</svg>
