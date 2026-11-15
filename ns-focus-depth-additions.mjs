@@ -413,38 +413,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "time-blindness": {
     "addition": [
-      "Other people may only see the late arrival. They do not see the hour in which you kept checking the time and still somehow failed to act soon enough. Being late can inconvenience somebody, and it is reasonable to make repair where needed. Understanding exactly which timing step failed gives you something better to offer than another promise that you will be different next time.",
-      "Try separating the deadline from the start cue. If the appointment begins at three, the crucial time might be two fifteen, when you need to stop your current work and leave enough room for getting ready. A reminder at three tells you about a consequence that has already happened. A reminder tied to the first movement gives you a genuine chance to respond."
+      "People may judge lateness by how it affects them, and sometimes they have good reason to be upset. You may know that and still struggle to explain why it keeps happening. I wonder whether you've started apologising before anyone has even complained. That can make a difficult practical problem feel like a permanent failure of character.",
+      "Try looking at the time you needed to begin getting ready during your most recent late departure. What would you have had to stop doing? A cue that asks for that first movement gives you a real opportunity to act. You may need an extra reminder before the cue if switching activities takes a while. Let the plan reflect what usually happens."
     ],
-    "why": "Losing time can happen when a duration is underestimated, a future intention has no effective reminder or switching tasks takes longer than expected. The outward result is lateness, yet the correction depends on the point of failure. These examples focus on that point. Keeping track of time is easier when the cue appears early enough to change what you do.",
+    "why": "You may have arrived late after spending the entire morning aware of the appointment. That can be frustrating to explain. I'd like you to look at the gap between knowing the appointment time and beginning the actions that get you there. Perhaps you expected preparation to take less time than it did. Perhaps you didn't notice that it was time to stop another activity. The examples follow that sequence so you can find a cue that reaches you early enough to change what happens.",
     "hints": [
-      "Choose one missed deadline or rushed departure, and write the real time you needed to begin.",
-      "Compare your estimate with what actually happened, including preparation and switching.",
-      "What did the reminder ask you to do, if you received one at all?",
-      "Create a cue for the first useful action and add a reliable backup when safety matters."
+      "Choose one time you were late or nearly missed an important deadline. When did you need to begin?",
+      "How long did you expect the preparation or task to take? What actually happened?",
+      "What were you doing when you needed to switch? Did you receive a useful warning?",
+      "Which reminder or backup would have helped you act in time? Make it as specific as you can."
     ],
     "routes": {
-      "backwards": "Start with the latest safe departure time, then work towards the first preparation action.",
-      "measure": "Use one ordinary example to calibrate an estimate. Treat the difference as information.",
-      "deadline": "An approaching due date becomes easier to act on when there is a visible step before the final day.",
-      "backup": "An essential deadline needs more protection than an alarm you can dismiss without noticing."
+      "backwards": "Let's start with the time you needed to leave. We'll work out which earlier action should have had a reminder.",
+      "measure": "We'll compare one estimate with what really happened. It may reveal a step you've repeatedly overlooked.",
+      "deadline": "If the deadline feels far away until it's nearly here, we'll identify a smaller piece of work that should happen sooner.",
+      "backup": "When timing affects essential responsibilities, we'll plan for what happens if you miss the first cue."
     },
     "roots": {
       "estimate": [
-        "Delaying preparation may feel reasonable when the expected duration leaves more room than the task actually takes.",
-        "Measure a comparable task or journey and include ordinary preparation time rather than assuming the shortest possible version."
+        "Leaving preparation until later can seem safe when you expect the task to take less time than it usually does.",
+        "Use the length of a recent comparable task to plan the next attempt. Include time for getting ready."
       ],
       "cue": [
-        "Continuing the current activity may make sense when no signal tells you to begin the future one.",
-        "Place the reminder at the time of starting, not the moment an appointment is due."
+        "Continuing with another activity can feel reasonable when no signal arrives to tell you it's time to begin leaving.",
+        "Set a reminder for the first action of preparation. Check that it arrives early enough to be useful."
       ],
       "transition": [
-        "Finishing one more thing may feel easier than stopping in the middle and shifting to an unrelated task.",
-        "Use an early switching cue and leave a note that makes returning later less costly."
+        "Finishing one more part of your current activity can postpone the uncomfortable moment of switching tasks.",
+        "Arrange a warning before the switch and leave a note about where you can resume later."
       ],
       "support": [
-        "Relying on memory alone may spare you the effort or embarrassment of asking for assistance.",
-        "Where timing affects health, safeguarding or others' safety, arrange an appropriate backup that does not rely on noticing one alarm."
+        "Relying on a single alarm may leave you without protection when the responsibility is especially important.",
+        "Discuss a dependable backup when missed timing could affect medication or someone's safety."
       ]
     },
     "supportMore": [
@@ -464,38 +464,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "planning-overload": {
     "addition": [
-      "Planning is supposed to give you relief. When every task depends on several other tasks, opening a calendar can feel like meeting the whole week at once. You might stay there trying to make a schedule that accounts for every interruption. Meanwhile the energy needed to carry out the work has been spent deciding how it might be done. This is an understandable response to too much complexity at once.",
-      "Sometimes the most useful plan is a decision to take something off the plan. If the work genuinely exceeds your available time, rearranging it creates the appearance of control while leaving the impossible demand untouched. You can make the shortage visible to somebody who can change the workload, or decide which consequence is acceptable. That is practical planning too."
+      "You may have become so used to measuring yourself against the plan that you rarely ask whether the plan was possible. An unfinished week can feel like evidence of failure even when you were given more work than you could reasonably complete. I think that deserves attention. Before we change how you schedule things, we may need to be clearer about how much anyone could have done.",
+      "If planning repeatedly ends in another complicated document, I'd ask what happens when you try to use it. Can you tell what to do next? Do you have the materials needed to begin? If the plan can't answer those questions, it may be too far removed from the work. You can leave the rest undecided for now and begin with one usable instruction."
     ],
-    "why": "A plan can become overwhelming because too many details need to be held together, because choosing a priority feels risky or because the workload itself is impossible. Reworking the same calendar may bring a brief sense of order without changing what can be done. These examples help you distinguish missing structure from insufficient resources before deciding on another planning method.",
+    "why": "I wonder what happens to you emotionally when you realise how much there is to do. Perhaps every choice feels as though it will disappoint somebody. You may keep rearranging the plan because committing to one task means another will wait. A crowded schedule can also conceal a shortage of time that no amount of organising can solve. We'll look at one planning attempt. What decision became difficult? What resources were available? You can use that information to choose one next action or make a reasonable request for changes.",
     "hints": [
-      "Choose a planning attempt that ended without a clear next action.",
-      "Notice which decision made the plan branch into too many possibilities.",
-      "What did changing the plan achieve during that moment? Did it change the work?",
-      "Finish with one executable action or one realistic request to change the demand."
+      "Think of a planning session that left you more overwhelmed. What were you trying to fit in?",
+      "Which choice became especially difficult? Did several tasks depend on it?",
+      "Did rearranging the plan help you begin? You can be frank if the workload remained impossible.",
+      "What can happen next with the time you actually have? Asking for a change is an option."
     ],
     "routes": {
-      "one": "A plan earns its place by showing the first action. Anything else can wait until that action is clearer.",
-      "limit": "Pick a reasonable moment to stop arranging the tasks and see whether the plan can guide work.",
-      "sequence": "Unclear dependencies become easier to see when they are written outside your head.",
-      "renegotiate": "If the hours do not exist, the problem needs a change in commitments rather than a more elaborate diary."
+      "one": "We'll make a plan that tells you exactly what to do next. You can return to the wider picture afterwards.",
+      "limit": "If you've spent a long time arranging tasks, let's decide when to stop planning and make one attempt.",
+      "sequence": "We'll follow the work through its dependencies until there's a step you can start with what's available.",
+      "renegotiate": "If the responsibilities exceed your capacity, we'll work out what needs to change and how to ask for it."
     },
     "roots": {
       "load": [
-        "Rearranging tasks may create a short feeling of order when the number of details has become unmanageable.",
-        "Externalise the dependencies and reduce the decisions the plan must settle at once."
+        "Rearranging the calendar may briefly make a large workload feel easier to hold in mind.",
+        "Move the details onto paper and choose which decision you need to make first."
       ],
       "priority": [
-        "Continuing to compare options may postpone the discomfort of choosing one task over another.",
-        "Use a real deadline or consequence to make a provisional choice, then review when new information arrives."
+        "Comparing tasks again may spare you the discomfort of letting one important responsibility wait.",
+        "Use actual deadlines and consequences to make a temporary choice. Revisit it when circumstances change."
       ],
       "sequence": [
-        "Designing the whole project may protect you from beginning before the first dependent step is clear.",
-        "Find the next action whose prerequisites are actually available and record where to resume."
+        "Designing the whole project can feel safer when you're unsure how its first step depends on the rest.",
+        "Identify the first action you can complete with what you know now. Record the next point of return."
       ],
       "resources": [
-        "Rebuilding the schedule may help you avoid the frightening fact that the work exceeds the available hours.",
-        "Show the workload and available capacity plainly. Negotiating support or scope can be the honest next step."
+        "Planning again may delay the difficult realisation that there isn't enough time or support to do everything.",
+        "Show someone the work alongside the hours available. Ask which commitment can be changed."
       ]
     },
     "supportMore": [
@@ -515,38 +515,38 @@ export const FOCUS_DEEPENING=Object.freeze({
   },
   "learning-block": {
     "addition": [
-      "It can be lonely to sit in a lesson while everybody else seems to move on. You may stop asking questions because you are embarrassed by how far back the missing step seems to be. Then the next explanation depends on the very concept you did not understand, and the gap grows. Asking to return to that earlier step is a sensible way to learn. A well-timed explanation can be more useful than another hour spent staring at the newest material.",
-      "Notice the difference between recognising an answer and producing it yourself. When the notes are open, the correct step may look obvious because it is right in front of you. Close them for a brief attempt and see what you can explain or perform. The result tells you what to practise. If the format itself is inaccessible, a worked example or a different presentation may be the better next move."
+      "If you find yourself too embarrassed to ask a question, I want you to notice what you're afraid the answer might say about you. Perhaps you've heard that you should already know the material. You may then stay quiet and leave with a gap that will make tomorrow's lesson harder. Asking about the earlier step could save you a great deal of unnecessary struggle.",
+      "Learning can become particularly frustrating when you're putting in hours and seeing little change. I would shorten the experiment. Try to recall one idea and check it against the explanation. You'll find out whether the difficulty is understanding the idea or retrieving it later. That gives you something specific to ask for and a sensible way to practise again."
     ],
-    "why": "Feeling stuck while learning can come from an earlier concept that was never secure, from practice that builds familiarity without recall or from instruction that moves too quickly to follow. Fatigue can make all of these harder. These examples help identify the point where the explanation ceased to be usable, so you can ask for or practise the part that is actually missing.",
+    "why": "You may be doing everything you've been told to do and still coming away confused. That can wear away confidence. I'd like to locate the point where learning stopped becoming usable. Were you missing an idea the teacher assumed you knew? Did the material feel familiar only while the answer was visible? Or did you need the instructions in another format? We can follow one example without turning it into a judgement about your ability. The next step should help you learn the particular thing you've been struggling with.",
     "hints": [
-      "Choose one concept or procedure that you cannot yet use independently.",
-      "Find the earliest step that stops making sense without looking at the answer.",
-      "Notice whether rereading gives familiarity or lets you perform the skill.",
-      "Choose a small practice attempt with feedback, rest or an accessible alternative."
+      "Choose one idea you want to understand. What happens when you try to use it on your own?",
+      "Find the earliest part where you become unsure. It may be a word that was never explained.",
+      "How have you been practising so far? Does the knowledge come back when the notes are closed?",
+      "What small attempt would give you useful feedback? You can ask for a different explanation."
     ],
     "routes": {
-      "gap": "Finding the earliest missing idea is often more productive than rereading the last difficult page.",
-      "retrieve": "A short recall attempt reveals what is available to you without the answer in view.",
-      "format": "You can ask for a different teaching format without having to prove a diagnosis or deficiency.",
-      "practice": "Use a form of practice that resembles what you ultimately need to do with the knowledge."
+      "gap": "We'll find the earliest missing idea. Understanding that step may make the later material easier to follow.",
+      "retrieve": "We'll try recalling a small piece without the answer visible, then use the result to choose what to practise.",
+      "format": "If the teaching format makes it hard to follow, we'll work out what kind of explanation you need.",
+      "practice": "We'll choose a way to practise that matches the skill you want to be able to use."
     },
     "roots": {
       "foundation": [
-        "Returning to familiar material may feel safer when the new explanation assumes knowledge that is missing.",
-        "Identify one prerequisite and ask for an example that makes its role clear."
+        "Returning to familiar parts may feel reassuring when the new lesson depends on something you never fully learnt.",
+        "Ask for the earliest missing idea to be explained with an example. Check whether it makes the next step easier."
       ],
       "retrieval": [
-        "Rereading may briefly restore the comforting sense that the material is known, even when independent recall remains difficult.",
-        "Test one small piece without notes, check the answer and try again after a suitable gap."
+        "Rereading can bring back the feeling that material is known while the answer stays in view.",
+        "Try recalling one short answer with the notes closed. Check it and repeat after a suitable gap."
       ],
       "access": [
-        "Giving up may protect you from repeated failure when instructions are inaccessible or too fast.",
-        "Ask for written steps, a worked example or an alternative format matched to the task."
+        "Leaving difficult material can bring relief when instructions keep moving faster than you can follow.",
+        "Request written steps or a demonstration. You can ask for an accessible format without waiting for a diagnosis."
       ],
       "capacity": [
-        "Stopping may be a reasonable response to fatigue or a learning session that has become too demanding.",
-        "Adjust the study interval and recovery time. Persistent cognitive changes deserve appropriate assessment."
+        "Stopping may be necessary when exhaustion has made it hard to take in more information.",
+        "Try a shorter learning session and allow recovery. New cognitive changes warrant assessment."
       ]
     },
     "supportMore": [
