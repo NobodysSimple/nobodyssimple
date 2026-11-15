@@ -50,6 +50,7 @@ import {THINK_IDS,THINK_BY_ID} from './ns-think-guide-data.mjs?v=think-20261114-
 import {HABIT_IDS,HABIT_BY_ID} from './ns-habit-guide-data.mjs?v=habit-20261115-human-v2';
 import {BEHAVIOUR_IDS,BEHAVIOUR_BY_ID} from './ns-behaviour-guide-data.mjs?v=behaviour-20261115-v2';
 import {CONNECTION_IDS,CONNECTION_BY_ID,CONNECTION_GROUPS} from './ns-connection-guide-data.mjs?v=connection-20261115-v3';
+import {FHS_IDS,FHS_BY_ID,FHS_GUIDE_GROUPS} from './ns-fhs-guide-data.mjs?v=fhs-20261115-v1';
 import {FOCUS_IDS,FOCUS_BY_ID} from './ns-focus-guide-data.mjs?v=focus-20261115-voice-v1';
 import {DIGITAL_IDS,DIGITAL_BY_ID} from './ns-digital-guide-data.mjs?v=digital-20261115-v1';
 import {BODY_IDS,BODY_BY_ID} from './ns-body-guide-data.mjs?v=body-20261115-v1';
@@ -89,6 +90,9 @@ const connectionGuideIds=new Set(CONNECTION_IDS);
 const connectionRelateIds=new Set(CONNECTION_GROUPS.relate);
 const connectionSocialIds=new Set(CONNECTION_GROUPS.social);
 const showConnectionGuide=id=>renderTopicManual(main,id,CONNECTION_BY_ID.get(id),connectionRelateIds.has(id)?'relate':connectionSocialIds.has(id)?'social':'connection-related');
+const fhsGuideIds=new Set(FHS_IDS);
+const fhsFamily=new Set(FHS_GUIDE_GROUPS.family),fhsHarm=new Set(FHS_GUIDE_GROUPS.harm),fhsInequality=new Set(FHS_GUIDE_GROUPS.inequality);
+const showFhsGuide=id=>renderTopicManual(main,id,FHS_BY_ID.get(id),fhsFamily.has(id)?'family':fhsHarm.has(id)?'harm':fhsInequality.has(id)?'inequality':'environment');
 const bodyGuideIds=new Set(BODY_IDS);
 const showBodyGuide=id=>renderTopicManual(main,id,BODY_BY_ID.get(id),'body');
 const digitalGuideIds=new Set(DIGITAL_IDS);
@@ -98,11 +102,11 @@ const showFocusGuide=id=>renderTopicManual(main,id,FOCUS_BY_ID.get(id),'focus');
 const showWorkbook = options => {
   if(options.topic==='social-anxiety')return renderJudgementManual(main);
   if(moodGuideIds.has(options.topic))return renderMoodManual(main,options.topic);
-  if(experienceGuideIds.has(options.topic))return showExperienceGuide(options.topic);if(clinicalGuideIds.has(options.topic))return showClinicalGuide(options.topic);if(thinkGuideIds.has(options.topic))return showThinkGuide(options.topic);if(habitGuideIds.has(options.topic))return showHabitGuide(options.topic);if(behaviourGuideIds.has(options.topic))return showBehaviourGuide(options.topic);if(connectionGuideIds.has(options.topic))return showConnectionGuide(options.topic);if(focusGuideIds.has(options.topic))return showFocusGuide(options.topic);if(digitalGuideIds.has(options.topic))return showDigitalGuide(options.topic);if(bodyGuideIds.has(options.topic))return showBodyGuide(options.topic);
+  if(experienceGuideIds.has(options.topic))return showExperienceGuide(options.topic);if(clinicalGuideIds.has(options.topic))return showClinicalGuide(options.topic);if(thinkGuideIds.has(options.topic))return showThinkGuide(options.topic);if(habitGuideIds.has(options.topic))return showHabitGuide(options.topic);if(behaviourGuideIds.has(options.topic))return showBehaviourGuide(options.topic);if(connectionGuideIds.has(options.topic))return showConnectionGuide(options.topic);if(fhsGuideIds.has(options.topic))return showFhsGuide(options.topic);if(focusGuideIds.has(options.topic))return showFocusGuide(options.topic);if(digitalGuideIds.has(options.topic))return showDigitalGuide(options.topic);if(bodyGuideIds.has(options.topic))return showBodyGuide(options.topic);
   const selected=getNeedsMode(options.mode)?.options.find(item=>item.id===options.option);
   if(selected?.type==='topic'&&selected.target==='social-anxiety')return renderJudgementManual(main);
   if(selected?.type==='topic'&&moodGuideIds.has(selected.target))return renderMoodManual(main,selected.target);
-  if(selected?.type==='topic'&&experienceGuideIds.has(selected.target))return showExperienceGuide(selected.target);if(selected?.type==='topic'&&clinicalGuideIds.has(selected.target))return showClinicalGuide(selected.target);if(selected?.type==='topic'&&thinkGuideIds.has(selected.target))return showThinkGuide(selected.target);if(selected?.type==='topic'&&habitGuideIds.has(selected.target))return showHabitGuide(selected.target);if(selected?.type==='topic'&&behaviourGuideIds.has(selected.target))return showBehaviourGuide(selected.target);if(selected?.type==='topic'&&connectionGuideIds.has(selected.target))return showConnectionGuide(selected.target);if(selected?.type==='topic'&&focusGuideIds.has(selected.target))return showFocusGuide(selected.target);if(selected?.type==='topic'&&digitalGuideIds.has(selected.target))return showDigitalGuide(selected.target);if(selected?.type==='topic'&&bodyGuideIds.has(selected.target))return showBodyGuide(selected.target);
+  if(selected?.type==='topic'&&experienceGuideIds.has(selected.target))return showExperienceGuide(selected.target);if(selected?.type==='topic'&&clinicalGuideIds.has(selected.target))return showClinicalGuide(selected.target);if(selected?.type==='topic'&&thinkGuideIds.has(selected.target))return showThinkGuide(selected.target);if(selected?.type==='topic'&&habitGuideIds.has(selected.target))return showHabitGuide(selected.target);if(selected?.type==='topic'&&behaviourGuideIds.has(selected.target))return showBehaviourGuide(selected.target);if(selected?.type==='topic'&&connectionGuideIds.has(selected.target))return showConnectionGuide(selected.target);if(selected?.type==='topic'&&fhsGuideIds.has(selected.target))return showFhsGuide(selected.target);if(selected?.type==='topic'&&focusGuideIds.has(selected.target))return showFocusGuide(selected.target);if(selected?.type==='topic'&&digitalGuideIds.has(selected.target))return showDigitalGuide(selected.target);if(selected?.type==='topic'&&bodyGuideIds.has(selected.target))return showBodyGuide(selected.target);
   return renderIntegratedWorkbook(main,{...options,locked:Boolean(accountState().locked)});
 };
 const supportDialog = document.createElement('dialog');
@@ -960,7 +964,7 @@ function route() {
         if(!selected||!pathGuideForOption(mode,choice)){location.hash='#navigate/atlas';return;}
         showWorkbook({mode,option:choice});
       },
-      problem: () => {const key=safeRoutePart(id);if(key==='social-anxiety')renderJudgementManual(main);else if(moodGuideIds.has(key))renderMoodManual(main,key);else if(experienceGuideIds.has(key))showExperienceGuide(key);else if(clinicalGuideIds.has(key))showClinicalGuide(key);else if(thinkGuideIds.has(key))showThinkGuide(key);else if(habitGuideIds.has(key))showHabitGuide(key);else if(behaviourGuideIds.has(key))showBehaviourGuide(key);else if(connectionGuideIds.has(key))showConnectionGuide(key);else if(focusGuideIds.has(key))showFocusGuide(key);else if(digitalGuideIds.has(key))showDigitalGuide(key);else if(bodyGuideIds.has(key))showBodyGuide(key);else if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
+      problem: () => {const key=safeRoutePart(id);if(key==='social-anxiety')renderJudgementManual(main);else if(moodGuideIds.has(key))renderMoodManual(main,key);else if(experienceGuideIds.has(key))showExperienceGuide(key);else if(clinicalGuideIds.has(key))showClinicalGuide(key);else if(thinkGuideIds.has(key))showThinkGuide(key);else if(habitGuideIds.has(key))showHabitGuide(key);else if(behaviourGuideIds.has(key))showBehaviourGuide(key);else if(connectionGuideIds.has(key))showConnectionGuide(key);else if(fhsGuideIds.has(key))showFhsGuide(key);else if(focusGuideIds.has(key))showFocusGuide(key);else if(digitalGuideIds.has(key))showDigitalGuide(key);else if(bodyGuideIds.has(key))showBodyGuide(key);else if(atlasGet(key))renderReasoningGuide(main,key);else renderNSProblemGuide(main,key);},
       investigate: () => {const previous=safeRoutePart(id);const key=previous==='feelings'?'overwhelm':previous==='relationships'?'arguments':previous;
         location.replace('#'+(key&&atlasGet(key)?'problem/'+key:'navigate'));},
       library: () => {
