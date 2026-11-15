@@ -44,7 +44,7 @@ body.app-body.ns-shell-v1 #main .ns-guide6-journal__stage{
  position:relative;margin:0 78px 0 0;isolation:isolate;
 }
 body.app-body.ns-shell-v1 #main .ns-guide6-journal__book{
- position:relative;isolation:isolate;display:grid;
+ position:relative;isolation:isolate;z-index:2;display:grid;
  grid-template-columns:repeat(2,minmax(0,1fr));
  padding:12px;border-radius:36px 41px 37px 40px;
  background:linear-gradient(145deg,#496a51 0%,#213f2d 35%,#254333 65%,#55775b 100%);
@@ -101,7 +101,7 @@ body.app-body.ns-shell-v1 #main .ns-guide6-journal__binding{
  width:42px;transform:translateX(-50%);
 }
 body.app-body.ns-shell-v1 #main .ns-guide6-journal__ring{
- position:absolute;left:50%;top:calc(5% + var(--ring) * 12.5%);
+ position:absolute;left:50%;top:6%;
  width:43px;height:16px;transform:translateX(-50%) rotate(-3deg);
  border:4px solid #a07936;border-top-color:#edc67a;
  border-bottom-color:#805d2b;border-radius:100%;
@@ -113,7 +113,7 @@ body.app-body.ns-shell-v1 #main .ns-guide6-journal__ring:nth-child(even){
 }
 /* Real router links act as the tabs rather than click targets painted onto one image. */
 body.app-body.ns-shell-v1 #main .ns-guide6-journal__tabs{
- position:absolute;z-index:-1;top:66px;right:-79px;width:92px;
+ position:absolute;z-index:1;top:66px;right:-79px;width:92px;
  display:flex;flex-direction:column;gap:7px;
 }
 body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab{
