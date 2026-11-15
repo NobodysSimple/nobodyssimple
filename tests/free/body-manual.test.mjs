@@ -5,7 +5,7 @@ import {atlasProblemIndex} from '../../ns-atlas-core.mjs';
 import {BODY_GUIDES,BODY_IDS} from '../../ns-body-guide-data.mjs';
 import {verifiedCompleted,pending,catalogueTotal} from '../../ns-catalogue-progress.mjs';
 test('sleep manual is an authored and interactive atlas topic',()=>{
- assert.deepEqual(BODY_IDS,['sleep']);
+ assert.deepEqual(BODY_IDS,['sleep','fatigue']);
  const g=BODY_GUIDES[0];
  assert.equal(atlasProblemIndex.find(p=>p.id===g.id)?.domain,'body');
  assert.ok(g.article.join(' ').split(/\s+/).length>=450);
@@ -30,4 +30,22 @@ test('sleep uses the dedicated manual on direct and workbook routes',()=>{
  assert.match(site,/bodyGuideIds\.has\(options\.topic\)/);
  assert.match(site,/bodyGuideIds\.has\(selected\.target\)/);
  assert.match(renderer,/#navigate\/atlas\/body/);
+});
+
+test('fatigue manual distinguishes clinical, workload and exertion pathways',()=>{
+ const g=BODY_GUIDES.find(x=>x.id==='fatigue');
+ assert.ok(g);
+ assert.equal(atlasProblemIndex.find(p=>p.id===g.id)?.domain,'body');
+ assert.ok(g.article.join(' ').split(/\\s+/).length>=500);
+ assert.equal(g.routes.length,4);
+ assert.equal(g.whyQuestions.length,10);
+ assert.equal(g.whyCases.length,16);
+ assert.equal(new Set(g.whyCases.map(c=>c.situation)).size,16);
+ assert.equal(g.roots.length,4);
+ assert.ok(g.sources.some(x=>x[1].includes('nice.org.uk')));
+ assert.match(g.safety,/exertion/);
+ for(const route of g.routes){assert.equal(route.questions.length,4);assert.ok(route.practice.length>45);}
+ for(const c of g.whyCases)for(const k of ['situation','interpretation','emotion','response','function','need','rule','adaptation','alternative','action','root'])assert.ok(c[k],k);
+ assert.ok(verifiedCompleted.includes('fatigue'));
+ assert.ok(!pending.includes('fatigue'));
 });
