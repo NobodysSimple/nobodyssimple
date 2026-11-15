@@ -139,4 +139,15 @@ const rows = [
 ["What happened that could not be explained by one category alone?","Which decisions or assumptions created the difficulty?","What would a workable adjustment need to cover?","Who has power to change the relevant condition?","What evidence or support would help you make that request safely?"],
 "Your needs do not become less reasonable when they cross someone else's categories."]
 ];
-export const CULTURE_CFM_GUIDES=Object.freeze(Object.fromEntries(rows.map(([id,opening,why,versions,journalTitle,questions,closing])=>[id,Object.freeze({id,domain:"culture",opening,why,versions,journalTitle,questions,closing,sources:source})])));
+
+const tailoredSource={
+ "colourism":{label:"UK research on colourism, body image and wellbeing (2023)",url:"https://pubmed.ncbi.nlm.nih.gov/37356207/"},
+ "racialised-beauty-pressure":{label:"UK study of skin shade, beauty standards and distress (2023)",url:"https://pubmed.ncbi.nlm.nih.gov/37356207/"},
+ "language-discrimination":{label:"Meta-analysis of accent bias in hiring (2024)",url:"https://pubmed.ncbi.nlm.nih.gov/36326202/"},
+ "stereotype-threat":{label:"Meta-analysis of stereotype-threat interventions and publication bias (2021)",url:"https://pubmed.ncbi.nlm.nih.gov/32772526/"},
+ "historical-collective-trauma":{label:"Systematic review of historical trauma and research limits (2023)",url:"https://pubmed.ncbi.nlm.nih.gov/36716783/"},
+ "racial-discrimination":{label:"Experimental meta-analysis of discrimination and mental health (2024)",url:"https://pubmed.ncbi.nlm.nih.gov/38330346/"},
+ "microaggressions":{label:"Mind: racism, microaggressions and mental health",url:"https://www.mind.org.uk/information-support/tips-for-everyday-living/racism-and-mental-health/"}
+};
+
+export const CULTURE_CFM_GUIDES=Object.freeze(Object.fromEntries(rows.map(([id,opening,why,versions,journalTitle,questions,closing])=>[id,Object.freeze({id,domain:"culture",opening,why,versions,journalTitle,questions,closing,sources:tailoredSource[id]?[tailoredSource[id],...source]:source})])));
