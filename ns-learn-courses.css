@@ -1,5 +1,6 @@
 /* Nobody's Simple — Illustrated Courses hub (public Learn page only).
- * The artwork composes existing, site-owned scenery and mascot illustrations.
+ * New background SVGs intentionally contain no mascots or people.
+ * The site-owned characters are separately layered once over each backdrop.
  * No fabricated lessons, scores, streaks, games or hidden interactive content.
  */
 body.app-body.ns-shell-v1 #main > .ns-course-page{
@@ -23,7 +24,7 @@ body.app-body.ns-shell-v1 #main .ns-courses-hero{
  min-height:clamp(325px,32vw,420px);position:relative;isolation:isolate;
  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(265px,.95fr);
  align-items:center;gap:15px;overflow:hidden;
- background:linear-gradient(90deg,rgba(241,246,218,.3),rgba(252,242,214,.1)),url("ns-landscape-learn.webp") center 53%/cover no-repeat;
+ background:linear-gradient(90deg,rgba(232,242,218,.09),rgba(249,234,192,.04)),url("learn-art/scenery-hero.svg") center 53%/cover no-repeat;
  border-bottom:8px solid #fef8eb;
 }
 body.app-body.ns-shell-v1 #main .ns-courses-hero::before{
@@ -94,15 +95,6 @@ body.app-body.ns-shell-v1 #main .ns-courses-hero__mascot{
  width:clamp(195px,24vw,340px);height:clamp(225px,26vw,350px);
  max-width:64%;object-fit:contain;filter:drop-shadow(7px 12px 6px rgba(42,62,39,.2));
 }
-body.app-body.ns-shell-v1 #main .ns-courses-hero__book{
- position:absolute;bottom:16px;right:1.3%;
- width:clamp(80px,10vw,132px);height:100px;object-fit:contain;
- transform:rotate(6deg);filter:drop-shadow(4px 5px 5px rgba(53,75,44,.14));
-}
-body.app-body.ns-shell-v1 #main .ns-courses-hero__cup{
- position:absolute;right:6%;bottom:72px;width:clamp(45px,6vw,73px);height:70px;
- object-fit:contain;filter:drop-shadow(4px 5px 4px rgba(53,75,44,.1));
-}
 body.app-body.ns-shell-v1 #main .ns-courses-inner{
  max-width:1530px;margin:auto;padding:clamp(24px,3vw,41px) clamp(17px,3.4vw,47px) 0;
  position:relative;
@@ -141,10 +133,6 @@ body.app-body.ns-shell-v1 #main .ns-courses-feature__visual::after{
 body.app-body.ns-shell-v1 #main .ns-courses-feature__character{
  position:absolute;z-index:1;width:clamp(145px,22vw,260px);height:94%;bottom:-4%;left:11%;
  object-fit:contain;filter:drop-shadow(5px 9px 5px rgba(59,74,53,.18));
-}
-body.app-body.ns-shell-v1 #main .ns-courses-feature__sun{
- position:absolute;right:15%;top:11%;color:#ffdf8b;font-size:53px;opacity:.85;
- filter:drop-shadow(0 0 8px #f6dc8b);
 }
 body.app-body.ns-shell-v1 #main .ns-courses-feature__copy{
  position:relative;display:flex;align-items:flex-start;flex-direction:column;justify-content:center;
@@ -301,8 +289,6 @@ body.app-body.ns-shell-v1 #main .ns-courses-ending__copy p{
  body.app-body.ns-shell-v1 #main .ns-courses-hero__note h1{font-size:54px;margin:5px 0 9px}
  body.app-body.ns-shell-v1 #main .ns-courses-hero__figure{position:relative;flex:1;min-height:169px;}
  body.app-body.ns-shell-v1 #main .ns-courses-hero__mascot{bottom:-27px;width:184px;height:218px;right:20%;}
- body.app-body.ns-shell-v1 #main .ns-courses-hero__book{width:77px;right:6%;bottom:4px;}
- body.app-body.ns-shell-v1 #main .ns-courses-hero__cup{width:48px;right:3%;bottom:44px;}
  body.app-body.ns-shell-v1 #main .ns-courses-feature{grid-template-columns:1fr;min-height:0;padding:10px;}
  body.app-body.ns-shell-v1 #main .ns-courses-feature__visual{min-height:245px;}
  body.app-body.ns-shell-v1 #main .ns-courses-feature__copy{padding:19px 22px 22px;gap:9px}
