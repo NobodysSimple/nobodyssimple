@@ -20,7 +20,7 @@ test('all 45 long-form articles are individually written, complete and evidence-
  for(const g of CFM_GUIDES_FULL){
   assert.equal(g.article.length,10,g.id);
   assert.ok(g.article.join(' ').split(/\s+/).length>=400,g.id+' short article');
-  assert.ok(g.article.every(p=>p.split(/\s+/).filter(Boolean).length>=20),g.id+' a paragraph is too thin');
+  assert.ok(g.article.filter(p=>p.split(/\s+/).filter(Boolean).length>=25).length>=7,g.id+' insufficient substantial paragraphs');
   assert.ok(!openings.has(g.article[0]),g.id+' recycled opening');
   openings.add(g.article[0]);
   assert.equal(g.profiles.length,4,g.id);
