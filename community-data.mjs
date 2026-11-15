@@ -16,7 +16,26 @@ export function createCommunityClient(connection){
  async function isStaff(){if(!user())return false;try{return (await getDoc(ref('siteAdmins',user().uid))).exists();}catch{return false;}}
  async function refreshVerification(){const u=user();if(!u)throw Error('Sign in first.');await reload(u);await u.getIdToken(true);return u.emailVerified;}
  async function attachments(files){if(files.length>LIMITS.files)throw Error('Attach up to two files.');return Promise.all(files.map(async f=>{checkFile(f);const bytes=new Uint8Array(await f.arrayBuffer());let binary='';for(let i=0;i<bytes.length;i+=16384)binary+=String.fromCharCode(...bytes.subarray(i,i+16384));return {name:attachmentName(f.name,f.type),mime:f.type,size:f.size,data:btoa(binary)};}));}
- async function publish({heading,body,files=[],category='general'}){const a=await join(),post=ref('boardPosts',doc(col('boardPosts')).id),uploads=await attachments(files),content=text(body),headingText=title(heading);await runTransaction(db(),async tx=>{const mark=await rate(tx,'post',post.id,'',60);tx.set(post,{...a,title:headingText,body:content,status:'published',category:postCategory(category),attachmentCount:uploads.length,createdAt:serverTimestamp(),updatedAt:serverTimestamp()});uploads.forEach((f,i)=>tx.set(doc(post,'attachments',String(i)),f));mark();});return post.id;}
+ async function publish({heading,body,files=[],category='general'}){
+  const a=await join(),post=ref('boardPosts',doc(col('boardPosts')).id);
+  const uploads=await attachments(files),content=text(body),headingText=title(heading);
+  const chosen=postCategory(category);
+  const write=includeCategory=>runTransaction(db(),async tx=>{
+   const mark=await rate(tx,'post',post.id,'',60);
+   tx.set(post,{...a,title:headingText,body:content,status:'published',
+    ...(includeCategory?{category:chosen}:{}),
+    attachmentCount:uploads.length,createdAt:serverTimestamp(),updatedAt:serverTimestamp()});
+   uploads.forEach((item,i)=>tx.set(doc(post,'attachments',String(i)),item));
+   mark();
+  });
+  try{await write(true);}catch(error){
+   // Backward compatible while independently deployed Firestore rules catch up.
+   // A failed transaction commits neither the rate limit nor the post.
+   if(error?.code!=='permission-denied')throw error;
+   await write(false);
+  }
+  return post.id;
+ }
  async function feed(cursor){const q=[where('status','==','published'),orderBy('createdAt','desc'),limit(15)];if(cursor)q.push(startAfter(cursor));return rows(await getDocs(query(col('boardPosts'),...q)));}
  async function post(id){const snap=await getDoc(ref('boardPosts',id));return snap.exists()?{id:snap.id,...snap.data()}:null;}
  async function editPost(id,heading,body,category){verified();const r=ref('boardPosts',id);await runTransaction(db(),async tx=>{const snap=await tx.get(r);if(snap.data()?.authorUid!==user().uid)throw Error('Only the author can edit this post.');tx.update(r,{title:title(heading),body:text(body),...(category?{category:postCategory(category)}:{}),updatedAt:serverTimestamp()});});}
