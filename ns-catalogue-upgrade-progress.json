@@ -94,6 +94,266 @@
       },
       "routing": "existing body direct atlas and workbook routes; BODY_IDS dynamically derived",
       "verification": "static schema and regression assertions authored; CI execution pending"
+    },
+    {
+      "id": "study",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 459,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "work-stress",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 442,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "money",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 428,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "caring",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 429,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "housing",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 417,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "unfairness",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 415,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "workplace-bullying",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 456,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "academic-burnout",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 452,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "financial-insecurity",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 402,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "housing-instability",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 400,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "caregiver-burnout",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 421,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "institutional-injustice",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 430,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
+    },
+    {
+      "id": "access-needs",
+      "area": "work",
+      "domain": "work",
+      "guide": "ns-work-guide-data.mjs",
+      "commits": [
+        "fe8a2b31bbadac488455598e5103c00d4abc82d8",
+        "a5af1c9f50798743ee6f6466465a20107443dd64",
+        "f20749440f134430d6fd2f9a1caf7ecb61572eae"
+      ],
+      "contentChecks": {
+        "articleWords": 400,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 1
+      },
+      "routing": "workbook-topic and legacy problem route; original work subdomain return",
+      "verification": "Structural tests authored; CI/browser execution pending"
     }
   ],
   "pendingIds": "Derived exactly at runtime by ns-catalogue-progress.mjs:pending; not duplicated as potentially stale JSON",
@@ -101,7 +361,8 @@
   "qualityFindings": [
     "Existing dedicated manuals are counted in the live ledger; generic atlas fallbacks remain pending.",
     "The body-domain return link was added to the shared renderer.",
-    "Need verify GitHub Actions and browser tests; no live browser test has yet been performed."
+    "Need verify GitHub Actions and browser tests; no live browser test has yet been performed.",
+    "The live ledger now includes existing society, self-image and thirteen new work manuals; generic atlas fallbacks remain pending."
   ],
-  "lastStep": "Added sensory overwhelm manual with four journals and sixteen contextual cases. Runtime test execution pending; continue remaining body topics."
+  "lastStep": "Thirteen work-domain manuals authored and routed; automated and browser test execution pending. The sixteen education-domain topics remain to upgrade."
 }
