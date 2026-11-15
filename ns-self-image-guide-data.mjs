@@ -146,7 +146,7 @@ function build(data,domain){
   sources:[source],safety:data.safety,prominentSafety:protective.has(id)?data.safety:'',
   cycle:[data.cases[0][0],data.cases[0][1],data.profiles[0][1],data.actions[0]],
   roots,routes,whyIntro:data.why,whyStages:stages[domain],whyQuestions,whyCases:cases,
-  ideas:{actions,support},noPersist:privacy.has(id),pullIndex:5,
+  ideas:{actions,support},noPersist:domain==='lgbtq'||privacy.has(id),pullIndex:5,
   evidence:domainReality[domain]+' The possibilities in these examples cannot establish a diagnosis, another person’s motives or one hidden cause.'
  });
 }
