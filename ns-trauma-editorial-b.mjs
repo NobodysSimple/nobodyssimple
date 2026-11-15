@@ -131,7 +131,7 @@ export const TRAUMA_EDITORIAL_B=[
     "safety": "Survivor guilt can coexist with PTSD, depression and suicidal thoughts. Assess actual safety and consider appropriate trauma-informed care. Never imply that a survivor caused a death solely because they survived.",
     "source": [
       "NHS: Post-traumatic stress disorder",
-      "https://www.nhs.uk/mental-health/conditions/post-traumatic-stress-disorder-ptsd/overview/"
+      "https://www.nhs.uk/mental-health/conditions/ptsd-post-traumatic-stress-disorder/"
     ]
   },
   {
@@ -265,7 +265,7 @@ export const TRAUMA_EDITORIAL_B=[
     "safety": "Do not recommend unsupervised exposure to traumatic reminders or actual threats. Flashbacks, dissociation and persistent impairment may require trauma-informed assessment. New alarming physical symptoms merit appropriate medical attention.",
     "source": [
       "NHS: Post-traumatic stress disorder",
-      "https://www.nhs.uk/mental-health/conditions/post-traumatic-stress-disorder-ptsd/overview/"
+      "https://www.nhs.uk/mental-health/conditions/ptsd-post-traumatic-stress-disorder/"
     ]
   },
   {
