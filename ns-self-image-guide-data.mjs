@@ -15,6 +15,10 @@ import {LGBTQ_EDITORIAL_C} from './ns-lgbtq-editorial-c.mjs';
 import {LGBTQ_EDITORIAL_D} from './ns-lgbtq-editorial-d.mjs';
 import {APPEARANCE_EDITORIAL_A} from './ns-appearance-editorial-a.mjs';
 import {APPEARANCE_EDITORIAL_B} from './ns-appearance-editorial-b.mjs';
+import {SELF_IMAGE_SUPPORT_IDENTITY} from './ns-self-image-support-identity.mjs';
+import {SELF_IMAGE_SUPPORT_LGBTQ_A} from './ns-self-image-support-lgbtq-a.mjs';
+import {SELF_IMAGE_SUPPORT_LGBTQ_B} from './ns-self-image-support-lgbtq-b.mjs';
+import {SELF_IMAGE_SUPPORT_APPEARANCE} from './ns-self-image-support-appearance.mjs';
 
 const authored=Object.freeze({
  identity:Object.freeze([...IDENTITY_EDITORIAL_A,...IDENTITY_EDITORIAL_B,...IDENTITY_EDITORIAL_C]),
@@ -22,6 +26,8 @@ const authored=Object.freeze({
  appearance:Object.freeze([...APPEARANCE_EDITORIAL_A,...APPEARANCE_EDITORIAL_B])
 });
 const total=Object.values(authored).flat();
+const authoredSupport={...SELF_IMAGE_SUPPORT_IDENTITY,...SELF_IMAGE_SUPPORT_LGBTQ_A,...SELF_IMAGE_SUPPORT_LGBTQ_B,...SELF_IMAGE_SUPPORT_APPEARANCE};
+if(Object.keys(authoredSupport).length!==49)throw new Error('Missing authored support for an identity topic');
 const inclusive=[...INCLUSIVE_GROUPS_A,...INCLUSIVE_GROUPS_B].flatMap(x=>x.rows.map(r=>({id:r[0],title:r[1],domain:x.id})));
 const index=new Map([...problemIndex,...extendedProblemIndex,...inclusive].map(x=>[x.id,x]));
 const sources={
@@ -92,9 +98,13 @@ function build(data,domain){
   return {id:'path-'+i,label:p[0],title:p[0],description:p[1]+' '+first(data.article[(i*2+4)%10]),
    questions,finish:action,practice:action,practiceTitle:'One practical option'};
  });
+ const allSentences=data.article.flatMap(splitSentences).filter(x=>x.length>45&&x.length<190);
+ const realWorld=allSentences.filter(x=>/^(You|Your|Perhaps|A |An |Some |Someone|One |If |When |Other |The person|Relatives|People)/i.test(x));
+ const scenarioPool=[...new Set([...realWorld,...allSentences])].slice(0,12);
+ ensure(scenarioPool.length===12,id+' insufficient distinct scenario context');
  const cases=data.profiles.flatMap((p,i)=>Array.from({length:4},(_,j)=>{
-  const anchor=data.cases[i];const text=first(data.article[(i*3+j*2+2)%10]);
-  const situation=j===0?anchor[0]:p[0]+': '+text;
+  const anchor=data.cases[i];
+  const situation=j===0?anchor[0]:scenarioPool[i*3+j-1];
   return {
    situation,interpretation:j===0?anchor[1]:p[1],
    emotion:domain==='lgbtq'?'The response may involve fear or grief, or sometimes uncertainty; your feelings remain yours to describe.':
@@ -113,31 +123,27 @@ function build(data,domain){
  }));
  ensure(new Set(cases.map(c=>c.situation)).size===16,id+' repeated situations');
  const whyQuestions=[
-  'Think of a real moment that resembles this: '+data.cases[0][0]+'. What happened?',
-  'What did you believe about yourself or another person during that moment?',
-  'How did the experience affect you physically or emotionally?',
-  'What did you choose to do at the time, and what alternatives were possible?',
-  'Did that response make anything easier immediately? What did it cost later?',
-  'What mattered most to you in the experience involving '+label[1].toLowerCase()+'?',
-  'Is there a rule or expectation connected with '+label[2].toLowerCase()+' that deserves examining?',
-  'What has actually happened in the environment related to '+label[3].toLowerCase()+'?',
-  'Which interpretation or practical change fits the available evidence?',
-  'What might make this action safe and feasible: '+data.actions[0]+'?'
+  'Think of a moment resembling '+data.cases[0][0]+'. What actually happened for you?',
+  'In a situation like this — '+data.cases[1][0]+' — what did the event seem to say about you or the people involved?',
+  'When the experience looks like '+data.cases[2][0]+', how does it affect you in daily life?',
+  'If something similar to '+data.cases[3][0]+' happened, what did you choose to do and why?',
+  'When '+label[0].toLowerCase()+' becomes difficult, what does your immediate response protect or make easier?',
+  'What support or freedom would matter most in an experience involving '+label[1].toLowerCase()+'?',
+  'Which learned expectation might be contributing to '+label[2].toLowerCase()+'? Is the judgement supported?',
+  'What have other people or services actually done when '+label[3].toLowerCase()+' occurs?',
+  'What alternative explanation or practical change respects this real constraint: '+data.profiles[1][1]+'?',
+  'What would make the following chosen action safe and realistic: '+data.actions[0]+'?'
  ];
  const source=sourceFor(id,domain);
- const extraSupport=[
-  ...data.actions,
-  ...routes.map(r=>r.practice),
-  ...data.profiles.map((p,i)=>'Consider the actual circumstances behind '+p[0].toLowerCase()+': '+p[1]),
-  ...data.cases.map((p,i)=>'Reflect on the specific situation: '+p[0]+'. '+data.actions[i]),
-  ...data.article.slice(2,10).map((p,i)=>'Consider how this part of your experience may apply: '+first(p)),
-  ...data.actions.map((a,i)=>'If you want additional support with '+label[i].toLowerCase()+', discuss this possibility with someone safe: '+a),
-  'Read the linked guidance: '+source[0]+'.'
- ];
- const unique=[...new Set(extraSupport)];
- ensure(unique.length>=24,id+' few support options');
- const actions=[...data.actions,...unique.filter(x=>!data.actions.includes(x))].slice(0,24);
- const support=[...unique].slice(0,24);
+ const individuallyWritten=authoredSupport[id];
+ ensure(Array.isArray(individuallyWritten)&&individuallyWritten.length===8&&new Set(individuallyWritten).size===8,id+' missing specific support actions');
+ const practicalExamples=data.cases.map((c,i)=>c[0]+'. '+data.actions[i]);
+ const recognitionSupport=data.profiles.map((p,i)=>p[1]+' '+individuallyWritten[i]);
+ const nextConsiderations=data.profiles.map((p,i)=>'If this feels familiar — '+p[0].toLowerCase()+' — '+individuallyWritten[(i+4)%8]);
+ const unique=[...new Set([...data.actions,...individuallyWritten,...practicalExamples,...recognitionSupport,...nextConsiderations])];
+ ensure(unique.length===24,id+' missing distinct practical support');
+ const actions=unique;
+ const support=unique;
  const mechanisms=data.profiles.slice(0,3).map(p=>[p[0],p[1]]);
  return Object.freeze({
   id,title:ref.title,standfirst:first(data.article[0]),readTitle:ref.title,
