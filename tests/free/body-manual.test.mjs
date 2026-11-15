@@ -54,7 +54,7 @@ test('pain manual has independently authored pathways, journals and safety infor
  const g=BODY_GUIDES.find(x=>x.id==='pain');
  assert.ok(g);
  assert.equal(atlasProblemIndex.find(p=>p.id==='pain')?.domain,'body');
- assert.ok(g.article.join(' ').split(/\\s+/).length>=600);
+ assert.ok(g.article.join(' ').split(/\s+/).length>=600);
  assert.equal(g.routes.length,4);
  assert.equal(new Set(g.routes.map(r=>r.id)).size,4);
  assert.ok(g.routes.every(r=>r.questions.length===4&&r.practice.length>45));
