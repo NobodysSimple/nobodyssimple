@@ -1606,6 +1606,523 @@ export const BODY_GUIDES=Object.freeze([
     "Safety takes priority over completing an exercise."
   ]
 }
+,
+{
+  "id": "sensory",
+  "title": "I am overwhelmed by sensory input",
+  "standfirst": "When noise, light or touch becomes too much, the setting and your available capacity both matter. Understanding the pattern can help you ask for the right adjustment.",
+  "readTitle": "When ordinary surroundings become too demanding",
+  "article": [
+    "Sometimes a room becomes difficult before anyone else notices a problem. The lights hum, several conversations overlap and your attention keeps being pulled towards each sound. You may leave early or become unable to follow a question. When people call that reaction an overreaction, it can be harder to explain what the environment is actually doing to you.",
+    "Sensory overwhelm describes a situation in which incoming sensations exceed what you can comfortably process or tolerate at that moment. Noise, light, touch, smell or movement may be involved. People differ in which inputs are difficult and in whether the same setting is manageable on another day. A person's response is not a measure of how much effort they are making.",
+    "The first distinction is between an environment that needs changing and a reaction that needs support. A flickering light or alarm may remain distressing however calmly you breathe. Turning it off, moving away or asking for an alternative space can be a direct response to the problem. Regulation strategies may help you recover, but they should not be used to justify leaving an inaccessible environment unchanged.",
+    "Some people notice the difficulty building gradually. A busy commute may be manageable until a meeting begins immediately afterwards. At that point a small additional noise feels unbearable. This can happen because attention and recovery are limited resources. Looking only at the final trigger misses the demands that came before it.",
+    "Other experiences are sudden. A hand on your shoulder or an unexpected loud noise can produce an immediate startle or strong need to move away. Consent matters here. Someone who dislikes unexpected touch may welcome contact when it is agreed in advance. Asking before touching is more useful than assuming all physical contact will be unwelcome.",
+    "Anxiety can increase attention to sensations, especially after previous overwhelming experiences. You might enter a supermarket already anticipating the checkout beeps. That anticipation may add to your strain. Yet the beeps are still real. It would be inaccurate to describe every sensory difficulty as a mistaken prediction that should be challenged through exposure.",
+    "Autistic people and people with ADHD may report sensory differences, though these experiences are not exclusive to either group. Migraine, hearing conditions, concussion, medication effects and other health issues can also change sensory tolerance. New or rapidly changing sensitivity deserves medical consideration, particularly when it comes with pain, hearing loss or neurological symptoms.",
+    "People sometimes conceal their discomfort to avoid attracting attention. You may smile through a gathering, then need hours alone afterwards. Masking can protect you from judgement in the moment while making it harder for others to see why an adjustment is necessary. You do not have to disclose a diagnosis to describe the condition that would help: a quieter room or permission to step outside.",
+    "Support can be preventive rather than reactive. Before a difficult setting, you might identify a low-stimulation route, arrange a break or bring ear protection that still allows you to hear essential information. The right adjustment depends on the task. Blocking sound completely may be unsafe when you need to hear traffic or emergency instructions.",
+    "Recovery is individual. One person may need quiet and reduced light. Another may find steady movement or a predictable sound helpful. You can test a small change and notice whether it improves your ability to participate, without forcing yourself to endure a setting that causes distress. The goal is to make ordinary activities more accessible while respecting your body's signals."
+  ],
+  "mechanisms": [
+    [
+      "Sensory competition",
+      "Multiple inputs can compete for attention."
+    ],
+    [
+      "Accumulation",
+      "Earlier demands can reduce tolerance for later inputs."
+    ],
+    [
+      "Loss of choice",
+      "Unexpected touch or an inaccessible setting can remove control."
+    ],
+    [
+      "Recovery cost",
+      "Coping outwardly may conceal a need for quiet afterwards."
+    ]
+  ],
+  "profiles": [
+    [
+      "Accumulated sensory load",
+      "Several tolerable demands combine until the next one becomes too much."
+    ],
+    [
+      "Sudden unexpected input",
+      "A sharp noise or uninvited touch produces immediate distress."
+    ],
+    [
+      "Limited environmental control",
+      "The setting cannot easily be changed without another person's cooperation."
+    ],
+    [
+      "Recovery after masking",
+      "You appear to cope in public and experience the cost later."
+    ]
+  ],
+  "now": {
+    "title": "Reduce one demand",
+    "paras": [
+      "Identify the input that is hardest right now. If possible, change the environment or step somewhere safer and quieter."
+    ],
+    "steps": [
+      "Move away from the input if it is safe to do so.",
+      "Ask for one concrete adjustment such as lower volume or a pause.",
+      "Allow recovery without demanding an immediate return to the same setting."
+    ]
+  },
+  "safety": "Sudden or markedly worsening sensitivity, severe headache, new hearing loss, neurological symptoms or symptoms following a head injury need medical assessment. Follow emergency instructions during alarms and evacuations; never block sounds essential to safety.",
+  "sources": [
+    [
+      "NHS: Autism",
+      "https://www.nhs.uk/conditions/autism/"
+    ],
+    [
+      "NHS: Migraine",
+      "https://www.nhs.uk/conditions/migraine/"
+    ],
+    [
+      "NICE: Autism spectrum disorder in adults (CG142)",
+      "https://www.nice.org.uk/guidance/cg142"
+    ]
+  ],
+  "cycle": [
+    "A sensory demand becomes difficult to filter or tolerate.",
+    "You withdraw, mask or attempt to reduce the input.",
+    "The response may protect you, but the environment can remain inaccessible.",
+    "An adjustment or planned recovery changes what participation requires."
+  ],
+  "roots": [
+    [
+      "path-0",
+      "Accumulated sensory load"
+    ],
+    [
+      "path-1",
+      "Sudden unexpected input"
+    ],
+    [
+      "path-2",
+      "Limited environmental control"
+    ],
+    [
+      "path-3",
+      "Recovery after masking"
+    ]
+  ],
+  "whyIntro": "These questions explore the environment and what helps you participate. They are not a sensory diagnosis. You can leave out information you do not wish to share.",
+  "whyQuestions": [
+    "Which sensation was hardest to tolerate?",
+    "What happened before it became overwhelming?",
+    "What did your body or attention do first?",
+    "Could you leave or change the setting?",
+    "What did you do to protect yourself?",
+    "What was helpful about that response?",
+    "Did anyone dismiss or respect your needs?",
+    "What adjustment would have reduced the demand?",
+    "What helps you recover afterwards?",
+    "What could you request before a similar situation?"
+  ],
+  "whyStages": [
+    "Situation",
+    "Meaning",
+    "Feeling",
+    "Response",
+    "Protective function",
+    "Need",
+    "Expectation",
+    "Context",
+    "Alternative",
+    "Next action"
+  ],
+  "pullIndex": 2,
+  "prominentSafety": "Sensory distress can be real and disabling. New or severe neurological symptoms require medical assessment; urgent safety instructions still apply.",
+  "evidence": "NICE CG142 recommends considering sensory sensitivities and adapting environments for autistic adults. NHS resources describe sensory differences in autism and sensitivity to light or sound with migraine.",
+  "routes": [
+    {
+      "id": "map",
+      "label": "Map what builds up",
+      "description": "Find the conditions and sequence behind overload.",
+      "practice": "Sketch the demands across one ordinary day and choose a point where recovery could be protected.",
+      "qs": [
+        "Where were you when overload became noticeable?",
+        "What inputs had already accumulated before that moment?",
+        "What early sign told you that your capacity was changing?",
+        "Where could a short break or environmental change fit?"
+      ],
+      "title": "Map what builds up",
+      "finish": "Sketch the demands across one ordinary day and choose a point where recovery could be protected.",
+      "practiceTitle": "One workable adjustment",
+      "questions": [
+        [
+          "Where were you when overload became noticeable?",
+          "Find the conditions and sequence behind overload.",
+          "Sketch the demands across one ordinary day and choose a point where recovery could be protected.",
+          ""
+        ],
+        [
+          "What inputs had already accumulated before that moment?",
+          "Find the conditions and sequence behind overload.",
+          "Sketch the demands across one ordinary day and choose a point where recovery could be protected.",
+          ""
+        ],
+        [
+          "What early sign told you that your capacity was changing?",
+          "Find the conditions and sequence behind overload.",
+          "Sketch the demands across one ordinary day and choose a point where recovery could be protected.",
+          ""
+        ],
+        [
+          "Where could a short break or environmental change fit?",
+          "Find the conditions and sequence behind overload.",
+          "Sketch the demands across one ordinary day and choose a point where recovery could be protected.",
+          "actions"
+        ]
+      ]
+    },
+    {
+      "id": "access",
+      "label": "Request a practical adjustment",
+      "description": "Describe the barrier and the change that would help.",
+      "practice": "Draft one specific request that describes the barrier without requiring you to disclose private medical information.",
+      "qs": [
+        "What setting is hard to access and which input is the barrier?",
+        "What change would let you participate more comfortably?",
+        "Who can approve or help arrange that change?",
+        "What short sentence could you use to request it?"
+      ],
+      "title": "Request a practical adjustment",
+      "finish": "Draft one specific request that describes the barrier without requiring you to disclose private medical information.",
+      "practiceTitle": "One workable adjustment",
+      "questions": [
+        [
+          "What setting is hard to access and which input is the barrier?",
+          "Describe the barrier and the change that would help.",
+          "Draft one specific request that describes the barrier without requiring you to disclose private medical information.",
+          ""
+        ],
+        [
+          "What change would let you participate more comfortably?",
+          "Describe the barrier and the change that would help.",
+          "Draft one specific request that describes the barrier without requiring you to disclose private medical information.",
+          ""
+        ],
+        [
+          "Who can approve or help arrange that change?",
+          "Describe the barrier and the change that would help.",
+          "Draft one specific request that describes the barrier without requiring you to disclose private medical information.",
+          ""
+        ],
+        [
+          "What short sentence could you use to request it?",
+          "Describe the barrier and the change that would help.",
+          "Draft one specific request that describes the barrier without requiring you to disclose private medical information.",
+          "actions"
+        ]
+      ]
+    },
+    {
+      "id": "consent",
+      "label": "Plan for unexpected sensations",
+      "description": "Protect choice around touch, proximity or sudden input.",
+      "practice": "Agree one clear signal or boundary with a person who can help you avoid an unexpected sensory trigger.",
+      "qs": [
+        "Which unexpected sensation is especially difficult?",
+        "What advance warning or consent would make a difference?",
+        "How could you communicate that boundary clearly?",
+        "What will you do if the boundary is ignored?"
+      ],
+      "title": "Plan for unexpected sensations",
+      "finish": "Agree one clear signal or boundary with a person who can help you avoid an unexpected sensory trigger.",
+      "practiceTitle": "One workable adjustment",
+      "questions": [
+        [
+          "Which unexpected sensation is especially difficult?",
+          "Protect choice around touch, proximity or sudden input.",
+          "Agree one clear signal or boundary with a person who can help you avoid an unexpected sensory trigger.",
+          ""
+        ],
+        [
+          "What advance warning or consent would make a difference?",
+          "Protect choice around touch, proximity or sudden input.",
+          "Agree one clear signal or boundary with a person who can help you avoid an unexpected sensory trigger.",
+          ""
+        ],
+        [
+          "How could you communicate that boundary clearly?",
+          "Protect choice around touch, proximity or sudden input.",
+          "Agree one clear signal or boundary with a person who can help you avoid an unexpected sensory trigger.",
+          ""
+        ],
+        [
+          "What will you do if the boundary is ignored?",
+          "Protect choice around touch, proximity or sudden input.",
+          "Agree one clear signal or boundary with a person who can help you avoid an unexpected sensory trigger.",
+          "actions"
+        ]
+      ]
+    },
+    {
+      "id": "recover",
+      "label": "Build a recovery plan",
+      "description": "Identify what genuinely helps after overload.",
+      "practice": "Choose one accessible recovery condition and arrange it before the next demanding event.",
+      "qs": [
+        "How do you notice you need to recover?",
+        "Which surroundings help your system settle?",
+        "How much time or support is realistically available?",
+        "What commitment could you adjust to protect recovery?"
+      ],
+      "title": "Build a recovery plan",
+      "finish": "Choose one accessible recovery condition and arrange it before the next demanding event.",
+      "practiceTitle": "One workable adjustment",
+      "questions": [
+        [
+          "How do you notice you need to recover?",
+          "Identify what genuinely helps after overload.",
+          "Choose one accessible recovery condition and arrange it before the next demanding event.",
+          ""
+        ],
+        [
+          "Which surroundings help your system settle?",
+          "Identify what genuinely helps after overload.",
+          "Choose one accessible recovery condition and arrange it before the next demanding event.",
+          ""
+        ],
+        [
+          "How much time or support is realistically available?",
+          "Identify what genuinely helps after overload.",
+          "Choose one accessible recovery condition and arrange it before the next demanding event.",
+          ""
+        ],
+        [
+          "What commitment could you adjust to protect recovery?",
+          "Identify what genuinely helps after overload.",
+          "Choose one accessible recovery condition and arrange it before the next demanding event.",
+          "actions"
+        ]
+      ]
+    }
+  ],
+  "whyCases": [
+    {
+      "situation": "A train announcement plays over several conversations",
+      "interpretation": "I cannot separate the words",
+      "emotion": "Strain",
+      "response": "I stop following the conversation",
+      "function": "Auditory competition",
+      "need": "A quieter carriage or written information",
+      "rule": "I must keep up without asking",
+      "adaptation": "The noise is genuinely competing for attention",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Move to a quieter area or request the information in writing",
+      "root": "path-0"
+    },
+    {
+      "situation": "A fluorescent light flickers during a lecture",
+      "interpretation": "I cannot focus under this light",
+      "emotion": "Alarm",
+      "response": "I leave the room",
+      "function": "Visual discomfort",
+      "need": "Alternative lighting or seating",
+      "rule": "Leaving means I am failing",
+      "adaptation": "A physical light source may need changing",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Ask for a different seat or accessible notes",
+      "root": "path-0"
+    },
+    {
+      "situation": "A colleague touches my shoulder unexpectedly",
+      "interpretation": "I need them to stop",
+      "emotion": "Frustration",
+      "response": "I recoil",
+      "function": "Startle and boundary protection",
+      "need": "Consent before contact",
+      "rule": "I have to tolerate touch to be polite",
+      "adaptation": "The unexpected contact was not agreed",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Ask them to speak before approaching or touching",
+      "root": "path-0"
+    },
+    {
+      "situation": "A supermarket is crowded after a long workday",
+      "interpretation": "One more sound will be too much",
+      "emotion": "Fatigue",
+      "response": "I abandon the shopping",
+      "function": "Accumulated load",
+      "need": "A quieter shopping time",
+      "rule": "I should manage this like everyone else",
+      "adaptation": "Earlier demands may have reduced capacity",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Try a shorter list or quieter hour",
+      "root": "path-0"
+    },
+    {
+      "situation": "A child repeatedly asks questions while the television is loud",
+      "interpretation": "I cannot answer both at once",
+      "emotion": "Strain",
+      "response": "I snap then feel guilty",
+      "function": "Competing attention",
+      "need": "Reduced background noise",
+      "rule": "A good parent never needs quiet",
+      "adaptation": "The environment can be changed without rejecting the child",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Turn off the television before answering",
+      "root": "path-1"
+    },
+    {
+      "situation": "A clothing seam scratches throughout a shift",
+      "interpretation": "I cannot ignore this feeling",
+      "emotion": "Alarm",
+      "response": "I keep adjusting my clothes",
+      "function": "Persistent tactile input",
+      "need": "Comfortable clothing options",
+      "rule": "Uniform rules matter more than comfort",
+      "adaptation": "A uniform may have adaptable alternatives",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Ask about an approved softer layer",
+      "root": "path-1"
+    },
+    {
+      "situation": "Perfume fills a small meeting room",
+      "interpretation": "I need fresh air",
+      "emotion": "Frustration",
+      "response": "I leave without explanation",
+      "function": "Strong smell and limited escape",
+      "need": "Ventilation or fragrance awareness",
+      "rule": "People will think I am rude",
+      "adaptation": "A scent can be a genuine access barrier",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Request ventilation or remote attendance",
+      "root": "path-1"
+    },
+    {
+      "situation": "A fire alarm sounds without warning",
+      "interpretation": "I have to get away from the sound",
+      "emotion": "Fatigue",
+      "response": "I cover my ears",
+      "function": "Immediate protective response",
+      "need": "Safe evacuation with sensory support",
+      "rule": "I should stay calm first",
+      "adaptation": "Evacuation safety takes priority over managing appearance",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Follow evacuation instructions and use safe ear protection if available",
+      "root": "path-1"
+    },
+    {
+      "situation": "A restaurant plays loud music during a conversation",
+      "interpretation": "I cannot hear my friend",
+      "emotion": "Strain",
+      "response": "I stop speaking",
+      "function": "Auditory masking",
+      "need": "A quieter table",
+      "rule": "I will spoil the evening",
+      "adaptation": "A different table may preserve connection",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Ask to move or choose a quieter venue",
+      "root": "path-2"
+    },
+    {
+      "situation": "A busy waiting room has no quiet seating",
+      "interpretation": "I cannot stay here",
+      "emotion": "Alarm",
+      "response": "I consider missing the appointment",
+      "function": "Access barrier",
+      "need": "A place to wait away from the crowd",
+      "rule": "I must endure the room to receive care",
+      "adaptation": "The service may be able to accommodate waiting elsewhere",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Ask reception about a quieter waiting arrangement",
+      "root": "path-2"
+    },
+    {
+      "situation": "After a social event I cannot tolerate ordinary household sounds",
+      "interpretation": "Why am I suddenly so irritable?",
+      "emotion": "Frustration",
+      "response": "I isolate without explaining",
+      "function": "Delayed recovery need",
+      "need": "Predictable low-input time",
+      "rule": "If I enjoyed it I should not need recovery",
+      "adaptation": "Enjoyment and sensory cost can coexist",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Tell someone you need a short quiet period",
+      "root": "path-2"
+    },
+    {
+      "situation": "An unexpected video autoplays with sound",
+      "interpretation": "I have lost control of the noise",
+      "emotion": "Fatigue",
+      "response": "I shut the device",
+      "function": "Sudden digital input",
+      "need": "Muted autoplay settings",
+      "rule": "I am too sensitive",
+      "adaptation": "Device settings can remove a repeated trigger",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Disable autoplay or default to mute",
+      "root": "path-2"
+    },
+    {
+      "situation": "A crowded bus forces close physical contact",
+      "interpretation": "I cannot move away",
+      "emotion": "Strain",
+      "response": "I feel trapped",
+      "function": "Unwanted proximity",
+      "need": "More personal space",
+      "rule": "I should accept any contact in public",
+      "adaptation": "Crowding can be difficult without anyone acting maliciously",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Travel off-peak when possible or plan an alternative",
+      "root": "path-3"
+    },
+    {
+      "situation": "A migraine begins with sensitivity to light",
+      "interpretation": "The light is making the pain worse",
+      "emotion": "Alarm",
+      "response": "I retreat to darkness",
+      "function": "Possible medical sensory sensitivity",
+      "need": "Appropriate migraine care",
+      "rule": "I should push through",
+      "adaptation": "New or severe symptoms need medical consideration",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Use the agreed care plan and seek assessment for concerning changes",
+      "root": "path-3"
+    },
+    {
+      "situation": "A teacher speaks while scraping chairs across the floor",
+      "interpretation": "I missed the instructions",
+      "emotion": "Frustration",
+      "response": "I pretend I understood",
+      "function": "Competing sound and masking",
+      "need": "Written instructions",
+      "rule": "Asking again will annoy everyone",
+      "adaptation": "Accessible information is a reasonable request",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Ask for the instruction in writing",
+      "root": "path-3"
+    },
+    {
+      "situation": "A family gathering continues after you say you need a break",
+      "interpretation": "They will think I am rejecting them",
+      "emotion": "Fatigue",
+      "response": "I remain until distressed",
+      "function": "Social pressure and overload",
+      "need": "Permission to leave temporarily",
+      "rule": "Being present means staying the whole time",
+      "adaptation": "A break can make continued connection possible",
+      "alternative": "This response may be protecting a real sensory need; consider which environmental condition can change.",
+      "action": "Agree a quiet space and a return time if helpful",
+      "root": "path-3"
+    }
+  ],
+  "affirmations": [
+    "You can request a quieter setting.",
+    "Your limits can change across the day.",
+    "Consent matters for touch.",
+    "A break can support participation.",
+    "You do not need to disclose a diagnosis to describe a barrier.",
+    "Adjustments can be practical and specific."
+  ]
+}
 ]);
 export const BODY_IDS=Object.freeze(BODY_GUIDES.map(g=>g.id));
 export const BODY_BY_ID=new Map(BODY_GUIDES.map(g=>[g.id,g]));
