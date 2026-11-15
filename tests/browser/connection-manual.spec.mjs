@@ -23,7 +23,7 @@ test('return links restore each of the three Relationships subsections',async({p
  for(const [section,count] of [['relate','22 topics'],['social','16 topics'],['related','9 topics']]){
   await page.goto('/index.html#navigate/area/connection/'+section);
   await expect(page.locator('.ns-needs')).toBeVisible();
-  await expect(page.locator('.ns-needs-topic-panel')).toContainText(count.slice(0,count.indexOf(' ')));
+  await expect(page.locator('.ns-needs-panel .ns-needs-filter-count')).toContainText(count);
  }
 });
 
@@ -32,6 +32,7 @@ test('a boundaries journal opens with an authored question and 24 actionable ide
  await page.locator('[data-mood-open="no"]').click();
  await expect(page.locator('[data-mood-screen]')).toContainText('Which request do you keep accepting');
  await expect(page.locator('[data-mood-answer]')).toBeVisible();
+ for(let i=0;i<3;i++)await page.locator('[data-mood-next]').click();
  await page.locator('[data-mood-idea]').click();
  await expect(page.locator('[data-mood-ideas] li')).toHaveCount(24);
 });
