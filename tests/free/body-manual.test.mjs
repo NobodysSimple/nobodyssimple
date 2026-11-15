@@ -36,7 +36,7 @@ test('fatigue manual distinguishes clinical, workload and exertion pathways',()=
  const g=BODY_GUIDES.find(x=>x.id==='fatigue');
  assert.ok(g);
  assert.equal(atlasProblemIndex.find(p=>p.id===g.id)?.domain,'body');
- assert.ok(g.article.join(' ').split(/\\s+/).length>=500);
+ assert.ok(g.article.join(' ').split(/\s+/).length>=500);
  assert.equal(g.routes.length,4);
  assert.equal(g.whyQuestions.length,10);
  assert.equal(g.whyCases.length,16);
