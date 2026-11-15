@@ -183,7 +183,7 @@ window.addEventListener('ns:mood',event=>{if(!prefs.moodHistory||ws.locked)retur
 let commentStops=[];
 function stopComments(){commentStops.forEach(s=>s());commentStops=[];}
 window.addEventListener('hashchange',stopComments);
-export function mountComments(root,postId){stopComments();const section=document.createElement('section');section.className='account-comments wrap';section.innerHTML=`<h2>Discussion</h2><p>Comments are public after staff review. Use a nickname; do not include private information about yourself or others. Links are not allowed.</p><div class="account-comment-list"></div>${user?`<form class="account-comment-form"><label>Your comment<textarea name="body" minlength="2" maxlength="2000" rows="4" required></textarea></label><input name="commentId" type="hidden"><input name="parentId" type="hidden"><p class="fine" data-reply-label></p><button class="button">Submit for moderation</button><p role="status"></p></form>`:`<button class="button" data-login>${t('signin')} to comment</button>`}`;root.append(section);let approved=[],own=[];
+export function mountComments(root,postId){stopComments();const section=document.createElement('section');section.className='account-comments wrap';section.innerHTML=`<h2>Discussion</h2><p>Comments appear immediately. Staff can remove comments or restrict accounts if needed. Use a nickname; avoid private information and links.</p><div class="account-comment-list"></div>${user?`<form class="account-comment-form"><label>Your comment<textarea name="body" minlength="2" maxlength="2000" rows="4" required></textarea></label><input name="commentId" type="hidden"><input name="parentId" type="hidden"><p class="fine" data-reply-label></p><button class="button">Post comment</button><p role="status"></p></form>`:`<button class="button" data-login>${t('signin')} to comment</button>`}`;root.append(section);let approved=[],own=[];
   const render=()=>{const all=[...new Map([...approved,...own].map(c=>[c.id,c])).values()].filter(c=>c.status!=='deleted'&&!blocks.some(b=>b.id===c.authorUid)).sort((a,b)=>stamp(a.createdAt)-stamp(b.createdAt));section.querySelector('.account-comment-list').innerHTML=all.map(c=>`<article class="account-comment"><img src="${escape(avatar(c))}" alt=""><div><b>${escape(c.nickname)}</b><small>${date(c.createdAt)}${c.status!=='approved'?' · '+escape(c.status):''}${c.parentId?' · reply':''}</small><p>${escape(c.body)}</p>${c.moderationReason&&c.authorUid===user?.uid?`<p class="fine">${escape(c.moderationReason)}</p>`:''}<div class="row">${user&&c.status==='approved'?`<button class="chip" data-reply="${c.id}">Reply</button>`:''}${user&&c.authorUid===user.uid?`${Date.now()-stamp(c.createdAt)<900000?`<button class="chip" data-edit="${c.id}">Edit</button>`:''}<button class="chip" data-delete="${c.id}">Delete</button>`:user&&c.status==='approved'?`<button class="chip" data-report="${c.id}">Report</button><button class="chip" data-block="${escape(c.authorUid)}">Block account</button>`:''}</div></div></article>`).join('')||empty();
     const form=section.querySelector('form');section.querySelectorAll('[data-reply]').forEach(b=>b.onclick=()=>{const c=all.find(x=>x.id===b.dataset.reply);form.elements.parentId.value=c.id;form.querySelector('[data-reply-label]').textContent='Replying to '+c.nickname;form.elements.body.focus();});
     section.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>{const c=all.find(x=>x.id===b.dataset.edit);form.elements.body.value=c.body;form.elements.commentId.value=c.id;form.elements.parentId.value=c.parentId||'';form.elements.body.focus();});
@@ -194,8 +194,61 @@ export function mountComments(root,postId){stopComments();const section=document
   commentStops.push(onSnapshot(query(collection(db,'comments'),where('postId','==',postId),where('status','==','approved'),limit(200)),s=>{approved=s.docs.map(d=>({id:d.id,...d.data()}));render();},()=>{section.querySelector('.account-comment-list').textContent='Discussion is unavailable. Check your connection and confirm the free-plan Firestore rules have been published.';}));
   if(user)commentStops.push(onSnapshot(query(collection(db,'comments'),where('postId','==',postId),where('authorUid','==',user.uid),limit(200)),s=>{own=s.docs.map(d=>({id:d.id,...d.data()}));render();},()=>{}));
   section.querySelector('[data-login]')?.addEventListener('click',showSignIn);
-  const form=section.querySelector('form');if(form)form.onsubmit=async e=>{e.preventDefault();const submit=form.querySelector('button');submit.disabled=true;try{await call('communityComment',{postId,body:form.elements.body.value,id:form.elements.commentId.value||undefined,parentId:form.elements.parentId.value||''});form.reset();form.querySelector('[data-reply-label]').textContent='';form.querySelector('[role=status]').textContent='Submitted for moderation. Only you and staff can see it until approved.';}catch(err){form.querySelector('[role=status]').textContent=friendly(err);}finally{submit.disabled=false;}};
+  const form=section.querySelector('form');if(form)form.onsubmit=async e=>{e.preventDefault();const submit=form.querySelector('button');submit.disabled=true;try{await call('communityComment',{postId,body:form.elements.body.value,id:form.elements.commentId.value||undefined,parentId:form.elements.parentId.value||''});form.reset();form.querySelector('[data-reply-label]').textContent='';form.querySelector('[role=status]').textContent='Comment posted. It is visible to readers, subject to community rules.';}catch(err){form.querySelector('[role=status]').textContent=friendly(err);}finally{submit.disabled=false;}};
 }
-async function renderModeration(pane){if(!staff){pane.innerHTML=note('Staff access required.');return;}pane.innerHTML=button('Confirm identity and load review queue','moderate-load',true);pane.querySelector('button').onclick=()=>perform(async()=>{await reauthenticate();const queue=await call('communityModerate',{action:'list'});pane.innerHTML=`<h3>Pending comments</h3>${queue.comments.map(c=>`<article class="account-record"><b>${escape(c.nickname)}</b><p>${escape(c.body)}</p><button class="chip" data-moderate="${c.id}" data-state="approved">Approve</button><button class="chip" data-moderate="${c.id}" data-state="rejected">Reject</button></article>`).join('')||empty()}<h3>Reports</h3>${queue.reports.map(r=>`<article class="account-record"><b>Comment ${escape(r.commentId)}</b><p>${escape(r.reason)}</p><button class="chip" data-reject="${escape(r.commentId)}">Remove reported comment</button><button class="chip" data-resolve="${escape(r.id)}">Resolve report</button></article>`).join('')||empty()}`;pane.querySelectorAll('[data-moderate],[data-reject],[data-resolve]').forEach(b=>b.onclick=()=>perform(async()=>{if(b.dataset.resolve)await call('communityModerate',{action:'resolveReport',id:b.dataset.resolve});else{const state=b.dataset.state||'rejected',reason=state==='rejected'?prompt('Reason for the author (optional):')||'':'';await call('communityModerate',{id:b.dataset.moderate||b.dataset.reject,status:state,reason});}b.closest('article').remove();status('Moderation saved.');}));});}
+async function renderModeration(pane){
+ if(!staff){pane.innerHTML=note('Staff access required.');return;}
+ pane.innerHTML='<div class="account-moderation-studio"><header><p class="eyebrow">CONTENT SAFETY · STAFF</p><h2>Live comment review</h2><p>Comments are published immediately. Review recent comments and reports, remove harmful content, or ban an account. Moderation actions require a recent sign-in.</p></header>'+
+ '<div class="row"><button class="button" data-mod-load>Confirm identity & load comments</button><button class="button secondary" data-mod-refresh hidden>Refresh queue</button></div><p role="status" data-mod-status></p><div data-mod-queue></div></div>';
+ const status=pane.querySelector('[data-mod-status]'),queue=pane.querySelector('[data-mod-queue]');
+ const load=async()=>{
+  status.textContent='Loading current comments and reports…';
+  try{
+   const result=await call('communityModerate',{action:'list'});
+   const comments=Array.isArray(result.comments)?result.comments:[],reports=Array.isArray(result.reports)?result.reports:[];
+   const approved=comments.filter(c=>c.status==='approved'),pending=comments.filter(c=>c.status==='pending');
+   const card=c=>'<article class="account-mod-comment" data-mod-card="'+escape(c.id)+'">'+
+    '<div class="account-mod-meta"><b>'+escape(c.nickname||'Community member')+'</b><span>'+escape(c.status||'')+'</span><small>'+date(c.createdAt)+'</small></div>'+
+    '<p class="account-mod-content">'+escape(c.body||'')+'</p>'+
+    '<p class="fine">On: <a href="#post/'+encodeURIComponent(c.postId)+'">View the published article ↗</a></p>'+
+    '<div class="account-mod-actions">'+
+     (c.status==='pending'?'<button type="button" class="chip" data-mod-approve="'+escape(c.id)+'">Publish legacy pending comment</button>':'')+
+     '<button type="button" class="chip danger-chip" data-mod-remove="'+escape(c.id)+'">Remove comment</button>'+
+     '<button type="button" class="chip danger-chip" data-mod-ban="'+escape(c.authorUid)+'">Ban account</button></div></article>';
+   queue.innerHTML='<div class="account-mod-stats"><span><b>'+approved.length+'</b> visible comments reviewed</span><span><b>'+pending.length+'</b> older pending</span><span><b>'+reports.length+'</b> open reports</span></div>'+
+    '<section class="account-mod-section"><h3>Open reports</h3>'+(reports.length?reports.map(r=>'<article class="account-mod-report" data-mod-card="'+escape(r.id)+'"><b>Reported comment</b><p>'+escape(r.reason)+'</p><small>Comment: '+escape(r.commentId)+'</small><div class="account-mod-actions"><button type="button" class="chip danger-chip" data-mod-remove="'+escape(r.commentId)+'">Remove comment</button><button type="button" class="chip" data-mod-resolve="'+escape(r.id)+'">Mark reviewed</button></div></article>').join(''):'<p>No open reports.</p>')+'</section>'+
+    '<section class="account-mod-section"><h3>Recent visible comments</h3>'+(approved.length?approved.map(card).join(''):'<p>No visible comments returned.</p>')+'</section>'+
+    (pending.length?'<section class="account-mod-section"><h3>Legacy pending comments</h3>'+pending.map(card).join('')+'</section>':'');
+   status.textContent='Review queue loaded. Actions are recorded by Firestore.';
+  }catch(error){status.textContent=friendly(error);}
+ };
+ pane.querySelector('[data-mod-load]').onclick=()=>perform(async()=>{
+  await reauthenticate();pane.querySelector('[data-mod-load]').hidden=true;
+  pane.querySelector('[data-mod-refresh]').hidden=false;await load();
+ });
+ pane.querySelector('[data-mod-refresh]').onclick=()=>void load();
+ queue.addEventListener('click',event=>{
+  const button=event.target.closest('[data-mod-remove],[data-mod-approve],[data-mod-ban],[data-mod-resolve]');
+  if(!button)return;
+  void perform(async()=>{
+   if(button.dataset.modBan){
+    const uid=button.dataset.modBan;if(!uid||!confirm('Ban this account from community participation? This prevents further posts and comments.'))return;
+    const reason=prompt('Reason for the account ban (visible to staff)', 'Repeated harmful comments');
+    if(!reason||reason.trim().length<5)return;
+    await call('communityModerate',{action:'ban',uid,reason:reason.trim()});
+    status.textContent='Account banned. Review its older posts and reports too.';
+   }else if(button.dataset.modResolve){
+    await call('communityModerate',{action:'resolveReport',id:button.dataset.modResolve});
+    status.textContent='Report marked reviewed.';
+   }else{
+    const remove=button.dataset.modRemove;
+    if(remove&&!confirm('Remove this comment from public view?'))return;
+    await call('communityModerate',{id:remove||button.dataset.modApprove,status:remove?'rejected':'approved',reason:remove?'Removed by staff': ''});
+    status.textContent=remove?'Comment removed from public view.':'Legacy comment published.';
+   }
+   await load();
+  });
+ });
+}
 
 setInterval(async()=>{if(!user||!prefs.sensitiveLock||ws.locked)return;try{const token=await user.getIdTokenResult();if(Date.now()/1000-Number(token.claims.auth_time)>=300){ws.locked=true;sync.listen();if(currentRoot)renderAccount(currentRoot,activeTab);else location.hash='#account';}}catch{}},15000);
