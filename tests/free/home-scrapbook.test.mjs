@@ -68,7 +68,7 @@ test('Responsive and accessibility preferences are preserved',()=>{
 });
 test('New cache precaches the Home stylesheet and its lightweight art',()=>{
  const sw=text('sw.js');
- assert.match(sw,/nobodyssimple-release-v210-field-guide-journal/);
+ assert.match(sw,/nobodyssimple-release-v212-lifestyle-studio/);
  for(const item of ['ns-home-scrapbook.css','home-art/watercolor-countryside.svg','home-art/daisy-sticker.svg']){
   assert.ok(sw.includes("'"+item+"'"),item);
  }

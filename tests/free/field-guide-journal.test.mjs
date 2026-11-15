@@ -75,7 +75,7 @@ test('The journal background is decorative-only and all artwork files exist',()=
  }
  assert.match(html,/ns-field-guide-journal\.css\?v=field-journal-20261115/);
  assert.match(site,/ns-field-guide\.mjs\?v=field-journal-20261115/);
- assert.match(sw,/nobodyssimple-release-v210-field-guide-journal/);
+ assert.match(sw,/nobodyssimple-release-v212-lifestyle-studio/);
  for(const name of ['ns-guide6-journal__page','ns-guide6-journal__binding','ns-guide6-journal__tab','ns-guide6-collection','ns-guide6-empty','ns-guide6-quick-card']){
   assert.ok(css.includes(name),name);
  }

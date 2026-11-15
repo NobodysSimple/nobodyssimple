@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 390" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Decorative sunny studio window opening onto a green countryside, with books, a desk lamp and a steaming cup">
+<defs>
+ <linearGradient id="wall" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff9ee"/><stop offset=".45" stop-color="#f9eedb"/><stop offset="1" stop-color="#e4d5bb"/></linearGradient>
+ <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b6d7e3"/><stop offset=".6" stop-color="#e2eae0"/><stop offset="1" stop-color="#f7e6bf"/></linearGradient>
+ <linearGradient id="mountain" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#90b1b6"/><stop offset="1" stop-color="#b2c5a1"/></linearGradient>
+ <linearGradient id="field" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bacc92"/><stop offset=".6" stop-color="#8fae82"/><stop offset="1" stop-color="#628b6c"/></linearGradient>
+ <linearGradient id="desk" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ad8060"/><stop offset=".28" stop-color="#936f55"/><stop offset="1" stop-color="#735541"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#fff0c3" stop-opacity=".76"/><stop offset="1" stop-color="#fff0c3" stop-opacity="0"/></radialGradient>
+ <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".025" numOctaves="3" seed="16" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".1"/></feComponentTransfer></filter>
+ <filter id="blur"><feGaussianBlur stdDeviation="2.4"/></filter>
+ <clipPath id="window"><rect x="805" y="0" width="675" height="306" rx="2"/></clipPath>
+</defs>
+<rect width="1500" height="390" fill="url(#wall)"/>
+<rect x="800" y="0" width="690" height="307" fill="#b59a75" opacity=".39" stroke="#bb9c72" stroke-width="14"/>
+<g clip-path="url(#window)">
+ <rect x="805" width="675" height="309" fill="url(#sky)"/>
+ <ellipse cx="1230" cy="120" rx="245" ry="230" fill="url(#glow)"/>
+ <circle cx="1299" cy="59" r="28" fill="#f4cf7a" opacity=".94"/>
+ <path d="M805 188Q860 129 924 147 974 71 1025 119 1102 27 1160 113 1235 75 1295 137 1390 111 1480 163V310H805Z" fill="url(#mountain)" opacity=".84"/>
+ <path d="M805 212Q899 146 984 198 1111 124 1198 176 1338 138 1480 189V320H805Z" fill="#95b9ac" opacity=".7"/>
+ <path d="M805 249Q924 210 1010 238 1156 190 1240 230 1352 200 1480 228V330H805Z" fill="url(#field)"/>
+ <path d="M805 293Q936 245 1022 276 1155 250 1255 283 1375 252 1480 277V330H805Z" fill="#789e7d" opacity=".72"/>
+ <path d="M1123 313Q1140 283 1210 279T1322 243" stroke="#f1e8c3" stroke-width="27" opacity=".6" fill="none"/>
+ <g stroke="#5d876a" stroke-width="3" fill="none" opacity=".55"><path d="M843 307l-6 -27m5 22l19 -28M916 309l-15 -24m17 22l9 -31M1460 308l-13 -31m13 25l19 -23"/></g>
+ <g fill="#fffdf0" opacity=".83"><ellipse cx="868" cy="284" rx="5" ry="7"/><ellipse cx="900" cy="275" rx="3" ry="5"/><ellipse cx="1410" cy="278" rx="5" ry="6"/><ellipse cx="1367" cy="290" rx="4" ry="6"/></g>
+</g>
+<!-- Timber window frame and soft wood grain -->
+<path d="M801 0V310M1146 0V305M1481 0V310M800 304H1490" stroke="#a68c6c" stroke-width="16"/>
+<path d="M801 0V310M1146 0V305M1481 0V310M800 304H1490" stroke="#efe1c5" stroke-width="6" opacity=".8"/>
+<path d="M784 310H1498V322H784Z" fill="#bd9c76" stroke="#aa835e" stroke-width="3"/>
+<!-- Sparse leafy canopy at right top, outside the content region -->
+<g opacity=".93">
+ <path d="M1400 -20Q1390 19 1360 60 1326 97 1312 150" stroke="#665b40" stroke-width="15" fill="none" stroke-linecap="round"/>
+ <path d="M1400 -10Q1433 39 1466 59 1503 83 1519 123" stroke="#665b40" stroke-width="12" fill="none"/>
+ <g fill="#698a5a"><ellipse cx="1320" cy="50" rx="55" ry="27" transform="rotate(-28 1320 50)"/><ellipse cx="1400" cy="31" rx="52" ry="25" transform="rotate(20 1400 31)"/><ellipse cx="1475" cy="63" rx="46" ry="25" transform="rotate(33 1475 63)"/><ellipse cx="1331" cy="100" rx="47" ry="22" transform="rotate(-35 1331 100)"/></g>
+ <g fill="#89a56f" opacity=".89"><ellipse cx="1375" cy="8" rx="43" ry="22"/><ellipse cx="1462" cy="18" rx="35" ry="19" transform="rotate(22 1462 18)"/><ellipse cx="1262" cy="32" rx="40" ry="20" transform="rotate(-24 1262 32)"/></g>
+</g>
+<!-- Light studio desk surface and accessories -->
+<path d="M765 316Q1030 306 1260 313H1500V385H754Z" fill="url(#desk)"/>
+<path d="M765 316Q1118 307 1500 315" stroke="#d5ae80" stroke-width="8" fill="none" opacity=".75"/>
+<path d="M783 336Q1000 341 1220 336" stroke="#e8bd8d" stroke-width="2" opacity=".22" fill="none"/>
+<!-- Books to the left of the reading character -->
+<g transform="translate(836 269)">
+ <path d="M0 36h132v13H0z" fill="#4a6750" stroke="#355240" stroke-width="2"/>
+ <path d="M9 23h137v13H9z" fill="#eee2b8" stroke="#b8a76d" stroke-width="2"/>
+ <path d="M13 9h125v14H13z" fill="#9ba77e" stroke="#798666" stroke-width="2"/>
+ <path d="M-3 -5h117v14H-3z" fill="#d5ae7e" stroke="#ab855a" stroke-width="2"/>
+ <g stroke="#fff4d8" stroke-width="2" opacity=".75"><path d="M15 9v14M24 23v13M17 36v13M13 -5v14"/></g>
+</g>
+<!-- Green ceramic mug -->
+<g transform="translate(1012 280)">
+ <ellipse cx="36" cy="54" rx="53" ry="9" fill="#3d5036" opacity=".12"/>
+ <path d="M2 7h72l-7 47Q37 66 12 53z" fill="#e8e8cb" stroke="#9ea582" stroke-width="3"/>
+ <path d="M76 14q37 -6 33 18 -3 22 -38 18" stroke="#d4d6b3" stroke-width="11" fill="none"/>
+ <path d="M76 14q31 -4 28 18 -2 14 -30 14" stroke="#77886e" stroke-width="3" fill="none"/>
+ <path d="M31 29q6 -11 17 -9 -2 14 -17 9m2 1q8 13 17 7" stroke="#719374" stroke-width="3" fill="none"/>
+ <g stroke="#b9bea7" stroke-width="3" fill="none" opacity=".9"><path d="M30 0q-7 -15 2 -27t1 -23M48 -2q9 -15 -1 -26t2 -24"/></g>
+</g>
+<!-- Emerald desk lamp -->
+<g transform="translate(1414 188)">
+ <ellipse cx="0" cy="132" rx="44" ry="9" fill="#354d3c" opacity=".3"/>
+ <path d="M0 114L25 38 -18 -32" stroke="#4b684d" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M-55 -42q14 -47 56 -24 29 25 33 61h-105Z" fill="#41684f" stroke="#2d4939" stroke-width="4"/>
+ <path d="M-71 -5h105" stroke="#cca765" stroke-width="6"/>
+ <ellipse cx="-14" cy="128" rx="48" ry="8" fill="#315c46"/>
+ <ellipse cx="-15" cy="-2" rx="19" ry="5" fill="#f8e5ab" opacity=".87"/>
+</g>
+<!-- Watercolor texture on illustration only -->
+<rect width="1500" height="390" filter="url(#grain)" opacity=".16"/>
+</svg>

@@ -1,0 +1,817 @@
+/*
+ * Nobody's Simple Lifestyle Studio · visual-only redesign 2026-11-15.
+ * CSS scope: .life-unified / embedded .life-focus-host only.
+ * All existing elements, IDs, forms, button handlers, modes, data and persistence
+ * remain as implemented in lifestyle.mjs and simplyfocus.mjs.
+ * Hero and meadow imagery are original decorative SVG assets.
+ */
+body.app-body #main:has(> .life-unified){
+ background-color:#f6f0e5;
+ background-image:
+  radial-gradient(ellipse at 84% 10%,rgba(227,219,189,.35),transparent 52%),
+  repeating-linear-gradient(98deg,rgba(119,101,78,.012) 0 1px,transparent 1px 9px),
+  linear-gradient(180deg,#faf6ed,#f2ecdf);
+}
+body.app-body #main .life-unified{
+ --studio-green:#20543d;
+ --studio-ink:#284a39;
+ --studio-muted:#607468;
+ --studio-paper:#fffaf0;
+ --studio-line:#e5d9c5;
+ --studio-shadow:0 7px 23px rgba(68,69,46,.08),0 2px 4px rgba(76,70,51,.06);
+ width:min(100%,1480px);
+ max-width:1480px;
+ margin-inline:auto;
+ padding:clamp(16px,2.35vw,33px) clamp(14px,2.5vw,36px) 115px;
+ position:relative;
+ isolation:isolate;
+}
+body.app-body #main .life-unified::after{
+ content:"";position:absolute;z-index:-1;bottom:20px;left:-2%;right:-2%;
+ height:240px;background:url("lifestyle-art/studio-meadow.svg") center bottom/100% auto no-repeat;
+ opacity:.27;pointer-events:none;
+}
+/* Scenic studio hero; character is a distinct brand asset, not baked into the painting. */
+body.app-body #main .life-unified .life-page-header{
+ position:relative;isolation:isolate;
+ min-height:245px;overflow:hidden;
+ display:flex;align-items:center;justify-content:space-between;
+ gap:20px;flex-wrap:nowrap;
+ border:1px solid #e1d3b8;
+ border-radius:25px;
+ padding:32px clamp(20px,4vw,55px);
+ background:#fff8ec url("lifestyle-art/studio-window.svg") center/cover no-repeat;
+ box-shadow:var(--studio-shadow);
+ margin:0 0 16px;
+}
+body.app-body #main .life-unified .life-page-header::before{
+ content:"";position:absolute;z-index:0;pointer-events:none;
+ top:0;bottom:0;left:0;width:62%;
+ background:linear-gradient(90deg,#fff9ef 0%,rgba(255,249,239,.95) 56%,rgba(255,248,237,0) 100%);
+}
+body.app-body #main .life-unified .life-page-header::after{
+ content:"";position:absolute;z-index:1;pointer-events:none;
+ width:clamp(130px,14.2vw,218px);height:clamp(145px,15vw,227px);
+ right:clamp(103px,10%,185px);bottom:4px;
+ background:url("ns-character-reading.webp") center bottom/contain no-repeat;
+ filter:drop-shadow(0 7px 7px rgba(59,63,44,.15));
+}
+body.app-body #main .life-unified .life-page-header>div{
+ position:relative;z-index:2;min-width:0;
+ max-width:min(54%,570px);
+}
+body.app-body #main .life-unified .life-page-header .eyebrow{
+ font:800 10px/1.35 system-ui,sans-serif;
+ color:#875e38;letter-spacing:.18em;
+ margin:0 0 13px;
+}
+body.app-body #main .life-unified .life-page-header h1{
+ color:#214b37;
+ font:500 clamp(43px,4.5vw,65px)/1.07 Georgia,serif;
+ margin:0 0 8px;
+ letter-spacing:-.045em;
+}
+body.app-body #main .life-unified .life-page-header p:not(.eyebrow){
+ color:#4b6554;font:400 14px/1.6 system-ui,sans-serif;max-width:40ch;
+}
+body.app-body #main .life-unified .life-page-header .life-date{
+ position:absolute;z-index:4;top:16px;right:20px;
+ border:1px solid #dfd3ae;
+ background:rgba(255,252,240,.94);color:#365641;
+ font-weight:700;box-shadow:0 4px 12px rgba(63,69,43,.12);
+ padding:8px 13px;white-space:nowrap;
+}
+/* Exactly the same two mode buttons, now treated as a studio switch. */
+body.app-body #main .life-unified .life-mode-switch{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ width:min(560px,100%);max-width:560px;min-height:54px;
+ margin:0 0 19px;padding:5px;
+ border:1px solid #d8dec9;background:#e9eedf;
+ border-radius:18px;box-shadow:0 3px 9px #61715314;
+ gap:6px;
+}
+body.app-body #main .life-unified .life-mode-switch button{
+ min-height:43px;border-radius:13px;font-size:13px;
+ color:#305641;letter-spacing:.01em;
+}
+body.app-body #main .life-unified .life-mode-switch button[aria-pressed=true]{
+ background:linear-gradient(160deg,#2d684a,#1d5139);
+ color:#fffdf2;box-shadow:0 4px 9px #24553f28;
+}
+/* Daily status overview: prominent but not larger than the actual tools. */
+body.app-body #main .life-unified .life-today-strip{
+ display:grid;grid-template-columns:minmax(205px,1fr) minmax(0,2.1fr);
+ align-items:center;gap:22px;
+ min-height:112px;margin:0 0 19px;padding:19px 23px;
+ border:1px solid #d4ddc9;border-radius:20px;
+ background:linear-gradient(110deg,#edf2e2f5,#f8f8ee 67%,#eef1e2);
+ box-shadow:var(--studio-shadow);
+ position:relative;overflow:hidden;
+}
+body.app-body #main .life-unified .life-today-strip::after{
+ content:"";position:absolute;right:-30px;bottom:-29px;
+ width:230px;height:98px;pointer-events:none;
+ background:url("lifestyle-art/studio-meadow.svg") bottom right/auto 115px no-repeat;
+ opacity:.26;
+}
+body.app-body #main .life-unified .life-today-head{
+ display:block;position:relative;z-index:1;margin:0;
+}
+body.app-body #main .life-unified .life-today-head .eyebrow{
+ color:#916841;font-size:10px;margin:0 0 6px;
+}
+body.app-body #main .life-unified .life-today-head h2{
+ color:var(--studio-ink);
+ font:500 clamp(23px,2.7vw,34px)/1.12 Georgia,serif;
+ letter-spacing:-.025em;max-width:12ch;
+}
+body.app-body #main .life-unified .life-today-head>span{
+ margin-top:7px;display:block;font:italic 12px/1.4 Georgia,serif;
+ color:#6b806c;
+}
+body.app-body #main .life-unified .life-overview{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:12px;position:relative;z-index:1;
+}
+body.app-body #main .life-unified .life-glance-item{
+ display:grid;grid-template-columns:44px minmax(0,1fr);
+ align-items:center;min-height:75px;gap:10px;
+ border:1px solid #d9e2d1;border-radius:14px;
+ background:#fffdf5dd;
+ padding:13px;box-shadow:0 3px 9px #47563b0d;
+}
+body.app-body #main .life-unified .life-glance-icon{
+ display:grid;place-items:center;width:42px;height:42px;
+ border-radius:13px;color:#31694b;background:#e5eee2;
+}
+body.app-body #main .life-unified .life-glance-item strong{
+ font:700 clamp(13px,1.3vw,16px)/1.25 system-ui,sans-serif;
+ color:#254735;
+}
+body.app-body #main .life-unified .life-glance-item small{
+ color:#536a56;font-size:10px;letter-spacing:.09em;
+}
+body.app-body #main .life-unified .life-glance-item span span{
+ color:#6b786b;font-size:11px;
+}
+/* Reorganisation: practice and tasks first, noticing + calendar next, reminders beneath.
+ * Existing JS mounts and IDs are unchanged. CSS grid only changes the visual placement. */
+body.app-body #main .life-unified .life-dashboard-flow{
+ display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+ gap:18px;align-items:start;
+}
+body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-deed{
+ grid-column:span 5;grid-row:1;min-height:570px;
+}
+body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-tasks{
+ grid-column:span 7;grid-row:1;min-height:570px;
+}
+body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-checkin{
+ grid-column:span 7;grid-row:2 / span 2;
+}
+body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-calendar{
+ grid-column:span 5;grid-row:2;
+}
+body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-reminders{
+ grid-column:span 5;grid-row:3;
+}
+/* Paper cards have soft shadows, warm edging, and restrained stationery accents. */
+body.app-body #main .life-unified .lifestyle-card{
+ position:relative;isolation:isolate;min-width:0;overflow:hidden;
+ padding:clamp(19px,2vw,29px);
+ border-radius:22px;border:1px solid #e1d5c0;
+ background:
+  radial-gradient(ellipse at 5% 1%,rgba(255,255,255,.7),transparent 52%),
+  repeating-linear-gradient(0deg,transparent 0 32px,rgba(165,148,99,.025) 33px,transparent 34px),
+  linear-gradient(135deg,#fffdf7,#faf5e9);
+ box-shadow:var(--studio-shadow);
+}
+body.app-body #main .life-unified .lifestyle-card:is(#lifestyle-deed,#lifestyle-checkin,#lifestyle-calendar,#lifestyle-reminders)::before{
+ content:"";position:absolute;z-index:0;pointer-events:none;
+ top:0;left:23px;height:12px;width:91px;
+ background:linear-gradient(100deg,rgba(234,187,118,.47),rgba(241,209,156,.68));
+ clip-path:polygon(0 7%,100% 0,96% 100%,2% 91%);
+ transform:rotate(-2deg);
+}
+body.app-body #main .life-unified #lifestyle-checkin::before{
+ background:linear-gradient(100deg,#bfd1bf9c,#d7e5cdba);
+}
+body.app-body #main .life-unified #lifestyle-calendar::before{
+ background:linear-gradient(100deg,#d0d5c59c,#ece1c8aa);
+}
+body.app-body #main .life-unified #lifestyle-reminders::before{
+ background:linear-gradient(100deg,#eac4a59c,#f4d9b8ba);
+}
+body.app-body #main .life-unified .lifestyle-section-head h2,
+body.app-body #main .life-unified .calendar-head h2,
+body.app-body #main .life-unified .deed-heading h2{
+ color:#214a38;
+ font:500 clamp(24px,2.4vw,34px)/1.15 Georgia,serif;
+ letter-spacing:-.025em;
+ margin:3px 0 9px;
+}
+body.app-body #main .life-unified .lifestyle-section-head .eyebrow,
+body.app-body #main .life-unified .deed-heading .eyebrow,
+body.app-body #main .life-unified .calendar-head .eyebrow{
+ font:800 10px/1.5 system-ui,sans-serif;
+ letter-spacing:.13em;color:#8d613a;
+}
+body.app-body #main .life-unified .lifestyle-section-head p{
+ color:#647363;font:400 12px/1.55 system-ui,sans-serif;
+}
+body.app-body #main .life-unified .lifestyle-card .button:not(.secondary){
+ border-radius:13px;box-shadow:0 3px 8px #275b3d26;
+}
+body.app-body #main .life-unified .lifestyle-card :is(input,textarea,select){
+ border-radius:12px;background-color:#fffefa;
+ border-color:#d0d9c8;color:#284739;
+}
+body.app-body #main .life-unified .lifestyle-card :is(input,textarea,select):focus-visible,
+body.app-body #main .life-unified .lifestyle-card :is(button,a):focus-visible{
+ outline:3px solid #bd813c;outline-offset:3px;
+}
+/* The identity-based practice keeps its entire live practice flow. Illustration only at top-right. */
+body.app-body #main .life-unified #lifestyle-deed{
+ background:
+  linear-gradient(130deg,rgba(255,252,244,.94),rgba(251,245,229,.88)),
+  url("lifestyle-art/studio-meadow.svg") right bottom/auto 155px no-repeat;
+}
+body.app-body #main .life-unified #lifestyle-deed::after{
+ content:"";position:absolute;z-index:0;pointer-events:none;
+ right:9px;top:18px;width:125px;height:125px;
+ background:url("ns-character-watering.webp") center/contain no-repeat;
+ filter:drop-shadow(0 4px 4px #525f3d24);
+ opacity:.94;
+}
+body.app-body #main .life-unified #lifestyle-deed .deed-heading{
+ position:relative;z-index:1;padding-right:123px;min-height:115px;
+ display:flex;align-items:flex-start;gap:9px;
+}
+body.app-body #main .life-unified #lifestyle-deed .deed-mark{
+ width:39px;height:39px;flex:0 0 39px;border-radius:13px;
+ color:#99642d;background:#f5e5c9;
+}
+body.app-body #main .life-unified #lifestyle-deed .deed-heading h2{
+ font-size:clamp(28px,2.6vw,37px);
+}
+body.app-body #main .life-unified #lifestyle-deed #lifestyle-deed-card{
+ position:relative;z-index:1;
+ padding-top:13px;border-top:1px solid #e2d7c2;
+}
+body.app-body #main .life-unified #lifestyle-deed-card .life-practice-card{
+ background:transparent!important;
+}
+body.app-body #main .life-unified #lifestyle-deed-card :is(button,.life-practice-pill,a){
+ border-radius:999px;
+}
+body.app-body #main .life-unified #lifestyle-deed-card :is(input,textarea,select,button){
+ max-width:100%;
+}
+/* Task planning with all list/quadrants/priority/date/notes controls in place. */
+body.app-body #main .life-unified #lifestyle-tasks{
+ background:linear-gradient(150deg,#fffdf8,#f8f4eb);
+}
+body.app-body #main .life-unified #lifestyle-tasks::before{
+ content:"";position:absolute;top:0;right:0;width:150px;height:110px;
+ background:url("lifestyle-art/studio-meadow.svg") right bottom/auto 110px no-repeat;
+ opacity:.17;pointer-events:none;
+}
+body.app-body #main .life-unified .life-task-view-switch{
+ border-radius:15px;background:#e9eddf;
+ padding:5px;margin:14px 0;
+}
+body.app-body #main .life-unified .life-task-view-switch button{
+ min-height:43px;border-radius:12px;
+}
+body.app-body #main .life-unified .life-task-view-switch button[aria-pressed=true]{
+ background:#fffdf7;box-shadow:0 3px 8px #5360481c;
+}
+body.app-body #main .life-unified .lifestyle-task-form{
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:11px;margin:16px 0;
+}
+body.app-body #main .life-unified .lifestyle-task-form>.field:first-child{
+ grid-column:1/-1;
+}
+body.app-body #main .life-unified .lifestyle-task-form>.field:nth-child(2){
+ grid-column:1/3;
+}
+body.app-body #main .life-unified .lifestyle-task-form>.field:nth-child(3){
+ grid-column:3/5;
+}
+body.app-body #main .life-unified .lifestyle-task-form>.life-task-priority-field{
+ grid-column:1/3;
+}
+body.app-body #main .life-unified .lifestyle-task-form>.lifestyle-task-notes{
+ grid-column:3/5;
+}
+body.app-body #main .life-unified .lifestyle-task-form>.button{
+ grid-column:1/-1;min-height:45px;
+}
+body.app-body #main .life-unified .lifestyle-task-form .field{
+ min-width:0;
+}
+body.app-body #main .life-unified .task-board-columns>div{
+ border-radius:15px;border:1px solid #e1e6d8;
+ background:#eef2e7;min-height:85px;
+}
+body.app-body #main .life-unified .life-dashboard-flow:has(> #lifestyle-tasks.is-matrix-mode)>#lifestyle-deed{
+ grid-column:1/-1;grid-row:auto;min-height:0;
+}
+body.app-body #main .life-unified #lifestyle-tasks.is-matrix-mode{
+ grid-column:1/-1!important;grid-row:auto!important;
+}
+body.app-body #main .life-unified #lifestyle-tasks.is-matrix-mode~#lifestyle-checkin{
+ grid-row:auto;
+}
+body.app-body #main .life-unified #lifestyle-tasks.is-matrix-mode~#lifestyle-calendar{
+ grid-row:auto;
+}
+body.app-body #main .life-unified #lifestyle-tasks.is-matrix-mode~#lifestyle-reminders{
+ grid-row:auto;
+}
+/* Check-in: no emotions or optional fields are removed. */
+body.app-body #main .life-unified #lifestyle-checkin{
+ background:linear-gradient(145deg,#fffdf8,#faf5e9);
+}
+body.app-body #main .life-unified .lifestyle-period-switch{
+ border-radius:15px;background:#eef1e8;gap:4px;padding:4px;
+}
+body.app-body #main .life-unified .lifestyle-period-switch button{
+ border-radius:11px;min-height:42px;
+}
+body.app-body #main .life-unified .emotion-choice-grid{
+ grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;
+}
+body.app-body #main .life-unified .emotion-choice-grid label{
+ min-width:0;
+}
+body.app-body #main .life-unified .emotion-choice-grid span{
+ min-height:90px;border-radius:14px;
+ background:#fcfbf5;border:1px solid #dce4d8;
+ padding:9px 5px;
+ font-size:12px;
+}
+body.app-body #main .life-unified .emotion-choice-grid input:checked+span{
+ background:#e0efde;border-color:#4b805f;
+}
+body.app-body #main .life-unified .life-emotion-face{
+ width:43px;height:43px;
+}
+body.app-body #main .life-unified .life-checkin-detail{
+ border-radius:16px;background:#f0f3e9;
+}
+body.app-body #main .life-unified .life-checkin-detail textarea{
+ min-height:94px;
+}
+body.app-body #main .life-unified .lifestyle-checkin-actions .button{
+ min-height:44px;padding-inline:22px;
+}
+/* Calendar is preserved as a full 42-day grid and retains the selected day's details. */
+body.app-body #main .life-unified #lifestyle-calendar{
+ background:linear-gradient(160deg,#fffdf6,#f7f6ec);
+}
+body.app-body #main .life-unified .calendar-head{
+ align-items:center;gap:12px;
+}
+body.app-body #main .life-unified .calendar-head>div:last-child{
+ gap:7px;
+}
+body.app-body #main .life-unified .calendar-head button{
+ width:39px;height:39px;display:grid;place-items:center;
+ border-radius:50%;background:#f0f4e9;color:#2e5943;
+}
+body.app-body #main .life-unified .calendar-grid{
+ gap:5px;
+}
+body.app-body #main .life-unified .calendar-day{
+ min-height:49px;border-radius:12px;
+ background:#f6f7ef;border:1px solid transparent;
+}
+body.app-body #main .life-unified .calendar-day:is(:hover,.is-selected){
+ background:#e5eddf;border-color:#8fab92;
+}
+body.app-body #main .life-unified .calendar-day.is-today{
+ background:#285d42;color:#fffdf1;border-color:#285d42;
+}
+body.app-body #main .life-unified .lifestyle-day-detail{
+ border-radius:15px;padding:15px;
+ background:linear-gradient(145deg,#eaf0e2,#f5f4e7);
+}
+/* Reminders: compact note-sheet card with ALL notification controls and limitations. */
+body.app-body #main .life-unified #lifestyle-reminders{
+ background:linear-gradient(125deg,#fffdf6,#faf3e8);
+}
+body.app-body #main .life-unified #lifestyle-reminders .reminder-bell{
+ background:#f8e9cc;border-radius:13px;
+}
+body.app-body #main .life-unified #lifestyle-reminders form{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(120px,1fr);
+ gap:11px;padding:14px 0;
+}
+body.app-body #main .life-unified #lifestyle-reminders form :is(input,button,label){
+ min-height:42px;
+}
+body.app-body #main .life-unified #lifestyle-reminders form button{
+ grid-column:1/-1;
+}
+body.app-body #main .life-unified #lifestyle-reminders .reminder-limit{
+ padding:11px 12px;border-radius:12px;
+ background:#f0f1e4;border-left:3px solid #d2ad61;
+ color:#536b58;font-size:11px;line-height:1.55;
+}
+/* SimplyFocus mode — the actual mixer, breathing and timer controls remain the sole UI.
+ * Spacious workspace and rich visuals replace the white rectangles and harsh orange block. */
+body.app-body #main .life-unified .life-focus-panel{
+ position:relative;min-width:0;
+}
+body.app-body #main .life-unified .life-focus-host .simplyfocus-page{
+ display:grid;grid-template-columns:repeat(12,minmax(0,1fr));
+ gap:20px;max-width:100%;padding:0;margin:0;
+}
+body.app-body #main .life-unified .life-focus-host .focus-intro{
+ position:relative;grid-column:1/-1;min-height:175px;
+ display:flex;flex-direction:column;justify-content:center;
+ padding:26px clamp(20px,3.2vw,42px);
+ border-radius:23px;border:1px solid #dce1cb;
+ box-shadow:var(--studio-shadow);
+ background:
+  linear-gradient(90deg,#eff4e9 0%,#eff4e9 42%,rgba(235,243,228,.64) 70%,rgba(235,243,228,.26) 100%),
+  url("ns-landscape-forest.webp") right center/auto 100% no-repeat;
+ overflow:hidden;
+}
+body.app-body #main .life-unified .life-focus-host .focus-intro::after{
+ content:"";position:absolute;right:7%;bottom:0;
+ width:133px;height:143px;pointer-events:none;
+ background:url("ns-character-radio.webp") center bottom/contain no-repeat;
+ filter:drop-shadow(0 5px 4px #475d4830);
+}
+body.app-body #main .life-unified .life-focus-host .focus-intro :is(h1,h2){
+ font:500 clamp(29px,3vw,40px)/1.12 Georgia,serif;
+ letter-spacing:-.03em;color:#214f39;
+ margin:3px 0 9px;
+}
+body.app-body #main .life-unified .life-focus-host .focus-intro .lead{
+ position:relative;z-index:1;max-width:62ch;
+ color:#4d6a55;font:400 13px/1.55 system-ui,sans-serif;
+ padding-right:60px;
+}
+body.app-body #main .life-unified .life-focus-host :is(.focus-mixer,.timed-breathing-card,.pomodoro-card){
+ position:relative;isolation:isolate;min-width:0;
+ border:1px solid #e1d8c4;border-radius:22px;
+ box-shadow:var(--studio-shadow);
+ background:
+  radial-gradient(ellipse at 3% 0%,rgba(255,255,255,.7),transparent 44%),
+  linear-gradient(135deg,#fffdf8,#f7f3e8);
+ padding:clamp(18px,2.2vw,30px);
+ overflow:hidden;
+}
+body.app-body #main .life-unified .life-focus-host :is(.focus-mixer,.timed-breathing-card,.pomodoro-card)::before{
+ content:"";position:absolute;z-index:0;pointer-events:none;
+ top:0;left:25px;width:93px;height:10px;
+ background:#e6cfa7bb;transform:rotate(-2deg);
+ clip-path:polygon(2% 0,100% 7%,96% 100%,0 89%);
+}
+body.app-body #main .life-unified .life-focus-host .focus-mixer{
+ grid-column:1/-1;
+}
+body.app-body #main .life-unified .life-focus-host .focus-mixer::after{
+ content:"";position:absolute;right:-10px;top:12px;
+ width:245px;height:130px;z-index:0;pointer-events:none;
+ background:url("ns-landscape-forest.webp") center/cover no-repeat;
+ opacity:.18;border-radius:50% 0 0 50%;
+ mask-image:linear-gradient(90deg,transparent,black 70%);
+}
+body.app-body #main .life-unified .life-focus-host .focus-mixer>*, 
+body.app-body #main .life-unified .life-focus-host .timed-breathing-card>*,
+body.app-body #main .life-unified .life-focus-host .pomodoro-card>*{
+ position:relative;z-index:1;min-width:0;
+}
+body.app-body #main .life-unified .life-focus-host .focus-mixer-head{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(190px,260px);gap:18px;
+}
+body.app-body #main .life-unified .life-focus-host :is(.focus-mixer-head h2,.timed-breathing-title h2,.pomodoro-head h2){
+ color:#244d3a;
+ font:500 clamp(23px,2.7vw,34px)/1.2 Georgia,serif;
+}
+body.app-body #main .life-unified .life-focus-host .focus-tracks{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;
+}
+body.app-body #main .life-unified .life-focus-host .focus-track{
+ border:1px solid #d8e1d2;border-radius:16px;
+ background:linear-gradient(130deg,#f0f5ea,#f8f7ee);
+ min-width:0;box-shadow:0 2px 7px #4b64460d;
+}
+body.app-body #main .life-unified .life-focus-host .focus-master :is(input,output){
+ accent-color:#2b6547;
+}
+body.app-body #main .life-unified .life-focus-host .focus-presets{
+ padding-top:20px;margin-top:20px;border-top:1px solid #dedfcf;
+}
+body.app-body #main .life-unified .life-focus-host .focus-actions{
+ display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;
+}
+body.app-body #main .life-unified .life-focus-host .focus-actions button{
+ min-height:43px;border-radius:13px;
+}
+body.app-body #main .life-unified .life-focus-host .timed-breathing-card{
+ grid-column:span 6;
+ background:linear-gradient(160deg,#eef4e8,#f7f8ef 64%,#e7f0e1);
+}
+body.app-body #main .life-unified .life-focus-host .timed-breathing-top{
+ flex-wrap:wrap;gap:13px;
+}
+body.app-body #main .life-unified .life-focus-host .box-breathing-panel{
+ display:grid;grid-template-columns:minmax(0,1fr);
+ gap:13px;
+}
+body.app-body #main .life-unified .life-focus-host .breathing-visual{
+ min-height:260px;background:radial-gradient(circle at 50% 50%,#d9e9d8,#eaf2e3 52%,#f7f7ed);
+ border-radius:18px;border:1px solid #d5e3d4;
+}
+body.app-body #main .life-unified .life-focus-host .breathing-control-panel{
+ min-width:0;border-radius:18px;background:#fffef6;
+}
+body.app-body #main .life-unified .life-focus-host .pomodoro-card{
+ grid-column:span 6;
+}
+body.app-body #main .life-unified .life-focus-host .pomodoro-head{
+ align-items:start;gap:15px;flex-wrap:wrap;
+}
+body.app-body #main .life-unified .life-focus-host .pomodoro-main{
+ border:1px solid #edd6b4;border-radius:18px;
+ background:
+  linear-gradient(180deg,rgba(253,242,222,.96),rgba(251,231,198,.74)),
+  url("ns-landscape-sunset.webp") center bottom/cover no-repeat;
+ color:#533f2b;box-shadow:inset 0 0 24px #c6935530;
+ min-height:260px;
+}
+body.app-body #main .life-unified .life-focus-host .pomodoro-main :is(#pomodoro-display,#pomodoro-status,#pomodoro-mode-label){
+ color:#374b38;
+}
+body.app-body #main .life-unified .life-focus-host #pomodoro-display{
+ font:500 clamp(52px,6vw,83px)/1 Georgia,serif;
+ font-variant-numeric:tabular-nums;letter-spacing:-.035em;
+}
+body.app-body #main .life-unified .life-focus-host .pomodoro-tasks{
+ margin-top:22px;
+}
+body.app-body #main .life-unified .life-focus-host .pomodoro-tasks :is(input,select,textarea){
+ border-radius:12px;background:#fffefa;
+ color:#294937;
+}
+body.app-body #main .life-unified .life-focus-host .focus-note{
+ grid-column:1/-1;margin-top:0;
+ background:linear-gradient(110deg,#eff4e5,#f6f0df);
+ border:1px solid #dce2cf;border-radius:17px;
+ padding:18px 22px;color:#31563e;
+}
+body.app-body #main .life-unified .life-focus-host .focus-note h2{
+ font:500 21px/1.25 Georgia,serif;color:#31513e;
+}
+/* Preserve low-stimulation appearance, reduced motion and keyboard outlines. */
+body.app-body #main .life-unified :is(button,a,input,select,textarea):focus-visible{
+ outline:3px solid #b78337;outline-offset:3px;
+}
+html[data-low-stim="true"] body.app-body #main:has(> .life-unified){
+ background:#f6f2e9;
+}
+html[data-low-stim="true"] body.app-body #main .life-unified .life-page-header{
+ background:#f8f5ec;
+}
+html[data-low-stim="true"] body.app-body #main .life-unified .life-page-header::after,
+html[data-low-stim="true"] body.app-body #main .life-unified #lifestyle-deed::after{
+ display:none!important;
+}
+html[data-low-stim="true"] body.app-body #main .life-unified .life-focus-host .focus-intro{
+ background:#edf4e9;
+}
+html[data-low-stim="true"] body.app-body #main .life-unified .life-focus-host .focus-intro::after,
+html[data-low-stim="true"] body.app-body #main .life-unified::after{display:none!important;}
+/* Breakpoints: don't squeeze the real forms, music sliders, breathing, or tasks. */
+@media(max-width:1260px){
+ body.app-body #main .life-unified .life-dashboard-flow{grid-template-columns:repeat(12,minmax(0,1fr));}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-deed{grid-column:span 5;}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-tasks{grid-column:span 7;}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-checkin{grid-column:span 7;}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-calendar{grid-column:span 5;}
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-reminders{grid-column:span 5;}
+ body.app-body #main .life-unified #lifestyle-deed .deed-heading{
+  padding-right:91px;min-height:102px;
+ }
+ body.app-body #main .life-unified #lifestyle-deed::after{
+  width:105px;height:107px;
+ }
+}
+@media(max-width:1050px){
+ body.app-body #main .life-unified .life-page-header{
+  min-height:218px;
+ }
+ body.app-body #main .life-unified .life-dashboard-flow{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+ }
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-deed,
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-tasks,
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-checkin,
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-calendar,
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-reminders{
+  grid-column:1/-1;grid-row:auto;min-height:0;
+ }
+ body.app-body #main .life-unified .life-dashboard-flow>#lifestyle-calendar{
+  grid-column:1/-1;
+ }
+ body.app-body #main .life-unified .life-today-strip{
+  grid-template-columns:1fr;gap:14px;
+ }
+ body.app-body #main .life-unified .life-today-head h2{max-width:none;}
+ body.app-body #main .life-unified #lifestyle-deed .deed-heading{
+  padding-right:138px;
+ }
+ body.app-body #main .life-unified #lifestyle-deed::after{
+  width:141px;height:140px;
+ }
+ body.app-body #main .life-unified .life-focus-host .timed-breathing-card,
+ body.app-body #main .life-unified .life-focus-host .pomodoro-card{
+  grid-column:1/-1;
+ }
+ body.app-body #main .life-unified .life-focus-host .box-breathing-panel{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+ }
+}
+@media(max-width:760px){
+ body.app-body #main .life-unified{
+  padding:15px 14px 110px;
+ }
+ body.app-body #main .life-unified .life-page-header{
+  min-height:204px;padding:25px 22px;
+  border-radius:18px;
+  background-position:66% center;
+ }
+ body.app-body #main .life-unified .life-page-header>div{
+  max-width:67%;
+ }
+ body.app-body #main .life-unified .life-page-header h1{
+  font-size:clamp(34px,5.5vw,45px);
+ }
+ body.app-body #main .life-unified .life-page-header::after{
+  width:123px;height:132px;right:40px;
+ }
+ body.app-body #main .life-unified .life-page-header .life-date{
+  position:absolute;top:10px;right:12px;padding:6px 9px;
+  font-size:10px;
+ }
+ body.app-body #main .life-unified .life-dashboard-flow{gap:13px;}
+ body.app-body #main .life-unified .lifestyle-card{padding:20px;}
+ body.app-body #main .life-unified .life-focus-host .focus-tracks{grid-template-columns:repeat(2,minmax(0,1fr));}
+ body.app-body #main .life-unified .life-focus-host .box-breathing-panel{grid-template-columns:minmax(0,1fr);}
+}
+@media(max-width:520px){
+ body.app-body #main .life-unified{padding:11px 11px 105px;}
+ body.app-body #main .life-unified .life-page-header{
+  padding:20px 17px 19px;min-height:174px;
+  align-items:end;
+  background-size:auto 100%;
+  background-position:69% center;
+ }
+ body.app-body #main .life-unified .life-page-header::before{
+  width:100%;
+  background:linear-gradient(90deg,rgba(255,249,237,.97) 0%,rgba(255,249,237,.91) 61%,rgba(255,249,237,.25) 100%);
+ }
+ body.app-body #main .life-unified .life-page-header>div{max-width:78%;}
+ body.app-body #main .life-unified .life-page-header h1{font-size:36px;}
+ body.app-body #main .life-unified .life-page-header p:not(.eyebrow){font-size:12px;}
+ body.app-body #main .life-unified .life-page-header::after{
+  right:-19px;bottom:0;width:104px;height:110px;
+  opacity:.9;
+ }
+ body.app-body #main .life-unified .life-page-header .life-date{
+  top:8px;right:8px;font-size:9px;
+ }
+ body.app-body #main .life-unified .life-mode-switch{max-width:none;}
+ body.app-body #main .life-unified .life-today-strip{
+  padding:16px;border-radius:16px;
+ }
+ body.app-body #main .life-unified .life-overview{grid-template-columns:1fr;gap:9px;}
+ body.app-body #main .life-unified .life-glance-item{
+  display:grid;grid-template-columns:37px minmax(0,1fr);gap:8px;
+ }
+ body.app-body #main .life-unified .life-glance-icon{
+  width:37px;height:37px;
+ }
+ body.app-body #main .life-unified .lifestyle-card{
+  padding:17px;border-radius:17px;
+ }
+ body.app-body #main .life-unified #lifestyle-deed .deed-heading{
+  padding-right:0;min-height:0;padding-bottom:95px;
+ }
+ body.app-body #main .life-unified #lifestyle-deed::after{
+  top:75px;right:11px;width:105px;height:103px;
+ }
+ body.app-body #main .life-unified .lifestyle-task-form{
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;
+ }
+ body.app-body #main .life-unified .lifestyle-task-form>.field:nth-child(2){
+  grid-column:1/2;
+ }
+ body.app-body #main .life-unified .lifestyle-task-form>.field:nth-child(3){
+  grid-column:2/3;
+ }
+ body.app-body #main .life-unified .lifestyle-task-form>.life-task-priority-field,
+ body.app-body #main .life-unified .lifestyle-task-form>.lifestyle-task-notes{
+  grid-column:1/-1;
+ }
+ body.app-body #main .life-unified .emotion-choice-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;
+ }
+ body.app-body #main .life-unified .emotion-choice-grid span{
+  min-height:77px;font-size:11px;
+ }
+ body.app-body #main .life-unified .life-emotion-face{
+  width:34px;height:34px;
+ }
+ body.app-body #main .life-unified .calendar-day{min-height:41px;border-radius:9px;}
+ body.app-body #main .life-unified #lifestyle-reminders form{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+ }
+ body.app-body #main .life-unified #lifestyle-reminders form :is(input,button,label){
+  min-width:0;
+ }
+ body.app-body #main .life-unified .life-focus-host .simplyfocus-page{
+  gap:13px;
+ }
+ body.app-body #main .life-unified .life-focus-host .focus-intro{
+  min-height:160px;padding:19px;border-radius:18px;
+ }
+ body.app-body #main .life-unified .life-focus-host .focus-intro::after{
+  width:81px;height:85px;right:-2px;
+ }
+ body.app-body #main .life-unified .life-focus-host .focus-intro .lead{padding-right:0;max-width:95%;}
+ body.app-body #main .life-unified .life-focus-host :is(.focus-mixer,.timed-breathing-card,.pomodoro-card){
+  padding:16px;border-radius:17px;
+ }
+ body.app-body #main .life-unified .life-focus-host .focus-mixer-head{grid-template-columns:1fr;gap:8px;}
+ body.app-body #main .life-unified .life-focus-host .focus-tracks{grid-template-columns:1fr;}
+ body.app-body #main .life-unified .life-focus-host .pomodoro-main{padding:18px 12px;}
+}
+@media(prefers-reduced-motion:reduce){
+ body.app-body #main .life-unified *,
+ body.app-body #main .life-unified *::before,
+ body.app-body #main .life-unified *::after{
+  transition:none!important;
+  scroll-behavior:auto!important;
+ }
+}
+/* Dark mode stays legible; no pale paper cards with dark-mode's light text. */
+html[data-theme="dark"] body.app-body #main:has(> .life-unified){
+ background:#1c3027;
+}
+html[data-theme="dark"] body.app-body #main .life-unified{
+ --studio-paper:#283f31;--studio-ink:#e1efe1;--studio-line:#516e5a;
+ --studio-shadow:0 6px 24px rgba(0,0,0,.25);
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-page-header{
+ background:linear-gradient(105deg,#263c30,#395543);
+ border-color:#60735b;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-page-header::before{
+ background:linear-gradient(90deg,#263c30 0%,rgba(38,60,48,.82) 65%,transparent);
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-page-header :is(h1,p,.eyebrow){
+ color:#f0f5e6;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-page-header .life-date{
+ background:#385540;color:#fff9e7;border-color:#708866;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-today-strip,
+html[data-theme="dark"] body.app-body #main .life-unified .lifestyle-card,
+html[data-theme="dark"] body.app-body #main .life-unified .life-focus-host :is(.focus-intro,.focus-mixer,.timed-breathing-card,.pomodoro-card,.focus-note){
+ background:#293f31;border-color:#526956;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-mode-switch{
+ background:#354d3d;border-color:#65816b;
+}
+html[data-theme="dark"] body.app-body #main .life-unified :is(.life-today-head h2,.lifestyle-section-head h2,.calendar-head h2,.deed-heading h2,.life-glance-item strong),
+html[data-theme="dark"] body.app-body #main .life-unified .life-focus-host :is(.focus-intro h1,.focus-intro h2,.focus-mixer-head h2,.timed-breathing-title h2,.pomodoro-head h2){
+ color:#e8f1e0;
+}
+html[data-theme="dark"] body.app-body #main .life-unified :is(.life-today-head>span,.lifestyle-section-head p,.life-glance-item span span),
+html[data-theme="dark"] body.app-body #main .life-unified .life-focus-host .focus-intro .lead{
+ color:#d2dfca;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-glance-item,
+html[data-theme="dark"] body.app-body #main .life-unified .emotion-choice-grid span,
+html[data-theme="dark"] body.app-body #main .life-unified .lifestyle-reminders .reminder-limit,
+html[data-theme="dark"] body.app-body #main .life-unified .life-focus-host .focus-track,
+html[data-theme="dark"] body.app-body #main .life-unified .life-focus-host .breathing-control-panel{
+ background:#344b3c;border-color:#526e56;color:#edf3e7;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-focus-host .pomodoro-main{
+ background:linear-gradient(135deg,#66553e,#68593f);
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-focus-host .pomodoro-main :is(#pomodoro-display,#pomodoro-status,#pomodoro-mode-label){
+ color:#f3efdc;
+}
+html[data-theme="dark"] body.app-body #main .life-unified .life-focus-host .breathing-visual{
+ background:radial-gradient(circle,#46664a,#294331);
+ border-color:#5a745a;
+}
