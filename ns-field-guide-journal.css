@@ -612,7 +612,7 @@ html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal__p
 html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal__binding,
 html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__visual,
 html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal__footer-art{
- display:none;
+ display:none!important;
 }
 html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero{
  grid-template-columns:minmax(0,1fr);
