@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {LEARN_COURSE_IDEAS,renderCourseHub} from '../../ns-learn-courses.mjs';
 const read=path=>readFileSync(new URL('../../'+path,import.meta.url),'utf8');
@@ -17,13 +17,12 @@ test('the new Learn page is deliberately courses-only and uses ten original subj
  }
 });
 test('all asset paths used by Learn already exist in the public repository',()=>{
- const fs=await import('node:fs');
  for(const course of LEARN_COURSE_IDEAS){
-  assert.ok(fs.existsSync(new URL('../../'+course.landscape,import.meta.url)),course.landscape);
-  assert.ok(fs.existsSync(new URL('../../'+course.mascot,import.meta.url)),course.mascot);
+  assert.ok(existsSync(new URL('../../'+course.landscape,import.meta.url)),course.landscape);
+  assert.ok(existsSync(new URL('../../'+course.mascot,import.meta.url)),course.mascot);
  }
  for(const art of ['ns-landscape-learn.webp','ns-prop-book.webp','ns-prop-cup.webp','ns-forest-foliage-left.webp','ns-forest-foliage-right.webp']){
-  assert.ok(fs.existsSync(new URL('../../'+art,import.meta.url)),art);
+  assert.ok(existsSync(new URL('../../'+art,import.meta.url)),art);
  }
 });
 test('a dedicated Learn button appears immediately after Feed on desktop and mobile',()=>{
