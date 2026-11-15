@@ -75,7 +75,7 @@ test('304 worked examples and 190 Understand Why questions are topic-specific',(
 test('each page offers personal actions and research-aware safety',()=>{
  for(const g of BEHAVIOUR_GUIDES){
   assert.equal(g.ideas.actions.length,24,g.id);
-  assert.equal(g.ideas.support.length,16,g.id);
+  assert.equal(g.ideas.support.length,24,g.id);
   assert.ok(g.prominentSafety!==undefined);
  }
  assert.match(BEHAVIOUR_BY_ID.get('gambling-harms').safety,/essential|debt/i);
