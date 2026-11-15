@@ -221,7 +221,7 @@ export const SOCIAL_WORK_B={
       [
         "trust",
         "Respond to an actual breach of agreement",
-        "Jealousy may accompany a genuine trust problem.",
+        "Sometimes jealousy is accompanied by a real broken commitment that deserves direct attention.",
         [
           "What commitment was made between you?",
           "Which behaviour contradicted it?",
