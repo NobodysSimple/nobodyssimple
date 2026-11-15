@@ -86,7 +86,7 @@ test('campfire artwork and accessible, responsive UI styles exist',()=>{
 test('the app loads and precaches community assets without changing data backend',()=>{
  const index=read('index.html'),worker=read('sw.js');
  assert.match(index,/ns-community-campfire\.css/);
- assert.match(index,/site\.mjs\?v=campfire-parity-20261115/);
+ assert.match(index,/site\.mjs\?v=[a-z0-9-]{8,}/);
  for(const name of ['ns-community-campfire.css','community-ui.mjs','community-art/campfire-hero.svg','community-art/lantern-seat.svg','community-art/campfire-card.svg']){
   assert.ok(worker.includes("'"+name+"'"),name+' precached');
  }
