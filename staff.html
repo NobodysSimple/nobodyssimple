@@ -11,6 +11,7 @@
     <link rel="icon" href="logo.png" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="studio.css" />
+    <link rel="stylesheet" href="studio-quiet.css?v=content-studio-20261115" />
       <link rel="stylesheet" href="app-design.css" />
     <script type="module" src="app-design.mjs"></script>
   </head>
@@ -42,9 +43,12 @@
             <button class="rail-button active" data-view="dashboard" type="button"><span>▤</span> Content</button>
             <button class="rail-button" data-view="media" type="button"><span>▧</span> Media</button>
             <button class="rail-button" data-view="templates" type="button"><span>▦</span> Templates</button>
+             <button class="rail-button" data-view="topic-studio" type="button"><span>✿</span> Topic guides</button>
+             <button class="rail-button" data-view="moderation" type="button"><span>☷</span> Live comment review</button>
             <div class="rail-divider"></div>
             <p class="rail-label">CREATE</p>
             <button class="rail-new" data-new="blog" type="button">＋ Blog post</button>
+             <button class="rail-new" data-view="topic-studio" type="button">＋ Edit topic guide</button>
             <button class="rail-new" data-new="announcement" type="button">＋ Announcement</button>
             <button class="rail-new" data-new="education" type="button">＋ Education</button>
             <button class="rail-new" data-new="video" type="button">＋ YouTube video</button>
@@ -71,7 +75,15 @@
               <div id="media-grid" class="media-library-grid"></div><p class="dashboard-footnote">Website media is committed to GitHub and becomes public when deployed. Keep individual uploads under 8 MB; video files should be embedded from YouTube.</p>
             </div>
 
-            <div id="templates-view" class="creator-view" hidden>
+            <div id="topic-studio-view" class="creator-view" hidden aria-label="Topic Guide Studio"></div>
+             <div id="moderation-view" class="creator-view" hidden aria-label="Staff comment moderation">
+              <header class="dashboard-heading"><div><p class="eyebrow">STAFF · COMMUNITY REVIEW</p><h1>Live comment review</h1>
+               <p>Comments post immediately. Review, remove, and ban accounts through the authenticated Firebase staff panel.</p>
+               </div><a class="button" href="index.html#account/moderation" target="_blank" rel="noopener">Open full moderation page ↗</a></header>
+              <div class="studio-mod-frame"><iframe src="index.html#account/moderation" title="Nobody’s Simple secure staff comment review" loading="lazy"></iframe></div>
+              <p class="dashboard-footnote">GitHub publishing access and Firebase staff permissions are separate. Sign in to your authorized staff account inside the moderation page if prompted.</p>
+             </div>
+             <div id="templates-view" class="creator-view" hidden>
               <div class="dashboard-heading"><div><p class="eyebrow">START WITH STRUCTURE</p><h1>Templates</h1><p>Choose a site-ready layout, or save your current document as a personal template.</p></div><button id="save-template" class="button" type="button">Save current as template</button></div>
               <div id="template-grid" class="template-grid"></div>
             </div>
@@ -93,7 +105,7 @@
                   <input id="doc-excerpt" class="document-excerpt" maxlength="400" placeholder="Card excerpt — a short summary shown in the blog or library" aria-label="Card excerpt" />
                   <div class="intro-field"><label for="doc-intro">Opening introduction</label><textarea id="doc-intro" rows="2" placeholder="Optional text shown below the title"></textarea></div>
                   <div class="document-layout-controls"><span>Page width</span><button data-page-width="narrow" type="button">Narrow</button><button data-page-width="standard" class="selected" type="button">Standard</button><button data-page-width="wide" type="button">Wide</button><button id="toggle-split" type="button">Split preview</button></div>
-                  <div class="editing-and-preview"><div id="block-list" class="block-list" aria-label="Article blocks"></div><div id="live-preview" class="live-preview" hidden><div class="preview-device-label">LIVE PREVIEW <span><button type="button" data-preview-size="desktop">Desktop</button><button type="button" data-preview-size="tablet">Tablet</button><button type="button" data-preview-size="mobile">Mobile</button></span></div><article id="live-preview-article" class="article preview-article"></article></div></div>
+                  <p class="studio-notebook-help" id="studio-blog-hint">Blog posts automatically use our notebook paper, washi-tape details, scenery, reactions, related posts and contents. Your live preview uses the same template as the published page.</p><div class="editing-and-preview"><div id="block-list" class="block-list" aria-label="Article blocks"></div><div id="live-preview" class="live-preview" hidden><div class="preview-device-label">LIVE PREVIEW <span><button type="button" data-preview-size="desktop">Desktop</button><button type="button" data-preview-size="tablet">Tablet</button><button type="button" data-preview-size="mobile">Mobile</button></span></div><article id="live-preview-article" class="article preview-article"></article></div></div>
                   <div class="add-block-wrap"><button class="add-block-button" id="add-block-open" type="button">＋ Add a content block</button><div id="block-menu" class="block-menu" hidden></div><button id="save-reusable" class="text-button" type="button">Save selected block as reusable</button></div>
                   <div id="quality-panel" class="quality-panel"><button id="run-quality" class="quality-heading" type="button"><span>Publishing checklist</span><span id="quality-count">Check content</span></button><div id="quality-results" class="quality-results"></div></div>
                   <div class="bottom-stats"><span id="word-count">0 words</span><span id="reading-time">1 min read</span><span id="block-count">0 blocks</span><span id="image-count">0 images</span></div>
@@ -124,6 +136,6 @@
     <dialog id="versions-dialog" class="creator-dialog"><div class="dialog-head"><div><p class="eyebrow">LOCAL HISTORY</p><h2>Compare versions</h2></div><button class="text-button" data-close-dialog type="button">Close</button></div><div id="version-compare" class="version-compare"></div></dialog>
     <div id="selection-toolbar" class="selection-toolbar" hidden><button type="button" data-cmd="bold"><b>B</b></button><button type="button" data-cmd="italic"><i>I</i></button><button type="button" data-cmd="underline"><u>U</u></button><button type="button" id="selection-link">↗</button></div>
     <div id="toast" class="creator-toast" role="status" hidden></div>
-    <script type="module" src="studio.mjs"></script>
+    <script type="module" src="studio.mjs?v=content-studio-20261115"></script>
   </body>
 </html>
