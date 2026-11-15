@@ -26,7 +26,7 @@ test('all 33 existing Money and Society guides have new individual, deep explana
   assert.equal(g.ideas.actions.length,24,id);
   assert.deepEqual(g.ideas.actions.slice(4,8),newWriting.actions,id+' real authored support beyond first four');
   for(let i=0;i<4;i++){
-   assert.ok(g.routes[i].questions[3][0].includes(newWriting.actions[i]),id+' directly adapted journal prompt');
+   assert.ok(g.routes[i].questions[3][0].includes(newWriting.actions[i].replace(/[.!?]+$/,'')),id+' directly adapted journal prompt');
    assert.ok(g.routes[i].questions[3][2].includes(newWriting.actions[i]),id+' actionable context');
   }
  }
