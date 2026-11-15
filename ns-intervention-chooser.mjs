@@ -8,7 +8,6 @@ import {renderTool} from './features.mjs';
 import {deckForWorkbook,filterCards,APPROACH_FAMILIES,groupInterventions,familyForCard} from './ns-intervention-cards.mjs';
 import {renderGameCarousel} from './ns-regulation-games.mjs';
 import {renderTopicQuickNav,renderTopicReadingStart,renderTopicReadingEnd,renderTopicSafetyReading,bindTopicProfile,bindTopicJumps} from './ns-topic-reading-ui.mjs';
-import {bindCfmJournal} from './ns-cfm-guide-ui.mjs';
 
 const e=x=>esc(String(x??''));
 const textOf=x=>String(x??'').trim().slice(0,3000);
@@ -265,7 +264,7 @@ export function renderInterventionChooser(root,g,{locked=false}={}){
  const cards=deckForWorkbook(g);
  root.innerHTML=layout(g);
  const surface=root.querySelector('[data-workbook]');
- if(g.kind==='topic'&&!g.safetyFirst){bindTopicProfile(surface);bindTopicJumps(surface);bindCfmJournal(surface);}
+ if(g.kind==='topic'&&!g.safetyFirst){bindTopicProfile(surface);bindTopicJumps(surface);}
  if(g.safetyFirst)return;
  let selected=null,filter='all',need='choose',refine='all',opener=null,preview=null;
  const drafts=new Map();
