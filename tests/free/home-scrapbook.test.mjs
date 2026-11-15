@@ -5,7 +5,7 @@ const text=path=>readFileSync(new URL('../../'+path,import.meta.url),'utf8');
 
 test('Home scrapbook scenery loads after existing styles without editing its feature renderers',()=>{
  const html=text('index.html'),css=text('ns-home-scrapbook.css'),strategy=text('strategy.mjs');
- assert.ok(html.includes('ns-home-scrapbook.css?v=homepage-landscape-20261115'));
+ assert.ok(html.includes('ns-home-scrapbook.css?v=home-watercolor-20261115'));
  assert.ok(html.indexOf('ns-home-scrapbook.css')>html.indexOf('wisbody-reflections.css'));
  assert.ok(html.indexOf('ns-home-scrapbook.css')>html.indexOf('ns-cultural-atlas.css'));
  assert.match(css,/#main:has\(> \.ns-home-refined\)/);
@@ -35,8 +35,17 @@ test('Home source still mounts all feature modules in original order',()=>{
  assert.ok(source.includes('href="#community"'));
  assert.ok(source.includes('href="#wisbody"'));
 });
+test('Botanical sprigs are absent from the Home visual layer and replaced with paper and a small sticker',()=>{
+ const css=text('ns-home-scrapbook.css');
+ assert.doesNotMatch(css,/pressed-flowers\.svg/);
+ assert.match(css,/home-art\/watercolor-countryside\.svg/);
+ assert.match(css,/home-art\/daisy-sticker\.svg/);
+ assert.match(css,/ns-home-hero::before[\\s\\S]*?border:3px solid #d1a55d/);
+ assert.match(css,/ns-home-latest::before\{content:none!important;\}/);
+ assert.match(css,/ns-culture-atlas::before\{content:none!important;\}/);
+});
 test('New artwork contains no baked-in characters and is not a screenshot',()=>{
- for(const name of ['home-art/home-meadow.svg','home-art/pressed-flowers.svg']){
+ for(const name of ['home-art/watercolor-countryside.svg','home-art/daisy-sticker.svg']){
   assert.ok(existsSync(new URL('../../'+name,import.meta.url)),name);
   const artwork=text(name);
   assert.match(artwork,/^<\?xml/);
@@ -59,8 +68,8 @@ test('Responsive and accessibility preferences are preserved',()=>{
 });
 test('New cache precaches the Home stylesheet and its lightweight art',()=>{
  const sw=text('sw.js');
- assert.match(sw,/nobodyssimple-release-v208-home-scrapbook/);
- for(const item of ['ns-home-scrapbook.css','home-art/home-meadow.svg','home-art/pressed-flowers.svg']){
+ assert.match(sw,/nobodyssimple-release-v209-home-watercolor/);
+ for(const item of ['ns-home-scrapbook.css','home-art/watercolor-countryside.svg','home-art/daisy-sticker.svg']){
   assert.ok(sw.includes("'"+item+"'"),item);
  }
 });
