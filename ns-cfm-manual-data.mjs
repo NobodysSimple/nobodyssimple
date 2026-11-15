@@ -117,13 +117,17 @@ function makeExamples(d,article,profiles,roots){
    const profile=profiles[i],action=i<3?d.versions[i][2]:d.versions[0][2];
    examples.push({
     situation:scene,
-    interpretation:profile[1]+' This is a possible reading of the situation, not proof of what someone secretly intended.',
-    emotion:d.domain==='migration'?'Uncertainty, longing or frustration can be relevant, depending on what you experienced.':
-     d.domain==='faith'?'You might notice grief, conviction, fear or relief. You can use your own words for what you felt.':
-     'You may feel hurt, anger, unease or none of these. The circumstances matter more than a prescribed feeling.',
-    response:'Notice the response you actually made in that moment and whether it had to protect you from a real consequence.',
-    function:'Consider the costs and benefits of that response in the actual setting. Personal coping alone cannot change someone else’s harmful actions.',
-    need:profile[0],rule:'Separate the known event from expectations or beliefs you have had to carry about it.',
+    interpretation:profile[1]+' This may help explain the experience, although the full circumstances are not known.',
+    emotion:d.domain==='migration'?'The person might feel uncertainty or longing. Their response will depend on what has been lost and what remains unresolved.':
+     d.domain==='faith'?'They might feel fear, grief, comfort or conviction, depending on what the experience means to them.':
+     'The feeling may involve hurt or confusion. Its precise meaning depends on what happened and how they were treated.',
+    response:d.domain==='migration'?
+     'A person might look for reliable information or temporarily change their plans. Whether that helps depends on which decisions can actually be made.':
+     d.domain==='faith'?
+     'They might keep the question private, seek a conversation or adjust a religious practice. The right choice depends on their beliefs and the safety of the setting.':
+     'A person may decide whether to respond, seek support or conserve their energy. Their response may be shaped by the real consequences of challenging unequal treatment.',
+    function:d.why,
+    need:profile[0],rule:'A useful question here is: '+d.questions[1],
     adaptation:profile[1],alternative:article[(i+j+2)%article.length],
     action,root:roots[i][0]
    });
