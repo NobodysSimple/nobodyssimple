@@ -131,7 +131,7 @@ export const LIFESPAN_EDITORIAL_C=[
     "safety": "Postpartum depression, anxiety and psychosis can require urgent assessment. If there are thoughts of harming yourself or the baby, severe confusion or psychotic symptoms, seek immediate clinical support and ensure the baby is safe. Guidance must respect actual care duties.",
     "source": [
       "NHS: Postnatal depression",
-      "https://www.nhs.uk/mental-health/conditions/post-natal-depression/overview/"
+      "https://www.nhs.uk/mental-health/conditions/postnatal-depression/"
     ]
   },
   {
@@ -265,7 +265,7 @@ export const LIFESPAN_EDITORIAL_C=[
     "safety": "Perimenopausal symptoms can overlap with other conditions. New or unusual bleeding and other concerning symptoms require medical assessment. Treatment decisions depend on individual risks; never assume all symptoms are psychological or age-related.",
     "source": [
       "NHS: Menopause",
-      "https://www.nhs.uk/conditions/menopause/"
+      "https://www.nhs.uk/conditions/menopause-and-perimenopause/"
     ]
   }
 ];
