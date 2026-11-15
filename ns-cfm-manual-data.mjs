@@ -11,8 +11,12 @@ import {CFM_EXTRA_MIGRATION} from './ns-cfm-extra-migration.mjs';
 import {CFM_PROSE_CULTURE} from './ns-cfm-prose-culture.mjs';
 import {CFM_PROSE_FAITH} from './ns-cfm-prose-faith.mjs';
 import {CFM_PROSE_MIGRATION} from './ns-cfm-prose-migration.mjs';
+import {CFM_SCENES_CULTURE} from './ns-cfm-scenes-culture.mjs';
+import {CFM_SCENES_FAITH} from './ns-cfm-scenes-faith.mjs';
+import {CFM_SCENES_MIGRATION} from './ns-cfm-scenes-migration.mjs';
 const additions={...CFM_EXTRA_CULTURE,...CFM_EXTRA_FAITH,...CFM_EXTRA_MIGRATION};
 const authoredProse={...CFM_PROSE_CULTURE,...CFM_PROSE_FAITH,...CFM_PROSE_MIGRATION};
+const authoredScenes={...CFM_SCENES_CULTURE,...CFM_SCENES_FAITH,...CFM_SCENES_MIGRATION};
 const domains=['culture','faith','migration'];
 const groups=INCLUSIVE_GROUPS_A.filter(g=>domains.includes(g.id));
 const catalogue=new Map(groups.flatMap(g=>g.rows.map(row=>[row[0],{id:row[0],title:row[1],domain:g.id,flags:row[4]||''}])));
@@ -97,23 +101,15 @@ function articleFor(d,extra){
  return [open[0],open[1],extra[0],d.why,extra[1],prose[0],prose[1],extra[2]+(extraContext[d.id]?' '+extraContext[d.id]:''),prose[2],d.closing];
 }
 function makeExamples(d,article,profiles,roots){
- // Each route starts with the passages written for that exact presentation.
- // Wider context passages are fallbacks, not substitutes for the topic.
- const pools=[
-  [article[5],d.versions[0][1],article[2]],
-  [article[6],d.versions[1][1],article[4]],
-  [article[8],d.versions[2][1],article[7]],
-  [article[0],article[1],article[3],article[2],article[4]]
- ].map(parts=>parts.flatMap(s=>sentences(s)).filter(x=>x.length>25));
- const fallback=article.flatMap(x=>sentences(x)).filter(x=>x.length>28);
- const used=new Set(),examples=[];
+ const groups=authoredScenes[d.id];
+ if(!groups||groups.length!==4||groups.some(group=>!Array.isArray(group)||group.length!==4))fail(d.id,'missing 16 authored, grouped real-world situations');
+ const seen=new Set();
+ const examples=[];
  for(let i=0;i<4;i++){
   for(let j=0;j<4;j++){
-   let scene='';
-   for(const option of [...pools[i].slice(j),...pools[i].slice(0,j),...fallback]){
-    if(option.length>25&&!used.has(option)){scene=option;used.add(option);break;}
-   }
-   if(!scene)fail(d.id,'not enough distinct authentic case anchors');
+   const scene=groups[i][j].trim();
+   if(scene.length<22||scene.length>110||seen.has(scene))fail(d.id,'repeated or unclear browsing situation: '+scene);
+   seen.add(scene);
    const profile=profiles[i],action=i<3?d.versions[i][2]:d.versions[0][2];
    examples.push({
     situation:scene,
@@ -228,6 +224,7 @@ function build(id){
   whyStages:stageNames[d.domain],whyCases,ideas,
   sources:sourceList,safety,prominentSafety:highPrivacy.has(id)?safety:'',
   noPersist:highPrivacy.has(id),
+  hideCycle:true,
   contextSequence:true,
   sequenceNote:d.domain==='culture'?
    'What matters is the actual context. Where another person or institution is treating you unfairly, the responsibility for that behaviour does not belong to you.':
