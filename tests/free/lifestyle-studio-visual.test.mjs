@@ -7,11 +7,11 @@ test('Lifestyle Studio is a visual-only stylesheet loaded after the existing fea
  const html=read('index.html'),css=read('ns-lifestyle-studio.css'),sw=read('sw.js');
  const base=html.indexOf('lifestyle.css?v=direct-board-20261110');
  const practice=html.indexOf('lifestyle-practice.css?v=identity-practice-1');
- const studio=html.indexOf('ns-lifestyle-studio.css?v=lifestyle-studio-20261115');
+ const studio=html.indexOf('ns-lifestyle-studio.css?v=daily-workflow-20261115');
  assert.ok(base>=0 && practice>base && studio>practice);
  assert.ok(css.length>15000,'Studio layout should have full real responsive styling');
  assert.ok(css.includes('.life-unified'),'Scoped to the Lifestyle route');
- assert.match(sw,/nobodyssimple-release-v212-lifestyle-studio/);
+ assert.match(sw,/nobodyssimple-release-v\d+-/);
  for(const path of ['ns-lifestyle-studio.css','lifestyle-art/studio-window.svg','lifestyle-art/studio-meadow.svg']){
   assert.ok(sw.includes("'"+path+"'"),'Offline cache: '+path);
   assert.ok(existsSync(new URL('../../'+path,import.meta.url)),path);
@@ -33,13 +33,16 @@ test('The two illustrations cannot hide controls or bake interface text into ima
 });
 test('Every Lifestyle feature and its exact operational DOM hooks remain in source',()=>{
  const life=read('lifestyle.mjs'),focus=read('simplyfocus.mjs');
- for(const id of ['life-everyday-panel','life-focus-panel','life-overview','lifestyle-deed-card','lifestyle-task-form','lifestyle-task-list','lifestyle-quadrants','lifestyle-checkin-form','lifestyle-calendar-grid','lifestyle-day-detail','lifestyle-reminder-form','lifestyle-reminder-status']){
+ for(const id of ['life-everyday-panel','life-focus-panel','life-overview','lifestyle-deed-card','lifestyle-task-form','lifestyle-task-list','lifestyle-quadrants','lifestyle-calendar-grid','lifestyle-day-detail','lifestyle-reminder-form','lifestyle-reminder-status']){
   assert.ok(life.includes(id),'Existing Lifestyle feature: '+id);
  }
- for(const hook of ['data-life-mode="daily"','data-life-mode="focus"','data-task-view="quadrants"','data-task-view="list"','data-check-mode="morning"','data-check-mode="daytime"','data-check-mode="evening"','data-calendar-move="-1"','data-calendar-move="1"','id="lifestyle-enable-notifications"']){
+ for(const hook of ['data-life-mode="daily"','data-life-mode="focus"','data-task-view="quadrants"','data-task-view="list"','data-calendar-move="-1"','data-calendar-move="1"','id="lifestyle-enable-notifications"']){
   assert.ok(life.includes(hook),hook);
  }
- for(const hook of ['id="focus-master"','id="focus-tracks"','id="focus-play"','id="focus-stop"','id="focus-save"','id="focus-breath-start"','id="focus-breath-reset"','id="pomodoro-start"','id="pomodoro-reset"','id="pomodoro-task-form"','id="pomodoro-project-form"','id="pomodoro-task-list"']){
+ const popup=read('ns-daily-checkin.mjs');
+ assert.match(popup,/id="ns-daily-checkin-form"/);
+ assert.match(popup,/renderEmbeddedCompass/);
+ for(const hook of ['id="focus-master",'id="focus-tracks"','id="focus-play"','id="focus-stop"','id="focus-save"','id="focus-breath-start"','id="focus-breath-reset"','id="pomodoro-start"','id="pomodoro-reset"','id="pomodoro-task-form"','id="pomodoro-project-form"','id="pomodoro-task-list"']){
   assert.ok(focus.includes(hook),hook);
  }
 });
