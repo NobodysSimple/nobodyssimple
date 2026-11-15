@@ -18,7 +18,7 @@ test('Field Mission offers every skill without crowding the first view',()=>{
  assert.match(ui,/data-practice-focus=/);
 });
 
-test('a newly selected skill becomes today's real task without losing recorded progress',()=>{
+test("a newly selected skill becomes today’s real task without losing recorded progress",()=>{
  const now=new Date('2026-11-15T12:00:00');
  let state=choosePracticeIdentity({},'connected',now);
  assert.ok(state.skillIds.includes('communication'));
