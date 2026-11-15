@@ -1,0 +1,662 @@
+/* Nobody's Simple · Field Guide open-journal experience.
+ * Visual presentation only. The live categories, notes, export, forms,
+ * storage and Urge Pause behaviour remain in ns-field-guide.mjs.
+ * No shared app styling outside the guide view is modified.
+ */
+body.app-body.ns-shell-v1 #main:has(> .ns-guide6-journal){
+ background-color:#ede7da;
+ background-image:
+  radial-gradient(ellipse at 12% 4%,#fffaf5b3,transparent 42%),
+  radial-gradient(ellipse at 95% 91%,#c8d3bb6b,transparent 40%),
+  repeating-linear-gradient(94deg,#ffffff0b 0 2px,transparent 2px 7px),
+  linear-gradient(155deg,#f6eee3 0%,#e9e1d2 100%);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal{
+ --fg-ink:#294a38;--fg-muted:#6d7868;--fg-green:#235b40;
+ --fg-card:#fffaf0;--fg-line:#e1d8c4;
+ width:min(1530px,100%);max-width:1530px;
+ padding:clamp(22px,2.6vw,42px) clamp(16px,2.8vw,41px) 85px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-back{
+ position:relative;z-index:4;display:flex;gap:8px;align-items:center;
+ margin:0 0 -2px 30px;max-width:calc(100% - 110px);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-back a{
+ position:relative;display:inline-flex;align-items:center;justify-content:center;
+ padding:10px 20px 13px;min-height:44px;margin-bottom:-2px;
+ border:1px solid #dbcaad;border-bottom:0;
+ border-radius:13px 13px 1px 1px;background:#f7e4c6;
+ color:#4d533d;box-shadow:0 -3px 7px #494b3511;
+ font:700 12px/1.2 system-ui,sans-serif;text-decoration:none;
+ transform:translateY(0);transition:background .18s,transform .18s;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-back a:nth-child(2){
+ background:#31583e;color:#fffcf1;border-color:#285139;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-back a:nth-child(3){
+ background:#fff0d8;color:#645944;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-back a:hover{
+ background:#fff9e9;color:#214b37;transform:translateY(-3px);
+}
+/* Physical cover and two genuinely interactive page surfaces. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__stage{
+ position:relative;margin:0 78px 0 0;isolation:isolate;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__book{
+ position:relative;isolation:isolate;z-index:2;display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ padding:12px;border-radius:36px 41px 37px 40px;
+ background:linear-gradient(145deg,#496a51 0%,#213f2d 35%,#254333 65%,#55775b 100%);
+ border:2px solid #344a35;
+ box-shadow:0 22px 30px #373b2b30,0 4px 7px #493d2724,
+  inset 0 0 0 4px #a5ac7b, inset 0 0 0 7px #244332;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__book::before{
+ content:"";position:absolute;z-index:-1;inset:-9px 10px 6px 8px;
+ border-radius:37px;background:#f5e7cb;
+ box-shadow:0 4px 0 #d8c49e,0 7px 0 #ead9b8;
+ pointer-events:none;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__book::after{
+ content:"";position:absolute;z-index:5;pointer-events:none;
+ left:50%;top:22px;bottom:22px;width:24px;transform:translateX(-50%);
+ background:linear-gradient(90deg,
+  #4b3f2947 0%,#66513b18 18%,#f6e8cd22 37%,#725f4328 65%,#524b3b22 100%);
+ box-shadow:inset 7px 0 9px #6c594319,inset -7px 0 9px #6c594319;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__page{
+ position:relative;min-width:0;min-height:830px;
+ padding:clamp(23px,2.45vw,38px) clamp(22px,2.7vw,40px) 36px;
+ background:
+  radial-gradient(circle at 16% 13%,#fffef868,transparent 45%),
+  repeating-linear-gradient(0deg,transparent 0 26px,#d4b98a08 27px,transparent 28px),
+  linear-gradient(110deg,#fff9ed 0%,#fff9f0 56%,#f5e9d5 100%);
+ border:1px solid #e6d9bb;
+ box-shadow:inset 0 0 29px #a4855524,0 1px 2px #0000000e;
+ overflow:hidden;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__page--left{
+ border-radius:26px 6px 8px 27px;
+ border-right:0;
+ box-shadow:inset -14px 0 26px #a58c6225,inset 8px 2px 20px #fef9f2;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__page--right{
+ border-radius:7px 27px 29px 8px;
+ border-left:0;
+ display:flex;flex-direction:column;
+ box-shadow:inset 14px 0 24px #a0895f29,inset -8px 1px 15px #fffdf6;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__page--left::before{
+ content:"";position:absolute;left:20px;right:20px;top:6px;bottom:9px;
+ border:1px solid #e3cfae22;border-radius:22px;pointer-events:none;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__page--right::before{
+ content:"";position:absolute;left:20px;right:20px;top:6px;bottom:9px;
+ border:1px solid #e3cfae28;border-radius:22px;pointer-events:none;
+}
+/* Soft fabric bookmarks peek out below the journal, never over its content. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__bookmark{
+ position:absolute;z-index:-1;bottom:-28px;left:52%;
+ width:34px;height:53px;background:#8caa7f;
+ transform:rotate(-2deg);filter:drop-shadow(2px 3px 2px #3c3d2b35);
+ clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%);
+ pointer-events:none;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__bookmark::after{
+ content:"";position:absolute;z-index:-1;
+ width:21px;height:44px;left:42px;top:2px;background:#efe1bd;
+ clip-path:polygon(0 0,100% 0,100% 100%,50% 81%,0 100%);
+}
+/* Eight small brass rings down the spine. They have no interaction. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__binding{
+ position:absolute;z-index:7;pointer-events:none;left:50%;top:26px;bottom:26px;
+ width:42px;transform:translateX(-50%);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__ring{
+ position:absolute;left:50%;top:6%;
+ width:43px;height:16px;transform:translateX(-50%) rotate(-3deg);
+ border:4px solid #a07936;border-top-color:#edc67a;
+ border-bottom-color:#805d2b;border-radius:100%;
+ box-shadow:0 2px 0 #51391c3d,inset 1px 0 2px #fff3be,0 0 0 1px #6b552d50;
+ background:linear-gradient(#fff9e8 0%,#efddbd 100%);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__ring:nth-child(even){
+ transform:translateX(-50%) rotate(3deg);
+}
+/* Real router links act as the tabs rather than click targets painted onto one image. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__tabs{
+ position:absolute;z-index:1;top:66px;right:-79px;width:92px;
+ display:flex;flex-direction:column;gap:7px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab{
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ gap:5px;min-height:84px;padding:12px 7px 10px 19px;
+ border:1px solid #d9c7a6;border-left:0;border-radius:0 16px 16px 0;
+ background:#f9e3c9;box-shadow:4px 4px 7px #3d3b2c27;
+ text-align:center;font:700 11px/1.3 system-ui,sans-serif;
+ color:#53493c;text-decoration:none;
+ transition:transform .18s,background .18s;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab:hover{
+ transform:translateX(7px);background:#fff2dd;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab.is-active{
+ background:#365a41;color:#fff9ed;border-color:#365a41;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab--patterns{background:#dfebef;}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab--skills{background:#f6e4b5;}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab--reconsider{background:#ece2ee;}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab-symbol{font-size:23px;line-height:1;}
+/* A real hero inside the left page, not a giant empty dashboard tile. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero{
+ display:grid;grid-template-columns:minmax(0,1fr) 160px;
+ min-height:295px;gap:7px;align-items:center;
+ overflow:visible;position:relative;
+ background:transparent;border:0;box-shadow:none;border-radius:0;
+ padding:9px 0 24px;margin:0;border-bottom:1px solid #dacdb66b;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__copy{
+ display:flex;flex-direction:column;align-items:flex-start;gap:13px;
+ padding:0;position:relative;z-index:2;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__copy::before{
+ content:"Your private living field guide";
+ position:absolute;top:-27px;left:0;pointer-events:none;
+ font:italic 15px/1.25 Georgia,serif;color:#7a8264;
+ transform:rotate(-3deg);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__copy .ns-guide6-kicker{
+ margin-top:13px;color:#9e7044;font:800 9px/1.4 system-ui,sans-serif!important;
+ letter-spacing:.13em;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero h1{
+ font:500 clamp(37px,3.4vw,57px)/1.02 Georgia,serif!important;
+ max-width:10ch;letter-spacing:-.052em;
+ color:#214b35;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__copy>p:not(.ns-guide6-kicker){
+ max-width:34ch;color:#596857;font:400 14px/1.62 system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__actions{
+ gap:11px;align-items:center;margin:10px 0 0;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-primary{
+ color:#fffef2!important;background:#215c40;border-color:#1f523a;
+ box-shadow:0 5px 11px #36543b2e;font-size:12px;
+ padding:10px 17px;min-height:44px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-primary:hover{
+ background:#174732;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-count{
+ font-size:11px;color:#365b47;font-weight:750;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__visual{
+ overflow:visible;align-self:center;display:grid;place-items:end center;
+ min-height:205px;height:210px;position:relative;background:
+ url("field-guide-art/mountain-stamp.svg") 85% 5%/86px auto no-repeat;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__visual::before{
+ content:"";position:absolute;inset:auto 0 2px -19px;z-index:0;
+ width:110%;height:60px;background:#cddbbd8f;border-radius:50%;
+ filter:blur(16px);pointer-events:none;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__nobody{
+ width:min(100%,195px);height:190px;object-fit:contain;
+ position:relative;z-index:1;filter:drop-shadow(0 5px 4px #53614427);
+}
+/* Four pasted mini-note pages, with soft pastel washes and stamped icons. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__collections{
+ margin-top:20px;position:relative;z-index:2;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-sectionhead{
+ align-items:end;margin:0 0 17px;gap:10px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-sectionhead h2{
+ margin:4px 0 0!important;
+ font:400 clamp(23px,2.4vw,32px)/1.12 Georgia,serif!important;
+ letter-spacing:-.04em;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-sectionhead>p{
+ max-width:20ch;text-align:right;
+ color:#7f765f;font:italic 12px/1.4 Georgia,serif;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-kicker{
+ color:#956d46!important;letter-spacing:.18em;font-size:10px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collections{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:14px 15px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection{
+ position:relative;display:flex;flex-direction:column;gap:7px;
+ padding:17px 17px 15px;min-height:188px;
+ background-color:#fffcf4;border:1px solid #ddcead;
+ background-image:url("field-guide-art/paper-hills.svg");
+ background-size:auto 65px;background-position:bottom right;
+ background-repeat:no-repeat;
+ border-radius:14px 17px 15px 17px;
+ box-shadow:0 7px 13px #453c2e1e,2px 2px 0 #eddfc3;
+ transform:none;transition:transform .16s,box-shadow .16s;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection::before{
+ content:"";position:absolute;z-index:1;pointer-events:none;top:-9px;left:36%;
+ width:64px;height:17px;transform:rotate(-6deg);
+ background:linear-gradient(95deg,#d4ad8a96,#f2dbb2bc);
+ border:1px solid #e5ccb088;clip-path:polygon(0 1%,100% 0,96% 100%,3% 97%);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection--forest::before{
+ background:linear-gradient(95deg,#aebdc2bb,#dce9e9d4);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection--workshop::before{
+ background:linear-gradient(95deg,#ead49db5,#f4e6ba);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection--observatory::before{
+ background:linear-gradient(95deg,#cab9d1bb,#e8dcea);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection:hover{
+ transform:translateY(-3px);box-shadow:0 11px 20px #453c2e2e;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection.is-active{
+ outline:2px solid #39684d;outline-offset:1px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__head{
+ margin:0;align-items:center;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__symbol{
+ width:38px;height:38px;font-size:23px;border-radius:12px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__count{
+ background:#fff9ebd9;border-radius:20px;padding:4px 7px;
+ border:1px solid #dedac5;color:#516853;font-size:10px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection>strong{
+ font:400 clamp(18px,1.65vw,24px)/1.1 Georgia,serif;
+ color:#254c39;max-width:15ch;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__description{
+ font:400 11px/1.43 system-ui,sans-serif;color:#657065;max-width:31ch;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__cta{
+ position:relative;z-index:2;margin-top:auto;
+ color:#23573e;font:700 11px/1.2 system-ui,sans-serif;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__cta>span{
+ font-size:16px;
+}
+/* Recently saved looks like a clipped blank page, not an inert image. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-records{
+ margin:0;position:relative;z-index:1;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-sectionhead--records{
+ padding-top:3px;align-items:center;min-height:84px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-sectionhead--records h2{
+ font:italic 400 clamp(24px,2.7vw,35px)/1.15 Georgia,serif!important;
+ padding:6px 15px 8px;margin:5px 0 0!important;
+ background:linear-gradient(100deg,#f5ddba,#fff0d5);
+ box-shadow:2px 4px 7px #69583c12;
+ transform:rotate(-1.8deg);border-radius:2px;
+ max-width:17ch;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-section-actions{
+ gap:8px;justify-content:flex-end;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-minor{
+ background:#fff9ebd9;border:1px solid #aaba9d;
+ color:#365640;border-radius:50px;padding:8px 13px;
+ white-space:normal;text-align:center;font-size:11px;min-height:39px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-empty{
+ min-height:305px;gap:13px;position:relative;padding:32px 22px;
+ border:1px dashed #b2c5af;border-radius:14px 17px 13px 15px;
+ background:
+ radial-gradient(ellipse at 20% 9%,#ffffff86,transparent 50%),
+ linear-gradient(125deg,#f4f3e5,#f3f6ea);
+ box-shadow:0 8px 0 #dfdfcb80,0 11px 20px #534b3314;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-empty::before{
+ content:"";position:absolute;pointer-events:none;z-index:2;
+ top:-13px;right:14%;width:67px;height:31px;
+ border:5px solid #ab844c;border-bottom-width:7px;border-radius:8px 8px 6px 6px;
+ box-shadow:0 3px 3px #463a2a21;
+ background:linear-gradient(#f3d9a2,#dfb671);
+ transform:rotate(7deg);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-empty img{
+ width:85px;height:85px;object-fit:contain;filter:drop-shadow(0 3px 3px #6b744619);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-empty h3{
+ font:400 24px/1.18 Georgia,serif;color:#2c4d3d;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-empty>p{
+ font:400 12px/1.5 system-ui,sans-serif;max-width:36ch;color:#657062;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-entrygrid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:11px;max-height:530px;overflow-y:auto;overscroll-behavior:contain;
+ padding:2px 2px 13px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-entry{
+ min-height:188px;padding:15px;gap:7px;
+ background:linear-gradient(#fffefa,#f9f5e9);
+ border:1px solid #ddcfb2;border-radius:12px;
+ box-shadow:0 3px 10px #6b5e4217;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-entry strong{
+ font:400 21px/1.2 Georgia,serif;color:#2e4d39;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-entry__text{
+ font-size:12px;line-height:1.55;color:#596a5a;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-entry__context,
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-entry__date{
+ color:#70816c;font-size:10px;
+}
+/* Folded quick access slip on the right page. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-tools{
+ margin-top:28px;padding-top:29px;
+ border-top:1px solid #dcccaa;
+ position:relative;z-index:1;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-head{
+ display:flex;align-items:flex-start;gap:10px;
+ margin-bottom:16px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-head>p{
+ font:italic 12px/1.4 Georgia,serif;color:#867861;
+ max-width:21ch;align-self:end;text-align:right;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-head h2{
+ font:400 clamp(23px,2.45vw,33px)/1.15 Georgia,serif!important;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-grid{
+ max-width:none;width:100%;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-card{
+ display:flex;align-items:center;gap:13px;
+ background:linear-gradient(125deg,#fffef7,#f8f2e5);
+ border:1px solid #d7d1b8;border-radius:16px;
+ padding:18px 16px;min-height:115px;
+ box-shadow:0 6px 13px #4c4b3024,3px 3px 0 #ecdfc4;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-icon{
+ width:48px;flex:0 0 48px;height:48px;
+ border-radius:15px;background:#e2eddf;
+ font-size:29px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-copy strong{
+ font:700 20px/1.18 Georgia,serif;color:#2a513b;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-copy>span{
+ font:400 12px/1.4 system-ui,sans-serif;color:#657365;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-copy small{
+ font-size:10px;color:#45604e;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-arrow{
+ display:grid;place-items:center;
+ flex:0 0 32px;width:32px;height:32px;border-radius:50%;
+ background:#e9efdb;color:#355942;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal__footer-art{
+ position:relative;min-height:75px;margin-top:auto;
+ background:url("field-guide-art/paper-hills.svg") bottom right/100% auto no-repeat;
+ opacity:.45;pointer-events:none;
+}
+/* Privacy information stays visibly separate from the journal pages. */
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-privacy{
+ margin:29px 0 0;padding:17px 21px;
+ background:#fff8e9e6;border:1px solid #e2d2b1;
+ border-radius:16px;box-shadow:0 6px 20px #66584318;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-privacy strong{
+ color:#62563c;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-small{
+ color:#716b55;
+}
+/* Editors and detail pages also receive a tasteful paper treatment. */
+body.app-body.ns-shell-v1 #main .ns-guide6-editor,
+body.app-body.ns-shell-v1 #main .ns-guide6-detail{
+ background:
+ radial-gradient(ellipse at 90% 90%,#d7e2cf42,transparent 53%),
+ linear-gradient(150deg,#faf4e9,#f4ebda);
+ border-radius:25px;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-editor .ns-guide6-editor__intro{
+ background:linear-gradient(135deg,#f8f0df,#eaf1df);
+ border:1px solid #ddcfb3;box-shadow:0 8px 24px #4a584015;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-editor form,
+body.app-body.ns-shell-v1 #main .ns-guide6-detail .ns-guide6-notebook{
+ background:
+ repeating-linear-gradient(0deg,transparent 0 32px,#cebd9413 33px,transparent 34px),
+ linear-gradient(110deg,#fffbf3,#f9f2e6);
+ border:1px solid #e2d3b8;box-shadow:8px 9px 0 #e5d9c0,0 7px 24px #5c584222;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-editor .ns-guide6-field :is(input,select,textarea){
+ background:#fffefa;border-color:#cdbfa6;
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-detail .ns-guide6-notebook{
+ padding:clamp(27px,4vw,52px);
+}
+body.app-body.ns-shell-v1 #main .ns-guide6-detail .ns-guide6-notebook__text{
+ color:#385842;
+}
+/* Mid-size laptops can keep an open spread, with more compact pages. */
+@media(max-width:1320px){
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal{padding-inline:21px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__stage{margin-right:65px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__tabs{right:-68px;width:80px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab{font-size:10px;padding-left:12px;min-height:77px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__page{padding:28px 24px 30px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero{grid-template-columns:minmax(0,1fr) 112px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__nobody{width:125px;height:152px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__visual{height:185px;min-height:185px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero h1{font-size:clamp(34px,3.6vw,49px)!important;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection{padding:15px 14px;min-height:193px;}
+}
+/* Medium widths: retain the tactile look with stacked actual pages. */
+@media(max-width:1100px){
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__stage{
+  display:flex;flex-direction:column;margin:0;gap:15px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__tabs{
+  order:-1;position:relative;z-index:3;right:auto;top:auto;width:100%;
+  display:flex;flex-direction:row;gap:7px;overflow-x:auto;
+  padding:3px 2px 10px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab{
+  flex:0 0 auto;min-width:105px;min-height:55px;max-width:147px;
+  padding:9px 12px;flex-direction:row;gap:8px;
+  border:1px solid #d9c7a6;border-radius:12px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab-symbol{font-size:20px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__book{
+  display:flex;flex-direction:column;
+  padding:9px;gap:5px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__page{
+  min-height:0;padding:28px 27px;
+  border:1px solid #e6d9bb;border-radius:20px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__binding{display:none;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__book::after{display:none;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__page--right{gap:16px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__collections{margin-top:22px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collections{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero{
+  min-height:220px;grid-template-columns:minmax(0,1fr) 160px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-tools{margin-top:15px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-records{margin:0;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-empty{min-height:244px;}
+}
+/* Mobile book: real controls stay readable and scroll vertically. */
+@media(max-width:690px){
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal{
+  padding:19px 12px calc(98px + env(safe-area-inset-bottom));
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-back{
+  margin:0 0 6px;gap:6px;max-width:100%;
+  flex-wrap:wrap;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-back a{
+  border-radius:10px;border:1px solid #dfd2b9;
+  padding:9px 11px;min-height:39px;font-size:11px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__stage{gap:9px;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__tab{
+  min-width:105px;font-size:11px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__book{
+  border-radius:25px;padding:7px;box-shadow:0 10px 21px #3b4a3229;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal__page{
+  padding:28px 18px 23px;border-radius:18px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero{
+  grid-template-columns:minmax(0,1fr) 102px;min-height:0;
+  padding:16px 0 23px;gap:6px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__copy{
+  gap:9px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero h1{
+  font-size:clamp(30px,8.4vw,42px)!important;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__visual{
+  display:grid!important;min-height:127px;height:135px;
+  background-size:65px auto;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__nobody{
+  width:106px;height:114px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__actions{
+  gap:9px;margin-top:5px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-primary{
+  width:auto;min-height:44px;padding:9px 13px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collections{
+  grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection{
+  min-height:187px;padding:16px 12px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection>strong{
+  font-size:20px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__description{
+  font-size:11px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-sectionhead>p{
+  display:block;font-size:11px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-entrygrid{
+  grid-template-columns:minmax(0,1fr);max-height:550px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-sectionhead--records{
+  flex-wrap:wrap;align-items:flex-start;gap:12px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-head>p{
+  display:block;max-width:25ch;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-card{
+  padding:16px 13px;gap:9px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-icon{
+  flex:0 0 43px;width:43px;height:43px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-quick-copy strong{
+  font-size:18px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-privacy{
+  padding:15px;margin-top:17px;
+ }
+}
+/* Compact devices: keep the collection names legible and actions tappable. */
+@media(max-width:410px){
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero{
+  grid-template-columns:minmax(0,1fr);
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__visual{
+  display:none!important;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__actions{
+  flex-direction:column;align-items:flex-start;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__actions .ns-guide6-primary{width:100%;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-sectionhead{flex-wrap:wrap;}
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection{
+  min-height:194px;gap:9px;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__head{
+  flex-wrap:wrap;
+ }
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__cta{
+  font-size:10px;
+ }
+}
+/* Sensory and motion settings: no forced page-flip animations or heavy decor. */
+html[data-low-stim="true"] body.app-body.ns-shell-v1 #main:has(> .ns-guide6-journal){
+ background:#f5f0e5;
+}
+html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal__page{
+ background:#fffaf1;
+}
+html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal__binding,
+html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero__visual,
+html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal__footer-art{
+ display:none!important;
+}
+html[data-low-stim="true"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-hero{
+ grid-template-columns:minmax(0,1fr);
+}
+@media(prefers-reduced-motion:reduce){
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal *,
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal *::before,
+ body.app-body.ns-shell-v1 #main .ns-guide6-journal *::after{
+  transition:none!important;animation:none!important;scroll-behavior:auto!important;
+ }
+}
+/* An actual darker journal, not pale paper with invisible dark-mode text. */
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main:has(> .ns-guide6-journal){
+ background:linear-gradient(145deg,#1d3229,#253b32);
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal{
+ --fg-ink:#e5f0e2;--fg-muted:#bdcdbb;--fg-green:#bddbbd;--fg-card:#283e30;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal__page{
+ background:linear-gradient(135deg,#2c4032,#293c31);
+ border-color:#566b52;box-shadow:inset 0 0 23px #12271a66;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal :is(.ns-guide6-hero h1,.ns-guide6-sectionhead h2,.ns-guide6-quick-head h2,.ns-guide6-empty h3,.ns-guide6-collection>strong,.ns-guide6-entry strong,.ns-guide6-quick-copy strong){
+ color:#e6eee1!important;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal :is(.ns-guide6-hero__copy>p:not(.ns-guide6-kicker),.ns-guide6-collection__description,.ns-guide6-entry__text,.ns-guide6-empty>p,.ns-guide6-quick-copy>span,.ns-guide6-sectionhead>p,.ns-guide6-count,.ns-guide6-quick-copy small){
+ color:#c4d3c3!important;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal :is(.ns-guide6-collection,.ns-guide6-entry,.ns-guide6-empty,.ns-guide6-quick-card){
+ background:#344b3a!important;border-color:#61765e;color:#e5efe0!important;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-sectionhead--records h2{
+ background:#4d5c43;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-collection__count,
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-minor{
+ background:#2f4736;color:#e2efe0;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-primary{
+ background:#bddbbd!important;color:#173822!important;border-color:#bddbbd;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-privacy{
+ background:#3a3b2e;border-color:#656c4b;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-guide6-journal .ns-guide6-privacy :is(strong,.ns-guide6-small){
+ color:#ecedcf!important;
+}
