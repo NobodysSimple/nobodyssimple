@@ -67,7 +67,7 @@ test('Reader blog no longer displays or computes reading percentage',()=>{
 });
 test('Verified comments now publish immediately with removal, reporting and account bans',()=>{
  const app=read('account-free.mjs'),account=read('accounts.mjs'),rules=read('firestore.rules');
- assert.match(app,/status:'approved',parentId:old/);
+ assert.match(app,/await write\('approved'\)/);
  assert.match(rules,/d.status=='approved'/);
  assert.match(account,/Post comment/);
  assert.match(account,/Comments appear immediately/);
