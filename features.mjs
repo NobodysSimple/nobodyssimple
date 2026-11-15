@@ -2921,7 +2921,13 @@ export function renderCompass(root, emotions, onChoose) {
   });
 }
 
-function renderCompassContent(root, emotions, onChoose, moodBefore) {
+export function renderEmbeddedCompass(root, emotions, onChoose) {
+  // Use the identical compass engine in the shared daily check-in dialog,
+  // skipping the standalone route's preliminary mood question.
+  renderCompassContent(root, emotions, onChoose, null, {embedded:true});
+}
+
+function renderCompassContent(root, emotions, onChoose, moodBefore, options={}) {
   let x = 0,
     y = 0,
     current = null,
@@ -3065,7 +3071,7 @@ function renderCompassContent(root, emotions, onChoose, moodBefore) {
               )
               .join(
                 "",
-              )}</div><div class="row"><button class="button" id="toggle-feeling">${saved ? "Remove from mixed feelings" : "Add to my mixed feelings"}</button><button class="button secondary" id="begin-emotion-checkin">Start a feelings check-in</button></div>`;
+              )}</div><div class="row"><button class="button" id="toggle-feeling">${saved ? "Remove from mixed feelings" : "Add to my mixed feelings"}</button><button class="button secondary" id="begin-emotion-checkin">${options.embedded ? "Use this feeling in daily check-in" : "Start a feelings check-in"}</button></div>`;
           root.querySelector("#close-profile").onclick = () =>
             (root.querySelector("#emotion-profile").hidden = true);
           root.querySelector("#toggle-feeling").onclick = () => {
@@ -3087,7 +3093,7 @@ function renderCompassContent(root, emotions, onChoose, moodBefore) {
   const selected = new Map();
   const renderSelected = () => {
     root.querySelector("#selected-feelings").innerHTML = selected.size
-      ? `<p><b>Words you chose</b> — mixed feelings can coexist.</p><div class="emotion-list">${[...selected.values()].map((e) => `<button type="button" data-remove="${e.id}">${esc(e.label)} ×</button>`).join("")}</div><button class="button secondary" type="button" id="checkin-selected">Check in with these words</button>`
+      ? `<p><b>Words you chose</b> — mixed feelings can coexist.</p><div class="emotion-list">${[...selected.values()].map((e) => `<button type="button" data-remove="${e.id}">${esc(e.label)} ×</button>`).join("")}</div><button class="button secondary" type="button" id="checkin-selected">${options.embedded ? "Use these words in daily check-in" : "Check in with these words"}</button>`
       : "";
     root.querySelectorAll("[data-remove]").forEach(
       (b) =>
@@ -3112,6 +3118,11 @@ function renderCompassContent(root, emotions, onChoose, moodBefore) {
         : "Add to my mixed feelings";
   };
   function renderCheckIn(chosen = "") {
+    if(options.embedded){
+      const label=String(chosen||current?.label||"").trim();
+      if(label)onChoose?.({label});
+      return;
+    }
     const box = root.querySelector("#emotion-checkin");
     box.hidden = false;
     renderCheckInForm(chosen, moodBefore);
@@ -3196,6 +3207,12 @@ function renderCompassContent(root, emotions, onChoose, moodBefore) {
         },
       });
     };
+  }
+  if(options.embedded){
+    root.classList.add("ns-embedded-compass");
+    root.querySelector("#checkin-link").textContent="Use this feeling in my daily check-in →";
+    const note=root.querySelector(".emotion-side .fine");
+    if(note)note.textContent="Your chosen word will be added to the same check-in you open from Home or Lifestyle. Nothing is saved until you confirm.";
   }
   root.querySelector("#checkin-link").onclick = () =>
     renderCheckIn(current?.label || "");
