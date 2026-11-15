@@ -30,7 +30,7 @@ test('religious scrupulosity offers tailored guided questions, optional ideas an
  await expect(page.locator('[data-mood-screen]')).toContainText('What usually starts the fear');
  for(let i=0;i<3;i++)await page.locator('[data-mood-next]').click();
  await page.locator('[data-mood-idea]').click();
- await expect(page.locator('[data-mood-ideas] li')).toHaveCount(12);
+ await expect(page.locator('[data-mood-ideas] li')).toHaveCount(20);
 });
 test('practical popup gives direct useful advice rather than repeated lead-in formulas',async({page})=>{
  await open(page,'existential-anxiety');
@@ -38,7 +38,7 @@ test('practical popup gives direct useful advice rather than repeated lead-in fo
  for(let i=0;i<3;i++)await page.locator('[data-mood-next]').click();
  await page.locator('[data-mood-idea]').click();
  const suggestions=page.locator('[data-mood-ideas] li');
- await expect(suggestions).toHaveCount(12);
+ await expect(suggestions).toHaveCount(20);
  await expect(suggestions.first()).toContainText('When panic rises');
  await expect(page.locator('[data-mood-ideas]')).not.toContainText('Consider whether this is relevant to your situation');
 });
