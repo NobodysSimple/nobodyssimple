@@ -95,7 +95,7 @@ export const CONNECTION_WORK_B={
       [
         "load",
         "Identify care you should not carry alone",
-        "Clinical tasks and exhaustion need practical support.",
+        "Complex care tasks and exhaustion need practical support from the people and services involved.",
         [
           "Which daily responsibility is most difficult to manage?",
           "Is professional training or equipment required?",
