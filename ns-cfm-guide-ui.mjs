@@ -48,7 +48,7 @@ function cfmTop(g,m){
       '<p class="ns-topic-quiet-note">These are possible influences, not a conclusion about you. The resources below inform the general context; they do not validate this reflection as a clinical assessment.</p>'+
     '</div>'+
     '<div class="ns-topic-aspect-section ns-topic-framework"><h3>Which version of this might you be living with?</h3><ol class="ns-topic-aspects">'+versionList+'</ol></div>'+
-    '<details class="ns-topic-details"><summary>Research and further reading</summary><div class="ns-topic-detail-body"><ul class="ns-cfm-sources">'+sources+'</ul><p>Research identifies patterns across groups. It cannot establish what caused one person's experience, or what choice they must make.</p></div></details>'+
+    '<details class="ns-topic-details"><summary>Research and further reading</summary><div class="ns-topic-detail-body"><ul class="ns-cfm-sources">'+sources+'</ul><p>Research identifies patterns across groups. It cannot establish what caused one individual’s experience, or what choice they must make.</p></div></details>'+
    '</div></details>'+
   '<section class="ns-topic-section ns-topic-profile-section" id="ns-topic-profile" aria-labelledby="ns-topic-profile-title">'+
    '<p class="ns-topic-kicker">YOUR SITUATION</p><h2 id="ns-topic-profile-title">Which part feels closest to what you are going through?</h2>'+
