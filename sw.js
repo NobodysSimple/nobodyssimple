@@ -3,14 +3,14 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v222-access-manuals-20261115';
+const CACHE = 'nobodyssimple-release-v223-community-campfire-20261115';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
 const INSTALL_ESSENTIAL = ['offline.html'];
 const INSTALL_OPTIONAL = [
   'index.html', 'logo.png', 'manifest.webmanifest',
-  'styles.css', 'account.css', 'strategy.css', 'community.css',
+  'styles.css', 'account.css', 'strategy.css', 'community.css', 'ns-community-campfire.css', 'community-ui.mjs', 'community-art/campfire-hero.svg', 'community-art/lantern-seat.svg', 'community-art/campfire-card.svg',
   'app-design.css', 'ns-shell.css', 'ns-home.css',
   'ns-tool-library.css', 'ns-learn.css', 'ns-learn-courses.css',
   'learn-art/scenery-hero.svg', 'learn-art/scenery-featured.svg', 'learn-art/scenery-emotions.svg', 'learn-art/scenery-relationships.svg', 'learn-art/scenery-boundaries.svg', 'learn-art/scenery-focus.svg', 'learn-art/scenery-communication.svg', 'ns-quiet-navigation.css', 'ns-blog-notebook.css', 'ns-field-guide.css', 'ns-field-guide-journal.css', 'field-guide-art/paper-hills.svg', 'field-guide-art/mountain-stamp.svg', 'ns-urge-pause.css',
