@@ -131,7 +131,7 @@ export const CHANGE_EDITORIAL_B=[
     "safety": "Prognosis and care decisions require clinical information and respect for the person's wishes. Do not suggest that fear predicts death or that loved ones must make every moment meaningful. Caregiver exhaustion and serious distress deserve support.",
     "source": [
       "Marie Curie: Grief before death",
-      "https://www.mariecurie.org.uk/help/support/bereaved-family-friends/dealing-grief/grief-before-death"
+      "https://www.mariecurie.org.uk/information/end-of-life/anticipatory-grief"
     ]
   },
   {
@@ -198,7 +198,7 @@ export const CHANGE_EDITORIAL_B=[
     "safety": "Traumatic bereavement may involve PTSD symptoms or prolonged grief, requiring individual assessment. Avoid forced retelling, unsupervised exposure or speculation about blame. Sudden severe distress or inability to remain safe needs immediate human support.",
     "source": [
       "NHS: Post-traumatic stress disorder",
-      "https://www.nhs.uk/mental-health/conditions/post-traumatic-stress-disorder-ptsd/overview/"
+      "https://www.nhs.uk/mental-health/conditions/ptsd-post-traumatic-stress-disorder/"
     ]
   },
   {
