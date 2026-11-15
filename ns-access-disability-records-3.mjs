@@ -45,7 +45,7 @@ P('Preserving meaningful connection',
 'Which relationship matters most to maintain?|What form of contact is tolerable?|What did you enjoy doing together?|What adjustment would make it possible?',
 'I missed regular walks with a friend|We watched a film together instead of going out|I worried I had become a burden|I enjoyed a short visit despite the pain',
 'Choose a low-demand way to stay in touch.|Schedule contact at a time symptoms are often more manageable.|Allow a valued activity to take a shorter form.|Keep room for friendships not centred on illness.|Review whether the new plan works for both people.',
-'Invite a friend to a quieter accessible activity.|Ask for help with one specific journey.|Seek a community group offering remote options.|Consider relationship support if pain has strained communication.|Ask an occupational therapist about leisure adaptations.'
+'Invite a friend to a quieter accessible activity.|Arrange accessible travel assistance for one particular social journey.|Seek a community group offering remote options.|Consider relationship support if pain has strained communication.|Ask an occupational therapist about leisure adaptations.'
 )
 ],
 'New severe pain, weakness, bladder or bowel changes or other red flags need urgent medical assessment. Activity advice must suit the diagnosis; do not push through dangerous symptoms to maintain social participation. Pain management can combine physical and psychological approaches without denying the pain.',
@@ -70,7 +70,7 @@ P('Post-exertional worsening',
 'What preceded the worsening?|How delayed was it?|Which activities were involved?|What guidance do you have about energy limits?',
 'I felt worse the day after shopping|Exercise caused a prolonged crash|A social visit worsened symptoms for days|I overcommitted after a better morning',
 'Notice delayed changes after physical or cognitive effort.|Avoid forced graded increases where post-exertional malaise occurs.|Build rest into necessary activities.|Choose essential tasks within current capacity.|Record major changes briefly for clinical review.',
-'Ask a clinician familiar with long COVID about post-exertional symptoms.|Seek specialist advice on energy management.|Request flexible work duties after symptom worsening.|Ask for help with essential errands during a crash.|Discuss the delayed pattern with someone who manages your schedule.'
+'Ask a clinician familiar with long COVID about post-exertional symptoms.|Seek specialist advice on energy management.|Request flexible work duties after symptom worsening.|Arrange practical support obtaining food or medication during a post-exertional crash.|Discuss the delayed pattern with someone who manages your schedule.'
 ),
 P('Breathlessness and physical symptoms',
 'Physical symptoms can make ordinary errands uncertain. They may also need targeted investigation, particularly if the pattern changes suddenly or becomes severe.',
