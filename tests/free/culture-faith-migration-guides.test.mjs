@@ -42,12 +42,27 @@ test('45 topics offer 180 distinct four-question free-writing journals and optio
    assert.ok(route.practice.length>=35,g.id+' missing practical task');
    for(const q of route.questions){assert.equal(q.length,4);assert.ok(q[0].length>=18,g.id);prompts.push(g.id+'/'+route.id+'/'+q[0]);}
   }
-  assert.equal(g.ideas.actions.length,24,g.id);
-  assert.equal(g.ideas.support.length,24,g.id);
+  assert.equal(g.ideas.actions.length,12,g.id);
+  assert.equal(g.ideas.support.length,12,g.id);
   assert.ok(g.ideas.actions.every(x=>x.length>=35),g.id+' thin suggestion');
  }
  assert.equal(prompts.length,720);
  assert.equal(new Set(prompts).size,720,'repeated route questions within one topic');
+});
+test('all practical and support popups contain direct unique guidance with no generic lead-ins',()=>{
+ const banned=/^(Ask a trusted person about the practical concern|Request support for this possible step|Talk this through with someone who listens|Consider whether this is relevant|Use this worked example to ask|You might discuss this part|A relevant service or ally may be able to help with|Explore what would need to change before attempting this|Write a few words about this question)/i;
+ let total=0;
+ for(const g of CFM_GUIDES_FULL){
+  for(const kind of ['actions','support']){
+   const ideas=g.ideas[kind];
+   assert.equal(ideas.length,12,g.id+' '+kind);
+   assert.equal(new Set(ideas).size,12,g.id+' '+kind+' repeated suggestions');
+   assert.ok(ideas.every(x=>x.length>=38),g.id+' '+kind+' too vague');
+   assert.ok(ideas.every(x=>!banned.test(x)),g.id+' '+kind+' has generic template');
+   total+=ideas.length;
+  }
+ }
+ assert.equal(total,1080);
 });
 test('each page exposes a search-enabled Understand Why map with contextual examples',()=>{
  let scenes=0;
