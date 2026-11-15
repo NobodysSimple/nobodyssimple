@@ -1,12 +1,12 @@
 /* Nobody's Simple — Habits, impulses & compulsions.
  * Original articles and guided exercises; shared accessible manual interface.
  */
-import {HABIT_EDITORIAL_A} from './ns-habit-editorial-a.mjs';
-import {HABIT_EDITORIAL_B} from './ns-habit-editorial-b.mjs';
-import {HABIT_EDITORIAL_C} from './ns-habit-editorial-c.mjs';
-import {HABIT_JOURNALS_A} from './ns-habit-journals-a.mjs';
-import {HABIT_JOURNALS_B} from './ns-habit-journals-b.mjs';
-import {HABIT_JOURNALS_C} from './ns-habit-journals-c.mjs';
+import {HABIT_EDITORIAL_A} from './ns-habit-editorial-a.mjs?v=habits-voice-20261115-v2';
+import {HABIT_EDITORIAL_B} from './ns-habit-editorial-b.mjs?v=habits-voice-20261115-v2';
+import {HABIT_EDITORIAL_C} from './ns-habit-editorial-c.mjs?v=habits-voice-20261115-v2';
+import {HABIT_JOURNALS_A} from './ns-habit-journals-a.mjs?v=habits-voice-20261115-v2';
+import {HABIT_JOURNALS_B} from './ns-habit-journals-b.mjs?v=habits-voice-20261115-v2';
+import {HABIT_JOURNALS_C} from './ns-habit-journals-c.mjs?v=habits-voice-20261115-v2';
 import {HABIT_IDEAS_A} from './ns-habit-ideas-a.mjs';
 import {HABIT_IDEAS_B} from './ns-habit-ideas-b.mjs';
 import {HABIT_IDEAS_C} from './ns-habit-ideas-c.mjs';
@@ -16,12 +16,12 @@ import {HABIT_CASES_C} from './ns-habit-cases-c.mjs';
 import {HABIT_EXTRA_CASES_A} from './ns-habit-extra-cases-a.mjs';
 import {HABIT_EXTRA_CASES_B} from './ns-habit-extra-cases-b.mjs';
 import {HABIT_EXTRA_CASES_C} from './ns-habit-extra-cases-c.mjs';
-import {HABIT_WHY_QUESTIONS} from './ns-habit-why-questions.mjs';
+import {HABIT_WHY_QUESTIONS} from './ns-habit-why-questions.mjs?v=habits-voice-20261115-v2';
 import {HABIT_EXTRA_ACTIONS} from './ns-habit-extra-actions.mjs';
-import {HABIT_VOICE_A} from './ns-habit-voice-a.mjs';
-import {HABIT_VOICE_B} from './ns-habit-voice-b.mjs';
-import {HABIT_VOICE_C} from './ns-habit-voice-c.mjs';
-import {HABIT_SUPPORT_MORE} from './ns-habit-support-more.mjs';
+import {HABIT_VOICE_A} from './ns-habit-voice-a.mjs?v=habits-voice-20261115-v2';
+import {HABIT_VOICE_B} from './ns-habit-voice-b.mjs?v=habits-voice-20261115-v2';
+import {HABIT_VOICE_C} from './ns-habit-voice-c.mjs?v=habits-voice-20261115-v2';
+import {HABIT_SUPPORT_MORE} from './ns-habit-support-more.mjs?v=habits-voice-20261115-v2';
 
 const authored=[...HABIT_EDITORIAL_A,...HABIT_EDITORIAL_B,...HABIT_EDITORIAL_C];
 const voice={...HABIT_VOICE_A,...HABIT_VOICE_B,...HABIT_VOICE_C};
