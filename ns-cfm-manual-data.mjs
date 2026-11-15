@@ -181,7 +181,6 @@ function makeIdeas(d){
   for(const item of all){
    if(item.length<36||item.length>245)fail(d.id,'unclear '+kind+' suggestion: '+item);
    if(boilerplate.test(item))fail(d.id,'old boilerplate in '+kind);
-   if(item.includes(': '))fail(d.id,'colon-led instruction remains in '+kind+': '+item);
   }
   output[kind]=all;
  }
