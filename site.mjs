@@ -64,6 +64,7 @@ import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
 import {attachSteadyGuidebookToTool,steadyGuide} from './ns-steady-guidebook.mjs';
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
 import { renderNSLearnHub,renderNSLearnPath,renderNSLesson } from './ns-learn.mjs';
+import {renderNotebookBlogPost} from './ns-blog-notebook.mjs';
 import { renderSupport } from "./referrals.mjs";
 configureStrategy(accountState);
 configureCommunity({connection:communityConnection,signIn:communitySignIn,confirmIdentity:communityConfirmIdentity});
@@ -478,6 +479,13 @@ function post(id) {
   const p = posts.find((p) => p.id === id);
   if (!p) {
     main.innerHTML = `<div class="wrap">${heading("Not found", "This piece isn’t here.", "It may have been unpublished, or the address may be incomplete.")}<a href="#library">Back to the library →</a></div>`;
+    return;
+  }
+  if (p.type === "blog") {
+    renderNotebookBlogPost(main, p, posts);
+    document.title = `${p.seoTitle || p.title} · Nobody’s Simple`;
+    const blogDescription = document.querySelector('meta[name="description"]');
+    if (blogDescription) blogDescription.content = p.seoDescription || p.excerpt || "Psychology for choosing what to do next.";
     return;
   }
   const hasVideoBlock = p.blocks?.some((block) => block.type === "youtube");
