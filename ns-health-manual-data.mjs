@@ -43,7 +43,7 @@ const sourceByKey={
 const count=s=>String(s||'').trim().split(/\s+/).filter(Boolean).length;
 const fail=(id,message)=>{throw Error('Health manual '+id+': '+message)};
 const safetySensitive=new Set([
- 'eating','binge-eating','food-restriction','purging-urges','sexual-pain','sexual-trauma-impact','sexual-health-anxiety','pregnancy-loss','postpartum-mental-health','bodily-autonomy','sexual-boundary-uncertainty'
+ 'eating','binge-eating','food-restriction','purging-urges','sexual-pain','sexual-trauma-impact','sexual-health-anxiety','pregnancy-loss','postpartum-mental-health','contraceptive-concerns','bodily-autonomy','sexual-boundary-uncertainty'
 ]);
 const stages={
  body:['What happened or changed','What you actually noticed','When it happens','What it affects','The immediate experience','What the response makes possible','Physical or environmental factors','Potential risks and constraints','Which assistance may be useful','The next safe decision'],
