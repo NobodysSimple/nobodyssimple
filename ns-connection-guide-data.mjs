@@ -21,11 +21,21 @@ import {SOCIAL_WORK_B} from './ns-social-work-b.mjs';
 import {SOCIAL_WORK_C} from './ns-social-work-c.mjs';
 import {CONNECTION_WORK_A} from './ns-connection-work-a.mjs';
 import {CONNECTION_WORK_B} from './ns-connection-work-b.mjs';
+import {CONNECTION_SUPPORT_A} from './ns-connection-support-a.mjs';
+import {CONNECTION_SUPPORT_B} from './ns-connection-support-b.mjs';
+import {CONNECTION_SUPPORT_C} from './ns-connection-support-c.mjs';
+import {CONNECTION_SUPPORT_D} from './ns-connection-support-d.mjs';
+import {CONNECTION_SUPPORT_E} from './ns-connection-support-e.mjs';
+import {CONNECTION_SUPPORT_F} from './ns-connection-support-f.mjs';
+import {CONNECTION_SUPPORT_G} from './ns-connection-support-g.mjs';
+import {CONNECTION_SUPPORT_H} from './ns-connection-support-h.mjs';
+import {CONNECTION_SUPPORT_I} from './ns-connection-support-i.mjs';
 
 const authored=[...RELATE_EDITORIAL_A,...RELATE_EDITORIAL_B,...RELATE_EDITORIAL_C,...RELATE_EDITORIAL_D,
  ...SOCIAL_EDITORIAL_A,...SOCIAL_EDITORIAL_B,...SOCIAL_EDITORIAL_C,...CONNECTION_EDITORIAL_A,...CONNECTION_EDITORIAL_B];
 const work={...RELATE_WORK_A,...RELATE_WORK_B,...RELATE_WORK_C,...RELATE_WORK_D,
  ...SOCIAL_WORK_A,...SOCIAL_WORK_B,...SOCIAL_WORK_C,...CONNECTION_WORK_A,...CONNECTION_WORK_B};
+const authoredSupport={...CONNECTION_SUPPORT_A,...CONNECTION_SUPPORT_B,...CONNECTION_SUPPORT_C,...CONNECTION_SUPPORT_D,...CONNECTION_SUPPORT_E,...CONNECTION_SUPPORT_F,...CONNECTION_SUPPORT_G,...CONNECTION_SUPPORT_H,...CONNECTION_SUPPORT_I};
 const stages=['What happened','What you believed it meant','What you felt','What you did','What the response provided','What you were needing','A possible expectation shaping the response','What else was happening','Another way of responding','A safe next step'];
 const urgentIds=new Set(['control-harm','controlling-impulses','aggressive-urges','intimacy-communication','relationship-submission','submissive-patterns','betrayal-trauma','post-trauma-trust','end-of-life-caregiving','parenting-teenager']);
 const fail=(id,message)=>{throw new Error('Relationship manual '+id+': '+message);};
@@ -56,15 +66,12 @@ function build(d){
  const roots=d.profiles.map((p,i)=>['path-'+i,p[0]]);
  const cycle=[examples[0].situation+'.', 'A thought appears: '+examples[0].interpretation+'.',
   d.profiles[0][1],d.mechanisms[0][1]];
- const support=[...routes.map(r=>r.practice),
-   ...d.now.steps,...d.mechanisms.map(m=>m[1]),
-   ...routes.map(r=>r.description),
-   ...d.profiles.map(p=>p[1]),
-   ...routes.map(r=>'Consider whether support could help with: '+r.label.toLowerCase()+'.'),
-   ...d.now.steps.slice(0,2)];
- if(support.length!==24)fail(id,'unexpected support length');
- const actions=[...examples.map(x=>x.action),...routes.map(r=>r.practice),...d.now.steps,d.mechanisms[0][1]];
- if(actions.length!==24)fail(id,'action set');
+ const practical=authoredSupport[id];
+ if(!practical||practical.length!==16||new Set(practical).size!==16)fail(id,'missing independently written support suggestions');
+ const sourcePrompt='Read the linked guidance: '+d.sources[0][0]+'.';
+ const support=[...practical,...routes.map(r=>r.practice),...d.now.steps,sourcePrompt];
+ const actions=[...routes.map(r=>r.practice),...d.now.steps,...practical,sourcePrompt];
+ if(support.length!==24||actions.length!==24)fail(id,'incomplete practical support and actions');
  return Object.freeze({...d,cycle,roots,routes,
   ideas:{actions,support},
   prominentSafety:urgentIds.has(id)?d.safety:'',
