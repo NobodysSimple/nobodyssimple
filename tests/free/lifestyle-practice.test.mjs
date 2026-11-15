@@ -126,7 +126,7 @@ test('the account sync key is opt-in and old deed data is not overwritten',()=>{
  assert.ok(SAVED[PRACTICE_KEY]);
  const life=src('lifestyle.mjs'),practice=src('lifestyle-practice-ui.mjs'),html=src('index.html');
  assert.match(life,/mountLifestylePractice/);
- assert.match(life,/Today’s Practice/);
+ assert.match(life,/Today’s Field Mission/);
  assert.ok(!life.includes('ns-lifestyle-deed-v1'));
  assert.ok(practice.includes('data-practice-pause'));
  assert.ok(practice.includes('data-practice-undo'));
