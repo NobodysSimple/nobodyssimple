@@ -73,7 +73,7 @@ export function deepenSelfImageGuide(g,domain){
  const d=authored[g.id];
  if(!d||d.length!==3||d[0].length<160||d[1].length!==4||d[2].length!==4)throw new Error('Missing authored depth for '+g.id);
  const routes=g.routes.map((r,i)=>{
-  const p=g.profiles[i],extra=d[2][i],action=r.practice;
+  const p=g.profiles[i],extra=String(d[2][i]).split('|'),action=r.practice;
   const questions=[
    [d[1][i],p[1],d[0],''],
    ['Consider this situation: '+clean(extra[0])+'. What was different or similar in your own experience?',extra[1],g.article[(i*2+2)%10],''],
@@ -85,13 +85,13 @@ export function deepenSelfImageGuide(g,domain){
  const examples=enrichedExamples(g,domain,d);
  const questions=[
   ...d[1],
-  'When you think about '+clean(d[2][0][0])+', what did you actually observe and what was assumed?',
-  'What happened in your body or mood when a situation resembled this: '+clean(d[2][1][0])+'?',
-  'What immediate response did you make to an experience like this: '+clean(d[2][2][0])+'?',
+  'When you think about '+clean(String(d[2][0]).split('|')[0])+', what did you actually observe and what was assumed?',
+  'What happened in your body or mood when a situation resembled this: '+clean(String(d[2][1]).split('|')[0])+'?',
+  'What immediate response did you make to an experience like this: '+clean(String(d[2][2]).split('|')[0])+'?',
   domain==='lgbtq'?'Whose response has made it harder to decide what you want for yourself, and did that person respect your privacy?':
    domain==='appearance'?'Whose appearance standard or comments are influencing your own judgement, and have they affected access to care?':
    'Which expectation about yourself has begun to shape your choices, and where did you learn it?',
-  'What other circumstances help explain an experience like this: '+clean(d[2][3][0])+'?',
+  'What other circumstances help explain an experience like this: '+clean(String(d[2][3]).split('|')[0])+'?',
   actionQuestion[domain]
  ];
  if(questions.length!==10)throw new Error('Incomplete Why questions for '+g.id);
