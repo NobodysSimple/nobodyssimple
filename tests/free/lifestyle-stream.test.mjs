@@ -22,21 +22,20 @@ test('Home no longer shows Lifestyle; old focus bookmarks redirect to the intern
  assert.match(router,/lifestyle: \(\) => renderLifestyle\(main, safeRoutePart\(id\)\)/);
  assert.doesNotMatch(features,/href="#simplyfocus"/);
 });
-test('Everyday sections form one continuous dashboard, without hidden tabs',()=>{
- const ui=src('lifestyle.mjs'),styles=src('lifestyle.css');
- for(const id of ['lifestyle-deed','lifestyle-checkin','lifestyle-tasks','lifestyle-calendar','lifestyle-reminders']){
-  assert.ok(ui.includes("$('#"+id+"')"),id+' should join the same stream');
- }
- assert.match(ui,/life-dashboard-flow/);
- assert.match(ui,/life-mode-switch/);
- assert.match(ui,/data-life-mode="daily"/);
- assert.match(ui,/data-life-mode="focus"/);
- assert.match(ui,/data-life-everyday/);
- assert.match(ui,/data-life-focus-panel hidden/);
- assert.doesNotMatch(ui,/lifestyle-tool-shelf/);
- assert.doesNotMatch(ui,/data-life-panel|showPanel\(|lifestyle-tabs|life-panel-today/);
- assert.doesNotMatch(ui,/<details class="life-checkin-detail"/);
- assert.match(ui,/<div class="life-checkin-detail"/);
+test('Everyday planner stays continuous while check-in and reminders become popups',()=>{
+ const life=src('lifestyle.mjs'),workflow=src('ns-lifestyle-workflow.mjs'),popup=src('ns-daily-checkin.mjs'),styles=src('lifestyle.css');
+ for(const id of ['lifestyle-deed','lifestyle-tasks','lifestyle-calendar','lifestyle-reminders'])
+  assert.ok(life.includes("$('#"+id+"')"),id+' remains in the workspace');
+ assert.match(life,/life-dashboard-flow/);
+ assert.match(life,/life-mode-switch/);
+ assert.match(life,/data-life-mode="daily"/);
+ assert.match(life,/data-life-mode="focus"/);
+ assert.match(life,/data-life-everyday/);
+ assert.match(life,/data-life-focus-panel hidden/);
+ assert.match(workflow,/data-ns-open-checkin/);
+ assert.match(workflow,/reminderDialog\.showModal/);
+ assert.match(popup,/id="ns-daily-checkin-form"/);
+ assert.ok(!life.includes('id="lifestyle-checkin-form"'));
  assert.match(styles,/max-width:520px/);
  assert.match(styles,/\.life-dashboard-flow/);
 });
@@ -52,9 +51,10 @@ test('SimplyFocus is mounted inside Lifestyle with lifecycle cleanup for audio a
  assert.match(focus,/window\.removeEventListener\('hashchange',cleanup\)/);
 });
 
-test('Lifestyle is a direct, always-visible dashboard with optional same-page focus mode',()=>{
- const life=src('lifestyle.mjs'),css=src('lifestyle.css'),routes=src('site.mjs');
- assert.match(life,/flow\.append\(\$\('#lifestyle-deed'\),\$\('#lifestyle-tasks'\),\$\('#lifestyle-checkin'\),\$\('#lifestyle-calendar'\),\$\('#lifestyle-reminders'\)\)/);
+test('Lifestyle retains its planner and same-page focus mode',()=>{
+ const life=src('lifestyle.mjs'),workflow=src('ns-lifestyle-workflow.mjs'),css=src('lifestyle.css'),routes=src('site.mjs');
+ assert.match(life,/flow\.append\(\$\('#lifestyle-deed'\),\$\('#lifestyle-tasks'\),\$\('#lifestyle-calendar'\),\$\('#lifestyle-reminders'\)\)/);
+ assert.match(workflow,/flow\.append\(calendar,tasks,practice\)/);
  assert.match(life,/root\.querySelectorAll\('\[data-life-mode\]'\)/);
  assert.match(life,/focusPanel\.hidden=false/);
  assert.match(life,/dailyPanel\.hidden=false/);
@@ -63,7 +63,6 @@ test('Lifestyle is a direct, always-visible dashboard with optional same-page fo
  assert.match(css,/life-unified \[hidden\]/);
  assert.match(routes,/simplyfocus: \(\) => location\.replace\('#lifestyle\/focus'\)/);
 });
-
 test('four different Eisenhower quadrants are available without guessing legacy priorities',()=>{
  assert.deepEqual(EISENHOWER_QUADRANTS.map(q=>q.id),['do','schedule','delegate','eliminate']);
  assert.equal(new Set(EISENHOWER_QUADRANTS.map(q=>q.title)).size,4);
