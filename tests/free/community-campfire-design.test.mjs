@@ -9,7 +9,7 @@ const css=()=>read('ns-community-campfire.css');
 test('community board and Messages share the real campfire shell and existing links',()=>{
  const source=ui();
  assert.match(source,/board-campfire-hero/);
- assert.match(source,/community-art\/campfire-hero\.svg/);
+ assert.match(css(),/community-art\/campfire-hero\.svg/);
  assert.match(source,/location\.hash\.startsWith\('#messages'\)/);
  assert.match(source,/href="#discussion"/);
  assert.match(source,/href="#messages"/);
@@ -47,7 +47,7 @@ test('feed labels and post actions use actual metadata, not invented engagement 
  assert.match(source,/board-featured-post/);
  assert.match(source,/boardWelcomePost\(post\)/);
  assert.doesNotMatch(source,/42 replies|128 likes|56 likes|27 replies/);
- assert.match(source,/Suggested themes filter the discussions loaded on this page/);
+ assert.match(source,/Older posts are grouped by suggested themes/);
 });
 
 test('existing posting, reply, reactions, report, block and messaging handlers remain',()=>{
