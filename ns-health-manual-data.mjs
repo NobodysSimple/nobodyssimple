@@ -46,8 +46,8 @@ const safetySensitive=new Set([
  'eating','binge-eating','food-restriction','purging-urges','sexual-pain','sexual-trauma-impact','sexual-health-anxiety','pregnancy-loss','postpartum-mental-health','bodily-autonomy','sexual-boundary-uncertainty'
 ]);
 const stages={
- body:['What happened or changed','What you actually noticed','When it happens','What it affects','How you respond','What the response makes possible','Physical or environmental factors','Potential risks and constraints','Which assistance may be useful','The next safe decision'],
- sexuality:['The situation','Your own wishes and experience','Other people’s expectations','Your emotional response','Your choices and boundaries','Health and bodily considerations','Consent and practical constraints','What is known or uncertain','Support and information','A freely chosen next step']
+ body:['What happened or changed','What you actually noticed','When it happens','What it affects','The immediate experience','What the response makes possible','Physical or environmental factors','Potential risks and constraints','Which assistance may be useful','The next safe decision'],
+ sexuality:['The situation','Your own wishes and experience','Other people’s expectations','Your emotional response','What happened in this example','Health and bodily considerations','Consent and practical constraints','What is known or uncertain','Support and information','A freely chosen next step']
 };
 function build(r){
  const [id,standfirst,readTitle,paras,pathways,safety,sourceKeys,privacy=false]=r;
@@ -80,7 +80,7 @@ function build(r){
     situation:scene,root,
     interpretation:detail,
     emotion:insight,
-    response:tips[j],
+    response:scene,
     function:insight,
     need:name,
     rule:questions[1],
@@ -102,7 +102,7 @@ function build(r){
   mechanisms,profiles,roots,routes,
   now:{title:'What might help right now?',paras:[paras[4]],steps:[pathways[0][5][0],pathways[1][5][0],pathways[2][5][0]]},
   whyIntro:paras[1],
-  whyQuestions:pathways.flatMap(p=>p[3]).slice(0,10),
+  whyQuestions:[...pathways.map(p=>p[3][0]),...pathways.map(p=>p[3][1]),pathways[0][3][2],pathways[3][3][3]],
   whyStages:stages[domain],whyCases:cases,
   ideas:{actions,support},
   sources:sourceList,
