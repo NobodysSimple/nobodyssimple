@@ -100,7 +100,7 @@ export class Publisher {
   // underlying guides. A concurrent GitHub edit is rejected by the contents API.
   async readTopicPublications() {
     const file=await this.api(`${this.base}/contents/ns-topic-publications.json?ref=${this.branch}`);
-    const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\\s/g,'')),c=>c.charCodeAt(0));
+    const bytes=Uint8Array.from(atob(String(file.content||'').split(/\s+/).join('')),c=>c.charCodeAt(0));
     const data=JSON.parse(new TextDecoder().decode(bytes));
     if(data.version!==1||!data.topics||typeof data.topics!=='object'||Array.isArray(data.topics))throw Error('Topic publication format changed; re-open the studio before editing.');
     return {sha:file.sha,data};
@@ -114,7 +114,7 @@ export class Publisher {
     const next={version:1,topics:{...data.topics}};
     if(Object.values(clean).some(Boolean))next.topics[topicId]={...clean,updatedAt:new Date().toISOString()};
     else delete next.topics[topicId];
-    const utf8=new TextEncoder().encode(JSON.stringify(next,null,2)+'\\n');
+    const utf8=new TextEncoder().encode(JSON.stringify(next,null,2)+String.fromCharCode(10));
     let binary='';for(let i=0;i<utf8.length;i+=8192)binary+=String.fromCharCode(...utf8.subarray(i,i+8192));
     const result=await this.api(`${this.base}/contents/ns-topic-publications.json`,'PUT',{
       message:`Update navigation topic copy: ${topicId}`,content:btoa(binary),sha,branch:this.branch
