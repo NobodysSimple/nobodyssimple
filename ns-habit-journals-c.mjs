@@ -4,48 +4,48 @@ export const HABIT_JOURNALS_C={
       "cue",
       "Find the moment scrolling stops being a choice",
       "Identify the cue that leads to automatic opening.",
-      "One change that interrupts the habit before the feed takes over.",
+      "Choose one cue that leads to automatic scrolling and make the feed a little harder to open.",
       [
-        "When do you most often find yourself opening a feed without planning to?",
-        "What were you feeling or about to do just beforehand?",
-        "What makes the app so easy to reach in that moment?",
-        "What one environmental change would make your next choice more deliberate?"
+        "Think about a time you opened an app without meaning to stay. What happened just before?",
+        "Was there a feeling or task you wanted a break from?",
+        "What makes opening that particular feed so easy?",
+        "What could you change at the first moment you reach for the phone?"
       ]
     ],
     [
       "need",
       "Find what scrolling is giving you",
       "Separate boredom, social contact and avoidance.",
-      "An alternative that provides the same useful function.",
+      "Keep the part of your phone use that genuinely helps. Choose another way to meet the need when the feed stops helping.",
       [
-        "What do you hope to get from scrolling when you first open the app?",
-        "Which parts of the experience actually deliver that?",
-        "What does continuing beyond that point cost you?",
-        "What activity or kind of contact would meet the real need more directly?"
+        "When you reach for the phone, what are you hoping to get from it?",
+        "Which part of using it genuinely gives you that?",
+        "At what point does continuing begin to leave you feeling worse?",
+        "What else could meet the need you've noticed?"
       ]
     ],
     [
       "bed",
       "Protect the time you wanted for rest",
       "Create a practical boundary around bedtime feeds.",
-      "A feasible evening setting that still allows essential communication.",
+      "Protect your intended sleep time while keeping essential contacts accessible. Make a realistic place for the phone.",
       [
-        "At what point does scrolling begin to delay your intended sleep?",
-        "What makes it difficult to stop after the first few minutes?",
-        "Which contacts or functions genuinely need to stay available overnight?",
-        "Where could the phone go, and what will you do at that point instead?"
+        "When do you usually realise scrolling is keeping you awake?",
+        "What makes ending the session difficult at that point?",
+        "What communication do you genuinely need to keep available overnight?",
+        "Where could you leave the phone so your planned rest is possible?"
       ]
     ],
     [
       "return",
       "Recover one activity displaced by scrolling",
       "Make a valued activity as easy to begin as opening a feed.",
-      "A concrete small action you can return to when scrolling stops.",
+      "Prepare one small activity you miss and give it a clear starting cue when scrolling usually begins.",
       [
-        "Which activity do you miss doing because scrolling fills the time?",
-        "What makes that activity harder to begin than opening the app?",
-        "What could you prepare so its first step requires little effort?",
-        "At which cue will you try that activity instead of another swipe?"
+        "What would you have liked to do with some of the time spent scrolling?",
+        "Why has that activity felt harder to begin?",
+        "How could you prepare its first step before opening the feed?",
+        "When could you try choosing that activity instead?"
       ]
     ]
   ],
@@ -54,48 +54,48 @@ export const HABIT_JOURNALS_C={
       "finish",
       "Give the working day a real finishing point",
       "Distinguish required tasks from an endless sense that you should do more.",
-      "A realistic stopping rule with room for genuine emergencies.",
+      "Agree a realistic stopping point and a way to resume tomorrow. Arrange cover for genuine urgent duties.",
       [
-        "What part of your work tends to extend beyond the planned finish?",
-        "Which obligations actually have to be completed today?",
-        "What extra standard or fear keeps you working after that point?",
-        "What finishing rule or cover arrangement could you try safely?"
+        "What part of work keeps drawing you back after the day should end?",
+        "Which responsibility genuinely needs attention before you leave?",
+        "What would make you feel able to hand over or return to unfinished work tomorrow?",
+        "What finishing arrangement could you put in place for one low-risk evening?"
       ]
     ],
     [
       "worth",
       "Question the idea that rest must be earned",
       "Examine how achievement has become linked to self-respect.",
-      "A fairer rule that allows rest after a reasonable contribution.",
+      "Choose a fair stopping rule and allow a little time in which your worth isn't being measured by output.",
       [
-        "What do you tell yourself when you are not being productive?",
-        "Where have you learned that work determines your value?",
-        "What important parts of your life have received less time because of this rule?",
-        "How might you describe your worth without using output as the measure?"
+        "What do you find yourself thinking when you stop being productive?",
+        "What does completing more work seem to prove about you?",
+        "How much room has that belief left for the people or activities you care about?",
+        "How would you like to treat yourself on an evening when you haven't achieved anything?"
       ]
     ],
     [
       "demands",
       "Address unreasonable expectations at work",
       "Identify which pressures cannot be solved by private coping.",
-      "A specific workload or availability discussion.",
+      "Prepare a specific request for a change in workload or availability. Document the demands if that helps.",
       [
-        "Who expects you to work beyond the time or capacity available?",
-        "What would realistically happen if those demands continued?",
-        "Which priority, deadline or resource could the organisation change?",
-        "What evidence and request could you bring to the right person?"
+        "Which expectations are keeping you working beyond your available hours?",
+        "Who is responsible for setting those demands?",
+        "What would need to change for the workload to fit safely?",
+        "How could you ask the person with authority to reconsider the arrangement?"
       ]
     ],
     [
       "reconnect",
       "Make space for life outside work",
       "Choose a meaningful, non-productive activity and protect time for it.",
-      "A small commitment that matters without achievement or praise.",
+      "Protect a small amount of time for somebody or something you value outside work. Notice what makes that boundary difficult.",
       [
-        "What activity or relationship has work been replacing?",
-        "What makes stopping work to do it feel uncomfortable?",
-        "What would a modest version of that activity look like this week?",
-        "When will you protect time for it, and how will you handle an urge to return to work?"
+        "What part of life has received less of your attention because work keeps taking priority?",
+        "How does it feel when you try to spend time there instead?",
+        "What would a modest return to that activity look like this week?",
+        "What could help you stay with it when work begins calling you back?"
       ]
     ]
   ],
@@ -104,48 +104,48 @@ export const HABIT_JOURNALS_C={
       "finish",
       "Complete one manageable unit",
       "Define a real endpoint instead of a broad task.",
-      "One finished unit and a clear place to resume.",
+      "Choose one part with a clear end. Complete it or leave a precise marker for where you'll resume.",
       [
-        "Which task do you begin repeatedly without completing?",
-        "What would one small completed unit of that task look like?",
-        "Which materials or instructions must be ready before beginning?",
-        "When will you work on that unit and how will you mark it finished?"
+        "Which task have you begun several times without reaching an end?",
+        "What small piece could you actually finish during one session?",
+        "What would need to be ready for you to work on that piece?",
+        "When can you try, and how will you recognise that you've finished?"
       ]
     ],
     [
       "capture",
       "Stop new reminders from taking over",
       "Use an external capture point instead of immediately changing tasks.",
-      "One reliable place for new tasks to wait.",
+      "Put the next non-urgent reminder in one reliable place. Return to the task you were doing.",
       [
-        "What kinds of reminders or ideas pull you away from current work?",
-        "Which of them really require immediate action?",
-        "Where could you record non-urgent reminders without switching tasks?",
-        "What will you say or do when the next interrupting idea appears?"
+        "What thoughts or responsibilities keep interrupting the work you've chosen?",
+        "Which ones genuinely need an immediate response?",
+        "Where could the others wait safely until you have time to review them?",
+        "What will you do the next time a new task comes to mind?"
       ]
     ],
     [
       "urgency",
       "Choose when switching is justified",
       "Separate genuine priorities from the feeling that everything matters now.",
-      "A simple switching rule based on consequences.",
+      "Choose a sensible threshold for switching tasks. Use it when something new demands your attention.",
       [
-        "What usually makes a new task feel more urgent than the current one?",
-        "What would happen if the current task waited instead?",
-        "Which interruptions genuinely meet a clear threshold for switching?",
-        "What rule will help you decide without renegotiating every time?"
+        "What tends to make a new responsibility feel urgent?",
+        "What would really happen if you finished the current piece first?",
+        "Which kinds of interruption would justify changing tasks immediately?",
+        "What rule could help you decide when that happens?"
       ]
     ],
     [
       "access",
       "Change the conditions that disrupt attention",
       "Identify environmental and executive-function needs.",
-      "One reasonable adjustment or support request.",
+      "Ask for an adjustment that reduces unnecessary interruption and leaves a fair way to manage urgent requests.",
       [
-        "Which interruptions come from people or systems rather than your own choices?",
-        "How do those interruptions affect restarting the task?",
-        "What quieter setting, written instruction or other support would help?",
-        "Who could arrange the change and what will you ask for?"
+        "Which interruptions are being created by the place or people around you?",
+        "How much effort does it take to return to work after one?",
+        "What arrangement would let you stay with a task for longer?",
+        "Who could help you change the setting or expectations?"
       ]
     ]
   ],
@@ -154,48 +154,48 @@ export const HABIT_JOURNALS_C={
       "pattern",
       "Find the cue and reward of an unwanted habit",
       "Recognise why an urge feels urgent and what action follows.",
-      "A behaviour-specific interruption plan rather than more self-criticism.",
+      "Identify the earliest cue and a safer response suited to the behaviour. Seek specialised care when risk or dependence is involved.",
       [
-        "What happens immediately before the urge appears?",
-        "What does the behaviour promise to change for you?",
-        "What happens immediately afterwards and what costs follow later?",
-        "What safer response could give you some of the same benefit?"
+        "Tell me about an urge you keep experiencing. When does it usually arrive?",
+        "What feeling or situation tends to come just before it?",
+        "What do you notice immediately after acting on it, and what concerns you later?",
+        "What change or support might help with that specific pattern?"
       ]
     ],
     [
       "delay",
       "Create space before acting on a strong urge",
       "Choose a safe delay or change in access rather than treating the urge as a command.",
-      "A practical first-minute response with a clear safety boundary.",
+      "Plan a safe first response to the urge. Do not abruptly stop dependent substances without medical guidance.",
       [
-        "What is the first sign that the urge is becoming strong?",
-        "Which part of the behaviour can you safely pause or make less accessible?",
-        "What action could you take during that pause that fits the actual need?",
-        "Who will you contact if the urge involves immediate risk or becomes unmanageable?"
+        "How do you first recognise that the urge is becoming strong?",
+        "Is it safe to pause this behaviour, or could stopping suddenly cause a health risk?",
+        "If a short pause is appropriate, what would you do during it?",
+        "Who could help if the urge becomes dangerous or too difficult to manage?"
       ]
     ],
     [
       "lapse",
       "Learn from a lapse without giving up",
       "Replace a shame spiral with a review of cues and support.",
-      "One change to try on the next occasion, with a practical cue that makes it easier to use.",
+      "Review the cue and missing support. Make one adjustment to the plan and resume safely.",
       [
-        "What happened before the recent lapse, without judging yourself?",
-        "Which part of the plan was difficult to use at the time?",
-        "What practical change would make a safer response more available?",
-        "How will you restart without punishment or compensatory behaviour?"
+        "What was happening before the last time you acted against your plan?",
+        "What part of the plan was difficult to use in that situation?",
+        "What would have made another response easier to reach?",
+        "How could you restart without punishing yourself or making the behaviour more dangerous?"
       ]
     ],
     [
       "support",
       "Decide which urges need specialised care",
       "Distinguish an ordinary learned habit from dependency, OCD or high-risk behaviour.",
-      "A focused request for appropriate assessment.",
+      "Seek care suited to the behaviour, including assessment for dependence or OCD when relevant.",
       [
-        "What behaviour are you struggling to control and how often is it occurring?",
-        "Has it caused health, safety or financial consequences?",
-        "Could stopping suddenly involve withdrawal or another medical danger?",
-        "Which qualified service or trusted person can help you make a safe plan?"
+        "What behaviour have you been struggling to control, and how is it affecting your life?",
+        "Is there any risk from the behaviour itself or from stopping it suddenly?",
+        "Have intrusive fears or rituals been part of what keeps it going?",
+        "What would you want a qualified clinician or support service to understand?"
       ]
     ]
   ],
@@ -204,48 +204,48 @@ export const HABIT_JOURNALS_C={
       "choice",
       "Understand a sexual choice without shaming yourself",
       "Separate desire from pressure and your freedom to choose.",
-      "A clearer account of consent and what you wanted.",
+      "Clarify whether the encounter was freely consensual. Prioritise support for pressure or assault, and respect your own desires.",
       [
-        "What happened in the encounter, in as much detail as feels safe to write?",
-        "At which point did you feel free to choose, uncertain or pressured?",
-        "What did you want for yourself at that moment?",
-        "What boundary, protection or support would matter next time?"
+        "What happened in an encounter you want to understand? You can keep details private.",
+        "Were you free to choose at each stage? Was any boundary ignored?",
+        "What did you want for yourself at the time, and how do you feel about it now?",
+        "What safety or support would help you move forward?"
       ]
     ],
     [
       "health",
       "Respond to immediate sexual-health needs",
       "Prioritise appropriate care when exposure or pregnancy risk may be time-sensitive.",
-      "A specific decision to seek sexual-health advice promptly.",
+      "Seek prompt sexual-health advice where relevant. Do not delay care while working through the emotional questions.",
       [
-        "Was there a possible STI or pregnancy exposure requiring timely advice?",
-        "What do you know about when the encounter happened?",
-        "What care or testing information do you need from a qualified service?",
-        "How will you contact appropriate sexual-health support without delaying?"
+        "Could the encounter have involved a recent STI exposure or pregnancy risk?",
+        "When did it happen? You only need to record what helps with timely care.",
+        "What would you need to ask a qualified sexual-health professional?",
+        "How will you seek that advice promptly if a time-sensitive option may apply?"
       ]
     ],
     [
       "values",
       "Make room for pleasure and your own boundaries",
       "Identify choices that reflect your values without moralising consensual interests.",
-      "A clear statement of what you want and what you can decline.",
+      "Write one boundary in plain language. Choose an arrangement that gives you the freedom to say yes or no.",
       [
-        "What kinds of sexual contact genuinely interest you when you feel unpressured?",
-        "What do you not want or feel uncertain about?",
-        "What makes it difficult to communicate those limits during an encounter?",
-        "What sentence or agreement could help you protect your choice?"
+        "What kind of intimacy do you genuinely enjoy when you feel free to choose?",
+        "Is there anything you don't want or would prefer to decide more slowly?",
+        "What makes it hard to communicate those limits with another person?",
+        "What words could help you express your boundary beforehand?"
       ]
     ],
     [
       "pattern",
       "Change a repeated unwanted decision pattern",
       "Identify triggers and safer options while protecting consent.",
-      "An appropriate plan for recurring unwanted behaviour.",
+      "Choose a measure that protects genuine consent and your health. Seek specialist support if the pattern is recurring or unsafe.",
       [
-        "What circumstances often come before the decisions you later regret?",
-        "What immediate need or feeling seems important in those moments?",
-        "What safety or autonomy has been compromised afterwards?",
-        "What practical safeguard or qualified support will you use before the next occasion?"
+        "What tends to happen before sexual decisions you later feel uncomfortable about?",
+        "Are there times when pressure or intoxication affects your ability to choose?",
+        "What part of your safety or autonomy do you want to protect?",
+        "What safeguard or professional support could you arrange before another encounter?"
       ]
     ]
   ]
