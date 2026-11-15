@@ -13,10 +13,16 @@ test('Home renders the illustrated scrapbook without replacing real features',as
  await expect(home.locator('.ns-home-shortcut')).toHaveAttribute('href','#community');
  await expect(home.locator('.ns-culture-atlas')).toBeVisible();
  const layers=await page.locator('#main').evaluate(el=>getComputedStyle(el).backgroundImage);
- expect(layers).toContain('home-meadow.svg');
+ expect(layers).toContain('watercolor-countryside.svg');
  const art=await page.request.get('/home-art/watercolor-countryside.svg');
  expect(art.status()).toBe(200);
- expect(await art.text()).toContain('<svg');
+ const xml=await art.text();
+ expect(xml).toContain('<svg');
+ const xmlValid=await page.evaluate(value=>{
+  const parsed=new DOMParser().parseFromString(value,'image/svg+xml');
+  return !parsed.querySelector('parsererror')&&parsed.documentElement.localName==='svg';
+ },xml);
+ expect(xmlValid).toBe(true);
  const paper=await home.locator('.ns-home-hero').evaluate(el=>getComputedStyle(el).boxShadow);
  expect(paper).not.toBe('none');
 });
