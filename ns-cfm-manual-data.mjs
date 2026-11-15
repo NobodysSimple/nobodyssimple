@@ -70,20 +70,23 @@ function articleFor(d,extra){
  return [open[0],open[1],extra[0],d.why,extra[1],prose[0],prose[1],extra[2]+(extraContext[d.id]?' '+extraContext[d.id]:''),prose[2],d.closing];
 }
 function makeExamples(d,article,profiles,roots){
- const sentencesPool=article.flatMap((s,i)=>sentences(s).map(x=>({s:x,section:i})))
-  .filter(x=>x.s.length>28&&x.s.length<320);
- if(sentencesPool.length<16)fail(d.id,'not enough specific material to create 16 distinct worked cases');
- const used=new Set();
- const examples=[];
+ // Each route starts with the passages written for that exact presentation.
+ // Wider context passages are fallbacks, not substitutes for the topic.
+ const pools=[
+  [article[5],d.versions[0][1],article[2]],
+  [article[6],d.versions[1][1],article[4]],
+  [article[8],d.versions[2][1],article[7]],
+  [article[0],article[1],article[3],article[2],article[4]]
+ ].map(parts=>parts.flatMap(s=>sentences(s)).filter(x=>x.length>25));
+ const fallback=article.flatMap(x=>sentences(x)).filter(x=>x.length>28);
+ const used=new Set(),examples=[];
  for(let i=0;i<4;i++){
   for(let j=0;j<4;j++){
-   const index=(i*4+j*3)%sentencesPool.length;let current=index,scene='';
-   for(let attempt=0;attempt<sentencesPool.length;attempt++){
-    const option=sentencesPool[current].s;
-    if(!used.has(option)){scene=option;used.add(option);break}
-    current=(current+1)%sentencesPool.length;
+   let scene='';
+   for(const option of [...pools[i].slice(j),...pools[i].slice(0,j),...fallback]){
+    if(option.length>25&&!used.has(option)){scene=option;used.add(option);break;}
    }
-   if(!scene)fail(d.id,'repeated scenarios');
+   if(!scene)fail(d.id,'not enough distinct authentic case anchors');
    const profile=profiles[i],action=i<3?d.versions[i][2]:d.versions[0][2];
    examples.push({
     situation:scene,
