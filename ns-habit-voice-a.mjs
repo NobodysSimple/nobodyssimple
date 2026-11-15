@@ -15,7 +15,8 @@ export const HABIT_VOICE_A={
     "routes": {
       "relief": "Let's look at the feeling that arrives just before you avoid the task. I want you to understand what you've been trying to get away from.",
       "standard": "If you're frightened of doing the work badly, we'll make room for a first attempt that nobody has to judge.",
-      "conditions": "If the task is inaccessible or genuinely too much, we'll work out what could change around you."
+      "conditions": "If the task is inaccessible or genuinely too much, we'll work out what could change around you.",
+      "begin": "You may have been carrying this task in your head for days. We'll find one action that could begin it without needing to solve the whole project."
     },
     "roots": {
       "relief": [
