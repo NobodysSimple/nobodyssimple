@@ -1,0 +1,261 @@
+/* One Daily Check-in across Home and Lifestyle; compact reminder popup. */
+body.app-body #main .life-unified .life-daily-actions{
+ display:flex;justify-content:space-between;align-items:stretch;gap:12px;
+ margin:0 0 15px;min-width:0;
+}
+body.app-body #main .life-unified .life-daily-primary{
+ display:flex;align-items:center;gap:14px;
+ flex:1 1 530px;min-width:0;padding:11px 14px;
+ border:1px solid #b8d0b6;border-radius:16px;
+ background:linear-gradient(105deg,#e7f1df,#f9f8ec);
+ box-shadow:0 5px 16px #3c68411a;
+}
+body.app-body #main .life-unified .life-daily-primary-icon{
+ display:grid;place-items:center;flex:0 0 45px;width:45px;height:45px;
+ background:#265d43;color:#fffbe8;border-radius:14px;font-size:24px;
+}
+body.app-body #main .life-unified .life-daily-primary-copy{
+ display:grid;gap:3px;flex:1;min-width:0;
+}
+body.app-body #main .life-unified .life-daily-primary-copy strong{
+ color:#244e38;font:650 clamp(20px,2vw,25px)/1.15 Georgia,serif;
+}
+body.app-body #main .life-unified .life-daily-primary-copy small{
+ color:#56715c;font:450 12px/1.3 system-ui,sans-serif;
+}
+body.app-body #main .life-unified .life-daily-open{
+ min-height:47px;padding:9px 19px;
+ background:#236344;color:#fffdf3;border:1px solid #24593d;
+ border-radius:12px;font:750 13px/1.25 system-ui,sans-serif;
+ box-shadow:0 4px 10px #255c422f;cursor:pointer;white-space:nowrap;
+}
+body.app-body #main .life-unified .life-daily-open:hover{background:#1b5036}
+body.app-body #main .life-unified .life-daily-secondary{
+ display:flex;align-items:center;justify-content:end;gap:8px;flex-wrap:wrap;
+}
+body.app-body #main .life-unified .life-daily-secondary button{
+ min-height:42px;padding:10px 12px;border:1px solid #d8e0cf;border-radius:12px;
+ font:650 12px/1.25 system-ui,sans-serif;cursor:pointer;color:#4a6551;
+ background:#f7f8ef;
+}
+body.app-body #main .life-unified .life-daily-secondary .life-daily-reminders{
+ color:#6c7b69;background:transparent;border-color:#e4e5d9;
+ box-shadow:none;
+}
+body.app-body #main .life-unified .life-daily-secondary button:hover{background:#e8eee2}
+body.app-body #main .life-unified .life-reminder-dialog{
+ border:1px solid #d9dbc9;border-radius:20px;box-shadow:0 30px 85px #223a2a55;
+ background:#fffaf0;color:#264934;padding:13px;
+ width:min(94vw,510px);max-height:85dvh;overflow-y:auto;
+ margin:auto;
+}
+body.app-body #main .life-unified .life-reminder-dialog:not([open]){display:none}
+body.app-body #main .life-unified .life-reminder-dialog::backdrop{background:rgba(23,41,31,.52);backdrop-filter:blur(3px)}
+body.app-body #main .life-unified .life-reminder-modal-head{
+ display:flex;align-items:center;justify-content:space-between;gap:15px;
+ padding:4px 5px 9px;color:#294f39;font:700 14px/1.3 system-ui,sans-serif;
+}
+body.app-body #main .life-unified .life-reminder-modal-head button{
+ border:1px solid #d9e1d3;background:#f1f4e8;color:#274934;border-radius:10px;
+ width:38px;height:38px;cursor:pointer;font-size:23px;
+}
+body.app-body #main .life-unified .life-reminder-dialog #lifestyle-reminders{
+ margin:0!important;min-width:0;box-shadow:none!important;border-radius:15px!important;
+ padding:16px!important;
+}
+body.app-body #main .life-unified .life-reminder-dialog #lifestyle-reminders .lifestyle-section-head h2{font-size:26px}
+body.app-body #main .life-unified .life-reminder-dialog #lifestyle-reminders form{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+body.app-body #main .life-unified .life-reminder-dialog #lifestyle-reminders .reminder-limit{font-size:11px}
+.ns-daily-checkin-dialog{
+ border:1px solid #d0dbc5;border-radius:23px;padding:0;
+ width:min(95vw,1120px);max-width:1120px;max-height:min(94dvh,950px);
+ background:#faf6ed;color:#274b36;
+ box-shadow:0 35px 95px #182f244e;overflow:hidden;
+ margin:auto;
+}
+.ns-daily-checkin-dialog:not([open]){display:none}
+.ns-daily-checkin-dialog::backdrop{background:rgba(18,37,28,.55);backdrop-filter:blur(4px)}
+.ns-daily-checkin-dialog .ns-checkin-window{display:flex;flex-direction:column;max-height:min(94dvh,950px);min-width:0}
+.ns-daily-checkin-dialog .ns-checkin-header{
+ display:flex;justify-content:space-between;align-items:flex-start;gap:15px;
+ padding:22px clamp(17px,3vw,35px) 13px;
+ background:linear-gradient(120deg,#f2f6e9,#fff9ed);
+ border-bottom:1px solid #dce3d3;
+}
+.ns-daily-checkin-dialog .ns-checkin-eyebrow{
+ font:800 10px/1.4 system-ui,sans-serif;letter-spacing:.15em;
+ color:#8a6841;margin:0 0 5px;
+}
+.ns-daily-checkin-dialog .ns-checkin-header h2{
+ font:500 clamp(29px,3vw,39px)/1.13 Georgia,serif;
+ letter-spacing:-.03em;color:#204f39;margin:0 0 7px;
+}
+.ns-daily-checkin-dialog .ns-checkin-header p:not(.ns-checkin-eyebrow){
+ color:#58725c;font:400 12px/1.55 system-ui,sans-serif;margin:0;
+}
+.ns-daily-checkin-dialog .ns-checkin-close{
+ display:grid;place-items:center;flex:0 0 40px;width:40px;height:40px;
+ border-radius:12px;border:1px solid #d2dfce;color:#426149;background:#fffef5;
+ cursor:pointer;font-size:25px;
+}
+.ns-daily-checkin-dialog .ns-checkin-tabs{
+ display:flex;gap:4px;padding:10px clamp(15px,3vw,35px);
+ background:#f7f8ef;border-bottom:1px solid #dce3d7;
+}
+.ns-daily-checkin-dialog .ns-checkin-tabs button{
+ min-height:43px;border:1px solid transparent;border-radius:11px;
+ padding:8px 16px;cursor:pointer;background:transparent;
+ color:#47634d;font:750 13px/1.3 system-ui,sans-serif;
+}
+.ns-daily-checkin-dialog .ns-checkin-tabs button[aria-selected="true"]{
+ background:#265f43;border-color:#265f43;color:#fffdf3;box-shadow:0 2px 6px #2f5d4720;
+}
+.ns-daily-checkin-dialog .ns-checkin-content{padding:clamp(14px,2.3vw,26px) clamp(17px,3vw,35px);overflow-y:auto;flex:1;min-height:0}
+.ns-daily-checkin-dialog .ns-checkin-content [hidden]{display:none!important}
+.ns-daily-checkin-dialog .ns-checkin-prompt{display:grid;gap:3px;margin:0 0 14px}
+.ns-daily-checkin-dialog .ns-checkin-prompt strong{font:650 19px/1.3 Georgia,serif;color:#264f39}
+.ns-daily-checkin-dialog .ns-checkin-prompt span{font:400 12px/1.4 system-ui,sans-serif;color:#627669}
+.ns-daily-checkin-dialog .ns-checkin-moods{
+ display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;
+ border:0;padding:0;margin:0 0 14px;min-width:0;
+}
+.ns-daily-checkin-dialog .ns-checkin-moods label{position:relative;min-width:0;cursor:pointer}
+.ns-daily-checkin-dialog .ns-checkin-moods input{
+ position:absolute;width:1px;height:1px;opacity:0;
+}
+.ns-daily-checkin-dialog .ns-checkin-moods label>span{
+ display:flex;flex-direction:column;gap:6px;align-items:center;justify-content:center;
+ min-height:85px;padding:9px 3px;
+ border:1px solid #d8e1d3;border-radius:12px;background:#fffdf6;
+ color:#294e3c;font:650 11px/1.3 system-ui,sans-serif;
+ text-align:center;
+}
+.ns-daily-checkin-dialog .ns-checkin-moods :is(input:checked+span,label:hover>span){
+ background:#e1eddf;border-color:#71a580;box-shadow:0 2px 6px #3664431a;
+}
+.ns-daily-checkin-dialog .ns-checkin-moods input:focus-visible+span{outline:3px solid #b18146;outline-offset:2px}
+.ns-daily-checkin-dialog .ns-checkin-face{height:35px;width:35px;max-height:35px}
+.ns-daily-checkin-dialog .ns-checkin-compass-result{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+ padding:11px 14px;background:#e8f1e3;border:1px solid #c9ddc7;
+ border-radius:12px;margin:0 0 10px;
+}
+.ns-daily-checkin-dialog .ns-checkin-compass-result>div{display:grid;gap:2px}
+.ns-daily-checkin-dialog .ns-checkin-compass-result small{font:750 9px/1.3 system-ui,sans-serif;letter-spacing:.09em;color:#67826a}
+.ns-daily-checkin-dialog .ns-checkin-compass-result strong{font:650 17px/1.3 Georgia,serif;color:#225139}
+.ns-daily-checkin-dialog .ns-checkin-compass-result button{background:none;border:0;color:#4f7356;cursor:pointer}
+.ns-daily-checkin-dialog .ns-checkin-open-compass{
+ padding:10px 13px;min-height:42px;border-radius:11px;border:1px solid #cbdcc7;
+ background:#f1f6eb;color:#2b6244;cursor:pointer;
+ font:750 12px/1.35 system-ui,sans-serif;margin-bottom:15px;
+}
+.ns-daily-checkin-dialog .ns-checkin-optional{
+ padding:12px 15px;border:1px solid #dbe4d7;background:#eff3e9;border-radius:14px;
+}
+.ns-daily-checkin-dialog .ns-checkin-optional>p{margin:0 0 11px;font:750 12px/1.3 system-ui,sans-serif;color:#315a42}
+.ns-daily-checkin-dialog .ns-checkin-sliders{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-bottom:11px;
+}
+.ns-daily-checkin-dialog .ns-checkin-sliders label{
+ min-width:0;display:grid;grid-template-columns:1fr auto;gap:7px;
+ background:#fffdf7;padding:11px 12px;border-radius:11px;
+ color:#315641;font:700 12px/1.4 system-ui,sans-serif;
+}
+.ns-daily-checkin-dialog .ns-checkin-sliders input{grid-column:1/-1;width:100%;accent-color:#2d704d}
+.ns-daily-checkin-dialog .ns-checkin-notes{display:grid;gap:6px;font:700 12px/1.3 system-ui,sans-serif;color:#305840}
+.ns-daily-checkin-dialog .ns-checkin-notes span{font-weight:400}
+.ns-daily-checkin-dialog .ns-checkin-notes textarea{
+ width:100%;box-sizing:border-box;padding:12px;border:1px solid #d3e1cf;background:#fffdf8;color:#294c3a;
+ font:400 13px/1.55 system-ui,sans-serif;border-radius:10px;resize:vertical;
+}
+.ns-daily-checkin-dialog .ns-checkin-footer{
+ display:flex;align-items:center;justify-content:space-between;gap:13px;flex-wrap:wrap;
+ padding:15px 0 2px;color:#6c806d;font:600 12px/1.4 system-ui,sans-serif;
+}
+.ns-daily-checkin-dialog .ns-checkin-save{
+ min-height:46px;padding:11px 20px;background:#275e42;color:#fffdf4;
+ border:1px solid #265b40;border-radius:13px;
+ font:750 13px/1.25 system-ui,sans-serif;cursor:pointer;box-shadow:0 3px 9px #2e67451f;
+}
+.ns-daily-checkin-dialog [data-ns-checkin-status]{color:#8d4839;font:650 12px/1.45 system-ui,sans-serif;margin:8px 0 0}
+.ns-daily-checkin-dialog .ns-checkin-compass-hint{
+ font:400 13px/1.55 system-ui,sans-serif;color:#52705b;margin:0 0 13px;
+}
+.ns-daily-checkin-dialog .ns-embedded-compass{max-width:none!important;padding:0}
+.ns-daily-checkin-dialog .ns-embedded-compass .emotion-intro-note{padding:11px 14px;margin:0 0 10px}
+.ns-daily-checkin-dialog .ns-embedded-compass .emotion-level-tabs{margin:10px 0}
+.ns-daily-checkin-dialog .ns-embedded-compass .compass-redesign{gap:13px;grid-template-columns:minmax(0,1.35fr) minmax(240px,.65fr)}
+.ns-daily-checkin-dialog .ns-embedded-compass .compass-card{padding:13px}
+.ns-daily-checkin-dialog .ns-embedded-compass .compass-plot{max-width:300px;max-height:300px;margin:22px auto 30px}
+.ns-daily-checkin-dialog .ns-embedded-compass .compass-profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ns-daily-checkin-dialog .ns-embedded-compass .emotion-word-browser{margin-top:16px}
+.ns-daily-checkin-dialog .ns-embedded-compass .emotion-word-results{max-height:285px;overflow-y:auto}
+.ns-daily-checkin-dialog .ns-embedded-compass .emotion-page>.section:first-child{margin-top:0}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-daily-checkin{
+ display:flex!important;align-items:center;gap:11px;min-height:70px;
+ width:100%;padding:13px 16px!important;box-sizing:border-box;
+ background:linear-gradient(100deg,#e1eeda,#f7f9ed)!important;
+ border:1px solid #b9d2bb!important;border-radius:17px!important;
+ color:#24533c!important;text-decoration:none;text-align:left;
+ box-shadow:0 5px 13px #35583a1e!important;
+ cursor:pointer;
+}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-daily-checkin span:nth-of-type(1){display:grid;gap:3px;flex:1}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-daily-checkin strong{font:750 16px/1.35 system-ui,sans-serif}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-daily-checkin small{font:400 12px/1.4 system-ui,sans-serif;color:#5d7960}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-daily-checkin:hover{background:#d5e8cf!important;border-color:#87b18f!important}
+body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-daily-checkin:focus-visible,
+.ns-daily-checkin-dialog :is(button,textarea):focus-visible,
+body.app-body #main .life-unified .life-daily-actions button:focus-visible{
+ outline:3px solid #b98441;outline-offset:3px;
+}
+@media(max-width:990px){
+ body.app-body #main .life-unified .life-daily-actions{display:grid;grid-template-columns:1fr}
+ body.app-body #main .life-unified .life-daily-primary{flex:1 1 auto}
+ body.app-body #main .life-unified .life-daily-secondary{justify-content:flex-start}
+}
+@media(max-width:720px){
+ .ns-daily-checkin-dialog .ns-checkin-moods{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .ns-daily-checkin-dialog .ns-embedded-compass .compass-redesign{grid-template-columns:minmax(0,1fr)}
+ .ns-daily-checkin-dialog .ns-embedded-compass .compass-profile-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+ .ns-daily-checkin-dialog{width:97vw;max-height:96dvh;border-radius:15px}
+ .ns-daily-checkin-dialog .ns-checkin-window{max-height:96dvh}
+ .ns-daily-checkin-dialog .ns-checkin-header{padding:15px 15px 9px}
+ .ns-daily-checkin-dialog .ns-checkin-tabs{padding:8px 10px}
+ .ns-daily-checkin-dialog .ns-checkin-tabs button{padding:8px 10px;font-size:11px}
+ .ns-daily-checkin-dialog .ns-checkin-content{padding:13px 12px}
+ .ns-daily-checkin-dialog .ns-checkin-moods{gap:5px}
+ .ns-daily-checkin-dialog .ns-checkin-moods label>span{min-height:78px;font-size:10px}
+ .ns-daily-checkin-dialog .ns-checkin-sliders{grid-template-columns:1fr}
+ .ns-daily-checkin-dialog .ns-checkin-footer .ns-checkin-save{width:100%}
+ body.app-body #main .life-unified .life-daily-primary{flex-wrap:wrap}
+ body.app-body #main .life-unified .life-daily-open{width:100%}
+ body.app-body #main .life-unified .life-daily-primary-copy strong{font-size:21px}
+ body.app-body #main .life-unified .life-reminder-dialog{width:96vw}
+}
+html[data-theme=dark] .ns-daily-checkin-dialog{background:#273d30;border-color:#587460;color:#ecf3e8}
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-header,
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-tabs{background:#304936;border-color:#527357}
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-header :is(h2,p),
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-prompt :is(strong,span),
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-optional :is(label,p),
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-compass-hint{color:#e4f3e3}
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-moods label>span,
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-optional,
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-sliders label,
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-compass-result{background:#365240;color:#e7f5e7;border-color:#65876b}
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-moods label>span{color:#e7f5e7}
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-moods input:checked+span{background:#45694e;border-color:#b2d1a7}
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-notes textarea{background:#2b4534;color:#f4f7ed;border-color:#628168}
+html[data-theme=dark] .ns-daily-checkin-dialog .ns-checkin-compass-result strong{color:#e4f4e0}
+html[data-theme=dark] body.app-body #main .life-unified .life-daily-primary{background:#304a36;border-color:#5c805f}
+html[data-theme=dark] body.app-body #main .life-unified .life-daily-primary :is(strong,small){color:#e4f4e2}
+html[data-theme=dark] body.app-body #main .life-unified .life-daily-secondary button{background:#304a36;color:#e7f4e5;border-color:#58745d}
+html[data-theme=dark] body.app-body #main .life-unified .life-reminder-dialog{background:#273e31;color:#e7f3e4}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-daily-checkin{background:#33533d!important;border-color:#68856b!important;color:#eaf3e5!important}
+html[data-theme=dark] body.app-body.ns-shell-v1 #main .ns-home-refined .ns-home-daily-checkin small{color:#d1e2d3}
+html[data-low-stim=true] .ns-daily-checkin-dialog::backdrop,
+html[data-low-stim=true] body.app-body #main .life-unified .life-reminder-dialog::backdrop{backdrop-filter:none}
+@media(prefers-reduced-motion:reduce){.ns-daily-checkin-dialog *,body.app-body #main .life-unified .life-daily-actions *{transition:none!important;scroll-behavior:auto!important}}

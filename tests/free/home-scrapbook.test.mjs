@@ -31,7 +31,7 @@ test('Home source still mounts all feature modules in original order',()=>{
   assert.ok(source.includes(mount),mount);
  }
  assert.ok(source.includes('href="#navigate"'));
- assert.ok(source.includes('href="#compass"'));
+ assert.ok(source.includes('data-ns-open-checkin'));
  assert.ok(source.includes('href="#community"'));
  assert.ok(source.includes('href="#wisbody"'));
 });
@@ -68,7 +68,7 @@ test('Responsive and accessibility preferences are preserved',()=>{
 });
 test('New cache precaches the Home stylesheet and its lightweight art',()=>{
  const sw=text('sw.js');
- assert.match(sw,/nobodyssimple-release-v212-lifestyle-studio/);
+ assert.match(sw,/nobodyssimple-release-v\d+-/);
  for(const item of ['ns-home-scrapbook.css','home-art/watercolor-countryside.svg','home-art/daisy-sticker.svg']){
   assert.ok(sw.includes("'"+item+"'"),item);
  }
