@@ -1136,3 +1136,36 @@ html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-tasks .life
 @media(prefers-reduced-motion:reduce){
  body.app-body #main .life-unified .life-drawer-chevron{transition:none}
 }
+
+/* Specific dark palette for all high-priority surfaces.
+   ID-level studio selectors otherwise out-rank the generic dark card rule. */
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-tasks,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-calendar,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-checkin,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-reminders,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed{
+ background:linear-gradient(130deg,#283e31,#314938);
+ border-color:#526f58;color:#e5f0e4;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-meta strong{
+ background:#426447;color:#f2f9ee;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-step b{
+ background:#435d46;color:#edf6e9;border-color:#759479;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-trail-step.is-current b{
+ background:#b9dfab;color:#153d2a;border-color:#b9dfab;box-shadow:0 0 0 4px #41644a;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-milestone .symbol{
+ color:#e9f3df;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-persona :is(strong,small),
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-today-label :is(span,strong),
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-quest-meta span,
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-tasks .life-task-options-grid .field,
+html[data-theme="dark"] body.app-body #main .life-unified :is(.life-checkin-drawer,.life-settings-drawer)>summary small{
+ color:#e5f0e4;
+}
+html[data-theme="dark"] body.app-body #main .life-unified #lifestyle-deed-card .life-practice-action .life-practice-task{
+ color:#fff6df;
+}
