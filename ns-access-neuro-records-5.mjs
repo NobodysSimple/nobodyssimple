@@ -57,7 +57,7 @@ P('Keeping pleasure separate from achievement',
 'Belonging among people who understand the effort',
 [
 'Neurodivergent communities can provide shared language and practical knowledge. A person may hear someone describe sensory overload or time blindness and recognise an experience they struggled to explain. That recognition can be meaningful even when the details of their lives differ.',
-'No community represents every autistic or ADHD person. Members may disagree about identity labels or the value of diagnosis. A respectful group allows different needs without turning disagreement into a test of authenticity.',
+'No community represents every autistic or ADHD person. Members may disagree about identity labels or the value of diagnosis. A respectful group allows different needs without turning disagreement into a test of authenticity. The same principle applies when someone needs a quieter environment or a slower pace for replying.',
 'Social access matters inside community spaces too. A noisy meetup may be unsuitable for a person seeking sensory understanding. Online chat may work for someone who needs processing time. A group is more welcoming when it offers varied ways to participate instead of assuming one form of socialising suits everyone.',
 'Some people worry that they do not belong without formal diagnosis. The relevant rules depend on the particular group, and it is reasonable to ask. You can explore peer support without sharing private assessment details with strangers.',
 'Communities can also reproduce exclusion. A member may be mocked for needing greater support or for having different communication preferences. You do not have to remain in a group that makes belonging conditional on suppressing the very needs that brought you there.',
