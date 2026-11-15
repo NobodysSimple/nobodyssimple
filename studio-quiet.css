@@ -83,3 +83,49 @@
 @media(prefers-reduced-motion:reduce){
  .creator-body *{scroll-behavior:auto!important;animation:none!important}
 }
+
+/* Topic guide live preview uses the public topic section structure, scaled to
+   an editorial preview without any invented diagnosis or progress score. */
+.creator-body .studio-topic-preview .ns-editorial-topic{
+ padding:clamp(17px,2.5vw,27px);margin:0;
+ border-radius:18px;background:#fffdf6;border:1px solid #dde5d5;
+ box-shadow:0 7px 22px rgba(65,76,49,.06);color:#294d39;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-kicker{
+ font:800 10px/1.6 system-ui,sans-serif;letter-spacing:.075em;color:#64806a;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic h2{
+ font:700 clamp(23px,2.6vw,31px)/1.25 Georgia,serif;color:#28513b;margin:8px 0;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-heading{
+ padding-bottom:14px;margin-bottom:17px;border-bottom:1px solid #e0e7d9;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-heading p{
+ color:#60715e;font:13px/1.65 system-ui,sans-serif;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-sections{
+ display:grid;gap:12px;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-panel{
+ display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;
+ padding:17px;border:1px solid #dce5d9;border-radius:14px;background:#fffefa;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-index{
+ display:grid;place-items:center;border-radius:50%;width:28px;height:28px;
+ background:#e4eddd;color:#2b543b;font:800 12px/1 system-ui,sans-serif;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-panel small{
+ display:block;color:#708673;font:800 10px/1.4 system-ui,sans-serif;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-panel h3{
+ font:700 20px/1.32 Georgia,serif;margin:5px 0 10px;color:#30533e;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-panel p{
+ color:#485d4b;font:14px/1.7 system-ui,sans-serif;white-space:normal;margin:10px 0;
+}
+.creator-body .studio-topic-preview .ns-editorial-topic-footnote{
+ color:#607564;font:12px/1.6 system-ui,sans-serif;
+}
+.creator-body #moderation-view .studio-mod-frame{
+ box-shadow:0 10px 28px rgba(60,77,61,.06);
+}
