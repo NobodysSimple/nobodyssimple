@@ -28,7 +28,7 @@ P('The journey home',
 'Access to quieter transport or transitional space can change whether recovery begins promptly.',
 'Which part of the journey adds strain?|Is there a quieter route or time?|What safety needs apply to hearing protection?|Can someone assist with the journey?',
 'A train announcement startled me on the way home|A busy bus prolonged my overload|I struggled to navigate a bright station|I needed quiet before continuing my journey',
-'Identify a lower-input route when possible.|Carry preferred ear protection while remaining aware of safety signals.|Leave enough time to avoid a rushed transfer.|Use a familiar waiting place between journeys.|Ask for help with navigation before reaching overload.',
+'Identify a lower-input route when possible.|Carry preferred ear protection while remaining aware of safety signals.|Leave enough time to avoid a rushed transfer.|Use a familiar waiting place between journeys.|Arrange familiar directions or accessible travel assistance before overload makes navigation difficult.',
 'Request accessible travel assistance where available.|Ask an event host about a quiet exit route.|Arrange a pickup for an especially demanding appointment.|Tell a companion what support helps on the journey.|Seek travel adjustments for regular work or study commitments.'
 ),
 P('Finding the right input',
