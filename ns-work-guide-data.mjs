@@ -27,7 +27,7 @@ const stages=Object.freeze([
  'What the evidence can and cannot settle','A safe next decision'
 ]);
 const fail=(id,reason)=>{throw new Error('Work guide '+id+': '+reason);};
-const safeIdSet=new Set(['workplace-bullying','financial-insecurity','housing-instability','housing','money','unfairness','institutional-injustice']);
+const safeIdSet=new Set(['workplace-bullying','workplace-discrimination','occupational-trauma','workplace-moral-injury','financial-insecurity','housing-instability','housing','money','unfairness','institutional-injustice','educational-pressure-family','educational-exclusion']);
 function build(d){
  const id=d.id,meta=canonical.get(id);
  if(!meta)fail(id,'not in the work catalogue');
@@ -111,7 +111,7 @@ function build(d){
   contextSequence:true,
   sequenceNote:'These circumstances and responses may interact; there is no universal personal cycle.',
   ideas:{actions:ideas,support:ideas},
-  noPersist:['workplace-bullying','financial-insecurity','housing-instability','housing','institutional-injustice'].includes(id),
+  noPersist:['workplace-bullying','workplace-discrimination','occupational-trauma','workplace-moral-injury','financial-insecurity','housing-instability','housing','institutional-injustice','educational-pressure-family'].includes(id),
   pullIndex:5,
   evidence:'This manual offers individually written explanations and practical exercises, not a diagnosis or a validated treatment. Work, money, education, housing and access may involve real external barriers. Use the linked resource for relevant evidence or practical support; an exercise cannot replace rights, protection or essential resources.'
  });
