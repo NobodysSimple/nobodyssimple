@@ -224,7 +224,13 @@ function build(id){
   whyStages:stageNames[d.domain],whyCases,ideas,
   sources:sourceList,safety,prominentSafety:highPrivacy.has(id)?safety:'',
   noPersist:highPrivacy.has(id),
-  contextSequence:true,pullIndex:6,
+  contextSequence:true,
+  sequenceNote:d.domain==='culture'?
+   'What matters is the actual context. Where another person or institution is treating you unfairly, the responsibility for that behaviour does not belong to you.':
+   d.domain==='migration'?
+   'Access, legal rules and available support can shape what is possible. These examples are not a timetable for adjustment or proof of a psychological cause.':
+   'Beliefs, community expectations and personal meaning can interact in different ways. None of these examples can decide what you should believe.',
+  pullIndex:6,
   evidence:'This is a topic-specific educational formulation informed by relevant research and support guidance. The possible routes and examples are not validated diagnoses or predictions. For structural harms, the facts, rights and available practical remedies matter more than changing a personal interpretation.'
  });
 }
