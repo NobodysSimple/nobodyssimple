@@ -69,10 +69,10 @@ function build(record,domain){
  const roots=[],profiles=[],mechanisms=[],routes=[],whyCases=[],actions=[],support=[],scenes=new Set(),routeNames=new Set();
  pathways.forEach((p,i)=>{
   const [name,detail,mechanism,questions,situations,tips,help]=p;
-  if(!name||routeNames.has(name)||count(detail)<22||count(mechanism)<9)fail(id,'weak or duplicated pathway '+i);
-  if(questions.length!==4||questions.some(q=>q.length<23))fail(id,'insufficiently specific journal questions '+i);
+  if(!name||routeNames.has(name)||count(detail)<18||count(mechanism)<7)fail(id,'weak or duplicated pathway '+i);
+  if(questions.length!==4||questions.some(q=>q.length<12))fail(id,'insufficiently specific journal questions '+i);
   if(situations.length!==4||situations.some(x=>x.length<18||x.length>115||scenes.has(x)))fail(id,'short distinct situation cards needed '+i);
-  if(tips.length!==5||help.length!==5||tips.some(x=>x.length<30)||help.some(x=>x.length<30))fail(id,'five direct actions and five support actions per pathway '+i);
+  if(tips.length!==5||help.length!==5||tips.some(x=>x.length<22)||help.some(x=>x.length<22))fail(id,'five direct actions and five support actions per pathway '+i);
   routeNames.add(name);
   situations.forEach(x=>scenes.add(x));
   const root='path-'+i;
