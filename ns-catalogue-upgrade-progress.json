@@ -75,6 +75,25 @@
       },
       "routing": "existing body guide direct atlas and workbook routes; exact ID added to BODY_IDS",
       "verification": "static schema review; regression test committed; runtime test execution pending"
+    },
+    {
+      "id": "sensory",
+      "area": "health",
+      "domain": "body",
+      "guide": "ns-body-guide-data.mjs",
+      "commits": [
+        "10747e16cd9fefb6b39c988f74218c08db29fb7e",
+        "76b26a222ad91649f117e78b399fa0fae691b331"
+      ],
+      "contentChecks": {
+        "articleWords": 577,
+        "journalRoutes": 4,
+        "whyQuestions": 10,
+        "contextualSituations": 16,
+        "sourceLinks": 3
+      },
+      "routing": "existing body direct atlas and workbook routes; BODY_IDS dynamically derived",
+      "verification": "static schema and regression assertions authored; CI execution pending"
     }
   ],
   "pendingIds": "Derived exactly at runtime by ns-catalogue-progress.mjs:pending; not duplicated as potentially stale JSON",
@@ -84,5 +103,5 @@
     "The body-domain return link was added to the shared renderer.",
     "Need verify GitHub Actions and browser tests; no live browser test has yet been performed."
   ],
-  "lastStep": "Added pain manual, four journals and sixteen contextual cases; test execution pending. Continue remaining body topics."
+  "lastStep": "Added sensory overwhelm manual with four journals and sixteen contextual cases. Runtime test execution pending; continue remaining body topics."
 }
