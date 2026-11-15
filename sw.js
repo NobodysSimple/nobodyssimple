@@ -3,7 +3,7 @@
  * static assets may be cached; Firebase requests and personal data never are.
  * New assets are cached when visited rather than forcing a large precache.
  */
-const CACHE = 'nobodyssimple-release-v216-lifestyle-workflow';
+const CACHE = 'nobodyssimple-release-v217-cfm-tips';
 const OWN_CACHE_PREFIXES = ['nobodyssimple-v', 'nobodyssimple-release-v'];
 const SCOPE = self.registration.scope;
 const OFFLINE = new URL('offline.html', SCOPE).href;
@@ -20,7 +20,7 @@ const INSTALL_OPTIONAL = [
   'ns-problem-map.mjs', 'ns-universal-console.mjs', 'ns-problem-guide.mjs', 'ns-emotional-calculator.css',
   'ns-precision-content.mjs', 'ns-precision-console.mjs', 'ns-precision-guide.mjs', 'ns-precision.css',
   'ns-inclusive-topics-a.mjs','ns-inclusive-topics-b.mjs','ns-inclusive-topics.mjs',
-  'ns-cfm-culture.mjs','ns-cfm-faith.mjs','ns-cfm-migration.mjs','ns-cfm-guides.mjs','ns-cfm-extra-culture.mjs','ns-cfm-extra-faith.mjs','ns-cfm-extra-migration.mjs','ns-cfm-prose-culture.mjs','ns-cfm-prose-faith.mjs','ns-cfm-prose-migration.mjs','ns-cfm-manual-data.mjs', 'ns-cfm-advice-culture.mjs','ns-cfm-advice-faith.mjs','ns-cfm-advice-migration.mjs', 'ns-manual-popup-advice.mjs', 'ns-cfm-scenes-culture.mjs','ns-cfm-scenes-faith.mjs','ns-cfm-scenes-migration.mjs',
+  'ns-cfm-culture.mjs','ns-cfm-faith.mjs','ns-cfm-migration.mjs','ns-cfm-guides.mjs','ns-cfm-extra-culture.mjs','ns-cfm-extra-faith.mjs','ns-cfm-extra-migration.mjs','ns-cfm-prose-culture.mjs','ns-cfm-prose-faith.mjs','ns-cfm-prose-migration.mjs','ns-cfm-manual-data.mjs', 'ns-cfm-advice-culture.mjs','ns-cfm-advice-faith.mjs','ns-cfm-advice-migration.mjs', 'ns-cfm-advice-more-culture.mjs','ns-cfm-advice-more-faith.mjs','ns-cfm-advice-more-migration.mjs', 'ns-manual-popup-advice.mjs', 'ns-cfm-scenes-culture.mjs','ns-cfm-scenes-faith.mjs','ns-cfm-scenes-migration.mjs',
    'ns-atlas-extended.mjs','ns-atlas-variations.mjs','ns-atlas-extended-variations.mjs','ns-atlas-core.mjs','ns-atlas-console.mjs',
   'ns-atlas-session.mjs','ns-atlas-worksheets.mjs','ns-atlas-guide.mjs','ns-atlas-tool.mjs','ns-atlas.css',
   'ns-reasoning-model.mjs','ns-reasoning-console.mjs','ns-reasoning-bridge.mjs','ns-reasoning.css',
