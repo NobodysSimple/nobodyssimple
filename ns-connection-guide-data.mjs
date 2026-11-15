@@ -62,7 +62,7 @@ function build(d){
    ...d.profiles.map(p=>p[1]),
    ...routes.map(r=>'Consider whether support could help with: '+r.label.toLowerCase()+'.'),
    ...d.now.steps.slice(0,2)];
- if(support.length!==20)fail(id,'unexpected support length');
+ if(support.length!==24)fail(id,'unexpected support length');
  const actions=[...examples.map(x=>x.action),...routes.map(r=>r.practice),...d.now.steps,d.mechanisms[0][1]];
  if(actions.length!==24)fail(id,'action set');
  return Object.freeze({...d,cycle,roots,routes,
