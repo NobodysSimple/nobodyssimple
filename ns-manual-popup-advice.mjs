@@ -11,7 +11,10 @@ const identity=s=>normalise(s).toLocaleLowerCase().replace(/[.!?]+$/,'').replace
  * The catalogue retains its complete source arrays for research and revisions;
  * only their optional popup presentation is edited.
  */
-export function practicalPopupIdeas(guide,kind,{limit=12}={}){
+export function practicalPopupIdeas(guide,kind,{limit}={}){
+ // Culture, Faith and Migration have individually authored extended lists.
+ // Other completed catalogues retain the established twelve-item presentation.
+ const maxItems=limit??(['culture','faith','migration'].includes(guide?.domain)?20:12);
  const list=guide?.ideas?.[kind];
  if(!Array.isArray(list))return [];
  const result=[],seen=new Set();
@@ -25,7 +28,7 @@ export function practicalPopupIdeas(guide,kind,{limit=12}={}){
   if(seen.has(key))continue;
   seen.add(key);
   result.push(advice);
-  if(result.length>=limit)break;
+  if(result.length>=maxItems)break;
  }
  return result;
 }
