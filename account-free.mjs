@@ -64,16 +64,12 @@ export async function freeAccountCall(db,auth,name,data={}){
    // Remove all currently visible blog comments by this account. The ban rules
    // independently prevent future comments, posts, replies and reactions.
    let hidden=0;
-   for(let pass=0;pass<15;pass++){
-    const visible=await getDocs(query(collection(db,'comments'),where('authorUid','==',target),limit(100)));
-    const toRemove=visible.docs.filter(doc=>doc.data().status==='approved'||doc.data().status==='pending');
-    if(!toRemove.length)break;
+   const authored=await getDocs(query(collection(db,'comments'),where('authorUid','==',target)));
+   const visible=authored.docs.filter(entry=>['approved','pending'].includes(entry.data().status));
+   for(let i=0;i<visible.length;i+=100){
     const batch=writeBatch(db);
-    for(const item of toRemove)batch.update(item.ref,{status:'rejected',moderatedAt:serverTimestamp(),moderationReason:reason});
-    await batch.commit();hidden+=toRemove.length;
-    if(visible.docs.length<100)break;
-    // If many older rejected comments precede the first 100, a narrower
-    // administrative cleanup may be required; never present a partial sweep as complete.
+    for(const item of visible.slice(i,i+100))batch.update(item.ref,{status:'rejected',moderatedAt:serverTimestamp(),moderationReason:reason});
+    await batch.commit();hidden+=visible.slice(i,i+100).length;
    }
    return {ok:true,hidden};
   }
