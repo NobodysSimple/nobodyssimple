@@ -1,3 +1,4 @@
+import {offerFieldGuideDraft} from './ns-field-guide-workspace-ui.mjs';
 import {escapeHTML as esc} from './core.mjs';
 import {
  wisbodyReflections as quotes,wisbodyThemeNames,wisbodyNeedNames,
@@ -125,7 +126,7 @@ export function renderWisbody(root,{compact=false}={},getAccount=()=>({})){
       <label class="field" for="wisbody-note"><span id="wisbody-journal-question">${esc(modePrompts[journalMode])}</span>
        <textarea id="wisbody-note" maxlength="12000" rows="4" placeholder="Start wherever feels useful…" ${state().locked?'disabled':''}>${esc(value)}</textarea>
       </label>
-      <div class="row"><button type="button" class="button" id="wisbody-save" ${state().locked?'disabled':''}>Save this reflection</button><button type="button" class="button secondary" id="wisbody-export">Download notes</button><button type="button" class="chip" id="wisbody-delete" ${state().locked?'disabled':''}>Delete this note</button></div>
+      <div class="row"><button type="button" class="button" id="wisbody-save" ${state().locked?'disabled':''}>Save this reflection</button><button type="button" class="chip" id="wisbody-guide" ${state().locked?'disabled':''}>Keep in my Field Guide</button><button type="button" class="button secondary" id="wisbody-export">Download notes</button><button type="button" class="chip" id="wisbody-delete" ${state().locked?'disabled':''}>Delete this note</button></div>
       <p data-status role="status">${state().locked?'Unlock saved work in Account to journal here.':'Your writing is private; syncing follows your Account settings.'}</p>
       ${oldNoteCount?`<button type="button" class="chip" id="wisbody-legacy-export">Download ${oldNoteCount} notes from the earlier quote deck</button>`:''}
       <a href="#account/privacy">Privacy and syncing →</a>
@@ -166,6 +167,15 @@ export function renderWisbody(root,{compact=false}={},getAccount=()=>({})){
    pending[quotes[index].id]=event.target.value;persistDraft();
   });
   root.querySelector('#wisbody-save').addEventListener('click',persistNote);
+  root.querySelector('#wisbody-guide')?.addEventListener('click',()=>{
+    if(state().locked){setStatus(root,'Unlock saved work before opening your Field Guide.');return;}
+    const q=quotes[index],written=root.querySelector('#wisbody-note')?.value?.trim()||'';
+    offerFieldGuideDraft({type:'note',title:'Wisbody · '+q.patternTitle,
+      body:written||'Wisbody reflection to consider: '+q.text+'\n\nQuestion: '+q.prompt,
+      context:'A thought encountered in Wisbody. This is a prompt, not a conclusion about me.',
+      sources:[{app:'wisbody',id:q.id,title:q.patternTitle,href:'#wisbody'}]});
+    location.hash='#guide/workspace/compose/note';
+  });
   root.querySelector('#wisbody-export').addEventListener('click',()=>download('wisbody-reflections.json',{
    version:2,notes:{...safeNotes(read(QUOTE_KEY,{})),...pending},
    reflections:quotes.map(x=>({id:x.id,theme:x.theme,pattern:x.pattern,text:x.text}))
