@@ -152,7 +152,7 @@ function attach(root){const controller=new AbortController();clean=()=>controlle
       text:'I can know what happened without knowing why. An interpretation can be plausible without being proven.'+
         (selectedAction?' A possible next step I considered: '+selectedAction.name:''),
       context:'After practising the Forest Reality Sorter',sourceType:'lab',sourceId:'reality-sorter'});
-    location.hash='#guide/new';return;
+    location.hash='#guide/workspace/compose/note';return;
   }
   if(act==='restart'){mission=fresh();location.hash=missionHref('notice');if(location.hash===missionHref('notice'))renderCurrent();return;}
   if(act==='sort') {mission.sort[b.dataset.statement]=b.dataset.category;mission.sortChecked=false;renderCurrent(`[data-lab-action="sort"][data-statement="${b.dataset.statement}"][data-category="${b.dataset.category}"]`);return;}
