@@ -1,0 +1,79 @@
+/* Living Field Guide functional layers.
+ * The original ns-field-guide-journal.css remains authoritative for the
+ * physical open book, page textures, tabs, binding, artwork and Quick Tools.
+ */
+body.app-body.ns-shell-v1 #main .ns-fw{--fw-text:#34523f;--fw-border:#dacaa8;--fw-paper:#fffcf5;}
+body.app-body.ns-shell-v1 #main .ns-fw :is(h2,h3,h4){color:#294c38;overflow-wrap:anywhere;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-heading{display:flex;flex-direction:column;gap:10px;margin:8px 0 21px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-heading h2{font:400 clamp(27px,2.8vw,41px)/1.14 Georgia,serif;letter-spacing:-.04em;margin:0;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-heading>p:not(.ns-guide6-kicker){font-size:14px;color:#637562;line-height:1.5;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-panel{display:flex;flex-direction:column;gap:11px;padding:18px 16px;margin:15px 0;border:1px solid var(--fw-border);border-radius:15px;background:linear-gradient(135deg,#fffdf8,#f8f0df);box-shadow:2px 3px 0 #e6dbbf54;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-panel h3{font:500 24px/1.15 Georgia,serif;margin:0 0 6px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-panel p{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6;color:var(--fw-text);font-size:14px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-panel small,.ns-fw .ns-fw-small{font:400 12px/1.5 system-ui,sans-serif;color:#667b68;}
+body.app-body.ns-shell-v1 #main .ns-fw :is(.ns-fw-quick-form,.ns-fw-form){display:flex;flex-direction:column;gap:13px;margin:18px 0;padding:20px;background:#fffef8;border:1px solid #decfad;border-radius:17px;box-shadow:0 6px 15px #544a3320;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-quick-form h3{font:400 25px/1.2 Georgia,serif;}
+body.app-body.ns-shell-v1 #main .ns-fw :is(.ns-fw-quick-form,.ns-fw-form) textarea,
+body.app-body.ns-shell-v1 #main .ns-fw :is(.ns-fw-quick-form,.ns-fw-form) select,
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-label input,
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-label textarea,
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-label select,
+body.app-body.ns-shell-v1 #main .ns-fw [data-fw-link-select]{
+ width:100%;box-sizing:border-box;border:1px solid #c9bfa6;background:#fffefa;
+ border-radius:10px;font:400 14px/1.5 system-ui,sans-serif;color:#2d4b38;
+ padding:11px 12px;min-height:44px;max-width:100%;
+}
+body.app-body.ns-shell-v1 #main .ns-fw textarea{resize:vertical;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-label{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:700;color:#4d6650;max-width:100%;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:8px 0;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-actions a:not(.ns-guide6-primary),body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-link{
+ display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:12px;color:#28583d;
+ text-decoration:underline;text-underline-offset:3px;min-height:34px;
+}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-button{border:1px solid #a6bba2;border-radius:999px;background:#e8f0df;color:#2e5a40;font-size:12px;font-weight:700;padding:9px 14px;min-height:42px;cursor:pointer;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-button:hover{background:#d8e8d2;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:11px 0 15px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-card{display:flex;flex-direction:column;gap:9px;padding:15px;background:#fffefa;border:1px solid #ddcdae;border-radius:13px;box-shadow:2px 3px 0 #e7d9c2;min-height:130px;text-decoration:none;color:#345b41;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-card:hover{border-color:#749879;transform:translateY(-1px);}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-card__top{display:flex;justify-content:space-between;gap:5px;color:#8a7355;font-size:12px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-card strong{font:500 19px/1.15 Georgia,serif;color:#294a36;overflow-wrap:anywhere;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-card>span:not(.ns-fw-card__top){font:400 12px/1.45 system-ui,sans-serif;overflow-wrap:anywhere;color:#5e725e;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-empty{font:italic 14px/1.6 Georgia,serif;color:#75765d;padding:22px 5px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-illustration{display:block;width:150px;max-width:60%;height:auto;margin:30px auto;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-check{display:flex;align-items:center;gap:10px;font-size:14px;color:#405b44;line-height:1.4;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-check input{min-height:18px;min-width:18px;accent-color:#315f45;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-chip{display:inline-block;padding:6px 11px;margin:3px;border-radius:999px;background:#e6ece2;color:#4b654f;font:700 11px system-ui,sans-serif;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-stat-grid span{padding:10px 4px;border-radius:10px;background:#ecf1e7;text-align:center;font-size:10px;color:#47644c;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-stat-grid b{font:500 21px Georgia,serif;display:block;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-panel-head{display:flex;flex-direction:column;gap:7px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-body{font-size:16px!important;line-height:1.8!important;white-space:pre-wrap;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-detail-field{border-top:1px solid #ded1b6;padding:10px 0 2px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-detail-field h3{font:600 15px/1.3 system-ui,sans-serif;text-transform:capitalize;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-event{padding:12px 0;border-bottom:1px dashed #d9caab;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-event small{display:block;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-compare{padding:14px;border-radius:11px;background:#f2f0e4;display:flex;flex-direction:column;gap:10px;overflow-wrap:anywhere;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-compare h4{margin:0;font-size:15px;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-chapter-stages{display:flex;gap:6px;flex-wrap:wrap;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-chapter-stages button{text-transform:capitalize;}
+body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-tile{min-height:185px;}
+body.app-body.ns-shell-v1 #main .ns-fw :is(button,input,textarea,select,a):focus-visible{outline:3px solid #ae7443;outline-offset:3px;}
+@media(max-width:1320px){
+ body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-card-grid{grid-template-columns:minmax(0,1fr);}
+ body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:1100px){
+ body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-card-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:640px){
+ body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-card-grid{grid-template-columns:1fr;}
+ body.app-body.ns-shell-v1 #main .ns-fw :is(.ns-fw-form,.ns-fw-quick-form){padding:17px 13px;}
+ body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-heading h2{font-size:29px;}
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-fw{--fw-text:#d0e0cb;--fw-border:#567258;--fw-paper:#294232;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-fw :is(.ns-fw-panel,.ns-fw-form,.ns-fw-quick-form,.ns-fw-card){background:linear-gradient(135deg,#324937,#253c2e);border-color:#5b745e;box-shadow:none;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-fw :is(h2,h3,h4,.ns-fw-card strong,.ns-fw-heading h2,.ns-fw-panel p,.ns-fw-label,.ns-fw-check){color:#e9f2e4!important;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-fw :is(.ns-fw-card>span,.ns-fw-heading>p,.ns-fw-small,.ns-fw-empty){color:#c6d4c4!important;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-fw :is(.ns-fw-form input,.ns-fw-form textarea,.ns-fw-form select,.ns-fw-quick-form textarea,.ns-fw-quick-form select,.ns-fw-label input,.ns-fw-label textarea,.ns-fw-label select,[data-fw-link-select]){background:#1d3428;color:#f2f8ed;border-color:#7a9479;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-fw :is(.ns-fw-button,.ns-fw-stat-grid span,.ns-fw-chip,.ns-fw-compare){background:#365441;color:#eef7e9;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-actions a:not(.ns-guide6-primary),html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-fw .ns-fw-link{color:#bce7ba;}
