@@ -1,7 +1,7 @@
 import './ns-shell.mjs';
 import { renderLifestyle } from './lifestyle.mjs';
 import {installDailyCheckin,updateDailyCheckinButtons} from './ns-daily-checkin.mjs';
-import { renderNSFieldGuide, cleanupNSFieldGuide } from './ns-field-guide.mjs?v=field-journal-20261115';
+import { renderNSFieldGuide, cleanupNSFieldGuide } from './ns-field-guide.mjs?v=living-workspace-20261116';
 import {configureCommunity,cleanupCommunity,renderDiscussion,renderMemberProfile,renderMessages,renderDiscussionModeration} from './community-ui.mjs';
 import {enhanceToolGuide} from './tool-guidance.mjs';
 import {configureStrategy, renderWisbody, read as readStrategy} from './strategy.mjs';
