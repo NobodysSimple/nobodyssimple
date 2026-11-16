@@ -309,7 +309,7 @@ function library(learnRoute=[]) {
   // are independent and are never advertised as Learn courses.
   if(libraryState.view === 'home' || libraryState.view === 'courses'){
     main.innerHTML='<div class="ns-course-page" aria-label="Nobody’s Simple Courses"><div id="learn-course-hub"></div></div>';
-    renderCourseHub(main.querySelector('#learn-course-hub'),{focusCourses:libraryState.view==='courses',route:learnRoute});
+    renderCourseHub(main.querySelector('#learn-course-hub'),{focusCourses:libraryState.view==='courses'||learnRoute[0]==='category',route:learnRoute});
     return;
   }
   main.innerHTML='<div class="wrap standalone-learn"><section id="home-learning" aria-label="Published library"></section></div>';
