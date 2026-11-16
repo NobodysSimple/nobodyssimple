@@ -82,6 +82,12 @@ function sourceChoices(storage) {
     const p=JSON.parse(storage.getItem('ns-personal-maps-v1')||'[]');
     if(Array.isArray(p))p.slice(0,20).forEach(x=>push('maps',x.id,x.title||'Saved personal map','#maps'));
   }catch{}
+  try {
+    const notes=JSON.parse(storage.getItem('ns-learn-quote-notes-v1')||'{}');
+    if(notes && typeof notes==='object' && !Array.isArray(notes))
+      Object.entries(notes).filter(([,value])=>typeof value==='string'&&value.trim())
+        .slice(-20).forEach(([id,value])=>push('wisbody',id,'Saved Wisbody reflection: '+value.trim().slice(0,65),'#wisbody'));
+  }catch{}
   return list;
 }
 function sourcesPanel(storage) {
@@ -109,7 +115,7 @@ function dashboard(data,quickToolsHTML,storage) {
 }
 function listPage(data,view,quickToolsHTML) {
   const all=live(data),config=VIEWS.find(x=>x[0]===view)||VIEWS[0];
-  let chosen=all.filter(r=>view==='inbox'?['note','notebook'].includes(r.type):view==='chapters'?r.type==='chapter':view==='self'?r.type==='self':view==='practice'?['practice','conversation'].includes(r.type):view==='reference'?r.type==='reference':true);
+  let chosen=all.filter(r=>view==='inbox'?['note','notebook'].includes(r.type):view==='chapters'?r.type==='chapter':view==='self'?r.type==='self':view==='practice'?['practice','conversation'].includes(r.type):view==='reference'?(r.type==='reference'||r.pinned||Boolean(r.usefulWhen)):true);
   chosen.sort((a,b)=>b.updatedAt.localeCompare(a.updatedAt));
   const active=view==='reference'?'archive':view;
   const links=view==='practice'?[['practice','New practice'],['conversation','Prepare a conversation']]:view==='inbox'?[['note','New thought'],['notebook','New notebook']]:view==='self'?[['self','Add to my map']]:view==='reference'?[['reference','New useful-when card']]:[['chapter','Open a Chapter']];
@@ -230,6 +236,7 @@ export function renderWorkspaceFieldGuide(main,parts=[],{quickToolsHTML=''}={}){
    return ()=>{};
  }
  const data=result.data,view=parts[0]||'home';
+ if(view!=='compose')queuedHandoff=null;
  let screen='';
  if(view==='home')screen=dashboard(data,quickToolsHTML,localStorage);
  else if(['inbox','chapters','self','practice','reference'].includes(view))screen=listPage(data,view,quickToolsHTML);
@@ -321,7 +328,7 @@ export function renderWorkspaceFieldGuide(main,parts=[],{quickToolsHTML=''}={}){
        if(!message)throw Error('No wording has been saved yet.');
        navigator.clipboard.writeText(message).then(()=>{b.textContent='Copied';}).catch(()=>{alert('Copy was unavailable. Select the text in the entry instead.');});
      }else if(act==='delete'){
-       if(!confirm('Delete this private record and its revision history? This cannot be undone.'))return;
+       if(!confirm(r?.sources.some(s=>s.app==='field-guide-v1')?'Delete this workspace copy? Your original note will remain in Original four collections; delete it there separately if you also want to remove that copy.':'Delete this private record and its revision history? This cannot be undone.'))return;
        deleteRecord(localStorage,id);location.hash='#guide';
      }else if(act.startsWith('convert:')){
        const type=act.slice(8);
