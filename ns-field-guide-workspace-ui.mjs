@@ -2,6 +2,14 @@ import {
   WORKSPACE_KEY,DRAFT_KEY,TYPES,CAPTURES,CHAPTER_STATES,STAGES,SELF_GROUPS,PRACTICE_TYPES,
   readWorkspace,saveRecord,amendRecord,addEvent,deleteRecord,live,exportWorkspace
 } from './ns-field-guide-workspace-data.mjs';
+let queuedHandoff=null;
+export function offerFieldGuideDraft(input={}){
+ const type=TYPES.includes(input.type)?input.type:'note';
+ queuedHandoff={type,title:String(input.title||'').slice(0,140),body:String(input.body||'').slice(0,30000),
+  context:String(input.context||'').slice(0,1500),capture:input.capture||'remember',
+  sources:Array.isArray(input.sources)?input.sources:[],links:Array.isArray(input.links)?input.links:[],
+  chapterId:input.chapterId||''};
+}
 const e=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const link=(url,label,cls='ns-fw-link')=>'<a class="'+cls+'" href="'+e(url)+'">'+e(label)+'</a>';
 const action=(name,label,id='',cls='ns-fw-button')=>'<button type="button" class="'+cls+'" data-fw-action="'+e(name)+'" data-id="'+e(id)+'">'+e(label)+'</button>';
@@ -150,7 +158,7 @@ function composePage(data,type,id,seedId,quickToolsHTML,storage) {
  if(id&&!old)return book(heading('NOT FOUND','This entry is unavailable'),quickToolsHTML);
  const d=old||seed||{};
  const draft=drafts()[type]||{};
- const v=old||seed?d:draft;
+ const v=old?d:(queuedHandoff?.type===type?queuedHandoff:(seed?d:draft));
  const chapterChoices=[['','No Chapter'],...all.filter(r=>r.type==='chapter'&&r.id!==id).map(r=>[r.id,r.title])];
  const notebooks=[['','No notebook'],...all.filter(r=>r.type==='notebook').map(r=>[r.id,r.title])];
  const statusChoices=type==='chapter'?CHAPTER_STATES.map(s=>[s,s]):
@@ -204,8 +212,9 @@ function recordPage(data,id,quickToolsHTML){
     '<button type="submit" class="ns-fw-button">Keep this reflection</button></form></section>';
  const right=heading('A WORKING RECORD','Return, revise, reconnect')+
   '<div class="ns-fw-actions">'+(r.type==='note'?['chapter','practice','conversation','reference'].map(t=>link('#guide/workspace/compose/'+t+'/'+encodeURIComponent(r.id),'Turn into '+t)).join(''):'')+
-  (r.type==='chapter'?link('#guide/workspace/compose/practice/'+encodeURIComponent(r.id),'Create a practice'):'' )+
+  (r.type==='chapter'?action('convert:practice','Create a practice',r.id):'' )+
   action('reconsider',"I'm not sure anymore",r.id)+'</div>'+
+  (r.type==='note'?'<p class="ns-fw-small">Select a passage in your note before choosing Turn into… to use only those words. Your original stays unchanged.</p>':'')+
   (r.type==='chapter'?'<div class="ns-fw-actions">'+CHAPTER_STATES.map(s=>action('status:'+s,s,r.id)).join('')+'</div>':'')+
   (r.dueAt?'<p><b>Revisit:</b> '+e(dateLabel(r.dueAt))+'</p>':'')+
   history+events+
@@ -283,12 +292,13 @@ export function renderWorkspaceFieldGuide(main,parts=[],{quickToolsHTML=''}={}){
        delete values.source;values.fields=fieldValues;values.pinned=fd.has('pinned');
        if(current){values.sources=current.sources;values.links=current.links;values.events=current.events;}
        else if(chosen)values.sources=[chosen];
+       if(!current&&queuedHandoff?.type===type){values.sources=[...(values.sources||[]),...(queuedHandoff.sources||[])];values.links=[...(values.links||[]),...(queuedHandoff.links||[])];}
        if(parts[2] && view==='compose'){
          const seed=live(data).find(x=>x.id===parts[2]);
          if(seed){values.links=[seed.id];if(seed.type==='chapter')values.chapterId=seed.id;}
        }
        const r=saveRecord(localStorage,type,values,id);
-       clearDraft(type);
+       clearDraft(type);queuedHandoff=null;
        location.hash='#guide/workspace/record/'+encodeURIComponent(r.id);
      } else if(form.matches('[data-fw-event]')){
        if(!String(values.text||'').trim())throw Error('Write something about what happened.');
@@ -313,6 +323,12 @@ export function renderWorkspaceFieldGuide(main,parts=[],{quickToolsHTML=''}={}){
      }else if(act==='delete'){
        if(!confirm('Delete this private record and its revision history? This cannot be undone.'))return;
        deleteRecord(localStorage,id);location.hash='#guide';
+     }else if(act.startsWith('convert:')){
+       const type=act.slice(8);
+       const selected=typeof window!=='undefined'?window.getSelection()?.toString()?.trim():'';
+       offerFieldGuideDraft({type,body:selected&&r.body.includes(selected)?selected:r.body,
+         context:r.context,links:[r.id],chapterId:r.type==='chapter'?r.id:''});
+       location.hash='#guide/workspace/compose/'+type+'/'+encodeURIComponent(r.id);
      }else if(act==='pin'){amendRecord(localStorage,id,{pinned:!r.pinned});redraw();}
      else if(act==='add-source'){
        const index=main.querySelector('[data-fw-source-select]')?.value;
