@@ -314,6 +314,18 @@ export function renderWorkspaceFieldGuide(main,parts=[],{quickToolsHTML=''}={}){
        if(!confirm('Delete this private record and its revision history? This cannot be undone.'))return;
        deleteRecord(localStorage,id);location.hash='#guide';
      }else if(act==='pin'){amendRecord(localStorage,id,{pinned:!r.pinned});redraw();}
+     else if(act==='add-source'){
+       const index=main.querySelector('[data-fw-source-select]')?.value;
+       if(index==='')throw Error('Choose a saved activity to connect.');
+       const chosen=sourceChoices(localStorage)[Number(index)];
+       if(!chosen)throw Error('That saved activity is no longer available.');
+       if(r.sources.some(s=>s.app===chosen.app&&s.id===chosen.id))throw Error('This activity is already connected.');
+       amendRecord(localStorage,id,{sources:r.sources.concat(chosen)});redraw();
+     } else if(act==='unlink-source'){
+       const index=Number(b.dataset.sourceIndex);
+       if(!Number.isSafeInteger(index)||index<0||index>=r.sources.length)throw Error('Link not found.');
+       amendRecord(localStorage,id,{sources:r.sources.filter((_,i)=>i!==index)});redraw();
+     }
      else if(act==='reconsider'){amendRecord(localStorage,id,{status:'reconsider'});redraw();}
      else if(act.startsWith('status:')){amendRecord(localStorage,id,{status:act.slice(7)});redraw();}
      else if(act.startsWith('stage:')){amendRecord(localStorage,id,{stage:act.slice(6)});redraw();}
