@@ -74,7 +74,7 @@ import {getNeedsMode} from './ns-needs-catalog.mjs';
 import {attachPathGuide,pathGuideForOption} from './ns-pathway-guidebook.mjs';
 import {attachSteadyGuidebookToTool,steadyGuide} from './ns-steady-guidebook.mjs';
 import {renderReasoningGuide,renderReasoningTool} from './ns-reasoning-bridge.mjs';
-import {renderCourseHub} from './ns-learn-courses.mjs?v=learn-artfix-20261115';
+import {renderCourseHub} from './ns-learn-courses.mjs?v=learn-catalog-20261116';
 import {renderNotebookBlogPost} from './ns-blog-notebook.mjs?v=hello-notebook-20261115-2';
 import {mountPublishedTopicEditorial} from './ns-topic-publications.mjs';
 import { renderSupport } from "./referrals.mjs";
@@ -304,12 +304,12 @@ function homePage({learningView=null,scrollTo=null,wizardOnly=false}={}) {
     section.scrollIntoView({block:'start'}); section.setAttribute('tabindex','-1'); section.focus({preventScroll:true});
   });
 }
-function library() {
+function library(learnRoute=[]) {
   // Course-only Learn is a standalone page. Legacy blog/video library routes
   // are independent and are never advertised as Learn courses.
   if(libraryState.view === 'home' || libraryState.view === 'courses'){
     main.innerHTML='<div class="ns-course-page" aria-label="Nobody’s Simple Courses"><div id="learn-course-hub"></div></div>';
-    renderCourseHub(main.querySelector('#learn-course-hub'),{focusCourses:libraryState.view==='courses'});
+    renderCourseHub(main.querySelector('#learn-course-hub'),{focusCourses:libraryState.view==='courses',route:learnRoute});
     return;
   }
   main.innerHTML='<div class="wrap standalone-learn"><section id="home-learning" aria-label="Published library"></section></div>';
@@ -995,12 +995,20 @@ function route() {
         libraryState.view=id;libraryState.query='';library();
       },
       learn: () => {
-        // Old interactive worlds, demos and shelves are no longer part of Learn.
-        // Their saved progress is untouched; no legacy route can mount them.
-        if(id && (id!=='courses'||routeParts.length>2)){location.replace('#learn');return;}
-        libraryState.view=id==='courses'?'courses':'home';
+        // Course catalogue: independent, linkable courses, not a mandatory
+        // syllabus. Old Journey content and progress remain untouched.
+        const bits=routeParts.slice(1).map(safeRoutePart);
+        const [kind]=bits;
+        const valid=!kind||(kind==='courses'&&bits.length===1)||
+          (kind==='category'&&bits.length===2)||
+          (kind==='course'&&bits.length===2)||
+          (kind==='how-it-works'&&bits.length===1)||
+          (kind==='lesson'&&bits.length===3)||
+          (kind==='review'&&(bits.length===1||bits.length===3));
+        if(!valid){location.replace('#learn');return;}
+        libraryState.view=kind==='courses'?'courses':'home';
         libraryState.query='';
-        library();
+        library(bits);
       },
       blog,
       writing: blog,
