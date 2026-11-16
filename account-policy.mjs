@@ -29,7 +29,9 @@ export const SAVED = {
   'ns-big-five-atlas-v1': ['tools','Saved Big Five atlas'],
   'ns-lifestyle-tasks-v1': ['tools','Older transferred focus tasks'],
   'ns-lifestyle-practice-v1': ['learning','Identity goals and everyday skill-practice history'],
-  'ns-field-guide-v1': ['guide','My private Field Guide'],
+  'ns-field-guide-v1': ['guide','Original Field Guide notes (preserved)'],
+  'ns-field-guide-workspace-v2': ['guide','Living Field Guide workspace: notes, chapters, practices and self-map'],
+  'ns-field-guide-draft-v1': ['drafts','Optional unfinished Field Guide draft'],
   'ns-simplyfocus-tasks-v1': ['tools','SimplyFocus tasks'],
 };
 export const CATEGORIES = {guide:'My private Field Guide',maps:'Maps and projects',library:'Favourites and recent tools',learning:'Learning progress',drafts:'Unfinished activities',reflections:'Personal reflections',mood:'Mood and check-in history',tools:'Saved tool settings'};
