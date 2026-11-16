@@ -183,7 +183,7 @@ function composePage(data,type,id,seedId,quickToolsHTML,storage) {
 function recordPage(data,id,quickToolsHTML){
  const all=live(data),r=all.find(x=>x.id===id);
  if(!r)return book(heading('NOT FOUND','This saved entry is unavailable'),quickToolsHTML);
- const related=all.filter(x=>r.links.includes(x.id)||x.chapterId===r.id||r.chapterId===x.id).filter(x=>x.id!==r.id);
+ const related=all.filter(x=>r.links.includes(x.id)||x.links.includes(r.id)||x.chapterId===r.id||r.chapterId===x.id||x.notebookId===r.id||r.notebookId===x.id).filter(x=>x.id!==r.id);
  const extras=Object.entries(r.fields).filter(([,v])=>v).map(([k,v])=>'<section class="ns-fw-detail-field"><h3>'+e(k.replace(/([A-Z])/g,' $1'))+'</h3><p>'+e(v)+'</p></section>').join('');
  const versions=r.history.slice().reverse();
  const left=heading('YOUR '+r.type.toUpperCase()+' · '+dateLabel(r.createdAt),r.title)+
@@ -194,7 +194,7 @@ function recordPage(data,id,quickToolsHTML){
     (r.type==='conversation'?'<div class="ns-fw-actions">'+action('copy','Copy my exact wording',r.id)+action('copy-short','Copy short version',r.id)+'</div>':'')+
     '<section class="ns-fw-panel"><h3>Related material</h3>'+cardSet(related,'Connect an earlier thought, practice or Chapter to keep its context.')+
     '<label class="ns-fw-label"><span>Connect another entry</span><select data-fw-link-select><option value="">Choose a saved entry</option>'+all.filter(x=>x.id!==r.id&&!r.links.includes(x.id)).map(x=>'<option value="'+e(x.id)+'">'+e(x.title)+'</option>').join('')+'</select></label>'+action('link','Connect this entry',r.id)+'</section>'+
-    (r.sources.length?'<section class="ns-fw-panel"><h3>Connected saved activities</h3>'+r.sources.map(s=>'<p>'+link(s.href||'#guide',s.title||s.app)+' <small>('+e(s.app)+')</small></p>').join('')+'</section>':'');
+    (r.sources.length?'<section class="ns-fw-panel"><h3>Connected saved activities</h3>'+r.sources.map((s,i)=>'<p>'+link(s.href||'#guide',s.title||s.app)+' <small>('+e(s.app)+')</small> <button type="button" class="ns-fw-button" data-fw-action="unlink-source" data-source-index="'+i+'" data-id="'+e(r.id)+'">Unlink</button></p>').join('')+'</section>':'');
  const history='<section class="ns-fw-panel"><h3>Past me / Present me</h3>'+
    (versions.length?'<p>Compare your earlier words with this revision. The app does not decide which one is correct.</p><label class="ns-fw-label"><span>Earlier version</span><select data-fw-version><option value="">Choose a revision</option>'+versions.map((v,i)=>'<option value="'+i+'">'+e(dateLabel(v.at))+' · revision '+v.revision+'</option>').join('')+'</select></label><div data-fw-version-detail></div>':'<p>Your earlier versions will appear here when you revise this page.</p>')+'</section>';
  const events='<section class="ns-fw-panel"><h3>What happened since?</h3>'+
@@ -209,6 +209,7 @@ function recordPage(data,id,quickToolsHTML){
   (r.type==='chapter'?'<div class="ns-fw-actions">'+CHAPTER_STATES.map(s=>action('status:'+s,s,r.id)).join('')+'</div>':'')+
   (r.dueAt?'<p><b>Revisit:</b> '+e(dateLabel(r.dueAt))+'</p>':'')+
   history+events+
+  (sourceChoices(localStorage).length?'<section class="ns-fw-panel"><h3>Connect saved progress</h3><p>Choose an existing lesson, identity practice, map or navigation project. This creates a link only; your original work stays where it is.</p><label class="ns-fw-label"><span>Available saved activities</span><select data-fw-source-select><option value="">Choose an activity</option>'+sourceChoices(localStorage).map((s,i)=>'<option value="'+i+'">'+e(s.app+': '+s.title)+'</option>').join('')+'</select></label>'+action('add-source','Connect activity',r.id)+'</section>':'')+
   '<section class="ns-fw-panel"><h3>Review later</h3><form data-fw-due data-id="'+e(r.id)+'">'+label('dueAt','Choose a date (or clear it)',r.dueAt||'','date')+'<button type="submit" class="ns-fw-button">Save review date</button></form></section>'+
   '<div class="ns-fw-actions">'+action('delete','Delete entry',r.id,'ns-guide6-danger')+link('#guide/workspace/archive','Life Archive')+'</div>'+quickToolsHTML;
  return book(left,right,r.type==='practice'||r.type==='conversation'?'practice':r.type==='self'?'self':r.type==='chapter'?'chapters':'inbox');
