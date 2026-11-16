@@ -138,10 +138,14 @@ export function renderNSFieldGuide(main,parts=[],account={}){
  if(parts.length===1&&parts[0]==='urge-pause'){detach=renderNSUrgePause(main);return;}
  if(parts.length===1&&parts[0]==='quick-tools'){main.innerHTML=quickToolsPage();return;}
  if(account.locked){main.innerHTML=lockedPage();return;}
+ if(!parts.length||parts[0]==='workspace'){
+   detach=renderWorkspaceFieldGuide(main,parts[0]==='workspace'?parts.slice(1):[],{quickToolsHTML:quickToolsSection()});
+   return;
+ }
  const result=readFieldGuide(localStorage);if(!result.ok){main.innerHTML=errorPage(result.error);return;}
  const entries=result.guide.entries;
  const [a,b,...extra]=parts;let body;
- if(!a)body=listScreen(entries);
+ if(!a||(a==='legacy'&&!b&&!extra.length))body=listScreen(entries);
  else if(GUIDE_CATEGORIES.some(c=>c.id===a)&&!b&&!extra.length)body=listScreen(entries,a);
  else if(a==='new'&&!b&&!extra.length){const draft=pendingDraft;pendingDraft=null;body=formScreen(null,draft);}
  else if((a==='entry'||a==='edit')&&b&&!extra.length){const entry=entries.find(e=>e.id===b);body=entry?(a==='edit'?formScreen(entry):entryScreen(entry)):unavailable();}
