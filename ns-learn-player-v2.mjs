@@ -27,7 +27,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false}={}){
   if(item.type==='complete')return '<label class="ns-learn-player__label">Your answer<input name="learn-recall" type="text" maxlength="150" autocomplete="off" spellcheck="true" placeholder="Type your answer"></label>';
   if(item.type==='match'||item.type==='sort'){
    const list=item.type==='match'?item.pairs:item.items;
-   const choices=item.type==='match'?item.pairs.map(p=>p.answer):item.categories.map(c=>c.id);
+   const choices=item.type==='match'?item.pairs.map(p=>p.answer):item.categories.map(c=>c.id);\n   // Rotate matching answers so their positions never reveal the solution.\n   if(item.type==='match'&&choices.length>1)choices.push(choices.shift());
    return '<div class="ns-learn-player__pairs">'+list.map(p=>'<label><strong>'+esc(p.label)+'</strong><select data-pair="'+esc(p.id)+'"><option value="">Choose…</option>'+choices.map(c=>opt(c,item.type==='match'?c:(item.categories.find(x=>x.id===c)?.label||c))).join('')+'</select></label>').join('')+'</div>';
   }
   if(item.type==='sequence')return '<div class="ns-learn-player__ordering">'+state.order.map((id,i)=>{const step=item.steps.find(s=>s.id===id);return '<div class="ns-learn-player__order"><span>'+esc(step?.label||id)+'</span><div><button type="button" data-move="'+i+'" data-direction="-1" aria-label="Move '+esc(step?.label||id)+' up" '+(i===0?'disabled':'')+'>↑</button><button type="button" data-move="'+i+'" data-direction="1" aria-label="Move '+esc(step?.label||id)+' down" '+(i===state.order.length-1?'disabled':'')+'>↓</button></div></div>'}).join('')+'</div>';
@@ -63,7 +63,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false}={}){
   }));
   root.querySelector('[data-check]')?.addEventListener('click',()=>{
    const item=items[state.index],response=read(item),result=gradeLearnItem(item,response);
-   if(!result.valid){state.notice='Complete the question before checking your answer.';paint();return;}
+   if(!result.valid){state.notice='Complete the question before checking your answer.';const message=root.querySelector('.ns-learn-player__notice');if(message)message.textContent=state.notice;else root.querySelector('[data-check]')?.insertAdjacentHTML('beforebegin','<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>');return;}
    state.notice='';state.answers[item.id]=response;state.checked=result;paint();
   });
   root.querySelector('[data-next]')?.addEventListener('click',()=>{
