@@ -211,7 +211,7 @@ function recordPage(data,id,quickToolsHTML){
     '<label class="ns-fw-check"><input type="checkbox" name="done"> Mark this practice or conversation complete</label>'+
     '<button type="submit" class="ns-fw-button">Keep this reflection</button></form></section>';
  const right=heading('A WORKING RECORD','Return, revise, reconnect')+
-  '<div class="ns-fw-actions">'+(r.type==='note'?['chapter','practice','conversation','reference'].map(t=>link('#guide/workspace/compose/'+t+'/'+encodeURIComponent(r.id),'Turn into '+t)).join(''):'')+
+  '<div class="ns-fw-actions">'+(r.type==='note'?['chapter','practice','conversation','reference'].map(t=>action('convert:'+t,'Turn into '+t,r.id)).join(''):'')+
   (r.type==='chapter'?action('convert:practice','Create a practice',r.id):'' )+
   action('reconsider',"I'm not sure anymore",r.id)+'</div>'+
   (r.type==='note'?'<p class="ns-fw-small">Select a passage in your note before choosing Turn into… to use only those words. Your original stays unchanged.</p>':'')+
