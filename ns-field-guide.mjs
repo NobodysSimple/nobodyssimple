@@ -1,7 +1,7 @@
 /** Nobody's Simple — Living Field Guide. User-authored, explicit-save UI. */
 import {escapeHTML as esc} from './core.mjs';
 import {renderNSUrgePause} from './ns-urge-pause.mjs';
-import {renderWorkspaceFieldGuide} from './ns-field-guide-workspace-ui.mjs';
+import {renderWorkspaceFieldGuide,offerFieldGuideDraft} from './ns-field-guide-workspace-ui.mjs';
 import {GUIDE_CATEGORIES,GUIDE_TAGS,readFieldGuide,saveFieldGuideEntry,deleteFieldGuideEntry,exportFieldGuideJSON} from './ns-field-guide-data.mjs';
 
 let pendingDraft=null;
@@ -13,6 +13,8 @@ export function startFieldGuideDraft(input={}){
     category:GUIDE_CATEGORIES.some(c=>c.id===input.category)?input.category:'patterns',
     confidenceTag:GUIDE_TAGS.some(t=>t.id===input.confidenceTag)?input.confidenceTag:'hypothesis',
     sourceType:['manual','lab','lesson','tool'].includes(input.sourceType)?input.sourceType:'manual',sourceId:String(input.sourceId||'').slice(0,100)};
+  offerFieldGuideDraft({type:'note',title:pendingDraft.title,body:pendingDraft.text,context:pendingDraft.context,
+    sources:pendingDraft.sourceType!=='manual'?[{app:pendingDraft.sourceType,id:pendingDraft.sourceId,title:pendingDraft.title,href:pendingDraft.sourceType==='lab'?'#lab':'#learn'}]:[]});
 }
 const rootLink='#guide';
 const nav=()=>`<nav class="ns-guide6-back" aria-label="Field Guide navigation"><a href="#account">← Your space</a><a href="#lab">Life Lab ↗</a><a href="#account/privacy">Privacy &amp; sync ↗</a></nav>`;
