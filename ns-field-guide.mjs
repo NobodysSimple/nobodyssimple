@@ -1,6 +1,7 @@
 /** Nobody's Simple — Living Field Guide. User-authored, explicit-save UI. */
 import {escapeHTML as esc} from './core.mjs';
 import {renderNSUrgePause} from './ns-urge-pause.mjs';
+import {renderWorkspaceFieldGuide} from './ns-field-guide-workspace-ui.mjs';
 import {GUIDE_CATEGORIES,GUIDE_TAGS,readFieldGuide,saveFieldGuideEntry,deleteFieldGuideEntry,exportFieldGuideJSON} from './ns-field-guide-data.mjs';
 
 let pendingDraft=null;
