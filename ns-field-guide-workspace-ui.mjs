@@ -241,12 +241,13 @@ export function renderWorkspaceFieldGuide(main,parts=[],{quickToolsHTML=''}={}){
  else screen=book(heading('PAGE NOT FOUND','This section is not available'),quickToolsHTML);
  main.innerHTML=screen;
  const controller=new AbortController(),signal=controller.signal;
- const redraw=()=>{controller.abort();renderWorkspaceFieldGuide(main,parts,{quickToolsHTML});};
+ let nestedCleanup=()=>{};
+ const redraw=()=>{controller.abort();nestedCleanup=renderWorkspaceFieldGuide(main,parts,{quickToolsHTML});};
  const download=(body,name)=>{const u=URL.createObjectURL(new Blob([body],{type:'application/json'}));const a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);};
  // Draft text is written only after the user starts typing. No interpretation is performed.
  const form=main.querySelector('[data-fw-compose]');
- if(form && !form.dataset.id) {
-   const draft=drafts()[form.dataset.type];if(draft && !parts[2]){
+ if(form) {
+   const draft=drafts()[form.dataset.id?'edit:'+form.dataset.id:form.dataset.type];if(draft && !parts[2] && queuedHandoff?.type!==form.dataset.type){
      for(const [k,v] of Object.entries(draft)){const el=form.elements.namedItem(k);if(el&&el.type!=='checkbox'&&el.name!=='source')el.value=v;}
    }
  }
@@ -256,8 +257,7 @@ export function renderWorkspaceFieldGuide(main,parts=[],{quickToolsHTML=''}={}){
      try{keepDraft('quick-dashboard',Object.fromEntries(new FormData(f).entries()));f.querySelector('[data-fw-draft-status]').textContent='Draft saved locally as you type';}catch{}
    }else if(ev.target.closest('[data-fw-compose]')){
      const f=ev.target.closest('form');
-     if(f.dataset.id)return;
-     try{keepDraft(f.dataset.type,Object.fromEntries(new FormData(f).entries()));f.querySelector('[data-fw-draft-status]').textContent='Draft saved locally as you type';}catch{}
+     try{keepDraft(f.dataset.id?'edit:'+f.dataset.id:f.dataset.type,Object.fromEntries(new FormData(f).entries()));f.querySelector('[data-fw-draft-status]').textContent='Draft saved locally as you type';}catch{}
    }
    if(ev.target.id==='ns-fw-search' || ev.target.name==='search-type'){
      const q=(main.querySelector('#ns-fw-search')?.value||'').toLocaleLowerCase(),t=main.querySelector('[name="search-type"]')?.value||'';
@@ -298,7 +298,7 @@ export function renderWorkspaceFieldGuide(main,parts=[],{quickToolsHTML=''}={}){
          if(seed){values.links=[seed.id];if(seed.type==='chapter')values.chapterId=seed.id;}
        }
        const r=saveRecord(localStorage,type,values,id);
-       clearDraft(type);queuedHandoff=null;
+       clearDraft(id?'edit:'+id:type);queuedHandoff=null;
        location.hash='#guide/workspace/record/'+encodeURIComponent(r.id);
      } else if(form.matches('[data-fw-event]')){
        if(!String(values.text||'').trim())throw Error('Write something about what happened.');
@@ -355,5 +355,5 @@ export function renderWorkspaceFieldGuide(main,parts=[],{quickToolsHTML=''}={}){
  // Continue a genuine local draft when navigating back; never overwrite user-saved work.
  const quick=main.querySelector('[data-fw-quick]');
  if(quick){const draft=drafts()['quick-dashboard'];if(draft){quick.elements.namedItem('body').value=draft.body||'';quick.elements.namedItem('capture').value=draft.capture||'quick';}}
- return ()=>controller.abort();
+ return ()=>{controller.abort();nestedCleanup();};
 }
