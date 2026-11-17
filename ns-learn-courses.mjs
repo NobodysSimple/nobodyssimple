@@ -21,7 +21,7 @@ function card(course,index){
  const bundle=publishedLearnBundle(course.id),cat=COURSE_CATEGORIES.find(c=>c.id===course.category);
  const status=bundle?'Lessons available':'In development';
  return '<a class="ns-course-card" href="'+courseHref(course.id)+'" data-course-subject="'+esc(course.id)+'" data-course-status="'+(bundle?'published':'planned')+'" data-course-tone="'+esc(course.tone)+'" aria-labelledby="ns-course-name-'+index+'">'+
- courseArt(course)+'<div class="ns-course-card__nameplate"><h3 id="ns-course-name-'+index+'">'+esc(course.title)+'</h3>'+
+ courseArt(course)+'<div class="ns-course-card__nameplate"><h3 id="ns-course-name-'+index+'">'+esc(course.cardTitle||course.title)+'</h3>'+
  '<span class="ns-course-card__status">'+esc(status)+'</span></div>'+
  '<small class="ns-course-card__category">'+esc(cat?.title||'Psychology')+'</small>'+
  '<p class="ns-course-card__description">'+esc(course.description)+'</p>'+
