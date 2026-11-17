@@ -293,3 +293,23 @@ html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-catalogue-tutor>span
   transition:none!important;transform:none!important;
  }
 }
+
+/* Original 4-column × 5-row Life Lab characters, cropped exactly as in Journey.
+   One shared optimized atlas creates 20 unique expressive character portraits. */
+body.app-body.ns-shell-v1 #main .ns-courses-hub .ns-course-card__character.ns-course-card__companion{
+ background-image:url('media/lifelab/companions.png');
+ background-size:400% 500%;
+ background-position:var(--cast-x) var(--cast-y);
+ background-repeat:no-repeat;
+ background-color:transparent;
+ width:76%;height:85%;left:12%;bottom:-2%;
+ display:block;object-fit:initial;
+ filter:drop-shadow(0 6px 3px rgba(46,58,40,.12));
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-detail-image .ns-course-card__character.ns-course-card__companion{
+ width:76%;height:82%;left:12%;bottom:0;
+}
+body.app-body.ns-shell-v1 #main .ns-catalogue-tutor small{
+ display:block;margin-top:5px;font:500 12px/1.55 system-ui,sans-serif;color:#5d7861;
+}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-catalogue-tutor small{color:#dae9d9;}

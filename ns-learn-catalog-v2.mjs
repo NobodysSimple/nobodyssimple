@@ -14,36 +14,41 @@ export const COURSE_CATEGORIES=Object.freeze([
  {id:'everyday',title:'Habits & everyday life',subtitle:'Motivation, work, decisions and the conditions of change.'},
  {id:'society',title:'Society & digital life',subtitle:'How people and technologies shape beliefs and behaviour.'}
 ].map(x=>Object.freeze(x)));
-// Every course has a dedicated tutor and scene, not a shared character thumbnail.
-// The course ID is also the immutable asset key for future authoring and localisation.
-const art=Object.freeze({
- self:'peach',thinking:'blue',emotions:'gold',people:'sage',
- boundaries:'sage',courage:'sky',habits:'gold',uncertainty:'sky',
- focus:'sage',communication:'peach'
+// Use the actual original Life Lab atlas and canonical character dialogues.
+// These are characters learners will help, not cartoon lecturers.
+import {WORLD_STORIES} from './ns-lifelab-worlds.mjs';
+const WORLDS=['forest','meadow','bridge','workshop','observatory'];
+const ORIGINAL_CAST=new Map(WORLDS.flatMap((world,row)=>WORLD_STORIES[world].characters.map(([name,quote],column)=>[name,Object.freeze({name,quote,world,row,column,x:column*100/3,y:row*25})])));
+export const LEARN_COURSE_COMPANIONS=Object.freeze({
+ "narcissism":"Lyra",
+ "manipulation":"Ari",
+ "attachment":"Nell",
+ "overthinking":"Moss",
+ "boundaries":"Cove",
+ "anxiety":"Briar",
+ "emotions":"Fern",
+ "self-esteem":"Poppy",
+ "motivation":"Ember",
+ "social-anxiety":"Milo",
+ "burnout":"Sunny",
+ "loneliness":"Sora",
+ "social-media":"Indi",
+ "misinformation":"Echo",
+ "neurodiversity":"Tavi",
+ "sleep":"Thistle",
+ "low-mood":"Rook",
+ "scams":"Rowan",
+ "masculinity":"Vale",
+ "vaping":"Pip"
 });
-export const LEARN_TUTORS=Object.freeze({
- narcissism:{name:'Mira',role:'The Mirror Keeper'},
- manipulation:{name:'Knot',role:'The Thread Cutter'},
- attachment:{name:'Pip',role:'The Connection Gardener'},
- overthinking:{name:'Loop',role:'The Thought Cartographer'},
- boundaries:{name:'Bram',role:'The Gatekeeper'},
- anxiety:{name:'Scout',role:'The Brave Trail Guide'},
- emotions:{name:'Mallow',role:'The Feeling Painter'},
- 'self-esteem':{name:'Goldie',role:'The Gentle Restorer'},
- motivation:{name:'Cog',role:'The Habit Tinkerer'},
- 'social-anxiety':{name:'Echo',role:'The Stage Lantern'},
- burnout:{name:'Moss',role:'The Rest Guardian'},
- loneliness:{name:'Lumi',role:'The Star Connector'},
- 'social-media':{name:'Pixel',role:'The Attention Curator'},
- misinformation:{name:'Clue',role:'The Evidence Detective'},
- neurodiversity:{name:'Prism',role:'The Difference Explorer'},
- sleep:{name:'Nox',role:'The Dream Astronomer'},
- 'low-mood':{name:'Sprig',role:'The Rain Gardener'},
- scams:{name:'Latch',role:'The Trust Guardian'},
- masculinity:{name:'Vale',role:'The Dialogue Wayfinder'},
- vaping:{name:'Breeze',role:'The Air Scientist'}
-});
+export const LEARN_COMPANIONS=Object.freeze(Object.fromEntries(
+ Object.entries(LEARN_COURSE_COMPANIONS).map(([courseId,name])=>[courseId,ORIGINAL_CAST.get(name)])
+));
+export const LEARN_TUTORS=LEARN_COMPANIONS; // old export retained for compatibility.
 const COURSE_ART_ROOT='learn-art/course-guides/';
+const COMPANION_ATLAS='media/lifelab/companions.png';
+const art=Object.freeze({self:'peach',thinking:'blue',emotions:'gold',people:'sage',
+ boundaries:'sage',courage:'sky',habits:'gold',uncertainty:'sky',focus:'sage',communication:'peach'});
 const cardTitles=Object.freeze({
  narcissism:'Narcissism & Personality',
  manipulation:'Gaslighting & Manipulation',
@@ -67,13 +72,13 @@ const cardTitles=Object.freeze({
  vaping:'Vaping & Social Pressure'
 });
 const make=(id,title,description,category,artId,focus,keywords=[])=>{
- const guide=LEARN_TUTORS[id];
- if(!guide)throw Error('Missing illustrated tutor for course '+id);
- const landscape=COURSE_ART_ROOT+id+'-scene.svg';
- const mascot=COURSE_ART_ROOT+id+'-tutor.svg';
- const tone=art[artId]||'sage';
+ const person=LEARN_COMPANIONS[id];
+ if(!person)throw Error('Missing original Life Lab companion for course '+id);
+ const landscape=COURSE_ART_ROOT+id+'-scene.svg',mascot=COMPANION_ATLAS,tone=art[artId]||'sage';
  return Object.freeze({id,title,cardTitle:cardTitles[id]||title,description,category,
-  landscape,mascot,tutorName:guide.name,tutorRole:guide.role,tone,
+  landscape,mascot,companionName:person.name,companionQuote:person.quote,
+  companionRow:person.row,companionColumn:person.column,
+  companionX:person.x,companionY:person.y,tone,
   focus:Object.freeze(focus),keywords:Object.freeze(keywords),status:'planned'});
 };
 // Ranked discovery order, NOT a compulsory learning sequence.
