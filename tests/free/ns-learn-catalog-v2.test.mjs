@@ -20,7 +20,9 @@ test('20 precisely identified, unique and unlaunched courses',()=>{
  assert.ok(LEARN_COURSES.every(c=>COURSE_CATEGORIES.some(cat=>cat.id===c.category)));
  assert.ok(LEARN_COURSES.every(c=>c.focus.length===4));
  assert.ok(LEARN_COURSES.every(c=>c.landscape==='learn-art/course-guides/'+c.id+'-scene.svg'));
- assert.ok(LEARN_COURSES.every(c=>c.mascot==='media/lifelab/companions.png'));
+ assert.ok(LEARN_COURSES.every(c=>c.mascot===(c.id==='neurodiversity'?'learn-art/course-guides/neurodiversity-companion.svg':'media/lifelab/companions.png')));
+ assert.equal(LEARN_COURSES.filter(c=>c.companionPortrait).length,1);
+ assert.equal(getLearnCourse('neurodiversity').companionName,'Sage');
  assert.equal(new Set(LEARN_COURSES.map(c=>c.landscape)).size,20);
  assert.equal(new Set(LEARN_COURSES.map(c=>c.companionRow+':'+c.companionColumn)).size,20);
  assert.equal(new Set(LEARN_COURSES.map(c=>c.companionName)).size,20);

@@ -14,7 +14,9 @@ const courseHref=id=>'#learn/course/'+encodeURIComponent(id);
 let rememberedQuery='';
 function courseArt(course){
  return '<div class="ns-course-card__art" aria-hidden="true">'+image(course.landscape,'ns-course-card__landscape')+
- '<span class="ns-course-card__glow"></span><span class="ns-course-card__character ns-course-card__companion" style="--cast-x:'+Number(course.companionX)+'%;--cast-y:'+Number(course.companionY)+'%"></span>'+
+ '<span class="ns-course-card__glow"></span>'+(course.companionPortrait
+ ?image(course.mascot,'ns-course-card__character ns-course-card__individual')
+ :'<span class="ns-course-card__character ns-course-card__companion" style="--cast-x:'+Number(course.companionX)+'%;--cast-y:'+Number(course.companionY)+'%"></span>')+
  '<span class="ns-course-card__flourish">✳</span></div>';
 }
 function card(course,index){

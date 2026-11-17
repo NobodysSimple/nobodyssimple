@@ -74,9 +74,14 @@ const cardTitles=Object.freeze({
 const make=(id,title,description,category,artId,focus,keywords=[])=>{
  const person=LEARN_COMPANIONS[id];
  if(!person)throw Error('Missing original Life Lab companion for course '+id);
- const landscape=COURSE_ART_ROOT+id+'-scene.svg',mascot=COMPANION_ATLAS,tone=art[artId]||'sage';
+ const portrait=id==='neurodiversity';
+ const landscape=COURSE_ART_ROOT+id+'-scene.svg';
+ const mascot=portrait?COURSE_ART_ROOT+'neurodiversity-companion.svg':COMPANION_ATLAS;
+ const tone=art[artId]||'sage';
  return Object.freeze({id,title,cardTitle:cardTitles[id]||title,description,category,
-  landscape,mascot,companionName:person.name,companionQuote:person.quote,
+  landscape,mascot,companionPortrait:portrait,
+  companionName:portrait?'Sage':person.name,
+  companionQuote:portrait?'I want to understand how different experiences and environments shape the way we live.':person.quote,
   companionRow:person.row,companionColumn:person.column,
   companionX:person.x,companionY:person.y,tone,
   focus:Object.freeze(focus),keywords:Object.freeze(keywords),status:'planned'});
