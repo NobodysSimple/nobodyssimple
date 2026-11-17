@@ -26,9 +26,31 @@ const art={
  focus:['learn-art/scenery-focus.svg','ns-character-writing.webp','sage'],
  communication:['learn-art/scenery-communication.svg','ns-character-message.webp','peach']
 };
+const cardTitles=Object.freeze({
+ narcissism:'Narcissism & Personality',
+ manipulation:'Gaslighting & Manipulation',
+ attachment:'Attachment & Love',
+ overthinking:'Overthinking',
+ boundaries:'Boundaries & Communication',
+ anxiety:'Anxiety & Avoidance',
+ emotions:'Understanding Emotions',
+ 'self-esteem':'Self-Esteem & Shame',
+ motivation:'Motivation & Habits',
+ 'social-anxiety':'Social Anxiety',
+ burnout:'Stress & Burnout',
+ loneliness:'Loneliness & Belonging',
+ 'social-media':'Social Media & Attention',
+ misinformation:'Misinformation & AI',
+ neurodiversity:'ADHD, Autism & Neurodiversity',
+ sleep:'Sleep & Insomnia',
+ 'low-mood':'Depression & Low Mood',
+ scams:'Scams & Deception',
+ masculinity:'Masculinity & Online Influence',
+ vaping:'Vaping & Social Pressure'
+});
 const make=(id,title,description,category,artId,focus,keywords=[])=>{
  const [landscape,mascot,tone]=art[artId];
- return Object.freeze({id,title,description,category,landscape,mascot,tone,
+ return Object.freeze({id,title,cardTitle:cardTitles[id]||title,description,category,landscape,mascot,tone,
  focus:Object.freeze(focus),keywords:Object.freeze(keywords),status:'planned'});
 };
 // Ranked discovery order, NOT a compulsory learning sequence.
