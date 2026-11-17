@@ -14,7 +14,7 @@ const courseHref=id=>'#learn/course/'+encodeURIComponent(id);
 let rememberedQuery='';
 function courseArt(course){
  return '<div class="ns-course-card__art" aria-hidden="true">'+image(course.landscape,'ns-course-card__landscape')+
- '<span class="ns-course-card__glow"></span>'+image(course.mascot,'ns-course-card__character')+
+ '<span class="ns-course-card__glow"></span><span class="ns-course-card__character ns-course-card__companion" style="--cast-x:'+Number(course.companionX)+'%;--cast-y:'+Number(course.companionY)+'%"></span>'+
  '<span class="ns-course-card__flourish">✳</span></div>';
 }
 function card(course,index){
@@ -25,7 +25,7 @@ function card(course,index){
  '<span class="ns-course-card__status">'+esc(status)+'</span></div>'+
  '<small class="ns-course-card__category">'+esc(cat?.title||'Psychology')+'</small>'+
  '<p class="ns-course-card__description">'+esc(course.description)+'</p>'+
- '<span class="ns-course-card__tutor">✿ Guided by '+esc(course.tutorName)+'</span>'+
+ '<span class="ns-course-card__tutor">✿ Meet '+esc(course.companionName)+'</span>'+
  '<span class="ns-course-card__arrow" aria-hidden="true">Explore course →</span></a>';
 }
 function sectionHead(title,description){
@@ -110,8 +110,9 @@ function detail(root,id){
  '<div class="ns-catalogue-detail-copy"><span class="ns-courses-kicker">'+esc(cat?.title||'Psychology')+' · COURSE '+String(LEARN_COURSES.indexOf(course)+1).padStart(2,'0')+'</span>'+
  '<h1>'+esc(course.title)+'</h1><p>'+esc(course.description)+'</p>'+
  '<span class="ns-catalogue-development">'+(bundle?'Published lessons available':'In development · No lessons published yet')+'</span>'+
- '<div class="ns-catalogue-tutor"><span class="ns-courses-kicker">MEET YOUR COURSE TUTOR</span>'+
- '<strong>'+esc(course.tutorName)+'</strong><span>'+esc(course.tutorRole)+'</span>'+
+ '<div class="ns-catalogue-tutor"><span class="ns-courses-kicker">A CHARACTER YOU’LL HELP</span>'+
+ '<strong>'+esc(course.companionName)+'</strong><span>“'+esc(course.companionQuote)+'”</span>'+
+ '<small>Future lessons will invite you to help '+esc(course.companionName)+' explore their situation and choose thoughtful next steps.</small>'+
  '</div></div></div>'+
  '<div class="ns-catalogue-detail-columns"><section class="ns-catalogue-outline"><span class="ns-courses-kicker">PLANNED LEARNING THEMES</span>'+
  '<h2>What you’ll explore</h2><p>These are subject areas for future lesson writing—not completed units or activities.</p>'+
