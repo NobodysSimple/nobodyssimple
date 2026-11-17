@@ -251,6 +251,9 @@ html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-catalogue-filter[ari
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-courses-hub :is(.ns-course-card__arrow,.ns-catalogue-back,.ns-catalogue-detail-bottom a,.ns-catalogue-outline>a,.ns-catalogue-coming a,.ns-catalogue-learning a){color:#c0e3be;}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-courses-hub :is(.ns-catalogue-focus strong,.ns-catalogue-coming strong,.ns-catalogue-development,.ns-catalogue-phases span,.ns-catalogue-journey b){color:#d2e7ce;}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-catalogue-search{color:#d9e9d6;}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-course-card__category,
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-course-card__status,
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-catalogue-count{color:#cde3cb;}
 @media(prefers-reduced-motion:reduce){
  body.app-body.ns-shell-v1 #main .ns-courses-hub *{scroll-behavior:auto!important;transition:none!important;}
 }
