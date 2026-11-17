@@ -29,28 +29,27 @@ test('Every original SVG scene stays mascot-free artwork, not a composite portra
  }
 });
 
-test('Twenty cards reuse the original mascot and scenery layers without double portraits',()=>{
- const originals={
-  'ns-landscape-sunset.webp':'ns-character-meditate.webp',
-  'ns-landscape-clouds.webp':'ns-character-thinking.webp',
-  'learn-art/scenery-emotions.svg':'ns-character-helping.webp',
-  'learn-art/scenery-relationships.svg':'ns-character-friends.webp',
-  'learn-art/scenery-boundaries.svg':'ns-character-shield.webp',
-  'ns-landscape-mountains.webp':'ns-character-hiking.webp',
-  'ns-landscape-calm.webp':'ns-character-checklist.webp',
-  'ns-landscape-path.webp':'ns-character-sitting.webp',
-  'learn-art/scenery-focus.svg':'ns-character-writing.webp',
-  'learn-art/scenery-communication.svg':'ns-character-message.webp'
- };
+test('Twenty courses each have a different original tutor and a distinct standalone world',()=>{
  assert.equal(LEARN_COURSE_IDEAS.length,20);
+ assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.landscape)).size,20);
+ assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.mascot)).size,20);
+ assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.tutorName)).size,20);
  for(const course of LEARN_COURSE_IDEAS){
-  assert.equal(course.mascot,originals[course.landscape],course.id);
-  assert.ok(existsSync(new URL('../../'+course.landscape,import.meta.url)));
-  assert.ok(existsSync(new URL('../../'+course.mascot,import.meta.url)));
+  assert.equal(course.landscape,'learn-art/course-guides/'+course.id+'-scene.svg');
+  assert.equal(course.mascot,'learn-art/course-guides/'+course.id+'-tutor.svg');
+  for(const [asset,kind] of [[course.landscape,'scene'],[course.mascot,'tutor']]){
+   assert.ok(existsSync(new URL('../../'+asset,import.meta.url)),asset);
+   const svg=read(asset);
+   assert.match(svg,/^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
+   assert.match(svg,/<\/svg>\s*$/);
+   assert.match(svg,/viewBox="[0-9 ]+"/);
+   assert.match(svg,/<path /);
+   assert.doesNotMatch(svg,/<script|<foreignObject|<image|<use|xlink:href|javascript:/i);
+   if(kind==='scene')assert.doesNotMatch(svg,/<title>.*?—/);
+   else assert.match(svg,new RegExp('<title>'+course.tutorName+' —'));
+  }
  }
- assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.landscape)).size,10);
 });
-
 test('Learn hero and featured panel each retain one intentional mascot',()=>{
  const {root}=fakeRoot();
  renderCourseHub(root);
@@ -75,6 +74,6 @@ test('Existing blog, Feed and unrelated pages remain linked after Learn asset ve
  assert.match(html,/href="#discussion"[\s\S]*href="#learn"/);
  assert.match(site,/renderNotebookBlogPost/);
  assert.match(html,/ns-learn-courses\.css\?v=learn-artfix-20261115/);
- assert.match(html,/ns-learn-catalog-v2\.css\?v=learn-catalog-20261116/);
- assert.match(site,/ns-learn-courses\.mjs\?v=learn-catalog-20261116/);
+ assert.match(html,/ns-learn-catalog-v2\.css\?v=tutor-art-20261117/);
+ assert.match(site,/ns-learn-courses\.mjs\?v=tutor-art-20261117/);
 });
