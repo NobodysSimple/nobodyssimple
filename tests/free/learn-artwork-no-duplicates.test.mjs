@@ -36,7 +36,13 @@ test('The twenty original Life Lab character portraits are all used exactly once
  assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.companionRow+':'+c.companionColumn)).size,20);
  assert.ok(existsSync(new URL('../../media/lifelab/companions.png',import.meta.url)));
  for(const c of LEARN_COURSE_IDEAS){
-  assert.equal(c.mascot,'media/lifelab/companions.png');
+  assert.equal(c.mascot,c.id==='neurodiversity'?'learn-art/course-guides/neurodiversity-companion.svg':'media/lifelab/companions.png');
+  if(c.id==='neurodiversity'){
+   assert.equal(c.companionName,'Sage');
+   const svg=read(c.mascot);
+   assert.match(svg,/<title[^>]*>Sage/);
+   assert.doesNotMatch(svg,/<script|<foreignObject|<image|xlink:href|javascript:/i);
+  }
   assert.equal(c.landscape,'learn-art/course-guides/'+c.id+'-scene.svg');
   assert.ok(existsSync(new URL('../../'+c.landscape,import.meta.url)));
   assert.ok(c.companionRow>=0&&c.companionRow<5);
