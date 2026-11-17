@@ -78,5 +78,5 @@ test('Existing blog, Feed and unrelated pages remain linked after Learn asset ve
  assert.match(site,/renderNotebookBlogPost/);
  assert.match(html,/ns-learn-courses\.css\?v=learn-artfix-20261115/);
  assert.match(html,/ns-learn-catalog-v2\.css\?v=lifelab-cast-20261117/);
- assert.match(site,/ns-learn-courses\.mjs\?v=lifelab-cast-20261117/);
+ assert.match(site,/ns-learn-courses\.mjs\?v=neuro-guide-20261117/);
 });
