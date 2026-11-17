@@ -25,6 +25,7 @@ function card(course,index){
  '<span class="ns-course-card__status">'+esc(status)+'</span></div>'+
  '<small class="ns-course-card__category">'+esc(cat?.title||'Psychology')+'</small>'+
  '<p class="ns-course-card__description">'+esc(course.description)+'</p>'+
+ '<span class="ns-course-card__tutor">✿ Guided by '+esc(course.tutorName)+'</span>'+
  '<span class="ns-course-card__arrow" aria-hidden="true">Explore course →</span></a>';
 }
 function sectionHead(title,description){
@@ -108,7 +109,10 @@ function detail(root,id){
  '<div class="ns-catalogue-detail-hero"><div class="ns-catalogue-detail-image" data-course-subject="'+esc(course.id)+'">'+courseArt(course)+'</div>'+
  '<div class="ns-catalogue-detail-copy"><span class="ns-courses-kicker">'+esc(cat?.title||'Psychology')+' · COURSE '+String(LEARN_COURSES.indexOf(course)+1).padStart(2,'0')+'</span>'+
  '<h1>'+esc(course.title)+'</h1><p>'+esc(course.description)+'</p>'+
- '<span class="ns-catalogue-development">'+(bundle?'Published lessons available':'In development · No lessons published yet')+'</span></div></div>'+
+ '<span class="ns-catalogue-development">'+(bundle?'Published lessons available':'In development · No lessons published yet')+'</span>'+
+ '<div class="ns-catalogue-tutor"><span class="ns-courses-kicker">MEET YOUR COURSE TUTOR</span>'+
+ '<strong>'+esc(course.tutorName)+'</strong><span>'+esc(course.tutorRole)+'</span>'+
+ '</div></div></div>'+
  '<div class="ns-catalogue-detail-columns"><section class="ns-catalogue-outline"><span class="ns-courses-kicker">PLANNED LEARNING THEMES</span>'+
  '<h2>What you’ll explore</h2><p>These are subject areas for future lesson writing—not completed units or activities.</p>'+
  '<div class="ns-catalogue-focus">'+course.focus.map((t,i)=>'<div><span>'+String(i+1).padStart(2,'0')+'</span><strong>'+esc(t)+'</strong></div>').join('')+'</div></section>'+

@@ -14,18 +14,36 @@ export const COURSE_CATEGORIES=Object.freeze([
  {id:'everyday',title:'Habits & everyday life',subtitle:'Motivation, work, decisions and the conditions of change.'},
  {id:'society',title:'Society & digital life',subtitle:'How people and technologies shape beliefs and behaviour.'}
 ].map(x=>Object.freeze(x)));
-const art={
- self:['ns-landscape-sunset.webp','ns-character-meditate.webp','peach'],
- thinking:['ns-landscape-clouds.webp','ns-character-thinking.webp','blue'],
- emotions:['learn-art/scenery-emotions.svg','ns-character-helping.webp','gold'],
- people:['learn-art/scenery-relationships.svg','ns-character-friends.webp','sage'],
- boundaries:['learn-art/scenery-boundaries.svg','ns-character-shield.webp','sage'],
- courage:['ns-landscape-mountains.webp','ns-character-hiking.webp','sky'],
- habits:['ns-landscape-calm.webp','ns-character-checklist.webp','gold'],
- uncertainty:['ns-landscape-path.webp','ns-character-sitting.webp','sky'],
- focus:['learn-art/scenery-focus.svg','ns-character-writing.webp','sage'],
- communication:['learn-art/scenery-communication.svg','ns-character-message.webp','peach']
-};
+// Every course has a dedicated tutor and scene, not a shared character thumbnail.
+// The course ID is also the immutable asset key for future authoring and localisation.
+const art=Object.freeze({
+ self:'peach',thinking:'blue',emotions:'gold',people:'sage',
+ boundaries:'sage',courage:'sky',habits:'gold',uncertainty:'sky',
+ focus:'sage',communication:'peach'
+});
+export const LEARN_TUTORS=Object.freeze({
+ narcissism:{name:'Mira',role:'The Mirror Keeper'},
+ manipulation:{name:'Knot',role:'The Thread Cutter'},
+ attachment:{name:'Pip',role:'The Connection Gardener'},
+ overthinking:{name:'Loop',role:'The Thought Cartographer'},
+ boundaries:{name:'Bram',role:'The Gatekeeper'},
+ anxiety:{name:'Scout',role:'The Brave Trail Guide'},
+ emotions:{name:'Mallow',role:'The Feeling Painter'},
+ 'self-esteem':{name:'Goldie',role:'The Gentle Restorer'},
+ motivation:{name:'Cog',role:'The Habit Tinkerer'},
+ 'social-anxiety':{name:'Echo',role:'The Stage Lantern'},
+ burnout:{name:'Moss',role:'The Rest Guardian'},
+ loneliness:{name:'Lumi',role:'The Star Connector'},
+ 'social-media':{name:'Pixel',role:'The Attention Curator'},
+ misinformation:{name:'Clue',role:'The Evidence Detective'},
+ neurodiversity:{name:'Prism',role:'The Difference Explorer'},
+ sleep:{name:'Nox',role:'The Dream Astronomer'},
+ 'low-mood':{name:'Sprig',role:'The Rain Gardener'},
+ scams:{name:'Latch',role:'The Trust Guardian'},
+ masculinity:{name:'Vale',role:'The Dialogue Wayfinder'},
+ vaping:{name:'Breeze',role:'The Air Scientist'}
+});
+const COURSE_ART_ROOT='learn-art/course-guides/';
 const cardTitles=Object.freeze({
  narcissism:'Narcissism & Personality',
  manipulation:'Gaslighting & Manipulation',
@@ -49,9 +67,14 @@ const cardTitles=Object.freeze({
  vaping:'Vaping & Social Pressure'
 });
 const make=(id,title,description,category,artId,focus,keywords=[])=>{
- const [landscape,mascot,tone]=art[artId];
- return Object.freeze({id,title,cardTitle:cardTitles[id]||title,description,category,landscape,mascot,tone,
- focus:Object.freeze(focus),keywords:Object.freeze(keywords),status:'planned'});
+ const guide=LEARN_TUTORS[id];
+ if(!guide)throw Error('Missing illustrated tutor for course '+id);
+ const landscape=COURSE_ART_ROOT+id+'-scene.svg';
+ const mascot=COURSE_ART_ROOT+id+'-tutor.svg';
+ const tone=art[artId]||'sage';
+ return Object.freeze({id,title,cardTitle:cardTitles[id]||title,description,category,
+  landscape,mascot,tutorName:guide.name,tutorRole:guide.role,tone,
+  focus:Object.freeze(focus),keywords:Object.freeze(keywords),status:'planned'});
 };
 // Ranked discovery order, NOT a compulsory learning sequence.
 export const LEARN_COURSES=Object.freeze([
