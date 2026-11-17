@@ -23,7 +23,8 @@ test('Learn has exactly 20 independent, planned courses with stable illustrated 
   assert.equal(course.status,'planned');
   assert.ok(course.title.length>4);
   assert.ok(course.description.length>26);
-  assert.ok(/\.(?:webp|svg)$/.test(course.landscape)&&course.mascot.endsWith('.webp'));
+  assert.ok(course.landscape.endsWith('-scene.svg')&&course.mascot.endsWith('-tutor.svg'));
+  assert.ok(course.tutorName&&course.tutorRole);
   assert.match(read('sw.js'),/nobodyssimple-release-v\d+-[a-z-]+/);
  }
  assert.deepEqual(Object.keys(PUBLISHED_COURSE_BUNDLES),[]);

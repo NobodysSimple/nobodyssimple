@@ -7,16 +7,6 @@ import {saveLearnCompletion,readLearnProgress,learnCourseProgress,dueLearnReview
 import {renderCourseHub} from '../../ns-learn-courses.mjs';
 import {publishedLearnBundle} from '../../ns-learn-player-v2.mjs';
 
-const originalArt=new Set([
- 'ns-landscape-sunset.webp','ns-landscape-clouds.webp','learn-art/scenery-emotions.svg',
- 'learn-art/scenery-relationships.svg','learn-art/scenery-boundaries.svg',
- 'ns-landscape-mountains.webp','ns-landscape-calm.webp','ns-landscape-path.webp',
- 'learn-art/scenery-focus.svg','learn-art/scenery-communication.svg',
- 'ns-character-meditate.webp','ns-character-thinking.webp','ns-character-helping.webp',
- 'ns-character-friends.webp','ns-character-shield.webp','ns-character-hiking.webp',
- 'ns-character-checklist.webp','ns-character-sitting.webp','ns-character-writing.webp',
- 'ns-character-message.webp'
-]);
 const sampleQuestion={id:'q',type:'choose',conceptId:'observations',prompt:'What is directly observable?',
  options:[{id:'a',label:'A fact'},{id:'b',label:'A motive'}],
  answer:'a',explanation:'This identifies the observable element.',counterexample:'Observation may still contain errors.'};
@@ -29,7 +19,11 @@ test('20 precisely identified, unique and unlaunched courses',()=>{
  assert.ok(LEARN_COURSES.every(c=>c.status==='planned'));
  assert.ok(LEARN_COURSES.every(c=>COURSE_CATEGORIES.some(cat=>cat.id===c.category)));
  assert.ok(LEARN_COURSES.every(c=>c.focus.length===4));
- assert.ok(LEARN_COURSES.every(c=>originalArt.has(c.landscape)&&originalArt.has(c.mascot)));
+ assert.ok(LEARN_COURSES.every(c=>c.landscape==='learn-art/course-guides/'+c.id+'-scene.svg'));
+ assert.ok(LEARN_COURSES.every(c=>c.mascot==='learn-art/course-guides/'+c.id+'-tutor.svg'));
+ assert.equal(new Set(LEARN_COURSES.map(c=>c.landscape)).size,20);
+ assert.equal(new Set(LEARN_COURSES.map(c=>c.mascot)).size,20);
+ assert.equal(new Set(LEARN_COURSES.map(c=>c.tutorName)).size,20);
  assert.equal(getLearnCourse('narcissism').title,'Understanding Narcissism & Personality');
  assert.equal(getLearnCourse('unknown'),null);
 });
