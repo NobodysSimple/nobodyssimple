@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="title desc">
+<title id="title">Sage, a cheerful Nobody holding a notebook</title>
+<desc id="desc">A smiling cream-coloured Nobody with simple black oval eyes, a soft green scarf, an amber satchel and a lilac notebook, drawn in the same thick-outlined cartoon style as the other Learn companions.</desc>
+<defs>
+<linearGradient id="body" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#fffdf1"/><stop offset="1" stop-color="#fff3df"/></linearGradient>
+</defs>
+<!-- two rounded feet -->
+<path d="M104 256 87 310q-10 22 0 29 16 10 35-3l32-42 30 41q18 16 38 5 9-9-3-29l-17-55" fill="#fff7e8" stroke="#171613" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- backpack behind main body -->
+<path d="M71 166q-35-3-38 45l-2 75q5 26 40 23l29-10-5-128z" fill="#d9bf85" stroke="#171613" stroke-width="7.5" stroke-linejoin="round"/>
+<path d="M38 239h47v45H38z" fill="#e5c992" stroke="#171613" stroke-width="5.5" stroke-linejoin="round"/>
+<!-- arms and body -->
+<path d="M105 152q-23 8-38 36l-25 53q-10 22 9 31 19 9 29-14l21-26-4 62q29 19 104 6l-3-73 20 26q10 17 25 7 15-11 4-30l-29-54q-12-20-39-25" fill="url(#body)" stroke="#171613" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+<!-- neckerchief -->
+<path d="M112 149q38 27 76-1l10 22-27 19-14-10-14 11-31-19z" fill="#a2ba8f" stroke="#171613" stroke-width="6.5" stroke-linejoin="round"/>
+<path d="m148 181-12 39 20-7 14 8 2-38" fill="#cbd4a0" stroke="#171613" stroke-width="6.1" stroke-linejoin="round"/>
+<!-- head: friendly ordinary silhouette, no diagnostic iconography -->
+<path d="M101 66q-14-19 4-27 15-9 37 7 12-21 35-11 17 7 18 27 24-10 40 10 17 19 8 47-8 20-30 27-3 30-27 42-39 21-78-2-23-15-23-45-22-20-19-44 4-23 35-35z" fill="url(#body)" stroke="#171613" stroke-width="8.5" stroke-linejoin="round"/>
+<!-- face -->
+<ellipse cx="131" cy="116" rx="6.4" ry="10.5" fill="#171613"/>
+<ellipse cx="188" cy="115" rx="6.4" ry="10.5" fill="#171613"/>
+<path d="M151 139q10 12 22 0" fill="none" stroke="#171613" stroke-width="4" stroke-linecap="round"/>
+<!-- simple rosy cheeks -->
+<ellipse cx="108" cy="140" rx="12" ry="6" fill="#ecc4ae" opacity=".45"/>
+<ellipse cx="208" cy="138" rx="12" ry="6" fill="#ecc4ae" opacity=".45"/>
+<!-- little tuft on top, not a costume -->
+<path d="M135 50q-6-23 8-34l11 26q18-21 37-13l-15 25" fill="#fff8e8" stroke="#171613" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- notebook: a neutral symbol of curiosity, not of a neurotype -->
+<path d="M108 210q29-9 52 3v83q-27-13-52-1-21-11-45-1v-82q23-12 45-2z" fill="#e1d6ef" stroke="#171613" stroke-width="7" stroke-linejoin="round"/>
+<path d="M108 211v82" stroke="#171613" stroke-width="5" stroke-linecap="round"/>
+<path d="M76 229q12-4 23 1m-22 15q12-4 22 1m-22 15q12-4 22 1" fill="none" stroke="#ac9dbf" stroke-width="3.2" stroke-linecap="round"/>
+<path d="M121 252q11-18 23 1m-21 13q10-10 21-1" stroke="#a0b9a0" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="m132 235 4-8 4 8 9 1-7 7 2 9-8-5-8 5 2-9-7-7z" fill="#ebc773" stroke="#b89850" stroke-width="2"/>
+<!-- mitten-like hands around the book -->
+<path d="M89 267q-13-7-22 7-8 14 8 20 17 5 31-6l8-18q-5-12-13-6z" fill="#fff7e8" stroke="#171613" stroke-width="7" stroke-linejoin="round"/>
+<path d="M161 269q13-14 24-5 12 9 5 22-10 14-26 7l-14-11z" fill="#fff7e8" stroke="#171613" stroke-width="7" stroke-linejoin="round"/>
+<!-- warm messenger bag strap, simple badge -->
+<path d="M198 180q-25 57-20 116" fill="none" stroke="#b58a5f" stroke-width="10" stroke-linecap="round"/>
+<path d="M177 273q20-8 45 3l5 36q-20 17-49 7z" fill="#d1a678" stroke="#171613" stroke-width="6" stroke-linejoin="round"/>
+<path d="M183 288q17-9 36 0" stroke="#a47d55" stroke-width="3" fill="none"/>
+</svg>
