@@ -3,11 +3,22 @@ import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import {LEARN_COURSE_IDEAS,renderCourseHub} from '../../ns-learn-courses.mjs';
+import {COURSE_CATEGORIES,filterLearnCourses} from '../../ns-learn-catalog-v2.mjs';
+import {PUBLISHED_COURSE_BUNDLES} from '../../ns-learn-content-v2.mjs';
 const read=path=>readFileSync(new URL('../../'+path,import.meta.url),'utf8');
+const fakeRoot=()=>{
+ const controls={
+  '#ns-course-search':{value:'',addEventListener(){}},
+  '[data-course-results]':{innerHTML:''},
+  '[data-catalogue-count]':{textContent:''},
+  '[data-empty]':{hidden:true}
+ };
+ return {controls,root:{innerHTML:'',querySelector:q=>controls[q]||null}};
+};
 
-test('the new Learn page is deliberately courses-only and uses ten original subject illustrations',()=>{
- assert.equal(LEARN_COURSE_IDEAS.length,10);
- assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.id)).size,10);
+test('Learn has exactly 20 independent, planned courses with stable illustrated cards',()=>{
+ assert.equal(LEARN_COURSE_IDEAS.length,20);
+ assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.id)).size,20);
  for(const course of LEARN_COURSE_IDEAS){
   assert.equal(course.status,'planned');
   assert.ok(course.title.length>4);
@@ -15,8 +26,10 @@ test('the new Learn page is deliberately courses-only and uses ten original subj
   assert.ok(/\.(?:webp|svg)$/.test(course.landscape)&&course.mascot.endsWith('.webp'));
   assert.match(read('sw.js'),/nobodyssimple-release-v\d+-[a-z-]+/);
  }
+ assert.deepEqual(Object.keys(PUBLISHED_COURSE_BUNDLES),[]);
 });
-test('all asset paths used by Learn already exist in the public repository',()=>{
+
+test('all image assets used in Learn actually exist',()=>{
  for(const course of LEARN_COURSE_IDEAS){
   assert.ok(existsSync(new URL('../../'+course.landscape,import.meta.url)),course.landscape);
   assert.ok(existsSync(new URL('../../'+course.mascot,import.meta.url)),course.mascot);
@@ -25,7 +38,8 @@ test('all asset paths used by Learn already exist in the public repository',()=>
   assert.ok(existsSync(new URL('../../'+art,import.meta.url)),art);
  }
 });
-test('a dedicated Learn button appears immediately after Feed on desktop and mobile',()=>{
+
+test('the existing Learn navigation placement remains on desktop and mobile',()=>{
  const html=read('index.html'),shell=read('ns-shell.mjs'),styles=read('ns-shell.css');
  const nav=html.slice(html.indexOf('data-ns-primary-nav'),html.indexOf('</nav>',html.indexOf('data-ns-primary-nav')));
  assert.match(nav,/href="#discussion"[\s\S]*?href="#learn"/);
@@ -34,41 +48,59 @@ test('a dedicated Learn button appears immediately after Feed on desktop and mob
  assert.match(shell,/learn:'#learn'/);
  assert.match(styles,/grid-template-columns:repeat\(5,minmax\(0,1fr\)\)!important/);
 });
-test('previous interactive worlds, games, crash courses, debates and curriculum do not render in Learn',()=>{
+
+test('current Learn routes are a catalogue with optional direct courses, not old worlds or a compulsory syllabus',()=>{
  const script=read('ns-learn-courses.mjs'),site=read('site.mjs');
  assert.match(site,/renderCourseHub\(main\.querySelector\('#learn-course-hub'\)/);
- assert.match(site,/if\(id && \(id!=='courses'\|\|routeParts\.length>2\)\)\{location\.replace\('#learn'\)/);
+ assert.match(site,/kind==='course'&&bits\.length===2/);
+ assert.match(site,/kind==='category'&&bits\.length===2/);
+ assert.match(site,/kind==='lesson'&&bits\.length===3/);
  assert.match(site,/\['crash','debates'\]\.includes\(id\)/);
  assert.doesNotMatch(script,/#learn\/path\//);
- assert.doesNotMatch(script,/#learn\/lesson\//);
- assert.doesNotMatch(script,/Full curriculum|Crash Courses|Debates|Interactive demonstration|meadow|The Forest|Writing/);
+ assert.doesNotMatch(script,/Full curriculum|Crash Courses|Debates|Interactive demonstration|meadow|The Forest|Submit writing/);
  assert.ok(!site.includes("renderNSLearnHub(root"));
 });
-test('courses display honest publication status without playable fake content',()=>{
- const fakeRoot={innerHTML:''};
- renderCourseHub(fakeRoot);
- const output=fakeRoot.innerHTML;
- assert.match(output,/Featured course idea/i);
- assert.match(output,/In development — no lessons published yet/);
- assert.match(output,/Our courses are being developed/);
- assert.match(output,/ns-courses-hero/);
- assert.match(output,/ns-courses-feature/);
- assert.match(output,/ns-courses-grid/);
- assert.equal((output.match(/data-course-status="planned"/g)||[]).length,10);
- assert.doesNotMatch(output,/Start course|Begin lesson|Continue learning · The Forest|Full curriculum|Submit writing|Debates/);
+
+test('illustrated catalogue shows honest planned availability with no playable lessons',()=>{
+ const {root,controls}=fakeRoot();
+ renderCourseHub(root);
+ assert.match(root.innerHTML,/Our lessons are in development/);
+ assert.match(root.innerHTML,/No course lessons have been published yet/);
+ assert.match(root.innerHTML,/ns-courses-hero/);
+ assert.match(root.innerHTML,/ns-courses-feature/);
+ assert.match(root.innerHTML,/ns-courses-grid/);
+ assert.equal((controls['[data-course-results]'].innerHTML.match(/data-course-status="planned"/g)||[]).length,20);
+ assert.doesNotMatch(root.innerHTML,/Start course|Begin lesson|Continue learning · The Forest|Full curriculum|Submit writing|Debates/);
+ const detail={innerHTML:''};
+ renderCourseHub(detail,{route:['course','narcissism']});
+ assert.match(detail.innerHTML,/In development/);
+ assert.doesNotMatch(detail.innerHTML,/href="#learn\/lesson\//);
 });
-test('dedicated illustrated course stylesheet includes responsive, dark and reduced-motion layouts',()=>{
- const css=read('ns-learn-courses.css'),html=read('index.html');
+
+test('four independently browsable categories and specialist synonym search are functional',()=>{
+ assert.equal(COURSE_CATEGORIES.length,5); // All + 4 distinct collections
+ assert.equal(filterLearnCourses({category:'relationships'}).length,5);
+ assert.equal(filterLearnCourses({category:'mind'}).length,8);
+ assert.equal(filterLearnCourses({category:'everyday'}).length,2);
+ assert.equal(filterLearnCourses({category:'society'}).length,5);
+ assert.ok(filterLearnCourses({query:'darvo'}).some(c=>c.id==='manipulation'));
+ assert.ok(filterLearnCourses({query:'manosphere'}).some(c=>c.id==='masculinity'));
+});
+
+test('illustrated course styles retain responsive, dark and reduced-motion modes',()=>{
+ const original=read('ns-learn-courses.css'),extra=read('ns-learn-catalog-v2.css'),html=read('index.html');
  assert.match(html,/ns-learn-courses\.css/);
+ assert.match(html,/ns-learn-catalog-v2\.css/);
  for(const selector of ['.ns-courses-hero','.ns-courses-feature','.ns-course-card','.ns-courses-ending'])
-  assert.ok(css.includes(selector),selector);
- assert.match(css,/@media\(max-width:770px\)/);
- assert.match(css,/@media\(max-width:445px\)/);
- assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
- assert.match(css,/html\[data-theme="dark"\]/);
+  assert.ok(original.includes(selector),selector);
+ assert.match(extra,/@media\(max-width:770px\)/);
+ assert.match(extra,/@media\(max-width:445px\)/);
+ assert.match(extra,/@media\(prefers-reduced-motion:reduce\)/);
+ assert.match(extra,/html\[data-theme="dark"\]/);
 });
-test('new module, site router and shell all pass JavaScript syntax checks',()=>{
- for(const filename of ['ns-learn-courses.mjs','site.mjs','ns-shell.mjs']){
+
+test('new Learn modules, site router and shell pass JavaScript syntax checks',()=>{
+ for(const filename of ['ns-learn-courses.mjs','ns-learn-catalog-v2.mjs','ns-learn-content-v2.mjs','ns-learn-engine-v2.mjs','ns-learn-progress-v2.mjs','ns-learn-player-v2.mjs','site.mjs','ns-shell.mjs']){
   const path=new URL('../../'+filename,import.meta.url).pathname;
   assert.doesNotThrow(()=>execFileSync(process.execPath,['--check',path],{stdio:'pipe'}),filename);
  }
