@@ -45,7 +45,7 @@ function catalogue(root,{category='all',focusCourses=false}={}){
  image('ns-character-reading.webp','ns-courses-hero__mascot','fetchpriority="high"')+'</div></section>'+
  '<div class="ns-courses-inner">'+
  '<section class="ns-courses-feature" aria-labelledby="ns-courses-featured-title">'+
- '<span class="ns-courses-feature__label">A DIFFERENT WAY TO LEARN PSYCHOLOGY</span>'+
+ '<span class="ns-courses-feature__label">LEARN PSYCHOLOGY DIFFERENTLY</span>'+
  '<div class="ns-courses-feature__visual" aria-hidden="true">'+image('learn-art/scenery-featured.svg','ns-courses-feature__scene')+
  image('ns-character-plant.webp','ns-courses-feature__character')+'</div>'+
  '<div class="ns-courses-feature__copy"><span class="ns-courses-feature__category">THE LEARNING JOURNEY</span>'+
