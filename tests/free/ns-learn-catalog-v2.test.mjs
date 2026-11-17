@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 import {LEARN_COURSES,COURSE_CATEGORIES,LESSON_FORMATS,filterLearnCourses,getLearnCourse} from '../../ns-learn-catalog-v2.mjs';
 import {PUBLISHED_COURSE_BUNDLES,getLearnContent} from '../../ns-learn-content-v2.mjs';
@@ -109,4 +110,27 @@ test('completion is explicit, durable, namespaced and leaves Journey intact',()=
  assert.equal(records['ns-lifelab-v3:old'].completed,true);
  assert.equal(learnCourseProgress(sampleBundle,records).done,1);
  assert.equal(dueLearnReviews(sampleBundle,records,'2026-11-18').length,1);
+});
+
+test('renamed society courses keep stable deep-link IDs and updated educational scope',()=>{
+ const influence=getLearnCourse('vaping'),gender=getLearnCourse('masculinity');
+ assert.equal(influence.title,'Social Influence & Addiction');
+ assert.equal(influence.cardTitle,'Social Influence & Addiction');
+ assert.equal(gender.title,'Sexuality & Gender');
+ assert.equal(gender.cardTitle,'Sexuality & Gender');
+ assert.ok(filterLearnCourses({query:'nicotine'}).some(c=>c.id==='vaping'));
+ assert.ok(filterLearnCourses({query:'sexuality'}).some(c=>c.id==='masculinity'));
+ assert.ok(filterLearnCourses({query:'manosphere'}).some(c=>c.id==='masculinity'));
+});
+
+test('original Life Lab atlas characters remain square cropped, with edge-bleed protection',()=>{
+ const css=readFileSync(new URL('../../ns-learn-catalog-v2.css',import.meta.url),'utf8');
+ const selector=css.match(/\.ns-course-card__character\.ns-course-card__companion\s*\{([^}]+)\}/)?.[1]||'';
+ assert.match(selector,/background-size:\s*400%\s+500%/);
+ assert.match(selector,/aspect-ratio:\s*1\s*\/\s*1/);
+ assert.match(selector,/height:\s*auto/);
+ assert.match(selector,/clip-path:\s*inset\(/);
+ const details=css.match(/\.ns-catalogue-detail-image\s+\.ns-course-card__character\.ns-course-card__companion\s*\{([^}]+)\}/)?.[1]||'';
+ assert.match(details,/aspect-ratio:\s*1\s*\/\s*1/);
+ assert.match(details,/height:\s*auto/);
 });

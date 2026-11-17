@@ -68,8 +68,8 @@ const cardTitles=Object.freeze({
  sleep:'Sleep & Insomnia',
  'low-mood':'Depression & Low Mood',
  scams:'Scams & Deception',
- masculinity:'Masculinity & Online Influence',
- vaping:'Vaping & Social Pressure'
+ masculinity:'Sexuality & Gender',
+ vaping:'Social Influence & Addiction'
 });
 const make=(id,title,description,category,artId,focus,keywords=[])=>{
  const person=LEARN_COMPANIONS[id];
@@ -106,8 +106,8 @@ export const LEARN_COURSES=Object.freeze([
  make('sleep','Sleep, Insomnia & the Psychology of Rest','Learn how sleep regulation, habits and sleep-related worry interact.','mind','uncertainty',['Circadian and sleep regulation','Conditioned arousal','Sleep-related worry','Evidence and common myths'],['insomnia','rest','circadian']),
  make('low-mood','Depression, Low Mood & Motivation','Explore reward loss, withdrawal, rumination and environmental influences on mood.','mind','self',['Behavioural withdrawal','Reward and motivation','Rumination and mood','Context and alternative explanations'],['depression','low mood','sadness']),
  make('scams','Scams, Deception & Social Engineering','Identify urgency, authority, false scarcity and manipulation under pressure.','society','boundaries',['Authority and urgency','Scarcity claims','Trust and deception','Safer verification strategies'],['fraud','scammers','security']),
- make('masculinity','Masculinity, Misogyny & Online Influence','Study identity, belonging, status and how online narratives influence beliefs.','society','communication',['Social identity and belonging','Status and grievance','Group polarisation','Evaluating harmful generalisations'],['manosphere','misogyny','gender']),
- make('vaping','Vaping, Nicotine & Social Pressure','Understand dependence, social norms, marketing and peer influence.','society','habits',['Nicotine and reinforcement','Perceived social norms','Marketing and persuasion','Responding to peer pressure'],['smoking','nicotine','addiction','pshe'])
+ make('masculinity','Sexuality & Gender','Explore gender roles, sexuality, identity, social expectations and the influence of online narratives.','society','communication',['Sexuality, identity and context','Gender roles and expectations','Social influence and belonging','Distinguishing evidence from stereotypes'],['masculinity','manosphere','misogyny','gender','sexuality','sex education']),
+ make('vaping','Social Influence & Addiction','Understand how dependence, reinforcement, social norms and persuasive environments shape behaviour.','society','habits',['Reinforcement and dependence','Social norms and peer influence','Marketing and persuasion','Responding to pressure and seeking change'],['vaping','smoking','nicotine','addiction','dependency','social pressure','influence','pshe'])
 ]);
 export const COURSE_BY_ID=new Map(LEARN_COURSES.map(c=>[c.id,c]));
 export const getLearnCourse=id=>COURSE_BY_ID.get(id)||null;

@@ -302,12 +302,16 @@ body.app-body.ns-shell-v1 #main .ns-courses-hub .ns-course-card__character.ns-co
  background-position:var(--cast-x) var(--cast-y);
  background-repeat:no-repeat;
  background-color:transparent;
- width:76%;height:85%;left:12%;bottom:-2%;
+ /* The original atlas has 4 × 5 SQUARE cells. Preserve that ratio:
+    a forced rectangular crop reveals strokes from neighbouring atlas rows. */
+ width:76%;height:auto;aspect-ratio:1 / 1;left:12%;bottom:-2%;
  display:block;object-fit:initial;
+ /* Trim cell-edge bleed from neighbouring sprite tiles. */
+ clip-path:inset(5% 3% 3% 3%);
  filter:drop-shadow(0 6px 3px rgba(46,58,40,.12));
 }
 body.app-body.ns-shell-v1 #main .ns-catalogue-detail-image .ns-course-card__character.ns-course-card__companion{
- width:76%;height:82%;left:12%;bottom:0;
+ width:76%;height:auto;aspect-ratio:1 / 1;left:12%;bottom:0;
 }
 body.app-body.ns-shell-v1 #main .ns-catalogue-tutor small{
  display:block;margin-top:5px;font:500 12px/1.55 system-ui,sans-serif;color:#5d7861;
