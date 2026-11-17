@@ -36,12 +36,13 @@ test('The twenty original Life Lab character portraits are all used exactly once
  assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.companionRow+':'+c.companionColumn)).size,20);
  assert.ok(existsSync(new URL('../../media/lifelab/companions.png',import.meta.url)));
  for(const c of LEARN_COURSE_IDEAS){
-  assert.equal(c.mascot,c.id==='neurodiversity'?'learn-art/course-guides/neurodiversity-companion.svg':'media/lifelab/companions.png');
+  assert.equal(c.mascot,c.id==='neurodiversity'?'learn-art/course-guides/neurodiversity-companion.webp':'media/lifelab/companions.png');
   if(c.id==='neurodiversity'){
    assert.equal(c.companionName,'Sage');
-   const svg=read(c.mascot);
-   assert.match(svg,/<title[^>]*>Sage/);
-   assert.doesNotMatch(svg,/<script|<foreignObject|<image|xlink:href|javascript:/i);
+   const image=readFileSync(new URL('../../'+c.mascot,import.meta.url));
+   assert.equal(image.toString('ascii',0,4),'RIFF');
+   assert.equal(image.toString('ascii',8,12),'WEBP');
+   assert.ok(image.byteLength>10000,'Approved supplied portrait must not be a placeholder');
   }
   assert.equal(c.landscape,'learn-art/course-guides/'+c.id+'-scene.svg');
   assert.ok(existsSync(new URL('../../'+c.landscape,import.meta.url)));
@@ -78,5 +79,5 @@ test('Existing blog, Feed and unrelated pages remain linked after Learn asset ve
  assert.match(site,/renderNotebookBlogPost/);
  assert.match(html,/ns-learn-courses\.css\?v=learn-artfix-20261115/);
  assert.match(html,/ns-learn-catalog-v2\.css\?v=lifelab-cast-20261117/);
- assert.match(site,/ns-learn-courses\.mjs\?v=neuro-guide-20261117/);
+ assert.match(site,/ns-learn-courses\.mjs\?v=approved-neuro-image-20261117/);
 });

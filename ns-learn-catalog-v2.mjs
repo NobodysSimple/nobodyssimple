@@ -76,7 +76,7 @@ const make=(id,title,description,category,artId,focus,keywords=[])=>{
  if(!person)throw Error('Missing original Life Lab companion for course '+id);
  const portrait=id==='neurodiversity';
  const landscape=COURSE_ART_ROOT+id+'-scene.svg';
- const mascot=portrait?COURSE_ART_ROOT+'neurodiversity-companion.svg':COMPANION_ATLAS;
+ const mascot=portrait?COURSE_ART_ROOT+'neurodiversity-companion.webp':COMPANION_ATLAS;
  const tone=art[artId]||'sage';
  return Object.freeze({id,title,cardTitle:cardTitles[id]||title,description,category,
   landscape,mascot,companionPortrait:portrait,

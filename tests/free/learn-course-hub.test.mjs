@@ -24,7 +24,7 @@ test('Learn has exactly 20 independent, planned courses with stable illustrated 
   assert.ok(course.title.length>4);
   assert.ok(course.description.length>26);
   assert.ok(course.landscape.endsWith('-scene.svg'));
-  assert.equal(course.mascot,course.id==='neurodiversity'?'learn-art/course-guides/neurodiversity-companion.svg':'media/lifelab/companions.png');
+  assert.equal(course.mascot,course.id==='neurodiversity'?'learn-art/course-guides/neurodiversity-companion.webp':'media/lifelab/companions.png');
   assert.ok(course.companionName&&course.companionQuote);
   assert.match(read('sw.js'),/nobodyssimple-release-v\d+-[a-z-]+/);
  }
