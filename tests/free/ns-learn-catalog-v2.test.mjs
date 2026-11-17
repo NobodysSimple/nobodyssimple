@@ -20,10 +20,10 @@ test('20 precisely identified, unique and unlaunched courses',()=>{
  assert.ok(LEARN_COURSES.every(c=>COURSE_CATEGORIES.some(cat=>cat.id===c.category)));
  assert.ok(LEARN_COURSES.every(c=>c.focus.length===4));
  assert.ok(LEARN_COURSES.every(c=>c.landscape==='learn-art/course-guides/'+c.id+'-scene.svg'));
- assert.ok(LEARN_COURSES.every(c=>c.mascot==='learn-art/course-guides/'+c.id+'-tutor.svg'));
+ assert.ok(LEARN_COURSES.every(c=>c.mascot==='media/lifelab/companions.png'));
  assert.equal(new Set(LEARN_COURSES.map(c=>c.landscape)).size,20);
- assert.equal(new Set(LEARN_COURSES.map(c=>c.mascot)).size,20);
- assert.equal(new Set(LEARN_COURSES.map(c=>c.tutorName)).size,20);
+ assert.equal(new Set(LEARN_COURSES.map(c=>c.companionRow+':'+c.companionColumn)).size,20);
+ assert.equal(new Set(LEARN_COURSES.map(c=>c.companionName)).size,20);
  assert.equal(getLearnCourse('narcissism').title,'Understanding Narcissism & Personality');
  assert.equal(getLearnCourse('unknown'),null);
 });

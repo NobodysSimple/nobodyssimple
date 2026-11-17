@@ -23,7 +23,7 @@ Categories serve discovery. They are not a new mandatory six-school linear curri
 Keep original Learn assets layered:
 - backdrop image, light/glow layer, separately positioned Nobody's Simple mascot, small flourish, cream paper-cut nameplate;
 - same rounded cards, five-column responsive grid, watercolour hero, featured scene with planted mascot and mountainous footer.
-New courses currently reuse verified original character and landscape assets. Future unique art should use these same layers rather than embedding mascots in scene files.
+Each of the 20 course scenes is a distinct SVG. Course character art now uses the **original 4×5 Life Lab companion atlas** at `media/lifelab/companions.png`, with one unique atlas cell per course. The characters are the existing story companions (Moss, Fern, Milo, Pip, Sora, and their castmates) whom learners will eventually help, not new lecturers. The superseded `*-tutor.svg` experiments remain in the repository but are no longer referenced by Learn.
 
 ## Content model, currently EMPTY
 `ns-learn-catalog-v2.mjs`: public title/summary/category, search synonyms, visual assets, four planned focus areas, `status:'planned'`.

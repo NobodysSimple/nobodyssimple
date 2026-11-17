@@ -29,25 +29,22 @@ test('Every original SVG scene stays mascot-free artwork, not a composite portra
  }
 });
 
-test('Twenty courses each have a different original tutor and a distinct standalone world',()=>{
+test('The twenty original Life Lab character portraits are all used exactly once',()=>{
  assert.equal(LEARN_COURSE_IDEAS.length,20);
  assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.landscape)).size,20);
- assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.mascot)).size,20);
- assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.tutorName)).size,20);
- for(const course of LEARN_COURSE_IDEAS){
-  assert.equal(course.landscape,'learn-art/course-guides/'+course.id+'-scene.svg');
-  assert.equal(course.mascot,'learn-art/course-guides/'+course.id+'-tutor.svg');
-  for(const [asset,kind] of [[course.landscape,'scene'],[course.mascot,'tutor']]){
-   assert.ok(existsSync(new URL('../../'+asset,import.meta.url)),asset);
-   const svg=read(asset);
-   assert.match(svg,/^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
-   assert.match(svg,/<\/svg>\s*$/);
-   assert.match(svg,/viewBox="[0-9 ]+"/);
-   assert.match(svg,/<path /);
-   assert.doesNotMatch(svg,/<script|<foreignObject|<image|<use|xlink:href|javascript:/i);
-   if(kind==='scene')assert.doesNotMatch(svg,/<title>.*?—/);
-   else assert.match(svg,new RegExp('<title>'+course.tutorName+' —'));
-  }
+ assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.companionName)).size,20);
+ assert.equal(new Set(LEARN_COURSE_IDEAS.map(c=>c.companionRow+':'+c.companionColumn)).size,20);
+ assert.ok(existsSync(new URL('../../media/lifelab/companions.png',import.meta.url)));
+ for(const c of LEARN_COURSE_IDEAS){
+  assert.equal(c.mascot,'media/lifelab/companions.png');
+  assert.equal(c.landscape,'learn-art/course-guides/'+c.id+'-scene.svg');
+  assert.ok(existsSync(new URL('../../'+c.landscape,import.meta.url)));
+  assert.ok(c.companionRow>=0&&c.companionRow<5);
+  assert.ok(c.companionColumn>=0&&c.companionColumn<4);
+  const art=read(c.landscape);
+  assert.match(art,/^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
+  assert.match(art,/<\/svg>\s*$/);
+  assert.doesNotMatch(art,/<script|<foreignObject|<image|xlink:href|javascript:/i);
  }
 });
 test('Learn hero and featured panel each retain one intentional mascot',()=>{
@@ -74,6 +71,6 @@ test('Existing blog, Feed and unrelated pages remain linked after Learn asset ve
  assert.match(html,/href="#discussion"[\s\S]*href="#learn"/);
  assert.match(site,/renderNotebookBlogPost/);
  assert.match(html,/ns-learn-courses\.css\?v=learn-artfix-20261115/);
- assert.match(html,/ns-learn-catalog-v2\.css\?v=tutor-art-20261117/);
- assert.match(site,/ns-learn-courses\.mjs\?v=tutor-art-20261117/);
+ assert.match(html,/ns-learn-catalog-v2\.css\?v=lifelab-cast-20261117/);
+ assert.match(site,/ns-learn-courses\.mjs\?v=lifelab-cast-20261117/);
 });
