@@ -32,7 +32,7 @@
             },
             {
               "id": "manipulation-m1-l3",
-              "title": "Distinguish it: influence versus coercion",
+              "title": "Distinguish Persuasion versus manipulation: influence versus coercion",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Persuasion versus manipulation. Contrasting cases: influence versus coercion.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -40,7 +40,7 @@
             },
             {
               "id": "manipulation-m1-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Persuasion versus manipulation",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Persuasion versus manipulation. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -87,7 +87,7 @@
             },
             {
               "id": "manipulation-m2-l3",
-              "title": "Distinguish it: influence versus coercion",
+              "title": "Distinguish Accidental hurt versus strategic deception: influence versus coercion",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Accidental hurt versus strategic deception. Contrasting cases: influence versus coercion.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -95,7 +95,7 @@
             },
             {
               "id": "manipulation-m2-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Accidental hurt versus strategic deception",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Accidental hurt versus strategic deception. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -142,7 +142,7 @@
             },
             {
               "id": "manipulation-m3-l3",
-              "title": "Distinguish it: influence versus coercion",
+              "title": "Distinguish Disagreement versus reality-undermining: influence versus coercion",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Disagreement versus reality-undermining. Contrasting cases: influence versus coercion.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -150,7 +150,7 @@
             },
             {
               "id": "manipulation-m3-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Disagreement versus reality-undermining",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Disagreement versus reality-undermining. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -197,7 +197,7 @@
             },
             {
               "id": "manipulation-m4-l3",
-              "title": "Distinguish it: influence versus coercion",
+              "title": "Distinguish Influence under unequal power: influence versus coercion",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Influence under unequal power. Contrasting cases: influence versus coercion.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -205,7 +205,7 @@
             },
             {
               "id": "manipulation-m4-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Influence under unequal power",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Influence under unequal power. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -252,7 +252,7 @@
             },
             {
               "id": "manipulation-m5-l3",
-              "title": "Distinguish it: influence versus coercion",
+              "title": "Distinguish When a label obscures what happened: influence versus coercion",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When a label obscures what happened. Contrasting cases: influence versus coercion.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -260,7 +260,7 @@
             },
             {
               "id": "manipulation-m5-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: When a label obscures what happened",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When a label obscures what happened. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -314,7 +314,7 @@
             },
             {
               "id": "manipulation-m6-l3",
-              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "title": "Distinguish Denying an event versus repeated gaslighting: mistaken memory versus sustained undermining",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Denying an event versus repeated gaslighting. Contrasting cases: mistaken memory versus sustained undermining.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -322,7 +322,7 @@
             },
             {
               "id": "manipulation-m6-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Denying an event versus repeated gaslighting",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Denying an event versus repeated gaslighting. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -369,7 +369,7 @@
             },
             {
               "id": "manipulation-m7-l3",
-              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "title": "Distinguish Attacks on memory and competence: mistaken memory versus sustained undermining",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Attacks on memory and competence. Contrasting cases: mistaken memory versus sustained undermining.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -377,7 +377,7 @@
             },
             {
               "id": "manipulation-m7-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Attacks on memory and competence",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Attacks on memory and competence. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -424,7 +424,7 @@
             },
             {
               "id": "manipulation-m8-l3",
-              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "title": "Distinguish Selective evidence and moving standards: mistaken memory versus sustained undermining",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Selective evidence and moving standards. Contrasting cases: mistaken memory versus sustained undermining.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -432,7 +432,7 @@
             },
             {
               "id": "manipulation-m8-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Selective evidence and moving standards",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Selective evidence and moving standards. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -479,7 +479,7 @@
             },
             {
               "id": "manipulation-m9-l3",
-              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "title": "Distinguish Dependency on another person's account: mistaken memory versus sustained undermining",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Dependency on another person's account. Contrasting cases: mistaken memory versus sustained undermining.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -487,7 +487,7 @@
             },
             {
               "id": "manipulation-m9-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Dependency on another person's account",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Dependency on another person's account. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -534,7 +534,7 @@
             },
             {
               "id": "manipulation-m10-l3",
-              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "title": "Distinguish Why single exchanges are insufficient: mistaken memory versus sustained undermining",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Why single exchanges are insufficient. Contrasting cases: mistaken memory versus sustained undermining.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -542,7 +542,7 @@
             },
             {
               "id": "manipulation-m10-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Why single exchanges are insufficient",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Why single exchanges are insufficient. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -596,7 +596,7 @@
             },
             {
               "id": "manipulation-m11-l3",
-              "title": "Distinguish it: defensiveness versus DARVO",
+              "title": "Distinguish Denial, attack and role reversal: defensiveness versus DARVO",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Denial, attack and role reversal. Contrasting cases: defensiveness versus DARVO.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -604,7 +604,7 @@
             },
             {
               "id": "manipulation-m11-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Denial, attack and role reversal",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Denial, attack and role reversal. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -651,7 +651,7 @@
             },
             {
               "id": "manipulation-m12-l3",
-              "title": "Distinguish it: defensiveness versus DARVO",
+              "title": "Distinguish False equivalence in arguments: defensiveness versus DARVO",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: False equivalence in arguments. Contrasting cases: defensiveness versus DARVO.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -659,7 +659,7 @@
             },
             {
               "id": "manipulation-m12-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: False equivalence in arguments",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: False equivalence in arguments. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -706,7 +706,7 @@
             },
             {
               "id": "manipulation-m13-l3",
-              "title": "Distinguish it: defensiveness versus DARVO",
+              "title": "Distinguish Whataboutism and topic diversion: defensiveness versus DARVO",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Whataboutism and topic diversion. Contrasting cases: defensiveness versus DARVO.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -714,7 +714,7 @@
             },
             {
               "id": "manipulation-m13-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Whataboutism and topic diversion",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Whataboutism and topic diversion. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -761,7 +761,7 @@
             },
             {
               "id": "manipulation-m14-l3",
-              "title": "Distinguish it: defensiveness versus DARVO",
+              "title": "Distinguish Apologies that redirect responsibility: defensiveness versus DARVO",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Apologies that redirect responsibility. Contrasting cases: defensiveness versus DARVO.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -769,7 +769,7 @@
             },
             {
               "id": "manipulation-m14-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Apologies that redirect responsibility",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Apologies that redirect responsibility. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -816,7 +816,7 @@
             },
             {
               "id": "manipulation-m15-l3",
-              "title": "Distinguish it: defensiveness versus DARVO",
+              "title": "Distinguish When genuine disputes resist neat labels: defensiveness versus DARVO",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When genuine disputes resist neat labels. Contrasting cases: defensiveness versus DARVO.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -824,7 +824,7 @@
             },
             {
               "id": "manipulation-m15-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: When genuine disputes resist neat labels",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When genuine disputes resist neat labels. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -878,7 +878,7 @@
             },
             {
               "id": "manipulation-m16-l3",
-              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "title": "Distinguish Monitoring framed as care: isolated persuasion versus ongoing control",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Monitoring framed as care. Contrasting cases: isolated persuasion versus ongoing control.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -886,7 +886,7 @@
             },
             {
               "id": "manipulation-m16-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Monitoring framed as care",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Monitoring framed as care. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -933,7 +933,7 @@
             },
             {
               "id": "manipulation-m17-l3",
-              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "title": "Distinguish Isolation disguised as loyalty: isolated persuasion versus ongoing control",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Isolation disguised as loyalty. Contrasting cases: isolated persuasion versus ongoing control.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -941,7 +941,7 @@
             },
             {
               "id": "manipulation-m17-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Isolation disguised as loyalty",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Isolation disguised as loyalty. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -988,7 +988,7 @@
             },
             {
               "id": "manipulation-m18-l3",
-              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "title": "Distinguish Financial pressure and limited choices: isolated persuasion versus ongoing control",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Financial pressure and limited choices. Contrasting cases: isolated persuasion versus ongoing control.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -996,7 +996,7 @@
             },
             {
               "id": "manipulation-m18-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Financial pressure and limited choices",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Financial pressure and limited choices. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1043,7 +1043,7 @@
             },
             {
               "id": "manipulation-m19-l3",
-              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "title": "Distinguish Threats, punishments and compliance: isolated persuasion versus ongoing control",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Threats, punishments and compliance. Contrasting cases: isolated persuasion versus ongoing control.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1051,7 +1051,7 @@
             },
             {
               "id": "manipulation-m19-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Threats, punishments and compliance",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Threats, punishments and compliance. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1098,7 +1098,7 @@
             },
             {
               "id": "manipulation-m20-l3",
-              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "title": "Distinguish Entrapment without visible violence: isolated persuasion versus ongoing control",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Entrapment without visible violence. Contrasting cases: isolated persuasion versus ongoing control.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1106,7 +1106,7 @@
             },
             {
               "id": "manipulation-m20-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Entrapment without visible violence",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Entrapment without visible violence. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1160,7 +1160,7 @@
             },
             {
               "id": "manipulation-m21-l3",
-              "title": "Distinguish it: rhetoric versus established intent",
+              "title": "Distinguish Loaded questions and forced choices: rhetoric versus established intent",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Loaded questions and forced choices. Contrasting cases: rhetoric versus established intent.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1168,7 +1168,7 @@
             },
             {
               "id": "manipulation-m21-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Loaded questions and forced choices",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Loaded questions and forced choices. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1215,7 +1215,7 @@
             },
             {
               "id": "manipulation-m22-l3",
-              "title": "Distinguish it: rhetoric versus established intent",
+              "title": "Distinguish Minimising harm with comparisons: rhetoric versus established intent",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Minimising harm with comparisons. Contrasting cases: rhetoric versus established intent.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1223,7 +1223,7 @@
             },
             {
               "id": "manipulation-m22-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Minimising harm with comparisons",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Minimising harm with comparisons. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1270,7 +1270,7 @@
             },
             {
               "id": "manipulation-m23-l3",
-              "title": "Distinguish it: rhetoric versus established intent",
+              "title": "Distinguish Ambiguity that defeats accountability: rhetoric versus established intent",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Ambiguity that defeats accountability. Contrasting cases: rhetoric versus established intent.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1278,7 +1278,7 @@
             },
             {
               "id": "manipulation-m23-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Ambiguity that defeats accountability",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Ambiguity that defeats accountability. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1325,7 +1325,7 @@
             },
             {
               "id": "manipulation-m24-l3",
-              "title": "Distinguish it: rhetoric versus established intent",
+              "title": "Distinguish Guilt appeals and obligation: rhetoric versus established intent",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Guilt appeals and obligation. Contrasting cases: rhetoric versus established intent.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1333,7 +1333,7 @@
             },
             {
               "id": "manipulation-m24-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Guilt appeals and obligation",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Guilt appeals and obligation. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1380,7 +1380,7 @@
             },
             {
               "id": "manipulation-m25-l3",
-              "title": "Distinguish it: rhetoric versus established intent",
+              "title": "Distinguish Love-bombing claims versus normal enthusiasm: rhetoric versus established intent",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Love-bombing claims versus normal enthusiasm. Contrasting cases: rhetoric versus established intent.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1388,7 +1388,7 @@
             },
             {
               "id": "manipulation-m25-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Love-bombing claims versus normal enthusiasm",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Love-bombing claims versus normal enthusiasm. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1442,7 +1442,7 @@
             },
             {
               "id": "manipulation-m26-l3",
-              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "title": "Distinguish Cherry-picked screenshots: uncertainty versus fabricated certainty",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Cherry-picked screenshots. Contrasting cases: uncertainty versus fabricated certainty.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1450,7 +1450,7 @@
             },
             {
               "id": "manipulation-m26-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Cherry-picked screenshots",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Cherry-picked screenshots. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1497,7 +1497,7 @@
             },
             {
               "id": "manipulation-m27-l3",
-              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "title": "Distinguish Conflicting stories from mutual friends: uncertainty versus fabricated certainty",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Conflicting stories from mutual friends. Contrasting cases: uncertainty versus fabricated certainty.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1505,7 +1505,7 @@
             },
             {
               "id": "manipulation-m27-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Conflicting stories from mutual friends",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Conflicting stories from mutual friends. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1552,7 +1552,7 @@
             },
             {
               "id": "manipulation-m28-l3",
-              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "title": "Distinguish Memory confidence and reconstructive recall: uncertainty versus fabricated certainty",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Memory confidence and reconstructive recall. Contrasting cases: uncertainty versus fabricated certainty.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1560,7 +1560,7 @@
             },
             {
               "id": "manipulation-m28-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Memory confidence and reconstructive recall",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Memory confidence and reconstructive recall. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1607,7 +1607,7 @@
             },
             {
               "id": "manipulation-m29-l3",
-              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "title": "Distinguish Evidence logs and privacy trade-offs: uncertainty versus fabricated certainty",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Evidence logs and privacy trade-offs. Contrasting cases: uncertainty versus fabricated certainty.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1615,7 +1615,7 @@
             },
             {
               "id": "manipulation-m29-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Evidence logs and privacy trade-offs",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Evidence logs and privacy trade-offs. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1662,7 +1662,7 @@
             },
             {
               "id": "manipulation-m30-l3",
-              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "title": "Distinguish Why motive-reading can backfire: uncertainty versus fabricated certainty",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Why motive-reading can backfire. Contrasting cases: uncertainty versus fabricated certainty.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1670,7 +1670,7 @@
             },
             {
               "id": "manipulation-m30-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Why motive-reading can backfire",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Why motive-reading can backfire. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1724,7 +1724,7 @@
             },
             {
               "id": "manipulation-m31-l3",
-              "title": "Distinguish it: individual tactic versus structural power",
+              "title": "Distinguish Age and authority differences: individual tactic versus structural power",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Age and authority differences. Contrasting cases: individual tactic versus structural power.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1732,7 +1732,7 @@
             },
             {
               "id": "manipulation-m31-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Age and authority differences",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Age and authority differences. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1779,7 +1779,7 @@
             },
             {
               "id": "manipulation-m32-l3",
-              "title": "Distinguish it: individual tactic versus structural power",
+              "title": "Distinguish Workplace retaliation risks: individual tactic versus structural power",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Workplace retaliation risks. Contrasting cases: individual tactic versus structural power.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1787,7 +1787,7 @@
             },
             {
               "id": "manipulation-m32-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Workplace retaliation risks",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Workplace retaliation risks. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1834,7 +1834,7 @@
             },
             {
               "id": "manipulation-m33-l3",
-              "title": "Distinguish it: individual tactic versus structural power",
+              "title": "Distinguish Family obligation and dependence: individual tactic versus structural power",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Family obligation and dependence. Contrasting cases: individual tactic versus structural power.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1842,7 +1842,7 @@
             },
             {
               "id": "manipulation-m33-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Family obligation and dependence",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Family obligation and dependence. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1889,7 +1889,7 @@
             },
             {
               "id": "manipulation-m34-l3",
-              "title": "Distinguish it: individual tactic versus structural power",
+              "title": "Distinguish Institutional denial and credibility: individual tactic versus structural power",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Institutional denial and credibility. Contrasting cases: individual tactic versus structural power.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1897,7 +1897,7 @@
             },
             {
               "id": "manipulation-m34-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Institutional denial and credibility",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Institutional denial and credibility. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -1944,7 +1944,7 @@
             },
             {
               "id": "manipulation-m35-l3",
-              "title": "Distinguish it: individual tactic versus structural power",
+              "title": "Distinguish Cultural norms around obedience: individual tactic versus structural power",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Cultural norms around obedience. Contrasting cases: individual tactic versus structural power.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -1952,7 +1952,7 @@
             },
             {
               "id": "manipulation-m35-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Cultural norms around obedience",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Cultural norms around obedience. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2006,7 +2006,7 @@
             },
             {
               "id": "manipulation-m36-l3",
-              "title": "Distinguish it: confrontation versus safety planning",
+              "title": "Distinguish Setting a boundary without a diagnosis: confrontation versus safety planning",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Setting a boundary without a diagnosis. Contrasting cases: confrontation versus safety planning.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2014,7 +2014,7 @@
             },
             {
               "id": "manipulation-m36-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Setting a boundary without a diagnosis",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Setting a boundary without a diagnosis. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2061,7 +2061,7 @@
             },
             {
               "id": "manipulation-m37-l3",
-              "title": "Distinguish it: confrontation versus safety planning",
+              "title": "Distinguish Asking for specifics and accountability: confrontation versus safety planning",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Asking for specifics and accountability. Contrasting cases: confrontation versus safety planning.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2069,7 +2069,7 @@
             },
             {
               "id": "manipulation-m37-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Asking for specifics and accountability",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Asking for specifics and accountability. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2116,7 +2116,7 @@
             },
             {
               "id": "manipulation-m38-l3",
-              "title": "Distinguish it: confrontation versus safety planning",
+              "title": "Distinguish Recognising when debate is unsafe: confrontation versus safety planning",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Recognising when debate is unsafe. Contrasting cases: confrontation versus safety planning.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2124,7 +2124,7 @@
             },
             {
               "id": "manipulation-m38-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Recognising when debate is unsafe",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Recognising when debate is unsafe. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2171,7 +2171,7 @@
             },
             {
               "id": "manipulation-m39-l3",
-              "title": "Distinguish it: confrontation versus safety planning",
+              "title": "Distinguish Support networks and external perspective: confrontation versus safety planning",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Support networks and external perspective. Contrasting cases: confrontation versus safety planning.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2179,7 +2179,7 @@
             },
             {
               "id": "manipulation-m39-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Support networks and external perspective",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Support networks and external perspective. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2226,7 +2226,7 @@
             },
             {
               "id": "manipulation-m40-l3",
-              "title": "Distinguish it: confrontation versus safety planning",
+              "title": "Distinguish Exit planning for coercive situations: confrontation versus safety planning",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Exit planning for coercive situations. Contrasting cases: confrontation versus safety planning.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2234,7 +2234,7 @@
             },
             {
               "id": "manipulation-m40-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Exit planning for coercive situations",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Exit planning for coercive situations. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2288,7 +2288,7 @@
             },
             {
               "id": "manipulation-m41-l3",
-              "title": "Distinguish it: adaptation versus permanent distrust",
+              "title": "Distinguish After prolonged uncertainty about reality: adaptation versus permanent distrust",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: After prolonged uncertainty about reality. Contrasting cases: adaptation versus permanent distrust.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2296,7 +2296,7 @@
             },
             {
               "id": "manipulation-m41-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: After prolonged uncertainty about reality",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: After prolonged uncertainty about reality. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2343,7 +2343,7 @@
             },
             {
               "id": "manipulation-m42-l3",
-              "title": "Distinguish it: adaptation versus permanent distrust",
+              "title": "Distinguish Rebuilding independent judgement: adaptation versus permanent distrust",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Rebuilding independent judgement. Contrasting cases: adaptation versus permanent distrust.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2351,7 +2351,7 @@
             },
             {
               "id": "manipulation-m42-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Rebuilding independent judgement",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Rebuilding independent judgement. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2398,7 +2398,7 @@
             },
             {
               "id": "manipulation-m43-l3",
-              "title": "Distinguish it: adaptation versus permanent distrust",
+              "title": "Distinguish Healthy trust after deception: adaptation versus permanent distrust",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Healthy trust after deception. Contrasting cases: adaptation versus permanent distrust.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2406,7 +2406,7 @@
             },
             {
               "id": "manipulation-m43-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Healthy trust after deception",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Healthy trust after deception. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2453,7 +2453,7 @@
             },
             {
               "id": "manipulation-m44-l3",
-              "title": "Distinguish it: adaptation versus permanent distrust",
+              "title": "Distinguish Trauma responses and overgeneralisation: adaptation versus permanent distrust",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Trauma responses and overgeneralisation. Contrasting cases: adaptation versus permanent distrust.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2461,7 +2461,7 @@
             },
             {
               "id": "manipulation-m44-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Trauma responses and overgeneralisation",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Trauma responses and overgeneralisation. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2508,7 +2508,7 @@
             },
             {
               "id": "manipulation-m45-l3",
-              "title": "Distinguish it: adaptation versus permanent distrust",
+              "title": "Distinguish Learning from events without self-blame: adaptation versus permanent distrust",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Learning from events without self-blame. Contrasting cases: adaptation versus permanent distrust.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2516,7 +2516,7 @@
             },
             {
               "id": "manipulation-m45-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Learning from events without self-blame",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Learning from events without self-blame. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2570,7 +2570,7 @@
             },
             {
               "id": "manipulation-m46-l3",
-              "title": "Distinguish it: plausible story versus justified interpretation",
+              "title": "Distinguish Two conflicting accounts of the same event: plausible story versus justified interpretation",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Two conflicting accounts of the same event. Contrasting cases: plausible story versus justified interpretation.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2578,7 +2578,7 @@
             },
             {
               "id": "manipulation-m46-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Two conflicting accounts of the same event",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Two conflicting accounts of the same event. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2625,7 +2625,7 @@
             },
             {
               "id": "manipulation-m47-l3",
-              "title": "Distinguish it: plausible story versus justified interpretation",
+              "title": "Distinguish When the accused person is also vulnerable: plausible story versus justified interpretation",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When the accused person is also vulnerable. Contrasting cases: plausible story versus justified interpretation.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2633,7 +2633,7 @@
             },
             {
               "id": "manipulation-m47-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: When the accused person is also vulnerable",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When the accused person is also vulnerable. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2680,7 +2680,7 @@
             },
             {
               "id": "manipulation-m48-l3",
-              "title": "Distinguish it: plausible story versus justified interpretation",
+              "title": "Distinguish Scams, politics and manipulative narratives: plausible story versus justified interpretation",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Scams, politics and manipulative narratives. Contrasting cases: plausible story versus justified interpretation.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2688,7 +2688,7 @@
             },
             {
               "id": "manipulation-m48-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Scams, politics and manipulative narratives",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Scams, politics and manipulative narratives. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2735,7 +2735,7 @@
             },
             {
               "id": "manipulation-m49-l3",
-              "title": "Distinguish it: plausible story versus justified interpretation",
+              "title": "Distinguish Differentiating coercion from negotiation: plausible story versus justified interpretation",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Differentiating coercion from negotiation. Contrasting cases: plausible story versus justified interpretation.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2743,7 +2743,7 @@
             },
             {
               "id": "manipulation-m49-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Differentiating coercion from negotiation",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Differentiating coercion from negotiation. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
@@ -2790,7 +2790,7 @@
             },
             {
               "id": "manipulation-m50-l3",
-              "title": "Distinguish it: plausible story versus justified interpretation",
+              "title": "Distinguish Integration: evidence, power and proportion: plausible story versus justified interpretation",
               "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Integration: evidence, power and proportion. Contrasting cases: plausible story versus justified interpretation.",
               "recommendedType": "sort",
               "editorialStatus": "not-authored",
@@ -2798,7 +2798,7 @@
             },
             {
               "id": "manipulation-m50-l4",
-              "title": "Which evidence would change the conclusion?",
+              "title": "Evidence investigation: Integration: evidence, power and proportion",
               "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Integration: evidence, power and proportion. ",
               "recommendedType": "investigate",
               "editorialStatus": "not-authored",
