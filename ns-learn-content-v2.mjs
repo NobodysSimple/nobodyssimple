@@ -23,7 +23,7 @@ export async function loadPublishedLearnIndex({refresh=false}={}){
   if(data?.version!==1||!data.courses||typeof data.courses!=='object'||Array.isArray(data.courses))throw Error('Invalid published course index.');
   const allowed={};
   for(const [id,record] of Object.entries(data.courses)){
-   if(validId(id)&&Number.isInteger(record?.version)&&record.version>=1)allowed[id]={version:record.version,title:typeof record.title==='string'?record.title.slice(0,160):'',description:typeof record.description==='string'?record.description.slice(0,400):''};
+   if(validId(id)&&record?.status!=='unpublished'&&Number.isInteger(record?.version)&&record.version>=1)allowed[id]={version:record.version,title:typeof record.title==='string'?record.title.slice(0,160):'',description:typeof record.description==='string'?record.description.slice(0,400):''};
   }
   index={version:1,courses:allowed};indexLoaded=true;
   for(const [id,bundle] of bundles)if(bundle.version!==allowed[id]?.version)bundles.delete(id);
