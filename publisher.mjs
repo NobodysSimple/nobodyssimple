@@ -1,4 +1,5 @@
 import { safeAsset, validatePost } from "./core.mjs";
+import {validateCourseForPublish} from "./ns-course-lab-schema.mjs";
 
 const mediaType = (path) => /\.(?:png|jpe?g|webp|gif)$/i.test(path) ? "image" : /\.(?:mp3|m4a|ogg|wav)$/i.test(path) ? "audio" : "pdf";
 
@@ -120,6 +121,68 @@ export class Publisher {
       message:`Update navigation topic copy: ${topicId}`,content:btoa(binary),sha,branch:this.branch
     });
     return {sha:result.commit?.sha,section:next.topics[topicId]||null};
+  }
+
+  // Course Lab: GitHub is the authoritative content store. Only the owner
+  // token can use these methods; visitors fetch published, validated JSON.
+  async readLearnManifest() {
+    const ref=await this.api(this.base+'/git/ref/heads/'+this.branch);
+    const head=ref.object.sha;
+    const commit=await this.api(this.base+'/git/commits/'+head);
+    const file=await this.api(this.base+'/contents/learn-content/index.json?ref='+head);
+    const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\\s/g,'')),c=>c.charCodeAt(0));
+    const index=JSON.parse(new TextDecoder().decode(bytes));
+    if(index.version!==1||!index.courses||typeof index.courses!=='object'||Array.isArray(index.courses))throw Error('Course index format changed. Reload Course Lab before publishing.');
+    return {head,tree:commit.tree.sha,index};
+  }
+
+  async readLearnCourse(courseId) {
+    if(!/^[a-z0-9][a-z0-9-]{0,119}$/.test(courseId))throw Error('Invalid course ID.');
+    const {index}=await this.readLearnManifest();
+    const version=index.courses[courseId]?.version||0;
+    if(!version)return {version:0,bundle:null};
+    const file=await this.api(this.base+'/contents/learn-content/courses/'+courseId+'.json?ref='+this.branch);
+    const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\\s/g,'')),c=>c.charCodeAt(0));
+    return {version,bundle:JSON.parse(new TextDecoder().decode(bytes))};
+  }
+
+  async publishLearnCourse(draft,expectedVersion=0) {
+    const errors=validateCourseForPublish(draft);
+    if(errors.length)throw Error('Course is not ready: '+errors.slice(0,5).join(' | '));
+    const {head,tree,index}=await this.readLearnManifest();
+    const actual=index.courses[draft.id]?.version||0;
+    if(actual!==expectedVersion)throw Error('This course was published elsewhere since it was opened. Reload the live version before publishing.');
+    const version=actual+1;
+    const bundle={...draft,version,status:'published'};
+    const next={version:1,courses:{...index.courses,[draft.id]:{version}}};
+    const newTree=await this.api(this.base+'/git/trees','POST',{
+      base_tree:tree,tree:[
+        {path:'learn-content/courses/'+draft.id+'.json',mode:'100644',type:'blob',content:JSON.stringify(bundle,null,2)+'\n'},
+        {path:'learn-content/index.json',mode:'100644',type:'blob',content:JSON.stringify(next,null,2)+'\n'}
+      ]
+    });
+    const commit=await this.api(this.base+'/git/commits','POST',{
+      message:'Publish Learn course '+draft.id+' (v'+version+')',tree:newTree.sha,parents:[head]
+    });
+    await this.api(this.base+'/git/refs/heads/'+this.branch,'PATCH',{sha:commit.sha,force:false});
+    return {version,sha:commit.sha,bundle};
+  }
+
+  async unpublishLearnCourse(courseId,expectedVersion=0) {
+    if(!/^[a-z0-9][a-z0-9-]{0,119}$/.test(courseId))throw Error('Invalid course ID.');
+    const {head,tree,index}=await this.readLearnManifest();
+    const actual=index.courses[courseId]?.version||0;
+    if(!actual||actual!==expectedVersion)throw Error('The published version changed. Reload before unpublishing.');
+    const next={version:1,courses:{...index.courses}};
+    delete next.courses[courseId];
+    const newTree=await this.api(this.base+'/git/trees','POST',{
+      base_tree:tree,tree:[{path:'learn-content/index.json',mode:'100644',type:'blob',content:JSON.stringify(next,null,2)+'\n'}]
+    });
+    const commit=await this.api(this.base+'/git/commits','POST',{
+      message:'Unpublish Learn course '+courseId,tree:newTree.sha,parents:[head]
+    });
+    await this.api(this.base+'/git/refs/heads/'+this.branch,'PATCH',{sha:commit.sha,force:false});
+    return {sha:commit.sha};
   }
 
   async contentHistory(limit = 12) {
