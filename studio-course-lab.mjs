@@ -64,12 +64,14 @@ function editorFields(node){
  let html=head+textField('Question / task','prompt',node.prompt,{rows:3})+
  textField('Concept ID','conceptId',node.conceptId,{hint:'A stable learning concept, e.g. negative-reinforcement.'});
  if(node.type==='character')html+=textField('Character name','characterName',node.characterName)+textField('Character situation','scenario',node.scenario,{rows:4});
+ if(node.type==='update')html+=textField('New evidence revealed after the initial case','newEvidence',node.newEvidence,{rows:3});
+ if(node.type==='perspective')html+=textField('Viewpoint A','viewA',node.viewA,{rows:3})+textField('Viewpoint B','viewB',node.viewB,{rows:3});
  if(node.type==='predict')html+=textField('Condition / variable to change','changePrompt',node.changePrompt,{rows:2});
  if(node.type==='complete')html+=textField('Optional hint','hint',node.hint)+
  '<section class="cl-list"><div class="cl-list-title"><strong>Accepted answers (including variants)</strong><button data-act="add-answer" type="button">＋ Add</button></div>'+
  (node.answers||[]).map((x,i)=>'<div class="cl-row"><input aria-label="Accepted answer '+(i+1)+'" data-answer-index="'+i+'" value="'+esc(x)+'"><button type="button" data-act="remove-answer" data-pos="'+i+'">×</button></div>').join('')+'</section>';
- for(const list of ({match:['pairs'],sort:['categories','items'],label:['segments'],choose:['options'],repair:['options'],investigate:['options'],chain:['steps'],predict:['changes','outcomes'],character:['evidenceOptions','responseOptions']})[node.type]||[])html+=itemList(node,list);
- if(['choose','repair','investigate'].includes(node.type))html+=selectField('Correct answer','answer',node.options||[],node.answer);
+ for(const list of ({match:['pairs'],sort:['categories','items'],label:['segments'],choose:['options'],repair:['options'],investigate:['options'],chain:['steps'],rank:['steps'],update:['options'],perspective:['options'],predict:['changes','outcomes'],character:['evidenceOptions','responseOptions']})[node.type]||[])html+=itemList(node,list);
+ if(['choose','repair','investigate','update','perspective'].includes(node.type))html+=selectField('Correct answer','answer',node.options||[],node.answer);
  if(node.type==='predict')html+=selectField('Best change','correctChange',node.changes||[],node.correctChange)+selectField('Best predicted outcome','correctOutcome',node.outcomes||[],node.correctOutcome);
  if(node.type==='character')html+=selectField('Supported evidence','evidenceAnswer',node.evidenceOptions||[],node.evidenceAnswer)+selectField('Appropriate response','responseAnswer',node.responseOptions||[],node.responseAnswer);
  html+=textField('Explanation after answering','explanation',node.explanation,{rows:4,hint:'Explain what makes the answer justified and why plausible alternatives fall short.'})+
