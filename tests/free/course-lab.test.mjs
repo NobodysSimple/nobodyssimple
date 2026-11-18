@@ -26,24 +26,36 @@ const fixture=()=>{
   if(type==='chain'){node.steps[0].label='Notice the trigger';node.steps[1].label='Identify the response';response[node.id]=node.steps.map(s=>s.id);}
   if(type==='predict'){node.changePrompt='What changes if avoidance is made less rewarding?';node.changes[0].label='Reduce escape';node.changes[1].label='Increase escape';node.outcomes[0].label='Avoidance may weaken';node.outcomes[1].label='Avoidance is always cured';node.correctChange=node.changes[0].id;node.correctOutcome=node.outcomes[0].id;response[node.id]={change:node.correctChange,outcome:node.correctOutcome};}
   if(type==='character'){node.characterName='Moss';node.scenario='Moss is uncertain what a friend meant.';node.evidenceOptions[0].label='No message was received';node.evidenceOptions[1].label='The friend dislikes Moss';node.responseOptions[0].label='Seek clarification calmly';node.responseOptions[1].label='Diagnose the friend';node.evidenceAnswer=node.evidenceOptions[0].id;node.responseAnswer=node.responseOptions[0].id;response[node.id]={evidence:node.evidenceAnswer,action:node.responseAnswer};}
+  if(type==='dialogue'){
+   node.scenario='Two friends disagree about a cancelled plan.';
+   node.turns[0].text='You never make time for me.';
+   node.turns[1].text='I had to work late, but I know you were looking forward to it.';
+   const first=node.checks[0];first.prompt='What did the second speaker do?';first.focusTurn=node.turns[1].id;
+   first.options[0].label='Acknowledge disappointment';first.options[1].label='Deny the feeling';first.answer=first.options[0].id;
+   first.explanation='The speaker recognised the disappointment without conceding every claim.';first.counterexample='Acknowledgement is not proof that a claim is true.';
+   const second=createCourseNode('dialogue').checks[0];second.prompt='What is the first speaker assuming?';second.focusTurn=node.turns[0].id;
+   second.options[0].label='One cancellation proves never';second.options[1].label='The plan was cancelled';second.answer=second.options[0].id;
+   second.explanation='Never goes beyond the evidence of a single cancellation.';second.counterexample='A documented pattern could warrant stronger wording.';
+   node.checks.push(second);response[node.id]={[first.id]:first.answer,[second.id]:second.answer};
+  }
   lesson.nodes.push(node);
  }
  unit.lessons.push(lesson);course.modules.push(unit);
  return {course,lesson,response};
 };
-test('Course Lab exposes ten distinct psychology-specific exercises plus reading and image templates',()=>{
- assert.equal(COURSE_LAB_EXERCISES.length,10);
- assert.equal(COURSE_LAB_TYPES.length,12);
- assert.equal(new Set(COURSE_LAB_TYPES.map(x=>x.id)).size,12);
+test('Course Lab exposes eleven distinct exercises plus reading and image templates',()=>{
+ assert.equal(COURSE_LAB_EXERCISES.length,11);
+ assert.equal(COURSE_LAB_TYPES.length,13);
+ assert.equal(new Set(COURSE_LAB_TYPES.map(x=>x.id)).size,13);
  for(const type of COURSE_LAB_TYPES)assert.equal(createCourseNode(type.id).type,type.id);
 });
-test('Course Lab bundles validate and all ten mechanics grade correctly',()=>{
+test('Course Lab bundles validate and all eleven mechanics grade correctly',()=>{
  const {course,lesson,response}=fixture();
  assert.deepEqual(validateCourseForPublish(course),[]);
  assert.deepEqual(validateLearnBundle({...course,status:'published'},course.id),[]);
  const score=learnLessonScore(lesson,response);
- assert.equal(score.total,10);
- assert.equal(score.correct,10);
+ assert.equal(score.total,12);
+ assert.equal(score.correct,12);
  assert.equal(score.allAnswered,true);
  assert.equal(gradeLearnItem(lesson.nodes.find(n=>n.type==='label'),[]).correct,false);
  assert.equal(gradeLearnItem(lesson.nodes.find(n=>n.type==='character'),{evidence:'wrong',action:'wrong'}).correct,false);
@@ -88,7 +100,7 @@ test('GitHub publishing is atomic and versioned with course ID, title and publis
  const courseEntry=tree.body.tree.find(x=>x.path==='learn-content/courses/overthinking.json');
  const manifestEntry=tree.body.tree.find(x=>x.path==='learn-content/index.json');
  assert.ok(courseEntry&&manifestEntry);
- assert.equal(JSON.parse(courseEntry.content).modules[0].lessons[0].nodes.length,12);
+ assert.equal(JSON.parse(courseEntry.content).modules[0].lessons[0].nodes.length,13);
  assert.equal(JSON.parse(manifestEntry.content).courses.overthinking.title,course.title);
  assert.equal(calls.find(c=>c.method==='PATCH')?.body.force,false);
  await assert.rejects(()=>p.publishLearnCourse({...course,modules:[]},0),/not ready/);
