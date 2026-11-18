@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "social-media-m1-node-1-check1-alternative-1",
-                      "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
-                      "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention. is more directly tied to the words in this scene. Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals."
                     },
                     {
                       "id": "social-media-m1-node-1-check1-alternative-2",
-                      "label": "Riley may be seeking social information about friends, making it harder to disengage from the app.",
-                      "feedback": "Social checking could explain persistence, but the described feed is dominated by short videos rather than messages."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention. is more directly tied to the words in this scene. Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals."
                     }
                   ],
                   "answer": "social-media-m1-node-1-check1-opt1",
@@ -904,21 +904,24 @@
                   "options": [
                     {
                       "id": "social-media-m1-node-1-check2-opt2",
-                      "label": "Wait until the videos become boring enough that you naturally close the app.",
-                      "reply": "So continuing was easier than making a new choice each time.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                      "reply": "Did you still want another clip?",
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "social-media-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Were they all interesting?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "reply": "Did you still want another clip?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     },
                     {
                       "id": "social-media-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
                       "reply": "Did you still want another clip?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried.",
+                      "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                     },
                     {
                       "id": "social-media-m1-node-1-check2-opt1",
@@ -927,9 +930,11 @@
                       "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
                     },
                     {
-                      "id": "social-media-m1-node-1-check2-alternative-1",
-                      "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
-                      "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
+                      "id": "social-media-m1-node-1-check2-alternative-4",
+                      "label": "Ask what information each person would need before being willing to revise their position.",
+                      "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need.",
+                      "reply": "Did you still want another clip?",
+                      "consequence": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                     }
                   ],
                   "answer": "social-media-m1-node-1-check2-opt1",
@@ -1075,7 +1080,8 @@
                 },
                 {
                   "id": "social-media-m1-plan-opt2",
-                  "label": "Wait until the videos become boring enough that you naturally close the app."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "outcomes": [
@@ -1246,13 +1252,13 @@
                     },
                     {
                       "id": "social-media-m1-node-8-check1-alternative-1",
-                      "label": "Riley may be using videos to avoid a difficult task, with the feed providing readily available distraction.",
-                      "feedback": "Avoidance might contribute, though no particular task is mentioned in the current scene."
+                      "label": "Ada may be using the video feed as a way to postpone going to bed despite recognising that it is late.",
+                      "feedback": "Bedtime avoidance may contribute, but the automatic continuation provides a separate mechanism."
                     },
                     {
                       "id": "social-media-m1-node-8-check1-alternative-2",
-                      "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
-                      "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
+                      "label": "Ada may still be searching for the recipe she intended to save and therefore have a practical reason to keep watching.",
+                      "feedback": "The original goal could prolong viewing, though she describes waiting for a better clip rather than a missing recipe."
                     }
                   ],
                   "answer": "social-media-m1-node-8-check1-opt1",
@@ -1293,8 +1299,8 @@
                 },
                 {
                   "id": "social-media-m1-node-9-alternative-1",
-                  "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
-                  "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
+                  "label": "Ada may still be searching for the recipe she intended to save and therefore have a practical reason to keep watching.",
+                  "feedback": "The original goal could prolong viewing, though she describes waiting for a better clip rather than a missing recipe."
                 }
               ],
               "answer": "social-media-m1-new-opt1"
@@ -1332,8 +1338,8 @@
                 },
                 {
                   "id": "social-media-m1-node-10-alternative-1",
-                  "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
-                  "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
+                  "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                  "feedback": "This is a reasonable line of inquiry, although Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention. is more directly tied to the words in this scene. Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals."
                 }
               ],
               "answer": "social-media-m1-view-opt1"
@@ -1369,8 +1375,8 @@
                 },
                 {
                   "id": "social-media-m1-node-13-alternative-1",
-                  "label": "Compare viewing time on a version of the feed that requires selecting each next item.",
-                  "feedback": "The design difference isolates a possible stopping-cue mechanism."
+                  "label": "Ask whether the feared consequence has occurred in similar previous situations.",
+                  "feedback": "This would help evaluate the prediction, though the contexts need to be comparable."
                 }
               ],
               "answer": "social-media-m1-test-opt1"
@@ -1439,8 +1445,8 @@
                 },
                 {
                   "id": "social-media-m1-node-14-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "social-media-m1-transfer-e-opt1",
@@ -1459,8 +1465,8 @@
                 },
                 {
                   "id": "social-media-m1-node-14-response-alternative-1",
-                  "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "social-media-m1-transfer-a-opt1"
@@ -1515,8 +1521,8 @@
                 },
                 {
                   "id": "social-media-m1-l3-n3-alternative-1",
-                  "label": "Riley may be seeking social information about friends, making it harder to disengage from the app.",
-                  "feedback": "Social checking could explain persistence, but the described feed is dominated by short videos rather than messages."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "social-media-m1-l3-n3-opt2",
@@ -1597,8 +1603,8 @@
                 },
                 {
                   "id": "social-media-m1-l3-n4-alternative-1",
-                  "label": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "social-media-m1-l3-n4-opt2",
@@ -1628,21 +1634,21 @@
                 },
                 {
                   "id": "social-media-m1-l3-n5-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Riley may be using videos to avoid a difficult task, with the feed providing readily available distraction.",
+                  "feedback": "Avoidance might contribute, though no particular task is mentioned in the current scene."
                 },
                 {
                   "id": "social-media-m1-l3-n5-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
+                  "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
                 }
               ],
               "evidenceAnswer": "social-media-m1-l3-n5-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "social-media-m1-l3-n5-response-opt1",
-                  "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Turn off automatic playback and require a deliberate choice before each additional video.",
+                  "feedback": "This introduces stopping cues without assuming the app has no benefits."
                 },
                 {
                   "id": "social-media-m1-l3-n5-response-opt2",
@@ -1651,13 +1657,13 @@
                 },
                 {
                   "id": "social-media-m1-l3-n5-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Set a specific end point before opening the feed and record whether it changes the length of the session.",
+                  "feedback": "A rule may help, though the interface still makes continuing easy."
                 },
                 {
                   "id": "social-media-m1-l3-n5-response-alternative-3",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Rely on stronger willpower each time a new video starts.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "social-media-m1-l3-n5-response-opt2"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "social-media-m1-l4-n2-question-opt3",
-                      "label": "Riley may be seeking social information about friends, making it harder to disengage from the app.",
-                      "feedback": "Social checking could explain persistence, but the described feed is dominated by short videos rather than messages."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "social-media-m1-l4-n2-question-opt4",
@@ -1773,8 +1779,8 @@
                     },
                     {
                       "id": "social-media-m1-l4-n2-question-alternative-2",
-                      "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "social-media-m1-l4-n2-question-opt2",
@@ -1815,8 +1821,8 @@
                 },
                 {
                   "id": "social-media-m1-l4-n3-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Compare viewing time on a version of the feed that requires selecting each next item.",
+                  "feedback": "The design difference isolates a possible stopping-cue mechanism."
                 }
               ],
               "answer": "social-media-m1-l4-n3-opt2",
@@ -1854,8 +1860,8 @@
                 },
                 {
                   "id": "social-media-m1-l4-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Track whether Riley opens the app mainly after stressful tasks or during otherwise relaxed periods.",
+                  "feedback": "This helps evaluate whether avoidance contributes independently of feed design."
                 }
               ],
               "answer": "social-media-m1-l4-n4-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "social-media-m1-l4-n6-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Riley may be using videos to avoid a difficult task, with the feed providing readily available distraction.",
+                  "feedback": "Avoidance might contribute, though no particular task is mentioned in the current scene."
                 }
               ],
               "answer": "social-media-m1-l4-n6-opt2"
@@ -1973,20 +1979,20 @@
                 },
                 {
                   "id": "social-media-m1-l5-n2-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Riley may be seeking social information about friends, making it harder to disengage from the app.",
+                  "feedback": "Social checking could explain persistence, but the described feed is dominated by short videos rather than messages."
                 },
                 {
                   "id": "social-media-m1-l5-n2-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "social-media-m1-l5-n2-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "social-media-m1-l5-n2-response-opt1",
-                  "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
+                  "label": "Rely on stronger willpower each time a new video starts.",
                   "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
@@ -1996,13 +2002,13 @@
                 },
                 {
                   "id": "social-media-m1-l5-n2-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "social-media-m1-l5-n2-response-alternative-3",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "social-media-m1-l5-n2-response-opt2"
@@ -2165,8 +2171,8 @@
                 },
                 {
                   "id": "social-media-m1-l5-n6-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Compare viewing time on a version of the feed that requires selecting each next item.",
+                  "feedback": "The design difference isolates a possible stopping-cue mechanism."
                 }
               ],
               "answer": "social-media-m1-l5-n6-opt2"
@@ -2220,8 +2226,8 @@
                 },
                 {
                   "id": "social-media-m1-l6-n2-alternative-1",
-                  "label": "Delete every app and stop using digital media entirely.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Set a specific end point before opening the feed and record whether it changes the length of the session.",
+                  "feedback": "A rule may help, though the interface still makes continuing easy."
                 }
               ],
               "answer": "social-media-m1-l6-n2-opt2"
@@ -2258,8 +2264,8 @@
                 },
                 {
                   "id": "social-media-m1-l6-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Compare viewing time on a version of the feed that requires selecting each next item.",
+                  "feedback": "The design difference isolates a possible stopping-cue mechanism."
                 }
               ],
               "answer": "social-media-m1-l6-n4-opt2",
