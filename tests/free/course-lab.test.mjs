@@ -18,12 +18,14 @@ const fixture=()=>{
  for(const type of COURSE_LAB_EXERCISES){
   const node=createCourseNode(type);node.title=type+' practice';node.prompt='Which explanation is most justified?';
   node.conceptId='evidence';node.explanation='The evidence distinguishes the mechanism.';node.counterexample='A lone anecdote cannot establish a diagnosis.';
-  if(['choose','repair','investigate'].includes(type)){node.options[0].label='Supported inference';node.options[1].label='Unwarranted certainty';node.answer=node.options[0].id;response[node.id]=node.answer;}
+  if(['choose','repair','investigate','update','perspective'].includes(type)){node.options[0].label='Supported inference';node.options[1].label='Unwarranted certainty';node.answer=node.options[0].id;response[node.id]=node.answer;}
   if(type==='match'){node.pairs[0].label='Evidence';node.pairs[0].answer='Checkable information';node.pairs[1].label='Assumption';node.pairs[1].answer='Proposed interpretation';response[node.id]=Object.fromEntries(node.pairs.map(x=>[x.id,x.answer]));}
   if(type==='sort'){node.categories[0].label='Observation';node.categories[1].label='Interpretation';node.items[0].label='A message came at 4pm';node.items[0].answer=node.categories[0].id;node.items[1].label='They are angry';node.items[1].answer=node.categories[1].id;response[node.id]=Object.fromEntries(node.items.map(x=>[x.id,x.answer]));}
   if(type==='label'){node.segments[0].text='It was two hours late.';node.segments[1].text='They must dislike me.';response[node.id]=node.segments.filter(s=>s.answer).map(s=>s.id);}
   if(type==='complete'){node.answers=['negative','negative reinforcement'];response[node.id]='negative';}
-  if(type==='chain'){node.steps[0].label='Notice the trigger';node.steps[1].label='Identify the response';response[node.id]=node.steps.map(s=>s.id);}
+  if(['chain','rank'].includes(type)){node.steps[0].label='Notice the trigger';node.steps[1].label='Identify the response';response[node.id]=node.steps.map(s=>s.id);}
+  if(type==='update')node.newEvidence='A later message changes the available information.';
+  if(type==='perspective'){node.viewA='The request has not been addressed.';node.viewB='The character fears being criticised.';}
   if(type==='predict'){node.changePrompt='What changes if avoidance is made less rewarding?';node.changes[0].label='Reduce escape';node.changes[1].label='Increase escape';node.outcomes[0].label='Avoidance may weaken';node.outcomes[1].label='Avoidance is always cured';node.correctChange=node.changes[0].id;node.correctOutcome=node.outcomes[0].id;response[node.id]={change:node.correctChange,outcome:node.correctOutcome};}
   if(type==='character'){node.characterName='Moss';node.scenario='Moss is uncertain what a friend meant.';node.evidenceOptions[0].label='No message was received';node.evidenceOptions[1].label='The friend dislikes Moss';node.responseOptions[0].label='Seek clarification calmly';node.responseOptions[1].label='Diagnose the friend';node.evidenceAnswer=node.evidenceOptions[0].id;node.responseAnswer=node.responseOptions[0].id;response[node.id]={evidence:node.evidenceAnswer,action:node.responseAnswer};}
   if(type==='dialogue'){
@@ -43,19 +45,19 @@ const fixture=()=>{
  unit.lessons.push(lesson);course.modules.push(unit);
  return {course,lesson,response};
 };
-test('Course Lab exposes eleven distinct exercises plus reading and image templates',()=>{
- assert.equal(COURSE_LAB_EXERCISES.length,11);
- assert.equal(COURSE_LAB_TYPES.length,13);
- assert.equal(new Set(COURSE_LAB_TYPES.map(x=>x.id)).size,13);
+test('Course Lab exposes fourteen distinct exercises plus reading and image templates',()=>{
+ assert.equal(COURSE_LAB_EXERCISES.length,14);
+ assert.equal(COURSE_LAB_TYPES.length,16);
+ assert.equal(new Set(COURSE_LAB_TYPES.map(x=>x.id)).size,16);
  for(const type of COURSE_LAB_TYPES)assert.equal(createCourseNode(type.id).type,type.id);
 });
-test('Course Lab bundles validate and all eleven mechanics grade correctly',()=>{
+test('Course Lab bundles validate and all fourteen mechanics grade correctly',()=>{
  const {course,lesson,response}=fixture();
  assert.deepEqual(validateCourseForPublish(course),[]);
  assert.deepEqual(validateLearnBundle({...course,status:'published'},course.id),[]);
  const score=learnLessonScore(lesson,response);
- assert.equal(score.total,12);
- assert.equal(score.correct,12);
+ assert.equal(score.total,15);
+ assert.equal(score.correct,15);
  assert.equal(score.allAnswered,true);
  assert.equal(gradeLearnItem(lesson.nodes.find(n=>n.type==='label'),[]).correct,false);
  assert.equal(gradeLearnItem(lesson.nodes.find(n=>n.type==='character'),{evidence:'wrong',action:'wrong'}).correct,false);
@@ -100,18 +102,18 @@ test('GitHub publishing is atomic and versioned with course ID, title and publis
  const courseEntry=tree.body.tree.find(x=>x.path==='learn-content/courses/overthinking.json');
  const manifestEntry=tree.body.tree.find(x=>x.path==='learn-content/index.json');
  assert.ok(courseEntry&&manifestEntry);
- assert.equal(JSON.parse(courseEntry.content).modules[0].lessons[0].nodes.length,13);
+ assert.equal(JSON.parse(courseEntry.content).modules[0].lessons[0].nodes.length,16);
  assert.equal(JSON.parse(manifestEntry.content).courses.overthinking.title,course.title);
  assert.equal(calls.find(c=>c.method==='PATCH')?.body.force,false);
  await assert.rejects(()=>p.publishLearnCourse({...course,modules:[]},0),/not ready/);
 });
-test('Staff Course Lab is visible only after GitHub login; public index starts empty',()=>{
+test('Staff Course Lab retains authenticated editing for the published course index',()=>{
  const html=read('staff.html'),studio=read('studio.mjs'),pub=read('publisher.mjs'),index=JSON.parse(read('learn-content/index.json'));
  assert.match(html,/data-view="course-lab"/);
  assert.match(html,/id="course-lab-view"/);
  assert.match(studio,/mountCourseLab/);
  assert.match(pub,/publishLearnCourse/);
  assert.match(pub,/unpublishLearnCourse/);
- assert.deepEqual(index.courses,{});
+ assert.equal(Object.keys(index.courses).length,20);
  assert.match(read('ns-learn-courses.mjs'),/loadPublishedLearnBundle/);
 });
