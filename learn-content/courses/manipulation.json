@@ -1,10 +1,804 @@
 {
   "id": "manipulation",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Manipulation, Gaslighting & Psychological Tactics",
-  "description": "Explore persuasion versus manipulation through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "manipulation-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Asha",
+        "Ben"
+      ],
+      "glossary": [
+        {
+          "term": "Persuasion",
+          "definition": "Trying to change a person's view by giving reasons they can consider and reject.",
+          "example": "A partner explains why a move would be difficult and asks to discuss alternatives.",
+          "limit": "Strong emotion during persuasion is not automatically coercion."
+        },
+        {
+          "term": "Manipulation",
+          "definition": "Steering a decision through misleading information or pressure that conceals or distorts the choice available.",
+          "example": "Someone claims a favour is proof of loyalty while withholding facts that would change the decision.",
+          "limit": "We need evidence of how the influence works, rather than guessing someone's hidden intention."
+        },
+        {
+          "term": "Coercive pressure",
+          "definition": "Using a threat or a serious cost to reduce another person's freedom to choose.",
+          "example": "A person threatens to withdraw essential support unless their partner turns down an interview.",
+          "limit": "A genuine independent budget limit needs to be distinguished from a punishment tied to compliance."
+        },
+        {
+          "term": "Gaslighting",
+          "definition": "A pattern in which someone undermines another person's confidence in their memory or judgement of reality.",
+          "example": "A person repeatedly denies documented events and uses the other's confusion as proof they cannot be trusted.",
+          "limit": "A disagreement about an event, or an honest memory error, is not enough on its own."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "manipulation-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Influence is part of ordinary relationships. The important question is how somebody tries to change a choice and what happens when the other person says no.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "manipulation-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Influence is part of ordinary relationships. The important question is how somebody tries to change a choice and what happens when the other person says no.\n\nHow can a request become pressure without us treating every disagreement as abuse?",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f1-l1-n2",
+              "type": "read",
+              "title": "What persuasion means",
+              "body": "Trying to change a person's view by giving reasons they can consider and reject.\n\nFor example: A partner explains why a move would be difficult and asks to discuss alternatives.\n\nOne important limit: Strong emotion during persuasion is not automatically coercion.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: A partner explains why a move would be difficult and asks to discuss alternatives. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "manipulation-foundation:choose",
+              "explanation": "The example most directly supports persuasion. Trying to change a person's view by giving reasons they can consider and reject. Strong emotion during persuasion is not automatically coercion.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "options": [
+                {
+                  "id": "manipulation-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Persuasion.",
+                  "feedback": "This description follows from the example. Trying to change a person's view by giving reasons they can consider and reject."
+                },
+                {
+                  "id": "manipulation-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Manipulation.",
+                  "feedback": "Manipulation is a genuine psychological idea, but the observation by itself does not establish it. We need evidence of how the influence works, rather than guessing someone's hidden intention."
+                },
+                {
+                  "id": "manipulation-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Coercive pressure.",
+                  "feedback": "Coercive pressure is a genuine psychological idea, but the observation by itself does not establish it. A genuine independent budget limit needs to be distinguished from a punishment tied to compliance."
+                },
+                {
+                  "id": "manipulation-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Gaslighting.",
+                  "feedback": "Gaslighting is a genuine psychological idea, but the observation by itself does not establish it. A disagreement about an event, or an honest memory error, is not enough on its own."
+                },
+                {
+                  "id": "manipulation-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "manipulation-f1-l1-n3-o1"
+            },
+            {
+              "id": "manipulation-f1-l1-n4",
+              "type": "read",
+              "title": "What manipulation means",
+              "body": "Steering a decision through misleading information or pressure that conceals or distorts the choice available.\n\nFor example: Someone claims a favour is proof of loyalty while withholding facts that would change the decision.\n\nOne important limit: We need evidence of how the influence works, rather than guessing someone's hidden intention.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: Someone claims a favour is proof of loyalty while withholding facts that would change the decision. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "manipulation-foundation:choose",
+              "explanation": "The example most directly supports manipulation. Steering a decision through misleading information or pressure that conceals or distorts the choice available. We need evidence of how the influence works, rather than guessing someone's hidden intention.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "options": [
+                {
+                  "id": "manipulation-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Persuasion.",
+                  "feedback": "Persuasion is a genuine psychological idea, but the observation by itself does not establish it. Strong emotion during persuasion is not automatically coercion."
+                },
+                {
+                  "id": "manipulation-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Manipulation.",
+                  "feedback": "This description follows from the example. Steering a decision through misleading information or pressure that conceals or distorts the choice available."
+                },
+                {
+                  "id": "manipulation-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Coercive pressure.",
+                  "feedback": "Coercive pressure is a genuine psychological idea, but the observation by itself does not establish it. A genuine independent budget limit needs to be distinguished from a punishment tied to compliance."
+                },
+                {
+                  "id": "manipulation-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Gaslighting.",
+                  "feedback": "Gaslighting is a genuine psychological idea, but the observation by itself does not establish it. A disagreement about an event, or an honest memory error, is not enough on its own."
+                },
+                {
+                  "id": "manipulation-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "manipulation-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "manipulation-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "manipulation-f1-l2-n1",
+              "type": "read",
+              "title": "What coercive pressure means",
+              "body": "Using a threat or a serious cost to reduce another person's freedom to choose.\n\nFor example: A person threatens to withdraw essential support unless their partner turns down an interview.\n\nOne important limit: A genuine independent budget limit needs to be distinguished from a punishment tied to compliance.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f1-l2-n2",
+              "type": "read",
+              "title": "What gaslighting means",
+              "body": "A pattern in which someone undermines another person's confidence in their memory or judgement of reality.\n\nFor example: A person repeatedly denies documented events and uses the other's confusion as proof they cannot be trusted.\n\nOne important limit: A disagreement about an event, or an honest memory error, is not enough on its own.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "manipulation-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how can a request become pressure without us treating every disagreement as abuse?",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "pairs": [
+                {
+                  "id": "manipulation-f1-l2-n3-p0",
+                  "label": "Persuasion",
+                  "answer": "Trying to change a person's view by giving reasons they can consider and reject."
+                },
+                {
+                  "id": "manipulation-f1-l2-n3-p1",
+                  "label": "Manipulation",
+                  "answer": "Steering a decision through misleading information or pressure that conceals or distorts the choice available."
+                },
+                {
+                  "id": "manipulation-f1-l2-n3-p2",
+                  "label": "Coercive pressure",
+                  "answer": "Using a threat or a serious cost to reduce another person's freedom to choose."
+                },
+                {
+                  "id": "manipulation-f1-l2-n3-p3",
+                  "label": "Gaslighting",
+                  "answer": "A pattern in which someone undermines another person's confidence in their memory or judgement of reality."
+                }
+              ]
+            },
+            {
+              "id": "manipulation-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: A person threatens to withdraw essential support unless their partner turns down an interview. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "manipulation-foundation:choose",
+              "explanation": "The example most directly supports coercive pressure. Using a threat or a serious cost to reduce another person's freedom to choose. A genuine independent budget limit needs to be distinguished from a punishment tied to compliance.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "options": [
+                {
+                  "id": "manipulation-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Persuasion.",
+                  "feedback": "Persuasion is a genuine psychological idea, but the observation by itself does not establish it. Strong emotion during persuasion is not automatically coercion."
+                },
+                {
+                  "id": "manipulation-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Manipulation.",
+                  "feedback": "Manipulation is a genuine psychological idea, but the observation by itself does not establish it. We need evidence of how the influence works, rather than guessing someone's hidden intention."
+                },
+                {
+                  "id": "manipulation-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Coercive pressure.",
+                  "feedback": "This description follows from the example. Using a threat or a serious cost to reduce another person's freedom to choose."
+                },
+                {
+                  "id": "manipulation-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Gaslighting.",
+                  "feedback": "Gaslighting is a genuine psychological idea, but the observation by itself does not establish it. A disagreement about an event, or an honest memory error, is not enough on its own."
+                },
+                {
+                  "id": "manipulation-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "manipulation-f1-l2-n4-o3"
+            },
+            {
+              "id": "manipulation-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "A genuine independent budget limit needs to be distinguished from a punishment tied to compliance.\n\nA disagreement about an event, or an honest memory error, is not enough on its own.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            }
+          ]
+        },
+        {
+          "id": "manipulation-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "manipulation-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "Trying to change a person's view by giving reasons they can consider and reject.\n\nSteering a decision through misleading information or pressure that conceals or distorts the choice available.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: A person repeatedly denies documented events and uses the other's confusion as proof they cannot be trusted. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "manipulation-foundation:choose",
+              "explanation": "The example most directly supports gaslighting. A pattern in which someone undermines another person's confidence in their memory or judgement of reality. A disagreement about an event, or an honest memory error, is not enough on its own.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "options": [
+                {
+                  "id": "manipulation-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Persuasion.",
+                  "feedback": "Persuasion is a genuine psychological idea, but the observation by itself does not establish it. Strong emotion during persuasion is not automatically coercion."
+                },
+                {
+                  "id": "manipulation-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Manipulation.",
+                  "feedback": "Manipulation is a genuine psychological idea, but the observation by itself does not establish it. We need evidence of how the influence works, rather than guessing someone's hidden intention."
+                },
+                {
+                  "id": "manipulation-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Coercive pressure.",
+                  "feedback": "Coercive pressure is a genuine psychological idea, but the observation by itself does not establish it. A genuine independent budget limit needs to be distinguished from a punishment tied to compliance."
+                },
+                {
+                  "id": "manipulation-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Gaslighting.",
+                  "feedback": "This description follows from the example. A pattern in which someone undermines another person's confidence in their memory or judgement of reality."
+                },
+                {
+                  "id": "manipulation-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "manipulation-f1-l3-n2-o4"
+            },
+            {
+              "id": "manipulation-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "manipulation-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how can a request become pressure without us treating every disagreement as abuse?",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "pairs": [
+                {
+                  "id": "manipulation-f1-l3-n3-p0",
+                  "label": "Persuasion",
+                  "answer": "Trying to change a person's view by giving reasons they can consider and reject."
+                },
+                {
+                  "id": "manipulation-f1-l3-n3-p1",
+                  "label": "Manipulation",
+                  "answer": "Steering a decision through misleading information or pressure that conceals or distorts the choice available."
+                },
+                {
+                  "id": "manipulation-f1-l3-n3-p2",
+                  "label": "Coercive pressure",
+                  "answer": "Using a threat or a serious cost to reduce another person's freedom to choose."
+                },
+                {
+                  "id": "manipulation-f1-l3-n3-p3",
+                  "label": "Gaslighting",
+                  "answer": "A pattern in which someone undermines another person's confidence in their memory or judgement of reality."
+                }
+              ]
+            },
+            {
+              "id": "manipulation-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: Someone claims a favour is proof of loyalty while withholding facts that would change the decision. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "manipulation-foundation:choose",
+              "explanation": "The example most directly supports manipulation. Steering a decision through misleading information or pressure that conceals or distorts the choice available. We need evidence of how the influence works, rather than guessing someone's hidden intention.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "options": [
+                {
+                  "id": "manipulation-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Persuasion.",
+                  "feedback": "Persuasion is a genuine psychological idea, but the observation by itself does not establish it. Strong emotion during persuasion is not automatically coercion."
+                },
+                {
+                  "id": "manipulation-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Manipulation.",
+                  "feedback": "This description follows from the example. Steering a decision through misleading information or pressure that conceals or distorts the choice available."
+                },
+                {
+                  "id": "manipulation-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Coercive pressure.",
+                  "feedback": "Coercive pressure is a genuine psychological idea, but the observation by itself does not establish it. A genuine independent budget limit needs to be distinguished from a punishment tied to compliance."
+                },
+                {
+                  "id": "manipulation-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Gaslighting.",
+                  "feedback": "Gaslighting is a genuine psychological idea, but the observation by itself does not establish it. A disagreement about an event, or an honest memory error, is not enough on its own."
+                },
+                {
+                  "id": "manipulation-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "manipulation-f1-l3-n4-o2"
+            },
+            {
+              "id": "manipulation-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between persuasion, manipulation, coercive pressure, gaslighting. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Asha",
+        "Ben"
+      ],
+      "glossary": [
+        {
+          "term": "Persuasion",
+          "definition": "Trying to change a person's view by giving reasons they can consider and reject.",
+          "example": "A partner explains why a move would be difficult and asks to discuss alternatives.",
+          "limit": "Strong emotion during persuasion is not automatically coercion."
+        },
+        {
+          "term": "Manipulation",
+          "definition": "Steering a decision through misleading information or pressure that conceals or distorts the choice available.",
+          "example": "Someone claims a favour is proof of loyalty while withholding facts that would change the decision.",
+          "limit": "We need evidence of how the influence works, rather than guessing someone's hidden intention."
+        },
+        {
+          "term": "Coercive pressure",
+          "definition": "Using a threat or a serious cost to reduce another person's freedom to choose.",
+          "example": "A person threatens to withdraw essential support unless their partner turns down an interview.",
+          "limit": "A genuine independent budget limit needs to be distinguished from a punishment tied to compliance."
+        },
+        {
+          "term": "Gaslighting",
+          "definition": "A pattern in which someone undermines another person's confidence in their memory or judgement of reality.",
+          "example": "A person repeatedly denies documented events and uses the other's confusion as proof they cannot be trusted.",
+          "limit": "A disagreement about an event, or an honest memory error, is not enough on its own."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "manipulation-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "manipulation-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Asha is considering a job offer in another city. Her partner Ben wants her to stay, and they are talking after dinner.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "manipulation-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "scenario": "Asha is considering a job offer in another city. Her partner Ben wants her to stay, and they are talking after dinner.",
+              "speakerA": "Asha",
+              "speakerB": "Ben",
+              "turns": [
+                {
+                  "id": "manipulation-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I'd like to take the interview. It doesn't mean I've decided to move."
+                },
+                {
+                  "id": "manipulation-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "I'll miss you if you go. I think that matters too."
+                },
+                {
+                  "id": "manipulation-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "It does. We can talk about how we'd manage the distance."
+                },
+                {
+                  "id": "manipulation-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "After everything I've done for you, I don't think you should even be considering it."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "manipulation-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "manipulation-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "manipulation-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "manipulation-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "manipulation-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "manipulation-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "manipulation-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "manipulation-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+                  "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern."
+                }
+              ]
+            },
+            {
+              "id": "manipulation-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "manipulation-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "categories": [
+                {
+                  "id": "manipulation-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "manipulation-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "manipulation-f2-l1-n3-a",
+                  "label": "“I'd like to take the interview. It doesn't mean I've decided to move.”",
+                  "answer": "manipulation-f2-l1-n3-seen"
+                },
+                {
+                  "id": "manipulation-f2-l1-n3-b",
+                  "label": "Ben moves from expressing concern to attaching a material consequence to Asha's choice. The pressure changes how freely she can weigh an opportunity.",
+                  "answer": "manipulation-f2-l1-n3-guess"
+                },
+                {
+                  "id": "manipulation-f2-l1-n3-c",
+                  "label": "“I'll miss you if you go. I think that matters too.”",
+                  "answer": "manipulation-f2-l1-n3-seen"
+                },
+                {
+                  "id": "manipulation-f2-l1-n3-d",
+                  "label": "Ben may have an independent and legitimate financial limit, although the timing and conditional wording make its function important.",
+                  "answer": "manipulation-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "manipulation-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Ben may have an independent and legitimate financial limit, although the timing and conditional wording make its function important.\n\nNot every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            }
+          ]
+        },
+        {
+          "id": "manipulation-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "manipulation-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Ben moves from expressing concern to attaching a material consequence to Asha's choice. The pressure changes how freely she can weigh an opportunity.\n\nAnother possibility: Ben may have an independent and legitimate financial limit, although the timing and conditional wording make its function important.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "manipulation-foundation:investigate",
+              "explanation": "Ask whether the financial limit applies consistently, or is introduced specifically when Asha makes decisions Ben dislikes. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "options": [
+                {
+                  "id": "manipulation-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "manipulation-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "manipulation-f2-l2-n2-o3",
+                  "label": "Ask whether the financial limit applies consistently, or is introduced specifically when Asha makes decisions Ben dislikes.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "manipulation-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "manipulation-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "manipulation-f2-l2-n2-o3"
+            },
+            {
+              "id": "manipulation-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "Asha finds three older messages where Ben explicitly says he will stop paying bills whenever she applies for jobs outside the area.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "manipulation-foundation:choose",
+              "explanation": "The repeated link between Asha's career decisions and threatened withdrawal of support strengthens an explanation involving control through financial leverage.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "options": [
+                {
+                  "id": "manipulation-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "manipulation-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "manipulation-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "manipulation-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "manipulation-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "manipulation-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "manipulation-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "manipulation-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Influence is part of ordinary relationships. The important question is how somebody tries to change a choice and what happens when the other person says no.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            },
+            {
+              "id": "manipulation-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: A person threatens to withdraw essential support unless their partner turns down an interview. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "manipulation-foundation:choose",
+              "explanation": "The example most directly supports coercive pressure. Using a threat or a serious cost to reduce another person's freedom to choose. A genuine independent budget limit needs to be distinguished from a punishment tied to compliance.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "options": [
+                {
+                  "id": "manipulation-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Persuasion.",
+                  "feedback": "Persuasion is a genuine psychological idea, but the observation by itself does not establish it. Strong emotion during persuasion is not automatically coercion."
+                },
+                {
+                  "id": "manipulation-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Manipulation.",
+                  "feedback": "Manipulation is a genuine psychological idea, but the observation by itself does not establish it. We need evidence of how the influence works, rather than guessing someone's hidden intention."
+                },
+                {
+                  "id": "manipulation-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Coercive pressure.",
+                  "feedback": "This description follows from the example. Using a threat or a serious cost to reduce another person's freedom to choose."
+                },
+                {
+                  "id": "manipulation-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Gaslighting.",
+                  "feedback": "Gaslighting is a genuine psychological idea, but the observation by itself does not establish it. A disagreement about an event, or an honest memory error, is not enough on its own."
+                },
+                {
+                  "id": "manipulation-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "manipulation-f2-l3-n2-o3"
+            },
+            {
+              "id": "manipulation-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "manipulation-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "categories": [
+                {
+                  "id": "manipulation-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "manipulation-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "manipulation-f2-l3-n3-a",
+                  "label": "“I'd like to take the interview. It doesn't mean I've decided to move.”",
+                  "answer": "manipulation-f2-l3-n3-seen"
+                },
+                {
+                  "id": "manipulation-f2-l3-n3-b",
+                  "label": "Ben moves from expressing concern to attaching a material consequence to Asha's choice. The pressure changes how freely she can weigh an opportunity.",
+                  "answer": "manipulation-f2-l3-n3-guess"
+                },
+                {
+                  "id": "manipulation-f2-l3-n3-c",
+                  "label": "“I'll miss you if you go. I think that matters too.”",
+                  "answer": "manipulation-f2-l3-n3-seen"
+                },
+                {
+                  "id": "manipulation-f2-l3-n3-d",
+                  "label": "Ben may have an independent and legitimate financial limit, although the timing and conditional wording make its function important.",
+                  "answer": "manipulation-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "manipulation-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "manipulation-foundation:investigate",
+              "explanation": "Ask whether the financial limit applies consistently, or is introduced specifically when Asha makes decisions Ben dislikes. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance.",
+              "options": [
+                {
+                  "id": "manipulation-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "manipulation-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "manipulation-f2-l3-n4-o3",
+                  "label": "Ask whether the financial limit applies consistently, or is introduced specifically when Asha makes decisions Ben dislikes.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "manipulation-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "manipulation-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "manipulation-f2-l3-n4-o3"
+            },
+            {
+              "id": "manipulation-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Not every attempt to persuade someone or every refusal to fund a partner's choices is coercion. Look for conditions, power and a recurring pattern.",
+              "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "manipulation-module-01",
       "title": "Persuasion versus manipulation",
@@ -97,6 +891,16 @@
                     {
                       "id": "manipulation-m1-node-1-check1-opt2",
                       "label": "Owen sees past favours as creating a genuine expectation of reciprocity."
+                    },
+                    {
+                      "id": "manipulation-m1-node-1-check1-alternative-1",
+                      "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
+                      "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
+                    },
+                    {
+                      "id": "manipulation-m1-node-1-check1-alternative-2",
+                      "label": "Ben may have an independent and legitimate financial limit, although the timing and conditional wording make its function important.",
+                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                     }
                   ],
                   "answer": "manipulation-m1-node-1-check1-opt1",
@@ -131,6 +935,11 @@
                       "label": "I'll lend it just this once so you don't think I'm selfish.",
                       "reply": "Fine. I guess I know how much this friendship means to you.",
                       "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "manipulation-m1-node-1-check2-alternative-1",
+                      "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
+                      "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
                     }
                   ],
                   "answer": "manipulation-m1-node-1-check2-opt1",
@@ -270,6 +1079,11 @@
                 {
                   "id": "manipulation-m1-repair-opt3",
                   "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "manipulation-m1-node-7-alternative-1",
+                  "label": "Ask whether the financial limit applies consistently, or is introduced specifically when Asha makes decisions Ben dislikes.",
+                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
                 }
               ],
               "answer": "manipulation-m1-repair-opt1"
@@ -384,6 +1198,16 @@
                     {
                       "id": "manipulation-m1-node-8-check1-opt3",
                       "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "manipulation-m1-node-8-check1-alternative-1",
+                      "label": "Ben may be expressing fear of separation through an ill-judged bargaining tactic without fully recognising its coercive effect.",
+                      "feedback": "His feelings could be sincere while the conditional financial threat still restricts Asha’s choice."
+                    },
+                    {
+                      "id": "manipulation-m1-node-8-check1-alternative-2",
+                      "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
+                      "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
                     }
                   ],
                   "answer": "manipulation-m1-node-8-check1-opt1",
@@ -422,6 +1246,11 @@
                 {
                   "id": "manipulation-m1-view-opt2",
                   "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "manipulation-m1-node-10-alternative-1",
+                  "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
+                  "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
                 }
               ],
               "answer": "manipulation-m1-view-opt1"
@@ -455,6 +1284,11 @@
                 {
                   "id": "manipulation-m1-new-opt1",
                   "label": "Owen's response supports pressure arising from his need for transport, without proving a sustained pattern of coercion. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "manipulation-m1-node-9-alternative-1",
+                  "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
+                  "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
                 }
               ],
               "answer": "manipulation-m1-new-opt1"
@@ -565,6 +1399,11 @@
                 {
                   "id": "manipulation-m1-transfer-e-opt2",
                   "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "manipulation-m1-node-14-evidence-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "manipulation-m1-transfer-e-opt1",
@@ -580,6 +1419,11 @@
                 {
                   "id": "manipulation-m1-transfer-a-opt2",
                   "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "manipulation-m1-node-14-response-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "manipulation-m1-transfer-a-opt1"
@@ -612,6 +1456,11 @@
                 {
                   "id": "manipulation-m1-test-opt1",
                   "label": "Look for independent observations that support owen sees past favours as creating a genuine expectation of reciprocity. and explain the original dialogue."
+                },
+                {
+                  "id": "manipulation-m1-node-13-alternative-1",
+                  "label": "Ask what budget change would make support impossible even if Asha attended the interview and remained in the city.",
+                  "feedback": "An independent financial reason would weaken the case for targeted pressure."
                 }
               ],
               "answer": "manipulation-m1-test-opt1"
@@ -663,6 +1512,11 @@
                   "id": "manipulation-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "manipulation-m1-l3-n3-alternative-1",
+                  "label": "Ben may have an independent and legitimate financial limit, although the timing and conditional wording make its function important.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "manipulation-m1-l3-n3-opt2",
@@ -740,6 +1594,11 @@
                   "id": "manipulation-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "manipulation-m1-l3-n4-alternative-1",
+                  "label": "Ben moves from expressing concern to attaching a material consequence to Asha's choice. The pressure changes how freely she can weigh an opportunity.",
+                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                 }
               ],
               "answer": "manipulation-m1-l3-n4-opt2",
@@ -766,6 +1625,16 @@
                   "id": "manipulation-m1-l3-n5-evidence-opt2",
                   "label": "Ben moves from expressing concern to attaching a material consequence to Asha's choice. The pressure changes how freely she can weigh an opportunity.",
                   "feedback": ""
+                },
+                {
+                  "id": "manipulation-m1-l3-n5-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "manipulation-m1-l3-n5-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "manipulation-m1-l3-n5-evidence-opt2",
@@ -779,6 +1648,16 @@
                   "id": "manipulation-m1-l3-n5-response-opt2",
                   "label": "I want to hear your concerns. I'm still attending the interview, and we can agree what happens to shared expenses independently.",
                   "feedback": ""
+                },
+                {
+                  "id": "manipulation-m1-l3-n5-response-alternative-1",
+                  "label": "Does withdrawing rent support reflect a budget change, or is it intended to change my decision?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "manipulation-m1-l3-n5-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "manipulation-m1-l3-n5-response-opt2"
@@ -884,13 +1763,18 @@
                     },
                     {
                       "id": "manipulation-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "Ben moves from expressing concern to attaching a material consequence to Asha's choice. The pressure changes how freely she can weigh an opportunity.",
+                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                     },
                     {
                       "id": "manipulation-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "manipulation-m1-l4-n2-question-alternative-2",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     }
                   ],
                   "answer": "manipulation-m1-l4-n2-question-opt2",
@@ -928,6 +1812,11 @@
                   "id": "manipulation-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "manipulation-m1-l4-n3-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "manipulation-m1-l4-n3-opt2",
@@ -962,6 +1851,11 @@
                   "id": "manipulation-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "manipulation-m1-l4-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "manipulation-m1-l4-n4-opt2",
@@ -1029,6 +1923,11 @@
                   "id": "manipulation-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "manipulation-m1-l4-n6-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "manipulation-m1-l4-n6-opt2"
@@ -1071,6 +1970,16 @@
                   "id": "manipulation-m1-l5-n2-evidence-opt2",
                   "label": "Ben moves from expressing concern to attaching a material consequence to Asha's choice. The pressure changes how freely she can weigh an opportunity.",
                   "feedback": ""
+                },
+                {
+                  "id": "manipulation-m1-l5-n2-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "manipulation-m1-l5-n2-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "manipulation-m1-l5-n2-evidence-opt2",
@@ -1084,6 +1993,16 @@
                   "id": "manipulation-m1-l5-n2-response-opt2",
                   "label": "I want to hear your concerns. I'm still attending the interview, and we can agree what happens to shared expenses independently.",
                   "feedback": ""
+                },
+                {
+                  "id": "manipulation-m1-l5-n2-response-alternative-1",
+                  "label": "Does withdrawing rent support reflect a budget change, or is it intended to change my decision?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "manipulation-m1-l5-n2-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "manipulation-m1-l5-n2-response-opt2"
@@ -1108,6 +2027,11 @@
                   "id": "manipulation-m1-l5-n3-action-opt2",
                   "label": "I want to hear your concerns. I'm still attending the interview, and we can agree what happens to shared expenses independently.",
                   "feedback": ""
+                },
+                {
+                  "id": "manipulation-m1-l5-n3-change-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "outcomes": [
@@ -1120,6 +2044,11 @@
                   "id": "manipulation-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "manipulation-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "manipulation-m1-l5-n3-action-opt2",
@@ -1148,13 +2077,18 @@
                 },
                 {
                   "id": "manipulation-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 },
                 {
                   "id": "manipulation-m1-l5-n4-opt4",
                   "label": "Does withdrawing rent support reflect a budget change, or is it intended to change my decision?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "manipulation-m1-l5-n4-alternative-2",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "manipulation-m1-l5-n4-opt2",
@@ -1189,6 +2123,11 @@
                   "id": "manipulation-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "manipulation-m1-l5-n5-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "manipulation-m1-l5-n5-opt2",
@@ -1223,6 +2162,11 @@
                   "id": "manipulation-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "manipulation-m1-l5-n6-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "manipulation-m1-l5-n6-opt2"
@@ -1273,6 +2217,11 @@
                   "id": "manipulation-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "manipulation-m1-l6-n2-alternative-1",
+                  "label": "Does withdrawing rent support reflect a budget change, or is it intended to change my decision?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "manipulation-m1-l6-n2-opt2"
@@ -1306,6 +2255,11 @@
                   "id": "manipulation-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "manipulation-m1-l6-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "manipulation-m1-l6-n4-opt2",
@@ -1391,6 +2345,36 @@
               "sources": "Stark (2007), Coercive Control; behaviour analysis of contingencies; UK Domestic Abuse Act 2021 guidance."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Asha",
+        "Ben"
+      ],
+      "glossary": [
+        {
+          "term": "Persuasion",
+          "definition": "Trying to change a person's view by giving reasons they can consider and reject.",
+          "example": "A partner explains why a move would be difficult and asks to discuss alternatives.",
+          "limit": "Strong emotion during persuasion is not automatically coercion."
+        },
+        {
+          "term": "Manipulation",
+          "definition": "Steering a decision through misleading information or pressure that conceals or distorts the choice available.",
+          "example": "Someone claims a favour is proof of loyalty while withholding facts that would change the decision.",
+          "limit": "We need evidence of how the influence works, rather than guessing someone's hidden intention."
+        },
+        {
+          "term": "Coercive pressure",
+          "definition": "Using a threat or a serious cost to reduce another person's freedom to choose.",
+          "example": "A person threatens to withdraw essential support unless their partner turns down an interview.",
+          "limit": "A genuine independent budget limit needs to be distinguished from a punishment tied to compliance."
+        },
+        {
+          "term": "Gaslighting",
+          "definition": "A pattern in which someone undermines another person's confidence in their memory or judgement of reality.",
+          "example": "A person repeatedly denies documented events and uses the other's confusion as proof they cannot be trusted.",
+          "limit": "A disagreement about an event, or an honest memory error, is not enough on its own."
         }
       ]
     }
