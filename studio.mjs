@@ -14,7 +14,7 @@ import {
 import { Publisher } from "./publisher.mjs";
 import {notebookBlogMarkup} from "./ns-blog-notebook.mjs";
 import {mountTopicStudio} from "./studio-topics.mjs";
-import {mountCourseLab} from "./studio-course-lab.mjs";
+import {mountCourseLab} from "./studio-course-lab.mjs?v=curriculum-20261118";
 
 const $ = (id) => document.getElementById(id);
 const now = () => new Date().toISOString();
