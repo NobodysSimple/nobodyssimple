@@ -140,10 +140,10 @@ export class Publisher {
     if(!/^[a-z0-9][a-z0-9-]{0,119}$/.test(courseId))throw Error('Invalid course ID.');
     const {index}=await this.readLearnManifest();
     const version=index.courses[courseId]?.version||0;
-    if(!version)return {version:0,bundle:null};
+    if(!version)return {version:0,bundle:null,published:false};
     const file=await this.api(this.base+'/contents/learn-content/courses/'+courseId+'.json?ref='+this.branch);
     const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\s/g,'')),c=>c.charCodeAt(0));
-    return {version,bundle:JSON.parse(new TextDecoder().decode(bytes))};
+    return {version,bundle:JSON.parse(new TextDecoder().decode(bytes)),published:index.courses[courseId]?.status!=='unpublished'};
   }
 
   async publishLearnCourse(draft,expectedVersion=0) {
@@ -154,7 +154,7 @@ export class Publisher {
     if(actual!==expectedVersion)throw Error('This course was published elsewhere since it was opened. Reload the live version before publishing.');
     const version=actual+1;
     const bundle={...draft,version,status:'published'};
-    const next={version:1,courses:{...index.courses,[draft.id]:{version,title:bundle.title,description:String(bundle.description||'').slice(0,400)}}};
+    const next={version:1,courses:{...index.courses,[draft.id]:{version,status:'published',title:bundle.title,description:String(bundle.description||'').slice(0,400)}}};
     const newTree=await this.api(this.base+'/git/trees','POST',{
       base_tree:tree,tree:[
         {path:'learn-content/courses/'+draft.id+'.json',mode:'100644',type:'blob',content:JSON.stringify(bundle,null,2)+'\n'},
@@ -172,9 +172,9 @@ export class Publisher {
     if(!/^[a-z0-9][a-z0-9-]{0,119}$/.test(courseId))throw Error('Invalid course ID.');
     const {head,tree,index}=await this.readLearnManifest();
     const actual=index.courses[courseId]?.version||0;
-    if(!actual||actual!==expectedVersion)throw Error('The published version changed. Reload before unpublishing.');
+    if(!actual||actual!==expectedVersion||index.courses[courseId]?.status==='unpublished')throw Error('The published version changed. Reload before unpublishing.');
     const next={version:1,courses:{...index.courses}};
-    delete next.courses[courseId];
+    next.courses[courseId]={...index.courses[courseId],status:'unpublished'};
     const newTree=await this.api(this.base+'/git/trees','POST',{
       base_tree:tree,tree:[{path:'learn-content/index.json',mode:'100644',type:'blob',content:JSON.stringify(next,null,2)+'\n'}]
     });
