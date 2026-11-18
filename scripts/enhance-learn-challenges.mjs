@@ -21,17 +21,15 @@ function alternatives(kind,bank,seed,node){
  };
  b.forEach(v=>add(v.text,v.reason));
  if(kind==='actions'){
-  (seed.responses||[]).forEach((s,i)=>add(s,'This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence.'));
+  (seed.responses||[]).forEach((s,i)=>{if(i===1)return;add(s,'This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence.');});
   add('Seek agreement on a specific next step, then check whether it actually addresses the concern.','A jointly agreed next step is reasonable, though the other person may still decline.');
   add('Ask each person to set out their own immediate concern before deciding whether to escalate.','This can reveal different priorities, but it may also delay an urgent factual correction.');
  }else if(kind==='checks'){
-  add(seed.test,'This is useful evidence, though its value depends on the precise question being asked.');
   add('Compare the accounts against records made at the time rather than relying on recollection alone.','Contemporaneous records may improve accuracy without necessarily identifying a psychological function.');
   add('Examine whether a similar response occurs when the immediate practical stakes are different.','A pattern could test generalisation, although the settings may not be comparable.');
   add('Ask both people what they expected would happen next and compare their predictions with the observed outcome.','Expectations matter, but retrospective reports may be incomplete or influenced by hindsight.');
  }else{
   add(seed.rival,'This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details.');
-  add(seed.formulation,'A process formulation may fit, but the evidence may also support other contributors.');
   add('The meaning of the event may differ between the speakers, even when they agree about the observable facts.','Different interpretations may contribute, but this is not yet specific enough to explain the response.');
   add('The immediate context may account for more of the reaction than a stable personal tendency would.','Situation-specific pressure is plausible, though the evidence may indicate an additional process.');
   add('A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.','History could matter, but that earlier pattern has not yet been established.');
@@ -71,15 +69,55 @@ function improveQuestion(options,answer,key,category,bank,seed,node,minimum=5,re
  while(kept.length<minimum){const candidate=take();if(!candidate)break;kept.push(candidate);}
  return kept;
 }
-export function enhanceAppliedChoices(bundle,caseSeed,challengeBank){
+function openingSource(opening){
+ return {
+  id:opening.id,rival:opening.rival,formulation:opening.inference,
+  people:opening.people||[],responses:[opening.avoid,opening.action],follow:opening.after||[],
+  test:'Check whether earlier agreements and actual outcomes support the speaker’s interpretation.'
+ };
+}
+function openingAlternatives(opening){
+ const limit=opening.boundary||'A single exchange cannot establish a lasting motive.';
+ const make=(text,reason)=>({text,reason});
+ const weak='This is a reasonable line of inquiry, although '+opening.inference+' is more directly tied to the words in this scene. '+limit;
+ return {
+  id:opening.id,
+  interpretations:[
+   make(opening.rival,'This alternative deserves consideration. It would become stronger if earlier expectations supported it. '+limit),
+   make(opening.alternate,'This could explain the immediate behaviour, but it needs facts beyond the present conversation. '+limit),
+   make('The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.',weak),
+   make('The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.',weak),
+   make('The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.',weak)
+  ],
+  actions:[
+   make('Ask the speakers to state the concrete agreement they believe existed before negotiating a change.','Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.'),
+   make('Acknowledge the worry expressed in the reply and invite a specific change that both people could check.','This can open a conversation, but the initial practical limit may still require a clear answer.'),
+   make('Suggest an independent review of the relevant facts if the direct discussion has stalled.','Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried.'),
+   make('Ask what information each person would need before being willing to revise their position.','This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need.'),
+   make(opening.avoid,'This may reduce immediate friction, but the original issue would remain unresolved.')
+  ],
+  checks:[
+   make('Check whether the speakers had agreed on the practical expectation before the exchange.','The agreement may determine whether the original request was reasonable, although not why the response was so strong.'),
+   make('Compare statements made at the time with each person’s later recollection.','A contemporaneous record can help separate a mistaken memory from a disputed interpretation.'),
+   make('Examine whether the same reaction appears when the immediate practical stakes are lower.','A cross-situation comparison may reveal whether this is a case-specific response.'),
+   make('Observe what happens after a clear and workable alternative is offered.','A response to a specific alternative can reveal what the person is actually trying to preserve.'),
+   make('Ask whether the feared consequence has occurred in similar previous situations.','This would help evaluate the prediction, though the contexts need to be comparable.')
+  ]
+ };
+}
+export function enhanceAppliedChoices(bundle,caseSeed,challengeBank,openingCase){
  if(bundle?.id!==caseSeed?.id||bundle.id!==challengeBank?.id)throw Error('Challenge data and course are out of sync');
  const applied=bundle.modules.find(m=>m.id===bundle.id+'-module-01');
  if(!applied)throw Error('Applied case missing for '+bundle.id);
- for(const lesson of applied.lessons||[])for(const node of lesson.nodes||[]){
+ for(const [li,lesson] of (applied.lessons||[]).entries())for(const node of lesson.nodes||[]){
+  // The first two published lessons use a different original vignette.
+  // Do not inject alternatives or character names from the later seed.
+  const source=li<2&&openingCase?openingSource(openingCase):caseSeed;
+  const bank=li<2&&openingCase?openingAlternatives(openingCase):challengeBank;
   if(node.type==='dialogue'){
    for(const check of node.checks||[]){
     const category=typeOf(node,check.prompt);
-    check.options=improveQuestion(check.options,check.answer,check.id,category,challengeBank,caseSeed,node,5,true);
+    check.options=improveQuestion(check.options,check.answer,check.id,category,bank,source,node,5,true);
     if(check.options.length<5)throw Error('Incomplete dialogue options '+check.id);
    }
   }else if(['choose','respond','repair','investigate','update','perspective'].includes(node.type)){
@@ -87,8 +125,8 @@ export function enhanceAppliedChoices(bundle,caseSeed,challengeBank){
    node.options=improveQuestion(node.options,node.answer,node.id,category,challengeBank,caseSeed,node,5);
    if(node.options.length<5)throw Error('Incomplete MCQ options '+node.id);
   }else if(node.type==='character'){
-   node.evidenceOptions=improveQuestion(node.evidenceOptions,node.evidenceAnswer,node.id+'-evidence','interpretations',challengeBank,caseSeed,node,4);
-   node.responseOptions=improveQuestion(node.responseOptions,node.responseAnswer,node.id+'-response','actions',challengeBank,caseSeed,node,4);
+   node.evidenceOptions=improveQuestion(node.evidenceOptions,node.evidenceAnswer,node.id+'-evidence','interpretations',bank,source,node,4);
+   node.responseOptions=improveQuestion(node.responseOptions,node.responseAnswer,node.id+'-response','actions',bank,source,node,4);
   }else if(node.type==='predict'){
    node.changes=improveQuestion(node.changes,node.correctChange,node.id+'-change','actions',challengeBank,caseSeed,node,3);
    if(node.outcomes?.length===2){
