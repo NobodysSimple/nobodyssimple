@@ -33,7 +33,7 @@ export function createCourseNode(type){
  return {...node,options:[option(''),option('')],answer:''};
 }
 export function createCourseDraft(courseId,title=''){
- return {id:courseId,version:1,status:'draft',title,modules:[]};
+ return {id:courseId,version:1,status:'draft',title,description:'',modules:[]};
 }
 export function newCourseUnit(){return {id:makeCourseId(),title:'New unit',lessons:[]};}
 export function newCourseLesson(){return {id:makeCourseId(),version:1,title:'New lesson',teach:'',nodes:[]};}
