@@ -33,6 +33,25 @@ function itemList(node,key){
  (['steps','changes','outcomes'].includes(key)?'<button type="button" aria-label="Move up" data-act="row-up" data-list="'+key+'" data-pos="'+i+'" '+(i===0?'disabled':'')+'>↑</button><button type="button" aria-label="Move down" data-act="row-down" data-list="'+key+'" data-pos="'+i+'" '+(i===data.length-1?'disabled':'')+'>↓</button>':'')+
  '<button type="button" class="cl-remove" data-act="remove-row" data-list="'+key+'" data-pos="'+i+'" aria-label="Remove row">×</button></div>').join('')+'</section>';
 }
+function dialogueEditor(node){
+ const turns=node.turns||[],checks=node.checks||[];
+ const lineChoices=turns.map((t,i)=>({id:t.id,label:'Line '+(i+1)+' · '+(t.speaker==='a'?node.speakerA:node.speakerB)+': '+String(t.text||'').slice(0,45)}));
+ let html='<div class="cl-dialogue-intro"><strong>Dialogue Lab</strong><p>Write a realistic exchange, then attach one or more questions. Learners see the whole conversation before analysing specific lines. Explain the technique and when that interpretation could be wrong.</p></div>'+
+ textField('Scene / what led to this exchange','scenario',node.scenario,{rows:3})+
+ '<div class="cl-dialogue-speakers">'+textField('First character','speakerA',node.speakerA)+textField('Second character','speakerB',node.speakerB)+'</div>'+
+ '<section class="cl-list cl-dialogue-list"><div class="cl-list-title"><strong>Conversation · in speaking order</strong><button type="button" data-act="dialogue-add-turn">＋ Line</button></div>'+
+ turns.map((t,i)=>'<div class="cl-dialogue-turn"><div class="cl-dialogue-row"><span>Line '+(i+1)+'</span><label><span>Speaker</span><select data-dialogue-turn="'+i+'" data-prop="speaker"><option value="a"'+(t.speaker==='a'?' selected':'')+'>'+esc(node.speakerA||'Person A')+'</option><option value="b"'+(t.speaker==='b'?' selected':'')+'>'+esc(node.speakerB||'Person B')+'</option></select></label><button type="button" data-act="dialogue-turn-up" data-pos="'+i+'" '+(i===0?'disabled':'')+' aria-label="Move line up">↑</button><button type="button" data-act="dialogue-turn-down" data-pos="'+i+'" '+(i===turns.length-1?'disabled':'')+' aria-label="Move line down">↓</button><button type="button" data-act="dialogue-remove-turn" data-pos="'+i+'" aria-label="Delete dialogue line">×</button></div><label class="cl-field"><span>What they say</span><textarea data-dialogue-turn="'+i+'" data-prop="text" rows="3">'+esc(t.text||'')+'</textarea></label></div>').join('')+'</section>'+
+ '<section class="cl-list cl-dialogue-list"><div class="cl-list-title"><strong>Analysis questions</strong><button type="button" data-act="dialogue-add-check">＋ Question</button></div>'+
+ checks.map((c,i)=>'<div class="cl-dialogue-check"><div class="cl-dialogue-row"><strong>Question '+(i+1)+'</strong><button type="button" data-act="dialogue-check-up" data-pos="'+i+'" '+(i===0?'disabled':'')+' aria-label="Move question up">↑</button><button type="button" data-act="dialogue-check-down" data-pos="'+i+'" '+(i===checks.length-1?'disabled':'')+' aria-label="Move question down">↓</button><button type="button" data-act="dialogue-remove-check" data-pos="'+i+'" aria-label="Remove question">×</button></div>'+
+ '<label class="cl-field"><span>Question (e.g. Which listening technique did A use?)</span><textarea rows="2" data-dialogue-check="'+i+'" data-prop="prompt">'+esc(c.prompt||'')+'</textarea></label>'+
+ '<label class="cl-field"><span>Spotlight line (optional)</span><select data-dialogue-check="'+i+'" data-prop="focusTurn"><option value="">Whole conversation</option>'+options(lineChoices,c.focusTurn)+'</select><small>The learner can revisit the highlighted line while answering.</small></label>'+
+ '<div class="cl-list-title"><strong>Answer choices</strong><button type="button" data-act="dialogue-add-option" data-check="'+i+'">＋ Choice</button></div>'+
+ (c.options||[]).map((o,oi)=>'<div class="cl-dialogue-row"><label class="cl-field"><span>Choice '+(oi+1)+'</span><input data-dialogue-check="'+i+'" data-dialogue-option="'+oi+'" data-prop="label" value="'+esc(o.label||'')+'"></label><button type="button" data-act="dialogue-remove-option" data-check="'+i+'" data-pos="'+oi+'" aria-label="Remove choice">×</button></div>').join('')+
+ '<label class="cl-field"><span>Correct / best-supported answer</span><select data-dialogue-check="'+i+'" data-prop="answer"><option value="">Choose…</option>'+options(c.options||[],c.answer)+'</select></label>'+
+ '<label class="cl-field"><span>Explanation · what in the dialogue supports this answer?</span><textarea rows="3" data-dialogue-check="'+i+'" data-prop="explanation">'+esc(c.explanation||'')+'</textarea></label>'+
+ '<label class="cl-field"><span>Boundary / alternative · when might this interpretation not fit?</span><textarea rows="2" data-dialogue-check="'+i+'" data-prop="counterexample">'+esc(c.counterexample||'')+'</textarea></label></div>').join('')+'</section>';
+ return html;
+}
 function editorFields(node){
  if(!node)return '<div class="cl-hint">Choose or add a node to begin.</div>';
  const type=types[node.type],head='<p class="cl-eyebrow">'+esc(type?.name||node.type)+'</p><label class="cl-field"><span>Node template</span><select data-node-type="true">'+COURSE_LAB_TYPES.map(t=>'<option value="'+esc(t.id)+'"'+(node.type===t.id?' selected':'')+'>'+esc(t.name)+'</option>').join('')+'</select></label>'+textField('Node heading (optional)','title',node.title);
@@ -41,6 +60,7 @@ function editorFields(node){
  '<button type="button" class="cl-light-button" data-act="choose-image">Browse / upload image</button>'+textField('Alt text','alt',node.alt)+textField('Caption / credit','caption',node.caption)+'</details>';
  if(node.type==='read')return head+textField('Reading text','body',node.body,{rows:12,hint:'Write freely. Blank lines separate paragraphs.'})+textField('Sources / further reading','sources',node.sources,{rows:3})+media;
  if(node.type==='image')return head+media+textField('Sources / attribution','sources',node.sources,{rows:3});
+ if(node.type==='dialogue')return head+textField('Learning focus / what to notice','prompt',node.prompt,{rows:2})+textField('Concept ID','conceptId',node.conceptId,{hint:'For review, e.g. validation-without-agreement.'})+dialogueEditor(node)+textField('Sources / references','sources',node.sources,{rows:2})+media;
  let html=head+textField('Question / task','prompt',node.prompt,{rows:3})+
  textField('Concept ID','conceptId',node.conceptId,{hint:'A stable learning concept, e.g. negative-reinforcement.'});
  if(node.type==='character')html+=textField('Character name','characterName',node.characterName)+textField('Character situation','scenario',node.scenario,{rows:4});
@@ -186,6 +206,12 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    if(target.dataset.meta==='lesson-objective'&&lesson)lesson.objective=target.value;
    if(target.dataset.meta==='lesson-mode'&&lesson)lesson.recommendedType=target.value;
    if(target.dataset.meta==='lesson-status'&&lesson)lesson.editorialStatus=target.value;
+  }else if(node&&node.type==='dialogue'&&target.dataset.dialogueTurn!==undefined){
+   const row=node.turns?.[Number(target.dataset.dialogueTurn)];if(!row)return;row[target.dataset.prop]=target.value;
+  }else if(node&&node.type==='dialogue'&&target.dataset.dialogueCheck!==undefined){
+   const check=node.checks?.[Number(target.dataset.dialogueCheck)];if(!check)return;
+   if(target.dataset.dialogueOption!==undefined){const option=check.options?.[Number(target.dataset.dialogueOption)];if(!option)return;option[target.dataset.prop]=target.value;}
+   else check[target.dataset.prop]=target.value;
   }else if(node&&target.dataset.field)node[target.dataset.field]=target.value;
   else if(node&&target.dataset.answerIndex!==undefined)node.answers[Number(target.dataset.answerIndex)]=target.value;
   else if(node&&target.dataset.list){
@@ -214,8 +240,18 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   'select-node':b=>{n=Number(b.dataset.n);renderSequence();},
   'node-up':b=>{const i=Number(b.dataset.n);if(move(selectedLesson()?.nodes,i,i-1)){n=i-1;renderSequence();queueSave();}},
   'node-down':b=>{const i=Number(b.dataset.n);if(move(selectedLesson()?.nodes,i,i+1)){n=i+1;renderSequence();queueSave();}},
-  'node-copy':b=>{const lesson=selectedLesson(),i=Number(b.dataset.n);if(!lesson)return;const copy=deep(lesson.nodes[i]),ids=new Map();copy.id=makeCourseId();for(const key of ['pairs','categories','items','segments','options','steps','changes','outcomes','evidenceOptions','responseOptions'])if(Array.isArray(copy[key]))copy[key].forEach(row=>{const fresh=makeCourseId();ids.set(row.id,fresh);row.id=fresh;});for(const key of ['answer','correctChange','correctOutcome','evidenceAnswer','responseAnswer'])if(ids.has(copy[key]))copy[key]=ids.get(copy[key]);for(const item of copy.items||[])if(ids.has(item.answer))item.answer=ids.get(item.answer);lesson.nodes.splice(i+1,0,copy);n=i+1;renderSequence();queueSave();},
+  'node-copy':b=>{const lesson=selectedLesson(),i=Number(b.dataset.n);if(!lesson)return;const copy=deep(lesson.nodes[i]),ids=new Map();copy.id=makeCourseId();for(const key of ['pairs','categories','items','segments','options','steps','changes','outcomes','evidenceOptions','responseOptions'])if(Array.isArray(copy[key]))copy[key].forEach(row=>{const fresh=makeCourseId();ids.set(row.id,fresh);row.id=fresh;});for(const key of ['answer','correctChange','correctOutcome','evidenceAnswer','responseAnswer'])if(ids.has(copy[key]))copy[key]=ids.get(copy[key]);for(const item of copy.items||[])if(ids.has(item.answer))item.answer=ids.get(item.answer);if(copy.type==='dialogue'){for(const turn of copy.turns||[]){const oldId=turn.id;turn.id=makeCourseId();ids.set(oldId,turn.id);}for(const check of copy.checks||[]){check.id=makeCourseId();if(ids.has(check.focusTurn))check.focusTurn=ids.get(check.focusTurn);for(const option of check.options||[]){const oldId=option.id;option.id=makeCourseId();if(check.answer===oldId)check.answer=option.id;}}}lesson.nodes.splice(i+1,0,copy);n=i+1;renderSequence();queueSave();},
   'node-delete':b=>{if(!selectedLesson()||!confirm('Remove this node?'))return;selectedLesson().nodes.splice(Number(b.dataset.n),1);n=Math.max(0,Math.min(n,selectedLesson().nodes.length-1));renderSequence();queueSave();},
+  'dialogue-add-turn':()=>{const node=selectedNode();if(node?.type!=='dialogue')return;node.turns.push({id:makeCourseId(),speaker:node.turns.at(-1)?.speaker==='a'?'b':'a',text:''});renderSequence();queueSave();},
+  'dialogue-remove-turn':b=>{const node=selectedNode();if(node?.type!=='dialogue')return;const [removed]=node.turns.splice(Number(b.dataset.pos),1);for(const check of node.checks)if(check.focusTurn===removed?.id)check.focusTurn='';renderSequence();queueSave();},
+  'dialogue-turn-up':b=>{const node=selectedNode();if(node?.type==='dialogue'&&move(node.turns,Number(b.dataset.pos),Number(b.dataset.pos)-1)){renderSequence();queueSave();}},
+  'dialogue-turn-down':b=>{const node=selectedNode();if(node?.type==='dialogue'&&move(node.turns,Number(b.dataset.pos),Number(b.dataset.pos)+1)){renderSequence();queueSave();}},
+  'dialogue-add-check':()=>{const node=selectedNode();if(node?.type!=='dialogue')return;node.checks.push({id:makeCourseId(),prompt:'',focusTurn:'',options:[{id:makeCourseId(),label:''},{id:makeCourseId(),label:''}],answer:'',explanation:'',counterexample:''});renderSequence();queueSave();},
+  'dialogue-remove-check':b=>{const node=selectedNode();if(node?.type!=='dialogue')return;node.checks.splice(Number(b.dataset.pos),1);renderSequence();queueSave();},
+  'dialogue-check-up':b=>{const node=selectedNode();if(node?.type==='dialogue'&&move(node.checks,Number(b.dataset.pos),Number(b.dataset.pos)-1)){renderSequence();queueSave();}},
+  'dialogue-check-down':b=>{const node=selectedNode();if(node?.type==='dialogue'&&move(node.checks,Number(b.dataset.pos),Number(b.dataset.pos)+1)){renderSequence();queueSave();}},
+  'dialogue-add-option':b=>{const check=selectedNode()?.checks?.[Number(b.dataset.check)];if(!check)return;check.options.push({id:makeCourseId(),label:''});renderSequence();queueSave();},
+  'dialogue-remove-option':b=>{const check=selectedNode()?.checks?.[Number(b.dataset.check)];if(!check)return;const [removed]=check.options.splice(Number(b.dataset.pos),1);if(check.answer===removed?.id)check.answer='';renderSequence();queueSave();},
   'add-row':b=>{const node=selectedNode(),key=b.dataset.list;if(!Array.isArray(node?.[key]))return;const item=rowDefault(key);node[key].push(item);renderSequence();queueSave();},
   'remove-row':b=>{const node=selectedNode();node?.[b.dataset.list]?.splice(Number(b.dataset.pos),1);renderSequence();queueSave();},
   'row-up':b=>{const a=selectedNode()?.[b.dataset.list];if(move(a,Number(b.dataset.pos),Number(b.dataset.pos)-1)){renderSequence();queueSave();}},
