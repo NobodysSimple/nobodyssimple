@@ -1,0 +1,2828 @@
+{
+  "courseId": "anxiety",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Working lesson headings and learning objectives; no published content.",
+  "books": [
+    {
+      "id": "anxiety-book-1",
+      "title": "Understanding alarm signals",
+      "distinction": "signal of threat versus proof of danger",
+      "modules": [
+        {
+          "id": "anxiety-module-01",
+          "title": "When the body alarms before the mind",
+          "problem": "When the body alarms before the mind",
+          "lessons": [
+            {
+              "id": "anxiety-m1-l1",
+              "title": "Case file: When the body alarms before the mind",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When the body alarms before the mind.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m1-l2",
+              "title": "The mechanism behind When the body alarms before the mind",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When the body alarms before the mind.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m1-l3",
+              "title": "Distinguish When the body alarms before the mind: signal of threat versus proof of danger",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When the body alarms before the mind. Contrast: signal of threat versus proof of danger.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m1-l4",
+              "title": "Evidence investigation: When the body alarms before the mind",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When the body alarms before the mind.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m1-l5",
+              "title": "Strategy clinic: When the body alarms before the mind",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When the body alarms before the mind.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m1-l6",
+              "title": "Transfer mission: When the body alarms before the mind",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When the body alarms before the mind.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-02",
+          "title": "Fear of fear itself",
+          "problem": "Fear of fear itself",
+          "lessons": [
+            {
+              "id": "anxiety-m2-l1",
+              "title": "Case file: Fear of fear itself",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Fear of fear itself.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m2-l2",
+              "title": "The mechanism behind Fear of fear itself",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Fear of fear itself.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m2-l3",
+              "title": "Distinguish Fear of fear itself: signal of threat versus proof of danger",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Fear of fear itself. Contrast: signal of threat versus proof of danger.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m2-l4",
+              "title": "Evidence investigation: Fear of fear itself",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Fear of fear itself.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m2-l5",
+              "title": "Strategy clinic: Fear of fear itself",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Fear of fear itself.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m2-l6",
+              "title": "Transfer mission: Fear of fear itself",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Fear of fear itself.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-03",
+          "title": "Anxiety without an identifiable trigger",
+          "problem": "Anxiety without an identifiable trigger",
+          "lessons": [
+            {
+              "id": "anxiety-m3-l1",
+              "title": "Case file: Anxiety without an identifiable trigger",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Anxiety without an identifiable trigger.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m3-l2",
+              "title": "The mechanism behind Anxiety without an identifiable trigger",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Anxiety without an identifiable trigger.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m3-l3",
+              "title": "Distinguish Anxiety without an identifiable trigger: signal of threat versus proof of danger",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Anxiety without an identifiable trigger. Contrast: signal of threat versus proof of danger.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m3-l4",
+              "title": "Evidence investigation: Anxiety without an identifiable trigger",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Anxiety without an identifiable trigger.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m3-l5",
+              "title": "Strategy clinic: Anxiety without an identifiable trigger",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Anxiety without an identifiable trigger.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m3-l6",
+              "title": "Transfer mission: Anxiety without an identifiable trigger",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Anxiety without an identifiable trigger.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-04",
+          "title": "Helpful caution versus excessive alarm",
+          "problem": "Helpful caution versus excessive alarm",
+          "lessons": [
+            {
+              "id": "anxiety-m4-l1",
+              "title": "Case file: Helpful caution versus excessive alarm",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Helpful caution versus excessive alarm.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m4-l2",
+              "title": "The mechanism behind Helpful caution versus excessive alarm",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Helpful caution versus excessive alarm.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m4-l3",
+              "title": "Distinguish Helpful caution versus excessive alarm: signal of threat versus proof of danger",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Helpful caution versus excessive alarm. Contrast: signal of threat versus proof of danger.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m4-l4",
+              "title": "Evidence investigation: Helpful caution versus excessive alarm",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Helpful caution versus excessive alarm.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m4-l5",
+              "title": "Strategy clinic: Helpful caution versus excessive alarm",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Helpful caution versus excessive alarm.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m4-l6",
+              "title": "Transfer mission: Helpful caution versus excessive alarm",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Helpful caution versus excessive alarm.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-05",
+          "title": "Why certainty is not a prerequisite for action",
+          "problem": "Why certainty is not a prerequisite for action",
+          "lessons": [
+            {
+              "id": "anxiety-m5-l1",
+              "title": "Case file: Why certainty is not a prerequisite for action",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why certainty is not a prerequisite for action.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m5-l2",
+              "title": "The mechanism behind Why certainty is not a prerequisite for action",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why certainty is not a prerequisite for action.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m5-l3",
+              "title": "Distinguish Why certainty is not a prerequisite for action: signal of threat versus proof of danger",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why certainty is not a prerequisite for action. Contrast: signal of threat versus proof of danger.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m5-l4",
+              "title": "Evidence investigation: Why certainty is not a prerequisite for action",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why certainty is not a prerequisite for action.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m5-l5",
+              "title": "Strategy clinic: Why certainty is not a prerequisite for action",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why certainty is not a prerequisite for action.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m5-l6",
+              "title": "Transfer mission: Why certainty is not a prerequisite for action",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why certainty is not a prerequisite for action.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-book-2",
+      "title": "Threat perception and prediction",
+      "distinction": "probability versus possibility",
+      "modules": [
+        {
+          "id": "anxiety-module-06",
+          "title": "Overestimating rare outcomes",
+          "problem": "Overestimating rare outcomes",
+          "lessons": [
+            {
+              "id": "anxiety-m6-l1",
+              "title": "Case file: Overestimating rare outcomes",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Overestimating rare outcomes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m6-l2",
+              "title": "The mechanism behind Overestimating rare outcomes",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Overestimating rare outcomes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m6-l3",
+              "title": "Distinguish Overestimating rare outcomes: probability versus possibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Overestimating rare outcomes. Contrast: probability versus possibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m6-l4",
+              "title": "Evidence investigation: Overestimating rare outcomes",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Overestimating rare outcomes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m6-l5",
+              "title": "Strategy clinic: Overestimating rare outcomes",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Overestimating rare outcomes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m6-l6",
+              "title": "Transfer mission: Overestimating rare outcomes",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Overestimating rare outcomes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-07",
+          "title": "Treating discomfort as danger",
+          "problem": "Treating discomfort as danger",
+          "lessons": [
+            {
+              "id": "anxiety-m7-l1",
+              "title": "Case file: Treating discomfort as danger",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Treating discomfort as danger.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m7-l2",
+              "title": "The mechanism behind Treating discomfort as danger",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Treating discomfort as danger.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m7-l3",
+              "title": "Distinguish Treating discomfort as danger: probability versus possibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Treating discomfort as danger. Contrast: probability versus possibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m7-l4",
+              "title": "Evidence investigation: Treating discomfort as danger",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Treating discomfort as danger.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m7-l5",
+              "title": "Strategy clinic: Treating discomfort as danger",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Treating discomfort as danger.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m7-l6",
+              "title": "Transfer mission: Treating discomfort as danger",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Treating discomfort as danger.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-08",
+          "title": "Selective attention to threat cues",
+          "problem": "Selective attention to threat cues",
+          "lessons": [
+            {
+              "id": "anxiety-m8-l1",
+              "title": "Case file: Selective attention to threat cues",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Selective attention to threat cues.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m8-l2",
+              "title": "The mechanism behind Selective attention to threat cues",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Selective attention to threat cues.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m8-l3",
+              "title": "Distinguish Selective attention to threat cues: probability versus possibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Selective attention to threat cues. Contrast: probability versus possibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m8-l4",
+              "title": "Evidence investigation: Selective attention to threat cues",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Selective attention to threat cues.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m8-l5",
+              "title": "Strategy clinic: Selective attention to threat cues",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Selective attention to threat cues.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m8-l6",
+              "title": "Transfer mission: Selective attention to threat cues",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Selective attention to threat cues.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-09",
+          "title": "Misreading ambiguous bodily signals",
+          "problem": "Misreading ambiguous bodily signals",
+          "lessons": [
+            {
+              "id": "anxiety-m9-l1",
+              "title": "Case file: Misreading ambiguous bodily signals",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Misreading ambiguous bodily signals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m9-l2",
+              "title": "The mechanism behind Misreading ambiguous bodily signals",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Misreading ambiguous bodily signals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m9-l3",
+              "title": "Distinguish Misreading ambiguous bodily signals: probability versus possibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Misreading ambiguous bodily signals. Contrast: probability versus possibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m9-l4",
+              "title": "Evidence investigation: Misreading ambiguous bodily signals",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Misreading ambiguous bodily signals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m9-l5",
+              "title": "Strategy clinic: Misreading ambiguous bodily signals",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Misreading ambiguous bodily signals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m9-l6",
+              "title": "Transfer mission: Misreading ambiguous bodily signals",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Misreading ambiguous bodily signals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-10",
+          "title": "When historical danger makes fear rational",
+          "problem": "When historical danger makes fear rational",
+          "lessons": [
+            {
+              "id": "anxiety-m10-l1",
+              "title": "Case file: When historical danger makes fear rational",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When historical danger makes fear rational.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m10-l2",
+              "title": "The mechanism behind When historical danger makes fear rational",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When historical danger makes fear rational.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m10-l3",
+              "title": "Distinguish When historical danger makes fear rational: probability versus possibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When historical danger makes fear rational. Contrast: probability versus possibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m10-l4",
+              "title": "Evidence investigation: When historical danger makes fear rational",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When historical danger makes fear rational.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m10-l5",
+              "title": "Strategy clinic: When historical danger makes fear rational",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When historical danger makes fear rational.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m10-l6",
+              "title": "Transfer mission: When historical danger makes fear rational",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When historical danger makes fear rational.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-book-3",
+      "title": "The avoidance cycle",
+      "distinction": "short-term relief versus long-term learning",
+      "modules": [
+        {
+          "id": "anxiety-module-11",
+          "title": "Leaving situations as soon as anxiety rises",
+          "problem": "Leaving situations as soon as anxiety rises",
+          "lessons": [
+            {
+              "id": "anxiety-m11-l1",
+              "title": "Case file: Leaving situations as soon as anxiety rises",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Leaving situations as soon as anxiety rises.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m11-l2",
+              "title": "The mechanism behind Leaving situations as soon as anxiety rises",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Leaving situations as soon as anxiety rises.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m11-l3",
+              "title": "Distinguish Leaving situations as soon as anxiety rises: short-term relief versus long-term learning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Leaving situations as soon as anxiety rises. Contrast: short-term relief versus long-term learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m11-l4",
+              "title": "Evidence investigation: Leaving situations as soon as anxiety rises",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Leaving situations as soon as anxiety rises.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m11-l5",
+              "title": "Strategy clinic: Leaving situations as soon as anxiety rises",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Leaving situations as soon as anxiety rises.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m11-l6",
+              "title": "Transfer mission: Leaving situations as soon as anxiety rises",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Leaving situations as soon as anxiety rises.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-12",
+          "title": "Avoiding anticipated embarrassment",
+          "problem": "Avoiding anticipated embarrassment",
+          "lessons": [
+            {
+              "id": "anxiety-m12-l1",
+              "title": "Case file: Avoiding anticipated embarrassment",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Avoiding anticipated embarrassment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m12-l2",
+              "title": "The mechanism behind Avoiding anticipated embarrassment",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Avoiding anticipated embarrassment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m12-l3",
+              "title": "Distinguish Avoiding anticipated embarrassment: short-term relief versus long-term learning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Avoiding anticipated embarrassment. Contrast: short-term relief versus long-term learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m12-l4",
+              "title": "Evidence investigation: Avoiding anticipated embarrassment",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Avoiding anticipated embarrassment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m12-l5",
+              "title": "Strategy clinic: Avoiding anticipated embarrassment",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Avoiding anticipated embarrassment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m12-l6",
+              "title": "Transfer mission: Avoiding anticipated embarrassment",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Avoiding anticipated embarrassment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-13",
+          "title": "Safety objects and secret checks",
+          "problem": "Safety objects and secret checks",
+          "lessons": [
+            {
+              "id": "anxiety-m13-l1",
+              "title": "Case file: Safety objects and secret checks",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Safety objects and secret checks.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m13-l2",
+              "title": "The mechanism behind Safety objects and secret checks",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Safety objects and secret checks.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m13-l3",
+              "title": "Distinguish Safety objects and secret checks: short-term relief versus long-term learning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Safety objects and secret checks. Contrast: short-term relief versus long-term learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m13-l4",
+              "title": "Evidence investigation: Safety objects and secret checks",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Safety objects and secret checks.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m13-l5",
+              "title": "Strategy clinic: Safety objects and secret checks",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Safety objects and secret checks.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m13-l6",
+              "title": "Transfer mission: Safety objects and secret checks",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Safety objects and secret checks.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-14",
+          "title": "Delegating feared tasks to others",
+          "problem": "Delegating feared tasks to others",
+          "lessons": [
+            {
+              "id": "anxiety-m14-l1",
+              "title": "Case file: Delegating feared tasks to others",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Delegating feared tasks to others.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m14-l2",
+              "title": "The mechanism behind Delegating feared tasks to others",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Delegating feared tasks to others.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m14-l3",
+              "title": "Distinguish Delegating feared tasks to others: short-term relief versus long-term learning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Delegating feared tasks to others. Contrast: short-term relief versus long-term learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m14-l4",
+              "title": "Evidence investigation: Delegating feared tasks to others",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Delegating feared tasks to others.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m14-l5",
+              "title": "Strategy clinic: Delegating feared tasks to others",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Delegating feared tasks to others.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m14-l6",
+              "title": "Transfer mission: Delegating feared tasks to others",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Delegating feared tasks to others.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-15",
+          "title": "How avoidance shrinks available life",
+          "problem": "How avoidance shrinks available life",
+          "lessons": [
+            {
+              "id": "anxiety-m15-l1",
+              "title": "Case file: How avoidance shrinks available life",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: How avoidance shrinks available life.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m15-l2",
+              "title": "The mechanism behind How avoidance shrinks available life",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: How avoidance shrinks available life.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m15-l3",
+              "title": "Distinguish How avoidance shrinks available life: short-term relief versus long-term learning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: How avoidance shrinks available life. Contrast: short-term relief versus long-term learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m15-l4",
+              "title": "Evidence investigation: How avoidance shrinks available life",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: How avoidance shrinks available life.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m15-l5",
+              "title": "Strategy clinic: How avoidance shrinks available life",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: How avoidance shrinks available life.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m15-l6",
+              "title": "Transfer mission: How avoidance shrinks available life",
+              "objective": "Apply the concept in a new social or clinical context. Focus: How avoidance shrinks available life.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-book-4",
+      "title": "Panic and bodily sensations",
+      "distinction": "intense sensation versus catastrophe",
+      "modules": [
+        {
+          "id": "anxiety-module-16",
+          "title": "Rapid heartbeat interpreted as danger",
+          "problem": "Rapid heartbeat interpreted as danger",
+          "lessons": [
+            {
+              "id": "anxiety-m16-l1",
+              "title": "Case file: Rapid heartbeat interpreted as danger",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Rapid heartbeat interpreted as danger.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m16-l2",
+              "title": "The mechanism behind Rapid heartbeat interpreted as danger",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Rapid heartbeat interpreted as danger.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m16-l3",
+              "title": "Distinguish Rapid heartbeat interpreted as danger: intense sensation versus catastrophe",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Rapid heartbeat interpreted as danger. Contrast: intense sensation versus catastrophe.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m16-l4",
+              "title": "Evidence investigation: Rapid heartbeat interpreted as danger",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Rapid heartbeat interpreted as danger.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m16-l5",
+              "title": "Strategy clinic: Rapid heartbeat interpreted as danger",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Rapid heartbeat interpreted as danger.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m16-l6",
+              "title": "Transfer mission: Rapid heartbeat interpreted as danger",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Rapid heartbeat interpreted as danger.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-17",
+          "title": "Breathlessness and escalating alarm",
+          "problem": "Breathlessness and escalating alarm",
+          "lessons": [
+            {
+              "id": "anxiety-m17-l1",
+              "title": "Case file: Breathlessness and escalating alarm",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Breathlessness and escalating alarm.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m17-l2",
+              "title": "The mechanism behind Breathlessness and escalating alarm",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Breathlessness and escalating alarm.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m17-l3",
+              "title": "Distinguish Breathlessness and escalating alarm: intense sensation versus catastrophe",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Breathlessness and escalating alarm. Contrast: intense sensation versus catastrophe.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m17-l4",
+              "title": "Evidence investigation: Breathlessness and escalating alarm",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Breathlessness and escalating alarm.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m17-l5",
+              "title": "Strategy clinic: Breathlessness and escalating alarm",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Breathlessness and escalating alarm.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m17-l6",
+              "title": "Transfer mission: Breathlessness and escalating alarm",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Breathlessness and escalating alarm.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-18",
+          "title": "Dizziness and loss-of-control fears",
+          "problem": "Dizziness and loss-of-control fears",
+          "lessons": [
+            {
+              "id": "anxiety-m18-l1",
+              "title": "Case file: Dizziness and loss-of-control fears",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Dizziness and loss-of-control fears.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m18-l2",
+              "title": "The mechanism behind Dizziness and loss-of-control fears",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Dizziness and loss-of-control fears.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m18-l3",
+              "title": "Distinguish Dizziness and loss-of-control fears: intense sensation versus catastrophe",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Dizziness and loss-of-control fears. Contrast: intense sensation versus catastrophe.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m18-l4",
+              "title": "Evidence investigation: Dizziness and loss-of-control fears",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Dizziness and loss-of-control fears.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m18-l5",
+              "title": "Strategy clinic: Dizziness and loss-of-control fears",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Dizziness and loss-of-control fears.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m18-l6",
+              "title": "Transfer mission: Dizziness and loss-of-control fears",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Dizziness and loss-of-control fears.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-19",
+          "title": "Anticipatory fear between panic episodes",
+          "problem": "Anticipatory fear between panic episodes",
+          "lessons": [
+            {
+              "id": "anxiety-m19-l1",
+              "title": "Case file: Anticipatory fear between panic episodes",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Anticipatory fear between panic episodes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m19-l2",
+              "title": "The mechanism behind Anticipatory fear between panic episodes",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Anticipatory fear between panic episodes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m19-l3",
+              "title": "Distinguish Anticipatory fear between panic episodes: intense sensation versus catastrophe",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Anticipatory fear between panic episodes. Contrast: intense sensation versus catastrophe.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m19-l4",
+              "title": "Evidence investigation: Anticipatory fear between panic episodes",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Anticipatory fear between panic episodes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m19-l5",
+              "title": "Strategy clinic: Anticipatory fear between panic episodes",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Anticipatory fear between panic episodes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m19-l6",
+              "title": "Transfer mission: Anticipatory fear between panic episodes",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Anticipatory fear between panic episodes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-20",
+          "title": "Medical red flags versus panic hypotheses",
+          "problem": "Medical red flags versus panic hypotheses",
+          "lessons": [
+            {
+              "id": "anxiety-m20-l1",
+              "title": "Case file: Medical red flags versus panic hypotheses",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Medical red flags versus panic hypotheses.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m20-l2",
+              "title": "The mechanism behind Medical red flags versus panic hypotheses",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Medical red flags versus panic hypotheses.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m20-l3",
+              "title": "Distinguish Medical red flags versus panic hypotheses: intense sensation versus catastrophe",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Medical red flags versus panic hypotheses. Contrast: intense sensation versus catastrophe.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m20-l4",
+              "title": "Evidence investigation: Medical red flags versus panic hypotheses",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Medical red flags versus panic hypotheses.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m20-l5",
+              "title": "Strategy clinic: Medical red flags versus panic hypotheses",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Medical red flags versus panic hypotheses.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m20-l6",
+              "title": "Transfer mission: Medical red flags versus panic hypotheses",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Medical red flags versus panic hypotheses.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-book-5",
+      "title": "Specific fears and learned associations",
+      "distinction": "conditioned response versus present-day risk",
+      "modules": [
+        {
+          "id": "anxiety-module-21",
+          "title": "Fear after one frightening event",
+          "problem": "Fear after one frightening event",
+          "lessons": [
+            {
+              "id": "anxiety-m21-l1",
+              "title": "Case file: Fear after one frightening event",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Fear after one frightening event.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m21-l2",
+              "title": "The mechanism behind Fear after one frightening event",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Fear after one frightening event.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m21-l3",
+              "title": "Distinguish Fear after one frightening event: conditioned response versus present-day risk",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Fear after one frightening event. Contrast: conditioned response versus present-day risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m21-l4",
+              "title": "Evidence investigation: Fear after one frightening event",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Fear after one frightening event.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m21-l5",
+              "title": "Strategy clinic: Fear after one frightening event",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Fear after one frightening event.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m21-l6",
+              "title": "Transfer mission: Fear after one frightening event",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Fear after one frightening event.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-22",
+          "title": "Generalising fear to similar places",
+          "problem": "Generalising fear to similar places",
+          "lessons": [
+            {
+              "id": "anxiety-m22-l1",
+              "title": "Case file: Generalising fear to similar places",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Generalising fear to similar places.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m22-l2",
+              "title": "The mechanism behind Generalising fear to similar places",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Generalising fear to similar places.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m22-l3",
+              "title": "Distinguish Generalising fear to similar places: conditioned response versus present-day risk",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Generalising fear to similar places. Contrast: conditioned response versus present-day risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m22-l4",
+              "title": "Evidence investigation: Generalising fear to similar places",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Generalising fear to similar places.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m22-l5",
+              "title": "Strategy clinic: Generalising fear to similar places",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Generalising fear to similar places.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m22-l6",
+              "title": "Transfer mission: Generalising fear to similar places",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Generalising fear to similar places.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-23",
+          "title": "Why some phobias feel irrational but real",
+          "problem": "Why some phobias feel irrational but real",
+          "lessons": [
+            {
+              "id": "anxiety-m23-l1",
+              "title": "Case file: Why some phobias feel irrational but real",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why some phobias feel irrational but real.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m23-l2",
+              "title": "The mechanism behind Why some phobias feel irrational but real",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why some phobias feel irrational but real.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m23-l3",
+              "title": "Distinguish Why some phobias feel irrational but real: conditioned response versus present-day risk",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why some phobias feel irrational but real. Contrast: conditioned response versus present-day risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m23-l4",
+              "title": "Evidence investigation: Why some phobias feel irrational but real",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why some phobias feel irrational but real.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m23-l5",
+              "title": "Strategy clinic: Why some phobias feel irrational but real",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why some phobias feel irrational but real.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m23-l6",
+              "title": "Transfer mission: Why some phobias feel irrational but real",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why some phobias feel irrational but real.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-24",
+          "title": "Observation and vicarious learning",
+          "problem": "Observation and vicarious learning",
+          "lessons": [
+            {
+              "id": "anxiety-m24-l1",
+              "title": "Case file: Observation and vicarious learning",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Observation and vicarious learning.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m24-l2",
+              "title": "The mechanism behind Observation and vicarious learning",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Observation and vicarious learning.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m24-l3",
+              "title": "Distinguish Observation and vicarious learning: conditioned response versus present-day risk",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Observation and vicarious learning. Contrast: conditioned response versus present-day risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m24-l4",
+              "title": "Evidence investigation: Observation and vicarious learning",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Observation and vicarious learning.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m24-l5",
+              "title": "Strategy clinic: Observation and vicarious learning",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Observation and vicarious learning.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m24-l6",
+              "title": "Transfer mission: Observation and vicarious learning",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Observation and vicarious learning.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-25",
+          "title": "Fear memories versus current safety",
+          "problem": "Fear memories versus current safety",
+          "lessons": [
+            {
+              "id": "anxiety-m25-l1",
+              "title": "Case file: Fear memories versus current safety",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Fear memories versus current safety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m25-l2",
+              "title": "The mechanism behind Fear memories versus current safety",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Fear memories versus current safety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m25-l3",
+              "title": "Distinguish Fear memories versus current safety: conditioned response versus present-day risk",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Fear memories versus current safety. Contrast: conditioned response versus present-day risk.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m25-l4",
+              "title": "Evidence investigation: Fear memories versus current safety",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Fear memories versus current safety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m25-l5",
+              "title": "Strategy clinic: Fear memories versus current safety",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Fear memories versus current safety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m25-l6",
+              "title": "Transfer mission: Fear memories versus current safety",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Fear memories versus current safety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-book-6",
+      "title": "Worry and uncertainty",
+      "distinction": "planning versus repetitive worry",
+      "modules": [
+        {
+          "id": "anxiety-module-26",
+          "title": "What-if chains that never end",
+          "problem": "What-if chains that never end",
+          "lessons": [
+            {
+              "id": "anxiety-m26-l1",
+              "title": "Case file: What-if chains that never end",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: What-if chains that never end.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m26-l2",
+              "title": "The mechanism behind What-if chains that never end",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: What-if chains that never end.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m26-l3",
+              "title": "Distinguish What-if chains that never end: planning versus repetitive worry",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: What-if chains that never end. Contrast: planning versus repetitive worry.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m26-l4",
+              "title": "Evidence investigation: What-if chains that never end",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: What-if chains that never end.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m26-l5",
+              "title": "Strategy clinic: What-if chains that never end",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: What-if chains that never end.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m26-l6",
+              "title": "Transfer mission: What-if chains that never end",
+              "objective": "Apply the concept in a new social or clinical context. Focus: What-if chains that never end.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-27",
+          "title": "Seeking guarantees from professionals",
+          "problem": "Seeking guarantees from professionals",
+          "lessons": [
+            {
+              "id": "anxiety-m27-l1",
+              "title": "Case file: Seeking guarantees from professionals",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Seeking guarantees from professionals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m27-l2",
+              "title": "The mechanism behind Seeking guarantees from professionals",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Seeking guarantees from professionals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m27-l3",
+              "title": "Distinguish Seeking guarantees from professionals: planning versus repetitive worry",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Seeking guarantees from professionals. Contrast: planning versus repetitive worry.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m27-l4",
+              "title": "Evidence investigation: Seeking guarantees from professionals",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Seeking guarantees from professionals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m27-l5",
+              "title": "Strategy clinic: Seeking guarantees from professionals",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Seeking guarantees from professionals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m27-l6",
+              "title": "Transfer mission: Seeking guarantees from professionals",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Seeking guarantees from professionals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-28",
+          "title": "Intolerance of unanswered questions",
+          "problem": "Intolerance of unanswered questions",
+          "lessons": [
+            {
+              "id": "anxiety-m28-l1",
+              "title": "Case file: Intolerance of unanswered questions",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Intolerance of unanswered questions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m28-l2",
+              "title": "The mechanism behind Intolerance of unanswered questions",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Intolerance of unanswered questions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m28-l3",
+              "title": "Distinguish Intolerance of unanswered questions: planning versus repetitive worry",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Intolerance of unanswered questions. Contrast: planning versus repetitive worry.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m28-l4",
+              "title": "Evidence investigation: Intolerance of unanswered questions",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Intolerance of unanswered questions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m28-l5",
+              "title": "Strategy clinic: Intolerance of unanswered questions",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Intolerance of unanswered questions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m28-l6",
+              "title": "Transfer mission: Intolerance of unanswered questions",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Intolerance of unanswered questions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-29",
+          "title": "Overpreparation that postpones action",
+          "problem": "Overpreparation that postpones action",
+          "lessons": [
+            {
+              "id": "anxiety-m29-l1",
+              "title": "Case file: Overpreparation that postpones action",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Overpreparation that postpones action.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m29-l2",
+              "title": "The mechanism behind Overpreparation that postpones action",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Overpreparation that postpones action.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m29-l3",
+              "title": "Distinguish Overpreparation that postpones action: planning versus repetitive worry",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Overpreparation that postpones action. Contrast: planning versus repetitive worry.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m29-l4",
+              "title": "Evidence investigation: Overpreparation that postpones action",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Overpreparation that postpones action.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m29-l5",
+              "title": "Strategy clinic: Overpreparation that postpones action",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Overpreparation that postpones action.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m29-l6",
+              "title": "Transfer mission: Overpreparation that postpones action",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Overpreparation that postpones action.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-30",
+          "title": "Distinguishing genuine planning from safety rituals",
+          "problem": "Distinguishing genuine planning from safety rituals",
+          "lessons": [
+            {
+              "id": "anxiety-m30-l1",
+              "title": "Case file: Distinguishing genuine planning from safety rituals",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Distinguishing genuine planning from safety rituals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m30-l2",
+              "title": "The mechanism behind Distinguishing genuine planning from safety rituals",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Distinguishing genuine planning from safety rituals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m30-l3",
+              "title": "Distinguish Distinguishing genuine planning from safety rituals: planning versus repetitive worry",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Distinguishing genuine planning from safety rituals. Contrast: planning versus repetitive worry.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m30-l4",
+              "title": "Evidence investigation: Distinguishing genuine planning from safety rituals",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Distinguishing genuine planning from safety rituals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m30-l5",
+              "title": "Strategy clinic: Distinguishing genuine planning from safety rituals",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Distinguishing genuine planning from safety rituals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m30-l6",
+              "title": "Transfer mission: Distinguishing genuine planning from safety rituals",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Distinguishing genuine planning from safety rituals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-book-7",
+      "title": "Exposure and new learning",
+      "distinction": "graded learning versus forced endurance",
+      "modules": [
+        {
+          "id": "anxiety-module-31",
+          "title": "Testing danger predictions ethically",
+          "problem": "Testing danger predictions ethically",
+          "lessons": [
+            {
+              "id": "anxiety-m31-l1",
+              "title": "Case file: Testing danger predictions ethically",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Testing danger predictions ethically.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m31-l2",
+              "title": "The mechanism behind Testing danger predictions ethically",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Testing danger predictions ethically.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m31-l3",
+              "title": "Distinguish Testing danger predictions ethically: graded learning versus forced endurance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Testing danger predictions ethically. Contrast: graded learning versus forced endurance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m31-l4",
+              "title": "Evidence investigation: Testing danger predictions ethically",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Testing danger predictions ethically.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m31-l5",
+              "title": "Strategy clinic: Testing danger predictions ethically",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Testing danger predictions ethically.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m31-l6",
+              "title": "Transfer mission: Testing danger predictions ethically",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Testing danger predictions ethically.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-32",
+          "title": "Dropping a safety behaviour gradually",
+          "problem": "Dropping a safety behaviour gradually",
+          "lessons": [
+            {
+              "id": "anxiety-m32-l1",
+              "title": "Case file: Dropping a safety behaviour gradually",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Dropping a safety behaviour gradually.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m32-l2",
+              "title": "The mechanism behind Dropping a safety behaviour gradually",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Dropping a safety behaviour gradually.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m32-l3",
+              "title": "Distinguish Dropping a safety behaviour gradually: graded learning versus forced endurance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Dropping a safety behaviour gradually. Contrast: graded learning versus forced endurance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m32-l4",
+              "title": "Evidence investigation: Dropping a safety behaviour gradually",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Dropping a safety behaviour gradually.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m32-l5",
+              "title": "Strategy clinic: Dropping a safety behaviour gradually",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Dropping a safety behaviour gradually.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m32-l6",
+              "title": "Transfer mission: Dropping a safety behaviour gradually",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Dropping a safety behaviour gradually.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-33",
+          "title": "Building a feasible exposure ladder",
+          "problem": "Building a feasible exposure ladder",
+          "lessons": [
+            {
+              "id": "anxiety-m33-l1",
+              "title": "Case file: Building a feasible exposure ladder",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Building a feasible exposure ladder.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m33-l2",
+              "title": "The mechanism behind Building a feasible exposure ladder",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Building a feasible exposure ladder.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m33-l3",
+              "title": "Distinguish Building a feasible exposure ladder: graded learning versus forced endurance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Building a feasible exposure ladder. Contrast: graded learning versus forced endurance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m33-l4",
+              "title": "Evidence investigation: Building a feasible exposure ladder",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Building a feasible exposure ladder.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m33-l5",
+              "title": "Strategy clinic: Building a feasible exposure ladder",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Building a feasible exposure ladder.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m33-l6",
+              "title": "Transfer mission: Building a feasible exposure ladder",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Building a feasible exposure ladder.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-34",
+          "title": "When flooding or self-exposure is unsafe",
+          "problem": "When flooding or self-exposure is unsafe",
+          "lessons": [
+            {
+              "id": "anxiety-m34-l1",
+              "title": "Case file: When flooding or self-exposure is unsafe",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When flooding or self-exposure is unsafe.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m34-l2",
+              "title": "The mechanism behind When flooding or self-exposure is unsafe",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When flooding or self-exposure is unsafe.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m34-l3",
+              "title": "Distinguish When flooding or self-exposure is unsafe: graded learning versus forced endurance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When flooding or self-exposure is unsafe. Contrast: graded learning versus forced endurance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m34-l4",
+              "title": "Evidence investigation: When flooding or self-exposure is unsafe",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When flooding or self-exposure is unsafe.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m34-l5",
+              "title": "Strategy clinic: When flooding or self-exposure is unsafe",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When flooding or self-exposure is unsafe.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m34-l6",
+              "title": "Transfer mission: When flooding or self-exposure is unsafe",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When flooding or self-exposure is unsafe.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-35",
+          "title": "Why relapse does not erase learning",
+          "problem": "Why relapse does not erase learning",
+          "lessons": [
+            {
+              "id": "anxiety-m35-l1",
+              "title": "Case file: Why relapse does not erase learning",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why relapse does not erase learning.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m35-l2",
+              "title": "The mechanism behind Why relapse does not erase learning",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why relapse does not erase learning.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m35-l3",
+              "title": "Distinguish Why relapse does not erase learning: graded learning versus forced endurance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why relapse does not erase learning. Contrast: graded learning versus forced endurance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m35-l4",
+              "title": "Evidence investigation: Why relapse does not erase learning",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why relapse does not erase learning.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m35-l5",
+              "title": "Strategy clinic: Why relapse does not erase learning",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why relapse does not erase learning.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m35-l6",
+              "title": "Transfer mission: Why relapse does not erase learning",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why relapse does not erase learning.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-book-8",
+      "title": "Regulation and sustainable recovery",
+      "distinction": "regulation versus avoidance",
+      "modules": [
+        {
+          "id": "anxiety-module-36",
+          "title": "Breathing exercises as tools not escape rules",
+          "problem": "Breathing exercises as tools not escape rules",
+          "lessons": [
+            {
+              "id": "anxiety-m36-l1",
+              "title": "Case file: Breathing exercises as tools not escape rules",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Breathing exercises as tools not escape rules.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m36-l2",
+              "title": "The mechanism behind Breathing exercises as tools not escape rules",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Breathing exercises as tools not escape rules.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m36-l3",
+              "title": "Distinguish Breathing exercises as tools not escape rules: regulation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Breathing exercises as tools not escape rules. Contrast: regulation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m36-l4",
+              "title": "Evidence investigation: Breathing exercises as tools not escape rules",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Breathing exercises as tools not escape rules.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m36-l5",
+              "title": "Strategy clinic: Breathing exercises as tools not escape rules",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Breathing exercises as tools not escape rules.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m36-l6",
+              "title": "Transfer mission: Breathing exercises as tools not escape rules",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Breathing exercises as tools not escape rules.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-37",
+          "title": "Sleep, caffeine and physiological arousal",
+          "problem": "Sleep, caffeine and physiological arousal",
+          "lessons": [
+            {
+              "id": "anxiety-m37-l1",
+              "title": "Case file: Sleep, caffeine and physiological arousal",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Sleep, caffeine and physiological arousal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m37-l2",
+              "title": "The mechanism behind Sleep, caffeine and physiological arousal",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Sleep, caffeine and physiological arousal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m37-l3",
+              "title": "Distinguish Sleep, caffeine and physiological arousal: regulation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Sleep, caffeine and physiological arousal. Contrast: regulation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m37-l4",
+              "title": "Evidence investigation: Sleep, caffeine and physiological arousal",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Sleep, caffeine and physiological arousal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m37-l5",
+              "title": "Strategy clinic: Sleep, caffeine and physiological arousal",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Sleep, caffeine and physiological arousal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m37-l6",
+              "title": "Transfer mission: Sleep, caffeine and physiological arousal",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Sleep, caffeine and physiological arousal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-38",
+          "title": "Values-guided action with anxiety present",
+          "problem": "Values-guided action with anxiety present",
+          "lessons": [
+            {
+              "id": "anxiety-m38-l1",
+              "title": "Case file: Values-guided action with anxiety present",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Values-guided action with anxiety present.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m38-l2",
+              "title": "The mechanism behind Values-guided action with anxiety present",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Values-guided action with anxiety present.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m38-l3",
+              "title": "Distinguish Values-guided action with anxiety present: regulation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Values-guided action with anxiety present. Contrast: regulation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m38-l4",
+              "title": "Evidence investigation: Values-guided action with anxiety present",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Values-guided action with anxiety present.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m38-l5",
+              "title": "Strategy clinic: Values-guided action with anxiety present",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Values-guided action with anxiety present.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m38-l6",
+              "title": "Transfer mission: Values-guided action with anxiety present",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Values-guided action with anxiety present.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-39",
+          "title": "When medical assessment is appropriate",
+          "problem": "When medical assessment is appropriate",
+          "lessons": [
+            {
+              "id": "anxiety-m39-l1",
+              "title": "Case file: When medical assessment is appropriate",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When medical assessment is appropriate.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m39-l2",
+              "title": "The mechanism behind When medical assessment is appropriate",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When medical assessment is appropriate.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m39-l3",
+              "title": "Distinguish When medical assessment is appropriate: regulation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When medical assessment is appropriate. Contrast: regulation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m39-l4",
+              "title": "Evidence investigation: When medical assessment is appropriate",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When medical assessment is appropriate.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m39-l5",
+              "title": "Strategy clinic: When medical assessment is appropriate",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When medical assessment is appropriate.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m39-l6",
+              "title": "Transfer mission: When medical assessment is appropriate",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When medical assessment is appropriate.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-40",
+          "title": "Choosing evidence-based professional support",
+          "problem": "Choosing evidence-based professional support",
+          "lessons": [
+            {
+              "id": "anxiety-m40-l1",
+              "title": "Case file: Choosing evidence-based professional support",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Choosing evidence-based professional support.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m40-l2",
+              "title": "The mechanism behind Choosing evidence-based professional support",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Choosing evidence-based professional support.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m40-l3",
+              "title": "Distinguish Choosing evidence-based professional support: regulation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Choosing evidence-based professional support. Contrast: regulation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m40-l4",
+              "title": "Evidence investigation: Choosing evidence-based professional support",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Choosing evidence-based professional support.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m40-l5",
+              "title": "Strategy clinic: Choosing evidence-based professional support",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Choosing evidence-based professional support.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m40-l6",
+              "title": "Transfer mission: Choosing evidence-based professional support",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Choosing evidence-based professional support.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-book-9",
+      "title": "Context and inequality",
+      "distinction": "internal alarm versus actual environmental threat",
+      "modules": [
+        {
+          "id": "anxiety-module-41",
+          "title": "Anxiety under economic insecurity",
+          "problem": "Anxiety under economic insecurity",
+          "lessons": [
+            {
+              "id": "anxiety-m41-l1",
+              "title": "Case file: Anxiety under economic insecurity",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Anxiety under economic insecurity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m41-l2",
+              "title": "The mechanism behind Anxiety under economic insecurity",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Anxiety under economic insecurity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m41-l3",
+              "title": "Distinguish Anxiety under economic insecurity: internal alarm versus actual environmental threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Anxiety under economic insecurity. Contrast: internal alarm versus actual environmental threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m41-l4",
+              "title": "Evidence investigation: Anxiety under economic insecurity",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Anxiety under economic insecurity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m41-l5",
+              "title": "Strategy clinic: Anxiety under economic insecurity",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Anxiety under economic insecurity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m41-l6",
+              "title": "Transfer mission: Anxiety under economic insecurity",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Anxiety under economic insecurity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-42",
+          "title": "Discrimination and realistic vigilance",
+          "problem": "Discrimination and realistic vigilance",
+          "lessons": [
+            {
+              "id": "anxiety-m42-l1",
+              "title": "Case file: Discrimination and realistic vigilance",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Discrimination and realistic vigilance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m42-l2",
+              "title": "The mechanism behind Discrimination and realistic vigilance",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Discrimination and realistic vigilance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m42-l3",
+              "title": "Distinguish Discrimination and realistic vigilance: internal alarm versus actual environmental threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Discrimination and realistic vigilance. Contrast: internal alarm versus actual environmental threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m42-l4",
+              "title": "Evidence investigation: Discrimination and realistic vigilance",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Discrimination and realistic vigilance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m42-l5",
+              "title": "Strategy clinic: Discrimination and realistic vigilance",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Discrimination and realistic vigilance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m42-l6",
+              "title": "Transfer mission: Discrimination and realistic vigilance",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Discrimination and realistic vigilance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-43",
+          "title": "Trauma and unsafe relationships",
+          "problem": "Trauma and unsafe relationships",
+          "lessons": [
+            {
+              "id": "anxiety-m43-l1",
+              "title": "Case file: Trauma and unsafe relationships",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Trauma and unsafe relationships.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m43-l2",
+              "title": "The mechanism behind Trauma and unsafe relationships",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Trauma and unsafe relationships.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m43-l3",
+              "title": "Distinguish Trauma and unsafe relationships: internal alarm versus actual environmental threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Trauma and unsafe relationships. Contrast: internal alarm versus actual environmental threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m43-l4",
+              "title": "Evidence investigation: Trauma and unsafe relationships",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Trauma and unsafe relationships.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m43-l5",
+              "title": "Strategy clinic: Trauma and unsafe relationships",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Trauma and unsafe relationships.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m43-l6",
+              "title": "Transfer mission: Trauma and unsafe relationships",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Trauma and unsafe relationships.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-44",
+          "title": "Workplace surveillance and threat",
+          "problem": "Workplace surveillance and threat",
+          "lessons": [
+            {
+              "id": "anxiety-m44-l1",
+              "title": "Case file: Workplace surveillance and threat",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Workplace surveillance and threat.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m44-l2",
+              "title": "The mechanism behind Workplace surveillance and threat",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Workplace surveillance and threat.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m44-l3",
+              "title": "Distinguish Workplace surveillance and threat: internal alarm versus actual environmental threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Workplace surveillance and threat. Contrast: internal alarm versus actual environmental threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m44-l4",
+              "title": "Evidence investigation: Workplace surveillance and threat",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Workplace surveillance and threat.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m44-l5",
+              "title": "Strategy clinic: Workplace surveillance and threat",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Workplace surveillance and threat.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m44-l6",
+              "title": "Transfer mission: Workplace surveillance and threat",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Workplace surveillance and threat.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-45",
+          "title": "Who gets access to therapy and safety",
+          "problem": "Who gets access to therapy and safety",
+          "lessons": [
+            {
+              "id": "anxiety-m45-l1",
+              "title": "Case file: Who gets access to therapy and safety",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Who gets access to therapy and safety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m45-l2",
+              "title": "The mechanism behind Who gets access to therapy and safety",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Who gets access to therapy and safety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m45-l3",
+              "title": "Distinguish Who gets access to therapy and safety: internal alarm versus actual environmental threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Who gets access to therapy and safety. Contrast: internal alarm versus actual environmental threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m45-l4",
+              "title": "Evidence investigation: Who gets access to therapy and safety",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Who gets access to therapy and safety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m45-l5",
+              "title": "Strategy clinic: Who gets access to therapy and safety",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Who gets access to therapy and safety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m45-l6",
+              "title": "Transfer mission: Who gets access to therapy and safety",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Who gets access to therapy and safety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anxiety-book-10",
+      "title": "Advanced case formulation",
+      "distinction": "diagnostic label versus maintaining process",
+      "modules": [
+        {
+          "id": "anxiety-module-46",
+          "title": "When anxiety accompanies depression",
+          "problem": "When anxiety accompanies depression",
+          "lessons": [
+            {
+              "id": "anxiety-m46-l1",
+              "title": "Case file: When anxiety accompanies depression",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When anxiety accompanies depression.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m46-l2",
+              "title": "The mechanism behind When anxiety accompanies depression",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When anxiety accompanies depression.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m46-l3",
+              "title": "Distinguish When anxiety accompanies depression: diagnostic label versus maintaining process",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When anxiety accompanies depression. Contrast: diagnostic label versus maintaining process.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m46-l4",
+              "title": "Evidence investigation: When anxiety accompanies depression",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When anxiety accompanies depression.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m46-l5",
+              "title": "Strategy clinic: When anxiety accompanies depression",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When anxiety accompanies depression.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m46-l6",
+              "title": "Transfer mission: When anxiety accompanies depression",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When anxiety accompanies depression.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-47",
+          "title": "Anxiety versus obsessive-compulsive processes",
+          "problem": "Anxiety versus obsessive-compulsive processes",
+          "lessons": [
+            {
+              "id": "anxiety-m47-l1",
+              "title": "Case file: Anxiety versus obsessive-compulsive processes",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Anxiety versus obsessive-compulsive processes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m47-l2",
+              "title": "The mechanism behind Anxiety versus obsessive-compulsive processes",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Anxiety versus obsessive-compulsive processes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m47-l3",
+              "title": "Distinguish Anxiety versus obsessive-compulsive processes: diagnostic label versus maintaining process",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Anxiety versus obsessive-compulsive processes. Contrast: diagnostic label versus maintaining process.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m47-l4",
+              "title": "Evidence investigation: Anxiety versus obsessive-compulsive processes",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Anxiety versus obsessive-compulsive processes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m47-l5",
+              "title": "Strategy clinic: Anxiety versus obsessive-compulsive processes",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Anxiety versus obsessive-compulsive processes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m47-l6",
+              "title": "Transfer mission: Anxiety versus obsessive-compulsive processes",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Anxiety versus obsessive-compulsive processes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-48",
+          "title": "Health concerns with uncertain symptoms",
+          "problem": "Health concerns with uncertain symptoms",
+          "lessons": [
+            {
+              "id": "anxiety-m48-l1",
+              "title": "Case file: Health concerns with uncertain symptoms",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Health concerns with uncertain symptoms.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m48-l2",
+              "title": "The mechanism behind Health concerns with uncertain symptoms",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Health concerns with uncertain symptoms.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m48-l3",
+              "title": "Distinguish Health concerns with uncertain symptoms: diagnostic label versus maintaining process",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Health concerns with uncertain symptoms. Contrast: diagnostic label versus maintaining process.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m48-l4",
+              "title": "Evidence investigation: Health concerns with uncertain symptoms",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Health concerns with uncertain symptoms.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m48-l5",
+              "title": "Strategy clinic: Health concerns with uncertain symptoms",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Health concerns with uncertain symptoms.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m48-l6",
+              "title": "Transfer mission: Health concerns with uncertain symptoms",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Health concerns with uncertain symptoms.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-49",
+          "title": "Revising an inaccurate threat model",
+          "problem": "Revising an inaccurate threat model",
+          "lessons": [
+            {
+              "id": "anxiety-m49-l1",
+              "title": "Case file: Revising an inaccurate threat model",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Revising an inaccurate threat model.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m49-l2",
+              "title": "The mechanism behind Revising an inaccurate threat model",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Revising an inaccurate threat model.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m49-l3",
+              "title": "Distinguish Revising an inaccurate threat model: diagnostic label versus maintaining process",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Revising an inaccurate threat model. Contrast: diagnostic label versus maintaining process.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m49-l4",
+              "title": "Evidence investigation: Revising an inaccurate threat model",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Revising an inaccurate threat model.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m49-l5",
+              "title": "Strategy clinic: Revising an inaccurate threat model",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Revising an inaccurate threat model.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m49-l6",
+              "title": "Transfer mission: Revising an inaccurate threat model",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Revising an inaccurate threat model.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "anxiety-module-50",
+          "title": "Integrated mission: act under uncertainty",
+          "problem": "Integrated mission: act under uncertainty",
+          "lessons": [
+            {
+              "id": "anxiety-m50-l1",
+              "title": "Case file: Integrated mission: act under uncertainty",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Integrated mission: act under uncertainty.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m50-l2",
+              "title": "The mechanism behind Integrated mission: act under uncertainty",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Integrated mission: act under uncertainty.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m50-l3",
+              "title": "Distinguish Integrated mission: act under uncertainty: diagnostic label versus maintaining process",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Integrated mission: act under uncertainty. Contrast: diagnostic label versus maintaining process.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m50-l4",
+              "title": "Evidence investigation: Integrated mission: act under uncertainty",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Integrated mission: act under uncertainty.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m50-l5",
+              "title": "Strategy clinic: Integrated mission: act under uncertainty",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Integrated mission: act under uncertainty.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "anxiety-m50-l6",
+              "title": "Transfer mission: Integrated mission: act under uncertainty",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Integrated mission: act under uncertainty.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

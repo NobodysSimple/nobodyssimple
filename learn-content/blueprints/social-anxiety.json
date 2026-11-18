@@ -1,0 +1,2828 @@
+{
+  "courseId": "social-anxiety",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Working lesson headings and learning objectives; no published content.",
+  "books": [
+    {
+      "id": "social-anxiety-book-1",
+      "title": "Fear of being evaluated",
+      "distinction": "attention versus hostile scrutiny",
+      "modules": [
+        {
+          "id": "social-anxiety-module-01",
+          "title": "Entering a room while feeling watched",
+          "problem": "Entering a room while feeling watched",
+          "lessons": [
+            {
+              "id": "social-anxiety-m1-l1",
+              "title": "Case file: Entering a room while feeling watched",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Entering a room while feeling watched.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m1-l2",
+              "title": "The mechanism behind Entering a room while feeling watched",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Entering a room while feeling watched.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m1-l3",
+              "title": "Distinguish Entering a room while feeling watched: attention versus hostile scrutiny",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Entering a room while feeling watched. Contrast: attention versus hostile scrutiny.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m1-l4",
+              "title": "Evidence investigation: Entering a room while feeling watched",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Entering a room while feeling watched.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m1-l5",
+              "title": "Strategy clinic: Entering a room while feeling watched",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Entering a room while feeling watched.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m1-l6",
+              "title": "Transfer mission: Entering a room while feeling watched",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Entering a room while feeling watched.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-02",
+          "title": "Misinterpreting neutral expressions",
+          "problem": "Misinterpreting neutral expressions",
+          "lessons": [
+            {
+              "id": "social-anxiety-m2-l1",
+              "title": "Case file: Misinterpreting neutral expressions",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Misinterpreting neutral expressions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m2-l2",
+              "title": "The mechanism behind Misinterpreting neutral expressions",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Misinterpreting neutral expressions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m2-l3",
+              "title": "Distinguish Misinterpreting neutral expressions: attention versus hostile scrutiny",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Misinterpreting neutral expressions. Contrast: attention versus hostile scrutiny.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m2-l4",
+              "title": "Evidence investigation: Misinterpreting neutral expressions",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Misinterpreting neutral expressions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m2-l5",
+              "title": "Strategy clinic: Misinterpreting neutral expressions",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Misinterpreting neutral expressions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m2-l6",
+              "title": "Transfer mission: Misinterpreting neutral expressions",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Misinterpreting neutral expressions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-03",
+          "title": "Fear of making a visible mistake",
+          "problem": "Fear of making a visible mistake",
+          "lessons": [
+            {
+              "id": "social-anxiety-m3-l1",
+              "title": "Case file: Fear of making a visible mistake",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Fear of making a visible mistake.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m3-l2",
+              "title": "The mechanism behind Fear of making a visible mistake",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Fear of making a visible mistake.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m3-l3",
+              "title": "Distinguish Fear of making a visible mistake: attention versus hostile scrutiny",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Fear of making a visible mistake. Contrast: attention versus hostile scrutiny.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m3-l4",
+              "title": "Evidence investigation: Fear of making a visible mistake",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Fear of making a visible mistake.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m3-l5",
+              "title": "Strategy clinic: Fear of making a visible mistake",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Fear of making a visible mistake.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m3-l6",
+              "title": "Transfer mission: Fear of making a visible mistake",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Fear of making a visible mistake.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-04",
+          "title": "Appearance worries and scrutiny",
+          "problem": "Appearance worries and scrutiny",
+          "lessons": [
+            {
+              "id": "social-anxiety-m4-l1",
+              "title": "Case file: Appearance worries and scrutiny",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Appearance worries and scrutiny.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m4-l2",
+              "title": "The mechanism behind Appearance worries and scrutiny",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Appearance worries and scrutiny.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m4-l3",
+              "title": "Distinguish Appearance worries and scrutiny: attention versus hostile scrutiny",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Appearance worries and scrutiny. Contrast: attention versus hostile scrutiny.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m4-l4",
+              "title": "Evidence investigation: Appearance worries and scrutiny",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Appearance worries and scrutiny.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m4-l5",
+              "title": "Strategy clinic: Appearance worries and scrutiny",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Appearance worries and scrutiny.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m4-l6",
+              "title": "Transfer mission: Appearance worries and scrutiny",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Appearance worries and scrutiny.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-05",
+          "title": "When fear reflects actual exclusion",
+          "problem": "When fear reflects actual exclusion",
+          "lessons": [
+            {
+              "id": "social-anxiety-m5-l1",
+              "title": "Case file: When fear reflects actual exclusion",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When fear reflects actual exclusion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m5-l2",
+              "title": "The mechanism behind When fear reflects actual exclusion",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When fear reflects actual exclusion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m5-l3",
+              "title": "Distinguish When fear reflects actual exclusion: attention versus hostile scrutiny",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When fear reflects actual exclusion. Contrast: attention versus hostile scrutiny.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m5-l4",
+              "title": "Evidence investigation: When fear reflects actual exclusion",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When fear reflects actual exclusion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m5-l5",
+              "title": "Strategy clinic: When fear reflects actual exclusion",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When fear reflects actual exclusion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m5-l6",
+              "title": "Transfer mission: When fear reflects actual exclusion",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When fear reflects actual exclusion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-book-2",
+      "title": "Self-focused attention",
+      "distinction": "monitoring versus observing",
+      "modules": [
+        {
+          "id": "social-anxiety-module-06",
+          "title": "Mentally watching your own performance",
+          "problem": "Mentally watching your own performance",
+          "lessons": [
+            {
+              "id": "social-anxiety-m6-l1",
+              "title": "Case file: Mentally watching your own performance",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Mentally watching your own performance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m6-l2",
+              "title": "The mechanism behind Mentally watching your own performance",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Mentally watching your own performance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m6-l3",
+              "title": "Distinguish Mentally watching your own performance: monitoring versus observing",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Mentally watching your own performance. Contrast: monitoring versus observing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m6-l4",
+              "title": "Evidence investigation: Mentally watching your own performance",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Mentally watching your own performance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m6-l5",
+              "title": "Strategy clinic: Mentally watching your own performance",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Mentally watching your own performance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m6-l6",
+              "title": "Transfer mission: Mentally watching your own performance",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Mentally watching your own performance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-07",
+          "title": "Rehearsing sentences while speaking",
+          "problem": "Rehearsing sentences while speaking",
+          "lessons": [
+            {
+              "id": "social-anxiety-m7-l1",
+              "title": "Case file: Rehearsing sentences while speaking",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Rehearsing sentences while speaking.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m7-l2",
+              "title": "The mechanism behind Rehearsing sentences while speaking",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Rehearsing sentences while speaking.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m7-l3",
+              "title": "Distinguish Rehearsing sentences while speaking: monitoring versus observing",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Rehearsing sentences while speaking. Contrast: monitoring versus observing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m7-l4",
+              "title": "Evidence investigation: Rehearsing sentences while speaking",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Rehearsing sentences while speaking.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m7-l5",
+              "title": "Strategy clinic: Rehearsing sentences while speaking",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Rehearsing sentences while speaking.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m7-l6",
+              "title": "Transfer mission: Rehearsing sentences while speaking",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Rehearsing sentences while speaking.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-08",
+          "title": "Monitoring blushing, shaking or voice",
+          "problem": "Monitoring blushing, shaking or voice",
+          "lessons": [
+            {
+              "id": "social-anxiety-m8-l1",
+              "title": "Case file: Monitoring blushing, shaking or voice",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Monitoring blushing, shaking or voice.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m8-l2",
+              "title": "The mechanism behind Monitoring blushing, shaking or voice",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Monitoring blushing, shaking or voice.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m8-l3",
+              "title": "Distinguish Monitoring blushing, shaking or voice: monitoring versus observing",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Monitoring blushing, shaking or voice. Contrast: monitoring versus observing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m8-l4",
+              "title": "Evidence investigation: Monitoring blushing, shaking or voice",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Monitoring blushing, shaking or voice.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m8-l5",
+              "title": "Strategy clinic: Monitoring blushing, shaking or voice",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Monitoring blushing, shaking or voice.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m8-l6",
+              "title": "Transfer mission: Monitoring blushing, shaking or voice",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Monitoring blushing, shaking or voice.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-09",
+          "title": "Why self-monitoring disrupts attention",
+          "problem": "Why self-monitoring disrupts attention",
+          "lessons": [
+            {
+              "id": "social-anxiety-m9-l1",
+              "title": "Case file: Why self-monitoring disrupts attention",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why self-monitoring disrupts attention.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m9-l2",
+              "title": "The mechanism behind Why self-monitoring disrupts attention",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why self-monitoring disrupts attention.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m9-l3",
+              "title": "Distinguish Why self-monitoring disrupts attention: monitoring versus observing",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why self-monitoring disrupts attention. Contrast: monitoring versus observing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m9-l4",
+              "title": "Evidence investigation: Why self-monitoring disrupts attention",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why self-monitoring disrupts attention.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m9-l5",
+              "title": "Strategy clinic: Why self-monitoring disrupts attention",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why self-monitoring disrupts attention.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m9-l6",
+              "title": "Transfer mission: Why self-monitoring disrupts attention",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why self-monitoring disrupts attention.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-10",
+          "title": "What an external focus changes",
+          "problem": "What an external focus changes",
+          "lessons": [
+            {
+              "id": "social-anxiety-m10-l1",
+              "title": "Case file: What an external focus changes",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: What an external focus changes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m10-l2",
+              "title": "The mechanism behind What an external focus changes",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: What an external focus changes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m10-l3",
+              "title": "Distinguish What an external focus changes: monitoring versus observing",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: What an external focus changes. Contrast: monitoring versus observing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m10-l4",
+              "title": "Evidence investigation: What an external focus changes",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: What an external focus changes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m10-l5",
+              "title": "Strategy clinic: What an external focus changes",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: What an external focus changes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m10-l6",
+              "title": "Transfer mission: What an external focus changes",
+              "objective": "Apply the concept in a new social or clinical context. Focus: What an external focus changes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-book-3",
+      "title": "Safety behaviours",
+      "distinction": "protective adaptation versus maintaining safety rule",
+      "modules": [
+        {
+          "id": "social-anxiety-module-11",
+          "title": "Avoiding eye contact to seem normal",
+          "problem": "Avoiding eye contact to seem normal",
+          "lessons": [
+            {
+              "id": "social-anxiety-m11-l1",
+              "title": "Case file: Avoiding eye contact to seem normal",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Avoiding eye contact to seem normal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m11-l2",
+              "title": "The mechanism behind Avoiding eye contact to seem normal",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Avoiding eye contact to seem normal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m11-l3",
+              "title": "Distinguish Avoiding eye contact to seem normal: protective adaptation versus maintaining safety rule",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Avoiding eye contact to seem normal. Contrast: protective adaptation versus maintaining safety rule.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m11-l4",
+              "title": "Evidence investigation: Avoiding eye contact to seem normal",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Avoiding eye contact to seem normal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m11-l5",
+              "title": "Strategy clinic: Avoiding eye contact to seem normal",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Avoiding eye contact to seem normal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m11-l6",
+              "title": "Transfer mission: Avoiding eye contact to seem normal",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Avoiding eye contact to seem normal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-12",
+          "title": "Overpreparing every contribution",
+          "problem": "Overpreparing every contribution",
+          "lessons": [
+            {
+              "id": "social-anxiety-m12-l1",
+              "title": "Case file: Overpreparing every contribution",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Overpreparing every contribution.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m12-l2",
+              "title": "The mechanism behind Overpreparing every contribution",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Overpreparing every contribution.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m12-l3",
+              "title": "Distinguish Overpreparing every contribution: protective adaptation versus maintaining safety rule",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Overpreparing every contribution. Contrast: protective adaptation versus maintaining safety rule.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m12-l4",
+              "title": "Evidence investigation: Overpreparing every contribution",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Overpreparing every contribution.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m12-l5",
+              "title": "Strategy clinic: Overpreparing every contribution",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Overpreparing every contribution.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m12-l6",
+              "title": "Transfer mission: Overpreparing every contribution",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Overpreparing every contribution.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-13",
+          "title": "Speaking quietly to prevent mistakes",
+          "problem": "Speaking quietly to prevent mistakes",
+          "lessons": [
+            {
+              "id": "social-anxiety-m13-l1",
+              "title": "Case file: Speaking quietly to prevent mistakes",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Speaking quietly to prevent mistakes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m13-l2",
+              "title": "The mechanism behind Speaking quietly to prevent mistakes",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Speaking quietly to prevent mistakes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m13-l3",
+              "title": "Distinguish Speaking quietly to prevent mistakes: protective adaptation versus maintaining safety rule",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Speaking quietly to prevent mistakes. Contrast: protective adaptation versus maintaining safety rule.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m13-l4",
+              "title": "Evidence investigation: Speaking quietly to prevent mistakes",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Speaking quietly to prevent mistakes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m13-l5",
+              "title": "Strategy clinic: Speaking quietly to prevent mistakes",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Speaking quietly to prevent mistakes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m13-l6",
+              "title": "Transfer mission: Speaking quietly to prevent mistakes",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Speaking quietly to prevent mistakes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-14",
+          "title": "Carrying reassurance cues",
+          "problem": "Carrying reassurance cues",
+          "lessons": [
+            {
+              "id": "social-anxiety-m14-l1",
+              "title": "Case file: Carrying reassurance cues",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Carrying reassurance cues.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m14-l2",
+              "title": "The mechanism behind Carrying reassurance cues",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Carrying reassurance cues.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m14-l3",
+              "title": "Distinguish Carrying reassurance cues: protective adaptation versus maintaining safety rule",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Carrying reassurance cues. Contrast: protective adaptation versus maintaining safety rule.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m14-l4",
+              "title": "Evidence investigation: Carrying reassurance cues",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Carrying reassurance cues.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m14-l5",
+              "title": "Strategy clinic: Carrying reassurance cues",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Carrying reassurance cues.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m14-l6",
+              "title": "Transfer mission: Carrying reassurance cues",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Carrying reassurance cues.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-15",
+          "title": "How safety behaviours hide corrective evidence",
+          "problem": "How safety behaviours hide corrective evidence",
+          "lessons": [
+            {
+              "id": "social-anxiety-m15-l1",
+              "title": "Case file: How safety behaviours hide corrective evidence",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: How safety behaviours hide corrective evidence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m15-l2",
+              "title": "The mechanism behind How safety behaviours hide corrective evidence",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: How safety behaviours hide corrective evidence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m15-l3",
+              "title": "Distinguish How safety behaviours hide corrective evidence: protective adaptation versus maintaining safety rule",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: How safety behaviours hide corrective evidence. Contrast: protective adaptation versus maintaining safety rule.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m15-l4",
+              "title": "Evidence investigation: How safety behaviours hide corrective evidence",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: How safety behaviours hide corrective evidence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m15-l5",
+              "title": "Strategy clinic: How safety behaviours hide corrective evidence",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: How safety behaviours hide corrective evidence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m15-l6",
+              "title": "Transfer mission: How safety behaviours hide corrective evidence",
+              "objective": "Apply the concept in a new social or clinical context. Focus: How safety behaviours hide corrective evidence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-book-4",
+      "title": "Anticipatory worry",
+      "distinction": "preparation versus mental rehearsal loops",
+      "modules": [
+        {
+          "id": "social-anxiety-module-16",
+          "title": "Rehearsing a meeting for hours",
+          "problem": "Rehearsing a meeting for hours",
+          "lessons": [
+            {
+              "id": "social-anxiety-m16-l1",
+              "title": "Case file: Rehearsing a meeting for hours",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Rehearsing a meeting for hours.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m16-l2",
+              "title": "The mechanism behind Rehearsing a meeting for hours",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Rehearsing a meeting for hours.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m16-l3",
+              "title": "Distinguish Rehearsing a meeting for hours: preparation versus mental rehearsal loops",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Rehearsing a meeting for hours. Contrast: preparation versus mental rehearsal loops.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m16-l4",
+              "title": "Evidence investigation: Rehearsing a meeting for hours",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Rehearsing a meeting for hours.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m16-l5",
+              "title": "Strategy clinic: Rehearsing a meeting for hours",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Rehearsing a meeting for hours.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m16-l6",
+              "title": "Transfer mission: Rehearsing a meeting for hours",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Rehearsing a meeting for hours.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-17",
+          "title": "Imagining ridicule without new evidence",
+          "problem": "Imagining ridicule without new evidence",
+          "lessons": [
+            {
+              "id": "social-anxiety-m17-l1",
+              "title": "Case file: Imagining ridicule without new evidence",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Imagining ridicule without new evidence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m17-l2",
+              "title": "The mechanism behind Imagining ridicule without new evidence",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Imagining ridicule without new evidence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m17-l3",
+              "title": "Distinguish Imagining ridicule without new evidence: preparation versus mental rehearsal loops",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Imagining ridicule without new evidence. Contrast: preparation versus mental rehearsal loops.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m17-l4",
+              "title": "Evidence investigation: Imagining ridicule without new evidence",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Imagining ridicule without new evidence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m17-l5",
+              "title": "Strategy clinic: Imagining ridicule without new evidence",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Imagining ridicule without new evidence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m17-l6",
+              "title": "Transfer mission: Imagining ridicule without new evidence",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Imagining ridicule without new evidence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-18",
+          "title": "Cancelling before social events",
+          "problem": "Cancelling before social events",
+          "lessons": [
+            {
+              "id": "social-anxiety-m18-l1",
+              "title": "Case file: Cancelling before social events",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Cancelling before social events.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m18-l2",
+              "title": "The mechanism behind Cancelling before social events",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Cancelling before social events.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m18-l3",
+              "title": "Distinguish Cancelling before social events: preparation versus mental rehearsal loops",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Cancelling before social events. Contrast: preparation versus mental rehearsal loops.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m18-l4",
+              "title": "Evidence investigation: Cancelling before social events",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Cancelling before social events.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m18-l5",
+              "title": "Strategy clinic: Cancelling before social events",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Cancelling before social events.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m18-l6",
+              "title": "Transfer mission: Cancelling before social events",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Cancelling before social events.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-19",
+          "title": "Threat predictions during commuting",
+          "problem": "Threat predictions during commuting",
+          "lessons": [
+            {
+              "id": "social-anxiety-m19-l1",
+              "title": "Case file: Threat predictions during commuting",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Threat predictions during commuting.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m19-l2",
+              "title": "The mechanism behind Threat predictions during commuting",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Threat predictions during commuting.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m19-l3",
+              "title": "Distinguish Threat predictions during commuting: preparation versus mental rehearsal loops",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Threat predictions during commuting. Contrast: preparation versus mental rehearsal loops.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m19-l4",
+              "title": "Evidence investigation: Threat predictions during commuting",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Threat predictions during commuting.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m19-l5",
+              "title": "Strategy clinic: Threat predictions during commuting",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Threat predictions during commuting.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m19-l6",
+              "title": "Transfer mission: Threat predictions during commuting",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Threat predictions during commuting.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-20",
+          "title": "A practical threshold for preparation",
+          "problem": "A practical threshold for preparation",
+          "lessons": [
+            {
+              "id": "social-anxiety-m20-l1",
+              "title": "Case file: A practical threshold for preparation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: A practical threshold for preparation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m20-l2",
+              "title": "The mechanism behind A practical threshold for preparation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: A practical threshold for preparation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m20-l3",
+              "title": "Distinguish A practical threshold for preparation: preparation versus mental rehearsal loops",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: A practical threshold for preparation. Contrast: preparation versus mental rehearsal loops.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m20-l4",
+              "title": "Evidence investigation: A practical threshold for preparation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: A practical threshold for preparation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m20-l5",
+              "title": "Strategy clinic: A practical threshold for preparation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: A practical threshold for preparation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m20-l6",
+              "title": "Transfer mission: A practical threshold for preparation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: A practical threshold for preparation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-book-5",
+      "title": "Post-event processing",
+      "distinction": "reflection versus punitive replay",
+      "modules": [
+        {
+          "id": "social-anxiety-module-21",
+          "title": "Reviewing what you said repeatedly",
+          "problem": "Reviewing what you said repeatedly",
+          "lessons": [
+            {
+              "id": "social-anxiety-m21-l1",
+              "title": "Case file: Reviewing what you said repeatedly",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Reviewing what you said repeatedly.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m21-l2",
+              "title": "The mechanism behind Reviewing what you said repeatedly",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Reviewing what you said repeatedly.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m21-l3",
+              "title": "Distinguish Reviewing what you said repeatedly: reflection versus punitive replay",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Reviewing what you said repeatedly. Contrast: reflection versus punitive replay.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m21-l4",
+              "title": "Evidence investigation: Reviewing what you said repeatedly",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Reviewing what you said repeatedly.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m21-l5",
+              "title": "Strategy clinic: Reviewing what you said repeatedly",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Reviewing what you said repeatedly.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m21-l6",
+              "title": "Transfer mission: Reviewing what you said repeatedly",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Reviewing what you said repeatedly.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-22",
+          "title": "Checking other people's reactions",
+          "problem": "Checking other people's reactions",
+          "lessons": [
+            {
+              "id": "social-anxiety-m22-l1",
+              "title": "Case file: Checking other people's reactions",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Checking other people's reactions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m22-l2",
+              "title": "The mechanism behind Checking other people's reactions",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Checking other people's reactions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m22-l3",
+              "title": "Distinguish Checking other people's reactions: reflection versus punitive replay",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Checking other people's reactions. Contrast: reflection versus punitive replay.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m22-l4",
+              "title": "Evidence investigation: Checking other people's reactions",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Checking other people's reactions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m22-l5",
+              "title": "Strategy clinic: Checking other people's reactions",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Checking other people's reactions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m22-l6",
+              "title": "Transfer mission: Checking other people's reactions",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Checking other people's reactions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-23",
+          "title": "Interpreting awkwardness as rejection",
+          "problem": "Interpreting awkwardness as rejection",
+          "lessons": [
+            {
+              "id": "social-anxiety-m23-l1",
+              "title": "Case file: Interpreting awkwardness as rejection",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Interpreting awkwardness as rejection.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m23-l2",
+              "title": "The mechanism behind Interpreting awkwardness as rejection",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Interpreting awkwardness as rejection.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m23-l3",
+              "title": "Distinguish Interpreting awkwardness as rejection: reflection versus punitive replay",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Interpreting awkwardness as rejection. Contrast: reflection versus punitive replay.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m23-l4",
+              "title": "Evidence investigation: Interpreting awkwardness as rejection",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Interpreting awkwardness as rejection.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m23-l5",
+              "title": "Strategy clinic: Interpreting awkwardness as rejection",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Interpreting awkwardness as rejection.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m23-l6",
+              "title": "Transfer mission: Interpreting awkwardness as rejection",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Interpreting awkwardness as rejection.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-24",
+          "title": "Reassurance after a conversation",
+          "problem": "Reassurance after a conversation",
+          "lessons": [
+            {
+              "id": "social-anxiety-m24-l1",
+              "title": "Case file: Reassurance after a conversation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Reassurance after a conversation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m24-l2",
+              "title": "The mechanism behind Reassurance after a conversation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Reassurance after a conversation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m24-l3",
+              "title": "Distinguish Reassurance after a conversation: reflection versus punitive replay",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Reassurance after a conversation. Contrast: reflection versus punitive replay.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m24-l4",
+              "title": "Evidence investigation: Reassurance after a conversation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Reassurance after a conversation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m24-l5",
+              "title": "Strategy clinic: Reassurance after a conversation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Reassurance after a conversation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m24-l6",
+              "title": "Transfer mission: Reassurance after a conversation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Reassurance after a conversation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-25",
+          "title": "Ending review without pretending perfection",
+          "problem": "Ending review without pretending perfection",
+          "lessons": [
+            {
+              "id": "social-anxiety-m25-l1",
+              "title": "Case file: Ending review without pretending perfection",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Ending review without pretending perfection.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m25-l2",
+              "title": "The mechanism behind Ending review without pretending perfection",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Ending review without pretending perfection.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m25-l3",
+              "title": "Distinguish Ending review without pretending perfection: reflection versus punitive replay",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Ending review without pretending perfection. Contrast: reflection versus punitive replay.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m25-l4",
+              "title": "Evidence investigation: Ending review without pretending perfection",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Ending review without pretending perfection.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m25-l5",
+              "title": "Strategy clinic: Ending review without pretending perfection",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Ending review without pretending perfection.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m25-l6",
+              "title": "Transfer mission: Ending review without pretending perfection",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Ending review without pretending perfection.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-book-6",
+      "title": "Relationships and belonging",
+      "distinction": "skill development versus fear-maintenance",
+      "modules": [
+        {
+          "id": "social-anxiety-module-26",
+          "title": "Friendship initiation under uncertainty",
+          "problem": "Friendship initiation under uncertainty",
+          "lessons": [
+            {
+              "id": "social-anxiety-m26-l1",
+              "title": "Case file: Friendship initiation under uncertainty",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Friendship initiation under uncertainty.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m26-l2",
+              "title": "The mechanism behind Friendship initiation under uncertainty",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Friendship initiation under uncertainty.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m26-l3",
+              "title": "Distinguish Friendship initiation under uncertainty: skill development versus fear-maintenance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Friendship initiation under uncertainty. Contrast: skill development versus fear-maintenance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m26-l4",
+              "title": "Evidence investigation: Friendship initiation under uncertainty",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Friendship initiation under uncertainty.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m26-l5",
+              "title": "Strategy clinic: Friendship initiation under uncertainty",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Friendship initiation under uncertainty.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m26-l6",
+              "title": "Transfer mission: Friendship initiation under uncertainty",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Friendship initiation under uncertainty.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-27",
+          "title": "Reading silence as dislike",
+          "problem": "Reading silence as dislike",
+          "lessons": [
+            {
+              "id": "social-anxiety-m27-l1",
+              "title": "Case file: Reading silence as dislike",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Reading silence as dislike.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m27-l2",
+              "title": "The mechanism behind Reading silence as dislike",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Reading silence as dislike.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m27-l3",
+              "title": "Distinguish Reading silence as dislike: skill development versus fear-maintenance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Reading silence as dislike. Contrast: skill development versus fear-maintenance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m27-l4",
+              "title": "Evidence investigation: Reading silence as dislike",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Reading silence as dislike.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m27-l5",
+              "title": "Strategy clinic: Reading silence as dislike",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Reading silence as dislike.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m27-l6",
+              "title": "Transfer mission: Reading silence as dislike",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Reading silence as dislike.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-28",
+          "title": "Setting boundaries while socially anxious",
+          "problem": "Setting boundaries while socially anxious",
+          "lessons": [
+            {
+              "id": "social-anxiety-m28-l1",
+              "title": "Case file: Setting boundaries while socially anxious",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Setting boundaries while socially anxious.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m28-l2",
+              "title": "The mechanism behind Setting boundaries while socially anxious",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Setting boundaries while socially anxious.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m28-l3",
+              "title": "Distinguish Setting boundaries while socially anxious: skill development versus fear-maintenance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Setting boundaries while socially anxious. Contrast: skill development versus fear-maintenance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m28-l4",
+              "title": "Evidence investigation: Setting boundaries while socially anxious",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Setting boundaries while socially anxious.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m28-l5",
+              "title": "Strategy clinic: Setting boundaries while socially anxious",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Setting boundaries while socially anxious.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m28-l6",
+              "title": "Transfer mission: Setting boundaries while socially anxious",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Setting boundaries while socially anxious.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-29",
+          "title": "Handling real criticism and exclusion",
+          "problem": "Handling real criticism and exclusion",
+          "lessons": [
+            {
+              "id": "social-anxiety-m29-l1",
+              "title": "Case file: Handling real criticism and exclusion",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Handling real criticism and exclusion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m29-l2",
+              "title": "The mechanism behind Handling real criticism and exclusion",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Handling real criticism and exclusion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m29-l3",
+              "title": "Distinguish Handling real criticism and exclusion: skill development versus fear-maintenance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Handling real criticism and exclusion. Contrast: skill development versus fear-maintenance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m29-l4",
+              "title": "Evidence investigation: Handling real criticism and exclusion",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Handling real criticism and exclusion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m29-l5",
+              "title": "Strategy clinic: Handling real criticism and exclusion",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Handling real criticism and exclusion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m29-l6",
+              "title": "Transfer mission: Handling real criticism and exclusion",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Handling real criticism and exclusion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-30",
+          "title": "Balancing authenticity with safety",
+          "problem": "Balancing authenticity with safety",
+          "lessons": [
+            {
+              "id": "social-anxiety-m30-l1",
+              "title": "Case file: Balancing authenticity with safety",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Balancing authenticity with safety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m30-l2",
+              "title": "The mechanism behind Balancing authenticity with safety",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Balancing authenticity with safety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m30-l3",
+              "title": "Distinguish Balancing authenticity with safety: skill development versus fear-maintenance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Balancing authenticity with safety. Contrast: skill development versus fear-maintenance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m30-l4",
+              "title": "Evidence investigation: Balancing authenticity with safety",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Balancing authenticity with safety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m30-l5",
+              "title": "Strategy clinic: Balancing authenticity with safety",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Balancing authenticity with safety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m30-l6",
+              "title": "Transfer mission: Balancing authenticity with safety",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Balancing authenticity with safety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-book-7",
+      "title": "Behavioural experiments",
+      "distinction": "learning versus performance tests",
+      "modules": [
+        {
+          "id": "social-anxiety-module-31",
+          "title": "Comparing self-focused and outward attention",
+          "problem": "Comparing self-focused and outward attention",
+          "lessons": [
+            {
+              "id": "social-anxiety-m31-l1",
+              "title": "Case file: Comparing self-focused and outward attention",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Comparing self-focused and outward attention.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m31-l2",
+              "title": "The mechanism behind Comparing self-focused and outward attention",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Comparing self-focused and outward attention.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m31-l3",
+              "title": "Distinguish Comparing self-focused and outward attention: learning versus performance tests",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Comparing self-focused and outward attention. Contrast: learning versus performance tests.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m31-l4",
+              "title": "Evidence investigation: Comparing self-focused and outward attention",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Comparing self-focused and outward attention.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m31-l5",
+              "title": "Strategy clinic: Comparing self-focused and outward attention",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Comparing self-focused and outward attention.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m31-l6",
+              "title": "Transfer mission: Comparing self-focused and outward attention",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Comparing self-focused and outward attention.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-32",
+          "title": "Dropping one safety behaviour",
+          "problem": "Dropping one safety behaviour",
+          "lessons": [
+            {
+              "id": "social-anxiety-m32-l1",
+              "title": "Case file: Dropping one safety behaviour",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Dropping one safety behaviour.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m32-l2",
+              "title": "The mechanism behind Dropping one safety behaviour",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Dropping one safety behaviour.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m32-l3",
+              "title": "Distinguish Dropping one safety behaviour: learning versus performance tests",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Dropping one safety behaviour. Contrast: learning versus performance tests.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m32-l4",
+              "title": "Evidence investigation: Dropping one safety behaviour",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Dropping one safety behaviour.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m32-l5",
+              "title": "Strategy clinic: Dropping one safety behaviour",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Dropping one safety behaviour.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m32-l6",
+              "title": "Transfer mission: Dropping one safety behaviour",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Dropping one safety behaviour.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-33",
+          "title": "Testing feared prediction without humiliation",
+          "problem": "Testing feared prediction without humiliation",
+          "lessons": [
+            {
+              "id": "social-anxiety-m33-l1",
+              "title": "Case file: Testing feared prediction without humiliation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Testing feared prediction without humiliation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m33-l2",
+              "title": "The mechanism behind Testing feared prediction without humiliation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Testing feared prediction without humiliation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m33-l3",
+              "title": "Distinguish Testing feared prediction without humiliation: learning versus performance tests",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Testing feared prediction without humiliation. Contrast: learning versus performance tests.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m33-l4",
+              "title": "Evidence investigation: Testing feared prediction without humiliation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Testing feared prediction without humiliation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m33-l5",
+              "title": "Strategy clinic: Testing feared prediction without humiliation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Testing feared prediction without humiliation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m33-l6",
+              "title": "Transfer mission: Testing feared prediction without humiliation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Testing feared prediction without humiliation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-34",
+          "title": "Learning from ambiguous feedback",
+          "problem": "Learning from ambiguous feedback",
+          "lessons": [
+            {
+              "id": "social-anxiety-m34-l1",
+              "title": "Case file: Learning from ambiguous feedback",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Learning from ambiguous feedback.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m34-l2",
+              "title": "The mechanism behind Learning from ambiguous feedback",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Learning from ambiguous feedback.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m34-l3",
+              "title": "Distinguish Learning from ambiguous feedback: learning versus performance tests",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Learning from ambiguous feedback. Contrast: learning versus performance tests.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m34-l4",
+              "title": "Evidence investigation: Learning from ambiguous feedback",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Learning from ambiguous feedback.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m34-l5",
+              "title": "Strategy clinic: Learning from ambiguous feedback",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Learning from ambiguous feedback.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m34-l6",
+              "title": "Transfer mission: Learning from ambiguous feedback",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Learning from ambiguous feedback.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-35",
+          "title": "Why experiments should not create risk",
+          "problem": "Why experiments should not create risk",
+          "lessons": [
+            {
+              "id": "social-anxiety-m35-l1",
+              "title": "Case file: Why experiments should not create risk",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why experiments should not create risk.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m35-l2",
+              "title": "The mechanism behind Why experiments should not create risk",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why experiments should not create risk.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m35-l3",
+              "title": "Distinguish Why experiments should not create risk: learning versus performance tests",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why experiments should not create risk. Contrast: learning versus performance tests.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m35-l4",
+              "title": "Evidence investigation: Why experiments should not create risk",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why experiments should not create risk.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m35-l5",
+              "title": "Strategy clinic: Why experiments should not create risk",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why experiments should not create risk.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m35-l6",
+              "title": "Transfer mission: Why experiments should not create risk",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why experiments should not create risk.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-book-8",
+      "title": "Different social contexts",
+      "distinction": "social anxiety versus broader developmental difference",
+      "modules": [
+        {
+          "id": "social-anxiety-module-36",
+          "title": "Autism and social communication differences",
+          "problem": "Autism and social communication differences",
+          "lessons": [
+            {
+              "id": "social-anxiety-m36-l1",
+              "title": "Case file: Autism and social communication differences",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Autism and social communication differences.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m36-l2",
+              "title": "The mechanism behind Autism and social communication differences",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Autism and social communication differences.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m36-l3",
+              "title": "Distinguish Autism and social communication differences: social anxiety versus broader developmental difference",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Autism and social communication differences. Contrast: social anxiety versus broader developmental difference.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m36-l4",
+              "title": "Evidence investigation: Autism and social communication differences",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Autism and social communication differences.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m36-l5",
+              "title": "Strategy clinic: Autism and social communication differences",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Autism and social communication differences.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m36-l6",
+              "title": "Transfer mission: Autism and social communication differences",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Autism and social communication differences.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-37",
+          "title": "Trauma and realistic hypervigilance",
+          "problem": "Trauma and realistic hypervigilance",
+          "lessons": [
+            {
+              "id": "social-anxiety-m37-l1",
+              "title": "Case file: Trauma and realistic hypervigilance",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Trauma and realistic hypervigilance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m37-l2",
+              "title": "The mechanism behind Trauma and realistic hypervigilance",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Trauma and realistic hypervigilance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m37-l3",
+              "title": "Distinguish Trauma and realistic hypervigilance: social anxiety versus broader developmental difference",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Trauma and realistic hypervigilance. Contrast: social anxiety versus broader developmental difference.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m37-l4",
+              "title": "Evidence investigation: Trauma and realistic hypervigilance",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Trauma and realistic hypervigilance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m37-l5",
+              "title": "Strategy clinic: Trauma and realistic hypervigilance",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Trauma and realistic hypervigilance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m37-l6",
+              "title": "Transfer mission: Trauma and realistic hypervigilance",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Trauma and realistic hypervigilance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-38",
+          "title": "Selective mutism and developmental context",
+          "problem": "Selective mutism and developmental context",
+          "lessons": [
+            {
+              "id": "social-anxiety-m38-l1",
+              "title": "Case file: Selective mutism and developmental context",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Selective mutism and developmental context.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m38-l2",
+              "title": "The mechanism behind Selective mutism and developmental context",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Selective mutism and developmental context.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m38-l3",
+              "title": "Distinguish Selective mutism and developmental context: social anxiety versus broader developmental difference",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Selective mutism and developmental context. Contrast: social anxiety versus broader developmental difference.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m38-l4",
+              "title": "Evidence investigation: Selective mutism and developmental context",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Selective mutism and developmental context.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m38-l5",
+              "title": "Strategy clinic: Selective mutism and developmental context",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Selective mutism and developmental context.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m38-l6",
+              "title": "Transfer mission: Selective mutism and developmental context",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Selective mutism and developmental context.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-39",
+          "title": "Public speaking versus everyday interaction",
+          "problem": "Public speaking versus everyday interaction",
+          "lessons": [
+            {
+              "id": "social-anxiety-m39-l1",
+              "title": "Case file: Public speaking versus everyday interaction",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Public speaking versus everyday interaction.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m39-l2",
+              "title": "The mechanism behind Public speaking versus everyday interaction",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Public speaking versus everyday interaction.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m39-l3",
+              "title": "Distinguish Public speaking versus everyday interaction: social anxiety versus broader developmental difference",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Public speaking versus everyday interaction. Contrast: social anxiety versus broader developmental difference.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m39-l4",
+              "title": "Evidence investigation: Public speaking versus everyday interaction",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Public speaking versus everyday interaction.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m39-l5",
+              "title": "Strategy clinic: Public speaking versus everyday interaction",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Public speaking versus everyday interaction.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m39-l6",
+              "title": "Transfer mission: Public speaking versus everyday interaction",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Public speaking versus everyday interaction.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-40",
+          "title": "When professional assessment is useful",
+          "problem": "When professional assessment is useful",
+          "lessons": [
+            {
+              "id": "social-anxiety-m40-l1",
+              "title": "Case file: When professional assessment is useful",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When professional assessment is useful.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m40-l2",
+              "title": "The mechanism behind When professional assessment is useful",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When professional assessment is useful.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m40-l3",
+              "title": "Distinguish When professional assessment is useful: social anxiety versus broader developmental difference",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When professional assessment is useful. Contrast: social anxiety versus broader developmental difference.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m40-l4",
+              "title": "Evidence investigation: When professional assessment is useful",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When professional assessment is useful.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m40-l5",
+              "title": "Strategy clinic: When professional assessment is useful",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When professional assessment is useful.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m40-l6",
+              "title": "Transfer mission: When professional assessment is useful",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When professional assessment is useful.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-book-9",
+      "title": "Social systems and stigma",
+      "distinction": "personal irrationality versus social threat",
+      "modules": [
+        {
+          "id": "social-anxiety-module-41",
+          "title": "Racism and fear of judgement",
+          "problem": "Racism and fear of judgement",
+          "lessons": [
+            {
+              "id": "social-anxiety-m41-l1",
+              "title": "Case file: Racism and fear of judgement",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Racism and fear of judgement.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m41-l2",
+              "title": "The mechanism behind Racism and fear of judgement",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Racism and fear of judgement.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m41-l3",
+              "title": "Distinguish Racism and fear of judgement: personal irrationality versus social threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Racism and fear of judgement. Contrast: personal irrationality versus social threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m41-l4",
+              "title": "Evidence investigation: Racism and fear of judgement",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Racism and fear of judgement.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m41-l5",
+              "title": "Strategy clinic: Racism and fear of judgement",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Racism and fear of judgement.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m41-l6",
+              "title": "Transfer mission: Racism and fear of judgement",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Racism and fear of judgement.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-42",
+          "title": "Gender norms and scrutiny",
+          "problem": "Gender norms and scrutiny",
+          "lessons": [
+            {
+              "id": "social-anxiety-m42-l1",
+              "title": "Case file: Gender norms and scrutiny",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Gender norms and scrutiny.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m42-l2",
+              "title": "The mechanism behind Gender norms and scrutiny",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Gender norms and scrutiny.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m42-l3",
+              "title": "Distinguish Gender norms and scrutiny: personal irrationality versus social threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Gender norms and scrutiny. Contrast: personal irrationality versus social threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m42-l4",
+              "title": "Evidence investigation: Gender norms and scrutiny",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Gender norms and scrutiny.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m42-l5",
+              "title": "Strategy clinic: Gender norms and scrutiny",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Gender norms and scrutiny.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m42-l6",
+              "title": "Transfer mission: Gender norms and scrutiny",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Gender norms and scrutiny.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-43",
+          "title": "Class markers and workplace status",
+          "problem": "Class markers and workplace status",
+          "lessons": [
+            {
+              "id": "social-anxiety-m43-l1",
+              "title": "Case file: Class markers and workplace status",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Class markers and workplace status.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m43-l2",
+              "title": "The mechanism behind Class markers and workplace status",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Class markers and workplace status.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m43-l3",
+              "title": "Distinguish Class markers and workplace status: personal irrationality versus social threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Class markers and workplace status. Contrast: personal irrationality versus social threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m43-l4",
+              "title": "Evidence investigation: Class markers and workplace status",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Class markers and workplace status.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m43-l5",
+              "title": "Strategy clinic: Class markers and workplace status",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Class markers and workplace status.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m43-l6",
+              "title": "Transfer mission: Class markers and workplace status",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Class markers and workplace status.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-44",
+          "title": "Social platforms and public humiliation",
+          "problem": "Social platforms and public humiliation",
+          "lessons": [
+            {
+              "id": "social-anxiety-m44-l1",
+              "title": "Case file: Social platforms and public humiliation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Social platforms and public humiliation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m44-l2",
+              "title": "The mechanism behind Social platforms and public humiliation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Social platforms and public humiliation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m44-l3",
+              "title": "Distinguish Social platforms and public humiliation: personal irrationality versus social threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Social platforms and public humiliation. Contrast: personal irrationality versus social threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m44-l4",
+              "title": "Evidence investigation: Social platforms and public humiliation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Social platforms and public humiliation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m44-l5",
+              "title": "Strategy clinic: Social platforms and public humiliation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Social platforms and public humiliation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m44-l6",
+              "title": "Transfer mission: Social platforms and public humiliation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Social platforms and public humiliation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-45",
+          "title": "Accessibility in interviews and education",
+          "problem": "Accessibility in interviews and education",
+          "lessons": [
+            {
+              "id": "social-anxiety-m45-l1",
+              "title": "Case file: Accessibility in interviews and education",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Accessibility in interviews and education.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m45-l2",
+              "title": "The mechanism behind Accessibility in interviews and education",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Accessibility in interviews and education.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m45-l3",
+              "title": "Distinguish Accessibility in interviews and education: personal irrationality versus social threat",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Accessibility in interviews and education. Contrast: personal irrationality versus social threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m45-l4",
+              "title": "Evidence investigation: Accessibility in interviews and education",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Accessibility in interviews and education.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m45-l5",
+              "title": "Strategy clinic: Accessibility in interviews and education",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Accessibility in interviews and education.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m45-l6",
+              "title": "Transfer mission: Accessibility in interviews and education",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Accessibility in interviews and education.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-book-10",
+      "title": "Advanced transfer",
+      "distinction": "fear prediction versus lived evidence",
+      "modules": [
+        {
+          "id": "social-anxiety-module-46",
+          "title": "A setback after many good conversations",
+          "problem": "A setback after many good conversations",
+          "lessons": [
+            {
+              "id": "social-anxiety-m46-l1",
+              "title": "Case file: A setback after many good conversations",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: A setback after many good conversations.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m46-l2",
+              "title": "The mechanism behind A setback after many good conversations",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: A setback after many good conversations.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m46-l3",
+              "title": "Distinguish A setback after many good conversations: fear prediction versus lived evidence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: A setback after many good conversations. Contrast: fear prediction versus lived evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m46-l4",
+              "title": "Evidence investigation: A setback after many good conversations",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: A setback after many good conversations.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m46-l5",
+              "title": "Strategy clinic: A setback after many good conversations",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: A setback after many good conversations.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m46-l6",
+              "title": "Transfer mission: A setback after many good conversations",
+              "objective": "Apply the concept in a new social or clinical context. Focus: A setback after many good conversations.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-47",
+          "title": "Romantic rejection without global self-judgement",
+          "problem": "Romantic rejection without global self-judgement",
+          "lessons": [
+            {
+              "id": "social-anxiety-m47-l1",
+              "title": "Case file: Romantic rejection without global self-judgement",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Romantic rejection without global self-judgement.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m47-l2",
+              "title": "The mechanism behind Romantic rejection without global self-judgement",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Romantic rejection without global self-judgement.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m47-l3",
+              "title": "Distinguish Romantic rejection without global self-judgement: fear prediction versus lived evidence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Romantic rejection without global self-judgement. Contrast: fear prediction versus lived evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m47-l4",
+              "title": "Evidence investigation: Romantic rejection without global self-judgement",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Romantic rejection without global self-judgement.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m47-l5",
+              "title": "Strategy clinic: Romantic rejection without global self-judgement",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Romantic rejection without global self-judgement.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m47-l6",
+              "title": "Transfer mission: Romantic rejection without global self-judgement",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Romantic rejection without global self-judgement.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-48",
+          "title": "Authority figures and unequal power",
+          "problem": "Authority figures and unequal power",
+          "lessons": [
+            {
+              "id": "social-anxiety-m48-l1",
+              "title": "Case file: Authority figures and unequal power",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Authority figures and unequal power.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m48-l2",
+              "title": "The mechanism behind Authority figures and unequal power",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Authority figures and unequal power.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m48-l3",
+              "title": "Distinguish Authority figures and unequal power: fear prediction versus lived evidence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Authority figures and unequal power. Contrast: fear prediction versus lived evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m48-l4",
+              "title": "Evidence investigation: Authority figures and unequal power",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Authority figures and unequal power.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m48-l5",
+              "title": "Strategy clinic: Authority figures and unequal power",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Authority figures and unequal power.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m48-l6",
+              "title": "Transfer mission: Authority figures and unequal power",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Authority figures and unequal power.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-49",
+          "title": "Flexible responses to actual hostility",
+          "problem": "Flexible responses to actual hostility",
+          "lessons": [
+            {
+              "id": "social-anxiety-m49-l1",
+              "title": "Case file: Flexible responses to actual hostility",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Flexible responses to actual hostility.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m49-l2",
+              "title": "The mechanism behind Flexible responses to actual hostility",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Flexible responses to actual hostility.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m49-l3",
+              "title": "Distinguish Flexible responses to actual hostility: fear prediction versus lived evidence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Flexible responses to actual hostility. Contrast: fear prediction versus lived evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m49-l4",
+              "title": "Evidence investigation: Flexible responses to actual hostility",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Flexible responses to actual hostility.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m49-l5",
+              "title": "Strategy clinic: Flexible responses to actual hostility",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Flexible responses to actual hostility.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m49-l6",
+              "title": "Transfer mission: Flexible responses to actual hostility",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Flexible responses to actual hostility.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-module-50",
+          "title": "Integrated mission: engagement without certainty",
+          "problem": "Integrated mission: engagement without certainty",
+          "lessons": [
+            {
+              "id": "social-anxiety-m50-l1",
+              "title": "Case file: Integrated mission: engagement without certainty",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Integrated mission: engagement without certainty.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m50-l2",
+              "title": "The mechanism behind Integrated mission: engagement without certainty",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Integrated mission: engagement without certainty.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m50-l3",
+              "title": "Distinguish Integrated mission: engagement without certainty: fear prediction versus lived evidence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Integrated mission: engagement without certainty. Contrast: fear prediction versus lived evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m50-l4",
+              "title": "Evidence investigation: Integrated mission: engagement without certainty",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Integrated mission: engagement without certainty.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m50-l5",
+              "title": "Strategy clinic: Integrated mission: engagement without certainty",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Integrated mission: engagement without certainty.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-anxiety-m50-l6",
+              "title": "Transfer mission: Integrated mission: engagement without certainty",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Integrated mission: engagement without certainty.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

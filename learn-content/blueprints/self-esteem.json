@@ -1,0 +1,2828 @@
+{
+  "courseId": "self-esteem",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Working lesson headings and learning objectives; no published content.",
+  "books": [
+    {
+      "id": "self-esteem-book-1",
+      "title": "Understanding self-evaluation",
+      "distinction": "self-worth versus self-rating",
+      "modules": [
+        {
+          "id": "self-esteem-module-01",
+          "title": "Confidence in a skill versus global worth",
+          "problem": "Confidence in a skill versus global worth",
+          "lessons": [
+            {
+              "id": "self-esteem-m1-l1",
+              "title": "Case file: Confidence in a skill versus global worth",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Confidence in a skill versus global worth.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m1-l2",
+              "title": "The mechanism behind Confidence in a skill versus global worth",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Confidence in a skill versus global worth.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m1-l3",
+              "title": "Distinguish Confidence in a skill versus global worth: self-worth versus self-rating",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Confidence in a skill versus global worth. Contrast: self-worth versus self-rating.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m1-l4",
+              "title": "Evidence investigation: Confidence in a skill versus global worth",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Confidence in a skill versus global worth.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m1-l5",
+              "title": "Strategy clinic: Confidence in a skill versus global worth",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Confidence in a skill versus global worth.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m1-l6",
+              "title": "Transfer mission: Confidence in a skill versus global worth",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Confidence in a skill versus global worth.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-02",
+          "title": "Why self-esteem fluctuates across contexts",
+          "problem": "Why self-esteem fluctuates across contexts",
+          "lessons": [
+            {
+              "id": "self-esteem-m2-l1",
+              "title": "Case file: Why self-esteem fluctuates across contexts",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why self-esteem fluctuates across contexts.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m2-l2",
+              "title": "The mechanism behind Why self-esteem fluctuates across contexts",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why self-esteem fluctuates across contexts.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m2-l3",
+              "title": "Distinguish Why self-esteem fluctuates across contexts: self-worth versus self-rating",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why self-esteem fluctuates across contexts. Contrast: self-worth versus self-rating.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m2-l4",
+              "title": "Evidence investigation: Why self-esteem fluctuates across contexts",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why self-esteem fluctuates across contexts.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m2-l5",
+              "title": "Strategy clinic: Why self-esteem fluctuates across contexts",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why self-esteem fluctuates across contexts.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m2-l6",
+              "title": "Transfer mission: Why self-esteem fluctuates across contexts",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why self-esteem fluctuates across contexts.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-03",
+          "title": "Internal standards and borrowed standards",
+          "problem": "Internal standards and borrowed standards",
+          "lessons": [
+            {
+              "id": "self-esteem-m3-l1",
+              "title": "Case file: Internal standards and borrowed standards",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Internal standards and borrowed standards.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m3-l2",
+              "title": "The mechanism behind Internal standards and borrowed standards",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Internal standards and borrowed standards.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m3-l3",
+              "title": "Distinguish Internal standards and borrowed standards: self-worth versus self-rating",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Internal standards and borrowed standards. Contrast: self-worth versus self-rating.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m3-l4",
+              "title": "Evidence investigation: Internal standards and borrowed standards",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Internal standards and borrowed standards.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m3-l5",
+              "title": "Strategy clinic: Internal standards and borrowed standards",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Internal standards and borrowed standards.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m3-l6",
+              "title": "Transfer mission: Internal standards and borrowed standards",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Internal standards and borrowed standards.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-04",
+          "title": "Feeling inferior without objective failure",
+          "problem": "Feeling inferior without objective failure",
+          "lessons": [
+            {
+              "id": "self-esteem-m4-l1",
+              "title": "Case file: Feeling inferior without objective failure",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Feeling inferior without objective failure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m4-l2",
+              "title": "The mechanism behind Feeling inferior without objective failure",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Feeling inferior without objective failure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m4-l3",
+              "title": "Distinguish Feeling inferior without objective failure: self-worth versus self-rating",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Feeling inferior without objective failure. Contrast: self-worth versus self-rating.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m4-l4",
+              "title": "Evidence investigation: Feeling inferior without objective failure",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Feeling inferior without objective failure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m4-l5",
+              "title": "Strategy clinic: Feeling inferior without objective failure",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Feeling inferior without objective failure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m4-l6",
+              "title": "Transfer mission: Feeling inferior without objective failure",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Feeling inferior without objective failure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-05",
+          "title": "When praise does not change self-belief",
+          "problem": "When praise does not change self-belief",
+          "lessons": [
+            {
+              "id": "self-esteem-m5-l1",
+              "title": "Case file: When praise does not change self-belief",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When praise does not change self-belief.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m5-l2",
+              "title": "The mechanism behind When praise does not change self-belief",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When praise does not change self-belief.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m5-l3",
+              "title": "Distinguish When praise does not change self-belief: self-worth versus self-rating",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When praise does not change self-belief. Contrast: self-worth versus self-rating.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m5-l4",
+              "title": "Evidence investigation: When praise does not change self-belief",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When praise does not change self-belief.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m5-l5",
+              "title": "Strategy clinic: When praise does not change self-belief",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When praise does not change self-belief.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m5-l6",
+              "title": "Transfer mission: When praise does not change self-belief",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When praise does not change self-belief.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-book-2",
+      "title": "Shame and self-condemnation",
+      "distinction": "action appraisal versus identity judgement",
+      "modules": [
+        {
+          "id": "self-esteem-module-06",
+          "title": "A mistake becoming a moral verdict",
+          "problem": "A mistake becoming a moral verdict",
+          "lessons": [
+            {
+              "id": "self-esteem-m6-l1",
+              "title": "Case file: A mistake becoming a moral verdict",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: A mistake becoming a moral verdict.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m6-l2",
+              "title": "The mechanism behind A mistake becoming a moral verdict",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: A mistake becoming a moral verdict.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m6-l3",
+              "title": "Distinguish A mistake becoming a moral verdict: action appraisal versus identity judgement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: A mistake becoming a moral verdict. Contrast: action appraisal versus identity judgement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m6-l4",
+              "title": "Evidence investigation: A mistake becoming a moral verdict",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: A mistake becoming a moral verdict.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m6-l5",
+              "title": "Strategy clinic: A mistake becoming a moral verdict",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: A mistake becoming a moral verdict.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m6-l6",
+              "title": "Transfer mission: A mistake becoming a moral verdict",
+              "objective": "Apply the concept in a new social or clinical context. Focus: A mistake becoming a moral verdict.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-07",
+          "title": "Shame spirals after criticism",
+          "problem": "Shame spirals after criticism",
+          "lessons": [
+            {
+              "id": "self-esteem-m7-l1",
+              "title": "Case file: Shame spirals after criticism",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Shame spirals after criticism.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m7-l2",
+              "title": "The mechanism behind Shame spirals after criticism",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Shame spirals after criticism.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m7-l3",
+              "title": "Distinguish Shame spirals after criticism: action appraisal versus identity judgement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Shame spirals after criticism. Contrast: action appraisal versus identity judgement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m7-l4",
+              "title": "Evidence investigation: Shame spirals after criticism",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Shame spirals after criticism.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m7-l5",
+              "title": "Strategy clinic: Shame spirals after criticism",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Shame spirals after criticism.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m7-l6",
+              "title": "Transfer mission: Shame spirals after criticism",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Shame spirals after criticism.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-08",
+          "title": "The urge to hide or disappear",
+          "problem": "The urge to hide or disappear",
+          "lessons": [
+            {
+              "id": "self-esteem-m8-l1",
+              "title": "Case file: The urge to hide or disappear",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: The urge to hide or disappear.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m8-l2",
+              "title": "The mechanism behind The urge to hide or disappear",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: The urge to hide or disappear.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m8-l3",
+              "title": "Distinguish The urge to hide or disappear: action appraisal versus identity judgement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: The urge to hide or disappear. Contrast: action appraisal versus identity judgement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m8-l4",
+              "title": "Evidence investigation: The urge to hide or disappear",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: The urge to hide or disappear.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m8-l5",
+              "title": "Strategy clinic: The urge to hide or disappear",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: The urge to hide or disappear.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m8-l6",
+              "title": "Transfer mission: The urge to hide or disappear",
+              "objective": "Apply the concept in a new social or clinical context. Focus: The urge to hide or disappear.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-09",
+          "title": "Guilt that motivates repair",
+          "problem": "Guilt that motivates repair",
+          "lessons": [
+            {
+              "id": "self-esteem-m9-l1",
+              "title": "Case file: Guilt that motivates repair",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Guilt that motivates repair.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m9-l2",
+              "title": "The mechanism behind Guilt that motivates repair",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Guilt that motivates repair.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m9-l3",
+              "title": "Distinguish Guilt that motivates repair: action appraisal versus identity judgement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Guilt that motivates repair. Contrast: action appraisal versus identity judgement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m9-l4",
+              "title": "Evidence investigation: Guilt that motivates repair",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Guilt that motivates repair.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m9-l5",
+              "title": "Strategy clinic: Guilt that motivates repair",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Guilt that motivates repair.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m9-l6",
+              "title": "Transfer mission: Guilt that motivates repair",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Guilt that motivates repair.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-10",
+          "title": "Why shame can follow victimisation",
+          "problem": "Why shame can follow victimisation",
+          "lessons": [
+            {
+              "id": "self-esteem-m10-l1",
+              "title": "Case file: Why shame can follow victimisation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why shame can follow victimisation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m10-l2",
+              "title": "The mechanism behind Why shame can follow victimisation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why shame can follow victimisation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m10-l3",
+              "title": "Distinguish Why shame can follow victimisation: action appraisal versus identity judgement",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why shame can follow victimisation. Contrast: action appraisal versus identity judgement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m10-l4",
+              "title": "Evidence investigation: Why shame can follow victimisation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why shame can follow victimisation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m10-l5",
+              "title": "Strategy clinic: Why shame can follow victimisation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why shame can follow victimisation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m10-l6",
+              "title": "Transfer mission: Why shame can follow victimisation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why shame can follow victimisation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-book-3",
+      "title": "The inner critic",
+      "distinction": "self-monitoring versus cruelty",
+      "modules": [
+        {
+          "id": "self-esteem-module-11",
+          "title": "Harsh self-talk presented as motivation",
+          "problem": "Harsh self-talk presented as motivation",
+          "lessons": [
+            {
+              "id": "self-esteem-m11-l1",
+              "title": "Case file: Harsh self-talk presented as motivation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Harsh self-talk presented as motivation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m11-l2",
+              "title": "The mechanism behind Harsh self-talk presented as motivation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Harsh self-talk presented as motivation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m11-l3",
+              "title": "Distinguish Harsh self-talk presented as motivation: self-monitoring versus cruelty",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Harsh self-talk presented as motivation. Contrast: self-monitoring versus cruelty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m11-l4",
+              "title": "Evidence investigation: Harsh self-talk presented as motivation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Harsh self-talk presented as motivation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m11-l5",
+              "title": "Strategy clinic: Harsh self-talk presented as motivation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Harsh self-talk presented as motivation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m11-l6",
+              "title": "Transfer mission: Harsh self-talk presented as motivation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Harsh self-talk presented as motivation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-12",
+          "title": "Perfectionism and fear of errors",
+          "problem": "Perfectionism and fear of errors",
+          "lessons": [
+            {
+              "id": "self-esteem-m12-l1",
+              "title": "Case file: Perfectionism and fear of errors",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Perfectionism and fear of errors.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m12-l2",
+              "title": "The mechanism behind Perfectionism and fear of errors",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Perfectionism and fear of errors.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m12-l3",
+              "title": "Distinguish Perfectionism and fear of errors: self-monitoring versus cruelty",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Perfectionism and fear of errors. Contrast: self-monitoring versus cruelty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m12-l4",
+              "title": "Evidence investigation: Perfectionism and fear of errors",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Perfectionism and fear of errors.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m12-l5",
+              "title": "Strategy clinic: Perfectionism and fear of errors",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Perfectionism and fear of errors.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m12-l6",
+              "title": "Transfer mission: Perfectionism and fear of errors",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Perfectionism and fear of errors.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-13",
+          "title": "Comparison with unreachable standards",
+          "problem": "Comparison with unreachable standards",
+          "lessons": [
+            {
+              "id": "self-esteem-m13-l1",
+              "title": "Case file: Comparison with unreachable standards",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Comparison with unreachable standards.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m13-l2",
+              "title": "The mechanism behind Comparison with unreachable standards",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Comparison with unreachable standards.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m13-l3",
+              "title": "Distinguish Comparison with unreachable standards: self-monitoring versus cruelty",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Comparison with unreachable standards. Contrast: self-monitoring versus cruelty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m13-l4",
+              "title": "Evidence investigation: Comparison with unreachable standards",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Comparison with unreachable standards.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m13-l5",
+              "title": "Strategy clinic: Comparison with unreachable standards",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Comparison with unreachable standards.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m13-l6",
+              "title": "Transfer mission: Comparison with unreachable standards",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Comparison with unreachable standards.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-14",
+          "title": "Overidentifying with one failure",
+          "problem": "Overidentifying with one failure",
+          "lessons": [
+            {
+              "id": "self-esteem-m14-l1",
+              "title": "Case file: Overidentifying with one failure",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Overidentifying with one failure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m14-l2",
+              "title": "The mechanism behind Overidentifying with one failure",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Overidentifying with one failure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m14-l3",
+              "title": "Distinguish Overidentifying with one failure: self-monitoring versus cruelty",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Overidentifying with one failure. Contrast: self-monitoring versus cruelty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m14-l4",
+              "title": "Evidence investigation: Overidentifying with one failure",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Overidentifying with one failure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m14-l5",
+              "title": "Strategy clinic: Overidentifying with one failure",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Overidentifying with one failure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m14-l6",
+              "title": "Transfer mission: Overidentifying with one failure",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Overidentifying with one failure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-15",
+          "title": "When an inner critic echoes outside voices",
+          "problem": "When an inner critic echoes outside voices",
+          "lessons": [
+            {
+              "id": "self-esteem-m15-l1",
+              "title": "Case file: When an inner critic echoes outside voices",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When an inner critic echoes outside voices.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m15-l2",
+              "title": "The mechanism behind When an inner critic echoes outside voices",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When an inner critic echoes outside voices.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m15-l3",
+              "title": "Distinguish When an inner critic echoes outside voices: self-monitoring versus cruelty",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When an inner critic echoes outside voices. Contrast: self-monitoring versus cruelty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m15-l4",
+              "title": "Evidence investigation: When an inner critic echoes outside voices",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When an inner critic echoes outside voices.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m15-l5",
+              "title": "Strategy clinic: When an inner critic echoes outside voices",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When an inner critic echoes outside voices.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m15-l6",
+              "title": "Transfer mission: When an inner critic echoes outside voices",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When an inner critic echoes outside voices.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-book-4",
+      "title": "Conditional worth and achievement",
+      "distinction": "achievement versus personal value",
+      "modules": [
+        {
+          "id": "self-esteem-module-16",
+          "title": "Only feeling valuable when productive",
+          "problem": "Only feeling valuable when productive",
+          "lessons": [
+            {
+              "id": "self-esteem-m16-l1",
+              "title": "Case file: Only feeling valuable when productive",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Only feeling valuable when productive.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m16-l2",
+              "title": "The mechanism behind Only feeling valuable when productive",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Only feeling valuable when productive.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m16-l3",
+              "title": "Distinguish Only feeling valuable when productive: achievement versus personal value",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Only feeling valuable when productive. Contrast: achievement versus personal value.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m16-l4",
+              "title": "Evidence investigation: Only feeling valuable when productive",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Only feeling valuable when productive.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m16-l5",
+              "title": "Strategy clinic: Only feeling valuable when productive",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Only feeling valuable when productive.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m16-l6",
+              "title": "Transfer mission: Only feeling valuable when productive",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Only feeling valuable when productive.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-17",
+          "title": "Academic grades as identity",
+          "problem": "Academic grades as identity",
+          "lessons": [
+            {
+              "id": "self-esteem-m17-l1",
+              "title": "Case file: Academic grades as identity",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Academic grades as identity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m17-l2",
+              "title": "The mechanism behind Academic grades as identity",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Academic grades as identity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m17-l3",
+              "title": "Distinguish Academic grades as identity: achievement versus personal value",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Academic grades as identity. Contrast: achievement versus personal value.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m17-l4",
+              "title": "Evidence investigation: Academic grades as identity",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Academic grades as identity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m17-l5",
+              "title": "Strategy clinic: Academic grades as identity",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Academic grades as identity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m17-l6",
+              "title": "Transfer mission: Academic grades as identity",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Academic grades as identity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-18",
+          "title": "Appearance and social approval",
+          "problem": "Appearance and social approval",
+          "lessons": [
+            {
+              "id": "self-esteem-m18-l1",
+              "title": "Case file: Appearance and social approval",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Appearance and social approval.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m18-l2",
+              "title": "The mechanism behind Appearance and social approval",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Appearance and social approval.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m18-l3",
+              "title": "Distinguish Appearance and social approval: achievement versus personal value",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Appearance and social approval. Contrast: achievement versus personal value.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m18-l4",
+              "title": "Evidence investigation: Appearance and social approval",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Appearance and social approval.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m18-l5",
+              "title": "Strategy clinic: Appearance and social approval",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Appearance and social approval.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m18-l6",
+              "title": "Transfer mission: Appearance and social approval",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Appearance and social approval.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-19",
+          "title": "Status comparison and career anxiety",
+          "problem": "Status comparison and career anxiety",
+          "lessons": [
+            {
+              "id": "self-esteem-m19-l1",
+              "title": "Case file: Status comparison and career anxiety",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Status comparison and career anxiety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m19-l2",
+              "title": "The mechanism behind Status comparison and career anxiety",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Status comparison and career anxiety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m19-l3",
+              "title": "Distinguish Status comparison and career anxiety: achievement versus personal value",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Status comparison and career anxiety. Contrast: achievement versus personal value.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m19-l4",
+              "title": "Evidence investigation: Status comparison and career anxiety",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Status comparison and career anxiety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m19-l5",
+              "title": "Strategy clinic: Status comparison and career anxiety",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Status comparison and career anxiety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m19-l6",
+              "title": "Transfer mission: Status comparison and career anxiety",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Status comparison and career anxiety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-20",
+          "title": "Caregiving roles and guilt",
+          "problem": "Caregiving roles and guilt",
+          "lessons": [
+            {
+              "id": "self-esteem-m20-l1",
+              "title": "Case file: Caregiving roles and guilt",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Caregiving roles and guilt.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m20-l2",
+              "title": "The mechanism behind Caregiving roles and guilt",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Caregiving roles and guilt.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m20-l3",
+              "title": "Distinguish Caregiving roles and guilt: achievement versus personal value",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Caregiving roles and guilt. Contrast: achievement versus personal value.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m20-l4",
+              "title": "Evidence investigation: Caregiving roles and guilt",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Caregiving roles and guilt.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m20-l5",
+              "title": "Strategy clinic: Caregiving roles and guilt",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Caregiving roles and guilt.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m20-l6",
+              "title": "Transfer mission: Caregiving roles and guilt",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Caregiving roles and guilt.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-book-5",
+      "title": "Confidence and behavioural evidence",
+      "distinction": "self-belief versus demonstrated competence",
+      "modules": [
+        {
+          "id": "self-esteem-module-21",
+          "title": "Waiting to feel ready before acting",
+          "problem": "Waiting to feel ready before acting",
+          "lessons": [
+            {
+              "id": "self-esteem-m21-l1",
+              "title": "Case file: Waiting to feel ready before acting",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Waiting to feel ready before acting.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m21-l2",
+              "title": "The mechanism behind Waiting to feel ready before acting",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Waiting to feel ready before acting.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m21-l3",
+              "title": "Distinguish Waiting to feel ready before acting: self-belief versus demonstrated competence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Waiting to feel ready before acting. Contrast: self-belief versus demonstrated competence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m21-l4",
+              "title": "Evidence investigation: Waiting to feel ready before acting",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Waiting to feel ready before acting.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m21-l5",
+              "title": "Strategy clinic: Waiting to feel ready before acting",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Waiting to feel ready before acting.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m21-l6",
+              "title": "Transfer mission: Waiting to feel ready before acting",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Waiting to feel ready before acting.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-22",
+          "title": "How mastery differs from affirmation",
+          "problem": "How mastery differs from affirmation",
+          "lessons": [
+            {
+              "id": "self-esteem-m22-l1",
+              "title": "Case file: How mastery differs from affirmation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: How mastery differs from affirmation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m22-l2",
+              "title": "The mechanism behind How mastery differs from affirmation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: How mastery differs from affirmation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m22-l3",
+              "title": "Distinguish How mastery differs from affirmation: self-belief versus demonstrated competence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: How mastery differs from affirmation. Contrast: self-belief versus demonstrated competence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m22-l4",
+              "title": "Evidence investigation: How mastery differs from affirmation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: How mastery differs from affirmation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m22-l5",
+              "title": "Strategy clinic: How mastery differs from affirmation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: How mastery differs from affirmation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m22-l6",
+              "title": "Transfer mission: How mastery differs from affirmation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: How mastery differs from affirmation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-23",
+          "title": "Taking feedback without collapse",
+          "problem": "Taking feedback without collapse",
+          "lessons": [
+            {
+              "id": "self-esteem-m23-l1",
+              "title": "Case file: Taking feedback without collapse",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Taking feedback without collapse.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m23-l2",
+              "title": "The mechanism behind Taking feedback without collapse",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Taking feedback without collapse.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m23-l3",
+              "title": "Distinguish Taking feedback without collapse: self-belief versus demonstrated competence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Taking feedback without collapse. Contrast: self-belief versus demonstrated competence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m23-l4",
+              "title": "Evidence investigation: Taking feedback without collapse",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Taking feedback without collapse.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m23-l5",
+              "title": "Strategy clinic: Taking feedback without collapse",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Taking feedback without collapse.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m23-l6",
+              "title": "Transfer mission: Taking feedback without collapse",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Taking feedback without collapse.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-24",
+          "title": "Choosing a tolerable learning challenge",
+          "problem": "Choosing a tolerable learning challenge",
+          "lessons": [
+            {
+              "id": "self-esteem-m24-l1",
+              "title": "Case file: Choosing a tolerable learning challenge",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Choosing a tolerable learning challenge.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m24-l2",
+              "title": "The mechanism behind Choosing a tolerable learning challenge",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Choosing a tolerable learning challenge.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m24-l3",
+              "title": "Distinguish Choosing a tolerable learning challenge: self-belief versus demonstrated competence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Choosing a tolerable learning challenge. Contrast: self-belief versus demonstrated competence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m24-l4",
+              "title": "Evidence investigation: Choosing a tolerable learning challenge",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Choosing a tolerable learning challenge.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m24-l5",
+              "title": "Strategy clinic: Choosing a tolerable learning challenge",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Choosing a tolerable learning challenge.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m24-l6",
+              "title": "Transfer mission: Choosing a tolerable learning challenge",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Choosing a tolerable learning challenge.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-25",
+          "title": "Small wins without false reassurance",
+          "problem": "Small wins without false reassurance",
+          "lessons": [
+            {
+              "id": "self-esteem-m25-l1",
+              "title": "Case file: Small wins without false reassurance",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Small wins without false reassurance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m25-l2",
+              "title": "The mechanism behind Small wins without false reassurance",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Small wins without false reassurance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m25-l3",
+              "title": "Distinguish Small wins without false reassurance: self-belief versus demonstrated competence",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Small wins without false reassurance. Contrast: self-belief versus demonstrated competence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m25-l4",
+              "title": "Evidence investigation: Small wins without false reassurance",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Small wins without false reassurance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m25-l5",
+              "title": "Strategy clinic: Small wins without false reassurance",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Small wins without false reassurance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m25-l6",
+              "title": "Transfer mission: Small wins without false reassurance",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Small wins without false reassurance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-book-6",
+      "title": "Compassion and responsibility",
+      "distinction": "compassion versus excuse making",
+      "modules": [
+        {
+          "id": "self-esteem-module-26",
+          "title": "Speaking kindly without denying mistakes",
+          "problem": "Speaking kindly without denying mistakes",
+          "lessons": [
+            {
+              "id": "self-esteem-m26-l1",
+              "title": "Case file: Speaking kindly without denying mistakes",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Speaking kindly without denying mistakes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m26-l2",
+              "title": "The mechanism behind Speaking kindly without denying mistakes",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Speaking kindly without denying mistakes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m26-l3",
+              "title": "Distinguish Speaking kindly without denying mistakes: compassion versus excuse making",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Speaking kindly without denying mistakes. Contrast: compassion versus excuse making.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m26-l4",
+              "title": "Evidence investigation: Speaking kindly without denying mistakes",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Speaking kindly without denying mistakes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m26-l5",
+              "title": "Strategy clinic: Speaking kindly without denying mistakes",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Speaking kindly without denying mistakes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m26-l6",
+              "title": "Transfer mission: Speaking kindly without denying mistakes",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Speaking kindly without denying mistakes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-27",
+          "title": "Apologising without self-erasure",
+          "problem": "Apologising without self-erasure",
+          "lessons": [
+            {
+              "id": "self-esteem-m27-l1",
+              "title": "Case file: Apologising without self-erasure",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Apologising without self-erasure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m27-l2",
+              "title": "The mechanism behind Apologising without self-erasure",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Apologising without self-erasure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m27-l3",
+              "title": "Distinguish Apologising without self-erasure: compassion versus excuse making",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Apologising without self-erasure. Contrast: compassion versus excuse making.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m27-l4",
+              "title": "Evidence investigation: Apologising without self-erasure",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Apologising without self-erasure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m27-l5",
+              "title": "Strategy clinic: Apologising without self-erasure",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Apologising without self-erasure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m27-l6",
+              "title": "Transfer mission: Apologising without self-erasure",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Apologising without self-erasure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-28",
+          "title": "Changing behaviour after shame",
+          "problem": "Changing behaviour after shame",
+          "lessons": [
+            {
+              "id": "self-esteem-m28-l1",
+              "title": "Case file: Changing behaviour after shame",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Changing behaviour after shame.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m28-l2",
+              "title": "The mechanism behind Changing behaviour after shame",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Changing behaviour after shame.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m28-l3",
+              "title": "Distinguish Changing behaviour after shame: compassion versus excuse making",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Changing behaviour after shame. Contrast: compassion versus excuse making.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m28-l4",
+              "title": "Evidence investigation: Changing behaviour after shame",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Changing behaviour after shame.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m28-l5",
+              "title": "Strategy clinic: Changing behaviour after shame",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Changing behaviour after shame.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m28-l6",
+              "title": "Transfer mission: Changing behaviour after shame",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Changing behaviour after shame.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-29",
+          "title": "Self-acceptance with real ambitions",
+          "problem": "Self-acceptance with real ambitions",
+          "lessons": [
+            {
+              "id": "self-esteem-m29-l1",
+              "title": "Case file: Self-acceptance with real ambitions",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Self-acceptance with real ambitions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m29-l2",
+              "title": "The mechanism behind Self-acceptance with real ambitions",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Self-acceptance with real ambitions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m29-l3",
+              "title": "Distinguish Self-acceptance with real ambitions: compassion versus excuse making",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Self-acceptance with real ambitions. Contrast: compassion versus excuse making.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m29-l4",
+              "title": "Evidence investigation: Self-acceptance with real ambitions",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Self-acceptance with real ambitions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m29-l5",
+              "title": "Strategy clinic: Self-acceptance with real ambitions",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Self-acceptance with real ambitions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m29-l6",
+              "title": "Transfer mission: Self-acceptance with real ambitions",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Self-acceptance with real ambitions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-30",
+          "title": "Protecting yourself from degrading treatment",
+          "problem": "Protecting yourself from degrading treatment",
+          "lessons": [
+            {
+              "id": "self-esteem-m30-l1",
+              "title": "Case file: Protecting yourself from degrading treatment",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Protecting yourself from degrading treatment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m30-l2",
+              "title": "The mechanism behind Protecting yourself from degrading treatment",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Protecting yourself from degrading treatment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m30-l3",
+              "title": "Distinguish Protecting yourself from degrading treatment: compassion versus excuse making",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Protecting yourself from degrading treatment. Contrast: compassion versus excuse making.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m30-l4",
+              "title": "Evidence investigation: Protecting yourself from degrading treatment",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Protecting yourself from degrading treatment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m30-l5",
+              "title": "Strategy clinic: Protecting yourself from degrading treatment",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Protecting yourself from degrading treatment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m30-l6",
+              "title": "Transfer mission: Protecting yourself from degrading treatment",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Protecting yourself from degrading treatment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-book-7",
+      "title": "Identity and belonging",
+      "distinction": "self-definition versus external labelling",
+      "modules": [
+        {
+          "id": "self-esteem-module-31",
+          "title": "Family criticism and self-concept",
+          "problem": "Family criticism and self-concept",
+          "lessons": [
+            {
+              "id": "self-esteem-m31-l1",
+              "title": "Case file: Family criticism and self-concept",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Family criticism and self-concept.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m31-l2",
+              "title": "The mechanism behind Family criticism and self-concept",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Family criticism and self-concept.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m31-l3",
+              "title": "Distinguish Family criticism and self-concept: self-definition versus external labelling",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Family criticism and self-concept. Contrast: self-definition versus external labelling.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m31-l4",
+              "title": "Evidence investigation: Family criticism and self-concept",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Family criticism and self-concept.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m31-l5",
+              "title": "Strategy clinic: Family criticism and self-concept",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Family criticism and self-concept.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m31-l6",
+              "title": "Transfer mission: Family criticism and self-concept",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Family criticism and self-concept.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-32",
+          "title": "Minority stress and self-worth",
+          "problem": "Minority stress and self-worth",
+          "lessons": [
+            {
+              "id": "self-esteem-m32-l1",
+              "title": "Case file: Minority stress and self-worth",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Minority stress and self-worth.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m32-l2",
+              "title": "The mechanism behind Minority stress and self-worth",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Minority stress and self-worth.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m32-l3",
+              "title": "Distinguish Minority stress and self-worth: self-definition versus external labelling",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Minority stress and self-worth. Contrast: self-definition versus external labelling.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m32-l4",
+              "title": "Evidence investigation: Minority stress and self-worth",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Minority stress and self-worth.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m32-l5",
+              "title": "Strategy clinic: Minority stress and self-worth",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Minority stress and self-worth.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m32-l6",
+              "title": "Transfer mission: Minority stress and self-worth",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Minority stress and self-worth.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-33",
+          "title": "Body image in adolescence and adulthood",
+          "problem": "Body image in adolescence and adulthood",
+          "lessons": [
+            {
+              "id": "self-esteem-m33-l1",
+              "title": "Case file: Body image in adolescence and adulthood",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Body image in adolescence and adulthood.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m33-l2",
+              "title": "The mechanism behind Body image in adolescence and adulthood",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Body image in adolescence and adulthood.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m33-l3",
+              "title": "Distinguish Body image in adolescence and adulthood: self-definition versus external labelling",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Body image in adolescence and adulthood. Contrast: self-definition versus external labelling.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m33-l4",
+              "title": "Evidence investigation: Body image in adolescence and adulthood",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Body image in adolescence and adulthood.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m33-l5",
+              "title": "Strategy clinic: Body image in adolescence and adulthood",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Body image in adolescence and adulthood.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m33-l6",
+              "title": "Transfer mission: Body image in adolescence and adulthood",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Body image in adolescence and adulthood.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-34",
+          "title": "Disability stigma and internalised beliefs",
+          "problem": "Disability stigma and internalised beliefs",
+          "lessons": [
+            {
+              "id": "self-esteem-m34-l1",
+              "title": "Case file: Disability stigma and internalised beliefs",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Disability stigma and internalised beliefs.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m34-l2",
+              "title": "The mechanism behind Disability stigma and internalised beliefs",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Disability stigma and internalised beliefs.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m34-l3",
+              "title": "Distinguish Disability stigma and internalised beliefs: self-definition versus external labelling",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Disability stigma and internalised beliefs. Contrast: self-definition versus external labelling.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m34-l4",
+              "title": "Evidence investigation: Disability stigma and internalised beliefs",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Disability stigma and internalised beliefs.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m34-l5",
+              "title": "Strategy clinic: Disability stigma and internalised beliefs",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Disability stigma and internalised beliefs.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m34-l6",
+              "title": "Transfer mission: Disability stigma and internalised beliefs",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Disability stigma and internalised beliefs.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-35",
+          "title": "When belonging requires pretending",
+          "problem": "When belonging requires pretending",
+          "lessons": [
+            {
+              "id": "self-esteem-m35-l1",
+              "title": "Case file: When belonging requires pretending",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When belonging requires pretending.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m35-l2",
+              "title": "The mechanism behind When belonging requires pretending",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When belonging requires pretending.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m35-l3",
+              "title": "Distinguish When belonging requires pretending: self-definition versus external labelling",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When belonging requires pretending. Contrast: self-definition versus external labelling.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m35-l4",
+              "title": "Evidence investigation: When belonging requires pretending",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When belonging requires pretending.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m35-l5",
+              "title": "Strategy clinic: When belonging requires pretending",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When belonging requires pretending.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m35-l6",
+              "title": "Transfer mission: When belonging requires pretending",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When belonging requires pretending.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-book-8",
+      "title": "Relationships and validation",
+      "distinction": "support versus dependency",
+      "modules": [
+        {
+          "id": "self-esteem-module-36",
+          "title": "Reassurance that briefly restores worth",
+          "problem": "Reassurance that briefly restores worth",
+          "lessons": [
+            {
+              "id": "self-esteem-m36-l1",
+              "title": "Case file: Reassurance that briefly restores worth",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Reassurance that briefly restores worth.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m36-l2",
+              "title": "The mechanism behind Reassurance that briefly restores worth",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Reassurance that briefly restores worth.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m36-l3",
+              "title": "Distinguish Reassurance that briefly restores worth: support versus dependency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Reassurance that briefly restores worth. Contrast: support versus dependency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m36-l4",
+              "title": "Evidence investigation: Reassurance that briefly restores worth",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Reassurance that briefly restores worth.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m36-l5",
+              "title": "Strategy clinic: Reassurance that briefly restores worth",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Reassurance that briefly restores worth.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m36-l6",
+              "title": "Transfer mission: Reassurance that briefly restores worth",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Reassurance that briefly restores worth.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-37",
+          "title": "Accepting love without tests",
+          "problem": "Accepting love without tests",
+          "lessons": [
+            {
+              "id": "self-esteem-m37-l1",
+              "title": "Case file: Accepting love without tests",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Accepting love without tests.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m37-l2",
+              "title": "The mechanism behind Accepting love without tests",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Accepting love without tests.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m37-l3",
+              "title": "Distinguish Accepting love without tests: support versus dependency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Accepting love without tests. Contrast: support versus dependency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m37-l4",
+              "title": "Evidence investigation: Accepting love without tests",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Accepting love without tests.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m37-l5",
+              "title": "Strategy clinic: Accepting love without tests",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Accepting love without tests.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m37-l6",
+              "title": "Transfer mission: Accepting love without tests",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Accepting love without tests.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-38",
+          "title": "Reacting to partner criticism",
+          "problem": "Reacting to partner criticism",
+          "lessons": [
+            {
+              "id": "self-esteem-m38-l1",
+              "title": "Case file: Reacting to partner criticism",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Reacting to partner criticism.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m38-l2",
+              "title": "The mechanism behind Reacting to partner criticism",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Reacting to partner criticism.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m38-l3",
+              "title": "Distinguish Reacting to partner criticism: support versus dependency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Reacting to partner criticism. Contrast: support versus dependency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m38-l4",
+              "title": "Evidence investigation: Reacting to partner criticism",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Reacting to partner criticism.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m38-l5",
+              "title": "Strategy clinic: Reacting to partner criticism",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Reacting to partner criticism.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m38-l6",
+              "title": "Transfer mission: Reacting to partner criticism",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Reacting to partner criticism.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-39",
+          "title": "Envy among friends",
+          "problem": "Envy among friends",
+          "lessons": [
+            {
+              "id": "self-esteem-m39-l1",
+              "title": "Case file: Envy among friends",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Envy among friends.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m39-l2",
+              "title": "The mechanism behind Envy among friends",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Envy among friends.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m39-l3",
+              "title": "Distinguish Envy among friends: support versus dependency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Envy among friends. Contrast: support versus dependency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m39-l4",
+              "title": "Evidence investigation: Envy among friends",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Envy among friends.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m39-l5",
+              "title": "Strategy clinic: Envy among friends",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Envy among friends.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m39-l6",
+              "title": "Transfer mission: Envy among friends",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Envy among friends.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-40",
+          "title": "Recognising humiliation in relationships",
+          "problem": "Recognising humiliation in relationships",
+          "lessons": [
+            {
+              "id": "self-esteem-m40-l1",
+              "title": "Case file: Recognising humiliation in relationships",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Recognising humiliation in relationships.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m40-l2",
+              "title": "The mechanism behind Recognising humiliation in relationships",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Recognising humiliation in relationships.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m40-l3",
+              "title": "Distinguish Recognising humiliation in relationships: support versus dependency",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Recognising humiliation in relationships. Contrast: support versus dependency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m40-l4",
+              "title": "Evidence investigation: Recognising humiliation in relationships",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Recognising humiliation in relationships.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m40-l5",
+              "title": "Strategy clinic: Recognising humiliation in relationships",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Recognising humiliation in relationships.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m40-l6",
+              "title": "Transfer mission: Recognising humiliation in relationships",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Recognising humiliation in relationships.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-book-9",
+      "title": "Social systems that manufacture inadequacy",
+      "distinction": "personal flaw versus incentive structure",
+      "modules": [
+        {
+          "id": "self-esteem-module-41",
+          "title": "Advertising and engineered insecurity",
+          "problem": "Advertising and engineered insecurity",
+          "lessons": [
+            {
+              "id": "self-esteem-m41-l1",
+              "title": "Case file: Advertising and engineered insecurity",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Advertising and engineered insecurity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m41-l2",
+              "title": "The mechanism behind Advertising and engineered insecurity",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Advertising and engineered insecurity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m41-l3",
+              "title": "Distinguish Advertising and engineered insecurity: personal flaw versus incentive structure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Advertising and engineered insecurity. Contrast: personal flaw versus incentive structure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m41-l4",
+              "title": "Evidence investigation: Advertising and engineered insecurity",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Advertising and engineered insecurity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m41-l5",
+              "title": "Strategy clinic: Advertising and engineered insecurity",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Advertising and engineered insecurity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m41-l6",
+              "title": "Transfer mission: Advertising and engineered insecurity",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Advertising and engineered insecurity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-42",
+          "title": "Workplace performance culture",
+          "problem": "Workplace performance culture",
+          "lessons": [
+            {
+              "id": "self-esteem-m42-l1",
+              "title": "Case file: Workplace performance culture",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Workplace performance culture.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m42-l2",
+              "title": "The mechanism behind Workplace performance culture",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Workplace performance culture.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m42-l3",
+              "title": "Distinguish Workplace performance culture: personal flaw versus incentive structure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Workplace performance culture. Contrast: personal flaw versus incentive structure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m42-l4",
+              "title": "Evidence investigation: Workplace performance culture",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Workplace performance culture.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m42-l5",
+              "title": "Strategy clinic: Workplace performance culture",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Workplace performance culture.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m42-l6",
+              "title": "Transfer mission: Workplace performance culture",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Workplace performance culture.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-43",
+          "title": "Beauty standards and algorithmic feeds",
+          "problem": "Beauty standards and algorithmic feeds",
+          "lessons": [
+            {
+              "id": "self-esteem-m43-l1",
+              "title": "Case file: Beauty standards and algorithmic feeds",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Beauty standards and algorithmic feeds.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m43-l2",
+              "title": "The mechanism behind Beauty standards and algorithmic feeds",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Beauty standards and algorithmic feeds.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m43-l3",
+              "title": "Distinguish Beauty standards and algorithmic feeds: personal flaw versus incentive structure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Beauty standards and algorithmic feeds. Contrast: personal flaw versus incentive structure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m43-l4",
+              "title": "Evidence investigation: Beauty standards and algorithmic feeds",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Beauty standards and algorithmic feeds.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m43-l5",
+              "title": "Strategy clinic: Beauty standards and algorithmic feeds",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Beauty standards and algorithmic feeds.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m43-l6",
+              "title": "Transfer mission: Beauty standards and algorithmic feeds",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Beauty standards and algorithmic feeds.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-44",
+          "title": "Class, status and perceived failure",
+          "problem": "Class, status and perceived failure",
+          "lessons": [
+            {
+              "id": "self-esteem-m44-l1",
+              "title": "Case file: Class, status and perceived failure",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Class, status and perceived failure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m44-l2",
+              "title": "The mechanism behind Class, status and perceived failure",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Class, status and perceived failure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m44-l3",
+              "title": "Distinguish Class, status and perceived failure: personal flaw versus incentive structure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Class, status and perceived failure. Contrast: personal flaw versus incentive structure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m44-l4",
+              "title": "Evidence investigation: Class, status and perceived failure",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Class, status and perceived failure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m44-l5",
+              "title": "Strategy clinic: Class, status and perceived failure",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Class, status and perceived failure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m44-l6",
+              "title": "Transfer mission: Class, status and perceived failure",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Class, status and perceived failure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-45",
+          "title": "Why self-esteem advice can blame victims",
+          "problem": "Why self-esteem advice can blame victims",
+          "lessons": [
+            {
+              "id": "self-esteem-m45-l1",
+              "title": "Case file: Why self-esteem advice can blame victims",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why self-esteem advice can blame victims.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m45-l2",
+              "title": "The mechanism behind Why self-esteem advice can blame victims",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why self-esteem advice can blame victims.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m45-l3",
+              "title": "Distinguish Why self-esteem advice can blame victims: personal flaw versus incentive structure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why self-esteem advice can blame victims. Contrast: personal flaw versus incentive structure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m45-l4",
+              "title": "Evidence investigation: Why self-esteem advice can blame victims",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why self-esteem advice can blame victims.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m45-l5",
+              "title": "Strategy clinic: Why self-esteem advice can blame victims",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why self-esteem advice can blame victims.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m45-l6",
+              "title": "Transfer mission: Why self-esteem advice can blame victims",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why self-esteem advice can blame victims.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-book-10",
+      "title": "Advanced identity resilience",
+      "distinction": "one context versus whole identity",
+      "modules": [
+        {
+          "id": "self-esteem-module-46",
+          "title": "Conflicting roles and identities",
+          "problem": "Conflicting roles and identities",
+          "lessons": [
+            {
+              "id": "self-esteem-m46-l1",
+              "title": "Case file: Conflicting roles and identities",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Conflicting roles and identities.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m46-l2",
+              "title": "The mechanism behind Conflicting roles and identities",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Conflicting roles and identities.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m46-l3",
+              "title": "Distinguish Conflicting roles and identities: one context versus whole identity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Conflicting roles and identities. Contrast: one context versus whole identity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m46-l4",
+              "title": "Evidence investigation: Conflicting roles and identities",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Conflicting roles and identities.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m46-l5",
+              "title": "Strategy clinic: Conflicting roles and identities",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Conflicting roles and identities.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m46-l6",
+              "title": "Transfer mission: Conflicting roles and identities",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Conflicting roles and identities.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-47",
+          "title": "Self-worth after major loss",
+          "problem": "Self-worth after major loss",
+          "lessons": [
+            {
+              "id": "self-esteem-m47-l1",
+              "title": "Case file: Self-worth after major loss",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Self-worth after major loss.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m47-l2",
+              "title": "The mechanism behind Self-worth after major loss",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Self-worth after major loss.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m47-l3",
+              "title": "Distinguish Self-worth after major loss: one context versus whole identity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Self-worth after major loss. Contrast: one context versus whole identity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m47-l4",
+              "title": "Evidence investigation: Self-worth after major loss",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Self-worth after major loss.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m47-l5",
+              "title": "Strategy clinic: Self-worth after major loss",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Self-worth after major loss.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m47-l6",
+              "title": "Transfer mission: Self-worth after major loss",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Self-worth after major loss.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-48",
+          "title": "Rumination after public failure",
+          "problem": "Rumination after public failure",
+          "lessons": [
+            {
+              "id": "self-esteem-m48-l1",
+              "title": "Case file: Rumination after public failure",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Rumination after public failure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m48-l2",
+              "title": "The mechanism behind Rumination after public failure",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Rumination after public failure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m48-l3",
+              "title": "Distinguish Rumination after public failure: one context versus whole identity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Rumination after public failure. Contrast: one context versus whole identity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m48-l4",
+              "title": "Evidence investigation: Rumination after public failure",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Rumination after public failure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m48-l5",
+              "title": "Strategy clinic: Rumination after public failure",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Rumination after public failure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m48-l6",
+              "title": "Transfer mission: Rumination after public failure",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Rumination after public failure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-49",
+          "title": "When persistent self-hate needs support",
+          "problem": "When persistent self-hate needs support",
+          "lessons": [
+            {
+              "id": "self-esteem-m49-l1",
+              "title": "Case file: When persistent self-hate needs support",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When persistent self-hate needs support.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m49-l2",
+              "title": "The mechanism behind When persistent self-hate needs support",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When persistent self-hate needs support.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m49-l3",
+              "title": "Distinguish When persistent self-hate needs support: one context versus whole identity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When persistent self-hate needs support. Contrast: one context versus whole identity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m49-l4",
+              "title": "Evidence investigation: When persistent self-hate needs support",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When persistent self-hate needs support.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m49-l5",
+              "title": "Strategy clinic: When persistent self-hate needs support",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When persistent self-hate needs support.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m49-l6",
+              "title": "Transfer mission: When persistent self-hate needs support",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When persistent self-hate needs support.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-module-50",
+          "title": "Integrated case: worth without denial",
+          "problem": "Integrated case: worth without denial",
+          "lessons": [
+            {
+              "id": "self-esteem-m50-l1",
+              "title": "Case file: Integrated case: worth without denial",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Integrated case: worth without denial.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m50-l2",
+              "title": "The mechanism behind Integrated case: worth without denial",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Integrated case: worth without denial.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m50-l3",
+              "title": "Distinguish Integrated case: worth without denial: one context versus whole identity",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Integrated case: worth without denial. Contrast: one context versus whole identity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m50-l4",
+              "title": "Evidence investigation: Integrated case: worth without denial",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Integrated case: worth without denial.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m50-l5",
+              "title": "Strategy clinic: Integrated case: worth without denial",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Integrated case: worth without denial.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "self-esteem-m50-l6",
+              "title": "Transfer mission: Integrated case: worth without denial",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Integrated case: worth without denial.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

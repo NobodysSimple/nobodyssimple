@@ -1,0 +1,2828 @@
+{
+  "courseId": "emotions",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Working lesson headings and learning objectives; no published content.",
+  "books": [
+    {
+      "id": "emotions-book-1",
+      "title": "What emotions are for",
+      "distinction": "emotional signal versus instruction",
+      "modules": [
+        {
+          "id": "emotions-module-01",
+          "title": "A feeling is information not a verdict",
+          "problem": "A feeling is information not a verdict",
+          "lessons": [
+            {
+              "id": "emotions-m1-l1",
+              "title": "Case file: A feeling is information not a verdict",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: A feeling is information not a verdict.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m1-l2",
+              "title": "The mechanism behind A feeling is information not a verdict",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: A feeling is information not a verdict.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m1-l3",
+              "title": "Distinguish A feeling is information not a verdict: emotional signal versus instruction",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: A feeling is information not a verdict. Contrast: emotional signal versus instruction.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m1-l4",
+              "title": "Evidence investigation: A feeling is information not a verdict",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: A feeling is information not a verdict.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m1-l5",
+              "title": "Strategy clinic: A feeling is information not a verdict",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: A feeling is information not a verdict.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m1-l6",
+              "title": "Transfer mission: A feeling is information not a verdict",
+              "objective": "Apply the concept in a new social or clinical context. Focus: A feeling is information not a verdict.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-02",
+          "title": "How appraisal shapes emotional episodes",
+          "problem": "How appraisal shapes emotional episodes",
+          "lessons": [
+            {
+              "id": "emotions-m2-l1",
+              "title": "Case file: How appraisal shapes emotional episodes",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: How appraisal shapes emotional episodes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m2-l2",
+              "title": "The mechanism behind How appraisal shapes emotional episodes",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: How appraisal shapes emotional episodes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m2-l3",
+              "title": "Distinguish How appraisal shapes emotional episodes: emotional signal versus instruction",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: How appraisal shapes emotional episodes. Contrast: emotional signal versus instruction.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m2-l4",
+              "title": "Evidence investigation: How appraisal shapes emotional episodes",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: How appraisal shapes emotional episodes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m2-l5",
+              "title": "Strategy clinic: How appraisal shapes emotional episodes",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: How appraisal shapes emotional episodes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m2-l6",
+              "title": "Transfer mission: How appraisal shapes emotional episodes",
+              "objective": "Apply the concept in a new social or clinical context. Focus: How appraisal shapes emotional episodes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-03",
+          "title": "Why unpleasant emotions are not failures",
+          "problem": "Why unpleasant emotions are not failures",
+          "lessons": [
+            {
+              "id": "emotions-m3-l1",
+              "title": "Case file: Why unpleasant emotions are not failures",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why unpleasant emotions are not failures.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m3-l2",
+              "title": "The mechanism behind Why unpleasant emotions are not failures",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why unpleasant emotions are not failures.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m3-l3",
+              "title": "Distinguish Why unpleasant emotions are not failures: emotional signal versus instruction",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why unpleasant emotions are not failures. Contrast: emotional signal versus instruction.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m3-l4",
+              "title": "Evidence investigation: Why unpleasant emotions are not failures",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why unpleasant emotions are not failures.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m3-l5",
+              "title": "Strategy clinic: Why unpleasant emotions are not failures",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why unpleasant emotions are not failures.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m3-l6",
+              "title": "Transfer mission: Why unpleasant emotions are not failures",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why unpleasant emotions are not failures.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-04",
+          "title": "Emotion categories across cultures",
+          "problem": "Emotion categories across cultures",
+          "lessons": [
+            {
+              "id": "emotions-m4-l1",
+              "title": "Case file: Emotion categories across cultures",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Emotion categories across cultures.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m4-l2",
+              "title": "The mechanism behind Emotion categories across cultures",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Emotion categories across cultures.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m4-l3",
+              "title": "Distinguish Emotion categories across cultures: emotional signal versus instruction",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Emotion categories across cultures. Contrast: emotional signal versus instruction.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m4-l4",
+              "title": "Evidence investigation: Emotion categories across cultures",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Emotion categories across cultures.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m4-l5",
+              "title": "Strategy clinic: Emotion categories across cultures",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Emotion categories across cultures.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m4-l6",
+              "title": "Transfer mission: Emotion categories across cultures",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Emotion categories across cultures.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-05",
+          "title": "Recognising mixed emotional states",
+          "problem": "Recognising mixed emotional states",
+          "lessons": [
+            {
+              "id": "emotions-m5-l1",
+              "title": "Case file: Recognising mixed emotional states",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Recognising mixed emotional states.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m5-l2",
+              "title": "The mechanism behind Recognising mixed emotional states",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Recognising mixed emotional states.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m5-l3",
+              "title": "Distinguish Recognising mixed emotional states: emotional signal versus instruction",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Recognising mixed emotional states. Contrast: emotional signal versus instruction.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m5-l4",
+              "title": "Evidence investigation: Recognising mixed emotional states",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Recognising mixed emotional states.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m5-l5",
+              "title": "Strategy clinic: Recognising mixed emotional states",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Recognising mixed emotional states.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m5-l6",
+              "title": "Transfer mission: Recognising mixed emotional states",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Recognising mixed emotional states.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-book-2",
+      "title": "Understanding what you feel",
+      "distinction": "label versus lived experience",
+      "modules": [
+        {
+          "id": "emotions-module-06",
+          "title": "Anger hiding fear or loss",
+          "problem": "Anger hiding fear or loss",
+          "lessons": [
+            {
+              "id": "emotions-m6-l1",
+              "title": "Case file: Anger hiding fear or loss",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Anger hiding fear or loss.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m6-l2",
+              "title": "The mechanism behind Anger hiding fear or loss",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Anger hiding fear or loss.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m6-l3",
+              "title": "Distinguish Anger hiding fear or loss: label versus lived experience",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Anger hiding fear or loss. Contrast: label versus lived experience.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m6-l4",
+              "title": "Evidence investigation: Anger hiding fear or loss",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Anger hiding fear or loss.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m6-l5",
+              "title": "Strategy clinic: Anger hiding fear or loss",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Anger hiding fear or loss.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m6-l6",
+              "title": "Transfer mission: Anger hiding fear or loss",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Anger hiding fear or loss.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-07",
+          "title": "Shame mistaken for guilt",
+          "problem": "Shame mistaken for guilt",
+          "lessons": [
+            {
+              "id": "emotions-m7-l1",
+              "title": "Case file: Shame mistaken for guilt",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Shame mistaken for guilt.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m7-l2",
+              "title": "The mechanism behind Shame mistaken for guilt",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Shame mistaken for guilt.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m7-l3",
+              "title": "Distinguish Shame mistaken for guilt: label versus lived experience",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Shame mistaken for guilt. Contrast: label versus lived experience.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m7-l4",
+              "title": "Evidence investigation: Shame mistaken for guilt",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Shame mistaken for guilt.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m7-l5",
+              "title": "Strategy clinic: Shame mistaken for guilt",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Shame mistaken for guilt.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m7-l6",
+              "title": "Transfer mission: Shame mistaken for guilt",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Shame mistaken for guilt.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-08",
+          "title": "Envy versus admiration",
+          "problem": "Envy versus admiration",
+          "lessons": [
+            {
+              "id": "emotions-m8-l1",
+              "title": "Case file: Envy versus admiration",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Envy versus admiration.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m8-l2",
+              "title": "The mechanism behind Envy versus admiration",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Envy versus admiration.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m8-l3",
+              "title": "Distinguish Envy versus admiration: label versus lived experience",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Envy versus admiration. Contrast: label versus lived experience.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m8-l4",
+              "title": "Evidence investigation: Envy versus admiration",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Envy versus admiration.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m8-l5",
+              "title": "Strategy clinic: Envy versus admiration",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Envy versus admiration.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m8-l6",
+              "title": "Transfer mission: Envy versus admiration",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Envy versus admiration.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-09",
+          "title": "Loneliness versus boredom",
+          "problem": "Loneliness versus boredom",
+          "lessons": [
+            {
+              "id": "emotions-m9-l1",
+              "title": "Case file: Loneliness versus boredom",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Loneliness versus boredom.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m9-l2",
+              "title": "The mechanism behind Loneliness versus boredom",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Loneliness versus boredom.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m9-l3",
+              "title": "Distinguish Loneliness versus boredom: label versus lived experience",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Loneliness versus boredom. Contrast: label versus lived experience.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m9-l4",
+              "title": "Evidence investigation: Loneliness versus boredom",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Loneliness versus boredom.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m9-l5",
+              "title": "Strategy clinic: Loneliness versus boredom",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Loneliness versus boredom.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m9-l6",
+              "title": "Transfer mission: Loneliness versus boredom",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Loneliness versus boredom.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-10",
+          "title": "When emotional vocabulary is inadequate",
+          "problem": "When emotional vocabulary is inadequate",
+          "lessons": [
+            {
+              "id": "emotions-m10-l1",
+              "title": "Case file: When emotional vocabulary is inadequate",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When emotional vocabulary is inadequate.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m10-l2",
+              "title": "The mechanism behind When emotional vocabulary is inadequate",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When emotional vocabulary is inadequate.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m10-l3",
+              "title": "Distinguish When emotional vocabulary is inadequate: label versus lived experience",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When emotional vocabulary is inadequate. Contrast: label versus lived experience.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m10-l4",
+              "title": "Evidence investigation: When emotional vocabulary is inadequate",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When emotional vocabulary is inadequate.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m10-l5",
+              "title": "Strategy clinic: When emotional vocabulary is inadequate",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When emotional vocabulary is inadequate.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m10-l6",
+              "title": "Transfer mission: When emotional vocabulary is inadequate",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When emotional vocabulary is inadequate.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-book-3",
+      "title": "Body, attention and emotion",
+      "distinction": "arousal versus meaning",
+      "modules": [
+        {
+          "id": "emotions-module-11",
+          "title": "Bodily activation without clear emotion",
+          "problem": "Bodily activation without clear emotion",
+          "lessons": [
+            {
+              "id": "emotions-m11-l1",
+              "title": "Case file: Bodily activation without clear emotion",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Bodily activation without clear emotion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m11-l2",
+              "title": "The mechanism behind Bodily activation without clear emotion",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Bodily activation without clear emotion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m11-l3",
+              "title": "Distinguish Bodily activation without clear emotion: arousal versus meaning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Bodily activation without clear emotion. Contrast: arousal versus meaning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m11-l4",
+              "title": "Evidence investigation: Bodily activation without clear emotion",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Bodily activation without clear emotion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m11-l5",
+              "title": "Strategy clinic: Bodily activation without clear emotion",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Bodily activation without clear emotion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m11-l6",
+              "title": "Transfer mission: Bodily activation without clear emotion",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Bodily activation without clear emotion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-12",
+          "title": "How sleep loss intensifies reactions",
+          "problem": "How sleep loss intensifies reactions",
+          "lessons": [
+            {
+              "id": "emotions-m12-l1",
+              "title": "Case file: How sleep loss intensifies reactions",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: How sleep loss intensifies reactions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m12-l2",
+              "title": "The mechanism behind How sleep loss intensifies reactions",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: How sleep loss intensifies reactions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m12-l3",
+              "title": "Distinguish How sleep loss intensifies reactions: arousal versus meaning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: How sleep loss intensifies reactions. Contrast: arousal versus meaning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m12-l4",
+              "title": "Evidence investigation: How sleep loss intensifies reactions",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: How sleep loss intensifies reactions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m12-l5",
+              "title": "Strategy clinic: How sleep loss intensifies reactions",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: How sleep loss intensifies reactions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m12-l6",
+              "title": "Transfer mission: How sleep loss intensifies reactions",
+              "objective": "Apply the concept in a new social or clinical context. Focus: How sleep loss intensifies reactions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-13",
+          "title": "Attention amplifying emotional signals",
+          "problem": "Attention amplifying emotional signals",
+          "lessons": [
+            {
+              "id": "emotions-m13-l1",
+              "title": "Case file: Attention amplifying emotional signals",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Attention amplifying emotional signals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m13-l2",
+              "title": "The mechanism behind Attention amplifying emotional signals",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Attention amplifying emotional signals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m13-l3",
+              "title": "Distinguish Attention amplifying emotional signals: arousal versus meaning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Attention amplifying emotional signals. Contrast: arousal versus meaning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m13-l4",
+              "title": "Evidence investigation: Attention amplifying emotional signals",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Attention amplifying emotional signals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m13-l5",
+              "title": "Strategy clinic: Attention amplifying emotional signals",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Attention amplifying emotional signals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m13-l6",
+              "title": "Transfer mission: Attention amplifying emotional signals",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Attention amplifying emotional signals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-14",
+          "title": "Interoception and uncertain sensations",
+          "problem": "Interoception and uncertain sensations",
+          "lessons": [
+            {
+              "id": "emotions-m14-l1",
+              "title": "Case file: Interoception and uncertain sensations",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Interoception and uncertain sensations.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m14-l2",
+              "title": "The mechanism behind Interoception and uncertain sensations",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Interoception and uncertain sensations.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m14-l3",
+              "title": "Distinguish Interoception and uncertain sensations: arousal versus meaning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Interoception and uncertain sensations. Contrast: arousal versus meaning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m14-l4",
+              "title": "Evidence investigation: Interoception and uncertain sensations",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Interoception and uncertain sensations.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m14-l5",
+              "title": "Strategy clinic: Interoception and uncertain sensations",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Interoception and uncertain sensations.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m14-l6",
+              "title": "Transfer mission: Interoception and uncertain sensations",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Interoception and uncertain sensations.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-15",
+          "title": "Why bodily cues differ across people",
+          "problem": "Why bodily cues differ across people",
+          "lessons": [
+            {
+              "id": "emotions-m15-l1",
+              "title": "Case file: Why bodily cues differ across people",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Why bodily cues differ across people.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m15-l2",
+              "title": "The mechanism behind Why bodily cues differ across people",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Why bodily cues differ across people.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m15-l3",
+              "title": "Distinguish Why bodily cues differ across people: arousal versus meaning",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Why bodily cues differ across people. Contrast: arousal versus meaning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m15-l4",
+              "title": "Evidence investigation: Why bodily cues differ across people",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Why bodily cues differ across people.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m15-l5",
+              "title": "Strategy clinic: Why bodily cues differ across people",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Why bodily cues differ across people.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m15-l6",
+              "title": "Transfer mission: Why bodily cues differ across people",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Why bodily cues differ across people.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-book-4",
+      "title": "Anger and injustice",
+      "distinction": "legitimate grievance versus harmful action",
+      "modules": [
+        {
+          "id": "emotions-module-16",
+          "title": "When boundaries are crossed",
+          "problem": "When boundaries are crossed",
+          "lessons": [
+            {
+              "id": "emotions-m16-l1",
+              "title": "Case file: When boundaries are crossed",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When boundaries are crossed.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m16-l2",
+              "title": "The mechanism behind When boundaries are crossed",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When boundaries are crossed.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m16-l3",
+              "title": "Distinguish When boundaries are crossed: legitimate grievance versus harmful action",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When boundaries are crossed. Contrast: legitimate grievance versus harmful action.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m16-l4",
+              "title": "Evidence investigation: When boundaries are crossed",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When boundaries are crossed.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m16-l5",
+              "title": "Strategy clinic: When boundaries are crossed",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When boundaries are crossed.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m16-l6",
+              "title": "Transfer mission: When boundaries are crossed",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When boundaries are crossed.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-17",
+          "title": "Anger at unfair treatment",
+          "problem": "Anger at unfair treatment",
+          "lessons": [
+            {
+              "id": "emotions-m17-l1",
+              "title": "Case file: Anger at unfair treatment",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Anger at unfair treatment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m17-l2",
+              "title": "The mechanism behind Anger at unfair treatment",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Anger at unfair treatment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m17-l3",
+              "title": "Distinguish Anger at unfair treatment: legitimate grievance versus harmful action",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Anger at unfair treatment. Contrast: legitimate grievance versus harmful action.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m17-l4",
+              "title": "Evidence investigation: Anger at unfair treatment",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Anger at unfair treatment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m17-l5",
+              "title": "Strategy clinic: Anger at unfair treatment",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Anger at unfair treatment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m17-l6",
+              "title": "Transfer mission: Anger at unfair treatment",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Anger at unfair treatment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-18",
+          "title": "Rumination that sustains anger",
+          "problem": "Rumination that sustains anger",
+          "lessons": [
+            {
+              "id": "emotions-m18-l1",
+              "title": "Case file: Rumination that sustains anger",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Rumination that sustains anger.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m18-l2",
+              "title": "The mechanism behind Rumination that sustains anger",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Rumination that sustains anger.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m18-l3",
+              "title": "Distinguish Rumination that sustains anger: legitimate grievance versus harmful action",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Rumination that sustains anger. Contrast: legitimate grievance versus harmful action.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m18-l4",
+              "title": "Evidence investigation: Rumination that sustains anger",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Rumination that sustains anger.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m18-l5",
+              "title": "Strategy clinic: Rumination that sustains anger",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Rumination that sustains anger.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m18-l6",
+              "title": "Transfer mission: Rumination that sustains anger",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Rumination that sustains anger.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-19",
+          "title": "Revenge fantasies and decision making",
+          "problem": "Revenge fantasies and decision making",
+          "lessons": [
+            {
+              "id": "emotions-m19-l1",
+              "title": "Case file: Revenge fantasies and decision making",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Revenge fantasies and decision making.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m19-l2",
+              "title": "The mechanism behind Revenge fantasies and decision making",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Revenge fantasies and decision making.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m19-l3",
+              "title": "Distinguish Revenge fantasies and decision making: legitimate grievance versus harmful action",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Revenge fantasies and decision making. Contrast: legitimate grievance versus harmful action.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m19-l4",
+              "title": "Evidence investigation: Revenge fantasies and decision making",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Revenge fantasies and decision making.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m19-l5",
+              "title": "Strategy clinic: Revenge fantasies and decision making",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Revenge fantasies and decision making.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m19-l6",
+              "title": "Transfer mission: Revenge fantasies and decision making",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Revenge fantasies and decision making.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-20",
+          "title": "How to assert a need without aggression",
+          "problem": "How to assert a need without aggression",
+          "lessons": [
+            {
+              "id": "emotions-m20-l1",
+              "title": "Case file: How to assert a need without aggression",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: How to assert a need without aggression.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m20-l2",
+              "title": "The mechanism behind How to assert a need without aggression",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: How to assert a need without aggression.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m20-l3",
+              "title": "Distinguish How to assert a need without aggression: legitimate grievance versus harmful action",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: How to assert a need without aggression. Contrast: legitimate grievance versus harmful action.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m20-l4",
+              "title": "Evidence investigation: How to assert a need without aggression",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: How to assert a need without aggression.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m20-l5",
+              "title": "Strategy clinic: How to assert a need without aggression",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: How to assert a need without aggression.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m20-l6",
+              "title": "Transfer mission: How to assert a need without aggression",
+              "objective": "Apply the concept in a new social or clinical context. Focus: How to assert a need without aggression.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-book-5",
+      "title": "Fear, sadness and loss",
+      "distinction": "emotion regulation versus emotional erasure",
+      "modules": [
+        {
+          "id": "emotions-module-21",
+          "title": "Fear as protective prediction",
+          "problem": "Fear as protective prediction",
+          "lessons": [
+            {
+              "id": "emotions-m21-l1",
+              "title": "Case file: Fear as protective prediction",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Fear as protective prediction.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m21-l2",
+              "title": "The mechanism behind Fear as protective prediction",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Fear as protective prediction.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m21-l3",
+              "title": "Distinguish Fear as protective prediction: emotion regulation versus emotional erasure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Fear as protective prediction. Contrast: emotion regulation versus emotional erasure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m21-l4",
+              "title": "Evidence investigation: Fear as protective prediction",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Fear as protective prediction.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m21-l5",
+              "title": "Strategy clinic: Fear as protective prediction",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Fear as protective prediction.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m21-l6",
+              "title": "Transfer mission: Fear as protective prediction",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Fear as protective prediction.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-22",
+          "title": "Sadness and disrupted goals",
+          "problem": "Sadness and disrupted goals",
+          "lessons": [
+            {
+              "id": "emotions-m22-l1",
+              "title": "Case file: Sadness and disrupted goals",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Sadness and disrupted goals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m22-l2",
+              "title": "The mechanism behind Sadness and disrupted goals",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Sadness and disrupted goals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m22-l3",
+              "title": "Distinguish Sadness and disrupted goals: emotion regulation versus emotional erasure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Sadness and disrupted goals. Contrast: emotion regulation versus emotional erasure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m22-l4",
+              "title": "Evidence investigation: Sadness and disrupted goals",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Sadness and disrupted goals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m22-l5",
+              "title": "Strategy clinic: Sadness and disrupted goals",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Sadness and disrupted goals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m22-l6",
+              "title": "Transfer mission: Sadness and disrupted goals",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Sadness and disrupted goals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-23",
+          "title": "Grief without a prescribed timetable",
+          "problem": "Grief without a prescribed timetable",
+          "lessons": [
+            {
+              "id": "emotions-m23-l1",
+              "title": "Case file: Grief without a prescribed timetable",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Grief without a prescribed timetable.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m23-l2",
+              "title": "The mechanism behind Grief without a prescribed timetable",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Grief without a prescribed timetable.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m23-l3",
+              "title": "Distinguish Grief without a prescribed timetable: emotion regulation versus emotional erasure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Grief without a prescribed timetable. Contrast: emotion regulation versus emotional erasure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m23-l4",
+              "title": "Evidence investigation: Grief without a prescribed timetable",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Grief without a prescribed timetable.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m23-l5",
+              "title": "Strategy clinic: Grief without a prescribed timetable",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Grief without a prescribed timetable.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m23-l6",
+              "title": "Transfer mission: Grief without a prescribed timetable",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Grief without a prescribed timetable.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-24",
+          "title": "Hopelessness and withdrawal",
+          "problem": "Hopelessness and withdrawal",
+          "lessons": [
+            {
+              "id": "emotions-m24-l1",
+              "title": "Case file: Hopelessness and withdrawal",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Hopelessness and withdrawal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m24-l2",
+              "title": "The mechanism behind Hopelessness and withdrawal",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Hopelessness and withdrawal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m24-l3",
+              "title": "Distinguish Hopelessness and withdrawal: emotion regulation versus emotional erasure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Hopelessness and withdrawal. Contrast: emotion regulation versus emotional erasure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m24-l4",
+              "title": "Evidence investigation: Hopelessness and withdrawal",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Hopelessness and withdrawal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m24-l5",
+              "title": "Strategy clinic: Hopelessness and withdrawal",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Hopelessness and withdrawal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m24-l6",
+              "title": "Transfer mission: Hopelessness and withdrawal",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Hopelessness and withdrawal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-25",
+          "title": "When distress signals unmet circumstances",
+          "problem": "When distress signals unmet circumstances",
+          "lessons": [
+            {
+              "id": "emotions-m25-l1",
+              "title": "Case file: When distress signals unmet circumstances",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When distress signals unmet circumstances.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m25-l2",
+              "title": "The mechanism behind When distress signals unmet circumstances",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When distress signals unmet circumstances.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m25-l3",
+              "title": "Distinguish When distress signals unmet circumstances: emotion regulation versus emotional erasure",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When distress signals unmet circumstances. Contrast: emotion regulation versus emotional erasure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m25-l4",
+              "title": "Evidence investigation: When distress signals unmet circumstances",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When distress signals unmet circumstances.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m25-l5",
+              "title": "Strategy clinic: When distress signals unmet circumstances",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When distress signals unmet circumstances.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m25-l6",
+              "title": "Transfer mission: When distress signals unmet circumstances",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When distress signals unmet circumstances.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-book-6",
+      "title": "Shame, guilt and self-conscious emotions",
+      "distinction": "behaviour-focused guilt versus identity-focused shame",
+      "modules": [
+        {
+          "id": "emotions-module-26",
+          "title": "Guilt after harming someone",
+          "problem": "Guilt after harming someone",
+          "lessons": [
+            {
+              "id": "emotions-m26-l1",
+              "title": "Case file: Guilt after harming someone",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Guilt after harming someone.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m26-l2",
+              "title": "The mechanism behind Guilt after harming someone",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Guilt after harming someone.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m26-l3",
+              "title": "Distinguish Guilt after harming someone: behaviour-focused guilt versus identity-focused shame",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Guilt after harming someone. Contrast: behaviour-focused guilt versus identity-focused shame.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m26-l4",
+              "title": "Evidence investigation: Guilt after harming someone",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Guilt after harming someone.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m26-l5",
+              "title": "Strategy clinic: Guilt after harming someone",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Guilt after harming someone.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m26-l6",
+              "title": "Transfer mission: Guilt after harming someone",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Guilt after harming someone.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-27",
+          "title": "Shame after public exposure",
+          "problem": "Shame after public exposure",
+          "lessons": [
+            {
+              "id": "emotions-m27-l1",
+              "title": "Case file: Shame after public exposure",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Shame after public exposure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m27-l2",
+              "title": "The mechanism behind Shame after public exposure",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Shame after public exposure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m27-l3",
+              "title": "Distinguish Shame after public exposure: behaviour-focused guilt versus identity-focused shame",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Shame after public exposure. Contrast: behaviour-focused guilt versus identity-focused shame.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m27-l4",
+              "title": "Evidence investigation: Shame after public exposure",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Shame after public exposure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m27-l5",
+              "title": "Strategy clinic: Shame after public exposure",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Shame after public exposure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m27-l6",
+              "title": "Transfer mission: Shame after public exposure",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Shame after public exposure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-28",
+          "title": "Embarrassment and social norms",
+          "problem": "Embarrassment and social norms",
+          "lessons": [
+            {
+              "id": "emotions-m28-l1",
+              "title": "Case file: Embarrassment and social norms",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Embarrassment and social norms.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m28-l2",
+              "title": "The mechanism behind Embarrassment and social norms",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Embarrassment and social norms.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m28-l3",
+              "title": "Distinguish Embarrassment and social norms: behaviour-focused guilt versus identity-focused shame",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Embarrassment and social norms. Contrast: behaviour-focused guilt versus identity-focused shame.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m28-l4",
+              "title": "Evidence investigation: Embarrassment and social norms",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Embarrassment and social norms.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m28-l5",
+              "title": "Strategy clinic: Embarrassment and social norms",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Embarrassment and social norms.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m28-l6",
+              "title": "Transfer mission: Embarrassment and social norms",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Embarrassment and social norms.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-29",
+          "title": "Pride, status and belonging",
+          "problem": "Pride, status and belonging",
+          "lessons": [
+            {
+              "id": "emotions-m29-l1",
+              "title": "Case file: Pride, status and belonging",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Pride, status and belonging.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m29-l2",
+              "title": "The mechanism behind Pride, status and belonging",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Pride, status and belonging.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m29-l3",
+              "title": "Distinguish Pride, status and belonging: behaviour-focused guilt versus identity-focused shame",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Pride, status and belonging. Contrast: behaviour-focused guilt versus identity-focused shame.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m29-l4",
+              "title": "Evidence investigation: Pride, status and belonging",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Pride, status and belonging.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m29-l5",
+              "title": "Strategy clinic: Pride, status and belonging",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Pride, status and belonging.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m29-l6",
+              "title": "Transfer mission: Pride, status and belonging",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Pride, status and belonging.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-30",
+          "title": "Self-blame under coercion or discrimination",
+          "problem": "Self-blame under coercion or discrimination",
+          "lessons": [
+            {
+              "id": "emotions-m30-l1",
+              "title": "Case file: Self-blame under coercion or discrimination",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Self-blame under coercion or discrimination.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m30-l2",
+              "title": "The mechanism behind Self-blame under coercion or discrimination",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Self-blame under coercion or discrimination.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m30-l3",
+              "title": "Distinguish Self-blame under coercion or discrimination: behaviour-focused guilt versus identity-focused shame",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Self-blame under coercion or discrimination. Contrast: behaviour-focused guilt versus identity-focused shame.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m30-l4",
+              "title": "Evidence investigation: Self-blame under coercion or discrimination",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Self-blame under coercion or discrimination.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m30-l5",
+              "title": "Strategy clinic: Self-blame under coercion or discrimination",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Self-blame under coercion or discrimination.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m30-l6",
+              "title": "Transfer mission: Self-blame under coercion or discrimination",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Self-blame under coercion or discrimination.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-book-7",
+      "title": "Regulation strategies and trade-offs",
+      "distinction": "helpful adaptation versus avoidance",
+      "modules": [
+        {
+          "id": "emotions-module-31",
+          "title": "Reappraisal versus invalidation",
+          "problem": "Reappraisal versus invalidation",
+          "lessons": [
+            {
+              "id": "emotions-m31-l1",
+              "title": "Case file: Reappraisal versus invalidation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Reappraisal versus invalidation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m31-l2",
+              "title": "The mechanism behind Reappraisal versus invalidation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Reappraisal versus invalidation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m31-l3",
+              "title": "Distinguish Reappraisal versus invalidation: helpful adaptation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Reappraisal versus invalidation. Contrast: helpful adaptation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m31-l4",
+              "title": "Evidence investigation: Reappraisal versus invalidation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Reappraisal versus invalidation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m31-l5",
+              "title": "Strategy clinic: Reappraisal versus invalidation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Reappraisal versus invalidation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m31-l6",
+              "title": "Transfer mission: Reappraisal versus invalidation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Reappraisal versus invalidation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-32",
+          "title": "Acceptance versus resignation",
+          "problem": "Acceptance versus resignation",
+          "lessons": [
+            {
+              "id": "emotions-m32-l1",
+              "title": "Case file: Acceptance versus resignation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Acceptance versus resignation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m32-l2",
+              "title": "The mechanism behind Acceptance versus resignation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Acceptance versus resignation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m32-l3",
+              "title": "Distinguish Acceptance versus resignation: helpful adaptation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Acceptance versus resignation. Contrast: helpful adaptation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m32-l4",
+              "title": "Evidence investigation: Acceptance versus resignation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Acceptance versus resignation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m32-l5",
+              "title": "Strategy clinic: Acceptance versus resignation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Acceptance versus resignation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m32-l6",
+              "title": "Transfer mission: Acceptance versus resignation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Acceptance versus resignation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-33",
+          "title": "Distraction for emergencies versus escape",
+          "problem": "Distraction for emergencies versus escape",
+          "lessons": [
+            {
+              "id": "emotions-m33-l1",
+              "title": "Case file: Distraction for emergencies versus escape",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Distraction for emergencies versus escape.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m33-l2",
+              "title": "The mechanism behind Distraction for emergencies versus escape",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Distraction for emergencies versus escape.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m33-l3",
+              "title": "Distinguish Distraction for emergencies versus escape: helpful adaptation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Distraction for emergencies versus escape. Contrast: helpful adaptation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m33-l4",
+              "title": "Evidence investigation: Distraction for emergencies versus escape",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Distraction for emergencies versus escape.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m33-l5",
+              "title": "Strategy clinic: Distraction for emergencies versus escape",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Distraction for emergencies versus escape.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m33-l6",
+              "title": "Transfer mission: Distraction for emergencies versus escape",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Distraction for emergencies versus escape.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-34",
+          "title": "Suppression and its social costs",
+          "problem": "Suppression and its social costs",
+          "lessons": [
+            {
+              "id": "emotions-m34-l1",
+              "title": "Case file: Suppression and its social costs",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Suppression and its social costs.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m34-l2",
+              "title": "The mechanism behind Suppression and its social costs",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Suppression and its social costs.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m34-l3",
+              "title": "Distinguish Suppression and its social costs: helpful adaptation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Suppression and its social costs. Contrast: helpful adaptation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m34-l4",
+              "title": "Evidence investigation: Suppression and its social costs",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Suppression and its social costs.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m34-l5",
+              "title": "Strategy clinic: Suppression and its social costs",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Suppression and its social costs.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m34-l6",
+              "title": "Transfer mission: Suppression and its social costs",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Suppression and its social costs.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-35",
+          "title": "Emotion expression without emotional dumping",
+          "problem": "Emotion expression without emotional dumping",
+          "lessons": [
+            {
+              "id": "emotions-m35-l1",
+              "title": "Case file: Emotion expression without emotional dumping",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Emotion expression without emotional dumping.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m35-l2",
+              "title": "The mechanism behind Emotion expression without emotional dumping",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Emotion expression without emotional dumping.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m35-l3",
+              "title": "Distinguish Emotion expression without emotional dumping: helpful adaptation versus avoidance",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Emotion expression without emotional dumping. Contrast: helpful adaptation versus avoidance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m35-l4",
+              "title": "Evidence investigation: Emotion expression without emotional dumping",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Emotion expression without emotional dumping.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m35-l5",
+              "title": "Strategy clinic: Emotion expression without emotional dumping",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Emotion expression without emotional dumping.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m35-l6",
+              "title": "Transfer mission: Emotion expression without emotional dumping",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Emotion expression without emotional dumping.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-book-8",
+      "title": "Relationships and co-regulation",
+      "distinction": "empathy versus emotional responsibility",
+      "modules": [
+        {
+          "id": "emotions-module-36",
+          "title": "When another person is distressed",
+          "problem": "When another person is distressed",
+          "lessons": [
+            {
+              "id": "emotions-m36-l1",
+              "title": "Case file: When another person is distressed",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When another person is distressed.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m36-l2",
+              "title": "The mechanism behind When another person is distressed",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When another person is distressed.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m36-l3",
+              "title": "Distinguish When another person is distressed: empathy versus emotional responsibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When another person is distressed. Contrast: empathy versus emotional responsibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m36-l4",
+              "title": "Evidence investigation: When another person is distressed",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When another person is distressed.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m36-l5",
+              "title": "Strategy clinic: When another person is distressed",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When another person is distressed.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m36-l6",
+              "title": "Transfer mission: When another person is distressed",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When another person is distressed.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-37",
+          "title": "Responding to anger with curiosity",
+          "problem": "Responding to anger with curiosity",
+          "lessons": [
+            {
+              "id": "emotions-m37-l1",
+              "title": "Case file: Responding to anger with curiosity",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Responding to anger with curiosity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m37-l2",
+              "title": "The mechanism behind Responding to anger with curiosity",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Responding to anger with curiosity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m37-l3",
+              "title": "Distinguish Responding to anger with curiosity: empathy versus emotional responsibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Responding to anger with curiosity. Contrast: empathy versus emotional responsibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m37-l4",
+              "title": "Evidence investigation: Responding to anger with curiosity",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Responding to anger with curiosity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m37-l5",
+              "title": "Strategy clinic: Responding to anger with curiosity",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Responding to anger with curiosity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m37-l6",
+              "title": "Transfer mission: Responding to anger with curiosity",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Responding to anger with curiosity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-38",
+          "title": "Asking for comfort without demanding compliance",
+          "problem": "Asking for comfort without demanding compliance",
+          "lessons": [
+            {
+              "id": "emotions-m38-l1",
+              "title": "Case file: Asking for comfort without demanding compliance",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Asking for comfort without demanding compliance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m38-l2",
+              "title": "The mechanism behind Asking for comfort without demanding compliance",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Asking for comfort without demanding compliance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m38-l3",
+              "title": "Distinguish Asking for comfort without demanding compliance: empathy versus emotional responsibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Asking for comfort without demanding compliance. Contrast: empathy versus emotional responsibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m38-l4",
+              "title": "Evidence investigation: Asking for comfort without demanding compliance",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Asking for comfort without demanding compliance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m38-l5",
+              "title": "Strategy clinic: Asking for comfort without demanding compliance",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Asking for comfort without demanding compliance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m38-l6",
+              "title": "Transfer mission: Asking for comfort without demanding compliance",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Asking for comfort without demanding compliance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-39",
+          "title": "Repairing after emotional escalation",
+          "problem": "Repairing after emotional escalation",
+          "lessons": [
+            {
+              "id": "emotions-m39-l1",
+              "title": "Case file: Repairing after emotional escalation",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Repairing after emotional escalation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m39-l2",
+              "title": "The mechanism behind Repairing after emotional escalation",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Repairing after emotional escalation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m39-l3",
+              "title": "Distinguish Repairing after emotional escalation: empathy versus emotional responsibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Repairing after emotional escalation. Contrast: empathy versus emotional responsibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m39-l4",
+              "title": "Evidence investigation: Repairing after emotional escalation",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Repairing after emotional escalation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m39-l5",
+              "title": "Strategy clinic: Repairing after emotional escalation",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Repairing after emotional escalation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m39-l6",
+              "title": "Transfer mission: Repairing after emotional escalation",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Repairing after emotional escalation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-40",
+          "title": "Supporting someone without diagnosing them",
+          "problem": "Supporting someone without diagnosing them",
+          "lessons": [
+            {
+              "id": "emotions-m40-l1",
+              "title": "Case file: Supporting someone without diagnosing them",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Supporting someone without diagnosing them.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m40-l2",
+              "title": "The mechanism behind Supporting someone without diagnosing them",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Supporting someone without diagnosing them.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m40-l3",
+              "title": "Distinguish Supporting someone without diagnosing them: empathy versus emotional responsibility",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Supporting someone without diagnosing them. Contrast: empathy versus emotional responsibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m40-l4",
+              "title": "Evidence investigation: Supporting someone without diagnosing them",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Supporting someone without diagnosing them.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m40-l5",
+              "title": "Strategy clinic: Supporting someone without diagnosing them",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Supporting someone without diagnosing them.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m40-l6",
+              "title": "Transfer mission: Supporting someone without diagnosing them",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Supporting someone without diagnosing them.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-book-9",
+      "title": "Social systems and emotional norms",
+      "distinction": "individual vulnerability versus social rules",
+      "modules": [
+        {
+          "id": "emotions-module-41",
+          "title": "Emotional labour at work",
+          "problem": "Emotional labour at work",
+          "lessons": [
+            {
+              "id": "emotions-m41-l1",
+              "title": "Case file: Emotional labour at work",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Emotional labour at work.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m41-l2",
+              "title": "The mechanism behind Emotional labour at work",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Emotional labour at work.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m41-l3",
+              "title": "Distinguish Emotional labour at work: individual vulnerability versus social rules",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Emotional labour at work. Contrast: individual vulnerability versus social rules.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m41-l4",
+              "title": "Evidence investigation: Emotional labour at work",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Emotional labour at work.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m41-l5",
+              "title": "Strategy clinic: Emotional labour at work",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Emotional labour at work.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m41-l6",
+              "title": "Transfer mission: Emotional labour at work",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Emotional labour at work.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-42",
+          "title": "Gendered expectations of emotion",
+          "problem": "Gendered expectations of emotion",
+          "lessons": [
+            {
+              "id": "emotions-m42-l1",
+              "title": "Case file: Gendered expectations of emotion",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Gendered expectations of emotion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m42-l2",
+              "title": "The mechanism behind Gendered expectations of emotion",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Gendered expectations of emotion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m42-l3",
+              "title": "Distinguish Gendered expectations of emotion: individual vulnerability versus social rules",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Gendered expectations of emotion. Contrast: individual vulnerability versus social rules.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m42-l4",
+              "title": "Evidence investigation: Gendered expectations of emotion",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Gendered expectations of emotion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m42-l5",
+              "title": "Strategy clinic: Gendered expectations of emotion",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Gendered expectations of emotion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m42-l6",
+              "title": "Transfer mission: Gendered expectations of emotion",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Gendered expectations of emotion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-43",
+          "title": "Cultural rules about expression",
+          "problem": "Cultural rules about expression",
+          "lessons": [
+            {
+              "id": "emotions-m43-l1",
+              "title": "Case file: Cultural rules about expression",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Cultural rules about expression.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m43-l2",
+              "title": "The mechanism behind Cultural rules about expression",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Cultural rules about expression.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m43-l3",
+              "title": "Distinguish Cultural rules about expression: individual vulnerability versus social rules",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Cultural rules about expression. Contrast: individual vulnerability versus social rules.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m43-l4",
+              "title": "Evidence investigation: Cultural rules about expression",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Cultural rules about expression.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m43-l5",
+              "title": "Strategy clinic: Cultural rules about expression",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Cultural rules about expression.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m43-l6",
+              "title": "Transfer mission: Cultural rules about expression",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Cultural rules about expression.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-44",
+          "title": "Platform design and outrage",
+          "problem": "Platform design and outrage",
+          "lessons": [
+            {
+              "id": "emotions-m44-l1",
+              "title": "Case file: Platform design and outrage",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Platform design and outrage.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m44-l2",
+              "title": "The mechanism behind Platform design and outrage",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Platform design and outrage.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m44-l3",
+              "title": "Distinguish Platform design and outrage: individual vulnerability versus social rules",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Platform design and outrage. Contrast: individual vulnerability versus social rules.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m44-l4",
+              "title": "Evidence investigation: Platform design and outrage",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Platform design and outrage.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m44-l5",
+              "title": "Strategy clinic: Platform design and outrage",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Platform design and outrage.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m44-l6",
+              "title": "Transfer mission: Platform design and outrage",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Platform design and outrage.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-45",
+          "title": "Poverty, threat and emotional bandwidth",
+          "problem": "Poverty, threat and emotional bandwidth",
+          "lessons": [
+            {
+              "id": "emotions-m45-l1",
+              "title": "Case file: Poverty, threat and emotional bandwidth",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Poverty, threat and emotional bandwidth.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m45-l2",
+              "title": "The mechanism behind Poverty, threat and emotional bandwidth",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Poverty, threat and emotional bandwidth.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m45-l3",
+              "title": "Distinguish Poverty, threat and emotional bandwidth: individual vulnerability versus social rules",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Poverty, threat and emotional bandwidth. Contrast: individual vulnerability versus social rules.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m45-l4",
+              "title": "Evidence investigation: Poverty, threat and emotional bandwidth",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Poverty, threat and emotional bandwidth.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m45-l5",
+              "title": "Strategy clinic: Poverty, threat and emotional bandwidth",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Poverty, threat and emotional bandwidth.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m45-l6",
+              "title": "Transfer mission: Poverty, threat and emotional bandwidth",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Poverty, threat and emotional bandwidth.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-book-10",
+      "title": "Complex integration",
+      "distinction": "context-specific pattern versus stable trait",
+      "modules": [
+        {
+          "id": "emotions-module-46",
+          "title": "Alexithymia and emotional identification",
+          "problem": "Alexithymia and emotional identification",
+          "lessons": [
+            {
+              "id": "emotions-m46-l1",
+              "title": "Case file: Alexithymia and emotional identification",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Alexithymia and emotional identification.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m46-l2",
+              "title": "The mechanism behind Alexithymia and emotional identification",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Alexithymia and emotional identification.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m46-l3",
+              "title": "Distinguish Alexithymia and emotional identification: context-specific pattern versus stable trait",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Alexithymia and emotional identification. Contrast: context-specific pattern versus stable trait.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m46-l4",
+              "title": "Evidence investigation: Alexithymia and emotional identification",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Alexithymia and emotional identification.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m46-l5",
+              "title": "Strategy clinic: Alexithymia and emotional identification",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Alexithymia and emotional identification.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m46-l6",
+              "title": "Transfer mission: Alexithymia and emotional identification",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Alexithymia and emotional identification.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-47",
+          "title": "Neurodivergent emotional experiences",
+          "problem": "Neurodivergent emotional experiences",
+          "lessons": [
+            {
+              "id": "emotions-m47-l1",
+              "title": "Case file: Neurodivergent emotional experiences",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Neurodivergent emotional experiences.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m47-l2",
+              "title": "The mechanism behind Neurodivergent emotional experiences",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Neurodivergent emotional experiences.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m47-l3",
+              "title": "Distinguish Neurodivergent emotional experiences: context-specific pattern versus stable trait",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Neurodivergent emotional experiences. Contrast: context-specific pattern versus stable trait.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m47-l4",
+              "title": "Evidence investigation: Neurodivergent emotional experiences",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Neurodivergent emotional experiences.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m47-l5",
+              "title": "Strategy clinic: Neurodivergent emotional experiences",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Neurodivergent emotional experiences.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m47-l6",
+              "title": "Transfer mission: Neurodivergent emotional experiences",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Neurodivergent emotional experiences.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-48",
+          "title": "Mixed reactions to major decisions",
+          "problem": "Mixed reactions to major decisions",
+          "lessons": [
+            {
+              "id": "emotions-m48-l1",
+              "title": "Case file: Mixed reactions to major decisions",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Mixed reactions to major decisions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m48-l2",
+              "title": "The mechanism behind Mixed reactions to major decisions",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Mixed reactions to major decisions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m48-l3",
+              "title": "Distinguish Mixed reactions to major decisions: context-specific pattern versus stable trait",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Mixed reactions to major decisions. Contrast: context-specific pattern versus stable trait.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m48-l4",
+              "title": "Evidence investigation: Mixed reactions to major decisions",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Mixed reactions to major decisions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m48-l5",
+              "title": "Strategy clinic: Mixed reactions to major decisions",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Mixed reactions to major decisions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m48-l6",
+              "title": "Transfer mission: Mixed reactions to major decisions",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Mixed reactions to major decisions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-49",
+          "title": "When to seek psychological assistance",
+          "problem": "When to seek psychological assistance",
+          "lessons": [
+            {
+              "id": "emotions-m49-l1",
+              "title": "Case file: When to seek psychological assistance",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: When to seek psychological assistance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m49-l2",
+              "title": "The mechanism behind When to seek psychological assistance",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: When to seek psychological assistance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m49-l3",
+              "title": "Distinguish When to seek psychological assistance: context-specific pattern versus stable trait",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: When to seek psychological assistance. Contrast: context-specific pattern versus stable trait.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m49-l4",
+              "title": "Evidence investigation: When to seek psychological assistance",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: When to seek psychological assistance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m49-l5",
+              "title": "Strategy clinic: When to seek psychological assistance",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: When to seek psychological assistance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m49-l6",
+              "title": "Transfer mission: When to seek psychological assistance",
+              "objective": "Apply the concept in a new social or clinical context. Focus: When to seek psychological assistance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "emotions-module-50",
+          "title": "Integration: emotion as data, choice as action",
+          "problem": "Integration: emotion as data, choice as action",
+          "lessons": [
+            {
+              "id": "emotions-m50-l1",
+              "title": "Case file: Integration: emotion as data, choice as action",
+              "objective": "Identify what can actually be observed and what is interpreted. Focus: Integration: emotion as data, choice as action.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m50-l2",
+              "title": "The mechanism behind Integration: emotion as data, choice as action",
+              "objective": "Trace the processes that may maintain the difficulty. Focus: Integration: emotion as data, choice as action.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m50-l3",
+              "title": "Distinguish Integration: emotion as data, choice as action: context-specific pattern versus stable trait",
+              "objective": "Separate a plausible account from a close but different explanation. Focus: Integration: emotion as data, choice as action. Contrast: context-specific pattern versus stable trait.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m50-l4",
+              "title": "Evidence investigation: Integration: emotion as data, choice as action",
+              "objective": "Look for evidence that supports or challenges the interpretation. Focus: Integration: emotion as data, choice as action.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m50-l5",
+              "title": "Strategy clinic: Integration: emotion as data, choice as action",
+              "objective": "Choose among responses with attention to feasibility and safety. Focus: Integration: emotion as data, choice as action.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "emotions-m50-l6",
+              "title": "Transfer mission: Integration: emotion as data, choice as action",
+              "objective": "Apply the concept in a new social or clinical context. Focus: Integration: emotion as data, choice as action.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
