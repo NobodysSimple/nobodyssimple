@@ -1,4 +1,125 @@
 {
   "version": 1,
-  "courses": {}
+  "courses": {
+    "narcissism": {
+      "status": "published",
+      "version": 1,
+      "title": "Understanding Narcissism & Personality",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "manipulation": {
+      "status": "published",
+      "version": 1,
+      "title": "Manipulation, Gaslighting & Psychological Tactics",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "attachment": {
+      "status": "published",
+      "version": 1,
+      "title": "Attachment, Love & Relationship Patterns",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "overthinking": {
+      "status": "published",
+      "version": 1,
+      "title": "Overthinking, Rumination & Mental Loops",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "boundaries": {
+      "status": "published",
+      "version": 1,
+      "title": "Boundaries & Difficult Conversations",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "anxiety": {
+      "status": "published",
+      "version": 1,
+      "title": "Anxiety, Fear & Avoidance",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "emotions": {
+      "status": "published",
+      "version": 1,
+      "title": "The Science of Emotions",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "self-esteem": {
+      "status": "published",
+      "version": 1,
+      "title": "Self-Esteem, Shame & the Inner Critic",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "motivation": {
+      "status": "published",
+      "version": 1,
+      "title": "Motivation, Procrastination & Habit Change",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "social-anxiety": {
+      "status": "published",
+      "version": 1,
+      "title": "Social Anxiety & Fear of Judgement",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "burnout": {
+      "status": "published",
+      "version": 1,
+      "title": "Stress, Burnout & Psychological Demands",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "loneliness": {
+      "status": "published",
+      "version": 1,
+      "title": "Loneliness, Friendship & Belonging",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "social-media": {
+      "status": "published",
+      "version": 1,
+      "title": "Social Media & the Attention Economy",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "misinformation": {
+      "status": "published",
+      "version": 1,
+      "title": "Misinformation, Conspiracies & AI Persuasion",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "neurodiversity": {
+      "status": "published",
+      "version": 1,
+      "title": "ADHD, Autism & Neurodivergent Experience",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "sleep": {
+      "status": "published",
+      "version": 1,
+      "title": "Sleep, Insomnia & the Psychology of Rest",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "low-mood": {
+      "status": "published",
+      "version": 1,
+      "title": "Depression, Low Mood & Motivation",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "scams": {
+      "status": "published",
+      "version": 1,
+      "title": "Scams, Deception & Social Engineering",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "masculinity": {
+      "status": "published",
+      "version": 1,
+      "title": "Sexuality & Gender",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    },
+    "vaping": {
+      "status": "published",
+      "version": 1,
+      "title": "Social Influence & Addiction",
+      "description": "Six interactive lessons in the first module. Learn through realistic psychological cases, evidence testing and practical decisions."
+    }
+  }
 }
