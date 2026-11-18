@@ -55,7 +55,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const choiceSet=(name,items,selected='',disabled=false)=>fieldset(name,orderedOptions(name,items),selected,disabled);
  const current=()=>nodes[state.i];
  function renderControls(node){
-  if(['choose','respond','repair','investigate'].includes(node.type))return choiceSet('choice',node.options);
+  if(['choose','respond','repair','investigate'].includes(node.type))return choiceSet('choice',node.options,state.checked?state.answers[node.id]||'':'',!!state.checked);
   if(node.type==='complete')return '<label class="ns-learn-player__label">Your answer<input name="recall" type="text" maxlength="180" autocomplete="off" placeholder="'+esc(node.hint||'Type your answer')+'"></label>';
   if(node.type==='match'||node.type==='sort'){
    const list=node.type==='match'?node.pairs:node.items;
@@ -113,7 +113,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
     foot='<button type="button" class="ns-learn-player__primary" data-next>'+buttonText+'</button>';
    }else foot='<p class="ns-learn-immersive__helper">Read one message at a time. You can open the earlier messages whenever you need them.</p>';
   }
-  root.innerHTML='<section class="ns-learn-player ns-learn-player--immersive" data-immersive><div class="ns-learn-immersive__surface" role="region" aria-label="Focused learning lesson">'+head+'<main class="ns-learn-immersive__content">'+middle+'</main><footer class="ns-learn-immersive__footer">'+foot+'</footer></div><span class="ns-learn-immersive__decoration" aria-hidden="true">✳</span></section>';
+  root.innerHTML='<section class="ns-learn-player ns-learn-player--immersive" data-immersive><div class="ns-learn-immersive__surface" role="region" aria-label="Focused learning lesson">'+head+'<div class="ns-learn-immersive__content">'+middle+'</div><footer class="ns-learn-immersive__footer">'+foot+'</footer></div><span class="ns-learn-immersive__decoration" aria-hidden="true">✳</span></section>';
   if(state.phase==='done'){
    const score=learnLessonScore(lesson,state.answers);
    if(!preview&&!state.saved){state.saved=true;const result=review?saveLearnReview(bundle,lesson,score):saveLearnCompletion(bundle,lesson,score);root.querySelector('[data-save]').textContent=result.ok?(review?'Review saved.':'Progress saved.'):'Unable to save progress: '+result.error;}
