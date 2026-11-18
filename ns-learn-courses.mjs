@@ -55,11 +55,11 @@ function catalogue(root,{category='all',focusCourses=false}={}){
  '<div class="ns-courses-feature__copy"><span class="ns-courses-feature__category">THE LEARNING JOURNEY</span>'+
  '<h2 id="ns-courses-featured-title">Beyond the obvious.</h2>'+
  '<p>Start with the subjects you care about. Discover the science behind them, practise subtle distinctions and build up to more sophisticated reasoning. Each course will have its own clear beginning and progression.</p>'+
- '<p class="ns-courses-feature__availability"><span aria-hidden="true">✿</span> Start learning: the first modules are ready</p>'+
+ '<p class="ns-courses-feature__availability"><span aria-hidden="true">✿</span> Start with the foundations · 12 lessons per course</p>'+
  '<a class="ns-courses-feature__link" href="#learn/how-it-works">How learning will work <span aria-hidden="true">→</span></a></div>'+
  '<div class="ns-courses-feature__postmark" aria-hidden="true">✳</div></section>'+
  '<section class="ns-courses-section" id="ns-course-catalogue" aria-labelledby="ns-course-catalogue-title">'+
- sectionHead('Discover courses','Choose anything that interests you. Courses are independent. Begin with any first module that interests you.')+
+ sectionHead('Discover courses','Choose the psychology you want to understand. Each course starts with the key ideas before moving into applied cases.')+
  '<p class="ns-courses-availability" role="status" data-learn-course-availability>Checking which course lessons are available…</p>'+
  '<div class="ns-catalogue-controls"><label class="ns-catalogue-search" for="ns-course-search"><span>Find a course</span>'+
  '<input id="ns-course-search" type="search" maxlength="90" autocomplete="off" placeholder="Try narcissism, rumination, ADHD, scams…" value="'+esc(rememberedQuery)+'"></label>'+
@@ -84,7 +84,7 @@ function catalogue(root,{category='all',focusCourses=false}={}){
   const result=filterLearnCourses({category:current,query:rememberedQuery});
   const available=Object.keys(getLearnIndex().courses).length;
   const availability=root.querySelector('[data-learn-course-availability]');
-  if(availability)availability.textContent=available?available+' courses have playable first modules, each with six lessons. Later modules are still being developed.':'Checking lesson availability…';
+  if(availability)availability.textContent=available?available+' courses have playable first modules, each with twelve lessons across two foundations units and one applied case. Later modules are still being developed.':'Checking lesson availability…';
   grid.innerHTML=result.map(card).join('');
   count.textContent=result.length+' '+(result.length===1?'course':'courses')+' found';
   empty.hidden=!!result.length;
@@ -105,7 +105,7 @@ function detail(root,id){
  const completed=bundle?learnCourseProgress(bundle,readLearnProgress()):null;
  const lessonMarkup=bundle?'<div class="ns-catalogue-published">'+
  '<p class="ns-catalogue-published__status">'+completed.done+' of '+completed.total+' lessons completed</p>'+
- bundle.modules.map((m,i)=>'<section class="ns-catalogue-module"><h3>Unit '+(i+1)+' · '+esc(m.title)+'</h3>'+
+ bundle.modules.map((m,i)=>'<section class="ns-catalogue-module" data-unit-kind="'+(m.kind==='foundation'?'foundation':'applied')+'"><span class="ns-catalogue-unit__phase">'+(m.kind==='foundation'?(i===0?'START HERE · LEARN THE WORDS':'FOUNDATIONS · PRACTISE REASONING'):'APPLIED CASE · PUT IT TOGETHER')+'</span><h3>Unit '+(i+1)+' · '+esc(m.title)+'</h3>'+
  m.lessons.map(l=>'<a href="#learn/lesson/'+encodeURIComponent(id)+'/'+encodeURIComponent(l.id)+'">'+esc(l.title)+' <span aria-hidden="true">→</span></a>').join('')+'</section>').join('')+'</div>':
  '<div class="ns-catalogue-coming"><strong>Lessons are being developed</strong>'+
  '<p>This is a course outline, not a playable lesson. Its units, exercises and reviews will appear after the material is authored, checked and published. No completion or reward is shown until then.</p>'+
@@ -118,13 +118,13 @@ function detail(root,id){
  '<span class="ns-catalogue-development">'+(bundle?'Published lessons available':hasPublishedLearnCourse(id)?'Loading published lessons…':'In development · No lessons published yet')+'</span>'+
  '<div class="ns-catalogue-tutor"><span class="ns-courses-kicker">A CHARACTER YOU’LL HELP</span>'+
  '<strong>'+esc(course.companionName)+'</strong><span>“'+esc(course.companionQuote)+'”</span>'+
- '<small>Future lessons will invite you to help '+esc(course.companionName)+' explore their situation and choose thoughtful next steps.</small>'+
+ '<small>Meet the course companion. Practice with '+esc(course.companionName)+' as you learn how people reason through difficult situations.</small>'+
  '</div></div></div>'+
  '<div class="ns-catalogue-detail-columns"><section class="ns-catalogue-outline"><span class="ns-courses-kicker">PLANNED LEARNING THEMES</span>'+
- '<h2>What you’ll explore</h2><p>These are subject areas for future lesson writing—not completed units or activities.</p>'+
+ '<h2>What you’ll explore</h2><p>The foundations are playable now. Later units will build on these themes as the course grows.</p>'+
  '<div class="ns-catalogue-focus">'+course.focus.map((t,i)=>'<div><span>'+String(i+1).padStart(2,'0')+'</span><strong>'+esc(t)+'</strong></div>').join('')+'</div></section>'+
  '<section class="ns-catalogue-outline"><span class="ns-courses-kicker">THE COURSE JOURNEY</span><h2>How you’ll learn</h2>'+
- '<p>Each independent course will introduce the science, teach important distinctions, then offer small interactive drills and revisits. Dialogue Labs will appear where analysing a conversation or disagreement helps transfer the skill to everyday life.</p>'+
+ '<p>Each course opens with plain-English concepts, then teaches how to examine evidence before moving into a longer case.  Dialogue Labs will appear where analysing a conversation or disagreement helps transfer the skill to everyday life.</p>'+
  '<div class="ns-catalogue-phases"><span>Understand the idea</span><span>Spot the distinction</span><span>Apply it carefully</span><span>Review over time</span></div>'+
  '<a href="#learn/how-it-works">See our learning method →</a></section></div>'+
  '<section class="ns-catalogue-syllabus"><h2>Course lessons</h2>'+lessonMarkup+'</section>'+
