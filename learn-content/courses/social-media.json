@@ -1,10 +1,804 @@
 {
   "id": "social-media",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Social Media & the Attention Economy",
-  "description": "Explore infinite scroll and delayed stopping cues through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "social-media-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Riley",
+        "Ash"
+      ],
+      "glossary": [
+        {
+          "term": "Stopping cue",
+          "definition": "A signal that an activity has reached a natural point where we can decide whether to continue.",
+          "example": "Finishing an article gives the reader an obvious place to close the tab.",
+          "limit": "An endless feed often removes this pause."
+        },
+        {
+          "term": "Unpredictable reward",
+          "definition": "A potentially enjoyable result whose timing or quality is uncertain.",
+          "example": "Someone keeps scrolling because the next short video might be funnier.",
+          "limit": "Not every repeated action reflects addiction; interest and habit also matter."
+        },
+        {
+          "term": "Habit cue",
+          "definition": "A situation that begins prompting an action through repetition.",
+          "example": "Picking up a phone automatically when sitting down before bed.",
+          "limit": "A cue helps explain when behaviour starts; it does not determine every later choice."
+        },
+        {
+          "term": "Designed friction",
+          "definition": "The amount of effort an interface makes us spend to begin or stop an action.",
+          "example": "A feed starts another clip automatically, making stopping require a deliberate interruption.",
+          "limit": "Friction can be adjusted to support autonomy; the same design does not affect everybody equally."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "social-media-f1-l1",
+          "title": "What are we studying?",
+          "teach": "A person can open an app intending to spend two minutes and stay for an hour. The interface matters because it changes when the person has to choose to stop.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "A person can open an app intending to spend two minutes and stay for an hour. The interface matters because it changes when the person has to choose to stop.\n\nWhy does a small online task so often turn into a much longer session?",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f1-l1-n2",
+              "type": "read",
+              "title": "What stopping cue means",
+              "body": "A signal that an activity has reached a natural point where we can decide whether to continue.\n\nFor example: Finishing an article gives the reader an obvious place to close the tab.\n\nOne important limit: An endless feed often removes this pause.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: Finishing an article gives the reader an obvious place to close the tab. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-media-foundation:choose",
+              "explanation": "The example most directly supports stopping cue. A signal that an activity has reached a natural point where we can decide whether to continue. An endless feed often removes this pause.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Stopping cue.",
+                  "feedback": "This description follows from the example. A signal that an activity has reached a natural point where we can decide whether to continue."
+                },
+                {
+                  "id": "social-media-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Unpredictable reward.",
+                  "feedback": "Unpredictable reward is a genuine psychological idea, but the observation by itself does not establish it. Not every repeated action reflects addiction; interest and habit also matter."
+                },
+                {
+                  "id": "social-media-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Habit cue.",
+                  "feedback": "Habit cue is a genuine psychological idea, but the observation by itself does not establish it. A cue helps explain when behaviour starts; it does not determine every later choice."
+                },
+                {
+                  "id": "social-media-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Designed friction.",
+                  "feedback": "Designed friction is a genuine psychological idea, but the observation by itself does not establish it. Friction can be adjusted to support autonomy; the same design does not affect everybody equally."
+                },
+                {
+                  "id": "social-media-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-media-f1-l1-n3-o1"
+            },
+            {
+              "id": "social-media-f1-l1-n4",
+              "type": "read",
+              "title": "What unpredictable reward means",
+              "body": "A potentially enjoyable result whose timing or quality is uncertain.\n\nFor example: Someone keeps scrolling because the next short video might be funnier.\n\nOne important limit: Not every repeated action reflects addiction; interest and habit also matter.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: Someone keeps scrolling because the next short video might be funnier. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-media-foundation:choose",
+              "explanation": "The example most directly supports unpredictable reward. A potentially enjoyable result whose timing or quality is uncertain. Not every repeated action reflects addiction; interest and habit also matter.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Stopping cue.",
+                  "feedback": "Stopping cue is a genuine psychological idea, but the observation by itself does not establish it. An endless feed often removes this pause."
+                },
+                {
+                  "id": "social-media-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Unpredictable reward.",
+                  "feedback": "This description follows from the example. A potentially enjoyable result whose timing or quality is uncertain."
+                },
+                {
+                  "id": "social-media-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Habit cue.",
+                  "feedback": "Habit cue is a genuine psychological idea, but the observation by itself does not establish it. A cue helps explain when behaviour starts; it does not determine every later choice."
+                },
+                {
+                  "id": "social-media-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Designed friction.",
+                  "feedback": "Designed friction is a genuine psychological idea, but the observation by itself does not establish it. Friction can be adjusted to support autonomy; the same design does not affect everybody equally."
+                },
+                {
+                  "id": "social-media-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-media-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "social-media-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-f1-l2-n1",
+              "type": "read",
+              "title": "What habit cue means",
+              "body": "A situation that begins prompting an action through repetition.\n\nFor example: Picking up a phone automatically when sitting down before bed.\n\nOne important limit: A cue helps explain when behaviour starts; it does not determine every later choice.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f1-l2-n2",
+              "type": "read",
+              "title": "What designed friction means",
+              "body": "The amount of effort an interface makes us spend to begin or stop an action.\n\nFor example: A feed starts another clip automatically, making stopping require a deliberate interruption.\n\nOne important limit: Friction can be adjusted to support autonomy; the same design does not affect everybody equally.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "social-media-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of why does a small online task so often turn into a much longer session?",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "pairs": [
+                {
+                  "id": "social-media-f1-l2-n3-p0",
+                  "label": "Stopping cue",
+                  "answer": "A signal that an activity has reached a natural point where we can decide whether to continue."
+                },
+                {
+                  "id": "social-media-f1-l2-n3-p1",
+                  "label": "Unpredictable reward",
+                  "answer": "A potentially enjoyable result whose timing or quality is uncertain."
+                },
+                {
+                  "id": "social-media-f1-l2-n3-p2",
+                  "label": "Habit cue",
+                  "answer": "A situation that begins prompting an action through repetition."
+                },
+                {
+                  "id": "social-media-f1-l2-n3-p3",
+                  "label": "Designed friction",
+                  "answer": "The amount of effort an interface makes us spend to begin or stop an action."
+                }
+              ]
+            },
+            {
+              "id": "social-media-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: Picking up a phone automatically when sitting down before bed. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-media-foundation:choose",
+              "explanation": "The example most directly supports habit cue. A situation that begins prompting an action through repetition. A cue helps explain when behaviour starts; it does not determine every later choice.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Stopping cue.",
+                  "feedback": "Stopping cue is a genuine psychological idea, but the observation by itself does not establish it. An endless feed often removes this pause."
+                },
+                {
+                  "id": "social-media-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Unpredictable reward.",
+                  "feedback": "Unpredictable reward is a genuine psychological idea, but the observation by itself does not establish it. Not every repeated action reflects addiction; interest and habit also matter."
+                },
+                {
+                  "id": "social-media-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Habit cue.",
+                  "feedback": "This description follows from the example. A situation that begins prompting an action through repetition."
+                },
+                {
+                  "id": "social-media-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Designed friction.",
+                  "feedback": "Designed friction is a genuine psychological idea, but the observation by itself does not establish it. Friction can be adjusted to support autonomy; the same design does not affect everybody equally."
+                },
+                {
+                  "id": "social-media-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-media-f1-l2-n4-o3"
+            },
+            {
+              "id": "social-media-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "A cue helps explain when behaviour starts; it does not determine every later choice.\n\nFriction can be adjusted to support autonomy; the same design does not affect everybody equally.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            }
+          ]
+        },
+        {
+          "id": "social-media-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A signal that an activity has reached a natural point where we can decide whether to continue.\n\nA potentially enjoyable result whose timing or quality is uncertain.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: A feed starts another clip automatically, making stopping require a deliberate interruption. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-media-foundation:choose",
+              "explanation": "The example most directly supports designed friction. The amount of effort an interface makes us spend to begin or stop an action. Friction can be adjusted to support autonomy; the same design does not affect everybody equally.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Stopping cue.",
+                  "feedback": "Stopping cue is a genuine psychological idea, but the observation by itself does not establish it. An endless feed often removes this pause."
+                },
+                {
+                  "id": "social-media-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Unpredictable reward.",
+                  "feedback": "Unpredictable reward is a genuine psychological idea, but the observation by itself does not establish it. Not every repeated action reflects addiction; interest and habit also matter."
+                },
+                {
+                  "id": "social-media-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Habit cue.",
+                  "feedback": "Habit cue is a genuine psychological idea, but the observation by itself does not establish it. A cue helps explain when behaviour starts; it does not determine every later choice."
+                },
+                {
+                  "id": "social-media-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Designed friction.",
+                  "feedback": "This description follows from the example. The amount of effort an interface makes us spend to begin or stop an action."
+                },
+                {
+                  "id": "social-media-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-media-f1-l3-n2-o4"
+            },
+            {
+              "id": "social-media-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "social-media-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of why does a small online task so often turn into a much longer session?",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "pairs": [
+                {
+                  "id": "social-media-f1-l3-n3-p0",
+                  "label": "Stopping cue",
+                  "answer": "A signal that an activity has reached a natural point where we can decide whether to continue."
+                },
+                {
+                  "id": "social-media-f1-l3-n3-p1",
+                  "label": "Unpredictable reward",
+                  "answer": "A potentially enjoyable result whose timing or quality is uncertain."
+                },
+                {
+                  "id": "social-media-f1-l3-n3-p2",
+                  "label": "Habit cue",
+                  "answer": "A situation that begins prompting an action through repetition."
+                },
+                {
+                  "id": "social-media-f1-l3-n3-p3",
+                  "label": "Designed friction",
+                  "answer": "The amount of effort an interface makes us spend to begin or stop an action."
+                }
+              ]
+            },
+            {
+              "id": "social-media-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: Someone keeps scrolling because the next short video might be funnier. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-media-foundation:choose",
+              "explanation": "The example most directly supports unpredictable reward. A potentially enjoyable result whose timing or quality is uncertain. Not every repeated action reflects addiction; interest and habit also matter.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Stopping cue.",
+                  "feedback": "Stopping cue is a genuine psychological idea, but the observation by itself does not establish it. An endless feed often removes this pause."
+                },
+                {
+                  "id": "social-media-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Unpredictable reward.",
+                  "feedback": "This description follows from the example. A potentially enjoyable result whose timing or quality is uncertain."
+                },
+                {
+                  "id": "social-media-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Habit cue.",
+                  "feedback": "Habit cue is a genuine psychological idea, but the observation by itself does not establish it. A cue helps explain when behaviour starts; it does not determine every later choice."
+                },
+                {
+                  "id": "social-media-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Designed friction.",
+                  "feedback": "Designed friction is a genuine psychological idea, but the observation by itself does not establish it. Friction can be adjusted to support autonomy; the same design does not affect everybody equally."
+                },
+                {
+                  "id": "social-media-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-media-f1-l3-n4-o2"
+            },
+            {
+              "id": "social-media-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between stopping cue, unpredictable reward, habit cue, designed friction. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Riley",
+        "Ash"
+      ],
+      "glossary": [
+        {
+          "term": "Stopping cue",
+          "definition": "A signal that an activity has reached a natural point where we can decide whether to continue.",
+          "example": "Finishing an article gives the reader an obvious place to close the tab.",
+          "limit": "An endless feed often removes this pause."
+        },
+        {
+          "term": "Unpredictable reward",
+          "definition": "A potentially enjoyable result whose timing or quality is uncertain.",
+          "example": "Someone keeps scrolling because the next short video might be funnier.",
+          "limit": "Not every repeated action reflects addiction; interest and habit also matter."
+        },
+        {
+          "term": "Habit cue",
+          "definition": "A situation that begins prompting an action through repetition.",
+          "example": "Picking up a phone automatically when sitting down before bed.",
+          "limit": "A cue helps explain when behaviour starts; it does not determine every later choice."
+        },
+        {
+          "term": "Designed friction",
+          "definition": "The amount of effort an interface makes us spend to begin or stop an action.",
+          "example": "A feed starts another clip automatically, making stopping require a deliberate interruption.",
+          "limit": "Friction can be adjusted to support autonomy; the same design does not affect everybody equally."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "social-media-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Riley has been trying to stop scrolling before bed. Ash notices Riley is still holding the phone an hour after opening an app.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "social-media-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "scenario": "Riley has been trying to stop scrolling before bed. Ash notices Riley is still holding the phone an hour after opening an app.",
+              "speakerA": "Riley",
+              "speakerB": "Ash",
+              "turns": [
+                {
+                  "id": "social-media-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I meant to check one message. I've been scrolling for an hour."
+                },
+                {
+                  "id": "social-media-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "What happened after you read it?"
+                },
+                {
+                  "id": "social-media-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "Another video loaded. I thought I'd stop after that one."
+                },
+                {
+                  "id": "social-media-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "Did you know what you were looking for next?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "social-media-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "social-media-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "social-media-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "social-media-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "social-media-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "social-media-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "social-media-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "social-media-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+                  "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary."
+                }
+              ]
+            },
+            {
+              "id": "social-media-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "social-media-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "categories": [
+                {
+                  "id": "social-media-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "social-media-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "social-media-f2-l1-n3-a",
+                  "label": "“I meant to check one message. I've been scrolling for an hour.”",
+                  "answer": "social-media-f2-l1-n3-seen"
+                },
+                {
+                  "id": "social-media-f2-l1-n3-b",
+                  "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+                  "answer": "social-media-f2-l1-n3-guess"
+                },
+                {
+                  "id": "social-media-f2-l1-n3-c",
+                  "label": "“What happened after you read it?”",
+                  "answer": "social-media-f2-l1-n3-seen"
+                },
+                {
+                  "id": "social-media-f2-l1-n3-d",
+                  "label": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+                  "answer": "social-media-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "social-media-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.\n\nVariable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            }
+          ]
+        },
+        {
+          "id": "social-media-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.\n\nAnother possibility: Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "social-media-foundation:investigate",
+              "explanation": "Compare use when the next item requires a deliberate choice with use when content loads automatically. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "social-media-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "social-media-f2-l2-n2-o3",
+                  "label": "Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "social-media-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "social-media-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "social-media-f2-l2-n2-o3"
+            },
+            {
+              "id": "social-media-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "Riley uses the same phone for reading long articles but stops easily when an article ends. The late-night problem is concentrated in the endless short-video feed.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "social-media-foundation:choose",
+              "explanation": "The contrast strengthens the stopping-cue explanation, while leaving room for differences in interest and the social meaning of each platform.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "social-media-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "social-media-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "social-media-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "social-media-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "social-media-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "social-media-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "A person can open an app intending to spend two minutes and stay for an hour. The interface matters because it changes when the person has to choose to stop.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: Picking up a phone automatically when sitting down before bed. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-media-foundation:choose",
+              "explanation": "The example most directly supports habit cue. A situation that begins prompting an action through repetition. A cue helps explain when behaviour starts; it does not determine every later choice.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Stopping cue.",
+                  "feedback": "Stopping cue is a genuine psychological idea, but the observation by itself does not establish it. An endless feed often removes this pause."
+                },
+                {
+                  "id": "social-media-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Unpredictable reward.",
+                  "feedback": "Unpredictable reward is a genuine psychological idea, but the observation by itself does not establish it. Not every repeated action reflects addiction; interest and habit also matter."
+                },
+                {
+                  "id": "social-media-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Habit cue.",
+                  "feedback": "This description follows from the example. A situation that begins prompting an action through repetition."
+                },
+                {
+                  "id": "social-media-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Designed friction.",
+                  "feedback": "Designed friction is a genuine psychological idea, but the observation by itself does not establish it. Friction can be adjusted to support autonomy; the same design does not affect everybody equally."
+                },
+                {
+                  "id": "social-media-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-media-f2-l3-n2-o3"
+            },
+            {
+              "id": "social-media-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "social-media-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "categories": [
+                {
+                  "id": "social-media-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "social-media-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "social-media-f2-l3-n3-a",
+                  "label": "“I meant to check one message. I've been scrolling for an hour.”",
+                  "answer": "social-media-f2-l3-n3-seen"
+                },
+                {
+                  "id": "social-media-f2-l3-n3-b",
+                  "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+                  "answer": "social-media-f2-l3-n3-guess"
+                },
+                {
+                  "id": "social-media-f2-l3-n3-c",
+                  "label": "“What happened after you read it?”",
+                  "answer": "social-media-f2-l3-n3-seen"
+                },
+                {
+                  "id": "social-media-f2-l3-n3-d",
+                  "label": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+                  "answer": "social-media-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "social-media-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "social-media-foundation:investigate",
+              "explanation": "Compare use when the next item requires a deliberate choice with use when content loads automatically. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "social-media-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "social-media-f2-l3-n4-o3",
+                  "label": "Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "social-media-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "social-media-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "social-media-f2-l3-n4-o3"
+            },
+            {
+              "id": "social-media-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "social-media-module-01",
       "title": "Infinite scroll and delayed stopping cues",
@@ -87,6 +881,16 @@
                     {
                       "id": "social-media-m1-node-1-check1-opt1",
                       "label": "Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention."
+                    },
+                    {
+                      "id": "social-media-m1-node-1-check1-alternative-1",
+                      "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
+                      "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
+                    },
+                    {
+                      "id": "social-media-m1-node-1-check1-alternative-2",
+                      "label": "Riley may be seeking social information about friends, making it harder to disengage from the app.",
+                      "feedback": "Social checking could explain persistence, but the described feed is dominated by short videos rather than messages."
                     }
                   ],
                   "answer": "social-media-m1-node-1-check1-opt1",
@@ -121,6 +925,11 @@
                       "label": "Disable autoplay and decide the stopping point before opening the feed.",
                       "reply": "That small delay changed the opportunity to act on the urge.",
                       "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "social-media-m1-node-1-check2-alternative-1",
+                      "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
+                      "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
                     }
                   ],
                   "answer": "social-media-m1-node-1-check2-opt1",
@@ -314,6 +1123,11 @@
                 {
                   "id": "social-media-m1-repair-opt2",
                   "label": "Because ada may be postponing bedtime because she does not want the day to end., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "social-media-m1-node-7-alternative-1",
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "social-media-m1-repair-opt1"
@@ -429,6 +1243,16 @@
                     {
                       "id": "social-media-m1-node-8-check1-opt2",
                       "label": "The newer dialogue settles the cause and replaces the need to consider ada may be postponing bedtime because she does not want the day to end.."
+                    },
+                    {
+                      "id": "social-media-m1-node-8-check1-alternative-1",
+                      "label": "Riley may be using videos to avoid a difficult task, with the feed providing readily available distraction.",
+                      "feedback": "Avoidance might contribute, though no particular task is mentioned in the current scene."
+                    },
+                    {
+                      "id": "social-media-m1-node-8-check1-alternative-2",
+                      "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
+                      "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
                     }
                   ],
                   "answer": "social-media-m1-node-8-check1-opt1",
@@ -466,6 +1290,11 @@
                 {
                   "id": "social-media-m1-new-opt4",
                   "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "social-media-m1-node-9-alternative-1",
+                  "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
+                  "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
                 }
               ],
               "answer": "social-media-m1-new-opt1"
@@ -500,6 +1329,11 @@
                 {
                   "id": "social-media-m1-view-opt1",
                   "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "social-media-m1-node-10-alternative-1",
+                  "label": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
+                  "feedback": "The repeated 'one more' decision is consistent with missing stopping cues."
                 }
               ],
               "answer": "social-media-m1-view-opt1"
@@ -532,6 +1366,11 @@
                 {
                   "id": "social-media-m1-test-opt4",
                   "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "social-media-m1-node-13-alternative-1",
+                  "label": "Compare viewing time on a version of the feed that requires selecting each next item.",
+                  "feedback": "The design difference isolates a possible stopping-cue mechanism."
                 }
               ],
               "answer": "social-media-m1-test-opt1"
@@ -597,6 +1436,11 @@
                 {
                   "id": "social-media-m1-transfer-e-opt1",
                   "label": "Examine how continued recommendations can replace an original purchase goal with a sequence of unplanned decisions."
+                },
+                {
+                  "id": "social-media-m1-node-14-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "social-media-m1-transfer-e-opt1",
@@ -612,6 +1456,11 @@
                 {
                   "id": "social-media-m1-transfer-a-opt1",
                   "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "social-media-m1-node-14-response-alternative-1",
+                  "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "social-media-m1-transfer-a-opt1"
@@ -663,6 +1512,11 @@
                   "id": "social-media-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "social-media-m1-l3-n3-alternative-1",
+                  "label": "Riley may be seeking social information about friends, making it harder to disengage from the app.",
+                  "feedback": "Social checking could explain persistence, but the described feed is dominated by short videos rather than messages."
                 }
               ],
               "answer": "social-media-m1-l3-n3-opt2",
@@ -740,6 +1594,11 @@
                   "id": "social-media-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "social-media-m1-l3-n4-alternative-1",
+                  "label": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "social-media-m1-l3-n4-opt2",
@@ -766,19 +1625,39 @@
                   "id": "social-media-m1-l3-n5-evidence-opt2",
                   "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l3-n5-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "social-media-m1-l3-n5-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "social-media-m1-l3-n5-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "social-media-m1-l3-n5-response-opt1",
-                  "label": "Delete every app and stop using digital media entirely.",
-                  "feedback": ""
+                  "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "social-media-m1-l3-n5-response-opt2",
                   "label": "Set a stopping cue before opening the feed, and make the next session require a deliberate new choice.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l3-n5-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                },
+                {
+                  "id": "social-media-m1-l3-n5-response-alternative-3",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "social-media-m1-l3-n5-response-opt2"
@@ -884,13 +1763,18 @@
                     },
                     {
                       "id": "social-media-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "Riley may be seeking social information about friends, making it harder to disengage from the app.",
+                      "feedback": "Social checking could explain persistence, but the described feed is dominated by short videos rather than messages."
                     },
                     {
                       "id": "social-media-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "social-media-m1-l4-n2-question-alternative-2",
+                      "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                     }
                   ],
                   "answer": "social-media-m1-l4-n2-question-opt2",
@@ -928,6 +1812,11 @@
                   "id": "social-media-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "social-media-m1-l4-n3-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "social-media-m1-l4-n3-opt2",
@@ -962,6 +1851,11 @@
                   "id": "social-media-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "social-media-m1-l4-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "social-media-m1-l4-n4-opt2",
@@ -1029,6 +1923,11 @@
                   "id": "social-media-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "social-media-m1-l4-n6-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "social-media-m1-l4-n6-opt2"
@@ -1071,19 +1970,39 @@
                   "id": "social-media-m1-l5-n2-evidence-opt2",
                   "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l5-n2-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "social-media-m1-l5-n2-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "social-media-m1-l5-n2-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "social-media-m1-l5-n2-response-opt1",
-                  "label": "Delete every app and stop using digital media entirely.",
-                  "feedback": ""
+                  "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "social-media-m1-l5-n2-response-opt2",
                   "label": "Set a stopping cue before opening the feed, and make the next session require a deliberate new choice.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l5-n2-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                },
+                {
+                  "id": "social-media-m1-l5-n2-response-alternative-3",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "social-media-m1-l5-n2-response-opt2"
@@ -1108,6 +2027,11 @@
                   "id": "social-media-m1-l5-n3-action-opt2",
                   "label": "Set a stopping cue before opening the feed, and make the next session require a deliberate new choice.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l5-n3-change-alternative-1",
+                  "label": "Delete every app and stop using digital media entirely.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -1120,6 +2044,11 @@
                   "id": "social-media-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "social-media-m1-l5-n3-action-opt2",
@@ -1148,13 +2077,18 @@
                 },
                 {
                   "id": "social-media-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "social-media-m1-l5-n4-opt4",
                   "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "social-media-m1-l5-n4-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "social-media-m1-l5-n4-opt2",
@@ -1189,6 +2123,11 @@
                   "id": "social-media-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "social-media-m1-l5-n5-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "social-media-m1-l5-n5-opt2",
@@ -1223,6 +2162,11 @@
                   "id": "social-media-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "social-media-m1-l5-n6-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "social-media-m1-l5-n6-opt2"
@@ -1273,6 +2217,11 @@
                   "id": "social-media-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "social-media-m1-l6-n2-alternative-1",
+                  "label": "Delete every app and stop using digital media entirely.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "social-media-m1-l6-n2-opt2"
@@ -1306,6 +2255,11 @@
                   "id": "social-media-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "social-media-m1-l6-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "social-media-m1-l6-n4-opt2",
@@ -1391,6 +2345,36 @@
               "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Riley",
+        "Ash"
+      ],
+      "glossary": [
+        {
+          "term": "Stopping cue",
+          "definition": "A signal that an activity has reached a natural point where we can decide whether to continue.",
+          "example": "Finishing an article gives the reader an obvious place to close the tab.",
+          "limit": "An endless feed often removes this pause."
+        },
+        {
+          "term": "Unpredictable reward",
+          "definition": "A potentially enjoyable result whose timing or quality is uncertain.",
+          "example": "Someone keeps scrolling because the next short video might be funnier.",
+          "limit": "Not every repeated action reflects addiction; interest and habit also matter."
+        },
+        {
+          "term": "Habit cue",
+          "definition": "A situation that begins prompting an action through repetition.",
+          "example": "Picking up a phone automatically when sitting down before bed.",
+          "limit": "A cue helps explain when behaviour starts; it does not determine every later choice."
+        },
+        {
+          "term": "Designed friction",
+          "definition": "The amount of effort an interface makes us spend to begin or stop an action.",
+          "example": "A feed starts another clip automatically, making stopping require a deliberate interruption.",
+          "limit": "Friction can be adjusted to support autonomy; the same design does not affect everybody equally."
         }
       ]
     }
