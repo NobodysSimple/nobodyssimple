@@ -392,3 +392,8 @@ html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__buddy{
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__buddy strong{color:#f3f7ec}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__buddy small{color:#d2e5d0}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__finish-star{background:#3a5d44;color:#d0e5ac}
+
+body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway{margin:22px 0;padding:19px 21px;border-radius:18px;border:1px solid #d5e6cf;background:#eff6e6;color:#34553d}
+body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway strong{font:750 13px/1.4 system-ui,sans-serif;letter-spacing:.01em}
+body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway p{margin:8px 0 0!important;font:550 clamp(17px,2vw,21px)/1.5 Georgia,serif!important;color:inherit!important}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway{background:#385540;border-color:#719474;color:#f0f6e9}
