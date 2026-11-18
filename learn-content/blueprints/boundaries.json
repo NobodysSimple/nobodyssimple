@@ -1,0 +1,2828 @@
+{
+  "courseId": "boundaries",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Unpublished Course Lab blueprint; lesson titles and objectives only, no published learning nodes.",
+  "books": [
+    {
+      "id": "boundaries-book-1",
+      "title": "What a boundary is",
+      "distinction": "self-governance versus control",
+      "modules": [
+        {
+          "id": "boundaries-module-01",
+          "title": "Preferences, requests and boundaries",
+          "problem": "Preferences, requests and boundaries",
+          "lessons": [
+            {
+              "id": "boundaries-m1-l1",
+              "title": "Case file: Preferences, requests and boundaries",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Preferences, requests and boundaries. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m1-l2",
+              "title": "The mechanism behind Preferences, requests and boundaries",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Preferences, requests and boundaries. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m1-l3",
+              "title": "Distinguish it: self-governance versus control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Preferences, requests and boundaries. Contrasting cases: self-governance versus control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m1-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Preferences, requests and boundaries. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m1-l5",
+              "title": "Choose a proportionate response to Preferences, requests and boundaries",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Preferences, requests and boundaries. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m1-l6",
+              "title": "Transfer mission: Preferences, requests and boundaries in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Preferences, requests and boundaries. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-02",
+          "title": "A consequence versus a threat",
+          "problem": "A consequence versus a threat",
+          "lessons": [
+            {
+              "id": "boundaries-m2-l1",
+              "title": "Case file: A consequence versus a threat",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: A consequence versus a threat. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m2-l2",
+              "title": "The mechanism behind A consequence versus a threat",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: A consequence versus a threat. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m2-l3",
+              "title": "Distinguish it: self-governance versus control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: A consequence versus a threat. Contrasting cases: self-governance versus control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m2-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: A consequence versus a threat. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m2-l5",
+              "title": "Choose a proportionate response to A consequence versus a threat",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: A consequence versus a threat. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m2-l6",
+              "title": "Transfer mission: A consequence versus a threat in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: A consequence versus a threat. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-03",
+          "title": "Consent beyond a simple yes or no",
+          "problem": "Consent beyond a simple yes or no",
+          "lessons": [
+            {
+              "id": "boundaries-m3-l1",
+              "title": "Case file: Consent beyond a simple yes or no",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Consent beyond a simple yes or no. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m3-l2",
+              "title": "The mechanism behind Consent beyond a simple yes or no",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Consent beyond a simple yes or no. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m3-l3",
+              "title": "Distinguish it: self-governance versus control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Consent beyond a simple yes or no. Contrasting cases: self-governance versus control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m3-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Consent beyond a simple yes or no. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m3-l5",
+              "title": "Choose a proportionate response to Consent beyond a simple yes or no",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Consent beyond a simple yes or no. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m3-l6",
+              "title": "Transfer mission: Consent beyond a simple yes or no in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Consent beyond a simple yes or no. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-04",
+          "title": "Rights, obligations and negotiation",
+          "problem": "Rights, obligations and negotiation",
+          "lessons": [
+            {
+              "id": "boundaries-m4-l1",
+              "title": "Case file: Rights, obligations and negotiation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Rights, obligations and negotiation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m4-l2",
+              "title": "The mechanism behind Rights, obligations and negotiation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Rights, obligations and negotiation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m4-l3",
+              "title": "Distinguish it: self-governance versus control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Rights, obligations and negotiation. Contrasting cases: self-governance versus control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m4-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Rights, obligations and negotiation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m4-l5",
+              "title": "Choose a proportionate response to Rights, obligations and negotiation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Rights, obligations and negotiation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m4-l6",
+              "title": "Transfer mission: Rights, obligations and negotiation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Rights, obligations and negotiation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-05",
+          "title": "When boundary language is misused",
+          "problem": "When boundary language is misused",
+          "lessons": [
+            {
+              "id": "boundaries-m5-l1",
+              "title": "Case file: When boundary language is misused",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When boundary language is misused. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m5-l2",
+              "title": "The mechanism behind When boundary language is misused",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When boundary language is misused. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m5-l3",
+              "title": "Distinguish it: self-governance versus control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When boundary language is misused. Contrasting cases: self-governance versus control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m5-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When boundary language is misused. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m5-l5",
+              "title": "Choose a proportionate response to When boundary language is misused",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When boundary language is misused. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m5-l6",
+              "title": "Transfer mission: When boundary language is misused in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When boundary language is misused. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-book-2",
+      "title": "Recognising the underlying need",
+      "distinction": "need versus entitlement",
+      "modules": [
+        {
+          "id": "boundaries-module-06",
+          "title": "Why certain requests feel threatening",
+          "problem": "Why certain requests feel threatening",
+          "lessons": [
+            {
+              "id": "boundaries-m6-l1",
+              "title": "Case file: Why certain requests feel threatening",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Why certain requests feel threatening. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m6-l2",
+              "title": "The mechanism behind Why certain requests feel threatening",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Why certain requests feel threatening. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m6-l3",
+              "title": "Distinguish it: need versus entitlement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Why certain requests feel threatening. Contrasting cases: need versus entitlement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m6-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Why certain requests feel threatening. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m6-l5",
+              "title": "Choose a proportionate response to Why certain requests feel threatening",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Why certain requests feel threatening. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m6-l6",
+              "title": "Transfer mission: Why certain requests feel threatening in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Why certain requests feel threatening. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-07",
+          "title": "Time, privacy and emotional capacity",
+          "problem": "Time, privacy and emotional capacity",
+          "lessons": [
+            {
+              "id": "boundaries-m7-l1",
+              "title": "Case file: Time, privacy and emotional capacity",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Time, privacy and emotional capacity. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m7-l2",
+              "title": "The mechanism behind Time, privacy and emotional capacity",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Time, privacy and emotional capacity. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m7-l3",
+              "title": "Distinguish it: need versus entitlement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Time, privacy and emotional capacity. Contrasting cases: need versus entitlement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m7-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Time, privacy and emotional capacity. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m7-l5",
+              "title": "Choose a proportionate response to Time, privacy and emotional capacity",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Time, privacy and emotional capacity. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m7-l6",
+              "title": "Transfer mission: Time, privacy and emotional capacity in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Time, privacy and emotional capacity. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-08",
+          "title": "Different thresholds for discomfort",
+          "problem": "Different thresholds for discomfort",
+          "lessons": [
+            {
+              "id": "boundaries-m8-l1",
+              "title": "Case file: Different thresholds for discomfort",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Different thresholds for discomfort. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m8-l2",
+              "title": "The mechanism behind Different thresholds for discomfort",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Different thresholds for discomfort. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m8-l3",
+              "title": "Distinguish it: need versus entitlement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Different thresholds for discomfort. Contrasting cases: need versus entitlement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m8-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Different thresholds for discomfort. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m8-l5",
+              "title": "Choose a proportionate response to Different thresholds for discomfort",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Different thresholds for discomfort. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m8-l6",
+              "title": "Transfer mission: Different thresholds for discomfort in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Different thresholds for discomfort. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-09",
+          "title": "Values conflicts under a boundary dispute",
+          "problem": "Values conflicts under a boundary dispute",
+          "lessons": [
+            {
+              "id": "boundaries-m9-l1",
+              "title": "Case file: Values conflicts under a boundary dispute",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Values conflicts under a boundary dispute. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m9-l2",
+              "title": "The mechanism behind Values conflicts under a boundary dispute",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Values conflicts under a boundary dispute. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m9-l3",
+              "title": "Distinguish it: need versus entitlement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Values conflicts under a boundary dispute. Contrasting cases: need versus entitlement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m9-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Values conflicts under a boundary dispute. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m9-l5",
+              "title": "Choose a proportionate response to Values conflicts under a boundary dispute",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Values conflicts under a boundary dispute. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m9-l6",
+              "title": "Transfer mission: Values conflicts under a boundary dispute in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Values conflicts under a boundary dispute. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-10",
+          "title": "Limits under disability or dependency",
+          "problem": "Limits under disability or dependency",
+          "lessons": [
+            {
+              "id": "boundaries-m10-l1",
+              "title": "Case file: Limits under disability or dependency",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Limits under disability or dependency. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m10-l2",
+              "title": "The mechanism behind Limits under disability or dependency",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Limits under disability or dependency. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m10-l3",
+              "title": "Distinguish it: need versus entitlement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Limits under disability or dependency. Contrasting cases: need versus entitlement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m10-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Limits under disability or dependency. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m10-l5",
+              "title": "Choose a proportionate response to Limits under disability or dependency",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Limits under disability or dependency. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m10-l6",
+              "title": "Transfer mission: Limits under disability or dependency in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Limits under disability or dependency. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-book-3",
+      "title": "Assertive communication",
+      "distinction": "clarity versus aggression",
+      "modules": [
+        {
+          "id": "boundaries-module-11",
+          "title": "Specific requests instead of accusations",
+          "problem": "Specific requests instead of accusations",
+          "lessons": [
+            {
+              "id": "boundaries-m11-l1",
+              "title": "Case file: Specific requests instead of accusations",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Specific requests instead of accusations. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m11-l2",
+              "title": "The mechanism behind Specific requests instead of accusations",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Specific requests instead of accusations. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m11-l3",
+              "title": "Distinguish it: clarity versus aggression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Specific requests instead of accusations. Contrasting cases: clarity versus aggression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m11-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Specific requests instead of accusations. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m11-l5",
+              "title": "Choose a proportionate response to Specific requests instead of accusations",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Specific requests instead of accusations. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m11-l6",
+              "title": "Transfer mission: Specific requests instead of accusations in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Specific requests instead of accusations. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-12",
+          "title": "Owning feelings without blaming",
+          "problem": "Owning feelings without blaming",
+          "lessons": [
+            {
+              "id": "boundaries-m12-l1",
+              "title": "Case file: Owning feelings without blaming",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Owning feelings without blaming. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m12-l2",
+              "title": "The mechanism behind Owning feelings without blaming",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Owning feelings without blaming. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m12-l3",
+              "title": "Distinguish it: clarity versus aggression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Owning feelings without blaming. Contrasting cases: clarity versus aggression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m12-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Owning feelings without blaming. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m12-l5",
+              "title": "Choose a proportionate response to Owning feelings without blaming",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Owning feelings without blaming. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m12-l6",
+              "title": "Transfer mission: Owning feelings without blaming in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Owning feelings without blaming. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-13",
+          "title": "Saying no without overexplaining",
+          "problem": "Saying no without overexplaining",
+          "lessons": [
+            {
+              "id": "boundaries-m13-l1",
+              "title": "Case file: Saying no without overexplaining",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Saying no without overexplaining. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m13-l2",
+              "title": "The mechanism behind Saying no without overexplaining",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Saying no without overexplaining. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m13-l3",
+              "title": "Distinguish it: clarity versus aggression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Saying no without overexplaining. Contrasting cases: clarity versus aggression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m13-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Saying no without overexplaining. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m13-l5",
+              "title": "Choose a proportionate response to Saying no without overexplaining",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Saying no without overexplaining. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m13-l6",
+              "title": "Transfer mission: Saying no without overexplaining in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Saying no without overexplaining. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-14",
+          "title": "Feedback without character judgement",
+          "problem": "Feedback without character judgement",
+          "lessons": [
+            {
+              "id": "boundaries-m14-l1",
+              "title": "Case file: Feedback without character judgement",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Feedback without character judgement. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m14-l2",
+              "title": "The mechanism behind Feedback without character judgement",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Feedback without character judgement. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m14-l3",
+              "title": "Distinguish it: clarity versus aggression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Feedback without character judgement. Contrasting cases: clarity versus aggression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m14-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Feedback without character judgement. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m14-l5",
+              "title": "Choose a proportionate response to Feedback without character judgement",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Feedback without character judgement. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m14-l6",
+              "title": "Transfer mission: Feedback without character judgement in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Feedback without character judgement. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-15",
+          "title": "Handling ambiguous commitments",
+          "problem": "Handling ambiguous commitments",
+          "lessons": [
+            {
+              "id": "boundaries-m15-l1",
+              "title": "Case file: Handling ambiguous commitments",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Handling ambiguous commitments. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m15-l2",
+              "title": "The mechanism behind Handling ambiguous commitments",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Handling ambiguous commitments. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m15-l3",
+              "title": "Distinguish it: clarity versus aggression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Handling ambiguous commitments. Contrasting cases: clarity versus aggression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m15-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Handling ambiguous commitments. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m15-l5",
+              "title": "Choose a proportionate response to Handling ambiguous commitments",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Handling ambiguous commitments. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m15-l6",
+              "title": "Transfer mission: Handling ambiguous commitments in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Handling ambiguous commitments. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-book-4",
+      "title": "Conflict and repair",
+      "distinction": "accountability versus submission",
+      "modules": [
+        {
+          "id": "boundaries-module-16",
+          "title": "Apologising for behaviour not feelings",
+          "problem": "Apologising for behaviour not feelings",
+          "lessons": [
+            {
+              "id": "boundaries-m16-l1",
+              "title": "Case file: Apologising for behaviour not feelings",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Apologising for behaviour not feelings. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m16-l2",
+              "title": "The mechanism behind Apologising for behaviour not feelings",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Apologising for behaviour not feelings. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m16-l3",
+              "title": "Distinguish it: accountability versus submission",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Apologising for behaviour not feelings. Contrasting cases: accountability versus submission.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m16-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Apologising for behaviour not feelings. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m16-l5",
+              "title": "Choose a proportionate response to Apologising for behaviour not feelings",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Apologising for behaviour not feelings. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m16-l6",
+              "title": "Transfer mission: Apologising for behaviour not feelings in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Apologising for behaviour not feelings. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-17",
+          "title": "Repair after breaking an agreement",
+          "problem": "Repair after breaking an agreement",
+          "lessons": [
+            {
+              "id": "boundaries-m17-l1",
+              "title": "Case file: Repair after breaking an agreement",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Repair after breaking an agreement. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m17-l2",
+              "title": "The mechanism behind Repair after breaking an agreement",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Repair after breaking an agreement. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m17-l3",
+              "title": "Distinguish it: accountability versus submission",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Repair after breaking an agreement. Contrasting cases: accountability versus submission.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m17-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Repair after breaking an agreement. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m17-l5",
+              "title": "Choose a proportionate response to Repair after breaking an agreement",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Repair after breaking an agreement. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m17-l6",
+              "title": "Transfer mission: Repair after breaking an agreement in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Repair after breaking an agreement. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-18",
+          "title": "Responding when someone says no",
+          "problem": "Responding when someone says no",
+          "lessons": [
+            {
+              "id": "boundaries-m18-l1",
+              "title": "Case file: Responding when someone says no",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Responding when someone says no. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m18-l2",
+              "title": "The mechanism behind Responding when someone says no",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Responding when someone says no. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m18-l3",
+              "title": "Distinguish it: accountability versus submission",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Responding when someone says no. Contrasting cases: accountability versus submission.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m18-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Responding when someone says no. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m18-l5",
+              "title": "Choose a proportionate response to Responding when someone says no",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Responding when someone says no. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m18-l6",
+              "title": "Transfer mission: Responding when someone says no in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Responding when someone says no. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-19",
+          "title": "Distinguishing disagreement from disrespect",
+          "problem": "Distinguishing disagreement from disrespect",
+          "lessons": [
+            {
+              "id": "boundaries-m19-l1",
+              "title": "Case file: Distinguishing disagreement from disrespect",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Distinguishing disagreement from disrespect. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m19-l2",
+              "title": "The mechanism behind Distinguishing disagreement from disrespect",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Distinguishing disagreement from disrespect. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m19-l3",
+              "title": "Distinguish it: accountability versus submission",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Distinguishing disagreement from disrespect. Contrasting cases: accountability versus submission.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m19-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Distinguishing disagreement from disrespect. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m19-l5",
+              "title": "Choose a proportionate response to Distinguishing disagreement from disrespect",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Distinguishing disagreement from disrespect. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m19-l6",
+              "title": "Transfer mission: Distinguishing disagreement from disrespect in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Distinguishing disagreement from disrespect. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-20",
+          "title": "Rebuilding trust through follow-through",
+          "problem": "Rebuilding trust through follow-through",
+          "lessons": [
+            {
+              "id": "boundaries-m20-l1",
+              "title": "Case file: Rebuilding trust through follow-through",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Rebuilding trust through follow-through. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m20-l2",
+              "title": "The mechanism behind Rebuilding trust through follow-through",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Rebuilding trust through follow-through. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m20-l3",
+              "title": "Distinguish it: accountability versus submission",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Rebuilding trust through follow-through. Contrasting cases: accountability versus submission.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m20-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Rebuilding trust through follow-through. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m20-l5",
+              "title": "Choose a proportionate response to Rebuilding trust through follow-through",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Rebuilding trust through follow-through. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m20-l6",
+              "title": "Transfer mission: Rebuilding trust through follow-through in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Rebuilding trust through follow-through. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-book-5",
+      "title": "Pressure and manipulation",
+      "distinction": "compromise versus coerced agreement",
+      "modules": [
+        {
+          "id": "boundaries-module-21",
+          "title": "Guilt after refusing a request",
+          "problem": "Guilt after refusing a request",
+          "lessons": [
+            {
+              "id": "boundaries-m21-l1",
+              "title": "Case file: Guilt after refusing a request",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Guilt after refusing a request. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m21-l2",
+              "title": "The mechanism behind Guilt after refusing a request",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Guilt after refusing a request. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m21-l3",
+              "title": "Distinguish it: compromise versus coerced agreement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Guilt after refusing a request. Contrasting cases: compromise versus coerced agreement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m21-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Guilt after refusing a request. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m21-l5",
+              "title": "Choose a proportionate response to Guilt after refusing a request",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Guilt after refusing a request. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m21-l6",
+              "title": "Transfer mission: Guilt after refusing a request in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Guilt after refusing a request. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-22",
+          "title": "Repeated boundary testing",
+          "problem": "Repeated boundary testing",
+          "lessons": [
+            {
+              "id": "boundaries-m22-l1",
+              "title": "Case file: Repeated boundary testing",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Repeated boundary testing. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m22-l2",
+              "title": "The mechanism behind Repeated boundary testing",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Repeated boundary testing. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m22-l3",
+              "title": "Distinguish it: compromise versus coerced agreement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Repeated boundary testing. Contrasting cases: compromise versus coerced agreement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m22-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Repeated boundary testing. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m22-l5",
+              "title": "Choose a proportionate response to Repeated boundary testing",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Repeated boundary testing. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m22-l6",
+              "title": "Transfer mission: Repeated boundary testing in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Repeated boundary testing. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-23",
+          "title": "Surveillance disguised as reassurance",
+          "problem": "Surveillance disguised as reassurance",
+          "lessons": [
+            {
+              "id": "boundaries-m23-l1",
+              "title": "Case file: Surveillance disguised as reassurance",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Surveillance disguised as reassurance. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m23-l2",
+              "title": "The mechanism behind Surveillance disguised as reassurance",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Surveillance disguised as reassurance. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m23-l3",
+              "title": "Distinguish it: compromise versus coerced agreement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Surveillance disguised as reassurance. Contrasting cases: compromise versus coerced agreement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m23-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Surveillance disguised as reassurance. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m23-l5",
+              "title": "Choose a proportionate response to Surveillance disguised as reassurance",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Surveillance disguised as reassurance. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m23-l6",
+              "title": "Transfer mission: Surveillance disguised as reassurance in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Surveillance disguised as reassurance. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-24",
+          "title": "Ultimatums and disproportionate threats",
+          "problem": "Ultimatums and disproportionate threats",
+          "lessons": [
+            {
+              "id": "boundaries-m24-l1",
+              "title": "Case file: Ultimatums and disproportionate threats",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Ultimatums and disproportionate threats. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m24-l2",
+              "title": "The mechanism behind Ultimatums and disproportionate threats",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Ultimatums and disproportionate threats. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m24-l3",
+              "title": "Distinguish it: compromise versus coerced agreement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Ultimatums and disproportionate threats. Contrasting cases: compromise versus coerced agreement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m24-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Ultimatums and disproportionate threats. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m24-l5",
+              "title": "Choose a proportionate response to Ultimatums and disproportionate threats",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Ultimatums and disproportionate threats. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m24-l6",
+              "title": "Transfer mission: Ultimatums and disproportionate threats in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Ultimatums and disproportionate threats. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-25",
+          "title": "When politeness increases danger",
+          "problem": "When politeness increases danger",
+          "lessons": [
+            {
+              "id": "boundaries-m25-l1",
+              "title": "Case file: When politeness increases danger",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When politeness increases danger. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m25-l2",
+              "title": "The mechanism behind When politeness increases danger",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When politeness increases danger. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m25-l3",
+              "title": "Distinguish it: compromise versus coerced agreement",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When politeness increases danger. Contrasting cases: compromise versus coerced agreement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m25-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When politeness increases danger. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m25-l5",
+              "title": "Choose a proportionate response to When politeness increases danger",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When politeness increases danger. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m25-l6",
+              "title": "Transfer mission: When politeness increases danger in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When politeness increases danger. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-book-6",
+      "title": "Relationships and closeness",
+      "distinction": "intimacy versus unlimited access",
+      "modules": [
+        {
+          "id": "boundaries-module-26",
+          "title": "Romantic privacy and mutual expectations",
+          "problem": "Romantic privacy and mutual expectations",
+          "lessons": [
+            {
+              "id": "boundaries-m26-l1",
+              "title": "Case file: Romantic privacy and mutual expectations",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Romantic privacy and mutual expectations. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m26-l2",
+              "title": "The mechanism behind Romantic privacy and mutual expectations",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Romantic privacy and mutual expectations. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m26-l3",
+              "title": "Distinguish it: intimacy versus unlimited access",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Romantic privacy and mutual expectations. Contrasting cases: intimacy versus unlimited access.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m26-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Romantic privacy and mutual expectations. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m26-l5",
+              "title": "Choose a proportionate response to Romantic privacy and mutual expectations",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Romantic privacy and mutual expectations. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m26-l6",
+              "title": "Transfer mission: Romantic privacy and mutual expectations in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Romantic privacy and mutual expectations. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-27",
+          "title": "Family obligations across generations",
+          "problem": "Family obligations across generations",
+          "lessons": [
+            {
+              "id": "boundaries-m27-l1",
+              "title": "Case file: Family obligations across generations",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Family obligations across generations. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m27-l2",
+              "title": "The mechanism behind Family obligations across generations",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Family obligations across generations. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m27-l3",
+              "title": "Distinguish it: intimacy versus unlimited access",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Family obligations across generations. Contrasting cases: intimacy versus unlimited access.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m27-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Family obligations across generations. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m27-l5",
+              "title": "Choose a proportionate response to Family obligations across generations",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Family obligations across generations. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m27-l6",
+              "title": "Transfer mission: Family obligations across generations in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Family obligations across generations. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-28",
+          "title": "Friendship reciprocity and unequal effort",
+          "problem": "Friendship reciprocity and unequal effort",
+          "lessons": [
+            {
+              "id": "boundaries-m28-l1",
+              "title": "Case file: Friendship reciprocity and unequal effort",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Friendship reciprocity and unequal effort. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m28-l2",
+              "title": "The mechanism behind Friendship reciprocity and unequal effort",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Friendship reciprocity and unequal effort. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m28-l3",
+              "title": "Distinguish it: intimacy versus unlimited access",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Friendship reciprocity and unequal effort. Contrasting cases: intimacy versus unlimited access.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m28-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Friendship reciprocity and unequal effort. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m28-l5",
+              "title": "Choose a proportionate response to Friendship reciprocity and unequal effort",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Friendship reciprocity and unequal effort. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m28-l6",
+              "title": "Transfer mission: Friendship reciprocity and unequal effort in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Friendship reciprocity and unequal effort. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-29",
+          "title": "Sexual consent and changing preferences",
+          "problem": "Sexual consent and changing preferences",
+          "lessons": [
+            {
+              "id": "boundaries-m29-l1",
+              "title": "Case file: Sexual consent and changing preferences",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Sexual consent and changing preferences. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m29-l2",
+              "title": "The mechanism behind Sexual consent and changing preferences",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Sexual consent and changing preferences. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m29-l3",
+              "title": "Distinguish it: intimacy versus unlimited access",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Sexual consent and changing preferences. Contrasting cases: intimacy versus unlimited access.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m29-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Sexual consent and changing preferences. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m29-l5",
+              "title": "Choose a proportionate response to Sexual consent and changing preferences",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Sexual consent and changing preferences. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m29-l6",
+              "title": "Transfer mission: Sexual consent and changing preferences in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Sexual consent and changing preferences. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-30",
+          "title": "Long-distance relationship constraints",
+          "problem": "Long-distance relationship constraints",
+          "lessons": [
+            {
+              "id": "boundaries-m30-l1",
+              "title": "Case file: Long-distance relationship constraints",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Long-distance relationship constraints. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m30-l2",
+              "title": "The mechanism behind Long-distance relationship constraints",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Long-distance relationship constraints. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m30-l3",
+              "title": "Distinguish it: intimacy versus unlimited access",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Long-distance relationship constraints. Contrasting cases: intimacy versus unlimited access.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m30-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Long-distance relationship constraints. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m30-l5",
+              "title": "Choose a proportionate response to Long-distance relationship constraints",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Long-distance relationship constraints. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m30-l6",
+              "title": "Transfer mission: Long-distance relationship constraints in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Long-distance relationship constraints. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-book-7",
+      "title": "Work and institutions",
+      "distinction": "personal assertiveness versus structural power",
+      "modules": [
+        {
+          "id": "boundaries-module-31",
+          "title": "Saying no to unrealistic workloads",
+          "problem": "Saying no to unrealistic workloads",
+          "lessons": [
+            {
+              "id": "boundaries-m31-l1",
+              "title": "Case file: Saying no to unrealistic workloads",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Saying no to unrealistic workloads. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m31-l2",
+              "title": "The mechanism behind Saying no to unrealistic workloads",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Saying no to unrealistic workloads. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m31-l3",
+              "title": "Distinguish it: personal assertiveness versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Saying no to unrealistic workloads. Contrasting cases: personal assertiveness versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m31-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Saying no to unrealistic workloads. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m31-l5",
+              "title": "Choose a proportionate response to Saying no to unrealistic workloads",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Saying no to unrealistic workloads. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m31-l6",
+              "title": "Transfer mission: Saying no to unrealistic workloads in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Saying no to unrealistic workloads. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-32",
+          "title": "Academic supervision and role boundaries",
+          "problem": "Academic supervision and role boundaries",
+          "lessons": [
+            {
+              "id": "boundaries-m32-l1",
+              "title": "Case file: Academic supervision and role boundaries",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Academic supervision and role boundaries. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m32-l2",
+              "title": "The mechanism behind Academic supervision and role boundaries",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Academic supervision and role boundaries. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m32-l3",
+              "title": "Distinguish it: personal assertiveness versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Academic supervision and role boundaries. Contrasting cases: personal assertiveness versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m32-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Academic supervision and role boundaries. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m32-l5",
+              "title": "Choose a proportionate response to Academic supervision and role boundaries",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Academic supervision and role boundaries. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m32-l6",
+              "title": "Transfer mission: Academic supervision and role boundaries in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Academic supervision and role boundaries. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-33",
+          "title": "Customer service and harassment",
+          "problem": "Customer service and harassment",
+          "lessons": [
+            {
+              "id": "boundaries-m33-l1",
+              "title": "Case file: Customer service and harassment",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Customer service and harassment. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m33-l2",
+              "title": "The mechanism behind Customer service and harassment",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Customer service and harassment. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m33-l3",
+              "title": "Distinguish it: personal assertiveness versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Customer service and harassment. Contrasting cases: personal assertiveness versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m33-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Customer service and harassment. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m33-l5",
+              "title": "Choose a proportionate response to Customer service and harassment",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Customer service and harassment. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m33-l6",
+              "title": "Transfer mission: Customer service and harassment in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Customer service and harassment. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-34",
+          "title": "When formal grievance is safer",
+          "problem": "When formal grievance is safer",
+          "lessons": [
+            {
+              "id": "boundaries-m34-l1",
+              "title": "Case file: When formal grievance is safer",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When formal grievance is safer. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m34-l2",
+              "title": "The mechanism behind When formal grievance is safer",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When formal grievance is safer. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m34-l3",
+              "title": "Distinguish it: personal assertiveness versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When formal grievance is safer. Contrasting cases: personal assertiveness versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m34-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When formal grievance is safer. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m34-l5",
+              "title": "Choose a proportionate response to When formal grievance is safer",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When formal grievance is safer. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m34-l6",
+              "title": "Transfer mission: When formal grievance is safer in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When formal grievance is safer. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-35",
+          "title": "Resources available within organisations",
+          "problem": "Resources available within organisations",
+          "lessons": [
+            {
+              "id": "boundaries-m35-l1",
+              "title": "Case file: Resources available within organisations",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Resources available within organisations. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m35-l2",
+              "title": "The mechanism behind Resources available within organisations",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Resources available within organisations. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m35-l3",
+              "title": "Distinguish it: personal assertiveness versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Resources available within organisations. Contrasting cases: personal assertiveness versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m35-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Resources available within organisations. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m35-l5",
+              "title": "Choose a proportionate response to Resources available within organisations",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Resources available within organisations. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m35-l6",
+              "title": "Transfer mission: Resources available within organisations in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Resources available within organisations. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-book-8",
+      "title": "Difficult emotions after boundaries",
+      "distinction": "guilt versus wrongdoing",
+      "modules": [
+        {
+          "id": "boundaries-module-36",
+          "title": "Fear of disappointing others",
+          "problem": "Fear of disappointing others",
+          "lessons": [
+            {
+              "id": "boundaries-m36-l1",
+              "title": "Case file: Fear of disappointing others",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Fear of disappointing others. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m36-l2",
+              "title": "The mechanism behind Fear of disappointing others",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Fear of disappointing others. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m36-l3",
+              "title": "Distinguish it: guilt versus wrongdoing",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Fear of disappointing others. Contrasting cases: guilt versus wrongdoing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m36-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Fear of disappointing others. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m36-l5",
+              "title": "Choose a proportionate response to Fear of disappointing others",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Fear of disappointing others. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m36-l6",
+              "title": "Transfer mission: Fear of disappointing others in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Fear of disappointing others. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-37",
+          "title": "Anger when limits are imposed",
+          "problem": "Anger when limits are imposed",
+          "lessons": [
+            {
+              "id": "boundaries-m37-l1",
+              "title": "Case file: Anger when limits are imposed",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Anger when limits are imposed. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m37-l2",
+              "title": "The mechanism behind Anger when limits are imposed",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Anger when limits are imposed. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m37-l3",
+              "title": "Distinguish it: guilt versus wrongdoing",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Anger when limits are imposed. Contrasting cases: guilt versus wrongdoing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m37-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Anger when limits are imposed. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m37-l5",
+              "title": "Choose a proportionate response to Anger when limits are imposed",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Anger when limits are imposed. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m37-l6",
+              "title": "Transfer mission: Anger when limits are imposed in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Anger when limits are imposed. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-38",
+          "title": "Resentment from unspoken agreements",
+          "problem": "Resentment from unspoken agreements",
+          "lessons": [
+            {
+              "id": "boundaries-m38-l1",
+              "title": "Case file: Resentment from unspoken agreements",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Resentment from unspoken agreements. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m38-l2",
+              "title": "The mechanism behind Resentment from unspoken agreements",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Resentment from unspoken agreements. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m38-l3",
+              "title": "Distinguish it: guilt versus wrongdoing",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Resentment from unspoken agreements. Contrasting cases: guilt versus wrongdoing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m38-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Resentment from unspoken agreements. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m38-l5",
+              "title": "Choose a proportionate response to Resentment from unspoken agreements",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Resentment from unspoken agreements. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m38-l6",
+              "title": "Transfer mission: Resentment from unspoken agreements in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Resentment from unspoken agreements. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-39",
+          "title": "Shame after expressing a need",
+          "problem": "Shame after expressing a need",
+          "lessons": [
+            {
+              "id": "boundaries-m39-l1",
+              "title": "Case file: Shame after expressing a need",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Shame after expressing a need. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m39-l2",
+              "title": "The mechanism behind Shame after expressing a need",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Shame after expressing a need. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m39-l3",
+              "title": "Distinguish it: guilt versus wrongdoing",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Shame after expressing a need. Contrasting cases: guilt versus wrongdoing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m39-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Shame after expressing a need. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m39-l5",
+              "title": "Choose a proportionate response to Shame after expressing a need",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Shame after expressing a need. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m39-l6",
+              "title": "Transfer mission: Shame after expressing a need in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Shame after expressing a need. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-40",
+          "title": "Managing others' disappointment",
+          "problem": "Managing others' disappointment",
+          "lessons": [
+            {
+              "id": "boundaries-m40-l1",
+              "title": "Case file: Managing others' disappointment",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Managing others' disappointment. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m40-l2",
+              "title": "The mechanism behind Managing others' disappointment",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Managing others' disappointment. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m40-l3",
+              "title": "Distinguish it: guilt versus wrongdoing",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Managing others' disappointment. Contrasting cases: guilt versus wrongdoing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m40-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Managing others' disappointment. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m40-l5",
+              "title": "Choose a proportionate response to Managing others' disappointment",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Managing others' disappointment. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m40-l6",
+              "title": "Transfer mission: Managing others' disappointment in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Managing others' disappointment. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-book-9",
+      "title": "Safer action and escalation",
+      "distinction": "conversation versus safety plan",
+      "modules": [
+        {
+          "id": "boundaries-module-41",
+          "title": "A boundary script for a low-stakes request",
+          "problem": "A boundary script for a low-stakes request",
+          "lessons": [
+            {
+              "id": "boundaries-m41-l1",
+              "title": "Case file: A boundary script for a low-stakes request",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: A boundary script for a low-stakes request. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m41-l2",
+              "title": "The mechanism behind A boundary script for a low-stakes request",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: A boundary script for a low-stakes request. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m41-l3",
+              "title": "Distinguish it: conversation versus safety plan",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: A boundary script for a low-stakes request. Contrasting cases: conversation versus safety plan.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m41-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: A boundary script for a low-stakes request. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m41-l5",
+              "title": "Choose a proportionate response to A boundary script for a low-stakes request",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: A boundary script for a low-stakes request. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m41-l6",
+              "title": "Transfer mission: A boundary script for a low-stakes request in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: A boundary script for a low-stakes request. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-42",
+          "title": "When to stop debating",
+          "problem": "When to stop debating",
+          "lessons": [
+            {
+              "id": "boundaries-m42-l1",
+              "title": "Case file: When to stop debating",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When to stop debating. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m42-l2",
+              "title": "The mechanism behind When to stop debating",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When to stop debating. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m42-l3",
+              "title": "Distinguish it: conversation versus safety plan",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When to stop debating. Contrasting cases: conversation versus safety plan.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m42-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When to stop debating. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m42-l5",
+              "title": "Choose a proportionate response to When to stop debating",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When to stop debating. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m42-l6",
+              "title": "Transfer mission: When to stop debating in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When to stop debating. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-43",
+          "title": "Documenting violations appropriately",
+          "problem": "Documenting violations appropriately",
+          "lessons": [
+            {
+              "id": "boundaries-m43-l1",
+              "title": "Case file: Documenting violations appropriately",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Documenting violations appropriately. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m43-l2",
+              "title": "The mechanism behind Documenting violations appropriately",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Documenting violations appropriately. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m43-l3",
+              "title": "Distinguish it: conversation versus safety plan",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Documenting violations appropriately. Contrasting cases: conversation versus safety plan.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m43-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Documenting violations appropriately. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m43-l5",
+              "title": "Choose a proportionate response to Documenting violations appropriately",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Documenting violations appropriately. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m43-l6",
+              "title": "Transfer mission: Documenting violations appropriately in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Documenting violations appropriately. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-44",
+          "title": "Using allies and institutional procedures",
+          "problem": "Using allies and institutional procedures",
+          "lessons": [
+            {
+              "id": "boundaries-m44-l1",
+              "title": "Case file: Using allies and institutional procedures",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Using allies and institutional procedures. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m44-l2",
+              "title": "The mechanism behind Using allies and institutional procedures",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Using allies and institutional procedures. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m44-l3",
+              "title": "Distinguish it: conversation versus safety plan",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Using allies and institutional procedures. Contrasting cases: conversation versus safety plan.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m44-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Using allies and institutional procedures. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m44-l5",
+              "title": "Choose a proportionate response to Using allies and institutional procedures",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Using allies and institutional procedures. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m44-l6",
+              "title": "Transfer mission: Using allies and institutional procedures in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Using allies and institutional procedures. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-45",
+          "title": "Leaving unsafe situations without confrontation",
+          "problem": "Leaving unsafe situations without confrontation",
+          "lessons": [
+            {
+              "id": "boundaries-m45-l1",
+              "title": "Case file: Leaving unsafe situations without confrontation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Leaving unsafe situations without confrontation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m45-l2",
+              "title": "The mechanism behind Leaving unsafe situations without confrontation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Leaving unsafe situations without confrontation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m45-l3",
+              "title": "Distinguish it: conversation versus safety plan",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Leaving unsafe situations without confrontation. Contrasting cases: conversation versus safety plan.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m45-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Leaving unsafe situations without confrontation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m45-l5",
+              "title": "Choose a proportionate response to Leaving unsafe situations without confrontation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Leaving unsafe situations without confrontation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m45-l6",
+              "title": "Transfer mission: Leaving unsafe situations without confrontation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Leaving unsafe situations without confrontation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-book-10",
+      "title": "Advanced judgement",
+      "distinction": "universal rules versus contextual ethics",
+      "modules": [
+        {
+          "id": "boundaries-module-46",
+          "title": "Competing needs in caregiving",
+          "problem": "Competing needs in caregiving",
+          "lessons": [
+            {
+              "id": "boundaries-m46-l1",
+              "title": "Case file: Competing needs in caregiving",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Competing needs in caregiving. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m46-l2",
+              "title": "The mechanism behind Competing needs in caregiving",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Competing needs in caregiving. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m46-l3",
+              "title": "Distinguish it: universal rules versus contextual ethics",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Competing needs in caregiving. Contrasting cases: universal rules versus contextual ethics.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m46-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Competing needs in caregiving. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m46-l5",
+              "title": "Choose a proportionate response to Competing needs in caregiving",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Competing needs in caregiving. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m46-l6",
+              "title": "Transfer mission: Competing needs in caregiving in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Competing needs in caregiving. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-47",
+          "title": "Cultural differences in directness",
+          "problem": "Cultural differences in directness",
+          "lessons": [
+            {
+              "id": "boundaries-m47-l1",
+              "title": "Case file: Cultural differences in directness",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Cultural differences in directness. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m47-l2",
+              "title": "The mechanism behind Cultural differences in directness",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Cultural differences in directness. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m47-l3",
+              "title": "Distinguish it: universal rules versus contextual ethics",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Cultural differences in directness. Contrasting cases: universal rules versus contextual ethics.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m47-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Cultural differences in directness. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m47-l5",
+              "title": "Choose a proportionate response to Cultural differences in directness",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Cultural differences in directness. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m47-l6",
+              "title": "Transfer mission: Cultural differences in directness in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Cultural differences in directness. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-48",
+          "title": "Power, disability and capacity",
+          "problem": "Power, disability and capacity",
+          "lessons": [
+            {
+              "id": "boundaries-m48-l1",
+              "title": "Case file: Power, disability and capacity",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Power, disability and capacity. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m48-l2",
+              "title": "The mechanism behind Power, disability and capacity",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Power, disability and capacity. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m48-l3",
+              "title": "Distinguish it: universal rules versus contextual ethics",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Power, disability and capacity. Contrasting cases: universal rules versus contextual ethics.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m48-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Power, disability and capacity. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m48-l5",
+              "title": "Choose a proportionate response to Power, disability and capacity",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Power, disability and capacity. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m48-l6",
+              "title": "Transfer mission: Power, disability and capacity in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Power, disability and capacity. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-49",
+          "title": "A boundary that unintentionally controls",
+          "problem": "A boundary that unintentionally controls",
+          "lessons": [
+            {
+              "id": "boundaries-m49-l1",
+              "title": "Case file: A boundary that unintentionally controls",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: A boundary that unintentionally controls. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m49-l2",
+              "title": "The mechanism behind A boundary that unintentionally controls",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: A boundary that unintentionally controls. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m49-l3",
+              "title": "Distinguish it: universal rules versus contextual ethics",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: A boundary that unintentionally controls. Contrasting cases: universal rules versus contextual ethics.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m49-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: A boundary that unintentionally controls. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m49-l5",
+              "title": "Choose a proportionate response to A boundary that unintentionally controls",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: A boundary that unintentionally controls. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m49-l6",
+              "title": "Transfer mission: A boundary that unintentionally controls in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: A boundary that unintentionally controls. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "boundaries-module-50",
+          "title": "Integration: mutual autonomy under tension",
+          "problem": "Integration: mutual autonomy under tension",
+          "lessons": [
+            {
+              "id": "boundaries-m50-l1",
+              "title": "Case file: Integration: mutual autonomy under tension",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Integration: mutual autonomy under tension. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m50-l2",
+              "title": "The mechanism behind Integration: mutual autonomy under tension",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Integration: mutual autonomy under tension. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m50-l3",
+              "title": "Distinguish it: universal rules versus contextual ethics",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Integration: mutual autonomy under tension. Contrasting cases: universal rules versus contextual ethics.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m50-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Integration: mutual autonomy under tension. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m50-l5",
+              "title": "Choose a proportionate response to Integration: mutual autonomy under tension",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Integration: mutual autonomy under tension. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "boundaries-m50-l6",
+              "title": "Transfer mission: Integration: mutual autonomy under tension in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Integration: mutual autonomy under tension. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

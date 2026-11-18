@@ -1,0 +1,2828 @@
+{
+  "courseId": "overthinking",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Unpublished Course Lab blueprint; lesson titles and objectives only, no published learning nodes.",
+  "books": [
+    {
+      "id": "overthinking-book-1",
+      "title": "Thinking that stops helping",
+      "distinction": "problem-solving versus rumination",
+      "modules": [
+        {
+          "id": "overthinking-module-01",
+          "title": "Planning versus looping",
+          "problem": "Planning versus looping",
+          "lessons": [
+            {
+              "id": "overthinking-m1-l1",
+              "title": "Case file: Planning versus looping",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Planning versus looping. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m1-l2",
+              "title": "The mechanism behind Planning versus looping",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Planning versus looping. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m1-l3",
+              "title": "Distinguish it: problem-solving versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Planning versus looping. Contrasting cases: problem-solving versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m1-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Planning versus looping. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m1-l5",
+              "title": "Choose a proportionate response to Planning versus looping",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Planning versus looping. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m1-l6",
+              "title": "Transfer mission: Planning versus looping in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Planning versus looping. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-02",
+          "title": "Worry about tomorrow versus replaying yesterday",
+          "problem": "Worry about tomorrow versus replaying yesterday",
+          "lessons": [
+            {
+              "id": "overthinking-m2-l1",
+              "title": "Case file: Worry about tomorrow versus replaying yesterday",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Worry about tomorrow versus replaying yesterday. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m2-l2",
+              "title": "The mechanism behind Worry about tomorrow versus replaying yesterday",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Worry about tomorrow versus replaying yesterday. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m2-l3",
+              "title": "Distinguish it: problem-solving versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Worry about tomorrow versus replaying yesterday. Contrasting cases: problem-solving versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m2-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Worry about tomorrow versus replaying yesterday. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m2-l5",
+              "title": "Choose a proportionate response to Worry about tomorrow versus replaying yesterday",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Worry about tomorrow versus replaying yesterday. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m2-l6",
+              "title": "Transfer mission: Worry about tomorrow versus replaying yesterday in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Worry about tomorrow versus replaying yesterday. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-03",
+          "title": "Why thought volume is not insight",
+          "problem": "Why thought volume is not insight",
+          "lessons": [
+            {
+              "id": "overthinking-m3-l1",
+              "title": "Case file: Why thought volume is not insight",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Why thought volume is not insight. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m3-l2",
+              "title": "The mechanism behind Why thought volume is not insight",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Why thought volume is not insight. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m3-l3",
+              "title": "Distinguish it: problem-solving versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Why thought volume is not insight. Contrasting cases: problem-solving versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m3-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Why thought volume is not insight. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m3-l5",
+              "title": "Choose a proportionate response to Why thought volume is not insight",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Why thought volume is not insight. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m3-l6",
+              "title": "Transfer mission: Why thought volume is not insight in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Why thought volume is not insight. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-04",
+          "title": "Metacognitive beliefs about thinking",
+          "problem": "Metacognitive beliefs about thinking",
+          "lessons": [
+            {
+              "id": "overthinking-m4-l1",
+              "title": "Case file: Metacognitive beliefs about thinking",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Metacognitive beliefs about thinking. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m4-l2",
+              "title": "The mechanism behind Metacognitive beliefs about thinking",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Metacognitive beliefs about thinking. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m4-l3",
+              "title": "Distinguish it: problem-solving versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Metacognitive beliefs about thinking. Contrasting cases: problem-solving versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m4-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Metacognitive beliefs about thinking. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m4-l5",
+              "title": "Choose a proportionate response to Metacognitive beliefs about thinking",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Metacognitive beliefs about thinking. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m4-l6",
+              "title": "Transfer mission: Metacognitive beliefs about thinking in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Metacognitive beliefs about thinking. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-05",
+          "title": "Recognising the moment a loop begins",
+          "problem": "Recognising the moment a loop begins",
+          "lessons": [
+            {
+              "id": "overthinking-m5-l1",
+              "title": "Case file: Recognising the moment a loop begins",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Recognising the moment a loop begins. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m5-l2",
+              "title": "The mechanism behind Recognising the moment a loop begins",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Recognising the moment a loop begins. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m5-l3",
+              "title": "Distinguish it: problem-solving versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Recognising the moment a loop begins. Contrasting cases: problem-solving versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m5-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Recognising the moment a loop begins. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m5-l5",
+              "title": "Choose a proportionate response to Recognising the moment a loop begins",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Recognising the moment a loop begins. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m5-l6",
+              "title": "Transfer mission: Recognising the moment a loop begins in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Recognising the moment a loop begins. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-book-2",
+      "title": "Uncertainty and the search for certainty",
+      "distinction": "possibility versus probability",
+      "modules": [
+        {
+          "id": "overthinking-module-06",
+          "title": "Needing a perfectly safe decision",
+          "problem": "Needing a perfectly safe decision",
+          "lessons": [
+            {
+              "id": "overthinking-m6-l1",
+              "title": "Case file: Needing a perfectly safe decision",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Needing a perfectly safe decision. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m6-l2",
+              "title": "The mechanism behind Needing a perfectly safe decision",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Needing a perfectly safe decision. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m6-l3",
+              "title": "Distinguish it: possibility versus probability",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Needing a perfectly safe decision. Contrasting cases: possibility versus probability.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m6-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Needing a perfectly safe decision. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m6-l5",
+              "title": "Choose a proportionate response to Needing a perfectly safe decision",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Needing a perfectly safe decision. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m6-l6",
+              "title": "Transfer mission: Needing a perfectly safe decision in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Needing a perfectly safe decision. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-07",
+          "title": "Catastrophic predictions from incomplete data",
+          "problem": "Catastrophic predictions from incomplete data",
+          "lessons": [
+            {
+              "id": "overthinking-m7-l1",
+              "title": "Case file: Catastrophic predictions from incomplete data",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Catastrophic predictions from incomplete data. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m7-l2",
+              "title": "The mechanism behind Catastrophic predictions from incomplete data",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Catastrophic predictions from incomplete data. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m7-l3",
+              "title": "Distinguish it: possibility versus probability",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Catastrophic predictions from incomplete data. Contrasting cases: possibility versus probability.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m7-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Catastrophic predictions from incomplete data. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m7-l5",
+              "title": "Choose a proportionate response to Catastrophic predictions from incomplete data",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Catastrophic predictions from incomplete data. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m7-l6",
+              "title": "Transfer mission: Catastrophic predictions from incomplete data in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Catastrophic predictions from incomplete data. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-08",
+          "title": "Mental simulations without new information",
+          "problem": "Mental simulations without new information",
+          "lessons": [
+            {
+              "id": "overthinking-m8-l1",
+              "title": "Case file: Mental simulations without new information",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Mental simulations without new information. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m8-l2",
+              "title": "The mechanism behind Mental simulations without new information",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Mental simulations without new information. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m8-l3",
+              "title": "Distinguish it: possibility versus probability",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Mental simulations without new information. Contrasting cases: possibility versus probability.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m8-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Mental simulations without new information. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m8-l5",
+              "title": "Choose a proportionate response to Mental simulations without new information",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Mental simulations without new information. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m8-l6",
+              "title": "Transfer mission: Mental simulations without new information in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Mental simulations without new information. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-09",
+          "title": "The hidden cost of certainty-seeking",
+          "problem": "The hidden cost of certainty-seeking",
+          "lessons": [
+            {
+              "id": "overthinking-m9-l1",
+              "title": "Case file: The hidden cost of certainty-seeking",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: The hidden cost of certainty-seeking. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m9-l2",
+              "title": "The mechanism behind The hidden cost of certainty-seeking",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: The hidden cost of certainty-seeking. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m9-l3",
+              "title": "Distinguish it: possibility versus probability",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: The hidden cost of certainty-seeking. Contrasting cases: possibility versus probability.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m9-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: The hidden cost of certainty-seeking. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m9-l5",
+              "title": "Choose a proportionate response to The hidden cost of certainty-seeking",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: The hidden cost of certainty-seeking. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m9-l6",
+              "title": "Transfer mission: The hidden cost of certainty-seeking in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: The hidden cost of certainty-seeking. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-10",
+          "title": "When real problem-solving is warranted",
+          "problem": "When real problem-solving is warranted",
+          "lessons": [
+            {
+              "id": "overthinking-m10-l1",
+              "title": "Case file: When real problem-solving is warranted",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When real problem-solving is warranted. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m10-l2",
+              "title": "The mechanism behind When real problem-solving is warranted",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When real problem-solving is warranted. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m10-l3",
+              "title": "Distinguish it: possibility versus probability",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When real problem-solving is warranted. Contrasting cases: possibility versus probability.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m10-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When real problem-solving is warranted. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m10-l5",
+              "title": "Choose a proportionate response to When real problem-solving is warranted",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When real problem-solving is warranted. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m10-l6",
+              "title": "Transfer mission: When real problem-solving is warranted in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When real problem-solving is warranted. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-book-3",
+      "title": "Checking and reassurance",
+      "distinction": "comfort versus safety behaviour",
+      "modules": [
+        {
+          "id": "overthinking-module-11",
+          "title": "Re-reading a message for hidden meaning",
+          "problem": "Re-reading a message for hidden meaning",
+          "lessons": [
+            {
+              "id": "overthinking-m11-l1",
+              "title": "Case file: Re-reading a message for hidden meaning",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Re-reading a message for hidden meaning. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m11-l2",
+              "title": "The mechanism behind Re-reading a message for hidden meaning",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Re-reading a message for hidden meaning. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m11-l3",
+              "title": "Distinguish it: comfort versus safety behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Re-reading a message for hidden meaning. Contrasting cases: comfort versus safety behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m11-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Re-reading a message for hidden meaning. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m11-l5",
+              "title": "Choose a proportionate response to Re-reading a message for hidden meaning",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Re-reading a message for hidden meaning. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m11-l6",
+              "title": "Transfer mission: Re-reading a message for hidden meaning in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Re-reading a message for hidden meaning. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-12",
+          "title": "Asking the same question repeatedly",
+          "problem": "Asking the same question repeatedly",
+          "lessons": [
+            {
+              "id": "overthinking-m12-l1",
+              "title": "Case file: Asking the same question repeatedly",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Asking the same question repeatedly. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m12-l2",
+              "title": "The mechanism behind Asking the same question repeatedly",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Asking the same question repeatedly. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m12-l3",
+              "title": "Distinguish it: comfort versus safety behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Asking the same question repeatedly. Contrasting cases: comfort versus safety behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m12-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Asking the same question repeatedly. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m12-l5",
+              "title": "Choose a proportionate response to Asking the same question repeatedly",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Asking the same question repeatedly. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m12-l6",
+              "title": "Transfer mission: Asking the same question repeatedly in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Asking the same question repeatedly. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-13",
+          "title": "Searching symptoms for certainty",
+          "problem": "Searching symptoms for certainty",
+          "lessons": [
+            {
+              "id": "overthinking-m13-l1",
+              "title": "Case file: Searching symptoms for certainty",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Searching symptoms for certainty. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m13-l2",
+              "title": "The mechanism behind Searching symptoms for certainty",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Searching symptoms for certainty. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m13-l3",
+              "title": "Distinguish it: comfort versus safety behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Searching symptoms for certainty. Contrasting cases: comfort versus safety behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m13-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Searching symptoms for certainty. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m13-l5",
+              "title": "Choose a proportionate response to Searching symptoms for certainty",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Searching symptoms for certainty. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m13-l6",
+              "title": "Transfer mission: Searching symptoms for certainty in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Searching symptoms for certainty. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-14",
+          "title": "Mental review as covert checking",
+          "problem": "Mental review as covert checking",
+          "lessons": [
+            {
+              "id": "overthinking-m14-l1",
+              "title": "Case file: Mental review as covert checking",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Mental review as covert checking. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m14-l2",
+              "title": "The mechanism behind Mental review as covert checking",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Mental review as covert checking. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m14-l3",
+              "title": "Distinguish it: comfort versus safety behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Mental review as covert checking. Contrasting cases: comfort versus safety behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m14-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Mental review as covert checking. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m14-l5",
+              "title": "Choose a proportionate response to Mental review as covert checking",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Mental review as covert checking. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m14-l6",
+              "title": "Transfer mission: Mental review as covert checking in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Mental review as covert checking. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-15",
+          "title": "How temporary relief maintains the cycle",
+          "problem": "How temporary relief maintains the cycle",
+          "lessons": [
+            {
+              "id": "overthinking-m15-l1",
+              "title": "Case file: How temporary relief maintains the cycle",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: How temporary relief maintains the cycle. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m15-l2",
+              "title": "The mechanism behind How temporary relief maintains the cycle",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: How temporary relief maintains the cycle. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m15-l3",
+              "title": "Distinguish it: comfort versus safety behaviour",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: How temporary relief maintains the cycle. Contrasting cases: comfort versus safety behaviour.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m15-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: How temporary relief maintains the cycle. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m15-l5",
+              "title": "Choose a proportionate response to How temporary relief maintains the cycle",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: How temporary relief maintains the cycle. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m15-l6",
+              "title": "Transfer mission: How temporary relief maintains the cycle in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: How temporary relief maintains the cycle. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-book-4",
+      "title": "Emotion and cognition",
+      "distinction": "feeling versus evidence",
+      "modules": [
+        {
+          "id": "overthinking-module-16",
+          "title": "Anxiety treated as a warning signal",
+          "problem": "Anxiety treated as a warning signal",
+          "lessons": [
+            {
+              "id": "overthinking-m16-l1",
+              "title": "Case file: Anxiety treated as a warning signal",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Anxiety treated as a warning signal. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m16-l2",
+              "title": "The mechanism behind Anxiety treated as a warning signal",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Anxiety treated as a warning signal. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m16-l3",
+              "title": "Distinguish it: feeling versus evidence",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Anxiety treated as a warning signal. Contrasting cases: feeling versus evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m16-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Anxiety treated as a warning signal. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m16-l5",
+              "title": "Choose a proportionate response to Anxiety treated as a warning signal",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Anxiety treated as a warning signal. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m16-l6",
+              "title": "Transfer mission: Anxiety treated as a warning signal in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Anxiety treated as a warning signal. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-17",
+          "title": "Shame driving post-event replay",
+          "problem": "Shame driving post-event replay",
+          "lessons": [
+            {
+              "id": "overthinking-m17-l1",
+              "title": "Case file: Shame driving post-event replay",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Shame driving post-event replay. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m17-l2",
+              "title": "The mechanism behind Shame driving post-event replay",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Shame driving post-event replay. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m17-l3",
+              "title": "Distinguish it: feeling versus evidence",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Shame driving post-event replay. Contrasting cases: feeling versus evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m17-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Shame driving post-event replay. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m17-l5",
+              "title": "Choose a proportionate response to Shame driving post-event replay",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Shame driving post-event replay. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m17-l6",
+              "title": "Transfer mission: Shame driving post-event replay in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Shame driving post-event replay. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-18",
+          "title": "Anger maintaining mental arguments",
+          "problem": "Anger maintaining mental arguments",
+          "lessons": [
+            {
+              "id": "overthinking-m18-l1",
+              "title": "Case file: Anger maintaining mental arguments",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Anger maintaining mental arguments. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m18-l2",
+              "title": "The mechanism behind Anger maintaining mental arguments",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Anger maintaining mental arguments. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m18-l3",
+              "title": "Distinguish it: feeling versus evidence",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Anger maintaining mental arguments. Contrasting cases: feeling versus evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m18-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Anger maintaining mental arguments. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m18-l5",
+              "title": "Choose a proportionate response to Anger maintaining mental arguments",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Anger maintaining mental arguments. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m18-l6",
+              "title": "Transfer mission: Anger maintaining mental arguments in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Anger maintaining mental arguments. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-19",
+          "title": "Depressive rumination and withdrawal",
+          "problem": "Depressive rumination and withdrawal",
+          "lessons": [
+            {
+              "id": "overthinking-m19-l1",
+              "title": "Case file: Depressive rumination and withdrawal",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Depressive rumination and withdrawal. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m19-l2",
+              "title": "The mechanism behind Depressive rumination and withdrawal",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Depressive rumination and withdrawal. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m19-l3",
+              "title": "Distinguish it: feeling versus evidence",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Depressive rumination and withdrawal. Contrasting cases: feeling versus evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m19-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Depressive rumination and withdrawal. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m19-l5",
+              "title": "Choose a proportionate response to Depressive rumination and withdrawal",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Depressive rumination and withdrawal. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m19-l6",
+              "title": "Transfer mission: Depressive rumination and withdrawal in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Depressive rumination and withdrawal. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-20",
+          "title": "How sleep loss changes threat appraisal",
+          "problem": "How sleep loss changes threat appraisal",
+          "lessons": [
+            {
+              "id": "overthinking-m20-l1",
+              "title": "Case file: How sleep loss changes threat appraisal",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: How sleep loss changes threat appraisal. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m20-l2",
+              "title": "The mechanism behind How sleep loss changes threat appraisal",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: How sleep loss changes threat appraisal. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m20-l3",
+              "title": "Distinguish it: feeling versus evidence",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: How sleep loss changes threat appraisal. Contrasting cases: feeling versus evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m20-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: How sleep loss changes threat appraisal. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m20-l5",
+              "title": "Choose a proportionate response to How sleep loss changes threat appraisal",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: How sleep loss changes threat appraisal. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m20-l6",
+              "title": "Transfer mission: How sleep loss changes threat appraisal in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: How sleep loss changes threat appraisal. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-book-5",
+      "title": "Attention and cognitive control",
+      "distinction": "attention redirection versus suppression",
+      "modules": [
+        {
+          "id": "overthinking-module-21",
+          "title": "Why thought suppression rebounds",
+          "problem": "Why thought suppression rebounds",
+          "lessons": [
+            {
+              "id": "overthinking-m21-l1",
+              "title": "Case file: Why thought suppression rebounds",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Why thought suppression rebounds. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m21-l2",
+              "title": "The mechanism behind Why thought suppression rebounds",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Why thought suppression rebounds. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m21-l3",
+              "title": "Distinguish it: attention redirection versus suppression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Why thought suppression rebounds. Contrasting cases: attention redirection versus suppression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m21-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Why thought suppression rebounds. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m21-l5",
+              "title": "Choose a proportionate response to Why thought suppression rebounds",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Why thought suppression rebounds. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m21-l6",
+              "title": "Transfer mission: Why thought suppression rebounds in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Why thought suppression rebounds. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-22",
+          "title": "Switching tasks while mentally hooked",
+          "problem": "Switching tasks while mentally hooked",
+          "lessons": [
+            {
+              "id": "overthinking-m22-l1",
+              "title": "Case file: Switching tasks while mentally hooked",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Switching tasks while mentally hooked. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m22-l2",
+              "title": "The mechanism behind Switching tasks while mentally hooked",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Switching tasks while mentally hooked. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m22-l3",
+              "title": "Distinguish it: attention redirection versus suppression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Switching tasks while mentally hooked. Contrasting cases: attention redirection versus suppression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m22-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Switching tasks while mentally hooked. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m22-l5",
+              "title": "Choose a proportionate response to Switching tasks while mentally hooked",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Switching tasks while mentally hooked. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m22-l6",
+              "title": "Transfer mission: Switching tasks while mentally hooked in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Switching tasks while mentally hooked. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-23",
+          "title": "Unhelpful monitoring of thoughts",
+          "problem": "Unhelpful monitoring of thoughts",
+          "lessons": [
+            {
+              "id": "overthinking-m23-l1",
+              "title": "Case file: Unhelpful monitoring of thoughts",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Unhelpful monitoring of thoughts. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m23-l2",
+              "title": "The mechanism behind Unhelpful monitoring of thoughts",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Unhelpful monitoring of thoughts. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m23-l3",
+              "title": "Distinguish it: attention redirection versus suppression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Unhelpful monitoring of thoughts. Contrasting cases: attention redirection versus suppression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m23-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Unhelpful monitoring of thoughts. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m23-l5",
+              "title": "Choose a proportionate response to Unhelpful monitoring of thoughts",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Unhelpful monitoring of thoughts. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m23-l6",
+              "title": "Transfer mission: Unhelpful monitoring of thoughts in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Unhelpful monitoring of thoughts. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-24",
+          "title": "Choosing an anchor without avoidance",
+          "problem": "Choosing an anchor without avoidance",
+          "lessons": [
+            {
+              "id": "overthinking-m24-l1",
+              "title": "Case file: Choosing an anchor without avoidance",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Choosing an anchor without avoidance. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m24-l2",
+              "title": "The mechanism behind Choosing an anchor without avoidance",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Choosing an anchor without avoidance. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m24-l3",
+              "title": "Distinguish it: attention redirection versus suppression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Choosing an anchor without avoidance. Contrasting cases: attention redirection versus suppression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m24-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Choosing an anchor without avoidance. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m24-l5",
+              "title": "Choose a proportionate response to Choosing an anchor without avoidance",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Choosing an anchor without avoidance. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m24-l6",
+              "title": "Transfer mission: Choosing an anchor without avoidance in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Choosing an anchor without avoidance. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-25",
+          "title": "Attention flexibility under stress",
+          "problem": "Attention flexibility under stress",
+          "lessons": [
+            {
+              "id": "overthinking-m25-l1",
+              "title": "Case file: Attention flexibility under stress",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Attention flexibility under stress. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m25-l2",
+              "title": "The mechanism behind Attention flexibility under stress",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Attention flexibility under stress. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m25-l3",
+              "title": "Distinguish it: attention redirection versus suppression",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Attention flexibility under stress. Contrasting cases: attention redirection versus suppression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m25-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Attention flexibility under stress. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m25-l5",
+              "title": "Choose a proportionate response to Attention flexibility under stress",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Attention flexibility under stress. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m25-l6",
+              "title": "Transfer mission: Attention flexibility under stress in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Attention flexibility under stress. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-book-6",
+      "title": "Decision-making traps",
+      "distinction": "responsibility versus perfectionism",
+      "modules": [
+        {
+          "id": "overthinking-module-26",
+          "title": "The perfect-choice fallacy",
+          "problem": "The perfect-choice fallacy",
+          "lessons": [
+            {
+              "id": "overthinking-m26-l1",
+              "title": "Case file: The perfect-choice fallacy",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: The perfect-choice fallacy. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m26-l2",
+              "title": "The mechanism behind The perfect-choice fallacy",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: The perfect-choice fallacy. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m26-l3",
+              "title": "Distinguish it: responsibility versus perfectionism",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: The perfect-choice fallacy. Contrasting cases: responsibility versus perfectionism.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m26-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: The perfect-choice fallacy. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m26-l5",
+              "title": "Choose a proportionate response to The perfect-choice fallacy",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: The perfect-choice fallacy. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m26-l6",
+              "title": "Transfer mission: The perfect-choice fallacy in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: The perfect-choice fallacy. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-27",
+          "title": "Counterfactual regret before acting",
+          "problem": "Counterfactual regret before acting",
+          "lessons": [
+            {
+              "id": "overthinking-m27-l1",
+              "title": "Case file: Counterfactual regret before acting",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Counterfactual regret before acting. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m27-l2",
+              "title": "The mechanism behind Counterfactual regret before acting",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Counterfactual regret before acting. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m27-l3",
+              "title": "Distinguish it: responsibility versus perfectionism",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Counterfactual regret before acting. Contrasting cases: responsibility versus perfectionism.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m27-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Counterfactual regret before acting. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m27-l5",
+              "title": "Choose a proportionate response to Counterfactual regret before acting",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Counterfactual regret before acting. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m27-l6",
+              "title": "Transfer mission: Counterfactual regret before acting in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Counterfactual regret before acting. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-28",
+          "title": "Overresearch and diminishing returns",
+          "problem": "Overresearch and diminishing returns",
+          "lessons": [
+            {
+              "id": "overthinking-m28-l1",
+              "title": "Case file: Overresearch and diminishing returns",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Overresearch and diminishing returns. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m28-l2",
+              "title": "The mechanism behind Overresearch and diminishing returns",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Overresearch and diminishing returns. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m28-l3",
+              "title": "Distinguish it: responsibility versus perfectionism",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Overresearch and diminishing returns. Contrasting cases: responsibility versus perfectionism.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m28-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Overresearch and diminishing returns. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m28-l5",
+              "title": "Choose a proportionate response to Overresearch and diminishing returns",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Overresearch and diminishing returns. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m28-l6",
+              "title": "Transfer mission: Overresearch and diminishing returns in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Overresearch and diminishing returns. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-29",
+          "title": "Risk calculations with no stopping rule",
+          "problem": "Risk calculations with no stopping rule",
+          "lessons": [
+            {
+              "id": "overthinking-m29-l1",
+              "title": "Case file: Risk calculations with no stopping rule",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Risk calculations with no stopping rule. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m29-l2",
+              "title": "The mechanism behind Risk calculations with no stopping rule",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Risk calculations with no stopping rule. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m29-l3",
+              "title": "Distinguish it: responsibility versus perfectionism",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Risk calculations with no stopping rule. Contrasting cases: responsibility versus perfectionism.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m29-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Risk calculations with no stopping rule. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m29-l5",
+              "title": "Choose a proportionate response to Risk calculations with no stopping rule",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Risk calculations with no stopping rule. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m29-l6",
+              "title": "Transfer mission: Risk calculations with no stopping rule in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Risk calculations with no stopping rule. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-30",
+          "title": "When external constraints make choices harder",
+          "problem": "When external constraints make choices harder",
+          "lessons": [
+            {
+              "id": "overthinking-m30-l1",
+              "title": "Case file: When external constraints make choices harder",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When external constraints make choices harder. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m30-l2",
+              "title": "The mechanism behind When external constraints make choices harder",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When external constraints make choices harder. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m30-l3",
+              "title": "Distinguish it: responsibility versus perfectionism",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When external constraints make choices harder. Contrasting cases: responsibility versus perfectionism.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m30-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When external constraints make choices harder. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m30-l5",
+              "title": "Choose a proportionate response to When external constraints make choices harder",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When external constraints make choices harder. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m30-l6",
+              "title": "Transfer mission: When external constraints make choices harder in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When external constraints make choices harder. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-book-7",
+      "title": "Different forms of loops",
+      "distinction": "worry versus obsession versus rumination",
+      "modules": [
+        {
+          "id": "overthinking-module-31",
+          "title": "Repetitive worry in GAD",
+          "problem": "Repetitive worry in GAD",
+          "lessons": [
+            {
+              "id": "overthinking-m31-l1",
+              "title": "Case file: Repetitive worry in GAD",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Repetitive worry in GAD. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m31-l2",
+              "title": "The mechanism behind Repetitive worry in GAD",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Repetitive worry in GAD. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m31-l3",
+              "title": "Distinguish it: worry versus obsession versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Repetitive worry in GAD. Contrasting cases: worry versus obsession versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m31-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Repetitive worry in GAD. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m31-l5",
+              "title": "Choose a proportionate response to Repetitive worry in GAD",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Repetitive worry in GAD. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m31-l6",
+              "title": "Transfer mission: Repetitive worry in GAD in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Repetitive worry in GAD. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-32",
+          "title": "Obsessive doubt and ritualising",
+          "problem": "Obsessive doubt and ritualising",
+          "lessons": [
+            {
+              "id": "overthinking-m32-l1",
+              "title": "Case file: Obsessive doubt and ritualising",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Obsessive doubt and ritualising. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m32-l2",
+              "title": "The mechanism behind Obsessive doubt and ritualising",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Obsessive doubt and ritualising. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m32-l3",
+              "title": "Distinguish it: worry versus obsession versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Obsessive doubt and ritualising. Contrasting cases: worry versus obsession versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m32-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Obsessive doubt and ritualising. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m32-l5",
+              "title": "Choose a proportionate response to Obsessive doubt and ritualising",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Obsessive doubt and ritualising. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m32-l6",
+              "title": "Transfer mission: Obsessive doubt and ritualising in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Obsessive doubt and ritualising. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-33",
+          "title": "Relationship rumination and reassurance",
+          "problem": "Relationship rumination and reassurance",
+          "lessons": [
+            {
+              "id": "overthinking-m33-l1",
+              "title": "Case file: Relationship rumination and reassurance",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Relationship rumination and reassurance. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m33-l2",
+              "title": "The mechanism behind Relationship rumination and reassurance",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Relationship rumination and reassurance. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m33-l3",
+              "title": "Distinguish it: worry versus obsession versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Relationship rumination and reassurance. Contrasting cases: worry versus obsession versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m33-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Relationship rumination and reassurance. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m33-l5",
+              "title": "Choose a proportionate response to Relationship rumination and reassurance",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Relationship rumination and reassurance. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m33-l6",
+              "title": "Transfer mission: Relationship rumination and reassurance in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Relationship rumination and reassurance. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-34",
+          "title": "Health anxiety and symptom checking",
+          "problem": "Health anxiety and symptom checking",
+          "lessons": [
+            {
+              "id": "overthinking-m34-l1",
+              "title": "Case file: Health anxiety and symptom checking",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Health anxiety and symptom checking. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m34-l2",
+              "title": "The mechanism behind Health anxiety and symptom checking",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Health anxiety and symptom checking. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m34-l3",
+              "title": "Distinguish it: worry versus obsession versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Health anxiety and symptom checking. Contrasting cases: worry versus obsession versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m34-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Health anxiety and symptom checking. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m34-l5",
+              "title": "Choose a proportionate response to Health anxiety and symptom checking",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Health anxiety and symptom checking. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m34-l6",
+              "title": "Transfer mission: Health anxiety and symptom checking in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Health anxiety and symptom checking. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-35",
+          "title": "Distinguishing productive reflection from distress",
+          "problem": "Distinguishing productive reflection from distress",
+          "lessons": [
+            {
+              "id": "overthinking-m35-l1",
+              "title": "Case file: Distinguishing productive reflection from distress",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Distinguishing productive reflection from distress. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m35-l2",
+              "title": "The mechanism behind Distinguishing productive reflection from distress",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Distinguishing productive reflection from distress. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m35-l3",
+              "title": "Distinguish it: worry versus obsession versus rumination",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Distinguishing productive reflection from distress. Contrasting cases: worry versus obsession versus rumination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m35-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Distinguishing productive reflection from distress. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m35-l5",
+              "title": "Choose a proportionate response to Distinguishing productive reflection from distress",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Distinguishing productive reflection from distress. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m35-l6",
+              "title": "Transfer mission: Distinguishing productive reflection from distress in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Distinguishing productive reflection from distress. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-book-8",
+      "title": "Breaking maintaining loops",
+      "distinction": "distress tolerance versus forced positivity",
+      "modules": [
+        {
+          "id": "overthinking-module-36",
+          "title": "Scheduling genuine problem-solving",
+          "problem": "Scheduling genuine problem-solving",
+          "lessons": [
+            {
+              "id": "overthinking-m36-l1",
+              "title": "Case file: Scheduling genuine problem-solving",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Scheduling genuine problem-solving. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m36-l2",
+              "title": "The mechanism behind Scheduling genuine problem-solving",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Scheduling genuine problem-solving. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m36-l3",
+              "title": "Distinguish it: distress tolerance versus forced positivity",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Scheduling genuine problem-solving. Contrasting cases: distress tolerance versus forced positivity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m36-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Scheduling genuine problem-solving. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m36-l5",
+              "title": "Choose a proportionate response to Scheduling genuine problem-solving",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Scheduling genuine problem-solving. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m36-l6",
+              "title": "Transfer mission: Scheduling genuine problem-solving in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Scheduling genuine problem-solving. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-37",
+          "title": "Responding differently to checking urges",
+          "problem": "Responding differently to checking urges",
+          "lessons": [
+            {
+              "id": "overthinking-m37-l1",
+              "title": "Case file: Responding differently to checking urges",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Responding differently to checking urges. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m37-l2",
+              "title": "The mechanism behind Responding differently to checking urges",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Responding differently to checking urges. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m37-l3",
+              "title": "Distinguish it: distress tolerance versus forced positivity",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Responding differently to checking urges. Contrasting cases: distress tolerance versus forced positivity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m37-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Responding differently to checking urges. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m37-l5",
+              "title": "Choose a proportionate response to Responding differently to checking urges",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Responding differently to checking urges. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m37-l6",
+              "title": "Transfer mission: Responding differently to checking urges in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Responding differently to checking urges. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-38",
+          "title": "Behavioural experiments with uncertainty",
+          "problem": "Behavioural experiments with uncertainty",
+          "lessons": [
+            {
+              "id": "overthinking-m38-l1",
+              "title": "Case file: Behavioural experiments with uncertainty",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Behavioural experiments with uncertainty. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m38-l2",
+              "title": "The mechanism behind Behavioural experiments with uncertainty",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Behavioural experiments with uncertainty. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m38-l3",
+              "title": "Distinguish it: distress tolerance versus forced positivity",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Behavioural experiments with uncertainty. Contrasting cases: distress tolerance versus forced positivity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m38-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Behavioural experiments with uncertainty. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m38-l5",
+              "title": "Choose a proportionate response to Behavioural experiments with uncertainty",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Behavioural experiments with uncertainty. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m38-l6",
+              "title": "Transfer mission: Behavioural experiments with uncertainty in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Behavioural experiments with uncertainty. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-39",
+          "title": "Defusion and metacognitive distance",
+          "problem": "Defusion and metacognitive distance",
+          "lessons": [
+            {
+              "id": "overthinking-m39-l1",
+              "title": "Case file: Defusion and metacognitive distance",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Defusion and metacognitive distance. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m39-l2",
+              "title": "The mechanism behind Defusion and metacognitive distance",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Defusion and metacognitive distance. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m39-l3",
+              "title": "Distinguish it: distress tolerance versus forced positivity",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Defusion and metacognitive distance. Contrasting cases: distress tolerance versus forced positivity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m39-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Defusion and metacognitive distance. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m39-l5",
+              "title": "Choose a proportionate response to Defusion and metacognitive distance",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Defusion and metacognitive distance. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m39-l6",
+              "title": "Transfer mission: Defusion and metacognitive distance in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Defusion and metacognitive distance. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-40",
+          "title": "When psychological support is indicated",
+          "problem": "When psychological support is indicated",
+          "lessons": [
+            {
+              "id": "overthinking-m40-l1",
+              "title": "Case file: When psychological support is indicated",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When psychological support is indicated. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m40-l2",
+              "title": "The mechanism behind When psychological support is indicated",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When psychological support is indicated. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m40-l3",
+              "title": "Distinguish it: distress tolerance versus forced positivity",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When psychological support is indicated. Contrasting cases: distress tolerance versus forced positivity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m40-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When psychological support is indicated. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m40-l5",
+              "title": "Choose a proportionate response to When psychological support is indicated",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When psychological support is indicated. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m40-l6",
+              "title": "Transfer mission: When psychological support is indicated in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When psychological support is indicated. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-book-9",
+      "title": "The world that rewards overthinking",
+      "distinction": "personal habit versus incentive system",
+      "modules": [
+        {
+          "id": "overthinking-module-41",
+          "title": "High-stakes exams and perfectionist systems",
+          "problem": "High-stakes exams and perfectionist systems",
+          "lessons": [
+            {
+              "id": "overthinking-m41-l1",
+              "title": "Case file: High-stakes exams and perfectionist systems",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: High-stakes exams and perfectionist systems. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m41-l2",
+              "title": "The mechanism behind High-stakes exams and perfectionist systems",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: High-stakes exams and perfectionist systems. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m41-l3",
+              "title": "Distinguish it: personal habit versus incentive system",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: High-stakes exams and perfectionist systems. Contrasting cases: personal habit versus incentive system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m41-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: High-stakes exams and perfectionist systems. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m41-l5",
+              "title": "Choose a proportionate response to High-stakes exams and perfectionist systems",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: High-stakes exams and perfectionist systems. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m41-l6",
+              "title": "Transfer mission: High-stakes exams and perfectionist systems in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: High-stakes exams and perfectionist systems. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-42",
+          "title": "Always-on work communication",
+          "problem": "Always-on work communication",
+          "lessons": [
+            {
+              "id": "overthinking-m42-l1",
+              "title": "Case file: Always-on work communication",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Always-on work communication. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m42-l2",
+              "title": "The mechanism behind Always-on work communication",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Always-on work communication. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m42-l3",
+              "title": "Distinguish it: personal habit versus incentive system",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Always-on work communication. Contrasting cases: personal habit versus incentive system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m42-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Always-on work communication. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m42-l5",
+              "title": "Choose a proportionate response to Always-on work communication",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Always-on work communication. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m42-l6",
+              "title": "Transfer mission: Always-on work communication in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Always-on work communication. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-43",
+          "title": "Online outrage and repetitive monitoring",
+          "problem": "Online outrage and repetitive monitoring",
+          "lessons": [
+            {
+              "id": "overthinking-m43-l1",
+              "title": "Case file: Online outrage and repetitive monitoring",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Online outrage and repetitive monitoring. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m43-l2",
+              "title": "The mechanism behind Online outrage and repetitive monitoring",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Online outrage and repetitive monitoring. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m43-l3",
+              "title": "Distinguish it: personal habit versus incentive system",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Online outrage and repetitive monitoring. Contrasting cases: personal habit versus incentive system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m43-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Online outrage and repetitive monitoring. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m43-l5",
+              "title": "Choose a proportionate response to Online outrage and repetitive monitoring",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Online outrage and repetitive monitoring. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m43-l6",
+              "title": "Transfer mission: Online outrage and repetitive monitoring in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Online outrage and repetitive monitoring. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-44",
+          "title": "Family criticism and hypervigilance",
+          "problem": "Family criticism and hypervigilance",
+          "lessons": [
+            {
+              "id": "overthinking-m44-l1",
+              "title": "Case file: Family criticism and hypervigilance",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Family criticism and hypervigilance. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m44-l2",
+              "title": "The mechanism behind Family criticism and hypervigilance",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Family criticism and hypervigilance. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m44-l3",
+              "title": "Distinguish it: personal habit versus incentive system",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Family criticism and hypervigilance. Contrasting cases: personal habit versus incentive system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m44-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Family criticism and hypervigilance. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m44-l5",
+              "title": "Choose a proportionate response to Family criticism and hypervigilance",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Family criticism and hypervigilance. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m44-l6",
+              "title": "Transfer mission: Family criticism and hypervigilance in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Family criticism and hypervigilance. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-45",
+          "title": "Discrimination and real-world uncertainty",
+          "problem": "Discrimination and real-world uncertainty",
+          "lessons": [
+            {
+              "id": "overthinking-m45-l1",
+              "title": "Case file: Discrimination and real-world uncertainty",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Discrimination and real-world uncertainty. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m45-l2",
+              "title": "The mechanism behind Discrimination and real-world uncertainty",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Discrimination and real-world uncertainty. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m45-l3",
+              "title": "Distinguish it: personal habit versus incentive system",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Discrimination and real-world uncertainty. Contrasting cases: personal habit versus incentive system.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m45-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Discrimination and real-world uncertainty. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m45-l5",
+              "title": "Choose a proportionate response to Discrimination and real-world uncertainty",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Discrimination and real-world uncertainty. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m45-l6",
+              "title": "Transfer mission: Discrimination and real-world uncertainty in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Discrimination and real-world uncertainty. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-book-10",
+      "title": "Advanced transfer and maintenance",
+      "distinction": "learning versus rumination about learning",
+      "modules": [
+        {
+          "id": "overthinking-module-46",
+          "title": "When thinking becomes identity",
+          "problem": "When thinking becomes identity",
+          "lessons": [
+            {
+              "id": "overthinking-m46-l1",
+              "title": "Case file: When thinking becomes identity",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When thinking becomes identity. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m46-l2",
+              "title": "The mechanism behind When thinking becomes identity",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When thinking becomes identity. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m46-l3",
+              "title": "Distinguish it: learning versus rumination about learning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When thinking becomes identity. Contrasting cases: learning versus rumination about learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m46-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When thinking becomes identity. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m46-l5",
+              "title": "Choose a proportionate response to When thinking becomes identity",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When thinking becomes identity. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m46-l6",
+              "title": "Transfer mission: When thinking becomes identity in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When thinking becomes identity. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-47",
+          "title": "Evidence updates versus endless reanalysis",
+          "problem": "Evidence updates versus endless reanalysis",
+          "lessons": [
+            {
+              "id": "overthinking-m47-l1",
+              "title": "Case file: Evidence updates versus endless reanalysis",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Evidence updates versus endless reanalysis. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m47-l2",
+              "title": "The mechanism behind Evidence updates versus endless reanalysis",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Evidence updates versus endless reanalysis. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m47-l3",
+              "title": "Distinguish it: learning versus rumination about learning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Evidence updates versus endless reanalysis. Contrasting cases: learning versus rumination about learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m47-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Evidence updates versus endless reanalysis. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m47-l5",
+              "title": "Choose a proportionate response to Evidence updates versus endless reanalysis",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Evidence updates versus endless reanalysis. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m47-l6",
+              "title": "Transfer mission: Evidence updates versus endless reanalysis in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Evidence updates versus endless reanalysis. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-48",
+          "title": "Relapse during major transitions",
+          "problem": "Relapse during major transitions",
+          "lessons": [
+            {
+              "id": "overthinking-m48-l1",
+              "title": "Case file: Relapse during major transitions",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Relapse during major transitions. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m48-l2",
+              "title": "The mechanism behind Relapse during major transitions",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Relapse during major transitions. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m48-l3",
+              "title": "Distinguish it: learning versus rumination about learning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Relapse during major transitions. Contrasting cases: learning versus rumination about learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m48-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Relapse during major transitions. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m48-l5",
+              "title": "Choose a proportionate response to Relapse during major transitions",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Relapse during major transitions. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m48-l6",
+              "title": "Transfer mission: Relapse during major transitions in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Relapse during major transitions. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-49",
+          "title": "Helping a friend without reassurance loops",
+          "problem": "Helping a friend without reassurance loops",
+          "lessons": [
+            {
+              "id": "overthinking-m49-l1",
+              "title": "Case file: Helping a friend without reassurance loops",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Helping a friend without reassurance loops. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m49-l2",
+              "title": "The mechanism behind Helping a friend without reassurance loops",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Helping a friend without reassurance loops. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m49-l3",
+              "title": "Distinguish it: learning versus rumination about learning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Helping a friend without reassurance loops. Contrasting cases: learning versus rumination about learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m49-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Helping a friend without reassurance loops. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m49-l5",
+              "title": "Choose a proportionate response to Helping a friend without reassurance loops",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Helping a friend without reassurance loops. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m49-l6",
+              "title": "Transfer mission: Helping a friend without reassurance loops in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Helping a friend without reassurance loops. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "overthinking-module-50",
+          "title": "Integration: identify the leverage point",
+          "problem": "Integration: identify the leverage point",
+          "lessons": [
+            {
+              "id": "overthinking-m50-l1",
+              "title": "Case file: Integration: identify the leverage point",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Integration: identify the leverage point. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m50-l2",
+              "title": "The mechanism behind Integration: identify the leverage point",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Integration: identify the leverage point. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m50-l3",
+              "title": "Distinguish it: learning versus rumination about learning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Integration: identify the leverage point. Contrasting cases: learning versus rumination about learning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m50-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Integration: identify the leverage point. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m50-l5",
+              "title": "Choose a proportionate response to Integration: identify the leverage point",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Integration: identify the leverage point. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "overthinking-m50-l6",
+              "title": "Transfer mission: Integration: identify the leverage point in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Integration: identify the leverage point. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2828 @@
+{
+  "courseId": "manipulation",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Unpublished Course Lab blueprint; lesson titles and objectives only, no published learning nodes.",
+  "books": [
+    {
+      "id": "manipulation-book-1",
+      "title": "Defining the problem",
+      "distinction": "influence versus coercion",
+      "modules": [
+        {
+          "id": "manipulation-module-01",
+          "title": "Persuasion versus manipulation",
+          "problem": "Persuasion versus manipulation",
+          "lessons": [
+            {
+              "id": "manipulation-m1-l1",
+              "title": "Case file: Persuasion versus manipulation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Persuasion versus manipulation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m1-l2",
+              "title": "The mechanism behind Persuasion versus manipulation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Persuasion versus manipulation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m1-l3",
+              "title": "Distinguish it: influence versus coercion",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Persuasion versus manipulation. Contrasting cases: influence versus coercion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m1-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Persuasion versus manipulation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m1-l5",
+              "title": "Choose a proportionate response to Persuasion versus manipulation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Persuasion versus manipulation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m1-l6",
+              "title": "Transfer mission: Persuasion versus manipulation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Persuasion versus manipulation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-02",
+          "title": "Accidental hurt versus strategic deception",
+          "problem": "Accidental hurt versus strategic deception",
+          "lessons": [
+            {
+              "id": "manipulation-m2-l1",
+              "title": "Case file: Accidental hurt versus strategic deception",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Accidental hurt versus strategic deception. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m2-l2",
+              "title": "The mechanism behind Accidental hurt versus strategic deception",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Accidental hurt versus strategic deception. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m2-l3",
+              "title": "Distinguish it: influence versus coercion",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Accidental hurt versus strategic deception. Contrasting cases: influence versus coercion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m2-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Accidental hurt versus strategic deception. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m2-l5",
+              "title": "Choose a proportionate response to Accidental hurt versus strategic deception",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Accidental hurt versus strategic deception. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m2-l6",
+              "title": "Transfer mission: Accidental hurt versus strategic deception in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Accidental hurt versus strategic deception. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-03",
+          "title": "Disagreement versus reality-undermining",
+          "problem": "Disagreement versus reality-undermining",
+          "lessons": [
+            {
+              "id": "manipulation-m3-l1",
+              "title": "Case file: Disagreement versus reality-undermining",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Disagreement versus reality-undermining. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m3-l2",
+              "title": "The mechanism behind Disagreement versus reality-undermining",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Disagreement versus reality-undermining. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m3-l3",
+              "title": "Distinguish it: influence versus coercion",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Disagreement versus reality-undermining. Contrasting cases: influence versus coercion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m3-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Disagreement versus reality-undermining. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m3-l5",
+              "title": "Choose a proportionate response to Disagreement versus reality-undermining",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Disagreement versus reality-undermining. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m3-l6",
+              "title": "Transfer mission: Disagreement versus reality-undermining in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Disagreement versus reality-undermining. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-04",
+          "title": "Influence under unequal power",
+          "problem": "Influence under unequal power",
+          "lessons": [
+            {
+              "id": "manipulation-m4-l1",
+              "title": "Case file: Influence under unequal power",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Influence under unequal power. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m4-l2",
+              "title": "The mechanism behind Influence under unequal power",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Influence under unequal power. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m4-l3",
+              "title": "Distinguish it: influence versus coercion",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Influence under unequal power. Contrasting cases: influence versus coercion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m4-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Influence under unequal power. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m4-l5",
+              "title": "Choose a proportionate response to Influence under unequal power",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Influence under unequal power. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m4-l6",
+              "title": "Transfer mission: Influence under unequal power in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Influence under unequal power. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-05",
+          "title": "When a label obscures what happened",
+          "problem": "When a label obscures what happened",
+          "lessons": [
+            {
+              "id": "manipulation-m5-l1",
+              "title": "Case file: When a label obscures what happened",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When a label obscures what happened. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m5-l2",
+              "title": "The mechanism behind When a label obscures what happened",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When a label obscures what happened. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m5-l3",
+              "title": "Distinguish it: influence versus coercion",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When a label obscures what happened. Contrasting cases: influence versus coercion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m5-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When a label obscures what happened. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m5-l5",
+              "title": "Choose a proportionate response to When a label obscures what happened",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When a label obscures what happened. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m5-l6",
+              "title": "Transfer mission: When a label obscures what happened in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When a label obscures what happened. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-book-2",
+      "title": "Gaslighting examined",
+      "distinction": "mistaken memory versus sustained undermining",
+      "modules": [
+        {
+          "id": "manipulation-module-06",
+          "title": "Denying an event versus repeated gaslighting",
+          "problem": "Denying an event versus repeated gaslighting",
+          "lessons": [
+            {
+              "id": "manipulation-m6-l1",
+              "title": "Case file: Denying an event versus repeated gaslighting",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Denying an event versus repeated gaslighting. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m6-l2",
+              "title": "The mechanism behind Denying an event versus repeated gaslighting",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Denying an event versus repeated gaslighting. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m6-l3",
+              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Denying an event versus repeated gaslighting. Contrasting cases: mistaken memory versus sustained undermining.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m6-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Denying an event versus repeated gaslighting. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m6-l5",
+              "title": "Choose a proportionate response to Denying an event versus repeated gaslighting",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Denying an event versus repeated gaslighting. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m6-l6",
+              "title": "Transfer mission: Denying an event versus repeated gaslighting in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Denying an event versus repeated gaslighting. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-07",
+          "title": "Attacks on memory and competence",
+          "problem": "Attacks on memory and competence",
+          "lessons": [
+            {
+              "id": "manipulation-m7-l1",
+              "title": "Case file: Attacks on memory and competence",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Attacks on memory and competence. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m7-l2",
+              "title": "The mechanism behind Attacks on memory and competence",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Attacks on memory and competence. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m7-l3",
+              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Attacks on memory and competence. Contrasting cases: mistaken memory versus sustained undermining.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m7-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Attacks on memory and competence. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m7-l5",
+              "title": "Choose a proportionate response to Attacks on memory and competence",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Attacks on memory and competence. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m7-l6",
+              "title": "Transfer mission: Attacks on memory and competence in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Attacks on memory and competence. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-08",
+          "title": "Selective evidence and moving standards",
+          "problem": "Selective evidence and moving standards",
+          "lessons": [
+            {
+              "id": "manipulation-m8-l1",
+              "title": "Case file: Selective evidence and moving standards",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Selective evidence and moving standards. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m8-l2",
+              "title": "The mechanism behind Selective evidence and moving standards",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Selective evidence and moving standards. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m8-l3",
+              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Selective evidence and moving standards. Contrasting cases: mistaken memory versus sustained undermining.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m8-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Selective evidence and moving standards. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m8-l5",
+              "title": "Choose a proportionate response to Selective evidence and moving standards",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Selective evidence and moving standards. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m8-l6",
+              "title": "Transfer mission: Selective evidence and moving standards in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Selective evidence and moving standards. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-09",
+          "title": "Dependency on another person's account",
+          "problem": "Dependency on another person's account",
+          "lessons": [
+            {
+              "id": "manipulation-m9-l1",
+              "title": "Case file: Dependency on another person's account",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Dependency on another person's account. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m9-l2",
+              "title": "The mechanism behind Dependency on another person's account",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Dependency on another person's account. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m9-l3",
+              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Dependency on another person's account. Contrasting cases: mistaken memory versus sustained undermining.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m9-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Dependency on another person's account. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m9-l5",
+              "title": "Choose a proportionate response to Dependency on another person's account",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Dependency on another person's account. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m9-l6",
+              "title": "Transfer mission: Dependency on another person's account in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Dependency on another person's account. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-10",
+          "title": "Why single exchanges are insufficient",
+          "problem": "Why single exchanges are insufficient",
+          "lessons": [
+            {
+              "id": "manipulation-m10-l1",
+              "title": "Case file: Why single exchanges are insufficient",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Why single exchanges are insufficient. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m10-l2",
+              "title": "The mechanism behind Why single exchanges are insufficient",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Why single exchanges are insufficient. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m10-l3",
+              "title": "Distinguish it: mistaken memory versus sustained undermining",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Why single exchanges are insufficient. Contrasting cases: mistaken memory versus sustained undermining.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m10-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Why single exchanges are insufficient. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m10-l5",
+              "title": "Choose a proportionate response to Why single exchanges are insufficient",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Why single exchanges are insufficient. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m10-l6",
+              "title": "Transfer mission: Why single exchanges are insufficient in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Why single exchanges are insufficient. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-book-3",
+      "title": "Responsibility and blame",
+      "distinction": "defensiveness versus DARVO",
+      "modules": [
+        {
+          "id": "manipulation-module-11",
+          "title": "Denial, attack and role reversal",
+          "problem": "Denial, attack and role reversal",
+          "lessons": [
+            {
+              "id": "manipulation-m11-l1",
+              "title": "Case file: Denial, attack and role reversal",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Denial, attack and role reversal. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m11-l2",
+              "title": "The mechanism behind Denial, attack and role reversal",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Denial, attack and role reversal. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m11-l3",
+              "title": "Distinguish it: defensiveness versus DARVO",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Denial, attack and role reversal. Contrasting cases: defensiveness versus DARVO.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m11-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Denial, attack and role reversal. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m11-l5",
+              "title": "Choose a proportionate response to Denial, attack and role reversal",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Denial, attack and role reversal. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m11-l6",
+              "title": "Transfer mission: Denial, attack and role reversal in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Denial, attack and role reversal. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-12",
+          "title": "False equivalence in arguments",
+          "problem": "False equivalence in arguments",
+          "lessons": [
+            {
+              "id": "manipulation-m12-l1",
+              "title": "Case file: False equivalence in arguments",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: False equivalence in arguments. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m12-l2",
+              "title": "The mechanism behind False equivalence in arguments",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: False equivalence in arguments. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m12-l3",
+              "title": "Distinguish it: defensiveness versus DARVO",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: False equivalence in arguments. Contrasting cases: defensiveness versus DARVO.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m12-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: False equivalence in arguments. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m12-l5",
+              "title": "Choose a proportionate response to False equivalence in arguments",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: False equivalence in arguments. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m12-l6",
+              "title": "Transfer mission: False equivalence in arguments in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: False equivalence in arguments. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-13",
+          "title": "Whataboutism and topic diversion",
+          "problem": "Whataboutism and topic diversion",
+          "lessons": [
+            {
+              "id": "manipulation-m13-l1",
+              "title": "Case file: Whataboutism and topic diversion",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Whataboutism and topic diversion. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m13-l2",
+              "title": "The mechanism behind Whataboutism and topic diversion",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Whataboutism and topic diversion. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m13-l3",
+              "title": "Distinguish it: defensiveness versus DARVO",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Whataboutism and topic diversion. Contrasting cases: defensiveness versus DARVO.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m13-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Whataboutism and topic diversion. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m13-l5",
+              "title": "Choose a proportionate response to Whataboutism and topic diversion",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Whataboutism and topic diversion. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m13-l6",
+              "title": "Transfer mission: Whataboutism and topic diversion in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Whataboutism and topic diversion. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-14",
+          "title": "Apologies that redirect responsibility",
+          "problem": "Apologies that redirect responsibility",
+          "lessons": [
+            {
+              "id": "manipulation-m14-l1",
+              "title": "Case file: Apologies that redirect responsibility",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Apologies that redirect responsibility. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m14-l2",
+              "title": "The mechanism behind Apologies that redirect responsibility",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Apologies that redirect responsibility. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m14-l3",
+              "title": "Distinguish it: defensiveness versus DARVO",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Apologies that redirect responsibility. Contrasting cases: defensiveness versus DARVO.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m14-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Apologies that redirect responsibility. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m14-l5",
+              "title": "Choose a proportionate response to Apologies that redirect responsibility",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Apologies that redirect responsibility. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m14-l6",
+              "title": "Transfer mission: Apologies that redirect responsibility in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Apologies that redirect responsibility. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-15",
+          "title": "When genuine disputes resist neat labels",
+          "problem": "When genuine disputes resist neat labels",
+          "lessons": [
+            {
+              "id": "manipulation-m15-l1",
+              "title": "Case file: When genuine disputes resist neat labels",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When genuine disputes resist neat labels. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m15-l2",
+              "title": "The mechanism behind When genuine disputes resist neat labels",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When genuine disputes resist neat labels. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m15-l3",
+              "title": "Distinguish it: defensiveness versus DARVO",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When genuine disputes resist neat labels. Contrasting cases: defensiveness versus DARVO.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m15-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When genuine disputes resist neat labels. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m15-l5",
+              "title": "Choose a proportionate response to When genuine disputes resist neat labels",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When genuine disputes resist neat labels. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m15-l6",
+              "title": "Transfer mission: When genuine disputes resist neat labels in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When genuine disputes resist neat labels. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-book-4",
+      "title": "Dependency and coercive control",
+      "distinction": "isolated persuasion versus ongoing control",
+      "modules": [
+        {
+          "id": "manipulation-module-16",
+          "title": "Monitoring framed as care",
+          "problem": "Monitoring framed as care",
+          "lessons": [
+            {
+              "id": "manipulation-m16-l1",
+              "title": "Case file: Monitoring framed as care",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Monitoring framed as care. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m16-l2",
+              "title": "The mechanism behind Monitoring framed as care",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Monitoring framed as care. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m16-l3",
+              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Monitoring framed as care. Contrasting cases: isolated persuasion versus ongoing control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m16-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Monitoring framed as care. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m16-l5",
+              "title": "Choose a proportionate response to Monitoring framed as care",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Monitoring framed as care. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m16-l6",
+              "title": "Transfer mission: Monitoring framed as care in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Monitoring framed as care. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-17",
+          "title": "Isolation disguised as loyalty",
+          "problem": "Isolation disguised as loyalty",
+          "lessons": [
+            {
+              "id": "manipulation-m17-l1",
+              "title": "Case file: Isolation disguised as loyalty",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Isolation disguised as loyalty. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m17-l2",
+              "title": "The mechanism behind Isolation disguised as loyalty",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Isolation disguised as loyalty. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m17-l3",
+              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Isolation disguised as loyalty. Contrasting cases: isolated persuasion versus ongoing control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m17-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Isolation disguised as loyalty. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m17-l5",
+              "title": "Choose a proportionate response to Isolation disguised as loyalty",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Isolation disguised as loyalty. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m17-l6",
+              "title": "Transfer mission: Isolation disguised as loyalty in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Isolation disguised as loyalty. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-18",
+          "title": "Financial pressure and limited choices",
+          "problem": "Financial pressure and limited choices",
+          "lessons": [
+            {
+              "id": "manipulation-m18-l1",
+              "title": "Case file: Financial pressure and limited choices",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Financial pressure and limited choices. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m18-l2",
+              "title": "The mechanism behind Financial pressure and limited choices",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Financial pressure and limited choices. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m18-l3",
+              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Financial pressure and limited choices. Contrasting cases: isolated persuasion versus ongoing control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m18-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Financial pressure and limited choices. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m18-l5",
+              "title": "Choose a proportionate response to Financial pressure and limited choices",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Financial pressure and limited choices. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m18-l6",
+              "title": "Transfer mission: Financial pressure and limited choices in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Financial pressure and limited choices. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-19",
+          "title": "Threats, punishments and compliance",
+          "problem": "Threats, punishments and compliance",
+          "lessons": [
+            {
+              "id": "manipulation-m19-l1",
+              "title": "Case file: Threats, punishments and compliance",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Threats, punishments and compliance. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m19-l2",
+              "title": "The mechanism behind Threats, punishments and compliance",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Threats, punishments and compliance. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m19-l3",
+              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Threats, punishments and compliance. Contrasting cases: isolated persuasion versus ongoing control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m19-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Threats, punishments and compliance. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m19-l5",
+              "title": "Choose a proportionate response to Threats, punishments and compliance",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Threats, punishments and compliance. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m19-l6",
+              "title": "Transfer mission: Threats, punishments and compliance in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Threats, punishments and compliance. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-20",
+          "title": "Entrapment without visible violence",
+          "problem": "Entrapment without visible violence",
+          "lessons": [
+            {
+              "id": "manipulation-m20-l1",
+              "title": "Case file: Entrapment without visible violence",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Entrapment without visible violence. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m20-l2",
+              "title": "The mechanism behind Entrapment without visible violence",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Entrapment without visible violence. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m20-l3",
+              "title": "Distinguish it: isolated persuasion versus ongoing control",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Entrapment without visible violence. Contrasting cases: isolated persuasion versus ongoing control.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m20-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Entrapment without visible violence. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m20-l5",
+              "title": "Choose a proportionate response to Entrapment without visible violence",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Entrapment without visible violence. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m20-l6",
+              "title": "Transfer mission: Entrapment without visible violence in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Entrapment without visible violence. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-book-5",
+      "title": "Language tactics",
+      "distinction": "rhetoric versus established intent",
+      "modules": [
+        {
+          "id": "manipulation-module-21",
+          "title": "Loaded questions and forced choices",
+          "problem": "Loaded questions and forced choices",
+          "lessons": [
+            {
+              "id": "manipulation-m21-l1",
+              "title": "Case file: Loaded questions and forced choices",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Loaded questions and forced choices. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m21-l2",
+              "title": "The mechanism behind Loaded questions and forced choices",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Loaded questions and forced choices. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m21-l3",
+              "title": "Distinguish it: rhetoric versus established intent",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Loaded questions and forced choices. Contrasting cases: rhetoric versus established intent.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m21-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Loaded questions and forced choices. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m21-l5",
+              "title": "Choose a proportionate response to Loaded questions and forced choices",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Loaded questions and forced choices. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m21-l6",
+              "title": "Transfer mission: Loaded questions and forced choices in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Loaded questions and forced choices. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-22",
+          "title": "Minimising harm with comparisons",
+          "problem": "Minimising harm with comparisons",
+          "lessons": [
+            {
+              "id": "manipulation-m22-l1",
+              "title": "Case file: Minimising harm with comparisons",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Minimising harm with comparisons. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m22-l2",
+              "title": "The mechanism behind Minimising harm with comparisons",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Minimising harm with comparisons. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m22-l3",
+              "title": "Distinguish it: rhetoric versus established intent",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Minimising harm with comparisons. Contrasting cases: rhetoric versus established intent.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m22-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Minimising harm with comparisons. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m22-l5",
+              "title": "Choose a proportionate response to Minimising harm with comparisons",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Minimising harm with comparisons. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m22-l6",
+              "title": "Transfer mission: Minimising harm with comparisons in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Minimising harm with comparisons. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-23",
+          "title": "Ambiguity that defeats accountability",
+          "problem": "Ambiguity that defeats accountability",
+          "lessons": [
+            {
+              "id": "manipulation-m23-l1",
+              "title": "Case file: Ambiguity that defeats accountability",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Ambiguity that defeats accountability. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m23-l2",
+              "title": "The mechanism behind Ambiguity that defeats accountability",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Ambiguity that defeats accountability. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m23-l3",
+              "title": "Distinguish it: rhetoric versus established intent",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Ambiguity that defeats accountability. Contrasting cases: rhetoric versus established intent.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m23-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Ambiguity that defeats accountability. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m23-l5",
+              "title": "Choose a proportionate response to Ambiguity that defeats accountability",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Ambiguity that defeats accountability. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m23-l6",
+              "title": "Transfer mission: Ambiguity that defeats accountability in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Ambiguity that defeats accountability. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-24",
+          "title": "Guilt appeals and obligation",
+          "problem": "Guilt appeals and obligation",
+          "lessons": [
+            {
+              "id": "manipulation-m24-l1",
+              "title": "Case file: Guilt appeals and obligation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Guilt appeals and obligation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m24-l2",
+              "title": "The mechanism behind Guilt appeals and obligation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Guilt appeals and obligation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m24-l3",
+              "title": "Distinguish it: rhetoric versus established intent",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Guilt appeals and obligation. Contrasting cases: rhetoric versus established intent.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m24-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Guilt appeals and obligation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m24-l5",
+              "title": "Choose a proportionate response to Guilt appeals and obligation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Guilt appeals and obligation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m24-l6",
+              "title": "Transfer mission: Guilt appeals and obligation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Guilt appeals and obligation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-25",
+          "title": "Love-bombing claims versus normal enthusiasm",
+          "problem": "Love-bombing claims versus normal enthusiasm",
+          "lessons": [
+            {
+              "id": "manipulation-m25-l1",
+              "title": "Case file: Love-bombing claims versus normal enthusiasm",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Love-bombing claims versus normal enthusiasm. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m25-l2",
+              "title": "The mechanism behind Love-bombing claims versus normal enthusiasm",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Love-bombing claims versus normal enthusiasm. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m25-l3",
+              "title": "Distinguish it: rhetoric versus established intent",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Love-bombing claims versus normal enthusiasm. Contrasting cases: rhetoric versus established intent.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m25-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Love-bombing claims versus normal enthusiasm. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m25-l5",
+              "title": "Choose a proportionate response to Love-bombing claims versus normal enthusiasm",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Love-bombing claims versus normal enthusiasm. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m25-l6",
+              "title": "Transfer mission: Love-bombing claims versus normal enthusiasm in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Love-bombing claims versus normal enthusiasm. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-book-6",
+      "title": "Information and uncertainty",
+      "distinction": "uncertainty versus fabricated certainty",
+      "modules": [
+        {
+          "id": "manipulation-module-26",
+          "title": "Cherry-picked screenshots",
+          "problem": "Cherry-picked screenshots",
+          "lessons": [
+            {
+              "id": "manipulation-m26-l1",
+              "title": "Case file: Cherry-picked screenshots",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Cherry-picked screenshots. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m26-l2",
+              "title": "The mechanism behind Cherry-picked screenshots",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Cherry-picked screenshots. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m26-l3",
+              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Cherry-picked screenshots. Contrasting cases: uncertainty versus fabricated certainty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m26-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Cherry-picked screenshots. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m26-l5",
+              "title": "Choose a proportionate response to Cherry-picked screenshots",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Cherry-picked screenshots. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m26-l6",
+              "title": "Transfer mission: Cherry-picked screenshots in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Cherry-picked screenshots. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-27",
+          "title": "Conflicting stories from mutual friends",
+          "problem": "Conflicting stories from mutual friends",
+          "lessons": [
+            {
+              "id": "manipulation-m27-l1",
+              "title": "Case file: Conflicting stories from mutual friends",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Conflicting stories from mutual friends. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m27-l2",
+              "title": "The mechanism behind Conflicting stories from mutual friends",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Conflicting stories from mutual friends. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m27-l3",
+              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Conflicting stories from mutual friends. Contrasting cases: uncertainty versus fabricated certainty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m27-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Conflicting stories from mutual friends. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m27-l5",
+              "title": "Choose a proportionate response to Conflicting stories from mutual friends",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Conflicting stories from mutual friends. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m27-l6",
+              "title": "Transfer mission: Conflicting stories from mutual friends in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Conflicting stories from mutual friends. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-28",
+          "title": "Memory confidence and reconstructive recall",
+          "problem": "Memory confidence and reconstructive recall",
+          "lessons": [
+            {
+              "id": "manipulation-m28-l1",
+              "title": "Case file: Memory confidence and reconstructive recall",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Memory confidence and reconstructive recall. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m28-l2",
+              "title": "The mechanism behind Memory confidence and reconstructive recall",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Memory confidence and reconstructive recall. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m28-l3",
+              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Memory confidence and reconstructive recall. Contrasting cases: uncertainty versus fabricated certainty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m28-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Memory confidence and reconstructive recall. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m28-l5",
+              "title": "Choose a proportionate response to Memory confidence and reconstructive recall",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Memory confidence and reconstructive recall. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m28-l6",
+              "title": "Transfer mission: Memory confidence and reconstructive recall in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Memory confidence and reconstructive recall. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-29",
+          "title": "Evidence logs and privacy trade-offs",
+          "problem": "Evidence logs and privacy trade-offs",
+          "lessons": [
+            {
+              "id": "manipulation-m29-l1",
+              "title": "Case file: Evidence logs and privacy trade-offs",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Evidence logs and privacy trade-offs. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m29-l2",
+              "title": "The mechanism behind Evidence logs and privacy trade-offs",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Evidence logs and privacy trade-offs. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m29-l3",
+              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Evidence logs and privacy trade-offs. Contrasting cases: uncertainty versus fabricated certainty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m29-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Evidence logs and privacy trade-offs. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m29-l5",
+              "title": "Choose a proportionate response to Evidence logs and privacy trade-offs",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Evidence logs and privacy trade-offs. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m29-l6",
+              "title": "Transfer mission: Evidence logs and privacy trade-offs in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Evidence logs and privacy trade-offs. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-30",
+          "title": "Why motive-reading can backfire",
+          "problem": "Why motive-reading can backfire",
+          "lessons": [
+            {
+              "id": "manipulation-m30-l1",
+              "title": "Case file: Why motive-reading can backfire",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Why motive-reading can backfire. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m30-l2",
+              "title": "The mechanism behind Why motive-reading can backfire",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Why motive-reading can backfire. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m30-l3",
+              "title": "Distinguish it: uncertainty versus fabricated certainty",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Why motive-reading can backfire. Contrasting cases: uncertainty versus fabricated certainty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m30-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Why motive-reading can backfire. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m30-l5",
+              "title": "Choose a proportionate response to Why motive-reading can backfire",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Why motive-reading can backfire. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m30-l6",
+              "title": "Transfer mission: Why motive-reading can backfire in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Why motive-reading can backfire. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-book-7",
+      "title": "Power and social context",
+      "distinction": "individual tactic versus structural power",
+      "modules": [
+        {
+          "id": "manipulation-module-31",
+          "title": "Age and authority differences",
+          "problem": "Age and authority differences",
+          "lessons": [
+            {
+              "id": "manipulation-m31-l1",
+              "title": "Case file: Age and authority differences",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Age and authority differences. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m31-l2",
+              "title": "The mechanism behind Age and authority differences",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Age and authority differences. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m31-l3",
+              "title": "Distinguish it: individual tactic versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Age and authority differences. Contrasting cases: individual tactic versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m31-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Age and authority differences. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m31-l5",
+              "title": "Choose a proportionate response to Age and authority differences",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Age and authority differences. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m31-l6",
+              "title": "Transfer mission: Age and authority differences in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Age and authority differences. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-32",
+          "title": "Workplace retaliation risks",
+          "problem": "Workplace retaliation risks",
+          "lessons": [
+            {
+              "id": "manipulation-m32-l1",
+              "title": "Case file: Workplace retaliation risks",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Workplace retaliation risks. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m32-l2",
+              "title": "The mechanism behind Workplace retaliation risks",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Workplace retaliation risks. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m32-l3",
+              "title": "Distinguish it: individual tactic versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Workplace retaliation risks. Contrasting cases: individual tactic versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m32-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Workplace retaliation risks. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m32-l5",
+              "title": "Choose a proportionate response to Workplace retaliation risks",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Workplace retaliation risks. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m32-l6",
+              "title": "Transfer mission: Workplace retaliation risks in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Workplace retaliation risks. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-33",
+          "title": "Family obligation and dependence",
+          "problem": "Family obligation and dependence",
+          "lessons": [
+            {
+              "id": "manipulation-m33-l1",
+              "title": "Case file: Family obligation and dependence",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Family obligation and dependence. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m33-l2",
+              "title": "The mechanism behind Family obligation and dependence",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Family obligation and dependence. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m33-l3",
+              "title": "Distinguish it: individual tactic versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Family obligation and dependence. Contrasting cases: individual tactic versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m33-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Family obligation and dependence. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m33-l5",
+              "title": "Choose a proportionate response to Family obligation and dependence",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Family obligation and dependence. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m33-l6",
+              "title": "Transfer mission: Family obligation and dependence in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Family obligation and dependence. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-34",
+          "title": "Institutional denial and credibility",
+          "problem": "Institutional denial and credibility",
+          "lessons": [
+            {
+              "id": "manipulation-m34-l1",
+              "title": "Case file: Institutional denial and credibility",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Institutional denial and credibility. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m34-l2",
+              "title": "The mechanism behind Institutional denial and credibility",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Institutional denial and credibility. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m34-l3",
+              "title": "Distinguish it: individual tactic versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Institutional denial and credibility. Contrasting cases: individual tactic versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m34-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Institutional denial and credibility. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m34-l5",
+              "title": "Choose a proportionate response to Institutional denial and credibility",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Institutional denial and credibility. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m34-l6",
+              "title": "Transfer mission: Institutional denial and credibility in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Institutional denial and credibility. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-35",
+          "title": "Cultural norms around obedience",
+          "problem": "Cultural norms around obedience",
+          "lessons": [
+            {
+              "id": "manipulation-m35-l1",
+              "title": "Case file: Cultural norms around obedience",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Cultural norms around obedience. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m35-l2",
+              "title": "The mechanism behind Cultural norms around obedience",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Cultural norms around obedience. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m35-l3",
+              "title": "Distinguish it: individual tactic versus structural power",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Cultural norms around obedience. Contrasting cases: individual tactic versus structural power.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m35-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Cultural norms around obedience. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m35-l5",
+              "title": "Choose a proportionate response to Cultural norms around obedience",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Cultural norms around obedience. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m35-l6",
+              "title": "Transfer mission: Cultural norms around obedience in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Cultural norms around obedience. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-book-8",
+      "title": "Choosing responses",
+      "distinction": "confrontation versus safety planning",
+      "modules": [
+        {
+          "id": "manipulation-module-36",
+          "title": "Setting a boundary without a diagnosis",
+          "problem": "Setting a boundary without a diagnosis",
+          "lessons": [
+            {
+              "id": "manipulation-m36-l1",
+              "title": "Case file: Setting a boundary without a diagnosis",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Setting a boundary without a diagnosis. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m36-l2",
+              "title": "The mechanism behind Setting a boundary without a diagnosis",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Setting a boundary without a diagnosis. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m36-l3",
+              "title": "Distinguish it: confrontation versus safety planning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Setting a boundary without a diagnosis. Contrasting cases: confrontation versus safety planning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m36-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Setting a boundary without a diagnosis. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m36-l5",
+              "title": "Choose a proportionate response to Setting a boundary without a diagnosis",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Setting a boundary without a diagnosis. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m36-l6",
+              "title": "Transfer mission: Setting a boundary without a diagnosis in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Setting a boundary without a diagnosis. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-37",
+          "title": "Asking for specifics and accountability",
+          "problem": "Asking for specifics and accountability",
+          "lessons": [
+            {
+              "id": "manipulation-m37-l1",
+              "title": "Case file: Asking for specifics and accountability",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Asking for specifics and accountability. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m37-l2",
+              "title": "The mechanism behind Asking for specifics and accountability",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Asking for specifics and accountability. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m37-l3",
+              "title": "Distinguish it: confrontation versus safety planning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Asking for specifics and accountability. Contrasting cases: confrontation versus safety planning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m37-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Asking for specifics and accountability. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m37-l5",
+              "title": "Choose a proportionate response to Asking for specifics and accountability",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Asking for specifics and accountability. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m37-l6",
+              "title": "Transfer mission: Asking for specifics and accountability in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Asking for specifics and accountability. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-38",
+          "title": "Recognising when debate is unsafe",
+          "problem": "Recognising when debate is unsafe",
+          "lessons": [
+            {
+              "id": "manipulation-m38-l1",
+              "title": "Case file: Recognising when debate is unsafe",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Recognising when debate is unsafe. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m38-l2",
+              "title": "The mechanism behind Recognising when debate is unsafe",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Recognising when debate is unsafe. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m38-l3",
+              "title": "Distinguish it: confrontation versus safety planning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Recognising when debate is unsafe. Contrasting cases: confrontation versus safety planning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m38-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Recognising when debate is unsafe. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m38-l5",
+              "title": "Choose a proportionate response to Recognising when debate is unsafe",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Recognising when debate is unsafe. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m38-l6",
+              "title": "Transfer mission: Recognising when debate is unsafe in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Recognising when debate is unsafe. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-39",
+          "title": "Support networks and external perspective",
+          "problem": "Support networks and external perspective",
+          "lessons": [
+            {
+              "id": "manipulation-m39-l1",
+              "title": "Case file: Support networks and external perspective",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Support networks and external perspective. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m39-l2",
+              "title": "The mechanism behind Support networks and external perspective",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Support networks and external perspective. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m39-l3",
+              "title": "Distinguish it: confrontation versus safety planning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Support networks and external perspective. Contrasting cases: confrontation versus safety planning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m39-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Support networks and external perspective. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m39-l5",
+              "title": "Choose a proportionate response to Support networks and external perspective",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Support networks and external perspective. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m39-l6",
+              "title": "Transfer mission: Support networks and external perspective in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Support networks and external perspective. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-40",
+          "title": "Exit planning for coercive situations",
+          "problem": "Exit planning for coercive situations",
+          "lessons": [
+            {
+              "id": "manipulation-m40-l1",
+              "title": "Case file: Exit planning for coercive situations",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Exit planning for coercive situations. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m40-l2",
+              "title": "The mechanism behind Exit planning for coercive situations",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Exit planning for coercive situations. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m40-l3",
+              "title": "Distinguish it: confrontation versus safety planning",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Exit planning for coercive situations. Contrasting cases: confrontation versus safety planning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m40-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Exit planning for coercive situations. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m40-l5",
+              "title": "Choose a proportionate response to Exit planning for coercive situations",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Exit planning for coercive situations. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m40-l6",
+              "title": "Transfer mission: Exit planning for coercive situations in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Exit planning for coercive situations. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-book-9",
+      "title": "Recovery and recalibration",
+      "distinction": "adaptation versus permanent distrust",
+      "modules": [
+        {
+          "id": "manipulation-module-41",
+          "title": "After prolonged uncertainty about reality",
+          "problem": "After prolonged uncertainty about reality",
+          "lessons": [
+            {
+              "id": "manipulation-m41-l1",
+              "title": "Case file: After prolonged uncertainty about reality",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: After prolonged uncertainty about reality. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m41-l2",
+              "title": "The mechanism behind After prolonged uncertainty about reality",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: After prolonged uncertainty about reality. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m41-l3",
+              "title": "Distinguish it: adaptation versus permanent distrust",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: After prolonged uncertainty about reality. Contrasting cases: adaptation versus permanent distrust.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m41-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: After prolonged uncertainty about reality. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m41-l5",
+              "title": "Choose a proportionate response to After prolonged uncertainty about reality",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: After prolonged uncertainty about reality. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m41-l6",
+              "title": "Transfer mission: After prolonged uncertainty about reality in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: After prolonged uncertainty about reality. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-42",
+          "title": "Rebuilding independent judgement",
+          "problem": "Rebuilding independent judgement",
+          "lessons": [
+            {
+              "id": "manipulation-m42-l1",
+              "title": "Case file: Rebuilding independent judgement",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Rebuilding independent judgement. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m42-l2",
+              "title": "The mechanism behind Rebuilding independent judgement",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Rebuilding independent judgement. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m42-l3",
+              "title": "Distinguish it: adaptation versus permanent distrust",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Rebuilding independent judgement. Contrasting cases: adaptation versus permanent distrust.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m42-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Rebuilding independent judgement. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m42-l5",
+              "title": "Choose a proportionate response to Rebuilding independent judgement",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Rebuilding independent judgement. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m42-l6",
+              "title": "Transfer mission: Rebuilding independent judgement in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Rebuilding independent judgement. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-43",
+          "title": "Healthy trust after deception",
+          "problem": "Healthy trust after deception",
+          "lessons": [
+            {
+              "id": "manipulation-m43-l1",
+              "title": "Case file: Healthy trust after deception",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Healthy trust after deception. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m43-l2",
+              "title": "The mechanism behind Healthy trust after deception",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Healthy trust after deception. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m43-l3",
+              "title": "Distinguish it: adaptation versus permanent distrust",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Healthy trust after deception. Contrasting cases: adaptation versus permanent distrust.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m43-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Healthy trust after deception. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m43-l5",
+              "title": "Choose a proportionate response to Healthy trust after deception",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Healthy trust after deception. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m43-l6",
+              "title": "Transfer mission: Healthy trust after deception in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Healthy trust after deception. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-44",
+          "title": "Trauma responses and overgeneralisation",
+          "problem": "Trauma responses and overgeneralisation",
+          "lessons": [
+            {
+              "id": "manipulation-m44-l1",
+              "title": "Case file: Trauma responses and overgeneralisation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Trauma responses and overgeneralisation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m44-l2",
+              "title": "The mechanism behind Trauma responses and overgeneralisation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Trauma responses and overgeneralisation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m44-l3",
+              "title": "Distinguish it: adaptation versus permanent distrust",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Trauma responses and overgeneralisation. Contrasting cases: adaptation versus permanent distrust.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m44-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Trauma responses and overgeneralisation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m44-l5",
+              "title": "Choose a proportionate response to Trauma responses and overgeneralisation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Trauma responses and overgeneralisation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m44-l6",
+              "title": "Transfer mission: Trauma responses and overgeneralisation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Trauma responses and overgeneralisation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-45",
+          "title": "Learning from events without self-blame",
+          "problem": "Learning from events without self-blame",
+          "lessons": [
+            {
+              "id": "manipulation-m45-l1",
+              "title": "Case file: Learning from events without self-blame",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Learning from events without self-blame. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m45-l2",
+              "title": "The mechanism behind Learning from events without self-blame",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Learning from events without self-blame. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m45-l3",
+              "title": "Distinguish it: adaptation versus permanent distrust",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Learning from events without self-blame. Contrasting cases: adaptation versus permanent distrust.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m45-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Learning from events without self-blame. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m45-l5",
+              "title": "Choose a proportionate response to Learning from events without self-blame",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Learning from events without self-blame. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m45-l6",
+              "title": "Transfer mission: Learning from events without self-blame in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Learning from events without self-blame. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manipulation-book-10",
+      "title": "Advanced cases",
+      "distinction": "plausible story versus justified interpretation",
+      "modules": [
+        {
+          "id": "manipulation-module-46",
+          "title": "Two conflicting accounts of the same event",
+          "problem": "Two conflicting accounts of the same event",
+          "lessons": [
+            {
+              "id": "manipulation-m46-l1",
+              "title": "Case file: Two conflicting accounts of the same event",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Two conflicting accounts of the same event. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m46-l2",
+              "title": "The mechanism behind Two conflicting accounts of the same event",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Two conflicting accounts of the same event. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m46-l3",
+              "title": "Distinguish it: plausible story versus justified interpretation",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Two conflicting accounts of the same event. Contrasting cases: plausible story versus justified interpretation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m46-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Two conflicting accounts of the same event. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m46-l5",
+              "title": "Choose a proportionate response to Two conflicting accounts of the same event",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Two conflicting accounts of the same event. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m46-l6",
+              "title": "Transfer mission: Two conflicting accounts of the same event in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Two conflicting accounts of the same event. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-47",
+          "title": "When the accused person is also vulnerable",
+          "problem": "When the accused person is also vulnerable",
+          "lessons": [
+            {
+              "id": "manipulation-m47-l1",
+              "title": "Case file: When the accused person is also vulnerable",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: When the accused person is also vulnerable. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m47-l2",
+              "title": "The mechanism behind When the accused person is also vulnerable",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: When the accused person is also vulnerable. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m47-l3",
+              "title": "Distinguish it: plausible story versus justified interpretation",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: When the accused person is also vulnerable. Contrasting cases: plausible story versus justified interpretation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m47-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: When the accused person is also vulnerable. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m47-l5",
+              "title": "Choose a proportionate response to When the accused person is also vulnerable",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: When the accused person is also vulnerable. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m47-l6",
+              "title": "Transfer mission: When the accused person is also vulnerable in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: When the accused person is also vulnerable. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-48",
+          "title": "Scams, politics and manipulative narratives",
+          "problem": "Scams, politics and manipulative narratives",
+          "lessons": [
+            {
+              "id": "manipulation-m48-l1",
+              "title": "Case file: Scams, politics and manipulative narratives",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Scams, politics and manipulative narratives. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m48-l2",
+              "title": "The mechanism behind Scams, politics and manipulative narratives",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Scams, politics and manipulative narratives. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m48-l3",
+              "title": "Distinguish it: plausible story versus justified interpretation",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Scams, politics and manipulative narratives. Contrasting cases: plausible story versus justified interpretation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m48-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Scams, politics and manipulative narratives. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m48-l5",
+              "title": "Choose a proportionate response to Scams, politics and manipulative narratives",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Scams, politics and manipulative narratives. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m48-l6",
+              "title": "Transfer mission: Scams, politics and manipulative narratives in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Scams, politics and manipulative narratives. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-49",
+          "title": "Differentiating coercion from negotiation",
+          "problem": "Differentiating coercion from negotiation",
+          "lessons": [
+            {
+              "id": "manipulation-m49-l1",
+              "title": "Case file: Differentiating coercion from negotiation",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Differentiating coercion from negotiation. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m49-l2",
+              "title": "The mechanism behind Differentiating coercion from negotiation",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Differentiating coercion from negotiation. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m49-l3",
+              "title": "Distinguish it: plausible story versus justified interpretation",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Differentiating coercion from negotiation. Contrasting cases: plausible story versus justified interpretation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m49-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Differentiating coercion from negotiation. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m49-l5",
+              "title": "Choose a proportionate response to Differentiating coercion from negotiation",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Differentiating coercion from negotiation. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m49-l6",
+              "title": "Transfer mission: Differentiating coercion from negotiation in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Differentiating coercion from negotiation. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "manipulation-module-50",
+          "title": "Integration: evidence, power and proportion",
+          "problem": "Integration: evidence, power and proportion",
+          "lessons": [
+            {
+              "id": "manipulation-m50-l1",
+              "title": "Case file: Integration: evidence, power and proportion",
+              "objective": "Recognise the situation and separate observable events from inferred motives. Focus: Integration: evidence, power and proportion. ",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m50-l2",
+              "title": "The mechanism behind Integration: evidence, power and proportion",
+              "objective": "Explain a plausible psychological process while noting contextual and alternative causes. Focus: Integration: evidence, power and proportion. ",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m50-l3",
+              "title": "Distinguish it: plausible story versus justified interpretation",
+              "objective": "Discriminate this case from a closely related but meaningfully different explanation. Focus: Integration: evidence, power and proportion. Contrasting cases: plausible story versus justified interpretation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m50-l4",
+              "title": "Which evidence would change the conclusion?",
+              "objective": "Identify which information supports the explanation and what evidence would weaken it. Focus: Integration: evidence, power and proportion. ",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m50-l5",
+              "title": "Choose a proportionate response to Integration: evidence, power and proportion",
+              "objective": "Compare proportionate strategies including risks, power and constraints. Focus: Integration: evidence, power and proportion. ",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "manipulation-m50-l6",
+              "title": "Transfer mission: Integration: evidence, power and proportion in another setting",
+              "objective": "Apply the reasoning to a novel context, resisting automatic labels and overconfidence. Focus: Integration: evidence, power and proportion. ",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
