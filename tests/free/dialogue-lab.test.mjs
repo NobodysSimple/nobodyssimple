@@ -59,15 +59,15 @@ test('Dialogue transcript escapes untrusted speech and highlights an evidence li
  const html=renderDialogue(node,state,esc,controls);
  assert.match(html,/&lt;script&gt;/);assert.doesNotMatch(html,/<script>/);
  assert.match(html,/data-spotlight="true"/);
- assert.match(html,/Dialogue question 1 of 2/);
+ assert.ok(html.includes('Reflect · 1 / 2'));
  assert.match(html,/Recognises disappointment/);
 });
-test('Public Learn and staff Templates link to the shared Dialogue Lab type without creating lessons',()=>{
+test('Public Learn and staff Templates link to the shared Dialogue Lab type with first modules published',()=>{
  const read=p=>readFileSync(new URL('../../'+p,import.meta.url),'utf8');
  const staff=read('studio.mjs'),courseLab=read('studio-course-lab.mjs'),learn=read('ns-learn-courses.mjs');
  assert.match(staff,/data-open-dialogue-lab/);
  assert.match(courseLab,/dialogue-add-turn/);
  assert.match(courseLab,/dialogue-add-check/);
  assert.match(learn,/LESSON_FORMATS\.length/);
- assert.deepEqual(JSON.parse(read('learn-content/index.json')).courses,{});
+ assert.equal(Object.keys(JSON.parse(read('learn-content/index.json')).courses).length,20);
 });
