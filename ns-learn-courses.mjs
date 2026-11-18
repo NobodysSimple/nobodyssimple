@@ -111,7 +111,7 @@ function detail(root,id){
  '<a class="ns-catalogue-back" href="#learn/courses">← All courses</a>'+
  '<div class="ns-catalogue-detail-hero"><div class="ns-catalogue-detail-image" data-course-subject="'+esc(course.id)+'">'+courseArt(course)+'</div>'+
  '<div class="ns-catalogue-detail-copy"><span class="ns-courses-kicker">'+esc(cat?.title||'Psychology')+' · COURSE '+String(LEARN_COURSES.indexOf(course)+1).padStart(2,'0')+'</span>'+
- '<h1>'+esc(bundle?.title||course.title)+'</h1><p>'+esc(course.description)+'</p>'+
+ '<h1>'+esc(bundle?.title||course.title)+'</h1><p>'+esc(bundle?.description||course.description)+'</p>'+
  '<span class="ns-catalogue-development">'+(bundle?'Published lessons available':hasPublishedLearnCourse(id)?'Loading published lessons…':'In development · No lessons published yet')+'</span>'+
  '<div class="ns-catalogue-tutor"><span class="ns-courses-kicker">A CHARACTER YOU’LL HELP</span>'+
  '<strong>'+esc(course.companionName)+'</strong><span>“'+esc(course.companionQuote)+'”</span>'+
