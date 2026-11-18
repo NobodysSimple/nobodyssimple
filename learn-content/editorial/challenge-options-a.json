@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "narcissism",
+      "interpretations": [
+        {
+          "text": "Leo may be responding primarily to the timing of the correction, because changing a finished presentation could look like an admission of carelessness.",
+          "reason": "Timing could matter, but Leo explicitly connects the issue to how competent he appears."
+        },
+        {
+          "text": "Leo may understand project ownership differently from Maya and interpret her request as a challenge to their agreed roles.",
+          "reason": "This can explain the initial dispute; his later emphasis on promotion suggests the stakes may extend beyond job descriptions."
+        },
+        {
+          "text": "Leo may fear being publicly accused of dishonesty more than he fears the loss of recognition itself.",
+          "reason": "Fear of accusation is plausible, though no one has yet threatened to accuse him; Maya has proposed accurate attribution."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Propose a private wording change that credits the analysis without challenging who led the project.",
+          "reason": "A private correction may reduce embarrassment, but Maya still needs to ensure the final slide is accurate."
+        },
+        {
+          "text": "Ask Leo what the directors are likely to infer, then suggest wording that distinguishes project leadership from technical authorship.",
+          "reason": "This may surface his concern; it risks delaying correction if he continues to refuse."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare Leo’s description of the division of work with the written project responsibilities agreed at the start.",
+          "reason": "Useful for checking role confusion, although it alone may not resolve why correction now feels threatening."
+        },
+        {
+          "text": "Observe whether Leo accepts corrections that do not affect how his competence is presented to senior colleagues.",
+          "reason": "This comparison could distinguish a general objection to correction from a reputation-specific concern."
+        }
+      ]
+    },
+    {
+      "id": "manipulation",
+      "interpretations": [
+        {
+          "text": "Ben may be setting a financial limit that would apply to any move, rather than selectively penalising Asha’s career choices.",
+          "reason": "A genuine budget boundary is plausible; its consistency and timing would need checking."
+        },
+        {
+          "text": "Ben may be expressing fear of separation through an ill-judged bargaining tactic without fully recognising its coercive effect.",
+          "reason": "His feelings could be sincere while the conditional financial threat still restricts Asha’s choice."
+        },
+        {
+          "text": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
+          "reason": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Separate the immediate interview decision from a written discussion of which shared expenses each person can cover.",
+          "reason": "This protects practical planning; the interview choice should not become contingent on financial punishment."
+        },
+        {
+          "text": "Ask Ben to explain a stable budget limit before deciding whether his withdrawal of support is linked to the interview.",
+          "reason": "This can clarify intent, though repeated threats can make prolonged negotiation unsafe or unproductive."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Review whether Ben raised the same rent limits during other financial changes unrelated to Asha’s career.",
+          "reason": "This tests whether the limit is consistent rather than selectively triggered."
+        },
+        {
+          "text": "Ask what budget change would make support impossible even if Asha attended the interview and remained in the city.",
+          "reason": "An independent financial reason would weaken the case for targeted pressure."
+        }
+      ]
+    },
+    {
+      "id": "attachment",
+      "interpretations": [
+        {
+          "text": "Nina may be responding to Eli’s recent unreliability, rather than a broad expectation carried across relationships.",
+          "reason": "Current relationship evidence could explain concern without invoking an enduring attachment pattern."
+        },
+        {
+          "text": "Nina may know that travel interruptions are common but be seeking confirmation of one practical arrangement.",
+          "reason": "A planning need is credible; her stated fear of becoming less important suggests something more personally threatening."
+        },
+        {
+          "text": "Nina may be unusually sensitive to uncertainty today because of an unrelated stressful event.",
+          "reason": "Current stress can amplify anxiety, but no such event has yet been established."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Agree on approximate contact windows during travel, without requiring immediate replies if plans change.",
+          "reason": "Predictability may help, but the agreement should remain realistic for both people."
+        },
+        {
+          "text": "Ask Nina what silence tends to mean to her and discuss whether Eli’s recent behaviour has contributed to that expectation.",
+          "reason": "This addresses the interpretation, though reflection alone does not establish a workable contact arrangement."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare Nina’s reactions to delayed replies from reliable friends and from people who often break commitments.",
+          "reason": "Differences would help separate a generalised expectation from current evidence."
+        },
+        {
+          "text": "Review the actual frequency and context of Eli’s unanswered messages rather than relying on either person’s impression.",
+          "reason": "A communication record could clarify how much reliability contributes."
+        }
+      ]
+    },
+    {
+      "id": "overthinking",
+      "interpretations": [
+        {
+          "text": "Jo may still be improving an imperfect answer and simply lack a clear method for evaluating revisions.",
+          "reason": "This fits purposeful preparation if each change is responsive to evidence or measurable criteria."
+        },
+        {
+          "text": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
+          "reason": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
+        },
+        {
+          "text": "Jo may have learned from past interviews that minor wording differences influence outcomes.",
+          "reason": "Prior feedback would matter, but no such evidence is offered for these particular changes."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Use one external mock interview, then restrict revisions to issues the feedback identifies.",
+          "reason": "This gives preparation a stopping rule, though an unexpected new problem could still justify a change."
+        },
+        {
+          "text": "Draft two alternative answers and choose between them using the job criteria, not the level of reassurance they produce.",
+          "reason": "Comparative criteria can help, but generating more alternatives may become another loop if never concluded."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Track which revisions change factual content or clarity and which merely reduce discomfort for a few minutes.",
+          "reason": "This separates useful improvement from repeated reassurance."
+        },
+        {
+          "text": "Ask an independent interviewer whether successive versions improve the answer in any observable way.",
+          "reason": "Feedback can test whether more rewriting adds value."
+        }
+      ]
+    },
+    {
+      "id": "boundaries",
+      "interpretations": [
+        {
+          "text": "Kit may be facing genuine service obligations and interpreting Rae’s limit as a risk to those responsibilities.",
+          "reason": "Operational pressure could explain resistance, although the formal on-call arrangements remain unclear."
+        },
+        {
+          "text": "Rae’s request may be understood as a rule about when Kit can work, even though she means to limit her own availability.",
+          "reason": "A communication misunderstanding is plausible and could be resolved by specifying the behaviour she controls."
+        },
+        {
+          "text": "The team may have developed an informal expectation of immediate replies that neither person explicitly agreed to.",
+          "reason": "That would help explain the conflict without establishing that either person intends to control the other."
+        }
+      ],
+      "actions": [
+        {
+          "text": "State the specific hours Rae will answer routine calls and invite the team to define exceptional circumstances.",
+          "reason": "This names her own limit and allows genuine operational requirements to be addressed."
+        },
+        {
+          "text": "Ask a manager to clarify whether after-hours work is formally required before altering anyone’s schedule.",
+          "reason": "Clarification is practical, but Rae can still state what she will do in the meantime."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Examine the employment agreement and actual examples of after-hours emergencies.",
+          "reason": "This separates required availability from preference."
+        },
+        {
+          "text": "Check whether unanswered routine calls have ever caused a concrete service problem when handled next morning.",
+          "reason": "The consequence matters more than a general feeling that work is urgent."
+        }
+      ]
+    },
+    {
+      "id": "anxiety",
+      "interpretations": [
+        {
+          "text": "Ava may be anticipating social embarrassment rather than interpreting her bodily sensations as a physical emergency.",
+          "reason": "Both are plausible sources of threat, but her concern about the familiar surge needs closer examination."
+        },
+        {
+          "text": "The crowded room may have sensory features that are genuinely difficult for Ava to tolerate.",
+          "reason": "Environmental strain could matter even if the bodily alarm is familiar."
+        },
+        {
+          "text": "Ava may have experienced a previous medical event that makes similar sensations especially threatening.",
+          "reason": "History could alter both the explanation and what a safe plan requires; it is not established here."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Check whether the symptoms are familiar, then practise entering at a manageable pace while tracking what actually happens.",
+          "reason": "This supports learning without dismissing medical uncertainty."
+        },
+        {
+          "text": "Agree on a short entry period and a way to seek help if symptoms change in an unfamiliar or concerning way.",
+          "reason": "A safety plan can make approach workable; it should not become an automatic escape ritual for familiar anxiety."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare Ava’s predictions with what occurred on previous occasions when she remained in a safe crowd.",
+          "reason": "This can test the feared consequence of familiar sensations."
+        },
+        {
+          "text": "Check whether the same sensations occur in non-crowded contexts and whether they have been medically assessed when appropriate.",
+          "reason": "The distribution and history of symptoms can change the formulation."
+        }
+      ]
+    },
+    {
+      "id": "emotions",
+      "interpretations": [
+        {
+          "text": "Nora’s anger may reflect a reliable pattern of being excluded from important decisions.",
+          "reason": "A repeated pattern would strengthen the fairness interpretation, but this invitation has not yet been explained."
+        },
+        {
+          "text": "Nora may be responding as much to the loss of influence over her work as to the possibility of deliberate exclusion.",
+          "reason": "Her concern about participation is directly stated, while intent remains uncertain."
+        },
+        {
+          "text": "The meeting may have been organised using an outdated invitation list without considering who now needs to attend.",
+          "reason": "An administrative explanation is plausible, though it must be checked rather than assumed."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Ask how the invitation list was created and request inclusion in future decisions affecting her work.",
+          "reason": "This obtains facts and protects participation without deciding intent prematurely."
+        },
+        {
+          "text": "Explain the impact of missing the meeting and propose an explicit procedure for involving project contributors.",
+          "reason": "It addresses recurrence; it may be premature to prescribe a procedure without knowing why the omission occurred."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Look at how the meeting invitation was assembled and whether the same colleagues were omitted.",
+          "reason": "This directly tests accidental exclusion."
+        },
+        {
+          "text": "Review whether Nora was consulted on comparable decisions before this meeting.",
+          "reason": "A pattern could support an account beyond one administrative error."
+        }
+      ]
+    },
+    {
+      "id": "self-esteem",
+      "interpretations": [
+        {
+          "text": "Izzy may be distressed by the specific effort needed to revise her work, rather than by a judgement about herself.",
+          "reason": "The task may be frustrating, though she explicitly connects the correction to being incompetent."
+        },
+        {
+          "text": "Izzy may have received harsher feedback in the past and now anticipates similar criticism.",
+          "reason": "Past experiences could shape the reaction, but they have not been established in this case."
+        },
+        {
+          "text": "The tutor’s wording may genuinely have been broad enough to sound like a judgement of overall ability.",
+          "reason": "The exact feedback would clarify this; the details given are currently task-specific."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Ask the tutor which changes would make the layout effective, then evaluate the revision against that criterion.",
+          "reason": "This makes progress assessable without judging global worth."
+        },
+        {
+          "text": "Acknowledge the shame and complete one bounded revision before deciding how much more guidance is needed.",
+          "reason": "This supports participation, though the interpretation of the feedback may still need attention."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare Izzy’s account of the criticism with the actual written comments.",
+          "reason": "The scope of the language could distinguish specific from global feedback."
+        },
+        {
+          "text": "Observe whether shame falls when she receives equally specific feedback delivered in a supportive way.",
+          "reason": "The delivery context may affect the reaction."
+        }
+      ]
+    },
+    {
+      "id": "motivation",
+      "interpretations": [
+        {
+          "text": "Dev may be avoiding an evaluative writing task because it exposes him to the possibility of producing something inadequate.",
+          "reason": "This fits his account of the first sentence, but other task demands could also contribute."
+        },
+        {
+          "text": "The instructions may lack enough detail to make it clear what counts as an acceptable personal statement.",
+          "reason": "Uncertainty about requirements is plausible, though Dev says he largely understands them."
+        },
+        {
+          "text": "Dev may be committed to the placement but have difficulty organising a multi-step task without external structure.",
+          "reason": "Executive demands could explain initiation, particularly if structure reliably changes performance."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Open the form with a colleague and write a deliberately imperfect paragraph before revising it against the instructions.",
+          "reason": "This lowers initiation demands but retains responsibility for checking the final application."
+        },
+        {
+          "text": "Break the application into a list of visible actions and complete the easiest one before drafting the personal statement.",
+          "reason": "This may reduce task friction, though avoiding the difficult text box indefinitely would preserve the original problem."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare starting time when the first sentence can be rough with starting time when Dev tries to perfect it.",
+          "reason": "A change would help identify perfectionistic task friction."
+        },
+        {
+          "text": "Check whether Dev also struggles to initiate non-evaluative forms of similar length.",
+          "reason": "The contrast could help separate writing anxiety from general initiation demands."
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety",
+      "interpretations": [
+        {
+          "text": "Owen may be noticing real social cues while giving them greater negative weight than the evidence supports.",
+          "reason": "The classmates did look up; the leap is from noticing to hostile judgement."
+        },
+        {
+          "text": "Owen may have had previous dismissive encounters with these classmates that make his prediction more evidence-based.",
+          "reason": "That history would matter, but no such encounters have been described."
+        },
+        {
+          "text": "His attention to posture may be driven by uncertainty about where to stand, not by a broader fear of judgement.",
+          "reason": "Practical unfamiliarity could contribute, although his stated concern is how others evaluate him."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Shift attention to the seminar discussion and later compare anticipated reactions with what classmates actually did.",
+          "reason": "This gathers external evidence, though anxiety may remain while practising."
+        },
+        {
+          "text": "Prepare one short contribution in advance and listen for a natural opportunity to use it.",
+          "reason": "A limited plan may help participation, but excessive rehearsal could preserve self-monitoring."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Ask Owen what others actually said or did, separating those observations from how awkward he felt.",
+          "reason": "This reduces reliance on internal feeling as evidence of external judgement."
+        },
+        {
+          "text": "Compare his awareness of the group when he is rehearsing a reply versus when he is listening to others.",
+          "reason": "Attention allocation may help explain the persistence of uncertainty."
+        }
+      ]
+    }
+  ]
+}
