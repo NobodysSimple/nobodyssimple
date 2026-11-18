@@ -34,7 +34,7 @@ function itemList(node,key){
 }
 function editorFields(node){
  if(!node)return '<div class="cl-hint">Choose or add a node to begin.</div>';
- const type=types[node.type],head='<p class="cl-eyebrow">'+esc(type?.name||node.type)+'</p>'+textField('Node heading (optional)','title',node.title);
+ const type=types[node.type],head='<p class="cl-eyebrow">'+esc(type?.name||node.type)+'</p><label class="cl-field"><span>Node template</span><select data-node-type="true">'+COURSE_LAB_TYPES.map(t=>'<option value="'+esc(t.id)+'"'+(node.type===t.id?' selected':'')+'>'+esc(t.name)+'</option>').join('')+'</select></label>'+textField('Node heading (optional)','title',node.title);
  const media='<details class="cl-media-fields"><summary>Image and illustration</summary>'+
  textField('Site image path','image',node.image,{hint:'Choose from the repository or upload; images must be hosted on this site.'})+
  '<button type="button" class="cl-light-button" data-act="choose-image">Browse / upload image</button>'+textField('Alt text','alt',node.alt)+textField('Caption / credit','caption',node.caption)+'</details>';
@@ -52,7 +52,7 @@ function editorFields(node){
  if(node.type==='predict')html+=selectField('Best change','correctChange',node.changes||[],node.correctChange)+selectField('Best predicted outcome','correctOutcome',node.outcomes||[],node.correctOutcome);
  if(node.type==='character')html+=selectField('Supported evidence','evidenceAnswer',node.evidenceOptions||[],node.evidenceAnswer)+selectField('Appropriate response','responseAnswer',node.responseOptions||[],node.responseAnswer);
  html+=textField('Explanation after answering','explanation',node.explanation,{rows:4,hint:'Explain what makes the answer justified and why plausible alternatives fall short.'})+
- textField('Counterexample / boundary','counterexample',node.counterexample,{rows:3,hint:'When would this concept NOT apply? Helps avoid overconfident labelling.'})+media;
+ textField('Counterexample / boundary','counterexample',node.counterexample,{rows:3,hint:'When would this concept NOT apply? Helps avoid overconfident labelling.'})+textField('Sources / references','sources',node.sources,{rows:2,hint:'Cite research or guideline sources supporting this question.'})+media;
  return html;
 }
 export function mountCourseLab(host,getPublisher,notify=()=>{}){
@@ -200,6 +200,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   setField(event.target);
  });
  host.addEventListener('change',event=>{
+  if(event.target.dataset.nodeType){const old=selectedNode(),lesson=selectedLesson();if(!old||!lesson||old.type===event.target.value)return;if(!confirm('Change this node template? Its old answer fields will be replaced, but common text and media will be retained.')){event.target.value=old.type;return;}const fresh=createCourseNode(event.target.value);for(const key of ['id','title','prompt','conceptId','explanation','counterexample','sources','image','alt','caption'])if(old[key]!==undefined)fresh[key]=old[key];lesson.nodes[n]=fresh;renderSequence();queueSave();return;}
   if(event.target.id==='cl-course'){void loadCourse(event.target.value);return;}
   if(event.target.id==='cl-new-type'||event.target.id==='cl-upload'||event.target.id==='cl-import')return;
   setField(event.target);
