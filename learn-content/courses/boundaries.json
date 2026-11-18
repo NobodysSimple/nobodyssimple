@@ -1,10 +1,804 @@
 {
   "id": "boundaries",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Boundaries & Difficult Conversations",
-  "description": "Explore preferences, requests and boundaries through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "boundaries-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Rae",
+        "Kit"
+      ],
+      "glossary": [
+        {
+          "term": "Preference",
+          "definition": "Something a person would like, without assuming someone else must provide it.",
+          "example": "I would prefer to finish work calls before dinner.",
+          "limit": "A preference may be important, but naming it does not create an obligation for someone else."
+        },
+        {
+          "term": "Request",
+          "definition": "An invitation for another person to do something, which they may accept or refuse.",
+          "example": "Could you send non-urgent reports before six?",
+          "limit": "A request becomes different when refusal is met with retaliation or threatened punishment."
+        },
+        {
+          "term": "Personal boundary",
+          "definition": "A limit on what somebody will participate in or how they will respond.",
+          "example": "I won't answer routine work calls outside the hours I have agreed to work.",
+          "limit": "A boundary concerns your own participation; it is not a licence to govern another adult's choices."
+        },
+        {
+          "term": "Control",
+          "definition": "An attempt to determine another person's behaviour through rules or leverage they have not agreed to.",
+          "example": "You are not allowed to speak with that friend, or I will make you pay for it.",
+          "limit": "Power, safety and the practical consequences matter more than whether someone calls the rule a boundary."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "boundaries-f1-l1",
+          "title": "What are we studying?",
+          "teach": "We can tell people what we want, ask them to change something and decide what we will do ourselves. Those are different actions, and confusing them causes many arguments.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "We can tell people what we want, ask them to change something and decide what we will do ourselves. Those are different actions, and confusing them causes many arguments.\n\nWhich parts of an agreement can one person decide for themselves?",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f1-l1-n2",
+              "type": "read",
+              "title": "What preference means",
+              "body": "Something a person would like, without assuming someone else must provide it.\n\nFor example: I would prefer to finish work calls before dinner.\n\nOne important limit: A preference may be important, but naming it does not create an obligation for someone else.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: I would prefer to finish work calls before dinner. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "boundaries-foundation:choose",
+              "explanation": "The example most directly supports preference. Something a person would like, without assuming someone else must provide it. A preference may be important, but naming it does not create an obligation for someone else.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Preference.",
+                  "feedback": "This description follows from the example. Something a person would like, without assuming someone else must provide it."
+                },
+                {
+                  "id": "boundaries-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Request.",
+                  "feedback": "Request is a genuine psychological idea, but the observation by itself does not establish it. A request becomes different when refusal is met with retaliation or threatened punishment."
+                },
+                {
+                  "id": "boundaries-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Personal boundary.",
+                  "feedback": "Personal boundary is a genuine psychological idea, but the observation by itself does not establish it. A boundary concerns your own participation; it is not a licence to govern another adult's choices."
+                },
+                {
+                  "id": "boundaries-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Control.",
+                  "feedback": "Control is a genuine psychological idea, but the observation by itself does not establish it. Power, safety and the practical consequences matter more than whether someone calls the rule a boundary."
+                },
+                {
+                  "id": "boundaries-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "boundaries-f1-l1-n3-o1"
+            },
+            {
+              "id": "boundaries-f1-l1-n4",
+              "type": "read",
+              "title": "What request means",
+              "body": "An invitation for another person to do something, which they may accept or refuse.\n\nFor example: Could you send non-urgent reports before six?\n\nOne important limit: A request becomes different when refusal is met with retaliation or threatened punishment.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: Could you send non-urgent reports before six? Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "boundaries-foundation:choose",
+              "explanation": "The example most directly supports request. An invitation for another person to do something, which they may accept or refuse. A request becomes different when refusal is met with retaliation or threatened punishment.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Preference.",
+                  "feedback": "Preference is a genuine psychological idea, but the observation by itself does not establish it. A preference may be important, but naming it does not create an obligation for someone else."
+                },
+                {
+                  "id": "boundaries-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Request.",
+                  "feedback": "This description follows from the example. An invitation for another person to do something, which they may accept or refuse."
+                },
+                {
+                  "id": "boundaries-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Personal boundary.",
+                  "feedback": "Personal boundary is a genuine psychological idea, but the observation by itself does not establish it. A boundary concerns your own participation; it is not a licence to govern another adult's choices."
+                },
+                {
+                  "id": "boundaries-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Control.",
+                  "feedback": "Control is a genuine psychological idea, but the observation by itself does not establish it. Power, safety and the practical consequences matter more than whether someone calls the rule a boundary."
+                },
+                {
+                  "id": "boundaries-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "boundaries-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "boundaries-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-f1-l2-n1",
+              "type": "read",
+              "title": "What personal boundary means",
+              "body": "A limit on what somebody will participate in or how they will respond.\n\nFor example: I won't answer routine work calls outside the hours I have agreed to work.\n\nOne important limit: A boundary concerns your own participation; it is not a licence to govern another adult's choices.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f1-l2-n2",
+              "type": "read",
+              "title": "What control means",
+              "body": "An attempt to determine another person's behaviour through rules or leverage they have not agreed to.\n\nFor example: You are not allowed to speak with that friend, or I will make you pay for it.\n\nOne important limit: Power, safety and the practical consequences matter more than whether someone calls the rule a boundary.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "boundaries-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of which parts of an agreement can one person decide for themselves?",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "pairs": [
+                {
+                  "id": "boundaries-f1-l2-n3-p0",
+                  "label": "Preference",
+                  "answer": "Something a person would like, without assuming someone else must provide it."
+                },
+                {
+                  "id": "boundaries-f1-l2-n3-p1",
+                  "label": "Request",
+                  "answer": "An invitation for another person to do something, which they may accept or refuse."
+                },
+                {
+                  "id": "boundaries-f1-l2-n3-p2",
+                  "label": "Personal boundary",
+                  "answer": "A limit on what somebody will participate in or how they will respond."
+                },
+                {
+                  "id": "boundaries-f1-l2-n3-p3",
+                  "label": "Control",
+                  "answer": "An attempt to determine another person's behaviour through rules or leverage they have not agreed to."
+                }
+              ]
+            },
+            {
+              "id": "boundaries-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: I won't answer routine work calls outside the hours I have agreed to work. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "boundaries-foundation:choose",
+              "explanation": "The example most directly supports personal boundary. A limit on what somebody will participate in or how they will respond. A boundary concerns your own participation; it is not a licence to govern another adult's choices.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Preference.",
+                  "feedback": "Preference is a genuine psychological idea, but the observation by itself does not establish it. A preference may be important, but naming it does not create an obligation for someone else."
+                },
+                {
+                  "id": "boundaries-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Request.",
+                  "feedback": "Request is a genuine psychological idea, but the observation by itself does not establish it. A request becomes different when refusal is met with retaliation or threatened punishment."
+                },
+                {
+                  "id": "boundaries-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Personal boundary.",
+                  "feedback": "This description follows from the example. A limit on what somebody will participate in or how they will respond."
+                },
+                {
+                  "id": "boundaries-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Control.",
+                  "feedback": "Control is a genuine psychological idea, but the observation by itself does not establish it. Power, safety and the practical consequences matter more than whether someone calls the rule a boundary."
+                },
+                {
+                  "id": "boundaries-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "boundaries-f1-l2-n4-o3"
+            },
+            {
+              "id": "boundaries-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "A boundary concerns your own participation; it is not a licence to govern another adult's choices.\n\nPower, safety and the practical consequences matter more than whether someone calls the rule a boundary.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            }
+          ]
+        },
+        {
+          "id": "boundaries-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "Something a person would like, without assuming someone else must provide it.\n\nAn invitation for another person to do something, which they may accept or refuse.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: You are not allowed to speak with that friend, or I will make you pay for it. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "boundaries-foundation:choose",
+              "explanation": "The example most directly supports control. An attempt to determine another person's behaviour through rules or leverage they have not agreed to. Power, safety and the practical consequences matter more than whether someone calls the rule a boundary.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Preference.",
+                  "feedback": "Preference is a genuine psychological idea, but the observation by itself does not establish it. A preference may be important, but naming it does not create an obligation for someone else."
+                },
+                {
+                  "id": "boundaries-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Request.",
+                  "feedback": "Request is a genuine psychological idea, but the observation by itself does not establish it. A request becomes different when refusal is met with retaliation or threatened punishment."
+                },
+                {
+                  "id": "boundaries-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Personal boundary.",
+                  "feedback": "Personal boundary is a genuine psychological idea, but the observation by itself does not establish it. A boundary concerns your own participation; it is not a licence to govern another adult's choices."
+                },
+                {
+                  "id": "boundaries-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Control.",
+                  "feedback": "This description follows from the example. An attempt to determine another person's behaviour through rules or leverage they have not agreed to."
+                },
+                {
+                  "id": "boundaries-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "boundaries-f1-l3-n2-o4"
+            },
+            {
+              "id": "boundaries-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "boundaries-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of which parts of an agreement can one person decide for themselves?",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "pairs": [
+                {
+                  "id": "boundaries-f1-l3-n3-p0",
+                  "label": "Preference",
+                  "answer": "Something a person would like, without assuming someone else must provide it."
+                },
+                {
+                  "id": "boundaries-f1-l3-n3-p1",
+                  "label": "Request",
+                  "answer": "An invitation for another person to do something, which they may accept or refuse."
+                },
+                {
+                  "id": "boundaries-f1-l3-n3-p2",
+                  "label": "Personal boundary",
+                  "answer": "A limit on what somebody will participate in or how they will respond."
+                },
+                {
+                  "id": "boundaries-f1-l3-n3-p3",
+                  "label": "Control",
+                  "answer": "An attempt to determine another person's behaviour through rules or leverage they have not agreed to."
+                }
+              ]
+            },
+            {
+              "id": "boundaries-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: Could you send non-urgent reports before six? Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "boundaries-foundation:choose",
+              "explanation": "The example most directly supports request. An invitation for another person to do something, which they may accept or refuse. A request becomes different when refusal is met with retaliation or threatened punishment.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Preference.",
+                  "feedback": "Preference is a genuine psychological idea, but the observation by itself does not establish it. A preference may be important, but naming it does not create an obligation for someone else."
+                },
+                {
+                  "id": "boundaries-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Request.",
+                  "feedback": "This description follows from the example. An invitation for another person to do something, which they may accept or refuse."
+                },
+                {
+                  "id": "boundaries-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Personal boundary.",
+                  "feedback": "Personal boundary is a genuine psychological idea, but the observation by itself does not establish it. A boundary concerns your own participation; it is not a licence to govern another adult's choices."
+                },
+                {
+                  "id": "boundaries-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Control.",
+                  "feedback": "Control is a genuine psychological idea, but the observation by itself does not establish it. Power, safety and the practical consequences matter more than whether someone calls the rule a boundary."
+                },
+                {
+                  "id": "boundaries-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "boundaries-f1-l3-n4-o2"
+            },
+            {
+              "id": "boundaries-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between preference, request, personal boundary, control. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Rae",
+        "Kit"
+      ],
+      "glossary": [
+        {
+          "term": "Preference",
+          "definition": "Something a person would like, without assuming someone else must provide it.",
+          "example": "I would prefer to finish work calls before dinner.",
+          "limit": "A preference may be important, but naming it does not create an obligation for someone else."
+        },
+        {
+          "term": "Request",
+          "definition": "An invitation for another person to do something, which they may accept or refuse.",
+          "example": "Could you send non-urgent reports before six?",
+          "limit": "A request becomes different when refusal is met with retaliation or threatened punishment."
+        },
+        {
+          "term": "Personal boundary",
+          "definition": "A limit on what somebody will participate in or how they will respond.",
+          "example": "I won't answer routine work calls outside the hours I have agreed to work.",
+          "limit": "A boundary concerns your own participation; it is not a licence to govern another adult's choices."
+        },
+        {
+          "term": "Control",
+          "definition": "An attempt to determine another person's behaviour through rules or leverage they have not agreed to.",
+          "example": "You are not allowed to speak with that friend, or I will make you pay for it.",
+          "limit": "Power, safety and the practical consequences matter more than whether someone calls the rule a boundary."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "boundaries-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Rae dislikes receiving work calls after 7 pm. Kit is a colleague whose project sometimes runs late.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "boundaries-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "scenario": "Rae dislikes receiving work calls after 7 pm. Kit is a colleague whose project sometimes runs late.",
+              "speakerA": "Rae",
+              "speakerB": "Kit",
+              "turns": [
+                {
+                  "id": "boundaries-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "Could you stop calling me after seven?"
+                },
+                {
+                  "id": "boundaries-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "Sometimes the reports don't come through until eight."
+                },
+                {
+                  "id": "boundaries-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "I need my evenings to be uninterrupted."
+                },
+                {
+                  "id": "boundaries-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "I can't promise never to call if something urgent happens."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "boundaries-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "boundaries-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "boundaries-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "boundaries-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "boundaries-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "boundaries-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "boundaries-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "boundaries-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+                  "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter."
+                }
+              ]
+            },
+            {
+              "id": "boundaries-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "boundaries-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "categories": [
+                {
+                  "id": "boundaries-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "boundaries-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "boundaries-f2-l1-n3-a",
+                  "label": "“Could you stop calling me after seven?”",
+                  "answer": "boundaries-f2-l1-n3-seen"
+                },
+                {
+                  "id": "boundaries-f2-l1-n3-b",
+                  "label": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+                  "answer": "boundaries-f2-l1-n3-guess"
+                },
+                {
+                  "id": "boundaries-f2-l1-n3-c",
+                  "label": "“Sometimes the reports don't come through until eight.”",
+                  "answer": "boundaries-f2-l1-n3-seen"
+                },
+                {
+                  "id": "boundaries-f2-l1-n3-d",
+                  "label": "Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.",
+                  "answer": "boundaries-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "boundaries-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.\n\nCalling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            }
+          ]
+        },
+        {
+          "id": "boundaries-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.\n\nAnother possibility: Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "boundaries-foundation:investigate",
+              "explanation": "Clarify the actual job requirements and separate emergencies from preferences for immediate replies. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "boundaries-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "boundaries-f2-l2-n2-o3",
+                  "label": "Clarify the actual job requirements and separate emergencies from preferences for immediate replies.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "boundaries-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "boundaries-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "boundaries-f2-l2-n2-o3"
+            },
+            {
+              "id": "boundaries-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "A manager confirms that there is no after-hours on-call requirement and the reports can be handled the next working day.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "boundaries-foundation:choose",
+              "explanation": "The operational necessity explanation weakens. Rae's proposed communication limit becomes easier to implement without risking service continuity.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "boundaries-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "boundaries-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "boundaries-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "boundaries-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "boundaries-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "boundaries-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "We can tell people what we want, ask them to change something and decide what we will do ourselves. Those are different actions, and confusing them causes many arguments.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: I won't answer routine work calls outside the hours I have agreed to work. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "boundaries-foundation:choose",
+              "explanation": "The example most directly supports personal boundary. A limit on what somebody will participate in or how they will respond. A boundary concerns your own participation; it is not a licence to govern another adult's choices.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Preference.",
+                  "feedback": "Preference is a genuine psychological idea, but the observation by itself does not establish it. A preference may be important, but naming it does not create an obligation for someone else."
+                },
+                {
+                  "id": "boundaries-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Request.",
+                  "feedback": "Request is a genuine psychological idea, but the observation by itself does not establish it. A request becomes different when refusal is met with retaliation or threatened punishment."
+                },
+                {
+                  "id": "boundaries-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Personal boundary.",
+                  "feedback": "This description follows from the example. A limit on what somebody will participate in or how they will respond."
+                },
+                {
+                  "id": "boundaries-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Control.",
+                  "feedback": "Control is a genuine psychological idea, but the observation by itself does not establish it. Power, safety and the practical consequences matter more than whether someone calls the rule a boundary."
+                },
+                {
+                  "id": "boundaries-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "boundaries-f2-l3-n2-o3"
+            },
+            {
+              "id": "boundaries-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "boundaries-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "categories": [
+                {
+                  "id": "boundaries-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "boundaries-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "boundaries-f2-l3-n3-a",
+                  "label": "“Could you stop calling me after seven?”",
+                  "answer": "boundaries-f2-l3-n3-seen"
+                },
+                {
+                  "id": "boundaries-f2-l3-n3-b",
+                  "label": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+                  "answer": "boundaries-f2-l3-n3-guess"
+                },
+                {
+                  "id": "boundaries-f2-l3-n3-c",
+                  "label": "“Sometimes the reports don't come through until eight.”",
+                  "answer": "boundaries-f2-l3-n3-seen"
+                },
+                {
+                  "id": "boundaries-f2-l3-n3-d",
+                  "label": "Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.",
+                  "answer": "boundaries-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "boundaries-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "boundaries-foundation:investigate",
+              "explanation": "Clarify the actual job requirements and separate emergencies from preferences for immediate replies. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "boundaries-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "boundaries-f2-l3-n4-o3",
+                  "label": "Clarify the actual job requirements and separate emergencies from preferences for immediate replies.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "boundaries-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "boundaries-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "boundaries-f2-l3-n4-o3"
+            },
+            {
+              "id": "boundaries-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "boundaries-module-01",
       "title": "Preferences, requests and boundaries",
@@ -87,6 +881,16 @@
                     {
                       "id": "boundaries-m1-node-1-check1-opt2",
                       "label": "Ellie wants to control which friends Dev may see."
+                    },
+                    {
+                      "id": "boundaries-m1-node-1-check1-alternative-1",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                    },
+                    {
+                      "id": "boundaries-m1-node-1-check1-alternative-2",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "boundaries-m1-node-1-check1-opt1",
@@ -121,6 +925,11 @@
                       "label": "Can we agree on a message before guests arrive, including how to handle last-minute visits?",
                       "reply": "Yes. We can discuss exceptions when they happen.",
                       "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "boundaries-m1-node-1-check2-alternative-1",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     }
                   ],
                   "answer": "boundaries-m1-node-1-check2-opt1",
@@ -270,6 +1079,11 @@
                 {
                   "id": "boundaries-m1-repair-opt2",
                   "label": "Because ellie wants to control which friends Dev may see., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "boundaries-m1-node-7-alternative-1",
+                  "label": "Check whether unanswered routine calls have ever caused a concrete service problem when handled next morning.",
+                  "feedback": "The consequence matters more than a general feeling that work is urgent."
                 }
               ],
               "answer": "boundaries-m1-repair-opt1"
@@ -384,6 +1198,16 @@
                     {
                       "id": "boundaries-m1-node-8-check1-opt3",
                       "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "boundaries-m1-node-8-check1-alternative-1",
+                      "label": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                    },
+                    {
+                      "id": "boundaries-m1-node-8-check1-alternative-2",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     }
                   ],
                   "answer": "boundaries-m1-node-8-check1-opt1",
@@ -467,6 +1291,11 @@
                 {
                   "id": "boundaries-m1-view-opt1",
                   "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "boundaries-m1-node-10-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "boundaries-m1-view-opt1"
@@ -500,6 +1329,11 @@
                 {
                   "id": "boundaries-m1-new-opt4",
                   "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "boundaries-m1-node-9-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "boundaries-m1-new-opt1"
@@ -532,6 +1366,11 @@
                 {
                   "id": "boundaries-m1-test-opt4",
                   "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "boundaries-m1-node-13-alternative-1",
+                  "label": "Examine the employment agreement and actual examples of after-hours emergencies.",
+                  "feedback": "This separates required availability from preference."
                 }
               ],
               "answer": "boundaries-m1-test-opt1"
@@ -597,6 +1436,11 @@
                 {
                   "id": "boundaries-m1-transfer-e-opt2",
                   "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "boundaries-m1-node-14-evidence-alternative-1",
+                  "label": "Rae’s request may be understood as a rule about when Kit can work, even though she means to limit her own availability.",
+                  "feedback": "A communication misunderstanding is plausible and could be resolved by specifying the behaviour she controls."
                 }
               ],
               "evidenceAnswer": "boundaries-m1-transfer-e-opt1",
@@ -612,6 +1456,11 @@
                 {
                   "id": "boundaries-m1-transfer-a-opt2",
                   "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "boundaries-m1-node-14-response-alternative-1",
+                  "label": "Ask a manager to clarify whether after-hours work is formally required before altering anyone’s schedule.",
+                  "feedback": "Clarification is practical, but Rae can still state what she will do in the meantime."
                 }
               ],
               "responseAnswer": "boundaries-m1-transfer-a-opt1"
@@ -706,6 +1555,11 @@
                   "id": "boundaries-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "boundaries-m1-l3-n3-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "boundaries-m1-l3-n3-opt2",
@@ -740,6 +1594,11 @@
                   "id": "boundaries-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "boundaries-m1-l3-n4-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "boundaries-m1-l3-n4-opt2",
@@ -766,6 +1625,16 @@
                   "id": "boundaries-m1-l3-n5-evidence-opt2",
                   "label": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
                   "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l3-n5-evidence-alternative-1",
+                  "label": "Kit may be facing genuine service obligations and interpreting Rae’s limit as a risk to those responsibilities.",
+                  "feedback": "Operational pressure could explain resistance, although the formal on-call arrangements remain unclear."
+                },
+                {
+                  "id": "boundaries-m1-l3-n5-evidence-alternative-2",
+                  "label": "Rae’s request may be understood as a rule about when Kit can work, even though she means to limit her own availability.",
+                  "feedback": "A communication misunderstanding is plausible and could be resolved by specifying the behaviour she controls."
                 }
               ],
               "evidenceAnswer": "boundaries-m1-l3-n5-evidence-opt2",
@@ -779,6 +1648,16 @@
                   "id": "boundaries-m1-l3-n5-response-opt2",
                   "label": "I won't respond to routine calls after seven. Could we agree a separate route for a genuine emergency?",
                   "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l3-n5-response-alternative-1",
+                  "label": "State the specific hours Rae will answer routine calls and invite the team to define exceptional circumstances.",
+                  "feedback": "This names her own limit and allows genuine operational requirements to be addressed."
+                },
+                {
+                  "id": "boundaries-m1-l3-n5-response-alternative-2",
+                  "label": "Ask a manager to clarify whether after-hours work is formally required before altering anyone’s schedule.",
+                  "feedback": "Clarification is practical, but Rae can still state what she will do in the meantime."
                 }
               ],
               "responseAnswer": "boundaries-m1-l3-n5-response-opt2"
@@ -884,13 +1763,18 @@
                     },
                     {
                       "id": "boundaries-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "boundaries-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "boundaries-m1-l4-n2-question-alternative-2",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "boundaries-m1-l4-n2-question-opt2",
@@ -928,6 +1812,11 @@
                   "id": "boundaries-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "boundaries-m1-l4-n3-alternative-1",
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "boundaries-m1-l4-n3-opt2",
@@ -962,6 +1851,11 @@
                   "id": "boundaries-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "boundaries-m1-l4-n4-alternative-1",
+                  "label": "Examine the employment agreement and actual examples of after-hours emergencies.",
+                  "feedback": "This separates required availability from preference."
                 }
               ],
               "answer": "boundaries-m1-l4-n4-opt2",
@@ -1029,6 +1923,11 @@
                   "id": "boundaries-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "boundaries-m1-l4-n6-alternative-1",
+                  "label": "The team may have developed an informal expectation of immediate replies that neither person explicitly agreed to.",
+                  "feedback": "That would help explain the conflict without establishing that either person intends to control the other."
                 }
               ],
               "answer": "boundaries-m1-l4-n6-opt2"
@@ -1071,6 +1970,16 @@
                   "id": "boundaries-m1-l5-n2-evidence-opt2",
                   "label": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
                   "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l5-n2-evidence-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                },
+                {
+                  "id": "boundaries-m1-l5-n2-evidence-alternative-2",
+                  "label": "Kit may be facing genuine service obligations and interpreting Rae’s limit as a risk to those responsibilities.",
+                  "feedback": "Operational pressure could explain resistance, although the formal on-call arrangements remain unclear."
                 }
               ],
               "evidenceAnswer": "boundaries-m1-l5-n2-evidence-opt2",
@@ -1084,6 +1993,16 @@
                   "id": "boundaries-m1-l5-n2-response-opt2",
                   "label": "I won't respond to routine calls after seven. Could we agree a separate route for a genuine emergency?",
                   "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l5-n2-response-alternative-1",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                },
+                {
+                  "id": "boundaries-m1-l5-n2-response-alternative-2",
+                  "label": "State the specific hours Rae will answer routine calls and invite the team to define exceptional circumstances.",
+                  "feedback": "This names her own limit and allows genuine operational requirements to be addressed."
                 }
               ],
               "responseAnswer": "boundaries-m1-l5-n2-response-opt2"
@@ -1110,13 +2029,18 @@
                 },
                 {
                   "id": "boundaries-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "Rae’s request may be understood as a rule about when Kit can work, even though she means to limit her own availability.",
+                  "feedback": "A communication misunderstanding is plausible and could be resolved by specifying the behaviour she controls."
                 },
                 {
                   "id": "boundaries-m1-l5-n4-opt4",
                   "label": "What situations actually require a reply before the next working day?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "boundaries-m1-l5-n4-alternative-2",
+                  "label": "The team may have developed an informal expectation of immediate replies that neither person explicitly agreed to.",
+                  "feedback": "That would help explain the conflict without establishing that either person intends to control the other."
                 }
               ],
               "answer": "boundaries-m1-l5-n4-opt2",
@@ -1142,6 +2066,11 @@
                   "id": "boundaries-m1-l5-n3-action-opt2",
                   "label": "I won't respond to routine calls after seven. Could we agree a separate route for a genuine emergency?",
                   "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l5-n3-change-alternative-1",
+                  "label": "State the specific hours Rae will answer routine calls and invite the team to define exceptional circumstances.",
+                  "feedback": "This names her own limit and allows genuine operational requirements to be addressed."
                 }
               ],
               "outcomes": [
@@ -1154,6 +2083,11 @@
                   "id": "boundaries-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "boundaries-m1-l5-n3-action-opt2",
@@ -1189,6 +2123,11 @@
                   "id": "boundaries-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "boundaries-m1-l5-n5-alternative-1",
+                  "label": "The team may have developed an informal expectation of immediate replies that neither person explicitly agreed to.",
+                  "feedback": "That would help explain the conflict without establishing that either person intends to control the other."
                 }
               ],
               "answer": "boundaries-m1-l5-n5-opt2",
@@ -1223,6 +2162,11 @@
                   "id": "boundaries-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "boundaries-m1-l5-n6-alternative-1",
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "boundaries-m1-l5-n6-opt2"
@@ -1273,6 +2217,11 @@
                   "id": "boundaries-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "boundaries-m1-l6-n2-alternative-1",
+                  "label": "State the specific hours Rae will answer routine calls and invite the team to define exceptional circumstances.",
+                  "feedback": "This names her own limit and allows genuine operational requirements to be addressed."
                 }
               ],
               "answer": "boundaries-m1-l6-n2-opt2"
@@ -1349,6 +2298,11 @@
                   "id": "boundaries-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "boundaries-m1-l6-n4-alternative-1",
+                  "label": "Examine the employment agreement and actual examples of after-hours emergencies.",
+                  "feedback": "This separates required availability from preference."
                 }
               ],
               "answer": "boundaries-m1-l6-n4-opt2",
@@ -1391,6 +2345,36 @@
               "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Rae",
+        "Kit"
+      ],
+      "glossary": [
+        {
+          "term": "Preference",
+          "definition": "Something a person would like, without assuming someone else must provide it.",
+          "example": "I would prefer to finish work calls before dinner.",
+          "limit": "A preference may be important, but naming it does not create an obligation for someone else."
+        },
+        {
+          "term": "Request",
+          "definition": "An invitation for another person to do something, which they may accept or refuse.",
+          "example": "Could you send non-urgent reports before six?",
+          "limit": "A request becomes different when refusal is met with retaliation or threatened punishment."
+        },
+        {
+          "term": "Personal boundary",
+          "definition": "A limit on what somebody will participate in or how they will respond.",
+          "example": "I won't answer routine work calls outside the hours I have agreed to work.",
+          "limit": "A boundary concerns your own participation; it is not a licence to govern another adult's choices."
+        },
+        {
+          "term": "Control",
+          "definition": "An attempt to determine another person's behaviour through rules or leverage they have not agreed to.",
+          "example": "You are not allowed to speak with that friend, or I will make you pay for it.",
+          "limit": "Power, safety and the practical consequences matter more than whether someone calls the rule a boundary."
         }
       ]
     }
