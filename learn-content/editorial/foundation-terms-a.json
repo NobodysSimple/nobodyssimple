@@ -1,0 +1,315 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "narcissism",
+      "intro": "People use ‘narcissist’ to describe behaviour they find hurtful. The word covers more than one idea, and using it carelessly can stop us asking what actually happened.",
+      "question": "What can someone's response to criticism tell us, and what remains unknown?",
+      "terms": [
+        {
+          "name": "Personality trait",
+          "meaning": "A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait.",
+          "example": "Someone regularly seeks recognition in different groups over many months.",
+          "limit": "A single boast after good news is not a stable personality description."
+        },
+        {
+          "name": "Defensiveness",
+          "meaning": "An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk.",
+          "example": "A worker argues sharply when asked to correct the credit on a presentation.",
+          "limit": "Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder."
+        },
+        {
+          "name": "Contingent self-worth",
+          "meaning": "When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent.",
+          "example": "A small correction feels like proof of being a failure because reputation carries enormous weight.",
+          "limit": "Wanting approval is common; the extent and cost of dependence matter."
+        },
+        {
+          "name": "Personality disorder",
+          "meaning": "A clinical pattern considered through its persistence, pervasiveness and effects on functioning. It requires much more evidence than one argument.",
+          "example": "A clinician investigates a long history across relationships before making any diagnostic judgement.",
+          "limit": "A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action."
+        }
+      ]
+    },
+    {
+      "id": "manipulation",
+      "intro": "Influence is part of ordinary relationships. The important question is how somebody tries to change a choice and what happens when the other person says no.",
+      "question": "How can a request become pressure without us treating every disagreement as abuse?",
+      "terms": [
+        {
+          "name": "Persuasion",
+          "meaning": "Trying to change a person's view by giving reasons they can consider and reject.",
+          "example": "A partner explains why a move would be difficult and asks to discuss alternatives.",
+          "limit": "Strong emotion during persuasion is not automatically coercion."
+        },
+        {
+          "name": "Manipulation",
+          "meaning": "Steering a decision through misleading information or pressure that conceals or distorts the choice available.",
+          "example": "Someone claims a favour is proof of loyalty while withholding facts that would change the decision.",
+          "limit": "We need evidence of how the influence works, rather than guessing someone's hidden intention."
+        },
+        {
+          "name": "Coercive pressure",
+          "meaning": "Using a threat or a serious cost to reduce another person's freedom to choose.",
+          "example": "A person threatens to withdraw essential support unless their partner turns down an interview.",
+          "limit": "A genuine independent budget limit needs to be distinguished from a punishment tied to compliance."
+        },
+        {
+          "name": "Gaslighting",
+          "meaning": "A pattern in which someone undermines another person's confidence in their memory or judgement of reality.",
+          "example": "A person repeatedly denies documented events and uses the other's confusion as proof they cannot be trusted.",
+          "limit": "A disagreement about an event, or an honest memory error, is not enough on its own."
+        }
+      ]
+    },
+    {
+      "id": "attachment",
+      "intro": "Attachment theory tries to explain how experiences of closeness and reliability shape our expectations of others. The point is to understand a pattern of relating, not to hand people an identity label.",
+      "question": "What do we expect when an important person is unavailable?",
+      "terms": [
+        {
+          "name": "Attachment expectation",
+          "meaning": "A learned prediction about whether someone important will be available when we need them.",
+          "example": "A delayed reply feels unusually threatening because someone expects closeness to disappear.",
+          "limit": "An expectation can be influenced by what this particular person has actually done."
+        },
+        {
+          "name": "Reassurance seeking",
+          "meaning": "Asking for signs that the relationship is secure when uncertainty feels difficult.",
+          "example": "Someone sends several messages asking whether everything is okay after a long silence.",
+          "limit": "Reassurance can help; its effects depend on how the need and response develop over time."
+        },
+        {
+          "name": "Availability",
+          "meaning": "Whether another person is realistically able and willing to respond when support is needed.",
+          "example": "A partner cannot reply during a shift but offers a reliable time to speak afterwards.",
+          "limit": "Being unavailable for a few hours is not necessarily being emotionally unreliable."
+        },
+        {
+          "name": "Working model",
+          "meaning": "A changeable set of expectations formed through experience of relationships.",
+          "example": "A person anticipates rejection even when a new friend has usually been reliable.",
+          "limit": "A working model is not a fixed diagnosis or an explanation that overrides current evidence."
+        }
+      ]
+    },
+    {
+      "id": "overthinking",
+      "intro": "Thinking can be useful long before it feels pleasant. The question is whether the next round of thought changes what you know or what you can do.",
+      "question": "When does trying to solve a problem turn into staying stuck with it?",
+      "terms": [
+        {
+          "name": "Planning",
+          "meaning": "Thinking that produces a specific next step, decision or test.",
+          "example": "After practising an interview answer, someone decides which example to use.",
+          "limit": "A plan can still be imperfect; certainty is not a requirement."
+        },
+        {
+          "name": "Worry",
+          "meaning": "Repeated thinking about possible future problems, often when an outcome cannot yet be known.",
+          "example": "Someone keeps imagining every question an interviewer might ask.",
+          "limit": "Preparing for a realistic risk differs from endlessly searching for impossible certainty."
+        },
+        {
+          "name": "Rumination",
+          "meaning": "Returning repeatedly to distressing questions or past events without making progress.",
+          "example": "After a conversation, someone replays the same sentence to work out whether they seemed foolish.",
+          "limit": "Reflection can lead to learning when it reaches a new conclusion or action."
+        },
+        {
+          "name": "Checking",
+          "meaning": "Repeating an action to gain confidence or temporary relief from uncertainty.",
+          "example": "A student rereads an unchanged email draft fifteen times before sending it.",
+          "limit": "Checking may be sensible when it actually catches errors; look at the information gained and the cost."
+        }
+      ]
+    },
+    {
+      "id": "boundaries",
+      "intro": "We can tell people what we want, ask them to change something and decide what we will do ourselves. Those are different actions, and confusing them causes many arguments.",
+      "question": "Which parts of an agreement can one person decide for themselves?",
+      "terms": [
+        {
+          "name": "Preference",
+          "meaning": "Something a person would like, without assuming someone else must provide it.",
+          "example": "I would prefer to finish work calls before dinner.",
+          "limit": "A preference may be important, but naming it does not create an obligation for someone else."
+        },
+        {
+          "name": "Request",
+          "meaning": "An invitation for another person to do something, which they may accept or refuse.",
+          "example": "Could you send non-urgent reports before six?",
+          "limit": "A request becomes different when refusal is met with retaliation or threatened punishment."
+        },
+        {
+          "name": "Personal boundary",
+          "meaning": "A limit on what somebody will participate in or how they will respond.",
+          "example": "I won't answer routine work calls outside the hours I have agreed to work.",
+          "limit": "A boundary concerns your own participation; it is not a licence to govern another adult's choices."
+        },
+        {
+          "name": "Control",
+          "meaning": "An attempt to determine another person's behaviour through rules or leverage they have not agreed to.",
+          "example": "You are not allowed to speak with that friend, or I will make you pay for it.",
+          "limit": "Power, safety and the practical consequences matter more than whether someone calls the rule a boundary."
+        }
+      ]
+    },
+    {
+      "id": "anxiety",
+      "intro": "Your body's alarm system can activate before you have worked out what is happening. We need to understand the signal before deciding how much authority to give it.",
+      "question": "What is a bodily alarm telling us, and how do our responses affect the next one?",
+      "terms": [
+        {
+          "name": "Alarm response",
+          "meaning": "A set of bodily changes that prepares us to respond to possible threat.",
+          "example": "Heart rate rises and breathing becomes faster before a crowded lecture.",
+          "limit": "A familiar anxiety response is not automatically dangerous; new or severe symptoms still deserve appropriate assessment."
+        },
+        {
+          "name": "Threat appraisal",
+          "meaning": "The mind's estimate of what could go wrong and how likely or costly it might be.",
+          "example": "A racing heart is interpreted as proof of an imminent collapse.",
+          "limit": "An appraisal can be compelling without being accurate."
+        },
+        {
+          "name": "Avoidance",
+          "meaning": "Staying away from a feared situation or leaving it to reduce distress.",
+          "example": "Someone steps out of a room each time their heart begins to race.",
+          "limit": "Leaving can be reasonable when danger is real; its effects differ when the threat is only anticipated."
+        },
+        {
+          "name": "Exposure",
+          "meaning": "Approaching a safe feared situation sufficiently to learn what happens without relying on escape.",
+          "example": "Someone gradually stays through a familiar anxiety surge and observes it change.",
+          "limit": "Exposure should be planned around real safety and a person's circumstances, not forced regardless of risk."
+        }
+      ]
+    },
+    {
+      "id": "emotions",
+      "intro": "A feeling tells us that something matters to the person experiencing it. It does not, by itself, establish which explanation of an event is true.",
+      "question": "How do we listen to an emotion without letting it make every decision?",
+      "terms": [
+        {
+          "name": "Emotion",
+          "meaning": "A response that organises attention and prepares us to react when something feels important.",
+          "example": "Anger rises after a colleague makes a decision about someone's work without including them.",
+          "limit": "The strength of a feeling is not a measure of the other person's intention."
+        },
+        {
+          "name": "Appraisal",
+          "meaning": "The meaning we give to an event, such as interpreting it as unfair or threatening.",
+          "example": "Being left off a meeting invitation is read as a deliberate slight.",
+          "limit": "An appraisal may fit the facts, or it may change when new information arrives."
+        },
+        {
+          "name": "Action urge",
+          "meaning": "The thing a feeling makes us want to do immediately.",
+          "example": "After feeling excluded, somebody wants to send an accusatory message.",
+          "limit": "An urge is information about readiness to act, not an instruction that must be followed."
+        },
+        {
+          "name": "Emotion regulation",
+          "meaning": "Changing how we respond to a feeling, or the conditions influencing it, to serve a longer-term goal.",
+          "example": "Someone waits until they have enough information before writing to the meeting organiser.",
+          "limit": "Regulation is not identical to suppressing a feeling or pretending it is unimportant."
+        }
+      ]
+    },
+    {
+      "id": "self-esteem",
+      "intro": "Getting something wrong can sting. The difficulty often grows when feedback on a task becomes a judgement about an entire person.",
+      "question": "What can a piece of criticism actually tell us about our worth?",
+      "terms": [
+        {
+          "name": "Skill evaluation",
+          "meaning": "A judgement about how well a particular task was done at a particular time.",
+          "example": "A tutor says the order of information on a chart is confusing.",
+          "limit": "Criticism of a piece of work does not directly measure the value of its author."
+        },
+        {
+          "name": "Global self-evaluation",
+          "meaning": "Treating a success or mistake as a verdict about the whole person.",
+          "example": "One confusing chart becomes proof that somebody is generally incompetent.",
+          "limit": "One domain gives too little evidence for a conclusion about the whole self."
+        },
+        {
+          "name": "Shame",
+          "meaning": "A painful feeling that the self is flawed or exposed to rejection.",
+          "example": "After receiving feedback, somebody wishes they could disappear from the class.",
+          "limit": "Shame can occur even when criticism was limited or unfair."
+        },
+        {
+          "name": "Self-compassion",
+          "meaning": "Responding to difficulty with accuracy and care rather than contempt.",
+          "example": "I made a mistake in the layout; I can correct it without calling myself worthless.",
+          "limit": "Self-compassion allows accountability; it does not mean denying errors."
+        }
+      ]
+    },
+    {
+      "id": "motivation",
+      "intro": "People can value a goal and still struggle to start. Understanding the moment they get stuck is often more useful than calling them lazy.",
+      "question": "What keeps an intended action from becoming something we actually begin?",
+      "terms": [
+        {
+          "name": "Motivation",
+          "meaning": "A person's willingness or reason to move towards a goal.",
+          "example": "A student wants the placement and has already found the application form.",
+          "limit": "Wanting the result does not guarantee that every step will feel easy."
+        },
+        {
+          "name": "Task friction",
+          "meaning": "Anything about starting or doing an action that raises the effort needed.",
+          "example": "An empty personal statement box feels too open-ended to begin.",
+          "limit": "An apparently small task may have high demands for a particular person."
+        },
+        {
+          "name": "Avoidance relief",
+          "meaning": "The immediate easing of discomfort after stepping away from a difficult action.",
+          "example": "Closing the form briefly stops the stress of writing a first sentence.",
+          "limit": "Short-term relief can make delay more tempting, even when the deadline makes life harder."
+        },
+        {
+          "name": "Small start",
+          "meaning": "A deliberately manageable action that lowers the difficulty of beginning.",
+          "example": "Write one rough sentence and keep it there for two minutes.",
+          "limit": "The first action need not solve the whole task to make a useful difference."
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety",
+      "intro": "Feeling watched can change where your attention goes. A person may leave an interaction remembering their own discomfort more clearly than what others actually did.",
+      "question": "How can we test the feeling that everyone is judging us?",
+      "terms": [
+        {
+          "name": "Predicted judgement",
+          "meaning": "An expectation about what others are thinking, often without direct evidence.",
+          "example": "Someone assumes classmates are criticising them because two people looked up.",
+          "limit": "A prediction can be tested; it is not itself an observation."
+        },
+        {
+          "name": "Self-focused attention",
+          "meaning": "Paying close attention to one's own appearance and behaviour during an interaction.",
+          "example": "A student checks their hands and posture instead of hearing the discussion.",
+          "limit": "Monitoring may feel protective while reducing attention to external information."
+        },
+        {
+          "name": "Safety behaviour",
+          "meaning": "Something done mainly to prevent a feared social outcome.",
+          "example": "Someone silently rehearses every line so they cannot appear foolish.",
+          "limit": "The action may lower anxiety while preventing them from learning what happens without it."
+        },
+        {
+          "name": "Behavioural experiment",
+          "meaning": "A planned way of comparing a prediction with an observable result.",
+          "example": "A student listens to the conversation, asks one question and records the actual response.",
+          "limit": "A useful experiment checks the feared prediction rather than demanding that anxiety disappear."
+        }
+      ]
+    }
+  ]
+}

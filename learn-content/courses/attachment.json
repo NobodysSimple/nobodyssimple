@@ -1,10 +1,804 @@
 {
   "id": "attachment",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Attachment, Love & Relationship Patterns",
-  "description": "Explore what attachment theory can explain through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "attachment-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Nina",
+        "Eli"
+      ],
+      "glossary": [
+        {
+          "term": "Attachment expectation",
+          "definition": "A learned prediction about whether someone important will be available when we need them.",
+          "example": "A delayed reply feels unusually threatening because someone expects closeness to disappear.",
+          "limit": "An expectation can be influenced by what this particular person has actually done."
+        },
+        {
+          "term": "Reassurance seeking",
+          "definition": "Asking for signs that the relationship is secure when uncertainty feels difficult.",
+          "example": "Someone sends several messages asking whether everything is okay after a long silence.",
+          "limit": "Reassurance can help; its effects depend on how the need and response develop over time."
+        },
+        {
+          "term": "Availability",
+          "definition": "Whether another person is realistically able and willing to respond when support is needed.",
+          "example": "A partner cannot reply during a shift but offers a reliable time to speak afterwards.",
+          "limit": "Being unavailable for a few hours is not necessarily being emotionally unreliable."
+        },
+        {
+          "term": "Working model",
+          "definition": "A changeable set of expectations formed through experience of relationships.",
+          "example": "A person anticipates rejection even when a new friend has usually been reliable.",
+          "limit": "A working model is not a fixed diagnosis or an explanation that overrides current evidence."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "attachment-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Attachment theory tries to explain how experiences of closeness and reliability shape our expectations of others. The point is to understand a pattern of relating, not to hand people an identity label.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "attachment-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Attachment theory tries to explain how experiences of closeness and reliability shape our expectations of others. The point is to understand a pattern of relating, not to hand people an identity label.\n\nWhat do we expect when an important person is unavailable?",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f1-l1-n2",
+              "type": "read",
+              "title": "What attachment expectation means",
+              "body": "A learned prediction about whether someone important will be available when we need them.\n\nFor example: A delayed reply feels unusually threatening because someone expects closeness to disappear.\n\nOne important limit: An expectation can be influenced by what this particular person has actually done.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: A delayed reply feels unusually threatening because someone expects closeness to disappear. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "attachment-foundation:choose",
+              "explanation": "The example most directly supports attachment expectation. A learned prediction about whether someone important will be available when we need them. An expectation can be influenced by what this particular person has actually done.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "options": [
+                {
+                  "id": "attachment-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Attachment expectation.",
+                  "feedback": "This description follows from the example. A learned prediction about whether someone important will be available when we need them."
+                },
+                {
+                  "id": "attachment-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Reassurance seeking.",
+                  "feedback": "Reassurance seeking is a genuine psychological idea, but the observation by itself does not establish it. Reassurance can help; its effects depend on how the need and response develop over time."
+                },
+                {
+                  "id": "attachment-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Availability.",
+                  "feedback": "Availability is a genuine psychological idea, but the observation by itself does not establish it. Being unavailable for a few hours is not necessarily being emotionally unreliable."
+                },
+                {
+                  "id": "attachment-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Working model.",
+                  "feedback": "Working model is a genuine psychological idea, but the observation by itself does not establish it. A working model is not a fixed diagnosis or an explanation that overrides current evidence."
+                },
+                {
+                  "id": "attachment-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "attachment-f1-l1-n3-o1"
+            },
+            {
+              "id": "attachment-f1-l1-n4",
+              "type": "read",
+              "title": "What reassurance seeking means",
+              "body": "Asking for signs that the relationship is secure when uncertainty feels difficult.\n\nFor example: Someone sends several messages asking whether everything is okay after a long silence.\n\nOne important limit: Reassurance can help; its effects depend on how the need and response develop over time.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: Someone sends several messages asking whether everything is okay after a long silence. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "attachment-foundation:choose",
+              "explanation": "The example most directly supports reassurance seeking. Asking for signs that the relationship is secure when uncertainty feels difficult. Reassurance can help; its effects depend on how the need and response develop over time.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "options": [
+                {
+                  "id": "attachment-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Attachment expectation.",
+                  "feedback": "Attachment expectation is a genuine psychological idea, but the observation by itself does not establish it. An expectation can be influenced by what this particular person has actually done."
+                },
+                {
+                  "id": "attachment-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Reassurance seeking.",
+                  "feedback": "This description follows from the example. Asking for signs that the relationship is secure when uncertainty feels difficult."
+                },
+                {
+                  "id": "attachment-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Availability.",
+                  "feedback": "Availability is a genuine psychological idea, but the observation by itself does not establish it. Being unavailable for a few hours is not necessarily being emotionally unreliable."
+                },
+                {
+                  "id": "attachment-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Working model.",
+                  "feedback": "Working model is a genuine psychological idea, but the observation by itself does not establish it. A working model is not a fixed diagnosis or an explanation that overrides current evidence."
+                },
+                {
+                  "id": "attachment-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "attachment-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "attachment-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "attachment-f1-l2-n1",
+              "type": "read",
+              "title": "What availability means",
+              "body": "Whether another person is realistically able and willing to respond when support is needed.\n\nFor example: A partner cannot reply during a shift but offers a reliable time to speak afterwards.\n\nOne important limit: Being unavailable for a few hours is not necessarily being emotionally unreliable.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f1-l2-n2",
+              "type": "read",
+              "title": "What working model means",
+              "body": "A changeable set of expectations formed through experience of relationships.\n\nFor example: A person anticipates rejection even when a new friend has usually been reliable.\n\nOne important limit: A working model is not a fixed diagnosis or an explanation that overrides current evidence.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "attachment-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what do we expect when an important person is unavailable?",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "pairs": [
+                {
+                  "id": "attachment-f1-l2-n3-p0",
+                  "label": "Attachment expectation",
+                  "answer": "A learned prediction about whether someone important will be available when we need them."
+                },
+                {
+                  "id": "attachment-f1-l2-n3-p1",
+                  "label": "Reassurance seeking",
+                  "answer": "Asking for signs that the relationship is secure when uncertainty feels difficult."
+                },
+                {
+                  "id": "attachment-f1-l2-n3-p2",
+                  "label": "Availability",
+                  "answer": "Whether another person is realistically able and willing to respond when support is needed."
+                },
+                {
+                  "id": "attachment-f1-l2-n3-p3",
+                  "label": "Working model",
+                  "answer": "A changeable set of expectations formed through experience of relationships."
+                }
+              ]
+            },
+            {
+              "id": "attachment-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: A partner cannot reply during a shift but offers a reliable time to speak afterwards. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "attachment-foundation:choose",
+              "explanation": "The example most directly supports availability. Whether another person is realistically able and willing to respond when support is needed. Being unavailable for a few hours is not necessarily being emotionally unreliable.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "options": [
+                {
+                  "id": "attachment-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Attachment expectation.",
+                  "feedback": "Attachment expectation is a genuine psychological idea, but the observation by itself does not establish it. An expectation can be influenced by what this particular person has actually done."
+                },
+                {
+                  "id": "attachment-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Reassurance seeking.",
+                  "feedback": "Reassurance seeking is a genuine psychological idea, but the observation by itself does not establish it. Reassurance can help; its effects depend on how the need and response develop over time."
+                },
+                {
+                  "id": "attachment-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Availability.",
+                  "feedback": "This description follows from the example. Whether another person is realistically able and willing to respond when support is needed."
+                },
+                {
+                  "id": "attachment-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Working model.",
+                  "feedback": "Working model is a genuine psychological idea, but the observation by itself does not establish it. A working model is not a fixed diagnosis or an explanation that overrides current evidence."
+                },
+                {
+                  "id": "attachment-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "attachment-f1-l2-n4-o3"
+            },
+            {
+              "id": "attachment-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Being unavailable for a few hours is not necessarily being emotionally unreliable.\n\nA working model is not a fixed diagnosis or an explanation that overrides current evidence.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            }
+          ]
+        },
+        {
+          "id": "attachment-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "attachment-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A learned prediction about whether someone important will be available when we need them.\n\nAsking for signs that the relationship is secure when uncertainty feels difficult.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: A person anticipates rejection even when a new friend has usually been reliable. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "attachment-foundation:choose",
+              "explanation": "The example most directly supports working model. A changeable set of expectations formed through experience of relationships. A working model is not a fixed diagnosis or an explanation that overrides current evidence.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "options": [
+                {
+                  "id": "attachment-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Attachment expectation.",
+                  "feedback": "Attachment expectation is a genuine psychological idea, but the observation by itself does not establish it. An expectation can be influenced by what this particular person has actually done."
+                },
+                {
+                  "id": "attachment-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Reassurance seeking.",
+                  "feedback": "Reassurance seeking is a genuine psychological idea, but the observation by itself does not establish it. Reassurance can help; its effects depend on how the need and response develop over time."
+                },
+                {
+                  "id": "attachment-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Availability.",
+                  "feedback": "Availability is a genuine psychological idea, but the observation by itself does not establish it. Being unavailable for a few hours is not necessarily being emotionally unreliable."
+                },
+                {
+                  "id": "attachment-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Working model.",
+                  "feedback": "This description follows from the example. A changeable set of expectations formed through experience of relationships."
+                },
+                {
+                  "id": "attachment-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "attachment-f1-l3-n2-o4"
+            },
+            {
+              "id": "attachment-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "attachment-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what do we expect when an important person is unavailable?",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "pairs": [
+                {
+                  "id": "attachment-f1-l3-n3-p0",
+                  "label": "Attachment expectation",
+                  "answer": "A learned prediction about whether someone important will be available when we need them."
+                },
+                {
+                  "id": "attachment-f1-l3-n3-p1",
+                  "label": "Reassurance seeking",
+                  "answer": "Asking for signs that the relationship is secure when uncertainty feels difficult."
+                },
+                {
+                  "id": "attachment-f1-l3-n3-p2",
+                  "label": "Availability",
+                  "answer": "Whether another person is realistically able and willing to respond when support is needed."
+                },
+                {
+                  "id": "attachment-f1-l3-n3-p3",
+                  "label": "Working model",
+                  "answer": "A changeable set of expectations formed through experience of relationships."
+                }
+              ]
+            },
+            {
+              "id": "attachment-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: Someone sends several messages asking whether everything is okay after a long silence. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "attachment-foundation:choose",
+              "explanation": "The example most directly supports reassurance seeking. Asking for signs that the relationship is secure when uncertainty feels difficult. Reassurance can help; its effects depend on how the need and response develop over time.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "options": [
+                {
+                  "id": "attachment-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Attachment expectation.",
+                  "feedback": "Attachment expectation is a genuine psychological idea, but the observation by itself does not establish it. An expectation can be influenced by what this particular person has actually done."
+                },
+                {
+                  "id": "attachment-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Reassurance seeking.",
+                  "feedback": "This description follows from the example. Asking for signs that the relationship is secure when uncertainty feels difficult."
+                },
+                {
+                  "id": "attachment-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Availability.",
+                  "feedback": "Availability is a genuine psychological idea, but the observation by itself does not establish it. Being unavailable for a few hours is not necessarily being emotionally unreliable."
+                },
+                {
+                  "id": "attachment-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Working model.",
+                  "feedback": "Working model is a genuine psychological idea, but the observation by itself does not establish it. A working model is not a fixed diagnosis or an explanation that overrides current evidence."
+                },
+                {
+                  "id": "attachment-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "attachment-f1-l3-n4-o2"
+            },
+            {
+              "id": "attachment-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between attachment expectation, reassurance seeking, availability, working model. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "attachment-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Nina",
+        "Eli"
+      ],
+      "glossary": [
+        {
+          "term": "Attachment expectation",
+          "definition": "A learned prediction about whether someone important will be available when we need them.",
+          "example": "A delayed reply feels unusually threatening because someone expects closeness to disappear.",
+          "limit": "An expectation can be influenced by what this particular person has actually done."
+        },
+        {
+          "term": "Reassurance seeking",
+          "definition": "Asking for signs that the relationship is secure when uncertainty feels difficult.",
+          "example": "Someone sends several messages asking whether everything is okay after a long silence.",
+          "limit": "Reassurance can help; its effects depend on how the need and response develop over time."
+        },
+        {
+          "term": "Availability",
+          "definition": "Whether another person is realistically able and willing to respond when support is needed.",
+          "example": "A partner cannot reply during a shift but offers a reliable time to speak afterwards.",
+          "limit": "Being unavailable for a few hours is not necessarily being emotionally unreliable."
+        },
+        {
+          "term": "Working model",
+          "definition": "A changeable set of expectations formed through experience of relationships.",
+          "example": "A person anticipates rejection even when a new friend has usually been reliable.",
+          "limit": "A working model is not a fixed diagnosis or an explanation that overrides current evidence."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "attachment-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "attachment-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Nina and Eli have been dating for six months. Eli usually replies during lunch, but today his phone is off while he is travelling.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "attachment-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "scenario": "Nina and Eli have been dating for six months. Eli usually replies during lunch, but today his phone is off while he is travelling.",
+              "speakerA": "Nina",
+              "speakerB": "Eli",
+              "turns": [
+                {
+                  "id": "attachment-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "You haven't replied since this morning. Are we okay?"
+                },
+                {
+                  "id": "attachment-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "My phone died on the train. I only just saw your messages."
+                },
+                {
+                  "id": "attachment-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "I knew there could be a reason, but I kept thinking something had changed."
+                },
+                {
+                  "id": "attachment-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "What made you think that?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "attachment-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "attachment-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "attachment-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "attachment-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "attachment-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "attachment-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "attachment-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "attachment-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+                  "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message."
+                }
+              ]
+            },
+            {
+              "id": "attachment-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "attachment-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "categories": [
+                {
+                  "id": "attachment-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "attachment-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "attachment-f2-l1-n3-a",
+                  "label": "“You haven't replied since this morning. Are we okay?”",
+                  "answer": "attachment-f2-l1-n3-seen"
+                },
+                {
+                  "id": "attachment-f2-l1-n3-b",
+                  "label": "A temporary absence of contact is being interpreted through an expectation about relational availability. Attachment-related expectations can guide what a person notices and how they respond.",
+                  "answer": "attachment-f2-l1-n3-guess"
+                },
+                {
+                  "id": "attachment-f2-l1-n3-c",
+                  "label": "“My phone died on the train. I only just saw your messages.”",
+                  "answer": "attachment-f2-l1-n3-seen"
+                },
+                {
+                  "id": "attachment-f2-l1-n3-d",
+                  "label": "Nina may have recently experienced broken promises from Eli, in which case concern about his reliability could reflect current evidence.",
+                  "answer": "attachment-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "attachment-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Nina may have recently experienced broken promises from Eli, in which case concern about his reliability could reflect current evidence.\n\nAttachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            }
+          ]
+        },
+        {
+          "id": "attachment-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "attachment-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "A temporary absence of contact is being interpreted through an expectation about relational availability. Attachment-related expectations can guide what a person notices and how they respond.\n\nAnother possibility: Nina may have recently experienced broken promises from Eli, in which case concern about his reliability could reflect current evidence.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "attachment-foundation:investigate",
+              "explanation": "Compare Nina's responses across relationships and circumstances, and examine Eli's actual communication history. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "options": [
+                {
+                  "id": "attachment-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "attachment-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "attachment-f2-l2-n2-o3",
+                  "label": "Compare Nina's responses across relationships and circumstances, and examine Eli's actual communication history.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "attachment-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "attachment-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "attachment-f2-l2-n2-o3"
+            },
+            {
+              "id": "attachment-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "The previous week Eli had cancelled twice without explanation and then avoided a discussion about it.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "attachment-foundation:choose",
+              "explanation": "The new context makes present-day reliability a stronger part of the explanation. Nina's reaction need not be attributed entirely to an enduring attachment tendency.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "options": [
+                {
+                  "id": "attachment-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "attachment-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "attachment-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "attachment-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "attachment-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "attachment-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "attachment-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "attachment-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Attachment theory tries to explain how experiences of closeness and reliability shape our expectations of others. The point is to understand a pattern of relating, not to hand people an identity label.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            },
+            {
+              "id": "attachment-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: A partner cannot reply during a shift but offers a reliable time to speak afterwards. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "attachment-foundation:choose",
+              "explanation": "The example most directly supports availability. Whether another person is realistically able and willing to respond when support is needed. Being unavailable for a few hours is not necessarily being emotionally unreliable.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "options": [
+                {
+                  "id": "attachment-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Attachment expectation.",
+                  "feedback": "Attachment expectation is a genuine psychological idea, but the observation by itself does not establish it. An expectation can be influenced by what this particular person has actually done."
+                },
+                {
+                  "id": "attachment-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Reassurance seeking.",
+                  "feedback": "Reassurance seeking is a genuine psychological idea, but the observation by itself does not establish it. Reassurance can help; its effects depend on how the need and response develop over time."
+                },
+                {
+                  "id": "attachment-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Availability.",
+                  "feedback": "This description follows from the example. Whether another person is realistically able and willing to respond when support is needed."
+                },
+                {
+                  "id": "attachment-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Working model.",
+                  "feedback": "Working model is a genuine psychological idea, but the observation by itself does not establish it. A working model is not a fixed diagnosis or an explanation that overrides current evidence."
+                },
+                {
+                  "id": "attachment-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "attachment-f2-l3-n2-o3"
+            },
+            {
+              "id": "attachment-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "attachment-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "categories": [
+                {
+                  "id": "attachment-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "attachment-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "attachment-f2-l3-n3-a",
+                  "label": "“You haven't replied since this morning. Are we okay?”",
+                  "answer": "attachment-f2-l3-n3-seen"
+                },
+                {
+                  "id": "attachment-f2-l3-n3-b",
+                  "label": "A temporary absence of contact is being interpreted through an expectation about relational availability. Attachment-related expectations can guide what a person notices and how they respond.",
+                  "answer": "attachment-f2-l3-n3-guess"
+                },
+                {
+                  "id": "attachment-f2-l3-n3-c",
+                  "label": "“My phone died on the train. I only just saw your messages.”",
+                  "answer": "attachment-f2-l3-n3-seen"
+                },
+                {
+                  "id": "attachment-f2-l3-n3-d",
+                  "label": "Nina may have recently experienced broken promises from Eli, in which case concern about his reliability could reflect current evidence.",
+                  "answer": "attachment-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "attachment-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "attachment-foundation:investigate",
+              "explanation": "Compare Nina's responses across relationships and circumstances, and examine Eli's actual communication history. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood.",
+              "options": [
+                {
+                  "id": "attachment-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "attachment-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "attachment-f2-l3-n4-o3",
+                  "label": "Compare Nina's responses across relationships and circumstances, and examine Eli's actual communication history.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "attachment-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "attachment-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "attachment-f2-l3-n4-o3"
+            },
+            {
+              "id": "attachment-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Attachment patterns are probabilistic models shaped by experience and context, not fixed identities derived from a single unanswered message.",
+              "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "attachment-module-01",
       "title": "What attachment theory can explain",
@@ -87,6 +881,16 @@
                     {
                       "id": "attachment-m1-node-1-check1-opt3",
                       "label": "Sofia may be mainly frustrated about incompatible preferences for everyday messaging."
+                    },
+                    {
+                      "id": "attachment-m1-node-1-check1-alternative-1",
+                      "label": "Sofia may be using the online indicator to test whether Jamie has changed his usual communication routine.",
+                      "feedback": "A changed routine would matter, but Jamie has already explained the shift restriction."
+                    },
+                    {
+                      "id": "attachment-m1-node-1-check1-alternative-2",
+                      "label": "Sofia may be repeating a habitual phone check because the delay is inconvenient, even without a fear about the relationship.",
+                      "feedback": "A habit could contribute, although her words about needing to know they are okay favour a closeness-related account."
                     }
                   ],
                   "answer": "attachment-m1-node-1-check1-opt1",
@@ -100,9 +904,10 @@
                   "options": [
                     {
                       "id": "attachment-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Could we settle a time to speak after your shift and review whether that feels predictable enough for both of us?",
                       "reply": "Did it make you feel secure?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "A realistic routine could help; it does not establish that reassurance alone resolves the worry.",
+                      "feedback": "A realistic routine could help; it does not establish that reassurance alone resolves the worry."
                     },
                     {
                       "id": "attachment-m1-node-1-check2-opt1",
@@ -112,15 +917,24 @@
                     },
                     {
                       "id": "attachment-m1-node-1-check2-opt2",
-                      "label": "Can you leave your online status visible all day so I won't worry?",
-                      "reply": "I want us to be close, but I can't keep a phone with me during work.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Would you be willing to tell me in advance when your phone will be unavailable, while I work on what I assume during the silence?",
+                      "reply": "Did it make you feel secure?",
+                      "consequence": "Joint planning recognises two contributions, but shifts sometimes prevent advance notice.",
+                      "feedback": "Joint planning recognises two contributions, but shifts sometimes prevent advance notice."
                     },
                     {
                       "id": "attachment-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "What would a reply have told you?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "I want to talk about why I keep checking the online status, rather than asking you for more immediate replies.",
+                      "reply": "Did it make you feel secure?",
+                      "consequence": "This addresses the interpretation but leaves the couple's practical communication expectations unsettled.",
+                      "feedback": "This addresses the interpretation but leaves the couple's practical communication expectations unsettled."
+                    },
+                    {
+                      "id": "attachment-m1-node-1-check2-alternative-4",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "reply": "Did it make you feel secure?",
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     }
                   ],
                   "answer": "attachment-m1-node-1-check2-opt1",
@@ -258,7 +1072,8 @@
               "changes": [
                 {
                   "id": "attachment-m1-plan-opt2",
-                  "label": "Can you leave your online status visible all day so I won't worry?"
+                  "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                  "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                 },
                 {
                   "id": "attachment-m1-plan-opt3",
@@ -314,6 +1129,11 @@
                 {
                   "id": "attachment-m1-repair-opt4",
                   "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "attachment-m1-node-7-alternative-1",
+                  "label": "Check whether the speakers had agreed on the practical expectation before the exchange.",
+                  "feedback": "The agreement may determine whether the original request was reasonable, although not why the response was so strong."
                 }
               ],
               "answer": "attachment-m1-repair-opt1"
@@ -429,6 +1249,16 @@
                     {
                       "id": "attachment-m1-node-8-check1-opt1",
                       "label": "The temporary relief following a check supports a reassurance-seeking loop, while the work constraint remains real. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "attachment-m1-node-8-check1-alternative-1",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                    },
+                    {
+                      "id": "attachment-m1-node-8-check1-alternative-2",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "attachment-m1-node-8-check1-opt1",
@@ -466,6 +1296,11 @@
                 {
                   "id": "attachment-m1-new-opt2",
                   "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "attachment-m1-node-9-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "attachment-m1-new-opt1"
@@ -500,6 +1335,11 @@
                 {
                   "id": "attachment-m1-view-opt3",
                   "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "attachment-m1-node-10-alternative-1",
+                  "label": "Jamie may have broken an established agreement to check in during the shift.",
+                  "feedback": "This alternative deserves consideration. It would become stronger if earlier expectations supported it. Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet."
                 }
               ],
               "answer": "attachment-m1-view-opt1"
@@ -532,6 +1372,11 @@
                 {
                   "id": "attachment-m1-test-opt2",
                   "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "attachment-m1-node-13-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "attachment-m1-test-opt1"
@@ -597,6 +1442,11 @@
                 {
                   "id": "attachment-m1-transfer-e-opt3",
                   "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "attachment-m1-node-14-evidence-alternative-1",
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although Sofia may be treating delayed contact as a signal about the security of the relationship. is more directly tied to the words in this scene. Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet."
                 }
               ],
               "evidenceAnswer": "attachment-m1-transfer-e-opt1",
@@ -612,6 +1462,11 @@
                 {
                   "id": "attachment-m1-transfer-a-opt3",
                   "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "attachment-m1-node-14-response-alternative-1",
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "responseAnswer": "attachment-m1-transfer-a-opt1"
@@ -706,6 +1561,11 @@
                   "id": "attachment-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "attachment-m1-l3-n3-alternative-1",
+                  "label": "Nina may know that travel interruptions are common but be seeking confirmation of one practical arrangement.",
+                  "feedback": "A planning need is credible; her stated fear of becoming less important suggests something more personally threatening."
                 }
               ],
               "answer": "attachment-m1-l3-n3-opt2",
@@ -740,6 +1600,11 @@
                   "id": "attachment-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "attachment-m1-l3-n4-alternative-1",
+                  "label": "Nina may be unusually sensitive to uncertainty today because of an unrelated stressful event.",
+                  "feedback": "Current stress can amplify anxiety, but no such event has yet been established."
                 }
               ],
               "answer": "attachment-m1-l3-n4-opt2",
@@ -766,6 +1631,16 @@
                   "id": "attachment-m1-l3-n5-evidence-opt2",
                   "label": "A temporary absence of contact is being interpreted through an expectation about relational availability. Attachment-related expectations can guide what a person notices and how they respond.",
                   "feedback": ""
+                },
+                {
+                  "id": "attachment-m1-l3-n5-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "attachment-m1-l3-n5-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "attachment-m1-l3-n5-evidence-opt2",
@@ -779,6 +1654,16 @@
                   "id": "attachment-m1-l3-n5-response-opt2",
                   "label": "I understand you can't always respond. When travel interrupts contact, could we agree when to check in, and also talk about what I tend to assume?",
                   "feedback": ""
+                },
+                {
+                  "id": "attachment-m1-l3-n5-response-alternative-1",
+                  "label": "Can you tell me what you thought the silence meant to me?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "attachment-m1-l3-n5-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "attachment-m1-l3-n5-response-opt2"
@@ -884,13 +1769,18 @@
                     },
                     {
                       "id": "attachment-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     },
                     {
                       "id": "attachment-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "attachment-m1-l4-n2-question-alternative-2",
+                      "label": "Nina may be responding to Eli’s recent unreliability, rather than a broad expectation carried across relationships.",
+                      "feedback": "Current relationship evidence could explain concern without invoking an enduring attachment pattern."
                     }
                   ],
                   "answer": "attachment-m1-l4-n2-question-opt2",
@@ -928,6 +1818,11 @@
                   "id": "attachment-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "attachment-m1-l4-n3-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "attachment-m1-l4-n3-opt2",
@@ -962,6 +1857,11 @@
                   "id": "attachment-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "attachment-m1-l4-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "attachment-m1-l4-n4-opt2",
@@ -1029,6 +1929,11 @@
                   "id": "attachment-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "attachment-m1-l4-n6-alternative-1",
+                  "label": "Nina may have recently experienced broken promises from Eli, in which case concern about his reliability could reflect current evidence.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "attachment-m1-l4-n6-opt2"
@@ -1071,6 +1976,16 @@
                   "id": "attachment-m1-l5-n2-evidence-opt2",
                   "label": "A temporary absence of contact is being interpreted through an expectation about relational availability. Attachment-related expectations can guide what a person notices and how they respond.",
                   "feedback": ""
+                },
+                {
+                  "id": "attachment-m1-l5-n2-evidence-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                },
+                {
+                  "id": "attachment-m1-l5-n2-evidence-alternative-2",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "attachment-m1-l5-n2-evidence-opt2",
@@ -1084,6 +1999,16 @@
                   "id": "attachment-m1-l5-n2-response-opt2",
                   "label": "I understand you can't always respond. When travel interrupts contact, could we agree when to check in, and also talk about what I tend to assume?",
                   "feedback": ""
+                },
+                {
+                  "id": "attachment-m1-l5-n2-response-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                },
+                {
+                  "id": "attachment-m1-l5-n2-response-alternative-2",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "attachment-m1-l5-n2-response-opt2"
@@ -1110,13 +2035,18 @@
                 },
                 {
                   "id": "attachment-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "Nina may be responding to Eli’s recent unreliability, rather than a broad expectation carried across relationships.",
+                  "feedback": "Current relationship evidence could explain concern without invoking an enduring attachment pattern."
                 },
                 {
                   "id": "attachment-m1-l5-n4-opt4",
                   "label": "Can you tell me what you thought the silence meant to me?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "attachment-m1-l5-n4-alternative-2",
+                  "label": "Nina may know that travel interruptions are common but be seeking confirmation of one practical arrangement.",
+                  "feedback": "A planning need is credible; her stated fear of becoming less important suggests something more personally threatening."
                 }
               ],
               "answer": "attachment-m1-l5-n4-opt2",
@@ -1142,6 +2072,11 @@
                   "id": "attachment-m1-l5-n3-action-opt2",
                   "label": "I understand you can't always respond. When travel interrupts contact, could we agree when to check in, and also talk about what I tend to assume?",
                   "feedback": ""
+                },
+                {
+                  "id": "attachment-m1-l5-n3-change-alternative-1",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "outcomes": [
@@ -1154,6 +2089,11 @@
                   "id": "attachment-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "attachment-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "attachment-m1-l5-n3-action-opt2",
@@ -1189,6 +2129,11 @@
                   "id": "attachment-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "attachment-m1-l5-n5-alternative-1",
+                  "label": "Nina may know that travel interruptions are common but be seeking confirmation of one practical arrangement.",
+                  "feedback": "A planning need is credible; her stated fear of becoming less important suggests something more personally threatening."
                 }
               ],
               "answer": "attachment-m1-l5-n5-opt2",
@@ -1223,6 +2168,11 @@
                   "id": "attachment-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "attachment-m1-l5-n6-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "attachment-m1-l5-n6-opt2"
@@ -1273,6 +2223,11 @@
                   "id": "attachment-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "attachment-m1-l6-n2-alternative-1",
+                  "label": "Can you tell me what you thought the silence meant to me?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "attachment-m1-l6-n2-opt2"
@@ -1349,6 +2304,11 @@
                   "id": "attachment-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "attachment-m1-l6-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "attachment-m1-l6-n4-opt2",
@@ -1391,6 +2351,36 @@
               "sources": "Bowlby (1982), Attachment and Loss; Mikulincer & Shaver (2016), Attachment in Adulthood."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Nina",
+        "Eli"
+      ],
+      "glossary": [
+        {
+          "term": "Attachment expectation",
+          "definition": "A learned prediction about whether someone important will be available when we need them.",
+          "example": "A delayed reply feels unusually threatening because someone expects closeness to disappear.",
+          "limit": "An expectation can be influenced by what this particular person has actually done."
+        },
+        {
+          "term": "Reassurance seeking",
+          "definition": "Asking for signs that the relationship is secure when uncertainty feels difficult.",
+          "example": "Someone sends several messages asking whether everything is okay after a long silence.",
+          "limit": "Reassurance can help; its effects depend on how the need and response develop over time."
+        },
+        {
+          "term": "Availability",
+          "definition": "Whether another person is realistically able and willing to respond when support is needed.",
+          "example": "A partner cannot reply during a shift but offers a reliable time to speak afterwards.",
+          "limit": "Being unavailable for a few hours is not necessarily being emotionally unreliable."
+        },
+        {
+          "term": "Working model",
+          "definition": "A changeable set of expectations formed through experience of relationships.",
+          "example": "A person anticipates rejection even when a new friend has usually been reliable.",
+          "limit": "A working model is not a fixed diagnosis or an explanation that overrides current evidence."
         }
       ]
     }

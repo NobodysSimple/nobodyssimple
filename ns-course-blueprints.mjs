@@ -43,11 +43,14 @@ export function mergePublishedIntoBlueprint(blueprint,published){
  });
  draft.version=published.version||1;
  const original=new Map(draft.modules.map(unit=>[unit.id,unit]));
+ const foundationUnits=[];
  for(const publishedUnit of published.modules||[]){
   let unit=original.get(publishedUnit.id);
   if(!unit){
    unit=JSON.parse(JSON.stringify(publishedUnit));
-   draft.modules.push(unit);original.set(unit.id,unit);
+   if(unit.kind==='foundation')foundationUnits.push(unit);
+   else draft.modules.push(unit);
+   original.set(unit.id,unit);
    continue;
   }
   const baseLessons=new Map(unit.lessons.map(l=>[l.id,l]));
@@ -60,6 +63,8 @@ export function mergePublishedIntoBlueprint(blueprint,published){
   unit.title=publishedUnit.title||unit.title;
   unit.lessons.push(...authored);
  }
+ // Authored introduction units precede the 50 unchanged editorial modules.
+ draft.modules.unshift(...foundationUnits);
  return draft;
 }
 export async function fetchCurriculumBlueprint(courseId,{fetcher=fetch}={}){

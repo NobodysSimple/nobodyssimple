@@ -1,0 +1,315 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "burnout",
+      "intro": "An exhausting week is not automatically burnout. To understand what is happening, we need to look at how long the demands have continued and how much influence someone has over them.",
+      "question": "When is work tiring, and when have the conditions of working become a sustained problem?",
+      "terms": [
+        {
+          "name": "Stress",
+          "meaning": "A response to demands that feel larger than the resources available at that moment.",
+          "example": "A support worker feels tense ahead of a difficult week of appointments.",
+          "limit": "Stress can rise during one week without becoming a persistent occupational pattern."
+        },
+        {
+          "name": "Job demands",
+          "meaning": "What work requires from someone in time, attention or responsibility.",
+          "example": "An employee is assigned extra cases while the team remains short-staffed.",
+          "limit": "Demand is partly shaped by how much control and support a person has."
+        },
+        {
+          "name": "Recovery",
+          "meaning": "Time and conditions that allow the effects of effort to settle.",
+          "example": "After a demanding shift, someone has uninterrupted time away from work.",
+          "limit": "Rest becomes less effective when work messages and unfinished tasks repeatedly intrude."
+        },
+        {
+          "name": "Burnout",
+          "meaning": "A work-related pattern of exhaustion and growing distance from work, sometimes accompanied by reduced efficacy, associated with chronic occupational stress.",
+          "example": "An employee feels depleted for months while the job's demands keep increasing.",
+          "limit": "Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue."
+        }
+      ]
+    },
+    {
+      "id": "loneliness",
+      "intro": "It is possible to know lots of people and still feel alone. It is also possible to spend time alone while feeling securely connected to others.",
+      "question": "What matters about a relationship besides how often we see someone?",
+      "terms": [
+        {
+          "name": "Social contact",
+          "meaning": "An opportunity to interact with another person, whether briefly or deeply.",
+          "example": "A student attends several busy gatherings during the week.",
+          "limit": "A high count of interactions does not tell us how satisfying they felt."
+        },
+        {
+          "name": "Perceived connection",
+          "meaning": "The experience of feeling known, valued or able to turn towards someone.",
+          "example": "Someone feels understood after a thoughtful call with a close friend.",
+          "limit": "Feeling connected is not identical to having a large social circle."
+        },
+        {
+          "name": "Disclosure",
+          "meaning": "Choosing to share something personal that others could respond to.",
+          "example": "A friend says that work has been difficult rather than keeping the conversation cheerful.",
+          "limit": "Sharing requires judgement about trust and safety; not every relationship is a suitable place."
+        },
+        {
+          "name": "Reciprocity",
+          "meaning": "A relationship in which people have a reasonable opportunity to respond to one another's needs.",
+          "example": "Two friends take turns listening when each has had a hard week.",
+          "limit": "Reciprocity does not require equal emotional labour in every single conversation."
+        }
+      ]
+    },
+    {
+      "id": "social-media",
+      "intro": "A person can open an app intending to spend two minutes and stay for an hour. The interface matters because it changes when the person has to choose to stop.",
+      "question": "Why does a small online task so often turn into a much longer session?",
+      "terms": [
+        {
+          "name": "Stopping cue",
+          "meaning": "A signal that an activity has reached a natural point where we can decide whether to continue.",
+          "example": "Finishing an article gives the reader an obvious place to close the tab.",
+          "limit": "An endless feed often removes this pause."
+        },
+        {
+          "name": "Unpredictable reward",
+          "meaning": "A potentially enjoyable result whose timing or quality is uncertain.",
+          "example": "Someone keeps scrolling because the next short video might be funnier.",
+          "limit": "Not every repeated action reflects addiction; interest and habit also matter."
+        },
+        {
+          "name": "Habit cue",
+          "meaning": "A situation that begins prompting an action through repetition.",
+          "example": "Picking up a phone automatically when sitting down before bed.",
+          "limit": "A cue helps explain when behaviour starts; it does not determine every later choice."
+        },
+        {
+          "name": "Designed friction",
+          "meaning": "The amount of effort an interface makes us spend to begin or stop an action.",
+          "example": "A feed starts another clip automatically, making stopping require a deliberate interruption.",
+          "limit": "Friction can be adjusted to support autonomy; the same design does not affect everybody equally."
+        }
+      ]
+    },
+    {
+      "id": "misinformation",
+      "intro": "A claim can become familiar long before we know whether it is true. Recognising a statement is a different achievement from checking the evidence behind it.",
+      "question": "How can we tell repeated assertions from genuinely independent support?",
+      "terms": [
+        {
+          "name": "Claim",
+          "meaning": "A statement presented as something that could be true or false.",
+          "example": "A video says a household substance prevents a particular infection.",
+          "limit": "Before judging support, identify exactly what outcome the claim is about."
+        },
+        {
+          "name": "Evidence",
+          "meaning": "Information gathered in a way that can help test whether a claim is supported.",
+          "example": "A controlled human study measures whether the proposed intervention actually works.",
+          "limit": "A cited laboratory result might not justify a health claim about people."
+        },
+        {
+          "name": "Independent confirmation",
+          "meaning": "New support that does not simply copy the same original source.",
+          "example": "Several research teams separately test the same question with suitable methods.",
+          "limit": "Fifteen reposts of one video are still one unverified source."
+        },
+        {
+          "name": "Illusory truth effect",
+          "meaning": "A tendency for repeated statements to feel more believable because they become easier to recognise.",
+          "example": "A headline seems credible after appearing in several feeds over the same week.",
+          "limit": "Familiarity does not prove accuracy, and repetition does not mean the statement is necessarily false."
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity",
+      "intro": "People's minds vary, and the same setting can suit one person while creating a barrier for another. Broad labels are starting points for understanding, not substitutes for asking about actual needs.",
+      "question": "How do we describe neurological differences without assuming everyone with a label is alike?",
+      "terms": [
+        {
+          "name": "Neurodiversity",
+          "meaning": "The fact that there is variation in how people's minds and nervous systems work across a population.",
+          "example": "A university includes people with different attentional and sensory profiles.",
+          "limit": "Neurodiversity refers to diversity across people; it is not a diagnosis assigned to one individual."
+        },
+        {
+          "name": "Neurodivergence",
+          "meaning": "A description of an individual's neurological functioning as differing from prevailing expectations.",
+          "example": "A student identifies as autistic and describes a different sensory experience.",
+          "limit": "The term does not establish the same abilities or support needs in every person."
+        },
+        {
+          "name": "Diagnosis",
+          "meaning": "A clinical conclusion reached through a particular assessment process and criteria.",
+          "example": "An adult undergoes an ADHD assessment exploring history and effects on daily life.",
+          "limit": "Diagnosis and identity can overlap but are not interchangeable; support needs may exist without a diagnosis."
+        },
+        {
+          "name": "Person–environment fit",
+          "meaning": "How well the demands and features of a setting match what a person needs to function.",
+          "example": "One worker concentrates better in a quiet room while another needs a little background sound.",
+          "limit": "A useful adjustment is tested against actual barriers, rather than assigned only by diagnostic label."
+        }
+      ]
+    },
+    {
+      "id": "sleep",
+      "intro": "Feeling exhausted and being ready to sleep are related, but not identical. Sleep depends on more than how much effort a person has put in today.",
+      "question": "Why can someone feel desperately tired and still struggle to fall asleep?",
+      "terms": [
+        {
+          "name": "Sleep pressure",
+          "meaning": "A drive for sleep that generally grows while we stay awake and reduces during sleep.",
+          "example": "After a long day awake, someone begins to feel increasingly sleepy.",
+          "limit": "A nap can reduce some sleep pressure even if somebody still wants an early night."
+        },
+        {
+          "name": "Circadian timing",
+          "meaning": "Internal daily rhythms that influence when the body is prepared for sleep and wakefulness.",
+          "example": "A night-shift worker finds the morning alerting despite a long period awake.",
+          "limit": "Clock timing can work against sleep pressure; a person may feel tired yet remain awake."
+        },
+        {
+          "name": "Arousal",
+          "meaning": "The body's and mind's level of activation, which can make settling into sleep harder.",
+          "example": "Someone becomes more alert each time they check the clock and worry about being awake.",
+          "limit": "Arousal can be affected by a real environment as well as by worry."
+        },
+        {
+          "name": "Consistency",
+          "meaning": "Keeping a reasonably regular pattern that helps the body anticipate periods of sleep.",
+          "example": "A person wakes at a similar time on most days after a period of irregular shifts.",
+          "limit": "Consistency helps many people but must be adapted around work and individual health needs."
+        }
+      ]
+    },
+    {
+      "id": "low-mood",
+      "intro": "Feeling low after a disappointment makes sense. A longer-lasting mood problem requires a different kind of attention, especially when everyday functioning changes.",
+      "question": "How do we distinguish a difficult response to a loss from a pattern that is becoming harder to escape?",
+      "terms": [
+        {
+          "name": "Sadness",
+          "meaning": "A common response to loss or disappointment that can vary through the day.",
+          "example": "Someone feels down after being rejected for a job they wanted.",
+          "limit": "A short spell of sadness does not, on its own, establish a depressive disorder."
+        },
+        {
+          "name": "Withdrawal",
+          "meaning": "Doing less or having less contact with activities and people than before.",
+          "example": "A student repeatedly cancels enjoyable plans after a setback.",
+          "limit": "Taking some time alone may be helpful; the effect of withdrawal depends on what it changes."
+        },
+        {
+          "name": "Loss of pleasure",
+          "meaning": "Finding less enjoyment in activities that previously felt rewarding.",
+          "example": "A person no longer enjoys meeting friends, even when they attend.",
+          "limit": "Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes."
+        },
+        {
+          "name": "Depressive syndrome",
+          "meaning": "A broader pattern of symptoms and impairment assessed over time, rather than a synonym for feeling sad.",
+          "example": "Low mood lasts for weeks and affects sleep, concentration and daily responsibilities.",
+          "limit": "A story or online quiz cannot establish a diagnosis without proper assessment."
+        }
+      ]
+    },
+    {
+      "id": "scams",
+      "intro": "Scammers often create a problem that seems too urgent to check. The strongest protection begins by understanding the pressure built into the message itself.",
+      "question": "What makes a false instruction feel as though it must be obeyed immediately?",
+      "terms": [
+        {
+          "name": "Authority cue",
+          "meaning": "A sign used to make a speaker appear legitimate or powerful.",
+          "example": "A caller says they work in the bank's fraud department and quotes card details.",
+          "limit": "A convincing detail does not prove that the caller is authorised."
+        },
+        {
+          "name": "Urgency",
+          "meaning": "A demand to act quickly, often before there is time to check independently.",
+          "example": "The caller says the account will be emptied in five minutes.",
+          "limit": "Real problems can be urgent; independent verification is still important."
+        },
+        {
+          "name": "Independent verification",
+          "meaning": "Checking a claim through a channel chosen separately from the person making it.",
+          "example": "Someone hangs up and calls the number printed on their bank card.",
+          "limit": "Following a link supplied by the suspicious caller is not independent checking."
+        },
+        {
+          "name": "Social engineering",
+          "meaning": "Using human trust and decision-making patterns to obtain information or actions.",
+          "example": "A fraudster uses fear of a lost bank balance to obtain a transfer.",
+          "limit": "Susceptibility to a carefully timed message is not a measure of intelligence."
+        }
+      ]
+    },
+    {
+      "id": "masculinity",
+      "intro": "The words we use for biological characteristics and social identity can overlap in ordinary speech. When we want to understand a scientific question, we must say exactly which idea we are measuring.",
+      "question": "What information does a question about sex or gender actually give us?",
+      "terms": [
+        {
+          "name": "Sex characteristics",
+          "meaning": "Biological features including anatomy and hormones that may be relevant in particular contexts.",
+          "example": "A health questionnaire asks which anatomy is relevant to a specific screening test.",
+          "limit": "One binary response may not capture every clinically relevant feature or variation."
+        },
+        {
+          "name": "Gender identity",
+          "meaning": "A person's own experience of their gender.",
+          "example": "A demographic form asks how someone identifies, rather than about a particular organ.",
+          "limit": "Identity and the biological details needed for a clinical question are not interchangeable measurements."
+        },
+        {
+          "name": "Gender role",
+          "meaning": "An expectation about how people of a particular gender should behave.",
+          "example": "A student hears that being a man means never asking for emotional support.",
+          "limit": "A social expectation is not proof that the underlying behaviour is biologically fixed."
+        },
+        {
+          "name": "Construct validity",
+          "meaning": "Whether a question actually measures the idea it claims to measure.",
+          "example": "A survey asks 'male or female' but researchers mean attitudes about masculinity.",
+          "limit": "The wording must fit the research aim and be understandable to respondents."
+        }
+      ]
+    },
+    {
+      "id": "vaping",
+      "intro": "Groups can influence our decisions without anybody issuing a command. At the same time, what initially leads someone to try nicotine may differ from what keeps them using it.",
+      "question": "How do social expectations and nicotine's effects influence a choice?",
+      "terms": [
+        {
+          "name": "Social norm",
+          "meaning": "A belief about what people in a group commonly do or approve of.",
+          "example": "A student thinks nearly everyone in a friendship group vapes.",
+          "limit": "A perceived norm can be inaccurate, especially when noticeable behaviour stands out."
+        },
+        {
+          "name": "Normative influence",
+          "meaning": "Changing behaviour because we want acceptance or fear standing out.",
+          "example": "Someone accepts a vape because they assume refusing will seem unfriendly.",
+          "limit": "Pressure can exist without overt bullying or explicit orders."
+        },
+        {
+          "name": "Nicotine dependence",
+          "meaning": "A pattern in which nicotine use is maintained partly by its effects and by withdrawal or craving.",
+          "example": "Someone who initially tried vaping socially now feels uncomfortable when they go without it.",
+          "limit": "Dependence requires attention to use over time; one social episode does not establish it."
+        },
+        {
+          "name": "Autonomous choice",
+          "meaning": "Making a decision that reflects your own reasons rather than untested expectations of others.",
+          "example": "A student declines to vape and stays with the group to enjoy their company.",
+          "limit": "Being included and using a particular product are not necessarily the same thing."
+        }
+      ]
+    }
+  ]
+}

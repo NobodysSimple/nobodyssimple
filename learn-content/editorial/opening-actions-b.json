@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "burnout",
+      "actions": [
+        {
+          "text": "Map required appointments against actual staffed hours before asking management to reprioritise them.",
+          "reason": "The calculation could identify a resource gap, although a decision is still needed about what will change."
+        },
+        {
+          "text": "Ask which appointments can safely be delayed while arranging a formal review of workload and staffing.",
+          "reason": "A short-term prioritisation may protect care, but does not by itself solve chronic understaffing."
+        },
+        {
+          "text": "Record the missed breaks and incomplete work for a fortnight to establish how demand varies across clinic days.",
+          "reason": "A record can support an organisational discussion, though Priya may already have enough evidence to request action."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Priya may be reacting to an unusually difficult clinic schedule that will soon revert to normal.",
+          "reason": "A temporary peak is plausible, but a capacity calculation over time would be needed."
+        },
+        {
+          "text": "Priya may have the necessary staffing hours overall but lack authority to reallocate them across appointments.",
+          "reason": "Control over scheduling could matter, though the record suggests added demand without added hours."
+        }
+      ]
+    },
+    {
+      "id": "loneliness",
+      "actions": [
+        {
+          "text": "Invite a trusted friend for coffee and explain that you would like to talk about how the week has been.",
+          "reason": "A quieter setting may offer a better opportunity, although the friend may have limited capacity that day."
+        },
+        {
+          "text": "Ask someone from the group whether they would be open to a more personal conversation rather than assuming no one is interested.",
+          "reason": "Checking the expectation could be useful, but choosing a trusted person matters."
+        },
+        {
+          "text": "Notice which conversations already allow some mutual disclosure before deciding where to invest more time.",
+          "reason": "This uses existing evidence, though simply observing can become another way to avoid sharing."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Jon may feel lonely chiefly because the activities give him few chances to talk about anything personal.",
+          "reason": "The setting could be limiting; he also reports ending opportunities for disclosure himself."
+        },
+        {
+          "text": "Jon may want a different kind of friendship from the one this group normally offers rather than more intimacy with these particular people.",
+          "reason": "A mismatch in expectations is possible, but it has not been tested through a closer conversation."
+        }
+      ]
+    },
+    {
+      "id": "social-media",
+      "actions": [
+        {
+          "text": "Keep the recipe link in a separate note so the intended task does not require opening the recommendation feed.",
+          "reason": "Changing the entry point could support the original goal, although it does not address all late-night browsing."
+        },
+        {
+          "text": "Switch off automatic playback and choose a fixed time to close the app, then compare actual viewing time.",
+          "reason": "This tests two stopping cues, but it may be unclear which change made the difference."
+        },
+        {
+          "text": "Use an app timer as a reminder to decide whether to continue rather than treating it as a strict prohibition.",
+          "reason": "A reminder adds a pause, though the recommendation feed may still encourage continuing."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Ada may be using the video feed as a way to postpone going to bed despite recognising that it is late.",
+          "reason": "Bedtime avoidance may contribute, but the automatic continuation provides a separate mechanism."
+        },
+        {
+          "text": "Ada may still be searching for the recipe she intended to save and therefore have a practical reason to keep watching.",
+          "reason": "The original goal could prolong viewing, though she describes waiting for a better clip rather than a missing recipe."
+        }
+      ]
+    },
+    {
+      "id": "misinformation",
+      "actions": [
+        {
+          "text": "Find the earliest version of the screenshot and compare its claim with the underlying water-quality report.",
+          "reason": "This checks source fidelity; a genuine report may still be old or used out of context."
+        },
+        {
+          "text": "Contact the relevant public water provider through its published service channels to check the warning.",
+          "reason": "Direct verification can clarify current risk, although the source also needs to match the particular area."
+        },
+        {
+          "text": "Ask which independent test or official notice supports the claim before circulating it further.",
+          "reason": "This can slow unverified repetition; the group may still disagree about what counts as independent."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "The screenshot may be an authentic report that has been circulated without its date or geographic limits.",
+          "reason": "An authentic document can still be misleading if taken outside its original context."
+        },
+        {
+          "text": "Group members may trust the warning because it has been shared by people with local experience.",
+          "reason": "Local trust could affect belief, but the number of forwards does not establish independent testing."
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity",
+      "actions": [
+        {
+          "text": "Trial an agenda with clear speaking turns and check whether Tavi can participate without reducing responsibilities.",
+          "reason": "This addresses the format while retaining the role, though Tavi may still need personal adjustments."
+        },
+        {
+          "text": "Ask which part of cross-talk causes the difficulty before choosing between advance notes and structured turns.",
+          "reason": "Understanding the barrier improves fit but could delay an adjustment Tavi has already requested."
+        },
+        {
+          "text": "Provide written notes in advance and invite feedback on whether they help during the actual meeting.",
+          "reason": "This respects the request but may not solve overlapping speech in the session itself."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Tavi may have sufficient background knowledge but struggle to follow contributions when people speak at once.",
+          "reason": "Meeting structure may create a barrier independent of subject knowledge."
+        },
+        {
+          "text": "Tavi may be worried about speaking in a high-pressure group rather than having difficulty processing cross-talk.",
+          "reason": "Social evaluation could contribute; the advance-note request and description of overlapping speech point to a distinct issue."
+        }
+      ]
+    },
+    {
+      "id": "sleep",
+      "actions": [
+        {
+          "text": "Keep the wake time steady for a trial period and record whether the attempted bedtime begins to feel more realistic.",
+          "reason": "This may support timing, but the plan must account for how much sleep Nora is actually getting."
+        },
+        {
+          "text": "Consider moving bedtime gradually rather than spending extra awake hours in bed waiting for sleep.",
+          "reason": "A gradual change could reduce frustration, although bedtime alone may not address circadian timing."
+        },
+        {
+          "text": "Check caffeine, evening light and sleep-related worry before deciding which change is likely to matter most.",
+          "reason": "Those factors could contribute, but Nora's late waking time already gives a strong timing clue."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Nora may be experiencing heightened bedtime arousal from frustration at being awake, beyond the effect of the late wake time.",
+          "reason": "Arousal could amplify the problem; the chosen bedtime may still be early relative to recent wakefulness."
+        },
+        {
+          "text": "Nora may be following a schedule shaped by irregular commitments that has delayed her body clock.",
+          "reason": "A timing explanation is plausible, but the scene alone cannot establish the history of her rhythm."
+        }
+      ]
+    },
+    {
+      "id": "low-mood",
+      "actions": [
+        {
+          "text": "Let Mara speak about the rejection, then make one low-pressure arrangement that keeps connection available.",
+          "reason": "This respects the loss while preventing unnecessary isolation; it does not require the sadness to disappear."
+        },
+        {
+          "text": "Agree to revisit plans in a few days rather than treating two days of sadness as evidence of depression.",
+          "reason": "Waiting can be proportionate, although a meaningful change in safety or functioning would need earlier attention."
+        },
+        {
+          "text": "Choose a small valued activity without using whether she enjoys it immediately as a test of recovery.",
+          "reason": "Participation may help protect routine, but acute grief may still need time."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Mara may be choosing solitude because the rejection is still very recent and she needs space to process it.",
+          "reason": "Short-term withdrawal can be understandable; consequences across time matter."
+        },
+        {
+          "text": "Mara may be worried about future financial security more than the meaning of the rejection to her identity.",
+          "reason": "Practical uncertainty could contribute, although that concern is not described in the scene."
+        }
+      ]
+    },
+    {
+      "id": "scams",
+      "actions": [
+        {
+          "text": "Check the parcel status in a previously installed courier app, without opening the link in the message.",
+          "reason": "An independent channel can verify the delivery, although several couriers might handle the same retailer."
+        },
+        {
+          "text": "Find the original order confirmation and compare its tracking information with the claim in the text.",
+          "reason": "The record may reveal an inconsistency, but confirmation should still use a trusted source."
+        },
+        {
+          "text": "Contact the retailer through its known account page to ask whether any fee is genuinely outstanding.",
+          "reason": "This separates the inquiry from the suspicious sender, though it may be slower than using existing tracking."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "The delivery text may be copied from a genuine courier notification with its link replaced by a malicious one.",
+          "reason": "A familiar message format can make a false link seem credible, but origin requires checking."
+        },
+        {
+          "text": "Alex may already have experienced a failed delivery and therefore consider the fee request more plausible than an unfamiliar recipient would.",
+          "reason": "Past experience could influence confidence, though it cannot verify this message."
+        }
+      ]
+    },
+    {
+      "id": "masculinity",
+      "actions": [
+        {
+          "text": "Separate questions about identity from questions about specific health characteristics, and justify each one from the study aims.",
+          "reason": "The questions would serve different purposes, but care is needed not to collect unnecessary sensitive data."
+        },
+        {
+          "text": "Pilot the wording with participants to discover whether they understand the intended distinction.",
+          "reason": "Testing interpretation is useful, though the research team first needs to identify what it wants measured."
+        },
+        {
+          "text": "Keep a broad demographic item for descriptive reporting while collecting precise clinical information only where it is necessary.",
+          "reason": "A mixed approach could work when each variable has a defined purpose."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "The study may only need a broad demographic grouping, making detailed biological questions unnecessary.",
+          "reason": "That depends on the planned analysis and whether the group is defined clearly enough."
+        },
+        {
+          "text": "Researchers may understand the concept but be using ordinary language that participants interpret differently.",
+          "reason": "This is a wording problem with real measurement consequences, not just a matter of politeness."
+        }
+      ]
+    },
+    {
+      "id": "vaping",
+      "actions": [
+        {
+          "text": "Stay with the group during breaks and decline any offered vape without trying to justify the decision.",
+          "reason": "This tests whether participation really depends on using nicotine, though a refusal may still feel awkward."
+        },
+        {
+          "text": "Tell one trusted friend you do not want to try vaping and ask whether they would still like you to join the breaks.",
+          "reason": "Direct reassurance could help, although it may not be necessary if the group is already welcoming."
+        },
+        {
+          "text": "Choose a different way to take part in the conversation instead of joining the shared vaping routine.",
+          "reason": "Belonging can be maintained through conversation, though established group habits can still exert pressure."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Pip may genuinely be interested in experimenting with nicotine while also wanting to fit into the group.",
+          "reason": "Personal curiosity and social influence can coexist, but the immediate account does not establish either exclusively."
+        },
+        {
+          "text": "Pip may be reading group behaviour as approval of vaping even though friends do not actively encourage it.",
+          "reason": "A perceived norm is plausible, but the actual group expectation remains untested."
+        }
+      ]
+    }
+  ]
+}

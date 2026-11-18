@@ -1,10 +1,804 @@
 {
   "id": "motivation",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Motivation, Procrastination & Habit Change",
-  "description": "Explore knowing what to do but not beginning through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "motivation-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Dev",
+        "Uma"
+      ],
+      "glossary": [
+        {
+          "term": "Motivation",
+          "definition": "A person's willingness or reason to move towards a goal.",
+          "example": "A student wants the placement and has already found the application form.",
+          "limit": "Wanting the result does not guarantee that every step will feel easy."
+        },
+        {
+          "term": "Task friction",
+          "definition": "Anything about starting or doing an action that raises the effort needed.",
+          "example": "An empty personal statement box feels too open-ended to begin.",
+          "limit": "An apparently small task may have high demands for a particular person."
+        },
+        {
+          "term": "Avoidance relief",
+          "definition": "The immediate easing of discomfort after stepping away from a difficult action.",
+          "example": "Closing the form briefly stops the stress of writing a first sentence.",
+          "limit": "Short-term relief can make delay more tempting, even when the deadline makes life harder."
+        },
+        {
+          "term": "Small start",
+          "definition": "A deliberately manageable action that lowers the difficulty of beginning.",
+          "example": "Write one rough sentence and keep it there for two minutes.",
+          "limit": "The first action need not solve the whole task to make a useful difference."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "motivation-f1-l1",
+          "title": "What are we studying?",
+          "teach": "People can value a goal and still struggle to start. Understanding the moment they get stuck is often more useful than calling them lazy.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "motivation-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "People can value a goal and still struggle to start. Understanding the moment they get stuck is often more useful than calling them lazy.\n\nWhat keeps an intended action from becoming something we actually begin?",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f1-l1-n2",
+              "type": "read",
+              "title": "What motivation means",
+              "body": "A person's willingness or reason to move towards a goal.\n\nFor example: A student wants the placement and has already found the application form.\n\nOne important limit: Wanting the result does not guarantee that every step will feel easy.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: A student wants the placement and has already found the application form. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "motivation-foundation:choose",
+              "explanation": "The example most directly supports motivation. A person's willingness or reason to move towards a goal. Wanting the result does not guarantee that every step will feel easy.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "options": [
+                {
+                  "id": "motivation-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Motivation.",
+                  "feedback": "This description follows from the example. A person's willingness or reason to move towards a goal."
+                },
+                {
+                  "id": "motivation-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Task friction.",
+                  "feedback": "Task friction is a genuine psychological idea, but the observation by itself does not establish it. An apparently small task may have high demands for a particular person."
+                },
+                {
+                  "id": "motivation-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Avoidance relief.",
+                  "feedback": "Avoidance relief is a genuine psychological idea, but the observation by itself does not establish it. Short-term relief can make delay more tempting, even when the deadline makes life harder."
+                },
+                {
+                  "id": "motivation-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Small start.",
+                  "feedback": "Small start is a genuine psychological idea, but the observation by itself does not establish it. The first action need not solve the whole task to make a useful difference."
+                },
+                {
+                  "id": "motivation-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "motivation-f1-l1-n3-o1"
+            },
+            {
+              "id": "motivation-f1-l1-n4",
+              "type": "read",
+              "title": "What task friction means",
+              "body": "Anything about starting or doing an action that raises the effort needed.\n\nFor example: An empty personal statement box feels too open-ended to begin.\n\nOne important limit: An apparently small task may have high demands for a particular person.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: An empty personal statement box feels too open-ended to begin. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "motivation-foundation:choose",
+              "explanation": "The example most directly supports task friction. Anything about starting or doing an action that raises the effort needed. An apparently small task may have high demands for a particular person.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "options": [
+                {
+                  "id": "motivation-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Motivation.",
+                  "feedback": "Motivation is a genuine psychological idea, but the observation by itself does not establish it. Wanting the result does not guarantee that every step will feel easy."
+                },
+                {
+                  "id": "motivation-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Task friction.",
+                  "feedback": "This description follows from the example. Anything about starting or doing an action that raises the effort needed."
+                },
+                {
+                  "id": "motivation-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Avoidance relief.",
+                  "feedback": "Avoidance relief is a genuine psychological idea, but the observation by itself does not establish it. Short-term relief can make delay more tempting, even when the deadline makes life harder."
+                },
+                {
+                  "id": "motivation-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Small start.",
+                  "feedback": "Small start is a genuine psychological idea, but the observation by itself does not establish it. The first action need not solve the whole task to make a useful difference."
+                },
+                {
+                  "id": "motivation-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "motivation-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "motivation-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "motivation-f1-l2-n1",
+              "type": "read",
+              "title": "What avoidance relief means",
+              "body": "The immediate easing of discomfort after stepping away from a difficult action.\n\nFor example: Closing the form briefly stops the stress of writing a first sentence.\n\nOne important limit: Short-term relief can make delay more tempting, even when the deadline makes life harder.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f1-l2-n2",
+              "type": "read",
+              "title": "What small start means",
+              "body": "A deliberately manageable action that lowers the difficulty of beginning.\n\nFor example: Write one rough sentence and keep it there for two minutes.\n\nOne important limit: The first action need not solve the whole task to make a useful difference.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "motivation-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what keeps an intended action from becoming something we actually begin?",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "pairs": [
+                {
+                  "id": "motivation-f1-l2-n3-p0",
+                  "label": "Motivation",
+                  "answer": "A person's willingness or reason to move towards a goal."
+                },
+                {
+                  "id": "motivation-f1-l2-n3-p1",
+                  "label": "Task friction",
+                  "answer": "Anything about starting or doing an action that raises the effort needed."
+                },
+                {
+                  "id": "motivation-f1-l2-n3-p2",
+                  "label": "Avoidance relief",
+                  "answer": "The immediate easing of discomfort after stepping away from a difficult action."
+                },
+                {
+                  "id": "motivation-f1-l2-n3-p3",
+                  "label": "Small start",
+                  "answer": "A deliberately manageable action that lowers the difficulty of beginning."
+                }
+              ]
+            },
+            {
+              "id": "motivation-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: Closing the form briefly stops the stress of writing a first sentence. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "motivation-foundation:choose",
+              "explanation": "The example most directly supports avoidance relief. The immediate easing of discomfort after stepping away from a difficult action. Short-term relief can make delay more tempting, even when the deadline makes life harder.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "options": [
+                {
+                  "id": "motivation-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Motivation.",
+                  "feedback": "Motivation is a genuine psychological idea, but the observation by itself does not establish it. Wanting the result does not guarantee that every step will feel easy."
+                },
+                {
+                  "id": "motivation-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Task friction.",
+                  "feedback": "Task friction is a genuine psychological idea, but the observation by itself does not establish it. An apparently small task may have high demands for a particular person."
+                },
+                {
+                  "id": "motivation-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Avoidance relief.",
+                  "feedback": "This description follows from the example. The immediate easing of discomfort after stepping away from a difficult action."
+                },
+                {
+                  "id": "motivation-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Small start.",
+                  "feedback": "Small start is a genuine psychological idea, but the observation by itself does not establish it. The first action need not solve the whole task to make a useful difference."
+                },
+                {
+                  "id": "motivation-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "motivation-f1-l2-n4-o3"
+            },
+            {
+              "id": "motivation-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Short-term relief can make delay more tempting, even when the deadline makes life harder.\n\nThe first action need not solve the whole task to make a useful difference.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            }
+          ]
+        },
+        {
+          "id": "motivation-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "motivation-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A person's willingness or reason to move towards a goal.\n\nAnything about starting or doing an action that raises the effort needed.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: Write one rough sentence and keep it there for two minutes. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "motivation-foundation:choose",
+              "explanation": "The example most directly supports small start. A deliberately manageable action that lowers the difficulty of beginning. The first action need not solve the whole task to make a useful difference.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "options": [
+                {
+                  "id": "motivation-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Motivation.",
+                  "feedback": "Motivation is a genuine psychological idea, but the observation by itself does not establish it. Wanting the result does not guarantee that every step will feel easy."
+                },
+                {
+                  "id": "motivation-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Task friction.",
+                  "feedback": "Task friction is a genuine psychological idea, but the observation by itself does not establish it. An apparently small task may have high demands for a particular person."
+                },
+                {
+                  "id": "motivation-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Avoidance relief.",
+                  "feedback": "Avoidance relief is a genuine psychological idea, but the observation by itself does not establish it. Short-term relief can make delay more tempting, even when the deadline makes life harder."
+                },
+                {
+                  "id": "motivation-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Small start.",
+                  "feedback": "This description follows from the example. A deliberately manageable action that lowers the difficulty of beginning."
+                },
+                {
+                  "id": "motivation-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "motivation-f1-l3-n2-o4"
+            },
+            {
+              "id": "motivation-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "motivation-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what keeps an intended action from becoming something we actually begin?",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "pairs": [
+                {
+                  "id": "motivation-f1-l3-n3-p0",
+                  "label": "Motivation",
+                  "answer": "A person's willingness or reason to move towards a goal."
+                },
+                {
+                  "id": "motivation-f1-l3-n3-p1",
+                  "label": "Task friction",
+                  "answer": "Anything about starting or doing an action that raises the effort needed."
+                },
+                {
+                  "id": "motivation-f1-l3-n3-p2",
+                  "label": "Avoidance relief",
+                  "answer": "The immediate easing of discomfort after stepping away from a difficult action."
+                },
+                {
+                  "id": "motivation-f1-l3-n3-p3",
+                  "label": "Small start",
+                  "answer": "A deliberately manageable action that lowers the difficulty of beginning."
+                }
+              ]
+            },
+            {
+              "id": "motivation-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: An empty personal statement box feels too open-ended to begin. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "motivation-foundation:choose",
+              "explanation": "The example most directly supports task friction. Anything about starting or doing an action that raises the effort needed. An apparently small task may have high demands for a particular person.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "options": [
+                {
+                  "id": "motivation-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Motivation.",
+                  "feedback": "Motivation is a genuine psychological idea, but the observation by itself does not establish it. Wanting the result does not guarantee that every step will feel easy."
+                },
+                {
+                  "id": "motivation-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Task friction.",
+                  "feedback": "This description follows from the example. Anything about starting or doing an action that raises the effort needed."
+                },
+                {
+                  "id": "motivation-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Avoidance relief.",
+                  "feedback": "Avoidance relief is a genuine psychological idea, but the observation by itself does not establish it. Short-term relief can make delay more tempting, even when the deadline makes life harder."
+                },
+                {
+                  "id": "motivation-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Small start.",
+                  "feedback": "Small start is a genuine psychological idea, but the observation by itself does not establish it. The first action need not solve the whole task to make a useful difference."
+                },
+                {
+                  "id": "motivation-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "motivation-f1-l3-n4-o2"
+            },
+            {
+              "id": "motivation-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between motivation, task friction, avoidance relief, small start. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Dev",
+        "Uma"
+      ],
+      "glossary": [
+        {
+          "term": "Motivation",
+          "definition": "A person's willingness or reason to move towards a goal.",
+          "example": "A student wants the placement and has already found the application form.",
+          "limit": "Wanting the result does not guarantee that every step will feel easy."
+        },
+        {
+          "term": "Task friction",
+          "definition": "Anything about starting or doing an action that raises the effort needed.",
+          "example": "An empty personal statement box feels too open-ended to begin.",
+          "limit": "An apparently small task may have high demands for a particular person."
+        },
+        {
+          "term": "Avoidance relief",
+          "definition": "The immediate easing of discomfort after stepping away from a difficult action.",
+          "example": "Closing the form briefly stops the stress of writing a first sentence.",
+          "limit": "Short-term relief can make delay more tempting, even when the deadline makes life harder."
+        },
+        {
+          "term": "Small start",
+          "definition": "A deliberately manageable action that lowers the difficulty of beginning.",
+          "example": "Write one rough sentence and keep it there for two minutes.",
+          "limit": "The first action need not solve the whole task to make a useful difference."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "motivation-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "motivation-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Dev has to submit a straightforward form to apply for a placement. He has opened it repeatedly without starting.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "motivation-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "scenario": "Dev has to submit a straightforward form to apply for a placement. He has opened it repeatedly without starting.",
+              "speakerA": "Dev",
+              "speakerB": "Uma",
+              "turns": [
+                {
+                  "id": "motivation-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I know I need to complete the form, but I keep putting it off."
+                },
+                {
+                  "id": "motivation-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "What happens when you open it?"
+                },
+                {
+                  "id": "motivation-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "I see the personal statement box and feel stuck."
+                },
+                {
+                  "id": "motivation-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "Do you know what information they're asking for?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "motivation-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "motivation-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "motivation-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "motivation-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "motivation-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "motivation-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "motivation-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "motivation-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+                  "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter."
+                }
+              ]
+            },
+            {
+              "id": "motivation-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "motivation-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "categories": [
+                {
+                  "id": "motivation-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "motivation-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "motivation-f2-l1-n3-a",
+                  "label": "“I know I need to complete the form, but I keep putting it off.”",
+                  "answer": "motivation-f2-l1-n3-seen"
+                },
+                {
+                  "id": "motivation-f2-l1-n3-b",
+                  "label": "Starting the task triggers discomfort about producing an inadequate response. Avoiding the first step reduces that discomfort immediately, making delay tempting again.",
+                  "answer": "motivation-f2-l1-n3-guess"
+                },
+                {
+                  "id": "motivation-f2-l1-n3-c",
+                  "label": "“What happens when you open it?”",
+                  "answer": "motivation-f2-l1-n3-seen"
+                },
+                {
+                  "id": "motivation-f2-l1-n3-d",
+                  "label": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
+                  "answer": "motivation-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "motivation-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.\n\nProcrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            }
+          ]
+        },
+        {
+          "id": "motivation-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "motivation-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Starting the task triggers discomfort about producing an inadequate response. Avoiding the first step reduces that discomfort immediately, making delay tempting again.\n\nAnother possibility: The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "motivation-foundation:investigate",
+              "explanation": "Test whether reducing the first step or clarifying expectations changes initiation while holding the goal constant. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "options": [
+                {
+                  "id": "motivation-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "motivation-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "motivation-f2-l2-n2-o3",
+                  "label": "Test whether reducing the first step or clarifying expectations changes initiation while holding the goal constant.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "motivation-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "motivation-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "motivation-f2-l2-n2-o3"
+            },
+            {
+              "id": "motivation-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "Dev completes the same form in fifteen minutes when a colleague sits beside him and asks him to write an imperfect first draft.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "motivation-foundation:choose",
+              "explanation": "The rapid change suggests that initiation demands and evaluation concerns may contribute more than a lack of interest in the placement.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "options": [
+                {
+                  "id": "motivation-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "motivation-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "motivation-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "motivation-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "motivation-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "motivation-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "motivation-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "motivation-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "People can value a goal and still struggle to start. Understanding the moment they get stuck is often more useful than calling them lazy.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            },
+            {
+              "id": "motivation-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: Closing the form briefly stops the stress of writing a first sentence. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "motivation-foundation:choose",
+              "explanation": "The example most directly supports avoidance relief. The immediate easing of discomfort after stepping away from a difficult action. Short-term relief can make delay more tempting, even when the deadline makes life harder.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "options": [
+                {
+                  "id": "motivation-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Motivation.",
+                  "feedback": "Motivation is a genuine psychological idea, but the observation by itself does not establish it. Wanting the result does not guarantee that every step will feel easy."
+                },
+                {
+                  "id": "motivation-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Task friction.",
+                  "feedback": "Task friction is a genuine psychological idea, but the observation by itself does not establish it. An apparently small task may have high demands for a particular person."
+                },
+                {
+                  "id": "motivation-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Avoidance relief.",
+                  "feedback": "This description follows from the example. The immediate easing of discomfort after stepping away from a difficult action."
+                },
+                {
+                  "id": "motivation-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Small start.",
+                  "feedback": "Small start is a genuine psychological idea, but the observation by itself does not establish it. The first action need not solve the whole task to make a useful difference."
+                },
+                {
+                  "id": "motivation-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "motivation-f2-l3-n2-o3"
+            },
+            {
+              "id": "motivation-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "motivation-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "categories": [
+                {
+                  "id": "motivation-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "motivation-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "motivation-f2-l3-n3-a",
+                  "label": "“I know I need to complete the form, but I keep putting it off.”",
+                  "answer": "motivation-f2-l3-n3-seen"
+                },
+                {
+                  "id": "motivation-f2-l3-n3-b",
+                  "label": "Starting the task triggers discomfort about producing an inadequate response. Avoiding the first step reduces that discomfort immediately, making delay tempting again.",
+                  "answer": "motivation-f2-l3-n3-guess"
+                },
+                {
+                  "id": "motivation-f2-l3-n3-c",
+                  "label": "“What happens when you open it?”",
+                  "answer": "motivation-f2-l3-n3-seen"
+                },
+                {
+                  "id": "motivation-f2-l3-n3-d",
+                  "label": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
+                  "answer": "motivation-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "motivation-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "motivation-foundation:investigate",
+              "explanation": "Test whether reducing the first step or clarifying expectations changes initiation while holding the goal constant. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation.",
+              "options": [
+                {
+                  "id": "motivation-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "motivation-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "motivation-f2-l3-n4-o3",
+                  "label": "Test whether reducing the first step or clarifying expectations changes initiation while holding the goal constant.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "motivation-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "motivation-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "motivation-f2-l3-n4-o3"
+            },
+            {
+              "id": "motivation-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Procrastination is not enough to establish laziness or a motivational deficit. Task demands, executive functioning and opportunity can all matter.",
+              "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "motivation-module-01",
       "title": "Knowing what to do but not beginning",
@@ -87,6 +881,16 @@
                     {
                       "id": "motivation-m1-node-1-check1-opt3",
                       "label": "Lena may have deliberately scheduled planning before writing."
+                    },
+                    {
+                      "id": "motivation-m1-node-1-check1-alternative-1",
+                      "label": "Lena may be allocating time to organise notes because that work feels productive and offers clearer progress than drafting.",
+                      "feedback": "Preparation can be useful; its function changes if it repeatedly postpones the difficult section."
+                    },
+                    {
+                      "id": "motivation-m1-node-1-check1-alternative-2",
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation. is more directly tied to the words in this scene. Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone."
                     }
                   ],
                   "answer": "motivation-m1-node-1-check1-opt1",
@@ -100,27 +904,37 @@
                   "options": [
                     {
                       "id": "motivation-m1-node-1-check2-opt2",
-                      "label": "Reorganise the notes one last time until the answer feels clearer.",
-                      "reply": "What if you wrote two bad sentences nobody else has to see?",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Speak an imperfect answer aloud and transcribe the useful parts before editing the wording.",
+                      "reply": "Did you stop there?",
+                      "consequence": "This changes the starting format, although the written application still needs its own revision.",
+                      "feedback": "This changes the starting format, although the written application still needs its own revision."
                     },
                     {
                       "id": "motivation-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Have you tried a rough draft of that part?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Choose the hardest sentence in the section and draft a deliberately provisional version before reorganising the notes.",
+                      "reply": "Did you stop there?",
+                      "consequence": "Directly engaging the avoided task may help, but the best first step may be smaller.",
+                      "feedback": "Directly engaging the avoided task may help, but the best first step may be smaller."
                     },
                     {
                       "id": "motivation-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "Did you stop there?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "motivation-m1-node-1-check2-opt1",
                       "label": "Write two deliberately rough sentences under that heading, then decide which information is missing.",
                       "reply": "So starting changed the task from proving yourself to producing material.",
                       "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "motivation-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "Did you stop there?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "motivation-m1-node-1-check2-opt1",
@@ -258,7 +1072,8 @@
               "changes": [
                 {
                   "id": "motivation-m1-plan-opt2",
-                  "label": "Reorganise the notes one last time until the answer feels clearer."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 },
                 {
                   "id": "motivation-m1-plan-opt3",
@@ -314,6 +1129,11 @@
                 {
                   "id": "motivation-m1-repair-opt2",
                   "label": "Because lena may lack the information required by the grant question., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "motivation-m1-node-7-alternative-1",
+                  "label": "Compare statements made at the time with each person’s later recollection.",
+                  "feedback": "A contemporaneous record can help separate a mistaken memory from a disputed interpretation."
                 }
               ],
               "answer": "motivation-m1-repair-opt1"
@@ -384,6 +1204,16 @@
                     {
                       "id": "motivation-m1-node-8-check1-opt1",
                       "label": "The shift after a small draft suggests the initial threshold, rather than a lack of information, was contributing to avoidance. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "motivation-m1-node-8-check1-alternative-1",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                    },
+                    {
+                      "id": "motivation-m1-node-8-check1-alternative-2",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "motivation-m1-node-8-check1-opt1",
@@ -421,6 +1251,11 @@
                 {
                   "id": "motivation-m1-new-opt4",
                   "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "motivation-m1-node-9-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "motivation-m1-new-opt1"
@@ -490,6 +1325,11 @@
                 {
                   "id": "motivation-m1-view-opt1",
                   "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "motivation-m1-node-10-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "motivation-m1-view-opt1"
@@ -565,6 +1405,11 @@
                 {
                   "id": "motivation-m1-transfer-e-opt3",
                   "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "motivation-m1-node-14-evidence-alternative-1",
+                  "label": "Lena may be allocating time to organise notes because that work feels productive and offers clearer progress than drafting.",
+                  "feedback": "Preparation can be useful; its function changes if it repeatedly postpones the difficult section."
                 }
               ],
               "evidenceAnswer": "motivation-m1-transfer-e-opt1",
@@ -580,6 +1425,11 @@
                 {
                   "id": "motivation-m1-transfer-a-opt3",
                   "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "motivation-m1-node-14-response-alternative-1",
+                  "label": "Speak an imperfect answer aloud and transcribe the useful parts before editing the wording.",
+                  "feedback": "This changes the starting format, although the written application still needs its own revision."
                 }
               ],
               "responseAnswer": "motivation-m1-transfer-a-opt1"
@@ -612,6 +1462,11 @@
                 {
                   "id": "motivation-m1-test-opt4",
                   "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "motivation-m1-node-13-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "motivation-m1-test-opt1"
@@ -706,6 +1561,11 @@
                   "id": "motivation-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "motivation-m1-l3-n3-alternative-1",
+                  "label": "The instructions may lack enough detail to make it clear what counts as an acceptable personal statement.",
+                  "feedback": "Uncertainty about requirements is plausible, though Dev says he largely understands them."
                 }
               ],
               "answer": "motivation-m1-l3-n3-opt2",
@@ -740,6 +1600,11 @@
                   "id": "motivation-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "motivation-m1-l3-n4-alternative-1",
+                  "label": "Dev may be committed to the placement but have difficulty organising a multi-step task without external structure.",
+                  "feedback": "Executive demands could explain initiation, particularly if structure reliably changes performance."
                 }
               ],
               "answer": "motivation-m1-l3-n4-opt2",
@@ -766,6 +1631,16 @@
                   "id": "motivation-m1-l3-n5-evidence-opt2",
                   "label": "Starting the task triggers discomfort about producing an inadequate response. Avoiding the first step reduces that discomfort immediately, making delay tempting again.",
                   "feedback": ""
+                },
+                {
+                  "id": "motivation-m1-l3-n5-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "motivation-m1-l3-n5-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "motivation-m1-l3-n5-evidence-opt2",
@@ -779,6 +1654,16 @@
                   "id": "motivation-m1-l3-n5-response-opt2",
                   "label": "Write one rough sentence and leave it untouched for two minutes. Then decide what the next step is.",
                   "feedback": ""
+                },
+                {
+                  "id": "motivation-m1-l3-n5-response-alternative-1",
+                  "label": "What specifically makes the first text box harder than the rest of the form?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "motivation-m1-l3-n5-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "motivation-m1-l3-n5-response-opt2"
@@ -884,13 +1769,18 @@
                     },
                     {
                       "id": "motivation-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     },
                     {
                       "id": "motivation-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "motivation-m1-l4-n2-question-alternative-2",
+                      "label": "Dev may be avoiding an evaluative writing task because it exposes him to the possibility of producing something inadequate.",
+                      "feedback": "This fits his account of the first sentence, but other task demands could also contribute."
                     }
                   ],
                   "answer": "motivation-m1-l4-n2-question-opt2",
@@ -928,6 +1818,11 @@
                   "id": "motivation-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "motivation-m1-l4-n3-alternative-1",
+                  "label": "Check whether Dev also struggles to initiate non-evaluative forms of similar length.",
+                  "feedback": "The contrast could help separate writing anxiety from general initiation demands."
                 }
               ],
               "answer": "motivation-m1-l4-n3-opt2",
@@ -962,6 +1857,11 @@
                   "id": "motivation-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "motivation-m1-l4-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "motivation-m1-l4-n4-opt2",
@@ -1029,6 +1929,11 @@
                   "id": "motivation-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "motivation-m1-l4-n6-alternative-1",
+                  "label": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "motivation-m1-l4-n6-opt2"
@@ -1071,6 +1976,16 @@
                   "id": "motivation-m1-l5-n2-evidence-opt2",
                   "label": "Starting the task triggers discomfort about producing an inadequate response. Avoiding the first step reduces that discomfort immediately, making delay tempting again.",
                   "feedback": ""
+                },
+                {
+                  "id": "motivation-m1-l5-n2-evidence-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                },
+                {
+                  "id": "motivation-m1-l5-n2-evidence-alternative-2",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "motivation-m1-l5-n2-evidence-opt2",
@@ -1084,6 +1999,16 @@
                   "id": "motivation-m1-l5-n2-response-opt2",
                   "label": "Write one rough sentence and leave it untouched for two minutes. Then decide what the next step is.",
                   "feedback": ""
+                },
+                {
+                  "id": "motivation-m1-l5-n2-response-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                },
+                {
+                  "id": "motivation-m1-l5-n2-response-alternative-2",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "motivation-m1-l5-n2-response-opt2"
@@ -1110,13 +2035,18 @@
                 },
                 {
                   "id": "motivation-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "Dev may be avoiding an evaluative writing task because it exposes him to the possibility of producing something inadequate.",
+                  "feedback": "This fits his account of the first sentence, but other task demands could also contribute."
                 },
                 {
                   "id": "motivation-m1-l5-n4-opt4",
                   "label": "What specifically makes the first text box harder than the rest of the form?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "motivation-m1-l5-n4-alternative-2",
+                  "label": "The instructions may lack enough detail to make it clear what counts as an acceptable personal statement.",
+                  "feedback": "Uncertainty about requirements is plausible, though Dev says he largely understands them."
                 }
               ],
               "answer": "motivation-m1-l5-n4-opt2",
@@ -1142,6 +2072,11 @@
                   "id": "motivation-m1-l5-n3-action-opt2",
                   "label": "Write one rough sentence and leave it untouched for two minutes. Then decide what the next step is.",
                   "feedback": ""
+                },
+                {
+                  "id": "motivation-m1-l5-n3-change-alternative-1",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "outcomes": [
@@ -1154,6 +2089,11 @@
                   "id": "motivation-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "motivation-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "motivation-m1-l5-n3-action-opt2",
@@ -1189,6 +2129,11 @@
                   "id": "motivation-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "motivation-m1-l5-n5-alternative-1",
+                  "label": "The instructions may lack enough detail to make it clear what counts as an acceptable personal statement.",
+                  "feedback": "Uncertainty about requirements is plausible, though Dev says he largely understands them."
                 }
               ],
               "answer": "motivation-m1-l5-n5-opt2",
@@ -1223,6 +2168,11 @@
                   "id": "motivation-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "motivation-m1-l5-n6-alternative-1",
+                  "label": "Check whether Dev also struggles to initiate non-evaluative forms of similar length.",
+                  "feedback": "The contrast could help separate writing anxiety from general initiation demands."
                 }
               ],
               "answer": "motivation-m1-l5-n6-opt2"
@@ -1273,6 +2223,11 @@
                   "id": "motivation-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "motivation-m1-l6-n2-alternative-1",
+                  "label": "What specifically makes the first text box harder than the rest of the form?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "motivation-m1-l6-n2-opt2"
@@ -1349,6 +2304,11 @@
                   "id": "motivation-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "motivation-m1-l6-n4-alternative-1",
+                  "label": "Check whether Dev also struggles to initiate non-evaluative forms of similar length.",
+                  "feedback": "The contrast could help separate writing anxiety from general initiation demands."
                 }
               ],
               "answer": "motivation-m1-l6-n4-opt2",
@@ -1391,6 +2351,36 @@
               "sources": "Steel (2007), nature of procrastination; Sirois & Pychyl (2013), procrastination and mood regulation."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Dev",
+        "Uma"
+      ],
+      "glossary": [
+        {
+          "term": "Motivation",
+          "definition": "A person's willingness or reason to move towards a goal.",
+          "example": "A student wants the placement and has already found the application form.",
+          "limit": "Wanting the result does not guarantee that every step will feel easy."
+        },
+        {
+          "term": "Task friction",
+          "definition": "Anything about starting or doing an action that raises the effort needed.",
+          "example": "An empty personal statement box feels too open-ended to begin.",
+          "limit": "An apparently small task may have high demands for a particular person."
+        },
+        {
+          "term": "Avoidance relief",
+          "definition": "The immediate easing of discomfort after stepping away from a difficult action.",
+          "example": "Closing the form briefly stops the stress of writing a first sentence.",
+          "limit": "Short-term relief can make delay more tempting, even when the deadline makes life harder."
+        },
+        {
+          "term": "Small start",
+          "definition": "A deliberately manageable action that lowers the difficulty of beginning.",
+          "example": "Write one rough sentence and keep it there for two minutes.",
+          "limit": "The first action need not solve the whole task to make a useful difference."
         }
       ]
     }

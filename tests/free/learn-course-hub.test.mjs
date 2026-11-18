@@ -66,7 +66,7 @@ test('current Learn routes are a catalogue with optional direct courses, not old
 test('illustrated catalogue promotes first modules and keeps loading state honest',()=>{
  const {root,controls}=fakeRoot();
  renderCourseHub(root);
- assert.match(root.innerHTML,/Start learning: the first modules are ready/);
+ assert.match(root.innerHTML,/Start with the foundations · 12 lessons per course/);
  assert.match(root.innerHTML,/Checking which course lessons are available/);
  assert.match(root.innerHTML,/ns-courses-hero/);
  assert.match(root.innerHTML,/ns-courses-feature/);

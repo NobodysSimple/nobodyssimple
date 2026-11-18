@@ -1,10 +1,804 @@
 {
   "id": "sleep",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Sleep, Insomnia & the Psychology of Rest",
-  "description": "Explore sleep pressure accumulated through waking through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "sleep-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Bea",
+        "Finn"
+      ],
+      "glossary": [
+        {
+          "term": "Sleep pressure",
+          "definition": "A drive for sleep that generally grows while we stay awake and reduces during sleep.",
+          "example": "After a long day awake, someone begins to feel increasingly sleepy.",
+          "limit": "A nap can reduce some sleep pressure even if somebody still wants an early night."
+        },
+        {
+          "term": "Circadian timing",
+          "definition": "Internal daily rhythms that influence when the body is prepared for sleep and wakefulness.",
+          "example": "A night-shift worker finds the morning alerting despite a long period awake.",
+          "limit": "Clock timing can work against sleep pressure; a person may feel tired yet remain awake."
+        },
+        {
+          "term": "Arousal",
+          "definition": "The body's and mind's level of activation, which can make settling into sleep harder.",
+          "example": "Someone becomes more alert each time they check the clock and worry about being awake.",
+          "limit": "Arousal can be affected by a real environment as well as by worry."
+        },
+        {
+          "term": "Consistency",
+          "definition": "Keeping a reasonably regular pattern that helps the body anticipate periods of sleep.",
+          "example": "A person wakes at a similar time on most days after a period of irregular shifts.",
+          "limit": "Consistency helps many people but must be adapted around work and individual health needs."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "sleep-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Feeling exhausted and being ready to sleep are related, but not identical. Sleep depends on more than how much effort a person has put in today.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Feeling exhausted and being ready to sleep are related, but not identical. Sleep depends on more than how much effort a person has put in today.\n\nWhy can someone feel desperately tired and still struggle to fall asleep?",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f1-l1-n2",
+              "type": "read",
+              "title": "What sleep pressure means",
+              "body": "A drive for sleep that generally grows while we stay awake and reduces during sleep.\n\nFor example: After a long day awake, someone begins to feel increasingly sleepy.\n\nOne important limit: A nap can reduce some sleep pressure even if somebody still wants an early night.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: After a long day awake, someone begins to feel increasingly sleepy. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "sleep-foundation:choose",
+              "explanation": "The example most directly supports sleep pressure. A drive for sleep that generally grows while we stay awake and reduces during sleep. A nap can reduce some sleep pressure even if somebody still wants an early night.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Sleep pressure.",
+                  "feedback": "This description follows from the example. A drive for sleep that generally grows while we stay awake and reduces during sleep."
+                },
+                {
+                  "id": "sleep-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Circadian timing.",
+                  "feedback": "Circadian timing is a genuine psychological idea, but the observation by itself does not establish it. Clock timing can work against sleep pressure; a person may feel tired yet remain awake."
+                },
+                {
+                  "id": "sleep-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Arousal.",
+                  "feedback": "Arousal is a genuine psychological idea, but the observation by itself does not establish it. Arousal can be affected by a real environment as well as by worry."
+                },
+                {
+                  "id": "sleep-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Consistency.",
+                  "feedback": "Consistency is a genuine psychological idea, but the observation by itself does not establish it. Consistency helps many people but must be adapted around work and individual health needs."
+                },
+                {
+                  "id": "sleep-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "sleep-f1-l1-n3-o1"
+            },
+            {
+              "id": "sleep-f1-l1-n4",
+              "type": "read",
+              "title": "What circadian timing means",
+              "body": "Internal daily rhythms that influence when the body is prepared for sleep and wakefulness.\n\nFor example: A night-shift worker finds the morning alerting despite a long period awake.\n\nOne important limit: Clock timing can work against sleep pressure; a person may feel tired yet remain awake.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: A night-shift worker finds the morning alerting despite a long period awake. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "sleep-foundation:choose",
+              "explanation": "The example most directly supports circadian timing. Internal daily rhythms that influence when the body is prepared for sleep and wakefulness. Clock timing can work against sleep pressure; a person may feel tired yet remain awake.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Sleep pressure.",
+                  "feedback": "Sleep pressure is a genuine psychological idea, but the observation by itself does not establish it. A nap can reduce some sleep pressure even if somebody still wants an early night."
+                },
+                {
+                  "id": "sleep-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Circadian timing.",
+                  "feedback": "This description follows from the example. Internal daily rhythms that influence when the body is prepared for sleep and wakefulness."
+                },
+                {
+                  "id": "sleep-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Arousal.",
+                  "feedback": "Arousal is a genuine psychological idea, but the observation by itself does not establish it. Arousal can be affected by a real environment as well as by worry."
+                },
+                {
+                  "id": "sleep-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Consistency.",
+                  "feedback": "Consistency is a genuine psychological idea, but the observation by itself does not establish it. Consistency helps many people but must be adapted around work and individual health needs."
+                },
+                {
+                  "id": "sleep-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "sleep-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "sleep-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-f1-l2-n1",
+              "type": "read",
+              "title": "What arousal means",
+              "body": "The body's and mind's level of activation, which can make settling into sleep harder.\n\nFor example: Someone becomes more alert each time they check the clock and worry about being awake.\n\nOne important limit: Arousal can be affected by a real environment as well as by worry.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f1-l2-n2",
+              "type": "read",
+              "title": "What consistency means",
+              "body": "Keeping a reasonably regular pattern that helps the body anticipate periods of sleep.\n\nFor example: A person wakes at a similar time on most days after a period of irregular shifts.\n\nOne important limit: Consistency helps many people but must be adapted around work and individual health needs.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "sleep-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of why can someone feel desperately tired and still struggle to fall asleep?",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "pairs": [
+                {
+                  "id": "sleep-f1-l2-n3-p0",
+                  "label": "Sleep pressure",
+                  "answer": "A drive for sleep that generally grows while we stay awake and reduces during sleep."
+                },
+                {
+                  "id": "sleep-f1-l2-n3-p1",
+                  "label": "Circadian timing",
+                  "answer": "Internal daily rhythms that influence when the body is prepared for sleep and wakefulness."
+                },
+                {
+                  "id": "sleep-f1-l2-n3-p2",
+                  "label": "Arousal",
+                  "answer": "The body's and mind's level of activation, which can make settling into sleep harder."
+                },
+                {
+                  "id": "sleep-f1-l2-n3-p3",
+                  "label": "Consistency",
+                  "answer": "Keeping a reasonably regular pattern that helps the body anticipate periods of sleep."
+                }
+              ]
+            },
+            {
+              "id": "sleep-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: Someone becomes more alert each time they check the clock and worry about being awake. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "sleep-foundation:choose",
+              "explanation": "The example most directly supports arousal. The body's and mind's level of activation, which can make settling into sleep harder. Arousal can be affected by a real environment as well as by worry.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Sleep pressure.",
+                  "feedback": "Sleep pressure is a genuine psychological idea, but the observation by itself does not establish it. A nap can reduce some sleep pressure even if somebody still wants an early night."
+                },
+                {
+                  "id": "sleep-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Circadian timing.",
+                  "feedback": "Circadian timing is a genuine psychological idea, but the observation by itself does not establish it. Clock timing can work against sleep pressure; a person may feel tired yet remain awake."
+                },
+                {
+                  "id": "sleep-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Arousal.",
+                  "feedback": "This description follows from the example. The body's and mind's level of activation, which can make settling into sleep harder."
+                },
+                {
+                  "id": "sleep-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Consistency.",
+                  "feedback": "Consistency is a genuine psychological idea, but the observation by itself does not establish it. Consistency helps many people but must be adapted around work and individual health needs."
+                },
+                {
+                  "id": "sleep-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "sleep-f1-l2-n4-o3"
+            },
+            {
+              "id": "sleep-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Arousal can be affected by a real environment as well as by worry.\n\nConsistency helps many people but must be adapted around work and individual health needs.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            }
+          ]
+        },
+        {
+          "id": "sleep-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A drive for sleep that generally grows while we stay awake and reduces during sleep.\n\nInternal daily rhythms that influence when the body is prepared for sleep and wakefulness.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: A person wakes at a similar time on most days after a period of irregular shifts. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "sleep-foundation:choose",
+              "explanation": "The example most directly supports consistency. Keeping a reasonably regular pattern that helps the body anticipate periods of sleep. Consistency helps many people but must be adapted around work and individual health needs.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Sleep pressure.",
+                  "feedback": "Sleep pressure is a genuine psychological idea, but the observation by itself does not establish it. A nap can reduce some sleep pressure even if somebody still wants an early night."
+                },
+                {
+                  "id": "sleep-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Circadian timing.",
+                  "feedback": "Circadian timing is a genuine psychological idea, but the observation by itself does not establish it. Clock timing can work against sleep pressure; a person may feel tired yet remain awake."
+                },
+                {
+                  "id": "sleep-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Arousal.",
+                  "feedback": "Arousal is a genuine psychological idea, but the observation by itself does not establish it. Arousal can be affected by a real environment as well as by worry."
+                },
+                {
+                  "id": "sleep-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Consistency.",
+                  "feedback": "This description follows from the example. Keeping a reasonably regular pattern that helps the body anticipate periods of sleep."
+                },
+                {
+                  "id": "sleep-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "sleep-f1-l3-n2-o4"
+            },
+            {
+              "id": "sleep-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "sleep-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of why can someone feel desperately tired and still struggle to fall asleep?",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "pairs": [
+                {
+                  "id": "sleep-f1-l3-n3-p0",
+                  "label": "Sleep pressure",
+                  "answer": "A drive for sleep that generally grows while we stay awake and reduces during sleep."
+                },
+                {
+                  "id": "sleep-f1-l3-n3-p1",
+                  "label": "Circadian timing",
+                  "answer": "Internal daily rhythms that influence when the body is prepared for sleep and wakefulness."
+                },
+                {
+                  "id": "sleep-f1-l3-n3-p2",
+                  "label": "Arousal",
+                  "answer": "The body's and mind's level of activation, which can make settling into sleep harder."
+                },
+                {
+                  "id": "sleep-f1-l3-n3-p3",
+                  "label": "Consistency",
+                  "answer": "Keeping a reasonably regular pattern that helps the body anticipate periods of sleep."
+                }
+              ]
+            },
+            {
+              "id": "sleep-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: A night-shift worker finds the morning alerting despite a long period awake. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "sleep-foundation:choose",
+              "explanation": "The example most directly supports circadian timing. Internal daily rhythms that influence when the body is prepared for sleep and wakefulness. Clock timing can work against sleep pressure; a person may feel tired yet remain awake.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Sleep pressure.",
+                  "feedback": "Sleep pressure is a genuine psychological idea, but the observation by itself does not establish it. A nap can reduce some sleep pressure even if somebody still wants an early night."
+                },
+                {
+                  "id": "sleep-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Circadian timing.",
+                  "feedback": "This description follows from the example. Internal daily rhythms that influence when the body is prepared for sleep and wakefulness."
+                },
+                {
+                  "id": "sleep-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Arousal.",
+                  "feedback": "Arousal is a genuine psychological idea, but the observation by itself does not establish it. Arousal can be affected by a real environment as well as by worry."
+                },
+                {
+                  "id": "sleep-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Consistency.",
+                  "feedback": "Consistency is a genuine psychological idea, but the observation by itself does not establish it. Consistency helps many people but must be adapted around work and individual health needs."
+                },
+                {
+                  "id": "sleep-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "sleep-f1-l3-n4-o2"
+            },
+            {
+              "id": "sleep-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between sleep pressure, circadian timing, arousal, consistency. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sleep-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Bea",
+        "Finn"
+      ],
+      "glossary": [
+        {
+          "term": "Sleep pressure",
+          "definition": "A drive for sleep that generally grows while we stay awake and reduces during sleep.",
+          "example": "After a long day awake, someone begins to feel increasingly sleepy.",
+          "limit": "A nap can reduce some sleep pressure even if somebody still wants an early night."
+        },
+        {
+          "term": "Circadian timing",
+          "definition": "Internal daily rhythms that influence when the body is prepared for sleep and wakefulness.",
+          "example": "A night-shift worker finds the morning alerting despite a long period awake.",
+          "limit": "Clock timing can work against sleep pressure; a person may feel tired yet remain awake."
+        },
+        {
+          "term": "Arousal",
+          "definition": "The body's and mind's level of activation, which can make settling into sleep harder.",
+          "example": "Someone becomes more alert each time they check the clock and worry about being awake.",
+          "limit": "Arousal can be affected by a real environment as well as by worry."
+        },
+        {
+          "term": "Consistency",
+          "definition": "Keeping a reasonably regular pattern that helps the body anticipate periods of sleep.",
+          "example": "A person wakes at a similar time on most days after a period of irregular shifts.",
+          "limit": "Consistency helps many people but must be adapted around work and individual health needs."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "sleep-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Bea finished a night shift and feels exhausted at 10 am, but has been struggling to fall asleep when she gets home.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "sleep-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "scenario": "Bea finished a night shift and feels exhausted at 10 am, but has been struggling to fall asleep when she gets home.",
+              "speakerA": "Bea",
+              "speakerB": "Finn",
+              "turns": [
+                {
+                  "id": "sleep-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I've been awake for sixteen hours. I should fall asleep immediately."
+                },
+                {
+                  "id": "sleep-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "Do you usually find it easy to sleep when the sun is up?"
+                },
+                {
+                  "id": "sleep-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "No. I feel worn out, but my brain seems unusually alert at this time."
+                },
+                {
+                  "id": "sleep-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "What was your sleep schedule before night shifts?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "sleep-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "sleep-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "sleep-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "sleep-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "sleep-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "sleep-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "sleep-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "sleep-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+                  "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent."
+                }
+              ]
+            },
+            {
+              "id": "sleep-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "sleep-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "categories": [
+                {
+                  "id": "sleep-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "sleep-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "sleep-f2-l1-n3-a",
+                  "label": "“I've been awake for sixteen hours. I should fall asleep immediately.”",
+                  "answer": "sleep-f2-l1-n3-seen"
+                },
+                {
+                  "id": "sleep-f2-l1-n3-b",
+                  "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+                  "answer": "sleep-f2-l1-n3-guess"
+                },
+                {
+                  "id": "sleep-f2-l1-n3-c",
+                  "label": "“Do you usually find it easy to sleep when the sun is up?”",
+                  "answer": "sleep-f2-l1-n3-seen"
+                },
+                {
+                  "id": "sleep-f2-l1-n3-d",
+                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+                  "answer": "sleep-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "sleep-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.\n\nFeeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            }
+          ]
+        },
+        {
+          "id": "sleep-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.\n\nAnother possibility: Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "sleep-foundation:investigate",
+              "explanation": "Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "sleep-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "sleep-f2-l2-n2-o3",
+                  "label": "Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "sleep-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "sleep-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "sleep-f2-l2-n2-o3"
+            },
+            {
+              "id": "sleep-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "Bea sleeps more easily after several days on a consistent day-shift schedule, even when the total time awake is similar.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "sleep-foundation:choose",
+              "explanation": "The difference supports a contribution from circadian timing, although work stress and light exposure also changed.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "sleep-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "sleep-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "sleep-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "sleep-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "sleep-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "sleep-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Feeling exhausted and being ready to sleep are related, but not identical. Sleep depends on more than how much effort a person has put in today.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: Someone becomes more alert each time they check the clock and worry about being awake. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "sleep-foundation:choose",
+              "explanation": "The example most directly supports arousal. The body's and mind's level of activation, which can make settling into sleep harder. Arousal can be affected by a real environment as well as by worry.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Sleep pressure.",
+                  "feedback": "Sleep pressure is a genuine psychological idea, but the observation by itself does not establish it. A nap can reduce some sleep pressure even if somebody still wants an early night."
+                },
+                {
+                  "id": "sleep-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Circadian timing.",
+                  "feedback": "Circadian timing is a genuine psychological idea, but the observation by itself does not establish it. Clock timing can work against sleep pressure; a person may feel tired yet remain awake."
+                },
+                {
+                  "id": "sleep-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Arousal.",
+                  "feedback": "This description follows from the example. The body's and mind's level of activation, which can make settling into sleep harder."
+                },
+                {
+                  "id": "sleep-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Consistency.",
+                  "feedback": "Consistency is a genuine psychological idea, but the observation by itself does not establish it. Consistency helps many people but must be adapted around work and individual health needs."
+                },
+                {
+                  "id": "sleep-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "sleep-f2-l3-n2-o3"
+            },
+            {
+              "id": "sleep-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "sleep-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "categories": [
+                {
+                  "id": "sleep-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "sleep-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "sleep-f2-l3-n3-a",
+                  "label": "“I've been awake for sixteen hours. I should fall asleep immediately.”",
+                  "answer": "sleep-f2-l3-n3-seen"
+                },
+                {
+                  "id": "sleep-f2-l3-n3-b",
+                  "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+                  "answer": "sleep-f2-l3-n3-guess"
+                },
+                {
+                  "id": "sleep-f2-l3-n3-c",
+                  "label": "“Do you usually find it easy to sleep when the sun is up?”",
+                  "answer": "sleep-f2-l3-n3-seen"
+                },
+                {
+                  "id": "sleep-f2-l3-n3-d",
+                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+                  "answer": "sleep-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "sleep-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "sleep-foundation:investigate",
+              "explanation": "Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "sleep-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "sleep-f2-l3-n4-o3",
+                  "label": "Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "sleep-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "sleep-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "sleep-f2-l3-n4-o3"
+            },
+            {
+              "id": "sleep-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "sleep-module-01",
       "title": "Sleep pressure accumulated through waking",
@@ -87,6 +881,16 @@
                     {
                       "id": "sleep-m1-node-1-check1-opt1",
                       "label": "Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry."
+                    },
+                    {
+                      "id": "sleep-m1-node-1-check1-alternative-1",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                    },
+                    {
+                      "id": "sleep-m1-node-1-check1-alternative-2",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "sleep-m1-node-1-check1-opt1",
@@ -106,21 +910,31 @@
                     },
                     {
                       "id": "sleep-m1-node-1-check2-opt2",
-                      "label": "Keep increasing the hours spent in bed until sleep arrives sooner.",
-                      "reply": "Going to bed early doesn't guarantee the body is ready for sleep.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                      "reply": "Did your wake-up time move earlier?",
+                      "consequence": "A jointly agreed next step is reasonable, though the other person may still decline.",
+                      "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                     },
                     {
                       "id": "sleep-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Are you sleepy, or mainly worried about tomorrow?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                      "reply": "Did your wake-up time move earlier?",
+                      "consequence": "This can reveal different priorities, but it may also delay an urgent factual correction.",
+                      "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                     },
                     {
                       "id": "sleep-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Keep the wake time steady for a trial period and record whether the attempted bedtime begins to feel more realistic.",
                       "reply": "Did your wake-up time move earlier?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "This may support timing, but the plan must account for how much sleep Nora is actually getting.",
+                      "feedback": "This may support timing, but the plan must account for how much sleep Nora is actually getting."
+                    },
+                    {
+                      "id": "sleep-m1-node-1-check2-alternative-4",
+                      "label": "Consider moving bedtime gradually rather than spending extra awake hours in bed waiting for sleep.",
+                      "feedback": "A gradual change could reduce frustration, although bedtime alone may not address circadian timing.",
+                      "reply": "Did your wake-up time move earlier?",
+                      "consequence": "A gradual change could reduce frustration, although bedtime alone may not address circadian timing."
                     }
                   ],
                   "answer": "sleep-m1-node-1-check2-opt1",
@@ -266,7 +1080,8 @@
                 },
                 {
                   "id": "sleep-m1-plan-opt2",
-                  "label": "Keep increasing the hours spent in bed until sleep arrives sooner."
+                  "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                  "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                 }
               ],
               "outcomes": [
@@ -314,6 +1129,11 @@
                 {
                   "id": "sleep-m1-repair-opt1",
                   "label": "The account is consistent with the evidence, but nora may be experiencing a separate persistent sleep disorder that needs assessment. still deserves consideration."
+                },
+                {
+                  "id": "sleep-m1-node-7-alternative-1",
+                  "label": "Check whether the speakers had agreed on the practical expectation before the exchange.",
+                  "feedback": "The agreement may determine whether the original request was reasonable, although not why the response was so strong."
                 }
               ],
               "answer": "sleep-m1-repair-opt1"
@@ -384,6 +1204,16 @@
                     {
                       "id": "sleep-m1-node-8-check1-opt2",
                       "label": "The newer dialogue settles the cause and replaces the need to consider nora may be experiencing a separate persistent sleep disorder that needs assessment.."
+                    },
+                    {
+                      "id": "sleep-m1-node-8-check1-alternative-1",
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. is more directly tied to the words in this scene. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
+                    },
+                    {
+                      "id": "sleep-m1-node-8-check1-alternative-2",
+                      "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                      "feedback": "This is a reasonable line of inquiry, although Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. is more directly tied to the words in this scene. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
                     }
                   ],
                   "answer": "sleep-m1-node-8-check1-opt1",
@@ -421,6 +1251,11 @@
                 {
                   "id": "sleep-m1-new-opt3",
                   "label": "The new evidence establishes nora may be experiencing a separate persistent sleep disorder that needs assessment. as the sole explanation."
+                },
+                {
+                  "id": "sleep-m1-node-9-alternative-1",
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. is more directly tied to the words in this scene. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
                 }
               ],
               "answer": "sleep-m1-new-opt1"
@@ -500,6 +1335,11 @@
                 {
                   "id": "sleep-m1-view-opt4",
                   "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "sleep-m1-node-10-alternative-1",
+                  "label": "Nora may be experiencing a separate persistent sleep disorder that needs assessment.",
+                  "feedback": "This alternative deserves consideration. It would become stronger if earlier expectations supported it. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
                 }
               ],
               "answer": "sleep-m1-view-opt1"
@@ -551,6 +1391,11 @@
                 {
                   "id": "sleep-m1-test-opt3",
                   "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "sleep-m1-node-13-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "sleep-m1-test-opt1"
@@ -581,6 +1426,11 @@
                 {
                   "id": "sleep-m1-transfer-e-opt1",
                   "label": "Consider how recent sleep changes sleep pressure before assuming the bedtime is at fault."
+                },
+                {
+                  "id": "sleep-m1-node-14-evidence-alternative-1",
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. is more directly tied to the words in this scene. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
                 }
               ],
               "evidenceAnswer": "sleep-m1-transfer-e-opt1",
@@ -596,6 +1446,11 @@
                 {
                   "id": "sleep-m1-transfer-a-opt1",
                   "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "sleep-m1-node-14-response-alternative-1",
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "responseAnswer": "sleep-m1-transfer-a-opt1"
@@ -690,6 +1545,11 @@
                   "id": "sleep-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "sleep-m1-l3-n3-alternative-1",
+                  "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
+                  "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
                 }
               ],
               "answer": "sleep-m1-l3-n3-opt2",
@@ -724,6 +1584,11 @@
                   "id": "sleep-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "sleep-m1-l3-n4-alternative-1",
+                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "sleep-m1-l3-n4-opt2",
@@ -743,26 +1608,46 @@
               "evidenceOptions": [
                 {
                   "id": "sleep-m1-l3-n5-evidence-opt1",
-                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
-                  "feedback": ""
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "sleep-m1-l3-n5-evidence-opt2",
                   "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
                   "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l3-n5-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                },
+                {
+                  "id": "sleep-m1-l3-n5-evidence-alternative-3",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "sleep-m1-l3-n5-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "sleep-m1-l3-n5-response-opt1",
-                  "label": "Assume that more exhaustion will always overcome any timing problem.",
-                  "feedback": ""
+                  "label": "What clock time does your body normally expect wakefulness, and how has shift work changed that?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "sleep-m1-l3-n5-response-opt2",
                   "label": "Plan sleep around the shift pattern and use appropriate light, darkness and timing strategies while considering individual needs.",
                   "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l3-n5-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                },
+                {
+                  "id": "sleep-m1-l3-n5-response-alternative-3",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "sleep-m1-l3-n5-response-opt2"
@@ -858,8 +1743,8 @@
                   "options": [
                     {
                       "id": "sleep-m1-l4-n2-question-opt1",
-                      "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
-                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                      "label": "Bea may have enough sleep pressure but a circadian wake signal that makes daytime sleep harder.",
+                      "feedback": "The conflict between waking history and body-clock timing fits shift work."
                     },
                     {
                       "id": "sleep-m1-l4-n2-question-opt2",
@@ -868,13 +1753,18 @@
                     },
                     {
                       "id": "sleep-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "Bea may be carrying alertness from a stimulating shift, independent of her circadian rhythm.",
+                      "feedback": "Arousal could contribute, although the repeated morning timing is suggestive."
                     },
                     {
                       "id": "sleep-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "sleep-m1-l4-n2-question-alternative-3",
+                      "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
+                      "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
                     }
                   ],
                   "answer": "sleep-m1-l4-n2-question-opt2",
@@ -912,6 +1802,11 @@
                   "id": "sleep-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "sleep-m1-l4-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "sleep-m1-l4-n4-opt2",
@@ -946,6 +1841,11 @@
                   "id": "sleep-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "sleep-m1-l4-n3-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "sleep-m1-l4-n3-opt2",
@@ -1013,6 +1913,11 @@
                   "id": "sleep-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "sleep-m1-l4-n6-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "sleep-m1-l4-n6-opt2"
@@ -1048,26 +1953,46 @@
               "evidenceOptions": [
                 {
                   "id": "sleep-m1-l5-n2-evidence-opt1",
-                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
-                  "feedback": ""
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "sleep-m1-l5-n2-evidence-opt2",
                   "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
                   "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l5-n2-evidence-alternative-2",
+                  "label": "Bea may have enough sleep pressure but a circadian wake signal that makes daytime sleep harder.",
+                  "feedback": "The conflict between waking history and body-clock timing fits shift work."
+                },
+                {
+                  "id": "sleep-m1-l5-n2-evidence-alternative-3",
+                  "label": "Bea may be carrying alertness from a stimulating shift, independent of her circadian rhythm.",
+                  "feedback": "Arousal could contribute, although the repeated morning timing is suggestive."
                 }
               ],
               "evidenceAnswer": "sleep-m1-l5-n2-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "sleep-m1-l5-n2-response-opt1",
-                  "label": "Assume that more exhaustion will always overcome any timing problem.",
-                  "feedback": ""
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 },
                 {
                   "id": "sleep-m1-l5-n2-response-opt2",
                   "label": "Plan sleep around the shift pattern and use appropriate light, darkness and timing strategies while considering individual needs.",
                   "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l5-n2-response-alternative-2",
+                  "label": "Plan the sleep opportunity around shifts and control light exposure where practical.",
+                  "feedback": "This addresses timing while allowing for constraints of the work schedule."
+                },
+                {
+                  "id": "sleep-m1-l5-n2-response-alternative-3",
+                  "label": "Record caffeine use and the timing of short naps before deciding which change to try first.",
+                  "feedback": "These factors matter, though tracking should not become another source of sleep-related worry."
                 }
               ],
               "responseAnswer": "sleep-m1-l5-n2-response-opt2"
@@ -1092,6 +2017,11 @@
                   "id": "sleep-m1-l5-n3-action-opt2",
                   "label": "Plan sleep around the shift pattern and use appropriate light, darkness and timing strategies while considering individual needs.",
                   "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l5-n3-change-alternative-1",
+                  "label": "Plan the sleep opportunity around shifts and control light exposure where practical.",
+                  "feedback": "This addresses timing while allowing for constraints of the work schedule."
                 }
               ],
               "outcomes": [
@@ -1104,6 +2034,11 @@
                   "id": "sleep-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "sleep-m1-l5-n3-action-opt2",
@@ -1132,13 +2067,18 @@
                 },
                 {
                   "id": "sleep-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "Bea may be carrying alertness from a stimulating shift, independent of her circadian rhythm.",
+                  "feedback": "Arousal could contribute, although the repeated morning timing is suggestive."
                 },
                 {
                   "id": "sleep-m1-l5-n4-opt4",
                   "label": "What clock time does your body normally expect wakefulness, and how has shift work changed that?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "sleep-m1-l5-n4-alternative-2",
+                  "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
+                  "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
                 }
               ],
               "answer": "sleep-m1-l5-n4-opt2",
@@ -1173,6 +2113,11 @@
                   "id": "sleep-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "sleep-m1-l5-n5-alternative-1",
+                  "label": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
+                  "feedback": "This would be relevant if intake and timing support it; neither has been recorded yet."
                 }
               ],
               "answer": "sleep-m1-l5-n5-opt2",
@@ -1207,6 +2152,11 @@
                   "id": "sleep-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "sleep-m1-l5-n6-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "sleep-m1-l5-n6-opt2"
@@ -1257,6 +2207,11 @@
                   "id": "sleep-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "sleep-m1-l6-n2-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "answer": "sleep-m1-l6-n2-opt2"
@@ -1333,6 +2288,11 @@
                   "id": "sleep-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "sleep-m1-l6-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "sleep-m1-l6-n4-opt2",
@@ -1375,6 +2335,36 @@
               "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Bea",
+        "Finn"
+      ],
+      "glossary": [
+        {
+          "term": "Sleep pressure",
+          "definition": "A drive for sleep that generally grows while we stay awake and reduces during sleep.",
+          "example": "After a long day awake, someone begins to feel increasingly sleepy.",
+          "limit": "A nap can reduce some sleep pressure even if somebody still wants an early night."
+        },
+        {
+          "term": "Circadian timing",
+          "definition": "Internal daily rhythms that influence when the body is prepared for sleep and wakefulness.",
+          "example": "A night-shift worker finds the morning alerting despite a long period awake.",
+          "limit": "Clock timing can work against sleep pressure; a person may feel tired yet remain awake."
+        },
+        {
+          "term": "Arousal",
+          "definition": "The body's and mind's level of activation, which can make settling into sleep harder.",
+          "example": "Someone becomes more alert each time they check the clock and worry about being awake.",
+          "limit": "Arousal can be affected by a real environment as well as by worry."
+        },
+        {
+          "term": "Consistency",
+          "definition": "Keeping a reasonably regular pattern that helps the body anticipate periods of sleep.",
+          "example": "A person wakes at a similar time on most days after a period of irregular shifts.",
+          "limit": "Consistency helps many people but must be adapted around work and individual health needs."
         }
       ]
     }

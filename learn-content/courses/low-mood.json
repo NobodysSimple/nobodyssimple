@@ -1,10 +1,804 @@
 {
   "id": "low-mood",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Depression, Low Mood & Motivation",
-  "description": "Explore sadness after disappointment through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "low-mood-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Callum",
+        "Jules"
+      ],
+      "glossary": [
+        {
+          "term": "Sadness",
+          "definition": "A common response to loss or disappointment that can vary through the day.",
+          "example": "Someone feels down after being rejected for a job they wanted.",
+          "limit": "A short spell of sadness does not, on its own, establish a depressive disorder."
+        },
+        {
+          "term": "Withdrawal",
+          "definition": "Doing less or having less contact with activities and people than before.",
+          "example": "A student repeatedly cancels enjoyable plans after a setback.",
+          "limit": "Taking some time alone may be helpful; the effect of withdrawal depends on what it changes."
+        },
+        {
+          "term": "Loss of pleasure",
+          "definition": "Finding less enjoyment in activities that previously felt rewarding.",
+          "example": "A person no longer enjoys meeting friends, even when they attend.",
+          "limit": "Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes."
+        },
+        {
+          "term": "Depressive syndrome",
+          "definition": "A broader pattern of symptoms and impairment assessed over time, rather than a synonym for feeling sad.",
+          "example": "Low mood lasts for weeks and affects sleep, concentration and daily responsibilities.",
+          "limit": "A story or online quiz cannot establish a diagnosis without proper assessment."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "low-mood-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Feeling low after a disappointment makes sense. A longer-lasting mood problem requires a different kind of attention, especially when everyday functioning changes.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "low-mood-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Feeling low after a disappointment makes sense. A longer-lasting mood problem requires a different kind of attention, especially when everyday functioning changes.\n\nHow do we distinguish a difficult response to a loss from a pattern that is becoming harder to escape?",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f1-l1-n2",
+              "type": "read",
+              "title": "What sadness means",
+              "body": "A common response to loss or disappointment that can vary through the day.\n\nFor example: Someone feels down after being rejected for a job they wanted.\n\nOne important limit: A short spell of sadness does not, on its own, establish a depressive disorder.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: Someone feels down after being rejected for a job they wanted. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "low-mood-foundation:choose",
+              "explanation": "The example most directly supports sadness. A common response to loss or disappointment that can vary through the day. A short spell of sadness does not, on its own, establish a depressive disorder.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "options": [
+                {
+                  "id": "low-mood-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Sadness.",
+                  "feedback": "This description follows from the example. A common response to loss or disappointment that can vary through the day."
+                },
+                {
+                  "id": "low-mood-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Withdrawal.",
+                  "feedback": "Withdrawal is a genuine psychological idea, but the observation by itself does not establish it. Taking some time alone may be helpful; the effect of withdrawal depends on what it changes."
+                },
+                {
+                  "id": "low-mood-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Loss of pleasure.",
+                  "feedback": "Loss of pleasure is a genuine psychological idea, but the observation by itself does not establish it. Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes."
+                },
+                {
+                  "id": "low-mood-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Depressive syndrome.",
+                  "feedback": "Depressive syndrome is a genuine psychological idea, but the observation by itself does not establish it. A story or online quiz cannot establish a diagnosis without proper assessment."
+                },
+                {
+                  "id": "low-mood-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "low-mood-f1-l1-n3-o1"
+            },
+            {
+              "id": "low-mood-f1-l1-n4",
+              "type": "read",
+              "title": "What withdrawal means",
+              "body": "Doing less or having less contact with activities and people than before.\n\nFor example: A student repeatedly cancels enjoyable plans after a setback.\n\nOne important limit: Taking some time alone may be helpful; the effect of withdrawal depends on what it changes.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: A student repeatedly cancels enjoyable plans after a setback. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "low-mood-foundation:choose",
+              "explanation": "The example most directly supports withdrawal. Doing less or having less contact with activities and people than before. Taking some time alone may be helpful; the effect of withdrawal depends on what it changes.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "options": [
+                {
+                  "id": "low-mood-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Sadness.",
+                  "feedback": "Sadness is a genuine psychological idea, but the observation by itself does not establish it. A short spell of sadness does not, on its own, establish a depressive disorder."
+                },
+                {
+                  "id": "low-mood-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Withdrawal.",
+                  "feedback": "This description follows from the example. Doing less or having less contact with activities and people than before."
+                },
+                {
+                  "id": "low-mood-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Loss of pleasure.",
+                  "feedback": "Loss of pleasure is a genuine psychological idea, but the observation by itself does not establish it. Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes."
+                },
+                {
+                  "id": "low-mood-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Depressive syndrome.",
+                  "feedback": "Depressive syndrome is a genuine psychological idea, but the observation by itself does not establish it. A story or online quiz cannot establish a diagnosis without proper assessment."
+                },
+                {
+                  "id": "low-mood-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "low-mood-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "low-mood-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "low-mood-f1-l2-n1",
+              "type": "read",
+              "title": "What loss of pleasure means",
+              "body": "Finding less enjoyment in activities that previously felt rewarding.\n\nFor example: A person no longer enjoys meeting friends, even when they attend.\n\nOne important limit: Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f1-l2-n2",
+              "type": "read",
+              "title": "What depressive syndrome means",
+              "body": "A broader pattern of symptoms and impairment assessed over time, rather than a synonym for feeling sad.\n\nFor example: Low mood lasts for weeks and affects sleep, concentration and daily responsibilities.\n\nOne important limit: A story or online quiz cannot establish a diagnosis without proper assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "low-mood-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how do we distinguish a difficult response to a loss from a pattern that is becoming harder to escape?",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "pairs": [
+                {
+                  "id": "low-mood-f1-l2-n3-p0",
+                  "label": "Sadness",
+                  "answer": "A common response to loss or disappointment that can vary through the day."
+                },
+                {
+                  "id": "low-mood-f1-l2-n3-p1",
+                  "label": "Withdrawal",
+                  "answer": "Doing less or having less contact with activities and people than before."
+                },
+                {
+                  "id": "low-mood-f1-l2-n3-p2",
+                  "label": "Loss of pleasure",
+                  "answer": "Finding less enjoyment in activities that previously felt rewarding."
+                },
+                {
+                  "id": "low-mood-f1-l2-n3-p3",
+                  "label": "Depressive syndrome",
+                  "answer": "A broader pattern of symptoms and impairment assessed over time, rather than a synonym for feeling sad."
+                }
+              ]
+            },
+            {
+              "id": "low-mood-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: A person no longer enjoys meeting friends, even when they attend. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "low-mood-foundation:choose",
+              "explanation": "The example most directly supports loss of pleasure. Finding less enjoyment in activities that previously felt rewarding. Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "options": [
+                {
+                  "id": "low-mood-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Sadness.",
+                  "feedback": "Sadness is a genuine psychological idea, but the observation by itself does not establish it. A short spell of sadness does not, on its own, establish a depressive disorder."
+                },
+                {
+                  "id": "low-mood-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Withdrawal.",
+                  "feedback": "Withdrawal is a genuine psychological idea, but the observation by itself does not establish it. Taking some time alone may be helpful; the effect of withdrawal depends on what it changes."
+                },
+                {
+                  "id": "low-mood-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Loss of pleasure.",
+                  "feedback": "This description follows from the example. Finding less enjoyment in activities that previously felt rewarding."
+                },
+                {
+                  "id": "low-mood-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Depressive syndrome.",
+                  "feedback": "Depressive syndrome is a genuine psychological idea, but the observation by itself does not establish it. A story or online quiz cannot establish a diagnosis without proper assessment."
+                },
+                {
+                  "id": "low-mood-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "low-mood-f1-l2-n4-o3"
+            },
+            {
+              "id": "low-mood-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes.\n\nA story or online quiz cannot establish a diagnosis without proper assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            }
+          ]
+        },
+        {
+          "id": "low-mood-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "low-mood-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A common response to loss or disappointment that can vary through the day.\n\nDoing less or having less contact with activities and people than before.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: Low mood lasts for weeks and affects sleep, concentration and daily responsibilities. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "low-mood-foundation:choose",
+              "explanation": "The example most directly supports depressive syndrome. A broader pattern of symptoms and impairment assessed over time, rather than a synonym for feeling sad. A story or online quiz cannot establish a diagnosis without proper assessment.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "options": [
+                {
+                  "id": "low-mood-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Sadness.",
+                  "feedback": "Sadness is a genuine psychological idea, but the observation by itself does not establish it. A short spell of sadness does not, on its own, establish a depressive disorder."
+                },
+                {
+                  "id": "low-mood-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Withdrawal.",
+                  "feedback": "Withdrawal is a genuine psychological idea, but the observation by itself does not establish it. Taking some time alone may be helpful; the effect of withdrawal depends on what it changes."
+                },
+                {
+                  "id": "low-mood-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Loss of pleasure.",
+                  "feedback": "Loss of pleasure is a genuine psychological idea, but the observation by itself does not establish it. Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes."
+                },
+                {
+                  "id": "low-mood-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Depressive syndrome.",
+                  "feedback": "This description follows from the example. A broader pattern of symptoms and impairment assessed over time, rather than a synonym for feeling sad."
+                },
+                {
+                  "id": "low-mood-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "low-mood-f1-l3-n2-o4"
+            },
+            {
+              "id": "low-mood-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "low-mood-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how do we distinguish a difficult response to a loss from a pattern that is becoming harder to escape?",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "pairs": [
+                {
+                  "id": "low-mood-f1-l3-n3-p0",
+                  "label": "Sadness",
+                  "answer": "A common response to loss or disappointment that can vary through the day."
+                },
+                {
+                  "id": "low-mood-f1-l3-n3-p1",
+                  "label": "Withdrawal",
+                  "answer": "Doing less or having less contact with activities and people than before."
+                },
+                {
+                  "id": "low-mood-f1-l3-n3-p2",
+                  "label": "Loss of pleasure",
+                  "answer": "Finding less enjoyment in activities that previously felt rewarding."
+                },
+                {
+                  "id": "low-mood-f1-l3-n3-p3",
+                  "label": "Depressive syndrome",
+                  "answer": "A broader pattern of symptoms and impairment assessed over time, rather than a synonym for feeling sad."
+                }
+              ]
+            },
+            {
+              "id": "low-mood-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: A student repeatedly cancels enjoyable plans after a setback. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "low-mood-foundation:choose",
+              "explanation": "The example most directly supports withdrawal. Doing less or having less contact with activities and people than before. Taking some time alone may be helpful; the effect of withdrawal depends on what it changes.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "options": [
+                {
+                  "id": "low-mood-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Sadness.",
+                  "feedback": "Sadness is a genuine psychological idea, but the observation by itself does not establish it. A short spell of sadness does not, on its own, establish a depressive disorder."
+                },
+                {
+                  "id": "low-mood-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Withdrawal.",
+                  "feedback": "This description follows from the example. Doing less or having less contact with activities and people than before."
+                },
+                {
+                  "id": "low-mood-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Loss of pleasure.",
+                  "feedback": "Loss of pleasure is a genuine psychological idea, but the observation by itself does not establish it. Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes."
+                },
+                {
+                  "id": "low-mood-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Depressive syndrome.",
+                  "feedback": "Depressive syndrome is a genuine psychological idea, but the observation by itself does not establish it. A story or online quiz cannot establish a diagnosis without proper assessment."
+                },
+                {
+                  "id": "low-mood-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "low-mood-f1-l3-n4-o2"
+            },
+            {
+              "id": "low-mood-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between sadness, withdrawal, loss of pleasure, depressive syndrome. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low-mood-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Callum",
+        "Jules"
+      ],
+      "glossary": [
+        {
+          "term": "Sadness",
+          "definition": "A common response to loss or disappointment that can vary through the day.",
+          "example": "Someone feels down after being rejected for a job they wanted.",
+          "limit": "A short spell of sadness does not, on its own, establish a depressive disorder."
+        },
+        {
+          "term": "Withdrawal",
+          "definition": "Doing less or having less contact with activities and people than before.",
+          "example": "A student repeatedly cancels enjoyable plans after a setback.",
+          "limit": "Taking some time alone may be helpful; the effect of withdrawal depends on what it changes."
+        },
+        {
+          "term": "Loss of pleasure",
+          "definition": "Finding less enjoyment in activities that previously felt rewarding.",
+          "example": "A person no longer enjoys meeting friends, even when they attend.",
+          "limit": "Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes."
+        },
+        {
+          "term": "Depressive syndrome",
+          "definition": "A broader pattern of symptoms and impairment assessed over time, rather than a synonym for feeling sad.",
+          "example": "Low mood lasts for weeks and affects sleep, concentration and daily responsibilities.",
+          "limit": "A story or online quiz cannot establish a diagnosis without proper assessment."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "low-mood-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "low-mood-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Callum has felt sad and unmotivated since failing to get a job he hoped would change his situation. Jules calls to check in.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "low-mood-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "scenario": "Callum has felt sad and unmotivated since failing to get a job he hoped would change his situation. Jules calls to check in.",
+              "speakerA": "Callum",
+              "speakerB": "Jules",
+              "turns": [
+                {
+                  "id": "low-mood-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I didn't get it. I've been miserable all week."
+                },
+                {
+                  "id": "low-mood-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "That mattered to you. What has the week been like?"
+                },
+                {
+                  "id": "low-mood-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "I've cancelled plans because I don't feel like talking."
+                },
+                {
+                  "id": "low-mood-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "Have there been moments when anything felt enjoyable?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "low-mood-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "low-mood-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "low-mood-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "low-mood-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "low-mood-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "low-mood-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "low-mood-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "low-mood-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+                  "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment."
+                }
+              ]
+            },
+            {
+              "id": "low-mood-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "low-mood-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "categories": [
+                {
+                  "id": "low-mood-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "low-mood-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "low-mood-f2-l1-n3-a",
+                  "label": "“I didn't get it. I've been miserable all week.”",
+                  "answer": "low-mood-f2-l1-n3-seen"
+                },
+                {
+                  "id": "low-mood-f2-l1-n3-b",
+                  "label": "Sadness following disappointment is understandable. Withdrawal can reduce immediate social demands but also reduce access to rewarding experiences, which may maintain low mood.",
+                  "answer": "low-mood-f2-l1-n3-guess"
+                },
+                {
+                  "id": "low-mood-f2-l1-n3-c",
+                  "label": "“That mattered to you. What has the week been like?”",
+                  "answer": "low-mood-f2-l1-n3-seen"
+                },
+                {
+                  "id": "low-mood-f2-l1-n3-d",
+                  "label": "Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.",
+                  "answer": "low-mood-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "low-mood-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.\n\nA depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            }
+          ]
+        },
+        {
+          "id": "low-mood-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "low-mood-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Sadness following disappointment is understandable. Withdrawal can reduce immediate social demands but also reduce access to rewarding experiences, which may maintain low mood.\n\nAnother possibility: Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "low-mood-foundation:investigate",
+              "explanation": "Examine duration, pervasiveness, associated symptoms and functional change while considering bereavement, stress and physical health. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "options": [
+                {
+                  "id": "low-mood-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "low-mood-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "low-mood-f2-l2-n2-o3",
+                  "label": "Examine duration, pervasiveness, associated symptoms and functional change while considering bereavement, stress and physical health.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "low-mood-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "low-mood-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "low-mood-f2-l2-n2-o3"
+            },
+            {
+              "id": "low-mood-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "Over the next month Callum's low mood persists most days, his sleep changes markedly and he struggles to manage basic responsibilities.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "low-mood-foundation:choose",
+              "explanation": "The duration and broader functional changes make an assessment for depression more relevant than in the first week, though the vignette remains insufficient for diagnosis.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "options": [
+                {
+                  "id": "low-mood-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "low-mood-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "low-mood-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "low-mood-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "low-mood-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "low-mood-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "low-mood-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "low-mood-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Feeling low after a disappointment makes sense. A longer-lasting mood problem requires a different kind of attention, especially when everyday functioning changes.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            },
+            {
+              "id": "low-mood-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: A person no longer enjoys meeting friends, even when they attend. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "low-mood-foundation:choose",
+              "explanation": "The example most directly supports loss of pleasure. Finding less enjoyment in activities that previously felt rewarding. Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "options": [
+                {
+                  "id": "low-mood-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Sadness.",
+                  "feedback": "Sadness is a genuine psychological idea, but the observation by itself does not establish it. A short spell of sadness does not, on its own, establish a depressive disorder."
+                },
+                {
+                  "id": "low-mood-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Withdrawal.",
+                  "feedback": "Withdrawal is a genuine psychological idea, but the observation by itself does not establish it. Taking some time alone may be helpful; the effect of withdrawal depends on what it changes."
+                },
+                {
+                  "id": "low-mood-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Loss of pleasure.",
+                  "feedback": "This description follows from the example. Finding less enjoyment in activities that previously felt rewarding."
+                },
+                {
+                  "id": "low-mood-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Depressive syndrome.",
+                  "feedback": "Depressive syndrome is a genuine psychological idea, but the observation by itself does not establish it. A story or online quiz cannot establish a diagnosis without proper assessment."
+                },
+                {
+                  "id": "low-mood-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "low-mood-f2-l3-n2-o3"
+            },
+            {
+              "id": "low-mood-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "low-mood-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "categories": [
+                {
+                  "id": "low-mood-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "low-mood-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "low-mood-f2-l3-n3-a",
+                  "label": "“I didn't get it. I've been miserable all week.”",
+                  "answer": "low-mood-f2-l3-n3-seen"
+                },
+                {
+                  "id": "low-mood-f2-l3-n3-b",
+                  "label": "Sadness following disappointment is understandable. Withdrawal can reduce immediate social demands but also reduce access to rewarding experiences, which may maintain low mood.",
+                  "answer": "low-mood-f2-l3-n3-guess"
+                },
+                {
+                  "id": "low-mood-f2-l3-n3-c",
+                  "label": "“That mattered to you. What has the week been like?”",
+                  "answer": "low-mood-f2-l3-n3-seen"
+                },
+                {
+                  "id": "low-mood-f2-l3-n3-d",
+                  "label": "Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.",
+                  "answer": "low-mood-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "low-mood-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "low-mood-foundation:investigate",
+              "explanation": "Examine duration, pervasiveness, associated symptoms and functional change while considering bereavement, stress and physical health. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults.",
+              "options": [
+                {
+                  "id": "low-mood-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "low-mood-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "low-mood-f2-l3-n4-o3",
+                  "label": "Examine duration, pervasiveness, associated symptoms and functional change while considering bereavement, stress and physical health.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "low-mood-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "low-mood-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "low-mood-f2-l3-n4-o3"
+            },
+            {
+              "id": "low-mood-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+              "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "low-mood-module-01",
       "title": "Sadness after disappointment",
@@ -97,6 +891,16 @@
                     {
                       "id": "low-mood-m1-node-1-check1-opt2",
                       "label": "Mara may be entering a depressive episode that needs further assessment."
+                    },
+                    {
+                      "id": "low-mood-m1-node-1-check1-alternative-1",
+                      "label": "Mara may be worried about future financial security more than the meaning of the rejection to her identity.",
+                      "feedback": "Practical uncertainty could contribute, although that concern is not described in the scene."
+                    },
+                    {
+                      "id": "low-mood-m1-node-1-check1-alternative-2",
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Mara may be interpreting one painful rejection as evidence of a permanently unsuccessful future. is more directly tied to the words in this scene. A depressive episode can follow a clear trigger. Duration, severity, other symptoms and functional consequences all require consideration."
                     }
                   ],
                   "answer": "low-mood-m1-node-1-check1-opt1",
@@ -110,27 +914,37 @@
                   "options": [
                     {
                       "id": "low-mood-m1-node-1-check2-opt2",
-                      "label": "Fill every hour with activity so you never have to feel disappointed.",
-                      "reply": "We can take it seriously without deciding yet what kind of longer-term pattern this is.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Agree to revisit plans in a few days rather than treating two days of sadness as evidence of depression.",
+                      "reply": "Does it make the sadness easier?",
+                      "consequence": "Waiting can be proportionate, although a meaningful change in safety or functioning would need earlier attention.",
+                      "feedback": "Waiting can be proportionate, although a meaningful change in safety or functioning would need earlier attention."
                     },
                     {
                       "id": "low-mood-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Has the feeling changed at all these past two days?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Choose a small valued activity without using whether she enjoys it immediately as a test of recovery.",
+                      "reply": "Does it make the sadness easier?",
+                      "consequence": "Participation may help protect routine, but acute grief may still need time.",
+                      "feedback": "Participation may help protect routine, but acute grief may still need time."
                     },
                     {
                       "id": "low-mood-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "Does it make the sadness easier?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "low-mood-m1-node-1-check2-opt1",
                       "label": "Allow space for the loss while making one manageable plan that keeps connection and routine available.",
                       "reply": "That gives us a reason to consider what withdrawal is doing over time.",
                       "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "low-mood-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "Does it make the sadness easier?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "low-mood-m1-node-1-check2-opt1",
@@ -270,6 +1084,11 @@
                 {
                   "id": "low-mood-m1-repair-opt2",
                   "label": "Because mara may be entering a depressive episode that needs further assessment., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "low-mood-m1-node-7-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "low-mood-m1-repair-opt1"
@@ -294,7 +1113,8 @@
                 },
                 {
                   "id": "low-mood-m1-plan-opt2",
-                  "label": "Fill every hour with activity so you never have to feel disappointed."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 },
                 {
                   "id": "low-mood-m1-plan-opt3",
@@ -384,6 +1204,16 @@
                     {
                       "id": "low-mood-m1-node-8-check1-opt3",
                       "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "low-mood-m1-node-8-check1-alternative-1",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                    },
+                    {
+                      "id": "low-mood-m1-node-8-check1-alternative-2",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "low-mood-m1-node-8-check1-opt1",
@@ -422,6 +1252,11 @@
                 {
                   "id": "low-mood-m1-view-opt1",
                   "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "low-mood-m1-node-10-alternative-1",
+                  "label": "Mara may be worried about future financial security more than the meaning of the rejection to her identity.",
+                  "feedback": "Practical uncertainty could contribute, although that concern is not described in the scene."
                 }
               ],
               "answer": "low-mood-m1-view-opt1"
@@ -455,6 +1290,11 @@
                 {
                   "id": "low-mood-m1-new-opt4",
                   "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "low-mood-m1-node-9-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "low-mood-m1-new-opt1"
@@ -565,6 +1405,11 @@
                 {
                   "id": "low-mood-m1-transfer-e-opt2",
                   "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "low-mood-m1-node-14-evidence-alternative-1",
+                  "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                  "feedback": "This is a reasonable line of inquiry, although Mara may be interpreting one painful rejection as evidence of a permanently unsuccessful future. is more directly tied to the words in this scene. A depressive episode can follow a clear trigger. Duration, severity, other symptoms and functional consequences all require consideration."
                 }
               ],
               "evidenceAnswer": "low-mood-m1-transfer-e-opt1",
@@ -580,6 +1425,11 @@
                 {
                   "id": "low-mood-m1-transfer-a-opt2",
                   "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "low-mood-m1-node-14-response-alternative-1",
+                  "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                  "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                 }
               ],
               "responseAnswer": "low-mood-m1-transfer-a-opt1"
@@ -612,6 +1462,11 @@
                 {
                   "id": "low-mood-m1-test-opt4",
                   "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "low-mood-m1-node-13-alternative-1",
+                  "label": "Examine whether the same reaction appears when the immediate practical stakes are lower.",
+                  "feedback": "A cross-situation comparison may reveal whether this is a case-specific response."
                 }
               ],
               "answer": "low-mood-m1-test-opt1"
@@ -706,6 +1561,11 @@
                   "id": "low-mood-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "low-mood-m1-l3-n3-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "low-mood-m1-l3-n3-opt2",
@@ -740,6 +1600,11 @@
                   "id": "low-mood-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "low-mood-m1-l3-n4-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "low-mood-m1-l3-n4-opt2",
@@ -759,13 +1624,23 @@
               "evidenceOptions": [
                 {
                   "id": "low-mood-m1-l3-n5-evidence-opt1",
-                  "label": "Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.",
-                  "feedback": ""
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "low-mood-m1-l3-n5-evidence-opt2",
                   "label": "Sadness following disappointment is understandable. Withdrawal can reduce immediate social demands but also reduce access to rewarding experiences, which may maintain low mood.",
                   "feedback": ""
+                },
+                {
+                  "id": "low-mood-m1-l3-n5-evidence-alternative-2",
+                  "label": "Callum may be grieving a meaningful opportunity and need time to adjust rather than immediate clinical intervention.",
+                  "feedback": "The timing of the rejection supports this, although prolonged functional impairment changes the assessment."
+                },
+                {
+                  "id": "low-mood-m1-l3-n5-evidence-alternative-3",
+                  "label": "Social withdrawal may be reducing access to rewarding experiences and making the sadness harder to shift.",
+                  "feedback": "The cancellation of plans is consistent, but we need to know whether contact was previously rewarding."
                 }
               ],
               "evidenceAnswer": "low-mood-m1-l3-n5-evidence-opt2",
@@ -779,6 +1654,16 @@
                   "id": "low-mood-m1-l3-n5-response-opt2",
                   "label": "Choose one manageable activity linked to something you value, and monitor whether participation changes your experience rather than waiting for motivation.",
                   "feedback": ""
+                },
+                {
+                  "id": "low-mood-m1-l3-n5-response-alternative-1",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                },
+                {
+                  "id": "low-mood-m1-l3-n5-response-alternative-2",
+                  "label": "Choose one low-effort, valued activity and notice whether doing it affects mood or connection afterwards.",
+                  "feedback": "This allows learning from participation without demanding immediate happiness."
                 }
               ],
               "responseAnswer": "low-mood-m1-l3-n5-response-opt2"
@@ -874,8 +1759,8 @@
                   "options": [
                     {
                       "id": "low-mood-m1-l4-n2-question-opt1",
-                      "label": "Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.",
-                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                      "label": "The job rejection may have renewed a broader feeling of helplessness about his future.",
+                      "feedback": "That could contribute to repetitive thinking, though this meaning has not been directly established."
                     },
                     {
                       "id": "low-mood-m1-l4-n2-question-opt2",
@@ -884,13 +1769,18 @@
                     },
                     {
                       "id": "low-mood-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "low-mood-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "low-mood-m1-l4-n2-question-alternative-3",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "low-mood-m1-l4-n2-question-opt2",
@@ -928,6 +1818,11 @@
                   "id": "low-mood-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "low-mood-m1-l4-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "low-mood-m1-l4-n4-opt2",
@@ -962,6 +1857,11 @@
                   "id": "low-mood-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "low-mood-m1-l4-n3-alternative-1",
+                  "label": "Ask what happens to mood on days when Callum participates in valued activities compared with days he withdraws.",
+                  "feedback": "The contrast may help identify a maintaining process."
                 }
               ],
               "answer": "low-mood-m1-l4-n3-opt2",
@@ -1029,6 +1929,11 @@
                   "id": "low-mood-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "low-mood-m1-l4-n6-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "low-mood-m1-l4-n6-opt2"
@@ -1064,13 +1969,23 @@
               "evidenceOptions": [
                 {
                   "id": "low-mood-m1-l5-n2-evidence-opt1",
-                  "label": "Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.",
-                  "feedback": ""
+                  "label": "Social withdrawal may be reducing access to rewarding experiences and making the sadness harder to shift.",
+                  "feedback": "The cancellation of plans is consistent, but we need to know whether contact was previously rewarding."
                 },
                 {
                   "id": "low-mood-m1-l5-n2-evidence-opt2",
                   "label": "Sadness following disappointment is understandable. Withdrawal can reduce immediate social demands but also reduce access to rewarding experiences, which may maintain low mood.",
                   "feedback": ""
+                },
+                {
+                  "id": "low-mood-m1-l5-n2-evidence-alternative-2",
+                  "label": "The job rejection may have renewed a broader feeling of helplessness about his future.",
+                  "feedback": "That could contribute to repetitive thinking, though this meaning has not been directly established."
+                },
+                {
+                  "id": "low-mood-m1-l5-n2-evidence-alternative-3",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "low-mood-m1-l5-n2-evidence-opt2",
@@ -1084,6 +1999,16 @@
                   "id": "low-mood-m1-l5-n2-response-opt2",
                   "label": "Choose one manageable activity linked to something you value, and monitor whether participation changes your experience rather than waiting for motivation.",
                   "feedback": ""
+                },
+                {
+                  "id": "low-mood-m1-l5-n2-response-alternative-1",
+                  "label": "Discuss what the lost job represented and make a limited plan for the next application when ready.",
+                  "feedback": "Meaning and future action matter, though planning alone may not reverse withdrawal."
+                },
+                {
+                  "id": "low-mood-m1-l5-n2-response-alternative-2",
+                  "label": "Force yourself to be happy whenever you think about the rejection.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "low-mood-m1-l5-n2-response-opt2"
@@ -1108,6 +2033,11 @@
                   "id": "low-mood-m1-l5-n3-action-opt2",
                   "label": "Choose one manageable activity linked to something you value, and monitor whether participation changes your experience rather than waiting for motivation.",
                   "feedback": ""
+                },
+                {
+                  "id": "low-mood-m1-l5-n3-change-alternative-1",
+                  "label": "Force yourself to be happy whenever you think about the rejection.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -1120,6 +2050,11 @@
                   "id": "low-mood-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "low-mood-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "low-mood-m1-l5-n3-action-opt2",
@@ -1148,13 +2083,18 @@
                 },
                 {
                   "id": "low-mood-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 },
                 {
                   "id": "low-mood-m1-l5-n4-opt4",
                   "label": "How has avoiding plans affected what is available to you during the week?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "low-mood-m1-l5-n4-alternative-2",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "low-mood-m1-l5-n4-opt2",
@@ -1189,6 +2129,11 @@
                   "id": "low-mood-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "low-mood-m1-l5-n5-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "low-mood-m1-l5-n5-opt2",
@@ -1223,6 +2168,11 @@
                   "id": "low-mood-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "low-mood-m1-l5-n6-alternative-1",
+                  "label": "Ask what happens to mood on days when Callum participates in valued activities compared with days he withdraws.",
+                  "feedback": "The contrast may help identify a maintaining process."
                 }
               ],
               "answer": "low-mood-m1-l5-n6-opt2"
@@ -1273,6 +2223,11 @@
                   "id": "low-mood-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "low-mood-m1-l6-n2-alternative-1",
+                  "label": "Choose one low-effort, valued activity and notice whether doing it affects mood or connection afterwards.",
+                  "feedback": "This allows learning from participation without demanding immediate happiness."
                 }
               ],
               "answer": "low-mood-m1-l6-n2-opt2"
@@ -1349,6 +2304,11 @@
                   "id": "low-mood-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "low-mood-m1-l6-n4-alternative-1",
+                  "label": "Ask what happens to mood on days when Callum participates in valued activities compared with days he withdraws.",
+                  "feedback": "The contrast may help identify a maintaining process."
                 }
               ],
               "answer": "low-mood-m1-l6-n4-opt2",
@@ -1391,6 +2351,36 @@
               "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Callum",
+        "Jules"
+      ],
+      "glossary": [
+        {
+          "term": "Sadness",
+          "definition": "A common response to loss or disappointment that can vary through the day.",
+          "example": "Someone feels down after being rejected for a job they wanted.",
+          "limit": "A short spell of sadness does not, on its own, establish a depressive disorder."
+        },
+        {
+          "term": "Withdrawal",
+          "definition": "Doing less or having less contact with activities and people than before.",
+          "example": "A student repeatedly cancels enjoyable plans after a setback.",
+          "limit": "Taking some time alone may be helpful; the effect of withdrawal depends on what it changes."
+        },
+        {
+          "term": "Loss of pleasure",
+          "definition": "Finding less enjoyment in activities that previously felt rewarding.",
+          "example": "A person no longer enjoys meeting friends, even when they attend.",
+          "limit": "Loss of pleasure is one possible symptom; it needs to be understood alongside duration and other changes."
+        },
+        {
+          "term": "Depressive syndrome",
+          "definition": "A broader pattern of symptoms and impairment assessed over time, rather than a synonym for feeling sad.",
+          "example": "Low mood lasts for weeks and affects sleep, concentration and daily responsibilities.",
+          "limit": "A story or online quiz cannot establish a diagnosis without proper assessment."
         }
       ]
     }

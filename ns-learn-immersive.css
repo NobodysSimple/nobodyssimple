@@ -190,3 +190,108 @@ body:has(.ns-learn-player--immersive){overflow:hidden!important}
 :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) :is(.ns-learn-player__new-evidence p,.ns-learn-player__viewpoints p,.ns-learn-player__takeaway p){color:#f0f6ed!important;margin:8px 0 0!important}
 :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) :is(.ns-learn-player__new-evidence strong,.ns-learn-player__viewpoints strong,.ns-learn-player__takeaway strong){color:#d4f0d7!important}
 @media(max-width:550px){:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__viewpoints{grid-template-columns:1fr}}
+
+/* v239 · Keep the action bar accessible at desktop zoom and short heights.
+   Scrolling is permitted on the full-screen surface as a fallback; the inner
+   lesson column has a contained scroll area and the actions remain pinned. */
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player.ns-learn-player--immersive,#cl-preview-host .ns-learn-player.ns-learn-player--immersive){
+ box-sizing:border-box!important;
+ height:100dvh!important;max-height:100dvh!important;min-height:0!important;
+ overflow-y:auto!important;overflow-x:hidden!important;
+ display:block!important;overscroll-behavior:contain;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__surface{
+ min-height:100%!important;height:100%!important;max-height:100%!important;
+ grid-template-rows:minmax(56px,auto) minmax(0,1fr) minmax(72px,auto)!important;
+ overflow:hidden;box-sizing:border-box;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__content{
+ min-height:0!important;overflow-y:auto!important;overflow-x:hidden;
+ scrollbar-gutter:stable;scrollbar-width:thin;scrollbar-color:#5b8272 transparent;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__footer{
+ position:relative!important;z-index:5;min-height:72px!important;
+ flex-shrink:0;display:flex!important;align-items:center!important;
+ padding:12px 0 max(12px,env(safe-area-inset-bottom))!important;
+ margin:0!important;background:#0d1821!important;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__primary{
+ flex-shrink:0;max-width:100%;
+}
+@media(max-height:570px){
+ :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__header{min-height:52px!important;}
+ :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__content{padding:6px 0 10px!important;}
+ :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__footer{min-height:64px!important;}
+}
+/* Fictional Life Lab character faces; identities persist within a scene. */
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-character__portrait{
+ display:inline-block;flex:0 0 56px;width:56px;height:56px;min-width:56px;
+ border-radius:18px;box-shadow:0 4px 13px #0003;
+ background:#344c49 url('media/lifelab/companions.png') var(--face-x) var(--face-y)/400% 500% no-repeat;
+ border:2px solid #74978a;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-character__portrait--small{
+ flex-basis:42px;width:42px;height:42px;min-width:42px;border-radius:15px;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__scene-cast{
+ display:flex;flex-wrap:wrap;gap:9px 17px;align-items:center;
+ margin:8px 0 14px;padding:9px 12px;border-radius:15px;
+ background:#1c3537;border:1px solid #3c6463;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__cast-member{
+ display:flex;align-items:center;gap:8px;color:#e7f4ed;font:700 13px/1.2 system-ui,sans-serif;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__cast-member .ns-learn-character__portrait{width:37px;min-width:37px;height:37px;flex-basis:37px;border-radius:12px;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-transcript{
+ display:grid;gap:14px;padding:14px 10px 15px;margin:5px 0 15px;
+ list-style:none;border:1px solid #3b615e;border-radius:18px;
+ max-height:clamp(190px,37vh,370px);min-height:130px;overflow-y:auto;overscroll-behavior:contain;
+ background:linear-gradient(160deg,#142830,#1c292f);
+ scrollbar-width:thin;scrollbar-color:#698579 transparent;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-turn{
+ display:flex;align-items:flex-end;gap:10px;width:100%;margin:0;min-width:0;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-turn:has(.ns-learn-player__dialogue-line[data-speaker="b"]){flex-direction:row-reverse;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-avatar{flex:0 0 42px;align-self:flex-end;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-line{
+ width:auto;flex:0 1 auto;max-width:calc(100% - 55px);
+ margin:0!important;padding:12px 16px;box-shadow:none;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-line p{font-size:15px!important;line-height:1.5!important;}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-turn[data-newest="true"] .ns-learn-player__dialogue-line{
+ box-shadow:0 0 0 1px #c9edb355,0 4px 16px #0002;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-transcript:focus-visible{
+ outline:2px solid #d3dd9b;outline-offset:2px;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__cast{
+ display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 17px;
+ padding:9px 12px;border-radius:16px;background:#1a3136;border:1px solid #365b58;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__cast-person{
+ display:flex;gap:9px;align-items:center;color:#e2eee9;font-weight:700;font-size:13px;
+}
+@media(max-width:600px){
+ :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-transcript{gap:10px;padding:10px 7px;max-height:34vh;}
+ :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-line{padding:11px 13px;}
+ :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__dialogue-avatar{flex-basis:36px;}
+ :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-character__portrait--small{width:36px;height:36px;min-width:36px;flex-basis:36px;}
+}
+
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary{
+ margin:0 0 18px;padding:11px 14px;background:#1c3137;border:1px solid #426b68;border-radius:14px;
+ color:#d0e7dc;font-size:13px;line-height:1.55;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary summary{
+ cursor:pointer;color:#b7e6c8;font:700 13px/1.5 system-ui,sans-serif;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary dl{
+ display:grid;gap:10px;margin:15px 0 4px;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary dt{
+ color:#ebf8e9;font-weight:800;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-immersive__glossary dd{
+ margin:4px 0 0;color:#d6e5dd;
+}

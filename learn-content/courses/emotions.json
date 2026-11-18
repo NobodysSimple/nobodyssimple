@@ -1,10 +1,804 @@
 {
   "id": "emotions",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "The Science of Emotions",
-  "description": "Explore a feeling is information not a verdict through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "emotions-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Nora",
+        "Felix"
+      ],
+      "glossary": [
+        {
+          "term": "Emotion",
+          "definition": "A response that organises attention and prepares us to react when something feels important.",
+          "example": "Anger rises after a colleague makes a decision about someone's work without including them.",
+          "limit": "The strength of a feeling is not a measure of the other person's intention."
+        },
+        {
+          "term": "Appraisal",
+          "definition": "The meaning we give to an event, such as interpreting it as unfair or threatening.",
+          "example": "Being left off a meeting invitation is read as a deliberate slight.",
+          "limit": "An appraisal may fit the facts, or it may change when new information arrives."
+        },
+        {
+          "term": "Action urge",
+          "definition": "The thing a feeling makes us want to do immediately.",
+          "example": "After feeling excluded, somebody wants to send an accusatory message.",
+          "limit": "An urge is information about readiness to act, not an instruction that must be followed."
+        },
+        {
+          "term": "Emotion regulation",
+          "definition": "Changing how we respond to a feeling, or the conditions influencing it, to serve a longer-term goal.",
+          "example": "Someone waits until they have enough information before writing to the meeting organiser.",
+          "limit": "Regulation is not identical to suppressing a feeling or pretending it is unimportant."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "emotions-f1-l1",
+          "title": "What are we studying?",
+          "teach": "A feeling tells us that something matters to the person experiencing it. It does not, by itself, establish which explanation of an event is true.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "emotions-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "A feeling tells us that something matters to the person experiencing it. It does not, by itself, establish which explanation of an event is true.\n\nHow do we listen to an emotion without letting it make every decision?",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f1-l1-n2",
+              "type": "read",
+              "title": "What emotion means",
+              "body": "A response that organises attention and prepares us to react when something feels important.\n\nFor example: Anger rises after a colleague makes a decision about someone's work without including them.\n\nOne important limit: The strength of a feeling is not a measure of the other person's intention.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: Anger rises after a colleague makes a decision about someone's work without including them. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "emotions-foundation:choose",
+              "explanation": "The example most directly supports emotion. A response that organises attention and prepares us to react when something feels important. The strength of a feeling is not a measure of the other person's intention.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "options": [
+                {
+                  "id": "emotions-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Emotion.",
+                  "feedback": "This description follows from the example. A response that organises attention and prepares us to react when something feels important."
+                },
+                {
+                  "id": "emotions-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Appraisal.",
+                  "feedback": "Appraisal is a genuine psychological idea, but the observation by itself does not establish it. An appraisal may fit the facts, or it may change when new information arrives."
+                },
+                {
+                  "id": "emotions-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Action urge.",
+                  "feedback": "Action urge is a genuine psychological idea, but the observation by itself does not establish it. An urge is information about readiness to act, not an instruction that must be followed."
+                },
+                {
+                  "id": "emotions-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Emotion regulation.",
+                  "feedback": "Emotion regulation is a genuine psychological idea, but the observation by itself does not establish it. Regulation is not identical to suppressing a feeling or pretending it is unimportant."
+                },
+                {
+                  "id": "emotions-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "emotions-f1-l1-n3-o1"
+            },
+            {
+              "id": "emotions-f1-l1-n4",
+              "type": "read",
+              "title": "What appraisal means",
+              "body": "The meaning we give to an event, such as interpreting it as unfair or threatening.\n\nFor example: Being left off a meeting invitation is read as a deliberate slight.\n\nOne important limit: An appraisal may fit the facts, or it may change when new information arrives.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: Being left off a meeting invitation is read as a deliberate slight. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "emotions-foundation:choose",
+              "explanation": "The example most directly supports appraisal. The meaning we give to an event, such as interpreting it as unfair or threatening. An appraisal may fit the facts, or it may change when new information arrives.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "options": [
+                {
+                  "id": "emotions-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Emotion.",
+                  "feedback": "Emotion is a genuine psychological idea, but the observation by itself does not establish it. The strength of a feeling is not a measure of the other person's intention."
+                },
+                {
+                  "id": "emotions-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Appraisal.",
+                  "feedback": "This description follows from the example. The meaning we give to an event, such as interpreting it as unfair or threatening."
+                },
+                {
+                  "id": "emotions-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Action urge.",
+                  "feedback": "Action urge is a genuine psychological idea, but the observation by itself does not establish it. An urge is information about readiness to act, not an instruction that must be followed."
+                },
+                {
+                  "id": "emotions-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Emotion regulation.",
+                  "feedback": "Emotion regulation is a genuine psychological idea, but the observation by itself does not establish it. Regulation is not identical to suppressing a feeling or pretending it is unimportant."
+                },
+                {
+                  "id": "emotions-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "emotions-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "emotions-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "emotions-f1-l2-n1",
+              "type": "read",
+              "title": "What action urge means",
+              "body": "The thing a feeling makes us want to do immediately.\n\nFor example: After feeling excluded, somebody wants to send an accusatory message.\n\nOne important limit: An urge is information about readiness to act, not an instruction that must be followed.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f1-l2-n2",
+              "type": "read",
+              "title": "What emotion regulation means",
+              "body": "Changing how we respond to a feeling, or the conditions influencing it, to serve a longer-term goal.\n\nFor example: Someone waits until they have enough information before writing to the meeting organiser.\n\nOne important limit: Regulation is not identical to suppressing a feeling or pretending it is unimportant.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "emotions-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how do we listen to an emotion without letting it make every decision?",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "pairs": [
+                {
+                  "id": "emotions-f1-l2-n3-p0",
+                  "label": "Emotion",
+                  "answer": "A response that organises attention and prepares us to react when something feels important."
+                },
+                {
+                  "id": "emotions-f1-l2-n3-p1",
+                  "label": "Appraisal",
+                  "answer": "The meaning we give to an event, such as interpreting it as unfair or threatening."
+                },
+                {
+                  "id": "emotions-f1-l2-n3-p2",
+                  "label": "Action urge",
+                  "answer": "The thing a feeling makes us want to do immediately."
+                },
+                {
+                  "id": "emotions-f1-l2-n3-p3",
+                  "label": "Emotion regulation",
+                  "answer": "Changing how we respond to a feeling, or the conditions influencing it, to serve a longer-term goal."
+                }
+              ]
+            },
+            {
+              "id": "emotions-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: After feeling excluded, somebody wants to send an accusatory message. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "emotions-foundation:choose",
+              "explanation": "The example most directly supports action urge. The thing a feeling makes us want to do immediately. An urge is information about readiness to act, not an instruction that must be followed.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "options": [
+                {
+                  "id": "emotions-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Emotion.",
+                  "feedback": "Emotion is a genuine psychological idea, but the observation by itself does not establish it. The strength of a feeling is not a measure of the other person's intention."
+                },
+                {
+                  "id": "emotions-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Appraisal.",
+                  "feedback": "Appraisal is a genuine psychological idea, but the observation by itself does not establish it. An appraisal may fit the facts, or it may change when new information arrives."
+                },
+                {
+                  "id": "emotions-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Action urge.",
+                  "feedback": "This description follows from the example. The thing a feeling makes us want to do immediately."
+                },
+                {
+                  "id": "emotions-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Emotion regulation.",
+                  "feedback": "Emotion regulation is a genuine psychological idea, but the observation by itself does not establish it. Regulation is not identical to suppressing a feeling or pretending it is unimportant."
+                },
+                {
+                  "id": "emotions-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "emotions-f1-l2-n4-o3"
+            },
+            {
+              "id": "emotions-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "An urge is information about readiness to act, not an instruction that must be followed.\n\nRegulation is not identical to suppressing a feeling or pretending it is unimportant.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            }
+          ]
+        },
+        {
+          "id": "emotions-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "emotions-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A response that organises attention and prepares us to react when something feels important.\n\nThe meaning we give to an event, such as interpreting it as unfair or threatening.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: Someone waits until they have enough information before writing to the meeting organiser. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "emotions-foundation:choose",
+              "explanation": "The example most directly supports emotion regulation. Changing how we respond to a feeling, or the conditions influencing it, to serve a longer-term goal. Regulation is not identical to suppressing a feeling or pretending it is unimportant.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "options": [
+                {
+                  "id": "emotions-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Emotion.",
+                  "feedback": "Emotion is a genuine psychological idea, but the observation by itself does not establish it. The strength of a feeling is not a measure of the other person's intention."
+                },
+                {
+                  "id": "emotions-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Appraisal.",
+                  "feedback": "Appraisal is a genuine psychological idea, but the observation by itself does not establish it. An appraisal may fit the facts, or it may change when new information arrives."
+                },
+                {
+                  "id": "emotions-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Action urge.",
+                  "feedback": "Action urge is a genuine psychological idea, but the observation by itself does not establish it. An urge is information about readiness to act, not an instruction that must be followed."
+                },
+                {
+                  "id": "emotions-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Emotion regulation.",
+                  "feedback": "This description follows from the example. Changing how we respond to a feeling, or the conditions influencing it, to serve a longer-term goal."
+                },
+                {
+                  "id": "emotions-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "emotions-f1-l3-n2-o4"
+            },
+            {
+              "id": "emotions-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "emotions-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how do we listen to an emotion without letting it make every decision?",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "pairs": [
+                {
+                  "id": "emotions-f1-l3-n3-p0",
+                  "label": "Emotion",
+                  "answer": "A response that organises attention and prepares us to react when something feels important."
+                },
+                {
+                  "id": "emotions-f1-l3-n3-p1",
+                  "label": "Appraisal",
+                  "answer": "The meaning we give to an event, such as interpreting it as unfair or threatening."
+                },
+                {
+                  "id": "emotions-f1-l3-n3-p2",
+                  "label": "Action urge",
+                  "answer": "The thing a feeling makes us want to do immediately."
+                },
+                {
+                  "id": "emotions-f1-l3-n3-p3",
+                  "label": "Emotion regulation",
+                  "answer": "Changing how we respond to a feeling, or the conditions influencing it, to serve a longer-term goal."
+                }
+              ]
+            },
+            {
+              "id": "emotions-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: Being left off a meeting invitation is read as a deliberate slight. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "emotions-foundation:choose",
+              "explanation": "The example most directly supports appraisal. The meaning we give to an event, such as interpreting it as unfair or threatening. An appraisal may fit the facts, or it may change when new information arrives.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "options": [
+                {
+                  "id": "emotions-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Emotion.",
+                  "feedback": "Emotion is a genuine psychological idea, but the observation by itself does not establish it. The strength of a feeling is not a measure of the other person's intention."
+                },
+                {
+                  "id": "emotions-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Appraisal.",
+                  "feedback": "This description follows from the example. The meaning we give to an event, such as interpreting it as unfair or threatening."
+                },
+                {
+                  "id": "emotions-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Action urge.",
+                  "feedback": "Action urge is a genuine psychological idea, but the observation by itself does not establish it. An urge is information about readiness to act, not an instruction that must be followed."
+                },
+                {
+                  "id": "emotions-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Emotion regulation.",
+                  "feedback": "Emotion regulation is a genuine psychological idea, but the observation by itself does not establish it. Regulation is not identical to suppressing a feeling or pretending it is unimportant."
+                },
+                {
+                  "id": "emotions-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "emotions-f1-l3-n4-o2"
+            },
+            {
+              "id": "emotions-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between emotion, appraisal, action urge, emotion regulation. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emotions-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Nora",
+        "Felix"
+      ],
+      "glossary": [
+        {
+          "term": "Emotion",
+          "definition": "A response that organises attention and prepares us to react when something feels important.",
+          "example": "Anger rises after a colleague makes a decision about someone's work without including them.",
+          "limit": "The strength of a feeling is not a measure of the other person's intention."
+        },
+        {
+          "term": "Appraisal",
+          "definition": "The meaning we give to an event, such as interpreting it as unfair or threatening.",
+          "example": "Being left off a meeting invitation is read as a deliberate slight.",
+          "limit": "An appraisal may fit the facts, or it may change when new information arrives."
+        },
+        {
+          "term": "Action urge",
+          "definition": "The thing a feeling makes us want to do immediately.",
+          "example": "After feeling excluded, somebody wants to send an accusatory message.",
+          "limit": "An urge is information about readiness to act, not an instruction that must be followed."
+        },
+        {
+          "term": "Emotion regulation",
+          "definition": "Changing how we respond to a feeling, or the conditions influencing it, to serve a longer-term goal.",
+          "example": "Someone waits until they have enough information before writing to the meeting organiser.",
+          "limit": "Regulation is not identical to suppressing a feeling or pretending it is unimportant."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "emotions-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "emotions-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Nora discovers she was left off a meeting invitation where a project decision was made. She tells Felix afterwards.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "emotions-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "scenario": "Nora discovers she was left off a meeting invitation where a project decision was made. She tells Felix afterwards.",
+              "speakerA": "Nora",
+              "speakerB": "Felix",
+              "turns": [
+                {
+                  "id": "emotions-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I'm furious. They made the decision without me."
+                },
+                {
+                  "id": "emotions-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "That sounds frustrating. Do you know why you weren't invited?"
+                },
+                {
+                  "id": "emotions-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "No. I want to send a message saying they deliberately excluded me."
+                },
+                {
+                  "id": "emotions-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "What tells you it was deliberate?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "emotions-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "emotions-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "emotions-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "emotions-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "emotions-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "emotions-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "emotions-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "emotions-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+                  "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation."
+                }
+              ]
+            },
+            {
+              "id": "emotions-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "emotions-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "categories": [
+                {
+                  "id": "emotions-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "emotions-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "emotions-f2-l1-n3-a",
+                  "label": "“I'm furious. They made the decision without me.”",
+                  "answer": "emotions-f2-l1-n3-seen"
+                },
+                {
+                  "id": "emotions-f2-l1-n3-b",
+                  "label": "Anger may register an appraisal of unfairness and energise a response. It communicates how Nora experiences the situation, while the cause of the exclusion remains uncertain.",
+                  "answer": "emotions-f2-l1-n3-guess"
+                },
+                {
+                  "id": "emotions-f2-l1-n3-c",
+                  "label": "“That sounds frustrating. Do you know why you weren't invited?”",
+                  "answer": "emotions-f2-l1-n3-seen"
+                },
+                {
+                  "id": "emotions-f2-l1-n3-d",
+                  "label": "There may be a recurring exclusionary practice, in which case her concern could accurately reflect a wider workplace problem.",
+                  "answer": "emotions-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "emotions-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "There may be a recurring exclusionary practice, in which case her concern could accurately reflect a wider workplace problem.\n\nEmotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            }
+          ]
+        },
+        {
+          "id": "emotions-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "emotions-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Anger may register an appraisal of unfairness and energise a response. It communicates how Nora experiences the situation, while the cause of the exclusion remains uncertain.\n\nAnother possibility: There may be a recurring exclusionary practice, in which case her concern could accurately reflect a wider workplace problem.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "emotions-foundation:investigate",
+              "explanation": "Examine the invitation process and whether relevant colleagues are routinely omitted. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "options": [
+                {
+                  "id": "emotions-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "emotions-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "emotions-f2-l2-n2-o3",
+                  "label": "Examine the invitation process and whether relevant colleagues are routinely omitted.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "emotions-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "emotions-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "emotions-f2-l2-n2-o3"
+            },
+            {
+              "id": "emotions-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "A calendar audit shows the invite list was copied from an old meeting that predates Nora's involvement.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "emotions-foundation:choose",
+              "explanation": "An administrative explanation now has direct support. Her concern about having influence remains legitimate even if exclusion was accidental.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "options": [
+                {
+                  "id": "emotions-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "emotions-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "emotions-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "emotions-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "emotions-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "emotions-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "emotions-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "emotions-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "A feeling tells us that something matters to the person experiencing it. It does not, by itself, establish which explanation of an event is true.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            },
+            {
+              "id": "emotions-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: After feeling excluded, somebody wants to send an accusatory message. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "emotions-foundation:choose",
+              "explanation": "The example most directly supports action urge. The thing a feeling makes us want to do immediately. An urge is information about readiness to act, not an instruction that must be followed.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "options": [
+                {
+                  "id": "emotions-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Emotion.",
+                  "feedback": "Emotion is a genuine psychological idea, but the observation by itself does not establish it. The strength of a feeling is not a measure of the other person's intention."
+                },
+                {
+                  "id": "emotions-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Appraisal.",
+                  "feedback": "Appraisal is a genuine psychological idea, but the observation by itself does not establish it. An appraisal may fit the facts, or it may change when new information arrives."
+                },
+                {
+                  "id": "emotions-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Action urge.",
+                  "feedback": "This description follows from the example. The thing a feeling makes us want to do immediately."
+                },
+                {
+                  "id": "emotions-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Emotion regulation.",
+                  "feedback": "Emotion regulation is a genuine psychological idea, but the observation by itself does not establish it. Regulation is not identical to suppressing a feeling or pretending it is unimportant."
+                },
+                {
+                  "id": "emotions-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "emotions-f2-l3-n2-o3"
+            },
+            {
+              "id": "emotions-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "emotions-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "categories": [
+                {
+                  "id": "emotions-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "emotions-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "emotions-f2-l3-n3-a",
+                  "label": "“I'm furious. They made the decision without me.”",
+                  "answer": "emotions-f2-l3-n3-seen"
+                },
+                {
+                  "id": "emotions-f2-l3-n3-b",
+                  "label": "Anger may register an appraisal of unfairness and energise a response. It communicates how Nora experiences the situation, while the cause of the exclusion remains uncertain.",
+                  "answer": "emotions-f2-l3-n3-guess"
+                },
+                {
+                  "id": "emotions-f2-l3-n3-c",
+                  "label": "“That sounds frustrating. Do you know why you weren't invited?”",
+                  "answer": "emotions-f2-l3-n3-seen"
+                },
+                {
+                  "id": "emotions-f2-l3-n3-d",
+                  "label": "There may be a recurring exclusionary practice, in which case her concern could accurately reflect a wider workplace problem.",
+                  "answer": "emotions-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "emotions-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "emotions-foundation:investigate",
+              "explanation": "Examine the invitation process and whether relevant colleagues are routinely omitted. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework.",
+              "options": [
+                {
+                  "id": "emotions-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "emotions-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "emotions-f2-l3-n4-o3",
+                  "label": "Examine the invitation process and whether relevant colleagues are routinely omitted.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "emotions-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "emotions-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "emotions-f2-l3-n4-o3"
+            },
+            {
+              "id": "emotions-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Emotions can be informative without verifying the thoughts attached to them. Suppressing the feeling is not the same as evaluating the interpretation.",
+              "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "emotions-module-01",
       "title": "A feeling is information not a verdict",
@@ -97,6 +891,16 @@
                     {
                       "id": "emotions-m1-node-1-check1-opt1",
                       "label": "Amir's anger may reflect a valued expectation of joint decision-making being frustrated."
+                    },
+                    {
+                      "id": "emotions-m1-node-1-check1-alternative-1",
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Amir's anger may reflect a valued expectation of joint decision-making being frustrated. is more directly tied to the words in this scene. Past experiences and immediate context can alter emotional appraisals. Anger alone is not reliable evidence about another person's motives."
+                    },
+                    {
+                      "id": "emotions-m1-node-1-check1-alternative-2",
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Amir's anger may reflect a valued expectation of joint decision-making being frustrated. is more directly tied to the words in this scene. Past experiences and immediate context can alter emotional appraisals. Anger alone is not reliable evidence about another person's motives."
                     }
                   ],
                   "answer": "emotions-m1-node-1-check1-opt1",
@@ -110,9 +914,10 @@
                   "options": [
                     {
                       "id": "emotions-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "What part bothered you most?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "emotions-m1-node-1-check2-opt1",
@@ -122,15 +927,24 @@
                     },
                     {
                       "id": "emotions-m1-node-1-check2-opt2",
-                      "label": "If I feel this disrespected, you must have been trying to exclude me.",
-                      "reply": "Then let's work out how we choose these things next time.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "reply": "What part bothered you most?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     },
                     {
                       "id": "emotions-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "I didn't mean to leave you out.",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                      "reply": "What part bothered you most?",
+                      "consequence": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried.",
+                      "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
+                    },
+                    {
+                      "id": "emotions-m1-node-1-check2-alternative-4",
+                      "label": "Ask what information each person would need before being willing to revise their position.",
+                      "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need.",
+                      "reply": "What part bothered you most?",
+                      "consequence": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                     }
                   ],
                   "answer": "emotions-m1-node-1-check2-opt1",
@@ -270,6 +1084,11 @@
                 {
                   "id": "emotions-m1-repair-opt4",
                   "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "emotions-m1-node-7-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "emotions-m1-repair-opt1"
@@ -298,7 +1117,8 @@
                 },
                 {
                   "id": "emotions-m1-plan-opt2",
-                  "label": "If I feel this disrespected, you must have been trying to exclude me."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "outcomes": [
@@ -384,6 +1204,16 @@
                     {
                       "id": "emotions-m1-node-8-check1-opt2",
                       "label": "The newer dialogue settles the cause and replaces the need to consider jess deliberately intended to exclude amir.."
+                    },
+                    {
+                      "id": "emotions-m1-node-8-check1-alternative-1",
+                      "label": "Amir may be reacting to a repeated pattern of decisions made without him rather than to this booking alone.",
+                      "feedback": "A pattern would increase the stakes, though the vignette gives one clear example."
+                    },
+                    {
+                      "id": "emotions-m1-node-8-check1-alternative-2",
+                      "label": "Jess may have assumed the date was already agreed and be confused about why Amir experiences the booking as exclusion.",
+                      "feedback": "A misunderstanding could explain the decision without establishing deliberate disregard."
                     }
                   ],
                   "answer": "emotions-m1-node-8-check1-opt1",
@@ -422,6 +1252,11 @@
                 {
                   "id": "emotions-m1-view-opt3",
                   "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "emotions-m1-node-10-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "emotions-m1-view-opt1"
@@ -455,6 +1290,11 @@
                 {
                   "id": "emotions-m1-new-opt2",
                   "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "emotions-m1-node-9-alternative-1",
+                  "label": "Jess may have assumed the date was already agreed and be confused about why Amir experiences the booking as exclusion.",
+                  "feedback": "A misunderstanding could explain the decision without establishing deliberate disregard."
                 }
               ],
               "answer": "emotions-m1-new-opt1"
@@ -565,6 +1405,11 @@
                 {
                   "id": "emotions-m1-transfer-e-opt1",
                   "label": "Ask what responsibility or value the guilt refers to before concluding that cancelling was wrong."
+                },
+                {
+                  "id": "emotions-m1-node-14-evidence-alternative-1",
+                  "label": "Amir may be unhappy with the specific travel date rather than how the decision was made.",
+                  "feedback": "This could explain the immediate behaviour, but it needs facts beyond the present conversation. Past experiences and immediate context can alter emotional appraisals. Anger alone is not reliable evidence about another person's motives."
                 }
               ],
               "evidenceAnswer": "emotions-m1-transfer-e-opt1",
@@ -580,6 +1425,11 @@
                 {
                   "id": "emotions-m1-transfer-a-opt1",
                   "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "emotions-m1-node-14-response-alternative-1",
+                  "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                  "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                 }
               ],
               "responseAnswer": "emotions-m1-transfer-a-opt1"
@@ -612,6 +1462,11 @@
                 {
                   "id": "emotions-m1-test-opt2",
                   "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "emotions-m1-node-13-alternative-1",
+                  "label": "Examine whether the same reaction appears when the immediate practical stakes are lower.",
+                  "feedback": "A cross-situation comparison may reveal whether this is a case-specific response."
                 }
               ],
               "answer": "emotions-m1-test-opt1"
@@ -706,6 +1561,11 @@
                   "id": "emotions-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "emotions-m1-l3-n3-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "emotions-m1-l3-n3-opt2",
@@ -740,6 +1600,11 @@
                   "id": "emotions-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "emotions-m1-l3-n4-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "emotions-m1-l3-n4-opt2",
@@ -766,6 +1631,16 @@
                   "id": "emotions-m1-l3-n5-evidence-opt2",
                   "label": "Anger may register an appraisal of unfairness and energise a response. It communicates how Nora experiences the situation, while the cause of the exclusion remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "emotions-m1-l3-n5-evidence-alternative-1",
+                  "label": "Nora’s anger may reflect a reliable pattern of being excluded from important decisions.",
+                  "feedback": "A repeated pattern would strengthen the fairness interpretation, but this invitation has not yet been explained."
+                },
+                {
+                  "id": "emotions-m1-l3-n5-evidence-alternative-2",
+                  "label": "Nora may be responding as much to the loss of influence over her work as to the possibility of deliberate exclusion.",
+                  "feedback": "Her concern about participation is directly stated, while intent remains uncertain."
                 }
               ],
               "evidenceAnswer": "emotions-m1-l3-n5-evidence-opt2",
@@ -779,6 +1654,16 @@
                   "id": "emotions-m1-l3-n5-response-opt2",
                   "label": "I wasn't included in the decision meeting. Could you explain the invite list, and include me in future decisions about my work?",
                   "feedback": ""
+                },
+                {
+                  "id": "emotions-m1-l3-n5-response-alternative-1",
+                  "label": "Ask how the invitation list was created and request inclusion in future decisions affecting her work.",
+                  "feedback": "This obtains facts and protects participation without deciding intent prematurely."
+                },
+                {
+                  "id": "emotions-m1-l3-n5-response-alternative-2",
+                  "label": "Explain the impact of missing the meeting and propose an explicit procedure for involving project contributors.",
+                  "feedback": "It addresses recurrence; it may be premature to prescribe a procedure without knowing why the omission occurred."
                 }
               ],
               "responseAnswer": "emotions-m1-l3-n5-response-opt2"
@@ -884,13 +1769,18 @@
                     },
                     {
                       "id": "emotions-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "emotions-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "emotions-m1-l4-n2-question-alternative-2",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "emotions-m1-l4-n2-question-opt2",
@@ -928,6 +1818,11 @@
                   "id": "emotions-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "emotions-m1-l4-n4-alternative-1",
+                  "label": "Review whether Nora was consulted on comparable decisions before this meeting.",
+                  "feedback": "A pattern could support an account beyond one administrative error."
                 }
               ],
               "answer": "emotions-m1-l4-n4-opt2",
@@ -962,6 +1857,11 @@
                   "id": "emotions-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "emotions-m1-l4-n3-alternative-1",
+                  "label": "Look at how the meeting invitation was assembled and whether the same colleagues were omitted.",
+                  "feedback": "This directly tests accidental exclusion."
                 }
               ],
               "answer": "emotions-m1-l4-n3-opt2",
@@ -1029,6 +1929,11 @@
                   "id": "emotions-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "emotions-m1-l4-n6-alternative-1",
+                  "label": "Nora’s anger may reflect a reliable pattern of being excluded from important decisions.",
+                  "feedback": "A repeated pattern would strengthen the fairness interpretation, but this invitation has not yet been explained."
                 }
               ],
               "answer": "emotions-m1-l4-n6-opt2"
@@ -1071,6 +1976,16 @@
                   "id": "emotions-m1-l5-n2-evidence-opt2",
                   "label": "Anger may register an appraisal of unfairness and energise a response. It communicates how Nora experiences the situation, while the cause of the exclusion remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "emotions-m1-l5-n2-evidence-alternative-1",
+                  "label": "The meeting may have been organised using an outdated invitation list without considering who now needs to attend.",
+                  "feedback": "An administrative explanation is plausible, though it must be checked rather than assumed."
+                },
+                {
+                  "id": "emotions-m1-l5-n2-evidence-alternative-2",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "emotions-m1-l5-n2-evidence-opt2",
@@ -1084,6 +1999,16 @@
                   "id": "emotions-m1-l5-n2-response-opt2",
                   "label": "I wasn't included in the decision meeting. Could you explain the invite list, and include me in future decisions about my work?",
                   "feedback": ""
+                },
+                {
+                  "id": "emotions-m1-l5-n2-response-alternative-1",
+                  "label": "Send the message immediately so they understand the intensity of your anger.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "emotions-m1-l5-n2-response-alternative-2",
+                  "label": "What would you need to know before concluding the exclusion was deliberate?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "emotions-m1-l5-n2-response-opt2"
@@ -1108,6 +2033,11 @@
                   "id": "emotions-m1-l5-n3-action-opt2",
                   "label": "I wasn't included in the decision meeting. Could you explain the invite list, and include me in future decisions about my work?",
                   "feedback": ""
+                },
+                {
+                  "id": "emotions-m1-l5-n3-change-alternative-1",
+                  "label": "Ignore the anger until you no longer care about the decision.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -1120,6 +2050,11 @@
                   "id": "emotions-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "emotions-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "emotions-m1-l5-n3-action-opt2",
@@ -1148,13 +2083,18 @@
                 },
                 {
                   "id": "emotions-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "emotions-m1-l5-n4-opt4",
                   "label": "What would you need to know before concluding the exclusion was deliberate?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "emotions-m1-l5-n4-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "emotions-m1-l5-n4-opt2",
@@ -1189,6 +2129,11 @@
                   "id": "emotions-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "emotions-m1-l5-n5-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "emotions-m1-l5-n5-opt2",
@@ -1223,6 +2168,11 @@
                   "id": "emotions-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "emotions-m1-l5-n6-alternative-1",
+                  "label": "Look at how the meeting invitation was assembled and whether the same colleagues were omitted.",
+                  "feedback": "This directly tests accidental exclusion."
                 }
               ],
               "answer": "emotions-m1-l5-n6-opt2"
@@ -1273,6 +2223,11 @@
                   "id": "emotions-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "emotions-m1-l6-n2-alternative-1",
+                  "label": "Explain the impact of missing the meeting and propose an explicit procedure for involving project contributors.",
+                  "feedback": "It addresses recurrence; it may be premature to prescribe a procedure without knowing why the omission occurred."
                 }
               ],
               "answer": "emotions-m1-l6-n2-opt2"
@@ -1349,6 +2304,11 @@
                   "id": "emotions-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "emotions-m1-l6-n4-alternative-1",
+                  "label": "Look at how the meeting invitation was assembled and whether the same colleagues were omitted.",
+                  "feedback": "This directly tests accidental exclusion."
                 }
               ],
               "answer": "emotions-m1-l6-n4-opt2",
@@ -1391,6 +2351,36 @@
               "sources": "Lazarus (1991), Emotion and Adaptation; Gross (2015), emotion regulation framework."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Nora",
+        "Felix"
+      ],
+      "glossary": [
+        {
+          "term": "Emotion",
+          "definition": "A response that organises attention and prepares us to react when something feels important.",
+          "example": "Anger rises after a colleague makes a decision about someone's work without including them.",
+          "limit": "The strength of a feeling is not a measure of the other person's intention."
+        },
+        {
+          "term": "Appraisal",
+          "definition": "The meaning we give to an event, such as interpreting it as unfair or threatening.",
+          "example": "Being left off a meeting invitation is read as a deliberate slight.",
+          "limit": "An appraisal may fit the facts, or it may change when new information arrives."
+        },
+        {
+          "term": "Action urge",
+          "definition": "The thing a feeling makes us want to do immediately.",
+          "example": "After feeling excluded, somebody wants to send an accusatory message.",
+          "limit": "An urge is information about readiness to act, not an instruction that must be followed."
+        },
+        {
+          "term": "Emotion regulation",
+          "definition": "Changing how we respond to a feeling, or the conditions influencing it, to serve a longer-term goal.",
+          "example": "Someone waits until they have enough information before writing to the meeting organiser.",
+          "limit": "Regulation is not identical to suppressing a feeling or pretending it is unimportant."
         }
       ]
     }

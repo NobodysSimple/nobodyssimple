@@ -1,10 +1,804 @@
 {
   "id": "narcissism",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Narcissism & Personality",
-  "description": "Explore everyday self-focus versus a persistent trait through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "narcissism-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Maya",
+        "Leo"
+      ],
+      "glossary": [
+        {
+          "term": "Personality trait",
+          "definition": "A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait.",
+          "example": "Someone regularly seeks recognition in different groups over many months.",
+          "limit": "A single boast after good news is not a stable personality description."
+        },
+        {
+          "term": "Defensiveness",
+          "definition": "An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk.",
+          "example": "A worker argues sharply when asked to correct the credit on a presentation.",
+          "limit": "Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder."
+        },
+        {
+          "term": "Contingent self-worth",
+          "definition": "When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent.",
+          "example": "A small correction feels like proof of being a failure because reputation carries enormous weight.",
+          "limit": "Wanting approval is common; the extent and cost of dependence matter."
+        },
+        {
+          "term": "Personality disorder",
+          "definition": "A clinical pattern considered through its persistence, pervasiveness and effects on functioning. It requires much more evidence than one argument.",
+          "example": "A clinician investigates a long history across relationships before making any diagnostic judgement.",
+          "limit": "A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "narcissism-f1-l1",
+          "title": "What are we studying?",
+          "teach": "People use ‘narcissist’ to describe behaviour they find hurtful. The word covers more than one idea, and using it carelessly can stop us asking what actually happened.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "narcissism-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "People use ‘narcissist’ to describe behaviour they find hurtful. The word covers more than one idea, and using it carelessly can stop us asking what actually happened.\n\nWhat can someone's response to criticism tell us, and what remains unknown?",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f1-l1-n2",
+              "type": "read",
+              "title": "What personality trait means",
+              "body": "A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait.\n\nFor example: Someone regularly seeks recognition in different groups over many months.\n\nOne important limit: A single boast after good news is not a stable personality description.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: Someone regularly seeks recognition in different groups over many months. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "narcissism-foundation:choose",
+              "explanation": "The example most directly supports personality trait. A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait. A single boast after good news is not a stable personality description.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "options": [
+                {
+                  "id": "narcissism-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Personality trait.",
+                  "feedback": "This description follows from the example. A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait."
+                },
+                {
+                  "id": "narcissism-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Defensiveness.",
+                  "feedback": "Defensiveness is a genuine psychological idea, but the observation by itself does not establish it. Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder."
+                },
+                {
+                  "id": "narcissism-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Contingent self-worth.",
+                  "feedback": "Contingent self-worth is a genuine psychological idea, but the observation by itself does not establish it. Wanting approval is common; the extent and cost of dependence matter."
+                },
+                {
+                  "id": "narcissism-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Personality disorder.",
+                  "feedback": "Personality disorder is a genuine psychological idea, but the observation by itself does not establish it. A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action."
+                },
+                {
+                  "id": "narcissism-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "narcissism-f1-l1-n3-o1"
+            },
+            {
+              "id": "narcissism-f1-l1-n4",
+              "type": "read",
+              "title": "What defensiveness means",
+              "body": "An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk.\n\nFor example: A worker argues sharply when asked to correct the credit on a presentation.\n\nOne important limit: Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: A worker argues sharply when asked to correct the credit on a presentation. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "narcissism-foundation:choose",
+              "explanation": "The example most directly supports defensiveness. An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk. Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "options": [
+                {
+                  "id": "narcissism-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Personality trait.",
+                  "feedback": "Personality trait is a genuine psychological idea, but the observation by itself does not establish it. A single boast after good news is not a stable personality description."
+                },
+                {
+                  "id": "narcissism-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Defensiveness.",
+                  "feedback": "This description follows from the example. An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk."
+                },
+                {
+                  "id": "narcissism-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Contingent self-worth.",
+                  "feedback": "Contingent self-worth is a genuine psychological idea, but the observation by itself does not establish it. Wanting approval is common; the extent and cost of dependence matter."
+                },
+                {
+                  "id": "narcissism-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Personality disorder.",
+                  "feedback": "Personality disorder is a genuine psychological idea, but the observation by itself does not establish it. A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action."
+                },
+                {
+                  "id": "narcissism-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "narcissism-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "narcissism-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "narcissism-f1-l2-n1",
+              "type": "read",
+              "title": "What contingent self-worth means",
+              "body": "When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent.\n\nFor example: A small correction feels like proof of being a failure because reputation carries enormous weight.\n\nOne important limit: Wanting approval is common; the extent and cost of dependence matter.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f1-l2-n2",
+              "type": "read",
+              "title": "What personality disorder means",
+              "body": "A clinical pattern considered through its persistence, pervasiveness and effects on functioning. It requires much more evidence than one argument.\n\nFor example: A clinician investigates a long history across relationships before making any diagnostic judgement.\n\nOne important limit: A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "narcissism-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what can someone's response to criticism tell us, and what remains unknown?",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "pairs": [
+                {
+                  "id": "narcissism-f1-l2-n3-p0",
+                  "label": "Personality trait",
+                  "answer": "A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait."
+                },
+                {
+                  "id": "narcissism-f1-l2-n3-p1",
+                  "label": "Defensiveness",
+                  "answer": "An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk."
+                },
+                {
+                  "id": "narcissism-f1-l2-n3-p2",
+                  "label": "Contingent self-worth",
+                  "answer": "When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent."
+                },
+                {
+                  "id": "narcissism-f1-l2-n3-p3",
+                  "label": "Personality disorder",
+                  "answer": "A clinical pattern considered through its persistence, pervasiveness and effects on functioning. It requires much more evidence than one argument."
+                }
+              ]
+            },
+            {
+              "id": "narcissism-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: A small correction feels like proof of being a failure because reputation carries enormous weight. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "narcissism-foundation:choose",
+              "explanation": "The example most directly supports contingent self-worth. When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent. Wanting approval is common; the extent and cost of dependence matter.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "options": [
+                {
+                  "id": "narcissism-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Personality trait.",
+                  "feedback": "Personality trait is a genuine psychological idea, but the observation by itself does not establish it. A single boast after good news is not a stable personality description."
+                },
+                {
+                  "id": "narcissism-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Defensiveness.",
+                  "feedback": "Defensiveness is a genuine psychological idea, but the observation by itself does not establish it. Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder."
+                },
+                {
+                  "id": "narcissism-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Contingent self-worth.",
+                  "feedback": "This description follows from the example. When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent."
+                },
+                {
+                  "id": "narcissism-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Personality disorder.",
+                  "feedback": "Personality disorder is a genuine psychological idea, but the observation by itself does not establish it. A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action."
+                },
+                {
+                  "id": "narcissism-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "narcissism-f1-l2-n4-o3"
+            },
+            {
+              "id": "narcissism-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Wanting approval is common; the extent and cost of dependence matter.\n\nA difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            }
+          ]
+        },
+        {
+          "id": "narcissism-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "narcissism-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait.\n\nAn attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: A clinician investigates a long history across relationships before making any diagnostic judgement. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "narcissism-foundation:choose",
+              "explanation": "The example most directly supports personality disorder. A clinical pattern considered through its persistence, pervasiveness and effects on functioning. It requires much more evidence than one argument. A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "options": [
+                {
+                  "id": "narcissism-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Personality trait.",
+                  "feedback": "Personality trait is a genuine psychological idea, but the observation by itself does not establish it. A single boast after good news is not a stable personality description."
+                },
+                {
+                  "id": "narcissism-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Defensiveness.",
+                  "feedback": "Defensiveness is a genuine psychological idea, but the observation by itself does not establish it. Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder."
+                },
+                {
+                  "id": "narcissism-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Contingent self-worth.",
+                  "feedback": "Contingent self-worth is a genuine psychological idea, but the observation by itself does not establish it. Wanting approval is common; the extent and cost of dependence matter."
+                },
+                {
+                  "id": "narcissism-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Personality disorder.",
+                  "feedback": "This description follows from the example. A clinical pattern considered through its persistence, pervasiveness and effects on functioning. It requires much more evidence than one argument."
+                },
+                {
+                  "id": "narcissism-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "narcissism-f1-l3-n2-o4"
+            },
+            {
+              "id": "narcissism-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "narcissism-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what can someone's response to criticism tell us, and what remains unknown?",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "pairs": [
+                {
+                  "id": "narcissism-f1-l3-n3-p0",
+                  "label": "Personality trait",
+                  "answer": "A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait."
+                },
+                {
+                  "id": "narcissism-f1-l3-n3-p1",
+                  "label": "Defensiveness",
+                  "answer": "An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk."
+                },
+                {
+                  "id": "narcissism-f1-l3-n3-p2",
+                  "label": "Contingent self-worth",
+                  "answer": "When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent."
+                },
+                {
+                  "id": "narcissism-f1-l3-n3-p3",
+                  "label": "Personality disorder",
+                  "answer": "A clinical pattern considered through its persistence, pervasiveness and effects on functioning. It requires much more evidence than one argument."
+                }
+              ]
+            },
+            {
+              "id": "narcissism-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: A worker argues sharply when asked to correct the credit on a presentation. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "narcissism-foundation:choose",
+              "explanation": "The example most directly supports defensiveness. An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk. Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "options": [
+                {
+                  "id": "narcissism-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Personality trait.",
+                  "feedback": "Personality trait is a genuine psychological idea, but the observation by itself does not establish it. A single boast after good news is not a stable personality description."
+                },
+                {
+                  "id": "narcissism-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Defensiveness.",
+                  "feedback": "This description follows from the example. An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk."
+                },
+                {
+                  "id": "narcissism-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Contingent self-worth.",
+                  "feedback": "Contingent self-worth is a genuine psychological idea, but the observation by itself does not establish it. Wanting approval is common; the extent and cost of dependence matter."
+                },
+                {
+                  "id": "narcissism-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Personality disorder.",
+                  "feedback": "Personality disorder is a genuine psychological idea, but the observation by itself does not establish it. A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action."
+                },
+                {
+                  "id": "narcissism-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "narcissism-f1-l3-n4-o2"
+            },
+            {
+              "id": "narcissism-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between personality trait, defensiveness, contingent self-worth, personality disorder. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "narcissism-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Maya",
+        "Leo"
+      ],
+      "glossary": [
+        {
+          "term": "Personality trait",
+          "definition": "A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait.",
+          "example": "Someone regularly seeks recognition in different groups over many months.",
+          "limit": "A single boast after good news is not a stable personality description."
+        },
+        {
+          "term": "Defensiveness",
+          "definition": "An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk.",
+          "example": "A worker argues sharply when asked to correct the credit on a presentation.",
+          "limit": "Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder."
+        },
+        {
+          "term": "Contingent self-worth",
+          "definition": "When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent.",
+          "example": "A small correction feels like proof of being a failure because reputation carries enormous weight.",
+          "limit": "Wanting approval is common; the extent and cost of dependence matter."
+        },
+        {
+          "term": "Personality disorder",
+          "definition": "A clinical pattern considered through its persistence, pervasiveness and effects on functioning. It requires much more evidence than one argument.",
+          "example": "A clinician investigates a long history across relationships before making any diagnostic judgement.",
+          "limit": "A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "narcissism-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "narcissism-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Maya built the statistical analysis. Leo led the project. The final slide credits only Leo.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "narcissism-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "scenario": "Maya built the statistical analysis. Leo led the project. The final slide credits only Leo.",
+              "speakerA": "Maya",
+              "speakerB": "Leo",
+              "turns": [
+                {
+                  "id": "narcissism-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "Could we change the slide? It says you developed the analysis, but that was my work."
+                },
+                {
+                  "id": "narcissism-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "I thought we'd agreed I was taking ownership of the results."
+                },
+                {
+                  "id": "narcissism-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "Of presenting them, yes. I still think the analysis should be credited accurately."
+                },
+                {
+                  "id": "narcissism-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "You don't understand what's riding on this. They're considering me for a promotion."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "narcissism-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "narcissism-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "narcissism-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "narcissism-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "narcissism-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "narcissism-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "narcissism-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "narcissism-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+                  "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder."
+                }
+              ]
+            },
+            {
+              "id": "narcissism-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "narcissism-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "categories": [
+                {
+                  "id": "narcissism-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "narcissism-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "narcissism-f2-l1-n3-a",
+                  "label": "“Could we change the slide? It says you developed the analysis, but that was my work.”",
+                  "answer": "narcissism-f2-l1-n3-seen"
+                },
+                {
+                  "id": "narcissism-f2-l1-n3-b",
+                  "label": "Leo treats correction as a possible loss of professional standing. His need to appear capable may be giving a routine attribution dispute unusually high emotional stakes.",
+                  "answer": "narcissism-f2-l1-n3-guess"
+                },
+                {
+                  "id": "narcissism-f2-l1-n3-c",
+                  "label": "“I thought we'd agreed I was taking ownership of the results.”",
+                  "answer": "narcissism-f2-l1-n3-seen"
+                },
+                {
+                  "id": "narcissism-f2-l1-n3-d",
+                  "label": "Leo may hold a sincere but mistaken belief that leading the project includes ownership of its technical work.",
+                  "answer": "narcissism-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "narcissism-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Leo may hold a sincere but mistaken belief that leading the project includes ownership of its technical work.\n\nOne defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            }
+          ]
+        },
+        {
+          "id": "narcissism-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "narcissism-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Leo treats correction as a possible loss of professional standing. His need to appear capable may be giving a routine attribution dispute unusually high emotional stakes.\n\nAnother possibility: Leo may hold a sincere but mistaken belief that leading the project includes ownership of its technical work.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "narcissism-foundation:investigate",
+              "explanation": "Compare how Leo treats credit and correction over time, including when his own reputation is not at stake. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "options": [
+                {
+                  "id": "narcissism-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "narcissism-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "narcissism-f2-l2-n2-o3",
+                  "label": "Compare how Leo treats credit and correction over time, including when his own reputation is not at stake.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "narcissism-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "narcissism-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "narcissism-f2-l2-n2-o3"
+            },
+            {
+              "id": "narcissism-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "A message from last month shows Leo thanking Maya for developing the analysis. Yesterday he told a director he had developed it personally.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "narcissism-foundation:choose",
+              "explanation": "The messages weaken the role-confusion explanation and strengthen the possibility of knowing misattribution. Concern about reputation could still influence his response.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "options": [
+                {
+                  "id": "narcissism-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "narcissism-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "narcissism-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "narcissism-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "narcissism-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "narcissism-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "narcissism-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "narcissism-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "People use ‘narcissist’ to describe behaviour they find hurtful. The word covers more than one idea, and using it carelessly can stop us asking what actually happened.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            },
+            {
+              "id": "narcissism-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: A small correction feels like proof of being a failure because reputation carries enormous weight. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "narcissism-foundation:choose",
+              "explanation": "The example most directly supports contingent self-worth. When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent. Wanting approval is common; the extent and cost of dependence matter.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "options": [
+                {
+                  "id": "narcissism-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Personality trait.",
+                  "feedback": "Personality trait is a genuine psychological idea, but the observation by itself does not establish it. A single boast after good news is not a stable personality description."
+                },
+                {
+                  "id": "narcissism-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Defensiveness.",
+                  "feedback": "Defensiveness is a genuine psychological idea, but the observation by itself does not establish it. Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder."
+                },
+                {
+                  "id": "narcissism-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Contingent self-worth.",
+                  "feedback": "This description follows from the example. When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent."
+                },
+                {
+                  "id": "narcissism-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Personality disorder.",
+                  "feedback": "Personality disorder is a genuine psychological idea, but the observation by itself does not establish it. A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action."
+                },
+                {
+                  "id": "narcissism-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "narcissism-f2-l3-n2-o3"
+            },
+            {
+              "id": "narcissism-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "narcissism-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "categories": [
+                {
+                  "id": "narcissism-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "narcissism-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "narcissism-f2-l3-n3-a",
+                  "label": "“Could we change the slide? It says you developed the analysis, but that was my work.”",
+                  "answer": "narcissism-f2-l3-n3-seen"
+                },
+                {
+                  "id": "narcissism-f2-l3-n3-b",
+                  "label": "Leo treats correction as a possible loss of professional standing. His need to appear capable may be giving a routine attribution dispute unusually high emotional stakes.",
+                  "answer": "narcissism-f2-l3-n3-guess"
+                },
+                {
+                  "id": "narcissism-f2-l3-n3-c",
+                  "label": "“I thought we'd agreed I was taking ownership of the results.”",
+                  "answer": "narcissism-f2-l3-n3-seen"
+                },
+                {
+                  "id": "narcissism-f2-l3-n3-d",
+                  "label": "Leo may hold a sincere but mistaken belief that leading the project includes ownership of its technical work.",
+                  "answer": "narcissism-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "narcissism-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "narcissism-foundation:investigate",
+              "explanation": "Compare how Leo treats credit and correction over time, including when his own reputation is not at stake. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework.",
+              "options": [
+                {
+                  "id": "narcissism-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "narcissism-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "narcissism-f2-l3-n4-o3",
+                  "label": "Compare how Leo treats credit and correction over time, including when his own reputation is not at stake.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "narcissism-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "narcissism-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "narcissism-f2-l3-n4-o3"
+            },
+            {
+              "id": "narcissism-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. One defensive conversation cannot establish an enduring narcissistic pattern or a personality disorder.",
+              "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "narcissism-module-01",
       "title": "Everyday self-focus versus a persistent trait",
@@ -87,6 +881,16 @@
                     {
                       "id": "narcissism-m1-node-1-check1-opt1",
                       "label": "Leo may be treating the correction as a threat to his image of competence."
+                    },
+                    {
+                      "id": "narcissism-m1-node-1-check1-alternative-1",
+                      "label": "Leo may regard technical authorship as less important than managerial accountability and resent the proposed distinction.",
+                      "feedback": "This could explain his opening response; it does not fully account for why the correction feels like a risk to his competence."
+                    },
+                    {
+                      "id": "narcissism-m1-node-1-check1-alternative-2",
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Leo may be treating the correction as a threat to his image of competence. is more directly tied to the words in this scene. Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument."
                     }
                   ],
                   "answer": "narcissism-m1-node-1-check1-opt1",
@@ -100,27 +904,37 @@
                   "options": [
                     {
                       "id": "narcissism-m1-node-1-check2-opt2",
-                      "label": "Let's leave the inaccurate slide until after the promotion panel.",
-                      "reply": "If we change it now, they'll think I've been taking credit for something I couldn't do.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "I'd like us to describe the work as a joint result, without breaking down who contributed which part.",
+                      "reply": "I was. That work was excellent.",
+                      "consequence": "A collective credit may reduce tension, but it would still leave the technical attribution ambiguous.",
+                      "feedback": "A collective credit may reduce tension, but it would still leave the technical attribution ambiguous."
                     },
                     {
                       "id": "narcissism-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "You have no idea how much this promotion matters. They need to see me as capable.",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Let's draft the corrected wording together and show it to the director with a brief explanation of our different roles.",
+                      "reply": "I was. That work was excellent.",
+                      "consequence": "Joint drafting might reduce defensiveness, although it requires Leo to cooperate with the correction.",
+                      "feedback": "Joint drafting might reduce defensiveness, although it requires Leo to cooperate with the correction."
                     },
                     {
                       "id": "narcissism-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "I was. That work was excellent.",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "narcissism-m1-node-1-check2-opt1",
                       "label": "We can accurately credit your leadership and the analysis I completed before the slide is sent.",
                       "reply": "I wanted senior management to think I could do the technical part as well.",
                       "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "narcissism-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "I was. That work was excellent.",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "narcissism-m1-node-1-check2-opt1",
@@ -266,7 +1080,8 @@
                 },
                 {
                   "id": "narcissism-m1-plan-opt2",
-                  "label": "Let's leave the inaccurate slide until after the promotion panel."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "outcomes": [
@@ -314,6 +1129,11 @@
                 {
                   "id": "narcissism-m1-repair-opt2",
                   "label": "Because leo believes project leadership ordinarily includes public credit for technical work., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "narcissism-m1-node-7-alternative-1",
+                  "label": "Observe what happens after a clear and workable alternative is offered.",
+                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
                 }
               ],
               "answer": "narcissism-m1-repair-opt1"
@@ -384,6 +1204,16 @@
                     {
                       "id": "narcissism-m1-node-8-check1-opt2",
                       "label": "The newer dialogue settles the cause and replaces the need to consider leo believes project leadership ordinarily includes public credit for technical work.."
+                    },
+                    {
+                      "id": "narcissism-m1-node-8-check1-alternative-1",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                    },
+                    {
+                      "id": "narcissism-m1-node-8-check1-alternative-2",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "narcissism-m1-node-8-check1-opt1",
@@ -421,6 +1251,11 @@
                 {
                   "id": "narcissism-m1-new-opt4",
                   "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "narcissism-m1-node-9-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "narcissism-m1-new-opt1"
@@ -500,6 +1335,11 @@
                 {
                   "id": "narcissism-m1-view-opt1",
                   "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "narcissism-m1-node-10-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "narcissism-m1-view-opt1"
@@ -567,6 +1407,11 @@
                 {
                   "id": "narcissism-m1-test-opt4",
                   "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "narcissism-m1-node-13-alternative-1",
+                  "label": "Check whether the speakers had agreed on the practical expectation before the exchange.",
+                  "feedback": "The agreement may determine whether the original request was reasonable, although not why the response was so strong."
                 }
               ],
               "answer": "narcissism-m1-test-opt1"
@@ -597,6 +1442,11 @@
                 {
                   "id": "narcissism-m1-transfer-e-opt1",
                   "label": "The request may have been heard as a judgement of personal worth; address the damage without claiming certainty about motive."
+                },
+                {
+                  "id": "narcissism-m1-node-14-evidence-alternative-1",
+                  "label": "Leo may regard technical authorship as less important than managerial accountability and resent the proposed distinction.",
+                  "feedback": "This could explain his opening response; it does not fully account for why the correction feels like a risk to his competence."
                 }
               ],
               "evidenceAnswer": "narcissism-m1-transfer-e-opt1",
@@ -612,6 +1462,11 @@
                 {
                   "id": "narcissism-m1-transfer-a-opt1",
                   "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "narcissism-m1-node-14-response-alternative-1",
+                  "label": "I'd like us to describe the work as a joint result, without breaking down who contributed which part.",
+                  "feedback": "A collective credit may reduce tension, but it would still leave the technical attribution ambiguous."
                 }
               ],
               "responseAnswer": "narcissism-m1-transfer-a-opt1"
@@ -706,6 +1561,11 @@
                   "id": "narcissism-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "narcissism-m1-l3-n3-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "narcissism-m1-l3-n3-opt2",
@@ -740,6 +1600,11 @@
                   "id": "narcissism-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "narcissism-m1-l3-n4-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "narcissism-m1-l3-n4-opt2",
@@ -766,6 +1631,16 @@
                   "id": "narcissism-m1-l3-n5-evidence-opt2",
                   "label": "Leo treats correction as a possible loss of professional standing. His need to appear capable may be giving a routine attribution dispute unusually high emotional stakes.",
                   "feedback": ""
+                },
+                {
+                  "id": "narcissism-m1-l3-n5-evidence-alternative-1",
+                  "label": "Leo may be responding primarily to the timing of the correction, because changing a finished presentation could look like an admission of carelessness.",
+                  "feedback": "Timing could matter, but Leo explicitly connects the issue to how competent he appears."
+                },
+                {
+                  "id": "narcissism-m1-l3-n5-evidence-alternative-2",
+                  "label": "Leo may understand project ownership differently from Maya and interpret her request as a challenge to their agreed roles.",
+                  "feedback": "This can explain the initial dispute; his later emphasis on promotion suggests the stakes may extend beyond job descriptions."
                 }
               ],
               "evidenceAnswer": "narcissism-m1-l3-n5-evidence-opt2",
@@ -779,6 +1654,16 @@
                   "id": "narcissism-m1-l3-n5-response-opt2",
                   "label": "Your leadership deserves credit, and so does the analysis I completed. Can we put both roles on the slide before it goes out?",
                   "feedback": ""
+                },
+                {
+                  "id": "narcissism-m1-l3-n5-response-alternative-1",
+                  "label": "Propose a private wording change that credits the analysis without challenging who led the project.",
+                  "feedback": "A private correction may reduce embarrassment, but Maya still needs to ensure the final slide is accurate."
+                },
+                {
+                  "id": "narcissism-m1-l3-n5-response-alternative-2",
+                  "label": "Ask Leo what the directors are likely to infer, then suggest wording that distinguishes project leadership from technical authorship.",
+                  "feedback": "This may surface his concern; it risks delaying correction if he continues to refuse."
                 }
               ],
               "responseAnswer": "narcissism-m1-l3-n5-response-opt2"
@@ -884,13 +1769,18 @@
                     },
                     {
                       "id": "narcissism-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "narcissism-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "narcissism-m1-l4-n2-question-alternative-2",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "narcissism-m1-l4-n2-question-opt2",
@@ -928,6 +1818,11 @@
                   "id": "narcissism-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "narcissism-m1-l4-n3-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "narcissism-m1-l4-n3-opt2",
@@ -962,6 +1857,11 @@
                   "id": "narcissism-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "narcissism-m1-l4-n4-alternative-1",
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "narcissism-m1-l4-n4-opt2",
@@ -1029,6 +1929,11 @@
                   "id": "narcissism-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "narcissism-m1-l4-n6-alternative-1",
+                  "label": "Leo may be responding primarily to the timing of the correction, because changing a finished presentation could look like an admission of carelessness.",
+                  "feedback": "Timing could matter, but Leo explicitly connects the issue to how competent he appears."
                 }
               ],
               "answer": "narcissism-m1-l4-n6-opt2"
@@ -1071,6 +1976,16 @@
                   "id": "narcissism-m1-l5-n2-evidence-opt2",
                   "label": "Leo treats correction as a possible loss of professional standing. His need to appear capable may be giving a routine attribution dispute unusually high emotional stakes.",
                   "feedback": ""
+                },
+                {
+                  "id": "narcissism-m1-l5-n2-evidence-alternative-1",
+                  "label": "Leo may fear being publicly accused of dishonesty more than he fears the loss of recognition itself.",
+                  "feedback": "Fear of accusation is plausible, though no one has yet threatened to accuse him; Maya has proposed accurate attribution."
+                },
+                {
+                  "id": "narcissism-m1-l5-n2-evidence-alternative-2",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "narcissism-m1-l5-n2-evidence-opt2",
@@ -1084,6 +1999,16 @@
                   "id": "narcissism-m1-l5-n2-response-opt2",
                   "label": "Your leadership deserves credit, and so does the analysis I completed. Can we put both roles on the slide before it goes out?",
                   "feedback": ""
+                },
+                {
+                  "id": "narcissism-m1-l5-n2-response-alternative-1",
+                  "label": "Surely you agree it would be unfair to leave my contribution out.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "narcissism-m1-l5-n2-response-alternative-2",
+                  "label": "What do you think a correction would lead the directors to conclude about your leadership?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "narcissism-m1-l5-n2-response-opt2"
@@ -1110,13 +2035,18 @@
                 },
                 {
                   "id": "narcissism-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "narcissism-m1-l5-n4-opt4",
                   "label": "What do you think a correction would lead the directors to conclude about your leadership?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "narcissism-m1-l5-n4-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "narcissism-m1-l5-n4-opt2",
@@ -1142,6 +2072,11 @@
                   "id": "narcissism-m1-l5-n3-action-opt2",
                   "label": "Your leadership deserves credit, and so does the analysis I completed. Can we put both roles on the slide before it goes out?",
                   "feedback": ""
+                },
+                {
+                  "id": "narcissism-m1-l5-n3-change-alternative-1",
+                  "label": "If we can't correct the attribution together, I'll ask the project lead to review it before publication.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -1154,6 +2089,11 @@
                   "id": "narcissism-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "narcissism-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "narcissism-m1-l5-n3-action-opt2",
@@ -1189,6 +2129,11 @@
                   "id": "narcissism-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "narcissism-m1-l5-n5-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "narcissism-m1-l5-n5-opt2",
@@ -1223,6 +2168,11 @@
                   "id": "narcissism-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "narcissism-m1-l5-n6-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "narcissism-m1-l5-n6-opt2"
@@ -1273,6 +2223,11 @@
                   "id": "narcissism-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "narcissism-m1-l6-n2-alternative-1",
+                  "label": "Ask Leo what the directors are likely to infer, then suggest wording that distinguishes project leadership from technical authorship.",
+                  "feedback": "This may surface his concern; it risks delaying correction if he continues to refuse."
                 }
               ],
               "answer": "narcissism-m1-l6-n2-opt2"
@@ -1349,6 +2304,11 @@
                   "id": "narcissism-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "narcissism-m1-l6-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "narcissism-m1-l6-n4-opt2",
@@ -1391,6 +2351,36 @@
               "sources": "Pincus & Lukowitsky (2010), Pathological narcissism and narcissistic personality disorder; APA DSM-5-TR personality disorder framework."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Maya",
+        "Leo"
+      ],
+      "glossary": [
+        {
+          "term": "Personality trait",
+          "definition": "A tendency that appears with some consistency across situations. One behaviour is a clue, not a complete measure of a trait.",
+          "example": "Someone regularly seeks recognition in different groups over many months.",
+          "limit": "A single boast after good news is not a stable personality description."
+        },
+        {
+          "term": "Defensiveness",
+          "definition": "An attempt to protect oneself from information that feels threatening. It can appear in anyone, especially when something important feels at risk.",
+          "example": "A worker argues sharply when asked to correct the credit on a presentation.",
+          "limit": "Defensiveness does not reveal whether the criticism was fair or whether the person has a disorder."
+        },
+        {
+          "term": "Contingent self-worth",
+          "definition": "When feeling acceptable or valuable depends heavily on meeting a particular condition, such as appearing competent.",
+          "example": "A small correction feels like proof of being a failure because reputation carries enormous weight.",
+          "limit": "Wanting approval is common; the extent and cost of dependence matter."
+        },
+        {
+          "term": "Personality disorder",
+          "definition": "A clinical pattern considered through its persistence, pervasiveness and effects on functioning. It requires much more evidence than one argument.",
+          "example": "A clinician investigates a long history across relationships before making any diagnostic judgement.",
+          "limit": "A difficult interaction cannot establish a diagnosis, and a diagnosis cannot explain every action."
         }
       ]
     }

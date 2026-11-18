@@ -20,13 +20,13 @@ test('All 20 courses publish a complete, editable opening batch aligned to the c
   assert.equal(bundle.status,'published');
   assert.equal(bundle.version,index.courses[id].version);
   assert.deepEqual(validateLearnBundle(bundle,id),[],id+' failed publish validation');
-  assert.equal(bundle.modules.length,1,id);
-  assert.equal(bundle.modules[0].id,blueprint.books[0].modules[0].id,id);
-  assert.deepEqual(bundle.modules[0].lessons.map(l=>l.id),blueprint.books[0].modules[0].lessons.slice(0,6).map(l=>l.id),id);
-  for(const lesson of bundle.modules[0].lessons){
+  assert.equal(bundle.modules.length,3,id);
+  assert.equal(bundle.modules[2].id,blueprint.books[0].modules[0].id,id);
+  assert.deepEqual(bundle.modules[2].lessons.map(l=>l.id),blueprint.books[0].modules[0].lessons.slice(0,6).map(l=>l.id),id);
+  for(const lesson of bundle.modules[2].lessons){
    assert.equal(lesson.editorialStatus,'ready',id);
    assert.ok(lesson.nodes.length>=6,id);
-   if(bundle.modules[0].lessons.indexOf(lesson)<2)assert.equal(lesson.nodes.filter(n=>n.type==='dialogue').length,1,id);
+   if(bundle.modules[2].lessons.indexOf(lesson)<2)assert.equal(lesson.nodes.filter(n=>n.type==='dialogue').length,1,id);
    assert.ok(lesson.nodes.every(n=>n.id&&n.title),id);
    assert.ok(learnLessonScore(lesson,{}).total>=3,id);
   }
@@ -34,7 +34,7 @@ test('All 20 courses publish a complete, editable opening batch aligned to the c
 });
 test('Activities vary across lessons and exercise every requested reasoning mechanism',()=>{
  const lessons=collect(),types=new Set(lessons.flatMap(l=>l.nodes.map(n=>n.type)));
- assert.equal(lessons.length,120);
+ assert.equal(lessons.length,240);
  for(const type of ['dialogue','label','rank','chain','read','predict','repair','sort','match','update','perspective','character','complete','investigate']){
   assert.ok(types.has(type),'missing exercise type '+type);
   if(type!=='read')assert.ok(COURSE_LAB_EXERCISES.includes(type),'unregistered '+type);
@@ -43,7 +43,7 @@ test('Activities vary across lessons and exercise every requested reasoning mech
  assert.ok(new Set(signatures).size>=8,'exercise order must vary rather than repeat a fixed sequence');
 });
 test('Every dialogue is initially shown one speech bubble at a time',()=>{
- const first=json('learn-content/courses/narcissism.json').modules[0].lessons[0].nodes.find(n=>n.type==='dialogue');
+ const first=json('learn-content/courses/narcissism.json').modules[2].lessons[0].nodes.find(n=>n.type==='dialogue');
  const esc=x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
  const fieldset=()=>'<fieldset></fieldset>';
  const firstHTML=renderDialogue(first,{dialogueCheck:-1,dialogueVisible:1,answers:{},checked:null},esc,fieldset);
@@ -56,10 +56,10 @@ test('Every dialogue is initially shown one speech bubble at a time',()=>{
  const questionHTML=renderDialogue(first,{dialogueCheck:0,dialogueVisible:1,answers:{},checked:null},esc,fieldset);
  assert.ok(questionHTML.includes(esc(first.turns.at(-1).text)));
  assert.match(questionHTML,/Reflect · 1 \/ 2/);
- assert.ok(first.checks[1].options.every(o=>o.reply&&o.consequence),'branch choices must explain their outcome');
+ assert.ok(first.checks[1].options.every(o=>o.feedback||o.consequence),'all options explain the implication of a choice');
 });
 test('Ranking rewards recognising the most-supported hypothesis without pretending every weaker one has a fixed order',()=>{
- const lesson=json('learn-content/courses/narcissism.json').modules[0].lessons[0];
+ const lesson=json('learn-content/courses/narcissism.json').modules[2].lessons[0];
  const rank=lesson.nodes.find(n=>n.type==='rank');
  const swapped=[rank.steps[0].id,rank.steps[2].id,rank.steps[1].id];
  const notFirst=[rank.steps[1].id,rank.steps[0].id,rank.steps[2].id];

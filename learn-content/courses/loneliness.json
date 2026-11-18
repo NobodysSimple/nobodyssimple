@@ -1,10 +1,804 @@
 {
   "id": "loneliness",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Loneliness, Friendship & Belonging",
-  "description": "Explore being surrounded yet feeling alone through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "loneliness-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Sana",
+        "Ollie"
+      ],
+      "glossary": [
+        {
+          "term": "Social contact",
+          "definition": "An opportunity to interact with another person, whether briefly or deeply.",
+          "example": "A student attends several busy gatherings during the week.",
+          "limit": "A high count of interactions does not tell us how satisfying they felt."
+        },
+        {
+          "term": "Perceived connection",
+          "definition": "The experience of feeling known, valued or able to turn towards someone.",
+          "example": "Someone feels understood after a thoughtful call with a close friend.",
+          "limit": "Feeling connected is not identical to having a large social circle."
+        },
+        {
+          "term": "Disclosure",
+          "definition": "Choosing to share something personal that others could respond to.",
+          "example": "A friend says that work has been difficult rather than keeping the conversation cheerful.",
+          "limit": "Sharing requires judgement about trust and safety; not every relationship is a suitable place."
+        },
+        {
+          "term": "Reciprocity",
+          "definition": "A relationship in which people have a reasonable opportunity to respond to one another's needs.",
+          "example": "Two friends take turns listening when each has had a hard week.",
+          "limit": "Reciprocity does not require equal emotional labour in every single conversation."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "loneliness-f1-l1",
+          "title": "What are we studying?",
+          "teach": "It is possible to know lots of people and still feel alone. It is also possible to spend time alone while feeling securely connected to others.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "loneliness-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "It is possible to know lots of people and still feel alone. It is also possible to spend time alone while feeling securely connected to others.\n\nWhat matters about a relationship besides how often we see someone?",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f1-l1-n2",
+              "type": "read",
+              "title": "What social contact means",
+              "body": "An opportunity to interact with another person, whether briefly or deeply.\n\nFor example: A student attends several busy gatherings during the week.\n\nOne important limit: A high count of interactions does not tell us how satisfying they felt.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: A student attends several busy gatherings during the week. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "loneliness-foundation:choose",
+              "explanation": "The example most directly supports social contact. An opportunity to interact with another person, whether briefly or deeply. A high count of interactions does not tell us how satisfying they felt.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "options": [
+                {
+                  "id": "loneliness-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Social contact.",
+                  "feedback": "This description follows from the example. An opportunity to interact with another person, whether briefly or deeply."
+                },
+                {
+                  "id": "loneliness-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Perceived connection.",
+                  "feedback": "Perceived connection is a genuine psychological idea, but the observation by itself does not establish it. Feeling connected is not identical to having a large social circle."
+                },
+                {
+                  "id": "loneliness-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Disclosure.",
+                  "feedback": "Disclosure is a genuine psychological idea, but the observation by itself does not establish it. Sharing requires judgement about trust and safety; not every relationship is a suitable place."
+                },
+                {
+                  "id": "loneliness-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Reciprocity.",
+                  "feedback": "Reciprocity is a genuine psychological idea, but the observation by itself does not establish it. Reciprocity does not require equal emotional labour in every single conversation."
+                },
+                {
+                  "id": "loneliness-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "loneliness-f1-l1-n3-o1"
+            },
+            {
+              "id": "loneliness-f1-l1-n4",
+              "type": "read",
+              "title": "What perceived connection means",
+              "body": "The experience of feeling known, valued or able to turn towards someone.\n\nFor example: Someone feels understood after a thoughtful call with a close friend.\n\nOne important limit: Feeling connected is not identical to having a large social circle.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: Someone feels understood after a thoughtful call with a close friend. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "loneliness-foundation:choose",
+              "explanation": "The example most directly supports perceived connection. The experience of feeling known, valued or able to turn towards someone. Feeling connected is not identical to having a large social circle.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "options": [
+                {
+                  "id": "loneliness-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Social contact.",
+                  "feedback": "Social contact is a genuine psychological idea, but the observation by itself does not establish it. A high count of interactions does not tell us how satisfying they felt."
+                },
+                {
+                  "id": "loneliness-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Perceived connection.",
+                  "feedback": "This description follows from the example. The experience of feeling known, valued or able to turn towards someone."
+                },
+                {
+                  "id": "loneliness-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Disclosure.",
+                  "feedback": "Disclosure is a genuine psychological idea, but the observation by itself does not establish it. Sharing requires judgement about trust and safety; not every relationship is a suitable place."
+                },
+                {
+                  "id": "loneliness-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Reciprocity.",
+                  "feedback": "Reciprocity is a genuine psychological idea, but the observation by itself does not establish it. Reciprocity does not require equal emotional labour in every single conversation."
+                },
+                {
+                  "id": "loneliness-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "loneliness-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "loneliness-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "loneliness-f1-l2-n1",
+              "type": "read",
+              "title": "What disclosure means",
+              "body": "Choosing to share something personal that others could respond to.\n\nFor example: A friend says that work has been difficult rather than keeping the conversation cheerful.\n\nOne important limit: Sharing requires judgement about trust and safety; not every relationship is a suitable place.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f1-l2-n2",
+              "type": "read",
+              "title": "What reciprocity means",
+              "body": "A relationship in which people have a reasonable opportunity to respond to one another's needs.\n\nFor example: Two friends take turns listening when each has had a hard week.\n\nOne important limit: Reciprocity does not require equal emotional labour in every single conversation.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "loneliness-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what matters about a relationship besides how often we see someone?",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "pairs": [
+                {
+                  "id": "loneliness-f1-l2-n3-p0",
+                  "label": "Social contact",
+                  "answer": "An opportunity to interact with another person, whether briefly or deeply."
+                },
+                {
+                  "id": "loneliness-f1-l2-n3-p1",
+                  "label": "Perceived connection",
+                  "answer": "The experience of feeling known, valued or able to turn towards someone."
+                },
+                {
+                  "id": "loneliness-f1-l2-n3-p2",
+                  "label": "Disclosure",
+                  "answer": "Choosing to share something personal that others could respond to."
+                },
+                {
+                  "id": "loneliness-f1-l2-n3-p3",
+                  "label": "Reciprocity",
+                  "answer": "A relationship in which people have a reasonable opportunity to respond to one another's needs."
+                }
+              ]
+            },
+            {
+              "id": "loneliness-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: A friend says that work has been difficult rather than keeping the conversation cheerful. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "loneliness-foundation:choose",
+              "explanation": "The example most directly supports disclosure. Choosing to share something personal that others could respond to. Sharing requires judgement about trust and safety; not every relationship is a suitable place.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "options": [
+                {
+                  "id": "loneliness-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Social contact.",
+                  "feedback": "Social contact is a genuine psychological idea, but the observation by itself does not establish it. A high count of interactions does not tell us how satisfying they felt."
+                },
+                {
+                  "id": "loneliness-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Perceived connection.",
+                  "feedback": "Perceived connection is a genuine psychological idea, but the observation by itself does not establish it. Feeling connected is not identical to having a large social circle."
+                },
+                {
+                  "id": "loneliness-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Disclosure.",
+                  "feedback": "This description follows from the example. Choosing to share something personal that others could respond to."
+                },
+                {
+                  "id": "loneliness-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Reciprocity.",
+                  "feedback": "Reciprocity is a genuine psychological idea, but the observation by itself does not establish it. Reciprocity does not require equal emotional labour in every single conversation."
+                },
+                {
+                  "id": "loneliness-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "loneliness-f1-l2-n4-o3"
+            },
+            {
+              "id": "loneliness-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Sharing requires judgement about trust and safety; not every relationship is a suitable place.\n\nReciprocity does not require equal emotional labour in every single conversation.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            }
+          ]
+        },
+        {
+          "id": "loneliness-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "loneliness-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "An opportunity to interact with another person, whether briefly or deeply.\n\nThe experience of feeling known, valued or able to turn towards someone.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: Two friends take turns listening when each has had a hard week. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "loneliness-foundation:choose",
+              "explanation": "The example most directly supports reciprocity. A relationship in which people have a reasonable opportunity to respond to one another's needs. Reciprocity does not require equal emotional labour in every single conversation.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "options": [
+                {
+                  "id": "loneliness-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Social contact.",
+                  "feedback": "Social contact is a genuine psychological idea, but the observation by itself does not establish it. A high count of interactions does not tell us how satisfying they felt."
+                },
+                {
+                  "id": "loneliness-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Perceived connection.",
+                  "feedback": "Perceived connection is a genuine psychological idea, but the observation by itself does not establish it. Feeling connected is not identical to having a large social circle."
+                },
+                {
+                  "id": "loneliness-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Disclosure.",
+                  "feedback": "Disclosure is a genuine psychological idea, but the observation by itself does not establish it. Sharing requires judgement about trust and safety; not every relationship is a suitable place."
+                },
+                {
+                  "id": "loneliness-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Reciprocity.",
+                  "feedback": "This description follows from the example. A relationship in which people have a reasonable opportunity to respond to one another's needs."
+                },
+                {
+                  "id": "loneliness-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "loneliness-f1-l3-n2-o4"
+            },
+            {
+              "id": "loneliness-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "loneliness-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what matters about a relationship besides how often we see someone?",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "pairs": [
+                {
+                  "id": "loneliness-f1-l3-n3-p0",
+                  "label": "Social contact",
+                  "answer": "An opportunity to interact with another person, whether briefly or deeply."
+                },
+                {
+                  "id": "loneliness-f1-l3-n3-p1",
+                  "label": "Perceived connection",
+                  "answer": "The experience of feeling known, valued or able to turn towards someone."
+                },
+                {
+                  "id": "loneliness-f1-l3-n3-p2",
+                  "label": "Disclosure",
+                  "answer": "Choosing to share something personal that others could respond to."
+                },
+                {
+                  "id": "loneliness-f1-l3-n3-p3",
+                  "label": "Reciprocity",
+                  "answer": "A relationship in which people have a reasonable opportunity to respond to one another's needs."
+                }
+              ]
+            },
+            {
+              "id": "loneliness-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: Someone feels understood after a thoughtful call with a close friend. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "loneliness-foundation:choose",
+              "explanation": "The example most directly supports perceived connection. The experience of feeling known, valued or able to turn towards someone. Feeling connected is not identical to having a large social circle.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "options": [
+                {
+                  "id": "loneliness-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Social contact.",
+                  "feedback": "Social contact is a genuine psychological idea, but the observation by itself does not establish it. A high count of interactions does not tell us how satisfying they felt."
+                },
+                {
+                  "id": "loneliness-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Perceived connection.",
+                  "feedback": "This description follows from the example. The experience of feeling known, valued or able to turn towards someone."
+                },
+                {
+                  "id": "loneliness-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Disclosure.",
+                  "feedback": "Disclosure is a genuine psychological idea, but the observation by itself does not establish it. Sharing requires judgement about trust and safety; not every relationship is a suitable place."
+                },
+                {
+                  "id": "loneliness-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Reciprocity.",
+                  "feedback": "Reciprocity is a genuine psychological idea, but the observation by itself does not establish it. Reciprocity does not require equal emotional labour in every single conversation."
+                },
+                {
+                  "id": "loneliness-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "loneliness-f1-l3-n4-o2"
+            },
+            {
+              "id": "loneliness-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between social contact, perceived connection, disclosure, reciprocity. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Sana",
+        "Ollie"
+      ],
+      "glossary": [
+        {
+          "term": "Social contact",
+          "definition": "An opportunity to interact with another person, whether briefly or deeply.",
+          "example": "A student attends several busy gatherings during the week.",
+          "limit": "A high count of interactions does not tell us how satisfying they felt."
+        },
+        {
+          "term": "Perceived connection",
+          "definition": "The experience of feeling known, valued or able to turn towards someone.",
+          "example": "Someone feels understood after a thoughtful call with a close friend.",
+          "limit": "Feeling connected is not identical to having a large social circle."
+        },
+        {
+          "term": "Disclosure",
+          "definition": "Choosing to share something personal that others could respond to.",
+          "example": "A friend says that work has been difficult rather than keeping the conversation cheerful.",
+          "limit": "Sharing requires judgement about trust and safety; not every relationship is a suitable place."
+        },
+        {
+          "term": "Reciprocity",
+          "definition": "A relationship in which people have a reasonable opportunity to respond to one another's needs.",
+          "example": "Two friends take turns listening when each has had a hard week.",
+          "limit": "Reciprocity does not require equal emotional labour in every single conversation."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "loneliness-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "loneliness-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Sana sees friends regularly but tells Ollie she has been feeling isolated.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "loneliness-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "scenario": "Sana sees friends regularly but tells Ollie she has been feeling isolated.",
+              "speakerA": "Sana",
+              "speakerB": "Ollie",
+              "turns": [
+                {
+                  "id": "loneliness-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I went to three gatherings this week and still felt alone."
+                },
+                {
+                  "id": "loneliness-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "Did you want more time with people, or something different from the time you had?"
+                },
+                {
+                  "id": "loneliness-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "I talked to everyone. I just don't think anyone knows what's actually going on with me."
+                },
+                {
+                  "id": "loneliness-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "Did you have a chance to share anything personal?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "loneliness-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "loneliness-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "loneliness-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "loneliness-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "loneliness-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "loneliness-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "loneliness-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "loneliness-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+                  "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met."
+                }
+              ]
+            },
+            {
+              "id": "loneliness-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "loneliness-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "categories": [
+                {
+                  "id": "loneliness-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "loneliness-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "loneliness-f2-l1-n3-a",
+                  "label": "“I went to three gatherings this week and still felt alone.”",
+                  "answer": "loneliness-f2-l1-n3-seen"
+                },
+                {
+                  "id": "loneliness-f2-l1-n3-b",
+                  "label": "Sana's sense of loneliness relates to a gap between the relationships she wants and the connection she experiences, not merely the number of social events.",
+                  "answer": "loneliness-f2-l1-n3-guess"
+                },
+                {
+                  "id": "loneliness-f2-l1-n3-c",
+                  "label": "“Did you want more time with people, or something different from the time you had?”",
+                  "answer": "loneliness-f2-l1-n3-seen"
+                },
+                {
+                  "id": "loneliness-f2-l1-n3-d",
+                  "label": "There may be persistent dismissiveness in the group, rather than solely Sana's expectation of being misunderstood.",
+                  "answer": "loneliness-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "loneliness-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "There may be persistent dismissiveness in the group, rather than solely Sana's expectation of being misunderstood.\n\nSocial isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            }
+          ]
+        },
+        {
+          "id": "loneliness-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "loneliness-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Sana's sense of loneliness relates to a gap between the relationships she wants and the connection she experiences, not merely the number of social events.\n\nAnother possibility: There may be persistent dismissiveness in the group, rather than solely Sana's expectation of being misunderstood.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "loneliness-foundation:investigate",
+              "explanation": "Look at the quality of reciprocal responses when Sana shares more directly with people she considers trustworthy. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "options": [
+                {
+                  "id": "loneliness-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "loneliness-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "loneliness-f2-l2-n2-o3",
+                  "label": "Look at the quality of reciprocal responses when Sana shares more directly with people she considers trustworthy.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "loneliness-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "loneliness-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "loneliness-f2-l2-n2-o3"
+            },
+            {
+              "id": "loneliness-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "One friend replies warmly to Sana's direct message about work and suggests meeting privately to talk.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "loneliness-foundation:choose",
+              "explanation": "The response weakens the idea that nobody is interested and suggests that the group setting may have limited the opportunity for the kind of conversation Sana needed.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "options": [
+                {
+                  "id": "loneliness-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "loneliness-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "loneliness-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "loneliness-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "loneliness-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "loneliness-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "loneliness-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "loneliness-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "It is possible to know lots of people and still feel alone. It is also possible to spend time alone while feeling securely connected to others.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            },
+            {
+              "id": "loneliness-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: A friend says that work has been difficult rather than keeping the conversation cheerful. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "loneliness-foundation:choose",
+              "explanation": "The example most directly supports disclosure. Choosing to share something personal that others could respond to. Sharing requires judgement about trust and safety; not every relationship is a suitable place.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "options": [
+                {
+                  "id": "loneliness-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Social contact.",
+                  "feedback": "Social contact is a genuine psychological idea, but the observation by itself does not establish it. A high count of interactions does not tell us how satisfying they felt."
+                },
+                {
+                  "id": "loneliness-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Perceived connection.",
+                  "feedback": "Perceived connection is a genuine psychological idea, but the observation by itself does not establish it. Feeling connected is not identical to having a large social circle."
+                },
+                {
+                  "id": "loneliness-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Disclosure.",
+                  "feedback": "This description follows from the example. Choosing to share something personal that others could respond to."
+                },
+                {
+                  "id": "loneliness-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Reciprocity.",
+                  "feedback": "Reciprocity is a genuine psychological idea, but the observation by itself does not establish it. Reciprocity does not require equal emotional labour in every single conversation."
+                },
+                {
+                  "id": "loneliness-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "loneliness-f2-l3-n2-o3"
+            },
+            {
+              "id": "loneliness-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "loneliness-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "categories": [
+                {
+                  "id": "loneliness-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "loneliness-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "loneliness-f2-l3-n3-a",
+                  "label": "“I went to three gatherings this week and still felt alone.”",
+                  "answer": "loneliness-f2-l3-n3-seen"
+                },
+                {
+                  "id": "loneliness-f2-l3-n3-b",
+                  "label": "Sana's sense of loneliness relates to a gap between the relationships she wants and the connection she experiences, not merely the number of social events.",
+                  "answer": "loneliness-f2-l3-n3-guess"
+                },
+                {
+                  "id": "loneliness-f2-l3-n3-c",
+                  "label": "“Did you want more time with people, or something different from the time you had?”",
+                  "answer": "loneliness-f2-l3-n3-seen"
+                },
+                {
+                  "id": "loneliness-f2-l3-n3-d",
+                  "label": "There may be persistent dismissiveness in the group, rather than solely Sana's expectation of being misunderstood.",
+                  "answer": "loneliness-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "loneliness-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "loneliness-foundation:investigate",
+              "explanation": "Look at the quality of reciprocal responses when Sana shares more directly with people she considers trustworthy. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness.",
+              "options": [
+                {
+                  "id": "loneliness-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "loneliness-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "loneliness-f2-l3-n4-o3",
+                  "label": "Look at the quality of reciprocal responses when Sana shares more directly with people she considers trustworthy.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "loneliness-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "loneliness-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "loneliness-f2-l3-n4-o3"
+            },
+            {
+              "id": "loneliness-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+              "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "loneliness-module-01",
       "title": "Being surrounded yet feeling alone",
@@ -97,6 +891,16 @@
                     {
                       "id": "loneliness-m1-node-1-check1-opt3",
                       "label": "Jon may be dissatisfied with the activities rather than the relationships."
+                    },
+                    {
+                      "id": "loneliness-m1-node-1-check1-alternative-1",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                    },
+                    {
+                      "id": "loneliness-m1-node-1-check1-alternative-2",
+                      "label": "Jon may feel lonely chiefly because the activities give him few chances to talk about anything personal.",
+                      "feedback": "The setting could be limiting; he also reports ending opportunities for disclosure himself."
                     }
                   ],
                   "answer": "loneliness-m1-node-1-check1-opt1",
@@ -116,21 +920,31 @@
                     },
                     {
                       "id": "loneliness-m1-node-1-check2-opt2",
-                      "label": "Add another event to your calendar without considering what sort of connection is missing.",
-                      "reply": "So you've had company without testing whether you can be understood.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                      "reply": "What did they do?",
+                      "consequence": "This can reveal different priorities, but it may also delay an urgent factual correction.",
+                      "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                     },
                     {
                       "id": "loneliness-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Do you expect them to react badly?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Invite a trusted friend for coffee and explain that you would like to talk about how the week has been.",
+                      "reply": "What did they do?",
+                      "consequence": "A quieter setting may offer a better opportunity, although the friend may have limited capacity that day.",
+                      "feedback": "A quieter setting may offer a better opportunity, although the friend may have limited capacity that day."
                     },
                     {
                       "id": "loneliness-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask someone from the group whether they would be open to a more personal conversation rather than assuming no one is interested.",
                       "reply": "What did they do?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Checking the expectation could be useful, but choosing a trusted person matters.",
+                      "feedback": "Checking the expectation could be useful, but choosing a trusted person matters."
+                    },
+                    {
+                      "id": "loneliness-m1-node-1-check2-alternative-4",
+                      "label": "Notice which conversations already allow some mutual disclosure before deciding where to invest more time.",
+                      "feedback": "This uses existing evidence, though simply observing can become another way to avoid sharing.",
+                      "reply": "What did they do?",
+                      "consequence": "This uses existing evidence, though simply observing can become another way to avoid sharing."
                     }
                   ],
                   "answer": "loneliness-m1-node-1-check2-opt1",
@@ -270,6 +1084,11 @@
                 {
                   "id": "loneliness-m1-repair-opt1",
                   "label": "The account is consistent with the evidence, but jon may simply need more opportunities to meet compatible people. still deserves consideration."
+                },
+                {
+                  "id": "loneliness-m1-node-7-alternative-1",
+                  "label": "Observe what happens after a clear and workable alternative is offered.",
+                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
                 }
               ],
               "answer": "loneliness-m1-repair-opt1"
@@ -290,7 +1109,8 @@
               "changes": [
                 {
                   "id": "loneliness-m1-plan-opt2",
-                  "label": "Add another event to your calendar without considering what sort of connection is missing."
+                  "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                  "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer."
                 },
                 {
                   "id": "loneliness-m1-plan-opt3",
@@ -384,6 +1204,16 @@
                     {
                       "id": "loneliness-m1-node-8-check1-opt1",
                       "label": "One supportive response supplies direct evidence that a closer connection may be possible. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "loneliness-m1-node-8-check1-alternative-1",
+                      "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                      "feedback": "This is a reasonable line of inquiry, although Jon may have frequent social contact without the emotional connection he wants. is more directly tied to the words in this scene. Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone."
+                    },
+                    {
+                      "id": "loneliness-m1-node-8-check1-alternative-2",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     }
                   ],
                   "answer": "loneliness-m1-node-8-check1-opt1",
@@ -422,6 +1252,11 @@
                 {
                   "id": "loneliness-m1-view-opt4",
                   "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "loneliness-m1-node-10-alternative-1",
+                  "label": "Jon may want a different kind of friendship from the one this group normally offers rather than more intimacy with these particular people.",
+                  "feedback": "A mismatch in expectations is possible, but it has not been tested through a closer conversation."
                 }
               ],
               "answer": "loneliness-m1-view-opt1"
@@ -455,6 +1290,11 @@
                 {
                   "id": "loneliness-m1-new-opt3",
                   "label": "The new evidence establishes jon may simply need more opportunities to meet compatible people. as the sole explanation."
+                },
+                {
+                  "id": "loneliness-m1-node-9-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "loneliness-m1-new-opt1"
@@ -549,6 +1389,11 @@
                 {
                   "id": "loneliness-m1-transfer-e-opt3",
                   "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "loneliness-m1-node-14-evidence-alternative-1",
+                  "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                  "feedback": "This is a reasonable line of inquiry, although Jon may have frequent social contact without the emotional connection he wants. is more directly tied to the words in this scene. Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone."
                 }
               ],
               "evidenceAnswer": "loneliness-m1-transfer-e-opt1",
@@ -564,6 +1409,11 @@
                 {
                   "id": "loneliness-m1-transfer-a-opt3",
                   "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "loneliness-m1-node-14-response-alternative-1",
+                  "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                  "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                 }
               ],
               "responseAnswer": "loneliness-m1-transfer-a-opt1"
@@ -596,6 +1446,11 @@
                 {
                   "id": "loneliness-m1-test-opt3",
                   "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "loneliness-m1-node-13-alternative-1",
+                  "label": "Check whether the speakers had agreed on the practical expectation before the exchange.",
+                  "feedback": "The agreement may determine whether the original request was reasonable, although not why the response was so strong."
                 }
               ],
               "answer": "loneliness-m1-test-opt1"
@@ -690,6 +1545,11 @@
                   "id": "loneliness-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "loneliness-m1-l3-n3-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "loneliness-m1-l3-n3-opt2",
@@ -724,6 +1584,11 @@
                   "id": "loneliness-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "loneliness-m1-l3-n4-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "loneliness-m1-l3-n4-opt2",
@@ -750,6 +1615,16 @@
                   "id": "loneliness-m1-l3-n5-evidence-opt2",
                   "label": "Sana's sense of loneliness relates to a gap between the relationships she wants and the connection she experiences, not merely the number of social events.",
                   "feedback": ""
+                },
+                {
+                  "id": "loneliness-m1-l3-n5-evidence-alternative-1",
+                  "label": "Sana may need a smaller setting for personal conversation rather than additional social events.",
+                  "feedback": "Group gatherings can limit depth even when friends are willing to listen."
+                },
+                {
+                  "id": "loneliness-m1-l3-n5-evidence-alternative-2",
+                  "label": "Her friends may be consistently unreceptive to personal topics, which could justify her reluctance to share.",
+                  "feedback": "This would fit if repeated attempts are dismissed, but the record currently contains limited examples."
                 }
               ],
               "evidenceAnswer": "loneliness-m1-l3-n5-evidence-opt2",
@@ -763,6 +1638,16 @@
                   "id": "loneliness-m1-l3-n5-response-opt2",
                   "label": "Choose one trustworthy friend and ask for time to talk about what has been difficult, then notice how the interaction actually goes.",
                   "feedback": ""
+                },
+                {
+                  "id": "loneliness-m1-l3-n5-response-alternative-1",
+                  "label": "Arrange a one-to-one meeting with somebody she trusts and explain what she would like to talk about.",
+                  "feedback": "The request increases the opportunity for meaningful contact while leaving the response open."
+                },
+                {
+                  "id": "loneliness-m1-l3-n5-response-alternative-2",
+                  "label": "Notice which friends reciprocate when she shares something personal before deciding whether to invest more deeply.",
+                  "feedback": "That helps evaluate the relationship, though it could become excessive monitoring if every conversation is treated as a test."
                 }
               ],
               "responseAnswer": "loneliness-m1-l3-n5-response-opt2"
@@ -868,13 +1753,18 @@
                     },
                     {
                       "id": "loneliness-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "loneliness-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "loneliness-m1-l4-n2-question-alternative-2",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "loneliness-m1-l4-n2-question-opt2",
@@ -912,6 +1802,11 @@
                   "id": "loneliness-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "loneliness-m1-l4-n3-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "loneliness-m1-l4-n3-opt2",
@@ -946,6 +1841,11 @@
                   "id": "loneliness-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "loneliness-m1-l4-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "loneliness-m1-l4-n4-opt2",
@@ -1013,6 +1913,11 @@
                   "id": "loneliness-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "loneliness-m1-l4-n6-alternative-1",
+                  "label": "Sana may need a smaller setting for personal conversation rather than additional social events.",
+                  "feedback": "Group gatherings can limit depth even when friends are willing to listen."
                 }
               ],
               "answer": "loneliness-m1-l4-n6-opt2"
@@ -1055,6 +1960,16 @@
                   "id": "loneliness-m1-l5-n2-evidence-opt2",
                   "label": "Sana's sense of loneliness relates to a gap between the relationships she wants and the connection she experiences, not merely the number of social events.",
                   "feedback": ""
+                },
+                {
+                  "id": "loneliness-m1-l5-n2-evidence-alternative-1",
+                  "label": "Sana may expect rejection when disclosure feels vulnerable and therefore present herself as less in need of support.",
+                  "feedback": "This could become self-maintaining, though the group’s actual responses need examining."
+                },
+                {
+                  "id": "loneliness-m1-l5-n2-evidence-alternative-2",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "loneliness-m1-l5-n2-evidence-opt2",
@@ -1068,6 +1983,16 @@
                   "id": "loneliness-m1-l5-n2-response-opt2",
                   "label": "Choose one trustworthy friend and ask for time to talk about what has been difficult, then notice how the interaction actually goes.",
                   "feedback": ""
+                },
+                {
+                  "id": "loneliness-m1-l5-n2-response-alternative-1",
+                  "label": "Accept every invitation so you're around people more frequently.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "loneliness-m1-l5-n2-response-alternative-2",
+                  "label": "What kind of conversation would leave you feeling known rather than simply included?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "loneliness-m1-l5-n2-response-opt2"
@@ -1094,13 +2019,18 @@
                 },
                 {
                   "id": "loneliness-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "loneliness-m1-l5-n4-opt4",
                   "label": "What kind of conversation would leave you feeling known rather than simply included?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "loneliness-m1-l5-n4-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "loneliness-m1-l5-n4-opt2",
@@ -1126,6 +2056,11 @@
                   "id": "loneliness-m1-l5-n3-action-opt2",
                   "label": "Choose one trustworthy friend and ask for time to talk about what has been difficult, then notice how the interaction actually goes.",
                   "feedback": ""
+                },
+                {
+                  "id": "loneliness-m1-l5-n3-change-alternative-1",
+                  "label": "Tell the whole friendship group they are failing to provide enough connection.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -1138,6 +2073,11 @@
                   "id": "loneliness-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "loneliness-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "loneliness-m1-l5-n3-action-opt2",
@@ -1173,6 +2113,11 @@
                   "id": "loneliness-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "loneliness-m1-l5-n5-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "loneliness-m1-l5-n5-opt2",
@@ -1207,6 +2152,11 @@
                   "id": "loneliness-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "loneliness-m1-l5-n6-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "loneliness-m1-l5-n6-opt2"
@@ -1257,6 +2207,11 @@
                   "id": "loneliness-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "loneliness-m1-l6-n2-alternative-1",
+                  "label": "Notice which friends reciprocate when she shares something personal before deciding whether to invest more deeply.",
+                  "feedback": "That helps evaluate the relationship, though it could become excessive monitoring if every conversation is treated as a test."
                 }
               ],
               "answer": "loneliness-m1-l6-n2-opt2"
@@ -1333,6 +2288,11 @@
                   "id": "loneliness-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "loneliness-m1-l6-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "loneliness-m1-l6-n4-opt2",
@@ -1375,6 +2335,36 @@
               "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Sana",
+        "Ollie"
+      ],
+      "glossary": [
+        {
+          "term": "Social contact",
+          "definition": "An opportunity to interact with another person, whether briefly or deeply.",
+          "example": "A student attends several busy gatherings during the week.",
+          "limit": "A high count of interactions does not tell us how satisfying they felt."
+        },
+        {
+          "term": "Perceived connection",
+          "definition": "The experience of feeling known, valued or able to turn towards someone.",
+          "example": "Someone feels understood after a thoughtful call with a close friend.",
+          "limit": "Feeling connected is not identical to having a large social circle."
+        },
+        {
+          "term": "Disclosure",
+          "definition": "Choosing to share something personal that others could respond to.",
+          "example": "A friend says that work has been difficult rather than keeping the conversation cheerful.",
+          "limit": "Sharing requires judgement about trust and safety; not every relationship is a suitable place."
+        },
+        {
+          "term": "Reciprocity",
+          "definition": "A relationship in which people have a reasonable opportunity to respond to one another's needs.",
+          "example": "Two friends take turns listening when each has had a hard week.",
+          "limit": "Reciprocity does not require equal emotional labour in every single conversation."
         }
       ]
     }

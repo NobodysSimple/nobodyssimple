@@ -1,10 +1,804 @@
 {
   "id": "scams",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Scams, Deception & Social Engineering",
-  "description": "Explore time pressure and cognitive overload through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "scams-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Alina",
+        "Rob"
+      ],
+      "glossary": [
+        {
+          "term": "Authority cue",
+          "definition": "A sign used to make a speaker appear legitimate or powerful.",
+          "example": "A caller says they work in the bank's fraud department and quotes card details.",
+          "limit": "A convincing detail does not prove that the caller is authorised."
+        },
+        {
+          "term": "Urgency",
+          "definition": "A demand to act quickly, often before there is time to check independently.",
+          "example": "The caller says the account will be emptied in five minutes.",
+          "limit": "Real problems can be urgent; independent verification is still important."
+        },
+        {
+          "term": "Independent verification",
+          "definition": "Checking a claim through a channel chosen separately from the person making it.",
+          "example": "Someone hangs up and calls the number printed on their bank card.",
+          "limit": "Following a link supplied by the suspicious caller is not independent checking."
+        },
+        {
+          "term": "Social engineering",
+          "definition": "Using human trust and decision-making patterns to obtain information or actions.",
+          "example": "A fraudster uses fear of a lost bank balance to obtain a transfer.",
+          "limit": "Susceptibility to a carefully timed message is not a measure of intelligence."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "scams-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Scammers often create a problem that seems too urgent to check. The strongest protection begins by understanding the pressure built into the message itself.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "scams-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Scammers often create a problem that seems too urgent to check. The strongest protection begins by understanding the pressure built into the message itself.\n\nWhat makes a false instruction feel as though it must be obeyed immediately?",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f1-l1-n2",
+              "type": "read",
+              "title": "What authority cue means",
+              "body": "A sign used to make a speaker appear legitimate or powerful.\n\nFor example: A caller says they work in the bank's fraud department and quotes card details.\n\nOne important limit: A convincing detail does not prove that the caller is authorised.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: A caller says they work in the bank's fraud department and quotes card details. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "scams-foundation:choose",
+              "explanation": "The example most directly supports authority cue. A sign used to make a speaker appear legitimate or powerful. A convincing detail does not prove that the caller is authorised.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "options": [
+                {
+                  "id": "scams-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Authority cue.",
+                  "feedback": "This description follows from the example. A sign used to make a speaker appear legitimate or powerful."
+                },
+                {
+                  "id": "scams-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Urgency.",
+                  "feedback": "Urgency is a genuine psychological idea, but the observation by itself does not establish it. Real problems can be urgent; independent verification is still important."
+                },
+                {
+                  "id": "scams-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Independent verification.",
+                  "feedback": "Independent verification is a genuine psychological idea, but the observation by itself does not establish it. Following a link supplied by the suspicious caller is not independent checking."
+                },
+                {
+                  "id": "scams-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Social engineering.",
+                  "feedback": "Social engineering is a genuine psychological idea, but the observation by itself does not establish it. Susceptibility to a carefully timed message is not a measure of intelligence."
+                },
+                {
+                  "id": "scams-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "scams-f1-l1-n3-o1"
+            },
+            {
+              "id": "scams-f1-l1-n4",
+              "type": "read",
+              "title": "What urgency means",
+              "body": "A demand to act quickly, often before there is time to check independently.\n\nFor example: The caller says the account will be emptied in five minutes.\n\nOne important limit: Real problems can be urgent; independent verification is still important.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: The caller says the account will be emptied in five minutes. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "scams-foundation:choose",
+              "explanation": "The example most directly supports urgency. A demand to act quickly, often before there is time to check independently. Real problems can be urgent; independent verification is still important.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "options": [
+                {
+                  "id": "scams-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Authority cue.",
+                  "feedback": "Authority cue is a genuine psychological idea, but the observation by itself does not establish it. A convincing detail does not prove that the caller is authorised."
+                },
+                {
+                  "id": "scams-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Urgency.",
+                  "feedback": "This description follows from the example. A demand to act quickly, often before there is time to check independently."
+                },
+                {
+                  "id": "scams-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Independent verification.",
+                  "feedback": "Independent verification is a genuine psychological idea, but the observation by itself does not establish it. Following a link supplied by the suspicious caller is not independent checking."
+                },
+                {
+                  "id": "scams-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Social engineering.",
+                  "feedback": "Social engineering is a genuine psychological idea, but the observation by itself does not establish it. Susceptibility to a carefully timed message is not a measure of intelligence."
+                },
+                {
+                  "id": "scams-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "scams-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "scams-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "scams-f1-l2-n1",
+              "type": "read",
+              "title": "What independent verification means",
+              "body": "Checking a claim through a channel chosen separately from the person making it.\n\nFor example: Someone hangs up and calls the number printed on their bank card.\n\nOne important limit: Following a link supplied by the suspicious caller is not independent checking.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f1-l2-n2",
+              "type": "read",
+              "title": "What social engineering means",
+              "body": "Using human trust and decision-making patterns to obtain information or actions.\n\nFor example: A fraudster uses fear of a lost bank balance to obtain a transfer.\n\nOne important limit: Susceptibility to a carefully timed message is not a measure of intelligence.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "scams-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what makes a false instruction feel as though it must be obeyed immediately?",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "pairs": [
+                {
+                  "id": "scams-f1-l2-n3-p0",
+                  "label": "Authority cue",
+                  "answer": "A sign used to make a speaker appear legitimate or powerful."
+                },
+                {
+                  "id": "scams-f1-l2-n3-p1",
+                  "label": "Urgency",
+                  "answer": "A demand to act quickly, often before there is time to check independently."
+                },
+                {
+                  "id": "scams-f1-l2-n3-p2",
+                  "label": "Independent verification",
+                  "answer": "Checking a claim through a channel chosen separately from the person making it."
+                },
+                {
+                  "id": "scams-f1-l2-n3-p3",
+                  "label": "Social engineering",
+                  "answer": "Using human trust and decision-making patterns to obtain information or actions."
+                }
+              ]
+            },
+            {
+              "id": "scams-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: Someone hangs up and calls the number printed on their bank card. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "scams-foundation:choose",
+              "explanation": "The example most directly supports independent verification. Checking a claim through a channel chosen separately from the person making it. Following a link supplied by the suspicious caller is not independent checking.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "options": [
+                {
+                  "id": "scams-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Authority cue.",
+                  "feedback": "Authority cue is a genuine psychological idea, but the observation by itself does not establish it. A convincing detail does not prove that the caller is authorised."
+                },
+                {
+                  "id": "scams-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Urgency.",
+                  "feedback": "Urgency is a genuine psychological idea, but the observation by itself does not establish it. Real problems can be urgent; independent verification is still important."
+                },
+                {
+                  "id": "scams-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Independent verification.",
+                  "feedback": "This description follows from the example. Checking a claim through a channel chosen separately from the person making it."
+                },
+                {
+                  "id": "scams-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Social engineering.",
+                  "feedback": "Social engineering is a genuine psychological idea, but the observation by itself does not establish it. Susceptibility to a carefully timed message is not a measure of intelligence."
+                },
+                {
+                  "id": "scams-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "scams-f1-l2-n4-o3"
+            },
+            {
+              "id": "scams-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Following a link supplied by the suspicious caller is not independent checking.\n\nSusceptibility to a carefully timed message is not a measure of intelligence.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            }
+          ]
+        },
+        {
+          "id": "scams-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "scams-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A sign used to make a speaker appear legitimate or powerful.\n\nA demand to act quickly, often before there is time to check independently.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: A fraudster uses fear of a lost bank balance to obtain a transfer. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "scams-foundation:choose",
+              "explanation": "The example most directly supports social engineering. Using human trust and decision-making patterns to obtain information or actions. Susceptibility to a carefully timed message is not a measure of intelligence.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "options": [
+                {
+                  "id": "scams-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Authority cue.",
+                  "feedback": "Authority cue is a genuine psychological idea, but the observation by itself does not establish it. A convincing detail does not prove that the caller is authorised."
+                },
+                {
+                  "id": "scams-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Urgency.",
+                  "feedback": "Urgency is a genuine psychological idea, but the observation by itself does not establish it. Real problems can be urgent; independent verification is still important."
+                },
+                {
+                  "id": "scams-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Independent verification.",
+                  "feedback": "Independent verification is a genuine psychological idea, but the observation by itself does not establish it. Following a link supplied by the suspicious caller is not independent checking."
+                },
+                {
+                  "id": "scams-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Social engineering.",
+                  "feedback": "This description follows from the example. Using human trust and decision-making patterns to obtain information or actions."
+                },
+                {
+                  "id": "scams-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "scams-f1-l3-n2-o4"
+            },
+            {
+              "id": "scams-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "scams-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what makes a false instruction feel as though it must be obeyed immediately?",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "pairs": [
+                {
+                  "id": "scams-f1-l3-n3-p0",
+                  "label": "Authority cue",
+                  "answer": "A sign used to make a speaker appear legitimate or powerful."
+                },
+                {
+                  "id": "scams-f1-l3-n3-p1",
+                  "label": "Urgency",
+                  "answer": "A demand to act quickly, often before there is time to check independently."
+                },
+                {
+                  "id": "scams-f1-l3-n3-p2",
+                  "label": "Independent verification",
+                  "answer": "Checking a claim through a channel chosen separately from the person making it."
+                },
+                {
+                  "id": "scams-f1-l3-n3-p3",
+                  "label": "Social engineering",
+                  "answer": "Using human trust and decision-making patterns to obtain information or actions."
+                }
+              ]
+            },
+            {
+              "id": "scams-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: The caller says the account will be emptied in five minutes. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "scams-foundation:choose",
+              "explanation": "The example most directly supports urgency. A demand to act quickly, often before there is time to check independently. Real problems can be urgent; independent verification is still important.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "options": [
+                {
+                  "id": "scams-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Authority cue.",
+                  "feedback": "Authority cue is a genuine psychological idea, but the observation by itself does not establish it. A convincing detail does not prove that the caller is authorised."
+                },
+                {
+                  "id": "scams-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Urgency.",
+                  "feedback": "This description follows from the example. A demand to act quickly, often before there is time to check independently."
+                },
+                {
+                  "id": "scams-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Independent verification.",
+                  "feedback": "Independent verification is a genuine psychological idea, but the observation by itself does not establish it. Following a link supplied by the suspicious caller is not independent checking."
+                },
+                {
+                  "id": "scams-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Social engineering.",
+                  "feedback": "Social engineering is a genuine psychological idea, but the observation by itself does not establish it. Susceptibility to a carefully timed message is not a measure of intelligence."
+                },
+                {
+                  "id": "scams-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "scams-f1-l3-n4-o2"
+            },
+            {
+              "id": "scams-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between authority cue, urgency, independent verification, social engineering. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scams-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Alina",
+        "Rob"
+      ],
+      "glossary": [
+        {
+          "term": "Authority cue",
+          "definition": "A sign used to make a speaker appear legitimate or powerful.",
+          "example": "A caller says they work in the bank's fraud department and quotes card details.",
+          "limit": "A convincing detail does not prove that the caller is authorised."
+        },
+        {
+          "term": "Urgency",
+          "definition": "A demand to act quickly, often before there is time to check independently.",
+          "example": "The caller says the account will be emptied in five minutes.",
+          "limit": "Real problems can be urgent; independent verification is still important."
+        },
+        {
+          "term": "Independent verification",
+          "definition": "Checking a claim through a channel chosen separately from the person making it.",
+          "example": "Someone hangs up and calls the number printed on their bank card.",
+          "limit": "Following a link supplied by the suspicious caller is not independent checking."
+        },
+        {
+          "term": "Social engineering",
+          "definition": "Using human trust and decision-making patterns to obtain information or actions.",
+          "example": "A fraudster uses fear of a lost bank balance to obtain a transfer.",
+          "limit": "Susceptibility to a carefully timed message is not a measure of intelligence."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "scams-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "scams-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Alina receives a call claiming to be from her bank's fraud department. Rob is with her.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "scams-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "scenario": "Alina receives a call claiming to be from her bank's fraud department. Rob is with her.",
+              "speakerA": "Alina",
+              "speakerB": "Rob",
+              "turns": [
+                {
+                  "id": "scams-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "They said someone is transferring money from my account right now."
+                },
+                {
+                  "id": "scams-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "Did you call the bank, or did the call come to you?"
+                },
+                {
+                  "id": "scams-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "They called me. They knew the last four digits of my card."
+                },
+                {
+                  "id": "scams-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "What are they asking you to do?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "scams-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "scams-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "scams-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "scams-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "scams-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "scams-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "scams-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "scams-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+                  "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully."
+                }
+              ]
+            },
+            {
+              "id": "scams-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "scams-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "categories": [
+                {
+                  "id": "scams-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "scams-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "scams-f2-l1-n3-a",
+                  "label": "“They said someone is transferring money from my account right now.”",
+                  "answer": "scams-f2-l1-n3-seen"
+                },
+                {
+                  "id": "scams-f2-l1-n3-b",
+                  "label": "Authority cues and urgency narrow the space for deliberation. A claimed emergency is used to make independent verification feel costly.",
+                  "answer": "scams-f2-l1-n3-guess"
+                },
+                {
+                  "id": "scams-f2-l1-n3-c",
+                  "label": "“Did you call the bank, or did the call come to you?”",
+                  "answer": "scams-f2-l1-n3-seen"
+                },
+                {
+                  "id": "scams-f2-l1-n3-d",
+                  "label": "Real fraud incidents do require prompt attention. What matters is verifying through a trusted independent channel rather than complying with an unsolicited instruction.",
+                  "answer": "scams-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "scams-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Real fraud incidents do require prompt attention. What matters is verifying through a trusted independent channel rather than complying with an unsolicited instruction.\n\nFalling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            }
+          ]
+        },
+        {
+          "id": "scams-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "scams-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Authority cues and urgency narrow the space for deliberation. A claimed emergency is used to make independent verification feel costly.\n\nAnother possibility: Real fraud incidents do require prompt attention. What matters is verifying through a trusted independent channel rather than complying with an unsolicited instruction.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "scams-foundation:investigate",
+              "explanation": "Contact the institution using a verified channel you choose rather than contact details supplied by the caller. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "options": [
+                {
+                  "id": "scams-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "scams-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "scams-f2-l2-n2-o3",
+                  "label": "Contact the institution using a verified channel you choose rather than contact details supplied by the caller.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "scams-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "scams-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "scams-f2-l2-n2-o3"
+            },
+            {
+              "id": "scams-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "Alina ends the call and uses the number printed on her card. The bank confirms there is no outgoing transfer and the 'safe account' instruction was fraudulent.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "scams-foundation:choose",
+              "explanation": "Independent verification directly resolves the central claim and shows why the caller's instructions should not have been treated as authoritative.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "options": [
+                {
+                  "id": "scams-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "scams-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "scams-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "scams-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "scams-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "scams-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "scams-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "scams-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Scammers often create a problem that seems too urgent to check. The strongest protection begins by understanding the pressure built into the message itself.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            },
+            {
+              "id": "scams-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: Someone hangs up and calls the number printed on their bank card. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "scams-foundation:choose",
+              "explanation": "The example most directly supports independent verification. Checking a claim through a channel chosen separately from the person making it. Following a link supplied by the suspicious caller is not independent checking.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "options": [
+                {
+                  "id": "scams-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Authority cue.",
+                  "feedback": "Authority cue is a genuine psychological idea, but the observation by itself does not establish it. A convincing detail does not prove that the caller is authorised."
+                },
+                {
+                  "id": "scams-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Urgency.",
+                  "feedback": "Urgency is a genuine psychological idea, but the observation by itself does not establish it. Real problems can be urgent; independent verification is still important."
+                },
+                {
+                  "id": "scams-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Independent verification.",
+                  "feedback": "This description follows from the example. Checking a claim through a channel chosen separately from the person making it."
+                },
+                {
+                  "id": "scams-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Social engineering.",
+                  "feedback": "Social engineering is a genuine psychological idea, but the observation by itself does not establish it. Susceptibility to a carefully timed message is not a measure of intelligence."
+                },
+                {
+                  "id": "scams-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "scams-f2-l3-n2-o3"
+            },
+            {
+              "id": "scams-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "scams-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "categories": [
+                {
+                  "id": "scams-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "scams-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "scams-f2-l3-n3-a",
+                  "label": "“They said someone is transferring money from my account right now.”",
+                  "answer": "scams-f2-l3-n3-seen"
+                },
+                {
+                  "id": "scams-f2-l3-n3-b",
+                  "label": "Authority cues and urgency narrow the space for deliberation. A claimed emergency is used to make independent verification feel costly.",
+                  "answer": "scams-f2-l3-n3-guess"
+                },
+                {
+                  "id": "scams-f2-l3-n3-c",
+                  "label": "“Did you call the bank, or did the call come to you?”",
+                  "answer": "scams-f2-l3-n3-seen"
+                },
+                {
+                  "id": "scams-f2-l3-n3-d",
+                  "label": "Real fraud incidents do require prompt attention. What matters is verifying through a trusted independent channel rather than complying with an unsolicited instruction.",
+                  "answer": "scams-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "scams-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "scams-foundation:investigate",
+              "explanation": "Contact the institution using a verified channel you choose rather than contact details supplied by the caller. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance.",
+              "options": [
+                {
+                  "id": "scams-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "scams-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "scams-f2-l3-n4-o3",
+                  "label": "Contact the institution using a verified channel you choose rather than contact details supplied by the caller.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "scams-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "scams-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "scams-f2-l3-n4-o3"
+            },
+            {
+              "id": "scams-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+              "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "scams-module-01",
       "title": "Time pressure and cognitive overload",
@@ -87,6 +881,16 @@
                     {
                       "id": "scams-m1-node-1-check1-opt3",
                       "label": "Alex's earlier parcel problems may be driving the worry more than the countdown."
+                    },
+                    {
+                      "id": "scams-m1-node-1-check1-alternative-1",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                    },
+                    {
+                      "id": "scams-m1-node-1-check1-alternative-2",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "scams-m1-node-1-check1-opt1",
@@ -100,15 +904,17 @@
                   "options": [
                     {
                       "id": "scams-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Have you checked the order outside the message?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                      "reply": "Was there a payment demand?",
+                      "consequence": "A jointly agreed next step is reasonable, though the other person may still decline.",
+                      "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                     },
                     {
                       "id": "scams-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
                       "reply": "Was there a payment demand?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "This can reveal different priorities, but it may also delay an urgent factual correction.",
+                      "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                     },
                     {
                       "id": "scams-m1-node-1-check2-opt1",
@@ -118,9 +924,17 @@
                     },
                     {
                       "id": "scams-m1-node-1-check2-opt2",
-                      "label": "Pay the small fee first and dispute it later if the parcel does not arrive.",
-                      "reply": "The deadline may be making verification seem riskier than paying.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Check the parcel status in a previously installed courier app, without opening the link in the message.",
+                      "reply": "Was there a payment demand?",
+                      "consequence": "An independent channel can verify the delivery, although several couriers might handle the same retailer.",
+                      "feedback": "An independent channel can verify the delivery, although several couriers might handle the same retailer."
+                    },
+                    {
+                      "id": "scams-m1-node-1-check2-alternative-4",
+                      "label": "Find the original order confirmation and compare its tracking information with the claim in the text.",
+                      "feedback": "The record may reveal an inconsistency, but confirmation should still use a trusted source.",
+                      "reply": "Was there a payment demand?",
+                      "consequence": "The record may reveal an inconsistency, but confirmation should still use a trusted source."
                     }
                   ],
                   "answer": "scams-m1-node-1-check2-opt1",
@@ -258,7 +1072,8 @@
               "changes": [
                 {
                   "id": "scams-m1-plan-opt2",
-                  "label": "Pay the small fee first and dispute it later if the parcel does not arrive."
+                  "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                  "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                 },
                 {
                   "id": "scams-m1-plan-opt3",
@@ -314,6 +1129,11 @@
                 {
                   "id": "scams-m1-repair-opt3",
                   "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "scams-m1-node-7-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "scams-m1-repair-opt1"
@@ -429,6 +1249,16 @@
                     {
                       "id": "scams-m1-node-8-check1-opt1",
                       "label": "Independent verification contradicts the text without needing to infer exactly who sent it. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "scams-m1-node-8-check1-alternative-1",
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although The imposed deadline may be discouraging independent verification before a payment. is more directly tied to the words in this scene. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
+                    },
+                    {
+                      "id": "scams-m1-node-8-check1-alternative-2",
+                      "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                      "feedback": "This is a reasonable line of inquiry, although The imposed deadline may be discouraging independent verification before a payment. is more directly tied to the words in this scene. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
                     }
                   ],
                   "answer": "scams-m1-node-8-check1-opt1",
@@ -466,6 +1296,11 @@
                 {
                   "id": "scams-m1-new-opt1",
                   "label": "Independent verification contradicts the text without needing to infer exactly who sent it. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "scams-m1-node-9-alternative-1",
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although The imposed deadline may be discouraging independent verification before a payment. is more directly tied to the words in this scene. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
                 }
               ],
               "answer": "scams-m1-new-opt1"
@@ -500,6 +1335,11 @@
                 {
                   "id": "scams-m1-view-opt2",
                   "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "scams-m1-node-10-alternative-1",
+                  "label": "A courier may genuinely have a time-sensitive delivery problem.",
+                  "feedback": "This alternative deserves consideration. It would become stronger if earlier expectations supported it. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
                 }
               ],
               "answer": "scams-m1-view-opt1"
@@ -532,6 +1372,11 @@
                 {
                   "id": "scams-m1-test-opt1",
                   "label": "Look for independent observations that support a courier may genuinely have a time-sensitive delivery problem. and explain the original dialogue."
+                },
+                {
+                  "id": "scams-m1-node-13-alternative-1",
+                  "label": "Observe what happens after a clear and workable alternative is offered.",
+                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
                 }
               ],
               "answer": "scams-m1-test-opt1"
@@ -597,6 +1442,11 @@
                 {
                   "id": "scams-m1-transfer-e-opt3",
                   "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "scams-m1-node-14-evidence-alternative-1",
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although The imposed deadline may be discouraging independent verification before a payment. is more directly tied to the words in this scene. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
                 }
               ],
               "evidenceAnswer": "scams-m1-transfer-e-opt1",
@@ -612,6 +1462,11 @@
                 {
                   "id": "scams-m1-transfer-a-opt3",
                   "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "scams-m1-node-14-response-alternative-1",
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "responseAnswer": "scams-m1-transfer-a-opt1"
@@ -706,6 +1561,11 @@
                   "id": "scams-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "scams-m1-l3-n3-alternative-1",
+                  "label": "The caller’s demand for secrecy may be intended to prevent the independent verification that would expose the deception.",
+                  "feedback": "This is consistent with discouraging contact through trusted channels."
                 }
               ],
               "answer": "scams-m1-l3-n3-opt2",
@@ -740,6 +1600,11 @@
                   "id": "scams-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "scams-m1-l3-n4-alternative-1",
+                  "label": "Alina may be interpreting urgency as proof that immediate compliance is necessary, rather than as a reason to verify the claim.",
+                  "feedback": "The claimed loss is plausible, but acting on it without verification is risky."
                 }
               ],
               "answer": "scams-m1-l3-n4-opt2",
@@ -766,19 +1631,39 @@
                   "id": "scams-m1-l3-n5-evidence-opt2",
                   "label": "Authority cues and urgency narrow the space for deliberation. A claimed emergency is used to make independent verification feel costly.",
                   "feedback": ""
+                },
+                {
+                  "id": "scams-m1-l3-n5-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "scams-m1-l3-n5-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "scams-m1-l3-n5-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "scams-m1-l3-n5-response-opt1",
-                  "label": "Keep the caller talking until you feel completely certain they are lying.",
-                  "feedback": ""
+                  "label": "What independently verifiable fact would show this is a genuine bank fraud process?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "scams-m1-l3-n5-response-opt2",
                   "label": "End the unsolicited call and contact the bank through the number on your card or its trusted app.",
                   "feedback": ""
+                },
+                {
+                  "id": "scams-m1-l3-n5-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                },
+                {
+                  "id": "scams-m1-l3-n5-response-alternative-3",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "scams-m1-l3-n5-response-opt2"
@@ -884,13 +1769,18 @@
                     },
                     {
                       "id": "scams-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     },
                     {
                       "id": "scams-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "scams-m1-l4-n2-question-alternative-2",
+                      "label": "The caller may know accurate account details because those were obtained from a previous data leak.",
+                      "feedback": "Specific knowledge can increase apparent credibility without establishing legitimacy."
                     }
                   ],
                   "answer": "scams-m1-l4-n2-question-opt2",
@@ -928,6 +1818,11 @@
                   "id": "scams-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "scams-m1-l4-n4-alternative-1",
+                  "label": "Check the account through an independently opened trusted service rather than information supplied on the call.",
+                  "feedback": "A separate channel can confirm or contradict the claimed emergency."
                 }
               ],
               "answer": "scams-m1-l4-n4-opt2",
@@ -962,6 +1857,11 @@
                   "id": "scams-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "scams-m1-l4-n3-alternative-1",
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "scams-m1-l4-n3-opt2",
@@ -1029,6 +1929,11 @@
                   "id": "scams-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "scams-m1-l4-n6-alternative-1",
+                  "label": "Real fraud incidents do require prompt attention. What matters is verifying through a trusted independent channel rather than complying with an unsolicited instruction.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "scams-m1-l4-n6-opt2"
@@ -1071,19 +1976,39 @@
                   "id": "scams-m1-l5-n2-evidence-opt2",
                   "label": "Authority cues and urgency narrow the space for deliberation. A claimed emergency is used to make independent verification feel costly.",
                   "feedback": ""
+                },
+                {
+                  "id": "scams-m1-l5-n2-evidence-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                },
+                {
+                  "id": "scams-m1-l5-n2-evidence-alternative-2",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "scams-m1-l5-n2-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "scams-m1-l5-n2-response-opt1",
-                  "label": "Keep the caller talking until you feel completely certain they are lying.",
-                  "feedback": ""
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 },
                 {
                   "id": "scams-m1-l5-n2-response-opt2",
                   "label": "End the unsolicited call and contact the bank through the number on your card or its trusted app.",
                   "feedback": ""
+                },
+                {
+                  "id": "scams-m1-l5-n2-response-alternative-2",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                },
+                {
+                  "id": "scams-m1-l5-n2-response-alternative-3",
+                  "label": "End the call and verify the claimed transfer through the bank’s trusted app or the number on the card.",
+                  "feedback": "This breaks the caller’s control over the channel while allowing a genuine emergency to be addressed."
                 }
               ],
               "responseAnswer": "scams-m1-l5-n2-response-opt2"
@@ -1108,6 +2033,11 @@
                   "id": "scams-m1-l5-n3-action-opt2",
                   "label": "End the unsolicited call and contact the bank through the number on your card or its trusted app.",
                   "feedback": ""
+                },
+                {
+                  "id": "scams-m1-l5-n3-change-alternative-1",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "outcomes": [
@@ -1120,6 +2050,11 @@
                   "id": "scams-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "scams-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "scams-m1-l5-n3-action-opt2",
@@ -1148,13 +2083,18 @@
                 },
                 {
                   "id": "scams-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "The caller may know accurate account details because those were obtained from a previous data leak.",
+                  "feedback": "Specific knowledge can increase apparent credibility without establishing legitimacy."
                 },
                 {
                   "id": "scams-m1-l5-n4-opt4",
                   "label": "What independently verifiable fact would show this is a genuine bank fraud process?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "scams-m1-l5-n4-alternative-2",
+                  "label": "The caller’s demand for secrecy may be intended to prevent the independent verification that would expose the deception.",
+                  "feedback": "This is consistent with discouraging contact through trusted channels."
                 }
               ],
               "answer": "scams-m1-l5-n4-opt2",
@@ -1189,6 +2129,11 @@
                   "id": "scams-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "scams-m1-l5-n5-alternative-1",
+                  "label": "The caller’s demand for secrecy may be intended to prevent the independent verification that would expose the deception.",
+                  "feedback": "This is consistent with discouraging contact through trusted channels."
                 }
               ],
               "answer": "scams-m1-l5-n5-opt2",
@@ -1223,6 +2168,11 @@
                   "id": "scams-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "scams-m1-l5-n6-alternative-1",
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "scams-m1-l5-n6-opt2"
@@ -1273,6 +2223,11 @@
                   "id": "scams-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "scams-m1-l6-n2-alternative-1",
+                  "label": "What independently verifiable fact would show this is a genuine bank fraud process?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "scams-m1-l6-n2-opt2"
@@ -1349,6 +2304,11 @@
                   "id": "scams-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "scams-m1-l6-n4-alternative-1",
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "scams-m1-l6-n4-opt2",
@@ -1391,6 +2351,36 @@
               "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Alina",
+        "Rob"
+      ],
+      "glossary": [
+        {
+          "term": "Authority cue",
+          "definition": "A sign used to make a speaker appear legitimate or powerful.",
+          "example": "A caller says they work in the bank's fraud department and quotes card details.",
+          "limit": "A convincing detail does not prove that the caller is authorised."
+        },
+        {
+          "term": "Urgency",
+          "definition": "A demand to act quickly, often before there is time to check independently.",
+          "example": "The caller says the account will be emptied in five minutes.",
+          "limit": "Real problems can be urgent; independent verification is still important."
+        },
+        {
+          "term": "Independent verification",
+          "definition": "Checking a claim through a channel chosen separately from the person making it.",
+          "example": "Someone hangs up and calls the number printed on their bank card.",
+          "limit": "Following a link supplied by the suspicious caller is not independent checking."
+        },
+        {
+          "term": "Social engineering",
+          "definition": "Using human trust and decision-making patterns to obtain information or actions.",
+          "example": "A fraudster uses fear of a lost bank balance to obtain a transfer.",
+          "limit": "Susceptibility to a carefully timed message is not a measure of intelligence."
         }
       ]
     }

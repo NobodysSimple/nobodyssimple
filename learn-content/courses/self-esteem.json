@@ -1,10 +1,804 @@
 {
   "id": "self-esteem",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Self-Esteem, Shame & the Inner Critic",
-  "description": "Explore confidence in a skill versus global worth through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "self-esteem-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Izzy",
+        "Morgan"
+      ],
+      "glossary": [
+        {
+          "term": "Skill evaluation",
+          "definition": "A judgement about how well a particular task was done at a particular time.",
+          "example": "A tutor says the order of information on a chart is confusing.",
+          "limit": "Criticism of a piece of work does not directly measure the value of its author."
+        },
+        {
+          "term": "Global self-evaluation",
+          "definition": "Treating a success or mistake as a verdict about the whole person.",
+          "example": "One confusing chart becomes proof that somebody is generally incompetent.",
+          "limit": "One domain gives too little evidence for a conclusion about the whole self."
+        },
+        {
+          "term": "Shame",
+          "definition": "A painful feeling that the self is flawed or exposed to rejection.",
+          "example": "After receiving feedback, somebody wishes they could disappear from the class.",
+          "limit": "Shame can occur even when criticism was limited or unfair."
+        },
+        {
+          "term": "Self-compassion",
+          "definition": "Responding to difficulty with accuracy and care rather than contempt.",
+          "example": "I made a mistake in the layout; I can correct it without calling myself worthless.",
+          "limit": "Self-compassion allows accountability; it does not mean denying errors."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "self-esteem-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Getting something wrong can sting. The difficulty often grows when feedback on a task becomes a judgement about an entire person.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "self-esteem-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Getting something wrong can sting. The difficulty often grows when feedback on a task becomes a judgement about an entire person.\n\nWhat can a piece of criticism actually tell us about our worth?",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f1-l1-n2",
+              "type": "read",
+              "title": "What skill evaluation means",
+              "body": "A judgement about how well a particular task was done at a particular time.\n\nFor example: A tutor says the order of information on a chart is confusing.\n\nOne important limit: Criticism of a piece of work does not directly measure the value of its author.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: A tutor says the order of information on a chart is confusing. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "self-esteem-foundation:choose",
+              "explanation": "The example most directly supports skill evaluation. A judgement about how well a particular task was done at a particular time. Criticism of a piece of work does not directly measure the value of its author.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "options": [
+                {
+                  "id": "self-esteem-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Skill evaluation.",
+                  "feedback": "This description follows from the example. A judgement about how well a particular task was done at a particular time."
+                },
+                {
+                  "id": "self-esteem-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Global self-evaluation.",
+                  "feedback": "Global self-evaluation is a genuine psychological idea, but the observation by itself does not establish it. One domain gives too little evidence for a conclusion about the whole self."
+                },
+                {
+                  "id": "self-esteem-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Shame.",
+                  "feedback": "Shame is a genuine psychological idea, but the observation by itself does not establish it. Shame can occur even when criticism was limited or unfair."
+                },
+                {
+                  "id": "self-esteem-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Self-compassion.",
+                  "feedback": "Self-compassion is a genuine psychological idea, but the observation by itself does not establish it. Self-compassion allows accountability; it does not mean denying errors."
+                },
+                {
+                  "id": "self-esteem-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "self-esteem-f1-l1-n3-o1"
+            },
+            {
+              "id": "self-esteem-f1-l1-n4",
+              "type": "read",
+              "title": "What global self-evaluation means",
+              "body": "Treating a success or mistake as a verdict about the whole person.\n\nFor example: One confusing chart becomes proof that somebody is generally incompetent.\n\nOne important limit: One domain gives too little evidence for a conclusion about the whole self.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: One confusing chart becomes proof that somebody is generally incompetent. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "self-esteem-foundation:choose",
+              "explanation": "The example most directly supports global self-evaluation. Treating a success or mistake as a verdict about the whole person. One domain gives too little evidence for a conclusion about the whole self.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "options": [
+                {
+                  "id": "self-esteem-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Skill evaluation.",
+                  "feedback": "Skill evaluation is a genuine psychological idea, but the observation by itself does not establish it. Criticism of a piece of work does not directly measure the value of its author."
+                },
+                {
+                  "id": "self-esteem-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Global self-evaluation.",
+                  "feedback": "This description follows from the example. Treating a success or mistake as a verdict about the whole person."
+                },
+                {
+                  "id": "self-esteem-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Shame.",
+                  "feedback": "Shame is a genuine psychological idea, but the observation by itself does not establish it. Shame can occur even when criticism was limited or unfair."
+                },
+                {
+                  "id": "self-esteem-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Self-compassion.",
+                  "feedback": "Self-compassion is a genuine psychological idea, but the observation by itself does not establish it. Self-compassion allows accountability; it does not mean denying errors."
+                },
+                {
+                  "id": "self-esteem-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "self-esteem-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "self-esteem-f1-l2-n1",
+              "type": "read",
+              "title": "What shame means",
+              "body": "A painful feeling that the self is flawed or exposed to rejection.\n\nFor example: After receiving feedback, somebody wishes they could disappear from the class.\n\nOne important limit: Shame can occur even when criticism was limited or unfair.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f1-l2-n2",
+              "type": "read",
+              "title": "What self-compassion means",
+              "body": "Responding to difficulty with accuracy and care rather than contempt.\n\nFor example: I made a mistake in the layout; I can correct it without calling myself worthless.\n\nOne important limit: Self-compassion allows accountability; it does not mean denying errors.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "self-esteem-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what can a piece of criticism actually tell us about our worth?",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "pairs": [
+                {
+                  "id": "self-esteem-f1-l2-n3-p0",
+                  "label": "Skill evaluation",
+                  "answer": "A judgement about how well a particular task was done at a particular time."
+                },
+                {
+                  "id": "self-esteem-f1-l2-n3-p1",
+                  "label": "Global self-evaluation",
+                  "answer": "Treating a success or mistake as a verdict about the whole person."
+                },
+                {
+                  "id": "self-esteem-f1-l2-n3-p2",
+                  "label": "Shame",
+                  "answer": "A painful feeling that the self is flawed or exposed to rejection."
+                },
+                {
+                  "id": "self-esteem-f1-l2-n3-p3",
+                  "label": "Self-compassion",
+                  "answer": "Responding to difficulty with accuracy and care rather than contempt."
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: After receiving feedback, somebody wishes they could disappear from the class. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "self-esteem-foundation:choose",
+              "explanation": "The example most directly supports shame. A painful feeling that the self is flawed or exposed to rejection. Shame can occur even when criticism was limited or unfair.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "options": [
+                {
+                  "id": "self-esteem-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Skill evaluation.",
+                  "feedback": "Skill evaluation is a genuine psychological idea, but the observation by itself does not establish it. Criticism of a piece of work does not directly measure the value of its author."
+                },
+                {
+                  "id": "self-esteem-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Global self-evaluation.",
+                  "feedback": "Global self-evaluation is a genuine psychological idea, but the observation by itself does not establish it. One domain gives too little evidence for a conclusion about the whole self."
+                },
+                {
+                  "id": "self-esteem-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Shame.",
+                  "feedback": "This description follows from the example. A painful feeling that the self is flawed or exposed to rejection."
+                },
+                {
+                  "id": "self-esteem-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Self-compassion.",
+                  "feedback": "Self-compassion is a genuine psychological idea, but the observation by itself does not establish it. Self-compassion allows accountability; it does not mean denying errors."
+                },
+                {
+                  "id": "self-esteem-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "self-esteem-f1-l2-n4-o3"
+            },
+            {
+              "id": "self-esteem-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Shame can occur even when criticism was limited or unfair.\n\nSelf-compassion allows accountability; it does not mean denying errors.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "self-esteem-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A judgement about how well a particular task was done at a particular time.\n\nTreating a success or mistake as a verdict about the whole person.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: I made a mistake in the layout; I can correct it without calling myself worthless. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "self-esteem-foundation:choose",
+              "explanation": "The example most directly supports self-compassion. Responding to difficulty with accuracy and care rather than contempt. Self-compassion allows accountability; it does not mean denying errors.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "options": [
+                {
+                  "id": "self-esteem-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Skill evaluation.",
+                  "feedback": "Skill evaluation is a genuine psychological idea, but the observation by itself does not establish it. Criticism of a piece of work does not directly measure the value of its author."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Global self-evaluation.",
+                  "feedback": "Global self-evaluation is a genuine psychological idea, but the observation by itself does not establish it. One domain gives too little evidence for a conclusion about the whole self."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Shame.",
+                  "feedback": "Shame is a genuine psychological idea, but the observation by itself does not establish it. Shame can occur even when criticism was limited or unfair."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Self-compassion.",
+                  "feedback": "This description follows from the example. Responding to difficulty with accuracy and care rather than contempt."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "self-esteem-f1-l3-n2-o4"
+            },
+            {
+              "id": "self-esteem-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "self-esteem-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of what can a piece of criticism actually tell us about our worth?",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "pairs": [
+                {
+                  "id": "self-esteem-f1-l3-n3-p0",
+                  "label": "Skill evaluation",
+                  "answer": "A judgement about how well a particular task was done at a particular time."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n3-p1",
+                  "label": "Global self-evaluation",
+                  "answer": "Treating a success or mistake as a verdict about the whole person."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n3-p2",
+                  "label": "Shame",
+                  "answer": "A painful feeling that the self is flawed or exposed to rejection."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n3-p3",
+                  "label": "Self-compassion",
+                  "answer": "Responding to difficulty with accuracy and care rather than contempt."
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: One confusing chart becomes proof that somebody is generally incompetent. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "self-esteem-foundation:choose",
+              "explanation": "The example most directly supports global self-evaluation. Treating a success or mistake as a verdict about the whole person. One domain gives too little evidence for a conclusion about the whole self.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "options": [
+                {
+                  "id": "self-esteem-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Skill evaluation.",
+                  "feedback": "Skill evaluation is a genuine psychological idea, but the observation by itself does not establish it. Criticism of a piece of work does not directly measure the value of its author."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Global self-evaluation.",
+                  "feedback": "This description follows from the example. Treating a success or mistake as a verdict about the whole person."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Shame.",
+                  "feedback": "Shame is a genuine psychological idea, but the observation by itself does not establish it. Shame can occur even when criticism was limited or unfair."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Self-compassion.",
+                  "feedback": "Self-compassion is a genuine psychological idea, but the observation by itself does not establish it. Self-compassion allows accountability; it does not mean denying errors."
+                },
+                {
+                  "id": "self-esteem-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "self-esteem-f1-l3-n4-o2"
+            },
+            {
+              "id": "self-esteem-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between skill evaluation, global self-evaluation, shame, self-compassion. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "self-esteem-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Izzy",
+        "Morgan"
+      ],
+      "glossary": [
+        {
+          "term": "Skill evaluation",
+          "definition": "A judgement about how well a particular task was done at a particular time.",
+          "example": "A tutor says the order of information on a chart is confusing.",
+          "limit": "Criticism of a piece of work does not directly measure the value of its author."
+        },
+        {
+          "term": "Global self-evaluation",
+          "definition": "Treating a success or mistake as a verdict about the whole person.",
+          "example": "One confusing chart becomes proof that somebody is generally incompetent.",
+          "limit": "One domain gives too little evidence for a conclusion about the whole self."
+        },
+        {
+          "term": "Shame",
+          "definition": "A painful feeling that the self is flawed or exposed to rejection.",
+          "example": "After receiving feedback, somebody wishes they could disappear from the class.",
+          "limit": "Shame can occur even when criticism was limited or unfair."
+        },
+        {
+          "term": "Self-compassion",
+          "definition": "Responding to difficulty with accuracy and care rather than contempt.",
+          "example": "I made a mistake in the layout; I can correct it without calling myself worthless.",
+          "limit": "Self-compassion allows accountability; it does not mean denying errors."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "self-esteem-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "self-esteem-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Izzy received useful criticism on a design task. Morgan finds her considering whether to abandon the course.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "self-esteem-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "scenario": "Izzy received useful criticism on a design task. Morgan finds her considering whether to abandon the course.",
+              "speakerA": "Izzy",
+              "speakerB": "Morgan",
+              "turns": [
+                {
+                  "id": "self-esteem-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "The tutor said my layout was confusing."
+                },
+                {
+                  "id": "self-esteem-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "Did they criticise the whole project or one part of it?"
+                },
+                {
+                  "id": "self-esteem-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "One part. But if I can't do something this basic, what does that say about me?"
+                },
+                {
+                  "id": "self-esteem-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "What did the feedback actually ask you to change?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "self-esteem-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "self-esteem-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "self-esteem-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "self-esteem-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "self-esteem-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "self-esteem-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "self-esteem-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "self-esteem-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+                  "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident."
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "self-esteem-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "categories": [
+                {
+                  "id": "self-esteem-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "self-esteem-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "self-esteem-f2-l1-n3-a",
+                  "label": "“The tutor said my layout was confusing.”",
+                  "answer": "self-esteem-f2-l1-n3-seen"
+                },
+                {
+                  "id": "self-esteem-f2-l1-n3-b",
+                  "label": "Izzy turns specific performance feedback into a global judgement of herself. This broad evaluation can make ordinary learning tasks feel like tests of personal worth.",
+                  "answer": "self-esteem-f2-l1-n3-guess"
+                },
+                {
+                  "id": "self-esteem-f2-l1-n3-c",
+                  "label": "“Did they criticise the whole project or one part of it?”",
+                  "answer": "self-esteem-f2-l1-n3-seen"
+                },
+                {
+                  "id": "self-esteem-f2-l1-n3-d",
+                  "label": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
+                  "answer": "self-esteem-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.\n\nFeeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "self-esteem-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Izzy turns specific performance feedback into a global judgement of herself. This broad evaluation can make ordinary learning tasks feel like tests of personal worth.\n\nAnother possibility: The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "self-esteem-foundation:investigate",
+              "explanation": "Compare the exact scope of the criticism with the scope of the conclusion Izzy draws about herself. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "options": [
+                {
+                  "id": "self-esteem-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "self-esteem-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "self-esteem-f2-l2-n2-o3",
+                  "label": "Compare the exact scope of the criticism with the scope of the conclusion Izzy draws about herself.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "self-esteem-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "self-esteem-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "self-esteem-f2-l2-n2-o3"
+            },
+            {
+              "id": "self-esteem-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "The tutor's written feedback praises three other elements and says the layout is 'promising with two correctable weaknesses'.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "self-esteem-foundation:choose",
+              "explanation": "The written record weakens the notion that the tutor evaluated Izzy as generally incompetent. Her global interpretation now becomes a more important target for examination.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "options": [
+                {
+                  "id": "self-esteem-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "self-esteem-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "self-esteem-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "self-esteem-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "self-esteem-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "self-esteem-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "self-esteem-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Getting something wrong can sting. The difficulty often grows when feedback on a task becomes a judgement about an entire person.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            },
+            {
+              "id": "self-esteem-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: After receiving feedback, somebody wishes they could disappear from the class. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "self-esteem-foundation:choose",
+              "explanation": "The example most directly supports shame. A painful feeling that the self is flawed or exposed to rejection. Shame can occur even when criticism was limited or unfair.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "options": [
+                {
+                  "id": "self-esteem-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Skill evaluation.",
+                  "feedback": "Skill evaluation is a genuine psychological idea, but the observation by itself does not establish it. Criticism of a piece of work does not directly measure the value of its author."
+                },
+                {
+                  "id": "self-esteem-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Global self-evaluation.",
+                  "feedback": "Global self-evaluation is a genuine psychological idea, but the observation by itself does not establish it. One domain gives too little evidence for a conclusion about the whole self."
+                },
+                {
+                  "id": "self-esteem-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Shame.",
+                  "feedback": "This description follows from the example. A painful feeling that the self is flawed or exposed to rejection."
+                },
+                {
+                  "id": "self-esteem-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Self-compassion.",
+                  "feedback": "Self-compassion is a genuine psychological idea, but the observation by itself does not establish it. Self-compassion allows accountability; it does not mean denying errors."
+                },
+                {
+                  "id": "self-esteem-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "self-esteem-f2-l3-n2-o3"
+            },
+            {
+              "id": "self-esteem-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "self-esteem-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "categories": [
+                {
+                  "id": "self-esteem-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "self-esteem-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "self-esteem-f2-l3-n3-a",
+                  "label": "“The tutor said my layout was confusing.”",
+                  "answer": "self-esteem-f2-l3-n3-seen"
+                },
+                {
+                  "id": "self-esteem-f2-l3-n3-b",
+                  "label": "Izzy turns specific performance feedback into a global judgement of herself. This broad evaluation can make ordinary learning tasks feel like tests of personal worth.",
+                  "answer": "self-esteem-f2-l3-n3-guess"
+                },
+                {
+                  "id": "self-esteem-f2-l3-n3-c",
+                  "label": "“Did they criticise the whole project or one part of it?”",
+                  "answer": "self-esteem-f2-l3-n3-seen"
+                },
+                {
+                  "id": "self-esteem-f2-l3-n3-d",
+                  "label": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
+                  "answer": "self-esteem-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "self-esteem-foundation:investigate",
+              "explanation": "Compare the exact scope of the criticism with the scope of the conclusion Izzy draws about herself. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame.",
+              "options": [
+                {
+                  "id": "self-esteem-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "self-esteem-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "self-esteem-f2-l3-n4-o3",
+                  "label": "Compare the exact scope of the criticism with the scope of the conclusion Izzy draws about herself.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "self-esteem-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "self-esteem-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "self-esteem-f2-l3-n4-o3"
+            },
+            {
+              "id": "self-esteem-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Feeling ashamed is not proof that the criticism was deserved, and improving a skill does not require permanently feeling confident.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "self-esteem-module-01",
       "title": "Confidence in a skill versus global worth",
@@ -87,6 +881,16 @@
                     {
                       "id": "self-esteem-m1-node-1-check1-opt2",
                       "label": "The assessment exposed a meaningful gap in Hal's risk-formulation skill."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-1-check1-alternative-1",
+                      "label": "Hal may believe the marking criteria were applied inconsistently and therefore distrust the feedback.",
+                      "feedback": "A procedural concern would require information about the assessment rather than inference from the failure alone."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-1-check1-alternative-2",
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Hal may be treating a specific skill deficit as evidence of globally inadequate worth. is more directly tied to the words in this scene. The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist."
                     }
                   ],
                   "answer": "self-esteem-m1-node-1-check1-opt1",
@@ -106,21 +910,31 @@
                     },
                     {
                       "id": "self-esteem-m1-node-1-check2-opt2",
-                      "label": "Avoid talking about the mark until you feel confident about yourself again.",
-                      "reply": "Would a better risk section change what you think of yourself?",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Ask the assessor whether the mark reflects a weakness in risk formulation or also concerns the rest of the presentation.",
+                      "reply": "What would you tell another trainee with the same feedback?",
+                      "consequence": "Clarifying scope can challenge a global conclusion, while practice remains necessary.",
+                      "feedback": "Clarifying scope can challenge a global conclusion, while practice remains necessary."
                     },
                     {
                       "id": "self-esteem-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "So there's a part to practise.",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Give yourself time to feel disappointed, then set a bounded rehearsal task tied to the feedback.",
+                      "reply": "What would you tell another trainee with the same feedback?",
+                      "consequence": "This respects the emotional response, but the actual skill deficit still requires work.",
+                      "feedback": "This respects the emotional response, but the actual skill deficit still requires work."
                     },
                     {
                       "id": "self-esteem-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "What would you tell another trainee with the same feedback?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "What would you tell another trainee with the same feedback?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "self-esteem-m1-node-1-check2-opt1",
@@ -262,7 +1076,8 @@
                 },
                 {
                   "id": "self-esteem-m1-plan-opt2",
-                  "label": "Avoid talking about the mark until you feel confident about yourself again."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 },
                 {
                   "id": "self-esteem-m1-plan-opt3",
@@ -314,6 +1129,11 @@
                 {
                   "id": "self-esteem-m1-repair-opt1",
                   "label": "The account is consistent with the evidence, but the assessment exposed a meaningful gap in Hal's risk-formulation skill. still deserves consideration."
+                },
+                {
+                  "id": "self-esteem-m1-node-7-alternative-1",
+                  "label": "Compare statements made at the time with each person’s later recollection.",
+                  "feedback": "A contemporaneous record can help separate a mistaken memory from a disputed interpretation."
                 }
               ],
               "answer": "self-esteem-m1-repair-opt1"
@@ -429,6 +1249,16 @@
                     {
                       "id": "self-esteem-m1-node-8-check1-opt3",
                       "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-8-check1-alternative-1",
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-8-check1-alternative-2",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "self-esteem-m1-node-8-check1-opt1",
@@ -466,6 +1296,11 @@
                 {
                   "id": "self-esteem-m1-new-opt3",
                   "label": "The new evidence establishes the assessment exposed a meaningful gap in hal's risk-formulation skill. as the sole explanation."
+                },
+                {
+                  "id": "self-esteem-m1-node-9-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "self-esteem-m1-new-opt1"
@@ -500,6 +1335,11 @@
                 {
                   "id": "self-esteem-m1-view-opt4",
                   "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "self-esteem-m1-node-10-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "self-esteem-m1-view-opt1"
@@ -532,6 +1372,11 @@
                 {
                   "id": "self-esteem-m1-test-opt3",
                   "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "self-esteem-m1-node-13-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "self-esteem-m1-test-opt1"
@@ -581,6 +1426,11 @@
                 {
                   "id": "self-esteem-m1-transfer-e-opt2",
                   "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "self-esteem-m1-node-14-evidence-alternative-1",
+                  "label": "Hal may believe the marking criteria were applied inconsistently and therefore distrust the feedback.",
+                  "feedback": "A procedural concern would require information about the assessment rather than inference from the failure alone."
                 }
               ],
               "evidenceAnswer": "self-esteem-m1-transfer-e-opt1",
@@ -596,6 +1446,11 @@
                 {
                   "id": "self-esteem-m1-transfer-a-opt2",
                   "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "self-esteem-m1-node-14-response-alternative-1",
+                  "label": "Ask the assessor whether the mark reflects a weakness in risk formulation or also concerns the rest of the presentation.",
+                  "feedback": "Clarifying scope can challenge a global conclusion, while practice remains necessary."
                 }
               ],
               "responseAnswer": "self-esteem-m1-transfer-a-opt1"
@@ -690,6 +1545,11 @@
                   "id": "self-esteem-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "self-esteem-m1-l3-n3-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "self-esteem-m1-l3-n3-opt2",
@@ -724,6 +1584,11 @@
                   "id": "self-esteem-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "self-esteem-m1-l3-n4-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "self-esteem-m1-l3-n4-opt2",
@@ -750,6 +1615,16 @@
                   "id": "self-esteem-m1-l3-n5-evidence-opt2",
                   "label": "Izzy turns specific performance feedback into a global judgement of herself. This broad evaluation can make ordinary learning tasks feel like tests of personal worth.",
                   "feedback": ""
+                },
+                {
+                  "id": "self-esteem-m1-l3-n5-evidence-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                },
+                {
+                  "id": "self-esteem-m1-l3-n5-evidence-alternative-2",
+                  "label": "Izzy may be distressed by the specific effort needed to revise her work, rather than by a judgement about herself.",
+                  "feedback": "The task may be frustrating, though she explicitly connects the correction to being incompetent."
                 }
               ],
               "evidenceAnswer": "self-esteem-m1-l3-n5-evidence-opt2",
@@ -763,6 +1638,16 @@
                   "id": "self-esteem-m1-l3-n5-response-opt2",
                   "label": "Revise the layout using the specific comments, then judge whether the revision works without turning the result into a judgement of your worth.",
                   "feedback": ""
+                },
+                {
+                  "id": "self-esteem-m1-l3-n5-response-alternative-1",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                },
+                {
+                  "id": "self-esteem-m1-l3-n5-response-alternative-2",
+                  "label": "Ask the tutor which changes would make the layout effective, then evaluate the revision against that criterion.",
+                  "feedback": "This makes progress assessable without judging global worth."
                 }
               ],
               "responseAnswer": "self-esteem-m1-l3-n5-response-opt2"
@@ -868,13 +1753,18 @@
                     },
                     {
                       "id": "self-esteem-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "The tutor’s wording may genuinely have been broad enough to sound like a judgement of overall ability.",
+                      "feedback": "The exact feedback would clarify this; the details given are currently task-specific."
                     },
                     {
                       "id": "self-esteem-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "self-esteem-m1-l4-n2-question-alternative-2",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     }
                   ],
                   "answer": "self-esteem-m1-l4-n2-question-opt2",
@@ -912,6 +1802,11 @@
                   "id": "self-esteem-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "self-esteem-m1-l4-n4-alternative-1",
+                  "label": "Observe whether shame falls when she receives equally specific feedback delivered in a supportive way.",
+                  "feedback": "The delivery context may affect the reaction."
                 }
               ],
               "answer": "self-esteem-m1-l4-n4-opt2",
@@ -946,6 +1841,11 @@
                   "id": "self-esteem-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "self-esteem-m1-l4-n3-alternative-1",
+                  "label": "Compare Izzy’s account of the criticism with the actual written comments.",
+                  "feedback": "The scope of the language could distinguish specific from global feedback."
                 }
               ],
               "answer": "self-esteem-m1-l4-n3-opt2",
@@ -1013,6 +1913,11 @@
                   "id": "self-esteem-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "self-esteem-m1-l4-n6-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "self-esteem-m1-l4-n6-opt2"
@@ -1055,6 +1960,16 @@
                   "id": "self-esteem-m1-l5-n2-evidence-opt2",
                   "label": "Izzy turns specific performance feedback into a global judgement of herself. This broad evaluation can make ordinary learning tasks feel like tests of personal worth.",
                   "feedback": ""
+                },
+                {
+                  "id": "self-esteem-m1-l5-n2-evidence-alternative-1",
+                  "label": "Izzy may have received harsher feedback in the past and now anticipates similar criticism.",
+                  "feedback": "Past experiences could shape the reaction, but they have not been established in this case."
+                },
+                {
+                  "id": "self-esteem-m1-l5-n2-evidence-alternative-2",
+                  "label": "The tutor’s wording may genuinely have been broad enough to sound like a judgement of overall ability.",
+                  "feedback": "The exact feedback would clarify this; the details given are currently task-specific."
                 }
               ],
               "evidenceAnswer": "self-esteem-m1-l5-n2-evidence-opt2",
@@ -1068,6 +1983,16 @@
                   "id": "self-esteem-m1-l5-n2-response-opt2",
                   "label": "Revise the layout using the specific comments, then judge whether the revision works without turning the result into a judgement of your worth.",
                   "feedback": ""
+                },
+                {
+                  "id": "self-esteem-m1-l5-n2-response-alternative-1",
+                  "label": "Acknowledge the shame and complete one bounded revision before deciding how much more guidance is needed.",
+                  "feedback": "This supports participation, though the interpretation of the feedback may still need attention."
+                },
+                {
+                  "id": "self-esteem-m1-l5-n2-response-alternative-2",
+                  "label": "Convince yourself you're brilliant and don't need the tutor's opinion.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "self-esteem-m1-l5-n2-response-opt2"
@@ -1092,6 +2017,11 @@
                   "id": "self-esteem-m1-l5-n3-action-opt2",
                   "label": "Revise the layout using the specific comments, then judge whether the revision works without turning the result into a judgement of your worth.",
                   "feedback": ""
+                },
+                {
+                  "id": "self-esteem-m1-l5-n3-change-alternative-1",
+                  "label": "Convince yourself you're brilliant and don't need the tutor's opinion.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -1104,6 +2034,11 @@
                   "id": "self-esteem-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "self-esteem-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "self-esteem-m1-l5-n3-action-opt2",
@@ -1132,13 +2067,18 @@
                 },
                 {
                   "id": "self-esteem-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 },
                 {
                   "id": "self-esteem-m1-l5-n4-opt4",
                   "label": "What exactly did the tutor criticise, and how did that become a judgement of who you are?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "self-esteem-m1-l5-n4-alternative-2",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "self-esteem-m1-l5-n4-opt2",
@@ -1173,6 +2113,11 @@
                   "id": "self-esteem-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "self-esteem-m1-l5-n5-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "self-esteem-m1-l5-n5-opt2",
@@ -1207,6 +2152,11 @@
                   "id": "self-esteem-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "self-esteem-m1-l5-n6-alternative-1",
+                  "label": "Compare Izzy’s account of the criticism with the actual written comments.",
+                  "feedback": "The scope of the language could distinguish specific from global feedback."
                 }
               ],
               "answer": "self-esteem-m1-l5-n6-opt2"
@@ -1257,6 +2207,11 @@
                   "id": "self-esteem-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "self-esteem-m1-l6-n2-alternative-1",
+                  "label": "Ask the tutor which changes would make the layout effective, then evaluate the revision against that criterion.",
+                  "feedback": "This makes progress assessable without judging global worth."
                 }
               ],
               "answer": "self-esteem-m1-l6-n2-opt2"
@@ -1333,6 +2288,11 @@
                   "id": "self-esteem-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "self-esteem-m1-l6-n4-alternative-1",
+                  "label": "Compare Izzy’s account of the criticism with the actual written comments.",
+                  "feedback": "The scope of the language could distinguish specific from global feedback."
                 }
               ],
               "answer": "self-esteem-m1-l6-n4-opt2",
@@ -1375,6 +2335,36 @@
               "sources": "Crocker & Wolfe (2001), Contingencies of self-worth; Gilbert (1998), Shame."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Izzy",
+        "Morgan"
+      ],
+      "glossary": [
+        {
+          "term": "Skill evaluation",
+          "definition": "A judgement about how well a particular task was done at a particular time.",
+          "example": "A tutor says the order of information on a chart is confusing.",
+          "limit": "Criticism of a piece of work does not directly measure the value of its author."
+        },
+        {
+          "term": "Global self-evaluation",
+          "definition": "Treating a success or mistake as a verdict about the whole person.",
+          "example": "One confusing chart becomes proof that somebody is generally incompetent.",
+          "limit": "One domain gives too little evidence for a conclusion about the whole self."
+        },
+        {
+          "term": "Shame",
+          "definition": "A painful feeling that the self is flawed or exposed to rejection.",
+          "example": "After receiving feedback, somebody wishes they could disappear from the class.",
+          "limit": "Shame can occur even when criticism was limited or unfair."
+        },
+        {
+          "term": "Self-compassion",
+          "definition": "Responding to difficulty with accuracy and care rather than contempt.",
+          "example": "I made a mistake in the layout; I can correct it without calling myself worthless.",
+          "limit": "Self-compassion allows accountability; it does not mean denying errors."
         }
       ]
     }
