@@ -1,6 +1,6 @@
 {
   "id": "boundaries",
-  "version": 1,
+  "version": 2,
   "status": "published",
   "title": "Boundaries & Difficult Conversations",
   "description": "Explore preferences, requests and boundaries through dialogue, evidence and psychological reasoning.",
@@ -618,6 +618,779 @@
             }
           ],
           "takeaway": "Two people can have legitimate needs and still need to negotiate how a shared space works."
+        },
+        {
+          "id": "boundaries-m1-l3",
+          "version": 1,
+          "title": "Same behaviour, different cause",
+          "teach": "Distinguish what was observed from competing explanations of the same behaviour.",
+          "objective": "Same behaviour, different cause",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-m1-l3-n1",
+              "type": "read",
+              "title": "What else could explain it?",
+              "body": "Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.\n\nCalling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-m1-l3-n2",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "categories": [
+                {
+                  "id": "boundaries-m1-l3-n2-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "boundaries-m1-l3-n2-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "boundaries-m1-l3-n2-item1",
+                  "label": "“I understand that. I can answer during my working hours, or we can agree on an emergency route.”",
+                  "answer": "boundaries-m1-l3-n2-fact"
+                },
+                {
+                  "id": "boundaries-m1-l3-n2-item2",
+                  "label": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+                  "answer": "boundaries-m1-l3-n2-hypothesis"
+                },
+                {
+                  "id": "boundaries-m1-l3-n2-item3",
+                  "label": "“I'm saying I won't routinely respond outside my hours. We need a plan for genuine emergencies.”",
+                  "answer": "boundaries-m1-l3-n2-fact"
+                },
+                {
+                  "id": "boundaries-m1-l3-n2-item4",
+                  "label": "Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.",
+                  "answer": "boundaries-m1-l3-n2-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l3-n3",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l3-n3-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "boundaries-m1-l3-n3-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "boundaries-m1-l3-n3-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "boundaries-m1-l3-n3-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "boundaries-m1-l3-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l3-n4",
+              "type": "choose",
+              "title": "Which explanation deserves more weight?",
+              "prompt": "What makes one formulation stronger than a plausible competing account?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "Look for explanatory fit and a way to be wrong. Clarify the actual job requirements and separate emergencies from preferences for immediate replies.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l3-n4-opt1",
+                  "label": "It resembles a recognised theory, so the exact details of this case matter less.",
+                  "feedback": "A theory does not become evidence merely because the scenario resembles it."
+                },
+                {
+                  "id": "boundaries-m1-l3-n4-opt2",
+                  "label": "It explains more of the distinctive evidence and suggests observations that could prove it wrong.",
+                  "feedback": "An account that fits the details and can be checked is more informative than one that merely sounds plausible."
+                },
+                {
+                  "id": "boundaries-m1-l3-n4-opt3",
+                  "label": "Both accounts are possible, so each deserves equal confidence until a definitive diagnosis is made.",
+                  "feedback": "Plausibility does not entail equal likelihood, and a diagnosis is not the aim."
+                },
+                {
+                  "id": "boundaries-m1-l3-n4-opt4",
+                  "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
+                  "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                }
+              ],
+              "answer": "boundaries-m1-l3-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l3-n5",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "characterName": "Rae",
+              "scenario": "Rae dislikes receiving work calls after 7 pm. Kit is a colleague whose project sometimes runs late.",
+              "evidenceOptions": [
+                {
+                  "id": "boundaries-m1-l3-n5-evidence-opt1",
+                  "label": "Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.",
+                  "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l3-n5-evidence-opt2",
+                  "label": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "boundaries-m1-l3-n5-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "boundaries-m1-l3-n5-response-opt1",
+                  "label": "If you call after seven again, I'll ignore every message from you.",
+                  "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l3-n5-response-opt2",
+                  "label": "I won't respond to routine calls after seven. Could we agree a separate route for a genuine emergency?",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "boundaries-m1-l3-n5-response-opt2"
+            },
+            {
+              "id": "boundaries-m1-l3-n6",
+              "type": "match",
+              "title": "Connect process to evidence",
+              "prompt": "Connect each part of the case to its role in the working explanation.",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "A functional explanation identifies the event, the meaning it may take on, the response and what follows. Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "pairs": [
+                {
+                  "id": "boundaries-m1-l3-n6-pair0",
+                  "label": "A non-urgent call arrives outside working hours",
+                  "answer": "Initial event"
+                },
+                {
+                  "id": "boundaries-m1-l3-n6-pair1",
+                  "label": "Rae feels pressure to remain available",
+                  "answer": "Possible appraisal"
+                },
+                {
+                  "id": "boundaries-m1-l3-n6-pair2",
+                  "label": "She sets a limit on her response behaviour",
+                  "answer": "Behavioural response"
+                },
+                {
+                  "id": "boundaries-m1-l3-n6-pair3",
+                  "label": "The team establishes a workable emergency process",
+                  "answer": "Possible consequence"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "boundaries-m1-l4",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "New evidence can overturn a comfortable theory. Decide what the discovery actually changes.",
+          "objective": "What would change your mind?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-m1-l4-n1",
+              "type": "read",
+              "title": "What would change the explanation?",
+              "body": "Clarify the actual job requirements and separate emergencies from preferences for immediate replies.\n\nA useful hypothesis should make it possible to gather evidence against it.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-m1-l4-n2",
+              "type": "dialogue",
+              "title": "See what happens next",
+              "prompt": "Listen closely to what each person says and what still remains uncertain.",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "scenario": "A little later in the same situation. Continue one message at a time.",
+              "speakerA": "Rae",
+              "speakerB": "Kit",
+              "turns": [
+                {
+                  "id": "boundaries-m1-l4-n2-turn0",
+                  "speaker": "a",
+                  "text": "Yesterday the report came in at nine."
+                },
+                {
+                  "id": "boundaries-m1-l4-n2-turn1",
+                  "speaker": "b",
+                  "text": "Was anyone at risk if the answer waited until morning?"
+                },
+                {
+                  "id": "boundaries-m1-l4-n2-turn2",
+                  "speaker": "a",
+                  "text": "No. I just wanted it finished."
+                },
+                {
+                  "id": "boundaries-m1-l4-n2-turn3",
+                  "speaker": "b",
+                  "text": "Then the usual working-hours arrangement still applies."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "boundaries-m1-l4-n2-question",
+                  "prompt": "What has become clearer about the speaker’s interpretation?",
+                  "focusTurn": "boundaries-m1-l4-n2-turn2",
+                  "options": [
+                    {
+                      "id": "boundaries-m1-l4-n2-question-opt1",
+                      "label": "Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.",
+                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                    },
+                    {
+                      "id": "boundaries-m1-l4-n2-question-opt2",
+                      "label": "This additional exchange reveals more about the speaker’s interpretation, but leaves wider personality questions open.",
+                      "feedback": "The new exchange helps us understand the situation without establishing an enduring personality style."
+                    },
+                    {
+                      "id": "boundaries-m1-l4-n2-question-opt3",
+                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
+                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                    },
+                    {
+                      "id": "boundaries-m1-l4-n2-question-opt4",
+                      "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
+                      "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    }
+                  ],
+                  "answer": "boundaries-m1-l4-n2-question-opt2",
+                  "explanation": "The additional wording refines the hypothesis. Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+                  "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter."
+                }
+              ]
+            },
+            {
+              "id": "boundaries-m1-l4-n3",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "Investigate a difference that the rival explanations predict. Clarify the actual job requirements and separate emergencies from preferences for immediate replies.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l4-n3-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "boundaries-m1-l4-n3-opt2",
+                  "label": "Clarify the actual job requirements and separate emergencies from preferences for immediate replies.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "boundaries-m1-l4-n3-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "boundaries-m1-l4-n3-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "boundaries-m1-l4-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l4-n4",
+              "type": "choose",
+              "title": "Update your interpretation",
+              "prompt": "New information: A manager confirms that there is no after-hours on-call requirement and the reports can be handled the next working day. Which interpretation should now carry more weight?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "A formulation should change when the evidence changes. The operational necessity explanation weakens. Rae's proposed communication limit becomes easier to implement without risking service continuity.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l4-n4-opt1",
+                  "label": "The new details matter, but the original working explanation should remain unchanged because it was reasonable at the time.",
+                  "feedback": "An initially reasonable account still needs revising when the evidence develops."
+                },
+                {
+                  "id": "boundaries-m1-l4-n4-opt2",
+                  "label": "The operational necessity explanation weakens. Rae's proposed communication limit becomes easier to implement without risking service continuity.",
+                  "feedback": "The revised account takes the added detail seriously without claiming complete access to the person’s motives."
+                },
+                {
+                  "id": "boundaries-m1-l4-n4-opt3",
+                  "label": "The new information rules out every motive except the one that is now best supported.",
+                  "feedback": "Evidence can strengthen one hypothesis without proving it is the only cause."
+                },
+                {
+                  "id": "boundaries-m1-l4-n4-opt4",
+                  "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
+                  "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                }
+              ],
+              "answer": "boundaries-m1-l4-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l4-n5",
+              "type": "label",
+              "title": "Find the important lines",
+              "prompt": "Select the two lines that best show how the speaker interprets the event or what they believe is at stake.",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "These lines reveal more about the meaning attached to the situation than a statement of the practical disagreement alone. Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "segments": [
+                {
+                  "id": "boundaries-m1-l4-n5-phrase0",
+                  "text": "“I understand that. I can answer during my working hours, or we can agree on an emergency route.”",
+                  "answer": true
+                },
+                {
+                  "id": "boundaries-m1-l4-n5-phrase1",
+                  "text": "“Could you stop calling me after seven?”",
+                  "answer": false
+                },
+                {
+                  "id": "boundaries-m1-l4-n5-phrase2",
+                  "text": "“I'm saying I won't routinely respond outside my hours. We need a plan for genuine emergencies.”",
+                  "answer": true
+                },
+                {
+                  "id": "boundaries-m1-l4-n5-phrase3",
+                  "text": "“Sometimes the reports don't come through until eight.”",
+                  "answer": false
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l4-n6",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l4-n6-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "boundaries-m1-l4-n6-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "boundaries-m1-l4-n6-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "boundaries-m1-l4-n6-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "boundaries-m1-l4-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "boundaries-m1-l5",
+          "version": 1,
+          "title": "Choose a workable response",
+          "teach": "Choose a response that serves a practical aim even when the other person does not cooperate.",
+          "objective": "Choose a workable response",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-m1-l5-n1",
+              "type": "read",
+              "title": "Your influence has limits",
+              "body": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.\n\nAn intervention can be reasonable even when the other person refuses it.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-m1-l5-n2",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "characterName": "Rae",
+              "scenario": "Rae dislikes receiving work calls after 7 pm. Kit is a colleague whose project sometimes runs late.",
+              "evidenceOptions": [
+                {
+                  "id": "boundaries-m1-l5-n2-evidence-opt1",
+                  "label": "Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.",
+                  "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l5-n2-evidence-opt2",
+                  "label": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "boundaries-m1-l5-n2-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "boundaries-m1-l5-n2-response-opt1",
+                  "label": "If you call after seven again, I'll ignore every message from you.",
+                  "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l5-n2-response-opt2",
+                  "label": "I won't respond to routine calls after seven. Could we agree a separate route for a genuine emergency?",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "boundaries-m1-l5-n2-response-opt2"
+            },
+            {
+              "id": "boundaries-m1-l5-n4",
+              "type": "choose",
+              "title": "If the first response fails",
+              "prompt": "The other person rejects a reasonable direct request and the practical concern is unresolved. What next?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "Escalation can be proportionate when a direct attempt has failed. Its safety and usefulness depend on the situation. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l5-n4-opt1",
+                  "label": "Repeat reassurance until the other person no longer experiences the issue as threatening.",
+                  "feedback": "Reassurance can help but cannot guarantee action on a concrete problem."
+                },
+                {
+                  "id": "boundaries-m1-l5-n4-opt2",
+                  "label": "If you call after seven again, I'll ignore every message from you.",
+                  "feedback": "This makes the unresolved issue reviewable without needing to diagnose the other person."
+                },
+                {
+                  "id": "boundaries-m1-l5-n4-opt3",
+                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
+                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                },
+                {
+                  "id": "boundaries-m1-l5-n4-opt4",
+                  "label": "What situations actually require a reply before the next working day?",
+                  "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                }
+              ],
+              "answer": "boundaries-m1-l5-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l5-n3",
+              "type": "predict",
+              "title": "What might change next?",
+              "prompt": "The other person may disagree. Which response-and-outcome pairing best protects the practical concern without assuming cooperation?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "A sound response is judged by what it makes possible, not by whether it can instantly change somebody else. I won't respond to routine calls after seven. Could we agree a separate route for a genuine emergency?",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "changePrompt": "Response to try",
+              "changes": [
+                {
+                  "id": "boundaries-m1-l5-n3-action-opt1",
+                  "label": "What situations actually require a reply before the next working day?",
+                  "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l5-n3-action-opt2",
+                  "label": "I won't respond to routine calls after seven. Could we agree a separate route for a genuine emergency?",
+                  "feedback": ""
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "boundaries-m1-l5-n3-result-opt1",
+                  "label": "The other person’s interpretation may become clearer, though the original issue may still need to be resolved.",
+                  "feedback": ""
+                },
+                {
+                  "id": "boundaries-m1-l5-n3-result-opt2",
+                  "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
+                  "feedback": ""
+                }
+              ],
+              "correctChange": "boundaries-m1-l5-n3-action-opt2",
+              "correctOutcome": "boundaries-m1-l5-n3-result-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l5-n5",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l5-n5-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "boundaries-m1-l5-n5-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "boundaries-m1-l5-n5-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "boundaries-m1-l5-n5-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "boundaries-m1-l5-n5-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l5-n6",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "Investigate a difference that the rival explanations predict. Clarify the actual job requirements and separate emergencies from preferences for immediate replies.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l5-n6-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "boundaries-m1-l5-n6-opt2",
+                  "label": "Clarify the actual job requirements and separate emergencies from preferences for immediate replies.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "boundaries-m1-l5-n6-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "boundaries-m1-l5-n6-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "boundaries-m1-l5-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "boundaries-m1-l6",
+          "version": 1,
+          "title": "Try it in another situation",
+          "teach": "Apply the way of reasoning to a different situation. Do not import the first case’s verdict.",
+          "objective": "Try it in another situation",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "boundaries-m1-l6-n1",
+              "type": "read",
+              "title": "A new situation",
+              "body": "A partner says, 'My boundary is that you're not allowed to talk to any of your old friends.' The other partner wants to distinguish a request from control.\n\nDecide what you can infer from this example without assuming the same explanation must apply.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            },
+            {
+              "id": "boundaries-m1-l6-n2",
+              "type": "choose",
+              "title": "Apply the method elsewhere",
+              "prompt": "Consider this different situation: A partner says, 'My boundary is that you're not allowed to talk to any of your old friends.' The other partner wants to distinguish a request from control. What is the strongest next step?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "Transfer the reasoning method rather than an explanation from the first case. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l6-n2-opt1",
+                  "label": "Treat the visible similarity as a reliable indication that the behaviour has the same psychological function.",
+                  "feedback": "Similar behaviours can protect very different interests depending on the context."
+                },
+                {
+                  "id": "boundaries-m1-l6-n2-opt2",
+                  "label": "Consider what the person could be trying to gain or avoid, then test that explanation against the circumstances and credible alternatives.",
+                  "feedback": "This asks what the behaviour might accomplish and how we could check."
+                },
+                {
+                  "id": "boundaries-m1-l6-n2-opt3",
+                  "label": "Postpone all interpretation until the person can give an account of their private motives.",
+                  "feedback": "A perfect self-report may be unavailable. Tentative, revisable inferences can still be useful."
+                },
+                {
+                  "id": "boundaries-m1-l6-n2-opt4",
+                  "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
+                  "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                }
+              ],
+              "answer": "boundaries-m1-l6-n2-opt2"
+            },
+            {
+              "id": "boundaries-m1-l6-n3",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "categories": [
+                {
+                  "id": "boundaries-m1-l6-n3-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "boundaries-m1-l6-n3-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "boundaries-m1-l6-n3-item1",
+                  "label": "“I understand that. I can answer during my working hours, or we can agree on an emergency route.”",
+                  "answer": "boundaries-m1-l6-n3-fact"
+                },
+                {
+                  "id": "boundaries-m1-l6-n3-item2",
+                  "label": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.",
+                  "answer": "boundaries-m1-l6-n3-hypothesis"
+                },
+                {
+                  "id": "boundaries-m1-l6-n3-item3",
+                  "label": "“I'm saying I won't routinely respond outside my hours. We need a plan for genuine emergencies.”",
+                  "answer": "boundaries-m1-l6-n3-fact"
+                },
+                {
+                  "id": "boundaries-m1-l6-n3-item4",
+                  "label": "Kit may face genuine operational duties that require a different rota or on-call arrangement rather than an informal promise.",
+                  "answer": "boundaries-m1-l6-n3-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l6-n4",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "Investigate a difference that the rival explanations predict. Clarify the actual job requirements and separate emergencies from preferences for immediate replies.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "options": [
+                {
+                  "id": "boundaries-m1-l6-n4-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "boundaries-m1-l6-n4-opt2",
+                  "label": "Clarify the actual job requirements and separate emergencies from preferences for immediate replies.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "boundaries-m1-l6-n4-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "boundaries-m1-l6-n4-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "boundaries-m1-l6-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l6-n5",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "boundaries-module-01:Assertiveness, behavioural boundaries and shared problem-solving",
+              "explanation": "The order helps us test how a response might become self-maintaining. Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do. Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "counterexample": "Calling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research.",
+              "steps": [
+                {
+                  "id": "boundaries-m1-l6-n5-step0",
+                  "label": "A non-urgent call arrives outside working hours"
+                },
+                {
+                  "id": "boundaries-m1-l6-n5-step1",
+                  "label": "Rae feels pressure to remain available"
+                },
+                {
+                  "id": "boundaries-m1-l6-n5-step2",
+                  "label": "She sets a limit on her response behaviour"
+                },
+                {
+                  "id": "boundaries-m1-l6-n5-step3",
+                  "label": "The team establishes a workable emergency process"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "boundaries-m1-l6-n6",
+              "type": "read",
+              "title": "An idea worth carrying forward",
+              "body": "Rae names a limit on her own availability and proposes a way to meet legitimate work needs. This differs from prescribing what another adult is allowed to do.\n\nCalling something a boundary does not automatically make the request fair; whose choices are being governed and what happens when people disagree matter.\n\nThe purpose of the exercise is to make a better-supported judgement and choose a proportionate next step.",
+              "sources": "Linehan (2015), DBT Skills Training Manual, interpersonal effectiveness; occupational boundary research."
+            }
+          ]
         }
       ]
     }
