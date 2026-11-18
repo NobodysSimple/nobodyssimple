@@ -30,6 +30,14 @@ test('Course Lab authoring controls create units, lessons, reading and quizzes w
  await root.locator('#cl-preview [data-next]').click();
  await expect(root.locator('#cl-preview-host')).toContainText('Which explanation is supported?');
  await root.locator('[data-act=close-preview]').click();
+ await root.locator('[data-act=save]').click();
+ await expect(root.locator('#cl-state')).toContainText('Draft saved');
+ await root.locator('#cl-course').selectOption('anxiety');
+ await expect(root.locator('#cl-state')).toContainText('New blank course draft');
+ await root.locator('#cl-course').selectOption('narcissism');
+ await expect(root.locator('.cl-node')).toHaveCount(2);
+ await root.locator('[data-act=select-node][data-n="0"]').click();
+ await expect(root.locator('[data-field=body]')).toHaveValue('Psychological explanations are hypotheses, not diagnoses.');
  await root.locator('[data-act=publish]').click();
  await expect(root.locator('#cl-publish-state')).toContainText('Publication blocked');
 });
