@@ -20,7 +20,7 @@ export const COURSE_LAB_EXERCISES=Object.freeze(COURSE_LAB_TYPES.map(x=>x.id).fi
 export const makeCourseId=()=>globalThis.crypto?.randomUUID?.()||'node-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
 const option=label=>({id:makeCourseId(),label});
 export function createCourseNode(type){
- const node={id:makeCourseId(),type,title:'',prompt:'',conceptId:'',explanation:'',counterexample:'',image:'',alt:'',caption:''};
+ const node={id:makeCourseId(),type,title:'',prompt:'',conceptId:'',explanation:'',counterexample:'',sources:'',image:'',alt:'',caption:''};
  if(type==='read')return {id:node.id,type,title:'',body:'',image:'',alt:'',caption:'',sources:''};
  if(type==='image')return {id:node.id,type,title:'',image:'',alt:'',caption:'',sources:''};
  if(type==='match')return {...node,pairs:[{id:makeCourseId(),label:'',answer:''},{id:makeCourseId(),label:'',answer:''}]};
