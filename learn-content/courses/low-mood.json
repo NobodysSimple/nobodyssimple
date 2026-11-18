@@ -894,13 +894,13 @@
                     },
                     {
                       "id": "low-mood-m1-node-1-check1-alternative-1",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "Mara may be worried about future financial security more than the meaning of the rejection to her identity.",
+                      "feedback": "Practical uncertainty could contribute, although that concern is not described in the scene."
                     },
                     {
                       "id": "low-mood-m1-node-1-check1-alternative-2",
-                      "label": "Callum may be grieving a meaningful opportunity and need time to adjust rather than immediate clinical intervention.",
-                      "feedback": "The timing of the rejection supports this, although prolonged functional impairment changes the assessment."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Mara may be interpreting one painful rejection as evidence of a permanently unsuccessful future. is more directly tied to the words in this scene. A depressive episode can follow a clear trigger. Duration, severity, other symptoms and functional consequences all require consideration."
                     }
                   ],
                   "answer": "low-mood-m1-node-1-check1-opt1",
@@ -914,22 +914,24 @@
                   "options": [
                     {
                       "id": "low-mood-m1-node-1-check2-opt2",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "reply": "We can take it seriously without deciding yet what kind of longer-term pattern this is.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "Agree to revisit plans in a few days rather than treating two days of sadness as evidence of depression.",
+                      "reply": "Does it make the sadness easier?",
+                      "consequence": "Waiting can be proportionate, although a meaningful change in safety or functioning would need earlier attention.",
+                      "feedback": "Waiting can be proportionate, although a meaningful change in safety or functioning would need earlier attention."
                     },
                     {
                       "id": "low-mood-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Has the feeling changed at all these past two days?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Choose a small valued activity without using whether she enjoys it immediately as a test of recovery.",
+                      "reply": "Does it make the sadness easier?",
+                      "consequence": "Participation may help protect routine, but acute grief may still need time.",
+                      "feedback": "Participation may help protect routine, but acute grief may still need time."
                     },
                     {
                       "id": "low-mood-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "Does it make the sadness easier?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "low-mood-m1-node-1-check2-opt1",
@@ -938,9 +940,11 @@
                       "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
                     },
                     {
-                      "id": "low-mood-m1-node-1-check2-alternative-2",
-                      "label": "Callum may be grieving a meaningful opportunity and need time to adjust rather than immediate clinical intervention.",
-                      "feedback": "The timing of the rejection supports this, although prolonged functional impairment changes the assessment."
+                      "id": "low-mood-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "Does it make the sadness easier?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "low-mood-m1-node-1-check2-opt1",
@@ -1109,8 +1113,8 @@
                 },
                 {
                   "id": "low-mood-m1-plan-opt2",
-                  "label": "Ignore the disappointment and keep your schedule exactly as before.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 },
                 {
                   "id": "low-mood-m1-plan-opt3",
@@ -1251,8 +1255,8 @@
                 },
                 {
                   "id": "low-mood-m1-node-10-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Mara may be worried about future financial security more than the meaning of the rejection to her identity.",
+                  "feedback": "Practical uncertainty could contribute, although that concern is not described in the scene."
                 }
               ],
               "answer": "low-mood-m1-view-opt1"
@@ -1404,8 +1408,8 @@
                 },
                 {
                   "id": "low-mood-m1-node-14-evidence-alternative-1",
-                  "label": "Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                  "feedback": "This is a reasonable line of inquiry, although Mara may be interpreting one painful rejection as evidence of a permanently unsuccessful future. is more directly tied to the words in this scene. A depressive episode can follow a clear trigger. Duration, severity, other symptoms and functional consequences all require consideration."
                 }
               ],
               "evidenceAnswer": "low-mood-m1-transfer-e-opt1",
@@ -1424,8 +1428,8 @@
                 },
                 {
                   "id": "low-mood-m1-node-14-response-alternative-1",
-                  "label": "Choose one manageable activity linked to something you value, and monitor whether participation changes your experience rather than waiting for motivation.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                  "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                 }
               ],
               "responseAnswer": "low-mood-m1-transfer-a-opt1"
@@ -1461,8 +1465,8 @@
                 },
                 {
                   "id": "low-mood-m1-node-13-alternative-1",
-                  "label": "Track daily function and enjoyment over the following weeks rather than inferring a disorder from one reaction.",
-                  "feedback": "Duration and breadth of change are relevant."
+                  "label": "Examine whether the same reaction appears when the immediate practical stakes are lower.",
+                  "feedback": "A cross-situation comparison may reveal whether this is a case-specific response."
                 }
               ],
               "answer": "low-mood-m1-test-opt1"
@@ -1560,8 +1564,8 @@
                 },
                 {
                   "id": "low-mood-m1-l3-n3-alternative-1",
-                  "label": "Callum may be grieving a meaningful opportunity and need time to adjust rather than immediate clinical intervention.",
-                  "feedback": "The timing of the rejection supports this, although prolonged functional impairment changes the assessment."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "low-mood-m1-l3-n3-opt2",
@@ -1599,8 +1603,8 @@
                 },
                 {
                   "id": "low-mood-m1-l3-n4-alternative-1",
-                  "label": "Social withdrawal may be reducing access to rewarding experiences and making the sadness harder to shift.",
-                  "feedback": "The cancellation of plans is consistent, but we need to know whether contact was previously rewarding."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "low-mood-m1-l3-n4-opt2",
@@ -1620,8 +1624,8 @@
               "evidenceOptions": [
                 {
                   "id": "low-mood-m1-l3-n5-evidence-opt1",
-                  "label": "The job rejection may have renewed a broader feeling of helplessness about his future.",
-                  "feedback": "That could contribute to repetitive thinking, though this meaning has not been directly established."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "low-mood-m1-l3-n5-evidence-opt2",
@@ -1630,13 +1634,13 @@
                 },
                 {
                   "id": "low-mood-m1-l3-n5-evidence-alternative-2",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Callum may be grieving a meaningful opportunity and need time to adjust rather than immediate clinical intervention.",
+                  "feedback": "The timing of the rejection supports this, although prolonged functional impairment changes the assessment."
                 },
                 {
                   "id": "low-mood-m1-l3-n5-evidence-alternative-3",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Social withdrawal may be reducing access to rewarding experiences and making the sadness harder to shift.",
+                  "feedback": "The cancellation of plans is consistent, but we need to know whether contact was previously rewarding."
                 }
               ],
               "evidenceAnswer": "low-mood-m1-l3-n5-evidence-opt2",
@@ -1653,13 +1657,13 @@
                 },
                 {
                   "id": "low-mood-m1-l3-n5-response-alternative-1",
-                  "label": "Force yourself to be happy whenever you think about the rejection.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 },
                 {
                   "id": "low-mood-m1-l3-n5-response-alternative-2",
-                  "label": "How has avoiding plans affected what is available to you during the week?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Choose one low-effort, valued activity and notice whether doing it affects mood or connection afterwards.",
+                  "feedback": "This allows learning from participation without demanding immediate happiness."
                 }
               ],
               "responseAnswer": "low-mood-m1-l3-n5-response-opt2"
@@ -1755,8 +1759,8 @@
                   "options": [
                     {
                       "id": "low-mood-m1-l4-n2-question-opt1",
-                      "label": "Callum may be grieving a meaningful opportunity and need time to adjust rather than immediate clinical intervention.",
-                      "feedback": "The timing of the rejection supports this, although prolonged functional impairment changes the assessment."
+                      "label": "The job rejection may have renewed a broader feeling of helplessness about his future.",
+                      "feedback": "That could contribute to repetitive thinking, though this meaning has not been directly established."
                     },
                     {
                       "id": "low-mood-m1-l4-n2-question-opt2",
@@ -1765,8 +1769,8 @@
                     },
                     {
                       "id": "low-mood-m1-l4-n2-question-opt3",
-                      "label": "Social withdrawal may be reducing access to rewarding experiences and making the sadness harder to shift.",
-                      "feedback": "The cancellation of plans is consistent, but we need to know whether contact was previously rewarding."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "low-mood-m1-l4-n2-question-opt4",
@@ -1775,8 +1779,8 @@
                     },
                     {
                       "id": "low-mood-m1-l4-n2-question-alternative-3",
-                      "label": "The job rejection may have renewed a broader feeling of helplessness about his future.",
-                      "feedback": "That could contribute to repetitive thinking, though this meaning has not been directly established."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "low-mood-m1-l4-n2-question-opt2",
@@ -1817,8 +1821,8 @@
                 },
                 {
                   "id": "low-mood-m1-l4-n4-alternative-1",
-                  "label": "Track daily function and enjoyment over the following weeks rather than inferring a disorder from one reaction.",
-                  "feedback": "Duration and breadth of change are relevant."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "low-mood-m1-l4-n4-opt2",
@@ -1856,8 +1860,8 @@
                 },
                 {
                   "id": "low-mood-m1-l4-n3-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Ask what happens to mood on days when Callum participates in valued activities compared with days he withdraws.",
+                  "feedback": "The contrast may help identify a maintaining process."
                 }
               ],
               "answer": "low-mood-m1-l4-n3-opt2",
@@ -1928,8 +1932,8 @@
                 },
                 {
                   "id": "low-mood-m1-l4-n6-alternative-1",
-                  "label": "Sadness following disappointment is understandable. Withdrawal can reduce immediate social demands but also reduce access to rewarding experiences, which may maintain low mood.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "low-mood-m1-l4-n6-opt2"
@@ -2089,8 +2093,8 @@
                 },
                 {
                   "id": "low-mood-m1-l5-n4-alternative-2",
-                  "label": "Sadness following disappointment is understandable. Withdrawal can reduce immediate social demands but also reduce access to rewarding experiences, which may maintain low mood.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "low-mood-m1-l5-n4-opt2",
@@ -2128,8 +2132,8 @@
                 },
                 {
                   "id": "low-mood-m1-l5-n5-alternative-1",
-                  "label": "Sadness following disappointment is understandable. Withdrawal can reduce immediate social demands but also reduce access to rewarding experiences, which may maintain low mood.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "low-mood-m1-l5-n5-opt2",
@@ -2167,8 +2171,8 @@
                 },
                 {
                   "id": "low-mood-m1-l5-n6-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Ask what happens to mood on days when Callum participates in valued activities compared with days he withdraws.",
+                  "feedback": "The contrast may help identify a maintaining process."
                 }
               ],
               "answer": "low-mood-m1-l5-n6-opt2"
@@ -2222,8 +2226,8 @@
                 },
                 {
                   "id": "low-mood-m1-l6-n2-alternative-1",
-                  "label": "Force yourself to be happy whenever you think about the rejection.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Choose one low-effort, valued activity and notice whether doing it affects mood or connection afterwards.",
+                  "feedback": "This allows learning from participation without demanding immediate happiness."
                 }
               ],
               "answer": "low-mood-m1-l6-n2-opt2"
@@ -2303,8 +2307,8 @@
                 },
                 {
                   "id": "low-mood-m1-l6-n4-alternative-1",
-                  "label": "Track daily function and enjoyment over the following weeks rather than inferring a disorder from one reaction.",
-                  "feedback": "Duration and breadth of change are relevant."
+                  "label": "Ask what happens to mood on days when Callum participates in valued activities compared with days he withdraws.",
+                  "feedback": "The contrast may help identify a maintaining process."
                 }
               ],
               "answer": "low-mood-m1-l6-n4-opt2",
