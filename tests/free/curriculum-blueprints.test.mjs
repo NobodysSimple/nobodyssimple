@@ -90,9 +90,10 @@ test('blueprints cannot cross course boundaries or introduce authored nodes',()=
  assert.ok(validateCurriculumBlueprint(bad,'scams').some(msg=>msg.includes('unique')));
 });
 
-test('published-course index remains empty until staff deliberately publishes reviewed content',()=>{
+test('reviewed first-module lessons are now published for the twenty catalogue courses',()=>{
  const index=JSON.parse(readFileSync(new URL('../../learn-content/index.json',import.meta.url),'utf8'));
- assert.deepEqual(index.courses,{});
+ assert.equal(Object.keys(index.courses).length,20);
+ assert.ok(Object.values(index.courses).every(entry=>entry.version===1));
 });
 
 test('staff reopening a published course restores its full outline without losing authored lessons',()=>{
