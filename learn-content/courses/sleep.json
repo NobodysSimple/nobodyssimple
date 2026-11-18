@@ -1,6 +1,6 @@
 {
   "id": "sleep",
-  "version": 1,
+  "version": 2,
   "status": "published",
   "title": "Sleep, Insomnia & the Psychology of Rest",
   "description": "Explore sleep pressure accumulated through waking through dialogue, evidence and psychological reasoning.",
@@ -602,6 +602,779 @@
             }
           ],
           "takeaway": "An earlier bedtime may achieve little if the pattern of waking hasn't changed."
+        },
+        {
+          "id": "sleep-m1-l3",
+          "version": 1,
+          "title": "Same behaviour, different cause",
+          "teach": "Distinguish what was observed from competing explanations of the same behaviour.",
+          "objective": "Same behaviour, different cause",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-m1-l3-n1",
+              "type": "read",
+              "title": "What else could explain it?",
+              "body": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.\n\nFeeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-m1-l3-n2",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "categories": [
+                {
+                  "id": "sleep-m1-l3-n2-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "sleep-m1-l3-n2-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "sleep-m1-l3-n2-item1",
+                  "label": "“What was your sleep schedule before night shifts?”",
+                  "answer": "sleep-m1-l3-n2-fact"
+                },
+                {
+                  "id": "sleep-m1-l3-n2-item2",
+                  "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+                  "answer": "sleep-m1-l3-n2-hypothesis"
+                },
+                {
+                  "id": "sleep-m1-l3-n2-item3",
+                  "label": "“That could explain why tiredness alone isn't doing the job.”",
+                  "answer": "sleep-m1-l3-n2-fact"
+                },
+                {
+                  "id": "sleep-m1-l3-n2-item4",
+                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+                  "answer": "sleep-m1-l3-n2-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l3-n3",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l3-n3-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "sleep-m1-l3-n3-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "sleep-m1-l3-n3-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "sleep-m1-l3-n3-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "sleep-m1-l3-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l3-n4",
+              "type": "choose",
+              "title": "Which explanation deserves more weight?",
+              "prompt": "What makes one formulation stronger than a plausible competing account?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "Look for explanatory fit and a way to be wrong. Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l3-n4-opt1",
+                  "label": "It resembles a recognised theory, so the exact details of this case matter less.",
+                  "feedback": "A theory does not become evidence merely because the scenario resembles it."
+                },
+                {
+                  "id": "sleep-m1-l3-n4-opt2",
+                  "label": "It explains more of the distinctive evidence and suggests observations that could prove it wrong.",
+                  "feedback": "An account that fits the details and can be checked is more informative than one that merely sounds plausible."
+                },
+                {
+                  "id": "sleep-m1-l3-n4-opt3",
+                  "label": "Both accounts are possible, so each deserves equal confidence until a definitive diagnosis is made.",
+                  "feedback": "Plausibility does not entail equal likelihood, and a diagnosis is not the aim."
+                },
+                {
+                  "id": "sleep-m1-l3-n4-opt4",
+                  "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
+                  "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                }
+              ],
+              "answer": "sleep-m1-l3-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l3-n5",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "characterName": "Bea",
+              "scenario": "Bea finished a night shift and feels exhausted at 10 am, but has been struggling to fall asleep when she gets home.",
+              "evidenceOptions": [
+                {
+                  "id": "sleep-m1-l3-n5-evidence-opt1",
+                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+                  "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l3-n5-evidence-opt2",
+                  "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "sleep-m1-l3-n5-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "sleep-m1-l3-n5-response-opt1",
+                  "label": "Assume that more exhaustion will always overcome any timing problem.",
+                  "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l3-n5-response-opt2",
+                  "label": "Plan sleep around the shift pattern and use appropriate light, darkness and timing strategies while considering individual needs.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "sleep-m1-l3-n5-response-opt2"
+            },
+            {
+              "id": "sleep-m1-l3-n6",
+              "type": "match",
+              "title": "Connect process to evidence",
+              "prompt": "Connect each part of the case to its role in the working explanation.",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "A functional explanation identifies the event, the meaning it may take on, the response and what follows. Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "pairs": [
+                {
+                  "id": "sleep-m1-l3-n6-pair0",
+                  "label": "Bea remains awake through a night shift",
+                  "answer": "Initial event"
+                },
+                {
+                  "id": "sleep-m1-l3-n6-pair1",
+                  "label": "Sleep pressure accumulates",
+                  "answer": "Possible appraisal"
+                },
+                {
+                  "id": "sleep-m1-l3-n6-pair2",
+                  "label": "The circadian wake signal rises in the morning",
+                  "answer": "Behavioural response"
+                },
+                {
+                  "id": "sleep-m1-l3-n6-pair3",
+                  "label": "She feels tired yet finds daytime sleep difficult",
+                  "answer": "Possible consequence"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sleep-m1-l4",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "New evidence can overturn a comfortable theory. Decide what the discovery actually changes.",
+          "objective": "What would change your mind?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-m1-l4-n1",
+              "type": "read",
+              "title": "What would change the explanation?",
+              "body": "Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.\n\nA useful hypothesis should make it possible to gather evidence against it.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-m1-l4-n2",
+              "type": "dialogue",
+              "title": "See what happens next",
+              "prompt": "Listen closely to what each person says and what still remains uncertain.",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "scenario": "A little later in the same situation. Continue one message at a time.",
+              "speakerA": "Bea",
+              "speakerB": "Finn",
+              "turns": [
+                {
+                  "id": "sleep-m1-l4-n2-turn0",
+                  "speaker": "a",
+                  "text": "I slept badly after my last shift, then tried to catch up with a long late-afternoon nap."
+                },
+                {
+                  "id": "sleep-m1-l4-n2-turn1",
+                  "speaker": "b",
+                  "text": "What happened when you tried sleeping that night?"
+                },
+                {
+                  "id": "sleep-m1-l4-n2-turn2",
+                  "speaker": "a",
+                  "text": "I was awake for hours even though I wanted an early night."
+                },
+                {
+                  "id": "sleep-m1-l4-n2-turn3",
+                  "speaker": "b",
+                  "text": "The timing of the nap might have changed how much sleep pressure had built up."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "sleep-m1-l4-n2-question",
+                  "prompt": "What has become clearer about the speaker’s interpretation?",
+                  "focusTurn": "sleep-m1-l4-n2-turn2",
+                  "options": [
+                    {
+                      "id": "sleep-m1-l4-n2-question-opt1",
+                      "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                    },
+                    {
+                      "id": "sleep-m1-l4-n2-question-opt2",
+                      "label": "This additional exchange reveals more about the speaker’s interpretation, but leaves wider personality questions open.",
+                      "feedback": "The new exchange helps us understand the situation without establishing an enduring personality style."
+                    },
+                    {
+                      "id": "sleep-m1-l4-n2-question-opt3",
+                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
+                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                    },
+                    {
+                      "id": "sleep-m1-l4-n2-question-opt4",
+                      "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
+                      "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    }
+                  ],
+                  "answer": "sleep-m1-l4-n2-question-opt2",
+                  "explanation": "The additional wording refines the hypothesis. Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+                  "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent."
+                }
+              ]
+            },
+            {
+              "id": "sleep-m1-l4-n4",
+              "type": "choose",
+              "title": "Update your interpretation",
+              "prompt": "New information: Bea sleeps more easily after several days on a consistent day-shift schedule, even when the total time awake is similar. Which interpretation should now carry more weight?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "A formulation should change when the evidence changes. The difference supports a contribution from circadian timing, although work stress and light exposure also changed.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l4-n4-opt1",
+                  "label": "The new details matter, but the original working explanation should remain unchanged because it was reasonable at the time.",
+                  "feedback": "An initially reasonable account still needs revising when the evidence develops."
+                },
+                {
+                  "id": "sleep-m1-l4-n4-opt2",
+                  "label": "The difference supports a contribution from circadian timing, although work stress and light exposure also changed.",
+                  "feedback": "The revised account takes the added detail seriously without claiming complete access to the person’s motives."
+                },
+                {
+                  "id": "sleep-m1-l4-n4-opt3",
+                  "label": "The new information rules out every motive except the one that is now best supported.",
+                  "feedback": "Evidence can strengthen one hypothesis without proving it is the only cause."
+                },
+                {
+                  "id": "sleep-m1-l4-n4-opt4",
+                  "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
+                  "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                }
+              ],
+              "answer": "sleep-m1-l4-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l4-n3",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "Investigate a difference that the rival explanations predict. Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l4-n3-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "sleep-m1-l4-n3-opt2",
+                  "label": "Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "sleep-m1-l4-n3-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "sleep-m1-l4-n3-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "sleep-m1-l4-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l4-n5",
+              "type": "label",
+              "title": "Find the important lines",
+              "prompt": "Select the two lines that best show how the speaker interprets the event or what they believe is at stake.",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "These lines reveal more about the meaning attached to the situation than a statement of the practical disagreement alone. Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "segments": [
+                {
+                  "id": "sleep-m1-l4-n5-phrase0",
+                  "text": "“What was your sleep schedule before night shifts?”",
+                  "answer": true
+                },
+                {
+                  "id": "sleep-m1-l4-n5-phrase1",
+                  "text": "“I've been awake for sixteen hours. I should fall asleep immediately.”",
+                  "answer": false
+                },
+                {
+                  "id": "sleep-m1-l4-n5-phrase2",
+                  "text": "“That could explain why tiredness alone isn't doing the job.”",
+                  "answer": true
+                },
+                {
+                  "id": "sleep-m1-l4-n5-phrase3",
+                  "text": "“Do you usually find it easy to sleep when the sun is up?”",
+                  "answer": false
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l4-n6",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l4-n6-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "sleep-m1-l4-n6-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "sleep-m1-l4-n6-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "sleep-m1-l4-n6-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "sleep-m1-l4-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "sleep-m1-l5",
+          "version": 1,
+          "title": "Choose a workable response",
+          "teach": "Choose a response that serves a practical aim even when the other person does not cooperate.",
+          "objective": "Choose a workable response",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-m1-l5-n1",
+              "type": "read",
+              "title": "Your influence has limits",
+              "body": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.\n\nAn intervention can be reasonable even when the other person refuses it.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-m1-l5-n2",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "characterName": "Bea",
+              "scenario": "Bea finished a night shift and feels exhausted at 10 am, but has been struggling to fall asleep when she gets home.",
+              "evidenceOptions": [
+                {
+                  "id": "sleep-m1-l5-n2-evidence-opt1",
+                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+                  "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l5-n2-evidence-opt2",
+                  "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "sleep-m1-l5-n2-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "sleep-m1-l5-n2-response-opt1",
+                  "label": "Assume that more exhaustion will always overcome any timing problem.",
+                  "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l5-n2-response-opt2",
+                  "label": "Plan sleep around the shift pattern and use appropriate light, darkness and timing strategies while considering individual needs.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "sleep-m1-l5-n2-response-opt2"
+            },
+            {
+              "id": "sleep-m1-l5-n3",
+              "type": "predict",
+              "title": "What might change next?",
+              "prompt": "The other person may disagree. Which response-and-outcome pairing best protects the practical concern without assuming cooperation?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "A sound response is judged by what it makes possible, not by whether it can instantly change somebody else. Plan sleep around the shift pattern and use appropriate light, darkness and timing strategies while considering individual needs.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "changePrompt": "Response to try",
+              "changes": [
+                {
+                  "id": "sleep-m1-l5-n3-action-opt1",
+                  "label": "What clock time does your body normally expect wakefulness, and how has shift work changed that?",
+                  "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l5-n3-action-opt2",
+                  "label": "Plan sleep around the shift pattern and use appropriate light, darkness and timing strategies while considering individual needs.",
+                  "feedback": ""
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "sleep-m1-l5-n3-result-opt1",
+                  "label": "The other person’s interpretation may become clearer, though the original issue may still need to be resolved.",
+                  "feedback": ""
+                },
+                {
+                  "id": "sleep-m1-l5-n3-result-opt2",
+                  "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
+                  "feedback": ""
+                }
+              ],
+              "correctChange": "sleep-m1-l5-n3-action-opt2",
+              "correctOutcome": "sleep-m1-l5-n3-result-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l5-n4",
+              "type": "choose",
+              "title": "If the first response fails",
+              "prompt": "The other person rejects a reasonable direct request and the practical concern is unresolved. What next?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "Escalation can be proportionate when a direct attempt has failed. Its safety and usefulness depend on the situation. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l5-n4-opt1",
+                  "label": "Repeat reassurance until the other person no longer experiences the issue as threatening.",
+                  "feedback": "Reassurance can help but cannot guarantee action on a concrete problem."
+                },
+                {
+                  "id": "sleep-m1-l5-n4-opt2",
+                  "label": "Assume that more exhaustion will always overcome any timing problem.",
+                  "feedback": "This makes the unresolved issue reviewable without needing to diagnose the other person."
+                },
+                {
+                  "id": "sleep-m1-l5-n4-opt3",
+                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
+                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                },
+                {
+                  "id": "sleep-m1-l5-n4-opt4",
+                  "label": "What clock time does your body normally expect wakefulness, and how has shift work changed that?",
+                  "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                }
+              ],
+              "answer": "sleep-m1-l5-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l5-n5",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l5-n5-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "sleep-m1-l5-n5-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "sleep-m1-l5-n5-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "sleep-m1-l5-n5-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "sleep-m1-l5-n5-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l5-n6",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "Investigate a difference that the rival explanations predict. Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l5-n6-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "sleep-m1-l5-n6-opt2",
+                  "label": "Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "sleep-m1-l5-n6-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "sleep-m1-l5-n6-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "sleep-m1-l5-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "sleep-m1-l6",
+          "version": 1,
+          "title": "Try it in another situation",
+          "teach": "Apply the way of reasoning to a different situation. Do not import the first case’s verdict.",
+          "objective": "Try it in another situation",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "sleep-m1-l6-n1",
+              "type": "read",
+              "title": "A new situation",
+              "body": "A traveller feels exhausted after flying overnight yet lies awake in their hotel at the destination's usual bedtime, which is midday according to their previous body clock.\n\nDecide what you can infer from this example without assuming the same explanation must apply.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            },
+            {
+              "id": "sleep-m1-l6-n2",
+              "type": "choose",
+              "title": "Apply the method elsewhere",
+              "prompt": "Consider this different situation: A traveller feels exhausted after flying overnight yet lies awake in their hotel at the destination's usual bedtime, which is midday according to their previous body clock. What is the strongest next step?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "Transfer the reasoning method rather than an explanation from the first case. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l6-n2-opt1",
+                  "label": "Treat the visible similarity as a reliable indication that the behaviour has the same psychological function.",
+                  "feedback": "Similar behaviours can protect very different interests depending on the context."
+                },
+                {
+                  "id": "sleep-m1-l6-n2-opt2",
+                  "label": "Consider what the person could be trying to gain or avoid, then test that explanation against the circumstances and credible alternatives.",
+                  "feedback": "This asks what the behaviour might accomplish and how we could check."
+                },
+                {
+                  "id": "sleep-m1-l6-n2-opt3",
+                  "label": "Postpone all interpretation until the person can give an account of their private motives.",
+                  "feedback": "A perfect self-report may be unavailable. Tentative, revisable inferences can still be useful."
+                },
+                {
+                  "id": "sleep-m1-l6-n2-opt4",
+                  "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
+                  "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                }
+              ],
+              "answer": "sleep-m1-l6-n2-opt2"
+            },
+            {
+              "id": "sleep-m1-l6-n3",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "categories": [
+                {
+                  "id": "sleep-m1-l6-n3-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "sleep-m1-l6-n3-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "sleep-m1-l6-n3-item1",
+                  "label": "“What was your sleep schedule before night shifts?”",
+                  "answer": "sleep-m1-l6-n3-fact"
+                },
+                {
+                  "id": "sleep-m1-l6-n3-item2",
+                  "label": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+                  "answer": "sleep-m1-l6-n3-hypothesis"
+                },
+                {
+                  "id": "sleep-m1-l6-n3-item3",
+                  "label": "“That could explain why tiredness alone isn't doing the job.”",
+                  "answer": "sleep-m1-l6-n3-fact"
+                },
+                {
+                  "id": "sleep-m1-l6-n3-item4",
+                  "label": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+                  "answer": "sleep-m1-l6-n3-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l6-n4",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "Investigate a difference that the rival explanations predict. Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "options": [
+                {
+                  "id": "sleep-m1-l6-n4-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "sleep-m1-l6-n4-opt2",
+                  "label": "Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "sleep-m1-l6-n4-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "sleep-m1-l6-n4-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "sleep-m1-l6-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l6-n5",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "sleep-module-01:Two-process model of sleep regulation",
+              "explanation": "The order helps us test how a response might become self-maintaining. Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work. Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "counterexample": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties.",
+              "steps": [
+                {
+                  "id": "sleep-m1-l6-n5-step0",
+                  "label": "Bea remains awake through a night shift"
+                },
+                {
+                  "id": "sleep-m1-l6-n5-step1",
+                  "label": "Sleep pressure accumulates"
+                },
+                {
+                  "id": "sleep-m1-l6-n5-step2",
+                  "label": "The circadian wake signal rises in the morning"
+                },
+                {
+                  "id": "sleep-m1-l6-n5-step3",
+                  "label": "She feels tired yet finds daytime sleep difficult"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "sleep-m1-l6-n6",
+              "type": "read",
+              "title": "An idea worth carrying forward",
+              "body": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.\n\nFeeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.\n\nThe purpose of the exercise is to make a better-supported judgement and choose a proportionate next step.",
+              "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+            }
+          ]
         }
       ]
     }
