@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "social-anxiety-m1-node-1-check1-alternative-1",
-                      "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Milo may be directing attention inward to prevent negative evaluation, losing information about the group. is more directly tied to the words in this scene. Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction."
                     },
                     {
                       "id": "social-anxiety-m1-node-1-check1-alternative-2",
-                      "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Milo may be directing attention inward to prevent negative evaluation, losing information about the group. is more directly tied to the words in this scene. Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction."
                     }
                   ],
                   "answer": "social-anxiety-m1-node-1-check1-opt1",
@@ -904,15 +904,17 @@
                   "options": [
                     {
                       "id": "social-anxiety-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Does focusing on your posture help you join in?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                      "reply": "What happened?",
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "social-anxiety-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
                       "reply": "What happened?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     },
                     {
                       "id": "social-anxiety-m1-node-1-check2-opt1",
@@ -922,14 +924,17 @@
                     },
                     {
                       "id": "social-anxiety-m1-node-1-check2-opt2",
-                      "label": "Keep rehearsing until you no longer feel nervous before speaking.",
-                      "reply": "Could you listen for one thing to ask them about?",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                      "reply": "What happened?",
+                      "consequence": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried.",
+                      "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                     },
                     {
-                      "id": "social-anxiety-m1-node-1-check2-alternative-1",
-                      "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "id": "social-anxiety-m1-node-1-check2-alternative-4",
+                      "label": "Ask what information each person would need before being willing to revise their position.",
+                      "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need.",
+                      "reply": "What happened?",
+                      "consequence": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                     }
                   ],
                   "answer": "social-anxiety-m1-node-1-check2-opt1",
@@ -1082,8 +1087,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-node-7-alternative-1",
-                  "label": "Compare his awareness of the group when he is rehearsing a reply versus when he is listening to others.",
-                  "feedback": "Attention allocation may help explain the persistence of uncertainty."
+                  "label": "Compare statements made at the time with each person’s later recollection.",
+                  "feedback": "A contemporaneous record can help separate a mistaken memory from a disputed interpretation."
                 }
               ],
               "answer": "social-anxiety-m1-repair-opt1"
@@ -1112,7 +1117,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-plan-opt2",
-                  "label": "Keep rehearsing until you no longer feel nervous before speaking."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "outcomes": [
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "social-anxiety-m1-node-8-check1-alternative-1",
-                      "label": "His attention to posture may be driven by uncertainty about where to stand, not by a broader fear of judgement.",
-                      "feedback": "Practical unfamiliarity could contribute, although his stated concern is how others evaluate him."
+                      "label": "Milo may be uncertain about how newcomers usually join the society and have little information about its social norms.",
+                      "feedback": "Unfamiliarity could explain hesitation without proving fear of hostile judgement."
                     },
                     {
                       "id": "social-anxiety-m1-node-8-check1-alternative-2",
-                      "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "Milo may be unusually alert to noise and movement in the unfamiliar room, leaving less attention for conversation.",
+                      "feedback": "Sensory load could contribute, though his reported fear of evaluation still needs examination."
                     }
                   ],
                   "answer": "social-anxiety-m1-node-8-check1-opt1",
@@ -1294,8 +1300,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-node-10-alternative-1",
-                  "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "social-anxiety-m1-view-opt1"
@@ -1332,8 +1338,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-node-9-alternative-1",
-                  "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "Milo may be unusually alert to noise and movement in the unfamiliar room, leaving less attention for conversation.",
+                  "feedback": "Sensory load could contribute, though his reported fear of evaluation still needs examination."
                 }
               ],
               "answer": "social-anxiety-m1-new-opt1"
@@ -1369,8 +1375,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-node-13-alternative-1",
-                  "label": "Compare his predicted reactions with observable behaviour rather than using the intensity of anxiety as the sole evidence.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "social-anxiety-m1-test-opt1"
@@ -1439,8 +1445,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-node-14-evidence-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Milo may be overstimulated by the room rather than afraid of being judged.",
+                  "feedback": "This could explain the immediate behaviour, but it needs facts beyond the present conversation. Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction."
                 }
               ],
               "evidenceAnswer": "social-anxiety-m1-transfer-e-opt1",
@@ -1459,8 +1465,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-node-14-response-alternative-1",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                  "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                 }
               ],
               "responseAnswer": "social-anxiety-m1-transfer-a-opt1"
@@ -1558,8 +1564,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-l3-n3-alternative-1",
-                  "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "Owen may be noticing real social cues while giving them greater negative weight than the evidence supports.",
+                  "feedback": "The classmates did look up; the leap is from noticing to hostile judgement."
                 }
               ],
               "answer": "social-anxiety-m1-l3-n3-opt2",
@@ -1597,8 +1603,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-l3-n4-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Owen may have had previous dismissive encounters with these classmates that make his prediction more evidence-based.",
+                  "feedback": "That history would matter, but no such encounters have been described."
                 }
               ],
               "answer": "social-anxiety-m1-l3-n4-opt2",
@@ -1628,13 +1634,13 @@
                 },
                 {
                   "id": "social-anxiety-m1-l3-n5-evidence-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "His attention to posture may be driven by uncertainty about where to stand, not by a broader fear of judgement.",
+                  "feedback": "Practical unfamiliarity could contribute, although his stated concern is how others evaluate him."
                 },
                 {
                   "id": "social-anxiety-m1-l3-n5-evidence-alternative-2",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "social-anxiety-m1-l3-n5-evidence-opt2",
@@ -1651,13 +1657,13 @@
                 },
                 {
                   "id": "social-anxiety-m1-l3-n5-response-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Keep checking your posture so you can avoid looking awkward.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "social-anxiety-m1-l3-n5-response-alternative-2",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "What did people do that supports the judgement, apart from looking in your direction?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "social-anxiety-m1-l3-n5-response-opt2"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "social-anxiety-m1-l4-n2-question-opt3",
-                      "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "social-anxiety-m1-l4-n2-question-opt4",
@@ -1773,8 +1779,8 @@
                     },
                     {
                       "id": "social-anxiety-m1-l4-n2-question-alternative-2",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "social-anxiety-m1-l4-n2-question-opt2",
@@ -1815,8 +1821,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-l4-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "social-anxiety-m1-l4-n4-opt2",
@@ -1854,8 +1860,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-l4-n3-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "social-anxiety-m1-l4-n3-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-l4-n6-alternative-1",
-                  "label": "Owen may be noticing real social cues while giving them greater negative weight than the evidence supports.",
-                  "feedback": "The classmates did look up; the leap is from noticing to hostile judgement."
+                  "label": "His attention to posture may be driven by uncertainty about where to stand, not by a broader fear of judgement.",
+                  "feedback": "Practical unfamiliarity could contribute, although his stated concern is how others evaluate him."
                 }
               ],
               "answer": "social-anxiety-m1-l4-n6-opt2"
@@ -2165,8 +2171,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-l5-n6-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "social-anxiety-m1-l5-n6-opt2"
@@ -2220,8 +2226,8 @@
                 },
                 {
                   "id": "social-anxiety-m1-l6-n2-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Stop attending seminars until you can enter without feeling nervous.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "social-anxiety-m1-l6-n2-opt2"
