@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "narcissism",
+      "actions": [
+        {
+          "text": "Could we send the slide to the project lead for a quick check of the roles before either of us asks for an amendment?",
+          "reason": "Independent verification could settle attribution, but the work has already been described clearly enough to propose an accurate correction."
+        },
+        {
+          "text": "I'd like us to describe the work as a joint result, without breaking down who contributed which part.",
+          "reason": "A collective credit may reduce tension, but it would still leave the technical attribution ambiguous."
+        },
+        {
+          "text": "Let's draft the corrected wording together and show it to the director with a brief explanation of our different roles.",
+          "reason": "Joint drafting might reduce defensiveness, although it requires Leo to cooperate with the correction."
+        }
+      ]
+    },
+    {
+      "id": "manipulation",
+      "actions": [
+        {
+          "text": "I can help you look for transport alternatives, but I need the car for my shift.",
+          "reason": "This offers help without giving up the boundary; it might be unnecessary if the pressure itself is the central concern."
+        },
+        {
+          "text": "I understand why the previous lift makes you hope I'll return the favour. Can we discuss reciprocity separately from this Saturday?",
+          "reason": "This recognises the perceived debt, though the immediate refusal should remain clear."
+        },
+        {
+          "text": "Could we agree how to ask for practical favours without using the friendship as evidence for or against either person?",
+          "reason": "A future agreement may improve communication, but first the immediate transport problem needs resolution."
+        }
+      ]
+    },
+    {
+      "id": "attachment",
+      "actions": [
+        {
+          "text": "Could we settle a time to speak after your shift and review whether that feels predictable enough for both of us?",
+          "reason": "A realistic routine could help; it does not establish that reassurance alone resolves the worry."
+        },
+        {
+          "text": "Would you be willing to tell me in advance when your phone will be unavailable, while I work on what I assume during the silence?",
+          "reason": "Joint planning recognises two contributions, but shifts sometimes prevent advance notice."
+        },
+        {
+          "text": "I want to talk about why I keep checking the online status, rather than asking you for more immediate replies.",
+          "reason": "This addresses the interpretation but leaves the couple's practical communication expectations unsettled."
+        }
+      ]
+    },
+    {
+      "id": "overthinking",
+      "actions": [
+        {
+          "text": "Choose the strongest example against the job criteria and practise explaining it aloud once before making any more edits.",
+          "reason": "A criterion-based rehearsal creates useful feedback, though there may still be a legitimate content problem."
+        },
+        {
+          "text": "Ask someone to identify one substantive weakness in the answer, then revise only that part.",
+          "reason": "External feedback may reduce repeated untested editing, but it depends on the person's knowledge of the role."
+        },
+        {
+          "text": "Record two versions and compare whether a listener can understand them equally well.",
+          "reason": "This is a useful comparison, although it may become another checking ritual without a stopping rule."
+        }
+      ]
+    },
+    {
+      "id": "boundaries",
+      "actions": [
+        {
+          "text": "Could we agree on advance notice for overnight guests first, then discuss shorter visits separately?",
+          "reason": "A narrower agreement may be easier to implement but could leave the general notice concern unresolved."
+        },
+        {
+          "text": "I'd like a message before someone arrives; I don't need to approve whom you invite.",
+          "reason": "This clearly distinguishes notice from permission, though they still need a workable last-minute arrangement."
+        },
+        {
+          "text": "Can we trial a shared calendar for visits and review whether it gives us enough notice?",
+          "reason": "A practical system could help, but it is only useful if both flatmates agree to use it."
+        }
+      ]
+    },
+    {
+      "id": "anxiety",
+      "actions": [
+        {
+          "text": "Notice the familiar sensations, check whether anything new or concerning is present, then decide whether staying is reasonably safe.",
+          "reason": "This separates assessment from avoidance, but could become excessive checking if repeated without new evidence."
+        },
+        {
+          "text": "If this is the same familiar surge, try approaching the platform while observing what actually happens to the sensations.",
+          "reason": "Approach can be informative, but the crowded train environment and individual safety need consideration."
+        },
+        {
+          "text": "Choose a less crowded carriage while working out whether the feared outcome is about the bodily sensations or the environment.",
+          "reason": "Adjusting the setting can help sensory comfort, although it may not test a fear maintained by avoidance."
+        }
+      ]
+    },
+    {
+      "id": "emotions",
+      "actions": [
+        {
+          "text": "Could you tell me what made you choose that date? I'd like us to agree how we decide together in future.",
+          "reason": "Asking first may clarify intention; the expectation of joint decisions can be stated without waiting."
+        },
+        {
+          "text": "I was upset because I thought we would decide together. Can we look at whether the booking can still be changed?",
+          "reason": "This addresses both the feeling and practical consequences, though the ongoing decision rule also matters."
+        },
+        {
+          "text": "Let's make sure we agree which decisions need both people's input before either of us books again.",
+          "reason": "A future rule may help; it does not resolve the present trip if the date is unsuitable."
+        }
+      ]
+    },
+    {
+      "id": "self-esteem",
+      "actions": [
+        {
+          "text": "Use the assessor's comments to rehearse the risk section and request a chance to check the revised version.",
+          "reason": "This creates a task-specific test, though no one can promise that the next assessment will go well."
+        },
+        {
+          "text": "Ask the assessor whether the mark reflects a weakness in risk formulation or also concerns the rest of the presentation.",
+          "reason": "Clarifying scope can challenge a global conclusion, while practice remains necessary."
+        },
+        {
+          "text": "Give yourself time to feel disappointed, then set a bounded rehearsal task tied to the feedback.",
+          "reason": "This respects the emotional response, but the actual skill deficit still requires work."
+        }
+      ]
+    },
+    {
+      "id": "motivation",
+      "actions": [
+        {
+          "text": "Use the grant criteria to make a rough three-line answer, leaving gaps where information still needs checking.",
+          "reason": "This lowers the cost of starting while keeping factual requirements in view."
+        },
+        {
+          "text": "Speak an imperfect answer aloud and transcribe the useful parts before editing the wording.",
+          "reason": "This changes the starting format, although the written application still needs its own revision."
+        },
+        {
+          "text": "Choose the hardest sentence in the section and draft a deliberately provisional version before reorganising the notes.",
+          "reason": "Directly engaging the avoided task may help, but the best first step may be smaller."
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety",
+      "actions": [
+        {
+          "text": "Listen for one point you genuinely want to know more about, then ask a short question without first checking your posture.",
+          "reason": "This redirects attention externally; the predicted judgement still needs comparison with the response."
+        },
+        {
+          "text": "Introduce yourself to one person and notice what they say rather than rating how awkward you feel.",
+          "reason": "This gathers observable evidence but does not ensure the exchange will be comfortable."
+        },
+        {
+          "text": "Sit with the group for a few minutes before speaking, while keeping attention on the discussion rather than practising lines.",
+          "reason": "A gradual entry may be manageable, though delaying participation indefinitely would preserve the original avoidance."
+        }
+      ]
+    }
+  ]
+}
