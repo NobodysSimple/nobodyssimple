@@ -318,13 +318,14 @@
               "correctChange": "manipulation-m1-plan-opt1",
               "correctOutcome": "manipulation-m1-outcome-opt1"
             }
-          ]
+          ],
+          "takeaway": "When refusing a favour becomes a test of loyalty, the request has changed."
         },
         {
           "id": "manipulation-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Owen wants to borrow Nina's car for a weekend. Nina needs it for work. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of persuasion versus manipulation with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "answer": "manipulation-m1-test-opt1"
             }
-          ]
+          ],
+          "takeaway": "You can understand another person's disappointment without paying for it with your consent."
         }
       ]
     }

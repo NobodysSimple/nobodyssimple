@@ -318,13 +318,14 @@
               ],
               "answer": "motivation-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "Some forms of preparation keep you busy without bringing you closer to the task you're avoiding."
         },
         {
           "id": "motivation-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Lena has the information for a grant application but has not drafted the difficult section. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of knowing what to do but not beginning with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "answer": "motivation-m1-test-opt1"
             }
-          ]
+          ],
+          "takeaway": "A rough first attempt can answer questions that more planning cannot."
         }
       ]
     }

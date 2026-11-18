@@ -318,13 +318,14 @@
               "correctChange": "emotions-m1-plan-opt1",
               "correctOutcome": "emotions-m1-outcome-opt1"
             }
-          ]
+          ],
+          "takeaway": "An emotion can reveal what matters to you without revealing what another person intended."
         },
         {
           "id": "emotions-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Jess booked a trip date without checking with Amir, who expected to decide together. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of a feeling is information not a verdict with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "answer": "emotions-m1-test-opt1"
             }
-          ]
+          ],
+          "takeaway": "When a feeling points to a specific expectation, the disagreement becomes easier to address."
         }
       ]
     }

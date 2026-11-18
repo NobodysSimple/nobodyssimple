@@ -318,13 +318,14 @@
               ],
               "answer": "narcissism-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "A person can defend their self-worth and still be responsible for how they treat someone else."
         },
         {
           "id": "narcissism-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Maya developed the statistical analysis. Leo managed the project and the presentation credits the analysis to him. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of everyday self-focus versus a persistent trait with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "responseAnswer": "narcissism-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "Evidence can reveal an additional motive without settling everything that was happening."
         }
       ]
     }

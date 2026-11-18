@@ -318,13 +318,14 @@
               ],
               "answer": "self-esteem-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "A disappointing result tells you something about a task. It cannot measure your worth as a person."
         },
         {
           "id": "self-esteem-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Hal has failed a presentation component of a training assessment. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of confidence in a skill versus global worth with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -599,7 +600,8 @@
               ],
               "responseAnswer": "self-esteem-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "Feedback becomes usable when the conclusion is specific enough to act on."
         }
       ]
     }

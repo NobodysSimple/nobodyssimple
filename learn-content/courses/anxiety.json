@@ -318,13 +318,14 @@
               ],
               "answer": "anxiety-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "Your body gives you a sensation. Your mind predicts what it means. The prediction needs evidence."
         },
         {
           "id": "anxiety-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Iris notices her heart racing while waiting for a crowded train. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of when the body alarms before the mind with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "responseAnswer": "anxiety-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "Attention can change how threatening a sensation feels without explaining what caused it."
         }
       ]
     }

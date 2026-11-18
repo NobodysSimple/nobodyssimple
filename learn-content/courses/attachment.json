@@ -318,13 +318,14 @@
               ],
               "answer": "attachment-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "A missing reply can become a story about a relationship even when the silence has another explanation."
         },
         {
           "id": "attachment-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Jamie cannot use a phone during an eight-hour work shift. Sofia has been checking the online status. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of what attachment theory can explain with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "responseAnswer": "attachment-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "Reassurance that works for a minute may leave the next uncertainty feeling just as urgent."
         }
       ]
     }

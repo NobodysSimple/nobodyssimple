@@ -318,13 +318,14 @@
               ],
               "answer": "overthinking-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "Preparation stops helping when it no longer changes what you can do."
         },
         {
           "id": "overthinking-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Rae has an interview tomorrow and has revised the same answer several times. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of planning versus looping with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -599,7 +600,8 @@
               ],
               "answer": "overthinking-m1-test-opt1"
             }
-          ]
+          ],
+          "takeaway": "The useful question is what new evidence another round of thinking would actually add."
         }
       ]
     }

@@ -318,13 +318,14 @@
               "correctChange": "social-anxiety-m1-plan-opt1",
               "correctOutcome": "social-anxiety-m1-outcome-opt1"
             }
-          ]
+          ],
+          "takeaway": "Feeling watched cannot tell you how much other people have actually noticed."
         },
         {
           "id": "social-anxiety-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Milo enters a society meeting where he knows nobody. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of entering a room while feeling watched with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "responseAnswer": "social-anxiety-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "Looking outward can give you evidence that self-monitoring never could."
         }
       ]
     }

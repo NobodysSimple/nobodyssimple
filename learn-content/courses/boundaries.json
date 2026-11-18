@@ -318,13 +318,14 @@
               "correctChange": "boundaries-m1-plan-opt1",
               "correctOutcome": "boundaries-m1-outcome-opt1"
             }
-          ]
+          ],
+          "takeaway": "A request asks somebody to change. A boundary explains what you will do. An agreement sets shared expectations."
         },
         {
           "id": "boundaries-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Ellie and Dev share a flat. Dev occasionally invites guests without warning. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of preferences, requests and boundaries with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "responseAnswer": "boundaries-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "Two people can have legitimate needs and still need to negotiate how a shared space works."
         }
       ]
     }
