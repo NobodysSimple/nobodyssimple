@@ -914,6 +914,7 @@ function renderTemplates() {
   const builtIns = Object.entries(templates).map(([type, template]) => ({ id: `builtin-${type}`, type, title: typeNames[type], description: `${template.blocks.length} site-ready blocks for a ${typeNames[type].toLowerCase()}.`, builtin: true }));
   const custom = userTemplates.map((template) => ({ ...template, builtin: false }));
   $("template-grid").innerHTML = [...builtIns, ...custom].map((template) => `<article class="template-card"><p class="eyebrow">${template.builtin ? "STARTER TEMPLATE" : "YOUR TEMPLATE"}</p><h3>${esc(template.title)}</h3><p>${esc(template.description || `${template.blocks?.length || 0} saved blocks.`)}</p><div class="row"><button class="button" type="button" data-use-template="${esc(template.id)}">Use template</button>${template.builtin ? "" : `<button class="chip danger-chip" type="button" data-delete-template="${esc(template.id)}">×</button>`}</div></article>`).join("");
+  $("template-grid").innerHTML += `<article class="template-card"><p class="eyebrow">LEARN · INTERACTIVE LESSON</p><h3>Dialogue Lab — conversations & disagreements</h3><p>Write two characters talking, arguing or repairing a misunderstanding. Add questions about techniques, evidence and possible responses. Drafts stay private in Course Lab.</p><div class="row"><button class="button" type="button" data-open-dialogue-lab>Use in Course Lab</button></div></article>`;
 }
 
 function selectionBlock() {
@@ -1304,6 +1305,7 @@ $("save-template").onclick = async () => {
   catch { toast("Could not save this template.", true); }
 };
 $("template-grid").addEventListener("click", async (event) => {
+  if (event.target.closest("[data-open-dialogue-lab]")) { await setView("course-lab"); const picker=$("course-lab-view").querySelector("#cl-new-type"); if (picker) picker.value="dialogue"; toast("Dialogue Lab selected. Choose a lesson and add the node to its sequence."); return; }
   const use = event.target.closest("[data-use-template]");
   const remove = event.target.closest("[data-delete-template]");
   if (remove) { await dbDelete("templates", remove.dataset.deleteTemplate); userTemplates = await dbAll("templates"); renderTemplates(); return; }
