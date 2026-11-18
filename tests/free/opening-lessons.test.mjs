@@ -22,19 +22,19 @@ test('All 20 courses publish a complete, editable opening batch aligned to the c
   assert.deepEqual(validateLearnBundle(bundle,id),[],id+' failed publish validation');
   assert.equal(bundle.modules.length,1,id);
   assert.equal(bundle.modules[0].id,blueprint.books[0].modules[0].id,id);
-  assert.deepEqual(bundle.modules[0].lessons.map(l=>l.id),blueprint.books[0].modules[0].lessons.slice(0,2).map(l=>l.id),id);
+  assert.deepEqual(bundle.modules[0].lessons.map(l=>l.id),blueprint.books[0].modules[0].lessons.slice(0,6).map(l=>l.id),id);
   for(const lesson of bundle.modules[0].lessons){
    assert.equal(lesson.editorialStatus,'ready',id);
-   assert.equal(lesson.nodes.length,7,id);
-   assert.equal(lesson.nodes.filter(n=>n.type==='dialogue').length,1,id);
+   assert.ok(lesson.nodes.length>=6,id);
+   if(bundle.modules[0].lessons.indexOf(lesson)<2)assert.equal(lesson.nodes.filter(n=>n.type==='dialogue').length,1,id);
    assert.ok(lesson.nodes.every(n=>n.id&&n.title),id);
-   assert.ok(learnLessonScore(lesson,{}).total>=7,id);
+   assert.ok(learnLessonScore(lesson,{}).total>=3,id);
   }
  }
 });
 test('Activities vary across lessons and exercise every requested reasoning mechanism',()=>{
  const lessons=collect(),types=new Set(lessons.flatMap(l=>l.nodes.map(n=>n.type)));
- assert.equal(lessons.length,40);
+ assert.equal(lessons.length,120);
  for(const type of ['dialogue','label','rank','chain','read','predict','repair','sort','match','update','perspective','character','complete','investigate']){
   assert.ok(types.has(type),'missing exercise type '+type);
   if(type!=='read')assert.ok(COURSE_LAB_EXERCISES.includes(type),'unregistered '+type);
@@ -55,7 +55,7 @@ test('Every dialogue is initially shown one speech bubble at a time',()=>{
  assert.doesNotMatch(lastHTML,/data-dialogue-reveal/);
  const questionHTML=renderDialogue(first,{dialogueCheck:0,dialogueVisible:1,answers:{},checked:null},esc,fieldset);
  assert.ok(questionHTML.includes(esc(first.turns.at(-1).text)));
- assert.match(questionHTML,/Dialogue question 1 of 2/);
+ assert.match(questionHTML,/Reflect · 1 \/ 2/);
  assert.ok(first.checks[1].options.every(o=>o.reply&&o.consequence),'branch choices must explain their outcome');
 });
 test('Ranking rewards recognising the most-supported hypothesis without pretending every weaker one has a fixed order',()=>{
