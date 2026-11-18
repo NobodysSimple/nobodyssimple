@@ -122,13 +122,13 @@ export function enhanceAppliedChoices(bundle,caseSeed,challengeBank,openingCase)
    }
   }else if(['choose','respond','repair','investigate','update','perspective'].includes(node.type)){
    const category=typeOf(node,node.prompt);
-   node.options=improveQuestion(node.options,node.answer,node.id,category,challengeBank,caseSeed,node,5);
+   node.options=improveQuestion(node.options,node.answer,node.id,category,bank,source,node,5);
    if(node.options.length<5)throw Error('Incomplete MCQ options '+node.id);
   }else if(node.type==='character'){
    node.evidenceOptions=improveQuestion(node.evidenceOptions,node.evidenceAnswer,node.id+'-evidence','interpretations',bank,source,node,4);
    node.responseOptions=improveQuestion(node.responseOptions,node.responseAnswer,node.id+'-response','actions',bank,source,node,4);
   }else if(node.type==='predict'){
-   node.changes=improveQuestion(node.changes,node.correctChange,node.id+'-change','actions',challengeBank,caseSeed,node,3);
+   node.changes=improveQuestion(node.changes,node.correctChange,node.id+'-change','actions',bank,source,node,3);
    if(node.outcomes?.length===2){
     const altId=node.id+'-outcome-alt';
     if(!node.outcomes.some(o=>o.id===altId))node.outcomes.push({
