@@ -397,3 +397,9 @@ body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway{margin:22px 0;padding
 body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway strong{font:750 13px/1.4 system-ui,sans-serif;letter-spacing:.01em}
 body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway p{margin:8px 0 0!important;font:550 clamp(17px,2vw,21px)/1.5 Georgia,serif!important;color:inherit!important}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway{background:#385540;border-color:#719474;color:#f0f6e9}
+
+/* Public course path: teach language and reasoning before the applied case. */
+.ns-catalogue-unit__phase{display:inline-block;font:800 10px/1.5 system-ui,sans-serif;letter-spacing:.08em;color:#52775b;margin:0 0 6px}
+.ns-catalogue-module[data-unit-kind="foundation"]{border-left:3px solid #80a99a;padding-left:clamp(14px,2vw,24px);}
+.ns-catalogue-module[data-unit-kind="applied"]{border-left:3px solid #d7b379;padding-left:clamp(14px,2vw,24px);}
+html[data-theme="dark"] .ns-catalogue-unit__phase{color:#c2ddb9}
