@@ -8,7 +8,7 @@ import {COURSE_LAB_TYPES,createCourseDraft,newCourseUnit,newCourseLesson,createC
  makeCourseId,validateCourseForPublish,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderLearnLesson} from './ns-learn-player-v2.mjs';
 import {readCourseLabDraft,saveCourseLabDraft,deleteCourseLabDraft} from './studio-course-lab-drafts.mjs';
-import {fetchCurriculumBlueprint,createDraftFromBlueprint,countAuthoredLessons,makePublishableSubset} from './ns-course-blueprints.mjs';
+import {fetchCurriculumBlueprint,createDraftFromBlueprint,mergePublishedIntoBlueprint,countAuthoredLessons,makePublishableSubset} from './ns-course-blueprints.mjs';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const types=Object.fromEntries(COURSE_LAB_TYPES.map(x=>[x.id,x]));
 const key=id=>'ns-course-lab-draft-v1:'+id;
@@ -136,7 +136,18 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   if(ticket!==loading)return;
   expectedVersion=remote.version;
   if(localDraft){draft=localDraft.draft;baseVersion=localDraft.baseVersion;status('Local draft restored'+(baseVersion!==expectedVersion?' · WARNING: live version changed':'')+'.',baseVersion!==expectedVersion);}
-  else if(remote.bundle){draft={...deep(remote.bundle),status:'draft'};baseVersion=expectedVersion;status('Published version loaded for editing.');}
+  else if(remote.bundle){
+   try{
+    const blueprint=await fetchCurriculumBlueprint(id);
+    if(ticket!==loading)return;
+    draft=mergePublishedIntoBlueprint(blueprint,remote.bundle);
+    status('Restored full curriculum with '+countAuthoredLessons(draft).ready+' previously published lessons.');
+   }catch{
+    draft={...deep(remote.bundle),status:'draft'};
+    status('Published lessons loaded; the original curriculum blueprint could not be retrieved.');
+   }
+   baseVersion=expectedVersion;
+  }
   else{
    try{
     const blueprint=await fetchCurriculumBlueprint(id);
