@@ -1,6 +1,6 @@
 {
   "id": "masculinity",
-  "version": 1,
+  "version": 2,
   "status": "published",
   "title": "Sexuality & Gender",
   "description": "Explore sex characteristics and variation through dialogue, evidence and psychological reasoning.",
@@ -618,6 +618,779 @@
             }
           ],
           "takeaway": "Good research asks about the characteristic the question requires rather than assuming a label contains it."
+        },
+        {
+          "id": "masculinity-m1-l3",
+          "version": 1,
+          "title": "Same behaviour, different cause",
+          "teach": "Distinguish what was observed from competing explanations of the same behaviour.",
+          "objective": "Same behaviour, different cause",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "masculinity-m1-l3-n1",
+              "type": "read",
+              "title": "What else could explain it?",
+              "body": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.\n\nSex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation."
+            },
+            {
+              "id": "masculinity-m1-l3-n2",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "categories": [
+                {
+                  "id": "masculinity-m1-l3-n2-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "masculinity-m1-l3-n2-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "masculinity-m1-l3-n2-item1",
+                  "label": "“The form asks whether people are male or female. Is it asking about sex or gender?”",
+                  "answer": "masculinity-m1-l3-n2-fact"
+                },
+                {
+                  "id": "masculinity-m1-l3-n2-item2",
+                  "label": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
+                  "answer": "masculinity-m1-l3-n2-hypothesis"
+                },
+                {
+                  "id": "masculinity-m1-l3-n2-item3",
+                  "label": "“Start with what we're trying to measure, then ask the appropriate question with enough detail.”",
+                  "answer": "masculinity-m1-l3-n2-fact"
+                },
+                {
+                  "id": "masculinity-m1-l3-n2-item4",
+                  "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
+                  "answer": "masculinity-m1-l3-n2-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l3-n3",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l3-n3-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "masculinity-m1-l3-n3-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "masculinity-m1-l3-n3-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "masculinity-m1-l3-n3-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "masculinity-m1-l3-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l3-n4",
+              "type": "choose",
+              "title": "Which explanation deserves more weight?",
+              "prompt": "What makes one formulation stronger than a plausible competing account?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "Look for explanatory fit and a way to be wrong. Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l3-n4-opt1",
+                  "label": "It resembles a recognised theory, so the exact details of this case matter less.",
+                  "feedback": "A theory does not become evidence merely because the scenario resembles it."
+                },
+                {
+                  "id": "masculinity-m1-l3-n4-opt2",
+                  "label": "It explains more of the distinctive evidence and suggests observations that could prove it wrong.",
+                  "feedback": "An account that fits the details and can be checked is more informative than one that merely sounds plausible."
+                },
+                {
+                  "id": "masculinity-m1-l3-n4-opt3",
+                  "label": "Both accounts are possible, so each deserves equal confidence until a definitive diagnosis is made.",
+                  "feedback": "Plausibility does not entail equal likelihood, and a diagnosis is not the aim."
+                },
+                {
+                  "id": "masculinity-m1-l3-n4-opt4",
+                  "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
+                  "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                }
+              ],
+              "answer": "masculinity-m1-l3-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l3-n5",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "characterName": "Alex",
+              "scenario": "A college discussion is exploring sex characteristics and gender. Alex and Jordan disagree about what a questionnaire should ask.",
+              "evidenceOptions": [
+                {
+                  "id": "masculinity-m1-l3-n5-evidence-opt1",
+                  "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
+                  "feedback": ""
+                },
+                {
+                  "id": "masculinity-m1-l3-n5-evidence-opt2",
+                  "label": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "masculinity-m1-l3-n5-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "masculinity-m1-l3-n5-response-opt1",
+                  "label": "Remove every question about sex characteristics regardless of the study's aims.",
+                  "feedback": ""
+                },
+                {
+                  "id": "masculinity-m1-l3-n5-response-opt2",
+                  "label": "Define the purpose of each question and collect only the sex-related or gender-related information genuinely needed.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "masculinity-m1-l3-n5-response-opt2"
+            },
+            {
+              "id": "masculinity-m1-l3-n6",
+              "type": "match",
+              "title": "Connect process to evidence",
+              "prompt": "Connect each part of the case to its role in the working explanation.",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "A functional explanation identifies the event, the meaning it may take on, the response and what follows. Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "pairs": [
+                {
+                  "id": "masculinity-m1-l3-n6-pair0",
+                  "label": "Researchers use an ambiguous category label",
+                  "answer": "Initial event"
+                },
+                {
+                  "id": "masculinity-m1-l3-n6-pair1",
+                  "label": "Participants interpret it in different ways",
+                  "answer": "Possible appraisal"
+                },
+                {
+                  "id": "masculinity-m1-l3-n6-pair2",
+                  "label": "Responses are combined as though they represent the same construct",
+                  "answer": "Behavioural response"
+                },
+                {
+                  "id": "masculinity-m1-l3-n6-pair3",
+                  "label": "The study draws conclusions the measurement cannot support",
+                  "answer": "Possible consequence"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "masculinity-m1-l4",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "New evidence can overturn a comfortable theory. Decide what the discovery actually changes.",
+          "objective": "What would change your mind?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "masculinity-m1-l4-n1",
+              "type": "read",
+              "title": "What would change the explanation?",
+              "body": "Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.\n\nA useful hypothesis should make it possible to gather evidence against it.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation."
+            },
+            {
+              "id": "masculinity-m1-l4-n2",
+              "type": "dialogue",
+              "title": "See what happens next",
+              "prompt": "Listen closely to what each person says and what still remains uncertain.",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "scenario": "A little later in the same situation. Continue one message at a time.",
+              "speakerA": "Alex",
+              "speakerB": "Jordan",
+              "turns": [
+                {
+                  "id": "masculinity-m1-l4-n2-turn0",
+                  "speaker": "a",
+                  "text": "The health section asks about anatomy, but the demographic section asks about identity."
+                },
+                {
+                  "id": "masculinity-m1-l4-n2-turn1",
+                  "speaker": "b",
+                  "text": "Would you use the same wording for both?"
+                },
+                {
+                  "id": "masculinity-m1-l4-n2-turn2",
+                  "speaker": "a",
+                  "text": "No. They refer to different information and have different purposes."
+                },
+                {
+                  "id": "masculinity-m1-l4-n2-turn3",
+                  "speaker": "b",
+                  "text": "Then we should explain why each is being collected and protect privacy."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "masculinity-m1-l4-n2-question",
+                  "prompt": "What has become clearer about the speaker’s interpretation?",
+                  "focusTurn": "masculinity-m1-l4-n2-turn2",
+                  "options": [
+                    {
+                      "id": "masculinity-m1-l4-n2-question-opt1",
+                      "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
+                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                    },
+                    {
+                      "id": "masculinity-m1-l4-n2-question-opt2",
+                      "label": "This additional exchange reveals more about the speaker’s interpretation, but leaves wider personality questions open.",
+                      "feedback": "The new exchange helps us understand the situation without establishing an enduring personality style."
+                    },
+                    {
+                      "id": "masculinity-m1-l4-n2-question-opt3",
+                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
+                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                    },
+                    {
+                      "id": "masculinity-m1-l4-n2-question-opt4",
+                      "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
+                      "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    }
+                  ],
+                  "answer": "masculinity-m1-l4-n2-question-opt2",
+                  "explanation": "The additional wording refines the hypothesis. Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
+                  "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics."
+                }
+              ]
+            },
+            {
+              "id": "masculinity-m1-l4-n4",
+              "type": "choose",
+              "title": "Update your interpretation",
+              "prompt": "New information: A pilot study finds participants interpret 'male or female' inconsistently, and the responses cannot answer the original research question. Which interpretation should now carry more weight?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "A formulation should change when the evidence changes. The validity problem is demonstrated empirically. The team needs to define the construct and ask questions that accurately capture it.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l4-n4-opt1",
+                  "label": "The new details matter, but the original working explanation should remain unchanged because it was reasonable at the time.",
+                  "feedback": "An initially reasonable account still needs revising when the evidence develops."
+                },
+                {
+                  "id": "masculinity-m1-l4-n4-opt2",
+                  "label": "The validity problem is demonstrated empirically. The team needs to define the construct and ask questions that accurately capture it.",
+                  "feedback": "The revised account takes the added detail seriously without claiming complete access to the person’s motives."
+                },
+                {
+                  "id": "masculinity-m1-l4-n4-opt3",
+                  "label": "The new information rules out every motive except the one that is now best supported.",
+                  "feedback": "Evidence can strengthen one hypothesis without proving it is the only cause."
+                },
+                {
+                  "id": "masculinity-m1-l4-n4-opt4",
+                  "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
+                  "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                }
+              ],
+              "answer": "masculinity-m1-l4-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l4-n3",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "Investigate a difference that the rival explanations predict. Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l4-n3-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "masculinity-m1-l4-n3-opt2",
+                  "label": "Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "masculinity-m1-l4-n3-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "masculinity-m1-l4-n3-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "masculinity-m1-l4-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l4-n5",
+              "type": "label",
+              "title": "Find the important lines",
+              "prompt": "Select the two lines that best show how the speaker interprets the event or what they believe is at stake.",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "These lines reveal more about the meaning attached to the situation than a statement of the practical disagreement alone. Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "segments": [
+                {
+                  "id": "masculinity-m1-l4-n5-phrase0",
+                  "text": "“The form asks whether people are male or female. Is it asking about sex or gender?”",
+                  "answer": true
+                },
+                {
+                  "id": "masculinity-m1-l4-n5-phrase1",
+                  "text": "“I assumed those were interchangeable.”",
+                  "answer": false
+                },
+                {
+                  "id": "masculinity-m1-l4-n5-phrase2",
+                  "text": "“Start with what we're trying to measure, then ask the appropriate question with enough detail.”",
+                  "answer": true
+                },
+                {
+                  "id": "masculinity-m1-l4-n5-phrase3",
+                  "text": "“But a question about reproductive health isn't always the same as a question about someone's identity.”",
+                  "answer": false
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l4-n6",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l4-n6-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "masculinity-m1-l4-n6-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "masculinity-m1-l4-n6-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "masculinity-m1-l4-n6-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "masculinity-m1-l4-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "masculinity-m1-l5",
+          "version": 1,
+          "title": "Choose a workable response",
+          "teach": "Choose a response that serves a practical aim even when the other person does not cooperate.",
+          "objective": "Choose a workable response",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "masculinity-m1-l5-n1",
+              "type": "read",
+              "title": "Your influence has limits",
+              "body": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.\n\nAn intervention can be reasonable even when the other person refuses it.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation."
+            },
+            {
+              "id": "masculinity-m1-l5-n2",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "characterName": "Alex",
+              "scenario": "A college discussion is exploring sex characteristics and gender. Alex and Jordan disagree about what a questionnaire should ask.",
+              "evidenceOptions": [
+                {
+                  "id": "masculinity-m1-l5-n2-evidence-opt1",
+                  "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
+                  "feedback": ""
+                },
+                {
+                  "id": "masculinity-m1-l5-n2-evidence-opt2",
+                  "label": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "masculinity-m1-l5-n2-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "masculinity-m1-l5-n2-response-opt1",
+                  "label": "Remove every question about sex characteristics regardless of the study's aims.",
+                  "feedback": ""
+                },
+                {
+                  "id": "masculinity-m1-l5-n2-response-opt2",
+                  "label": "Define the purpose of each question and collect only the sex-related or gender-related information genuinely needed.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "masculinity-m1-l5-n2-response-opt2"
+            },
+            {
+              "id": "masculinity-m1-l5-n3",
+              "type": "predict",
+              "title": "What might change next?",
+              "prompt": "The other person may disagree. Which response-and-outcome pairing best protects the practical concern without assuming cooperation?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "A sound response is judged by what it makes possible, not by whether it can instantly change somebody else. Define the purpose of each question and collect only the sex-related or gender-related information genuinely needed.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "changePrompt": "Response to try",
+              "changes": [
+                {
+                  "id": "masculinity-m1-l5-n3-action-opt1",
+                  "label": "What exactly are we trying to measure, and will this wording allow respondents to report it accurately?",
+                  "feedback": ""
+                },
+                {
+                  "id": "masculinity-m1-l5-n3-action-opt2",
+                  "label": "Define the purpose of each question and collect only the sex-related or gender-related information genuinely needed.",
+                  "feedback": ""
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "masculinity-m1-l5-n3-result-opt1",
+                  "label": "The other person’s interpretation may become clearer, though the original issue may still need to be resolved.",
+                  "feedback": ""
+                },
+                {
+                  "id": "masculinity-m1-l5-n3-result-opt2",
+                  "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
+                  "feedback": ""
+                }
+              ],
+              "correctChange": "masculinity-m1-l5-n3-action-opt2",
+              "correctOutcome": "masculinity-m1-l5-n3-result-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l5-n4",
+              "type": "choose",
+              "title": "If the first response fails",
+              "prompt": "The other person rejects a reasonable direct request and the practical concern is unresolved. What next?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "Escalation can be proportionate when a direct attempt has failed. Its safety and usefulness depend on the situation. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l5-n4-opt1",
+                  "label": "Repeat reassurance until the other person no longer experiences the issue as threatening.",
+                  "feedback": "Reassurance can help but cannot guarantee action on a concrete problem."
+                },
+                {
+                  "id": "masculinity-m1-l5-n4-opt2",
+                  "label": "Remove every question about sex characteristics regardless of the study's aims.",
+                  "feedback": "This makes the unresolved issue reviewable without needing to diagnose the other person."
+                },
+                {
+                  "id": "masculinity-m1-l5-n4-opt3",
+                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
+                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                },
+                {
+                  "id": "masculinity-m1-l5-n4-opt4",
+                  "label": "What exactly are we trying to measure, and will this wording allow respondents to report it accurately?",
+                  "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                }
+              ],
+              "answer": "masculinity-m1-l5-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l5-n5",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l5-n5-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "masculinity-m1-l5-n5-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "masculinity-m1-l5-n5-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "masculinity-m1-l5-n5-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "masculinity-m1-l5-n5-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l5-n6",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "Investigate a difference that the rival explanations predict. Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l5-n6-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "masculinity-m1-l5-n6-opt2",
+                  "label": "Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "masculinity-m1-l5-n6-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "masculinity-m1-l5-n6-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "masculinity-m1-l5-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "masculinity-m1-l6",
+          "version": 1,
+          "title": "Try it in another situation",
+          "teach": "Apply the way of reasoning to a different situation. Do not import the first case’s verdict.",
+          "objective": "Try it in another situation",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "masculinity-m1-l6-n1",
+              "type": "read",
+              "title": "A new situation",
+              "body": "A research survey uses the term 'sex' for questions about social expectations around masculinity, creating confusion about what was actually measured.\n\nDecide what you can infer from this example without assuming the same explanation must apply.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation."
+            },
+            {
+              "id": "masculinity-m1-l6-n2",
+              "type": "choose",
+              "title": "Apply the method elsewhere",
+              "prompt": "Consider this different situation: A research survey uses the term 'sex' for questions about social expectations around masculinity, creating confusion about what was actually measured. What is the strongest next step?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "Transfer the reasoning method rather than an explanation from the first case. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l6-n2-opt1",
+                  "label": "Treat the visible similarity as a reliable indication that the behaviour has the same psychological function.",
+                  "feedback": "Similar behaviours can protect very different interests depending on the context."
+                },
+                {
+                  "id": "masculinity-m1-l6-n2-opt2",
+                  "label": "Consider what the person could be trying to gain or avoid, then test that explanation against the circumstances and credible alternatives.",
+                  "feedback": "This asks what the behaviour might accomplish and how we could check."
+                },
+                {
+                  "id": "masculinity-m1-l6-n2-opt3",
+                  "label": "Postpone all interpretation until the person can give an account of their private motives.",
+                  "feedback": "A perfect self-report may be unavailable. Tentative, revisable inferences can still be useful."
+                },
+                {
+                  "id": "masculinity-m1-l6-n2-opt4",
+                  "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
+                  "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                }
+              ],
+              "answer": "masculinity-m1-l6-n2-opt2"
+            },
+            {
+              "id": "masculinity-m1-l6-n3",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "categories": [
+                {
+                  "id": "masculinity-m1-l6-n3-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "masculinity-m1-l6-n3-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "masculinity-m1-l6-n3-item1",
+                  "label": "“The form asks whether people are male or female. Is it asking about sex or gender?”",
+                  "answer": "masculinity-m1-l6-n3-fact"
+                },
+                {
+                  "id": "masculinity-m1-l6-n3-item2",
+                  "label": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
+                  "answer": "masculinity-m1-l6-n3-hypothesis"
+                },
+                {
+                  "id": "masculinity-m1-l6-n3-item3",
+                  "label": "“Start with what we're trying to measure, then ask the appropriate question with enough detail.”",
+                  "answer": "masculinity-m1-l6-n3-fact"
+                },
+                {
+                  "id": "masculinity-m1-l6-n3-item4",
+                  "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
+                  "answer": "masculinity-m1-l6-n3-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l6-n4",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "Investigate a difference that the rival explanations predict. Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "options": [
+                {
+                  "id": "masculinity-m1-l6-n4-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "masculinity-m1-l6-n4-opt2",
+                  "label": "Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "masculinity-m1-l6-n4-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "masculinity-m1-l6-n4-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "masculinity-m1-l6-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l6-n5",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "masculinity-module-01:Construct validity, gendered social expectations and biological variation",
+              "explanation": "The order helps us test how a response might become self-maintaining. Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied. Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "counterexample": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation.",
+              "steps": [
+                {
+                  "id": "masculinity-m1-l6-n5-step0",
+                  "label": "Researchers use an ambiguous category label"
+                },
+                {
+                  "id": "masculinity-m1-l6-n5-step1",
+                  "label": "Participants interpret it in different ways"
+                },
+                {
+                  "id": "masculinity-m1-l6-n5-step2",
+                  "label": "Responses are combined as though they represent the same construct"
+                },
+                {
+                  "id": "masculinity-m1-l6-n5-step3",
+                  "label": "The study draws conclusions the measurement cannot support"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "masculinity-m1-l6-n6",
+              "type": "read",
+              "title": "An idea worth carrying forward",
+              "body": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.\n\nSex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.\n\nThe purpose of the exercise is to make a better-supported judgement and choose a proportionate next step.",
+              "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation."
+            }
+          ]
         }
       ]
     }
