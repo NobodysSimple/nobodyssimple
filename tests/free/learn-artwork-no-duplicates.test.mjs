@@ -78,6 +78,6 @@ test('Existing blog, Feed and unrelated pages remain linked after Learn asset ve
  assert.match(html,/href="#discussion"[\s\S]*href="#learn"/);
  assert.match(site,/renderNotebookBlogPost/);
  assert.match(html,/ns-learn-courses\.css\?v=learn-artfix-20261115/);
- assert.match(html,/ns-learn-catalog-v2\.css\?v=course-lab-20261118/);
+ assert.match(html,/ns-learn-catalog-v2\.css\?v=dialogue-20261118/);
  assert.match(site,/ns-learn-courses\.mjs\?v=course-lab-20261118/);
 });

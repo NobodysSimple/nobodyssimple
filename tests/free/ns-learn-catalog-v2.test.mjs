@@ -41,8 +41,8 @@ test('search and categories are actual filters, including synonyms',()=>{
  assert.equal(filterLearnCourses({category:'society',query:'zzzz'}).length,0);
 });
 
-test('ten course-lab exercise formats are available and no courses are prematurely published',()=>{
- assert.equal(LESSON_FORMATS.length,10);
+test('eleven course-lab exercise formats are available and no courses are prematurely published',()=>{
+ assert.equal(LESSON_FORMATS.length,11);
  assert.ok(LESSON_FORMATS.every(f=>QUESTION_TYPES.includes(f.id)));
  assert.deepEqual(Object.keys(PUBLISHED_COURSE_BUNDLES),[]);
  assert.equal(getLearnContent('narcissism'),null);
@@ -59,7 +59,7 @@ test('course details retain the illustrated art and do not pretend there are les
  assert.match(root.innerHTML,/No lessons published yet/);
  assert.doesNotMatch(root.innerHTML,/#learn\/lesson\//);
  renderCourseHub(root,{route:['how-it-works']});
- for(const f of LESSON_FORMATS)assert.match(root.innerHTML,new RegExp(f.name));
+ for(const f of LESSON_FORMATS)assert.match(root.innerHTML,new RegExp(f.name.replace(/&/g,'&amp;')));
 });
 
 test('catalogue retains original hero and layered paper cards',()=>{
