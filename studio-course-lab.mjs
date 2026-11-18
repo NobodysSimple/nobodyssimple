@@ -106,7 +106,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   if(localDraft){draft=localDraft.draft;baseVersion=localDraft.baseVersion;status('Local draft restored'+(baseVersion!==expectedVersion?' · WARNING: live version changed':'')+'.',baseVersion!==expectedVersion);}
   else{draft=remote.bundle?{...deep(remote.bundle),status:'draft'}:createCourseDraft(id,display);baseVersion=expectedVersion;status(remote.bundle?'Published version loaded for editing.':'New blank course draft.');}
   u=0;l=0;n=0;preview=false;$('#cl-preview').hidden=true;render();
-  liveStatus(remote.version?'Published v'+remote.version:'Not published');
+  liveStatus(remote.published?'Published v'+remote.version:remote.version?'Unpublished · last version '+remote.version:'Not published');
  }
  const setField=(target)=>{
   if(target.id==='cl-title'){draft.title=target.value;queueSave();return;}
@@ -175,7 +175,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   if(!expectedVersion)return status('This course is not currently published.',true);
   if(!confirm('Unpublish '+draft.title+'? The public course will disappear. Existing saved learner progress will not be deleted.'))return;
   setBusy(true);
-  try{await getPublisher().unpublishLearnCourse(courseId,expectedVersion);expectedVersion=0;baseVersion=0;save();liveStatus('Unpublished. Public Learn will update after deployment.');notify('Course unpublished.');}
+  try{await getPublisher().unpublishLearnCourse(courseId,expectedVersion);baseVersion=expectedVersion;save();liveStatus('Unpublished. Public Learn will update after deployment.');notify('Course unpublished.');}
   catch(err){liveStatus('Unpublish failed: '+err.message);}
   finally{setBusy(false);}
  }
