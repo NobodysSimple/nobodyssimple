@@ -63,7 +63,10 @@ export function gradeLearnItem(item,response){
   valid=isObject(response)&&Array.isArray(item.checks)&&item.checks.length>0&&item.checks.every(check=>check.options?.some(choice=>choice.id===response[check.id]));
   correct=valid&&item.checks.every(check=>check.answer===response[check.id]);
  }
- return {valid:!!valid,correct:!!correct,explanation:item.explanation||'',counterexample:item.counterexample||''};
+ const choice=['choose','respond','repair','investigate'].includes(item.type)?item.options?.find(o=>o.id===response):null;
+ const selected=choice?.feedback?String(choice.feedback):'';
+ const explanation=selected?(selected+(correct?'':'\n\n'+(item.explanation||''))):(item.explanation||'');
+ return {valid:!!valid,correct:!!correct,explanation,counterexample:item.counterexample||''};
 }
 export function learnLessonScore(lesson,responses){
  const items=learningNodes(lesson).filter(item=>QUESTION_TYPES.includes(item.type));
