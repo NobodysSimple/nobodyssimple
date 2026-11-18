@@ -7,6 +7,7 @@ import {LEARN_COURSES} from './ns-learn-catalog-v2.mjs';
 import {COURSE_LAB_TYPES,createCourseDraft,newCourseUnit,newCourseLesson,createCourseNode,
  makeCourseId,validateCourseForPublish,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderLearnLesson} from './ns-learn-player-v2.mjs';
+import {readCourseLabDraft,saveCourseLabDraft,deleteCourseLabDraft} from './studio-course-lab-drafts.mjs';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const types=Object.fromEntries(COURSE_LAB_TYPES.map(x=>[x.id,x]));
 const key=id=>'ns-course-lab-draft-v1:'+id;
@@ -74,9 +75,9 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  const selectedUnit=()=>draft?.modules?.[u]||null;
  const selectedLesson=()=>selectedUnit()?.lessons?.[l]||null;
  const selectedNode=()=>selectedLesson()?.nodes?.[n]||null;
- const local=()=>{try{const value=JSON.parse(localStorage.getItem(key(courseId))||'null');return value?.draft?.id===courseId?value:null;}catch{return null;}};
- const save=()=>{if(!draft)return;try{localStorage.setItem(key(courseId),JSON.stringify({draft,baseVersion,updatedAt:new Date().toISOString()}));status('Saved to this browser');}catch{status('Browser storage is full. Export a backup before leaving.',true);}};
- const queueSave=()=>{clearTimeout(saveTimer);saveTimer=setTimeout(save,400);status('Unsaved changes…');};
+ const local=()=>readCourseLabDraft(courseId);
+ const save=async()=>{if(!draft)return;const id=courseId,value={draft:deep(draft),baseVersion,updatedAt:new Date().toISOString()};try{await saveCourseLabDraft(id,value);if(courseId===id)status('Draft saved to this device');}catch(err){status(err.message,true);}};
+ const queueSave=()=>{clearTimeout(saveTimer);saveTimer=setTimeout(()=>void save(),400);status('Unsaved changes…');};
  const renderOutline=()=>{
   $('#cl-units').innerHTML=(draft?.modules||[]).map((unit,ui)=>'<div class="cl-unit '+(ui===u?'selected':'')+'"><div class="cl-unit-row"><button type="button" data-act="select-unit" data-u="'+ui+'">'+esc(unit.title||'Untitled unit')+'</button><div><button type="button" aria-label="Move unit up" data-act="unit-up" data-u="'+ui+'" '+(ui===0?'disabled':'')+'>↑</button><button type="button" aria-label="Move unit down" data-act="unit-down" data-u="'+ui+'" '+(ui===draft.modules.length-1?'disabled':'')+'>↓</button><button type="button" aria-label="Remove unit" data-act="delete-unit" data-u="'+ui+'">×</button></div></div>'+
    (unit.lessons||[]).map((lesson,li)=>'<button type="button" class="cl-lesson-link '+(ui===u&&li===l?'active':'')+'" data-act="select-lesson" data-u="'+ui+'" data-l="'+li+'">'+(li+1)+'. '+esc(lesson.title||'Untitled lesson')+' <small>'+(lesson.nodes?.length||0)+' nodes</small></button>').join('')+'</div>').join('')||'<p class="cl-hint">Add a unit to start your course.</p>';
@@ -96,9 +97,9 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  const render=()=>{renderOutline();renderSequence();};
  const move=(arr,from,to)=>{if(!arr||to<0||to>=arr.length)return false;[arr[from],arr[to]]=[arr[to],arr[from]];return true;};
  async function loadCourse(id,{force=false}={}){
-  if(busy)return;const ticket=++loading;clearTimeout(saveTimer);if(draft)save();
+  if(busy)return;const ticket=++loading;clearTimeout(saveTimer);if(draft)await save();
   courseId=id;$('#cl-course').value=id;status('Loading course…');
-  const localDraft=!force?local():null;const display=LEARN_COURSES.find(c=>c.id===id)?.title||id;
+  const localDraft=!force?await local():null;const display=LEARN_COURSES.find(c=>c.id===id)?.title||id;
   const p=getPublisher();let remote={version:0,bundle:null};
   try{if(p)remote=await p.readLearnCourse(id);}catch(err){status('GitHub version could not be checked: '+err.message,true);}
   if(ticket!==loading)return;
@@ -154,7 +155,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   'close-media':()=>$('#cl-media-dialog').close(),
   'preview':()=>{const lesson=selectedLesson();if(!lesson||!lesson.nodes.length){status('Add some lesson nodes before previewing.',true);return;}preview=true;$('#cl-preview').hidden=false;renderLearnLesson($('#cl-preview-host'),courseId,lesson.id,{bundleOverride:{...draft,status:'published',version:expectedVersion||1},preview:true});$('#cl-preview').scrollIntoView({behavior:'smooth',block:'start'});},
   'close-preview':()=>{preview=false;$('#cl-preview').hidden=true;},
-  'load':()=>{if(confirm('Discard your local draft and load the most recently published course?')){localStorage.removeItem(key(courseId));draft=null;void loadCourse(courseId,{force:true});}},
+  'load':()=>{if(confirm('Discard your local draft and load the most recently published course?')){const id=courseId;draft=null;void deleteCourseLabDraft(id).then(()=>loadCourse(id,{force:true}));}},
   'export':()=>{const blob=new Blob([JSON.stringify(draft,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='course-lab-'+courseId+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);},
   'publish':()=>void publish(),
   'unpublish':()=>void unpublish()
