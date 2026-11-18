@@ -7,7 +7,7 @@ Updated 18 November 2026. The **Course Lab** lives at `staff.html` behind the ex
 3. Edit the public title and summary. Click **＋ Unit** to create an ordered unit and **＋ Lesson** to create a lesson inside it.
 4. Add any number of nodes to each lesson, mixing reading pages, images, and exercises in the exact desired order.
 5. Select a node in the centre panel to edit the template's fields in the right inspector. Move nodes up/down or drag them to reorder; duplicate and delete are supported. Lessons and units also have move controls.
-6. **Save draft** stores the entire course locally in this browser. Drafts are also autosaved. **Export** creates a JSON backup. **Import** restores that same course's draft from a JSON file.
+6. **Save draft** stores the entire course locally in this browser using IndexedDB (with a localStorage fallback). Drafts are also autosaved, and large unfinished courses do not compete for the browser's small localStorage quota. **Export** creates a JSON backup. **Import** restores that same course's draft from a JSON file.
 7. **Preview lesson** runs the actual public Learn player without saving learner progress. Complete every exercise and inspect explanations before publishing.
 8. **Publish course** validates the complete course and commits one versioned `learn-content/courses/{courseId}.json` bundle and `learn-content/index.json` index **in the same GitHub commit**.
 9. After GitHub Pages deploys, the correct Learn card shows the published course and its lessons at `#learn/course/{courseId}`. Opening the lesson uses `#learn/lesson/{courseId}/{lessonId}`.
