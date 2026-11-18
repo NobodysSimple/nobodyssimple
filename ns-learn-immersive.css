@@ -178,3 +178,15 @@ body:has(.ns-learn-player--immersive){overflow:hidden!important}
 @media(prefers-reduced-motion:reduce){
  :is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive, #cl-preview-host .ns-learn-player--immersive) *{animation:none!important;transition:none!important}
 }
+
+/* New hypothesis-revision, ranking and dual-perspective modes retained from the
+ * previously published two-lesson launch. Keep them dark even in light site mode. */
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) :is(.ns-learn-player__new-evidence,.ns-learn-player__viewpoints>div,.ns-learn-player__takeaway){
+ background:#203a36!important;color:#f0f6ed!important;border:1px solid #5f8775!important;border-radius:15px;padding:16px 18px;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__viewpoints{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:15px 0 20px;
+}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) :is(.ns-learn-player__new-evidence p,.ns-learn-player__viewpoints p,.ns-learn-player__takeaway p){color:#f0f6ed!important;margin:8px 0 0!important}
+:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) :is(.ns-learn-player__new-evidence strong,.ns-learn-player__viewpoints strong,.ns-learn-player__takeaway strong){color:#d4f0d7!important}
+@media(max-width:550px){:is(body.app-body.ns-shell-v1 #main .ns-learn-player--immersive,#cl-preview-host .ns-learn-player--immersive) .ns-learn-player__viewpoints{grid-template-columns:1fr}}
