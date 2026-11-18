@@ -138,10 +138,10 @@ export class Publisher {
 
   async readLearnCourse(courseId) {
     if(!/^[a-z0-9][a-z0-9-]{0,119}$/.test(courseId))throw Error('Invalid course ID.');
-    const {index}=await this.readLearnManifest();
+    const {index,head}=await this.readLearnManifest();
     const version=index.courses[courseId]?.version||0;
     if(!version)return {version:0,bundle:null,published:false};
-    const file=await this.api(this.base+'/contents/learn-content/courses/'+courseId+'.json?ref='+this.branch);
+    const file=await this.api(this.base+'/contents/learn-content/courses/'+courseId+'.json?ref='+head);
     const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\s/g,'')),c=>c.charCodeAt(0));
     return {version,bundle:JSON.parse(new TextDecoder().decode(bytes)),published:index.courses[courseId]?.status!=='unpublished'};
   }
