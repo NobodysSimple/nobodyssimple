@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "motivation-m1-node-1-check1-alternative-1",
-                      "label": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "Lena may be allocating time to organise notes because that work feels productive and offers clearer progress than drafting.",
+                      "feedback": "Preparation can be useful; its function changes if it repeatedly postpones the difficult section."
                     },
                     {
                       "id": "motivation-m1-node-1-check1-alternative-2",
-                      "label": "Starting the task triggers discomfort about producing an inadequate response. Avoiding the first step reduces that discomfort immediately, making delay tempting again.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation. is more directly tied to the words in this scene. Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone."
                     }
                   ],
                   "answer": "motivation-m1-node-1-check1-opt1",
@@ -904,21 +904,24 @@
                   "options": [
                     {
                       "id": "motivation-m1-node-1-check2-opt2",
-                      "label": "Reorganise the notes one last time until the answer feels clearer.",
-                      "reply": "What if you wrote two bad sentences nobody else has to see?",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Speak an imperfect answer aloud and transcribe the useful parts before editing the wording.",
+                      "reply": "Did you stop there?",
+                      "consequence": "This changes the starting format, although the written application still needs its own revision.",
+                      "feedback": "This changes the starting format, although the written application still needs its own revision."
                     },
                     {
                       "id": "motivation-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Have you tried a rough draft of that part?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Choose the hardest sentence in the section and draft a deliberately provisional version before reorganising the notes.",
+                      "reply": "Did you stop there?",
+                      "consequence": "Directly engaging the avoided task may help, but the best first step may be smaller.",
+                      "feedback": "Directly engaging the avoided task may help, but the best first step may be smaller."
                     },
                     {
                       "id": "motivation-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "Did you stop there?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "motivation-m1-node-1-check2-opt1",
@@ -927,9 +930,11 @@
                       "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
                     },
                     {
-                      "id": "motivation-m1-node-1-check2-alternative-1",
-                      "label": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "id": "motivation-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "Did you stop there?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "motivation-m1-node-1-check2-opt1",
@@ -1067,7 +1072,8 @@
               "changes": [
                 {
                   "id": "motivation-m1-plan-opt2",
-                  "label": "Reorganise the notes one last time until the answer feels clearer."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 },
                 {
                   "id": "motivation-m1-plan-opt3",
@@ -1126,8 +1132,8 @@
                 },
                 {
                   "id": "motivation-m1-node-7-alternative-1",
-                  "label": "Check whether Dev also struggles to initiate non-evaluative forms of similar length.",
-                  "feedback": "The contrast could help separate writing anxiety from general initiation demands."
+                  "label": "Compare statements made at the time with each person’s later recollection.",
+                  "feedback": "A contemporaneous record can help separate a mistaken memory from a disputed interpretation."
                 }
               ],
               "answer": "motivation-m1-repair-opt1"
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "motivation-m1-node-8-check1-alternative-1",
-                      "label": "Dev may be committed to the placement but have difficulty organising a multi-step task without external structure.",
-                      "feedback": "Executive demands could explain initiation, particularly if structure reliably changes performance."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "motivation-m1-node-8-check1-alternative-2",
-                      "label": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "motivation-m1-node-8-check1-opt1",
@@ -1248,8 +1254,8 @@
                 },
                 {
                   "id": "motivation-m1-node-9-alternative-1",
-                  "label": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "motivation-m1-new-opt1"
@@ -1322,8 +1328,8 @@
                 },
                 {
                   "id": "motivation-m1-node-10-alternative-1",
-                  "label": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "motivation-m1-view-opt1"
@@ -1402,8 +1408,8 @@
                 },
                 {
                   "id": "motivation-m1-node-14-evidence-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Lena may be allocating time to organise notes because that work feels productive and offers clearer progress than drafting.",
+                  "feedback": "Preparation can be useful; its function changes if it repeatedly postpones the difficult section."
                 }
               ],
               "evidenceAnswer": "motivation-m1-transfer-e-opt1",
@@ -1422,8 +1428,8 @@
                 },
                 {
                   "id": "motivation-m1-node-14-response-alternative-1",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Speak an imperfect answer aloud and transcribe the useful parts before editing the wording.",
+                  "feedback": "This changes the starting format, although the written application still needs its own revision."
                 }
               ],
               "responseAnswer": "motivation-m1-transfer-a-opt1"
@@ -1558,8 +1564,8 @@
                 },
                 {
                   "id": "motivation-m1-l3-n3-alternative-1",
-                  "label": "Starting the task triggers discomfort about producing an inadequate response. Avoiding the first step reduces that discomfort immediately, making delay tempting again.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The instructions may lack enough detail to make it clear what counts as an acceptable personal statement.",
+                  "feedback": "Uncertainty about requirements is plausible, though Dev says he largely understands them."
                 }
               ],
               "answer": "motivation-m1-l3-n3-opt2",
@@ -1597,8 +1603,8 @@
                 },
                 {
                   "id": "motivation-m1-l3-n4-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Dev may be committed to the placement but have difficulty organising a multi-step task without external structure.",
+                  "feedback": "Executive demands could explain initiation, particularly if structure reliably changes performance."
                 }
               ],
               "answer": "motivation-m1-l3-n4-opt2",
@@ -1628,13 +1634,13 @@
                 },
                 {
                   "id": "motivation-m1-l3-n5-evidence-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "motivation-m1-l3-n5-evidence-alternative-2",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "motivation-m1-l3-n5-evidence-opt2",
@@ -1651,13 +1657,13 @@
                 },
                 {
                   "id": "motivation-m1-l3-n5-response-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "What specifically makes the first text box harder than the rest of the form?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "motivation-m1-l3-n5-response-alternative-2",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "motivation-m1-l3-n5-response-opt2"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "motivation-m1-l4-n2-question-opt3",
-                      "label": "Starting the task triggers discomfort about producing an inadequate response. Avoiding the first step reduces that discomfort immediately, making delay tempting again.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     },
                     {
                       "id": "motivation-m1-l4-n2-question-opt4",
@@ -1773,8 +1779,8 @@
                     },
                     {
                       "id": "motivation-m1-l4-n2-question-alternative-2",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "Dev may be avoiding an evaluative writing task because it exposes him to the possibility of producing something inadequate.",
+                      "feedback": "This fits his account of the first sentence, but other task demands could also contribute."
                     }
                   ],
                   "answer": "motivation-m1-l4-n2-question-opt2",
@@ -1815,8 +1821,8 @@
                 },
                 {
                   "id": "motivation-m1-l4-n3-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Check whether Dev also struggles to initiate non-evaluative forms of similar length.",
+                  "feedback": "The contrast could help separate writing anxiety from general initiation demands."
                 }
               ],
               "answer": "motivation-m1-l4-n3-opt2",
@@ -1854,8 +1860,8 @@
                 },
                 {
                   "id": "motivation-m1-l4-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "motivation-m1-l4-n4-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "motivation-m1-l4-n6-alternative-1",
-                  "label": "Dev may be avoiding an evaluative writing task because it exposes him to the possibility of producing something inadequate.",
-                  "feedback": "This fits his account of the first sentence, but other task demands could also contribute."
+                  "label": "The application may lack accessible instructions or contain genuinely unclear requirements that prevent Dev from starting.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "motivation-m1-l4-n6-opt2"
@@ -1973,13 +1979,13 @@
                 },
                 {
                   "id": "motivation-m1-l5-n2-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 },
                 {
                   "id": "motivation-m1-l5-n2-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "motivation-m1-l5-n2-evidence-opt2",
@@ -1996,13 +2002,13 @@
                 },
                 {
                   "id": "motivation-m1-l5-n2-response-alternative-1",
-                  "label": "What specifically makes the first text box harder than the rest of the form?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 },
                 {
                   "id": "motivation-m1-l5-n2-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "motivation-m1-l5-n2-response-opt2"
@@ -2029,8 +2035,8 @@
                 },
                 {
                   "id": "motivation-m1-l5-n4-opt3",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Dev may be avoiding an evaluative writing task because it exposes him to the possibility of producing something inadequate.",
+                  "feedback": "This fits his account of the first sentence, but other task demands could also contribute."
                 },
                 {
                   "id": "motivation-m1-l5-n4-opt4",
@@ -2039,8 +2045,8 @@
                 },
                 {
                   "id": "motivation-m1-l5-n4-alternative-2",
-                  "label": "Dev may be avoiding an evaluative writing task because it exposes him to the possibility of producing something inadequate.",
-                  "feedback": "This fits his account of the first sentence, but other task demands could also contribute."
+                  "label": "The instructions may lack enough detail to make it clear what counts as an acceptable personal statement.",
+                  "feedback": "Uncertainty about requirements is plausible, though Dev says he largely understands them."
                 }
               ],
               "answer": "motivation-m1-l5-n4-opt2",
@@ -2069,8 +2075,8 @@
                 },
                 {
                   "id": "motivation-m1-l5-n3-change-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "outcomes": [
@@ -2126,8 +2132,8 @@
                 },
                 {
                   "id": "motivation-m1-l5-n5-alternative-1",
-                  "label": "Dev may be avoiding an evaluative writing task because it exposes him to the possibility of producing something inadequate.",
-                  "feedback": "This fits his account of the first sentence, but other task demands could also contribute."
+                  "label": "The instructions may lack enough detail to make it clear what counts as an acceptable personal statement.",
+                  "feedback": "Uncertainty about requirements is plausible, though Dev says he largely understands them."
                 }
               ],
               "answer": "motivation-m1-l5-n5-opt2",
@@ -2165,8 +2171,8 @@
                 },
                 {
                   "id": "motivation-m1-l5-n6-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Check whether Dev also struggles to initiate non-evaluative forms of similar length.",
+                  "feedback": "The contrast could help separate writing anxiety from general initiation demands."
                 }
               ],
               "answer": "motivation-m1-l5-n6-opt2"
@@ -2220,8 +2226,8 @@
                 },
                 {
                   "id": "motivation-m1-l6-n2-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "What specifically makes the first text box harder than the rest of the form?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "motivation-m1-l6-n2-opt2"
@@ -2301,8 +2307,8 @@
                 },
                 {
                   "id": "motivation-m1-l6-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Check whether Dev also struggles to initiate non-evaluative forms of similar length.",
+                  "feedback": "The contrast could help separate writing anxiety from general initiation demands."
                 }
               ],
               "answer": "motivation-m1-l6-n4-opt2",
