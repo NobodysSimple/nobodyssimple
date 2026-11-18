@@ -130,7 +130,7 @@ export class Publisher {
     const head=ref.object.sha;
     const commit=await this.api(this.base+'/git/commits/'+head);
     const file=await this.api(this.base+'/contents/learn-content/index.json?ref='+head);
-    const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\\s/g,'')),c=>c.charCodeAt(0));
+    const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\s/g,'')),c=>c.charCodeAt(0));
     const index=JSON.parse(new TextDecoder().decode(bytes));
     if(index.version!==1||!index.courses||typeof index.courses!=='object'||Array.isArray(index.courses))throw Error('Course index format changed. Reload Course Lab before publishing.');
     return {head,tree:commit.tree.sha,index};
@@ -142,7 +142,7 @@ export class Publisher {
     const version=index.courses[courseId]?.version||0;
     if(!version)return {version:0,bundle:null};
     const file=await this.api(this.base+'/contents/learn-content/courses/'+courseId+'.json?ref='+this.branch);
-    const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\\s/g,'')),c=>c.charCodeAt(0));
+    const bytes=Uint8Array.from(atob(String(file.content||'').replace(/\s/g,'')),c=>c.charCodeAt(0));
     return {version,bundle:JSON.parse(new TextDecoder().decode(bytes))};
   }
 
