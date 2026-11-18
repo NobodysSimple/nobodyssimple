@@ -318,13 +318,14 @@
               "correctChange": "loneliness-m1-plan-opt1",
               "correctOutcome": "loneliness-m1-outcome-opt1"
             }
-          ]
+          ],
+          "takeaway": "The number of people around you says little about whether you feel known by anyone."
         },
         {
           "id": "loneliness-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Jon goes to several social events a week but describes feeling lonely. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of being surrounded yet feeling alone with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -599,7 +600,8 @@
               ],
               "answer": "loneliness-m1-test-opt1"
             }
-          ]
+          ],
+          "takeaway": "A small, honest disclosure can tell you more about a friendship than another crowded evening."
         }
       ]
     }

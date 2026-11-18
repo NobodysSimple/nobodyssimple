@@ -318,13 +318,14 @@
               ],
               "answer": "masculinity-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "A category cannot tell you a characteristic that nobody actually measured."
         },
         {
           "id": "masculinity-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Two research assistants are designing a demographic question for a health study. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of sex characteristics and variation with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "answer": "masculinity-m1-test-opt1"
             }
-          ]
+          ],
+          "takeaway": "Good research asks about the characteristic the question requires rather than assuming a label contains it."
         }
       ]
     }

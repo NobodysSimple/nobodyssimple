@@ -318,13 +318,14 @@
               ],
               "answer": "sleep-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "Time spent in bed is not the same thing as a body being ready to sleep."
         },
         {
           "id": "sleep-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Nora woke just after noon and is trying to sleep at nine in the evening. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of sleep pressure accumulated through waking with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -599,7 +600,8 @@
               ],
               "responseAnswer": "sleep-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "An earlier bedtime may achieve little if the pattern of waking hasn't changed."
         }
       ]
     }

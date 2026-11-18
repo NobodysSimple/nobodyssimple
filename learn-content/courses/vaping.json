@@ -318,13 +318,14 @@
               "correctChange": "vaping-m1-plan-opt1",
               "correctOutcome": "vaping-m1-outcome-opt1"
             }
-          ]
+          ],
+          "takeaway": "A group can make a behaviour seem expected without anybody explicitly asking you to join in."
         },
         {
           "id": "vaping-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: At a gathering, most of Pip's friends vape, though none explicitly asks Pip to try. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of conformity without direct coercion with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -599,7 +600,8 @@
               ],
               "responseAnswer": "vaping-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "What everyone appears to do and what you actually want are different questions."
         }
       ]
     }

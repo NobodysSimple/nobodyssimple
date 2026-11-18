@@ -318,13 +318,14 @@
               ],
               "answer": "social-media-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "A feed can keep you watching by removing the moment when you'd usually decide whether to continue."
         },
         {
           "id": "social-media-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Ada intended to watch one short cooking clip before going to sleep. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of infinite scroll and delayed stopping cues with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "responseAnswer": "social-media-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "Making the next swipe less automatic can restore a decision you didn't realise you were skipping."
         }
       ]
     }

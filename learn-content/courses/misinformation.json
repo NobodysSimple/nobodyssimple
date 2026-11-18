@@ -318,13 +318,14 @@
               ],
               "answer": "misinformation-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "Ten copies of one assertion are still one assertion."
         },
         {
           "id": "misinformation-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: A claim about the local water supply is spreading through a group chat. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of familiarity mistaken for truth with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "answer": "misinformation-m1-test-opt1"
             }
-          ]
+          ],
+          "takeaway": "A claim becomes more convincing when its sources are independent, not merely familiar."
         }
       ]
     }

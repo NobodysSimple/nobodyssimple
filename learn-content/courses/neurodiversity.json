@@ -318,13 +318,14 @@
               "correctChange": "neurodiversity-m1-plan-opt1",
               "correctOutcome": "neurodiversity-m1-outcome-opt1"
             }
-          ]
+          ],
+          "takeaway": "Sometimes the obstacle is the way a task is organised rather than the person's ability to do it."
         },
         {
           "id": "neurodiversity-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Tavi struggles to follow cross-talk in a busy meeting and asks for advance notes. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of neurodiversity as population variation with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "responseAnswer": "neurodiversity-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "Changing an environment can improve access without changing what people are expected to achieve."
         }
       ]
     }

@@ -318,13 +318,14 @@
               "correctChange": "low-mood-m1-plan-opt1",
               "correctOutcome": "low-mood-m1-outcome-opt1"
             }
-          ]
+          ],
+          "takeaway": "A painful reaction to a loss deserves attention without being turned immediately into a diagnosis."
         },
         {
           "id": "low-mood-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Mara was rejected for a job she cared deeply about two days ago. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of sadness after disappointment with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "answer": "low-mood-m1-test-opt1"
             }
-          ]
+          ],
+          "takeaway": "Something that briefly protects you from sadness can sometimes leave you more isolated afterward."
         }
       ]
     }

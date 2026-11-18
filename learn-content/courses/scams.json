@@ -318,13 +318,14 @@
               ],
               "answer": "scams-m1-repair-opt1"
             }
-          ]
+          ],
+          "takeaway": "A stranger's deadline is a reason to verify the demand, not a reason to skip verification."
         },
         {
           "id": "scams-m1-l2",
           "version": 1,
           "title": "What would change your mind?",
-          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "teach": "Earlier: Alex receives a delivery text saying a parcel will be returned unless a small fee is paid within fifteen minutes. Now you will test whether later evidence changes the explanation. About five minutes.",
           "objective": "Test an account of time pressure and cognitive overload with new evidence and transfer it to a new case.",
           "editorialStatus": "ready",
           "recommendedType": "update",
@@ -615,7 +616,8 @@
               ],
               "responseAnswer": "scams-m1-transfer-a-opt1"
             }
-          ]
+          ],
+          "takeaway": "Independent checking gives you information that the person applying pressure does not control."
         }
       ]
     }
