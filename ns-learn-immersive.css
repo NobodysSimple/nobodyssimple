@@ -1,0 +1,180 @@
+/* Nobody's Simple · focused, dark learning surface.
+ * Scoped to the public Course Lab player; authoring remains fully editable.
+ */
+body:has(.ns-learn-player--immersive){overflow:hidden!important}
+body.app-body.ns-shell-v1 #main .ns-learn-player.ns-learn-player--immersive{
+ --lp-bg:#0d1821;--lp-panel:#15232c;--lp-line:#30434c;--lp-ink:#f1f5ef;
+ --lp-muted:#b3c5c2;--lp-gold:#e8c98e;--lp-mint:#8ed6af;
+ position:fixed!important;inset:0;z-index:100000!important;
+ width:100vw;max-width:none;min-height:100dvh;height:100dvh;
+ margin:0!important;padding:0!important;border:0!important;border-radius:0!important;
+ overflow:hidden;background:radial-gradient(circle at 20% 7%,#1d3841 0,transparent 34%),var(--lp-bg)!important;
+ color:var(--lp-ink)!important;font:500 16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ display:grid;place-items:center;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive *{box-sizing:border-box}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__surface{
+ width:min(100%,770px);height:100%;display:grid;grid-template-rows:auto minmax(0,1fr) auto;
+ padding:env(safe-area-inset-top) clamp(18px,4.5vw,42px) env(safe-area-inset-bottom);
+ z-index:1;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__header{
+ display:flex;align-items:center;gap:18px;min-height:79px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__back{
+ display:grid;place-items:center;flex:0 0 43px;width:43px;height:43px;border:1px solid var(--lp-line);
+ border-radius:13px;background:transparent;color:var(--lp-muted);text-decoration:none;font-size:30px;line-height:1;cursor:pointer;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__meter{
+ flex:1;height:12px;border-radius:20px;background:#2a3b42;overflow:hidden;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__meter i{
+ display:block;height:100%;border-radius:20px;min-width:0;
+ background:linear-gradient(90deg,#8cddb8,#bee49b);transition:width .2s ease;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__badge{
+ color:var(--lp-gold);font-size:24px;line-height:1;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__content{
+ min-height:0;min-width:0;overflow-y:auto;overscroll-behavior:contain;
+ scrollbar-width:thin;scrollbar-color:#405c5d transparent;
+ display:flex;flex-direction:column;justify-content:flex-start;
+ padding:clamp(12px,3vh,32px) 0 24px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive :is(.ns-learn-immersive__task,.ns-learn-immersive__welcome){
+ width:100%;max-width:650px;margin:auto;min-width:0;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive :is(h1,h2){
+ font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--lp-ink)!important;
+ letter-spacing:-.025em;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive h1{
+ font-size:clamp(24px,4vw,34px);font-weight:760;line-height:1.2;margin:10px 0 24px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive h2{font-size:18px;line-height:1.35}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive p{color:var(--lp-ink);line-height:1.6}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive :is(.ns-learn-player__eyebrow,.ns-learn-player__hint,.ns-learn-player__question-prompt,.ns-learn-immersive__helper){
+ color:var(--lp-muted)!important;letter-spacing:normal;font-size:13px;font-weight:650;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__question-prompt{
+ font-size:16px;font-weight:500;line-height:1.6;margin:0 0 18px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__footer{
+ min-height:91px;display:flex;align-items:center;justify-content:flex-end;gap:12px;
+ border-top:1px solid var(--lp-line);background:var(--lp-bg);padding:14px 0;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__primary{
+ display:flex;align-items:center;justify-content:center;min-height:54px;min-width:min(100%,230px);
+ text-decoration:none;border:0;border-bottom:4px solid #549f79;border-radius:15px;
+ padding:12px 28px;background:#9ce4b9;color:#11291e;font:800 16px/1.25 system-ui,sans-serif;
+ box-shadow:none;cursor:pointer;transition:filter .15s ease,transform .15s ease;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__primary:hover{filter:brightness(1.07)}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__primary:active{transform:translateY(2px);border-bottom-width:2px}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__choices{
+ display:grid;gap:10px;padding:0;border:0;margin:14px 0 6px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__choices label{
+ color:var(--lp-ink);border:1px solid #4b5d63;border-radius:14px;background:var(--lp-panel);
+ display:flex;align-items:center;min-height:58px;padding:13px 17px;gap:14px;cursor:pointer;
+ transition:border-color .15s ease,background .15s ease;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__choices label:has(input:checked){
+ border-color:var(--lp-mint);background:#234238;box-shadow:inset 0 0 0 1px var(--lp-mint);
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__choices input{
+ accent-color:#93dcb1;flex:0 0 auto;margin:0;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive :is(.ns-learn-player__segments button,.ns-learn-player__order,.ns-learn-player__pairs label){
+ color:var(--lp-ink);background:var(--lp-panel);border:1px solid var(--lp-line);border-radius:12px;padding:13px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__segments button[aria-pressed="true"]{
+ background:#2b5243;border-color:var(--lp-mint);color:#f1f7ed;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive :is(.ns-learn-player__order button,.ns-learn-player__reveal){
+ border:1px solid #62867b;color:#f0f5ed;background:#27443c;border-radius:12px;
+ min-height:44px;cursor:pointer;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__reveal{
+ display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;font-weight:750;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__reveal small{color:#d0e7d8;font-size:11px}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive :is(input[type=text],select){
+ background:#1d3038;color:#f0f5ec;border:1px solid #68877f;border-radius:10px;
+ min-height:45px;padding:10px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__pairs strong{color:#e9f3e7}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__feedback{
+ background:#213a35;border:1px solid #537e6b;border-left:4px solid #8bd5aa;border-radius:14px;
+ padding:17px;margin:20px 0 10px;color:#eff9ed;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__feedback :is(strong,p,small){color:#eef5e9}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__feedback small{color:#c8dcd0;line-height:1.6}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__branch{background:#34403b;color:#fff;border-color:#647968}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__reading{margin:14px 0;max-width:60ch}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__reading p{font-size:16px;line-height:1.7;margin:0 0 14px}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__reading :is(h2,strong){color:var(--lp-ink)}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-intro{color:var(--lp-muted);font-size:15px;line-height:1.55;margin:0 0 19px}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-now{
+ min-height:130px;display:flex;align-items:center;justify-content:center;margin:12px 0 20px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-line{
+ max-width:min(100%,570px);width:100%;padding:19px 22px;
+ background:#23453f;border:1px solid #5c9380;color:#f0f8f1;
+ border-radius:21px 21px 21px 6px;box-shadow:0 10px 26px rgba(0,0,0,.12);
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-line[data-speaker="b"]{
+ background:#473d35;color:#fff4e9;border-color:#977d62;border-radius:21px 21px 6px 21px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-line p{color:inherit!important;line-height:1.6!important;font-size:17px}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-speaker{color:var(--lp-gold);font-size:12px}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-history{
+ border-top:1px solid var(--lp-line);margin-top:18px;padding-top:12px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-history summary{
+ cursor:pointer;color:var(--lp-muted);font-size:13px;min-height:38px;list-style:none;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-history summary:before{content:"▸ ";color:var(--lp-mint)}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-history[open] summary:before{content:"▾ "}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-history ol{
+ list-style:none;padding:0;display:grid;gap:10px;max-height:250px;overflow:auto;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-history li{margin:0}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-history .ns-learn-player__dialogue-line{padding:12px 15px}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-history .ns-learn-player__dialogue-line p{font-size:14px!important}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-task{border-top:0;padding:0;margin:12px 0}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-task h2{color:var(--lp-ink)!important;font:750 21px/1.4 system-ui,sans-serif}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-focus{
+ margin:0 0 16px;padding:11px 14px;border-left:3px solid #bbd9b8;background:#233931;color:#f0f6ec;font-size:14px;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-spotlight{color:var(--lp-muted)}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__welcome{max-width:580px;text-align:center}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__welcome h1{margin-top:12px}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__welcome-art{
+ margin:0 auto 14px;width:102px;height:102px;border-radius:50%;display:grid;place-items:center;
+ background:#263f3d;border:1px solid #517468;overflow:hidden;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__portrait{
+ display:block;width:100%;aspect-ratio:1;background-image:url("media/lifelab/companions.png");
+ background-size:400% 500%;background-position:var(--cast-x) var(--cast-y);background-repeat:no-repeat;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__portrait-img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__lead{color:#e6f1e8}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__reflect{color:#b7cfc0}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__decoration{
+ position:absolute;right:7%;bottom:7%;font-size:32px;opacity:.13;color:#a6d3b8;pointer-events:none;
+}
+body.app-body.ns-shell-v1 #main .ns-learn-player--immersive :is(button,a,input,select,summary):focus-visible{
+ outline:3px solid #e5cd87;outline-offset:4px;
+}
+@media(max-width:600px){
+ body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__surface{padding-inline:18px}
+ body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__header{min-height:65px}
+ body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-immersive__footer{min-height:84px}
+ body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__primary{width:100%;min-width:0}
+ body.app-body.ns-shell-v1 #main .ns-learn-player--immersive .ns-learn-player__dialogue-line p{font-size:16px}
+ body.app-body.ns-shell-v1 #main .ns-learn-player--immersive h1{margin:7px 0 18px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.app-body.ns-shell-v1 #main .ns-learn-player--immersive *{animation:none!important;transition:none!important}
+}
