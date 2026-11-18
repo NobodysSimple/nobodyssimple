@@ -905,9 +905,10 @@
                   "options": [
                     {
                       "id": "neurodiversity-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Offer a limited trial of one practical adjustment while keeping the original concern open for review.",
                       "reply": "What changed?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "A trial can provide information, but it may not solve a situation that requires a clear immediate answer.",
+                      "feedback": "A trial can provide information, but it may not solve a situation that requires a clear immediate answer."
                     },
                     {
                       "id": "neurodiversity-m1-node-1-check2-opt1",
@@ -917,20 +918,24 @@
                     },
                     {
                       "id": "neurodiversity-m1-node-1-check2-opt2",
-                      "label": "Reduce Tavi's responsibilities rather than changing the meeting format.",
-                      "reply": "So we could change the format without changing what the meeting is meant to achieve.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                      "reply": "What changed?",
+                      "consequence": "A jointly agreed next step is reasonable, though the other person may still decline.",
+                      "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                     },
                     {
                       "id": "neurodiversity-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Would you prefer joining remotely?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                      "reply": "What changed?",
+                      "consequence": "This can reveal different priorities, but it may also delay an urgent factual correction.",
+                      "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                     },
                     {
-                      "id": "neurodiversity-m1-node-1-check2-alternative-1",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "id": "neurodiversity-m1-node-1-check2-alternative-4",
+                      "label": "Trial an agenda with clear speaking turns and check whether Tavi can participate without reducing responsibilities.",
+                      "feedback": "This addresses the format while retaining the role, though Tavi may still need personal adjustments.",
+                      "reply": "What changed?",
+                      "consequence": "This addresses the format while retaining the role, though Tavi may still need personal adjustments."
                     }
                   ],
                   "answer": "neurodiversity-m1-node-1-check2-opt1",
@@ -1083,8 +1088,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-node-7-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Observe what happens after a clear and workable alternative is offered.",
+                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
                 }
               ],
               "answer": "neurodiversity-m1-repair-opt1"
@@ -1105,7 +1110,8 @@
               "changes": [
                 {
                   "id": "neurodiversity-m1-plan-opt2",
-                  "label": "Reduce Tavi's responsibilities rather than changing the meeting format."
+                  "label": "Provide written notes in advance and invite feedback on whether they help during the actual meeting.",
+                  "feedback": "This respects the request but may not solve overlapping speech in the session itself."
                 },
                 {
                   "id": "neurodiversity-m1-plan-opt3",
@@ -1202,13 +1208,13 @@
                     },
                     {
                       "id": "neurodiversity-m1-node-8-check1-alternative-1",
-                      "label": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although The meeting format may create avoidable processing demands that limit Tavi's participation. is more directly tied to the words in this scene. An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements."
                     },
                     {
                       "id": "neurodiversity-m1-node-8-check1-alternative-2",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although The meeting format may create avoidable processing demands that limit Tavi's participation. is more directly tied to the words in this scene. An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements."
                     }
                   ],
                   "answer": "neurodiversity-m1-node-8-check1-opt1",
@@ -1295,8 +1301,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-node-10-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Tavi may be worried about speaking in a high-pressure group rather than having difficulty processing cross-talk.",
+                  "feedback": "Social evaluation could contribute; the advance-note request and description of overlapping speech point to a distinct issue."
                 }
               ],
               "answer": "neurodiversity-m1-view-opt1"
@@ -1333,8 +1339,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-node-9-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                  "feedback": "This is a reasonable line of inquiry, although The meeting format may create avoidable processing demands that limit Tavi's participation. is more directly tied to the words in this scene. An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements."
                 }
               ],
               "answer": "neurodiversity-m1-new-opt1"
@@ -1370,8 +1376,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-node-13-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Check whether the speakers had agreed on the practical expectation before the exchange.",
+                  "feedback": "The agreement may determine whether the original request was reasonable, although not why the response was so strong."
                 }
               ],
               "answer": "neurodiversity-m1-test-opt1"
@@ -1440,8 +1446,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-node-14-evidence-alternative-1",
-                  "label": "Different sensory preferences may be partly shaped by tasks or experiences rather than by diagnostic category alone.",
-                  "feedback": "Environmental context matters and can change what is helpful."
+                  "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                  "feedback": "This is a reasonable line of inquiry, although The meeting format may create avoidable processing demands that limit Tavi's participation. is more directly tied to the words in this scene. An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements."
                 }
               ],
               "evidenceAnswer": "neurodiversity-m1-transfer-e-opt1",
@@ -1460,8 +1466,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-node-14-response-alternative-1",
-                  "label": "Ask staff which task is affected by an environmental feature before deciding whether a diagnostic label matters.",
-                  "feedback": "This keeps the intervention tied to functional needs; diagnosis may still be relevant in some formal processes."
+                  "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                  "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                 }
               ],
               "responseAnswer": "neurodiversity-m1-transfer-a-opt1"
@@ -1559,8 +1565,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l3-n3-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "neurodiversity-m1-l3-n3-opt2",
@@ -1598,8 +1604,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l3-n4-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "neurodiversity-m1-l3-n4-opt2",
@@ -1629,13 +1635,13 @@
                 },
                 {
                   "id": "neurodiversity-m1-l3-n5-evidence-alternative-1",
-                  "label": "A shared diagnosis may predict some common barriers while leaving substantial individual differences.",
-                  "feedback": "Group trends can be useful in design, but do not prescribe an adjustment for every member."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 },
                 {
                   "id": "neurodiversity-m1-l3-n5-evidence-alternative-2",
-                  "label": "Different sensory preferences may be partly shaped by tasks or experiences rather than by diagnostic category alone.",
-                  "feedback": "Environmental context matters and can change what is helpful."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "neurodiversity-m1-l3-n5-evidence-opt2",
@@ -1652,13 +1658,13 @@
                 },
                 {
                   "id": "neurodiversity-m1-l3-n5-response-alternative-1",
-                  "label": "Offer a small menu of work-environment adjustments and ask employees to test what removes barriers.",
-                  "feedback": "Choice addresses variation, although organisations must also consider feasibility and accessibility."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 },
                 {
                   "id": "neurodiversity-m1-l3-n5-response-alternative-2",
-                  "label": "Ask staff which task is affected by an environmental feature before deciding whether a diagnostic label matters.",
-                  "feedback": "This keeps the intervention tied to functional needs; diagnosis may still be relevant in some formal processes."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "neurodiversity-m1-l3-n5-response-opt2"
@@ -1764,8 +1770,8 @@
                     },
                     {
                       "id": "neurodiversity-m1-l4-n2-question-opt3",
-                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                      "label": "Different sensory preferences may be partly shaped by tasks or experiences rather than by diagnostic category alone.",
+                      "feedback": "Environmental context matters and can change what is helpful."
                     },
                     {
                       "id": "neurodiversity-m1-l4-n2-question-opt4",
@@ -1774,8 +1780,8 @@
                     },
                     {
                       "id": "neurodiversity-m1-l4-n2-question-alternative-2",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "Some adjustments might work for several groups, including people without formal diagnoses.",
+                      "feedback": "Universal design is compatible with individual consultation."
                     }
                   ],
                   "answer": "neurodiversity-m1-l4-n2-question-opt2",
@@ -1816,8 +1822,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l4-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "neurodiversity-m1-l4-n4-opt2",
@@ -1855,8 +1861,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l4-n3-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "neurodiversity-m1-l4-n3-opt2",
@@ -1927,8 +1933,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l4-n6-alternative-1",
-                  "label": "Some adjustments might work for several groups, including people without formal diagnoses.",
-                  "feedback": "Universal design is compatible with individual consultation."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "neurodiversity-m1-l4-n6-opt2"
@@ -1974,13 +1980,13 @@
                 },
                 {
                   "id": "neurodiversity-m1-l5-n2-evidence-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "A shared diagnosis may predict some common barriers while leaving substantial individual differences.",
+                  "feedback": "Group trends can be useful in design, but do not prescribe an adjustment for every member."
                 },
                 {
                   "id": "neurodiversity-m1-l5-n2-evidence-alternative-2",
-                  "label": "A shared diagnosis may predict some common barriers while leaving substantial individual differences.",
-                  "feedback": "Group trends can be useful in design, but do not prescribe an adjustment for every member."
+                  "label": "Different sensory preferences may be partly shaped by tasks or experiences rather than by diagnostic category alone.",
+                  "feedback": "Environmental context matters and can change what is helpful."
                 }
               ],
               "evidenceAnswer": "neurodiversity-m1-l5-n2-evidence-opt2",
@@ -1997,13 +2003,13 @@
                 },
                 {
                   "id": "neurodiversity-m1-l5-n2-response-alternative-1",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Offer a small menu of work-environment adjustments and ask employees to test what removes barriers.",
+                  "feedback": "Choice addresses variation, although organisations must also consider feasibility and accessibility."
                 },
                 {
                   "id": "neurodiversity-m1-l5-n2-response-alternative-2",
-                  "label": "Offer a small menu of work-environment adjustments and ask employees to test what removes barriers.",
-                  "feedback": "Choice addresses variation, although organisations must also consider feasibility and accessibility."
+                  "label": "Ask staff which task is affected by an environmental feature before deciding whether a diagnostic label matters.",
+                  "feedback": "This keeps the intervention tied to functional needs; diagnosis may still be relevant in some formal processes."
                 }
               ],
               "responseAnswer": "neurodiversity-m1-l5-n2-response-opt2"
@@ -2031,8 +2037,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l5-n3-change-alternative-1",
-                  "label": "Offer a small menu of work-environment adjustments and ask employees to test what removes barriers.",
-                  "feedback": "Choice addresses variation, although organisations must also consider feasibility and accessibility."
+                  "label": "Ask staff which task is affected by an environmental feature before deciding whether a diagnostic label matters.",
+                  "feedback": "This keeps the intervention tied to functional needs; diagnosis may still be relevant in some formal processes."
                 }
               ],
               "outcomes": [
@@ -2078,8 +2084,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l5-n4-opt3",
-                  "label": "Different sensory preferences may be partly shaped by tasks or experiences rather than by diagnostic category alone.",
-                  "feedback": "Environmental context matters and can change what is helpful."
+                  "label": "Some adjustments might work for several groups, including people without formal diagnoses.",
+                  "feedback": "Universal design is compatible with individual consultation."
                 },
                 {
                   "id": "neurodiversity-m1-l5-n4-opt4",
@@ -2088,8 +2094,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l5-n4-alternative-2",
-                  "label": "Some adjustments might work for several groups, including people without formal diagnoses.",
-                  "feedback": "Universal design is compatible with individual consultation."
+                  "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "neurodiversity-m1-l5-n4-opt2",
@@ -2127,8 +2133,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l5-n5-alternative-1",
-                  "label": "Some adjustments might work for several groups, including people without formal diagnoses.",
-                  "feedback": "Universal design is compatible with individual consultation."
+                  "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "neurodiversity-m1-l5-n5-opt2",
@@ -2166,8 +2172,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l5-n6-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "neurodiversity-m1-l5-n6-opt2"
@@ -2221,8 +2227,8 @@
                 },
                 {
                   "id": "neurodiversity-m1-l6-n2-alternative-1",
-                  "label": "Offer a small menu of work-environment adjustments and ask employees to test what removes barriers.",
-                  "feedback": "Choice addresses variation, although organisations must also consider feasibility and accessibility."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "answer": "neurodiversity-m1-l6-n2-opt2"
