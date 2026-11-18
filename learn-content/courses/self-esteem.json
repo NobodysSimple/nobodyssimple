@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "self-esteem-m1-node-1-check1-alternative-1",
-                      "label": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "Hal may believe the marking criteria were applied inconsistently and therefore distrust the feedback.",
+                      "feedback": "A procedural concern would require information about the assessment rather than inference from the failure alone."
                     },
                     {
                       "id": "self-esteem-m1-node-1-check1-alternative-2",
-                      "label": "Izzy turns specific performance feedback into a global judgement of herself. This broad evaluation can make ordinary learning tasks feel like tests of personal worth.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Hal may be treating a specific skill deficit as evidence of globally inadequate worth. is more directly tied to the words in this scene. The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist."
                     }
                   ],
                   "answer": "self-esteem-m1-node-1-check1-opt1",
@@ -910,26 +910,31 @@
                     },
                     {
                       "id": "self-esteem-m1-node-1-check2-opt2",
-                      "label": "Avoid talking about the mark until you feel confident about yourself again.",
-                      "reply": "Would a better risk section change what you think of yourself?",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Ask the assessor whether the mark reflects a weakness in risk formulation or also concerns the rest of the presentation.",
+                      "reply": "What would you tell another trainee with the same feedback?",
+                      "consequence": "Clarifying scope can challenge a global conclusion, while practice remains necessary.",
+                      "feedback": "Clarifying scope can challenge a global conclusion, while practice remains necessary."
                     },
                     {
                       "id": "self-esteem-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "So there's a part to practise.",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Give yourself time to feel disappointed, then set a bounded rehearsal task tied to the feedback.",
+                      "reply": "What would you tell another trainee with the same feedback?",
+                      "consequence": "This respects the emotional response, but the actual skill deficit still requires work.",
+                      "feedback": "This respects the emotional response, but the actual skill deficit still requires work."
                     },
                     {
                       "id": "self-esteem-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "What would you tell another trainee with the same feedback?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
-                      "id": "self-esteem-m1-node-1-check2-alternative-1",
-                      "label": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "id": "self-esteem-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "What would you tell another trainee with the same feedback?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "self-esteem-m1-node-1-check2-opt1",
@@ -1071,7 +1076,8 @@
                 },
                 {
                   "id": "self-esteem-m1-plan-opt2",
-                  "label": "Avoid talking about the mark until you feel confident about yourself again."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 },
                 {
                   "id": "self-esteem-m1-plan-opt3",
@@ -1126,8 +1132,8 @@
                 },
                 {
                   "id": "self-esteem-m1-node-7-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Compare statements made at the time with each person’s later recollection.",
+                  "feedback": "A contemporaneous record can help separate a mistaken memory from a disputed interpretation."
                 }
               ],
               "answer": "self-esteem-m1-repair-opt1"
@@ -1246,13 +1252,13 @@
                     },
                     {
                       "id": "self-esteem-m1-node-8-check1-alternative-1",
-                      "label": "The tutor’s wording may genuinely have been broad enough to sound like a judgement of overall ability.",
-                      "feedback": "The exact feedback would clarify this; the details given are currently task-specific."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "self-esteem-m1-node-8-check1-alternative-2",
-                      "label": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "self-esteem-m1-node-8-check1-opt1",
@@ -1293,8 +1299,8 @@
                 },
                 {
                   "id": "self-esteem-m1-node-9-alternative-1",
-                  "label": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "self-esteem-m1-new-opt1"
@@ -1332,8 +1338,8 @@
                 },
                 {
                   "id": "self-esteem-m1-node-10-alternative-1",
-                  "label": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "self-esteem-m1-view-opt1"
@@ -1369,8 +1375,8 @@
                 },
                 {
                   "id": "self-esteem-m1-node-13-alternative-1",
-                  "label": "Compare the exact scope of the criticism with the scope of the conclusion Izzy draws about herself.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "self-esteem-m1-test-opt1"
@@ -1423,8 +1429,8 @@
                 },
                 {
                   "id": "self-esteem-m1-node-14-evidence-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Hal may believe the marking criteria were applied inconsistently and therefore distrust the feedback.",
+                  "feedback": "A procedural concern would require information about the assessment rather than inference from the failure alone."
                 }
               ],
               "evidenceAnswer": "self-esteem-m1-transfer-e-opt1",
@@ -1443,8 +1449,8 @@
                 },
                 {
                   "id": "self-esteem-m1-node-14-response-alternative-1",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Ask the assessor whether the mark reflects a weakness in risk formulation or also concerns the rest of the presentation.",
+                  "feedback": "Clarifying scope can challenge a global conclusion, while practice remains necessary."
                 }
               ],
               "responseAnswer": "self-esteem-m1-transfer-a-opt1"
@@ -1542,8 +1548,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l3-n3-alternative-1",
-                  "label": "Izzy turns specific performance feedback into a global judgement of herself. This broad evaluation can make ordinary learning tasks feel like tests of personal worth.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "self-esteem-m1-l3-n3-opt2",
@@ -1581,8 +1587,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l3-n4-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "self-esteem-m1-l3-n4-opt2",
@@ -1612,13 +1618,13 @@
                 },
                 {
                   "id": "self-esteem-m1-l3-n5-evidence-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "self-esteem-m1-l3-n5-evidence-alternative-2",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Izzy may be distressed by the specific effort needed to revise her work, rather than by a judgement about herself.",
+                  "feedback": "The task may be frustrating, though she explicitly connects the correction to being incompetent."
                 }
               ],
               "evidenceAnswer": "self-esteem-m1-l3-n5-evidence-opt2",
@@ -1635,13 +1641,13 @@
                 },
                 {
                   "id": "self-esteem-m1-l3-n5-response-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 },
                 {
                   "id": "self-esteem-m1-l3-n5-response-alternative-2",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Ask the tutor which changes would make the layout effective, then evaluate the revision against that criterion.",
+                  "feedback": "This makes progress assessable without judging global worth."
                 }
               ],
               "responseAnswer": "self-esteem-m1-l3-n5-response-opt2"
@@ -1747,8 +1753,8 @@
                     },
                     {
                       "id": "self-esteem-m1-l4-n2-question-opt3",
-                      "label": "Izzy turns specific performance feedback into a global judgement of herself. This broad evaluation can make ordinary learning tasks feel like tests of personal worth.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The tutor’s wording may genuinely have been broad enough to sound like a judgement of overall ability.",
+                      "feedback": "The exact feedback would clarify this; the details given are currently task-specific."
                     },
                     {
                       "id": "self-esteem-m1-l4-n2-question-opt4",
@@ -1799,8 +1805,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l4-n4-alternative-1",
-                  "label": "Compare the exact scope of the criticism with the scope of the conclusion Izzy draws about herself.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Observe whether shame falls when she receives equally specific feedback delivered in a supportive way.",
+                  "feedback": "The delivery context may affect the reaction."
                 }
               ],
               "answer": "self-esteem-m1-l4-n4-opt2",
@@ -1838,8 +1844,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l4-n3-alternative-1",
-                  "label": "Observe whether shame falls when she receives equally specific feedback delivered in a supportive way.",
-                  "feedback": "The delivery context may affect the reaction."
+                  "label": "Compare Izzy’s account of the criticism with the actual written comments.",
+                  "feedback": "The scope of the language could distinguish specific from global feedback."
                 }
               ],
               "answer": "self-esteem-m1-l4-n3-opt2",
@@ -1910,8 +1916,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l4-n6-alternative-1",
-                  "label": "Izzy may be distressed by the specific effort needed to revise her work, rather than by a judgement about herself.",
-                  "feedback": "The task may be frustrating, though she explicitly connects the correction to being incompetent."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "self-esteem-m1-l4-n6-opt2"
@@ -1957,13 +1963,13 @@
                 },
                 {
                   "id": "self-esteem-m1-l5-n2-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Izzy may have received harsher feedback in the past and now anticipates similar criticism.",
+                  "feedback": "Past experiences could shape the reaction, but they have not been established in this case."
                 },
                 {
                   "id": "self-esteem-m1-l5-n2-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The tutor’s wording may genuinely have been broad enough to sound like a judgement of overall ability.",
+                  "feedback": "The exact feedback would clarify this; the details given are currently task-specific."
                 }
               ],
               "evidenceAnswer": "self-esteem-m1-l5-n2-evidence-opt2",
@@ -1980,13 +1986,13 @@
                 },
                 {
                   "id": "self-esteem-m1-l5-n2-response-alternative-1",
-                  "label": "What exactly did the tutor criticise, and how did that become a judgement of who you are?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Acknowledge the shame and complete one bounded revision before deciding how much more guidance is needed.",
+                  "feedback": "This supports participation, though the interpretation of the feedback may still need attention."
                 },
                 {
                   "id": "self-esteem-m1-l5-n2-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Convince yourself you're brilliant and don't need the tutor's opinion.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "self-esteem-m1-l5-n2-response-opt2"
@@ -2014,8 +2020,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l5-n3-change-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Convince yourself you're brilliant and don't need the tutor's opinion.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -2061,8 +2067,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l5-n4-opt3",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "The teaching may be unsupportive or the feedback excessively harsh, which would change the meaning and impact of the experience.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 },
                 {
                   "id": "self-esteem-m1-l5-n4-opt4",
@@ -2071,8 +2077,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l5-n4-alternative-2",
-                  "label": "Izzy may be distressed by the specific effort needed to revise her work, rather than by a judgement about herself.",
-                  "feedback": "The task may be frustrating, though she explicitly connects the correction to being incompetent."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "self-esteem-m1-l5-n4-opt2",
@@ -2110,8 +2116,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l5-n5-alternative-1",
-                  "label": "Izzy may be distressed by the specific effort needed to revise her work, rather than by a judgement about herself.",
-                  "feedback": "The task may be frustrating, though she explicitly connects the correction to being incompetent."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "self-esteem-m1-l5-n5-opt2",
@@ -2149,8 +2155,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l5-n6-alternative-1",
-                  "label": "Observe whether shame falls when she receives equally specific feedback delivered in a supportive way.",
-                  "feedback": "The delivery context may affect the reaction."
+                  "label": "Compare Izzy’s account of the criticism with the actual written comments.",
+                  "feedback": "The scope of the language could distinguish specific from global feedback."
                 }
               ],
               "answer": "self-esteem-m1-l5-n6-opt2"
@@ -2204,8 +2210,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l6-n2-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Ask the tutor which changes would make the layout effective, then evaluate the revision against that criterion.",
+                  "feedback": "This makes progress assessable without judging global worth."
                 }
               ],
               "answer": "self-esteem-m1-l6-n2-opt2"
@@ -2285,8 +2291,8 @@
                 },
                 {
                   "id": "self-esteem-m1-l6-n4-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Compare Izzy’s account of the criticism with the actual written comments.",
+                  "feedback": "The scope of the language could distinguish specific from global feedback."
                 }
               ],
               "answer": "self-esteem-m1-l6-n4-opt2",
