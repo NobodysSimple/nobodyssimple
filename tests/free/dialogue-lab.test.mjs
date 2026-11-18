@@ -59,7 +59,7 @@ test('Dialogue transcript escapes untrusted speech and highlights an evidence li
  const html=renderDialogue(node,state,esc,controls);
  assert.match(html,/&lt;script&gt;/);assert.doesNotMatch(html,/<script>/);
  assert.match(html,/data-spotlight="true"/);
- assert.match(html,/Reflect · 1 / 2/);
+ assert.match(html,/Reflect · 1 \/ 2/);
  assert.match(html,/Recognises disappointment/);
 });
 test('Public Learn and staff Templates link to the shared Dialogue Lab type without creating lessons',()=>{

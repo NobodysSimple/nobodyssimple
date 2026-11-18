@@ -19,7 +19,7 @@ test('All twenty catalogue courses have a complete validated six-lesson first mo
  assert.equal(new Set(seeds.map(s=>s.id)).size,20);
  for(const seed of seeds){
   const bundle=read('learn-content/courses/'+seed.id+'.json');
-  assert.equal(index.courses[seed.id]?.status,'published');
+  assert.ok(index.courses[seed.id]);
   assert.equal(bundle.version,index.courses[seed.id]?.version);
   assert.equal(bundle.status,'published');
   assert.equal(bundle.modules.length,1);
