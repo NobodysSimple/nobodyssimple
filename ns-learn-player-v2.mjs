@@ -99,7 +99,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    foot='<button type="button" class="ns-learn-player__primary" data-start>Start lesson →</button>';
   }else if(state.phase==='done'){
    const score=learnLessonScore(lesson,state.answers);
-   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">LESSON COMPLETE ✿</p><h1>'+esc(lesson.title)+'</h1><p>You finished '+score.total+' reasoning challenges. '+score.correct+' were the strongest supported answers on your first attempt.</p><p class="ns-learn-immersive__reflect">The aim is to understand why an explanation fits the evidence, and when you would need to revise it.</p><p role="status" data-save></p></div>';
+   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">LESSON COMPLETE ✿</p><h1>'+esc(lesson.title)+'</h1><p>You finished '+score.total+' reasoning challenges. '+score.correct+' were the strongest supported answers on your first attempt.</p>'+(lesson.takeaway?'<div class="ns-learn-player__takeaway"><strong>Worth remembering</strong><p>'+esc(lesson.takeaway)+'</p></div>':'')+'<p class="ns-learn-immersive__reflect">The aim is to understand why an explanation fits the evidence, and when you would need to revise it.</p><p role="status" data-save></p></div>';
    foot=preview?'<button class="ns-learn-player__primary" type="button" data-restart>Try again</button>':'<a class="ns-learn-player__primary" href="'+home+'">Back to course →</a>';
   }else{
    const node=current(),read=['read','image'].includes(node.type),checked=!!state.checked;
