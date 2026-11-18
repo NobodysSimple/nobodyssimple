@@ -28,10 +28,34 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const lesson=bundle&&flattenLearnLessons(bundle).find(l=>l.id===lessonId);
  const home='#learn/course/'+encodeURIComponent(courseId);
  if(!lesson){root.innerHTML='<section class="ns-learn-player"><a href="'+home+'">← Back to course</a><h1>No published lesson found</h1><p>This course has no available lesson at that address.</p></section>';return;}
- const nodes=learningNodes(lesson),state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,saved:false};
+ const scramble=items=>{
+  const result=[...(items||[])];
+  for(let i=result.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}
+  return result;
+ };
+ const arrange=source=>{
+  const ordered=[];let cursor=0;
+  while(cursor<source.length){
+   if(source[cursor]?.shuffleGroup){
+    const group=source[cursor].shuffleGroup;const chunk=[];
+    while(cursor<source.length&&source[cursor]?.shuffleGroup===group)chunk.push(source[cursor++]);
+    ordered.push(...scramble(chunk));
+   }else ordered.push(source[cursor++]);
+  }
+  return ordered;
+ };
+ const originalNodes=learningNodes(lesson);
+ let nodes=arrange(originalNodes);
+ const state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,saved:false,options:new Map()};
+ const orderedOptions=(name,items)=>{
+  const key=name+':'+(items||[]).map(x=>x.id).join('/');
+  if(!state.options.has(key))state.options.set(key,scramble(items));
+  return state.options.get(key);
+ };
+ const choiceSet=(name,items,selected='',disabled=false)=>fieldset(name,orderedOptions(name,items),selected,disabled);
  const current=()=>nodes[state.i];
  function renderControls(node){
-  if(['choose','respond','repair','investigate'].includes(node.type))return fieldset('choice',node.options);
+  if(['choose','respond','repair','investigate'].includes(node.type))return choiceSet('choice',node.options);
   if(node.type==='complete')return '<label class="ns-learn-player__label">Your answer<input name="recall" type="text" maxlength="180" autocomplete="off" placeholder="'+esc(node.hint||'Type your answer')+'"></label>';
   if(node.type==='match'||node.type==='sort'){
    const list=node.type==='match'?node.pairs:node.items;
@@ -41,9 +65,9 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   }
   if(node.type==='sequence'||node.type==='chain')return '<div class="ns-learn-player__ordering">'+state.order.map((id,i)=>{const s=node.steps.find(x=>x.id===id);return '<div class="ns-learn-player__order"><span>'+esc(s?.label||id)+'</span><div><button type="button" data-move="'+i+'" data-dir="-1" '+(i===0?'disabled':'')+' aria-label="Move item up">↑</button><button type="button" data-move="'+i+'" data-dir="1" '+(i===state.order.length-1?'disabled':'')+' aria-label="Move item down">↓</button></div></div>';}).join('')+'</div>';
   if(node.type==='label')return '<div class="ns-learn-player__segments" role="group" aria-label="Select evidence phrases">'+node.segments.map(s=>'<button type="button" data-segment="'+esc(s.id)+'" aria-pressed="'+state.labels.has(s.id)+'">'+esc(s.text)+'</button>').join(' ')+'</div>';
-  if(node.type==='predict')return '<div class="ns-learn-player__two"><h2>'+esc(node.changePrompt||'What changes?')+'</h2>'+fieldset('change',node.changes)+'<h2>What is the best prediction?</h2>'+fieldset('outcome',node.outcomes)+'</div>';
-  if(node.type==='character')return '<div class="ns-learn-player__two"><p>'+esc(node.characterName)+': '+esc(node.scenario)+'</p><h2>What does the evidence support?</h2>'+fieldset('evidence',node.evidenceOptions)+'<h2>What response fits best?</h2>'+fieldset('action',node.responseOptions)+'</div>';
-  if(node.type==='dialogue')return renderDialogue(node,state,esc,fieldset);
+  if(node.type==='predict')return '<div class="ns-learn-player__two"><h2>'+esc(node.changePrompt||'What changes?')+'</h2>'+choiceSet('change',node.changes)+'<h2>What is the best prediction?</h2>'+choiceSet('outcome',node.outcomes)+'</div>';
+  if(node.type==='character')return '<div class="ns-learn-player__two"><p>'+esc(node.characterName)+': '+esc(node.scenario)+'</p><h2>What does the evidence support?</h2>'+choiceSet('evidence',node.evidenceOptions)+'<h2>What response fits best?</h2>'+choiceSet('action',node.responseOptions)+'</div>';
+  if(node.type==='dialogue')return renderDialogue(node,state,esc,choiceSet);
   return '';
  }
  function response(node){
@@ -56,33 +80,52 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(node.type==='character')return {evidence:root.querySelector('input[name="evidence"]:checked')?.value||'',action:root.querySelector('input[name="action"]:checked')?.value||''};
   if(node.type==='dialogue')return root.querySelector('input[name="dialogue-choice"]:checked')?.value||'';
  }
- const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;const node=current();state.order=['sequence','chain'].includes(node?.type)?[...node.steps.map(s=>s.id)].reverse():[];};
+ const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;const node=current();const ids=['sequence','chain'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
  const advance=()=>{if(state.i+1>=nodes.length)state.phase='done';else {state.i++;reset();}paint();};
  function paint(){
-  const exit=preview?'':'<a class="ns-learn-player__back" href="'+home+'">← Exit course</a>';
+  const companion=course?.companionPortrait
+   ?'<img class="ns-learn-immersive__portrait-img" src="'+esc(course.mascot)+'" alt="">'
+   :'<span class="ns-learn-immersive__portrait" style="--cast-x:'+Number(course?.companionX||0)+'%;--cast-y:'+Number(course?.companionY||0)+'%"></span>';
+  const exit=preview?'<button type="button" class="ns-learn-player__back" data-close-lesson aria-label="Close lesson preview">×</button>':
+   '<a class="ns-learn-player__back" href="'+home+'" aria-label="Exit lesson">×</a>';
+  const progress=state.phase==='done'?100:state.phase==='intro'?0:Math.round(state.i/nodes.length*100);
+  const head='<header class="ns-learn-immersive__header">'+exit+'<div class="ns-learn-immersive__meter" role="progressbar" aria-valuenow="'+progress+'" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson progress"><i style="width:'+progress+'%"></i></div><span class="ns-learn-immersive__badge" title="Nobody’s Simple">✿</span></header>';
+  let middle='',foot='';
   if(state.phase==='intro'){
-   root.innerHTML='<section class="ns-learn-player">'+exit+'<p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · '+esc(lesson.moduleTitle||'')+'</p><h1>'+esc(lesson.title)+'</h1>'+paragraphs(lesson.teach||'This lesson contains short reading and interactive exercises.')+'<p class="ns-learn-player__hint">'+nodes.length+' pages and activities · Untimed</p><button type="button" class="ns-learn-player__primary" data-start>Begin →</button></section>';
+   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · Unit 1</p><h1>'+esc(lesson.title)+'</h1><div class="ns-learn-immersive__lead">'+paragraphs(lesson.teach||'Work through a real situation and decide what the evidence can support.')+'</div><p class="ns-learn-player__hint">About 5 minutes · '+nodes.length+' short activities · No timer</p></div>';
+   foot='<button type="button" class="ns-learn-player__primary" data-start>Start lesson →</button>';
   }else if(state.phase==='done'){
    const score=learnLessonScore(lesson,state.answers);
-   root.innerHTML='<section class="ns-learn-player"><h1>Lesson complete</h1><p>You completed '+nodes.length+' pages and '+score.total+' exercises, with '+score.correct+' correct on the first attempt.</p><p role="status" data-save></p>'+(preview?'<button class="ns-learn-player__primary" type="button" data-restart>Restart preview</button>':'<a class="ns-learn-player__primary" href="'+home+'">Back to course →</a>')+'</section>';
-   if(!preview&&!state.saved){
-    state.saved=true;
-    const result=review?saveLearnReview(bundle,lesson,score):saveLearnCompletion(bundle,lesson,score);
-    root.querySelector('[data-save]').textContent=result.ok?(review?'Review saved.':'Progress saved.'):'Unable to save progress: '+result.error;
-   }else if(preview)root.querySelector('[data-save]').textContent='Staff preview · Progress is not recorded.';
+   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">LESSON COMPLETE ✿</p><h1>'+esc(lesson.title)+'</h1><p>You finished '+score.total+' reasoning challenges. '+score.correct+' were the strongest supported answers on your first attempt.</p><p class="ns-learn-immersive__reflect">The aim is to understand why an explanation fits the evidence, and when you would need to revise it.</p><p role="status" data-save></p></div>';
+   foot=preview?'<button class="ns-learn-player__primary" type="button" data-restart>Try again</button>':'<a class="ns-learn-player__primary" href="'+home+'">Back to course →</a>';
   }else{
    const node=current(),read=['read','image'].includes(node.type),checked=!!state.checked;
    const heading=node.title||node.prompt||'Learning activity';
    const promptLine=!read&&node.title&&node.prompt&&node.title!==node.prompt?'<p class="ns-learn-player__question-prompt">'+esc(node.prompt)+'</p>':'';
    const body=read?'<div class="ns-learn-player__reading">'+(node.type==='read'?paragraphs(node.body):'')+photo(node)+(node.sources?'<p class="ns-learn-player__sources">'+esc(node.sources)+'</p>':'')+'</div>':promptLine+photo(node)+renderControls(node);
-   root.innerHTML='<section class="ns-learn-player">'+exit+'<p class="ns-learn-player__eyebrow">'+esc(lesson.title)+' · '+(state.i+1)+' / '+nodes.length+'</p><div class="ns-learn-player__meter" role="progressbar" aria-valuenow="'+(state.i+1)+'" aria-valuemin="0" aria-valuemax="'+nodes.length+'"><i style="width:'+Math.round((state.i+1)/nodes.length*100)+'%"></i></div><h1>'+esc(heading)+'</h1>'+(!read&&node.type==='character'?'':body)+(read?'':'')+(!read&&node.type==='character'?body:'')+(state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'')+(checked?'<div class="ns-learn-player__feedback" role="status"><strong>'+(state.checked.correct?'Correct.':'Review the distinction.')+'</strong><p>'+esc(state.checked.explanation)+'</p><small>Counterexample: '+esc(state.checked.counterexample)+'</small>'+(node.sources?'<small>Sources: '+esc(node.sources)+'</small>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+(node.speakerB?esc(node.speakerB):'Their response')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'')+(node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length?'':'<button type="button" class="ns-learn-player__primary" data-next>')+ (node.type==='dialogue'&&state.dialogueCheck<0?'Analyse conversation →':node.type==='dialogue'&&checked&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':read||checked?(state.i+1===nodes.length?'Finish lesson':'Continue →'):'Check answer')+'</button></section>';
+   const notice=state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'';
+   const response=checked?'<div class="ns-learn-player__feedback" role="status"><strong>'+(state.checked.correct?'Best-supported answer.':'A useful distinction to review.')+'</strong>'+paragraphs(state.checked.explanation)+(state.checked.counterexample?'<p><small>Where this may differ: '+esc(state.checked.counterexample)+'</small></p>':'')+(node.sources?'<small>Reading: '+esc(node.sources)+'</small>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+esc(node.speakerB||'Possible reply')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'';
+   middle='<div class="ns-learn-immersive__task"><p class="ns-learn-player__eyebrow">'+esc(node.type==='dialogue'?'CONVERSATION':node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</p><h1>'+esc(heading)+'</h1>'+body+notice+response+'</div>';
+   if(!(node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length)){
+    const buttonText=node.type==='dialogue'&&state.dialogueCheck<0?'Analyse the exchange →':
+     node.type==='dialogue'&&checked&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':
+     read||checked?(state.i+1===nodes.length?'Complete lesson →':'Continue →'):'Check answer';
+    foot='<button type="button" class="ns-learn-player__primary" data-next>'+buttonText+'</button>';
+   }else foot='<p class="ns-learn-immersive__helper">Read one message at a time. You can open the earlier messages whenever you need them.</p>';
+  }
+  root.innerHTML='<section class="ns-learn-player ns-learn-player--immersive" data-immersive><div class="ns-learn-immersive__surface" role="region" aria-label="Focused learning lesson">'+head+'<main class="ns-learn-immersive__content">'+middle+'</main><footer class="ns-learn-immersive__footer">'+foot+'</footer></div><span class="ns-learn-immersive__decoration" aria-hidden="true">✳</span></section>';
+  if(state.phase==='done'){
+   const score=learnLessonScore(lesson,state.answers);
+   if(!preview&&!state.saved){state.saved=true;const result=review?saveLearnReview(bundle,lesson,score):saveLearnCompletion(bundle,lesson,score);root.querySelector('[data-save]').textContent=result.ok?(review?'Review saved.':'Progress saved.'):'Unable to save progress: '+result.error;}
+   else if(preview)root.querySelector('[data-save]').textContent='Staff preview · No progress saved.';
   }
   wire();
  }
  function wire(){
   root.querySelector('[data-dialogue-reveal]')?.addEventListener('click',()=>{const node=current();if(node?.type!=='dialogue')return;state.dialogueVisible=Math.min((node.turns||[]).length,state.dialogueVisible+1);paint();(root.querySelector('[data-dialogue-reveal]')||root.querySelector('[data-next]'))?.focus();});
   root.querySelector('[data-start]')?.addEventListener('click',()=>{state.phase='node';state.i=0;reset();paint();});
-  root.querySelector('[data-restart]')?.addEventListener('click',()=>{state.phase='intro';state.i=0;state.answers={};state.saved=false;paint();});
+  root.querySelector('[data-close-lesson]')?.addEventListener('click',()=>root.closest('#cl-preview')?.querySelector('[data-act="close-preview"]')?.click());
+  root.querySelector('[data-restart]')?.addEventListener('click',()=>{state.phase='intro';state.i=0;state.answers={};state.options=new Map();state.saved=false;nodes=arrange(originalNodes);paint();});
   root.querySelectorAll('[data-segment]').forEach(button=>button.addEventListener('click',()=>{const id=button.dataset.segment;if(state.labels.has(id))state.labels.delete(id);else state.labels.add(id);button.setAttribute('aria-pressed',String(state.labels.has(id)));}));
   root.querySelectorAll('[data-move]').forEach(button=>button.addEventListener('click',()=>{const a=Number(button.dataset.move),b=a+Number(button.dataset.dir);if(b<0||b>=state.order.length)return;[state.order[a],state.order[b]]=[state.order[b],state.order[a]];paint();root.querySelector('[data-move="'+b+'"][data-dir="'+button.dataset.dir+'"]')?.focus();}));
   root.querySelector('[data-next]')?.addEventListener('click',()=>{
@@ -96,7 +139,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
     }
     if(!state.answers[node.id])state.answers[node.id]={};
     state.answers[node.id][check.id]=answer;
-    const chosen=check.options.find(o=>o.id===answer);state.checked={correct:answer===check.answer,explanation:check.explanation,counterexample:check.counterexample,reply:chosen?.reply||'',consequence:chosen?.consequence||''};paint();return;
+    const chosen=check.options.find(o=>o.id===answer);state.checked={correct:answer===check.answer,explanation:(chosen?.feedback?chosen.feedback+'\n\n':'')+check.explanation,counterexample:check.counterexample,reply:chosen?.reply||'',consequence:chosen?.consequence||''};paint();return;
    }
    if(['read','image'].includes(node.type)||state.checked){advance();return;}
    const answer=response(node),result=gradeLearnItem(node,answer);
