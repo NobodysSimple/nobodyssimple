@@ -75,7 +75,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  const selectedUnit=()=>draft?.modules?.[u]||null;
  const selectedLesson=()=>selectedUnit()?.lessons?.[l]||null;
  const selectedNode=()=>selectedLesson()?.nodes?.[n]||null;
- const local=()=>readCourseLabDraft(courseId);
+ const local=id=>readCourseLabDraft(id);
  const save=async()=>{if(!draft)return;const id=courseId,value={draft:deep(draft),baseVersion,updatedAt:new Date().toISOString()};try{await saveCourseLabDraft(id,value);if(courseId===id)status('Draft saved to this device');}catch(err){status(err.message,true);}};
  const queueSave=()=>{clearTimeout(saveTimer);saveTimer=setTimeout(()=>void save(),400);status('Unsaved changes…');};
  const renderOutline=()=>{
@@ -98,8 +98,10 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  const move=(arr,from,to)=>{if(!arr||to<0||to>=arr.length)return false;[arr[from],arr[to]]=[arr[to],arr[from]];return true;};
  async function loadCourse(id,{force=false}={}){
   if(busy)return;const ticket=++loading;clearTimeout(saveTimer);if(draft)await save();
+  if(ticket!==loading)return;
   courseId=id;$('#cl-course').value=id;status('Loading course…');
-  const localDraft=!force?await local():null;const display=LEARN_COURSES.find(c=>c.id===id)?.title||id;
+  const localDraft=!force?await local(id):null;if(ticket!==loading)return;
+  const display=LEARN_COURSES.find(c=>c.id===id)?.title||id;
   const p=getPublisher();let remote={version:0,bundle:null};
   try{if(p)remote=await p.readLearnCourse(id);}catch(err){status('GitHub version could not be checked: '+err.message,true);}
   if(ticket!==loading)return;
