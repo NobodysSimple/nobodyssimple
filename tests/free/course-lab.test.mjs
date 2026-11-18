@@ -105,13 +105,14 @@ test('GitHub publishing is atomic and versioned with course ID, title and publis
  assert.equal(calls.find(c=>c.method==='PATCH')?.body.force,false);
  await assert.rejects(()=>p.publishLearnCourse({...course,modules:[]},0),/not ready/);
 });
-test('Staff Course Lab is visible only after GitHub login; public index starts empty',()=>{
+test('Staff Course Lab is available to authorised editors and the first modules are indexed',()=>{
  const html=read('staff.html'),studio=read('studio.mjs'),pub=read('publisher.mjs'),index=JSON.parse(read('learn-content/index.json'));
  assert.match(html,/data-view="course-lab"/);
  assert.match(html,/id="course-lab-view"/);
  assert.match(studio,/mountCourseLab/);
  assert.match(pub,/publishLearnCourse/);
  assert.match(pub,/unpublishLearnCourse/);
- assert.deepEqual(index.courses,{});
+ assert.equal(Object.keys(index.courses).length,20);
+ assert.equal(index.courses.narcissism.version,1);
  assert.match(read('ns-learn-courses.mjs'),/loadPublishedLearnBundle/);
 });
