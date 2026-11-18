@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "burnout-m1-node-1-check1-alternative-1",
-                      "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
-                      "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
+                      "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                      "feedback": "This is a reasonable line of inquiry, although The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap. is more directly tied to the words in this scene. Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning."
                     },
                     {
                       "id": "burnout-m1-node-1-check1-alternative-2",
-                      "label": "A temporary increase in workload may explain Priya’s exhaustion without showing a persistent work-related pattern.",
-                      "feedback": "Duration matters. The accounts of several weeks and added caseload support investigating an ongoing problem."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     }
                   ],
                   "answer": "burnout-m1-node-1-check1-opt1",
@@ -904,9 +904,10 @@
                   "options": [
                     {
                       "id": "burnout-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask what information each person would need before being willing to revise their position.",
                       "reply": "How much time was missing?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need.",
+                      "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                     },
                     {
                       "id": "burnout-m1-node-1-check2-opt1",
@@ -916,20 +917,24 @@
                     },
                     {
                       "id": "burnout-m1-node-1-check2-opt2",
-                      "label": "Use shorter breaks and schedule every appointment more tightly.",
-                      "reply": "What happens when you show management the number of hours available?",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Offer a limited trial of one practical adjustment while keeping the original concern open for review.",
+                      "reply": "How much time was missing?",
+                      "consequence": "A trial can provide information, but it may not solve a situation that requires a clear immediate answer.",
+                      "feedback": "A trial can provide information, but it may not solve a situation that requires a clear immediate answer."
                     },
                     {
                       "id": "burnout-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Have you been able to recover outside work?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                      "reply": "How much time was missing?",
+                      "consequence": "A jointly agreed next step is reasonable, though the other person may still decline.",
+                      "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                     },
                     {
-                      "id": "burnout-m1-node-1-check2-alternative-1",
-                      "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
-                      "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
+                      "id": "burnout-m1-node-1-check2-alternative-4",
+                      "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                      "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction.",
+                      "reply": "How much time was missing?",
+                      "consequence": "This can reveal different priorities, but it may also delay an urgent factual correction."
                     }
                   ],
                   "answer": "burnout-m1-node-1-check2-opt1",
@@ -1071,7 +1076,8 @@
                 },
                 {
                   "id": "burnout-m1-plan-opt2",
-                  "label": "Use shorter breaks and schedule every appointment more tightly."
+                  "label": "Ask which appointments can safely be delayed while arranging a formal review of workload and staffing.",
+                  "feedback": "A short-term prioritisation may protect care, but does not by itself solve chronic understaffing."
                 },
                 {
                   "id": "burnout-m1-plan-opt3",
@@ -1126,8 +1132,8 @@
                 },
                 {
                   "id": "burnout-m1-node-7-alternative-1",
-                  "label": "Compare contracted hours and available staffing with recorded cases and report deadlines over several weeks.",
-                  "feedback": "This can establish whether demands have become structurally unmanageable."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "burnout-m1-repair-opt1"
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "burnout-m1-node-8-check1-alternative-1",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "This may have been an exceptional week rather than a sustained demand problem.",
+                      "feedback": "This could explain the immediate behaviour, but it needs facts beyond the present conversation. Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning."
                     },
                     {
                       "id": "burnout-m1-node-8-check1-alternative-2",
-                      "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
-                      "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap. is more directly tied to the words in this scene. Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning."
                     }
                   ],
                   "answer": "burnout-m1-node-8-check1-opt1",
@@ -1248,8 +1254,8 @@
                 },
                 {
                   "id": "burnout-m1-node-9-alternative-1",
-                  "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
-                  "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
+                  "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                  "feedback": "This is a reasonable line of inquiry, although The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap. is more directly tied to the words in this scene. Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning."
                 }
               ],
               "answer": "burnout-m1-new-opt1"
@@ -1332,8 +1338,8 @@
                 },
                 {
                   "id": "burnout-m1-node-10-alternative-1",
-                  "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
-                  "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
+                  "label": "Priya may need a more reliable way to prioritise urgent work.",
+                  "feedback": "This alternative deserves consideration. It would become stronger if earlier expectations supported it. Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning."
                 }
               ],
               "answer": "burnout-m1-view-opt1"
@@ -1404,8 +1410,8 @@
                 },
                 {
                   "id": "burnout-m1-node-13-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Observe what happens after a clear and workable alternative is offered.",
+                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
                 }
               ],
               "answer": "burnout-m1-test-opt1"
@@ -1439,8 +1445,8 @@
                 },
                 {
                   "id": "burnout-m1-node-14-evidence-alternative-1",
-                  "label": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap. is more directly tied to the words in this scene. Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning."
                 }
               ],
               "evidenceAnswer": "burnout-m1-transfer-e-opt1",
@@ -1459,8 +1465,8 @@
                 },
                 {
                   "id": "burnout-m1-node-14-response-alternative-1",
-                  "label": "Stop caring about quality so the workload feels easier.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "responseAnswer": "burnout-m1-transfer-a-opt1"
@@ -1558,8 +1564,8 @@
                 },
                 {
                   "id": "burnout-m1-l3-n3-alternative-1",
-                  "label": "A temporary increase in workload may explain Priya’s exhaustion without showing a persistent work-related pattern.",
-                  "feedback": "Duration matters. The accounts of several weeks and added caseload support investigating an ongoing problem."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "burnout-m1-l3-n3-opt2",
@@ -1597,8 +1603,8 @@
                 },
                 {
                   "id": "burnout-m1-l3-n4-alternative-1",
-                  "label": "Priya may have unusually high standards for her own performance that lead her to take on more tasks than the service requires.",
-                  "feedback": "Self-expectations could add pressure, although the manager has said every task remains a priority."
+                  "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
+                  "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
                 }
               ],
               "answer": "burnout-m1-l3-n4-opt2",
@@ -1628,13 +1634,13 @@
                 },
                 {
                   "id": "burnout-m1-l3-n5-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A temporary increase in workload may explain Priya’s exhaustion without showing a persistent work-related pattern.",
+                  "feedback": "Duration matters. The accounts of several weeks and added caseload support investigating an ongoing problem."
                 },
                 {
                   "id": "burnout-m1-l3-n5-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Priya may have unusually high standards for her own performance that lead her to take on more tasks than the service requires.",
+                  "feedback": "Self-expectations could add pressure, although the manager has said every task remains a priority."
                 }
               ],
               "evidenceAnswer": "burnout-m1-l3-n5-evidence-opt2",
@@ -1651,13 +1657,13 @@
                 },
                 {
                   "id": "burnout-m1-l3-n5-response-alternative-1",
-                  "label": "Which tasks could safely be delayed, and who has authority to make that decision?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Agree a short period of protected recovery while setting a formal review of caseload and staffing.",
+                  "feedback": "Time away may help, but recovery without changes to the demands may be short-lived."
                 },
                 {
                   "id": "burnout-m1-l3-n5-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Try a new relaxation app each evening while keeping the same workload.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "burnout-m1-l3-n5-response-opt2"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "burnout-m1-l4-n2-question-opt3",
-                      "label": "A temporary increase in workload may explain Priya’s exhaustion without showing a persistent work-related pattern.",
-                      "feedback": "Duration matters. The accounts of several weeks and added caseload support investigating an ongoing problem."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "burnout-m1-l4-n2-question-opt4",
@@ -1773,8 +1779,8 @@
                     },
                     {
                       "id": "burnout-m1-l4-n2-question-alternative-2",
-                      "label": "Priya may have unusually high standards for her own performance that lead her to take on more tasks than the service requires.",
-                      "feedback": "Self-expectations could add pressure, although the manager has said every task remains a priority."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "burnout-m1-l4-n2-question-opt2",
@@ -1854,8 +1860,8 @@
                 },
                 {
                   "id": "burnout-m1-l4-n4-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "burnout-m1-l4-n4-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "burnout-m1-l4-n6-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A temporary increase in workload may explain Priya’s exhaustion without showing a persistent work-related pattern.",
+                  "feedback": "Duration matters. The accounts of several weeks and added caseload support investigating an ongoing problem."
                 }
               ],
               "answer": "burnout-m1-l4-n6-opt2"
@@ -1973,13 +1979,13 @@
                 },
                 {
                   "id": "burnout-m1-l5-n2-evidence-alternative-1",
-                  "label": "Priya may have unusually high standards for her own performance that lead her to take on more tasks than the service requires.",
-                  "feedback": "Self-expectations could add pressure, although the manager has said every task remains a priority."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "burnout-m1-l5-n2-evidence-alternative-2",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "burnout-m1-l5-n2-evidence-opt2",
@@ -1996,13 +2002,13 @@
                 },
                 {
                   "id": "burnout-m1-l5-n2-response-alternative-1",
-                  "label": "Try a new relaxation app each evening while keeping the same workload.",
+                  "label": "Which tasks could safely be delayed, and who has authority to make that decision?",
                   "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "burnout-m1-l5-n2-response-alternative-2",
-                  "label": "Which tasks could safely be delayed, and who has authority to make that decision?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "burnout-m1-l5-n2-response-opt2"
@@ -2029,8 +2035,8 @@
                 },
                 {
                   "id": "burnout-m1-l5-n4-opt3",
-                  "label": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 },
                 {
                   "id": "burnout-m1-l5-n4-opt4",
@@ -2039,8 +2045,8 @@
                 },
                 {
                   "id": "burnout-m1-l5-n4-alternative-2",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "burnout-m1-l5-n4-opt2",
@@ -2069,8 +2075,8 @@
                 },
                 {
                   "id": "burnout-m1-l5-n3-change-alternative-1",
-                  "label": "Stop caring about quality so the workload feels easier.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "outcomes": [
@@ -2126,8 +2132,8 @@
                 },
                 {
                   "id": "burnout-m1-l5-n5-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "burnout-m1-l5-n5-opt2",
@@ -2220,7 +2226,7 @@
                 },
                 {
                   "id": "burnout-m1-l6-n2-alternative-1",
-                  "label": "Record the caseload and missed breaks, then request specific reprioritisation and staffing decisions with a manager.",
+                  "label": "Try a new relaxation app each evening while keeping the same workload.",
                   "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
