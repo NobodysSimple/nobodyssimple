@@ -46,6 +46,9 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   }
   return ordered;
  };
+ const activeUnit=(bundle?.modules||[]).find(m=>(m.lessons||[]).some(l=>l.id===lessonId));
+ const glossary=Array.isArray(activeUnit?.glossary)?activeUnit.glossary:[];
+ const glossaryHelp=activeUnit?.kind!=='foundation'&&glossary.length?'<details class="ns-learn-immersive__glossary"><summary>New word? Open quick definitions</summary><dl>'+glossary.map(item=>'<div><dt>'+esc(item.term)+'</dt><dd>'+esc(item.definition)+'</dd></div>').join('')+'</dl></details>':'';
  const cast=knownCastForLesson(bundle,lesson);
  const castMarkup=names=>names.length?'<div class="ns-learn-immersive__cast" aria-label="People in this example">'+names.map(name=>'<span class="ns-learn-immersive__cast-person">'+characterPortrait(name,cast,esc,true)+'<span>'+esc(name)+'</span></span>').join('')+'</div>':'';
  const originalNodes=learningNodes(lesson);
@@ -114,7 +117,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    const body=read?'<div class="ns-learn-player__reading">'+(node.type==='read'?paragraphs(node.body):'')+photo(node)+(node.sources?'<p class="ns-learn-player__sources">'+esc(node.sources)+'</p>':'')+'</div>':promptLine+photo(node)+renderControls(node);
    const notice=state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'';
    const response=checked?'<div class="ns-learn-player__feedback" role="status"><strong>'+(state.checked.correct?'Best-supported answer.':'A useful distinction to review.')+'</strong>'+paragraphs(state.checked.explanation)+(state.checked.counterexample?'<p><small>Where this may differ: '+esc(state.checked.counterexample)+'</small></p>':'')+(node.sources?'<small>Reading: '+esc(node.sources)+'</small>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+esc(node.speakerB||'Possible reply')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'';
-   middle='<div class="ns-learn-immersive__task"><p class="ns-learn-player__eyebrow">'+esc(node.type==='dialogue'?'CONVERSATION':node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</p><h1>'+esc(heading)+'</h1>'+faces+body+notice+response+'</div>';
+   middle='<div class="ns-learn-immersive__task"><p class="ns-learn-player__eyebrow">'+esc(node.type==='dialogue'?'CONVERSATION':node.type.toUpperCase())+' · '+(state.i+1)+' / '+nodes.length+'</p><h1>'+esc(heading)+'</h1>'+faces+glossaryHelp+body+notice+response+'</div>';
    if(!(node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length)){
     const buttonText=node.type==='dialogue'&&state.dialogueCheck<0?'Analyse the exchange →':
      node.type==='dialogue'&&checked&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':
