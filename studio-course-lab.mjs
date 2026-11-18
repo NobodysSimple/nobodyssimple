@@ -79,7 +79,17 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  const selectedNode=()=>selectedLesson()?.nodes?.[n]||null;
  const local=id=>readCourseLabDraft(id);
  const save=async()=>{if(!draft)return;const id=courseId,value={draft:deep(draft),baseVersion,updatedAt:new Date().toISOString()};try{await saveCourseLabDraft(id,value);if(courseId===id)status('Draft saved to this device');}catch(err){status(err.message,true);}};
- const queueSave=()=>{clearTimeout(saveTimer);saveTimer=setTimeout(()=>void save(),400);status('Unsaved changes…');};
+ const queueSave=({keepReady=false}={})=>{
+  // Any structural or content change invalidates an earlier editorial sign-off.
+  const lesson=selectedLesson();
+  if(!keepReady&&lesson?.editorialStatus==='ready'){
+   lesson.editorialStatus='draft';
+   const picker=$('[data-meta="lesson-status"]');
+   if(picker)picker.value='draft';
+   renderOutline();
+  }
+  clearTimeout(saveTimer);saveTimer=setTimeout(()=>void save(),400);status('Unsaved changes…');
+ };
  const renderOutline=()=>{
   let previousBook='';
   const query=($('#cl-outline-search')?.value||'').toLocaleLowerCase().trim();
@@ -166,8 +176,8 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   liveStatus(remote.published?'Published v'+remote.version:remote.version?'Unpublished · last version '+remote.version:'Not published');
  }
  const setField=(target)=>{
-  if(target.id==='cl-title'){draft.title=target.value;queueSave();return;}
-  if(target.id==='cl-description'){draft.description=target.value;queueSave();return;}
+  if(target.id==='cl-title'){draft.title=target.value;queueSave({keepReady:true});return;}
+  if(target.id==='cl-description'){draft.description=target.value;queueSave({keepReady:true});return;}
   const node=selectedNode(),lesson=selectedLesson(),unit=selectedUnit();if(!draft)return;
   if(target.dataset.meta){
    if(target.dataset.meta==='unit-title'&&unit)unit.title=target.value;
@@ -182,11 +192,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    const row=node[target.dataset.list]?.[Number(target.dataset.pos)];
    if(row)row[target.dataset.prop]=target.type==='checkbox'?target.checked:target.value;
   }else return;
-  if(lesson&&lesson.editorialStatus==='ready'&&target.dataset.meta!=='lesson-status'){
-   lesson.editorialStatus='draft';
-   status('Content changed — this lesson needs review again.');
-  }
-  queueSave();
+  queueSave({keepReady:target.dataset.meta==='lesson-status'});
  };
  const rowDefault=(k)=>k==='segments'?{id:makeCourseId(),text:'',answer:false}:k==='pairs'?{id:makeCourseId(),label:'',answer:''}:k==='items'?{id:makeCourseId(),label:'',answer:''}:{id:makeCourseId(),label:''};
  const setBusy=value=>{busy=value;host.querySelectorAll('.cl-toolbar button').forEach(el=>el.disabled=value);};
