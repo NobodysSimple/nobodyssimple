@@ -32,6 +32,8 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const current=()=>nodes[state.i];
  function renderControls(node){
   if(['choose','respond','repair','investigate'].includes(node.type))return fieldset('choice',node.options);
+  if(node.type==='update')return '<div class="ns-learn-player__new-evidence"><strong>New evidence</strong><p>'+esc(node.newEvidence)+'</p></div>'+fieldset('choice',node.options);
+  if(node.type==='perspective')return '<div class="ns-learn-player__viewpoints"><div><strong>View A</strong><p>'+esc(node.viewA)+'</p></div><div><strong>View B</strong><p>'+esc(node.viewB)+'</p></div></div>'+fieldset('choice',node.options);
   if(node.type==='complete')return '<label class="ns-learn-player__label">Your answer<input name="recall" type="text" maxlength="180" autocomplete="off" placeholder="'+esc(node.hint||'Type your answer')+'"></label>';
   if(node.type==='match'||node.type==='sort'){
    const list=node.type==='match'?node.pairs:node.items;
@@ -39,7 +41,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    if(node.type==='match'&&choices.length>1)choices.push(choices.shift());
    return '<div class="ns-learn-player__pairs">'+list.map(p=>'<label><strong>'+esc(p.label)+'</strong><select data-pair="'+esc(p.id)+'"><option value="">Select…</option>'+choices.map(o=>opt(o.id,o.label)).join('')+'</select></label>').join('')+'</div>';
   }
-  if(node.type==='sequence'||node.type==='chain')return '<div class="ns-learn-player__ordering">'+state.order.map((id,i)=>{const s=node.steps.find(x=>x.id===id);return '<div class="ns-learn-player__order"><span>'+esc(s?.label||id)+'</span><div><button type="button" data-move="'+i+'" data-dir="-1" '+(i===0?'disabled':'')+' aria-label="Move item up">↑</button><button type="button" data-move="'+i+'" data-dir="1" '+(i===state.order.length-1?'disabled':'')+' aria-label="Move item down">↓</button></div></div>';}).join('')+'</div>';
+  if(['sequence','chain','rank'].includes(node.type))return '<div class="ns-learn-player__ordering">'+state.order.map((id,i)=>{const s=node.steps.find(x=>x.id===id);return '<div class="ns-learn-player__order"><span>'+esc(s?.label||id)+'</span><div><button type="button" data-move="'+i+'" data-dir="-1" '+(i===0?'disabled':'')+' aria-label="Move item up">↑</button><button type="button" data-move="'+i+'" data-dir="1" '+(i===state.order.length-1?'disabled':'')+' aria-label="Move item down">↓</button></div></div>';}).join('')+'</div>';
   if(node.type==='label')return '<div class="ns-learn-player__segments" role="group" aria-label="Select evidence phrases">'+node.segments.map(s=>'<button type="button" data-segment="'+esc(s.id)+'" aria-pressed="'+state.labels.has(s.id)+'">'+esc(s.text)+'</button>').join(' ')+'</div>';
   if(node.type==='predict')return '<div class="ns-learn-player__two"><h2>'+esc(node.changePrompt||'What changes?')+'</h2>'+fieldset('change',node.changes)+'<h2>What is the best prediction?</h2>'+fieldset('outcome',node.outcomes)+'</div>';
   if(node.type==='character')return '<div class="ns-learn-player__two"><p>'+esc(node.characterName)+': '+esc(node.scenario)+'</p><h2>What does the evidence support?</h2>'+fieldset('evidence',node.evidenceOptions)+'<h2>What response fits best?</h2>'+fieldset('action',node.responseOptions)+'</div>';
@@ -47,7 +49,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   return '';
  }
  function response(node){
-  if(['choose','respond','repair','investigate'].includes(node.type))return root.querySelector('input[name="choice"]:checked')?.value||null;
+  if(['choose','respond','repair','investigate','update','perspective'].includes(node.type))return root.querySelector('input[name="choice"]:checked')?.value||null;
   if(node.type==='complete')return root.querySelector('input[name="recall"]')?.value||'';
   if(['match','sort'].includes(node.type))return Object.fromEntries([...root.querySelectorAll('[data-pair]')].map(x=>[x.dataset.pair,x.value]));
   if(node.type==='sequence'||node.type==='chain')return [...state.order];
@@ -56,7 +58,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   if(node.type==='character')return {evidence:root.querySelector('input[name="evidence"]:checked')?.value||'',action:root.querySelector('input[name="action"]:checked')?.value||''};
   if(node.type==='dialogue')return root.querySelector('input[name="dialogue-choice"]:checked')?.value||'';
  }
- const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;const node=current();state.order=['sequence','chain'].includes(node?.type)?[...node.steps.map(s=>s.id)].reverse():[];};
+ const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;const node=current();state.order=['sequence','chain','rank'].includes(node?.type)?[...node.steps.map(s=>s.id)].reverse():[];};
  const advance=()=>{if(state.i+1>=nodes.length)state.phase='done';else {state.i++;reset();}paint();};
  function paint(){
   const exit=preview?'':'<a class="ns-learn-player__back" href="'+home+'">← Exit course</a>';
