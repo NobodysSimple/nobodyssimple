@@ -1042,3 +1042,1046 @@
 49. Flexible responses to actual hostility
 50. Integrated mission: engagement without certainty
 
+## Burnout
+
+[Detailed 300-lesson outline](../learn-content/blueprints/burnout.json)
+
+### 1. Stress is not one problem
+
+*Important distinction: activation versus harm*
+
+1. A busy week versus chronic overload
+2. When recovery stops restoring energy
+3. Distinguishing stress from burnout
+4. Work stress that follows you home
+5. Why coping advice can miss the cause
+
+### 2. Demand, control and support
+
+*Important distinction: individual reaction versus job design*
+
+6. High demands with little autonomy
+7. Responsibility without real authority
+8. Ambiguous roles and changing expectations
+9. Unfair workload distribution
+10. Social support that exists only on paper
+
+### 3. The physiology of sustained strain
+
+*Important distinction: acute alarm versus chronic burden*
+
+11. Persistent physiological activation
+12. Sleep disruption after demanding shifts
+13. Cognitive fatigue and decision errors
+14. Pain, illness and mental workload
+15. Why one rest day may be insufficient
+
+### 4. Emotional labour and identity
+
+*Important distinction: care versus compulsory emotional performance*
+
+16. Being pleasant while distressed
+17. Compassion fatigue in helping professions
+18. Perfectionism in caring roles
+19. Identity fused with productivity
+20. Shame over needing support
+
+### 5. Recognising warning patterns
+
+*Important distinction: ordinary tiredness versus serious impairment*
+
+21. Irritability and reduced concentration
+22. Cynicism toward work or service users
+23. Withdrawal from meaningful activities
+24. Feeling ineffective despite competence
+25. When symptoms indicate another condition
+
+### 6. Recovery and boundaries
+
+*Important distinction: restoration versus avoidance*
+
+26. Protected time without notifications
+27. Small recoveries between demands
+28. Negotiating realistic workloads
+29. Returning after prolonged absence
+30. Choosing recovery that fits your circumstances
+
+### 7. Workplace interventions
+
+*Important distinction: individual self-care versus systemic prevention*
+
+31. Staffing ratios and workload measurement
+32. Manager behaviour and psychological safety
+33. Flexible scheduling and autonomy
+34. Fair recognition and job security
+35. When organisational change is necessary
+
+### 8. Different labour contexts
+
+*Important distinction: paid employment versus invisible work*
+
+36. Unpaid caregiving and chronic demand
+37. Gig work and unpredictable income
+38. Student workload and precarious futures
+39. Disability accommodations and fatigue
+40. Burnout-like strain outside employment
+
+### 9. Culture and political economy
+
+*Important distinction: personal resilience versus institutional incentives*
+
+41. Hustle culture and moralised productivity
+42. Understaffing normalised as dedication
+43. Gendered care expectations
+44. Class inequality and recovery opportunities
+45. Digital surveillance and always-on work
+
+### 10. Advanced sustainable systems
+
+*Important distinction: symptom relief versus lasting change*
+
+46. Distinguishing burnout from depression
+47. Prioritising when every task matters
+48. Escalating concerns without retaliation
+49. Designing a team-level prevention plan
+50. Integration: demands, resources and dignity
+
+## Loneliness
+
+[Detailed 300-lesson outline](../learn-content/blueprints/loneliness.json)
+
+### 1. Loneliness versus isolation
+
+*Important distinction: felt connection versus contact count*
+
+1. Being surrounded yet feeling alone
+2. Solitude that restores rather than hurts
+3. Frequency versus quality of friendships
+4. Loneliness after moving city
+5. Why shame keeps people silent
+
+### 2. How belonging is built
+
+*Important distinction: approval versus mutual connection*
+
+6. Repeated low-pressure contact
+7. Shared purpose and group identity
+8. Trust earned through small interactions
+9. Reciprocity without scorekeeping
+10. Feeling included but not understood
+
+### 3. Rejection sensitivity
+
+*Important distinction: signal versus expectation*
+
+11. An unanswered message feels like rejection
+12. Neutral cues interpreted as exclusion
+13. Withdrawing before others can leave
+14. Reassurance loops in friendships
+15. When exclusion is actually happening
+
+### 4. Making and sustaining friends
+
+*Important distinction: social skill versus opportunity*
+
+16. Initiating without a perfect opening
+17. Turning acquaintances into friends
+18. Inviting someone without overinvesting
+19. Repairing after awkward encounters
+20. Recognising one-sided friendships
+
+### 5. Identity and authenticity
+
+*Important distinction: acceptance versus performance*
+
+21. Masking to avoid social penalties
+22. Outgrowing a friendship circle
+23. Finding community around interests
+24. Belonging across differing values
+25. The cost of always being agreeable
+
+### 6. Intimacy and relationships
+
+*Important distinction: closeness versus dependency*
+
+26. Loneliness inside a relationship
+27. Maintaining friends alongside romance
+28. Long-distance friendships and time zones
+29. Grief after friendship endings
+30. When a partner cannot meet every need
+
+### 7. Technology and connection
+
+*Important distinction: connectivity versus belonging*
+
+31. Passive scrolling and social comparison
+32. Group chats that exclude subtly
+33. Online communities and genuine support
+34. Parasocial relationships and boundaries
+35. Digital contact as a bridge or substitute
+
+### 8. Barriers to access
+
+*Important distinction: individual effort versus structural isolation*
+
+36. Disability and inaccessible venues
+37. Rural transport and geographic isolation
+38. Migration, language and belonging
+39. Cost barriers to social participation
+40. Caregiving and limited free time
+
+### 9. Community and collective solutions
+
+*Important distinction: personal loneliness versus social infrastructure*
+
+41. Libraries and third spaces
+42. Neighbourhood mutual aid
+43. Volunteering without exploitation
+44. Intergenerational connection
+45. Designing welcoming social groups
+
+### 10. Advanced connection dilemmas
+
+*Important distinction: connection versus self-abandonment*
+
+46. Being rejected without global self-blame
+47. Choosing when to invest or move on
+48. Safety after betrayal and isolation
+49. Building a personal belonging ecology
+50. Integrated mission: connection in constrained life
+
+## Social Media
+
+[Detailed 300-lesson outline](../learn-content/blueprints/social-media.json)
+
+### 1. Why attention becomes the product
+
+*Important distinction: choice versus designed friction*
+
+1. Infinite scroll and delayed stopping cues
+2. Variable rewards and checking
+3. Notifications as conditioned prompts
+4. Attention metrics and business models
+5. When use becomes difficult to regulate
+
+### 2. Social comparison systems
+
+*Important distinction: reference group versus reality*
+
+6. Highlight reels and distorted norms
+7. Status competition through likes
+8. Body comparison and appearance anxiety
+9. Professional achievement feeds
+10. How comparison affects identity
+
+### 3. Recommendation engines
+
+*Important distinction: personalisation versus user intention*
+
+11. A feed that learns from one pause
+12. Feedback loops and content narrowing
+13. Amplification of strong emotion
+14. Cold starts and accidental interests
+15. What engagement does not prove about preference
+
+### 4. Habit loops and compulsive checking
+
+*Important distinction: enjoyment versus relief seeking*
+
+16. Opening an app without deciding to
+17. Fear of missing messages
+18. Doomscrolling after distress
+19. Replacing boredom with micro-stimulation
+20. When device use disrupts sleep or goals
+
+### 5. Relationships online
+
+*Important distinction: communication versus surveillance*
+
+21. Read receipts and inferred meaning
+22. Public likes as relationship conflict
+23. Follower monitoring and trust
+24. Friendship maintenance at a distance
+25. The pressure to perform happiness
+
+### 6. Identity and influence
+
+*Important distinction: exploration versus externally shaped identity*
+
+26. Algorithmic identity labels
+27. Influencers and aspirational consumption
+28. Community support for marginalised groups
+29. Misinformation packaged as belonging
+30. When online norms become moral rules
+
+### 7. Platform persuasion
+
+*Important distinction: information versus advertising*
+
+31. Native ads and undisclosed sponsorship
+32. Dark patterns in privacy choices
+33. Scarcity offers and monetised anxiety
+34. Gaming and social features that retain users
+35. Child and adolescent vulnerability
+
+### 8. Designing a deliberate digital life
+
+*Important distinction: restriction versus agency*
+
+36. Changing notification architecture
+37. Friction around unwanted checks
+38. Replacing a feed with chosen sources
+39. Using social media for real goals
+40. Flexible boundaries without moral panic
+
+### 9. Governance and justice
+
+*Important distinction: individual habit versus market power*
+
+41. Data collection and informed consent
+42. Algorithmic discrimination
+43. Moderation and freedom of expression
+44. Age-appropriate platform design
+45. Regulation versus user responsibility
+
+### 10. Advanced attention literacy
+
+*Important distinction: correlation versus causation*
+
+46. Interpreting research on screen time
+47. Digital harm versus moral panic
+48. Competing platform incentives
+49. Design an ethical feed experiment
+50. Integrated mission: reclaim deliberate attention
+
+## Misinformation
+
+[Detailed 300-lesson outline](../learn-content/blueprints/misinformation.json)
+
+### 1. Why convincing claims work
+
+*Important distinction: plausibility versus evidence*
+
+1. Familiarity mistaken for truth
+2. Emotional stories outranking statistics
+3. Confidence as a credibility cue
+4. Anecdote versus population evidence
+5. The appeal of simple explanations
+
+### 2. Source and evidence literacy
+
+*Important distinction: authority cue versus expertise*
+
+6. Original study versus commentary
+7. What a citation actually supports
+8. Conflicts of interest and incentives
+9. Expert disagreement versus fringe claims
+10. When a reliable source can be wrong
+
+### 3. Reasoning and cognitive bias
+
+*Important distinction: hypothesis versus conclusion*
+
+11. Confirmation bias in everyday search
+12. Motivated reasoning after identity threat
+13. Base-rate neglect and vivid examples
+14. Cherry-picking and selection effects
+15. The difference between uncertainty and equivalence
+
+### 4. Conspiracy explanations
+
+*Important distinction: unanswered question versus conspiracy evidence*
+
+16. Connecting unrelated anomalies
+17. Self-sealing claims immune to falsification
+18. Agency detection and pattern seeking
+19. Communities organised around suspicion
+20. When legitimate wrongdoing is real
+
+### 5. Statistics and scientific claims
+
+*Important distinction: association versus causation*
+
+21. Correlation without causal identification
+22. Risk ratios without baseline rates
+23. Graphs that conceal variation
+24. Small samples and noisy results
+25. Replication and changing conclusions
+
+### 6. Manipulative information tactics
+
+*Important distinction: debate versus manufactured doubt*
+
+26. Quote mining and context removal
+27. False dilemmas and strawman arguments
+28. Flooding with too many claims
+29. Whataboutism used to evade evidence
+30. Appeals to fear or group pride
+
+### 7. Synthetic media and AI
+
+*Important distinction: fluent output versus verified knowledge*
+
+31. Deepfakes and provenance
+32. AI-generated citations that do not exist
+33. Image context and reverse verification
+34. Bots, coordination and authenticity
+35. When model confidence is uninformative
+
+### 8. Conversations across belief divides
+
+*Important distinction: correction versus humiliation*
+
+36. Asking what would change a mind
+37. Preserving relationships amid disagreement
+38. When fact-checking backfires
+39. Avoiding unwanted debates
+40. Recognising coercive or abusive rhetoric
+
+### 9. Information ecosystems
+
+*Important distinction: individual irrationality versus media incentives*
+
+41. Engagement algorithms and outrage
+42. Partisan information environments
+43. News deserts and institutional trust
+44. Crisis misinformation and public harm
+45. Platform accountability and transparency
+
+### 10. Advanced evidence missions
+
+*Important distinction: skepticism versus cynicism*
+
+46. An extraordinary claim with limited data
+47. Comparing primary and secondary sources
+48. Updating beliefs with new findings
+49. Assessing claims without complete certainty
+50. Integrated mission: verify a viral narrative
+
+## Neurodiversity
+
+[Detailed 300-lesson outline](../learn-content/blueprints/neurodiversity.json)
+
+### 1. Understanding neurodiversity precisely
+
+*Important distinction: difference versus diagnosis versus disability*
+
+1. Neurodiversity as population variation
+2. Autism and ADHD are not one profile
+3. Clinical diagnosis versus self-identification
+4. Disability depends partly on environments
+5. Why strengths-only stories can mislead
+
+### 2. Autistic experiences and variation
+
+*Important distinction: trait stereotype versus heterogeneous experience*
+
+6. Different sensory profiles
+7. Communication styles and mutual misunderstanding
+8. Routine, predictability and change
+9. Focused interests and attentional patterns
+10. Masked presentations and diagnostic gaps
+
+### 3. ADHD experiences and variation
+
+*Important distinction: motivation stereotype versus regulation differences*
+
+11. Task initiation and executive friction
+12. Working memory across contexts
+13. Time perception and planning
+14. Interest-based attention and novelty
+15. Why hyperactivity is not universal
+
+### 4. Co-occurrence and diagnostic complexity
+
+*Important distinction: overlap versus shared identity*
+
+16. AuDHD and conflicting needs
+17. Anxiety mistaken for inattention
+18. Sleep difficulties and executive function
+19. Learning difficulties and overlap
+20. When assessment should explore alternatives
+
+### 5. Sensory and interoceptive systems
+
+*Important distinction: sensory discomfort versus behavioural defiance*
+
+21. Sound sensitivity in crowded spaces
+22. Sensory seeking and emotional regulation
+23. Clothing, food and texture differences
+24. Interoceptive uncertainty and body signals
+25. Building individual sensory accommodations
+
+### 6. Social experience and masking
+
+*Important distinction: social difference versus social deficit*
+
+26. Camouflaging for social safety
+27. Double empathy and reciprocal misunderstanding
+28. Friendship patterns across neurotypes
+29. Burnout after sustained masking
+30. Consent and autonomy in support
+
+### 7. Learning, work and practical accessibility
+
+*Important distinction: skill deficit versus inaccessible design*
+
+31. Ambiguous instructions and overload
+32. Transitions and task switching
+33. Flexible communication at work
+34. Assessment environments that exclude
+35. Accommodations as barriers removed
+
+### 8. Identity and mental health
+
+*Important distinction: pride versus pressure to be exceptional*
+
+36. Late discovery and reinterpretation of life
+37. Internalised ableism and shame
+38. Rejection sensitivity in context
+39. Autistic burnout and differential explanations
+40. Support without demanding normality
+
+### 9. Institutions and inequality
+
+*Important distinction: individual impairment versus social barriers*
+
+41. Gender and racial disparities in assessment
+42. Education discipline and misinterpretation
+43. Healthcare accessibility
+44. Employment discrimination and disclosure
+45. Who controls definitions of normal
+
+### 10. Advanced formulation and support
+
+*Important distinction: one-size-fits-all advice versus individual fit*
+
+46. Assessing function before recommending tools
+47. Sensory needs that conflict with schedules
+48. Combining supports for overlapping needs
+49. Neuro-affirming evidence without romanticisation
+50. Integrated mission: redesign the environment
+
+## Sleep
+
+[Detailed 300-lesson outline](../learn-content/blueprints/sleep.json)
+
+### 1. How sleep regulation works
+
+*Important distinction: sleep pressure versus circadian timing*
+
+1. Sleep pressure accumulated through waking
+2. Circadian rhythm and light cues
+3. Why sleep schedules drift
+4. Individual differences in sleep need
+5. Sleep quality versus total hours
+
+### 2. Insomnia as a learned pattern
+
+*Important distinction: tiredness versus sleepiness*
+
+6. Trying harder to fall asleep
+7. The bed becoming a place of frustration
+8. Clock-watching and arousal
+9. Anticipatory worry about tomorrow
+10. When insomnia becomes self-maintaining
+
+### 3. The anxious relationship with sleep
+
+*Important distinction: rest versus forced sleep*
+
+11. Fear of not functioning tomorrow
+12. Searching for the perfect bedtime
+13. Reassurance from sleep trackers
+14. Monitoring every night as a test
+15. Catastrophic meaning attached to waking
+
+### 4. Behavioural sleep principles
+
+*Important distinction: sleep opportunity versus sleep efficiency*
+
+16. Irregular rise times and weekend drift
+17. Naps and shifting sleep pressure
+18. Conditioned arousal and stimulus control
+19. Adjusting time in bed with clinical guidance
+20. Why extreme sleep restriction is unsafe
+
+### 5. Body and environment
+
+*Important distinction: sleep environment versus sleep disorder*
+
+21. Light, temperature and noise
+22. Caffeine, alcohol and timing
+23. Medication effects and sleep quality
+24. Shift work and circadian strain
+25. Housing conditions and poor sleep
+
+### 6. Other sleep and health conditions
+
+*Important distinction: insomnia versus another disorder*
+
+26. Snoring and possible sleep apnoea
+27. Restless legs and nocturnal discomfort
+28. Parasomnias and abnormal nighttime events
+29. Circadian phase delay versus insomnia
+30. When daytime sleepiness warrants assessment
+
+### 7. Daytime coping and wellbeing
+
+*Important distinction: functioning versus sleep perfectionism*
+
+31. Responding to fatigue without panic
+32. Movement and daytime light
+33. Mood effects of fragmented sleep
+34. Driving and safety after sleep loss
+35. Planning demanding days realistically
+
+### 8. Evidence-based treatment reasoning
+
+*Important distinction: supportive routine versus insomnia therapy*
+
+36. CBT-I components and rationale
+37. How behavioural experiments address arousal
+38. Sleep diaries without obsessive monitoring
+39. Limits of over-the-counter remedies
+40. Medication decisions and clinical review
+
+### 9. Sleep in social systems
+
+*Important distinction: individual hygiene versus structural constraint*
+
+41. Night shifts and labour policy
+42. Caregiving and interrupted sleep
+43. Student schedules and late transport
+44. Poverty, overcrowding and noise
+45. Disability and sensory accessibility
+
+### 10. Advanced sleep judgement
+
+*Important distinction: single bad night versus chronic difficulty*
+
+46. Insomnia with depression or anxiety
+47. Sleep tracking and measurement error
+48. Relapse after illness or travel
+49. Adapting treatment to irregular routines
+50. Integrated case: target the actual mechanism
+
+## Low Mood
+
+[Detailed 300-lesson outline](../learn-content/blueprints/low-mood.json)
+
+### 1. What low mood is and isn't
+
+*Important distinction: temporary sadness versus depressive syndrome*
+
+1. Sadness after disappointment
+2. Anhedonia without feeling sad
+3. Impairment and time course
+4. Why a label needs assessment
+5. Contextual grief versus depressive disorder
+
+### 2. Reward loss and behavioural withdrawal
+
+*Important distinction: fatigue versus reduced reinforcement*
+
+6. Stopping enjoyable activities
+7. Withdrawal after repeated setbacks
+8. Reduced social contact and low mood
+9. Avoidance when effort feels pointless
+10. Feedback loops between mood and activity
+
+### 3. Thinking patterns and mood
+
+*Important distinction: negative thought versus proven fact*
+
+11. Hopeless predictions after failure
+12. Rumination on past mistakes
+13. Overgeneralising from one loss
+14. Memory biased toward negative events
+15. Making decisions under pessimistic beliefs
+
+### 4. Self-evaluation and shame
+
+*Important distinction: symptom versus moral failing*
+
+16. Feeling like a burden
+17. Criticism interpreted as worthlessness
+18. Guilt for reduced productivity
+19. Perfectionism and depression
+20. When reassurance cannot penetrate shame
+
+### 5. Energy, sleep and physical health
+
+*Important distinction: psychological symptom versus medical issue*
+
+21. Sleep changes with low mood
+22. Appetite and weight changes
+23. Psychomotor slowing or agitation
+24. Pain and persistent fatigue
+25. Medical conditions and treatment effects
+
+### 6. Connection and support
+
+*Important distinction: social withdrawal versus chosen solitude*
+
+26. Not replying to friends
+27. Asking for support without overexplaining
+28. Partners carrying too much responsibility
+29. Loneliness as maintaining factor
+30. Support that respects autonomy
+
+### 7. Behavioural activation and recovery
+
+*Important distinction: motivation versus action scheduling*
+
+31. Mapping activity and reward
+32. Choosing tasks matched to capacity
+33. Reducing avoidant withdrawal
+34. Balancing rest and activation
+35. Measuring change without demanding happiness
+
+### 8. Safety, treatment and escalation
+
+*Important distinction: self-help versus care requirement*
+
+36. Recognising persistent impairment
+37. Thoughts of self-harm and immediate safety
+38. Clinical assessment and support options
+39. Shared treatment decision making
+40. Relapse planning and early warning signs
+
+### 9. Structural causes and inequities
+
+*Important distinction: personal defect versus social adversity*
+
+41. Poverty and loss of control
+42. Discrimination and chronic invalidation
+43. Job insecurity and demoralisation
+44. Disability, illness and access to care
+45. Why positive thinking cannot fix unsafe conditions
+
+### 10. Advanced formulation
+
+*Important distinction: one label versus multiple maintaining mechanisms*
+
+46. Depression with anxiety
+47. Bereavement, trauma and low mood
+48. Bipolar-spectrum history and differential care
+49. When activity plans fail for understandable reasons
+50. Integrated mission: compassionate realistic plan
+
+## Scams
+
+[Detailed 300-lesson outline](../learn-content/blueprints/scams.json)
+
+### 1. Why clever people are deceived
+
+*Important distinction: susceptibility versus intelligence*
+
+1. Time pressure and cognitive overload
+2. Trust built before the request
+3. When a familiar voice feels safe
+4. Authority cues without authentication
+5. Shame that prevents reporting
+
+### 2. Urgency and fear tactics
+
+*Important distinction: real emergency versus manufactured urgency*
+
+6. Suspicious account-lock warnings
+7. Family emergency impersonation
+8. Threats of legal consequences
+9. Pressure to keep a secret
+10. Interrupting the urgency cycle
+
+### 3. Authority and institutional mimicry
+
+*Important distinction: official appearance versus authenticity*
+
+11. Spoofed calls and sender names
+12. Fake government letters
+13. Imitation bank security teams
+14. Employer and executive impersonation
+15. Verifying via independent contact routes
+
+### 4. Romance and relationship fraud
+
+*Important distinction: emotional connection versus financial exploitation*
+
+16. Rapid attachment and future promises
+17. Requests for travel or medical money
+18. Isolation from skeptical friends
+19. Shame after emotional investment
+20. Leaving without unsafe confrontation
+
+### 5. Investment and financial deception
+
+*Important distinction: return claims versus evidence*
+
+21. Guaranteed profits and improbable returns
+22. Social proof from fabricated testimonials
+23. Ponzi-style payment narratives
+24. Crypto and app-based deception
+25. Recovery scams after a previous loss
+
+### 6. Digital technical tactics
+
+*Important distinction: authentic interface versus secure action*
+
+26. Phishing links and fake login pages
+27. QR-code redirection and hidden destinations
+28. Malicious attachments and permissions
+29. Deepfake voices and video persuasion
+30. Account takeover and password reuse
+
+### 7. Social psychology of compliance
+
+*Important distinction: consent versus manipulated choice*
+
+31. Reciprocity and small favours
+32. Commitment escalation and sunk costs
+33. Scarcity and limited-time decisions
+34. Group pressure and fear of exclusion
+35. Trusted relationship used as a channel
+
+### 8. Prevention and response
+
+*Important distinction: panic versus practical containment*
+
+36. Pause and verify through another channel
+37. What to do after sharing a password
+38. Responding after a financial transfer
+39. Preserving useful records safely
+40. Getting assistance without secondary scams
+
+### 9. Social distribution of fraud risk
+
+*Important distinction: personal vigilance versus institutional responsibility*
+
+41. Older adults and stereotypes
+42. Language and immigration barriers
+43. Disability accessibility and scam prevention
+44. Platform advertisements carrying fraud
+45. Responsibilities of banks and technology firms
+
+### 10. Advanced deception cases
+
+*Important distinction: strange detail versus reliable red flag*
+
+46. A legitimate request that looks suspicious
+47. A convincing scam with no obvious errors
+48. Ambiguous AI-generated evidence
+49. Balancing privacy with verification
+50. Integrated mission: protect someone without shaming
+
+## Masculinity
+
+[Detailed 300-lesson outline](../learn-content/blueprints/masculinity.json)
+
+### 1. Sex, gender and sexuality precisely
+
+*Important distinction: biological attributes versus social identity*
+
+1. Sex characteristics and variation
+2. Gender identity versus gender expression
+3. Sexual orientation versus behaviour
+4. Attraction, fantasy and identification
+5. Why categorical assumptions fail
+
+### 2. Development and identity exploration
+
+*Important distinction: exploration versus pressure to declare*
+
+6. Questions about labels and belonging
+7. Adolescence, change and continuity
+8. Body comfort and social presentation
+9. Identity without public disclosure
+10. When uncertainty is not pathology
+
+### 3. Gender norms and social learning
+
+*Important distinction: expectation versus inherent trait*
+
+11. Rules about acceptable masculinity
+12. Femininity and emotional expression
+13. Status policing among peers
+14. Family and cultural gender scripts
+15. When deviation triggers punishment
+
+### 4. Sexuality and relationship diversity
+
+*Important distinction: preference versus moral judgement*
+
+16. Attraction across contexts
+17. Romantic versus sexual orientation
+18. Desire that changes over time
+19. Consensual kink and power exchange
+20. When fantasy does not dictate identity
+
+### 5. Consent and interpersonal power
+
+*Important distinction: negotiated agreement versus coercion*
+
+21. Enthusiastic ongoing consent
+22. Boundaries that apply to both partners
+23. Negotiating roles without obligation
+24. When inequality compromises free choice
+25. Recognising manipulation in sexual contexts
+
+### 6. Shame, stigma and internal conflict
+
+*Important distinction: private preference versus internalised judgement*
+
+26. Shame after desire or pleasure
+27. Religious or cultural pressure and identity
+28. Fear of being judged by partners
+29. Compulsive self-analysis of sexuality
+30. Seeking self-understanding without forced labels
+
+### 7. Sexual health and psychological wellbeing
+
+*Important distinction: behaviour versus risk stereotype*
+
+31. Sexual communication and pleasure
+32. Safer-sex decisions and access
+33. Distress from unwanted repetitive behaviour
+34. Sexual functioning and performance anxiety
+35. Support for coercion or sexual violence
+
+### 8. Online gender and sexuality narratives
+
+*Important distinction: belonging versus ideological capture*
+
+36. Manosphere accounts of status
+37. Misogyny framed as self-improvement
+38. Influencer incentives and outrage
+39. Pornography myths about relationships
+40. Algorithmic reinforcement of gender hostility
+
+### 9. Institutions and inequality
+
+*Important distinction: individual prejudice versus structural conditions*
+
+41. Gender-based violence and risk
+42. LGBTQ+ discrimination and minority stress
+43. Schools, sex education and omission
+44. Workplace harassment and stereotypes
+45. Policy debates and lived consequences
+
+### 10. Advanced ethics and cases
+
+*Important distinction: difference versus harm*
+
+46. A couple with contrasting gender roles
+47. Respecting identity without assuming experience
+48. Navigating family disagreement safely
+49. Differentiating prejudice from genuine incompatibility
+50. Integrated mission: autonomy, respect and evidence
+
+## Vaping
+
+[Detailed 300-lesson outline](../learn-content/blueprints/vaping.json)
+
+### 1. Understanding social influence
+
+*Important distinction: individual preference versus social pressure*
+
+1. Conformity without direct coercion
+2. Descriptive versus injunctive norms
+3. Pluralistic ignorance in a peer group
+4. Authority and expertise cues
+5. When choosing freely is difficult
+
+### 2. How dependence develops
+
+*Important distinction: enjoyment versus reinforcement*
+
+6. Reward prediction and repeated use
+7. Negative reinforcement and relief
+8. Tolerance, withdrawal and craving
+9. Cues that trigger automatic wanting
+10. Dependence without a fixed stereotype
+
+### 3. Nicotine and vaping in context
+
+*Important distinction: harm comparison versus harmlessness*
+
+11. Nicotine's pharmacological effects
+12. Vaping versus combustible tobacco risk
+13. Marketing flavours and perceived safety
+14. Adolescent exposure and dependence
+15. The difference between risk reduction and endorsement
+
+### 4. Peers, identity and status
+
+*Important distinction: belonging versus conformity*
+
+16. Joining in to avoid exclusion
+17. Refusing without losing face
+18. Status and group rituals
+19. Relationships with different use patterns
+20. When friendship is conditional on use
+
+### 5. Advertising and persuasive systems
+
+*Important distinction: information versus engineered desire*
+
+21. Scarcity marketing and urgency
+22. Influencer sponsorship and social proof
+23. Packaging that normalises risk
+24. Platform targeting and personalisation
+25. Who profits from repeated consumption
+
+### 6. Behavioural addiction concepts
+
+*Important distinction: habit versus clinically significant impairment*
+
+26. Compulsive checking and variable rewards
+27. Gaming engagement versus gaming disorder
+28. Gambling reinforcement and loss chasing
+29. Substance versus behavioural addictions
+30. Why not every habit is an addiction
+
+### 7. Change, relapse and support
+
+*Important distinction: lapse versus total failure*
+
+31. Identifying triggers and substitutes
+32. Planning around social invitations
+33. Managing cravings and withdrawal
+34. Harm reduction and professional support
+35. Avoiding shame-based relapse cycles
+
+### 8. Risk contexts and vulnerability
+
+*Important distinction: moral blame versus lived constraint*
+
+36. Stress, poverty and use patterns
+37. Trauma and coping through substances
+38. Neurodevelopmental differences and risk
+39. Age and developmental vulnerability
+40. Barriers to cessation services
+
+### 9. Collective prevention and policy
+
+*Important distinction: individual refusal versus environmental prevention*
+
+41. Age restrictions and enforcement
+42. Product availability and marketing rules
+43. Public health messaging without stigma
+44. Industry accountability and lobbying
+45. Unequal exposure to commercial risk
+
+### 10. Advanced choices and transfer
+
+*Important distinction: single mechanism versus interacting systems*
+
+46. When abstinence advice does not fit
+47. Social pressure after quitting
+48. Digital and substance dependence overlap
+49. Helping someone without coercion
+50. Integrated mission: design a realistic change plan
+
+---
+
+Each problem-centred module has six planned lesson missions: case recognition, mechanism mapping, close distinction, evidence investigation, proportionate strategy and unfamiliar-case transfer. Titles and objectives are **not yet written teaching content** and require review before publication.
