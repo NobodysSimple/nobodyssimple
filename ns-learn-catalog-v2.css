@@ -317,3 +317,21 @@ body.app-body.ns-shell-v1 #main .ns-catalogue-tutor small{
  display:block;margin-top:5px;font:500 12px/1.55 system-ui,sans-serif;color:#5d7861;
 }
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-catalogue-tutor small{color:#dae9d9;}
+
+/* Course Lab published interactive lessons */
+body.app-body.ns-shell-v1 #main .ns-learn-player__reading{max-width:66ch;margin:15px 0 20px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__reading p{font-size:clamp(15px,1.5vw,18px);line-height:1.8;margin:0 0 18px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__sources{font-size:12px!important;color:#6b806b}
+body.app-body.ns-shell-v1 #main .ns-learn-player__figure{margin:20px 0 24px;max-width:700px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__figure img{display:block;max-width:100%;height:auto;border-radius:12px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__figure figcaption{font:500 12px/1.55 system-ui,sans-serif;color:#647a65;padding:8px 0}
+body.app-body.ns-shell-v1 #main .ns-learn-player__segments{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:18px 0}
+body.app-body.ns-shell-v1 #main .ns-learn-player__segments button{padding:10px 13px;border:1px solid #aac1aa;border-radius:12px;background:#f5f6ed;color:#37563f;cursor:pointer;min-height:42px;max-width:100%;text-align:left}
+body.app-body.ns-shell-v1 #main .ns-learn-player__segments button[aria-pressed="true"]{background:#bedbc4;border-color:#4e865b;font-weight:800}
+body.app-body.ns-shell-v1 #main .ns-learn-player__two h2{font:700 17px/1.4 Georgia,serif;color:#365b42;margin:22px 0 12px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__choices label{align-items:flex-start}
+body.app-body.ns-shell-v1 #main .ns-learn-player__choices input{margin-top:4px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__primary{cursor:pointer}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__two h2{color:#ebf2e6}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__segments button{background:#345541;border-color:#75947a;color:#e7f0e4}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__segments button[aria-pressed="true"]{background:#4b7659}

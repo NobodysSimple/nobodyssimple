@@ -14,6 +14,7 @@ import {
 import { Publisher } from "./publisher.mjs";
 import {notebookBlogMarkup} from "./ns-blog-notebook.mjs";
 import {mountTopicStudio} from "./studio-topics.mjs";
+import {mountCourseLab} from "./studio-course-lab.mjs";
 
 const $ = (id) => document.getElementById(id);
 const now = () => new Date().toISOString();
@@ -235,6 +236,7 @@ async function setView(view) {
   $("media-view").hidden = view !== "media";
   $("templates-view").hidden = view !== "templates";
   $("topic-studio-view").hidden = view !== "topic-studio";
+  $("course-lab-view").hidden = view !== "course-lab";
   $("moderation-view").hidden = view !== "moderation";
   $("editor-view").hidden = view !== "editor";
   document.querySelectorAll(".rail-button[data-view]").forEach((button) => button.classList.toggle("active", button.dataset.view === view));
@@ -242,6 +244,7 @@ async function setView(view) {
   if (view === "media") renderMediaLibrary();
   if (view === "templates") renderTemplates();
   if (view === "topic-studio") mountTopicStudio($("topic-studio-view"),()=>publisher,toast);
+  if (view === "course-lab") mountCourseLab($("course-lab-view"),()=>publisher,toast);
 }
 
 async function refreshLocal() {

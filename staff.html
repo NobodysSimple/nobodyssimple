@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="studio.css" />
     <link rel="stylesheet" href="studio-quiet.css?v=content-studio-20261115" />
+    <link rel="stylesheet" href="studio-course-lab.css?v=course-lab-20261118" />
       <link rel="stylesheet" href="app-design.css" />
     <script type="module" src="app-design.mjs"></script>
   </head>
@@ -43,6 +44,7 @@
             <button class="rail-button active" data-view="dashboard" type="button"><span>▤</span> Content</button>
             <button class="rail-button" data-view="media" type="button"><span>▧</span> Media</button>
             <button class="rail-button" data-view="templates" type="button"><span>▦</span> Templates</button>
+            <button class="rail-button" data-view="course-lab" type="button"><span>✦</span> Course Lab</button>
              <button class="rail-button" data-view="topic-studio" type="button"><span>✿</span> Topic guides</button>
              <button class="rail-button" data-view="moderation" type="button"><span>☷</span> Live comment review</button>
             <div class="rail-divider"></div>
@@ -76,6 +78,7 @@
             </div>
 
             <div id="topic-studio-view" class="creator-view" hidden aria-label="Topic Guide Studio"></div>
+            <div id="course-lab-view" class="creator-view" hidden aria-label="Learn Course Lab"></div>
              <div id="moderation-view" class="creator-view" hidden aria-label="Staff comment moderation">
               <header class="dashboard-heading"><div><p class="eyebrow">STAFF · COMMUNITY REVIEW</p><h1>Live comment review</h1>
                <p>Comments post immediately. Review, remove, and ban accounts through the authenticated Firebase staff panel.</p>
@@ -136,6 +139,6 @@
     <dialog id="versions-dialog" class="creator-dialog"><div class="dialog-head"><div><p class="eyebrow">LOCAL HISTORY</p><h2>Compare versions</h2></div><button class="text-button" data-close-dialog type="button">Close</button></div><div id="version-compare" class="version-compare"></div></dialog>
     <div id="selection-toolbar" class="selection-toolbar" hidden><button type="button" data-cmd="bold"><b>B</b></button><button type="button" data-cmd="italic"><i>I</i></button><button type="button" data-cmd="underline"><u>U</u></button><button type="button" id="selection-link">↗</button></div>
     <div id="toast" class="creator-toast" role="status" hidden></div>
-    <script type="module" src="studio.mjs?v=content-studio-20261115"></script>
+    <script type="module" src="studio.mjs?v=course-lab-20261118"></script>
   </body>
 </html>

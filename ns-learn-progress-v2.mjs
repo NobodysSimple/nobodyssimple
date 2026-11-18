@@ -21,7 +21,7 @@ function write(storage,update){
  }catch{return {ok:false,error:'Progress could not be saved on this device.'};}
 }
 export function saveLearnCompletion(course,lesson,score,storage=globalThis.localStorage,at=now()){
- if(!course?.id||!lesson?.id||!score?.allAnswered||score.total!==lesson.questions?.length||!score.total)return {ok:false,error:'Complete every question before saving.'};
+ if(!course?.id||!lesson?.id||!score?.allAnswered||score.total!==(Array.isArray(lesson.nodes)?lesson.nodes.filter(n=>!['read','image'].includes(n.type)).length:lesson.questions?.length))return {ok:false,error:'Complete every question before saving.'};
  return write(storage,records=>{
   const key=completionKey(course.id,lesson.id);
   if(!records[key])records[key]={type:'learn-completion',courseId:course.id,lessonId:lesson.id,version:course.version,lessonVersion:lesson.version||1,at,correct:score.correct,total:score.total};
@@ -29,7 +29,7 @@ export function saveLearnCompletion(course,lesson,score,storage=globalThis.local
  });
 }
 export function saveLearnReview(course,lesson,score,storage=globalThis.localStorage,at=now()){
- if(!course?.id||!lesson?.id||!score?.allAnswered||score.total!==lesson.questions?.length||!score.total)return {ok:false,error:'Review is incomplete.'};
+ if(!course?.id||!lesson?.id||!score?.allAnswered||score.total!==(Array.isArray(lesson.nodes)?lesson.nodes.filter(n=>!['read','image'].includes(n.type)).length:lesson.questions?.length))return {ok:false,error:'Review is incomplete.'};
  if(!readLearnProgress(storage)[completionKey(course.id,lesson.id)])return {ok:false,error:'Finish the lesson before reviewing it.'};
  return write(storage,records=>{
   const suffix=globalThis.crypto?.randomUUID?.()||at.replace(/\D/g,'');
