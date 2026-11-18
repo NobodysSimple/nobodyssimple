@@ -16,6 +16,16 @@
           "text": "Let's draft the corrected wording together and show it to the director with a brief explanation of our different roles.",
           "reason": "Joint drafting might reduce defensiveness, although it requires Leo to cooperate with the correction."
         }
+      ],
+      "interpretations": [
+        {
+          "text": "Leo may fear that acknowledging Maya’s analysis now will make the original slide look like deliberate misrepresentation.",
+          "reason": "The concern about appearing dishonest is plausible, but the promotion-related fear is stated more directly."
+        },
+        {
+          "text": "Leo may regard technical authorship as less important than managerial accountability and resent the proposed distinction.",
+          "reason": "This could explain his opening response; it does not fully account for why the correction feels like a risk to his competence."
+        }
       ]
     },
     {
@@ -32,6 +42,16 @@
         {
           "text": "Could we agree how to ask for practical favours without using the friendship as evidence for or against either person?",
           "reason": "A future agreement may improve communication, but first the immediate transport problem needs resolution."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Owen may be treating Nina’s refusal as evidence that their earlier exchange of favours was unequal.",
+          "reason": "That fits his reference to the previous lift, though linking the refusal to loyalty still changes the pressure on Nina."
+        },
+        {
+          "text": "Owen may be worried about losing an important plan and searching for leverage rather than deliberately undermining Nina’s judgement.",
+          "reason": "Urgent practical need could contribute to the tactic without removing its effect."
         }
       ]
     },
@@ -50,6 +70,16 @@
           "text": "I want to talk about why I keep checking the online status, rather than asking you for more immediate replies.",
           "reason": "This addresses the interpretation but leaves the couple's practical communication expectations unsettled."
         }
+      ],
+      "interpretations": [
+        {
+          "text": "Sofia may be using the online indicator to test whether Jamie has changed his usual communication routine.",
+          "reason": "A changed routine would matter, but Jamie has already explained the shift restriction."
+        },
+        {
+          "text": "Sofia may be repeating a habitual phone check because the delay is inconvenient, even without a fear about the relationship.",
+          "reason": "A habit could contribute, although her words about needing to know they are okay favour a closeness-related account."
+        }
       ]
     },
     {
@@ -66,6 +96,16 @@
         {
           "text": "Record two versions and compare whether a listener can understand them equally well.",
           "reason": "This is a useful comparison, although it may become another checking ritual without a stopping rule."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Rae may be trying to correct small genuine weaknesses that only become visible when she reads the answer again.",
+          "reason": "This would make additional revision useful if it reliably improved performance rather than briefly settling anxiety."
+        },
+        {
+          "text": "Rae may be treating the interview as unusually consequential and trying to avoid one specific omission.",
+          "reason": "High stakes could explain careful preparation, but repeated untested revisions need a stopping criterion."
         }
       ]
     },
@@ -84,6 +124,16 @@
           "text": "Can we trial a shared calendar for visits and review whether it gives us enough notice?",
           "reason": "A practical system could help, but it is only useful if both flatmates agree to use it."
         }
+      ],
+      "interpretations": [
+        {
+          "text": "Ellie may be reacting to a prior uncomfortable visit and now anticipating the same problem with other guests.",
+          "reason": "Past experience might explain the importance of notice, though it has not been described in the current exchange."
+        },
+        {
+          "text": "Dev may believe advance notice would make him responsible for negotiating every spontaneous visit.",
+          "reason": "This predicts resistance even if Ellie only intends to request information, not permission."
+        }
       ]
     },
     {
@@ -100,6 +150,16 @@
         {
           "text": "Choose a less crowded carriage while working out whether the feared outcome is about the bodily sensations or the environment.",
           "reason": "Adjusting the setting can help sensory comfort, although it may not test a fear maintained by avoidance."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Iris may be responding to the crowded platform’s sensory intensity, with the racing heart following that discomfort.",
+          "reason": "The environment could be a real source of distress, but her feared consequence needs clarification."
+        },
+        {
+          "text": "Iris may have had a previous health incident that makes a racing pulse especially significant to her.",
+          "reason": "A history of illness would change the evaluation, but this information is missing from the scene."
         }
       ]
     },
@@ -118,6 +178,16 @@
           "text": "Let's make sure we agree which decisions need both people's input before either of us books again.",
           "reason": "A future rule may help; it does not resolve the present trip if the date is unsuitable."
         }
+      ],
+      "interpretations": [
+        {
+          "text": "Amir may be reacting to a repeated pattern of decisions made without him rather than to this booking alone.",
+          "reason": "A pattern would increase the stakes, though the vignette gives one clear example."
+        },
+        {
+          "text": "Jess may have assumed the date was already agreed and be confused about why Amir experiences the booking as exclusion.",
+          "reason": "A misunderstanding could explain the decision without establishing deliberate disregard."
+        }
       ]
     },
     {
@@ -134,6 +204,16 @@
         {
           "text": "Give yourself time to feel disappointed, then set a bounded rehearsal task tied to the feedback.",
           "reason": "This respects the emotional response, but the actual skill deficit still requires work."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Hal may be worried that this mark predicts difficulty qualifying, rather than treating one performance as evidence of global worth.",
+          "reason": "A realistic consequence can be stressful without making a judgement about the whole self."
+        },
+        {
+          "text": "Hal may believe the marking criteria were applied inconsistently and therefore distrust the feedback.",
+          "reason": "A procedural concern would require information about the assessment rather than inference from the failure alone."
         }
       ]
     },
@@ -152,6 +232,16 @@
           "text": "Choose the hardest sentence in the section and draft a deliberately provisional version before reorganising the notes.",
           "reason": "Directly engaging the avoided task may help, but the best first step may be smaller."
         }
+      ],
+      "interpretations": [
+        {
+          "text": "Lena may need more specific examples of successful applications before she can decide what counts as enough detail.",
+          "reason": "Unclear criteria might hinder starting, although she already has the information and a defined question."
+        },
+        {
+          "text": "Lena may be allocating time to organise notes because that work feels productive and offers clearer progress than drafting.",
+          "reason": "Preparation can be useful; its function changes if it repeatedly postpones the difficult section."
+        }
       ]
     },
     {
@@ -168,6 +258,16 @@
         {
           "text": "Sit with the group for a few minutes before speaking, while keeping attention on the discussion rather than practising lines.",
           "reason": "A gradual entry may be manageable, though delaying participation indefinitely would preserve the original avoidance."
+        }
+      ],
+      "interpretations": [
+        {
+          "text": "Milo may be uncertain about how newcomers usually join the society and have little information about its social norms.",
+          "reason": "Unfamiliarity could explain hesitation without proving fear of hostile judgement."
+        },
+        {
+          "text": "Milo may be unusually alert to noise and movement in the unfamiliar room, leaving less attention for conversation.",
+          "reason": "Sensory load could contribute, though his reported fear of evaluation still needs examination."
         }
       ]
     }
