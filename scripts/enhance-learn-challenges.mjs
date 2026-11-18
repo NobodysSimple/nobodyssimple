@@ -83,6 +83,7 @@ function openingAlternatives(opening,extra){
  return {
   id:opening.id,
   interpretations:[
+   ...(extra?.interpretations||[]),
    make(opening.rival,'This alternative deserves consideration. It would become stronger if earlier expectations supported it. '+limit),
    make(opening.alternate,'This could explain the immediate behaviour, but it needs facts beyond the present conversation. '+limit),
    make('The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.',weak),
