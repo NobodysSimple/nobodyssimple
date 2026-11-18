@@ -1,10 +1,804 @@
 {
   "id": "burnout",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Stress, Burnout & Psychological Demands",
-  "description": "Explore a busy week versus chronic overload through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "burnout-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Priya",
+        "Sam"
+      ],
+      "glossary": [
+        {
+          "term": "Stress",
+          "definition": "A response to demands that feel larger than the resources available at that moment.",
+          "example": "A support worker feels tense ahead of a difficult week of appointments.",
+          "limit": "Stress can rise during one week without becoming a persistent occupational pattern."
+        },
+        {
+          "term": "Job demands",
+          "definition": "What work requires from someone in time, attention or responsibility.",
+          "example": "An employee is assigned extra cases while the team remains short-staffed.",
+          "limit": "Demand is partly shaped by how much control and support a person has."
+        },
+        {
+          "term": "Recovery",
+          "definition": "Time and conditions that allow the effects of effort to settle.",
+          "example": "After a demanding shift, someone has uninterrupted time away from work.",
+          "limit": "Rest becomes less effective when work messages and unfinished tasks repeatedly intrude."
+        },
+        {
+          "term": "Burnout",
+          "definition": "A work-related pattern of exhaustion and growing distance from work, sometimes accompanied by reduced efficacy, associated with chronic occupational stress.",
+          "example": "An employee feels depleted for months while the job's demands keep increasing.",
+          "limit": "Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "burnout-f1-l1",
+          "title": "What are we studying?",
+          "teach": "An exhausting week is not automatically burnout. To understand what is happening, we need to look at how long the demands have continued and how much influence someone has over them.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "burnout-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "An exhausting week is not automatically burnout. To understand what is happening, we need to look at how long the demands have continued and how much influence someone has over them.\n\nWhen is work tiring, and when have the conditions of working become a sustained problem?",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f1-l1-n2",
+              "type": "read",
+              "title": "What stress means",
+              "body": "A response to demands that feel larger than the resources available at that moment.\n\nFor example: A support worker feels tense ahead of a difficult week of appointments.\n\nOne important limit: Stress can rise during one week without becoming a persistent occupational pattern.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: A support worker feels tense ahead of a difficult week of appointments. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "burnout-foundation:choose",
+              "explanation": "The example most directly supports stress. A response to demands that feel larger than the resources available at that moment. Stress can rise during one week without becoming a persistent occupational pattern.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "options": [
+                {
+                  "id": "burnout-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Stress.",
+                  "feedback": "This description follows from the example. A response to demands that feel larger than the resources available at that moment."
+                },
+                {
+                  "id": "burnout-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Job demands.",
+                  "feedback": "Job demands is a genuine psychological idea, but the observation by itself does not establish it. Demand is partly shaped by how much control and support a person has."
+                },
+                {
+                  "id": "burnout-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Recovery.",
+                  "feedback": "Recovery is a genuine psychological idea, but the observation by itself does not establish it. Rest becomes less effective when work messages and unfinished tasks repeatedly intrude."
+                },
+                {
+                  "id": "burnout-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Burnout.",
+                  "feedback": "Burnout is a genuine psychological idea, but the observation by itself does not establish it. Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue."
+                },
+                {
+                  "id": "burnout-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "burnout-f1-l1-n3-o1"
+            },
+            {
+              "id": "burnout-f1-l1-n4",
+              "type": "read",
+              "title": "What job demands means",
+              "body": "What work requires from someone in time, attention or responsibility.\n\nFor example: An employee is assigned extra cases while the team remains short-staffed.\n\nOne important limit: Demand is partly shaped by how much control and support a person has.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: An employee is assigned extra cases while the team remains short-staffed. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "burnout-foundation:choose",
+              "explanation": "The example most directly supports job demands. What work requires from someone in time, attention or responsibility. Demand is partly shaped by how much control and support a person has.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "options": [
+                {
+                  "id": "burnout-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Stress.",
+                  "feedback": "Stress is a genuine psychological idea, but the observation by itself does not establish it. Stress can rise during one week without becoming a persistent occupational pattern."
+                },
+                {
+                  "id": "burnout-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Job demands.",
+                  "feedback": "This description follows from the example. What work requires from someone in time, attention or responsibility."
+                },
+                {
+                  "id": "burnout-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Recovery.",
+                  "feedback": "Recovery is a genuine psychological idea, but the observation by itself does not establish it. Rest becomes less effective when work messages and unfinished tasks repeatedly intrude."
+                },
+                {
+                  "id": "burnout-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Burnout.",
+                  "feedback": "Burnout is a genuine psychological idea, but the observation by itself does not establish it. Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue."
+                },
+                {
+                  "id": "burnout-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "burnout-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "burnout-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "burnout-f1-l2-n1",
+              "type": "read",
+              "title": "What recovery means",
+              "body": "Time and conditions that allow the effects of effort to settle.\n\nFor example: After a demanding shift, someone has uninterrupted time away from work.\n\nOne important limit: Rest becomes less effective when work messages and unfinished tasks repeatedly intrude.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f1-l2-n2",
+              "type": "read",
+              "title": "What burnout means",
+              "body": "A work-related pattern of exhaustion and growing distance from work, sometimes accompanied by reduced efficacy, associated with chronic occupational stress.\n\nFor example: An employee feels depleted for months while the job's demands keep increasing.\n\nOne important limit: Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "burnout-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of when is work tiring, and when have the conditions of working become a sustained problem?",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "pairs": [
+                {
+                  "id": "burnout-f1-l2-n3-p0",
+                  "label": "Stress",
+                  "answer": "A response to demands that feel larger than the resources available at that moment."
+                },
+                {
+                  "id": "burnout-f1-l2-n3-p1",
+                  "label": "Job demands",
+                  "answer": "What work requires from someone in time, attention or responsibility."
+                },
+                {
+                  "id": "burnout-f1-l2-n3-p2",
+                  "label": "Recovery",
+                  "answer": "Time and conditions that allow the effects of effort to settle."
+                },
+                {
+                  "id": "burnout-f1-l2-n3-p3",
+                  "label": "Burnout",
+                  "answer": "A work-related pattern of exhaustion and growing distance from work, sometimes accompanied by reduced efficacy, associated with chronic occupational stress."
+                }
+              ]
+            },
+            {
+              "id": "burnout-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: After a demanding shift, someone has uninterrupted time away from work. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "burnout-foundation:choose",
+              "explanation": "The example most directly supports recovery. Time and conditions that allow the effects of effort to settle. Rest becomes less effective when work messages and unfinished tasks repeatedly intrude.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "options": [
+                {
+                  "id": "burnout-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Stress.",
+                  "feedback": "Stress is a genuine psychological idea, but the observation by itself does not establish it. Stress can rise during one week without becoming a persistent occupational pattern."
+                },
+                {
+                  "id": "burnout-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Job demands.",
+                  "feedback": "Job demands is a genuine psychological idea, but the observation by itself does not establish it. Demand is partly shaped by how much control and support a person has."
+                },
+                {
+                  "id": "burnout-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Recovery.",
+                  "feedback": "This description follows from the example. Time and conditions that allow the effects of effort to settle."
+                },
+                {
+                  "id": "burnout-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Burnout.",
+                  "feedback": "Burnout is a genuine psychological idea, but the observation by itself does not establish it. Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue."
+                },
+                {
+                  "id": "burnout-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "burnout-f1-l2-n4-o3"
+            },
+            {
+              "id": "burnout-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Rest becomes less effective when work messages and unfinished tasks repeatedly intrude.\n\nBurnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            }
+          ]
+        },
+        {
+          "id": "burnout-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "burnout-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "A response to demands that feel larger than the resources available at that moment.\n\nWhat work requires from someone in time, attention or responsibility.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: An employee feels depleted for months while the job's demands keep increasing. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "burnout-foundation:choose",
+              "explanation": "The example most directly supports burnout. A work-related pattern of exhaustion and growing distance from work, sometimes accompanied by reduced efficacy, associated with chronic occupational stress. Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "options": [
+                {
+                  "id": "burnout-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Stress.",
+                  "feedback": "Stress is a genuine psychological idea, but the observation by itself does not establish it. Stress can rise during one week without becoming a persistent occupational pattern."
+                },
+                {
+                  "id": "burnout-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Job demands.",
+                  "feedback": "Job demands is a genuine psychological idea, but the observation by itself does not establish it. Demand is partly shaped by how much control and support a person has."
+                },
+                {
+                  "id": "burnout-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Recovery.",
+                  "feedback": "Recovery is a genuine psychological idea, but the observation by itself does not establish it. Rest becomes less effective when work messages and unfinished tasks repeatedly intrude."
+                },
+                {
+                  "id": "burnout-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Burnout.",
+                  "feedback": "This description follows from the example. A work-related pattern of exhaustion and growing distance from work, sometimes accompanied by reduced efficacy, associated with chronic occupational stress."
+                },
+                {
+                  "id": "burnout-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "burnout-f1-l3-n2-o4"
+            },
+            {
+              "id": "burnout-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "burnout-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of when is work tiring, and when have the conditions of working become a sustained problem?",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "pairs": [
+                {
+                  "id": "burnout-f1-l3-n3-p0",
+                  "label": "Stress",
+                  "answer": "A response to demands that feel larger than the resources available at that moment."
+                },
+                {
+                  "id": "burnout-f1-l3-n3-p1",
+                  "label": "Job demands",
+                  "answer": "What work requires from someone in time, attention or responsibility."
+                },
+                {
+                  "id": "burnout-f1-l3-n3-p2",
+                  "label": "Recovery",
+                  "answer": "Time and conditions that allow the effects of effort to settle."
+                },
+                {
+                  "id": "burnout-f1-l3-n3-p3",
+                  "label": "Burnout",
+                  "answer": "A work-related pattern of exhaustion and growing distance from work, sometimes accompanied by reduced efficacy, associated with chronic occupational stress."
+                }
+              ]
+            },
+            {
+              "id": "burnout-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: An employee is assigned extra cases while the team remains short-staffed. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "burnout-foundation:choose",
+              "explanation": "The example most directly supports job demands. What work requires from someone in time, attention or responsibility. Demand is partly shaped by how much control and support a person has.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "options": [
+                {
+                  "id": "burnout-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Stress.",
+                  "feedback": "Stress is a genuine psychological idea, but the observation by itself does not establish it. Stress can rise during one week without becoming a persistent occupational pattern."
+                },
+                {
+                  "id": "burnout-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Job demands.",
+                  "feedback": "This description follows from the example. What work requires from someone in time, attention or responsibility."
+                },
+                {
+                  "id": "burnout-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Recovery.",
+                  "feedback": "Recovery is a genuine psychological idea, but the observation by itself does not establish it. Rest becomes less effective when work messages and unfinished tasks repeatedly intrude."
+                },
+                {
+                  "id": "burnout-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Burnout.",
+                  "feedback": "Burnout is a genuine psychological idea, but the observation by itself does not establish it. Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue."
+                },
+                {
+                  "id": "burnout-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "burnout-f1-l3-n4-o2"
+            },
+            {
+              "id": "burnout-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between stress, job demands, recovery, burnout. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "burnout-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Priya",
+        "Sam"
+      ],
+      "glossary": [
+        {
+          "term": "Stress",
+          "definition": "A response to demands that feel larger than the resources available at that moment.",
+          "example": "A support worker feels tense ahead of a difficult week of appointments.",
+          "limit": "Stress can rise during one week without becoming a persistent occupational pattern."
+        },
+        {
+          "term": "Job demands",
+          "definition": "What work requires from someone in time, attention or responsibility.",
+          "example": "An employee is assigned extra cases while the team remains short-staffed.",
+          "limit": "Demand is partly shaped by how much control and support a person has."
+        },
+        {
+          "term": "Recovery",
+          "definition": "Time and conditions that allow the effects of effort to settle.",
+          "example": "After a demanding shift, someone has uninterrupted time away from work.",
+          "limit": "Rest becomes less effective when work messages and unfinished tasks repeatedly intrude."
+        },
+        {
+          "term": "Burnout",
+          "definition": "A work-related pattern of exhaustion and growing distance from work, sometimes accompanied by reduced efficacy, associated with chronic occupational stress.",
+          "example": "An employee feels depleted for months while the job's demands keep increasing.",
+          "limit": "Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "burnout-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "burnout-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Priya runs a busy support service. Sam is a colleague who has noticed Priya working late for weeks.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "burnout-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "scenario": "Priya runs a busy support service. Sam is a colleague who has noticed Priya working late for weeks.",
+              "speakerA": "Priya",
+              "speakerB": "Sam",
+              "turns": [
+                {
+                  "id": "burnout-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I used to recover after a busy week. Lately I wake up tired before work even starts."
+                },
+                {
+                  "id": "burnout-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "We've had an unusually demanding month. Is there any sign the workload is easing?"
+                },
+                {
+                  "id": "burnout-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "They added another caseload yesterday, and the vacant post still hasn't been filled."
+                },
+                {
+                  "id": "burnout-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "Have you had any say in how much you're expected to manage?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "burnout-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "burnout-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "burnout-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "burnout-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "burnout-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "burnout-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "burnout-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "burnout-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+                  "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands."
+                }
+              ]
+            },
+            {
+              "id": "burnout-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "burnout-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "categories": [
+                {
+                  "id": "burnout-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "burnout-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "burnout-f2-l1-n3-a",
+                  "label": "“I used to recover after a busy week. Lately I wake up tired before work even starts.”",
+                  "answer": "burnout-f2-l1-n3-seen"
+                },
+                {
+                  "id": "burnout-f2-l1-n3-b",
+                  "label": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.",
+                  "answer": "burnout-f2-l1-n3-guess"
+                },
+                {
+                  "id": "burnout-f2-l1-n3-c",
+                  "label": "“We've had an unusually demanding month. Is there any sign the workload is easing?”",
+                  "answer": "burnout-f2-l1-n3-seen"
+                },
+                {
+                  "id": "burnout-f2-l1-n3-d",
+                  "label": "A short period of exceptional work can cause fatigue without a broader pattern of occupational burnout; sleep or health factors may also contribute.",
+                  "answer": "burnout-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "burnout-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "A short period of exceptional work can cause fatigue without a broader pattern of occupational burnout; sleep or health factors may also contribute.\n\nBurnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            }
+          ]
+        },
+        {
+          "id": "burnout-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "burnout-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.\n\nAnother possibility: A short period of exceptional work can cause fatigue without a broader pattern of occupational burnout; sleep or health factors may also contribute.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "burnout-foundation:investigate",
+              "explanation": "Compare demands, control and resources over time, including what happens when tasks are formally reprioritised. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "options": [
+                {
+                  "id": "burnout-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "burnout-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "burnout-f2-l2-n2-o3",
+                  "label": "Compare demands, control and resources over time, including what happens when tasks are formally reprioritised.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "burnout-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "burnout-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "burnout-f2-l2-n2-o3"
+            },
+            {
+              "id": "burnout-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "A workload review shows Priya's caseload has risen by 40% while staffing has fallen, and the service has rejected every request to prioritise tasks.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "burnout-foundation:choose",
+              "explanation": "Documented organisational demands strongly support a structural explanation. A plan focused only on Priya's resilience would neglect the maintaining conditions.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "options": [
+                {
+                  "id": "burnout-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "burnout-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "burnout-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "burnout-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "burnout-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "burnout-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "burnout-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "burnout-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "An exhausting week is not automatically burnout. To understand what is happening, we need to look at how long the demands have continued and how much influence someone has over them.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            },
+            {
+              "id": "burnout-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: After a demanding shift, someone has uninterrupted time away from work. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "burnout-foundation:choose",
+              "explanation": "The example most directly supports recovery. Time and conditions that allow the effects of effort to settle. Rest becomes less effective when work messages and unfinished tasks repeatedly intrude.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "options": [
+                {
+                  "id": "burnout-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Stress.",
+                  "feedback": "Stress is a genuine psychological idea, but the observation by itself does not establish it. Stress can rise during one week without becoming a persistent occupational pattern."
+                },
+                {
+                  "id": "burnout-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Job demands.",
+                  "feedback": "Job demands is a genuine psychological idea, but the observation by itself does not establish it. Demand is partly shaped by how much control and support a person has."
+                },
+                {
+                  "id": "burnout-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Recovery.",
+                  "feedback": "This description follows from the example. Time and conditions that allow the effects of effort to settle."
+                },
+                {
+                  "id": "burnout-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Burnout.",
+                  "feedback": "Burnout is a genuine psychological idea, but the observation by itself does not establish it. Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue."
+                },
+                {
+                  "id": "burnout-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "burnout-f2-l3-n2-o3"
+            },
+            {
+              "id": "burnout-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "burnout-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "categories": [
+                {
+                  "id": "burnout-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "burnout-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "burnout-f2-l3-n3-a",
+                  "label": "“I used to recover after a busy week. Lately I wake up tired before work even starts.”",
+                  "answer": "burnout-f2-l3-n3-seen"
+                },
+                {
+                  "id": "burnout-f2-l3-n3-b",
+                  "label": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.",
+                  "answer": "burnout-f2-l3-n3-guess"
+                },
+                {
+                  "id": "burnout-f2-l3-n3-c",
+                  "label": "“We've had an unusually demanding month. Is there any sign the workload is easing?”",
+                  "answer": "burnout-f2-l3-n3-seen"
+                },
+                {
+                  "id": "burnout-f2-l3-n3-d",
+                  "label": "A short period of exceptional work can cause fatigue without a broader pattern of occupational burnout; sleep or health factors may also contribute.",
+                  "answer": "burnout-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "burnout-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "burnout-foundation:investigate",
+              "explanation": "Compare demands, control and resources over time, including what happens when tasks are formally reprioritised. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model.",
+              "options": [
+                {
+                  "id": "burnout-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "burnout-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "burnout-f2-l3-n4-o3",
+                  "label": "Compare demands, control and resources over time, including what happens when tasks are formally reprioritised.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "burnout-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "burnout-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "burnout-f2-l3-n4-o3"
+            },
+            {
+              "id": "burnout-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+              "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "burnout-module-01",
       "title": "A busy week versus chronic overload",
@@ -87,6 +881,16 @@
                     {
                       "id": "burnout-m1-node-1-check1-opt2",
                       "label": "Priya may need a more reliable way to prioritise urgent work."
+                    },
+                    {
+                      "id": "burnout-m1-node-1-check1-alternative-1",
+                      "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
+                      "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
+                    },
+                    {
+                      "id": "burnout-m1-node-1-check1-alternative-2",
+                      "label": "A temporary increase in workload may explain Priya’s exhaustion without showing a persistent work-related pattern.",
+                      "feedback": "Duration matters. The accounts of several weeks and added caseload support investigating an ongoing problem."
                     }
                   ],
                   "answer": "burnout-m1-node-1-check1-opt1",
@@ -121,6 +925,11 @@
                       "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
                       "reply": "Have you been able to recover outside work?",
                       "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "burnout-m1-node-1-check2-alternative-1",
+                      "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
+                      "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
                     }
                   ],
                   "answer": "burnout-m1-node-1-check2-opt1",
@@ -314,6 +1123,11 @@
                 {
                   "id": "burnout-m1-repair-opt4",
                   "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "burnout-m1-node-7-alternative-1",
+                  "label": "Compare contracted hours and available staffing with recorded cases and report deadlines over several weeks.",
+                  "feedback": "This can establish whether demands have become structurally unmanageable."
                 }
               ],
               "answer": "burnout-m1-repair-opt1"
@@ -384,6 +1198,16 @@
                     {
                       "id": "burnout-m1-node-8-check1-opt3",
                       "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "burnout-m1-node-8-check1-alternative-1",
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                    },
+                    {
+                      "id": "burnout-m1-node-8-check1-alternative-2",
+                      "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
+                      "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
                     }
                   ],
                   "answer": "burnout-m1-node-8-check1-opt1",
@@ -421,6 +1245,11 @@
                 {
                   "id": "burnout-m1-new-opt2",
                   "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "burnout-m1-node-9-alternative-1",
+                  "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
+                  "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
                 }
               ],
               "answer": "burnout-m1-new-opt1"
@@ -500,6 +1329,11 @@
                 {
                   "id": "burnout-m1-view-opt3",
                   "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "burnout-m1-node-10-alternative-1",
+                  "label": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
+                  "feedback": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
                 }
               ],
               "answer": "burnout-m1-view-opt1"
@@ -567,6 +1401,11 @@
                 {
                   "id": "burnout-m1-test-opt2",
                   "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "burnout-m1-node-13-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "burnout-m1-test-opt1"
@@ -597,6 +1436,11 @@
                 {
                   "id": "burnout-m1-transfer-e-opt2",
                   "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "burnout-m1-node-14-evidence-alternative-1",
+                  "label": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.",
+                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                 }
               ],
               "evidenceAnswer": "burnout-m1-transfer-e-opt1",
@@ -612,6 +1456,11 @@
                 {
                   "id": "burnout-m1-transfer-a-opt2",
                   "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "burnout-m1-node-14-response-alternative-1",
+                  "label": "Stop caring about quality so the workload feels easier.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "burnout-m1-transfer-a-opt1"
@@ -706,6 +1555,11 @@
                   "id": "burnout-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "burnout-m1-l3-n3-alternative-1",
+                  "label": "A temporary increase in workload may explain Priya’s exhaustion without showing a persistent work-related pattern.",
+                  "feedback": "Duration matters. The accounts of several weeks and added caseload support investigating an ongoing problem."
                 }
               ],
               "answer": "burnout-m1-l3-n3-opt2",
@@ -740,6 +1594,11 @@
                   "id": "burnout-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "burnout-m1-l3-n4-alternative-1",
+                  "label": "Priya may have unusually high standards for her own performance that lead her to take on more tasks than the service requires.",
+                  "feedback": "Self-expectations could add pressure, although the manager has said every task remains a priority."
                 }
               ],
               "answer": "burnout-m1-l3-n4-opt2",
@@ -766,6 +1625,16 @@
                   "id": "burnout-m1-l3-n5-evidence-opt2",
                   "label": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.",
                   "feedback": ""
+                },
+                {
+                  "id": "burnout-m1-l3-n5-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "burnout-m1-l3-n5-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "burnout-m1-l3-n5-evidence-opt2",
@@ -779,6 +1648,16 @@
                   "id": "burnout-m1-l3-n5-response-opt2",
                   "label": "Record the caseload and missed breaks, then request specific reprioritisation and staffing decisions with a manager.",
                   "feedback": ""
+                },
+                {
+                  "id": "burnout-m1-l3-n5-response-alternative-1",
+                  "label": "Which tasks could safely be delayed, and who has authority to make that decision?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "burnout-m1-l3-n5-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "burnout-m1-l3-n5-response-opt2"
@@ -884,13 +1763,18 @@
                     },
                     {
                       "id": "burnout-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "A temporary increase in workload may explain Priya’s exhaustion without showing a persistent work-related pattern.",
+                      "feedback": "Duration matters. The accounts of several weeks and added caseload support investigating an ongoing problem."
                     },
                     {
                       "id": "burnout-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "burnout-m1-l4-n2-question-alternative-2",
+                      "label": "Priya may have unusually high standards for her own performance that lead her to take on more tasks than the service requires.",
+                      "feedback": "Self-expectations could add pressure, although the manager has said every task remains a priority."
                     }
                   ],
                   "answer": "burnout-m1-l4-n2-question-opt2",
@@ -928,6 +1812,11 @@
                   "id": "burnout-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "burnout-m1-l4-n3-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "burnout-m1-l4-n3-opt2",
@@ -962,6 +1851,11 @@
                   "id": "burnout-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "burnout-m1-l4-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "burnout-m1-l4-n4-opt2",
@@ -1029,6 +1923,11 @@
                   "id": "burnout-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "burnout-m1-l4-n6-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "burnout-m1-l4-n6-opt2"
@@ -1071,6 +1970,16 @@
                   "id": "burnout-m1-l5-n2-evidence-opt2",
                   "label": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.",
                   "feedback": ""
+                },
+                {
+                  "id": "burnout-m1-l5-n2-evidence-alternative-1",
+                  "label": "Priya may have unusually high standards for her own performance that lead her to take on more tasks than the service requires.",
+                  "feedback": "Self-expectations could add pressure, although the manager has said every task remains a priority."
+                },
+                {
+                  "id": "burnout-m1-l5-n2-evidence-alternative-2",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "burnout-m1-l5-n2-evidence-opt2",
@@ -1084,6 +1993,16 @@
                   "id": "burnout-m1-l5-n2-response-opt2",
                   "label": "Record the caseload and missed breaks, then request specific reprioritisation and staffing decisions with a manager.",
                   "feedback": ""
+                },
+                {
+                  "id": "burnout-m1-l5-n2-response-alternative-1",
+                  "label": "Try a new relaxation app each evening while keeping the same workload.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "burnout-m1-l5-n2-response-alternative-2",
+                  "label": "Which tasks could safely be delayed, and who has authority to make that decision?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "burnout-m1-l5-n2-response-opt2"
@@ -1110,13 +2029,18 @@
                 },
                 {
                   "id": "burnout-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.",
+                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                 },
                 {
                   "id": "burnout-m1-l5-n4-opt4",
                   "label": "Which tasks could safely be delayed, and who has authority to make that decision?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "burnout-m1-l5-n4-alternative-2",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "burnout-m1-l5-n4-opt2",
@@ -1142,6 +2066,11 @@
                   "id": "burnout-m1-l5-n3-action-opt2",
                   "label": "Record the caseload and missed breaks, then request specific reprioritisation and staffing decisions with a manager.",
                   "feedback": ""
+                },
+                {
+                  "id": "burnout-m1-l5-n3-change-alternative-1",
+                  "label": "Stop caring about quality so the workload feels easier.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -1154,6 +2083,11 @@
                   "id": "burnout-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "burnout-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "burnout-m1-l5-n3-action-opt2",
@@ -1189,6 +2123,11 @@
                   "id": "burnout-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "burnout-m1-l5-n5-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "burnout-m1-l5-n5-opt2",
@@ -1223,6 +2162,11 @@
                   "id": "burnout-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "burnout-m1-l5-n6-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "burnout-m1-l5-n6-opt2"
@@ -1273,6 +2217,11 @@
                   "id": "burnout-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "burnout-m1-l6-n2-alternative-1",
+                  "label": "Record the caseload and missed breaks, then request specific reprioritisation and staffing decisions with a manager.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "burnout-m1-l6-n2-opt2"
@@ -1349,6 +2298,11 @@
                   "id": "burnout-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "burnout-m1-l6-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "burnout-m1-l6-n4-opt2",
@@ -1391,6 +2345,36 @@
               "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Priya",
+        "Sam"
+      ],
+      "glossary": [
+        {
+          "term": "Stress",
+          "definition": "A response to demands that feel larger than the resources available at that moment.",
+          "example": "A support worker feels tense ahead of a difficult week of appointments.",
+          "limit": "Stress can rise during one week without becoming a persistent occupational pattern."
+        },
+        {
+          "term": "Job demands",
+          "definition": "What work requires from someone in time, attention or responsibility.",
+          "example": "An employee is assigned extra cases while the team remains short-staffed.",
+          "limit": "Demand is partly shaped by how much control and support a person has."
+        },
+        {
+          "term": "Recovery",
+          "definition": "Time and conditions that allow the effects of effort to settle.",
+          "example": "After a demanding shift, someone has uninterrupted time away from work.",
+          "limit": "Rest becomes less effective when work messages and unfinished tasks repeatedly intrude."
+        },
+        {
+          "term": "Burnout",
+          "definition": "A work-related pattern of exhaustion and growing distance from work, sometimes accompanied by reduced efficacy, associated with chronic occupational stress.",
+          "example": "An employee feels depleted for months while the job's demands keep increasing.",
+          "limit": "Burnout is not diagnosed from one tired morning and does not replace assessment of other causes of fatigue."
         }
       ]
     }
