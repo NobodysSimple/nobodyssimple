@@ -147,7 +147,8 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
       '<option value="draft"'+(lesson.editorialStatus!=='ready'?' selected':'')+'>Draft / needs clinical and editorial review</option>'+
       '<option value="ready"'+(lesson.editorialStatus==='ready'?' selected':'')+'>Ready: checked content, sources, answers and accessibility</option>'+
       '</select><small>Only authored lessons explicitly marked Ready are eligible for public release.</small></label>'+
-    '<label class="cl-field"><span>Optional lesson introduction</span><textarea data-meta="lesson-teach" rows="3">'+esc(lesson.teach||'')+'</textarea></label>'+
+    '<label class="cl-field"><span>Optional lesson introduction</span><textarea data-meta="lesson-teach" rows="3">'+esc(lesson.teach||'')+'</textarea></label>'+ 
+    '<label class="cl-field"><span>Lesson takeaway · shown on completion</span><textarea data-meta="lesson-takeaway" rows="2">'+esc(lesson.takeaway||'')+'</textarea></label>'+
     '<div class="cl-lesson-actions"><button data-act="lesson-up" type="button">Move lesson ↑</button><button data-act="lesson-down" type="button">Move lesson ↓</button><button data-act="delete-lesson" type="button">Delete lesson</button></div>':'<p class="cl-hint">Select a lesson in the outline, or add one to a unit.</p>';
   $('#cl-nodes').innerHTML=lesson?(lesson.nodes||[]).map((node,i)=>'<article class="cl-node '+(i===n?'active':'')+'" draggable="true" data-node-index="'+i+'"><button type="button" data-act="select-node" data-n="'+i+'"><small>'+String(i+1).padStart(2,'0')+' · '+esc(types[node.type]?.name||node.type)+'</small><strong>'+esc(node.title||node.prompt||node.body?.slice(0,65)||'Untitled node')+'</strong></button><div><button type="button" data-act="node-up" data-n="'+i+'" '+(i===0?'disabled':'')+' aria-label="Move node up">↑</button><button type="button" data-act="node-down" data-n="'+i+'" '+(i===lesson.nodes.length-1?'disabled':'')+' aria-label="Move node down">↓</button><button type="button" data-act="node-copy" data-n="'+i+'" aria-label="Duplicate node">⧉</button><button type="button" data-act="node-delete" data-n="'+i+'" aria-label="Delete node">×</button></div></article>').join('')||'<p class="cl-hint">Add reading pages and exercises in any order.</p>':'';
   $('#cl-node-fields').innerHTML=editorFields(selectedNode());
@@ -205,6 +206,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    if(target.dataset.meta==='unit-title'&&unit)unit.title=target.value;
    if(target.dataset.meta==='lesson-title'&&lesson)lesson.title=target.value;
    if(target.dataset.meta==='lesson-teach'&&lesson)lesson.teach=target.value;
+   if(target.dataset.meta==='lesson-takeaway'&&lesson)lesson.takeaway=target.value;
    if(target.dataset.meta==='lesson-objective'&&lesson)lesson.objective=target.value;
    if(target.dataset.meta==='lesson-mode'&&lesson)lesson.recommendedType=target.value;
    if(target.dataset.meta==='lesson-status'&&lesson)lesson.editorialStatus=target.value;
