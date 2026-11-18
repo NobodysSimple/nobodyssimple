@@ -894,13 +894,13 @@
                     },
                     {
                       "id": "emotions-m1-node-1-check1-alternative-1",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Amir's anger may reflect a valued expectation of joint decision-making being frustrated. is more directly tied to the words in this scene. Past experiences and immediate context can alter emotional appraisals. Anger alone is not reliable evidence about another person's motives."
                     },
                     {
                       "id": "emotions-m1-node-1-check1-alternative-2",
-                      "label": "Nora’s anger may reflect a reliable pattern of being excluded from important decisions.",
-                      "feedback": "A repeated pattern would strengthen the fairness interpretation, but this invitation has not yet been explained."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Amir's anger may reflect a valued expectation of joint decision-making being frustrated. is more directly tied to the words in this scene. Past experiences and immediate context can alter emotional appraisals. Anger alone is not reliable evidence about another person's motives."
                     }
                   ],
                   "answer": "emotions-m1-node-1-check1-opt1",
@@ -914,9 +914,10 @@
                   "options": [
                     {
                       "id": "emotions-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "What part bothered you most?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "emotions-m1-node-1-check2-opt1",
@@ -926,20 +927,24 @@
                     },
                     {
                       "id": "emotions-m1-node-1-check2-opt2",
-                      "label": "If I feel this disrespected, you must have been trying to exclude me.",
-                      "reply": "Then let's work out how we choose these things next time.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "reply": "What part bothered you most?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     },
                     {
                       "id": "emotions-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "I didn't mean to leave you out.",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                      "reply": "What part bothered you most?",
+                      "consequence": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried.",
+                      "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                     },
                     {
-                      "id": "emotions-m1-node-1-check2-alternative-1",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "id": "emotions-m1-node-1-check2-alternative-4",
+                      "label": "Ask what information each person would need before being willing to revise their position.",
+                      "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need.",
+                      "reply": "What part bothered you most?",
+                      "consequence": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                     }
                   ],
                   "answer": "emotions-m1-node-1-check2-opt1",
@@ -1082,8 +1087,8 @@
                 },
                 {
                   "id": "emotions-m1-node-7-alternative-1",
-                  "label": "Review whether Nora was consulted on comparable decisions before this meeting.",
-                  "feedback": "A pattern could support an account beyond one administrative error."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "emotions-m1-repair-opt1"
@@ -1112,7 +1117,8 @@
                 },
                 {
                   "id": "emotions-m1-plan-opt2",
-                  "label": "If I feel this disrespected, you must have been trying to exclude me."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "outcomes": [
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "emotions-m1-node-8-check1-alternative-1",
-                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                      "label": "Amir may be reacting to a repeated pattern of decisions made without him rather than to this booking alone.",
+                      "feedback": "A pattern would increase the stakes, though the vignette gives one clear example."
                     },
                     {
                       "id": "emotions-m1-node-8-check1-alternative-2",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "Jess may have assumed the date was already agreed and be confused about why Amir experiences the booking as exclusion.",
+                      "feedback": "A misunderstanding could explain the decision without establishing deliberate disregard."
                     }
                   ],
                   "answer": "emotions-m1-node-8-check1-opt1",
@@ -1287,8 +1293,8 @@
                 },
                 {
                   "id": "emotions-m1-node-9-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Jess may have assumed the date was already agreed and be confused about why Amir experiences the booking as exclusion.",
+                  "feedback": "A misunderstanding could explain the decision without establishing deliberate disregard."
                 }
               ],
               "answer": "emotions-m1-new-opt1"
@@ -1402,8 +1408,8 @@
                 },
                 {
                   "id": "emotions-m1-node-14-evidence-alternative-1",
-                  "label": "There may be a recurring exclusionary practice, in which case her concern could accurately reflect a wider workplace problem.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "Amir may be unhappy with the specific travel date rather than how the decision was made.",
+                  "feedback": "This could explain the immediate behaviour, but it needs facts beyond the present conversation. Past experiences and immediate context can alter emotional appraisals. Anger alone is not reliable evidence about another person's motives."
                 }
               ],
               "evidenceAnswer": "emotions-m1-transfer-e-opt1",
@@ -1422,8 +1428,8 @@
                 },
                 {
                   "id": "emotions-m1-node-14-response-alternative-1",
-                  "label": "I wasn't included in the decision meeting. Could you explain the invite list, and include me in future decisions about my work?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                  "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                 }
               ],
               "responseAnswer": "emotions-m1-transfer-a-opt1"
@@ -1459,8 +1465,8 @@
                 },
                 {
                   "id": "emotions-m1-node-13-alternative-1",
-                  "label": "Examine the invitation process and whether relevant colleagues are routinely omitted.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Examine whether the same reaction appears when the immediate practical stakes are lower.",
+                  "feedback": "A cross-situation comparison may reveal whether this is a case-specific response."
                 }
               ],
               "answer": "emotions-m1-test-opt1"
@@ -1558,8 +1564,8 @@
                 },
                 {
                   "id": "emotions-m1-l3-n3-alternative-1",
-                  "label": "Nora’s anger may reflect a reliable pattern of being excluded from important decisions.",
-                  "feedback": "A repeated pattern would strengthen the fairness interpretation, but this invitation has not yet been explained."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "emotions-m1-l3-n3-opt2",
@@ -1597,8 +1603,8 @@
                 },
                 {
                   "id": "emotions-m1-l3-n4-alternative-1",
-                  "label": "Nora may be responding as much to the loss of influence over her work as to the possibility of deliberate exclusion.",
-                  "feedback": "Her concern about participation is directly stated, while intent remains uncertain."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "emotions-m1-l3-n4-opt2",
@@ -1628,13 +1634,13 @@
                 },
                 {
                   "id": "emotions-m1-l3-n5-evidence-alternative-1",
-                  "label": "The meeting may have been organised using an outdated invitation list without considering who now needs to attend.",
-                  "feedback": "An administrative explanation is plausible, though it must be checked rather than assumed."
+                  "label": "Nora’s anger may reflect a reliable pattern of being excluded from important decisions.",
+                  "feedback": "A repeated pattern would strengthen the fairness interpretation, but this invitation has not yet been explained."
                 },
                 {
                   "id": "emotions-m1-l3-n5-evidence-alternative-2",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Nora may be responding as much to the loss of influence over her work as to the possibility of deliberate exclusion.",
+                  "feedback": "Her concern about participation is directly stated, while intent remains uncertain."
                 }
               ],
               "evidenceAnswer": "emotions-m1-l3-n5-evidence-opt2",
@@ -1651,13 +1657,13 @@
                 },
                 {
                   "id": "emotions-m1-l3-n5-response-alternative-1",
-                  "label": "Send the message immediately so they understand the intensity of your anger.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask how the invitation list was created and request inclusion in future decisions affecting her work.",
+                  "feedback": "This obtains facts and protects participation without deciding intent prematurely."
                 },
                 {
                   "id": "emotions-m1-l3-n5-response-alternative-2",
-                  "label": "What would you need to know before concluding the exclusion was deliberate?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Explain the impact of missing the meeting and propose an explicit procedure for involving project contributors.",
+                  "feedback": "It addresses recurrence; it may be premature to prescribe a procedure without knowing why the omission occurred."
                 }
               ],
               "responseAnswer": "emotions-m1-l3-n5-response-opt2"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "emotions-m1-l4-n2-question-opt3",
-                      "label": "Nora’s anger may reflect a reliable pattern of being excluded from important decisions.",
-                      "feedback": "A repeated pattern would strengthen the fairness interpretation, but this invitation has not yet been explained."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "emotions-m1-l4-n2-question-opt4",
@@ -1773,8 +1779,8 @@
                     },
                     {
                       "id": "emotions-m1-l4-n2-question-alternative-2",
-                      "label": "Nora may be responding as much to the loss of influence over her work as to the possibility of deliberate exclusion.",
-                      "feedback": "Her concern about participation is directly stated, while intent remains uncertain."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "emotions-m1-l4-n2-question-opt2",
@@ -1815,8 +1821,8 @@
                 },
                 {
                   "id": "emotions-m1-l4-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Review whether Nora was consulted on comparable decisions before this meeting.",
+                  "feedback": "A pattern could support an account beyond one administrative error."
                 }
               ],
               "answer": "emotions-m1-l4-n4-opt2",
@@ -1854,8 +1860,8 @@
                 },
                 {
                   "id": "emotions-m1-l4-n3-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Look at how the meeting invitation was assembled and whether the same colleagues were omitted.",
+                  "feedback": "This directly tests accidental exclusion."
                 }
               ],
               "answer": "emotions-m1-l4-n3-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "emotions-m1-l4-n6-alternative-1",
-                  "label": "Anger may register an appraisal of unfairness and energise a response. It communicates how Nora experiences the situation, while the cause of the exclusion remains uncertain.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "Nora’s anger may reflect a reliable pattern of being excluded from important decisions.",
+                  "feedback": "A repeated pattern would strengthen the fairness interpretation, but this invitation has not yet been explained."
                 }
               ],
               "answer": "emotions-m1-l4-n6-opt2"
@@ -1973,13 +1979,13 @@
                 },
                 {
                   "id": "emotions-m1-l5-n2-evidence-alternative-1",
-                  "label": "Nora may be responding as much to the loss of influence over her work as to the possibility of deliberate exclusion.",
-                  "feedback": "Her concern about participation is directly stated, while intent remains uncertain."
+                  "label": "The meeting may have been organised using an outdated invitation list without considering who now needs to attend.",
+                  "feedback": "An administrative explanation is plausible, though it must be checked rather than assumed."
                 },
                 {
                   "id": "emotions-m1-l5-n2-evidence-alternative-2",
-                  "label": "The meeting may have been organised using an outdated invitation list without considering who now needs to attend.",
-                  "feedback": "An administrative explanation is plausible, though it must be checked rather than assumed."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "emotions-m1-l5-n2-evidence-opt2",
@@ -1996,12 +2002,12 @@
                 },
                 {
                   "id": "emotions-m1-l5-n2-response-alternative-1",
-                  "label": "Explain the impact of missing the meeting and propose an explicit procedure for involving project contributors.",
-                  "feedback": "It addresses recurrence; it may be premature to prescribe a procedure without knowing why the omission occurred."
+                  "label": "Send the message immediately so they understand the intensity of your anger.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "emotions-m1-l5-n2-response-alternative-2",
-                  "label": "Send the message immediately so they understand the intensity of your anger.",
+                  "label": "What would you need to know before concluding the exclusion was deliberate?",
                   "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
@@ -2030,7 +2036,7 @@
                 },
                 {
                   "id": "emotions-m1-l5-n3-change-alternative-1",
-                  "label": "Send the message immediately so they understand the intensity of your anger.",
+                  "label": "Ignore the anger until you no longer care about the decision.",
                   "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
@@ -2077,8 +2083,8 @@
                 },
                 {
                   "id": "emotions-m1-l5-n4-opt3",
-                  "label": "There may be a recurring exclusionary practice, in which case her concern could accurately reflect a wider workplace problem.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "emotions-m1-l5-n4-opt4",
@@ -2087,8 +2093,8 @@
                 },
                 {
                   "id": "emotions-m1-l5-n4-alternative-2",
-                  "label": "Anger may register an appraisal of unfairness and energise a response. It communicates how Nora experiences the situation, while the cause of the exclusion remains uncertain.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "emotions-m1-l5-n4-opt2",
@@ -2126,8 +2132,8 @@
                 },
                 {
                   "id": "emotions-m1-l5-n5-alternative-1",
-                  "label": "Anger may register an appraisal of unfairness and energise a response. It communicates how Nora experiences the situation, while the cause of the exclusion remains uncertain.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "emotions-m1-l5-n5-opt2",
@@ -2165,8 +2171,8 @@
                 },
                 {
                   "id": "emotions-m1-l5-n6-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Look at how the meeting invitation was assembled and whether the same colleagues were omitted.",
+                  "feedback": "This directly tests accidental exclusion."
                 }
               ],
               "answer": "emotions-m1-l5-n6-opt2"
@@ -2220,8 +2226,8 @@
                 },
                 {
                   "id": "emotions-m1-l6-n2-alternative-1",
-                  "label": "Send the message immediately so they understand the intensity of your anger.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Explain the impact of missing the meeting and propose an explicit procedure for involving project contributors.",
+                  "feedback": "It addresses recurrence; it may be premature to prescribe a procedure without knowing why the omission occurred."
                 }
               ],
               "answer": "emotions-m1-l6-n2-opt2"
@@ -2301,8 +2307,8 @@
                 },
                 {
                   "id": "emotions-m1-l6-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Look at how the meeting invitation was assembled and whether the same colleagues were omitted.",
+                  "feedback": "This directly tests accidental exclusion."
                 }
               ],
               "answer": "emotions-m1-l6-n4-opt2",
