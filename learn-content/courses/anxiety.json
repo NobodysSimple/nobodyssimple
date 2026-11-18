@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "anxiety-m1-node-1-check1-alternative-1",
-                      "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "Iris may have had a previous health incident that makes a racing pulse especially significant to her.",
+                      "feedback": "A history of illness would change the evaluation, but this information is missing from the scene."
                     },
                     {
                       "id": "anxiety-m1-node-1-check1-alternative-2",
-                      "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Iris may be interpreting bodily arousal as evidence of imminent danger. is more directly tied to the words in this scene. New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk."
                     }
                   ],
                   "answer": "anxiety-m1-node-1-check1-opt1",
@@ -904,15 +904,17 @@
                   "options": [
                     {
                       "id": "anxiety-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Would you like to sit somewhere quieter while we decide what to do?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "If this is the same familiar surge, try approaching the platform while observing what actually happens to the sensations.",
+                      "reply": "Did the sensation disappear?",
+                      "consequence": "Approach can be informative, but the crowded train environment and individual safety need consideration.",
+                      "feedback": "Approach can be informative, but the crowded train environment and individual safety need consideration."
                     },
                     {
                       "id": "anxiety-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Choose a less crowded carriage while working out whether the feared outcome is about the bodily sensations or the environment.",
                       "reply": "Did the sensation disappear?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Adjusting the setting can help sensory comfort, although it may not test a fear maintained by avoidance.",
+                      "feedback": "Adjusting the setting can help sensory comfort, although it may not test a fear maintained by avoidance."
                     },
                     {
                       "id": "anxiety-m1-node-1-check2-opt1",
@@ -922,14 +924,17 @@
                     },
                     {
                       "id": "anxiety-m1-node-1-check2-opt2",
-                      "label": "Leave every crowded place as soon as your pulse changes.",
-                      "reply": "We should check actual risk without treating the sensation alone as a prediction.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                      "reply": "Did the sensation disappear?",
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
-                      "id": "anxiety-m1-node-1-check2-alternative-1",
-                      "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "id": "anxiety-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "Did the sensation disappear?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "anxiety-m1-node-1-check2-opt1",
@@ -1067,7 +1072,8 @@
               "changes": [
                 {
                   "id": "anxiety-m1-plan-opt2",
-                  "label": "Leave every crowded place as soon as your pulse changes."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 },
                 {
                   "id": "anxiety-m1-plan-opt3",
@@ -1126,8 +1132,8 @@
                 },
                 {
                   "id": "anxiety-m1-node-7-alternative-1",
-                  "label": "Check whether the same sensations occur in non-crowded contexts and whether they have been medically assessed when appropriate.",
-                  "feedback": "The distribution and history of symptoms can change the formulation."
+                  "label": "Compare statements made at the time with each person’s later recollection.",
+                  "feedback": "A contemporaneous record can help separate a mistaken memory from a disputed interpretation."
                 }
               ],
               "answer": "anxiety-m1-repair-opt1"
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "anxiety-m1-node-8-check1-alternative-1",
-                      "label": "Ava may have experienced a previous medical event that makes similar sensations especially threatening.",
-                      "feedback": "History could alter both the explanation and what a safe plan requires; it is not established here."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "anxiety-m1-node-8-check1-alternative-2",
-                      "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "anxiety-m1-node-8-check1-opt1",
@@ -1248,8 +1254,8 @@
                 },
                 {
                   "id": "anxiety-m1-node-9-alternative-1",
-                  "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "anxiety-m1-new-opt1"
@@ -1332,8 +1338,8 @@
                 },
                 {
                   "id": "anxiety-m1-node-10-alternative-1",
-                  "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                  "feedback": "This is a reasonable line of inquiry, although Iris may be interpreting bodily arousal as evidence of imminent danger. is more directly tied to the words in this scene. New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk."
                 }
               ],
               "answer": "anxiety-m1-view-opt1"
@@ -1558,8 +1564,8 @@
                 },
                 {
                   "id": "anxiety-m1-l3-n3-alternative-1",
-                  "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "anxiety-m1-l3-n3-opt2",
@@ -1597,8 +1603,8 @@
                 },
                 {
                   "id": "anxiety-m1-l3-n4-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "anxiety-m1-l3-n4-opt2",
@@ -1628,21 +1634,21 @@
                 },
                 {
                   "id": "anxiety-m1-l3-n5-evidence-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "anxiety-m1-l3-n5-evidence-alternative-2",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Ava may be anticipating social embarrassment rather than interpreting her bodily sensations as a physical emergency.",
+                  "feedback": "Both are plausible sources of threat, but her concern about the familiar surge needs closer examination."
                 }
               ],
               "evidenceAnswer": "anxiety-m1-l3-n5-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "anxiety-m1-l3-n5-response-opt1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 },
                 {
                   "id": "anxiety-m1-l3-n5-response-opt2",
@@ -1651,13 +1657,13 @@
                 },
                 {
                   "id": "anxiety-m1-l3-n5-response-alternative-2",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Check whether the symptoms are familiar, then practise entering at a manageable pace while tracking what actually happens.",
+                  "feedback": "This supports learning without dismissing medical uncertainty."
                 },
                 {
                   "id": "anxiety-m1-l3-n5-response-alternative-3",
-                  "label": "Check whether the symptoms are familiar, then practise entering at a manageable pace while tracking what actually happens.",
-                  "feedback": "This supports learning without dismissing medical uncertainty."
+                  "label": "Agree on a short entry period and a way to seek help if symptoms change in an unfamiliar or concerning way.",
+                  "feedback": "A safety plan can make approach workable; it should not become an automatic escape ritual for familiar anxiety."
                 }
               ],
               "responseAnswer": "anxiety-m1-l3-n5-response-opt2"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "anxiety-m1-l4-n2-question-opt3",
-                      "label": "The bodily alarm may be interpreted as evidence of danger. Escaping brings rapid relief, which can reinforce future avoidance even when the anticipated harm remains untested.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "Ava may have experienced a previous medical event that makes similar sensations especially threatening.",
+                      "feedback": "History could alter both the explanation and what a safe plan requires; it is not established here."
                     },
                     {
                       "id": "anxiety-m1-l4-n2-question-opt4",
@@ -1815,8 +1821,8 @@
                 },
                 {
                   "id": "anxiety-m1-l4-n3-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Compare Ava’s predictions with what occurred on previous occasions when she remained in a safe crowd.",
+                  "feedback": "This can test the feared consequence of familiar sensations."
                 }
               ],
               "answer": "anxiety-m1-l4-n3-opt2",
@@ -1854,8 +1860,8 @@
                 },
                 {
                   "id": "anxiety-m1-l4-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Check whether the same sensations occur in non-crowded contexts and whether they have been medically assessed when appropriate.",
+                  "feedback": "The distribution and history of symptoms can change the formulation."
                 }
               ],
               "answer": "anxiety-m1-l4-n4-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "anxiety-m1-l4-n6-alternative-1",
-                  "label": "Ava may be anticipating social embarrassment rather than interpreting her bodily sensations as a physical emergency.",
-                  "feedback": "Both are plausible sources of threat, but her concern about the familiar surge needs closer examination."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "anxiety-m1-l4-n6-opt2"
@@ -1973,21 +1979,21 @@
                 },
                 {
                   "id": "anxiety-m1-l5-n2-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "The crowded room may have sensory features that are genuinely difficult for Ava to tolerate.",
+                  "feedback": "Environmental strain could matter even if the bodily alarm is familiar."
                 },
                 {
                   "id": "anxiety-m1-l5-n2-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Ava may have experienced a previous medical event that makes similar sensations especially threatening.",
+                  "feedback": "History could alter both the explanation and what a safe plan requires; it is not established here."
                 }
               ],
               "evidenceAnswer": "anxiety-m1-l5-n2-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "anxiety-m1-l5-n2-response-opt1",
-                  "label": "What does your body predict will happen if you stay, and what happened on previous occasions?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Agree on a short entry period and a way to seek help if symptoms change in an unfamiliar or concerning way.",
+                  "feedback": "A safety plan can make approach workable; it should not become an automatic escape ritual for familiar anxiety."
                 },
                 {
                   "id": "anxiety-m1-l5-n2-response-opt2",
@@ -1996,13 +2002,13 @@
                 },
                 {
                   "id": "anxiety-m1-l5-n2-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Promise yourself the anxiety will disappear as soon as you sit down.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "anxiety-m1-l5-n2-response-alternative-3",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "What does your body predict will happen if you stay, and what happened on previous occasions?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "anxiety-m1-l5-n2-response-opt2"
@@ -2029,8 +2035,8 @@
                 },
                 {
                   "id": "anxiety-m1-l5-n4-opt3",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Ava could be reacting to a genuine problem in that environment, or to symptoms that require medical assessment rather than exposure.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 },
                 {
                   "id": "anxiety-m1-l5-n4-opt4",
@@ -2039,8 +2045,8 @@
                 },
                 {
                   "id": "anxiety-m1-l5-n4-alternative-2",
-                  "label": "Ava may be anticipating social embarrassment rather than interpreting her bodily sensations as a physical emergency.",
-                  "feedback": "Both are plausible sources of threat, but her concern about the familiar surge needs closer examination."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "anxiety-m1-l5-n4-opt2",
@@ -2069,8 +2075,8 @@
                 },
                 {
                   "id": "anxiety-m1-l5-n3-change-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Promise yourself the anxiety will disappear as soon as you sit down.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -2126,8 +2132,8 @@
                 },
                 {
                   "id": "anxiety-m1-l5-n5-alternative-1",
-                  "label": "Ava may be anticipating social embarrassment rather than interpreting her bodily sensations as a physical emergency.",
-                  "feedback": "Both are plausible sources of threat, but her concern about the familiar surge needs closer examination."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "anxiety-m1-l5-n5-opt2",
@@ -2165,8 +2171,8 @@
                 },
                 {
                   "id": "anxiety-m1-l5-n6-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Compare Ava’s predictions with what occurred on previous occasions when she remained in a safe crowd.",
+                  "feedback": "This can test the feared consequence of familiar sensations."
                 }
               ],
               "answer": "anxiety-m1-l5-n6-opt2"
@@ -2220,8 +2226,8 @@
                 },
                 {
                   "id": "anxiety-m1-l6-n2-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Check whether the symptoms are familiar, then practise entering at a manageable pace while tracking what actually happens.",
+                  "feedback": "This supports learning without dismissing medical uncertainty."
                 }
               ],
               "answer": "anxiety-m1-l6-n2-opt2"
@@ -2301,8 +2307,8 @@
                 },
                 {
                   "id": "anxiety-m1-l6-n4-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Compare Ava’s predictions with what occurred on previous occasions when she remained in a safe crowd.",
+                  "feedback": "This can test the feared consequence of familiar sensations."
                 }
               ],
               "answer": "anxiety-m1-l6-n4-opt2",
