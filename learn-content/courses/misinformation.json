@@ -872,8 +872,8 @@
                   "options": [
                     {
                       "id": "misinformation-m1-node-1-check1-opt3",
-                      "label": "Theo may trust the accounts repeating the claim because they have previously shared accurate information.",
-                      "feedback": "Source reputation could affect confidence, though reposting the same claim does not provide independent evidence."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Ivo may be mistaking repetition of one claim for several independent confirmations. is more directly tied to the words in this scene. A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself."
                     },
                     {
                       "id": "misinformation-m1-node-1-check1-opt1",
@@ -885,13 +885,13 @@
                     },
                     {
                       "id": "misinformation-m1-node-1-check1-alternative-2",
-                      "label": "The claim may have originated in a genuine study that has been overextended in social posts.",
-                      "feedback": "This is worth checking; the original method must support the specific proposed benefit."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Ivo may be mistaking repetition of one claim for several independent confirmations. is more directly tied to the words in this scene. A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself."
                     },
                     {
                       "id": "misinformation-m1-node-1-check1-alternative-3",
-                      "label": "Theo may be treating popularity as a rough proxy for scrutiny, assuming that someone else must have checked it.",
-                      "feedback": "Widespread sharing can create that impression, but it does not establish that checking occurred."
+                      "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                      "feedback": "This is a reasonable line of inquiry, although Ivo may be mistaking repetition of one claim for several independent confirmations. is more directly tied to the words in this scene. A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself."
                     }
                   ],
                   "answer": "misinformation-m1-node-1-check1-opt1",
@@ -905,15 +905,17 @@
                   "options": [
                     {
                       "id": "misinformation-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Do you know where it originally came from?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Ask which independent test or official notice supports the claim before circulating it further.",
+                      "reply": "Did it link to a water test?",
+                      "consequence": "This can slow unverified repetition; the group may still disagree about what counts as independent.",
+                      "feedback": "This can slow unverified repetition; the group may still disagree about what counts as independent."
                     },
                     {
                       "id": "misinformation-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "Did it link to a water test?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "misinformation-m1-node-1-check2-opt1",
@@ -923,14 +925,17 @@
                     },
                     {
                       "id": "misinformation-m1-node-1-check2-opt2",
-                      "label": "Ask the group to vote on whether the warning sounds convincing.",
-                      "reply": "Familiarity can change how convincing something feels without adding evidence.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "reply": "Did it link to a water test?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     },
                     {
-                      "id": "misinformation-m1-node-1-check2-alternative-1",
-                      "label": "Theo may trust the accounts repeating the claim because they have previously shared accurate information.",
-                      "feedback": "Source reputation could affect confidence, though reposting the same claim does not provide independent evidence."
+                      "id": "misinformation-m1-node-1-check2-alternative-4",
+                      "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                      "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried.",
+                      "reply": "Did it link to a water test?",
+                      "consequence": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                     }
                   ],
                   "answer": "misinformation-m1-node-1-check2-opt1",
@@ -1072,7 +1077,8 @@
                 },
                 {
                   "id": "misinformation-m1-plan-opt2",
-                  "label": "Ask the group to vote on whether the warning sounds convincing."
+                  "label": "Offer a limited trial of one practical adjustment while keeping the original concern open for review.",
+                  "feedback": "A trial can provide information, but it may not solve a situation that requires a clear immediate answer."
                 },
                 {
                   "id": "misinformation-m1-plan-opt3",
@@ -1127,8 +1133,8 @@
                 },
                 {
                   "id": "misinformation-m1-node-7-alternative-1",
-                  "label": "Determine whether the many posts link to genuinely independent studies or one repeated video.",
-                  "feedback": "This separates repetition from corroboration."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "misinformation-m1-repair-opt1"
@@ -1207,8 +1213,8 @@
                     },
                     {
                       "id": "misinformation-m1-node-8-check1-alternative-2",
-                      "label": "Theo may trust the accounts repeating the claim because they have previously shared accurate information.",
-                      "feedback": "Source reputation could affect confidence, though reposting the same claim does not provide independent evidence."
+                      "label": "The screenshot may be an authentic report that has been circulated without its date or geographic limits.",
+                      "feedback": "An authentic document can still be misleading if taken outside its original context."
                     }
                   ],
                   "answer": "misinformation-m1-node-8-check1-opt1",
@@ -1249,8 +1255,8 @@
                 },
                 {
                   "id": "misinformation-m1-node-9-alternative-1",
-                  "label": "Theo may trust the accounts repeating the claim because they have previously shared accurate information.",
-                  "feedback": "Source reputation could affect confidence, though reposting the same claim does not provide independent evidence."
+                  "label": "The screenshot may be an authentic report that has been circulated without its date or geographic limits.",
+                  "feedback": "An authentic document can still be misleading if taken outside its original context."
                 }
               ],
               "answer": "misinformation-m1-new-opt1"
@@ -1323,8 +1329,8 @@
                 },
                 {
                   "id": "misinformation-m1-node-10-alternative-1",
-                  "label": "Theo may trust the accounts repeating the claim because they have previously shared accurate information.",
-                  "feedback": "Source reputation could affect confidence, though reposting the same claim does not provide independent evidence."
+                  "label": "Several local observers may independently have found evidence of the same problem.",
+                  "feedback": "This alternative deserves consideration. It would become stronger if earlier expectations supported it. A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself."
                 }
               ],
               "answer": "misinformation-m1-view-opt1"
@@ -1403,8 +1409,8 @@
                 },
                 {
                   "id": "misinformation-m1-node-14-evidence-alternative-1",
-                  "label": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although Ivo may be mistaking repetition of one claim for several independent confirmations. is more directly tied to the words in this scene. A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself."
                 }
               ],
               "evidenceAnswer": "misinformation-m1-transfer-e-opt1",
@@ -1423,8 +1429,8 @@
                 },
                 {
                   "id": "misinformation-m1-node-14-response-alternative-1",
-                  "label": "Dismiss the claim because unfamiliar people posted it.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "responseAnswer": "misinformation-m1-transfer-a-opt1"
@@ -1460,8 +1466,8 @@
                 },
                 {
                   "id": "misinformation-m1-node-13-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Observe what happens after a clear and workable alternative is offered.",
+                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
                 }
               ],
               "answer": "misinformation-m1-test-opt1"
@@ -1559,8 +1565,8 @@
                 },
                 {
                   "id": "misinformation-m1-l3-n3-alternative-1",
-                  "label": "The claim may have originated in a genuine study that has been overextended in social posts.",
-                  "feedback": "This is worth checking; the original method must support the specific proposed benefit."
+                  "label": "Theo may be treating popularity as a rough proxy for scrutiny, assuming that someone else must have checked it.",
+                  "feedback": "Widespread sharing can create that impression, but it does not establish that checking occurred."
                 }
               ],
               "answer": "misinformation-m1-l3-n3-opt2",
@@ -1598,8 +1604,8 @@
                 },
                 {
                   "id": "misinformation-m1-l3-n4-alternative-1",
-                  "label": "Theo may be treating popularity as a rough proxy for scrutiny, assuming that someone else must have checked it.",
-                  "feedback": "Widespread sharing can create that impression, but it does not establish that checking occurred."
+                  "label": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "misinformation-m1-l3-n4-opt2",
@@ -1764,8 +1770,8 @@
                     },
                     {
                       "id": "misinformation-m1-l4-n2-question-opt3",
-                      "label": "The claim may have originated in a genuine study that has been overextended in social posts.",
-                      "feedback": "This is worth checking; the original method must support the specific proposed benefit."
+                      "label": "Theo may trust the accounts repeating the claim because they have previously shared accurate information.",
+                      "feedback": "Source reputation could affect confidence, though reposting the same claim does not provide independent evidence."
                     },
                     {
                       "id": "misinformation-m1-l4-n2-question-opt4",
@@ -1774,8 +1780,8 @@
                     },
                     {
                       "id": "misinformation-m1-l4-n2-question-alternative-2",
-                      "label": "Theo may be treating popularity as a rough proxy for scrutiny, assuming that someone else must have checked it.",
-                      "feedback": "Widespread sharing can create that impression, but it does not establish that checking occurred."
+                      "label": "The claim may have originated in a genuine study that has been overextended in social posts.",
+                      "feedback": "This is worth checking; the original method must support the specific proposed benefit."
                     }
                   ],
                   "answer": "misinformation-m1-l4-n2-question-opt2",
@@ -1974,13 +1980,13 @@
                 },
                 {
                   "id": "misinformation-m1-l5-n2-evidence-alternative-1",
-                  "label": "Theo may be treating popularity as a rough proxy for scrutiny, assuming that someone else must have checked it.",
-                  "feedback": "Widespread sharing can create that impression, but it does not establish that checking occurred."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "misinformation-m1-l5-n2-evidence-alternative-2",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Theo may trust the accounts repeating the claim because they have previously shared accurate information.",
+                  "feedback": "Source reputation could affect confidence, though reposting the same claim does not provide independent evidence."
                 }
               ],
               "evidenceAnswer": "misinformation-m1-l5-n2-evidence-opt2",
@@ -1997,13 +2003,13 @@
                 },
                 {
                   "id": "misinformation-m1-l5-n2-response-alternative-1",
-                  "label": "Share the claim with a warning so others can judge for themselves.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 },
                 {
                   "id": "misinformation-m1-l5-n2-response-alternative-2",
-                  "label": "Are these independent reports, or multiple accounts repeating the same original item?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Trace the earliest source and compare the study's population and outcome with the exact claim being shared.",
+                  "feedback": "This tests the claim at the level at which it is being made."
                 }
               ],
               "responseAnswer": "misinformation-m1-l5-n2-response-opt2"
@@ -2031,8 +2037,8 @@
                 },
                 {
                   "id": "misinformation-m1-l5-n3-change-alternative-1",
-                  "label": "Dismiss the claim because unfamiliar people posted it.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Trace the earliest source and compare the study's population and outcome with the exact claim being shared.",
+                  "feedback": "This tests the claim at the level at which it is being made."
                 }
               ],
               "outcomes": [
@@ -2078,8 +2084,8 @@
                 },
                 {
                   "id": "misinformation-m1-l5-n4-opt3",
-                  "label": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The claim may have originated in a genuine study that has been overextended in social posts.",
+                  "feedback": "This is worth checking; the original method must support the specific proposed benefit."
                 },
                 {
                   "id": "misinformation-m1-l5-n4-opt4",
@@ -2088,8 +2094,8 @@
                 },
                 {
                   "id": "misinformation-m1-l5-n4-alternative-2",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Theo may be treating popularity as a rough proxy for scrutiny, assuming that someone else must have checked it.",
+                  "feedback": "Widespread sharing can create that impression, but it does not establish that checking occurred."
                 }
               ],
               "answer": "misinformation-m1-l5-n4-opt2",
@@ -2127,8 +2133,8 @@
                 },
                 {
                   "id": "misinformation-m1-l5-n5-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Theo may be treating popularity as a rough proxy for scrutiny, assuming that someone else must have checked it.",
+                  "feedback": "Widespread sharing can create that impression, but it does not establish that checking occurred."
                 }
               ],
               "answer": "misinformation-m1-l5-n5-opt2",
@@ -2221,8 +2227,8 @@
                 },
                 {
                   "id": "misinformation-m1-l6-n2-alternative-1",
-                  "label": "Trace the original source and compare the actual study with the claim before sharing or acting on it.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "answer": "misinformation-m1-l6-n2-opt2"
@@ -2302,8 +2308,8 @@
                 },
                 {
                   "id": "misinformation-m1-l6-n4-alternative-1",
-                  "label": "Check whether the claimed treatment was actually tested in humans for the outcome described.",
-                  "feedback": "The evidence must match the proposed application."
+                  "label": "Determine whether the many posts link to genuinely independent studies or one repeated video.",
+                  "feedback": "This separates repetition from corroboration."
                 }
               ],
               "answer": "misinformation-m1-l6-n4-opt2",
