@@ -116,7 +116,7 @@ export function filterLearnCourses({category='all',query=''}={}){
  const q=normalise(query);
  return LEARN_COURSES.filter(c=>(category==='all'||c.category===category)&&(!q||normalise([c.title,c.description,...c.focus,...c.keywords].join(' ')).includes(q)));
 }
-// Shared with Course Lab: ten psychology-specific interaction templates.
+// Shared with Course Lab: all supported psychology interaction templates.
 import {COURSE_LAB_TYPES,COURSE_LAB_EXERCISES} from './ns-course-lab-schema.mjs';
 export const LESSON_FORMATS=Object.freeze(COURSE_LAB_TYPES.filter(t=>COURSE_LAB_EXERCISES.includes(t.id)).map(t=>Object.freeze({
  id:t.id,name:t.name,description:t.hint
