@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "burnout",
+      "interpretations": [
+        {
+          "text": "Priya may be experiencing the effects of poor sleep unrelated to work, with the demanding month making the fatigue more noticeable.",
+          "reason": "Sleep could contribute, but the documented rise in demands and reduced recovery are directly relevant."
+        },
+        {
+          "text": "A temporary increase in workload may explain Priya’s exhaustion without showing a persistent work-related pattern.",
+          "reason": "Duration matters. The accounts of several weeks and added caseload support investigating an ongoing problem."
+        },
+        {
+          "text": "Priya may have unusually high standards for her own performance that lead her to take on more tasks than the service requires.",
+          "reason": "Self-expectations could add pressure, although the manager has said every task remains a priority."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Document the work that cannot be completed within contracted time and seek a decision about priorities.",
+          "reason": "This targets the allocation of demands, although the response depends on managerial willingness."
+        },
+        {
+          "text": "Agree a short period of protected recovery while setting a formal review of caseload and staffing.",
+          "reason": "Time away may help, but recovery without changes to the demands may be short-lived."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare contracted hours and available staffing with recorded cases and report deadlines over several weeks.",
+          "reason": "This can establish whether demands have become structurally unmanageable."
+        },
+        {
+          "text": "Review whether fatigue changes when tasks are formally removed rather than merely postponed.",
+          "reason": "The difference helps test the role of sustained demands."
+        }
+      ]
+    },
+    {
+      "id": "loneliness",
+      "interpretations": [
+        {
+          "text": "Sana may need a smaller setting for personal conversation rather than additional social events.",
+          "reason": "Group gatherings can limit depth even when friends are willing to listen."
+        },
+        {
+          "text": "Her friends may be consistently unreceptive to personal topics, which could justify her reluctance to share.",
+          "reason": "This would fit if repeated attempts are dismissed, but the record currently contains limited examples."
+        },
+        {
+          "text": "Sana may expect rejection when disclosure feels vulnerable and therefore present herself as less in need of support.",
+          "reason": "This could become self-maintaining, though the group’s actual responses need examining."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Arrange a one-to-one meeting with somebody she trusts and explain what she would like to talk about.",
+          "reason": "The request increases the opportunity for meaningful contact while leaving the response open."
+        },
+        {
+          "text": "Notice which friends reciprocate when she shares something personal before deciding whether to invest more deeply.",
+          "reason": "That helps evaluate the relationship, though it could become excessive monitoring if every conversation is treated as a test."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare the quality of responses to personal topics in groups and in individual conversations.",
+          "reason": "The setting may explain different experiences of connection."
+        },
+        {
+          "text": "Look for repeated invitations to share that Sana has declined as well as attempts others have dismissed.",
+          "reason": "Both directions matter when evaluating why connection feels limited."
+        }
+      ]
+    },
+    {
+      "id": "social-media",
+      "interpretations": [
+        {
+          "text": "Riley may be using videos to avoid a difficult task, with the feed providing readily available distraction.",
+          "reason": "Avoidance might contribute, though no particular task is mentioned in the current scene."
+        },
+        {
+          "text": "The absence of an ending may matter more than unusually strong enjoyment of any individual video.",
+          "reason": "The repeated 'one more' decision is consistent with missing stopping cues."
+        },
+        {
+          "text": "Riley may be seeking social information about friends, making it harder to disengage from the app.",
+          "reason": "Social checking could explain persistence, but the described feed is dominated by short videos rather than messages."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Turn off automatic playback and require a deliberate choice before each additional video.",
+          "reason": "This introduces stopping cues without assuming the app has no benefits."
+        },
+        {
+          "text": "Set a specific end point before opening the feed and record whether it changes the length of the session.",
+          "reason": "A rule may help, though the interface still makes continuing easy."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare viewing time on a version of the feed that requires selecting each next item.",
+          "reason": "The design difference isolates a possible stopping-cue mechanism."
+        },
+        {
+          "text": "Track whether Riley opens the app mainly after stressful tasks or during otherwise relaxed periods.",
+          "reason": "This helps evaluate whether avoidance contributes independently of feed design."
+        }
+      ]
+    },
+    {
+      "id": "misinformation",
+      "interpretations": [
+        {
+          "text": "Theo may trust the accounts repeating the claim because they have previously shared accurate information.",
+          "reason": "Source reputation could affect confidence, though reposting the same claim does not provide independent evidence."
+        },
+        {
+          "text": "The claim may have originated in a genuine study that has been overextended in social posts.",
+          "reason": "This is worth checking; the original method must support the specific proposed benefit."
+        },
+        {
+          "text": "Theo may be treating popularity as a rough proxy for scrutiny, assuming that someone else must have checked it.",
+          "reason": "Widespread sharing can create that impression, but it does not establish that checking occurred."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Trace the earliest source and compare the study's population and outcome with the exact claim being shared.",
+          "reason": "This tests the claim at the level at which it is being made."
+        },
+        {
+          "text": "Delay sharing while checking whether independent studies report the same relevant effect.",
+          "reason": "Independent replication is valuable, although absence of replication alone is not decisive proof of falsity."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Determine whether the many posts link to genuinely independent studies or one repeated video.",
+          "reason": "This separates repetition from corroboration."
+        },
+        {
+          "text": "Check whether the claimed treatment was actually tested in humans for the outcome described.",
+          "reason": "The evidence must match the proposed application."
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity",
+      "interpretations": [
+        {
+          "text": "A shared diagnosis may predict some common barriers while leaving substantial individual differences.",
+          "reason": "Group trends can be useful in design, but do not prescribe an adjustment for every member."
+        },
+        {
+          "text": "Different sensory preferences may be partly shaped by tasks or experiences rather than by diagnostic category alone.",
+          "reason": "Environmental context matters and can change what is helpful."
+        },
+        {
+          "text": "Some adjustments might work for several groups, including people without formal diagnoses.",
+          "reason": "Universal design is compatible with individual consultation."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Offer a small menu of work-environment adjustments and ask employees to test what removes barriers.",
+          "reason": "Choice addresses variation, although organisations must also consider feasibility and accessibility."
+        },
+        {
+          "text": "Ask staff which task is affected by an environmental feature before deciding whether a diagnostic label matters.",
+          "reason": "This keeps the intervention tied to functional needs; diagnosis may still be relevant in some formal processes."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare the actual tasks affected by noise across staff with different identities and diagnoses.",
+          "reason": "The same barrier may occur across categories."
+        },
+        {
+          "text": "Measure whether each proposed adjustment changes the person's ability to carry out the task rather than inferring benefit from the label.",
+          "reason": "Functional outcome provides a better test of fit."
+        }
+      ]
+    },
+    {
+      "id": "sleep",
+      "interpretations": [
+        {
+          "text": "Bea may have enough sleep pressure but a circadian wake signal that makes daytime sleep harder.",
+          "reason": "The conflict between waking history and body-clock timing fits shift work."
+        },
+        {
+          "text": "Bea may be carrying alertness from a stimulating shift, independent of her circadian rhythm.",
+          "reason": "Arousal could contribute, although the repeated morning timing is suggestive."
+        },
+        {
+          "text": "Caffeine used to manage the night shift may be delaying sleep once she returns home.",
+          "reason": "This would be relevant if intake and timing support it; neither has been recorded yet."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Plan the sleep opportunity around shifts and control light exposure where practical.",
+          "reason": "This addresses timing while allowing for constraints of the work schedule."
+        },
+        {
+          "text": "Record caffeine use and the timing of short naps before deciding which change to try first.",
+          "reason": "These factors matter, though tracking should not become another source of sleep-related worry."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare sleep onset after similar periods awake but different clock times.",
+          "reason": "The contrast can reveal a contribution from circadian timing."
+        },
+        {
+          "text": "Record caffeine, light and naps alongside sleep timing rather than using tiredness as the only measure.",
+          "reason": "This helps distinguish several plausible mechanisms."
+        }
+      ]
+    },
+    {
+      "id": "low-mood",
+      "interpretations": [
+        {
+          "text": "Callum may be grieving a meaningful opportunity and need time to adjust rather than immediate clinical intervention.",
+          "reason": "The timing of the rejection supports this, although prolonged functional impairment changes the assessment."
+        },
+        {
+          "text": "Social withdrawal may be reducing access to rewarding experiences and making the sadness harder to shift.",
+          "reason": "The cancellation of plans is consistent, but we need to know whether contact was previously rewarding."
+        },
+        {
+          "text": "The job rejection may have renewed a broader feeling of helplessness about his future.",
+          "reason": "That could contribute to repetitive thinking, though this meaning has not been directly established."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Choose one low-effort, valued activity and notice whether doing it affects mood or connection afterwards.",
+          "reason": "This allows learning from participation without demanding immediate happiness."
+        },
+        {
+          "text": "Discuss what the lost job represented and make a limited plan for the next application when ready.",
+          "reason": "Meaning and future action matter, though planning alone may not reverse withdrawal."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Track daily function and enjoyment over the following weeks rather than inferring a disorder from one reaction.",
+          "reason": "Duration and breadth of change are relevant."
+        },
+        {
+          "text": "Ask what happens to mood on days when Callum participates in valued activities compared with days he withdraws.",
+          "reason": "The contrast may help identify a maintaining process."
+        }
+      ]
+    },
+    {
+      "id": "scams",
+      "interpretations": [
+        {
+          "text": "The caller may know accurate account details because those were obtained from a previous data leak.",
+          "reason": "Specific knowledge can increase apparent credibility without establishing legitimacy."
+        },
+        {
+          "text": "The caller’s demand for secrecy may be intended to prevent the independent verification that would expose the deception.",
+          "reason": "This is consistent with discouraging contact through trusted channels."
+        },
+        {
+          "text": "Alina may be interpreting urgency as proof that immediate compliance is necessary, rather than as a reason to verify the claim.",
+          "reason": "The claimed loss is plausible, but acting on it without verification is risky."
+        }
+      ],
+      "actions": [
+        {
+          "text": "End the call and verify the claimed transfer through the bank’s trusted app or the number on the card.",
+          "reason": "This breaks the caller’s control over the channel while allowing a genuine emergency to be addressed."
+        },
+        {
+          "text": "Use a separate device to find the bank’s official support information before making any transfer.",
+          "reason": "This can protect against caller-provided details, though an unsolicited caller may pressure her to stay on the line."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Check the account through an independently opened trusted service rather than information supplied on the call.",
+          "reason": "A separate channel can confirm or contradict the claimed emergency."
+        },
+        {
+          "text": "Ask the bank whether a genuine fraud process ever requires sending money to a newly named 'safe account'.",
+          "reason": "A verified institutional procedure would directly test the instruction."
+        }
+      ]
+    },
+    {
+      "id": "masculinity",
+      "interpretations": [
+        {
+          "text": "The survey may be measuring a blend of biological and social information because the researchers never defined the construct.",
+          "reason": "Ambiguity could make the responses uninterpretable across participants."
+        },
+        {
+          "text": "Some respondents may answer according to identity while others answer according to sex recorded at birth.",
+          "reason": "Different interpretations would weaken the item's construct validity."
+        },
+        {
+          "text": "The questionnaire may require information about specific clinical characteristics, making a broad binary label too imprecise.",
+          "reason": "The needed data depend on the actual research or care question."
+        }
+      ],
+      "actions": [
+        {
+          "text": "State what each question is for and separate relevant clinical information from demographic identity where necessary.",
+          "reason": "This increases validity and gives respondents a clearer explanation."
+        },
+        {
+          "text": "Pilot the items with people likely to interpret the terminology differently before deciding the final wording.",
+          "reason": "Testing interpretation is useful, though the research team still needs to define what it intends to measure."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare participants’ interpretations of the item with the construct the study claims to measure.",
+          "reason": "A mismatch reveals a measurement problem."
+        },
+        {
+          "text": "Check whether the conclusions require information that the original question could not actually capture.",
+          "reason": "This tests whether the response format was adequate."
+        }
+      ]
+    },
+    {
+      "id": "vaping",
+      "interpretations": [
+        {
+          "text": "Kai may be overestimating the social cost of refusal because nobody has explicitly required him to vape.",
+          "reason": "The perceived norm could differ from the actual expectations of the group."
+        },
+        {
+          "text": "Vaping may make Kai feel more involved in group breaks, apart from any pharmacological effect.",
+          "reason": "A belonging motive is plausible, especially at first use."
+        },
+        {
+          "text": "Kai may also enjoy the effects of nicotine, so maintaining use may eventually have a different explanation than the first attempt.",
+          "reason": "Different stages of use can have different contributors; there is no direct evidence of dependence yet."
+        }
+      ],
+      "actions": [
+        {
+          "text": "Tell one friend he does not want to vape and continue joining the group's breaks.",
+          "reason": "This tests whether belonging really requires using nicotine."
+        },
+        {
+          "text": "Arrange a different shared break activity and observe whether the same friends participate.",
+          "reason": "The response may show whether the friendship extends beyond the vaping routine."
+        }
+      ],
+      "checks": [
+        {
+          "text": "Compare Kai’s predicted rejection with how friends actually respond to a clear refusal.",
+          "reason": "This tests the perceived norm."
+        },
+        {
+          "text": "Ask whether Kai uses nicotine when he is alone and whether cravings are developing.",
+          "reason": "This helps distinguish social initiation from possible dependence."
+        }
+      ]
+    }
+  ]
+}
