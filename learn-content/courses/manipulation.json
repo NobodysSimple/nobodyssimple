@@ -894,13 +894,13 @@
                     },
                     {
                       "id": "manipulation-m1-node-1-check1-alternative-1",
-                      "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
-                      "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Owen may be raising the emotional cost of refusing the loan by linking it to loyalty. is more directly tied to the words in this scene. Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement."
                     },
                     {
                       "id": "manipulation-m1-node-1-check1-alternative-2",
-                      "label": "Ben may have an independent and legitimate financial limit, although the timing and conditional wording make its function important.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Owen may be raising the emotional cost of refusing the loan by linking it to loyalty. is more directly tied to the words in this scene. Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement."
                     }
                   ],
                   "answer": "manipulation-m1-node-1-check1-opt1",
@@ -914,15 +914,17 @@
                   "options": [
                     {
                       "id": "manipulation-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "I gave you a lift last month. I didn't realise helping only went one way.",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "reply": "I wasn't trying to say you were bad. I thought you'd help me back.",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     },
                     {
                       "id": "manipulation-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
                       "reply": "I wasn't trying to say you were bad. I thought you'd help me back.",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried.",
+                      "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                     },
                     {
                       "id": "manipulation-m1-node-1-check2-opt1",
@@ -932,14 +934,17 @@
                     },
                     {
                       "id": "manipulation-m1-node-1-check2-opt2",
-                      "label": "I'll lend it just this once so you don't think I'm selfish.",
-                      "reply": "Fine. I guess I know how much this friendship means to you.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Ask what information each person would need before being willing to revise their position.",
+                      "reply": "I wasn't trying to say you were bad. I thought you'd help me back.",
+                      "consequence": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need.",
+                      "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                     },
                     {
-                      "id": "manipulation-m1-node-1-check2-alternative-1",
-                      "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
-                      "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
+                      "id": "manipulation-m1-node-1-check2-alternative-4",
+                      "label": "Offer a limited trial of one practical adjustment while keeping the original concern open for review.",
+                      "feedback": "A trial can provide information, but it may not solve a situation that requires a clear immediate answer.",
+                      "reply": "I wasn't trying to say you were bad. I thought you'd help me back.",
+                      "consequence": "A trial can provide information, but it may not solve a situation that requires a clear immediate answer."
                     }
                   ],
                   "answer": "manipulation-m1-node-1-check2-opt1",
@@ -1082,8 +1087,8 @@
                 },
                 {
                   "id": "manipulation-m1-node-7-alternative-1",
-                  "label": "Ask whether the financial limit applies consistently, or is introduced specifically when Asha makes decisions Ben dislikes.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Check whether the speakers had agreed on the practical expectation before the exchange.",
+                  "feedback": "The agreement may determine whether the original request was reasonable, although not why the response was so strong."
                 }
               ],
               "answer": "manipulation-m1-repair-opt1"
@@ -1108,7 +1113,8 @@
                 },
                 {
                   "id": "manipulation-m1-plan-opt2",
-                  "label": "I'll lend it just this once so you don't think I'm selfish."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 },
                 {
                   "id": "manipulation-m1-plan-opt3",
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "manipulation-m1-node-8-check1-alternative-1",
-                      "label": "Ben may be expressing fear of separation through an ill-judged bargaining tactic without fully recognising its coercive effect.",
-                      "feedback": "His feelings could be sincere while the conditional financial threat still restricts Asha’s choice."
+                      "label": "Owen may be worried about losing an important plan and searching for leverage rather than deliberately undermining Nina’s judgement.",
+                      "feedback": "Urgent practical need could contribute to the tactic without removing its effect."
                     },
                     {
                       "id": "manipulation-m1-node-8-check1-alternative-2",
-                      "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
-                      "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
+                      "label": "Owen sees past favours as creating a genuine expectation of reciprocity.",
+                      "feedback": "This alternative deserves consideration. It would become stronger if earlier expectations supported it. Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement."
                     }
                   ],
                   "answer": "manipulation-m1-node-8-check1-opt1",
@@ -1249,8 +1255,8 @@
                 },
                 {
                   "id": "manipulation-m1-node-10-alternative-1",
-                  "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
-                  "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although Owen may be raising the emotional cost of refusing the loan by linking it to loyalty. is more directly tied to the words in this scene. Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement."
                 }
               ],
               "answer": "manipulation-m1-view-opt1"
@@ -1287,8 +1293,8 @@
                 },
                 {
                   "id": "manipulation-m1-node-9-alternative-1",
-                  "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
-                  "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
+                  "label": "Owen sees past favours as creating a genuine expectation of reciprocity.",
+                  "feedback": "This alternative deserves consideration. It would become stronger if earlier expectations supported it. Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement."
                 }
               ],
               "answer": "manipulation-m1-new-opt1"
@@ -1402,8 +1408,8 @@
                 },
                 {
                   "id": "manipulation-m1-node-14-evidence-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Owen may be treating Nina’s refusal as evidence that their earlier exchange of favours was unequal.",
+                  "feedback": "That fits his reference to the previous lift, though linking the refusal to loyalty still changes the pressure on Nina."
                 }
               ],
               "evidenceAnswer": "manipulation-m1-transfer-e-opt1",
@@ -1422,8 +1428,8 @@
                 },
                 {
                   "id": "manipulation-m1-node-14-response-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "I can help you look for transport alternatives, but I need the car for my shift.",
+                  "feedback": "This offers help without giving up the boundary; it might be unnecessary if the pressure itself is the central concern."
                 }
               ],
               "responseAnswer": "manipulation-m1-transfer-a-opt1"
@@ -1459,8 +1465,8 @@
                 },
                 {
                   "id": "manipulation-m1-node-13-alternative-1",
-                  "label": "Ask what budget change would make support impossible even if Asha attended the interview and remained in the city.",
-                  "feedback": "An independent financial reason would weaken the case for targeted pressure."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "manipulation-m1-test-opt1"
@@ -1515,8 +1521,8 @@
                 },
                 {
                   "id": "manipulation-m1-l3-n3-alternative-1",
-                  "label": "Ben may have an independent and legitimate financial limit, although the timing and conditional wording make its function important.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "manipulation-m1-l3-n3-opt2",
@@ -1597,8 +1603,8 @@
                 },
                 {
                   "id": "manipulation-m1-l3-n4-alternative-1",
-                  "label": "Ben moves from expressing concern to attaching a material consequence to Asha's choice. The pressure changes how freely she can weigh an opportunity.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "Ben may be setting a financial limit that would apply to any move, rather than selectively penalising Asha’s career choices.",
+                  "feedback": "A genuine budget boundary is plausible; its consistency and timing would need checking."
                 }
               ],
               "answer": "manipulation-m1-l3-n4-opt2",
@@ -1628,13 +1634,13 @@
                 },
                 {
                   "id": "manipulation-m1-l3-n5-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Ben may be expressing fear of separation through an ill-judged bargaining tactic without fully recognising its coercive effect.",
+                  "feedback": "His feelings could be sincere while the conditional financial threat still restricts Asha’s choice."
                 },
                 {
                   "id": "manipulation-m1-l3-n5-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Ben may believe their shared financial commitments require joint approval before either person makes a major decision.",
+                  "feedback": "That would support discussing expenses, but Asha is considering an interview, not yet committing shared funds."
                 }
               ],
               "evidenceAnswer": "manipulation-m1-l3-n5-evidence-opt2",
@@ -1651,13 +1657,13 @@
                 },
                 {
                   "id": "manipulation-m1-l3-n5-response-alternative-1",
-                  "label": "Does withdrawing rent support reflect a budget change, or is it intended to change my decision?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask Ben to explain a stable budget limit before deciding whether his withdrawal of support is linked to the interview.",
+                  "feedback": "This can clarify intent, though repeated threats can make prolonged negotiation unsafe or unproductive."
                 },
                 {
                   "id": "manipulation-m1-l3-n5-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Tell me why the move would upset you; I want to hear it before deciding.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "manipulation-m1-l3-n5-response-opt2"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "manipulation-m1-l4-n2-question-opt3",
-                      "label": "Ben moves from expressing concern to attaching a material consequence to Asha's choice. The pressure changes how freely she can weigh an opportunity.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "manipulation-m1-l4-n2-question-opt4",
@@ -1773,8 +1779,8 @@
                     },
                     {
                       "id": "manipulation-m1-l4-n2-question-alternative-2",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "manipulation-m1-l4-n2-question-opt2",
@@ -1815,8 +1821,8 @@
                 },
                 {
                   "id": "manipulation-m1-l4-n3-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Ask what budget change would make support impossible even if Asha attended the interview and remained in the city.",
+                  "feedback": "An independent financial reason would weaken the case for targeted pressure."
                 }
               ],
               "answer": "manipulation-m1-l4-n3-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "manipulation-m1-l4-n6-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Ben may be expressing fear of separation through an ill-judged bargaining tactic without fully recognising its coercive effect.",
+                  "feedback": "His feelings could be sincere while the conditional financial threat still restricts Asha’s choice."
                 }
               ],
               "answer": "manipulation-m1-l4-n6-opt2"
@@ -2165,8 +2171,8 @@
                 },
                 {
                   "id": "manipulation-m1-l5-n6-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Ask what budget change would make support impossible even if Asha attended the interview and remained in the city.",
+                  "feedback": "An independent financial reason would weaken the case for targeted pressure."
                 }
               ],
               "answer": "manipulation-m1-l5-n6-opt2"
@@ -2220,7 +2226,7 @@
                 },
                 {
                   "id": "manipulation-m1-l6-n2-alternative-1",
-                  "label": "Does withdrawing rent support reflect a budget change, or is it intended to change my decision?",
+                  "label": "Tell me why the move would upset you; I want to hear it before deciding.",
                   "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
@@ -2258,8 +2264,8 @@
                 },
                 {
                   "id": "manipulation-m1-l6-n4-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Ask what budget change would make support impossible even if Asha attended the interview and remained in the city.",
+                  "feedback": "An independent financial reason would weaken the case for targeted pressure."
                 }
               ],
               "answer": "manipulation-m1-l6-n4-opt2",
