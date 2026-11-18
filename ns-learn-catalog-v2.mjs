@@ -116,11 +116,8 @@ export function filterLearnCourses({category='all',query=''}={}){
  const q=normalise(query);
  return LEARN_COURSES.filter(c=>(category==='all'||c.category===category)&&(!q||normalise([c.title,c.description,...c.focus,...c.keywords].join(' ')).includes(q)));
 }
-export const LESSON_FORMATS=Object.freeze([
- {id:'match',name:'Match',description:'Connect ideas, definitions and real examples.'},
- {id:'sort',name:'Sort',description:'Separate similar-looking psychological patterns.'},
- {id:'choose',name:'Choose',description:'Pick between plausible explanations.'},
- {id:'complete',name:'Recall',description:'Fill in what you remember, without copying.'},
- {id:'sequence',name:'Sequence',description:'Put reasoning or action steps in order.'},
- {id:'respond',name:'Respond',description:'Choose a proportionate response for the context.'}
-]);
+// Shared with Course Lab: ten psychology-specific interaction templates.
+import {COURSE_LAB_TYPES,COURSE_LAB_EXERCISES} from './ns-course-lab-schema.mjs';
+export const LESSON_FORMATS=Object.freeze(COURSE_LAB_TYPES.filter(t=>COURSE_LAB_EXERCISES.includes(t.id)).map(t=>Object.freeze({
+ id:t.id,name:t.name,description:t.hint
+})));
