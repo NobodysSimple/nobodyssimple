@@ -894,13 +894,13 @@
                     },
                     {
                       "id": "loneliness-m1-node-1-check1-alternative-1",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     },
                     {
                       "id": "loneliness-m1-node-1-check1-alternative-2",
-                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                      "label": "Jon may feel lonely chiefly because the activities give him few chances to talk about anything personal.",
+                      "feedback": "The setting could be limiting; he also reports ending opportunities for disclosure himself."
                     }
                   ],
                   "answer": "loneliness-m1-node-1-check1-opt1",
@@ -920,26 +920,31 @@
                     },
                     {
                       "id": "loneliness-m1-node-1-check2-opt2",
-                      "label": "Add another event to your calendar without considering what sort of connection is missing.",
-                      "reply": "So you've had company without testing whether you can be understood.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                      "reply": "What did they do?",
+                      "consequence": "This can reveal different priorities, but it may also delay an urgent factual correction.",
+                      "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                     },
                     {
                       "id": "loneliness-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Do you expect them to react badly?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Invite a trusted friend for coffee and explain that you would like to talk about how the week has been.",
+                      "reply": "What did they do?",
+                      "consequence": "A quieter setting may offer a better opportunity, although the friend may have limited capacity that day.",
+                      "feedback": "A quieter setting may offer a better opportunity, although the friend may have limited capacity that day."
                     },
                     {
                       "id": "loneliness-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask someone from the group whether they would be open to a more personal conversation rather than assuming no one is interested.",
                       "reply": "What did they do?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Checking the expectation could be useful, but choosing a trusted person matters.",
+                      "feedback": "Checking the expectation could be useful, but choosing a trusted person matters."
                     },
                     {
-                      "id": "loneliness-m1-node-1-check2-alternative-1",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "id": "loneliness-m1-node-1-check2-alternative-4",
+                      "label": "Notice which conversations already allow some mutual disclosure before deciding where to invest more time.",
+                      "feedback": "This uses existing evidence, though simply observing can become another way to avoid sharing.",
+                      "reply": "What did they do?",
+                      "consequence": "This uses existing evidence, though simply observing can become another way to avoid sharing."
                     }
                   ],
                   "answer": "loneliness-m1-node-1-check2-opt1",
@@ -1082,8 +1087,8 @@
                 },
                 {
                   "id": "loneliness-m1-node-7-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Observe what happens after a clear and workable alternative is offered.",
+                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
                 }
               ],
               "answer": "loneliness-m1-repair-opt1"
@@ -1104,7 +1109,8 @@
               "changes": [
                 {
                   "id": "loneliness-m1-plan-opt2",
-                  "label": "Add another event to your calendar without considering what sort of connection is missing."
+                  "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                  "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer."
                 },
                 {
                   "id": "loneliness-m1-plan-opt3",
@@ -1201,8 +1207,8 @@
                     },
                     {
                       "id": "loneliness-m1-node-8-check1-alternative-1",
-                      "label": "Sana's sense of loneliness relates to a gap between the relationships she wants and the connection she experiences, not merely the number of social events.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                      "feedback": "This is a reasonable line of inquiry, although Jon may have frequent social contact without the emotional connection he wants. is more directly tied to the words in this scene. Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone."
                     },
                     {
                       "id": "loneliness-m1-node-8-check1-alternative-2",
@@ -1249,8 +1255,8 @@
                 },
                 {
                   "id": "loneliness-m1-node-10-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Jon may want a different kind of friendship from the one this group normally offers rather than more intimacy with these particular people.",
+                  "feedback": "A mismatch in expectations is possible, but it has not been tested through a closer conversation."
                 }
               ],
               "answer": "loneliness-m1-view-opt1"
@@ -1386,8 +1392,8 @@
                 },
                 {
                   "id": "loneliness-m1-node-14-evidence-alternative-1",
-                  "label": "Her friends may be consistently unreceptive to personal topics, which could justify her reluctance to share.",
-                  "feedback": "This would fit if repeated attempts are dismissed, but the record currently contains limited examples."
+                  "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                  "feedback": "This is a reasonable line of inquiry, although Jon may have frequent social contact without the emotional connection he wants. is more directly tied to the words in this scene. Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone."
                 }
               ],
               "evidenceAnswer": "loneliness-m1-transfer-e-opt1",
@@ -1406,8 +1412,8 @@
                 },
                 {
                   "id": "loneliness-m1-node-14-response-alternative-1",
-                  "label": "Notice which friends reciprocate when she shares something personal before deciding whether to invest more deeply.",
-                  "feedback": "That helps evaluate the relationship, though it could become excessive monitoring if every conversation is treated as a test."
+                  "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                  "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                 }
               ],
               "responseAnswer": "loneliness-m1-transfer-a-opt1"
@@ -1443,8 +1449,8 @@
                 },
                 {
                   "id": "loneliness-m1-node-13-alternative-1",
-                  "label": "Look at the quality of reciprocal responses when Sana shares more directly with people she considers trustworthy.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Check whether the speakers had agreed on the practical expectation before the exchange.",
+                  "feedback": "The agreement may determine whether the original request was reasonable, although not why the response was so strong."
                 }
               ],
               "answer": "loneliness-m1-test-opt1"
@@ -1747,8 +1753,8 @@
                     },
                     {
                       "id": "loneliness-m1-l4-n2-question-opt3",
-                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "loneliness-m1-l4-n2-question-opt4",
@@ -1757,8 +1763,8 @@
                     },
                     {
                       "id": "loneliness-m1-l4-n2-question-alternative-2",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "loneliness-m1-l4-n2-question-opt2",
@@ -1799,8 +1805,8 @@
                 },
                 {
                   "id": "loneliness-m1-l4-n3-alternative-1",
-                  "label": "Look for repeated invitations to share that Sana has declined as well as attempts others have dismissed.",
-                  "feedback": "Both directions matter when evaluating why connection feels limited."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "loneliness-m1-l4-n3-opt2",
@@ -1838,8 +1844,8 @@
                 },
                 {
                   "id": "loneliness-m1-l4-n4-alternative-1",
-                  "label": "Look at the quality of reciprocal responses when Sana shares more directly with people she considers trustworthy.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "loneliness-m1-l4-n4-opt2",
@@ -1910,8 +1916,8 @@
                 },
                 {
                   "id": "loneliness-m1-l4-n6-alternative-1",
-                  "label": "Sana may expect rejection when disclosure feels vulnerable and therefore present herself as less in need of support.",
-                  "feedback": "This could become self-maintaining, though the group’s actual responses need examining."
+                  "label": "Sana may need a smaller setting for personal conversation rather than additional social events.",
+                  "feedback": "Group gatherings can limit depth even when friends are willing to listen."
                 }
               ],
               "answer": "loneliness-m1-l4-n6-opt2"
@@ -1957,13 +1963,13 @@
                 },
                 {
                   "id": "loneliness-m1-l5-n2-evidence-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Sana may expect rejection when disclosure feels vulnerable and therefore present herself as less in need of support.",
+                  "feedback": "This could become self-maintaining, though the group’s actual responses need examining."
                 },
                 {
                   "id": "loneliness-m1-l5-n2-evidence-alternative-2",
-                  "label": "Sana may need a smaller setting for personal conversation rather than additional social events.",
-                  "feedback": "Group gatherings can limit depth even when friends are willing to listen."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "loneliness-m1-l5-n2-evidence-opt2",
@@ -1980,13 +1986,13 @@
                 },
                 {
                   "id": "loneliness-m1-l5-n2-response-alternative-1",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Accept every invitation so you're around people more frequently.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "loneliness-m1-l5-n2-response-alternative-2",
-                  "label": "Arrange a one-to-one meeting with somebody she trusts and explain what she would like to talk about.",
-                  "feedback": "The request increases the opportunity for meaningful contact while leaving the response open."
+                  "label": "What kind of conversation would leave you feeling known rather than simply included?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "loneliness-m1-l5-n2-response-opt2"
@@ -2013,8 +2019,8 @@
                 },
                 {
                   "id": "loneliness-m1-l5-n4-opt3",
-                  "label": "Her friends may be consistently unreceptive to personal topics, which could justify her reluctance to share.",
-                  "feedback": "This would fit if repeated attempts are dismissed, but the record currently contains limited examples."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "loneliness-m1-l5-n4-opt4",
@@ -2023,8 +2029,8 @@
                 },
                 {
                   "id": "loneliness-m1-l5-n4-alternative-2",
-                  "label": "Sana may expect rejection when disclosure feels vulnerable and therefore present herself as less in need of support.",
-                  "feedback": "This could become self-maintaining, though the group’s actual responses need examining."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "loneliness-m1-l5-n4-opt2",
@@ -2053,8 +2059,8 @@
                 },
                 {
                   "id": "loneliness-m1-l5-n3-change-alternative-1",
-                  "label": "Arrange a one-to-one meeting with somebody she trusts and explain what she would like to talk about.",
-                  "feedback": "The request increases the opportunity for meaningful contact while leaving the response open."
+                  "label": "Tell the whole friendship group they are failing to provide enough connection.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -2110,8 +2116,8 @@
                 },
                 {
                   "id": "loneliness-m1-l5-n5-alternative-1",
-                  "label": "Sana may expect rejection when disclosure feels vulnerable and therefore present herself as less in need of support.",
-                  "feedback": "This could become self-maintaining, though the group’s actual responses need examining."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "loneliness-m1-l5-n5-opt2",
@@ -2149,8 +2155,8 @@
                 },
                 {
                   "id": "loneliness-m1-l5-n6-alternative-1",
-                  "label": "Look for repeated invitations to share that Sana has declined as well as attempts others have dismissed.",
-                  "feedback": "Both directions matter when evaluating why connection feels limited."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "loneliness-m1-l5-n6-opt2"
@@ -2204,8 +2210,8 @@
                 },
                 {
                   "id": "loneliness-m1-l6-n2-alternative-1",
-                  "label": "Arrange a one-to-one meeting with somebody she trusts and explain what she would like to talk about.",
-                  "feedback": "The request increases the opportunity for meaningful contact while leaving the response open."
+                  "label": "Notice which friends reciprocate when she shares something personal before deciding whether to invest more deeply.",
+                  "feedback": "That helps evaluate the relationship, though it could become excessive monitoring if every conversation is treated as a test."
                 }
               ],
               "answer": "loneliness-m1-l6-n2-opt2"
