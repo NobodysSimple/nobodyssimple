@@ -1,0 +1,623 @@
+{
+  "id": "anxiety",
+  "version": 1,
+  "status": "published",
+  "title": "Anxiety, Fear & Avoidance",
+  "description": "Explore when the body alarms before the mind through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "anxiety-module-01",
+      "title": "When the body alarms before the mind",
+      "bookId": "anxiety-book-1",
+      "bookTitle": "Understanding alarm signals",
+      "bookNumber": 1,
+      "problem": "When the body alarms before the mind",
+      "distinction": "When the body alarms before the mind",
+      "lessons": [
+        {
+          "id": "anxiety-m1-l1",
+          "version": 1,
+          "title": "The feeling isn't the forecast",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of when the body alarms before the mind.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "anxiety-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Iris notices her heart racing while waiting for a crowded train.",
+              "speakerA": "Iris",
+              "speakerB": "Ben",
+              "turns": [
+                {
+                  "id": "anxiety-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "My heart just started beating really fast."
+                },
+                {
+                  "id": "anxiety-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "Are you feeling faint or having any other worrying symptoms?"
+                },
+                {
+                  "id": "anxiety-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "I'm afraid I'm going to collapse in front of everyone."
+                },
+                {
+                  "id": "anxiety-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Would you like to sit somewhere quieter while we decide what to do?"
+                },
+                {
+                  "id": "anxiety-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "Now I'm checking every beat. It feels faster when I focus on it."
+                },
+                {
+                  "id": "anxiety-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "We should check actual risk without treating the sensation alone as a prediction."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "anxiety-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "anxiety-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "anxiety-m1-node-1-check1-opt1",
+                      "label": "Iris may be interpreting bodily arousal as evidence of imminent danger."
+                    },
+                    {
+                      "id": "anxiety-m1-node-1-check1-opt2",
+                      "label": "A physical cause for the racing heart needs medical attention."
+                    },
+                    {
+                      "id": "anxiety-m1-node-1-check1-opt3",
+                      "label": "The crowd's noise or proximity may be overwhelming without fear of collapse."
+                    }
+                  ],
+                  "answer": "anxiety-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Iris may be interpreting bodily arousal as evidence of imminent danger. A physical cause for the racing heart needs medical attention. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk."
+                },
+                {
+                  "id": "anxiety-m1-node-1-check2",
+                  "prompt": "You are Iris. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "anxiety-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Would you like to sit somewhere quieter while we decide what to do?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "anxiety-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "Did the sensation disappear?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "anxiety-m1-node-1-check2-opt1",
+                      "label": "First check for concerning symptoms; if safe, distinguish what is happening in the body from what you fear will follow.",
+                      "reply": "That tells us something about attention, not the cause of the heartbeat.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "anxiety-m1-node-1-check2-opt2",
+                      "label": "Leave every crowded place as soon as your pulse changes.",
+                      "reply": "We should check actual risk without treating the sensation alone as a prediction.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    }
+                  ],
+                  "answer": "anxiety-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk."
+                }
+              ]
+            },
+            {
+              "id": "anxiety-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that iris may be interpreting bodily arousal as evidence of imminent danger. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "anxiety-m1-evidence-1",
+                  "text": "My heart just started beating really fast.",
+                  "answer": false
+                },
+                {
+                  "id": "anxiety-m1-evidence-2",
+                  "text": "Are you feeling faint or having any other worrying symptoms?",
+                  "answer": false
+                },
+                {
+                  "id": "anxiety-m1-evidence-3",
+                  "text": "I'm afraid I'm going to collapse in front of everyone.",
+                  "answer": true
+                },
+                {
+                  "id": "anxiety-m1-evidence-4",
+                  "text": "Would you like to sit somewhere quieter while we decide what to do?",
+                  "answer": false
+                },
+                {
+                  "id": "anxiety-m1-evidence-5",
+                  "text": "Now I'm checking every beat. It feels faster when I focus on it.",
+                  "answer": true
+                },
+                {
+                  "id": "anxiety-m1-evidence-6",
+                  "text": "We should check actual risk without treating the sensation alone as a prediction.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "anxiety-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "The strongest candidate is iris may be interpreting bodily arousal as evidence of imminent danger. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "anxiety-m1-rank-strong",
+                  "label": "Iris may be interpreting bodily arousal as evidence of imminent danger."
+                },
+                {
+                  "id": "anxiety-m1-rank-rival",
+                  "label": "A physical cause for the racing heart needs medical attention."
+                },
+                {
+                  "id": "anxiety-m1-rank-other",
+                  "label": "The crowd's noise or proximity may be overwhelming without fear of collapse."
+                }
+              ]
+            },
+            {
+              "id": "anxiety-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "The trigger is iris notices a racing heart in a crowded place. Its possible meaning is she predicts that the sensation means she will collapse. The protective behaviour may contribute to a longer-term cost: the sensation becomes more salient and may feed further threat appraisal.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "anxiety-m1-chain-1",
+                  "label": "Iris notices a racing heart in a crowded place."
+                },
+                {
+                  "id": "anxiety-m1-chain-2",
+                  "label": "She predicts that the sensation means she will collapse."
+                },
+                {
+                  "id": "anxiety-m1-chain-3",
+                  "label": "She monitors her heartbeat closely."
+                },
+                {
+                  "id": "anxiety-m1-chain-4",
+                  "label": "The sensation becomes more salient and may feed further threat appraisal."
+                }
+              ]
+            },
+            {
+              "id": "anxiety-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Anxiety can link bodily arousal with threat interpretations. Attention to each heartbeat may make the sensation more noticeable, which can strengthen the belief that something dangerous is happening. A racing heart is an observation; collapse is a prediction that requires additional evidence.\n\nNew, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113."
+            },
+            {
+              "id": "anxiety-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: First check for concerning symptoms; if safe, distinguish what is happening in the body from what you fear will follow. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "anxiety-m1-plan-opt2",
+                  "label": "Leave every crowded place as soon as your pulse changes."
+                },
+                {
+                  "id": "anxiety-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "anxiety-m1-plan-opt1",
+                  "label": "First check for concerning symptoms; if safe, distinguish what is happening in the body from what you fear will follow."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "anxiety-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "anxiety-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "anxiety-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                }
+              ],
+              "correctChange": "anxiety-m1-plan-opt1",
+              "correctOutcome": "anxiety-m1-outcome-opt1"
+            },
+            {
+              "id": "anxiety-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls iris may be interpreting bodily arousal as evidence of imminent danger. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "anxiety-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "anxiety-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but a physical cause for the racing heart needs medical attention. still deserves consideration."
+                },
+                {
+                  "id": "anxiety-m1-repair-opt2",
+                  "label": "Because a physical cause for the racing heart needs medical attention., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "anxiety-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                }
+              ],
+              "answer": "anxiety-m1-repair-opt1"
+            }
+          ]
+        },
+        {
+          "id": "anxiety-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "objective": "Test an account of when the body alarms before the mind with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "anxiety-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Iris",
+              "speakerB": "Ben",
+              "turns": [
+                {
+                  "id": "anxiety-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I stopped counting my pulse for a moment."
+                },
+                {
+                  "id": "anxiety-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "Did the sensation disappear?"
+                },
+                {
+                  "id": "anxiety-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "No, but I noticed the crowd again and felt less trapped in monitoring it."
+                },
+                {
+                  "id": "anxiety-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "That tells us something about attention, not the cause of the heartbeat."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "anxiety-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "anxiety-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "anxiety-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider a physical cause for the racing heart needs medical attention.."
+                    },
+                    {
+                      "id": "anxiety-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "anxiety-m1-node-8-check1-opt1",
+                      "label": "Attention appears to influence Iris's experience, without establishing that the symptoms have no physical cause. The earlier explanation may still contribute."
+                    }
+                  ],
+                  "answer": "anxiety-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. Attention appears to influence Iris's experience, without establishing that the symptoms have no physical cause. It still leaves open how much each factor contributed.",
+                  "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk."
+                }
+              ]
+            },
+            {
+              "id": "anxiety-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. Attention appears to influence Iris's experience, without establishing that the symptoms have no physical cause. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I stopped counting my pulse for a moment. Did the sensation disappear? No, but I noticed the crowd again and felt less trapped in monitoring it. That tells us something about attention, not the cause of the heartbeat.",
+              "options": [
+                {
+                  "id": "anxiety-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "anxiety-m1-new-opt3",
+                  "label": "The new evidence establishes a physical cause for the racing heart needs medical attention. as the sole explanation."
+                },
+                {
+                  "id": "anxiety-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "anxiety-m1-new-opt1",
+                  "label": "Attention appears to influence Iris's experience, without establishing that the symptoms have no physical cause. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                }
+              ],
+              "answer": "anxiety-m1-new-opt1"
+            },
+            {
+              "id": "anxiety-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "The quotes record what was said. Iris may be interpreting bodily arousal as evidence of imminent danger. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "anxiety-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "anxiety-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "anxiety-m1-sort-1",
+                  "label": "Iris said: \"My heart just started beating really fast.\"",
+                  "answer": "anxiety-m1-cat-observation"
+                },
+                {
+                  "id": "anxiety-m1-sort-2",
+                  "label": "Ben said: \"Would you like to sit somewhere quieter while we decide what to do?\"",
+                  "answer": "anxiety-m1-cat-observation"
+                },
+                {
+                  "id": "anxiety-m1-sort-3",
+                  "label": "Iris may be interpreting bodily arousal as evidence of imminent danger.",
+                  "answer": "anxiety-m1-cat-inference"
+                },
+                {
+                  "id": "anxiety-m1-sort-4",
+                  "label": "She predicts that the sensation means she will collapse.",
+                  "answer": "anxiety-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "anxiety-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Iris: \"My heart just started beating really fast.\"",
+              "viewB": "Ben: \"Would you like to sit somewhere quieter while we decide what to do?\"",
+              "options": [
+                {
+                  "id": "anxiety-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "anxiety-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "anxiety-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "anxiety-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                }
+              ],
+              "answer": "anxiety-m1-view-opt1"
+            },
+            {
+              "id": "anxiety-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "In this case, she predicts that the sensation means she will collapse. A functional account then asks whether she monitors her heartbeat closely. is followed by consequences that make repetition more likely.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "anxiety-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "anxiety-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "anxiety-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "anxiety-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "anxiety-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. A physical cause for the racing heart needs medical attention. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "anxiety-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "anxiety-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "anxiety-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "anxiety-m1-test-opt1",
+                  "label": "Look for independent observations that support a physical cause for the racing heart needs medical attention. and explain the original dialogue."
+                }
+              ],
+              "answer": "anxiety-m1-test-opt1"
+            },
+            {
+              "id": "anxiety-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "anxiety-opening-process",
+              "explanation": "Separate observable arousal from the predicted audience response, and examine the evidence for each. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+              "sources": "Clark (1986), A Cognitive Approach to Panic; NICE CG113.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A speaker's hands tremble slightly and they assume the audience will judge them as incompetent.",
+              "evidenceOptions": [
+                {
+                  "id": "anxiety-m1-transfer-e-opt1",
+                  "label": "Separate observable arousal from the predicted audience response, and examine the evidence for each."
+                },
+                {
+                  "id": "anxiety-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "anxiety-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                }
+              ],
+              "evidenceAnswer": "anxiety-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "anxiety-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "anxiety-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "anxiety-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                }
+              ],
+              "responseAnswer": "anxiety-m1-transfer-a-opt1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

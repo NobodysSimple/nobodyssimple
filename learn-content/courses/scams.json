@@ -1,0 +1,623 @@
+{
+  "id": "scams",
+  "version": 1,
+  "status": "published",
+  "title": "Scams, Deception & Social Engineering",
+  "description": "Explore time pressure and cognitive overload through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "scams-module-01",
+      "title": "Time pressure and cognitive overload",
+      "bookId": "scams-book-1",
+      "bookTitle": "Why clever people are deceived",
+      "bookNumber": 1,
+      "problem": "Time pressure and cognitive overload",
+      "distinction": "Time pressure and cognitive overload",
+      "lessons": [
+        {
+          "id": "scams-m1-l1",
+          "version": 1,
+          "title": "The deadline that isn't yours",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of time pressure and cognitive overload.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "scams-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "scams-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Alex receives a delivery text saying a parcel will be returned unless a small fee is paid within fifteen minutes.",
+              "speakerA": "Alex",
+              "speakerB": "Rina",
+              "turns": [
+                {
+                  "id": "scams-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "This text says my parcel is going back tonight."
+                },
+                {
+                  "id": "scams-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "Were you expecting a delivery?"
+                },
+                {
+                  "id": "scams-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "Yes. It has a payment link and a countdown."
+                },
+                {
+                  "id": "scams-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Have you checked the order outside the message?"
+                },
+                {
+                  "id": "scams-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "Not yet. I feel like waiting means I'll lose it."
+                },
+                {
+                  "id": "scams-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "The deadline may be making verification seem riskier than paying."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "scams-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "scams-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "scams-m1-node-1-check1-opt1",
+                      "label": "The imposed deadline may be discouraging independent verification before a payment."
+                    },
+                    {
+                      "id": "scams-m1-node-1-check1-opt2",
+                      "label": "A courier may genuinely have a time-sensitive delivery problem."
+                    },
+                    {
+                      "id": "scams-m1-node-1-check1-opt3",
+                      "label": "Alex's earlier parcel problems may be driving the worry more than the countdown."
+                    }
+                  ],
+                  "answer": "scams-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. The imposed deadline may be discouraging independent verification before a payment. A courier may genuinely have a time-sensitive delivery problem. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
+                },
+                {
+                  "id": "scams-m1-node-1-check2",
+                  "prompt": "You are Alex. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "scams-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Have you checked the order outside the message?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "scams-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "Was there a payment demand?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "scams-m1-node-1-check2-opt1",
+                      "label": "Close the text and open the retailer or courier's own site or app to check the order.",
+                      "reply": "That check is stronger evidence than the threat in the text.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "scams-m1-node-1-check2-opt2",
+                      "label": "Pay the small fee first and dispute it later if the parcel does not arrive.",
+                      "reply": "The deadline may be making verification seem riskier than paying.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    }
+                  ],
+                  "answer": "scams-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
+                }
+              ]
+            },
+            {
+              "id": "scams-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "scams-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that the imposed deadline may be discouraging independent verification before a payment. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "scams-m1-evidence-1",
+                  "text": "This text says my parcel is going back tonight.",
+                  "answer": false
+                },
+                {
+                  "id": "scams-m1-evidence-2",
+                  "text": "Were you expecting a delivery?",
+                  "answer": false
+                },
+                {
+                  "id": "scams-m1-evidence-3",
+                  "text": "Yes. It has a payment link and a countdown.",
+                  "answer": true
+                },
+                {
+                  "id": "scams-m1-evidence-4",
+                  "text": "Have you checked the order outside the message?",
+                  "answer": false
+                },
+                {
+                  "id": "scams-m1-evidence-5",
+                  "text": "Not yet. I feel like waiting means I'll lose it.",
+                  "answer": true
+                },
+                {
+                  "id": "scams-m1-evidence-6",
+                  "text": "The deadline may be making verification seem riskier than paying.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "scams-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Social engineering can change the conditions under which someone decides. Time pressure makes caution seem expensive, while a small fee lowers the apparent cost of compliance. The safer test is to leave the supplied link and verify through a trusted, independently accessed channel.\n\nSome real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance."
+            },
+            {
+              "id": "scams-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "scams-opening-process",
+              "explanation": "The trigger is a message announces imminent parcel return. Its possible meaning is alex believes verification may cause the loss of an expected delivery. The protective behaviour may contribute to a longer-term cost: he may surrender money or credentials before checking who sent the message.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "scams-m1-chain-1",
+                  "label": "A message announces imminent parcel return."
+                },
+                {
+                  "id": "scams-m1-chain-2",
+                  "label": "Alex believes verification may cause the loss of an expected delivery."
+                },
+                {
+                  "id": "scams-m1-chain-3",
+                  "label": "He feels pressure to pay through the text link."
+                },
+                {
+                  "id": "scams-m1-chain-4",
+                  "label": "He may surrender money or credentials before checking who sent the message."
+                }
+              ]
+            },
+            {
+              "id": "scams-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "scams-opening-process",
+              "explanation": "The strongest candidate is the imposed deadline may be discouraging independent verification before a payment. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "scams-m1-rank-strong",
+                  "label": "The imposed deadline may be discouraging independent verification before a payment."
+                },
+                {
+                  "id": "scams-m1-rank-rival",
+                  "label": "A courier may genuinely have a time-sensitive delivery problem."
+                },
+                {
+                  "id": "scams-m1-rank-other",
+                  "label": "Alex's earlier parcel problems may be driving the worry more than the countdown."
+                }
+              ]
+            },
+            {
+              "id": "scams-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "scams-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Close the text and open the retailer or courier's own site or app to check the order. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "scams-m1-plan-opt2",
+                  "label": "Pay the small fee first and dispute it later if the parcel does not arrive."
+                },
+                {
+                  "id": "scams-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "scams-m1-plan-opt1",
+                  "label": "Close the text and open the retailer or courier's own site or app to check the order."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "scams-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "scams-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "scams-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                }
+              ],
+              "correctChange": "scams-m1-plan-opt1",
+              "correctOutcome": "scams-m1-outcome-opt1"
+            },
+            {
+              "id": "scams-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls the imposed deadline may be discouraging independent verification before a payment. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "scams-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "scams-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "scams-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but a courier may genuinely have a time-sensitive delivery problem. still deserves consideration."
+                },
+                {
+                  "id": "scams-m1-repair-opt2",
+                  "label": "Because a courier may genuinely have a time-sensitive delivery problem., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "scams-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                }
+              ],
+              "answer": "scams-m1-repair-opt1"
+            }
+          ]
+        },
+        {
+          "id": "scams-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "objective": "Test an account of time pressure and cognitive overload with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "scams-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "scams-opening-process",
+              "explanation": "The quotes record what was said. The imposed deadline may be discouraging independent verification before a payment. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "scams-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "scams-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "scams-m1-sort-1",
+                  "label": "Alex said: \"This text says my parcel is going back tonight.\"",
+                  "answer": "scams-m1-cat-observation"
+                },
+                {
+                  "id": "scams-m1-sort-2",
+                  "label": "Rina said: \"Have you checked the order outside the message?\"",
+                  "answer": "scams-m1-cat-observation"
+                },
+                {
+                  "id": "scams-m1-sort-3",
+                  "label": "The imposed deadline may be discouraging independent verification before a payment.",
+                  "answer": "scams-m1-cat-inference"
+                },
+                {
+                  "id": "scams-m1-sort-4",
+                  "label": "Alex believes verification may cause the loss of an expected delivery.",
+                  "answer": "scams-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "scams-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "scams-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Alex",
+              "speakerB": "Rina",
+              "turns": [
+                {
+                  "id": "scams-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I opened my order through the shop's own site."
+                },
+                {
+                  "id": "scams-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "Was there a payment demand?"
+                },
+                {
+                  "id": "scams-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "No. The parcel is still marked in transit."
+                },
+                {
+                  "id": "scams-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "That check is stronger evidence than the threat in the text."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "scams-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "scams-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "scams-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider a courier may genuinely have a time-sensitive delivery problem.."
+                    },
+                    {
+                      "id": "scams-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "scams-m1-node-8-check1-opt1",
+                      "label": "Independent verification contradicts the text without needing to infer exactly who sent it. The earlier explanation may still contribute."
+                    }
+                  ],
+                  "answer": "scams-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. Independent verification contradicts the text without needing to infer exactly who sent it. It still leaves open how much each factor contributed.",
+                  "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
+                }
+              ]
+            },
+            {
+              "id": "scams-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "scams-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. Independent verification contradicts the text without needing to infer exactly who sent it. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I opened my order through the shop's own site. Was there a payment demand? No. The parcel is still marked in transit. That check is stronger evidence than the threat in the text.",
+              "options": [
+                {
+                  "id": "scams-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "scams-m1-new-opt3",
+                  "label": "The new evidence establishes a courier may genuinely have a time-sensitive delivery problem. as the sole explanation."
+                },
+                {
+                  "id": "scams-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "scams-m1-new-opt1",
+                  "label": "Independent verification contradicts the text without needing to infer exactly who sent it. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                }
+              ],
+              "answer": "scams-m1-new-opt1"
+            },
+            {
+              "id": "scams-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "scams-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Alex: \"This text says my parcel is going back tonight.\"",
+              "viewB": "Rina: \"Have you checked the order outside the message?\"",
+              "options": [
+                {
+                  "id": "scams-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "scams-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "scams-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "scams-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                }
+              ],
+              "answer": "scams-m1-view-opt1"
+            },
+            {
+              "id": "scams-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "scams-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. A courier may genuinely have a time-sensitive delivery problem. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "scams-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "scams-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "scams-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "scams-m1-test-opt1",
+                  "label": "Look for independent observations that support a courier may genuinely have a time-sensitive delivery problem. and explain the original dialogue."
+                }
+              ],
+              "answer": "scams-m1-test-opt1"
+            },
+            {
+              "id": "scams-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "scams-opening-process",
+              "explanation": "In this case, alex believes verification may cause the loss of an expected delivery. A functional account then asks whether he feels pressure to pay through the text link. is followed by consequences that make repetition more likely.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "scams-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "scams-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "scams-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "scams-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "scams-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "scams-opening-process",
+              "explanation": "Verify the claim through the organisation's established support channel without sharing the code on the call. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+              "sources": "UK National Cyber Security Centre, suspicious messages and social engineering guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "An unexpected IT support caller asks for a one-time account code to prevent a lockout.",
+              "evidenceOptions": [
+                {
+                  "id": "scams-m1-transfer-e-opt1",
+                  "label": "Verify the claim through the organisation's established support channel without sharing the code on the call."
+                },
+                {
+                  "id": "scams-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "scams-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                }
+              ],
+              "evidenceAnswer": "scams-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "scams-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "scams-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "scams-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                }
+              ],
+              "responseAnswer": "scams-m1-transfer-a-opt1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

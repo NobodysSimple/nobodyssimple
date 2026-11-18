@@ -1,0 +1,607 @@
+{
+  "id": "self-esteem",
+  "version": 1,
+  "status": "published",
+  "title": "Self-Esteem, Shame & the Inner Critic",
+  "description": "Explore confidence in a skill versus global worth through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "self-esteem-module-01",
+      "title": "Confidence in a skill versus global worth",
+      "bookId": "self-esteem-book-1",
+      "bookTitle": "Understanding self-evaluation",
+      "bookNumber": 1,
+      "problem": "Confidence in a skill versus global worth",
+      "distinction": "Confidence in a skill versus global worth",
+      "lessons": [
+        {
+          "id": "self-esteem-m1-l1",
+          "version": 1,
+          "title": "One mark becomes a verdict",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of confidence in a skill versus global worth.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "self-esteem-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Hal has failed a presentation component of a training assessment.",
+              "speakerA": "Hal",
+              "speakerB": "Mei",
+              "turns": [
+                {
+                  "id": "self-esteem-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I failed the case presentation. Maybe I shouldn't be in this field."
+                },
+                {
+                  "id": "self-esteem-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "What did the assessors actually say?"
+                },
+                {
+                  "id": "self-esteem-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "The formulation was clear, but I rushed the risk section."
+                },
+                {
+                  "id": "self-esteem-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "So there's a part to practise."
+                },
+                {
+                  "id": "self-esteem-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "It feels like everybody can see I'm just not good enough."
+                },
+                {
+                  "id": "self-esteem-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "Would a better risk section change what you think of yourself?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "self-esteem-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "self-esteem-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "self-esteem-m1-node-1-check1-opt3",
+                      "label": "Hal is concerned that the assessment procedure was unfair."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-1-check1-opt1",
+                      "label": "Hal may be treating a specific skill deficit as evidence of globally inadequate worth."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-1-check1-opt2",
+                      "label": "The assessment exposed a meaningful gap in Hal's risk-formulation skill."
+                    }
+                  ],
+                  "answer": "self-esteem-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Hal may be treating a specific skill deficit as evidence of globally inadequate worth. The assessment exposed a meaningful gap in Hal's risk-formulation skill. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist."
+                },
+                {
+                  "id": "self-esteem-m1-node-1-check2",
+                  "prompt": "You are Hal. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "self-esteem-m1-node-1-check2-opt1",
+                      "label": "Practise the risk section using the feedback while treating the result as evidence about that skill.",
+                      "reply": "Could the same standard apply to you?",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-1-check2-opt2",
+                      "label": "Avoid talking about the mark until you feel confident about yourself again.",
+                      "reply": "Would a better risk section change what you think of yourself?",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "So there's a part to practise.",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "What would you tell another trainee with the same feedback?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    }
+                  ],
+                  "answer": "self-esteem-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist."
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that hal may be treating a specific skill deficit as evidence of globally inadequate worth. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "self-esteem-m1-evidence-1",
+                  "text": "I failed the case presentation. Maybe I shouldn't be in this field.",
+                  "answer": true
+                },
+                {
+                  "id": "self-esteem-m1-evidence-2",
+                  "text": "What did the assessors actually say?",
+                  "answer": false
+                },
+                {
+                  "id": "self-esteem-m1-evidence-3",
+                  "text": "The formulation was clear, but I rushed the risk section.",
+                  "answer": false
+                },
+                {
+                  "id": "self-esteem-m1-evidence-4",
+                  "text": "So there's a part to practise.",
+                  "answer": false
+                },
+                {
+                  "id": "self-esteem-m1-evidence-5",
+                  "text": "It feels like everybody can see I'm just not good enough.",
+                  "answer": true
+                },
+                {
+                  "id": "self-esteem-m1-evidence-6",
+                  "text": "Would a better risk section change what you think of yourself?",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Confidence in a skill concerns the likelihood of doing a task well. Global self-worth concerns how someone evaluates themselves as a person. When the two become fused, corrective feedback can feel like an identity threat, making the precise improvement harder to act on.\n\nThe assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth."
+            },
+            {
+              "id": "self-esteem-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "The trigger is hal receives an unsuccessful assessment result. Its possible meaning is he interprets one weak section as evidence he does not belong in the profession. The protective behaviour may contribute to a longer-term cost: the judgement may discourage the very learning needed to improve.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "self-esteem-m1-chain-1",
+                  "label": "Hal receives an unsuccessful assessment result."
+                },
+                {
+                  "id": "self-esteem-m1-chain-2",
+                  "label": "He interprets one weak section as evidence he does not belong in the profession."
+                },
+                {
+                  "id": "self-esteem-m1-chain-3",
+                  "label": "He calls himself inadequate rather than planning specific practice."
+                },
+                {
+                  "id": "self-esteem-m1-chain-4",
+                  "label": "The judgement may discourage the very learning needed to improve."
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "The strongest candidate is hal may be treating a specific skill deficit as evidence of globally inadequate worth. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "self-esteem-m1-rank-strong",
+                  "label": "Hal may be treating a specific skill deficit as evidence of globally inadequate worth."
+                },
+                {
+                  "id": "self-esteem-m1-rank-rival",
+                  "label": "The assessment exposed a meaningful gap in Hal's risk-formulation skill."
+                },
+                {
+                  "id": "self-esteem-m1-rank-other",
+                  "label": "Hal is concerned that the assessment procedure was unfair."
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Practise the risk section using the feedback while treating the result as evidence about that skill. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "self-esteem-m1-plan-opt1",
+                  "label": "Practise the risk section using the feedback while treating the result as evidence about that skill."
+                },
+                {
+                  "id": "self-esteem-m1-plan-opt2",
+                  "label": "Avoid talking about the mark until you feel confident about yourself again."
+                },
+                {
+                  "id": "self-esteem-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "self-esteem-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "self-esteem-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "self-esteem-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                }
+              ],
+              "correctChange": "self-esteem-m1-plan-opt1",
+              "correctOutcome": "self-esteem-m1-outcome-opt1"
+            },
+            {
+              "id": "self-esteem-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls hal may be treating a specific skill deficit as evidence of globally inadequate worth. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "self-esteem-m1-repair-opt2",
+                  "label": "Because the assessment exposed a meaningful gap in Hal's risk-formulation skill., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "self-esteem-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "self-esteem-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "self-esteem-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but the assessment exposed a meaningful gap in Hal's risk-formulation skill. still deserves consideration."
+                }
+              ],
+              "answer": "self-esteem-m1-repair-opt1"
+            }
+          ]
+        },
+        {
+          "id": "self-esteem-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "objective": "Test an account of confidence in a skill versus global worth with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "self-esteem-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "The quotes record what was said. Hal may be treating a specific skill deficit as evidence of globally inadequate worth. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "self-esteem-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "self-esteem-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "self-esteem-m1-sort-1",
+                  "label": "Hal said: \"I failed the case presentation. Maybe I shouldn't be in this field.\"",
+                  "answer": "self-esteem-m1-cat-observation"
+                },
+                {
+                  "id": "self-esteem-m1-sort-2",
+                  "label": "Mei said: \"So there's a part to practise.\"",
+                  "answer": "self-esteem-m1-cat-observation"
+                },
+                {
+                  "id": "self-esteem-m1-sort-3",
+                  "label": "Hal may be treating a specific skill deficit as evidence of globally inadequate worth.",
+                  "answer": "self-esteem-m1-cat-inference"
+                },
+                {
+                  "id": "self-esteem-m1-sort-4",
+                  "label": "He interprets one weak section as evidence he does not belong in the profession.",
+                  "answer": "self-esteem-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Hal",
+              "speakerB": "Mei",
+              "turns": [
+                {
+                  "id": "self-esteem-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I can name the problem with my presentation."
+                },
+                {
+                  "id": "self-esteem-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "What would you tell another trainee with the same feedback?"
+                },
+                {
+                  "id": "self-esteem-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "That they need to practise risk formulation, not leave the profession."
+                },
+                {
+                  "id": "self-esteem-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "Could the same standard apply to you?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "self-esteem-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "self-esteem-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "self-esteem-m1-node-8-check1-opt1",
+                      "label": "Hal can articulate a specific, proportionate interpretation for someone else, suggesting the global judgement is not compelled by the evidence. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider the assessment exposed a meaningful gap in hal's risk-formulation skill.."
+                    },
+                    {
+                      "id": "self-esteem-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    }
+                  ],
+                  "answer": "self-esteem-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. Hal can articulate a specific, proportionate interpretation for someone else, suggesting the global judgement is not compelled by the evidence. It still leaves open how much each factor contributed.",
+                  "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist."
+                }
+              ]
+            },
+            {
+              "id": "self-esteem-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. Hal can articulate a specific, proportionate interpretation for someone else, suggesting the global judgement is not compelled by the evidence. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I can name the problem with my presentation. What would you tell another trainee with the same feedback? That they need to practise risk formulation, not leave the profession. Could the same standard apply to you?",
+              "options": [
+                {
+                  "id": "self-esteem-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "self-esteem-m1-new-opt1",
+                  "label": "Hal can articulate a specific, proportionate interpretation for someone else, suggesting the global judgement is not compelled by the evidence. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "self-esteem-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "self-esteem-m1-new-opt3",
+                  "label": "The new evidence establishes the assessment exposed a meaningful gap in hal's risk-formulation skill. as the sole explanation."
+                }
+              ],
+              "answer": "self-esteem-m1-new-opt1"
+            },
+            {
+              "id": "self-esteem-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Hal: \"I failed the case presentation. Maybe I shouldn't be in this field.\"",
+              "viewB": "Mei: \"So there's a part to practise.\"",
+              "options": [
+                {
+                  "id": "self-esteem-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "self-esteem-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "self-esteem-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "self-esteem-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                }
+              ],
+              "answer": "self-esteem-m1-view-opt1"
+            },
+            {
+              "id": "self-esteem-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. The assessment exposed a meaningful gap in Hal's risk-formulation skill. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "self-esteem-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "self-esteem-m1-test-opt1",
+                  "label": "Look for independent observations that support the assessment exposed a meaningful gap in hal's risk-formulation skill. and explain the original dialogue."
+                },
+                {
+                  "id": "self-esteem-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "self-esteem-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                }
+              ],
+              "answer": "self-esteem-m1-test-opt1"
+            },
+            {
+              "id": "self-esteem-m1-node-15",
+              "type": "complete",
+              "title": "One distinction to keep",
+              "prompt": "Fill the missing word: An explanation of what a behaviour might achieve is a working ______, not a proven fact.",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "A hypothesis is an explanation that can be revised when observations fail to support it. This keeps psychological reasoning useful rather than turning it into confident mind-reading.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "answers": [
+                "hypothesis",
+                "formulation",
+                "working hypothesis"
+              ],
+              "hint": "One word: an explanation you can test"
+            },
+            {
+              "id": "self-esteem-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "self-esteem-opening-process",
+              "explanation": "Distinguish the specific errors from a judgement about their whole value as a person. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+              "sources": "Crocker & Wolfe (2001), Contingencies of Self-Worth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A musician makes errors at rehearsal and says they're an embarrassment to everyone.",
+              "evidenceOptions": [
+                {
+                  "id": "self-esteem-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "self-esteem-m1-transfer-e-opt1",
+                  "label": "Distinguish the specific errors from a judgement about their whole value as a person."
+                },
+                {
+                  "id": "self-esteem-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                }
+              ],
+              "evidenceAnswer": "self-esteem-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "self-esteem-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "self-esteem-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "self-esteem-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                }
+              ],
+              "responseAnswer": "self-esteem-m1-transfer-a-opt1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

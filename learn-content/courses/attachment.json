@@ -1,0 +1,623 @@
+{
+  "id": "attachment",
+  "version": 1,
+  "status": "published",
+  "title": "Attachment, Love & Relationship Patterns",
+  "description": "Explore what attachment theory can explain through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "attachment-module-01",
+      "title": "What attachment theory can explain",
+      "bookId": "attachment-book-1",
+      "bookTitle": "Attachment theory without myths",
+      "bookNumber": 1,
+      "problem": "What attachment theory can explain",
+      "distinction": "What attachment theory can explain",
+      "lessons": [
+        {
+          "id": "attachment-m1-l1",
+          "version": 1,
+          "title": "When silence feels like distance",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of what attachment theory can explain.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "attachment-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "attachment-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Jamie cannot use a phone during an eight-hour work shift. Sofia has been checking the online status.",
+              "speakerA": "Sofia",
+              "speakerB": "Jamie",
+              "turns": [
+                {
+                  "id": "attachment-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I started worrying when you didn't answer."
+                },
+                {
+                  "id": "attachment-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "I told you I'd be at work until eight."
+                },
+                {
+                  "id": "attachment-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "I know. I kept checking whether you were online anyway."
+                },
+                {
+                  "id": "attachment-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "What would a reply have told you?"
+                },
+                {
+                  "id": "attachment-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "That we're okay. Every time I checked and saw nothing, I felt worse."
+                },
+                {
+                  "id": "attachment-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "I want us to be close, but I can't keep a phone with me during work."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "attachment-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "attachment-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "attachment-m1-node-1-check1-opt1",
+                      "label": "Sofia may be treating delayed contact as a signal about the security of the relationship."
+                    },
+                    {
+                      "id": "attachment-m1-node-1-check1-opt2",
+                      "label": "Jamie may have broken an established agreement to check in during the shift."
+                    },
+                    {
+                      "id": "attachment-m1-node-1-check1-opt3",
+                      "label": "Sofia may be mainly frustrated about incompatible preferences for everyday messaging."
+                    }
+                  ],
+                  "answer": "attachment-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Sofia may be treating delayed contact as a signal about the security of the relationship. Jamie may have broken an established agreement to check in during the shift. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet."
+                },
+                {
+                  "id": "attachment-m1-node-1-check2",
+                  "prompt": "You are Sofia. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "attachment-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "Did it make you feel secure?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "attachment-m1-node-1-check2-opt1",
+                      "label": "Could we agree on when we'll catch up after shifts instead of expecting replies during work?",
+                      "reply": "Could we try having a fixed time to talk after work?",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "attachment-m1-node-1-check2-opt2",
+                      "label": "Can you leave your online status visible all day so I won't worry?",
+                      "reply": "I want us to be close, but I can't keep a phone with me during work.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "attachment-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "What would a reply have told you?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    }
+                  ],
+                  "answer": "attachment-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet."
+                }
+              ]
+            },
+            {
+              "id": "attachment-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "attachment-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that sofia may be treating delayed contact as a signal about the security of the relationship. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "attachment-m1-evidence-1",
+                  "text": "I started worrying when you didn't answer.",
+                  "answer": false
+                },
+                {
+                  "id": "attachment-m1-evidence-2",
+                  "text": "I told you I'd be at work until eight.",
+                  "answer": false
+                },
+                {
+                  "id": "attachment-m1-evidence-3",
+                  "text": "I know. I kept checking whether you were online anyway.",
+                  "answer": true
+                },
+                {
+                  "id": "attachment-m1-evidence-4",
+                  "text": "What would a reply have told you?",
+                  "answer": false
+                },
+                {
+                  "id": "attachment-m1-evidence-5",
+                  "text": "That we're okay. Every time I checked and saw nothing, I felt worse.",
+                  "answer": true
+                },
+                {
+                  "id": "attachment-m1-evidence-6",
+                  "text": "I want us to be close, but I can't keep a phone with me during work.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "attachment-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Attachment processes concern seeking closeness when a relationship feels uncertain. Checking can temporarily reduce uncertainty while leaving the next period of silence to provoke the same fear. The particular relationship and its history matter; one anxious evening cannot reveal an enduring attachment style.\n\nSometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016)."
+            },
+            {
+              "id": "attachment-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "attachment-opening-process",
+              "explanation": "The trigger is jamie's messages stop during a work shift. Its possible meaning is sofia reads the silence as possible loss of closeness. The protective behaviour may contribute to a longer-term cost: checking briefly relieves doubt but keeps attention on the next missing reply.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "attachment-m1-chain-1",
+                  "label": "Jamie's messages stop during a work shift."
+                },
+                {
+                  "id": "attachment-m1-chain-2",
+                  "label": "Sofia reads the silence as possible loss of closeness."
+                },
+                {
+                  "id": "attachment-m1-chain-3",
+                  "label": "She repeatedly checks the online indicator."
+                },
+                {
+                  "id": "attachment-m1-chain-4",
+                  "label": "Checking briefly relieves doubt but keeps attention on the next missing reply."
+                }
+              ]
+            },
+            {
+              "id": "attachment-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "attachment-opening-process",
+              "explanation": "The strongest candidate is sofia may be treating delayed contact as a signal about the security of the relationship. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "attachment-m1-rank-strong",
+                  "label": "Sofia may be treating delayed contact as a signal about the security of the relationship."
+                },
+                {
+                  "id": "attachment-m1-rank-rival",
+                  "label": "Jamie may have broken an established agreement to check in during the shift."
+                },
+                {
+                  "id": "attachment-m1-rank-other",
+                  "label": "Sofia may be mainly frustrated about incompatible preferences for everyday messaging."
+                }
+              ]
+            },
+            {
+              "id": "attachment-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "attachment-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Could we agree on when we'll catch up after shifts instead of expecting replies during work? Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "attachment-m1-plan-opt2",
+                  "label": "Can you leave your online status visible all day so I won't worry?"
+                },
+                {
+                  "id": "attachment-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "attachment-m1-plan-opt1",
+                  "label": "Could we agree on when we'll catch up after shifts instead of expecting replies during work?"
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "attachment-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "attachment-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "attachment-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                }
+              ],
+              "correctChange": "attachment-m1-plan-opt1",
+              "correctOutcome": "attachment-m1-outcome-opt1"
+            },
+            {
+              "id": "attachment-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls sofia may be treating delayed contact as a signal about the security of the relationship. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "attachment-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "attachment-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but jamie may have broken an established agreement to check in during the shift. still deserves consideration."
+                },
+                {
+                  "id": "attachment-m1-repair-opt2",
+                  "label": "Because jamie may have broken an established agreement to check in during the shift., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "attachment-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "attachment-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                }
+              ],
+              "answer": "attachment-m1-repair-opt1"
+            }
+          ]
+        },
+        {
+          "id": "attachment-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "objective": "Test an account of what attachment theory can explain with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "attachment-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "attachment-opening-process",
+              "explanation": "The quotes record what was said. Sofia may be treating delayed contact as a signal about the security of the relationship. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "attachment-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "attachment-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "attachment-m1-sort-1",
+                  "label": "Sofia said: \"I started worrying when you didn't answer.\"",
+                  "answer": "attachment-m1-cat-observation"
+                },
+                {
+                  "id": "attachment-m1-sort-2",
+                  "label": "Jamie said: \"What would a reply have told you?\"",
+                  "answer": "attachment-m1-cat-observation"
+                },
+                {
+                  "id": "attachment-m1-sort-3",
+                  "label": "Sofia may be treating delayed contact as a signal about the security of the relationship.",
+                  "answer": "attachment-m1-cat-inference"
+                },
+                {
+                  "id": "attachment-m1-sort-4",
+                  "label": "Sofia reads the silence as possible loss of closeness.",
+                  "answer": "attachment-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "attachment-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "attachment-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Sofia",
+              "speakerB": "Jamie",
+              "turns": [
+                {
+                  "id": "attachment-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I noticed I was checking every few minutes."
+                },
+                {
+                  "id": "attachment-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "Did it make you feel secure?"
+                },
+                {
+                  "id": "attachment-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "Only briefly. As soon as I looked away, the worry returned."
+                },
+                {
+                  "id": "attachment-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "Could we try having a fixed time to talk after work?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "attachment-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "attachment-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "attachment-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider jamie may have broken an established agreement to check in during the shift.."
+                    },
+                    {
+                      "id": "attachment-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "attachment-m1-node-8-check1-opt1",
+                      "label": "The temporary relief following a check supports a reassurance-seeking loop, while the work constraint remains real. The earlier explanation may still contribute."
+                    }
+                  ],
+                  "answer": "attachment-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. The temporary relief following a check supports a reassurance-seeking loop, while the work constraint remains real. It still leaves open how much each factor contributed.",
+                  "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet."
+                }
+              ]
+            },
+            {
+              "id": "attachment-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "attachment-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. The temporary relief following a check supports a reassurance-seeking loop, while the work constraint remains real. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I noticed I was checking every few minutes. Did it make you feel secure? Only briefly. As soon as I looked away, the worry returned. Could we try having a fixed time to talk after work?",
+              "options": [
+                {
+                  "id": "attachment-m1-new-opt3",
+                  "label": "The new evidence establishes jamie may have broken an established agreement to check in during the shift. as the sole explanation."
+                },
+                {
+                  "id": "attachment-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "attachment-m1-new-opt1",
+                  "label": "The temporary relief following a check supports a reassurance-seeking loop, while the work constraint remains real. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "attachment-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                }
+              ],
+              "answer": "attachment-m1-new-opt1"
+            },
+            {
+              "id": "attachment-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "attachment-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Sofia: \"I started worrying when you didn't answer.\"",
+              "viewB": "Jamie: \"What would a reply have told you?\"",
+              "options": [
+                {
+                  "id": "attachment-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "attachment-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "attachment-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "attachment-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                }
+              ],
+              "answer": "attachment-m1-view-opt1"
+            },
+            {
+              "id": "attachment-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "attachment-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Jamie may have broken an established agreement to check in during the shift. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "attachment-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "attachment-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "attachment-m1-test-opt1",
+                  "label": "Look for independent observations that support jamie may have broken an established agreement to check in during the shift. and explain the original dialogue."
+                },
+                {
+                  "id": "attachment-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                }
+              ],
+              "answer": "attachment-m1-test-opt1"
+            },
+            {
+              "id": "attachment-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "attachment-opening-process",
+              "explanation": "In this case, sofia reads the silence as possible loss of closeness. A functional account then asks whether she repeatedly checks the online indicator. is followed by consequences that make repetition more likely.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "attachment-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "attachment-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "attachment-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "attachment-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "attachment-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "attachment-opening-process",
+              "explanation": "Check communication norms and consider whether delayed contact has been taken as evidence of rejection. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+              "sources": "Mikulincer & Shaver, Attachment in Adulthood (2016).",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A student assumes their supervisor dislikes them after an email goes unanswered for two days.",
+              "evidenceOptions": [
+                {
+                  "id": "attachment-m1-transfer-e-opt1",
+                  "label": "Check communication norms and consider whether delayed contact has been taken as evidence of rejection."
+                },
+                {
+                  "id": "attachment-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "attachment-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                }
+              ],
+              "evidenceAnswer": "attachment-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "attachment-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "attachment-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "attachment-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                }
+              ],
+              "responseAnswer": "attachment-m1-transfer-a-opt1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

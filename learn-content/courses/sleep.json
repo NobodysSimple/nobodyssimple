@@ -1,0 +1,607 @@
+{
+  "id": "sleep",
+  "version": 1,
+  "status": "published",
+  "title": "Sleep, Insomnia & the Psychology of Rest",
+  "description": "Explore sleep pressure accumulated through waking through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "sleep-module-01",
+      "title": "Sleep pressure accumulated through waking",
+      "bookId": "sleep-book-1",
+      "bookTitle": "How sleep regulation works",
+      "bookNumber": 1,
+      "problem": "Sleep pressure accumulated through waking",
+      "distinction": "Sleep pressure accumulated through waking",
+      "lessons": [
+        {
+          "id": "sleep-m1-l1",
+          "version": 1,
+          "title": "Why an early bedtime isn't enough",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of sleep pressure accumulated through waking.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "sleep-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "sleep-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Nora woke just after noon and is trying to sleep at nine in the evening.",
+              "speakerA": "Nora",
+              "speakerB": "Isaac",
+              "turns": [
+                {
+                  "id": "sleep-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I've been in bed an hour and I'm wide awake."
+                },
+                {
+                  "id": "sleep-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "When did you get up this morning?"
+                },
+                {
+                  "id": "sleep-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "After twelve. I thought an early night would reset the schedule."
+                },
+                {
+                  "id": "sleep-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Are you sleepy, or mainly worried about tomorrow?"
+                },
+                {
+                  "id": "sleep-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "Mostly worried. I'm checking the clock because I need eight hours."
+                },
+                {
+                  "id": "sleep-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "Going to bed early doesn't guarantee the body is ready for sleep."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "sleep-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "sleep-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "sleep-m1-node-1-check1-opt2",
+                      "label": "Nora may be experiencing a separate persistent sleep disorder that needs assessment."
+                    },
+                    {
+                      "id": "sleep-m1-node-1-check1-opt3",
+                      "label": "Nora may not have a sufficiently comfortable sleeping environment."
+                    },
+                    {
+                      "id": "sleep-m1-node-1-check1-opt1",
+                      "label": "Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry."
+                    }
+                  ],
+                  "answer": "sleep-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. Nora may be experiencing a separate persistent sleep disorder that needs assessment. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
+                },
+                {
+                  "id": "sleep-m1-node-1-check2",
+                  "prompt": "You are Nora. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "sleep-m1-node-1-check2-opt1",
+                      "label": "Use a sustainable wake-time plan and seek evidence-based support if the difficulty persists.",
+                      "reply": "Then the timing of wakefulness and sleep needs attention too.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "sleep-m1-node-1-check2-opt2",
+                      "label": "Keep increasing the hours spent in bed until sleep arrives sooner.",
+                      "reply": "Going to bed early doesn't guarantee the body is ready for sleep.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "sleep-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Are you sleepy, or mainly worried about tomorrow?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "sleep-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "Did your wake-up time move earlier?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    }
+                  ],
+                  "answer": "sleep-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
+                }
+              ]
+            },
+            {
+              "id": "sleep-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "sleep-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "sleep-m1-evidence-1",
+                  "text": "I've been in bed an hour and I'm wide awake.",
+                  "answer": false
+                },
+                {
+                  "id": "sleep-m1-evidence-2",
+                  "text": "When did you get up this morning?",
+                  "answer": false
+                },
+                {
+                  "id": "sleep-m1-evidence-3",
+                  "text": "After twelve. I thought an early night would reset the schedule.",
+                  "answer": true
+                },
+                {
+                  "id": "sleep-m1-evidence-4",
+                  "text": "Are you sleepy, or mainly worried about tomorrow?",
+                  "answer": false
+                },
+                {
+                  "id": "sleep-m1-evidence-5",
+                  "text": "Mostly worried. I'm checking the clock because I need eight hours.",
+                  "answer": true
+                },
+                {
+                  "id": "sleep-m1-evidence-6",
+                  "text": "Going to bed early doesn't guarantee the body is ready for sleep.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "sleep-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "sleep-opening-process",
+              "explanation": "The strongest candidate is nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "sleep-m1-rank-strong",
+                  "label": "Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry."
+                },
+                {
+                  "id": "sleep-m1-rank-rival",
+                  "label": "Nora may be experiencing a separate persistent sleep disorder that needs assessment."
+                },
+                {
+                  "id": "sleep-m1-rank-other",
+                  "label": "Nora may not have a sufficiently comfortable sleeping environment."
+                }
+              ]
+            },
+            {
+              "id": "sleep-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "sleep-opening-process",
+              "explanation": "The trigger is nora goes to bed relatively soon after waking. Its possible meaning is she believes earlier time in bed must result in adequate sleep. The protective behaviour may contribute to a longer-term cost: the bedroom becomes associated with effortful wakefulness.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "sleep-m1-chain-1",
+                  "label": "Nora goes to bed relatively soon after waking."
+                },
+                {
+                  "id": "sleep-m1-chain-2",
+                  "label": "She believes earlier time in bed must result in adequate sleep."
+                },
+                {
+                  "id": "sleep-m1-chain-3",
+                  "label": "She lies awake and repeatedly checks the time."
+                },
+                {
+                  "id": "sleep-m1-chain-4",
+                  "label": "The bedroom becomes associated with effortful wakefulness."
+                }
+              ]
+            },
+            {
+              "id": "sleep-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Sleep is regulated partly by homeostatic pressure accumulated during wakefulness and by circadian timing. An early bedtime after waking late may not match either process. Watching the clock and trying hard to sleep can then make the bed a cue for monitoring rather than settling.\n\nInsomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance."
+            },
+            {
+              "id": "sleep-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "sleep-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Use a sustainable wake-time plan and seek evidence-based support if the difficulty persists. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "sleep-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "sleep-m1-plan-opt1",
+                  "label": "Use a sustainable wake-time plan and seek evidence-based support if the difficulty persists."
+                },
+                {
+                  "id": "sleep-m1-plan-opt2",
+                  "label": "Keep increasing the hours spent in bed until sleep arrives sooner."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "sleep-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "sleep-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "sleep-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                }
+              ],
+              "correctChange": "sleep-m1-plan-opt1",
+              "correctOutcome": "sleep-m1-outcome-opt1"
+            },
+            {
+              "id": "sleep-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "sleep-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "sleep-m1-repair-opt2",
+                  "label": "Because nora may be experiencing a separate persistent sleep disorder that needs assessment., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "sleep-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "sleep-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "sleep-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but nora may be experiencing a separate persistent sleep disorder that needs assessment. still deserves consideration."
+                }
+              ],
+              "answer": "sleep-m1-repair-opt1"
+            }
+          ]
+        },
+        {
+          "id": "sleep-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "objective": "Test an account of sleep pressure accumulated through waking with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "sleep-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "sleep-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Nora",
+              "speakerB": "Isaac",
+              "turns": [
+                {
+                  "id": "sleep-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I tried going to bed earlier every night."
+                },
+                {
+                  "id": "sleep-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "Did your wake-up time move earlier?"
+                },
+                {
+                  "id": "sleep-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "No. I still woke late after falling asleep much later."
+                },
+                {
+                  "id": "sleep-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "Then the timing of wakefulness and sleep needs attention too."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "sleep-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "sleep-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "sleep-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "sleep-m1-node-8-check1-opt1",
+                      "label": "The unchanged wake time helps explain why earlier bedtime alone did not increase sleep readiness. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "sleep-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider nora may be experiencing a separate persistent sleep disorder that needs assessment.."
+                    }
+                  ],
+                  "answer": "sleep-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. The unchanged wake time helps explain why earlier bedtime alone did not increase sleep readiness. It still leaves open how much each factor contributed.",
+                  "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary."
+                }
+              ]
+            },
+            {
+              "id": "sleep-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "sleep-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. The unchanged wake time helps explain why earlier bedtime alone did not increase sleep readiness. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I tried going to bed earlier every night. Did your wake-up time move earlier? No. I still woke late after falling asleep much later. Then the timing of wakefulness and sleep needs attention too.",
+              "options": [
+                {
+                  "id": "sleep-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "sleep-m1-new-opt1",
+                  "label": "The unchanged wake time helps explain why earlier bedtime alone did not increase sleep readiness. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "sleep-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "sleep-m1-new-opt3",
+                  "label": "The new evidence establishes nora may be experiencing a separate persistent sleep disorder that needs assessment. as the sole explanation."
+                }
+              ],
+              "answer": "sleep-m1-new-opt1"
+            },
+            {
+              "id": "sleep-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "sleep-opening-process",
+              "explanation": "The quotes record what was said. Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "sleep-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "sleep-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "sleep-m1-sort-1",
+                  "label": "Nora said: \"I've been in bed an hour and I'm wide awake.\"",
+                  "answer": "sleep-m1-cat-observation"
+                },
+                {
+                  "id": "sleep-m1-sort-2",
+                  "label": "Isaac said: \"Are you sleepy, or mainly worried about tomorrow?\"",
+                  "answer": "sleep-m1-cat-observation"
+                },
+                {
+                  "id": "sleep-m1-sort-3",
+                  "label": "Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry.",
+                  "answer": "sleep-m1-cat-inference"
+                },
+                {
+                  "id": "sleep-m1-sort-4",
+                  "label": "She believes earlier time in bed must result in adequate sleep.",
+                  "answer": "sleep-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "sleep-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "sleep-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Nora: \"I've been in bed an hour and I'm wide awake.\"",
+              "viewB": "Isaac: \"Are you sleepy, or mainly worried about tomorrow?\"",
+              "options": [
+                {
+                  "id": "sleep-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "sleep-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "sleep-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "sleep-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                }
+              ],
+              "answer": "sleep-m1-view-opt1"
+            },
+            {
+              "id": "sleep-m1-node-15",
+              "type": "complete",
+              "title": "One distinction to keep",
+              "prompt": "Fill the missing word: An explanation of what a behaviour might achieve is a working ______, not a proven fact.",
+              "conceptId": "sleep-opening-process",
+              "explanation": "A hypothesis is an explanation that can be revised when observations fail to support it. This keeps psychological reasoning useful rather than turning it into confident mind-reading.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "answers": [
+                "hypothesis",
+                "formulation",
+                "working hypothesis"
+              ],
+              "hint": "One word: an explanation you can test"
+            },
+            {
+              "id": "sleep-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "sleep-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Nora may be experiencing a separate persistent sleep disorder that needs assessment. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "sleep-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "sleep-m1-test-opt1",
+                  "label": "Look for independent observations that support nora may be experiencing a separate persistent sleep disorder that needs assessment. and explain the original dialogue."
+                },
+                {
+                  "id": "sleep-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "sleep-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                }
+              ],
+              "answer": "sleep-m1-test-opt1"
+            },
+            {
+              "id": "sleep-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "sleep-opening-process",
+              "explanation": "Consider how recent sleep changes sleep pressure before assuming the bedtime is at fault. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+              "sources": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "Someone takes a long afternoon nap and is surprised not to feel sleepy at their normal bedtime.",
+              "evidenceOptions": [
+                {
+                  "id": "sleep-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "sleep-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "sleep-m1-transfer-e-opt1",
+                  "label": "Consider how recent sleep changes sleep pressure before assuming the bedtime is at fault."
+                }
+              ],
+              "evidenceAnswer": "sleep-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "sleep-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "sleep-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "sleep-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                }
+              ],
+              "responseAnswer": "sleep-m1-transfer-a-opt1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

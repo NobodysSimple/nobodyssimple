@@ -1,0 +1,623 @@
+{
+  "id": "motivation",
+  "version": 1,
+  "status": "published",
+  "title": "Motivation, Procrastination & Habit Change",
+  "description": "Explore knowing what to do but not beginning through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "motivation-module-01",
+      "title": "Knowing what to do but not beginning",
+      "bookId": "motivation-book-1",
+      "bookTitle": "The real problem with starting",
+      "bookNumber": 1,
+      "problem": "Knowing what to do but not beginning",
+      "distinction": "Knowing what to do but not beginning",
+      "lessons": [
+        {
+          "id": "motivation-m1-l1",
+          "version": 1,
+          "title": "The task behind the task",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of knowing what to do but not beginning.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "motivation-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "motivation-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Lena has the information for a grant application but has not drafted the difficult section.",
+              "speakerA": "Lena",
+              "speakerB": "Noah",
+              "turns": [
+                {
+                  "id": "motivation-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I know the deadline, but I can't bring myself to start."
+                },
+                {
+                  "id": "motivation-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "Which bit feels hardest to approach?"
+                },
+                {
+                  "id": "motivation-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "Explaining why the idea deserves funding."
+                },
+                {
+                  "id": "motivation-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Have you tried a rough draft of that part?"
+                },
+                {
+                  "id": "motivation-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "I keep reorganising my notes instead. At least that feels useful."
+                },
+                {
+                  "id": "motivation-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "What if you wrote two bad sentences nobody else has to see?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "motivation-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "motivation-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "motivation-m1-node-1-check1-opt1",
+                      "label": "Lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation."
+                    },
+                    {
+                      "id": "motivation-m1-node-1-check1-opt2",
+                      "label": "Lena may lack the information required by the grant question."
+                    },
+                    {
+                      "id": "motivation-m1-node-1-check1-opt3",
+                      "label": "Lena may have deliberately scheduled planning before writing."
+                    }
+                  ],
+                  "answer": "motivation-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation. Lena may lack the information required by the grant question. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone."
+                },
+                {
+                  "id": "motivation-m1-node-1-check2",
+                  "prompt": "You are Lena. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "motivation-m1-node-1-check2-opt2",
+                      "label": "Reorganise the notes one last time until the answer feels clearer.",
+                      "reply": "What if you wrote two bad sentences nobody else has to see?",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "motivation-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Have you tried a rough draft of that part?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "motivation-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "Did you stop there?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "motivation-m1-node-1-check2-opt1",
+                      "label": "Write two deliberately rough sentences under that heading, then decide which information is missing.",
+                      "reply": "So starting changed the task from proving yourself to producing material.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    }
+                  ],
+                  "answer": "motivation-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone."
+                }
+              ]
+            },
+            {
+              "id": "motivation-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "motivation-opening-process",
+              "explanation": "The strongest candidate is lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "motivation-m1-rank-strong",
+                  "label": "Lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation."
+                },
+                {
+                  "id": "motivation-m1-rank-rival",
+                  "label": "Lena may lack the information required by the grant question."
+                },
+                {
+                  "id": "motivation-m1-rank-other",
+                  "label": "Lena may have deliberately scheduled planning before writing."
+                }
+              ]
+            },
+            {
+              "id": "motivation-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "motivation-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "motivation-m1-evidence-1",
+                  "text": "I know the deadline, but I can't bring myself to start.",
+                  "answer": false
+                },
+                {
+                  "id": "motivation-m1-evidence-2",
+                  "text": "Which bit feels hardest to approach?",
+                  "answer": false
+                },
+                {
+                  "id": "motivation-m1-evidence-3",
+                  "text": "Explaining why the idea deserves funding.",
+                  "answer": true
+                },
+                {
+                  "id": "motivation-m1-evidence-4",
+                  "text": "Have you tried a rough draft of that part?",
+                  "answer": false
+                },
+                {
+                  "id": "motivation-m1-evidence-5",
+                  "text": "I keep reorganising my notes instead. At least that feels useful.",
+                  "answer": true
+                },
+                {
+                  "id": "motivation-m1-evidence-6",
+                  "text": "What if you wrote two bad sentences nobody else has to see?",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "motivation-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Procrastination can be maintained by short-term mood repair. A related but less threatening task provides relief while leaving the difficult task untouched. Smaller entry actions help when they directly reduce the aversive demand rather than becoming another round of preparation.\n\nDifficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation."
+            },
+            {
+              "id": "motivation-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "motivation-opening-process",
+              "explanation": "The trigger is lena approaches the evaluative section of the form. Its possible meaning is writing a first draft may expose an inadequate proposal. The protective behaviour may contribute to a longer-term cost: the deadline approaches without producing text that can be improved.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "motivation-m1-chain-1",
+                  "label": "Lena approaches the evaluative section of the form."
+                },
+                {
+                  "id": "motivation-m1-chain-2",
+                  "label": "Writing a first draft may expose an inadequate proposal."
+                },
+                {
+                  "id": "motivation-m1-chain-3",
+                  "label": "She reorganises notes instead of drafting."
+                },
+                {
+                  "id": "motivation-m1-chain-4",
+                  "label": "The deadline approaches without producing text that can be improved."
+                }
+              ]
+            },
+            {
+              "id": "motivation-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "motivation-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Write two deliberately rough sentences under that heading, then decide which information is missing. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "motivation-m1-plan-opt2",
+                  "label": "Reorganise the notes one last time until the answer feels clearer."
+                },
+                {
+                  "id": "motivation-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "motivation-m1-plan-opt1",
+                  "label": "Write two deliberately rough sentences under that heading, then decide which information is missing."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "motivation-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "motivation-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "motivation-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                }
+              ],
+              "correctChange": "motivation-m1-plan-opt1",
+              "correctOutcome": "motivation-m1-outcome-opt1"
+            },
+            {
+              "id": "motivation-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "motivation-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "motivation-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "motivation-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "motivation-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but lena may lack the information required by the grant question. still deserves consideration."
+                },
+                {
+                  "id": "motivation-m1-repair-opt2",
+                  "label": "Because lena may lack the information required by the grant question., the present psychological account should be discarded until certainty is possible."
+                }
+              ],
+              "answer": "motivation-m1-repair-opt1"
+            }
+          ]
+        },
+        {
+          "id": "motivation-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "objective": "Test an account of knowing what to do but not beginning with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "motivation-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "motivation-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Lena",
+              "speakerB": "Noah",
+              "turns": [
+                {
+                  "id": "motivation-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I wrote a terrible first sentence."
+                },
+                {
+                  "id": "motivation-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "Did you stop there?"
+                },
+                {
+                  "id": "motivation-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "No. I wrote another, and the first didn't seem so important."
+                },
+                {
+                  "id": "motivation-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "So starting changed the task from proving yourself to producing material."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "motivation-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "motivation-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "motivation-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider lena may lack the information required by the grant question.."
+                    },
+                    {
+                      "id": "motivation-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "motivation-m1-node-8-check1-opt1",
+                      "label": "The shift after a small draft suggests the initial threshold, rather than a lack of information, was contributing to avoidance. The earlier explanation may still contribute."
+                    }
+                  ],
+                  "answer": "motivation-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. The shift after a small draft suggests the initial threshold, rather than a lack of information, was contributing to avoidance. It still leaves open how much each factor contributed.",
+                  "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone."
+                }
+              ]
+            },
+            {
+              "id": "motivation-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "motivation-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. The shift after a small draft suggests the initial threshold, rather than a lack of information, was contributing to avoidance. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I wrote a terrible first sentence. Did you stop there? No. I wrote another, and the first didn't seem so important. So starting changed the task from proving yourself to producing material.",
+              "options": [
+                {
+                  "id": "motivation-m1-new-opt1",
+                  "label": "The shift after a small draft suggests the initial threshold, rather than a lack of information, was contributing to avoidance. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "motivation-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "motivation-m1-new-opt3",
+                  "label": "The new evidence establishes lena may lack the information required by the grant question. as the sole explanation."
+                },
+                {
+                  "id": "motivation-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                }
+              ],
+              "answer": "motivation-m1-new-opt1"
+            },
+            {
+              "id": "motivation-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "motivation-opening-process",
+              "explanation": "In this case, writing a first draft may expose an inadequate proposal. A functional account then asks whether she reorganises notes instead of drafting. is followed by consequences that make repetition more likely.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "motivation-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "motivation-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "motivation-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "motivation-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "motivation-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "motivation-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Lena: \"I know the deadline, but I can't bring myself to start.\"",
+              "viewB": "Noah: \"Have you tried a rough draft of that part?\"",
+              "options": [
+                {
+                  "id": "motivation-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "motivation-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "motivation-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "motivation-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                }
+              ],
+              "answer": "motivation-m1-view-opt1"
+            },
+            {
+              "id": "motivation-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "motivation-opening-process",
+              "explanation": "The quotes record what was said. Lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "motivation-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "motivation-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "motivation-m1-sort-1",
+                  "label": "Lena said: \"I know the deadline, but I can't bring myself to start.\"",
+                  "answer": "motivation-m1-cat-observation"
+                },
+                {
+                  "id": "motivation-m1-sort-2",
+                  "label": "Noah said: \"Have you tried a rough draft of that part?\"",
+                  "answer": "motivation-m1-cat-observation"
+                },
+                {
+                  "id": "motivation-m1-sort-3",
+                  "label": "Lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation.",
+                  "answer": "motivation-m1-cat-inference"
+                },
+                {
+                  "id": "motivation-m1-sort-4",
+                  "label": "Writing a first draft may expose an inadequate proposal.",
+                  "answer": "motivation-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "motivation-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "motivation-opening-process",
+              "explanation": "Identify the smallest activity that yields feedback on the actual task, not merely on preparation. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A student spends an hour picking a revision app instead of answering practice questions.",
+              "evidenceOptions": [
+                {
+                  "id": "motivation-m1-transfer-e-opt1",
+                  "label": "Identify the smallest activity that yields feedback on the actual task, not merely on preparation."
+                },
+                {
+                  "id": "motivation-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "motivation-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                }
+              ],
+              "evidenceAnswer": "motivation-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "motivation-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "motivation-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "motivation-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                }
+              ],
+              "responseAnswer": "motivation-m1-transfer-a-opt1"
+            },
+            {
+              "id": "motivation-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "motivation-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Lena may lack the information required by the grant question. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+              "sources": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "motivation-m1-test-opt1",
+                  "label": "Look for independent observations that support lena may lack the information required by the grant question. and explain the original dialogue."
+                },
+                {
+                  "id": "motivation-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "motivation-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "motivation-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                }
+              ],
+              "answer": "motivation-m1-test-opt1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

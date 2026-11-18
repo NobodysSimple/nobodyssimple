@@ -1,0 +1,607 @@
+{
+  "id": "overthinking",
+  "version": 1,
+  "status": "published",
+  "title": "Overthinking, Rumination & Mental Loops",
+  "description": "Explore planning versus looping through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "overthinking-module-01",
+      "title": "Planning versus looping",
+      "bookId": "overthinking-book-1",
+      "bookTitle": "Thinking that stops helping",
+      "bookNumber": 1,
+      "problem": "Planning versus looping",
+      "distinction": "Planning versus looping",
+      "lessons": [
+        {
+          "id": "overthinking-m1-l1",
+          "version": 1,
+          "title": "Preparation that stops preparing you",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of planning versus looping.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "overthinking-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Rae has an interview tomorrow and has revised the same answer several times.",
+              "speakerA": "Rae",
+              "speakerB": "Tom",
+              "turns": [
+                {
+                  "id": "overthinking-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I've rewritten my opening answer six times."
+                },
+                {
+                  "id": "overthinking-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "Have you tried saying it aloud?"
+                },
+                {
+                  "id": "overthinking-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "Once. Every time I rehearse, I find another thing to worry about."
+                },
+                {
+                  "id": "overthinking-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Does a new rewrite change anything you'll actually say?"
+                },
+                {
+                  "id": "overthinking-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "It might. If I keep refining it, they won't catch me out."
+                },
+                {
+                  "id": "overthinking-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "What information would tell you that further rewriting is no longer useful?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "overthinking-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "overthinking-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "overthinking-m1-node-1-check1-opt2",
+                      "label": "The answer still contains substantial factual mistakes that further preparation could correct."
+                    },
+                    {
+                      "id": "overthinking-m1-node-1-check1-opt3",
+                      "label": "Rae finds writing more effective than speaking because the interview will be written."
+                    },
+                    {
+                      "id": "overthinking-m1-node-1-check1-opt1",
+                      "label": "Rae may be using repeated revision to gain a feeling of certainty rather than to improve performance."
+                    }
+                  ],
+                  "answer": "overthinking-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Rae may be using repeated revision to gain a feeling of certainty rather than to improve performance. The answer still contains substantial factual mistakes that further preparation could correct. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action."
+                },
+                {
+                  "id": "overthinking-m1-node-1-check2",
+                  "prompt": "You are Rae. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "overthinking-m1-node-1-check2-opt1",
+                      "label": "Say one answer aloud, note one specific improvement and rehearse the changed version.",
+                      "reply": "Then the search changed your anxiety more than your readiness.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "overthinking-m1-node-1-check2-opt2",
+                      "label": "Rewrite until you feel certain you have covered every possible question.",
+                      "reply": "What information would tell you that further rewriting is no longer useful?",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "overthinking-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Does a new rewrite change anything you'll actually say?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "overthinking-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "Did you learn something you can use?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    }
+                  ],
+                  "answer": "overthinking-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action."
+                }
+              ]
+            },
+            {
+              "id": "overthinking-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "The strongest candidate is rae may be using repeated revision to gain a feeling of certainty rather than to improve performance. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "overthinking-m1-rank-strong",
+                  "label": "Rae may be using repeated revision to gain a feeling of certainty rather than to improve performance."
+                },
+                {
+                  "id": "overthinking-m1-rank-rival",
+                  "label": "The answer still contains substantial factual mistakes that further preparation could correct."
+                },
+                {
+                  "id": "overthinking-m1-rank-other",
+                  "label": "Rae finds writing more effective than speaking because the interview will be written."
+                }
+              ]
+            },
+            {
+              "id": "overthinking-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that rae may be using repeated revision to gain a feeling of certainty rather than to improve performance. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "overthinking-m1-evidence-1",
+                  "text": "I've rewritten my opening answer six times.",
+                  "answer": false
+                },
+                {
+                  "id": "overthinking-m1-evidence-2",
+                  "text": "Have you tried saying it aloud?",
+                  "answer": false
+                },
+                {
+                  "id": "overthinking-m1-evidence-3",
+                  "text": "Once. Every time I rehearse, I find another thing to worry about.",
+                  "answer": true
+                },
+                {
+                  "id": "overthinking-m1-evidence-4",
+                  "text": "Does a new rewrite change anything you'll actually say?",
+                  "answer": false
+                },
+                {
+                  "id": "overthinking-m1-evidence-5",
+                  "text": "It might. If I keep refining it, they won't catch me out.",
+                  "answer": true
+                },
+                {
+                  "id": "overthinking-m1-evidence-6",
+                  "text": "What information would tell you that further rewriting is no longer useful?",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "overthinking-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Effective planning reduces uncertainty by producing a decision or test. Repetitive worry can feel productive even when it yields no new evidence. Rewriting may briefly soothe Rae's fear of being caught out while delaying the spoken rehearsal that would actually test the answer.\n\nFurther preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought."
+            },
+            {
+              "id": "overthinking-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "The trigger is the interview date approaches. Its possible meaning is rae imagines that a flawed answer will expose her as unprepared. The protective behaviour may contribute to a longer-term cost: time is spent reducing anxiety rather than gathering performance feedback.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "overthinking-m1-chain-1",
+                  "label": "The interview date approaches."
+                },
+                {
+                  "id": "overthinking-m1-chain-2",
+                  "label": "Rae imagines that a flawed answer will expose her as unprepared."
+                },
+                {
+                  "id": "overthinking-m1-chain-3",
+                  "label": "She repeatedly edits existing answers instead of practising them."
+                },
+                {
+                  "id": "overthinking-m1-chain-4",
+                  "label": "Time is spent reducing anxiety rather than gathering performance feedback."
+                }
+              ]
+            },
+            {
+              "id": "overthinking-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Say one answer aloud, note one specific improvement and rehearse the changed version. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "overthinking-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "overthinking-m1-plan-opt1",
+                  "label": "Say one answer aloud, note one specific improvement and rehearse the changed version."
+                },
+                {
+                  "id": "overthinking-m1-plan-opt2",
+                  "label": "Rewrite until you feel certain you have covered every possible question."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "overthinking-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "overthinking-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "overthinking-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                }
+              ],
+              "correctChange": "overthinking-m1-plan-opt1",
+              "correctOutcome": "overthinking-m1-outcome-opt1"
+            },
+            {
+              "id": "overthinking-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls rae may be using repeated revision to gain a feeling of certainty rather than to improve performance. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "overthinking-m1-repair-opt2",
+                  "label": "Because the answer still contains substantial factual mistakes that further preparation could correct., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "overthinking-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "overthinking-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "overthinking-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but the answer still contains substantial factual mistakes that further preparation could correct. still deserves consideration."
+                }
+              ],
+              "answer": "overthinking-m1-repair-opt1"
+            }
+          ]
+        },
+        {
+          "id": "overthinking-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "An initial explanation is useful only if it can be challenged. Revisit the characters, test a rival account and apply the idea in another setting. About five minutes.",
+          "objective": "Test an account of planning versus looping with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "overthinking-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Rae",
+              "speakerB": "Tom",
+              "turns": [
+                {
+                  "id": "overthinking-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I spent another hour looking for interview tips."
+                },
+                {
+                  "id": "overthinking-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "Did you learn something you can use?"
+                },
+                {
+                  "id": "overthinking-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "Mostly I found more things that could go wrong."
+                },
+                {
+                  "id": "overthinking-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "Then the search changed your anxiety more than your readiness."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "overthinking-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "overthinking-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "overthinking-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "overthinking-m1-node-8-check1-opt1",
+                      "label": "The search produced more possible threats without an actionable improvement, making a worry loop more likely. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "overthinking-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider the answer still contains substantial factual mistakes that further preparation could correct.."
+                    }
+                  ],
+                  "answer": "overthinking-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. The search produced more possible threats without an actionable improvement, making a worry loop more likely. It still leaves open how much each factor contributed.",
+                  "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action."
+                }
+              ]
+            },
+            {
+              "id": "overthinking-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. The search produced more possible threats without an actionable improvement, making a worry loop more likely. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I spent another hour looking for interview tips. Did you learn something you can use? Mostly I found more things that could go wrong. Then the search changed your anxiety more than your readiness.",
+              "options": [
+                {
+                  "id": "overthinking-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "overthinking-m1-new-opt1",
+                  "label": "The search produced more possible threats without an actionable improvement, making a worry loop more likely. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "overthinking-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "overthinking-m1-new-opt3",
+                  "label": "The new evidence establishes the answer still contains substantial factual mistakes that further preparation could correct. as the sole explanation."
+                }
+              ],
+              "answer": "overthinking-m1-new-opt1"
+            },
+            {
+              "id": "overthinking-m1-node-15",
+              "type": "complete",
+              "title": "One distinction to keep",
+              "prompt": "Fill the missing word: An explanation of what a behaviour might achieve is a working ______, not a proven fact.",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "A hypothesis is an explanation that can be revised when observations fail to support it. This keeps psychological reasoning useful rather than turning it into confident mind-reading.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "answers": [
+                "hypothesis",
+                "formulation",
+                "working hypothesis"
+              ],
+              "hint": "One word: an explanation you can test"
+            },
+            {
+              "id": "overthinking-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Rae: \"I've rewritten my opening answer six times.\"",
+              "viewB": "Tom: \"Does a new rewrite change anything you'll actually say?\"",
+              "options": [
+                {
+                  "id": "overthinking-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "overthinking-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "overthinking-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "overthinking-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                }
+              ],
+              "answer": "overthinking-m1-view-opt1"
+            },
+            {
+              "id": "overthinking-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "The quotes record what was said. Rae may be using repeated revision to gain a feeling of certainty rather than to improve performance. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "overthinking-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "overthinking-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "overthinking-m1-sort-1",
+                  "label": "Rae said: \"I've rewritten my opening answer six times.\"",
+                  "answer": "overthinking-m1-cat-observation"
+                },
+                {
+                  "id": "overthinking-m1-sort-2",
+                  "label": "Tom said: \"Does a new rewrite change anything you'll actually say?\"",
+                  "answer": "overthinking-m1-cat-observation"
+                },
+                {
+                  "id": "overthinking-m1-sort-3",
+                  "label": "Rae may be using repeated revision to gain a feeling of certainty rather than to improve performance.",
+                  "answer": "overthinking-m1-cat-inference"
+                },
+                {
+                  "id": "overthinking-m1-sort-4",
+                  "label": "Rae imagines that a flawed answer will expose her as unprepared.",
+                  "answer": "overthinking-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "overthinking-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "Ask which unanswered question would genuinely alter the choice and what evidence would settle it. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "Someone compares fifteen insurance policies but cannot state what further comparison would change.",
+              "evidenceOptions": [
+                {
+                  "id": "overthinking-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "overthinking-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "overthinking-m1-transfer-e-opt1",
+                  "label": "Ask which unanswered question would genuinely alter the choice and what evidence would settle it."
+                }
+              ],
+              "evidenceAnswer": "overthinking-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "overthinking-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "overthinking-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "overthinking-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                }
+              ],
+              "responseAnswer": "overthinking-m1-transfer-a-opt1"
+            },
+            {
+              "id": "overthinking-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "overthinking-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. The answer still contains substantial factual mistakes that further preparation could correct. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+              "sources": "Watkins (2008), Constructive and Unconstructive Repetitive Thought.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "overthinking-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "overthinking-m1-test-opt1",
+                  "label": "Look for independent observations that support the answer still contains substantial factual mistakes that further preparation could correct. and explain the original dialogue."
+                },
+                {
+                  "id": "overthinking-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "overthinking-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                }
+              ],
+              "answer": "overthinking-m1-test-opt1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
