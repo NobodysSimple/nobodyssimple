@@ -3,7 +3,7 @@
  * recording completions. Question content is always escaped; never raw HTML.
  */
 import {getLearnContent} from './ns-learn-content-v2.mjs';
-import {getLearnCourse} from './ns-learn-catalog-v2.mjs';
+import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderDialogue} from './ns-learn-dialogue.mjs';
@@ -86,9 +86,10 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  const reset=()=>{state.checked=null;state.notice='';state.labels=new Set();state.dialogueCheck=-1;state.dialogueVisible=1;const node=current();const ids=['sequence','chain','rank'].includes(node?.type)?node.steps.map(s=>s.id):[];state.order=scramble(ids);if(ids.length>1&&ids.every((id,i)=>state.order[i]===id))state.order.reverse();};
  const advance=()=>{if(state.i+1>=nodes.length)state.phase='done';else {state.i++;reset();}paint();};
  function paint(){
+  const guide=LEARN_COMPANIONS[courseId];
   const companion=course?.companionPortrait
    ?'<img class="ns-learn-immersive__portrait-img" src="'+esc(course.mascot)+'" alt="">'
-   :'<span class="ns-learn-immersive__portrait" style="--cast-x:'+Number(course?.companionX||0)+'%;--cast-y:'+Number(course?.companionY||0)+'%"></span>';
+   :'<span class="ns-learn-immersive__portrait" style="--cast-x:'+Number(guide?.x||0)+'%;--cast-y:'+Number(guide?.y||0)+'%"></span>';
   const exit=preview?'<button type="button" class="ns-learn-player__back" data-close-lesson aria-label="Close lesson preview">×</button>':
    '<a class="ns-learn-player__back" href="'+home+'" aria-label="Exit lesson">×</a>';
   const progress=state.phase==='done'?100:state.phase==='intro'?0:Math.round(state.i/nodes.length*100);
