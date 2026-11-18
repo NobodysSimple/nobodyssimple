@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "scams-m1-node-1-check1-alternative-1",
-                      "label": "The caller may know accurate account details because those were obtained from a previous data leak.",
-                      "feedback": "Specific knowledge can increase apparent credibility without establishing legitimacy."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "scams-m1-node-1-check1-alternative-2",
-                      "label": "The caller’s demand for secrecy may be intended to prevent the independent verification that would expose the deception.",
-                      "feedback": "This is consistent with discouraging contact through trusted channels."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "scams-m1-node-1-check1-opt1",
@@ -904,15 +904,17 @@
                   "options": [
                     {
                       "id": "scams-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Have you checked the order outside the message?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                      "reply": "Was there a payment demand?",
+                      "consequence": "A jointly agreed next step is reasonable, though the other person may still decline.",
+                      "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                     },
                     {
                       "id": "scams-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
                       "reply": "Was there a payment demand?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "This can reveal different priorities, but it may also delay an urgent factual correction.",
+                      "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                     },
                     {
                       "id": "scams-m1-node-1-check2-opt1",
@@ -922,14 +924,17 @@
                     },
                     {
                       "id": "scams-m1-node-1-check2-opt2",
-                      "label": "Pay the small fee first and dispute it later if the parcel does not arrive.",
-                      "reply": "The deadline may be making verification seem riskier than paying.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Check the parcel status in a previously installed courier app, without opening the link in the message.",
+                      "reply": "Was there a payment demand?",
+                      "consequence": "An independent channel can verify the delivery, although several couriers might handle the same retailer.",
+                      "feedback": "An independent channel can verify the delivery, although several couriers might handle the same retailer."
                     },
                     {
-                      "id": "scams-m1-node-1-check2-alternative-1",
-                      "label": "The caller may know accurate account details because those were obtained from a previous data leak.",
-                      "feedback": "Specific knowledge can increase apparent credibility without establishing legitimacy."
+                      "id": "scams-m1-node-1-check2-alternative-4",
+                      "label": "Find the original order confirmation and compare its tracking information with the claim in the text.",
+                      "feedback": "The record may reveal an inconsistency, but confirmation should still use a trusted source.",
+                      "reply": "Was there a payment demand?",
+                      "consequence": "The record may reveal an inconsistency, but confirmation should still use a trusted source."
                     }
                   ],
                   "answer": "scams-m1-node-1-check2-opt1",
@@ -1067,7 +1072,8 @@
               "changes": [
                 {
                   "id": "scams-m1-plan-opt2",
-                  "label": "Pay the small fee first and dispute it later if the parcel does not arrive."
+                  "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                  "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                 },
                 {
                   "id": "scams-m1-plan-opt3",
@@ -1246,13 +1252,13 @@
                     },
                     {
                       "id": "scams-m1-node-8-check1-alternative-1",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although The imposed deadline may be discouraging independent verification before a payment. is more directly tied to the words in this scene. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
                     },
                     {
                       "id": "scams-m1-node-8-check1-alternative-2",
-                      "label": "The caller may know accurate account details because those were obtained from a previous data leak.",
-                      "feedback": "Specific knowledge can increase apparent credibility without establishing legitimacy."
+                      "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                      "feedback": "This is a reasonable line of inquiry, although The imposed deadline may be discouraging independent verification before a payment. is more directly tied to the words in this scene. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
                     }
                   ],
                   "answer": "scams-m1-node-8-check1-opt1",
@@ -1293,8 +1299,8 @@
                 },
                 {
                   "id": "scams-m1-node-9-alternative-1",
-                  "label": "The caller may know accurate account details because those were obtained from a previous data leak.",
-                  "feedback": "Specific knowledge can increase apparent credibility without establishing legitimacy."
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although The imposed deadline may be discouraging independent verification before a payment. is more directly tied to the words in this scene. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
                 }
               ],
               "answer": "scams-m1-new-opt1"
@@ -1332,8 +1338,8 @@
                 },
                 {
                   "id": "scams-m1-node-10-alternative-1",
-                  "label": "The caller may know accurate account details because those were obtained from a previous data leak.",
-                  "feedback": "Specific knowledge can increase apparent credibility without establishing legitimacy."
+                  "label": "A courier may genuinely have a time-sensitive delivery problem.",
+                  "feedback": "This alternative deserves consideration. It would become stronger if earlier expectations supported it. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
                 }
               ],
               "answer": "scams-m1-view-opt1"
@@ -1369,8 +1375,8 @@
                 },
                 {
                   "id": "scams-m1-node-13-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Observe what happens after a clear and workable alternative is offered.",
+                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
                 }
               ],
               "answer": "scams-m1-test-opt1"
@@ -1439,8 +1445,8 @@
                 },
                 {
                   "id": "scams-m1-node-14-evidence-alternative-1",
-                  "label": "Authority cues and urgency narrow the space for deliberation. A claimed emergency is used to make independent verification feel costly.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although The imposed deadline may be discouraging independent verification before a payment. is more directly tied to the words in this scene. Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud."
                 }
               ],
               "evidenceAnswer": "scams-m1-transfer-e-opt1",
@@ -1459,8 +1465,8 @@
                 },
                 {
                   "id": "scams-m1-node-14-response-alternative-1",
-                  "label": "Keep the caller talking until you feel completely certain they are lying.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "responseAnswer": "scams-m1-transfer-a-opt1"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "scams-m1-l4-n2-question-opt3",
-                      "label": "The caller’s demand for secrecy may be intended to prevent the independent verification that would expose the deception.",
-                      "feedback": "This is consistent with discouraging contact through trusted channels."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     },
                     {
                       "id": "scams-m1-l4-n2-question-opt4",
@@ -1773,8 +1779,8 @@
                     },
                     {
                       "id": "scams-m1-l4-n2-question-alternative-2",
-                      "label": "Alina may be interpreting urgency as proof that immediate compliance is necessary, rather than as a reason to verify the claim.",
-                      "feedback": "The claimed loss is plausible, but acting on it without verification is risky."
+                      "label": "The caller may know accurate account details because those were obtained from a previous data leak.",
+                      "feedback": "Specific knowledge can increase apparent credibility without establishing legitimacy."
                     }
                   ],
                   "answer": "scams-m1-l4-n2-question-opt2",
@@ -1815,8 +1821,8 @@
                 },
                 {
                   "id": "scams-m1-l4-n4-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Check the account through an independently opened trusted service rather than information supplied on the call.",
+                  "feedback": "A separate channel can confirm or contradict the claimed emergency."
                 }
               ],
               "answer": "scams-m1-l4-n4-opt2",
@@ -1854,8 +1860,8 @@
                 },
                 {
                   "id": "scams-m1-l4-n3-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "scams-m1-l4-n3-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "scams-m1-l4-n6-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Real fraud incidents do require prompt attention. What matters is verifying through a trusted independent channel rather than complying with an unsolicited instruction.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "scams-m1-l4-n6-opt2"
@@ -1973,21 +1979,21 @@
                 },
                 {
                   "id": "scams-m1-l5-n2-evidence-alternative-1",
-                  "label": "Alina may be interpreting urgency as proof that immediate compliance is necessary, rather than as a reason to verify the claim.",
-                  "feedback": "The claimed loss is plausible, but acting on it without verification is risky."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 },
                 {
                   "id": "scams-m1-l5-n2-evidence-alternative-2",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "scams-m1-l5-n2-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "scams-m1-l5-n2-response-opt1",
-                  "label": "Transfer a small amount first to see whether the caller seems genuine.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 },
                 {
                   "id": "scams-m1-l5-n2-response-opt2",
@@ -1996,13 +2002,13 @@
                 },
                 {
                   "id": "scams-m1-l5-n2-response-alternative-2",
-                  "label": "What independently verifiable fact would show this is a genuine bank fraud process?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 },
                 {
                   "id": "scams-m1-l5-n2-response-alternative-3",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "End the call and verify the claimed transfer through the bank’s trusted app or the number on the card.",
+                  "feedback": "This breaks the caller’s control over the channel while allowing a genuine emergency to be addressed."
                 }
               ],
               "responseAnswer": "scams-m1-l5-n2-response-opt2"
@@ -2030,8 +2036,8 @@
                 },
                 {
                   "id": "scams-m1-l5-n3-change-alternative-1",
-                  "label": "Keep the caller talking until you feel completely certain they are lying.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "outcomes": [
@@ -2077,8 +2083,8 @@
                 },
                 {
                   "id": "scams-m1-l5-n4-opt3",
-                  "label": "Authority cues and urgency narrow the space for deliberation. A claimed emergency is used to make independent verification feel costly.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The caller may know accurate account details because those were obtained from a previous data leak.",
+                  "feedback": "Specific knowledge can increase apparent credibility without establishing legitimacy."
                 },
                 {
                   "id": "scams-m1-l5-n4-opt4",
@@ -2087,8 +2093,8 @@
                 },
                 {
                   "id": "scams-m1-l5-n4-alternative-2",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "The caller’s demand for secrecy may be intended to prevent the independent verification that would expose the deception.",
+                  "feedback": "This is consistent with discouraging contact through trusted channels."
                 }
               ],
               "answer": "scams-m1-l5-n4-opt2",
@@ -2126,8 +2132,8 @@
                 },
                 {
                   "id": "scams-m1-l5-n5-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "The caller’s demand for secrecy may be intended to prevent the independent verification that would expose the deception.",
+                  "feedback": "This is consistent with discouraging contact through trusted channels."
                 }
               ],
               "answer": "scams-m1-l5-n5-opt2",
@@ -2165,8 +2171,8 @@
                 },
                 {
                   "id": "scams-m1-l5-n6-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "scams-m1-l5-n6-opt2"
@@ -2220,7 +2226,7 @@
                 },
                 {
                   "id": "scams-m1-l6-n2-alternative-1",
-                  "label": "End the unsolicited call and contact the bank through the number on your card or its trusted app.",
+                  "label": "What independently verifiable fact would show this is a genuine bank fraud process?",
                   "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
