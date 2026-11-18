@@ -1,0 +1,1213 @@
+{
+  "id": "misinformation",
+  "version": 1,
+  "status": "published",
+  "title": "Misinformation, Conspiracies & AI Persuasion",
+  "description": "First unit: Familiarity mistaken for truth. Work through real situations, competing explanations and practical choices.",
+  "modules": [
+    {
+      "id": "misinformation-module-01",
+      "title": "Familiarity mistaken for truth",
+      "lessons": [
+        {
+          "id": "misinformation-m1-l1",
+          "version": 1,
+          "title": "What is really happening?",
+          "teach": "Theo shares a social-media claim that a common household substance prevents infection. Lila asks where the information came from.",
+          "objective": "What is really happening?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "misinformation-m1-l1-n1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Listen closely to what each person says and what still remains uncertain.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "scenario": "Theo shares a social-media claim that a common household substance prevents infection. Lila asks where the information came from.",
+              "speakerA": "Theo",
+              "speakerB": "Lila",
+              "turns": [
+                {
+                  "id": "misinformation-m1-l1-n1-turn0",
+                  "speaker": "a",
+                  "text": "I've seen that claim everywhere this week. It must have something behind it."
+                },
+                {
+                  "id": "misinformation-m1-l1-n1-turn1",
+                  "speaker": "b",
+                  "text": "Are the posts coming from different studies or copying the same video?"
+                },
+                {
+                  "id": "misinformation-m1-l1-n1-turn2",
+                  "speaker": "a",
+                  "text": "I didn't check. It was shared by several accounts I recognise."
+                },
+                {
+                  "id": "misinformation-m1-l1-n1-turn3",
+                  "speaker": "b",
+                  "text": "Do any of the posts link to an actual controlled study?"
+                },
+                {
+                  "id": "misinformation-m1-l1-n1-turn4",
+                  "speaker": "a",
+                  "text": "One mentions a university, but there's no title or researcher."
+                },
+                {
+                  "id": "misinformation-m1-l1-n1-turn5",
+                  "speaker": "b",
+                  "text": "So how many independent sources of evidence do we have?"
+                },
+                {
+                  "id": "misinformation-m1-l1-n1-turn6",
+                  "speaker": "a",
+                  "text": "I suppose I don't know. It just feels familiar now."
+                },
+                {
+                  "id": "misinformation-m1-l1-n1-turn7",
+                  "speaker": "b",
+                  "text": "Familiarity may explain why it feels believable, but it doesn't tell us whether it's true."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "misinformation-m1-l1-n1-question",
+                  "prompt": "Which working explanation is best supported by the conversation?",
+                  "focusTurn": "misinformation-m1-l1-n1-turn0",
+                  "options": [
+                    {
+                      "id": "misinformation-m1-l1-n1-question-opt1",
+                      "label": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                    },
+                    {
+                      "id": "misinformation-m1-l1-n1-question-opt2",
+                      "label": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+                      "feedback": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability."
+                    },
+                    {
+                      "id": "misinformation-m1-l1-n1-question-opt3",
+                      "label": "The practical disagreement is sufficient to explain the exchange; its possible personal meaning is less relevant.",
+                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                    },
+                    {
+                      "id": "misinformation-m1-l1-n1-question-opt4",
+                      "label": "The intensity of the reply makes a stable individual trait more likely than a situational response.",
+                      "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    }
+                  ],
+                  "answer": "misinformation-m1-l1-n1-question-opt2",
+                  "explanation": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability. The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                  "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified."
+                }
+              ]
+            },
+            {
+              "id": "misinformation-m1-l1-n3",
+              "type": "choose",
+              "title": "Compare the explanations",
+              "prompt": "Which account explains the character’s words most convincingly without pretending we know their private thoughts?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability. The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l1-n3-opt1",
+                  "label": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                  "feedback": "This is plausible. It explains some of the disagreement, but does not always account for the strongest clues."
+                },
+                {
+                  "id": "misinformation-m1-l1-n3-opt2",
+                  "label": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+                  "feedback": "This hypothesis explains the speaker’s account of what the situation threatens or means to them."
+                },
+                {
+                  "id": "misinformation-m1-l1-n3-opt3",
+                  "label": "Both people have practical concerns, so the psychological meaning attached to the dispute is unlikely to matter.",
+                  "feedback": "Practical interests can contribute while personal meanings also affect how the conversation unfolds."
+                },
+                {
+                  "id": "misinformation-m1-l1-n3-opt4",
+                  "label": "The best explanation is simply that the two people want incompatible outcomes; further formulation adds little.",
+                  "feedback": "Incompatible goals explain the existence of a dispute, not necessarily the particular response to it."
+                }
+              ],
+              "answer": "misinformation-m1-l1-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l1-n2",
+              "type": "label",
+              "title": "Find the important lines",
+              "prompt": "Select the two lines that best show how the speaker interprets the event or what they believe is at stake.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "These lines reveal more about the meaning attached to the situation than a statement of the practical disagreement alone. Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "segments": [
+                {
+                  "id": "misinformation-m1-l1-n2-phrase0",
+                  "text": "“I've seen that claim everywhere this week. It must have something behind it.”",
+                  "answer": true
+                },
+                {
+                  "id": "misinformation-m1-l1-n2-phrase1",
+                  "text": "“Are the posts coming from different studies or copying the same video?”",
+                  "answer": false
+                },
+                {
+                  "id": "misinformation-m1-l1-n2-phrase2",
+                  "text": "“I suppose I don't know. It just feels familiar now.”",
+                  "answer": true
+                },
+                {
+                  "id": "misinformation-m1-l1-n2-phrase3",
+                  "text": "“I didn't check. It was shared by several accounts I recognise.”",
+                  "answer": false
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l1-n4",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "The order helps us test how a response might become self-maintaining. Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "steps": [
+                {
+                  "id": "misinformation-m1-l1-n4-step0",
+                  "label": "Theo encounters the same claim repeatedly"
+                },
+                {
+                  "id": "misinformation-m1-l1-n4-step1",
+                  "label": "Familiarity makes the claim feel easier to accept"
+                },
+                {
+                  "id": "misinformation-m1-l1-n4-step2",
+                  "label": "He treats widespread sharing as independent support"
+                },
+                {
+                  "id": "misinformation-m1-l1-n4-step3",
+                  "label": "The assertion spreads without an equivalent increase in evidence"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l1-n5",
+              "type": "read",
+              "title": "The deeper mechanism",
+              "body": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.\n\nDebunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.\n\nThe claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth."
+            },
+            {
+              "id": "misinformation-m1-l1-n6",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Investigate a difference that the rival explanations predict. Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l1-n6-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "misinformation-m1-l1-n6-opt2",
+                  "label": "Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "misinformation-m1-l1-n6-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "misinformation-m1-l1-n6-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "misinformation-m1-l1-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "misinformation-m1-l2",
+          "version": 1,
+          "title": "Why does it keep happening?",
+          "teach": "Work out how the response might be maintained, rather than giving it a label.",
+          "objective": "Why does it keep happening?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "misinformation-m1-l2-n1",
+              "type": "read",
+              "title": "What could keep it going?",
+              "body": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.\n\nThe assertion spreads without an equivalent increase in evidence. A response can feel helpful in the moment while leaving the original problem unresolved.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth."
+            },
+            {
+              "id": "misinformation-m1-l2-n2",
+              "type": "match",
+              "title": "Connect process to evidence",
+              "prompt": "Connect each part of the case to its role in the working explanation.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "A functional explanation identifies the event, the meaning it may take on, the response and what follows. Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "pairs": [
+                {
+                  "id": "misinformation-m1-l2-n2-pair0",
+                  "label": "Theo encounters the same claim repeatedly",
+                  "answer": "Initial event"
+                },
+                {
+                  "id": "misinformation-m1-l2-n2-pair1",
+                  "label": "Familiarity makes the claim feel easier to accept",
+                  "answer": "Possible appraisal"
+                },
+                {
+                  "id": "misinformation-m1-l2-n2-pair2",
+                  "label": "He treats widespread sharing as independent support",
+                  "answer": "Behavioural response"
+                },
+                {
+                  "id": "misinformation-m1-l2-n2-pair3",
+                  "label": "The assertion spreads without an equivalent increase in evidence",
+                  "answer": "Possible consequence"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l2-n3",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "The order helps us test how a response might become self-maintaining. Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "steps": [
+                {
+                  "id": "misinformation-m1-l2-n3-step0",
+                  "label": "Theo encounters the same claim repeatedly"
+                },
+                {
+                  "id": "misinformation-m1-l2-n3-step1",
+                  "label": "Familiarity makes the claim feel easier to accept"
+                },
+                {
+                  "id": "misinformation-m1-l2-n3-step2",
+                  "label": "He treats widespread sharing as independent support"
+                },
+                {
+                  "id": "misinformation-m1-l2-n3-step3",
+                  "label": "The assertion spreads without an equivalent increase in evidence"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l2-n4",
+              "type": "predict",
+              "title": "What might change next?",
+              "prompt": "The other person may disagree. Which response-and-outcome pairing best protects the practical concern without assuming cooperation?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "A sound response is judged by what it makes possible, not by whether it can instantly change somebody else. Trace the original source and compare the actual study with the claim before sharing or acting on it.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "changePrompt": "Response to try",
+              "changes": [
+                {
+                  "id": "misinformation-m1-l2-n4-action-opt1",
+                  "label": "Are these independent reports, or multiple accounts repeating the same original item?",
+                  "feedback": ""
+                },
+                {
+                  "id": "misinformation-m1-l2-n4-action-opt2",
+                  "label": "Trace the original source and compare the actual study with the claim before sharing or acting on it.",
+                  "feedback": ""
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "misinformation-m1-l2-n4-result-opt1",
+                  "label": "The other person’s interpretation may become clearer, though the original issue may still need to be resolved.",
+                  "feedback": ""
+                },
+                {
+                  "id": "misinformation-m1-l2-n4-result-opt2",
+                  "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
+                  "feedback": ""
+                }
+              ],
+              "correctChange": "misinformation-m1-l2-n4-action-opt2",
+              "correctOutcome": "misinformation-m1-l2-n4-result-opt2"
+            },
+            {
+              "id": "misinformation-m1-l2-n5",
+              "type": "choose",
+              "title": "The maintaining consequence",
+              "prompt": "Why might the same response become more likely in a later disagreement?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability. The assertion spreads without an equivalent increase in evidence.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l2-n5-opt1",
+                  "label": "The person does not yet have a sufficiently complete factual description of the dispute.",
+                  "feedback": "Uncertainty about facts may contribute, but it does not fully explain why the response is repeated."
+                },
+                {
+                  "id": "misinformation-m1-l2-n5-opt2",
+                  "label": "The response may reduce an immediate concern, even though the longer-term interaction becomes harder.",
+                  "feedback": "This links short-term effects of behaviour to the possibility of repetition."
+                },
+                {
+                  "id": "misinformation-m1-l2-n5-opt3",
+                  "label": "The behaviour is already habitual, so its consequences probably have little influence.",
+                  "feedback": "Habits and consequences can interact; they are not competing explanations by default."
+                },
+                {
+                  "id": "misinformation-m1-l2-n5-opt4",
+                  "label": "The other person has not explained their feelings in the right words.",
+                  "feedback": "Communication can matter, but there may be a maintaining reward or relief independent of phrasing."
+                }
+              ],
+              "answer": "misinformation-m1-l2-n5-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l2-n6",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "categories": [
+                {
+                  "id": "misinformation-m1-l2-n6-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "misinformation-m1-l2-n6-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "misinformation-m1-l2-n6-item1",
+                  "label": "“I've seen that claim everywhere this week. It must have something behind it.”",
+                  "answer": "misinformation-m1-l2-n6-fact"
+                },
+                {
+                  "id": "misinformation-m1-l2-n6-item2",
+                  "label": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+                  "answer": "misinformation-m1-l2-n6-hypothesis"
+                },
+                {
+                  "id": "misinformation-m1-l2-n6-item3",
+                  "label": "“I suppose I don't know. It just feels familiar now.”",
+                  "answer": "misinformation-m1-l2-n6-fact"
+                },
+                {
+                  "id": "misinformation-m1-l2-n6-item4",
+                  "label": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                  "answer": "misinformation-m1-l2-n6-hypothesis"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "misinformation-m1-l3",
+          "version": 1,
+          "title": "Same behaviour, different cause",
+          "teach": "Distinguish what was observed from competing explanations of the same behaviour.",
+          "objective": "Same behaviour, different cause",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "misinformation-m1-l3-n1",
+              "type": "read",
+              "title": "What else could explain it?",
+              "body": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.\n\nDebunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth."
+            },
+            {
+              "id": "misinformation-m1-l3-n2",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "categories": [
+                {
+                  "id": "misinformation-m1-l3-n2-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "misinformation-m1-l3-n2-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "misinformation-m1-l3-n2-item1",
+                  "label": "“I've seen that claim everywhere this week. It must have something behind it.”",
+                  "answer": "misinformation-m1-l3-n2-fact"
+                },
+                {
+                  "id": "misinformation-m1-l3-n2-item2",
+                  "label": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+                  "answer": "misinformation-m1-l3-n2-hypothesis"
+                },
+                {
+                  "id": "misinformation-m1-l3-n2-item3",
+                  "label": "“I suppose I don't know. It just feels familiar now.”",
+                  "answer": "misinformation-m1-l3-n2-fact"
+                },
+                {
+                  "id": "misinformation-m1-l3-n2-item4",
+                  "label": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                  "answer": "misinformation-m1-l3-n2-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l3-n3",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l3-n3-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "misinformation-m1-l3-n3-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "misinformation-m1-l3-n3-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "misinformation-m1-l3-n3-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "misinformation-m1-l3-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l3-n4",
+              "type": "choose",
+              "title": "Which explanation deserves more weight?",
+              "prompt": "What makes one formulation stronger than a plausible competing account?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Look for explanatory fit and a way to be wrong. Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l3-n4-opt1",
+                  "label": "It resembles a recognised theory, so the exact details of this case matter less.",
+                  "feedback": "A theory does not become evidence merely because the scenario resembles it."
+                },
+                {
+                  "id": "misinformation-m1-l3-n4-opt2",
+                  "label": "It explains more of the distinctive evidence and suggests observations that could prove it wrong.",
+                  "feedback": "An account that fits the details and can be checked is more informative than one that merely sounds plausible."
+                },
+                {
+                  "id": "misinformation-m1-l3-n4-opt3",
+                  "label": "Both accounts are possible, so each deserves equal confidence until a definitive diagnosis is made.",
+                  "feedback": "Plausibility does not entail equal likelihood, and a diagnosis is not the aim."
+                },
+                {
+                  "id": "misinformation-m1-l3-n4-opt4",
+                  "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
+                  "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                }
+              ],
+              "answer": "misinformation-m1-l3-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l3-n5",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "characterName": "Theo",
+              "scenario": "Theo shares a social-media claim that a common household substance prevents infection. Lila asks where the information came from.",
+              "evidenceOptions": [
+                {
+                  "id": "misinformation-m1-l3-n5-evidence-opt1",
+                  "label": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                  "feedback": ""
+                },
+                {
+                  "id": "misinformation-m1-l3-n5-evidence-opt2",
+                  "label": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "misinformation-m1-l3-n5-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "misinformation-m1-l3-n5-response-opt1",
+                  "label": "Dismiss the claim because unfamiliar people posted it.",
+                  "feedback": ""
+                },
+                {
+                  "id": "misinformation-m1-l3-n5-response-opt2",
+                  "label": "Trace the original source and compare the actual study with the claim before sharing or acting on it.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "misinformation-m1-l3-n5-response-opt2"
+            },
+            {
+              "id": "misinformation-m1-l3-n6",
+              "type": "match",
+              "title": "Connect process to evidence",
+              "prompt": "Connect each part of the case to its role in the working explanation.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "A functional explanation identifies the event, the meaning it may take on, the response and what follows. Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "pairs": [
+                {
+                  "id": "misinformation-m1-l3-n6-pair0",
+                  "label": "Theo encounters the same claim repeatedly",
+                  "answer": "Initial event"
+                },
+                {
+                  "id": "misinformation-m1-l3-n6-pair1",
+                  "label": "Familiarity makes the claim feel easier to accept",
+                  "answer": "Possible appraisal"
+                },
+                {
+                  "id": "misinformation-m1-l3-n6-pair2",
+                  "label": "He treats widespread sharing as independent support",
+                  "answer": "Behavioural response"
+                },
+                {
+                  "id": "misinformation-m1-l3-n6-pair3",
+                  "label": "The assertion spreads without an equivalent increase in evidence",
+                  "answer": "Possible consequence"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "misinformation-m1-l4",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "New evidence can overturn a comfortable theory. Decide what the discovery actually changes.",
+          "objective": "What would change your mind?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "misinformation-m1-l4-n1",
+              "type": "read",
+              "title": "What would change the explanation?",
+              "body": "Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.\n\nA useful hypothesis should make it possible to gather evidence against it.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth."
+            },
+            {
+              "id": "misinformation-m1-l4-n2",
+              "type": "dialogue",
+              "title": "See what happens next",
+              "prompt": "Listen closely to what each person says and what still remains uncertain.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "scenario": "A little later in the same situation. Continue one message at a time.",
+              "speakerA": "Theo",
+              "speakerB": "Lila",
+              "turns": [
+                {
+                  "id": "misinformation-m1-l4-n2-turn0",
+                  "speaker": "a",
+                  "text": "I found fifteen accounts making the same claim."
+                },
+                {
+                  "id": "misinformation-m1-l4-n2-turn1",
+                  "speaker": "b",
+                  "text": "Did they independently test it?"
+                },
+                {
+                  "id": "misinformation-m1-l4-n2-turn2",
+                  "speaker": "a",
+                  "text": "They all link back to the same original clip."
+                },
+                {
+                  "id": "misinformation-m1-l4-n2-turn3",
+                  "speaker": "b",
+                  "text": "Then we have widespread repetition of one claim, not fifteen separate confirmations."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "misinformation-m1-l4-n2-question",
+                  "prompt": "What has become clearer about the speaker’s interpretation?",
+                  "focusTurn": "misinformation-m1-l4-n2-turn2",
+                  "options": [
+                    {
+                      "id": "misinformation-m1-l4-n2-question-opt1",
+                      "label": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                    },
+                    {
+                      "id": "misinformation-m1-l4-n2-question-opt2",
+                      "label": "This additional exchange reveals more about the speaker’s interpretation, but leaves wider personality questions open.",
+                      "feedback": "The new exchange helps us understand the situation without establishing an enduring personality style."
+                    },
+                    {
+                      "id": "misinformation-m1-l4-n2-question-opt3",
+                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
+                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                    },
+                    {
+                      "id": "misinformation-m1-l4-n2-question-opt4",
+                      "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
+                      "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    }
+                  ],
+                  "answer": "misinformation-m1-l4-n2-question-opt2",
+                  "explanation": "The additional wording refines the hypothesis. Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+                  "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified."
+                }
+              ]
+            },
+            {
+              "id": "misinformation-m1-l4-n4",
+              "type": "choose",
+              "title": "Update your interpretation",
+              "prompt": "New information: The earliest source turns out to be an advertisement quoting a study that tested a different substance in laboratory conditions, not a preventive treatment in humans. Which interpretation should now carry more weight?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "A formulation should change when the evidence changes. The source trail undermines the health claim as presented. The original evidence does not establish the effect being asserted by the posts.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l4-n4-opt1",
+                  "label": "The new details matter, but the original working explanation should remain unchanged because it was reasonable at the time.",
+                  "feedback": "An initially reasonable account still needs revising when the evidence develops."
+                },
+                {
+                  "id": "misinformation-m1-l4-n4-opt2",
+                  "label": "The source trail undermines the health claim as presented. The original evidence does not establish the effect being asserted by the posts.",
+                  "feedback": "The revised account takes the added detail seriously without claiming complete access to the person’s motives."
+                },
+                {
+                  "id": "misinformation-m1-l4-n4-opt3",
+                  "label": "The new information rules out every motive except the one that is now best supported.",
+                  "feedback": "Evidence can strengthen one hypothesis without proving it is the only cause."
+                },
+                {
+                  "id": "misinformation-m1-l4-n4-opt4",
+                  "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
+                  "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                }
+              ],
+              "answer": "misinformation-m1-l4-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l4-n3",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Investigate a difference that the rival explanations predict. Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l4-n3-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "misinformation-m1-l4-n3-opt2",
+                  "label": "Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "misinformation-m1-l4-n3-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "misinformation-m1-l4-n3-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "misinformation-m1-l4-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l4-n5",
+              "type": "label",
+              "title": "Find the important lines",
+              "prompt": "Select the two lines that best show how the speaker interprets the event or what they believe is at stake.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "These lines reveal more about the meaning attached to the situation than a statement of the practical disagreement alone. Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "segments": [
+                {
+                  "id": "misinformation-m1-l4-n5-phrase0",
+                  "text": "“I've seen that claim everywhere this week. It must have something behind it.”",
+                  "answer": true
+                },
+                {
+                  "id": "misinformation-m1-l4-n5-phrase1",
+                  "text": "“Are the posts coming from different studies or copying the same video?”",
+                  "answer": false
+                },
+                {
+                  "id": "misinformation-m1-l4-n5-phrase2",
+                  "text": "“I suppose I don't know. It just feels familiar now.”",
+                  "answer": true
+                },
+                {
+                  "id": "misinformation-m1-l4-n5-phrase3",
+                  "text": "“I didn't check. It was shared by several accounts I recognise.”",
+                  "answer": false
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l4-n6",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l4-n6-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "misinformation-m1-l4-n6-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "misinformation-m1-l4-n6-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "misinformation-m1-l4-n6-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "misinformation-m1-l4-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "misinformation-m1-l5",
+          "version": 1,
+          "title": "Choose a workable response",
+          "teach": "Choose a response that serves a practical aim even when the other person does not cooperate.",
+          "objective": "Choose a workable response",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "misinformation-m1-l5-n1",
+              "type": "read",
+              "title": "Your influence has limits",
+              "body": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.\n\nAn intervention can be reasonable even when the other person refuses it.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth."
+            },
+            {
+              "id": "misinformation-m1-l5-n2",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "characterName": "Theo",
+              "scenario": "Theo shares a social-media claim that a common household substance prevents infection. Lila asks where the information came from.",
+              "evidenceOptions": [
+                {
+                  "id": "misinformation-m1-l5-n2-evidence-opt1",
+                  "label": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                  "feedback": ""
+                },
+                {
+                  "id": "misinformation-m1-l5-n2-evidence-opt2",
+                  "label": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "misinformation-m1-l5-n2-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "misinformation-m1-l5-n2-response-opt1",
+                  "label": "Dismiss the claim because unfamiliar people posted it.",
+                  "feedback": ""
+                },
+                {
+                  "id": "misinformation-m1-l5-n2-response-opt2",
+                  "label": "Trace the original source and compare the actual study with the claim before sharing or acting on it.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "misinformation-m1-l5-n2-response-opt2"
+            },
+            {
+              "id": "misinformation-m1-l5-n3",
+              "type": "predict",
+              "title": "What might change next?",
+              "prompt": "The other person may disagree. Which response-and-outcome pairing best protects the practical concern without assuming cooperation?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "A sound response is judged by what it makes possible, not by whether it can instantly change somebody else. Trace the original source and compare the actual study with the claim before sharing or acting on it.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "changePrompt": "Response to try",
+              "changes": [
+                {
+                  "id": "misinformation-m1-l5-n3-action-opt1",
+                  "label": "Are these independent reports, or multiple accounts repeating the same original item?",
+                  "feedback": ""
+                },
+                {
+                  "id": "misinformation-m1-l5-n3-action-opt2",
+                  "label": "Trace the original source and compare the actual study with the claim before sharing or acting on it.",
+                  "feedback": ""
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "misinformation-m1-l5-n3-result-opt1",
+                  "label": "The other person’s interpretation may become clearer, though the original issue may still need to be resolved.",
+                  "feedback": ""
+                },
+                {
+                  "id": "misinformation-m1-l5-n3-result-opt2",
+                  "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
+                  "feedback": ""
+                }
+              ],
+              "correctChange": "misinformation-m1-l5-n3-action-opt2",
+              "correctOutcome": "misinformation-m1-l5-n3-result-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l5-n4",
+              "type": "choose",
+              "title": "If the first response fails",
+              "prompt": "The other person rejects a reasonable direct request and the practical concern is unresolved. What next?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Escalation can be proportionate when a direct attempt has failed. Its safety and usefulness depend on the situation. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l5-n4-opt1",
+                  "label": "Repeat reassurance until the other person no longer experiences the issue as threatening.",
+                  "feedback": "Reassurance can help but cannot guarantee action on a concrete problem."
+                },
+                {
+                  "id": "misinformation-m1-l5-n4-opt2",
+                  "label": "Dismiss the claim because unfamiliar people posted it.",
+                  "feedback": "This makes the unresolved issue reviewable without needing to diagnose the other person."
+                },
+                {
+                  "id": "misinformation-m1-l5-n4-opt3",
+                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
+                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                },
+                {
+                  "id": "misinformation-m1-l5-n4-opt4",
+                  "label": "Are these independent reports, or multiple accounts repeating the same original item?",
+                  "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                }
+              ],
+              "answer": "misinformation-m1-l5-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l5-n5",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l5-n5-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "misinformation-m1-l5-n5-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "misinformation-m1-l5-n5-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "misinformation-m1-l5-n5-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "misinformation-m1-l5-n5-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l5-n6",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Investigate a difference that the rival explanations predict. Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l5-n6-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "misinformation-m1-l5-n6-opt2",
+                  "label": "Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "misinformation-m1-l5-n6-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "misinformation-m1-l5-n6-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "misinformation-m1-l5-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "misinformation-m1-l6",
+          "version": 1,
+          "title": "Try it in another situation",
+          "teach": "Apply the way of reasoning to a different situation. Do not import the first case’s verdict.",
+          "objective": "Try it in another situation",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "misinformation-m1-l6-n1",
+              "type": "read",
+              "title": "A new situation",
+              "body": "A political claim appears in dozens of posts that all reproduce the same unattributed screenshot. Readers mistake the number of reposts for corroboration.\n\nDecide what you can infer from this example without assuming the same explanation must apply.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth."
+            },
+            {
+              "id": "misinformation-m1-l6-n2",
+              "type": "choose",
+              "title": "Apply the method elsewhere",
+              "prompt": "Consider this different situation: A political claim appears in dozens of posts that all reproduce the same unattributed screenshot. Readers mistake the number of reposts for corroboration. What is the strongest next step?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Transfer the reasoning method rather than an explanation from the first case. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l6-n2-opt1",
+                  "label": "Treat the visible similarity as a reliable indication that the behaviour has the same psychological function.",
+                  "feedback": "Similar behaviours can protect very different interests depending on the context."
+                },
+                {
+                  "id": "misinformation-m1-l6-n2-opt2",
+                  "label": "Consider what the person could be trying to gain or avoid, then test that explanation against the circumstances and credible alternatives.",
+                  "feedback": "This asks what the behaviour might accomplish and how we could check."
+                },
+                {
+                  "id": "misinformation-m1-l6-n2-opt3",
+                  "label": "Postpone all interpretation until the person can give an account of their private motives.",
+                  "feedback": "A perfect self-report may be unavailable. Tentative, revisable inferences can still be useful."
+                },
+                {
+                  "id": "misinformation-m1-l6-n2-opt4",
+                  "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
+                  "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                }
+              ],
+              "answer": "misinformation-m1-l6-n2-opt2"
+            },
+            {
+              "id": "misinformation-m1-l6-n3",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "categories": [
+                {
+                  "id": "misinformation-m1-l6-n3-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "misinformation-m1-l6-n3-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "misinformation-m1-l6-n3-item1",
+                  "label": "“I've seen that claim everywhere this week. It must have something behind it.”",
+                  "answer": "misinformation-m1-l6-n3-fact"
+                },
+                {
+                  "id": "misinformation-m1-l6-n3-item2",
+                  "label": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+                  "answer": "misinformation-m1-l6-n3-hypothesis"
+                },
+                {
+                  "id": "misinformation-m1-l6-n3-item3",
+                  "label": "“I suppose I don't know. It just feels familiar now.”",
+                  "answer": "misinformation-m1-l6-n3-fact"
+                },
+                {
+                  "id": "misinformation-m1-l6-n3-item4",
+                  "label": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+                  "answer": "misinformation-m1-l6-n3-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l6-n4",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "Investigate a difference that the rival explanations predict. Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "options": [
+                {
+                  "id": "misinformation-m1-l6-n4-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "misinformation-m1-l6-n4-opt2",
+                  "label": "Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "misinformation-m1-l6-n4-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "misinformation-m1-l6-n4-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "misinformation-m1-l6-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l6-n5",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "misinformation-module-01:Illusory truth effect, source dependence and evidential calibration",
+              "explanation": "The order helps us test how a response might become self-maintaining. Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability. Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "counterexample": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth.",
+              "steps": [
+                {
+                  "id": "misinformation-m1-l6-n5-step0",
+                  "label": "Theo encounters the same claim repeatedly"
+                },
+                {
+                  "id": "misinformation-m1-l6-n5-step1",
+                  "label": "Familiarity makes the claim feel easier to accept"
+                },
+                {
+                  "id": "misinformation-m1-l6-n5-step2",
+                  "label": "He treats widespread sharing as independent support"
+                },
+                {
+                  "id": "misinformation-m1-l6-n5-step3",
+                  "label": "The assertion spreads without an equivalent increase in evidence"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "misinformation-m1-l6-n6",
+              "type": "read",
+              "title": "An idea worth carrying forward",
+              "body": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.\n\nDebunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.\n\nThe purpose of the exercise is to make a better-supported judgement and choose a proportionate next step.",
+              "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
