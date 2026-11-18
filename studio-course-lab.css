@@ -118,3 +118,18 @@
 .cl-arc span{font:500 12px/1.45 system-ui,sans-serif;color:#607664}
 .cl-field select[data-meta=lesson-status]{white-space:normal;line-height:1.35}
 @media(max-width:700px){.cl-book-heading{padding:10px}.cl-unit-row>div{flex-wrap:wrap;justify-content:flex-end}}
+
+
+/* Dialogue Lab authoring: readable conversation lines and per-check editing. */
+.cl-dialogue-intro{border-left:3px solid #73987c;background:#edf4e9;border-radius:9px;padding:12px;margin:12px 0 15px}
+.cl-dialogue-intro p{font-size:12px;line-height:1.55;margin:6px 0 0}
+.cl-dialogue-speakers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cl-dialogue-list{background:#f7f8f0}
+.cl-dialogue-turn,.cl-dialogue-check{border:1px solid #d6e0d2;background:#fffefa;border-radius:12px;padding:12px;margin:11px 0}
+.cl-dialogue-row{display:flex;align-items:end;gap:7px;flex-wrap:wrap;margin-bottom:9px}
+.cl-dialogue-row>span,.cl-dialogue-row>strong{font-size:12px;margin-right:auto}
+.cl-dialogue-row label{flex:1 1 155px;margin:0}
+.cl-dialogue-row label span{display:block;margin-bottom:4px;font-size:11px}
+.cl-dialogue-row button{min-width:35px}
+.cl-dialogue-check>.cl-field{margin-bottom:14px}
+@media(max-width:560px){.cl-dialogue-speakers{grid-template-columns:1fr}.cl-dialogue-row label{flex-basis:100%}}
