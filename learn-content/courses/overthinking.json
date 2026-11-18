@@ -1,10 +1,804 @@
 {
   "id": "overthinking",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Overthinking, Rumination & Mental Loops",
-  "description": "Explore planning versus looping through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "overthinking-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Jo",
+        "Amir"
+      ],
+      "glossary": [
+        {
+          "term": "Planning",
+          "definition": "Thinking that produces a specific next step, decision or test.",
+          "example": "After practising an interview answer, someone decides which example to use.",
+          "limit": "A plan can still be imperfect; certainty is not a requirement."
+        },
+        {
+          "term": "Worry",
+          "definition": "Repeated thinking about possible future problems, often when an outcome cannot yet be known.",
+          "example": "Someone keeps imagining every question an interviewer might ask.",
+          "limit": "Preparing for a realistic risk differs from endlessly searching for impossible certainty."
+        },
+        {
+          "term": "Rumination",
+          "definition": "Returning repeatedly to distressing questions or past events without making progress.",
+          "example": "After a conversation, someone replays the same sentence to work out whether they seemed foolish.",
+          "limit": "Reflection can lead to learning when it reaches a new conclusion or action."
+        },
+        {
+          "term": "Checking",
+          "definition": "Repeating an action to gain confidence or temporary relief from uncertainty.",
+          "example": "A student rereads an unchanged email draft fifteen times before sending it.",
+          "limit": "Checking may be sensible when it actually catches errors; look at the information gained and the cost."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "overthinking-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Thinking can be useful long before it feels pleasant. The question is whether the next round of thought changes what you know or what you can do.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "overthinking-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Thinking can be useful long before it feels pleasant. The question is whether the next round of thought changes what you know or what you can do.\n\nWhen does trying to solve a problem turn into staying stuck with it?",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f1-l1-n2",
+              "type": "read",
+              "title": "What planning means",
+              "body": "Thinking that produces a specific next step, decision or test.\n\nFor example: After practising an interview answer, someone decides which example to use.\n\nOne important limit: A plan can still be imperfect; certainty is not a requirement.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: After practising an interview answer, someone decides which example to use. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "overthinking-foundation:choose",
+              "explanation": "The example most directly supports planning. Thinking that produces a specific next step, decision or test. A plan can still be imperfect; certainty is not a requirement.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "options": [
+                {
+                  "id": "overthinking-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Planning.",
+                  "feedback": "This description follows from the example. Thinking that produces a specific next step, decision or test."
+                },
+                {
+                  "id": "overthinking-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Worry.",
+                  "feedback": "Worry is a genuine psychological idea, but the observation by itself does not establish it. Preparing for a realistic risk differs from endlessly searching for impossible certainty."
+                },
+                {
+                  "id": "overthinking-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Rumination.",
+                  "feedback": "Rumination is a genuine psychological idea, but the observation by itself does not establish it. Reflection can lead to learning when it reaches a new conclusion or action."
+                },
+                {
+                  "id": "overthinking-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Checking.",
+                  "feedback": "Checking is a genuine psychological idea, but the observation by itself does not establish it. Checking may be sensible when it actually catches errors; look at the information gained and the cost."
+                },
+                {
+                  "id": "overthinking-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "overthinking-f1-l1-n3-o1"
+            },
+            {
+              "id": "overthinking-f1-l1-n4",
+              "type": "read",
+              "title": "What worry means",
+              "body": "Repeated thinking about possible future problems, often when an outcome cannot yet be known.\n\nFor example: Someone keeps imagining every question an interviewer might ask.\n\nOne important limit: Preparing for a realistic risk differs from endlessly searching for impossible certainty.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: Someone keeps imagining every question an interviewer might ask. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "overthinking-foundation:choose",
+              "explanation": "The example most directly supports worry. Repeated thinking about possible future problems, often when an outcome cannot yet be known. Preparing for a realistic risk differs from endlessly searching for impossible certainty.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "options": [
+                {
+                  "id": "overthinking-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Planning.",
+                  "feedback": "Planning is a genuine psychological idea, but the observation by itself does not establish it. A plan can still be imperfect; certainty is not a requirement."
+                },
+                {
+                  "id": "overthinking-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Worry.",
+                  "feedback": "This description follows from the example. Repeated thinking about possible future problems, often when an outcome cannot yet be known."
+                },
+                {
+                  "id": "overthinking-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Rumination.",
+                  "feedback": "Rumination is a genuine psychological idea, but the observation by itself does not establish it. Reflection can lead to learning when it reaches a new conclusion or action."
+                },
+                {
+                  "id": "overthinking-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Checking.",
+                  "feedback": "Checking is a genuine psychological idea, but the observation by itself does not establish it. Checking may be sensible when it actually catches errors; look at the information gained and the cost."
+                },
+                {
+                  "id": "overthinking-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "overthinking-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "overthinking-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "overthinking-f1-l2-n1",
+              "type": "read",
+              "title": "What rumination means",
+              "body": "Returning repeatedly to distressing questions or past events without making progress.\n\nFor example: After a conversation, someone replays the same sentence to work out whether they seemed foolish.\n\nOne important limit: Reflection can lead to learning when it reaches a new conclusion or action.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f1-l2-n2",
+              "type": "read",
+              "title": "What checking means",
+              "body": "Repeating an action to gain confidence or temporary relief from uncertainty.\n\nFor example: A student rereads an unchanged email draft fifteen times before sending it.\n\nOne important limit: Checking may be sensible when it actually catches errors; look at the information gained and the cost.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "overthinking-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of when does trying to solve a problem turn into staying stuck with it?",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "pairs": [
+                {
+                  "id": "overthinking-f1-l2-n3-p0",
+                  "label": "Planning",
+                  "answer": "Thinking that produces a specific next step, decision or test."
+                },
+                {
+                  "id": "overthinking-f1-l2-n3-p1",
+                  "label": "Worry",
+                  "answer": "Repeated thinking about possible future problems, often when an outcome cannot yet be known."
+                },
+                {
+                  "id": "overthinking-f1-l2-n3-p2",
+                  "label": "Rumination",
+                  "answer": "Returning repeatedly to distressing questions or past events without making progress."
+                },
+                {
+                  "id": "overthinking-f1-l2-n3-p3",
+                  "label": "Checking",
+                  "answer": "Repeating an action to gain confidence or temporary relief from uncertainty."
+                }
+              ]
+            },
+            {
+              "id": "overthinking-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: After a conversation, someone replays the same sentence to work out whether they seemed foolish. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "overthinking-foundation:choose",
+              "explanation": "The example most directly supports rumination. Returning repeatedly to distressing questions or past events without making progress. Reflection can lead to learning when it reaches a new conclusion or action.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "options": [
+                {
+                  "id": "overthinking-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Planning.",
+                  "feedback": "Planning is a genuine psychological idea, but the observation by itself does not establish it. A plan can still be imperfect; certainty is not a requirement."
+                },
+                {
+                  "id": "overthinking-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Worry.",
+                  "feedback": "Worry is a genuine psychological idea, but the observation by itself does not establish it. Preparing for a realistic risk differs from endlessly searching for impossible certainty."
+                },
+                {
+                  "id": "overthinking-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Rumination.",
+                  "feedback": "This description follows from the example. Returning repeatedly to distressing questions or past events without making progress."
+                },
+                {
+                  "id": "overthinking-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Checking.",
+                  "feedback": "Checking is a genuine psychological idea, but the observation by itself does not establish it. Checking may be sensible when it actually catches errors; look at the information gained and the cost."
+                },
+                {
+                  "id": "overthinking-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "overthinking-f1-l2-n4-o3"
+            },
+            {
+              "id": "overthinking-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "Reflection can lead to learning when it reaches a new conclusion or action.\n\nChecking may be sensible when it actually catches errors; look at the information gained and the cost.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            }
+          ]
+        },
+        {
+          "id": "overthinking-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "overthinking-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "Thinking that produces a specific next step, decision or test.\n\nRepeated thinking about possible future problems, often when an outcome cannot yet be known.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: A student rereads an unchanged email draft fifteen times before sending it. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "overthinking-foundation:choose",
+              "explanation": "The example most directly supports checking. Repeating an action to gain confidence or temporary relief from uncertainty. Checking may be sensible when it actually catches errors; look at the information gained and the cost.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "options": [
+                {
+                  "id": "overthinking-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Planning.",
+                  "feedback": "Planning is a genuine psychological idea, but the observation by itself does not establish it. A plan can still be imperfect; certainty is not a requirement."
+                },
+                {
+                  "id": "overthinking-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Worry.",
+                  "feedback": "Worry is a genuine psychological idea, but the observation by itself does not establish it. Preparing for a realistic risk differs from endlessly searching for impossible certainty."
+                },
+                {
+                  "id": "overthinking-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Rumination.",
+                  "feedback": "Rumination is a genuine psychological idea, but the observation by itself does not establish it. Reflection can lead to learning when it reaches a new conclusion or action."
+                },
+                {
+                  "id": "overthinking-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Checking.",
+                  "feedback": "This description follows from the example. Repeating an action to gain confidence or temporary relief from uncertainty."
+                },
+                {
+                  "id": "overthinking-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "overthinking-f1-l3-n2-o4"
+            },
+            {
+              "id": "overthinking-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "overthinking-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of when does trying to solve a problem turn into staying stuck with it?",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "pairs": [
+                {
+                  "id": "overthinking-f1-l3-n3-p0",
+                  "label": "Planning",
+                  "answer": "Thinking that produces a specific next step, decision or test."
+                },
+                {
+                  "id": "overthinking-f1-l3-n3-p1",
+                  "label": "Worry",
+                  "answer": "Repeated thinking about possible future problems, often when an outcome cannot yet be known."
+                },
+                {
+                  "id": "overthinking-f1-l3-n3-p2",
+                  "label": "Rumination",
+                  "answer": "Returning repeatedly to distressing questions or past events without making progress."
+                },
+                {
+                  "id": "overthinking-f1-l3-n3-p3",
+                  "label": "Checking",
+                  "answer": "Repeating an action to gain confidence or temporary relief from uncertainty."
+                }
+              ]
+            },
+            {
+              "id": "overthinking-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: Someone keeps imagining every question an interviewer might ask. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "overthinking-foundation:choose",
+              "explanation": "The example most directly supports worry. Repeated thinking about possible future problems, often when an outcome cannot yet be known. Preparing for a realistic risk differs from endlessly searching for impossible certainty.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "options": [
+                {
+                  "id": "overthinking-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Planning.",
+                  "feedback": "Planning is a genuine psychological idea, but the observation by itself does not establish it. A plan can still be imperfect; certainty is not a requirement."
+                },
+                {
+                  "id": "overthinking-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Worry.",
+                  "feedback": "This description follows from the example. Repeated thinking about possible future problems, often when an outcome cannot yet be known."
+                },
+                {
+                  "id": "overthinking-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Rumination.",
+                  "feedback": "Rumination is a genuine psychological idea, but the observation by itself does not establish it. Reflection can lead to learning when it reaches a new conclusion or action."
+                },
+                {
+                  "id": "overthinking-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Checking.",
+                  "feedback": "Checking is a genuine psychological idea, but the observation by itself does not establish it. Checking may be sensible when it actually catches errors; look at the information gained and the cost."
+                },
+                {
+                  "id": "overthinking-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "overthinking-f1-l3-n4-o2"
+            },
+            {
+              "id": "overthinking-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between planning, worry, rumination, checking. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overthinking-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Jo",
+        "Amir"
+      ],
+      "glossary": [
+        {
+          "term": "Planning",
+          "definition": "Thinking that produces a specific next step, decision or test.",
+          "example": "After practising an interview answer, someone decides which example to use.",
+          "limit": "A plan can still be imperfect; certainty is not a requirement."
+        },
+        {
+          "term": "Worry",
+          "definition": "Repeated thinking about possible future problems, often when an outcome cannot yet be known.",
+          "example": "Someone keeps imagining every question an interviewer might ask.",
+          "limit": "Preparing for a realistic risk differs from endlessly searching for impossible certainty."
+        },
+        {
+          "term": "Rumination",
+          "definition": "Returning repeatedly to distressing questions or past events without making progress.",
+          "example": "After a conversation, someone replays the same sentence to work out whether they seemed foolish.",
+          "limit": "Reflection can lead to learning when it reaches a new conclusion or action."
+        },
+        {
+          "term": "Checking",
+          "definition": "Repeating an action to gain confidence or temporary relief from uncertainty.",
+          "example": "A student rereads an unchanged email draft fifteen times before sending it.",
+          "limit": "Checking may be sensible when it actually catches errors; look at the information gained and the cost."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "overthinking-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "overthinking-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Jo has an interview on Friday. Amir finds her repeatedly rewriting the same answer to a question she already prepared.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "overthinking-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "scenario": "Jo has an interview on Friday. Amir finds her repeatedly rewriting the same answer to a question she already prepared.",
+              "speakerA": "Jo",
+              "speakerB": "Amir",
+              "turns": [
+                {
+                  "id": "overthinking-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "Are you still working on the interview answers?"
+                },
+                {
+                  "id": "overthinking-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "I've rewritten this one six times. I think I can make it safer."
+                },
+                {
+                  "id": "overthinking-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "What specifically was wrong with the last version?"
+                },
+                {
+                  "id": "overthinking-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "I don't know. Someone could misunderstand it."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "overthinking-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "overthinking-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "overthinking-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "overthinking-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "overthinking-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "overthinking-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "overthinking-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "overthinking-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+                  "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs."
+                }
+              ]
+            },
+            {
+              "id": "overthinking-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "overthinking-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "categories": [
+                {
+                  "id": "overthinking-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "overthinking-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "overthinking-f2-l1-n3-a",
+                  "label": "“Are you still working on the interview answers?”",
+                  "answer": "overthinking-f2-l1-n3-seen"
+                },
+                {
+                  "id": "overthinking-f2-l1-n3-b",
+                  "label": "Jo's repeated revision may be driven by intolerance of uncertainty. Editing temporarily lowers discomfort, but without a stopping rule the sense of risk returns.",
+                  "answer": "overthinking-f2-l1-n3-guess"
+                },
+                {
+                  "id": "overthinking-f2-l1-n3-c",
+                  "label": "“I've rewritten this one six times. I think I can make it safer.”",
+                  "answer": "overthinking-f2-l1-n3-seen"
+                },
+                {
+                  "id": "overthinking-f2-l1-n3-d",
+                  "label": "Jo could be addressing genuine weaknesses in her answer, particularly if each revision improves clarity or performance.",
+                  "answer": "overthinking-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "overthinking-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "Jo could be addressing genuine weaknesses in her answer, particularly if each revision improves clarity or performance.\n\nLong thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            }
+          ]
+        },
+        {
+          "id": "overthinking-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "overthinking-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Jo's repeated revision may be driven by intolerance of uncertainty. Editing temporarily lowers discomfort, but without a stopping rule the sense of risk returns.\n\nAnother possibility: Jo could be addressing genuine weaknesses in her answer, particularly if each revision improves clarity or performance.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "overthinking-foundation:investigate",
+              "explanation": "Look for a defined question, a stopping point and measurable improvement between revisions. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "options": [
+                {
+                  "id": "overthinking-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "overthinking-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "overthinking-f2-l2-n2-o3",
+                  "label": "Look for a defined question, a stopping point and measurable improvement between revisions.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "overthinking-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "overthinking-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "overthinking-f2-l2-n2-o3"
+            },
+            {
+              "id": "overthinking-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "Jo's first mock-interview performance was strong. On the following night she spent another three hours altering wording without testing the changes.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "overthinking-foundation:choose",
+              "explanation": "The lack of new feedback strengthens the hypothesis that revision has become a way to manage anxiety rather than improve the answer.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "options": [
+                {
+                  "id": "overthinking-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "overthinking-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "overthinking-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "overthinking-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "overthinking-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "overthinking-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "overthinking-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "overthinking-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Thinking can be useful long before it feels pleasant. The question is whether the next round of thought changes what you know or what you can do.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            },
+            {
+              "id": "overthinking-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: After a conversation, someone replays the same sentence to work out whether they seemed foolish. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "overthinking-foundation:choose",
+              "explanation": "The example most directly supports rumination. Returning repeatedly to distressing questions or past events without making progress. Reflection can lead to learning when it reaches a new conclusion or action.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "options": [
+                {
+                  "id": "overthinking-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Planning.",
+                  "feedback": "Planning is a genuine psychological idea, but the observation by itself does not establish it. A plan can still be imperfect; certainty is not a requirement."
+                },
+                {
+                  "id": "overthinking-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Worry.",
+                  "feedback": "Worry is a genuine psychological idea, but the observation by itself does not establish it. Preparing for a realistic risk differs from endlessly searching for impossible certainty."
+                },
+                {
+                  "id": "overthinking-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Rumination.",
+                  "feedback": "This description follows from the example. Returning repeatedly to distressing questions or past events without making progress."
+                },
+                {
+                  "id": "overthinking-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Checking.",
+                  "feedback": "Checking is a genuine psychological idea, but the observation by itself does not establish it. Checking may be sensible when it actually catches errors; look at the information gained and the cost."
+                },
+                {
+                  "id": "overthinking-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "overthinking-f2-l3-n2-o3"
+            },
+            {
+              "id": "overthinking-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "overthinking-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "categories": [
+                {
+                  "id": "overthinking-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "overthinking-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "overthinking-f2-l3-n3-a",
+                  "label": "“Are you still working on the interview answers?”",
+                  "answer": "overthinking-f2-l3-n3-seen"
+                },
+                {
+                  "id": "overthinking-f2-l3-n3-b",
+                  "label": "Jo's repeated revision may be driven by intolerance of uncertainty. Editing temporarily lowers discomfort, but without a stopping rule the sense of risk returns.",
+                  "answer": "overthinking-f2-l3-n3-guess"
+                },
+                {
+                  "id": "overthinking-f2-l3-n3-c",
+                  "label": "“I've rewritten this one six times. I think I can make it safer.”",
+                  "answer": "overthinking-f2-l3-n3-seen"
+                },
+                {
+                  "id": "overthinking-f2-l3-n3-d",
+                  "label": "Jo could be addressing genuine weaknesses in her answer, particularly if each revision improves clarity or performance.",
+                  "answer": "overthinking-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "overthinking-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "overthinking-foundation:investigate",
+              "explanation": "Look for a defined question, a stopping point and measurable improvement between revisions. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance.",
+              "options": [
+                {
+                  "id": "overthinking-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "overthinking-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "overthinking-f2-l3-n4-o3",
+                  "label": "Look for a defined question, a stopping point and measurable improvement between revisions.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "overthinking-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "overthinking-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "overthinking-f2-l3-n4-o3"
+            },
+            {
+              "id": "overthinking-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Long thinking is not necessarily rumination. The distinction lies in whether it produces new information or useful action relative to its costs.",
+              "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "overthinking-module-01",
       "title": "Planning versus looping",
@@ -87,6 +881,16 @@
                     {
                       "id": "overthinking-m1-node-1-check1-opt1",
                       "label": "Rae may be using repeated revision to gain a feeling of certainty rather than to improve performance."
+                    },
+                    {
+                      "id": "overthinking-m1-node-1-check1-alternative-1",
+                      "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
+                      "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
+                    },
+                    {
+                      "id": "overthinking-m1-node-1-check1-alternative-2",
+                      "label": "Jo may have learned from past interviews that minor wording differences influence outcomes.",
+                      "feedback": "Prior feedback would matter, but no such evidence is offered for these particular changes."
                     }
                   ],
                   "answer": "overthinking-m1-node-1-check1-opt1",
@@ -121,6 +925,11 @@
                       "label": "Let's ask someone else to intervene before discussing this further.",
                       "reply": "Did you learn something you can use?",
                       "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "overthinking-m1-node-1-check2-alternative-1",
+                      "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
+                      "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
                     }
                   ],
                   "answer": "overthinking-m1-node-1-check2-opt1",
@@ -314,6 +1123,11 @@
                 {
                   "id": "overthinking-m1-repair-opt1",
                   "label": "The account is consistent with the evidence, but the answer still contains substantial factual mistakes that further preparation could correct. still deserves consideration."
+                },
+                {
+                  "id": "overthinking-m1-node-7-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "overthinking-m1-repair-opt1"
@@ -384,6 +1198,16 @@
                     {
                       "id": "overthinking-m1-node-8-check1-opt2",
                       "label": "The newer dialogue settles the cause and replaces the need to consider the answer still contains substantial factual mistakes that further preparation could correct.."
+                    },
+                    {
+                      "id": "overthinking-m1-node-8-check1-alternative-1",
+                      "label": "Jo may still be improving an imperfect answer and simply lack a clear method for evaluating revisions.",
+                      "feedback": "This fits purposeful preparation if each change is responsive to evidence or measurable criteria."
+                    },
+                    {
+                      "id": "overthinking-m1-node-8-check1-alternative-2",
+                      "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
+                      "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
                     }
                   ],
                   "answer": "overthinking-m1-node-8-check1-opt1",
@@ -421,6 +1245,11 @@
                 {
                   "id": "overthinking-m1-new-opt3",
                   "label": "The new evidence establishes the answer still contains substantial factual mistakes that further preparation could correct. as the sole explanation."
+                },
+                {
+                  "id": "overthinking-m1-node-9-alternative-1",
+                  "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
+                  "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
                 }
               ],
               "answer": "overthinking-m1-new-opt1"
@@ -474,6 +1303,11 @@
                 {
                   "id": "overthinking-m1-view-opt4",
                   "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "overthinking-m1-node-10-alternative-1",
+                  "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
+                  "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
                 }
               ],
               "answer": "overthinking-m1-view-opt1"
@@ -549,6 +1383,11 @@
                 {
                   "id": "overthinking-m1-transfer-e-opt1",
                   "label": "Ask which unanswered question would genuinely alter the choice and what evidence would settle it."
+                },
+                {
+                  "id": "overthinking-m1-node-14-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "overthinking-m1-transfer-e-opt1",
@@ -564,6 +1403,11 @@
                 {
                   "id": "overthinking-m1-transfer-a-opt1",
                   "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "overthinking-m1-node-14-response-alternative-1",
+                  "label": "What information would a seventh rewrite give you that the sixth didn't?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "overthinking-m1-transfer-a-opt1"
@@ -596,6 +1440,11 @@
                 {
                   "id": "overthinking-m1-test-opt3",
                   "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "overthinking-m1-node-13-alternative-1",
+                  "label": "Look for a defined question, a stopping point and measurable improvement between revisions.",
+                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
                 }
               ],
               "answer": "overthinking-m1-test-opt1"
@@ -647,6 +1496,11 @@
                   "id": "overthinking-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "overthinking-m1-l3-n3-alternative-1",
+                  "label": "Jo may have learned from past interviews that minor wording differences influence outcomes.",
+                  "feedback": "Prior feedback would matter, but no such evidence is offered for these particular changes."
                 }
               ],
               "answer": "overthinking-m1-l3-n3-opt2",
@@ -724,6 +1578,11 @@
                   "id": "overthinking-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "overthinking-m1-l3-n4-alternative-1",
+                  "label": "Jo could be addressing genuine weaknesses in her answer, particularly if each revision improves clarity or performance.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "overthinking-m1-l3-n4-opt2",
@@ -750,6 +1609,16 @@
                   "id": "overthinking-m1-l3-n5-evidence-opt2",
                   "label": "Jo's repeated revision may be driven by intolerance of uncertainty. Editing temporarily lowers discomfort, but without a stopping rule the sense of risk returns.",
                   "feedback": ""
+                },
+                {
+                  "id": "overthinking-m1-l3-n5-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "overthinking-m1-l3-n5-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "overthinking-m1-l3-n5-evidence-opt2",
@@ -763,6 +1632,16 @@
                   "id": "overthinking-m1-l3-n5-response-opt2",
                   "label": "Choose one mock question, test the answer aloud once and make changes only where the feedback shows a problem.",
                   "feedback": ""
+                },
+                {
+                  "id": "overthinking-m1-l3-n5-response-alternative-1",
+                  "label": "What information would a seventh rewrite give you that the sixth didn't?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "overthinking-m1-l3-n5-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "overthinking-m1-l3-n5-response-opt2"
@@ -868,13 +1747,18 @@
                     },
                     {
                       "id": "overthinking-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "Jo may have learned from past interviews that minor wording differences influence outcomes.",
+                      "feedback": "Prior feedback would matter, but no such evidence is offered for these particular changes."
                     },
                     {
                       "id": "overthinking-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "overthinking-m1-l4-n2-question-alternative-2",
+                      "label": "Jo's repeated revision may be driven by intolerance of uncertainty. Editing temporarily lowers discomfort, but without a stopping rule the sense of risk returns.",
+                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                     }
                   ],
                   "answer": "overthinking-m1-l4-n2-question-opt2",
@@ -912,6 +1796,11 @@
                   "id": "overthinking-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "overthinking-m1-l4-n3-alternative-1",
+                  "label": "Ask an independent interviewer whether successive versions improve the answer in any observable way.",
+                  "feedback": "Feedback can test whether more rewriting adds value."
                 }
               ],
               "answer": "overthinking-m1-l4-n3-opt2",
@@ -946,6 +1835,11 @@
                   "id": "overthinking-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "overthinking-m1-l4-n4-alternative-1",
+                  "label": "Look for a defined question, a stopping point and measurable improvement between revisions.",
+                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
                 }
               ],
               "answer": "overthinking-m1-l4-n4-opt2",
@@ -1013,6 +1907,11 @@
                   "id": "overthinking-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "overthinking-m1-l4-n6-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "overthinking-m1-l4-n6-opt2"
@@ -1055,6 +1954,16 @@
                   "id": "overthinking-m1-l5-n2-evidence-opt2",
                   "label": "Jo's repeated revision may be driven by intolerance of uncertainty. Editing temporarily lowers discomfort, but without a stopping rule the sense of risk returns.",
                   "feedback": ""
+                },
+                {
+                  "id": "overthinking-m1-l5-n2-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "overthinking-m1-l5-n2-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "overthinking-m1-l5-n2-evidence-opt2",
@@ -1068,6 +1977,16 @@
                   "id": "overthinking-m1-l5-n2-response-opt2",
                   "label": "Choose one mock question, test the answer aloud once and make changes only where the feedback shows a problem.",
                   "feedback": ""
+                },
+                {
+                  "id": "overthinking-m1-l5-n2-response-alternative-1",
+                  "label": "What information would a seventh rewrite give you that the sixth didn't?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "overthinking-m1-l5-n2-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "overthinking-m1-l5-n2-response-opt2"
@@ -1092,6 +2011,11 @@
                   "id": "overthinking-m1-l5-n3-action-opt2",
                   "label": "Choose one mock question, test the answer aloud once and make changes only where the feedback shows a problem.",
                   "feedback": ""
+                },
+                {
+                  "id": "overthinking-m1-l5-n3-change-alternative-1",
+                  "label": "Stop preparing and distract yourself whenever you feel anxious.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -1104,6 +2028,11 @@
                   "id": "overthinking-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "overthinking-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "overthinking-m1-l5-n3-action-opt2",
@@ -1132,13 +2061,18 @@
                 },
                 {
                   "id": "overthinking-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "overthinking-m1-l5-n4-opt4",
                   "label": "What information would a seventh rewrite give you that the sixth didn't?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "overthinking-m1-l5-n4-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "overthinking-m1-l5-n4-opt2",
@@ -1173,6 +2107,11 @@
                   "id": "overthinking-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "overthinking-m1-l5-n5-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "overthinking-m1-l5-n5-opt2",
@@ -1207,6 +2146,11 @@
                   "id": "overthinking-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "overthinking-m1-l5-n6-alternative-1",
+                  "label": "Ask an independent interviewer whether successive versions improve the answer in any observable way.",
+                  "feedback": "Feedback can test whether more rewriting adds value."
                 }
               ],
               "answer": "overthinking-m1-l5-n6-opt2"
@@ -1257,6 +2201,11 @@
                   "id": "overthinking-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "overthinking-m1-l6-n2-alternative-1",
+                  "label": "Stop preparing and distract yourself whenever you feel anxious.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "overthinking-m1-l6-n2-opt2"
@@ -1290,6 +2239,11 @@
                   "id": "overthinking-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "overthinking-m1-l6-n4-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "overthinking-m1-l6-n4-opt2",
@@ -1375,6 +2329,36 @@
               "sources": "Watkins (2008), Constructive and unconstructive repetitive thought; Borkovec et al., worry and avoidance."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Jo",
+        "Amir"
+      ],
+      "glossary": [
+        {
+          "term": "Planning",
+          "definition": "Thinking that produces a specific next step, decision or test.",
+          "example": "After practising an interview answer, someone decides which example to use.",
+          "limit": "A plan can still be imperfect; certainty is not a requirement."
+        },
+        {
+          "term": "Worry",
+          "definition": "Repeated thinking about possible future problems, often when an outcome cannot yet be known.",
+          "example": "Someone keeps imagining every question an interviewer might ask.",
+          "limit": "Preparing for a realistic risk differs from endlessly searching for impossible certainty."
+        },
+        {
+          "term": "Rumination",
+          "definition": "Returning repeatedly to distressing questions or past events without making progress.",
+          "example": "After a conversation, someone replays the same sentence to work out whether they seemed foolish.",
+          "limit": "Reflection can lead to learning when it reaches a new conclusion or action."
+        },
+        {
+          "term": "Checking",
+          "definition": "Repeating an action to gain confidence or temporary relief from uncertainty.",
+          "example": "A student rereads an unchanged email draft fifteen times before sending it.",
+          "limit": "Checking may be sensible when it actually catches errors; look at the information gained and the cost."
         }
       ]
     }
