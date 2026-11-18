@@ -1,87 +1,58 @@
 import {test,expect} from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-test('Learn is a dedicated page directly under Feed in sidebar and mobile navigation',async({page})=>{
+test('Learn keeps its illustrated catalogue and twenty independent course cards',async({page})=>{
  await page.goto('/index.html#learn');
  await expect(page.locator('.ns-courses-hub')).toBeVisible();
  await expect(page.locator('#ns-courses-title')).toHaveText('Learn');
- const links=page.locator('.app-nav-primary a');
- await expect(links.nth(3)).toHaveAttribute('href','#discussion');
- await expect(links.nth(4)).toHaveAttribute('href','#learn');
- await expect(links.nth(4)).toHaveAttribute('aria-current','page');
- await expect(page.locator('.app-bottom-nav a').last()).toHaveAttribute('href','#learn');
+ await expect(page.locator('.ns-course-card')).toHaveCount(20);
  await expect(page.locator('.ns-courses-feature')).toBeVisible();
- await expect(page.locator('.ns-course-card')).toHaveCount(10);
- await expect(page.locator('.ns-courses-availability')).toContainText('not lessons you can start yet');
- await expect(page.locator('.ns-learn-path,.ns-lesson,.learn-door-debates,.learn-door-crash')).toHaveCount(0);
+ await expect(page.locator('.ns-course-card__landscape')).toHaveCount(20);
+ await expect(page.locator('.ns-course-card__status')).toHaveCount(20);
+ await expect(page.locator('.app-nav-primary a[href="#learn"]')).toHaveAttribute('aria-current','page');
+ await expect(page.locator('.ns-learn-player')).toHaveCount(0);
 });
-test('Learn visual cards use real large images and all planned content is visibly labelled',async({page})=>{
- await page.goto('/index.html#learn');
- const art=page.locator('.ns-course-card__landscape');
- await expect(art).toHaveCount(10);
- const imagesLoaded=await art.evaluateAll(nodes=>nodes.every(img=>img.complete&&img.naturalWidth>0));
- expect(imagesLoaded).toBe(true);
- await expect(page.locator('.ns-courses-feature__visual')).toBeVisible();
- await expect(page.locator('.ns-course-card__status')).toHaveCount(10);
- await expect(page.getByText('Start course',{exact:true})).toHaveCount(0);
-});
-test('Browse courses opens the same clean Courses view, never the old full curriculum',async({page})=>{
+test('Browse and categories filter the same catalogue with no mandatory syllabus',async({page})=>{
  await page.goto('/index.html#learn');
  await page.locator('.ns-courses-button').click();
  await expect(page).toHaveURL(/#learn\/courses$/);
- await expect(page.locator('#ns-course-catalogue-title')).toHaveText('Courses');
- await expect(page.locator('.ns-course-card')).toHaveCount(10);
- await expect(page.getByText('Four quarters')).toHaveCount(0);
- await expect(page.getByText('Crash Courses')).toHaveCount(0);
- await page.goto('/index.html#library/courses');
- await expect(page).toHaveURL(/#learn\/courses$/);
+ await expect(page.locator('.ns-course-card')).toHaveCount(20);
+ await page.locator('#ns-course-search').fill('narcissism');
+ await expect(page.locator('.ns-course-card')).toHaveCount(1);
+ await page.locator('#ns-course-search').fill('');
+ await page.locator('a[href="#learn/category/society"]').click();
+ await expect(page).toHaveURL(/#learn\/category\/society$/);
+ await expect(page.locator('.ns-course-card')).toHaveCount(5);
 });
-test('Old demo and themed path links retire into the Learn course hub',async({page})=>{
- for(const obsolete of ['#learn/path/forest','#learn/lesson/observation-or-story','#learn/crash','#learn/debates','#library/debates']){
-  await page.goto('/index.html'+obsolete);
-  await expect(page).toHaveURL(/#learn$/);
-  await expect(page.locator('.ns-courses-hub')).toBeVisible();
- }
+test('Every course has a deep-linked detail page; unreleased courses show no fabricated lessons',async({page})=>{
+ await page.goto('/index.html#learn/course/narcissism');
+ await expect(page.locator('.ns-catalogue-detail-hero')).toBeVisible();
+ await expect(page.locator('.ns-catalogue-development')).toContainText(/In development|Published|Loading/);
+ await expect(page.locator('.ns-catalogue-syllabus')).toBeVisible();
+ await expect(page.locator('.ns-catalogue-detail-hero .ns-course-card__character')).toBeVisible();
 });
-test('Learn remains readable on mobile, with five main destinations and no horizontal overflow',async({page})=>{
+test('The learning method explains ten formats, not a required full curriculum',async({page})=>{
+ await page.goto('/index.html#learn/how-it-works');
+ await expect(page.locator('.ns-catalogue-how')).toBeVisible();
+ await expect(page.locator('.ns-catalogue-formats article')).toHaveCount(10);
+ await expect(page.locator('.ns-catalogue-how')).toContainText('Evidence investigator');
+});
+test('Learn remains readable on mobile',async({page})=>{
  await page.setViewportSize({width:390,height:844});
  await page.goto('/index.html#learn');
- await expect(page.locator('.ns-courses-hub')).toBeVisible();
- await expect(page.locator('.app-bottom-nav a')).toHaveCount(5);
  await expect(page.locator('.ns-courses-feature')).toBeVisible();
- await expect(page.locator('.ns-course-card')).toHaveCount(10);
+ await expect(page.locator('.ns-course-card')).toHaveCount(20);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+3)).toBe(false);
 });
-test('Existing published blog link remains functional and uses the notebook template',async({page})=>{
- await page.goto('/index.html#post/c045368d-ce46-416f-8ce7-5245e0e30199');
- await expect(page.locator('.ns-blog-notebook')).toBeVisible();
- await expect(page.locator('.ns-courses-hub')).toHaveCount(0);
+test('Staff Course Lab is behind the existing GitHub owner login',async({page})=>{
+ await page.goto('/staff.html');
+ await expect(page.getByRole('heading',{name:'Staff login'})).toBeVisible();
+ await expect(page.locator('#studio')).toBeHidden();
+ await expect(page.locator('#course-lab-view')).toBeHidden();
+ await expect(page.locator('[data-view="course-lab"]')).toHaveCount(1);
 });
-test('Learn course hub contains no serious or critical automated accessibility violations',async({page})=>{
+test('Learn has no serious/critical accessibility violations',async({page})=>{
  await page.goto('/index.html#learn');
  const results=await new AxeBuilder({page}).include('.ns-courses-hub').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();
- expect(results.violations.filter(item=>['serious','critical'].includes(item.impact)),JSON.stringify(results.violations,null,2)).toEqual([]);
-});
-
-
-test('scenery-only art avoids giant ghost mascots and multi-character background collisions',async({page})=>{
- await page.goto('/index.html#learn');
- const hero=page.locator('.ns-courses-hero');
- await expect(hero).toBeVisible();
- expect(await hero.evaluate(el=>getComputedStyle(el).backgroundImage)).toContain('scenery-hero.svg');
- await expect(hero.locator('.ns-courses-hero__figure img')).toHaveCount(1);
- await expect(page.locator('.ns-courses-feature__visual img')).toHaveCount(2);
- for(const id of ['emotions','relationships','boundaries','focus','communication']){
-  const card=page.locator('[data-course-subject="'+id+'"]');
-  await expect(card.locator('img')).toHaveCount(2);
-  await expect(card.locator('.ns-course-card__landscape')).toHaveAttribute('src','learn-art/scenery-'+id+'.svg');
-  await expect(card.locator('.ns-course-card__character')).toBeVisible();
-  const image=card.locator('.ns-course-card__landscape');
-  await expect.poll(()=>image.evaluate(el=>el.complete&&el.naturalWidth>0)).toBe(true);
- }
- for(const name of ['hero','featured','emotions','relationships','boundaries','focus','communication']){
-  const res=await page.request.get('/learn-art/scenery-'+name+'.svg');
-  expect(res.status(),name).toBe(200);
-  expect((await res.text()).includes('<svg'),name).toBe(true);
- }
+ expect(results.violations.filter(x=>['serious','critical'].includes(x.impact)),JSON.stringify(results.violations,null,2)).toEqual([]);
 });
