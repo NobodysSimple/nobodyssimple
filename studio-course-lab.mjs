@@ -61,7 +61,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  host.innerHTML='<section class="cl-shell"><header class="cl-head"><div><p class="cl-eyebrow">STAFF · LEARN CURRICULUM</p><h1>Course Lab</h1><p>Build courses from reading pages and interactive psychology exercises. Drafts stay in this browser until published to GitHub.</p></div><a href="index.html#learn" target="_blank" rel="noopener" class="cl-light-button">Open Learn ↗</a></header>'+
  '<div class="cl-toolbar"><label>Course <select id="cl-course">'+LEARN_COURSES.map(x=>'<option value="'+esc(x.id)+'">'+esc(x.title)+'</option>').join('')+'</select></label><span id="cl-state" role="status"></span><button type="button" data-act="save">Save draft</button><button type="button" data-act="load">Load published</button><button type="button" data-act="export">Export</button><label class="cl-import">Import JSON<input id="cl-import" type="file" accept=".json,application/json" hidden></label></div>'+
  '<div class="cl-toolbar cl-publish-toolbar"><button type="button" data-act="preview">Preview lesson</button><button type="button" class="cl-publish" data-act="publish">Publish course</button><button type="button" data-act="unpublish">Unpublish</button><span id="cl-publish-state" role="status"></span></div>'+
- '<div class="cl-meta"><label>Published course title <input id="cl-title" maxlength="160" placeholder="Course title"></label><p id="cl-meta-hint"></p></div>'+
+ '<div class="cl-meta"><label>Published course title <input id="cl-title" maxlength="160" placeholder="Course title"></label><label>Course card description <textarea id="cl-description" rows="2" maxlength="400" placeholder="A short summary shown in Learn"></textarea></label><p id="cl-meta-hint"></p></div>'+
  '<div class="cl-grid"><aside class="cl-outline"><div class="cl-section-head"><h2>Units & lessons</h2><button type="button" data-act="add-unit">＋ Unit</button></div><div id="cl-units"></div></aside>'+
  '<section class="cl-sequence"><div class="cl-section-head"><h2>Lesson sequence</h2><button type="button" data-act="add-lesson">＋ Lesson</button></div><div id="cl-lesson-meta"></div><div id="cl-nodes"></div><div class="cl-add-node"><label>Add a node <select id="cl-new-type">'+COURSE_LAB_TYPES.map(t=>'<option value="'+t.id+'">'+esc(t.name)+'</option>').join('')+'</select></label><button data-act="add-node" type="button">＋ Add to sequence</button></div></section>'+
  '<section class="cl-inspector"><div class="cl-section-head"><h2>Node editor</h2></div><div id="cl-node-fields"></div></section></div>'+
@@ -90,7 +90,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
     '<div class="cl-lesson-actions"><button data-act="lesson-up" type="button">Move lesson ↑</button><button data-act="lesson-down" type="button">Move lesson ↓</button><button data-act="delete-lesson" type="button">Delete lesson</button></div>':'<p class="cl-hint">Select a lesson in the outline, or add one to a unit.</p>';
   $('#cl-nodes').innerHTML=lesson?(lesson.nodes||[]).map((node,i)=>'<article class="cl-node '+(i===n?'active':'')+'" draggable="true" data-node-index="'+i+'"><button type="button" data-act="select-node" data-n="'+i+'"><small>'+String(i+1).padStart(2,'0')+' · '+esc(types[node.type]?.name||node.type)+'</small><strong>'+esc(node.title||node.prompt||node.body?.slice(0,65)||'Untitled node')+'</strong></button><div><button type="button" data-act="node-up" data-n="'+i+'" '+(i===0?'disabled':'')+' aria-label="Move node up">↑</button><button type="button" data-act="node-down" data-n="'+i+'" '+(i===lesson.nodes.length-1?'disabled':'')+' aria-label="Move node down">↓</button><button type="button" data-act="node-copy" data-n="'+i+'" aria-label="Duplicate node">⧉</button><button type="button" data-act="node-delete" data-n="'+i+'" aria-label="Delete node">×</button></div></article>').join('')||'<p class="cl-hint">Add reading pages and exercises in any order.</p>':'';
   $('#cl-node-fields').innerHTML=editorFields(selectedNode());
-  $('#cl-title').value=draft?.title||'';
+  $('#cl-title').value=draft?.title||'';$('#cl-description').value=draft?.description||'';
   $('#cl-meta-hint').textContent=(draft?.modules?.length||0)+' units · '+(draft?.modules||[]).reduce((v,x)=>v+x.lessons.length,0)+' lessons · '+(draft?.modules||[]).reduce((v,x)=>v+x.lessons.reduce((a,y)=>a+y.nodes.length,0),0)+' nodes';
  };
  const render=()=>{renderOutline();renderSequence();};
@@ -110,6 +110,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  }
  const setField=(target)=>{
   if(target.id==='cl-title'){draft.title=target.value;queueSave();return;}
+  if(target.id==='cl-description'){draft.description=target.value;queueSave();return;}
   const node=selectedNode(),lesson=selectedLesson(),unit=selectedUnit();if(!draft)return;
   if(target.dataset.meta){
    if(target.dataset.meta==='unit-title'&&unit)unit.title=target.value;
