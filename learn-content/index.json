@@ -2,102 +2,102 @@
   "version": 1,
   "courses": {
     "narcissism": {
-      "version": 1,
+      "version": 2,
       "title": "Narcissism & Personality",
       "description": "Explore everyday self-focus versus a persistent trait through dialogue, evidence and psychological reasoning."
     },
     "manipulation": {
-      "version": 1,
+      "version": 2,
       "title": "Manipulation, Gaslighting & Psychological Tactics",
       "description": "Explore persuasion versus manipulation through dialogue, evidence and psychological reasoning."
     },
     "attachment": {
-      "version": 1,
+      "version": 2,
       "title": "Attachment, Love & Relationship Patterns",
       "description": "Explore what attachment theory can explain through dialogue, evidence and psychological reasoning."
     },
     "overthinking": {
-      "version": 1,
+      "version": 2,
       "title": "Overthinking, Rumination & Mental Loops",
       "description": "Explore planning versus looping through dialogue, evidence and psychological reasoning."
     },
     "boundaries": {
-      "version": 1,
+      "version": 2,
       "title": "Boundaries & Difficult Conversations",
       "description": "Explore preferences, requests and boundaries through dialogue, evidence and psychological reasoning."
     },
     "anxiety": {
-      "version": 1,
+      "version": 2,
       "title": "Anxiety, Fear & Avoidance",
       "description": "Explore when the body alarms before the mind through dialogue, evidence and psychological reasoning."
     },
     "emotions": {
-      "version": 1,
+      "version": 2,
       "title": "The Science of Emotions",
       "description": "Explore a feeling is information not a verdict through dialogue, evidence and psychological reasoning."
     },
     "self-esteem": {
-      "version": 1,
+      "version": 2,
       "title": "Self-Esteem, Shame & the Inner Critic",
       "description": "Explore confidence in a skill versus global worth through dialogue, evidence and psychological reasoning."
     },
     "motivation": {
-      "version": 1,
+      "version": 2,
       "title": "Motivation, Procrastination & Habit Change",
       "description": "Explore knowing what to do but not beginning through dialogue, evidence and psychological reasoning."
     },
     "social-anxiety": {
-      "version": 1,
+      "version": 2,
       "title": "Social Anxiety & Fear of Judgement",
       "description": "Explore entering a room while feeling watched through dialogue, evidence and psychological reasoning."
     },
     "burnout": {
-      "version": 1,
+      "version": 2,
       "title": "Stress, Burnout & Psychological Demands",
       "description": "Explore a busy week versus chronic overload through dialogue, evidence and psychological reasoning."
     },
     "loneliness": {
-      "version": 1,
+      "version": 2,
       "title": "Loneliness, Friendship & Belonging",
       "description": "Explore being surrounded yet feeling alone through dialogue, evidence and psychological reasoning."
     },
     "social-media": {
-      "version": 1,
+      "version": 2,
       "title": "Social Media & the Attention Economy",
       "description": "Explore infinite scroll and delayed stopping cues through dialogue, evidence and psychological reasoning."
     },
     "misinformation": {
-      "version": 1,
+      "version": 2,
       "title": "Misinformation, Conspiracies & AI Persuasion",
       "description": "Explore familiarity mistaken for truth through dialogue, evidence and psychological reasoning."
     },
     "neurodiversity": {
-      "version": 1,
+      "version": 2,
       "title": "ADHD, Autism & Neurodivergent Experience",
       "description": "Explore neurodiversity as population variation through dialogue, evidence and psychological reasoning."
     },
     "sleep": {
-      "version": 1,
+      "version": 2,
       "title": "Sleep, Insomnia & the Psychology of Rest",
       "description": "Explore sleep pressure accumulated through waking through dialogue, evidence and psychological reasoning."
     },
     "low-mood": {
-      "version": 1,
+      "version": 2,
       "title": "Depression, Low Mood & Motivation",
       "description": "Explore sadness after disappointment through dialogue, evidence and psychological reasoning."
     },
     "scams": {
-      "version": 1,
+      "version": 2,
       "title": "Scams, Deception & Social Engineering",
       "description": "Explore time pressure and cognitive overload through dialogue, evidence and psychological reasoning."
     },
     "masculinity": {
-      "version": 1,
+      "version": 2,
       "title": "Sexuality & Gender",
       "description": "Explore sex characteristics and variation through dialogue, evidence and psychological reasoning."
     },
     "vaping": {
-      "version": 1,
+      "version": 2,
       "title": "Social Influence & Addiction",
       "description": "Explore conformity without direct coercion through dialogue, evidence and psychological reasoning."
     }
