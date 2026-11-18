@@ -3,7 +3,7 @@
  * recording completions. Question content is always escaped; never raw HTML.
  */
 import {getLearnContent} from './ns-learn-content-v2.mjs';
-import {getLearnCourse} from './ns-learn-catalog-v2.mjs';
+import {getLearnCourse,LEARN_COMPANIONS} from './ns-learn-catalog-v2.mjs';
 import {validateLearnBundle,gradeLearnItem,learnLessonScore,flattenLearnLessons,QUESTION_TYPES} from './ns-learn-engine-v2.mjs';
 import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderDialogue} from './ns-learn-dialogue.mjs';
@@ -26,6 +26,8 @@ export function publishedLearnBundle(id){
 export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOverride=null,preview=false}={}){
  const bundle=bundleOverride||publishedLearnBundle(courseId),course=getLearnCourse(courseId);
  const lesson=bundle&&flattenLearnLessons(bundle).find(l=>l.id===lessonId);
+ const companion=LEARN_COMPANIONS[courseId];
+ const buddy=companion?'<div class="ns-learn-player__buddy"><span class="ns-learn-player__buddy-face" aria-hidden="true" style="--cast-x:'+Number(companion.x)+'%;--cast-y:'+Number(companion.y)+'%"></span><span><strong>'+esc(companion.name)+'</strong><small>Your course companion</small></span></div>':'';
  const home='#learn/course/'+encodeURIComponent(courseId);
  if(!lesson){root.innerHTML='<section class="ns-learn-player"><a href="'+home+'">← Back to course</a><h1>No published lesson found</h1><p>This course has no available lesson at that address.</p></section>';return;}
  const nodes=learningNodes(lesson),state={phase:'intro',i:0,answers:{},checked:null,notice:'',order:[],labels:new Set(),dialogueCheck:-1,dialogueVisible:1,saved:false};
@@ -63,10 +65,10 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
  function paint(){
   const exit=preview?'':'<a class="ns-learn-player__back" href="'+home+'">← Exit course</a>';
   if(state.phase==='intro'){
-   root.innerHTML='<section class="ns-learn-player">'+exit+'<p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · '+esc(lesson.moduleTitle||'')+'</p><h1>'+esc(lesson.title)+'</h1>'+paragraphs(lesson.teach||'This lesson contains short reading and interactive exercises.')+'<p class="ns-learn-player__hint">'+nodes.length+' pages and activities · Untimed</p><button type="button" class="ns-learn-player__primary" data-start>Begin →</button></section>';
+   root.innerHTML='<section class="ns-learn-player">'+exit+'<p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · '+esc(lesson.moduleTitle||'')+'</p>'+buddy+'<h1>'+esc(lesson.title)+'</h1>'+paragraphs(lesson.teach||'This lesson contains short reading and interactive exercises.')+'<p class="ns-learn-player__hint">'+nodes.length+' pages and activities · Untimed</p><button type="button" class="ns-learn-player__primary" data-start>Begin →</button></section>';
   }else if(state.phase==='done'){
    const score=learnLessonScore(lesson,state.answers);
-   root.innerHTML='<section class="ns-learn-player"><h1>Lesson complete</h1><p>You completed '+nodes.length+' pages and '+score.total+' exercises, with '+score.correct+' correct on the first attempt.</p><p role="status" data-save></p>'+(preview?'<button class="ns-learn-player__primary" type="button" data-restart>Restart preview</button>':'<a class="ns-learn-player__primary" href="'+home+'">Back to course →</a>')+'</section>';
+   root.innerHTML='<section class="ns-learn-player">'+buddy+'<div class="ns-learn-player__finish-star" aria-hidden="true">✦</div><h1>Lesson complete</h1><p>You completed '+nodes.length+' pages and '+score.total+' exercises, with '+score.correct+' correct on the first attempt.</p><p role="status" data-save></p>'+(preview?'<button class="ns-learn-player__primary" type="button" data-restart>Restart preview</button>':'<a class="ns-learn-player__primary" href="'+home+'">Back to course →</a>')+'</section>';
    if(!preview&&!state.saved){
     state.saved=true;
     const result=review?saveLearnReview(bundle,lesson,score):saveLearnCompletion(bundle,lesson,score);
@@ -77,7 +79,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
    const heading=node.title||node.prompt||'Learning activity';
    const promptLine=!read&&node.title&&node.prompt&&node.title!==node.prompt?'<p class="ns-learn-player__question-prompt">'+esc(node.prompt)+'</p>':'';
    const body=read?'<div class="ns-learn-player__reading">'+(node.type==='read'?paragraphs(node.body):'')+photo(node)+(node.sources?'<p class="ns-learn-player__sources">'+esc(node.sources)+'</p>':'')+'</div>':promptLine+photo(node)+renderControls(node);
-   root.innerHTML='<section class="ns-learn-player">'+exit+'<p class="ns-learn-player__eyebrow">'+esc(lesson.title)+' · '+(state.i+1)+' / '+nodes.length+'</p><div class="ns-learn-player__meter" role="progressbar" aria-valuenow="'+(state.i+1)+'" aria-valuemin="0" aria-valuemax="'+nodes.length+'"><i style="width:'+Math.round((state.i+1)/nodes.length*100)+'%"></i></div><h1>'+esc(heading)+'</h1>'+(!read&&node.type==='character'?'':body)+(read?'':'')+(!read&&node.type==='character'?body:'')+(state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'')+(checked?'<div class="ns-learn-player__feedback" role="status"><strong>'+(state.checked.correct?'Correct.':'Review the distinction.')+'</strong><p>'+esc(state.checked.explanation)+'</p><small>Counterexample: '+esc(state.checked.counterexample)+'</small>'+(node.sources?'<small>Sources: '+esc(node.sources)+'</small>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+(node.speakerB?esc(node.speakerB):'Their response')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'')+(node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length?'':'<button type="button" class="ns-learn-player__primary" data-next>')+ (node.type==='dialogue'&&state.dialogueCheck<0?'Analyse conversation →':node.type==='dialogue'&&checked&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':read||checked?(state.i+1===nodes.length?'Finish lesson':'Continue →'):'Check answer')+'</button></section>';
+   root.innerHTML='<section class="ns-learn-player">'+exit+'<p class="ns-learn-player__eyebrow">'+esc(lesson.title)+' · '+(state.i+1)+' / '+nodes.length+'</p><div class="ns-learn-player__meter" role="progressbar" aria-valuenow="'+(state.i+1)+'" aria-valuemin="0" aria-valuemax="'+nodes.length+'"><i style="width:'+Math.round((state.i+1)/nodes.length*100)+'%"></i></div><h1>'+esc(heading)+'</h1>'+(!read&&node.type==='character'?'':body)+(read?'':'')+(!read&&node.type==='character'?body:'')+(state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'')+(checked?'<div class="ns-learn-player__feedback" role="status"><strong>'+(state.checked.correct?'Correct.':'Review the distinction.')+'</strong><p>'+esc(state.checked.explanation)+'</p><small>Counterexample: '+esc(state.checked.counterexample)+'</small>'+(node.sources?'<small>Sources: '+esc(node.sources)+'</small>':'')+(state.checked.reply?'<div class="ns-learn-player__branch"><strong>'+(node.speakerB?esc(node.speakerB):'Their response')+'</strong><p>'+esc(state.checked.reply)+'</p>'+(state.checked.consequence?'<small>'+esc(state.checked.consequence)+'</small>':'')+'</div>':'')+'</div>':'')+(node.type==='dialogue'&&state.dialogueCheck<0&&state.dialogueVisible<(node.turns||[]).length?'':'<button type="button" class="ns-learn-player__primary" data-next>'+(node.type==='dialogue'&&state.dialogueCheck<0?'Analyse conversation →':node.type==='dialogue'&&checked&&state.dialogueCheck<(node.checks?.length||0)-1?'Next question →':read||checked?(state.i+1===nodes.length?'Finish lesson':'Continue →'):'Check answer')+'</button>')+'</section>';
   }
   wire();
  }
