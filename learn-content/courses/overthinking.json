@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "overthinking-m1-node-1-check1-alternative-1",
-                      "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
-                      "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
+                      "label": "Rae may be treating the interview as unusually consequential and trying to avoid one specific omission.",
+                      "feedback": "High stakes could explain careful preparation, but repeated untested revisions need a stopping criterion."
                     },
                     {
                       "id": "overthinking-m1-node-1-check1-alternative-2",
-                      "label": "Jo may have learned from past interviews that minor wording differences influence outcomes.",
-                      "feedback": "Prior feedback would matter, but no such evidence is offered for these particular changes."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Rae may be using repeated revision to gain a feeling of certainty rather than to improve performance. is more directly tied to the words in this scene. Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action."
                     }
                   ],
                   "answer": "overthinking-m1-node-1-check1-opt1",
@@ -910,26 +910,31 @@
                     },
                     {
                       "id": "overthinking-m1-node-1-check2-opt2",
-                      "label": "Rewrite until you feel certain you have covered every possible question.",
-                      "reply": "What information would tell you that further rewriting is no longer useful?",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Ask someone to identify one substantive weakness in the answer, then revise only that part.",
+                      "reply": "Did you learn something you can use?",
+                      "consequence": "External feedback may reduce repeated untested editing, but it depends on the person's knowledge of the role.",
+                      "feedback": "External feedback may reduce repeated untested editing, but it depends on the person's knowledge of the role."
                     },
                     {
                       "id": "overthinking-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Does a new rewrite change anything you'll actually say?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Record two versions and compare whether a listener can understand them equally well.",
+                      "reply": "Did you learn something you can use?",
+                      "consequence": "This is a useful comparison, although it may become another checking ritual without a stopping rule.",
+                      "feedback": "This is a useful comparison, although it may become another checking ritual without a stopping rule."
                     },
                     {
                       "id": "overthinking-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "Did you learn something you can use?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
-                      "id": "overthinking-m1-node-1-check2-alternative-1",
-                      "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
-                      "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
+                      "id": "overthinking-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "Did you learn something you can use?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "overthinking-m1-node-1-check2-opt1",
@@ -1075,7 +1080,8 @@
                 },
                 {
                   "id": "overthinking-m1-plan-opt2",
-                  "label": "Rewrite until you feel certain you have covered every possible question."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "outcomes": [
@@ -1126,8 +1132,8 @@
                 },
                 {
                   "id": "overthinking-m1-node-7-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "overthinking-m1-repair-opt1"
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "overthinking-m1-node-8-check1-alternative-1",
-                      "label": "Jo may still be improving an imperfect answer and simply lack a clear method for evaluating revisions.",
-                      "feedback": "This fits purposeful preparation if each change is responsive to evidence or measurable criteria."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "overthinking-m1-node-8-check1-alternative-2",
-                      "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
-                      "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "overthinking-m1-node-8-check1-opt1",
@@ -1248,8 +1254,8 @@
                 },
                 {
                   "id": "overthinking-m1-node-9-alternative-1",
-                  "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
-                  "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "overthinking-m1-new-opt1"
@@ -1306,8 +1312,8 @@
                 },
                 {
                   "id": "overthinking-m1-node-10-alternative-1",
-                  "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
-                  "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
+                  "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                  "feedback": "This is a reasonable line of inquiry, although Rae may be using repeated revision to gain a feeling of certainty rather than to improve performance. is more directly tied to the words in this scene. Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action."
                 }
               ],
               "answer": "overthinking-m1-view-opt1"
@@ -1386,8 +1392,8 @@
                 },
                 {
                   "id": "overthinking-m1-node-14-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "overthinking-m1-transfer-e-opt1",
@@ -1406,8 +1412,8 @@
                 },
                 {
                   "id": "overthinking-m1-node-14-response-alternative-1",
-                  "label": "What information would a seventh rewrite give you that the sixth didn't?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "overthinking-m1-transfer-a-opt1"
@@ -1443,8 +1449,8 @@
                 },
                 {
                   "id": "overthinking-m1-node-13-alternative-1",
-                  "label": "Look for a defined question, a stopping point and measurable improvement between revisions.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Ask whether the feared consequence has occurred in similar previous situations.",
+                  "feedback": "This would help evaluate the prediction, though the contexts need to be comparable."
                 }
               ],
               "answer": "overthinking-m1-test-opt1"
@@ -1499,8 +1505,8 @@
                 },
                 {
                   "id": "overthinking-m1-l3-n3-alternative-1",
-                  "label": "Jo may have learned from past interviews that minor wording differences influence outcomes.",
-                  "feedback": "Prior feedback would matter, but no such evidence is offered for these particular changes."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "overthinking-m1-l3-n3-opt2",
@@ -1581,8 +1587,8 @@
                 },
                 {
                   "id": "overthinking-m1-l3-n4-alternative-1",
-                  "label": "Jo could be addressing genuine weaknesses in her answer, particularly if each revision improves clarity or performance.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "overthinking-m1-l3-n4-opt2",
@@ -1612,13 +1618,13 @@
                 },
                 {
                   "id": "overthinking-m1-l3-n5-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "overthinking-m1-l3-n5-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Jo may still be improving an imperfect answer and simply lack a clear method for evaluating revisions.",
+                  "feedback": "This fits purposeful preparation if each change is responsive to evidence or measurable criteria."
                 }
               ],
               "evidenceAnswer": "overthinking-m1-l3-n5-evidence-opt2",
@@ -1635,13 +1641,13 @@
                 },
                 {
                   "id": "overthinking-m1-l3-n5-response-alternative-1",
-                  "label": "What information would a seventh rewrite give you that the sixth didn't?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 },
                 {
                   "id": "overthinking-m1-l3-n5-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Use one external mock interview, then restrict revisions to issues the feedback identifies.",
+                  "feedback": "This gives preparation a stopping rule, though an unexpected new problem could still justify a change."
                 }
               ],
               "responseAnswer": "overthinking-m1-l3-n5-response-opt2"
@@ -1757,8 +1763,8 @@
                     },
                     {
                       "id": "overthinking-m1-l4-n2-question-alternative-2",
-                      "label": "Jo's repeated revision may be driven by intolerance of uncertainty. Editing temporarily lowers discomfort, but without a stopping rule the sense of risk returns.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     }
                   ],
                   "answer": "overthinking-m1-l4-n2-question-opt2",
@@ -1799,8 +1805,8 @@
                 },
                 {
                   "id": "overthinking-m1-l4-n3-alternative-1",
-                  "label": "Ask an independent interviewer whether successive versions improve the answer in any observable way.",
-                  "feedback": "Feedback can test whether more rewriting adds value."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "overthinking-m1-l4-n3-opt2",
@@ -1838,8 +1844,8 @@
                 },
                 {
                   "id": "overthinking-m1-l4-n4-alternative-1",
-                  "label": "Look for a defined question, a stopping point and measurable improvement between revisions.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "overthinking-m1-l4-n4-opt2",
@@ -1910,8 +1916,8 @@
                 },
                 {
                   "id": "overthinking-m1-l4-n6-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "overthinking-m1-l4-n6-opt2"
@@ -1957,13 +1963,13 @@
                 },
                 {
                   "id": "overthinking-m1-l5-n2-evidence-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Jo may fear how she will be judged more than the accuracy of the answer itself.",
+                  "feedback": "This could be part of the process, though it does not by itself explain why repeated editing feels briefly relieving."
                 },
                 {
                   "id": "overthinking-m1-l5-n2-evidence-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "Jo may have learned from past interviews that minor wording differences influence outcomes.",
+                  "feedback": "Prior feedback would matter, but no such evidence is offered for these particular changes."
                 }
               ],
               "evidenceAnswer": "overthinking-m1-l5-n2-evidence-opt2",
@@ -1980,13 +1986,13 @@
                 },
                 {
                   "id": "overthinking-m1-l5-n2-response-alternative-1",
-                  "label": "What information would a seventh rewrite give you that the sixth didn't?",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Draft two alternative answers and choose between them using the job criteria, not the level of reassurance they produce.",
+                  "feedback": "Comparative criteria can help, but generating more alternatives may become another loop if never concluded."
                 },
                 {
                   "id": "overthinking-m1-l5-n2-response-alternative-2",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Keep editing until you're completely happy with your answer.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "overthinking-m1-l5-n2-response-opt2"
@@ -2014,7 +2020,7 @@
                 },
                 {
                   "id": "overthinking-m1-l5-n3-change-alternative-1",
-                  "label": "Stop preparing and distract yourself whenever you feel anxious.",
+                  "label": "Keep editing until you're completely happy with your answer.",
                   "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
@@ -2061,8 +2067,8 @@
                 },
                 {
                   "id": "overthinking-m1-l5-n4-opt3",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Jo could be addressing genuine weaknesses in her answer, particularly if each revision improves clarity or performance.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 },
                 {
                   "id": "overthinking-m1-l5-n4-opt4",
@@ -2071,8 +2077,8 @@
                 },
                 {
                   "id": "overthinking-m1-l5-n4-alternative-2",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "overthinking-m1-l5-n4-opt2",
@@ -2110,8 +2116,8 @@
                 },
                 {
                   "id": "overthinking-m1-l5-n5-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "overthinking-m1-l5-n5-opt2",
@@ -2149,8 +2155,8 @@
                 },
                 {
                   "id": "overthinking-m1-l5-n6-alternative-1",
-                  "label": "Ask an independent interviewer whether successive versions improve the answer in any observable way.",
-                  "feedback": "Feedback can test whether more rewriting adds value."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "overthinking-m1-l5-n6-opt2"
@@ -2204,8 +2210,8 @@
                 },
                 {
                   "id": "overthinking-m1-l6-n2-alternative-1",
-                  "label": "Stop preparing and distract yourself whenever you feel anxious.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Use one external mock interview, then restrict revisions to issues the feedback identifies.",
+                  "feedback": "This gives preparation a stopping rule, though an unexpected new problem could still justify a change."
                 }
               ],
               "answer": "overthinking-m1-l6-n2-opt2"
