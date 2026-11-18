@@ -83,5 +83,10 @@ Prioritise original clinical guidelines, high-quality reviews, measurement valid
 
 Public `learn-content/index.json` stays unchanged and empty until a staff member deliberately publishes a Ready lesson.
 
+## Current publishing constraints
+Course Lab currently publishes a single versioned JSON bundle per public course and caps a bundle at approximately **550 KB**. This is suitable for releasing reviewed lessons incrementally, but a completely authored 300-lesson course may eventually need per-module content bundles and lazy loading. The full blueprint is an editorial roadmap, not a claim that all 300 finished lessons can be deployed in one file today.
+
+The outline JSON files are stored as static repository assets. They are not listed or playable in Learn, but are not confidential: people with the source URL can read the plans. Staff's uncommitted authored drafts remain in that browser's IndexedDB unless explicitly exported or published.
+
 ## Suggested launch discipline
 Start with a short flagship sequence—perhaps **one five-module book** in Overthinking or Social Anxiety—and test comprehension, delayed recall and transfer with unfamiliar examples. Treat the other modules as an available editorial roadmap, not 6,000 obligations for learners.
