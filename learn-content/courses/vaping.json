@@ -910,27 +910,31 @@
                     },
                     {
                       "id": "vaping-m1-node-1-check2-opt2",
-                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                      "reply": "A group's habits can change what feels expected without anyone issuing a command.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved.",
-                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                      "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                      "reply": "Did anyone say you'd be left out?",
+                      "consequence": "A jointly agreed next step is reasonable, though the other person may still decline.",
+                      "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                     },
                     {
                       "id": "vaping-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Would you want to try it if you were here alone?",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                      "reply": "Did anyone say you'd be left out?",
+                      "consequence": "This can reveal different priorities, but it may also delay an urgent factual correction.",
+                      "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                     },
                     {
                       "id": "vaping-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Stay with the group during breaks and decline any offered vape without trying to justify the decision.",
                       "reply": "Did anyone say you'd be left out?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "This tests whether participation really depends on using nicotine, though a refusal may still feel awkward.",
+                      "feedback": "This tests whether participation really depends on using nicotine, though a refusal may still feel awkward."
                     },
                     {
-                      "id": "vaping-m1-node-1-check2-alternative-2",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "id": "vaping-m1-node-1-check2-alternative-4",
+                      "label": "Tell one trusted friend you do not want to try vaping and ask whether they would still like you to join the breaks.",
+                      "feedback": "Direct reassurance could help, although it may not be necessary if the group is already welcoming.",
+                      "reply": "Did anyone say you'd be left out?",
+                      "consequence": "Direct reassurance could help, although it may not be necessary if the group is already welcoming."
                     }
                   ],
                   "answer": "vaping-m1-node-1-check2-opt1",
@@ -1083,8 +1087,8 @@
                 },
                 {
                   "id": "vaping-m1-node-7-alternative-1",
-                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
-                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
+                  "label": "Ask whether the feared consequence has occurred in similar previous situations.",
+                  "feedback": "This would help evaluate the prediction, though the contexts need to be comparable."
                 }
               ],
               "answer": "vaping-m1-repair-opt1"
@@ -1109,8 +1113,8 @@
                 },
                 {
                   "id": "vaping-m1-plan-opt2",
-                  "label": "Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
+                  "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                 },
                 {
                   "id": "vaping-m1-plan-opt3",
@@ -1203,13 +1207,13 @@
                     },
                     {
                       "id": "vaping-m1-node-8-check1-alternative-1",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Pip may be using observed group behaviour to infer what is normal or expected. is more directly tied to the words in this scene. Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter."
                     },
                     {
                       "id": "vaping-m1-node-8-check1-alternative-2",
-                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                      "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                      "feedback": "This is a reasonable line of inquiry, although Pip may be using observed group behaviour to infer what is normal or expected. is more directly tied to the words in this scene. Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter."
                     }
                   ],
                   "answer": "vaping-m1-node-8-check1-opt1",
@@ -1296,8 +1300,8 @@
                 },
                 {
                   "id": "vaping-m1-node-10-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although Pip may be using observed group behaviour to infer what is normal or expected. is more directly tied to the words in this scene. Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter."
                 }
               ],
               "answer": "vaping-m1-view-opt1"
@@ -1334,8 +1338,8 @@
                 },
                 {
                   "id": "vaping-m1-node-9-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.",
+                  "feedback": "This is a reasonable line of inquiry, although Pip may be using observed group behaviour to infer what is normal or expected. is more directly tied to the words in this scene. Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter."
                 }
               ],
               "answer": "vaping-m1-new-opt1"
@@ -1371,8 +1375,8 @@
                 },
                 {
                   "id": "vaping-m1-node-13-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Compare statements made at the time with each person’s later recollection.",
+                  "feedback": "A contemporaneous record can help separate a mistaken memory from a disputed interpretation."
                 }
               ],
               "answer": "vaping-m1-test-opt1"
@@ -1425,8 +1429,8 @@
                 },
                 {
                   "id": "vaping-m1-node-14-evidence-alternative-1",
-                  "label": "Kai may also enjoy the effects of nicotine, so maintaining use may eventually have a different explanation than the first attempt.",
-                  "feedback": "Different stages of use can have different contributors; there is no direct evidence of dependence yet."
+                  "label": "Pip may genuinely be interested in experimenting with nicotine while also wanting to fit into the group.",
+                  "feedback": "Personal curiosity and social influence can coexist, but the immediate account does not establish either exclusively."
                 }
               ],
               "evidenceAnswer": "vaping-m1-transfer-e-opt1",
@@ -1445,8 +1449,8 @@
                 },
                 {
                   "id": "vaping-m1-node-14-response-alternative-1",
-                  "label": "Stop spending time with the group altogether whenever anyone vapes.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Stay with the group during breaks and decline any offered vape without trying to justify the decision.",
+                  "feedback": "This tests whether participation really depends on using nicotine, though a refusal may still feel awkward."
                 }
               ],
               "responseAnswer": "vaping-m1-transfer-a-opt1"
@@ -1501,8 +1505,8 @@
                 },
                 {
                   "id": "vaping-m1-l3-n3-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "vaping-m1-l3-n3-opt2",
@@ -1583,8 +1587,8 @@
                 },
                 {
                   "id": "vaping-m1-l3-n4-alternative-1",
-                  "label": "Kai may be overestimating the social cost of refusal because nobody has explicitly required him to vape.",
-                  "feedback": "The perceived norm could differ from the actual expectations of the group."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "vaping-m1-l3-n4-opt2",
@@ -1614,13 +1618,13 @@
                 },
                 {
                   "id": "vaping-m1-l3-n5-evidence-alternative-1",
-                  "label": "Vaping may make Kai feel more involved in group breaks, apart from any pharmacological effect.",
-                  "feedback": "A belonging motive is plausible, especially at first use."
+                  "label": "Kai may be overestimating the social cost of refusal because nobody has explicitly required him to vape.",
+                  "feedback": "The perceived norm could differ from the actual expectations of the group."
                 },
                 {
                   "id": "vaping-m1-l3-n5-evidence-alternative-2",
-                  "label": "Kai may also enjoy the effects of nicotine, so maintaining use may eventually have a different explanation than the first attempt.",
-                  "feedback": "Different stages of use can have different contributors; there is no direct evidence of dependence yet."
+                  "label": "Vaping may make Kai feel more involved in group breaks, apart from any pharmacological effect.",
+                  "feedback": "A belonging motive is plausible, especially at first use."
                 }
               ],
               "evidenceAnswer": "vaping-m1-l3-n5-evidence-opt2",
@@ -1637,13 +1641,13 @@
                 },
                 {
                   "id": "vaping-m1-l3-n5-response-alternative-1",
-                  "label": "Arrange a different shared break activity and observe whether the same friends participate.",
-                  "feedback": "The response may show whether the friendship extends beyond the vaping routine."
+                  "label": "Tell one friend he does not want to vape and continue joining the group's breaks.",
+                  "feedback": "This tests whether belonging really requires using nicotine."
                 },
                 {
                   "id": "vaping-m1-l3-n5-response-alternative-2",
-                  "label": "Stop spending time with the group altogether whenever anyone vapes.",
-                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                  "label": "Arrange a different shared break activity and observe whether the same friends participate.",
+                  "feedback": "The response may show whether the friendship extends beyond the vaping routine."
                 }
               ],
               "responseAnswer": "vaping-m1-l3-n5-response-opt2"
@@ -1749,8 +1753,8 @@
                     },
                     {
                       "id": "vaping-m1-l4-n2-question-opt3",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "vaping-m1-l4-n2-question-opt4",
@@ -1759,8 +1763,8 @@
                     },
                     {
                       "id": "vaping-m1-l4-n2-question-alternative-2",
-                      "label": "Kai may be overestimating the social cost of refusal because nobody has explicitly required him to vape.",
-                      "feedback": "The perceived norm could differ from the actual expectations of the group."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "vaping-m1-l4-n2-question-opt2",
@@ -1801,8 +1805,8 @@
                 },
                 {
                   "id": "vaping-m1-l4-n3-alternative-1",
-                  "label": "Compare Kai’s predicted rejection with how friends actually respond to a clear refusal.",
-                  "feedback": "This tests the perceived norm."
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "vaping-m1-l4-n3-opt2",
@@ -1840,8 +1844,8 @@
                 },
                 {
                   "id": "vaping-m1-l4-n4-alternative-1",
-                  "label": "Ask whether Kai uses nicotine when he is alone and whether cravings are developing.",
-                  "feedback": "This helps distinguish social initiation from possible dependence."
+                  "label": "Compare Kai’s predicted rejection with how friends actually respond to a clear refusal.",
+                  "feedback": "This tests the perceived norm."
                 }
               ],
               "answer": "vaping-m1-l4-n4-opt2",
@@ -1912,8 +1916,8 @@
                 },
                 {
                   "id": "vaping-m1-l4-n6-alternative-1",
-                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "Kai may be overestimating the social cost of refusal because nobody has explicitly required him to vape.",
+                  "feedback": "The perceived norm could differ from the actual expectations of the group."
                 }
               ],
               "answer": "vaping-m1-l4-n6-opt2"
@@ -1959,13 +1963,13 @@
                 },
                 {
                   "id": "vaping-m1-l5-n2-evidence-alternative-1",
-                  "label": "Kai may be overestimating the social cost of refusal because nobody has explicitly required him to vape.",
-                  "feedback": "The perceived norm could differ from the actual expectations of the group."
+                  "label": "Kai may also enjoy the effects of nicotine, so maintaining use may eventually have a different explanation than the first attempt.",
+                  "feedback": "Different stages of use can have different contributors; there is no direct evidence of dependence yet."
                 },
                 {
                   "id": "vaping-m1-l5-n2-evidence-alternative-2",
-                  "label": "Vaping may make Kai feel more involved in group breaks, apart from any pharmacological effect.",
-                  "feedback": "A belonging motive is plausible, especially at first use."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "vaping-m1-l5-n2-evidence-opt2",
@@ -1982,13 +1986,13 @@
                 },
                 {
                   "id": "vaping-m1-l5-n2-response-alternative-1",
-                  "label": "Tell one friend he does not want to vape and continue joining the group's breaks.",
-                  "feedback": "This tests whether belonging really requires using nicotine."
+                  "label": "Stop spending time with the group altogether whenever anyone vapes.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "vaping-m1-l5-n2-response-alternative-2",
-                  "label": "Arrange a different shared break activity and observe whether the same friends participate.",
-                  "feedback": "The response may show whether the friendship extends beyond the vaping routine."
+                  "label": "What evidence suggests the group expects you to vape, rather than simply enjoying your company?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "vaping-m1-l5-n2-response-opt2"
@@ -2016,8 +2020,8 @@
                 },
                 {
                   "id": "vaping-m1-l5-n3-change-alternative-1",
-                  "label": "Arrange a different shared break activity and observe whether the same friends participate.",
-                  "feedback": "The response may show whether the friendship extends beyond the vaping routine."
+                  "label": "Use a vape occasionally to avoid looking judgemental.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -2063,8 +2067,8 @@
                 },
                 {
                   "id": "vaping-m1-l5-n4-opt3",
-                  "label": "Kai may also enjoy the effects of nicotine, so maintaining use may eventually have a different explanation than the first attempt.",
-                  "feedback": "Different stages of use can have different contributors; there is no direct evidence of dependence yet."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "vaping-m1-l5-n4-opt4",
@@ -2073,8 +2077,8 @@
                 },
                 {
                   "id": "vaping-m1-l5-n4-alternative-2",
-                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "vaping-m1-l5-n4-opt2",
@@ -2112,8 +2116,8 @@
                 },
                 {
                   "id": "vaping-m1-l5-n5-alternative-1",
-                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "vaping-m1-l5-n5-opt2",
@@ -2151,8 +2155,8 @@
                 },
                 {
                   "id": "vaping-m1-l5-n6-alternative-1",
-                  "label": "Compare Kai’s predicted rejection with how friends actually respond to a clear refusal.",
-                  "feedback": "This tests the perceived norm."
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "vaping-m1-l5-n6-opt2"
@@ -2244,8 +2248,8 @@
                 },
                 {
                   "id": "vaping-m1-l6-n4-alternative-1",
-                  "label": "Ask whether Kai uses nicotine when he is alone and whether cravings are developing.",
-                  "feedback": "This helps distinguish social initiation from possible dependence."
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "vaping-m1-l6-n4-opt2",
