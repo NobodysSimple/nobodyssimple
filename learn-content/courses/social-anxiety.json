@@ -1,10 +1,804 @@
 {
   "id": "social-anxiety",
-  "version": 2,
+  "version": 3,
   "status": "published",
   "title": "Social Anxiety & Fear of Judgement",
-  "description": "Explore entering a room while feeling watched through dialogue, evidence and psychological reasoning.",
+  "description": "Start with two introductory modules on the essential ideas and how to reason from evidence. Then practise applying the ideas in a detailed case.",
   "modules": [
+    {
+      "id": "social-anxiety-foundations-01",
+      "kind": "foundation",
+      "title": "Start here · the essential ideas",
+      "cast": [
+        "Owen",
+        "Leah"
+      ],
+      "glossary": [
+        {
+          "term": "Predicted judgement",
+          "definition": "An expectation about what others are thinking, often without direct evidence.",
+          "example": "Someone assumes classmates are criticising them because two people looked up.",
+          "limit": "A prediction can be tested; it is not itself an observation."
+        },
+        {
+          "term": "Self-focused attention",
+          "definition": "Paying close attention to one's own appearance and behaviour during an interaction.",
+          "example": "A student checks their hands and posture instead of hearing the discussion.",
+          "limit": "Monitoring may feel protective while reducing attention to external information."
+        },
+        {
+          "term": "Safety behaviour",
+          "definition": "Something done mainly to prevent a feared social outcome.",
+          "example": "Someone silently rehearses every line so they cannot appear foolish.",
+          "limit": "The action may lower anxiety while preventing them from learning what happens without it."
+        },
+        {
+          "term": "Behavioural experiment",
+          "definition": "A planned way of comparing a prediction with an observable result.",
+          "example": "A student listens to the conversation, asks one question and records the actual response.",
+          "limit": "A useful experiment checks the feared prediction rather than demanding that anxiety disappear."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "social-anxiety-f1-l1",
+          "title": "What are we studying?",
+          "teach": "Feeling watched can change where your attention goes. A person may leave an interaction remembering their own discomfort more clearly than what others actually did.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-anxiety-f1-l1-n1",
+              "type": "read",
+              "title": "Start here",
+              "body": "Feeling watched can change where your attention goes. A person may leave an interaction remembering their own discomfort more clearly than what others actually did.\n\nHow can we test the feeling that everyone is judging us?",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f1-l1-n2",
+              "type": "read",
+              "title": "What predicted judgement means",
+              "body": "An expectation about what others are thinking, often without direct evidence.\n\nFor example: Someone assumes classmates are criticising them because two people looked up.\n\nOne important limit: A prediction can be tested; it is not itself an observation.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f1-l1-n3",
+              "type": "choose",
+              "title": "Find the first concept",
+              "prompt": "Consider this example: Someone assumes classmates are criticising them because two people looked up. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-anxiety-foundation:choose",
+              "explanation": "The example most directly supports predicted judgement. An expectation about what others are thinking, often without direct evidence. A prediction can be tested; it is not itself an observation.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "options": [
+                {
+                  "id": "social-anxiety-f1-l1-n3-o1",
+                  "label": "This most directly illustrates Predicted judgement.",
+                  "feedback": "This description follows from the example. An expectation about what others are thinking, often without direct evidence."
+                },
+                {
+                  "id": "social-anxiety-f1-l1-n3-o2",
+                  "label": "This most directly illustrates Self-focused attention.",
+                  "feedback": "Self-focused attention is a genuine psychological idea, but the observation by itself does not establish it. Monitoring may feel protective while reducing attention to external information."
+                },
+                {
+                  "id": "social-anxiety-f1-l1-n3-o3",
+                  "label": "This most directly illustrates Safety behaviour.",
+                  "feedback": "Safety behaviour is a genuine psychological idea, but the observation by itself does not establish it. The action may lower anxiety while preventing them from learning what happens without it."
+                },
+                {
+                  "id": "social-anxiety-f1-l1-n3-o4",
+                  "label": "This most directly illustrates Behavioural experiment.",
+                  "feedback": "Behavioural experiment is a genuine psychological idea, but the observation by itself does not establish it. A useful experiment checks the feared prediction rather than demanding that anxiety disappear."
+                },
+                {
+                  "id": "social-anxiety-f1-l1-n3-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-anxiety-f1-l1-n3-o1"
+            },
+            {
+              "id": "social-anxiety-f1-l1-n4",
+              "type": "read",
+              "title": "What self-focused attention means",
+              "body": "Paying close attention to one's own appearance and behaviour during an interaction.\n\nFor example: A student checks their hands and posture instead of hearing the discussion.\n\nOne important limit: Monitoring may feel protective while reducing attention to external information.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f1-l1-n5",
+              "type": "choose",
+              "title": "Try another example",
+              "prompt": "Consider this example: A student checks their hands and posture instead of hearing the discussion. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-anxiety-foundation:choose",
+              "explanation": "The example most directly supports self-focused attention. Paying close attention to one's own appearance and behaviour during an interaction. Monitoring may feel protective while reducing attention to external information.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "options": [
+                {
+                  "id": "social-anxiety-f1-l1-n5-o1",
+                  "label": "This most directly illustrates Predicted judgement.",
+                  "feedback": "Predicted judgement is a genuine psychological idea, but the observation by itself does not establish it. A prediction can be tested; it is not itself an observation."
+                },
+                {
+                  "id": "social-anxiety-f1-l1-n5-o2",
+                  "label": "This most directly illustrates Self-focused attention.",
+                  "feedback": "This description follows from the example. Paying close attention to one's own appearance and behaviour during an interaction."
+                },
+                {
+                  "id": "social-anxiety-f1-l1-n5-o3",
+                  "label": "This most directly illustrates Safety behaviour.",
+                  "feedback": "Safety behaviour is a genuine psychological idea, but the observation by itself does not establish it. The action may lower anxiety while preventing them from learning what happens without it."
+                },
+                {
+                  "id": "social-anxiety-f1-l1-n5-o4",
+                  "label": "This most directly illustrates Behavioural experiment.",
+                  "feedback": "Behavioural experiment is a genuine psychological idea, but the observation by itself does not establish it. A useful experiment checks the feared prediction rather than demanding that anxiety disappear."
+                },
+                {
+                  "id": "social-anxiety-f1-l1-n5-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-anxiety-f1-l1-n5-o2"
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-f1-l2",
+          "title": "Two ideas you will keep meeting",
+          "teach": "Before we use specialist words in a case, give them an everyday meaning.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-anxiety-f1-l2-n1",
+              "type": "read",
+              "title": "What safety behaviour means",
+              "body": "Something done mainly to prevent a feared social outcome.\n\nFor example: Someone silently rehearses every line so they cannot appear foolish.\n\nOne important limit: The action may lower anxiety while preventing them from learning what happens without it.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f1-l2-n2",
+              "type": "read",
+              "title": "What behavioural experiment means",
+              "body": "A planned way of comparing a prediction with an observable result.\n\nFor example: A student listens to the conversation, asks one question and records the actual response.\n\nOne important limit: A useful experiment checks the feared prediction rather than demanding that anxiety disappear.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f1-l2-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "social-anxiety-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how can we test the feeling that everyone is judging us?",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "pairs": [
+                {
+                  "id": "social-anxiety-f1-l2-n3-p0",
+                  "label": "Predicted judgement",
+                  "answer": "An expectation about what others are thinking, often without direct evidence."
+                },
+                {
+                  "id": "social-anxiety-f1-l2-n3-p1",
+                  "label": "Self-focused attention",
+                  "answer": "Paying close attention to one's own appearance and behaviour during an interaction."
+                },
+                {
+                  "id": "social-anxiety-f1-l2-n3-p2",
+                  "label": "Safety behaviour",
+                  "answer": "Something done mainly to prevent a feared social outcome."
+                },
+                {
+                  "id": "social-anxiety-f1-l2-n3-p3",
+                  "label": "Behavioural experiment",
+                  "answer": "A planned way of comparing a prediction with an observable result."
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-f1-l2-n4",
+              "type": "choose",
+              "title": "Which idea fits best?",
+              "prompt": "Consider this example: Someone silently rehearses every line so they cannot appear foolish. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-anxiety-foundation:choose",
+              "explanation": "The example most directly supports safety behaviour. Something done mainly to prevent a feared social outcome. The action may lower anxiety while preventing them from learning what happens without it.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "options": [
+                {
+                  "id": "social-anxiety-f1-l2-n4-o1",
+                  "label": "This most directly illustrates Predicted judgement.",
+                  "feedback": "Predicted judgement is a genuine psychological idea, but the observation by itself does not establish it. A prediction can be tested; it is not itself an observation."
+                },
+                {
+                  "id": "social-anxiety-f1-l2-n4-o2",
+                  "label": "This most directly illustrates Self-focused attention.",
+                  "feedback": "Self-focused attention is a genuine psychological idea, but the observation by itself does not establish it. Monitoring may feel protective while reducing attention to external information."
+                },
+                {
+                  "id": "social-anxiety-f1-l2-n4-o3",
+                  "label": "This most directly illustrates Safety behaviour.",
+                  "feedback": "This description follows from the example. Something done mainly to prevent a feared social outcome."
+                },
+                {
+                  "id": "social-anxiety-f1-l2-n4-o4",
+                  "label": "This most directly illustrates Behavioural experiment.",
+                  "feedback": "Behavioural experiment is a genuine psychological idea, but the observation by itself does not establish it. A useful experiment checks the feared prediction rather than demanding that anxiety disappear."
+                },
+                {
+                  "id": "social-anxiety-f1-l2-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-anxiety-f1-l2-n4-o3"
+            },
+            {
+              "id": "social-anxiety-f1-l2-n5",
+              "type": "read",
+              "title": "Where a term stops being useful",
+              "body": "The action may lower anxiety while preventing them from learning what happens without it.\n\nA useful experiment checks the feared prediction rather than demanding that anxiety disappear.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-f1-l3",
+          "title": "Similar words, different claims",
+          "teach": "The words sound related because they often occur together. Work out exactly what each one tells you.",
+          "objective": "Learn the basic terms before analysing applied cases.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-anxiety-f1-l3-n1",
+              "type": "read",
+              "title": "Do not skip the distinction",
+              "body": "An expectation about what others are thinking, often without direct evidence.\n\nPaying close attention to one's own appearance and behaviour during an interaction.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f1-l3-n2",
+              "type": "choose",
+              "title": "Can you tell the difference?",
+              "prompt": "Consider this example: A student listens to the conversation, asks one question and records the actual response. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-anxiety-foundation:choose",
+              "explanation": "The example most directly supports behavioural experiment. A planned way of comparing a prediction with an observable result. A useful experiment checks the feared prediction rather than demanding that anxiety disappear.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "options": [
+                {
+                  "id": "social-anxiety-f1-l3-n2-o1",
+                  "label": "This most directly illustrates Predicted judgement.",
+                  "feedback": "Predicted judgement is a genuine psychological idea, but the observation by itself does not establish it. A prediction can be tested; it is not itself an observation."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n2-o2",
+                  "label": "This most directly illustrates Self-focused attention.",
+                  "feedback": "Self-focused attention is a genuine psychological idea, but the observation by itself does not establish it. Monitoring may feel protective while reducing attention to external information."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n2-o3",
+                  "label": "This most directly illustrates Safety behaviour.",
+                  "feedback": "Safety behaviour is a genuine psychological idea, but the observation by itself does not establish it. The action may lower anxiety while preventing them from learning what happens without it."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n2-o4",
+                  "label": "This most directly illustrates Behavioural experiment.",
+                  "feedback": "This description follows from the example. A planned way of comparing a prediction with an observable result."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-anxiety-f1-l3-n2-o4"
+            },
+            {
+              "id": "social-anxiety-f1-l3-n3",
+              "type": "match",
+              "title": "Know what the words mean",
+              "prompt": "Match each term to the distinction it describes.",
+              "conceptId": "social-anxiety-foundation:match",
+              "explanation": "Read the definitions rather than relying on which word sounds most familiar. Each names a different part of how can we test the feeling that everyone is judging us?",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "pairs": [
+                {
+                  "id": "social-anxiety-f1-l3-n3-p0",
+                  "label": "Predicted judgement",
+                  "answer": "An expectation about what others are thinking, often without direct evidence."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n3-p1",
+                  "label": "Self-focused attention",
+                  "answer": "Paying close attention to one's own appearance and behaviour during an interaction."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n3-p2",
+                  "label": "Safety behaviour",
+                  "answer": "Something done mainly to prevent a feared social outcome."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n3-p3",
+                  "label": "Behavioural experiment",
+                  "answer": "A planned way of comparing a prediction with an observable result."
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-f1-l3-n4",
+              "type": "choose",
+              "title": "A second situation",
+              "prompt": "Consider this example: A student checks their hands and posture instead of hearing the discussion. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-anxiety-foundation:choose",
+              "explanation": "The example most directly supports self-focused attention. Paying close attention to one's own appearance and behaviour during an interaction. Monitoring may feel protective while reducing attention to external information.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "options": [
+                {
+                  "id": "social-anxiety-f1-l3-n4-o1",
+                  "label": "This most directly illustrates Predicted judgement.",
+                  "feedback": "Predicted judgement is a genuine psychological idea, but the observation by itself does not establish it. A prediction can be tested; it is not itself an observation."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n4-o2",
+                  "label": "This most directly illustrates Self-focused attention.",
+                  "feedback": "This description follows from the example. Paying close attention to one's own appearance and behaviour during an interaction."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n4-o3",
+                  "label": "This most directly illustrates Safety behaviour.",
+                  "feedback": "Safety behaviour is a genuine psychological idea, but the observation by itself does not establish it. The action may lower anxiety while preventing them from learning what happens without it."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n4-o4",
+                  "label": "This most directly illustrates Behavioural experiment.",
+                  "feedback": "Behavioural experiment is a genuine psychological idea, but the observation by itself does not establish it. A useful experiment checks the feared prediction rather than demanding that anxiety disappear."
+                },
+                {
+                  "id": "social-anxiety-f1-l3-n4-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-anxiety-f1-l3-n4-o2"
+            },
+            {
+              "id": "social-anxiety-f1-l3-n5",
+              "type": "read",
+              "title": "What you now know",
+              "body": "You know the difference between predicted judgement, self-focused attention, safety behaviour, behavioural experiment. Next you will see why knowing the terms is only the beginning: two people can experience the same situation differently.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-anxiety-foundations-02",
+      "kind": "foundation",
+      "title": "Before the case · how to reason",
+      "cast": [
+        "Owen",
+        "Leah"
+      ],
+      "glossary": [
+        {
+          "term": "Predicted judgement",
+          "definition": "An expectation about what others are thinking, often without direct evidence.",
+          "example": "Someone assumes classmates are criticising them because two people looked up.",
+          "limit": "A prediction can be tested; it is not itself an observation."
+        },
+        {
+          "term": "Self-focused attention",
+          "definition": "Paying close attention to one's own appearance and behaviour during an interaction.",
+          "example": "A student checks their hands and posture instead of hearing the discussion.",
+          "limit": "Monitoring may feel protective while reducing attention to external information."
+        },
+        {
+          "term": "Safety behaviour",
+          "definition": "Something done mainly to prevent a feared social outcome.",
+          "example": "Someone silently rehearses every line so they cannot appear foolish.",
+          "limit": "The action may lower anxiety while preventing them from learning what happens without it."
+        },
+        {
+          "term": "Behavioural experiment",
+          "definition": "A planned way of comparing a prediction with an observable result.",
+          "example": "A student listens to the conversation, asks one question and records the actual response.",
+          "limit": "A useful experiment checks the feared prediction rather than demanding that anxiety disappear."
+        }
+      ],
+      "lessons": [
+        {
+          "id": "social-anxiety-f2-l1",
+          "title": "First notice what happened",
+          "teach": "Read what is said before deciding why anyone said it.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-anxiety-f2-l1-n1",
+              "type": "read",
+              "title": "A situation, not a diagnosis",
+              "body": "Owen is arriving at a seminar with unfamiliar classmates. Leah walks in with him.\n\nYou can describe an event accurately while remaining uncertain about why it happened.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f2-l1-n2",
+              "type": "dialogue",
+              "title": "Listen before you interpret",
+              "prompt": "Follow the four messages. Keep the difference between the words said and their possible meaning in mind.",
+              "conceptId": "social-anxiety-foundation:dialogue",
+              "explanation": "The purpose is to connect the term to what can actually be observed.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "scenario": "Owen is arriving at a seminar with unfamiliar classmates. Leah walks in with him.",
+              "speakerA": "Owen",
+              "speakerB": "Leah",
+              "turns": [
+                {
+                  "id": "social-anxiety-f2-l1-n2-turn0",
+                  "speaker": "a",
+                  "text": "I think everyone noticed how awkward I looked coming in."
+                },
+                {
+                  "id": "social-anxiety-f2-l1-n2-turn1",
+                  "speaker": "b",
+                  "text": "What did you see them do?"
+                },
+                {
+                  "id": "social-anxiety-f2-l1-n2-turn2",
+                  "speaker": "a",
+                  "text": "Two people looked up when I opened the door."
+                },
+                {
+                  "id": "social-anxiety-f2-l1-n2-turn3",
+                  "speaker": "b",
+                  "text": "Did either of them actually react to you?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "social-anxiety-f2-l1-n2-check1",
+                  "prompt": "What is the most careful conclusion we can draw from the exchange so far?",
+                  "focusTurn": "social-anxiety-f2-l1-n2-turn3",
+                  "options": [
+                    {
+                      "id": "social-anxiety-f2-l1-n2-check1-o1",
+                      "label": "We can describe what each speaker requested, while treating any account of their motives as provisional.",
+                      "feedback": "This keeps the distinction between what was said and why it may have been said. The latter requires more evidence."
+                    },
+                    {
+                      "id": "social-anxiety-f2-l1-n2-check1-o2",
+                      "label": "We can take the last speaker’s explanation as the main cause, because it is the latest information.",
+                      "feedback": "Order of speaking does not determine evidential quality; the earlier words still matter."
+                    },
+                    {
+                      "id": "social-anxiety-f2-l1-n2-check1-o3",
+                      "label": "We can give the two speakers’ interpretations equal weight, regardless of which one fits the details.",
+                      "feedback": "Plausible alternatives can receive different weights when the observed details support them differently."
+                    },
+                    {
+                      "id": "social-anxiety-f2-l1-n2-check1-o4",
+                      "label": "We can infer that one speaker has a stable psychological trait if their response appears defensive.",
+                      "feedback": "A single interaction may reflect a situation rather than a trait that persists across settings."
+                    },
+                    {
+                      "id": "social-anxiety-f2-l1-n2-check1-o5",
+                      "label": "We can stop analysing the situation because multiple explanations remain logically possible.",
+                      "feedback": "Uncertainty is a reason to test explanations, not to abandon reasoning."
+                    }
+                  ],
+                  "answer": "social-anxiety-f2-l1-n2-check1-o1",
+                  "explanation": "People can be sincere about their experience and still have incomplete explanations of why events happened. Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+                  "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry."
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-f2-l1-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "social-anxiety-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "categories": [
+                {
+                  "id": "social-anxiety-f2-l1-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "social-anxiety-f2-l1-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "social-anxiety-f2-l1-n3-a",
+                  "label": "“I think everyone noticed how awkward I looked coming in.”",
+                  "answer": "social-anxiety-f2-l1-n3-seen"
+                },
+                {
+                  "id": "social-anxiety-f2-l1-n3-b",
+                  "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
+                  "answer": "social-anxiety-f2-l1-n3-guess"
+                },
+                {
+                  "id": "social-anxiety-f2-l1-n3-c",
+                  "label": "“What did you see them do?”",
+                  "answer": "social-anxiety-f2-l1-n3-seen"
+                },
+                {
+                  "id": "social-anxiety-f2-l1-n3-d",
+                  "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
+                  "answer": "social-anxiety-f2-l1-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-f2-l1-n4",
+              "type": "read",
+              "title": "Why the distinction matters",
+              "body": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.\n\nLooking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-f2-l2",
+          "title": "Two explanations can sound reasonable",
+          "teach": "Evidence should be able to change which explanation you prefer.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-anxiety-f2-l2-n1",
+              "type": "read",
+              "title": "Start with competing accounts",
+              "body": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.\n\nAnother possibility: The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f2-l2-n2",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "social-anxiety-foundation:investigate",
+              "explanation": "Compare his predicted reactions with observable behaviour rather than using the intensity of anxiety as the sole evidence. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "options": [
+                {
+                  "id": "social-anxiety-f2-l2-n2-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "social-anxiety-f2-l2-n2-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "social-anxiety-f2-l2-n2-o3",
+                  "label": "Compare his predicted reactions with observable behaviour rather than using the intensity of anxiety as the sole evidence.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "social-anxiety-f2-l2-n2-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "social-anxiety-f2-l2-n2-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "social-anxiety-f2-l2-n2-o3"
+            },
+            {
+              "id": "social-anxiety-f2-l2-n3",
+              "type": "read",
+              "title": "Something new has been found",
+              "body": "A classmate later invites Owen to join their discussion and refers positively to a question he asked.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f2-l2-n4",
+              "type": "choose",
+              "title": "Revise your view",
+              "prompt": "Which response to this new information is justified?",
+              "conceptId": "social-anxiety-foundation:choose",
+              "explanation": "The new social response weakens Owen's broad conclusion that everyone judged him badly, without proving that every classmate felt positively.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "options": [
+                {
+                  "id": "social-anxiety-f2-l2-n4-o1",
+                  "label": "Keep the original explanation because it initially fitted the facts.",
+                  "feedback": "A reasonable earlier account can be revised as new evidence appears."
+                },
+                {
+                  "id": "social-anxiety-f2-l2-n4-o2",
+                  "label": "Prefer the explanation that most closely matches the new detail, while keeping other plausible causes open.",
+                  "feedback": "This revises confidence in response to information rather than to the apparent sophistication of the theory."
+                },
+                {
+                  "id": "social-anxiety-f2-l2-n4-o3",
+                  "label": "Treat the new evidence as decisive proof of a single hidden intention.",
+                  "feedback": "The evidence can favour an account without establishing complete access to another person’s motives."
+                },
+                {
+                  "id": "social-anxiety-f2-l2-n4-o4",
+                  "label": "Give every explanation identical weight because certainty is impossible.",
+                  "feedback": "Uncertainty does not require all accounts to be equally likely."
+                },
+                {
+                  "id": "social-anxiety-f2-l2-n4-o5",
+                  "label": "Ignore the new detail until each speaker independently agrees on its meaning.",
+                  "feedback": "Agreement may help cooperation, but it is not a prerequisite for evaluating evidence."
+                }
+              ],
+              "answer": "social-anxiety-f2-l2-n4-o2"
+            }
+          ]
+        },
+        {
+          "id": "social-anxiety-f2-l3",
+          "title": "Ready for a real case",
+          "teach": "You have the concepts. Now practise using them without jumping beyond the evidence.",
+          "objective": "Apply foundations to observable evidence, uncertainty and proportional decisions.",
+          "version": 1,
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-anxiety-f2-l3-n1",
+              "type": "read",
+              "title": "Before you choose an explanation",
+              "body": "Feeling watched can change where your attention goes. A person may leave an interaction remembering their own discomfort more clearly than what others actually did.\n\nTry to distinguish what is directly known from the story you are telling about it.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            },
+            {
+              "id": "social-anxiety-f2-l3-n2",
+              "type": "choose",
+              "title": "Use the right word",
+              "prompt": "Consider this example: Someone silently rehearses every line so they cannot appear foolish. Which concept is most directly demonstrated, without claiming anything beyond the example?",
+              "conceptId": "social-anxiety-foundation:choose",
+              "explanation": "The example most directly supports safety behaviour. Something done mainly to prevent a feared social outcome. The action may lower anxiety while preventing them from learning what happens without it.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "options": [
+                {
+                  "id": "social-anxiety-f2-l3-n2-o1",
+                  "label": "This most directly illustrates Predicted judgement.",
+                  "feedback": "Predicted judgement is a genuine psychological idea, but the observation by itself does not establish it. A prediction can be tested; it is not itself an observation."
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n2-o2",
+                  "label": "This most directly illustrates Self-focused attention.",
+                  "feedback": "Self-focused attention is a genuine psychological idea, but the observation by itself does not establish it. Monitoring may feel protective while reducing attention to external information."
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n2-o3",
+                  "label": "This most directly illustrates Safety behaviour.",
+                  "feedback": "This description follows from the example. Something done mainly to prevent a feared social outcome."
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n2-o4",
+                  "label": "This most directly illustrates Behavioural experiment.",
+                  "feedback": "Behavioural experiment is a genuine psychological idea, but the observation by itself does not establish it. A useful experiment checks the feared prediction rather than demanding that anxiety disappear."
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n2-o5",
+                  "label": "The case requires at least two of these concepts to explain the observed event.",
+                  "feedback": "Several concepts may become relevant later, but the prompt asks for the one best-supported description at present."
+                }
+              ],
+              "answer": "social-anxiety-f2-l3-n2-o3"
+            },
+            {
+              "id": "social-anxiety-f2-l3-n3",
+              "type": "sort",
+              "title": "A description or an assumption?",
+              "prompt": "Does the sentence report something we can check, or interpret what it might mean?",
+              "conceptId": "social-anxiety-foundation:sort",
+              "explanation": "The spoken words are evidence about what was said. A theory of why somebody said them is an interpretation that may need testing.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "categories": [
+                {
+                  "id": "social-anxiety-f2-l3-n3-seen",
+                  "label": "Description of what happened"
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n3-guess",
+                  "label": "Possible explanation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "social-anxiety-f2-l3-n3-a",
+                  "label": "“I think everyone noticed how awkward I looked coming in.”",
+                  "answer": "social-anxiety-f2-l3-n3-seen"
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n3-b",
+                  "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
+                  "answer": "social-anxiety-f2-l3-n3-guess"
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n3-c",
+                  "label": "“What did you see them do?”",
+                  "answer": "social-anxiety-f2-l3-n3-seen"
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n3-d",
+                  "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
+                  "answer": "social-anxiety-f2-l3-n3-guess"
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-f2-l3-n4",
+              "type": "investigate",
+              "title": "What should we find out?",
+              "prompt": "Both interpretations are plausible. What would actually help choose between them?",
+              "conceptId": "social-anxiety-foundation:investigate",
+              "explanation": "Compare his predicted reactions with observable behaviour rather than using the intensity of anxiety as the sole evidence. The question is what would change our view, rather than what would merely confirm it.",
+              "counterexample": "Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance.",
+              "options": [
+                {
+                  "id": "social-anxiety-f2-l3-n4-o1",
+                  "label": "Ask the speakers how intense their feelings were and use the stronger reaction to identify the main cause.",
+                  "feedback": "The strength of a feeling does not establish its cause."
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n4-o2",
+                  "label": "Ask for a longer account from the speaker who was most upset, since they experienced the largest impact.",
+                  "feedback": "The account matters, but the amount of distress is not a direct test of someone else’s motive."
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n4-o3",
+                  "label": "Compare his predicted reactions with observable behaviour rather than using the intensity of anxiety as the sole evidence.",
+                  "feedback": "This observation could make a meaningful difference between the competing explanations."
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n4-o4",
+                  "label": "Find a second argument and see whether it sounds similar without comparing what changed.",
+                  "feedback": "A similar argument can occur for different reasons; comparison requires the relevant circumstances."
+                },
+                {
+                  "id": "social-anxiety-f2-l3-n4-o5",
+                  "label": "Ask an uninvolved friend to guess which personality type best describes the speaker.",
+                  "feedback": "A personality guess is less useful than identifying a testable difference between the proposed processes."
+                }
+              ],
+              "answer": "social-anxiety-f2-l3-n4-o3"
+            },
+            {
+              "id": "social-anxiety-f2-l3-n5",
+              "type": "read",
+              "title": "Next: a longer case",
+              "body": "In the next unit you will watch a longer conversation and have to decide between rival psychological interpretations. Looking up when somebody enters is not equivalent to hostile scrutiny. At the same time, an anxious interpretation cannot be disproved solely by telling someone not to worry.",
+              "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "social-anxiety-module-01",
       "title": "Entering a room while feeling watched",
@@ -87,6 +881,16 @@
                     {
                       "id": "social-anxiety-m1-node-1-check1-opt1",
                       "label": "Milo may be directing attention inward to prevent negative evaluation, losing information about the group."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-1-check1-alternative-1",
+                      "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
+                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-1-check1-alternative-2",
+                      "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
+                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                     }
                   ],
                   "answer": "social-anxiety-m1-node-1-check1-opt1",
@@ -121,6 +925,11 @@
                       "label": "Keep rehearsing until you no longer feel nervous before speaking.",
                       "reply": "Could you listen for one thing to ask them about?",
                       "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-1-check2-alternative-1",
+                      "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
+                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                     }
                   ],
                   "answer": "social-anxiety-m1-node-1-check2-opt1",
@@ -270,6 +1079,11 @@
                 {
                   "id": "social-anxiety-m1-repair-opt3",
                   "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "social-anxiety-m1-node-7-alternative-1",
+                  "label": "Compare his awareness of the group when he is rehearsing a reply versus when he is listening to others.",
+                  "feedback": "Attention allocation may help explain the persistence of uncertainty."
                 }
               ],
               "answer": "social-anxiety-m1-repair-opt1"
@@ -384,6 +1198,16 @@
                     {
                       "id": "social-anxiety-m1-node-8-check1-opt2",
                       "label": "The newer dialogue settles the cause and replaces the need to consider the group may genuinely have treated newcomers as unwelcome.."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-8-check1-alternative-1",
+                      "label": "His attention to posture may be driven by uncertainty about where to stand, not by a broader fear of judgement.",
+                      "feedback": "Practical unfamiliarity could contribute, although his stated concern is how others evaluate him."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-8-check1-alternative-2",
+                      "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
+                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                     }
                   ],
                   "answer": "social-anxiety-m1-node-8-check1-opt1",
@@ -467,6 +1291,11 @@
                 {
                   "id": "social-anxiety-m1-view-opt2",
                   "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "social-anxiety-m1-node-10-alternative-1",
+                  "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "social-anxiety-m1-view-opt1"
@@ -500,6 +1329,11 @@
                 {
                   "id": "social-anxiety-m1-new-opt1",
                   "label": "Observable engagement challenges Milo's prediction; the continuing anxiety does not prove the conversation failed. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "social-anxiety-m1-node-9-alternative-1",
+                  "label": "The group could be dismissive or unwelcoming; social fears sometimes reflect actual interpersonal experiences.",
+                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
                 }
               ],
               "answer": "social-anxiety-m1-new-opt1"
@@ -532,6 +1366,11 @@
                 {
                   "id": "social-anxiety-m1-test-opt1",
                   "label": "Look for independent observations that support the group may genuinely have treated newcomers as unwelcome. and explain the original dialogue."
+                },
+                {
+                  "id": "social-anxiety-m1-node-13-alternative-1",
+                  "label": "Compare his predicted reactions with observable behaviour rather than using the intensity of anxiety as the sole evidence.",
+                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
                 }
               ],
               "answer": "social-anxiety-m1-test-opt1"
@@ -597,6 +1436,11 @@
                 {
                   "id": "social-anxiety-m1-transfer-e-opt1",
                   "label": "Compare internal sensations with observable responses before judging how the presentation went."
+                },
+                {
+                  "id": "social-anxiety-m1-node-14-evidence-alternative-1",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "social-anxiety-m1-transfer-e-opt1",
@@ -612,6 +1456,11 @@
                 {
                   "id": "social-anxiety-m1-transfer-a-opt1",
                   "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "social-anxiety-m1-node-14-response-alternative-1",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "social-anxiety-m1-transfer-a-opt1"
@@ -706,6 +1555,11 @@
                   "id": "social-anxiety-m1-l3-n3-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "social-anxiety-m1-l3-n3-alternative-1",
+                  "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
+                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                 }
               ],
               "answer": "social-anxiety-m1-l3-n3-opt2",
@@ -740,6 +1594,11 @@
                   "id": "social-anxiety-m1-l3-n4-opt4",
                   "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
                   "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                },
+                {
+                  "id": "social-anxiety-m1-l3-n4-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "social-anxiety-m1-l3-n4-opt2",
@@ -766,6 +1625,16 @@
                   "id": "social-anxiety-m1-l3-n5-evidence-opt2",
                   "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-anxiety-m1-l3-n5-evidence-alternative-1",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                },
+                {
+                  "id": "social-anxiety-m1-l3-n5-evidence-alternative-2",
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "evidenceAnswer": "social-anxiety-m1-l3-n5-evidence-opt2",
@@ -779,6 +1648,16 @@
                   "id": "social-anxiety-m1-l3-n5-response-opt2",
                   "label": "Try giving the conversation your attention and afterwards compare your prediction with what people actually said or did.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-anxiety-m1-l3-n5-response-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                },
+                {
+                  "id": "social-anxiety-m1-l3-n5-response-alternative-2",
+                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
+                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
                 }
               ],
               "responseAnswer": "social-anxiety-m1-l3-n5-response-opt2"
@@ -884,13 +1763,18 @@
                     },
                     {
                       "id": "social-anxiety-m1-l4-n2-question-opt3",
-                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
-                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                      "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
+                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
                     },
                     {
                       "id": "social-anxiety-m1-l4-n2-question-opt4",
                       "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
                       "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    },
+                    {
+                      "id": "social-anxiety-m1-l4-n2-question-alternative-2",
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     }
                   ],
                   "answer": "social-anxiety-m1-l4-n2-question-opt2",
@@ -928,6 +1812,11 @@
                   "id": "social-anxiety-m1-l4-n4-opt4",
                   "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
                   "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                },
+                {
+                  "id": "social-anxiety-m1-l4-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "social-anxiety-m1-l4-n4-opt2",
@@ -962,6 +1851,11 @@
                   "id": "social-anxiety-m1-l4-n3-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "social-anxiety-m1-l4-n3-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "social-anxiety-m1-l4-n3-opt2",
@@ -1029,6 +1923,11 @@
                   "id": "social-anxiety-m1-l4-n6-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "social-anxiety-m1-l4-n6-alternative-1",
+                  "label": "Owen may be noticing real social cues while giving them greater negative weight than the evidence supports.",
+                  "feedback": "The classmates did look up; the leap is from noticing to hostile judgement."
                 }
               ],
               "answer": "social-anxiety-m1-l4-n6-opt2"
@@ -1071,6 +1970,16 @@
                   "id": "social-anxiety-m1-l5-n2-evidence-opt2",
                   "label": "Owen relies heavily on an internal impression of how he appears. Self-focused attention leaves him with less external evidence, which can make his feared judgement seem more convincing.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-anxiety-m1-l5-n2-evidence-alternative-1",
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                },
+                {
+                  "id": "social-anxiety-m1-l5-n2-evidence-alternative-2",
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "evidenceAnswer": "social-anxiety-m1-l5-n2-evidence-opt2",
@@ -1084,6 +1993,16 @@
                   "id": "social-anxiety-m1-l5-n2-response-opt2",
                   "label": "Try giving the conversation your attention and afterwards compare your prediction with what people actually said or did.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-anxiety-m1-l5-n2-response-alternative-1",
+                  "label": "What did people do that supports the judgement, apart from looking in your direction?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
+                },
+                {
+                  "id": "social-anxiety-m1-l5-n2-response-alternative-2",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "social-anxiety-m1-l5-n2-response-opt2"
@@ -1108,6 +2027,11 @@
                   "id": "social-anxiety-m1-l5-n3-action-opt2",
                   "label": "Try giving the conversation your attention and afterwards compare your prediction with what people actually said or did.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-anxiety-m1-l5-n3-change-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "outcomes": [
@@ -1120,6 +2044,11 @@
                   "id": "social-anxiety-m1-l5-n3-result-opt2",
                   "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
                   "feedback": ""
+                },
+                {
+                  "id": "social-anxiety-m1-l5-n3-outcome-alt",
+                  "label": "The immediate tension may ease without settling the underlying concern or establishing anyone’s motive.",
+                  "feedback": "Short-term relief is possible, but the question asks what the proposed response would most directly change."
                 }
               ],
               "correctChange": "social-anxiety-m1-l5-n3-action-opt2",
@@ -1148,13 +2077,18 @@
                 },
                 {
                   "id": "social-anxiety-m1-l5-n4-opt3",
-                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
-                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 },
                 {
                   "id": "social-anxiety-m1-l5-n4-opt4",
                   "label": "What did people do that supports the judgement, apart from looking in your direction?",
                   "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                },
+                {
+                  "id": "social-anxiety-m1-l5-n4-alternative-2",
+                  "label": "Owen may be noticing real social cues while giving them greater negative weight than the evidence supports.",
+                  "feedback": "The classmates did look up; the leap is from noticing to hostile judgement."
                 }
               ],
               "answer": "social-anxiety-m1-l5-n4-opt2",
@@ -1189,6 +2123,11 @@
                   "id": "social-anxiety-m1-l5-n5-opt4",
                   "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
                   "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                },
+                {
+                  "id": "social-anxiety-m1-l5-n5-alternative-1",
+                  "label": "Owen may be noticing real social cues while giving them greater negative weight than the evidence supports.",
+                  "feedback": "The classmates did look up; the leap is from noticing to hostile judgement."
                 }
               ],
               "answer": "social-anxiety-m1-l5-n5-opt2",
@@ -1223,6 +2162,11 @@
                   "id": "social-anxiety-m1-l5-n6-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "social-anxiety-m1-l5-n6-alternative-1",
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "social-anxiety-m1-l5-n6-opt2"
@@ -1273,6 +2217,11 @@
                   "id": "social-anxiety-m1-l6-n2-opt4",
                   "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
                   "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                },
+                {
+                  "id": "social-anxiety-m1-l6-n2-alternative-1",
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "answer": "social-anxiety-m1-l6-n2-opt2"
@@ -1349,6 +2298,11 @@
                   "id": "social-anxiety-m1-l6-n4-opt4",
                   "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
                   "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                },
+                {
+                  "id": "social-anxiety-m1-l6-n4-alternative-1",
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "social-anxiety-m1-l6-n4-opt2",
@@ -1391,6 +2345,36 @@
               "sources": "Clark & Wells (1995), social phobia model; NICE CG159 social anxiety disorder guidance."
             }
           ]
+        }
+      ],
+      "cast": [
+        "Owen",
+        "Leah"
+      ],
+      "glossary": [
+        {
+          "term": "Predicted judgement",
+          "definition": "An expectation about what others are thinking, often without direct evidence.",
+          "example": "Someone assumes classmates are criticising them because two people looked up.",
+          "limit": "A prediction can be tested; it is not itself an observation."
+        },
+        {
+          "term": "Self-focused attention",
+          "definition": "Paying close attention to one's own appearance and behaviour during an interaction.",
+          "example": "A student checks their hands and posture instead of hearing the discussion.",
+          "limit": "Monitoring may feel protective while reducing attention to external information."
+        },
+        {
+          "term": "Safety behaviour",
+          "definition": "Something done mainly to prevent a feared social outcome.",
+          "example": "Someone silently rehearses every line so they cannot appear foolish.",
+          "limit": "The action may lower anxiety while preventing them from learning what happens without it."
+        },
+        {
+          "term": "Behavioural experiment",
+          "definition": "A planned way of comparing a prediction with an observable result.",
+          "example": "A student listens to the conversation, asks one question and records the actual response.",
+          "limit": "A useful experiment checks the feared prediction rather than demanding that anxiety disappear."
         }
       ]
     }
