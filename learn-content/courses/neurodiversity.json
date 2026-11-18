@@ -1,0 +1,1213 @@
+{
+  "id": "neurodiversity",
+  "version": 1,
+  "status": "published",
+  "title": "ADHD, Autism & Neurodivergent Experience",
+  "description": "First unit: Neurodiversity as population variation. Work through real situations, competing explanations and practical choices.",
+  "modules": [
+    {
+      "id": "neurodiversity-module-01",
+      "title": "Neurodiversity as population variation",
+      "lessons": [
+        {
+          "id": "neurodiversity-m1-l1",
+          "version": 1,
+          "title": "What is really happening?",
+          "teach": "A workplace is planning a 'neurodiversity awareness' event. Mira and Tavi are reviewing how the programme describes employees.",
+          "objective": "What is really happening?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "neurodiversity-m1-l1-n1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Listen closely to what each person says and what still remains uncertain.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "scenario": "A workplace is planning a 'neurodiversity awareness' event. Mira and Tavi are reviewing how the programme describes employees.",
+              "speakerA": "Mira",
+              "speakerB": "Tavi",
+              "turns": [
+                {
+                  "id": "neurodiversity-m1-l1-n1-turn0",
+                  "speaker": "a",
+                  "text": "The draft says 'neurodiverse employees struggle with noisy offices'."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n1-turn1",
+                  "speaker": "b",
+                  "text": "That sounds too general. People have different sensory needs."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n1-turn2",
+                  "speaker": "a",
+                  "text": "Should we say every neurodivergent person needs a quiet office?"
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n1-turn3",
+                  "speaker": "b",
+                  "text": "No. Some people find a quiet room understimulating, and others benefit from it."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n1-turn4",
+                  "speaker": "a",
+                  "text": "Then how do we plan adjustments without assuming everyone is the same?"
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n1-turn5",
+                  "speaker": "b",
+                  "text": "Ask about the actual work barriers and offer choices where possible."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n1-turn6",
+                  "speaker": "a",
+                  "text": "Could we also avoid treating a diagnosis as a complete description of someone's strengths?"
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n1-turn7",
+                  "speaker": "b",
+                  "text": "Yes. It helps explain some experiences, but context and individual variation still matter."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "neurodiversity-m1-l1-n1-question",
+                  "prompt": "Which working explanation is best supported by the conversation?",
+                  "focusTurn": "neurodiversity-m1-l1-n1-turn2",
+                  "options": [
+                    {
+                      "id": "neurodiversity-m1-l1-n1-question-opt1",
+                      "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                    },
+                    {
+                      "id": "neurodiversity-m1-l1-n1-question-opt2",
+                      "label": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+                      "feedback": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment."
+                    },
+                    {
+                      "id": "neurodiversity-m1-l1-n1-question-opt3",
+                      "label": "The practical disagreement is sufficient to explain the exchange; its possible personal meaning is less relevant.",
+                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                    },
+                    {
+                      "id": "neurodiversity-m1-l1-n1-question-opt4",
+                      "label": "The intensity of the reply makes a stable individual trait more likely than a situational response.",
+                      "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    }
+                  ],
+                  "answer": "neurodiversity-m1-l1-n1-question-opt2",
+                  "explanation": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment. Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits."
+                }
+              ]
+            },
+            {
+              "id": "neurodiversity-m1-l1-n3",
+              "type": "choose",
+              "title": "Compare the explanations",
+              "prompt": "Which account explains the character’s words most convincingly without pretending we know their private thoughts?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment. Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l1-n3-opt1",
+                  "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "feedback": "This is plausible. It explains some of the disagreement, but does not always account for the strongest clues."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n3-opt2",
+                  "label": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+                  "feedback": "This hypothesis explains the speaker’s account of what the situation threatens or means to them."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n3-opt3",
+                  "label": "Both people have practical concerns, so the psychological meaning attached to the dispute is unlikely to matter.",
+                  "feedback": "Practical interests can contribute while personal meanings also affect how the conversation unfolds."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n3-opt4",
+                  "label": "The best explanation is simply that the two people want incompatible outcomes; further formulation adds little.",
+                  "feedback": "Incompatible goals explain the existence of a dispute, not necessarily the particular response to it."
+                }
+              ],
+              "answer": "neurodiversity-m1-l1-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l1-n2",
+              "type": "label",
+              "title": "Find the important lines",
+              "prompt": "Select the two lines that best show how the speaker interprets the event or what they believe is at stake.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "These lines reveal more about the meaning attached to the situation than a statement of the practical disagreement alone. Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "segments": [
+                {
+                  "id": "neurodiversity-m1-l1-n2-phrase0",
+                  "text": "“Should we say every neurodivergent person needs a quiet office?”",
+                  "answer": true
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n2-phrase1",
+                  "text": "“The draft says 'neurodiverse employees struggle with noisy offices'.”",
+                  "answer": false
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n2-phrase2",
+                  "text": "“Ask about the actual work barriers and offer choices where possible.”",
+                  "answer": true
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n2-phrase3",
+                  "text": "“That sounds too general. People have different sensory needs.”",
+                  "answer": false
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l1-n4",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "The order helps us test how a response might become self-maintaining. Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "steps": [
+                {
+                  "id": "neurodiversity-m1-l1-n4-step0",
+                  "label": "A policy begins from a broad diagnostic category"
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n4-step1",
+                  "label": "It assumes one common sensory response"
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n4-step2",
+                  "label": "A uniform adjustment is introduced"
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n4-step3",
+                  "label": "Some people benefit while others encounter a new barrier"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l1-n5",
+              "type": "read",
+              "title": "The deeper mechanism",
+              "body": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.\n\nNeurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.\n\nSome accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning."
+            },
+            {
+              "id": "neurodiversity-m1-l1-n6",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Investigate a difference that the rival explanations predict. Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l1-n6-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n6-opt2",
+                  "label": "Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n6-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "neurodiversity-m1-l1-n6-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "neurodiversity-m1-l1-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-m1-l2",
+          "version": 1,
+          "title": "Why does it keep happening?",
+          "teach": "Work out how the response might be maintained, rather than giving it a label.",
+          "objective": "Why does it keep happening?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "neurodiversity-m1-l2-n1",
+              "type": "read",
+              "title": "What could keep it going?",
+              "body": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.\n\nSome people benefit while others encounter a new barrier. A response can feel helpful in the moment while leaving the original problem unresolved.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning."
+            },
+            {
+              "id": "neurodiversity-m1-l2-n2",
+              "type": "match",
+              "title": "Connect process to evidence",
+              "prompt": "Connect each part of the case to its role in the working explanation.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "A functional explanation identifies the event, the meaning it may take on, the response and what follows. Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "pairs": [
+                {
+                  "id": "neurodiversity-m1-l2-n2-pair0",
+                  "label": "A policy begins from a broad diagnostic category",
+                  "answer": "Initial event"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n2-pair1",
+                  "label": "It assumes one common sensory response",
+                  "answer": "Possible appraisal"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n2-pair2",
+                  "label": "A uniform adjustment is introduced",
+                  "answer": "Behavioural response"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n2-pair3",
+                  "label": "Some people benefit while others encounter a new barrier",
+                  "answer": "Possible consequence"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l2-n3",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "The order helps us test how a response might become self-maintaining. Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "steps": [
+                {
+                  "id": "neurodiversity-m1-l2-n3-step0",
+                  "label": "A policy begins from a broad diagnostic category"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n3-step1",
+                  "label": "It assumes one common sensory response"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n3-step2",
+                  "label": "A uniform adjustment is introduced"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n3-step3",
+                  "label": "Some people benefit while others encounter a new barrier"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l2-n4",
+              "type": "predict",
+              "title": "What might change next?",
+              "prompt": "The other person may disagree. Which response-and-outcome pairing best protects the practical concern without assuming cooperation?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "A sound response is judged by what it makes possible, not by whether it can instantly change somebody else. Offer adjustable work conditions and ask each person what helps them perform the relevant tasks.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "changePrompt": "Response to try",
+              "changes": [
+                {
+                  "id": "neurodiversity-m1-l2-n4-action-opt1",
+                  "label": "What environmental feature causes difficulty here, and what alternative arrangement could we test?",
+                  "feedback": ""
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n4-action-opt2",
+                  "label": "Offer adjustable work conditions and ask each person what helps them perform the relevant tasks.",
+                  "feedback": ""
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "neurodiversity-m1-l2-n4-result-opt1",
+                  "label": "The other person’s interpretation may become clearer, though the original issue may still need to be resolved.",
+                  "feedback": ""
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n4-result-opt2",
+                  "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
+                  "feedback": ""
+                }
+              ],
+              "correctChange": "neurodiversity-m1-l2-n4-action-opt2",
+              "correctOutcome": "neurodiversity-m1-l2-n4-result-opt2"
+            },
+            {
+              "id": "neurodiversity-m1-l2-n5",
+              "type": "choose",
+              "title": "The maintaining consequence",
+              "prompt": "Why might the same response become more likely in a later disagreement?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment. Some people benefit while others encounter a new barrier.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l2-n5-opt1",
+                  "label": "The person does not yet have a sufficiently complete factual description of the dispute.",
+                  "feedback": "Uncertainty about facts may contribute, but it does not fully explain why the response is repeated."
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n5-opt2",
+                  "label": "The response may reduce an immediate concern, even though the longer-term interaction becomes harder.",
+                  "feedback": "This links short-term effects of behaviour to the possibility of repetition."
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n5-opt3",
+                  "label": "The behaviour is already habitual, so its consequences probably have little influence.",
+                  "feedback": "Habits and consequences can interact; they are not competing explanations by default."
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n5-opt4",
+                  "label": "The other person has not explained their feelings in the right words.",
+                  "feedback": "Communication can matter, but there may be a maintaining reward or relief independent of phrasing."
+                }
+              ],
+              "answer": "neurodiversity-m1-l2-n5-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l2-n6",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "categories": [
+                {
+                  "id": "neurodiversity-m1-l2-n6-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n6-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "neurodiversity-m1-l2-n6-item1",
+                  "label": "“Should we say every neurodivergent person needs a quiet office?”",
+                  "answer": "neurodiversity-m1-l2-n6-fact"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n6-item2",
+                  "label": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+                  "answer": "neurodiversity-m1-l2-n6-hypothesis"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n6-item3",
+                  "label": "“Ask about the actual work barriers and offer choices where possible.”",
+                  "answer": "neurodiversity-m1-l2-n6-fact"
+                },
+                {
+                  "id": "neurodiversity-m1-l2-n6-item4",
+                  "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "answer": "neurodiversity-m1-l2-n6-hypothesis"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-m1-l3",
+          "version": 1,
+          "title": "Same behaviour, different cause",
+          "teach": "Distinguish what was observed from competing explanations of the same behaviour.",
+          "objective": "Same behaviour, different cause",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "neurodiversity-m1-l3-n1",
+              "type": "read",
+              "title": "What else could explain it?",
+              "body": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.\n\nNeurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning."
+            },
+            {
+              "id": "neurodiversity-m1-l3-n2",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "categories": [
+                {
+                  "id": "neurodiversity-m1-l3-n2-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n2-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "neurodiversity-m1-l3-n2-item1",
+                  "label": "“Should we say every neurodivergent person needs a quiet office?”",
+                  "answer": "neurodiversity-m1-l3-n2-fact"
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n2-item2",
+                  "label": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+                  "answer": "neurodiversity-m1-l3-n2-hypothesis"
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n2-item3",
+                  "label": "“Ask about the actual work barriers and offer choices where possible.”",
+                  "answer": "neurodiversity-m1-l3-n2-fact"
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n2-item4",
+                  "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "answer": "neurodiversity-m1-l3-n2-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l3-n3",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l3-n3-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n3-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n3-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n3-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "neurodiversity-m1-l3-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l3-n4",
+              "type": "choose",
+              "title": "Which explanation deserves more weight?",
+              "prompt": "What makes one formulation stronger than a plausible competing account?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Look for explanatory fit and a way to be wrong. Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l3-n4-opt1",
+                  "label": "It resembles a recognised theory, so the exact details of this case matter less.",
+                  "feedback": "A theory does not become evidence merely because the scenario resembles it."
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n4-opt2",
+                  "label": "It explains more of the distinctive evidence and suggests observations that could prove it wrong.",
+                  "feedback": "An account that fits the details and can be checked is more informative than one that merely sounds plausible."
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n4-opt3",
+                  "label": "Both accounts are possible, so each deserves equal confidence until a definitive diagnosis is made.",
+                  "feedback": "Plausibility does not entail equal likelihood, and a diagnosis is not the aim."
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n4-opt4",
+                  "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
+                  "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                }
+              ],
+              "answer": "neurodiversity-m1-l3-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l3-n5",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "characterName": "Mira",
+              "scenario": "A workplace is planning a 'neurodiversity awareness' event. Mira and Tavi are reviewing how the programme describes employees.",
+              "evidenceOptions": [
+                {
+                  "id": "neurodiversity-m1-l3-n5-evidence-opt1",
+                  "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "feedback": ""
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n5-evidence-opt2",
+                  "label": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "neurodiversity-m1-l3-n5-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "neurodiversity-m1-l3-n5-response-opt1",
+                  "label": "Require formal diagnosis before discussing any barrier.",
+                  "feedback": ""
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n5-response-opt2",
+                  "label": "Offer adjustable work conditions and ask each person what helps them perform the relevant tasks.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "neurodiversity-m1-l3-n5-response-opt2"
+            },
+            {
+              "id": "neurodiversity-m1-l3-n6",
+              "type": "match",
+              "title": "Connect process to evidence",
+              "prompt": "Connect each part of the case to its role in the working explanation.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "A functional explanation identifies the event, the meaning it may take on, the response and what follows. Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "pairs": [
+                {
+                  "id": "neurodiversity-m1-l3-n6-pair0",
+                  "label": "A policy begins from a broad diagnostic category",
+                  "answer": "Initial event"
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n6-pair1",
+                  "label": "It assumes one common sensory response",
+                  "answer": "Possible appraisal"
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n6-pair2",
+                  "label": "A uniform adjustment is introduced",
+                  "answer": "Behavioural response"
+                },
+                {
+                  "id": "neurodiversity-m1-l3-n6-pair3",
+                  "label": "Some people benefit while others encounter a new barrier",
+                  "answer": "Possible consequence"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-m1-l4",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "New evidence can overturn a comfortable theory. Decide what the discovery actually changes.",
+          "objective": "What would change your mind?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "neurodiversity-m1-l4-n1",
+              "type": "read",
+              "title": "What would change the explanation?",
+              "body": "Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.\n\nA useful hypothesis should make it possible to gather evidence against it.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning."
+            },
+            {
+              "id": "neurodiversity-m1-l4-n2",
+              "type": "dialogue",
+              "title": "See what happens next",
+              "prompt": "Listen closely to what each person says and what still remains uncertain.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "scenario": "A little later in the same situation. Continue one message at a time.",
+              "speakerA": "Mira",
+              "speakerB": "Tavi",
+              "turns": [
+                {
+                  "id": "neurodiversity-m1-l4-n2-turn0",
+                  "speaker": "a",
+                  "text": "One employee asked for a quieter desk, another wants more background sound."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n2-turn1",
+                  "speaker": "b",
+                  "text": "Does that mean one of them is wrong about their sensory needs?"
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n2-turn2",
+                  "speaker": "a",
+                  "text": "No. It means we can't assign one environment to everyone."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n2-turn3",
+                  "speaker": "b",
+                  "text": "Then adjustments need to follow individual requirements rather than labels alone."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "neurodiversity-m1-l4-n2-question",
+                  "prompt": "What has become clearer about the speaker’s interpretation?",
+                  "focusTurn": "neurodiversity-m1-l4-n2-turn2",
+                  "options": [
+                    {
+                      "id": "neurodiversity-m1-l4-n2-question-opt1",
+                      "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                    },
+                    {
+                      "id": "neurodiversity-m1-l4-n2-question-opt2",
+                      "label": "This additional exchange reveals more about the speaker’s interpretation, but leaves wider personality questions open.",
+                      "feedback": "The new exchange helps us understand the situation without establishing an enduring personality style."
+                    },
+                    {
+                      "id": "neurodiversity-m1-l4-n2-question-opt3",
+                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
+                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                    },
+                    {
+                      "id": "neurodiversity-m1-l4-n2-question-opt4",
+                      "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
+                      "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    }
+                  ],
+                  "answer": "neurodiversity-m1-l4-n2-question-opt2",
+                  "explanation": "The additional wording refines the hypothesis. Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+                  "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits."
+                }
+              ]
+            },
+            {
+              "id": "neurodiversity-m1-l4-n4",
+              "type": "choose",
+              "title": "Update your interpretation",
+              "prompt": "New information: Staff surveys show contrasting preferences within the same diagnostic groups, while several employees without diagnoses report similar sensory difficulties. Which interpretation should now carry more weight?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "A formulation should change when the evidence changes. The findings strengthen a needs-led approach and weaken the assumption that diagnostic categories determine one uniform workplace preference.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l4-n4-opt1",
+                  "label": "The new details matter, but the original working explanation should remain unchanged because it was reasonable at the time.",
+                  "feedback": "An initially reasonable account still needs revising when the evidence develops."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n4-opt2",
+                  "label": "The findings strengthen a needs-led approach and weaken the assumption that diagnostic categories determine one uniform workplace preference.",
+                  "feedback": "The revised account takes the added detail seriously without claiming complete access to the person’s motives."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n4-opt3",
+                  "label": "The new information rules out every motive except the one that is now best supported.",
+                  "feedback": "Evidence can strengthen one hypothesis without proving it is the only cause."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n4-opt4",
+                  "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
+                  "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                }
+              ],
+              "answer": "neurodiversity-m1-l4-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l4-n3",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Investigate a difference that the rival explanations predict. Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l4-n3-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n3-opt2",
+                  "label": "Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n3-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n3-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "neurodiversity-m1-l4-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l4-n5",
+              "type": "label",
+              "title": "Find the important lines",
+              "prompt": "Select the two lines that best show how the speaker interprets the event or what they believe is at stake.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "These lines reveal more about the meaning attached to the situation than a statement of the practical disagreement alone. Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "segments": [
+                {
+                  "id": "neurodiversity-m1-l4-n5-phrase0",
+                  "text": "“Should we say every neurodivergent person needs a quiet office?”",
+                  "answer": true
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n5-phrase1",
+                  "text": "“The draft says 'neurodiverse employees struggle with noisy offices'.”",
+                  "answer": false
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n5-phrase2",
+                  "text": "“Ask about the actual work barriers and offer choices where possible.”",
+                  "answer": true
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n5-phrase3",
+                  "text": "“That sounds too general. People have different sensory needs.”",
+                  "answer": false
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l4-n6",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l4-n6-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n6-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n6-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "neurodiversity-m1-l4-n6-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "neurodiversity-m1-l4-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-m1-l5",
+          "version": 1,
+          "title": "Choose a workable response",
+          "teach": "Choose a response that serves a practical aim even when the other person does not cooperate.",
+          "objective": "Choose a workable response",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "neurodiversity-m1-l5-n1",
+              "type": "read",
+              "title": "Your influence has limits",
+              "body": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.\n\nAn intervention can be reasonable even when the other person refuses it.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning."
+            },
+            {
+              "id": "neurodiversity-m1-l5-n2",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "characterName": "Mira",
+              "scenario": "A workplace is planning a 'neurodiversity awareness' event. Mira and Tavi are reviewing how the programme describes employees.",
+              "evidenceOptions": [
+                {
+                  "id": "neurodiversity-m1-l5-n2-evidence-opt1",
+                  "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "feedback": ""
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n2-evidence-opt2",
+                  "label": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "neurodiversity-m1-l5-n2-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "neurodiversity-m1-l5-n2-response-opt1",
+                  "label": "Require formal diagnosis before discussing any barrier.",
+                  "feedback": ""
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n2-response-opt2",
+                  "label": "Offer adjustable work conditions and ask each person what helps them perform the relevant tasks.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "neurodiversity-m1-l5-n2-response-opt2"
+            },
+            {
+              "id": "neurodiversity-m1-l5-n3",
+              "type": "predict",
+              "title": "What might change next?",
+              "prompt": "The other person may disagree. Which response-and-outcome pairing best protects the practical concern without assuming cooperation?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "A sound response is judged by what it makes possible, not by whether it can instantly change somebody else. Offer adjustable work conditions and ask each person what helps them perform the relevant tasks.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "changePrompt": "Response to try",
+              "changes": [
+                {
+                  "id": "neurodiversity-m1-l5-n3-action-opt1",
+                  "label": "What environmental feature causes difficulty here, and what alternative arrangement could we test?",
+                  "feedback": ""
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n3-action-opt2",
+                  "label": "Offer adjustable work conditions and ask each person what helps them perform the relevant tasks.",
+                  "feedback": ""
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "neurodiversity-m1-l5-n3-result-opt1",
+                  "label": "The other person’s interpretation may become clearer, though the original issue may still need to be resolved.",
+                  "feedback": ""
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n3-result-opt2",
+                  "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
+                  "feedback": ""
+                }
+              ],
+              "correctChange": "neurodiversity-m1-l5-n3-action-opt2",
+              "correctOutcome": "neurodiversity-m1-l5-n3-result-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l5-n4",
+              "type": "choose",
+              "title": "If the first response fails",
+              "prompt": "The other person rejects a reasonable direct request and the practical concern is unresolved. What next?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Escalation can be proportionate when a direct attempt has failed. Its safety and usefulness depend on the situation. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l5-n4-opt1",
+                  "label": "Repeat reassurance until the other person no longer experiences the issue as threatening.",
+                  "feedback": "Reassurance can help but cannot guarantee action on a concrete problem."
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n4-opt2",
+                  "label": "Require formal diagnosis before discussing any barrier.",
+                  "feedback": "This makes the unresolved issue reviewable without needing to diagnose the other person."
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n4-opt3",
+                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
+                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n4-opt4",
+                  "label": "What environmental feature causes difficulty here, and what alternative arrangement could we test?",
+                  "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                }
+              ],
+              "answer": "neurodiversity-m1-l5-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l5-n5",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l5-n5-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n5-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n5-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n5-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "neurodiversity-m1-l5-n5-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l5-n6",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Investigate a difference that the rival explanations predict. Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l5-n6-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n6-opt2",
+                  "label": "Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n6-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "neurodiversity-m1-l5-n6-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "neurodiversity-m1-l5-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-m1-l6",
+          "version": 1,
+          "title": "Try it in another situation",
+          "teach": "Apply the way of reasoning to a different situation. Do not import the first case’s verdict.",
+          "objective": "Try it in another situation",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "neurodiversity-m1-l6-n1",
+              "type": "read",
+              "title": "A new situation",
+              "body": "A university assumes all autistic students prefer written communication and cancels optional face-to-face support without consulting them.\n\nDecide what you can infer from this example without assuming the same explanation must apply.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning."
+            },
+            {
+              "id": "neurodiversity-m1-l6-n2",
+              "type": "choose",
+              "title": "Apply the method elsewhere",
+              "prompt": "Consider this different situation: A university assumes all autistic students prefer written communication and cancels optional face-to-face support without consulting them. What is the strongest next step?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Transfer the reasoning method rather than an explanation from the first case. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l6-n2-opt1",
+                  "label": "Treat the visible similarity as a reliable indication that the behaviour has the same psychological function.",
+                  "feedback": "Similar behaviours can protect very different interests depending on the context."
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n2-opt2",
+                  "label": "Consider what the person could be trying to gain or avoid, then test that explanation against the circumstances and credible alternatives.",
+                  "feedback": "This asks what the behaviour might accomplish and how we could check."
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n2-opt3",
+                  "label": "Postpone all interpretation until the person can give an account of their private motives.",
+                  "feedback": "A perfect self-report may be unavailable. Tentative, revisable inferences can still be useful."
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n2-opt4",
+                  "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
+                  "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                }
+              ],
+              "answer": "neurodiversity-m1-l6-n2-opt2"
+            },
+            {
+              "id": "neurodiversity-m1-l6-n3",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "categories": [
+                {
+                  "id": "neurodiversity-m1-l6-n3-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n3-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "neurodiversity-m1-l6-n3-item1",
+                  "label": "“Should we say every neurodivergent person needs a quiet office?”",
+                  "answer": "neurodiversity-m1-l6-n3-fact"
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n3-item2",
+                  "label": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+                  "answer": "neurodiversity-m1-l6-n3-hypothesis"
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n3-item3",
+                  "label": "“Ask about the actual work barriers and offer choices where possible.”",
+                  "answer": "neurodiversity-m1-l6-n3-fact"
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n3-item4",
+                  "label": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+                  "answer": "neurodiversity-m1-l6-n3-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l6-n4",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "Investigate a difference that the rival explanations predict. Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-l6-n4-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n4-opt2",
+                  "label": "Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n4-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n4-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "neurodiversity-m1-l6-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l6-n5",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "neurodiversity-module-01:Population variation, person–environment fit and needs-led accommodation",
+              "explanation": "The order helps us test how a response might become self-maintaining. Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment. Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "counterexample": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning.",
+              "steps": [
+                {
+                  "id": "neurodiversity-m1-l6-n5-step0",
+                  "label": "A policy begins from a broad diagnostic category"
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n5-step1",
+                  "label": "It assumes one common sensory response"
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n5-step2",
+                  "label": "A uniform adjustment is introduced"
+                },
+                {
+                  "id": "neurodiversity-m1-l6-n5-step3",
+                  "label": "Some people benefit while others encounter a new barrier"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "neurodiversity-m1-l6-n6",
+              "type": "read",
+              "title": "An idea worth carrying forward",
+              "body": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.\n\nNeurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.\n\nThe purpose of the exercise is to make a better-supported judgement and choose a proportionate next step.",
+              "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
