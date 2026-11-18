@@ -9,7 +9,13 @@ import {learningNodes,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {saveLearnCompletion,saveLearnReview} from './ns-learn-progress-v2.mjs';
 const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[ch]));
 const opt=(id,label)=>'<option value="'+esc(id)+'">'+esc(label)+'</option>';
-const paragraphs=value=>String(value||'').split(/\n\s*\n/).filter(Boolean).map(x=>'<p>'+esc(x).replace(/\n/g,'<span class="ns-text-break"> </span>')+'</p>').join('');
+const inline=value=>esc(value).replace(/\\*\\*([^*]+)\\*\\*/g,'<strong>$1</strong>').replace(/(^|[^*])\\*([^*]+)\\*/g,'$1<em>$2</em>');
+const paragraphs=value=>String(value||'').split(/\\n\\s*\\n/).filter(Boolean).map(block=>{
+ const lines=block.split('\\n');
+ if(lines.every(x=>/^\\s*[-*]\\s+/.test(x)))return '<ul>'+lines.map(x=>'<li>'+inline(x.replace(/^\\s*[-*]\\s+/,''))+'</li>').join('')+'</ul>';
+ if(lines.length===1&&/^#{1,3}\\s+/.test(lines[0]))return '<h2>'+inline(lines[0].replace(/^#{1,3}\\s+/,''))+'</h2>';
+ return '<p>'+lines.map(inline).join('<br>')+'</p>';
+}).join('');
 const photo=node=>safeCourseImage(node.image)?'<figure class="ns-learn-player__figure"><img src="'+esc(node.image)+'" alt="'+esc(node.alt||'')+'" loading="lazy">'+(node.caption?'<figcaption>'+esc(node.caption)+'</figcaption>':'')+'</figure>':'';
 const fieldset=(name,options)=>'<fieldset class="ns-learn-player__choices"><legend class="sr-only">'+esc(name)+'</legend>'+options.map(o=>'<label><input type="radio" name="'+esc(name)+'" value="'+esc(o.id)+'"><span>'+esc(o.label)+'</span></label>').join('')+'</fieldset>';
 export function publishedLearnBundle(id){
