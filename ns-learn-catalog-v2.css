@@ -381,3 +381,14 @@ body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints p,body.app-body.ns-
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__new-evidence,html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints>div{background:#36513c;color:#eff4e8;border-color:#68866e}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints>div:nth-child(2){background:#544533;border-color:#846e55}
 @media(max-width:540px){body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints{grid-template-columns:1fr}}
+
+/* A small course companion appears on the welcome and completion screens. */
+body.app-body.ns-shell-v1 #main .ns-learn-player__buddy{display:flex;align-items:center;gap:11px;margin:12px 0 19px;padding:8px 12px 8px 8px;width:fit-content;border:1px solid #e0e9d6;background:#f5f9ef;border-radius:19px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__buddy-face{display:block;width:57px;height:57px;border-radius:14px;flex:none;background:url('media/lifelab/companions.png') var(--cast-x) var(--cast-y)/400% 500% no-repeat}
+body.app-body.ns-shell-v1 #main .ns-learn-player__buddy strong{display:block;font:750 15px/1.4 system-ui,sans-serif;color:#305941}
+body.app-body.ns-shell-v1 #main .ns-learn-player__buddy small{display:block;font-size:12px;color:#577860}
+body.app-body.ns-shell-v1 #main .ns-learn-player__finish-star{width:50px;height:50px;display:grid;place-items:center;background:#edf5e2;color:#45825a;border-radius:50%;font-size:29px;margin:0 0 18px}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__buddy{background:#35523d;border-color:#64836a;color:#ebf4e9}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__buddy strong{color:#f3f7ec}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__buddy small{color:#d2e5d0}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__finish-star{background:#3a5d44;color:#d0e5ac}
