@@ -55,12 +55,12 @@ function catalogue(root,{category='all',focusCourses=false}={}){
  '<div class="ns-courses-feature__copy"><span class="ns-courses-feature__category">THE LEARNING JOURNEY</span>'+
  '<h2 id="ns-courses-featured-title">Beyond the obvious.</h2>'+
  '<p>Start with the subjects you care about. Discover the science behind them, practise subtle distinctions and build up to more sophisticated reasoning. Each course will have its own clear beginning and progression.</p>'+
- '<p class="ns-courses-feature__availability"><span aria-hidden="true">✿</span> Our lessons are in development</p>'+
+ '<p class="ns-courses-feature__availability"><span aria-hidden="true">✿</span> Start learning: the first modules are ready</p>'+
  '<a class="ns-courses-feature__link" href="#learn/how-it-works">How learning will work <span aria-hidden="true">→</span></a></div>'+
  '<div class="ns-courses-feature__postmark" aria-hidden="true">✳</div></section>'+
  '<section class="ns-courses-section" id="ns-course-catalogue" aria-labelledby="ns-course-catalogue-title">'+
- sectionHead('Discover courses','Choose anything that interests you. Courses are independent—there is no compulsory giant syllabus.')+
- '<p class="ns-courses-availability" role="status">All '+LEARN_COURSES.length+' course outlines are available to explore. No course lessons have been published yet.</p>'+
+ sectionHead('Discover courses','Choose anything that interests you. Courses are independent. Begin with any first module that interests you.')+
+ '<p class="ns-courses-availability" role="status" data-learn-course-availability>Checking which course lessons are available…</p>'+
  '<div class="ns-catalogue-controls"><label class="ns-catalogue-search" for="ns-course-search"><span>Find a course</span>'+
  '<input id="ns-course-search" type="search" maxlength="90" autocomplete="off" placeholder="Try narcissism, rumination, ADHD, scams…" value="'+esc(rememberedQuery)+'"></label>'+
  '<nav class="ns-catalogue-filters" aria-label="Filter courses by category">'+
@@ -82,6 +82,9 @@ function catalogue(root,{category='all',focusCourses=false}={}){
  const update=()=>{
   rememberedQuery=input.value;
   const result=filterLearnCourses({category:current,query:rememberedQuery});
+  const available=Object.keys(getLearnIndex().courses).length;
+  const availability=root.querySelector('[data-learn-course-availability]');
+  if(availability)availability.textContent=available?available+' courses have playable first modules, each with six lessons. Later modules are still being developed.':'Checking lesson availability…';
   grid.innerHTML=result.map(card).join('');
   count.textContent=result.length+' '+(result.length===1?'course':'courses')+' found';
   empty.hidden=!!result.length;

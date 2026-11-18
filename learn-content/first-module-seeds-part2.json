@@ -1,0 +1,505 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "burnout",
+      "people": [
+        "Priya",
+        "Sam"
+      ],
+      "scene": "Priya runs a busy support service. Sam is a colleague who has noticed Priya working late for weeks.",
+      "talk": [
+        "I used to recover after a busy week. Lately I wake up tired before work even starts.",
+        "We've had an unusually demanding month. Is there any sign the workload is easing?",
+        "They added another caseload yesterday, and the vacant post still hasn't been filled.",
+        "Have you had any say in how much you're expected to manage?",
+        "I asked what could be postponed. My manager said everything was a priority.",
+        "What happens when you take your scheduled breaks?",
+        "The backlog grows and I get messages asking when reports will be ready.",
+        "So rest is being treated as time you have to make up, rather than part of the job?"
+      ],
+      "follow": [
+        "I tried taking a full day off, and I was anxious about returning.",
+        "What was waiting when you came back?",
+        "The same work, plus everything that arrived while I was away.",
+        "So recovery time hasn't changed the demands that are exhausting you."
+      ],
+      "transfer": "A nurse takes repeated wellbeing workshops while staffing shortages and unsafe workload expectations remain unchanged.",
+      "formulation": "Persistent demands exceed Priya's available time and influence. Recovery becomes difficult because the conditions that created the overload remain in place.",
+      "rival": "A short period of exceptional work can cause fatigue without a broader pattern of occupational burnout; sleep or health factors may also contribute.",
+      "counter": "Burnout is an occupational phenomenon, not a diagnosis established by tiredness alone. Individual coping cannot compensate indefinitely for unmanageable demands.",
+      "newInfo": "A workload review shows Priya's caseload has risen by 40% while staffing has fallen, and the service has rejected every request to prioritise tasks.",
+      "revision": "Documented organisational demands strongly support a structural explanation. A plan focused only on Priya's resilience would neglect the maintaining conditions.",
+      "test": "Compare demands, control and resources over time, including what happens when tasks are formally reprioritised.",
+      "process": [
+        "Workload remains above available capacity",
+        "Priya feels pressure to deliver every task",
+        "She sacrifices breaks and recovery to catch up",
+        "Reduced recovery and continuing demands worsen exhaustion"
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "responses": [
+        "Try a new relaxation app each evening while keeping the same workload.",
+        "Record the caseload and missed breaks, then request specific reprioritisation and staffing decisions with a manager.",
+        "Stop caring about quality so the workload feels easier.",
+        "Which tasks could safely be delayed, and who has authority to make that decision?"
+      ],
+      "bestResponse": 1,
+      "concept": "Job demands–resources, control and recovery",
+      "sources": "WHO ICD-11 occupational burnout; Bakker & Demerouti (2007), Job Demands–Resources model."
+    },
+    {
+      "id": "loneliness",
+      "people": [
+        "Sana",
+        "Ollie"
+      ],
+      "scene": "Sana sees friends regularly but tells Ollie she has been feeling isolated.",
+      "talk": [
+        "I went to three gatherings this week and still felt alone.",
+        "Did you want more time with people, or something different from the time you had?",
+        "I talked to everyone. I just don't think anyone knows what's actually going on with me.",
+        "Did you have a chance to share anything personal?",
+        "I tried mentioning that work has been difficult, but the conversation moved on quickly.",
+        "Was that how your friends usually respond?",
+        "Not always. I think I've started keeping everything light because I expect people won't want to hear it.",
+        "Then being with people might not be giving you the connection you're looking for."
+      ],
+      "follow": [
+        "I got another invitation, but I don't feel like going.",
+        "What would have to be different for that evening to feel connecting?",
+        "I'd like one proper conversation instead of just keeping everybody entertained.",
+        "Could you invite someone you trust to meet one-to-one?"
+      ],
+      "transfer": "Someone moves to a new town, has little social contact but feels securely connected through regular meaningful calls with close friends.",
+      "formulation": "Sana's sense of loneliness relates to a gap between the relationships she wants and the connection she experiences, not merely the number of social events.",
+      "rival": "There may be persistent dismissiveness in the group, rather than solely Sana's expectation of being misunderstood.",
+      "counter": "Social isolation and subjective loneliness overlap but are not interchangeable. A busy calendar cannot demonstrate that someone's need for connection is met.",
+      "newInfo": "One friend replies warmly to Sana's direct message about work and suggests meeting privately to talk.",
+      "revision": "The response weakens the idea that nobody is interested and suggests that the group setting may have limited the opportunity for the kind of conversation Sana needed.",
+      "test": "Look at the quality of reciprocal responses when Sana shares more directly with people she considers trustworthy.",
+      "process": [
+        "Sana wants to be known more deeply",
+        "Group conversations remain at a surface level",
+        "She anticipates dismissal and shares less",
+        "Others learn little about her needs, reinforcing the feeling of distance"
+      ],
+      "evidence": [
+        2,
+        6
+      ],
+      "responses": [
+        "Accept every invitation so you're around people more frequently.",
+        "Choose one trustworthy friend and ask for time to talk about what has been difficult, then notice how the interaction actually goes.",
+        "Tell the whole friendship group they are failing to provide enough connection.",
+        "What kind of conversation would leave you feeling known rather than simply included?"
+      ],
+      "bestResponse": 1,
+      "concept": "Perceived social connection, reciprocity and expectation cycles",
+      "sources": "Perlman & Peplau (1981), loneliness and social relationships; Cacioppo & Cacioppo (2018), loneliness."
+    },
+    {
+      "id": "social-media",
+      "people": [
+        "Riley",
+        "Ash"
+      ],
+      "scene": "Riley has been trying to stop scrolling before bed. Ash notices Riley is still holding the phone an hour after opening an app.",
+      "talk": [
+        "I meant to check one message. I've been scrolling for an hour.",
+        "What happened after you read it?",
+        "Another video loaded. I thought I'd stop after that one.",
+        "Did you know what you were looking for next?",
+        "Not really. Some were funny, some were boring, but I kept expecting a better one.",
+        "What signal tells you you've reached the end?",
+        "There isn't one. I have to decide to stop while something else is already loading.",
+        "So the app leaves the stopping point entirely to you."
+      ],
+      "follow": [
+        "I put the phone down, then picked it back up ten minutes later.",
+        "Was there a message you needed to answer?",
+        "No. I wanted to see whether anything new had appeared.",
+        "So checking for a possible reward became the reason to reopen it."
+      ],
+      "transfer": "A music streaming app automatically begins another recommended track after the one a listener chose has ended.",
+      "formulation": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+      "rival": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+      "counter": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+      "newInfo": "Riley uses the same phone for reading long articles but stops easily when an article ends. The late-night problem is concentrated in the endless short-video feed.",
+      "revision": "The contrast strengthens the stopping-cue explanation, while leaving room for differences in interest and the social meaning of each platform.",
+      "test": "Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+      "process": [
+        "Riley opens the app for a bounded task",
+        "The feed presents another possible reward without a natural ending",
+        "Riley delays the decision to stop",
+        "Time passes while the next item keeps becoming available"
+      ],
+      "evidence": [
+        4,
+        6
+      ],
+      "responses": [
+        "Rely on stronger willpower each time a new video starts.",
+        "Set a stopping cue before opening the feed, and make the next session require a deliberate new choice.",
+        "Delete every app and stop using digital media entirely.",
+        "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?"
+      ],
+      "bestResponse": 1,
+      "concept": "Variable reinforcement, friction and choice architecture",
+      "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+    },
+    {
+      "id": "misinformation",
+      "people": [
+        "Theo",
+        "Lila"
+      ],
+      "scene": "Theo shares a social-media claim that a common household substance prevents infection. Lila asks where the information came from.",
+      "talk": [
+        "I've seen that claim everywhere this week. It must have something behind it.",
+        "Are the posts coming from different studies or copying the same video?",
+        "I didn't check. It was shared by several accounts I recognise.",
+        "Do any of the posts link to an actual controlled study?",
+        "One mentions a university, but there's no title or researcher.",
+        "So how many independent sources of evidence do we have?",
+        "I suppose I don't know. It just feels familiar now.",
+        "Familiarity may explain why it feels believable, but it doesn't tell us whether it's true."
+      ],
+      "follow": [
+        "I found fifteen accounts making the same claim.",
+        "Did they independently test it?",
+        "They all link back to the same original clip.",
+        "Then we have widespread repetition of one claim, not fifteen separate confirmations."
+      ],
+      "transfer": "A political claim appears in dozens of posts that all reproduce the same unattributed screenshot. Readers mistake the number of reposts for corroboration.",
+      "formulation": "Repeated exposure can increase perceived truth even when the underlying evidence has not improved. Recognition is being used as a shortcut for evidential reliability.",
+      "rival": "The claim could still be true. Repetition alone neither establishes nor refutes the proposition; it is independent testing that changes its evidential status.",
+      "counter": "Debunking a familiar claim requires addressing the evidence. Simply calling people gullible provides no useful explanation of what was repeated or verified.",
+      "newInfo": "The earliest source turns out to be an advertisement quoting a study that tested a different substance in laboratory conditions, not a preventive treatment in humans.",
+      "revision": "The source trail undermines the health claim as presented. The original evidence does not establish the effect being asserted by the posts.",
+      "test": "Trace the earliest verifiable source, then check whether the method and findings support the specific claim being repeated.",
+      "process": [
+        "Theo encounters the same claim repeatedly",
+        "Familiarity makes the claim feel easier to accept",
+        "He treats widespread sharing as independent support",
+        "The assertion spreads without an equivalent increase in evidence"
+      ],
+      "evidence": [
+        0,
+        6
+      ],
+      "responses": [
+        "Share the claim with a warning so others can judge for themselves.",
+        "Trace the original source and compare the actual study with the claim before sharing or acting on it.",
+        "Dismiss the claim because unfamiliar people posted it.",
+        "Are these independent reports, or multiple accounts repeating the same original item?"
+      ],
+      "bestResponse": 1,
+      "concept": "Illusory truth effect, source dependence and evidential calibration",
+      "sources": "Hasher et al. (1977), frequency and validity; Fazio et al. (2015), knowledge and illusory truth."
+    },
+    {
+      "id": "neurodiversity",
+      "people": [
+        "Mira",
+        "Tavi"
+      ],
+      "scene": "A workplace is planning a 'neurodiversity awareness' event. Mira and Tavi are reviewing how the programme describes employees.",
+      "talk": [
+        "The draft says 'neurodiverse employees struggle with noisy offices'.",
+        "That sounds too general. People have different sensory needs.",
+        "Should we say every neurodivergent person needs a quiet office?",
+        "No. Some people find a quiet room understimulating, and others benefit from it.",
+        "Then how do we plan adjustments without assuming everyone is the same?",
+        "Ask about the actual work barriers and offer choices where possible.",
+        "Could we also avoid treating a diagnosis as a complete description of someone's strengths?",
+        "Yes. It helps explain some experiences, but context and individual variation still matter."
+      ],
+      "follow": [
+        "One employee asked for a quieter desk, another wants more background sound.",
+        "Does that mean one of them is wrong about their sensory needs?",
+        "No. It means we can't assign one environment to everyone.",
+        "Then adjustments need to follow individual requirements rather than labels alone."
+      ],
+      "transfer": "A university assumes all autistic students prefer written communication and cancels optional face-to-face support without consulting them.",
+      "formulation": "Neurodiversity describes variation across a population. An individual's neurotype may inform support needs, but meaningful functioning emerges from the interaction between person and environment.",
+      "rival": "Some accommodations are widely useful across groups even when they are not universally needed; individualisation does not prohibit inclusive default design.",
+      "counter": "Neurodivergence, a formal diagnosis and disability are related but distinct concepts. A population-level idea cannot be used to infer one person's traits.",
+      "newInfo": "Staff surveys show contrasting preferences within the same diagnostic groups, while several employees without diagnoses report similar sensory difficulties.",
+      "revision": "The findings strengthen a needs-led approach and weaken the assumption that diagnostic categories determine one uniform workplace preference.",
+      "test": "Ask which features of a task or environment create barriers, then evaluate whether the proposed adjustment removes them for the person concerned.",
+      "process": [
+        "A policy begins from a broad diagnostic category",
+        "It assumes one common sensory response",
+        "A uniform adjustment is introduced",
+        "Some people benefit while others encounter a new barrier"
+      ],
+      "evidence": [
+        2,
+        5
+      ],
+      "responses": [
+        "Assign one sensory adjustment to everyone who identifies as neurodivergent.",
+        "Offer adjustable work conditions and ask each person what helps them perform the relevant tasks.",
+        "Require formal diagnosis before discussing any barrier.",
+        "What environmental feature causes difficulty here, and what alternative arrangement could we test?"
+      ],
+      "bestResponse": 1,
+      "concept": "Population variation, person–environment fit and needs-led accommodation",
+      "sources": "Kapp et al. (2013), defining neurodiversity; WHO ICF (2001) disability and contextual functioning."
+    },
+    {
+      "id": "sleep",
+      "people": [
+        "Bea",
+        "Finn"
+      ],
+      "scene": "Bea finished a night shift and feels exhausted at 10 am, but has been struggling to fall asleep when she gets home.",
+      "talk": [
+        "I've been awake for sixteen hours. I should fall asleep immediately.",
+        "Do you usually find it easy to sleep when the sun is up?",
+        "No. I feel worn out, but my brain seems unusually alert at this time.",
+        "What was your sleep schedule before night shifts?",
+        "I normally wake around seven in the morning.",
+        "So you're trying to sleep when your body clock is used to waking?",
+        "That could explain why tiredness alone isn't doing the job.",
+        "Sleep pressure and your body clock may be pulling in different directions."
+      ],
+      "follow": [
+        "I slept badly after my last shift, then tried to catch up with a long late-afternoon nap.",
+        "What happened when you tried sleeping that night?",
+        "I was awake for hours even though I wanted an early night.",
+        "The timing of the nap might have changed how much sleep pressure had built up."
+      ],
+      "transfer": "A traveller feels exhausted after flying overnight yet lies awake in their hotel at the destination's usual bedtime, which is midday according to their previous body clock.",
+      "formulation": "Time awake builds homeostatic sleep pressure, while circadian timing changes biological readiness for sleep. These processes can point in different directions after shift work.",
+      "rival": "Caffeine, bright light, environment and stress may also affect Bea's alertness; a single sleep episode cannot identify one mechanism with certainty.",
+      "counter": "Feeling exhausted does not guarantee immediate sleep, and inability to sleep at a particular time does not demonstrate that sleep pressure is absent.",
+      "newInfo": "Bea sleeps more easily after several days on a consistent day-shift schedule, even when the total time awake is similar.",
+      "revision": "The difference supports a contribution from circadian timing, although work stress and light exposure also changed.",
+      "test": "Record habitual sleep times, shift schedule and light/caffeine exposure rather than judging only by tiredness.",
+      "process": [
+        "Bea remains awake through a night shift",
+        "Sleep pressure accumulates",
+        "The circadian wake signal rises in the morning",
+        "She feels tired yet finds daytime sleep difficult"
+      ],
+      "evidence": [
+        3,
+        6
+      ],
+      "responses": [
+        "Spend every possible minute in bed until sleep eventually happens.",
+        "Plan sleep around the shift pattern and use appropriate light, darkness and timing strategies while considering individual needs.",
+        "Assume that more exhaustion will always overcome any timing problem.",
+        "What clock time does your body normally expect wakefulness, and how has shift work changed that?"
+      ],
+      "bestResponse": 1,
+      "concept": "Two-process model of sleep regulation",
+      "sources": "Borbély (1982), two-process model; NICE guidance on insomnia and shift-work-related sleep difficulties."
+    },
+    {
+      "id": "low-mood",
+      "people": [
+        "Callum",
+        "Jules"
+      ],
+      "scene": "Callum has felt sad and unmotivated since failing to get a job he hoped would change his situation. Jules calls to check in.",
+      "talk": [
+        "I didn't get it. I've been miserable all week.",
+        "That mattered to you. What has the week been like?",
+        "I've cancelled plans because I don't feel like talking.",
+        "Have there been moments when anything felt enjoyable?",
+        "I laughed with my brother yesterday, then felt low again afterwards.",
+        "Is the sadness easing at all, or is it getting harder to function?",
+        "I can't tell yet. I mostly keep replaying the rejection email.",
+        "Would it help to talk about what the loss means before deciding what this mood tells you about your future?"
+      ],
+      "follow": [
+        "I turned down another invitation. I thought I'd only make everyone miserable.",
+        "Did avoiding the visit give you something you needed?",
+        "Some peace at first. Then the whole evening felt empty.",
+        "So withdrawing changes what you have available to lift your mood, too."
+      ],
+      "transfer": "A student feels low after a breakup and gradually stops attending activities that previously provided enjoyment, even as the initial acute distress changes.",
+      "formulation": "Sadness following disappointment is understandable. Withdrawal can reduce immediate social demands but also reduce access to rewarding experiences, which may maintain low mood.",
+      "rival": "Callum may need time to grieve a meaningful loss; a short period of retreat is not automatically a maladaptive cycle.",
+      "counter": "A depressive disorder cannot be inferred from one week of sadness. Duration, associated symptoms, functional impairment and wider context require assessment.",
+      "newInfo": "Over the next month Callum's low mood persists most days, his sleep changes markedly and he struggles to manage basic responsibilities.",
+      "revision": "The duration and broader functional changes make an assessment for depression more relevant than in the first week, though the vignette remains insufficient for diagnosis.",
+      "test": "Examine duration, pervasiveness, associated symptoms and functional change while considering bereavement, stress and physical health.",
+      "process": [
+        "Callum experiences a valued loss",
+        "Sadness and repetitive thoughts make activity feel harder",
+        "He cancels plans for temporary relief",
+        "Fewer rewarding encounters may prolong withdrawal and low mood"
+      ],
+      "evidence": [
+        2,
+        6
+      ],
+      "responses": [
+        "Force yourself to be happy whenever you think about the rejection.",
+        "Choose one manageable activity linked to something you value, and monitor whether participation changes your experience rather than waiting for motivation.",
+        "Ignore the disappointment and keep your schedule exactly as before.",
+        "How has avoiding plans affected what is available to you during the week?"
+      ],
+      "bestResponse": 1,
+      "concept": "Loss, behavioural withdrawal and reinforcement",
+      "sources": "Lewinsohn (1974), reinforcement and depression; NICE NG222 depression in adults."
+    },
+    {
+      "id": "scams",
+      "people": [
+        "Alina",
+        "Rob"
+      ],
+      "scene": "Alina receives a call claiming to be from her bank's fraud department. Rob is with her.",
+      "talk": [
+        "They said someone is transferring money from my account right now.",
+        "Did you call the bank, or did the call come to you?",
+        "They called me. They knew the last four digits of my card.",
+        "What are they asking you to do?",
+        "Move the balance to a 'safe account' before the transfer clears.",
+        "Are they giving you time to verify it independently?",
+        "No. They say the money will be gone in five minutes.",
+        "Then the time pressure is part of what we need to examine, not a reason to skip checking."
+      ],
+      "follow": [
+        "They told me not to hang up or I'd lose my protection.",
+        "Did they give a reason why independent contact would be unsafe?",
+        "They said the real bank staff might be involved.",
+        "That claim makes verification harder at the exact moment you need it most."
+      ],
+      "transfer": "An urgent message supposedly from a university asks a student to enter a password through a link before a scholarship offer expires.",
+      "formulation": "Authority cues and urgency narrow the space for deliberation. A claimed emergency is used to make independent verification feel costly.",
+      "rival": "Real fraud incidents do require prompt attention. What matters is verifying through a trusted independent channel rather than complying with an unsolicited instruction.",
+      "counter": "Falling for a well-designed scam is not a measure of intelligence. Pressure and credible details can influence people who normally reason carefully.",
+      "newInfo": "Alina ends the call and uses the number printed on her card. The bank confirms there is no outgoing transfer and the 'safe account' instruction was fraudulent.",
+      "revision": "Independent verification directly resolves the central claim and shows why the caller's instructions should not have been treated as authoritative.",
+      "test": "Contact the institution using a verified channel you choose rather than contact details supplied by the caller.",
+      "process": [
+        "A caller claims urgent authority",
+        "Alina imagines imminent loss of funds",
+        "The caller demands an immediate irreversible transfer",
+        "Independent checking is discouraged as time runs out"
+      ],
+      "evidence": [
+        4,
+        6
+      ],
+      "responses": [
+        "Transfer a small amount first to see whether the caller seems genuine.",
+        "End the unsolicited call and contact the bank through the number on your card or its trusted app.",
+        "Keep the caller talking until you feel completely certain they are lying.",
+        "What independently verifiable fact would show this is a genuine bank fraud process?"
+      ],
+      "bestResponse": 1,
+      "concept": "Authority, urgency and interrupted verification",
+      "sources": "UK National Cyber Security Centre guidance on phishing and social engineering; UK Finance Take Five guidance."
+    },
+    {
+      "id": "masculinity",
+      "people": [
+        "Alex",
+        "Jordan"
+      ],
+      "scene": "A college discussion is exploring sex characteristics and gender. Alex and Jordan disagree about what a questionnaire should ask.",
+      "talk": [
+        "The form asks whether people are male or female. Is it asking about sex or gender?",
+        "I assumed those were interchangeable.",
+        "But a question about reproductive health isn't always the same as a question about someone's identity.",
+        "Wouldn't it be easier to ask just one thing?",
+        "It might be shorter, but we'd lose information relevant to the actual question.",
+        "How would you decide what information the form needs?",
+        "Start with what we're trying to measure, then ask the appropriate question with enough detail.",
+        "So the category should follow the purpose, rather than treating one answer as covering everything."
+      ],
+      "follow": [
+        "The health section asks about anatomy, but the demographic section asks about identity.",
+        "Would you use the same wording for both?",
+        "No. They refer to different information and have different purposes.",
+        "Then we should explain why each is being collected and protect privacy."
+      ],
+      "transfer": "A research survey uses the term 'sex' for questions about social expectations around masculinity, creating confusion about what was actually measured.",
+      "formulation": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
+      "rival": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
+      "counter": "Sex characteristics themselves vary and are not always captured by one binary marker. No single demographic question can replace relevant clinical specifics.",
+      "newInfo": "A pilot study finds participants interpret 'male or female' inconsistently, and the responses cannot answer the original research question.",
+      "revision": "The validity problem is demonstrated empirically. The team needs to define the construct and ask questions that accurately capture it.",
+      "test": "Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.",
+      "process": [
+        "Researchers use an ambiguous category label",
+        "Participants interpret it in different ways",
+        "Responses are combined as though they represent the same construct",
+        "The study draws conclusions the measurement cannot support"
+      ],
+      "evidence": [
+        0,
+        6
+      ],
+      "responses": [
+        "Use whichever category labels are most familiar without explaining their meaning.",
+        "Define the purpose of each question and collect only the sex-related or gender-related information genuinely needed.",
+        "Remove every question about sex characteristics regardless of the study's aims.",
+        "What exactly are we trying to measure, and will this wording allow respondents to report it accurately?"
+      ],
+      "bestResponse": 1,
+      "concept": "Construct validity, gendered social expectations and biological variation",
+      "sources": "APA guidance on sex and gender in research; National Academies (2022), Measuring Sex, Gender Identity, and Sexual Orientation."
+    },
+    {
+      "id": "vaping",
+      "people": [
+        "Kai",
+        "Milo"
+      ],
+      "scene": "Kai is new to a friendship group where several people vape during breaks. Milo notices Kai has started joining them.",
+      "talk": [
+        "I didn't really want to try it, but everyone was outside vaping.",
+        "Did anyone actually ask you to take one?",
+        "No. I just felt strange being the only person standing there without one.",
+        "What did you think they'd conclude if you declined?",
+        "That I was judging them or didn't fit in.",
+        "Has anyone said that?",
+        "No, actually. One of them offered, but didn't push when I said maybe.",
+        "So part of the pressure might be what you expected the group to think."
+      ],
+      "follow": [
+        "They invited me outside again today.",
+        "Did they ask whether you'd vape?",
+        "No. They just wanted me there while they took a break.",
+        "Then belonging to the group and using nicotine might be more separable than you expected."
+      ],
+      "transfer": "A student buys expensive clothes they do not particularly like because they assume their peers expect everyone in the group to wear a certain brand.",
+      "formulation": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+      "rival": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+      "counter": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+      "newInfo": "Kai tells a friend he doesn't want to vape; the friend replies that nobody expects him to and still invites him to join every break.",
+      "revision": "The response weakens Kai's prediction of rejection for refusing. If he continues vaping, other reinforcers may require closer examination.",
+      "test": "Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+      "process": [
+        "Kai wants to feel included in a new group",
+        "He imagines refusal will signal rejection",
+        "He joins in vaping despite limited personal interest",
+        "Short-term social comfort may reinforce the behaviour"
+      ],
+      "evidence": [
+        3,
+        6
+      ],
+      "responses": [
+        "Stop spending time with the group altogether whenever anyone vapes.",
+        "Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
+        "Use a vape occasionally to avoid looking judgemental.",
+        "What evidence suggests the group expects you to vape, rather than simply enjoying your company?"
+      ],
+      "bestResponse": 1,
+      "concept": "Normative social influence, anticipated rejection and reinforcement",
+      "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+    }
+  ]
+}

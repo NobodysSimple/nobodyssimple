@@ -1,6 +1,6 @@
 {
   "id": "vaping",
-  "version": 1,
+  "version": 2,
   "status": "published",
   "title": "Social Influence & Addiction",
   "description": "Explore conformity without direct coercion through dialogue, evidence and psychological reasoning.",
@@ -602,6 +602,779 @@
             }
           ],
           "takeaway": "What everyone appears to do and what you actually want are different questions."
+        },
+        {
+          "id": "vaping-m1-l3",
+          "version": 1,
+          "title": "Same behaviour, different cause",
+          "teach": "Distinguish what was observed from competing explanations of the same behaviour.",
+          "objective": "Same behaviour, different cause",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-m1-l3-n1",
+              "type": "read",
+              "title": "What else could explain it?",
+              "body": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.\n\nSocial influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-m1-l3-n3",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l3-n3-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "vaping-m1-l3-n3-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "vaping-m1-l3-n3-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "vaping-m1-l3-n3-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "vaping-m1-l3-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l3-n2",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "categories": [
+                {
+                  "id": "vaping-m1-l3-n2-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "vaping-m1-l3-n2-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "vaping-m1-l3-n2-item1",
+                  "label": "“What did you think they'd conclude if you declined?”",
+                  "answer": "vaping-m1-l3-n2-fact"
+                },
+                {
+                  "id": "vaping-m1-l3-n2-item2",
+                  "label": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+                  "answer": "vaping-m1-l3-n2-hypothesis"
+                },
+                {
+                  "id": "vaping-m1-l3-n2-item3",
+                  "label": "“No, actually. One of them offered, but didn't push when I said maybe.”",
+                  "answer": "vaping-m1-l3-n2-fact"
+                },
+                {
+                  "id": "vaping-m1-l3-n2-item4",
+                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                  "answer": "vaping-m1-l3-n2-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l3-n4",
+              "type": "choose",
+              "title": "Which explanation deserves more weight?",
+              "prompt": "What makes one formulation stronger than a plausible competing account?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "Look for explanatory fit and a way to be wrong. Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l3-n4-opt1",
+                  "label": "It resembles a recognised theory, so the exact details of this case matter less.",
+                  "feedback": "A theory does not become evidence merely because the scenario resembles it."
+                },
+                {
+                  "id": "vaping-m1-l3-n4-opt2",
+                  "label": "It explains more of the distinctive evidence and suggests observations that could prove it wrong.",
+                  "feedback": "An account that fits the details and can be checked is more informative than one that merely sounds plausible."
+                },
+                {
+                  "id": "vaping-m1-l3-n4-opt3",
+                  "label": "Both accounts are possible, so each deserves equal confidence until a definitive diagnosis is made.",
+                  "feedback": "Plausibility does not entail equal likelihood, and a diagnosis is not the aim."
+                },
+                {
+                  "id": "vaping-m1-l3-n4-opt4",
+                  "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
+                  "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                }
+              ],
+              "answer": "vaping-m1-l3-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l3-n5",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "characterName": "Kai",
+              "scenario": "Kai is new to a friendship group where several people vape during breaks. Milo notices Kai has started joining them.",
+              "evidenceOptions": [
+                {
+                  "id": "vaping-m1-l3-n5-evidence-opt1",
+                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                  "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l3-n5-evidence-opt2",
+                  "label": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "vaping-m1-l3-n5-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "vaping-m1-l3-n5-response-opt1",
+                  "label": "Use a vape occasionally to avoid looking judgemental.",
+                  "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l3-n5-response-opt2",
+                  "label": "Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "vaping-m1-l3-n5-response-opt2"
+            },
+            {
+              "id": "vaping-m1-l3-n6",
+              "type": "match",
+              "title": "Connect process to evidence",
+              "prompt": "Connect each part of the case to its role in the working explanation.",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "A functional explanation identifies the event, the meaning it may take on, the response and what follows. Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "pairs": [
+                {
+                  "id": "vaping-m1-l3-n6-pair0",
+                  "label": "Kai wants to feel included in a new group",
+                  "answer": "Initial event"
+                },
+                {
+                  "id": "vaping-m1-l3-n6-pair1",
+                  "label": "He imagines refusal will signal rejection",
+                  "answer": "Possible appraisal"
+                },
+                {
+                  "id": "vaping-m1-l3-n6-pair2",
+                  "label": "He joins in vaping despite limited personal interest",
+                  "answer": "Behavioural response"
+                },
+                {
+                  "id": "vaping-m1-l3-n6-pair3",
+                  "label": "Short-term social comfort may reinforce the behaviour",
+                  "answer": "Possible consequence"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vaping-m1-l4",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "New evidence can overturn a comfortable theory. Decide what the discovery actually changes.",
+          "objective": "What would change your mind?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-m1-l4-n1",
+              "type": "read",
+              "title": "What would change the explanation?",
+              "body": "Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.\n\nA useful hypothesis should make it possible to gather evidence against it.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-m1-l4-n2",
+              "type": "dialogue",
+              "title": "See what happens next",
+              "prompt": "Listen closely to what each person says and what still remains uncertain.",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "scenario": "A little later in the same situation. Continue one message at a time.",
+              "speakerA": "Kai",
+              "speakerB": "Milo",
+              "turns": [
+                {
+                  "id": "vaping-m1-l4-n2-turn0",
+                  "speaker": "a",
+                  "text": "They invited me outside again today."
+                },
+                {
+                  "id": "vaping-m1-l4-n2-turn1",
+                  "speaker": "b",
+                  "text": "Did they ask whether you'd vape?"
+                },
+                {
+                  "id": "vaping-m1-l4-n2-turn2",
+                  "speaker": "a",
+                  "text": "No. They just wanted me there while they took a break."
+                },
+                {
+                  "id": "vaping-m1-l4-n2-turn3",
+                  "speaker": "b",
+                  "text": "Then belonging to the group and using nicotine might be more separable than you expected."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "vaping-m1-l4-n2-question",
+                  "prompt": "What has become clearer about the speaker’s interpretation?",
+                  "focusTurn": "vaping-m1-l4-n2-turn2",
+                  "options": [
+                    {
+                      "id": "vaping-m1-l4-n2-question-opt1",
+                      "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                    },
+                    {
+                      "id": "vaping-m1-l4-n2-question-opt2",
+                      "label": "This additional exchange reveals more about the speaker’s interpretation, but leaves wider personality questions open.",
+                      "feedback": "The new exchange helps us understand the situation without establishing an enduring personality style."
+                    },
+                    {
+                      "id": "vaping-m1-l4-n2-question-opt3",
+                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
+                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                    },
+                    {
+                      "id": "vaping-m1-l4-n2-question-opt4",
+                      "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
+                      "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    }
+                  ],
+                  "answer": "vaping-m1-l4-n2-question-opt2",
+                  "explanation": "The additional wording refines the hypothesis. Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+                  "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention."
+                }
+              ]
+            },
+            {
+              "id": "vaping-m1-l4-n3",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "Investigate a difference that the rival explanations predict. Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l4-n3-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "vaping-m1-l4-n3-opt2",
+                  "label": "Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "vaping-m1-l4-n3-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "vaping-m1-l4-n3-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "vaping-m1-l4-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l4-n4",
+              "type": "choose",
+              "title": "Update your interpretation",
+              "prompt": "New information: Kai tells a friend he doesn't want to vape; the friend replies that nobody expects him to and still invites him to join every break. Which interpretation should now carry more weight?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "A formulation should change when the evidence changes. The response weakens Kai's prediction of rejection for refusing. If he continues vaping, other reinforcers may require closer examination.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l4-n4-opt1",
+                  "label": "The new details matter, but the original working explanation should remain unchanged because it was reasonable at the time.",
+                  "feedback": "An initially reasonable account still needs revising when the evidence develops."
+                },
+                {
+                  "id": "vaping-m1-l4-n4-opt2",
+                  "label": "The response weakens Kai's prediction of rejection for refusing. If he continues vaping, other reinforcers may require closer examination.",
+                  "feedback": "The revised account takes the added detail seriously without claiming complete access to the person’s motives."
+                },
+                {
+                  "id": "vaping-m1-l4-n4-opt3",
+                  "label": "The new information rules out every motive except the one that is now best supported.",
+                  "feedback": "Evidence can strengthen one hypothesis without proving it is the only cause."
+                },
+                {
+                  "id": "vaping-m1-l4-n4-opt4",
+                  "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
+                  "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                }
+              ],
+              "answer": "vaping-m1-l4-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l4-n5",
+              "type": "label",
+              "title": "Find the important lines",
+              "prompt": "Select the two lines that best show how the speaker interprets the event or what they believe is at stake.",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "These lines reveal more about the meaning attached to the situation than a statement of the practical disagreement alone. Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "segments": [
+                {
+                  "id": "vaping-m1-l4-n5-phrase0",
+                  "text": "“What did you think they'd conclude if you declined?”",
+                  "answer": true
+                },
+                {
+                  "id": "vaping-m1-l4-n5-phrase1",
+                  "text": "“I didn't really want to try it, but everyone was outside vaping.”",
+                  "answer": false
+                },
+                {
+                  "id": "vaping-m1-l4-n5-phrase2",
+                  "text": "“No, actually. One of them offered, but didn't push when I said maybe.”",
+                  "answer": true
+                },
+                {
+                  "id": "vaping-m1-l4-n5-phrase3",
+                  "text": "“Did anyone actually ask you to take one?”",
+                  "answer": false
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l4-n6",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l4-n6-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "vaping-m1-l4-n6-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "vaping-m1-l4-n6-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "vaping-m1-l4-n6-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "vaping-m1-l4-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "vaping-m1-l5",
+          "version": 1,
+          "title": "Choose a workable response",
+          "teach": "Choose a response that serves a practical aim even when the other person does not cooperate.",
+          "objective": "Choose a workable response",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-m1-l5-n1",
+              "type": "read",
+              "title": "Your influence has limits",
+              "body": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.\n\nAn intervention can be reasonable even when the other person refuses it.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-m1-l5-n2",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "characterName": "Kai",
+              "scenario": "Kai is new to a friendship group where several people vape during breaks. Milo notices Kai has started joining them.",
+              "evidenceOptions": [
+                {
+                  "id": "vaping-m1-l5-n2-evidence-opt1",
+                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                  "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l5-n2-evidence-opt2",
+                  "label": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "vaping-m1-l5-n2-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "vaping-m1-l5-n2-response-opt1",
+                  "label": "Use a vape occasionally to avoid looking judgemental.",
+                  "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l5-n2-response-opt2",
+                  "label": "Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "vaping-m1-l5-n2-response-opt2"
+            },
+            {
+              "id": "vaping-m1-l5-n3",
+              "type": "predict",
+              "title": "What might change next?",
+              "prompt": "The other person may disagree. Which response-and-outcome pairing best protects the practical concern without assuming cooperation?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "A sound response is judged by what it makes possible, not by whether it can instantly change somebody else. Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "changePrompt": "Response to try",
+              "changes": [
+                {
+                  "id": "vaping-m1-l5-n3-action-opt1",
+                  "label": "What evidence suggests the group expects you to vape, rather than simply enjoying your company?",
+                  "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l5-n3-action-opt2",
+                  "label": "Tell the group you don't want to vape and join the break on your own terms, watching how people actually respond.",
+                  "feedback": ""
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "vaping-m1-l5-n3-result-opt1",
+                  "label": "The other person’s interpretation may become clearer, though the original issue may still need to be resolved.",
+                  "feedback": ""
+                },
+                {
+                  "id": "vaping-m1-l5-n3-result-opt2",
+                  "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
+                  "feedback": ""
+                }
+              ],
+              "correctChange": "vaping-m1-l5-n3-action-opt2",
+              "correctOutcome": "vaping-m1-l5-n3-result-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l5-n4",
+              "type": "choose",
+              "title": "If the first response fails",
+              "prompt": "The other person rejects a reasonable direct request and the practical concern is unresolved. What next?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "Escalation can be proportionate when a direct attempt has failed. Its safety and usefulness depend on the situation. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l5-n4-opt1",
+                  "label": "Repeat reassurance until the other person no longer experiences the issue as threatening.",
+                  "feedback": "Reassurance can help but cannot guarantee action on a concrete problem."
+                },
+                {
+                  "id": "vaping-m1-l5-n4-opt2",
+                  "label": "Use a vape occasionally to avoid looking judgemental.",
+                  "feedback": "This makes the unresolved issue reviewable without needing to diagnose the other person."
+                },
+                {
+                  "id": "vaping-m1-l5-n4-opt3",
+                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
+                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                },
+                {
+                  "id": "vaping-m1-l5-n4-opt4",
+                  "label": "What evidence suggests the group expects you to vape, rather than simply enjoying your company?",
+                  "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                }
+              ],
+              "answer": "vaping-m1-l5-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l5-n5",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l5-n5-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "vaping-m1-l5-n5-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "vaping-m1-l5-n5-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "vaping-m1-l5-n5-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "vaping-m1-l5-n5-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l5-n6",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "Investigate a difference that the rival explanations predict. Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l5-n6-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "vaping-m1-l5-n6-opt2",
+                  "label": "Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "vaping-m1-l5-n6-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "vaping-m1-l5-n6-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "vaping-m1-l5-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "vaping-m1-l6",
+          "version": 1,
+          "title": "Try it in another situation",
+          "teach": "Apply the way of reasoning to a different situation. Do not import the first case’s verdict.",
+          "objective": "Try it in another situation",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "vaping-m1-l6-n1",
+              "type": "read",
+              "title": "A new situation",
+              "body": "A student buys expensive clothes they do not particularly like because they assume their peers expect everyone in the group to wear a certain brand.\n\nDecide what you can infer from this example without assuming the same explanation must apply.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            },
+            {
+              "id": "vaping-m1-l6-n2",
+              "type": "choose",
+              "title": "Apply the method elsewhere",
+              "prompt": "Consider this different situation: A student buys expensive clothes they do not particularly like because they assume their peers expect everyone in the group to wear a certain brand. What is the strongest next step?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "Transfer the reasoning method rather than an explanation from the first case. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l6-n2-opt1",
+                  "label": "Treat the visible similarity as a reliable indication that the behaviour has the same psychological function.",
+                  "feedback": "Similar behaviours can protect very different interests depending on the context."
+                },
+                {
+                  "id": "vaping-m1-l6-n2-opt2",
+                  "label": "Consider what the person could be trying to gain or avoid, then test that explanation against the circumstances and credible alternatives.",
+                  "feedback": "This asks what the behaviour might accomplish and how we could check."
+                },
+                {
+                  "id": "vaping-m1-l6-n2-opt3",
+                  "label": "Postpone all interpretation until the person can give an account of their private motives.",
+                  "feedback": "A perfect self-report may be unavailable. Tentative, revisable inferences can still be useful."
+                },
+                {
+                  "id": "vaping-m1-l6-n2-opt4",
+                  "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
+                  "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                }
+              ],
+              "answer": "vaping-m1-l6-n2-opt2"
+            },
+            {
+              "id": "vaping-m1-l6-n4",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "Investigate a difference that the rival explanations predict. Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "options": [
+                {
+                  "id": "vaping-m1-l6-n4-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "vaping-m1-l6-n4-opt2",
+                  "label": "Compare Kai's anticipated social consequences with how the group responds to a clear refusal, while separately considering cravings and habit cues.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "vaping-m1-l6-n4-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "vaping-m1-l6-n4-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "vaping-m1-l6-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l6-n3",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "categories": [
+                {
+                  "id": "vaping-m1-l6-n3-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "vaping-m1-l6-n3-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "vaping-m1-l6-n3-item1",
+                  "label": "“What did you think they'd conclude if you declined?”",
+                  "answer": "vaping-m1-l6-n3-fact"
+                },
+                {
+                  "id": "vaping-m1-l6-n3-item2",
+                  "label": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.",
+                  "answer": "vaping-m1-l6-n3-hypothesis"
+                },
+                {
+                  "id": "vaping-m1-l6-n3-item3",
+                  "label": "“No, actually. One of them offered, but didn't push when I said maybe.”",
+                  "answer": "vaping-m1-l6-n3-fact"
+                },
+                {
+                  "id": "vaping-m1-l6-n3-item4",
+                  "label": "Kai may also enjoy nicotine's effects or be developing dependence, which would change what maintains vaping over time.",
+                  "answer": "vaping-m1-l6-n3-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l6-n5",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "vaping-module-01:Normative social influence, anticipated rejection and reinforcement",
+              "explanation": "The order helps us test how a response might become self-maintaining. Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity. Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "counterexample": "Social influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping.",
+              "steps": [
+                {
+                  "id": "vaping-m1-l6-n5-step0",
+                  "label": "Kai wants to feel included in a new group"
+                },
+                {
+                  "id": "vaping-m1-l6-n5-step1",
+                  "label": "He imagines refusal will signal rejection"
+                },
+                {
+                  "id": "vaping-m1-l6-n5-step2",
+                  "label": "He joins in vaping despite limited personal interest"
+                },
+                {
+                  "id": "vaping-m1-l6-n5-step3",
+                  "label": "Short-term social comfort may reinforce the behaviour"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "vaping-m1-l6-n6",
+              "type": "read",
+              "title": "An idea worth carrying forward",
+              "body": "Kai anticipates a social cost from being different and adapts his behaviour without direct coercion. Perceived norms can influence a decision even when peers do not explicitly demand conformity.\n\nSocial influence is not identical to coercion, and not all users begin through peer pressure. Nicotine dependence and health risks require separate attention.\n\nThe purpose of the exercise is to make a better-supported judgement and choose a proportionate next step.",
+              "sources": "Cialdini & Goldstein (2004), social influence; WHO evidence on nicotine dependence and adolescent vaping."
+            }
+          ]
         }
       ]
     }
