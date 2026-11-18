@@ -1,0 +1,625 @@
+{
+  "id": "burnout",
+  "version": 1,
+  "status": "published",
+  "title": "Stress, Burnout & Psychological Demands",
+  "description": "Explore a busy week versus chronic overload through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "burnout-module-01",
+      "title": "A busy week versus chronic overload",
+      "bookId": "burnout-book-1",
+      "bookTitle": "Stress is not one problem",
+      "bookNumber": 1,
+      "problem": "A busy week versus chronic overload",
+      "distinction": "A busy week versus chronic overload",
+      "lessons": [
+        {
+          "id": "burnout-m1-l1",
+          "version": 1,
+          "title": "When rest doesn't fix the workload",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of a busy week versus chronic overload.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "burnout-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "burnout-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Priya works in a clinic where the number of appointments has increased without more staff.",
+              "speakerA": "Priya",
+              "speakerB": "Morgan",
+              "turns": [
+                {
+                  "id": "burnout-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I worked through lunch again and still missed two deadlines."
+                },
+                {
+                  "id": "burnout-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "Did your workload change after the last review?"
+                },
+                {
+                  "id": "burnout-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "They added another clinic session. Nobody's hours increased."
+                },
+                {
+                  "id": "burnout-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Have you been able to recover outside work?"
+                },
+                {
+                  "id": "burnout-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "A weekend helps, but the backlog is larger every Monday."
+                },
+                {
+                  "id": "burnout-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "What happens when you show management the number of hours available?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "burnout-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "burnout-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "burnout-m1-node-1-check1-opt3",
+                      "label": "This may have been an exceptional week rather than a sustained demand problem."
+                    },
+                    {
+                      "id": "burnout-m1-node-1-check1-opt1",
+                      "label": "The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap."
+                    },
+                    {
+                      "id": "burnout-m1-node-1-check1-opt2",
+                      "label": "Priya may need a more reliable way to prioritise urgent work."
+                    }
+                  ],
+                  "answer": "burnout-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap. Priya may need a more reliable way to prioritise urgent work. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning."
+                },
+                {
+                  "id": "burnout-m1-node-1-check2",
+                  "prompt": "You are Priya. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "burnout-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "How much time was missing?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "burnout-m1-node-1-check2-opt1",
+                      "label": "Document the workload against available hours and ask which duties will be reduced or resourced.",
+                      "reply": "That is evidence for a capacity discussion, not simply a better planner.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "burnout-m1-node-1-check2-opt2",
+                      "label": "Use shorter breaks and schedule every appointment more tightly.",
+                      "reply": "What happens when you show management the number of hours available?",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "burnout-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Have you been able to recover outside work?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    }
+                  ],
+                  "answer": "burnout-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning."
+                }
+              ]
+            },
+            {
+              "id": "burnout-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "burnout-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that the demands may exceed Priya's available time and support; personal organisation alone cannot close that gap. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "burnout-m1-evidence-1",
+                  "text": "I worked through lunch again and still missed two deadlines.",
+                  "answer": false
+                },
+                {
+                  "id": "burnout-m1-evidence-2",
+                  "text": "Did your workload change after the last review?",
+                  "answer": false
+                },
+                {
+                  "id": "burnout-m1-evidence-3",
+                  "text": "They added another clinic session. Nobody's hours increased.",
+                  "answer": true
+                },
+                {
+                  "id": "burnout-m1-evidence-4",
+                  "text": "Have you been able to recover outside work?",
+                  "answer": false
+                },
+                {
+                  "id": "burnout-m1-evidence-5",
+                  "text": "A weekend helps, but the backlog is larger every Monday.",
+                  "answer": true
+                },
+                {
+                  "id": "burnout-m1-evidence-6",
+                  "text": "What happens when you show management the number of hours available?",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "burnout-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "burnout-opening-process",
+              "explanation": "The strongest candidate is the demands may exceed Priya's available time and support; personal organisation alone cannot close that gap. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "burnout-m1-rank-strong",
+                  "label": "The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap."
+                },
+                {
+                  "id": "burnout-m1-rank-rival",
+                  "label": "Priya may need a more reliable way to prioritise urgent work."
+                },
+                {
+                  "id": "burnout-m1-rank-other",
+                  "label": "This may have been an exceptional week rather than a sustained demand problem."
+                }
+              ]
+            },
+            {
+              "id": "burnout-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "burnout-opening-process",
+              "explanation": "The trigger is the clinic increases appointment demand without adding staff time. Its possible meaning is priya feels personally responsible for completing more than fits her working day. The protective behaviour may contribute to a longer-term cost: the backlog persists and opportunities for recovery shrink.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "burnout-m1-chain-1",
+                  "label": "The clinic increases appointment demand without adding staff time."
+                },
+                {
+                  "id": "burnout-m1-chain-2",
+                  "label": "Priya feels personally responsible for completing more than fits her working day."
+                },
+                {
+                  "id": "burnout-m1-chain-3",
+                  "label": "She repeatedly works through scheduled breaks."
+                },
+                {
+                  "id": "burnout-m1-chain-4",
+                  "label": "The backlog persists and opportunities for recovery shrink."
+                }
+              ]
+            },
+            {
+              "id": "burnout-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "A job-demands and resources formulation asks whether the work can be done with the time and staffing actually available. Working through breaks may temporarily reduce a backlog while hiding an unsustainable workload. Burnout concerns chronic occupational stress that has not been successfully managed, rather than an isolated busy period.\n\nFatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model."
+            },
+            {
+              "id": "burnout-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "burnout-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Document the workload against available hours and ask which duties will be reduced or resourced. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "burnout-m1-plan-opt1",
+                  "label": "Document the workload against available hours and ask which duties will be reduced or resourced."
+                },
+                {
+                  "id": "burnout-m1-plan-opt2",
+                  "label": "Use shorter breaks and schedule every appointment more tightly."
+                },
+                {
+                  "id": "burnout-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "burnout-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "burnout-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "burnout-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                }
+              ],
+              "correctChange": "burnout-m1-plan-opt1",
+              "correctOutcome": "burnout-m1-outcome-opt1"
+            },
+            {
+              "id": "burnout-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls the demands may exceed priya's available time and support; personal organisation alone cannot close that gap. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "burnout-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "burnout-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but priya may need a more reliable way to prioritise urgent work. still deserves consideration."
+                },
+                {
+                  "id": "burnout-m1-repair-opt2",
+                  "label": "Because priya may need a more reliable way to prioritise urgent work., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "burnout-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "burnout-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                }
+              ],
+              "answer": "burnout-m1-repair-opt1"
+            }
+          ],
+          "takeaway": "Rest can help you recover without making an impossible workload possible."
+        },
+        {
+          "id": "burnout-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "Earlier: Priya works in a clinic where the number of appointments has increased without more staff. Now you will test whether later evidence changes the explanation. About five minutes.",
+          "objective": "Test an account of a busy week versus chronic overload with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "burnout-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "burnout-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Priya",
+              "speakerB": "Morgan",
+              "turns": [
+                {
+                  "id": "burnout-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I mapped the required appointments against the hours we have."
+                },
+                {
+                  "id": "burnout-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "How much time was missing?"
+                },
+                {
+                  "id": "burnout-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "Nearly a whole clinic session each week before emergencies."
+                },
+                {
+                  "id": "burnout-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "That is evidence for a capacity discussion, not simply a better planner."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "burnout-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "burnout-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "burnout-m1-node-8-check1-opt1",
+                      "label": "The capacity calculation strengthens an organisational explanation and clarifies what must change. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "burnout-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider priya may need a more reliable way to prioritise urgent work.."
+                    },
+                    {
+                      "id": "burnout-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    }
+                  ],
+                  "answer": "burnout-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. The capacity calculation strengthens an organisational explanation and clarifies what must change. It still leaves open how much each factor contributed.",
+                  "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning."
+                }
+              ]
+            },
+            {
+              "id": "burnout-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "burnout-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. The capacity calculation strengthens an organisational explanation and clarifies what must change. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I mapped the required appointments against the hours we have. How much time was missing? Nearly a whole clinic session each week before emergencies. That is evidence for a capacity discussion, not simply a better planner.",
+              "options": [
+                {
+                  "id": "burnout-m1-new-opt3",
+                  "label": "The new evidence establishes priya may need a more reliable way to prioritise urgent work. as the sole explanation."
+                },
+                {
+                  "id": "burnout-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "burnout-m1-new-opt1",
+                  "label": "The capacity calculation strengthens an organisational explanation and clarifies what must change. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "burnout-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                }
+              ],
+              "answer": "burnout-m1-new-opt1"
+            },
+            {
+              "id": "burnout-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "burnout-opening-process",
+              "explanation": "The quotes record what was said. The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "burnout-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "burnout-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "burnout-m1-sort-1",
+                  "label": "Priya said: \"I worked through lunch again and still missed two deadlines.\"",
+                  "answer": "burnout-m1-cat-observation"
+                },
+                {
+                  "id": "burnout-m1-sort-2",
+                  "label": "Morgan said: \"Have you been able to recover outside work?\"",
+                  "answer": "burnout-m1-cat-observation"
+                },
+                {
+                  "id": "burnout-m1-sort-3",
+                  "label": "The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap.",
+                  "answer": "burnout-m1-cat-inference"
+                },
+                {
+                  "id": "burnout-m1-sort-4",
+                  "label": "Priya feels personally responsible for completing more than fits her working day.",
+                  "answer": "burnout-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "burnout-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "burnout-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Priya: \"I worked through lunch again and still missed two deadlines.\"",
+              "viewB": "Morgan: \"Have you been able to recover outside work?\"",
+              "options": [
+                {
+                  "id": "burnout-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "burnout-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "burnout-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "burnout-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                }
+              ],
+              "answer": "burnout-m1-view-opt1"
+            },
+            {
+              "id": "burnout-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "burnout-opening-process",
+              "explanation": "In this case, priya feels personally responsible for completing more than fits her working day. A functional account then asks whether she repeatedly works through scheduled breaks. is followed by consequences that make repetition more likely.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "burnout-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "burnout-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "burnout-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "burnout-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "burnout-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "burnout-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Priya may need a more reliable way to prioritise urgent work. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "burnout-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "burnout-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "burnout-m1-test-opt1",
+                  "label": "Look for independent observations that support priya may need a more reliable way to prioritise urgent work. and explain the original dialogue."
+                },
+                {
+                  "id": "burnout-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                }
+              ],
+              "answer": "burnout-m1-test-opt1"
+            },
+            {
+              "id": "burnout-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "burnout-opening-process",
+              "explanation": "Assess whether duties actually fit the available time before prescribing individual coping strategies. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+              "sources": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A teacher is told to be more resilient after being assigned two additional classes.",
+              "evidenceOptions": [
+                {
+                  "id": "burnout-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "burnout-m1-transfer-e-opt1",
+                  "label": "Assess whether duties actually fit the available time before prescribing individual coping strategies."
+                },
+                {
+                  "id": "burnout-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                }
+              ],
+              "evidenceAnswer": "burnout-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "burnout-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "burnout-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "burnout-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                }
+              ],
+              "responseAnswer": "burnout-m1-transfer-a-opt1"
+            }
+          ],
+          "takeaway": "When demand exceeds capacity, the missing hours are a work-design problem, not a personal failing."
+        }
+      ]
+    }
+  ]
+}

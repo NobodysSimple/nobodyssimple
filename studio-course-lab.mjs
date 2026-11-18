@@ -64,12 +64,14 @@ function editorFields(node){
  let html=head+textField('Question / task','prompt',node.prompt,{rows:3})+
  textField('Concept ID','conceptId',node.conceptId,{hint:'A stable learning concept, e.g. negative-reinforcement.'});
  if(node.type==='character')html+=textField('Character name','characterName',node.characterName)+textField('Character situation','scenario',node.scenario,{rows:4});
+ if(node.type==='update')html+=textField('New evidence revealed after the initial case','newEvidence',node.newEvidence,{rows:3});
+ if(node.type==='perspective')html+=textField('Viewpoint A','viewA',node.viewA,{rows:3})+textField('Viewpoint B','viewB',node.viewB,{rows:3});
  if(node.type==='predict')html+=textField('Condition / variable to change','changePrompt',node.changePrompt,{rows:2});
  if(node.type==='complete')html+=textField('Optional hint','hint',node.hint)+
  '<section class="cl-list"><div class="cl-list-title"><strong>Accepted answers (including variants)</strong><button data-act="add-answer" type="button">＋ Add</button></div>'+
  (node.answers||[]).map((x,i)=>'<div class="cl-row"><input aria-label="Accepted answer '+(i+1)+'" data-answer-index="'+i+'" value="'+esc(x)+'"><button type="button" data-act="remove-answer" data-pos="'+i+'">×</button></div>').join('')+'</section>';
- for(const list of ({match:['pairs'],sort:['categories','items'],label:['segments'],choose:['options'],repair:['options'],investigate:['options'],chain:['steps'],predict:['changes','outcomes'],character:['evidenceOptions','responseOptions']})[node.type]||[])html+=itemList(node,list);
- if(['choose','repair','investigate'].includes(node.type))html+=selectField('Correct answer','answer',node.options||[],node.answer);
+ for(const list of ({match:['pairs'],sort:['categories','items'],label:['segments'],choose:['options'],repair:['options'],investigate:['options'],chain:['steps'],rank:['steps'],update:['options'],perspective:['options'],predict:['changes','outcomes'],character:['evidenceOptions','responseOptions']})[node.type]||[])html+=itemList(node,list);
+ if(['choose','repair','investigate','update','perspective'].includes(node.type))html+=selectField('Correct answer','answer',node.options||[],node.answer);
  if(node.type==='predict')html+=selectField('Best change','correctChange',node.changes||[],node.correctChange)+selectField('Best predicted outcome','correctOutcome',node.outcomes||[],node.correctOutcome);
  if(node.type==='character')html+=selectField('Supported evidence','evidenceAnswer',node.evidenceOptions||[],node.evidenceAnswer)+selectField('Appropriate response','responseAnswer',node.responseOptions||[],node.responseAnswer);
  html+=textField('Explanation after answering','explanation',node.explanation,{rows:4,hint:'Explain what makes the answer justified and why plausible alternatives fall short.'})+
@@ -145,7 +147,8 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
       '<option value="draft"'+(lesson.editorialStatus!=='ready'?' selected':'')+'>Draft / needs clinical and editorial review</option>'+
       '<option value="ready"'+(lesson.editorialStatus==='ready'?' selected':'')+'>Ready: checked content, sources, answers and accessibility</option>'+
       '</select><small>Only authored lessons explicitly marked Ready are eligible for public release.</small></label>'+
-    '<label class="cl-field"><span>Optional lesson introduction</span><textarea data-meta="lesson-teach" rows="3">'+esc(lesson.teach||'')+'</textarea></label>'+
+    '<label class="cl-field"><span>Optional lesson introduction</span><textarea data-meta="lesson-teach" rows="3">'+esc(lesson.teach||'')+'</textarea></label>'+ 
+    '<label class="cl-field"><span>Lesson takeaway · shown on completion</span><textarea data-meta="lesson-takeaway" rows="2">'+esc(lesson.takeaway||'')+'</textarea></label>'+
     '<div class="cl-lesson-actions"><button data-act="lesson-up" type="button">Move lesson ↑</button><button data-act="lesson-down" type="button">Move lesson ↓</button><button data-act="delete-lesson" type="button">Delete lesson</button></div>':'<p class="cl-hint">Select a lesson in the outline, or add one to a unit.</p>';
   $('#cl-nodes').innerHTML=lesson?(lesson.nodes||[]).map((node,i)=>'<article class="cl-node '+(i===n?'active':'')+'" draggable="true" data-node-index="'+i+'"><button type="button" data-act="select-node" data-n="'+i+'"><small>'+String(i+1).padStart(2,'0')+' · '+esc(types[node.type]?.name||node.type)+'</small><strong>'+esc(node.title||node.prompt||node.body?.slice(0,65)||'Untitled node')+'</strong></button><div><button type="button" data-act="node-up" data-n="'+i+'" '+(i===0?'disabled':'')+' aria-label="Move node up">↑</button><button type="button" data-act="node-down" data-n="'+i+'" '+(i===lesson.nodes.length-1?'disabled':'')+' aria-label="Move node down">↓</button><button type="button" data-act="node-copy" data-n="'+i+'" aria-label="Duplicate node">⧉</button><button type="button" data-act="node-delete" data-n="'+i+'" aria-label="Delete node">×</button></div></article>').join('')||'<p class="cl-hint">Add reading pages and exercises in any order.</p>':'';
   $('#cl-node-fields').innerHTML=editorFields(selectedNode());
@@ -203,6 +206,7 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    if(target.dataset.meta==='unit-title'&&unit)unit.title=target.value;
    if(target.dataset.meta==='lesson-title'&&lesson)lesson.title=target.value;
    if(target.dataset.meta==='lesson-teach'&&lesson)lesson.teach=target.value;
+   if(target.dataset.meta==='lesson-takeaway'&&lesson)lesson.takeaway=target.value;
    if(target.dataset.meta==='lesson-objective'&&lesson)lesson.objective=target.value;
    if(target.dataset.meta==='lesson-mode'&&lesson)lesson.recommendedType=target.value;
    if(target.dataset.meta==='lesson-status'&&lesson)lesson.editorialStatus=target.value;

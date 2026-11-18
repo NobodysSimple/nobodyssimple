@@ -1,0 +1,625 @@
+{
+  "id": "manipulation",
+  "version": 1,
+  "status": "published",
+  "title": "Manipulation, Gaslighting & Psychological Tactics",
+  "description": "Explore persuasion versus manipulation through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "manipulation-module-01",
+      "title": "Persuasion versus manipulation",
+      "bookId": "manipulation-book-1",
+      "bookTitle": "Defining the problem",
+      "bookNumber": 1,
+      "problem": "Persuasion versus manipulation",
+      "distinction": "Persuasion versus manipulation",
+      "lessons": [
+        {
+          "id": "manipulation-m1-l1",
+          "version": 1,
+          "title": "When a favour becomes a test",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of persuasion versus manipulation.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "manipulation-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Persuasion gives somebody reasons to reconsider. Manipulative pressure can make an unrelated personal cost depend on compliance. Here, the proposed cost is being regarded as a disloyal friend. Whether this was deliberate matters less to Nina's immediate decision than the pressure the statement creates.\n\nReminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness."
+            },
+            {
+              "id": "manipulation-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Owen wants to borrow Nina's car for a weekend. Nina needs it for work.",
+              "speakerA": "Nina",
+              "speakerB": "Owen",
+              "turns": [
+                {
+                  "id": "manipulation-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I can't lend you the car on Saturday. I'm working."
+                },
+                {
+                  "id": "manipulation-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "I thought we were close friends."
+                },
+                {
+                  "id": "manipulation-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "We are. I just can't get to work without it."
+                },
+                {
+                  "id": "manipulation-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "I gave you a lift last month. I didn't realise helping only went one way."
+                },
+                {
+                  "id": "manipulation-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "I appreciated the lift. I still need the car."
+                },
+                {
+                  "id": "manipulation-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "Fine. I guess I know how much this friendship means to you."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "manipulation-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "manipulation-m1-node-1-line6",
+                  "options": [
+                    {
+                      "id": "manipulation-m1-node-1-check1-opt3",
+                      "label": "Owen thinks Nina has workable transport alternatives and is negotiating practical fairness."
+                    },
+                    {
+                      "id": "manipulation-m1-node-1-check1-opt1",
+                      "label": "Owen may be raising the emotional cost of refusing the loan by linking it to loyalty."
+                    },
+                    {
+                      "id": "manipulation-m1-node-1-check1-opt2",
+                      "label": "Owen sees past favours as creating a genuine expectation of reciprocity."
+                    }
+                  ],
+                  "answer": "manipulation-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Owen may be raising the emotional cost of refusing the loan by linking it to loyalty. Owen sees past favours as creating a genuine expectation of reciprocity. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement."
+                },
+                {
+                  "id": "manipulation-m1-node-1-check2",
+                  "prompt": "You are Nina. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "manipulation-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "I gave you a lift last month. I didn't realise helping only went one way.",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "manipulation-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "I wasn't trying to say you were bad. I thought you'd help me back.",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "manipulation-m1-node-1-check2-opt1",
+                      "label": "I valued the lift, and I value our friendship. I still need my car on Saturday.",
+                      "reply": "Probably not. I really needed the car and I pushed too hard.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "manipulation-m1-node-1-check2-opt2",
+                      "label": "I'll lend it just this once so you don't think I'm selfish.",
+                      "reply": "Fine. I guess I know how much this friendship means to you.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    }
+                  ],
+                  "answer": "manipulation-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement."
+                }
+              ]
+            },
+            {
+              "id": "manipulation-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that owen may be raising the emotional cost of refusing the loan by linking it to loyalty. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "manipulation-m1-evidence-1",
+                  "text": "I can't lend you the car on Saturday. I'm working.",
+                  "answer": false
+                },
+                {
+                  "id": "manipulation-m1-evidence-2",
+                  "text": "I thought we were close friends.",
+                  "answer": false
+                },
+                {
+                  "id": "manipulation-m1-evidence-3",
+                  "text": "We are. I just can't get to work without it.",
+                  "answer": false
+                },
+                {
+                  "id": "manipulation-m1-evidence-4",
+                  "text": "I gave you a lift last month. I didn't realise helping only went one way.",
+                  "answer": true
+                },
+                {
+                  "id": "manipulation-m1-evidence-5",
+                  "text": "I appreciated the lift. I still need the car.",
+                  "answer": false
+                },
+                {
+                  "id": "manipulation-m1-evidence-6",
+                  "text": "Fine. I guess I know how much this friendship means to you.",
+                  "answer": true
+                }
+              ]
+            },
+            {
+              "id": "manipulation-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "The strongest candidate is owen may be raising the emotional cost of refusing the loan by linking it to loyalty. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "manipulation-m1-rank-strong",
+                  "label": "Owen may be raising the emotional cost of refusing the loan by linking it to loyalty."
+                },
+                {
+                  "id": "manipulation-m1-rank-rival",
+                  "label": "Owen sees past favours as creating a genuine expectation of reciprocity."
+                },
+                {
+                  "id": "manipulation-m1-rank-other",
+                  "label": "Owen thinks Nina has workable transport alternatives and is negotiating practical fairness."
+                }
+              ]
+            },
+            {
+              "id": "manipulation-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "The trigger is nina refuses the car loan because she needs it. Its possible meaning is owen treats refusal as evidence of inadequate reciprocity. The protective behaviour may contribute to a longer-term cost: nina may feel obliged to prove her friendship by giving up necessary transport.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "manipulation-m1-chain-1",
+                  "label": "Nina refuses the car loan because she needs it."
+                },
+                {
+                  "id": "manipulation-m1-chain-2",
+                  "label": "Owen treats refusal as evidence of inadequate reciprocity."
+                },
+                {
+                  "id": "manipulation-m1-chain-3",
+                  "label": "Owen invokes friendship and earlier help."
+                },
+                {
+                  "id": "manipulation-m1-chain-4",
+                  "label": "Nina may feel obliged to prove her friendship by giving up necessary transport."
+                }
+              ]
+            },
+            {
+              "id": "manipulation-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls owen may be raising the emotional cost of refusing the loan by linking it to loyalty. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "manipulation-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "manipulation-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but owen sees past favours as creating a genuine expectation of reciprocity. still deserves consideration."
+                },
+                {
+                  "id": "manipulation-m1-repair-opt2",
+                  "label": "Because owen sees past favours as creating a genuine expectation of reciprocity., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "manipulation-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                }
+              ],
+              "answer": "manipulation-m1-repair-opt1"
+            },
+            {
+              "id": "manipulation-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: I valued the lift, and I value our friendship. I still need my car on Saturday. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "manipulation-m1-plan-opt1",
+                  "label": "I valued the lift, and I value our friendship. I still need my car on Saturday."
+                },
+                {
+                  "id": "manipulation-m1-plan-opt2",
+                  "label": "I'll lend it just this once so you don't think I'm selfish."
+                },
+                {
+                  "id": "manipulation-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "manipulation-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "manipulation-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "manipulation-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                }
+              ],
+              "correctChange": "manipulation-m1-plan-opt1",
+              "correctOutcome": "manipulation-m1-outcome-opt1"
+            }
+          ],
+          "takeaway": "When refusing a favour becomes a test of loyalty, the request has changed."
+        },
+        {
+          "id": "manipulation-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "Earlier: Owen wants to borrow Nina's car for a weekend. Nina needs it for work. Now you will test whether later evidence changes the explanation. About five minutes.",
+          "objective": "Test an account of persuasion versus manipulation with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "manipulation-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Nina",
+              "speakerB": "Owen",
+              "turns": [
+                {
+                  "id": "manipulation-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I felt like saying no meant I was a bad friend."
+                },
+                {
+                  "id": "manipulation-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "I wasn't trying to say you were bad. I thought you'd help me back."
+                },
+                {
+                  "id": "manipulation-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "Would you have accepted my answer without mentioning the friendship?"
+                },
+                {
+                  "id": "manipulation-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "Probably not. I really needed the car and I pushed too hard."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "manipulation-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "manipulation-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "manipulation-m1-node-8-check1-opt1",
+                      "label": "Owen's response supports pressure arising from his need for transport, without proving a sustained pattern of coercion. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "manipulation-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider owen sees past favours as creating a genuine expectation of reciprocity.."
+                    },
+                    {
+                      "id": "manipulation-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    }
+                  ],
+                  "answer": "manipulation-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. Owen's response supports pressure arising from his need for transport, without proving a sustained pattern of coercion. It still leaves open how much each factor contributed.",
+                  "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement."
+                }
+              ]
+            },
+            {
+              "id": "manipulation-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Nina: \"I can't lend you the car on Saturday. I'm working.\"",
+              "viewB": "Owen: \"I gave you a lift last month. I didn't realise helping only went one way.\"",
+              "options": [
+                {
+                  "id": "manipulation-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "manipulation-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "manipulation-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "manipulation-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                }
+              ],
+              "answer": "manipulation-m1-view-opt1"
+            },
+            {
+              "id": "manipulation-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. Owen's response supports pressure arising from his need for transport, without proving a sustained pattern of coercion. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I felt like saying no meant I was a bad friend. I wasn't trying to say you were bad. I thought you'd help me back. Would you have accepted my answer without mentioning the friendship? Probably not. I really needed the car and I pushed too hard.",
+              "options": [
+                {
+                  "id": "manipulation-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "manipulation-m1-new-opt3",
+                  "label": "The new evidence establishes owen sees past favours as creating a genuine expectation of reciprocity. as the sole explanation."
+                },
+                {
+                  "id": "manipulation-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "manipulation-m1-new-opt1",
+                  "label": "Owen's response supports pressure arising from his need for transport, without proving a sustained pattern of coercion. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                }
+              ],
+              "answer": "manipulation-m1-new-opt1"
+            },
+            {
+              "id": "manipulation-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "In this case, owen treats refusal as evidence of inadequate reciprocity. A functional account then asks whether owen invokes friendship and earlier help. is followed by consequences that make repetition more likely.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "manipulation-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "manipulation-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "manipulation-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "manipulation-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "manipulation-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "The quotes record what was said. Owen may be raising the emotional cost of refusing the loan by linking it to loyalty. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "manipulation-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "manipulation-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "manipulation-m1-sort-1",
+                  "label": "Nina said: \"I can't lend you the car on Saturday. I'm working.\"",
+                  "answer": "manipulation-m1-cat-observation"
+                },
+                {
+                  "id": "manipulation-m1-sort-2",
+                  "label": "Owen said: \"I gave you a lift last month. I didn't realise helping only went one way.\"",
+                  "answer": "manipulation-m1-cat-observation"
+                },
+                {
+                  "id": "manipulation-m1-sort-3",
+                  "label": "Owen may be raising the emotional cost of refusing the loan by linking it to loyalty.",
+                  "answer": "manipulation-m1-cat-inference"
+                },
+                {
+                  "id": "manipulation-m1-sort-4",
+                  "label": "Owen treats refusal as evidence of inadequate reciprocity.",
+                  "answer": "manipulation-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "manipulation-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "Notice when a practical request turns into a test of belonging, then decide using the real costs of the shift. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A colleague says a good team player would cover an unpaid shift.",
+              "evidenceOptions": [
+                {
+                  "id": "manipulation-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "manipulation-m1-transfer-e-opt1",
+                  "label": "Notice when a practical request turns into a test of belonging, then decide using the real costs of the shift."
+                },
+                {
+                  "id": "manipulation-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                }
+              ],
+              "evidenceAnswer": "manipulation-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "manipulation-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "manipulation-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "manipulation-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                }
+              ],
+              "responseAnswer": "manipulation-m1-transfer-a-opt1"
+            },
+            {
+              "id": "manipulation-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "manipulation-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Owen sees past favours as creating a genuine expectation of reciprocity. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+              "sources": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "manipulation-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "manipulation-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "manipulation-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "manipulation-m1-test-opt1",
+                  "label": "Look for independent observations that support owen sees past favours as creating a genuine expectation of reciprocity. and explain the original dialogue."
+                }
+              ],
+              "answer": "manipulation-m1-test-opt1"
+            }
+          ],
+          "takeaway": "You can understand another person's disappointment without paying for it with your consent."
+        }
+      ]
+    }
+  ]
+}

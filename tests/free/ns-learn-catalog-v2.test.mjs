@@ -41,8 +41,8 @@ test('search and categories are actual filters, including synonyms',()=>{
  assert.equal(filterLearnCourses({category:'society',query:'zzzz'}).length,0);
 });
 
-test('eleven course-lab exercise formats are available and no courses are prematurely published',()=>{
- assert.equal(LESSON_FORMATS.length,11);
+test('fourteen course-lab exercise formats are available with lazy-loaded publications',()=>{
+ assert.equal(LESSON_FORMATS.length,14);
  assert.ok(LESSON_FORMATS.every(f=>QUESTION_TYPES.includes(f.id)));
  assert.deepEqual(Object.keys(PUBLISHED_COURSE_BUNDLES),[]);
  assert.equal(getLearnContent('narcissism'),null);

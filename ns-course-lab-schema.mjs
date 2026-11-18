@@ -15,6 +15,9 @@ export const COURSE_LAB_TYPES=Object.freeze([
  {id:'investigate',name:'Evidence investigator',hint:'Select the most discriminating evidence'},
  {id:'predict',name:'What happens if?',hint:'Choose an intervention and predict its consequence'},
  {id:'character',name:'Help the character',hint:'Choose evidence and a proportionate response'},
+ {id:'rank',name:'Rank the hypotheses',hint:'Order competing explanations by the available evidence'},
+ {id:'update',name:'Update the belief',hint:'Reconsider a working explanation when new evidence arrives'},
+ {id:'perspective',name:'Perspective shift',hint:'Compare two viewpoints before selecting the strongest inference'},
  {id:'dialogue',name:'Dialogue Lab · conversation & conflict',hint:'Study a two-person exchange, identify techniques and answer scene-based questions'}
 ]);
 export const COURSE_LAB_EXERCISES=Object.freeze(COURSE_LAB_TYPES.map(x=>x.id).filter(id=>!['read','image'].includes(id)));
@@ -28,7 +31,9 @@ export function createCourseNode(type){
  if(type==='sort')return {...node,categories:[option('Category 1'),option('Category 2')],items:[{id:makeCourseId(),label:'',answer:''},{id:makeCourseId(),label:'',answer:''}]};
  if(type==='label')return {...node,segments:[{id:makeCourseId(),text:'',answer:false},{id:makeCourseId(),text:'',answer:true}]};
  if(type==='complete')return {...node,answers:[''],hint:''};
- if(type==='chain')return {...node,steps:[option(''),option('')]};
+ if(['chain','rank'].includes(type))return {...node,steps:[option(''),option('')]};
+ if(type==='update')return {...node,newEvidence:'',options:[option(''),option('')],answer:''};
+ if(type==='perspective')return {...node,viewA:'',viewB:'',options:[option(''),option('')],answer:''};
  if(type==='character')return {...node,characterName:'',scenario:'',evidenceOptions:[option(''),option('')],evidenceAnswer:'',responseOptions:[option(''),option('')],responseAnswer:''};
  if(type==='dialogue')return {...node,scenario:'',speakerA:'Person A',speakerB:'Person B',turns:[{id:makeCourseId(),speaker:'a',text:''},{id:makeCourseId(),speaker:'b',text:''}],checks:[{id:makeCourseId(),prompt:'',focusTurn:'',options:[option(''),option('')],answer:'',explanation:'',counterexample:''}]};
  if(type==='predict')return {...node,changePrompt:'',changes:[option(''),option('')],outcomes:[option(''),option('')],correctChange:'',correctOutcome:''};
@@ -79,12 +84,14 @@ export function validateCourseForPublish(course){
      continue;
     }
     if(!isText(node.prompt)||!isText(node.conceptId)||!isText(node.explanation)||!isText(node.counterexample))report(here,'write the prompt, concept ID, explanation and counterexample');
-    if(['choose','repair','investigate'].includes(node.type)&&(!validOptions(node.options)||!contains(node.options||[],node.answer)))report(here,'add at least two choices and mark the correct one');
+    if(['choose','repair','investigate','update','perspective'].includes(node.type)&&(!validOptions(node.options)||!contains(node.options||[],node.answer)))report(here,'add at least two choices and mark the correct one');
     if(node.type==='match'&&(!Array.isArray(node.pairs)||node.pairs.length<2||node.pairs.some(p=>!isText(p.id)||!isText(p.label)||!isText(p.answer))||!unique(node.pairs.map(p=>p.answer))))report(here,'add at least two nonempty, distinct matching answers');
     if(node.type==='sort'&&(!validOptions(node.categories)||!Array.isArray(node.items)||node.items.length<2||node.items.some(p=>!isText(p.id)||!isText(p.label)||!contains(node.categories,p.answer))))report(here,'add categories and assign every example');
     if(node.type==='label'&&(!Array.isArray(node.segments)||node.segments.length<2||node.segments.some(p=>!isText(p.id)||!isText(p.text))||!node.segments.some(p=>p.answer)))report(here,'add phrases and mark at least one as evidence');
     if(node.type==='complete'&&(!Array.isArray(node.answers)||!node.answers.length||node.answers.some(a=>!isText(a))))report(here,'add accepted answers');
-    if(node.type==='chain'&&(!validOptions(node.steps)))report(here,'add at least two ordered steps');
+    if(['chain','rank'].includes(node.type)&&(!validOptions(node.steps)))report(here,'add at least two ordered steps');
+    if(node.type==='update'&&!isText(node.newEvidence))report(here,'add the newly discovered evidence');
+    if(node.type==='perspective'&&(!isText(node.viewA)||!isText(node.viewB)))report(here,'write both character viewpoints');
     if(node.type==='predict'&&(!isText(node.changePrompt)||!validOptions(node.changes)||!validOptions(node.outcomes)||!contains(node.changes,node.correctChange)||!contains(node.outcomes,node.correctOutcome)))report(here,'add a condition, two changes, two outcomes and a correct combination');
     if(node.type==='character'&&(!isText(node.characterName)||!isText(node.scenario)||!validOptions(node.evidenceOptions)||!validOptions(node.responseOptions)||!contains(node.evidenceOptions,node.evidenceAnswer)||!contains(node.responseOptions,node.responseAnswer)))report(here,'add a character, scenario, evidence choices and response choices with answers');
    }

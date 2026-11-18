@@ -1,0 +1,625 @@
+{
+  "id": "neurodiversity",
+  "version": 1,
+  "status": "published",
+  "title": "ADHD, Autism & Neurodivergent Experience",
+  "description": "Explore neurodiversity as population variation through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "neurodiversity-module-01",
+      "title": "Neurodiversity as population variation",
+      "bookId": "neurodiversity-book-1",
+      "bookTitle": "Understanding neurodiversity precisely",
+      "bookNumber": 1,
+      "problem": "Neurodiversity as population variation",
+      "distinction": "Neurodiversity as population variation",
+      "lessons": [
+        {
+          "id": "neurodiversity-m1-l1",
+          "version": 1,
+          "title": "Different minds, same task",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of neurodiversity as population variation.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "neurodiversity-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Tavi struggles to follow cross-talk in a busy meeting and asks for advance notes.",
+              "speakerA": "Tavi",
+              "speakerB": "Grace",
+              "turns": [
+                {
+                  "id": "neurodiversity-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I contribute better when I can read the agenda beforehand."
+                },
+                {
+                  "id": "neurodiversity-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "Meetings are supposed to be about thinking on your feet."
+                },
+                {
+                  "id": "neurodiversity-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "The overlapping conversations make it hard to follow the current question."
+                },
+                {
+                  "id": "neurodiversity-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Would you prefer joining remotely?"
+                },
+                {
+                  "id": "neurodiversity-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "Sometimes. Written notes and taking turns might be enough."
+                },
+                {
+                  "id": "neurodiversity-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "So we could change the format without changing what the meeting is meant to achieve."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "neurodiversity-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "neurodiversity-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "neurodiversity-m1-node-1-check1-opt1",
+                      "label": "The meeting format may create avoidable processing demands that limit Tavi's participation."
+                    },
+                    {
+                      "id": "neurodiversity-m1-node-1-check1-opt2",
+                      "label": "Tavi may not have enough background knowledge to contribute confidently."
+                    },
+                    {
+                      "id": "neurodiversity-m1-node-1-check1-opt3",
+                      "label": "Tavi might simply prefer remote meetings regardless of sensory or processing demands."
+                    }
+                  ],
+                  "answer": "neurodiversity-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. The meeting format may create avoidable processing demands that limit Tavi's participation. Tavi may not have enough background knowledge to contribute confidently. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements."
+                },
+                {
+                  "id": "neurodiversity-m1-node-1-check2",
+                  "prompt": "You are Tavi. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "neurodiversity-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "What changed?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "neurodiversity-m1-node-1-check2-opt1",
+                      "label": "Trial an agenda and structured turn-taking, then review whether participation improves.",
+                      "reply": "That suggests the format mattered beyond any single person's diagnosis.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "neurodiversity-m1-node-1-check2-opt2",
+                      "label": "Reduce Tavi's responsibilities rather than changing the meeting format.",
+                      "reply": "So we could change the format without changing what the meeting is meant to achieve.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "neurodiversity-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Would you prefer joining remotely?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    }
+                  ],
+                  "answer": "neurodiversity-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements."
+                }
+              ]
+            },
+            {
+              "id": "neurodiversity-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that the meeting format may create avoidable processing demands that limit Tavi's participation. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "neurodiversity-m1-evidence-1",
+                  "text": "I contribute better when I can read the agenda beforehand.",
+                  "answer": false
+                },
+                {
+                  "id": "neurodiversity-m1-evidence-2",
+                  "text": "Meetings are supposed to be about thinking on your feet.",
+                  "answer": false
+                },
+                {
+                  "id": "neurodiversity-m1-evidence-3",
+                  "text": "The overlapping conversations make it hard to follow the current question.",
+                  "answer": true
+                },
+                {
+                  "id": "neurodiversity-m1-evidence-4",
+                  "text": "Would you prefer joining remotely?",
+                  "answer": false
+                },
+                {
+                  "id": "neurodiversity-m1-evidence-5",
+                  "text": "Sometimes. Written notes and taking turns might be enough.",
+                  "answer": true
+                },
+                {
+                  "id": "neurodiversity-m1-evidence-6",
+                  "text": "So we could change the format without changing what the meeting is meant to achieve.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "neurodiversity-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "The trigger is several people speak over each other without a shared agenda. Its possible meaning is tavi cannot reliably identify which question to respond to. The protective behaviour may contribute to a longer-term cost: others may mistake a format barrier for a lack of ideas.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "neurodiversity-m1-chain-1",
+                  "label": "Several people speak over each other without a shared agenda."
+                },
+                {
+                  "id": "neurodiversity-m1-chain-2",
+                  "label": "Tavi cannot reliably identify which question to respond to."
+                },
+                {
+                  "id": "neurodiversity-m1-chain-3",
+                  "label": "Tavi holds back from joining the discussion."
+                },
+                {
+                  "id": "neurodiversity-m1-chain-4",
+                  "label": "Others may mistake a format barrier for a lack of ideas."
+                }
+              ]
+            },
+            {
+              "id": "neurodiversity-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Neurodiversity describes variation within human populations rather than one person's fixed profile. A person's contribution depends partly on the fit between their needs and the environment. A structured speaking order can improve access without lowering the intellectual demands of the meeting.\n\nAn accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation."
+            },
+            {
+              "id": "neurodiversity-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "The strongest candidate is the meeting format may create avoidable processing demands that limit Tavi's participation. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "neurodiversity-m1-rank-strong",
+                  "label": "The meeting format may create avoidable processing demands that limit Tavi's participation."
+                },
+                {
+                  "id": "neurodiversity-m1-rank-rival",
+                  "label": "Tavi may not have enough background knowledge to contribute confidently."
+                },
+                {
+                  "id": "neurodiversity-m1-rank-other",
+                  "label": "Tavi might simply prefer remote meetings regardless of sensory or processing demands."
+                }
+              ]
+            },
+            {
+              "id": "neurodiversity-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls the meeting format may create avoidable processing demands that limit tavi's participation. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but tavi may not have enough background knowledge to contribute confidently. still deserves consideration."
+                },
+                {
+                  "id": "neurodiversity-m1-repair-opt2",
+                  "label": "Because tavi may not have enough background knowledge to contribute confidently., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "neurodiversity-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "neurodiversity-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                }
+              ],
+              "answer": "neurodiversity-m1-repair-opt1"
+            },
+            {
+              "id": "neurodiversity-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Trial an agenda and structured turn-taking, then review whether participation improves. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "neurodiversity-m1-plan-opt2",
+                  "label": "Reduce Tavi's responsibilities rather than changing the meeting format."
+                },
+                {
+                  "id": "neurodiversity-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "neurodiversity-m1-plan-opt1",
+                  "label": "Trial an agenda and structured turn-taking, then review whether participation improves."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "neurodiversity-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "neurodiversity-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "neurodiversity-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                }
+              ],
+              "correctChange": "neurodiversity-m1-plan-opt1",
+              "correctOutcome": "neurodiversity-m1-outcome-opt1"
+            }
+          ],
+          "takeaway": "Sometimes the obstacle is the way a task is organised rather than the person's ability to do it."
+        },
+        {
+          "id": "neurodiversity-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "Earlier: Tavi struggles to follow cross-talk in a busy meeting and asks for advance notes. Now you will test whether later evidence changes the explanation. About five minutes.",
+          "objective": "Test an account of neurodiversity as population variation with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "neurodiversity-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Tavi",
+              "speakerB": "Grace",
+              "turns": [
+                {
+                  "id": "neurodiversity-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "We tried circulating the agenda and taking turns."
+                },
+                {
+                  "id": "neurodiversity-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "What changed?"
+                },
+                {
+                  "id": "neurodiversity-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "More people contributed, including me."
+                },
+                {
+                  "id": "neurodiversity-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "That suggests the format mattered beyond any single person's diagnosis."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "neurodiversity-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "neurodiversity-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "neurodiversity-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider tavi may not have enough background knowledge to contribute confidently.."
+                    },
+                    {
+                      "id": "neurodiversity-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "neurodiversity-m1-node-8-check1-opt1",
+                      "label": "A simple environmental adjustment changes participation, supporting a person–environment account. The earlier explanation may still contribute."
+                    }
+                  ],
+                  "answer": "neurodiversity-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. A simple environmental adjustment changes participation, supporting a person–environment account. It still leaves open how much each factor contributed.",
+                  "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements."
+                }
+              ]
+            },
+            {
+              "id": "neurodiversity-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "The quotes record what was said. The meeting format may create avoidable processing demands that limit Tavi's participation. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "neurodiversity-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "neurodiversity-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "neurodiversity-m1-sort-1",
+                  "label": "Tavi said: \"I contribute better when I can read the agenda beforehand.\"",
+                  "answer": "neurodiversity-m1-cat-observation"
+                },
+                {
+                  "id": "neurodiversity-m1-sort-2",
+                  "label": "Grace said: \"Would you prefer joining remotely?\"",
+                  "answer": "neurodiversity-m1-cat-observation"
+                },
+                {
+                  "id": "neurodiversity-m1-sort-3",
+                  "label": "The meeting format may create avoidable processing demands that limit Tavi's participation.",
+                  "answer": "neurodiversity-m1-cat-inference"
+                },
+                {
+                  "id": "neurodiversity-m1-sort-4",
+                  "label": "Tavi cannot reliably identify which question to respond to.",
+                  "answer": "neurodiversity-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "neurodiversity-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Tavi: \"I contribute better when I can read the agenda beforehand.\"",
+              "viewB": "Grace: \"Would you prefer joining remotely?\"",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "neurodiversity-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "neurodiversity-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "neurodiversity-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                }
+              ],
+              "answer": "neurodiversity-m1-view-opt1"
+            },
+            {
+              "id": "neurodiversity-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. A simple environmental adjustment changes participation, supporting a person–environment account. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "We tried circulating the agenda and taking turns. What changed? More people contributed, including me. That suggests the format mattered beyond any single person's diagnosis.",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-new-opt3",
+                  "label": "The new evidence establishes tavi may not have enough background knowledge to contribute confidently. as the sole explanation."
+                },
+                {
+                  "id": "neurodiversity-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "neurodiversity-m1-new-opt1",
+                  "label": "A simple environmental adjustment changes participation, supporting a person–environment account. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "neurodiversity-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                }
+              ],
+              "answer": "neurodiversity-m1-new-opt1"
+            },
+            {
+              "id": "neurodiversity-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Tavi may not have enough background knowledge to contribute confidently. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "neurodiversity-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "neurodiversity-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "neurodiversity-m1-test-opt1",
+                  "label": "Look for independent observations that support tavi may not have enough background knowledge to contribute confidently. and explain the original dialogue."
+                },
+                {
+                  "id": "neurodiversity-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                }
+              ],
+              "answer": "neurodiversity-m1-test-opt1"
+            },
+            {
+              "id": "neurodiversity-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "In this case, tavi cannot reliably identify which question to respond to. A functional account then asks whether tavi holds back from joining the discussion. is followed by consequences that make repetition more likely.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "neurodiversity-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "neurodiversity-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "neurodiversity-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "neurodiversity-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "neurodiversity-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "neurodiversity-opening-process",
+              "explanation": "Consider how the delivery format affects task performance before making claims about ability. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+              "sources": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A student performs well with written instructions but misses steps when directions are only spoken once.",
+              "evidenceOptions": [
+                {
+                  "id": "neurodiversity-m1-transfer-e-opt1",
+                  "label": "Consider how the delivery format affects task performance before making claims about ability."
+                },
+                {
+                  "id": "neurodiversity-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "neurodiversity-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                }
+              ],
+              "evidenceAnswer": "neurodiversity-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "neurodiversity-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "neurodiversity-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "neurodiversity-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                }
+              ],
+              "responseAnswer": "neurodiversity-m1-transfer-a-opt1"
+            }
+          ],
+          "takeaway": "Changing an environment can improve access without changing what people are expected to achieve."
+        }
+      ]
+    }
+  ]
+}

@@ -35,7 +35,7 @@ export function validateLearnBundle(bundle,courseId){
 export function gradeLearnItem(item,response){
  if(!item||!QUESTION_TYPES.includes(item.type))return {valid:false,correct:false};
  let valid=false,correct=false;
- if(['choose','respond','repair','investigate'].includes(item.type)){
+ if(['choose','respond','repair','investigate','update','perspective'].includes(item.type)){
   valid=typeof response==='string'&&item.options.some(o=>o.id===response);
   correct=valid&&item.answer===response;
  }else if(item.type==='complete'){
@@ -47,9 +47,10 @@ export function gradeLearnItem(item,response){
  }else if(item.type==='sort'){
   valid=isObject(response)&&item.items.every(p=>typeof response[p.id]==='string'&&response[p.id]);
   correct=valid&&item.items.every(p=>response[p.id]===p.answer);
- }else if(item.type==='sequence'||item.type==='chain'){
+ }else if(item.type==='sequence'||item.type==='chain'||item.type==='rank'){
   valid=Array.isArray(response)&&response.length===item.steps.length&&new Set(response).size===response.length&&response.every(id=>item.steps.some(s=>s.id===id));
-  correct=valid&&item.steps.every((step,i)=>response[i]===step.id);
+  // Lower-ranked hypotheses may be genuinely tied; reward identifying the strongest first.
+  correct=valid&&(item.type==='rank'?response[0]===item.steps[0].id:item.steps.every((step,i)=>response[i]===step.id));
  }else if(item.type==='label'){
   valid=Array.isArray(response)&&response.every(id=>item.segments.some(s=>s.id===id));
   correct=valid&&pairsEqual(response,item.segments.filter(s=>s.answer).map(s=>s.id));

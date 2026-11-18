@@ -1,0 +1,625 @@
+{
+  "id": "misinformation",
+  "version": 1,
+  "status": "published",
+  "title": "Misinformation, Conspiracies & AI Persuasion",
+  "description": "Explore familiarity mistaken for truth through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "misinformation-module-01",
+      "title": "Familiarity mistaken for truth",
+      "bookId": "misinformation-book-1",
+      "bookTitle": "Why convincing claims work",
+      "bookNumber": 1,
+      "problem": "Familiarity mistaken for truth",
+      "distinction": "Familiarity mistaken for truth",
+      "lessons": [
+        {
+          "id": "misinformation-m1-l1",
+          "version": 1,
+          "title": "I've seen it everywhere",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of familiarity mistaken for truth.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "misinformation-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "A claim about the local water supply is spreading through a group chat.",
+              "speakerA": "Ivo",
+              "speakerB": "Leah",
+              "turns": [
+                {
+                  "id": "misinformation-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I've seen that warning five times now. There must be something behind it."
+                },
+                {
+                  "id": "misinformation-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "Were they five different sources?"
+                },
+                {
+                  "id": "misinformation-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "Different people sent it, but it was always the same screenshot."
+                },
+                {
+                  "id": "misinformation-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Do you know where it originally came from?"
+                },
+                {
+                  "id": "misinformation-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "No. It just feels familiar enough that I'd recognise it anywhere."
+                },
+                {
+                  "id": "misinformation-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "Familiarity can change how convincing something feels without adding evidence."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "misinformation-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "misinformation-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "misinformation-m1-node-1-check1-opt3",
+                      "label": "The screenshot's technical presentation may be persuasive regardless of how often it appears."
+                    },
+                    {
+                      "id": "misinformation-m1-node-1-check1-opt1",
+                      "label": "Ivo may be mistaking repetition of one claim for several independent confirmations."
+                    },
+                    {
+                      "id": "misinformation-m1-node-1-check1-opt2",
+                      "label": "Several local observers may independently have found evidence of the same problem."
+                    }
+                  ],
+                  "answer": "misinformation-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Ivo may be mistaking repetition of one claim for several independent confirmations. Several local observers may independently have found evidence of the same problem. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself."
+                },
+                {
+                  "id": "misinformation-m1-node-1-check2",
+                  "prompt": "You are Ivo. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "misinformation-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Do you know where it originally came from?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "misinformation-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "Did it link to a water test?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "misinformation-m1-node-1-check2-opt1",
+                      "label": "Trace the screenshot to its source and check whether independent test results support it.",
+                      "reply": "So the apparent sources collapse into one unverified assertion.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "misinformation-m1-node-1-check2-opt2",
+                      "label": "Ask the group to vote on whether the warning sounds convincing.",
+                      "reply": "Familiarity can change how convincing something feels without adding evidence.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    }
+                  ],
+                  "answer": "misinformation-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself."
+                }
+              ]
+            },
+            {
+              "id": "misinformation-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "The strongest candidate is ivo may be mistaking repetition of one claim for several independent confirmations. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "misinformation-m1-rank-strong",
+                  "label": "Ivo may be mistaking repetition of one claim for several independent confirmations."
+                },
+                {
+                  "id": "misinformation-m1-rank-rival",
+                  "label": "Several local observers may independently have found evidence of the same problem."
+                },
+                {
+                  "id": "misinformation-m1-rank-other",
+                  "label": "The screenshot's technical presentation may be persuasive regardless of how often it appears."
+                }
+              ]
+            },
+            {
+              "id": "misinformation-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that ivo may be mistaking repetition of one claim for several independent confirmations. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "misinformation-m1-evidence-1",
+                  "text": "I've seen that warning five times now. There must be something behind it.",
+                  "answer": false
+                },
+                {
+                  "id": "misinformation-m1-evidence-2",
+                  "text": "Were they five different sources?",
+                  "answer": false
+                },
+                {
+                  "id": "misinformation-m1-evidence-3",
+                  "text": "Different people sent it, but it was always the same screenshot.",
+                  "answer": true
+                },
+                {
+                  "id": "misinformation-m1-evidence-4",
+                  "text": "Do you know where it originally came from?",
+                  "answer": false
+                },
+                {
+                  "id": "misinformation-m1-evidence-5",
+                  "text": "No. It just feels familiar enough that I'd recognise it anywhere.",
+                  "answer": true
+                },
+                {
+                  "id": "misinformation-m1-evidence-6",
+                  "text": "Familiarity can change how convincing something feels without adding evidence.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "misinformation-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Repetition can increase perceived truth because a familiar statement is processed more easily. Several forwards of one screenshot do not provide independent checks. The important investigative task is tracing an assertion back to its origin and then finding evidence that does not rely on that same source.\n\nA repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth."
+            },
+            {
+              "id": "misinformation-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "The trigger is several people forward the same screenshot. Its possible meaning is ivo reads repeated appearance as widespread corroboration. The protective behaviour may contribute to a longer-term cost: copied assertions acquire the appearance of an independent evidence base.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "misinformation-m1-chain-1",
+                  "label": "Several people forward the same screenshot."
+                },
+                {
+                  "id": "misinformation-m1-chain-2",
+                  "label": "Ivo reads repeated appearance as widespread corroboration."
+                },
+                {
+                  "id": "misinformation-m1-chain-3",
+                  "label": "He becomes more confident without checking the original claim."
+                },
+                {
+                  "id": "misinformation-m1-chain-4",
+                  "label": "Copied assertions acquire the appearance of an independent evidence base."
+                }
+              ]
+            },
+            {
+              "id": "misinformation-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Trace the screenshot to its source and check whether independent test results support it. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "misinformation-m1-plan-opt1",
+                  "label": "Trace the screenshot to its source and check whether independent test results support it."
+                },
+                {
+                  "id": "misinformation-m1-plan-opt2",
+                  "label": "Ask the group to vote on whether the warning sounds convincing."
+                },
+                {
+                  "id": "misinformation-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "misinformation-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "misinformation-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "misinformation-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                }
+              ],
+              "correctChange": "misinformation-m1-plan-opt1",
+              "correctOutcome": "misinformation-m1-outcome-opt1"
+            },
+            {
+              "id": "misinformation-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls ivo may be mistaking repetition of one claim for several independent confirmations. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "misinformation-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "misinformation-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but several local observers may independently have found evidence of the same problem. still deserves consideration."
+                },
+                {
+                  "id": "misinformation-m1-repair-opt2",
+                  "label": "Because several local observers may independently have found evidence of the same problem., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "misinformation-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                }
+              ],
+              "answer": "misinformation-m1-repair-opt1"
+            }
+          ],
+          "takeaway": "Ten copies of one assertion are still one assertion."
+        },
+        {
+          "id": "misinformation-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "Earlier: A claim about the local water supply is spreading through a group chat. Now you will test whether later evidence changes the explanation. About five minutes.",
+          "objective": "Test an account of familiarity mistaken for truth with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "misinformation-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Ivo",
+              "speakerB": "Leah",
+              "turns": [
+                {
+                  "id": "misinformation-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I found the first version of the post."
+                },
+                {
+                  "id": "misinformation-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "Did it link to a water test?"
+                },
+                {
+                  "id": "misinformation-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "No. It quoted another account that had copied it."
+                },
+                {
+                  "id": "misinformation-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "So the apparent sources collapse into one unverified assertion."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "misinformation-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "misinformation-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "misinformation-m1-node-8-check1-opt1",
+                      "label": "Source tracing demonstrates that repetition and independent corroboration were being confused. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "misinformation-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider several local observers may independently have found evidence of the same problem.."
+                    },
+                    {
+                      "id": "misinformation-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    }
+                  ],
+                  "answer": "misinformation-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. Source tracing demonstrates that repetition and independent corroboration were being confused. It still leaves open how much each factor contributed.",
+                  "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself."
+                }
+              ]
+            },
+            {
+              "id": "misinformation-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. Source tracing demonstrates that repetition and independent corroboration were being confused. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I found the first version of the post. Did it link to a water test? No. It quoted another account that had copied it. So the apparent sources collapse into one unverified assertion.",
+              "options": [
+                {
+                  "id": "misinformation-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "misinformation-m1-new-opt3",
+                  "label": "The new evidence establishes several local observers may independently have found evidence of the same problem. as the sole explanation."
+                },
+                {
+                  "id": "misinformation-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "misinformation-m1-new-opt1",
+                  "label": "Source tracing demonstrates that repetition and independent corroboration were being confused. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                }
+              ],
+              "answer": "misinformation-m1-new-opt1"
+            },
+            {
+              "id": "misinformation-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "In this case, ivo reads repeated appearance as widespread corroboration. A functional account then asks whether he becomes more confident without checking the original claim. is followed by consequences that make repetition more likely.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "misinformation-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "misinformation-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "misinformation-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "misinformation-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "misinformation-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Ivo: \"I've seen that warning five times now. There must be something behind it.\"",
+              "viewB": "Leah: \"Do you know where it originally came from?\"",
+              "options": [
+                {
+                  "id": "misinformation-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "misinformation-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "misinformation-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "misinformation-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                }
+              ],
+              "answer": "misinformation-m1-view-opt1"
+            },
+            {
+              "id": "misinformation-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "The quotes record what was said. Ivo may be mistaking repetition of one claim for several independent confirmations. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "misinformation-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "misinformation-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "misinformation-m1-sort-1",
+                  "label": "Ivo said: \"I've seen that warning five times now. There must be something behind it.\"",
+                  "answer": "misinformation-m1-cat-observation"
+                },
+                {
+                  "id": "misinformation-m1-sort-2",
+                  "label": "Leah said: \"Do you know where it originally came from?\"",
+                  "answer": "misinformation-m1-cat-observation"
+                },
+                {
+                  "id": "misinformation-m1-sort-3",
+                  "label": "Ivo may be mistaking repetition of one claim for several independent confirmations.",
+                  "answer": "misinformation-m1-cat-inference"
+                },
+                {
+                  "id": "misinformation-m1-sort-4",
+                  "label": "Ivo reads repeated appearance as widespread corroboration.",
+                  "answer": "misinformation-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "misinformation-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "Trace the statistic to its primary source before treating reposts as corroboration. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "Ten posts repeat the same medical statistic without naming the original study.",
+              "evidenceOptions": [
+                {
+                  "id": "misinformation-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "misinformation-m1-transfer-e-opt1",
+                  "label": "Trace the statistic to its primary source before treating reposts as corroboration."
+                },
+                {
+                  "id": "misinformation-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                }
+              ],
+              "evidenceAnswer": "misinformation-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "misinformation-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "misinformation-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "misinformation-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                }
+              ],
+              "responseAnswer": "misinformation-m1-transfer-a-opt1"
+            },
+            {
+              "id": "misinformation-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "misinformation-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Several local observers may independently have found evidence of the same problem. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+              "sources": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "misinformation-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "misinformation-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "misinformation-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "misinformation-m1-test-opt1",
+                  "label": "Look for independent observations that support several local observers may independently have found evidence of the same problem. and explain the original dialogue."
+                }
+              ],
+              "answer": "misinformation-m1-test-opt1"
+            }
+          ],
+          "takeaway": "A claim becomes more convincing when its sources are independent, not merely familiar."
+        }
+      ]
+    }
+  ]
+}

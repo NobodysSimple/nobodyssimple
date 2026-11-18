@@ -1,0 +1,625 @@
+{
+  "id": "boundaries",
+  "version": 1,
+  "status": "published",
+  "title": "Boundaries & Difficult Conversations",
+  "description": "Explore preferences, requests and boundaries through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "boundaries-module-01",
+      "title": "Preferences, requests and boundaries",
+      "bookId": "boundaries-book-1",
+      "bookTitle": "What a boundary is",
+      "bookNumber": 1,
+      "problem": "Preferences, requests and boundaries",
+      "distinction": "Preferences, requests and boundaries",
+      "lessons": [
+        {
+          "id": "boundaries-m1-l1",
+          "version": 1,
+          "title": "A boundary isn't a command",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of preferences, requests and boundaries.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "boundaries-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Ellie and Dev share a flat. Dev occasionally invites guests without warning.",
+              "speakerA": "Ellie",
+              "speakerB": "Dev",
+              "turns": [
+                {
+                  "id": "boundaries-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I need notice before people come into our shared space."
+                },
+                {
+                  "id": "boundaries-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "I don't want to ask permission every time I see my friends."
+                },
+                {
+                  "id": "boundaries-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "I'm asking for notice, not to choose your friends."
+                },
+                {
+                  "id": "boundaries-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "What if plans happen at the last minute?"
+                },
+                {
+                  "id": "boundaries-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "I'll use my room if I need quiet, but we should agree how shared spaces work."
+                },
+                {
+                  "id": "boundaries-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "That sounds different from deciding who I'm allowed to invite."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "boundaries-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "boundaries-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "boundaries-m1-node-1-check1-opt3",
+                      "label": "Dev thinks providing notice amounts to requesting permission for every visitor."
+                    },
+                    {
+                      "id": "boundaries-m1-node-1-check1-opt1",
+                      "label": "Ellie is trying to negotiate a shared-space rule while describing what she can do herself."
+                    },
+                    {
+                      "id": "boundaries-m1-node-1-check1-opt2",
+                      "label": "Ellie wants to control which friends Dev may see."
+                    }
+                  ],
+                  "answer": "boundaries-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Ellie is trying to negotiate a shared-space rule while describing what she can do herself. Ellie wants to control which friends Dev may see. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable."
+                },
+                {
+                  "id": "boundaries-m1-node-1-check2",
+                  "prompt": "You are Ellie. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "boundaries-m1-node-1-check2-opt2",
+                      "label": "If you respect me, you won't have anyone round when I'm tired.",
+                      "reply": "That sounds different from deciding who I'm allowed to invite.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "boundaries-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "What if plans happen at the last minute?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "boundaries-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "I want enough notice to decide whether to use our living room.",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "boundaries-m1-node-1-check2-opt1",
+                      "label": "Can we agree on a message before guests arrive, including how to handle last-minute visits?",
+                      "reply": "Yes. We can discuss exceptions when they happen.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    }
+                  ],
+                  "answer": "boundaries-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable."
+                }
+              ]
+            },
+            {
+              "id": "boundaries-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that ellie is trying to negotiate a shared-space rule while describing what she can do herself. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "boundaries-m1-evidence-1",
+                  "text": "I need notice before people come into our shared space.",
+                  "answer": false
+                },
+                {
+                  "id": "boundaries-m1-evidence-2",
+                  "text": "I don't want to ask permission every time I see my friends.",
+                  "answer": false
+                },
+                {
+                  "id": "boundaries-m1-evidence-3",
+                  "text": "I'm asking for notice, not to choose your friends.",
+                  "answer": true
+                },
+                {
+                  "id": "boundaries-m1-evidence-4",
+                  "text": "What if plans happen at the last minute?",
+                  "answer": false
+                },
+                {
+                  "id": "boundaries-m1-evidence-5",
+                  "text": "I'll use my room if I need quiet, but we should agree how shared spaces work.",
+                  "answer": true
+                },
+                {
+                  "id": "boundaries-m1-evidence-6",
+                  "text": "That sounds different from deciding who I'm allowed to invite.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "boundaries-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "The trigger is dev makes a last-minute guest plan. Its possible meaning is ellie sees unannounced visits as making shared space unpredictable. The protective behaviour may contribute to a longer-term cost: without a shared agreement, both can experience the dispute as interference.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "boundaries-m1-chain-1",
+                  "label": "Dev makes a last-minute guest plan."
+                },
+                {
+                  "id": "boundaries-m1-chain-2",
+                  "label": "Ellie sees unannounced visits as making shared space unpredictable."
+                },
+                {
+                  "id": "boundaries-m1-chain-3",
+                  "label": "She asks for notice and explains how she will respond."
+                },
+                {
+                  "id": "boundaries-m1-chain-4",
+                  "label": "Without a shared agreement, both can experience the dispute as interference."
+                }
+              ]
+            },
+            {
+              "id": "boundaries-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "A boundary identifies what someone will accept or how they will act. A request invites another person to change their behaviour, and a mutual agreement establishes shared expectations. In a shared home, a good solution must account for both residents' legitimate use of the space.\n\nSafety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness."
+            },
+            {
+              "id": "boundaries-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "The strongest candidate is ellie is trying to negotiate a shared-space rule while describing what she can do herself. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "boundaries-m1-rank-strong",
+                  "label": "Ellie is trying to negotiate a shared-space rule while describing what she can do herself."
+                },
+                {
+                  "id": "boundaries-m1-rank-rival",
+                  "label": "Ellie wants to control which friends Dev may see."
+                },
+                {
+                  "id": "boundaries-m1-rank-other",
+                  "label": "Dev thinks providing notice amounts to requesting permission for every visitor."
+                }
+              ]
+            },
+            {
+              "id": "boundaries-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls ellie is trying to negotiate a shared-space rule while describing what she can do herself. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "boundaries-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "boundaries-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "boundaries-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but ellie wants to control which friends Dev may see. still deserves consideration."
+                },
+                {
+                  "id": "boundaries-m1-repair-opt2",
+                  "label": "Because ellie wants to control which friends Dev may see., the present psychological account should be discarded until certainty is possible."
+                }
+              ],
+              "answer": "boundaries-m1-repair-opt1"
+            },
+            {
+              "id": "boundaries-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Can we agree on a message before guests arrive, including how to handle last-minute visits? Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "boundaries-m1-plan-opt1",
+                  "label": "Can we agree on a message before guests arrive, including how to handle last-minute visits?"
+                },
+                {
+                  "id": "boundaries-m1-plan-opt2",
+                  "label": "If you respect me, you won't have anyone round when I'm tired."
+                },
+                {
+                  "id": "boundaries-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "boundaries-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "boundaries-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "boundaries-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                }
+              ],
+              "correctChange": "boundaries-m1-plan-opt1",
+              "correctOutcome": "boundaries-m1-outcome-opt1"
+            }
+          ],
+          "takeaway": "A request asks somebody to change. A boundary explains what you will do. An agreement sets shared expectations."
+        },
+        {
+          "id": "boundaries-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "Earlier: Ellie and Dev share a flat. Dev occasionally invites guests without warning. Now you will test whether later evidence changes the explanation. About five minutes.",
+          "objective": "Test an account of preferences, requests and boundaries with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "boundaries-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Ellie",
+              "speakerB": "Dev",
+              "turns": [
+                {
+                  "id": "boundaries-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I thought you were trying to stop me seeing people."
+                },
+                {
+                  "id": "boundaries-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "I want enough notice to decide whether to use our living room."
+                },
+                {
+                  "id": "boundaries-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "Could we agree on a group message beforehand?"
+                },
+                {
+                  "id": "boundaries-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "Yes. We can discuss exceptions when they happen."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "boundaries-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "boundaries-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "boundaries-m1-node-8-check1-opt1",
+                      "label": "Clarifying the difference between permission and notice reveals a negotiable procedural disagreement. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "boundaries-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider ellie wants to control which friends dev may see.."
+                    },
+                    {
+                      "id": "boundaries-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    }
+                  ],
+                  "answer": "boundaries-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. Clarifying the difference between permission and notice reveals a negotiable procedural disagreement. It still leaves open how much each factor contributed.",
+                  "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable."
+                }
+              ]
+            },
+            {
+              "id": "boundaries-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "The quotes record what was said. Ellie is trying to negotiate a shared-space rule while describing what she can do herself. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "boundaries-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "boundaries-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "boundaries-m1-sort-1",
+                  "label": "Ellie said: \"I need notice before people come into our shared space.\"",
+                  "answer": "boundaries-m1-cat-observation"
+                },
+                {
+                  "id": "boundaries-m1-sort-2",
+                  "label": "Dev said: \"What if plans happen at the last minute?\"",
+                  "answer": "boundaries-m1-cat-observation"
+                },
+                {
+                  "id": "boundaries-m1-sort-3",
+                  "label": "Ellie is trying to negotiate a shared-space rule while describing what she can do herself.",
+                  "answer": "boundaries-m1-cat-inference"
+                },
+                {
+                  "id": "boundaries-m1-sort-4",
+                  "label": "Ellie sees unannounced visits as making shared space unpredictable.",
+                  "answer": "boundaries-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "boundaries-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Ellie: \"I need notice before people come into our shared space.\"",
+              "viewB": "Dev: \"What if plans happen at the last minute?\"",
+              "options": [
+                {
+                  "id": "boundaries-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "boundaries-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "boundaries-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "boundaries-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                }
+              ],
+              "answer": "boundaries-m1-view-opt1"
+            },
+            {
+              "id": "boundaries-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. Clarifying the difference between permission and notice reveals a negotiable procedural disagreement. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I thought you were trying to stop me seeing people. I want enough notice to decide whether to use our living room. Could we agree on a group message beforehand? Yes. We can discuss exceptions when they happen.",
+              "options": [
+                {
+                  "id": "boundaries-m1-new-opt1",
+                  "label": "Clarifying the difference between permission and notice reveals a negotiable procedural disagreement. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "boundaries-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "boundaries-m1-new-opt3",
+                  "label": "The new evidence establishes ellie wants to control which friends dev may see. as the sole explanation."
+                },
+                {
+                  "id": "boundaries-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                }
+              ],
+              "answer": "boundaries-m1-new-opt1"
+            },
+            {
+              "id": "boundaries-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Ellie wants to control which friends Dev may see. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "boundaries-m1-test-opt1",
+                  "label": "Look for independent observations that support ellie wants to control which friends dev may see. and explain the original dialogue."
+                },
+                {
+                  "id": "boundaries-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "boundaries-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "boundaries-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                }
+              ],
+              "answer": "boundaries-m1-test-opt1"
+            },
+            {
+              "id": "boundaries-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "In this case, ellie sees unannounced visits as making shared space unpredictable. A functional account then asks whether she asks for notice and explains how she will respond. is followed by consequences that make repetition more likely.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "boundaries-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "boundaries-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "boundaries-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "boundaries-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "boundaries-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "boundaries-opening-process",
+              "explanation": "Distinguish a person's own choices from rules imposed on somebody else's social relationships. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+              "sources": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "Someone says 'You cannot have friends of another gender; that's my boundary.'",
+              "evidenceOptions": [
+                {
+                  "id": "boundaries-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "boundaries-m1-transfer-e-opt1",
+                  "label": "Distinguish a person's own choices from rules imposed on somebody else's social relationships."
+                },
+                {
+                  "id": "boundaries-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                }
+              ],
+              "evidenceAnswer": "boundaries-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "boundaries-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "boundaries-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "boundaries-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                }
+              ],
+              "responseAnswer": "boundaries-m1-transfer-a-opt1"
+            }
+          ],
+          "takeaway": "Two people can have legitimate needs and still need to negotiate how a shared space works."
+        }
+      ]
+    }
+  ]
+}

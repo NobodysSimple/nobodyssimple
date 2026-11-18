@@ -1,0 +1,625 @@
+{
+  "id": "social-anxiety",
+  "version": 1,
+  "status": "published",
+  "title": "Social Anxiety & Fear of Judgement",
+  "description": "Explore entering a room while feeling watched through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "social-anxiety-module-01",
+      "title": "Entering a room while feeling watched",
+      "bookId": "social-anxiety-book-1",
+      "bookTitle": "Fear of being evaluated",
+      "bookNumber": 1,
+      "problem": "Entering a room while feeling watched",
+      "distinction": "Entering a room while feeling watched",
+      "lessons": [
+        {
+          "id": "social-anxiety-m1-l1",
+          "version": 1,
+          "title": "What happens when you watch yourself?",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of entering a room while feeling watched.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "social-anxiety-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Milo enters a society meeting where he knows nobody.",
+              "speakerA": "Milo",
+              "speakerB": "Nell",
+              "turns": [
+                {
+                  "id": "social-anxiety-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "Everyone can tell I don't belong here."
+                },
+                {
+                  "id": "social-anxiety-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "What did you see people do?"
+                },
+                {
+                  "id": "social-anxiety-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "Two glanced at the door. Now I'm checking how I'm standing."
+                },
+                {
+                  "id": "social-anxiety-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Does focusing on your posture help you join in?"
+                },
+                {
+                  "id": "social-anxiety-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "Not really. I keep rehearsing a sentence and missing what people say."
+                },
+                {
+                  "id": "social-anxiety-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "Could you listen for one thing to ask them about?"
+                }
+              ],
+              "checks": [
+                {
+                  "id": "social-anxiety-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "social-anxiety-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "social-anxiety-m1-node-1-check1-opt2",
+                      "label": "The group may genuinely have treated newcomers as unwelcome."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-1-check1-opt3",
+                      "label": "Milo may be overstimulated by the room rather than afraid of being judged."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-1-check1-opt1",
+                      "label": "Milo may be directing attention inward to prevent negative evaluation, losing information about the group."
+                    }
+                  ],
+                  "answer": "social-anxiety-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Milo may be directing attention inward to prevent negative evaluation, losing information about the group. The group may genuinely have treated newcomers as unwelcome. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction."
+                },
+                {
+                  "id": "social-anxiety-m1-node-1-check2",
+                  "prompt": "You are Milo. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "social-anxiety-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Does focusing on your posture help you join in?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "What happened?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-1-check2-opt1",
+                      "label": "Listen to one conversation and ask a genuine question, then compare your prediction with what happens.",
+                      "reply": "That is new evidence about their response, even though the feeling remained.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-1-check2-opt2",
+                      "label": "Keep rehearsing until you no longer feel nervous before speaking.",
+                      "reply": "Could you listen for one thing to ask them about?",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    }
+                  ],
+                  "answer": "social-anxiety-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction."
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that milo may be directing attention inward to prevent negative evaluation, losing information about the group. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "social-anxiety-m1-evidence-1",
+                  "text": "Everyone can tell I don't belong here.",
+                  "answer": false
+                },
+                {
+                  "id": "social-anxiety-m1-evidence-2",
+                  "text": "What did you see people do?",
+                  "answer": false
+                },
+                {
+                  "id": "social-anxiety-m1-evidence-3",
+                  "text": "Two glanced at the door. Now I'm checking how I'm standing.",
+                  "answer": true
+                },
+                {
+                  "id": "social-anxiety-m1-evidence-4",
+                  "text": "Does focusing on your posture help you join in?",
+                  "answer": false
+                },
+                {
+                  "id": "social-anxiety-m1-evidence-5",
+                  "text": "Not really. I keep rehearsing a sentence and missing what people say.",
+                  "answer": true
+                },
+                {
+                  "id": "social-anxiety-m1-evidence-6",
+                  "text": "Could you listen for one thing to ask them about?",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "The trigger is milo enters an unfamiliar group. Its possible meaning is he predicts that others will notice he is awkward and exclude him. The protective behaviour may contribute to a longer-term cost: attention is taken away from people who might be welcoming him.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "social-anxiety-m1-chain-1",
+                  "label": "Milo enters an unfamiliar group."
+                },
+                {
+                  "id": "social-anxiety-m1-chain-2",
+                  "label": "He predicts that others will notice he is awkward and exclude him."
+                },
+                {
+                  "id": "social-anxiety-m1-chain-3",
+                  "label": "He monitors his posture and rehearses every line."
+                },
+                {
+                  "id": "social-anxiety-m1-chain-4",
+                  "label": "Attention is taken away from people who might be welcoming him."
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Social-anxiety models describe how fear of evaluation can increase self-focused attention. Private sensations may be mistaken for evidence of how others see us. Safety behaviours such as rehearsing each sentence can make it harder to hear invitations to participate.\n\nSome groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia."
+            },
+            {
+              "id": "social-anxiety-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "The strongest candidate is milo may be directing attention inward to prevent negative evaluation, losing information about the group. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "social-anxiety-m1-rank-strong",
+                  "label": "Milo may be directing attention inward to prevent negative evaluation, losing information about the group."
+                },
+                {
+                  "id": "social-anxiety-m1-rank-rival",
+                  "label": "The group may genuinely have treated newcomers as unwelcome."
+                },
+                {
+                  "id": "social-anxiety-m1-rank-other",
+                  "label": "Milo may be overstimulated by the room rather than afraid of being judged."
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls milo may be directing attention inward to prevent negative evaluation, losing information about the group. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "social-anxiety-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "social-anxiety-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but the group may genuinely have treated newcomers as unwelcome. still deserves consideration."
+                },
+                {
+                  "id": "social-anxiety-m1-repair-opt2",
+                  "label": "Because the group may genuinely have treated newcomers as unwelcome., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "social-anxiety-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                }
+              ],
+              "answer": "social-anxiety-m1-repair-opt1"
+            },
+            {
+              "id": "social-anxiety-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Listen to one conversation and ask a genuine question, then compare your prediction with what happens. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "social-anxiety-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "social-anxiety-m1-plan-opt1",
+                  "label": "Listen to one conversation and ask a genuine question, then compare your prediction with what happens."
+                },
+                {
+                  "id": "social-anxiety-m1-plan-opt2",
+                  "label": "Keep rehearsing until you no longer feel nervous before speaking."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "social-anxiety-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "social-anxiety-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "social-anxiety-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                }
+              ],
+              "correctChange": "social-anxiety-m1-plan-opt1",
+              "correctOutcome": "social-anxiety-m1-outcome-opt1"
+            }
+          ],
+          "takeaway": "Feeling watched cannot tell you how much other people have actually noticed."
+        },
+        {
+          "id": "social-anxiety-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "Earlier: Milo enters a society meeting where he knows nobody. Now you will test whether later evidence changes the explanation. About five minutes.",
+          "objective": "Test an account of entering a room while feeling watched with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "social-anxiety-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Milo",
+              "speakerB": "Nell",
+              "turns": [
+                {
+                  "id": "social-anxiety-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I asked one person about their course."
+                },
+                {
+                  "id": "social-anxiety-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "What happened?"
+                },
+                {
+                  "id": "social-anxiety-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "They asked about mine. I still felt nervous, but I wasn't watching my hands."
+                },
+                {
+                  "id": "social-anxiety-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "That is new evidence about their response, even though the feeling remained."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "social-anxiety-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "social-anxiety-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "social-anxiety-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-8-check1-opt1",
+                      "label": "Observable engagement challenges Milo's prediction; the continuing anxiety does not prove the conversation failed. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "social-anxiety-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider the group may genuinely have treated newcomers as unwelcome.."
+                    }
+                  ],
+                  "answer": "social-anxiety-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. Observable engagement challenges Milo's prediction; the continuing anxiety does not prove the conversation failed. It still leaves open how much each factor contributed.",
+                  "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction."
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "The quotes record what was said. Milo may be directing attention inward to prevent negative evaluation, losing information about the group. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "social-anxiety-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "social-anxiety-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "social-anxiety-m1-sort-1",
+                  "label": "Milo said: \"Everyone can tell I don't belong here.\"",
+                  "answer": "social-anxiety-m1-cat-observation"
+                },
+                {
+                  "id": "social-anxiety-m1-sort-2",
+                  "label": "Nell said: \"Does focusing on your posture help you join in?\"",
+                  "answer": "social-anxiety-m1-cat-observation"
+                },
+                {
+                  "id": "social-anxiety-m1-sort-3",
+                  "label": "Milo may be directing attention inward to prevent negative evaluation, losing information about the group.",
+                  "answer": "social-anxiety-m1-cat-inference"
+                },
+                {
+                  "id": "social-anxiety-m1-sort-4",
+                  "label": "He predicts that others will notice he is awkward and exclude him.",
+                  "answer": "social-anxiety-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Milo: \"Everyone can tell I don't belong here.\"",
+              "viewB": "Nell: \"Does focusing on your posture help you join in?\"",
+              "options": [
+                {
+                  "id": "social-anxiety-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "social-anxiety-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "social-anxiety-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "social-anxiety-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                }
+              ],
+              "answer": "social-anxiety-m1-view-opt1"
+            },
+            {
+              "id": "social-anxiety-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. Observable engagement challenges Milo's prediction; the continuing anxiety does not prove the conversation failed. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I asked one person about their course. What happened? They asked about mine. I still felt nervous, but I wasn't watching my hands. That is new evidence about their response, even though the feeling remained.",
+              "options": [
+                {
+                  "id": "social-anxiety-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "social-anxiety-m1-new-opt3",
+                  "label": "The new evidence establishes the group may genuinely have treated newcomers as unwelcome. as the sole explanation."
+                },
+                {
+                  "id": "social-anxiety-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "social-anxiety-m1-new-opt1",
+                  "label": "Observable engagement challenges Milo's prediction; the continuing anxiety does not prove the conversation failed. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                }
+              ],
+              "answer": "social-anxiety-m1-new-opt1"
+            },
+            {
+              "id": "social-anxiety-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. The group may genuinely have treated newcomers as unwelcome. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "social-anxiety-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "social-anxiety-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "social-anxiety-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "social-anxiety-m1-test-opt1",
+                  "label": "Look for independent observations that support the group may genuinely have treated newcomers as unwelcome. and explain the original dialogue."
+                }
+              ],
+              "answer": "social-anxiety-m1-test-opt1"
+            },
+            {
+              "id": "social-anxiety-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "In this case, he predicts that others will notice he is awkward and exclude him. A functional account then asks whether he monitors his posture and rehearses every line. is followed by consequences that make repetition more likely.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "social-anxiety-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "social-anxiety-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "social-anxiety-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "social-anxiety-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "social-anxiety-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "social-anxiety-opening-process",
+              "explanation": "Compare internal sensations with observable responses before judging how the presentation went. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+              "sources": "Clark & Wells (1995), cognitive model of social phobia.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A presenter concludes their talk failed because their face felt hot, despite engaged audience questions.",
+              "evidenceOptions": [
+                {
+                  "id": "social-anxiety-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "social-anxiety-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "social-anxiety-m1-transfer-e-opt1",
+                  "label": "Compare internal sensations with observable responses before judging how the presentation went."
+                }
+              ],
+              "evidenceAnswer": "social-anxiety-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "social-anxiety-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "social-anxiety-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "social-anxiety-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                }
+              ],
+              "responseAnswer": "social-anxiety-m1-transfer-a-opt1"
+            }
+          ],
+          "takeaway": "Looking outward can give you evidence that self-monitoring never could."
+        }
+      ]
+    }
+  ]
+}

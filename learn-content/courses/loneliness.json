@@ -1,0 +1,609 @@
+{
+  "id": "loneliness",
+  "version": 1,
+  "status": "published",
+  "title": "Loneliness, Friendship & Belonging",
+  "description": "Explore being surrounded yet feeling alone through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "loneliness-module-01",
+      "title": "Being surrounded yet feeling alone",
+      "bookId": "loneliness-book-1",
+      "bookTitle": "Loneliness versus isolation",
+      "bookNumber": 1,
+      "problem": "Being surrounded yet feeling alone",
+      "distinction": "Being surrounded yet feeling alone",
+      "lessons": [
+        {
+          "id": "loneliness-m1-l1",
+          "version": 1,
+          "title": "Company without feeling known",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of being surrounded yet feeling alone.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "loneliness-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Loneliness concerns a perceived gap between the connection a person has and the connection they want. Avoiding small personal disclosures can reduce the immediate risk of rejection, but it also reduces opportunities to learn whether a friendship could offer deeper support.\n\nNot every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters."
+            },
+            {
+              "id": "loneliness-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Jon goes to several social events a week but describes feeling lonely.",
+              "speakerA": "Jon",
+              "speakerB": "Asha",
+              "turns": [
+                {
+                  "id": "loneliness-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I'm around people every night, but I don't think anybody really knows me."
+                },
+                {
+                  "id": "loneliness-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "Are the evenings enjoyable?"
+                },
+                {
+                  "id": "loneliness-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "Mostly. We talk about football and work. I never say when I'm having a bad week."
+                },
+                {
+                  "id": "loneliness-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Do you expect them to react badly?"
+                },
+                {
+                  "id": "loneliness-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "I don't know. I usually change the subject before finding out."
+                },
+                {
+                  "id": "loneliness-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "So you've had company without testing whether you can be understood."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "loneliness-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "loneliness-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "loneliness-m1-node-1-check1-opt1",
+                      "label": "Jon may have frequent social contact without the emotional connection he wants."
+                    },
+                    {
+                      "id": "loneliness-m1-node-1-check1-opt2",
+                      "label": "Jon may simply need more opportunities to meet compatible people."
+                    },
+                    {
+                      "id": "loneliness-m1-node-1-check1-opt3",
+                      "label": "Jon may be dissatisfied with the activities rather than the relationships."
+                    }
+                  ],
+                  "answer": "loneliness-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Jon may have frequent social contact without the emotional connection he wants. Jon may simply need more opportunities to meet compatible people. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone."
+                },
+                {
+                  "id": "loneliness-m1-node-1-check2",
+                  "prompt": "You are Jon. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "loneliness-m1-node-1-check2-opt1",
+                      "label": "Tell one trusted friend a little about the difficult week and observe their response.",
+                      "reply": "That tells you something a crowded evening could never establish.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "loneliness-m1-node-1-check2-opt2",
+                      "label": "Add another event to your calendar without considering what sort of connection is missing.",
+                      "reply": "So you've had company without testing whether you can be understood.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "loneliness-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Do you expect them to react badly?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "loneliness-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "What did they do?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    }
+                  ],
+                  "answer": "loneliness-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone."
+                }
+              ]
+            },
+            {
+              "id": "loneliness-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that jon may have frequent social contact without the emotional connection he wants. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "loneliness-m1-evidence-1",
+                  "text": "I'm around people every night, but I don't think anybody really knows me.",
+                  "answer": false
+                },
+                {
+                  "id": "loneliness-m1-evidence-2",
+                  "text": "Are the evenings enjoyable?",
+                  "answer": false
+                },
+                {
+                  "id": "loneliness-m1-evidence-3",
+                  "text": "Mostly. We talk about football and work. I never say when I'm having a bad week.",
+                  "answer": true
+                },
+                {
+                  "id": "loneliness-m1-evidence-4",
+                  "text": "Do you expect them to react badly?",
+                  "answer": false
+                },
+                {
+                  "id": "loneliness-m1-evidence-5",
+                  "text": "I don't know. I usually change the subject before finding out.",
+                  "answer": true
+                },
+                {
+                  "id": "loneliness-m1-evidence-6",
+                  "text": "So you've had company without testing whether you can be understood.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "loneliness-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "The strongest candidate is jon may have frequent social contact without the emotional connection he wants. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "loneliness-m1-rank-strong",
+                  "label": "Jon may have frequent social contact without the emotional connection he wants."
+                },
+                {
+                  "id": "loneliness-m1-rank-rival",
+                  "label": "Jon may simply need more opportunities to meet compatible people."
+                },
+                {
+                  "id": "loneliness-m1-rank-other",
+                  "label": "Jon may be dissatisfied with the activities rather than the relationships."
+                }
+              ]
+            },
+            {
+              "id": "loneliness-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "The trigger is jon wants support during a difficult week. Its possible meaning is he anticipates that personal disclosure may not be welcome. The protective behaviour may contribute to a longer-term cost: he stays socially active without learning who might offer closer connection.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "loneliness-m1-chain-1",
+                  "label": "Jon wants support during a difficult week."
+                },
+                {
+                  "id": "loneliness-m1-chain-2",
+                  "label": "He anticipates that personal disclosure may not be welcome."
+                },
+                {
+                  "id": "loneliness-m1-chain-3",
+                  "label": "He keeps conversations on safe public topics."
+                },
+                {
+                  "id": "loneliness-m1-chain-4",
+                  "label": "He stays socially active without learning who might offer closer connection."
+                }
+              ]
+            },
+            {
+              "id": "loneliness-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls jon may have frequent social contact without the emotional connection he wants. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "loneliness-m1-repair-opt2",
+                  "label": "Because jon may simply need more opportunities to meet compatible people., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "loneliness-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "loneliness-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "loneliness-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but jon may simply need more opportunities to meet compatible people. still deserves consideration."
+                }
+              ],
+              "answer": "loneliness-m1-repair-opt1"
+            },
+            {
+              "id": "loneliness-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Tell one trusted friend a little about the difficult week and observe their response. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "loneliness-m1-plan-opt2",
+                  "label": "Add another event to your calendar without considering what sort of connection is missing."
+                },
+                {
+                  "id": "loneliness-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "loneliness-m1-plan-opt1",
+                  "label": "Tell one trusted friend a little about the difficult week and observe their response."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "loneliness-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "loneliness-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "loneliness-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                }
+              ],
+              "correctChange": "loneliness-m1-plan-opt1",
+              "correctOutcome": "loneliness-m1-outcome-opt1"
+            }
+          ],
+          "takeaway": "The number of people around you says little about whether you feel known by anyone."
+        },
+        {
+          "id": "loneliness-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "Earlier: Jon goes to several social events a week but describes feeling lonely. Now you will test whether later evidence changes the explanation. About five minutes.",
+          "objective": "Test an account of being surrounded yet feeling alone with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "loneliness-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Jon",
+              "speakerB": "Asha",
+              "turns": [
+                {
+                  "id": "loneliness-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I told one friend I'd had a difficult week."
+                },
+                {
+                  "id": "loneliness-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "What did they do?"
+                },
+                {
+                  "id": "loneliness-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "They asked what happened and stayed to listen."
+                },
+                {
+                  "id": "loneliness-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "That tells you something a crowded evening could never establish."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "loneliness-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "loneliness-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "loneliness-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider jon may simply need more opportunities to meet compatible people.."
+                    },
+                    {
+                      "id": "loneliness-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "loneliness-m1-node-8-check1-opt1",
+                      "label": "One supportive response supplies direct evidence that a closer connection may be possible. The earlier explanation may still contribute."
+                    }
+                  ],
+                  "answer": "loneliness-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. One supportive response supplies direct evidence that a closer connection may be possible. It still leaves open how much each factor contributed.",
+                  "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone."
+                }
+              ]
+            },
+            {
+              "id": "loneliness-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Jon: \"I'm around people every night, but I don't think anybody really knows me.\"",
+              "viewB": "Asha: \"Do you expect them to react badly?\"",
+              "options": [
+                {
+                  "id": "loneliness-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "loneliness-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "loneliness-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "loneliness-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                }
+              ],
+              "answer": "loneliness-m1-view-opt1"
+            },
+            {
+              "id": "loneliness-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. One supportive response supplies direct evidence that a closer connection may be possible. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I told one friend I'd had a difficult week. What did they do? They asked what happened and stayed to listen. That tells you something a crowded evening could never establish.",
+              "options": [
+                {
+                  "id": "loneliness-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "loneliness-m1-new-opt1",
+                  "label": "One supportive response supplies direct evidence that a closer connection may be possible. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "loneliness-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "loneliness-m1-new-opt3",
+                  "label": "The new evidence establishes jon may simply need more opportunities to meet compatible people. as the sole explanation."
+                }
+              ],
+              "answer": "loneliness-m1-new-opt1"
+            },
+            {
+              "id": "loneliness-m1-node-15",
+              "type": "complete",
+              "title": "One distinction to keep",
+              "prompt": "Fill the missing word: An explanation of what a behaviour might achieve is a working ______, not a proven fact.",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "A hypothesis is an explanation that can be revised when observations fail to support it. This keeps psychological reasoning useful rather than turning it into confident mind-reading.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "answers": [
+                "hypothesis",
+                "formulation",
+                "working hypothesis"
+              ],
+              "hint": "One word: an explanation you can test"
+            },
+            {
+              "id": "loneliness-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "The quotes record what was said. Jon may have frequent social contact without the emotional connection he wants. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "loneliness-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "loneliness-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "loneliness-m1-sort-1",
+                  "label": "Jon said: \"I'm around people every night, but I don't think anybody really knows me.\"",
+                  "answer": "loneliness-m1-cat-observation"
+                },
+                {
+                  "id": "loneliness-m1-sort-2",
+                  "label": "Asha said: \"Do you expect them to react badly?\"",
+                  "answer": "loneliness-m1-cat-observation"
+                },
+                {
+                  "id": "loneliness-m1-sort-3",
+                  "label": "Jon may have frequent social contact without the emotional connection he wants.",
+                  "answer": "loneliness-m1-cat-inference"
+                },
+                {
+                  "id": "loneliness-m1-sort-4",
+                  "label": "He anticipates that personal disclosure may not be welcome.",
+                  "answer": "loneliness-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "loneliness-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "Ask whether the person has dependable, wanted connection rather than counting contacts. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A student has many online contacts but no one they trust to call after a bad day.",
+              "evidenceOptions": [
+                {
+                  "id": "loneliness-m1-transfer-e-opt1",
+                  "label": "Ask whether the person has dependable, wanted connection rather than counting contacts."
+                },
+                {
+                  "id": "loneliness-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "loneliness-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                }
+              ],
+              "evidenceAnswer": "loneliness-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "loneliness-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "loneliness-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "loneliness-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                }
+              ],
+              "responseAnswer": "loneliness-m1-transfer-a-opt1"
+            },
+            {
+              "id": "loneliness-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "loneliness-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Jon may simply need more opportunities to meet compatible people. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+              "sources": "Hawkley & Cacioppo (2010), Loneliness Matters.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "loneliness-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "loneliness-m1-test-opt1",
+                  "label": "Look for independent observations that support jon may simply need more opportunities to meet compatible people. and explain the original dialogue."
+                },
+                {
+                  "id": "loneliness-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "loneliness-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                }
+              ],
+              "answer": "loneliness-m1-test-opt1"
+            }
+          ],
+          "takeaway": "A small, honest disclosure can tell you more about a friendship than another crowded evening."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,625 @@
+{
+  "id": "social-media",
+  "version": 1,
+  "status": "published",
+  "title": "Social Media & the Attention Economy",
+  "description": "Explore infinite scroll and delayed stopping cues through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "social-media-module-01",
+      "title": "Infinite scroll and delayed stopping cues",
+      "bookId": "social-media-book-1",
+      "bookTitle": "Why attention becomes the product",
+      "bookNumber": 1,
+      "problem": "Infinite scroll and delayed stopping cues",
+      "distinction": "Infinite scroll and delayed stopping cues",
+      "lessons": [
+        {
+          "id": "social-media-m1-l1",
+          "version": 1,
+          "title": "Where did forty minutes go?",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of infinite scroll and delayed stopping cues.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "social-media-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "social-media-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "Ada intended to watch one short cooking clip before going to sleep.",
+              "speakerA": "Ada",
+              "speakerB": "Finn",
+              "turns": [
+                {
+                  "id": "social-media-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "I opened the feed for one recipe and lost forty minutes."
+                },
+                {
+                  "id": "social-media-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "Where did the app give you a natural chance to stop?"
+                },
+                {
+                  "id": "social-media-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "It didn't. The next clip started before I decided anything."
+                },
+                {
+                  "id": "social-media-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Were they all interesting?"
+                },
+                {
+                  "id": "social-media-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "No. I kept thinking the next one might be better."
+                },
+                {
+                  "id": "social-media-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "So continuing was easier than making a new choice each time."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "social-media-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "social-media-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "social-media-m1-node-1-check1-opt2",
+                      "label": "Ada may be postponing bedtime because she does not want the day to end."
+                    },
+                    {
+                      "id": "social-media-m1-node-1-check1-opt3",
+                      "label": "Ada may be enjoying the feed and choosing freely to watch longer than expected."
+                    },
+                    {
+                      "id": "social-media-m1-node-1-check1-opt1",
+                      "label": "Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention."
+                    }
+                  ],
+                  "answer": "social-media-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention. Ada may be postponing bedtime because she does not want the day to end. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals."
+                },
+                {
+                  "id": "social-media-m1-node-1-check2",
+                  "prompt": "You are Ada. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "social-media-m1-node-1-check2-opt2",
+                      "label": "Wait until the videos become boring enough that you naturally close the app.",
+                      "reply": "So continuing was easier than making a new choice each time.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "social-media-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Were they all interesting?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "social-media-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "Did you still want another clip?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    },
+                    {
+                      "id": "social-media-m1-node-1-check2-opt1",
+                      "label": "Disable autoplay and decide the stopping point before opening the feed.",
+                      "reply": "That small delay changed the opportunity to act on the urge.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    }
+                  ],
+                  "answer": "social-media-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals."
+                }
+              ]
+            },
+            {
+              "id": "social-media-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "social-media-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "social-media-m1-evidence-1",
+                  "text": "I opened the feed for one recipe and lost forty minutes.",
+                  "answer": false
+                },
+                {
+                  "id": "social-media-m1-evidence-2",
+                  "text": "Where did the app give you a natural chance to stop?",
+                  "answer": false
+                },
+                {
+                  "id": "social-media-m1-evidence-3",
+                  "text": "It didn't. The next clip started before I decided anything.",
+                  "answer": true
+                },
+                {
+                  "id": "social-media-m1-evidence-4",
+                  "text": "Were they all interesting?",
+                  "answer": false
+                },
+                {
+                  "id": "social-media-m1-evidence-5",
+                  "text": "No. I kept thinking the next one might be better.",
+                  "answer": true
+                },
+                {
+                  "id": "social-media-m1-evidence-6",
+                  "text": "So continuing was easier than making a new choice each time.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "social-media-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Feeds can reduce friction between rewards and remove natural stopping points. A person may keep checking for a worthwhile clip even after several uninteresting ones. The design makes continuing the default; stopping requires a fresh decision. That can shift behaviour without making every episode a sign of addiction.\n\nFrequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control."
+            },
+            {
+              "id": "social-media-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "social-media-opening-process",
+              "explanation": "The trigger is a recipe clip ends and another starts automatically. Its possible meaning is the next video might be especially worth watching. The protective behaviour may contribute to a longer-term cost: time passes without another deliberate decision about bedtime.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "social-media-m1-chain-1",
+                  "label": "A recipe clip ends and another starts automatically."
+                },
+                {
+                  "id": "social-media-m1-chain-2",
+                  "label": "The next video might be especially worth watching."
+                },
+                {
+                  "id": "social-media-m1-chain-3",
+                  "label": "Ada continues through several uninteresting clips."
+                },
+                {
+                  "id": "social-media-m1-chain-4",
+                  "label": "Time passes without another deliberate decision about bedtime."
+                }
+              ]
+            },
+            {
+              "id": "social-media-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "social-media-opening-process",
+              "explanation": "The strongest candidate is automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "social-media-m1-rank-strong",
+                  "label": "Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention."
+                },
+                {
+                  "id": "social-media-m1-rank-rival",
+                  "label": "Ada may be postponing bedtime because she does not want the day to end."
+                },
+                {
+                  "id": "social-media-m1-rank-other",
+                  "label": "Ada may be enjoying the feed and choosing freely to watch longer than expected."
+                }
+              ]
+            },
+            {
+              "id": "social-media-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "social-media-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Disable autoplay and decide the stopping point before opening the feed. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "social-media-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                },
+                {
+                  "id": "social-media-m1-plan-opt1",
+                  "label": "Disable autoplay and decide the stopping point before opening the feed."
+                },
+                {
+                  "id": "social-media-m1-plan-opt2",
+                  "label": "Wait until the videos become boring enough that you naturally close the app."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "social-media-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                },
+                {
+                  "id": "social-media-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "social-media-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                }
+              ],
+              "correctChange": "social-media-m1-plan-opt1",
+              "correctOutcome": "social-media-m1-outcome-opt1"
+            },
+            {
+              "id": "social-media-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls automatic continuation and uncertain reward may be keeping ada engaged beyond her initial intention. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "social-media-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "social-media-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "social-media-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "social-media-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but ada may be postponing bedtime because she does not want the day to end. still deserves consideration."
+                },
+                {
+                  "id": "social-media-m1-repair-opt2",
+                  "label": "Because ada may be postponing bedtime because she does not want the day to end., the present psychological account should be discarded until certainty is possible."
+                }
+              ],
+              "answer": "social-media-m1-repair-opt1"
+            }
+          ],
+          "takeaway": "A feed can keep you watching by removing the moment when you'd usually decide whether to continue."
+        },
+        {
+          "id": "social-media-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "Earlier: Ada intended to watch one short cooking clip before going to sleep. Now you will test whether later evidence changes the explanation. About five minutes.",
+          "objective": "Test an account of infinite scroll and delayed stopping cues with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "social-media-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "social-media-opening-process",
+              "explanation": "The quotes record what was said. Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "social-media-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "social-media-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "social-media-m1-sort-1",
+                  "label": "Ada said: \"I opened the feed for one recipe and lost forty minutes.\"",
+                  "answer": "social-media-m1-cat-observation"
+                },
+                {
+                  "id": "social-media-m1-sort-2",
+                  "label": "Finn said: \"Were they all interesting?\"",
+                  "answer": "social-media-m1-cat-observation"
+                },
+                {
+                  "id": "social-media-m1-sort-3",
+                  "label": "Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention.",
+                  "answer": "social-media-m1-cat-inference"
+                },
+                {
+                  "id": "social-media-m1-sort-4",
+                  "label": "The next video might be especially worth watching.",
+                  "answer": "social-media-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "social-media-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "social-media-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Ada",
+              "speakerB": "Finn",
+              "turns": [
+                {
+                  "id": "social-media-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I switched off autoplay and left my phone across the room."
+                },
+                {
+                  "id": "social-media-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "Did you still want another clip?"
+                },
+                {
+                  "id": "social-media-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "Yes, but I had to decide to pick it up again."
+                },
+                {
+                  "id": "social-media-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "That small delay changed the opportunity to act on the urge."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "social-media-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "social-media-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "social-media-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    },
+                    {
+                      "id": "social-media-m1-node-8-check1-opt1",
+                      "label": "Adding friction changes continuation even when interest in videos remains. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "social-media-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider ada may be postponing bedtime because she does not want the day to end.."
+                    }
+                  ],
+                  "answer": "social-media-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. Adding friction changes continuation even when interest in videos remains. It still leaves open how much each factor contributed.",
+                  "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals."
+                }
+              ]
+            },
+            {
+              "id": "social-media-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "social-media-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. Adding friction changes continuation even when interest in videos remains. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I switched off autoplay and left my phone across the room. Did you still want another clip? Yes, but I had to decide to pick it up again. That small delay changed the opportunity to act on the urge.",
+              "options": [
+                {
+                  "id": "social-media-m1-new-opt1",
+                  "label": "Adding friction changes continuation even when interest in videos remains. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "social-media-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "social-media-m1-new-opt3",
+                  "label": "The new evidence establishes ada may be postponing bedtime because she does not want the day to end. as the sole explanation."
+                },
+                {
+                  "id": "social-media-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                }
+              ],
+              "answer": "social-media-m1-new-opt1"
+            },
+            {
+              "id": "social-media-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "social-media-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Ada: \"I opened the feed for one recipe and lost forty minutes.\"",
+              "viewB": "Finn: \"Were they all interesting?\"",
+              "options": [
+                {
+                  "id": "social-media-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "social-media-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "social-media-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                },
+                {
+                  "id": "social-media-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                }
+              ],
+              "answer": "social-media-m1-view-opt1"
+            },
+            {
+              "id": "social-media-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "social-media-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Ada may be postponing bedtime because she does not want the day to end. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "social-media-m1-test-opt1",
+                  "label": "Look for independent observations that support ada may be postponing bedtime because she does not want the day to end. and explain the original dialogue."
+                },
+                {
+                  "id": "social-media-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "social-media-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                },
+                {
+                  "id": "social-media-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                }
+              ],
+              "answer": "social-media-m1-test-opt1"
+            },
+            {
+              "id": "social-media-m1-node-12",
+              "type": "match",
+              "title": "Connect the parts",
+              "prompt": "Match each element of a functional formulation to the question it answers.",
+              "conceptId": "social-media-opening-process",
+              "explanation": "In this case, the next video might be especially worth watching. A functional account then asks whether ada continues through several uninteresting clips. is followed by consequences that make repetition more likely.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "pairs": [
+                {
+                  "id": "social-media-m1-match-1",
+                  "label": "Trigger",
+                  "answer": "What happened immediately before the response?"
+                },
+                {
+                  "id": "social-media-m1-match-2",
+                  "label": "Appraisal",
+                  "answer": "What did the situation seem to mean?"
+                },
+                {
+                  "id": "social-media-m1-match-3",
+                  "label": "Short-term function",
+                  "answer": "What might the response achieve right now?"
+                },
+                {
+                  "id": "social-media-m1-match-4",
+                  "label": "Maintaining consequence",
+                  "answer": "How might this make the difficulty recur?"
+                }
+              ]
+            },
+            {
+              "id": "social-media-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "social-media-opening-process",
+              "explanation": "Examine how continued recommendations can replace an original purchase goal with a sequence of unplanned decisions. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+              "sources": "Alter (2017), Irresistible; research on persuasive design and self-control.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A shopping site offers a new recommendation after every product you view.",
+              "evidenceOptions": [
+                {
+                  "id": "social-media-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                },
+                {
+                  "id": "social-media-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "social-media-m1-transfer-e-opt1",
+                  "label": "Examine how continued recommendations can replace an original purchase goal with a sequence of unplanned decisions."
+                }
+              ],
+              "evidenceAnswer": "social-media-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "social-media-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                },
+                {
+                  "id": "social-media-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "social-media-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                }
+              ],
+              "responseAnswer": "social-media-m1-transfer-a-opt1"
+            }
+          ],
+          "takeaway": "Making the next swipe less automatic can restore a decision you didn't realise you were skipping."
+        }
+      ]
+    }
+  ]
+}

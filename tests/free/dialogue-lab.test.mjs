@@ -69,5 +69,5 @@ test('Public Learn and staff Templates link to the shared Dialogue Lab type with
  assert.match(courseLab,/dialogue-add-turn/);
  assert.match(courseLab,/dialogue-add-check/);
  assert.match(learn,/LESSON_FORMATS\.length/);
- assert.deepEqual(JSON.parse(read('learn-content/index.json')).courses,{});
+ assert.equal(Object.keys(JSON.parse(read('learn-content/index.json')).courses).length,20);
 });

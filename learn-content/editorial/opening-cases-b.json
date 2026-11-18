@@ -1,0 +1,446 @@
+{
+  "version": 1,
+  "purpose": "initial editorial seed; published lessons are edited in Course Lab",
+  "cases": [
+    {
+      "id": "burnout",
+      "module": "A busy week versus chronic overload",
+      "book": "Stress is not one problem",
+      "title": "When rest doesn't fix the workload",
+      "people": [
+        "Priya",
+        "Morgan"
+      ],
+      "scene": "Priya works in a clinic where the number of appointments has increased without more staff.",
+      "lines": [
+        "I worked through lunch again and still missed two deadlines.",
+        "Did your workload change after the last review?",
+        "They added another clinic session. Nobody's hours increased.",
+        "Have you been able to recover outside work?",
+        "A weekend helps, but the backlog is larger every Monday.",
+        "What happens when you show management the number of hours available?"
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "The demands may exceed Priya's available time and support; personal organisation alone cannot close that gap.",
+      "rival": "Priya may need a more reliable way to prioritise urgent work.",
+      "alternate": "This may have been an exceptional week rather than a sustained demand problem.",
+      "mechanism": "A job-demands and resources formulation asks whether the work can be done with the time and staffing actually available. Working through breaks may temporarily reduce a backlog while hiding an unsustainable workload. Burnout concerns chronic occupational stress that has not been successfully managed, rather than an isolated busy period.",
+      "boundary": "Fatigue can reflect other health or life factors. A full account needs the duration of demands and how work is affecting functioning.",
+      "trigger": "The clinic increases appointment demand without adding staff time.",
+      "appraisal": "Priya feels personally responsible for completing more than fits her working day.",
+      "response": "She repeatedly works through scheduled breaks.",
+      "consequence": "The backlog persists and opportunities for recovery shrink.",
+      "action": "Document the workload against available hours and ask which duties will be reduced or resourced.",
+      "avoid": "Use shorter breaks and schedule every appointment more tightly.",
+      "after": [
+        "I mapped the required appointments against the hours we have.",
+        "How much time was missing?",
+        "Nearly a whole clinic session each week before emergencies.",
+        "That is evidence for a capacity discussion, not simply a better planner."
+      ],
+      "newInsight": "The capacity calculation strengthens an organisational explanation and clarifies what must change.",
+      "transfer": "A teacher is told to be more resilient after being assigned two additional classes.",
+      "transferAnswer": "Assess whether duties actually fit the available time before prescribing individual coping strategies.",
+      "source": "WHO, Burn-out: an occupational phenomenon; Bakker & Demerouti (2007), Job Demands-Resources model."
+    },
+    {
+      "id": "loneliness",
+      "module": "Being surrounded yet feeling alone",
+      "book": "Loneliness versus isolation",
+      "title": "Company without feeling known",
+      "people": [
+        "Jon",
+        "Asha"
+      ],
+      "scene": "Jon goes to several social events a week but describes feeling lonely.",
+      "lines": [
+        "I'm around people every night, but I don't think anybody really knows me.",
+        "Are the evenings enjoyable?",
+        "Mostly. We talk about football and work. I never say when I'm having a bad week.",
+        "Do you expect them to react badly?",
+        "I don't know. I usually change the subject before finding out.",
+        "So you've had company without testing whether you can be understood."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Jon may have frequent social contact without the emotional connection he wants.",
+      "rival": "Jon may simply need more opportunities to meet compatible people.",
+      "alternate": "Jon may be dissatisfied with the activities rather than the relationships.",
+      "mechanism": "Loneliness concerns a perceived gap between the connection a person has and the connection they want. Avoiding small personal disclosures can reduce the immediate risk of rejection, but it also reduces opportunities to learn whether a friendship could offer deeper support.",
+      "boundary": "Not every friendship needs emotional disclosure. Privacy and cultural expectations matter; the aim is not to demand intimacy from everyone.",
+      "trigger": "Jon wants support during a difficult week.",
+      "appraisal": "He anticipates that personal disclosure may not be welcome.",
+      "response": "He keeps conversations on safe public topics.",
+      "consequence": "He stays socially active without learning who might offer closer connection.",
+      "action": "Tell one trusted friend a little about the difficult week and observe their response.",
+      "avoid": "Add another event to your calendar without considering what sort of connection is missing.",
+      "after": [
+        "I told one friend I'd had a difficult week.",
+        "What did they do?",
+        "They asked what happened and stayed to listen.",
+        "That tells you something a crowded evening could never establish."
+      ],
+      "newInsight": "One supportive response supplies direct evidence that a closer connection may be possible.",
+      "transfer": "A student has many online contacts but no one they trust to call after a bad day.",
+      "transferAnswer": "Ask whether the person has dependable, wanted connection rather than counting contacts.",
+      "source": "Hawkley & Cacioppo (2010), Loneliness Matters."
+    },
+    {
+      "id": "social-media",
+      "module": "Infinite scroll and delayed stopping cues",
+      "book": "Why attention becomes the product",
+      "title": "Where did forty minutes go?",
+      "people": [
+        "Ada",
+        "Finn"
+      ],
+      "scene": "Ada intended to watch one short cooking clip before going to sleep.",
+      "lines": [
+        "I opened the feed for one recipe and lost forty minutes.",
+        "Where did the app give you a natural chance to stop?",
+        "It didn't. The next clip started before I decided anything.",
+        "Were they all interesting?",
+        "No. I kept thinking the next one might be better.",
+        "So continuing was easier than making a new choice each time."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Automatic continuation and uncertain reward may be keeping Ada engaged beyond her initial intention.",
+      "rival": "Ada may be postponing bedtime because she does not want the day to end.",
+      "alternate": "Ada may be enjoying the feed and choosing freely to watch longer than expected.",
+      "mechanism": "Feeds can reduce friction between rewards and remove natural stopping points. A person may keep checking for a worthwhile clip even after several uninteresting ones. The design makes continuing the default; stopping requires a fresh decision. That can shift behaviour without making every episode a sign of addiction.",
+      "boundary": "Frequent viewing is not automatically compulsive or harmful. The relevant question is whether the behaviour repeatedly conflicts with the person's goals.",
+      "trigger": "A recipe clip ends and another starts automatically.",
+      "appraisal": "The next video might be especially worth watching.",
+      "response": "Ada continues through several uninteresting clips.",
+      "consequence": "Time passes without another deliberate decision about bedtime.",
+      "action": "Disable autoplay and decide the stopping point before opening the feed.",
+      "avoid": "Wait until the videos become boring enough that you naturally close the app.",
+      "after": [
+        "I switched off autoplay and left my phone across the room.",
+        "Did you still want another clip?",
+        "Yes, but I had to decide to pick it up again.",
+        "That small delay changed the opportunity to act on the urge."
+      ],
+      "newInsight": "Adding friction changes continuation even when interest in videos remains.",
+      "transfer": "A shopping site offers a new recommendation after every product you view.",
+      "transferAnswer": "Examine how continued recommendations can replace an original purchase goal with a sequence of unplanned decisions.",
+      "source": "Alter (2017), Irresistible; research on persuasive design and self-control."
+    },
+    {
+      "id": "misinformation",
+      "module": "Familiarity mistaken for truth",
+      "book": "Why convincing claims work",
+      "title": "I've seen it everywhere",
+      "people": [
+        "Ivo",
+        "Leah"
+      ],
+      "scene": "A claim about the local water supply is spreading through a group chat.",
+      "lines": [
+        "I've seen that warning five times now. There must be something behind it.",
+        "Were they five different sources?",
+        "Different people sent it, but it was always the same screenshot.",
+        "Do you know where it originally came from?",
+        "No. It just feels familiar enough that I'd recognise it anywhere.",
+        "Familiarity can change how convincing something feels without adding evidence."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Ivo may be mistaking repetition of one claim for several independent confirmations.",
+      "rival": "Several local observers may independently have found evidence of the same problem.",
+      "alternate": "The screenshot's technical presentation may be persuasive regardless of how often it appears.",
+      "mechanism": "Repetition can increase perceived truth because a familiar statement is processed more easily. Several forwards of one screenshot do not provide independent checks. The important investigative task is tracing an assertion back to its origin and then finding evidence that does not rely on that same source.",
+      "boundary": "A repeated claim can still be true. Familiarity is not evidence for truth or falsity by itself.",
+      "trigger": "Several people forward the same screenshot.",
+      "appraisal": "Ivo reads repeated appearance as widespread corroboration.",
+      "response": "He becomes more confident without checking the original claim.",
+      "consequence": "Copied assertions acquire the appearance of an independent evidence base.",
+      "action": "Trace the screenshot to its source and check whether independent test results support it.",
+      "avoid": "Ask the group to vote on whether the warning sounds convincing.",
+      "after": [
+        "I found the first version of the post.",
+        "Did it link to a water test?",
+        "No. It quoted another account that had copied it.",
+        "So the apparent sources collapse into one unverified assertion."
+      ],
+      "newInsight": "Source tracing demonstrates that repetition and independent corroboration were being confused.",
+      "transfer": "Ten posts repeat the same medical statistic without naming the original study.",
+      "transferAnswer": "Trace the statistic to its primary source before treating reposts as corroboration.",
+      "source": "Fazio et al. (2015), Knowledge Does Not Protect Against Illusory Truth."
+    },
+    {
+      "id": "neurodiversity",
+      "module": "Neurodiversity as population variation",
+      "book": "Understanding neurodiversity precisely",
+      "title": "Different minds, same task",
+      "people": [
+        "Tavi",
+        "Grace"
+      ],
+      "scene": "Tavi struggles to follow cross-talk in a busy meeting and asks for advance notes.",
+      "lines": [
+        "I contribute better when I can read the agenda beforehand.",
+        "Meetings are supposed to be about thinking on your feet.",
+        "The overlapping conversations make it hard to follow the current question.",
+        "Would you prefer joining remotely?",
+        "Sometimes. Written notes and taking turns might be enough.",
+        "So we could change the format without changing what the meeting is meant to achieve."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "The meeting format may create avoidable processing demands that limit Tavi's participation.",
+      "rival": "Tavi may not have enough background knowledge to contribute confidently.",
+      "alternate": "Tavi might simply prefer remote meetings regardless of sensory or processing demands.",
+      "mechanism": "Neurodiversity describes variation within human populations rather than one person's fixed profile. A person's contribution depends partly on the fit between their needs and the environment. A structured speaking order can improve access without lowering the intellectual demands of the meeting.",
+      "boundary": "An accommodation preference does not establish a diagnosis. Different people with the same diagnosis can need different arrangements.",
+      "trigger": "Several people speak over each other without a shared agenda.",
+      "appraisal": "Tavi cannot reliably identify which question to respond to.",
+      "response": "Tavi holds back from joining the discussion.",
+      "consequence": "Others may mistake a format barrier for a lack of ideas.",
+      "action": "Trial an agenda and structured turn-taking, then review whether participation improves.",
+      "avoid": "Reduce Tavi's responsibilities rather than changing the meeting format.",
+      "after": [
+        "We tried circulating the agenda and taking turns.",
+        "What changed?",
+        "More people contributed, including me.",
+        "That suggests the format mattered beyond any single person's diagnosis."
+      ],
+      "newInsight": "A simple environmental adjustment changes participation, supporting a person–environment account.",
+      "transfer": "A student performs well with written instructions but misses steps when directions are only spoken once.",
+      "transferAnswer": "Consider how the delivery format affects task performance before making claims about ability.",
+      "source": "NICE NG87, ADHD; NICE CG142, autism in adults; neurodiversity as population variation."
+    },
+    {
+      "id": "sleep",
+      "module": "Sleep pressure accumulated through waking",
+      "book": "How sleep regulation works",
+      "title": "Why an early bedtime isn't enough",
+      "people": [
+        "Nora",
+        "Isaac"
+      ],
+      "scene": "Nora woke just after noon and is trying to sleep at nine in the evening.",
+      "lines": [
+        "I've been in bed an hour and I'm wide awake.",
+        "When did you get up this morning?",
+        "After twelve. I thought an early night would reset the schedule.",
+        "Are you sleepy, or mainly worried about tomorrow?",
+        "Mostly worried. I'm checking the clock because I need eight hours.",
+        "Going to bed early doesn't guarantee the body is ready for sleep."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Nora may have relatively little sleep pressure at the chosen bedtime, compounded by sleep-related worry.",
+      "rival": "Nora may be experiencing a separate persistent sleep disorder that needs assessment.",
+      "alternate": "Nora may not have a sufficiently comfortable sleeping environment.",
+      "mechanism": "Sleep is regulated partly by homeostatic pressure accumulated during wakefulness and by circadian timing. An early bedtime after waking late may not match either process. Watching the clock and trying hard to sleep can then make the bed a cue for monitoring rather than settling.",
+      "boundary": "Insomnia has multiple causes, and persistent difficulty merits appropriate assessment. Sleep needs and health circumstances vary.",
+      "trigger": "Nora goes to bed relatively soon after waking.",
+      "appraisal": "She believes earlier time in bed must result in adequate sleep.",
+      "response": "She lies awake and repeatedly checks the time.",
+      "consequence": "The bedroom becomes associated with effortful wakefulness.",
+      "action": "Use a sustainable wake-time plan and seek evidence-based support if the difficulty persists.",
+      "avoid": "Keep increasing the hours spent in bed until sleep arrives sooner.",
+      "after": [
+        "I tried going to bed earlier every night.",
+        "Did your wake-up time move earlier?",
+        "No. I still woke late after falling asleep much later.",
+        "Then the timing of wakefulness and sleep needs attention too."
+      ],
+      "newInsight": "The unchanged wake time helps explain why earlier bedtime alone did not increase sleep readiness.",
+      "transfer": "Someone takes a long afternoon nap and is surprised not to feel sleepy at their normal bedtime.",
+      "transferAnswer": "Consider how recent sleep changes sleep pressure before assuming the bedtime is at fault.",
+      "source": "Borbély (1982), A Two Process Model of Sleep Regulation; NICE insomnia guidance."
+    },
+    {
+      "id": "low-mood",
+      "module": "Sadness after disappointment",
+      "book": "What low mood is and isn't",
+      "title": "When sadness follows a loss",
+      "people": [
+        "Mara",
+        "Ollie"
+      ],
+      "scene": "Mara was rejected for a job she cared deeply about two days ago.",
+      "lines": [
+        "I don't feel like seeing anyone after that email.",
+        "You put months into that application. What's hardest right now?",
+        "I keep thinking I'll never get anywhere.",
+        "Has the feeling changed at all these past two days?",
+        "A little when I saw my sister, then it came back when I read the email.",
+        "We can take it seriously without deciding yet what kind of longer-term pattern this is."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Mara may be interpreting one painful rejection as evidence of a permanently unsuccessful future.",
+      "rival": "Mara may be entering a depressive episode that needs further assessment.",
+      "alternate": "Mara may prefer temporary solitude after disappointment without any unhelpful process.",
+      "mechanism": "Sadness after disappointment is understandable, and time course matters when considering clinical depression. Withdrawal may offer shelter from reminders but also reduce opportunities for comfort and reward. The task is to notice what happens next without rushing from a two-day experience to a diagnosis.",
+      "boundary": "A depressive episode can follow a clear trigger. Duration, severity, other symptoms and functional consequences all require consideration.",
+      "trigger": "Mara receives an important job rejection.",
+      "appraisal": "She generalises the loss into a prediction that she will never succeed.",
+      "response": "She withdraws and repeatedly rereads the email.",
+      "consequence": "She has fewer supportive activities and more opportunity to revisit the rejection.",
+      "action": "Allow space for the loss while making one manageable plan that keeps connection and routine available.",
+      "avoid": "Fill every hour with activity so you never have to feel disappointed.",
+      "after": [
+        "I've been declining every invitation.",
+        "Does it make the sadness easier?",
+        "At first. Then I reread the email and feel worse.",
+        "That gives us a reason to consider what withdrawal is doing over time."
+      ],
+      "newInsight": "The short-term relief followed by isolation suggests withdrawal may be maintaining some of the distress.",
+      "transfer": "Someone feels down for one evening after an argument and returns to usual functioning the next day.",
+      "transferAnswer": "Consider the time course and functional effects before treating a transient feeling as a disorder.",
+      "source": "NICE NG222, depression in adults; behavioural activation models."
+    },
+    {
+      "id": "scams",
+      "module": "Time pressure and cognitive overload",
+      "book": "Why clever people are deceived",
+      "title": "The deadline that isn't yours",
+      "people": [
+        "Alex",
+        "Rina"
+      ],
+      "scene": "Alex receives a delivery text saying a parcel will be returned unless a small fee is paid within fifteen minutes.",
+      "lines": [
+        "This text says my parcel is going back tonight.",
+        "Were you expecting a delivery?",
+        "Yes. It has a payment link and a countdown.",
+        "Have you checked the order outside the message?",
+        "Not yet. I feel like waiting means I'll lose it.",
+        "The deadline may be making verification seem riskier than paying."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "The imposed deadline may be discouraging independent verification before a payment.",
+      "rival": "A courier may genuinely have a time-sensitive delivery problem.",
+      "alternate": "Alex's earlier parcel problems may be driving the worry more than the countdown.",
+      "mechanism": "Social engineering can change the conditions under which someone decides. Time pressure makes caution seem expensive, while a small fee lowers the apparent cost of compliance. The safer test is to leave the supplied link and verify through a trusted, independently accessed channel.",
+      "boundary": "Some real services do have deadlines. Urgency alone justifies verification; it does not prove fraud.",
+      "trigger": "A message announces imminent parcel return.",
+      "appraisal": "Alex believes verification may cause the loss of an expected delivery.",
+      "response": "He feels pressure to pay through the text link.",
+      "consequence": "He may surrender money or credentials before checking who sent the message.",
+      "action": "Close the text and open the retailer or courier's own site or app to check the order.",
+      "avoid": "Pay the small fee first and dispute it later if the parcel does not arrive.",
+      "after": [
+        "I opened my order through the shop's own site.",
+        "Was there a payment demand?",
+        "No. The parcel is still marked in transit.",
+        "That check is stronger evidence than the threat in the text."
+      ],
+      "newInsight": "Independent verification contradicts the text without needing to infer exactly who sent it.",
+      "transfer": "An unexpected IT support caller asks for a one-time account code to prevent a lockout.",
+      "transferAnswer": "Verify the claim through the organisation's established support channel without sharing the code on the call.",
+      "source": "UK National Cyber Security Centre, suspicious messages and social engineering guidance."
+    },
+    {
+      "id": "masculinity",
+      "module": "Sex characteristics and variation",
+      "book": "Sex, gender and sexuality precisely",
+      "title": "What exactly are we measuring?",
+      "people": [
+        "Avery",
+        "Sam"
+      ],
+      "scene": "Two research assistants are designing a demographic question for a health study.",
+      "lines": [
+        "This survey asks only male or female, but it doesn't say what the question measures.",
+        "Maybe we only need a broad demographic category.",
+        "Do we mean a particular biological characteristic, identity or legal record?",
+        "Those could give different answers depending on the person.",
+        "If the outcome depends on a hormone level, we should measure that level.",
+        "Then the question needs to match the scientific purpose."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Avery is identifying a construct-validity problem: the variable may not measure what the study needs.",
+      "rival": "A broad demographic category may be sufficient for the study's actual purpose.",
+      "alternate": "The main issue may be respondents' preferred wording rather than measurement validity.",
+      "mechanism": "Sex characteristics encompass several biological traits that do not necessarily align in every individual. Gender identity is a different construct. Good research defines what matters to the specific question and measures it directly where possible; a broad category should not be used as a substitute for a characteristic it did not assess.",
+      "boundary": "A simple category can be appropriate for a clearly stated descriptive purpose. The mistake is interpreting it as a precise measure of an unasked characteristic.",
+      "trigger": "The research team proposes one demographic item for several possible purposes.",
+      "appraisal": "Avery sees that the variable may be too imprecise for the intended scientific claim.",
+      "response": "Avery asks which characteristic is actually being studied.",
+      "consequence": "The team can improve validity rather than drawing conclusions from an ambiguous category.",
+      "action": "Specify the research construct first and ask the relevant question directly and respectfully.",
+      "avoid": "Use one universal identity question for every biological and social outcome.",
+      "after": [
+        "The outcome is how a treatment changes hormone concentrations.",
+        "What should the study record, then?",
+        "The relevant laboratory values, alongside other factors required for analysis.",
+        "That is more precise than assuming a broad label reveals the measured value."
+      ],
+      "newInsight": "The outcome clarifies which direct biological measure is needed and why demographic labels cannot substitute for it.",
+      "transfer": "A study on pregnancy outcomes records gender identity but assumes it reveals every participant's reproductive anatomy.",
+      "transferAnswer": "Measure medically relevant characteristics using appropriate and respectful questions.",
+      "source": "WHO sexual health resources; principles of construct validity in psychological measurement."
+    },
+    {
+      "id": "vaping",
+      "module": "Conformity without direct coercion",
+      "book": "Understanding social influence",
+      "title": "Nobody asked, but everyone does it",
+      "people": [
+        "Pip",
+        "Rowan"
+      ],
+      "scene": "At a gathering, most of Pip's friends vape, though none explicitly asks Pip to try.",
+      "lines": [
+        "Almost everyone here has a vape.",
+        "You've been looking at them a lot.",
+        "I thought about trying one. Nobody has offered.",
+        "Would you want to try it if you were here alone?",
+        "I'm not sure. It just seems normal when everyone is doing it.",
+        "A group's habits can change what feels expected without anyone issuing a command."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Pip may be using observed group behaviour to infer what is normal or expected.",
+      "rival": "Pip may independently be curious about the experience of vaping.",
+      "alternate": "Someone may have applied explicit pressure outside the conversation.",
+      "mechanism": "Descriptive norms are beliefs about what people usually do. They can influence a decision even without an explicit request. The social wish to fit in may combine with curiosity, while nicotine exposure introduces a possible risk of dependence that makes an initial choice consequential.",
+      "boundary": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+      "trigger": "Pip sees several peers vaping.",
+      "appraisal": "Participation appears ordinary and perhaps expected for belonging.",
+      "response": "Pip considers trying it despite being unsure of personal interest.",
+      "consequence": "A decision about nicotine may become guided by untested assumptions about social acceptance.",
+      "action": "Decide what you want independently; if offered, decline without needing a complicated justification.",
+      "avoid": "Try it once so nobody has to wonder whether you fit in.",
+      "after": [
+        "I nearly asked to try one just so I wouldn't stand out.",
+        "Did anyone say you'd be left out?",
+        "No. I had assumed it from what everybody was doing.",
+        "Then the expectation was inferred rather than stated."
+      ],
+      "newInsight": "Pip's own account strengthens an anticipated-norm explanation without showing direct coercion.",
+      "transfer": "A new employee sees colleagues working late and assumes leaving on time will be judged negatively.",
+      "transferAnswer": "Separate an observed group habit from an explicit workplace expectation before changing behaviour.",
+      "source": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources."
+    }
+  ]
+}

@@ -370,3 +370,30 @@ html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__reveal
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__branch{background:#50482e;border-color:#937f54;color:#faf3e0}
 html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__choices label:has(input:checked){background:#39583f;border-color:#95bb91}
 @media(prefers-reduced-motion:reduce){body.app-body.ns-shell-v1 #main .ns-learn-player__dialogue-line{animation:none}}
+
+/* Two focused lenses for case-based belief updates and perspective work. */
+body.app-body.ns-shell-v1 #main .ns-learn-player__new-evidence{padding:15px 18px;margin:16px 0 18px;border:1px solid #d6e5ca;border-radius:16px;background:#f3f7e8}
+body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0 20px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints>div{padding:14px 16px;border-radius:15px;background:#f1f5e9;border:1px solid #d5e4d1}
+body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints>div:nth-child(2){background:#fbf2e8;border-color:#eadbc7}
+body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints strong,body.app-body.ns-shell-v1 #main .ns-learn-player__new-evidence strong{display:block;margin-bottom:6px;font-weight:800}
+body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints p,body.app-body.ns-shell-v1 #main .ns-learn-player__new-evidence p{margin:0!important;line-height:1.6}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__new-evidence,html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints>div{background:#36513c;color:#eff4e8;border-color:#68866e}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints>div:nth-child(2){background:#544533;border-color:#846e55}
+@media(max-width:540px){body.app-body.ns-shell-v1 #main .ns-learn-player__viewpoints{grid-template-columns:1fr}}
+
+/* A small course companion appears on the welcome and completion screens. */
+body.app-body.ns-shell-v1 #main .ns-learn-player__buddy{display:flex;align-items:center;gap:11px;margin:12px 0 19px;padding:8px 12px 8px 8px;width:fit-content;border:1px solid #e0e9d6;background:#f5f9ef;border-radius:19px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__buddy-face{display:block;width:57px;height:57px;border-radius:14px;flex:none;background:url('media/lifelab/companions.png') var(--cast-x) var(--cast-y)/400% 500% no-repeat}
+body.app-body.ns-shell-v1 #main .ns-learn-player__buddy strong{display:block;font:750 15px/1.4 system-ui,sans-serif;color:#305941}
+body.app-body.ns-shell-v1 #main .ns-learn-player__buddy small{display:block;font-size:12px;color:#577860}
+body.app-body.ns-shell-v1 #main .ns-learn-player__finish-star{width:50px;height:50px;display:grid;place-items:center;background:#edf5e2;color:#45825a;border-radius:50%;font-size:29px;margin:0 0 18px}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__buddy{background:#35523d;border-color:#64836a;color:#ebf4e9}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__buddy strong{color:#f3f7ec}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__buddy small{color:#d2e5d0}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__finish-star{background:#3a5d44;color:#d0e5ac}
+
+body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway{margin:22px 0;padding:19px 21px;border-radius:18px;border:1px solid #d5e6cf;background:#eff6e6;color:#34553d}
+body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway strong{font:750 13px/1.4 system-ui,sans-serif;letter-spacing:.01em}
+body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway p{margin:8px 0 0!important;font:550 clamp(17px,2vw,21px)/1.5 Georgia,serif!important;color:inherit!important}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__takeaway{background:#385540;border-color:#719474;color:#f0f6e9}

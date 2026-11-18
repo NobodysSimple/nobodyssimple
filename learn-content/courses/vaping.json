@@ -1,0 +1,609 @@
+{
+  "id": "vaping",
+  "version": 1,
+  "status": "published",
+  "title": "Social Influence & Addiction",
+  "description": "Explore conformity without direct coercion through dialogue, evidence and psychological reasoning.",
+  "modules": [
+    {
+      "id": "vaping-module-01",
+      "title": "Conformity without direct coercion",
+      "bookId": "vaping-book-1",
+      "bookTitle": "Understanding social influence",
+      "bookNumber": 1,
+      "problem": "Conformity without direct coercion",
+      "distinction": "Conformity without direct coercion",
+      "lessons": [
+        {
+          "id": "vaping-m1-l1",
+          "version": 1,
+          "title": "Nobody asked, but everyone does it",
+          "teach": "Follow the conversation one message at a time. Notice what the behaviour might be achieving before you decide why it happened. About five minutes.",
+          "objective": "Distinguish observable evidence from a tentative explanation of conformity without direct coercion.",
+          "editorialStatus": "ready",
+          "recommendedType": "dialogue",
+          "nodes": [
+            {
+              "id": "vaping-m1-node-1",
+              "type": "dialogue",
+              "title": "Watch the conversation",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "vaping-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "At a gathering, most of Pip's friends vape, though none explicitly asks Pip to try.",
+              "speakerA": "Pip",
+              "speakerB": "Rowan",
+              "turns": [
+                {
+                  "id": "vaping-m1-node-1-line1",
+                  "speaker": "a",
+                  "text": "Almost everyone here has a vape."
+                },
+                {
+                  "id": "vaping-m1-node-1-line2",
+                  "speaker": "b",
+                  "text": "You've been looking at them a lot."
+                },
+                {
+                  "id": "vaping-m1-node-1-line3",
+                  "speaker": "a",
+                  "text": "I thought about trying one. Nobody has offered."
+                },
+                {
+                  "id": "vaping-m1-node-1-line4",
+                  "speaker": "b",
+                  "text": "Would you want to try it if you were here alone?"
+                },
+                {
+                  "id": "vaping-m1-node-1-line5",
+                  "speaker": "a",
+                  "text": "I'm not sure. It just seems normal when everyone is doing it."
+                },
+                {
+                  "id": "vaping-m1-node-1-line6",
+                  "speaker": "b",
+                  "text": "A group's habits can change what feels expected without anyone issuing a command."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "vaping-m1-node-1-check1",
+                  "prompt": "Which psychological interpretation is currently best supported?",
+                  "focusTurn": "vaping-m1-node-1-line5",
+                  "options": [
+                    {
+                      "id": "vaping-m1-node-1-check1-opt3",
+                      "label": "Someone may have applied explicit pressure outside the conversation."
+                    },
+                    {
+                      "id": "vaping-m1-node-1-check1-opt1",
+                      "label": "Pip may be using observed group behaviour to infer what is normal or expected."
+                    },
+                    {
+                      "id": "vaping-m1-node-1-check1-opt2",
+                      "label": "Pip may independently be curious about the experience of vaping."
+                    }
+                  ],
+                  "answer": "vaping-m1-node-1-check1-opt1",
+                  "explanation": "The strongest clues are the character's own words. Pip may be using observed group behaviour to infer what is normal or expected. Pip may independently be curious about the experience of vaping. remains a legitimate rival, so this is a working account rather than a conclusion about personality.",
+                  "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter."
+                },
+                {
+                  "id": "vaping-m1-node-1-check2",
+                  "prompt": "You are Pip. Which response best addresses the practical problem at this point?",
+                  "focusTurn": "",
+                  "options": [
+                    {
+                      "id": "vaping-m1-node-1-check2-opt1",
+                      "label": "Decide what you want independently; if offered, decline without needing a complicated justification.",
+                      "reply": "Then the expectation was inferred rather than stated.",
+                      "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
+                    },
+                    {
+                      "id": "vaping-m1-node-1-check2-opt2",
+                      "label": "Try it once so nobody has to wonder whether you fit in.",
+                      "reply": "A group's habits can change what feels expected without anyone issuing a command.",
+                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                    },
+                    {
+                      "id": "vaping-m1-node-1-check2-opt3",
+                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
+                      "reply": "Would you want to try it if you were here alone?",
+                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                    },
+                    {
+                      "id": "vaping-m1-node-1-check2-opt4",
+                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "reply": "Did anyone say you'd be left out?",
+                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                    }
+                  ],
+                  "answer": "vaping-m1-node-1-check2-opt1",
+                  "explanation": "The first response addresses what can change. Asking about motives may help eventually; it need not be resolved before the concrete issue can be addressed.",
+                  "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter."
+                }
+              ]
+            },
+            {
+              "id": "vaping-m1-node-2",
+              "type": "label",
+              "title": "Find the evidence",
+              "prompt": "Which two statements most directly support the working explanation?",
+              "conceptId": "vaping-opening-process",
+              "explanation": "The most informative lines reveal what the situation means to the speaker. They suggest that pip may be using observed group behaviour to infer what is normal or expected. Other remarks establish circumstances, which can matter without revealing a psychological process.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "segments": [
+                {
+                  "id": "vaping-m1-evidence-1",
+                  "text": "Almost everyone here has a vape.",
+                  "answer": false
+                },
+                {
+                  "id": "vaping-m1-evidence-2",
+                  "text": "You've been looking at them a lot.",
+                  "answer": false
+                },
+                {
+                  "id": "vaping-m1-evidence-3",
+                  "text": "I thought about trying one. Nobody has offered.",
+                  "answer": true
+                },
+                {
+                  "id": "vaping-m1-evidence-4",
+                  "text": "Would you want to try it if you were here alone?",
+                  "answer": false
+                },
+                {
+                  "id": "vaping-m1-evidence-5",
+                  "text": "I'm not sure. It just seems normal when everyone is doing it.",
+                  "answer": true
+                },
+                {
+                  "id": "vaping-m1-evidence-6",
+                  "text": "A group's habits can change what feels expected without anyone issuing a command.",
+                  "answer": false
+                }
+              ]
+            },
+            {
+              "id": "vaping-m1-node-4",
+              "type": "chain",
+              "title": "Build the process",
+              "prompt": "Put the proposed events into a possible order, from what happened to what may happen next.",
+              "conceptId": "vaping-opening-process",
+              "explanation": "The trigger is pip sees several peers vaping. Its possible meaning is participation appears ordinary and perhaps expected for belonging. The protective behaviour may contribute to a longer-term cost: a decision about nicotine may become guided by untested assumptions about social acceptance.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "vaping-m1-chain-1",
+                  "label": "Pip sees several peers vaping."
+                },
+                {
+                  "id": "vaping-m1-chain-2",
+                  "label": "Participation appears ordinary and perhaps expected for belonging."
+                },
+                {
+                  "id": "vaping-m1-chain-3",
+                  "label": "Pip considers trying it despite being unsure of personal interest."
+                },
+                {
+                  "id": "vaping-m1-chain-4",
+                  "label": "A decision about nicotine may become guided by untested assumptions about social acceptance."
+                }
+              ]
+            },
+            {
+              "id": "vaping-m1-node-5",
+              "type": "read",
+              "title": "What might be happening?",
+              "body": "Descriptive norms are beliefs about what people usually do. They can influence a decision even without an explicit request. The social wish to fit in may combine with curiosity, while nicotine exposure introduces a possible risk of dependence that makes an initial choice consequential.\n\nObserving others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources."
+            },
+            {
+              "id": "vaping-m1-node-3",
+              "type": "rank",
+              "title": "Rank the explanations",
+              "prompt": "Put the explanations in order of the evidence supporting them. Focus on which deserves first place.",
+              "conceptId": "vaping-opening-process",
+              "explanation": "The strongest candidate is pip may be using observed group behaviour to infer what is normal or expected. The lower two rankings are more uncertain, and new evidence could reasonably reverse them.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "steps": [
+                {
+                  "id": "vaping-m1-rank-strong",
+                  "label": "Pip may be using observed group behaviour to infer what is normal or expected."
+                },
+                {
+                  "id": "vaping-m1-rank-rival",
+                  "label": "Pip may independently be curious about the experience of vaping."
+                },
+                {
+                  "id": "vaping-m1-rank-other",
+                  "label": "Someone may have applied explicit pressure outside the conversation."
+                }
+              ]
+            },
+            {
+              "id": "vaping-m1-node-7",
+              "type": "repair",
+              "title": "Repair an overclaim",
+              "prompt": "Someone calls pip may be using observed group behaviour to infer what is normal or expected. 'a proven explanation'. Which correction is most faithful to the evidence?",
+              "conceptId": "vaping-opening-process",
+              "explanation": "A functional hypothesis identifies what may make a behaviour more likely. It remains open to disconfirmation. Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "vaping-m1-repair-opt2",
+                  "label": "Because pip may independently be curious about the experience of vaping., the present psychological account should be discarded until certainty is possible."
+                },
+                {
+                  "id": "vaping-m1-repair-opt3",
+                  "label": "The consequences matter more than the mechanism, so it would be better to avoid any causal explanation."
+                },
+                {
+                  "id": "vaping-m1-repair-opt4",
+                  "label": "The strength of the reaction itself should count as decisive evidence for the most psychologically interesting motive."
+                },
+                {
+                  "id": "vaping-m1-repair-opt1",
+                  "label": "The account is consistent with the evidence, but pip may independently be curious about the experience of vaping. still deserves consideration."
+                }
+              ],
+              "answer": "vaping-m1-repair-opt1"
+            },
+            {
+              "id": "vaping-m1-node-6",
+              "type": "predict",
+              "title": "Try a different response",
+              "prompt": "The goal is to improve the situation without pretending that you can read the person's mind.",
+              "conceptId": "vaping-opening-process",
+              "explanation": "A proportionate response deals with the actual situation: Decide what you want independently; if offered, decline without needing a complicated justification. Its value does not depend on the other person accepting an interpretation of their motives.",
+              "counterexample": "Some situations require independent support or safer channels rather than another direct conversation. Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "changePrompt": "What would you try first?",
+              "changes": [
+                {
+                  "id": "vaping-m1-plan-opt1",
+                  "label": "Decide what you want independently; if offered, decline without needing a complicated justification."
+                },
+                {
+                  "id": "vaping-m1-plan-opt2",
+                  "label": "Try it once so nobody has to wonder whether you fit in."
+                },
+                {
+                  "id": "vaping-m1-plan-opt3",
+                  "label": "Ask the other person to agree with your psychological explanation before the problem is discussed."
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "vaping-m1-outcome-opt1",
+                  "label": "The concrete problem is addressed while motives remain open to examination."
+                },
+                {
+                  "id": "vaping-m1-outcome-opt2",
+                  "label": "Immediate tension may fall without changing what caused the disagreement."
+                },
+                {
+                  "id": "vaping-m1-outcome-opt3",
+                  "label": "The conversation shifts toward defending character and intention rather than solving the issue."
+                }
+              ],
+              "correctChange": "vaping-m1-plan-opt1",
+              "correctOutcome": "vaping-m1-outcome-opt1"
+            }
+          ],
+          "takeaway": "A group can make a behaviour seem expected without anybody explicitly asking you to join in."
+        },
+        {
+          "id": "vaping-m1-l2",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "Earlier: At a gathering, most of Pip's friends vape, though none explicitly asks Pip to try. Now you will test whether later evidence changes the explanation. About five minutes.",
+          "objective": "Test an account of conformity without direct coercion with new evidence and transfer it to a new case.",
+          "editorialStatus": "ready",
+          "recommendedType": "update",
+          "nodes": [
+            {
+              "id": "vaping-m1-node-8",
+              "type": "dialogue",
+              "title": "The conversation continues",
+              "prompt": "Read the exchange one message at a time, then work from what the characters actually said.",
+              "conceptId": "vaping-opening-process",
+              "explanation": "",
+              "counterexample": "",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "scenario": "The characters speak again after the original disagreement. Look for what changes and what remains uncertain.",
+              "speakerA": "Pip",
+              "speakerB": "Rowan",
+              "turns": [
+                {
+                  "id": "vaping-m1-node-8-line1",
+                  "speaker": "a",
+                  "text": "I nearly asked to try one just so I wouldn't stand out."
+                },
+                {
+                  "id": "vaping-m1-node-8-line2",
+                  "speaker": "b",
+                  "text": "Did anyone say you'd be left out?"
+                },
+                {
+                  "id": "vaping-m1-node-8-line3",
+                  "speaker": "a",
+                  "text": "No. I had assumed it from what everybody was doing."
+                },
+                {
+                  "id": "vaping-m1-node-8-line4",
+                  "speaker": "b",
+                  "text": "Then the expectation was inferred rather than stated."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "vaping-m1-node-8-check1",
+                  "prompt": "What is the most defensible update after this additional exchange?",
+                  "focusTurn": "vaping-m1-node-8-line3",
+                  "options": [
+                    {
+                      "id": "vaping-m1-node-8-check1-opt1",
+                      "label": "Pip's own account strengthens an anticipated-norm explanation without showing direct coercion. The earlier explanation may still contribute."
+                    },
+                    {
+                      "id": "vaping-m1-node-8-check1-opt2",
+                      "label": "The newer dialogue settles the cause and replaces the need to consider pip may independently be curious about the experience of vaping.."
+                    },
+                    {
+                      "id": "vaping-m1-node-8-check1-opt3",
+                      "label": "The first conversation was too ambiguous to support any meaningful working hypothesis."
+                    }
+                  ],
+                  "answer": "vaping-m1-node-8-check1-opt1",
+                  "explanation": "The newer account adds evidence rather than erasing the earlier observations. Pip's own account strengthens an anticipated-norm explanation without showing direct coercion. It still leaves open how much each factor contributed.",
+                  "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter."
+                }
+              ]
+            },
+            {
+              "id": "vaping-m1-node-11",
+              "type": "sort",
+              "title": "Observation or interpretation?",
+              "prompt": "Sort statements by whether they report something said or introduce a working psychological explanation.",
+              "conceptId": "vaping-opening-process",
+              "explanation": "The quotes record what was said. Pip may be using observed group behaviour to infer what is normal or expected. is an interpretation of what may explain it. It may be plausible, but its status as an inference matters when deciding what evidence to gather.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "categories": [
+                {
+                  "id": "vaping-m1-cat-observation",
+                  "label": "Observed or reported"
+                },
+                {
+                  "id": "vaping-m1-cat-inference",
+                  "label": "Psychological inference"
+                }
+              ],
+              "items": [
+                {
+                  "id": "vaping-m1-sort-1",
+                  "label": "Pip said: \"Almost everyone here has a vape.\"",
+                  "answer": "vaping-m1-cat-observation"
+                },
+                {
+                  "id": "vaping-m1-sort-2",
+                  "label": "Rowan said: \"Would you want to try it if you were here alone?\"",
+                  "answer": "vaping-m1-cat-observation"
+                },
+                {
+                  "id": "vaping-m1-sort-3",
+                  "label": "Pip may be using observed group behaviour to infer what is normal or expected.",
+                  "answer": "vaping-m1-cat-inference"
+                },
+                {
+                  "id": "vaping-m1-sort-4",
+                  "label": "Participation appears ordinary and perhaps expected for belonging.",
+                  "answer": "vaping-m1-cat-inference"
+                }
+              ]
+            },
+            {
+              "id": "vaping-m1-node-10",
+              "type": "perspective",
+              "title": "Two people, different meanings",
+              "prompt": "Which conclusion accounts for both perspectives without confusing an interpretation with a fact?",
+              "conceptId": "vaping-opening-process",
+              "explanation": "Each character can be responding to a different meaning of the same event. The immediate issue is still observable. Understanding both viewpoints helps explain the conflict without requiring both interpretations to be equally accurate.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "viewA": "Pip: \"Almost everyone here has a vape.\"",
+              "viewB": "Rowan: \"Would you want to try it if you were here alone?\"",
+              "options": [
+                {
+                  "id": "vaping-m1-view-opt1",
+                  "label": "Both viewpoints matter for understanding the exchange, but neither alone establishes the full cause; address the observable concern as well."
+                },
+                {
+                  "id": "vaping-m1-view-opt2",
+                  "label": "The second viewpoint carries greater psychological detail, so it should determine which account is accepted."
+                },
+                {
+                  "id": "vaping-m1-view-opt3",
+                  "label": "The first viewpoint focuses on the practical problem, which makes questions about the second person's interpretation unnecessary."
+                },
+                {
+                  "id": "vaping-m1-view-opt4",
+                  "label": "A disagreement between viewpoints means neither can be examined until an outside witness establishes one as correct."
+                }
+              ],
+              "answer": "vaping-m1-view-opt1"
+            },
+            {
+              "id": "vaping-m1-node-9",
+              "type": "update",
+              "title": "New evidence, new judgement",
+              "prompt": "What should happen to your working explanation now?",
+              "conceptId": "vaping-opening-process",
+              "explanation": "Changing a belief requires comparing the new material with what was already known. Pip's own account strengthens an anticipated-norm explanation without showing direct coercion. The new information strengthens some accounts and weakens others; it need not tell us everything.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "newEvidence": "I nearly asked to try one just so I wouldn't stand out. Did anyone say you'd be left out? No. I had assumed it from what everybody was doing. Then the expectation was inferred rather than stated.",
+              "options": [
+                {
+                  "id": "vaping-m1-new-opt4",
+                  "label": "The evidence confirms the behaviour had consequences, which makes further investigation irrelevant."
+                },
+                {
+                  "id": "vaping-m1-new-opt1",
+                  "label": "Pip's own account strengthens an anticipated-norm explanation without showing direct coercion. We should revise the strength of competing explanations without assuming the entire causal story is settled."
+                },
+                {
+                  "id": "vaping-m1-new-opt2",
+                  "label": "The later account is more reliable in every respect, so the earlier observations no longer matter."
+                },
+                {
+                  "id": "vaping-m1-new-opt3",
+                  "label": "The new evidence establishes pip may independently be curious about the experience of vaping. as the sole explanation."
+                }
+              ],
+              "answer": "vaping-m1-new-opt1"
+            },
+            {
+              "id": "vaping-m1-node-13",
+              "type": "investigate",
+              "title": "Put your account at risk",
+              "prompt": "Which information would most seriously challenge the initial interpretation?",
+              "conceptId": "vaping-opening-process",
+              "explanation": "A strong test looks for observations that would discriminate between explanations. Pip may independently be curious about the experience of vaping. If independent evidence favours that account, the formulation should change.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "options": [
+                {
+                  "id": "vaping-m1-test-opt4",
+                  "label": "Check whether the same emotion occurred once in another setting; repetition would settle the interpretation."
+                },
+                {
+                  "id": "vaping-m1-test-opt1",
+                  "label": "Look for independent observations that support pip may independently be curious about the experience of vaping. and explain the original dialogue."
+                },
+                {
+                  "id": "vaping-m1-test-opt2",
+                  "label": "Ask a bystander how uncomfortable they found the exchange; greater discomfort would support the first theory."
+                },
+                {
+                  "id": "vaping-m1-test-opt3",
+                  "label": "Ask whether the person considered their reaction justified; genuine conviction would establish the cause."
+                }
+              ],
+              "answer": "vaping-m1-test-opt1"
+            },
+            {
+              "id": "vaping-m1-node-15",
+              "type": "complete",
+              "title": "One distinction to keep",
+              "prompt": "Fill the missing word: An explanation of what a behaviour might achieve is a working ______, not a proven fact.",
+              "conceptId": "vaping-opening-process",
+              "explanation": "A hypothesis is an explanation that can be revised when observations fail to support it. This keeps psychological reasoning useful rather than turning it into confident mind-reading.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "answers": [
+                "hypothesis",
+                "formulation",
+                "working hypothesis"
+              ],
+              "hint": "One word: an explanation you can test"
+            },
+            {
+              "id": "vaping-m1-node-14",
+              "type": "character",
+              "title": "Use it in another situation",
+              "prompt": "A new problem tests whether you learned the reasoning rather than memorised the scene.",
+              "conceptId": "vaping-opening-process",
+              "explanation": "Separate an observed group habit from an explicit workplace expectation before changing behaviour. The response should serve the person's real objective without requiring an untested label.",
+              "counterexample": "Observing others does not prove conformity. Preferences, prior use and the group's actual response to refusal matter.",
+              "sources": "Bandura (1977), Social Learning Theory; social-norm influence literature; WHO nicotine dependence resources.",
+              "image": "",
+              "alt": "",
+              "caption": "",
+              "characterName": "A different setting",
+              "scenario": "A new employee sees colleagues working late and assumes leaving on time will be judged negatively.",
+              "evidenceOptions": [
+                {
+                  "id": "vaping-m1-transfer-e-opt3",
+                  "label": "The behaviour should be interpreted as accidental because no motive was stated."
+                },
+                {
+                  "id": "vaping-m1-transfer-e-opt1",
+                  "label": "Separate an observed group habit from an explicit workplace expectation before changing behaviour."
+                },
+                {
+                  "id": "vaping-m1-transfer-e-opt2",
+                  "label": "There is enough information here to assign a stable personality trait from the exchange alone."
+                }
+              ],
+              "evidenceAnswer": "vaping-m1-transfer-e-opt1",
+              "responseOptions": [
+                {
+                  "id": "vaping-m1-transfer-a-opt3",
+                  "label": "Avoid acting until no alternative psychological account remains possible."
+                },
+                {
+                  "id": "vaping-m1-transfer-a-opt1",
+                  "label": "Ask what the evidence actually supports and make a concrete, proportionate response to the concern."
+                },
+                {
+                  "id": "vaping-m1-transfer-a-opt2",
+                  "label": "Insist on an admission of the most likely hidden motive before addressing the issue."
+                }
+              ],
+              "responseAnswer": "vaping-m1-transfer-a-opt1"
+            }
+          ],
+          "takeaway": "What everyone appears to do and what you actually want are different questions."
+        }
+      ]
+    }
+  ]
+}
