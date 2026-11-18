@@ -49,7 +49,8 @@ export function gradeLearnItem(item,response){
   correct=valid&&item.items.every(p=>response[p.id]===p.answer);
  }else if(item.type==='sequence'||item.type==='chain'||item.type==='rank'){
   valid=Array.isArray(response)&&response.length===item.steps.length&&new Set(response).size===response.length&&response.every(id=>item.steps.some(s=>s.id===id));
-  correct=valid&&item.steps.every((step,i)=>response[i]===step.id);
+  // Lower-ranked hypotheses may be genuinely tied; reward identifying the strongest first.
+  correct=valid&&(item.type==='rank'?response[0]===item.steps[0].id:item.steps.every((step,i)=>response[i]===step.id));
  }else if(item.type==='label'){
   valid=Array.isArray(response)&&response.every(id=>item.segments.some(s=>s.id===id));
   correct=valid&&pairsEqual(response,item.segments.filter(s=>s.answer).map(s=>s.id));
