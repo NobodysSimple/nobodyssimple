@@ -154,7 +154,7 @@ export class Publisher {
     if(actual!==expectedVersion)throw Error('This course was published elsewhere since it was opened. Reload the live version before publishing.');
     const version=actual+1;
     const bundle={...draft,version,status:'published'};
-    const next={version:1,courses:{...index.courses,[draft.id]:{version}}};
+    const next={version:1,courses:{...index.courses,[draft.id]:{version,title:bundle.title,description:String(bundle.description||'').slice(0,400)}}};
     const newTree=await this.api(this.base+'/git/trees','POST',{
       base_tree:tree,tree:[
         {path:'learn-content/courses/'+draft.id+'.json',mode:'100644',type:'blob',content:JSON.stringify(bundle,null,2)+'\n'},
