@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "courses": [
+    {
+      "id": "burnout",
+      "actions": [
+        {
+          "text": "Map required appointments against actual staffed hours before asking management to reprioritise them.",
+          "reason": "The calculation could identify a resource gap, although a decision is still needed about what will change."
+        },
+        {
+          "text": "Ask which appointments can safely be delayed while arranging a formal review of workload and staffing.",
+          "reason": "A short-term prioritisation may protect care, but does not by itself solve chronic understaffing."
+        },
+        {
+          "text": "Record the missed breaks and incomplete work for a fortnight to establish how demand varies across clinic days.",
+          "reason": "A record can support an organisational discussion, though Priya may already have enough evidence to request action."
+        }
+      ]
+    },
+    {
+      "id": "loneliness",
+      "actions": [
+        {
+          "text": "Invite a trusted friend for coffee and explain that you would like to talk about how the week has been.",
+          "reason": "A quieter setting may offer a better opportunity, although the friend may have limited capacity that day."
+        },
+        {
+          "text": "Ask someone from the group whether they would be open to a more personal conversation rather than assuming no one is interested.",
+          "reason": "Checking the expectation could be useful, but choosing a trusted person matters."
+        },
+        {
+          "text": "Notice which conversations already allow some mutual disclosure before deciding where to invest more time.",
+          "reason": "This uses existing evidence, though simply observing can become another way to avoid sharing."
+        }
+      ]
+    },
+    {
+      "id": "social-media",
+      "actions": [
+        {
+          "text": "Keep the recipe link in a separate note so the intended task does not require opening the recommendation feed.",
+          "reason": "Changing the entry point could support the original goal, although it does not address all late-night browsing."
+        },
+        {
+          "text": "Switch off automatic playback and choose a fixed time to close the app, then compare actual viewing time.",
+          "reason": "This tests two stopping cues, but it may be unclear which change made the difference."
+        },
+        {
+          "text": "Use an app timer as a reminder to decide whether to continue rather than treating it as a strict prohibition.",
+          "reason": "A reminder adds a pause, though the recommendation feed may still encourage continuing."
+        }
+      ]
+    },
+    {
+      "id": "misinformation",
+      "actions": [
+        {
+          "text": "Find the earliest version of the screenshot and compare its claim with the underlying water-quality report.",
+          "reason": "This checks source fidelity; a genuine report may still be old or used out of context."
+        },
+        {
+          "text": "Contact the relevant public water provider through its published service channels to check the warning.",
+          "reason": "Direct verification can clarify current risk, although the source also needs to match the particular area."
+        },
+        {
+          "text": "Ask which independent test or official notice supports the claim before circulating it further.",
+          "reason": "This can slow unverified repetition; the group may still disagree about what counts as independent."
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity",
+      "actions": [
+        {
+          "text": "Trial an agenda with clear speaking turns and check whether Tavi can participate without reducing responsibilities.",
+          "reason": "This addresses the format while retaining the role, though Tavi may still need personal adjustments."
+        },
+        {
+          "text": "Ask which part of cross-talk causes the difficulty before choosing between advance notes and structured turns.",
+          "reason": "Understanding the barrier improves fit but could delay an adjustment Tavi has already requested."
+        },
+        {
+          "text": "Provide written notes in advance and invite feedback on whether they help during the actual meeting.",
+          "reason": "This respects the request but may not solve overlapping speech in the session itself."
+        }
+      ]
+    },
+    {
+      "id": "sleep",
+      "actions": [
+        {
+          "text": "Keep the wake time steady for a trial period and record whether the attempted bedtime begins to feel more realistic.",
+          "reason": "This may support timing, but the plan must account for how much sleep Nora is actually getting."
+        },
+        {
+          "text": "Consider moving bedtime gradually rather than spending extra awake hours in bed waiting for sleep.",
+          "reason": "A gradual change could reduce frustration, although bedtime alone may not address circadian timing."
+        },
+        {
+          "text": "Check caffeine, evening light and sleep-related worry before deciding which change is likely to matter most.",
+          "reason": "Those factors could contribute, but Nora's late waking time already gives a strong timing clue."
+        }
+      ]
+    },
+    {
+      "id": "low-mood",
+      "actions": [
+        {
+          "text": "Let Mara speak about the rejection, then make one low-pressure arrangement that keeps connection available.",
+          "reason": "This respects the loss while preventing unnecessary isolation; it does not require the sadness to disappear."
+        },
+        {
+          "text": "Agree to revisit plans in a few days rather than treating two days of sadness as evidence of depression.",
+          "reason": "Waiting can be proportionate, although a meaningful change in safety or functioning would need earlier attention."
+        },
+        {
+          "text": "Choose a small valued activity without using whether she enjoys it immediately as a test of recovery.",
+          "reason": "Participation may help protect routine, but acute grief may still need time."
+        }
+      ]
+    },
+    {
+      "id": "scams",
+      "actions": [
+        {
+          "text": "Check the parcel status in a previously installed courier app, without opening the link in the message.",
+          "reason": "An independent channel can verify the delivery, although several couriers might handle the same retailer."
+        },
+        {
+          "text": "Find the original order confirmation and compare its tracking information with the claim in the text.",
+          "reason": "The record may reveal an inconsistency, but confirmation should still use a trusted source."
+        },
+        {
+          "text": "Contact the retailer through its known account page to ask whether any fee is genuinely outstanding.",
+          "reason": "This separates the inquiry from the suspicious sender, though it may be slower than using existing tracking."
+        }
+      ]
+    },
+    {
+      "id": "masculinity",
+      "actions": [
+        {
+          "text": "Separate questions about identity from questions about specific health characteristics, and justify each one from the study aims.",
+          "reason": "The questions would serve different purposes, but care is needed not to collect unnecessary sensitive data."
+        },
+        {
+          "text": "Pilot the wording with participants to discover whether they understand the intended distinction.",
+          "reason": "Testing interpretation is useful, though the research team first needs to identify what it wants measured."
+        },
+        {
+          "text": "Keep a broad demographic item for descriptive reporting while collecting precise clinical information only where it is necessary.",
+          "reason": "A mixed approach could work when each variable has a defined purpose."
+        }
+      ]
+    },
+    {
+      "id": "vaping",
+      "actions": [
+        {
+          "text": "Stay with the group during breaks and decline any offered vape without trying to justify the decision.",
+          "reason": "This tests whether participation really depends on using nicotine, though a refusal may still feel awkward."
+        },
+        {
+          "text": "Tell one trusted friend you do not want to try vaping and ask whether they would still like you to join the breaks.",
+          "reason": "Direct reassurance could help, although it may not be necessary if the group is already welcoming."
+        },
+        {
+          "text": "Choose a different way to take part in the conversation instead of joining the shared vaping routine.",
+          "reason": "Belonging can be maintained through conversation, though established group habits can still exert pressure."
+        }
+      ]
+    }
+  ]
+}
