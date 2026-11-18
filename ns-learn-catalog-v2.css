@@ -354,3 +354,19 @@ html[data-theme="dark"] .ns-learn-player__dialogue-line[data-speaker="b"]{backgr
 html[data-theme="dark"] .ns-learn-player__dialogue-spotlight{color:#bed2c0}
 html[data-theme="dark"] .ns-learn-player__dialogue-task .ns-learn-player__choices label:has(input:checked){background:#315642}
 @media(max-width:600px){.ns-learn-player__dialogue-line{max-width:97%;padding:12px}.ns-learn-player__dialogue{gap:10px}}
+
+/* Course Lab: one-message-at-a-time dialogue and small, focused activity cards. */
+body.app-body.ns-shell-v1 #main .ns-learn-player{max-width:760px;margin-inline:auto;border-radius:24px;padding:clamp(20px,4vw,38px)}
+body.app-body.ns-shell-v1 #main .ns-learn-player__dialogue-line{animation:nsLearnBubbleIn .22s ease-out both;box-shadow:0 3px 10px rgba(36,70,47,.045)}
+@keyframes nsLearnBubbleIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+body.app-body.ns-shell-v1 #main .ns-learn-player__reveal{width:100%;min-height:51px;border:1px dashed #78a18b;border-radius:14px;background:#f1f8ec;color:#28513b;font-weight:750;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;padding:11px 15px;transition:background .15s ease}
+body.app-body.ns-shell-v1 #main .ns-learn-player__reveal:hover,body.app-body.ns-shell-v1 #main .ns-learn-player__reveal:focus-visible{background:#dceedd;outline-offset:3px}
+body.app-body.ns-shell-v1 #main .ns-learn-player__reveal small{font-size:11px;color:#517b61;font-weight:650}
+body.app-body.ns-shell-v1 #main .ns-learn-player__branch{margin-top:14px;padding:14px 17px;border-radius:15px;background:#fff9e9;border:1px solid #e1cda6}
+body.app-body.ns-shell-v1 #main .ns-learn-player__branch p{margin:6px 0 8px!important;line-height:1.6}
+body.app-body.ns-shell-v1 #main .ns-learn-player__choices label:has(input:checked){border-color:#54886a;background:#edf7e8;box-shadow:inset 0 0 0 1px #83ae82}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__reveal{background:#355740;border-color:#719d78;color:#f1f6e8}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__reveal small{color:#d0ead0}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__branch{background:#50482e;border-color:#937f54;color:#faf3e0}
+html[data-theme="dark"] body.app-body.ns-shell-v1 #main .ns-learn-player__choices label:has(input:checked){background:#39583f;border-color:#95bb91}
+@media(prefers-reduced-motion:reduce){body.app-body.ns-shell-v1 #main .ns-learn-player__dialogue-line{animation:none}}
