@@ -1,0 +1,446 @@
+{
+  "version": 1,
+  "purpose": "initial editorial seed; published lessons are edited in Course Lab",
+  "cases": [
+    {
+      "id": "narcissism",
+      "module": "Everyday self-focus versus a persistent trait",
+      "book": "What the label actually means",
+      "title": "When criticism feels like an attack",
+      "people": [
+        "Maya",
+        "Leo"
+      ],
+      "scene": "Maya developed the statistical analysis. Leo managed the project and the presentation credits the analysis to him.",
+      "lines": [
+        "The slide says you developed the analysis. I completed that part.",
+        "I led the project. We agreed I would take ownership.",
+        "Of presenting the results, yes. I still want my work acknowledged.",
+        "You have no idea how much this promotion matters. They need to see me as capable.",
+        "The slide can show that you led the project and I developed the analysis.",
+        "If we change it now, they'll think I've been taking credit for something I couldn't do."
+      ],
+      "evidence": [
+        3,
+        5
+      ],
+      "inference": "Leo may be treating the correction as a threat to his image of competence.",
+      "rival": "Leo believes project leadership ordinarily includes public credit for technical work.",
+      "alternate": "Leo may be trying to avoid an awkward correction rather than preserve his self-worth.",
+      "mechanism": "In some narcissistic difficulties, a person's sense of worth depends heavily on recognition. A correction can then feel like a broader verdict on competence. Dismissing another person's contribution may offer brief relief while making the relationship more adversarial. This is a tentative self-esteem regulation account, not a diagnosis.",
+      "boundary": "Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument.",
+      "trigger": "Maya asks to correct the attribution.",
+      "appraisal": "Leo anticipates being regarded as less capable.",
+      "response": "Leo resists the correction and challenges Maya's understanding of leadership.",
+      "consequence": "He may briefly protect his standing while the credit dispute grows.",
+      "action": "We can accurately credit your leadership and the analysis I completed before the slide is sent.",
+      "avoid": "Let's leave the inaccurate slide until after the promotion panel.",
+      "after": [
+        "I read your message last month saying you were pleased I'd completed the analysis.",
+        "I was. That work was excellent.",
+        "Then why did you write that you'd developed it yourself?",
+        "I wanted senior management to think I could do the technical part as well."
+      ],
+      "newInsight": "His earlier acknowledgement makes confusion about authorship less convincing and supports intentional credit-taking as an additional motive.",
+      "transfer": "A friend replies 'So I'm useless now?' after being asked to replace something they damaged.",
+      "transferAnswer": "The request may have been heard as a judgement of personal worth; address the damage without claiming certainty about motive.",
+      "source": "Pincus et al. (2009), Pathological Narcissism Inventory; DSM-5-TR, personality functioning."
+    },
+    {
+      "id": "manipulation",
+      "module": "Persuasion versus manipulation",
+      "book": "Defining the problem",
+      "title": "When a favour becomes a test",
+      "people": [
+        "Nina",
+        "Owen"
+      ],
+      "scene": "Owen wants to borrow Nina's car for a weekend. Nina needs it for work.",
+      "lines": [
+        "I can't lend you the car on Saturday. I'm working.",
+        "I thought we were close friends.",
+        "We are. I just can't get to work without it.",
+        "I gave you a lift last month. I didn't realise helping only went one way.",
+        "I appreciated the lift. I still need the car.",
+        "Fine. I guess I know how much this friendship means to you."
+      ],
+      "evidence": [
+        3,
+        5
+      ],
+      "inference": "Owen may be raising the emotional cost of refusing the loan by linking it to loyalty.",
+      "rival": "Owen sees past favours as creating a genuine expectation of reciprocity.",
+      "alternate": "Owen thinks Nina has workable transport alternatives and is negotiating practical fairness.",
+      "mechanism": "Persuasion gives somebody reasons to reconsider. Manipulative pressure can make an unrelated personal cost depend on compliance. Here, the proposed cost is being regarded as a disloyal friend. Whether this was deliberate matters less to Nina's immediate decision than the pressure the statement creates.",
+      "boundary": "Reminding someone of a past favour is not automatically manipulation. Repetition, freedom to decline and how the disagreement is handled change the judgement.",
+      "trigger": "Nina refuses the car loan because she needs it.",
+      "appraisal": "Owen treats refusal as evidence of inadequate reciprocity.",
+      "response": "Owen invokes friendship and earlier help.",
+      "consequence": "Nina may feel obliged to prove her friendship by giving up necessary transport.",
+      "action": "I valued the lift, and I value our friendship. I still need my car on Saturday.",
+      "avoid": "I'll lend it just this once so you don't think I'm selfish.",
+      "after": [
+        "I felt like saying no meant I was a bad friend.",
+        "I wasn't trying to say you were bad. I thought you'd help me back.",
+        "Would you have accepted my answer without mentioning the friendship?",
+        "Probably not. I really needed the car and I pushed too hard."
+      ],
+      "newInsight": "Owen's response supports pressure arising from his need for transport, without proving a sustained pattern of coercion.",
+      "transfer": "A colleague says a good team player would cover an unpaid shift.",
+      "transferAnswer": "Notice when a practical request turns into a test of belonging, then decide using the real costs of the shift.",
+      "source": "Cialdini, Influence; Linehan, DBT interpersonal effectiveness."
+    },
+    {
+      "id": "attachment",
+      "module": "What attachment theory can explain",
+      "book": "Attachment theory without myths",
+      "title": "When silence feels like distance",
+      "people": [
+        "Sofia",
+        "Jamie"
+      ],
+      "scene": "Jamie cannot use a phone during an eight-hour work shift. Sofia has been checking the online status.",
+      "lines": [
+        "I started worrying when you didn't answer.",
+        "I told you I'd be at work until eight.",
+        "I know. I kept checking whether you were online anyway.",
+        "What would a reply have told you?",
+        "That we're okay. Every time I checked and saw nothing, I felt worse.",
+        "I want us to be close, but I can't keep a phone with me during work."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Sofia may be treating delayed contact as a signal about the security of the relationship.",
+      "rival": "Jamie may have broken an established agreement to check in during the shift.",
+      "alternate": "Sofia may be mainly frustrated about incompatible preferences for everyday messaging.",
+      "mechanism": "Attachment processes concern seeking closeness when a relationship feels uncertain. Checking can temporarily reduce uncertainty while leaving the next period of silence to provoke the same fear. The particular relationship and its history matter; one anxious evening cannot reveal an enduring attachment style.",
+      "boundary": "Sometimes delayed replies really do signal unreliable communication. The relevant evidence includes what the couple agreed and how often expectations are unmet.",
+      "trigger": "Jamie's messages stop during a work shift.",
+      "appraisal": "Sofia reads the silence as possible loss of closeness.",
+      "response": "She repeatedly checks the online indicator.",
+      "consequence": "Checking briefly relieves doubt but keeps attention on the next missing reply.",
+      "action": "Could we agree on when we'll catch up after shifts instead of expecting replies during work?",
+      "avoid": "Can you leave your online status visible all day so I won't worry?",
+      "after": [
+        "I noticed I was checking every few minutes.",
+        "Did it make you feel secure?",
+        "Only briefly. As soon as I looked away, the worry returned.",
+        "Could we try having a fixed time to talk after work?"
+      ],
+      "newInsight": "The temporary relief following a check supports a reassurance-seeking loop, while the work constraint remains real.",
+      "transfer": "A student assumes their supervisor dislikes them after an email goes unanswered for two days.",
+      "transferAnswer": "Check communication norms and consider whether delayed contact has been taken as evidence of rejection.",
+      "source": "Mikulincer & Shaver, Attachment in Adulthood (2016)."
+    },
+    {
+      "id": "overthinking",
+      "module": "Planning versus looping",
+      "book": "Thinking that stops helping",
+      "title": "Preparation that stops preparing you",
+      "people": [
+        "Rae",
+        "Tom"
+      ],
+      "scene": "Rae has an interview tomorrow and has revised the same answer several times.",
+      "lines": [
+        "I've rewritten my opening answer six times.",
+        "Have you tried saying it aloud?",
+        "Once. Every time I rehearse, I find another thing to worry about.",
+        "Does a new rewrite change anything you'll actually say?",
+        "It might. If I keep refining it, they won't catch me out.",
+        "What information would tell you that further rewriting is no longer useful?"
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Rae may be using repeated revision to gain a feeling of certainty rather than to improve performance.",
+      "rival": "The answer still contains substantial factual mistakes that further preparation could correct.",
+      "alternate": "Rae finds writing more effective than speaking because the interview will be written.",
+      "mechanism": "Effective planning reduces uncertainty by producing a decision or test. Repetitive worry can feel productive even when it yields no new evidence. Rewriting may briefly soothe Rae's fear of being caught out while delaying the spoken rehearsal that would actually test the answer.",
+      "boundary": "Further preparation is rational when there is a genuine knowledge gap. The difference is whether the next round of thinking can change a decision or action.",
+      "trigger": "The interview date approaches.",
+      "appraisal": "Rae imagines that a flawed answer will expose her as unprepared.",
+      "response": "She repeatedly edits existing answers instead of practising them.",
+      "consequence": "Time is spent reducing anxiety rather than gathering performance feedback.",
+      "action": "Say one answer aloud, note one specific improvement and rehearse the changed version.",
+      "avoid": "Rewrite until you feel certain you have covered every possible question.",
+      "after": [
+        "I spent another hour looking for interview tips.",
+        "Did you learn something you can use?",
+        "Mostly I found more things that could go wrong.",
+        "Then the search changed your anxiety more than your readiness."
+      ],
+      "newInsight": "The search produced more possible threats without an actionable improvement, making a worry loop more likely.",
+      "transfer": "Someone compares fifteen insurance policies but cannot state what further comparison would change.",
+      "transferAnswer": "Ask which unanswered question would genuinely alter the choice and what evidence would settle it.",
+      "source": "Watkins (2008), Constructive and Unconstructive Repetitive Thought."
+    },
+    {
+      "id": "boundaries",
+      "module": "Preferences, requests and boundaries",
+      "book": "What a boundary is",
+      "title": "A boundary isn't a command",
+      "people": [
+        "Ellie",
+        "Dev"
+      ],
+      "scene": "Ellie and Dev share a flat. Dev occasionally invites guests without warning.",
+      "lines": [
+        "I need notice before people come into our shared space.",
+        "I don't want to ask permission every time I see my friends.",
+        "I'm asking for notice, not to choose your friends.",
+        "What if plans happen at the last minute?",
+        "I'll use my room if I need quiet, but we should agree how shared spaces work.",
+        "That sounds different from deciding who I'm allowed to invite."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Ellie is trying to negotiate a shared-space rule while describing what she can do herself.",
+      "rival": "Ellie wants to control which friends Dev may see.",
+      "alternate": "Dev thinks providing notice amounts to requesting permission for every visitor.",
+      "mechanism": "A boundary identifies what someone will accept or how they will act. A request invites another person to change their behaviour, and a mutual agreement establishes shared expectations. In a shared home, a good solution must account for both residents' legitimate use of the space.",
+      "boundary": "Safety and tenancy conditions can justify firmer rules. A self-described boundary is not automatically fair or enforceable.",
+      "trigger": "Dev makes a last-minute guest plan.",
+      "appraisal": "Ellie sees unannounced visits as making shared space unpredictable.",
+      "response": "She asks for notice and explains how she will respond.",
+      "consequence": "Without a shared agreement, both can experience the dispute as interference.",
+      "action": "Can we agree on a message before guests arrive, including how to handle last-minute visits?",
+      "avoid": "If you respect me, you won't have anyone round when I'm tired.",
+      "after": [
+        "I thought you were trying to stop me seeing people.",
+        "I want enough notice to decide whether to use our living room.",
+        "Could we agree on a group message beforehand?",
+        "Yes. We can discuss exceptions when they happen."
+      ],
+      "newInsight": "Clarifying the difference between permission and notice reveals a negotiable procedural disagreement.",
+      "transfer": "Someone says 'You cannot have friends of another gender; that's my boundary.'",
+      "transferAnswer": "Distinguish a person's own choices from rules imposed on somebody else's social relationships.",
+      "source": "Linehan, DBT Skills Training Manual (2015), interpersonal effectiveness."
+    },
+    {
+      "id": "anxiety",
+      "module": "When the body alarms before the mind",
+      "book": "Understanding alarm signals",
+      "title": "The feeling isn't the forecast",
+      "people": [
+        "Iris",
+        "Ben"
+      ],
+      "scene": "Iris notices her heart racing while waiting for a crowded train.",
+      "lines": [
+        "My heart just started beating really fast.",
+        "Are you feeling faint or having any other worrying symptoms?",
+        "I'm afraid I'm going to collapse in front of everyone.",
+        "Would you like to sit somewhere quieter while we decide what to do?",
+        "Now I'm checking every beat. It feels faster when I focus on it.",
+        "We should check actual risk without treating the sensation alone as a prediction."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Iris may be interpreting bodily arousal as evidence of imminent danger.",
+      "rival": "A physical cause for the racing heart needs medical attention.",
+      "alternate": "The crowd's noise or proximity may be overwhelming without fear of collapse.",
+      "mechanism": "Anxiety can link bodily arousal with threat interpretations. Attention to each heartbeat may make the sensation more noticeable, which can strengthen the belief that something dangerous is happening. A racing heart is an observation; collapse is a prediction that requires additional evidence.",
+      "boundary": "New, severe or concerning physical symptoms warrant appropriate medical assessment. A psychological explanation must not substitute for evaluating physical risk.",
+      "trigger": "Iris notices a racing heart in a crowded place.",
+      "appraisal": "She predicts that the sensation means she will collapse.",
+      "response": "She monitors her heartbeat closely.",
+      "consequence": "The sensation becomes more salient and may feed further threat appraisal.",
+      "action": "First check for concerning symptoms; if safe, distinguish what is happening in the body from what you fear will follow.",
+      "avoid": "Leave every crowded place as soon as your pulse changes.",
+      "after": [
+        "I stopped counting my pulse for a moment.",
+        "Did the sensation disappear?",
+        "No, but I noticed the crowd again and felt less trapped in monitoring it.",
+        "That tells us something about attention, not the cause of the heartbeat."
+      ],
+      "newInsight": "Attention appears to influence Iris's experience, without establishing that the symptoms have no physical cause.",
+      "transfer": "A speaker's hands tremble slightly and they assume the audience will judge them as incompetent.",
+      "transferAnswer": "Separate observable arousal from the predicted audience response, and examine the evidence for each.",
+      "source": "Clark (1986), A Cognitive Approach to Panic; NICE CG113."
+    },
+    {
+      "id": "emotions",
+      "module": "A feeling is information not a verdict",
+      "book": "What emotions are for",
+      "title": "What does the anger point to?",
+      "people": [
+        "Amir",
+        "Jess"
+      ],
+      "scene": "Jess booked a trip date without checking with Amir, who expected to decide together.",
+      "lines": [
+        "I'm angry that you booked it without asking.",
+        "I thought you'd said either weekend was okay.",
+        "I meant either weekend could work, not that we'd chosen.",
+        "I didn't mean to leave you out.",
+        "I believe you. I still feel as though I wasn't part of the decision.",
+        "Then let's work out how we choose these things next time."
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Amir's anger may reflect a valued expectation of joint decision-making being frustrated.",
+      "rival": "Jess deliberately intended to exclude Amir.",
+      "alternate": "Amir may be unhappy with the specific travel date rather than how the decision was made.",
+      "mechanism": "Emotions are partly shaped by how events affect a person's goals. Anger can draw attention to an obstructed expectation, such as being consulted in a shared decision. The feeling provides information about what matters to Amir; it does not itself establish Jess's intention.",
+      "boundary": "Past experiences and immediate context can alter emotional appraisals. Anger alone is not reliable evidence about another person's motives.",
+      "trigger": "Jess books a date unilaterally.",
+      "appraisal": "Amir understands the booking as bypassing a shared decision.",
+      "response": "He expresses anger and seeks an explanation.",
+      "consequence": "If his feeling becomes proof of deliberate exclusion, repair may be harder.",
+      "action": "I expected us to choose together. Can we agree how we'll check before booking next time?",
+      "avoid": "If I feel this disrespected, you must have been trying to exclude me.",
+      "after": [
+        "I was surprised by how strongly I reacted.",
+        "What part bothered you most?",
+        "That I thought the decision was ours to make.",
+        "Then we can address that expectation directly."
+      ],
+      "newInsight": "Amir's account identifies a valued process rather than evidence of a deliberate intention to exclude.",
+      "transfer": "Someone feels guilty after cancelling a commitment because they are ill.",
+      "transferAnswer": "Ask what responsibility or value the guilt refers to before concluding that cancelling was wrong.",
+      "source": "Lazarus (1991), Emotion and Adaptation; Gross (1998), emotion regulation."
+    },
+    {
+      "id": "self-esteem",
+      "module": "Confidence in a skill versus global worth",
+      "book": "Understanding self-evaluation",
+      "title": "One mark becomes a verdict",
+      "people": [
+        "Hal",
+        "Mei"
+      ],
+      "scene": "Hal has failed a presentation component of a training assessment.",
+      "lines": [
+        "I failed the case presentation. Maybe I shouldn't be in this field.",
+        "What did the assessors actually say?",
+        "The formulation was clear, but I rushed the risk section.",
+        "So there's a part to practise.",
+        "It feels like everybody can see I'm just not good enough.",
+        "Would a better risk section change what you think of yourself?"
+      ],
+      "evidence": [
+        0,
+        4
+      ],
+      "inference": "Hal may be treating a specific skill deficit as evidence of globally inadequate worth.",
+      "rival": "The assessment exposed a meaningful gap in Hal's risk-formulation skill.",
+      "alternate": "Hal is concerned that the assessment procedure was unfair.",
+      "mechanism": "Confidence in a skill concerns the likelihood of doing a task well. Global self-worth concerns how someone evaluates themselves as a person. When the two become fused, corrective feedback can feel like an identity threat, making the precise improvement harder to act on.",
+      "boundary": "The assessment may reveal a genuine weakness. Accurate feedback and a less global judgement can coexist.",
+      "trigger": "Hal receives an unsuccessful assessment result.",
+      "appraisal": "He interprets one weak section as evidence he does not belong in the profession.",
+      "response": "He calls himself inadequate rather than planning specific practice.",
+      "consequence": "The judgement may discourage the very learning needed to improve.",
+      "action": "Practise the risk section using the feedback while treating the result as evidence about that skill.",
+      "avoid": "Avoid talking about the mark until you feel confident about yourself again.",
+      "after": [
+        "I can name the problem with my presentation.",
+        "What would you tell another trainee with the same feedback?",
+        "That they need to practise risk formulation, not leave the profession.",
+        "Could the same standard apply to you?"
+      ],
+      "newInsight": "Hal can articulate a specific, proportionate interpretation for someone else, suggesting the global judgement is not compelled by the evidence.",
+      "transfer": "A musician makes errors at rehearsal and says they're an embarrassment to everyone.",
+      "transferAnswer": "Distinguish the specific errors from a judgement about their whole value as a person.",
+      "source": "Crocker & Wolfe (2001), Contingencies of Self-Worth."
+    },
+    {
+      "id": "motivation",
+      "module": "Knowing what to do but not beginning",
+      "book": "The real problem with starting",
+      "title": "The task behind the task",
+      "people": [
+        "Lena",
+        "Noah"
+      ],
+      "scene": "Lena has the information for a grant application but has not drafted the difficult section.",
+      "lines": [
+        "I know the deadline, but I can't bring myself to start.",
+        "Which bit feels hardest to approach?",
+        "Explaining why the idea deserves funding.",
+        "Have you tried a rough draft of that part?",
+        "I keep reorganising my notes instead. At least that feels useful.",
+        "What if you wrote two bad sentences nobody else has to see?"
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Lena may be using lower-stakes preparation to avoid exposing her proposal to evaluation.",
+      "rival": "Lena may lack the information required by the grant question.",
+      "alternate": "Lena may have deliberately scheduled planning before writing.",
+      "mechanism": "Procrastination can be maintained by short-term mood repair. A related but less threatening task provides relief while leaving the difficult task untouched. Smaller entry actions help when they directly reduce the aversive demand rather than becoming another round of preparation.",
+      "boundary": "Difficulty starting can also reflect executive-function demands, unavailable resources or unclear instructions. One formulation will not fit everyone.",
+      "trigger": "Lena approaches the evaluative section of the form.",
+      "appraisal": "Writing a first draft may expose an inadequate proposal.",
+      "response": "She reorganises notes instead of drafting.",
+      "consequence": "The deadline approaches without producing text that can be improved.",
+      "action": "Write two deliberately rough sentences under that heading, then decide which information is missing.",
+      "avoid": "Reorganise the notes one last time until the answer feels clearer.",
+      "after": [
+        "I wrote a terrible first sentence.",
+        "Did you stop there?",
+        "No. I wrote another, and the first didn't seem so important.",
+        "So starting changed the task from proving yourself to producing material."
+      ],
+      "newInsight": "The shift after a small draft suggests the initial threshold, rather than a lack of information, was contributing to avoidance.",
+      "transfer": "A student spends an hour picking a revision app instead of answering practice questions.",
+      "transferAnswer": "Identify the smallest activity that yields feedback on the actual task, not merely on preparation.",
+      "source": "Steel (2007), procrastination; Sirois & Pychyl (2013), mood regulation."
+    },
+    {
+      "id": "social-anxiety",
+      "module": "Entering a room while feeling watched",
+      "book": "Fear of being evaluated",
+      "title": "What happens when you watch yourself?",
+      "people": [
+        "Milo",
+        "Nell"
+      ],
+      "scene": "Milo enters a society meeting where he knows nobody.",
+      "lines": [
+        "Everyone can tell I don't belong here.",
+        "What did you see people do?",
+        "Two glanced at the door. Now I'm checking how I'm standing.",
+        "Does focusing on your posture help you join in?",
+        "Not really. I keep rehearsing a sentence and missing what people say.",
+        "Could you listen for one thing to ask them about?"
+      ],
+      "evidence": [
+        2,
+        4
+      ],
+      "inference": "Milo may be directing attention inward to prevent negative evaluation, losing information about the group.",
+      "rival": "The group may genuinely have treated newcomers as unwelcome.",
+      "alternate": "Milo may be overstimulated by the room rather than afraid of being judged.",
+      "mechanism": "Social-anxiety models describe how fear of evaluation can increase self-focused attention. Private sensations may be mistaken for evidence of how others see us. Safety behaviours such as rehearsing each sentence can make it harder to hear invitations to participate.",
+      "boundary": "Some groups really are hostile. The question is whether the feared judgement is supported by the particular interaction.",
+      "trigger": "Milo enters an unfamiliar group.",
+      "appraisal": "He predicts that others will notice he is awkward and exclude him.",
+      "response": "He monitors his posture and rehearses every line.",
+      "consequence": "Attention is taken away from people who might be welcoming him.",
+      "action": "Listen to one conversation and ask a genuine question, then compare your prediction with what happens.",
+      "avoid": "Keep rehearsing until you no longer feel nervous before speaking.",
+      "after": [
+        "I asked one person about their course.",
+        "What happened?",
+        "They asked about mine. I still felt nervous, but I wasn't watching my hands.",
+        "That is new evidence about their response, even though the feeling remained."
+      ],
+      "newInsight": "Observable engagement challenges Milo's prediction; the continuing anxiety does not prove the conversation failed.",
+      "transfer": "A presenter concludes their talk failed because their face felt hot, despite engaged audience questions.",
+      "transferAnswer": "Compare internal sensations with observable responses before judging how the presentation went.",
+      "source": "Clark & Wells (1995), cognitive model of social phobia."
+    }
+  ]
+}
