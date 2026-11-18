@@ -103,7 +103,7 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   const head='<header class="ns-learn-immersive__header">'+exit+'<div class="ns-learn-immersive__meter" role="progressbar" aria-valuenow="'+progress+'" aria-valuemin="0" aria-valuemax="100" aria-label="Lesson progress"><i style="width:'+progress+'%"></i></div><span class="ns-learn-immersive__badge" title="Nobody’s Simple">✿</span></header>';
   let middle='',foot='';
   if(state.phase==='intro'){
-   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · Unit '+unitIndex+'</p><h1>'+esc(lesson.title)+'</h1><div class="ns-learn-immersive__lead">'+paragraphs(lesson.teach||'Work through a real situation and decide what the evidence can support.')+'</div><p class="ns-learn-player__hint">About 5 minutes · '+nodes.length+' short activities · No timer</p></div>';
+   middle='<div class="ns-learn-immersive__welcome"><span class="ns-learn-immersive__welcome-art">'+companion+'</span><p class="ns-learn-player__eyebrow">'+esc(course?.title||bundle.title||courseId)+' · Unit '+unitIndex+'</p><h1>'+esc(lesson.title)+'</h1><div class="ns-learn-immersive__lead">'+castMarkup(charactersMentioned({body:lesson.teach},cast))+paragraphs(lesson.teach||'Work through a real situation and decide what the evidence can support.')+'</div><p class="ns-learn-player__hint">About 5 minutes · '+nodes.length+' short activities · No timer</p></div>';
    foot='<button type="button" class="ns-learn-player__primary" data-start>Start lesson →</button>';
   }else if(state.phase==='done'){
    const score=learnLessonScore(lesson,state.answers);
