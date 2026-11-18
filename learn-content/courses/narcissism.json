@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "narcissism-m1-node-1-check1-alternative-1",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "Leo may regard technical authorship as less important than managerial accountability and resent the proposed distinction.",
+                      "feedback": "This could explain his opening response; it does not fully account for why the correction feels like a risk to his competence."
                     },
                     {
                       "id": "narcissism-m1-node-1-check1-alternative-2",
-                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Leo may be treating the correction as a threat to his image of competence. is more directly tied to the words in this scene. Deliberate career advantage and emotional defensiveness can coexist. The wider, enduring pattern matters far more than a single argument."
                     }
                   ],
                   "answer": "narcissism-m1-node-1-check1-opt1",
@@ -904,21 +904,24 @@
                   "options": [
                     {
                       "id": "narcissism-m1-node-1-check2-opt2",
-                      "label": "Let's leave the inaccurate slide until after the promotion panel.",
-                      "reply": "If we change it now, they'll think I've been taking credit for something I couldn't do.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "I'd like us to describe the work as a joint result, without breaking down who contributed which part.",
+                      "reply": "I was. That work was excellent.",
+                      "consequence": "A collective credit may reduce tension, but it would still leave the technical attribution ambiguous.",
+                      "feedback": "A collective credit may reduce tension, but it would still leave the technical attribution ambiguous."
                     },
                     {
                       "id": "narcissism-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "You have no idea how much this promotion matters. They need to see me as capable.",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Let's draft the corrected wording together and show it to the director with a brief explanation of our different roles.",
+                      "reply": "I was. That work was excellent.",
+                      "consequence": "Joint drafting might reduce defensiveness, although it requires Leo to cooperate with the correction.",
+                      "feedback": "Joint drafting might reduce defensiveness, although it requires Leo to cooperate with the correction."
                     },
                     {
                       "id": "narcissism-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "I was. That work was excellent.",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "narcissism-m1-node-1-check2-opt1",
@@ -927,9 +930,11 @@
                       "consequence": "The conversation may not be solved, but the immediate problem now has a concrete route forward."
                     },
                     {
-                      "id": "narcissism-m1-node-1-check2-alternative-1",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "id": "narcissism-m1-node-1-check2-alternative-4",
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "reply": "I was. That work was excellent.",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     }
                   ],
                   "answer": "narcissism-m1-node-1-check2-opt1",
@@ -1075,7 +1080,8 @@
                 },
                 {
                   "id": "narcissism-m1-plan-opt2",
-                  "label": "Let's leave the inaccurate slide until after the promotion panel."
+                  "label": "Ask what information each person would need before being willing to revise their position.",
+                  "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                 }
               ],
               "outcomes": [
@@ -1126,8 +1132,8 @@
                 },
                 {
                   "id": "narcissism-m1-node-7-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Observe what happens after a clear and workable alternative is offered.",
+                  "feedback": "A response to a specific alternative can reveal what the person is actually trying to preserve."
                 }
               ],
               "answer": "narcissism-m1-repair-opt1"
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "narcissism-m1-node-8-check1-alternative-1",
-                      "label": "Leo treats correction as a possible loss of professional standing. His need to appear capable may be giving a routine attribution dispute unusually high emotional stakes.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "narcissism-m1-node-8-check1-alternative-2",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "narcissism-m1-node-8-check1-opt1",
@@ -1248,8 +1254,8 @@
                 },
                 {
                   "id": "narcissism-m1-node-9-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                  "feedback": "History could matter, but that earlier pattern has not yet been established."
                 }
               ],
               "answer": "narcissism-m1-new-opt1"
@@ -1404,8 +1410,8 @@
                 },
                 {
                   "id": "narcissism-m1-node-13-alternative-1",
-                  "label": "Compare how Leo treats credit and correction over time, including when his own reputation is not at stake.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Check whether the speakers had agreed on the practical expectation before the exchange.",
+                  "feedback": "The agreement may determine whether the original request was reasonable, although not why the response was so strong."
                 }
               ],
               "answer": "narcissism-m1-test-opt1"
@@ -1439,8 +1445,8 @@
                 },
                 {
                   "id": "narcissism-m1-node-14-evidence-alternative-1",
-                  "label": "Leo may understand project ownership differently from Maya and interpret her request as a challenge to their agreed roles.",
-                  "feedback": "This can explain the initial dispute; his later emphasis on promotion suggests the stakes may extend beyond job descriptions."
+                  "label": "Leo may regard technical authorship as less important than managerial accountability and resent the proposed distinction.",
+                  "feedback": "This could explain his opening response; it does not fully account for why the correction feels like a risk to his competence."
                 }
               ],
               "evidenceAnswer": "narcissism-m1-transfer-e-opt1",
@@ -1459,8 +1465,8 @@
                 },
                 {
                   "id": "narcissism-m1-node-14-response-alternative-1",
-                  "label": "Ask Leo what the directors are likely to infer, then suggest wording that distinguishes project leadership from technical authorship.",
-                  "feedback": "This may surface his concern; it risks delaying correction if he continues to refuse."
+                  "label": "I'd like us to describe the work as a joint result, without breaking down who contributed which part.",
+                  "feedback": "A collective credit may reduce tension, but it would still leave the technical attribution ambiguous."
                 }
               ],
               "responseAnswer": "narcissism-m1-transfer-a-opt1"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "narcissism-m1-l4-n2-question-opt3",
-                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                     },
                     {
                       "id": "narcissism-m1-l4-n2-question-opt4",
@@ -1773,8 +1779,8 @@
                     },
                     {
                       "id": "narcissism-m1-l4-n2-question-alternative-2",
-                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                      "feedback": "History could matter, but that earlier pattern has not yet been established."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     }
                   ],
                   "answer": "narcissism-m1-l4-n2-question-opt2",
@@ -1815,8 +1821,8 @@
                 },
                 {
                   "id": "narcissism-m1-l4-n3-alternative-1",
-                  "label": "Observe whether Leo accepts corrections that do not affect how his competence is presented to senior colleagues.",
-                  "feedback": "This comparison could distinguish a general objection to correction from a reputation-specific concern."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "narcissism-m1-l4-n3-opt2",
@@ -1854,8 +1860,8 @@
                 },
                 {
                   "id": "narcissism-m1-l4-n4-alternative-1",
-                  "label": "Compare how Leo treats credit and correction over time, including when his own reputation is not at stake.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
+                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
                 }
               ],
               "answer": "narcissism-m1-l4-n4-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "narcissism-m1-l4-n6-alternative-1",
-                  "label": "Leo may fear being publicly accused of dishonesty more than he fears the loss of recognition itself.",
-                  "feedback": "Fear of accusation is plausible, though no one has yet threatened to accuse him; Maya has proposed accurate attribution."
+                  "label": "Leo may be responding primarily to the timing of the correction, because changing a finished presentation could look like an admission of carelessness.",
+                  "feedback": "Timing could matter, but Leo explicitly connects the issue to how competent he appears."
                 }
               ],
               "answer": "narcissism-m1-l4-n6-opt2"
@@ -1973,13 +1979,13 @@
                 },
                 {
                   "id": "narcissism-m1-l5-n2-evidence-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Leo may fear being publicly accused of dishonesty more than he fears the loss of recognition itself.",
+                  "feedback": "Fear of accusation is plausible, though no one has yet threatened to accuse him; Maya has proposed accurate attribution."
                 },
                 {
                   "id": "narcissism-m1-l5-n2-evidence-alternative-2",
-                  "label": "Leo may be responding primarily to the timing of the correction, because changing a finished presentation could look like an admission of carelessness.",
-                  "feedback": "Timing could matter, but Leo explicitly connects the issue to how competent he appears."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "narcissism-m1-l5-n2-evidence-opt2",
@@ -1996,13 +2002,13 @@
                 },
                 {
                   "id": "narcissism-m1-l5-n2-response-alternative-1",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Surely you agree it would be unfair to leave my contribution out.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "narcissism-m1-l5-n2-response-alternative-2",
-                  "label": "Propose a private wording change that credits the analysis without challenging who led the project.",
-                  "feedback": "A private correction may reduce embarrassment, but Maya still needs to ensure the final slide is accurate."
+                  "label": "What do you think a correction would lead the directors to conclude about your leadership?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "responseAnswer": "narcissism-m1-l5-n2-response-opt2"
@@ -2029,8 +2035,8 @@
                 },
                 {
                   "id": "narcissism-m1-l5-n4-opt3",
-                  "label": "Leo may understand project ownership differently from Maya and interpret her request as a challenge to their agreed roles.",
-                  "feedback": "This can explain the initial dispute; his later emphasis on promotion suggests the stakes may extend beyond job descriptions."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 },
                 {
                   "id": "narcissism-m1-l5-n4-opt4",
@@ -2039,8 +2045,8 @@
                 },
                 {
                   "id": "narcissism-m1-l5-n4-alternative-2",
-                  "label": "Leo may fear being publicly accused of dishonesty more than he fears the loss of recognition itself.",
-                  "feedback": "Fear of accusation is plausible, though no one has yet threatened to accuse him; Maya has proposed accurate attribution."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "narcissism-m1-l5-n4-opt2",
@@ -2069,8 +2075,8 @@
                 },
                 {
                   "id": "narcissism-m1-l5-n3-change-alternative-1",
-                  "label": "Propose a private wording change that credits the analysis without challenging who led the project.",
-                  "feedback": "A private correction may reduce embarrassment, but Maya still needs to ensure the final slide is accurate."
+                  "label": "If we can't correct the attribution together, I'll ask the project lead to review it before publication.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "outcomes": [
@@ -2126,8 +2132,8 @@
                 },
                 {
                   "id": "narcissism-m1-l5-n5-alternative-1",
-                  "label": "Leo may fear being publicly accused of dishonesty more than he fears the loss of recognition itself.",
-                  "feedback": "Fear of accusation is plausible, though no one has yet threatened to accuse him; Maya has proposed accurate attribution."
+                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                 }
               ],
               "answer": "narcissism-m1-l5-n5-opt2",
@@ -2165,8 +2171,8 @@
                 },
                 {
                   "id": "narcissism-m1-l5-n6-alternative-1",
-                  "label": "Observe whether Leo accepts corrections that do not affect how his competence is presented to senior colleagues.",
-                  "feedback": "This comparison could distinguish a general objection to correction from a reputation-specific concern."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "narcissism-m1-l5-n6-opt2"
@@ -2220,8 +2226,8 @@
                 },
                 {
                   "id": "narcissism-m1-l6-n2-alternative-1",
-                  "label": "Propose a private wording change that credits the analysis without challenging who led the project.",
-                  "feedback": "A private correction may reduce embarrassment, but Maya still needs to ensure the final slide is accurate."
+                  "label": "Ask Leo what the directors are likely to infer, then suggest wording that distinguishes project leadership from technical authorship.",
+                  "feedback": "This may surface his concern; it risks delaying correction if he continues to refuse."
                 }
               ],
               "answer": "narcissism-m1-l6-n2-opt2"
@@ -2301,8 +2307,8 @@
                 },
                 {
                   "id": "narcissism-m1-l6-n4-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "narcissism-m1-l6-n4-opt2",
