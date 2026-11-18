@@ -884,13 +884,13 @@
                     },
                     {
                       "id": "masculinity-m1-node-1-check1-alternative-1",
-                      "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "The practical constraint may be the largest contributor to this disagreement, with the emotional response emerging from frustration about the outcome.",
+                      "feedback": "This is a reasonable line of inquiry, although Avery is identifying a construct-validity problem: the variable may not measure what the study needs. is more directly tied to the words in this scene. A simple category can be appropriate for a clearly stated descriptive purpose. The mistake is interpreting it as a precise measure of an unasked characteristic."
                     },
                     {
                       "id": "masculinity-m1-node-1-check1-alternative-2",
-                      "label": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The speakers may agree about the event but attach different meanings to its consequences for their relationship or responsibilities.",
+                      "feedback": "This is a reasonable line of inquiry, although Avery is identifying a construct-validity problem: the variable may not measure what the study needs. is more directly tied to the words in this scene. A simple category can be appropriate for a clearly stated descriptive purpose. The mistake is interpreting it as a precise measure of an unasked characteristic."
                     }
                   ],
                   "answer": "masculinity-m1-node-1-check1-opt1",
@@ -904,9 +904,10 @@
                   "options": [
                     {
                       "id": "masculinity-m1-node-1-check2-opt4",
-                      "label": "Let's ask someone else to intervene before discussing this further.",
+                      "label": "Ask the speakers to state the concrete agreement they believe existed before negotiating a change.",
                       "reply": "What should the study record, then?",
-                      "consequence": "Independent help can be appropriate when direct discussion fails or safety requires it; timing matters."
+                      "consequence": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.",
+                      "feedback": "Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear."
                     },
                     {
                       "id": "masculinity-m1-node-1-check2-opt1",
@@ -916,20 +917,24 @@
                     },
                     {
                       "id": "masculinity-m1-node-1-check2-opt2",
-                      "label": "Use one universal identity question for every biological and social outcome.",
-                      "reply": "Then the question needs to match the scientific purpose.",
-                      "consequence": "Backing away can ease pressure now while leaving the original concern unresolved."
+                      "label": "Acknowledge the worry expressed in the reply and invite a specific change that both people could check.",
+                      "reply": "What should the study record, then?",
+                      "consequence": "This can open a conversation, but the initial practical limit may still require a clear answer.",
+                      "feedback": "This can open a conversation, but the initial practical limit may still require a clear answer."
                     },
                     {
                       "id": "masculinity-m1-node-1-check2-opt3",
-                      "label": "Before making any decision, I'd like you to explain exactly why you responded that way.",
-                      "reply": "Those could give different answers depending on the person.",
-                      "consequence": "Demanding a definitive motive may provoke another defence rather than settle the issue."
+                      "label": "Suggest an independent review of the relevant facts if the direct discussion has stalled.",
+                      "reply": "What should the study record, then?",
+                      "consequence": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried.",
+                      "feedback": "Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried."
                     },
                     {
-                      "id": "masculinity-m1-node-1-check2-alternative-1",
-                      "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "id": "masculinity-m1-node-1-check2-alternative-4",
+                      "label": "Ask what information each person would need before being willing to revise their position.",
+                      "feedback": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need.",
+                      "reply": "What should the study record, then?",
+                      "consequence": "This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need."
                     }
                   ],
                   "answer": "masculinity-m1-node-1-check2-opt1",
@@ -1075,7 +1080,8 @@
                 },
                 {
                   "id": "masculinity-m1-plan-opt2",
-                  "label": "Use one universal identity question for every biological and social outcome."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "outcomes": [
@@ -1126,8 +1132,8 @@
                 },
                 {
                   "id": "masculinity-m1-node-7-alternative-1",
-                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
-                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
+                  "label": "Compare statements made at the time with each person’s later recollection.",
+                  "feedback": "A contemporaneous record can help separate a mistaken memory from a disputed interpretation."
                 }
               ],
               "answer": "masculinity-m1-repair-opt1"
@@ -1201,13 +1207,13 @@
                     },
                     {
                       "id": "masculinity-m1-node-8-check1-alternative-1",
-                      "label": "The questionnaire may require information about specific clinical characteristics, making a broad binary label too imprecise.",
-                      "feedback": "The needed data depend on the actual research or care question."
+                      "label": "The study may only need a broad demographic grouping, making detailed biological questions unnecessary.",
+                      "feedback": "That depends on the planned analysis and whether the group is defined clearly enough."
                     },
                     {
                       "id": "masculinity-m1-node-8-check1-alternative-2",
-                      "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
-                      "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                      "label": "Researchers may understand the concept but be using ordinary language that participants interpret differently.",
+                      "feedback": "This is a wording problem with real measurement consequences, not just a matter of politeness."
                     }
                   ],
                   "answer": "masculinity-m1-node-8-check1-opt1",
@@ -1248,8 +1254,8 @@
                 },
                 {
                   "id": "masculinity-m1-node-9-alternative-1",
-                  "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "Researchers may understand the concept but be using ordinary language that participants interpret differently.",
+                  "feedback": "This is a wording problem with real measurement consequences, not just a matter of politeness."
                 }
               ],
               "answer": "masculinity-m1-new-opt1"
@@ -1322,8 +1328,8 @@
                 },
                 {
                   "id": "masculinity-m1-node-10-alternative-1",
-                  "label": "Some contexts use 'male' and 'female' to refer to sex while others use them for gender; ordinary language varies and requires clarification.",
-                  "feedback": "This is a plausible competing hypothesis. Its relative strength depends on whether it accounts for the most revealing details."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "answer": "masculinity-m1-view-opt1"
@@ -1402,8 +1408,8 @@
                 },
                 {
                   "id": "masculinity-m1-node-14-evidence-alternative-1",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "Researchers may understand the concept but be using ordinary language that participants interpret differently.",
+                  "feedback": "This is a wording problem with real measurement consequences, not just a matter of politeness."
                 }
               ],
               "evidenceAnswer": "masculinity-m1-transfer-e-opt1",
@@ -1422,8 +1428,8 @@
                 },
                 {
                   "id": "masculinity-m1-node-14-response-alternative-1",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "Pilot the wording with participants to discover whether they understand the intended distinction.",
+                  "feedback": "Testing interpretation is useful, though the research team first needs to identify what it wants measured."
                 }
               ],
               "responseAnswer": "masculinity-m1-transfer-a-opt1"
@@ -1459,8 +1465,8 @@
                 },
                 {
                   "id": "masculinity-m1-node-13-alternative-1",
-                  "label": "Specify the exact construct required, then check whether respondents interpret the item consistently and whether the response is relevant.",
-                  "feedback": "This is useful evidence, though its value depends on the precise question being asked."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "masculinity-m1-test-opt1"
@@ -1558,8 +1564,8 @@
                 },
                 {
                   "id": "masculinity-m1-l3-n3-alternative-1",
-                  "label": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
-                  "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                  "label": "The survey may be measuring a blend of biological and social information because the researchers never defined the construct.",
+                  "feedback": "Ambiguity could make the responses uninterpretable across participants."
                 }
               ],
               "answer": "masculinity-m1-l3-n3-opt2",
@@ -1597,8 +1603,8 @@
                 },
                 {
                   "id": "masculinity-m1-l3-n4-alternative-1",
-                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                  "label": "Some respondents may answer according to identity while others answer according to sex recorded at birth.",
+                  "feedback": "Different interpretations would weaken the item's construct validity."
                 }
               ],
               "answer": "masculinity-m1-l3-n4-opt2",
@@ -1628,21 +1634,21 @@
                 },
                 {
                   "id": "masculinity-m1-l3-n5-evidence-alternative-1",
-                  "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
-                  "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
+                  "label": "The questionnaire may require information about specific clinical characteristics, making a broad binary label too imprecise.",
+                  "feedback": "The needed data depend on the actual research or care question."
                 },
                 {
                   "id": "masculinity-m1-l3-n5-evidence-alternative-2",
-                  "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
-                  "feedback": "History could matter, but that earlier pattern has not yet been established."
+                  "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
+                  "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
                 }
               ],
               "evidenceAnswer": "masculinity-m1-l3-n5-evidence-opt2",
               "responseOptions": [
                 {
                   "id": "masculinity-m1-l3-n5-response-opt1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Use whichever category labels are most familiar without explaining their meaning.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "masculinity-m1-l3-n5-response-opt2",
@@ -1651,13 +1657,13 @@
                 },
                 {
                   "id": "masculinity-m1-l3-n5-response-alternative-2",
-                  "label": "Ask each person to set out their own immediate concern before deciding whether to escalate.",
-                  "feedback": "This can reveal different priorities, but it may also delay an urgent factual correction."
+                  "label": "What exactly are we trying to measure, and will this wording allow respondents to report it accurately?",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 },
                 {
                   "id": "masculinity-m1-l3-n5-response-alternative-3",
-                  "label": "State what each question is for and separate relevant clinical information from demographic identity where necessary.",
-                  "feedback": "This increases validity and gives respondents a clearer explanation."
+                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
+                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
                 }
               ],
               "responseAnswer": "masculinity-m1-l3-n5-response-opt2"
@@ -1763,8 +1769,8 @@
                     },
                     {
                       "id": "masculinity-m1-l4-n2-question-opt3",
-                      "label": "Biological sex characteristics, gender identity and social expectations are related but analytically different constructs. The question must match the phenomenon being studied.",
-                      "feedback": "A process formulation may fit, but the evidence may also support other contributors."
+                      "label": "The immediate context may account for more of the reaction than a stable personal tendency would.",
+                      "feedback": "Situation-specific pressure is plausible, though the evidence may indicate an additional process."
                     },
                     {
                       "id": "masculinity-m1-l4-n2-question-opt4",
@@ -1773,8 +1779,8 @@
                     },
                     {
                       "id": "masculinity-m1-l4-n2-question-alternative-2",
-                      "label": "The meaning of the event may differ between the speakers, even when they agree about the observable facts.",
-                      "feedback": "Different interpretations may contribute, but this is not yet specific enough to explain the response."
+                      "label": "A previous disagreement may have shaped the response, making the present conversation part of a longer pattern.",
+                      "feedback": "History could matter, but that earlier pattern has not yet been established."
                     }
                   ],
                   "answer": "masculinity-m1-l4-n2-question-opt2",
@@ -1815,8 +1821,8 @@
                 },
                 {
                   "id": "masculinity-m1-l4-n4-alternative-1",
-                  "label": "Compare participants’ interpretations of the item with the construct the study claims to measure.",
-                  "feedback": "A mismatch reveals a measurement problem."
+                  "label": "Examine whether a similar response occurs when the immediate practical stakes are different.",
+                  "feedback": "A pattern could test generalisation, although the settings may not be comparable."
                 }
               ],
               "answer": "masculinity-m1-l4-n4-opt2",
@@ -1854,8 +1860,8 @@
                 },
                 {
                   "id": "masculinity-m1-l4-n3-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "masculinity-m1-l4-n3-opt2",
@@ -1926,8 +1932,8 @@
                 },
                 {
                   "id": "masculinity-m1-l4-n6-alternative-1",
-                  "label": "The survey may be measuring a blend of biological and social information because the researchers never defined the construct.",
-                  "feedback": "Ambiguity could make the responses uninterpretable across participants."
+                  "label": "The questionnaire may require information about specific clinical characteristics, making a broad binary label too imprecise.",
+                  "feedback": "The needed data depend on the actual research or care question."
                 }
               ],
               "answer": "masculinity-m1-l4-n6-opt2"
@@ -2165,8 +2171,8 @@
                 },
                 {
                   "id": "masculinity-m1-l5-n6-alternative-1",
-                  "label": "Ask both people what they expected would happen next and compare their predictions with the observed outcome.",
-                  "feedback": "Expectations matter, but retrospective reports may be incomplete or influenced by hindsight."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "masculinity-m1-l5-n6-opt2"
@@ -2220,8 +2226,8 @@
                 },
                 {
                   "id": "masculinity-m1-l6-n2-alternative-1",
-                  "label": "Seek agreement on a specific next step, then check whether it actually addresses the concern.",
-                  "feedback": "A jointly agreed next step is reasonable, though the other person may still decline."
+                  "label": "Remove every question about sex characteristics regardless of the study's aims.",
+                  "feedback": "This may be helpful at another stage. We still need a response that fits the practical aim and the current evidence."
                 }
               ],
               "answer": "masculinity-m1-l6-n2-opt2"
@@ -2301,8 +2307,8 @@
                 },
                 {
                   "id": "masculinity-m1-l6-n4-alternative-1",
-                  "label": "Compare participants’ interpretations of the item with the construct the study claims to measure.",
-                  "feedback": "A mismatch reveals a measurement problem."
+                  "label": "Compare the accounts against records made at the time rather than relying on recollection alone.",
+                  "feedback": "Contemporaneous records may improve accuracy without necessarily identifying a psychological function."
                 }
               ],
               "answer": "masculinity-m1-l6-n4-opt2",
