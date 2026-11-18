@@ -1,0 +1,2828 @@
+{
+  "courseId": "neurodiversity",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Curriculum map only; all lesson content and interactive nodes must be authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "neurodiversity-book-1",
+      "title": "Understanding neurodiversity precisely",
+      "distinction": "difference versus diagnosis versus disability",
+      "modules": [
+        {
+          "id": "neurodiversity-module-01",
+          "title": "Neurodiversity as population variation",
+          "problem": "Neurodiversity as population variation",
+          "lessons": [
+            {
+              "id": "neurodiversity-m1-l1",
+              "title": "Case file: Neurodiversity as population variation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Neurodiversity as population variation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m1-l2",
+              "title": "Trace the mechanisms of Neurodiversity as population variation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Neurodiversity as population variation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m1-l3",
+              "title": "Distinguish Neurodiversity as population variation from difference versus diagnosis versus disability",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Neurodiversity as population variation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m1-l4",
+              "title": "Evidence investigation: Neurodiversity as population variation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Neurodiversity as population variation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m1-l5",
+              "title": "Design a response to Neurodiversity as population variation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Neurodiversity as population variation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m1-l6",
+              "title": "Transfer challenge: Neurodiversity as population variation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Neurodiversity as population variation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-02",
+          "title": "Autism and ADHD are not one profile",
+          "problem": "Autism and ADHD are not one profile",
+          "lessons": [
+            {
+              "id": "neurodiversity-m2-l1",
+              "title": "Case file: Autism and ADHD are not one profile",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Autism and ADHD are not one profile.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m2-l2",
+              "title": "Trace the mechanisms of Autism and ADHD are not one profile",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Autism and ADHD are not one profile.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m2-l3",
+              "title": "Distinguish Autism and ADHD are not one profile from difference versus diagnosis versus disability",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Autism and ADHD are not one profile.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m2-l4",
+              "title": "Evidence investigation: Autism and ADHD are not one profile",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Autism and ADHD are not one profile.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m2-l5",
+              "title": "Design a response to Autism and ADHD are not one profile",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Autism and ADHD are not one profile.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m2-l6",
+              "title": "Transfer challenge: Autism and ADHD are not one profile",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Autism and ADHD are not one profile.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-03",
+          "title": "Clinical diagnosis versus self-identification",
+          "problem": "Clinical diagnosis versus self-identification",
+          "lessons": [
+            {
+              "id": "neurodiversity-m3-l1",
+              "title": "Case file: Clinical diagnosis versus self-identification",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Clinical diagnosis versus self-identification.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m3-l2",
+              "title": "Trace the mechanisms of Clinical diagnosis versus self-identification",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Clinical diagnosis versus self-identification.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m3-l3",
+              "title": "Distinguish Clinical diagnosis versus self-identification from difference versus diagnosis versus disability",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Clinical diagnosis versus self-identification.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m3-l4",
+              "title": "Evidence investigation: Clinical diagnosis versus self-identification",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Clinical diagnosis versus self-identification.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m3-l5",
+              "title": "Design a response to Clinical diagnosis versus self-identification",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Clinical diagnosis versus self-identification.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m3-l6",
+              "title": "Transfer challenge: Clinical diagnosis versus self-identification",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Clinical diagnosis versus self-identification.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-04",
+          "title": "Disability depends partly on environments",
+          "problem": "Disability depends partly on environments",
+          "lessons": [
+            {
+              "id": "neurodiversity-m4-l1",
+              "title": "Case file: Disability depends partly on environments",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Disability depends partly on environments.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m4-l2",
+              "title": "Trace the mechanisms of Disability depends partly on environments",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Disability depends partly on environments.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m4-l3",
+              "title": "Distinguish Disability depends partly on environments from difference versus diagnosis versus disability",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Disability depends partly on environments.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m4-l4",
+              "title": "Evidence investigation: Disability depends partly on environments",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Disability depends partly on environments.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m4-l5",
+              "title": "Design a response to Disability depends partly on environments",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Disability depends partly on environments.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m4-l6",
+              "title": "Transfer challenge: Disability depends partly on environments",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Disability depends partly on environments.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-05",
+          "title": "Why strengths-only stories can mislead",
+          "problem": "Why strengths-only stories can mislead",
+          "lessons": [
+            {
+              "id": "neurodiversity-m5-l1",
+              "title": "Case file: Why strengths-only stories can mislead",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Why strengths-only stories can mislead.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m5-l2",
+              "title": "Trace the mechanisms of Why strengths-only stories can mislead",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Why strengths-only stories can mislead.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m5-l3",
+              "title": "Distinguish Why strengths-only stories can mislead from difference versus diagnosis versus disability",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Why strengths-only stories can mislead.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m5-l4",
+              "title": "Evidence investigation: Why strengths-only stories can mislead",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Why strengths-only stories can mislead.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m5-l5",
+              "title": "Design a response to Why strengths-only stories can mislead",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Why strengths-only stories can mislead.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m5-l6",
+              "title": "Transfer challenge: Why strengths-only stories can mislead",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Why strengths-only stories can mislead.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity-book-2",
+      "title": "Autistic experiences and variation",
+      "distinction": "trait stereotype versus heterogeneous experience",
+      "modules": [
+        {
+          "id": "neurodiversity-module-06",
+          "title": "Different sensory profiles",
+          "problem": "Different sensory profiles",
+          "lessons": [
+            {
+              "id": "neurodiversity-m6-l1",
+              "title": "Case file: Different sensory profiles",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Different sensory profiles.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m6-l2",
+              "title": "Trace the mechanisms of Different sensory profiles",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Different sensory profiles.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m6-l3",
+              "title": "Distinguish Different sensory profiles from trait stereotype versus heterogeneous experience",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Different sensory profiles.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m6-l4",
+              "title": "Evidence investigation: Different sensory profiles",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Different sensory profiles.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m6-l5",
+              "title": "Design a response to Different sensory profiles",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Different sensory profiles.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m6-l6",
+              "title": "Transfer challenge: Different sensory profiles",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Different sensory profiles.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-07",
+          "title": "Communication styles and mutual misunderstanding",
+          "problem": "Communication styles and mutual misunderstanding",
+          "lessons": [
+            {
+              "id": "neurodiversity-m7-l1",
+              "title": "Case file: Communication styles and mutual misunderstanding",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Communication styles and mutual misunderstanding.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m7-l2",
+              "title": "Trace the mechanisms of Communication styles and mutual misunderstanding",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Communication styles and mutual misunderstanding.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m7-l3",
+              "title": "Distinguish Communication styles and mutual misunderstanding from trait stereotype versus heterogeneous experience",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Communication styles and mutual misunderstanding.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m7-l4",
+              "title": "Evidence investigation: Communication styles and mutual misunderstanding",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Communication styles and mutual misunderstanding.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m7-l5",
+              "title": "Design a response to Communication styles and mutual misunderstanding",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Communication styles and mutual misunderstanding.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m7-l6",
+              "title": "Transfer challenge: Communication styles and mutual misunderstanding",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Communication styles and mutual misunderstanding.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-08",
+          "title": "Routine, predictability and change",
+          "problem": "Routine, predictability and change",
+          "lessons": [
+            {
+              "id": "neurodiversity-m8-l1",
+              "title": "Case file: Routine, predictability and change",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Routine, predictability and change.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m8-l2",
+              "title": "Trace the mechanisms of Routine, predictability and change",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Routine, predictability and change.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m8-l3",
+              "title": "Distinguish Routine, predictability and change from trait stereotype versus heterogeneous experience",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Routine, predictability and change.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m8-l4",
+              "title": "Evidence investigation: Routine, predictability and change",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Routine, predictability and change.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m8-l5",
+              "title": "Design a response to Routine, predictability and change",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Routine, predictability and change.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m8-l6",
+              "title": "Transfer challenge: Routine, predictability and change",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Routine, predictability and change.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-09",
+          "title": "Focused interests and attentional patterns",
+          "problem": "Focused interests and attentional patterns",
+          "lessons": [
+            {
+              "id": "neurodiversity-m9-l1",
+              "title": "Case file: Focused interests and attentional patterns",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Focused interests and attentional patterns.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m9-l2",
+              "title": "Trace the mechanisms of Focused interests and attentional patterns",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Focused interests and attentional patterns.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m9-l3",
+              "title": "Distinguish Focused interests and attentional patterns from trait stereotype versus heterogeneous experience",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Focused interests and attentional patterns.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m9-l4",
+              "title": "Evidence investigation: Focused interests and attentional patterns",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Focused interests and attentional patterns.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m9-l5",
+              "title": "Design a response to Focused interests and attentional patterns",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Focused interests and attentional patterns.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m9-l6",
+              "title": "Transfer challenge: Focused interests and attentional patterns",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Focused interests and attentional patterns.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-10",
+          "title": "Masked presentations and diagnostic gaps",
+          "problem": "Masked presentations and diagnostic gaps",
+          "lessons": [
+            {
+              "id": "neurodiversity-m10-l1",
+              "title": "Case file: Masked presentations and diagnostic gaps",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Masked presentations and diagnostic gaps.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m10-l2",
+              "title": "Trace the mechanisms of Masked presentations and diagnostic gaps",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Masked presentations and diagnostic gaps.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m10-l3",
+              "title": "Distinguish Masked presentations and diagnostic gaps from trait stereotype versus heterogeneous experience",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Masked presentations and diagnostic gaps.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m10-l4",
+              "title": "Evidence investigation: Masked presentations and diagnostic gaps",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Masked presentations and diagnostic gaps.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m10-l5",
+              "title": "Design a response to Masked presentations and diagnostic gaps",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Masked presentations and diagnostic gaps.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m10-l6",
+              "title": "Transfer challenge: Masked presentations and diagnostic gaps",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Masked presentations and diagnostic gaps.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity-book-3",
+      "title": "ADHD experiences and variation",
+      "distinction": "motivation stereotype versus regulation differences",
+      "modules": [
+        {
+          "id": "neurodiversity-module-11",
+          "title": "Task initiation and executive friction",
+          "problem": "Task initiation and executive friction",
+          "lessons": [
+            {
+              "id": "neurodiversity-m11-l1",
+              "title": "Case file: Task initiation and executive friction",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Task initiation and executive friction.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m11-l2",
+              "title": "Trace the mechanisms of Task initiation and executive friction",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Task initiation and executive friction.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m11-l3",
+              "title": "Distinguish Task initiation and executive friction from motivation stereotype versus regulation differences",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Task initiation and executive friction.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m11-l4",
+              "title": "Evidence investigation: Task initiation and executive friction",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Task initiation and executive friction.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m11-l5",
+              "title": "Design a response to Task initiation and executive friction",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Task initiation and executive friction.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m11-l6",
+              "title": "Transfer challenge: Task initiation and executive friction",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Task initiation and executive friction.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-12",
+          "title": "Working memory across contexts",
+          "problem": "Working memory across contexts",
+          "lessons": [
+            {
+              "id": "neurodiversity-m12-l1",
+              "title": "Case file: Working memory across contexts",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Working memory across contexts.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m12-l2",
+              "title": "Trace the mechanisms of Working memory across contexts",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Working memory across contexts.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m12-l3",
+              "title": "Distinguish Working memory across contexts from motivation stereotype versus regulation differences",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Working memory across contexts.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m12-l4",
+              "title": "Evidence investigation: Working memory across contexts",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Working memory across contexts.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m12-l5",
+              "title": "Design a response to Working memory across contexts",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Working memory across contexts.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m12-l6",
+              "title": "Transfer challenge: Working memory across contexts",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Working memory across contexts.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-13",
+          "title": "Time perception and planning",
+          "problem": "Time perception and planning",
+          "lessons": [
+            {
+              "id": "neurodiversity-m13-l1",
+              "title": "Case file: Time perception and planning",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Time perception and planning.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m13-l2",
+              "title": "Trace the mechanisms of Time perception and planning",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Time perception and planning.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m13-l3",
+              "title": "Distinguish Time perception and planning from motivation stereotype versus regulation differences",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Time perception and planning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m13-l4",
+              "title": "Evidence investigation: Time perception and planning",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Time perception and planning.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m13-l5",
+              "title": "Design a response to Time perception and planning",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Time perception and planning.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m13-l6",
+              "title": "Transfer challenge: Time perception and planning",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Time perception and planning.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-14",
+          "title": "Interest-based attention and novelty",
+          "problem": "Interest-based attention and novelty",
+          "lessons": [
+            {
+              "id": "neurodiversity-m14-l1",
+              "title": "Case file: Interest-based attention and novelty",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Interest-based attention and novelty.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m14-l2",
+              "title": "Trace the mechanisms of Interest-based attention and novelty",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Interest-based attention and novelty.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m14-l3",
+              "title": "Distinguish Interest-based attention and novelty from motivation stereotype versus regulation differences",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Interest-based attention and novelty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m14-l4",
+              "title": "Evidence investigation: Interest-based attention and novelty",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Interest-based attention and novelty.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m14-l5",
+              "title": "Design a response to Interest-based attention and novelty",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Interest-based attention and novelty.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m14-l6",
+              "title": "Transfer challenge: Interest-based attention and novelty",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Interest-based attention and novelty.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-15",
+          "title": "Why hyperactivity is not universal",
+          "problem": "Why hyperactivity is not universal",
+          "lessons": [
+            {
+              "id": "neurodiversity-m15-l1",
+              "title": "Case file: Why hyperactivity is not universal",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Why hyperactivity is not universal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m15-l2",
+              "title": "Trace the mechanisms of Why hyperactivity is not universal",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Why hyperactivity is not universal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m15-l3",
+              "title": "Distinguish Why hyperactivity is not universal from motivation stereotype versus regulation differences",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Why hyperactivity is not universal.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m15-l4",
+              "title": "Evidence investigation: Why hyperactivity is not universal",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Why hyperactivity is not universal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m15-l5",
+              "title": "Design a response to Why hyperactivity is not universal",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Why hyperactivity is not universal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m15-l6",
+              "title": "Transfer challenge: Why hyperactivity is not universal",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Why hyperactivity is not universal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity-book-4",
+      "title": "Co-occurrence and diagnostic complexity",
+      "distinction": "overlap versus shared identity",
+      "modules": [
+        {
+          "id": "neurodiversity-module-16",
+          "title": "AuDHD and conflicting needs",
+          "problem": "AuDHD and conflicting needs",
+          "lessons": [
+            {
+              "id": "neurodiversity-m16-l1",
+              "title": "Case file: AuDHD and conflicting needs",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: AuDHD and conflicting needs.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m16-l2",
+              "title": "Trace the mechanisms of AuDHD and conflicting needs",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: AuDHD and conflicting needs.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m16-l3",
+              "title": "Distinguish AuDHD and conflicting needs from overlap versus shared identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: AuDHD and conflicting needs.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m16-l4",
+              "title": "Evidence investigation: AuDHD and conflicting needs",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: AuDHD and conflicting needs.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m16-l5",
+              "title": "Design a response to AuDHD and conflicting needs",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: AuDHD and conflicting needs.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m16-l6",
+              "title": "Transfer challenge: AuDHD and conflicting needs",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: AuDHD and conflicting needs.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-17",
+          "title": "Anxiety mistaken for inattention",
+          "problem": "Anxiety mistaken for inattention",
+          "lessons": [
+            {
+              "id": "neurodiversity-m17-l1",
+              "title": "Case file: Anxiety mistaken for inattention",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Anxiety mistaken for inattention.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m17-l2",
+              "title": "Trace the mechanisms of Anxiety mistaken for inattention",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Anxiety mistaken for inattention.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m17-l3",
+              "title": "Distinguish Anxiety mistaken for inattention from overlap versus shared identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Anxiety mistaken for inattention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m17-l4",
+              "title": "Evidence investigation: Anxiety mistaken for inattention",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Anxiety mistaken for inattention.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m17-l5",
+              "title": "Design a response to Anxiety mistaken for inattention",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Anxiety mistaken for inattention.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m17-l6",
+              "title": "Transfer challenge: Anxiety mistaken for inattention",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Anxiety mistaken for inattention.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-18",
+          "title": "Sleep difficulties and executive function",
+          "problem": "Sleep difficulties and executive function",
+          "lessons": [
+            {
+              "id": "neurodiversity-m18-l1",
+              "title": "Case file: Sleep difficulties and executive function",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Sleep difficulties and executive function.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m18-l2",
+              "title": "Trace the mechanisms of Sleep difficulties and executive function",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Sleep difficulties and executive function.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m18-l3",
+              "title": "Distinguish Sleep difficulties and executive function from overlap versus shared identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Sleep difficulties and executive function.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m18-l4",
+              "title": "Evidence investigation: Sleep difficulties and executive function",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Sleep difficulties and executive function.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m18-l5",
+              "title": "Design a response to Sleep difficulties and executive function",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Sleep difficulties and executive function.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m18-l6",
+              "title": "Transfer challenge: Sleep difficulties and executive function",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Sleep difficulties and executive function.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-19",
+          "title": "Learning difficulties and overlap",
+          "problem": "Learning difficulties and overlap",
+          "lessons": [
+            {
+              "id": "neurodiversity-m19-l1",
+              "title": "Case file: Learning difficulties and overlap",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Learning difficulties and overlap.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m19-l2",
+              "title": "Trace the mechanisms of Learning difficulties and overlap",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Learning difficulties and overlap.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m19-l3",
+              "title": "Distinguish Learning difficulties and overlap from overlap versus shared identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Learning difficulties and overlap.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m19-l4",
+              "title": "Evidence investigation: Learning difficulties and overlap",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Learning difficulties and overlap.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m19-l5",
+              "title": "Design a response to Learning difficulties and overlap",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Learning difficulties and overlap.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m19-l6",
+              "title": "Transfer challenge: Learning difficulties and overlap",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Learning difficulties and overlap.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-20",
+          "title": "When assessment should explore alternatives",
+          "problem": "When assessment should explore alternatives",
+          "lessons": [
+            {
+              "id": "neurodiversity-m20-l1",
+              "title": "Case file: When assessment should explore alternatives",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When assessment should explore alternatives.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m20-l2",
+              "title": "Trace the mechanisms of When assessment should explore alternatives",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When assessment should explore alternatives.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m20-l3",
+              "title": "Distinguish When assessment should explore alternatives from overlap versus shared identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When assessment should explore alternatives.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m20-l4",
+              "title": "Evidence investigation: When assessment should explore alternatives",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When assessment should explore alternatives.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m20-l5",
+              "title": "Design a response to When assessment should explore alternatives",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When assessment should explore alternatives.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m20-l6",
+              "title": "Transfer challenge: When assessment should explore alternatives",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When assessment should explore alternatives.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity-book-5",
+      "title": "Sensory and interoceptive systems",
+      "distinction": "sensory discomfort versus behavioural defiance",
+      "modules": [
+        {
+          "id": "neurodiversity-module-21",
+          "title": "Sound sensitivity in crowded spaces",
+          "problem": "Sound sensitivity in crowded spaces",
+          "lessons": [
+            {
+              "id": "neurodiversity-m21-l1",
+              "title": "Case file: Sound sensitivity in crowded spaces",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Sound sensitivity in crowded spaces.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m21-l2",
+              "title": "Trace the mechanisms of Sound sensitivity in crowded spaces",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Sound sensitivity in crowded spaces.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m21-l3",
+              "title": "Distinguish Sound sensitivity in crowded spaces from sensory discomfort versus behavioural defiance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Sound sensitivity in crowded spaces.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m21-l4",
+              "title": "Evidence investigation: Sound sensitivity in crowded spaces",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Sound sensitivity in crowded spaces.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m21-l5",
+              "title": "Design a response to Sound sensitivity in crowded spaces",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Sound sensitivity in crowded spaces.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m21-l6",
+              "title": "Transfer challenge: Sound sensitivity in crowded spaces",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Sound sensitivity in crowded spaces.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-22",
+          "title": "Sensory seeking and emotional regulation",
+          "problem": "Sensory seeking and emotional regulation",
+          "lessons": [
+            {
+              "id": "neurodiversity-m22-l1",
+              "title": "Case file: Sensory seeking and emotional regulation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Sensory seeking and emotional regulation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m22-l2",
+              "title": "Trace the mechanisms of Sensory seeking and emotional regulation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Sensory seeking and emotional regulation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m22-l3",
+              "title": "Distinguish Sensory seeking and emotional regulation from sensory discomfort versus behavioural defiance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Sensory seeking and emotional regulation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m22-l4",
+              "title": "Evidence investigation: Sensory seeking and emotional regulation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Sensory seeking and emotional regulation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m22-l5",
+              "title": "Design a response to Sensory seeking and emotional regulation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Sensory seeking and emotional regulation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m22-l6",
+              "title": "Transfer challenge: Sensory seeking and emotional regulation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Sensory seeking and emotional regulation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-23",
+          "title": "Clothing, food and texture differences",
+          "problem": "Clothing, food and texture differences",
+          "lessons": [
+            {
+              "id": "neurodiversity-m23-l1",
+              "title": "Case file: Clothing, food and texture differences",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Clothing, food and texture differences.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m23-l2",
+              "title": "Trace the mechanisms of Clothing, food and texture differences",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Clothing, food and texture differences.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m23-l3",
+              "title": "Distinguish Clothing, food and texture differences from sensory discomfort versus behavioural defiance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Clothing, food and texture differences.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m23-l4",
+              "title": "Evidence investigation: Clothing, food and texture differences",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Clothing, food and texture differences.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m23-l5",
+              "title": "Design a response to Clothing, food and texture differences",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Clothing, food and texture differences.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m23-l6",
+              "title": "Transfer challenge: Clothing, food and texture differences",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Clothing, food and texture differences.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-24",
+          "title": "Interoceptive uncertainty and body signals",
+          "problem": "Interoceptive uncertainty and body signals",
+          "lessons": [
+            {
+              "id": "neurodiversity-m24-l1",
+              "title": "Case file: Interoceptive uncertainty and body signals",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Interoceptive uncertainty and body signals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m24-l2",
+              "title": "Trace the mechanisms of Interoceptive uncertainty and body signals",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Interoceptive uncertainty and body signals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m24-l3",
+              "title": "Distinguish Interoceptive uncertainty and body signals from sensory discomfort versus behavioural defiance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Interoceptive uncertainty and body signals.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m24-l4",
+              "title": "Evidence investigation: Interoceptive uncertainty and body signals",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Interoceptive uncertainty and body signals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m24-l5",
+              "title": "Design a response to Interoceptive uncertainty and body signals",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Interoceptive uncertainty and body signals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m24-l6",
+              "title": "Transfer challenge: Interoceptive uncertainty and body signals",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Interoceptive uncertainty and body signals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-25",
+          "title": "Building individual sensory accommodations",
+          "problem": "Building individual sensory accommodations",
+          "lessons": [
+            {
+              "id": "neurodiversity-m25-l1",
+              "title": "Case file: Building individual sensory accommodations",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Building individual sensory accommodations.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m25-l2",
+              "title": "Trace the mechanisms of Building individual sensory accommodations",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Building individual sensory accommodations.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m25-l3",
+              "title": "Distinguish Building individual sensory accommodations from sensory discomfort versus behavioural defiance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Building individual sensory accommodations.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m25-l4",
+              "title": "Evidence investigation: Building individual sensory accommodations",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Building individual sensory accommodations.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m25-l5",
+              "title": "Design a response to Building individual sensory accommodations",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Building individual sensory accommodations.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m25-l6",
+              "title": "Transfer challenge: Building individual sensory accommodations",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Building individual sensory accommodations.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity-book-6",
+      "title": "Social experience and masking",
+      "distinction": "social difference versus social deficit",
+      "modules": [
+        {
+          "id": "neurodiversity-module-26",
+          "title": "Camouflaging for social safety",
+          "problem": "Camouflaging for social safety",
+          "lessons": [
+            {
+              "id": "neurodiversity-m26-l1",
+              "title": "Case file: Camouflaging for social safety",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Camouflaging for social safety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m26-l2",
+              "title": "Trace the mechanisms of Camouflaging for social safety",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Camouflaging for social safety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m26-l3",
+              "title": "Distinguish Camouflaging for social safety from social difference versus social deficit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Camouflaging for social safety.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m26-l4",
+              "title": "Evidence investigation: Camouflaging for social safety",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Camouflaging for social safety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m26-l5",
+              "title": "Design a response to Camouflaging for social safety",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Camouflaging for social safety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m26-l6",
+              "title": "Transfer challenge: Camouflaging for social safety",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Camouflaging for social safety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-27",
+          "title": "Double empathy and reciprocal misunderstanding",
+          "problem": "Double empathy and reciprocal misunderstanding",
+          "lessons": [
+            {
+              "id": "neurodiversity-m27-l1",
+              "title": "Case file: Double empathy and reciprocal misunderstanding",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Double empathy and reciprocal misunderstanding.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m27-l2",
+              "title": "Trace the mechanisms of Double empathy and reciprocal misunderstanding",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Double empathy and reciprocal misunderstanding.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m27-l3",
+              "title": "Distinguish Double empathy and reciprocal misunderstanding from social difference versus social deficit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Double empathy and reciprocal misunderstanding.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m27-l4",
+              "title": "Evidence investigation: Double empathy and reciprocal misunderstanding",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Double empathy and reciprocal misunderstanding.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m27-l5",
+              "title": "Design a response to Double empathy and reciprocal misunderstanding",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Double empathy and reciprocal misunderstanding.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m27-l6",
+              "title": "Transfer challenge: Double empathy and reciprocal misunderstanding",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Double empathy and reciprocal misunderstanding.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-28",
+          "title": "Friendship patterns across neurotypes",
+          "problem": "Friendship patterns across neurotypes",
+          "lessons": [
+            {
+              "id": "neurodiversity-m28-l1",
+              "title": "Case file: Friendship patterns across neurotypes",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Friendship patterns across neurotypes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m28-l2",
+              "title": "Trace the mechanisms of Friendship patterns across neurotypes",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Friendship patterns across neurotypes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m28-l3",
+              "title": "Distinguish Friendship patterns across neurotypes from social difference versus social deficit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Friendship patterns across neurotypes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m28-l4",
+              "title": "Evidence investigation: Friendship patterns across neurotypes",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Friendship patterns across neurotypes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m28-l5",
+              "title": "Design a response to Friendship patterns across neurotypes",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Friendship patterns across neurotypes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m28-l6",
+              "title": "Transfer challenge: Friendship patterns across neurotypes",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Friendship patterns across neurotypes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-29",
+          "title": "Burnout after sustained masking",
+          "problem": "Burnout after sustained masking",
+          "lessons": [
+            {
+              "id": "neurodiversity-m29-l1",
+              "title": "Case file: Burnout after sustained masking",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Burnout after sustained masking.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m29-l2",
+              "title": "Trace the mechanisms of Burnout after sustained masking",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Burnout after sustained masking.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m29-l3",
+              "title": "Distinguish Burnout after sustained masking from social difference versus social deficit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Burnout after sustained masking.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m29-l4",
+              "title": "Evidence investigation: Burnout after sustained masking",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Burnout after sustained masking.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m29-l5",
+              "title": "Design a response to Burnout after sustained masking",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Burnout after sustained masking.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m29-l6",
+              "title": "Transfer challenge: Burnout after sustained masking",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Burnout after sustained masking.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-30",
+          "title": "Consent and autonomy in support",
+          "problem": "Consent and autonomy in support",
+          "lessons": [
+            {
+              "id": "neurodiversity-m30-l1",
+              "title": "Case file: Consent and autonomy in support",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Consent and autonomy in support.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m30-l2",
+              "title": "Trace the mechanisms of Consent and autonomy in support",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Consent and autonomy in support.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m30-l3",
+              "title": "Distinguish Consent and autonomy in support from social difference versus social deficit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Consent and autonomy in support.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m30-l4",
+              "title": "Evidence investigation: Consent and autonomy in support",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Consent and autonomy in support.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m30-l5",
+              "title": "Design a response to Consent and autonomy in support",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Consent and autonomy in support.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m30-l6",
+              "title": "Transfer challenge: Consent and autonomy in support",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Consent and autonomy in support.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity-book-7",
+      "title": "Learning, work and practical accessibility",
+      "distinction": "skill deficit versus inaccessible design",
+      "modules": [
+        {
+          "id": "neurodiversity-module-31",
+          "title": "Ambiguous instructions and overload",
+          "problem": "Ambiguous instructions and overload",
+          "lessons": [
+            {
+              "id": "neurodiversity-m31-l1",
+              "title": "Case file: Ambiguous instructions and overload",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Ambiguous instructions and overload.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m31-l2",
+              "title": "Trace the mechanisms of Ambiguous instructions and overload",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Ambiguous instructions and overload.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m31-l3",
+              "title": "Distinguish Ambiguous instructions and overload from skill deficit versus inaccessible design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Ambiguous instructions and overload.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m31-l4",
+              "title": "Evidence investigation: Ambiguous instructions and overload",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Ambiguous instructions and overload.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m31-l5",
+              "title": "Design a response to Ambiguous instructions and overload",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Ambiguous instructions and overload.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m31-l6",
+              "title": "Transfer challenge: Ambiguous instructions and overload",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Ambiguous instructions and overload.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-32",
+          "title": "Transitions and task switching",
+          "problem": "Transitions and task switching",
+          "lessons": [
+            {
+              "id": "neurodiversity-m32-l1",
+              "title": "Case file: Transitions and task switching",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Transitions and task switching.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m32-l2",
+              "title": "Trace the mechanisms of Transitions and task switching",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Transitions and task switching.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m32-l3",
+              "title": "Distinguish Transitions and task switching from skill deficit versus inaccessible design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Transitions and task switching.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m32-l4",
+              "title": "Evidence investigation: Transitions and task switching",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Transitions and task switching.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m32-l5",
+              "title": "Design a response to Transitions and task switching",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Transitions and task switching.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m32-l6",
+              "title": "Transfer challenge: Transitions and task switching",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Transitions and task switching.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-33",
+          "title": "Flexible communication at work",
+          "problem": "Flexible communication at work",
+          "lessons": [
+            {
+              "id": "neurodiversity-m33-l1",
+              "title": "Case file: Flexible communication at work",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Flexible communication at work.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m33-l2",
+              "title": "Trace the mechanisms of Flexible communication at work",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Flexible communication at work.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m33-l3",
+              "title": "Distinguish Flexible communication at work from skill deficit versus inaccessible design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Flexible communication at work.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m33-l4",
+              "title": "Evidence investigation: Flexible communication at work",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Flexible communication at work.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m33-l5",
+              "title": "Design a response to Flexible communication at work",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Flexible communication at work.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m33-l6",
+              "title": "Transfer challenge: Flexible communication at work",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Flexible communication at work.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-34",
+          "title": "Assessment environments that exclude",
+          "problem": "Assessment environments that exclude",
+          "lessons": [
+            {
+              "id": "neurodiversity-m34-l1",
+              "title": "Case file: Assessment environments that exclude",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Assessment environments that exclude.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m34-l2",
+              "title": "Trace the mechanisms of Assessment environments that exclude",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Assessment environments that exclude.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m34-l3",
+              "title": "Distinguish Assessment environments that exclude from skill deficit versus inaccessible design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Assessment environments that exclude.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m34-l4",
+              "title": "Evidence investigation: Assessment environments that exclude",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Assessment environments that exclude.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m34-l5",
+              "title": "Design a response to Assessment environments that exclude",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Assessment environments that exclude.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m34-l6",
+              "title": "Transfer challenge: Assessment environments that exclude",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Assessment environments that exclude.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-35",
+          "title": "Accommodations as barriers removed",
+          "problem": "Accommodations as barriers removed",
+          "lessons": [
+            {
+              "id": "neurodiversity-m35-l1",
+              "title": "Case file: Accommodations as barriers removed",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Accommodations as barriers removed.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m35-l2",
+              "title": "Trace the mechanisms of Accommodations as barriers removed",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Accommodations as barriers removed.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m35-l3",
+              "title": "Distinguish Accommodations as barriers removed from skill deficit versus inaccessible design",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Accommodations as barriers removed.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m35-l4",
+              "title": "Evidence investigation: Accommodations as barriers removed",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Accommodations as barriers removed.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m35-l5",
+              "title": "Design a response to Accommodations as barriers removed",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Accommodations as barriers removed.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m35-l6",
+              "title": "Transfer challenge: Accommodations as barriers removed",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Accommodations as barriers removed.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity-book-8",
+      "title": "Identity and mental health",
+      "distinction": "pride versus pressure to be exceptional",
+      "modules": [
+        {
+          "id": "neurodiversity-module-36",
+          "title": "Late discovery and reinterpretation of life",
+          "problem": "Late discovery and reinterpretation of life",
+          "lessons": [
+            {
+              "id": "neurodiversity-m36-l1",
+              "title": "Case file: Late discovery and reinterpretation of life",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Late discovery and reinterpretation of life.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m36-l2",
+              "title": "Trace the mechanisms of Late discovery and reinterpretation of life",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Late discovery and reinterpretation of life.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m36-l3",
+              "title": "Distinguish Late discovery and reinterpretation of life from pride versus pressure to be exceptional",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Late discovery and reinterpretation of life.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m36-l4",
+              "title": "Evidence investigation: Late discovery and reinterpretation of life",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Late discovery and reinterpretation of life.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m36-l5",
+              "title": "Design a response to Late discovery and reinterpretation of life",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Late discovery and reinterpretation of life.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m36-l6",
+              "title": "Transfer challenge: Late discovery and reinterpretation of life",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Late discovery and reinterpretation of life.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-37",
+          "title": "Internalised ableism and shame",
+          "problem": "Internalised ableism and shame",
+          "lessons": [
+            {
+              "id": "neurodiversity-m37-l1",
+              "title": "Case file: Internalised ableism and shame",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Internalised ableism and shame.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m37-l2",
+              "title": "Trace the mechanisms of Internalised ableism and shame",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Internalised ableism and shame.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m37-l3",
+              "title": "Distinguish Internalised ableism and shame from pride versus pressure to be exceptional",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Internalised ableism and shame.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m37-l4",
+              "title": "Evidence investigation: Internalised ableism and shame",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Internalised ableism and shame.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m37-l5",
+              "title": "Design a response to Internalised ableism and shame",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Internalised ableism and shame.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m37-l6",
+              "title": "Transfer challenge: Internalised ableism and shame",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Internalised ableism and shame.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-38",
+          "title": "Rejection sensitivity in context",
+          "problem": "Rejection sensitivity in context",
+          "lessons": [
+            {
+              "id": "neurodiversity-m38-l1",
+              "title": "Case file: Rejection sensitivity in context",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Rejection sensitivity in context.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m38-l2",
+              "title": "Trace the mechanisms of Rejection sensitivity in context",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Rejection sensitivity in context.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m38-l3",
+              "title": "Distinguish Rejection sensitivity in context from pride versus pressure to be exceptional",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Rejection sensitivity in context.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m38-l4",
+              "title": "Evidence investigation: Rejection sensitivity in context",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Rejection sensitivity in context.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m38-l5",
+              "title": "Design a response to Rejection sensitivity in context",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Rejection sensitivity in context.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m38-l6",
+              "title": "Transfer challenge: Rejection sensitivity in context",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Rejection sensitivity in context.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-39",
+          "title": "Autistic burnout and differential explanations",
+          "problem": "Autistic burnout and differential explanations",
+          "lessons": [
+            {
+              "id": "neurodiversity-m39-l1",
+              "title": "Case file: Autistic burnout and differential explanations",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Autistic burnout and differential explanations.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m39-l2",
+              "title": "Trace the mechanisms of Autistic burnout and differential explanations",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Autistic burnout and differential explanations.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m39-l3",
+              "title": "Distinguish Autistic burnout and differential explanations from pride versus pressure to be exceptional",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Autistic burnout and differential explanations.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m39-l4",
+              "title": "Evidence investigation: Autistic burnout and differential explanations",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Autistic burnout and differential explanations.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m39-l5",
+              "title": "Design a response to Autistic burnout and differential explanations",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Autistic burnout and differential explanations.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m39-l6",
+              "title": "Transfer challenge: Autistic burnout and differential explanations",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Autistic burnout and differential explanations.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-40",
+          "title": "Support without demanding normality",
+          "problem": "Support without demanding normality",
+          "lessons": [
+            {
+              "id": "neurodiversity-m40-l1",
+              "title": "Case file: Support without demanding normality",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Support without demanding normality.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m40-l2",
+              "title": "Trace the mechanisms of Support without demanding normality",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Support without demanding normality.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m40-l3",
+              "title": "Distinguish Support without demanding normality from pride versus pressure to be exceptional",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Support without demanding normality.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m40-l4",
+              "title": "Evidence investigation: Support without demanding normality",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Support without demanding normality.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m40-l5",
+              "title": "Design a response to Support without demanding normality",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Support without demanding normality.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m40-l6",
+              "title": "Transfer challenge: Support without demanding normality",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Support without demanding normality.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity-book-9",
+      "title": "Institutions and inequality",
+      "distinction": "individual impairment versus social barriers",
+      "modules": [
+        {
+          "id": "neurodiversity-module-41",
+          "title": "Gender and racial disparities in assessment",
+          "problem": "Gender and racial disparities in assessment",
+          "lessons": [
+            {
+              "id": "neurodiversity-m41-l1",
+              "title": "Case file: Gender and racial disparities in assessment",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Gender and racial disparities in assessment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m41-l2",
+              "title": "Trace the mechanisms of Gender and racial disparities in assessment",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Gender and racial disparities in assessment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m41-l3",
+              "title": "Distinguish Gender and racial disparities in assessment from individual impairment versus social barriers",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Gender and racial disparities in assessment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m41-l4",
+              "title": "Evidence investigation: Gender and racial disparities in assessment",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Gender and racial disparities in assessment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m41-l5",
+              "title": "Design a response to Gender and racial disparities in assessment",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Gender and racial disparities in assessment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m41-l6",
+              "title": "Transfer challenge: Gender and racial disparities in assessment",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Gender and racial disparities in assessment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-42",
+          "title": "Education discipline and misinterpretation",
+          "problem": "Education discipline and misinterpretation",
+          "lessons": [
+            {
+              "id": "neurodiversity-m42-l1",
+              "title": "Case file: Education discipline and misinterpretation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Education discipline and misinterpretation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m42-l2",
+              "title": "Trace the mechanisms of Education discipline and misinterpretation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Education discipline and misinterpretation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m42-l3",
+              "title": "Distinguish Education discipline and misinterpretation from individual impairment versus social barriers",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Education discipline and misinterpretation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m42-l4",
+              "title": "Evidence investigation: Education discipline and misinterpretation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Education discipline and misinterpretation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m42-l5",
+              "title": "Design a response to Education discipline and misinterpretation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Education discipline and misinterpretation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m42-l6",
+              "title": "Transfer challenge: Education discipline and misinterpretation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Education discipline and misinterpretation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-43",
+          "title": "Healthcare accessibility",
+          "problem": "Healthcare accessibility",
+          "lessons": [
+            {
+              "id": "neurodiversity-m43-l1",
+              "title": "Case file: Healthcare accessibility",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Healthcare accessibility.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m43-l2",
+              "title": "Trace the mechanisms of Healthcare accessibility",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Healthcare accessibility.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m43-l3",
+              "title": "Distinguish Healthcare accessibility from individual impairment versus social barriers",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Healthcare accessibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m43-l4",
+              "title": "Evidence investigation: Healthcare accessibility",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Healthcare accessibility.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m43-l5",
+              "title": "Design a response to Healthcare accessibility",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Healthcare accessibility.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m43-l6",
+              "title": "Transfer challenge: Healthcare accessibility",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Healthcare accessibility.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-44",
+          "title": "Employment discrimination and disclosure",
+          "problem": "Employment discrimination and disclosure",
+          "lessons": [
+            {
+              "id": "neurodiversity-m44-l1",
+              "title": "Case file: Employment discrimination and disclosure",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Employment discrimination and disclosure.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m44-l2",
+              "title": "Trace the mechanisms of Employment discrimination and disclosure",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Employment discrimination and disclosure.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m44-l3",
+              "title": "Distinguish Employment discrimination and disclosure from individual impairment versus social barriers",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Employment discrimination and disclosure.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m44-l4",
+              "title": "Evidence investigation: Employment discrimination and disclosure",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Employment discrimination and disclosure.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m44-l5",
+              "title": "Design a response to Employment discrimination and disclosure",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Employment discrimination and disclosure.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m44-l6",
+              "title": "Transfer challenge: Employment discrimination and disclosure",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Employment discrimination and disclosure.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-45",
+          "title": "Who controls definitions of normal",
+          "problem": "Who controls definitions of normal",
+          "lessons": [
+            {
+              "id": "neurodiversity-m45-l1",
+              "title": "Case file: Who controls definitions of normal",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Who controls definitions of normal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m45-l2",
+              "title": "Trace the mechanisms of Who controls definitions of normal",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Who controls definitions of normal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m45-l3",
+              "title": "Distinguish Who controls definitions of normal from individual impairment versus social barriers",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Who controls definitions of normal.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m45-l4",
+              "title": "Evidence investigation: Who controls definitions of normal",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Who controls definitions of normal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m45-l5",
+              "title": "Design a response to Who controls definitions of normal",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Who controls definitions of normal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m45-l6",
+              "title": "Transfer challenge: Who controls definitions of normal",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Who controls definitions of normal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neurodiversity-book-10",
+      "title": "Advanced formulation and support",
+      "distinction": "one-size-fits-all advice versus individual fit",
+      "modules": [
+        {
+          "id": "neurodiversity-module-46",
+          "title": "Assessing function before recommending tools",
+          "problem": "Assessing function before recommending tools",
+          "lessons": [
+            {
+              "id": "neurodiversity-m46-l1",
+              "title": "Case file: Assessing function before recommending tools",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Assessing function before recommending tools.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m46-l2",
+              "title": "Trace the mechanisms of Assessing function before recommending tools",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Assessing function before recommending tools.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m46-l3",
+              "title": "Distinguish Assessing function before recommending tools from one-size-fits-all advice versus individual fit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Assessing function before recommending tools.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m46-l4",
+              "title": "Evidence investigation: Assessing function before recommending tools",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Assessing function before recommending tools.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m46-l5",
+              "title": "Design a response to Assessing function before recommending tools",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Assessing function before recommending tools.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m46-l6",
+              "title": "Transfer challenge: Assessing function before recommending tools",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Assessing function before recommending tools.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-47",
+          "title": "Sensory needs that conflict with schedules",
+          "problem": "Sensory needs that conflict with schedules",
+          "lessons": [
+            {
+              "id": "neurodiversity-m47-l1",
+              "title": "Case file: Sensory needs that conflict with schedules",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Sensory needs that conflict with schedules.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m47-l2",
+              "title": "Trace the mechanisms of Sensory needs that conflict with schedules",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Sensory needs that conflict with schedules.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m47-l3",
+              "title": "Distinguish Sensory needs that conflict with schedules from one-size-fits-all advice versus individual fit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Sensory needs that conflict with schedules.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m47-l4",
+              "title": "Evidence investigation: Sensory needs that conflict with schedules",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Sensory needs that conflict with schedules.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m47-l5",
+              "title": "Design a response to Sensory needs that conflict with schedules",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Sensory needs that conflict with schedules.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m47-l6",
+              "title": "Transfer challenge: Sensory needs that conflict with schedules",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Sensory needs that conflict with schedules.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-48",
+          "title": "Combining supports for overlapping needs",
+          "problem": "Combining supports for overlapping needs",
+          "lessons": [
+            {
+              "id": "neurodiversity-m48-l1",
+              "title": "Case file: Combining supports for overlapping needs",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Combining supports for overlapping needs.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m48-l2",
+              "title": "Trace the mechanisms of Combining supports for overlapping needs",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Combining supports for overlapping needs.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m48-l3",
+              "title": "Distinguish Combining supports for overlapping needs from one-size-fits-all advice versus individual fit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Combining supports for overlapping needs.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m48-l4",
+              "title": "Evidence investigation: Combining supports for overlapping needs",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Combining supports for overlapping needs.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m48-l5",
+              "title": "Design a response to Combining supports for overlapping needs",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Combining supports for overlapping needs.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m48-l6",
+              "title": "Transfer challenge: Combining supports for overlapping needs",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Combining supports for overlapping needs.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-49",
+          "title": "Neuro-affirming evidence without romanticisation",
+          "problem": "Neuro-affirming evidence without romanticisation",
+          "lessons": [
+            {
+              "id": "neurodiversity-m49-l1",
+              "title": "Case file: Neuro-affirming evidence without romanticisation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Neuro-affirming evidence without romanticisation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m49-l2",
+              "title": "Trace the mechanisms of Neuro-affirming evidence without romanticisation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Neuro-affirming evidence without romanticisation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m49-l3",
+              "title": "Distinguish Neuro-affirming evidence without romanticisation from one-size-fits-all advice versus individual fit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Neuro-affirming evidence without romanticisation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m49-l4",
+              "title": "Evidence investigation: Neuro-affirming evidence without romanticisation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Neuro-affirming evidence without romanticisation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m49-l5",
+              "title": "Design a response to Neuro-affirming evidence without romanticisation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Neuro-affirming evidence without romanticisation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m49-l6",
+              "title": "Transfer challenge: Neuro-affirming evidence without romanticisation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Neuro-affirming evidence without romanticisation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "neurodiversity-module-50",
+          "title": "Integrated mission: redesign the environment",
+          "problem": "Integrated mission: redesign the environment",
+          "lessons": [
+            {
+              "id": "neurodiversity-m50-l1",
+              "title": "Case file: Integrated mission: redesign the environment",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Integrated mission: redesign the environment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m50-l2",
+              "title": "Trace the mechanisms of Integrated mission: redesign the environment",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Integrated mission: redesign the environment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m50-l3",
+              "title": "Distinguish Integrated mission: redesign the environment from one-size-fits-all advice versus individual fit",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Integrated mission: redesign the environment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m50-l4",
+              "title": "Evidence investigation: Integrated mission: redesign the environment",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Integrated mission: redesign the environment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m50-l5",
+              "title": "Design a response to Integrated mission: redesign the environment",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Integrated mission: redesign the environment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "neurodiversity-m50-l6",
+              "title": "Transfer challenge: Integrated mission: redesign the environment",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Integrated mission: redesign the environment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

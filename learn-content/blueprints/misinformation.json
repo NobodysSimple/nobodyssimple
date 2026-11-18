@@ -1,0 +1,2828 @@
+{
+  "courseId": "misinformation",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Curriculum map only; all lesson content and interactive nodes must be authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "misinformation-book-1",
+      "title": "Why convincing claims work",
+      "distinction": "plausibility versus evidence",
+      "modules": [
+        {
+          "id": "misinformation-module-01",
+          "title": "Familiarity mistaken for truth",
+          "problem": "Familiarity mistaken for truth",
+          "lessons": [
+            {
+              "id": "misinformation-m1-l1",
+              "title": "Case file: Familiarity mistaken for truth",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Familiarity mistaken for truth.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m1-l2",
+              "title": "Trace the mechanisms of Familiarity mistaken for truth",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Familiarity mistaken for truth.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m1-l3",
+              "title": "Distinguish Familiarity mistaken for truth from plausibility versus evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Familiarity mistaken for truth.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m1-l4",
+              "title": "Evidence investigation: Familiarity mistaken for truth",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Familiarity mistaken for truth.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m1-l5",
+              "title": "Design a response to Familiarity mistaken for truth",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Familiarity mistaken for truth.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m1-l6",
+              "title": "Transfer challenge: Familiarity mistaken for truth",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Familiarity mistaken for truth.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-02",
+          "title": "Emotional stories outranking statistics",
+          "problem": "Emotional stories outranking statistics",
+          "lessons": [
+            {
+              "id": "misinformation-m2-l1",
+              "title": "Case file: Emotional stories outranking statistics",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Emotional stories outranking statistics.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m2-l2",
+              "title": "Trace the mechanisms of Emotional stories outranking statistics",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Emotional stories outranking statistics.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m2-l3",
+              "title": "Distinguish Emotional stories outranking statistics from plausibility versus evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Emotional stories outranking statistics.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m2-l4",
+              "title": "Evidence investigation: Emotional stories outranking statistics",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Emotional stories outranking statistics.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m2-l5",
+              "title": "Design a response to Emotional stories outranking statistics",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Emotional stories outranking statistics.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m2-l6",
+              "title": "Transfer challenge: Emotional stories outranking statistics",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Emotional stories outranking statistics.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-03",
+          "title": "Confidence as a credibility cue",
+          "problem": "Confidence as a credibility cue",
+          "lessons": [
+            {
+              "id": "misinformation-m3-l1",
+              "title": "Case file: Confidence as a credibility cue",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Confidence as a credibility cue.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m3-l2",
+              "title": "Trace the mechanisms of Confidence as a credibility cue",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Confidence as a credibility cue.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m3-l3",
+              "title": "Distinguish Confidence as a credibility cue from plausibility versus evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Confidence as a credibility cue.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m3-l4",
+              "title": "Evidence investigation: Confidence as a credibility cue",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Confidence as a credibility cue.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m3-l5",
+              "title": "Design a response to Confidence as a credibility cue",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Confidence as a credibility cue.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m3-l6",
+              "title": "Transfer challenge: Confidence as a credibility cue",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Confidence as a credibility cue.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-04",
+          "title": "Anecdote versus population evidence",
+          "problem": "Anecdote versus population evidence",
+          "lessons": [
+            {
+              "id": "misinformation-m4-l1",
+              "title": "Case file: Anecdote versus population evidence",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Anecdote versus population evidence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m4-l2",
+              "title": "Trace the mechanisms of Anecdote versus population evidence",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Anecdote versus population evidence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m4-l3",
+              "title": "Distinguish Anecdote versus population evidence from plausibility versus evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Anecdote versus population evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m4-l4",
+              "title": "Evidence investigation: Anecdote versus population evidence",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Anecdote versus population evidence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m4-l5",
+              "title": "Design a response to Anecdote versus population evidence",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Anecdote versus population evidence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m4-l6",
+              "title": "Transfer challenge: Anecdote versus population evidence",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Anecdote versus population evidence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-05",
+          "title": "The appeal of simple explanations",
+          "problem": "The appeal of simple explanations",
+          "lessons": [
+            {
+              "id": "misinformation-m5-l1",
+              "title": "Case file: The appeal of simple explanations",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: The appeal of simple explanations.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m5-l2",
+              "title": "Trace the mechanisms of The appeal of simple explanations",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: The appeal of simple explanations.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m5-l3",
+              "title": "Distinguish The appeal of simple explanations from plausibility versus evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: The appeal of simple explanations.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m5-l4",
+              "title": "Evidence investigation: The appeal of simple explanations",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: The appeal of simple explanations.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m5-l5",
+              "title": "Design a response to The appeal of simple explanations",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: The appeal of simple explanations.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m5-l6",
+              "title": "Transfer challenge: The appeal of simple explanations",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: The appeal of simple explanations.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misinformation-book-2",
+      "title": "Source and evidence literacy",
+      "distinction": "authority cue versus expertise",
+      "modules": [
+        {
+          "id": "misinformation-module-06",
+          "title": "Original study versus commentary",
+          "problem": "Original study versus commentary",
+          "lessons": [
+            {
+              "id": "misinformation-m6-l1",
+              "title": "Case file: Original study versus commentary",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Original study versus commentary.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m6-l2",
+              "title": "Trace the mechanisms of Original study versus commentary",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Original study versus commentary.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m6-l3",
+              "title": "Distinguish Original study versus commentary from authority cue versus expertise",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Original study versus commentary.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m6-l4",
+              "title": "Evidence investigation: Original study versus commentary",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Original study versus commentary.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m6-l5",
+              "title": "Design a response to Original study versus commentary",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Original study versus commentary.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m6-l6",
+              "title": "Transfer challenge: Original study versus commentary",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Original study versus commentary.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-07",
+          "title": "What a citation actually supports",
+          "problem": "What a citation actually supports",
+          "lessons": [
+            {
+              "id": "misinformation-m7-l1",
+              "title": "Case file: What a citation actually supports",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: What a citation actually supports.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m7-l2",
+              "title": "Trace the mechanisms of What a citation actually supports",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: What a citation actually supports.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m7-l3",
+              "title": "Distinguish What a citation actually supports from authority cue versus expertise",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: What a citation actually supports.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m7-l4",
+              "title": "Evidence investigation: What a citation actually supports",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: What a citation actually supports.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m7-l5",
+              "title": "Design a response to What a citation actually supports",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: What a citation actually supports.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m7-l6",
+              "title": "Transfer challenge: What a citation actually supports",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: What a citation actually supports.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-08",
+          "title": "Conflicts of interest and incentives",
+          "problem": "Conflicts of interest and incentives",
+          "lessons": [
+            {
+              "id": "misinformation-m8-l1",
+              "title": "Case file: Conflicts of interest and incentives",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Conflicts of interest and incentives.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m8-l2",
+              "title": "Trace the mechanisms of Conflicts of interest and incentives",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Conflicts of interest and incentives.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m8-l3",
+              "title": "Distinguish Conflicts of interest and incentives from authority cue versus expertise",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Conflicts of interest and incentives.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m8-l4",
+              "title": "Evidence investigation: Conflicts of interest and incentives",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Conflicts of interest and incentives.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m8-l5",
+              "title": "Design a response to Conflicts of interest and incentives",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Conflicts of interest and incentives.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m8-l6",
+              "title": "Transfer challenge: Conflicts of interest and incentives",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Conflicts of interest and incentives.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-09",
+          "title": "Expert disagreement versus fringe claims",
+          "problem": "Expert disagreement versus fringe claims",
+          "lessons": [
+            {
+              "id": "misinformation-m9-l1",
+              "title": "Case file: Expert disagreement versus fringe claims",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Expert disagreement versus fringe claims.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m9-l2",
+              "title": "Trace the mechanisms of Expert disagreement versus fringe claims",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Expert disagreement versus fringe claims.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m9-l3",
+              "title": "Distinguish Expert disagreement versus fringe claims from authority cue versus expertise",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Expert disagreement versus fringe claims.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m9-l4",
+              "title": "Evidence investigation: Expert disagreement versus fringe claims",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Expert disagreement versus fringe claims.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m9-l5",
+              "title": "Design a response to Expert disagreement versus fringe claims",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Expert disagreement versus fringe claims.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m9-l6",
+              "title": "Transfer challenge: Expert disagreement versus fringe claims",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Expert disagreement versus fringe claims.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-10",
+          "title": "When a reliable source can be wrong",
+          "problem": "When a reliable source can be wrong",
+          "lessons": [
+            {
+              "id": "misinformation-m10-l1",
+              "title": "Case file: When a reliable source can be wrong",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When a reliable source can be wrong.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m10-l2",
+              "title": "Trace the mechanisms of When a reliable source can be wrong",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When a reliable source can be wrong.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m10-l3",
+              "title": "Distinguish When a reliable source can be wrong from authority cue versus expertise",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When a reliable source can be wrong.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m10-l4",
+              "title": "Evidence investigation: When a reliable source can be wrong",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When a reliable source can be wrong.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m10-l5",
+              "title": "Design a response to When a reliable source can be wrong",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When a reliable source can be wrong.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m10-l6",
+              "title": "Transfer challenge: When a reliable source can be wrong",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When a reliable source can be wrong.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misinformation-book-3",
+      "title": "Reasoning and cognitive bias",
+      "distinction": "hypothesis versus conclusion",
+      "modules": [
+        {
+          "id": "misinformation-module-11",
+          "title": "Confirmation bias in everyday search",
+          "problem": "Confirmation bias in everyday search",
+          "lessons": [
+            {
+              "id": "misinformation-m11-l1",
+              "title": "Case file: Confirmation bias in everyday search",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Confirmation bias in everyday search.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m11-l2",
+              "title": "Trace the mechanisms of Confirmation bias in everyday search",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Confirmation bias in everyday search.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m11-l3",
+              "title": "Distinguish Confirmation bias in everyday search from hypothesis versus conclusion",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Confirmation bias in everyday search.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m11-l4",
+              "title": "Evidence investigation: Confirmation bias in everyday search",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Confirmation bias in everyday search.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m11-l5",
+              "title": "Design a response to Confirmation bias in everyday search",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Confirmation bias in everyday search.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m11-l6",
+              "title": "Transfer challenge: Confirmation bias in everyday search",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Confirmation bias in everyday search.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-12",
+          "title": "Motivated reasoning after identity threat",
+          "problem": "Motivated reasoning after identity threat",
+          "lessons": [
+            {
+              "id": "misinformation-m12-l1",
+              "title": "Case file: Motivated reasoning after identity threat",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Motivated reasoning after identity threat.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m12-l2",
+              "title": "Trace the mechanisms of Motivated reasoning after identity threat",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Motivated reasoning after identity threat.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m12-l3",
+              "title": "Distinguish Motivated reasoning after identity threat from hypothesis versus conclusion",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Motivated reasoning after identity threat.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m12-l4",
+              "title": "Evidence investigation: Motivated reasoning after identity threat",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Motivated reasoning after identity threat.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m12-l5",
+              "title": "Design a response to Motivated reasoning after identity threat",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Motivated reasoning after identity threat.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m12-l6",
+              "title": "Transfer challenge: Motivated reasoning after identity threat",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Motivated reasoning after identity threat.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-13",
+          "title": "Base-rate neglect and vivid examples",
+          "problem": "Base-rate neglect and vivid examples",
+          "lessons": [
+            {
+              "id": "misinformation-m13-l1",
+              "title": "Case file: Base-rate neglect and vivid examples",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Base-rate neglect and vivid examples.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m13-l2",
+              "title": "Trace the mechanisms of Base-rate neglect and vivid examples",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Base-rate neglect and vivid examples.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m13-l3",
+              "title": "Distinguish Base-rate neglect and vivid examples from hypothesis versus conclusion",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Base-rate neglect and vivid examples.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m13-l4",
+              "title": "Evidence investigation: Base-rate neglect and vivid examples",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Base-rate neglect and vivid examples.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m13-l5",
+              "title": "Design a response to Base-rate neglect and vivid examples",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Base-rate neglect and vivid examples.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m13-l6",
+              "title": "Transfer challenge: Base-rate neglect and vivid examples",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Base-rate neglect and vivid examples.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-14",
+          "title": "Cherry-picking and selection effects",
+          "problem": "Cherry-picking and selection effects",
+          "lessons": [
+            {
+              "id": "misinformation-m14-l1",
+              "title": "Case file: Cherry-picking and selection effects",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Cherry-picking and selection effects.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m14-l2",
+              "title": "Trace the mechanisms of Cherry-picking and selection effects",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Cherry-picking and selection effects.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m14-l3",
+              "title": "Distinguish Cherry-picking and selection effects from hypothesis versus conclusion",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Cherry-picking and selection effects.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m14-l4",
+              "title": "Evidence investigation: Cherry-picking and selection effects",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Cherry-picking and selection effects.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m14-l5",
+              "title": "Design a response to Cherry-picking and selection effects",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Cherry-picking and selection effects.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m14-l6",
+              "title": "Transfer challenge: Cherry-picking and selection effects",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Cherry-picking and selection effects.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-15",
+          "title": "The difference between uncertainty and equivalence",
+          "problem": "The difference between uncertainty and equivalence",
+          "lessons": [
+            {
+              "id": "misinformation-m15-l1",
+              "title": "Case file: The difference between uncertainty and equivalence",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: The difference between uncertainty and equivalence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m15-l2",
+              "title": "Trace the mechanisms of The difference between uncertainty and equivalence",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: The difference between uncertainty and equivalence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m15-l3",
+              "title": "Distinguish The difference between uncertainty and equivalence from hypothesis versus conclusion",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: The difference between uncertainty and equivalence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m15-l4",
+              "title": "Evidence investigation: The difference between uncertainty and equivalence",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: The difference between uncertainty and equivalence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m15-l5",
+              "title": "Design a response to The difference between uncertainty and equivalence",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: The difference between uncertainty and equivalence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m15-l6",
+              "title": "Transfer challenge: The difference between uncertainty and equivalence",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: The difference between uncertainty and equivalence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misinformation-book-4",
+      "title": "Conspiracy explanations",
+      "distinction": "unanswered question versus conspiracy evidence",
+      "modules": [
+        {
+          "id": "misinformation-module-16",
+          "title": "Connecting unrelated anomalies",
+          "problem": "Connecting unrelated anomalies",
+          "lessons": [
+            {
+              "id": "misinformation-m16-l1",
+              "title": "Case file: Connecting unrelated anomalies",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Connecting unrelated anomalies.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m16-l2",
+              "title": "Trace the mechanisms of Connecting unrelated anomalies",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Connecting unrelated anomalies.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m16-l3",
+              "title": "Distinguish Connecting unrelated anomalies from unanswered question versus conspiracy evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Connecting unrelated anomalies.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m16-l4",
+              "title": "Evidence investigation: Connecting unrelated anomalies",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Connecting unrelated anomalies.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m16-l5",
+              "title": "Design a response to Connecting unrelated anomalies",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Connecting unrelated anomalies.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m16-l6",
+              "title": "Transfer challenge: Connecting unrelated anomalies",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Connecting unrelated anomalies.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-17",
+          "title": "Self-sealing claims immune to falsification",
+          "problem": "Self-sealing claims immune to falsification",
+          "lessons": [
+            {
+              "id": "misinformation-m17-l1",
+              "title": "Case file: Self-sealing claims immune to falsification",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Self-sealing claims immune to falsification.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m17-l2",
+              "title": "Trace the mechanisms of Self-sealing claims immune to falsification",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Self-sealing claims immune to falsification.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m17-l3",
+              "title": "Distinguish Self-sealing claims immune to falsification from unanswered question versus conspiracy evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Self-sealing claims immune to falsification.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m17-l4",
+              "title": "Evidence investigation: Self-sealing claims immune to falsification",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Self-sealing claims immune to falsification.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m17-l5",
+              "title": "Design a response to Self-sealing claims immune to falsification",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Self-sealing claims immune to falsification.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m17-l6",
+              "title": "Transfer challenge: Self-sealing claims immune to falsification",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Self-sealing claims immune to falsification.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-18",
+          "title": "Agency detection and pattern seeking",
+          "problem": "Agency detection and pattern seeking",
+          "lessons": [
+            {
+              "id": "misinformation-m18-l1",
+              "title": "Case file: Agency detection and pattern seeking",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Agency detection and pattern seeking.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m18-l2",
+              "title": "Trace the mechanisms of Agency detection and pattern seeking",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Agency detection and pattern seeking.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m18-l3",
+              "title": "Distinguish Agency detection and pattern seeking from unanswered question versus conspiracy evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Agency detection and pattern seeking.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m18-l4",
+              "title": "Evidence investigation: Agency detection and pattern seeking",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Agency detection and pattern seeking.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m18-l5",
+              "title": "Design a response to Agency detection and pattern seeking",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Agency detection and pattern seeking.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m18-l6",
+              "title": "Transfer challenge: Agency detection and pattern seeking",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Agency detection and pattern seeking.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-19",
+          "title": "Communities organised around suspicion",
+          "problem": "Communities organised around suspicion",
+          "lessons": [
+            {
+              "id": "misinformation-m19-l1",
+              "title": "Case file: Communities organised around suspicion",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Communities organised around suspicion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m19-l2",
+              "title": "Trace the mechanisms of Communities organised around suspicion",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Communities organised around suspicion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m19-l3",
+              "title": "Distinguish Communities organised around suspicion from unanswered question versus conspiracy evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Communities organised around suspicion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m19-l4",
+              "title": "Evidence investigation: Communities organised around suspicion",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Communities organised around suspicion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m19-l5",
+              "title": "Design a response to Communities organised around suspicion",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Communities organised around suspicion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m19-l6",
+              "title": "Transfer challenge: Communities organised around suspicion",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Communities organised around suspicion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-20",
+          "title": "When legitimate wrongdoing is real",
+          "problem": "When legitimate wrongdoing is real",
+          "lessons": [
+            {
+              "id": "misinformation-m20-l1",
+              "title": "Case file: When legitimate wrongdoing is real",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When legitimate wrongdoing is real.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m20-l2",
+              "title": "Trace the mechanisms of When legitimate wrongdoing is real",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When legitimate wrongdoing is real.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m20-l3",
+              "title": "Distinguish When legitimate wrongdoing is real from unanswered question versus conspiracy evidence",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When legitimate wrongdoing is real.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m20-l4",
+              "title": "Evidence investigation: When legitimate wrongdoing is real",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When legitimate wrongdoing is real.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m20-l5",
+              "title": "Design a response to When legitimate wrongdoing is real",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When legitimate wrongdoing is real.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m20-l6",
+              "title": "Transfer challenge: When legitimate wrongdoing is real",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When legitimate wrongdoing is real.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misinformation-book-5",
+      "title": "Statistics and scientific claims",
+      "distinction": "association versus causation",
+      "modules": [
+        {
+          "id": "misinformation-module-21",
+          "title": "Correlation without causal identification",
+          "problem": "Correlation without causal identification",
+          "lessons": [
+            {
+              "id": "misinformation-m21-l1",
+              "title": "Case file: Correlation without causal identification",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Correlation without causal identification.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m21-l2",
+              "title": "Trace the mechanisms of Correlation without causal identification",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Correlation without causal identification.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m21-l3",
+              "title": "Distinguish Correlation without causal identification from association versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Correlation without causal identification.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m21-l4",
+              "title": "Evidence investigation: Correlation without causal identification",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Correlation without causal identification.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m21-l5",
+              "title": "Design a response to Correlation without causal identification",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Correlation without causal identification.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m21-l6",
+              "title": "Transfer challenge: Correlation without causal identification",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Correlation without causal identification.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-22",
+          "title": "Risk ratios without baseline rates",
+          "problem": "Risk ratios without baseline rates",
+          "lessons": [
+            {
+              "id": "misinformation-m22-l1",
+              "title": "Case file: Risk ratios without baseline rates",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Risk ratios without baseline rates.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m22-l2",
+              "title": "Trace the mechanisms of Risk ratios without baseline rates",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Risk ratios without baseline rates.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m22-l3",
+              "title": "Distinguish Risk ratios without baseline rates from association versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Risk ratios without baseline rates.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m22-l4",
+              "title": "Evidence investigation: Risk ratios without baseline rates",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Risk ratios without baseline rates.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m22-l5",
+              "title": "Design a response to Risk ratios without baseline rates",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Risk ratios without baseline rates.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m22-l6",
+              "title": "Transfer challenge: Risk ratios without baseline rates",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Risk ratios without baseline rates.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-23",
+          "title": "Graphs that conceal variation",
+          "problem": "Graphs that conceal variation",
+          "lessons": [
+            {
+              "id": "misinformation-m23-l1",
+              "title": "Case file: Graphs that conceal variation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Graphs that conceal variation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m23-l2",
+              "title": "Trace the mechanisms of Graphs that conceal variation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Graphs that conceal variation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m23-l3",
+              "title": "Distinguish Graphs that conceal variation from association versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Graphs that conceal variation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m23-l4",
+              "title": "Evidence investigation: Graphs that conceal variation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Graphs that conceal variation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m23-l5",
+              "title": "Design a response to Graphs that conceal variation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Graphs that conceal variation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m23-l6",
+              "title": "Transfer challenge: Graphs that conceal variation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Graphs that conceal variation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-24",
+          "title": "Small samples and noisy results",
+          "problem": "Small samples and noisy results",
+          "lessons": [
+            {
+              "id": "misinformation-m24-l1",
+              "title": "Case file: Small samples and noisy results",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Small samples and noisy results.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m24-l2",
+              "title": "Trace the mechanisms of Small samples and noisy results",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Small samples and noisy results.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m24-l3",
+              "title": "Distinguish Small samples and noisy results from association versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Small samples and noisy results.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m24-l4",
+              "title": "Evidence investigation: Small samples and noisy results",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Small samples and noisy results.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m24-l5",
+              "title": "Design a response to Small samples and noisy results",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Small samples and noisy results.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m24-l6",
+              "title": "Transfer challenge: Small samples and noisy results",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Small samples and noisy results.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-25",
+          "title": "Replication and changing conclusions",
+          "problem": "Replication and changing conclusions",
+          "lessons": [
+            {
+              "id": "misinformation-m25-l1",
+              "title": "Case file: Replication and changing conclusions",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Replication and changing conclusions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m25-l2",
+              "title": "Trace the mechanisms of Replication and changing conclusions",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Replication and changing conclusions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m25-l3",
+              "title": "Distinguish Replication and changing conclusions from association versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Replication and changing conclusions.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m25-l4",
+              "title": "Evidence investigation: Replication and changing conclusions",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Replication and changing conclusions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m25-l5",
+              "title": "Design a response to Replication and changing conclusions",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Replication and changing conclusions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m25-l6",
+              "title": "Transfer challenge: Replication and changing conclusions",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Replication and changing conclusions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misinformation-book-6",
+      "title": "Manipulative information tactics",
+      "distinction": "debate versus manufactured doubt",
+      "modules": [
+        {
+          "id": "misinformation-module-26",
+          "title": "Quote mining and context removal",
+          "problem": "Quote mining and context removal",
+          "lessons": [
+            {
+              "id": "misinformation-m26-l1",
+              "title": "Case file: Quote mining and context removal",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Quote mining and context removal.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m26-l2",
+              "title": "Trace the mechanisms of Quote mining and context removal",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Quote mining and context removal.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m26-l3",
+              "title": "Distinguish Quote mining and context removal from debate versus manufactured doubt",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Quote mining and context removal.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m26-l4",
+              "title": "Evidence investigation: Quote mining and context removal",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Quote mining and context removal.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m26-l5",
+              "title": "Design a response to Quote mining and context removal",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Quote mining and context removal.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m26-l6",
+              "title": "Transfer challenge: Quote mining and context removal",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Quote mining and context removal.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-27",
+          "title": "False dilemmas and strawman arguments",
+          "problem": "False dilemmas and strawman arguments",
+          "lessons": [
+            {
+              "id": "misinformation-m27-l1",
+              "title": "Case file: False dilemmas and strawman arguments",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: False dilemmas and strawman arguments.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m27-l2",
+              "title": "Trace the mechanisms of False dilemmas and strawman arguments",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: False dilemmas and strawman arguments.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m27-l3",
+              "title": "Distinguish False dilemmas and strawman arguments from debate versus manufactured doubt",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: False dilemmas and strawman arguments.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m27-l4",
+              "title": "Evidence investigation: False dilemmas and strawman arguments",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: False dilemmas and strawman arguments.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m27-l5",
+              "title": "Design a response to False dilemmas and strawman arguments",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: False dilemmas and strawman arguments.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m27-l6",
+              "title": "Transfer challenge: False dilemmas and strawman arguments",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: False dilemmas and strawman arguments.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-28",
+          "title": "Flooding with too many claims",
+          "problem": "Flooding with too many claims",
+          "lessons": [
+            {
+              "id": "misinformation-m28-l1",
+              "title": "Case file: Flooding with too many claims",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Flooding with too many claims.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m28-l2",
+              "title": "Trace the mechanisms of Flooding with too many claims",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Flooding with too many claims.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m28-l3",
+              "title": "Distinguish Flooding with too many claims from debate versus manufactured doubt",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Flooding with too many claims.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m28-l4",
+              "title": "Evidence investigation: Flooding with too many claims",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Flooding with too many claims.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m28-l5",
+              "title": "Design a response to Flooding with too many claims",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Flooding with too many claims.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m28-l6",
+              "title": "Transfer challenge: Flooding with too many claims",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Flooding with too many claims.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-29",
+          "title": "Whataboutism used to evade evidence",
+          "problem": "Whataboutism used to evade evidence",
+          "lessons": [
+            {
+              "id": "misinformation-m29-l1",
+              "title": "Case file: Whataboutism used to evade evidence",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Whataboutism used to evade evidence.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m29-l2",
+              "title": "Trace the mechanisms of Whataboutism used to evade evidence",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Whataboutism used to evade evidence.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m29-l3",
+              "title": "Distinguish Whataboutism used to evade evidence from debate versus manufactured doubt",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Whataboutism used to evade evidence.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m29-l4",
+              "title": "Evidence investigation: Whataboutism used to evade evidence",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Whataboutism used to evade evidence.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m29-l5",
+              "title": "Design a response to Whataboutism used to evade evidence",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Whataboutism used to evade evidence.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m29-l6",
+              "title": "Transfer challenge: Whataboutism used to evade evidence",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Whataboutism used to evade evidence.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-30",
+          "title": "Appeals to fear or group pride",
+          "problem": "Appeals to fear or group pride",
+          "lessons": [
+            {
+              "id": "misinformation-m30-l1",
+              "title": "Case file: Appeals to fear or group pride",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Appeals to fear or group pride.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m30-l2",
+              "title": "Trace the mechanisms of Appeals to fear or group pride",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Appeals to fear or group pride.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m30-l3",
+              "title": "Distinguish Appeals to fear or group pride from debate versus manufactured doubt",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Appeals to fear or group pride.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m30-l4",
+              "title": "Evidence investigation: Appeals to fear or group pride",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Appeals to fear or group pride.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m30-l5",
+              "title": "Design a response to Appeals to fear or group pride",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Appeals to fear or group pride.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m30-l6",
+              "title": "Transfer challenge: Appeals to fear or group pride",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Appeals to fear or group pride.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misinformation-book-7",
+      "title": "Synthetic media and AI",
+      "distinction": "fluent output versus verified knowledge",
+      "modules": [
+        {
+          "id": "misinformation-module-31",
+          "title": "Deepfakes and provenance",
+          "problem": "Deepfakes and provenance",
+          "lessons": [
+            {
+              "id": "misinformation-m31-l1",
+              "title": "Case file: Deepfakes and provenance",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Deepfakes and provenance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m31-l2",
+              "title": "Trace the mechanisms of Deepfakes and provenance",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Deepfakes and provenance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m31-l3",
+              "title": "Distinguish Deepfakes and provenance from fluent output versus verified knowledge",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Deepfakes and provenance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m31-l4",
+              "title": "Evidence investigation: Deepfakes and provenance",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Deepfakes and provenance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m31-l5",
+              "title": "Design a response to Deepfakes and provenance",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Deepfakes and provenance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m31-l6",
+              "title": "Transfer challenge: Deepfakes and provenance",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Deepfakes and provenance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-32",
+          "title": "AI-generated citations that do not exist",
+          "problem": "AI-generated citations that do not exist",
+          "lessons": [
+            {
+              "id": "misinformation-m32-l1",
+              "title": "Case file: AI-generated citations that do not exist",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: AI-generated citations that do not exist.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m32-l2",
+              "title": "Trace the mechanisms of AI-generated citations that do not exist",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: AI-generated citations that do not exist.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m32-l3",
+              "title": "Distinguish AI-generated citations that do not exist from fluent output versus verified knowledge",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: AI-generated citations that do not exist.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m32-l4",
+              "title": "Evidence investigation: AI-generated citations that do not exist",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: AI-generated citations that do not exist.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m32-l5",
+              "title": "Design a response to AI-generated citations that do not exist",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: AI-generated citations that do not exist.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m32-l6",
+              "title": "Transfer challenge: AI-generated citations that do not exist",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: AI-generated citations that do not exist.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-33",
+          "title": "Image context and reverse verification",
+          "problem": "Image context and reverse verification",
+          "lessons": [
+            {
+              "id": "misinformation-m33-l1",
+              "title": "Case file: Image context and reverse verification",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Image context and reverse verification.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m33-l2",
+              "title": "Trace the mechanisms of Image context and reverse verification",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Image context and reverse verification.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m33-l3",
+              "title": "Distinguish Image context and reverse verification from fluent output versus verified knowledge",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Image context and reverse verification.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m33-l4",
+              "title": "Evidence investigation: Image context and reverse verification",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Image context and reverse verification.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m33-l5",
+              "title": "Design a response to Image context and reverse verification",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Image context and reverse verification.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m33-l6",
+              "title": "Transfer challenge: Image context and reverse verification",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Image context and reverse verification.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-34",
+          "title": "Bots, coordination and authenticity",
+          "problem": "Bots, coordination and authenticity",
+          "lessons": [
+            {
+              "id": "misinformation-m34-l1",
+              "title": "Case file: Bots, coordination and authenticity",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Bots, coordination and authenticity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m34-l2",
+              "title": "Trace the mechanisms of Bots, coordination and authenticity",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Bots, coordination and authenticity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m34-l3",
+              "title": "Distinguish Bots, coordination and authenticity from fluent output versus verified knowledge",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Bots, coordination and authenticity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m34-l4",
+              "title": "Evidence investigation: Bots, coordination and authenticity",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Bots, coordination and authenticity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m34-l5",
+              "title": "Design a response to Bots, coordination and authenticity",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Bots, coordination and authenticity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m34-l6",
+              "title": "Transfer challenge: Bots, coordination and authenticity",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Bots, coordination and authenticity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-35",
+          "title": "When model confidence is uninformative",
+          "problem": "When model confidence is uninformative",
+          "lessons": [
+            {
+              "id": "misinformation-m35-l1",
+              "title": "Case file: When model confidence is uninformative",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When model confidence is uninformative.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m35-l2",
+              "title": "Trace the mechanisms of When model confidence is uninformative",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When model confidence is uninformative.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m35-l3",
+              "title": "Distinguish When model confidence is uninformative from fluent output versus verified knowledge",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When model confidence is uninformative.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m35-l4",
+              "title": "Evidence investigation: When model confidence is uninformative",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When model confidence is uninformative.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m35-l5",
+              "title": "Design a response to When model confidence is uninformative",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When model confidence is uninformative.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m35-l6",
+              "title": "Transfer challenge: When model confidence is uninformative",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When model confidence is uninformative.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misinformation-book-8",
+      "title": "Conversations across belief divides",
+      "distinction": "correction versus humiliation",
+      "modules": [
+        {
+          "id": "misinformation-module-36",
+          "title": "Asking what would change a mind",
+          "problem": "Asking what would change a mind",
+          "lessons": [
+            {
+              "id": "misinformation-m36-l1",
+              "title": "Case file: Asking what would change a mind",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Asking what would change a mind.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m36-l2",
+              "title": "Trace the mechanisms of Asking what would change a mind",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Asking what would change a mind.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m36-l3",
+              "title": "Distinguish Asking what would change a mind from correction versus humiliation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Asking what would change a mind.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m36-l4",
+              "title": "Evidence investigation: Asking what would change a mind",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Asking what would change a mind.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m36-l5",
+              "title": "Design a response to Asking what would change a mind",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Asking what would change a mind.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m36-l6",
+              "title": "Transfer challenge: Asking what would change a mind",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Asking what would change a mind.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-37",
+          "title": "Preserving relationships amid disagreement",
+          "problem": "Preserving relationships amid disagreement",
+          "lessons": [
+            {
+              "id": "misinformation-m37-l1",
+              "title": "Case file: Preserving relationships amid disagreement",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Preserving relationships amid disagreement.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m37-l2",
+              "title": "Trace the mechanisms of Preserving relationships amid disagreement",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Preserving relationships amid disagreement.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m37-l3",
+              "title": "Distinguish Preserving relationships amid disagreement from correction versus humiliation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Preserving relationships amid disagreement.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m37-l4",
+              "title": "Evidence investigation: Preserving relationships amid disagreement",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Preserving relationships amid disagreement.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m37-l5",
+              "title": "Design a response to Preserving relationships amid disagreement",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Preserving relationships amid disagreement.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m37-l6",
+              "title": "Transfer challenge: Preserving relationships amid disagreement",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Preserving relationships amid disagreement.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-38",
+          "title": "When fact-checking backfires",
+          "problem": "When fact-checking backfires",
+          "lessons": [
+            {
+              "id": "misinformation-m38-l1",
+              "title": "Case file: When fact-checking backfires",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When fact-checking backfires.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m38-l2",
+              "title": "Trace the mechanisms of When fact-checking backfires",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When fact-checking backfires.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m38-l3",
+              "title": "Distinguish When fact-checking backfires from correction versus humiliation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When fact-checking backfires.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m38-l4",
+              "title": "Evidence investigation: When fact-checking backfires",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When fact-checking backfires.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m38-l5",
+              "title": "Design a response to When fact-checking backfires",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When fact-checking backfires.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m38-l6",
+              "title": "Transfer challenge: When fact-checking backfires",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When fact-checking backfires.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-39",
+          "title": "Avoiding unwanted debates",
+          "problem": "Avoiding unwanted debates",
+          "lessons": [
+            {
+              "id": "misinformation-m39-l1",
+              "title": "Case file: Avoiding unwanted debates",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Avoiding unwanted debates.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m39-l2",
+              "title": "Trace the mechanisms of Avoiding unwanted debates",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Avoiding unwanted debates.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m39-l3",
+              "title": "Distinguish Avoiding unwanted debates from correction versus humiliation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Avoiding unwanted debates.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m39-l4",
+              "title": "Evidence investigation: Avoiding unwanted debates",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Avoiding unwanted debates.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m39-l5",
+              "title": "Design a response to Avoiding unwanted debates",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Avoiding unwanted debates.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m39-l6",
+              "title": "Transfer challenge: Avoiding unwanted debates",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Avoiding unwanted debates.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-40",
+          "title": "Recognising coercive or abusive rhetoric",
+          "problem": "Recognising coercive or abusive rhetoric",
+          "lessons": [
+            {
+              "id": "misinformation-m40-l1",
+              "title": "Case file: Recognising coercive or abusive rhetoric",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Recognising coercive or abusive rhetoric.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m40-l2",
+              "title": "Trace the mechanisms of Recognising coercive or abusive rhetoric",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Recognising coercive or abusive rhetoric.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m40-l3",
+              "title": "Distinguish Recognising coercive or abusive rhetoric from correction versus humiliation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Recognising coercive or abusive rhetoric.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m40-l4",
+              "title": "Evidence investigation: Recognising coercive or abusive rhetoric",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Recognising coercive or abusive rhetoric.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m40-l5",
+              "title": "Design a response to Recognising coercive or abusive rhetoric",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Recognising coercive or abusive rhetoric.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m40-l6",
+              "title": "Transfer challenge: Recognising coercive or abusive rhetoric",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Recognising coercive or abusive rhetoric.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misinformation-book-9",
+      "title": "Information ecosystems",
+      "distinction": "individual irrationality versus media incentives",
+      "modules": [
+        {
+          "id": "misinformation-module-41",
+          "title": "Engagement algorithms and outrage",
+          "problem": "Engagement algorithms and outrage",
+          "lessons": [
+            {
+              "id": "misinformation-m41-l1",
+              "title": "Case file: Engagement algorithms and outrage",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Engagement algorithms and outrage.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m41-l2",
+              "title": "Trace the mechanisms of Engagement algorithms and outrage",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Engagement algorithms and outrage.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m41-l3",
+              "title": "Distinguish Engagement algorithms and outrage from individual irrationality versus media incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Engagement algorithms and outrage.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m41-l4",
+              "title": "Evidence investigation: Engagement algorithms and outrage",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Engagement algorithms and outrage.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m41-l5",
+              "title": "Design a response to Engagement algorithms and outrage",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Engagement algorithms and outrage.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m41-l6",
+              "title": "Transfer challenge: Engagement algorithms and outrage",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Engagement algorithms and outrage.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-42",
+          "title": "Partisan information environments",
+          "problem": "Partisan information environments",
+          "lessons": [
+            {
+              "id": "misinformation-m42-l1",
+              "title": "Case file: Partisan information environments",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Partisan information environments.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m42-l2",
+              "title": "Trace the mechanisms of Partisan information environments",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Partisan information environments.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m42-l3",
+              "title": "Distinguish Partisan information environments from individual irrationality versus media incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Partisan information environments.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m42-l4",
+              "title": "Evidence investigation: Partisan information environments",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Partisan information environments.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m42-l5",
+              "title": "Design a response to Partisan information environments",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Partisan information environments.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m42-l6",
+              "title": "Transfer challenge: Partisan information environments",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Partisan information environments.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-43",
+          "title": "News deserts and institutional trust",
+          "problem": "News deserts and institutional trust",
+          "lessons": [
+            {
+              "id": "misinformation-m43-l1",
+              "title": "Case file: News deserts and institutional trust",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: News deserts and institutional trust.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m43-l2",
+              "title": "Trace the mechanisms of News deserts and institutional trust",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: News deserts and institutional trust.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m43-l3",
+              "title": "Distinguish News deserts and institutional trust from individual irrationality versus media incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: News deserts and institutional trust.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m43-l4",
+              "title": "Evidence investigation: News deserts and institutional trust",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: News deserts and institutional trust.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m43-l5",
+              "title": "Design a response to News deserts and institutional trust",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: News deserts and institutional trust.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m43-l6",
+              "title": "Transfer challenge: News deserts and institutional trust",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: News deserts and institutional trust.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-44",
+          "title": "Crisis misinformation and public harm",
+          "problem": "Crisis misinformation and public harm",
+          "lessons": [
+            {
+              "id": "misinformation-m44-l1",
+              "title": "Case file: Crisis misinformation and public harm",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Crisis misinformation and public harm.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m44-l2",
+              "title": "Trace the mechanisms of Crisis misinformation and public harm",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Crisis misinformation and public harm.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m44-l3",
+              "title": "Distinguish Crisis misinformation and public harm from individual irrationality versus media incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Crisis misinformation and public harm.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m44-l4",
+              "title": "Evidence investigation: Crisis misinformation and public harm",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Crisis misinformation and public harm.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m44-l5",
+              "title": "Design a response to Crisis misinformation and public harm",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Crisis misinformation and public harm.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m44-l6",
+              "title": "Transfer challenge: Crisis misinformation and public harm",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Crisis misinformation and public harm.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-45",
+          "title": "Platform accountability and transparency",
+          "problem": "Platform accountability and transparency",
+          "lessons": [
+            {
+              "id": "misinformation-m45-l1",
+              "title": "Case file: Platform accountability and transparency",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Platform accountability and transparency.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m45-l2",
+              "title": "Trace the mechanisms of Platform accountability and transparency",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Platform accountability and transparency.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m45-l3",
+              "title": "Distinguish Platform accountability and transparency from individual irrationality versus media incentives",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Platform accountability and transparency.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m45-l4",
+              "title": "Evidence investigation: Platform accountability and transparency",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Platform accountability and transparency.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m45-l5",
+              "title": "Design a response to Platform accountability and transparency",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Platform accountability and transparency.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m45-l6",
+              "title": "Transfer challenge: Platform accountability and transparency",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Platform accountability and transparency.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "misinformation-book-10",
+      "title": "Advanced evidence missions",
+      "distinction": "skepticism versus cynicism",
+      "modules": [
+        {
+          "id": "misinformation-module-46",
+          "title": "An extraordinary claim with limited data",
+          "problem": "An extraordinary claim with limited data",
+          "lessons": [
+            {
+              "id": "misinformation-m46-l1",
+              "title": "Case file: An extraordinary claim with limited data",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: An extraordinary claim with limited data.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m46-l2",
+              "title": "Trace the mechanisms of An extraordinary claim with limited data",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: An extraordinary claim with limited data.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m46-l3",
+              "title": "Distinguish An extraordinary claim with limited data from skepticism versus cynicism",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: An extraordinary claim with limited data.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m46-l4",
+              "title": "Evidence investigation: An extraordinary claim with limited data",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: An extraordinary claim with limited data.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m46-l5",
+              "title": "Design a response to An extraordinary claim with limited data",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: An extraordinary claim with limited data.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m46-l6",
+              "title": "Transfer challenge: An extraordinary claim with limited data",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: An extraordinary claim with limited data.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-47",
+          "title": "Comparing primary and secondary sources",
+          "problem": "Comparing primary and secondary sources",
+          "lessons": [
+            {
+              "id": "misinformation-m47-l1",
+              "title": "Case file: Comparing primary and secondary sources",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Comparing primary and secondary sources.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m47-l2",
+              "title": "Trace the mechanisms of Comparing primary and secondary sources",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Comparing primary and secondary sources.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m47-l3",
+              "title": "Distinguish Comparing primary and secondary sources from skepticism versus cynicism",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Comparing primary and secondary sources.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m47-l4",
+              "title": "Evidence investigation: Comparing primary and secondary sources",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Comparing primary and secondary sources.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m47-l5",
+              "title": "Design a response to Comparing primary and secondary sources",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Comparing primary and secondary sources.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m47-l6",
+              "title": "Transfer challenge: Comparing primary and secondary sources",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Comparing primary and secondary sources.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-48",
+          "title": "Updating beliefs with new findings",
+          "problem": "Updating beliefs with new findings",
+          "lessons": [
+            {
+              "id": "misinformation-m48-l1",
+              "title": "Case file: Updating beliefs with new findings",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Updating beliefs with new findings.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m48-l2",
+              "title": "Trace the mechanisms of Updating beliefs with new findings",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Updating beliefs with new findings.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m48-l3",
+              "title": "Distinguish Updating beliefs with new findings from skepticism versus cynicism",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Updating beliefs with new findings.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m48-l4",
+              "title": "Evidence investigation: Updating beliefs with new findings",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Updating beliefs with new findings.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m48-l5",
+              "title": "Design a response to Updating beliefs with new findings",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Updating beliefs with new findings.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m48-l6",
+              "title": "Transfer challenge: Updating beliefs with new findings",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Updating beliefs with new findings.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-49",
+          "title": "Assessing claims without complete certainty",
+          "problem": "Assessing claims without complete certainty",
+          "lessons": [
+            {
+              "id": "misinformation-m49-l1",
+              "title": "Case file: Assessing claims without complete certainty",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Assessing claims without complete certainty.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m49-l2",
+              "title": "Trace the mechanisms of Assessing claims without complete certainty",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Assessing claims without complete certainty.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m49-l3",
+              "title": "Distinguish Assessing claims without complete certainty from skepticism versus cynicism",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Assessing claims without complete certainty.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m49-l4",
+              "title": "Evidence investigation: Assessing claims without complete certainty",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Assessing claims without complete certainty.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m49-l5",
+              "title": "Design a response to Assessing claims without complete certainty",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Assessing claims without complete certainty.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m49-l6",
+              "title": "Transfer challenge: Assessing claims without complete certainty",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Assessing claims without complete certainty.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "misinformation-module-50",
+          "title": "Integrated mission: verify a viral narrative",
+          "problem": "Integrated mission: verify a viral narrative",
+          "lessons": [
+            {
+              "id": "misinformation-m50-l1",
+              "title": "Case file: Integrated mission: verify a viral narrative",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Integrated mission: verify a viral narrative.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m50-l2",
+              "title": "Trace the mechanisms of Integrated mission: verify a viral narrative",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Integrated mission: verify a viral narrative.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m50-l3",
+              "title": "Distinguish Integrated mission: verify a viral narrative from skepticism versus cynicism",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Integrated mission: verify a viral narrative.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m50-l4",
+              "title": "Evidence investigation: Integrated mission: verify a viral narrative",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Integrated mission: verify a viral narrative.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m50-l5",
+              "title": "Design a response to Integrated mission: verify a viral narrative",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Integrated mission: verify a viral narrative.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "misinformation-m50-l6",
+              "title": "Transfer challenge: Integrated mission: verify a viral narrative",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Integrated mission: verify a viral narrative.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

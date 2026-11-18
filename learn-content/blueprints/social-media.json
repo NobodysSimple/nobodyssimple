@@ -1,0 +1,2828 @@
+{
+  "courseId": "social-media",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Curriculum map only; all lesson content and interactive nodes must be authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "social-media-book-1",
+      "title": "Why attention becomes the product",
+      "distinction": "choice versus designed friction",
+      "modules": [
+        {
+          "id": "social-media-module-01",
+          "title": "Infinite scroll and delayed stopping cues",
+          "problem": "Infinite scroll and delayed stopping cues",
+          "lessons": [
+            {
+              "id": "social-media-m1-l1",
+              "title": "Case file: Infinite scroll and delayed stopping cues",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Infinite scroll and delayed stopping cues.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m1-l2",
+              "title": "Trace the mechanisms of Infinite scroll and delayed stopping cues",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Infinite scroll and delayed stopping cues.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m1-l3",
+              "title": "Distinguish Infinite scroll and delayed stopping cues from choice versus designed friction",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Infinite scroll and delayed stopping cues.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m1-l4",
+              "title": "Evidence investigation: Infinite scroll and delayed stopping cues",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Infinite scroll and delayed stopping cues.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m1-l5",
+              "title": "Design a response to Infinite scroll and delayed stopping cues",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Infinite scroll and delayed stopping cues.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m1-l6",
+              "title": "Transfer challenge: Infinite scroll and delayed stopping cues",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Infinite scroll and delayed stopping cues.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-02",
+          "title": "Variable rewards and checking",
+          "problem": "Variable rewards and checking",
+          "lessons": [
+            {
+              "id": "social-media-m2-l1",
+              "title": "Case file: Variable rewards and checking",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Variable rewards and checking.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m2-l2",
+              "title": "Trace the mechanisms of Variable rewards and checking",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Variable rewards and checking.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m2-l3",
+              "title": "Distinguish Variable rewards and checking from choice versus designed friction",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Variable rewards and checking.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m2-l4",
+              "title": "Evidence investigation: Variable rewards and checking",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Variable rewards and checking.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m2-l5",
+              "title": "Design a response to Variable rewards and checking",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Variable rewards and checking.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m2-l6",
+              "title": "Transfer challenge: Variable rewards and checking",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Variable rewards and checking.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-03",
+          "title": "Notifications as conditioned prompts",
+          "problem": "Notifications as conditioned prompts",
+          "lessons": [
+            {
+              "id": "social-media-m3-l1",
+              "title": "Case file: Notifications as conditioned prompts",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Notifications as conditioned prompts.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m3-l2",
+              "title": "Trace the mechanisms of Notifications as conditioned prompts",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Notifications as conditioned prompts.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m3-l3",
+              "title": "Distinguish Notifications as conditioned prompts from choice versus designed friction",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Notifications as conditioned prompts.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m3-l4",
+              "title": "Evidence investigation: Notifications as conditioned prompts",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Notifications as conditioned prompts.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m3-l5",
+              "title": "Design a response to Notifications as conditioned prompts",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Notifications as conditioned prompts.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m3-l6",
+              "title": "Transfer challenge: Notifications as conditioned prompts",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Notifications as conditioned prompts.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-04",
+          "title": "Attention metrics and business models",
+          "problem": "Attention metrics and business models",
+          "lessons": [
+            {
+              "id": "social-media-m4-l1",
+              "title": "Case file: Attention metrics and business models",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Attention metrics and business models.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m4-l2",
+              "title": "Trace the mechanisms of Attention metrics and business models",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Attention metrics and business models.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m4-l3",
+              "title": "Distinguish Attention metrics and business models from choice versus designed friction",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Attention metrics and business models.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m4-l4",
+              "title": "Evidence investigation: Attention metrics and business models",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Attention metrics and business models.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m4-l5",
+              "title": "Design a response to Attention metrics and business models",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Attention metrics and business models.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m4-l6",
+              "title": "Transfer challenge: Attention metrics and business models",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Attention metrics and business models.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-05",
+          "title": "When use becomes difficult to regulate",
+          "problem": "When use becomes difficult to regulate",
+          "lessons": [
+            {
+              "id": "social-media-m5-l1",
+              "title": "Case file: When use becomes difficult to regulate",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When use becomes difficult to regulate.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m5-l2",
+              "title": "Trace the mechanisms of When use becomes difficult to regulate",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When use becomes difficult to regulate.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m5-l3",
+              "title": "Distinguish When use becomes difficult to regulate from choice versus designed friction",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When use becomes difficult to regulate.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m5-l4",
+              "title": "Evidence investigation: When use becomes difficult to regulate",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When use becomes difficult to regulate.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m5-l5",
+              "title": "Design a response to When use becomes difficult to regulate",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When use becomes difficult to regulate.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m5-l6",
+              "title": "Transfer challenge: When use becomes difficult to regulate",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When use becomes difficult to regulate.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-book-2",
+      "title": "Social comparison systems",
+      "distinction": "reference group versus reality",
+      "modules": [
+        {
+          "id": "social-media-module-06",
+          "title": "Highlight reels and distorted norms",
+          "problem": "Highlight reels and distorted norms",
+          "lessons": [
+            {
+              "id": "social-media-m6-l1",
+              "title": "Case file: Highlight reels and distorted norms",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Highlight reels and distorted norms.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m6-l2",
+              "title": "Trace the mechanisms of Highlight reels and distorted norms",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Highlight reels and distorted norms.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m6-l3",
+              "title": "Distinguish Highlight reels and distorted norms from reference group versus reality",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Highlight reels and distorted norms.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m6-l4",
+              "title": "Evidence investigation: Highlight reels and distorted norms",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Highlight reels and distorted norms.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m6-l5",
+              "title": "Design a response to Highlight reels and distorted norms",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Highlight reels and distorted norms.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m6-l6",
+              "title": "Transfer challenge: Highlight reels and distorted norms",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Highlight reels and distorted norms.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-07",
+          "title": "Status competition through likes",
+          "problem": "Status competition through likes",
+          "lessons": [
+            {
+              "id": "social-media-m7-l1",
+              "title": "Case file: Status competition through likes",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Status competition through likes.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m7-l2",
+              "title": "Trace the mechanisms of Status competition through likes",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Status competition through likes.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m7-l3",
+              "title": "Distinguish Status competition through likes from reference group versus reality",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Status competition through likes.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m7-l4",
+              "title": "Evidence investigation: Status competition through likes",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Status competition through likes.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m7-l5",
+              "title": "Design a response to Status competition through likes",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Status competition through likes.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m7-l6",
+              "title": "Transfer challenge: Status competition through likes",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Status competition through likes.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-08",
+          "title": "Body comparison and appearance anxiety",
+          "problem": "Body comparison and appearance anxiety",
+          "lessons": [
+            {
+              "id": "social-media-m8-l1",
+              "title": "Case file: Body comparison and appearance anxiety",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Body comparison and appearance anxiety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m8-l2",
+              "title": "Trace the mechanisms of Body comparison and appearance anxiety",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Body comparison and appearance anxiety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m8-l3",
+              "title": "Distinguish Body comparison and appearance anxiety from reference group versus reality",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Body comparison and appearance anxiety.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m8-l4",
+              "title": "Evidence investigation: Body comparison and appearance anxiety",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Body comparison and appearance anxiety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m8-l5",
+              "title": "Design a response to Body comparison and appearance anxiety",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Body comparison and appearance anxiety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m8-l6",
+              "title": "Transfer challenge: Body comparison and appearance anxiety",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Body comparison and appearance anxiety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-09",
+          "title": "Professional achievement feeds",
+          "problem": "Professional achievement feeds",
+          "lessons": [
+            {
+              "id": "social-media-m9-l1",
+              "title": "Case file: Professional achievement feeds",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Professional achievement feeds.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m9-l2",
+              "title": "Trace the mechanisms of Professional achievement feeds",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Professional achievement feeds.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m9-l3",
+              "title": "Distinguish Professional achievement feeds from reference group versus reality",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Professional achievement feeds.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m9-l4",
+              "title": "Evidence investigation: Professional achievement feeds",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Professional achievement feeds.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m9-l5",
+              "title": "Design a response to Professional achievement feeds",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Professional achievement feeds.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m9-l6",
+              "title": "Transfer challenge: Professional achievement feeds",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Professional achievement feeds.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-10",
+          "title": "How comparison affects identity",
+          "problem": "How comparison affects identity",
+          "lessons": [
+            {
+              "id": "social-media-m10-l1",
+              "title": "Case file: How comparison affects identity",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: How comparison affects identity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m10-l2",
+              "title": "Trace the mechanisms of How comparison affects identity",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: How comparison affects identity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m10-l3",
+              "title": "Distinguish How comparison affects identity from reference group versus reality",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: How comparison affects identity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m10-l4",
+              "title": "Evidence investigation: How comparison affects identity",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: How comparison affects identity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m10-l5",
+              "title": "Design a response to How comparison affects identity",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: How comparison affects identity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m10-l6",
+              "title": "Transfer challenge: How comparison affects identity",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: How comparison affects identity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-book-3",
+      "title": "Recommendation engines",
+      "distinction": "personalisation versus user intention",
+      "modules": [
+        {
+          "id": "social-media-module-11",
+          "title": "A feed that learns from one pause",
+          "problem": "A feed that learns from one pause",
+          "lessons": [
+            {
+              "id": "social-media-m11-l1",
+              "title": "Case file: A feed that learns from one pause",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: A feed that learns from one pause.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m11-l2",
+              "title": "Trace the mechanisms of A feed that learns from one pause",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: A feed that learns from one pause.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m11-l3",
+              "title": "Distinguish A feed that learns from one pause from personalisation versus user intention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: A feed that learns from one pause.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m11-l4",
+              "title": "Evidence investigation: A feed that learns from one pause",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: A feed that learns from one pause.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m11-l5",
+              "title": "Design a response to A feed that learns from one pause",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: A feed that learns from one pause.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m11-l6",
+              "title": "Transfer challenge: A feed that learns from one pause",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: A feed that learns from one pause.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-12",
+          "title": "Feedback loops and content narrowing",
+          "problem": "Feedback loops and content narrowing",
+          "lessons": [
+            {
+              "id": "social-media-m12-l1",
+              "title": "Case file: Feedback loops and content narrowing",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Feedback loops and content narrowing.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m12-l2",
+              "title": "Trace the mechanisms of Feedback loops and content narrowing",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Feedback loops and content narrowing.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m12-l3",
+              "title": "Distinguish Feedback loops and content narrowing from personalisation versus user intention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Feedback loops and content narrowing.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m12-l4",
+              "title": "Evidence investigation: Feedback loops and content narrowing",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Feedback loops and content narrowing.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m12-l5",
+              "title": "Design a response to Feedback loops and content narrowing",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Feedback loops and content narrowing.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m12-l6",
+              "title": "Transfer challenge: Feedback loops and content narrowing",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Feedback loops and content narrowing.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-13",
+          "title": "Amplification of strong emotion",
+          "problem": "Amplification of strong emotion",
+          "lessons": [
+            {
+              "id": "social-media-m13-l1",
+              "title": "Case file: Amplification of strong emotion",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Amplification of strong emotion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m13-l2",
+              "title": "Trace the mechanisms of Amplification of strong emotion",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Amplification of strong emotion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m13-l3",
+              "title": "Distinguish Amplification of strong emotion from personalisation versus user intention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Amplification of strong emotion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m13-l4",
+              "title": "Evidence investigation: Amplification of strong emotion",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Amplification of strong emotion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m13-l5",
+              "title": "Design a response to Amplification of strong emotion",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Amplification of strong emotion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m13-l6",
+              "title": "Transfer challenge: Amplification of strong emotion",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Amplification of strong emotion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-14",
+          "title": "Cold starts and accidental interests",
+          "problem": "Cold starts and accidental interests",
+          "lessons": [
+            {
+              "id": "social-media-m14-l1",
+              "title": "Case file: Cold starts and accidental interests",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Cold starts and accidental interests.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m14-l2",
+              "title": "Trace the mechanisms of Cold starts and accidental interests",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Cold starts and accidental interests.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m14-l3",
+              "title": "Distinguish Cold starts and accidental interests from personalisation versus user intention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Cold starts and accidental interests.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m14-l4",
+              "title": "Evidence investigation: Cold starts and accidental interests",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Cold starts and accidental interests.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m14-l5",
+              "title": "Design a response to Cold starts and accidental interests",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Cold starts and accidental interests.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m14-l6",
+              "title": "Transfer challenge: Cold starts and accidental interests",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Cold starts and accidental interests.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-15",
+          "title": "What engagement does not prove about preference",
+          "problem": "What engagement does not prove about preference",
+          "lessons": [
+            {
+              "id": "social-media-m15-l1",
+              "title": "Case file: What engagement does not prove about preference",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: What engagement does not prove about preference.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m15-l2",
+              "title": "Trace the mechanisms of What engagement does not prove about preference",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: What engagement does not prove about preference.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m15-l3",
+              "title": "Distinguish What engagement does not prove about preference from personalisation versus user intention",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: What engagement does not prove about preference.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m15-l4",
+              "title": "Evidence investigation: What engagement does not prove about preference",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: What engagement does not prove about preference.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m15-l5",
+              "title": "Design a response to What engagement does not prove about preference",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: What engagement does not prove about preference.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m15-l6",
+              "title": "Transfer challenge: What engagement does not prove about preference",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: What engagement does not prove about preference.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-book-4",
+      "title": "Habit loops and compulsive checking",
+      "distinction": "enjoyment versus relief seeking",
+      "modules": [
+        {
+          "id": "social-media-module-16",
+          "title": "Opening an app without deciding to",
+          "problem": "Opening an app without deciding to",
+          "lessons": [
+            {
+              "id": "social-media-m16-l1",
+              "title": "Case file: Opening an app without deciding to",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Opening an app without deciding to.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m16-l2",
+              "title": "Trace the mechanisms of Opening an app without deciding to",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Opening an app without deciding to.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m16-l3",
+              "title": "Distinguish Opening an app without deciding to from enjoyment versus relief seeking",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Opening an app without deciding to.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m16-l4",
+              "title": "Evidence investigation: Opening an app without deciding to",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Opening an app without deciding to.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m16-l5",
+              "title": "Design a response to Opening an app without deciding to",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Opening an app without deciding to.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m16-l6",
+              "title": "Transfer challenge: Opening an app without deciding to",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Opening an app without deciding to.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-17",
+          "title": "Fear of missing messages",
+          "problem": "Fear of missing messages",
+          "lessons": [
+            {
+              "id": "social-media-m17-l1",
+              "title": "Case file: Fear of missing messages",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Fear of missing messages.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m17-l2",
+              "title": "Trace the mechanisms of Fear of missing messages",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Fear of missing messages.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m17-l3",
+              "title": "Distinguish Fear of missing messages from enjoyment versus relief seeking",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Fear of missing messages.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m17-l4",
+              "title": "Evidence investigation: Fear of missing messages",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Fear of missing messages.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m17-l5",
+              "title": "Design a response to Fear of missing messages",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Fear of missing messages.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m17-l6",
+              "title": "Transfer challenge: Fear of missing messages",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Fear of missing messages.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-18",
+          "title": "Doomscrolling after distress",
+          "problem": "Doomscrolling after distress",
+          "lessons": [
+            {
+              "id": "social-media-m18-l1",
+              "title": "Case file: Doomscrolling after distress",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Doomscrolling after distress.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m18-l2",
+              "title": "Trace the mechanisms of Doomscrolling after distress",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Doomscrolling after distress.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m18-l3",
+              "title": "Distinguish Doomscrolling after distress from enjoyment versus relief seeking",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Doomscrolling after distress.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m18-l4",
+              "title": "Evidence investigation: Doomscrolling after distress",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Doomscrolling after distress.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m18-l5",
+              "title": "Design a response to Doomscrolling after distress",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Doomscrolling after distress.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m18-l6",
+              "title": "Transfer challenge: Doomscrolling after distress",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Doomscrolling after distress.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-19",
+          "title": "Replacing boredom with micro-stimulation",
+          "problem": "Replacing boredom with micro-stimulation",
+          "lessons": [
+            {
+              "id": "social-media-m19-l1",
+              "title": "Case file: Replacing boredom with micro-stimulation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Replacing boredom with micro-stimulation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m19-l2",
+              "title": "Trace the mechanisms of Replacing boredom with micro-stimulation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Replacing boredom with micro-stimulation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m19-l3",
+              "title": "Distinguish Replacing boredom with micro-stimulation from enjoyment versus relief seeking",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Replacing boredom with micro-stimulation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m19-l4",
+              "title": "Evidence investigation: Replacing boredom with micro-stimulation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Replacing boredom with micro-stimulation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m19-l5",
+              "title": "Design a response to Replacing boredom with micro-stimulation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Replacing boredom with micro-stimulation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m19-l6",
+              "title": "Transfer challenge: Replacing boredom with micro-stimulation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Replacing boredom with micro-stimulation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-20",
+          "title": "When device use disrupts sleep or goals",
+          "problem": "When device use disrupts sleep or goals",
+          "lessons": [
+            {
+              "id": "social-media-m20-l1",
+              "title": "Case file: When device use disrupts sleep or goals",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When device use disrupts sleep or goals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m20-l2",
+              "title": "Trace the mechanisms of When device use disrupts sleep or goals",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When device use disrupts sleep or goals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m20-l3",
+              "title": "Distinguish When device use disrupts sleep or goals from enjoyment versus relief seeking",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When device use disrupts sleep or goals.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m20-l4",
+              "title": "Evidence investigation: When device use disrupts sleep or goals",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When device use disrupts sleep or goals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m20-l5",
+              "title": "Design a response to When device use disrupts sleep or goals",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When device use disrupts sleep or goals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m20-l6",
+              "title": "Transfer challenge: When device use disrupts sleep or goals",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When device use disrupts sleep or goals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-book-5",
+      "title": "Relationships online",
+      "distinction": "communication versus surveillance",
+      "modules": [
+        {
+          "id": "social-media-module-21",
+          "title": "Read receipts and inferred meaning",
+          "problem": "Read receipts and inferred meaning",
+          "lessons": [
+            {
+              "id": "social-media-m21-l1",
+              "title": "Case file: Read receipts and inferred meaning",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Read receipts and inferred meaning.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m21-l2",
+              "title": "Trace the mechanisms of Read receipts and inferred meaning",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Read receipts and inferred meaning.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m21-l3",
+              "title": "Distinguish Read receipts and inferred meaning from communication versus surveillance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Read receipts and inferred meaning.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m21-l4",
+              "title": "Evidence investigation: Read receipts and inferred meaning",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Read receipts and inferred meaning.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m21-l5",
+              "title": "Design a response to Read receipts and inferred meaning",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Read receipts and inferred meaning.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m21-l6",
+              "title": "Transfer challenge: Read receipts and inferred meaning",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Read receipts and inferred meaning.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-22",
+          "title": "Public likes as relationship conflict",
+          "problem": "Public likes as relationship conflict",
+          "lessons": [
+            {
+              "id": "social-media-m22-l1",
+              "title": "Case file: Public likes as relationship conflict",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Public likes as relationship conflict.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m22-l2",
+              "title": "Trace the mechanisms of Public likes as relationship conflict",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Public likes as relationship conflict.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m22-l3",
+              "title": "Distinguish Public likes as relationship conflict from communication versus surveillance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Public likes as relationship conflict.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m22-l4",
+              "title": "Evidence investigation: Public likes as relationship conflict",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Public likes as relationship conflict.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m22-l5",
+              "title": "Design a response to Public likes as relationship conflict",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Public likes as relationship conflict.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m22-l6",
+              "title": "Transfer challenge: Public likes as relationship conflict",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Public likes as relationship conflict.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-23",
+          "title": "Follower monitoring and trust",
+          "problem": "Follower monitoring and trust",
+          "lessons": [
+            {
+              "id": "social-media-m23-l1",
+              "title": "Case file: Follower monitoring and trust",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Follower monitoring and trust.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m23-l2",
+              "title": "Trace the mechanisms of Follower monitoring and trust",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Follower monitoring and trust.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m23-l3",
+              "title": "Distinguish Follower monitoring and trust from communication versus surveillance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Follower monitoring and trust.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m23-l4",
+              "title": "Evidence investigation: Follower monitoring and trust",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Follower monitoring and trust.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m23-l5",
+              "title": "Design a response to Follower monitoring and trust",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Follower monitoring and trust.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m23-l6",
+              "title": "Transfer challenge: Follower monitoring and trust",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Follower monitoring and trust.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-24",
+          "title": "Friendship maintenance at a distance",
+          "problem": "Friendship maintenance at a distance",
+          "lessons": [
+            {
+              "id": "social-media-m24-l1",
+              "title": "Case file: Friendship maintenance at a distance",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Friendship maintenance at a distance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m24-l2",
+              "title": "Trace the mechanisms of Friendship maintenance at a distance",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Friendship maintenance at a distance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m24-l3",
+              "title": "Distinguish Friendship maintenance at a distance from communication versus surveillance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Friendship maintenance at a distance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m24-l4",
+              "title": "Evidence investigation: Friendship maintenance at a distance",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Friendship maintenance at a distance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m24-l5",
+              "title": "Design a response to Friendship maintenance at a distance",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Friendship maintenance at a distance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m24-l6",
+              "title": "Transfer challenge: Friendship maintenance at a distance",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Friendship maintenance at a distance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-25",
+          "title": "The pressure to perform happiness",
+          "problem": "The pressure to perform happiness",
+          "lessons": [
+            {
+              "id": "social-media-m25-l1",
+              "title": "Case file: The pressure to perform happiness",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: The pressure to perform happiness.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m25-l2",
+              "title": "Trace the mechanisms of The pressure to perform happiness",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: The pressure to perform happiness.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m25-l3",
+              "title": "Distinguish The pressure to perform happiness from communication versus surveillance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: The pressure to perform happiness.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m25-l4",
+              "title": "Evidence investigation: The pressure to perform happiness",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: The pressure to perform happiness.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m25-l5",
+              "title": "Design a response to The pressure to perform happiness",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: The pressure to perform happiness.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m25-l6",
+              "title": "Transfer challenge: The pressure to perform happiness",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: The pressure to perform happiness.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-book-6",
+      "title": "Identity and influence",
+      "distinction": "exploration versus externally shaped identity",
+      "modules": [
+        {
+          "id": "social-media-module-26",
+          "title": "Algorithmic identity labels",
+          "problem": "Algorithmic identity labels",
+          "lessons": [
+            {
+              "id": "social-media-m26-l1",
+              "title": "Case file: Algorithmic identity labels",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Algorithmic identity labels.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m26-l2",
+              "title": "Trace the mechanisms of Algorithmic identity labels",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Algorithmic identity labels.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m26-l3",
+              "title": "Distinguish Algorithmic identity labels from exploration versus externally shaped identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Algorithmic identity labels.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m26-l4",
+              "title": "Evidence investigation: Algorithmic identity labels",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Algorithmic identity labels.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m26-l5",
+              "title": "Design a response to Algorithmic identity labels",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Algorithmic identity labels.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m26-l6",
+              "title": "Transfer challenge: Algorithmic identity labels",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Algorithmic identity labels.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-27",
+          "title": "Influencers and aspirational consumption",
+          "problem": "Influencers and aspirational consumption",
+          "lessons": [
+            {
+              "id": "social-media-m27-l1",
+              "title": "Case file: Influencers and aspirational consumption",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Influencers and aspirational consumption.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m27-l2",
+              "title": "Trace the mechanisms of Influencers and aspirational consumption",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Influencers and aspirational consumption.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m27-l3",
+              "title": "Distinguish Influencers and aspirational consumption from exploration versus externally shaped identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Influencers and aspirational consumption.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m27-l4",
+              "title": "Evidence investigation: Influencers and aspirational consumption",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Influencers and aspirational consumption.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m27-l5",
+              "title": "Design a response to Influencers and aspirational consumption",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Influencers and aspirational consumption.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m27-l6",
+              "title": "Transfer challenge: Influencers and aspirational consumption",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Influencers and aspirational consumption.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-28",
+          "title": "Community support for marginalised groups",
+          "problem": "Community support for marginalised groups",
+          "lessons": [
+            {
+              "id": "social-media-m28-l1",
+              "title": "Case file: Community support for marginalised groups",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Community support for marginalised groups.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m28-l2",
+              "title": "Trace the mechanisms of Community support for marginalised groups",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Community support for marginalised groups.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m28-l3",
+              "title": "Distinguish Community support for marginalised groups from exploration versus externally shaped identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Community support for marginalised groups.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m28-l4",
+              "title": "Evidence investigation: Community support for marginalised groups",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Community support for marginalised groups.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m28-l5",
+              "title": "Design a response to Community support for marginalised groups",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Community support for marginalised groups.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m28-l6",
+              "title": "Transfer challenge: Community support for marginalised groups",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Community support for marginalised groups.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-29",
+          "title": "Misinformation packaged as belonging",
+          "problem": "Misinformation packaged as belonging",
+          "lessons": [
+            {
+              "id": "social-media-m29-l1",
+              "title": "Case file: Misinformation packaged as belonging",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Misinformation packaged as belonging.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m29-l2",
+              "title": "Trace the mechanisms of Misinformation packaged as belonging",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Misinformation packaged as belonging.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m29-l3",
+              "title": "Distinguish Misinformation packaged as belonging from exploration versus externally shaped identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Misinformation packaged as belonging.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m29-l4",
+              "title": "Evidence investigation: Misinformation packaged as belonging",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Misinformation packaged as belonging.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m29-l5",
+              "title": "Design a response to Misinformation packaged as belonging",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Misinformation packaged as belonging.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m29-l6",
+              "title": "Transfer challenge: Misinformation packaged as belonging",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Misinformation packaged as belonging.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-30",
+          "title": "When online norms become moral rules",
+          "problem": "When online norms become moral rules",
+          "lessons": [
+            {
+              "id": "social-media-m30-l1",
+              "title": "Case file: When online norms become moral rules",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When online norms become moral rules.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m30-l2",
+              "title": "Trace the mechanisms of When online norms become moral rules",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When online norms become moral rules.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m30-l3",
+              "title": "Distinguish When online norms become moral rules from exploration versus externally shaped identity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When online norms become moral rules.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m30-l4",
+              "title": "Evidence investigation: When online norms become moral rules",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When online norms become moral rules.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m30-l5",
+              "title": "Design a response to When online norms become moral rules",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When online norms become moral rules.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m30-l6",
+              "title": "Transfer challenge: When online norms become moral rules",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When online norms become moral rules.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-book-7",
+      "title": "Platform persuasion",
+      "distinction": "information versus advertising",
+      "modules": [
+        {
+          "id": "social-media-module-31",
+          "title": "Native ads and undisclosed sponsorship",
+          "problem": "Native ads and undisclosed sponsorship",
+          "lessons": [
+            {
+              "id": "social-media-m31-l1",
+              "title": "Case file: Native ads and undisclosed sponsorship",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Native ads and undisclosed sponsorship.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m31-l2",
+              "title": "Trace the mechanisms of Native ads and undisclosed sponsorship",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Native ads and undisclosed sponsorship.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m31-l3",
+              "title": "Distinguish Native ads and undisclosed sponsorship from information versus advertising",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Native ads and undisclosed sponsorship.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m31-l4",
+              "title": "Evidence investigation: Native ads and undisclosed sponsorship",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Native ads and undisclosed sponsorship.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m31-l5",
+              "title": "Design a response to Native ads and undisclosed sponsorship",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Native ads and undisclosed sponsorship.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m31-l6",
+              "title": "Transfer challenge: Native ads and undisclosed sponsorship",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Native ads and undisclosed sponsorship.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-32",
+          "title": "Dark patterns in privacy choices",
+          "problem": "Dark patterns in privacy choices",
+          "lessons": [
+            {
+              "id": "social-media-m32-l1",
+              "title": "Case file: Dark patterns in privacy choices",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Dark patterns in privacy choices.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m32-l2",
+              "title": "Trace the mechanisms of Dark patterns in privacy choices",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Dark patterns in privacy choices.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m32-l3",
+              "title": "Distinguish Dark patterns in privacy choices from information versus advertising",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Dark patterns in privacy choices.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m32-l4",
+              "title": "Evidence investigation: Dark patterns in privacy choices",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Dark patterns in privacy choices.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m32-l5",
+              "title": "Design a response to Dark patterns in privacy choices",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Dark patterns in privacy choices.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m32-l6",
+              "title": "Transfer challenge: Dark patterns in privacy choices",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Dark patterns in privacy choices.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-33",
+          "title": "Scarcity offers and monetised anxiety",
+          "problem": "Scarcity offers and monetised anxiety",
+          "lessons": [
+            {
+              "id": "social-media-m33-l1",
+              "title": "Case file: Scarcity offers and monetised anxiety",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Scarcity offers and monetised anxiety.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m33-l2",
+              "title": "Trace the mechanisms of Scarcity offers and monetised anxiety",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Scarcity offers and monetised anxiety.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m33-l3",
+              "title": "Distinguish Scarcity offers and monetised anxiety from information versus advertising",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Scarcity offers and monetised anxiety.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m33-l4",
+              "title": "Evidence investigation: Scarcity offers and monetised anxiety",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Scarcity offers and monetised anxiety.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m33-l5",
+              "title": "Design a response to Scarcity offers and monetised anxiety",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Scarcity offers and monetised anxiety.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m33-l6",
+              "title": "Transfer challenge: Scarcity offers and monetised anxiety",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Scarcity offers and monetised anxiety.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-34",
+          "title": "Gaming and social features that retain users",
+          "problem": "Gaming and social features that retain users",
+          "lessons": [
+            {
+              "id": "social-media-m34-l1",
+              "title": "Case file: Gaming and social features that retain users",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Gaming and social features that retain users.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m34-l2",
+              "title": "Trace the mechanisms of Gaming and social features that retain users",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Gaming and social features that retain users.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m34-l3",
+              "title": "Distinguish Gaming and social features that retain users from information versus advertising",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Gaming and social features that retain users.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m34-l4",
+              "title": "Evidence investigation: Gaming and social features that retain users",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Gaming and social features that retain users.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m34-l5",
+              "title": "Design a response to Gaming and social features that retain users",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Gaming and social features that retain users.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m34-l6",
+              "title": "Transfer challenge: Gaming and social features that retain users",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Gaming and social features that retain users.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-35",
+          "title": "Child and adolescent vulnerability",
+          "problem": "Child and adolescent vulnerability",
+          "lessons": [
+            {
+              "id": "social-media-m35-l1",
+              "title": "Case file: Child and adolescent vulnerability",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Child and adolescent vulnerability.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m35-l2",
+              "title": "Trace the mechanisms of Child and adolescent vulnerability",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Child and adolescent vulnerability.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m35-l3",
+              "title": "Distinguish Child and adolescent vulnerability from information versus advertising",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Child and adolescent vulnerability.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m35-l4",
+              "title": "Evidence investigation: Child and adolescent vulnerability",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Child and adolescent vulnerability.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m35-l5",
+              "title": "Design a response to Child and adolescent vulnerability",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Child and adolescent vulnerability.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m35-l6",
+              "title": "Transfer challenge: Child and adolescent vulnerability",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Child and adolescent vulnerability.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-book-8",
+      "title": "Designing a deliberate digital life",
+      "distinction": "restriction versus agency",
+      "modules": [
+        {
+          "id": "social-media-module-36",
+          "title": "Changing notification architecture",
+          "problem": "Changing notification architecture",
+          "lessons": [
+            {
+              "id": "social-media-m36-l1",
+              "title": "Case file: Changing notification architecture",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Changing notification architecture.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m36-l2",
+              "title": "Trace the mechanisms of Changing notification architecture",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Changing notification architecture.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m36-l3",
+              "title": "Distinguish Changing notification architecture from restriction versus agency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Changing notification architecture.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m36-l4",
+              "title": "Evidence investigation: Changing notification architecture",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Changing notification architecture.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m36-l5",
+              "title": "Design a response to Changing notification architecture",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Changing notification architecture.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m36-l6",
+              "title": "Transfer challenge: Changing notification architecture",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Changing notification architecture.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-37",
+          "title": "Friction around unwanted checks",
+          "problem": "Friction around unwanted checks",
+          "lessons": [
+            {
+              "id": "social-media-m37-l1",
+              "title": "Case file: Friction around unwanted checks",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Friction around unwanted checks.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m37-l2",
+              "title": "Trace the mechanisms of Friction around unwanted checks",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Friction around unwanted checks.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m37-l3",
+              "title": "Distinguish Friction around unwanted checks from restriction versus agency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Friction around unwanted checks.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m37-l4",
+              "title": "Evidence investigation: Friction around unwanted checks",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Friction around unwanted checks.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m37-l5",
+              "title": "Design a response to Friction around unwanted checks",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Friction around unwanted checks.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m37-l6",
+              "title": "Transfer challenge: Friction around unwanted checks",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Friction around unwanted checks.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-38",
+          "title": "Replacing a feed with chosen sources",
+          "problem": "Replacing a feed with chosen sources",
+          "lessons": [
+            {
+              "id": "social-media-m38-l1",
+              "title": "Case file: Replacing a feed with chosen sources",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Replacing a feed with chosen sources.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m38-l2",
+              "title": "Trace the mechanisms of Replacing a feed with chosen sources",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Replacing a feed with chosen sources.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m38-l3",
+              "title": "Distinguish Replacing a feed with chosen sources from restriction versus agency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Replacing a feed with chosen sources.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m38-l4",
+              "title": "Evidence investigation: Replacing a feed with chosen sources",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Replacing a feed with chosen sources.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m38-l5",
+              "title": "Design a response to Replacing a feed with chosen sources",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Replacing a feed with chosen sources.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m38-l6",
+              "title": "Transfer challenge: Replacing a feed with chosen sources",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Replacing a feed with chosen sources.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-39",
+          "title": "Using social media for real goals",
+          "problem": "Using social media for real goals",
+          "lessons": [
+            {
+              "id": "social-media-m39-l1",
+              "title": "Case file: Using social media for real goals",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Using social media for real goals.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m39-l2",
+              "title": "Trace the mechanisms of Using social media for real goals",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Using social media for real goals.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m39-l3",
+              "title": "Distinguish Using social media for real goals from restriction versus agency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Using social media for real goals.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m39-l4",
+              "title": "Evidence investigation: Using social media for real goals",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Using social media for real goals.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m39-l5",
+              "title": "Design a response to Using social media for real goals",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Using social media for real goals.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m39-l6",
+              "title": "Transfer challenge: Using social media for real goals",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Using social media for real goals.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-40",
+          "title": "Flexible boundaries without moral panic",
+          "problem": "Flexible boundaries without moral panic",
+          "lessons": [
+            {
+              "id": "social-media-m40-l1",
+              "title": "Case file: Flexible boundaries without moral panic",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Flexible boundaries without moral panic.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m40-l2",
+              "title": "Trace the mechanisms of Flexible boundaries without moral panic",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Flexible boundaries without moral panic.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m40-l3",
+              "title": "Distinguish Flexible boundaries without moral panic from restriction versus agency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Flexible boundaries without moral panic.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m40-l4",
+              "title": "Evidence investigation: Flexible boundaries without moral panic",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Flexible boundaries without moral panic.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m40-l5",
+              "title": "Design a response to Flexible boundaries without moral panic",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Flexible boundaries without moral panic.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m40-l6",
+              "title": "Transfer challenge: Flexible boundaries without moral panic",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Flexible boundaries without moral panic.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-book-9",
+      "title": "Governance and justice",
+      "distinction": "individual habit versus market power",
+      "modules": [
+        {
+          "id": "social-media-module-41",
+          "title": "Data collection and informed consent",
+          "problem": "Data collection and informed consent",
+          "lessons": [
+            {
+              "id": "social-media-m41-l1",
+              "title": "Case file: Data collection and informed consent",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Data collection and informed consent.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m41-l2",
+              "title": "Trace the mechanisms of Data collection and informed consent",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Data collection and informed consent.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m41-l3",
+              "title": "Distinguish Data collection and informed consent from individual habit versus market power",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Data collection and informed consent.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m41-l4",
+              "title": "Evidence investigation: Data collection and informed consent",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Data collection and informed consent.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m41-l5",
+              "title": "Design a response to Data collection and informed consent",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Data collection and informed consent.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m41-l6",
+              "title": "Transfer challenge: Data collection and informed consent",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Data collection and informed consent.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-42",
+          "title": "Algorithmic discrimination",
+          "problem": "Algorithmic discrimination",
+          "lessons": [
+            {
+              "id": "social-media-m42-l1",
+              "title": "Case file: Algorithmic discrimination",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Algorithmic discrimination.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m42-l2",
+              "title": "Trace the mechanisms of Algorithmic discrimination",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Algorithmic discrimination.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m42-l3",
+              "title": "Distinguish Algorithmic discrimination from individual habit versus market power",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Algorithmic discrimination.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m42-l4",
+              "title": "Evidence investigation: Algorithmic discrimination",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Algorithmic discrimination.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m42-l5",
+              "title": "Design a response to Algorithmic discrimination",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Algorithmic discrimination.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m42-l6",
+              "title": "Transfer challenge: Algorithmic discrimination",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Algorithmic discrimination.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-43",
+          "title": "Moderation and freedom of expression",
+          "problem": "Moderation and freedom of expression",
+          "lessons": [
+            {
+              "id": "social-media-m43-l1",
+              "title": "Case file: Moderation and freedom of expression",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Moderation and freedom of expression.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m43-l2",
+              "title": "Trace the mechanisms of Moderation and freedom of expression",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Moderation and freedom of expression.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m43-l3",
+              "title": "Distinguish Moderation and freedom of expression from individual habit versus market power",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Moderation and freedom of expression.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m43-l4",
+              "title": "Evidence investigation: Moderation and freedom of expression",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Moderation and freedom of expression.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m43-l5",
+              "title": "Design a response to Moderation and freedom of expression",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Moderation and freedom of expression.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m43-l6",
+              "title": "Transfer challenge: Moderation and freedom of expression",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Moderation and freedom of expression.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-44",
+          "title": "Age-appropriate platform design",
+          "problem": "Age-appropriate platform design",
+          "lessons": [
+            {
+              "id": "social-media-m44-l1",
+              "title": "Case file: Age-appropriate platform design",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Age-appropriate platform design.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m44-l2",
+              "title": "Trace the mechanisms of Age-appropriate platform design",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Age-appropriate platform design.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m44-l3",
+              "title": "Distinguish Age-appropriate platform design from individual habit versus market power",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Age-appropriate platform design.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m44-l4",
+              "title": "Evidence investigation: Age-appropriate platform design",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Age-appropriate platform design.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m44-l5",
+              "title": "Design a response to Age-appropriate platform design",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Age-appropriate platform design.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m44-l6",
+              "title": "Transfer challenge: Age-appropriate platform design",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Age-appropriate platform design.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-45",
+          "title": "Regulation versus user responsibility",
+          "problem": "Regulation versus user responsibility",
+          "lessons": [
+            {
+              "id": "social-media-m45-l1",
+              "title": "Case file: Regulation versus user responsibility",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Regulation versus user responsibility.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m45-l2",
+              "title": "Trace the mechanisms of Regulation versus user responsibility",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Regulation versus user responsibility.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m45-l3",
+              "title": "Distinguish Regulation versus user responsibility from individual habit versus market power",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Regulation versus user responsibility.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m45-l4",
+              "title": "Evidence investigation: Regulation versus user responsibility",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Regulation versus user responsibility.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m45-l5",
+              "title": "Design a response to Regulation versus user responsibility",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Regulation versus user responsibility.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m45-l6",
+              "title": "Transfer challenge: Regulation versus user responsibility",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Regulation versus user responsibility.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-media-book-10",
+      "title": "Advanced attention literacy",
+      "distinction": "correlation versus causation",
+      "modules": [
+        {
+          "id": "social-media-module-46",
+          "title": "Interpreting research on screen time",
+          "problem": "Interpreting research on screen time",
+          "lessons": [
+            {
+              "id": "social-media-m46-l1",
+              "title": "Case file: Interpreting research on screen time",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Interpreting research on screen time.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m46-l2",
+              "title": "Trace the mechanisms of Interpreting research on screen time",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Interpreting research on screen time.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m46-l3",
+              "title": "Distinguish Interpreting research on screen time from correlation versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Interpreting research on screen time.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m46-l4",
+              "title": "Evidence investigation: Interpreting research on screen time",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Interpreting research on screen time.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m46-l5",
+              "title": "Design a response to Interpreting research on screen time",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Interpreting research on screen time.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m46-l6",
+              "title": "Transfer challenge: Interpreting research on screen time",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Interpreting research on screen time.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-47",
+          "title": "Digital harm versus moral panic",
+          "problem": "Digital harm versus moral panic",
+          "lessons": [
+            {
+              "id": "social-media-m47-l1",
+              "title": "Case file: Digital harm versus moral panic",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Digital harm versus moral panic.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m47-l2",
+              "title": "Trace the mechanisms of Digital harm versus moral panic",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Digital harm versus moral panic.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m47-l3",
+              "title": "Distinguish Digital harm versus moral panic from correlation versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Digital harm versus moral panic.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m47-l4",
+              "title": "Evidence investigation: Digital harm versus moral panic",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Digital harm versus moral panic.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m47-l5",
+              "title": "Design a response to Digital harm versus moral panic",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Digital harm versus moral panic.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m47-l6",
+              "title": "Transfer challenge: Digital harm versus moral panic",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Digital harm versus moral panic.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-48",
+          "title": "Competing platform incentives",
+          "problem": "Competing platform incentives",
+          "lessons": [
+            {
+              "id": "social-media-m48-l1",
+              "title": "Case file: Competing platform incentives",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Competing platform incentives.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m48-l2",
+              "title": "Trace the mechanisms of Competing platform incentives",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Competing platform incentives.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m48-l3",
+              "title": "Distinguish Competing platform incentives from correlation versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Competing platform incentives.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m48-l4",
+              "title": "Evidence investigation: Competing platform incentives",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Competing platform incentives.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m48-l5",
+              "title": "Design a response to Competing platform incentives",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Competing platform incentives.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m48-l6",
+              "title": "Transfer challenge: Competing platform incentives",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Competing platform incentives.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-49",
+          "title": "Design an ethical feed experiment",
+          "problem": "Design an ethical feed experiment",
+          "lessons": [
+            {
+              "id": "social-media-m49-l1",
+              "title": "Case file: Design an ethical feed experiment",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Design an ethical feed experiment.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m49-l2",
+              "title": "Trace the mechanisms of Design an ethical feed experiment",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Design an ethical feed experiment.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m49-l3",
+              "title": "Distinguish Design an ethical feed experiment from correlation versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Design an ethical feed experiment.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m49-l4",
+              "title": "Evidence investigation: Design an ethical feed experiment",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Design an ethical feed experiment.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m49-l5",
+              "title": "Design a response to Design an ethical feed experiment",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Design an ethical feed experiment.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m49-l6",
+              "title": "Transfer challenge: Design an ethical feed experiment",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Design an ethical feed experiment.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "social-media-module-50",
+          "title": "Integrated mission: reclaim deliberate attention",
+          "problem": "Integrated mission: reclaim deliberate attention",
+          "lessons": [
+            {
+              "id": "social-media-m50-l1",
+              "title": "Case file: Integrated mission: reclaim deliberate attention",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Integrated mission: reclaim deliberate attention.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m50-l2",
+              "title": "Trace the mechanisms of Integrated mission: reclaim deliberate attention",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Integrated mission: reclaim deliberate attention.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m50-l3",
+              "title": "Distinguish Integrated mission: reclaim deliberate attention from correlation versus causation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Integrated mission: reclaim deliberate attention.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m50-l4",
+              "title": "Evidence investigation: Integrated mission: reclaim deliberate attention",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Integrated mission: reclaim deliberate attention.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m50-l5",
+              "title": "Design a response to Integrated mission: reclaim deliberate attention",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Integrated mission: reclaim deliberate attention.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "social-media-m50-l6",
+              "title": "Transfer challenge: Integrated mission: reclaim deliberate attention",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Integrated mission: reclaim deliberate attention.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

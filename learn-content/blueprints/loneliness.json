@@ -1,0 +1,2828 @@
+{
+  "courseId": "loneliness",
+  "version": 1,
+  "status": "editorial-outline",
+  "intendedUse": "Curriculum map only; all lesson content and interactive nodes must be authored and reviewed before publication.",
+  "books": [
+    {
+      "id": "loneliness-book-1",
+      "title": "Loneliness versus isolation",
+      "distinction": "felt connection versus contact count",
+      "modules": [
+        {
+          "id": "loneliness-module-01",
+          "title": "Being surrounded yet feeling alone",
+          "problem": "Being surrounded yet feeling alone",
+          "lessons": [
+            {
+              "id": "loneliness-m1-l1",
+              "title": "Case file: Being surrounded yet feeling alone",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Being surrounded yet feeling alone.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m1-l2",
+              "title": "Trace the mechanisms of Being surrounded yet feeling alone",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Being surrounded yet feeling alone.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m1-l3",
+              "title": "Distinguish Being surrounded yet feeling alone from felt connection versus contact count",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Being surrounded yet feeling alone.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m1-l4",
+              "title": "Evidence investigation: Being surrounded yet feeling alone",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Being surrounded yet feeling alone.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m1-l5",
+              "title": "Design a response to Being surrounded yet feeling alone",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Being surrounded yet feeling alone.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m1-l6",
+              "title": "Transfer challenge: Being surrounded yet feeling alone",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Being surrounded yet feeling alone.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-02",
+          "title": "Solitude that restores rather than hurts",
+          "problem": "Solitude that restores rather than hurts",
+          "lessons": [
+            {
+              "id": "loneliness-m2-l1",
+              "title": "Case file: Solitude that restores rather than hurts",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Solitude that restores rather than hurts.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m2-l2",
+              "title": "Trace the mechanisms of Solitude that restores rather than hurts",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Solitude that restores rather than hurts.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m2-l3",
+              "title": "Distinguish Solitude that restores rather than hurts from felt connection versus contact count",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Solitude that restores rather than hurts.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m2-l4",
+              "title": "Evidence investigation: Solitude that restores rather than hurts",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Solitude that restores rather than hurts.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m2-l5",
+              "title": "Design a response to Solitude that restores rather than hurts",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Solitude that restores rather than hurts.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m2-l6",
+              "title": "Transfer challenge: Solitude that restores rather than hurts",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Solitude that restores rather than hurts.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-03",
+          "title": "Frequency versus quality of friendships",
+          "problem": "Frequency versus quality of friendships",
+          "lessons": [
+            {
+              "id": "loneliness-m3-l1",
+              "title": "Case file: Frequency versus quality of friendships",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Frequency versus quality of friendships.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m3-l2",
+              "title": "Trace the mechanisms of Frequency versus quality of friendships",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Frequency versus quality of friendships.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m3-l3",
+              "title": "Distinguish Frequency versus quality of friendships from felt connection versus contact count",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Frequency versus quality of friendships.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m3-l4",
+              "title": "Evidence investigation: Frequency versus quality of friendships",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Frequency versus quality of friendships.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m3-l5",
+              "title": "Design a response to Frequency versus quality of friendships",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Frequency versus quality of friendships.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m3-l6",
+              "title": "Transfer challenge: Frequency versus quality of friendships",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Frequency versus quality of friendships.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-04",
+          "title": "Loneliness after moving city",
+          "problem": "Loneliness after moving city",
+          "lessons": [
+            {
+              "id": "loneliness-m4-l1",
+              "title": "Case file: Loneliness after moving city",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Loneliness after moving city.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m4-l2",
+              "title": "Trace the mechanisms of Loneliness after moving city",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Loneliness after moving city.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m4-l3",
+              "title": "Distinguish Loneliness after moving city from felt connection versus contact count",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Loneliness after moving city.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m4-l4",
+              "title": "Evidence investigation: Loneliness after moving city",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Loneliness after moving city.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m4-l5",
+              "title": "Design a response to Loneliness after moving city",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Loneliness after moving city.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m4-l6",
+              "title": "Transfer challenge: Loneliness after moving city",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Loneliness after moving city.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-05",
+          "title": "Why shame keeps people silent",
+          "problem": "Why shame keeps people silent",
+          "lessons": [
+            {
+              "id": "loneliness-m5-l1",
+              "title": "Case file: Why shame keeps people silent",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Why shame keeps people silent.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m5-l2",
+              "title": "Trace the mechanisms of Why shame keeps people silent",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Why shame keeps people silent.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m5-l3",
+              "title": "Distinguish Why shame keeps people silent from felt connection versus contact count",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Why shame keeps people silent.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m5-l4",
+              "title": "Evidence investigation: Why shame keeps people silent",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Why shame keeps people silent.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m5-l5",
+              "title": "Design a response to Why shame keeps people silent",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Why shame keeps people silent.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m5-l6",
+              "title": "Transfer challenge: Why shame keeps people silent",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Why shame keeps people silent.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-book-2",
+      "title": "How belonging is built",
+      "distinction": "approval versus mutual connection",
+      "modules": [
+        {
+          "id": "loneliness-module-06",
+          "title": "Repeated low-pressure contact",
+          "problem": "Repeated low-pressure contact",
+          "lessons": [
+            {
+              "id": "loneliness-m6-l1",
+              "title": "Case file: Repeated low-pressure contact",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Repeated low-pressure contact.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m6-l2",
+              "title": "Trace the mechanisms of Repeated low-pressure contact",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Repeated low-pressure contact.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m6-l3",
+              "title": "Distinguish Repeated low-pressure contact from approval versus mutual connection",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Repeated low-pressure contact.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m6-l4",
+              "title": "Evidence investigation: Repeated low-pressure contact",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Repeated low-pressure contact.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m6-l5",
+              "title": "Design a response to Repeated low-pressure contact",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Repeated low-pressure contact.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m6-l6",
+              "title": "Transfer challenge: Repeated low-pressure contact",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Repeated low-pressure contact.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-07",
+          "title": "Shared purpose and group identity",
+          "problem": "Shared purpose and group identity",
+          "lessons": [
+            {
+              "id": "loneliness-m7-l1",
+              "title": "Case file: Shared purpose and group identity",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Shared purpose and group identity.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m7-l2",
+              "title": "Trace the mechanisms of Shared purpose and group identity",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Shared purpose and group identity.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m7-l3",
+              "title": "Distinguish Shared purpose and group identity from approval versus mutual connection",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Shared purpose and group identity.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m7-l4",
+              "title": "Evidence investigation: Shared purpose and group identity",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Shared purpose and group identity.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m7-l5",
+              "title": "Design a response to Shared purpose and group identity",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Shared purpose and group identity.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m7-l6",
+              "title": "Transfer challenge: Shared purpose and group identity",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Shared purpose and group identity.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-08",
+          "title": "Trust earned through small interactions",
+          "problem": "Trust earned through small interactions",
+          "lessons": [
+            {
+              "id": "loneliness-m8-l1",
+              "title": "Case file: Trust earned through small interactions",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Trust earned through small interactions.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m8-l2",
+              "title": "Trace the mechanisms of Trust earned through small interactions",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Trust earned through small interactions.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m8-l3",
+              "title": "Distinguish Trust earned through small interactions from approval versus mutual connection",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Trust earned through small interactions.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m8-l4",
+              "title": "Evidence investigation: Trust earned through small interactions",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Trust earned through small interactions.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m8-l5",
+              "title": "Design a response to Trust earned through small interactions",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Trust earned through small interactions.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m8-l6",
+              "title": "Transfer challenge: Trust earned through small interactions",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Trust earned through small interactions.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-09",
+          "title": "Reciprocity without scorekeeping",
+          "problem": "Reciprocity without scorekeeping",
+          "lessons": [
+            {
+              "id": "loneliness-m9-l1",
+              "title": "Case file: Reciprocity without scorekeeping",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Reciprocity without scorekeeping.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m9-l2",
+              "title": "Trace the mechanisms of Reciprocity without scorekeeping",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Reciprocity without scorekeeping.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m9-l3",
+              "title": "Distinguish Reciprocity without scorekeeping from approval versus mutual connection",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Reciprocity without scorekeeping.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m9-l4",
+              "title": "Evidence investigation: Reciprocity without scorekeeping",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Reciprocity without scorekeeping.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m9-l5",
+              "title": "Design a response to Reciprocity without scorekeeping",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Reciprocity without scorekeeping.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m9-l6",
+              "title": "Transfer challenge: Reciprocity without scorekeeping",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Reciprocity without scorekeeping.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-10",
+          "title": "Feeling included but not understood",
+          "problem": "Feeling included but not understood",
+          "lessons": [
+            {
+              "id": "loneliness-m10-l1",
+              "title": "Case file: Feeling included but not understood",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Feeling included but not understood.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m10-l2",
+              "title": "Trace the mechanisms of Feeling included but not understood",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Feeling included but not understood.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m10-l3",
+              "title": "Distinguish Feeling included but not understood from approval versus mutual connection",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Feeling included but not understood.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m10-l4",
+              "title": "Evidence investigation: Feeling included but not understood",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Feeling included but not understood.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m10-l5",
+              "title": "Design a response to Feeling included but not understood",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Feeling included but not understood.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m10-l6",
+              "title": "Transfer challenge: Feeling included but not understood",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Feeling included but not understood.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-book-3",
+      "title": "Rejection sensitivity",
+      "distinction": "signal versus expectation",
+      "modules": [
+        {
+          "id": "loneliness-module-11",
+          "title": "An unanswered message feels like rejection",
+          "problem": "An unanswered message feels like rejection",
+          "lessons": [
+            {
+              "id": "loneliness-m11-l1",
+              "title": "Case file: An unanswered message feels like rejection",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: An unanswered message feels like rejection.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m11-l2",
+              "title": "Trace the mechanisms of An unanswered message feels like rejection",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: An unanswered message feels like rejection.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m11-l3",
+              "title": "Distinguish An unanswered message feels like rejection from signal versus expectation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: An unanswered message feels like rejection.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m11-l4",
+              "title": "Evidence investigation: An unanswered message feels like rejection",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: An unanswered message feels like rejection.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m11-l5",
+              "title": "Design a response to An unanswered message feels like rejection",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: An unanswered message feels like rejection.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m11-l6",
+              "title": "Transfer challenge: An unanswered message feels like rejection",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: An unanswered message feels like rejection.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-12",
+          "title": "Neutral cues interpreted as exclusion",
+          "problem": "Neutral cues interpreted as exclusion",
+          "lessons": [
+            {
+              "id": "loneliness-m12-l1",
+              "title": "Case file: Neutral cues interpreted as exclusion",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Neutral cues interpreted as exclusion.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m12-l2",
+              "title": "Trace the mechanisms of Neutral cues interpreted as exclusion",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Neutral cues interpreted as exclusion.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m12-l3",
+              "title": "Distinguish Neutral cues interpreted as exclusion from signal versus expectation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Neutral cues interpreted as exclusion.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m12-l4",
+              "title": "Evidence investigation: Neutral cues interpreted as exclusion",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Neutral cues interpreted as exclusion.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m12-l5",
+              "title": "Design a response to Neutral cues interpreted as exclusion",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Neutral cues interpreted as exclusion.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m12-l6",
+              "title": "Transfer challenge: Neutral cues interpreted as exclusion",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Neutral cues interpreted as exclusion.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-13",
+          "title": "Withdrawing before others can leave",
+          "problem": "Withdrawing before others can leave",
+          "lessons": [
+            {
+              "id": "loneliness-m13-l1",
+              "title": "Case file: Withdrawing before others can leave",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Withdrawing before others can leave.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m13-l2",
+              "title": "Trace the mechanisms of Withdrawing before others can leave",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Withdrawing before others can leave.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m13-l3",
+              "title": "Distinguish Withdrawing before others can leave from signal versus expectation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Withdrawing before others can leave.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m13-l4",
+              "title": "Evidence investigation: Withdrawing before others can leave",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Withdrawing before others can leave.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m13-l5",
+              "title": "Design a response to Withdrawing before others can leave",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Withdrawing before others can leave.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m13-l6",
+              "title": "Transfer challenge: Withdrawing before others can leave",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Withdrawing before others can leave.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-14",
+          "title": "Reassurance loops in friendships",
+          "problem": "Reassurance loops in friendships",
+          "lessons": [
+            {
+              "id": "loneliness-m14-l1",
+              "title": "Case file: Reassurance loops in friendships",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Reassurance loops in friendships.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m14-l2",
+              "title": "Trace the mechanisms of Reassurance loops in friendships",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Reassurance loops in friendships.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m14-l3",
+              "title": "Distinguish Reassurance loops in friendships from signal versus expectation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Reassurance loops in friendships.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m14-l4",
+              "title": "Evidence investigation: Reassurance loops in friendships",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Reassurance loops in friendships.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m14-l5",
+              "title": "Design a response to Reassurance loops in friendships",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Reassurance loops in friendships.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m14-l6",
+              "title": "Transfer challenge: Reassurance loops in friendships",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Reassurance loops in friendships.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-15",
+          "title": "When exclusion is actually happening",
+          "problem": "When exclusion is actually happening",
+          "lessons": [
+            {
+              "id": "loneliness-m15-l1",
+              "title": "Case file: When exclusion is actually happening",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When exclusion is actually happening.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m15-l2",
+              "title": "Trace the mechanisms of When exclusion is actually happening",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When exclusion is actually happening.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m15-l3",
+              "title": "Distinguish When exclusion is actually happening from signal versus expectation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When exclusion is actually happening.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m15-l4",
+              "title": "Evidence investigation: When exclusion is actually happening",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When exclusion is actually happening.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m15-l5",
+              "title": "Design a response to When exclusion is actually happening",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When exclusion is actually happening.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m15-l6",
+              "title": "Transfer challenge: When exclusion is actually happening",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When exclusion is actually happening.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-book-4",
+      "title": "Making and sustaining friends",
+      "distinction": "social skill versus opportunity",
+      "modules": [
+        {
+          "id": "loneliness-module-16",
+          "title": "Initiating without a perfect opening",
+          "problem": "Initiating without a perfect opening",
+          "lessons": [
+            {
+              "id": "loneliness-m16-l1",
+              "title": "Case file: Initiating without a perfect opening",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Initiating without a perfect opening.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m16-l2",
+              "title": "Trace the mechanisms of Initiating without a perfect opening",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Initiating without a perfect opening.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m16-l3",
+              "title": "Distinguish Initiating without a perfect opening from social skill versus opportunity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Initiating without a perfect opening.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m16-l4",
+              "title": "Evidence investigation: Initiating without a perfect opening",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Initiating without a perfect opening.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m16-l5",
+              "title": "Design a response to Initiating without a perfect opening",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Initiating without a perfect opening.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m16-l6",
+              "title": "Transfer challenge: Initiating without a perfect opening",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Initiating without a perfect opening.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-17",
+          "title": "Turning acquaintances into friends",
+          "problem": "Turning acquaintances into friends",
+          "lessons": [
+            {
+              "id": "loneliness-m17-l1",
+              "title": "Case file: Turning acquaintances into friends",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Turning acquaintances into friends.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m17-l2",
+              "title": "Trace the mechanisms of Turning acquaintances into friends",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Turning acquaintances into friends.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m17-l3",
+              "title": "Distinguish Turning acquaintances into friends from social skill versus opportunity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Turning acquaintances into friends.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m17-l4",
+              "title": "Evidence investigation: Turning acquaintances into friends",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Turning acquaintances into friends.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m17-l5",
+              "title": "Design a response to Turning acquaintances into friends",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Turning acquaintances into friends.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m17-l6",
+              "title": "Transfer challenge: Turning acquaintances into friends",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Turning acquaintances into friends.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-18",
+          "title": "Inviting someone without overinvesting",
+          "problem": "Inviting someone without overinvesting",
+          "lessons": [
+            {
+              "id": "loneliness-m18-l1",
+              "title": "Case file: Inviting someone without overinvesting",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Inviting someone without overinvesting.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m18-l2",
+              "title": "Trace the mechanisms of Inviting someone without overinvesting",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Inviting someone without overinvesting.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m18-l3",
+              "title": "Distinguish Inviting someone without overinvesting from social skill versus opportunity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Inviting someone without overinvesting.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m18-l4",
+              "title": "Evidence investigation: Inviting someone without overinvesting",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Inviting someone without overinvesting.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m18-l5",
+              "title": "Design a response to Inviting someone without overinvesting",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Inviting someone without overinvesting.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m18-l6",
+              "title": "Transfer challenge: Inviting someone without overinvesting",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Inviting someone without overinvesting.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-19",
+          "title": "Repairing after awkward encounters",
+          "problem": "Repairing after awkward encounters",
+          "lessons": [
+            {
+              "id": "loneliness-m19-l1",
+              "title": "Case file: Repairing after awkward encounters",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Repairing after awkward encounters.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m19-l2",
+              "title": "Trace the mechanisms of Repairing after awkward encounters",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Repairing after awkward encounters.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m19-l3",
+              "title": "Distinguish Repairing after awkward encounters from social skill versus opportunity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Repairing after awkward encounters.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m19-l4",
+              "title": "Evidence investigation: Repairing after awkward encounters",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Repairing after awkward encounters.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m19-l5",
+              "title": "Design a response to Repairing after awkward encounters",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Repairing after awkward encounters.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m19-l6",
+              "title": "Transfer challenge: Repairing after awkward encounters",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Repairing after awkward encounters.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-20",
+          "title": "Recognising one-sided friendships",
+          "problem": "Recognising one-sided friendships",
+          "lessons": [
+            {
+              "id": "loneliness-m20-l1",
+              "title": "Case file: Recognising one-sided friendships",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Recognising one-sided friendships.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m20-l2",
+              "title": "Trace the mechanisms of Recognising one-sided friendships",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Recognising one-sided friendships.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m20-l3",
+              "title": "Distinguish Recognising one-sided friendships from social skill versus opportunity",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Recognising one-sided friendships.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m20-l4",
+              "title": "Evidence investigation: Recognising one-sided friendships",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Recognising one-sided friendships.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m20-l5",
+              "title": "Design a response to Recognising one-sided friendships",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Recognising one-sided friendships.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m20-l6",
+              "title": "Transfer challenge: Recognising one-sided friendships",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Recognising one-sided friendships.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-book-5",
+      "title": "Identity and authenticity",
+      "distinction": "acceptance versus performance",
+      "modules": [
+        {
+          "id": "loneliness-module-21",
+          "title": "Masking to avoid social penalties",
+          "problem": "Masking to avoid social penalties",
+          "lessons": [
+            {
+              "id": "loneliness-m21-l1",
+              "title": "Case file: Masking to avoid social penalties",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Masking to avoid social penalties.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m21-l2",
+              "title": "Trace the mechanisms of Masking to avoid social penalties",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Masking to avoid social penalties.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m21-l3",
+              "title": "Distinguish Masking to avoid social penalties from acceptance versus performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Masking to avoid social penalties.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m21-l4",
+              "title": "Evidence investigation: Masking to avoid social penalties",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Masking to avoid social penalties.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m21-l5",
+              "title": "Design a response to Masking to avoid social penalties",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Masking to avoid social penalties.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m21-l6",
+              "title": "Transfer challenge: Masking to avoid social penalties",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Masking to avoid social penalties.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-22",
+          "title": "Outgrowing a friendship circle",
+          "problem": "Outgrowing a friendship circle",
+          "lessons": [
+            {
+              "id": "loneliness-m22-l1",
+              "title": "Case file: Outgrowing a friendship circle",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Outgrowing a friendship circle.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m22-l2",
+              "title": "Trace the mechanisms of Outgrowing a friendship circle",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Outgrowing a friendship circle.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m22-l3",
+              "title": "Distinguish Outgrowing a friendship circle from acceptance versus performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Outgrowing a friendship circle.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m22-l4",
+              "title": "Evidence investigation: Outgrowing a friendship circle",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Outgrowing a friendship circle.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m22-l5",
+              "title": "Design a response to Outgrowing a friendship circle",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Outgrowing a friendship circle.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m22-l6",
+              "title": "Transfer challenge: Outgrowing a friendship circle",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Outgrowing a friendship circle.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-23",
+          "title": "Finding community around interests",
+          "problem": "Finding community around interests",
+          "lessons": [
+            {
+              "id": "loneliness-m23-l1",
+              "title": "Case file: Finding community around interests",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Finding community around interests.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m23-l2",
+              "title": "Trace the mechanisms of Finding community around interests",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Finding community around interests.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m23-l3",
+              "title": "Distinguish Finding community around interests from acceptance versus performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Finding community around interests.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m23-l4",
+              "title": "Evidence investigation: Finding community around interests",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Finding community around interests.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m23-l5",
+              "title": "Design a response to Finding community around interests",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Finding community around interests.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m23-l6",
+              "title": "Transfer challenge: Finding community around interests",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Finding community around interests.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-24",
+          "title": "Belonging across differing values",
+          "problem": "Belonging across differing values",
+          "lessons": [
+            {
+              "id": "loneliness-m24-l1",
+              "title": "Case file: Belonging across differing values",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Belonging across differing values.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m24-l2",
+              "title": "Trace the mechanisms of Belonging across differing values",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Belonging across differing values.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m24-l3",
+              "title": "Distinguish Belonging across differing values from acceptance versus performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Belonging across differing values.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m24-l4",
+              "title": "Evidence investigation: Belonging across differing values",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Belonging across differing values.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m24-l5",
+              "title": "Design a response to Belonging across differing values",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Belonging across differing values.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m24-l6",
+              "title": "Transfer challenge: Belonging across differing values",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Belonging across differing values.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-25",
+          "title": "The cost of always being agreeable",
+          "problem": "The cost of always being agreeable",
+          "lessons": [
+            {
+              "id": "loneliness-m25-l1",
+              "title": "Case file: The cost of always being agreeable",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: The cost of always being agreeable.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m25-l2",
+              "title": "Trace the mechanisms of The cost of always being agreeable",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: The cost of always being agreeable.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m25-l3",
+              "title": "Distinguish The cost of always being agreeable from acceptance versus performance",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: The cost of always being agreeable.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m25-l4",
+              "title": "Evidence investigation: The cost of always being agreeable",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: The cost of always being agreeable.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m25-l5",
+              "title": "Design a response to The cost of always being agreeable",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: The cost of always being agreeable.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m25-l6",
+              "title": "Transfer challenge: The cost of always being agreeable",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: The cost of always being agreeable.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-book-6",
+      "title": "Intimacy and relationships",
+      "distinction": "closeness versus dependency",
+      "modules": [
+        {
+          "id": "loneliness-module-26",
+          "title": "Loneliness inside a relationship",
+          "problem": "Loneliness inside a relationship",
+          "lessons": [
+            {
+              "id": "loneliness-m26-l1",
+              "title": "Case file: Loneliness inside a relationship",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Loneliness inside a relationship.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m26-l2",
+              "title": "Trace the mechanisms of Loneliness inside a relationship",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Loneliness inside a relationship.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m26-l3",
+              "title": "Distinguish Loneliness inside a relationship from closeness versus dependency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Loneliness inside a relationship.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m26-l4",
+              "title": "Evidence investigation: Loneliness inside a relationship",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Loneliness inside a relationship.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m26-l5",
+              "title": "Design a response to Loneliness inside a relationship",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Loneliness inside a relationship.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m26-l6",
+              "title": "Transfer challenge: Loneliness inside a relationship",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Loneliness inside a relationship.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-27",
+          "title": "Maintaining friends alongside romance",
+          "problem": "Maintaining friends alongside romance",
+          "lessons": [
+            {
+              "id": "loneliness-m27-l1",
+              "title": "Case file: Maintaining friends alongside romance",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Maintaining friends alongside romance.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m27-l2",
+              "title": "Trace the mechanisms of Maintaining friends alongside romance",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Maintaining friends alongside romance.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m27-l3",
+              "title": "Distinguish Maintaining friends alongside romance from closeness versus dependency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Maintaining friends alongside romance.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m27-l4",
+              "title": "Evidence investigation: Maintaining friends alongside romance",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Maintaining friends alongside romance.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m27-l5",
+              "title": "Design a response to Maintaining friends alongside romance",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Maintaining friends alongside romance.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m27-l6",
+              "title": "Transfer challenge: Maintaining friends alongside romance",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Maintaining friends alongside romance.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-28",
+          "title": "Long-distance friendships and time zones",
+          "problem": "Long-distance friendships and time zones",
+          "lessons": [
+            {
+              "id": "loneliness-m28-l1",
+              "title": "Case file: Long-distance friendships and time zones",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Long-distance friendships and time zones.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m28-l2",
+              "title": "Trace the mechanisms of Long-distance friendships and time zones",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Long-distance friendships and time zones.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m28-l3",
+              "title": "Distinguish Long-distance friendships and time zones from closeness versus dependency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Long-distance friendships and time zones.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m28-l4",
+              "title": "Evidence investigation: Long-distance friendships and time zones",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Long-distance friendships and time zones.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m28-l5",
+              "title": "Design a response to Long-distance friendships and time zones",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Long-distance friendships and time zones.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m28-l6",
+              "title": "Transfer challenge: Long-distance friendships and time zones",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Long-distance friendships and time zones.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-29",
+          "title": "Grief after friendship endings",
+          "problem": "Grief after friendship endings",
+          "lessons": [
+            {
+              "id": "loneliness-m29-l1",
+              "title": "Case file: Grief after friendship endings",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Grief after friendship endings.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m29-l2",
+              "title": "Trace the mechanisms of Grief after friendship endings",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Grief after friendship endings.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m29-l3",
+              "title": "Distinguish Grief after friendship endings from closeness versus dependency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Grief after friendship endings.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m29-l4",
+              "title": "Evidence investigation: Grief after friendship endings",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Grief after friendship endings.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m29-l5",
+              "title": "Design a response to Grief after friendship endings",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Grief after friendship endings.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m29-l6",
+              "title": "Transfer challenge: Grief after friendship endings",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Grief after friendship endings.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-30",
+          "title": "When a partner cannot meet every need",
+          "problem": "When a partner cannot meet every need",
+          "lessons": [
+            {
+              "id": "loneliness-m30-l1",
+              "title": "Case file: When a partner cannot meet every need",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: When a partner cannot meet every need.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m30-l2",
+              "title": "Trace the mechanisms of When a partner cannot meet every need",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: When a partner cannot meet every need.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m30-l3",
+              "title": "Distinguish When a partner cannot meet every need from closeness versus dependency",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: When a partner cannot meet every need.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m30-l4",
+              "title": "Evidence investigation: When a partner cannot meet every need",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: When a partner cannot meet every need.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m30-l5",
+              "title": "Design a response to When a partner cannot meet every need",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: When a partner cannot meet every need.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m30-l6",
+              "title": "Transfer challenge: When a partner cannot meet every need",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: When a partner cannot meet every need.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-book-7",
+      "title": "Technology and connection",
+      "distinction": "connectivity versus belonging",
+      "modules": [
+        {
+          "id": "loneliness-module-31",
+          "title": "Passive scrolling and social comparison",
+          "problem": "Passive scrolling and social comparison",
+          "lessons": [
+            {
+              "id": "loneliness-m31-l1",
+              "title": "Case file: Passive scrolling and social comparison",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Passive scrolling and social comparison.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m31-l2",
+              "title": "Trace the mechanisms of Passive scrolling and social comparison",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Passive scrolling and social comparison.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m31-l3",
+              "title": "Distinguish Passive scrolling and social comparison from connectivity versus belonging",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Passive scrolling and social comparison.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m31-l4",
+              "title": "Evidence investigation: Passive scrolling and social comparison",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Passive scrolling and social comparison.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m31-l5",
+              "title": "Design a response to Passive scrolling and social comparison",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Passive scrolling and social comparison.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m31-l6",
+              "title": "Transfer challenge: Passive scrolling and social comparison",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Passive scrolling and social comparison.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-32",
+          "title": "Group chats that exclude subtly",
+          "problem": "Group chats that exclude subtly",
+          "lessons": [
+            {
+              "id": "loneliness-m32-l1",
+              "title": "Case file: Group chats that exclude subtly",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Group chats that exclude subtly.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m32-l2",
+              "title": "Trace the mechanisms of Group chats that exclude subtly",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Group chats that exclude subtly.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m32-l3",
+              "title": "Distinguish Group chats that exclude subtly from connectivity versus belonging",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Group chats that exclude subtly.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m32-l4",
+              "title": "Evidence investigation: Group chats that exclude subtly",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Group chats that exclude subtly.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m32-l5",
+              "title": "Design a response to Group chats that exclude subtly",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Group chats that exclude subtly.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m32-l6",
+              "title": "Transfer challenge: Group chats that exclude subtly",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Group chats that exclude subtly.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-33",
+          "title": "Online communities and genuine support",
+          "problem": "Online communities and genuine support",
+          "lessons": [
+            {
+              "id": "loneliness-m33-l1",
+              "title": "Case file: Online communities and genuine support",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Online communities and genuine support.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m33-l2",
+              "title": "Trace the mechanisms of Online communities and genuine support",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Online communities and genuine support.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m33-l3",
+              "title": "Distinguish Online communities and genuine support from connectivity versus belonging",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Online communities and genuine support.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m33-l4",
+              "title": "Evidence investigation: Online communities and genuine support",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Online communities and genuine support.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m33-l5",
+              "title": "Design a response to Online communities and genuine support",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Online communities and genuine support.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m33-l6",
+              "title": "Transfer challenge: Online communities and genuine support",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Online communities and genuine support.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-34",
+          "title": "Parasocial relationships and boundaries",
+          "problem": "Parasocial relationships and boundaries",
+          "lessons": [
+            {
+              "id": "loneliness-m34-l1",
+              "title": "Case file: Parasocial relationships and boundaries",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Parasocial relationships and boundaries.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m34-l2",
+              "title": "Trace the mechanisms of Parasocial relationships and boundaries",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Parasocial relationships and boundaries.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m34-l3",
+              "title": "Distinguish Parasocial relationships and boundaries from connectivity versus belonging",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Parasocial relationships and boundaries.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m34-l4",
+              "title": "Evidence investigation: Parasocial relationships and boundaries",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Parasocial relationships and boundaries.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m34-l5",
+              "title": "Design a response to Parasocial relationships and boundaries",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Parasocial relationships and boundaries.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m34-l6",
+              "title": "Transfer challenge: Parasocial relationships and boundaries",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Parasocial relationships and boundaries.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-35",
+          "title": "Digital contact as a bridge or substitute",
+          "problem": "Digital contact as a bridge or substitute",
+          "lessons": [
+            {
+              "id": "loneliness-m35-l1",
+              "title": "Case file: Digital contact as a bridge or substitute",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Digital contact as a bridge or substitute.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m35-l2",
+              "title": "Trace the mechanisms of Digital contact as a bridge or substitute",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Digital contact as a bridge or substitute.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m35-l3",
+              "title": "Distinguish Digital contact as a bridge or substitute from connectivity versus belonging",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Digital contact as a bridge or substitute.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m35-l4",
+              "title": "Evidence investigation: Digital contact as a bridge or substitute",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Digital contact as a bridge or substitute.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m35-l5",
+              "title": "Design a response to Digital contact as a bridge or substitute",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Digital contact as a bridge or substitute.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m35-l6",
+              "title": "Transfer challenge: Digital contact as a bridge or substitute",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Digital contact as a bridge or substitute.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-book-8",
+      "title": "Barriers to access",
+      "distinction": "individual effort versus structural isolation",
+      "modules": [
+        {
+          "id": "loneliness-module-36",
+          "title": "Disability and inaccessible venues",
+          "problem": "Disability and inaccessible venues",
+          "lessons": [
+            {
+              "id": "loneliness-m36-l1",
+              "title": "Case file: Disability and inaccessible venues",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Disability and inaccessible venues.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m36-l2",
+              "title": "Trace the mechanisms of Disability and inaccessible venues",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Disability and inaccessible venues.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m36-l3",
+              "title": "Distinguish Disability and inaccessible venues from individual effort versus structural isolation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Disability and inaccessible venues.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m36-l4",
+              "title": "Evidence investigation: Disability and inaccessible venues",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Disability and inaccessible venues.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m36-l5",
+              "title": "Design a response to Disability and inaccessible venues",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Disability and inaccessible venues.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m36-l6",
+              "title": "Transfer challenge: Disability and inaccessible venues",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Disability and inaccessible venues.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-37",
+          "title": "Rural transport and geographic isolation",
+          "problem": "Rural transport and geographic isolation",
+          "lessons": [
+            {
+              "id": "loneliness-m37-l1",
+              "title": "Case file: Rural transport and geographic isolation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Rural transport and geographic isolation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m37-l2",
+              "title": "Trace the mechanisms of Rural transport and geographic isolation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Rural transport and geographic isolation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m37-l3",
+              "title": "Distinguish Rural transport and geographic isolation from individual effort versus structural isolation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Rural transport and geographic isolation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m37-l4",
+              "title": "Evidence investigation: Rural transport and geographic isolation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Rural transport and geographic isolation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m37-l5",
+              "title": "Design a response to Rural transport and geographic isolation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Rural transport and geographic isolation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m37-l6",
+              "title": "Transfer challenge: Rural transport and geographic isolation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Rural transport and geographic isolation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-38",
+          "title": "Migration, language and belonging",
+          "problem": "Migration, language and belonging",
+          "lessons": [
+            {
+              "id": "loneliness-m38-l1",
+              "title": "Case file: Migration, language and belonging",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Migration, language and belonging.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m38-l2",
+              "title": "Trace the mechanisms of Migration, language and belonging",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Migration, language and belonging.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m38-l3",
+              "title": "Distinguish Migration, language and belonging from individual effort versus structural isolation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Migration, language and belonging.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m38-l4",
+              "title": "Evidence investigation: Migration, language and belonging",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Migration, language and belonging.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m38-l5",
+              "title": "Design a response to Migration, language and belonging",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Migration, language and belonging.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m38-l6",
+              "title": "Transfer challenge: Migration, language and belonging",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Migration, language and belonging.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-39",
+          "title": "Cost barriers to social participation",
+          "problem": "Cost barriers to social participation",
+          "lessons": [
+            {
+              "id": "loneliness-m39-l1",
+              "title": "Case file: Cost barriers to social participation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Cost barriers to social participation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m39-l2",
+              "title": "Trace the mechanisms of Cost barriers to social participation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Cost barriers to social participation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m39-l3",
+              "title": "Distinguish Cost barriers to social participation from individual effort versus structural isolation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Cost barriers to social participation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m39-l4",
+              "title": "Evidence investigation: Cost barriers to social participation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Cost barriers to social participation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m39-l5",
+              "title": "Design a response to Cost barriers to social participation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Cost barriers to social participation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m39-l6",
+              "title": "Transfer challenge: Cost barriers to social participation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Cost barriers to social participation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-40",
+          "title": "Caregiving and limited free time",
+          "problem": "Caregiving and limited free time",
+          "lessons": [
+            {
+              "id": "loneliness-m40-l1",
+              "title": "Case file: Caregiving and limited free time",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Caregiving and limited free time.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m40-l2",
+              "title": "Trace the mechanisms of Caregiving and limited free time",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Caregiving and limited free time.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m40-l3",
+              "title": "Distinguish Caregiving and limited free time from individual effort versus structural isolation",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Caregiving and limited free time.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m40-l4",
+              "title": "Evidence investigation: Caregiving and limited free time",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Caregiving and limited free time.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m40-l5",
+              "title": "Design a response to Caregiving and limited free time",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Caregiving and limited free time.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m40-l6",
+              "title": "Transfer challenge: Caregiving and limited free time",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Caregiving and limited free time.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-book-9",
+      "title": "Community and collective solutions",
+      "distinction": "personal loneliness versus social infrastructure",
+      "modules": [
+        {
+          "id": "loneliness-module-41",
+          "title": "Libraries and third spaces",
+          "problem": "Libraries and third spaces",
+          "lessons": [
+            {
+              "id": "loneliness-m41-l1",
+              "title": "Case file: Libraries and third spaces",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Libraries and third spaces.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m41-l2",
+              "title": "Trace the mechanisms of Libraries and third spaces",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Libraries and third spaces.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m41-l3",
+              "title": "Distinguish Libraries and third spaces from personal loneliness versus social infrastructure",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Libraries and third spaces.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m41-l4",
+              "title": "Evidence investigation: Libraries and third spaces",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Libraries and third spaces.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m41-l5",
+              "title": "Design a response to Libraries and third spaces",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Libraries and third spaces.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m41-l6",
+              "title": "Transfer challenge: Libraries and third spaces",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Libraries and third spaces.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-42",
+          "title": "Neighbourhood mutual aid",
+          "problem": "Neighbourhood mutual aid",
+          "lessons": [
+            {
+              "id": "loneliness-m42-l1",
+              "title": "Case file: Neighbourhood mutual aid",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Neighbourhood mutual aid.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m42-l2",
+              "title": "Trace the mechanisms of Neighbourhood mutual aid",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Neighbourhood mutual aid.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m42-l3",
+              "title": "Distinguish Neighbourhood mutual aid from personal loneliness versus social infrastructure",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Neighbourhood mutual aid.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m42-l4",
+              "title": "Evidence investigation: Neighbourhood mutual aid",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Neighbourhood mutual aid.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m42-l5",
+              "title": "Design a response to Neighbourhood mutual aid",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Neighbourhood mutual aid.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m42-l6",
+              "title": "Transfer challenge: Neighbourhood mutual aid",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Neighbourhood mutual aid.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-43",
+          "title": "Volunteering without exploitation",
+          "problem": "Volunteering without exploitation",
+          "lessons": [
+            {
+              "id": "loneliness-m43-l1",
+              "title": "Case file: Volunteering without exploitation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Volunteering without exploitation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m43-l2",
+              "title": "Trace the mechanisms of Volunteering without exploitation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Volunteering without exploitation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m43-l3",
+              "title": "Distinguish Volunteering without exploitation from personal loneliness versus social infrastructure",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Volunteering without exploitation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m43-l4",
+              "title": "Evidence investigation: Volunteering without exploitation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Volunteering without exploitation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m43-l5",
+              "title": "Design a response to Volunteering without exploitation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Volunteering without exploitation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m43-l6",
+              "title": "Transfer challenge: Volunteering without exploitation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Volunteering without exploitation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-44",
+          "title": "Intergenerational connection",
+          "problem": "Intergenerational connection",
+          "lessons": [
+            {
+              "id": "loneliness-m44-l1",
+              "title": "Case file: Intergenerational connection",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Intergenerational connection.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m44-l2",
+              "title": "Trace the mechanisms of Intergenerational connection",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Intergenerational connection.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m44-l3",
+              "title": "Distinguish Intergenerational connection from personal loneliness versus social infrastructure",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Intergenerational connection.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m44-l4",
+              "title": "Evidence investigation: Intergenerational connection",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Intergenerational connection.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m44-l5",
+              "title": "Design a response to Intergenerational connection",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Intergenerational connection.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m44-l6",
+              "title": "Transfer challenge: Intergenerational connection",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Intergenerational connection.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-45",
+          "title": "Designing welcoming social groups",
+          "problem": "Designing welcoming social groups",
+          "lessons": [
+            {
+              "id": "loneliness-m45-l1",
+              "title": "Case file: Designing welcoming social groups",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Designing welcoming social groups.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m45-l2",
+              "title": "Trace the mechanisms of Designing welcoming social groups",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Designing welcoming social groups.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m45-l3",
+              "title": "Distinguish Designing welcoming social groups from personal loneliness versus social infrastructure",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Designing welcoming social groups.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m45-l4",
+              "title": "Evidence investigation: Designing welcoming social groups",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Designing welcoming social groups.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m45-l5",
+              "title": "Design a response to Designing welcoming social groups",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Designing welcoming social groups.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m45-l6",
+              "title": "Transfer challenge: Designing welcoming social groups",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Designing welcoming social groups.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loneliness-book-10",
+      "title": "Advanced connection dilemmas",
+      "distinction": "connection versus self-abandonment",
+      "modules": [
+        {
+          "id": "loneliness-module-46",
+          "title": "Being rejected without global self-blame",
+          "problem": "Being rejected without global self-blame",
+          "lessons": [
+            {
+              "id": "loneliness-m46-l1",
+              "title": "Case file: Being rejected without global self-blame",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Being rejected without global self-blame.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m46-l2",
+              "title": "Trace the mechanisms of Being rejected without global self-blame",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Being rejected without global self-blame.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m46-l3",
+              "title": "Distinguish Being rejected without global self-blame from connection versus self-abandonment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Being rejected without global self-blame.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m46-l4",
+              "title": "Evidence investigation: Being rejected without global self-blame",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Being rejected without global self-blame.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m46-l5",
+              "title": "Design a response to Being rejected without global self-blame",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Being rejected without global self-blame.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m46-l6",
+              "title": "Transfer challenge: Being rejected without global self-blame",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Being rejected without global self-blame.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-47",
+          "title": "Choosing when to invest or move on",
+          "problem": "Choosing when to invest or move on",
+          "lessons": [
+            {
+              "id": "loneliness-m47-l1",
+              "title": "Case file: Choosing when to invest or move on",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Choosing when to invest or move on.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m47-l2",
+              "title": "Trace the mechanisms of Choosing when to invest or move on",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Choosing when to invest or move on.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m47-l3",
+              "title": "Distinguish Choosing when to invest or move on from connection versus self-abandonment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Choosing when to invest or move on.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m47-l4",
+              "title": "Evidence investigation: Choosing when to invest or move on",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Choosing when to invest or move on.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m47-l5",
+              "title": "Design a response to Choosing when to invest or move on",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Choosing when to invest or move on.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m47-l6",
+              "title": "Transfer challenge: Choosing when to invest or move on",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Choosing when to invest or move on.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-48",
+          "title": "Safety after betrayal and isolation",
+          "problem": "Safety after betrayal and isolation",
+          "lessons": [
+            {
+              "id": "loneliness-m48-l1",
+              "title": "Case file: Safety after betrayal and isolation",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Safety after betrayal and isolation.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m48-l2",
+              "title": "Trace the mechanisms of Safety after betrayal and isolation",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Safety after betrayal and isolation.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m48-l3",
+              "title": "Distinguish Safety after betrayal and isolation from connection versus self-abandonment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Safety after betrayal and isolation.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m48-l4",
+              "title": "Evidence investigation: Safety after betrayal and isolation",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Safety after betrayal and isolation.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m48-l5",
+              "title": "Design a response to Safety after betrayal and isolation",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Safety after betrayal and isolation.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m48-l6",
+              "title": "Transfer challenge: Safety after betrayal and isolation",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Safety after betrayal and isolation.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-49",
+          "title": "Building a personal belonging ecology",
+          "problem": "Building a personal belonging ecology",
+          "lessons": [
+            {
+              "id": "loneliness-m49-l1",
+              "title": "Case file: Building a personal belonging ecology",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Building a personal belonging ecology.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m49-l2",
+              "title": "Trace the mechanisms of Building a personal belonging ecology",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Building a personal belonging ecology.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m49-l3",
+              "title": "Distinguish Building a personal belonging ecology from connection versus self-abandonment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Building a personal belonging ecology.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m49-l4",
+              "title": "Evidence investigation: Building a personal belonging ecology",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Building a personal belonging ecology.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m49-l5",
+              "title": "Design a response to Building a personal belonging ecology",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Building a personal belonging ecology.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m49-l6",
+              "title": "Transfer challenge: Building a personal belonging ecology",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Building a personal belonging ecology.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        },
+        {
+          "id": "loneliness-module-50",
+          "title": "Integrated mission: connection in constrained life",
+          "problem": "Integrated mission: connection in constrained life",
+          "lessons": [
+            {
+              "id": "loneliness-m50-l1",
+              "title": "Case file: Integrated mission: connection in constrained life",
+              "objective": "Identify the observable difficulty and the person's actual constraints. Target problem: Integrated mission: connection in constrained life.",
+              "recommendedType": "read",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m50-l2",
+              "title": "Trace the mechanisms of Integrated mission: connection in constrained life",
+              "objective": "Explain a plausible mechanism and the social conditions that may contribute. Target problem: Integrated mission: connection in constrained life.",
+              "recommendedType": "chain",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m50-l3",
+              "title": "Distinguish Integrated mission: connection in constrained life from connection versus self-abandonment",
+              "objective": "Distinguish the target mechanism from a credible alternative. Target problem: Integrated mission: connection in constrained life.",
+              "recommendedType": "sort",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m50-l4",
+              "title": "Evidence investigation: Integrated mission: connection in constrained life",
+              "objective": "Choose useful evidence and recognise what remains unknown. Target problem: Integrated mission: connection in constrained life.",
+              "recommendedType": "investigate",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m50-l5",
+              "title": "Design a response to Integrated mission: connection in constrained life",
+              "objective": "Compare responses by benefit, cost, feasibility and safety. Target problem: Integrated mission: connection in constrained life.",
+              "recommendedType": "predict",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            },
+            {
+              "id": "loneliness-m50-l6",
+              "title": "Transfer challenge: Integrated mission: connection in constrained life",
+              "objective": "Transfer the learning to a different context without overgeneralising. Target problem: Integrated mission: connection in constrained life.",
+              "recommendedType": "character",
+              "editorialStatus": "not-authored",
+              "nodes": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
