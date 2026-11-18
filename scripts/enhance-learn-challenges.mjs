@@ -59,7 +59,7 @@ function improveQuestion(options,answer,key,category,bank,seed,node,minimum=5,re
  };
  const kept=old.map(o=>{
   if(o.id===answer)return o;
-  if(!lightlyObvious(o.label))return o;
+  if(!lightlyObvious(o.label)&&!(category==='actions'&&(norm(o.label)===norm(seed.avoid)||/^(before making any decision|let's ask someone else to intervene|let's leave the inaccurate|keep increasing the hours)/i.test(o.label))))return o;
   const candidate=take();
   if(!candidate)return o;
   // Preserve historical wrong-answer identifiers in case records or staff edits refer to them.
@@ -71,12 +71,12 @@ function improveQuestion(options,answer,key,category,bank,seed,node,minimum=5,re
 }
 function openingSource(opening){
  return {
-  id:opening.id,rival:opening.rival,formulation:opening.inference,
-  people:opening.people||[],responses:[opening.avoid,opening.action],follow:opening.after||[],
+  id:opening.id,rival:opening.rival,formulation:opening.inference,avoid:opening.avoid,
+  people:opening.people||[],responses:[],follow:opening.after||[],
   test:'Check whether earlier agreements and actual outcomes support the speaker’s interpretation.'
  };
 }
-function openingAlternatives(opening){
+function openingAlternatives(opening,extra){
  const limit=opening.boundary||'A single exchange cannot establish a lasting motive.';
  const make=(text,reason)=>({text,reason});
  const weak='This is a reasonable line of inquiry, although '+opening.inference+' is more directly tied to the words in this scene. '+limit;
@@ -90,11 +90,12 @@ function openingAlternatives(opening){
    make('The reaction may reflect an earlier expectation that neither speaker has described clearly in the exchange.',weak)
   ],
   actions:[
+   ...(extra?.actions||[]),
    make('Ask the speakers to state the concrete agreement they believe existed before negotiating a change.','Clarifying an agreement may help, although it may not address the immediate concern if that part is already clear.'),
    make('Acknowledge the worry expressed in the reply and invite a specific change that both people could check.','This can open a conversation, but the initial practical limit may still require a clear answer.'),
    make('Suggest an independent review of the relevant facts if the direct discussion has stalled.','Outside review may help later, though it may be disproportionate before an ordinary direct request has been tried.'),
    make('Ask what information each person would need before being willing to revise their position.','This clarifies flexibility, but evidence gathering alone may not solve a time-sensitive need.'),
-   make(opening.avoid,'This may reduce immediate friction, but the original issue would remain unresolved.')
+   make('Offer a limited trial of one practical adjustment while keeping the original concern open for review.','A trial can provide information, but it may not solve a situation that requires a clear immediate answer.')
   ],
   checks:[
    make('Check whether the speakers had agreed on the practical expectation before the exchange.','The agreement may determine whether the original request was reasonable, although not why the response was so strong.'),
@@ -105,7 +106,7 @@ function openingAlternatives(opening){
   ]
  };
 }
-export function enhanceAppliedChoices(bundle,caseSeed,challengeBank,openingCase){
+export function enhanceAppliedChoices(bundle,caseSeed,challengeBank,openingCase,openingActions){
  if(bundle?.id!==caseSeed?.id||bundle.id!==challengeBank?.id)throw Error('Challenge data and course are out of sync');
  const applied=bundle.modules.find(m=>m.id===bundle.id+'-module-01');
  if(!applied)throw Error('Applied case missing for '+bundle.id);
@@ -113,10 +114,10 @@ export function enhanceAppliedChoices(bundle,caseSeed,challengeBank,openingCase)
   // The first two published lessons use a different original vignette.
   // Do not inject alternatives or character names from the later seed.
   const source=li<2&&openingCase?openingSource(openingCase):caseSeed;
-  const bank=li<2&&openingCase?openingAlternatives(openingCase):challengeBank;
+  const bank=li<2&&openingCase?openingAlternatives(openingCase,openingActions):challengeBank;
   if(node.type==='dialogue'){
-   for(const check of node.checks||[]){
-    const category=typeOf(node,check.prompt);
+   for(const [ci,check] of (node.checks||[]).entries()){
+    const category=li<2&&openingCase&&ci>0?'actions':typeOf(node,check.prompt);
     check.options=improveQuestion(check.options,check.answer,check.id,category,bank,source,node,5,true);
     if(check.options.length<5)throw Error('Incomplete dialogue options '+check.id);
    }
