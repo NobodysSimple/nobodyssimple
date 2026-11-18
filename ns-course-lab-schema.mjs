@@ -14,7 +14,8 @@ export const COURSE_LAB_TYPES=Object.freeze([
  {id:'repair',name:'Repair the flaw',hint:'Find the best correction to an overclaim'},
  {id:'investigate',name:'Evidence investigator',hint:'Select the most discriminating evidence'},
  {id:'predict',name:'What happens if?',hint:'Choose an intervention and predict its consequence'},
- {id:'character',name:'Help the character',hint:'Choose evidence and a proportionate response'}
+ {id:'character',name:'Help the character',hint:'Choose evidence and a proportionate response'},
+ {id:'dialogue',name:'Dialogue Lab · conversation & conflict',hint:'Study a two-person exchange, identify techniques and answer scene-based questions'}
 ]);
 export const COURSE_LAB_EXERCISES=Object.freeze(COURSE_LAB_TYPES.map(x=>x.id).filter(id=>!['read','image'].includes(id)));
 export const makeCourseId=()=>globalThis.crypto?.randomUUID?.()||'node-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
@@ -29,6 +30,7 @@ export function createCourseNode(type){
  if(type==='complete')return {...node,answers:[''],hint:''};
  if(type==='chain')return {...node,steps:[option(''),option('')]};
  if(type==='character')return {...node,characterName:'',scenario:'',evidenceOptions:[option(''),option('')],evidenceAnswer:'',responseOptions:[option(''),option('')],responseAnswer:''};
+ if(type==='dialogue')return {...node,scenario:'',speakerA:'Person A',speakerB:'Person B',turns:[{id:makeCourseId(),speaker:'a',text:''},{id:makeCourseId(),speaker:'b',text:''}],checks:[{id:makeCourseId(),prompt:'',focusTurn:'',options:[option(''),option('')],answer:'',explanation:'',counterexample:''}]};
  if(type==='predict')return {...node,changePrompt:'',changes:[option(''),option('')],outcomes:[option(''),option('')],correctChange:'',correctOutcome:''};
  return {...node,options:[option(''),option('')],answer:''};
 }
@@ -66,6 +68,16 @@ export function validateCourseForPublish(course){
     if(node.image&&!safeCourseImage(node.image))report(here,'image must use a site media path');
     if(node.image&&!isText(node.alt))report(here,'describe the image for accessibility');
     if(['read','image'].includes(node.type))continue;
+    if(node.type==='dialogue'){
+     if(!isText(node.prompt)||!isText(node.conceptId)||!isText(node.scenario)||!isText(node.speakerA)||!isText(node.speakerB))report(here,'add the learning focus, concept ID, scene and both character names');
+     const turns=node.turns||[],checks=node.checks||[];
+     if(!Array.isArray(turns)||turns.length<2||turns.length>36||turns.some(t=>!isText(t?.id)||!['a','b'].includes(t.speaker)||!isText(t.text))||!unique(turns.map(t=>t.id))||!['a','b'].every(sp=>turns.some(t=>t.speaker===sp)))report(here,'add 2–36 valid dialogue turns featuring both characters, each with a unique ID');
+     if(!Array.isArray(checks)||checks.length<1||checks.length>8||!unique(checks.map(c=>c.id)))report(here,'add 1–8 distinct analysis questions');
+     for(const [ci,check] of (Array.isArray(checks)?checks:[]).entries()){
+      if(!isText(check.id)||!isText(check.prompt)||!validOptions(check.options)||!contains(check.options||[],check.answer)||!isText(check.explanation)||!isText(check.counterexample)||check.focusTurn&&!turns.some(t=>t.id===check.focusTurn))report(here+', question '+(ci+1),'add a question, choices, correct answer, explanation and boundary; spotlight must reference a dialogue line');
+     }
+     continue;
+    }
     if(!isText(node.prompt)||!isText(node.conceptId)||!isText(node.explanation)||!isText(node.counterexample))report(here,'write the prompt, concept ID, explanation and counterexample');
     if(['choose','repair','investigate'].includes(node.type)&&(!validOptions(node.options)||!contains(node.options||[],node.answer)))report(here,'add at least two choices and mark the correct one');
     if(node.type==='match'&&(!Array.isArray(node.pairs)||node.pairs.length<2||node.pairs.some(p=>!isText(p.id)||!isText(p.label)||!isText(p.answer))||!unique(node.pairs.map(p=>p.answer))))report(here,'add at least two nonempty, distinct matching answers');
