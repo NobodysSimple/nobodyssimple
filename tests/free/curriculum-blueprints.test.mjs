@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {LEARN_COURSES} from '../../ns-learn-catalog-v2.mjs';
 import {createCourseNode,validateCourseForPublish} from '../../ns-course-lab-schema.mjs';
-import {validateCurriculumBlueprint,createDraftFromBlueprint,makePublishableSubset,countAuthoredLessons} from '../../ns-course-blueprints.mjs';
+import {validateCurriculumBlueprint,createDraftFromBlueprint,mergePublishedIntoBlueprint,makePublishableSubset,countAuthoredLessons} from '../../ns-course-blueprints.mjs';
 const read=id=>JSON.parse(readFileSync(new URL('../../learn-content/blueprints/'+id+'.json',import.meta.url),'utf8'));
 const readyDraft=id=>{
  const item=LEARN_COURSES.find(c=>c.id===id),doc=read(id);
@@ -93,4 +93,22 @@ test('blueprints cannot cross course boundaries or introduce authored nodes',()=
 test('published-course index remains empty until staff deliberately publishes reviewed content',()=>{
  const index=JSON.parse(readFileSync(new URL('../../learn-content/index.json',import.meta.url),'utf8'));
  assert.deepEqual(index.courses,{});
+});
+
+test('staff reopening a published course restores its full outline without losing authored lessons',()=>{
+ const doc=read('attachment'),draft=readyDraft('attachment');
+ const publishedLesson=draft.modules[0].lessons[0];
+ publishedLesson.nodes=[{id:'reviewed-reading',type:'read',title:'What attachment models explain',body:'A careful distinction between relational expectations and fixed traits.'}];
+ publishedLesson.editorialStatus='ready';
+ const release=makePublishableSubset(draft);
+ assert.equal(release.ready,1);
+ const remote={...release.bundle,status:'published',version:3};
+ const restored=mergePublishedIntoBlueprint(doc,remote);
+ assert.equal(restored.modules.length,50);
+ assert.equal(restored.modules.flatMap(u=>u.lessons).length,300);
+ assert.equal(restored.modules[0].lessons[0].id,publishedLesson.id);
+ assert.equal(restored.modules[0].lessons[0].nodes[0].body,publishedLesson.nodes[0].body);
+ assert.equal(restored.modules[0].lessons[0].editorialStatus,'ready');
+ assert.equal(restored.modules[0].lessons[1].nodes.length,0);
+ assert.equal(countAuthoredLessons(restored).ready,1);
 });
