@@ -38,6 +38,11 @@ test('Course Lab authoring controls create units, lessons, reading and quizzes w
  await expect(root.locator('.cl-node')).toHaveCount(2);
  await root.locator('[data-act=select-node][data-n="0"]').click();
  await expect(root.locator('[data-field=body]')).toHaveValue('Psychological explanations are hypotheses, not diagnoses.');
+ // Author sign-off must not survive editing an already reviewed node.
+ await root.locator('[data-meta="lesson-status"]').selectOption('ready');
+ await expect(root.locator('[data-meta="lesson-status"]')).toHaveValue('ready');
+ await root.locator('[data-field="body"]').fill('Evidence changes the strength of a psychological explanation.');
+ await expect(root.locator('[data-meta="lesson-status"]')).toHaveValue('draft');
  await root.locator('[data-act=publish]').click();
  await expect(root.locator('#cl-publish-state')).toContainText('Publication blocked');
 });
