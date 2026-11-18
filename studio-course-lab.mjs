@@ -8,6 +8,7 @@ import {COURSE_LAB_TYPES,createCourseDraft,newCourseUnit,newCourseLesson,createC
  makeCourseId,validateCourseForPublish,safeCourseImage} from './ns-course-lab-schema.mjs';
 import {renderLearnLesson} from './ns-learn-player-v2.mjs';
 import {readCourseLabDraft,saveCourseLabDraft,deleteCourseLabDraft} from './studio-course-lab-drafts.mjs';
+import {fetchCurriculumBlueprint,createDraftFromBlueprint,countAuthoredLessons,makePublishableSubset} from './ns-course-blueprints.mjs';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const types=Object.fromEntries(COURSE_LAB_TYPES.map(x=>[x.id,x]));
 const key=id=>'ns-course-lab-draft-v1:'+id;
@@ -59,9 +60,10 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  if(!host)return;
  let courseId=LEARN_COURSES[0].id,draft=null,expectedVersion=0,baseVersion=0;
  let u=0,l=0,n=0,busy=false,preview=false,mediaList=[],saveTimer=null,loading=0;
- host.innerHTML='<section class="cl-shell"><header class="cl-head"><div><p class="cl-eyebrow">STAFF · LEARN CURRICULUM</p><h1>Course Lab</h1><p>Build courses from reading pages and interactive psychology exercises. Drafts stay in this browser until published to GitHub.</p></div><a href="index.html#learn" target="_blank" rel="noopener" class="cl-light-button">Open Learn ↗</a></header>'+
- '<div class="cl-toolbar"><label>Course <select id="cl-course">'+LEARN_COURSES.map(x=>'<option value="'+esc(x.id)+'">'+esc(x.title)+'</option>').join('')+'</select></label><span id="cl-state" role="status"></span><button type="button" data-act="save">Save draft</button><button type="button" data-act="load">Load published</button><button type="button" data-act="export">Export</button><label class="cl-import">Import JSON<input id="cl-import" type="file" accept=".json,application/json" hidden></label></div>'+
- '<div class="cl-toolbar cl-publish-toolbar"><button type="button" data-act="preview">Preview lesson</button><button type="button" class="cl-publish" data-act="publish">Publish course</button><button type="button" data-act="unpublish">Unpublish</button><span id="cl-publish-state" role="status"></span></div>'+
+ let expandedUnits=new Set([0]);
+ host.innerHTML='<section class="cl-shell"><header class="cl-head"><div><p class="cl-eyebrow">STAFF · LEARN CURRICULUM</p><h1>Course Lab</h1><p>Explore the 50-module, 300-lesson psychology curriculum plan for each course. Author the teaching nodes, review the science and publish completed lessons when ready.</p></div><a href="index.html#learn" target="_blank" rel="noopener" class="cl-light-button">Open Learn ↗</a></header>'+
+ '<div class="cl-toolbar"><label>Course <select id="cl-course">'+LEARN_COURSES.map(x=>'<option value="'+esc(x.id)+'">'+esc(x.title)+'</option>').join('')+'</select></label><span id="cl-state" role="status"></span><button type="button" data-act="use-blueprint">Restore 50-module curriculum</button><button type="button" data-act="save">Save draft</button><button type="button" data-act="load">Load published</button><button type="button" data-act="export">Export</button><label class="cl-import">Import JSON<input id="cl-import" type="file" accept=".json,application/json" hidden></label></div>'+
+ '<div class="cl-toolbar cl-publish-toolbar"><button type="button" data-act="preview">Preview lesson</button><button type="button" class="cl-publish" data-act="publish">Publish reviewed lessons</button><button type="button" data-act="unpublish">Unpublish</button><span id="cl-publish-state" role="status"></span></div>'+
  '<div class="cl-meta"><label>Published course title <input id="cl-title" maxlength="160" placeholder="Course title"></label><label>Course card description <textarea id="cl-description" rows="2" maxlength="400" placeholder="A short summary shown in Learn"></textarea></label><p id="cl-meta-hint"></p></div>'+
  '<div class="cl-grid"><aside class="cl-outline"><div class="cl-section-head"><h2>Units & lessons</h2><button type="button" data-act="add-unit">＋ Unit</button></div><div id="cl-units"></div></aside>'+
  '<section class="cl-sequence"><div class="cl-section-head"><h2>Lesson sequence</h2><button type="button" data-act="add-lesson">＋ Lesson</button></div><div id="cl-lesson-meta"></div><div id="cl-nodes"></div><div class="cl-add-node"><label>Add a node <select id="cl-new-type">'+COURSE_LAB_TYPES.map(t=>'<option value="'+t.id+'">'+esc(t.name)+'</option>').join('')+'</select></label><button data-act="add-node" type="button">＋ Add to sequence</button></div></section>'+
@@ -79,20 +81,45 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
  const save=async()=>{if(!draft)return;const id=courseId,value={draft:deep(draft),baseVersion,updatedAt:new Date().toISOString()};try{await saveCourseLabDraft(id,value);if(courseId===id)status('Draft saved to this device');}catch(err){status(err.message,true);}};
  const queueSave=()=>{clearTimeout(saveTimer);saveTimer=setTimeout(()=>void save(),400);status('Unsaved changes…');};
  const renderOutline=()=>{
-  $('#cl-units').innerHTML=(draft?.modules||[]).map((unit,ui)=>'<div class="cl-unit '+(ui===u?'selected':'')+'"><div class="cl-unit-row"><button type="button" data-act="select-unit" data-u="'+ui+'">'+esc(unit.title||'Untitled unit')+'</button><div><button type="button" aria-label="Move unit up" data-act="unit-up" data-u="'+ui+'" '+(ui===0?'disabled':'')+'>↑</button><button type="button" aria-label="Move unit down" data-act="unit-down" data-u="'+ui+'" '+(ui===draft.modules.length-1?'disabled':'')+'>↓</button><button type="button" aria-label="Remove unit" data-act="delete-unit" data-u="'+ui+'">×</button></div></div>'+
-   (unit.lessons||[]).map((lesson,li)=>'<button type="button" class="cl-lesson-link '+(ui===u&&li===l?'active':'')+'" data-act="select-lesson" data-u="'+ui+'" data-l="'+li+'">'+(li+1)+'. '+esc(lesson.title||'Untitled lesson')+' <small>'+(lesson.nodes?.length||0)+' nodes</small></button>').join('')+'</div>').join('')||'<p class="cl-hint">Add a unit to start your course.</p>';
+  let previousBook='';
+  $('#cl-units').innerHTML=(draft?.modules||[]).map((unit,ui)=>{
+   const book=unit.bookTitle&&unit.bookTitle!==previousBook?
+    '<div class="cl-book-heading"><span>CHAPTER '+esc(unit.bookNumber||'')+'</span><strong>'+esc(unit.bookTitle)+'</strong></div>':'';
+   previousBook=unit.bookTitle||'';
+   const expanded=expandedUnits.has(ui)||ui===u;
+   const completed=(unit.lessons||[]).filter(lesson=>lesson.editorialStatus==='ready'&&(lesson.nodes||[]).length).length;
+   return book+'<div class="cl-unit '+(ui===u?'selected':'')+'">'+
+    '<div class="cl-unit-row"><button type="button" data-act="select-unit" data-u="'+ui+'">'+
+    '<small class="cl-unit-progress">'+completed+'/'+(unit.lessons?.length||0)+' reviewed</small><strong>'+esc(unit.title||'Untitled module')+'</strong></button>'+
+    '<div><button type="button" aria-label="'+(expanded?'Collapse':'Expand')+' module" aria-expanded="'+expanded+'" data-act="toggle-unit" data-u="'+ui+'">'+(expanded?'▾':'▸')+'</button>'+
+    '<button type="button" aria-label="Move module up" data-act="unit-up" data-u="'+ui+'" '+(ui===0?'disabled':'')+'>↑</button>'+
+    '<button type="button" aria-label="Move module down" data-act="unit-down" data-u="'+ui+'" '+(ui===draft.modules.length-1?'disabled':'')+'>↓</button>'+
+    '<button type="button" aria-label="Remove module" data-act="delete-unit" data-u="'+ui+'">×</button></div></div>'+
+    (expanded?(unit.lessons||[]).map((lesson,li)=>'<button type="button" class="cl-lesson-link '+(ui===u&&li===l?'active':'')+
+    '" data-act="select-lesson" data-u="'+ui+'" data-l="'+li+'"><span>'+(li+1)+'. '+esc(lesson.title||'Untitled lesson')+'</span>'+
+    '<small>'+(lesson.editorialStatus==='ready'?'✓ Ready':(lesson.nodes?.length||0)+' nodes')+'</small></button>').join(''):'')+'</div>';
+  }).join('')||'<p class="cl-hint">Choose a course to load its curriculum or create your own module.</p>';
  };
  const renderSequence=()=>{
   const unit=selectedUnit(),lesson=selectedLesson();
   $('#cl-lesson-meta').innerHTML=unit&&lesson?
-    '<label class="cl-field"><span>Unit title</span><input data-meta="unit-title" value="'+esc(unit.title)+'"></label>'+
+    (unit.bookTitle?'<p class="cl-arc"><strong>'+esc(unit.bookTitle)+'</strong><span>Key distinction: '+esc(unit.distinction||'')+'</span></p>':'')+
+    '<label class="cl-field"><span>Module title</span><input data-meta="unit-title" value="'+esc(unit.title)+'"></label>'+
     '<label class="cl-field"><span>Lesson title</span><input data-meta="lesson-title" value="'+esc(lesson.title)+'"></label>'+
+    '<label class="cl-field"><span>Learning objective</span><textarea data-meta="lesson-objective" rows="3">'+esc(lesson.objective||'')+'</textarea></label>'+
+    '<label class="cl-field"><span>Suggested activity</span><select data-meta="lesson-mode"><option value="">Choose…</option>'+
+      COURSE_LAB_TYPES.map(x=>'<option value="'+esc(x.id)+'"'+(lesson.recommendedType===x.id?' selected':'')+'>'+esc(x.name)+'</option>').join('')+'</select></label>'+
+    '<label class="cl-field"><span>Editorial readiness</span><select data-meta="lesson-status">'+
+      '<option value="draft"'+(lesson.editorialStatus!=='ready'?' selected':'')+'>Draft / needs clinical and editorial review</option>'+
+      '<option value="ready"'+(lesson.editorialStatus==='ready'?' selected':'')+'>Ready: checked content, sources, answers and accessibility</option>'+
+      '</select><small>Only authored lessons explicitly marked Ready are eligible for public release.</small></label>'+
     '<label class="cl-field"><span>Optional lesson introduction</span><textarea data-meta="lesson-teach" rows="3">'+esc(lesson.teach||'')+'</textarea></label>'+
     '<div class="cl-lesson-actions"><button data-act="lesson-up" type="button">Move lesson ↑</button><button data-act="lesson-down" type="button">Move lesson ↓</button><button data-act="delete-lesson" type="button">Delete lesson</button></div>':'<p class="cl-hint">Select a lesson in the outline, or add one to a unit.</p>';
   $('#cl-nodes').innerHTML=lesson?(lesson.nodes||[]).map((node,i)=>'<article class="cl-node '+(i===n?'active':'')+'" draggable="true" data-node-index="'+i+'"><button type="button" data-act="select-node" data-n="'+i+'"><small>'+String(i+1).padStart(2,'0')+' · '+esc(types[node.type]?.name||node.type)+'</small><strong>'+esc(node.title||node.prompt||node.body?.slice(0,65)||'Untitled node')+'</strong></button><div><button type="button" data-act="node-up" data-n="'+i+'" '+(i===0?'disabled':'')+' aria-label="Move node up">↑</button><button type="button" data-act="node-down" data-n="'+i+'" '+(i===lesson.nodes.length-1?'disabled':'')+' aria-label="Move node down">↓</button><button type="button" data-act="node-copy" data-n="'+i+'" aria-label="Duplicate node">⧉</button><button type="button" data-act="node-delete" data-n="'+i+'" aria-label="Delete node">×</button></div></article>').join('')||'<p class="cl-hint">Add reading pages and exercises in any order.</p>':'';
   $('#cl-node-fields').innerHTML=editorFields(selectedNode());
   $('#cl-title').value=draft?.title||'';$('#cl-description').value=draft?.description||'';
-  $('#cl-meta-hint').textContent=(draft?.modules?.length||0)+' units · '+(draft?.modules||[]).reduce((v,x)=>v+x.lessons.length,0)+' lessons · '+(draft?.modules||[]).reduce((v,x)=>v+x.lessons.reduce((a,y)=>a+y.nodes.length,0),0)+' nodes';
+  const metrics=countAuthoredLessons(draft);
+  $('#cl-meta-hint').textContent=metrics.modules+' modules · '+metrics.total+' planned lessons · '+metrics.authored+' with teaching nodes · '+metrics.ready+' marked ready';
  };
  const render=()=>{renderOutline();renderSequence();};
  const move=(arr,from,to)=>{if(!arr||to<0||to>=arr.length)return false;[arr[from],arr[to]]=[arr[to],arr[from]];return true;};
@@ -107,8 +134,22 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   if(ticket!==loading)return;
   expectedVersion=remote.version;
   if(localDraft){draft=localDraft.draft;baseVersion=localDraft.baseVersion;status('Local draft restored'+(baseVersion!==expectedVersion?' · WARNING: live version changed':'')+'.',baseVersion!==expectedVersion);}
-  else{draft=remote.bundle?{...deep(remote.bundle),status:'draft'}:createCourseDraft(id,display);baseVersion=expectedVersion;status(remote.bundle?'Published version loaded for editing.':'New blank course draft.');}
-  u=0;l=0;n=0;preview=false;$('#cl-preview').hidden=true;render();
+  else if(remote.bundle){draft={...deep(remote.bundle),status:'draft'};baseVersion=expectedVersion;status('Published version loaded for editing.');}
+  else{
+   try{
+    const blueprint=await fetchCurriculumBlueprint(id);
+    if(ticket!==loading)return;
+    const meta=LEARN_COURSES.find(c=>c.id===id);
+    draft=createDraftFromBlueprint(blueprint,{id,title:display,description:meta?.description||''});
+    status('Curriculum loaded: 50 modules and 300 unpublished lesson outlines.');
+   }catch(err){
+    draft=createCourseDraft(id,display);
+    status('No curriculum loaded: '+err.message+'. You can still author manually.',true);
+   }
+   baseVersion=expectedVersion;
+  }
+  u=0;l=0;n=0;expandedUnits=new Set([0]);preview=false;$('#cl-preview').hidden=true;render();
+  if(!localDraft&&!remote.bundle&&draft.modules.length)void save();
   liveStatus(remote.published?'Published v'+remote.version:remote.version?'Unpublished · last version '+remote.version:'Not published');
  }
  const setField=(target)=>{
@@ -119,21 +160,30 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
    if(target.dataset.meta==='unit-title'&&unit)unit.title=target.value;
    if(target.dataset.meta==='lesson-title'&&lesson)lesson.title=target.value;
    if(target.dataset.meta==='lesson-teach'&&lesson)lesson.teach=target.value;
+   if(target.dataset.meta==='lesson-objective'&&lesson)lesson.objective=target.value;
+   if(target.dataset.meta==='lesson-mode'&&lesson)lesson.recommendedType=target.value;
+   if(target.dataset.meta==='lesson-status'&&lesson)lesson.editorialStatus=target.value;
   }else if(node&&target.dataset.field)node[target.dataset.field]=target.value;
   else if(node&&target.dataset.answerIndex!==undefined)node.answers[Number(target.dataset.answerIndex)]=target.value;
   else if(node&&target.dataset.list){
    const row=node[target.dataset.list]?.[Number(target.dataset.pos)];
    if(row)row[target.dataset.prop]=target.type==='checkbox'?target.checked:target.value;
   }else return;
+  if(lesson&&lesson.editorialStatus==='ready'&&target.dataset.meta!=='lesson-status'){
+   lesson.editorialStatus='draft';
+   status('Content changed — this lesson needs review again.');
+  }
   queueSave();
  };
  const rowDefault=(k)=>k==='segments'?{id:makeCourseId(),text:'',answer:false}:k==='pairs'?{id:makeCourseId(),label:'',answer:''}:k==='items'?{id:makeCourseId(),label:'',answer:''}:{id:makeCourseId(),label:''};
  const setBusy=value=>{busy=value;host.querySelectorAll('.cl-toolbar button').forEach(el=>el.disabled=value);};
  const actions={
   'save':()=>save(),
+  'use-blueprint':()=>void restoreBlueprint(),
+  'toggle-unit':b=>{const i=Number(b.dataset.u);if(expandedUnits.has(i))expandedUnits.delete(i);else expandedUnits.add(i);renderOutline();},
   'add-unit':()=>{draft.modules.push(newCourseUnit());u=draft.modules.length-1;l=0;n=0;render();queueSave();},
-  'select-unit':b=>{u=Number(b.dataset.u);l=0;n=0;render();},
-  'select-lesson':b=>{u=Number(b.dataset.u);l=Number(b.dataset.l);n=0;render();},
+  'select-unit':b=>{u=Number(b.dataset.u);expandedUnits.add(u);l=0;n=0;render();},
+  'select-lesson':b=>{u=Number(b.dataset.u);expandedUnits.add(u);l=Number(b.dataset.l);n=0;render();},
   'unit-up':b=>{const i=Number(b.dataset.u);if(move(draft.modules,i,i-1)){u=i-1;render();queueSave();}},
   'unit-down':b=>{const i=Number(b.dataset.u);if(move(draft.modules,i,i+1)){u=i+1;render();queueSave();}},
   'delete-unit':b=>{const i=Number(b.dataset.u);if(confirm('Delete this unit and every lesson inside?')){draft.modules.splice(i,1);u=Math.max(0,Math.min(u,draft.modules.length-1));l=0;n=0;render();queueSave();}},
@@ -162,15 +212,33 @@ export function mountCourseLab(host,getPublisher,notify=()=>{}){
   'publish':()=>void publish(),
   'unpublish':()=>void unpublish()
  };
+ async function restoreBlueprint(){
+  if(busy)return;
+  if(draft?.modules?.length&&!confirm('Replace the current local course outline with the original 50-module blueprint? All unsaved teaching work will be lost. Export a backup first if needed.'))return;
+  const id=courseId;
+  try{
+   status('Loading curriculum blueprint…');
+   const blueprint=await fetchCurriculumBlueprint(id);
+   if(id!==courseId)return;
+   const course=LEARN_COURSES.find(c=>c.id===id);
+   draft=createDraftFromBlueprint(blueprint,{id,title:course?.title||id,description:course?.description||''});
+   baseVersion=expectedVersion;u=l=n=0;expandedUnits=new Set([0]);render();await save();
+   status('Restored 50 modules and 300 planned lessons. No learning content was published.');
+  }catch(err){status('Could not restore curriculum: '+err.message,true);}
+ }
  async function publish(){
-  const issues=validateCourseForPublish(draft);
-  if(issues.length){status(issues.slice(0,5).join(' · '),true);liveStatus('Publication blocked: '+issues.length+' issue(s).');return;}
-  if(baseVersion!==expectedVersion){status('Your draft was based on an older published version. Resolve the conflict before publishing.',true);return;}
+  const candidate=makePublishableSubset(draft);
+  if(candidate.issues.length){status(candidate.issues.slice(0,4).join(' · '),true);liveStatus('Publication blocked: '+candidate.issues.length+' issue(s).');return;}
+  if(baseVersion!==expectedVersion){status('The live version has changed since this draft was opened. Reload before publishing.',true);return;}
   if(!getPublisher())return status('Connect to GitHub first.',true);
-  if(!confirm('Publish '+draft.title+' to Learn? This will make every current lesson in this course public.'))return;
-  save();setBusy(true);liveStatus('Publishing course to GitHub…');
-  try{const result=await getPublisher().publishLearnCourse(draft,expectedVersion);expectedVersion=result.version;baseVersion=result.version;save();liveStatus('Published v'+result.version+'. The course will appear after GitHub Pages deploys.');notify('Course published to Learn.');}
-  catch(err){liveStatus('Publish failed: '+err.message);status('Draft remains saved locally.',true);}
+  if(!confirm('Publish '+candidate.ready+' reviewed lesson(s) from '+draft.title+' to Learn? '+candidate.excluded+' unfinished lessons will remain private in Course Lab.'))return;
+  await save();setBusy(true);liveStatus('Publishing reviewed lessons to GitHub…');
+  try{
+   const result=await getPublisher().publishLearnCourse(candidate.bundle,expectedVersion);
+   expectedVersion=result.version;baseVersion=result.version;await save();
+   liveStatus('Published v'+result.version+': '+candidate.ready+' reviewed lessons. '+candidate.excluded+' outlines remain private.');
+   notify('Reviewed lessons published to Learn.');
+  }catch(err){liveStatus('Publish failed: '+err.message);status('Your draft is still saved locally.',true);}
   finally{setBusy(false);}
  }
  async function unpublish(){
