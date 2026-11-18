@@ -64,7 +64,8 @@ export function renderLearnLesson(root,courseId,lessonId,{review=false,bundleOve
   }else{
    const node=current(),read=['read','image'].includes(node.type),checked=!!state.checked;
    const heading=node.title||node.prompt||'Learning activity';
-   const body=read?'<div class="ns-learn-player__reading">'+(node.type==='read'?paragraphs(node.body):'')+photo(node)+(node.sources?'<p class="ns-learn-player__sources">'+esc(node.sources)+'</p>':'')+'</div>':photo(node)+renderControls(node);
+   const promptLine=!read&&node.title&&node.prompt&&node.title!==node.prompt?'<p class="ns-learn-player__question-prompt">'+esc(node.prompt)+'</p>':'';
+   const body=read?'<div class="ns-learn-player__reading">'+(node.type==='read'?paragraphs(node.body):'')+photo(node)+(node.sources?'<p class="ns-learn-player__sources">'+esc(node.sources)+'</p>':'')+'</div>':promptLine+photo(node)+renderControls(node);
    root.innerHTML='<section class="ns-learn-player">'+exit+'<p class="ns-learn-player__eyebrow">'+esc(lesson.title)+' · '+(state.i+1)+' / '+nodes.length+'</p><div class="ns-learn-player__meter" role="progressbar" aria-valuenow="'+(state.i+1)+'" aria-valuemin="0" aria-valuemax="'+nodes.length+'"><i style="width:'+Math.round((state.i+1)/nodes.length*100)+'%"></i></div><h1>'+esc(heading)+'</h1>'+(!read&&node.type==='character'?'':body)+(read?'':'')+(!read&&node.type==='character'?body:'')+(state.notice?'<p class="ns-learn-player__notice" role="alert">'+esc(state.notice)+'</p>':'')+(checked?'<div class="ns-learn-player__feedback" role="status"><strong>'+(state.checked.correct?'Correct.':'Review the distinction.')+'</strong><p>'+esc(state.checked.explanation)+'</p><small>Counterexample: '+esc(state.checked.counterexample)+'</small></div>':'')+'<button type="button" class="ns-learn-player__primary" data-next>'+ (read||checked?(state.i+1===nodes.length?'Finish lesson':'Continue →'):'Check answer')+'</button></section>';
   }
   wire();
