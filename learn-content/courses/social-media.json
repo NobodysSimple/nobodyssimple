@@ -1,6 +1,6 @@
 {
   "id": "social-media",
-  "version": 1,
+  "version": 2,
   "status": "published",
   "title": "Social Media & the Attention Economy",
   "description": "Explore infinite scroll and delayed stopping cues through dialogue, evidence and psychological reasoning.",
@@ -618,6 +618,779 @@
             }
           ],
           "takeaway": "Making the next swipe less automatic can restore a decision you didn't realise you were skipping."
+        },
+        {
+          "id": "social-media-m1-l3",
+          "version": 1,
+          "title": "Same behaviour, different cause",
+          "teach": "Distinguish what was observed from competing explanations of the same behaviour.",
+          "objective": "Same behaviour, different cause",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-m1-l3-n1",
+              "type": "read",
+              "title": "What else could explain it?",
+              "body": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.\n\nVariable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-m1-l3-n3",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l3-n3-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "social-media-m1-l3-n3-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "social-media-m1-l3-n3-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "social-media-m1-l3-n3-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "social-media-m1-l3-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l3-n2",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "categories": [
+                {
+                  "id": "social-media-m1-l3-n2-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "social-media-m1-l3-n2-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "social-media-m1-l3-n2-item1",
+                  "label": "“Not really. Some were funny, some were boring, but I kept expecting a better one.”",
+                  "answer": "social-media-m1-l3-n2-fact"
+                },
+                {
+                  "id": "social-media-m1-l3-n2-item2",
+                  "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+                  "answer": "social-media-m1-l3-n2-hypothesis"
+                },
+                {
+                  "id": "social-media-m1-l3-n2-item3",
+                  "label": "“There isn't one. I have to decide to stop while something else is already loading.”",
+                  "answer": "social-media-m1-l3-n2-fact"
+                },
+                {
+                  "id": "social-media-m1-l3-n2-item4",
+                  "label": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+                  "answer": "social-media-m1-l3-n2-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l3-n4",
+              "type": "choose",
+              "title": "Which explanation deserves more weight?",
+              "prompt": "What makes one formulation stronger than a plausible competing account?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "Look for explanatory fit and a way to be wrong. Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l3-n4-opt1",
+                  "label": "It resembles a recognised theory, so the exact details of this case matter less.",
+                  "feedback": "A theory does not become evidence merely because the scenario resembles it."
+                },
+                {
+                  "id": "social-media-m1-l3-n4-opt2",
+                  "label": "It explains more of the distinctive evidence and suggests observations that could prove it wrong.",
+                  "feedback": "An account that fits the details and can be checked is more informative than one that merely sounds plausible."
+                },
+                {
+                  "id": "social-media-m1-l3-n4-opt3",
+                  "label": "Both accounts are possible, so each deserves equal confidence until a definitive diagnosis is made.",
+                  "feedback": "Plausibility does not entail equal likelihood, and a diagnosis is not the aim."
+                },
+                {
+                  "id": "social-media-m1-l3-n4-opt4",
+                  "label": "The person harmed by the behaviour is most likely to know why the other person acted that way.",
+                  "feedback": "People may understand the impact on themselves without knowing another person’s internal motive."
+                }
+              ],
+              "answer": "social-media-m1-l3-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l3-n5",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "characterName": "Riley",
+              "scenario": "Riley has been trying to stop scrolling before bed. Ash notices Riley is still holding the phone an hour after opening an app.",
+              "evidenceOptions": [
+                {
+                  "id": "social-media-m1-l3-n5-evidence-opt1",
+                  "label": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+                  "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l3-n5-evidence-opt2",
+                  "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "social-media-m1-l3-n5-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "social-media-m1-l3-n5-response-opt1",
+                  "label": "Delete every app and stop using digital media entirely.",
+                  "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l3-n5-response-opt2",
+                  "label": "Set a stopping cue before opening the feed, and make the next session require a deliberate new choice.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "social-media-m1-l3-n5-response-opt2"
+            },
+            {
+              "id": "social-media-m1-l3-n6",
+              "type": "match",
+              "title": "Connect process to evidence",
+              "prompt": "Connect each part of the case to its role in the working explanation.",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "A functional explanation identifies the event, the meaning it may take on, the response and what follows. An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "pairs": [
+                {
+                  "id": "social-media-m1-l3-n6-pair0",
+                  "label": "Riley opens the app for a bounded task",
+                  "answer": "Initial event"
+                },
+                {
+                  "id": "social-media-m1-l3-n6-pair1",
+                  "label": "The feed presents another possible reward without a natural ending",
+                  "answer": "Possible appraisal"
+                },
+                {
+                  "id": "social-media-m1-l3-n6-pair2",
+                  "label": "Riley delays the decision to stop",
+                  "answer": "Behavioural response"
+                },
+                {
+                  "id": "social-media-m1-l3-n6-pair3",
+                  "label": "Time passes while the next item keeps becoming available",
+                  "answer": "Possible consequence"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "social-media-m1-l4",
+          "version": 1,
+          "title": "What would change your mind?",
+          "teach": "New evidence can overturn a comfortable theory. Decide what the discovery actually changes.",
+          "objective": "What would change your mind?",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-m1-l4-n1",
+              "type": "read",
+              "title": "What would change the explanation?",
+              "body": "Compare use when the next item requires a deliberate choice with use when content loads automatically.\n\nA useful hypothesis should make it possible to gather evidence against it.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-m1-l4-n2",
+              "type": "dialogue",
+              "title": "See what happens next",
+              "prompt": "Listen closely to what each person says and what still remains uncertain.",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "scenario": "A little later in the same situation. Continue one message at a time.",
+              "speakerA": "Riley",
+              "speakerB": "Ash",
+              "turns": [
+                {
+                  "id": "social-media-m1-l4-n2-turn0",
+                  "speaker": "a",
+                  "text": "I put the phone down, then picked it back up ten minutes later."
+                },
+                {
+                  "id": "social-media-m1-l4-n2-turn1",
+                  "speaker": "b",
+                  "text": "Was there a message you needed to answer?"
+                },
+                {
+                  "id": "social-media-m1-l4-n2-turn2",
+                  "speaker": "a",
+                  "text": "No. I wanted to see whether anything new had appeared."
+                },
+                {
+                  "id": "social-media-m1-l4-n2-turn3",
+                  "speaker": "b",
+                  "text": "So checking for a possible reward became the reason to reopen it."
+                }
+              ],
+              "checks": [
+                {
+                  "id": "social-media-m1-l4-n2-question",
+                  "prompt": "What has become clearer about the speaker’s interpretation?",
+                  "focusTurn": "social-media-m1-l4-n2-turn2",
+                  "options": [
+                    {
+                      "id": "social-media-m1-l4-n2-question-opt1",
+                      "label": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+                      "feedback": "A realistic alternative. Compare it with the exact lines that reveal what may be at stake."
+                    },
+                    {
+                      "id": "social-media-m1-l4-n2-question-opt2",
+                      "label": "This additional exchange reveals more about the speaker’s interpretation, but leaves wider personality questions open.",
+                      "feedback": "The new exchange helps us understand the situation without establishing an enduring personality style."
+                    },
+                    {
+                      "id": "social-media-m1-l4-n2-question-opt3",
+                      "label": "The dispute can now be explained entirely by the factual wording of the original request.",
+                      "feedback": "The practical facts matter, but the words also reveal what the issue might mean to the speaker."
+                    },
+                    {
+                      "id": "social-media-m1-l4-n2-question-opt4",
+                      "label": "The speaker’s reaction supplies evidence that the same pattern will occur throughout their relationships.",
+                      "feedback": "A single interaction cannot justify a prediction about behaviour across settings."
+                    }
+                  ],
+                  "answer": "social-media-m1-l4-n2-question-opt2",
+                  "explanation": "The additional wording refines the hypothesis. An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+                  "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary."
+                }
+              ]
+            },
+            {
+              "id": "social-media-m1-l4-n3",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "Investigate a difference that the rival explanations predict. Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l4-n3-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "social-media-m1-l4-n3-opt2",
+                  "label": "Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "social-media-m1-l4-n3-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "social-media-m1-l4-n3-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "social-media-m1-l4-n3-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l4-n4",
+              "type": "choose",
+              "title": "Update your interpretation",
+              "prompt": "New information: Riley uses the same phone for reading long articles but stops easily when an article ends. The late-night problem is concentrated in the endless short-video feed. Which interpretation should now carry more weight?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "A formulation should change when the evidence changes. The contrast strengthens the stopping-cue explanation, while leaving room for differences in interest and the social meaning of each platform.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l4-n4-opt1",
+                  "label": "The new details matter, but the original working explanation should remain unchanged because it was reasonable at the time.",
+                  "feedback": "An initially reasonable account still needs revising when the evidence develops."
+                },
+                {
+                  "id": "social-media-m1-l4-n4-opt2",
+                  "label": "The contrast strengthens the stopping-cue explanation, while leaving room for differences in interest and the social meaning of each platform.",
+                  "feedback": "The revised account takes the added detail seriously without claiming complete access to the person’s motives."
+                },
+                {
+                  "id": "social-media-m1-l4-n4-opt3",
+                  "label": "The new information rules out every motive except the one that is now best supported.",
+                  "feedback": "Evidence can strengthen one hypothesis without proving it is the only cause."
+                },
+                {
+                  "id": "social-media-m1-l4-n4-opt4",
+                  "label": "The discovery affects what the characters should do next, but contributes little to understanding the earlier response.",
+                  "feedback": "The discovery may explain part of the original situation, not merely the preferred intervention."
+                }
+              ],
+              "answer": "social-media-m1-l4-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l4-n5",
+              "type": "label",
+              "title": "Find the important lines",
+              "prompt": "Select the two lines that best show how the speaker interprets the event or what they believe is at stake.",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "These lines reveal more about the meaning attached to the situation than a statement of the practical disagreement alone. An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "segments": [
+                {
+                  "id": "social-media-m1-l4-n5-phrase0",
+                  "text": "“Not really. Some were funny, some were boring, but I kept expecting a better one.”",
+                  "answer": true
+                },
+                {
+                  "id": "social-media-m1-l4-n5-phrase1",
+                  "text": "“I meant to check one message. I've been scrolling for an hour.”",
+                  "answer": false
+                },
+                {
+                  "id": "social-media-m1-l4-n5-phrase2",
+                  "text": "“There isn't one. I have to decide to stop while something else is already loading.”",
+                  "answer": true
+                },
+                {
+                  "id": "social-media-m1-l4-n5-phrase3",
+                  "text": "“What happened after you read it?”",
+                  "answer": false
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l4-n6",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l4-n6-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "social-media-m1-l4-n6-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "social-media-m1-l4-n6-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "social-media-m1-l4-n6-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "social-media-m1-l4-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "social-media-m1-l5",
+          "version": 1,
+          "title": "Choose a workable response",
+          "teach": "Choose a response that serves a practical aim even when the other person does not cooperate.",
+          "objective": "Choose a workable response",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-m1-l5-n1",
+              "type": "read",
+              "title": "Your influence has limits",
+              "body": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.\n\nAn intervention can be reasonable even when the other person refuses it.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-m1-l5-n2",
+              "type": "character",
+              "title": "Choose the next step",
+              "prompt": "Your aim is to address the immediate concern while leaving room for a useful conversation.",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "The first response is a proportionate attempt to address the problem directly. Escalation may be legitimate if that attempt fails. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "characterName": "Riley",
+              "scenario": "Riley has been trying to stop scrolling before bed. Ash notices Riley is still holding the phone an hour after opening an app.",
+              "evidenceOptions": [
+                {
+                  "id": "social-media-m1-l5-n2-evidence-opt1",
+                  "label": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+                  "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l5-n2-evidence-opt2",
+                  "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+                  "feedback": ""
+                }
+              ],
+              "evidenceAnswer": "social-media-m1-l5-n2-evidence-opt2",
+              "responseOptions": [
+                {
+                  "id": "social-media-m1-l5-n2-response-opt1",
+                  "label": "Delete every app and stop using digital media entirely.",
+                  "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l5-n2-response-opt2",
+                  "label": "Set a stopping cue before opening the feed, and make the next session require a deliberate new choice.",
+                  "feedback": ""
+                }
+              ],
+              "responseAnswer": "social-media-m1-l5-n2-response-opt2"
+            },
+            {
+              "id": "social-media-m1-l5-n3",
+              "type": "predict",
+              "title": "What might change next?",
+              "prompt": "The other person may disagree. Which response-and-outcome pairing best protects the practical concern without assuming cooperation?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "A sound response is judged by what it makes possible, not by whether it can instantly change somebody else. Set a stopping cue before opening the feed, and make the next session require a deliberate new choice.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "changePrompt": "Response to try",
+              "changes": [
+                {
+                  "id": "social-media-m1-l5-n3-action-opt1",
+                  "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
+                  "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l5-n3-action-opt2",
+                  "label": "Set a stopping cue before opening the feed, and make the next session require a deliberate new choice.",
+                  "feedback": ""
+                }
+              ],
+              "outcomes": [
+                {
+                  "id": "social-media-m1-l5-n3-result-opt1",
+                  "label": "The other person’s interpretation may become clearer, though the original issue may still need to be resolved.",
+                  "feedback": ""
+                },
+                {
+                  "id": "social-media-m1-l5-n3-result-opt2",
+                  "label": "A concrete correction or next step is proposed. Agreement remains uncertain.",
+                  "feedback": ""
+                }
+              ],
+              "correctChange": "social-media-m1-l5-n3-action-opt2",
+              "correctOutcome": "social-media-m1-l5-n3-result-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l5-n4",
+              "type": "choose",
+              "title": "If the first response fails",
+              "prompt": "The other person rejects a reasonable direct request and the practical concern is unresolved. What next?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "Escalation can be proportionate when a direct attempt has failed. Its safety and usefulness depend on the situation. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l5-n4-opt1",
+                  "label": "Repeat reassurance until the other person no longer experiences the issue as threatening.",
+                  "feedback": "Reassurance can help but cannot guarantee action on a concrete problem."
+                },
+                {
+                  "id": "social-media-m1-l5-n4-opt2",
+                  "label": "Delete every app and stop using digital media entirely.",
+                  "feedback": "This makes the unresolved issue reviewable without needing to diagnose the other person."
+                },
+                {
+                  "id": "social-media-m1-l5-n4-opt3",
+                  "label": "Drop the matter to avoid further discomfort, regardless of the practical consequences.",
+                  "feedback": "Leaving can sometimes be safest, but here it sacrifices the stated practical goal without necessity."
+                },
+                {
+                  "id": "social-media-m1-l5-n4-opt4",
+                  "label": "Which part of the design makes stopping require an active decision rather than letting the activity reach an end?",
+                  "feedback": "A further question can clarify motives, but may delay resolution when the refusal is already clear."
+                }
+              ],
+              "answer": "social-media-m1-l5-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l5-n5",
+              "type": "repair",
+              "title": "Correct the inference",
+              "prompt": "Someone says: “That tells us what sort of person they really are.” Which revision is most defensible?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "A working interpretation can be informative without being a diagnosis. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l5-n5-opt1",
+                  "label": "Because an alternative is possible, every explanation should be treated as equally likely until we know the person well.",
+                  "feedback": "Possible explanations need not be equally supported. We should compare their fit with the actual evidence."
+                },
+                {
+                  "id": "social-media-m1-l5-n5-opt2",
+                  "label": "The behaviour may serve the proposed function in this case. We would need broader evidence before treating it as a stable characteristic.",
+                  "feedback": "This retains a useful process explanation without generalising beyond the evidence."
+                },
+                {
+                  "id": "social-media-m1-l5-n5-opt3",
+                  "label": "The person has not confirmed their own motive, so we should avoid making any psychological inference at all.",
+                  "feedback": "Direct self-report helps, but a tentative formulation can still be tested against observed circumstances."
+                },
+                {
+                  "id": "social-media-m1-l5-n5-opt4",
+                  "label": "The response fits the theory, so it is likely to occur in most situations that threaten the person.",
+                  "feedback": "Generalising to different settings requires repeated observations, not theoretical resemblance alone."
+                }
+              ],
+              "answer": "social-media-m1-l5-n5-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l5-n6",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "Investigate a difference that the rival explanations predict. Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l5-n6-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "social-media-m1-l5-n6-opt2",
+                  "label": "Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "social-media-m1-l5-n6-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "social-media-m1-l5-n6-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "social-media-m1-l5-n6-opt2"
+            }
+          ]
+        },
+        {
+          "id": "social-media-m1-l6",
+          "version": 1,
+          "title": "Try it in another situation",
+          "teach": "Apply the way of reasoning to a different situation. Do not import the first case’s verdict.",
+          "objective": "Try it in another situation",
+          "editorialStatus": "ready",
+          "nodes": [
+            {
+              "id": "social-media-m1-l6-n1",
+              "type": "read",
+              "title": "A new situation",
+              "body": "A music streaming app automatically begins another recommended track after the one a listener chose has ended.\n\nDecide what you can infer from this example without assuming the same explanation must apply.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            },
+            {
+              "id": "social-media-m1-l6-n2",
+              "type": "choose",
+              "title": "Apply the method elsewhere",
+              "prompt": "Consider this different situation: A music streaming app automatically begins another recommended track after the one a listener chose has ended. What is the strongest next step?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "Transfer the reasoning method rather than an explanation from the first case. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l6-n2-opt1",
+                  "label": "Treat the visible similarity as a reliable indication that the behaviour has the same psychological function.",
+                  "feedback": "Similar behaviours can protect very different interests depending on the context."
+                },
+                {
+                  "id": "social-media-m1-l6-n2-opt2",
+                  "label": "Consider what the person could be trying to gain or avoid, then test that explanation against the circumstances and credible alternatives.",
+                  "feedback": "This asks what the behaviour might accomplish and how we could check."
+                },
+                {
+                  "id": "social-media-m1-l6-n2-opt3",
+                  "label": "Postpone all interpretation until the person can give an account of their private motives.",
+                  "feedback": "A perfect self-report may be unavailable. Tentative, revisable inferences can still be useful."
+                },
+                {
+                  "id": "social-media-m1-l6-n2-opt4",
+                  "label": "Judge whether the behaviour is socially acceptable first, since that provides the best evidence about why it happened.",
+                  "feedback": "Judging the consequences of a behaviour is important, but consequences do not by themselves establish motive."
+                }
+              ],
+              "answer": "social-media-m1-l6-n2-opt2"
+            },
+            {
+              "id": "social-media-m1-l6-n4",
+              "type": "investigate",
+              "title": "Which evidence matters most?",
+              "prompt": "You want to distinguish the working hypothesis from its strongest alternative. Which investigation would provide the most discriminating information?",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "Investigate a difference that the rival explanations predict. Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "options": [
+                {
+                  "id": "social-media-m1-l6-n4-opt1",
+                  "label": "Ask both people to describe how strongly they felt during the conversation.",
+                  "feedback": "The strength of a feeling matters, but it does not establish its cause."
+                },
+                {
+                  "id": "social-media-m1-l6-n4-opt2",
+                  "label": "Compare use when the next item requires a deliberate choice with use when content loads automatically.",
+                  "feedback": "This gathers information that could strengthen or weaken the explanation, rather than merely confirming an impression."
+                },
+                {
+                  "id": "social-media-m1-l6-n4-opt3",
+                  "label": "Ask the person affected whether the behaviour seems consistent with their overall impression of the speaker.",
+                  "feedback": "Impact and perception matter for responding; they are less decisive about the other person’s hidden motives."
+                },
+                {
+                  "id": "social-media-m1-l6-n4-opt4",
+                  "label": "Find one more occasion when the characters disagreed, without checking what the circumstances were.",
+                  "feedback": "Another incident is useful only if we compare the circumstances and plausible explanations."
+                }
+              ],
+              "answer": "social-media-m1-l6-n4-opt2",
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l6-n3",
+              "type": "sort",
+              "title": "Fact or inference?",
+              "prompt": "Sort the exact words spoken from explanations about what those words might mean.",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "The words are evidence. Both the preferred explanation and its rival are interpretations requiring further testing. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "categories": [
+                {
+                  "id": "social-media-m1-l6-n3-fact",
+                  "label": "Observable statement"
+                },
+                {
+                  "id": "social-media-m1-l6-n3-hypothesis",
+                  "label": "Proposed interpretation"
+                }
+              ],
+              "items": [
+                {
+                  "id": "social-media-m1-l6-n3-item1",
+                  "label": "“Not really. Some were funny, some were boring, but I kept expecting a better one.”",
+                  "answer": "social-media-m1-l6-n3-fact"
+                },
+                {
+                  "id": "social-media-m1-l6-n3-item2",
+                  "label": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.",
+                  "answer": "social-media-m1-l6-n3-hypothesis"
+                },
+                {
+                  "id": "social-media-m1-l6-n3-item3",
+                  "label": "“There isn't one. I have to decide to stop while something else is already loading.”",
+                  "answer": "social-media-m1-l6-n3-fact"
+                },
+                {
+                  "id": "social-media-m1-l6-n3-item4",
+                  "label": "Riley may also be using the app to avoid a stressful evening or to connect socially; interface design is not the only influence.",
+                  "answer": "social-media-m1-l6-n3-hypothesis"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l6-n5",
+              "type": "chain",
+              "title": "Build the psychological process",
+              "prompt": "Arrange this possible sequence. One step concerns what the person might be thinking; treat it as a hypothesis.",
+              "conceptId": "social-media-module-01:Variable reinforcement, friction and choice architecture",
+              "explanation": "The order helps us test how a response might become self-maintaining. An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop. Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "counterexample": "Variable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation.",
+              "steps": [
+                {
+                  "id": "social-media-m1-l6-n5-step0",
+                  "label": "Riley opens the app for a bounded task"
+                },
+                {
+                  "id": "social-media-m1-l6-n5-step1",
+                  "label": "The feed presents another possible reward without a natural ending"
+                },
+                {
+                  "id": "social-media-m1-l6-n5-step2",
+                  "label": "Riley delays the decision to stop"
+                },
+                {
+                  "id": "social-media-m1-l6-n5-step3",
+                  "label": "Time passes while the next item keeps becoming available"
+                }
+              ],
+              "shuffleGroup": "practice"
+            },
+            {
+              "id": "social-media-m1-l6-n6",
+              "type": "read",
+              "title": "An idea worth carrying forward",
+              "body": "An endless feed removes natural stopping cues while unpredictable interesting content makes the next item seem worth checking. The environment increases the work required to stop.\n\nVariable rewards and infinite scroll can encourage persistence, but the exact effects vary by person and context. They do not make behaviour literally involuntary.\n\nThe purpose of the exercise is to make a better-supported judgement and choose a proportionate next step.",
+              "sources": "Montag et al. (2019), smartphone design and behaviour; work on persuasive technology and digital self-regulation."
+            }
+          ]
         }
       ]
     }
